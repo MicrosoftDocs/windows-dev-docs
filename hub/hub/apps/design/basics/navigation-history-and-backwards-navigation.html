@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Navigation history and backwards navigation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Navigation history and backwards navigation ">
+    
+    <meta name="description" content="Learn how to implement backwards navigation for traversing the user&#39;s navigation history within a Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="navigation-history-and-backwards-navigation-for-windows-apps">Navigation history and backwards navigation for Windows apps</h1>
+
+<div class="checklist">
+<ul>
+<li><strong>Applies to</strong>: Windows App SDK/WinUI3</li>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame">Frame</a> class, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a> class, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.goback">Frame.GoBack</a> method</li>
+</ul>
+</div>
+<p>To implement backwards navigation in your app, place a back button at the top left corner of your app's UI. The user expects the back button to navigate to the previous location in the app's navigation history. By default, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame">Frame</a> control records navigation actions in its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.backstack">BackStack</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.forwardstack">ForwardStack</a>. However, you can modify which navigation actions are added to the navigation history.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For most apps that have multiple pages, we recommend that you use the <a href="../controls/navigationview.html">NavigationView</a> control to provide the navigation framework for your app. It adapts to a variety of screen sizes and supports both <em>top</em> and <em>left</em> navigation styles. If your app uses the <code>NavigationView</code> control, then you can use <a href="../controls/navigationview.html#backwards-navigation">NavigationView's built-in back button</a>.</p>
+<p>The guidelines and examples in this article should be used when you implement navigation without using the <code>NavigationView</code> control. If you use <code>NavigationView</code>, this information provides useful background knowledge, but you should use the specific guidance and examples in the <a href="../controls/navigationview.html">NavigationView</a> article</p>
+</div>
+<h2 id="back-button">Back button</h2>
+<p>We recommend that you place the back button in the upper left corner of your app. If you <a href="../../develop/title-bar.html">customize the title bar</a>, place the back button in the title bar. See <a href="/windows/apps/design/basics/titlebar-design#back-button">Title bar design &gt; Back button</a> for more info.</p>
+<p>If you use the <a href="../controls/title-bar.html">TitleBar</a> control to create a custom title bar, use the built-in back button. Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible">IsBackButtonVisible</a> to <code>true</code>, set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled">IsBackButtonEnabled</a> as needed, and handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested">BackRequested</a> event to navigate.</p>
+<p>To create a stand-alone back button, use the <a href="../controls/buttons.html">Button</a> control with the <code>TitleBarBackButtonStyle</code> resource, and place the button at the top left hand corner of your app's UI (for details, see the XAML code examples below).</p>
+<p><img src="images/back-nav/back-enabled.png" alt="Back button in the top left of the app's UI"></p>
+<pre><code class="lang-xaml">&lt;Page&gt;
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;Button x:Name=&quot;BackButton&quot;
+                Click=&quot;BackButton_Click&quot;
+                Style=&quot;{StaticResource TitleBarBackButtonStyle}&quot;
+                IsEnabled=&quot;{x:Bind Frame.CanGoBack, Mode=OneWay}&quot; 
+                ToolTipService.ToolTip=&quot;Back&quot;/&gt;
+
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>If your app has a top <a href="../controls/command-bar.html">CommandBar</a>, place the <code>Button</code> control in the <code>CommandBar.Content</code> area.</p>
+<pre><code class="lang-xaml">&lt;Page&gt;
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        
+        &lt;CommandBar&gt;
+            &lt;CommandBar.Content&gt;
+                &lt;Button x:Name=&quot;BackButton&quot;
+                        Click=&quot;BackButton_Click&quot;
+                        Style=&quot;{StaticResource TitleBarBackButtonStyle}&quot;
+                        IsEnabled=&quot;{x:Bind Frame.CanGoBack, Mode=OneWay}&quot; 
+                        ToolTipService.ToolTip=&quot;Back&quot;/&gt;
+            &lt;/CommandBar.Content&gt;
+        
+            &lt;AppBarButton Icon=&quot;Delete&quot; Label=&quot;Delete&quot;/&gt;
+            &lt;AppBarButton Icon=&quot;Save&quot; Label=&quot;Save&quot;/&gt;
+        &lt;/CommandBar&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (<code>IsEnabled=&quot;{x:Bind Frame.CanGoBack, Mode=OneWay}&quot;</code>). However, if you expect your app will never have a backstack, you don't need to display the back button at all.</p>
+<p><img src="images/back-nav/back-disabled.png" alt="Back button states"></p>
+<h2 id="back-navigation">Back navigation</h2>
+<p>This section demonstrates code to handle back navigation. Typical sources of a back navigation request are the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested">TitleBar.BackRequested</a> event, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.backrequested">NavigationView.BackRequested</a> event, or back button <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event.</p>
+<p>This example code demonstrates how to implement backwards navigation behavior with a back button. The code responds to the Button <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event to navigate.</p>
+<p>If you use the back button in a <code>NavigationView</code> or <code>TitleBar</code> control, you can put the frame navigation code directly in the event handler method without needing to duplicate it for each page. However, if you create a back button in the content of your app pages, you would need to duplicate the frame navigation code in each page's code-behind file. To avoid duplication, you can put the navigation related code in the <code>App</code> class in the <code>App.xaml.*</code> code-behind page and then call it from anywhere in your app, as shown here.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You need to update the existing code for <code>m_window</code> in the <code>App</code> class to create a public static property for <code>Window</code> as shown here in the last lines of code. See <a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3#change-windowsuixamlwindowcurrent-to-appwindow">Change Window.Current to App.Window</a> for more info.</p>
+</div>
+<pre><code class="lang-csharp">// MainPage.xaml.cs
+private void BackButton_Click(object sender, RoutedEventArgs e)
+{
+    App.TryGoBack();
+}
+
+// App.xaml.cs
+//
+// Add this method to the App class.
+public static bool TryGoBack()
+{
+    Frame rootFrame = Window.Content as Frame;
+    if (rootFrame.CanGoBack)
+    {
+        rootFrame.GoBack();
+        return true;
+    }
+    return false;
+}
+
+public static Window Window { get { return m_window; } }
+private static Window m_window;
+
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.h
+namespace winrt::AppName::implementation
+{
+    struct MainPage : MainPageT&lt;MainPage&gt;
+    {
+        MainPage();
+ 
+        void MainPage::BackButton_Click(IInspectable const&amp;, RoutedEventArgs const&amp;)
+        {
+            App::TryGoBack();
+        }
+    };
+}
+
+// App.xaml.h
+using namespace winrt;
+using namespace Windows::UI::Xaml::Controls;
+
+struct App : AppT&lt;App&gt;
+{
+    App();
+
+    static winrt::Microsoft::UI::Xaml::Window Window() { return window; };
+
+    // ...
+
+    // Perform back navigation if possible.
+    static bool TryGoBack()
+    {
+        Frame rootFrame{ nullptr };
+        auto content = App::Window().Content();
+        if (content)
+        {
+            rootFrame = content.try_as&lt;Frame&gt;();
+            if (rootFrame.CanGoBack())
+            {
+                rootFrame.GoBack();
+                return true;
+            }
+        }
+        return false;
+    }
+
+private:
+    static winrt::Microsoft::UI::Xaml::Window window;
+};
+
+// App.xaml.cpp
+winrt::Microsoft::UI::Xaml::Window App::window{ nullptr };
+
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="navigation-basics.html">Navigation basics</a></li>
+<li><a href="navigate-between-two-pages.html">Implement basic navigation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/basics/navigation-history-and-backwards-navigation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

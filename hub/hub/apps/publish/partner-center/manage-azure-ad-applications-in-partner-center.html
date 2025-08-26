@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manage Microsoft Entra applications in your Partner Center account </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manage Microsoft Entra applications in your Partner Center account ">
+    
+    <meta name="description" content="You can manage Microsoft Entra applications in your Partner Center account.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manage-microsoft-entra-applications-in-your-partner-center-account">Manage Microsoft Entra applications in your Partner Center account</h1>
+
+<p>You can allow applications or services that are part of your organization's Microsoft Entra ID to access your Partner Center account. These Microsoft Entra application user accounts can be used to call the REST APIs provided by the <a href="/windows/uwp/monetize/using-windows-store-services">Microsoft Store services</a>.</p>
+<p>To manage Microsoft Entra applications in your Partner Center account, go to the <strong>User management</strong> page under <strong>Account settings</strong> and select the <strong>Microsoft Entra applications</strong> tab. You must be signed in with a Manager account that also has <a href="/azure/active-directory/users-groups-roles/directory-assign-admin-roles">global administrator</a> permissions for the Microsoft Entra ID tenant you're working in.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/partner-center-account-settings-apps.png" alt="Screenshot showing microsoft entra applications tab in user management page.">
+</span>
+</p>
+<p>To add applications, you will have additional options described below.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/partner-center-account-settings-add-apps.png" alt="Screenshot showing different options to add a microsoft entra application.">
+</span>
+</p>
+<h2 id="create-microsoft-entra-application">Create Microsoft Entra application</h2>
+<ol>
+<li>From the <strong>User management</strong> page (under <strong>Account settings</strong>), click on <strong>Add Microsoft Entra application</strong>, then choose <strong>Create Microsoft Entra application</strong>.</li>
+<li>Enter the display name for the new application.</li>
+<li>Enter the Reply URL for the new application. This is the URL where users can sign in and use your Microsoft Entra application (sometimes also known as the App URL or Sign-On URL). The Reply URL can't be longer than 256 characters and must be unique within your directory. Then click <strong>Next</strong>.</li>
+<li>In the <strong>Roles applicable to developer programs</strong> section, specify the <a href="set-custom-permissions-for-account-users.md">role(s) or customized permissions</a> for the application.</li>
+<li>Click <strong>Create</strong>.</li>
+</ol>
+<p>After you add or create a Microsoft Entra application, you can return to this section and select the application name to review settings for the application, including the Tenant ID, Client ID, and Reply URL.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you intend to use the REST APIs provided by the Microsoft Store services, you will need the Tenant ID and Client ID values shown on this page to obtain a Microsoft Entra access token that you can use to authenticate the calls to services.</p>
+</div>
+<h2 id="add-microsoft-entra-application">Add Microsoft Entra application</h2>
+<ol>
+<li><p>From the <strong>User management</strong> page (under <strong>Account settings</strong>), click on <strong>Add Microsoft Entra application</strong>, then choose <strong>Add Microsoft Entra application</strong>.</p>
+</li>
+<li><p>Select one or more Microsoft Entra applications from the list that appears. You can use the search box to find specific applications.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you select more than one Microsoft Entra application to add to your Partner Center account, you must assign them the same role or set of custom permissions. To add multiple Microsoft Entra applications with different roles or permissions, repeat these steps for each role or set of custom permissions.</p>
+</div>
+</li>
+<li><p>When you have finished selecting applications, click <strong>Next</strong>.</p>
+</li>
+<li><p>In the <strong>Roles applicable to developer programs</strong> section, specify the <a href="set-custom-permissions-for-account-users.md">role(s) or customized permissions</a> for the selected application(s).</p>
+</li>
+<li><p>Click <strong>Add</strong>.</p>
+</li>
+</ol>
+<h2 id="manage-keys-for-a-microsoft-entra-application">Manage keys for a Microsoft Entra application</h2>
+<p>If your Microsoft Entra application reads and writes data in Microsoft Entra ID, it will need a key. You can create keys for a Microsoft Entra application by editing its info in Partner Center. You can also remove keys that are no longer needed.</p>
+<ol>
+<li><p>From the <strong>User management</strong> page (under <strong>Account settings</strong>), click on the Microsoft Entra application.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When you click on the name of the Microsoft Entra application, you'll see all of the active keys for the Microsoft Entra application, including the date on which the key was created and when it will expire. To remove a key that is no longer needed, click on <strong>Remove</strong>.</p>
+</div>
+</li>
+<li><p>To add a new key, click on <strong>Add new key</strong>.</p>
+</li>
+<li><p>You will see a screen showing the <strong>Client ID</strong> and <strong>Key</strong> values.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Be sure to print or copy this info, as you won't be able to access it again after you leave this page.</p>
+</div>
+</li>
+<li><p>If you want to create more keys, select <strong>Add another key</strong>.</p>
+</li>
+</ol>
+<h2 id="edit-a-microsoft-entra-application">Edit a Microsoft Entra application</h2>
+<ol>
+<li>From the <strong>User management</strong> page (under <strong>Account settings</strong>), click on the Microsoft Entra application that you want to edit.</li>
+<li>You will see a screen showing all the available keys, then click <strong>Cancel</strong>.</li>
+<li>Make your desired changes. For a Microsoft Entra application, you can enter new values for the display name and Reply URL. Remember that these changes will be made in your organization's directory as well as in your Partner Center account.</li>
+<li>When you have finished updating the application information, click <strong>Next</strong>.</li>
+<li>For changes related to Partner Center access, select or deselect the role(s) that you want to apply, or select <strong>Customize permissions</strong> and make the desired changes. These changes only impact Partner Center access and will not change any permissions within your organization's Microsoft Entra ID tenant.</li>
+<li>Click <strong>Update</strong>.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Changes made to <a href="set-custom-permissions-for-account-users.md">roles or permissions</a> will only affect Partner Center access. All other changes (such as changing a user's name or group membership, or the Reply URL for a Microsoft Entra ID application) will be reflected in your organization's Microsoft Entra ID tenant as well as in your Partner Center account.</p>
+</div>
+<h2 id="remove-a-microsoft-entra-application">Remove a Microsoft Entra application</h2>
+<ol>
+<li>From the <strong>User management</strong> page (under <strong>Account settings</strong>), select the Microsoft Entra application that you want to remove.</li>
+<li>Click on <strong>Delete</strong>.</li>
+<li>After confirming the removal, that Microsoft Entra application will no longer have access to your Partner Center account (unless you add it again later).</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Removing a Microsoft Entra application means that it will no longer have access to your Partner Center account. It <strong>doesn't</strong> delete the Microsoft Entra application from your organization's directory.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/partner-center/manage-azure-ad-applications-in-partner-center.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

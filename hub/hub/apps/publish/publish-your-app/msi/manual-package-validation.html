@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manual package validation for MSI/EXE app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manual package validation for MSI/EXE app ">
+    
+    <meta name="description" content="Test your MSI/EXE app package manually to find validation errors before submission">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manual-package-validation-for-msiexe-app">Manual package validation for MSI/EXE app</h1>
+
+<p>You can manually run each of the package validation tests on your local machine. This can help diagnose validation failures, or can be done in advance to ensure your app will pass once you're ready to submit your app.</p>
+<h2 id="silent-install">Silent install</h2>
+<ol>
+<li><p>Download and locate the app installer onto your PC.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you already have the app installer on your PC, you can use that installer instead of downloading a duplicate copy. Please ensure that the existing installer is <strong>identical</strong> to the version you are testing.</p>
+</div>
+</li>
+<li><p>Open a command prompt and navigate to the installer location.</p>
+</li>
+<li><p>Run your installer, making sure top provide the silent installation parameter, if required.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For MSI apps, use <code>/qn</code> as the silent install parameter.</p>
+</div>
+</li>
+<li><p>Your app should be installed without any user interaction.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>UAC (User Account Control) prompts are allowed.</p>
+</div>
+</li>
+</ol>
+<h2 id="entry-in-add-or-remove-programs">Entry in add or remove programs</h2>
+<ol>
+<li>Repeat the steps for verifying silent install from the above section.</li>
+<li>Open Control Panel -&gt; Programs -&gt; Programs and Features.</li>
+<li>Verify the app name, publisher name and app version added by your app.</li>
+<li>The entry for your product should not show a blank or unrelated Name or Publisher.</li>
+</ol>
+<h2 id="bundleware">Bundleware</h2>
+<ol>
+<li>Repeat the steps for verifying silent install from the above section.</li>
+<li>Open Control Panel -&gt; Programs -&gt; Programs and Features.</li>
+<li>Your app should only add a single entry to the programs list. If your app has added multiple entries, it means that your app is installing bundleware.</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msi/manual-package-validation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

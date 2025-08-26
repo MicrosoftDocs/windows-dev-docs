@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Command bar flyout </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Command bar flyout ">
+    
+    <meta name="description" content="Command bar flyouts give users inline access to your app&#39;s most common tasks.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="command-bar-flyout">Command bar flyout</h1>
+
+<p>The command bar flyout lets you provide users with easy access to common tasks by showing commands in a floating toolbar related to an element on your UI canvas.</p>
+<p><img src="images/command-bar-flyout-text-full-1-5.png" alt="An expanded text proofing command bar flyout"></p>
+<p>Like <a href="command-bar.html">CommandBar</a>, CommandBarFlyout has <strong>PrimaryCommands</strong> and <strong>SecondaryCommands</strong> properties you can use to add commands. You can place commands in either collection, or both. When and how the primary and secondary commands are displayed depends on the display mode.</p>
+<p>The command bar flyout has two display modes: <em>collapsed</em> and <em>expanded</em>.</p>
+<ul>
+<li>In the collapsed mode, only the primary commands are shown. If your command bar flyout has both primary and secondary commands, a &quot;see more&quot; button, which is represented by an ellipsis [...], is displayed. This lets the user get access to the secondary commands by transitioning to expanded mode.</li>
+<li>In the expanded mode, both the primary and secondary commands are shown. (If the control has only secondary items, they are shown in a way similar to the MenuFlyout control.)</li>
+</ul>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use the command bar flyout control to show a collection of commands to the user, such as buttons and menu items, in the context of an element on the app canvas.</p>
+<p>Command bar flyout is the recommended control for creating <a href="menus-and-context-menus.html">context menus</a>. This allows the common commands (such as Copy, Cut, Paste, Delete, Share or text selection commands) that are most contextually relevant for the context menu's scenario to be added as primary commands so that they will be shown as a single, horizontal row in the command bar flyout. The TextCommandBarFlyout is already configured appropriately to automatically display text commands in TextBox, TextBlock, RichEditBox, RichTextBlock, and PasswordBox controls. A CommandBarFlyout can be used to replace the default text commands on text controls.</p>
+<p>To show contextual commands on list items follow the guidance in <a href="collection-commanding.html">Contextual commanding for collections and lists</a>.</p>
+<h2 id="proactive-vs-reactive-invocation">Proactive vs. reactive invocation</h2>
+<p>There are typically two ways to invoke a flyout or menu that's associated with an element on your UI canvas: <em>proactive invocation</em> and <em>reactive invocation</em>.</p>
+<p>In proactive invocation, commands appear automatically when the user interacts with the item that the commands are associated with. For example, text formatting commands might pop up when the user selects text in a text box. In this case, the command bar flyout does not take focus. Instead, it presents relevant commands close to the item the user is interacting with. If the user doesn't interact with the commands, they are dismissed.</p>
+<p>In reactive invocation, commands are shown in response to an explicit user action to request the commands; for example, a right-click. This corresponds to the traditional concept of a <a href="menus-and-context-menus.html">context menu</a>.</p>
+<p>You can use the CommandBarFlyout in either way, or even a mixture of the two.</p>
+<h2 id="create-a-command-bar-flyout">Create a command bar flyout</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout">CommandBarFlyout class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout">TextCommandBarFlyout class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton">AppBarToggleButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator">AppBarSeparator class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/CommandBarFlyout">Open the WinUI 3 Gallery app and see the CommandBarFlyout in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example shows how to create a command bar flyout and use it both proactively and reactively. When the image is tapped, the flyout is shown in its collapsed mode. When shown as a context menu, the flyout is shown in its expanded mode. In either case, the user can expand or collapse the flyout after it's opened.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.Resources&gt;
+        &lt;CommandBarFlyout x:Name=&quot;ImageCommandsFlyout&quot;&gt;
+            &lt;AppBarButton Label=&quot;Favorite&quot; Icon=&quot;OutlineStar&quot; ToolTipService.ToolTip=&quot;Favorite&quot;/&gt;
+            &lt;AppBarButton Label=&quot;Copy&quot; Icon=&quot;Copy&quot; ToolTipService.ToolTip=&quot;Copy&quot;/&gt;
+            &lt;AppBarButton Label=&quot;Share&quot; Icon=&quot;Share&quot; ToolTipService.ToolTip=&quot;Share&quot;/&gt;
+            &lt;CommandBarFlyout.SecondaryCommands&gt;
+                &lt;AppBarButton Label=&quot;Rotate&quot; Icon=&quot;Rotate&quot;/&gt;
+                &lt;AppBarButton Label=&quot;Delete&quot; Icon=&quot;Delete&quot;/&gt;
+            &lt;/CommandBarFlyout.SecondaryCommands&gt;
+        &lt;/CommandBarFlyout&gt;
+    &lt;/Grid.Resources&gt;
+
+    &lt;Image Source=&quot;Assets/image1.png&quot; Width=&quot;300&quot;
+           Tapped=&quot;Image_Tapped&quot; 
+           FlyoutBase.AttachedFlyout=&quot;{x:Bind ImageCommandsFlyout}&quot;
+           ContextFlyout=&quot;{x:Bind ImageCommandsFlyout}&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+{
+    var flyout = FlyoutBase.GetAttachedFlyout((FrameworkElement)sender);
+    var options = new FlyoutShowOptions()
+    {
+        // Position shows the flyout next to the pointer.
+        // &quot;Transient&quot; ShowMode makes the flyout open in its collapsed state.
+        Position = e.GetPosition((FrameworkElement)sender),
+        ShowMode = FlyoutShowMode.Transient
+    };
+    flyout?.ShowAt((FrameworkElement)sender, options);
+}
+</code></pre>
+<p>Here's the command bar flyout in its collapsed state.</p>
+<p><img src="images/command-bar-flyout-img-collapsed-1-5.png" alt="Example of a collapsed command bar flyout"></p>
+<p>Here's the same command bar flyout in its expanded state showing secondary commands.</p>
+<p><img src="images/command-bar-flyout-img-expanded-1-5.png" alt="Example of an expanded command bar flyout"></p>
+<h3 id="show-commands-proactively">Show commands proactively</h3>
+<p>When you show contextual commands proactively, only the primary commands should be shown by default (the command bar flyout should be collapsed). Place the most important commands in the primary commands collection, and additional commands that would traditionally go in a context menu into the secondary commands collection.</p>
+<p>To proactively show commands, you typically handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.tapped">Tapped</a> event to show the command bar flyout. Set the flyout's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.showmode">ShowMode</a> to <strong>Transient</strong> or <strong>TransientWithDismissOnPointerMoveAway</strong> to open the flyout in its collapsed mode without taking focus.</p>
+<p>Text controls have a <strong>SelectionFlyout</strong> property. When you assign a flyout to this property, it is automatically shown when text is selected.</p>
+<h3 id="show-commands-reactively">Show commands reactively</h3>
+<p>When you show contextual commands reactively, as a context menu, the secondary commands are shown by default (the command bar flyout should be expanded). In this case, the command bar flyout might have both primary and secondary commands, or secondary commands only.</p>
+<p>To show commands in a context menu, you typically assign the flyout to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout">ContextFlyout</a> property of a UI element. This way, opening the flyout is handled by the element, and you don't need to do anything more.</p>
+<p>If you handle showing the flyout yourself (for example, on a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.righttapped">RightTapped</a> event), set the flyout's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.showmode">ShowMode</a> to <strong>Standard</strong> to open the flyout in its expanded mode and give it focus.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For more info about options when showing a flyout and how to control placement of the flyout, see <a href="dialogs-and-flyouts/flyouts.html">Flyouts</a>.</p>
+</div>
+<h3 id="show-an-always-expanded-commandbarflyout">Show an always expanded CommandBarFlyout</h3>
+<p>When you have primary and secondary commands in a CommandBarFlyout, the &quot;see more&quot; [...] button is displayed by default, and can be used to expand and collapse the secondary commands. If you'd like to keep your CommandBarFlyout in expanded mode and show the secondary commands at all times, you can use the <code>CommandBarFlyout.AlwaysExpanded</code> property.</p>
+<p>When the <code>AlwaysExpanded</code> property is set to <code>true</code>, the &quot;see more&quot; button is not shown, and the user is not able to toggle the expanded state of the control. The CommandBarFlyout will still dismiss as usual when a secondary command is clicked or the user clicks outside of the flyout.</p>
+<p>This property only has an effect if the CommandBarFlyout has secondary commands. If there are no secondary commands, the CommandBarFlyout will always be in collapsed mode.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can still collapse and expand the CommandBarFlyout programmatically by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.isopen">IsOpen</a> property even when the <code>AlwaysExpanded</code> property is set to <code>true</code>.</p>
+</div>
+<h2 id="commands-and-content">Commands and content</h2>
+<p>The CommandBarFlyout control has 2 properties you can use to add commands and content: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout.primarycommands">PrimaryCommands</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout.secondarycommands">SecondaryCommands</a>.</p>
+<p>By default, command bar items are added to the <strong>PrimaryCommands</strong> collection. These commands are shown in the command bar and are visible in both the collapsed and expanded modes. Unlike CommandBar, primary commands do not automatically overflow to the secondary commands and might be truncated.</p>
+<p>You can also add commands to the <strong>SecondaryCommands</strong> collection. Secondary commands are shown in the menu portion of the control and are visible only in the expanded mode.</p>
+<p>If there are <strong>common commands</strong> (such as Copy, Cut, Paste, Delete, Share or text selection commands) that are important to the scenario, it is recommended to add them as primary commands rather than secondary commands.</p>
+<h3 id="app-bar-buttons">App bar buttons</h3>
+<p>You can populate the PrimaryCommands and SecondaryCommands directly with <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarButton">AppBarButton</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarToggleButton">AppBarToggleButton</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarSeparator">AppBarSeparator</a> controls.</p>
+<p>The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is shown in the command bar or the overflow menu.</p>
+<ul>
+<li><strong>In Windows App SDK 1.5 and later:</strong> App bar buttons used as primary commands are shown in the command bar with both the text label and icon (if both are set).
+<pre><code class="lang-xaml">&lt;AppBarButton Icon=&quot;Copy&quot; Label=&quot;Copy&quot;/&gt;
+</code></pre>
+</li>
+<li><strong>In Windows App SDK 1.4 and earlier:</strong> App bar buttons used as primary commands are shown in the command bar with only their icon; the text label is not shown. We recommend that you use a <a href="tooltips.html">tooltip</a> to show a text description of the command, as shown here.
+<pre><code class="lang-xaml">&lt;AppBarButton Icon=&quot;Copy&quot; ToolTipService.ToolTip=&quot;Copy&quot;/&gt;
+</code></pre>
+</li>
+<li>App bar buttons used as secondary commands are shown in the menu, with both the label and icon visible.</li>
+</ul>
+<h2 id="icons">Icons</h2>
+<p>Consider providing menu item icons for:</p>
+<ul>
+<li>The most commonly used items.</li>
+<li>Menu items whose icon is standard or well known.</li>
+<li>Menu items whose icon well illustrates what the command does.</li>
+</ul>
+<p>Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren't helpful, create visual clutter, and prevent users from focusing on the important menu items.</p>
+<h3 id="other-content">Other content</h3>
+<p>You can add other controls to a command bar flyout by wrapping them in an AppBarElementContainer. This lets you add controls like <a href="buttons.html">DropDownButton</a> or <a href="buttons.html">SplitButton</a>, or add containers like <a href="buttons.html">StackPanel</a> to create more complex UI.</p>
+<p>In order to be added to the primary or secondary command collections of a command bar flyout, an element must implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement">ICommandBarElement</a> interface. <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarelementcontainer">AppBarElementContainer</a> is a wrapper that implements this interface so you can add an element to a command bar even if it doesn't implement the interface itself.</p>
+<p>Here, an AppBarElementContainer is used to add extra elements to a command bar flyout. A SplitButton is added to the primary commands to enable text alignment. A StackPanel is added to the secondary commands to allow a more complex layout for zoom controls.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>By default, elements designed for the app canvas might not look right in a command bar. When you add an element using AppBarElementContainer, there are some steps you should take to make the element match other command bar elements:</p>
+<ul>
+<li>Override the default brushes with <a href="../../develop/platform/xaml/xaml-styles.html#lightweight-styling">lightweight styling</a> to make the element's background and border match the app bar buttons.</li>
+<li>Adjust the size and position of the element.</li>
+<li>Wrap icons in a Viewbox with a Width and Height of 16px.</li>
+</ul>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This example shows only the command bar flyout UI, it does not implement any of the commands that are shown. For more info about implementing the commands, see <a href="buttons.html">Buttons</a> and <a href="../basics/commanding-basics.html">Command design basics</a>.</p>
+</div>
+<pre><code class="lang-xaml">&lt;CommandBarFlyout&gt;
+    &lt;AppBarButton Icon=&quot;Cut&quot; Label=&quot;Cut&quot; ToolTipService.ToolTip=&quot;Cut&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Copy&quot; Label=&quot;Copy&quot; ToolTipService.ToolTip=&quot;Copy&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Paste&quot; Label=&quot;Paste&quot; ToolTipService.ToolTip=&quot;Paste&quot;/&gt;
+    &lt;!-- Alignment controls --&gt;
+    &lt;AppBarElementContainer&gt;
+         &lt;SplitButton ToolTipService.ToolTip=&quot;Alignment&quot;&gt;
+            &lt;SplitButton.Resources&gt;
+                &lt;!-- Override default brushes to make the SplitButton 
+                     match other command bar elements. --&gt;
+                &lt;Style TargetType=&quot;SplitButton&quot;&gt;
+                    &lt;Setter Property=&quot;Height&quot; Value=&quot;38&quot;/&gt;
+                &lt;/Style&gt;
+                &lt;SolidColorBrush x:Key=&quot;SplitButtonBackground&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;SplitButtonBackgroundPressed&quot;
+                                 Color=&quot;{ThemeResource SystemListMediumColor}&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;SplitButtonBackgroundPointerOver&quot;
+                                 Color=&quot;{ThemeResource SystemListLowColor}&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;SplitButtonBorderBrush&quot; Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;SplitButtonBorderBrushPointerOver&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;SplitButtonBorderBrushChecked&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+            &lt;/SplitButton.Resources&gt;
+            &lt;SplitButton.Content&gt;
+                &lt;Viewbox Width=&quot;16&quot; Height=&quot;16&quot; Margin=&quot;0,2,0,0&quot;&gt;
+                    &lt;SymbolIcon Symbol=&quot;AlignLeft&quot;/&gt;
+                &lt;/Viewbox&gt;
+            &lt;/SplitButton.Content&gt;
+            &lt;SplitButton.Flyout&gt;
+                &lt;MenuFlyout&gt;
+                    &lt;MenuFlyoutItem Icon=&quot;AlignLeft&quot; Text=&quot;Align left&quot;/&gt;
+                    &lt;MenuFlyoutItem Icon=&quot;AlignCenter&quot; Text=&quot;Center&quot;/&gt;
+                    &lt;MenuFlyoutItem Icon=&quot;AlignRight&quot; Text=&quot;Align right&quot;/&gt;
+                &lt;/MenuFlyout&gt;
+            &lt;/SplitButton.Flyout&gt;
+        &lt;/SplitButton&gt;
+    &lt;/AppBarElementContainer&gt;
+    &lt;!-- end Alignment controls --&gt;
+    &lt;CommandBarFlyout.SecondaryCommands&gt;
+        &lt;!-- Zoom controls --&gt;
+        &lt;AppBarElementContainer&gt;
+            &lt;AppBarElementContainer.Resources&gt;
+                &lt;!-- Override default brushes to make the Buttons
+                     match other command bar elements. --&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackground&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackgroundPressed&quot;
+                                 Color=&quot;{ThemeResource SystemListMediumColor}&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackgroundPointerOver&quot;
+                                 Color=&quot;{ThemeResource SystemListLowColor}&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBorderBrush&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBorderBrushPointerOver&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBorderBrushChecked&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;Style TargetType=&quot;TextBlock&quot;&gt;
+                    &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot;/&gt;
+                &lt;/Style&gt;
+                &lt;Style TargetType=&quot;Button&quot;&gt;
+                    &lt;Setter Property=&quot;Height&quot; Value=&quot;40&quot;/&gt;
+                    &lt;Setter Property=&quot;Width&quot; Value=&quot;40&quot;/&gt;
+                &lt;/Style&gt;
+            &lt;/AppBarElementContainer.Resources&gt;
+            &lt;Grid Margin=&quot;12,-4&quot;&gt;
+                &lt;Grid.ColumnDefinitions&gt;
+                    &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;76&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+                &lt;/Grid.ColumnDefinitions&gt;
+                &lt;Viewbox Width=&quot;16&quot; Height=&quot;16&quot; Margin=&quot;0,2,0,0&quot;&gt;
+                    &lt;SymbolIcon Symbol=&quot;Zoom&quot;/&gt;
+                &lt;/Viewbox&gt;
+                &lt;TextBlock Text=&quot;Zoom&quot; Margin=&quot;10,0,0,0&quot; Grid.Column=&quot;1&quot;/&gt;
+                &lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Column=&quot;2&quot;&gt;
+                    &lt;Button ToolTipService.ToolTip=&quot;Zoom out&quot;&gt;
+                        &lt;Viewbox Width=&quot;16&quot; Height=&quot;16&quot;&gt;
+                            &lt;SymbolIcon Symbol=&quot;ZoomOut&quot;/&gt;
+                        &lt;/Viewbox&gt;
+                    &lt;/Button&gt;
+                    &lt;TextBlock Text=&quot;50%&quot; Width=&quot;40&quot;
+                               HorizontalTextAlignment=&quot;Center&quot;/&gt;
+                    &lt;Button ToolTipService.ToolTip=&quot;Zoom in&quot;&gt;
+                        &lt;Viewbox Width=&quot;16&quot; Height=&quot;16&quot;&gt;
+                            &lt;SymbolIcon Symbol=&quot;ZoomIn&quot;/&gt;
+                        &lt;/Viewbox&gt;
+                    &lt;/Button&gt;
+                &lt;/StackPanel&gt;
+            &lt;/Grid&gt;
+        &lt;/AppBarElementContainer&gt;
+        &lt;!-- end Zoom controls --&gt;
+        &lt;AppBarSeparator/&gt;
+        &lt;AppBarButton Label=&quot;Undo&quot; Icon=&quot;Undo&quot;/&gt;
+        &lt;AppBarButton Label=&quot;Redo&quot; Icon=&quot;Redo&quot;/&gt;
+        &lt;AppBarButton Label=&quot;Select all&quot; Icon=&quot;SelectAll&quot;/&gt;
+    &lt;/CommandBarFlyout.SecondaryCommands&gt;
+&lt;/CommandBarFlyout&gt;
+</code></pre>
+<p>Here's the collapsed command bar flyout with an open SplitButton.</p>
+<p><img src="images/command-bar-flyout-split-button-1-5.png" alt="A command bar flyout with a split button"></p>
+<p>Here's the expanded command bar flyout with custom zoom UI in the menu.</p>
+<p><img src="images/command-bar-flyout-custom-ui-1-5.png" alt="A command bar flyout with complex UI"></p>
+<h2 id="create-a-context-menu-with-secondary-commands-only">Create a context menu with secondary commands only</h2>
+<p>You can use a command bar flyout with only secondary commands to create a context menu that achieves the same look and behavior of <a href="menus.html">menu flyout</a>.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.Resources&gt;
+        &lt;!-- A command bar flyout with only secondary commands. --&gt;
+        &lt;CommandBarFlyout x:Name=&quot;ContextMenu&quot;&gt;
+            &lt;CommandBarFlyout.SecondaryCommands&gt;
+                &lt;AppBarButton Label=&quot;Copy&quot; Icon=&quot;Copy&quot;/&gt;
+                &lt;AppBarButton Label=&quot;Save&quot; Icon=&quot;Save&quot;/&gt;
+                &lt;AppBarButton Label=&quot;Print&quot; Icon=&quot;Print&quot;/&gt;
+                &lt;AppBarSeparator /&gt;
+                &lt;AppBarButton Label=&quot;Properties&quot;/&gt;
+            &lt;/CommandBarFlyout.SecondaryCommands&gt;
+        &lt;/CommandBarFlyout&gt;
+    &lt;/Grid.Resources&gt;
+
+    &lt;Image Source=&quot;Assets/image1.png&quot; Width=&quot;300&quot;
+           ContextFlyout=&quot;{x:Bind ContextMenu}&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>Here's the command bar flyout as a context menu.</p>
+<p><img src="images/context-menu-example.png" alt="A command bar flyout with only secondary commands"></p>
+<p>You can also use a CommandBarFlyout with a DropDownButton to create a standard menu.</p>
+<pre><code class="lang-xaml">&lt;CommandBarFlyout&gt;
+    &lt;AppBarButton Icon=&quot;Placeholder&quot;/&gt;
+    &lt;AppBarElementContainer&gt;
+        &lt;DropDownButton Content=&quot;Mail&quot;&gt;
+            &lt;DropDownButton.Resources&gt;
+                &lt;!-- Override default brushes to make the DropDownButton
+                     match other command bar elements. --&gt;
+                &lt;Style TargetType=&quot;DropDownButton&quot;&gt;
+                    &lt;Setter Property=&quot;Height&quot; Value=&quot;38&quot;/&gt;
+                &lt;/Style&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackground&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackgroundPressed&quot;
+                                 Color=&quot;{ThemeResource SystemListMediumColor}&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackgroundPointerOver&quot;
+                                 Color=&quot;{ThemeResource SystemListLowColor}&quot;/&gt;
+
+                &lt;SolidColorBrush x:Key=&quot;ButtonBorderBrush&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBorderBrushPointerOver&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBorderBrushChecked&quot;
+                                 Color=&quot;Transparent&quot;/&gt;
+            &lt;/DropDownButton.Resources&gt;
+            &lt;DropDownButton.Flyout&gt;
+                &lt;CommandBarFlyout Placement=&quot;BottomEdgeAlignedLeft&quot;&gt;
+                    &lt;CommandBarFlyout.SecondaryCommands&gt;
+                        &lt;AppBarButton Icon=&quot;MailReply&quot; Label=&quot;Reply&quot;/&gt;
+                        &lt;AppBarButton Icon=&quot;MailReplyAll&quot; Label=&quot;Reply all&quot;/&gt;
+                        &lt;AppBarButton Icon=&quot;MailForward&quot; Label=&quot;Forward&quot;/&gt;
+                    &lt;/CommandBarFlyout.SecondaryCommands&gt;
+                &lt;/CommandBarFlyout&gt;
+            &lt;/DropDownButton.Flyout&gt;
+        &lt;/DropDownButton&gt;
+    &lt;/AppBarElementContainer&gt;
+    &lt;AppBarButton Icon=&quot;Placeholder&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Placeholder&quot;/&gt;
+&lt;/CommandBarFlyout&gt;
+</code></pre>
+<p>Here's a drop down button menu in a command bar flyout.</p>
+<p><img src="images/command-bar-flyout-dropdown.png" alt="A command bar flyout with as a drop down button menu"></p>
+<h2 id="command-bar-flyouts-for-text-controls">Command bar flyouts for text controls</h2>
+<p>The <a href="/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout">TextCommandBarFlyout</a> is a specialized command bar flyout that contains commands for editing text. Each text control shows the TextCommandBarFlyout automatically as a context menu (right-click), or when text is selected. The text command bar flyout adapts to the text selection to only show relevant commands.</p>
+<p>Here's a text command bar flyout on text selection.</p>
+<p><img src="images/command-bar-flyout-text-selection.png" alt="A collapsed text command bar flyout"></p>
+<p>Here's an expanded text command bar flyout that shows the secondary commands.</p>
+<p><img src="images/command-bar-flyout-text-full.png" alt="An expanded text command bar flyout"></p>
+<h3 id="available-commands">Available commands</h3>
+<p>This table shows the commands that are included in a TextCommandBarFlyout, and when they are shown.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Shown...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bold</td>
+<td>when the text control is not read-only (RichEditBox only).</td>
+</tr>
+<tr>
+<td>Italic</td>
+<td>when the text control is not read-only (RichEditBox only).</td>
+</tr>
+<tr>
+<td>Underline</td>
+<td>when the text control is not read-only (RichEditBox only).</td>
+</tr>
+<tr>
+<td>Proofing</td>
+<td>when IsSpellCheckEnabled is <strong>true</strong> and misspelled text is selected.</td>
+</tr>
+<tr>
+<td>Cut</td>
+<td>when the text control is not read-only and text is selected.</td>
+</tr>
+<tr>
+<td>Copy</td>
+<td>when text is selected.</td>
+</tr>
+<tr>
+<td>Paste</td>
+<td>when the text control is not read-only and the clipboard has content.</td>
+</tr>
+<tr>
+<td>Undo</td>
+<td>when there is an action that can be undone.</td>
+</tr>
+<tr>
+<td>Select all</td>
+<td>when text can be selected.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="custom-text-command-bar-flyouts">Custom text command bar flyouts</h3>
+<p>TextCommandBarFlyout can't be customized, and is managed automatically by each text control. However, you can replace the default TextCommandBarFlyout with custom commands.</p>
+<ul>
+<li>To replace the default TextCommandBarFlyout that's shown on text selection, you can create a custom CommandBarFlyout (or other flyout type) and assign it to the <strong>SelectionFlyout</strong> property. If you set SelectionFlyout to <strong>null</strong>, no commands are shown on selection.</li>
+<li>To replace the default TextCommandBarFlyout that's shown as the context menu, assign a custom CommandBarFlyout (or other flyout type) to the <strong>ContextFlyout</strong> property on a text control. If you set ContextFlyout to <strong>null</strong>, the menu flyout shown in previous versions of the text control is shown instead of the TextCommandBarFlyout.</li>
+</ul>
+<h3 id="light-dismiss">Light dismiss</h3>
+<p>Light dismiss controls–such as menus, context menus, and other flyouts–trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode">LightDismissOverlayMode</a> property. By default, transient UIs will draw the light dismiss overlay on Xbox (<strong>Auto</strong>) but not other device families. You can choose to force the overlay to be always <strong>On</strong> or always <strong>Off</strong>.</p>
+<pre><code class="lang-xaml">&lt;CommandBarFlyout LightDismissOverlayMode=&quot;Off&quot; /&gt; &gt;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The CommandBarFlyout control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in both the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> (UWP) and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> (WinUI) namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.commandbarflyout">CommandBarFlyout class</a>, <a href="/uwp/api/windows.ui.xaml.controls.textcommandbarflyout">TextCommandBarFlyout class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbarbutton">AppBarButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbartogglebutton">AppBarToggleButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbarseparator">AppBarSeparator class</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.commandbarflyout">CommandBarFlyout class</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.textcommandbarflyout">TextCommandBarFlyout class</a></li>
+<li><a href="winui2gallery:/item/CommandBarFlyout">Open the WinUI 2 Gallery app and see the CommandBarFlyout in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:CommandBarFlyout /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/commanding-basics.html">Command design basics for Windows apps</a></li>
+<li><a href="collection-commanding.html">Contextual commanding for collections and lists</a>.</li>
+<li><a href="menus-and-context-menus.html">Menus and context menus</a></li>
+<li><a href="command-bar.html">Command bar</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CommandBar">CommandBar class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout">CommandBarFlyout class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/command-bar-flyout.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

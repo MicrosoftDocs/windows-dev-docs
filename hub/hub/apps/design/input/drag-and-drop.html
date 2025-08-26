@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Drag and drop </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Drag and drop ">
+    
+    <meta name="description" content="This article explains how to add dragging and dropping in your Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="drag-and-drop">Drag and drop</h1>
+
+<p>Drag and drop is an intuitive way to transfer data within an application or between applications on the Windows desktop. Drag and drop lets the user transfer data between applications or within an application using a standard gesture (press-hold-and-pan with the finger or press-and-pan with a mouse or a stylus).</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.xaml.uielement.candrag">CanDrag property</a>, <a href="/uwp/api/windows.ui.xaml.uielement.allowdrop">AllowDrop property</a></p>
+</blockquote>
+<p>The drag source, which is the application or area where the drag gesture is triggered, provides the data to be transferred by filling a data package object that can contain standard data formats, including text, RTF, HTML, bitmaps, storage items or custom data formats. The source also indicates the kind of operations it supports: copy, move or link. When the pointer is released, drop occurs. The drop target, which is the application or area underneath the pointer, processes the data package and returns the type of operation it performed.</p>
+<p>During drag and drop, the drag UI provides a visual indication of the type of drag-and-drop operation that's taking place. This visual feedback is initially provided by the source but can be changed by the targets as the pointer moves over them.</p>
+<p>Modern drag and drop is available on all devices that support UWP. It allows data transfer between or within any kind of application, including Classic Windows apps, although this article focuses on the XAML API for modern drag and drop. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app.</p>
+<p>Here's an overview of what you need to do to enable drag and drop in your app:</p>
+<ol>
+<li>Enable dragging on an element by setting its <strong>CanDrag</strong> property to true.</li>
+<li>Build the data package. The system handles images and text automatically, but for other content, you'll need to handle the <a href="/uwp/api/windows.ui.xaml.uielement.dragstarting"><strong>DragStarting</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.dropcompleted"><strong>DropCompleted</strong></a> events and use them to construct your own data package.</li>
+<li>Enable dropping by setting the <strong>AllowDrop</strong> property to <strong>true</strong> on all the elements that can receive dropped content.</li>
+<li>Handle the <strong>DragOver</strong> event to let the system know what type of drag operations the element can receive.</li>
+<li>Process the <strong>Drop</strong> event to receive the dropped content.</li>
+</ol>
+<h2 id="enable-dragging">Enable dragging</h2>
+<p>To enable dragging on an element, set its <a href="/uwp/api/windows.ui.xaml.uielement.candrag"><strong>CanDrag</strong></a> property to <strong>true</strong>. This make the element—and the elements it contains, in the case of collections like ListView—draggable.</p>
+<p>Be specific about what's draggable. Users won't want to drag everything in your app, only certain items, such as images or text.</p>
+<p>Here's how to set <a href="/uwp/api/windows.ui.xaml.uielement.candrag"><strong>CanDrag</strong></a>.</p>
+<div class="lang-xml">
+</div>
+<p>You don't need to do any other work to allow dragging, unless you want to customize the UI (which is covered later in this article). Dropping requires a few more steps.</p>
+<h2 id="construct-a-data-package">Construct a data package</h2>
+<p>In most cases, the system will construct a data package for you. The system automatically handles:</p>
+<ul>
+<li>Images</li>
+<li>Text</li>
+</ul>
+<p>For other content, you'll need to handle the <a href="/uwp/api/windows.ui.xaml.uielement.dragstarting"><strong>DragStarting</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.dropcompleted"><strong>DropCompleted</strong></a> events and use them to construct your own <a href="/uwp/api/windows.applicationmodel.datatransfer.datapackage">DataPackage</a>.</p>
+<h2 id="enable-dropping">Enable dropping</h2>
+<p>The following markup shows how the <a href="/uwp/api/windows.ui.xaml.uielement.allowdrop"><strong>AllowDrop</strong></a> property can be used to specify that an area of the app is a valid drop target for a dragged item (the specified area must not have a null background, it must be able to receive pointer input, and the item cannot be dropped anywhere other than the specified area).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Typically, a UI element has a null background by default. If you want users to be able to drop an item anywhere within your app, the app background cannot be null (set <code>Background=&quot;Transparent&quot;</code> if the background should not be visible).</p>
+</div>
+<div class="lang-xml">
+</div>
+<h2 id="handle-the-dragover-event">Handle the DragOver event</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.uielement.dragover"><strong>DragOver</strong></a> event fires when a user has dragged an item over your app, but not yet dropped it. In this handler, you need to specify what kind of operations your app supports by using the <a href="/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation"><strong>AcceptedOperation</strong></a> property. Copy is the most common.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="process-the-drop-event">Process the Drop event</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.uielement.drop"><strong>Drop</strong></a> event occurs when the user releases items in a valid drop area. Process them by using the <a href="/uwp/api/windows.ui.xaml.drageventargs.dataview"><strong>DataView</strong></a> property.</p>
+<p>For simplicity in the example below, we'll assume the user dropped a single photo and access it directly. In reality, users can drop multiple items of varying formats simultaneously. Your app should handle this possibility by checking what types of files were dropped and how many there are, and process each accordingly. You should also consider notifying the user if they're trying to do something your app doesn't support.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="customize-the-ui">Customize the UI</h2>
+<p>The system provides a default UI for dragging and dropping. However, you can also choose to customize various parts of the UI by setting custom captions and glyphs, or by opting not to show a UI at all. To customize the UI, use the <a href="/uwp/api/windows.ui.xaml.drageventargs.draguioverride"><strong>DragEventArgs.DragUIOverride</strong></a> property.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="open-a-context-menu-on-an-item-you-can-drag-with-touch">Open a context menu on an item you can drag with touch</h2>
+<p>When using touch, dragging a <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> and opening its context menu share similar touch gestures; each begins with a press and hold. Here's how the system disambiguates between the two actions for elements in your app that support both:</p>
+<ul>
+<li>If a user presses and holds an item and begins dragging it within 500 milliseconds, the item is dragged and the context menu is not shown.</li>
+<li>If the user presses and holds but does not drag within 500 milliseconds, the context menu is opened.</li>
+<li>After the context menu is open, if the user tries to drag the item (without lifting their finger), the context menu is dismissed and the drag will start.</li>
+</ul>
+<h2 id="designate-an-item-in-a-listview-or-gridview-as-a-folder">Designate an item in a ListView or GridView as a folder</h2>
+<p>You can specify a <a href="/uwp/api/Windows.UI.Xaml.Controls.ListViewItem"><strong>ListViewItem</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.Controls.GridViewItem"><strong>GridViewItem</strong></a> as a folder. This is particularly useful for TreeView and File Explorer scenarios. To do so, explicitly set the <a href="/uwp/api/windows.ui.xaml.uielement.allowdrop"><strong>AllowDrop</strong></a> property to <strong>True</strong> on that item.</p>
+<p>The system will automatically show the appropriate animations for dropping into a folder versus a non-folder item. Your app code must continue to handle the <a href="/uwp/api/windows.ui.xaml.uielement.drop"><strong>Drop</strong></a> event on the folder item (as well as on the non-folder item) in order to update the data source and add the dropped item to the target folder.</p>
+<h2 id="enable-drag-and-drop-reordering-within-listviews">Enable drag and drop reordering within ListViews</h2>
+<p><a href="/uwp/api/Windows.UI.Xaml.Controls.ListView"><strong>ListView</strong></a>s support drag-based reordering out of the box, using an API very similar to the <strong>CanDrop</strong> API described in this article. At minimum, you add the <strong>AllowDrop</strong> and <strong>CanReorderItems</strong> properties.</p>
+<p>See <a href="/uwp/api/windows.ui.xaml.controls.listviewbase.canreorderitems"><strong>ListViewBase.CanReorderItems</strong></a> for more information.</p>
+<h2 id="implementing-custom-drag-and-drop">Implementing custom drag and drop</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.uielement">UIElement</a> class does most of the work of implementing drag-and-drop for you. But if you want, you can implement your own version by using the APIs below.</p>
+<table>
+<thead>
+<tr>
+<th>Functionality</th>
+<th>WinAppSDK API <br> Microsoft.UI.Input.DragDrop namespace</th>
+<th>UWP API <br> Windows.Applicationmodel.DataTransfer.DragDrop.Core namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DragPrimitive</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation">DragOperation</a></td>
+<td><a href="/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation">CoreDragOperation</a></td>
+</tr>
+<tr>
+<td>Create a data package</td>
+<td><a href="/uwp/api/windows.applicationmodel.datatransfer.datapackage">DataPackage</a></td>
+<td>same</td>
+</tr>
+<tr>
+<td>Hand off drag to the shell</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation">DragOperation.StartAsync</a></td>
+<td><a href="/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation">CoreDragOperation.StartAsync</a></td>
+</tr>
+<tr>
+<td>Receive drop from the shell</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragdropmanager">DragDropManager.TargetRequested</a> <br><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation">ICoreDropOperationTarget</a></td>
+<td><a href="/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager">CoreDragDropManager.TargetRequested</a><br><a href="/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget">ICoreDropOperationTarget</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="index.html">App-to-app communication</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.allowdrop">AllowDrop</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.candrag">CanDrag</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.dragover">DragOver</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.drageventargs.acceptedoperation">AcceptedOperation</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.drageventargs.dataview">DataView</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.drageventargs.draguioverride">DragUIOverride</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.drop">Drop</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource">IsDragSource</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.dragstarting"><strong>DragStarting</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.dropcompleted"><strong>DropCompleted</strong></a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/drag-and-drop.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Contact card </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Contact card ">
+    
+    <meta name="description" content="Learn how to use contact cards to let users display and edit contact information, such as names, phone numbers, and addresses.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="contact-card">Contact card</h1>
+
+<p>The contact card displays contact information, such as the name, phone number, and address, for a <a href="/uwp/api/Windows.ApplicationModel.Contacts.Contact">Contact</a> (the mechanism Windows uses to represent people and businesses).  The contact card also lets the user edit contact info. You can choose to display a compact contact card, or a full contact card that contains additional information.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard">ShowContactCard method</a>,   <a href="/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard">ShowFullContactCard method</a>,  <a href="/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported">IsShowContactCardSupported method</a>,  <a href="/uwp/api/Windows.ApplicationModel.Contacts.Contact">Contact class</a></p>
+</blockquote>
+<p>There are two ways to display the contact card:</p>
+<ul>
+<li>As a standard contact card that appears in a flyout that is light-dismissable--the contact card disappears when the user clicks outside of it.</li>
+<li>As a full contact card that takes up more space and is not light-dismissable--the user must click <strong>close</strong> to close it.</li>
+</ul>
+<figure>
+    <img src="images/contact-card/contact-card-standard.png" alt="Screenshot showing a standard contact card.">
+    <figcaption>The standard contact card</figcaption>
+</figure>
+<figure>
+    <img src="images/contact-card/contact-card-full.png" alt="Screenshot showing a full contact card.">
+    <figcaption>The full contact card</figcaption>
+</figure>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use the contact card when you want to display contact info for a contact. If you only want to display the contact's name and picture, use the <a href="person-picture.html">person picture control</a>.</p>
+<!-- TODO: Add examples back when the contact card has been added. -->
+<!-- ## Examples
+
+<table>
+<th align="left">WinUI 2 Gallery<th>
+<tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></img></td>
+<td>
+    <p>If you have the <strong style="font-weight: semi-bold">WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Button">open the app and see the Button in action</a>.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table> -->
+<h2 id="show-a-standard-contact-card">Show a standard contact card</h2>
+<ol>
+<li><p>Typically, you show a contact card because the user clicked something: a button or perhaps the <a href="person-picture.html">person picture control</a>. We don't want to hide the element. To avoid hiding it, we need to create a <a href="/uwp/api/windows.foundation.rect">Rect</a> that describes the location and size of the element.</p>
+<p>Let's create a utility function that does that for us--we'll use it later.</p>
+<pre><code class="lang-csharp">// Gets the rectangle of the element 
+public static Rect GetElementRectHelper(FrameworkElement element) 
+{ 
+    // Passing &quot;null&quot; means set to root element. 
+    GeneralTransform elementTransform = element.TransformToVisual(null); 
+    Rect rect = elementTransform.TransformBounds(new Rect(0, 0, element.ActualWidth, element.ActualHeight)); 
+    return rect; 
+} 
+
+</code></pre>
+</li>
+<li><p>Determine whether you can display the contact card by calling the <a href="/uwp/api/windows.applicationmodel.contacts.contactmanager.IsShowContactCardSupported">ContactManager.IsShowContactCardSupported</a> method. If it's not supported, display an error message. (This example assumes that you'll be showing the contact card in response to a click event .)</p>
+<pre><code class="lang-csharp">// Contact and Contact Managers are existing classes 
+private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
+{ 
+    if (ContactManager.IsShowContactCardSupported()) 
+    { 
+
+</code></pre>
+</li>
+<li><p>Use the utility function you created in step 1 to get the bounds of the control that fired the event (so we don't cover it up with the contact card).</p>
+<pre><code class="lang-csharp">        Rect selectionRect = GetElementRect((FrameworkElement)sender); 
+</code></pre>
+</li>
+<li><p>Get the <a href="/uwp/api/Windows.ApplicationModel.Contacts.Contact">Contact</a> object you want to display. This example just creates a simple contact, but your code should retrieve an actual contact.</p>
+<pre><code class="lang-csharp">            // Retrieve the contact to display
+            var contact = new Contact(); 
+            var email = new ContactEmail(); 
+            email.Address = &quot;jsmith@contoso.com&quot;; 
+            contact.Emails.Add(email); 
+</code></pre>
+</li>
+<li><p>Show the contact card by calling the  <a href="/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard">ShowContactCard</a> method.</p>
+<pre><code class="lang-csharp">        ContactManager.ShowFullContactCard(
+            contact, selectionRect, Placement.Default); 
+    } 
+} 
+</code></pre>
+</li>
+</ol>
+<p>Here's the complete code example:</p>
+<pre><code class="lang-csharp">// Gets the rectangle of the element 
+public static Rect GetElementRect(FrameworkElement element) 
+{ 
+    // Passing &quot;null&quot; means set to root element. 
+    GeneralTransform elementTransform = element.TransformToVisual(null); 
+    Rect rect = elementTransform.TransformBounds(new Rect(0, 0, element.ActualWidth, element.ActualHeight)); 
+    return rect; 
+} 
+ 
+// Display a contact in response to an event
+private void OnUserClickShowContactCard(object sender, RoutedEventArgs e) 
+{ 
+    if (ContactManager.IsShowContactCardSupported()) 
+    { 
+        Rect selectionRect = GetElementRect((FrameworkElement)sender);
+
+        // Retrieve the contact to display
+        var contact = new Contact(); 
+        var email = new ContactEmail(); 
+        email.Address = &quot;jsmith@contoso.com&quot;; 
+        contact.Emails.Add(email); 
+    
+        ContactManager.ShowContactCard(
+            contact, selectionRect, Placement.Default); 
+    } 
+} 
+
+</code></pre>
+<h2 id="show-a-full-contact-card">Show a full contact card</h2>
+<p>To show the full contact card, call the <a href="/uwp/api/windows.applicationmodel.contacts.contactmanager.showfullcontactcard">ShowFullContactCard</a> method instead of <a href="/uwp/api/windows.applicationmodel.contacts.contactmanager.showcontactcard">ShowContactCard</a>.</p>
+<pre><code class="lang-csharp">private void onUserClickShowContactCard() 
+{ 
+   
+    Contact contact = new Contact(); 
+    ContactEmail email = new ContactEmail(); 
+    email.Address = &quot;jsmith@hotmail.com&quot;; 
+    contact.Emails.Add(email); 
+ 
+ 
+    // Setting up contact options.     
+    FullContactCardOptions fullContactCardOptions = new FullContactCardOptions(); 
+ 
+    // Display full contact card on mouse click.   
+    // Launch the People’s App with full contact card  
+    fullContactCardOptions.DesiredRemainingView = ViewSizePreference.UseLess; 
+     
+ 
+    // Shows the full contact card by launching the People App. 
+    ContactManager.ShowFullContactCard(contact, fullContactCardOptions); 
+} 
+
+</code></pre>
+<h2 id="retrieving-real-contacts">Retrieving &quot;real&quot; contacts</h2>
+<p>The examples in this article create a simple contact. In a real app, you'd probably want to retrieve an existing contact. For instructions, see the <a href="/windows/uwp/contacts-and-calendar/index">Contacts and calendar article</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/uwp/contacts-and-calendar/index">Contacts and calendar</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards">Contact cards sample</a></li>
+<li><a href="/windows/uwp/controls-and-patterns/person-picture/">People picture control</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/contact-card.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

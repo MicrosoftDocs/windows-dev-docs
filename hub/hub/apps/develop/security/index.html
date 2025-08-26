@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Security and identity </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Security and identity ">
+    
+    <meta name="description" content="This article provides an index of development features that are related to security and identity scenarios in Windows apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="security-and-identity">Security and identity</h1>
+
+<p>This article provides an index of development features that are related to scenarios involving security and identity in Windows apps.</p>
+<h2 id="windows-os-features">Windows OS features</h2>
+<p>Windows provides a wide variety of APIs related to security and identity scenarios for apps. These features are available via a combination of Windows App SDK, Windows Runtime (WinRT), and Win32 (C++ and COM) APIs provided by the <a href="https://developer.microsoft.com/windows/downloads/windows-sdk">Windows SDK</a>.</p>
+<h3 id="windows-app-sdk-apis">Windows App SDK APIs</h3>
+<p>The <a href="../../windows-app-sdk/index.html">Windows App SDK</a> provides APIs related to OAuth 2.0 authorization flows. There are also a few helper APIs in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.security.accesscontrol">Microsoft.Windows.Security.AccessControl</a> namespace. These APIs are related to named object sharing between packaged apps and Win32 applications.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="oauth2.html">Implement OAuth 2.0 functionality in Windows apps</a></td>
+<td>The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth 2.0 authentication in Windows apps. This article describes how to implement OAuth 2.0 with the Windows App SDK.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="winrt-apis">WinRT APIs</h3>
+<p>The following articles provide information about features available via WinRT APIs provided by the Windows SDK.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/uwp/security">Security</a></td>
+<td>Learn about the breadth of security features for Windows apps.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/security/authentication-and-user-identity">Authentication and user identity</a></td>
+<td>Windows apps have several options for user authentication, ranging from simple single sign-on (SSO) using Web authentication broker to highly secure two-factor authentication.</td>
+</tr>
+<tr>
+<td><a href="credential-locker.html">Credential locker</a></td>
+<td>This article describes how Windows apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/security/cryptography">Cryptography</a></td>
+<td>Learn about cryptography features available to Windows apps.</td>
+</tr>
+<tr>
+<td><a href="fingerprint-biometrics.html">Fingerprint biometrics</a></td>
+<td>This article explains how to add fingerprint biometrics to your Windows app, including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app.</td>
+</tr>
+<tr>
+<td><a href="share-certificates.html">Share certificates between apps</a></td>
+<td>This article shows how you can authenticate multiple Windows apps using the same certificate, and how you can provide a method for users to import a certificate that was provided for access to secured web services.</td>
+</tr>
+<tr>
+<td><a href="smart-cards.html">Smart cards</a></td>
+<td>This topic explains how packaged Windows apps can use smart cards to connect users to secure network services.</td>
+</tr>
+<tr>
+<td><a href="windows-hello.html">Windows Hello</a></td>
+<td>This article describes the Windows Hello technology and discusses how developers can implement this technology to protect their apps and backend services. It highlights specific capabilities of Windows Hello that help mitigate threats from conventional credentials and provides guidance about designing and deploying these technologies as part of your packaged Windows apps.</td>
+</tr>
+<tr>
+<td><a href="windows-hello-login.html">Create a Windows Hello login app</a></td>
+<td>Part 1 of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems.</td>
+</tr>
+<tr>
+<td><a href="windows-hello-auth-service.html">Create a Microsoft Passport login service</a></td>
+<td>Part 2 of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in packaged Windows apps.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="win32-c-and-com-apis">Win32 (C++ and COM) APIs</h3>
+<p>The following articles provide information about features available via Win32 (C++ and COM) APIs provided by the Windows SDK.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/win32/security">Security and identity</a></td>
+<td>Learn about the breadth of security features available to Windows apps via Win32 APIs.</td>
+</tr>
+<tr>
+<td><a href="/windows/win32/secauthn/authentication-portal">Authentication</a></td>
+<td>Learn about authentication features available via Win32 APIs.</td>
+</tr>
+<tr>
+<td><a href="/windows/win32/seccng/cng-portal">Cryptography</a></td>
+<td>Learn about cryptography features available via Win32 APIs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="net-features">.NET features</h2>
+<p>The .NET SDK also provides APIs related to security and identity scenarios for WPF and Windows Forms apps. The security and cryptography APIs in .NET can also be used in C# WinUI apps.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/dotnet/standard/security/">Security in .NET</a></td>
+<td>Learn about security concepts and features for all .NET apps.</td>
+</tr>
+<tr>
+<td><a href="/dotnet/desktop/wpf/security-wpf">Security (WPF)</a></td>
+<td>Learn about security concepts and features for WPF apps.</td>
+</tr>
+<tr>
+<td><a href="/dotnet/desktop/winforms/windows-forms-security">Windows Forms Security</a></td>
+<td>Learn about security concepts and features for Windows Forms apps.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-features">Other features</h2>
+<p>The following articles provide information about features related to security and identity scenarios with passkeys for Windows apps.</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="intro.html">Intro to passkeys</a></td>
+<td>Passkeys are simpler, stronger, passwordless sign-ins.</td>
+</tr>
+<tr>
+<td><a href="implement.html">Implement passkeys</a></td>
+<td>Describes how to implement passkey sign-ins across online, enterprise, and government applications, and for payments.</td>
+</tr>
+<tr>
+<td><a href="design.html">Design guidelines for passkeys</a></td>
+<td>There are 14 design patterns for passkeys. You can get started with two essential patterns, and then add optional patterns to your passkeys deployment based on your unique business needs.</td>
+</tr>
+<tr>
+<td><a href="use-cases.html">Use cases for passkeys</a></td>
+<td>This topic describes some use cases for passkeys.</td>
+</tr>
+<tr>
+<td><a href="tools-libraries.html">Tools and libraries for passkeys</a></td>
+<td>This topic contains info about tools and libraries to help you implement passkeys.</td>
+</tr>
+<tr>
+<td><a href="reference.html">Reference for passkeys</a></td>
+<td>This topic offers some reference info, demos, and examples.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="../app-lifecycle-and-system-services.html">App lifecycle and system services</a></li>
+<li><a href="../index.html">Develop Windows desktop apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

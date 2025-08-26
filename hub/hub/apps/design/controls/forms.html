@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Forms </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Forms ">
+    
+    <meta name="description" content="Learn the guidelines for designing and creating XAML layouts for forms in a Universal Windows Platform (UWP) app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="forms">Forms</h1>
+
+<p>A form is a group of controls that collect and submit data from users. Forms are typically used for settings pages, surveys, creating accounts, and much more.</p>
+<p>This article discusses design guidelines for creating XAML layouts for forms.</p>
+<p><img src="images/pivot-header.png" alt="Example of form"></p>
+<h2 id="when-should-you-use-a-form">When should you use a form?</h2>
+<p>A form is a dedicated page for collecting data inputs that are clearly related to each other. You should use a form when you need to explicitly collect data from a user. You might create a form for a user to:</p>
+<ul>
+<li>Log into an account</li>
+<li>Sign up for an account</li>
+<li>Change app settings, such as privacy or display options</li>
+<li>Take a survey</li>
+<li>Purchase an item</li>
+<li>Give feedback</li>
+</ul>
+<h2 id="types-of-forms">Types of forms</h2>
+<p>When thinking about how user input is submitted and displayed, there are two types of forms:</p>
+<h3 id="1-instantly-updating">1. Instantly updating</h3>
+<p><img src="images/control-examples/toggle-switch-news.png" alt="settings page"></p>
+<p>Use an instantly updating form when you want users to immediately see the results of changing the values in the form. For example, in settings pages, the current selections are displayed, and any changes made to the selections are applied immediately. To acknowledge the changes in your app, you will need to <a href="controls-and-events-intro.html">add an event handler</a> to each input control. If a user changes an input control, then your app can respond appropriately.</p>
+<h3 id="2-submitting-with-button">2. Submitting with button</h3>
+<p>The other type of form allows the user to choose when to submit data with a click of a button.</p>
+<p><img src="images/calendar-form.png" alt="calendar add new event page"></p>
+<p>This type of form gives the user flexibility in responding. Typically, this type of form contains more free form input fields, and thus receives a greater variety of responses. To ensure valid user input and properly formatted data upon submission, consider the following recommendations:</p>
+<ul>
+<li>Make it impossible to submit invalid information by using the correct control (i.e., use a CalendarDatePicker rather than a TextBox for calendar dates). See more on selecting the appropriate input controls in your form in the Input Controls section later.</li>
+<li>When using TextBox controls, provide users a hint of the desired input format with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox.PlaceholderText">PlaceholderText</a> property.</li>
+<li>Provide users with the appropriate on-screen keyboard by stating the expected input of a control with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.inputscope">InputScope</a> property.</li>
+<li>Mark required input with an asterisk * on the label.</li>
+<li>Disable the submit button until all required information is filled in.</li>
+<li>If there is invalid data upon submission, mark the controls with invalid input with highlighted fields or borders, and require the user to resubmit the form.</li>
+<li>For other errors, such as failed network connection, make sure to display an appropriate error message to the user.</li>
+</ul>
+<h2 id="layout">Layout</h2>
+<p>To facilitate the user experience and ensure that users are able to enter the correct input, consider the following recommendations for designing layouts for forms.</p>
+<h3 id="labels">Labels</h3>
+<p><a href="labels.html">Labels</a> should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock">TextBlock</a> instead.</p>
+<p>To <a href="../accessibility/accessibility.html">design for accessibility</a>, label all individual and groups of controls for clarity for both human and screen readers.</p>
+<p>For font styles, use the default <a href="../style/typography.md">Windows type ramp</a>. Use <code>TitleTextBlockStyle</code> for page titles, <code>SubtitleTextBlockStyle</code> for group headings, and <code>BodyTextBlockStyle</code> for control labels.</p>
+<div class="mx-responsive-img">
+<table>
+<tr><th>Do</th><th>Don't</th></tr>
+<tr>
+<td><img src="images/forms-shortform1col.png" alt="form with top labels"></td>
+<td><img src="images/forms-leftlabel-donot1.png" alt="form with left labels don't"></td>
+</tr>
+</table>
+</div>
+<h3 id="spacing">Spacing</h3>
+<p>To visually separate groups of controls from each other, use <a href="../layout/alignment-margin-padding.html">alignment, margins, and padding</a>. Individual input controls are 80px in height and should be spaced 24px apart. Groups of input controls should be spaced 48px apart.</p>
+<p><img src="images/forms-groups.png" alt="forms groups"></p>
+<h3 id="columns">Columns</h3>
+<p>Creating columns can reduce unnecessary white space in forms, especially with larger screen sizes. However, if you would like to create a multi-column form, the number of columns should depend on the number of input controls on the page and the screen size of the app window. Rather than overwhelm the screen with numerous input controls, consider creating multiple pages for your form.</p>
+<div class="mx-responsive-img">
+<table>
+<tr><th>Do</th><th>Don't</th></tr>
+<tr>
+<td><img src="images/forms-2cols.png" alt="form with 2 columns"></td>
+<td><img src="images/forms-2cols-bad.png" alt="form with 2 bad columns"></td>
+</tr>
+<tr><td><img src="images/forms-3cols.png" alt="form with 3 columns"></td></tr>
+</table>
+</div>
+<h3 id="responsive-layout">Responsive layout</h3>
+<p>Forms should resize as the screen or window size changes, so users don't overlook any input fields. For more information, see <a href="../layout/responsive-design.html">responsive design techniques</a>. For example, you might want to keep specific regions of the form always in view, no matter the screen size.</p>
+<p><img src="images/forms-focus2.png" alt="forms focus"></p>
+<h3 id="tab-stops">Tab stops</h3>
+<p>Users can use the keyboard to navigate controls with <a href="../input/keyboard-interactions.html#tab-stops">tab stops</a>. By default, the tab order of controls reflects the order in which they are created in XAML. To override the default behavior, change the <strong>IsTabStop</strong> or <strong>TabIndex</strong> properties of the control.</p>
+<p><img src="images/forms-focus1.png" alt="tab focus on control in form"></p>
+<h2 id="input-controls">Input controls</h2>
+<p>Input controls are the UI elements that allow users to enter information into forms. Some common controls that can be added to forms are listed below, as well as information about when to use them.</p>
+<h3 id="text-input">Text input</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="text-box.html">TextBox</a></td>
+<td>Capture one or multiple lines of text</td>
+<td>Names, free form responses or feedback</td>
+</tr>
+<tr>
+<td><a href="password-box.html">PasswordBox</a></td>
+<td>Collect private data by concealing the characters</td>
+<td>Passwords, Social Security Numbers (SSN), PINs, credit card information</td>
+</tr>
+<tr>
+<td><a href="auto-suggest-box.html">AutoSuggestBox</a></td>
+<td>Show users a list of suggestions from a corresponding set of data as they type</td>
+<td>Database search, mail to: line, previous queries</td>
+</tr>
+<tr>
+<td><a href="rich-edit-box.html">RichEditBox</a></td>
+<td>Edit text files with formatted text, hyperlinks, and images</td>
+<td>Upload file, preview, and edit in app</td>
+</tr>
+</tbody>
+</table>
+<h3 id="selection">Selection</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="checkbox.html">CheckBox</a></td>
+<td>Select or deselect one or more action items</td>
+<td>Agree to terms and conditions, add optional items, select all that apply</td>
+</tr>
+<tr>
+<td><a href="radio-button.html">RadioButton</a></td>
+<td>Select one option from two or more choices</td>
+<td>Pick type, shipping method, etc.</td>
+</tr>
+<tr>
+<td><a href="toggles.html">ToggleSwitch</a></td>
+<td>Choose one of two mutually exclusive options</td>
+<td>On/off</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong>: If there are five or more selection items, use a list control.</p>
+</blockquote>
+<h3 id="lists">Lists</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="combo-box.html">ComboBox</a></td>
+<td>Start in compact state and expand to show list of selectable items</td>
+<td>Select from a long list of items, such as states or countries/regions</td>
+</tr>
+<tr>
+<td><a href="lists.html#list-view">ListView</a></td>
+<td>Categorize items and assign group headers, drag and drop items, curate content, and reorder items</td>
+<td>Rank options</td>
+</tr>
+<tr>
+<td><a href="lists.html#grid-view">GridView</a></td>
+<td>Arrange and browse image-based collections</td>
+<td>Pick a photo, color, display theme</td>
+</tr>
+</tbody>
+</table>
+<h3 id="numeric-input">Numeric input</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Use</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="slider.html">Slider</a></td>
+<td>Select a number from a range of contiguous numerical values</td>
+<td>Percentages, volume, playback speed</td>
+</tr>
+<tr>
+<td><a href="rating.html">Rating</a></td>
+<td>Rate with stars</td>
+<td>Customer feedback</td>
+</tr>
+</tbody>
+</table>
+<h3 id="date-and-time">Date and Time</h3>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="calendar-view.html">CalendarView</a></td>
+<td>Pick a single date or a range of dates from an always visible calendar</td>
+</tr>
+<tr>
+<td><a href="calendar-date-picker.html">CalendarDatePicker</a></td>
+<td>Pick a single date from a contextual calendar</td>
+</tr>
+<tr>
+<td><a href="date-picker.html">DatePicker</a></td>
+<td>Pick a single localized date when contextual info isn't important</td>
+</tr>
+<tr>
+<td><a href="time-picker.html">TimePicker</a></td>
+<td>Pick a single time value</td>
+</tr>
+</tbody>
+</table>
+<h3 id="additional-controls">Additional Controls</h3>
+<p>For a complete list of UWP controls, see <a href="index.html">index of controls by function</a>.</p>
+<p>For more complex and custom UI controls, look at resources available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
+<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>.</p>
+<h2 id="one-column-form-example">One column form example</h2>
+<p>This example uses an Acrylic <a href="list-details.html">list/detail</a> <a href="lists.html">list view</a> and <a href="navigationview.html">NavigationView</a> control.
+<img src="images/form-example-2.png" alt="Screenshot of another form example"></p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;TextBlock Text=&quot;New Customer&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot;/&gt;
+    &lt;Button Height=&quot;100&quot; Width=&quot;100&quot; Background=&quot;LightGray&quot; Content=&quot;Add photo&quot; Margin=&quot;0,24&quot; Click=&quot;AddPhotoButton_Click&quot;/&gt;
+    &lt;TextBox x:Name=&quot;Name&quot; Header= &quot;Name&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;32&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;PersonalFullName&quot;/&gt;
+    &lt;TextBox x:Name=&quot;PhoneNumber&quot; Header=&quot;Phone Number&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;15&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;TelephoneNumber&quot; /&gt;
+    &lt;TextBox x:Name=&quot;Email&quot; Header=&quot;Email&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;50&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;EmailNameOrAddress&quot; /&gt;
+    &lt;TextBox x:Name=&quot;Address&quot; Header=&quot;Address&quot; PlaceholderText=&quot;Address&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;50&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;EmailNameOrAddress&quot; /&gt;
+    &lt;TextBox x:Name=&quot;Address2&quot; Margin=&quot;0,24,0,0&quot; PlaceholderText=&quot;Address 2&quot; MaxLength=&quot;50&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;EmailNameOrAddress&quot; /&gt;
+    &lt;RelativePanel&gt;
+        &lt;TextBox x:Name=&quot;City&quot; PlaceholderText=&quot;City&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;50&quot; Width=&quot;200&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;EmailNameOrAddress&quot; /&gt;
+        &lt;ComboBox x:Name=&quot;State&quot; PlaceholderText=&quot;State&quot; Margin=&quot;24,24,0,0&quot;  Width=&quot;100&quot; RelativePanel.RightOf=&quot;City&quot;&gt;
+             &lt;x:String&gt;WA&lt;/x:String&gt;
+        &lt;/ComboBox&gt;
+    &lt;/RelativePanel&gt;
+    &lt;TextBox x:Name=&quot;ZipCode&quot; PlaceholderText=&quot;Zip Code&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;6&quot; Width=&quot;100&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;Number&quot; /&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+        &lt;Button Content=&quot;Save&quot; Margin=&quot;0,24&quot; Click=&quot;SaveButton_Click&quot;/&gt;
+        &lt;Button Content=&quot;Cancel&quot; Margin=&quot;24&quot; Click=&quot;CancelButton_Click&quot;/&gt;
+    &lt;/StackPanel&gt;  
+&lt;/StackPanel&gt;
+</code></pre>
+<h2 id="two-column-form-example">Two column form example</h2>
+<p>This example uses the <a href="pivot.html">Pivot</a> control, <a href="../style/acrylic.html">Acrylic</a> background, and <a href="command-bar.html">CommandBar</a> in addition to input controls.
+<img src="images/form-example.png" alt="Screenshot of form example"></p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Pivot Background=&quot;{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}&quot; &gt;
+        &lt;Pivot.TitleTemplate&gt;
+            &lt;DataTemplate&gt;
+                &lt;Grid&gt;
+                    &lt;TextBlock Text=&quot;Company Name&quot; Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot;/&gt;
+                &lt;/Grid&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/Pivot.TitleTemplate&gt;
+        &lt;PivotItem Header=&quot;Orders&quot; Margin=&quot;0&quot;/&gt;    
+        &lt;PivotItem Header=&quot;Customers&quot; Margin=&quot;0&quot;&gt;
+            &lt;!--Form Example--&gt;
+            &lt;Grid Background=&quot;White&quot;&gt;
+                &lt;RelativePanel&gt;
+                    &lt;StackPanel x:Name=&quot;Customer&quot; Margin=&quot;20&quot;&gt;
+                        &lt;TextBox x:Name=&quot;CustomerName&quot; Header= &quot;Customer Name&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;320&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;PersonalFullName&quot;/&gt;
+                        &lt;TextBox x:Name=&quot;CustomerPhoneNumber&quot; Header=&quot;Phone Number&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;50&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;TelephoneNumber&quot; /&gt;
+                        &lt;TextBox x:Name=&quot;Address&quot; Header=&quot;Address&quot; PlaceholderText=&quot;Address&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;50&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;AlphanumericFullWidth&quot; /&gt;
+                        &lt;TextBox x:Name=&quot;Address2&quot; Margin=&quot;0,24,0,0&quot; PlaceholderText=&quot;Address 2&quot; MaxLength=&quot;50&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;AlphanumericFullWidth&quot; /&gt;
+                        &lt;RelativePanel&gt;
+                            &lt;TextBox x:Name=&quot;City&quot; PlaceholderText=&quot;City&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;50&quot; Width=&quot;200&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;Text&quot; /&gt;
+                            &lt;ComboBox x:Name=&quot;State&quot; PlaceholderText=&quot;State&quot; Margin=&quot;24,24,0,0&quot;  Width=&quot;100&quot; RelativePanel.RightOf=&quot;City&quot;&gt;
+                                &lt;x:String&gt;WA&lt;/x:String&gt;
+                            &lt;/ComboBox&gt;
+                        &lt;/RelativePanel&gt;
+                        &lt;TextBox x:Name=&quot;ZipCode&quot; PlaceholderText=&quot;Zip Code&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;6&quot; Width=&quot;100&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;Number&quot; /&gt;
+                    &lt;/StackPanel&gt;
+                    &lt;StackPanel x:Name=&quot;Associate&quot; Margin=&quot;20&quot; RelativePanel.RightOf=&quot;Customer&quot;&gt;
+                        &lt;TextBox x:Name=&quot;AssociateName&quot; Header= &quot;Associate&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;320&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;PersonalFullName&quot;/&gt;
+                        &lt;TextBox x:Name=&quot;AssociatePhoneNumber&quot; Header=&quot;Phone Number&quot; Margin=&quot;0,24,0,0&quot; MaxLength=&quot;50&quot; Width=&quot;400&quot; HorizontalAlignment=&quot;Left&quot; InputScope=&quot;TelephoneNumber&quot; /&gt;
+                        &lt;DatePicker x:Name=&quot;TargetInstallDate&quot; Header=&quot;Target install Date&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;0,24,0,0&quot;&gt;&lt;/DatePicker&gt;
+                        &lt;TimePicker x:Name=&quot;InstallTime&quot; Header=&quot;Install Time&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;0,24,0,0&quot;&gt;&lt;/TimePicker&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/RelativePanel&gt;
+            &lt;/Grid&gt;
+        &lt;/PivotItem&gt;
+        &lt;PivotItem Header=&quot;Invoices&quot;/&gt;
+        &lt;PivotItem Header=&quot;Stock&quot;/&gt;
+        &lt;Pivot.RightHeader&gt;
+            &lt;CommandBar OverflowButtonVisibility=&quot;Collapsed&quot; Background=&quot;Transparent&quot;&gt;
+                &lt;AppBarButton Icon=&quot;Add&quot;/&gt;
+                &lt;AppBarSeparator/&gt;
+                &lt;AppBarButton Icon=&quot;Edit&quot; /&gt;
+                &lt;AppBarButton Icon=&quot;Delete&quot;/&gt;
+                &lt;AppBarSeparator/&gt;
+                &lt;AppBarButton Icon=&quot;Save&quot;/&gt;
+            &lt;/CommandBar&gt;
+        &lt;/Pivot.RightHeader&gt;
+    &lt;/Pivot&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="customer-orders-database-sample">Customer Orders Database Sample</h2>
+<p><img src="images/customer-order-form.png" alt="customer orders database screenshot">
+To learn how to connect form input to an <strong>Azure</strong> database and see a fully implemented form, see the <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customers Orders Database</a> app sample.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="controls-and-events-intro.html">Input controls</a></li>
+<li><a href="../style/typography.md">Typography</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/forms.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

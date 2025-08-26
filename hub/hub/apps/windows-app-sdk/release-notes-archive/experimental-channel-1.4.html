@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Experimental channel release notes for the Windows App SDK 1.4 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Experimental channel release notes for the Windows App SDK 1.4 ">
+    
+    <meta name="description" content="Learn about the experimental channel release notes for the Windows App SDK 1.4">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="experimental-channel-release-notes-for-the-windows-app-sdk-14">Experimental channel release notes for the Windows App SDK 1.4</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The experimental channel is <strong>not supported</strong> for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The experimental channel provides releases of the Windows App SDK that include <a href="../release-channels.html#features-available-by-release-channel">experimental channel features</a> that are in early stages of development. APIs for experimental features have the <a href="/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute">Experimental</a> attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel might have breaking changes in future releases, but experimental APIs are especially subject to change. Experimental features may be removed from the next release, or may never be released.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on experimental releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest experimental channel release:</strong></p>
+<ul>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="version-14-experimental-140-experimental1">Version 1.4 Experimental (1.4.0-experimental1)</h2>
+<p>This is the latest release of the experimental channel.
+To download, retarget your WinAppSDK NuGet version to <code>1.4.230518007-experimental1</code>.</p>
+<h3 id="bug-fixes">Bug fixes</h3>
+<p>This release contains miscellaneous fixes, including the following:</p>
+<ul>
+<li>Fixed an issue where enabling the debug settings framerate counter in a new WinUI desktop application caused an access violation. For more information, see issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/2835">2835</a> on GitHub.</li>
+<li>Fixed an issue where horizontal scrolling on a touchpad did not work in a WebView2 web page. For more information, see issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7772">7772</a> on GitHub.</li>
+</ul>
+<h3 id="additional-experimental-apis">Additional Experimental APIs</h3>
+<p>This release includes the following new and modified experimental APIs:</p>
+<pre><code class="lang-C#">Microsoft.UI
+
+   IClosableNotifier
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Composition.SystemBackdrops
+
+   DesktopAcrylicController
+       Closed
+       FrameworkClosed
+       Kind
+
+   DesktopAcrylicKind
+   MicaController
+       Closed
+       FrameworkClosed
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Content
+
+   ContentAppWindowBridge
+       SettingChanged
+
+   ContentEnvironmentSettingChangedEventArgs
+   ContentExternalBackdropLink
+   ContentExternalOutputLink
+       ExternalOutputBorderMode
+
+   ContentIsland
+       FrameworkClosed
+
+   ContentIslandWindow
+       SettingChanged
+
+   ContentSite
+       FrameworkClosed
+
+   ContentSiteWindow
+       NotifySettingChanged
+       SettingChanged
+
+   CoreWindowTopLevelWindowBridge
+       SettingChanged
+
+   DesktopSiteBridge
+       Closed
+       FrameworkClosed
+
+   IContentWindow
+       SettingChanged
+
+   SystemVisualSiteBridge
+       Closed
+       FrameworkClosed
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Input
+
+   InputLayoutPolicy
+   InputNonClientPointerSource
+       ConfigurationChanged
+       GetForWindowId
+
+   NonClientRegionConfigurationChangedEventArgs
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.System
+
+   ThemeSettings
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Windowing
+
+   DisplayArea
+       GetMetricsFromWindowId
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+
+   XamlRoot
+       ContentWindow
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls
+
+   ItemContainer
+       Child
+       ChildProperty
+
+   ItemContainerMultiSelectMode
+       Extended
+
+   ItemsView
+       Animator
+       AnimatorProperty
+
+   MenuFlyoutPresenter
+       SystemBackdrop
+       SystemBackdropProperty
+
+   RiverFlowLayout
+       InvalidateItemsInfo
+       RequestedRangeCount
+       RequestedRangeStartIndex
+
+   RiverFlowLayoutElementAnimator
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls.Primitives
+
+   CommandBarFlyoutCommandBar
+       SystemBackdrop
+       SystemBackdropProperty
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Input
+
+   AccessKeyManager
+       EnterDisplayMode
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.4.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

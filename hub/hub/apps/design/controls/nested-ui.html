@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Nested UI in list items </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Nested UI in list items ">
+    
+    <meta name="description" content="Learn how to create nested UI in ListView and GridView items to present a user with additional options for taking important actions.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="nested-ui-in-list-items">Nested UI in list items</h1>
+
+<p>Nested UI is a user interface (UI) that exposes nested actionable controls enclosed inside a container that also can take independent focus.</p>
+<p>You can use nested UI to present a user with additional options that help accelerate taking important actions. However, the more actions you expose, the more complicated your UI becomes. You need to take extra care when you choose to use this UI pattern. This article provides guidelines to help you determine the best course of action for your particular UI.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview">GridView class</a></p>
+</blockquote>
+<p>In this article, we discuss the creation of nested UI in <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview">GridView</a> items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the <a href="lists.html">Lists</a> and <a href="listview-and-gridview.html">List view and grid view</a> articles.</p>
+<p>In this article, we use the terms <em>list</em>, <em>list item</em>, and <em>nested UI</em> as defined here:</p>
+<ul>
+<li><em>List</em> refers to a collection of items contained in a list view or grid view.</li>
+<li><em>List item</em> refers to an individual item that a user can take action on in a list.</li>
+<li><em>Nested UI</em> refers to UI elements within a list item that a user can take action on separate from taking action on the list item itself.</li>
+</ul>
+<p><img src="images/nested-ui-example-1.png" alt="Screenshot showing the parts of a Nested U I."></p>
+<blockquote>
+<p>NOTE   ListView and GridView both derive from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase">ListViewBase</a> class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.</p>
+</blockquote>
+<h2 id="primary-and-secondary-actions">Primary and secondary actions</h2>
+<p>When creating UI with a list, consider what actions the user might take from those list items.</p>
+<ul>
+<li>Can a user click on the item to perform an action?
+<ul>
+<li>Typically, clicking a list item initiates an action, but it doesn't have too.</li>
+</ul>
+</li>
+<li>Is there more than one action the user can take?
+<ul>
+<li>For example, tapping an email in a list opens that email. However, there might be other actions, like deleting the email, that the user would want to take without opening it first. It would benefit the user to access this action directly in the list.</li>
+</ul>
+</li>
+<li>How should the actions be exposed to the user?
+<ul>
+<li>Consider all input types. Some forms of nested UI work great with one method of input, but might not work with other methods.</li>
+</ul>
+</li>
+</ul>
+<p>The <em>primary action</em> is what the user expects to happen when they press the list item.</p>
+<p><em>Secondary actions</em> are typically accelerators associated with list items. These accelerators can be for list management or actions related to the list item.</p>
+<h2 id="options-for-secondary-actions">Options for secondary actions</h2>
+<p>When creating list UI, you first need to make sure you account for all input methods that Windows supports. For more info about different kinds of input, see <a href="../input/index.html">Input primer</a>.</p>
+<p>After you have made sure that your app supports all inputs that Windows supports, you should decide if your app's secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?</p>
+<p>You might consider exposing additional actions in the main list UI when those actions need to be accessible by any input at all times.</p>
+<p>If you decide that putting secondary actions in the main list UI is not necessary, there are several other ways you can expose them to the user. Here are some options you can consider for where to place secondary actions.</p>
+<h3 id="put-secondary-actions-on-the-detail-page">Put secondary actions on the detail page</h3>
+<p>Put the secondary actions on the page that the list item navigates to when it's pressed. When you use the list/details pattern, the detail page is often a good place to put secondary actions.</p>
+<p>For more info, see the <a href="list-details.html">list/detail pattern</a>.</p>
+<h3 id="put-secondary-actions-in-a-context-menu">Put secondary actions in a context menu</h3>
+<p>Put the secondary actions in a context menu that the user can access via right-click or press-and-hold. This provides the benefit of letting the user perform an action, such as deleting an email, without having to load the detail page. It's a good practice to also make these options available on the detail page, as context menus are intended to be accelerators rather than primary UI.</p>
+<p>To expose secondary actions when input is from a gamepad or remote control, we recommend that you use a context menu.</p>
+<p>For more info, see <a href="menus.html">Context menus and flyouts</a>.</p>
+<h3 id="put-secondary-actions-in-hover-ui-to-optimize-for-pointer-input">Put secondary actions in hover UI to optimize for pointer input</h3>
+<p>If you expect your app to be used frequently with pointer input such as mouse and pen, and want to make secondary actions readily available only to those inputs, then you can show the secondary actions only on hover. This accelerator is visible only when a pointer input is used, so be sure to use the other options to support other input types as well.</p>
+<p><img src="images/nested-ui-hover.png" alt="Nested UI shown on hover"></p>
+<p>For more info, see <a href="../input/mouse-interactions.html">Mouse interactions</a>.</p>
+<h2 id="ui-placement-for-primary-and-secondary-actions">UI placement for primary and secondary actions</h2>
+<p>If you decide that secondary actions should be exposed in the main list UI, we recommend the following guidelines.</p>
+<p>When you create a list item with primary and secondary actions, place the primary action to the left and secondary actions to the right. In left-to-right reading cultures, users associate actions on the left side of list item as the primary action.</p>
+<p>In these examples, we talk about list UI where the item flows more horizontally (it is wider than its height). However, you might have list items that are more square in shape, or taller than their width. Typically, these are items used in a grid. For these items, if the list doesn't scroll vertically, you can place the secondary actions at the bottom of the list item rather than to the right side.</p>
+<h2 id="consider-all-inputs">Consider all inputs</h2>
+<p>When deciding to use nested UI, also evaluate the user experience with all input types. As mentioned earlier, nested UI works great for some input types. However, it does not always work great for some other. In particular, keyboard, controller, and remote inputs can have difficulty accessing nested UI elements. Be sure to follow the guidance below to ensure your Windows works with all input types.</p>
+<h2 id="nested-ui-handling">Nested UI handling</h2>
+<p>When you have more than one action nested in the list item, we recommend this guidance to handle navigation with a keyboard, gamepad, remote control, or other non-pointer input.</p>
+<h3 id="nested-ui-where-list-items-perform-an-action">Nested UI where list items perform an action</h3>
+<p>If your list UI with nested elements supports actions such as invoking, selection (single or multiple), or drag-and-drop operations, we recommend these arrowing techniques to navigate through your nested UI elements.</p>
+<p><img src="images/nested-ui-navigation.png" alt="Screenshot showing nested U I elements labeled with the letters A, B, C, and D."></p>
+<p><strong>Gamepad</strong></p>
+<p>When input is from a gamepad, provide this user experience:</p>
+<ul>
+<li>From <strong>A</strong>, right directional key puts focus on <strong>B</strong>.</li>
+<li>From <strong>B</strong>, right directional key puts focus on <strong>C</strong>.</li>
+<li>From <strong>C</strong>, right directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.</li>
+<li>From <strong>C</strong>, left directional key puts focus on <strong>B</strong>.</li>
+<li>From <strong>B</strong>, left directional key puts focus on <strong>A</strong>.</li>
+<li>From <strong>A</strong>, left directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.</li>
+<li>From <strong>A</strong>, <strong>B</strong>, or <strong>C</strong>, down directional key puts focus on <strong>D</strong>.</li>
+<li>From UI element to the left of List Item, right directional key puts focus on <strong>A</strong>.</li>
+<li>From UI element to the right of List Item, left directional key puts focus on <strong>A</strong>.</li>
+</ul>
+<p><strong>Keyboard</strong></p>
+<p>When input is from a keyboard, this is the experience user gets:</p>
+<ul>
+<li>From <strong>A</strong>, tab key puts focus on <strong>B</strong>.</li>
+<li>From <strong>B</strong>, tab key puts focus on <strong>C</strong>.</li>
+<li>From <strong>C</strong>, tab key puts focus on next focusable UI element in the tab order.</li>
+<li>From <strong>C</strong>, shift+tab key puts focus on <strong>B</strong>.</li>
+<li>From <strong>B</strong>, shift+tab or left arrow key puts focus on <strong>A</strong>.</li>
+<li>From <strong>A</strong>, shift+tab key puts focus on next focusable UI element in the reverse tab order.</li>
+<li>From <strong>A</strong>, <strong>B</strong>, or <strong>C</strong>, down arrow key puts focus on <strong>D</strong>.</li>
+<li>From UI element to the left of List Item, tab key puts focus on <strong>A</strong>.</li>
+<li>From UI element to the right of List Item, shift tab key puts focus on <strong>C</strong>.</li>
+</ul>
+<p>To achieve this UI, set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.isitemclickenabled">IsItemClickEnabled</a> to <strong>true</strong> on your list. <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode">SelectionMode</a> can be any value.</p>
+<p>For the code to implement this, see the <a href="#example">Example</a> section of this article.</p>
+<h3 id="nested-ui-where-list-items-do-not-perform-an-action">Nested UI where list items do not perform an action</h3>
+<p>You might use a list view because it provides virtualization and optimized scrolling behavior, but not have an action associated with a list item. These UIs typically use the list item only to group elements and ensure they scroll as a set.</p>
+<p>This kind of UI tends to be much more complicated than the previous examples, with a lot of nested elements that the user can take action on.</p>
+<p><img src="images/nested-ui-grouping.png" alt="Screenshot of a complex Nested U I showing a lot of nested elements that the user can interact with."></p>
+<p>To achieve this UI, set the following properties on your list:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode">SelectionMode</a> to <strong>None</strong>.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.isitemclickenabled">IsItemClickEnabled</a> to <strong>false</strong>.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.isfocusengagementenabled">IsFocusEngagementEnabled</a> to <strong>true</strong>.</li>
+</ul>
+<pre><code class="lang-xaml">&lt;ListView SelectionMode=&quot;None&quot; IsItemClickEnabled=&quot;False&quot; &gt;
+    &lt;ListView.ItemContainerStyle&gt;
+         &lt;Style TargetType=&quot;ListViewItem&quot;&gt;
+             &lt;Setter Property=&quot;IsFocusEngagementEnabled&quot; Value=&quot;True&quot;/&gt;
+         &lt;/Style&gt;
+    &lt;/ListView.ItemContainerStyle&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p>When the list items do not perform an action, we recommend this guidance to handle navigation with a gamepad or keyboard.</p>
+<p><strong>Gamepad</strong></p>
+<p>When input is from a gamepad, provide this user experience:</p>
+<ul>
+<li>From List Item, down directional key puts focus on next List Item.</li>
+<li>From List Item, left/right key is either no op, or if there is a focusable UI element to the right of List, put the focus there.</li>
+<li>From List Item, 'A' button puts the focus on Nested UI in top/down left/right priority.</li>
+<li>While inside Nested UI, follow the XY Focus navigation model.  Focus can only navigate around Nested UI contained inside the current List Item until user presses 'B' button, which puts the focus back onto the List Item.</li>
+</ul>
+<p><strong>Keyboard</strong></p>
+<p>When input is from a keyboard, this is the experience user gets:</p>
+<ul>
+<li>From List Item, down arrow key puts focus on the next List Item.</li>
+<li>From List Item, pressing left/right key is no op.</li>
+<li>From List Item, pressing tab key puts focus on the next tab stop amongst the Nested UI item.</li>
+<li>From one of the Nested UI items, pressing tab traverses the nested UI items in tab order.  Once all the Nested UI items are traveled to, it puts the focus onto the next control in tab order after ListView.</li>
+<li>Shift+Tab behaves in reverse direction from tab behavior.</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>This example shows how to implement <a href="#nested-ui-where-list-items-perform-an-action">nested UI where list items perform an action</a>.</p>
+<pre><code class="lang-xaml">&lt;ListView SelectionMode=&quot;None&quot; IsItemClickEnabled=&quot;True&quot;
+          ChoosingItemContainer=&quot;listview1_ChoosingItemContainer&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void OnListViewItemKeyDown(object sender, KeyRoutedEventArgs e)
+{
+    // Code to handle going in/out of nested UI with gamepad and remote only.
+    if (e.Handled == true)
+    {
+        return;
+    }
+
+    var focusedElementAsListViewItem = FocusManager.GetFocusedElement() as ListViewItem;
+    if (focusedElementAsListViewItem != null)
+    {
+        // Focus is on the ListViewItem.
+        // Go in with Right arrow.
+        Control candidate = null;
+
+        switch (e.OriginalKey)
+        {
+            case Windows.System.VirtualKey.GamepadDPadRight:
+            case Windows.System.VirtualKey.GamepadLeftThumbstickRight:
+                var rawPixelsPerViewPixel = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
+                GeneralTransform generalTransform = focusedElementAsListViewItem.TransformToVisual(null);
+                Point startPoint = generalTransform.TransformPoint(new Point(0, 0));
+                Rect hintRect = new Rect(startPoint.X * rawPixelsPerViewPixel, startPoint.Y * rawPixelsPerViewPixel, 1, focusedElementAsListViewItem.ActualHeight * rawPixelsPerViewPixel);
+                candidate = FocusManager.FindNextFocusableElement(FocusNavigationDirection.Right, hintRect) as Control;
+                break;
+        }
+
+        if (candidate != null)
+        {
+            candidate.Focus(FocusState.Keyboard);
+            e.Handled = true;
+        }
+    }
+    else
+    {
+        // Focus is inside the ListViewItem.
+        FocusNavigationDirection direction = FocusNavigationDirection.None;
+        switch (e.OriginalKey)
+        {
+            case Windows.System.VirtualKey.GamepadDPadUp:
+            case Windows.System.VirtualKey.GamepadLeftThumbstickUp:
+                direction = FocusNavigationDirection.Up;
+                break;
+            case Windows.System.VirtualKey.GamepadDPadDown:
+            case Windows.System.VirtualKey.GamepadLeftThumbstickDown:
+                direction = FocusNavigationDirection.Down;
+                break;
+            case Windows.System.VirtualKey.GamepadDPadLeft:
+            case Windows.System.VirtualKey.GamepadLeftThumbstickLeft:
+                direction = FocusNavigationDirection.Left;
+                break;
+            case Windows.System.VirtualKey.GamepadDPadRight:
+            case Windows.System.VirtualKey.GamepadLeftThumbstickRight:
+                direction = FocusNavigationDirection.Right;
+                break;
+            default:
+                break;
+        }
+
+        if (direction != FocusNavigationDirection.None)
+        {
+            Control candidate = FocusManager.FindNextFocusableElement(direction) as Control;
+            if (candidate != null)
+            {
+                ListViewItem listViewItem = sender as ListViewItem;
+
+                // If the next focusable candidate to the left is outside of ListViewItem,
+                // put the focus on ListViewItem.
+                if (direction == FocusNavigationDirection.Left &amp;&amp;
+                    !listViewItem.IsAncestorOf(candidate))
+                {
+                    listViewItem.Focus(FocusState.Keyboard);
+                }
+                else
+                {
+                    candidate.Focus(FocusState.Keyboard);
+                }
+            }
+
+            e.Handled = true;
+        }
+    }
+}
+
+private void listview1_ChoosingItemContainer(ListViewBase sender, ChoosingItemContainerEventArgs args)
+{
+    if (args.ItemContainer == null)
+    {
+        args.ItemContainer = new ListViewItem();
+        args.ItemContainer.KeyDown += OnListViewItemKeyDown;
+    }
+}
+</code></pre>
+<pre><code class="lang-csharp">// DependencyObjectExtensions.cs definition.
+public static class DependencyObjectExtensions
+{
+    public static bool IsAncestorOf(this DependencyObject parent, DependencyObject child)
+    {
+        DependencyObject current = child;
+        bool isAncestor = false;
+
+        while (current != null &amp;&amp; !isAncestor)
+        {
+            if (current == parent)
+            {
+                isAncestor = true;
+            }
+
+            current = VisualTreeHelper.GetParent(current);
+        }
+
+        return isAncestor;
+    }
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/nested-ui.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

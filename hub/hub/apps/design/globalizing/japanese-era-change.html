@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Prepare your application for the Japanese era change </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Prepare your application for the Japanese era change ">
+    
+    <meta name="description" content="Learn about the May 2019 Japanese era change and how to prepare your application.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="prepare-your-application-for-the-japanese-era-change">Prepare your application for the Japanese era change</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>On April 1, 2019, the new era name was announced: Reiwa (令和). On April 25, Microsoft released packages for different Windows operating systems containing the updated registry key with the new era name. Update your device and check your registry to see if it has the new key, and then test your application. Check <a href="https://support.microsoft.com/help/4469068/summary-of-new-japanese-era-updates-kb4469068">this support article</a> to make sure your operating system should have received the updated registry key.</p>
+</div>
+<p>The Japanese calendar is divided into eras, and for most of the modern age of computing, we've been in the Heisei era; however, on May 1, 2019, a new era will begin. Because this is the first time in decades for an era to change, software that supports the Japanese calendar will need to be tested to ensure it will function properly when the new era begins.</p>
+<p>In the following sections, you will learn what you can do to prepare and test your application for the upcoming new era.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend that you use a test machine for this, because the changes you make will impact the behavior of the entire machine.</p>
+</div>
+<h2 id="add-a-registry-key-for-the-new-era">Add a registry key for the new era</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The following instructions are meant for devices that have not yet been updated with the new registry key. First check if your device contains the new registry key, and if not, test using the following instructions.</p>
+</div>
+<p>It is important to test for compatibility problems before the era has changed, and you can do so now using the new era name. To do this, add a registry key for the new era using <strong>Registry Editor</strong>:</p>
+<ol>
+<li>Navigate to <strong>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Nls\Calendars\Japanese\Eras</strong>.</li>
+<li>Select <strong>Edit &gt; New &gt; String Value</strong>, and give it the name <strong>2019 05 01</strong>.</li>
+<li>Right-click the key and select <strong>Modify</strong>.</li>
+<li>In the <strong>Value data</strong> field, enter <strong>令和_令_Reiwa_R</strong> (you can copy and paste from here to make it easier).</li>
+</ol>
+<p>See <a href="/windows/desktop/Intl/era-handling-for-the-japanese-calendar">Era Handling for the Japanese Calendar</a> to read more about the format for these registry keys.</p>
+<p>On April 1, 2019, the new era name was announced. On April 25, an update with a new registry key for supported Windows versions containing the name was released, allowing you to validate that your application handles it properly. This update is being propagated to supported earlier releases of Windows 10, as well as Windows 8 and Windows 7.</p>
+<p>You can delete your placeholder registry key once you're finished testing your application. This will ensure it doesn't interfere with the new registry key that will be added when Windows is updated.</p>
+<h2 id="change-your-devices-calendar-format">Change your device's calendar format</h2>
+<p>Once you've added the registry key for the new era, you need to configure your device to use the Japanese calendar. You don't need to have a Japanese-language device to do this. For thorough testing, you may want to install the Japanese language pack as well, but it isn't required for basic testing.</p>
+<p>To configure your device to use the Japanese calendar:</p>
+<ol>
+<li>Open <strong>intl.cpl</strong> (search for it from the Windows search bar).</li>
+<li>From the <strong>Format</strong> dropdown, select <strong>Japanese (Japan)</strong>.</li>
+<li>Select <strong>Additional settings</strong>.</li>
+<li>Select the <strong>Date</strong> tab.</li>
+<li>From the <strong>Calendar type</strong> dropdown, select <strong>和暦</strong> (<em>wareki</em>, the Japanese calendar). It should be the second option.</li>
+<li>Click <strong>OK</strong>.</li>
+<li>Click <strong>OK</strong> in the <strong>Region</strong> window.</li>
+</ol>
+<p>Your device should now be configured to use the Japanese calendar, and it will reflect whichever eras are in the registry. Below is an example of what you might see now in the lower-right corner of the screen:</p>
+<p><img src="images/japanese-calendar-format.png" alt="Date and time in Japanese calendar format"></p>
+<h2 id="adjust-your-devices-clock">Adjust your device's clock</h2>
+<h3 id="on-windows-10">On Windows 10</h3>
+<ol>
+<li>Right-click the date and time area in the lower-right corner of the screen.</li>
+<li>Select <strong>Adjust date/time</strong>.</li>
+<li>In the Settings app, under <strong>Change date and time</strong>, select <strong>Change</strong>.</li>
+<li>Change the date to on or after May 1, 2019.</li>
+</ol>
+<h3 id="on-windows-11">On Windows 11</h3>
+<ol>
+<li>Right-click the date and time area in the lower-right corner of the screen.</li>
+<li>Select <strong>Adjust date/time</strong>.</li>
+<li>In the Settings app, under <strong>Set the date and time manually</strong>, select <strong>Change</strong>.</li>
+<li>Change the date to on or after May 1, 2019.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may not be able to change the date and time, when &quot;Set time automatically&quot; is &quot;on&quot;.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may not be able to change the date based on organization settings; if this is the case, talk to your admin. Alternatively, you can edit your placeholder registry key to have a date that has already passed.</p>
+</div>
+<h2 id="test-your-application">Test your application</h2>
+<p>Now, test out how your application handles the new era. Check places where the date is displayed, such as timestamps and date pickers. Make sure that the era is correct before May 1, 2019 (Heisei, 平成) and after (Reiwa, 令和).</p>
+<h3 id="gannen-元年"><em>Gannen</em> (元年)</h3>
+<p>The format for the Japanese calendar is generally <strong>&lt;Era name&gt; &lt;Year of era&gt;</strong>. For example, the year 2018 is <strong>Heisei 30</strong> (平成30年).  However, the first year of an era is special; instead of being <strong>&lt;Era name&gt; 1</strong>, it is <strong>&lt;Era name&gt; 元年</strong> (<em>gannen</em>). So, the first year of the Heisei era would be 平成元年 (<em>Heisei gannen</em>). Make sure that your application properly handles the first year of the new era, and correctly outputs 令和元年.</p>
+<h2 id="related-apis">Related APIs</h2>
+<p>There are several WinRT, .NET, and Win32 APIs that will be updated to handle the era change, so if you use them, you shouldn't have to worry too much. However, even if you do rely entirely on these APIs, it's still a good idea to test your application and make sure you get the desired behavior, especially if you are doing anything special with them like parsing.</p>
+<p>You can follow along with updates to the OS and SDKs at <a href="https://support.microsoft.com/help/4470918/updates-for-may-2019-japan-era-change">Updates for May 2019 Japan Era Change</a>.</p>
+<p>The following APIs will be impacted:</p>
+<h3 id="winrt">WinRT</h3>
+<ul>
+<li><a href="/uwp/api/windows.globalization">Windows.Globalization Namespace</a>
+<ul>
+<li><a href="/uwp/api/windows.globalization.calendar">Calendar Class</a>
+<ul>
+<li><a href="/uwp/api/windows.globalization.calendar.adddays">AddDays Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.adderas">AddEras Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addhours">AddHours Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addminutes">AddMinutes Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addmonths">AddMonths Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addnanoseconds">AddNanoseconds Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addperiods">AddPeriods Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addseconds">AddSeconds Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addweeks">AddWeeks Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.addyears">AddYears Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.era">Era Property</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.eraasstring">EraAsString Method</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.firstyearinthisera">FirstYearInThisEra Property</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.lastera">LastEra Property</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.lastyearinthisera">LastYearInThisEra Property</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar.numberofyearsinthisera">NumberOfYearsInThisEra Property</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/uwp/api/windows.globalization.datetimeformatting">Windows.Globalization.DateTimeFormatting Namespace</a>
+<ul>
+<li><a href="/uwp/api/windows.globalization.datetimeformatting.datetimeformatter">DateTimeFormatter Class</a>
+<ul>
+<li><a href="/uwp/api/windows.globalization.datetimeformatting.datetimeformatter.format">Format Method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="net">.NET</h3>
+<ul>
+<li><a href="/dotnet/api/system">System Namespace</a>
+<ul>
+<li><a href="/dotnet/api/system.datetime">DateTime Struct</a></li>
+<li><a href="/dotnet/api/system.datetimeoffset">DateTimeOffset Struct</a></li>
+</ul>
+</li>
+<li><a href="/dotnet/api/system.globalization">System.Globalization Namespace</a>
+<ul>
+<li><a href="/dotnet/api/system.globalization.calendar">Calendar Class</a></li>
+<li><a href="/dotnet/api/system.globalization.datetimeformatinfo">DateTimeFormatInfo Class</a></li>
+<li><a href="/dotnet/api/system.globalization.japanesecalendar">JapaneseCalendar Class</a></li>
+<li><a href="/dotnet/api/system.globalization.japaneselunisolarcalendar">JapaneseLunisolarCalendar Class</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="win32">Win32</h3>
+<ul>
+<li><a href="/windows/desktop/api/datetimeapi/">datetimeapi.h header</a>
+<ul>
+<li><a href="/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformata">GetDateFormatA function</a></li>
+<li><a href="/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatex">GetDateFormatEx function</a></li>
+<li><a href="/windows/desktop/api/datetimeapi/nf-datetimeapi-getdateformatw">GetDateFormatW function</a></li>
+</ul>
+</li>
+<li><a href="/windows/desktop/api/winnls/">winnls.h header</a>
+<ul>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-enumdateformatsa">EnumDateFormatsA function</a></li>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-enumdateformatsexa">EnumDateFormatsExA function</a></li>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-enumdateformatsexex">EnumDateFormatsExEx function</a></li>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-enumdateformatsexw">EnumDateFormatsExW function</a></li>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-enumdateformatsw">EnumDateFormatsW function</a></li>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-getcalendarinfoa">GetCalendarInfoA function</a></li>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-getcalendarinfoex">GetCalendarInfoEx function</a></li>
+<li><a href="/windows/desktop/api/winnls/nf-winnls-getcalendarinfow">GetCalendarInfoW function</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/desktop/Intl/era-handling-for-the-japanese-calendar">Era Handling for the Japanese Calendar</a></li>
+<li><a href="/archive/blogs/shawnste/the-japanese-calendars-y2k-moment">The Japanese Calendar’s Y2K Moment</a></li>
+<li><a href="/archive/blogs/shawnste/using-the-registry-to-test-the-new-japanese-era-on-windows">Using the Registry to Test the New Japanese Era on Windows</a></li>
+<li><a href="/archive/blogs/shawnste/gannen-vs-ichinen">Gannen vs Ichinen</a></li>
+<li><a href="https://support.microsoft.com/help/4470918/updates-for-may-2019-japan-era-change">Updates for May 2019 Japan Era Change</a></li>
+<li><a href="https://devblogs.microsoft.com/dotnet/handling-a-new-era-in-the-japanese-calendar-in-net/">Handling a new era in the Japanese calendar in .NET</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/japanese-era-change.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

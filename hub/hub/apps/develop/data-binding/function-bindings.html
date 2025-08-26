@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Functions in x:Bind with WinUI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Functions in x:Bind with WinUI ">
+    
+    <meta name="description" content="Learn about using functions as the leaf step of the data binding path in the xBind markup extension in WinUI apps with the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="functions-in-xbind-with-winui">Functions in x:Bind with WinUI</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>For general info about using data binding in your app with <code>{x:Bind}</code> (and for an all-up comparison between <code>{x:Bind}</code> and <code>{Binding}</code>), see <a href="data-binding-in-depth.html">Data binding in depth</a> and <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} Markup Extension</a>.</p>
+</div>
+<p>In WinUI apps, <strong>{x:Bind}</strong> supports using a function as the leaf step of the binding path. This enables:</p>
+<ul>
+<li>A simpler way to achieve value conversion</li>
+<li>A way for bindings to depend on more than one parameter</li>
+</ul>
+<p>In the following example, the background and foreground of the item are bound to functions to do conversion based on the color parameter</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:DataType=&quot;local:ColorEntry&quot;&gt;
+    &lt;Grid Background=&quot;{x:Bind local:ColorEntry.Brushify(Color), Mode=OneWay}&quot; Width=&quot;240&quot;&gt;
+        &lt;TextBlock Text=&quot;{x:Bind ColorName}&quot; Foreground=&quot;{x:Bind TextColor(Color)}&quot; Margin=&quot;10,5&quot; /&gt;
+    &lt;/Grid&gt;
+&lt;/DataTemplate&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class ColorEntry
+{
+    public string ColorName { get; set; }
+    public Color Color { get; set; }
+
+    public static SolidColorBrush Brushify(Color c)
+    {
+        return new SolidColorBrush(c);
+    }
+
+    public SolidColorBrush TextColor(Color c)
+    {
+        return new SolidColorBrush(((c.R * 0.299 + c.G * 0.587 + c.B * 0.114) &gt; 150) ? Colors.Black : Colors.White);
+    }
+}
+</code></pre>
+<h2 id="xaml-attribute-usage">XAML attribute usage</h2>
+<pre><code class="lang-xaml">&lt;object property=&quot;{x:Bind pathToFunction.FunctionName(functionParameter1, functionParameter2, ...), bindingProperties}&quot; ... /&gt;
+</code></pre>
+<h2 id="path-to-the-function">Path to the function</h2>
+<p>The <a href="/windows/uwp/xaml-platform/x-bind-markup-extension#property-path">path to the function</a> is specified like other property paths and can include <a href="/windows/uwp/xaml-platform/x-bind-markup-extension#property-path-resolution">dots</a> (.), <a href="/windows/uwp/xaml-platform/x-bind-markup-extension#collections">indexers</a> or <a href="/windows/uwp/xaml-platform/x-bind-markup-extension#casting">casts</a> to locate the function.</p>
+<p>Static functions can be specified using <code>XMLNamespace:ClassName.MethodName</code> syntax. For example, use the below syntax for binding to static functions in code-behind.</p>
+<pre><code class="lang-xaml">&lt;Window 
+     xmlns:local=&quot;using:MyNamespace&quot;&gt;
+     ...
+    &lt;StackPanel&gt;
+        &lt;TextBlock x:Name=&quot;BigTextBlock&quot; FontSize=&quot;20&quot; Text=&quot;Big text&quot; /&gt;
+        &lt;TextBlock FontSize=&quot;{x:Bind local:MyHelpers.Half(BigTextBlock.FontSize)}&quot; 
+                   Text=&quot;Small text&quot; /&gt;
+    &lt;/StackPanel&gt;
+&lt;/Window&gt;
+</code></pre>
+<pre><code class="lang-csharp">namespace MyNamespace
+{
+    static public class MyHelpers
+    {
+        public static double Half(double value) =&gt; value / 2.0;
+    }
+}
+</code></pre>
+<p>You can also use system functions directly in markup to accomplish simple scenarios like date formatting, text formatting, text concatenations, etc. For example:</p>
+<pre><code class="lang-xaml">&lt;Window 
+     xmlns:sys=&quot;using:System&quot;
+     xmlns:local=&quot;using:MyNamespace&quot;&gt;
+     ...
+     &lt;CalendarDatePicker Date=&quot;{x:Bind sys:DateTime.Parse(TextBlock1.Text)}&quot; /&gt;
+     &lt;TextBlock Text=&quot;{x:Bind sys:String.Format('{0} is now available in {1}', local:MyPage.personName, local:MyPage.location)}&quot; /&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>If the mode is OneWay/TwoWay, then the function path will have change detection performed on it, and the binding will be re-evaluated if there are changes to those objects.</p>
+<p>The function being bound to needs to:</p>
+<ul>
+<li>Be accessible to the code and metadata – so internal / private work in C#, but C++ will need methods to be public WinRT methods</li>
+<li>Overloading is based on the number of arguments, not type, and it will try to match to the first overload with that many arguments</li>
+<li>The argument types need to match the data being passed in – we don’t do narrowing conversions</li>
+<li>The return type of the function needs to match the type of the property that is using the binding</li>
+</ul>
+<p>The binding engine reacts to property change notifications fired with the function name and re-evaluate bindings as necessary. For example:</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:DataType=&quot;local:Person&quot;&gt;
+   &lt;StackPanel&gt;
+      &lt;TextBlock Text=&quot;{x:Bind FullName}&quot; /&gt;
+      &lt;Image Source=&quot;{x:Bind IconToBitmap(Icon, CancellationToken), Mode=OneWay}&quot; /&gt;
+   &lt;/StackPanel&gt;
+&lt;/DataTemplate&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class Person : INotifyPropertyChanged
+{
+    //Implementation for an Icon property and a CancellationToken property with PropertyChanged notifications
+    ...
+
+    //IconToBitmap function is essentially a multi binding converter between several options.
+    public Uri IconToBitmap (Uri icon, Uri cancellationToken)
+    {
+        var foo = new Uri(...);        
+        if (isCancelled)
+        {
+            foo = cancellationToken;
+        }
+        else 
+        {
+            if (fullName.Contains(&quot;Sr&quot;))
+            {
+               //pass a different Uri back
+               foo = new Uri(...);
+            }
+            else
+            {
+                foo = icon;
+            }
+        }
+        return foo;
+    }
+
+    //Ensure FullName property handles change notification on itself as well as IconToBitmap since the function uses it
+    public string FullName
+    {
+        get { return fullName; }
+        set
+        {
+            fullName = value;
+            OnPropertyChanged();
+            OnPropertyChanged(&quot;IconToBitmap&quot;); 
+            //this ensures Image.Source binding re-evaluates when FullName changes in addition to Icon and CancellationToken
+        }
+    }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use functions in <code>x:Bind</code> to achieve the same scenarios as what was supported through Converters and MultiBinding in WPF.</p>
+</div>
+<h2 id="function-arguments">Function arguments</h2>
+<p>Multiple function arguments can be specified, separated by comma's (,)</p>
+<ul>
+<li>Binding Path – Same syntax as if you were binding directly to that object.
+<ul>
+<li>If the mode is OneWay/TwoWay then change detection will be performed and the binding re-evaluated upon object changes</li>
+</ul>
+</li>
+<li>Constant string enclosed in quotes – quotes are needed to designate it as a string. Hat (^) can be used to escape quotes in strings</li>
+<li>Constant Number - for example -123.456</li>
+<li>Boolean – specified as &quot;x:True&quot; or &quot;x:False&quot;</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p><a href="/windows/uwp/xaml-platform/x-bind-markup-extension#properties-that-you-can-set-with-xbind">TargetNullValue</a> will apply to the result of the function call, not to any bound arguments.</p>
+</div>
+<h3 id="two-way-function-bindings">Two way function bindings</h3>
+<p>In a two-way binding scenario, a second function must be specified for the reverse direction of the binding. This is done using the <code>BindBack</code> binding property. In the below example, the function should take one argument which is the value that needs to be pushed back to the model.</p>
+<pre><code class="lang-xaml">&lt;TextBlock Text=&quot;{x:Bind a.MyFunc(b), BindBack=a.MyFunc2, Mode=TwoWay}&quot; /&gt;
+</code></pre>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} Markup Extension</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-binding/function-bindings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

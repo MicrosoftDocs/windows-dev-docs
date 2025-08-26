@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Make your app localizable </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Make your app localizable ">
+    
+    <meta name="description" content="A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="make-your-app-localizable">Make your app localizable</h1>
+
+<p>A localized app is one that can be localized for other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources. So, you should determine which of your app's resources need to be localized. Ask yourself what needs to change if your app is to be localized for other markets.</p>
+<p>We also recommend that you become familiar with the <a href="guidelines-and-checklist-for-globalizing-your-app.html">guidelines for globalization</a>.</p>
+<h2 id="put-your-strings-into-resources-files-resw">Put your strings into Resources Files (.resw)</h2>
+<p>Don't hard-code string literals in your imperative code, XAML markup, nor in your app package manifest. Instead, put your strings into Resources Files (.resw) so that they can be adapted to different local markets independently of your app's built binaries. For details, see <a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a>.</p>
+<p>That topic also shows you how to add comments to your default Resources File (.resw). For example, if you are adopting an informal voice or tone then be sure to explain that in comments. Also, to minimize expense, confirm that only the strings that need to be translated are provided to translators.</p>
+<p>Set the default language for your app appropriately in your app package manifest source file (the <code>Package.appxmanifest</code> file). The default language determines the language that's used when the user's preferred languages don't match any of the supported languages of your app. Mark all of your resources with their language (even the ones in your default language, for example <code>\Assets\en-us\Logo.png</code>) so that the system can tell which language the resource is in and how it's used in particular situations.</p>
+<h2 id="tailor-your-images-and-other-file-resources-for-language">Tailor your images and other file resources for language</h2>
+<p>Ideally, you will be able to globalize your images—that is, make them culture-independent. For any images and other file resources where that's not possible, create as many different variants of them as you need and put the appropriate language qualifiers into their file or folder names. To learn more, see <a href="/windows/uwp/app-resources/tailor-resources-lang-scale-contrast">Tailor your resources for language, scale, high contrast, and other qualifiers</a>.</p>
+<p>To minimize localization costs, don't put text nor culturally-sensitive material into images to begin with. An image that's appropriate in your own culture might be offensive or misinterpreted in other cultures. Avoid the use of culture-specific images such as mailboxes, which are not common around the world. Avoid religious symbols, animals, political, or gender-specific images. The display of flesh, body parts, or hand gestures can also be a sensitive topic. If you can't avoid all of these, then your images will need to be thoughtfully localized. If you're localizing to a language with a different reading direction than your own, using symmetrical images and effects make it easier to support mirroring.</p>
+<p>Also avoid the use of text in images, and speech in audio/video files.</p>
+<h2 id="the-use-of-color-in-your-app">The use of color in your app</h2>
+<p>Be mindful when using color. Using color combinations that are associated with national flags or political movements can be problematic. Color choices may need to be reviewed by culture experts. There is also an accessibility issues with using color. If you use color to convey meaning then you should also convey that same information by some other means, such as size, shape, or a label.</p>
+<h2 id="consider-factoring-your-strings-into-sentences">Consider factoring your strings into sentences</h2>
+<p>Use appropriately-sized strings. Short strings are easier to translate, and they enable translation recycling (which saves expense because the same string isn't sent to the localizer more than once). Also, extremely long strings might not be supported by localization tools.</p>
+<p>But in tension with this guideline is the risk of re-using a string in different contexts. Even simple words such as &quot;on&quot; and &quot;off&quot; might be translated differently, depending on the context. In the English language, &quot;on&quot; and &quot;off&quot; can be used for a toggle for Flight Mode, Bluetooth, and devices. But in Italian, the translation depends on the context of what is being turned on and off. You would need to create a pair of strings for each context. You can reuse strings if the two contexts are the same. For instance, you can reuse the string &quot;Volume&quot; for both sound effect volume and music volume because both refer to intensity of sound. You should not reuse that same string when referring to a hard disk volume because the context and meaning are different, and the word might be translated differently.</p>
+<p>Additionally, a string like &quot;text&quot; or &quot;fax&quot; could be used as both a verb and a noun in the English language, which can confuse the translation process. Instead, create a separate string for both the verb and noun format. When you're not sure whether the contexts are the same, err on the safe side and use a distinct string.</p>
+<p>In short, factor your strings into pieces that work in all contexts. There will be cases where a string will need to be an entire sentence.</p>
+<p>Consider the following string: &quot;The {0} could not be synchronized.&quot;</p>
+<p>A variety of words could replace {0}, such as &quot;appointment&quot;, &quot;task&quot;, or &quot;document&quot;. While this example works for the English language, it will not work in all cases for the corresponding sentence in, for example, German. Notice that in the following German sentences, some of the words in the template string (&quot;Der&quot;, &quot;Die&quot;, &quot;Das&quot;) need to match the parameterized word:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">English</th>
+<th style="text-align: left;">German</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">The appointment could not be synchronized.</td>
+<td style="text-align: left;">Der Termin konnte nicht synchronisiert werden.</td>
+</tr>
+<tr>
+<td style="text-align: left;">The task could not be synchronized.</td>
+<td style="text-align: left;">Die Aufgabe konnte nicht synchronisiert werden.</td>
+</tr>
+<tr>
+<td style="text-align: left;">The document could not be synchronized.</td>
+<td style="text-align: left;">Das Dokument konnte nicht synchronisiert werden.</td>
+</tr>
+</tbody>
+</table>
+<p>As another example, consider the sentence &quot;Remind me in {0} minute(s).&quot; Using &quot;minute(s)&quot; works for the English language, but other languages might use different terms. For example, the Polish language uses &quot;minuta&quot;, &quot;minuty&quot;, or &quot;minut&quot; depending on the context.</p>
+<p>To solve this problem, localize the entire sentence, rather than a single word. Doing this may seem like extra work and an inelegant solution, but it is the best solution because:</p>
+<ul>
+<li>A grammatically correct message will be displayed for all languages.</li>
+<li>Your translator will not need to ask about what the strings will be replaced with.</li>
+<li>You will not need to implement a costly code fix when a problem like this surfaces after your app is completed.</li>
+</ul>
+<h2 id="other-considerations-for-strings">Other considerations for strings</h2>
+<p>Avoid colloquialisms and metaphors in the strings that you author in your default language. Language that's specific to a demographic group, such as culture and age, can be hard to understand or translate because only people in that demographic group use that language. Similarly, metaphors might make sense to one person but mean nothing to someone else. For example, a &quot;bluebird&quot; means something specific to those who are part of skiing culture, but those who aren’t part of that culture don’t understand the reference.</p>
+<p>Don't use technical jargon, abbreviations, or acronyms. Technical language is less likely to be understood by non-technical audiences or people from other cultures or regions, and it's difficult to translate. People don't use these kinds of words in everyday conversations. Technical language often appears in error messages to identify hardware and software issues, but you should strings to be technical <em>only if the user needs that level of information, and can either action it or find someone who can</em>.</p>
+<p>Using an informal voice or tone in your strings is a valid choice. You can use comments in your default Resources File (.resw) to indicate that intention.</p>
+<h2 id="pseudo-localization">Pseudo-localization</h2>
+<p>Pseudo-localize your app to uncover any localizability issues. Pseudo-localization is a kind of localization dry-run, or disclosure test. You produce a set of resources that are not really translated; they only look that way. Your strings are approximately 40% longer than in the default language, for example, and they have delimiters in them so that you can see at a glance whether they have been truncated in the UI.</p>
+<h2 id="deployment-considerations">Deployment Considerations</h2>
+<p>When you install an app that contains localized language data, you might find that only the default language is available for the app even though you initially included resources for multiple languages. This is because the installation process is optimized to only install language resources that match the current language and culture of the device. Therefore, if your device is configured for en-US, only the en-US language resources are installed with your app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is not possible to install additional language support for your app after the initial installation. If you change the default language after installing an app, the app continues to use only the original language resources.</p>
+</div>
+<p>If you want to ensure all language resources are available after installation, create a configuration file for the app package that specifies that certain resources are required during installation (including language resources). This optimized installation feature is automatically enabled when your application's .appxbundle is generated during packaging. For more information, see <a href="/previous-versions/dn482043(v=vs.140)">Ensure that resources are installed on a device regardless of whether a device requires them</a>.</p>
+<p>Optionally, to ensure all resources are installed (not just a subset), you can disable .appxbundle generation when you package your app. This is not recommended however as it can increase the installation time of your app.</p>
+<p>Disable automatic generation of the .appxbundle by setting the &quot;Generate App Bundle&quot; attribute to “never”:</p>
+<ol>
+<li>In Visual Studio, right-click the project name</li>
+<li>Select <strong>Store</strong> -&gt; <strong>Create app packages...</strong></li>
+<li>In the <strong>Create Your Packages</strong> dialog, select <strong>I want to create packages to upload to the Microsoft Store using a new app name</strong> and then click <strong>Next</strong>.</li>
+<li>In the <strong>Select an app name</strong> dialog, select/create an app name for your package.</li>
+<li>In the <strong>Select and Configure Packages</strong> dialog, set <strong>Generate app bundle</strong> to <strong>Never</strong>.</li>
+</ol>
+<h2 id="geopolitical-awareness">Geopolitical awareness</h2>
+<p>Avoid political offense in maps or when referring to regions. Maps might include controversial regional or national boundaries, and they're a frequent source of political offense. Be careful that any UI used for selecting a nation refers to it as a &quot;country/region&quot;. Listing a disputed territory in a list labeled &quot;countries&quot;—such as in an address form—might offend some users.</p>
+<h2 id="language--and-region-changed-events">Language- and region-changed events</h2>
+<p>Subscribe to events that are raised when the system's language and region settings change. Do this so that you can re-load resources, if appropriate. For details, see <a href="/windows/uwp/app-resources/localize-strings-ui-manifest#updating-strings-in-response-to-qualifier-value-change-events">Updating strings in response to qualifier value change events</a> and <a href="/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast#updating-images-in-response-to-qualifier-value-change-events">Updating images in response to qualifier value change events</a>.</p>
+<h2 id="ensure-the-correct-parameter-order-when-formatting-strings">Ensure the correct parameter order when formatting strings</h2>
+<p>Don't assume that all languages express parameters in the same order. For example, consider this format.</p>
+<pre><code class="lang-csharp">    string.Format(&quot;Every {0} {1}&quot;, monthName, dayNumber); // For example, &quot;Every April 1&quot;.
+</code></pre>
+<p>The format string in this example works for English (United States). But it is not appropriate for German (Germany), for example, where the day and month are displayed in the reverse order. Ensure that the translator knows the intent of each of the parameters so that they can reverse the order of the format items in the format string (for example, &quot;{1} {0}&quot;) as appropriate for the target language.</p>
+<h2 id="dont-over-localize">Don’t over-localize</h2>
+<p>Only submit natural language to translators; not programming language nor markup. A <code>&lt;link&gt;</code> tag is not natural language. Consider these examples.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Don't localize this</th>
+<th style="text-align: left;">Localize this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">&lt;link&gt;terms of use&lt;/link&gt;</td>
+<td style="text-align: left;">terms of use</td>
+</tr>
+<tr>
+<td style="text-align: left;">&lt;link&gt;privacy policy&lt;/link&gt;</td>
+<td style="text-align: left;">privacy policy</td>
+</tr>
+</tbody>
+</table>
+<p>Including the <code>&lt;link&gt;</code> tag in your Resources File (.resw) means that it, too, is likely to be translated. That would render the tag invalid. If you have long strings that need to include markup in order to maintain context and ensure ordering, then make it clear in comments what not to translate.</p>
+<h2 id="choose-an-appropriate-translation-approach">Choose an appropriate translation approach</h2>
+<p>After strings are separated into resource files, they can be translated. The ideal time to translate strings is after the strings in your project are finalized, which usually happens toward the end of a project. You can approach the translation process in number of ways. This may depend on the volume of strings to be translated, the number of languages to be translated, and how the translation will be done (such as in-house versus hiring an external vendor).</p>
+<p>Consider these options.</p>
+<ul>
+<li><strong>The resource files can be translated by opening them directly in the project.</strong> This approach works well for a project that has a small volume of strings that need to be translated into two or three languages. It could be suitable for a scenario where a developer speaks more than one language and is willing to handle the translation process. This approach benefits from being quick, requires no tools, and minimizes the risk of mistranslations. But it is not scalable. In particular, the resources in different languages can easily get out of sync, causing bad user experiences and maintenance headaches.</li>
+<li><strong>The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.</strong> This approach carries a risk of translators accidentally editing the XML tags, but it lets translation work take place outside of the Microsoft Visual Studio project. This approach could work well for projects that need to be translated into a small number of languages. The XLIFF format is an XML format specifically designed for use in localization, and should be well supported by some localization vendors or localization tools. You can use the <a href="/previous-versions/windows/apps/jj572370(v=win.10)">Multilingual App Toolkit</a> to generate XLIFF files from other resource files, such as .resw or .resjson.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Localization might also be necessary for other assets, including images and audio files.</p>
+</div>
+<p>You should also consider the following:</p>
+<ul>
+<li><strong>Localization tools</strong> A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. This approach reduces the risk of a translator accidentally editing the XML tags. But it has the drawback of introducing a new tool and process to the localization process. A localization tool is good for projects with a large volume of strings but a small number of languages. To learn more, see <a href="/previous-versions/windows/apps/jj572370(v=win.10)">How to use the Multilingual App Toolkit</a>.</li>
+<li><strong>Localization vendors</strong> Consider using a localization vendor if your application contains extensive strings that need to be translated into a large number of languages. A localization vendor can give advice about tools and processes, as well as translating your resource files. This is an ideal solution, but is also the most costly option, and may increase the turnaround time for your translated content.</li>
+</ul>
+<h2 id="keep-access-keys-and-labels-consistent">Keep access keys and labels consistent</h2>
+<p>It is a challenge to &quot;synchronize&quot; the access keys used in accessibility with the display of the localized access keys, because the two string resources are categorized in two separate sections. Be sure to provide comments for the label string such as: <code>Make sure that the emphasized shortcut key  is synchronized with the access key.</code></p>
+<h2 id="support-furigana-for-japanese-strings-that-can-be-sorted">Support furigana for Japanese strings that can be sorted</h2>
+<p>Japanese kanji characters have the property of having more than one reading (pronunciation) depending on the word in which they are used. This leads to problems when you try to sort Japanese named objects, such as application names, files, songs, and so on. Japanese kanji have, in the past, usually been sorted in a machine-understandable order called XJIS. Unfortunately, because this sorting order is not phonetic it is not very useful for humans.</p>
+<p><em>Furigana</em> works around this problem by allowing the user or creator to specify the phonetics for the characters they are using. If you use the following procedure to add furigana to your app name, you can ensure that it is sorted in the proper location in the app list. If your app name contains kanji characters and furigana is not provided when the user’s UI language or the sort order is set to Japanese, Windows makes its best effort to generate the appropriate pronunciation. However, there is a possibility for app names containing rare or unique readings to be sorted under a more common reading instead. Therefore, the best practice for Japanese applications (especially those containing kanji characters in their names) is to provide a furigana version of their app name as part of the Japanese localization process.</p>
+<ol>
+<li><p>Add &quot;ms-resource:Appname&quot; as the Package Display Name and the Application Display Name.</p>
+</li>
+<li><p>Create a ja-JP folder under strings, and add two resource files as follows:</p>
+<pre><code class="lang-syntax">strings\
+    en-us\
+    ja-jp\
+        Resources.altform-msft-phonetic.resw
+        Resources.resw
+</code></pre>
+</li>
+<li><p>In Resources.resw for general ja-JP: Add a string resource for Appname &quot;希蒼&quot;</p>
+</li>
+<li><p>In Resources.altform-msft-phonetic.resw for Japanese furigana resources: Add furigana value for AppName &quot;のあ&quot;</p>
+</li>
+</ol>
+<p>The user can search for the app name &quot;希蒼&quot; using both the furigana value &quot;のあ&quot; (noa), and the phonetic value (using the <strong>GetPhonetic</strong> function from the Input Method Editor (IME)) &quot;まれあお&quot; (mare-ao).</p>
+<p>Sorting follows the <strong>Regional Control Panel</strong> format:</p>
+<ul>
+<li>Under a Japanese user locale,
+<ul>
+<li>If furigana is enabled, then &quot;希蒼&quot; is sorted under &quot;の&quot;.</li>
+<li>If furigana is missing, then &quot;希蒼&quot; is sorted under &quot;ま&quot;.</li>
+</ul>
+</li>
+<li>Under a non-Japanese user locale,
+<ul>
+<li>If furigana is enabled, then &quot;希蒼&quot; is sorted under &quot;の&quot;.</li>
+<li>If furigana is missing, then &quot;希蒼&quot; is sorted under &quot;漢字&quot;.</li>
+</ul>
+</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="guidelines-and-checklist-for-globalizing-your-app.html">Guidelines for globalization</a></li>
+<li><a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a></li>
+<li><a href="/windows/uwp/app-resources/tailor-resources-lang-scale-contrast">Tailor your resources for language, scale, high contrast, and other qualifiers</a></li>
+<li><a href="adjust-layout-and-fonts--and-support-rtl.html">Adjust layout and fonts, and support RTL</a></li>
+<li><a href="/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast#updating-images-in-response-to-qualifier-value-change-events">Updating images in response to qualifier value change events</a></li>
+</ul>
+<h2 id="samples">Samples</h2>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Application%20resources%20and%20localization%20sample%20(Windows%208)">Application resources and localization sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/prepare-your-app-for-localization.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

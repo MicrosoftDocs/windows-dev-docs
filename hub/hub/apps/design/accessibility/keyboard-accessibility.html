@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Keyboard accessibility </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Keyboard accessibility ">
+    
+    <meta name="description" content="If your app does not provide good keyboard access, users who are blind or have mobility issues can have difficulty using your app or may not be able to use it at all.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="keyboard-accessibility">Keyboard accessibility</h1>
+
+<p>Building keyboard accessibility (for traditional, modified, or keyboard emulation hardware) into your app, provides users who are blind, have low vision, motor disabilities, or have little or no use of their hands, the ability to navigate through and use the full functionality of your app. In addition, users without disabilities might choose the keyboard for navigation due to preference or efficiency.</p>
+<p>If your app does not provide good keyboard access, users who are blind or have mobility issues might have difficulty using your app.</p>
+<h2 id="keyboard-navigation-among-ui-elements">Keyboard navigation among UI elements</h2>
+<p>To interact with a control using the keyboard, the control must have focus. To receive focus (without using a pointer), the control must be accessible through tab navigation. By default, the tab order of controls is the same as the order in which they are added to a design surface, declared in XAML, or programmatically added to a container.</p>
+<p>Typically, the default tab order is based on how controls are defined in XAML, particularly as that is the order in which the controls are traversed by screen readers. However, the default order does not necessarily correspond to the visual order. The actual display position might depend on the parent layout container and various properties of child elements that can affect the layout.</p>
+<p>To ensure your app has an optimal tab order, test the behavior yourself. If you use a grid or table for your layout, the order in which users might read the screen versus the tab order could be very different. This isn't always a problem, but just make sure to test your app's functionality through both touch and keyboard to verify that your UI is optimized for both input methods.</p>
+<p>You can make the tab order match the visual order by either adjusting the XAML or overriding the default tab order. THe following example shows how to use the <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> property with a <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> layout that uses column-first tab navigation.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+  &lt;Grid.RowDefinitions&gt;...&lt;/Grid.RowDefinitions&gt;
+  &lt;Grid.ColumnDefinitions&gt;...&lt;/Grid.ColumnDefinitions&gt;
+
+  &lt;TextBlock Grid.Column=&quot;1&quot; HorizontalAlignment=&quot;Center&quot;&gt;Groom&lt;/TextBlock&gt;
+  &lt;TextBlock Grid.Column=&quot;2&quot; HorizontalAlignment=&quot;Center&quot;&gt;Bride&lt;/TextBlock&gt;
+
+  &lt;TextBlock Grid.Row=&quot;1&quot;&gt;First name&lt;/TextBlock&gt;
+  &lt;TextBox x:Name=&quot;GroomFirstName&quot; Grid.Row=&quot;1&quot; Grid.Column=&quot;1&quot; TabIndex=&quot;1&quot;/&gt;
+  &lt;TextBox x:Name=&quot;BrideFirstName&quot; Grid.Row=&quot;1&quot; Grid.Column=&quot;2&quot; TabIndex=&quot;3&quot;/&gt;
+
+  &lt;TextBlock Grid.Row=&quot;2&quot;&gt;Last name&lt;/TextBlock&gt;
+  &lt;TextBox x:Name=&quot;GroomLastName&quot; Grid.Row=&quot;2&quot; Grid.Column=&quot;1&quot; TabIndex=&quot;2&quot;/&gt;
+  &lt;TextBox x:Name=&quot;BrideLastName&quot; Grid.Row=&quot;2&quot; Grid.Column=&quot;2&quot; TabIndex=&quot;4&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>In some cases, you might want to exclude a specific control from the tab order. This is typically accomplished by making the control noninteractive by setting its <a href="/uwp/api/windows.ui.xaml.controls.control.isenabled"><strong>IsEnabled</strong></a> property to <strong>false</strong>. A disabled control is automatically excluded from the tab order.</p>
+<p>If you want to exclude an interactive control from the tab order, you can set the <a href="/uwp/api/windows.ui.xaml.controls.control.istabstop"><strong>IsTabStop</strong></a> property to <strong>false</strong>.</p>
+<p>By default, UI elements that support focus are typically included in the tab order. Some exceptions to this include certain text-display types (such as <a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock"><strong>RichTextBlock</strong></a>) that support focus for text selection and clipboard access but are not in the tab order because they are static text elements. These controls are not conventionally interactive (they can't be invoked, and don't require text input, but do support the <a href="/windows/desktop/WinAuto/uiauto-controlpatternsoverview">Text control pattern</a> that supports finding and adjusting selection points in text). Text controls will still be detected by assistive technologies, and read aloud in screen readers, but that relies on techniques other than tab order.</p>
+<p>Whether you adjust <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> values or use the default order, these rules apply:</p>
+<ul>
+<li>If <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> is not set on an element, the default value is <a href="/dotnet/api/system.int32.maxvalue">Int32.MaxValue</a> and the tab order is based on declaration order in the XAML or child collections.</li>
+<li>If <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> is set on an element:
+<ul>
+<li>UI elements with <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> equal to 0 are added to the tab order based on declaration order in XAML or child collections.</li>
+<li>UI elements with <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> greater than 0 are added to the tab order based on the <strong>TabIndex</strong> value.</li>
+<li>UI elements with <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> less than 0 are added to the tab order and appear before any zero value.</li>
+</ul>
+</li>
+</ul>
+<p>The following code snippet shows a collection of elements with various <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> settings (<code>B</code> is assigned the value of <a href="/dotnet/api/system.int32.maxvalue">Int32.MaxValue</a>, or 2,147,483,647).</p>
+<pre><code class="lang-xaml">&lt;StackPanel Background=&quot;#333&quot;&gt;
+  &lt;StackPanel Background=&quot;#FF33FF&quot;&gt;
+    &lt;Button&gt;A&lt;/Button&gt;
+    &lt;Button TabIndex=&quot;2147483647&quot;&gt;B&lt;/Button&gt;
+    &lt;Button&gt;C&lt;/Button&gt;
+  &lt;/StackPanel&gt;
+  &lt;StackPanel Background=&quot;#33FFFF&quot;&gt;
+    &lt;Button TabIndex=&quot;1&quot;&gt;D&lt;/Button&gt;
+    &lt;Button TabIndex=&quot;1&quot;&gt;E&lt;/Button&gt;
+    &lt;Button TabIndex=&quot;0&quot;&gt;F&lt;/Button&gt;
+  &lt;/StackPanel&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>This results in the following tab order:</p>
+<ol>
+<li>F</li>
+<li>D</li>
+<li>E</li>
+<li>A</li>
+<li>B</li>
+<li>C</li>
+</ol>
+<h3 id="keyboard-navigation-between-application-panes-with-f6">Keyboard navigation between application panes with F6</h3>
+<p>An application pane is a logical area of prominent, related UI within an application window (for example, Microsoft Edge panes include the address bar, the bookmark bar, the tab bar, and the content panel). The F6 key can be used to navigate between these panes, where groups of child elements can then be accessed using standard keyboard navigation.</p>
+<p>While keyboard navigation can provide an accessibly-compliant UI, making an accessibly-<em>usable</em> UI often require a few more steps. Typically, this includes:</p>
+<ul>
+<li>Listening to <strong>F6</strong> to navigate between important sections of your UI.</li>
+<li>Adding <strong>keyboard shortcuts</strong> for common actions in your UI.</li>
+<li>Adding <strong>access keys</strong> to important controls in your UI.</li>
+</ul>
+<p>See <a href="#keyboard-shortcuts">Keyboard shortcuts</a> below and <a href="../input/access-keys.html">Access keys</a> for more guidance about implementing shortcuts and access keys.</p>
+<h4 id="optimize-for-f6">Optimize for F6</h4>
+<p>F6 lets keyboard users efficiently navigate between panes of UI without tabbing through potentially hundreds of controls.</p>
+<p>For example, F6 in Microsoft Edge cycles between the address bar, the bookmark bar, the tab bar, and the content panel. As a web page can potentially have hundreds of tabable controls, F6 can make it easier for keyboard users to reach the tab bar and address bar without using application-specific shortcuts.</p>
+<p>The F6 tab cycle can also loosely correspond to <a href="landmarks-and-headings.html">landmarks or headings</a> in content, though it doesn't need to match exactly. F6 should focus on large, distinct regions in your UI, whereas landmarks can be more granular. For example, you might mark an app bar and its search box as landmarks, but only include the app bar itself in the F6 cycle.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must implement F6 navigation in your app as it is not supported natively.</p>
+</div>
+<p>Where possible, regions in the F6 cycle should have an accessible name: either through a landmark or by manually adding an <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty"><strong>AutomationProperties.Name</strong></a> to the &quot;root&quot; element of the region.</p>
+<p><strong>Shift-F6</strong> should cycle in the opposite direction.</p>
+<h2 id="keyboard-navigation-within-a-ui-element">Keyboard navigation within a UI element</h2>
+<p>For composite controls, it is important to ensure proper inner navigation among the contained elements. A composite control can manage the currently active child element to reduce the overhead of having all child elements support focus. The composite control is included in the tab order and handles keyboard navigation events itself. Many composite controls already have some inner navigation logic built into their event handling. For example, arrow-key traversal of items is enabled by default on the <a href="/uwp/api/Windows.UI.Xaml.Controls.ListView"><strong>ListView</strong></a>, <a href="/uwp/api/windows.ui.xaml.controls.gridview"><strong>GridView</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListBox"><strong>ListBox</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.FlipView"><strong>FlipView</strong></a> controls.</p>
+<h2 id="keyboard-alternatives-to-pointer-actions-and-events-for-specific-control-elements">Keyboard alternatives to pointer actions and events for specific control elements</h2>
+<p>UI elements that can be clicked should also be invokable through the keyboard. To use the keyboard with a UI element, the element must have focus (only classes that derive from <a href="/uwp/api/Windows.UI.Xaml.Controls.Control"><strong>Control</strong></a> support focus and tab navigation).</p>
+<p>For UI elements that can be invoked, implement keyboard event handlers for the Spacebar and Enter keys. This ensures basic keyboard accessibility support and lets users reach all interactive UI elements and activate functionality by using the keyboard only.</p>
+<p>Where an element does not support focus, you can create your own custom control. In this case, to enable focus, you must set the <a href="/uwp/api/windows.ui.xaml.controls.control.istabstop"><strong>IsTabStop</strong></a> property to <strong>true</strong> and you must provide a visual indication of the focused visual state with a focus indicator.</p>
+<p>However, it can be easier to use control composition so that the support for tab stops, focus, and Microsoft UI Automation peers and patterns are handled by the control within which you choose to compose your content. For example, instead of handling a pointer-pressed event on an <a href="/uwp/api/Windows.UI.Xaml.Controls.Image"><strong>Image</strong></a>, wrap that element in a <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a> to get pointer, keyboard, and focus support.</p>
+<pre><code class="lang-xaml">&lt;!--Don't do this.--&gt;
+&lt;Image Source=&quot;sample.jpg&quot; PointerPressed=&quot;Image_PointerPressed&quot;/&gt;
+
+&lt;!--Do this instead.--&gt;
+&lt;Button Click=&quot;Button_Click&quot;&gt;&lt;Image Source=&quot;sample.jpg&quot;/&gt;&lt;/Button&gt;
+</code></pre>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+<p>In addition to implementing keyboard navigation and activation, it is also good practice to implement keyboard shortcuts such as <a href="../input/keyboard-accelerators.html">keyboard accelerators</a> and <a href="../input/access-keys.html">access keys</a> for important or frequently used functionality.</p>
+<p>A <em>shortcut</em> is a keyboard combination that provides an efficient way for the user to access app functionality. There are two kinds of shortcut:</p>
+<ul>
+<li><em>Accelerators</em> are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.</li>
+<li><em>Access keys</em> are shortcuts that set focus to specific UI in your application. Access keys typicaly consist of the Alt key plus a letter key.</li>
+</ul>
+<p>Always provide an easy way for users who rely on screen readers and other assistive technology to discover your app's shortcut keys. Communicate shortcut keys by using tooltips, accessible names, accessible descriptions, or some other form of on-screen communication. At a minimum, shortcut keys should be well documented in your app's Help content.</p>
+<p>You can document access keys through screen readers by setting the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty"><strong>AutomationProperties.AccessKey</strong></a> attached property to a string that describes the shortcut key. There is also an <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty"><strong>AutomationProperties.AcceleratorKey</strong></a> attached property for documenting non-mnemonic shortcut keys, although screen readers generally treat both properties the same way. Try to document shortcut keys in multiple ways, using tooltips, automation properties, and written Help documentation.</p>
+<p>The following example demonstrates how to document shortcut keys for media play, pause, and stop buttons.</p>
+<pre><code class="lang-xaml">&lt;Grid KeyDown=&quot;Grid_KeyDown&quot;&gt;
+
+  &lt;Grid.RowDefinitions&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+  &lt;/Grid.RowDefinitions&gt;
+
+  &lt;MediaElement x:Name=&quot;DemoMovie&quot; Source=&quot;xbox.wmv&quot;
+    Width=&quot;500&quot; Height=&quot;500&quot; Margin=&quot;20&quot; HorizontalAlignment=&quot;Center&quot; /&gt;
+
+  &lt;StackPanel Grid.Row=&quot;1&quot; Margin=&quot;10&quot;
+    Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+
+    &lt;Button x:Name=&quot;PlayButton&quot; Click=&quot;MediaButton_Click&quot;
+      ToolTipService.ToolTip=&quot;Shortcut key: Ctrl+P&quot;
+      AutomationProperties.AcceleratorKey=&quot;Control P&quot;&gt;
+      &lt;TextBlock&gt;Play&lt;/TextBlock&gt;
+    &lt;/Button&gt;
+
+    &lt;Button x:Name=&quot;PauseButton&quot; Click=&quot;MediaButton_Click&quot;
+      ToolTipService.ToolTip=&quot;Shortcut key: Ctrl+A&quot;
+      AutomationProperties.AcceleratorKey=&quot;Control A&quot;&gt;
+      &lt;TextBlock&gt;Pause&lt;/TextBlock&gt;
+    &lt;/Button&gt;
+
+    &lt;Button x:Name=&quot;StopButton&quot; Click=&quot;MediaButton_Click&quot;
+      ToolTipService.ToolTip=&quot;Shortcut key: Ctrl+S&quot;
+      AutomationProperties.AcceleratorKey=&quot;Control S&quot;&gt;
+      &lt;TextBlock&gt;Stop&lt;/TextBlock&gt;
+    &lt;/Button&gt;
+  &lt;/StackPanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Setting the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.acceleratorkeyproperty"><strong>AutomationProperties.AcceleratorKey</strong></a> or <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.accesskeyproperty"><strong>AutomationProperties.AccessKey</strong></a> doesn't enable keyboard functionality. This only indicates what keys should be used to the UI Automation framework and then can be passed on to users via assistive technologies.</p>
+</div>
+<p>Key handling is implemented in code-behind, not XAML. You still need to attach handlers for <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> or <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> events on the relevant control in order to actually implement the keyboard shortcut behavior in your app. Also, the underline text decoration for an access key is not provided automatically. You must explicitly underline the text for the specific key in your mnemonic as inline <a href="/uwp/api/Windows.UI.Xaml.Documents.Underline"><strong>Underline</strong></a> formatting if you wish to show underlined text in the UI.</p>
+<p>For simplicity, the preceding example omits the use of resources for strings such as &quot;Ctrl+A&quot;. However, you must also consider shortcut keys during localization. Localizing shortcut keys is relevant because the choice of key to use as the shortcut key typically depends on the visible text label for the element.</p>
+<p>For more guidance about implementing shortcut keys, see <a href="/windows/win32/uxguide/inter-keyboard">Shortcut keys</a> in the Windows User Experience Interaction Guidelines.</p>
+<h3 id="implementing-a-key-event-handler">Implementing a key event handler</h3>
+<p>Input events (such as the key events) use an event concept called <em>routed events</em>. A routed event can bubble up through the child elements of a parent composite control, such that the parent control can handle events for multiple child elements. This event model is convenient for defining shortcut key actions for a control that contains several child elements, none of which can have focus or be part of the tab order.</p>
+<p>For example code that shows how to write a key event handler that includes checking for modifiers such as the Ctrl key, see <a href="../input/keyboard-interactions.html">Keyboard interactions</a>.</p>
+<h2 id="keyboard-navigation-for-custom-controls">Keyboard navigation for custom controls</h2>
+<p>We recommend using the arrow keys as keyboard shortcuts for navigating among child elements in cases where the child elements have a spacial relationship to each other. If tree-view nodes have separate sub-elements for handling expand-collapse and node activation, use the left and right arrow keys to provide keyboard expand-collapse functionality. If you have an oriented control that supports directional traversal within the control content, use the appropriate arrow keys.</p>
+<p>Generally you implement custom key handling for custom controls by including an override of the <a href="/uwp/api/windows.ui.xaml.controls.control.onkeydown"><strong>OnKeyDown</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.control.onkeyup"><strong>OnKeyUp</strong></a> methods as part of the class logic.</p>
+<h2 id="an-example-of-a-visual-state-for-a-focus-indicator">An example of a visual state for a focus indicator</h2>
+<p>As mentioned earlier, any custom control that supports focus should have a visual focus indicator. Typically, that focus indicator is just a rectangle outlining the bounding rectangle of the control. The <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> for visual focus is a peer element to the rest of the control's composition in a control template, but is initially set with a <a href="/uwp/api/windows.ui.xaml.uielement.visibility"><strong>Visibility</strong></a> value of <strong>Collapsed</strong> because the control isn't focused yet. When the control does get focus, a visual state is invoked that specifically sets the <strong>Visibility</strong> of the focus visual to <strong>Visible</strong>. Once focus is moved elsewhere, another visual state is called, and the <strong>Visibility</strong> becomes <strong>Collapsed</strong>.</p>
+<p>All focusable XAML controls display an appropriate visual focus indicator when focused. The user's selected them can also affect the indicator appearance (particularly if the user is using a high contrast mode). If you're using the XAML controls in your UI (and are not replacing the control templates), you don't need to do anything extra to get default visual focus indicators. However, if you intend to retemplate a control, or if you're curious about how XAML controls provide their visual focus indicators, the remainder of this section explains how this is done in XAML and the control logic.</p>
+<p>Here's some example XAML that comes from the default XAML template for a <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a>.</p>
+<p>XAML</p>
+<pre><code class="lang-xml">&lt;ControlTemplate TargetType=&quot;Button&quot;&gt;
+...
+    &lt;Rectangle
+      x:Name=&quot;FocusVisualWhite&quot;
+      IsHitTestVisible=&quot;False&quot;
+      Stroke=&quot;{ThemeResource FocusVisualWhiteStrokeThemeBrush}&quot;
+      StrokeEndLineCap=&quot;Square&quot;
+      StrokeDashArray=&quot;1,1&quot;
+      Opacity=&quot;0&quot;
+      StrokeDashOffset=&quot;1.5&quot;/&gt;
+    &lt;Rectangle
+      x:Name=&quot;FocusVisualBlack&quot;
+      IsHitTestVisible=&quot;False&quot;
+      Stroke=&quot;{ThemeResource FocusVisualBlackStrokeThemeBrush}&quot;
+      StrokeEndLineCap=&quot;Square&quot;
+      StrokeDashArray=&quot;1,1&quot;
+      Opacity=&quot;0&quot;
+      StrokeDashOffset=&quot;0.5&quot;/&gt;
+...
+&lt;/ControlTemplate&gt;
+</code></pre>
+<p>So far this is just the composition. To control the focus indicator's visibility, you define visual states that toggle the <a href="/uwp/api/windows.ui.xaml.uielement.visibility"><strong>Visibility</strong></a> property. This is done using the <a href="/uwp/api/Windows.UI.Xaml.VisualStateManager">VisualStateManager</a> and the VisualStateManager.VisualStateGroups attached property, as applied to the root element that defines the composition.</p>
+<pre><code class="lang-xaml">&lt;ControlTemplate TargetType=&quot;Button&quot;&gt;
+  &lt;Grid&gt;
+    &lt;VisualStateManager.VisualStateGroups&gt;
+       &lt;!--other visual state groups here--&gt;
+       &lt;VisualStateGroup x:Name=&quot;FocusStates&quot;&gt;
+         &lt;VisualState x:Name=&quot;Focused&quot;&gt;
+           &lt;Storyboard&gt;
+             &lt;DoubleAnimation
+               Storyboard.TargetName=&quot;FocusVisualWhite&quot;
+               Storyboard.TargetProperty=&quot;Opacity&quot;
+               To=&quot;1&quot; Duration=&quot;0&quot;/&gt;
+             &lt;DoubleAnimation
+               Storyboard.TargetName=&quot;FocusVisualBlack&quot;
+               Storyboard.TargetProperty=&quot;Opacity&quot;
+               To=&quot;1&quot; Duration=&quot;0&quot;/&gt;
+         &lt;/VisualState&gt;
+         &lt;VisualState x:Name=&quot;Unfocused&quot; /&gt;
+         &lt;VisualState x:Name=&quot;PointerFocused&quot; /&gt;
+       &lt;/VisualStateGroup&gt;
+     &lt;VisualStateManager.VisualStateGroups&gt;
+&lt;!--composition is here--&gt;
+   &lt;/Grid&gt;
+&lt;/ControlTemplate&gt;
+</code></pre>
+<p>Note how only one of the named states adjusts <a href="/uwp/api/windows.ui.xaml.uielement.visibility"><strong>Visibility</strong></a> directly whereas the others are apparently empty. With visual states, as soon as the control uses another state from the same <a href="/uwp/api/Windows.UI.Xaml.VisualStateGroup"><strong>VisualStateGroup</strong></a>, any animations applied by the previous state are immediately canceled. Because the default <strong>Visibility</strong> from composition is <strong>Collapsed</strong>, the rectangle will not appear. The control logic controls this by listening for focus events like <a href="/uwp/api/windows.ui.xaml.uielement.gotfocus"><strong>GotFocus</strong></a> and changing the states with <a href="/uwp/api/windows.ui.xaml.visualstatemanager.gotostate"><strong>GoToState</strong></a>. Often this is already handled for you if you are using a default control or customizing based on a control that already has that behavior.</p>
+<h2 id="keyboard-accessibility-and-devices-without-a-hardware-keyboard">Keyboard accessibility and devices without a hardware keyboard</h2>
+<p>Some devices don't have a dedicated, hardware keyboard and rely on a Soft Input Panel (SIP) instead. Screen readers can read text input from the <strong>Text</strong> SIP and users can discover where their fingers are because the screen reader can detect that the user is scanning keys, and reads the scanned key name aloud. Also, some of the keyboard-oriented accessibility concepts can be mapped to related assistive technology behaviors that don't use a keyboard at all. For example, even though a SIP won't include a Tab key, Narrator supports a touch gesture that's the equivalent of pressing the Tab key, so having a useful tab order through the controls in a UI is still crtical for accessibility. Narrator also supports many other touch gestures, including arrow keys for navigating within complex controls (see <a href="https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a">Narrator keyboard commands and touch gestures</a>).</p>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/AccessibilityKeyboard">Open the WinUI 3 Gallery app and see keyboard accessibility support in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="accessibility.html">Accessibility</a></li>
+<li><a href="../input/keyboard-interactions.html">Keyboard interactions</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard">Touch keyboard sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample">XAML accessibility sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/keyboard-accessibility.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

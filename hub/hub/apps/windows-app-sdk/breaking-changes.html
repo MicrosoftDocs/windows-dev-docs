@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Breaking changes in the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Breaking changes in the Windows App SDK ">
+    
+    <meta name="description" content="If you&#39;re migrating an app to Windows App SDK 1.0 from 0.8, the breaking changes listed here might affect you. Changes are grouped by technology area, such as input and MRT Core.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="breaking-changes---project-reunion-08-to-windows-app-sdk-10">Breaking changes - Project Reunion 0.8 to Windows App SDK 1.0</h1>
+
+<p>If you're migrating an app to Windows App SDK 1.0 from Project Reunion 0.8, the breaking changes listed here might affect you. Changes are grouped by technology area, such as input and MRT Core.</p>
+<h2 id="input">Input</h2>
+<h3 id="api-changes-from-08-to-10">API changes from 0.8 to 1.0</h3>
+<ul>
+<li>No access to experimental types | API change |</li>
+<li>Stable <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint"><strong>Microsoft.UI.Input.PointerPoint</strong></a> added. It replaces <strong>Microsoft.UI.Input.Experimental.ExpPointerPoint</strong>.
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint"><strong>PointerPoint</strong></a> now references <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input"><strong>Microsoft.UI.Input</strong></a> enums and structs instead of <strong>Windows.UI.*</strong> enums and structs (for example, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.ipointerpointtransform"><strong>IPointerPointTransform</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerupdatekind"><strong>PointerUpdateKind</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerdevicetype"><strong>PointerDeviceType</strong></a>).</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint"><strong>PointerPoint</strong></a> is now fully <a href="/windows/uwp/cpp-and-winrt-apis/agile-objects">agile</a>.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint"><strong>PointerPoint</strong></a> static functions <strong>GetCurrentPoint</strong>, <strong>GetCurrentPointTransformed</strong>, <strong>GetIntermediatePoints</strong>, and <strong>GetIntermediatePointsTransformed</strong> removed. They are replaced by member functions on <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint"><strong>PointerPoint</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs"><strong>PointerEventArgs</strong></a>.</li>
+<li>New <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint.gettransformedpoint"><strong>GetTransformedPoint</strong></a> method.</li>
+<li>Removed <strong>ContactRectRaw</strong> from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpointproperties"><strong>PointerPointProperties</strong></a>.</li>
+<li>Removed <strong>RawPosition</strong> properties.</li>
+</ul>
+</li>
+<li>Stable <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs"><strong>Microsoft.UI.Input.PointerEventArgs</strong></a> added. It replaces <strong>Microsoft.UI.Input.Internal.ExpPointerEventArgs)</strong>.
+<ul>
+<li>New <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs.getintermediatetransformedpoints"><strong>GetIntermediateTransformedPoints</strong></a> method.</li>
+</ul>
+</li>
+<li>Stable <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.gesturerecognizer"><strong>Microsoft.UI.Input.GestureRecognizer</strong></a> added. It replaces <strong>Microsoft.UI.Input.Experimental.ExpGestureRecognizer</strong>. References <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input"><strong>Microsoft.UI.Input</strong></a> enums, structs, and classes instead of <strong>Windows.UI.Input.*</strong> and <strong>Windows.UI.Core.*</strong> types (for example, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.gesturesettings"><strong>GestureSettings</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.manipulationdelta"><strong>ManipulationDelta</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.tappedeventargs"><strong>TappedEventArgs</strong></a>).</li>
+<li>Public stable <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputcursor"><strong>InputCursor</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputsystemcursor"><strong>InputSystemCursor</strong></a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputdesktopresourcecursor"><strong>InputDesktopResourceCursor</strong></a> added. This replaces previous references to <strong>Windows.UI.Core.CoreCursor</strong> in the 0.8 API surface.</li>
+<li>Public stable <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputpointersource"><strong>InputPointerSource</strong></a> added – this is returned from the XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel"><strong>SwapChainPanel</strong></a> class instead of the previous experimental <strong>Microsoft.UI.Input.Experimental.ExpIndependentPointerInputObserver</strong> class.
+<ul>
+<li>References <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputcursor"><strong>Microsoft.UI.Input.InputCursor</strong></a> instead of <strong>Windows.UI.Core.CoreCursor</strong>.</li>
+<li>References <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input"><strong>Microsoft.UI.Input</strong></a> structs, enums, and types instead of <strong>Windows.UI.*</strong> types, such as  <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs"><strong>PointerEventArgs</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputpointersourcedevicekinds"><strong>InputPointerSourceDeviceKinds</strong></a>).</li>
+<li><strong>Type</strong> is no longer explicitly closeable.</li>
+</ul>
+</li>
+<li><strong>Microsoft.UI.Input.KeyboardInput</strong> renamed to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource"><strong>Microsoft.UI.Input.InputKeyboardSource</strong></a>.</li>
+</ul>
+<h3 id="behavior-changes-from-08-to-10">Behavior changes from 0.8 to 1.0</h3>
+<ul>
+<li>Underlying input system infrastructure upgraded to use an independent message queue for processing.
+<ul>
+<li>Supports low-latency off-UI-thread input such as inking.</li>
+<li>Fully supports lifted interaction tracker APIs such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.interactions.visualinteractionsource"><strong>Microsoft.UI.Composition.VisualInteractionSource</strong></a> (and others).</li>
+<li>Fully supports hover input for off-thread input delivery (this was a limitation in 0.8).</li>
+<li>System input messages, such as <a href="/windows/win32/inputmsg/wm-pointerdown"><strong>WM_POINTERDOWN</strong></a>, are no longer visible through Win32 APIs on the UI thread as they are routed to an independent message queue inside the infrastructure.</li>
+</ul>
+</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint"><strong>PointerPoint</strong></a> is now agile and can be accessed on any thread.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint"><strong>PointerPoint</strong></a> objects can no longer be constructed statically from a pointer ID.</li>
+<li>XAML-based drag and drop operations fully support mouse, touch, and pen input (0.8 used pen-to-mouse downleveling).</li>
+<li>Direct use of <strong>Windows.ApplicationModel.DataTransfer.DragDrop.Core.CoreDragOperation</strong> will no longer work on the UI thread. XAML drag and drop must be used instead.</li>
+</ul>
+<h2 id="mrt-core">MRT Core</h2>
+<p>MRT Core APIs have moved from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.applicationmodel.resources">Microsoft.ApplicationModel.Resources</a> namespace to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources">Microsoft.Windows.ApplicationModel.Resources</a> namespace.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/breaking-changes.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

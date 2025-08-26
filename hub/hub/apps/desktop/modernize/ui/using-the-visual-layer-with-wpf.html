@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using the Visual Layer with WPF </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using the Visual Layer with WPF ">
+    
+    <meta name="description" content="Learn techniques for using the Visual Layer API&#39;s in combination with existing WPF content to create advanced animations and effects.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-the-visual-layer-with-wpf">Using the Visual Layer with WPF</h1>
+
+<p>You can use Windows Runtime Composition APIs (also called the <a href="/windows/uwp/composition/visual-layer">Visual layer</a>) in your Windows Presentation Foundation (WPF) apps to create modern experiences that light up for Windows users.</p>
+<p>The complete code for this tutorial is available on GitHub: <a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition">WPF HelloComposition sample</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The UWP XAML hosting API has these prerequisites.</p>
+<ul>
+<li>We assume that you have some familiarity with app development using WPF and UWP. For more info, see:
+<ul>
+<li><a href="/dotnet/framework/wpf/getting-started/">Getting Started (WPF)</a></li>
+<li><a href="/windows/uwp/get-started/">Get started with Windows apps</a></li>
+<li><a href="/windows/uwp/porting/desktop-to-uwp-enhance">Enhance your desktop application for Windows</a></li>
+</ul>
+</li>
+<li>.NET Framework 4.7.2 or later</li>
+<li>Windows 10 version 1803 or later</li>
+<li>Windows 10 SDK 17134 or later</li>
+</ul>
+<h2 id="how-to-use-composition-apis-in-wpf">How to use Composition APIs in WPF</h2>
+<p>In this tutorial, you create a simple WPF app UI and add animated Composition elements to it. Both the WPF and Composition components are kept simple, but the interop code shown is the same regardless of the complexity of the components. The finished app looks like this.</p>
+<p><img src="../images/visual-layer-interop/wpf-comp-interop-app-ui.png" alt="The running app UI"></p>
+<h2 id="create-a-wpf-project">Create a WPF project</h2>
+<p>The first step is to create the WPF app project, which includes an application definition and the XAML page for the UI.</p>
+<p>To create a new WPF Application project in Visual C# named <em>HelloComposition</em>:</p>
+<ol>
+<li><p>Open Visual Studio and select <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong>.</p>
+<p>The <strong>New Project</strong> dialog opens.</p>
+</li>
+<li><p>Under the <strong>Installed</strong> category, expand the <strong>Visual C#</strong> node, and then select <strong>Windows Desktop</strong>.</p>
+</li>
+<li><p>Select the <strong>WPF App (.NET Framework)</strong> template.</p>
+</li>
+<li><p>Enter the name <em>HelloComposition</em>, select Framework <strong>.NET Framework 4.7.2</strong>, then click <strong>OK</strong>.</p>
+<p>Visual Studio creates the project and opens the designer for the default application window named MainWindow.xaml.</p>
+</li>
+</ol>
+<h2 id="configure-the-project-to-use-windows-runtime-apis">Configure the project to use Windows Runtime APIs</h2>
+<p>To use Windows Runtime (WinRT) APIs in your WPF app, you need to configure your Visual Studio project to access the Windows Runtime. In addition, vectors are used extensively by the Composition APIs, so you need to add the references required to use vectors.</p>
+<p>NuGet packages are available to address both of these needs. Install the latest versions of these packages to add the necessary references to your project.</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts">Microsoft.Windows.SDK.Contracts</a> (Requires default package management format set to PackageReference.)</li>
+<li><a href="https://www.nuget.org/packages/System.Numerics.Vectors/">System.Numerics.Vectors</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While we recommend using the NuGet packages to configure your project, you can add the required references manually. For more info, see <a href="/windows/uwp/porting/desktop-to-uwp-enhance">Enhance your desktop application for Windows</a>. The following table shows the files that you need to add references to.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>System.Runtime.WindowsRuntime</td>
+<td>C:\Windows\Microsoft.NET\Framework\v4.0.30319</td>
+</tr>
+<tr>
+<td>Windows.Foundation.UniversalApiContract.winmd</td>
+<td>C:\Program Files (x86)\Windows Kits\10\References&lt;<em>sdk version</em>&gt;\Windows.Foundation.UniversalApiContract&lt;<em>version</em>&gt;</td>
+</tr>
+<tr>
+<td>Windows.Foundation.FoundationContract.winmd</td>
+<td>C:\Program Files (x86)\Windows Kits\10\References&lt;<em>sdk version</em>&gt;\Windows.Foundation.FoundationContract&lt;<em>version</em>&gt;</td>
+</tr>
+<tr>
+<td>System.Numerics.Vectors.dll</td>
+<td>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics.Vectors\v4.0_4.0.0.0__b03f5f7f11d50a3a</td>
+</tr>
+<tr>
+<td>System.Numerics.dll</td>
+<td>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework.NETFramework\v4.7.2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configure-the-project-to-be-per-monitor-dpi-aware">Configure the project to be per-monitor DPI aware</h2>
+<p>The visual layer content you add to your app does not automatically scale to match the DPI settings of the screen it's shown on. You need to enable per-monitor DPI awareness for your app, and then make sure that the code you use to create your visual layer content takes into account the current DPI scale when the app runs. Here, we configure the project to be DPI aware. In later sections, we show how to use the DPI information to scale the visual layer content.</p>
+<p>WPF apps are System DPI aware by default, but need to declare themselves to be per-monitor DPI aware in an app.manifest file. To turn on Windows-level per-monitor DPI awareness in the app manifest file:</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right click the <em>HelloComposition</em> project.</p>
+</li>
+<li><p>In the context menu, select <strong>Add</strong> &gt; <strong>New Item...</strong>.</p>
+</li>
+<li><p>In the <strong>Add New Item</strong> dialog, select 'Application Manifest File', then click <strong>Add</strong>. (You can leave the default name.)</p>
+</li>
+<li><p>In the app.manifest file, find this xml and un-comment it:</p>
+<pre><code class="lang-xaml">&lt;application xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;
+    &lt;windowsSettings&gt;
+      &lt;dpiAware xmlns=&quot;http://schemas.microsoft.com/SMI/2005/WindowsSettings&quot;&gt;true&lt;/dpiAware&gt;
+    &lt;/windowsSettings&gt;
+  &lt;/application&gt;
+</code></pre>
+</li>
+<li><p>Add this setting after the opening <code>&lt;windowsSettings&gt;</code> tag:</p>
+<pre><code class="lang-xaml">      &lt;dpiAwareness xmlns=&quot;http://schemas.microsoft.com/SMI/2016/WindowsSettings&quot;&gt;PerMonitor&lt;/dpiAwareness&gt;
+</code></pre>
+</li>
+<li><p>You also need to set the <strong>DoNotScaleForDpiChanges</strong> setting in the App.config file.</p>
+<p>Open App.Config and add this xml inside the <code>&lt;configuration&gt;</code> element:</p>
+<pre><code class="lang-xml">&lt;runtime&gt;
+  &lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.DoNotScaleForDpiChanges=false&quot;/&gt;
+&lt;/runtime&gt;
+</code></pre>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>AppContextSwitchOverrides</strong> can only be set once. If your application already has one set, you must semicolon delimit this switch inside the value attribute.</p>
+</div>
+<p>(For more info, see the <a href="https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI">Per Monitor DPI Developer Guide and samples</a> on GitHub.)</p>
+<h2 id="create-an-hwndhost-derived-class-to-host-composition-elements">Create an HwndHost derived class to host composition elements</h2>
+<p>To host content you create with the visual layer, you need to create a class that derives from <a href="/dotnet/api/system.windows.interop.hwndhost">HwndHost</a>. This is where you do most of the configuration for hosting Composition APIs. In this class, you use <a href="/cpp/dotnet/calling-native-functions-from-managed-code">Platform Invocation Services (PInvoke)</a> and <a href="/dotnet/api/system.runtime.interopservices.comimportattribute">COM Interop</a> to bring Composition APIs into your WPF app. For more info about PInvoke and COM Interop, see <a href="/dotnet/framework/interop/index">Interoperating with unmanaged code</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you need to, check the complete code at the end of the tutorial to make sure all the code is in the right places as you work through the tutorial.</p>
+</div>
+<ol>
+<li><p>Add a new class file to your project that derives from <a href="/dotnet/api/system.windows.interop.hwndhost">HwndHost</a>.</p>
+<ul>
+<li>In <strong>Solution Explorer</strong>, right click the <em>HelloComposition</em> project.</li>
+<li>In the context menu, select <strong>Add</strong> &gt; <strong>Class...</strong>.</li>
+<li>In the <strong>Add New Item</strong> dialog, name the class <em>CompositionHost.cs</em>, then click <strong>Add</strong>.</li>
+</ul>
+</li>
+<li><p>In CompositionHost.cs, edit the class definition to derive from <strong>HwndHost</strong>.</p>
+<pre><code class="lang-csharp">// Add
+// using System.Windows.Interop;
+
+namespace HelloComposition
+{
+    class CompositionHost : HwndHost
+    {
+    }
+}
+</code></pre>
+</li>
+<li><p>Add the following code and constructor to the class.</p>
+<pre><code class="lang-csharp">// Add
+// using Windows.UI.Composition;
+
+IntPtr hwndHost;
+int hostHeight, hostWidth;
+object dispatcherQueue;
+ICompositionTarget compositionTarget;
+
+public Compositor Compositor { get; private set; }
+
+public Visual Child
+{
+    set
+    {
+        if (Compositor == null)
+        {
+            InitComposition(hwndHost);
+        }
+        compositionTarget.Root = value;
+    }
+}
+
+internal const int
+  WS_CHILD = 0x40000000,
+  WS_VISIBLE = 0x10000000,
+  LBS_NOTIFY = 0x00000001,
+  HOST_ID = 0x00000002,
+  LISTBOX_ID = 0x00000001,
+  WS_VSCROLL = 0x00200000,
+  WS_BORDER = 0x00800000;
+
+public CompositionHost(double height, double width)
+{
+    hostHeight = (int)height;
+    hostWidth = (int)width;
+}
+</code></pre>
+</li>
+<li><p>Override the <strong>BuildWindowCore</strong> and <strong>DestroyWindowCore</strong> methods.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In BuildWindowCore, you call the <em>InitializeCoreDispatcher</em> and <em>InitComposition</em> methods. You create these methods in the next steps.</p>
+</div>
+<pre><code class="lang-csharp">// Add
+// using System.Runtime.InteropServices;
+
+protected override HandleRef BuildWindowCore(HandleRef hwndParent)
+{
+    // Create Window
+    hwndHost = IntPtr.Zero;
+    hwndHost = CreateWindowEx(0, &quot;static&quot;, &quot;&quot;,
+                              WS_CHILD | WS_VISIBLE,
+                              0, 0,
+                              hostWidth, hostHeight,
+                              hwndParent.Handle,
+                              (IntPtr)HOST_ID,
+                              IntPtr.Zero,
+                              0);
+
+    // Create Dispatcher Queue
+    dispatcherQueue = InitializeCoreDispatcher();
+
+    // Build Composition tree of content
+    InitComposition(hwndHost);
+
+    return new HandleRef(this, hwndHost);
+}
+
+protected override void DestroyWindowCore(HandleRef hwnd)
+{
+    if (compositionTarget.Root != null)
+    {
+        compositionTarget.Root.Dispose();
+    }
+    DestroyWindow(hwnd.Handle);
+}
+</code></pre>
+<ul>
+<li><a href="/windows/desktop/api/winuser/nf-winuser-createwindowexa">CreateWindowEx</a> and <a href="/windows/desktop/api/winuser/nf-winuser-destroywindow">DestroyWindow</a> require a PInvoke declaration. Place this declaration at the end of the code for the class.</li>
+</ul>
+<pre><code class="lang-csharp">#region PInvoke declarations
+
+[DllImport(&quot;user32.dll&quot;, EntryPoint = &quot;CreateWindowEx&quot;, CharSet = CharSet.Unicode)]
+internal static extern IntPtr CreateWindowEx(int dwExStyle,
+                                              string lpszClassName,
+                                              string lpszWindowName,
+                                              int style,
+                                              int x, int y,
+                                              int width, int height,
+                                              IntPtr hwndParent,
+                                              IntPtr hMenu,
+                                              IntPtr hInst,
+                                              [MarshalAs(UnmanagedType.AsAny)] object pvParam);
+
+[DllImport(&quot;user32.dll&quot;, EntryPoint = &quot;DestroyWindow&quot;, CharSet = CharSet.Unicode)]
+internal static extern bool DestroyWindow(IntPtr hwnd);
+
+#endregion PInvoke declarations
+</code></pre>
+</li>
+<li><p>Initialize a thread with a <a href="/uwp/api/windows.ui.core.coredispatcher">CoreDispatcher</a>. The core dispatcher is responsible for processing window messages and dispatching events for WinRT APIs. New instances of <strong>CoreDispatcher</strong> must be created on a thread that has a CoreDispatcher.</p>
+<ul>
+<li>Create a method named <em>InitializeCoreDispatcher</em> and add code to set up the dispatcher queue.</li>
+</ul>
+<pre><code class="lang-csharp">private object InitializeCoreDispatcher()
+{
+    DispatcherQueueOptions options = new DispatcherQueueOptions();
+    options.apartmentType = DISPATCHERQUEUE_THREAD_APARTMENTTYPE.DQTAT_COM_STA;
+    options.threadType = DISPATCHERQUEUE_THREAD_TYPE.DQTYPE_THREAD_CURRENT;
+    options.dwSize = Marshal.SizeOf(typeof(DispatcherQueueOptions));
+
+    object queue = null;
+    CreateDispatcherQueueController(options, out queue);
+    return queue;
+}
+</code></pre>
+<ul>
+<li>The dispatcher queue also requires a PInvoke declaration. Place this declaration inside the <em>PInvoke declarations</em> region you created in the previous step.</li>
+</ul>
+<pre><code class="lang-csharp">//typedef enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
+//{
+//    DQTAT_COM_NONE,
+//    DQTAT_COM_ASTA,
+//    DQTAT_COM_STA
+//};
+internal enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
+{
+    DQTAT_COM_NONE = 0,
+    DQTAT_COM_ASTA = 1,
+    DQTAT_COM_STA = 2
+};
+
+//typedef enum DISPATCHERQUEUE_THREAD_TYPE
+//{
+//    DQTYPE_THREAD_DEDICATED,
+//    DQTYPE_THREAD_CURRENT
+//};
+internal enum DISPATCHERQUEUE_THREAD_TYPE
+{
+    DQTYPE_THREAD_DEDICATED = 1,
+    DQTYPE_THREAD_CURRENT = 2,
+};
+
+//struct DispatcherQueueOptions
+//{
+//    DWORD dwSize;
+//    DISPATCHERQUEUE_THREAD_TYPE threadType;
+//    DISPATCHERQUEUE_THREAD_APARTMENTTYPE apartmentType;
+//};
+[StructLayout(LayoutKind.Sequential)]
+internal struct DispatcherQueueOptions
+{
+    public int dwSize;
+
+    [MarshalAs(UnmanagedType.I4)]
+    public DISPATCHERQUEUE_THREAD_TYPE threadType;
+
+    [MarshalAs(UnmanagedType.I4)]
+    public DISPATCHERQUEUE_THREAD_APARTMENTTYPE apartmentType;
+};
+
+//HRESULT CreateDispatcherQueueController(
+//  DispatcherQueueOptions options,
+//  ABI::Windows::System::IDispatcherQueueController** dispatcherQueueController
+//);
+[DllImport(&quot;coremessaging.dll&quot;, EntryPoint = &quot;CreateDispatcherQueueController&quot;, CharSet = CharSet.Unicode)]
+internal static extern IntPtr CreateDispatcherQueueController(DispatcherQueueOptions options,
+                                        [MarshalAs(UnmanagedType.IUnknown)]
+                                        out object dispatcherQueueController);
+</code></pre>
+<p>You now have the dispatcher queue ready and can begin to initialize and create Composition content.</p>
+</li>
+<li><p>Initialize the <a href="/uwp/api/windows.ui.composition.compositor">Compositor</a>. The Compositor is a factory that creates a variety of types in the <a href="/uwp/api/windows.ui.composition">Windows.UI.Composition</a> namespace spanning visuals, the effects system, and the animation system. The Compositor class also manages the lifetime of objects created from the factory.</p>
+<pre><code class="lang-csharp">private void InitComposition(IntPtr hwndHost)
+{
+    ICompositorDesktopInterop interop;
+
+    compositor = new Compositor();
+    object iunknown = compositor as object;
+    interop = (ICompositorDesktopInterop)iunknown;
+    IntPtr raw;
+    interop.CreateDesktopWindowTarget(hwndHost, true, out raw);
+
+    object rawObject = Marshal.GetObjectForIUnknown(raw);
+    ICompositionTarget target = (ICompositionTarget)rawObject;
+
+    if (raw == null) { throw new Exception(&quot;QI Failed&quot;); }
+}
+</code></pre>
+<ul>
+<li><strong>ICompositorDesktopInterop</strong> and <strong>ICompositionTarget</strong> require COM imports. Place this code after the <em>CompositionHost</em> class, but inside the namespace declaration.</li>
+</ul>
+<pre><code class="lang-csharp">#region COM Interop
+
+/*
+#undef INTERFACE
+#define INTERFACE ICompositorDesktopInterop
+    DECLARE_INTERFACE_IID_(ICompositorDesktopInterop, IUnknown, &quot;29E691FA-4567-4DCA-B319-D0F207EB6807&quot;)
+    {
+        IFACEMETHOD(CreateDesktopWindowTarget)(
+            _In_ HWND hwndTarget,
+            _In_ BOOL isTopmost,
+            _COM_Outptr_ IDesktopWindowTarget * *result
+            ) PURE;
+    };
+*/
+[ComImport]
+[Guid(&quot;29E691FA-4567-4DCA-B319-D0F207EB6807&quot;)]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+public interface ICompositorDesktopInterop
+{
+    void CreateDesktopWindowTarget(IntPtr hwndTarget, bool isTopmost, out IntPtr test);
+}
+
+//[contract(Windows.Foundation.UniversalApiContract, 2.0)]
+//[exclusiveto(Windows.UI.Composition.CompositionTarget)]
+//[uuid(A1BEA8BA - D726 - 4663 - 8129 - 6B5E7927FFA6)]
+//interface ICompositionTarget : IInspectable
+//{
+//    [propget] HRESULT Root([out] [retval] Windows.UI.Composition.Visual** value);
+//    [propput] HRESULT Root([in] Windows.UI.Composition.Visual* value);
+//}
+
+[ComImport]
+[Guid(&quot;A1BEA8BA-D726-4663-8129-6B5E7927FFA6&quot;)]
+[InterfaceType(ComInterfaceType.InterfaceIsIInspectable)]
+public interface ICompositionTarget
+{
+    Windows.UI.Composition.Visual Root
+    {
+        get;
+        set;
+    }
+}
+
+#endregion COM Interop
+</code></pre>
+</li>
+</ol>
+<h2 id="create-a-usercontrol-to-add-your-content-to-the-wpf-visual-tree">Create a UserControl to add your content to the WPF visual tree</h2>
+<p>The last step to set up the infrastructure required to host Composition content is to add the HwndHost to the WPF visual tree.</p>
+<h3 id="create-a-usercontrol">Create a UserControl</h3>
+<p>A UserControl is a convenient way to package your code that creates and manages Composition content, and easily add the content to your XAML.</p>
+<ol>
+<li><p>Add a new user control file to your project.</p>
+<ul>
+<li>In <strong>Solution Explorer</strong>, right click the <em>HelloComposition</em> project.</li>
+<li>In the context menu, select <strong>Add</strong> &gt; <strong>User Control...</strong>.</li>
+<li>In the <strong>Add New Item</strong> dialog, name the user control <em>CompositionHostControl.xaml</em>, then click <strong>Add</strong>.</li>
+</ul>
+<p>Both the CompositionHostControl.xaml and CompositionHostControl.xaml.cs files are created and added to your project.</p>
+</li>
+<li><p>In CompositionHostControl.xaml, replace the <code>&lt;Grid&gt; &lt;/Grid&gt;</code> tags with this <strong>Border</strong> element, which is the XAML container that your HwndHost will go in.</p>
+<pre><code class="lang-xaml">&lt;Border Name=&quot;CompositionHostElement&quot;/&gt;
+</code></pre>
+</li>
+</ol>
+<p>In the code for the user control, you create an instance of the CompositionHost class you created in the previous step and add it as a child element of <em>CompositionHostElement</em>, the Border you created in the XAML page.</p>
+<ol>
+<li><p>In CompositionHostControl.xaml.cs, add private variables for the objects you'll use in your Composition code. Add these after the class definition.</p>
+<pre><code class="lang-csharp">CompositionHost compositionHost;
+Compositor compositor;
+Windows.UI.Composition.ContainerVisual containerVisual;
+DpiScale currentDpi;
+</code></pre>
+</li>
+<li><p>Add a handler for the user control's <strong>Loaded</strong> event. This is where you set up your CompositionHost instance.</p>
+<ul>
+<li>In the constructor, hook up the event handler as shown here (<code>Loaded += CompositionHostControl_Loaded;</code>).</li>
+</ul>
+<pre><code class="lang-csharp">public CompositionHostControl()
+{
+    InitializeComponent();
+    Loaded += CompositionHostControl_Loaded;
+}
+</code></pre>
+<ul>
+<li>Add the event handler method with the name <em>CompositionHostControl_Loaded</em>.</li>
+</ul>
+<pre><code class="lang-csharp">private void CompositionHostControl_Loaded(object sender, RoutedEventArgs e)
+{
+    // If the user changes the DPI scale setting for the screen the app is on,
+    // the CompositionHostControl is reloaded. Don't redo this set up if it's
+    // already been done.
+    if (compositionHost is null)
+    {
+        currentDpi = VisualTreeHelper.GetDpi(this);
+
+        compositionHost =
+            new CompositionHost(ControlHostElement.ActualHeight, ControlHostElement.ActualWidth);
+        ControlHostElement.Child = compositionHost;
+        compositor = compositionHost.Compositor;
+        containerVisual = compositor.CreateContainerVisual();
+        compositionHost.Child = containerVisual;
+    }
+}
+</code></pre>
+<p>In this method, you set up the objects you'll use in your Composition code. Here's a quick look at what's happening.</p>
+<ul>
+<li>First, make sure the set up is only done once by checking whether an instance of CompositionHost already exists.</li>
+</ul>
+<pre><code class="lang-csharp">// If the user changes the DPI scale setting for the screen the app is on,
+// the CompositionHostControl is reloaded. Don't redo this set up if it's
+// already been done.
+if (compositionHost is null)
+{
+
+}
+</code></pre>
+<ul>
+<li>Get the current DPI. This is used to properly scale your Composition elements.</li>
+</ul>
+<pre><code class="lang-csharp">currentDpi = VisualTreeHelper.GetDpi(this);
+</code></pre>
+<ul>
+<li>Create an instance of CompositionHost and assign it as the Child of the Border, <em>CompositionHostElement</em>.</li>
+</ul>
+<pre><code class="lang-csharp">compositionHost =
+    new CompositionHost(ControlHostElement.ActualHeight, ControlHostElement.ActualWidth);
+ControlHostElement.Child = compositionHost;
+</code></pre>
+<ul>
+<li>Get the Compositor from the CompositionHost.</li>
+</ul>
+<pre><code class="lang-csharp">compositor = compositionHost.Compositor;
+</code></pre>
+<ul>
+<li>Use the Compositor to create a container visual. This is the Composition container that you add your Composition elements to.</li>
+</ul>
+<pre><code class="lang-csharp">containerVisual = compositor.CreateContainerVisual();
+compositionHost.Child = containerVisual;
+</code></pre>
+</li>
+</ol>
+<h3 id="add-composition-elements">Add composition elements</h3>
+<p>With the infrastructure in place, you can now generate the Composition content you want to show.</p>
+<p>For this example, you add code that creates and animates a simple square <a href="/uwp/api/windows.ui.composition.spritevisual">SpriteVisual</a>.</p>
+<ol>
+<li><p>Add a composition element. In CompositionHostControl.xaml.cs, add these methods to the CompositionHostControl class.</p>
+<pre><code class="lang-csharp">// Add
+// using System.Numerics;
+
+public void AddElement(float size, float offsetX, float offsetY)
+{
+    var visual = compositor.CreateSpriteVisual();
+    visual.Size = new Vector2(size, size);
+    visual.Scale = new Vector3((float)currentDpi.DpiScaleX, (float)currentDpi.DpiScaleY, 1);
+    visual.Brush = compositor.CreateColorBrush(GetRandomColor());
+    visual.Offset = new Vector3(offsetX * (float)currentDpi.DpiScaleX, offsetY * (float)currentDpi.DpiScaleY, 0);
+
+    containerVisual.Children.InsertAtTop(visual);
+
+    AnimateSquare(visual, 3);
+}
+
+private void AnimateSquare(SpriteVisual visual, int delay)
+{
+    float offsetX = (float)(visual.Offset.X); // Already adjusted for DPI.
+
+    // Adjust values for DPI scale, then find the Y offset that aligns the bottom of the square
+    // with the bottom of the host container. This is the value to animate to.
+    var hostHeightAdj = CompositionHostElement.ActualHeight * currentDpi.DpiScaleY;
+    var squareSizeAdj = visual.Size.Y * currentDpi.DpiScaleY;
+    float bottom = (float)(hostHeightAdj - squareSizeAdj);
+
+    // Create the animation only if it's needed.
+    if (visual.Offset.Y != bottom)
+    {
+        Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+        animation.InsertKeyFrame(1f, new Vector3(offsetX, bottom, 0f));
+        animation.Duration = TimeSpan.FromSeconds(2);
+        animation.DelayTime = TimeSpan.FromSeconds(delay);
+        visual.StartAnimation(&quot;Offset&quot;, animation);
+    }
+}
+
+private Windows.UI.Color GetRandomColor()
+{
+    Random random = new Random();
+    byte r = (byte)random.Next(0, 255);
+    byte g = (byte)random.Next(0, 255);
+    byte b = (byte)random.Next(0, 255);
+    return Windows.UI.Color.FromArgb(255, r, g, b);
+}
+</code></pre>
+</li>
+</ol>
+<h3 id="handle-dpi-changes">Handle DPI changes</h3>
+<p>The code to add and animate an element takes into account the current DPI scale when elements are created, but you also need to account for DPI changes while the app is running. You can handle the <a href="/dotnet/api/system.windows.interop.hwndhost.dpichanged">HwndHost.DpiChanged</a> event to be notified of changes and adjust your calculations based on the new DPI.</p>
+<ol>
+<li><p>In the CompositionHostControl_Loaded method, after the last line, add this to hook up the DpiChanged event handler.</p>
+<pre><code class="lang-csharp">compositionHost.DpiChanged += CompositionHost_DpiChanged;
+</code></pre>
+</li>
+<li><p>Add the event handler method with the name <em>CompositionHostDpiChanged</em>. This code adjusts the scale and offset of each element, and recalculates any animations that aren't complete.</p>
+<pre><code class="lang-csharp">private void CompositionHost_DpiChanged(object sender, DpiChangedEventArgs e)
+{
+    currentDpi = e.NewDpi;
+    Vector3 newScale = new Vector3((float)e.NewDpi.DpiScaleX, (float)e.NewDpi.DpiScaleY, 1);
+
+    foreach (SpriteVisual child in containerVisual.Children)
+    {
+        child.Scale = newScale;
+        var newOffsetX = child.Offset.X * ((float)e.NewDpi.DpiScaleX / (float)e.OldDpi.DpiScaleX);
+        var newOffsetY = child.Offset.Y * ((float)e.NewDpi.DpiScaleY / (float)e.OldDpi.DpiScaleY);
+        child.Offset = new Vector3(newOffsetX, newOffsetY, 1);
+
+        // Adjust animations for DPI change.
+        AnimateSquare(child, 0);
+    }
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="add-the-user-control-to-your-xaml-page">Add the user control to your XAML page</h2>
+<p>Now, you can add the user control to your XAML UI.</p>
+<ol>
+<li><p>In MainWindow.xaml, set the Window Height to 600 and the Width to 840.</p>
+</li>
+<li><p>Add the XAML for the UI. In MainWindow.xaml, add this XAML between the root <code>&lt;Grid&gt; &lt;/Grid&gt;</code> tags.</p>
+<pre><code class="lang-xaml">&lt;Grid.ColumnDefinitions&gt;
+    &lt;ColumnDefinition Width=&quot;210&quot;/&gt;
+    &lt;ColumnDefinition Width=&quot;600&quot;/&gt;
+    &lt;ColumnDefinition/&gt;
+&lt;/Grid.ColumnDefinitions&gt;
+&lt;Grid.RowDefinitions&gt;
+    &lt;RowDefinition Height=&quot;46&quot;/&gt;
+    &lt;RowDefinition/&gt;
+&lt;/Grid.RowDefinitions&gt;
+&lt;Button Content=&quot;Add composition element&quot; Click=&quot;Button_Click&quot;
+        Grid.Row=&quot;1&quot; Margin=&quot;12,0&quot;
+        VerticalAlignment=&quot;Top&quot; Height=&quot;40&quot;/&gt;
+&lt;TextBlock Text=&quot;Composition content&quot; FontSize=&quot;20&quot;
+           Grid.Column=&quot;1&quot; Margin=&quot;0,12,0,4&quot;
+           HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;local:CompositionHostControl x:Name=&quot;CompositionHostControl1&quot;
+                              Grid.Row=&quot;1&quot; Grid.Column=&quot;1&quot;
+                              VerticalAlignment=&quot;Top&quot;
+                              Width=&quot;600&quot; Height=&quot;500&quot;
+                              BorderBrush=&quot;LightGray&quot;
+                              BorderThickness=&quot;3&quot;/&gt;
+</code></pre>
+</li>
+<li><p>Handle the button click to create new elements. (The Click event is already hooked up in the XAML.)</p>
+<p>In MainWindow.xaml.cs, add this <em>Button_Click</em> event handler method. This code calls <em>CompositionHost.AddElement</em> to create a new element with a randomly generated size and offset.</p>
+<pre><code class="lang-csharp">// Add
+// using System;
+
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    Random random = new Random();
+    float size = random.Next(50, 150);
+    float offsetX = random.Next(0, (int)(CompositionHostControl1.ActualWidth - size));
+    float offsetY = random.Next(0, (int)(CompositionHostControl1.ActualHeight/2 - size));
+    CompositionHostControl1.AddElement(size, offsetX, offsetY);
+}
+</code></pre>
+</li>
+</ol>
+<p>You can now build and run your WPF app. If you need to, check the complete code at the end of the tutorial to make sure all the code is in the right places.</p>
+<p>When you run the app and click the button, you should see animated squares added to the UI.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>For a more complete example that builds on the same infrastructure, see the <a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/VisualLayerIntegration">WPF Visual layer integration sample</a> on GitHub.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="/dotnet/framework/wpf/getting-started/">Getting Started (WPF)</a> (.NET)</li>
+<li><a href="/dotnet/framework/interop/">Interoperating with unmanaged code</a> (.NET)</li>
+<li><a href="/windows/uwp/get-started/">Get started with Windows apps</a> (UWP)</li>
+<li><a href="/windows/uwp/porting/desktop-to-uwp-enhance">Enhance your desktop application for Windows</a> (UWP)</li>
+<li><a href="/uwp/api/windows.ui.composition">Windows.UI.Composition namespace</a> (UWP)</li>
+</ul>
+<h2 id="complete-code">Complete code</h2>
+<p>Here's the complete code for this tutorial.</p>
+<h3 id="mainwindowxaml">MainWindow.xaml</h3>
+<pre><code class="lang-xaml">&lt;Window x:Class=&quot;HelloComposition.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:local=&quot;clr-namespace:HelloComposition&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;MainWindow&quot; Height=&quot;600&quot; Width=&quot;840&quot;&gt;
+    &lt;Grid&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition Width=&quot;210&quot;/&gt;
+            &lt;ColumnDefinition Width=&quot;600&quot;/&gt;
+            &lt;ColumnDefinition/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;46&quot;/&gt;
+            &lt;RowDefinition/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;Button Content=&quot;Add composition element&quot; Click=&quot;Button_Click&quot;
+                Grid.Row=&quot;1&quot; Margin=&quot;12,0&quot;
+                VerticalAlignment=&quot;Top&quot; Height=&quot;40&quot;/&gt;
+        &lt;TextBlock Text=&quot;Composition content&quot; FontSize=&quot;20&quot;
+                   Grid.Column=&quot;1&quot; Margin=&quot;0,12,0,4&quot;
+                   HorizontalAlignment=&quot;Center&quot;/&gt;
+        &lt;local:CompositionHostControl x:Name=&quot;CompositionHostControl1&quot;
+                                      Grid.Row=&quot;1&quot; Grid.Column=&quot;1&quot;
+                                      VerticalAlignment=&quot;Top&quot;
+                                      Width=&quot;600&quot; Height=&quot;500&quot;
+                                      BorderBrush=&quot;LightGray&quot; BorderThickness=&quot;3&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<h3 id="mainwindowxamlcs">MainWindow.xaml.cs</h3>
+<pre><code class="lang-csharp">using System;
+using System.Windows;
+
+namespace HelloComposition
+{
+    /// &lt;summary&gt;
+    /// Interaction logic for MainWindow.xaml
+    /// &lt;/summary&gt;
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Random random = new Random();
+            float size = random.Next(50, 150);
+            float offsetX = random.Next(0, (int)(CompositionHostControl1.ActualWidth - size));
+            float offsetY = random.Next(0, (int)(CompositionHostControl1.ActualHeight/2 - size));
+            CompositionHostControl1.AddElement(size, offsetX, offsetY);
+        }
+    }
+}
+</code></pre>
+<h3 id="compositionhostcontrolxaml">CompositionHostControl.xaml</h3>
+<pre><code class="lang-xaml">&lt;UserControl x:Class=&quot;HelloComposition.CompositionHostControl&quot;
+             xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+             xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+             xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+             xmlns:local=&quot;clr-namespace:HelloComposition&quot;
+             mc:Ignorable=&quot;d&quot;
+             d:DesignHeight=&quot;450&quot; d:DesignWidth=&quot;800&quot;&gt;
+    &lt;Border Name=&quot;CompositionHostElement&quot;/&gt;
+&lt;/UserControl&gt;
+</code></pre>
+<h3 id="compositionhostcontrolxamlcs">CompositionHostControl.xaml.cs</h3>
+<pre><code class="lang-csharp">using System;
+using System.Numerics;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using Windows.UI.Composition;
+
+namespace HelloComposition
+{
+    /// &lt;summary&gt;
+    /// Interaction logic for CompositionHostControl.xaml
+    /// &lt;/summary&gt;
+    public partial class CompositionHostControl : UserControl
+    {
+        CompositionHost compositionHost;
+        Compositor compositor;
+        Windows.UI.Composition.ContainerVisual containerVisual;
+        DpiScale currentDpi;
+
+        public CompositionHostControl()
+        {
+            InitializeComponent();
+            Loaded += CompositionHostControl_Loaded;
+        }
+
+        private void CompositionHostControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            // If the user changes the DPI scale setting for the screen the app is on,
+            // the CompositionHostControl is reloaded. Don't redo this set up if it's
+            // already been done.
+            if (compositionHost is null)
+            {
+                currentDpi = VisualTreeHelper.GetDpi(this);
+
+                compositionHost = new CompositionHost(CompositionHostElement.ActualHeight, CompositionHostElement.ActualWidth);
+                CompositionHostElement.Child = compositionHost;
+                compositor = compositionHost.Compositor;
+                containerVisual = compositor.CreateContainerVisual();
+                compositionHost.Child = containerVisual;
+            }
+        }
+
+        protected override void OnDpiChanged(DpiScale oldDpi, DpiScale newDpi)
+        {
+            base.OnDpiChanged(oldDpi, newDpi);
+            currentDpi = newDpi;
+            Vector3 newScale = new Vector3((float)newDpi.DpiScaleX, (float)newDpi.DpiScaleY, 1);
+
+            foreach (SpriteVisual child in containerVisual.Children)
+            {
+                child.Scale = newScale;
+                var newOffsetX = child.Offset.X * ((float)newDpi.DpiScaleX / (float)oldDpi.DpiScaleX);
+                var newOffsetY = child.Offset.Y * ((float)newDpi.DpiScaleY / (float)oldDpi.DpiScaleY);
+                child.Offset = new Vector3(newOffsetX, newOffsetY, 1);
+
+                // Adjust animations for DPI change.
+                AnimateSquare(child, 0);
+            }
+        }
+
+        public void AddElement(float size, float offsetX, float offsetY)
+        {
+            var visual = compositor.CreateSpriteVisual();
+            visual.Size = new Vector2(size, size);
+            visual.Scale = new Vector3((float)currentDpi.DpiScaleX, (float)currentDpi.DpiScaleY, 1);
+            visual.Brush = compositor.CreateColorBrush(GetRandomColor());
+            visual.Offset = new Vector3(offsetX * (float)currentDpi.DpiScaleX, offsetY * (float)currentDpi.DpiScaleY, 0);
+
+            containerVisual.Children.InsertAtTop(visual);
+
+            AnimateSquare(visual, 3);
+        }
+
+        private void AnimateSquare(SpriteVisual visual, int delay)
+        {
+            float offsetX = (float)(visual.Offset.X); // Already adjusted for DPI.
+
+            // Adjust values for DPI scale, then find the Y offset that aligns the bottom of the square
+            // with the bottom of the host container. This is the value to animate to.
+            var hostHeightAdj = CompositionHostElement.ActualHeight * currentDpi.DpiScaleY;
+            var squareSizeAdj = visual.Size.Y * currentDpi.DpiScaleY;
+            float bottom = (float)(hostHeightAdj - squareSizeAdj);
+
+            // Create the animation only if it's needed.
+            if (visual.Offset.Y != bottom)
+            {
+                Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
+                animation.InsertKeyFrame(1f, new Vector3(offsetX, bottom, 0f));
+                animation.Duration = TimeSpan.FromSeconds(2);
+                animation.DelayTime = TimeSpan.FromSeconds(delay);
+                visual.StartAnimation(&quot;Offset&quot;, animation);
+            }
+        }
+
+        private Windows.UI.Color GetRandomColor()
+        {
+            Random random = new Random();
+            byte r = (byte)random.Next(0, 255);
+            byte g = (byte)random.Next(0, 255);
+            byte b = (byte)random.Next(0, 255);
+            return Windows.UI.Color.FromArgb(255, r, g, b);
+        }
+    }
+}
+
+</code></pre>
+<h3 id="compositionhostcs">CompositionHost.cs</h3>
+<pre><code class="lang-csharp">using System;
+using System.Runtime.InteropServices;
+using System.Windows.Interop;
+using Windows.UI.Composition;
+
+namespace HelloComposition
+{
+    class CompositionHost : HwndHost
+    {
+        IntPtr hwndHost;
+        int hostHeight, hostWidth;
+        object dispatcherQueue;
+        ICompositionTarget compositionTarget;
+
+        public Compositor Compositor { get; private set; }
+
+        public Visual Child
+        {
+            set
+            {
+                if (Compositor == null)
+                {
+                    InitComposition(hwndHost);
+                }
+                compositionTarget.Root = value;
+            }
+        }
+
+        internal const int
+          WS_CHILD = 0x40000000,
+          WS_VISIBLE = 0x10000000,
+          LBS_NOTIFY = 0x00000001,
+          HOST_ID = 0x00000002,
+          LISTBOX_ID = 0x00000001,
+          WS_VSCROLL = 0x00200000,
+          WS_BORDER = 0x00800000;
+
+        public CompositionHost(double height, double width)
+        {
+            hostHeight = (int)height;
+            hostWidth = (int)width;
+        }
+
+        protected override HandleRef BuildWindowCore(HandleRef hwndParent)
+        {
+            // Create Window
+            hwndHost = IntPtr.Zero;
+            hwndHost = CreateWindowEx(0, &quot;static&quot;, &quot;&quot;,
+                                      WS_CHILD | WS_VISIBLE,
+                                      0, 0,
+                                      hostWidth, hostHeight,
+                                      hwndParent.Handle,
+                                      (IntPtr)HOST_ID,
+                                      IntPtr.Zero,
+                                      0);
+
+            // Create Dispatcher Queue
+            dispatcherQueue = InitializeCoreDispatcher();
+
+            // Build Composition Tree of content
+            InitComposition(hwndHost);
+
+            return new HandleRef(this, hwndHost);
+        }
+
+        protected override void DestroyWindowCore(HandleRef hwnd)
+        {
+            if (compositionTarget.Root != null)
+            {
+                compositionTarget.Root.Dispose();
+            }
+            DestroyWindow(hwnd.Handle);
+        }
+
+        private object InitializeCoreDispatcher()
+        {
+            DispatcherQueueOptions options = new DispatcherQueueOptions();
+            options.apartmentType = DISPATCHERQUEUE_THREAD_APARTMENTTYPE.DQTAT_COM_STA;
+            options.threadType = DISPATCHERQUEUE_THREAD_TYPE.DQTYPE_THREAD_CURRENT;
+            options.dwSize = Marshal.SizeOf(typeof(DispatcherQueueOptions));
+
+            object queue = null;
+            CreateDispatcherQueueController(options, out queue);
+            return queue;
+        }
+
+        private void InitComposition(IntPtr hwndHost)
+        {
+            ICompositorDesktopInterop interop;
+
+            Compositor = new Compositor();
+            object iunknown = Compositor as object;
+            interop = (ICompositorDesktopInterop)iunknown;
+            IntPtr raw;
+            interop.CreateDesktopWindowTarget(hwndHost, true, out raw);
+
+            object rawObject = Marshal.GetObjectForIUnknown(raw);
+            compositionTarget = (ICompositionTarget)rawObject;
+
+            if (raw == null) { throw new Exception(&quot;QI Failed&quot;); }
+        }
+
+        #region PInvoke declarations
+
+        //typedef enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
+        //{
+        //    DQTAT_COM_NONE,
+        //    DQTAT_COM_ASTA,
+        //    DQTAT_COM_STA
+        //};
+        internal enum DISPATCHERQUEUE_THREAD_APARTMENTTYPE
+        {
+            DQTAT_COM_NONE = 0,
+            DQTAT_COM_ASTA = 1,
+            DQTAT_COM_STA = 2
+        };
+
+        //typedef enum DISPATCHERQUEUE_THREAD_TYPE
+        //{
+        //    DQTYPE_THREAD_DEDICATED,
+        //    DQTYPE_THREAD_CURRENT
+        //};
+        internal enum DISPATCHERQUEUE_THREAD_TYPE
+        {
+            DQTYPE_THREAD_DEDICATED = 1,
+            DQTYPE_THREAD_CURRENT = 2,
+        };
+
+        //struct DispatcherQueueOptions
+        //{
+        //    DWORD dwSize;
+        //    DISPATCHERQUEUE_THREAD_TYPE threadType;
+        //    DISPATCHERQUEUE_THREAD_APARTMENTTYPE apartmentType;
+        //};
+        [StructLayout(LayoutKind.Sequential)]
+        internal struct DispatcherQueueOptions
+        {
+            public int dwSize;
+
+            [MarshalAs(UnmanagedType.I4)]
+            public DISPATCHERQUEUE_THREAD_TYPE threadType;
+
+            [MarshalAs(UnmanagedType.I4)]
+            public DISPATCHERQUEUE_THREAD_APARTMENTTYPE apartmentType;
+        };
+
+        //HRESULT CreateDispatcherQueueController(
+        //  DispatcherQueueOptions options,
+        //  ABI::Windows::System::IDispatcherQueueController** dispatcherQueueController
+        //);
+        [DllImport(&quot;coremessaging.dll&quot;, EntryPoint = &quot;CreateDispatcherQueueController&quot;, CharSet = CharSet.Unicode)]
+        internal static extern IntPtr CreateDispatcherQueueController(DispatcherQueueOptions options,
+                                                [MarshalAs(UnmanagedType.IUnknown)]
+                                               out object dispatcherQueueController);
+
+
+        [DllImport(&quot;user32.dll&quot;, EntryPoint = &quot;CreateWindowEx&quot;, CharSet = CharSet.Unicode)]
+        internal static extern IntPtr CreateWindowEx(int dwExStyle,
+                                                      string lpszClassName,
+                                                      string lpszWindowName,
+                                                      int style,
+                                                      int x, int y,
+                                                      int width, int height,
+                                                      IntPtr hwndParent,
+                                                      IntPtr hMenu,
+                                                      IntPtr hInst,
+                                                      [MarshalAs(UnmanagedType.AsAny)] object pvParam);
+
+        [DllImport(&quot;user32.dll&quot;, EntryPoint = &quot;DestroyWindow&quot;, CharSet = CharSet.Unicode)]
+        internal static extern bool DestroyWindow(IntPtr hwnd);
+
+
+        #endregion PInvoke declarations
+
+    }
+    #region COM Interop
+
+    /*
+    #undef INTERFACE
+    #define INTERFACE ICompositorDesktopInterop
+        DECLARE_INTERFACE_IID_(ICompositorDesktopInterop, IUnknown, &quot;29E691FA-4567-4DCA-B319-D0F207EB6807&quot;)
+        {
+            IFACEMETHOD(CreateDesktopWindowTarget)(
+                _In_ HWND hwndTarget,
+                _In_ BOOL isTopmost,
+                _COM_Outptr_ IDesktopWindowTarget * *result
+                ) PURE;
+        };
+    */
+    [ComImport]
+    [Guid(&quot;29E691FA-4567-4DCA-B319-D0F207EB6807&quot;)]
+    [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+    public interface ICompositorDesktopInterop
+    {
+        void CreateDesktopWindowTarget(IntPtr hwndTarget, bool isTopmost, out IntPtr test);
+    }
+
+    //[contract(Windows.Foundation.UniversalApiContract, 2.0)]
+    //[exclusiveto(Windows.UI.Composition.CompositionTarget)]
+    //[uuid(A1BEA8BA - D726 - 4663 - 8129 - 6B5E7927FFA6)]
+    //interface ICompositionTarget : IInspectable
+    //{
+    //    [propget] HRESULT Root([out] [retval] Windows.UI.Composition.Visual** value);
+    //    [propput] HRESULT Root([in] Windows.UI.Composition.Visual* value);
+    //}
+
+    [ComImport]
+    [Guid(&quot;A1BEA8BA-D726-4663-8129-6B5E7927FFA6&quot;)]
+    [InterfaceType(ComInterfaceType.InterfaceIsIInspectable)]
+    public interface ICompositionTarget
+    {
+        Windows.UI.Composition.Visual Root
+        {
+            get;
+            set;
+        }
+    }
+
+    #endregion COM Interop
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/ui/using-the-visual-layer-with-wpf.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

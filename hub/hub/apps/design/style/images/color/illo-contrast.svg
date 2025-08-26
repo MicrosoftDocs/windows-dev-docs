@@ -1,0 +1,42 @@
+<svg width="188" height="170" viewBox="0 0 188 170" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>illo-contrast</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(21565 -6231)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -21565 6231L -21377 6231L -21377 6401L -21565 6401L -21565 6231Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="illo-contrast" clip-path="url(#clip-0)">
+<path d="M -21565 6231L -21377 6231L -21377 6401L -21565 6401L -21565 6231Z" fill="#FFFFFF"/>
+<g id="Group 29">
+<g id="Rectangle 15 Copy 6.1">
+<use xlink:href="#path0_fill" transform="translate(-21565 6231)" fill="#F9F9F9"/>
+</g>
+<g id="Rectangle 15 Copy 7.1">
+<use xlink:href="#path1_fill" transform="translate(-21468.5 6231)"/>
+</g>
+<g id="Group 21" filter="url(#filter0_d)">
+<g id="Rectangle 45">
+<use xlink:href="#path2_fill" transform="translate(-21525.6 6261.45)"/>
+</g>
+<g id="Rectangle 45.1">
+<use xlink:href="#path2_fill" transform="translate(-21471 6261.45)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="-21533" y="6253" width="130" height="130" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="3" dy="2"/>
+<feGaussianBlur stdDeviation="5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 96.5405 0L 96.5405 170L 0 170L 0 0Z"/>
+<path id="path1_fill" fill-rule="evenodd" d="M 0 0L 91.4595 0L 91.4595 170L 0 170L 0 0Z"/>
+<path id="path2_fill" d="M 0 0L 54.6216 0L 54.6216 109.104L 0 109.104L 0 0Z"/>
+</defs>
+</svg>

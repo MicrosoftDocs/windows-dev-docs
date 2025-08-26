@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Developing inclusive Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Developing inclusive Windows apps ">
+    
+    <meta name="description" content="Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="developing-inclusive-windows-apps">Developing inclusive Windows apps</h1>
+
+<p>This article discusses how to develop accessible Windows apps. Specifically, it assumes that you understand how to design the logical hierarchy for your app. Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.</p>
+<p>If you have not yet done so, please start by reading <a href="designing-inclusive-software.html">Designing inclusive software</a>.</p>
+<p>There are three things you should do to make sure that your app is accessible:</p>
+<ol>
+<li>Expose your UI elements to <a href="#programmatic-access">programmatic access</a>.</li>
+<li>Ensure that your app supports <a href="#keyboard-navigation">keyboard navigation</a> for people who are unable to use a mouse or touchscreen.</li>
+<li>Make sure that your app supports accessible <a href="#color-and-contrast">color and contrast</a> settings.</li>
+</ol>
+<h2 id="programmatic-access">Programmatic access</h2>
+<p>Programmatic access is critical for creating accessibility in apps. This is achieved by setting the accessible name (required) and description (optional) for content and interactive UI elements in your app. This ensures that UI controls are exposed to assistive technology (AT) such as screen readers (for example, Narrator) or alternative output devices (such as Braille displays). Without programmatic access, the APIs for assistive technology cannot interpret information correctly, leaving the user unable to use the products sufficiently, or forcing the AT to use undocumented programming interfaces or techniques never intended to be used as an accessibility interface. When UI controls are exposed to assistive technology, the AT is able to determine what actions and options are available to the user.</p>
+<p>For more information about making your app UI elements available to assistive technologies (AT), see <a href="basic-accessibility-information.html">Expose basic accessibility information</a>.</p>
+<h2 id="keyboard-navigation">Keyboard navigation</h2>
+<p>For users who are blind or have mobility issues, being able to navigate the UI with a keyboard is extremely important. However, only those UI controls that require user interaction to function should be given keyboard focus. Components that don’t require an action, such as static images, do not need keyboard focus.</p>
+<p>It is important to remember that unlike navigating with a mouse or touch, keyboard navigation is linear. When considering keyboard navigation, think about how your user will interact with your product and what the logical navigation will be. In Western cultures, people read from left to right, top to bottom. It is, therefore, common practice to follow this pattern for keyboard navigation.</p>
+<p>When designing keyboard navigation, examine your UI, and think about these questions:</p>
+<ul>
+<li>How are the controls laid out or grouped in the UI?</li>
+<li>Are there a few significant groups of controls?
+<ul>
+<li>If yes, do those groups contain another level of groups?</li>
+</ul>
+</li>
+<li>Among peer controls, should navigation be done by tabbing around, or via special navigation (such as arrow keys), or both?</li>
+</ul>
+<p>The goal is to help the user understand how the UI is laid out and identify the controls that are actionable. If you are finding that there are too many tab stops before the user completes the navigation loop, consider grouping related controls together. Some controls that are related, such as a hybrid control, may need to be addressed at this early exploration stage. After you begin to develop your product, it is difficult to rework the keyboard navigation, so plan carefully and plan early!</p>
+<p>To learn more about keyboard navigation among UI elements, see <a href="keyboard-accessibility.html">Keyboard accessibility</a>.</p>
+<p>Also, the <a href="https://www.microsoft.com/download/details.aspx?id=19262">Engineering Software for Accessibility</a> eBook has an excellent chapter on this subject titled <em>Designing the Logical Hierarchy</em>.</p>
+<h2 id="color-and-contrast">Color and contrast</h2>
+<p>One of the built-in accessibility features in Windows is the High Contrast mode, which heightens the color contrast of text and images on the computer screen. For some people, increasing the contrast in colors reduces eyestrain and makes it easier to read. When you verify your UI in high contrast, you want to check that controls have been coded consistently and with system colors (not with hard-coded colors) to ensure that they will be able to see all the controls on the screen that a user not using high contrast would see.</p>
+<p>XAML</p>
+<pre><code class="lang-xaml">&lt;Button Background=&quot;{ThemeResource ButtonBackgroundThemeBrush}&quot;&gt;OK&lt;/Button&gt;
+</code></pre>
+<p>For more information about using system colors and resources, see <a href="../../develop/platform/xaml/xaml-theme-resources.html">XAML theme resources</a>.</p>
+<p>As long as you haven’t overridden system colors, a UWP app supports high-contrast themes by default. If a user has chosen that they want the system to use a high-contrast theme from system settings or accessibility tools, the framework automatically uses colors and style settings that produce a high-contrast layout and rendering for controls and components in the UI.</p>
+<p>For more information, see <a href="high-contrast-themes.html">High-contrast themes</a>.</p>
+<p>If you have decided to use you own color theme instead of system colors, consider these guidelines:</p>
+<p><strong>Color contrast ratio</strong> – The updated Section 508 of the Americans with Disability Act, as well as other legislation, requires that the default color contrasts between text and its background must be 5:1. For large text (18-point font sizes, or 14 points and bolded), the required default contrast is 3:1.</p>
+<p><strong>Color  combinations</strong> – About 7 percent of males (and less than 1 percent of females) have some form of color deficiency. Users with colorblindness have problems distinguishing between certain colors, so it is important that color alone is never used to convey status or meaning in an application. As for decorative images (such as icons or backgrounds), color combinations should be chosen in a manner that maximizes the perception of the image by colorblind users.</p>
+<h2 id="accessibility-checklist">Accessibility checklist</h2>
+<p>Following is an abbreviated version of the accessibility checklist:</p>
+<ol>
+<li>Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.</li>
+<li>Implement keyboard accessibility.</li>
+<li>Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.</li>
+<li>Run accessibility tools, address reported issues, and verify the screen reading experience. (See Accessibility testing topic.)</li>
+<li>Make sure your app manifest settings follow accessibility guidelines.</li>
+<li>Declare your app as accessible in the Microsoft Store. (See the <a href="accessibility-in-the-store.html">Accessibility in the store</a> topic.)</li>
+</ol>
+<p>For more detail, please see the full <a href="accessibility-checklist.html">Accessibility checklist</a> topic.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="designing-inclusive-software.html">Designing inclusive software</a></li>
+<li><a href="https://www.microsoft.com/design/inclusive/">Inclusive design</a></li>
+<li><a href="practices-to-avoid.html">Accessibility practices to avoid</a></li>
+<li><a href="https://www.microsoft.com/download/details.aspx?id=19262">Engineering Software for Accessibility</a></li>
+<li><a href="https://developer.microsoft.com/windows/accessible-apps">Microsoft accessibility developer hub</a></li>
+<li><a href="accessibility.html">Accessibility</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/developing-inclusive-windows-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

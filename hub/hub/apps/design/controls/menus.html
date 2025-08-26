@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Menu flyout and menu bar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Menu flyout and menu bar ">
+    
+    <meta name="description" content="Menus and context menus display a list of commands or options when the user requests them.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="menu-flyout-and-menu-bar">Menu flyout and menu bar</h1>
+
+<p>Menu flyouts are used in menu and context menu scenarios to display a list of commands or options when requested by the user. A menu flyout shows a single, inline, top-level menu that can have menu items and sub-menus. To show a set of multiple top-level menus in a horizontal row, use menu bar (which you typically position at the top of the app window).</p>
+<p><img src="images/contextmenu_rs2_icons.png" alt="Example of a typical context menu"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>See <a href="menus-and-context-menus.html">menus and context menus</a> for help identifying menu vs. context menu scenarios and guidance on when to use menu flyout vs. <a href="command-bar-flyout.html">command bar flyout</a>.</p>
+<p>Menu flyouts can be used as menus and context menus to organize commands. To display arbitrary content, such as a notification or confirmation request, use a <a href="dialogs-and-flyouts/index.html">dialog or a flyout</a>.</p>
+<p>If a particular command will be used frequently and you have the space available, see <a href="collection-commanding.html">collection commanding</a> for examples on placing a command directly in its own element so that users don't have to go through a menu to get to it.</p>
+<h2 id="create-a-menu-flyout">Create a menu flyout</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout">ContextFlyout property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.attachedflyout">FlyoutBase.AttachedFlyout property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/MenuFlyout">Open the WinUI 3 Gallery app and see MenuFlyout in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>To create a menu flyout, you use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout class</a>. You define the contents of the menu by adding <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem">MenuFlyoutItem</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutsubitem">MenuFlyoutSubItem</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglemenuflyoutitem">ToggleMenuFlyoutItem</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiomenuflyoutitem">RadioMenuFlyoutItem</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutseparator">MenuFlyoutSeparator</a> objects to the MenuFlyout.</p>
+<p>These objects are for:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem">MenuFlyoutItem</a>—Performing an immediate action.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutsubitem">MenuFlyoutSubItem</a>—Containing a cascading list of menu items.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglemenuflyoutitem">ToggleMenuFlyoutItem</a>—Switching an option on or off.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiomenuflyoutitem">RadioMenuFlyoutItem</a>—Switching between mutually-exclusive menu items.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutseparator">MenuFlyoutSeparator</a>—Visually separating menu items.</li>
+</ul>
+<p>This example creates a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout</a> and uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout">ContextFlyout</a> property, a property available to most controls, to show the MenuFlyout as a context menu.</p>
+<pre><code class="lang-xaml">&lt;Rectangle
+  Height=&quot;100&quot; Width=&quot;100&quot;&gt;
+  &lt;Rectangle.ContextFlyout&gt;
+    &lt;MenuFlyout&gt;
+      &lt;MenuFlyoutItem Text=&quot;Change color&quot; Click=&quot;ChangeColorItem_Click&quot; /&gt;
+    &lt;/MenuFlyout&gt;
+  &lt;/Rectangle.ContextFlyout&gt;
+  &lt;Rectangle.Fill&gt;
+    &lt;SolidColorBrush x:Name=&quot;rectangleFill&quot; Color=&quot;Red&quot; /&gt;
+  &lt;/Rectangle.Fill&gt;
+&lt;/Rectangle&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
+{
+    // Change the color from red to blue or blue to red.
+    if (rectangleFill.Color == Windows.UI.Colors.Red)
+    {
+        rectangleFill.Color = Windows.UI.Colors.Blue;
+    }
+    else
+    {
+        rectangleFill.Color = Windows.UI.Colors.Red;
+    }
+}
+</code></pre>
+<p>The next example is nearly identical, but instead of using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout">ContextFlyout</a> property to show the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout class</a> as a context menu, the example uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.showattachedflyout">FlyoutBase.ShowAttachedFlyout</a> property to show it as a menu.</p>
+<pre><code class="lang-xaml">&lt;Rectangle
+  Height=&quot;100&quot; Width=&quot;100&quot;
+  Tapped=&quot;Rectangle_Tapped&quot;&gt;
+  &lt;FlyoutBase.AttachedFlyout&gt;
+    &lt;MenuFlyout&gt;
+      &lt;MenuFlyoutItem Text=&quot;Change color&quot; Click=&quot;ChangeColorItem_Click&quot; /&gt;
+    &lt;/MenuFlyout&gt;
+  &lt;/FlyoutBase.AttachedFlyout&gt;
+  &lt;Rectangle.Fill&gt;
+    &lt;SolidColorBrush x:Name=&quot;rectangleFill&quot; Color=&quot;Red&quot; /&gt;
+  &lt;/Rectangle.Fill&gt;
+&lt;/Rectangle&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Rectangle_Tapped(object sender, TappedRoutedEventArgs e)
+{
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+}
+
+private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
+{
+    // Change the color from red to blue or blue to red.
+    if (rectangleFill.Color == Windows.UI.Colors.Red)
+    {
+        rectangleFill.Color = Windows.UI.Colors.Blue;
+    }
+    else
+    {
+        rectangleFill.Color = Windows.UI.Colors.Red;
+    }
+}
+</code></pre>
+<h2 id="icons">Icons</h2>
+<p>Consider providing menu item icons for:</p>
+<ul>
+<li>The most commonly used items.</li>
+<li>Menu items whose icon is standard or well known.</li>
+<li>Menu items whose icon well illustrates what the command does.</li>
+</ul>
+<p>Don't feel obligated to provide icons for commands that don't have a standard visualization. Cryptic icons aren't helpful, create visual clutter, and prevent users from focusing on the important menu items.</p>
+<p><img src="images/contextmenu_rs2_icons.png" alt="Example context menu with icons"></p>
+<pre><code class="lang-xaml">&lt;MenuFlyout&gt;
+  &lt;MenuFlyoutItem Text=&quot;Share&quot; &gt;
+    &lt;MenuFlyoutItem.Icon&gt;
+      &lt;FontIcon Glyph=&quot;&amp;#xE72D;&quot; /&gt;
+    &lt;/MenuFlyoutItem.Icon&gt;
+  &lt;/MenuFlyoutItem&gt;
+  &lt;MenuFlyoutItem Text=&quot;Copy&quot; Icon=&quot;Copy&quot; /&gt;
+  &lt;MenuFlyoutItem Text=&quot;Delete&quot; Icon=&quot;Delete&quot; /&gt;
+  &lt;MenuFlyoutSeparator /&gt;
+  &lt;MenuFlyoutItem Text=&quot;Rename&quot; /&gt;
+  &lt;MenuFlyoutItem Text=&quot;Select&quot; /&gt;
+&lt;/MenuFlyout&gt;
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The size of the icon in a MenuFlyoutItem is 16x16px. If you use SymbolIcon, FontIcon, or PathIcon, the icon automatically scales to the correct size with no loss of fidelity. If you use BitmapIcon, ensure that your asset is 16x16px.</p>
+</div>
+<h3 id="light-dismiss">Light dismiss</h3>
+<p>Light dismiss controls such as menus, context menus, and other flyouts, trap keyboard and gamepad focus inside the transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox will draw an overlay that dims the visibility of out of scope UI. This behavior can be modified with the  <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.lightdismissoverlaymode">LightDismissOverlayMode</a> property. By default, transient UIs will draw the light dismiss overlay on Xbox (<strong>Auto</strong>) but not other device families. You can choose to force the overlay to be always <strong>On</strong> or always <strong>Off</strong>.</p>
+<pre><code class="lang-xaml">&lt;MenuFlyout LightDismissOverlayMode=&quot;Off&quot; /&gt;
+</code></pre>
+<h2 id="create-a-menu-bar">Create a menu bar</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar">MenuBar class</a>. <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubaritem">MenuBarItem class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/MenuBar">Open the WinUI 3 Gallery app and see MenuBar in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>You use the same elements to create menus in a menu bar as in a menu flyout. However, instead of grouping MenuFlyoutItem objects in a MenuFlyout, you group them in a MenuBarItem element. Each MenuBarItem is added to the MenuBar as a top level menu.</p>
+<p><img src="images/menu-bar-submenu.png" alt="Example of a menu bar"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This example shows only how to create the UI structure, but does not show implementation of any of the commands.</p>
+</div>
+<pre><code class="lang-xaml">&lt;muxc:MenuBar&gt;
+    &lt;muxc:MenuBarItem Title=&quot;File&quot;&gt;
+        &lt;MenuFlyoutSubItem Text=&quot;New&quot;&gt;
+            &lt;MenuFlyoutItem Text=&quot;Plain Text Document&quot;/&gt;
+            &lt;MenuFlyoutItem Text=&quot;Rich Text Document&quot;/&gt;
+            &lt;MenuFlyoutItem Text=&quot;Other Formats...&quot;/&gt;
+        &lt;/MenuFlyoutSubItem&gt;
+        &lt;MenuFlyoutItem Text=&quot;Open...&quot;/&gt;
+        &lt;MenuFlyoutItem Text=&quot;Save&quot;/&gt;
+        &lt;MenuFlyoutSeparator /&gt;
+        &lt;MenuFlyoutItem Text=&quot;Exit&quot;/&gt;
+    &lt;/muxc:MenuBarItem&gt;
+
+    &lt;muxc:MenuBarItem Title=&quot;Edit&quot;&gt;
+        &lt;MenuFlyoutItem Text=&quot;Undo&quot;/&gt;
+        &lt;MenuFlyoutItem Text=&quot;Cut&quot;/&gt;
+        &lt;MenuFlyoutItem Text=&quot;Copy&quot;/&gt;
+        &lt;MenuFlyoutItem Text=&quot;Paste&quot;/&gt;
+    &lt;/muxc:MenuBarItem&gt;
+
+    &lt;muxc:MenuBarItem Title=&quot;View&quot;&gt;
+        &lt;MenuFlyoutItem Text=&quot;Output&quot;/&gt;
+        &lt;MenuFlyoutSeparator/&gt;
+        &lt;muxc:RadioMenuFlyoutItem Text=&quot;Landscape&quot; GroupName=&quot;OrientationGroup&quot;/&gt;
+        &lt;muxc:RadioMenuFlyoutItem Text=&quot;Portrait&quot; GroupName=&quot;OrientationGroup&quot; IsChecked=&quot;True&quot;/&gt;
+        &lt;MenuFlyoutSeparator/&gt;
+        &lt;muxc:RadioMenuFlyoutItem Text=&quot;Small icons&quot; GroupName=&quot;SizeGroup&quot;/&gt;
+        &lt;muxc:RadioMenuFlyoutItem Text=&quot;Medium icons&quot; IsChecked=&quot;True&quot; GroupName=&quot;SizeGroup&quot;/&gt;
+        &lt;muxc:RadioMenuFlyoutItem Text=&quot;Large icons&quot; GroupName=&quot;SizeGroup&quot;/&gt;
+    &lt;/muxc:MenuBarItem&gt;
+
+    &lt;muxc:MenuBarItem Title=&quot;Help&quot;&gt;
+        &lt;MenuFlyoutItem Text=&quot;About&quot;/&gt;
+    &lt;/muxc:MenuBarItem&gt;
+&lt;/muxc:MenuBar&gt;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>MenuBar requires Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK 17763</a>) or later, or <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>.</p>
+<p>The MenuFlyout and MenuBar controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for these controls exist in both the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.menuflyout">MenuFlyout class</a>, <a href="/uwp/api/windows.ui.xaml.controls.menubar">MenuBar class</a>, <a href="/uwp/api/windows.ui.xaml.uielement.contextflyout">ContextFlyout property</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout">FlyoutBase.AttachedFlyout property</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.menubar">MenuBar class</a>, <a href="/uwp/api/windows.ui.xaml.uielement.contextflyout">ContextFlyout property</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout">FlyoutBase.AttachedFlyout property</a></li>
+<li><a href="winui2gallery:/item/MenuBar">Open the WinUI 2 Gallery app and see MenuBar in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:MenuFlyout /&gt;
+&lt;muxc:MenuBar /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/commanding-basics.html">Command design basics for Windows apps</a></li>
+<li><a href="menus-and-context-menus.html">Menus and context menus</a></li>
+<li><a href="collection-commanding.html">Contextual commanding for collections and lists</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar">MenuBar class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/menus.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

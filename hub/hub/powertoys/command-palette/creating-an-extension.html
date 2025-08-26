@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to Create Command Palette Extensions in C# - Step by Step Guide </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to Create Command Palette Extensions in C# - Step by Step Guide ">
+    
+    <meta name="description" content="Learn how to build custom Command Palette extensions for PowerToys using C#. Complete tutorial with templates, deployment, and best practices for Windows developers.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-create-command-palette-extensions">How to create Command Palette extensions</h1>
+
+<p>Learn how to build custom extensions for the Command Palette using C#. This comprehensive guide covers everything from project setup to deployment, helping you enhance this powerful productivity tool for Windows.</p>
+<h2 id="overview">Overview</h2>
+<p>The Command Palette extension system allows developers to create custom commands and workflows that integrate seamlessly with PowerToys Command Palette. Extensions are written in C# and can be developed using the built-in template generator.</p>
+<p><strong>What you'll learn:</strong></p>
+<ul>
+<li>How to create a new Command Palette extension project</li>
+<li>Understanding the extension project structure</li>
+<li>Deploying and testing your extension</li>
+<li>Best practices for extension development</li>
+</ul>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>Visual Studio with C# development workload</li>
+<li>Windows 11 with PowerToys installed</li>
+<li>Basic knowledge of C# programming</li>
+</ul>
+<p>Extensions are written in C#. The fastest way to get started writing extensions is from the Command Palette itself.</p>
+<ol>
+<li>Open Command Palette</li>
+<li>Run the <code>Create a new extension</code> command</li>
+<li>Fill out the fields to populate the template project, and you should be ready to start.</li>
+</ol>
+<h2 id="create-a-new-extension">Create a new extension</h2>
+<p>The form will ask you for the following information:</p>
+<ul>
+<li><strong>ExtensionName</strong>: The name of your extension. This will be used as the name of the project and the name of the class that implements your commands. Make sure it's a valid C# class name - it shouldn't have any spaces or special characters, and should start with a capital letter. Reference in docs as <code>&lt;ExtensionName&gt;</code>.</li>
+<li><strong>Extension Display Name</strong>: The name of your extension as it will appear in the Command Palette. This can be a more human-readable name.</li>
+<li><strong>Output Path</strong>: The folder where the project will be created.
+<ul>
+<li>The project will be created in a subdirectory of the path you provided.</li>
+<li>If this path doesn't exist, it will be created for you.</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../images/command-palette/create-extension-page.png" alt="The &quot;Create a new extension&quot; page of the Windows Command Palette"></p>
+<h2 id="understanding-the-extension-project-structure">Understanding the extension project structure</h2>
+<p>Once you submit the form, Command Palette will automatically generate the project for you. At this point, your projects structure should look like the following:</p>
+<pre><code class="lang-plaintext">&lt;ExtensionName&gt;/
+│   Directory.Build.props
+│   Directory.Packages.props
+│   nuget.config
+│   &lt;ExtensionName&gt;.sln
+└───&lt;ExtensionName&gt;
+    │   app.manifest
+    │   Package.appxmanifest
+    │   Program.cs
+    │   &lt;ExtensionName&gt;.cs
+    │   &lt;ExtensionName&gt;.csproj
+    │   &lt;ExtensionName&gt;CommandsProvider.cs
+    ├───Assets
+    │   &lt;A bunch of placeholder images&gt;
+    ├───Pages
+    │   &lt;ExtensionName&gt;Page.cs
+    └───Properties
+        │   launchSettings.json
+        └───PublishProfiles
+                win-arm64.pubxml
+                win-x64.pubxml
+</code></pre>
+<p>(with <code>&lt;ExtensionName&gt;</code> replaced with the name you provided)</p>
+<p>You can deploy and run your extension:</p>
+<ul>
+<li>In Visual Studio, Deploy your extension</li>
+</ul>
+<details>
+  <summary>How to Deploy your extension</summary>
+<ol>
+<li>In the navigation bar, click on <code>Build</code></li>
+<li>Click on <code>Deploy &lt;ExtensionName&gt;</code></li>
+</ol>
+</details>
+<p>Once your package is deployed and running, Command Palette will automatically discover your extension and load it into the palette.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Make sure you <em>deploy</em> your app! Just <strong>build</strong>ing your application won't update the package in the same way that deploying it will.</p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Running &quot;&lt;ExtensionName&gt; (Unpackaged)&quot; from Visual Studio will not <strong>deploy</strong> your app package.</p>
+<p>If you're using <code>git</code> for source control, and you used the standard <code>.gitignore</code> file for C#, you'll want to remove the following two lines from your <code>.gitignore</code> file:</p>
+<pre><code>**/Properties/launchSettings.json
+*.pubxml
+</code></pre>
+<p>These files are used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.</p>
+</div>
+<ol>
+<li>In the Command Palette, type <code>Reload</code> and press <code>Enter</code>
+<ol>
+<li>Make sure to select the <code>Reload</code> that has a subtitle of: <code>Reload Command Palette Extension</code>
+<img src="../../images/command-palette/reload.png" alt="Screenshot of reload"></li>
+</ol>
+</li>
+<li>In the Command Palette, scroll all the way down to the bottom of the list of commands
+<ol>
+<li>or <code>up arrow</code> once to get to the end</li>
+</ol>
+</li>
+<li>Press <code>Enter</code> on your &lt;ExtensionName&gt;</li>
+<li>You should see a single command that says <code>TODO: Implement your extension here</code>.</li>
+</ol>
+<p><img src="../../images/command-palette/initial-created-extension-list.png" alt="A screenshot of the empty extension template, running in the command palette"></p>
+<p>Congrats! You've made your first extension! Now let's go ahead and actually add some commands to it.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When you make changes to your extension, you can rebuild your project and deploy it again. Command Palette will <strong>not</strong> notice changes to packages that are re-ran through Visual Studio, so you'll need to manually run the &quot;<strong>Reload</strong>&quot; command to force Command Palette to re-instantiate your extension.</p>
+</div>
+<h3 id="next-up-add-commands-to-your-extension">Next up: <a href="adding-commands.html">Add commands to your extension</a></h3>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+<li><a href="extensibility-overview.html">Extensibility overview</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/creating-an-extension.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

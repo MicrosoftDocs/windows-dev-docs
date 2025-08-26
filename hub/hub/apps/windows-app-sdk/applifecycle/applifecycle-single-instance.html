@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to create a single-instanced WinUI app with C# </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to create a single-instanced WinUI app with C# ">
+    
+    <meta name="description" content="Describes how to use app instancing features with the app lifecycle API in WinUI with C# and the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-a-single-instanced-winui-app-with-c">Create a single-instanced WinUI app with C#</h1>
+
+<p>This how-to demonstrates how to create a single-instanced WinUI 3 app with C# and the Windows App SDK. Single-instanced apps only allow one instance of the app running at a time. WinUI apps are multi-instanced by default. They allow you to launch multiple instances of the same app simultaneously. That's referred to a multiple instances. However, you may want to implement single-instancing based on the use case of your app. Attempting to launch a second instance of a single-instanced app will only result in the first instance’s main window being activated instead. This tutorial demonstrates how to implement single-instancing in a WinUI app.</p>
+<p>In this article, you will learn how to:</p>
+<div class="checklist">
+<ul>
+<li>Turn off XAML's generated <code>Program</code> code</li>
+<li>Define customized <code>Main</code> method for redirection</li>
+<li>Test single-instancing after app deployment</li>
+</ul>
+</div>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p>This tutorial uses Visual Studio and builds on the WinUI blank app template. If you're new to WinUI development, you can get set up by following the instructions in <a href="../../get-started/start-here.html">Get started with WinUI</a>. There you'll install Visual Studio, configure it for developing apps with WinUI while ensuring you have the latest version of WinUI and the Windows App SDK, and create a Hello World project.</p>
+<p>When you've done that, come back here to learn how to turn your &quot;Hello World&quot; project into a single-instanced app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This how-to is based on the <a href="https://blogs.windows.com/windowsdeveloper/2022/01/28/making-the-app-single-instanced-part-3/">Making the app single-instanced (Part 3)</a> blog post from a Windows blog series on WinUI 3. The code for those articles is available on <a href="https://github.com/jingwei-a-zhang/WinAppSDK-DrumPad">GitHub</a>.</p>
+</div>
+<h2 id="disable-auto-generated-program-code">Disable auto-generated Program code</h2>
+<p>We need to check for redirection as early as possible, before creating any windows. To do this, we must define the symbol “DISABLE_XAML_GENERATED_MAIN” in the project file. Follow these steps to disable the auto-generated Program code:</p>
+<ol>
+<li><p>Right-click on the project name in Solution Explorer and select <strong>Edit Project File</strong>.</p>
+</li>
+<li><p>Define the <strong>DISABLE_XAML_GENERATED_MAIN</strong> symbol. Add the following XML to the project file:</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;DefineConstants&gt;$(DefineConstants);DISABLE_XAML_GENERATED_MAIN&lt;/DefineConstants&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+</ol>
+<p>Adding the <strong>DISABLE_XAML_GENERATED_MAIN</strong> symbol will disable the auto-generated Program code for your project.</p>
+<h2 id="define-a-program-class-with-a-main-method">Define a Program class with a Main method</h2>
+<p>A customized Program.cs file must be created instead of running the default Main method. The code added to the <strong>Program</strong> class enables the app to check for redirection, which isn't the default behavior of WinUI apps.</p>
+<ol>
+<li><p>Navigate to Solution Explorer, right-click on the project name, and select <strong>Add | Class</strong>.</p>
+</li>
+<li><p>Name the new class <code>Program.cs</code> and select <strong>Add</strong>.</p>
+</li>
+<li><p>Add the following namespaces to the Program class, replacing any existing namespaces:</p>
+<pre><code class="lang-csharp">using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml;
+using Microsoft.Windows.AppLifecycle;
+</code></pre>
+</li>
+<li><p>Replace the empty <strong>Program</strong> class with the following:</p>
+<pre><code class="lang-csharp">public class Program
+{
+    [STAThread]
+    static int Main(string[] args)
+    {
+        WinRT.ComWrappersSupport.InitializeComWrappers();
+        bool isRedirect = DecideRedirection();
+
+        if (!isRedirect)
+        {
+            Application.Start((p) =&gt;
+            {
+                var context = new DispatcherQueueSynchronizationContext(
+                    DispatcherQueue.GetForCurrentThread());
+                SynchronizationContext.SetSynchronizationContext(context);
+                _ = new App();
+            });
+        }
+
+        return 0;
+    }
+}
+</code></pre>
+<p>The <strong>Main</strong> method determines whether the app should redirect to the first instance or start a new instance after calling <strong>DecideRedirection</strong>, which we will define next.</p>
+</li>
+<li><p>Define the <strong>DecideRedirection</strong> method below the <strong>Main</strong> method:</p>
+<pre><code class="lang-csharp">private static bool DecideRedirection()
+{
+    bool isRedirect = false;
+    AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
+    ExtendedActivationKind kind = args.Kind;
+    AppInstance keyInstance = AppInstance.FindOrRegisterForKey(&quot;MySingleInstanceApp&quot;);
+
+    if (keyInstance.IsCurrent)
+    {
+        keyInstance.Activated += OnActivated;
+    }
+    else
+    {
+        isRedirect = true;
+        RedirectActivationTo(args, keyInstance);
+    }
+
+    return isRedirect;
+}
+</code></pre>
+<p><strong>DecideRedirection</strong> determines if the app has been registered by registering a unique key that represents your app instance. Based on the result of key registration, it can determine if there's a current instance of the app running. After making the determination, the method knows whether to redirect or allow the app to continue launching the new instance. The <strong>RedirectActivationTo</strong> method is called if redirection is necessary.</p>
+</li>
+<li><p>Next, let's create the RedirectActivationTo method below the DecideRedirection method, along with the required DllImport statements. Add the following code to the Program class:</p>
+<pre><code class="lang-csharp">[DllImport(&quot;kernel32.dll&quot;, CharSet = CharSet.Unicode)]
+private static extern IntPtr CreateEvent(
+    IntPtr lpEventAttributes, bool bManualReset,
+    bool bInitialState, string lpName);
+
+[DllImport(&quot;kernel32.dll&quot;)]
+private static extern bool SetEvent(IntPtr hEvent);
+
+[DllImport(&quot;ole32.dll&quot;)]
+private static extern uint CoWaitForMultipleObjects(
+    uint dwFlags, uint dwMilliseconds, ulong nHandles,
+    IntPtr[] pHandles, out uint dwIndex);
+
+[DllImport(&quot;user32.dll&quot;)]
+static extern bool SetForegroundWindow(IntPtr hWnd);
+
+private static IntPtr redirectEventHandle = IntPtr.Zero;
+
+// Do the redirection on another thread, and use a non-blocking
+// wait method to wait for the redirection to complete.
+public static void RedirectActivationTo(AppActivationArguments args,
+                                        AppInstance keyInstance)
+{
+    redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
+    Task.Run(() =&gt;
+    {
+        keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
+        SetEvent(redirectEventHandle);
+    });
+
+    uint CWMO_DEFAULT = 0;
+    uint INFINITE = 0xFFFFFFFF;
+    _ = CoWaitForMultipleObjects(
+       CWMO_DEFAULT, INFINITE, 1,
+       [redirectEventHandle], out uint handleIndex);
+
+    // Bring the window to the foreground
+    Process process = Process.GetProcessById((int)keyInstance.ProcessId);
+    SetForegroundWindow(process.MainWindowHandle);
+}
+</code></pre>
+<p>The <strong>RedirectActivationTo</strong> method is responsible for redirecting the activation to the first instance of the app. It creates an event handle, starts a new thread to redirect the activation, and waits for the redirection to complete. After the redirection is complete, the method brings the window to the foreground.</p>
+</li>
+<li><p>Finally, define the helper method <strong>OnActivated</strong> below the <strong>DecideRedirection</strong> method:</p>
+<pre><code class="lang-csharp">private static void OnActivated(object sender, AppActivationArguments args)
+{
+    ExtendedActivationKind kind = args.Kind;
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="test-single-instancing-via-app-deployment">Test single-instancing via app deployment</h2>
+<p>Until this point, we've been testing the app by debugging within Visual Studio. However, we can only have one debugger running at once. This limitation prevents us from knowing whether the app is single-instanced because we can’t debug the same project twice at the same time. For an accurate test, we'll deploy the application to our local Windows client. After deploying, we can launch the app from the desktop like you would with any app installed on Windows.</p>
+<ol>
+<li><p>Navigate to Solution Explorer, right-click on the project name, and select <strong>Deploy</strong>.</p>
+</li>
+<li><p>Open the Start menu and click into the search field.</p>
+</li>
+<li><p>Type your app's name in the search field.</p>
+</li>
+<li><p>Click the app icon from the search result to launch your app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you experience app crashes in release mode, there are some known issues with trimmed apps in the Windows App SDK. You can disable trimming in the project by setting the <strong>PublishTrimmed</strong> property to <strong>false</strong> for all build configurations in your project's <code>.pubxml</code> files. For more information, see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9914#issuecomment-2303010651">this issue</a> on GitHub.</p>
+</div>
+</li>
+<li><p>Repeat steps 2 to 4 to launch the same app again and see if another instance opens. If the app is single-instanced, the first instance will be activated instead of a new instance opening.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can optionally add some logging code to the <strong>OnActivated</strong> method to verify that the existing instance has been activated. Try asking <a href="https://copilot.microsoft.com/">Copilot</a> for help with adding an <a href="/dotnet/core/extensions/logging">ILogger implementation</a> to your WinUI app.</p>
+</div>
+</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>All the code covered here is on <a href="https://github.com/jingwei-a-zhang/WinAppSDK-DrumPad">GitHub</a>, with branches for the different steps in the original <a href="https://blogs.windows.com/windowsdeveloper/2022/01/28/making-the-app-single-instanced-part-3/">Windows blog series</a>. See the <a href="https://github.com/jingwei-a-zhang/WinAppSDK-DrumPad/tree/single-instancing">single-instancing</a> branch for code specific to this how-to. The <code>main</code> branch is the most comprehensive. The other branches are intended to show you how the app architecture evolved.</p>
+<h2 id="related-content">Related content</h2>
+<p><a href="applifecycle-instancing.html">App instancing with the app lifecycle API</a></p>
+<p><a href="https://blogs.windows.com/windowsdeveloper/2022/01/28/making-the-app-single-instanced-part-3/">Making the app single-instanced (Part 3)</a></p>
+<p><a href="https://github.com/jingwei-a-zhang/WinAppSDK-DrumPad">WinAppSDK-DrumPad sample on GitHub</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/applifecycle/applifecycle-single-instance.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

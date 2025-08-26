@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>The app certification process for MSI/EXE app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="The app certification process for MSI/EXE app ">
+    
+    <meta name="description" content="When you finish creating your MSI/EXE app&#39;s submission and click Submit to the Store, the submission enters the certification step.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="the-app-certification-process-for-msiexe-app">The app certification process for MSI/EXE app</h1>
+
+<p>When you finish creating your app's submission and submit it to the Microsoft Store, the submission enters the certification step. This process can take up to three business days. After your submission passes certification, on an average, customers will be able to see the app’s listing within 15 minutes depending on their location.</p>
+<p>Your app package will be downloaded from the package URL you specified. Any instructions in the certification notes will be followed. We'll display a message if we detect any errors during preprocessing. During this phase, several tests are conducted to validate your app submission. You’ll be notified if your submission fails any of these tests.</p>
+<p>When your submission is published, you'll be notified and the app's status in the dashboard will be <strong>In the Store</strong>.</p>
+<p>Before publishing, apps are subject to two categories of tests: security tests and content compliance.</p>
+<h2 id="security-tests">Security tests</h2>
+<p>Your app submission will be subject to a series of checks.</p>
+<h3 id="package-url">Package URL</h3>
+<p>You must provide a secure (HTTPS) package URL. Your submission will not proceed to the next step if this test has failed.</p>
+<p>The package URL must host your app’s installer packaged as an .exe or .msi file. Your submission will not proceed to the next step if this test has failed.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The installer binary on the package URL must not change once it has been submitted. We recommend that you create and submit versioned package URLs (such as <code>https://contoso.com/downloads/1.1/myinstaller.msi</code>). If you need to update the package URL, you may create a new <a href="create-app-submission.html">app submission</a> with a new package URL.</p>
+</div>
+<h3 id="malware-test">Malware test</h3>
+<p>This test checks your app for viruses, malware, and unwanted applications using static and dynamic scanning technologies. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system. For more info on security tests, see <a href="https://aka.ms/securityscan">Trust and Security Services Scan</a>.</p>
+<p>We highly recommended that you scan your app with Microsoft Defender or another consumer antivirus software that's compatible with Windows to ensure that it is free from malware and unwanted apps.</p>
+<h3 id="silent-install">Silent install</h3>
+<p>This test checks typically checks for the following behavior in your app:</p>
+<ul>
+<li>Can install silently without any user interfaces visible to the user. Any installer parameters you provide will be used when installing your package.</li>
+<li>Can be successfully installed when logged in with a standard user account.</li>
+<li>Can make an entry in the Windows Start menu and Programs list, so users can discover it. If your app does not need to do this, you should mention this in the <em>Notes for Certification</em> section of your submission.</li>
+<li>Your app's installer is configured appropriately for Windows to query information such as ProductName, Publisher Name, Default Language, and Version info (as applicable) in places where customers expect to find such information, like in Add/Remove Programs in Windows. This information is part of your app’s installer package. See <a href="/windows/win32/msi/property-reference#product-information-properties">setting installer properties</a> for details about how to set properties for your Windows installer.</li>
+<li>Can uninstall cleanly without leaving remnants of files, folder, and registry entries.</li>
+</ul>
+<h3 id="standaloneoffline-installer">Standalone/offline installer</h3>
+<p>This test checks if the installer you submitted is a standalone/offline installer and is not a downloader that downloads binaries when invoked. This is required to certify the binaries that get installed are the same ones that passed the certification process.</p>
+<h3 id="bundleware-check">Bundleware check</h3>
+<p>This test checks if your app is attempting to install any additional third-party apps that may not be related to the core purpose of your app.</p>
+<h3 id="dependency-on-non-microsoft-drivers-nt-services">Dependency on non-Microsoft drivers/ NT services</h3>
+<p>This test will check to see if your app has a dependency on any type of non-Microsoft drivers or NT services. You are required to disclose such dependency in Partner Center during app submission.</p>
+<p>Digital signature/code signing is an integral part of ensuring a verified and trusted ecosystem of apps and updates on Windows.
+It is highly recommended that your EXE/MSI app and the Portable Executable (PE) files inside of it are digitally signed with a certificate that chains up to a certificate of a Certificate Authority (CA) that is part of the <a href="/security/trusted-root/participants-list">Microsoft Trusted Root Program</a>.</p>
+<h3 id="privacy-policy">Privacy policy</h3>
+<p>Include a valid privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the <a href="https://go.microsoft.com/fwlink/?linkid=528905">App Developer Agreement</a> and the <a href="../../store-policies.html#105-personal-information">Microsoft Store Policies</a>.</p>
+<h3 id="additional-tests">Additional tests</h3>
+<p>Depending on the type of app submitted, additional tests related to the app’s performance, security, stability, and reliability may be performed and observations shared with you for next steps.</p>
+<h2 id="avoid-common-certification-failures">Avoid common certification failures</h2>
+<p>Review this list to help avoid issues that frequently prevent apps from getting certified, or that might be identified during a spot check after the app is published.</p>
+<ul>
+<li>Do not promote third-party apps during or after installation.</li>
+<li>Submit your app only when it's finished. You're welcome to use your app's description to mention upcoming features, but make sure that your app does not contain incomplete sections, links to web pages that are under construction, or anything else that would give a customer the impression that your app is incomplete.</li>
+<li>Test your app on several different configurations to ensure that it's as stable as possible.</li>
+<li>Ensure that your app does not crash without network connectivity. Even if a connection is required to use your app, it needs to perform appropriately when no connection is present.</li>
+<li>Provide any necessary info required to use your app, such as the username and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.</li>
+<li>Configure your app's installer to provide your app’s information such as ProductName, Publisher Name, Default Language, Version info (as applicable) in places where customers expect to find such information such as ‘Add/Remove Programs’ in Windows. This information is part of your app’s installer package. See <a href="/windows/win32/msi/property-reference#product-information-properties">setting installer properties</a> for more details on how to set properties for your Windows installer</li>
+<li>Include a privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the <a href="https://go.microsoft.com/fwlink/?linkid=528905">App Developer Agreement</a> and the <a href="../../store-policies.html#105-personal-information">Microsoft Store Policies</a>.</li>
+<li>Make sure that your app's description clearly represents what it does. For help, see our guidance on <a href="../../faq/submit-your-app.html">writing a great app description</a></li>
+<li>Do not declare your app as accessible unless you have specifically engineered and tested it for accessibility scenarios.</li>
+<li>Review the <a href="../../store-policies.html">Microsoft Store Policies</a> to ensure your app meets all the requirements listed there.</li>
+</ul>
+<h2 id="content-compliance">Content compliance</h2>
+<p>The amount of time this test takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the notes for certification section.</p>
+<p>When the certification process is complete, if it did not pass, you'll receive an email that includes a report that indicates which test failed or which policy was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Your app's content should comply with the Microsoft Store <a href="../../store-policies.html#content-policies">Content Policies</a>, and it will be tested in accordance with the policies. We highly recommend that you understand these policies prior to submitting your app.</p>
+</div>
+<h2 id="publishing">Publishing</h2>
+<p>Your app will be published after it is certified. When this phase has begun, you can no longer cancel your submission.</p>
+<p>We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all the <a href="../../store-policies.html">Microsoft Store Policies</a>. If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Microsoft Store.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To refer to common questions, please refer to <a href="../../faq/get-your-app-certified.html">Frequently Asked Questions</a> section.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msi/app-certification-process.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

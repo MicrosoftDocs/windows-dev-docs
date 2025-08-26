@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Gaze interactions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Gaze interactions ">
+    
+    <meta name="description" content="Learn how to design and optimize your Windows apps to provide the best experience possible for users who rely on gaze input from eye and head trackers.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gaze-interactions-and-eye-tracking-in-windows-apps">Gaze interactions and eye tracking in Windows apps</h1>
+
+<p><img src="images/gaze/eyecontrolbanner1.png" alt="Eye tracking hero"></p>
+<p>Provide support for tracking a user's gaze, attention, and presence based on the location and movement of their eyes.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For gaze input in <a href="/windows/mixed-reality/">Windows Mixed Reality</a>, see [Gaze]/windows/mixed-reality/mrtk-unity/features/input/gaze).</p>
+</div>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.devices.input.preview">Windows.Devices.Input.Preview</a>, <a href="/uwp/api/windows.devices.input.preview.gazedevicepreview">GazeDevicePreview</a>, <a href="/uwp/api/windows.devices.input.preview.gazepointpreview">GazePointPreview</a>, <a href="/uwp/api/windows.devices.input.preview.gazeinputsourcepreview">GazeInputSourcePreview</a></p>
+<h2 id="overview">Overview</h2>
+<p>Gaze input is a powerful way to interact and use Windows applications that is especially useful as an assistive technology for users with neuro-muscular diseases (such as ALS) and other disabilities involving impaired muscle or nerve functions.</p>
+<p>In addition, gaze input offers equally compelling opportunities for both gaming (including target acquisition and tracking) and traditional productivity applications, kiosks, and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available, or where it might be useful/helpful to free up the user's hands for other tasks (such as holding shopping bags).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Support for eye tracking hardware was introduced in <strong>Windows 10 Fall Creators Update</strong> along with <a href="https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control">Eye control</a>, a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech. A set of Windows Runtime APIs (<a href="/uwp/api/windows.devices.input.preview">Windows.Devices.Input.Preview</a>) for building applications that can interact with eye tracking hardware is available with <strong>Windows 10 April 2018 Update (Version 1803, build 17134)</strong> and newer.</p>
+</div>
+<h2 id="privacy">Privacy</h2>
+<p>Due to the potentially sensitive personal data collected by eye tracking devices, you are required to declare the <code>gazeInput</code> capability in the app manifest of your application (see the following <strong>Setup</strong> section). When declared, Windows automatically prompts users with a consent dialog (when the app is first run), where the user must grant permission for the app to communicate with the eye-tracking device and access this data.</p>
+<p>In addition, if your app collects, stores, or transfers eye tracking data, you must describe this in your app's privacy statement and follow all other requirements for <strong>Personal Information</strong> in the <a href="/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a> and the <a href="/windows/apps/publish/store-policies-and-code-of-conduct">Microsoft Store Policies</a>.</p>
+<h2 id="setup">Setup</h2>
+<p>To use the gaze input APIs in your Windows app you'll need to:</p>
+<ul>
+<li><p>Specify the <code>gazeInput</code> capability in the app manifest.</p>
+<p>Open the <strong>Package.appxmanifest</strong> file with the Visual Studio manifest designer, or add the capability manually by selecting <strong>View code</strong>, and inserting the following <code>DeviceCapability</code> into the <code>Capabilities</code> node:</p>
+<pre><code class="lang-xaml">&lt;Capabilities&gt;
+   &lt;DeviceCapability Name=&quot;gazeInput&quot; /&gt;
+&lt;/Capabilities&gt;
+</code></pre>
+</li>
+<li><p>A Windows-compatible eye-tracking device connected to your system (either built-in or peripheral) and turned on.</p>
+<p>See <a href="https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control#supported-devices">Get started with eye control in Windows 10</a> for a list of supported eye-tracking devices.</p>
+</li>
+</ul>
+<h2 id="basic-eye-tracking">Basic eye tracking</h2>
+<p>In this example, we demonstrate how to track the user's gaze within a Windows app and use a timing function with basic hit testing to indicate how well they can maintain their gaze focus on a specific element.</p>
+<p>A small ellipse is used to show where the gaze point is within the application viewport, while a <a href="/windows/communitytoolkit/controls/radialprogressbar">RadialProgressBar</a> from the <a href="/windows/communitytoolkit/">Windows Community Toolkit</a> is placed randomly on the canvas. When gaze focus is detected on the progress bar, a timer is started and the progress bar is randomly relocated on the canvas when the progress bar reaches 100%.</p>
+<p><img src="images/gaze/gaze-input-timed2.gif" alt="Gaze tracking with timer sample"></p>
+<p><em>Gaze tracking with timer sample</em></p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip">Gaze input sample (basic)</a></strong></p>
+<ol>
+<li><p>First, we set up the UI (MainPage.xaml).</p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;gazeinput.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:gazeinput&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    xmlns:controls=&quot;using:Microsoft.Toolkit.Uwp.UI.Controls&quot;    
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;Grid x:Name=&quot;containerGrid&quot;&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+            &lt;/Grid.RowDefinitions&gt;
+            &lt;StackPanel x:Name=&quot;HeaderPanel&quot; 
+                    Orientation=&quot;Horizontal&quot; 
+                    Grid.Row=&quot;0&quot;&gt;
+                &lt;StackPanel.Transitions&gt;
+                    &lt;TransitionCollection&gt;
+                        &lt;AddDeleteThemeTransition/&gt;
+                    &lt;/TransitionCollection&gt;
+                &lt;/StackPanel.Transitions&gt;
+                &lt;TextBlock x:Name=&quot;Header&quot; 
+                       Text=&quot;Gaze tracking sample&quot; 
+                       Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot; 
+                       Margin=&quot;10,0,0,0&quot; /&gt;
+                &lt;TextBlock x:Name=&quot;TrackerCounterLabel&quot;
+                       VerticalAlignment=&quot;Center&quot;                 
+                       Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                       Text=&quot;Number of trackers: &quot; 
+                       Margin=&quot;50,0,0,0&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;TrackerCounter&quot;
+                       VerticalAlignment=&quot;Center&quot;                 
+                       Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                       Text=&quot;0&quot; 
+                       Margin=&quot;10,0,0,0&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;TrackerStateLabel&quot;
+                       VerticalAlignment=&quot;Center&quot;                 
+                       Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                       Text=&quot;State: &quot; 
+                       Margin=&quot;50,0,0,0&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;TrackerState&quot;
+                       VerticalAlignment=&quot;Center&quot;                 
+                       Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                       Text=&quot;n/a&quot; 
+                       Margin=&quot;10,0,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+            &lt;Canvas x:Name=&quot;gazePositionCanvas&quot; Grid.Row=&quot;1&quot;&gt;
+                &lt;controls:RadialProgressBar
+                    x:Name=&quot;GazeRadialProgressBar&quot; 
+                    Value=&quot;0&quot;
+                    Foreground=&quot;Blue&quot; 
+                    Background=&quot;White&quot;
+                    Thickness=&quot;4&quot;
+                    Minimum=&quot;0&quot;
+                    Maximum=&quot;100&quot;
+                    Width=&quot;100&quot;
+                    Height=&quot;100&quot;
+                    Outline=&quot;Gray&quot;
+                    Visibility=&quot;Collapsed&quot;/&gt;
+                &lt;Ellipse 
+                    x:Name=&quot;eyeGazePositionEllipse&quot;
+                    Width=&quot;20&quot; Height=&quot;20&quot;
+                    Fill=&quot;Blue&quot; 
+                    Opacity=&quot;0.5&quot; 
+                    Visibility=&quot;Collapsed&quot;&gt;
+                &lt;/Ellipse&gt;
+            &lt;/Canvas&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+</li>
+<li><p>Next, we initialize our app.</p>
+<p>In this snippet, we declare our global objects and override the <a href="/uwp/api/windows.ui.xaml.controls.page.onnavigatedto">OnNavigatedTo</a> page event to start our <a href="/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview">gaze device watcher</a> and the <a href="/uwp/api/windows.ui.xaml.controls.page.onnavigatedfrom">OnNavigatedFrom</a> page event to stop our <a href="/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview">gaze device watcher</a>.</p>
+<pre><code class="lang-csharp">using System;
+using Windows.Devices.Input.Preview;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml;
+using Windows.Foundation;
+using System.Collections.Generic;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+
+namespace gazeinput
+{
+    public sealed partial class MainPage : Page
+    {
+        /// &lt;summary&gt;
+        /// Reference to the user's eyes and head as detected
+        /// by the eye-tracking device.
+        /// &lt;/summary&gt;
+        private GazeInputSourcePreview gazeInputSource;
+
+        /// &lt;summary&gt;
+        /// Dynamic store of eye-tracking devices.
+        /// &lt;/summary&gt;
+        /// &lt;remarks&gt;
+        /// Receives event notifications when a device is added, removed, 
+        /// or updated after the initial enumeration.
+        /// &lt;/remarks&gt;
+        private GazeDeviceWatcherPreview gazeDeviceWatcher;
+
+        /// &lt;summary&gt;
+        /// Eye-tracking device counter.
+        /// &lt;/summary&gt;
+        private int deviceCounter = 0;
+
+        /// &lt;summary&gt;
+        /// Timer for gaze focus on RadialProgressBar.
+        /// &lt;/summary&gt;
+        DispatcherTimer timerGaze = new DispatcherTimer();
+
+        /// &lt;summary&gt;
+        /// Tracker used to prevent gaze timer restarts.
+        /// &lt;/summary&gt;
+        bool timerStarted = false;
+
+        /// &lt;summary&gt;
+        /// Initialize the app.
+        /// &lt;/summary&gt;
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+
+        /// &lt;summary&gt;
+        /// Override of OnNavigatedTo page event starts GazeDeviceWatcher.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;e&quot;&gt;Event args for the NavigatedTo event&lt;/param&gt;
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // Start listening for device events on navigation to eye-tracking page.
+            StartGazeDeviceWatcher();
+        }
+
+        /// &lt;summary&gt;
+        /// Override of OnNavigatedFrom page event stops GazeDeviceWatcher.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;e&quot;&gt;Event args for the NavigatedFrom event&lt;/param&gt;
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            // Stop listening for device events on navigation from eye-tracking page.
+            StopGazeDeviceWatcher();
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Next, we add our gaze device watcher methods.</p>
+<p>In <code>StartGazeDeviceWatcher</code>, we call <a href="/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.createwatcher">CreateWatcher</a> and declare the eye-tracking device event listeners (<a href="/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.added">DeviceAdded</a>, <a href="/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.updated">DeviceUpdated</a>, and <a href="/uwp/api/windows.devices.input.preview.gazedevicewatcherpreview.removed">DeviceRemoved</a>).</p>
+<p>In <code>DeviceAdded</code>, we check the state of the eye-tracking device. If a viable device, we increment our device count and enable gaze tracking. See next step for details.</p>
+<p>In <code>DeviceUpdated</code>, we also enable gaze tracking as this event is triggered if a device is recalibrated.</p>
+<p>In <code>DeviceRemoved</code>, we decrement our device counter and remove the device event handlers.</p>
+<p>In <code>StopGazeDeviceWatcher</code>, we shut down the gaze device watcher.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">    /// &lt;summary&gt;
+    /// Start gaze watcher and declare watcher event handlers.
+    /// &lt;/summary&gt;
+    private void StartGazeDeviceWatcher()
+    {
+        if (gazeDeviceWatcher == null)
+        {
+            gazeDeviceWatcher = GazeInputSourcePreview.CreateWatcher();
+            gazeDeviceWatcher.Added += this.DeviceAdded;
+            gazeDeviceWatcher.Updated += this.DeviceUpdated;
+            gazeDeviceWatcher.Removed += this.DeviceRemoved;
+            gazeDeviceWatcher.Start();
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// Shut down gaze watcher and stop listening for events.
+    /// &lt;/summary&gt;
+    private void StopGazeDeviceWatcher()
+    {
+        if (gazeDeviceWatcher != null)
+        {
+            gazeDeviceWatcher.Stop();
+            gazeDeviceWatcher.Added -= this.DeviceAdded;
+            gazeDeviceWatcher.Updated -= this.DeviceUpdated;
+            gazeDeviceWatcher.Removed -= this.DeviceRemoved;
+            gazeDeviceWatcher = null;
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// Eye-tracking device connected (added, or available when watcher is initialized).
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;sender&quot;&gt;Source of the device added event&lt;/param&gt;
+    /// &lt;param name=&quot;e&quot;&gt;Event args for the device added event&lt;/param&gt;
+    private void DeviceAdded(GazeDeviceWatcherPreview source, 
+        GazeDeviceWatcherAddedPreviewEventArgs args)
+    {
+        if (IsSupportedDevice(args.Device))
+        {
+            deviceCounter++;
+            TrackerCounter.Text = deviceCounter.ToString();
+        }
+        // Set up gaze tracking.
+        TryEnableGazeTrackingAsync(args.Device);
+    }
+
+    /// &lt;summary&gt;
+    /// Initial device state might be uncalibrated, 
+    /// but device was subsequently calibrated.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;sender&quot;&gt;Source of the device updated event&lt;/param&gt;
+    /// &lt;param name=&quot;e&quot;&gt;Event args for the device updated event&lt;/param&gt;
+    private void DeviceUpdated(GazeDeviceWatcherPreview source,
+        GazeDeviceWatcherUpdatedPreviewEventArgs args)
+    {
+        // Set up gaze tracking.
+        TryEnableGazeTrackingAsync(args.Device);
+    }
+
+    /// &lt;summary&gt;
+    /// Handles disconnection of eye-tracking devices.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;sender&quot;&gt;Source of the device removed event&lt;/param&gt;
+    /// &lt;param name=&quot;e&quot;&gt;Event args for the device removed event&lt;/param&gt;
+    private void DeviceRemoved(GazeDeviceWatcherPreview source,
+        GazeDeviceWatcherRemovedPreviewEventArgs args)
+    {
+        // Decrement gaze device counter and remove event handlers.
+        if (IsSupportedDevice(args.Device))
+        {
+            deviceCounter--;
+            TrackerCounter.Text = deviceCounter.ToString();
+
+            if (deviceCounter == 0)
+            {
+                gazeInputSource.GazeEntered -= this.GazeEntered;
+                gazeInputSource.GazeMoved -= this.GazeMoved;
+                gazeInputSource.GazeExited -= this.GazeExited;
+            }
+        }
+    }
+</code></pre>
+<ol start="4">
+<li><p>Here, we check if the device is viable in <code>IsSupportedDevice</code> and, if so, attempt to enable gaze tracking in <code>TryEnableGazeTrackingAsync</code>.</p>
+<p>In <code>TryEnableGazeTrackingAsync</code>, we declare the gaze event handlers, and call <a href="/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview">GazeInputSourcePreview.GetForCurrentView()</a> to get a reference to the input source (this must be called on the UI thread, see <a href="/windows/uwp/debug-test-perf/keep-the-ui-thread-responsive">Keep the UI thread responsive</a>).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You should call <a href="/uwp/api/windows.devices.input.preview.gazeinputsourcepreview.getforcurrentview">GazeInputSourcePreview.GetForCurrentView()</a> only when a compatible eye-tracking device is connected and required by your application. Otherwise, the consent dialog is unnecessary.</p>
+</div>
+</li>
+</ol>
+<pre><code class="lang-csharp">    /// &lt;summary&gt;
+    /// Initialize gaze tracking.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;gazeDevice&quot;&gt;&lt;/param&gt;
+    private async void TryEnableGazeTrackingAsync(GazeDevicePreview gazeDevice)
+    {
+        // If eye-tracking device is ready, declare event handlers and start tracking.
+        if (IsSupportedDevice(gazeDevice))
+        {
+            timerGaze.Interval = new TimeSpan(0, 0, 0, 0, 20);
+            timerGaze.Tick += TimerGaze_Tick;
+
+            SetGazeTargetLocation();
+
+            // This must be called from the UI thread.
+            gazeInputSource = GazeInputSourcePreview.GetForCurrentView();
+
+            gazeInputSource.GazeEntered += GazeEntered;
+            gazeInputSource.GazeMoved += GazeMoved;
+            gazeInputSource.GazeExited += GazeExited;
+        }
+        // Notify if device calibration required.
+        else if (gazeDevice.ConfigurationState ==
+                    GazeDeviceConfigurationStatePreview.UserCalibrationNeeded ||
+                    gazeDevice.ConfigurationState ==
+                    GazeDeviceConfigurationStatePreview.ScreenSetupNeeded)
+        {
+            // Device isn't calibrated, so invoke the calibration handler.
+            System.Diagnostics.Debug.WriteLine(
+                &quot;Your device needs to calibrate. Please wait for it to finish.&quot;);
+            await gazeDevice.RequestCalibrationAsync();
+        }
+        // Notify if device calibration underway.
+        else if (gazeDevice.ConfigurationState == 
+            GazeDeviceConfigurationStatePreview.Configuring)
+        {
+            // Device is currently undergoing calibration.  
+            // A device update is sent when calibration complete.
+            System.Diagnostics.Debug.WriteLine(
+                &quot;Your device is being configured. Please wait for it to finish&quot;); 
+        }
+        // Device is not viable.
+        else if (gazeDevice.ConfigurationState == GazeDeviceConfigurationStatePreview.Unknown)
+        {
+            // Notify if device is in unknown state.  
+            // Reconfigure/recalbirate the device.  
+            System.Diagnostics.Debug.WriteLine(
+                &quot;Your device is not ready. Please set up your device or reconfigure it.&quot;); 
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// Check if eye-tracking device is viable.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;gazeDevice&quot;&gt;Reference to eye-tracking device.&lt;/param&gt;
+    /// &lt;returns&gt;True, if device is viable; otherwise, false.&lt;/returns&gt;
+    private bool IsSupportedDevice(GazeDevicePreview gazeDevice)
+    {
+        TrackerState.Text = gazeDevice.ConfigurationState.ToString();
+        return (gazeDevice.CanTrackEyes &amp;&amp;
+                    gazeDevice.ConfigurationState == 
+                    GazeDeviceConfigurationStatePreview.Ready);
+    }
+</code></pre>
+<ol start="5">
+<li><p>Next, we set up our gaze event handlers.</p>
+<p>We display and hide the gaze tracking ellipse in <code>GazeEntered</code> and <code>GazeExited</code>, respectively.</p>
+<p>In <code>GazeMoved</code>, we move our gaze tracking ellipse based on the <a href="/uwp/api/windows.devices.input.preview.gazepointpreview.eyegazeposition">EyeGazePosition</a> provided by the <a href="/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs.currentpoint">CurrentPoint</a> of the <a href="/uwp/api/windows.devices.input.preview.gazeenteredprevieweventargs">GazeEnteredPreviewEventArgs</a>. We also manage the gaze focus timer on the <a href="/windows/communitytoolkit/controls/radialprogressbar">RadialProgressBar</a>, which triggers repositioning of the progress bar. See next step for details.</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// GazeEntered handler.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the gaze entered event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the gaze entered event&lt;/param&gt;
+private void GazeEntered(
+    GazeInputSourcePreview sender, 
+    GazeEnteredPreviewEventArgs args)
+{
+    // Show ellipse representing gaze point.
+    eyeGazePositionEllipse.Visibility = Visibility.Visible;
+
+    // Mark the event handled.
+    args.Handled = true;
+}
+
+/// &lt;summary&gt;
+/// GazeExited handler.
+/// Call DisplayRequest.RequestRelease to conclude the 
+/// RequestActive called in GazeEntered.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the gaze exited event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the gaze exited event&lt;/param&gt;
+private void GazeExited(
+    GazeInputSourcePreview sender, 
+    GazeExitedPreviewEventArgs args)
+{
+    // Hide gaze tracking ellipse.
+    eyeGazePositionEllipse.Visibility = Visibility.Collapsed;
+
+    // Mark the event handled.
+    args.Handled = true;
+}
+
+/// &lt;summary&gt;
+/// GazeMoved handler translates the ellipse on the canvas to reflect gaze point.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the gaze moved event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the gaze moved event&lt;/param&gt;
+private void GazeMoved(GazeInputSourcePreview sender, GazeMovedPreviewEventArgs args)
+{
+    // Update the position of the ellipse corresponding to gaze point.
+    if (args.CurrentPoint.EyeGazePosition != null)
+    {
+        double gazePointX = args.CurrentPoint.EyeGazePosition.Value.X;
+        double gazePointY = args.CurrentPoint.EyeGazePosition.Value.Y;
+
+        double ellipseLeft = 
+            gazePointX - 
+            (eyeGazePositionEllipse.Width / 2.0f);
+        double ellipseTop = 
+            gazePointY - 
+            (eyeGazePositionEllipse.Height / 2.0f) - 
+            (int)Header.ActualHeight;
+
+        // Translate transform for moving gaze ellipse.
+        TranslateTransform translateEllipse = new TranslateTransform
+        {
+            X = ellipseLeft,
+            Y = ellipseTop
+        };
+
+        eyeGazePositionEllipse.RenderTransform = translateEllipse;
+
+        // The gaze point screen location.
+        Point gazePoint = new Point(gazePointX, gazePointY);
+
+        // Basic hit test to determine if gaze point is on progress bar.
+        bool hitRadialProgressBar = 
+            DoesElementContainPoint(
+                gazePoint, 
+                GazeRadialProgressBar.Name, 
+                GazeRadialProgressBar); 
+
+        // Use progress bar thickness for visual feedback.
+        if (hitRadialProgressBar)
+        {
+            GazeRadialProgressBar.Thickness = 10;
+        }
+        else
+        {
+            GazeRadialProgressBar.Thickness = 4;
+        }
+
+        // Mark the event handled.
+        args.Handled = true;
+    }
+}
+</code></pre>
+</li>
+<li><p>Finally, here are the methods used to manage the gaze focus timer for this app.</p>
+<p><code>DoesElementContainPoint</code> checks if the gaze pointer is over the progress bar. If so, it starts the gaze timer and increments the progress bar on each gaze timer tick.</p>
+<p><code>SetGazeTargetLocation</code> sets the initial location of the progress bar and, if the progress bar completes (depending on the gaze focus timer), moves the progress bar to a random location.</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Return whether the gaze point is over the progress bar.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;gazePoint&quot;&gt;The gaze point screen location&lt;/param&gt;
+/// &lt;param name=&quot;elementName&quot;&gt;The progress bar name&lt;/param&gt;
+/// &lt;param name=&quot;uiElement&quot;&gt;The progress bar UI element&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+private bool DoesElementContainPoint(
+    Point gazePoint, string elementName, UIElement uiElement)
+{
+    // Use entire visual tree of progress bar.
+    IEnumerable&lt;UIElement&gt; elementStack = 
+        VisualTreeHelper.FindElementsInHostCoordinates(gazePoint, uiElement, true);
+    foreach (UIElement item in elementStack)
+    {
+        //Cast to FrameworkElement and get element name.
+        if (item is FrameworkElement feItem)
+        {
+            if (feItem.Name.Equals(elementName))
+            {
+                if (!timerStarted)
+                {
+                    // Start gaze timer if gaze over element.
+                    timerGaze.Start();
+                    timerStarted = true;
+                }
+                return true;
+            }
+        }
+    }
+
+    // Stop gaze timer and reset progress bar if gaze leaves element.
+    timerGaze.Stop();
+    GazeRadialProgressBar.Value = 0;
+    timerStarted = false;
+    return false;
+}
+
+/// &lt;summary&gt;
+/// Tick handler for gaze focus timer.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the gaze entered event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the gaze entered event&lt;/param&gt;
+private void TimerGaze_Tick(object sender, object e)
+{
+    // Increment progress bar.
+    GazeRadialProgressBar.Value += 1;
+
+    // If progress bar reaches maximum value, reset and relocate.
+    if (GazeRadialProgressBar.Value == 100)
+    {
+        SetGazeTargetLocation();
+    }
+}
+
+/// &lt;summary&gt;
+/// Set/reset the screen location of the progress bar.
+/// &lt;/summary&gt;
+private void SetGazeTargetLocation()
+{
+    // Ensure the gaze timer restarts on new progress bar location.
+    timerGaze.Stop();
+    timerStarted = false;
+
+    // Get the bounding rectangle of the app window.
+    Rect appBounds = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds;
+
+    // Translate transform for moving progress bar.
+    TranslateTransform translateTarget = new TranslateTransform();
+
+    // Calculate random location within gaze canvas.
+        Random random = new Random();
+        int randomX = 
+            random.Next(
+                0, 
+                (int)appBounds.Width - (int)GazeRadialProgressBar.Width);
+        int randomY = 
+            random.Next(
+                0, 
+                (int)appBounds.Height - (int)GazeRadialProgressBar.Height - (int)Header.ActualHeight);
+
+    translateTarget.X = randomX;
+    translateTarget.Y = randomY;
+
+    GazeRadialProgressBar.RenderTransform = translateTarget;
+
+    // Show progress bar.
+    GazeRadialProgressBar.Visibility = Visibility.Visible;
+    GazeRadialProgressBar.Value = 0;
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="see-also">See also</h2>
+<h3 id="resources">Resources</h3>
+<ul>
+<li><a href="/windows/communitytoolkit/gaze/gazeinteractionlibrary">Windows Community Toolkit Gaze library</a></li>
+</ul>
+<h3 id="topic-samples">Topic samples</h3>
+<ul>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-gazeinput-basic.zip">Gaze sample (basic) (C#)</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/gaze-interactions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

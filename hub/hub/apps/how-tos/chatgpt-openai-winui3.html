@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to add OpenAI chat completions to a WinUI desktop app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to add OpenAI chat completions to a WinUI desktop app ">
+    
+    <meta name="description" content="Get started with WinUI 3 / Windows App SDK desktop apps by integrating OpenAI&#39;s text generation and prompting APIs into the app.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="add-openai-chat-completions-to-your-winui-3--windows-app-sdk-desktop-app">Add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app</h1>
+
+<p>In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's <a href="https://platform.openai.com/docs/guides/text">text generation and prompting APIs</a>:</p>
+<p><span class="mx-imgBorder">
+<img src="images/chatgpt-openai/long-story.png" alt="A screenshot of a less minimal WinUI chat app.">
+</span>
+</p>
+<!--todo: The source code for the app we're building in this how-to is available todo -->
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Set up your development computer (see <a href="../get-started/start-here.html">Start developing Windows apps</a>).</li>
+<li>Familiarity with the core concepts in <em><a href="hello-world-winui3.html">How to build a Hello World app using C# and WinUI / Windows App SDK</a></em> - we'll build upon that how-to in this one.</li>
+<li>An OpenAI API key from your <a href="https://platform.openai.com/api-keys">OpenAI developer dashboard</a>.</li>
+<li>An OpenAI SDK installed in your project. Refer to the <a href="https://platform.openai.com/docs/libraries">OpenAI documentation</a> for a list of community libraries. In this how-to, we'll use the official <a href="https://github.com/openai/openai-dotnet">OpenAI .NET API library</a>.</li>
+</ul>
+<h2 id="create-a-project">Create a project</h2>
+<p>You create a new WinUI project in Visual Studio by following the steps in the <a href="/windows/apps/get-started/start-here#3-create-and-launch-your-first-winui-app">Create and launch your first WinUI app</a> section of the <a href="../get-started/start-here.html">Start developing Windows apps</a> article. For this example, enter <code>ChatGPT_WinUI3</code> as the project name and <code>ChatGPT_WinUI3</code> for the solution name when entering the project details in the dialog.</p>
+<h2 id="set-your-environment-variable">Set your environment variable</h2>
+<p>In order to use the OpenAI SDK, you'll need to set an environment variable with your API key. In this example, we'll use the <code>OPENAI_API_KEY</code> environment variable. Once you have your API key from the <a href="https://platform.openai.com/api-keys">OpenAI developer dashboard</a>, you can set the environment variable from the command line as follows:</p>
+<pre><code class="lang-powershell">setx OPENAI_API_KEY &lt;your-api-key&gt;
+</code></pre>
+<p>Note that this method works well for development, but you'll want to use a more secure method for production apps (for example: you could store your API key in a secure key vault that a remote service can access on behalf of your app). See <a href="https://help.openai.com/articles/5112595-best-practices-for-api-key-safety">Best practices for OpenAI key safety</a>.</p>
+<h2 id="install-the-openai-library">Install the OpenAI library</h2>
+<p>From Visual Studio's <code>View</code> menu, select <code>Terminal</code>. You should see an instance of <code>Developer Powershell</code> appear. Run the following command from your project's root directory to install the OpenAI .NET package:</p>
+<pre><code class="lang-powershell">dotnet add package OpenAI
+</code></pre>
+<h2 id="initialize-the-library">Initialize the library</h2>
+<p>In <code>MainWindow.xaml.cs</code>, initialize the OpenAI library with your API key:</p>
+<pre><code class="lang-csharp">//...
+using OpenAI;
+using OpenAI.Chat;
+
+namespace ChatGPT_WinUI3
+{
+    public sealed partial class MainWindow : Window
+    {
+        private OpenAIClient openAiService;
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+           
+            var openAiKey = Environment.GetEnvironmentVariable(&quot;OPENAI_API_KEY&quot;);
+
+            openAiService = new(openAiKey);
+        }
+    }
+}
+</code></pre>
+<h2 id="build-the-chat-ui">Build the chat UI</h2>
+<p>We'll use a <code>StackPanel</code> to display a list of messages, and a <code>TextBox</code> to let users enter new messages. Update <code>MainWindow.xaml</code> as follows:</p>
+<pre><code class="lang-xml">&lt;Window
+    x:Class=&quot;ChatGPT_WinUI3.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:ChatGPT_WinUI3&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+    &lt;Grid&gt;
+        &lt;StackPanel Orientation=&quot;Vertical&quot; HorizontalAlignment=&quot;Stretch&quot;&gt;
+            &lt;ListView x:Name=&quot;ConversationList&quot; /&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+                &lt;TextBox x:Name=&quot;InputTextBox&quot; HorizontalAlignment=&quot;Stretch&quot;/&gt;
+                &lt;Button x:Name=&quot;SendButton&quot; Content=&quot;Send&quot; Click=&quot;SendButton_Click&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<h2 id="implement-message-sending-receiving-and-displaying">Implement message sending, receiving, and displaying</h2>
+<p>Add a <code>SendButton_Click</code> event handler to handle the sending, receiving, and display of messages:</p>
+<pre><code class="lang-csharp">public sealed partial class MainWindow : Window
+{
+    // ...
+
+    private async void SendButton_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            string userInput = InputTextBox.Text;
+
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                AddMessageToConversation($&quot;User: {userInput}&quot;);
+                InputTextBox.Text = string.Empty;
+                var chatClient = openAiService.GetChatClient(&quot;gpt-4o&quot;); // or another model
+                var chatOptions = new ChatCompletionOptions
+                {
+                    MaxOutputTokenCount = 300
+                };
+
+                // Assemble the chat prompt with a system message and the user's input
+                var completionResult = await chatClient.CompleteChatAsync(
+                    [
+                        ChatMessage.CreateSystemMessage(&quot;You are a helpful assistant.&quot;),
+                        ChatMessage.CreateUserMessage(userInput)
+                    ],
+                    chatOptions);
+
+                if (completionResult != null &amp;&amp; completionResult.Value.Content.Count &gt; 0)
+                {
+                    AddMessageToConversation($&quot;GPT: {completionResult.Value.Content.First().Text}&quot;);
+                }
+                else
+                {
+                    AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {completionResult?.Value.Refusal ?? &quot;Unknown error.&quot;}&quot;);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {ex.Message}&quot;);
+        }
+    }
+
+    private void AddMessageToConversation(string message)
+    {
+        ConversationList.Items.Add(message);
+        ConversationList.ScrollIntoView(ConversationList.Items[ConversationList.Items.Last()]);
+    }
+}
+</code></pre>
+<h2 id="run-the-app">Run the app</h2>
+<p>Run the app and try chatting! You should see something like this:</p>
+<p><span class="mx-imgBorder">
+<img src="images/chatgpt-openai/hello-gpt.png" alt="A screenshot of a minimal WinUI chat app.">
+</span>
+</p>
+<h2 id="improve-the-chat-interface">Improve the chat interface</h2>
+<p>Let's make the following improvements to the chat interface:</p>
+<ul>
+<li>Add a <code>ScrollViewer</code> to the <code>StackPanel</code> to enable scrolling.</li>
+<li>Add a <code>TextBlock</code> to display the GPT response in a way that's more visually distinct from the user's input.</li>
+<li>Add a <code>ProgressBar</code> to indicate when the app is waiting for a response from the GPT API.</li>
+<li>Center the <code>StackPanel</code> in the window, similar to ChatGPT's <a href="https://chatgpt.com">web interface</a>.</li>
+<li>Ensure that messages wrap to the next line when they reach the edge of the window.</li>
+<li>Make the <code>TextBox</code> larger and responsive to the <code>Enter</code> key.</li>
+</ul>
+<p>Starting from the top:</p>
+<h3 id="add-scrollviewer">Add <code>ScrollViewer</code></h3>
+<p>Wrap the <code>ListView</code> in a <code>ScrollViewer</code> to enable vertical scrolling on long conversations:</p>
+<pre><code class="lang-xml">        &lt;StackPanel Orientation=&quot;Vertical&quot; HorizontalAlignment=&quot;Stretch&quot;&gt;
+            &lt;ScrollViewer x:Name=&quot;ConversationScrollViewer&quot; VerticalScrollBarVisibility=&quot;Auto&quot; MaxHeight=&quot;500&quot;&gt;
+                &lt;ListView x:Name=&quot;ConversationList&quot; /&gt;
+            &lt;/ScrollViewer&gt;
+            &lt;!-- ... --&gt;
+        &lt;/StackPanel&gt;
+</code></pre>
+<h3 id="use-textblock">Use <code>TextBlock</code></h3>
+<p>Modify the <code>AddMessageToConversation</code> method to style the user's input and the GPT response differently:</p>
+<pre><code class="lang-csharp">    // ...
+    private void AddMessageToConversation(string message)
+    {
+        var messageBlock = new TextBlock
+        {
+            Text = message,
+            Margin = new Thickness(5)
+        };
+        if (message.StartsWith(&quot;User:&quot;))
+        {
+            messageBlock.Foreground = new SolidColorBrush(Colors.LightBlue);
+        }
+        else
+        {
+            messageBlock.Foreground = new SolidColorBrush(Colors.LightGreen);
+        }
+        ConversationList.Items.Add(messageBlock);
+        ConversationList.ScrollIntoView(ConversationList.Items.Last()); 
+    }
+</code></pre>
+<h3 id="add-progressbar">Add <code>ProgressBar</code></h3>
+<p>To indicate when the app is waiting for a response, add a <code>ProgressBar</code> to the <code>StackPanel</code>:</p>
+<pre><code class="lang-xml">        &lt;StackPanel Orientation=&quot;Vertical&quot; HorizontalAlignment=&quot;Stretch&quot;&gt;
+            &lt;ScrollViewer x:Name=&quot;ConversationScrollViewer&quot; VerticalScrollBarVisibility=&quot;Auto&quot; MaxHeight=&quot;500&quot;&gt;
+                &lt;ListView x:Name=&quot;ConversationList&quot; /&gt;
+            &lt;/ScrollViewer&gt;
+            &lt;ProgressBar x:Name=&quot;ResponseProgressBar&quot; Height=&quot;5&quot; IsIndeterminate=&quot;True&quot; Visibility=&quot;Collapsed&quot;/&gt; &lt;!-- new! --&gt;
+        &lt;/StackPanel&gt;
+</code></pre>
+<p>Then, update the <code>SendButton_Click</code> event handler to show the <code>ProgressBar</code> while waiting for a response:</p>
+<pre><code class="lang-csharp">    private async void SendButton_Click(object sender, RoutedEventArgs e)
+    {
+        ResponseProgressBar.Visibility = Visibility.Visible; // new!
+        string userInput = InputTextBox.Text;
+
+        try
+        {
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                AddMessageToConversation($&quot;User: {userInput}&quot;);
+                InputTextBox.Text = string.Empty;
+                var chatClient = openAiService.GetChatClient(&quot;gpt-4o&quot;); // or another model
+                var chatOptions = new ChatCompletionOptions
+                {
+                    MaxOutputTokenCount = 300
+                };
+
+                // Assemble the chat prompt with a system message and the user's input
+                var completionResult = await chatClient.CompleteChatAsync(
+                    [
+                        ChatMessage.CreateSystemMessage(&quot;You are a helpful assistant.&quot;),
+                        ChatMessage.CreateUserMessage(userInput)
+                    ],
+                    chatOptions);
+
+                if (completionResult != null &amp;&amp; completionResult.Value.Content.Count &gt; 0)
+                {
+                    AddMessageToConversation($&quot;GPT: {completionResult.Value.Content.First().Text}&quot;);
+                }
+                else
+                {
+                    AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {completionResult?.Value.Refusal ?? &quot;Unknown error.&quot;}&quot;);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {ex.Message}&quot;);
+        }
+        finally // new!
+        {
+            ResponseProgressBar.Visibility = Visibility.Collapsed; // new!
+        }
+    }
+</code></pre>
+<h3 id="center-the-stackpanel">Center the <code>StackPanel</code></h3>
+<p>To center the <code>StackPanel</code> and pull the messages down towards the <code>TextBox</code>, adjust the <code>Grid</code> settings in <code>MainWindow.xaml</code>:</p>
+<pre><code class="lang-xml">    &lt;Grid VerticalAlignment=&quot;Bottom&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/Grid&gt;
+</code></pre>
+<h3 id="wrap-messages">Wrap messages</h3>
+<p>To ensure that messages wrap to the next line when they reach the edge of the window, update <code>MainWindow.xaml</code> to use an <code>ItemsControl</code>.</p>
+<p>Replace this:</p>
+<pre><code class="lang-xml">    &lt;ScrollViewer x:Name=&quot;ConversationScrollViewer&quot; VerticalScrollBarVisibility=&quot;Auto&quot; MaxHeight=&quot;500&quot;&gt;
+        &lt;ListView x:Name=&quot;ConversationList&quot; /&gt;
+    &lt;/ScrollViewer&gt;
+</code></pre>
+<p>With this:</p>
+<pre><code class="lang-xml">    &lt;ScrollViewer x:Name=&quot;ConversationScrollViewer&quot; VerticalScrollBarVisibility=&quot;Auto&quot; MaxHeight=&quot;500&quot;&gt;
+        &lt;ItemsControl x:Name=&quot;ConversationList&quot; Width=&quot;300&quot;&gt;
+            &lt;ItemsControl.ItemTemplate&gt;
+                &lt;DataTemplate&gt;
+                    &lt;TextBlock Text=&quot;{Binding Text}&quot; TextWrapping=&quot;Wrap&quot; Margin=&quot;5&quot; Foreground=&quot;{Binding Color}&quot;/&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ItemsControl.ItemTemplate&gt;
+        &lt;/ItemsControl&gt;
+    &lt;/ScrollViewer&gt;
+</code></pre>
+<p>We'll then introduce a <code>MessageItem</code> class to facilitate binding and coloring:</p>
+<pre><code class="lang-csharp">    // ...
+    public class MessageItem
+    {
+        public string Text { get; set; }
+        public SolidColorBrush Color { get; set; }
+    }
+    // ...
+</code></pre>
+<p>Finally, update the <code>AddMessageToConversation</code> method to use the new <code>MessageItem</code> class:</p>
+<pre><code class="lang-csharp">    // ...
+    private void AddMessageToConversation(string message)
+    {
+        var messageItem = new MessageItem
+        {
+            Text = message,
+            Color = message.StartsWith(&quot;User:&quot;) ? new SolidColorBrush(Colors.LightBlue)
+                                                : new SolidColorBrush(Colors.LightGreen)
+        };
+        ConversationList.Items.Add(messageItem);
+
+        // handle scrolling
+        ConversationScrollViewer.UpdateLayout();
+        ConversationScrollViewer.ChangeView(null, ConversationScrollViewer.ScrollableHeight, null);
+    }
+    // ...
+</code></pre>
+<h3 id="improve-the-textbox">Improve the <code>TextBox</code></h3>
+<p>To make the <code>TextBox</code> larger and responsive to the <code>Enter</code> key, update <code>MainWindow.xaml</code> as follows:</p>
+<pre><code class="lang-xml">    &lt;!-- ... --&gt;
+    &lt;StackPanel Orientation=&quot;Vertical&quot; Width=&quot;300&quot;&gt;
+        &lt;TextBox x:Name=&quot;InputTextBox&quot; HorizontalAlignment=&quot;Stretch&quot; VerticalAlignment=&quot;Stretch&quot; KeyDown=&quot;InputTextBox_KeyDown&quot; TextWrapping=&quot;Wrap&quot; MinHeight=&quot;100&quot; MaxWidth=&quot;300&quot;/&gt;
+        &lt;Button x:Name=&quot;SendButton&quot; Content=&quot;Send&quot; Click=&quot;SendButton_Click&quot; HorizontalAlignment=&quot;Right&quot;/&gt;
+    &lt;/StackPanel&gt;
+    &lt;!-- ... --&gt;
+</code></pre>
+<p>Then, add the <code>InputTextBox_KeyDown</code> event handler to handle the <code>Enter</code> key:</p>
+<pre><code class="lang-csharp">    //...
+    private void InputTextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+    {
+        if (e.Key == Windows.System.VirtualKey.Enter &amp;&amp; !string.IsNullOrWhiteSpace(InputTextBox.Text))
+        {
+            SendButton_Click(this, new RoutedEventArgs());
+        }
+    }
+    //...
+</code></pre>
+<!-- commit d28ead6f96d69c8e8d3b5b5bdf17a0d5 -->
+<h2 id="run-the-improved-app">Run the improved app</h2>
+<p>Your new-and-improved chat interface should look something like this:</p>
+<p><span class="mx-imgBorder">
+<img src="images/chatgpt-openai/long-story.png" alt="A screenshot of a less minimal WinUI 3 chat app.">
+</span>
+</p>
+<h2 id="recap">Recap</h2>
+<p>Here's what you accomplished in this how-to:</p>
+<ol>
+<li>You added OpenAI's API capabilities to your WinUI 3 / Windows App SDK desktop app by installing the official OpenAI library and initializing it with your API key.</li>
+<li>You built a chat-like interface that lets you generate responses to messages using OpenAI's <a href="https://platform.openai.com/docs/guides/text">text generation and prompting APIs</a>.</li>
+<li>You improved the chat interface by:
+<ol>
+<li>adding a <code>ScrollViewer</code>,</li>
+<li>using a <code>TextBlock</code> to display the GPT response,</li>
+<li>adding a <code>ProgressBar</code> to indicate when the app is waiting for a response from the GPT API,</li>
+<li>centering the <code>StackPanel</code> in the window,</li>
+<li>ensuring that messages wrap to the next line when they reach the edge of the window, and</li>
+<li>making the <code>TextBox</code> larger, resizable, and responsive to the <code>Enter</code> key.</li>
+</ol>
+</li>
+</ol>
+<h2 id="full-code-files">Full code files</h2>
+<p>The following code is a full example of the chat app with OpenAI chat completions integrated:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Window
+    x:Class=&quot;ChatGPT_WinUI3.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:ChatGPT_WinUI3&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+    &lt;Grid VerticalAlignment=&quot;Bottom&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+        &lt;StackPanel Orientation=&quot;Vertical&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+            &lt;ScrollViewer x:Name=&quot;ConversationScrollViewer&quot; VerticalScrollBarVisibility=&quot;Auto&quot; MaxHeight=&quot;500&quot;&gt;
+                &lt;ItemsControl x:Name=&quot;ConversationList&quot; Width=&quot;300&quot;&gt;
+                    &lt;ItemsControl.ItemTemplate&gt;
+                        &lt;DataTemplate&gt;
+                            &lt;TextBlock Text=&quot;{Binding Text}&quot; TextWrapping=&quot;Wrap&quot; Margin=&quot;5&quot; Foreground=&quot;{Binding Color}&quot;/&gt;
+                        &lt;/DataTemplate&gt;
+                    &lt;/ItemsControl.ItemTemplate&gt;
+                &lt;/ItemsControl&gt;
+            &lt;/ScrollViewer&gt;
+            &lt;ProgressBar x:Name=&quot;ResponseProgressBar&quot; Height=&quot;5&quot; IsIndeterminate=&quot;True&quot; Visibility=&quot;Collapsed&quot;/&gt;
+            &lt;StackPanel Orientation=&quot;Vertical&quot; Width=&quot;300&quot;&gt;
+                &lt;TextBox x:Name=&quot;InputTextBox&quot; HorizontalAlignment=&quot;Stretch&quot; VerticalAlignment=&quot;Stretch&quot; KeyDown=&quot;InputTextBox_KeyDown&quot; TextWrapping=&quot;Wrap&quot; MinHeight=&quot;100&quot; MaxWidth=&quot;300&quot;/&gt;
+                &lt;Button x:Name=&quot;SendButton&quot; Content=&quot;Send&quot; Click=&quot;SendButton_Click&quot; HorizontalAlignment=&quot;Right&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+
+</code></pre>
+<pre><code class="lang-csharp">using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+using OpenAI;
+using OpenAI.Chat;
+
+namespace ChatGPT_WinUI3
+{
+    public class MessageItem
+    {
+        public string Text { get; set; }
+        public SolidColorBrush Color { get; set; }
+    }
+
+    public sealed partial class MainWindow : Window
+    {
+        private OpenAIService openAiService;
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+
+            var openAiKey = Environment.GetEnvironmentVariable(&quot;OPENAI_API_KEY&quot;);
+
+            openAiService = new(openAiKey);
+        }
+
+        private async void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResponseProgressBar.Visibility = Visibility.Visible;
+            string userInput = InputTextBox.Text;
+    
+            try
+            {
+                if (!string.IsNullOrEmpty(userInput))
+                {
+                    AddMessageToConversation($&quot;User: {userInput}&quot;);
+                    InputTextBox.Text = string.Empty;
+                    var chatClient = openAiService.GetChatClient(&quot;gpt-4o&quot;); // or another model
+                    var chatOptions = new ChatCompletionOptions
+                    {
+                        MaxOutputTokenCount = 300
+                    };
+
+                    // Assemble the chat prompt with a system message and the user's input
+                    var completionResult = await chatClient.CompleteChatAsync(
+                        [
+                            ChatMessage.CreateSystemMessage(&quot;You are a helpful assistant.&quot;),
+                            ChatMessage.CreateUserMessage(userInput)
+                        ],
+                        chatOptions);
+    
+                    if (completionResult != null &amp;&amp; completionResult.Value.Content.Count &gt; 0)
+                    {
+                        AddMessageToConversation($&quot;GPT: {completionResult.Value.Content.First().Text}&quot;);
+                    }
+                    else
+                    {
+                        AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {completionResult?.Value.Refusal ?? &quot;Unknown error.&quot;}&quot;);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {ex.Message}&quot;);
+            }
+            finally
+            {
+                ResponseProgressBar.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void AddMessageToConversation(string message)
+        {
+            var messageItem = new MessageItem
+            {
+                Text = message,
+                Color = message.StartsWith(&quot;User:&quot;) ? new SolidColorBrush(Colors.LightBlue)
+                                                    : new SolidColorBrush(Colors.LightGreen)
+            };
+            ConversationList.Items.Add(messageItem);
+
+            // handle scrolling
+            ConversationScrollViewer.UpdateLayout();
+            ConversationScrollViewer.ChangeView(null, ConversationScrollViewer.ScrollableHeight, null);
+        }
+
+        private void InputTextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter &amp;&amp; !string.IsNullOrWhiteSpace(InputTextBox.Text))
+            {
+                SendButton_Click(this, new RoutedEventArgs());
+            }
+        }
+    }
+}
+
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="../get-started/samples.html">Sample applications for Windows development</a></li>
+<li><a href="../get-started/best-practices.html">Windows development best practices</a></li>
+<li><a href="uno-multiplatform.html">How to target multiple platforms with your WinUI 3 app</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/how-tos/chatgpt-openai-winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

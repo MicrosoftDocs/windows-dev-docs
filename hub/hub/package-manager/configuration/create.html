@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to author a WinGet Configuration file </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to author a WinGet Configuration file ">
+    
+    <meta name="description" content="Learn how to create a WinGet Configuration.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-author-a-winget-configuration-file">How to author a WinGet Configuration file</h1>
+
+<p>To create a WinGet Configuration file:</p>
+<ol>
+<li>Create a YAML file following the WinGet Configuration <a href="#file-naming-convention">file naming convention</a>.</li>
+<li>Familiarize yourself with the <a href="#file-format">format of a WinGet Configuration file</a> and link the current <a href="https://aka.ms/configuration-dsc-schema/">file schema</a>.</li>
+<li>Determine the list of <a href="#assertions-section">Assertions</a> (required preconditions) and <a href="#resources-section">Resources</a> (the list of required installations and setting configurations to get the machine's development environment to the desired state) to include in the file.</li>
+<li>Identify the PowerShell modules and Desired State Configuration (DSC) Resources needed to accomplish your desired configuration tasks.</li>
+<li>Determine the directives and settings needed for each configuration resource.</li>
+<li>Determine the dependencies for each resource.</li>
+</ol>
+<p>Learn more about using the <a href="/windows/package-manager/winget/configure">WinGet configure command</a>.</p>
+<h2 id="file-format">File format</h2>
+<p>Windows Package Manager uses manifests (YAML files) to locate and install packages for Windows users. WinGet Configuration files use the same YAML style format, adding a JSON schema specification to help define the structure and validation of the file. To further assist in detecting whether the format of your WinGet Configuration file is valid, we recommend using <a href="https://code.visualstudio.com/download">Visual Studio Code</a> with the <a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml">YAML extension</a> by RedHat to support proper syntax, help detect any formatting errors, provide hover support and auto-completion (when linked to the JSON schema file), and ensure valid formatting.</p>
+<h3 id="file-naming-convention">File naming convention</h3>
+<p>The convention for naming a WinGet Configuration file is using the &quot;.winget&quot; file extension (like <code>configuration.winget</code>). For Git-based projects the default configuration should be stored in a &quot;.config&quot; directory at: <code>./config/configuration.winget</code>. In some cases, more than one configuration file may be appropriate given different toolchains or user preferences. Those additional configuration files should also be located in the &quot;.config&quot; directory.</p>
+<h3 id="sections-of-a-winget-configuration-file">Sections of a WinGet Configuration file</h3>
+<p>A WinGet Configuration file is separated into two primary sections:</p>
+<ol>
+<li><strong>Assertions</strong>: The preconditions required to run the configuration.</li>
+<li><strong>Resources</strong>: The list of software and tools to install, the configuration settings for those installs, and the configurations settings for the Windows operating system.</li>
+</ol>
+<h3 id="assertions-section">Assertions section</h3>
+<p>The list of assertions cover the preconditions (or prerequisites) required for the resources listed in this WinGet Configuration file to succeed on the machine running the file. Assertions can be completed in parallel and do not require any sequential order.</p>
+<p>An example assertion:</p>
+<ul>
+<li><strong>OS version</strong>: A minimum version of the operating system* installed on the machine. As features are added over time to the OS, some are backported to support earlier versions and some are not. It is always helpful to check for a minimum OS version to determine whether a specific tool or feature may be supported that is required for the configuration. For example, WinGet (Windows Package Manager) requires a minimum of Windows 10, version 1809 or newer. Any older versions of Windows do not support WinGet. *<em>It is possible for PowerShell DSC Resources to change the state of the system, but it would not be appropriate to call Windows Update and modify the OS version in the project configuration for an open-source project.</em></li>
+</ul>
+<p>If an assertion returns “false” to indicate the system is not in the desired state, any <a href="#resources-section">Resource</a> identifying that assertion as a dependency using the <code>dependsOn</code> field will be skipped and fail to run. In this case, even though no configuration changes were applied to the Windows environment, this configuration would be considered a successful outcome.</p>
+<h3 id="resources-section">Resources section</h3>
+<p>The list of Resources covers all of the software, tools, packages, etc. that need to be installed and the configurations settings for your Windows operating system or installed applications. Each resource will need to be given a name, description of the directive to be carried out and the PowerShell module that will be responsible for carrying out that directive, as well as any associated settings or dependencies.</p>
+<h2 id="example-winget-configuration-file">Example WinGet Configuration file</h2>
+<p>The following is an example WinGet Configuration <code>configuration.winget</code> formatted file:</p>
+<pre><code class="lang-yml"># yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+    - resource: Microsoft.Windows.Settings/WindowsSettings
+      directives:
+        description: Enable Developer Mode
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        DeveloperMode: true
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: vsPackage
+      directives:
+        description: Install Visual Studio 2022 Community
+        securityContext: elevated
+      settings:
+        id: Microsoft.VisualStudio.2022.Community
+        source: winget
+    - resource: Microsoft.VisualStudio.DSC/VSComponents
+      dependsOn:
+        - vsPackage
+      directives:
+        description: Install required VS workloads from vsconfig file
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        productId: Microsoft.VisualStudio.Product.Community
+        channelId: VisualStudio.17.Release
+        vsConfigFile: '${WinGetConfigRoot}\..\.vsconfig'
+        includeRecommended: true
+  configurationVersion: 0.2.0
+</code></pre>
+<p>The components of this file consist of:</p>
+<ol>
+<li><p><strong>Schema</strong>: The first line in your configuration file should contain the following comment: <code># yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/&lt;most recent schema version #&gt;</code> to establish the DSC schema being followed by the file. To find the most recent version of the WinGet Configuration schema, go to <a href="https://aka.ms/configuration-dsc-schema/">https://aka.ms/configuration-dsc-schema/</a>. The most recent schema number at the time of this example is <code>0.2</code>, so the schema was entered as: <code># yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2</code>.</p>
+</li>
+<li><p><strong>Properties</strong>: The root node for a configuration file is <code>properties</code> which must contain a configuration version (<code>configurationVersion: 0.2.0</code> in this example). This version should be updated in accordance with updates to the configuration file. The properties node should contain an <code>assertions</code> node and a <code>resources</code> node.</p>
+</li>
+<li><p><strong>Assertions</strong>: List the preconditions (or prerequisites) required for this configuration in this section.</p>
+</li>
+<li><p><strong>Resources</strong>: Both the <code>assertions</code> and <code>resources</code> list sections consist of individual <code>resource</code> nodes to represent the set up task. The <code>resource</code> should be given the name of the PowerShell module followed by the name of the module's DSC resource that will be invoked to apply your desired state: <code>{ModuleName}/{DscResource}</code>. Each resource must include <code>directives</code> and <code>settings</code>. Optionally, it can also include an <code>id</code> value. When applying a configuration, WinGet will know to install the module from the <a href="https://www.powershellgallery.com/packages">PowerShell Gallery</a> and invoke the specified <a href="/powershell/dsc/concepts/resources">DSC resource</a>.</p>
+</li>
+<li><p><strong>Directives</strong>: The <code>directives</code> section provides information about the module and the resource. This section should include a <code>description</code> value to describe the configuration task being accomplished by the module. The <code>allowPrerelease</code> value enables you to choose whether or not the configuration will be allowed (<code>true</code>) to use &quot;Prerelease&quot; modules from the <a href="https://www.powershellgallery.com/packages">PowerShell Gallery</a>. Some DSC resources may need to run with administrator privileges. The <code>securityContext: elevated</code> field under the directives section of a resource indicates this requirement. When set to <code>elevated</code>, WinGet will prompt for one UAC approval at the start of the configuration. WinGet will then launch two processes: one that runs resources with elevated privileges and another that runs resources with the current user's privileges.</p>
+</li>
+<li><p><strong>Settings</strong>: The <code>settings</code> value of a resource represents the collection of name-value pairs being passed to the PowerShell DSC Resource. Settings could represent anything from whether Developer Mode is enabled, to applying a reg key, or to establishing a particular network setting.</p>
+</li>
+<li><p><strong>Dependencies</strong>: The <code>dependsOn</code> value of a resource determines whether any other assertion or resource must be complete prior to beginning this task. If the dependency failed, this resource will also automatically fail.</p>
+</li>
+<li><p><strong>ID</strong>: A unique identifier for the particular resource instance. The <code>id</code> value can be used if another resource has a dependency on this resource being applied first.</p>
+</li>
+</ol>
+<h2 id="organizing-the-resources-section">Organizing the Resources section</h2>
+<p>There are multiple approaches to consider when determining how to organize the Resources section of your WinGet Configuration file. You can organize your list of files by:</p>
+<ul>
+<li><strong>Execution order</strong>: Organizing your list of resources according to the logical order in which they should be executed. This approach can help the user to understand and follow along with the automation steps being performed once the file is run - what is installed first, second, what setting is updated third, etc.</li>
+<li><strong>Possibility of failure</strong>: Organizing your list of resources according to the likelihood of a potential failure can help users to catch issues early-on in the configuration process and help them understand why remaining steps may fail, enabling them to identify and make necessary changes before much time is invested.</li>
+<li><strong>Grouping similar resource types</strong>: Organizing your list of resources by grouping together similar resource types is a common approach in software engineering methodologies and may be the most familiar to you or to other developers utilizing your configuration file.</li>
+</ul>
+<p>We recommend including a README.md file with any Open Source published WinGet Configuration file that includes the organizational approach of the file structure.</p>
+<h2 id="using-the-variable-wingetconfigroot">Using the variable ${WinGetConfigRoot}</h2>
+<p>Certain DSC resources may take in a parameter that specifies the path of a file. Instead of specifying the full path, you can use the variable <code>${WinGetConfigRoot}</code> to define the working directory where the <a href="../winget/configure.html"><code>winget configure</code> command</a> is being executed and append the relative path to point to that file. This is useful for generalizing a configuration file so that it is machine agnostic. The <code>Microsoft.VisualStudio.DSC/VSComponents</code> resource in the example above showcases this functionality by utilizing the <code>${WinGetConfigRoot}</code> to point to a .vsconfig file in a project's root directory. This also means that the user should ensure that the target file exists at the relative path based on the current working directory before executing the <a href="../winget/configure.html"><code>winget configure</code> command</a>.</p>
+<h2 id="where-to-find-powershell-dsc-resource-modules">Where to find PowerShell DSC Resource modules</h2>
+<p>Check out the list of ready-to-use (&quot;inbox&quot;) <a href="/powershell/dsc/reference/psdscresources/overview#resources">PowerShell Desired State Configuration Resources</a> that are supported by Microsoft, including:</p>
+<ul>
+<li><a href="/powershell/dsc/reference/psdscresources/resources/environment/environment">Environment</a>: Manage an environment variable for a machine or process.</li>
+<li><a href="/powershell/dsc/reference/psdscresources/resources/msipackage/msipackage">MsiPackage</a>: Install or uninstall an MSI package.</li>
+<li><a href="/powershell/dsc/reference/psdscresources/resources/registry/registry">Registry</a>: Manage a registry key or value.</li>
+<li><a href="/powershell/dsc/reference/psdscresources/resources/script/script">Script</a>: Run PowerShell script blocks.</li>
+<li><a href="/powershell/dsc/reference/psdscresources/resources/service/service">Service</a>: Manage a Windows service.</li>
+<li><a href="/powershell/dsc/reference/psdscresources/resources/windowsfeature/windowsfeature">WindowsFeature</a>: Install or uninstall a Windows role or feature.</li>
+<li><a href="/powershell/dsc/reference/psdscresources/resources/windowsprocess/windowsprocess">WindowsProcess</a>: Start or stop a Windows process.</li>
+</ul>
+<p>You can also find PowerShell DSC Resource modules in the <a href="https://www.powershellgallery.com/packages">PowerShell Gallery</a>. This gallery hosts hundreds of PowerShell Modules containing Desired State Configuration (DSC) resources submitted by the user community. You can filter search results by applying the “DSC Resource” filter under “Categories”. This repository is <strong>not</strong> verified by Microsoft and contains resources from a variety of authors and publishers. PowerShell modules should always be reviewed for security and credibility before being used as any arbitrary scripting can be included. See <a href="check.html">How to check the trustworthiness of a WinGet Configuration file</a> for more tips on creating a trustworthy WinGet Configuration file.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/configuration/create.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

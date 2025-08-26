@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Z-depth and shadow for Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Z-depth and shadow for Windows apps ">
+    
+    <meta name="description" content="Z-depth, or relative depth, and shadow are two ways to incorporate depth into your app to help users focus naturally and efficiently.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="z-depth-and-shadow">Z-depth and shadow</h1>
+
+<p><img src="images/elevation-shadow/shadow.gif" alt="A gif showing four gray rectangles that are stacked diagonally, one on top of the other. The gif is animated so that shadows appear and disappear."></p>
+<p>Creating a visual hierarchy of elements in your UI makes the UI easy to scan and conveys what is important to focus on. Elevation, the act of bringing select elements of your UI forward, is often used to achieve such a hierarchy in software. This article discusses how to create elevation in a Windows app by using z-depth and shadow.</p>
+<p>Z-depth is a term used amongst 3D app creators to denote the distance between two surfaces along the z-axis. It illustrates how close an object is to the viewer. Think of it as a similar concept to x/y coordinates, but in the z direction.</p>
+<p>Windows apps use shadows to express depth and add visual hierarchy. To achieve this, the z-axis provides an easy coding path. However, the shadows are emulated; they are not displayed in the true 3D sense. This is so that we can achieve the feeling of depth without sacrificing the performance of your app's UI.</p>
+<h2 id="why-use-z-depth">Why use z-depth?</h2>
+<p>In the physical world, we tend to focus on objects that are closer to us. We can apply this spatial instinct to digital UI as well. For example, if you bring an element closer to the user, then the user will instinctively focus on the element. By moving UI elements closer on the z-axis, you can establish visual hierarchy between objects, helping users complete tasks naturally and efficiently in your app.</p>
+<h2 id="what-is-shadow">What is shadow?</h2>
+<p>Shadow is one way a user perceives elevation. Light above an elevated object creates a shadow on the surface below. The higher the object, the larger and softer the shadow becomes. Elevated objects in your UI don't need to have shadows, but they help create the appearance of elevation.</p>
+<p>In Windows apps, shadows should be used in a purposeful rather than aesthetic manner. Using too many shadows will decrease or eliminate the ability of the shadow to focus the user.</p>
+<p>If you use standard controls, shadows are already incorporated into your UI. However, you can manually include shadows in your UI by using either the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.themeshadow">ThemeShadow</a> or the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow">DropShadow</a> APIs.</p>
+<h2 id="themeshadow">ThemeShadow</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.themeshadow">ThemeShadow</a> type can be applied to any XAML element to draw shadows appropriately based on x, y, z coordinates.</p>
+<ul>
+<li>It applies shadows to elements based on z-depth value, emulating depth.</li>
+<li>It keeps shadows consistent throughout and across applications thanks to built in shadow aesthetics.</li>
+</ul>
+<p>Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a built in shadow with a depth of 32px applied to the main menu and all nested menus.</p>
+<p><img src="images/elevation-shadow/themeshadow-menuflyout.png" alt="A screen shot of ThemeShadow applied to a MenuFlyout with three open, nested menus."></p>
+<h3 id="themeshadow-in-common-controls">ThemeShadow in common controls</h3>
+<p>The following common controls will automatically use ThemeShadow to cast shadows from 32px depth unless otherwise specified:</p>
+<ul>
+<li><a href="../controls/menus.html">Context menu</a>, <a href="../controls/command-bar.html">Command bar</a>, <a href="../controls/command-bar-flyout.html">Command bar flyout</a>, <a href="../controls/menus.html#create-a-menu-bar">MenuBar</a></li>
+<li><a href="../controls/dialogs-and-flyouts/index.html">Dialogs and flyouts</a> (Dialog at 128px)</li>
+<li><a href="../controls/navigationview.html">NavigationView</a></li>
+<li><a href="../controls/combo-box.html">ComboBox</a>, <a href="../controls/buttons.html">DropDownButton, SplitButton, ToggleSplitButton</a></li>
+<li><a href="../controls/dialogs-and-flyouts/teaching-tip.html">TeachingTip</a></li>
+<li><a href="../controls/auto-suggest-box.html">AutoSuggestBox</a></li>
+<li><a href="../controls/date-and-time.html">Calendar/Date/Time pickers</a></li>
+<li><a href="../controls/tooltips.html">Tooltip</a> (16px)</li>
+<li><a href="../controls/number-box.html">Number Box</a></li>
+<li><a href="../controls/tab-view.html">TabView</a></li>
+<li><a href="../controls/media-playback.html#media-transport-controls">Media transport control</a>, <a href="../controls/inking-controls.html">InkToolbar</a></li>
+<li><a href="../controls/breadcrumbbar.html">BreadcrumbBar</a></li>
+<li><a href="../motion/connected-animation.html">Connected animation</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows 11 to use ninegrid shadow instead of projected shadow for better performance.</p>
+</div>
+<h3 id="themeshadow-in-popups">ThemeShadow in Popups</h3>
+<p>It is often the case that your app's UI uses a popup for scenarios where you need user's attention and quick action. These are great examples when shadow should be used to help create hierarchy in your app's UI.</p>
+<p>ThemeShadow automatically casts shadows when applied to any XAML element in a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup">Popup</a>. It will cast shadows on the app background content behind it and any other open Popups below it.</p>
+<p>To use ThemeShadow with Popups, use the <code>Shadow</code> property to apply a ThemeShadow to a XAML element. Then, elevate the element from other elements behind it, for example by using the z component of the <code>Translation</code> property.
+For most Popup UI, the recommended default elevation relative to the app background content is 32 effective pixels.</p>
+<p>This example shows a Rectangle in a Popup casting a shadow onto the app background content and any other Popups behind it:</p>
+<pre><code class="lang-xaml">&lt;Popup&gt;
+    &lt;Rectangle x:Name=&quot;PopupRectangle&quot; Fill=&quot;Lavender&quot; Height=&quot;48&quot; Width=&quot;96&quot;&gt;
+        &lt;Rectangle.Shadow&gt;
+            &lt;ThemeShadow /&gt;
+        &lt;/Rectangle.Shadow&gt;
+    &lt;/Rectangle&gt;
+&lt;/Popup&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Elevate the rectangle by 32px
+PopupRectangle.Translation += new Vector3(0, 0, 32);
+</code></pre>
+<p><img src="images/elevation-shadow/PopupRectangle.png" alt="A single rectangular popup with a shadow."></p>
+<h3 id="disabling-default-themeshadow-on-custom-flyout-controls">Disabling default ThemeShadow on custom Flyout controls</h3>
+<p>Controls based on <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flyout">Flyout</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepickerflyout">DatePickerFlyout</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepickerflyout">TimePickerFlyout</a> automatically use ThemeShadow to cast a shadow.</p>
+<p>If the default shadow doesn't look correct on your control's content then you can disable it by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flyoutpresenter.isdefaultshadowenabled">IsDefaultShadowEnabled</a> property to <code>false</code> on the associated FlyoutPresenter:</p>
+<pre><code class="lang-xaml">&lt;Flyout&gt;
+    &lt;Flyout.FlyoutPresenterStyle&gt;
+        &lt;Style TargetType=&quot;FlyoutPresenter&quot;&gt;
+            &lt;Setter Property=&quot;IsDefaultShadowEnabled&quot; Value=&quot;False&quot; /&gt;
+        &lt;/Style&gt;
+    &lt;/Flyout.FlyoutPresenterStyle&gt;
+&lt;/Flyout&gt;
+</code></pre>
+<h3 id="themeshadow-in-other-elements">ThemeShadow in other elements</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, the <code>Receivers</code> collection is ignored. However there will be no errors and the shadow continues to function.</p>
+</div>
+<p>In general we encourage you to think carefully about your use of shadow and limit its use to cases where it introduces meaningful visual hierarchy. However, we do provide a way to cast a shadow from any UI element in case you have advanced scenarios that necessitate it.</p>
+<p>To cast a shadow from a XAML element that isn't in a Popup, you must explicitly specify the other elements that can receive the shadow in the <code>ThemeShadow.Receivers</code> collection. Receivers cannot be an ancestor of the caster in the visual tree.</p>
+<p>This example shows two Rectangles that cast shadows onto a Grid behind them:</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.Resources&gt;
+        &lt;ThemeShadow x:Name=&quot;SharedShadow&quot; /&gt;
+    &lt;/Grid.Resources&gt;
+
+    &lt;Grid x:Name=&quot;BackgroundGrid&quot; Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; /&gt;
+
+    &lt;Rectangle x:Name=&quot;Rectangle1&quot; Height=&quot;100&quot; Width=&quot;100&quot; Fill=&quot;Turquoise&quot; Shadow=&quot;{StaticResource SharedShadow}&quot; /&gt;
+
+    &lt;Rectangle x:Name=&quot;Rectangle2&quot; Height=&quot;100&quot; Width=&quot;100&quot; Fill=&quot;Turquoise&quot; Shadow=&quot;{StaticResource SharedShadow}&quot; /&gt;
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">/// Add BackgroundGrid as a shadow receiver and elevate the casting buttons above it
+SharedShadow.Receivers.Add(BackgroundGrid);
+
+Rectangle1.Translation += new Vector3(0, 0, 16);
+Rectangle2.Translation += new Vector3(120, 0, 32);
+</code></pre>
+<p><img src="images/elevation-shadow/SharedShadow.png" alt="Two turquoise rectangles next to each other, both with shadows."></p>
+<h2 id="drop-shadow">Drop shadow</h2>
+<p>DropShadow does not provide built in shadow values and you need to specify them yourself. For example implementations, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow">DropShadow</a> class.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Starting with Windows 11, if the app targets the Windows SDK version 22000 or later, ThemeShadow will behave like a drop shadow. If you are using DropShadow, you might consider using ThemeShadow instead.</p>
+</div>
+<h2 id="which-shadow-should-i-use">Which shadow should I use?</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>ThemeShadow</th>
+<th>DropShadow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Min SDK</strong></td>
+<td>SDK 18362</td>
+<td>SDK 14393</td>
+</tr>
+<tr>
+<td><strong>Adaptability</strong></td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Customization</strong></td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Light source</strong></td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Supported in 3D environments</strong></td>
+<td>Yes (<em>While it works in a 3D environment, the shadows are emulated.</em>)</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Keep in mind that the purpose of shadow is to provide meaningful hierarchy, not as a simple visual treatment.</li>
+<li>Generally, we recommend using ThemeShadow, which provides consistent shadow values.</li>
+<li>For concerns about performance, limit the number of shadows, use other visual treatment, or use DropShadow.</li>
+<li>If you have more advanced scenarios to achieve visual hierarchy, consider using other visual treatment (for example, color). If shadow is needed, then use DropShadow.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/layout/depth-shadow.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

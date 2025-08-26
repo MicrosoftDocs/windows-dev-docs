@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Motion in practice - animation in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Motion in practice - animation in Windows apps ">
+    
+    <meta name="description" content="Learn how Fluent motion fundamentals like timing, easing, directionality, and gravity come together in your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="bringing-it-together">Bringing it together</h1>
+
+<p>Timing, easing, directionality, and gravity work together to form the foundation of Fluent motion. Each has to be considered in the context of the others, and applied appropriately in the context of your app.</p>
+<p>Here are 3 ways to apply Fluent motion fundamentals in your app.</p>
+<ul>
+<li><strong>Implicit animation</strong><br>
+Automatic tween and timing between values in a parameter change to achieve very simple Fluent motion using the standardized values.</li>
+<li><strong>Built-in animation</strong><br>
+System components, such as common controls and shared motion, are &quot;Fluent by default&quot;. Fundamentals have been applied in a manner consistent with their implied usage.</li>
+<li><strong>Custom animation following guidance recommendations</strong><br>
+There may be times when the system does not yet provide an exact motion solution for your scenario. In those cases, use the baseline fundamental recommendations as a starting point for your experiences.</li>
+</ul>
+<p><strong><em>Transition example</em></strong></p>
+<p><img src="images/page-refresh.gif" alt="functional animation"></p>
+<section class="row">
+<div class="column">
+<p><b>Direction Forward Out:</b><br>
+Fade out: 150m; Easing: Default Accelerate
+<b>Direction Forward In:</b><br>
+Slide up 150px: 300ms; Easing: Default Decelerate</p>
+</div>
+<div class="column">
+<p><b>Direction Backward Out:</b><br>
+Slide down 150px: 150ms; Easing: Default Accelerate
+<b>Direction Backward In:</b><br>
+Fade in: 300ms; Easing: Default Decelerate</p>
+</div>
+</section>
+<p><strong><em>Object example</em></strong></p>
+<p><img src="images/control.gif" alt="300ms motion"></p>
+<section class="row">
+<div class="column">
+<p><b>Direction Expand:</b><br>
+Grow: 300ms; Easing: Standard</p>
+</div>
+<div class="column">
+<p><b>Direction Contract:</b><br>
+Grow: 150ms; Easing: Default Accelerate</p>
+</div>
+</section>
+<h3 id="examples">Examples</h3>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/ImplicitTransition">Open the WinUI 3 Gallery app and see Implicit Transitions in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="implicit-animations">Implicit Animations</h2>
+<p>Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.</p>
+<p>You can implicitly animate changes to the following properties:</p>
+<ul>
+<li><p><a href="/uwp/api/windows.ui.xaml.uielement">UIElement</a></p>
+<ul>
+<li><strong>Opacity</strong></li>
+<li><strong>Rotation</strong></li>
+<li><strong>Scale</strong></li>
+<li><strong>Translation</strong></li>
+</ul>
+</li>
+<li><p><a href="/uwp/api/windows.ui.xaml.controls.border">Border</a>, <a href="/uwp/api/windows.ui.xaml.controls.contentpresenter">ContentPresenter</a>, or <a href="/uwp/api/windows.ui.xaml.controls.panel">Panel</a></p>
+<ul>
+<li><strong>Background</strong></li>
+</ul>
+</li>
+</ul>
+<p>Each property that can have changes implicitly animated has a corresponding <em>transition</em> property. To animate the property, you assign a transition type to the corresponding <em>transition</em> property. This table shows the <em>transition</em> properties and the transition type to use for each one.</p>
+<table>
+<thead>
+<tr>
+<th>Animated property</th>
+<th>Transition property</th>
+<th>Implicit transition type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.opacity">UIElement.Opacity</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.opacitytransition">OpacityTransition</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.scalartransition">ScalarTransition</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.rotation">UIElement.Rotation</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.rotationtransition">RotationTransition</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.scalartransition">ScalarTransition</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.scale">UIElement.Scale</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.scaletransition">ScaleTransition</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.vector3transition">Vector3Transition</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.translation">UIElement.Translation</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.translationtransition">TranslationTransition</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.vector3transition">Vector3Transition</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.border.background">Border.Background</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.border.backgroundtransition">BackgroundTransition</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.brushtransition">BrushTransition</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.contentpresenter.background">ContentPresenter.Background</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition">BackgroundTransition</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.brushtransition">BrushTransition</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.panel.background">Panel.Background</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition">BackgroundTransition</a></td>
+<td><a href="/uwp/api/windows.ui.xaml.brushtransition">BrushTransition</a></td>
+</tr>
+</tbody>
+</table>
+<p>This example shows how to use the Opacity property and transition to make a button fade in when the control is enabled and fade out when it's disabled.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SubmitButton&quot;
+        Content=&quot;Submit&quot;
+        Opacity=&quot;{x:Bind OpaqueIfEnabled(SubmitButton.IsEnabled), Mode=OneWay}&quot;&gt;
+    &lt;Button.OpacityTransition&gt;
+        &lt;ScalarTransition /&gt;
+    &lt;/Button.OpacityTransition&gt;
+&lt;/Button&gt;
+</code></pre>
+<pre><code class="lang-csharp">public double OpaqueIfEnabled(bool IsEnabled)
+{
+    return IsEnabled ? 1.0 : 0.2;
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.media.animation">Windows.UI.Xaml.Media.Animation Namespace</a>, <a href="/uwp/api/windows.ui.xaml.controls.ratingcontrol">Windows.UI.Xaml.Controls namespace</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls namespace</a></li>
+<li><a href="winui2gallery://item/ImplicitTransition">Open the WinUI 2 Gallery app and see Implicit Transitions in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>Implicit animations require Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK 17763</a>) or later.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="index.md">Motion overview</a></li>
+<li><a href="timing-and-easing.html">Timing and easing</a></li>
+<li><a href="directionality-and-gravity.html">Directionality and gravity</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/motion/motion-in-practice.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

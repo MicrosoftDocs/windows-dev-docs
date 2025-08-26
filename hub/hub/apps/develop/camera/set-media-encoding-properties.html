@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Set format, resolution, and frame rate for MediaCapture </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Set format, resolution, and frame rate for MediaCapture ">
+    
+    <meta name="description" content="Learn how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video in a WinUI 3 app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="set-format-resolution-and-frame-rate-for-mediacapture-in-a-winui-3-app">Set format, resolution, and frame rate for MediaCapture in a WinUI 3 app</h1>
+
+<p>This article shows you how to use the <a href="/uwp/api/Windows.Media.MediaProperties.IMediaEncodingProperties"><strong>IMediaEncodingProperties</strong></a> interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media.</p>
+<p>Camera profiles offer a simpler, higher level mechanism for discovering and setting the stream properties of the camera, but they are not supported for all devices. For more information, see <a href="camera-profiles.html">Camera profiles</a>.</p>
+<h2 id="determine-if-the-preview-and-capture-streams-are-independent">Determine if the preview and capture streams are independent</h2>
+<p>On some devices, the same hardware pin is used for both preview and capture streams. On these devices, setting the encoding properties such as the format, resolution and frame rate on one will affect both. On devices that use different hardware pins for capture and preview, the properties can be set for each stream independently. Use the following code to determine if the preview and capture streams are independent. This example sets a boolean global variable that can be used to switch the app's behavior if the streams are shared or independent.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="a-media-encoding-properties-helper-class">A media encoding properties helper class</h2>
+<p>Creating a simple helper class to wrap the functionality of the <a href="/uwp/api/Windows.Media.MediaProperties.IMediaEncodingProperties"><strong>IMediaEncodingProperties</strong></a> interface makes it easier to select a set of encoding properties that meet particular criteria. This helper class is particularly useful due to the following behavior of the encoding properties feature:</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="/uwp/api/windows.media.devices.videodevicecontroller.getavailablemediastreamproperties"><strong>VideoDeviceController.GetAvailableMediaStreamProperties</strong></a> method takes a member of the <a href="/uwp/api/Windows.Media.Capture.MediaStreamType"><strong>MediaStreamType</strong></a> enumeration, such as <strong>VideoRecord</strong> or <strong>Photo</strong>, and returns a list of either <a href="/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties"><strong>ImageEncodingProperties</strong></a> or <a href="/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties"><strong>VideoEncodingProperties</strong></a> objects that convey the stream encoding settings, such as the resolution of the captured photo or video. The results of calling <strong>GetAvailableMediaStreamProperties</strong> may include <strong>ImageEncodingProperties</strong> or <strong>VideoEncodingProperties</strong> regardless of what <strong>MediaStreamType</strong> value is specified. For this reason, you should always check the type of each returned value and cast it to the appropriate type before attempting to access any of the property values.</p>
+</div>
+<p>The helper class defined below handles the type checking and casting for <a href="/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties"><strong>ImageEncodingProperties</strong></a> or <a href="/uwp/api/Windows.Media.MediaProperties.VideoEncodingProperties"><strong>VideoEncodingProperties</strong></a> so that your app code doesn't need to distinguish between the two types. In addition to this, the helper class exposes properties for the aspect ratio of the properties, the frame rate (for video encoding properties only), and a friendly name that makes it easier to display the encoding properties in your UI.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="get-a-list-of-available-stream-properties">Get a list of available stream properties</h2>
+<p>Get a list of the available stream properties for a capture device by getting the <a href="/uwp/api/Windows.Media.Devices.VideoDeviceController"><strong>VideoDeviceController</strong></a> for your app's <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> object and then calling <a href="/uwp/api/windows.media.devices.videodevicecontroller.getavailablemediastreamproperties"><strong>GetAvailableMediaStreamProperties</strong></a> and passing in one of the <a href="/uwp/api/Windows.Media.Capture.MediaStreamType"><strong>MediaStreamType</strong></a> values, <strong>VideoPreview</strong>, <strong>VideoRecord</strong>, or <strong>Photo</strong>. In this example, a list of <strong>StreamPropertiesHelper</strong> objects, defined previously in this article, is created for each of the <a href="/uwp/api/Windows.Media.MediaProperties.IMediaEncodingProperties"><strong>IMediaEncodingProperties</strong></a> values returned from <strong>GetAvailableMediaStreamProperties</strong>. This example orders the returned properties based first on resolution and then on frame rate.</p>
+<p>If your app has specific resolution or frame rate requirements, you can select a set of media encoding properties programmatically. A typical camera app will instead expose the list of available properties in the UI and allow the user to select their desired settings. A <strong>ComboBoxItem</strong> is created for each item in the list of <strong>StreamPropertiesHelper</strong> objects in the list. The content is set to the friendly name returned by the helper class and the tag is set to the helper class itself so it can be used later to retrieve the associated encoding properties. Each <strong>ComboBoxItem</strong> is then added to a <strong>ComboBox</strong> defined in the UI.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="set-the-desired-stream-properties">Set the desired stream properties</h2>
+<p>Tell the video device controller to use your desired encoding properties by calling <a href="/uwp/api/windows.media.devices.videodevicecontroller.setmediastreampropertiesasync"><strong>SetMediaStreamPropertiesAsync</strong></a>, passing in the <strong>MediaStreamType</strong> value indicating whether the photo, video, or preview properties should be set. This example uses the <strong>ComboBox</strong> populated in the example from the previous section, where the media stream properties are retrieved from the tag property from the selected item.</p>
+<div class="lang-csharp">
+</div>
+<p>Note that your app must have exclusive control of the capture device in order to change the media stream properties.</p>
+<h2 id="match-the-aspect-ratio-of-the-preview-and-capture-streams">Match the aspect ratio of the preview and capture streams</h2>
+<p>A typical camera app will provide UI for the user to select the video or photo capture resolution but will programmatically set the preview resolution. There are a few different strategies for selecting the best preview stream resolution for your app:</p>
+<ul>
+<li><p>Select the highest available preview resolution, letting the UI framework perform any necessary scaling of the preview.</p>
+</li>
+<li><p>Select the preview resolution closest to the capture resolution so that the preview displays the closest representation to the final captured media.</p>
+</li>
+<li><p>Select the preview resolution closest to the size of the <a href="/uwp/api/Windows.UI.Xaml.Controls.CaptureElement"><strong>CaptureElement</strong></a> so that no more pixels than necessary are going through the preview stream pipeline.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is possible, on some devices, to set a different aspect ratio for the camera's preview stream and capture stream. Frame cropping caused by this mismatch can result in content being present in the captured media that was not visible in the preview which can result in a negative user experience. It is strongly recommended that you use the same aspect ratio, within a small tolerance window, for the preview and capture streams. It is fine to have entirely different resolutions enabled for capture and preview as long as the aspect ratio match closely.</p>
+</div>
+<p>To ensure that the photo or video capture streams match the aspect ratio of the preview stream, this example calls <a href="/uwp/api/windows.media.devices.videodevicecontroller.getmediastreamproperties"><strong>VideoDeviceController.GetMediaStreamProperties</strong></a> and passes in the <strong>VideoPreview</strong> enum value to request the current stream properties for the preview stream. Next a small aspect ratio tolerance window is defined so that we can include aspect ratios that are not exactly the same as the preview stream, as long as they are close. Next, the <strong>StreamPropertiesHelper</strong> objects where the aspect ratio is within the defined tolerance range of the preview stream are selected.</p>
+<div class="lang-csharp">
+</div>
+<p>SnippetMatchPreviewAspectRatio</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/set-media-encoding-properties.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

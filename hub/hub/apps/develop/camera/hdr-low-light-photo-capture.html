@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>High dynamic range (HDR) and low-light photo capture </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="High dynamic range (HDR) and low-light photo capture ">
+    
+    <meta name="description" content="Learn how to use the AdvancedPhotoCapture class to capture high dynamic range (HDR) and low-light photos in a WinUI 3 app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="high-dynamic-range-hdr-and-low-light-photo-capture">High dynamic range (HDR) and low-light photo capture</h1>
+
+<p>This article shows you how to use the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> class to capture high dynamic range (HDR) photos. This API also allows you to obtain a reference frame from the HDR capture before the processing of the final image is complete.</p>
+<p>Other articles related to HDR capture include:</p>
+<ul>
+<li><p>You can use the <a href="/uwp/api/Windows.Media.Core.SceneAnalysisEffect"><strong>SceneAnalysisEffect</strong></a> to allow the system to evaluate the content of the media capture preview stream to determine if HDR processing would improve the capture result. For more information, see <a href="scene-analysis-for-media-capture.html">Scene analysis for MediaCapture</a>.</p>
+</li>
+<li><p>Use the <a href="/uwp/api/Windows.Media.Devices.HdrVideoControl"><strong>HdrVideoControl</strong></a> to capture video using the Windows built-in HDR processing algorithm. For more information, see <a href="capture-device-controls-for-video-capture.html">Capture device controls for video capture</a>.</p>
+</li>
+<li><p>You can use the <a href="/uwp/api/Windows.Media.Capture.Core.VariablePhotoSequenceCapture"><strong>VariablePhotoSequenceCapture</strong></a> to capture a sequence of photos, each with different capture settings, and implement your own HDR or other processing algorithm. For more information, see <a href="variable-photo-sequence.html">Variable photo sequence</a>.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Starting with Windows 10, version 1709, recording video and using <strong>AdvancedPhotoCapture</strong> concurrently is supported.  This is not supported in previous versions. This change means that you can have a prepared <strong><a href="/uwp/api/windows.media.capture.lowlagmediarecording">LowLagMediaRecording</a></strong> and <strong><a href="/uwp/api/windows.media.capture.advancedphotocapture">AdvancedPhotoCapture</a></strong> at the same time. You can start or stop video recording between calls to <strong><a href="/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync">MediaCapture.PrepareAdvancedPhotoCaptureAsync</a></strong> and <strong><a href="/uwp/api/windows.media.capture.advancedphotocapture.FinishAsync">AdvancedPhotoCapture.FinishAsync</a></strong>. You can also call <strong><a href="/uwp/api/windows.media.capture.advancedphotocapture.CaptureAsync">AdvancedPhotoCapture.CaptureAsync</a></strong> while video is recording. However, some <strong>AdvancedPhotoCapture</strong> scenarios, like capturing an HDR photo while recording video would cause some video frames to be altered by the HDR capture, resulting in a negative user experience. For this reason, the list of modes returned by the <strong><a href="/uwp/api/windows.media.devices.advancedphotocontrol.SupportedModes">AdvancedPhotoControl.SupportedModes</a></strong> will be different while video is recording. You should check this value immediately after starting or stopping video recording to ensure that the desired mode is supported in the current video recording state.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Starting with Windows 10, version 1709, when the <strong>AdvancedPhotoCapture</strong> is set to HDR mode, the setting of the <a href="/uwp/api/windows.media.devices.flashcontrol.enabled"><strong>FlashControl.Enabled</strong></a> property is ignored and the flash is never fired. For other capture modes, if the <strong>FlashControl.Enabled</strong>, it will override the <strong>AdvancedPhotoCapture</strong> settings and cause a normal photo to be captured with flash. If <a href="/uwp/api/windows.media.devices.flashcontrol.auto"><strong>Auto</strong></a> is set to true, the <strong>AdvancedPhotoCapture</strong> may or may not use flash, depending on the camera driver's default behavior for the conditions in the current scene. On previous releases, the <strong>AdvancedPhotoCapture</strong> flash setting always overrides the <strong>FlashControl.Enabled</strong> setting.</p>
+</div>
+<p>There is a full sample demonstrating the use of the <strong>AdvancedPhotoCapture</strong> class that you can use to see the API used in context or as a starting point for your own app. For more information see, <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture">Camera Advanced Capture sample</a>.</p>
+<h2 id="hdr-photo-capture">HDR photo capture</h2>
+<h3 id="determine-if-hdr-photo-capture-is-supported-on-the-current-device">Determine if HDR photo capture is supported on the current device</h3>
+<p>The HDR capture technique described in this article is performed using the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> object. Not all devices support HDR capture with <strong>AdvancedPhotoCapture</strong>. Determine if the device on which your app is currently running supports the technique by getting the <strong>MediaCapture</strong> object's <a href="/uwp/api/Windows.Media.Devices.VideoDeviceController"><strong>VideoDeviceController</strong></a> and then getting the <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoControl"><strong>AdvancedPhotoControl</strong></a> property. Check the video device controller's <a href="/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes"><strong>SupportedModes</strong></a> collection to see if it includes <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoMode"><strong>AdvancedPhotoMode.Hdr</strong></a>. If it does, HDR capture using <strong>AdvancedPhotoCapture</strong> is supported.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="configure-and-prepare-the-advancedphotocapture-object">Configure and prepare the AdvancedPhotoCapture object</h3>
+<p>Because you will need to access the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> instance from multiple places within your code, you should declare a member variable to hold the object.</p>
+<div class="lang-csharp">
+</div>
+<p>In your app, after you have initialized the <strong>MediaCapture</strong> object, create an <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings"><strong>AdvancedPhotoCaptureSettings</strong></a> object and set the mode to <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoMode"><strong>AdvancedPhotoMode.Hdr</strong></a>. Call the <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoControl"><strong>AdvancedPhotoControl</strong></a> object's <a href="/uwp/api/windows.media.devices.advancedphotocontrol.configure"><strong>Configure</strong></a> method, passing in the <strong>AdvancedPhotoCaptureSettings</strong> object you created.</p>
+<p>Call the <strong>MediaCapture</strong> object's <a href="/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync"><strong>PrepareAdvancedPhotoCaptureAsync</strong></a>, passing in an <a href="/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties"><strong>ImageEncodingProperties</strong></a> object specifying the type of encoding the capture should use. The <strong>ImageEncodingProperties</strong> class provides static methods for creating the image encodings that are supported by <strong>MediaCapture</strong>.</p>
+<p><strong>PrepareAdvancedPhotoCaptureAsync</strong> returns the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> object you will use to initiate photo capture. You can use this object to register handlers for the <a href="/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured"><strong>OptionalReferencePhotoCaptured</strong></a> and <a href="/uwp/api/windows.media.capture.advancedphotocapture.allphotoscaptured"><strong>AllPhotosCaptured</strong></a> which are discussed later in this article.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="capture-an-hdr-photo">Capture an HDR photo</h3>
+<p>Capture an HDR photo by calling the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> object's <a href="/uwp/api/windows.media.capture.advancedphotocapture.captureasync"><strong>CaptureAsync</strong></a> method. This method returns an <a href="/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto"><strong>AdvancedCapturedPhoto</strong></a> object that provides the captured photo in its <a href="/uwp/api/windows.media.capture.advancedcapturedphoto.frame"><strong>Frame</strong></a> property. Next, the photo is saved to disk.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="get-optional-reference-frame">Get optional reference frame</h3>
+<p>The HDR process captures multiple frames and then composites them into a single image after all of the frames have been captured. You can get access to a frame after it is captured but before the entire HDR process is complete by handling the <a href="/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured"><strong>OptionalReferencePhotoCaptured</strong></a> event. You don't need to do this if you are only interested in the final HDR photo result.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><a href="/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured"><strong>OptionalReferencePhotoCaptured</strong></a> is not raised on devices that support hardware HDR and therefore do not generate reference frames. Your app should handle the case where this event is not raised.</p>
+</div>
+<p>Because the reference frame arrives out of context of the call to <strong>CaptureAsync</strong>, a mechanism is provided to pass context information to the <strong>OptionalReferencePhotoCaptured</strong> handler. First you should call an object that will contain your context information. The name and contents of this object is up to you. This example defines an object that has members to track the file name and camera orientation of the capture.</p>
+<div class="lang-csharp">
+</div>
+<p>Create a new instance of your context object, populate its members, and then pass it into the overload of <a href="/uwp/api/windows.media.capture.advancedphotocapture.captureasync"><strong>CaptureAsync</strong></a> that accepts an object as a parameter.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <a href="/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured"><strong>OptionalReferencePhotoCaptured</strong></a> event handler, cast the <a href="/uwp/api/windows.media.capture.optionalreferencephotocapturedeventargs.context"><strong>Context</strong></a> property of the <a href="/uwp/api/Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs"><strong>OptionalReferencePhotoCapturedEventArgs</strong></a> object to your context object class. This example modifies the file name to distinguish the reference frame image from the final HDR image and then saves the image to disk.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="receive-a-notification-when-all-frames-have-been-captured">Receive a notification when all frames have been captured</h3>
+<p>The HDR photo capture has two steps. First, multiple frames are captured, and then the frames are processed into the final HDR image. You can't initiate another capture while the source HDR frames are still being captured, but you can initiate a capture after all of the frames have been captured but before the HDR post-processing is complete. The <a href="/uwp/api/windows.media.capture.advancedphotocapture.allphotoscaptured"><strong>AllPhotosCaptured</strong></a> event is raised when the HDR captures are complete, letting you know that you can initiate another capture. A typical scenario is to disable your UI's capture button when HDR capture begins and then reenable it when <strong>AllPhotosCaptured</strong> is raised.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="clean-up-the-advancedphotocapture-object">Clean up the AdvancedPhotoCapture object</h3>
+<p>When your app is done capturing, before disposing of the <strong>MediaCapture</strong> object, you should shut down the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> object by calling <a href="/uwp/api/windows.media.capture.advancedphotocapture.finishasync"><strong>FinishAsync</strong></a> and setting your member variable to null.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="low-light-photo-capture">Low-light photo capture</h2>
+<p>Starting with Windows 10, version 1607, <strong>AdvancedPhotoCapture</strong> can be used to capture photos using a built-in algorithm that enhances the quality of photos captured in low-light settings. When you use the low-light feature of the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> class, the system will evaluate the current scene and, if needed, apply an algorithm to compensate for low-light conditions. If the system determines that the algorithm is not needed, a regular capture is performed instead.</p>
+<p>Before using low-light photo capture, determine if the device on which your app is currently running supports the technique by getting the <strong>MediaCapture</strong> object's <a href="/uwp/api/Windows.Media.Devices.VideoDeviceController"><strong>VideoDeviceController</strong></a> and then getting the <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoControl"><strong>AdvancedPhotoControl</strong></a> property. Check the video device controller's <a href="/uwp/api/windows.media.devices.advancedphotocontrol.supportedmodes"><strong>SupportedModes</strong></a> collection to see if it includes <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoMode"><strong>AdvancedPhotoMode.LowLight</strong></a>. If it does, low-light capture using <strong>AdvancedPhotoCapture</strong> is supported.</p>
+<div class="lang-csharp">
+</div>
+<p>In your app, after you have initialized the <strong>MediaCapture</strong> object, create an <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoCaptureSettings"><strong>AdvancedPhotoCaptureSettings</strong></a> object and set the mode to <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoMode"><strong>AdvancedPhotoMode.LowLight</strong></a>. Call the <a href="/uwp/api/Windows.Media.Devices.AdvancedPhotoControl"><strong>AdvancedPhotoControl</strong></a> object's <a href="/uwp/api/windows.media.devices.advancedphotocontrol.configure"><strong>Configure</strong></a> method, passing in the <strong>AdvancedPhotoCaptureSettings</strong> object you created.</p>
+<p>Call the <strong>MediaCapture</strong> object's <a href="/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync"><strong>PrepareAdvancedPhotoCaptureAsync</strong></a>, passing in an <a href="/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties"><strong>ImageEncodingProperties</strong></a> object specifying the type of encoding the capture should use.</p>
+<div class="lang-csharp">
+</div>
+<p>To capture a photo, call <a href="/uwp/api/windows.media.capture.advancedphotocapture.captureasync"><strong>CaptureAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>You can capture multiple low-light photos without reconfiguring the <strong>AdvancedPhotoCapture</strong> object, but when you are done capturing, you should call <a href="/uwp/api/windows.media.capture.advancedphotocapture.finishasync"><strong>FinishAsync</strong></a> to clean up the object and associated resources.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="working-with-advancedcapturedphoto-objects">Working with AdvancedCapturedPhoto objects</h2>
+<p><a href="/uwp/api/windows.media.capture.advancedphotocapture.captureasync"><strong>AdvancedPhotoCapture.CaptureAsync</strong></a> returns an <a href="/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto"><strong>AdvancedCapturedPhoto</strong></a> object representing the captured photo. This object exposes the <a href="/uwp/api/windows.media.capture.advancedcapturedphoto.frame"><strong>Frame</strong></a> property which returns a <a href="/uwp/api/Windows.Media.Capture.CapturedFrame"><strong>CapturedFrame</strong></a> object representing the image. The <a href="/uwp/api/windows.media.capture.advancedphotocapture.optionalreferencephotocaptured"><strong>OptionalReferencePhotoCaptured</strong></a> event also provides a <strong>CapturedFrame</strong> object in its event args. After you get an object of this type, there are a number of things you can do with it, including creating a <a href="/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap"><strong>SoftwareBitmap</strong></a> or saving the image to a file.</p>
+<h2 id="get-a-softwarebitmap-from-a-capturedframe">Get a SoftwareBitmap from a CapturedFrame</h2>
+<p>Get a <strong>SoftwareBitmap</strong> from a <strong>CapturedFrame</strong> object by simply accessing the <a href="/uwp/api/windows.media.capture.capturedframe.softwarebitmap"><strong>SoftwareBitmap</strong></a> property of the object. However, most encoding formats do not support <strong>SoftwareBitmap</strong> with <strong>AdvancedPhotoCapture</strong>, so you should check and make sure the property is not null before using it.</p>
+<div class="lang-csharp">
+</div>
+<p>In the current release, the only encoding format that supports <strong>SoftwareBitmap</strong> for <strong>AdvancedPhotoCapture</strong> is uncompressed NV12. So, if you want to use this feature, you must specify that encoding when you call <a href="/uwp/api/windows.media.capture.mediacapture.prepareadvancedphotocaptureasync"><strong>PrepareAdvancedPhotoCaptureAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>Of course, you can always save the image to a file and then load the file into a <strong>SoftwareBitmap</strong> in a separate step. For more information about working with <strong>SoftwareBitmap</strong>, see <a href="/windows/uwp/audio-video-camera/imaging"><strong>Create, edit, and save bitmap images</strong></a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/hdr-low-light-photo-capture.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

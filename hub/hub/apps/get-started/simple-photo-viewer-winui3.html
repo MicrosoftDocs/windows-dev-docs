@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tutorial--Create a simple photo viewer with WinUI 3 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tutorial--Create a simple photo viewer with WinUI 3 ">
+    
+    <meta name="description" content="In this topic we walk through the process of building a simple WinUI 3 app to display photos. We&#39;ll use controls, layout panels, and data-binding. And we&#39;ll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-create-a-simple-photo-viewer-with-winui-3">Tutorial: Create a simple photo viewer with WinUI 3</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>For info about the benefits of WinUI 3, as well as other app type options, see <a href="index.html">Overview of framework options</a>.</p>
+</div>
+<p>In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is <em>declarative</em>) and your choice of either C# or C++ code (which are <em>imperative</em>, or <em>procedural</em>). Use the language picker above the topic title to choose C# or C++/WinRT.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The source code in this topic is provided in both C# and C++/WinRT. If you're a C++ developer, then for more details and concepts explaining how the code that we show here works, see the <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a> documentation. Relevant topics there include <a href="/windows/uwp/cpp-and-winrt-apis/binding-property">XAML controls; bind to a C++/WinRT property</a>, <a href="/windows/uwp/cpp-and-winrt-apis/binding-collection">XAML items controls; bind to a C++/WinRT collection</a>, and <a href="/windows/uwp/cpp-and-winrt-apis/photo-editor-sample">Photo Editor C++/WinRT sample application</a>.</p>
+</div>
+<h2 id="step-1-install-tools-for-the-windows-app-sdk">Step 1: Install tools for the Windows App SDK</h2>
+<p>To set up your development computer, see <a href="start-here.html">Get started with WinUI</a>. In that article, you'll also find instructions to create and launch a WinUI 3 project.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You'll find release notes topics along with the <a href="../windows-app-sdk/release-channels.html">Windows App SDK release channels</a> topic. There are release notes for each channel. Be sure to check any <em>limitations and known issues</em> in those release notes, since those might affect the results of following along with this tutorial and/or running the app we'll build.</p>
+</div>
+<h2 id="step-2-create-a-new-project">Step 2: Create a new project</h2>
+<p>In Visual Studio, create your choice of a new C# or C++ project from the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template. Name the project <em>SimplePhotos</em>, and (so that your folder structure will match the one described in this tutorial) uncheck <strong>Place solution and project in the same directory</strong>. You can target the most recent release (not preview) of the client operating system.</p>
+<h2 id="step-3-copy-asset-files">Step 3: Copy asset files</h2>
+<p>The app that we'll be building carries image files around with it in the form of asset files; and those are the photos that it displays. In this section you'll add those assets to your project. But first you'll need to obtain a copy of the files.</p>
+<ol>
+<li><p>So clone (or download as a <code>.zip</code>) the Windows App SDK samples repo (see <a href="https://github.com/microsoft/WindowsAppSDK-Samples">WindowsAppSDK-Samples</a>). Having done that, you'll find the asset files that we'll be using in the folder <code>\WindowsAppSDK-Samples\Samples\PhotoEditor\cs-winui\Assets\Samples</code> (use this folder for both a C# and a C++/WinRT project). If you want to see those files in the repo online, then you can visit <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/PhotoEditor/cs-winui/Assets/Samples">WindowsAppSDK-Samples/Samples/PhotoEditor/cs-winui/Assets/Samples/</a>.</p>
+</li>
+<li><p>In <strong>File Explorer</strong>, select that <strong>Samples</strong> folder, and copy it to the clipboard.</p>
+</li>
+</ol>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cs" role="tab" aria-controls="tabpanel_1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="-1">C++/WinRT</a>
+</li>
+</ul>
+<section id="tabpanel_1_cs" role="tabpanel" data-tab="cs">
+
+<ol start="3">
+<li><p>Go to <strong>Solution Explorer</strong> in Visual Studio. Right-click the <strong>Assets</strong> folder (it's a child of the project node), and click <strong>Open Folder in File Explorer</strong>. That opens the <strong>Assets</strong> folder in <strong>File Explorer</strong>.</p>
+</li>
+<li><p>Paste (into the <strong>Assets</strong> folder) the <strong>Samples</strong> folder that you just copied.</p>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<ol start="3">
+<li><p>Go to <strong>Solution Explorer</strong> in Visual Studio. <strong>Add</strong> a new filter as a child of the <strong>Assets</strong> filter; name the new filter &quot;Samples&quot;. If you see only an option to <strong>Add</strong> a new folder, then (with the project node selected) make sure that <strong>Show All Files</strong> is toggled <em>off</em>.</p>
+</li>
+<li><p>Right-click the project node, and click <strong>Open Folder in File Explorer</strong>. That opens the project folder in <strong>File Explorer</strong>.</p>
+</li>
+<li><p>Navigate to the <strong>Assets</strong> folder, and paste (as a child of the <strong>Assets</strong> folder) the <strong>Samples</strong> folder that you just copied.</p>
+</li>
+<li><p>Back in <strong>Solution Explorer</strong> in Visual Studio, right-click the <code>Samples</code> filter &gt; <strong>Add</strong> &gt; <strong>Existing item...</strong>.</p>
+</li>
+<li><p>In the file picker, navigate to <code>\SimplePhotos\SimplePhotos\Assets\Samples</code> (the folder that you just pasted), multi-select all of the asset files, and click <strong>Add</strong>.</p>
+</li>
+</ol>
+</section>
+</div>
+<h2 id="step-4-add-a-gridview-control">Step 4: Add a GridView control</h2>
+<p>Our app needs to display rows and columns of photos. In other words, a grid of images. For a UI like that, the main controls to use are <a href="../design/controls/listview-and-gridview.html">List view and grid view</a>.</p>
+<ol>
+<li><p>Open <code>MainWindow.xaml</code>. Currently, there's a <strong>Window</strong> element, and within that a <strong>StackPanel</strong> layout panel. Inside the <strong>StackPanel</strong> is a <strong>Button</strong> control, which is hooked up to an event handler method.</p>
+<p>The main window of any app represents the view that you see first when you run the app. In the app we'll be building, the main window's job is to load the photos from the <strong>Samples</strong> folder, and to display a tiled view of those images together with various info about them.</p>
+</li>
+<li><p>Replace the <strong>StackPanel</strong> and <strong>Button</strong> markup with the <strong>Grid</strong> layout panel and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview"><strong>GridView</strong></a> control shown in the listing below.</p>
+<pre><code class="lang-xaml">&lt;Window ...&gt;
+    &lt;Grid&gt;
+        &lt;GridView x:Name=&quot;ImageGridView&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p><code>x:Name</code> identifies a XAML element so that you can refer to it elsewhere in the XAML and in the code-behind.</p>
+</div>
+</li>
+<li><p><strong>C#</strong>. Open <code>MainWindow.xaml.cs</code>, and delete the <strong>myButton_Click</strong> method.</p>
+</li>
+<li><p><strong>C++/WinRT</strong>. Open <code>MainWindow.xaml.h</code> and <code>MainWindow.xaml.cpp</code>, and delete the <strong>myButton_Click</strong> method.</p>
+</li>
+</ol>
+<p>You <em>can</em> build and run now, but the window will be empty at this stage. For the <strong>GridView</strong> control to show anything, we need to give it a collection of objects to show. We'll make a start on that next.</p>
+<p>For background info about some of the types we've just mentioned, see <a href="../design/layout/layout-panels.html">Layout panels</a> and <a href="../design/controls/index.html">Controls for Windows apps</a>.</p>
+<h2 id="step-5-the-imagefileinfo-model">Step 5: The ImageFileInfo model</h2>
+<p>A <em>model</em> (in the sense of models, views, and view models) is a class that to some degree represents a real-world object or concept (such as a bank account). It's an <em>abstraction</em> of that real-world thing. In this section we'll be adding to our project a new class called <strong>ImageFileInfo</strong>. <strong>ImageFileInfo</strong> will be a model of an image file, such as a photo. This section will take us a step closer to being able to display photos in the app's user interface (UI).</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In preparation for the code example below, let's introduce the term <em>observable</em>. A property that can be dynamically bound to a XAML control (so that the UI updates each time the property value changes) is known as an <em>observable</em> property. This idea is based on the software design pattern known as the observer pattern. In the app that we build in this tutorial, the properties of our <strong>ImageFileInfo</strong> model won't change. But even so, we'll show how to make <strong>ImageFileInfo</strong> observable, by having it implement the <a href="/uwp/api/windows.ui.xaml.data.inotifypropertychanged"><strong>INotifyPropertyChanged</strong></a> interface.</p>
+</div>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cs" role="tab" aria-controls="tabpanel_2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cpp" role="tab" aria-controls="tabpanel_2_cpp" data-tab="cpp" tabindex="-1">C++/WinRT</a>
+</li>
+</ul>
+<section id="tabpanel_2_cs" role="tabpanel" data-tab="cs">
+
+<ol>
+<li><p>Right-click the project node (<strong>SimplePhotos</strong>), and click <strong>Add</strong> &gt; <strong>New Item...</strong>. Under <strong>C# Items</strong> &gt; <strong>Code</strong>, select <strong>Class</strong>. Set the name to <em>ImageFileInfo.cs</em>, and click <strong>Add</strong>.</p>
+</li>
+<li><p>Replace the contents of <code>ImageFileInfo.cs</code> with the code listing below.</p>
+<pre><code class="lang-csharp">using Microsoft.UI.Xaml.Media.Imaging;
+using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using Windows.Storage;
+using Windows.Storage.FileProperties;
+using Windows.Storage.Streams;
+
+namespace SimplePhotos
+{
+    public class ImageFileInfo : INotifyPropertyChanged
+    {
+        public ImageFileInfo(ImageProperties properties,
+            StorageFile imageFile,
+            string name,
+            string type)
+        {
+            ImageProperties = properties;
+            ImageName = name;
+            ImageFileType = type;
+            ImageFile = imageFile;
+            var rating = (int)properties.Rating;
+            var random = new Random();
+            ImageRating = rating == 0 ? random.Next(1, 5) : rating;
+        }
+
+        public StorageFile ImageFile { get; }
+
+        public ImageProperties ImageProperties { get; }
+
+        public async Task&lt;BitmapImage&gt; GetImageSourceAsync()
+        {
+            using IRandomAccessStream fileStream = await ImageFile.OpenReadAsync();
+
+            // Create a bitmap to be the image source.
+            BitmapImage bitmapImage = new();
+            bitmapImage.SetSource(fileStream);
+
+            return bitmapImage;
+        }
+
+        public async Task&lt;BitmapImage&gt; GetImageThumbnailAsync()
+        {
+            StorageItemThumbnail thumbnail = 
+                await ImageFile.GetThumbnailAsync(ThumbnailMode.PicturesView);
+            // Create a bitmap to be the image source.
+            var bitmapImage = new BitmapImage();
+            bitmapImage.SetSource(thumbnail);
+            thumbnail.Dispose();
+
+            return bitmapImage;
+        }
+
+        public string ImageName { get; }
+
+        public string ImageFileType { get; }
+
+        public string ImageDimensions =&gt; $&quot;{ImageProperties.Width} x {ImageProperties.Height}&quot;;
+
+        public string ImageTitle
+        {
+            get =&gt; string.IsNullOrEmpty(ImageProperties.Title) ? ImageName : ImageProperties.Title;
+            set
+            {
+                if (ImageProperties.Title != value)
+                {
+                    ImageProperties.Title = value;
+                    _ = ImageProperties.SavePropertiesAsync();
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public int ImageRating
+        {
+            get =&gt; (int)ImageProperties.Rating;
+            set
+            {
+                if (ImageProperties.Rating != value)
+                {
+                    ImageProperties.Rating = (uint)value;
+                    _ = ImageProperties.SavePropertiesAsync();
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null) =&gt;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+</code></pre>
+</li>
+<li><p>Save and close the <code>ImageFileInfo.cs</code> file.</p>
+</li>
+</ol>
+</section>
+<section id="tabpanel_2_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<ol>
+<li><p>Right-click the project node (<strong>SimplePhotos</strong>), and click <strong>Add</strong> &gt; <strong>New Item...</strong>. Under <strong>Visual C++</strong> &gt; <strong>Code</strong>, select <strong>Midl File (.idl)</strong>. Set the name to <em>ImageFileInfo.idl</em>, and click <strong>Add</strong>.</p>
+</li>
+<li><p>Replace the contents of <code>ImageFileInfo.idl</code> with the code listing below.</p>
+<pre><code class="lang-idl">// ImageFileInfo.idl
+namespace SimplePhotos
+{
+    runtimeclass ImageFileInfo : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        ImageFileInfo(Windows.Storage.FileProperties.ImageProperties properties, Windows.Storage.StorageFile imageFile, String name, String type);
+        Windows.Storage.FileProperties.ImageProperties ImageProperties{ get; };
+        Windows.Storage.StorageFile ImageFile{ get; };
+        String ImageName{ get; };
+        String ImageFileType{ get; };
+        String ImageDimensions{ get; };
+        String ImageTitle;
+        UInt32 ImageRating;
+    }
+}
+</code></pre>
+</li>
+<li><p>Save <code>ImageFileInfo.idl</code>, and build the project. The build won't (entirely) succeed yet, but it will generate some files for us.</p>
+</li>
+<li><p>So now right-click the project node again, and click <strong>Open Folder in File Explorer</strong>. Navigate into the <code>\Generated Files\sources\</code> folder, and copy the two files <code>ImageFileInfo.h</code> and <code>.cpp</code> to the clipboard. Navigate back up to the project folder (<code>\SimplePhotos\SimplePhotos\</code>), and paste the two files you just copied. Lastly, in <strong>Solution Explorer</strong> with the project node selected, make sure <strong>Show All Files</strong> is toggled on. Right-click the two files that you copied, and click <strong>Include In Project</strong>.</p>
+</li>
+<li><p>Add the following necessary include to the end of the <code>pch.h</code> file:</p>
+<pre><code class="lang-cppwinrt">// pch.h
+...
+#include &lt;winrt/Windows.Storage.FileProperties.h&gt;
+#include &lt;winrt/Windows.Storage.Search.h&gt;
+#include &lt;winrt/Windows.Storage.Streams.h&gt;
+#include &lt;winrt/Microsoft.UI.Xaml.Media.Imaging.h&gt;
+</code></pre>
+</li>
+<li><p>Replace the contents of <code>ImageFileInfo.h</code> with the code listing below.</p>
+<pre><code class="lang-cppwinrt">// ImageFileInfo.h
+#pragma once
+#include &quot;ImageFileInfo.g.h&quot;
+
+namespace winrt::SimplePhotos::implementation
+{
+    struct ImageFileInfo : ImageFileInfoT&lt;ImageFileInfo&gt;
+    {
+        ImageFileInfo() = default;
+
+        ImageFileInfo(
+            winrt::Windows::Storage::FileProperties::ImageProperties const&amp; properties,
+            winrt::Windows::Storage::StorageFile const&amp; imageFile,
+            hstring const&amp; name,
+            hstring const&amp; type);
+
+        winrt::Windows::Storage::FileProperties::ImageProperties ImageProperties()
+        {
+            return m_imageProperties;
+        }
+
+        winrt::Windows::Storage::StorageFile ImageFile()
+        {
+            return m_imageFile;
+        }
+
+        hstring ImageName()
+        {
+            return m_imageName;
+        }
+
+        hstring ImageFileType()
+        {
+            return m_imageFileType;
+        }
+
+        hstring ImageDimensions()
+        {
+            return to_hstring(ImageProperties().Width()) + L&quot; x &quot; + to_hstring(ImageProperties().Height());
+        }
+
+        hstring ImageTitle()
+        {
+            return ImageProperties().Title() == L&quot;&quot; ? ImageName() : ImageProperties().Title();
+        }
+
+        void ImageTitle(hstring const&amp; value);
+
+        uint32_t ImageRating()
+        {
+            return ImageProperties().Rating();
+        }
+
+        void ImageRating(uint32_t value);
+
+        winrt::event_token PropertyChanged(winrt::Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const&amp; handler)
+        {
+            return m_propertyChanged.add(handler);
+        }
+
+        void PropertyChanged(winrt::event_token const&amp; token) noexcept
+        {
+            m_propertyChanged.remove(token);
+        }
+
+        Windows::Foundation::IAsyncOperation&lt;Microsoft::UI::Xaml::Media::Imaging::BitmapImage&gt; GetImageSourceAsync();
+
+        Windows::Foundation::IAsyncOperation&lt;Microsoft::UI::Xaml::Media::Imaging::BitmapImage&gt; GetImageThumbnailAsync();
+
+    private:
+        // File and information fields.
+        Windows::Storage::FileProperties::ImageProperties m_imageProperties{ nullptr };
+        Windows::Storage::StorageFile m_imageFile{ nullptr };
+        hstring m_imageName;
+        hstring m_imageFileType;
+
+        event&lt;Microsoft::UI::Xaml::Data::PropertyChangedEventHandler&gt; m_propertyChanged;
+        void OnPropertyChanged(hstring propertyName)
+        {
+            m_propertyChanged(*this, Microsoft::UI::Xaml::Data::PropertyChangedEventArgs(propertyName));
+        }
+    };
+}
+namespace winrt::SimplePhotos::factory_implementation
+{
+    struct ImageFileInfo : ImageFileInfoT&lt;ImageFileInfo, implementation::ImageFileInfo&gt;
+    {
+    };
+}
+</code></pre>
+</li>
+<li><p>Replace the contents of <code>ImageFileInfo.cpp</code> with the code listing below.</p>
+<pre><code class="lang-cppwinrt">// ImageFileInfo.cpp
+#include &quot;pch.h&quot;
+#include &quot;ImageFileInfo.h&quot;
+#include &quot;ImageFileInfo.g.cpp&quot;
+#include &lt;random&gt;
+
+using namespace std;
+namespace winrt
+{
+    using namespace Microsoft::UI::Xaml;
+    using namespace Microsoft::UI::Xaml::Media::Imaging;
+    using namespace Windows::Foundation;
+    using namespace Windows::Storage;
+    using namespace Windows::Storage::FileProperties;
+    using namespace Windows::Storage::Streams;
+}
+
+namespace winrt::SimplePhotos::implementation
+{
+    ImageFileInfo::ImageFileInfo(
+        winrt::Windows::Storage::FileProperties::ImageProperties const&amp; properties,
+        winrt::Windows::Storage::StorageFile const&amp; imageFile,
+        hstring const&amp; name,
+        hstring const&amp; type) :
+        m_imageProperties{ properties },
+        m_imageName{ name },
+        m_imageFileType{ type },
+        m_imageFile{ imageFile }
+    {
+        auto rating = properties.Rating();
+        auto random = std::random_device();
+        std::uniform_int_distribution&lt;&gt; dist(1, 5);
+        ImageRating(rating == 0 ? dist(random) : rating);
+    }
+
+    void ImageFileInfo::ImageTitle(hstring const&amp; value)
+    {
+        if (ImageProperties().Title() != value)
+        {
+            ImageProperties().Title(value);
+            ImageProperties().SavePropertiesAsync();
+            OnPropertyChanged(L&quot;ImageTitle&quot;);
+        }
+    }
+
+    void ImageFileInfo::ImageRating(uint32_t value)
+    {
+        if (ImageProperties().Rating() != value)
+        {
+            ImageProperties().Rating(value);
+            ImageProperties().SavePropertiesAsync();
+            OnPropertyChanged(L&quot;ImageRating&quot;);
+        }
+    }
+
+    IAsyncOperation&lt;BitmapImage&gt; ImageFileInfo::GetImageSourceAsync()
+    {
+        IRandomAccessStream stream{ co_await ImageFile().OpenAsync(FileAccessMode::Read) };
+        BitmapImage bitmap{};
+        bitmap.SetSource(stream);
+        co_return bitmap;
+    }
+
+    IAsyncOperation&lt;BitmapImage&gt; ImageFileInfo::GetImageThumbnailAsync()
+    {
+        auto thumbnail = co_await m_imageFile.GetThumbnailAsync(FileProperties::ThumbnailMode::PicturesView);
+        BitmapImage bitmapImage{};
+        bitmapImage.SetSource(thumbnail);
+        thumbnail.Close();
+        co_return bitmapImage;
+    }
+}
+</code></pre>
+</li>
+<li><p>Confirm that you can build (but don't run yet).</p>
+</li>
+</ol>
+</section>
+</div>
+<h2 id="step-6-define-and-populate-a-property-for-a-collection-of-images">Step 6: Define and populate a property for a collection of images</h2>
+<p>In this section we'll add a new property to the <strong>MainWindow</strong> class. The property (named <strong>Images</strong>) will be a collection class that contains the images that we want to display.</p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_cs" role="tab" aria-controls="tabpanel_3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_cpp" role="tab" aria-controls="tabpanel_3_cpp" data-tab="cpp" tabindex="-1">C++/WinRT</a>
+</li>
+</ul>
+<section id="tabpanel_3_cs" role="tabpanel" data-tab="cs">
+
+<ol>
+<li><p>Define the property like this, in <code>MainWindow.xaml.cs</code>:</p>
+<pre><code class="lang-csharp">...
+using System.Collections.ObjectModel;
+...
+namespace SimplePhotos
+{
+    public sealed partial class MainWindow : Window
+    {
+        public ObservableCollection&lt;ImageFileInfo&gt; Images { get; } = 
+            new ObservableCollection&lt;ImageFileInfo&gt;();
+        ...
+    }
+}
+</code></pre>
+</li>
+<li><p>The code to populate the new collection property with images is shown in the <strong>GetItemsAsync</strong> and <strong>LoadImageInfoAsync</strong> methods below. Paste the <code>using</code> directives, and the two method implementations, into <code>MainWindow.xaml.cs</code>, too. These methods are members of the <strong>MainWindow</strong> class, so paste them inside there just as you did with the <strong>Images</strong> property above.</p>
+<pre><code class="lang-csharp">...
+using System.Threading.Tasks;
+using Windows.ApplicationModel;
+using Windows.Storage;
+using Windows.Storage.Search;
+...
+private async Task GetItemsAsync()
+{
+    StorageFolder appInstalledFolder = Package.Current.InstalledLocation;
+    StorageFolder picturesFolder = await appInstalledFolder.GetFolderAsync(&quot;Assets\\Samples&quot;);
+
+    var result = picturesFolder.CreateFileQueryWithOptions(new QueryOptions());
+
+    IReadOnlyList&lt;StorageFile&gt; imageFiles = await result.GetFilesAsync();
+    foreach (StorageFile file in imageFiles)
+    {
+        Images.Add(await LoadImageInfoAsync(file));
+    }
+
+    ImageGridView.ItemsSource = Images;
+}
+
+public async static Task&lt;ImageFileInfo&gt; LoadImageInfoAsync(StorageFile file)
+{
+    var properties = await file.Properties.GetImagePropertiesAsync();
+    ImageFileInfo info = new(properties, 
+                             file, file.DisplayName, file.DisplayType);
+
+    return info;
+}
+</code></pre>
+</li>
+<li><p>The last thing we need to do in this section is to update the constructor of <strong>MainWindow</strong> to call <strong>GetItemsAsync</strong>.</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    ...
+    GetItemsAsync();
+}
+</code></pre>
+</li>
+</ol>
+</section>
+<section id="tabpanel_3_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<ol>
+<li><p>We'll be referencing the <strong>Images</strong> property in our XAML UI. For that reason we need to declare the <strong>Images</strong> property in the IDL file for the <strong>MainWindow</strong> class. So replace the contents of <code>MainWindow.idl</code> with the code listing below.</p>
+<pre><code class="lang-idl">// MainWindow.idl
+namespace SimplePhotos
+{
+    [default_interface]
+    runtimeclass MainWindow : Microsoft.UI.Xaml.Window
+    {
+        MainWindow();
+        Windows.Foundation.Collections.IVector&lt;IInspectable&gt; Images{ get; };
+    }
+}
+</code></pre>
+</li>
+<li><p>While we're editing the <strong>MainWindow</strong> class, go ahead and remove the <strong>MyProperty</strong> property from the <code>MainWindow.idl</code> (it's already been removed in the listing above), and from <code>MainWindow.h</code>, and from <code>MainWindow.cpp</code>.</p>
+</li>
+<li><p>The code to populate the new collection property with images is shown in the <strong>GetItemsAsync</strong> and <strong>LoadImageInfoAsync</strong> methods below. Paste the include, the <code>using namespace</code> directives, and the two method declarations and definitions, into <code>MainWindow.xaml.h</code> and <code>MainWindow.xaml.cpp</code>.</p>
+<pre><code class="lang-cppwinrt">// MainWindow.xaml.h
+...
+struct MainWindow : MainWindowT&lt;MainWindow&gt;
+{
+    ...
+
+    Windows::Foundation::Collections::IVector&lt;Windows::Foundation::IInspectable&gt; Images() const
+    {
+        return m_images;
+    }
+
+private:
+    Windows::Foundation::Collections::IVector&lt;IInspectable&gt; m_images{ nullptr };
+
+    Windows::Foundation::IAsyncAction GetItemsAsync();
+    Windows::Foundation::IAsyncOperation&lt;SimplePhotos::ImageFileInfo&gt; LoadImageInfoAsync(Windows::Storage::StorageFile);
+};
+...
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainWindow.xaml.cpp
+...
+#include &quot;ImageFileInfo.h&quot;
+namespace winrt
+{
+    using namespace Windows::ApplicationModel;
+    using namespace Windows::Foundation;
+    using namespace Windows::Foundation::Collections;
+    using namespace Windows::Storage;
+    using namespace Windows::Storage::Search;
+    using namespace Microsoft::UI::Xaml;
+}
+...
+IAsyncAction MainWindow::GetItemsAsync()
+{
+    StorageFolder appInstalledFolder = Package::Current().InstalledLocation();
+    StorageFolder picturesFolder = co_await appInstalledFolder.GetFolderAsync(L&quot;Assets\\Samples&quot;);
+
+    auto result = picturesFolder.CreateFileQueryWithOptions(QueryOptions());
+
+    IVectorView&lt;StorageFile&gt; imageFiles = co_await result.GetFilesAsync();
+    for (auto&amp;&amp; file : imageFiles)
+    {
+        Images().Append(co_await LoadImageInfoAsync(file));
+    }
+
+    ImageGridView().ItemsSource(Images());
+}
+
+IAsyncOperation&lt;SimplePhotos::ImageFileInfo&gt; MainWindow::LoadImageInfoAsync(StorageFile file)
+{
+    auto properties = co_await file.Properties().GetImagePropertiesAsync();
+    SimplePhotos::ImageFileInfo info(properties,
+                       file, file.DisplayName(), file.DisplayType());
+    co_return info;
+}
+...
+</code></pre>
+</li>
+<li><p>The last thing we need to do in this section is to update the constructor of <strong>MainWindow</strong> to initialize the <em>m_images</em> data member, and to call <strong>GetItemsAsync</strong>.</p>
+<pre><code class="lang-cppwinrt">// MainWindow.xaml.cpp
+MainWindow::MainWindow() :
+    m_images(winrt::single_threaded_observable_vector&lt;IInspectable&gt;())
+{
+    InitializeComponent();
+    GetItemsAsync();
+}
+</code></pre>
+</li>
+</ol>
+</section>
+</div>
+
+<p>You can build and run now if you like (to confirm you've followed the steps ok), but there's not much to see in the window at this stage. That's because what we've done so far is to ask the <strong>GridView</strong> to render a collection of objects of type <strong>ImageFileInfo</strong>; and the <strong>GridView</strong> doesn't quite know how to do that yet.</p>
+<p>Remember that the <strong>Images</strong> property is an observable collection of <strong>ImageFileInfo</strong> objects. And the last line of <strong>GetItemsAsync</strong> tells the <strong>GridView</strong> (which is named <em>ImageGridView</em>) that the source of its items (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource"><strong>ItemsSource</strong></a>) is the <strong>Images</strong> property. And the job of the <strong>GridView</strong> is then to display those items.</p>
+<p>But we haven't yet told the <strong>GridView</strong> anything about the <strong>ImageFileInfo</strong> class. So the best it can do so far is to display the <strong>ToString</strong> value of each <strong>ImageFileInfo</strong> object in the collection. And by default, that's just the type's name. In the next section we'll create a data template to define how we want an <strong>ImageFileInfo</strong> object to be displayed.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>I used the term <em>observable collection</em> above. In the app that we build in this tutorial, the number of images doesn't change (and as we've said, neither do the values of the properties of each image, either). But it's still convenient, and a good practice, to use data-binding to initially connect the UI to the data. So that's what we'll do.</p>
+</div>
+<h2 id="step-7-add-a-data-template">Step 7: Add a data template</h2>
+<p>To begin with, let's use a sketch-like placeholder data template. That will serve until we're done exploring some layout options. After that we can update the data template to show the actual photos.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>That's actually a very practical thing to do. It's been found that if a UI looks like a sketch (in other words, low-fidelity), then people are more willing to suggest and/or test out quick ideas with it—sometimes involving quite substantial changes. That's because we guess (correctly) that such changes will be cheap to try.</p>
+<p>On the other hand, the more finished a UI looks (the higher fidelity it has), the more we guess (again, correctly) that a lot of work has gone into the current look of it. And that makes us less inclined to suggest, or to try out, new ideas.</p>
+</div>
+<ol>
+<li><p>Open <code>MainWindow.xaml</code>, and change the contents of the <strong>Window</strong> so that they look like this markup:</p>
+<pre><code class="lang-xaml">&lt;Window ...&gt;
+    &lt;Grid&gt;
+        &lt;Grid.Resources&gt;
+            &lt;DataTemplate x:Key=&quot;ImageGridView_ItemTemplate&quot;&gt;
+                &lt;Grid/&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/Grid.Resources&gt;
+        &lt;GridView x:Name=&quot;ImageGridView&quot;
+                ItemTemplate=&quot;{StaticResource ImageGridView_ItemTemplate}&quot;&gt;
+        &lt;/GridView&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>To the layout root, we've added a simple <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate"><strong>DataTemplate</strong></a> resource, and given it a key of <code>ImageGridView_ItemTemplate</code>. And we've used that same key to set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate"><strong>ItemTemplate</strong></a> of the <strong>GridView</strong>. Items controls such as <strong>GridView</strong> have an <strong>ItemTemplate</strong> property (just like they have the <strong>ItemsSource</strong> property that we saw earlier). An item template is a data template; and it's used for displaying each item in the collection.</p>
+<p>For more info, see <a href="../design/controls/item-containers-templates.html">Item containers and templates</a>.</p>
+</li>
+<li><p>Now we can take a few edit passes over the data template—adding to, and editing, the elements inside it to make it more interesting and useful. We'll give the root <strong>Grid</strong> a height and a width of 300, and a margin of 8. Then we'll add two row definitions, and set the height of the second row definition to <strong>Auto</strong>.</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:Key=&quot;ImageGridView_ItemTemplate&quot;&gt;
+    &lt;Grid Height=&quot;300&quot;
+          Width=&quot;300&quot;
+          Margin=&quot;8&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition /&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+        &lt;/Grid.RowDefinitions&gt;
+    &lt;/Grid&gt;
+&lt;/DataTemplate&gt;
+</code></pre>
+<p>For more info, see <a href="../design/layout/alignment-margin-padding.html">Alignment, margin, padding</a>.</p>
+</li>
+<li><p>We want the data template to display each photo's image, name, file type, dimensions, and rating. So we'll be adding, respectively, an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image"><strong>Image</strong></a> control, some <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock"><strong>TextBlock</strong></a> controls, and a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ratingcontrol"><strong>RatingControl</strong></a> control. We'll lay out the text inside <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel"><strong>StackPanel</strong></a> layout panels. The <strong>Image</strong> will, initially, display the project's sketch-like Microsoft Store logo as a placeholder.</p>
+</li>
+<li><p>After all those edits, here's how the data template looks:</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:Key=&quot;ImageGridView_ItemTemplate&quot;&gt;
+    &lt;Grid Height=&quot;300&quot;
+          Width=&quot;300&quot;
+          Margin=&quot;8&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition /&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;Image x:Name=&quot;ItemImage&quot;
+               Source=&quot;Assets/StoreLogo.png&quot;
+               Stretch=&quot;Uniform&quot; /&gt;
+
+        &lt;StackPanel Orientation=&quot;Vertical&quot;
+                    Grid.Row=&quot;1&quot;&gt;
+            &lt;TextBlock Text=&quot;ImageTitle&quot;
+                       HorizontalAlignment=&quot;Center&quot;
+                       Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; /&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot;
+                        HorizontalAlignment=&quot;Center&quot;&gt;
+                &lt;TextBlock Text=&quot;ImageFileType&quot;
+                           HorizontalAlignment=&quot;Center&quot;
+                           Style=&quot;{StaticResource CaptionTextBlockStyle}&quot; /&gt;
+                &lt;TextBlock Text=&quot;ImageDimensions&quot;
+                           HorizontalAlignment=&quot;Center&quot;
+                           Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;
+                           Margin=&quot;8,0,0,0&quot; /&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;RatingControl Value=&quot;3&quot; IsReadOnly=&quot;True&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/DataTemplate&gt;
+</code></pre>
+</li>
+</ol>
+<p>Build the project now, and run the app to see the <strong>GridView</strong> control with the item template that you just created. Next, we'll take a look at how the items are laid out. We'll change some brushes, and we'll add space between the items.</p>
+<p><img src="images/placeholder-item-template.png" alt="The placeholder item template."></p>
+<h2 id="step-8-edit-the-item-containers-style">Step 8: Edit the item container's style</h2>
+<p>Another concept related to items controls such as <strong>GridView</strong> is the <em>item container</em>. An item container is a <em>content control</em> that displays an item as the value of its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content"><strong>Content</strong></a> property. An items control creates as many item containers as it needs in order to display the items that are visible on the screen at any time.</p>
+<p>Being a control, an item container has a style and a control template. Its style and control template determine how the item container looks in its various states (such as selection, pointer over, and focus). And, as we've seen, the item template (which is a data template) determines how the item itself looks.</p>
+<p>For <strong>GridView</strong>, the type of its item containers is <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridviewitem"><strong>GridViewItem</strong></a>.</p>
+<p>So in this section we'll focus on designing the item container's style. And for that we'll be creating a <strong>Style</strong> resource for <strong>GridViewItem</strong>, and then setting that as the <strong>ItemContainerStyle</strong> of the *<strong>GridView</strong>. In the style, we'll set the <strong>Background</strong> and <strong>Margin</strong> properties of the item container to give it a gray background and a bit of a margin around the outside of it.</p>
+<ol>
+<li><p>In <code>MainWindow.xaml</code>, add a new <strong>Style</strong> resource to the same <strong>Grid.Resources</strong> XML element that we put the data template into.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.Resources&gt;
+    ...
+        &lt;Style x:Key=&quot;ImageGridView_ItemContainerStyle&quot;
+            TargetType=&quot;GridViewItem&quot;&gt;
+            &lt;Setter Property=&quot;Background&quot; Value=&quot;Gray&quot;/&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;8&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/Grid.Resources&gt;
+</code></pre>
+</li>
+<li><p>Next, we use the <code>ImageGridView_ItemContainerStyle</code> key to set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle"><strong>ItemContainerStyle</strong></a> of the <strong>GridView</strong>.</p>
+<pre><code class="lang-xaml">&lt;GridView x:Name=&quot;ImageGridView&quot;
+        ...
+        ItemContainerStyle=&quot;{StaticResource ImageGridView_ItemContainerStyle}&quot;&gt;
+&lt;/GridView&gt;
+</code></pre>
+</li>
+</ol>
+<p>Build and run the app, and see how it looks now. As you resize the window, the <strong>GridView</strong> control takes care of rearranging the items to best fit into the space. At some widths, there's a lot of space on the right-hand side of the app window. It would look better if the <strong>GridView</strong>, and/or its contents, were centered. So we'll take care of that next.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you want to experiment, try setting the <strong>Background</strong> and <strong>Margin</strong> setters to different values to see what effect that has.</p>
+</div>
+<h2 id="step-9-experimenting-with-layout">Step 9: Experimenting with layout</h2>
+<p>You might be wondering whether it's best to center the <strong>GridView</strong> itself, or to center its contents. Let's try centering the <strong>GridView</strong> first.</p>
+<ol>
+<li><p>To make it easy to see exactly where the <strong>GridView</strong> is in the Window—and what happens as we experiment with layout—we'll set its <strong>Background</strong> property to red.</p>
+<pre><code class="lang-xaml">&lt;GridView x:Name=&quot;ImageGridView&quot;
+        ...
+        Background=&quot;Red&quot;&gt;
+&lt;/GridView&gt;
+</code></pre>
+</li>
+<li><p>And now we'll set its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.horizontalalignment"><strong>HorizontalAlignment</strong></a> property to <em>Center</em>.</p>
+<pre><code class="lang-xaml">&lt;GridView x:Name=&quot;ImageGridView&quot;
+        ...
+        HorizontalAlignment=&quot;Center&quot;&gt;
+&lt;/GridView&gt;
+</code></pre>
+<p>Also see <a href="../design/layout/alignment-margin-padding.html">Alignment, margin, padding</a>.</p>
+</li>
+</ol>
+<p>Build and run now, and experiment with adjusting the width of the window. You can see that there's an equal amount of empty space on either side of the <strong>GridView</strong>'s red background. So we have achieved the goal of centering the images. But it's now clearer than before that the scroll bar belongs to the <strong>GridView</strong>, and not to the window. So we need to change the <strong>GridView</strong> back to filling the window. We've demonstrated that (instead of centering the <strong>GridView</strong> in the window) we need to center the images in the <strong>GridView</strong>.</p>
+<ol start="3">
+<li>So now delete the <strong>HorizontalAlignment</strong> attribute that you added in the previous step.</li>
+</ol>
+<h2 id="step-10-edit-the-items-panel-template">Step 10: Edit the items panel template</h2>
+<p>Items controls lay out their item containers inside what's known as an <em>items panel</em>. We can define what kind of panel is used, and set properties on that panel, by editing the <strong>GridView</strong>'s <em>items panel template</em>. So that's what we'll do in this section.</p>
+<ol>
+<li><p>In <code>MainWindow.xaml</code>, add an <strong>ItemsPanelTemplate</strong> resource to our resource dictionary. The items panel is of type <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemswrapgrid"><strong>ItemsWrapGrid</strong></a>, and we're setting its <strong>HorizontalAlignment</strong> property to <strong>Center</strong>.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.Resources&gt;
+    ...
+        &lt;ItemsPanelTemplate x:Key=&quot;ImageGridView_ItemsPanelTemplate&quot;&gt;
+            &lt;ItemsWrapGrid Orientation=&quot;Horizontal&quot;
+                           HorizontalAlignment=&quot;Center&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/Grid.Resources&gt;
+</code></pre>
+</li>
+<li><p>Next, we use the <code>ImageGridView_ItemsPanelTemplate</code> key to set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel"><strong>ItemsPanel</strong></a> of the <strong>GridView</strong>.</p>
+<pre><code class="lang-xaml">&lt;GridView x:Name=&quot;ImageGridView&quot;
+        ...
+        ItemsPanel=&quot;{StaticResource ImageGridView_ItemsPanelTemplate}&quot;&gt;
+&lt;/GridView&gt;
+</code></pre>
+</li>
+</ol>
+<p>When you build and run this time, and experiment with adjusting the width of the window, there's an equal amount of the <strong>GridView</strong>'s red background on either side of the images. And because the <strong>GridView</strong> fills the window, the scroll bar aligns nicely with the edge of the window, where users might expect it to be.</p>
+<ol start="3">
+<li>Now that we're done experiment with layout, remove <code>Background=&quot;Red&quot;</code> from the <strong>GridView</strong>.</li>
+</ol>
+<h2 id="step-11-replace-the-placeholder-image-with-a-photo">Step 11: Replace the placeholder image with a photo</h2>
+<p>Now it's time to move our sketch to a higher level of fidelity; and that means replacing the placeholder image with the real ones, and replacing the &quot;lorem ipsum&quot;-style placeholder text with real data. Let's take care of the images first.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The technique we'll use to display the photos in the <code>Assets\Samples</code> folder involves updating the <strong>GridView</strong>'s items progressively. Specifically, that's the code in the <strong>ImageGridView_ContainerContentChanging</strong> and <strong>ShowImage</strong> methods in the code example below, including use of the <strong>ContainerContentChangingEventArgs.InRecycleQueue</strong> and <strong>ContainerContentChangingEventArgs.Phase</strong> properties. For more info, see <a href="/windows/uwp/debug-test-perf/optimize-gridview-and-listview">ListView and GridView UI optimization</a>. But in a nutshell, the <strong>GridView</strong> will let us know (by way of an event) when one of its item containers is ready to display its item. And then we'll keep track of which phase of its update lifecycle the item container is in so that we can determine when it's ready to display photo data.</p>
+</div>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_cs" role="tab" aria-controls="tabpanel_4_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_cpp" role="tab" aria-controls="tabpanel_4_cpp" data-tab="cpp" tabindex="-1">C++/WinRT</a>
+</li>
+</ul>
+<section id="tabpanel_4_cs" role="tabpanel" data-tab="cs">
+
+<ol>
+<li><p>In <code>MainWindow.xaml.cs</code>, add a new method to <strong>MainWindow</strong> named <strong>ImageGridView_ContainerContentChanging</strong>. This is an event-handling method, and the event it handles is <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.containercontentchanging"><strong>ContainerContentChanging</strong></a>. We also need to provide the implementation of the <strong>ShowImage</strong> method that <strong>ImageGridView_ContainerContentChanging</strong> depends on. Paste the <code>using</code> directive and the two method implementations into <code>MainWindow.xaml.cs</code>:</p>
+<pre><code class="lang-csharp">...
+using Microsoft.UI.Xaml.Controls;
+...
+private void ImageGridView_ContainerContentChanging(
+    ListViewBase sender,
+    ContainerContentChangingEventArgs args)
+{
+    if (args.InRecycleQueue)
+    {
+        var templateRoot = args.ItemContainer.ContentTemplateRoot as Grid;
+        var image = templateRoot.FindName(&quot;ItemImage&quot;) as Image;
+        image.Source = null;
+    }
+
+    if (args.Phase == 0)
+    {
+        args.RegisterUpdateCallback(ShowImage);
+        args.Handled = true;
+    }
+}
+
+private async void ShowImage(ListViewBase sender, ContainerContentChangingEventArgs args)
+{
+    if (args.Phase == 1)
+    {
+        // It's phase 1, so show this item's image.
+        var templateRoot = args.ItemContainer.ContentTemplateRoot as Grid;
+        var image = templateRoot.FindName(&quot;ItemImage&quot;) as Image;
+        var item = args.Item as ImageFileInfo;
+        image.Source = await item.GetImageThumbnailAsync();
+    }
+}
+</code></pre>
+</li>
+</ol>
+</section>
+<section id="tabpanel_4_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<ol>
+<li><p>Add a new method to <strong>MainWindow</strong> named <strong>ImageGridView_ContainerContentChanging</strong>. This is an event-handling method, and the event it handles is <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.containercontentchanging"><strong>ContainerContentChanging</strong></a>. We also need to provide the implementation of the <strong>ShowImage</strong> method that <strong>ImageGridView_ContainerContentChanging</strong> depends on. Paste the <code>using namespace</code> directives and the two method declarations and definitions into <code>MainWindow.xaml.h</code> and <code>MainWindow.xaml.cpp</code>:</p>
+<pre><code class="lang-cppwinrt">// MainWindow.xaml.h
+...
+struct MainWindow : MainWindowT&lt;MainWindow&gt;
+{
+    ...
+    void ImageGridView_ContainerContentChanging(
+        Microsoft::UI::Xaml::Controls::ListViewBase const&amp; sender,
+        Microsoft::UI::Xaml::Controls::ContainerContentChangingEventArgs const&amp; args);
+
+private:
+    ...
+    fire_and_forget ShowImage(
+        Microsoft::UI::Xaml::Controls::ListViewBase const&amp; sender,
+        Microsoft::UI::Xaml::Controls::ContainerContentChangingEventArgs const&amp; args);
+};
+...
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainWindow.xaml.cpp
+...
+namespace winrt
+{
+    ...
+    using namespace Microsoft::UI::Xaml::Controls;
+}
+...
+void MainWindow::ImageGridView_ContainerContentChanging(ListViewBase const&amp; sender, ContainerContentChangingEventArgs const&amp; args)
+{
+    if (args.InRecycleQueue())
+    {
+        auto templateRoot = args.ItemContainer().ContentTemplateRoot().try_as&lt;Grid&gt;();
+        auto image = templateRoot.FindName(L&quot;ItemImage&quot;).try_as&lt;Image&gt;();
+        image.Source(nullptr);
+    }
+    if (args.Phase() == 0)
+    {
+        args.RegisterUpdateCallback({ this, &amp;MainWindow::ShowImage });
+        args.Handled(true);
+    }
+}
+
+fire_and_forget MainWindow::ShowImage(ListViewBase const&amp; sender, ContainerContentChangingEventArgs const&amp; args)
+{
+    if (args.Phase() == 1)
+    {
+        // It's phase 1, so show this item's image.
+        auto templateRoot = args.ItemContainer().ContentTemplateRoot().try_as&lt;Grid&gt;();
+        auto image = templateRoot.FindName(L&quot;ItemImage&quot;).try_as&lt;Image&gt;();
+        auto item = args.Item().try_as&lt;SimplePhotos::ImageFileInfo&gt;();
+        image.Source(co_await get_self&lt;SimplePhotos::implementation::ImageFileInfo&gt;(item)-&gt;GetImageThumbnailAsync());
+    }
+}
+...
+</code></pre>
+</li>
+</ol>
+</section>
+</div>
+
+<ol start="2">
+<li><p>Then, in <code>MainWindow.xaml</code>, register the <strong>ImageGridView_ContainerContentChanging</strong> event-handler with the <strong>GridView</strong>'s <strong>ContainerContentChanging</strong> event.</p>
+<pre><code class="lang-xaml">&lt;GridView x:Name=&quot;ImageGridView&quot;
+        ...
+        ContainerContentChanging=&quot;ImageGridView_ContainerContentChanging&quot;&gt;
+&lt;/GridView&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="step-12-replace-the-placeholder-text-with-real-data">Step 12: Replace the placeholder text with real data</h2>
+<p>In this section we'll use one-time data-bindings. A one-time binding is great for data that doesn't change at run-time. And that means that one-time bindings are high-performance and easy to create.</p>
+<ol>
+<li><p>In <code>MainWindow.xaml</code>, find the <em>ImageGridView_ItemTemplate</em> data template resource. We're going to tell the data template that its job is to be a template for the <strong>ImageFileInfo</strong> class, which you'll recall is the type of the items that our <strong>GridView</strong> is displaying.</p>
+</li>
+<li><p>To do that, add an <code>x:DataType</code> value to the template, like this:</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:Key=&quot;ImageGridView_ItemTemplate&quot;
+              x:DataType=&quot;local:ImageFileInfo&quot;&gt;
+    ...
+</code></pre>
+<p>If you're unfamiliar with the <code>local:</code> syntax shown above (or with the <code>xmlns:local</code> syntax already in the opening <strong>Window</strong> tag), then see <a href="/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping">XAML namespaces and namespace mapping</a>.</p>
+<p>Now that we've set an <code>x:DataType</code>, we can use <code>x:Bind</code> data-binding expressions in the data template to bind to properties of the data type we specified (<strong>ImageFileInfo</strong>, in this case).</p>
+</li>
+<li><p>In the data template, find the first <strong>TextBlock</strong> element (the one with its <strong>Text</strong> currently set to <em>ImageTitle</em>). Replace its <strong>Text</strong> value as shown below.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can either copy and paste the markup below, or you can use IntelliSense in Visual Studio. To do that, select the current value that's inside the quotation marks, and type <code>{</code>. IntelliSense automatically adds the closing brace, and displays a code-completion list. You <em>could</em> scroll down to <code>x:Bind</code>, and double-click it. But it might be more efficient to type <code>x:</code> (note how <code>x:Bind</code> is then filtered to the top of the completion list), and press the TAB key. Now press the SPACE key, and type <code>ImageT</code> (as much of the property name <code>ImageTitle</code> as necessary to get it to the top of the completion list), and TAB.</p>
+</div>
+<pre><code class="lang-xaml">&lt;TextBlock Text=&quot;{x:Bind ImageTitle}&quot;
+    ... /&gt;
+</code></pre>
+<p>An <code>x:Bind</code> expression links the value of a UI property with the value of a <strong>data-object</strong> property. Of course, that depends on first setting <code>x:DataType</code> to the type of that <strong>data-object</strong> so that the tooling and the runtime know what properties are available to bind to.</p>
+<p>For more info, see <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a> and <a href="/windows/uwp/data-binding/data-binding-in-depth">Data binding in depth</a>.</p>
+</li>
+<li><p>In the same way, replace the values of the other <strong>TextBlock</strong>s and the <strong>RatingControl</strong>. Here's the result:</p>
+<pre><code class="lang-xaml">&lt;TextBlock Text=&quot;{x:Bind ImageTitle}&quot; ... /&gt;
+&lt;StackPanel ... &gt;
+    &lt;TextBlock Text=&quot;{x:Bind ImageFileType}&quot; ... /&gt;
+    &lt;TextBlock Text=&quot;{x:Bind ImageDimensions}&quot; ... /&gt;
+&lt;/StackPanel&gt;
+&lt;RatingControl Value=&quot;{x:Bind ImageRating}&quot; ... /&gt;
+</code></pre>
+</li>
+</ol>
+<p>If you build and run the app now, instead of placeholders you'll see real photos, and real text (and other data). Visually and functionally, this simple little app is now complete. But as a coda, let's do one last little bit of data binding.</p>
+<p><img src="images/finished-app.png" alt="The finished app."></p>
+<h3 id="step-13-bind-the-gridview-to-the-images-collection-c-only">Step 13: Bind the GridView to the Images collection (C# only)</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Perform this last step only if you created a C# project.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You'll find that there are some things (usually related to dynamically-generated UI) that you can't do in XAML markup. But in general if you <em>can</em> do something in markup, then that's preferable. It gives a slightly cleaner separation between the <em>view</em> that the XAML markup represents and the <em>model</em> (or <em>view model</em>) that the imperative code represents. And that tends to improve workflow in tooling and between team members.</p>
+</div>
+<p>We're currently using imperative code to associate the <strong>GridView</strong>'s <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource"><strong>ItemsSource</strong></a>) property with <strong>MainWindow</strong>'s <strong>Images</strong> property. But we can do that in markup instead.</p>
+<ol>
+<li><p>In the <strong>MainWindow</strong> class, delete (or comment-out) the last line of <strong>GetItemsAsync</strong>, which sets the <strong>ItemsSource</strong> of <code>ImageGridView</code> to the value of the <strong>Images</strong> property.</p>
+</li>
+<li><p>And then in <code>MainWindow.xaml</code>, find the <strong>GridView</strong> named <em>ImageGridView</em>, and add an <strong>ItemsSource</strong> attribute like this. You can use IntelliSense to make this change if you like.</p>
+<pre><code class="lang-xaml">&lt;GridView x:Name=&quot;ImageGridView&quot;
+          ...
+          ItemsSource=&quot;{x:Bind Images}&quot;
+</code></pre>
+</li>
+</ol>
+<p>The <strong>Images</strong> property value doesn't change at run-time for this particular app. But because <strong>Images</strong> is of type <code>ObservableCollection&lt;T&gt;</code>, the <em>contents</em> of the collection can change (that is, elements can be added or deleted), and the binding will automatically notice the changes and update the UI.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this tutorial we walked through the process of using Visual Studio to build a simple WinUI 3 app that displays photos. Hopefully this tutorial has given you experience working in a WinUI 3 app with controls, layout panels, data-binding, and GridView UI optimization.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="uno-simple-photo-viewer.html">Tutorial: Build a simple photo viewer that targets multiple platforms</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/get-started/simple-photo-viewer-winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

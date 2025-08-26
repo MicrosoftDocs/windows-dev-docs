@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Get started with Windows development using WinUI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Get started with Windows development using WinUI ">
+    
+    <meta name="description" content="List of steps to get started developing Windows apps with WinUI and the Windows App SDK.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="start-developing-windows-apps">Start developing Windows apps</h1>
+
+<p>Welcome to Windows app development. This guide will take you through the steps needed to begin creating apps using the latest Windows development frameworks: the Windows App SDK and WinUI. It will also point you to resources that will help you learn more about Windows development. If you want a step-by-step guide to setting up your developer environment and building your first WinUI app with the latest tools, please see <a href="/training/modules/winui-101/">WinUI 101</a>. If you are already comfortable developing apps for Windows, but want to know more about the latest tools, please see <a href="/windows/apps/develop/">Develop Windows desktop apps</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><a href="https://copilot.microsoft.com">Microsoft Copilot</a> is a great resource if you have questions about getting started writing Windows apps.</p>
+</div>
+<h2 id="1-enable-developer-mode">1. Enable Developer Mode</h2>
+<p>Windows has a special mode for developers that adjusts security settings in order to let you run the apps you're working on. You'll need to enable Developer Mode before you can build, deploy, and test your app using Visual Studio.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you don't enable it now, you'll be prompted to enable it when you try to build your app in Visual Studio.</p>
+</div>
+<p>To enable Developer Mode:</p>
+<ul>
+<li>Open Windows Settings and navigate to the <strong><a href="ms-settings:developers">System &gt; For developers</a></strong> page.</li>
+<li>Toggle the Developer Mode switch to <strong>On</strong> and confirm your choice in the confirmation dialog.</li>
+</ul>
+<p>For more information about Developer Mode, see <a href="/windows/apps/get-started/enable-your-device-for-development">Enable your device for development</a>.</p>
+<h2 id="2-install-visual-studio">2. Install Visual Studio</h2>
+<p>You'll use <a href="/visualstudio/ide/">Visual Studio</a>, Microsoft's comprehensive integrated development environment (IDE), to create your WinUI app. It's the preferred development tool of many Windows developers and it will help you write, debug, and deploy your apps. The project templates in Visual Studio will quickly get you started with projects for Windows and many other platforms.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Before installing these tools, make sure your development computer meets the <a href="../windows-app-sdk/system-requirements.html">system requirements for Windows app development</a>.</p>
+</div>
+<p>Use the link below to download and install the latest Visual Studio. The installer will walk you through the steps, but if you find you need detailed instructions, see <a href="/visualstudio/install/install-visual-studio">Install Visual Studio</a>.</p>
+<div class="button">
+<p><a href="https://visualstudio.microsoft.com/downloads/">Download Visual Studio</a></p>
+</div>
+<p>The free Visual Studio Community Edition includes everything you need to create your apps. If you're working with a development team or enterprise, you might need Visual Studio Professional or Visual Studio Enterprise. See <a href="/visualstudio/get-started/visual-studio-ide">What is Visual Studio?</a> for more info.</p>
+<h3 id="22-required-workloads-and-components">2.2 Required workloads and components</h3>
+<p>While installing Visual Studio, you need to install the workloads and components required for developing with WinUI and the Windows App SDK. After installation, you can open the Visual Studio Installer app and select <strong>Modify</strong> to add workloads and components.</p>
+<p>On the <strong>Workloads</strong> tab of the Visual Studio Installer app, select the following workloads and components:</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_vs-2022-17-10" role="tab" aria-controls="tabpanel_1_vs-2022-17-10" data-tab="vs-2022-17-10" tabindex="0" aria-selected="true">Visual Studio 2022 version 17.10 and later</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_vs-2022-17-1" role="tab" aria-controls="tabpanel_1_vs-2022-17-1" data-tab="vs-2022-17-1" tabindex="-1">Visual Studio 2022 version 17.1 - 17.9</a>
+</li>
+</ul>
+<section id="tabpanel_1_vs-2022-17-10" role="tabpanel" data-tab="vs-2022-17-10">
+
+<ul>
+<li>For <strong>C#</strong> app development using the Windows App SDK, select <strong>WinUI application development</strong>.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/vs-workload-winui.png" alt="A screenshot of the Visual Studio installer UI with the WinUI application development workload selected.">
+</span>
+</p>
+<ul>
+<li>For <strong>C++</strong> app development using the Windows App SDK, select <strong>WinUI application development</strong>.
+<ul>
+<li>Then in the <strong>Installation details</strong> pane, under the <strong>WinUI application development</strong> node, select <strong>C++ WinUI app development tools</strong>. (This will also select any additional required components.)</li>
+</ul>
+</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/vs-workload-winui-cpp.png" alt="A screenshot of the Visual Studio installer UI with the C++ WinUI app development tools selected.">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><em>In Visual Studio 17.10 - 17.12, this workload is called <strong>Windows application development</strong>.</em></p>
+</div>
+</section>
+<section id="tabpanel_1_vs-2022-17-1" role="tabpanel" data-tab="vs-2022-17-1" aria-hidden="true" hidden="hidden">
+
+<ul>
+<li>For <strong>C#</strong> app development using the Windows App SDK, select <strong>.NET Desktop Development</strong>.
+<ul>
+<li>Then in the <strong>Installation details</strong> pane of the installation dialog box, select <strong>Windows App SDK C# Templates</strong> (near the bottom of the list).</li>
+</ul>
+</li>
+<li>For <strong>C++</strong> app development using the Windows App SDK, select <strong>Desktop development with C++</strong>
+<ul>
+<li>Then in the <strong>Installation details</strong> pane of the installation dialog box, select <strong>Windows App SDK C++ Templates</strong> (at the bottom of the list).</li>
+<li>On the <strong>Individual components</strong> tab of the installation dialog box, in the <strong>SDKs, libraries, and frameworks</strong> section, make sure the latest Windows SDK is selected. It will look like <strong>Windows 11 SDK (10.0.22621.0)</strong>. Type &quot;Windows SDK&quot; into the search box to make it easier to find.</li>
+</ul>
+</li>
+</ul>
+</section>
+</div>
+<h2 id="3-create-and-launch-your-first-winui-app">3. Create and launch your first WinUI app</h2>
+<p>Visual Studio project templates include all the files you need to quickly create your app. In fact, after you create your project from a WinUI app template, you'll already have an app that you can run, and then add your code to.</p>
+<p>To create a new project using the WinUI C# Blank App project template:</p>
+<ol>
+<li><p>Open Visual Studio and select <strong>Create a new project</strong> from the launch page. (If Visual Studio is already open to the editor, select <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong>):
+<span class="mx-imgBorder">
+<img src="images/hello-world/start-project.png" alt="Create a new project">
+</span>
+</p>
+</li>
+<li><p>Search for <code>WinUI</code> and select the <code>WinUI Blank App (Packaged)</code> C# project template, then click <strong>Next</strong>:
+<span class="mx-imgBorder">
+<img src="images/hello-world/create-project.png" alt="Blank, packaged WinUI 3 C# desktop app">
+</span>
+</p>
+</li>
+<li><p>Specify a project name, then click <strong>Create</strong>. You can optionally specify a solution name and directory, or leave the defaults. In this image, the <code>Hello World</code> project belongs to a <code>Hello World</code> solution, which will live in <code>C:\Projects\</code>:
+<span class="mx-imgBorder">
+<img src="images/hello-world/configure-project.png" alt="Specify project details">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to use this project to build the complete app in the Next steps section, name the project <code>WinUINotes</code>.</p>
+</div>
+</li>
+<li><p>Click the Debug &quot;Start&quot; button to build and run your project:<br>
+<span class="mx-imgBorder">
+<img src="images/hello-world/start-click.png" alt="Build and run your project">
+</span>
+<br>
+Your project will build, be deployed to your local machine, and run in debug mode:<br>
+<span class="mx-imgBorder">
+<img src="images/hello-world/click-me.png" alt="Hello World project built and running">
+</span>
+</p>
+</li>
+<li><p>To stop debugging, close the app window, or click the debug &quot;Stop&quot; button in Visual Studio.</p>
+</li>
+</ol>
+<h2 id="4-delete-sample-code">4. Delete sample code</h2>
+<p>The <code>MainWindow</code> class included with the project template includes some sample code that needs to be removed to make room for your content.</p>
+<ol>
+<li><p>Double-click <code>MainWindow.xaml</code> in <strong>Solution Explorer</strong> to open it. You should see XAML markup for a <code>StackPanel</code> control.</p>
+</li>
+<li><p>Delete the XAML for the <code>StackPanel</code>. (You'll add your own content in its place as you create your app.)</p>
+<pre><code class="lang-xaml">&lt;!-- ↓ Delete this. ↓ --&gt;
+&lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;Button x:Name=&quot;myButton&quot; Click=&quot;myButton_Click&quot;&gt;Click Me&lt;/Button&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>If you try to run your app now, Visual Studio will throw an error along the lines of <code>The name 'myButton' does not exist in the current context</code>. This is because you deleted the <code>Button</code> control named <code>myButton</code>, but it's still referenced in the <code>MainPage.xaml.cs</code> code-behind file. Delete the reference in the code file, too.</p>
+</li>
+<li><p>Double-click <code>MainWindow.xaml.cs</code> in <strong>Solution Explorer</strong> to open it.</p>
+</li>
+<li><p>Delete the <code>myButton_Click</code> event handler.</p>
+<pre><code class="lang-csharp">public sealed partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        this.InitializeComponent();
+    }
+
+    // ↓ Delete this. ↓
+    private void myButton_Click(object sender, RoutedEventArgs e)
+    {
+        myButton.Content = &quot;Clicked&quot;;
+    }
+    // End delete.
+}
+</code></pre>
+</li>
+<li><p>Save the file by pressing <kbd>CTRL + SHIFT + S</kbd>, clicking the Save All icon in the tool bar, or by selecting the menu <strong>File</strong> &gt; <strong>Save All</strong>.</p>
+</li>
+</ol>
+<h2 id="5-update-to-the-latest-winuiwindows-app-sdk">5. Update to the latest WinUI/Windows App SDK</h2>
+<p>The Windows App SDK (and WinUI, which is part of it) is distributed as a <a href="/nuget/what-is-nuget">NuGet</a> package. This means updates can be released out-of-sync with Windows and Visual Studio. As a result, the Visual Studio template you used to create your project might not reference the latest Windows App SDK NuGet package. To ensure you have the latest features and fixes, you should update your NuGet packages every time you create a new project in Visual Studio.</p>
+<p>To update the Windows App SDK NuGet package for your project:</p>
+<ul>
+<li>In Visual Studio, with your project loaded, select <strong>Tools</strong> &gt; <strong>NuGet Package Manager</strong> &gt; <strong>Manage NuGet Packages for Solution...</strong>.</li>
+<li>If an update is available, it will appear on the Updates page. Check the box next to the listed update. (To include prerelease updates, check the &quot;Include prerelease&quot; option. To learn more about what's included in an update, see the <a href="../windows-app-sdk/stable-channel.html">release notes</a>.)</li>
+<li>Click the <strong>Update</strong> button, then click <strong>Apply</strong> in the Preview changes dialog, then accept the license terms to finish installing the update.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/nuget-update.png" alt="A screenshot of the NuGet package manager in Visual Studio showing a Windows App SDK package update.">
+</span>
+</p>
+<p>Now your project is using the latest WinUI features that are available, and it's ready for you to make it your own.</p>
+<h2 id="next-steps">Next steps</h2>
+<div class="nextstepaction">
+<p><a href="../tutorials/winui-notes/index.yml">Complete a tutorial to create a note app with WinUI</a></p>
+</div>
+<ul>
+<li>To get an idea of what WinUI has to offer, check out the WinUI Gallery app.<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+</li>
+<li>Learn more about <a href="../develop/index.html">WinUI fundamentals</a>.</li>
+<li>Explore <a href="../design/index.html">Fluent Design</a> principles.</li>
+<li>Find <a href="samples.html">samples and tools</a> to help you develop apps more efficiently.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/get-started/start-here.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>What are add-ons </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="What are add-ons ">
+    
+    <meta name="description" content="What are add-ons">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="what-are-add-ons">What are add-ons?</h1>
+
+<p>Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.</p>
+<p>Add-ons are published through Partner Center and require you to have an active developer account. You'll also need to enable the add-ons in your app's code.</p>
+<h2 id="product-type">Product type</h2>
+<p>Here are the types of add-on products you can create:</p>
+<h3 id="consumable">Consumable</h3>
+<p>If the add-on can be purchased, used (consumed), and then purchased again, you'll want to select one of the <strong>consumable</strong> product types. Consumable add-ons are often used for things like in-game currency (gold, coins, etc.) which can be purchased in set amounts and then used up by the customer. For more info, see <a href="/windows/uwp/monetize/enable-consumable-add-on-purchases">Enable consumable add-on purchases</a>.</p>
+<p>There are two types of consumable add-ons:</p>
+<ul>
+<li><strong>Developer-managed consumable</strong>: Balance and fulfillment must be managed within your app. Supported on all OS versions.</li>
+<li><strong>Store-managed consumable</strong>: Balance will be tracked by Microsoft across all of the customer’s devices running Windows 10, version 1607 or later; not supported on any earlier OS versions. To use this option, the parent product must be compiled using Windows 10 SDK version 14393 or later. Also note that you can't submit a Store-managed consumable add-on to the Store until the parent product has been published (though you can create the submission in Partner Center and begin working on it at any time). You'll need to enter the quantity for your Store-managed consumable add-on in the <strong>Properties</strong> step of your submission.</li>
+</ul>
+<p><span id="durable"></span></p>
+<h3 id="durable">Durable</h3>
+<p>Select <strong>Durable</strong> as your product type if your add-on is typically purchased only once. These add-ons are often used to unlock additional functionality in an app.</p>
+<p>The default <strong>Product lifetime</strong> for a durable add-on is <strong>Forever</strong>, which means the add-on never expires. You have the option to set the <strong>Product lifetime</strong> to a different duration in the <a href="enter-app-properties.html">Properties</a> step of the add-on submission process. If you do so, the add-on will expire after the duration you specify (with options from 1-365 days), in which case a customer could purchase it again after it expires.</p>
+<h3 id="subscription">Subscription</h3>
+<p>If you want to charge customers on a recurring basis for your add-on, select <strong>Subscription</strong>.</p>
+<p>After a subscription add-on is initially acquired by a customer, they will continue to be charged at recurring intervals in order to keep using the add-on. The customer can cancel the subscription at any time to avoid further charges. You'll need to specify the subscription period, and whether or not to offer a free trial, in the <strong>Properties</strong> step of your submission.</p>
+<p>Subscription add-ons are only supported for customers running Windows 10, version 1607 or later. The parent app must be compiled using Windows 10 SDK version 14393 or later and it must use the in-app purchase API in the <strong>Windows.Services.Store</strong> namespace instead of the <strong>Windows.ApplicationModel.Store</strong> namespace. For more info, see <a href="/windows/uwp/monetize/enable-subscription-add-ons-for-your-app">Enable subscription add-ons for your app</a>.</p>
+<p>You must submit the parent product before you can publish subscription add-ons to the Store, although you can create the submission in Partner Center and begin working on it at any time.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/add-on/what-are-add-ons.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

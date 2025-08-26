@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Dynamically modify Cortana VCD phrase lists - Cortana UWP design and development </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Dynamically modify Cortana VCD phrase lists - Cortana UWP design and development ">
+    
+    <meta name="description" content="Access and update the list of supported phrases (PhraseList elements) in a Voice Command Definition (VCD) file at run time using the speech recognition result.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dynamically-modify-cortana-vcd-phrase-lists">Dynamically modify Cortana VCD phrase lists</h1>
+
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename &quot;20H1&quot;).</p>
+</div>
+<p>Access and update the list of supported phrases (<strong>PhraseList</strong> elements) in a Voice Command Definition (VCD) file at run time using the speech recognition result.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A voice command is a single utterance with a specific intent, defined in a Voice Command Definition (VCD) file, directed at an installed app via <strong>Cortana</strong>.</p>
+<p>A VCD file defines one or more voice commands, each with a unique intent.</p>
+<p>Voice command definitions can vary in complexity. They can support anything from a single, constrained utterance to a collection of more flexible, natural language utterances, all denoting the same intent.</p>
+</div>
+<p>Dynamically modifying a phrase list at run time is useful if the voice command is specific to a task involving some kind of user-defined, or transient, app data.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Important APIs</strong></p>
+<ul>
+<li><a href="/uwp/api/Windows.ApplicationModel.VoiceCommands"><strong>Windows.ApplicationModel.VoiceCommands</strong></a></li>
+<li><a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD elements and attributes v1.2</strong></a></li>
+</ul>
+</div>
+<p>As an example, let's say you have a travel app where users can enter destinations, and you want users to be able to start the app by saying the app name followed by &quot;Show trip to &lt;destination&gt;&quot;. In the <strong>ListenFor</strong> element itself, you would specify something like: <code>&lt;ListenFor&gt; Show trip to {destination}  &lt;/ListenFor&gt;</code>, where &quot;destination&quot; is the value of the <strong>Label</strong> attribute for the <strong>PhraseList</strong>.</p>
+<p>Updating the phrase list at run time eliminates the need to create a separate <strong>ListenFor</strong> element for each possible destination. Instead, you can dynamically populate <strong>PhraseList</strong> with destinations specified by the user as they enter their itineraries.</p>
+<p>For more info about <strong>PhraseList</strong> and other VCD elements, see the <a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD elements and attributes v1.2</strong></a> reference.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>Prerequisites</strong></p>
+<p>If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.</p>
+<ul>
+<li><a href="/windows/uwp/get-started/your-first-app">Create your first app</a></li>
+<li>Learn about events with <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a></li>
+</ul>
+<p><strong>User experience guidelines</strong></p>
+<p>See <a href="cortana-design-guidelines.html">Cortana design guidelines</a>  for info about how to integrate your app with <strong>Cortana</strong> and <a href="speech-interactions.html">Speech interactions</a> for helpful tips on designing a useful and engaging speech-enabled app.</p>
+</div>
+<h2 id="identify-the-command-and-update-the-phrase-list">Identify the command and update the phrase list</h2>
+<p>Here's an example VCD file that defines a <strong>Command</strong> &quot;showTripToDestination&quot; and a <strong>PhraseList</strong> that defines three options for destination in our <strong>Adventure Works</strong> travel app. As the user saves and deletes destinations in the app, the app updates the options in the <strong>PhraseList</strong>.</p>
+<pre><code class="lang-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;VoiceCommands xmlns=&quot;https://schemas.microsoft.com/voicecommands/1.1&quot;&gt;
+  &lt;CommandSet xml:lang=&quot;en-us&quot; Name=&quot;AdventureWorksCommandSet_en-us&quot;&gt;
+    &lt;AppName&gt; Adventure Works, &lt;/AppName&gt;
+    &lt;Example&gt; Show trip to London &lt;/Example&gt;
+
+    &lt;Command Name=&quot;showTripToDestination&quot;&gt;
+      &lt;Example&gt; show trip to London  &lt;/Example&gt;
+      &lt;ListenFor&gt; show trip to {destination} &lt;/ListenFor&gt;
+      &lt;Feedback&gt; Showing trip to {destination} &lt;/Feedback&gt;
+      &lt;Navigate/&gt;
+    &lt;/Command&gt;
+
+    &lt;PhraseList Label=&quot;destination&quot;&gt;
+      &lt;Item&gt; London &lt;/Item&gt;
+      &lt;Item&gt; Dallas &lt;/Item&gt;
+      &lt;Item&gt; New York &lt;/Item&gt;
+    &lt;/PhraseList&gt;
+
+  &lt;/CommandSet&gt;
+
+&lt;!-- Other CommandSets for other languages --&gt;
+
+&lt;/VoiceCommands&gt;
+</code></pre>
+<p>To update a <strong>PhraseList</strong> element in the VCD file, get the <strong>CommandSet</strong> element that contains the phrase list. Use the <strong>Name</strong> attribute of that <strong>CommandSet</strong> element (<strong>Name</strong> must be unique in the VCD file) as a key to access the <a href="/uwp/api/Windows.Media.SpeechRecognition.VoiceCommandManager"><strong>VoiceCommandManager.InstalledCommandSets</strong></a> property and get the <a href="/uwp/api/Windows.Media.SpeechRecognition.VoiceCommandSet"><strong>VoiceCommandSet</strong></a> reference.</p>
+<p>After you've identified the command set, get a reference to the phrase list that you want to modify and call the <a href="/uwp/api/Windows.Media.SpeechRecognition.VoiceCommandSet"><strong>SetPhraseListAsync</strong></a> method; use the <strong>Label</strong> attribute of the <strong>PhraseList</strong> element and an array of strings as the new content of the phrase list.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you modify a phrase list, the entire phrase list is replaced. If you want to insert new items into a phrase list, you must specify both the existing items and the new items in the call to <a href="/uwp/api/Windows.Media.SpeechRecognition.VoiceCommandSet"><strong>SetPhraseListAsync</strong></a>.</p>
+</div>
+<p>In this example, we update the <strong>PhraseList</strong> shown in the previous example with an additional destination to Phoenix.</p>
+<pre><code class="lang-CSharp">Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinition.VoiceCommandSet commandSetEnUs;
+
+if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
+      InstalledCommandSets.TryGetValue(
+        &quot;AdventureWorksCommandSet_en-us&quot;, out commandSetEnUs))
+{
+  await commandSetEnUs.SetPhraseListAsync(
+    &quot;destination&quot;, new string[] {&quot;London&quot;, &quot;Dallas&quot;, &quot;New York&quot;, &quot;Phoenix&quot;});
+}
+</code></pre>
+<h2 id="remarks">Remarks</h2>
+<p>Using a <strong>PhraseList</strong> to constrain the recognition is appropriate for a relatively small set or words. When the set of words is too large (hundreds of words, for example), or shouldn't be constrained at all, use the <strong>PhraseTopic</strong> element and a <strong>Subject</strong> element to refine the relevance of speech-recognition results to improve scalability.</p>
+<p>In our example, we have a <strong>PhraseTopic</strong> with a <strong>Scenario</strong> of &quot;Search&quot;, further refined by a <strong>Subject</strong> of &quot;City\State&quot;.</p>
+<pre><code class="lang-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;VoiceCommands xmlns=&quot;https://schemas.microsoft.com/voicecommands/1.1&quot;&gt;
+  &lt;CommandSet xml:lang=&quot;en-us&quot; Name=&quot;AdventureWorksCommandSet_en-us&quot;&gt;
+    &lt;AppName&gt; Adventure Works, &lt;/AppName&gt;
+    &lt;Example&gt; Show trip to London &lt;/Example&gt;
+
+    &lt;Command Name=&quot;showTripToDestination&quot;&gt;
+      &lt;Example&gt; show trip to London  &lt;/Example&gt;
+      &lt;ListenFor&gt; show trip to {destination} &lt;/ListenFor&gt;
+      &lt;Feedback&gt; Showing trip to {destination} &lt;/Feedback&gt;
+      &lt;Navigate/&gt;
+    &lt;/Command&gt;
+
+    &lt;PhraseList Label=&quot;destination&quot;&gt;
+      &lt;Item&gt; London &lt;/Item&gt;
+      &lt;Item&gt; Dallas &lt;/Item&gt;
+      &lt;Item&gt; New York &lt;/Item&gt;
+    &lt;/PhraseList&gt;
+
+    &lt;PhraseTopic Label=&quot;destination&quot; Scenario=&quot;Search&quot;&gt;
+      &lt;Subject&gt;City/State&lt;/Subject&gt;
+    &lt;/PhraseTopic&gt;
+
+  &lt;/CommandSet&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="cortana-interactions.html">Cortana interactions in Windows apps</a></li>
+<li><a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2">VCD elements and attributes v1.2</a></li>
+<li><a href="cortana-launch-a-foreground-app-with-voice-commands.html">Activate a foreground app with voice commands through Cortana</a></li>
+<li><a href="cortana-launch-a-background-app-with-voice-commands.html">Activate a background app in Cortana using voice commands</a></li>
+<li><a href="cortana-design-guidelines.html">Cortana design guidelines</a></li>
+<li><a href="https://go.microsoft.com/fwlink/p/?LinkID=619899">Cortana voice command sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Stable channel release notes for the Windows App SDK 1.2 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Stable channel release notes for the Windows App SDK 1.2 ">
+    
+    <meta name="description" content="Provides information about the stable release channel for the Windows App SDK 1.2.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="stable-channel-release-notes-for-the-windows-app-sdk-12">Stable channel release notes for the Windows App SDK 1.2</h1>
+
+<p>The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="downloads-for-the-windows-app-sdk">Downloads for the Windows App SDK</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.</p>
+</div>
+<h3 id="version-125-122303131">Version 1.2.5 (1.2.230313.1)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.</p>
+<ul>
+<li>Fixed issue causing apps to crash during Composition shutdown.</li>
+<li>Fixed issue causing apps to continue running animations even when the screen is off.</li>
+<li>Fixed issue causing mouse and touch input to fail in WebView2 when mouse and keyboard input occurred simultaneously. For more information, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/3266">#3266</a>.</li>
+</ul>
+<h3 id="version-124-122302174">Version 1.2.4 (1.2.230217.4)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.</p>
+<ul>
+<li>Fixed issue causing self-contained apps to not be able to set UAC Settings. For more information, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/3376">#3376</a>.</li>
+<li>Fixed issue causing push notifications to return an inaccurate Expiration time with <code>PushNotificationChannel::ExpirationTime</code>. For more information, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/3330">#3300</a>.</li>
+<li>Fixed issue causing negative numbers to be considered &quot;invalid&quot; when passing a double as a parameter into an x:Bind function.</li>
+<li>Several fixes to update the WinUI VSIX. These updates included simplifying the project template dipAwareness in app.manifest, removing the UWP templates, updating localized resource files, adding the phone id to unblock store submission, and removing the copyright notice and license. For more info see GitHub issues <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5659">#5659</a>, <a href="https://github.com/microsoft/WindowsAppSDK/issues/3205">#3205</a>, <a href="https://github.com/microsoft/WindowsAppSDK/issues/3323">#3323</a>, <a href="https://github.com/microsoft/WindowsAppSDK/issues/3322">#3322</a>, <a href="https://github.com/microsoft/WindowsAppSDK/issues/3143">#3143</a>.</li>
+</ul>
+<h3 id="version-123-12230118102">Version 1.2.3 (1.2.230118.102)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.</p>
+<ul>
+<li>Fixed issue causing WinUI 3 apps to crash when multiple windows are closed.</li>
+<li>Fixed issue causing a crash on app close when two or more references to the ThreadPoolTimer interface are called. For more information, see GitHub issues <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7260">#7260</a> and <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7239">#7239</a>.</li>
+<li>Fixed issue causing all Single-project MSIX apps to run as full trust. For more information, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7766">#7766</a>.</li>
+</ul>
+<h3 id="version-122-122212091">Version 1.2.2 (1.2.221209.1)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.2 release.</p>
+<ul>
+<li>Fixed issue that caused the Store and side-load packages (e.g. from installer, NuGet, and bootstrapper) to fail to install if the other is already installed. For more information, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/3168">#3168</a>.</li>
+<li>Fixed issue causing missing elasticity effects and animation curves when scrolling with a touchpad. For more information, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7874">#7874</a>.</li>
+<li>Fixed issue in ListView causing memory leaks.</li>
+<li>Fixed issue causing the Button template to not respect the Foreground property after mouse hover. For more information, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7208">#7208</a>.</li>
+<li>Fixed issue causing an unneeded exception when there is no MediaPlaybackItem in a MediaElement.</li>
+<li>Fixed issue causing a white frame to appear in MediaPlayerElement on content transitions.</li>
+<li>Fixed additional issues causing App.UnhandledException to not catch exceptions from other threads. For more information, see GitHub issues <a href="https://github.com/microsoft/CsWinRT/issues/1259">#1259</a> and <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5221">#5221</a>.</li>
+</ul>
+<h3 id="version-121-122211161">Version 1.2.1 (1.2.221116.1)</h3>
+<p>This is a servicing release of the Windows App SDK that includes a critical bug fix for the 1.2 release.</p>
+<p>Fixed issue that caused a crash on startup in C++ WinUI 3 apps when adding a WebView2 or TextBox control. For more information see GitHub issues <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7911">#7911</a> &amp; <a href="https://github.com/microsoft/WindowsAppSDK/issues/3117">#3117</a>.</p>
+<h3 id="new-and-updated-features-and-known-issues-for-version-12">new and updated features and known issues for version 1.2</h3>
+<p>The following sections describe new and updated features and known issues for 1.2.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Visual Studio 2019 and .NET 5 is no longer supported for building C# apps (see <a href="https://github.com/microsoft/WindowsAppSDK/discussions/2879">Windows App SDK 1.2 moving to C# WinRT 2.0</a>). You will need Visual Studio 2022 and one of the following .NET SDK versions: 6.0.401 (or later), 6.0.304, 6.0.109. When released, WinAppSDK 1.2 will support .NET 7 as well.</p>
+<p>To update your .NET SDK version, install the latest version of Visual Studio 2022 or visit <a href="https://dotnet.microsoft.com/download">.NET Downloads</a>. When updating your NuGet package without the required .NET SDK version, you will see an error like: <em>&quot;This version of WindowsAppSDK requires .NET 6+ and WinRT.Runtime.dll version 2.0 or greater.&quot;</em>. To update the project from .NET 5.0 to .NET 6.0, open the project file and change &quot;TargetFramework&quot; to <code>net6.0</code> and &quot;Target OS version&quot; to the appropriate value (such as <code>net6.0-windows10.0.19041.0</code>).</p>
+</div>
+<h4 id="third-party-widgets-in-windows">Third-party Widgets in Windows</h4>
+<p>The widgets board was first introduced in Windows 11 and was limited to displaying built-in widgets. Widgets are small UI containers that display text and graphics on the widgets board, and are associated with an app installed on the device. With Windows App SDK, as third party developers you can now create widgets for your packaged Win32 apps and test them locally on the Windows 11 widgets board.</p>
+<p>For more information about widgets, check out <a href="/windows/apps/design/widgets/">Widgets Overview</a>.</p>
+<p>To get started developing widgets for your app, check out the <a href="/windows/apps/develop/widgets/widget-service-providers">Widget service providers</a> development docs and <a href="/windows/apps/design/widgets/widgets-design-fundamentals">Widgets design fundamentals</a> for prerequisites, guidance and best practices.</p>
+<p>Prerequisites for this release include:</p>
+<ul>
+<li>Developer mode enabled on the development machine.</li>
+<li>The development machine is running a version of Windows from the Dev Channel of Windows Insider Preview (WIP) that is greater than or equal to 25217 with widgets board version 521.20060.1205.0 or above.</li>
+</ul>
+<p><strong>Known limitations when developing Widgets:</strong></p>
+<ul>
+<li>Third-party Widgets can only be tested locally on devices enrolled in WIP for this preview release.</li>
+<li>Widgets can only be created for packaged, Win32 apps. Widgets for Progressive Web Apps (PWA) are planned to be supported as part of <a href="/deployedge/microsoft-edge-release-schedule">Microsoft Edge 108</a>.</li>
+</ul>
+<h4 id="displayinformation">DisplayInformation</h4>
+<p>Windows desktop apps  can now support High Dynamic Range (HDR) and <a href="https://devblogs.microsoft.com/directx/auto-color-management/">Auto Color Management</a> (ACM) through the DisplayInformation class in WinAppSDK. The DisplayInformation class enables you to monitor display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.</p>
+<h4 id="winui-3">WinUI 3</h4>
+<p>WinUI 3 apps can play audio and video with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement"><strong>MediaPlayerElement</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols"><strong>MediaTransportControls</strong></a> media playback controls. For more info on how and when to use media controls, see <a href="/windows/apps/design/controls/media-playback">Media players</a>.</p>
+<p>WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge"><strong>InfoBadge</strong></a> control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for <a href="/windows/uwp/get-started/winui2/release-notes/winui-2.7">WinUI 2.7</a> and <a href="/windows/uwp/get-started/winui2/release-notes/winui-2.8">WinUI 2.8</a>.</p>
+<p><strong>Fixed issues:</strong></p>
+<ul>
+<li>Acrylic backdrop material with <a href="/windows/windows-app-sdk/api/winrt/Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController">DesktopAcrylicController</a> is now supported in Windows 10 apps. For more information, check out issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7112">7112</a> on GitHub.</li>
+<li>Fixed various issues that caused routing of App.UnhandledException to fail. For more information, check out issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5221">5221</a> on GitHub. Regarding the remaining issues, workarounds are documented at the following GitHub issues and will be resolved in a future 1.2 release:
+<ul>
+<li><a href="https://github.com/microsoft/CsWinRT/issues/1258">App_UnhandledException's UnhandledExceptionEventArgs.Exception can only be fetched once - should be cached</a></li>
+<li><a href="https://github.com/microsoft/CsWinRT/issues/1259">Do_Abi_* event/callback handlers should wrap invocations with RoReportUnhandledError</a></li>
+</ul>
+</li>
+<li>Fixed issue causing ListView styles to regress and change from WinAppSDK 1.1. For more information, check out issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7666">7666</a> on GitHub.</li>
+<li>Fixed issue causing the incorrect Mica fallback background color to appear when the app is inactive. For more information, check out issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7801">7801</a> on GitHub.</li>
+</ul>
+<p><strong>Known limitations:</strong></p>
+<ul>
+<li>When creating a new WinUI 3 project with Visual Studio 2022 17.4.0, it will reference a preview version of the WinAppSDK. Use NuGet Package Manager to update the reference to this release.</li>
+<li>Setting MediaPlayerElement.Source to relative URI (ms-appx/ms-resource) fails in unpackaged apps. The recommended workaround is to convert the relative ms-appx:/// URI to a fully resolved file:/// URI.</li>
+</ul>
+<h4 id="trimming-for-apps-developed-with-net">Trimming for apps developed with .NET</h4>
+<p>.NET developers can now publish trimmed WinAppSDK apps. With CsWinRT 2.0, the C#/WinRT projections distributed in WinAppSDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.</p>
+<p>For more details on how to enable trimming, trimming limitations (such as reflection against trimmable types), and trim warnings, see <a href="/dotnet/core/deploying/trimming/trim-self-contained">Trim self-contained deployments and executables</a>. Developers should thoroughly test their apps after trimming to ensure everything works as expected. For more information, check out issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/2478">2478</a> on GitHub.</p>
+<h4 id="support-for-visual-studio-arm64">Support for Visual Studio Arm64</h4>
+<p>As early as Project Reunion (now WinAppSDK) 0.5, apps developed with WinAppSDK were able to run on Arm64. Starting with Visual Studio 17.3 Preview 2, you can develop native applications with WinAppSDK on Arm64 devices.</p>
+<p>To get started developing on an Arm64 device, see <a href="/windows/arm/overview">Windows on Arm</a> and <a href="https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/">Arm64 Visual Studio</a>.</p>
+<h4 id="notifications">Notifications</h4>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder"><strong>AppNotificationBuilder</strong></a> introduced as an alternative to XML payload for creating and defining App Notifications.</p>
+<p>For usage information, see the <a href="https://github.com/microsoft/WindowsAppSDK/blob/release/1.2-preview1/specs/AppNotifications/AppNotificationContentSpec/AppNotificationBuilder-spec.md">AppNotificationBuilder spec</a> on GitHub.</p>
+<p>Also see <a href="/windows/apps/windows-app-sdk/notifications/app-notifications/app-notifications-quickstart">Quickstart: App notifications in the Windows App SDK</a> for an example of how to create a desktop Windows application that sends and receives local app notifications.</p>
+<p><strong>Breaking change:</strong></p>
+<p>For push notifications, when making a channel request call, apps will need to use the Azure Object ID instead of the Azure App ID. See <a href="/windows/apps/windows-app-sdk/notifications/push-notifications/push-quickstart">Quickstart: Push notification in the Windows App SDK</a> for details on finding your Azure Object ID.</p>
+<p><strong>Fixed issue:</strong></p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported"><strong>PushNotificationManager.IsSupported</strong></a> will perform a check for elevated mode. It will return <code>false</code> if the app is elevated.</p>
+<p><strong>Known limitations (Notifications):</strong></p>
+<ul>
+<li>In <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationscenario"><strong>AppNotificationScenario</strong></a>, <code>Urgent</code> is only supported for Windows builds 19041 and later. You can use <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.isurgentscenariosupported"><strong>AppNotificationBuilder.IsUrgentScenarioSupported</strong></a> to check whether the feature is available at runtime.</li>
+<li>In <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton"><strong>AppNotificationButton</strong></a>, <code>hint-toolTip</code> and <code>hint-buttonStyle</code> are only supported for builds 19041 and later. You can use <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton.isbuttonstylesupported"><strong>IsButtonStyleSupported</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton.istooltipsupported"><strong>IsToolTipSupported</strong></a> to check whether the feature is available at runtime.</li>
+<li>In <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement"><strong>MediaPlayerElement</strong></a>, when used in XAML markup for an unpackaged app, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source"><strong>Source</strong></a> property cannot be set with an ms-appx or ms-resource URI. As an alternative, set the Source using a file URI, or set from code.</li>
+</ul>
+<h4 id="windowing">Windowing</h4>
+<p>Full title bar customization is now available on Windows 10, version 1809 and later through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a> class. You can set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar"><strong>AppWindowTitleBar.ExtendsContentIntoTitleBar</strong></a> to <code>true</code> to extend content into the title bar area, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles#microsoft-ui-windowing-appwindowtitlebar-setdragrectangles(windows-graphics-rectint32())"><strong>SetDragRectangles</strong></a> to define drag regions (in addition to other customization options).</p>
+<p>If you've been using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported"><strong>AppWindowTitleBar.IsCustomizationSupported</strong></a> property to check whether you can call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a> APIs, it now returns <code>true</code> on supported Windows App SDK Windows 10 versions (1809 and later).</p>
+<p><strong>Known limitations (Windowing):</strong></p>
+<p>Basic title bar customizations are not supported on Windows 10. These include <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.backgroundcolor"><strong>BackgroundColor</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.inactivebackgroundcolor"><strong>InactiveBackgroundColor</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.foregroundcolor"><strong>ForegroundColor</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.inactiveforegroundcolor"><strong>InactiveForegroundColor</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iconshowoptions"><strong>IconShowOptions</strong></a>. If you call these properties, they will be ignored silently. All other <strong>AppWindowTitleBar</strong> APIs work in Windows 10, version 1809 and later. For the caption button color APIs (among others) and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height"><strong>Height</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar"><strong>ExtendsContentIntoTitleBar</strong></a> must be set to <code>true</code>, otherwise they will also be ignored silently.</p>
+<h4 id="access-control">Access control</h4>
+<p>Introduced <a href="/windows/windows-app-sdk/api/win32/security.accesscontrol/">security.accesscontrol.h</a> with the <a href="/windows/windows-app-sdk/api/win32/security.accesscontrol/nf-security-accesscontrol-getsecuritydescriptorforappcontainernames?branch=main"><strong>GetSecurityDescriptorForAppContainerNames</strong></a> function to ease and streamline named object sharing between packaged processes and general Win32 APIs. This method takes a list of Package Family Names (PFNs) and access masks, and returns a security descriptor. For more information, see the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/GetSecurityDescriptorForAppContainerNames/GetSecurityDescriptorForAppContainerNames.md">GetSecurityDescriptorForAppContainerNames spec</a> on GitHub.</p>
+<h4 id="other-limitations-and-known-issues">Other limitations and known issues</h4>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When you reference WinAppSDK 1.2 from a project you might see an error similar to: &quot;<em>Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194.</em>&quot;, which is caused by incompatible references to the package from the app project and the WinAppSDK package. To resolve this you can update the reference in the project to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools.</p>
+</div>
+<ul>
+<li>Unit tests may fail with a <code>REGDB_E_CLASSNOTREG</code> error in the Tests output pane in Visual Studio. As a workaround, you can add <code>&lt;WindowsAppContainer&gt;true&lt;/WindowsAppContainer&gt;</code> to your project file.</li>
+<li>.NET PublishSingleFile isn't supported.</li>
+<li>Bootstrapper and Undocked RegFree WinRT auto-initializer defaults is (now) only set for projects that produce an executable (OutputType=Exe or WinExe). This prevents adding auto-initializers into class library DLLs and other non-executables by default.
+<ul>
+<li>If you need an auto-initializer in a non-executable (e.g. a test DLL loaded by a generic executable that doesn't initialize the Bootstrapper) you can explicitly enable an auto-initializer in your project via <code>&lt;WindowsAppSdkBootstrapInitialize&gt;true&lt;/WindowsAppSdkBootstrapInitialize&gt;</code> or <code>&lt;WindowsAppSdkUndockedRegFreeWinRTInitialize&gt;true&lt;/WindowsAppSdkUndockedRegFreeWinRTInitialize&gt;</code>.</li>
+</ul>
+</li>
+<li>Microsoft.WindowsAppRuntime.Release.Net.dll is always the Arm64 binary and does not work for x86 and x64 apps. When explicitly calling the Bootstrap API do not use the Microsoft.WindowsAppRuntime.Release.Net.dll assembly. As a workaround you can include version constants in this source file distributed with the NuGet package: '..\include\WindowsAppSDK-VersionInfo.cs' or use the auto-initializer.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.2.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

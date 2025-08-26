@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Process audio frames with MediaFrameReader </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Process audio frames with MediaFrameReader ">
+    
+    <meta name="description" content="This article shows you how to use a MediaFrameReader with MediaCapture to get AudioFrames containing audio data from a capture source.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="process-audio-frames-with-mediaframereader">Process audio frames with MediaFrameReader</h1>
+
+<p>This article shows you how to use a <a href="/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader"><strong>MediaFrameReader</strong></a> with <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> to get audio data from a media frame source. To learn about using a <strong>MediaFrameReader</strong> to get image data, such as from a color, infrared, or depth camera, see <a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a>. That article provides a general overview of the frame reader usage pattern and discusses some additional features of the <strong>MediaFrameReader</strong> class, such as using <strong>MediaFrameSourceGroup</strong> to retrieve frames from multiple sources at the same time.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The features discussed in this article are only available starting with Windows 10, version 1803.</p>
+</div>
+<h2 id="setting-up-your-project">Setting up your project</h2>
+<p>The process for acquiring audio frames is largely the same as acquiring other types of media frames. As with any app that uses <strong>MediaCapture</strong>, you must declare that your app uses the <em>webcam</em> capability before attempting to access any camera device. If your app will capture from an audio device, you should also declare the <em>microphone</em> device capability.</p>
+<h2 id="select-frame-sources-and-frame-source-groups">Select frame sources and frame source groups</h2>
+<p>The first step in capturing audio frames is to initialize a <a href="/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource"><strong>MediaFrameSource</strong></a> representing the source of the audio data, such as a microphone or other audio capture device. To do this, you must create a new instance of the <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> object. For this example, the only initialization setting for the <strong>MediaCapture</strong> is setting the <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode"><strong>StreamingCaptureMode</strong></a> to indicate that we want to stream audio from the capture device.</p>
+<p>After calling <a href="/uwp/api/windows.media.capture.mediacapture.initializeasync"><strong>MediaCapture.InitializeAsync</strong></a>, you can get the list of accessible media frame sources with the <a href="/uwp/api/windows.media.capture.mediacapture.framesources"><strong>FrameSources</strong></a> property. This example selects all frame sources where the <a href="/uwp/api/windows.media.capture.frames.mediaframesourceinfo"><strong>MediaFrameSourceInfo</strong></a> describing the frame source has a  <a href="/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype"><strong>MediaStreamType</strong></a> of <strong>Audio</strong>, indicating that the media source produces audio data.</p>
+<p>If the query returns one or more frame sources, you can check the <a href="/uwp/api/windows.media.capture.frames.mediaframesource.currentformat"><strong>CurrentFormat</strong></a> property to see if the source supports the audio format you desire - in this example, float audio data. Check the <a href="/uwp/api/windows.media.capture.frames.mediaframeformat.audioencodingproperties"><strong>AudioEncodingProperties</strong></a> to make sure the audio encoding you desire is supported by the source.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="create-and-start-the-mediaframereader">Create and Start the MediaFrameReader</h2>
+<p>Get a new instance of <strong>MediaFrameReader</strong> by calling <a href="/uwp/api/windows.media.capture.mediacapture.createframereaderasync#Windows_Media_Capture_MediaCapture_CreateFrameReaderAsync_Windows_Media_Capture_Frames_MediaFrameSource_"><strong>MediaCapture.CreateFrameReaderAsync</strong></a>, passing the <strong>MediaFrameSource</strong> object you selected in the previous step. By default, audio frames are obtained in buffered mode, making it less likely that frames will be dropped, although this can still occur if you are not processing audio frames fast enough and fill up the system's alloted memory buffer.</p>
+<p>Register a handler for the <a href="/uwp/api/windows.media.capture.frames.mediaframereader.framearrived"><strong>MediaFrameReader.FrameArrived</strong></a> event, which is raised by the system when a new frame of audio data is available. Call <a href="/uwp/api/windows.media.capture.frames.mediaframereader.startasync"><strong>StartAsync</strong></a> to begin the acquisition of audio frames. If the frame reader fails to start, the status value returned from the call will have a value other than <a href="/uwp/api/windows.media.capture.frames.mediaframereaderstartstatus"><strong>Success</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>FrameArrived</strong> event handler, call <a href="/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe"><strong>TryAcquireLatestFrame</strong></a> on the <strong>MediaFrameReader</strong> object passed as the sender to the handler to attempt to retrieve a reference to the latest media frame. Note that this object can be null, so you should always check before using the object. The typs of media frame wrapped in the <strong>MediaFrameReference</strong> returned from <strong>TryAcquireLatestFrame</strong> depends on what type of frame source or sources you configured the frame reader to acquire. Since the frame reader in this example was set up to acquire audio frames, it gets the underlying frame using the <a href="/uwp/api/windows.media.capture.frames.mediaframereference.audiomediaframe"><strong>AudioMediaFrame</strong></a> property.</p>
+<p>This <strong>ProcessAudioFrame</strong> helper method in the example below shows how to get an <a href="/uwp/api/windows.media.audioframe"><strong>AudioFrame</strong></a> which provides information such as the timestamp of the frame and whether it is discontinuous from the <strong>AudioMediaFrame</strong> object. To read or process the audio sample data, you will need to get the <a href="/uwp/api/windows.media.audiobuffer"><strong>AudioBuffer</strong></a> object from the <strong>AudioMediaFrame</strong> object, create an <a href="/uwp/api/windows.foundation.imemorybufferreference"><strong>IMemoryBufferReference</strong></a>, and then call the COM method <strong>IMemoryBufferByteAccess::GetBuffer</strong> to retrieve the data. See the note below the code listing for more information on accessing native buffers.</p>
+<p>The format of the data depends on the frame source. In this example, when selecting a media frame source, we explicitly made certain that the selected frame source used two channels of float data. The rest of the example code shows how to determine the duration and sample count for the audio data in the frame.</p>
+<div class="lang-csharp">
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In order to do operate on the audio data, you must access a native memory buffer. To do this, you must use the <strong>IMemoryBufferByteAccess</strong> COM interface by including the code listing below. Operations on the native buffer must be performed in a method that uses the <strong>unsafe</strong> keyword. You also need to check the box to allow unsafe code in the <strong>Build</strong> tab of the <strong>Project -&gt; Properties</strong> dialog.</p>
+</div>
+<div class="lang-csharp">
+</div>
+<h2 id="additional-information-on-using-mediaframereader-with-audio-data">Additional information on using MediaFrameReader with audio data</h2>
+<p>You can retrieve the <a href="/uwp/api/Windows.Media.Devices.AudioDeviceController"><strong>AudioDeviceController</strong></a> associated with the audio frame source by accessing the <a href="/uwp/api/windows.media.capture.frames.mediaframesource.controller"><strong>MediaFrameSource.Controller</strong></a> property. This object can be used to get or set the stream properties of the capture device or to control the capture level. The following example mutes the audio device so that frames continue to be acquired by the frame reader, but all samples have value of 0.</p>
+<div class="lang-csharp">
+</div>
+<p>You can use an <a href="/uwp/api/windows.media.audioframe"><strong>AudioFrame</strong></a> object to pass audio data captured by a media frame source into an <a href="/uwp/api/windows.media.audio.audiograph"><strong>AudioGraph</strong></a>. Pass the frame into the <a href="/uwp/api/windows.media.audio.audioframeinputnode.addframe"><strong>AddFrame</strong></a> method of an <a href="/uwp/api/windows.media.audio.audioframeinputnode"><strong>AudioFrameInputNode</strong></a>. For more information on using audio graphs to capture, process, and mix audio signals, see <a href="/windows/uwp/audio-video-camera/audio-graphs">Audio graphs</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a></li>
+<li><a href="camera.html">Camera</a></li>
+<li><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames">Camera frames sample</a></li>
+<li><a href="/windows/uwp/audio-video-camera/audio-graphs">Audio graphs</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/process-audio-frames-with-mediaframereader.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

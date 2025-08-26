@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use Grid and StackPanel to create a simple app. </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use Grid and StackPanel to create a simple app. ">
+    
+    <meta name="description" content="This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-use-grid-and-stackpanel-to-create-a-simple-weather-app">Tutorial: Use Grid and StackPanel to create a simple weather app</h1>
+
+<p>Use XAML to create the layout for a simple weather app using the <strong>Grid</strong> and <strong>StackPanel</strong> elements. With these tools you can make great looking apps that work on any device running Windows. This tutorial takes 10-20 minutes.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.xaml.controls.grid">Grid class</a>, <a href="/uwp/api/windows.ui.xaml.controls.stackpanel">StackPanel class</a></p>
+</blockquote>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) <a href="../../windows-app-sdk/set-up-your-development-environment.html">Install tools for the Windows App SDK</a>.</li>
+<li>Knowledge of how to create a basic &quot;Hello World&quot; app by using XAML and C#. If you don't have that yet, <a href="/windows/uwp/get-started/create-a-hello-world-app-xaml-universal">click here to learn how to create a &quot;Hello World&quot; app</a>.</li>
+</ul>
+<h2 id="step-1-create-a-blank-app">Step 1: Create a blank app</h2>
+<ol>
+<li>In Visual Studio menu, select <strong>File</strong> &gt; <strong>New Project</strong>.</li>
+<li>In the left pane of the <strong>New Project</strong> dialog box, select <strong>Visual C#</strong> &gt; <strong>Windows</strong> &gt; <strong>Universal</strong> or <strong>Visual C++</strong> &gt; <strong>Windows</strong> &gt; <strong>Universal</strong>.</li>
+<li>In the center pane, select <strong>Blank App</strong>.</li>
+<li>In the <strong>Name</strong> box, enter <strong>WeatherPanel</strong>, and select <strong>OK</strong>.</li>
+<li>To run the program, select <strong>Debug</strong> &gt; <strong>Start Debugging</strong> from the menu, or select F5.</li>
+</ol>
+<h2 id="step-2-define-a-grid">Step 2: Define a Grid</h2>
+<p>In XAML a <strong>Grid</strong> is made up of a series of rows and columns. By specifying the row and column of an element within a <strong>Grid</strong>, you can place and space other elements within a user interface. Rows and columns are defined with the <strong>RowDefinition</strong> and <strong>ColumnDefinition</strong> elements.</p>
+<p>To start creating a layout, open <strong>MainPage.xaml</strong> by using the <strong>Solution Explorer</strong>, and replace the automatically generated <strong>Grid</strong> element with this code.</p>
+<pre><code class="lang-xml">&lt;Grid&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition Width=&quot;3*&quot;/&gt;
+        &lt;ColumnDefinition Width=&quot;5*&quot;/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;2*&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>The new <strong>Grid</strong> creates a set of two rows and columns, which defines the layout of the app interface. The first column has a <strong>Width</strong> of &quot;3*&quot;, while the second has &quot;5*&quot;, dividing the horizontal space between the two columns at a ratio of 3:5. In the same way, the two rows have a <strong>Height</strong> of &quot;2*&quot; and &quot;*&quot; respectively, so the <strong>Grid</strong> allocates two times as much space for the first row as for the second (&quot;*&quot; is the same as &quot;1*&quot;). These ratios are maintained even if the window is resized or the device is changed.</p>
+<p>To learn about other methods of sizing rows and columns, see <a href="layouts-with-xaml.html">Define layouts with XAML</a>.</p>
+<p>If you run the application now you won't see anything except a blank page, because none of the <strong>Grid</strong> areas have any content. To show the <strong>Grid</strong> let's give it some color.</p>
+<h2 id="step-3-color-the-grid">Step 3: Color the Grid</h2>
+<p>To color the <strong>Grid</strong> we add three <strong>Border</strong> elements, each with a different background color. Each is also assigned to a row and column in the parent <strong>Grid</strong> by using the <strong>Grid.Row</strong> and <strong>Grid.Column</strong> attributes. The values of these attributes default to 0, so you don't need to assign them to the first <strong>Border</strong>. Add the following code to the <strong>Grid</strong> element after the row and column definitions.</p>
+<pre><code class="lang-xml">&lt;Border Background=&quot;#2f5cb6&quot;/&gt;
+&lt;Border Grid.Column =&quot;1&quot; Background=&quot;#1f3d7a&quot;/&gt;
+&lt;Border Grid.Row=&quot;1&quot; Grid.ColumnSpan=&quot;2&quot; Background=&quot;#152951&quot;/&gt;
+</code></pre>
+<p>Notice that for the third <strong>Border</strong> we use an extra attribute, <strong>Grid.ColumnSpan</strong>, which causes this <strong>Border</strong> to span both columns in the lower row. You can use <strong>Grid.RowSpan</strong> in the same way, and together these attributes let you span an element over any number of rows and columns. The upper-left corner of such a span is always the <strong>Grid.Column</strong> and <strong>Grid.Row</strong> specified in the element attributes.</p>
+<p>If you run the app, the result looks something like this.</p>
+<p><img src="images/grid-weather-1.png" alt="Coloring the Grid"></p>
+<h2 id="step-4-organize-content-by-using-stackpanel-elements">Step 4: Organize content by using StackPanel elements</h2>
+<p><strong>StackPanel</strong> is the second UI element we'll use to create our weather app. The <strong>StackPanel</strong> is a fundamental part of many basic app layouts, allowing you to stack elements vertically or horizontally.</p>
+<p>In the following code, we create two <strong>StackPanel</strong> elements and fill each with three <strong>TextBlocks</strong>. Add these <strong>StackPanel</strong> elements to the <strong>Grid</strong> below the <strong>Border</strong> elements from Step 3. This causes the <strong>TextBlock</strong> elements to render on top of the colored <strong>Grid</strong> we created earlier.</p>
+<pre><code class="lang-xml">&lt;StackPanel Grid.Column=&quot;1&quot; Margin=&quot;40,0,0,0&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;TextBlock Foreground=&quot;White&quot; FontSize=&quot;25&quot; Text=&quot;Today - 64° F&quot;/&gt;
+    &lt;TextBlock Foreground=&quot;White&quot; FontSize=&quot;25&quot; Text=&quot;Partially Cloudy&quot;/&gt;
+    &lt;TextBlock Foreground=&quot;White&quot; FontSize=&quot;25&quot; Text=&quot;Precipitation: 25%&quot;/&gt;
+&lt;/StackPanel&gt;
+&lt;StackPanel Grid.Row=&quot;1&quot; Grid.ColumnSpan=&quot;2&quot; Orientation=&quot;Horizontal&quot;
+            HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;TextBlock Foreground=&quot;White&quot; FontSize=&quot;25&quot; Text=&quot;High: 66°&quot; Margin=&quot;0,0,20,0&quot;/&gt;
+    &lt;TextBlock Foreground=&quot;White&quot; FontSize=&quot;25&quot; Text=&quot;Low: 43°&quot; Margin=&quot;0,0,20,0&quot;/&gt;
+    &lt;TextBlock Foreground=&quot;White&quot; FontSize=&quot;25&quot; Text=&quot;Feels like: 63°&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>In the first <strong>Stackpanel</strong>, each <strong>TextBlock</strong> stacks vertically below the next. This is the default behavior of a StackPanel, so we don't need to set the <strong>Orientation</strong> attribute. In the second StackPanel, we want the child elements to stack horizontally from left to right, so we set the <strong>Orientation</strong> attribute to &quot;Horizontal&quot;. We must also set the <strong>Grid.ColumnSpan</strong> attribute to &quot;2&quot;, so that the text is centered over the lower <strong>Border</strong>.</p>
+<p>If you run the app now, you'll see something like this.</p>
+<p><img src="images/grid-weather-2.png" alt="Adding StackPanels"></p>
+<h2 id="step-5-add-an-image-icon">Step 5: Add an image icon</h2>
+<p>Finally, let's fill the empty section in our <strong>Grid</strong> with an image that represents today's weather—something that says &quot;partially cloudy.&quot;</p>
+<p>Download the image below and save it as a PNG named &quot;partially-cloudy&quot;.</p>
+<p><img src="images/partially-cloudy.PNG" alt="Partially cloudy"></p>
+<p>In the <strong>Solution Explorer</strong>, right click the <strong>Assets</strong> folder, and select <strong>Add</strong> -&gt; <strong>Existing Item...</strong> Find partially-cloudy.png in the browser that pops up, select it, and click <strong>Add</strong>.</p>
+<p>Next, in <strong>MainPage.xaml</strong>, add the following <strong>Image</strong> element below the StackPanels from Step 4.</p>
+<pre><code class="lang-xml">&lt;Image Margin=&quot;20&quot; Source=&quot;Assets/partially-cloudy.png&quot;/&gt;
+</code></pre>
+<p>Because we want the Image in the first row and column, we don't need to set its <strong>Grid.Row</strong> or <strong>Grid.Column</strong> attributes, allowing them to default to &quot;0&quot;.</p>
+<p>And that's it! You've successfully created the layout for a simple weather application. If you run the application by pressing <strong>F5</strong>, you should see something like this:</p>
+<p><img src="images/grid-weather-3.PNG" alt="Weather pane sample"></p>
+<p>If you like, try experimenting with the layout above, and explore different ways you might represent weather data.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li>For an introduction to designing Windows app layouts, see <a href="../basics/app-silhouette.html">Windows app silhouettes</a></li>
+<li>To learn about creating responsive layouts that adapt to different screen sizes, see <a href="layouts-with-xaml.html">Define Page Layouts with XAML</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/layout/grid-tutorial.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

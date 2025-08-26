@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant ">
+    
+    <meta name="description" content="The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI 3](../../winui/index.md) app that uses the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="migrate-from-uwp-to-the-windows-app-sdk-with-the-net-upgrade-assistant">Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant</h1>
+
+<p>The .NET Upgrade Assistant (see <a href="/dotnet/core/porting/upgrade-assistant-overview">Overview of the .NET Upgrade Assistant</a>) is a Visual Studio extension (recommended), and a command-line tool, that can assist with migrating a C# Universal Windows Platform (UWP) app to a <a href="/windows/apps/winui/">WinUI 3</a> app that uses the Windows App SDK.</p>
+<p>Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features. If you find issues related to the .NET Upgrade Assistant, then you can file them within Visual Studio by selecting <strong>Help</strong> &gt; <strong>Send Feedback</strong> &gt; <strong>Report a Problem</strong>.</p>
+<p>Also see the <a href="https://github.com/dotnet/upgrade-assistant">Upgrade Assistant</a> GitHub repository. Options for running the tool on the command-line are documented there.</p>
+<h2 id="install-the-net-upgrade-assistant">Install the .NET Upgrade Assistant</h2>
+<p>You can install the .NET Upgrade Assistant as a Visual Studio extension or as a .NET command-line tool. For more info, see <a href="/dotnet/core/porting/upgrade-assistant-install">Install the .NET Upgrade Assistant</a>.</p>
+<h2 id="summary">Summary</h2>
+<p>When you use the .NET Upgrade Assistant to migrate your UWP app, here are the high-level steps and stages in the migration process that the tool carries out.</p>
+<ul>
+<li>Optionally copies your project, and migrates the copy; leaving your original project unchanged.</li>
+<li>Optionally migrates your project in-place (in the same folders and files, without renaming folders); and doesn't make a copy.</li>
+<li>Upgrades your project from the .NET Framework project format to the latest .NET SDK project format.</li>
+<li>Cleans up NuGet package references. In addition to the packages referenced by your app, the <code>packages.config</code> file contains references to the dependencies of those packages. For example, if you added reference to package <strong>A</strong>, which depends on package <strong>B</strong>, then both packages would be referenced in the <code>packages.config</code> file. In the new project system, only the reference to package <strong>A</strong> is required. So this step analyzes the package references, and removes those that aren't required. Your app is still referencing .NET Framework assemblies. Some of those assemblies might be available as NuGet packages. So this step analyzes those assemblies, and references the appropriate NuGet package.</li>
+<li>Targets .NET 6, and the Windows App SDK.</li>
+<li>Changes the target framework moniker (TFM) (see <a href="/dotnet/standard/frameworks">Target frameworks in SDK-style projects</a>) from .NET Framework to the suggested SDK. For example, <code>net6.0-windows</code>.</li>
+<li>Migrates your UWP source code from WinUI 2 to WinUI 3, performing source-specific code changes.</li>
+<li>Adds/updates any template, config, and code files. For example, adding necessary publishing profiles, <code>App.xaml.cs</code>, <code>MainWindow.xaml.cs</code>, <code>MainWindow.xaml</code>, and others.</li>
+<li>Update namespaces, and adds <strong>MainPage</strong> navigation.</li>
+<li>Attempts to detect and fix APIs that are different between UWP and the Windows App SDK, and uses <strong>Task List</strong> TODOs to mark APIs that are no longer supported.</li>
+</ul>
+<p>As it runs, the tool also aims to provide migration guidance in the form of warning messages within the tool's output, and <strong>Task List</strong> TODOs in the form of comments within your project's source code (for example, for cases where completely automated migration of your UWP source code isn't possible). A typical <strong>Task List</strong> TODO includes a link to a topic in this migration documentation. As the developer, you're always in control of the migration process.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To see all of the TODOs that the tool has generated, look in the <strong>Task list</strong> in Visual Studio.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>After the tool has finished running, there are some follow-up steps you can choose to do if needed. You can move your code from <code>App.xaml.old.cs</code> to <code>App.xaml.cs</code>; and you can restore <code>AssemblyInfo.cs</code> from the backup that the tool creates.</p>
+</div>
+<h2 id="what-the-tool-supports">What the tool supports</h2>
+<p>This release of the .NET Upgrade Assistant is currently in preview, and is receiving frequent updates. The tool currently supports only the C# programming language; not C++. And in most cases with this release, your project will require additional effort from you to complete the migration.</p>
+<p>The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via <strong>Task List</strong> TODOs). For more information about what to consider before migrating, see <a href="what-is-supported.html">What's supported when migrating from UWP to WinUI 3</a>.</p>
+<p>Because of the following limitations of the current release of the .NET Upgrade Assistant, you might choose to wait for a future release before migrating your app:</p>
+<ul>
+<li>Migrating from <a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>ApplicationView</strong></a> APIs isn't supported.</li>
+<li>Migrating from <a href="/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync"><strong>AppWindow</strong></a>-related APIs isn't supported.</li>
+</ul>
+<p>Where possible, the tool tries to generate a warning; and it intentionally causes your code not to compile until you change it.</p>
+<ul>
+<li>Custom views aren't supported. For example, you won't receive a warning or a fix for a custom dialog that extends <a href="/uwp/api/windows.ui.popups.messagedialog"><strong>MessageDialog</strong></a>, and calls an API incorrectly.</li>
+<li>Windows Runtime Components aren't supported.</li>
+</ul>
+<ul>
+<li>Multi-window apps might not be migrated correctly.</li>
+<li>A project that follows a non-standard file structure (such as <code>App.xaml</code> and <code>App.xaml.cs</code> not being in the root folder) might not be migrated correctly.</li>
+</ul>
+<p>The <a href="https://github.com/dotnet/upgrade-assistant">Upgrade Assistant GitHub repository</a> documents troubleshooting tips and known issues. If you find any issues while using the tool, please report them in that same GitHub repository, tagging them with an area tag of <code>UWP</code>. We appreciate it!</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For guidance about the migration process—and the differences between UWP and Windows App SDK features and APIs—see <a href="migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can see what version of the tool you have by issuing the command <code>upgrade-assistant --version</code>.</p>
+</div>
+<h2 id="test-drive-the-tool-with-the-uwp-photolab-sample">Test drive the tool with the UWP PhotoLab sample</h2>
+<p>Let's take the .NET Upgrade Assistant for a test-drive.</p>
+<p>As source material, we'll be migrating the UWP <a href="https://github.com/microsoft/Windows-appsample-photo-lab.git">PhotoLab sample</a> application. PhotoLab is a sample app for viewing and editing image files. It demonstrates XAML layout, data binding, and UI customization features.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can see a case study of the PhotoLab sample being fully manually migrated in <a href="case-study-1.html">A Windows App SDK migration of the UWP PhotoLab sample app</a>.</p>
+</div>
+<ol>
+<li>Begin by cloning or downloading the PhotoLab sample source code from the link above.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Be aware that after we've used the tool to automate the migration of the app, additional manual effort will be needed to complete the migration.</p>
+</div>
+<ol>
+<li><p>Open the PhotoLab solution in Visual Studio.</p>
+</li>
+<li><p>Having installed the .NET Upgrade Assistant extension (see <a href="#install-the-net-upgrade-assistant">Install the .NET Upgrade Assistant</a> earlier in this topic), right-click on the project in <strong>Solution Explorer</strong>, and click <strong>Upgrade</strong>.</p>
+</li>
+<li><p>Choose the <strong>Upgrade project to a newer .NET version</strong> option.</p>
+</li>
+<li><p>Choose the <strong>In-place project upgrade</strong> option.</p>
+</li>
+<li><p>Choose a target framework.</p>
+</li>
+<li><p>Click <strong>Upgrade selection</strong>.</p>
+</li>
+<li><p>The .NET Upgrade Assistant runs, and uses the Visual Studio <strong>Output</strong> window to print out info and status as it goes.</p>
+</li>
+</ol>
+<p>You can monitor the progress bar until the upgrade operation completes.</p>
+<p>Code migration for the <strong>PhotoLab</strong> sample app includes:</p>
+<ul>
+<li>Changes to Content Dialog and File Save picker APIs.</li>
+<li>XAML update for the Animations package.</li>
+<li>Showing warning messages, and adding <strong>Task List</strong> TODOs in <code>DetailPage.xaml</code>, <code>DetailPage.xaml.cs</code>, and <code>MainPage.xaml.cs</code> for custom back button.</li>
+<li>Implementing the back button functionality and adding a <strong>Task List</strong> TODO to customize XAML button.</li>
+<li>A link to documentation is provided that you can use to learn more about back button implementation.</li>
+</ul>
+<p>The version numbers in your resulting <code>.csproj</code> will be slightly different, but essentially it will look like this (with some of the build configuration property groups removed for brevity):</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+    &lt;Platform Condition=&quot; '$(Platform)' == '' &quot;&gt;x86&lt;/Platform&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;DefaultLanguage&gt;en-US&lt;/DefaultLanguage&gt;
+    &lt;TargetPlatformMinVersion&gt;10.0.17763.0&lt;/TargetPlatformMinVersion&gt;
+    &lt;RuntimeIdentifiers&gt;win-x86;win-x64;win-arm64&lt;/RuntimeIdentifiers&gt;
+    &lt;UseWinUI&gt;true&lt;/UseWinUI&gt;
+    &lt;ApplicationManifest&gt;app.manifest&lt;/ApplicationManifest&gt;
+    &lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;
+    &lt;Platforms&gt;x86;x64;arm64&lt;/Platforms&gt;
+    &lt;PublishProfile&gt;win10-$(Platform).pubxml&lt;/PublishProfile&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;AppxManifest Include=&quot;Package.appxmanifest&quot;&gt;
+      &lt;SubType&gt;Designer&lt;/SubType&gt;
+    &lt;/AppxManifest&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Microsoft.WindowsAppSDK&quot; Version=&quot;1.1.0&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.Graphics.Win2D&quot; Version=&quot;1.0.0.30&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers&quot; Version=&quot;0.4.346201&quot;&gt;
+      &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
+    &lt;/PackageReference&gt;
+    &lt;PackageReference Include=&quot;Microsoft.Windows.Compatibility&quot; Version=&quot;6.0.0&quot; /&gt;
+    &lt;PackageReference Include=&quot;CommunityToolkit.WinUI.UI.Animations&quot; Version=&quot;7.1.2&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;Compile Remove=&quot;App.xaml.old.cs&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;None Include=&quot;App.xaml.old.cs&quot; /&gt;
+  &lt;/ItemGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+<p>As you can see, the project is now referencing the Windows App SDK, WinUI 3, and .NET 6. Now that <strong>PhotoLab</strong> has been migrated, you can take advantage of all of the new features that WinUI 3 apps have to offer, and grow your app with the platform.</p>
+<p>Also, the .NET Upgrade Assistant adds analyzers to the project that assist with continuing with the upgrade process. For example, the <strong>Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers</strong> NuGet package.</p>
+<h2 id="follow-up-manual-migration">Follow-up manual migration</h2>
+<p>At this point you can open the migrated <strong>PhotoLab</strong> solution or project, and see the changes that have been made in the source code. The project needs a little more work to finish hooking things up before the WinUI 3 version builds, runs, and behaves like the UWP version.</p>
+<p>See the <strong>Task List</strong> in Visual Studio (<strong>View</strong> &gt; <strong>Task List</strong>) for TODOs that you should action to manually complete the migration.</p>
+<p>It's possible that the UWP (.NET Framework) version of your app contained library references that your project isn't actually using. You'll need to analyze each reference, and determine whether or not it's required. The tool might also have added or upgraded a NuGet package reference to the wrong version.</p>
+<p>The Upgrade Assistant doesn't edit the <code>Package.appxmanifest</code>, which will need some edits in order for the app to launch:</p>
+<ol>
+<li>Add this namespace on the root &lt;Package&gt; element:</li>
+</ol>
+<pre><code>xmlns:rescap=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities&quot;
+</code></pre>
+<ol start="2">
+<li><p>Edit the &lt;Application&gt; element from <code>EntryPoint=&quot;appnamehere.App&quot;</code> to <code>EntryPoint=&quot;$targetentrypoint$&quot;</code></p>
+</li>
+<li><p>Replace any specified <code>Capability</code> with this:</p>
+</li>
+</ol>
+<pre><code class="lang-xml">&lt;rescap:Capability Name=&quot;runFullTrust&quot; /&gt;
+</code></pre>
+<p>In your <code>.csproj</code> file, you might need to edit the project file to set <code>&lt;OutputType&gt;WinExe&lt;/OutputType&gt;</code> and <code>&lt;UseMaui&gt;False&lt;/UseMaui&gt;</code>.</p>
+<p>To use many of the XAML controls, ensure that your <code>app.xaml</code> file includes the <code>&lt;XamlControlsResources&gt;</code>, such as in this example:</p>
+<pre><code class="lang-xml">&lt;Application.Resources&gt;
+    &lt;ResourceDictionary&gt;
+        &lt;ResourceDictionary.MergedDictionaries&gt;
+            &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot; /&gt;
+            &lt;!-- Other merged dictionaries here --&gt;
+        &lt;/ResourceDictionary.MergedDictionaries&gt;
+        &lt;!-- Other app resources here --&gt;
+    &lt;/ResourceDictionary&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<h2 id="troubleshooting-tips">Troubleshooting tips</h2>
+<p>There are several known problems that can occur when using the .NET Upgrade Assistant. In some cases, these problems are with the <a href="https://github.com/dotnet/try-convert">try-convert tool</a> that the .NET Upgrade Assistant uses internally.</p>
+<p>But for more troubleshooting tips and known issues, see the <a href="https://github.com/dotnet/upgrade-assistant">Upgrade Assistant</a> GitHub repository.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

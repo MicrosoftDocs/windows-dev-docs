@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Pen interactions and haptic feedback </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Pen interactions and haptic feedback ">
+    
+    <meta name="description" content="Build Windows apps that support haptic feedback from pen devices to provide more natural and tactile interactions and experiences.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="pen-interactions-and-haptic-tactile-feedback">Pen interactions and haptic (tactile) feedback</h1>
+
+<p>Windows has long supported digital pens that let users interact with their devices in a natural, direct fashion and to express their creativity through rich writing and drawing experiences using digital ink.</p>
+<p>With Windows 11, a new capability is being introduced that makes the digital pen experience even more natural and compelling: When using a pen that supports &quot;haptic feedback&quot;, users can actually feel their pen interacting in a tactile manner with the user interface (UI) of an app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When referring to this new feature, &quot;haptic&quot; is used throughout the developer APIs and related documentation, while &quot;tactile&quot; is the friendly name presented to users for setting feedback preferences in Windows Settings.</p>
+</div>
+<p>Haptic feedback experiences supported in Windows 11 include <em>inking feedback</em> and <em>interaction feedback</em>:</p>
+<ul>
+<li>Inking feedback simulates the feel of various types of writing or drawing tools (such as pen, marker, pencil, highlighter, and so on) through continuous vibrations while the pen is in contact with the screen. By default, the <a href="pen-and-stylus-interactions.html">Windows Ink Platform</a> supports haptic feedback for all drawing tools (this topic covers how to provide a custom inking solution beyond the one supported by Windows Ink).</li>
+<li>Interaction feedback, on the other hand, is direct feedback based on key user actions such as hovering over or clicking a button, responding to the completion of an action, or to draw the user's attention.</li>
+</ul>
+<p>Typically, five steps are required to fully support haptic feedback:</p>
+<ul>
+<li>Detect pen input.</li>
+<li>Determine if the current pen and device support haptic feedback and, if so, what haptic feedback features it supports.</li>
+<li>Decide on the haptic feedback signal to send.</li>
+<li>Send the haptic feedback.</li>
+<li>Stop the haptic feedback</li>
+</ul>
+<h2 id="detect-pen-input">Detect pen input</h2>
+<p>To detect and isolate pen input, you must first register for the <a href="/uwp/api/windows.ui.xaml.uielement.pointerentered">PointerEntered</a> event and then check whether the <a href="/uwp/api/windows.devices.input.pointerdevice.pointerdevicetype">PointerDeviceType</a> is a <a href="/uwp/api/windows.devices.input.pointerdevicetype">pen</a>.</p>
+<p>The following code shows how to check the pointer device type within a PointerEntered event. For this example, if the input is not from a pen we simply return from the event handler. Otherwise, we check the pen capabilities and configure the haptic feedback.</p>
+<pre><code class="lang-csharp">
+private void InputObserver_PointerEntered(object sender, PointerRoutedEventArgs e)
+{
+    ...
+    
+    // If the current Pointer device is not a pen, exit.
+    if (e.Pointer.PointerDeviceType != PointerDeviceType.Pen) 
+    {
+       return;
+    }
+    
+    ...    
+}
+</code></pre>
+<h2 id="determine-support-for-haptic-feedback">Determine support for haptic feedback</h2>
+<p>Not all pens and digitizers support haptic feedback, and the pens that do won't necessarily support all haptic feedback features described in this topic. As such, it is important to programmatically confirm which features are supported by the active pen.</p>
+<p>In a continuation of the preceding example, we show how to check whether the active pen supports haptic feedback.</p>
+<p>We first attempt to retrieve a <a href="/uwp/api/windows.devices.input.pendevice">PenDevice</a> object from the current <a href="/uwp/api/windows.ui.input.pointerpoint.pointerid">PointerId</a>. If a <a href="/uwp/api/windows.devices.input.pendevice">PenDevice</a> cannot be obtained, we simply return from the event handler.</p>
+<p>If a <a href="/uwp/api/windows.devices.input.pendevice">PenDevice</a> was obtained, we test if it supports a <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> property. If not, we again simply return from the event handler.</p>
+<pre><code class="lang-csharp">// Attempt to retrieve the PenDevice from the current PointerId.
+penDevice = PenDevice.GetFromPointerId(e.Pointer.PointerId);
+
+// If a PenDevice cannot be retrieved based on the PointerId, it does not support 
+// advanced pen features, such as haptic feedback. 
+if (penDevice == null)
+{
+    return;
+}
+
+// Check to see if the current PenDevice supports haptic feedback by seeing if it 
+// has a SimpleHapticsController.
+hapticsController = penDevice.SimpleHapticsController;
+if (hapticsController == null)
+{
+    return;
+}
+</code></pre>
+<p>The <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> retrieved in the preceding example is used in subsequent examples to query haptic capabilities and to send/stop haptic feedback.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are building apps with the <a href="../../windows-app-sdk/index.html">Windows App SDK Preview 1.0</a>, you can use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop">PenDevice interop</a> (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint">PenDeviceInterop.FromPointerPoint(PointerPoint)</a>) to access the system <a href="/uwp/api/windows.devices.input.pendevice">PenDevice</a>.</p>
+<pre><code class="lang-csharp">private void InputObserver_PointerEntered(PointerInputObserver sender, PointerEventArgs args)
+{
+    var penDevice = PenDeviceInterop.PenDeviceFromPointerPoint(args.CurrentPoint);
+}
+</code></pre>
+</div>
+<p>The following sections describe the feedback features that haptic pens must support, as well as those that are optional. A required haptic feedback type can typically be used as a fallback instead of an optional feature.</p>
+<h3 id="inking-waveforms">Inking waveforms</h3>
+<p>Inking waveforms play continuously while the pen is in contact with the screen, and attempt to simulate the feel of various writing or drawing tools.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Required / Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InkContinous waveform</td>
+<td>Simulates the feel of inking with a physical ball point pen. This is the default fallback when an inking waveform is not supported by a haptic pen.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>BrushContinuous waveform</td>
+<td>Continuous haptic signal when user selects brush as inking tool.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>ChiselMarkerContinuous waveform</td>
+<td>Continuous haptic signal when user selects chisel marker/highlighter as inking tool.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>EraserContinuous waveform</td>
+<td>Continuous haptic signal when user selects eraser as inking tool.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>GalaxyContinuous waveform<br>(the HID documentation and implementation guide refers to this waveform as <em>SparkleContinuous</em>)</td>
+<td>Continuous haptic signal for special ink tools, such as a multi-colored brush.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>MarkerContinuous waveform</td>
+<td>Continuous haptic signal when user selects marker as inking tool.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>PencilContinuous waveform</td>
+<td>Continuous haptic signal when user selects pencil as inking tool.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interaction-waveforms">Interaction waveforms</h3>
+<p>Interaction waveforms are typically short (exceptions noted in the following table), direct feedback waveforms generated on demand to confirm key actions such as hovering over or clicking a button, responding to the completion of an action, or to draw the user's attention.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Required / Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Click waveform</td>
+<td>A short &quot;click&quot; feedback. This is the default fallback when an interaction waveform selected by the app is not supported by a haptic pen.</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>Error waveform</td>
+<td>A strong signal to alert the user that an action failed, or an error has occurred.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Hover waveform</td>
+<td>Indicates that the user has started hovering over an interactive UI element.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Press waveform</td>
+<td>Indicates when a user presses an interactive UI element in an incremental action (see Release).</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Release waveform</td>
+<td>Indicates when a user releases an interactive UI element in an incremental action (see Press).</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Success waveform</td>
+<td>Strong signal to alert the user that an action succeeded.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>BuzzContinuous waveform</td>
+<td>Continuous buzzing sensation.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>RumbleContinuous waveform</td>
+<td>Continuous rumbling sensation.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="haptic-feedback-customizations">Haptic feedback customizations</h3>
+<p>Some haptic pens can support the following customizations.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+<th>Required / Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Intensity</td>
+<td>Sets the intensity of the haptic signal.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Play Count</td>
+<td>Repeats a haptic signal a specified number of times.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Replay Pause Interval</td>
+<td>Sets the time between each repeated playing of the haptic signal.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>Play Duration</td>
+<td>Sets the interval of time that a haptic signal is played.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h2 id="check-for-custom-settings-support">Check for custom settings support</h2>
+<p>To check for Intensity, Play Count, Replay Pause Interval, and Play Duration support, use the following properties of the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a>:</p>
+<ul>
+<li><a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.isintensitysupported">IsIntensitySupported</a></li>
+<li><a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.isplaycountsupported">IsPlayCountSupported</a></li>
+<li><a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.isplaydurationsupported">IsPlayDurationSupported</a></li>
+<li><a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.isreplaypauseintervalsupported">IsReplayPauseIntervalSupported</a></li>
+</ul>
+<h2 id="send-and-stop-inking-haptic-feedback">Send and stop inking haptic feedback</h2>
+<p>Use the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedback">SendHapticFeedback</a> method of the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> object to pass inking waveforms to the user's pen. This method supports passing in either a waveform or both a waveform with a customized intensity value (see <a href="#customize-haptic-feedback">Customize haptic feedback</a>).</p>
+<p>Call SendHapticFeedback and pass in an <a href="#inking-waveforms">inking waveform</a> to configure the pen to start playing that waveform as soon as the tip of the pen touches anywhere on the screen. The waveform will continue playing until the pen is lifted or <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback">StopFeedback</a> is called, whichever happens first. We recommend doing this in the <a href="/uwp/api/windows.ui.xaml.uielement.pointerentered">PointerEntered</a> event handler for the element in which you want haptics to be played. For example, an app with a custom inking implementation would do this in the PointerEntered method of its inking canvas.</p>
+<p>To retrieve the desired <a href="#inking-waveforms">inking waveform</a>, you must iterate through the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback">SupportedFeedback</a> collection of the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a>, ensuring it is supported by the active pen.</p>
+<p>If it is not supported, you can either choose to not play anything at all or fall back to the <a href="#inking-waveforms">InkContinuous</a> waveform, as that is guaranteed to be supported.</p>
+<p>In the following example, we attempt to send the <a href="/uwp/api/windows.devices.haptics.knownsimplehapticscontrollerwaveforms">BrushContinuous</a> waveform (but fall back to InkContinuous if BrushContinuous is not supported).</p>
+<pre><code class="lang-csharp">SimpleHapticsControllerFeedback currentWaveform;
+
+// Attempt to set the currentWaveform to BrushContinuous.
+foreach (var waveform in hapticsController.SupportedFeedback)
+{
+    if (waveform.Waveform == KnownSimpleHapticsControllerWaveforms.BrushContinuous)
+    {
+        currentWaveform = waveform;
+    }
+} 
+
+// If currentWaveform is null, it was not in the SupportedFeedback collection, so instead set 
+// the waveform to InkContinuous.
+if (currentWaveform == null)
+{
+    foreach (var waveform in hapticsController.SupportedFeedback)
+    {
+        if (waveform.Waveform == KnownSimpleHapticsControllerWaveforms.InkContinuous)
+        {
+            currentWaveform = waveform;
+        }
+    }
+}
+
+// Send the currentWaveform 
+hapticsController.SendHapticFeedback(currentWaveform);
+</code></pre>
+<p>It is important that you also stop haptic feedback when the associated pointer exits the element you registered for haptic feedback. Otherwise, the waveform will continue attempting to play on the active pen.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some pens may optionally stop haptics on their own when the pen leaves the range of the screen. However, it is not required for all pens to do this, so applications should always explicitly stop haptic feedback as described here.</p>
+</div>
+<p>To stop haptic feedback on an element, register for the <a href="/uwp/api/windows.ui.xaml.uielement.pointerexited">PointerExited</a> event on same element as you registered the PointerEntered handler that sent the haptic signal. In that exited event handler, call <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback">StopFeedback</a> as shown here.</p>
+<pre><code class="lang-csharp">hapticsController.StopFeedback();
+</code></pre>
+<h2 id="send-and-stop-interaction-feedback">Send and stop interaction feedback</h2>
+<p>Sending Interaction feedback is quite similar to sending inking feedback.</p>
+<p>Use the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedback">SendHapticFeedback</a> method of the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> object to pass interaction waveforms to the user's pen. This method supports passing in either a waveform or both a waveform with a customized intensity value (see <a href="#customize-haptic-feedback">Customize haptic feedback</a>).</p>
+<p>Call SendHapticFeedback and pass in an <a href="#inking-waveforms">inking waveform</a> to configure the pen to start playing that waveform immediately based on some interaction within your app (instead of when the tip of the pen touches the screen for inking feedback).</p>
+<p>When using any of the non-continuous Interaction waveforms, it is not necessary to make a corresponding <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback">StopFeedback</a> call. You do still need to call <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback">StopFeedback</a> for the continuous Interaction waveforms.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Sending an interaction waveform when an inking waveform is being played will temporarily interrupt the inking waveform. The inking waveform will resume when the interaction waveform stops.</p>
+</div>
+<p>To retrieve the desired <a href="#inking-waveforms">interaction waveform</a>, you must iterate through the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback">SupportedFeedback</a> collection of the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a>, ensuring it is supported by the active pen.</p>
+<p>If it is not supported, you can either choose to not play anything at all or fall back to the <a href="#interaction-waveforms">Click</a> waveform, as that is guaranteed to be supported.</p>
+<p>In the following example, we attempt to send the <a href="/uwp/api/windows.devices.haptics.knownsimplehapticscontrollerwaveforms">Error</a> waveform (but fall back to Click if Error is not supported).</p>
+<pre><code class="lang-csharp">SimpleHapticsControllerFeedback currentWaveform;  
+
+// Attempt to set the currentWaveform to BrushContinuous.
+foreach (var waveform in hapticsController.SupportedFeedback)
+{
+    if (waveform.Waveform == KnownSimpleHapticsControllerWaveforms.Error)
+    {
+        currentWaveform = waveform;
+    }
+} 
+
+// If currentWaveform is null, it was not in the SupportedFeedback collection, so instead set 
+// the waveform to Click.
+if (currentWaveform == null)
+{
+    foreach (var waveform in hapticsController.SupportedFeedback)
+    {
+        if (waveform.Waveform == KnownSimpleHapticsControllerWaveforms.Click)
+        {
+            currentWaveform = waveform;
+        }
+    }
+} 
+
+// Send the currentWaveform.
+hapticsController.SendHapticFeedback(currentWaveform); 
+</code></pre>
+<h2 id="customize-haptic-feedback">Customize haptic feedback</h2>
+<p>There are three ways to customize haptic feedback. The first is supported by both Inking and Interaction feedback, while the second and third are only supported by Interaction feedback.</p>
+<ol>
+<li><p>Adjust the intensity of the feedback relative to the maximum system intensity setting. To do this, you must first check to ensure that the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> supports setting the intensity and then call <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedback">SendHapticFeedback</a> with the desired <code>Intensity</code> value.</p>
+<pre><code class="lang-csharp">if (hapticsController.IsIntensitySupported) 
+{
+    foreach (var waveform in hapticsController.SupportedFeedback)
+    {
+        if (waveform.Waveform == KnownSimpleHapticsControllerWaveforms.Click)
+        {
+            double intensity = 0.75;
+            hapticsController.SendHapticFeedback(waveform, intensity);
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Repeat the haptic signal a specified number of times. To do this, you must first check to ensure that the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> supports setting the intensity and then call <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedbackforplaycount">SendHapticFeedbackForPlayCount</a> with the desired count value. You can also set both the intensity and the replay pause interval.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the SimpleHapticsController does not support setting the intensity or the replay pause interval, the supplied values will be ignored.</p>
+</div>
+<pre><code class="lang-csharp">if (hapticsController.IsPlayCountSupported &amp;&amp; hapticsController.IsIntensitySupported &amp;&amp; hapticsController.IsReplayPauseIntervalSupported)
+{
+    foreach (var waveform in hapticsController.SupportedFeedback)
+    {
+        if (waveform.Waveform == KnownSimpleHapticsControllerWaveforms.Click)
+        {
+            double intensity = 0.75;
+            int playCount = 3;
+            System.TimeSpan pauseDuration = new System.TimeSpan(1000000);
+            hapticsController.SendHapticFeedbackForPlayCount(currentWaveform, intensity, playCount, pauseDuration);
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Set the duration of the haptic signal.  To do this, you must first check to ensure that the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> supports setting the play duration and then call <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedbackforduration">SendHapticFeedbackForDuration</a> with the desired time interval value. You can also set the intensity.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the SimpleHapticsController does not support setting the intensity, the supplied value will be ignored.</p>
+</div>
+<pre><code class="lang-csharp">if (hapticsController.IsPlayDurationSupported &amp;&amp; hapticsController.IsIntensitySupported)
+{
+    foreach (var waveform in hapticsController.SupportedFeedback)
+    {
+        if (waveform.Waveform == KnownSimpleHapticsControllerWaveforms.RumbleContinuous)
+        {
+            double intensity = 0.75;
+            System.TimeSpan playDuration = new System.TimeSpan(5000000);
+            hapticsController.SendHapticFeedbackForDuration(currentWaveform, intensity, playDuration);
+        }
+    }
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="examples">Examples</h2>
+<p>See the <a href="https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FWindows-universal-samples%2Ftree%2Fdev%2FSamples%2FPenHaptics&amp;data=04%7C01%7Ckbridge%40microsoft.com%7C2f06b98f321a40a2f94908d97e08126d%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637679395422669594%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&amp;sdata=EKfcBhnsRiy1nRG1U5As7QbjK81rZwjz3ihsz0rxV70%3D&amp;reserved=0">Pen haptics sample</a> for working examples of the following functionality:</p>
+<ul>
+<li>Get a <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> from pen input: Go from <a href="/uwp/api/windows.ui.input.pointerpoint.pointerid">PointerId</a> to <a href="/uwp/api/windows.devices.input.pendevice">PenDevice</a> to <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> (requires both a haptic-capable pen and a device that supports the pen).</li>
+<li>Check pen haptics capabilities: A <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller">SimpleHapticsController</a> exposes properties for pen hardware capabilities, including <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.isintensitysupported">IsIntensitySupported</a>, <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.isplaycountsupported">IsPlayCountSupported</a>, <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.supportedfeedback">SupportedFeedback</a>, and so on.</li>
+<li>Start and stop haptic feedback: Use the <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.sendhapticfeedback">SendHapticFeedback</a> and <a href="/uwp/api/windows.devices.haptics.simplehapticscontroller.stopfeedback">StopFeedback</a> methods appropriately.</li>
+<li>Trigger haptic feedback: Feedback for both <em>inking feedback</em> and <em>interaction feedback</em>.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/pen-haptics.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

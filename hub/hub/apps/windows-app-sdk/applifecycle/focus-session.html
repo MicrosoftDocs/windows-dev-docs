@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Detect and react to focus session state </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Detect and react to focus session state ">
+    
+    <meta name="description" content="Describes how to detect and react to the current focus session state.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="detect-and-react-to-focus-session-state">Detect and react to focus session state</h1>
+
+<p>Windows 11 introduced the Focus feature which helps users minimize distractions by turning on Do Not Disturb and silencing icon flashing and badge notifications for apps in the taskbar. This article shows you how to use the <a href="/uwp/api/windows.ui.shell.focussessionmanager">FocusSessionManager</a> API to detect whether a Focus session is currently active or receive updates when the Focus session state changes, allowing you to customize your app's behavior to minimize distractions when a Focus session is active. For more information on the Focus feature, see <a href="https://support.microsoft.com/en-us/windows/how-to-use-focus-in-windows-11-cbcc9ddb-8164-43fa-8919-b9a2af072382">How to use focus in Windows 11</a>.</p>
+<h2 id="get-the-current-focus-session-state">Get the current Focus session state</h2>
+<p>Before accessing the properties of the <strong>FocusSessionManager</strong>, make sure it's supported on the current device by checking the <a href="/uwp/api/windows.ui.shell.focussessionmanager.issupported">IsSupported</a> property. After verifying that the feature is supported you can determine if a Focus session is currently active by checking the <a href="/uwp/api/windows.ui.shell.focussessionmanager.isfocusactive">IsFocusActive</a> property.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_csharp" role="tab" aria-controls="tabpanel_1_csharp" data-tab="csharp" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cppwinrt" role="tab" aria-controls="tabpanel_1_cppwinrt" data-tab="cppwinrt" tabindex="-1">C++/WinRT</a>
+</li>
+</ul>
+<section id="tabpanel_1_csharp" role="tabpanel" data-tab="csharp">
+
+<pre><code class="lang-csharp">private void UpdateStatusBar(string message)
+{
+    var focusActive = false;
+    if (Windows.UI.Shell.FocusSessionManager.IsSupported)
+    {
+        var manager = Windows.UI.Shell.FocusSessionManager.GetDefault();
+        focusActive = manager.IsFocusActive;
+    }
+
+    if (!focusActive)
+    {
+        statusTextBlock.Text = message;
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_1_cppwinrt" role="tabpanel" data-tab="cppwinrt" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// pch.h
+...
+#include &lt;winrt/Windows.UI.Shell.h&gt;
+
+
+// MainWindow.xaml.h
+...
+Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
+void UpdateStatusBar(winrt::hstring const&amp; message);
+
+// MainWindow.xaml.cpp
+...
+void MainWindow::UpdateStatusBar(winrt::hstring const&amp; message)
+{
+    auto focusActive = false;
+    if (Windows::UI::Shell::FocusSessionManager::IsSupported())
+    {
+        focusActive = m_focusSessionManager.IsFocusActive();
+    }
+
+    if (!focusActive)
+    {
+        StatusTextBlock().Text(message);
+    }
+}
+</code></pre>
+</section>
+</div>
+<h2 id="continuously-monitor-focus-state">Continuously monitor focus state</h2>
+<p>You can subscribe to be notified when the Focus session state on the device changes by registering for the <a href="/uwp/api/windows.ui.shell.focussessionmanager.isfocusactivechanged">IsFocusActiveChanged</a> event. In the following example <strong>SetAnimatedGifAutoPlay</strong> is an app-implemented helper method that changes whether the app auto-plays animated gifs based on the current Focus session state.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_csharp" role="tab" aria-controls="tabpanel_2_csharp" data-tab="csharp" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cppwinrt" role="tab" aria-controls="tabpanel_2_cppwinrt" data-tab="cppwinrt" tabindex="-1">C++/WinRT</a>
+</li>
+</ul>
+<section id="tabpanel_2_csharp" role="tabpanel" data-tab="csharp">
+
+<pre><code class="lang-csharp">protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    if (Windows.UI.Shell.FocusSessionManager.IsSupported)
+    {
+        var manager = Windows.UI.Shell.FocusSessionManager.GetDefault();
+        manager.IsFocusActiveChanged += Manager_IsFocusActiveChanged;
+        SetAnimatedGifAutoPlay(true);
+    }
+}
+
+private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager sender, object args)
+{
+    if(sender.IsFocusActive)
+    {
+        SetAnimatedGifAutoPlay(true);
+    }
+    else
+    {
+        SetAnimatedGifAutoPlay(false);
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_2_cppwinrt" role="tabpanel" data-tab="cppwinrt" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// pch.h
+...
+#include &lt;winrt/Windows.UI.Shell.h
+#include &lt;winrt/Windows.UI.Xaml.Navigation.h&gt;
+
+// MainWindow.xaml.h
+...
+void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&amp;);
+
+Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
+winrt::event_token m_focusStateChangedToken;
+
+void OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const&amp; sender, Windows::Foundation::IInspectable const&amp;);
+
+// MainWindow.xaml.cpp
+...
+void MainWindow::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&amp;)
+{
+    if (Windows::UI::Shell::FocusSessionManager::IsSupported())
+    {
+
+        m_focusStateChangedToken = m_focusSessionManager.IsFocusActiveChanged(
+            { get_weak(), &amp;MainWindow::OnFocusStateChanged });
+
+        SetAnimatedGifAutoPlay(true);
+    }
+}
+
+void MainWindow::OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const&amp; sender,
+        Windows::Foundation::IInspectable const&amp;)
+{
+    auto temp = m_focusSessionManager.IsFocusActive();
+    SetAnimatedGifAutoPlay(m_focusSessionManager.IsFocusActive());
+}
+</code></pre>
+</section>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/applifecycle/focus-session.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

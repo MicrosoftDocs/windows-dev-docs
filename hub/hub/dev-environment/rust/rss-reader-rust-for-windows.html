@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>RSS reader tutorial (Rust for Windows with VS Code) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="RSS reader tutorial (Rust for Windows with VS Code) ">
+    
+    <meta name="description" content="A walkthrough of writing a simple app that downloads the titles of blog posts from an RSS feed.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="rss-reader-tutorial-rust-for-windows-with-vs-code">RSS reader tutorial (Rust for Windows with VS Code)</h1>
+
+<p>The previous topic introduced <a href="rust-for-windows.html">Rust for Windows, and the windows crate</a>.</p>
+<p>Now let's try out Rust for Windows by writing a simple console app that downloads the titles of blog posts from a Really Simple Syndication (RSS) feed.</p>
+<ol>
+<li><p>Launch a command prompt (<code>cmd.exe</code>), and <code>cd</code> to a folder where you want to keep your Rust projects.</p>
+</li>
+<li><p>Using Cargo, create a new Rust project named <em>rss_reader</em>, and <code>cd</code> to the newly-created folder:</p>
+<pre><code class="lang-console">&gt; cargo new rss_reader
+&gt;     Created binary (application) `rss_reader` package
+&gt; cd rss_reader
+</code></pre>
+</li>
+<li><p>Then open the <em>rss_reader</em> project in VS Code.</p>
+<pre><code class="lang-console">code .
+</code></pre>
+</li>
+<li><p>Let's implement the main <em>rss_reader</em> project. First, open the <code>Cargo.toml</code> file at the root of the project. A <code>Cargo.toml</code> file is a text file that describes a Rust project, including any dependencies it has.</p>
+<p>Add a dependency on the <em>windows</em> crate, as shown in the listing below. The <em>windows</em> crate is large. To keep build times fast, we'll select just the <code>Foundation_Collections</code> and <code>Web_Syndication</code> features that we need for this code.</p>
+<pre><code class="lang-toml"># Cargo.toml
+...
+
+[dependencies.windows] 
+version = &quot;0.43.0&quot;
+features = [
+    &quot;Foundation_Collections&quot;,
+    &quot;Web_Syndication&quot;,
+]
+</code></pre>
+</li>
+<li><p>Then, open the <em>rss_reader</em> project's <code>src/main.rs</code> source code file. There you'll find the Cargo default &quot;Hello, world!&quot; code. Add the following <strong>use</strong> statement to the beginning of <code>main.rs</code>:</p>
+<pre><code class="lang-rust">// src\main.rs
+use windows::{
+    core::*,
+    Foundation::Uri,
+    Web::Syndication::SyndicationClient
+};
+
+fn main() {
+    println!(&quot;Hello, world!&quot;);
+}
+</code></pre>
+<p>The <strong>use</strong> declaration shortens the path to the types that we'll be using. There's the <strong>Uri</strong> type that we mentioned earlier.</p>
+</li>
+<li><p>To create a new <a href="/uwp/api/windows.foundation.uri"><strong>Uri</strong></a>, replace Cargo's default <strong>main</strong> function with this:</p>
+<pre><code class="lang-rust">// src\main.rs
+...
+
+fn main() -&gt; Result&lt;()&gt; {
+    let uri = Uri::CreateUri(h!(&quot;https://blogs.windows.com/feed&quot;))?;
+
+    Ok(())
+}
+</code></pre>
+<p>Notice that the return type of the <strong>main</strong> function is a <strong>Result</strong>, from <strong>windows::core::</strong>. That will make things easier, as it's common to deal with errors from operating system (OS) APIs. <strong>windows::core::Result</strong> helps us with error propagation, and concise error handling.</p>
+<p>You can see the question-mark operator at the end of the line of code. To save on typing, we do that to use Rust's error-propagation and short-circuiting logic. That means we don't have to do a bunch of manual error handling for this simple example. For more info about this feature of Rust, see <a href="https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html">The ? operator for easier error handling</a>.</p>
+<p>Also notice the <strong>h!</strong> macro from the <em>windows</em> crate. We use that to construct an <strong>HSTRING</strong> reference from a Rust string literal. The WinRT API uses <strong>HSTRING</strong> extensively for string values.</p>
+</li>
+<li><p>To download the RSS feed, we'll create a new <strong>SyndicationClient</strong>.</p>
+<pre><code class="lang-rust">// src\main.rs
+...
+
+fn main() -&gt; windows::core::Result&lt;()&gt; {
+    let uri = Uri::CreateUri(h!(&quot;https://blogs.windows.com/feed&quot;))?;
+    let client = SyndicationClient::new()?;
+
+    Ok(())
+}
+</code></pre>
+<p>The <strong>new</strong> function is a Rust constructor. All objects in the <em>windows</em> crate follow the Rust convention and name their constructors <strong>new</strong>.</p>
+</li>
+<li><p>Now we can use the <strong>SyndicationClient</strong> to retrieve the feed.</p>
+<pre><code class="lang-rust">// src\main.rs
+...
+
+fn main() -&gt; windows::core::Result&lt;()&gt; {
+    let uri = Uri::CreateUri(h!(&quot;https://blogs.windows.com/feed&quot;))?;
+    let client = SyndicationClient::new()?;
+    let feed = client.RetrieveFeedAsync(&amp;uri)?.get()?;
+
+    Ok(())
+}
+</code></pre>
+<p>Because <a href="/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync"><strong>RetrieveFeedAsync</strong></a> is an asynchronous API, we use the blocking <strong>get</strong> function to keep the example simple. Alternatively, we could use the <code>await</code> operator within an <code>async</code> function to cooperatively wait for the results. A more complex app with a graphical user interface will frequently use <code>async</code>.</p>
+</li>
+<li><p>Now we can iterate over the resulting items, and let's print out just the titles. You'll also see a few extra lines of code below to set a user-agent header, since some RSS feeds require that.</p>
+<pre><code class="lang-rust">// src\main.rs
+...
+
+fn main() -&gt; windows::core::Result&lt;()&gt; {
+    let uri = Uri::CreateUri(h!(&quot;https://blogs.windows.com/feed&quot;))?;
+    let client = SyndicationClient::new()?;
+
+    client.SetRequestHeader(
+        h!(&quot;User-Agent&quot;),
+        h!(&quot;Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)&quot;),
+    )?;
+
+    let feed = client.RetrieveFeedAsync(&amp;uri)?.get()?;
+
+    for item in feed.Items()? {
+        println!(&quot;{}&quot;, item.Title()?.Text()?);
+    }
+
+    Ok(())
+}
+</code></pre>
+</li>
+<li><p>Now let's confirm that we can build and run by clicking <strong>Run</strong> &gt; <strong>Run Without Debugging</strong> (or pressing <strong>Ctrl+F5</strong>). If you see any unexpected messages, then make sure you've successfully completed the <a href="/windows/dev-environment/rust/setup#hello-world-tutorial-rust-with-vs-code">Hello, world! tutorial (Rust with VS Code)</a>.</p>
+<p>There are also <strong>Debug</strong> and <strong>Run</strong> commands embedded inside the text editor. Alternatively, from a command prompt in the <code>rss_reader</code> folder, type <code>cargo run</code>, which will build and then run the program.</p>
+<p><img src="../../images/rust-rss-reader-2.png" alt="The Debug and Run commands embedded in the text editor"></p>
+<p>Down in the VS Code <strong>Terminal</strong> pane, you can see that Cargo successfully downloads and compiles the <strong>windows</strong> crate, caching the results, and using them to make subsequent builds complete in less time. It then builds the sample, and runs it, displaying a list of blog post titles.</p>
+<p><img src="../../images/rust-rss-reader-3.png" alt="List of blog post titles"></p>
+</li>
+</ol>
+<p>That's as simple as it is to program Rust for Windows. Under the hood, however, a lot of love goes into building the tooling so that Rust can both parse <code>.winmd</code> files based on <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-335/">ECMA-335</a> (Common Language Infrastructure, or CLI), and also faithfully honor the COM-based application binary interface (ABI) at run-time with both safety and efficiency in mind.</p>
+<h2 id="showing-a-message-box">Showing a message box</h2>
+<p>We did say that Rust for Windows lets you call any Windows API (past, present, and future). So in this section we'll show a couple of Windows message boxes.</p>
+<ol>
+<li><p>Just like we did for the RSS project, at the command prompt <code>cd</code> to the folder with your Rust projects.</p>
+</li>
+<li><p>Create a new project named <em>message_box</em>, and open it in VS Code:</p>
+<pre><code class="lang-console">&gt; cargo new message_box
+&gt;     Created binary (application) `message_box` package
+&gt; cd message_box
+&gt; code .
+</code></pre>
+</li>
+<li><p>In VS Code, open the <code>Cargo.toml</code>, and add the Windows dependencies for this project:</p>
+<pre><code class="lang-rust"> # message_box\Cargo.toml
+ ...
+
+ [dependencies.windows]
+ version = &quot;0.43.0&quot;
+ features = [
+     &quot;Win32_Foundation&quot;,
+     &quot;Win32_UI_WindowsAndMessaging&quot;,
+ ]
+</code></pre>
+</li>
+<li><p>Now open the project's <code>src/main.rs</code> file, and add the <code>use</code> declarations with the new namespaces (as shown below). And finally add code to call the <a href="/windows/win32/api/winuser/nf-winuser-messageboxa"><strong>MessageBoxA</strong></a> and <a href="/windows/win32/api/winuser/nf-winuser-messageboxw"><strong>MessageBoxW</strong></a> functions. The Windows API docs are mainly written with C/C++ in mind, so it's useful to compare the API docs to the docs for the Rust projections in the <em>windows</em> crate: <a href="https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxA.html"><strong>MessageBoxA</strong> (Rust)</a> and <a href="https://microsoft.github.io/windows-docs-rs/doc/windows/Win32/UI/WindowsAndMessaging/fn.MessageBoxW.html"><strong>MessageBoxW</strong> (Rust)</a>.</p>
+<pre><code class="lang-rust">// src\main.rs
+use windows::{
+    core::*,
+    Win32::UI::WindowsAndMessaging::*
+};
+
+fn main() {
+    unsafe {
+        MessageBoxA(None, s!(&quot;Ansi&quot;), s!(&quot;World&quot;), MB_OK);
+        MessageBoxW(None, w!(&quot;Wide&quot;), w!(&quot;World&quot;), MB_OK);
+    }
+}
+</code></pre>
+<p>As you can see, we must use these Win32 APIs in an <code>unsafe</code> block (see <a href="https://doc.rust-lang.org/reference/unsafe-blocks.html">Unsafe blocks</a>). Also note the <strong>s!</strong> and <strong>w!</strong> macros, which create <strong>LPCSTR</strong> and <strong>LPCWSTR</strong> arguments from Rust UTF-8 string literals; much like we created an <strong>HSTRING</strong> with the <strong>h!</strong> macro for <em>rss_reader</em>. Rust is natively Unicode with UTF-8 strings, so using the wide Unicode (W-suffix) Windows APIs is preferred over the ANSI (A-suffix) APIs. This can be important if you use non-English text in your code.</p>
+</li>
+</ol>
+<p>This time when you build and run, Rust displays two Windows message boxes.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="rust-for-windows.html">Rust for Windows, and the windows crate</a></li>
+<li><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-335/">ECMA-335</a></li>
+<li><a href="https://doc.rust-lang.org/edition-guide/rust-2018/error-handling-and-panics/the-question-mark-operator-for-easier-error-handling.html">The ? operator for easier error handling</a></li>
+<li><a href="https://doc.rust-lang.org/reference/unsafe-blocks.html">Unsafe blocks</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/rust/rss-reader-rust-for-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

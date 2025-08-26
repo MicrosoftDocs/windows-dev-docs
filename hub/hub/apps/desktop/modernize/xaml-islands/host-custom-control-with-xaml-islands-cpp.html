@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Host a custom WinRT XAML control in a C++ desktop (Win32) app using the XAML Hosting API </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Host a custom WinRT XAML control in a C++ desktop (Win32) app using the XAML Hosting API ">
+    
+    <meta name="description" content="This article demonstrates how to host a custom WinRT XAML control in a C++ desktop (Win32) app by using the XAML Hosting API.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="host-a-custom-winrt-xaml-control-in-a-c-desktop-win32-app">Host a custom WinRT XAML control in a C++ desktop (Win32) app</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This topic uses or mentions types from the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32">CommunityToolkit/Microsoft.Toolkit.Win32</a> GitHub repo. For important info about XAML Islands support, please see the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice">XAML Islands Notice</a> in that repo.</p>
+</div>
+<p>This article demonstrates how to use the <a href="using-the-xaml-hosting-api.html">WinRT XAML hosting API</a> to host a custom WinRT XAML control in a new C++ desktop app. If you have an existing C++ desktop app project, you can adapt these steps and code examples for your project.</p>
+<p>To host a custom WinRT XAML control, you'll create the following projects and components as part of this walkthrough:</p>
+<ul>
+<li><p><strong>Windows Desktop Application project</strong>. This project implements a native C++ desktop app. You'll add code to this project that uses the WinRT XAML hosting API to host a custom WinRT XAML control.</p>
+</li>
+<li><p><strong>UWP app project (C++/WinRT)</strong>. This project implements a custom WinRT XAML control. It also implements a root metadata provider for loading metadata for custom WinRT XAML types in the project.</p>
+</li>
+</ul>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Visual Studio 2019 version 16.4.3 or later.</li>
+<li>Windows 10, version 1903 SDK (version 10.0.18362) or later.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264">C++/WinRT Visual Studio Extension (VSIX)</a> installed with Visual Studio. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. For more information, see  <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>.</li>
+</ul>
+<h2 id="create-a-desktop-application-project">Create a desktop application project</h2>
+<ol>
+<li><p>In Visual Studio, create a new <strong>Windows Desktop Application</strong> project named <strong>MyDesktopWin32App</strong>. This project template is available under the <strong>C++</strong>, <strong>Windows</strong>, and <strong>Desktop</strong> project filters.</p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node, click <strong>Retarget solution</strong>, select the <strong>10.0.18362.0</strong> or a later SDK release, and then click <strong>OK</strong>.</p>
+</li>
+<li><p>Install the <a href="https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/">Microsoft.Windows.CppWinRT</a> NuGet package to enable support for <a href="/windows/uwp/cpp-and-winrt-apis">C++/WinRT</a> in your project:</p>
+<ol>
+<li>Right-click the <strong>MyDesktopWin32App</strong> project in <strong>Solution Explorer</strong> and choose <strong>Manage NuGet Packages</strong>.</li>
+<li>Select the <strong>Browse</strong> tab, search for the <a href="https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/">Microsoft.Windows.CppWinRT</a> package, and install the latest version of this package.</li>
+</ol>
+</li>
+<li><p>In the <strong>Manage NuGet Packages</strong> window, install the following additional NuGet packages:</p>
+<ul>
+<li><a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK">Microsoft.Toolkit.Win32.UI.SDK</a> (latest stable version). This package provides several build and run time assets that enable XAML Islands to work in your app.</li>
+<li><a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlApplication</a> (latest stable version). This package defines the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</a> class, which you will use later in this walkthrough.</li>
+<li><a href="https://www.nuget.org/packages/Microsoft.VCRTForwarders.140">Microsoft.VCRTForwarders.140</a>.</li>
+</ul>
+</li>
+<li><p>Add a reference to the Windows Runtime metadata:</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click on your project <strong>References</strong> node and select <strong>Add Reference</strong>.</li>
+<li>Click the <strong>Browse</strong> button at the bottom of the page and navigate to the UnionMetadata folder in your SDK install path. By default the SDK will be installed to <code>C:\Program Files (x86)\Windows Kits\10\UnionMetadata</code>.</li>
+<li>Then, select the folder named after the Windows version you are targeting (e.g. 10.0.18362.0) and inside of that folder pick the <code>Windows.winmd</code> file.</li>
+<li>Click <strong>OK</strong> to close the <strong>Add Reference</strong> dialog.</li>
+</ol>
+</li>
+<li><p>Build the solution and confirm that it builds successfully.</p>
+</li>
+</ol>
+<h2 id="create-a-uwp-app-project">Create a UWP app project</h2>
+<p>Next, add a <strong>UWP (C++/WinRT)</strong> app project to your solution and make some configuration changes to this project. Later in this walkthrough, you'll add code to this project to implement a custom WinRT XAML control and define an instance of the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</a> class.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node and select <strong>Add</strong> -&gt; <strong>New Project</strong>.</p>
+</li>
+<li><p>Add a <strong>Blank App (C++/WinRT)</strong> project to your solution. Name the project <strong>MyUWPApp</strong> and make sure the target version and minimum version are both set to <strong>Windows 10, version 1903</strong> or later.</p>
+</li>
+<li><p>Install the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlApplication</a> NuGet package in the <strong>MyUWPApp</strong> project. This package defines the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</a> class, which you will use later in this walkthrough.</p>
+<ol>
+<li>Right-click the <strong>MyUWPApp</strong> project and choose <strong>Manage NuGet Packages</strong>.</li>
+<li>Select the <strong>Browse</strong> tab, search for the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlApplication</a> package, and install the latest stable version of this package.</li>
+</ol>
+</li>
+<li><p>Right-click the <strong>MyUWPApp</strong> node and select <strong>Properties</strong>. On the <strong>Common Properties</strong> -&gt; <strong>C++/WinRT</strong> page, set the <strong>Verbosity</strong> property to <strong>normal</strong> and then click <strong>Apply</strong>. When you are done, the properties page should look like this.</p>
+<p><img src="../images/xaml-islands/xaml-island-cpp-1.png" alt="Screenshot of the project Property page with Common Properties - C++/WinRT selected, the Verbosity property highlighted, and it's value set to 'normal'."></p>
+</li>
+<li><p>On the <strong>Configuration Properties</strong> -&gt; <strong>General</strong> page of the properties window, set <strong>Configuration Type</strong> to <strong>Dynamic Library (.dll)</strong>, and then click <strong>OK</strong> to close the properties window.</p>
+<p><img src="../images/xaml-islands/xaml-island-cpp-2.png" alt="Screenshot of the project Property page with Configuration Properties - General selected, the Configuration Type property highlighted and it's value set to 'Dynamic Library (.dll)'."></p>
+</li>
+<li><p>Add a placeholder executable file to the <strong>MyUWPApp</strong> project. This placeholder executable file is required for Visual Studio to generate the required project files and properly build the project.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>MyUWPApp</strong> project node and select <strong>Add</strong> -&gt; <strong>New Item</strong>.</p>
+</li>
+<li><p>In the <strong>Add New Item</strong> dialog, select <strong>Utility</strong> in the left page, and then select <strong>Text File (.txt)</strong>. Enter the name <strong>placeholder.exe</strong> and click <strong>Add</strong>.
+<img src="../images/xaml-islands/xaml-island-cpp-3.png" alt="Screenshot of the Add New Item dialog with Visual C++ - Utility selected, Text File highlighted, and 'placeholder.exe' entered as the file name."></p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, select the <strong>placeholder.exe</strong> file. In the <strong>Properties</strong> window, make sure the <strong>Content</strong> property is set to <strong>True</strong>.</p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>Package.appxmanifest</strong> file in the <strong>MyUWPApp</strong> project, select <strong>Open With</strong>, and select <strong>XML (Text) Editor</strong>, and click <strong>OK</strong>.</p>
+</li>
+<li><p>Find the <strong>&lt;Application&gt;</strong> element and change the <strong>Executable</strong> attribute to the value <code>placeholder.exe</code>. When you are done, the <strong>&lt;Application&gt;</strong> element should look similar to this.</p>
+<pre><code class="lang-xml">&lt;Application Id=&quot;App&quot; Executable=&quot;placeholder.exe&quot; EntryPoint=&quot;MyUWPApp.App&quot;&gt;
+  &lt;uap:VisualElements DisplayName=&quot;MyUWPApp&quot; Description=&quot;Project for a single page C++/WinRT Universal Windows Platform (UWP) app with no predefined layout&quot;
+    Square150x150Logo=&quot;Assets\Square150x150Logo.png&quot; Square44x44Logo=&quot;Assets\Square44x44Logo.png&quot; BackgroundColor=&quot;transparent&quot;&gt;
+    &lt;uap:DefaultTile Wide310x150Logo=&quot;Assets\Wide310x150Logo.png&quot;&gt;
+    &lt;/uap:DefaultTile&gt;
+    &lt;uap:SplashScreen Image=&quot;Assets\SplashScreen.png&quot; /&gt;
+  &lt;/uap:VisualElements&gt;
+&lt;/Application&gt;
+</code></pre>
+</li>
+<li><p>Save and close the <strong>Package.appxmanifest</strong> file.</p>
+</li>
+</ol>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>MyUWPApp</strong> node and select <strong>Unload Project</strong>.</p>
+</li>
+<li><p>Right-click the <strong>MyUWPApp</strong> node and select <strong>Edit MyUWPApp.vcxproj</strong>.</p>
+</li>
+<li><p>Find the <code>&lt;Import Project=&quot;$(VCTargetsPath)\Microsoft.Cpp.Default.props&quot; /&gt;</code> element and replace it with the following XML. This XML adds several new properties immediately before the element.</p>
+<pre><code class="lang-xml">&lt;PropertyGroup Label=&quot;Globals&quot;&gt;
+    &lt;WindowsAppContainer&gt;true&lt;/WindowsAppContainer&gt;
+    &lt;AppxGeneratePriEnabled&gt;true&lt;/AppxGeneratePriEnabled&gt;
+    &lt;ProjectPriIndexName&gt;App&lt;/ProjectPriIndexName&gt;
+    &lt;AppxPackage&gt;true&lt;/AppxPackage&gt;
+&lt;/PropertyGroup&gt;
+&lt;Import Project=&quot;$(VCTargetsPath)\Microsoft.Cpp.Default.props&quot; /&gt;
+</code></pre>
+</li>
+<li><p>Save and close the project file.</p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>MyUWPApp</strong> node and select <strong>Reload Project</strong>.</p>
+</li>
+</ol>
+<h2 id="configure-the-solution">Configure the solution</h2>
+<p>In this section, you'll update the solution that contains both projects to configure project dependencies and build properties required for the projects to build correctly.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node and add a new XML file named <strong>Solution.props</strong>.</p>
+</li>
+<li><p>Add the following XML to the <strong>Solution.props</strong> file.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Project xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;IntDir&gt;$(SolutionDir)\obj\$(Platform)\$(Configuration)\$(MSBuildProjectName)\&lt;/IntDir&gt;
+    &lt;OutDir&gt;$(SolutionDir)\bin\$(Platform)\$(Configuration)\$(MSBuildProjectName)\&lt;/OutDir&gt;
+    &lt;GeneratedFilesDir&gt;$(IntDir)Generated Files\&lt;/GeneratedFilesDir&gt;
+  &lt;/PropertyGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>From the <strong>View</strong> menu, click <strong>Property Manager</strong> (depending on your configuration, this may be under <strong>View</strong> -&gt; <strong>Other Windows</strong>).</p>
+</li>
+<li><p>In the <strong>Property Manager</strong> window, right-click <strong>MyDesktopWin32App</strong> and select <strong>Add Existing Property Sheet</strong>. Navigate to the <strong>Solution.props</strong> file you just added and click <strong>Open</strong>.</p>
+</li>
+<li><p>Repeat the previous step to add the <strong>Solution.props</strong> file to the <strong>MyUWPApp</strong> project in the <strong>Property Manager</strong> window.</p>
+</li>
+<li><p>Close the <strong>Property Manager</strong> window.</p>
+</li>
+<li><p>Confirm that the property sheet changes were saved properly. In <strong>Solution Explorer</strong>, right-click the <strong>MyDesktopWin32App</strong> project and choose <strong>Properties</strong>. Click <strong>Configuration Properties</strong> -&gt; <strong>General</strong>, and confirm that the <strong>Output Directory</strong> and <strong>Intermediate Directory</strong> properties have the values you added to the <strong>Solution.props</strong> file. You can also confirm the same for the <strong>MyUWPApp</strong> project.
+<img src="../images/xaml-islands/xaml-island-cpp-4.png" alt="Screenshot of the Project Property page with Configuration Properties - General selected and the General Properties displayed."></p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node and choose <strong>Project Dependencies</strong>. In the <strong>Projects</strong> drop-down, make sure that <strong>MyDesktopWin32App</strong> is selected, and select <strong>MyUWPApp</strong> in the <strong>Depends On</strong> list.
+<img src="../images/xaml-islands/xaml-island-cpp-5.png" alt="Screenshot of the Project Dependencies dialog with the current project selected from the Projects drop-down and the MyUWPApp dependency checked in the 'Depends on:' panel."></p>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+</li>
+</ol>
+<h2 id="add-code-to-the-uwp-app-project">Add code to the UWP app project</h2>
+<p>You're now ready to add code to the <strong>MyUWPApp</strong> project to perform these tasks:</p>
+<ul>
+<li>Implement a custom WinRT XAML control. Later in this walkthrough, you'll add code that hosts this control in the <strong>MyDesktopWin32App</strong> project.</li>
+<li>Define a type that derives from the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</a> class in the Windows Community Toolkit.</li>
+</ul>
+<h3 id="define-a-custom-winrt-xaml-control">Define a custom WinRT XAML control</h3>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click <strong>MyUWPApp</strong> and select <strong>Add</strong> -&gt; <strong>New Item</strong>. Select the <strong>Visual C++</strong> node in the left pane, select <strong>Blank User Control (C++/WinRT)</strong>, name it <strong>MyUserControl</strong>, and click <strong>Add</strong>.</p>
+</li>
+<li><p>In the XAML editor, replace the contents of the <strong>MyUserControl.xaml</strong> file with the following XAML and then save the file.</p>
+<pre><code class="lang-xml">&lt;UserControl
+    x:Class=&quot;MyUWPApp.MyUserControl&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:MyUWPApp&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;StackPanel HorizontalAlignment=&quot;Center&quot; Spacing=&quot;10&quot; 
+                Padding=&quot;20&quot; VerticalAlignment=&quot;Center&quot;&gt;
+        &lt;TextBlock HorizontalAlignment=&quot;Center&quot; TextWrapping=&quot;Wrap&quot; 
+                       Text=&quot;Hello from XAML Islands&quot; FontSize=&quot;30&quot; /&gt;
+        &lt;TextBlock HorizontalAlignment=&quot;Center&quot; Margin=&quot;15&quot; TextWrapping=&quot;Wrap&quot;
+                       Text=&quot;😍❤💋🌹🎉😎 🐱‍👤&quot; FontSize=&quot;16&quot; /&gt;
+        &lt;Button HorizontalAlignment=&quot;Center&quot; 
+                x:Name=&quot;Button&quot; Click=&quot;ClickHandler&quot;&gt;Click Me&lt;/Button&gt;
+    &lt;/StackPanel&gt;
+&lt;/UserControl&gt;
+</code></pre>
+</li>
+</ol>
+<h3 id="define-a-xamlapplication-class">Define a XamlApplication class</h3>
+<p>Next, revise the default <strong>App</strong> class in the <strong>MyUWPApp</strong> project to derive from the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</a> class provided by the Windows Community Toolkit. This class supports the <a href="/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider">IXamlMetadataProvider</a> interface, which enables your app to discover and load metadata for custom WinRT XAML controls in assemblies in the current directory of your application at run time. This class also initializes the WinRT XAML framework for the current thread. Later in this walkthrough you'll update the desktop project to create an instance of this class.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Each solution that uses XAML Islands can contain only one project that defines a <code>XamlApplication</code> object. All custom WinRT XAML controls in your app share the same <code>XamlApplication</code> object.</p>
+</div>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>MainPage.xaml</strong> file in the <strong>MyUWPApp</strong> project. Click <strong>Remove</strong> and then <strong>Delete</strong> to delete this file permanently from the project.</p>
+</li>
+<li><p>In the <strong>MyUWPApp</strong> project, expand <strong>App.xaml</strong> file.</p>
+</li>
+<li><p>Replace the contents of the <strong>App.xaml</strong>, <strong>App.cpp</strong>, <strong>App.h</strong>, and <strong>App.idl</strong> files with the following code.</p>
+<ul>
+<li><p><strong>App.xaml</strong>:</p>
+<pre><code class="lang-xml">&lt;Toolkit:XamlApplication
+    x:Class=&quot;MyUWPApp.App&quot;
+    xmlns:Toolkit=&quot;using:Microsoft.Toolkit.Win32.UI.XamlHost&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:MyUWPApp&quot;&gt;
+&lt;/Toolkit:XamlApplication&gt;
+</code></pre>
+</li>
+<li><p><strong>App.idl</strong>:</p>
+<pre><code class="lang-IDL">namespace MyUWPApp
+{
+     [default_interface]
+     runtimeclass App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
+     {
+        App();
+     }
+}
+</code></pre>
+</li>
+<li><p><strong>App.h</strong>:</p>
+<pre><code class="lang-cpp">#pragma once
+#include &quot;App.g.h&quot;
+#include &quot;App.base.h&quot;
+namespace winrt::MyUWPApp::implementation
+{
+    class App : public AppT2&lt;App&gt;
+    {
+    public:
+        App();
+        ~App();
+    };
+}
+namespace winrt::MyUWPApp::factory_implementation
+{
+    class App : public AppT&lt;App, implementation::App&gt;
+    {
+    };
+}
+</code></pre>
+</li>
+<li><p><strong>App.cpp</strong>:</p>
+<pre><code class="lang-cpp">#include &quot;pch.h&quot;
+#include &quot;App.h&quot;
+#include &quot;App.g.cpp&quot;
+using namespace winrt;
+using namespace Windows::UI::Xaml;
+namespace winrt::MyUWPApp::implementation
+{
+    App::App()
+    {
+        Initialize();
+        AddRef();
+        m_inner.as&lt;::IUnknown&gt;()-&gt;Release();
+    }
+    App::~App()
+    {
+        Close();
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>#include &quot;App.g.cpp&quot;</code> statement is necessary when the <strong>Optimized</strong> property on the <strong>Common Properties</strong> -&gt; <strong>C++/WinRT</strong> page of the project properties is set to <strong>Yes</strong>. This is the default for new C++/WinRT projects. For more details about the effects of the <strong>Optimized</strong> property, see <a href="/windows/uwp/cpp-and-winrt-apis/author-apis#opt-in-to-uniform-construction-and-direct-implementation-access">this section</a>.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Add a new header file to the <strong>MyUWPApp</strong> project named <strong>app.base.h</strong>.</p>
+</li>
+<li><p>Add the following code to the <strong>app.base.h</strong> file, save the file, and close it.</p>
+<pre><code class="lang-cpp">#pragma once
+namespace winrt::MyUWPApp::implementation
+{
+    template &lt;typename D, typename... I&gt;
+    struct App_baseWithProvider : public App_base&lt;D, ::winrt::Windows::UI::Xaml::Markup::IXamlMetadataProvider&gt;
+    {
+        using IXamlType = ::winrt::Windows::UI::Xaml::Markup::IXamlType;
+        IXamlType GetXamlType(::winrt::Windows::UI::Xaml::Interop::TypeName const&amp; type)
+        {
+            return _appProvider.GetXamlType(type);
+        }
+        IXamlType GetXamlType(::winrt::hstring const&amp; fullName)
+        {
+            return _appProvider.GetXamlType(fullName);
+        }
+        ::winrt::com_array&lt;::winrt::Windows::UI::Xaml::Markup::XmlnsDefinition&gt; GetXmlnsDefinitions()
+        {
+            return _appProvider.GetXmlnsDefinitions();
+        }
+    private:
+        bool _contentLoaded{ false };
+        winrt::MyUWPApp::XamlMetaDataProvider _appProvider;
+    };
+    template &lt;typename D, typename... I&gt;
+    using AppT2 = App_baseWithProvider&lt;D, I...&gt;;
+}
+</code></pre>
+</li>
+<li><p>Build the solution and confirm that it builds successfully.</p>
+</li>
+</ol>
+<h2 id="configure-the-desktop-project-to-consume-custom-control-types">Configure the desktop project to consume custom control types</h2>
+<p>Before the <strong>MyDesktopWin32App</strong> app can host a custom WinRT XAML control in a XAML Island, it must be configured to consume custom control types from the <strong>MyUWPApp</strong> project. There are two ways to do this, and you can choose either option as you complete this walkthrough.</p>
+<h3 id="option-1-package-the-app-using-msix">Option 1: Package the app using MSIX</h3>
+<p>You can package the app in an <a href="/windows/msix">MSIX package</a> for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.</p>
+<ol>
+<li><p>Add a new <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> to your solution. As you create the project, name it <strong>MyDesktopWin32Project</strong> and select <strong>Windows 10, version 1903 (10.0; Build 18362)</strong> for both the <strong>Target version</strong> and <strong>Minimum version</strong>.</p>
+</li>
+<li><p>In the packaging project, right-click the <strong>Applications</strong> node and choose <strong>Add reference</strong>. In the list of projects, select the check box next to the <strong>MyDesktopWin32App</strong> project and click <strong>OK</strong>.
+<img src="../images/xaml-islands/xaml-island-cpp-6.png" alt="Screenshot of the Reference Manager dialog for the packaging project with the current project selected as a reference."></p>
+</li>
+<li><p>For info about distributing/deploying the package, see <a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose to not package your application in an <a href="/windows/msix">MSIX package</a> for deployment, then computers that run your app must have the <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">Visual C++ Runtime</a> installed.</p>
+</div>
+<h3 id="option-2-create-an-application-manifest">Option 2: Create an application manifest</h3>
+<p>You can add an <a href="/windows/desktop/SbsCs/application-manifests">application manifest</a> to your app.</p>
+<ol>
+<li><p>Right-click the <strong>MyDesktopWin32App</strong> project and select <strong>Add</strong> -&gt; <strong>New Item</strong>.</p>
+</li>
+<li><p>In the <strong>Add New Item</strong> dialog, click <strong>Web</strong> in the left pane and select <strong>XML File (.xml)</strong>.</p>
+</li>
+<li><p>Name the new file <strong>app.manifest</strong> and click <strong>Add</strong>.</p>
+</li>
+<li><p>Replace the contents of the new file with the following XML. This XML registers custom control types in the <strong>MyUWPApp</strong> project.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;assembly
+ xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot;
+ xmlns:asmv3=&quot;urn:schemas-microsoft-com:asm.v3&quot;
+ manifestVersion=&quot;1.0&quot;&gt;
+  &lt;asmv3:file name=&quot;MyUWPApp.dll&quot;&gt;
+    &lt;activatableClass
+        name=&quot;MyUWPApp.App&quot;
+        threadingModel=&quot;both&quot;
+        xmlns=&quot;urn:schemas-microsoft-com:winrt.v1&quot; /&gt;
+    &lt;activatableClass
+        name=&quot;MyUWPApp.XamlMetadataProvider&quot;
+        threadingModel=&quot;both&quot;
+        xmlns=&quot;urn:schemas-microsoft-com:winrt.v1&quot; /&gt;
+    &lt;activatableClass
+        name=&quot;MyUWPApp.MyUserControl&quot;
+        threadingModel=&quot;both&quot;
+        xmlns=&quot;urn:schemas-microsoft-com:winrt.v1&quot; /&gt;
+  &lt;/asmv3:file&gt;
+&lt;/assembly&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="configure-additional-desktop-project-properties">Configure additional desktop project properties</h2>
+<p>Next, update the <strong>MyDesktopWin32App</strong> project to define a macro for additional include directories and configure additional properties.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>MyDesktopWin32App</strong> project and select <strong>Unload Project</strong>.</p>
+</li>
+<li><p>Right-click <strong>MyDesktopWin32App (Unloaded)</strong> and select <strong>Edit MyDesktopWin32App.vcxproj</strong>.</p>
+</li>
+<li><p>Add the following XML just before the closing <code>&lt;/Project&gt;</code> tag at the end of the file. Then, save and close the file.</p>
+<pre><code class="lang-xml">  &lt;!-- Configure these for your UWP project --&gt;
+  &lt;PropertyGroup&gt;
+    &lt;AppProjectName&gt;MyUWPApp&lt;/AppProjectName&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;PropertyGroup&gt;
+    &lt;AppIncludeDirectories&gt;$(SolutionDir)\obj\$(Platform)\$(Configuration)\$(AppProjectName)\;$(SolutionDir)\obj\$(Platform)\$(Configuration)\$(AppProjectName)\Generated Files\;&lt;/AppIncludeDirectories&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;ProjectReference Include=&quot;..\$(AppProjectName)\$(AppProjectName).vcxproj&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;!-- End Section--&gt;
+</code></pre>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click <strong>MyDesktopWin32App (unloaded)</strong> and select <strong>Reload Project</strong>.</p>
+</li>
+<li><p>Right-click the <strong>MyDesktopWin32App</strong> project, select <strong>Properties</strong>, and expand <strong>Manifest Tool</strong> -&gt; <strong>Input and Output</strong> in the left pane. Set the <strong>DPI Awareness</strong> property to <strong>Per Monitor High DPI Aware</strong>. If you do not set this property, you may encounter a manifest configuration error in certain high DPI scenarios.</p>
+<p><img src="../images/xaml-islands/xaml-island-cpp-8.png" alt="Screenshot of the Property page for the current project with Configuration Properties - Manifest Tool - Input and Output selected and DPI Awareness set to 'Per Monitor High DPI Aware'."></p>
+</li>
+<li><p>Click <strong>OK</strong> to close the <strong>Property Pages</strong> dialog.</p>
+</li>
+</ol>
+<h2 id="host-the-custom-winrt-xaml-control-in-the-desktop-project">Host the custom WinRT XAML control in the desktop project</h2>
+<p>Finally, you're ready to add code to the <strong>MyDesktopWin32App</strong> project to host the custom WinRT XAML control you defined earlier in the <strong>MyUWPApp</strong> project.</p>
+<ol>
+<li><p>In the <strong>MyDesktopWin32App</strong> project, open the <strong>framework.h</strong> file and comment out the following line of code. Save the file when you're done.</p>
+<pre><code class="lang-cpp">#define WIN32_LEAN_AND_MEAN
+</code></pre>
+</li>
+<li><p>Open the <strong>MyDesktopWin32App.h</strong> file and replace the contents of this file with the following code to reference necessary C++/WinRT header files. Save the file when you're done.</p>
+<pre><code class="lang-cpp">#pragma once
+
+#include &quot;resource.h&quot;
+#include &lt;winrt/Windows.Foundation.Collections.h&gt;
+#include &lt;winrt/Windows.system.h&gt;
+#include &lt;winrt/windows.ui.xaml.hosting.h&gt;
+#include &lt;windows.ui.xaml.hosting.desktopwindowxamlsource.h&gt;
+#include &lt;winrt/windows.ui.xaml.controls.h&gt;
+#include &lt;winrt/Windows.ui.xaml.media.h&gt;
+#include &lt;winrt/Windows.UI.Core.h&gt;
+#include &lt;winrt/MyUWPApp.h&gt;
+
+using namespace winrt;
+using namespace Windows::UI;
+using namespace Windows::UI::Composition;
+using namespace Windows::UI::Xaml::Hosting;
+using namespace Windows::Foundation::Numerics;
+using namespace Windows::UI::Xaml::Controls;
+</code></pre>
+</li>
+<li><p>Open the <strong>MyDesktopWin32App.cpp</strong> file and add the following code to the <code>Global Variables:</code> section.</p>
+<pre><code class="lang-cpp">winrt::MyUWPApp::App hostApp{ nullptr };
+winrt::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource _desktopWindowXamlSource{ nullptr };
+winrt::MyUWPApp::MyUserControl _myUserControl{ nullptr };
+</code></pre>
+</li>
+<li><p>In the same file, add the following code to the <code>Forward declarations of functions included in this code module:</code> section.</p>
+<pre><code class="lang-cpp">void AdjustLayout(HWND);
+</code></pre>
+</li>
+<li><p>In the same file, add the following code immediately after the <code>TODO: Place code here.</code> comment in the <code>wWinMain</code> function.</p>
+<pre><code class="lang-cpp">// TODO: Place code here.
+winrt::init_apartment(winrt::apartment_type::single_threaded);
+hostApp = winrt::MyUWPApp::App{};
+_desktopWindowXamlSource = winrt::Windows::UI::Xaml::Hosting::DesktopWindowXamlSource{};
+</code></pre>
+</li>
+<li><p>In the same file, replace the default <code>InitInstance</code> function with the following code.</p>
+<pre><code class="lang-cpp">BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+{
+    hInst = hInstance; // Store instance handle in our global variable
+
+    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+        CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
+    if (!hWnd)
+    {
+        return FALSE;
+    }
+
+    // Begin XAML Islands walkthrough code.
+    if (_desktopWindowXamlSource != nullptr)
+    {
+        auto interop = _desktopWindowXamlSource.as&lt;IDesktopWindowXamlSourceNative&gt;();
+        check_hresult(interop-&gt;AttachToWindow(hWnd));
+        HWND hWndXamlIsland = nullptr;
+        interop-&gt;get_WindowHandle(&amp;hWndXamlIsland);
+        RECT windowRect;
+        ::GetWindowRect(hWnd, &amp;windowRect);
+        ::SetWindowPos(hWndXamlIsland, NULL, 0, 0, windowRect.right - windowRect.left, windowRect.bottom - windowRect.top, SWP_SHOWWINDOW);
+        _myUserControl = winrt::MyUWPApp::MyUserControl();
+        _desktopWindowXamlSource.Content(_myUserControl);
+    }
+    // End XAML Islands walkthrough code.
+
+    ShowWindow(hWnd, nCmdShow);
+    UpdateWindow(hWnd);
+
+    return TRUE;
+}
+</code></pre>
+</li>
+<li><p>In the same file, add the following new function to the end of the file.</p>
+<pre><code class="lang-cpp">void AdjustLayout(HWND hWnd)
+{
+    if (_desktopWindowXamlSource != nullptr)
+    {
+        auto interop = _desktopWindowXamlSource.as&lt;IDesktopWindowXamlSourceNative&gt;();
+        HWND xamlHostHwnd = NULL;
+        check_hresult(interop-&gt;get_WindowHandle(&amp;xamlHostHwnd));
+        RECT windowRect;
+        ::GetWindowRect(hWnd, &amp;windowRect);
+        ::SetWindowPos(xamlHostHwnd, NULL, 0, 0, windowRect.right - windowRect.left, windowRect.bottom - windowRect.top, SWP_SHOWWINDOW);
+    }
+}
+</code></pre>
+</li>
+<li><p>In the same file, locate the <code>WndProc</code> function. Replace the default <code>WM_DESTROY</code> handler in the switch statement with the following code.</p>
+<pre><code class="lang-cpp">case WM_DESTROY:
+    PostQuitMessage(0);
+    if (_desktopWindowXamlSource != nullptr)
+    {
+        _desktopWindowXamlSource.Close();
+        _desktopWindowXamlSource = nullptr;
+    }
+    break;
+case WM_SIZE:
+    AdjustLayout(hWnd);
+    break;
+</code></pre>
+</li>
+<li><p>Save the file.</p>
+</li>
+<li><p>Build the solution and confirm that it builds successfully.</p>
+</li>
+</ol>
+<h2 id="add-a-control-from-the-winui-2-library-to-the-custom-control">Add a control from the WinUI 2 library to the custom control</h2>
+<p>Traditionally, WinRT XAML controls have been released as part of the Windows OS and made available to developers through the Windows SDK. The <a href="/uwp/toolkits/winui/">WinUI library</a> is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform.</p>
+<p>This section demonstrates how to add a WinRT XAML control from the WinUI 2 library to your user control.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Currently, XAML Islands only supports hosting controls from the WinUI 2 library. Support for hosting controls from the WinUI 3 library is coming in a later release.</p>
+</div>
+<ol>
+<li><p>In the <strong>MyUWPApp</strong> project, install the latest prerelease or release version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NuGet package.</p>
+<ul>
+<li>If you chose to <a href="#option-1-package-the-app-using-msix">package the MyDesktopWin32App project using MSIX</a> earlier in this walkthrough, you can install either the prerelease or release version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NugGet package. Packaged desktop apps can use either the prerelease or release version of this package.</li>
+<li>If you chose not to package the <strong>MyDesktopWin32App</strong> project, you must install the prerelease version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NuGet package. Unpackaged desktop apps must use the prerelease version of this package.</li>
+</ul>
+</li>
+<li><p>In the pch.h file in this project, add the following <code>#include</code> statements and save your changes. These statements bring a required set of projection headers from the WinUI library into your project. This step is required for any C++/WinRT project that uses the WinUI library. For more information, see <a href="/uwp/toolkits/winui/getting-started#additional-steps-for-a-cwinrt-project">this article</a>.</p>
+<pre><code class="lang-cpp">#include &quot;winrt/Microsoft.UI.Xaml.Automation.Peers.h&quot;
+#include &quot;winrt/Microsoft.UI.Xaml.Controls.Primitives.h&quot;
+#include &quot;winrt/Microsoft.UI.Xaml.Media.h&quot;
+#include &quot;winrt/Microsoft.UI.Xaml.XamlTypeInfo.h&quot;
+</code></pre>
+</li>
+<li><p>In the App.xaml file in the same project, add the following child element to the <code>&lt;xaml:XamlApplication&gt;</code> element and save your changes.</p>
+<pre><code class="lang-xml">&lt;Application.Resources&gt;
+    &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot; /&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<p>After adding this element, the contents of this file should now look similar to this.</p>
+<pre><code class="lang-xml">&lt;Toolkit:XamlApplication
+    x:Class=&quot;MyUWPApp.App&quot;
+    xmlns:Toolkit=&quot;using:Microsoft.Toolkit.Win32.UI.XamlHost&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:MyUWPApp&quot;&gt;
+    &lt;Application.Resources&gt;
+        &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot;/&gt;
+    &lt;/Application.Resources&gt;
+&lt;/Toolkit:XamlApplication&gt;
+</code></pre>
+</li>
+<li><p>In the same project, open the MyUserControl.xaml file and add the following namespace declaration to the <code>&lt;UserControl&gt;</code> element.</p>
+<pre><code class="lang-xml">xmlns:winui=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+</code></pre>
+</li>
+<li><p>In the same file, add a <code>&lt;winui:RatingControl /&gt;</code> element as a child of the <code>&lt;StackPanel&gt;</code> and save your changes. This element adds an instance of the <a href="/uwp/api/microsoft.ui.xaml.controls.ratingcontrol">RatingControl</a> class from the WinUI library. After adding this element, the <code>&lt;StackPanel&gt;</code> should now look similar to this.</p>
+<pre><code class="lang-xml">&lt;StackPanel HorizontalAlignment=&quot;Center&quot; Spacing=&quot;10&quot; 
+            Padding=&quot;20&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;TextBlock HorizontalAlignment=&quot;Center&quot; TextWrapping=&quot;Wrap&quot; 
+                   Text=&quot;Hello from XAML Islands&quot; FontSize=&quot;30&quot; /&gt;
+    &lt;TextBlock HorizontalAlignment=&quot;Center&quot; Margin=&quot;15&quot; TextWrapping=&quot;Wrap&quot;
+                   Text=&quot;😍❤💋🌹🎉😎 🐱‍👤&quot; FontSize=&quot;16&quot; /&gt;
+    &lt;Button HorizontalAlignment=&quot;Center&quot; 
+            x:Name=&quot;Button&quot; Click=&quot;ClickHandler&quot;&gt;Click Me&lt;/Button&gt;
+    &lt;winui:RatingControl /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+</li>
+<li><p>Build the solution and confirm that it builds successfully.</p>
+</li>
+</ol>
+<h2 id="test-the-app">Test the app</h2>
+<p>Run the solution and confirm that <strong>MyDesktopWin32App</strong> opens with the following window.</p>
+<p><img src="../images/xaml-islands/xaml-island-cpp-9.png" alt="Screenshot of the MyDesktopWin32App app demonstrated in this topic."></p>
+<h2 id="next-steps">Next steps</h2>
+<p>Many desktop applications that host XAML Islands will need to handle additional scenarios in order to provide a smooth user experience. For example, desktop applications may need to handle keyboard input in XAML Islands, focus navigation between XAML Islands and other UI elements, and layout changes.</p>
+<p>For more information about handling these scenarios and pointers to related code samples, see <a href="advanced-scenarios-xaml-islands-cpp.html">Advanced scenarios for XAML Islands in C++ desktop apps</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="xaml-islands.html">Host WinRT XAML controls in desktop apps (XAML Islands)</a></li>
+<li><a href="using-the-xaml-hosting-api.html">Using the WinRT XAML hosting API in a desktop Win32 app</a></li>
+<li><a href="host-standard-control-with-xaml-islands-cpp.html">Host a standard WinRT XAML control in a desktop Win32 app</a></li>
+<li><a href="advanced-scenarios-xaml-islands-cpp.html">Advanced scenarios for XAML Islands in desktop Win32 apps</a></li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands code samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Quickstart Push notifications in the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Quickstart Push notifications in the Windows App SDK ">
+    
+    <meta name="description" content="Send push notifications using the Windows App SDK">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="quickstart-push-notifications-in-the-windows-app-sdk">Quickstart: Push notifications in the Windows App SDK</h1>
+
+<p>In this quickstart you will create a desktop Windows application that sends and receives push notifications using the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="../../../get-started/start-here.html">Start developing Windows apps</a></li>
+<li>Either <a href="../../../winui/winui3/create-your-first-winui3-app.html">Create a new project that uses the Windows App SDK</a> OR <a href="../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li>An <a href="https://azure.microsoft.com/free/">Azure Account</a> is required in order to use Windows App SDK push notifications.</li>
+<li>Read <a href="../../../windows-app-sdk/notifications/push-notifications/index.md">Push notifications overview</a></li>
+</ul>
+<h2 id="sample-app">Sample app</h2>
+<p>This quickstart walks through adding push notifications support to your app. See the example code from this quickstart in context in the sample apps found on <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/">GitHub</a>.</p>
+<div class="button">
+<p><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push">Sample App Code</a></p>
+</div>
+<h2 id="api-reference">API reference</h2>
+<p>For API reference documentation for push notifications, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications">Microsoft.Windows.PushNotifications Namespace</a>.</p>
+<h2 id="configure-your-apps-identity-in-azure-active-directory-aad">Configure your app's identity in Azure Active Directory (AAD)</h2>
+<p>Push notifications in Windows App SDK use identities from Azure Active Directory (AAD). Azure credentials are required when requesting a WNS Channel URI and when requesting access tokens in order to send push notifications. <strong>Note</strong>: We do <strong>NOT</strong> support using Windows App SDK push notifications with Microsoft Partner Center.</p>
+<h3 id="step-1-create-an-aad-app-registration">Step 1: Create an AAD app registration</h3>
+<p>Login to your Azure account and create a new <a href="https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade"><strong>AAD App Registration</strong></a> resource. Select <em>New registration</em>.</p>
+<h3 id="step-2-provide-a-name-and-select-a-multi-tenant-option">Step 2: Provide a name and select a multi-tenant option</h3>
+<ol>
+<li><p>Provide an app name.</p>
+</li>
+<li><p>Push notifications require the multi-tenant option, so select that.</p>
+<ol>
+<li>For more information about tenants, see <a href="/azure/active-directory/develop/single-and-multi-tenant-apps#who-can-sign-in-to-your-app">Who can sign in to your app?</a>.</li>
+</ol>
+</li>
+<li><p>Select <em>Register</em></p>
+</li>
+<li><p>Take note of your <strong>Application (client) ID</strong>, as this is your <strong>Azure AppId</strong> that you will be using during activation registration and access token request.</p>
+</li>
+<li><p>Take note of your <strong>Directory (tenant) ID</strong>, as this is your <strong>Azure TenantId</strong> that you will be using when requesting an access token.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><img src="images/push-notification-aad-app-registration-app-id.png" alt="AAD App Registration Tenant">
+Take note of your <strong>Application (client) ID</strong> and <strong>Directory (tenant) ID</strong>.</p>
+</div>
+</li>
+<li><p>Take note of your <strong>Object ID</strong>, as this is your <strong>Azure ObjectId</strong> that you will be using when requesting a channel request.  Note that this is NOT the object ID listed on the <strong>Essentials</strong> page. Instead, to find the correct <strong>Object ID</strong>, click on the app name in the <strong>Managed application in local directory</strong> field on the <strong>Essentials</strong> page:</p>
+<blockquote>
+<p><img src="images/push-notification-essentials-ui.png" alt="Screenshot showing the Managed application in local directory option on the Essentials page"></p>
+</blockquote>
+<blockquote>
+<p><img src="images/push-notification-object-id-field.png" alt="Screenshot showing the Object ID field"></p>
+</blockquote>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A <strong>service principal</strong> is required to get an Object ID, if there is not one associated with your app, follow the steps in one of the following articles to create one in the Azure portal or using the command line:</p>
+<p><a href="/azure/active-directory/develop/howto-create-service-principal-portal">Use the portal to create an Azure AD application and service principal that can access resources</a></p>
+<p><a href="/azure/active-directory/develop/howto-authenticate-service-principal-powershell">Use Azure PowerShell to create a service principal with a certificate</a></p>
+</div>
+</li>
+</ol>
+<h3 id="step-3-create-a-secret-for-your-app-registration">Step 3: Create a secret for your app registration</h3>
+<p>Your secret will be used along with your Azure AppId/ClientId when requesting an access token to send push notifications.</p>
+<p><img src="images/push-notification-aad-app-registration-secret.png" alt="AAD App Secret"></p>
+<p>Navigate to <strong>Certificates &amp; secrets</strong> and select <strong>New client secret</strong>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Ensure you copy your secret once created and store it in a safe location, like Azure Key Vault. It will only be viewable once right after creation.</p>
+</div>
+<h3 id="step-4-map-your-apps-package-family-name-to-its-azure-appid">Step 4: Map your app's Package Family Name to its Azure AppId</h3>
+<p>If your app is packaged (including packaged with an external location), you can use this flow to map your app's Package Family Name (PFN) and its Azure AppId.</p>
+<p>If your app is a packaged Win32 app, then create a Package Family Name (PFN) mapping request by emailing <a href="mailto:Win_App_SDK_Push@microsoft.com">Win_App_SDK_Push@microsoft.com</a> with subject line &quot;Windows App SDK Push Notifications Mapping Request&quot; and body &quot;PFN: [your PFN]&quot;, AppId: [your APPId], ObjectId: [your ObjectId]. Mapping requests are completed on a weekly basis. You will be notified once your mapping request has been completed.</p>
+<h2 id="configure-your-app-to-receive-push-notifications">Configure your app to receive push notifications</h2>
+<h3 id="step-1-add-namespace-declarations">Step 1: Add namespace declarations</h3>
+<p>Add the namespace for Windows App SDK push notifications <code>Microsoft.Windows.PushNotifications</code>.</p>
+<pre><code class="lang-cpp">#include &lt;winrt/Microsoft.Windows.PushNotifications.h&gt;
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+</code></pre>
+<h3 id="step-2-add-your-com-activator-to-your-apps-manifest">Step 2: Add your COM activator to your app's manifest</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If your app is unpackaged (that is, it lacks package identity at runtime), then skip to <strong>Step 3: Register for and respond to push notifications on app startup</strong>.</p>
+</div>
+<p>If your app is packaged (including packaged with external location):
+Open your <strong>Package.appxmanifest</strong>. Add the following inside the <code>&lt;Application&gt;</code> element. Replace the <code>Id</code>, <code>Executable</code>, and <code>DisplayName</code> values with those specific to your app.</p>
+<pre><code class="lang-xaml">&lt;!--Packaged apps only--&gt;
+&lt;!--package.appxmanifest--&gt;
+
+&lt;Package
+  ...
+  xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;
+  ...
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      ...
+      &lt;Extensions&gt;
+
+        &lt;!--Register COM activator--&gt;    
+        &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+          &lt;com:ComServer&gt;
+              &lt;com:ExeServer Executable=&quot;SampleApp\SampleApp.exe&quot; DisplayName=&quot;SampleApp&quot; Arguments=&quot;----WindowsAppRuntimePushServer:&quot;&gt;
+                &lt;com:Class Id=&quot;[Your app's Azure AppId]&quot; DisplayName=&quot;Windows App SDK Push&quot; /&gt;
+            &lt;/com:ExeServer&gt;
+          &lt;/com:ComServer&gt;
+        &lt;/com:Extension&gt;
+    
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+ &lt;/Package&gt;    
+</code></pre>
+<h3 id="step-3-register-for-and-respond-to-push-notifications-on-app-startup">Step 3: Register for and respond to push notifications on app startup</h3>
+<p>Update your app's <code>main()</code> method to add the following:</p>
+<ol>
+<li>Register your app to receive push notifications by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.register">PushNotificationManager::Default().Register()</a>.</li>
+<li>Check the source of the activation request by calling <a href="">AppInstance::GetCurrent().GetActivatedEventArgs()</a>. If the activation was triggered from a push notification, respond based on the notification's payload.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must call <strong>PushNotificationManager::Default().Register</strong> before calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetCurrent.GetActivatedEventArgs</a>.</p>
+</div>
+<p>The following sample is from the sample packaged app found on <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/cpp-console-packaged">GitHub</a>.</p>
+<pre><code class="lang-cpp">// cpp-console.cpp
+#include &quot;pch.h&quot;
+#include &lt;iostream&gt;
+#include &lt;winrt/Microsoft.Windows.PushNotifications.h&gt;
+#include &lt;winrt/Microsoft.Windows.AppLifecycle.h&gt;
+#include &lt;winrt/Windows.Foundation.h&gt;
+#include &lt;wil/result.h&gt;
+#include &lt;wil/cppwinrt.h&gt;
+
+
+using namespace winrt;
+using namespace Windows::Foundation;
+
+using namespace winrt::Microsoft::Windows::PushNotifications;
+using namespace winrt::Microsoft::Windows::AppLifecycle;
+
+winrt::guid remoteId{ &quot;7edfab6c-25ae-4678-b406-d1848f97919a&quot; }; // Replace this with your own Azure ObjectId
+
+
+
+void SubscribeForegroundEventHandler()
+{
+    winrt::event_token token{ PushNotificationManager::Default().PushReceived([](auto const&amp;, PushNotificationReceivedEventArgs const&amp; args)
+    {
+        auto payload{ args.Payload() };
+
+        std::string payloadString(payload.begin(), payload.end());
+        std::cout &lt;&lt; &quot;\nPush notification content received in the FOREGROUND: &quot; &lt;&lt; payloadString &lt;&lt; std::endl;
+    }) };
+}
+
+int main()
+{
+    // Setup an event handler, so we can receive notifications in the foreground while the app is running.
+    SubscribeForegroundEventHandler();
+
+    PushNotificationManager::Default().Register();
+
+    auto args{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+    switch (args.Kind())
+    {
+        // When it is launched normally (by the users, or from the debugger), the sample requests a WNS Channel URI and
+        // displays it, then waits for notifications. This user can take a copy of the WNS Channel URI and use it to send
+        // notifications to the sample
+        case ExtendedActivationKind::Launch:
+        {
+            // Checks to see if push notifications are supported. Certain self-contained apps may not support push notifications by design
+            if (PushNotificationManager::IsSupported())
+            {
+                // Request a WNS Channel URI which can be passed off to an external app to send notifications to.
+                // The WNS Channel URI uniquely identifies this app for this user and device.
+                PushNotificationChannel channel{ RequestChannel() };
+                if (!channel)
+                {
+                    std::cout &lt;&lt; &quot;\nThere was an error obtaining the WNS Channel URI&quot; &lt;&lt; std::endl;
+    
+                    if (remoteId == winrt::guid { &quot;00000000-0000-0000-0000-000000000000&quot; })
+                    {
+                        std::cout &lt;&lt; &quot;\nThe ObjectID has not been set. Refer to the readme file accompanying this sample\nfor the instructions on how to obtain and setup an ObjectID&quot; &lt;&lt; std::endl;
+                    }
+                }
+    
+                std::cout &lt;&lt; &quot;\nPress 'Enter' at any time to exit App.&quot; &lt;&lt; std::endl;
+                std::cin.ignore();
+            }
+            else
+            {
+                // App implements its own custom socket here to receive messages from the cloud since Push APIs are unsupported.
+            }
+        }
+        break;
+
+        // When it is activated from a push notification, the sample only displays the notification.
+        // It doesn’t register for foreground activation of perform any other actions
+        // because background activation is meant to let app perform only small tasks in order to preserve battery life.
+        case ExtendedActivationKind::Push:
+        {
+            PushNotificationReceivedEventArgs pushArgs{ args.Data().as&lt;PushNotificationReceivedEventArgs&gt;() };
+
+            // Call GetDeferral to ensure that code runs in low power
+            auto deferral{ pushArgs.GetDeferral() };
+
+            auto payload{ pushArgs.Payload() } ;
+
+            // Do stuff to process the raw notification payload
+            std::string payloadString(payload.begin(), payload.end());
+            std::cout &lt;&lt; &quot;\nPush notification content received in the BACKGROUND: &quot; &lt;&lt; payloadString.c_str() &lt;&lt; std::endl;
+            std::cout &lt;&lt; &quot;\nPress 'Enter' to exit the App.&quot; &lt;&lt; std::endl;
+
+            // Call Complete on the deferral when finished processing the payload.
+            // This removes the override that kept the app running even when the system was in a low power mode.
+            deferral.Complete();
+            std::cin.ignore();
+        }
+        break;
+
+        default:
+            std::cout &lt;&lt; &quot;\nUnexpected activation type&quot; &lt;&lt; std::endl;
+            std::cout &lt;&lt; &quot;\nPress 'Enter' to exit the App.&quot; &lt;&lt; std::endl;
+            std::cin.ignore();
+            break;
+    }
+
+    // We do not call PushNotificationManager::UnregisterActivator
+    // because then we wouldn't be able to receive background activations, once the app has closed.
+    // Call UnregisterActivator once you don't want to receive push notifications anymore.
+}
+
+</code></pre>
+<h3 id="step-4-request-a-wns-channel-uri-and-register-it-with-the-wns-server">Step 4: Request a WNS Channel URI and register it with the WNS server</h3>
+<p>WNS Channel URIs are the HTTP endpoints for sending push notifications. Each client must request a Channel URI and register it with the WNS server to receive push notifications.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>WNS Channel URIs expire after 30 days.</p>
+</div>
+<pre><code class="lang-cpp">auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(winrt::guid(&quot;[Your app's Azure ObjectID]&quot;)) };
+</code></pre>
+<p>The <strong>PushNotificationManager</strong> will attempt to create a Channel URI, retrying automatically for no more than 15 minutes. Create an event handler to wait for the call to complete. Once the call is complete, if it was successful, register the URI with the WNS  server.</p>
+<pre><code class="lang-cpp">// cpp-console.cpp
+
+winrt::Windows::Foundation::IAsyncOperation&lt;PushNotificationChannel&gt; RequestChannelAsync()
+{
+    // To obtain an AAD RemoteIdentifier for your app,
+    // follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+    auto channelOperation = PushNotificationManager::Default().CreateChannelAsync(remoteId);
+
+    // Setup the inprogress event handler
+    channelOperation.Progress(
+        [](auto&amp;&amp; sender, auto&amp;&amp; args)
+        {
+            if (args.status == PushNotificationChannelStatus::InProgress)
+            {
+                // This is basically a noop since it isn't really an error state
+                std::cout &lt;&lt; &quot;Channel request is in progress.&quot; &lt;&lt; std::endl &lt;&lt; std::endl;
+            }
+            else if (args.status == PushNotificationChannelStatus::InProgressRetry)
+            {
+                LOG_HR_MSG(
+                    args.extendedError,
+                    &quot;The channel request is in back-off retry mode because of a retryable error! Expect delays in acquiring it. RetryCount = %d&quot;,
+                    args.retryCount);
+            }
+        });
+
+    auto result = co_await channelOperation;
+
+    if (result.Status() == PushNotificationChannelStatus::CompletedSuccess)
+    {
+        auto channelUri = result.Channel().Uri();
+
+        std::cout &lt;&lt; &quot;channelUri: &quot; &lt;&lt; winrt::to_string(channelUri.ToString()) &lt;&lt; std::endl &lt;&lt; std::endl;
+
+        auto channelExpiry = result.Channel().ExpirationTime();
+
+        // Caller's responsibility to keep the channel alive
+        co_return result.Channel();
+    }
+    else if (result.Status() == PushNotificationChannelStatus::CompletedFailure)
+    {
+        LOG_HR_MSG(result.ExtendedError(), &quot;We hit a critical non-retryable error with channel request!&quot;);
+        co_return nullptr;
+    }
+    else
+    {
+        LOG_HR_MSG(result.ExtendedError(), &quot;Some other failure occurred.&quot;);
+        co_return nullptr;
+    }
+
+};
+
+PushNotificationChannel RequestChannel()
+{
+    auto task = RequestChannelAsync();
+    if (task.wait_for(std::chrono::seconds(300)) != AsyncStatus::Completed)
+    {
+        task.Cancel();
+        return nullptr;
+    }
+
+    auto result = task.GetResults();
+    return result;
+}
+</code></pre>
+<h3 id="step-5-build-and-install-your-app">Step 5: Build and install your app</h3>
+<p>Use Visual Studio to build and install your app. Right click on the solution file in the Solution Explorer and select <strong>Deploy</strong>. Visual Studio will build your app and install it on your machine. You can run the app by launching it via the Start Menu or the Visual Studio debugger.</p>
+<h2 id="send-a-push-notification-to-your-app">Send a push notification to your app</h2>
+<p>At this point, all configuration is complete and the WNS server can send push notifications to client apps. In the following steps, refer to the <a href="push-request-response-headers.html">Push notification server request and response headers</a> for more detail.</p>
+<h3 id="step-1-request-an-access-token">Step 1: Request an access token</h3>
+<p>To send a push notification, the WNS server first needs to request an access token. Send an HTTP POST request with your Azure TenantId, Azure AppId, and secret. For information on retrieving the Azure TenantId and Azure AppId, see <a href="/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in">Get tenant and app ID values for signing in</a>.</p>
+<p>HTTP Sample Request:</p>
+<pre><code class="lang-HTTP">POST /{tenantID}/oauth2/v2.0/token Http/1.1
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 160
+
+grant_type=client_credentials&amp;client_id=&lt;Azure_App_Registration_AppId_Here&gt;&amp;client_secret=&lt;Azure_App_Registration_Secret_Here&gt;&amp;scope=https://wns.windows.com/.default/
+</code></pre>
+<p>C# Sample Request:</p>
+<pre><code class="lang-csharp">//Sample C# Access token request
+var client = new RestClient(&quot;https://login.microsoftonline.com/{tenantID}/oauth2/v2.0&quot;);
+var request = new RestRequest(&quot;/token&quot;, Method.Post);
+request.AddHeader(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);
+request.AddParameter(&quot;grant_type&quot;, &quot;client_credentials&quot;);
+request.AddParameter(&quot;client_id&quot;, &quot;[Your app's Azure AppId]&quot;);
+request.AddParameter(&quot;client_secret&quot;, &quot;[Your app's secret]&quot;);
+request.AddParameter(&quot;scope&quot;, &quot;https://wns.windows.com/.default&quot;);
+RestResponse response = await client.ExecutePostAsync(request);
+Console.WriteLine(response.Content);
+</code></pre>
+<p>If your request is successful, you will receive a response that contains your token in the <strong>access_token</strong> field.</p>
+<pre><code class="lang-json">{
+    &quot;token_type&quot;:&quot;Bearer&quot;,
+    &quot;expires_in&quot;:&quot;86399&quot;,
+    &quot;ext_expires_in&quot;:&quot;86399&quot;,
+    &quot;expires_on&quot;:&quot;1653771789&quot;,
+    &quot;not_before&quot;:&quot;1653685089&quot;,
+    &quot;access_token&quot;:&quot;[your access token]&quot;
+}
+</code></pre>
+<h3 id="step-2-send-a-raw-notification">Step 2. Send a raw notification</h3>
+<p>Create an HTTP POST request that contains the access token you obtained in the previous step and the content of the push notification you want to send. The content of the push notification will be delivered to the app.</p>
+<pre><code class="lang-http">POST /?token=[The token query string parameter from your channel URL. E.g. AwYAAABa5cJ3...] HTTP/1.1
+Host: dm3p.notify.windows.com
+Content-Type: application/octet-stream
+X-WNS-Type: wns/raw
+Authorization: Bearer [your access token]
+Content-Length: 46
+
+{ Sync: &quot;Hello from the Contoso App Service&quot; }
+</code></pre>
+<pre><code class="lang-csharp">var client = new RestClient(&quot;[Your channel URL. E.g. https://wns2-by3p.notify.windows.com/?token=AwYAAABa5cJ3...]&quot;);
+var request = new RestRequest();
+request.Method = Method.Post; 
+request.AddHeader(&quot;Content-Type&quot;, &quot;application/octet-stream&quot;);
+request.AddHeader(&quot;X-WNS-Type&quot;, &quot;wns/raw&quot;);
+request.AddHeader(&quot;Authorization&quot;, &quot;Bearer [your access token]&quot;);
+request.AddBody(&quot;Notification body&quot;);
+RestResponse response = await client.ExecutePostAsync(request);&quot;);
+</code></pre>
+<h3 id="step-3-send-a-cloud-sourced-app-notification">Step 3: Send a cloud-sourced app notification</h3>
+<p>If you are only interested in sending raw notifications, disregard this step. To send a cloud-sourced app notification, also known a push toast notification, first follow <a href="../../../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md">Quickstart: App notifications in the Windows App SDK</a>. App notifications can either be push (sent from the cloud) or sent locally. Sending a cloud-sourced app notification is similar to sending a raw notification in <strong>Step 2</strong>, except the <em>X-WNS-Type</em> header is <code>toast</code>, <em>Content-Type</em> is <code>text/xml</code>, and the content contains the app notification XML payload. See <a href="/uwp/schemas/tiles/toastschema/schema-root">Notifications XML schema</a> for more on how to construct your XML payload.</p>
+<p>Create an HTTP POST request that contains your access token and the content of the cloud-sourced app notification you want to send. The content of the push notification will be delivered to the app.</p>
+<pre><code class="lang-http">POST /?token=AwYAAAB%2fQAhYEiAESPobjHzQcwGCTjHu%2f%2fP3CCNDcyfyvgbK5xD3kztniW%2bjba1b3aSSun58SA326GMxuzZooJYwtpgzL9AusPDES2alyQ8CHvW94cO5VuxxLDVzrSzdO1ZVgm%2bNSB9BAzOASvHqkMHQhsDy HTTP/1.1
+Host: dm3p.notify.windows.com
+Content-Type: text/xml
+X-WNS-Type: wns/toast
+Authorization: Bearer [your access token]
+Content-Length: 180
+
+&lt;toast&gt;&lt;visual&gt;&lt;binding template=&quot;ToastGeneric&quot;&gt;&lt;text&gt;Example cloud toast notification&lt;/text&gt;&lt;text&gt;This is an example cloud notification using XML&lt;/text&gt;&lt;/binding&gt;&lt;/visual&gt;&lt;/toast&gt;
+</code></pre>
+<pre><code class="lang-csharp">var client = new RestClient(&quot;https://dm3p.notify.windows.com/?token=AwYAAAB%2fQAhYEiAESPobjHzQcwGCTjHu%2f%2fP3CCNDcyfyvgbK5xD3kztniW%2bjba1b3aSSun58SA326GMxuzZooJYwtpgzL9AusPDES2alyQ8CHvW94cO5VuxxLDVzrSzdO1ZVgm%2bNSB9BAzOASvHqkMHQhsDy&quot;);
+client.Timeout = -1;
+
+var request = new RestRequest(Method.POST);
+request.AddHeader(&quot;Content-Type&quot;, &quot;text/xml&quot;);
+request.AddHeader(&quot;X-WNS-Type&quot;, &quot;wns/toast&quot;);
+request.AddHeader(&quot;Authorization&quot;, &quot;Bearer &lt;AccessToken&gt;&quot;);
+request.AddParameter(&quot;text/xml&quot;, &quot;&lt;toast&gt;&lt;visual&gt;&lt;binding template=\&quot;ToastGeneric\&quot;&gt;&lt;text&gt;Example cloud toast notification&lt;/text&gt;&lt;text&gt;This is an example cloud notification using XML&lt;/text&gt;&lt;/binding&gt;&lt;/visual&gt;&lt;/toast&gt;&quot;,  ParameterType.RequestBody);
+Console.WriteLine(response.Content);
+</code></pre>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://aka.ms/wns">Windows Push Notification Service (WNS)</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/">Push notifications sample code on GitHub</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md#api-details">Microsoft.Windows.PushNotifications API details</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md">Push notifications spec on GitHub</a></li>
+<li><a href="../app-notifications/adaptive-interactive-toasts.html">Toast content</a></li>
+<li><a href="/uwp/schemas/tiles/toastschema/schema-root">Notifications XML schema</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/push-notifications/push-quickstart.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

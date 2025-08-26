@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Spacing and Sizes </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Spacing and Sizes ">
+    
+    <meta name="description" content="The new Fluent Standard and Compact control styles ensure a comfortable user experience regardless of device and input method.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="control-size-and-density">Control size and density</h1>
+
+<p>Use a combination of control size and density to optimize your Windows application and provide a user experience that is most appropriate for your app's functionality and interaction requirements.</p>
+<p>By default, XAML apps are rendered with a low-density (or <code>Standard</code>) layout. However, beginning with WinUI 2.1, a high-density (or <code>Compact</code>) layout option, for information rich UI and similar specialized scenarios, is also supported. This can be specified through a basic style resource (see examples below).</p>
+<p>While functionality and behavior has not changed and remains consistent across the two size and density options, the default body font size has been updated to 14px for all controls to support these two density options. This font size works across regions and devices and ensures your application remains balanced and comfortable for users.</p>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/Spacing">Open the WinUI 3 Gallery app and see Spacing examples</a></p>
+<p><a href="winui3gallery://item/CompactSizing">Open the WinUI 3 Gallery app and see Compact Sizing in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="fluent-standard-sizing">Fluent Standard sizing</h2>
+<p><em>Fluent Standard sizing</em> was created to provide a balance between information density and user comfort. Effectively, all items on the screen align to a 40x40 effective pixels (epx) target, which lets UI elements align to a grid and scale appropriately based on system level scaling.</p>
+<p><strong>Standard sizing is designed to accommodate both touch and pointer input.</strong></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For more info on effective pixels and scaling, see <a href="../layout/screen-sizes-and-breakpoints-for-responsive-design.html">Screen sizes and breakpoints</a></p>
+<p>For more info on system level scaling, see <a href="../layout/alignment-margin-padding.html">Alignment, margin, padding</a>.</p>
+</div>
+<h2 id="fluent-compact-sizing">Fluent Compact sizing</h2>
+<p>Compact sizing enables dense, information-rich groups of controls and can help with the following:</p>
+<ul>
+<li>Browsing  large amounts of content.</li>
+<li>Maximizing visible content on a page.</li>
+<li>Navigating and interacting with controls and content</li>
+</ul>
+<p><strong>Compact sizing is designed primarily to accommodate pointer input.</strong></p>
+<h3 id="examples-of-compact-sizing">Examples of compact sizing</h3>
+<p>Compact sizing is implemented through a special resource dictionary that can be specified in your application at either the page level or on a specific layout. The resource dictionary is available in the WinUI Nuget package.</p>
+<p>The following examples show how the <code>Compact</code> style can be applied for the page and an individual Grid control.</p>
+<h4 id="page-level">Page level</h4>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;ResourceDictionary 
+        Source=&quot;ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml&quot;/&gt;
+&lt;/Page.Resources&gt;
+</code></pre>
+<h4 id="grid-level">Grid level</h4>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.Resources&gt;
+        &lt;ResourceDictionary 
+           Source=&quot;ms-appx:///Microsoft.UI.Xaml/DensityStyles/Compact.xaml&quot;/&gt;
+    &lt;/Grid.Resources&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="sizing-in-windows-apps">Sizing in Windows apps</h2>
+<p>In the Windows 10 October 2018 Update (version 1809 and later), the standard, default size for all Windows XAML controls was decreased to increase usability across all usage scenarios.</p>
+<p>The following image shows some of the control layout changes that were introduced with the Windows 10 October 2018 Update. Specifically, the margin between a header and the top of a control was decreased from 8epx to 4epx, and the 44epx grid was changed to a 40epx grid.</p>
+<p><img src="images/standarddensity.png" alt="Standard control layout example"></p>
+<p>This next image shows the changes made to control sizes for the Windows 10 October 2018 Update. Specifically, alignment to the 40epx grid.</p>
+<p><img src="images/standarddensitycommanding.png" alt="Standard commanding example"></p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../input/guidelines-for-targeting.html">Guidelines for touch targets</a></li>
+<li><a href="../../develop/platform/xaml/xaml-resource-dictionary.html">ResourceDictionary and XAML resource references</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary">Resource Dictionary</a></li>
+<li><a href="../../develop/platform/xaml/xaml-styles.html">XAML Styles</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/spacing.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

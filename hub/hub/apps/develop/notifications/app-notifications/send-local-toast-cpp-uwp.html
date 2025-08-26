@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Send a local app notification from a C++ UWP app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Send a local app notification from a C++ UWP app ">
+    
+    <meta name="description" content="Learn how to send a local app notification from a C++ UWP app and handle the user clicking the notification.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="send-a-local-app-notification-from-c-uwp-apps">Send a local app notification from C++ UWP apps</h1>
+
+<p>An app notification is a message that your app can construct and deliver to your user while they are not currently inside your app.</p>
+<img src="../images/toast-notification.png" width="628" alt="Screenshot of an app notification">
+<p>This quickstart walks you through the steps to create, deliver, and display a Windows 10 or Windows 11 app notification using rich content and interactive actions. This quickstart uses local notifications, which are the simplest notification to implement. All types of apps (WPF, UWP, WinForms, console) can send notifications!</p>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're writing a C++ non-UWP app, please see the <a href="send-local-toast-desktop-cpp-wrl.html">C++ WRL</a> documentation. If you're writing a C# app, please see the <a href="send-local-toast.html">C# documentation</a>.</p>
+</div>
+<h2 id="step-1-install-nuget-package">Step 1: Install NuGet package</h2>
+<p>You can create app notifications with the Windows Community Toolkit (WCT)'s builder syntax OR with XML. If you prefer the latter, please skip to <strong>Step 2</strong> and refer to the <strong>Without builder syntax</strong> code examples.</p>
+<p>Within your Visual Studio solution, right click your project, click <em>&quot;Manage NuGet Packages...&quot;</em> and search for and install the <code>Microsoft.Toolkit.Uwp.Notifications</code> <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">NuGet package</a> version 7.0 or greater.</p>
+
+<p>Our <strong>Builder syntax</strong> code examples will use this package. This package allows you to create app notifications without using XML.</p>
+<h2 id="step-2-add-namespace-declarations">Step 2: Add namespace declarations</h2>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_builder-syntax" role="tab" aria-controls="tabpanel_1_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_xml" role="tab" aria-controls="tabpanel_1_xml" data-tab="xml" tabindex="-1">Without builder syntax</a>
+</li>
+</ul>
+<section id="tabpanel_1_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-cpp">using namespace Microsoft::Toolkit::Uwp::Notifications;
+</code></pre>
+</section>
+<section id="tabpanel_1_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">using namespace winrt::Windows::UI::Notifications;
+using namespace Windows::Data::Xml::Dom;
+</code></pre>
+</section>
+</div>
+<h2 id="step-3-send-an-app-notification">Step 3: Send an app notification</h2>
+<p>In Windows 10 and Windows 11, your app notification content is described using an adaptive language that allows great flexibility with how your notification looks. For more information, see the <a href="adaptive-interactive-toasts.html">App notification content</a> documentation.</p>
+<p>We'll start with a simple text-based notification. Construct the notification content (using the Notifications library), and show the notification! Note that the namespace is <code>Microsoft.Toolkit.Uwp.Notifications</code>.</p>
+<img alt="Simple text notification" src="../images/send-toast-01.png" width="364">
+
+<p>If you are not using the WCT Notifications library builder syntax, you will instead construct the XML app notification template, populate it with text and values, construct the notification, and show it.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_builder-syntax" role="tab" aria-controls="tabpanel_2_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_xml" role="tab" aria-controls="tabpanel_2_xml" data-tab="xml" tabindex="-1">Without builder syntax</a>
+</li>
+</ul>
+<section id="tabpanel_2_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-cpp">// Construct the content and show the toast!
+(ref new ToastContentBuilder())
+    -&gt;AddArgument(&quot;action&quot;, &quot;viewConversation&quot;)
+    -&gt;AddArgument(&quot;conversationId&quot;, 9813)
+    -&gt;AddText(&quot;Andrew sent you a picture&quot;)
+    -&gt;AddText(&quot;Check this out, The Enchantments in Washington!&quot;)
+    -&gt;Show();
+</code></pre>
+</section>
+<section id="tabpanel_2_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L&quot;\
+    &lt;toast&gt;\
+        &lt;visual&gt;\
+            &lt;binding template=\&quot;ToastGeneric\&quot;&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+            &lt;/binding&gt;\
+        &lt;/visual&gt;\
+    &lt;/toast&gt;&quot;);
+
+// Populate with text and values
+doc.DocumentElement().SetAttribute(L&quot;launch&quot;, L&quot;action=viewConversation&amp;conversationId=9813&quot;);
+doc.SelectSingleNode(L&quot;//text[1]&quot;).InnerText(L&quot;Andrew sent you a picture&quot;);
+doc.SelectSingleNode(L&quot;//text[2]&quot;).InnerText(L&quot;Check this out, Happy Canyon in Utah!&quot;);
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+</code></pre>
+</section>
+</div>
+<h2 id="step-4-handle-activation">Step 4: Handle activation</h2>
+<p>When the user clicks your notification (or a button on the notification with foreground activation), your app's <strong>App.xaml.cpp</strong> <strong>OnActivated</strong> will be invoked.</p>
+<p><strong>App.xaml.cpp</strong></p>
+<pre><code class="lang-cpp">void App::OnActivated(IActivatedEventArgs^ e)
+{
+    // Handle notification activation
+    if (e-&gt;Kind == ActivationKind::ToastNotification)
+    {
+        ToastNotificationActivatedEventArgs^ toastActivationArgs = (ToastNotificationActivatedEventArgs^)e;
+
+        // Obtain the arguments from the notification
+        ToastArguments^ args = ToastArguments::Parse(toastActivationArgs-&gt;Argument);
+
+        // Obtain any user input (text boxes, menu selections) from the notification
+        auto userInput = toastActivationArgs-&gt;UserInput;
+
+        // TODO: Show the corresponding content
+    }
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must initialize your frame and activate your window just like your <strong>OnLaunched</strong> code. <strong>OnLaunched is NOT called if the user clicks on your app notification</strong>, even if your app was closed and is launching for the first time. We often recommend combining <strong>OnLaunched</strong> and <strong>OnActivated</strong> into your own <code>OnLaunchedOrActivated</code> method since the same initialization needs to occur in both.</p>
+</div>
+<h2 id="activation-in-depth">Activation in depth</h2>
+<p>The first step in making your notifications actionable is to add some launch args to your notification, so that your app can know what to launch when the user clicks the notification (in this case, we're including some information that later tells us we should open a conversation, and we know which specific conversation to open).</p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_builder-syntax" role="tab" aria-controls="tabpanel_3_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_xml" role="tab" aria-controls="tabpanel_3_xml" data-tab="xml" tabindex="-1">Without builder syntax</a>
+</li>
+</ul>
+<section id="tabpanel_3_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-cpp">// Construct the content and show the toast!
+(ref new ToastContentBuilder())
+
+    // Arguments returned when user taps body of notification
+    -&gt;AddArgument(&quot;action&quot;, &quot;viewConversation&quot;)
+    -&gt;AddArgument(&quot;conversationId&quot;, 9813)
+
+    -&gt;AddText(&quot;Andrew sent you a picture&quot;)
+    -&gt;Show();
+</code></pre>
+</section>
+<section id="tabpanel_3_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L&quot;\
+    &lt;toast&gt;\
+        &lt;visual&gt;\
+            &lt;binding template=\&quot;ToastGeneric\&quot;&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+            &lt;/binding&gt;\
+        &lt;/visual&gt;\
+    &lt;/toast&gt;&quot;);
+
+// Populate with text and values
+doc.SelectSingleNode(L&quot;//text[1]&quot;).InnerText(L&quot;Andrew sent you a picture&quot;);
+doc.SelectSingleNode(L&quot;//text[2]&quot;).InnerText(L&quot;Check this out, Happy Canyon in Utah!&quot;);
+
+// Arguments returned when user taps body of notification
+doc.DocumentElement().SetAttribute(L&quot;launch&quot;, L&quot;action=viewConversation&amp;conversationId=9813&quot;);
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+</code></pre>
+</section>
+</div>
+<h2 id="add-images">Add images</h2>
+<p>You can add rich content to notifications. We'll add an inline image and a profile (app logo override) image.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.</p>
+</div>
+<img alt="Toast with images" src="images/send-toast-02.png" width="364">
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_builder-syntax" role="tab" aria-controls="tabpanel_4_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_xml" role="tab" aria-controls="tabpanel_4_xml" data-tab="xml" tabindex="-1">Without builder syntax</a>
+</li>
+</ul>
+<section id="tabpanel_4_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-cpp">// Construct the content and show the toast!
+(ref new ToastContentBuilder())
+    ...
+
+    // Inline image
+    -&gt;AddInlineImage(ref new Uri(&quot;https://picsum.photos/360/202?image=883&quot;))
+
+    // Profile (app logo override) image
+    -&gt;AddAppLogoOverride(ref new Uri(&quot;ms-appdata:///local/Andrew.jpg&quot;), ToastGenericAppLogoCrop::Circle)
+
+    -&gt;Show();
+</code></pre>
+</section>
+<section id="tabpanel_4_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L&quot;\
+    &lt;toast&gt;\
+        &lt;visual&gt;\
+            &lt;binding template=\&quot;ToastGeneric\&quot;&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+                &lt;image/&gt;\
+                &lt;image placement=\&quot;appLogoOverride\&quot; hint-crop=\&quot;circle\&quot;/&gt;\
+            &lt;/binding&gt;\
+        &lt;/visual&gt;\
+    &lt;/toast&gt;&quot;);
+
+// Populate with text and values
+doc.DocumentElement().SetAttribute(L&quot;launch&quot;, L&quot;action=viewConversation&amp;conversationId=9813&quot;);
+doc.SelectSingleNode(L&quot;//text[1]&quot;).InnerText(L&quot;Andrew sent you a picture&quot;);
+doc.SelectSingleNode(L&quot;//text[2]&quot;).InnerText(L&quot;Check this out, Happy Canyon in Utah!&quot;);
+
+// Inline image
+doc.SelectSingleNode(L&quot;//image[1]&quot;).as&lt;XmlElement&gt;().SetAttribute(L&quot;src&quot;, L&quot;https://picsum.photos/360/202?image=883&quot;);
+
+// Profie (app logo override) image
+doc.SelectSingleNode(L&quot;//image[2]&quot;).as&lt;XmlElement&gt;().SetAttribute(L&quot;src&quot;, L&quot;ms-appdata:///local/Andrew.jpg&quot;);
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+</code></pre>
+</section>
+</div>
+<h2 id="add-buttons-and-inputs">Add buttons and inputs</h2>
+<p>You can add buttons and inputs to make your notifications interactive. Buttons can launch your foreground app, a protocol, or your background task. We'll add a reply text box, a &quot;Like&quot; button, and a &quot;View&quot; button that opens the image.</p>
+<img src="images/toast-notification.png" width="628" alt="Screenshot of a toast notification with inputs and buttons">
+<div class="tabGroup" id="tabgroup_5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_5_builder-syntax" role="tab" aria-controls="tabpanel_5_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_5_xml" role="tab" aria-controls="tabpanel_5_xml" data-tab="xml" tabindex="-1">Without builder syntax</a>
+</li>
+</ul>
+<section id="tabpanel_5_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-cpp">// Construct the content
+(ref new ToastContentBuilder())
+    -&gt;AddArgument(&quot;conversationId&quot;, 9813)
+    ...
+
+    // Text box for replying
+    -&gt;AddInputTextBox(&quot;tbReply&quot;, &quot;Type a response&quot;)
+
+    // Buttons
+    -&gt;AddButton((ref new ToastButton())
+        -&gt;SetContent(&quot;Reply&quot;)
+        -&gt;AddArgument(&quot;action&quot;, &quot;reply&quot;)
+        -&gt;SetBackgroundActivation())
+
+    -&gt;AddButton((ref new ToastButton())
+        -&gt;SetContent(&quot;Like&quot;)
+        -&gt;AddArgument(&quot;action&quot;, &quot;like&quot;)
+        -&gt;SetBackgroundActivation())
+
+    -&gt;AddButton((ref new ToastButton())
+        -&gt;SetContent(&quot;View&quot;)
+        -&gt;AddArgument(&quot;action&quot;, &quot;view&quot;))
+
+    -&gt;Show();
+</code></pre>
+</section>
+<section id="tabpanel_5_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L&quot;\
+    &lt;toast&gt;\
+        &lt;visual&gt;\
+            &lt;binding template=\&quot;ToastGeneric\&quot;&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+                &lt;text&gt;&lt;/text&gt;\
+                &lt;image/&gt;\
+                &lt;image placement=\&quot;appLogoOverride\&quot; hint-crop=\&quot;circle\&quot;/&gt;\
+            &lt;/binding&gt;\
+        &lt;/visual&gt;\
+        &lt;actions&gt;\
+            &lt;input\
+                id=\&quot;tbReply\&quot;\
+                type=\&quot;text\&quot;\
+                placeHolderContent=\&quot;Type a reply\&quot;/&gt;\
+            &lt;action\
+                content=\&quot;Reply\&quot;\
+                activationType=\&quot;background\&quot;/&gt;\
+            &lt;action\
+                content=\&quot;Like\&quot;\
+                activationType=\&quot;background\&quot;/&gt;\
+            &lt;action\
+                content=\&quot;View\&quot;\
+                activationType=\&quot;foreground\&quot;/&gt;\
+        &lt;/actions&gt;\
+    &lt;/toast&gt;&quot;);
+
+// Populate with text and values
+doc.DocumentElement().SetAttribute(L&quot;launch&quot;, L&quot;action=viewConversation&amp;conversationId=9813&quot;);
+...
+
+// Buttons
+doc.SelectSingleNode(L&quot;//action[1]&quot;).as&lt;XmlElement&gt;().SetAttribute(L&quot;arguments&quot;, L&quot;action=reply&amp;conversationId=9813&quot;);
+doc.SelectSingleNode(L&quot;//action[2]&quot;).as&lt;XmlElement&gt;().SetAttribute(L&quot;arguments&quot;, L&quot;action=like&amp;conversationId=9813&quot;);
+doc.SelectSingleNode(L&quot;//action[3]&quot;).as&lt;XmlElement&gt;().SetAttribute(L&quot;arguments&quot;, L&quot;action=viewImage&amp;imageUrl=https://picsum.photos/364/202?image=883&quot;);
+
+// Construct the notification
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+
+// And show it!
+toastNotifier.Show(notif);
+</code></pre>
+</section>
+</div>
+
+<p>The activation of foreground buttons are handled in the same way as the main notification body (your App.xaml.cpp OnActivated will be called).</p>
+<h2 id="handle-background-activation">Handle background activation</h2>
+<p>When you specify background activation on your app notification (or on a button inside the notification), your background task will be executed instead of activating your foreground app.</p>
+<p>For more information on background tasks, please see <a href="/windows/uwp/launch-resume/support-your-app-with-background-tasks">Support your app with background tasks</a>.</p>
+<p>If you are targeting build 14393 or later, you can use in-process background tasks, which greatly simplify things. Note that in-process background tasks will fail to run on older versions of Windows. We'll use an in-process background task in this code sample.</p>
+<pre><code class="lang-csharp">const string taskName = &quot;ToastBackgroundTask&quot;;
+
+// If background task is already registered, do nothing
+if (BackgroundTaskRegistration.AllTasks.Any(i =&gt; i.Value.Name.Equals(taskName)))
+    return;
+
+// Otherwise request access
+BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAsync();
+
+// Create the background task
+BackgroundTaskBuilder builder = new BackgroundTaskBuilder()
+{
+    Name = taskName
+};
+
+// Assign the toast action trigger
+builder.SetTrigger(new ToastNotificationActionTrigger());
+
+// And register the task
+BackgroundTaskRegistration registration = builder.Register();
+</code></pre>
+<p>Then in your App.xaml.cs, override the OnBackgroundActivated method. You can then retrieve the pre-defined arguments and user input, similar to the foreground activation.</p>
+<p><strong>App.xaml.cs</strong></p>
+<pre><code class="lang-csharp">protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+{
+    var deferral = args.TaskInstance.GetDeferral();
+
+    switch (args.TaskInstance.Task.Name)
+    {
+        case &quot;ToastBackgroundTask&quot;:
+            var details = args.TaskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
+            if (details != null)
+            {
+                string arguments = details.Argument;
+                var userInput = details.UserInput;
+
+                // Perform tasks
+            }
+            break;
+    }
+
+    deferral.Complete();
+}
+</code></pre>
+<h2 id="set-an-expiration-time">Set an expiration time</h2>
+<p>In Windows 10 and 11, all app notifications go in Action Center after they are dismissed or ignored by the user, so users can look at your notification after the popup is gone.</p>
+<p>However, if the message in your notification is only relevant for a period of time, you should set an expiration time on the app notification so the users do not see stale information from your app. For example, if a promotion is only valid for 12 hours, set the expiration time to 12 hours. In the code below, we set the expiration time to be 2 days.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The default and maximum expiration time for local app notifications is 3 days.</p>
+</div>
+<pre><code class="lang-cpp">// Create toast content and show the toast!
+(ref new ToastContentBuilder())
+    -&gt;AddText(&quot;Expires in 2 days...&quot;)
+    -&gt;Show(toast =&gt;
+    {
+        toast-&gt;ExpirationTime = DateTime::Now-&gt;AddDays(2);
+    });
+</code></pre>
+<h2 id="provide-a-primary-key-for-your-app-notification">Provide a primary key for your app notification</h2>
+<p>If you want to programmatically remove or replace the notification you send, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to remove or replace the notification.</p>
+<p>To see more details on replacing/removing already delivered app notifications, please see <a href="/previous-versions/windows/apps/dn631260(v=win.10)">Quickstart: Managing toast notifications in action center (XAML)</a>.</p>
+<p>Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like &quot;wallPosts&quot;, &quot;messages&quot;, &quot;friendRequests&quot;, etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the <a href="/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_">RemoveGroup API</a>.</p>
+<pre><code class="lang-cpp">// Create toast content and show the toast!
+(ref new ToastContentBuilder())
+    -&gt;AddText(&quot;New post on your wall!&quot;)
+    -&gt;Show(toast =&gt;
+    {
+        toast.Tag = &quot;18365&quot;;
+        toast.Group = &quot;wallPosts&quot;;
+    });
+</code></pre>
+<h2 id="clear-your-notifications">Clear your notifications</h2>
+<p>Apps are responsible for removing and clearing their own notifications. When your app is launched, we do NOT automatically clear your notifications.</p>
+<p>Windows will only automatically remove a notification if the user explicitly clicks the notification.</p>
+<p>Here's an example of what a messaging app should do…</p>
+<ol>
+<li>User receives multiple app notifications about new messages in a conversation</li>
+<li>User taps one of those notifications to open the conversation</li>
+<li>The app opens the conversation and then clears all notifications for that conversation (by using <a href="/uwp/api/Windows.UI.Notifications.ToastNotificationHistory">RemoveGroup</a> on the app-supplied group for that conversation)</li>
+<li>User's Action Center now properly reflects the notification state, since there are no stale notifications for that conversation left in Action Center.</li>
+</ol>
+<p>To learn about clearing all notifications or removing specific notifications, see <a href="/previous-versions/windows/apps/dn631260(v=win.10)">Quickstart: Managing toast notifications in action center (XAML)</a>.</p>
+<pre><code class="lang-cpp">ToastNotificationManagerCompat::History-&gt;Clear();
+</code></pre>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10">Full C# code sample on GitHub</a></li>
+<li><a href="adaptive-interactive-toasts.html">App content documentation</a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.ToastNotification">ToastNotification Class</a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs">ToastNotificationActivatedEventArgs Class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/send-local-toast-cpp-uwp.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

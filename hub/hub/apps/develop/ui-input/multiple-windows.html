@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use the Window class to show secondary windows for an app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use the Window class to show secondary windows for an app ">
+    
+    <meta name="description" content="Use multiple windows to show your app content.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="show-multiple-windows-for-your-app">Show multiple windows for your app</h1>
+
+<p>In your WinUI 3 app, you can show your app content in secondary windows while still working on the same UI thread across each window.</p>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing">Microsoft.UI.Windowing namespace</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/CreateMultipleWindows">Open the WinUI 3 Gallery app and see multiple windows in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<div class="TIP">
+<h5>Tip</h5>
+<p>A common reason to use multiple windows is to allow <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> tabs to be torn out into a new window. For information and examples specific to this scenario, see <a href="/windows/apps/design/controls/tab-view#tab-tear-out">Tab tear-out</a> in the <a href="../../design/controls/tab-view.html">Tab view</a> article.</p>
+</div>
+<h2 id="api-overview">API overview</h2>
+<p>Here are some of the important APIs you use to show content in multiple windows.</p>
+<h3 id="xaml-window-and-appwindow">XAML Window and AppWindow</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> classes can be used to display a portion of an app in a secondary window. An important feature of WinUI windows is that each instance shares the same UI processing thread (including the event dispatcher) from which they were created, which simplifies multi-window apps.</p>
+<p>See <a href="windowing-overview.html">Windowing overview for WinUI and Windows App SDK</a> for a more detailed explanation of Window and AppWindow.</p>
+<h3 id="appwindowpresenter">AppWindowPresenter</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter">AppWindowPresenter</a> API lets you easily switch windows into pre-defined configurations like <code>FullScreen</code> or <code>CompactOverlay</code>. For more info, see <a href="windowing-overview.html">Manage app windows</a>.</p>
+<h3 id="xamlroot">XamlRoot</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot">XamlRoot</a> class holds a XAML element tree, connects it to the window host object, and provides info such as size and visibility. You don't create a XamlRoot object directly. Instead, one is created when you attach a XAML element to a Window. You can then use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot">UIElement.XamlRoot</a> property to retrieve the XamlRoot.</p>
+<h3 id="windowid">WindowId</h3>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid">WindowId</a> is a unique identifier for an app window. It's created automatically, and identifies both the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> and the top-level Win32 HWND it's associated with.</p>
+<p>From a visual element, you can access <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot">UIElement.XamlRoot</a>; then <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.contentislandenvironment">XamlRoot.ContentIslandEnvironment</a>; then the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.content.contentislandenvironment.appwindowid">ContentIslandEnvironment.AppWindowId</a> property contains the ID of window that the UIElement is in.</p>
+<h2 id="show-a-new-window">Show a new window</h2>
+<p>You can create a new Window in XAML or in code. If you create a Window in XAML, you're actually creating a sub-class of the Window class. For example, see <code>MainWindow.xaml</code> that's created by the Visual Studio app template.</p>
+<p>Let's take a look at the steps to show content in a new window.</p>
+<p><strong>To create a new window with XAML</strong></p>
+<ol>
+<li>In the <strong>Solution Explorer</strong> pane, right-click on the project name and select <strong>Add &gt; New Item...</strong></li>
+<li>In the <strong>Add New Item</strong> dialog, select <strong>WinUI</strong> in the template list on the left-side of the window.</li>
+<li>Select the <strong>Blank Window</strong> template.</li>
+<li>Name the file.</li>
+<li>Press <strong>Add</strong>.</li>
+</ol>
+<p><strong>To show a new window</strong></p>
+<ol>
+<li><p>Instantiate a new instance of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a>, or a Window subclass if you created a Window subclass with a <code>.xaml</code> file.</p>
+<pre><code class="lang-csharp">Window newWindow = new Window();
+</code></pre>
+</li>
+<li><p>Create the window content.</p>
+<p>If you created a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> subclass with a <code>.xaml</code> file, you can add the window content directly in XAML. Otherwise, you add the content in code as shown here.</p>
+<p>It's common to create a XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame">Frame</a>, then navigate the Frame to a XAML [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page where you've defined your app content. For more info about frames and pages, see <a href="/windows/apps/design/basics/navigate-between-two-pages">Peer-to-peer navigation between two pages</a>.</p>
+<pre><code class="lang-csharp">Frame contentFrame = new Frame();
+contentFrame.Navigate(typeof(SecondaryPage));
+</code></pre>
+<p>However, you can show any XAML content in the AppWindow, not just a Frame and Page. For example, you can show just a single control, like <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.colorpicker">ColorPicker</a>, as shown later.</p>
+</li>
+<li><p>Set your XAML content to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.content">Content</a> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a>.</p>
+<pre><code class="lang-csharp">newWindow.Content = contentFrame;
+</code></pre>
+</li>
+<li><p>Call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activate">Window.Activate</a> method to show the new window.</p>
+<pre><code class="lang-csharp">newWindow.Activate();
+</code></pre>
+</li>
+</ol>
+<h2 id="track-instances-of-window">Track instances of Window</h2>
+<p>You might want to have access to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> instances from other parts of your app, but after you create an instance of a Window, there's no way to access it from other code unless you keep a reference to it. For example, you might want to handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged">Window.SizeChanged</a> event in <code>MainPage</code> to rearrange UI elements when the window is resized, or you could have a 'close all' button that closes all the tracked instances of Window.</p>
+<p>In this case, you should use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid">WindowId</a> unique identifier to track the window instances in a <a href="/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0&amp;preserve-view=true">Dictionary</a>, with the WindowId as the <code>Key</code> and the Window instance as the <code>Value</code>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> tab tear-out APIs also use WindowId to track Windows.)</p>
+<p>In your <code>App</code> class, create the <a href="/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0&amp;preserve-view=true">Dictionary</a> as a static property. Then, add each page to the Dictionary when you create it, and remove it when the page is closed.</p>
+<pre><code class="lang-csharp">// App.xaml.cs
+public partial class App : Application
+{
+    private Window? _window;
+    public static Dictionary&lt;WindowId, Window&gt; ActiveWindows { get; set; } = new Dictionary&lt;WindowId, Window&gt;();
+
+    // ...
+
+    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+    {
+        _window = new MainWindow();
+        _window.Activate();
+        // Track the new window in the dictionary.
+        ActiveWindows.Add(_window.AppWindow.Id, _window);
+    }
+}
+</code></pre>
+<p>The following code creates a new window when a button is clicked in <code>MainPage</code>. The <code>TrackWindow</code> method adds the new window to the <code>ActiveWindows</code> <a href="/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0&amp;preserve-view=true">Dictionary</a>, and handles the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.closed">Window.Closed</a> event to remove it from <code>ActiveWindows</code> when the window is closed.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs
+private Window CreateWindow()
+{
+    Window newWindow = new Window();
+
+    // Configure the window.
+    newWindow.AppWindow.Resize(new SizeInt32(1200, 800));
+    newWindow.Title = &quot;Window &quot; + newWindow.AppWindow.Id.Value.ToString();
+    newWindow.SystemBackdrop = new MicaBackdrop();
+
+    TrackWindow(newWindow);
+    return newWindow;
+}
+
+private void TrackWindow(Window window)
+{
+    window.Closed += (sender, args) =&gt; {
+        App.ActiveWindows.Remove(window.AppWindow.Id, out window);
+    };
+    App.ActiveWindows.Add(window.AppWindow.Id, window);
+}
+
+</code></pre>
+<h3 id="get-a-tracked-window-from-your-app-code">Get a tracked window from your app code</h3>
+<p>To access a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> instance from your app code, you need to get the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid">WindowId</a> for the current window to retrieve it from the static <a href="/dotnet/api/system.collections.generic.dictionary-2?view=dotnet-uwp-10.0&amp;preserve-view=true">Dictionary</a> in your <code>App</code> class. You should do this in the page's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.loaded">Loaded</a> event handler rather than in the constructor so that <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot">XamlRoot</a> is not <code>null</code>.</p>
+<pre><code class="lang-csharp">public sealed partial class SecondaryPage : Page
+{
+    Window window;
+
+    public SecondaryPage()
+    {
+        InitializeComponent();
+        Loaded += AppWindowPage_Loaded;
+    }
+
+    private void AppWindowPage_Loaded(object sender, RoutedEventArgs e)
+    {
+        // Get the reference to this Window that was stored when it was created.
+        // Do this in the Page Loaded handler rather than the constructor to
+        // ensure that the XamlRoot is created and attached to the Window.
+        WindowId windowId = this.XamlRoot.ContentIslandEnvironment.AppWindowId;
+
+        if (App.ActiveWindows.ContainsKey(windowId))
+        {
+            window = App.ActiveWindows[windowId];
+        }
+    }
+}
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="windowing-overview.html">Windowing overview</a></li>
+<li><a href="manage-app-windows.html">Manage app windows</a></li>
+<li><a href="../../design/controls/tab-view.html">Tab view</a></li>
+<li><a href="/windows/uwp/ui-input/show-multiple-views">Show multiple views (UWP)</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/ui-input/multiple-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

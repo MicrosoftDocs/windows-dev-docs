@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Buttons </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Buttons ">
+    
+    <meta name="description" content="Learn how to use a button to give users a way to trigger immediate actions, and learn about specialized buttons for particular tasks.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="buttons">Buttons</h1>
+
+<p>A button gives the user a way to trigger an immediate action. Some buttons are specialized for particular tasks, such as navigation, repeated actions, or presenting menus.</p>
+<p><img src="images/button.png" alt="Example of buttons"></p>
+<p>The <a href="/windows/uwp/xaml-platform/xaml-overview">Extensible Application Markup Language (XAML)</a> framework provides a standard button control as well as several specialized button controls.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button">Button</a></td>
+<td>A button that initiates an immediate action. Can be used with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.command">Command</a> binding.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.repeatbutton">RepeatButton</a></td>
+<td>A button that raises a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event continuously while pressed.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton">HyperlinkButton</a></td>
+<td>A button that's styled like a hyperlink and used for navigation. For more info about hyperlinks, see <a href="hyperlinks.html">Hyperlinks</a>.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dropdownbutton">DropDownButton</a></td>
+<td>A button with a chevron to open an attached flyout.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitbutton">SplitButton</a></td>
+<td>A button with two sides. One side initiates an action, and the other side opens a menu.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton">ToggleSplitButton</a></td>
+<td>A toggle button with two sides. One side toggles on/off, and the other side opens a menu.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton">ToggleButton</a></td>
+<td>A button that can be on or off.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a <strong>Button</strong> control to let the user initiate an immediate action, such as submitting a form.</p>
+<p>Don't use a <strong>Button</strong> control when the action is to navigate to another page; instead, use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton">HyperlinkButton</a> control. For more info about hyperlinks, see <a href="hyperlinks.html">Hyperlinks</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>For wizard navigation, use buttons labeled <em>Back</em> and <em>Next</em>. For other types of backwards navigation or navigation to an upper level, use a <a href="../basics/navigation-history-and-backwards-navigation.html">back button</a>.</p>
+</div>
+<p>Use a <strong>RepeatButton</strong> control when the user might want to trigger an action repeatedly. For example, use a <strong>RepeatButton</strong> control to increment or decrement a value in a counter.</p>
+<p>Use a <strong>DropDownButton</strong> control when the button has a flyout that contains more options. The default chevron provides a visual indication that the button includes a flyout.</p>
+<p>Use a <strong>SplitButton</strong> control when you want the user to be able to initiate an immediate action or choose from additional options independently.</p>
+<p>Use a <strong>ToggleButton</strong> control when you want the user to be able to immediately switch between two mutually exclusive states, and a button is the best fit for your UI needs. Unless your UI benefits from a button, it might be a better choice to use an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton">AppBarToggleButton</a>, <a href="checkbox.html">CheckBox</a>, <a href="radio-button.html">RadioButton</a>, or <a href="toggles.html">ToggleSwitch</a>.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li><p>Make sure the purpose and state of a button are clear to the user.</p>
+</li>
+<li><p>When there are multiple buttons for the same decision (such as in a confirmation dialog), present the commit buttons in this order, where [Do it] and [Don't do it] are specific responses to the main instruction:</p>
+<ul>
+<li>OK/[Do it]/Yes
+<ul>
+<li>[Don't do it]/No</li>
+<li>Cancel</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Expose only one or two buttons to the user at a time, for example, <strong>Accept</strong> and <strong>Cancel</strong>. If you need to expose more actions to the user, consider using <a href="checkbox.html">checkboxes</a> or <a href="radio-button.html">radio buttons</a> from which the user can select actions, with a single command button to trigger those actions.</p>
+</li>
+<li><p>For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a <a href="command-bar.html">bottom app bar</a>.</p>
+</li>
+</ul>
+<h3 id="button-text">Button text</h3>
+<p>A button's content is usually text. When you design that text, use the following recommendations:</p>
+<ul>
+<li><p>Use a concise, specific, self-explanatory text that clearly describes the action that the button performs. Usually button text is a single word that is a verb.</p>
+</li>
+<li><p>Use the default font, unless your brand guidelines tell you to use something different.</p>
+</li>
+<li><p>For shorter text, avoid narrow command buttons by using a minimum button width of 120px.</p>
+</li>
+<li><p>For longer text, avoid wide command buttons by limiting text to a maximum length of 26 characters.</p>
+</li>
+<li><p>If the button's text content is dynamic (that is, it is <a href="../globalizing/globalizing-portal.html">localized</a>), consider how the button will be resized and what will happen to controls around it.</p>
+</li>
+</ul>
+<table>
+<tr>
+<td> <b>Need to fix:</b><br> Buttons with overflowing text. </td>
+<td> <img src="images/button-wraptext.png" alt="Screenshot of two buttons, side by side, with labels that both say: Button with thxt that woul"> </td>
+</tr>
+<tr>
+<td> <b>Option 1:</b><br> Increase button width, stack buttons, and wrap if text length is greater than 26 characters. </td>
+<td> <img src="images/button-wraptext1.png" alt="Screenshot of two buttons with increased width, one over the other, with labels that both say: Button with thxt that would wrap."> </td>
+</tr>
+<tr>
+<td> <b>Option 2:</b><br> Increase button height, and wrap text. </td>
+<td> <img src="images/button-wraptext2.png" alt="Screenshot of two buttons with increased height, side by side, with labels that both say: Button with thxt that would wrap."> </td>
+</tr>
+</table>
+<h3 id="recommended-single-button-layout">Recommended single-button layout</h3>
+<p>If your layout requires only one button, it should be either left- or right-aligned based on its container context.</p>
+<ul>
+<li><p>Dialogs with only one button should <strong>right-align</strong> the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use <a href="dialogs-and-flyouts/index.html">ContentDialog</a> and specify a single button, it will be automatically right-aligned.</p>
+<p><img src="images/pushbutton_doc_dialog.png" alt="A button within a dialog"></p>
+</li>
+<li><p>If your button appears within a container UI (for example, within a toast notification, a flyout, or a list view item), you should <strong>right-align</strong> the button within the container.</p>
+<p><img src="images/pushbutton_doc_container.png" alt="A button within a container"></p>
+</li>
+<li><p>In pages that contain a single button (for example, an <strong>Apply</strong> button at the bottom of a settings page), you should <strong>left-align</strong> the button. This ensures that the button aligns with the rest of the page content.</p>
+<p><img src="images/pushbutton_doc_page.png" alt="A button on a page"></p>
+</li>
+</ul>
+<h3 id="back-buttons">Back buttons</h3>
+<p>The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see <a href="../basics/navigation-history-and-backwards-navigation.html">Navigation history and backwards navigation for Windows apps</a>.</p>
+<h2 id="examples">Examples</h2>
+<p>This example uses three buttons, <strong>Save</strong>, <strong>Don't Save</strong>, and <strong>Cancel</strong>, in a dialog that asks users if they want to save their work.</p>
+<p><img src="images/button-dialog-example.png" alt="Example of buttons, used in a dialog"></p>
+<h2 id="create-a-button">Create a button</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button">Button class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click event</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.command">Command property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/Button">Open the WinUI 3 Gallery app and see the Buttons in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example shows a button that responds to a click.</p>
+<p>Create the button in XAML.</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;Subscribe&quot; Click=&quot;SubscribeButton_Click&quot;/&gt;
+</code></pre>
+<p>Or create the button in code.</p>
+<pre><code class="lang-csharp">Button subscribeButton = new Button();
+subscribeButton.Content = &quot;Subscribe&quot;;
+subscribeButton.Click += SubscribeButton_Click;
+
+// Add the button to a parent container in the visual tree.
+stackPanel1.Children.Add(subscribeButton);
+</code></pre>
+<p>Handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event.</p>
+<pre><code class="lang-csharp">private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
+{
+    // Call app specific code to subscribe to the service. For example:
+    ContentDialog subscribeDialog = new ContentDialog
+    {
+        Title = &quot;Subscribe to App Service?&quot;,
+        Content = &quot;Listen, watch, and play in high definition for only $9.99/month. Free to try, cancel anytime.&quot;,
+        CloseButtonText = &quot;Not Now&quot;,
+        PrimaryButtonText = &quot;Subscribe&quot;,
+        SecondaryButtonText = &quot;Try it&quot;
+    };
+
+    ContentDialogResult result = await subscribeDialog.ShowAsync();
+}
+</code></pre>
+<h3 id="button-interaction">Button interaction</h3>
+<p>When you tap a <strong>Button</strong> control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event. If a button has keyboard focus, pressing the Enter key or the Spacebar also raises the <strong>Click</strong> event.</p>
+<p>You generally can't handle low-level <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed">PointerPressed</a> events on a <strong>Button</strong> object because it has the <strong>Click</strong> behavior instead. For more info, see <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a>.</p>
+<p>You can change how a button raises the <strong>Click</strong> event by changing the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.clickmode">ClickMode</a> property. The default value of <strong>ClickMode</strong> is <strong>Release</strong>, but you also can set a button's <strong>ClickMode</strong> value to <strong>Hover</strong> or <strong>Press</strong>. If <strong>ClickMode</strong> is <strong>Hover</strong>, the <strong>Click</strong> event can't be raised by using the keyboard or touch.</p>
+<h3 id="button-content">Button content</h3>
+<p><strong>Button</strong> is a content control of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentControl">ContentControl</a> class. Its XAML content property is <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a>, which enables a syntax like this for XAML: <code>&lt;Button&gt;A button's content&lt;/Button&gt;</code>. You can set any object as the button's content. If the content is a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement">UIElement</a> object, it is rendered in the button. If the content is another type of object, its string representation is shown in the button.</p>
+<p>A button's content is usually text. When you design that text, follow the <a href="#button-text">Button text recommendations</a> listed previously.</p>
+<p>You can also customize visuals that make up the button's appearance. For example, you could replace the text with an icon, or use an icon in addition to text.</p>
+<p>Here, a <strong>StackPanel</strong> that contains an image and text is set as the content of a button.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;Button2&quot; Click=&quot;Button_Click&quot; Width=&quot;80&quot; Height=&quot;90&quot;&gt;
+    &lt;StackPanel&gt;
+        &lt;Image Source=&quot;/Assets/Slices.png&quot; Height=&quot;52&quot;/&gt;
+        &lt;TextBlock Text=&quot;Slices&quot; Foreground=&quot;Black&quot; HorizontalAlignment=&quot;Center&quot;/&gt; 
+    &lt;/StackPanel&gt;
+&lt;/Button&gt;
+</code></pre>
+<p>The button looks like this.</p>
+<p><img src="images/button-orange.png" alt="A button with image and text content"></p>
+<h2 id="create-a-repeat-button">Create a repeat button</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.repeatbutton">RepeatButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click event</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/RepeatButton">Open the WinUI 3 Gallery app and see the RepeatButton in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.repeatbutton">RepeatButton</a> control is a button that raises <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> events repeatedly from the time it's pressed until it's released. Set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.repeatbutton.delay">Delay</a> property to specify the time that the <strong>RepeatButton</strong> control waits after it is pressed before it starts repeating the click action. Set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.repeatbutton.interval">Interval</a> property to specify the time between repetitions of the click action. Times for both properties are specified in milliseconds.</p>
+<p>The following example shows two <strong>RepeatButton</strong> controls whose respective <strong>Click</strong> events are used to increase and decrease the value shown in a text block.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;RepeatButton Width=&quot;100&quot; Delay=&quot;500&quot; Interval=&quot;100&quot; Click=&quot;Increase_Click&quot;&gt;Increase&lt;/RepeatButton&gt;
+    &lt;RepeatButton Width=&quot;100&quot; Delay=&quot;500&quot; Interval=&quot;100&quot; Click=&quot;Decrease_Click&quot;&gt;Decrease&lt;/RepeatButton&gt;
+    &lt;TextBlock x:Name=&quot;clickTextBlock&quot; Text=&quot;Number of Clicks:&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private static int _clicks = 0;
+private void Increase_Click(object sender, RoutedEventArgs e)
+{
+    _clicks += 1;
+    clickTextBlock.Text = &quot;Number of Clicks: &quot; + _clicks;
+}
+
+private void Decrease_Click(object sender, RoutedEventArgs e)
+{
+    if(_clicks &gt; 0)
+    {
+        _clicks -= 1;
+        clickTextBlock.Text = &quot;Number of Clicks: &quot; + _clicks;
+    }
+}
+</code></pre>
+<h2 id="create-a-drop-down-button">Create a drop down button</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button">DropDownButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout">Flyout property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/DropdownButton">Open the WinUI 3 Gallery app and see the DropdownButton in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dropdownbutton">DropDownButton</a> is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard <strong>Button</strong> control with a flyout; only the appearance is different.</p>
+<p>The drop down button inherits the <strong>Click</strong> event, but you typically don't use it. Instead, you use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout">Flyout</a> property to attach a flyout and invoke actions by using menu options in the flyout. The flyout opens automatically when the button is clicked.
+Be sure to specify the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.placement">Placement</a> property of your flyout to ensure the desired placement in relation to the button. The default placement algorithm might not produce the intended placement in all situations. For more info about flyouts, see <a href="dialogs-and-flyouts/flyouts.html">Flyouts</a> and <a href="menus.html">Menu flyout and menu bar</a>.</p>
+<h3 id="example---drop-down-button">Example - Drop down button</h3>
+<p>This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a <strong>RichEditBox</strong> control. (For more info and code, see <a href="rich-edit-box.html">Rich edit box</a>).</p>
+<p><img src="images/drop-down-button-align.png" alt="A drop down button with alignment commands"></p>
+<pre><code class="lang-xaml">&lt;DropDownButton ToolTipService.ToolTip=&quot;Alignment&quot;&gt;
+    &lt;TextBlock FontFamily=&quot;Segoe MDL2 Assets&quot; FontSize=&quot;14&quot; Text=&quot;&amp;#xE8E4;&quot;/&gt;
+    &lt;DropDownButton.Flyout&gt;
+        &lt;MenuFlyout Placement=&quot;BottomEdgeAlignedLeft&quot;&gt;
+            &lt;MenuFlyoutItem Text=&quot;Left&quot; Icon=&quot;AlignLeft&quot; Tag=&quot;left&quot;
+                            Click=&quot;AlignmentMenuFlyoutItem_Click&quot;/&gt;
+            &lt;MenuFlyoutItem Text=&quot;Center&quot; Icon=&quot;AlignCenter&quot; Tag=&quot;center&quot;
+                            Click=&quot;AlignmentMenuFlyoutItem_Click&quot;/&gt;
+            &lt;MenuFlyoutItem Text=&quot;Right&quot; Icon=&quot;AlignRight&quot; Tag=&quot;right&quot;
+                            Click=&quot;AlignmentMenuFlyoutItem_Click&quot;/&gt;
+        &lt;/MenuFlyout&gt;
+    &lt;/DropDownButton.Flyout&gt;
+&lt;/DropDownButton&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+{
+    var option = ((MenuFlyoutItem)sender).Tag.ToString();
+
+    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    if (selectedText != null)
+    {
+        // Apply the alignment to the selected paragraphs.
+        var paragraphFormatting = selectedText.ParagraphFormat;
+        if (option == &quot;left&quot;)
+        {
+            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Left;
+        }
+        else if (option == &quot;center&quot;)
+        {
+            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Center;
+        }
+        else if (option == &quot;right&quot;)
+        {
+            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Right;
+        }
+    }
+}
+</code></pre>
+<h2 id="create-a-split-button">Create a split button</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitbutton">SplitButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click event</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout">Flyout property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/SplitButton">Open the WinUI 3 Gallery app and see the SplitButton in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitbutton">SplitButton</a> control has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When invoked with touch, the split button behaves as a drop down button; both halves of the button invoke the flyout. With other methods of input, a user can invoke either half of the button separately.</p>
+</div>
+<p>The typical behavior for a split button is:</p>
+<ul>
+<li><p>When the user clicks the button part, handle the <strong>Click</strong> event to invoke the option that's currently selected in the drop down.</p>
+</li>
+<li><p>When the drop down is open, handle invocation of the items in the drop down to both change which option is selected, and then invoke it. It's important to invoke the flyout item because the button <strong>Click</strong> event doesn't occur when using touch.</p>
+</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>There are many ways to put items in the drop down and handle their invocation. If you use a <strong>ListView</strong> or <strong>GridView</strong>, one way is to handle the <strong>SelectionChanged</strong> event. If you do this, set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.singleselectionfollowsfocus">SingleSelectionFollowsFocus</a> to <strong>false</strong>. This lets users navigate the options using a keyboard without invoking the item on each change.</p>
+</div>
+<h3 id="example---split-button">Example - Split button</h3>
+<p>This example shows how to create a split button that is used to change the foreground color of selected text in a <strong>RichEditBox</strong> control. (For more info and code, see <a href="rich-edit-box.html">Rich edit box</a>).
+Split button's flyout uses <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutplacementmode">BottomEdgeAlignedLeft</a> as the default value for its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.placement">Placement</a> property. You can't override this value.</p>
+<p><img src="images/split-button-rtb.png" alt="A split button for selecting foreground color"></p>
+<pre><code class="lang-xaml">&lt;SplitButton ToolTipService.ToolTip=&quot;Foreground color&quot;
+             Click=&quot;BrushButtonClick&quot;&gt;
+    &lt;Border x:Name=&quot;SelectedColorBorder&quot; Width=&quot;20&quot; Height=&quot;20&quot;/&gt;
+    &lt;SplitButton.Flyout&gt;
+        &lt;Flyout x:Name=&quot;BrushFlyout&quot;&gt;
+            &lt;!-- Set SingleSelectionFollowsFocus=&quot;False&quot;
+                 so that keyboard navigation works correctly. --&gt;
+            &lt;GridView ItemsSource=&quot;{x:Bind ColorOptions}&quot;
+                      SelectionChanged=&quot;BrushSelectionChanged&quot;
+                      SingleSelectionFollowsFocus=&quot;False&quot;
+                      SelectedIndex=&quot;0&quot; Padding=&quot;0&quot;&gt;
+                &lt;GridView.ItemTemplate&gt;
+                    &lt;DataTemplate&gt;
+                        &lt;Rectangle Fill=&quot;{Binding}&quot; Width=&quot;20&quot; Height=&quot;20&quot;/&gt;
+                    &lt;/DataTemplate&gt;
+                &lt;/GridView.ItemTemplate&gt;
+                &lt;GridView.ItemContainerStyle&gt;
+                    &lt;Style TargetType=&quot;GridViewItem&quot;&gt;
+                        &lt;Setter Property=&quot;Margin&quot; Value=&quot;2&quot;/&gt;
+                        &lt;Setter Property=&quot;MinWidth&quot; Value=&quot;0&quot;/&gt;
+                        &lt;Setter Property=&quot;MinHeight&quot; Value=&quot;0&quot;/&gt;
+                    &lt;/Style&gt;
+                &lt;/GridView.ItemContainerStyle&gt;
+            &lt;/GridView&gt;
+        &lt;/Flyout&gt;
+    &lt;/SplitButton.Flyout&gt;
+&lt;/SplitButton&gt;
+</code></pre>
+<pre><code class="lang-csharp">public sealed partial class MainPage : Page
+{
+    // Color options that are bound to the grid in the split button flyout.
+    private List&lt;SolidColorBrush&gt; ColorOptions = new List&lt;SolidColorBrush&gt;();
+    private SolidColorBrush CurrentColorBrush = null;
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Add color brushes to the collection.
+        ColorOptions.Add(new SolidColorBrush(Colors.Black));
+        ColorOptions.Add(new SolidColorBrush(Colors.Red));
+        ColorOptions.Add(new SolidColorBrush(Colors.Orange));
+        ColorOptions.Add(new SolidColorBrush(Colors.Yellow));
+        ColorOptions.Add(new SolidColorBrush(Colors.Green));
+        ColorOptions.Add(new SolidColorBrush(Colors.Blue));
+        ColorOptions.Add(new SolidColorBrush(Colors.Indigo));
+        ColorOptions.Add(new SolidColorBrush(Colors.Violet));
+        ColorOptions.Add(new SolidColorBrush(Colors.White));
+    }
+
+    private void BrushButtonClick(object sender, object e)
+    {
+        // When the button part of the split button is clicked,
+        // apply the selected color.
+        ChangeColor();
+    }
+
+    private void BrushSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        // When the flyout part of the split button is opened and the user selects
+        // an option, set their choice as the current color, apply it, then close the flyout.
+        CurrentColorBrush = (SolidColorBrush)e.AddedItems[0];
+        SelectedColorBorder.Background = CurrentColorBrush;
+        ChangeColor();
+        BrushFlyout.Hide();
+    }
+
+    private void ChangeColor()
+    {
+        // Apply the color to the selected text in a RichEditBox.
+        Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+        if (selectedText != null)
+        {
+            Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+            charFormatting.ForegroundColor = CurrentColorBrush.Color;
+            selectedText.CharacterFormat = charFormatting;
+        }
+    }
+}
+</code></pre>
+<h2 id="create-a-toggle-split-button">Create a toggle split button</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton">ToggleSplitButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton.ischeckedchanged">IsCheckedChanged event</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton.ischecked">IsChecked property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/ToggleSplitButton">Open the WinUI 3 Gallery app and see the ToggleSplitButton in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton">ToggleSplitButton</a> control has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.</p>
+<p>A toggle split button is typically used to enable or disable a feature when the feature has multiple options that the user can choose from. For example, in a document editor, it could be used to turn lists on or off, while the drop down is used to choose the style of the list.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When invoked with touch, the toggle split button behaves as a drop down button. With other methods of input, a user can toggle and invoke the two halves of the button separately. With touch, both halves of the button invoke the flyout. Therefore, you must include an option in your flyout content to toggle the button on or off.</p>
+</div>
+<h3 id="differences-with-togglebutton">Differences with ToggleButton</h3>
+<p>Unlike <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton">ToggleButton</a>, <strong>ToggleSplitButton</strong> does not have an indeterminate state. As a result, you should keep in mind these differences:</p>
+<ul>
+<li><strong>ToggleSplitButton</strong> does not have an <strong>IsThreeState</strong> property or <strong>Indeterminate</strong> event.</li>
+<li>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton.ischecked">ToggleSplitButton.IsChecked</a> property is just a Boolean, not a <strong>Nullable&lt;bool&gt;</strong>.</li>
+<li><strong>ToggleSplitButton</strong> has only the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton.ischeckedchanged">IsCheckedChanged</a> event; it does not have separate <strong>Checked</strong> and <strong>Unchecked</strong> events.</li>
+</ul>
+<h3 id="example---toggle-split-button">Example - Toggle split button</h3>
+<p>The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a <strong>RichEditBox</strong> control. (For more info and code, see <a href="rich-edit-box.html">Rich edit box</a>).
+The flyout of the toggle split button uses <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutplacementmode">BottomEdgeAlignedLeft</a> as the default value for its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.placement">Placement</a> property. You can't override this value.</p>
+<p><img src="images/toggle-split-button-open.png" alt="A toggle split button for selecting list styles"></p>
+<pre><code class="lang-xaml">&lt;ToggleSplitButton x:Name=&quot;ListButton&quot;
+                   ToolTipService.ToolTip=&quot;List style&quot;
+                   Click=&quot;ListButton_Click&quot;
+                   IsCheckedChanged=&quot;ListStyleButton_IsCheckedChanged&quot;&gt;
+    &lt;TextBlock FontFamily=&quot;Segoe MDL2 Assets&quot; FontSize=&quot;14&quot; Text=&quot;&amp;#xE8FD;&quot;/&gt;
+    &lt;ToggleSplitButton.Flyout&gt;
+        &lt;Flyout&gt;
+            &lt;ListView x:Name=&quot;ListStylesListView&quot;
+                      SelectionChanged=&quot;ListStylesListView_SelectionChanged&quot;
+                      SingleSelectionFollowsFocus=&quot;False&quot;&gt;
+                &lt;StackPanel Tag=&quot;bullet&quot; Orientation=&quot;Horizontal&quot;&gt;
+                    &lt;FontIcon FontFamily=&quot;Segoe MDL2 Assets&quot; Glyph=&quot;&amp;#xE7C8;&quot;/&gt;
+                    &lt;TextBlock Text=&quot;Bullet&quot; Margin=&quot;8,0&quot;/&gt;
+                &lt;/StackPanel&gt;
+                &lt;StackPanel Tag=&quot;alpha&quot; Orientation=&quot;Horizontal&quot;&gt;
+                    &lt;TextBlock Text=&quot;A&quot; FontSize=&quot;24&quot; Margin=&quot;2,0&quot;/&gt;
+                    &lt;TextBlock Text=&quot;Alpha&quot; Margin=&quot;8&quot;/&gt;
+                &lt;/StackPanel&gt;
+                &lt;StackPanel Tag=&quot;numeric&quot; Orientation=&quot;Horizontal&quot;&gt;
+                    &lt;FontIcon FontFamily=&quot;Segoe MDL2 Assets&quot; Glyph=&quot;&amp;#xF146;&quot;/&gt;
+                    &lt;TextBlock Text=&quot;Numeric&quot; Margin=&quot;8,0&quot;/&gt;
+                &lt;/StackPanel&gt;
+                &lt;TextBlock Tag=&quot;none&quot; Text=&quot;None&quot; Margin=&quot;28,0&quot;/&gt;
+            &lt;/ListView&gt;
+        &lt;/Flyout&gt;
+    &lt;/ToggleSplitButton.Flyout&gt;
+&lt;/ToggleSplitButton&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ListStyleButton_IsCheckedChanged(ToggleSplitButton sender, ToggleSplitButtonIsCheckedChangedEventArgs args)
+{
+    // Use the toggle button to turn the selected list style on or off.
+    if (((ToggleSplitButton)sender).IsChecked == true)
+    {
+        // On. Apply the list style selected in the drop down to the selected text.
+        var listStyle = ((FrameworkElement)(ListStylesListView.SelectedItem)).Tag.ToString();
+        ApplyListStyle(listStyle);
+    }
+    else
+    {
+        // Off. Make the selected text not a list,
+        // but don't change the list style selected in the drop down.
+        ApplyListStyle(&quot;none&quot;);
+    }
+}
+
+private void ListStylesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var listStyle = ((FrameworkElement)(e.AddedItems[0])).Tag.ToString();
+
+    if (ListButton.IsChecked == true)
+    {
+        // Toggle button is on. Turn it off...
+        if (listStyle == &quot;none&quot;)
+        {
+            ListButton.IsChecked = false;
+        }
+        else
+        {
+            // or apply the new selection.
+            ApplyListStyle(listStyle);
+        }
+    }
+    else
+    {
+        // Toggle button is off. Turn it on, which will apply the selection
+        // in the IsCheckedChanged event handler.
+        ListButton.IsChecked = true;
+    }
+}
+
+private void ApplyListStyle(string listStyle)
+{
+    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    if (selectedText != null)
+    {
+        // Apply the list style to the selected text.
+        var paragraphFormatting = selectedText.ParagraphFormat;
+        if (listStyle == &quot;none&quot;)
+        {  
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.None;
+        }
+        else if (listStyle == &quot;bullet&quot;)
+        {
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Bullet;
+        }
+        else if (listStyle == &quot;numeric&quot;)
+        {
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Arabic;
+        }
+        else if (listStyle == &quot;alpha&quot;)
+        {
+            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.UppercaseEnglishLetter;
+        }
+        selectedText.ParagraphFormat = paragraphFormatting;
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for these controls exist in both the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.button">Button class</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton">RepeatButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.hyperlinkbutton">HyperlinkButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.dropdownbutton">DropDownButton</a>, <a href="/uwp/api/windows.ui.xaml.controls.splitbutton">SplitButton</a>, <a href="/uwp/api/windows.ui.xaml.controls.togglesplitbutton">ToggleSplitButton</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton">ToggleButton</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click">Click event</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command">Command property</a>, <a href="/uwp/api/windows.ui.xaml.controls.contentcontrol.content">Content property</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.dropdownbutton">DropDownButton</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.splitbutton">SplitButton</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton">ToggleSplitButton</a></li>
+<li><a href="winui2gallery:/item/Button">Open the WinUI 2 Gallery app and see the Button in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:DropDownButton /&gt;
+&lt;muxc:SplitButton /&gt;
+&lt;muxc:ToggleSplitButton /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button">Button class</a></li>
+<li><a href="radio-button.html">Radio buttons</a></li>
+<li><a href="checkbox.html">Check boxes</a></li>
+<li><a href="toggles.html">Toggle switches</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/buttons.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

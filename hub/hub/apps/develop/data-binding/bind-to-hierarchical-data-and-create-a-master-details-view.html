@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Bind hierarchical data and create a master/details view with Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Bind hierarchical data and create a master/details view with Windows App SDK ">
+    
+    <meta name="description" content="You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to CollectionViewSource instances that are bound together in a chain.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="bind-hierarchical-data-and-create-a-masterdetails-view-with-windows-app-sdk">Bind hierarchical data and create a master/details view with Windows App SDK</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Also see the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail">Master/detail UWP sample</a>.</p>
+</div>
+<p>You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a> instances that are bound together in a chain. In this topic we use the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a> where possible, and the more flexible (but less performant) <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding} markup extension</a> where necessary.</p>
+<p>One common structure for Windows App SDK apps is to navigate to different details pages when a user makes a selection in a master list. This is useful when you want to provide a rich visual representation of each item at every level in a hierarchy. Another option is to display multiple levels of data on a single page. This is useful when you want to display a few simple lists that let the user quickly drill down to an item of interest. This topic describes how to implement this interaction. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a> instances keep track of the current selection at each hierarchical level.</p>
+<p>We'll create a view of a sports team hierarchy that is organized into lists for leagues, divisions, and teams, and includes a team details view. When you select an item from any list, the subsequent views update automatically.</p>
+<p><img src="images/xaml-masterdetails.png" alt="master/details view of a sports hierarchy"></p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This topic assumes that you know how to create a basic Windows App SDK app. For instructions on creating your first Windows App SDK app, see <a href="/windows/apps/winui/winui3/create-your-first-winui3-app">Create your first WinUI 3 (Windows App SDK) project</a>.</p>
+<h2 id="create-the-project">Create the project</h2>
+<p>Create a new <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project. Name it &quot;MasterDetailsBinding&quot;.</p>
+<h2 id="create-the-data-model">Create the data model</h2>
+<p>Add a new class to your project, name it <strong>ViewModel.cs</strong>, and add this code to it. This will be your binding source class.</p>
+<pre><code class="lang-cs">using System.Collections.Generic;
+using System.Linq;
+
+namespace MasterDetailsBinding
+{
+    public class Team
+    {
+        public string Name { get; set; }
+        public int Wins { get; set; }
+        public int Losses { get; set; }
+    }
+
+    public class Division
+    {
+        public string Name { get; set; }
+        public IEnumerable&lt;Team&gt; Teams { get; set; }
+    }
+
+    public class League
+    {
+        public string Name { get; set; }
+        public IEnumerable&lt;Division&gt; Divisions { get; set; }
+    }
+
+    public class LeagueList : List&lt;League&gt;
+    {
+        public LeagueList()
+        {
+            AddRange(GetLeague().ToList());
+        }
+
+        public IEnumerable&lt;League&gt; GetLeague()
+        {
+            return from x in Enumerable.Range(1, 2)
+                   select new League
+                   {
+                       Name = &quot;League &quot; + x,
+                       Divisions = GetDivisions(x).ToList()
+                   };
+        }
+
+        public IEnumerable&lt;Division&gt; GetDivisions(int x)
+        {
+            return from y in Enumerable.Range(1, 3)
+                   select new Division
+                   {
+                       Name = string.Format(&quot;Division {0}-{1}&quot;, x, y),
+                       Teams = GetTeams(x, y).ToList()
+                   };
+        }
+
+        public IEnumerable&lt;Team&gt; GetTeams(int x, int y)
+        {
+            return from z in Enumerable.Range(1, 4)
+                   select new Team
+                   {
+                       Name = string.Format(&quot;Team {0}-{1}-{2}&quot;, x, y, z),
+                       Wins = 25 - (x * y * z),
+                       Losses = x * y * z
+                   };
+        }
+    }
+}
+</code></pre>
+<h2 id="create-the-view">Create the view</h2>
+<p>Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type <code>LeagueList</code> to <strong>MainWindow</strong>.</p>
+<pre><code class="lang-cs">namespace MasterDetailsBinding
+{
+    public sealed partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+            ViewModel = new LeagueList();
+        }
+        public LeagueList ViewModel { get; set; }
+    }
+}
+</code></pre>
+<p>Finally, replace the contents of the <strong>MainWindow.xaml</strong> file with the following markup, which declares three <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a> instances and binds them together in a chain. The subsequent controls can then bind to the appropriate <code>CollectionViewSource</code>, depending on its level in the hierarchy.</p>
+<pre><code class="lang-xaml">&lt;Window
+    x:Class=&quot;MasterDetailsBinding.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:MasterDetailsBinding&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;Grid&gt;
+        &lt;Grid.Resources&gt;
+            &lt;CollectionViewSource x:Name=&quot;Leagues&quot;
+                Source=&quot;{x:Bind ViewModel}&quot;/&gt;
+            &lt;CollectionViewSource x:Name=&quot;Divisions&quot;
+                Source=&quot;{Binding Divisions, Source={StaticResource Leagues}}&quot;/&gt;
+            &lt;CollectionViewSource x:Name=&quot;Teams&quot;
+                Source=&quot;{Binding Teams, Source={StaticResource Divisions}}&quot;/&gt;
+    
+            &lt;Style TargetType=&quot;TextBlock&quot;&gt;
+                &lt;Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/&gt;
+                &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot;/&gt;
+            &lt;/Style&gt;
+            &lt;Style TargetType=&quot;ListBox&quot;&gt;
+                &lt;Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/&gt;
+            &lt;/Style&gt;
+            &lt;Style TargetType=&quot;ContentControl&quot;&gt;
+                &lt;Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/&gt;
+            &lt;/Style&gt;
+        &lt;/Grid.Resources&gt;
+
+        &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+
+            &lt;!-- All Leagues view --&gt;
+            &lt;StackPanel Margin=&quot;5&quot;&gt;
+                &lt;TextBlock Text=&quot;All Leagues&quot;/&gt;
+                &lt;ListBox ItemsSource=&quot;{Binding Source={StaticResource Leagues}}&quot; 
+                         DisplayMemberPath=&quot;Name&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;!-- League/Divisions view --&gt;
+            &lt;StackPanel Margin=&quot;5&quot;&gt;
+                &lt;TextBlock Text=&quot;{Binding Name, Source={StaticResource Leagues}}&quot;/&gt;
+                &lt;ListBox ItemsSource=&quot;{Binding Source={StaticResource Divisions}}&quot; 
+                         DisplayMemberPath=&quot;Name&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;!-- Division/Teams view --&gt;
+            &lt;StackPanel Margin=&quot;5&quot;&gt;
+                &lt;TextBlock Text=&quot;{Binding Name, Source={StaticResource Divisions}}&quot;/&gt;
+                &lt;ListBox ItemsSource=&quot;{Binding Source={StaticResource Teams}}&quot; 
+                         DisplayMemberPath=&quot;Name&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;!-- Team view --&gt;
+            &lt;ContentControl Content=&quot;{Binding Source={StaticResource Teams}}&quot;&gt;
+                &lt;ContentControl.ContentTemplate&gt;
+                    &lt;DataTemplate&gt;
+                        &lt;StackPanel Margin=&quot;5&quot;&gt;
+                            &lt;TextBlock Text=&quot;{Binding Name}&quot; 
+                                       FontSize=&quot;15&quot; FontWeight=&quot;Bold&quot;/&gt;
+                            &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;10,10&quot;&gt;
+                                &lt;TextBlock Text=&quot;Wins:&quot; Margin=&quot;0,0,5,0&quot;/&gt;
+                                &lt;TextBlock Text=&quot;{Binding Wins}&quot;/&gt;
+                            &lt;/StackPanel&gt;
+                            &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;10,0&quot;&gt;
+                                &lt;TextBlock Text=&quot;Losses:&quot; Margin=&quot;0,0,5,0&quot;/&gt;
+                                &lt;TextBlock Text=&quot;{Binding Losses}&quot;/&gt;
+                            &lt;/StackPanel&gt;
+                        &lt;/StackPanel&gt;
+                    &lt;/DataTemplate&gt;
+                &lt;/ContentControl.ContentTemplate&gt;
+            &lt;/ContentControl&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>Note that by binding directly to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a>, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the <code>CurrentItem</code> property as the path for the binding, although you can do that if there's any ambiguity. For example, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol"><strong>ContentControl</strong></a> representing the team view has its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content"><strong>Content</strong></a> property bound to the <code>Teams</code> <code>CollectionViewSource</code>. However, the controls in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate"><strong>DataTemplate</strong></a> bind to properties of the <code>Team</code> class because the <code>CollectionViewSource</code> automatically supplies the currently selected team from the teams list when necessary.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="data-binding-overview.html">Data binding overview</a></li>
+<li><a href="data-binding-in-depth.html">Data binding in depth</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

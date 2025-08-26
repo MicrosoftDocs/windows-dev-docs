@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Walkthrough—Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Walkthrough—Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK ">
+    
+    <meta name="description" content="Author a Windows Runtime component with C#/WinRT with WinUI controls, and consume it from any Windows App SDK app.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="walkthroughcreate-a-c-component-with-winui-3-controls-and-consume-it-from-a-cwinrt-app-that-uses-the-windows-app-sdk">Walkthrough—Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK</h1>
+
+<p>C#/WinRT provides support for authoring Windows Runtime components, including WinUI custom types and custom controls. These components can be consumed from either C# or C++/WinRT applications that use the Windows App SDK. We recommend using C#/WinRT v1.6.4 or later to author runtime components with NuGet packaging support.</p>
+<p>For more details about the supported scenarios, refer to <a href="https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md">Authoring C#/WinRT components</a> in the C#/WinRT GitHub repo.</p>
+<p>This walkthrough demonstrates how to author a C# component with a custom WinUI 3 control, and how to consume that component from a C++/WinRT app, using the Windows App SDK project templates.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This walkthrough requires the following tools and components:</p>
+<ul>
+<li><a href="/visualstudio/releases/2022/release-notes">Visual Studio 2022</a></li>
+<li><a href="https://dotnet.microsoft.com/download/dotnet/6.0">.NET 6.0 SDK</a></li>
+<li><a href="../../../windows-app-sdk/downloads.html">Windows App SDK VSIX</a> (1.1 from the stable channel)</li>
+</ul>
+<h2 id="author-your-cwinrt-component-using-the-windows-app-sdk">Author your C#/WinRT component using the Windows App SDK</h2>
+<ol>
+<li><p>Create a new C# library project using the <strong>Class Library (WinUI 3 in Desktop)</strong> template provided by the Windows App SDK. For this walkthrough, we've named the library project <strong>WinUIComponentCs</strong>, and the solution <strong>AuthoringWinUI</strong>.</p>
+<p>Leave the <strong>Place solution and project in the same directory</strong> box unchecked (otherwise, the <code>packages</code> folder for the C++ application in the preceding section will end up interfering with the C# library project).</p>
+<p><img src="images%5Ccreate-winui-library.png" alt="New library dialog"></p>
+</li>
+<li><p>Delete the <code>Class1.cs</code> file that's included by default.</p>
+</li>
+<li><p>Install the latest <a href="https://www.nuget.org/packages/Microsoft.Windows.CsWinRT/">Microsoft.Windows.CsWinRT</a> NuGet package in your project.</p>
+<p>i. In Solution Explorer, right-click on the project node, and select <strong>Manage NuGet Packages</strong>.</p>
+<p>ii. Search for the <strong>Microsoft.Windows.CsWinRT</strong> NuGet package, and install the latest version.</p>
+</li>
+<li><p>Add the following properties to your library project:</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;   
+    &lt;CsWinRTComponent&gt;true&lt;/CsWinRTComponent&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+<ul>
+<li>The <code>CsWinRTComponent</code> property specifies that your project is a Windows Runtime component so that a <code>.winmd</code> file is generated when you build the project.</li>
+</ul>
+</li>
+<li><p>Add a custom control or user control to your library. To do this, right-click on your project in Visual Studio, click <strong>Add</strong> &gt; <strong>New Item</strong>, and select <strong>WinUI</strong> on the left pane. For this walkthrough, we added a new <strong>User Control (WinUI 3)</strong> and named it <code>NameReporter.xaml</code>. The <strong>NameReporter</strong> user control allows a user to enter a first and last name into the appropriate <strong>TextBox</strong> control, and click a button. The control then displays a message box with the name that the user entered.</p>
+</li>
+<li><p>Paste the following code in the <code>NameReporter.xaml</code> file:</p>
+<pre><code class="lang-xml">&lt;UserControl
+x:Class=&quot;WinUIComponentCs.NameReporter&quot;
+xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+xmlns:local=&quot;using:WinUIComponentCs&quot;
+xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;StackPanel HorizontalAlignment=&quot;Center&quot;&gt;
+        &lt;StackPanel.Resources&gt;
+            &lt;Style x:Key=&quot;BasicTextStyle&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;{StaticResource BodyTextBlockStyle}&quot;&gt;
+                &lt;Setter Property=&quot;Margin&quot; Value=&quot;10,10,10,10&quot;/&gt;
+            &lt;/Style&gt;
+        &lt;/StackPanel.Resources&gt;
+
+        &lt;TextBlock Text=&quot;Enter your name.&quot; Margin=&quot;0,0,0,10&quot;/&gt;
+        &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,10&quot;&gt;
+            &lt;TextBlock Style=&quot;{StaticResource BasicTextStyle}&quot;&gt;
+                First Name:
+            &lt;/TextBlock&gt;
+            &lt;TextBox Name=&quot;firstName&quot; /&gt;
+        &lt;/StackPanel&gt;
+        &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,10&quot;&gt;
+            &lt;TextBlock Style=&quot;{StaticResource BasicTextStyle}&quot;&gt;
+                Last Name:
+            &lt;/TextBlock&gt;
+            &lt;TextBox Name=&quot;lastName&quot; /&gt;
+        &lt;/StackPanel&gt;
+        &lt;Button Content=&quot;Submit&quot; Click=&quot;Button_Click&quot; Margin=&quot;0,0,0,10&quot;/&gt;
+        &lt;TextBlock Name=&quot;result&quot; Style=&quot;{StaticResource BasicTextStyle}&quot; Margin=&quot;0,0,0,10&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/UserControl&gt;
+</code></pre>
+</li>
+<li><p>Add the following method to <code>NameReporter.xaml.cs</code>:</p>
+<pre><code class="lang-csharp">using System.Text;
+...
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    StringBuilder displayText = new StringBuilder(&quot;Hello, &quot;);
+    displayText.AppendFormat(&quot;{0} {1}.&quot;, firstName.Text, lastName.Text);
+    result.Text = displayText.ToString();
+}
+</code></pre>
+</li>
+<li><p>You can now build the <strong>WinUIComponentCs</strong> project to generate a <code>.winmd</code> file for the component.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also package the component as a NuGet package for end app consumers to reference. For more details, see <a href="https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md">Authoring C#/WinRT components</a> on the C#/WinRT Github repo.</p>
+</div>
+<h2 id="reference-the-component-from-a-windows-app-sdk-cwinrt-app">Reference the component from a Windows App SDK C++/WinRT app</h2>
+<p>The following steps show how to consume the component created from the previous section from a C++/WinRT Windows App SDK application. Consuming a C#/WinRT component from C++ currently requires using the single-project <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> template. Note that C# components can also be referenced from C# packaged apps without class registrations.</p>
+<p>Consumption from packaged apps that use a separate <strong>Windows Application Packaging (WAP)</strong> project is not currently supported. See <a href="https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md">Authoring C#/WinRT components</a> in the C#/WinRT GitHub repo for the latest updates on supported project configurations.</p>
+<ol>
+<li><p>Add a new C++ Windows App SDK application project to your solution. Right-click on your solution in Visual Studio, and select <strong>Add</strong> &gt; <strong>New Project</strong>. Select the C++ <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> template provided by the Windows App SDK. For this walkthrough, we named the app <strong>CppApp</strong>.</p>
+</li>
+<li><p>Add a project reference from the C++ app to the C# component. In Visual Studio, right-click on the C++ project and choose <strong>Add</strong> &gt; <strong>Reference</strong>, and select the <strong>WinUIComponentCs</strong> project.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Consuming components as a NuGet package reference is supported with some limitations. Namely, components with custom user controls can't currently be consumed as a NuGet package reference.</p>
+</div>
+</li>
+<li><p>In the app's <code>pch.h</code> header file, add the following lines:</p>
+<pre><code class="lang-cpp">#include &lt;winrt/WinUIComponentCs.h&gt;
+#include &lt;winrt/WinUIComponentCs.WinUIComponentCs_XamlTypeInfo.h&gt;
+</code></pre>
+</li>
+<li><p>Open up the package manifest file, <code>Package.appxmanifest</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There's a known issue where the <code>Package.appxmanifest</code> file doesn't appear in Visual Studio Solution Explorer. To workaround that, right-click on your C++ project, select <strong>Unload Project</strong>, and double-click on the project to open the <code>CppApp.vcxproj</code> file. Add the following entry to the project file, and then reload the project:</p>
+</div>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+    &lt;AppxManifest Include=&quot;Package.appxmanifest&quot;&gt;
+    &lt;SubType&gt;Designer&lt;/SubType&gt;
+    &lt;/AppxManifest&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<p>In <code>Package.appxmanifest</code>, add the following activatable class registrations. You'll also need an additional <code>ActivatableClass</code> entry for the <strong>WinUIComponentCs.WinUIComponentCs_XamlTypeInfo.XamlMetaDataProvider</strong> class in order to activate the WinUI types. Right-click on the <code>Package.appxmanifest</code> file and select <strong>Open With</strong> &gt; <strong>XML (Text Editor)</strong> in order to edit the file.</p>
+<pre><code class="lang-xml">&lt;!--In order to host the C# component from C++, you must add the following Extension group and list the activatable classes--&gt;
+&lt;Extensions&gt;
+    &lt;Extension Category=&quot;windows.activatableClass.inProcessServer&quot;&gt;
+        &lt;InProcessServer&gt;
+            &lt;Path&gt;WinRT.Host.dll&lt;/Path&gt;
+            &lt;ActivatableClass ActivatableClassId=&quot;WinUIComponentCs.NameReporter&quot; ThreadingModel=&quot;both&quot; /&gt;
+            &lt;ActivatableClass ActivatableClassId=&quot;WinUIComponentCs.WinUIComponentCs_XamlTypeInfo.XamlMetaDataProvider&quot; ThreadingModel=&quot;both&quot; /&gt;
+        &lt;/InProcessServer&gt;
+    &lt;/Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+</li>
+<li><p>Open the <code>MainWindow.xaml</code> file.</p>
+<p>i. Add a reference to the component's namespace at the top of the file.</p>
+<pre><code class="lang-xml">xmlns:custom=&quot;using:WinUIComponentCs&quot;
+</code></pre>
+<p>ii. Add the user control to the existing XAML code.</p>
+<pre><code class="lang-xml">&lt;StackPanel&gt;
+    ...
+    &lt;custom:NameReporter/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+</li>
+<li><p>Set <strong>CppApp</strong> as the startup project—right-click on <strong>CppApp</strong>, and select <strong>Set as Startup Project</strong>. Set the solution configuration to <code>x86</code>. Before building, you might also need to retarget your solution to build with the Visual Studio 2022 build tools. Right-click on the solution, select <strong>Retarget solution</strong>, and upgrade the Platform Toolset to <strong>v143</strong>.</p>
+</li>
+<li><p>Build and run the app to see the custom <strong>NameReporter</strong> control.</p>
+</li>
+</ol>
+<h2 id="known-issues">Known issues</h2>
+<ul>
+<li>Consuming a C# component as a project reference requires <code>PublishReadyToRun</code> to be set to <code>False</code>. See <a href="https://github.com/microsoft/CsWinRT/issues/1151">Github Issue #1151</a> for more details.</li>
+<li>Consuming a C# component built for <code>AnyCPU</code> from C++ is supported only from <code>x86</code> applications currently. <code>x64</code> and <code>Arm64</code> apps result in a runtime error similar to: <em>%1 is not a valid Win32 application.</em> See <a href="https://github.com/microsoft/CsWinRT/issues/1093">Github Issue #1151</a> for more details.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/CustomControls">C#/WinRT Authoring Sample app</a></li>
+<li><a href="https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md">Authoring C#/WinRT Components</a></li>
+<li><a href="https://github.com/microsoft/CsWinRT/blob/master/docs/hosting.md">Managed component hosting</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

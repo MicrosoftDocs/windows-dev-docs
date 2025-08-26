@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Python on Windows for beginners </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Python on Windows for beginners ">
+    
+    <meta name="description" content="A guide to help you get started if your brand new to using Python on Windows.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-using-python-on-windows-for-beginners">Get started using Python on Windows for beginners</h1>
+
+<p>For beginners interested in learning Python using Windows, we recommend choosing between these two setup paths:</p>
+<ol>
+<li><a href="#set-up-your-python-development-environment-using-a-winget-configuration-file">Set up your Python development environment using a winget configuration file</a></li>
+<li><a href="#manually-set-up-your-python-development-environment">Manually set up your Python development environment</a></li>
+</ol>
+<h2 id="set-up-your-python-development-environment-using-a-winget-configuration-file">Set up your Python development environment using a WinGet Configuration file</h2>
+<p><a href="../package-manager/configuration/index.html">Winget Configuration files</a> include all of the instructions needed to install requirements and setup your machine for a specific project. To use Microsoft's Beginner Python project WinGet Configuration setup file, follow the steps below:</p>
+<ol>
+<li><p>Download the configuration file by opening this link and selecting &quot;Raw file content &gt; Download&quot; (three dots menu on top-right):  <a href="https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/Python%203.13/learn_python.winget">Winget Configuration: learn_python.winget</a>.</p>
+</li>
+<li><p>To run the file, double-click the downloaded configuration file (the first time you will need to select the &quot;Windows Package Manager Client&quot; app to open and run the file) or you can open Powershell in Windows Terminal and enter the following command:</p>
+<pre><code class="lang-powershell">winget configure -f &lt;path to learn_python.winget file&gt;
+</code></pre>
+<p>The file path will look something like <code>winget configure -f C:\Users\&lt;your-name&gt;\Downloads\learn_python.winget</code>.</p>
+</li>
+<li><p>Once the configuration file begins running, you will see the setup steps listed in a terminal window, including the project requirements that will be installed. You will then need to confirm that you have reviewed these configuration updates and confirm that you would like to proceed by selecting [Y] Yes or [N] No.</p>
+</li>
+<li><p>Once you proceed, the project requirements will be installed and report whether the configuration has been successfully applied.</p>
+</li>
+</ol>
+<p><strong>Your machine is now setup to Learn Python!</strong></p>
+<p>To confirm, check what version of Python is installed on your machine now by entering the command: <code>python --version</code>.</p>
+<h2 id="manually-set-up-your-python-development-environment">Manually set up your Python development environment</h2>
+<p>To setup your Python development environment manually, rather than using a winget configuration file, you will need to:</p>
+<ul>
+<li>Install Python</li>
+<li>Install Visual Studio Code</li>
+<li>Install the Visual Studio Code extension for Python</li>
+</ul>
+<p><strong>Install Python</strong>: There are multiple versions of Python available to install (based on updates that have been made to the coding language over time). You will first need to determine which version of Python you need. You can reference the versions of Python currently supported at <a href="https://devguide.python.org/versions/#versions">Status of Python versions | Python Developer's Guide</a>. We recommend either using a modern, supported version, or matching the version of the whatever Python project that you plan to contribute to. For this tutorial, we recommend that you use the Microsoft Store to install Python.</p>
+<ul>
+<li><strong><a href="https://apps.microsoft.com/search?query=python">Install Python 3 using Microsoft Store</a></strong> - select the most recent version available and then &quot;Download&quot;. Installing Python via the Microsoft Store uses Python 3 and handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates. Once Python has completed the downloading and installation process, open PowerShell in Windows Terminal and enter the command: <code>python --version</code> to confirm the Python version that has been installed on your machine.</li>
+</ul>
+<p>If you are using Python on Windows for <strong>web development</strong>, we recommend a different set up for your development environment. Rather than installing directly on Windows, we recommend installing and using Python via the Windows Subsystem for Linux.</p>
+<ul>
+<li><a href="web-frameworks.html">Get started using Python for web development on Windows</a>.</li>
+</ul>
+<p>If you're interested in automating common tasks on your operating system, see our guide:</p>
+<ul>
+<li><a href="scripting.html">Get started using Python on Windows for scripting and automation</a>.</li>
+</ul>
+<p>For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from <a href="https://www.python.org/downloads/">python.org</a> or installing an <a href="https://www.python.org/download/alternatives">alternative</a>, such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.</p>
+<p><strong>Install Visual Studio Code</strong>: Visual Studio Code is a code editing tool, sometimes called an Integrated Development Environment, or IDE. Visual Studio Code provides features such as <a href="https://code.visualstudio.com/docs/copilot/overview">GitHub Copilot</a> (an AI-powered tool that provides coding suggestions), <a href="https://code.visualstudio.com/docs/editor/intellisense">IntelliSense</a> (a code completion aid), <a href="https://code.visualstudio.com/docs/python/linting">Linting</a> (helps avoid making errors in your code), <a href="https://code.visualstudio.com/docs/python/debugging">Debug support</a> (helps you find errors in your code after you run it), <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">Code snippets</a> (templates for small reusable code blocks), and <a href="https://code.visualstudio.com/docs/python/unit-testing">Unit testing</a> (testing your code's interface with different types of input).</p>
+<ul>
+<li><a href="https://code.visualstudio.com">Install Visual Studio Code on Windows</a></li>
+</ul>
+<p><strong>Install the Visual Studio Code extension for Python</strong>: Visual Studio Code offers &quot;extensions&quot; allowing you to add on support features which <em>extend</em> support for whatever language or tools you are working with. In this case, the Python extension adds Python-specific support for code formatting, IntelliSense code completion suggestions, debugging, linting, refactoring, etc.</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-python.python">Install the Python extension from Visual Studio Code Marketplace</a></li>
+</ul>
+<h2 id="hello-world-tutorial-for-some-python-basics">Hello World tutorial for some Python basics</h2>
+<p>Python, according to its creator Guido van Rossum, is a “high-level programming language, and its core design philosophy is all about code readability and a syntax which allows programmers to express concepts in a few lines of code.”</p>
+<p>Python is an interpreted language. In contrast to compiled languages, in which the code you write needs to be translated into machine code in order to be run by your computer's processor, Python code is passed straight to an interpreter and run directly. You just type in your code and run it. Let's try it!</p>
+<ol>
+<li><p>With your PowerShell command line open, enter <code>python</code> to run the Python 3 interpreter. (Some instructions prefer to use the command <code>py</code> or <code>python3</code>, these should also work). You will know that you're successful because a &gt;&gt;&gt; prompt with three greater-than symbols will display.</p>
+</li>
+<li><p>There are several built-in methods that allow you to make modifications to strings in Python. Create a variable, with: <code>variable = 'Hello World!'</code>. Press Enter for a new line.</p>
+</li>
+<li><p>Print your variable with: <code>print(variable)</code>. This will display the text &quot;Hello World!&quot;.</p>
+</li>
+<li><p>Find out the length, how many characters are used, of your string variable with: <code>len(variable)</code>. This will display that there are 12 characters used. (Note that the blank space it counted as a character in the total length.)</p>
+</li>
+<li><p>Convert your string variable to upper-case letters: <code>variable.upper()</code>. Now convert your string variable to lower-case letters: <code>variable.lower()</code>.</p>
+</li>
+<li><p>Count how many times the letter &quot;l&quot; is used in your string variable: <code>variable.count(&quot;l&quot;)</code>.</p>
+</li>
+<li><p>Search for a specific character in your string variable, let's find the exclamation point, with: <code>variable.find(&quot;!&quot;)</code>. This will display that the exclamation point is found in the 11th position character of the string.</p>
+</li>
+<li><p>Replace the exclamation point with a question mark: <code>variable.replace(&quot;!&quot;, &quot;?&quot;)</code>.</p>
+</li>
+<li><p>To exit Python, you can enter <code>exit()</code>, <code>quit()</code>, or select Ctrl-Z.</p>
+</li>
+</ol>
+<p><img src="../images/hello-world-basics.png" alt="PowerShell screenshot of this tutorial"></p>
+<p>Hope you had fun using some of Python's built-in string modification methods. Now try creating a Python program file and running it with Visual Studio Code.</p>
+<h2 id="hello-world-tutorial-for-using-python-with-vs-code">Hello World tutorial for using Python with VS Code</h2>
+<p>The VS Code team has put together a great <a href="https://code.visualstudio.com/docs/python/python-tutorial#_start-vs-code-in-a-project-workspace-folder">Getting Started with Python</a> tutorial walking through how to create a Hello World program with Python, run the program file, configure and run the debugger, and install packages like <em>matplotlib</em> and <em>numpy</em> to create a graphical plot inside a virtual environment.</p>
+<p>To run Python code, you must tell VS Code which interpreter to use. Because you've already installed the Python extension, you can select a Python interpreter by opening the <strong>Command Palette</strong> (Ctrl+Shift+P), start typing the command <strong>Python: Select Interpreter</strong> to search, then select the command. You can also use the <strong>Select Python Environment</strong> option on the bottom Status Bar if available (it may already show a selected interpreter). The command presents a list of available interpreters, including virtual environments. Just choose the first on the list unless you have a reason for a different desired interpreter, see <a href="https://code.visualstudio.com/docs/python/environments">Configuring Python environments</a>.</p>
+<p><img src="../images/interpreterselection.gif" alt="Select Python interpreter in VS Code"></p>
+<p>Once you've chosen the interpreter, let's try using it with the VS Code built-in terminal:</p>
+<ol>
+<li><p>To open the terminal in VS Code, select <strong>View</strong> &gt; <strong>Terminal</strong>, or alternatively use the shortcut <strong>Ctrl+`</strong> (using the backtick character). The default command line is PowerShell.</p>
+</li>
+<li><p>Inside your VS Code terminal, open Python by simply entering the command: <code>python</code></p>
+</li>
+<li><p>Try the Python interpreter out by entering: <code>print(&quot;Hello World&quot;)</code>. Python will return your statement &quot;Hello World&quot;.</p>
+<p><img src="../images/python-in-vscode.png" alt="Python command line in VS Code"></p>
+</li>
+<li><p>In the terminal, create an empty folder called &quot;hello&quot;, navigate into this folder, and open it in VS Code using the code below:</p>
+<pre><code class="lang-console">mkdir hello
+cd hello
+code .
+</code></pre>
+</li>
+<li><p>Once VS Code opens, displaying your new <em>hello</em> folder in the left-side <strong>Explorer</strong> window, open a command line window in the bottom panel of VS Code by pressing <strong>Ctrl+`</strong> (using the backtick character) or selecting  <strong>View</strong> &gt; <strong>Terminal</strong>. By starting VS Code in a folder, that folder becomes your &quot;workspace&quot;. VS Code stores settings that are specific to that workspace in .vscode/settings.json, which are separate from user settings that are stored globally.</p>
+</li>
+<li><p>Continue the tutorial in the VS Code docs: <a href="https://code.visualstudio.com/docs/python/python-tutorial#_create-a-python-hello-world-source-code-file">Create a Python Hello World source code file</a>.</p>
+</li>
+</ol>
+<h2 id="what-is-pip">What is PIP?</h2>
+<p>A package manager is a tool that automates the process of installing, upgrading, configuring, and removing software packages. Python's ecosystem is rich, with thousands of packages available on the Python Package Index (PyPI). Pip is the standard package manager program that is included with Python. Pip allows you to install and manage additional packages that are not part of the Python standard library. To confirm that you also have pip available to install and manage packages, enter <code>pip --version</code></p>
+<p>To install a package using pip, you can use the command:</p>
+<pre><code class="lang-powershell">pip install &lt;package_name&gt;
+</code></pre>
+<p>Try replacing <code>&lt;package_name&gt;</code> with the name of a package from <a href="https://pypi.org/">https://pypi.org/</a>. For example, you can try installing pip upgrades with the command: <code>pip install --upgrade pip</code></p>
+<p>One of the strengths of pip is its ability to create a requirements.txt file, which lists all the dependencies of a project. This file can be used to replicate the environment on another machine. Use the command <code>pip freeze &gt; requirements.txt</code> to create a file that will list all the installed packages in your current development environment and their versions. To run this requirements file in order to set up a new machine with the same environment, you would run <code>pip install -r requirements.txt</code>.</p>
+<h2 id="create-a-simple-game-with-pygame">Create a simple game with Pygame</h2>
+<p><img src="../images/pygame-shmup.jpg" alt="Pygame running a sample game"></p>
+<p>Pygame is a popular Python package for writing games - encouraging students to learn programming while creating something fun. Pygame displays graphics in a new window, and so it will not work under the command-line-only approach of WSL. However, if you installed Python via the Microsoft Store as detailed in this tutorial, it will work fine.</p>
+<ol>
+<li><p>Once you have Python installed, install pygame from the command line (or the terminal from within VS Code) by typing <code>python -m pip install -U pygame --user</code>.</p>
+</li>
+<li><p>Test the installation by running a sample game : <code>python -m pygame.examples.aliens</code></p>
+</li>
+<li><p>All being well, the game will open a window. Close the window when you are done playing.</p>
+</li>
+</ol>
+<p>Here's how to start writing your own game.</p>
+<ol>
+<li><p>Open PowerShell (or Windows Command Prompt) and create an empty folder called &quot;bounce&quot;. Navigate to this folder and create a file named &quot;bounce.py&quot;. Open the folder in VS Code:</p>
+<pre><code class="lang-powershell">mkdir bounce
+cd bounce
+new-item bounce.py
+code .
+</code></pre>
+</li>
+<li><p>Using VS Code, enter the following Python code (or copy and paste it):</p>
+<pre><code class="lang-python">import sys, pygame
+
+pygame.init()
+
+size = width, height = 640, 480
+dx = 1
+dy = 1
+x= 163
+y = 120
+black = (0,0,0)
+white = (255,255,255)
+
+screen = pygame.display.set_mode(size)
+
+while 1:
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT: sys.exit()
+
+    x += dx
+    y += dy
+
+    if x &lt; 0 or x &gt; width:   
+        dx = -dx
+
+    if y &lt; 0 or y &gt; height:
+        dy = -dy
+
+    screen.fill(black)
+
+    pygame.draw.circle(screen, white, (x,y), 8)
+
+    pygame.display.flip()
+</code></pre>
+</li>
+<li><p>Save it as: <code>bounce.py</code>.</p>
+</li>
+<li><p>From the PowerShell terminal, run it by entering: <code>python bounce.py</code>.</p>
+<p><img src="../images/pygame.jpg" alt="Pygame running the next big thing"></p>
+</li>
+</ol>
+<p>Try adjusting some of the numbers to see what effect they have on your bouncing ball.</p>
+<p>Read more about writing games with pygame at <a href="http://www.pygame.org">pygame.org</a>.</p>
+<h3 id="use-ai-to-enhance-the-game-with-additional-features">Use AI to enhance the game with additional features</h3>
+<p>You can use AI tools, such as GitHub Copilot, to generate code that updates the bouncing ball game with new interactive features, improved behaviors, and smoother animations. You can customize the prompt to suit your requirements.</p>
+<p>The following text shows an example prompt for Copilot Chat:</p>
+<pre><code class="lang-copilot-prompt">Update the pygame bouncing ball code to:
+- Add a vertical wall in the center that the ball bounces off
+- Ensure the ball can bounce off the center wall and continue moving, not get stuck next to it
+- Cycle through different colors each time the ball bounces
+- Reduce movement speed from 1 to 0.5 pixels per frame
+- Add frame rate control for 60 FPS
+</code></pre>
+<p>GitHub Copilot is powered by AI, so surprises and mistakes are possible. For more information, see <a href="https://aka.ms/copilot-general-use-faqs">Copilot FAQs</a>.</p>
+<h2 id="resources-for-continued-learning">Resources for continued learning</h2>
+<p>We recommend the following resources to support you in continuing to learn about Python development on Windows.</p>
+<ul>
+<li><a href="https://devblogs.microsoft.com/python/">Microsoft Dev Blogs: Python</a>: Read the latest updates about all things Python at Microsoft.</li>
+</ul>
+<h3 id="working-with-python-in-vs-code">Working with Python in VS Code</h3>
+<ul>
+<li><p><a href="https://code.visualstudio.com/docs/python/editing">Editing Python in VS Code</a>: Learn more about how to take advantage of VS Code's autocomplete and IntelliSense support for Python, including how to customize their behavior... or just turn them off.</p>
+</li>
+<li><p><a href="https://code.visualstudio.com/docs/python/linting">Linting Python</a>: Linting is the process of running a program that will analyse code for potential errors. Learn about the different forms of linting support VS Code provides for Python and how to set it up.</p>
+</li>
+<li><p><a href="https://code.visualstudio.com/docs/python/debugging">Debugging Python</a>: Debugging is the process of identifying and removing errors from a computer program. This article covers how to initialize and configure debugging for Python with VS Code, how to set and validate breakpoints, attach a local script, perform debugging for different app types or on a remote computer, and some basic troubleshooting.</p>
+</li>
+<li><p><a href="https://code.visualstudio.com/docs/python/unit-testing">Unit testing Python</a>: Covers some background explaining what unit testing means, an example walkthrough, enabling a test framework, creating and running your tests, debugging tests, and test configuration settings.</p>
+</li>
+</ul>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/copilot/overview">GitHub Copilot in VS Code</a></li>
+<li><a href="/visualstudio/ide/visual-studio-github-copilot-install-and-states">GitHub Copilot in Visual Studio</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/python/beginners.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

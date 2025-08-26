@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use XAML Islands to host a UWP XAML control in a C# WPF app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use XAML Islands to host a UWP XAML control in a C# WPF app ">
+    
+    <meta name="description" content="This topic demonstrates two ways to use XAML Islands to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK) in a Windows Presentation Foundation (WPF) app that targets .NET Core 3.1.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-xaml-islands-to-host-a-uwp-xaml-control-in-a-c-wpf-app">Use XAML Islands to host a UWP XAML control in a C# WPF app</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This topic uses or mentions types from the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32">CommunityToolkit/Microsoft.Toolkit.Win32</a> GitHub repo. For important info about XAML Islands support, please see the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice">XAML Islands Notice</a> in that repo.</p>
+</div>
+<p>This topic shows how to build a C# Windows Presentation Foundation (WPF) app (targeting .NET Core 3.1) that uses <a href="xaml-islands.html">XAML Islands</a> to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK). We show how to do that in two ways:</p>
+<ul>
+<li><p>We show how to host UWP <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar"><strong>InkToolbar</strong></a> controls by using <a href="xaml-islands.html#wrapped-controls">wrapped controls</a> (available in the Windows Community Toolkit). Wrapped controls wrap the interface and functionality of a small set of useful UWP XAML controls. You can add a wrapped control directly to the design surface of your WPF or Windows Forms project, and then use it in the designer like any other WPF or Windows Forms control.</p>
+</li>
+<li><p>We also show how to host a UWP <a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarView"><strong>CalendarView</strong></a> control by using the <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost"><strong>WindowsXamlHost</strong></a> control (available in the Windows Community Toolkit). Because only a small set of UWP XAML controls are available as wrapped controls, you can use <strong>WindowsXamlHost</strong> to host any UWP XAML control.</p>
+</li>
+</ul>
+<p>The process for hosting a UWP XAML control in a WPF app is similar for a Windows Forms app.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Using XAML Islands (wrapped controls or <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost"><strong>WindowsXamlHost</strong></a>) to host UWP XAML controls is supported only in apps that target .NET Core 3.x. XAML Islands are not supported in apps that target .NET, or in apps that target any version of the .NET Framework.</p>
+</div>
+<h2 id="recommended-components">Recommended components</h2>
+<p>To host a UWP XAML control in a WPF or Windows Forms app, we recommend that you have the following components in your solution. This topic provides instructions for creating each of these components:</p>
+<ul>
+<li><p><strong>The project and source code for your WPF or Windows Forms app</strong>.</p>
+</li>
+<li><p><strong>A UWP project that defines a root Application class that derives from XamlApplication</strong>. The <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication"><strong>Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</strong></a> class is available in the Windows Community Toolkit). We recommended that you define your <strong>XamlApplication</strong>-derived <strong>Application</strong> class a separate UWP app project that's part of your WPF or Windows Forms Visual Studio solution.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Making a <strong>XamlApplication</strong>-derived object available to your WPF or Windows Forms project isn't actually required in order to host a first-party UWP XAML control. But it <em>is</em> necessary in order to discover, load, and host custom UWP XAML controls. So—to support the full range of XAML Island scenarios—we recommend that you always define a <strong>XamlApplication</strong>-derived object in any solution in which you use XAML Islands.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Your solution can contain only one project that defines a <strong>XamlApplication</strong>-derived object. That one project must reference any other libraries and projects that host UWP XAML controls via XAML Islands.</p>
+</div>
+</li>
+</ul>
+<h2 id="create-a-wpf-project">Create a WPF project</h2>
+<p>You can follow these instructions to create a new WPF project, and configure it to host XAML Islands. If you have an existing WPF project, then you can adapt these steps and code examples for your project.</p>
+<ol>
+<li><p>If you haven't done so already, then install the latest version of <a href="https://dotnet.microsoft.com/download/dotnet/3.1">.NET Core 3.1</a>.</p>
+</li>
+<li><p>In Visual Studio, create a new C# project from the <strong>WPF Application</strong> project template. Set the <strong>Project name</strong> to <em>MyWPFApp</em> so that you won't need to edit any of the steps or source code in this topic. Set the <strong>Framework</strong> to <em>.NET Core 3.1</em>*, and click <strong>Create</strong>.</p>
+</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Be sure not to use the <strong>WPF App (.NET Framework)</strong> project template.</p>
+</div>
+<h2 id="configure-your-wpf-project">Configure your WPF project</h2>
+<ol>
+<li><p>These steps enable <a href="/nuget/consume-packages/package-references-in-project-files">package references</a>:</p>
+<ol>
+<li>In Visual Studio, click <strong>Tools</strong> &gt; <strong>NuGet Package Manager</strong> &gt; <strong>Package Manager Settings</strong>.</li>
+<li>On the right, find the <strong>Package Management</strong> &gt; <strong>Default package management format</strong> setting, and set it to <strong>PackageReference</strong>.</li>
+</ol>
+</li>
+<li><p>Use these steps to install the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls"><strong>Microsoft.Toolkit.Wpf.UI.Controls</strong></a> NuGet Package:</p>
+<ol>
+<li><p>Right-click the <em>MyWPFApp</em> project node in <strong>Solution Explorer</strong>, and choose <strong>Manage NuGet Packages...</strong>.</p>
+</li>
+<li><p>On the <strong>Browse</strong> tab, type or paste <em>Microsoft.Toolkit.Wpf.UI.Controls</em> into the search box. Select the latest stable version, and click <strong>Install</strong>. That package provides everything you need to use the wrapped UWP XAML controls for WPF (including <a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas"><strong>InkCanvas</strong></a>, <a href="/windows/communitytoolkit/controls/wpf-winforms/inktoolbar"><strong>InkToolbar</strong></a>, and the <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost"><strong>WindowsXamlHost</strong></a> control).</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For a Windows Forms app, reference the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls"><strong>Microsoft.Toolkit.Forms.UI.Controls</strong></a> package instead.</p>
+</div>
+</li>
+<li><p>Most XAML Islands scenarios aren't supported in projects that target <strong>Any CPU</strong>. So to target a specific architecture (such as <strong>x86</strong> or <strong>x64</strong>), do the following:</p>
+<ol>
+<li>Right-click the solution node (<em>not</em> the project node) in <strong>Solution Explorer</strong>, and choose <strong>Properties</strong>.</li>
+<li>Select <strong>Configuration Properties</strong> on the left.</li>
+<li>Click the <strong>Configuration Manager...</strong> button.</li>
+<li>Under <strong>Active solution platform</strong>, select <strong>New</strong>.</li>
+<li>In the <strong>New Solution Platform</strong> dialog, select <strong>x64</strong> or <strong>x86</strong>, and press <strong>OK</strong>.</li>
+<li>Close the open dialog boxes.</li>
+</ol>
+</li>
+</ol>
+<h2 id="define-a-xamlapplication-class-in-a-new-uwp-project">Define a XamlApplication class in a new UWP project</h2>
+<p>In this section we'll be adding a UWP project to the solution, and revising the default <strong>App</strong> class in that project to derive from the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication"><strong>Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</strong></a> class provided by the Windows Community Toolkit. That class supports the <a href="/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider"><strong>IXamlMetadataProvider</strong></a> interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. That class also initializes the UWP XAML framework for the current thread.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node, and select <strong>Add</strong> &gt; <strong>New Project...</strong>.</p>
+</li>
+<li><p>Select the C# <strong>Blank App (Universal Windows)</strong> project template. Set the <strong>Project name</strong> to <em>MyUWPApp</em> so that you won't need to edit any of the steps or source code in this topic. Set the <strong>Target version</strong> and <strong>Minimum version</strong> to either <strong>Windows 10, version 1903 (Build 18362)</strong> or later.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Be sure not to create <em>MyUWPApp</em> in a subfolder of <em>MyWPFApp</em>. If you do that, then <em>MyWPFApp</em> will try to build the UWP XAML markup as if it were WPF XAML.</p>
+</div>
+</li>
+<li><p>In <em>MyUWPApp</em>, install the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication"><strong>Microsoft.Toolkit.Win32.UI.XamlApplication</strong></a> NuGet package (latest stable version). The process for installng a NuGet package was described in the previous section.</p>
+</li>
+<li><p>In <em>MyUWPApp</em>, open the <code>App.xaml</code> file, and replace its contents with the following XAML:</p>
+<pre><code class="lang-xml">&lt;xaml:XamlApplication
+    x:Class=&quot;MyUWPApp.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:xaml=&quot;using:Microsoft.Toolkit.Win32.UI.XamlHost&quot;
+    xmlns:local=&quot;using:MyUWPApp&quot;&gt;
+&lt;/xaml:XamlApplication&gt;
+</code></pre>
+</li>
+<li><p>Similarly, open <code>App.xaml.cs</code>, and replace its contents with the following code:</p>
+<pre><code class="lang-csharp">namespace MyUWPApp
+{
+    public sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
+    {
+        public App()
+        {
+            this.Initialize();
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Delete the <code>MainPage.xaml</code> and <code>MainPage.xaml.cs</code> files.</p>
+</li>
+<li><p>Build the <em>MyUWPApp</em> project.</p>
+</li>
+</ol>
+<h2 id="in-mywpfapp-add-a-reference-to-the-myuwpapp-project">In MyWPFApp, add a reference to the MyUWPApp project</h2>
+<ol>
+<li><p>Specify the compatible framework version in <em>MyWPFApp</em>'s project file like this:</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, click the <em>MyWPFApp</em> project node to open the project file in the editor.</p>
+</li>
+<li><p>Inside the first <strong>PropertyGroup</strong> element, add the following child element. Change the <code>19041</code> portion of the value as necessary to match the target and minimum OS build of the <em>MyWPFApp</em> project.</p>
+<pre><code class="lang-xml">&lt;AssetTargetFallback&gt;uap10.0.19041&lt;/AssetTargetFallback&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click <em>MyWPFApp</em> &gt; <strong>Dependencies</strong>, choose <strong>Add Project Reference...</strong>, and add a reference to the <em>MyUWPApp</em> project.</p>
+</li>
+</ol>
+<h2 id="instantiate-the-xamlapplication-object-in-the-entry-point-of-mywpfapp">Instantiate the XamlApplication object in the entry point of MyWPFApp</h2>
+<p>Next, add code to the entry point of <em>MyWPFApp</em> to create an instance of the <strong>App</strong> class that you just defined in <em>MyUWPApp</em> (the class that derives from <strong>XamlApplication</strong>).</p>
+<ol>
+<li><p>Right-click the <em>MyWPFApp</em> project node, select <strong>Add</strong> &gt; <strong>New Item...</strong>, and then select <strong>Class</strong>. Set <strong>Name</strong> to <em>Program.cs</em>, and click <strong>Add</strong>.</p>
+</li>
+<li><p>Replace the contents of <code>Program.cs</code> with the following XAML (and then save the file and build the <em>MyWPFApp</em> project):</p>
+<pre><code class="lang-csharp">namespace MyWPFApp
+{
+    public class Program
+    {
+        [System.STAThreadAttribute()]
+        public static void Main()
+        {
+            using (new MyUWPApp.App())
+            {
+                var app = new MyWPFApp.App();
+                app.InitializeComponent();
+                app.Run();
+            }
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Right-click the <em>MyWPFApp</em> project node, and choose <strong>Properties</strong>.</p>
+</li>
+<li><p>In <strong>Application</strong> &gt; <strong>General</strong>, click the <strong>Startup object</strong> drop-down, and choose <em>MyWPFApp.Program</em> (which is the fully-qualified name of the <strong>Program</strong> class that you just added). If you don't see it, then try closing and reopening Visual Studio.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default, a WPF project defines a <strong>Main</strong> entry point function in a generated code file that isn't intended to be modified. The step above changes the entry point for your project to the <strong>Main</strong> method of the new <strong>Program</strong> class, which enables you to add code that runs as early in the startup process of the app as possible.</p>
+</div>
+</li>
+<li><p>Save your changes to the project properties.</p>
+</li>
+</ol>
+<h2 id="use-wrapped-controls-to-host-an-inkcanvas-and-inktoolbar">Use wrapped controls to host an InkCanvas and InkToolbar</h2>
+<p>Now that you've configured your project to use UWP XAML Islands, you're ready to add the <a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas"><strong>InkCanvas</strong></a> and <a href="/windows/communitytoolkit/controls/wpf-winforms/inktoolbar"><strong>InkToolbar</strong></a> wrapped UWP XAML controls to the app.</p>
+<ol>
+<li><p>In <em>MyWPFApp</em>, open the <code>MainWindow.xaml</code> file.</p>
+</li>
+<li><p>In the <strong>Window</strong> element near the top of the XAML file, add the following attribute. This attribute references the XAML namespace for the <strong>InkCanvas</strong> and <strong>InkToolbar</strong> wrapped UWP XAML controls, and maps it to the <strong>controls</strong> XML namespace.</p>
+<pre><code class="lang-xml">xmlns:controls=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls&quot;
+</code></pre>
+</li>
+<li><p>Still in <code>MainWindow.xaml</code>, edit the existing <strong>Grid</strong> element so that it looks like the XAML below. This XAML adds to the <strong>Grid</strong> an <a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas"><strong>InkCanvas</strong></a> and an <a href="/windows/communitytoolkit/controls/wpf-winforms/inktoolbar"><strong>InkToolbar</strong></a> control (prefixed by the <strong>controls</strong> XML namespace that you defined in the previous step).</p>
+<pre><code class="lang-xml">&lt;Grid Margin=&quot;10,50,10,10&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;controls:InkToolbar x:Name=&quot;myInkToolbar&quot; TargetInkCanvas=&quot;{x:Reference myInkCanvas}&quot; Grid.Row=&quot;0&quot; Width=&quot;300&quot;
+        Height=&quot;50&quot; Margin=&quot;10,10,10,10&quot; HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot; /&gt;
+    &lt;controls:InkCanvas x:Name=&quot;myInkCanvas&quot; Grid.Row=&quot;1&quot; HorizontalAlignment=&quot;Left&quot; Width=&quot;600&quot; Height=&quot;400&quot;
+        Margin=&quot;10,10,10,10&quot; VerticalAlignment=&quot;Top&quot; /&gt;
+&lt;/Grid&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also add these and other wrapped controls to the <strong>Window</strong> by dragging them to the designer from the <strong>Windows Community Toolkit</strong> section of the <strong>Toolbox</strong>.</p>
+</div>
+</li>
+<li><p>Save <code>MainWindow.xaml</code>.</p>
+<p>If you have a device that supports a digital pen (such as a Surface), and you're following along on a physical machine, then you could now build and run the app, and draw digital ink on the screen with the pen. But if you try to write with your mouse, then nothing will happen, because by default <strong>InkCanvas</strong> is enabled only for digital pens. Here's how to enable <strong>InkCanvas</strong> for the mouse.</p>
+</li>
+<li><p>Still in <em>MyWPFApp</em>, open <code>MainWindow.xaml.cs</code>.</p>
+</li>
+<li><p>Add the following namespace directive to the top of the file:</p>
+<pre><code class="lang-csharp">using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
+</code></pre>
+</li>
+<li><p>Locate the <strong>MainWindow</strong> constructor. Immediately after the call to <strong>InitializeComponent</strong>, add the following line of code:</p>
+<pre><code class="lang-csharp">myInkCanvas.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
+</code></pre>
+<p>You can use the <strong>InkPresenter</strong> object to customize the default inking experience. The code above uses the <strong>InputDeviceTypes</strong> property to enable mouse as well as pen input.</p>
+</li>
+<li><p>Save, build, and run. If you're using a computer with a mouse, then confirm that you can draw something in the ink canvas space with the mouse.</p>
+</li>
+</ol>
+<h2 id="host-a-calendarview-by-using-the-host-control">Host a CalendarView by using the host control</h2>
+<p>In this section, we'll use the <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost"><strong>WindowsXamlHost</strong></a> control to add a <a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarView"><strong>CalendarView</strong></a> to the app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost"><strong>WindowsXamlHost</strong></a> control is provided by the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost"><strong>Microsoft.Toolkit.Wpf.UI.XamlHost</strong></a> package. That package is included with the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls"><strong>Microsoft.Toolkit.Wpf.UI.Controls</strong></a> package that you installed earlier.</p>
+</div>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, in <em>MyWPFApp</em>, open the <code>MainWindow.xaml</code> file.</p>
+</li>
+<li><p>In the <strong>Window</strong> element near the top of the XAML file, add the following attribute. This attribute references the XAML namespace for the <strong>WindowsXamlHost</strong> control, and maps it to the <strong>xamlhost</strong> XML namespace.</p>
+<pre><code class="lang-xml">xmlns:xamlhost=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost&quot;
+</code></pre>
+</li>
+<li><p>Still in <code>MainWindow.xaml</code>, edit the existing <strong>Grid</strong> element so that it looks like the XAML below. This XAML adds to the <strong>Grid</strong> a <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost"><strong>WindowsXamlHost</strong></a> control (prefixed by the <strong>xamlhost</strong> XML namespace that you defined in the previous step). To host a UWP <a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarView"><strong>CalendarView</strong></a> control, this XAML sets the <strong>InitialTypeName</strong> property to the fully-qualified name of the control. The XAML also defines an event handler for the <strong>ChildChanged</strong> event, which is raised when the hosted control has been rendered.</p>
+<pre><code class="lang-xml">&lt;Grid Margin=&quot;10,50,10,10&quot;&gt;
+    &lt;xamlhost:WindowsXamlHost x:Name=&quot;myCalendar&quot; InitialTypeName=&quot;Windows.UI.Xaml.Controls.CalendarView&quot;
+          Margin=&quot;10,10,10,10&quot; Width=&quot;600&quot; Height=&quot;300&quot; ChildChanged=&quot;MyCalendar_ChildChanged&quot; /&gt;
+&lt;/Grid&gt;
+</code></pre>
+</li>
+<li><p>Save <code>MainWindow.xaml</code>, and open <code>MainWindow.xaml.cs</code>.</p>
+</li>
+<li><p>Delete this line of code, which we added in the previous section: <code>myInkCanvas.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;</code>.</p>
+</li>
+<li><p>Add the following namespace directive to the top of the file:</p>
+<pre><code class="lang-csharp">using Microsoft.Toolkit.Wpf.UI.XamlHost;
+</code></pre>
+</li>
+<li><p>Add the following <strong>ChildChanged</strong> event handler method to the <strong>MainWindow</strong> class. When the host control has been rendered, this event handler runs and creates a simple event handler for the <strong>SelectedDatesChanged</strong> event of the calendar control.</p>
+<pre><code class="lang-csharp">private void MyCalendar_ChildChanged(object sender, EventArgs e)
+{
+    WindowsXamlHost windowsXamlHost = (WindowsXamlHost)sender;
+
+    var calendarView =
+        (Windows.UI.Xaml.Controls.CalendarView)windowsXamlHost.Child;
+
+    if (calendarView != null)
+    {
+        calendarView.SelectedDatesChanged += (obj, args) =&gt;
+        {
+            if (args.AddedDates.Count &gt; 0)
+            {
+                MessageBox.Show(&quot;The user selected a new date: &quot; +
+                    args.AddedDates[0].DateTime.ToString());
+            }
+        };
+    }
+}
+</code></pre>
+</li>
+<li><p>Save, build, and run. Confirm that the calendar control is shown in the window, and that a message box is displayed when you select a date.</p>
+</li>
+</ol>
+<h2 id="package-the-app">Package the app</h2>
+<p>You can optionally package your WPF app in an <a href="/windows/msix">MSIX package</a> for deployment. MSIX is the modern and reliable app packaging technology for Windows.</p>
+<p>The following instructions show you how to package all the components in the solution into an MSIX package by using the <strong>Windows Application Packaging Project</strong> in Visual Studio (see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a>). These steps are necessary only if you want to package the WPF app in an MSIX package.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose not to package your application in an <a href="/windows/msix">MSIX package</a> for deployment, then computers that run your app must have the <a href="https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads">Visual C++ Runtime</a> installed.</p>
+</div>
+<ol>
+<li><p>Add a new project to your solution created from the <strong>Windows Application Packaging Project</strong> project template. As you create the project, select the same <strong>Target version</strong> and <strong>Minimum version</strong> as you selected for the UWP project.</p>
+</li>
+<li><p>In the packaging project, right-click the <strong>Dependencies</strong> node, and choose <strong>Add Project Reference...</strong>. In the list of projects, select <em>MyWPFApp</em>, and click <strong>OK</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to publish your app in the Microsoft Store, then you also have to add a reference to the UWP project in the packaging project.</p>
+</div>
+</li>
+<li><p>If you followed the steps up to this point, then all of the projects in your solution will target the same specific platform (x86 or x64). And that's necessary in order to build the WPF app into an MSIX package using the Windows Application Packaging Project. To confirm that, you can follow these steps:</p>
+<ol>
+<li>Right-click the solution node (<em>not</em> the project node) in <strong>Solution Explorer</strong>, and choose <strong>Properties</strong>.</li>
+<li>Select <strong>Configuration Properties</strong> on the left.</li>
+<li>Click the <strong>Configuration Manager...</strong> button.</li>
+<li>Confirm that all of the listed projects have the same value under <strong>Platform</strong>: either <em>x86</em> or <em>x64</em>.</li>
+</ol>
+</li>
+<li><p>Right-click the project node for the packaging project that you just added, and click <strong>Set as Startup project</strong>.</p>
+</li>
+<li><p>Build and run the packaging project. Confirm that the WPF app runs, and that the UWP control(s) display as expected.</p>
+</li>
+<li><p>For info about distributing/deploying the package, see <a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a>.</p>
+</li>
+</ol>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="xaml-islands.html">Host WinRT XAML controls in desktop apps (XAML Islands)</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas">InkCanvas class (UWP)</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar class (UWP)</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarView">CalendarView class (UWP)</a></li>
+<li><a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost control for Windows Forms and WPF</a></li>
+<li><a href="https://dotnet.microsoft.com/download/dotnet/3.1">.NET Core 3.1</a></li>
+<li><a href="/nuget/consume-packages/package-references-in-project-files">PackageReference in project files</a></li>
+<li><a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas">InkCanvas control for Windows Forms and WPF</a></li>
+<li><a href="/windows/communitytoolkit/controls/wpf-winforms/inktoolbar">InkToolbar control for Windows Forms and WPF</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider">IXamlMetadataProvider interface</a></li>
+<li><a href="/windows/msix">MSIX documentation</a></li>
+<li><a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a></li>
+<li><a href="https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads">Microsoft Visual C++ Redistributable latest supported downloads</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

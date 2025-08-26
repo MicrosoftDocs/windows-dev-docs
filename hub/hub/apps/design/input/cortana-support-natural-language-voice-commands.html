@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Support more natural voice commands in Cortana - Cortana UWP design and development </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Support more natural voice commands in Cortana - Cortana UWP design and development ">
+    
+    <meta name="description" content="Extend Cortana with more flexible and natural voice commands that let a user say your app&#39;s name anywhere in the command.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="support-natural-language-voice-commands-in-cortana">Support natural language voice commands in Cortana</h1>
+
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename &quot;20H1&quot;).</p>
+</div>
+<p>Extend <strong>Cortana</strong> with more flexible and natural voice commands that let a user say your app's name anywhere in the command.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Important APIs</strong></p>
+<ul>
+<li><a href="/uwp/api/Windows.ApplicationModel.VoiceCommands"><strong>Windows.ApplicationModel.VoiceCommands</strong></a></li>
+<li><a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD elements and attributes v1.2</strong></a></li>
+</ul>
+</div>
+<p>Using voice commands to extend Cortana with functionality from your app requires the user to specify both the app and the command or function to execute. This is typically accomplished by announcing the app name at the beginning or the end of the voice command. For example, &quot;Adventure Works, add a new trip to Las Vegas.&quot;</p>
+<p>However, specifying the application name in this way can sound awkward, stilted, or not even make sense. In many cases, being able to say the app name elsewhere in the command is more comfortable and natural, and helps make the interaction much more intuitive and engaging for the user. Our previous example, &quot;Adventure Works, add a new trip to Las Vegas.&quot; could be rephrased as &quot;Add a new Adventure Works trip to Las Vegas.&quot; or &quot;Using Adventure Works, add a new trip to Las Vegas.&quot;</p>
+<p>You can set up your voice commands to support the app name as a:</p>
+<ul>
+<li>Prefix - before the command phrase</li>
+<li>Infix - within the command phrase</li>
+<li>Suffix - after the command phrase</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>Prerequisites</strong></p>
+<p>This topic builds on <a href="cortana-launch-a-background-app-with-voice-commands.html">Activate a background app in Cortana using voice commands</a>. We continue here to demonstrate features with a trip planning and management app named <strong>Adventure Works</strong>.</p>
+<p>If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.</p>
+<ul>
+<li><a href="/windows/uwp/get-started/your-first-app">Create your first app</a></li>
+<li>Learn about events with <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a></li>
+</ul>
+<p><strong>User experience guidelines</strong></p>
+<p>See <a href="cortana-design-guidelines.html">Cortana design guidelines</a>  for info about how to integrate your app with <strong>Cortana</strong> and <a href="speech-interactions.html">Speech interactions</a> for helpful tips on designing a useful and engaging speech-enabled app.</p>
+</div>
+<h2 id="specify-an-appname-element-in-the-vcd">Specify an <strong>AppName</strong> element in the VCD</h2>
+<p>The <strong>AppName</strong> element is used to specify a user-friendly name for an app in a voice command.</p>
+<pre><code class="lang-XML">&lt;AppName&gt;Adventure Works&lt;/AppName&gt;
+</code></pre>
+<h2 id="specify-where-the-app-name-can-be-spoken-in-the-voice-command">Specify where the app name can be spoken in the voice command</h2>
+<p>The <strong>ListenFor</strong> element has a <strong>RequireAppName</strong> attribute that specifies where the app name can appear in the voice command. This attribute supports four values.</p>
+<ol>
+<li><p><strong>BeforePhrase</strong></p>
+<p>Default.</p>
+<p>Indicates that users must say your app name before the command phrase.</p>
+<p>Here, Cortana listens for &quot;Adventure Works when is my trip to Las Vegas&quot;.</p>
+<pre><code class="lang-xml">&lt;ListenFor RequireAppName=&quot;BeforePhrase&quot;&gt; show [my] trip to {destination} &lt;/ListenFor&gt;
+</code></pre>
+</li>
+<li><p><strong>AfterPhrase</strong></p>
+<p>Indicates that users must say your app name after the command phrase.</p>
+<p>A localized phrase list of prepositional conjunctions is provided by the system. This includes phrases such as, &quot;using&quot;, &quot;with &quot;and &quot;on&quot;.</p>
+<p>Here, Cortana listens for commands like &quot;Show my next trip to Las Vegas on Adventure Works&quot; and &quot;Show my next trip to Las Vegas using Adventure Works&quot;.</p>
+<pre><code class="lang-xml">&lt;ListenFor RequireAppName=&quot;AfterPhrase&quot;&gt;show [my] next trip to {destination} &lt;/ListenFor&gt;
+</code></pre>
+</li>
+<li><p><strong>BeforeOrAfterPhrase</strong></p>
+<p>Indicates that users must say your app name either before or after the command phrase.</p>
+<p>For the suffix version, a localized phrase list of prepositional conjunctions is provided by the system. This includes phrases such as, &quot;using&quot;, &quot;with &quot;and &quot;on&quot;.</p>
+<p>Here, Cortana listens for commands like &quot;Adventure Works, show my next trip to Las Vegas&quot; or &quot;Show my next trip to Last Vegas on Adventure works&quot;.</p>
+<pre><code class="lang-xml">&lt;ListenFor RequireAppName=&quot;BeforeOrAfterPhrase&quot;&gt;show [my] next trip to {destination}&lt;/ListenFor&gt;
+</code></pre>
+</li>
+<li><p><strong>ExplicitlySpecified</strong></p>
+<p>Indicates that users must say your app name exactly where you specify in the command phrase. The user is not required to say the app name either before or after the phrase.</p>
+<p>You must explicitly reference your app name using the <strong>{builtin:AppName}</strong> tag.</p>
+<p>Here, Cortana listens for commands like &quot;Adventure Works, show my next trip to Las Vegas&quot; or &quot;Show my next Adventure Works trip to Las Vegas&quot;.</p>
+<pre><code class="lang-xml">&lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt;show [my] next {builtin:AppName} trip to {destination} &lt;/ListenFor&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="special-cases">Special cases</h2>
+<p>When you declare a <strong>ListenFor</strong> element where <strong>RequireAppName</strong> is either &quot;AfterPhrase&quot; or &quot;ExplicitlySpecified&quot;, you must ensure certain requirements are met:</p>
+<ol>
+<li><p><strong>{builtin:AppName}</strong> must appear once and only once when <strong>RequireAppName</strong> is &quot;ExplicitlySpecified&quot;.</p>
+<p>With this value, the system cannot infer where the app name can appear in the voice command. You must explicitly specify the location.</p>
+</li>
+<li><p>You cannot have a voice command begin with a <strong>PhraseTopic</strong> element, which is typically used for large vocabulary speech recognition. At least one word must precede it.</p>
+<p>This helps to minimize the chance that <strong>Cortana</strong> launches your app if a command contains your app name, or part of it, anywhere in the utterance.</p>
+<p>Here is an invalid declaration that could lead to <strong>Cortana</strong> launching the <strong>Adventure Works</strong> app if the user says something like &quot;Show me reviews for Kinect Adventure works&quot;.</p>
+<pre><code class="lang-xml">&lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt;{searchPhrase} {builtin:AppName}&lt;/ListenFor&gt;
+</code></pre>
+</li>
+<li><p>There must be at least two words in the <strong>ListenFor</strong> string besides your app name and references to <strong>PhraseTopic</strong> elements.</p>
+<p>Similar to case 2, you need to ensure your commands contain sufficient phonetic content to minimize the chances your app is launched unintentionally.</p>
+<p>This helps you set up your application for best possible success so your application does not get incorrectly launched when user says for example &quot;Find Kinect Adventure works&quot;.</p>
+<p>Here are invalid declarations that could lead to <strong>Cortana</strong> launching the <strong>Adventure Works</strong> app if the user says something like &quot;Hey adventure works&quot; or &quot;Find Kinect adventure works&quot;.</p>
+<pre><code class="lang-xml">&lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt;Hey {builtin:AppName}&lt;/ListenFor&gt;
+&lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt;Find {searchPhrase} {builtin:AppName}&lt;/ListenFor&gt;
+</code></pre>
+</li>
+</ol>
+<h2 id="remarks">Remarks</h2>
+<p>Supporting more variation in how a voice command can be uttered by a user in <strong>Cortana</strong> also increases the general usability of your app.</p>
+<p>Avoid having &quot;Hey [app name]&quot; as your <strong>AppName</strong>. Users are much more likely to say &quot;Hey Cortana&quot; to invoke Cortana through voice activation, and having &quot;Hey [app name]&quot; in the utterance does not sound natural. For example, &quot;Hey Cortana, show my next trip to Las Vegas on Hey Adventure Works&quot;.</p>
+<p>Consider adding infix/suffix variations to your existing voice commands. As we've shown here, it doesn't require a lot of effort to add an additional attribute to your existing <strong>ListenFor</strong> elements and support suffix variants. It feels a lot more natural to say &quot;Hey Cortana, show my next trip to Las Vegas on Adventure works&quot; than &quot;Hey Cortana, Adventure Works, show my next trip to Las Vegas&quot;.</p>
+<p>Consider using your app name as a prefix in cases where the voice command conflicts with existing <strong>Cortana</strong> functionality (calling, messaging, and so on). For example, &quot;Adventure Works, message [travel agent] about Las Vegas trip&quot;.</p>
+<h2 id="complete-example">Complete example</h2>
+<p>Here is a VCD file that demonstrates various ways to provide more natural language voice commands.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is valid to have multiple <strong>ListenFor</strong> elements, each with a different <strong>RequireAppName</strong> attribute value.</p>
+</div>
+<pre><code class="lang-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;VoiceCommands xmlns=&quot;https://schemas.microsoft.com/voicecommands/1.1&quot;&gt;
+  &lt;CommandSet xml:lang=&quot;en-us&quot; Name=&quot;commandSet_en-us&quot;&gt;
+    &lt;AppName&gt;Adventure Works&lt;/AppName&gt;
+    &lt;Example&gt; When is my trip to Las Vegas? &lt;/Example&gt;
+    &lt;Command Name=&quot;whenIsTripToDestination&quot;&gt;
+      &lt;Example&gt; When is my trip to Las Vegas?&lt;/Example&gt;
+      &lt;ListenFor RequireAppName=&quot;BeforePhrase&quot;&gt;
+        when is my] trip to {destination} &lt;/ListenFor&gt;
+
+      &lt;!-- This ListenFor command will set up Cortana to accept commands like 
+           &quot;Show my next trip to Las Vegas on Adventure Works&quot;; &quot;Show my next 
+           trip to Las Vegas using Adventure Works&quot; --&gt;
+      &lt;ListenFor RequireAppName=&quot;AfterPhrase&quot;&gt;
+        show [my] next trip to {destination} &lt;/ListenFor&gt;
+
+      &lt;!-- This ListenFor command will set up Cortana to accept commands when 
+           the user specifies your app name either before or after the command. 
+           &quot;Adventure Works, show my next trip to Las Vegas&quot;; 
+           &quot;Show my next trip to Last Vegas on Adventure works&quot; --&gt;
+      &lt;ListenFor RequireAppName=&quot;BeforeOrAfterPhrase&quot;&gt;
+        show [my] next trip to {destination} &lt;/ListenFor&gt;
+
+      &lt;!-- This ListenFor command will set up Cortana to accept commands 
+           when the user specifies your app name inline. 
+           &quot;Show my next Adventure Works trip to Las Vegas&quot; --&gt;
+      &lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt;
+        show [my] next {builtin:AppName} trip to {destination} &lt;/ListenFor&gt;
+
+      &lt;Feedback&gt; Looking for trip to {destination} &lt;/Feedback&gt;
+      &lt;Navigate /&gt;
+    &lt;/Command&gt;
+    &lt;PhraseList Label=&quot;destination&quot;&gt;
+      &lt;Item&gt; Las Vegas &lt;/Item&gt;
+      &lt;Item&gt; Dallas &lt;/Item&gt;
+      &lt;Item&gt; New York &lt;/Item&gt;
+    &lt;/PhraseList&gt;
+  &lt;/CommandSet&gt;
+  &lt;!-- Other CommandSets for other languages --&gt;
+&lt;/VoiceCommands&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="cortana-interactions.html">Cortana interactions in Windows apps</a></li>
+<li><a href="cortana-design-guidelines.html">Cortana design guidelines</a></li>
+<li><a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2">VCD elements and attributes v1.2</a></li>
+<li><a href="https://go.microsoft.com/fwlink/p/?LinkID=619899">Cortana voice command sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/cortana-support-natural-language-voice-commands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Screen readers and hardware button events </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Screen readers and hardware button events ">
+    
+    <meta name="description" content="Learn more about: Screen readers and hardware system buttons">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="screen-readers-and-hardware-system-buttons">Screen readers and hardware system buttons</h1>
+
+<p>Screen-readers, such as <a href="https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator">Narrator</a>, must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.</p>
+<p>Beginning with Windows 10 version 2004, UWP applications can listen for and handle the <strong>Fn</strong> hardware system button events in the same way as other hardware buttons. Previously, this system button acted only as a modifier for how other hardware buttons reported their events and state.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Fn button support is OEM-specific and can include features such as the ability to toggle/lock on or off (vs. a press-and-hold key combination), along with a corresponding lock indicator light (which might not be helpful to users who are blind or have a vision impairment).</p>
+</div>
+<p>Fn button events are exposed through a new <a href="/uwp/api/windows.ui.input.systembuttoneventcontroller">SystemButtonEventController Class</a> in the <a href="/uwp/api/windows.ui.input">Windows.UI.Input</a> namespace. The SystemButtonEventController object supports the following events:</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionbuttonpressed">SystemFunctionButtonPressed</a></li>
+<li><a href="/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionbuttonreleased">SystemFunctionButtonReleased</a></li>
+<li><a href="/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionlockchanged">SystemFunctionLockChanged</a></li>
+<li><a href="/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionlockindicatorchanged">SystemFunctionLockIndicatorChanged</a></li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The SystemButtonEventController cannot receive these events if they have already been handled by a higher priority handler.</p>
+</div>
+<h2 id="examples">Examples</h2>
+<p>In the following examples, we show how to create a <a href="/uwp/api/windows.ui.input.systembuttoneventcontroller">SystemButtonEventController</a> based on a DispatcherQueue and handle the four events supported by this object.</p>
+<p>It is common for more than one of the supported events to fire when the Fn button is pressed. For example, pressing the Fn button on a Surface keyboard fires SystemFunctionButtonPressed, SystemFunctionLockChanged, and SystemFunctionLockIndicatorChanged at the same time.</p>
+<ol>
+<li><p>In this first snippet, we simply include the required namespaces and specify some global objects, including the <a href="/uwp/api/windows.system.dispatcherqueue">DispatcherQueue</a> and the <a href="/uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a> objects for managing the <a href="/uwp/api/windows.ui.input.systembuttoneventcontroller">SystemButtonEventController</a> thread.</p>
+<p>We then specify the <a href="/uwp/cpp-ref-for-winrt/event-token">event tokens</a> returned when registering the <a href="/uwp/api/windows.ui.input.systembuttoneventcontroller">SystemButtonEventController</a> event-handling delegates.</p>
+<pre><code class="lang-cppwinrt">namespace winrt
+{
+    using namespace Windows::System;
+    using namespace Windows::UI::Input;
+}
+
+...
+
+// Declare related members
+winrt::DispatcherQueueController _queueController;
+winrt::DispatcherQueue _queue;
+winrt::SystemButtonEventController _controller;
+winrt::event_token _fnKeyDownToken;
+winrt::event_token _fnKeyUpToken;
+winrt::event_token _fnLockToken;
+</code></pre>
+</li>
+<li><p>We also specify an event token for the <a href="/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionlockindicatorchanged">SystemFunctionLockIndicatorChanged</a> event along with a bool to indicate whether the application is in &quot;Learning Mode&quot; (where the user is simply trying to explore the keyboard without performing any functions).</p>
+<pre><code class="lang-cppwinrt">winrt::event_token _fnLockIndicatorToken;
+bool _isLearningMode = false;
+</code></pre>
+</li>
+<li><p>This third snippet includes the corresponding event handler delegates for each event supported by the <a href="/uwp/api/windows.ui.input.systembuttoneventcontroller">SystemButtonEventController</a> object.</p>
+<p>Each event handler announces the event that has occurred. In addition, the FunctionLockIndicatorChanged handler also controls whether the app is in &quot;Learning&quot; mode (<code>_isLearningMode</code> = true), which prevents the event from bubbling to other handlers and lets the user explore keyboard features without actually performing the action.</p>
+<pre><code class="lang-cppwinrt">void SetupSystemButtonEventController()
+{
+    // Create dispatcher queue controller and dispatcher queue
+    _queueController = winrt::DispatcherQueueController::CreateOnDedicatedThread();
+    _queue = _queueController.DispatcherQueue();
+
+    // Create controller based on new created dispatcher queue
+    _controller = winrt::SystemButtonEventController::CreateForDispatcherQueue(_queue);
+
+    // Add Event Handler for each different event
+    _fnKeyDownToken = _controller-&gt;FunctionButtonPressed(
+        [](const winrt::SystemButtonEventController&amp; /*sender*/, const winrt:: FunctionButtonEventArgs&amp; args)
+        {
+            // Mock function to read the sentence &quot;Fn button is pressed&quot;
+            PronounceFunctionButtonPressedMock();
+            // Set Handled as true means this event is consumed by this controller
+            // no more targets will receive this event
+            args.Handled(true);
+        });
+
+        _fnKeyUpToken = _controller-&gt;FunctionButtonReleased(
+            [](const winrt::SystemButtonEventController&amp; /*sender*/, const winrt:: FunctionButtonEventArgs&amp; args)
+            {
+                // Mock function to read the sentence &quot;Fn button is up&quot;
+                PronounceFunctionButtonReleasedMock();
+                // Set Handled as true means this event is consumed by this controller
+                // no more targets will receive this event
+                args.Handled(true);
+            });
+
+    _fnLockToken = _controller-&gt;FunctionLockChanged(
+        [](const winrt::SystemButtonEventController&amp; /*sender*/, const winrt:: FunctionLockChangedEventArgs&amp; args)
+        {
+            // Mock function to read the sentence &quot;Fn shift is locked/unlocked&quot;
+            PronounceFunctionLockMock(args.IsLocked());
+            // Set Handled as true means this event is consumed by this controller
+            // no more targets will receive this event
+            args.Handled(true);
+        });
+
+    _fnLockIndicatorToken = _controller-&gt;FunctionLockIndicatorChanged(
+        [](const winrt::SystemButtonEventController&amp; /*sender*/, const winrt:: FunctionLockIndicatorChangedEventArgs&amp; args)
+        {
+            // Mock function to read the sentence &quot;Fn lock indicator is on/off&quot;
+            PronounceFunctionLockIndicatorMock(args.IsIndicatorOn());
+            // In learning mode, the user is exploring the keyboard. They expect the program
+            // to announce what the key they just pressed WOULD HAVE DONE, without actually
+            // doing it. Therefore, handle the event when in learning mode so the key is ignored
+            // by the system.
+            args.Handled(_isLearningMode);
+        });
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="see-also">See also</h2>
+<p><a href="/uwp/api/windows.ui.input.systembuttoneventcontroller">SystemButtonEventController Class</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/system-button-narration.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Stable channel release notes for the Windows App SDK  1.0 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Stable channel release notes for the Windows App SDK  1.0 ">
+    
+    <meta name="description" content="Provides information about the stable release channel for the Windows App SDK 1.0.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="stable-channel-release-notes-for-the-windows-app-sdk-10">Stable channel release notes for the Windows App SDK 1.0</h1>
+
+<p>The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="downloads-for-the-windows-app-sdk">Downloads for the Windows App SDK</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.</p>
+</div>
+<h3 id="version-104">Version 1.0.4</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.0 release.</p>
+<h4 id="bug-fixes-104">Bug fixes (1.0.4)</h4>
+<ul>
+<li>Fixed issue causing AppBars, when used as Page.TopAppBar or Page.BottomAppBar to not render on screen.</li>
+<li>Fixed issue where apps with a package name of 12 characters or less that use a WinUI control from MUXControls.dll will immediately crash. For more information, see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6360">issue 6360</a> on GitHub.</li>
+<li>Fixed touch input issues causing problems with keyboard shortcuts and other scenarios. For more information, see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6291">issue 6291</a> on GitHub.</li>
+<li>Fixed issue causing apps packaged with MSIX or deployed as self-contained to fail to deploy.</li>
+<li>Fixed issue causing apps to sometimes crash during a drag and drop operation. For more information see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7002">issue 7002</a> on GitHub.</li>
+</ul>
+<h3 id="version-103">Version 1.0.3</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.0 release.</p>
+<h4 id="bug-fixes-103">Bug fixes (1.0.3)</h4>
+<ul>
+<li>Fixed issue causing C# apps with WebView2 to crash on launch when the C/C++ Runtime (CRT) isn't installed.</li>
+<li>Fixed touch input issues causing problems with keyboard shortcuts and other scenarios. For more information, see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6291">issue 6291</a> on GitHub.</li>
+</ul>
+<p><strong>Note</strong>: We don't usually add functionality in a servicing release, but this release's WebView2 fix required us to update to the latest version of the WebView2 SDK (1020.46 to 1185.39). See <a href="/microsoft-edge/webview2/release-notes#10118539">Release Notes for the WebView2 SDK</a> for additional information on WebView2 1.0.1185.39 and <a href="/microsoft-edge/webview2/concepts/distribution">Distribute your app and the WebView2 Runtime</a> for additional information on the WebView2 Runtime.</p>
+<h3 id="version-102">Version 1.0.2</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.0 release.</p>
+<h4 id="bug-fixes-102">Bug fixes (1.0.2)</h4>
+<ul>
+<li>Fixed layout cycle issue causing an app to crash when scrolling to the end of a ListView. For more information see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6218">issue 6218</a> on GitHub.</li>
+<li>Fixed issue causing C# apps to crash on launch when the C/C++ Runtime (CRT) isn't installed. However, the CRT is still required for C# apps using WebView2. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/2117">issue 2117</a> on GitHub.</li>
+<li>Fixed issue where applications with Single-project MSIX did not generate a .appinstaller file. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/1821">issue 1821</a> on GitHub.</li>
+<li>Fixed issue where WinUI applications did not support .NET 6 <code>dotnet build</code>.</li>
+</ul>
+<h3 id="version-101">Version 1.0.1</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes and multi-window support for the 1.0 release.</p>
+<h4 id="bug-fixes-101">Bug fixes (1.0.1)</h4>
+<ul>
+<li>Fixed issue causing the MddBootstrapAutoinitializer to not compile with enabled ImplicitUsings. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/1686">issue 1686</a> on GitHub.</li>
+<li>Fixed issue where focus in WebView2 would be unexpectedly lost causing input and selection issues. For more information, see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5615">issue 5615</a> &amp; <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5570">issue 5570</a> on GitHub.</li>
+<li>Fixed issue causing the in-app toolbar in Visual Studio to be unclickable when using a custom title bar in a WinUI 3 app.</li>
+<li>Fixed issue causing Snap Layout to not appear when using a custom title bar in a WinUI 3 app. For more information, see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6333">issue 6333</a> &amp; <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6246">issue 6246</a> on GitHub.</li>
+<li>Fixed issue causing an exception when setting Window.ExtendsContentIntoTitleBar property when Window.SetTitlebar has been called with a still-loading UIElement.</li>
+<li>Fixed issue where Single-project MSIX apps did not support <code>dotnet build</code>.</li>
+<li>Fixed issue causing unpackaged apps to not install after installing a packaged app. For more information, see <a href="https://github.com/microsoft/WindowsAppSDK/issues/1871">issue 1871</a> on GitHub.</li>
+<li>Fixed issue reducing performance during mouse drag operations.</li>
+<li>Fixed crash when calling GetWindowIdFromWindow() in unpackaged apps. For more information, see <a href="https://github.com/microsoft/WindowsAppSDK/discussions/1891">discussion 1891</a> on GitHub.</li>
+</ul>
+<p>The <a href="#other-limitations-and-known-issues">limitations and known issues</a> for version 1.0 also apply to version 1.0.1.</p>
+<p>Additionally, for apps with custom title bars, we have made changes in this release (and fixed numerous issues) that include fixes to the glass window used for drag&amp;drop operations.
+The recommendation is to use the default values and behaviors (give them a try!).
+If your title bar used margins so that the default caption buttons were interactive, we recommend visualizing your drag region by setting the background of your title bar to red and then adjusting the margins to extend the drag region to the caption controls.</p>
+<h4 id="new-features">New features</h4>
+<p>We have stabilized and enabled the creation of <strong>multiple windows on the same thread</strong> in WinUI 3 applications. See <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5918">issue 5918</a> for more information.</p>
+<h3 id="version-10">Version 1.0</h3>
+<p>The following sections describe new and updated features, limitations, and known issues for 1.0.</p>
+<h4 id="winui-3">WinUI 3</h4>
+<p>WinUI 3 is the native user experience (UX) framework for Windows App SDK. In this release we've added multiple new features from Windows App SDK 0.8 and stabilized issues from 1.0 Preview releases.</p>
+<p><strong>New features and updates:</strong></p>
+<ul>
+<li>We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from <a href="/windows/uwp/get-started/winui2/release-notes/winui-2.6#visual-style-updates">WinUI 2.6</a>.</li>
+<li>Single-project MSIX packaging is supported in WinUI by creating a new application using the &quot;Blank App, Packaged…&quot; template.</li>
+<li>We now support deploying WinUI 3 apps that aren't packaged on Windows versions 1809 and above. Please view <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a> for additional information.</li>
+<li>WinUI 3 projects can now set their target version down to Windows 10, version 1809. Previously, they could only be set as low as version 1903.</li>
+<li>In-app toolbar, Hot Reload, &amp; Live Visual Tree for WinUI packaged apps are supported in Visual Studio 2022 Preview 5 and GA.</li>
+</ul>
+<p><strong>Important limitations:</strong></p>
+<ul>
+<li><p>Known issues for <strong>both packaged and unpackaged WinUI applications</strong>:</p>
+<ul>
+<li><p><em>Run-time error in C++ or C# apps that reference a C++ Windows Runtime Component:</em></p>
+<ul>
+<li>To resolve, add the below target to the end of the Windows Runtime Component's .vcxproj:</li>
+</ul>
+<pre><code class="lang-xml">&lt;Target Name=&quot;GetPriIndexName&quot;&gt;
+&lt;PropertyGroup&gt;
+    &lt;!-- Winmd library targets use the default root namespace of the project for the App package name --&gt;
+    &lt;PriIndexName Condition=&quot;'$(RootNamespace)' != ''&quot;&gt;$(RootNamespace)&lt;/PriIndexName&gt;
+    &lt;!-- If RootNamespace is empty fall back to TargetName --&gt;
+    &lt;PriIndexName Condition=&quot;$(PriIndexName) == ''&quot;&gt;$(TargetName)&lt;/PriIndexName&gt;
+&lt;/PropertyGroup&gt;
+&lt;/Target&gt;
+</code></pre>
+<ul>
+<li>The expected error will be similar to <em>WinRT originate error - 0x80004005 : 'Cannot locate resource from 'ms-appx:///BlankPage.xaml'.'.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Known issues for <strong>WinUI applications with Single-project MSIX</strong> (Blank App, Packaged template):</p>
+<ul>
+<li><em>Missing Package &amp; Publish menu item until you restart Visual Studio:</em> When creating a new app with Single-project MSIX in both Visual Studio 2019 and Visual Studio 2022 using the Blank App, Packaged (WinUI 3 in Desktop) project template, the command to publish the project doesn't appear in the menu until you close and re-open Visual Studio.</li>
+<li>A C# app with Single-project MSIX will not compile without the &quot;C++ (v14x) Universal Windows Platform Tools&quot;   optional component installed. See <a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a> for additional information.</li>
+<li><em>Potential run-time error in an app with Single-project MSIX that consumes types defined in a referenced Windows Runtime Component:</em> To resolve, manually add <a href="/uwp/schemas/appxpackage/how-to-specify-extension-points-in-a-package-manifest">activatable class entries</a> to the appxmanifest.xml.
+<ul>
+<li>The expected error in C# applications is &quot;COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG)).</li>
+<li>The expected error in C++/WinRT applications is &quot;winrt::hresult_class_not_registered&quot;.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Known issues for <strong>WinUI 3 apps that aren't packaged</strong> (unpackaged apps):</p>
+<ul>
+<li>Some APIs require package identity, and aren't supported in unpackaged apps, such as:
+<ul>
+<li><a href="/uwp/api/Windows.Storage.ApplicationData">ApplicationData</a></li>
+<li><a href="/uwp/api/Windows.Storage.StorageFile.GetFileFromApplicationUriAsync">StorageFile.GetFileFromApplicationUriAsync</a></li>
+<li><a href="/uwp/api/windows.storage.storagefile.createstreamedfilefromuriasync">StorageFile.CreateStreamedFileFromUriAsync</a></li>
+<li><a href="/uwp/api/Windows.Foundation.Metadata.ApiInformation">ApiInformation</a> (not supported on Windows 10)</li>
+<li><a href="/uwp/api/windows.applicationmodel.package.current">Package.Current</a></li>
+<li>Any API in the <a href="/uwp/api/windows.applicationmodel.resources">Windows.ApplicationModel.Resources</a> namespace</li>
+<li>Any API in the <a href="/uwp/api/windows.applicationmodel.resources.core">Microsoft.Windows.ApplicationModel.Resources</a> namespace</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Known issues for <strong>packaging and deploying WinUI applications</strong>:</p>
+<ul>
+<li>The <code>Package</code> command is not supported in WinUI apps with Single-project MSIX (Blank App, Packaged template). Instead, use the <code>Package &amp; Publish</code> command to create an MSIX package.</li>
+<li>To create a NuGet package from a C# Class Library with the <code>Pack</code> command, ensure the active <code>Configuration</code> is <code>Release</code>.</li>
+<li>The <code>Pack</code> command is not supported in C++ Windows Runtime Components to create a NuGet package.</li>
+</ul>
+</li>
+</ul>
+<p>For more info, or to get started developing with WinUI, see:</p>
+<ul>
+<li><a href="../../winui/index.html">WinUI</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+</ul>
+<h4 id="windowing">Windowing</h4>
+<p>The Windows App SDK provides an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> class that evolves the previous easy-to-use Windows.UI.WindowManagement.AppWindow preview class and makes it available to all Windows apps, including Win32, WPF, and WinForms.</p>
+<p><strong>New Features:</strong></p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> is a high-level windowing API that allows for easy-to-use windowing scenarios that integrates well with the Windows user experience and with other apps. Represents a high-level abstraction of a system-managed container of the content of an app. This is the container in which your content is hosted, and represents the entity that users interact with when they resize and move your app on screen. For developers familiar with Win32, the AppWindow can be seen as a high-level abstraction of the HWND.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.displayarea">DisplayArea</a> represents a high-level abstraction of a HMONITOR, follows the same principles as AppWindow.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.displayareawatcher">DisplayAreaWatcher</a> allows a developer to observe changes in the display topology and enumerate DisplayAreas currently defined in the system.</li>
+</ul>
+<p>For more info, see <a href="../windowing/windowing-overview.md">Manage app windows (Windows App SDK)</a>.</p>
+<h4 id="input">Input</h4>
+<p>These are the input APIs that support WinUI and provide a lower level API surface for developers to achieve more advanced input interactions.</p>
+<p><strong>New Features:</strong></p>
+<ul>
+<li>Pointer APIs: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint">PointerPoint</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpointproperties">PointerPointProperties</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs">PointerEventArgs</a> to support retrieving pointer event information with XAML input APIs.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputpointersource">InputPointerSource API</a>: Represents an object that is registered to report pointer input, and provides pointer cursor and input event handling for XAML's SwapChainPanel API.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputcursor">Cursor API</a>: Allows developers to change the cursor bitmap.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.gesturerecognizer">GestureRecognizer API</a>: Allows developers to recognize certain gestures such as drag, hold, and click when given pointer information.</li>
+</ul>
+<p><strong>Important limitations:</strong></p>
+<ul>
+<li>All <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint">PointerPoint</a> static factory functions have been removed: <strong>GetCurrentPoint</strong>, <strong>GetCurrentPointTransformed</strong>, <strong>GetIntermediatePoints</strong>, and <strong>GetIntermediatePointsTransformed</strong>.</li>
+<li>The Windows App SDK doesn't support retrieving <strong>PointerPoint</strong> objects with pointer IDs. Instead, you can use the <strong>PointerPoint</strong> member function <strong>GetTransformedPoint</strong> to retrieve a transformed version of an existing <strong>PointerPoint</strong> object. For intermediate points, you can use the <strong>PointerEventArgs</strong> member functions <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointereventargs.getintermediatepoints"><strong>GetIntermediatePoints</strong></a> and <strong>GetTransformedIntermediatePoints</strong>.</li>
+<li>Direct use of the platform SDK API <a href="/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation"><strong>Windows.UI.Core.CoreDragOperation</strong></a> will not work with WinUI applications.</li>
+<li><strong>PointerPoint</strong> properties <strong>RawPosition</strong> and <strong>ContactRectRaw</strong> were removed because they referred to non-predicted values, which were the same as the normal values in the OS. Use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint.position"><strong>Position</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpointproperties.contactrect"><strong>ContactRect</strong></a> instead. Pointer prediction is now handled with the <strong>Microsoft.UI.Input.PointerPredictor</strong> API object.</li>
+</ul>
+<h4 id="app-lifecycle">App Lifecycle</h4>
+<p>Most of the App Lifecycle features already exist in the UWP platform, and have been brought into the Windows App SDK for use by desktop app types, especially unpackaged Console apps, Win32 apps, Windows Forms apps, and WPF apps. The Windows App SDK implementation of these features cannot be used in UWP apps, since there are equivalent features in the UWP platform itself.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're working on a UWP app, then refer to <a href="../migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+
+<p>Non-UWP apps can also be packaged into MSIX packages. While these apps can use some of the Windows App SDK App Lifecycle features, they must use the manifest approach where this is available. For example, they cannot use the Windows App SDK <strong>RegisterForXXXActivation</strong> APIs and must instead register for rich activation via the manifest.</p>
+<p>All the constraints for packaged apps also apply to WinUI apps, which are packaged, and there are additional considerations as described below.</p>
+<p><strong>Important considerations:</strong></p>
+<ul>
+<li><p>Rich activation: <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">GetActivatedEventArgs</a></p>
+<ul>
+<li><em>Unpackaged apps</em>: Fully usable.</li>
+<li><em>Packaged apps</em>: Usable, but these apps can also use the platform <code>GetActivatedEventArgs</code>. Note that the platform defines <a href="/uwp/api/windows.applicationmodel.appinstance">Windows.ApplicationModel.AppInstance</a> whereas the Windows App SDK defines <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance">Microsoft.Windows.AppLifecycle.AppInstance</a>. And while UWP apps can use the <code>ActivatedEventArgs</code> classes, such as <code>FileActivatedEventArgs</code> and <code>LaunchActivatedEventArgs</code>, apps that use the Windows App SDK AppLifecycle feature must use the interfaces not the classes (e.g, <code>IFileActivatedEventArgs</code>, <code>ILaunchActivatedEventArgs</code>, and so on).</li>
+<li><em>WinUi apps</em>: WinUI's App.OnLaunched is given a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.launchactivatedeventargs">Microsoft.UI.Xaml.LaunchActivatedEventArgs</a>, whereas the platform <code>GetActivatedEventArgs</code> returns a <a href="/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs">Windows.ApplicationModel.IActivatedEventArgs</a>, and the WindowsAppSDK <code>GetActivatedEventArgs</code> returns a <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments">Microsoft.Windows.AppLifecycle.AppActivationArguments</a> object which can represent a platform <code>LaunchActivatedEventArgs</code>.</li>
+<li>For more info, see <a href="../applifecycle/applifecycle-rich-activation.html">Rich activation with the app lifecycle API</a>.</li>
+</ul>
+</li>
+<li><p>Register/Unregister for rich activation</p>
+<ul>
+<li><em>Unpackaged apps</em>: Fully usable.</li>
+<li><em>Packaged apps</em>: Not usable use the app's MSIX manifest instead.</li>
+<li>For more info, see <a href="../applifecycle/applifecycle-rich-activation.html">Rich activation with the app lifecycle API</a>.</li>
+</ul>
+</li>
+<li><p>Single/Multi-instancing</p>
+<ul>
+<li><em>Unpackaged apps</em>: Fully usable.</li>
+<li><em>Packaged apps</em>: Fully usable.</li>
+<li><em>WinUI apps</em>: If an app wants to detect other instances and redirect an activation, it must do so as early as possible, and before initializing any windows, etc. To enable this, the app must define DISABLE_XAML_GENERATED_MAIN, and write a custom Main (C#) or WinMain (C++) where it can do the detection and redirection.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync">RedirectActivationToAsync</a> is an async call, and you should not wait on an async call if your app is running in an STA. For Windows Forms and C# WinUI apps, you can declare Main to be async, if necessary. For C++ WinUI and C# WPF apps, you cannot declare Main to be async, so instead you need to move the redirect call to another thread to ensure you don't block the STA.</li>
+<li>For more info, see <a href="../applifecycle/applifecycle-instancing.html">App instancing with the app lifecycle API</a>.</li>
+</ul>
+</li>
+<li><p>Power/State notifications</p>
+<ul>
+<li><em>Unpackaged apps</em>: Fully usable.</li>
+<li><em>Packaged apps</em>: Fully usable.</li>
+<li>For more info, see <a href="../applifecycle/applifecycle-power.html">Power management with the app lifecycle API</a>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Known issue</strong>:</p>
+<ul>
+<li>File Type associations incorrectly encode %1 to be %251 when setting the Verb handler's command line template, which crashes unpackaged Win32 apps. You can manually edit the Registry value to be %1 instead as a partial workaround. If the target file path has a space in it, then it will still fail and there is no workaround for that scenario.</li>
+<li>These Single/Multi-instancing bugs will be fixed in an upcoming servicing patch:
+<ul>
+<li>AppInstance redirection doesn't work when compiled for x86</li>
+<li>Registering a key, unregistering it, and re-registering it causes the app to crash</li>
+</ul>
+</li>
+</ul>
+<h4 id="dwritecore">DWriteCore</h4>
+<p>DWriteCore is the Windows App SDK implementation of <a href="/windows/win32/directwrite/direct-write-portal">DirectWrite</a>, which is the DirectX API for high-quality text rendering, resolution-independent outline fonts, and full Unicode text and layout support. DWriteCore is a form of DirectWrite that runs on versions of Windows down to Windows 10, version 1809 (10.0; Build 17763), and opens the door for you to use it cross-platform.</p>
+<p><strong>Features:</strong></p>
+<p>DWriteCore contains all of the features of DirectWrite, with a few exceptions.</p>
+<p><strong>Important limitations:</strong></p>
+<ul>
+<li>DWriteCore does not contain the following DirectWrite features:
+<ul>
+<li>Per-session fonts</li>
+<li>End-user defined character (EUDC) fonts</li>
+<li>Font-streaming APIs</li>
+</ul>
+</li>
+<li>Low-level rendering API support is partial.</li>
+<li>DWriteCore doesn't interoperate with Direct2D, but you can use <a href="/windows/win32/api/dwrite/nn-dwrite-idwriteglyphrunanalysis">IDWriteGlyphRunAnalysis</a> and <a href="/windows/win32/api/dwrite/nn-dwrite-idwritebitmaprendertarget">IDWriteBitmapRenderTarget</a>.</li>
+</ul>
+<p>For more information, see <a href="/windows/win32/directwrite/dwritecore-overview">DWriteCore overview</a>.</p>
+<h4 id="mrt-core">MRT Core</h4>
+<p>MRT Core is a streamlined version of the modern Windows <a href="/windows/uwp/app-resources/resource-management-system">Resource Management System</a> that is distributed as part of the Windows App SDK.</p>
+<p><strong>Important limitations:</strong></p>
+<ul>
+<li><p>In .NET projects, resource files copy-pasted into the project folder aren't indexed on F5 if the app was already built. As a workaround, rebuild the app. See <a href="https://github.com/microsoft/WindowsAppSDK/issues/1503">issue 1503</a> for more info.</p>
+</li>
+<li><p>In .NET projects, when a resource file is added to the project using the Visual Studio UI, the files may not be indexed by default. See <a href="https://github.com/microsoft/WindowsAppSDK/issues/1786">issue 1786</a> for more info. To work around this issue, please remove the entries below in the CSPROJ file:</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+    &lt;Content Remove=&quot;&lt;image file name&gt;&quot; /&gt;
+&lt;/ItemGroup&gt;
+&lt;ItemGroup&gt;
+    &lt;PRIResource Remove=&quot;&lt;resw file name&gt;&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+</li>
+<li><p>For unpackaged C++ WinUI apps, the resource URI is not built correctly. To work around this issue, add the following in the vcxproj:</p>
+<pre><code class="lang-xml">&lt;!-- Add the following after &lt;Import Project=&quot;$(VCTargetsPath)\Microsoft.Cpp.props&quot; /&gt; --&gt;
+
+&lt;PropertyGroup&gt;
+    &lt;AppxPriInitialPath&gt;&lt;/AppxPriInitialPath&gt;   
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+</ul>
+<p>For more information, see <a href="../mrtcore/mrtcore-overview.html">Manage resources with MRT Core</a>.</p>
+<h4 id="deployment">Deployment</h4>
+<p><strong>New Features and updates:</strong></p>
+<ul>
+<li>You can auto-initialize the Windows App SDK through the <code>WindowsPackageType project</code> property to load the Windows App SDK runtime and call the Windows App SDK APIs. See <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a> for instructions.</li>
+<li>Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK <code>.exe</code> installer into your existing MSI or setup program. For more info, see <a href="../deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a>.</li>
+<li>Unpackaged .NET apps can also use .NET wrapper for the <a href="../use-windows-app-sdk-run-time.html">bootstrapper API</a> to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see <a href="../use-windows-app-sdk-run-time.html#net-wrapper-for-the-bootstrapper-api">.NET wrapper library</a>.</li>
+<li>Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see <a href="../deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a>.</li>
+</ul>
+<p><strong>Important limitations:</strong></p>
+<ul>
+<li>The .NET wrapper for the bootstrapper API is only intended for use by unpackaged .NET applications to simplify access to the Windows App SDK.</li>
+<li>Only MSIX packaged apps that are full trust or have the <a href="/windows/uwp/packaging/app-capability-declarations">packageManagement</a> restricted capability have the permission to use the deployment API to install the main and singleton package dependencies. Support for partial-trust packaged apps will be coming in later releases.</li>
+<li>When F5 testing an x86 app which uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize">DeploymentManager.Initialize</a> method on an x64 system, ensure that the x64 framework is first installed by running the <a href="https://aka.ms/windowsappsdk/1.0-preview2/msix-installer">WindowsAppRuntimeInstall.exe</a>. Otherwise, you will encounter a <strong>NOT_FOUND</strong> error due to Visual Studio not deploying the x64 framework, which normally occurs through Store deployment or sideloading.</li>
+</ul>
+<h4 id="other-limitations-and-known-issues">Other limitations and known issues</h4>
+<ul>
+<li><p><strong>No support for Any CPU build configuration</strong>: When <a href="../use-windows-app-sdk-in-existing-project.html">adding the Windows App SDK</a> to an existing .NET application or component that supports <strong>Any CPU</strong>, you must specify the desired architecture: <code>x86</code>, <code>x64</code> or <code>arm64</code>.</p>
+</li>
+<li><p><strong>Upgrading from .NET 5 to .NET 6</strong>: When upgrading in the Visual Studio UI, you might run into build errors. As a workaround, manually update your project file's <code>TargetFrameworkPackage</code> to the below:</p>
+<pre><code class="lang-xml">  &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt; 
+</code></pre>
+</li>
+<li><p><strong>C# Single-project MSIX app doesn't compile if C++ UWP Tools aren't installed.</strong> If you have a C# Single-project MSIX project, then you'll need to install the <strong>C++ (v14x) Universal Windows Platform Tools</strong> optional component.</p>
+</li>
+<li><p><strong>Subsequent language VSIX fails to install into Visual Studio 2019 when multiple versions of Visual Studio 2019 are installed.</strong> If you have multiple versions of Visual Studio 2019 installed (e.g. Release and Preview) and then install the Windows App SDK VSIX for both C++ <em>and</em> C#, the second installation will fail. To resolve, uninstall the Single-project MSIX Packaging Tools for Visual Studio 2019 after the first language VSIX. View <a href="https://developercommunity.visualstudio.com/t/Installation-of-a-VSIX-into-both-Release/1582487?entry=myfeedback">this feedback</a> for additional information about this issue.</p>
+</li>
+<li><p>An alternative to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue"><strong>DispatcherQueue.TryEnqueue</strong></a> (for resuming execution on the dispatcher queue thread) is to use the <a href="https://github.com/microsoft/wil/blob/master/include/wil/cppwinrt.h#L548-L555">resume_foreground</a> helper function in the <a href="https://github.com/microsoft/wil">Windows Implementation Library (WIL)</a>:</p>
+<ol>
+<li>Add a reference to your project to the <a href="https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/">Microsoft.Windows.ImplementationLibrary</a> NuGet package.</li>
+<li>Add <code>#include &lt;wil/cppwinrt_helpers.h&gt;</code> to your <code>pch.h</code>.</li>
+<li>Add <code>#include &lt;winrt/Microsoft.UI.Dispatching.h&gt;</code> to your <code>pch.h</code>.</li>
+<li>Now <code>co_await wil::resume_foreground(your_dispatcherqueue);</code>.</li>
+</ol>
+</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.0.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

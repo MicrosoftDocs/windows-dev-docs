@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Control templates </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Control templates ">
+    
+    <meta name="description" content="You can customize a control&#39;s visual structure and visual behavior by creating a control template in the XAML framework.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="control-templates">Control templates</h1>
+
+<p>You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework. Controls have many properties, such as <a href="/uwp/api/windows.ui.xaml.controls.control.background"><strong>Background</strong></a>, <a href="/uwp/api/windows.ui.xaml.controls.control.foreground"><strong>Foreground</strong></a>, and <a href="/uwp/api/windows.ui.xaml.controls.control.fontfamily"><strong>FontFamily</strong></a>, that you can set to specify different aspects of the control's appearance. But the changes that you can make by setting these properties are limited. You can specify additional customizations by creating a template using the <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a> class. Here, we show you how to create a <strong>ControlTemplate</strong> to customize the appearance of a <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> control.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate class</strong></a>, <a href="/uwp/api/windows.ui.xaml.controls.control.template"><strong>Control.Template property</strong></a></p>
+</blockquote>
+<h2 id="custom-control-template-example">Custom control template example</h2>
+<p>By default, a <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> control puts its content (the string or object next to the <strong>CheckBox</strong>) to the right of the selection box, and a check mark indicates that a user selected the <strong>CheckBox</strong>. These characteristics represent the visual structure and visual behavior of the <strong>CheckBox</strong>.</p>
+<p>Here's a <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> using the default <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a> shown in the <code>Unchecked</code>, <code>Checked</code>, and <code>Indeterminate</code> states.</p>
+<p><img src="images/templates-checkbox-states-default.png" alt="default checkbox template"></p>
+<p>You can change these characteristics by creating a <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a> for the <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a>. For example, if you want the content of the check box to be below the selection box, and you want to use an <strong>X</strong> to indicate that a user selected the check box. You specify these characteristics in the <strong>ControlTemplate</strong> of the <strong>CheckBox</strong>.</p>
+<p>To use a custom template with a control, assign the <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a> to the <a href="/uwp/api/windows.ui.xaml.controls.control.template"><strong>Template</strong></a> property of the control. Here's a <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> using a <strong>ControlTemplate</strong> called <code>CheckBoxTemplate1</code>. We show the Extensible Application Markup Language (XAML) for the <strong>ControlTemplate</strong> in the next section.</p>
+<pre><code class="lang-XAML">&lt;CheckBox Content=&quot;CheckBox&quot; Template=&quot;{StaticResource CheckBoxTemplate1}&quot; IsThreeState=&quot;True&quot; Margin=&quot;20&quot;/&gt;
+</code></pre>
+<p>Here's how this <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> looks in the <code>Unchecked</code>, <code>Checked</code>, and <code>Indeterminate</code> states after we apply our template.</p>
+<p><img src="images/templates-checkbox-states.png" alt="custom checkbox template"></p>
+<h2 id="specify-the-visual-structure-of-a-control">Specify the visual structure of a control</h2>
+<p>When you create a <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a>, you combine <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> objects to build a single control. A <strong>ControlTemplate</strong> must have only one <strong>FrameworkElement</strong> as its root element. The root element usually contains other <strong>FrameworkElement</strong> objects. The combination of objects makes up the control's visual structure.</p>
+<p>This XAML creates a <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a> for a <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> that specifies that the content of the control is below the selection box. The root element is a <a href="/uwp/api/Windows.UI.Xaml.Controls.Border"><strong>Border</strong></a>. The example specifies a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Path"><strong>Path</strong></a> to create an <strong>X</strong> that indicates that a user selected the <strong>CheckBox</strong>, and an <a href="/uwp/api/Windows.UI.Xaml.Shapes.Ellipse"><strong>Ellipse</strong></a> that indicates an indeterminate state. Note that the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> is set to 0 on the <strong>Path</strong> and the <strong>Ellipse</strong> so that by default, neither appear.</p>
+<p>A <a href="/windows/uwp/xaml-platform/templatebinding-markup-extension">TemplateBinding</a> is a special binding that links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML. See <a href="/windows/uwp/xaml-platform/templatebinding-markup-extension">TemplateBinding markup extension</a> for more info.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Starting with Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK 17763</a>), you can use <a href="/windows/uwp/xaml-platform/x-bind-markup-extension"><strong>x:Bind</strong></a> markup extensions in places you use <a href="/windows/uwp/xaml-platform/templatebinding-markup-extension">TemplateBinding</a>. See <a href="/windows/uwp/xaml-platform/templatebinding-markup-extension">TemplateBinding markup extension</a> for more info.</p>
+</div>
+<pre><code class="lang-XAML">&lt;ControlTemplate x:Key=&quot;CheckBoxTemplate1&quot; TargetType=&quot;CheckBox&quot;&gt;
+    &lt;Border BorderBrush=&quot;{TemplateBinding BorderBrush}&quot;
+            BorderThickness=&quot;{TemplateBinding BorderThickness}&quot;
+            Background=&quot;{TemplateBinding Background}&quot;&gt;
+        &lt;Grid&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                &lt;RowDefinition Height=&quot;25&quot;/&gt;
+            &lt;/Grid.RowDefinitions&gt;
+            &lt;Rectangle x:Name=&quot;NormalRectangle&quot; Fill=&quot;Transparent&quot; Height=&quot;20&quot; Width=&quot;20&quot;
+                       Stroke=&quot;{ThemeResource SystemControlForegroundBaseMediumHighBrush}&quot;
+                       StrokeThickness=&quot;{ThemeResource CheckBoxBorderThemeThickness}&quot;
+                       UseLayoutRounding=&quot;False&quot;/&gt;
+            &lt;!-- Create an X to indicate that the CheckBox is selected. --&gt;
+            &lt;Path x:Name=&quot;CheckGlyph&quot;
+                  Data=&quot;M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z&quot;
+                  Fill=&quot;{ThemeResource CheckBoxForegroundThemeBrush}&quot;
+                  FlowDirection=&quot;LeftToRight&quot;
+                  Height=&quot;14&quot; Width=&quot;16&quot; Opacity=&quot;0&quot; Stretch=&quot;Fill&quot;/&gt;
+            &lt;Ellipse x:Name=&quot;IndeterminateGlyph&quot;
+                     Fill=&quot;{ThemeResource CheckBoxForegroundThemeBrush}&quot;
+                     Height=&quot;8&quot; Width=&quot;8&quot; Opacity=&quot;0&quot; UseLayoutRounding=&quot;False&quot; /&gt;
+            &lt;ContentPresenter x:Name=&quot;ContentPresenter&quot;
+                              ContentTemplate=&quot;{TemplateBinding ContentTemplate}&quot;
+                              Content=&quot;{TemplateBinding Content}&quot;
+                              Margin=&quot;{TemplateBinding Padding}&quot; Grid.Row=&quot;1&quot;
+                              HorizontalAlignment=&quot;Center&quot;
+                              VerticalAlignment=&quot;{TemplateBinding VerticalContentAlignment}&quot;/&gt;
+        &lt;/Grid&gt;
+    &lt;/Border&gt;
+&lt;/ControlTemplate&gt;
+</code></pre>
+<h2 id="specify-the-visual-behavior-of-a-control">Specify the visual behavior of a control</h2>
+<p>A visual behavior specifies the appearance of a control when it is in a certain state. The <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> control has 3 check states: <code>Checked</code>, <code>Unchecked</code>, and <code>Indeterminate</code>. The value of the <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked"><strong>IsChecked</strong></a> property determines the state of the <strong>CheckBox</strong>, and its state determines what appears in the box.</p>
+<p>This table lists the possible values of <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked"><strong>IsChecked</strong></a>, the corresponding states of the <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a>, and the appearance of the <strong>CheckBox</strong>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>IsChecked</strong> value</th>
+<th><strong>CheckBox</strong> state</th>
+<th><strong>CheckBox</strong> appearance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>true</strong></td>
+<td><code>Checked</code></td>
+<td>Contains an &quot;X&quot;.</td>
+</tr>
+<tr>
+<td><strong>false</strong></td>
+<td><code>Unchecked</code></td>
+<td>Empty.</td>
+</tr>
+<tr>
+<td><strong>null</strong></td>
+<td><code>Indeterminate</code></td>
+<td>Contains a circle.</td>
+</tr>
+</tbody>
+</table>
+<p>You specify the appearance of a control when it is in a certain state by using <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a> objects. A <strong>VisualState</strong> contains a <a href="/uwp/api/Windows.UI.Xaml.Setter"><strong>Setter</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.BeginStoryboard"><strong>Storyboard</strong></a> that changes the appearance of the elements in the <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a>. When the control enters the state that the <a href="/uwp/api/windows.ui.xaml.visualstate.name"><strong>VisualState.Name</strong></a> property specifies, the property changes in the <strong>Setter</strong> or <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> are applied. When the control exits the state, the changes are removed. You add <strong>VisualState</strong> objects to <a href="/uwp/api/Windows.UI.Xaml.VisualStateGroup"><strong>VisualStateGroup</strong></a> objects. You add <strong>VisualStateGroup</strong> objects to the <a href="/dotnet/api/system.windows.visualstatemanager"><strong>VisualStateManager.VisualStateGroups</strong></a> attached property, which you set on the root <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> of the <strong>ControlTemplate</strong>.</p>
+<p>This XAML shows the <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a> objects for the <code>Checked</code>, <code>Unchecked</code>, and <code>Indeterminate</code> states. The example sets the <a href="/dotnet/api/system.windows.visualstatemanager"><strong>VisualStateManager.VisualStateGroups</strong></a> attached property on the <a href="/uwp/api/Windows.UI.Xaml.Controls.Border"><strong>Border</strong></a>, which is the root element of the <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a>. The <code>Checked</code> <strong>VisualState</strong> specifies that the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> of the <a href="/uwp/api/Windows.UI.Xaml.Shapes.Path"><strong>Path</strong></a> named <code>CheckGlyph</code> (which we show in the previous example) is 1. The <code>Indeterminate</code> <strong>VisualState</strong> specifies that the <strong>Opacity</strong> of the <a href="/uwp/api/Windows.UI.Xaml.Shapes.Ellipse"><strong>Ellipse</strong></a> named <code>IndeterminateGlyph</code> is 1. The <code>Unchecked</code> <strong>VisualState</strong> has no <a href="/uwp/api/Windows.UI.Xaml.Setter"><strong>Setter</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a>, so the <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> returns to its default appearance.</p>
+<pre><code class="lang-XAML">&lt;ControlTemplate x:Key=&quot;CheckBoxTemplate1&quot; TargetType=&quot;CheckBox&quot;&gt;
+    &lt;Border BorderBrush=&quot;{TemplateBinding BorderBrush}&quot;
+            BorderThickness=&quot;{TemplateBinding BorderThickness}&quot;
+            Background=&quot;{TemplateBinding Background}&quot;&gt;
+
+        &lt;VisualStateManager.VisualStateGroups&gt;
+            &lt;VisualStateGroup x:Name=&quot;CheckStates&quot;&gt;
+                &lt;VisualState x:Name=&quot;Checked&quot;&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Target=&quot;CheckGlyph.Opacity&quot; Value=&quot;1&quot;/&gt;
+                    &lt;/VisualState.Setters&gt;
+                    &lt;!-- This Storyboard is equivalent to the Setter. --&gt;
+                    &lt;!--&lt;Storyboard&gt;
+                        &lt;DoubleAnimation Duration=&quot;0&quot; To=&quot;1&quot;
+                         Storyboard.TargetName=&quot;CheckGlyph&quot; Storyboard.TargetProperty=&quot;Opacity&quot;/&gt;
+                    &lt;/Storyboard&gt;--&gt;
+                &lt;/VisualState&gt;
+                &lt;VisualState x:Name=&quot;Unchecked&quot;/&gt;
+                &lt;VisualState x:Name=&quot;Indeterminate&quot;&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Target=&quot;IndeterminateGlyph.Opacity&quot; Value=&quot;1&quot;/&gt;
+                    &lt;/VisualState.Setters&gt;
+                    &lt;!-- This Storyboard is equivalent to the Setter. --&gt;
+                    &lt;!--&lt;Storyboard&gt;
+                        &lt;DoubleAnimation Duration=&quot;0&quot; To=&quot;1&quot;
+                         Storyboard.TargetName=&quot;IndeterminateGlyph&quot; Storyboard.TargetProperty=&quot;Opacity&quot;/&gt;
+                    &lt;/Storyboard&gt;--&gt;
+                &lt;/VisualState&gt;
+            &lt;/VisualStateGroup&gt;
+        &lt;/VisualStateManager.VisualStateGroups&gt;
+
+        &lt;Grid&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                &lt;RowDefinition Height=&quot;25&quot;/&gt;
+            &lt;/Grid.RowDefinitions&gt;
+            &lt;Rectangle x:Name=&quot;NormalRectangle&quot; Fill=&quot;Transparent&quot; Height=&quot;20&quot; Width=&quot;20&quot;
+                       Stroke=&quot;{ThemeResource SystemControlForegroundBaseMediumHighBrush}&quot;
+                       StrokeThickness=&quot;{ThemeResource CheckBoxBorderThemeThickness}&quot;
+                       UseLayoutRounding=&quot;False&quot;/&gt;
+            &lt;!-- Create an X to indicate that the CheckBox is selected. --&gt;
+            &lt;Path x:Name=&quot;CheckGlyph&quot;
+                  Data=&quot;M103,240 L111,240 119,248 127,240 135,240 123,252 135,264 127,264 119,257 111,264 103,264 114,252 z&quot;
+                  Fill=&quot;{ThemeResource CheckBoxForegroundThemeBrush}&quot;
+                  FlowDirection=&quot;LeftToRight&quot;
+                  Height=&quot;14&quot; Width=&quot;16&quot; Opacity=&quot;0&quot; Stretch=&quot;Fill&quot;/&gt;
+            &lt;Ellipse x:Name=&quot;IndeterminateGlyph&quot;
+                     Fill=&quot;{ThemeResource CheckBoxForegroundThemeBrush}&quot;
+                     Height=&quot;8&quot; Width=&quot;8&quot; Opacity=&quot;0&quot; UseLayoutRounding=&quot;False&quot; /&gt;
+            &lt;ContentPresenter x:Name=&quot;ContentPresenter&quot;
+                              ContentTemplate=&quot;{TemplateBinding ContentTemplate}&quot;
+                              Content=&quot;{TemplateBinding Content}&quot;
+                              Margin=&quot;{TemplateBinding Padding}&quot; Grid.Row=&quot;1&quot;
+                              HorizontalAlignment=&quot;Center&quot;
+                              VerticalAlignment=&quot;{TemplateBinding VerticalContentAlignment}&quot;/&gt;
+        &lt;/Grid&gt;
+    &lt;/Border&gt;
+&lt;/ControlTemplate&gt;
+</code></pre>
+<p>To better understand how <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a> objects work, consider what happens when the <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> goes from the <code>Unchecked</code> state to the <code>Checked</code> state, then to the <code>Indeterminate</code> state, and then back to the <code>Unchecked</code> state. Here are the transitions.</p>
+<table>
+<thead>
+<tr>
+<th>State transition</th>
+<th>What happens</th>
+<th>CheckBox appearance when the transition completes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>From <code>Unchecked</code> to <code>Checked</code>.</td>
+<td>The <a href="/uwp/api/Windows.UI.Xaml.Setter"><strong>Setter</strong></a> value of the <code>Checked</code> <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a> is applied, so the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> of <code>CheckGlyph</code> is 1.</td>
+<td>An X is displayed.</td>
+</tr>
+<tr>
+<td>From <code>Checked</code> to <code>Indeterminate</code>.</td>
+<td>The <a href="/uwp/api/Windows.UI.Xaml.Setter"><strong>Setter</strong></a> value of the <code>Indeterminate</code> <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a> is applied, so the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> of <code>IndeterminateGlyph</code> is 1. The <strong>Setter</strong> value of the <code>Checked</code> <strong>VisualState</strong> is removed, so the <a href="/uwp/api/windows.ui.xaml.media.brush.opacity"><strong>Opacity</strong></a> of <code>CheckGlyph</code> is 0.</td>
+<td>A circle is displayed.</td>
+</tr>
+<tr>
+<td>From <code>Indeterminate</code> to <code>Unchecked</code>.</td>
+<td>The <a href="/uwp/api/Windows.UI.Xaml.Setter"><strong>Setter</strong></a> value of the <code>Indeterminate</code> <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a> is removed, so the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> of <code>IndeterminateGlyph</code> is 0.</td>
+<td>Nothing is displayed.</td>
+</tr>
+</tbody>
+</table>
+<p>
+For more info about how to create visual states for controls, and in particular how to use the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> class and the animation types, see <a href="/previous-versions/windows/apps/jj819808(v=win.10)">Storyboarded animations for visual states</a>.</p>
+<h2 id="use-tools-to-work-with-themes-easily">Use tools to work with themes easily</h2>
+<p>A fast way to apply themes to your controls is to right-click on a control on the Microsoft Visual Studio <strong>Document Outline</strong> and select <strong>Edit Theme</strong> or <strong>Edit Style</strong> (depending on the control you are right-clicking on). You can then apply an existing theme by selecting <strong>Apply Resource</strong> or define a new one by selecting <strong>Create Empty</strong>.</p>
+<h2 id="controls-and-accessibility">Controls and accessibility</h2>
+<p>When you create a new template for a control, in addition to possibly changing the control's behavior and visual appearance, you might also be changing how the control represents itself to accessibility frameworks. The Windows app supports the Microsoft UI Automation framework for accessibility. All of the default controls and their templates have support for common UI Automation control types and patterns that are appropriate for the control's purpose and function. These control types and patterns are interpreted by UI Automation clients such as assistive technologies, and this enables a control to be accessible as a part of a larger accessible app UI.</p>
+<p>To separate the basic control logic and also to satisfy some of the architectural requirements of UI Automation, control classes include their accessibility support in a separate class, an automation peer. The automation peers sometimes have interactions with the control templates because the peers expect certain named parts to exist in the templates, so that functionality such as enabling assistive technologies to invoke actions of buttons is possible.</p>
+<p>When you create a completely new custom control, you sometimes also will want to create a new automation peer to go along with it. For more info, see <a href="../../../design/accessibility/custom-automation-peers.html">Custom automation peers</a>.</p>
+<h2 id="learn-more-about-a-controls-default-template">Learn more about a control's default template</h2>
+<p>The topics that document the styles and templates for XAML controls show you excerpts of the same starting XAML you'd see if you used the <strong>Edit Theme</strong> or <strong>Edit Style</strong> techniques explained previously. Each topic lists the names of the visual states, the theme resources used, and the full XAML for the style that contains the template. The topics can be useful guidance if you've already started modifying a template and want to see what the original template looked like, or to verify that your new template has all of the required named visual states.</p>
+<h2 id="theme-resources-in-control-templates">Theme resources in control templates</h2>
+<p>For some of the attributes in the XAML examples, you may have noticed resource references that use the <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a>. This is a technique that enables a single control template to use resources that can be different values depending on which theme is currently active. This is particularly important for brushes and colors, because the main purpose of the themes is to enable users to choose whether they want a dark, light, or high contrast theme applied to the system overall. Apps that use the XAML resource system can use a resource set that's appropriate for that theme, so that the theme choices in an app's UI are reflective of the user's systemwide theme choice.</p>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI Gallery sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl">Custom text edit control sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/xaml/xaml-control-templates.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

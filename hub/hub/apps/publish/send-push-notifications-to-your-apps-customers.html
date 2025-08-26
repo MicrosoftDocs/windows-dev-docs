@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Send targeted push notifications to your app&#39;s customers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Send targeted push notifications to your app&#39;s customers ">
+    
+    <meta name="description" content="Learn how to send notifications from Partner Center to your app to encourage groups of customers to take an action, such as rating an app or buying an add-on.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="send-notifications-to-your-apps-customers">Send notifications to your app's customers</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Push Notifications in Partner Center were formally deprecated at the end of December 2024. For an alternative notification experience, see <a href="/azure/notification-hubs">Microsoft Azure Notification Hubs</a>.</p>
+</div>
+<p>Engaging with your customers at the right time and with the right message is key to your success as an app developer. Notifications can encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a <a href="generate-promotional-codes.html">promotional code</a> that you provide).</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>These notifications can only be used with UWP apps.</p>
+</div>
+<p>When considering the content of your notifications, keep in mind:</p>
+<ul>
+<li>The content in your notifications must comply with the Store <a href="/windows/apps/publish/store-policies-and-code-of-conduct#content_policies">Content Policies</a>.</li>
+<li>Your notification content should not include confidential or potentially sensitive info.</li>
+<li>While we’ll make every effort to deliver your notification as scheduled, there may occasionally be latency issues that impact delivery.</li>
+<li>Be sure not to send notifications too often. More than once every 30 minutes can seem intrusive (and for many scenarios, less frequently than that is preferable).</li>
+<li>Be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) later gives their device to someone to use, the other person may see the notification that was targeted at the original customer. For more info, see <a href="/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications#notification-customers">Configure your app for targeted push notifications</a>.</li>
+<li>If you send the same notification to customers of multiple apps, you can't target a segment; the notification will be sent to all customers for the apps you select.</li>
+</ul>
+<h2 id="getting-started-with-notifications">Getting started with notifications</h2>
+<p>At a high-level, you need to do three things to use notifications to engage with your customers.</p>
+<ol>
+<li><strong>Register your app to receive push notifications.</strong> You do this by adding a reference to the Microsoft Store Services SDK in your app and then adding a few lines of code that registers a notification channel between Partner Center and your app. We’ll use that channel to deliver your notifications to your customers. For details, see <a href="/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications">Configure your app for targeted push notifications</a>.</li>
+<li><strong>Create your notification content and send it out.</strong> For example, you might create a notification that encourages new customers to rate your app, or send a notification promoting a special deal to purchase an add-on.</li>
+</ol>
+<h2 id="to-create-and-send-a-notification">To create and send a notification</h2>
+<p>Follow these steps to create a notification in Partner Center and send it to a particular customer segment.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Before an app can receive notifications from Partner Center, you must first call the <a href="/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync">RegisterNotificationChannelAsync</a> method in your app to register your app to receive notifications. This method is available in the <a href="https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftStoreServicesSDK">Microsoft Store Services SDK</a>. For more information about how to call this method, including a code example, see <a href="/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications">Configure your app for targeted push notifications</a>.</p>
+</div>
+<ol>
+<li><p>In <a href="https://partner.microsoft.com/dashboard">Partner Center</a>, expand the <strong>Engage</strong> section, and then select <strong>Notifications</strong>.</p>
+</li>
+<li><p>On the <strong>Notifications</strong> page, select <strong>New notification</strong>.</p>
+</li>
+<li><p>In the <strong>Select a template</strong> section, choose the <a href="#notification-template-types">type of notification</a> you want to send and then click <strong>OK</strong>.</p>
+</li>
+<li><p>On the next page, use the drop-down menu to choose either a <strong>Single app</strong> or <strong>Multiple apps</strong> for which you want to generate a notification. You can only select apps that have been <a href="/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications">configured to receive notifications using the Microsoft Store Services SDK</a>.</p>
+</li>
+<li><p>In the <strong>Notification settings</strong> section, choose a <strong>Name</strong> for your notification and, if applicable, choose the <strong>Customer group</strong> to which you want to send the notification. (Notifications sent to multiple apps can only be sent to all customers of those apps.) If you wish to use a segment that you haven't created already, select <strong>Create new customer group</strong>.</p>
+</li>
+<li><p>If you want to specify when to send the notification, clear the <strong>Send notification immediately</strong> checkbox and choose a specific date and time (in UTC for all customers, unless you specify to use each customer's local time zone).</p>
+</li>
+<li><p>If you want the notification to expire at some point, clear the <strong>Notification never expires</strong> checkbox and choose a specific expiration date and time (in UTC).</p>
+</li>
+<li><p><strong>For notifications to a single app:</strong> If you want to filter the recipients so that your notification is only delivered to people who use certain languages or are in specific time zones, check the <strong>Use filters</strong> checkbox. You can then specify the language and/or time zone options you want to use.</p>
+</li>
+<li><p><strong>For notifications to multiple apps:</strong> Specify whether to send the notification only to the last active app on each device (per customer), or to all apps on each device.</p>
+</li>
+<li><p>In the <strong>Notification content</strong> section, in the <strong>Language</strong> menu, choose the languages in which you want your notification to be displayed. For more info, see <a href="#translate-your-notifications">Translate your notifications</a>.</p>
+</li>
+<li><p>In the <strong>Options</strong> section, enter text and configure any other options you’d like. If you started with a template, some of this is provided by default, but you can make any changes you'd like.</p>
+<p>The available options vary, depending on which notification type you are using. Some of the options are:</p>
+<ul>
+<li><strong>Activation type</strong> (interactive toast type). You can choose <strong>Foreground</strong>, <strong>Background</strong>, or <strong>Protocol</strong>.</li>
+<li><strong>Launch</strong> (interactive toast type). You can choose to have the notification open an app or website.</li>
+<li><strong>Track app launch rate</strong> (interactive toast type). If you want to measure how well you’re engaging with your customers through each notification, select this checkbox. For more details, see <a href="#measure-notification-performance">Measure notification performance</a>.</li>
+<li><strong>Duration</strong> (interactive toast type). You can choose <strong>Short</strong> or <strong>Long</strong>.</li>
+<li><strong>Scenario</strong> (interactive toast type). You can choose <strong>Default</strong>, <strong>Alarm</strong>, <strong>Reminder</strong>, or <strong>Incoming call</strong>.</li>
+<li><strong>Base URI</strong> (interactive toast type). For more details, see <a href="/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri">BaseUri</a>.</li>
+<li><strong>Add image query</strong> (interactive toast type). For more details, see <a href="/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements">addImageQuery</a>.</li>
+<li><strong>Visual</strong>. An image, video, or sound. For more details, see <a href="/uwp/schemas/tiles/toastschema/element-visual">visual</a>.</li>
+<li><strong>Input</strong>/<strong>Action</strong>/<strong>Selection</strong> (interactive toast type). Allows you to let users interact with the notification. For more info, see <a href="/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts">Adaptive and interactive toast notifications</a>.</li>
+<li><strong>Binding</strong> (interactive tile type). The toast template. For more details, see <a href="/uwp/schemas/tiles/toastschema/element-binding">binding</a>.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Try using the <a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Notifications Visualizer</a> app to design and test your adaptive tiles and interactive toast notifications.</p>
+</div>
+</li>
+<li><p>Select <strong>Save as draft</strong> to continue working on the notification later, or select <strong>Send</strong> if you’re all done.</p>
+</li>
+</ol>
+<h2 id="notification-template-types">Notification template types</h2>
+<p>You can choose from a variety of notification templates.</p>
+<ul>
+<li><p><strong>Blank (Toast).</strong> Start with an empty toast notification that you can customize. A toast notification is a pop-up UI that appears on your screen to allow your app to communicate with the customer when the customer is in another app, on the Start screen, or on the desktop.</p>
+</li>
+<li><p><strong>Blank (Tile).</strong> Start with an empty tile notification that you can customize. Tiles are an app's representation on the Start screen. Tiles can be “live,” which means that the content that they display can change in response to notifications.</p>
+</li>
+<li><p><strong>Ask for ratings (Toast).</strong> A toast notification that asks your customers to rate your app. When the customer selects the notification, the Store ratings page for your app is displayed.</p>
+</li>
+<li><p><strong>Ask for feedback (Toast).</strong> A toast notification that asks your customers to provide feedback for your app. When the customer selects the notification, the Feedback Hub page for your app is displayed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose this template type, in the <strong>Launch</strong> box, remember to replace the {PACKAGE_FAMILY_NAME} placeholder value with your app’s actual Package Family Name (PFN). You can find your app’s PFN on the <a href="view-app-identity-details.html">App identity</a> page (<strong>App management</strong> &gt; <strong>App identity</strong>).</p>
+</div>
+<p><img src="images/push-notifications-feedback-toast-launch-box.png" alt="Feedback toast Launch box"></p>
+</li>
+<li><p><strong>Cross-promote (Toast).</strong> A toast notification to promote a different app of your choosing. When the customer selects the notification, the other app’s Store listing is displayed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose this template type, in the <strong>Launch</strong> box, remember to replace the <strong>{ProductId you want to promote here}</strong> placeholder value with the actual Store ID of the item you want to cross promote. You can find the Store ID on the <a href="view-app-identity-details.html">App identity</a> page (<strong>App management</strong> &gt; <strong>App identity</strong>).</p>
+</div>
+<p><img src="images/push-notifications-promote-toast-launch-box.png" alt="Cross-promote toast Launch box"></p>
+</li>
+<li><p><strong>Promote a sale (Toast).</strong> A toast notification that you can use to announce a deal for your app. When the customer selects the notification, your app’s Store listing is displayed.</p>
+</li>
+<li><p><strong>Prompt for update (Toast).</strong> A toast notification that encourages customers who are running an older version of your app to install the latest version. When the customer selects the notification, the Store app will launch, showing the <strong>Downloads and updates</strong> list. Note that this template can only be used with a single app, and you can't target a particular customer segment or define a time to send it; we’ll always schedule this notification to be sent within 24 hours, and making our best effort to target all users who are not yet running the latest version of your app.</p>
+</li>
+</ul>
+<h2 id="measure-notification-performance">Measure notification performance</h2>
+<p>You can measure how well you’re engaging with your customers through each notification.</p>
+<h3 id="to-measure-notification-performance">To measure notification performance</h3>
+<ol>
+<li>When you create a notification, in the <strong>Notification content</strong> section, select the <strong>Track app launch rate</strong> checkbox.</li>
+<li>In your app, call the <a href="/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.parseargumentsandtrackapplaunch">ParseArgumentsAndTrackAppLaunch</a> method to notify Partner Center that your app was launched in response to a targeted notification. This method is provided by the Microsoft Store Services SDK. For more information about how to call this method, see <a href="/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications">Configure your app to receive Partner Center notifications</a>.</li>
+</ol>
+<h3 id="to-view-notification-performance">To view notification performance</h3>
+<p>When you’ve configured the notification and your app to measure notification performance as described above, you can see how well your notifications are performing.</p>
+<p>To review detailed data for each notification:</p>
+<ol>
+<li>In Partner Center, expand the <strong>Engage</strong> section and select <strong>Notifications</strong>.</li>
+<li>In the table of existing notifications, select <strong>In progress</strong> or <strong>Completed</strong>, and then look at the <strong>Delivery rate</strong> and <strong>App launch rate</strong> columns to see the high-level performance of each notification.</li>
+<li>To see more granular performance details, select a notification name. In the <strong>Delivery statistics</strong> section, you can view <strong>Count</strong> and <strong>Percentage</strong> info for the following notification <strong>Status</strong> types:
+<ul>
+<li><strong>Failed</strong>: The notification was not delivered for some reason. This can happen, for example, if an issue occurs in the Windows Notification Service.</li>
+<li><strong>Channel expiration failure</strong>: The notification could not be delivered because the channel between the app and Partner Center has expired. This can happen, for example, if the customer has not opened your app in a long time.</li>
+<li><strong>Sending</strong>: The notification is in the queue to be sent.</li>
+<li><strong>Sent</strong>: The notification was sent.</li>
+<li><strong>Launches</strong>: The notification was sent, the customer clicked it, and your app was opened as a result. Note that this only tracks app launches. Notifications that invite the customer to take other actions, such as launching the Store to leave a rating, are not included in this status.</li>
+<li><strong>Unknown</strong>: We weren’t able to determine the status of this notification.</li>
+</ul>
+</li>
+</ol>
+<p>To analyze user activity data for all your notifications:</p>
+<ol>
+<li>In Partner Center, expand the <strong>Engage</strong> section and select <strong>Notifications</strong>.</li>
+<li>On the <strong>Notifications</strong> page, click the <strong>Analyze</strong> tab. This tab displays the following data:
+<ul>
+<li>Graph views of the various user action states for your toasts and action center notifications.</li>
+<li>World map views of the click-through-rates for your toasts and action center notifications.</li>
+</ul>
+</li>
+<li>Near the top of the page, you can select the time period for which you want to show data. The default selection is 30D (30 days), but you can choose to show data for 3, 6, or 12 months, or for a custom data range that you specify. You can also expand <strong>Filters</strong> to filter all of the data by app and market.</li>
+</ol>
+<h2 id="translate-your-notifications">Translate your notifications</h2>
+<p>To maximize the impact of your notifications, consider translating them into the languages that your customers prefer. Partner Center makes it easy for you to translate your notifications automatically by leveraging the power of the <a href="https://www.microsoft.com/translator/home.aspx">Microsoft Translator</a> service.</p>
+<ol>
+<li>After you’ve written your notification in your default language, select <strong>Add languages</strong> (beneath the <strong>Languages</strong> menu in the <strong>Notification content</strong> section).</li>
+<li>In the <strong>Add languages</strong> window, select the additional languages that you want your notifications to appear in, and then select <strong>Update</strong>.
+Your notification will be automatically translated into the languages you chose in the <strong>Add languages</strong> window and those languages will be added to the <strong>Language</strong> menu.</li>
+<li>To see the translation of your notification, in the <strong>Language</strong> menu, select the language that you just added.</li>
+</ol>
+<p>Things to keep in mind about translation:</p>
+<ul>
+<li>You can override the automatic translation by entering something different in the <strong>Content</strong> box for that language.</li>
+<li>If you add another text box to the English version of the notification after you’ve overridden an automatic translation, the new text box will not be added to translated notification. In that case, you would need to manually add the new text box to each of translated notifications.</li>
+<li>If you change the English text after the notification has been translated, we’ll automatically update the translated notifications to match the change. However, this won’t happen if you previously chose to override the initial translation.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/apps/design/shell/tiles-and-notifications/creating-tiles">Tiles for UWP apps</a></li>
+<li><a href="/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview">Windows Push Notification Services (WNS) overview</a></li>
+<li><a href="https://www.microsoft.com/store/apps/9nblggh5xsl1">Notifications Visualizer app</a></li>
+<li><a href="/uwp/api/microsoft.services.store.engagement.storeservicesengagementmanager.registernotificationchannelasync">StoreServicesEngagementManager.RegisterNotificationChannelAsync() | registerNotificationChannelAsync() method</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/send-push-notifications-to-your-apps-customers.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

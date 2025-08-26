@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Accessible text requirements </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Accessible text requirements ">
+    
+    <meta name="description" content="This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="accessible-text-requirements">Accessible text requirements</h1>
+
+<p>This topic describes best practices for accessibility of text in an app, by assuring that colors and backgrounds satisfy the necessary contrast ratio. This topic also discusses the Microsoft UI Automation roles that text elements in a Universal Windows Platform (UWP) app can have, and best practices for text in graphics.</p>
+<p><span id="contrast_rations"></span>
+<span id="CONTRAST_RATIONS"></span></p>
+<h2 id="contrast-ratios">Contrast ratios</h2>
+<p>Although users always have the option to switch to a high-contrast mode, your app design for text should regard that option as a last resort. A much better practice is to make sure that your app text meets certain established guidelines for the level of contrast between text and its background. Evaluation of the level of contrast is based on deterministic techniques that do not consider color hue. For example, if you have red text on a green background, that text might not be readable to someone with a color blindness impairment. Checking and correcting the contrast ratio can prevent these types of accessibility issues.</p>
+<p>The recommendations for text contrast documented here are based on a web accessibility standard, <a href="https://www.w3.org/TR/WCAG20-TECHS/G18.html">G18: Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text</a>. This guidance exists in the <em>W3C Techniques for WCAG 2.0</em> specification.</p>
+<p>To be considered accessible, visible text must have a minimum luminosity contrast ratio of 4.5:1 against the background. Exceptions include logos and incidental text, such as text that is part of an inactive UI component.</p>
+<p>Text that is decorative and conveys no information is excluded. For example, if random words are used to create a background, and the words can be rearranged or substituted without changing meaning, the words are considered to be decorative and do not need to meet this criterion.</p>
+<p>Use color contrast tools to verify that the visible text contrast ratio is acceptable. See <a href="https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources">Techniques for WCAG 2.0 G18 (Resources section)</a> for tools that can test contrast ratios.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a UWP app. You may need to enter foreground and background color values manually in the tool, or make screen captures of app UI and then run the contrast ratio tool over the screen capture image.</p>
+</div>
+<p><span id="Text_element_roles"></span>
+<span id="text_element_roles"></span>
+<span id="TEXT_ELEMENT_ROLES"></span></p>
+<h2 id="text-element-roles">Text element roles</h2>
+<p>A UWP app can use these default elements (commonly called <em>text elements</em> or <em>textedit controls</em>):</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a>: role is <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType"><strong>Text</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a>: role is <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType"><strong>Edit</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock"><strong>RichTextBlock</strong></a> (and overflow class <a href="/uwp/api/windows.ui.xaml.controls.richtextblockoverflow"><strong>RichTextBlockOverflow</strong></a>): role is <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType"><strong>Text</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.RichEditBox"><strong>RichEditBox</strong></a>: role is <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType"><strong>Edit</strong></a></li>
+</ul>
+<p>When a control reports that is has a role of <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationControlType"><strong>Edit</strong></a>, assistive technologies assume that there are ways for users to change the values. So if you put static text in a <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a>, you are misreporting the role and thus misreporting the structure of your app to the accessibility user.</p>
+<p>In the text models for XAML, there are two elements that are primarily used for static text, <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock"><strong>RichTextBlock</strong></a>. Neither of these are a <a href="/uwp/api/Windows.UI.Xaml.Controls.Control"><strong>Control</strong></a> subclass, and as such neither of them are keyboard-focusable or can appear in the tab order. But that does not mean that assistive technologies can't or won't read them. Screen readers are typically designed to support multiple modes of reading the content in an app, including a dedicated reading mode or navigation patterns that go beyond focus and the tab order, like a &quot;virtual cursor&quot;. So don't put your static text into focusable containers just so that tab order gets the user there. Assistive technology users expect that anything in the tab order is interactive, and if they encounter static text there, that is more confusing than helpful. You should test this out yourself with Narrator to get a sense of the user experience with your app when using a screen reader to examine your app's static text.</p>
+<p><span id="Auto-suggest_accessibility"></span>
+<span id="auto-suggest_accessibility"></span>
+<span id="AUTO-SUGGEST_ACCESSIBILITY"></span></p>
+<h2 id="auto-suggest-accessibility">Auto-suggest accessibility</h2>
+<p>When a user types into an entry field and a list of potential suggestions appears, this type of scenario is called auto-suggest. This is common in the <strong>To:</strong> line of a mail field, the Cortana search box in Windows, the URL entry field in Microsoft Edge, the location entry field in the Weather app, and so on. If you are using a XAML <a href="/uwp/api/windows.ui.xaml.controls.autosuggestbox"><strong>AutosuggestBox</strong></a> or the HTML intrinsic controls, then this experience is already hooked up for you by default. To make this experience accessible the entry field and the list must be associated. This is explained in the <a href="#implementing_auto-suggest">Implementing auto-suggest</a> section.</p>
+<p>Narrator has been updated to make this type of experience accessible with a special suggestions mode. At a high level, when the edit field and list are connected properly the end user will:</p>
+<ul>
+<li>Know the list is present and when the list closes</li>
+<li>Know how many suggestions are available</li>
+<li>Know the selected item, if any</li>
+<li>Be able to move Narrator focus to the list</li>
+<li>Be able to navigate through a suggestion with all other reading modes</li>
+</ul>
+<p><img src="images/autosuggest-list.png" alt="Suggestion list"><br>
+<em>Example of a suggestion list</em></p>
+<p><span id="Implementing_auto-suggest"></span>
+<span id="implementing_auto-suggest"></span>
+<span id="IMPLEMENTING_AUTO-SUGGEST"></span></p>
+<h3 id="implementing-auto-suggest">Implementing auto-suggest</h3>
+<p>To make this experience accessible the entry field and the list must be associated in the UIA tree. This association is done with the <a href="/windows/win32/winauto/uiauto-automation-element-propids">UIA_ControllerForPropertyId</a> property in desktop apps or the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers">ControlledPeers</a> property in UWP apps.</p>
+<p>At a high level there are 2 types of auto-suggest experiences.</p>
+<p><strong>Default selection</strong><br>
+If a default selection is made in the list, Narrator looks for a  <a href="/windows/desktop/WinAuto/uiauto-event-ids"><strong>UIA_SelectionItem_ElementSelectedEventId</strong></a> event in a desktop app, or the <a href="/uwp/api/windows.ui.xaml.automation.peers.automationevents"><strong>AutomationEvents.SelectionItemPatternOnElementSelected</strong></a> event to be fired in a UWP app. Every time the selection changes, when the user types another letter and the suggestions have been updated or when a user navigates through the list, the <strong>ElementSelected</strong> event should be fired.</p>
+<p><img src="images/autosuggest-default-selection.png" alt="List with a default selection"><br>
+<em>Example where there is a default selection</em></p>
+<p><strong>No default selection</strong><br>
+If there is no default selection, such as in the Weather app’s location box, then Narrator looks for the desktop <a href="/windows/desktop/WinAuto/uiauto-event-ids"><strong>UIA_LayoutInvalidatedEventId</strong></a> event or the UWP <a href="/uwp/api/windows.ui.xaml.automation.peers.automationevents"><strong>LayoutInvalidated</strong></a> event to be fired on the list every time the list is updated.</p>
+<p><img src="images/autosuggest-no-default-selection.png" alt="List with no default selection"><br>
+<em>Example where there is no default selection</em></p>
+<h3 id="xaml-implementation">XAML implementation</h3>
+<p>If you are using the default XAML <a href="/uwp/api/windows.ui.xaml.controls.autosuggestbox"><strong>AutosuggestBox</strong></a>, then everything is already hooked up for you. If you are making your own auto-suggest experience using a <a href="/uwp/api/windows.ui.xaml.controls.textbox"><strong>TextBox</strong></a> and a list then you will need to set the list as <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers"><strong>AutomationProperties.ControlledPeers</strong></a> on the <strong>TextBox</strong>. You must fire the <strong>AutomationPropertyChanged</strong> event for the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.getcontrolledpeers"><strong>ControlledPeers</strong></a> property every time you add or remove this property and also fire your own <a href="/uwp/api/windows.ui.xaml.automation.peers.automationevents"><strong>SelectionItemPatternOnElementSelected</strong></a> events or <a href="/uwp/api/windows.ui.xaml.automation.peers.automationevents"><strong>LayoutInvalidated</strong></a> events depending on your type of scenario, which was explained previously in this article.</p>
+<h3 id="html-implementation">HTML implementation</h3>
+<p>If you are using the intrinsic controls in HTML, then the UIA implementation has already been mapped for you. Below is an example of an implementation that is already hooked up for you:</p>
+<pre><code class="lang-HTML">&lt;label&gt;Sites &lt;input id=&quot;input1&quot; type=&quot;text&quot; list=&quot;datalist1&quot; /&gt;&lt;/label&gt;
+&lt;datalist id=&quot;datalist1&quot;&gt;
+        &lt;option value=&quot;http://www.google.com/&quot; label=&quot;Google&quot;&gt;&lt;/option&gt;
+        &lt;option value=&quot;http://www.reddit.com/&quot; label=&quot;Reddit&quot;&gt;&lt;/option&gt;
+&lt;/datalist&gt;
+</code></pre>
+<p>If you are creating your own controls, you must set up your own ARIA controls, which are explained in the W3C standards.</p>
+<p><span id="Text_in_graphics"></span>
+<span id="text_in_graphics"></span>
+<span id="TEXT_IN_GRAPHICS"></span></p>
+<h2 id="text-in-graphics">Text in graphics</h2>
+<p>Whenever possible, avoid including text in a graphic. For example, any text that you include in the image source file that is displayed in the app as an <a href="/uwp/api/Windows.UI.Xaml.Controls.Image"><strong>Image</strong></a> element is not automatically accessible or readable by assistive technologies. If you must use text in graphics, make sure that the <a href="/dotnet/api/system.windows.automation.automationproperties.name"><strong>AutomationProperties.Name</strong></a> value that you provide as the equivalent of &quot;alt text&quot; includes that text or a summary of the text's meaning. Similar considerations apply if you are creating text characters from vectors as part of a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Path"><strong>Path</strong></a>, or by using <a href="/uwp/api/Windows.UI.Xaml.Documents.Glyphs"><strong>Glyphs</strong></a>.</p>
+<p><span id="Text_font_size"></span>
+<span id="text_font_size"></span>
+<span id="TEXT_FONT_SIZE"></span></p>
+<h2 id="text-font-size-and-scale">Text font size and scale</h2>
+<p>Users can have difficulty reading text in an app when the fonts uses are simply too small, so make sure any text in your application is a reasonable size in the first place.</p>
+<p>Once you've done the obvious, Windows includes various accessibility tools and settings that users can take advantage of and adjust to their own needs and preferences for reading text. These include:</p>
+<ul>
+<li>The Magnifier tool, which enlarges a selected area of the UI. You should ensure the layout of text in your app doesn't make it difficult to use Magnifier for reading.</li>
+<li>Global scale and resolution settings in <strong>Settings-&gt;System-&gt;Display-&gt;Scale and layout</strong>. Exactly which sizing options are available can vary as this depends on the capabilities of the display device.</li>
+<li>Text size settings in <strong>Settings-&gt;Ease of access-&gt;Display</strong>. Adjust the <strong>Make text bigger</strong> setting to specify only the size of text in supporting controls across all applications and screens (all UWP text controls support the text scaling experience without any customization or templating).</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Make everything bigger</strong> setting lets a user specify their preferred size for text and apps in general on their primary screen only.</p>
+</div>
+<p>Various text elements and controls have an <a href="/uwp/api/windows.ui.xaml.controls.textblock.istextscalefactorenabled"><strong>IsTextScaleFactorEnabled</strong></a> property. This property has the value <strong>true</strong> by default. When <strong>true</strong>, the size of text in that element can be scaled. The scaling affects text that has a small <strong>FontSize</strong> to a greater degree than it affects text that has a large <strong>FontSize</strong>. You can disable automatic resizing by setting an element's <strong>IsTextScaleFactorEnabled</strong> property to <strong>false</strong>.</p>
+<p>See <a href="../input/text-scaling.html">Text scaling</a> for more details.</p>
+<p>Add the following markup to an app and run it. Adjust the <strong>Text size</strong> setting, and see what happens to each <strong>TextBlock</strong>.</p>
+<p>XAML</p>
+<pre><code class="lang-xml">&lt;TextBlock Text=&quot;In this case, IsTextScaleFactorEnabled has been left set to its default value of true.&quot;
+    Style=&quot;{StaticResource BodyTextBlockStyle}&quot;/&gt;
+
+&lt;TextBlock Text=&quot;In this case, IsTextScaleFactorEnabled has been set to false.&quot;
+    Style=&quot;{StaticResource BodyTextBlockStyle}&quot; IsTextScaleFactorEnabled=&quot;False&quot;/&gt;
+</code></pre>
+<p>We don't recommend that you disable text scaling as scaling UI text universally across all apps is an important accessibility experience for users.</p>
+<p>You can also use the <a href="/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged"><strong>TextScaleFactorChanged</strong></a> event and the <a href="/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor"><strong>TextScaleFactor</strong></a> property to find out about changes to the <strong>Text size</strong> setting on the phone. Here’s how:</p>
+<p>C#</p>
+<pre><code class="lang-csharp">{
+    ...
+    var uiSettings = new Windows.UI.ViewManagement.UISettings();
+    uiSettings.TextScaleFactorChanged += UISettings_TextScaleFactorChanged;
+    ...
+}
+
+private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.UISettings sender, object args)
+{
+    var messageDialog = new Windows.UI.Popups.MessageDialog(string.Format(&quot;It's now {0}&quot;, sender.TextScaleFactor), &quot;The text scale factor has changed&quot;);
+    await messageDialog.ShowAsync();
+}
+</code></pre>
+<p>The value of <strong>TextScaleFactor</strong> is a double in the range [1,2.25]. The smallest text is scaled up by this amount. You might be able to use the value to, say, scale graphics to match the text. But remember that not all text is scaled by the same factor. Generally speaking, the larger text is to begin with, the less it’s affected by scaling.</p>
+<p>These types have an <strong>IsTextScaleFactorEnabled</strong> property:</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.ContentPresenter"><strong>ContentPresenter</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.Control"><strong>Control</strong></a> and derived classes</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.FontIcon"><strong>FontIcon</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock"><strong>RichTextBlock</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Documents.TextElement"><strong>TextElement</strong></a> and derived classes</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/AccessibilityScreenReader">Open the WinUI 3 Gallery app and see text accessibility support in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../input/text-scaling.html">Text scaling</a></li>
+<li><a href="accessibility.html">Accessibility</a></li>
+<li><a href="basic-accessibility-information.html">Basic accessibility information</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208)">XAML text display sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208)">XAML text editing sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample">XAML accessibility sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/accessible-text-requirements.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

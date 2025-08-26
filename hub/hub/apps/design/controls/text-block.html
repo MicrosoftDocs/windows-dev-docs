@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Text block </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Text block ">
+    
+    <meta name="description" content="Text block is the primary control for displaying read-only text in apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="text-block">Text block</h1>
+
+<p>Text block is the primary control for displaying read-only text in apps. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>A text block is typically easier to use and provides better text rendering performance than a rich text block, so it's preferred for most app UI text. You can easily access and use text from a text block in your app by getting the value of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text</a> property. It also provides many of the same formatting options for customizing how your text is rendered.</p>
+<p>Although you can put line breaks in the text, text block is designed to display a single paragraph and doesn't support text indentation. Use a <strong>RichTextBlock</strong> when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images.</p>
+<p>For more info about choosing the right text control, see the <a href="text-controls.html">Text controls</a> article.</p>
+<h2 id="create-a-text-block">Create a text block</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock">TextBlock class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.inlines">Inlines property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/TextBlock">Open the WinUI 3 Gallery app and see the TextBlock in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Here's how to define a simple TextBlock control and set its <code>Text</code> property to a string.</p>
+<pre><code class="lang-xaml">&lt;TextBlock Text=&quot;Hello, world!&quot; /&gt;
+</code></pre>
+<pre><code class="lang-csharp">TextBlock textBlock1 = new TextBlock();
+textBlock1.Text = &quot;Hello, world!&quot;;
+</code></pre>
+<h3 id="content-model">Content model</h3>
+<p>There are two properties you can use to add content to a TextBlock: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.inlines">Inlines</a>.</p>
+<p>The most common way to display text is to set the <code>Text</code> property to a string value, as shown in the previous example.</p>
+<p>You can also add content by placing inline flow content elements in the <code>Inlines</code> property, like this. (<code>Inlines</code> is the default content property of a TextBlock, so you don't need to explicitly add it in XAML.)</p>
+<pre><code class="lang-xaml">&lt;TextBlock&gt;Text can be &lt;Bold&gt;bold&lt;/Bold&gt;, &lt;Underline&gt;underlined&lt;/Underline&gt;, 
+    &lt;Italic&gt;italic&lt;/Italic&gt;, or a &lt;Bold&gt;&lt;Italic&gt;combination&lt;/Italic&gt;&lt;/Bold&gt;.&lt;/TextBlock&gt;
+</code></pre>
+<p>Elements derived from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.inline">Inline</a> class, such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.bold">Bold</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.italic">Italic</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.run">Run</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span">Span</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.linebreak">LineBreak</a>, enable different formatting for different parts of the text. For more info, see the <a href="#formatting-text">Formatting text</a> section. The inline <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.hyperlink">Hyperlink</a> element lets you add a hyperlink to your text. However, using <code>Inlines</code> also disables fast path text rendering, which is discussed in the next section.</p>
+<h2 id="performance-considerations">Performance considerations</h2>
+<p>Whenever possible, XAML uses a more efficient code path to layout text. This fast path both decreases overall memory use and greatly reduces the CPU time to do text measuring and arranging. This fast path applies only to TextBlock, so it should be preferred when possible over <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock">RichTextBlock</a>.</p>
+<p>Certain conditions require TextBlock to fall back to a more feature-rich and CPU intensive code path for text rendering. To keep text rendering on the fast path, be sure to follow these guidelines when setting the properties listed here.</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text</a>: The most important condition is that the fast path is used only when you set text by explicitly setting the <code>Text</code> property, either in XAML or in code (as shown in the previous examples). Setting the text via TextBlock's <code>Inlines</code> collection (such as <code>&lt;TextBlock&gt;Inline text&lt;/TextBlock&gt;</code>) will disable the fast path, due to the potential complexity of multiple formats.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.characterspacing">CharacterSpacing</a>: Only the default value of 0 is fast path.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.texttrimming">TextTrimming</a>: Only the <code>None</code>, <code>CharacterEllipsis</code>, and <code>WordEllipsis</code> values are fast path. The <code>Clip</code> value disables the fast path.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>UWP Only:</strong>
+Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will cause your text to render on the slow path. For more info about versions, see <a href="/windows/uwp/debug-test-perf/version-adaptive-code">Version adaptive code</a>.</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.Documents.Typography">Typography</a>: Only the default values for the various <code>Typography</code> properties are fast path.</li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy">LineStackingStrategy</a>: If <a href="/uwp/api/windows.ui.xaml.controls.textblock.lineheight">LineHeight</a> is not 0, the <code>BaselineToBaseline</code> and <code>MaxHeight</code> values disable the fast path.</li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled">IsTextSelectionEnabled</a>: Only <code>false</code> is fast path. Setting this property to <code>true</code> disables the fast path.</li>
+</ul>
+</div>
+<p>You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.debugsettings.istextperformancevisualizationenabled">DebugSettings.IsTextPerformanceVisualizationEnabled</a> property to <code>true</code> during debugging to determine whether text is using fast path rendering. When this property is set to <code>true</code>, the text that is on the fast path displays in a bright green color.</p>
+<p>You typically set debug settings in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched">OnLaunched</a> method override in the code-behind page for <code>App.xaml</code>, like this.</p>
+<pre><code class="lang-csharp">protected override void OnLaunched(LaunchActivatedEventArgs e)
+{
+#if DEBUG
+    if (System.Diagnostics.Debugger.IsAttached)
+    {
+        this.DebugSettings.IsTextPerformanceVisualizationEnabled = true;
+    }
+#endif
+
+// ...
+
+}
+</code></pre>
+<p>In this example, the first TextBlock is rendered using the fast path, while the second is not.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;TextBlock Text=&quot;This text is on the fast path.&quot;/&gt;
+    &lt;TextBlock&gt;This text is NOT on the fast path.&lt;/TextBlock&gt;
+&lt;StackPanel/&gt;
+</code></pre>
+<p>When you run this XAML in debug mode with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.debugsettings.istextperformancevisualizationenabled">IsTextPerformanceVisualizationEnabled</a> set to <code>true</code>, the result looks like this.</p>
+<p><img src="images/text-block-rendering-performance.png" alt="Text rendered in debug mode"></p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>The color of text that is not on the fast path is not changed. If you have text in your app with its color specified as bright green, it is still displayed in bright green when it's on the slower rendering path. Be careful to not confuse text that is set to green in the app with text that is on the fast path and green because of the debug settings.</p>
+</div>
+<h2 id="formatting-text">Formatting text</h2>
+<p>Although the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text</a> property stores plain text, you can apply various formatting options to the TextBlock control to customize how the text is rendered in your app. You can set standard control properties like <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.fontfamily">FontFamily</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.fontsize">FontSize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.fontstyle">FontStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.foreground">Foreground</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.characterspacing">CharacterSpacing</a> to change the look of the text. You can also use inline text elements and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.typography">Typography</a> attached properties to format your text. These options affect only how the TextBlock displays the text locally, so if you copy and paste the text into a rich text control, for example, no formatting is applied.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Remember, as noted in the previous section, inline text elements and non-default typography values are not rendered on the fast path.</p>
+</div>
+<h3 id="inline-elements">Inline elements</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents">Microsoft.UI.Xaml.Documents</a> namespace provides a variety of inline text elements that you can use to format your text, such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.bold">Bold</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.italic">Italic</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.run">Run</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span">Span</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.linebreak">LineBreak</a>.</p>
+<p>You can display a series of strings in a TextBlock, where each string has different formatting. You can do this by using a <code>Run</code> element to display each string with its formatting and by separating each <code>Run</code> element with a <code>LineBreak</code> element.</p>
+<p>Here's how to define several differently formatted text strings in a TextBlock by using <code>Run</code> objects separated with a <code>LineBreak</code>.</p>
+<pre><code class="lang-xaml">&lt;TextBlock FontFamily=&quot;Segoe UI&quot; Width=&quot;400&quot; Text=&quot;Sample text formatting runs&quot;&gt;
+    &lt;LineBreak/&gt;
+    &lt;Run Foreground=&quot;Gray&quot; FontFamily=&quot;Segoe UI Light&quot; FontSize=&quot;24&quot;&gt;
+        Segoe UI Light 24
+    &lt;/Run&gt;
+    &lt;LineBreak/&gt;
+    &lt;Run Foreground=&quot;Teal&quot; FontFamily=&quot;Georgia&quot; FontSize=&quot;18&quot; FontStyle=&quot;Italic&quot;&gt;
+        Georgia Italic 18
+    &lt;/Run&gt;
+    &lt;LineBreak/&gt;
+    &lt;Run Foreground=&quot;Black&quot; FontFamily=&quot;Arial&quot; FontSize=&quot;14&quot; FontWeight=&quot;Bold&quot;&gt;
+        Arial Bold 14
+    &lt;/Run&gt;
+&lt;/TextBlock&gt;
+</code></pre>
+<p>Here's the result.</p>
+<p><img src="images/text-block-run-examples.png" alt="Text formatted with run elements"></p>
+<h3 id="typography">Typography</h3>
+<p>The attached properties of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Typography">Typography</a> class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the TextBlock, or on individual inline text elements. These examples show both.</p>
+<pre><code class="lang-xaml">&lt;TextBlock Text=&quot;Hello, world!&quot;
+           Typography.Capitals=&quot;SmallCaps&quot;
+           Typography.StylisticSet4=&quot;True&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">TextBlock textBlock1 = new TextBlock();
+textBlock1.Text = &quot;Hello, world!&quot;;
+Typography.SetCapitals(textBlock1, FontCapitals.SmallCaps);
+Typography.SetStylisticSet4(textBlock1, true);
+</code></pre>
+<pre><code class="lang-xaml">&lt;TextBlock&gt;12 x &lt;Run Typography.Fraction=&quot;Slashed&quot;&gt;1/3&lt;/Run&gt; = 4.&lt;/TextBlock&gt;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock class</a>, <a href="/uwp/api/windows.ui.xaml.controls.textblock.text">Text property</a>, <a href="/uwp/api/windows.ui.xaml.controls.textblock.inlines">Inlines property</a></li>
+<li><a href="winui2gallery:/item/TextBlock">Open the WinUI 2 Gallery app and see the TextBlock in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles, templates, and features for all controls.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="text-controls.html">Text controls</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox">TextBox class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox">PasswordBox class</a></li>
+<li><a href="/dotnet/api/system.string.length">String.Length property</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/text-block.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

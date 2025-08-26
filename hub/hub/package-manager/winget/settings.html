@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>settings command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="settings command ">
+    
+    <meta name="description" content="Provides customizations for the Windows Package Manager.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="settings-command-winget">settings command (winget)</h1>
+
+<p>The <strong>settings</strong> command of <a href="index.html">WinGet</a> allows you to customize your Windows Package Manager client experience. You can change defaults and try out experimental features that are available in your client.</p>
+<p>The <strong>settings</strong> command will launch your default JSON editor. Windows by default will launch Notepad as an option.  We recommend using a tool like <a href="https://code.visualstudio.com/">Visual Studio code</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can easily install Visual Studio Code by typing <code>winget install Microsoft.VisualStudioCode</code></p>
+</div>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>config</li>
+</ul>
+<h2 id="sub-commands">Sub-commands</h2>
+<p>The following sub-commands are available.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>export</strong></td>
+<td>Exports settings.</td>
+</tr>
+<tr>
+<td><strong>set</strong></td>
+<td>Sets the value of an administrator setting.</td>
+</tr>
+<tr>
+<td><strong>reset</strong></td>
+<td>Resets an administrator setting to its default value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="options">Options</h2>
+<p>The following options are available:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--enable</strong></td>
+<td>Enables the specified administrator setting.</td>
+</tr>
+<tr>
+<td><strong>--disable</strong></td>
+<td>Disables the specified administrator setting.</td>
+</tr>
+<tr>
+<td><strong>-?,--help</strong></td>
+<td>Shows help about the selected command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Opens the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose,--verbose-logs</strong></td>
+<td>Enables verbose logging for winget.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disables interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Sets a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disables the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="use-the-winget-settings-command">Use the winget settings command</h2>
+<p>Launch your default JSON editing tool: <code>winget settings</code></p>
+<p>When you launch the settings for the first time, there will be no settings specified. At the top of the JSON file, we provide a <a href="https://aka.ms/winget-settings">WinGet CLI Settings</a> link, where you can discover the latest experimental features and settings.</p>
+<p>The code snippet below shows an example of what your settings file might look like with visual output modifications and experimental features enabled.</p>
+<pre><code class="lang-json">{
+    &quot;$schema&quot;: &quot;https://aka.ms/winget-settings.schema.json&quot;,
+
+    &quot;visual&quot;: {
+        &quot;enableSixels&quot;: true,
+        &quot;progressBar&quot;: &quot;rainbow&quot;
+    },
+    &quot;experimentalFeatures&quot;: {
+        &quot;experimentalARG&quot;: true,
+        &quot;experimentalCMD&quot;: true
+    }
+}
+</code></pre>
+<p>We have also defined a schema for the settings file. This allows you to use TAB to discover settings and syntax if your JSON editor supports JSON schemas.</p>
+<h2 id="updating-settings">Updating settings</h2>
+<p>The following settings are available for the 1.11 release of the Windows Package Manager.</p>
+<h3 id="source-settings">source settings</h3>
+<p>The <code>source</code> settings involve configuration to the WinGet source.</p>
+<pre><code class="lang-json">&quot;source&quot;: {
+    &quot;autoUpdateIntervalInMinutes&quot;: 60
+},
+</code></pre>
+<h4 id="autoupdateintervalinminutes">autoUpdateIntervalInMinutes</h4>
+<p>A positive integer represents the update interval in minutes. The check for updates only happens when a source is used. A zero will disable the check for updates to a source. Any other values are invalid.</p>
+<ul>
+<li>Disable: 0</li>
+<li>Default: 15</li>
+</ul>
+<p>To manually update the source use <code>winget source update</code>.</p>
+<h3 id="visual-settings">visual settings</h3>
+<p>The <code>visual</code> settings involve visual elements that are displayed by WinGet</p>
+<pre><code class="lang-json">&quot;visual&quot;: {
+    &quot;enableSixels&quot;: true,
+    &quot;progressBar&quot;: &quot;rainbow&quot;
+},
+</code></pre>
+<h4 id="progressbar">progressBar</h4>
+<p>Color of the progress bar that WinGet displays when not specified by arguments.</p>
+<ul>
+<li>accent (default)</li>
+<li>rainbow</li>
+<li>retro</li>
+<li>sixel</li>
+<li>disabled</li>
+</ul>
+<h4 id="anonymizedisplayedpaths">anonymizeDisplayedPaths</h4>
+<p>Replaces some known folder paths with their respective environment variables.</p>
+<h4 id="enablesizels">enableSizels</h4>
+<p>Enables output of sixel images in certain contexts.</p>
+<h3 id="logging-settings">logging settings</h3>
+<p>The <code>logging</code> settings control the level of detail in log files. <code>--verbose-logs</code> will override this setting and always creates a verbose log.</p>
+<pre><code class="lang-json">&quot;logging&quot;: {
+    &quot;level&quot;: &quot;verbose&quot;
+}
+</code></pre>
+<h4 id="level">level</h4>
+<p>The following logging levels are available. Defaults to <code>info</code> if the value is not set or is invalid.</p>
+<ul>
+<li>verbose</li>
+<li>info</li>
+<li>warning</li>
+<li>error</li>
+<li>critical</li>
+</ul>
+<h3 id="preferences-and-requirements-settings">preferences and requirements settings</h3>
+<p>Some of the settings are duplicated under <code>preferences</code> and <code>requirements</code>.</p>
+<ul>
+<li>The <code>preferences</code> setting controls how the various available options are sorted when choosing the one to act on. For example, the default scope of package installs is for the current user, but if that is not an option then a machine level installer will be chosen.</li>
+<li>The <code>requirements</code> setting filters the options, potentially resulting in an empty list and a failure to install. In the previous example, a user scope requirement would result in no applicable installers and an error.</li>
+</ul>
+<p>Any arguments passed on the command line will effectively override the matching <code>requirement</code> setting for the duration of that command.</p>
+<h4 id="scope">scope</h4>
+<p>The <code>scope</code> behavior controls the choice between installing a package for the current user or for the entire machine. The matching parameter is <code>--scope</code>, and uses the same values (<code>user</code> or <code>machine</code>). See  <a href="troubleshooting.html#scope-for-specific-user-vs-machine-wide">known issues relating to package installation scope</a>.</p>
+<pre><code class="lang-json">&quot;installBehavior&quot;: {
+    &quot;preferences&quot;: {
+        &quot;scope&quot;: &quot;user&quot;
+    }
+},
+</code></pre>
+<h4 id="locale">locale</h4>
+<p>The <code>locale</code> behavior controls the choice of installer based on installer locale. The matching parameter is <code>--locale</code>, and uses bcp47 language tag.</p>
+<pre><code class="lang-json">&quot;installBehavior&quot;: {
+    &quot;preferences&quot;: {
+        &quot;locale&quot;: [ &quot;en-US&quot;, &quot;fr-FR&quot; ]
+    }
+},
+</code></pre>
+<h4 id="architectures">architectures</h4>
+<p>The <code>architectures</code> behavior controls what architectures will be selected when installing a package. The matching parameter is <code>--architecture</code>. Only architectures compatible with your system can be selected.</p>
+<pre><code class="lang-json">    &quot;installBehavior&quot;: {
+        &quot;preferences&quot;: {
+            &quot;architectures&quot;: [&quot;x64&quot;, &quot;arm64&quot;]
+        }
+    },
+</code></pre>
+<h4 id="installertypes">installerTypes</h4>
+<p>The <code>installerTypes</code> behavior controls what installer types will be selected when installing a package. The matching parameter is <code>--installer-type</code>.</p>
+<pre><code class="lang-json">    &quot;installBehavior&quot;: {
+        &quot;preferences&quot;: {
+            &quot;installerTypes&quot;: [&quot;msix&quot;, &quot;msi&quot;]
+        }
+    },
+</code></pre>
+<h3 id="installbehavior-settings">installBehavior settings</h3>
+<p>The <code>installBehavior</code> settings control the default behavior of installing and upgrading (where applicable) packages.</p>
+<h4 id="disableinstallnotes">disableInstallNotes</h4>
+<p>The <code>disableInstallNotes</code> setting determines whether installation notes are shown after a successful install. Defaults to <code>false</code> if value is not set or is invalid.</p>
+<pre><code class="lang-json">    &quot;installBehavior&quot;: {
+        &quot;disableInstallNotes&quot;: true
+    },
+</code></pre>
+<h4 id="portablepackageuserroot-setting">portablePackageUserRoot setting</h4>
+<p>The <code>portablePackageUserRoot</code> setting defines the default root directory for installing packages under the <code>User</code> scope. This applies only to packages with the <code>portable</code> installer type. Defaults to <code>%LOCALAPPDATA%/Microsoft/WinGet/Packages/</code> if value is not set or is invalid.</p>
+<p>This setting value must be an absolute path.</p>
+<pre><code class="lang-json">    &quot;installBehavior&quot;: {
+        &quot;portablePackageUserRoot&quot;: &quot;C:/Users/FooBar/Packages&quot;
+    },
+</code></pre>
+<h4 id="portablepackagemachineroot-setting">portablePackageMachineRoot setting</h4>
+<p>The <code>portablePackageMachineRoot</code> setting defines the default root directory for installing packages under the <code>Machine</code> scope. This applies only to packages with the <code>portable</code> installer type. Defaults to <code>%PROGRAMFILES%/WinGet/Packages/</code> if the value is not set or is invalid.</p>
+<p>This setting value must be an absolute path.</p>
+<pre><code class="lang-json">    &quot;installBehavior&quot;: {
+        &quot;portablePackageMachineRoot&quot;: &quot;C:/Program Files/Packages/Portable&quot;
+    },
+</code></pre>
+<h4 id="defaultinstallroot">defaultInstallRoot</h4>
+<p>The <code>defaultInstallRoot</code> setting specifies the default install location for packages that require an explicit install path, if the install location is not specified.</p>
+<h4 id="maxresumes">maxResumes</h4>
+<p>The <code>maxResumes</code> setting specifies the maximum number of resume attempts allowed for a single resume ID. This prevents continuous reboots if an installation requiring a reboot is not properly detected.</p>
+<h4 id="archiveextractionmethod">archiveExtractionMethod</h4>
+<p>The <code>archiveExtractionMethod</code> setting controls how the installer extracts archives. Supported values are <code>shellApi</code> and <code>tar</code>.</p>
+<ul>
+<li><p><code>shellApi</code> uses the Windows Shell API to extract archives.</p>
+</li>
+<li><p><code>tar</code> uses the tar command to extract archives.</p>
+</li>
+</ul>
+<h3 id="uninstallbehavior">UninstallBehavior</h3>
+<p>The <code>uninstallBehavior</code> setting controls whether the default uninstall process removes all files and directories relevant to this package. Only applies to the portable <code>installerType</code>.</p>
+<h4 id="purgeportablepackage">purgePortablePackage</h4>
+<p>The <code>purgePortablePackage</code> setting controls the default behavior for uninstalling a portable package. If set to <code>true</code>, uninstall will remove all files and directories relevant to the <code>portable</code> package. This setting only applies to packages with the <code>portable</code> installer type. Defaults to <code>false</code> if value is not set or is invalid.</p>
+<pre><code class="lang-json">    &quot;uninstallBehavior&quot;: {
+        &quot;purgePortablePackage&quot;: true
+    },
+</code></pre>
+<h3 id="configurebehavior">ConfigureBehavior</h3>
+<p>The <code>ConfigureBehavior</code> setting specifies the default root directory where PowerShell modules are installed to when applying a configuration.</p>
+<h3 id="downloadbehavior">downloadBehavior</h3>
+<p>The <code>downloadBehavior</code> settings control the default directory where installers are downloaded to.</p>
+<h4 id="defaultdownloaddirectory">defaultDownloadDirectory</h4>
+<p>The <code>defaultDownloadDirectory</code> setting controls the default directory where packages are downloaded to. Defaults to <code>%USERPROFILE%/Downloads</code> if value is not set or is invalid.</p>
+<p>This setting value must be an absolute path.</p>
+<pre><code class="lang-json">    &quot;downloadBehavior&quot;: {
+        &quot;defaultDownloadDirectory&quot;: &quot;C:/Users/FooBar/Downloads&quot;
+    },
+</code></pre>
+<h3 id="telemetry-settings">Telemetry settings</h3>
+<p>The <code>telemetry</code> settings control whether WinGet writes ETW events that may be sent to Microsoft on a default installation of Windows.</p>
+<p>See <a href="https://github.com/microsoft/winget-cli/blob/master/README.md#datatelemetry">details on telemetry</a>, and our <a href="https://github.com/microsoft/winget-cli/blob/master/PRIVACY.md">primary privacy statement</a>.</p>
+<h4 id="disable">disable</h4>
+<pre><code class="lang-json">&quot;telemetry&quot;: {
+    &quot;disable&quot;: true
+},
+</code></pre>
+<p>If set to true, the <code>telemetry.disable</code> setting will prevent any event from being written by the program.</p>
+<h3 id="network-settings">Network settings</h3>
+<p>The <code>network</code> settings influence how WinGet uses the network to retrieve packages and metadata.</p>
+<h4 id="downloader">downloader</h4>
+<p>The <code>downloader</code> setting controls which code is used when downloading packages. The default is <code>do</code>, which may be managed by Group Policy.</p>
+<p><code>wininet</code> uses the <a href="/windows/win32/wininet/about-wininet">WinINet</a> APIs, while <code>do</code> uses the <a href="https://support.microsoft.com/windows/delivery-optimization-in-windows-10-0656e53c-15f2-90de-a87a-a2172c94cf6d">Delivery Optimization</a> service.</p>
+<pre><code class="lang-json">&quot;network&quot;: {
+    &quot;downloader&quot;: &quot;wininet&quot;
+}
+</code></pre>
+<h4 id="doprogresstimeoutinseconds">doProgressTimeoutInSeconds</h4>
+<p>The <code>doProgressTimeoutInSeconds</code> specifies the number of seconds to wait without progress before fallback.</p>
+<h3 id="interactivity">Interactivity</h3>
+<p>The <code>Interactivity</code> setting controls whether interactive prompts are shown by the Windows Package Manager client.</p>
+<h3 id="enabling-experimental-features">Enabling experimental features</h3>
+<p>To discover which experimental features are available, go to <a href="https://aka.ms/winget-settings">https://aka.ms/winget-settings</a> where you can see the experimental features available to you.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/settings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

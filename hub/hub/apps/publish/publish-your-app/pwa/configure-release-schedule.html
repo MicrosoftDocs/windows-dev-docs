@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configure precise release scheduling </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configure precise release scheduling ">
+    
+    <meta name="description" content="Learn how to configure precise release scheduling for your app in the Microsoft Store, including setting release and stop acquisition dates for specific markets.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="configure-precise-release-scheduling">Configure precise release scheduling</h1>
+
+<p>The <strong>Schedule</strong> section on the <a href="price-and-availability.html">Pricing and availability</a> page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.</p>
+<p><span class="mx-imgBorder">
+<a href="../msix/images/msix-precise-release-scheduling.png#lightbox" data-linktype="relative-path">
+<img src="../msix/images/msix-precise-release-scheduling.png" alt="A screenshot of the Pricing and availability section showing precise release scheduling options.">
+</a>
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although this topic refers to apps, release scheduling for add-on submissions uses the same process.
+You can additionally opt to set a date when the product should no longer be available in the Store. Note that this means that the product can no longer be found in the Store via searching or browsing, but any customer with a direct link can see the product's Store listing. They can only download it if they already own the product or if they have a <a href="../../generate-promotional-codes.html">promotional code</a> and are using a Windows 10 or Windows 11 device.</p>
+</div>
+<p>By default (unless you have selected one of the <strong>Make this app available but not discoverable in the Store</strong> options in the <a href="visibility-options.html#discoverability">Visibility</a> section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select <strong>Show options</strong> to expand this section.</p>
+<p>Note that you won't be able to configure dates in the <strong>Schedule</strong> section if you have selected one of the <strong>Make this app available but not discoverable in the Store</strong> options in the <a href="visibility-options.html#discoverability">Visibility</a> section, because your app won't be released to customers, so there is no release date to configure.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The dates you specify in the Schedule section only apply to customers on Windows 10 and Windows 11.</p>
+<p>If your previously-published app supports earlier OS versions, any <strong>Stop acquisition</strong> date you select will not apply to those customers; they will still be able to acquire the app (unless you submit an update with a new selection in the <a href="visibility-options.html#discoverability">Visibility</a> section, or if you select <strong>Make app unavailable</strong> from the <strong>App overview</strong> page).</p>
+</div>
+<h2 id="base-schedule">Base schedule</h2>
+<p>Selections you make for the Base schedule will apply to all markets in which your app is available, unless you later add dates for specific markets (or market groups) by selecting <a href="#customize-the-schedule-for-specific-markets">Customize for specific markets</a>.</p>
+<p>You’ll see two options here: <strong>Release</strong> and <strong>Stop acquisition</strong>.</p>
+<h2 id="release">Release</h2>
+<p>In the <strong>Release</strong> drop-down, you can set when you want your app to be available in the Store. This means that the app is discoverable in the Store via searching or browsing, and that customers can view its Store listing and acquire the app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>After your app has been published and has become available in the Store, you will no longer be able to select a <strong>Release</strong> date (since the app will already have been released).
+Here are the options you can configure for a product’s <strong>Release</strong> schedule:</p>
+</div>
+<ul>
+<li><strong>as soon as possible</strong>: The product will release as soon as it is certified and published. This is the default option.</li>
+<li><strong>at</strong>: The product will release on the date and time that you select. You additionally have two options:
+<ul>
+<li><strong>UTC</strong>: The time you select will be Universal Coordinated Time (UTC) time, so that the app releases at the same time everywhere.</li>
+<li><strong>Local</strong>: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used. A comprehensive list of time zones is shown further down this page.)</li>
+</ul>
+</li>
+</ul>
+<h2 id="stop-acquisition">Stop acquisition</h2>
+<p>In the <strong>Stop acquisition</strong> dropdown, you can set a date and time when you want to stop allowing new customers to acquire it from the Store or discover its listing. This can be useful if you want to precisely control when an app will no longer be offered to new customers, such as when you are coordinating availability between more than one of your apps.</p>
+<p>By default, <strong>Stop acquisition</strong> is set to never. To change this, select <strong>at</strong> in the drop-down and specify a date and time, as described above. At the date and time you select, customers will no longer be able to acquire the app.</p>
+<p>It's important to understand that this option has the same impact as selecting <strong>Make this app discoverable but not available</strong> in the <a href="visibility-options.html#discoverability">Visibility</a> section and choosing <strong>Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device.</strong> To completely stop offering an app to new customers, click <strong>Make app unavailable</strong> from the App overview page. For more info, see <a href="app-package-management.html#removing-an-app-from-the-store">Removing an app from the Store</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you select a date to <strong>Stop acquisition</strong>, and later decide you'd like to make the app available again, you can create a new submission and change <strong>Stop acquisition</strong> back to <strong>Never</strong>. The app will become available again after your updated submission is published.</p>
+</div>
+<h2 id="customize-the-schedule-for-specific-markets">Customize the schedule for specific markets</h2>
+<p>By default, the options you select above will apply to all markets in which your app is offered. To customize the price for specific markets, click <strong>Customize for specific markets</strong>. The <strong>Market selection</strong> pop-up window will appear, listing all of the markets in which you’ve chosen to make your app available. If you excluded any markets in the <a href="market-selection.html">Markets</a> section, those markets will not be shown.</p>
+<p>To add a schedule for one market, select it and click <strong>Create</strong>. You’ll then see the same <strong>Release</strong> and <strong>Stop acquisition</strong> options described above, but the selections you make will only apply to that market.</p>
+<p>To add a schedule that will apply to multiple markets, you’ll create a <em>market group</em>. To do so, select the markets you wish to include, then enter a name for the group. (This name is for your reference only and won’t be visible to any customers.) For example, if you want to create a market group for North America, you can select <strong>Canada</strong>, <strong>Mexico</strong>, and <strong>United States</strong>, and name it <strong>North America</strong> or another name that you choose. When you’re finished creating your market group, click <strong>Create</strong>. You’ll then see the same <strong>Release</strong> and <strong>Stop acquisition</strong> options described above, but the selections you make will only apply to that market group.</p>
+<p>To add a custom schedule for an additional market, or an additional market group, just click <strong>Customize for specific markets</strong> again and repeat these steps. To change the markets included in a market group, select its name. To remove the custom schedule for a market group (or individual market), click <strong>Remove</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A market can’t belong to more than one of the market groups you use in the <strong>Schedule</strong> section.</p>
+</div>
+<h2 id="global-time-zones">Global Time Zones</h2>
+<p>Below is a table that shows what specific time zones are used in each market, so when your submission uses local time (e.g. release at 9am local), you can find out what time will it be released in each market, in particular helpful with markets that have more than one time zone, like Canada.</p>
+<details>
+<summary>View table</summary>
+<table>
+<thead>
+<tr>
+<th>Market</th>
+<th>Time Zone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Afghanistan</td>
+<td>(UTC+04:30) Kabul</td>
+</tr>
+<tr>
+<td>Albania</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Algeria</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>American Samoa</td>
+<td>(UTC+13:00) Samoa</td>
+</tr>
+<tr>
+<td>Andorra</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Angola</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Anguilla</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Antarctica</td>
+<td>(UTC+12:00) Auckland, Wellington</td>
+</tr>
+<tr>
+<td>Antigua and Barbuda</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Argentina</td>
+<td>(UTC-03:00) City of Buenos Aires</td>
+</tr>
+<tr>
+<td>Armenia</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Aruba</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Australia</td>
+<td>(UTC+10:00) Canberra, Melbourne, Sydney</td>
+</tr>
+<tr>
+<td>Austria</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>Azerbaijan</td>
+<td>(UTC+04:00) Baku</td>
+</tr>
+<tr>
+<td>Bahamas, The</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Bahrain</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Bangladesh</td>
+<td>(UTC+06:00) Dhaka</td>
+</tr>
+<tr>
+<td>Barbados</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Belarus</td>
+<td>(UTC+03:00) Minsk</td>
+</tr>
+<tr>
+<td>Belgium</td>
+<td>(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</td>
+</tr>
+<tr>
+<td>Belize</td>
+<td>(UTC-06:00) Central Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Benin</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Bermuda</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Bhutan</td>
+<td>(UTC+06:00) Dhaka</td>
+</tr>
+<tr>
+<td>Bolivarian Republic of Venezuela</td>
+<td>(UTC-04:00) Caracas</td>
+</tr>
+<tr>
+<td>Bolivia</td>
+<td>(UTC-04:00) Georgetown, La Paz, Manaus, San Juan</td>
+</tr>
+<tr>
+<td>Bonaire, Saint Eustatius and Saba</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Bosnia and Herzegovina</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Botswana</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Bouvet Island</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Brazil</td>
+<td>(UTC-03:00) Brasilia</td>
+</tr>
+<tr>
+<td>British Indian Ocean Territory</td>
+<td>(UTC+06:00) Dhaka</td>
+</tr>
+<tr>
+<td>British Virgin Islands</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Brunei</td>
+<td>(UTC+08:00) Irkutsk</td>
+</tr>
+<tr>
+<td>Bulgaria</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Burkina Faso</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Burundi</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>CÃ´te d'Ivoire</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Cambodia</td>
+<td>(UTC+07:00) Bangkok, Hanoi, Jakarta</td>
+</tr>
+<tr>
+<td>Cameroon</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Canada</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Cabo Verde</td>
+<td>(UTC-01:00) Cabo Verde Is.</td>
+</tr>
+<tr>
+<td>Cayman Islands</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Central African Republic</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Chad</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Chile</td>
+<td>(UTC-04:00) Santiago</td>
+</tr>
+<tr>
+<td>China</td>
+<td>(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</td>
+</tr>
+<tr>
+<td>Christmas Island</td>
+<td>(UTC+07:00) Krasnoyarsk</td>
+</tr>
+<tr>
+<td>Cocos (Keeling) Islands</td>
+<td>(UTC+06:30) Yangon (Rangoon)</td>
+</tr>
+<tr>
+<td>Colombia</td>
+<td>(UTC-05:00) Bogota, Lima, Quito, Rio Branco</td>
+</tr>
+<tr>
+<td>Comoros</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Congo</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Congo (DRC)</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Cook Islands</td>
+<td>(UTC-10:00) Hawaii</td>
+</tr>
+<tr>
+<td>Costa Rica</td>
+<td>(UTC-06:00) Central Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Croatia</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>CuraÃ§ao</td>
+<td>(UTC-04:00) Cuiaba</td>
+</tr>
+<tr>
+<td>Cyprus</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Czechia</td>
+<td>(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</td>
+</tr>
+<tr>
+<td>Denmark</td>
+<td>(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</td>
+</tr>
+<tr>
+<td>Djibouti</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Dominica</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Dominican Republic</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Ecuador</td>
+<td>(UTC-05:00) Bogota, Lima, Quito, Rio Branco</td>
+</tr>
+<tr>
+<td>Egypt</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>El Salvador</td>
+<td>(UTC-06:00) Central Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Equatorial Guinea</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Eritrea</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Estonia</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Ethiopia</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Falkland Islands</td>
+<td>(UTC-04:00) Santiago</td>
+</tr>
+<tr>
+<td>Faroe Islands</td>
+<td>(UTC+00:00) Dublin, Edinburgh, Lisbon, London</td>
+</tr>
+<tr>
+<td>Fiji</td>
+<td>(UTC+12:00) Fiji</td>
+</tr>
+<tr>
+<td>Finland</td>
+<td>(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</td>
+</tr>
+<tr>
+<td>France</td>
+<td>(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</td>
+</tr>
+<tr>
+<td>French Guiana</td>
+<td>(UTC-03:00) Cayenne, Fortaleza</td>
+</tr>
+<tr>
+<td>French Polynesia</td>
+<td>(UTC-10:00) Hawaii</td>
+</tr>
+<tr>
+<td>French Southern and Antarctic Lands</td>
+<td>(UTC+05:00) Ashgabat, Tashkent</td>
+</tr>
+<tr>
+<td>Gabon</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Gambia, The</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Georgia</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Germany</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>Ghana</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Gibraltar</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Greece</td>
+<td>(UTC+02:00) Athens, Bucharest</td>
+</tr>
+<tr>
+<td>Greenland</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Grenada</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Guadeloupe</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Guam</td>
+<td>(UTC+10:00) Guam, Port Moresby</td>
+</tr>
+<tr>
+<td>Guatemala</td>
+<td>(UTC-06:00) Central Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Guernsey</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Guinea</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Guinea-Bissau</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Guyana</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Haiti</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Heard Island and McDonald Islands</td>
+<td>(UTC-05:00) Bogota, Lima, Quito, Rio Branco</td>
+</tr>
+<tr>
+<td>Holy See (Vatican City)</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Honduras</td>
+<td>(UTC-06:00) Central Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Hong Kong SAR</td>
+<td>(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</td>
+</tr>
+<tr>
+<td>Hungary</td>
+<td>(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</td>
+</tr>
+<tr>
+<td>Iceland</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>India</td>
+<td>(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</td>
+</tr>
+<tr>
+<td>Indonesia</td>
+<td>(UTC+07:00) Bangkok, Hanoi, Jakarta</td>
+</tr>
+<tr>
+<td>Iraq</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Ireland</td>
+<td>(UTC+00:00) Dublin, Edinburgh, Lisbon, London</td>
+</tr>
+<tr>
+<td>Israel</td>
+<td>(UTC+02:00) Jerusalem</td>
+</tr>
+<tr>
+<td>Italy</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>Jamaica</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Japan</td>
+<td>(UTC+09:00) Osaka, Sapporo, Tokyo</td>
+</tr>
+<tr>
+<td>Jersey</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Jordan</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Kazakhstan</td>
+<td>(UTC+05:00) Ashgabat, Tashkent</td>
+</tr>
+<tr>
+<td>Kenya</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Kiribati</td>
+<td>(UTC+14:00) Kiritimati Island</td>
+</tr>
+<tr>
+<td>Korea</td>
+<td>(UTC+09:00) Seoul</td>
+</tr>
+<tr>
+<td>Kuwait</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Kyrgyzstan</td>
+<td>(UTC+06:00) Astana</td>
+</tr>
+<tr>
+<td>Laos</td>
+<td>(UTC+07:00) Bangkok, Hanoi, Jakarta</td>
+</tr>
+<tr>
+<td>Latvia</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Lesotho</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>Liberia</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Libya</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Liechtenstein</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Lithuania</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Luxembourg</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Macao SAR</td>
+<td>(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi</td>
+</tr>
+<tr>
+<td>Madagascar</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Malawi</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>Malaysia</td>
+<td>(UTC+08:00) Kuala Lumpur, Singapore</td>
+</tr>
+<tr>
+<td>Maldives</td>
+<td>(UTC+05:00) Ashgabat, Tashkent</td>
+</tr>
+<tr>
+<td>Mali</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Malta</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Man, Isle of</td>
+<td>(UTC+00:00) Dublin, Edinburgh, Lisbon, London</td>
+</tr>
+<tr>
+<td>Marshall Islands</td>
+<td>(UTC+12:00) Petropavlovsk-Kamchatsky - Old</td>
+</tr>
+<tr>
+<td>Martinique</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Mauritania</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Mauritius</td>
+<td>(UTC+04:00) Port Louis</td>
+</tr>
+<tr>
+<td>Mayotte</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Mexico</td>
+<td>(UTC-06:00) Guadalajara, Mexico City, Monterrey</td>
+</tr>
+<tr>
+<td>Micronesia</td>
+<td>(UTC+10:00) Guam, Port Moresby</td>
+</tr>
+<tr>
+<td>Moldova</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Monaco</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Mongolia</td>
+<td>(UTC+07:00) Krasnoyarsk</td>
+</tr>
+<tr>
+<td>Montenegro</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Montserrat</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Morocco</td>
+<td>(UTC+01:00) Casablanca</td>
+</tr>
+<tr>
+<td>Mozambique</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>Myanmar</td>
+<td>(UTC+06:30) Yangon (Rangoon)</td>
+</tr>
+<tr>
+<td>Namibia</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>Nauru</td>
+<td>(UTC+12:00) Petropavlovsk-Kamchatsky - Old</td>
+</tr>
+<tr>
+<td>Nepal</td>
+<td>(UTC+05:45) Kathmandu</td>
+</tr>
+<tr>
+<td>Netherlands</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>New Caledonia</td>
+<td>(UTC+11:00) Solomon Is., New Caledonia</td>
+</tr>
+<tr>
+<td>New Zealand</td>
+<td>(UTC+12:00) Auckland, Wellington</td>
+</tr>
+<tr>
+<td>Nicaragua</td>
+<td>(UTC-06:00) Central Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Niger</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Nigeria</td>
+<td>(UTC+01:00) West Central Africa</td>
+</tr>
+<tr>
+<td>Niue</td>
+<td>(UTC+13:00) Samoa</td>
+</tr>
+<tr>
+<td>Norfolk Island</td>
+<td>(UTC+11:00) Solomon Is., New Caledonia</td>
+</tr>
+<tr>
+<td>North Macedonia</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Northern Mariana Islands</td>
+<td>(UTC+10:00) Guam, Port Moresby</td>
+</tr>
+<tr>
+<td>Norway</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>Oman</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Pakistan</td>
+<td>(UTC+05:00) Islamabad, Karachi</td>
+</tr>
+<tr>
+<td>Palau</td>
+<td>(UTC+09:00) Osaka, Sapporo, Tokyo</td>
+</tr>
+<tr>
+<td>Palestinian Authority</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>Panama</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Papua New Guinea</td>
+<td>(UTC+10:00) Vladivostok</td>
+</tr>
+<tr>
+<td>Paraguay</td>
+<td>(UTC-04:00) Asuncion</td>
+</tr>
+<tr>
+<td>Peru</td>
+<td>(UTC-05:00) Bogota, Lima, Quito, Rio Branco</td>
+</tr>
+<tr>
+<td>Philippines</td>
+<td>(UTC+08:00) Kuala Lumpur, Singapore</td>
+</tr>
+<tr>
+<td>Pitcairn Islands</td>
+<td>(UTC-08:00) Pacific Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Poland</td>
+<td>(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</td>
+</tr>
+<tr>
+<td>Portugal</td>
+<td>(UTC+00:00) Dublin, Edinburgh, Lisbon, London</td>
+</tr>
+<tr>
+<td>Qatar</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Reunion</td>
+<td>(UTC+04:00) Port Louis</td>
+</tr>
+<tr>
+<td>Romania</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>ROW</td>
+<td>(UTC-07:00) Mountain Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Russia</td>
+<td>(UTC+03:00) Moscow, St. Petersburg</td>
+</tr>
+<tr>
+<td>Rwanda</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>SÃ£o TomÃ© and PrÃ­ncipe</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Saint BarthÃ©lemy</td>
+<td>(UTC+04:00) Yerevan</td>
+</tr>
+<tr>
+<td>Saint Helena, Ascension and Tristan da Cunha</td>
+<td>(UTC+00:00) Dublin, Edinburgh, Lisbon, London</td>
+</tr>
+<tr>
+<td>Saint Kitts and Nevis</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Saint Lucia</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Saint Martin (French Part)</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Saint Pierre and Miquelon</td>
+<td>(UTC-02:00) Mid-Atlantic - Old</td>
+</tr>
+<tr>
+<td>Saint Vincent and the Grenadines</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Samoa</td>
+<td>(UTC+13:00) Samoa</td>
+</tr>
+<tr>
+<td>San Marino</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Saudi Arabia</td>
+<td>(UTC+03:00) Kuwait, Riyadh</td>
+</tr>
+<tr>
+<td>Senegal</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Serbia</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Seychelles</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Sierra Leone</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Singapore</td>
+<td>(UTC+08:00) Kuala Lumpur, Singapore</td>
+</tr>
+<tr>
+<td>Sint Maarten (Dutch Part)</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Slovakia</td>
+<td>(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</td>
+</tr>
+<tr>
+<td>Slovenia</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Solomon Islands</td>
+<td>(UTC+11:00) Solomon Is., New Caledonia</td>
+</tr>
+<tr>
+<td>Somalia</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>South Africa</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>South Georgia and the South Sandwich Islands</td>
+<td>(UTC-02:00) Mid-Atlantic - Old</td>
+</tr>
+<tr>
+<td>Spain</td>
+<td>(UTC+01:00) Brussels, Copenhagen, Madrid, Paris</td>
+</tr>
+<tr>
+<td>Sri Lanka</td>
+<td>(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi</td>
+</tr>
+<tr>
+<td>Suriname</td>
+<td>(UTC-03:00) Cayenne, Fortaleza</td>
+</tr>
+<tr>
+<td>Svalbard and Jan Mayen</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Swaziland</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>Sweden</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>Switzerland</td>
+<td>(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</td>
+</tr>
+<tr>
+<td>Taiwan</td>
+<td>(UTC+08:00) Taipei</td>
+</tr>
+<tr>
+<td>Tajikistan</td>
+<td>(UTC+05:00) Ashgabat, Tashkent</td>
+</tr>
+<tr>
+<td>Tanzania</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Thailand</td>
+<td>(UTC+07:00) Bangkok, Hanoi, Jakarta</td>
+</tr>
+<tr>
+<td>Timor-Leste</td>
+<td>(UTC+09:00) Seoul</td>
+</tr>
+<tr>
+<td>Togo</td>
+<td>(UTC+00:00) Monrovia, Reykjavik</td>
+</tr>
+<tr>
+<td>Tokelau</td>
+<td>(UTC+13:00) Nuku'alofa</td>
+</tr>
+<tr>
+<td>Tonga</td>
+<td>(UTC+13:00) Nuku'alofa</td>
+</tr>
+<tr>
+<td>Trinidad and Tobago</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Tunisia</td>
+<td>(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb</td>
+</tr>
+<tr>
+<td>Türkiye</td>
+<td>(UTC+03:00) Istanbul</td>
+</tr>
+<tr>
+<td>Turkmenistan</td>
+<td>(UTC+05:00) Ashgabat, Tashkent</td>
+</tr>
+<tr>
+<td>Turks and Caicos Islands</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Tuvalu</td>
+<td>(UTC+12:00) Petropavlovsk-Kamchatsky - Old</td>
+</tr>
+<tr>
+<td>U.S. Minor Outlying Islands</td>
+<td>(UTC+13:00) Samoa</td>
+</tr>
+<tr>
+<td>U.S. Virgin Islands</td>
+<td>(UTC-04:00) Atlantic Time (Canada)</td>
+</tr>
+<tr>
+<td>Uganda</td>
+<td>(UTC+03:00) Nairobi</td>
+</tr>
+<tr>
+<td>Ukraine</td>
+<td>(UTC+02:00) Chisinau</td>
+</tr>
+<tr>
+<td>United Arab Emirates</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>United Kingdom</td>
+<td>(UTC+00:00) Dublin, Edinburgh, Lisbon, London</td>
+</tr>
+<tr>
+<td>United States</td>
+<td>(UTC-05:00) Eastern Time (US &amp; Canada)</td>
+</tr>
+<tr>
+<td>Uruguay</td>
+<td>(UTC-03:00) Brasilia</td>
+</tr>
+<tr>
+<td>Uzbekistan</td>
+<td>(UTC+05:00) Ashgabat, Tashkent</td>
+</tr>
+<tr>
+<td>Vanuatu</td>
+<td>(UTC+11:00) Solomon Is., New Caledonia</td>
+</tr>
+<tr>
+<td>Vietnam</td>
+<td>(UTC+07:00) Bangkok, Hanoi, Jakarta</td>
+</tr>
+<tr>
+<td>Wallis and Futuna</td>
+<td>(UTC+12:00) Petropavlovsk-Kamchatsky - Old</td>
+</tr>
+<tr>
+<td>Yemen</td>
+<td>(UTC+04:00) Abu Dhabi, Muscat</td>
+</tr>
+<tr>
+<td>Zambia</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+<tr>
+<td>Zimbabwe</td>
+<td>(UTC+02:00) Harare, Pretoria</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/pwa/configure-release-schedule.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

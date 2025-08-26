@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows data binding overview for developers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows data binding overview for developers ">
+    
+    <meta name="description" content="This topic shows you how to bind a control (or other UI element) to a single item or bind an item&#39;s control to a collection of items in a WinUI app with Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-data-binding-overview">Windows data binding overview</h1>
+
+<p>This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Windows App SDK app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see <a href="data-binding-in-depth.html">Data binding in depth</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This topic assumes that you know how to create a basic Windows App SDK app. For instructions on creating your first Windows App SDK app, see <a href="/windows/apps/winui/winui3/create-your-first-winui3-app">Create your first WinUI 3 (Windows App SDK) project</a>.</p>
+<h2 id="create-the-project">Create the project</h2>
+<p>Create a new <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> C# project. Name it &quot;Quickstart&quot;.</p>
+<h2 id="binding-to-a-single-item">Binding to a single item</h2>
+<p>Every binding consists of a binding target and a binding source. Typically, the target is a property of a control or other UI element, and the source is a property of a class instance (a data model, or a view model). This example shows how to bind a control to a single item. The target is the <code>Text</code> property of a <code>TextBlock</code>. The source is an instance of a simple class named <code>Recording</code> that represents an audio recording. Let's look at the class first.</p>
+<p>Add a new class to your project, and name the class <code>Recording</code>.</p>
+<pre><code class="lang-csharp">namespace Quickstart
+{
+    public class Recording
+    {
+        public string ArtistName { get; set; }
+        public string CompositionName { get; set; }
+        public DateTime ReleaseDateTime { get; set; }
+        public Recording()
+        {
+            ArtistName = &quot;Wolfgang Amadeus Mozart&quot;;
+            CompositionName = &quot;Andante in C for Piano&quot;;
+            ReleaseDateTime = new DateTime(1761, 1, 1);
+        }
+        public string OneLineSummary
+        {
+            get
+            {
+                return $&quot;{CompositionName} by {ArtistName}, released: &quot;
+                    + ReleaseDateTime.ToString(&quot;d&quot;);
+            }
+        }
+    }
+    public class RecordingViewModel
+    {
+        private Recording defaultRecording = new Recording();
+        public Recording DefaultRecording { get { return defaultRecording; } }
+    }
+}
+</code></pre>
+<p>Next, expose the binding source class from the class that represents your window of markup. We do that by adding a property of type <code>RecordingViewModel</code> to <strong>MainWindow.xaml.cs</strong>.</p>
+<pre><code class="lang-csharp">namespace Quickstart
+{
+    public sealed partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            this.InitializeComponent();
+            ViewModel = new RecordingViewModel();
+        }
+        public RecordingViewModel ViewModel{ get; set; }
+    }
+}
+</code></pre>
+<p>The last piece is to bind a <code>TextBlock</code> to the <code>ViewModel.DefaultRecording.OneLineSummary</code> property.</p>
+<pre><code class="lang-xaml">&lt;Window x:Class=&quot;Quickstart.MainWindow&quot; ... &gt;
+    &lt;Grid&gt;
+        &lt;TextBlock Text=&quot;{x:Bind ViewModel.DefaultRecording.OneLineSummary}&quot;
+    HorizontalAlignment=&quot;Center&quot;
+    VerticalAlignment=&quot;Center&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>Here's the result.</p>
+<p><img src="images/xaml-databinding0.png" alt="Binding a textblock"></p>
+<h2 id="binding-to-a-collection-of-items">Binding to a collection of items</h2>
+<p>A common scenario is to bind to a collection of business objects. In C#, the generic <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;T&gt;</a> class is a good collection choice for data binding, because it implements the <a href="/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a> and <a href="/dotnet/api/system.collections.specialized.inotifycollectionchanged">INotifyCollectionChanged</a> interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement <code>INotifyPropertyChanged</code>. For more info, see <a href="data-binding-in-depth.html">Data binding in depth</a>.</p>
+<p>This next example binds a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> to a collection of <code>Recording</code> objects. Let's start by adding the collection to our view model. Just add these new members to the <code>RecordingViewModel</code> class.</p>
+<pre><code class="lang-csharp">public class RecordingViewModel
+{
+    ...
+    private ObservableCollection&lt;Recording&gt; recordings = new ObservableCollection&lt;Recording&gt;();
+    public ObservableCollection&lt;Recording&gt; Recordings{ get{ return recordings; } }
+    public RecordingViewModel()
+    {
+        recordings.Add(new Recording(){ ArtistName = &quot;Johann Sebastian Bach&quot;,
+            CompositionName = &quot;Mass in B minor&quot;, ReleaseDateTime = new DateTime(1748, 7, 8) });
+        recordings.Add(new Recording(){ ArtistName = &quot;Ludwig van Beethoven&quot;,
+            CompositionName = &quot;Third Symphony&quot;, ReleaseDateTime = new DateTime(1805, 2, 11) });
+        recordings.Add(new Recording(){ ArtistName = &quot;George Frideric Handel&quot;,
+            CompositionName = &quot;Serse&quot;, ReleaseDateTime = new DateTime(1737, 12, 3) });
+    }
+}
+</code></pre>
+<p>And then bind a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> to the <code>ViewModel.Recordings</code> property.</p>
+<pre><code class="lang-xaml">&lt;Window x:Class=&quot;Quickstart.MainWindow&quot; ... &gt;
+    &lt;Grid&gt;
+        &lt;ListView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;
+        HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>We haven't yet provided a data template for the <code>Recording</code> class, so the best the UI framework can do is to call <a href="/dotnet/api/system.object.tostring#System_Object_ToString">ToString</a> for each item in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a>. The default implementation of <code>ToString</code> is to return the type name.</p>
+<p><img src="images/xaml-databinding1.png" alt="Binding a list view 1"></p>
+<p>To remedy this, we can either override <a href="/dotnet/api/system.object.tostring#System_Object_ToString">ToString</a> to return the value of <code>OneLineSummary</code>, or we can provide a data template. The data template option is a more usual solution, and a more flexible one. You specify a data template by using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.contenttemplate">ContentTemplate</a> property of a content control or the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate</a> property of an items control. Here are two ways we could design a data template for <code>Recording</code> together with an illustration of the result.</p>
+<pre><code class="lang-xaml">&lt;ListView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;
+HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;TextBlock Text=&quot;{x:Bind OneLineSummary}&quot;/&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p><img src="images/xaml-databinding2.png" alt="Binding a list view 2"></p>
+<pre><code class="lang-xaml">&lt;ListView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;
+HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;6&quot;&gt;
+                &lt;SymbolIcon Symbol=&quot;Audio&quot; Margin=&quot;0,0,12,0&quot;/&gt;
+                &lt;StackPanel&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind ArtistName}&quot; FontWeight=&quot;Bold&quot;/&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p><img src="images/xaml-databinding3.png" alt="Binding a list view 3"></p>
+<p>For more information about XAML syntax, see <a href="/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio">Create a UI with XAML</a>. For more information about control layout, see <a href="/windows/apps/design/layout/layouts-with-xaml">Define layouts with XAML</a>.</p>
+<h2 id="adding-a-details-view">Adding a details view</h2>
+<p>You can choose to display all the details of <code>Recording</code> objects in <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.</p>
+<p>There are two ways to go about this. You can bind the details view to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem">SelectedItem</a> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a>. Or you can use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource">CollectionViewSource</a>, in which case you bind both the <code>ListView</code> and the details view to the <code>CollectionViewSource</code> (doing so takes care of the currently-selected item for you). Both techniques are shown below, and they both give the same results (shown in the illustration).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>So far in this topic we've only used the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a>, but both of the techniques we'll show below require the more flexible (but less performant) <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding} markup extension</a>.</p>
+</div>
+<p>First, here's the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem">SelectedItem</a> technique. For a C# application, the only change necessary is to the markup.</p>
+<pre><code class="lang-xaml">&lt;Window x:Class=&quot;Quickstart.MainWindow&quot; ... &gt;
+    &lt;Grid&gt;
+        &lt;StackPanel HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+            &lt;ListView x:Name=&quot;recordingsListView&quot; ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+                &lt;ListView.ItemTemplate&gt;
+                    &lt;DataTemplate x:DataType=&quot;local:Recording&quot;&gt;
+                        &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;6&quot;&gt;
+                            &lt;SymbolIcon Symbol=&quot;Audio&quot; Margin=&quot;0,0,12,0&quot;/&gt;
+                            &lt;StackPanel&gt;
+                                &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot;/&gt;
+                            &lt;/StackPanel&gt;
+                        &lt;/StackPanel&gt;
+                    &lt;/DataTemplate&gt;
+                &lt;/ListView.ItemTemplate&gt;
+            &lt;/ListView&gt;
+            &lt;StackPanel DataContext=&quot;{Binding SelectedItem, ElementName=recordingsListView}&quot;
+            Margin=&quot;0,24,0,0&quot;&gt;
+                &lt;TextBlock Text=&quot;{Binding ArtistName}&quot;/&gt;
+                &lt;TextBlock Text=&quot;{Binding CompositionName}&quot;/&gt;
+                &lt;TextBlock Text=&quot;{Binding ReleaseDateTime}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>For the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource">CollectionViewSource</a> technique, first add a <code>CollectionViewSource</code> as a resource of the top-level <code>Grid</code>.</p>
+<pre><code class="lang-xaml">&lt;Grid.Resources&gt;
+    &lt;CollectionViewSource x:Name=&quot;RecordingsCollection&quot; Source=&quot;{x:Bind ViewModel.Recordings}&quot;/&gt;
+&lt;/Grid.Resources&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Window class in WinUI doesn't have a <code>Resources</code> property. You can add the <code>CollectionViewSource</code> to the top-level <code>Grid</code> (or other parent UI element like <code>StackPanel</code>) element instead. If you're working within a <code>Page</code>, you can add the <code>CollectionViewSource</code> to the <code>Page.Resources</code>.</p>
+</div>
+<p>And then adjust the bindings on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> (which no longer needs to be named) and on the details view to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource">CollectionViewSource</a>. Note that by binding the details view directly to the <code>CollectionViewSource</code>, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the <code>CurrentItem</code> property as the path for the binding, although you can do that if there's any ambiguity.</p>
+<pre><code class="lang-xaml">...
+&lt;ListView ItemsSource=&quot;{Binding Source={StaticResource RecordingsCollection}}&quot;&gt;
+...
+&lt;StackPanel DataContext=&quot;{Binding Source={StaticResource RecordingsCollection}}&quot; ...&gt;
+...
+</code></pre>
+<p>And here's the identical result in each case.</p>
+<p><img src="images/xaml-databinding4.png" alt="Binding a list view 4"></p>
+<h2 id="formatting-or-converting-data-values-for-display">Formatting or converting data values for display</h2>
+<p>There is an issue with the rendering above. The <code>ReleaseDateTime</code> property is not just a date, it's a <a href="/uwp/api/windows.foundation.datetime">DateTime</a>. So, it's being displayed with more precision than we need. One solution is to add a string property to the <code>Recording</code> class that returns the equivalent of <code>ReleaseDateTime.ToString(&quot;d&quot;)</code>. Naming that property <code>ReleaseDate</code> would indicate that it returns a date, and not a date-and-time. Naming it <code>ReleaseDateAsString</code> would further indicate that it returns a string.</p>
+<p>A more flexible solution is to use something known as a value converter. Here's an example of how to author your own value converter. Add the code below to your <strong>Recording.cs</strong> source code file.</p>
+<pre><code class="lang-csharp">public class StringFormatter : Microsoft.UI.Xaml.Data.IValueConverter
+{
+    // This converts the value object to the string to display.
+    // This will work with most simple types.
+    public object Convert(object value, Type targetType,
+        object parameter, string language)
+    {
+        // Retrieve the format string and use it to format the value.
+        string formatString = parameter as string;
+        if (!string.IsNullOrEmpty(formatString))
+        {
+            return string.Format(formatString, value);
+        }
+
+        // If the format string is null or empty, simply
+        // call ToString() on the value.
+        return value.ToString();
+    }
+
+    // No need to implement converting back on a one-way binding
+    public object ConvertBack(object value, Type targetType,
+        object parameter, string language)
+    {
+        throw new NotImplementedException();
+    }
+}
+</code></pre>
+<p>Now we can add an instance of <code>StringFormatter</code> as a resource and use it in the binding of the <code>TextBlock</code> that displays the <code>ReleaseDateTime</code> property.</p>
+<pre><code class="lang-xaml">&lt;Grid.Resources&gt;
+    ...
+    &lt;local:StringFormatter x:Key=&quot;StringFormatterValueConverter&quot;/&gt;
+&lt;/Grid.Resources&gt;
+...
+&lt;TextBlock Text=&quot;{Binding ReleaseDateTime,
+    Converter={StaticResource StringFormatterValueConverter},
+    ConverterParameter=Released: \{0:d\}}&quot;/&gt;
+...
+</code></pre>
+<p>As you can see above, for formatting flexibility we use the markup to pass a format string into the converter by way of the converter parameter. In the code example shown in this topic, the C# value converter makes use of that parameter.</p>
+<p>Here's the result.</p>
+<p><img src="images/xaml-databinding5.png" alt="displaying a date with custom formatting"></p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="index.html">Data binding</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-binding/data-binding-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

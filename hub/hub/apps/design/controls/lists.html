@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Collections and lists </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Collections and lists ">
+    
+    <meta name="description" content="Learn about collections and lists as representations of multiple related data items that appear together.&#160;">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="collections-and-lists">Collections and lists</h1>
+
+<p>Collections and lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview">ItemsView</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView">ListView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView">GridView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview">FlipView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview">TreeView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater">ItemsRepeater class</a></p>
+</blockquote>
+<p>The controls covered in this article include:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Primary use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ItemsView</strong></td>
+<td>to display collections using a flexible layout system</td>
+</tr>
+<tr>
+<td><strong>ListView</strong></td>
+<td>to display text-heavy content collections</td>
+</tr>
+<tr>
+<td><strong>GridView</strong></td>
+<td>to display image-heavy content collections</td>
+</tr>
+<tr>
+<td><strong>FlipView</strong></td>
+<td>to display image-heavy content collections that require exactly one item to be in focus at a time</td>
+</tr>
+<tr>
+<td><strong>TreeView</strong></td>
+<td>to display text-heavy content collections in a specific hierarchy</td>
+</tr>
+<tr>
+<td><strong>ItemsRepeater</strong></td>
+<td>as a customizable building block to create custom collection controls</td>
+</tr>
+</tbody>
+</table>
+<p>Design guidelines, features, and examples are given below for each control.</p>
+<p>Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> is used. Detailed information on data templates and customizing the look of a collection view can be found on the <a href="item-containers-templates.html">Item containers and templates</a> page.</p>
+<p>Each of these controls (with the exception of ItemsRepeater) also have built-in behavior to allow for the selection of single or multiple items. See <a href="selection-modes.html">Selection modes overview</a> to learn more.</p>
+<p>One of the scenarios not covered in this article is displaying collections in a table or across multiple columns. If you're looking to display a collection in this format, consider using the <a href="/windows/communitytoolkit/controls/datagrid">DataGrid control</a> from the <a href="/dotnet/communitytoolkit/windows/">Windows Community Toolkit</a>.</p>
+<h2 id="examples">Examples</h2>
+<table>
+<th align="left">WinUI 2 Gallery</th><th>
+</th><tr>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></td>
+<td>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, see the <a href="winui2gallery:/item/ListView">ListView</a>, <a href="winui2gallery:/item/GridView">GridView</a>, <a href="winui2gallery:/item/FlipView">FlipView</a>, <a href="winui2gallery:/item/TreeView">TreeView</a>, and <a href="winui2gallery:/item/ItemsRepeater">ItemsRepeater</a> in action.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+<h2 id="items-view">Items view</h2>
+<p>You can use an items view to display text- or image-heavy data items in a variety of flexible layouts that can be swapped at run-time.</p>
+<h3 id="is-this-the-right-control">Is this the right control?</h3>
+<p>Use an items view to:</p>
+<ul>
+<li>Display a collection that primarily consists of text-based items, where all of the items should have the same visual and interaction behavior.</li>
+<li>Display a content collection in which the focal point of each item is an image, and each item should have the same visual and interaction behavior.</li>
+<li>Display content libraries.</li>
+<li>Accommodate a variety of use cases, including the following common ones:
+<ul>
+<li>Create a contacts list.</li>
+<li>Storefront-type user interface (i.e. browsing apps, songs, products)</li>
+<li>Interactive photo libraries</li>
+</ul>
+</li>
+</ul>
+<h3 id="examples-1">Examples</h3>
+<p>Here's an items view that shows a collection of photos in a uniform grid layout.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-uniform-grid.png" alt="A collection of photos shown in a uniform grid layout where each item is the same size.">
+</span>
+</p>
+<p>This is the same collection shown in a stack layout. The focus here is on the text rather than on the photo.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-stack.png" alt="A collection of small photos shown in a vertical list with several rows of text below each photo.">
+</span>
+</p>
+<h3 id="related-articles">Related articles</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="itemsview.html">Items view</a></td>
+<td>Learn the essentials of using an items view in your app.</td>
+</tr>
+<tr>
+<td><a href="item-containers-templates.html">Item containers and templates</a></td>
+<td>The items you display in a list or grid can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list-view">List view</h2>
+<p>List views represent text-heavy items, typically in a single-column, vertically-stacked layout. They let you categorize items and assign group headers, drag and drop items, curate content, and reorder items.</p>
+<h3 id="is-this-the-right-control-1">Is this the right control?</h3>
+<p>Use a list view to:</p>
+<ul>
+<li>Display a collection that primarily consists of text-based items, where all of the items should have the same visual and interaction behavior.</li>
+<li>Represent a single or categorized collection of content.</li>
+<li>Accommodate a variety of use cases, including the following common ones:
+<ul>
+<li>Create a list of messages or message log.</li>
+<li>Create a contacts list.</li>
+<li>Create the list pane in the <a href="list-details.html">list/details pattern</a>. A list/details pattern is often used in email apps, in which one pane has a list of selectable items while the other pane (details) has a detailed view of the selected item.</li>
+</ul>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you need to handle pointer events for a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement">UIElement</a> in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations">UIElement.CancelDirectmanipulation</a>. To re-enable manipulation events in the view, call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation">UIElement.TryStartDirectManipulation</a>.</p>
+</div>
+<h3 id="examples-2">Examples</h3>
+<p>Here's a simple list view that shows a contacts list, and groups the data items alphabetically. The group headers (each letter of the alphabet in this example) can also be customized to stay &quot;sticky&quot;, as in they will always appear at the top of the ListView while scrolling.</p>
+<p><img src="images/listview-grouped-example-resized-final.png" alt="A list view with grouped data"></p>
+<p>This is a ListView that has been inverted to display a log of messages, with the newest messages appearing at the bottom. With an inverted ListView, items appear at the bottom of the screen with a built-in animation.</p>
+<p><img src="images/listview-inverted-2.png" alt="Inverted List view"></p>
+<h3 id="related-articles-1">Related articles</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="listview-and-gridview.html">List view and grid view</a></td>
+<td>Learn the essentials of using a list view or grid view in your app.</td>
+</tr>
+<tr>
+<td><a href="item-containers-templates.html">Item containers and templates</a></td>
+<td>The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates.</td>
+</tr>
+<tr>
+<td><a href="item-templates-listview.html">Item templates for list view</a></td>
+<td>Use these example item templates for a ListView to get the look of common app types.</td>
+</tr>
+<tr>
+<td><a href="inverted-lists.html">Inverted lists</a></td>
+<td>Inverted lists have new items added at the bottom, like in a chat app. Follow this article's guidance to use an inverted list in your app.</td>
+</tr>
+<tr>
+<td><a href="pull-to-refresh.html">Pull-to-refresh</a></td>
+<td>The pull-to-refresh mechanism lets a user pull down on a list of data using touch in order to retrieve more data. Use this article to implement pull-to-refresh in your list view.</td>
+</tr>
+<tr>
+<td><a href="nested-ui.html">Nested UI</a></td>
+<td>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="grid-view">Grid view</h2>
+<p>Grid views are suited for arranging and browsing image-based content collections. A grid view layout scrolls vertically and pans horizontally. Items are in a wrapped layout, as they appear in a left-to-right, then top-to-bottom reading order.</p>
+<h3 id="is-this-the-right-control-2">Is this the right control?</h3>
+<p>Use a grid view to:</p>
+<ul>
+<li>Display a content collection in which the focal point of each item is an image, and each item should have the same visual and interaction behavior.</li>
+<li>Display content libraries.</li>
+<li>Format the two content views associated with <a href="semantic-zoom.html">semantic zoom</a>.</li>
+<li>Accommodate a variety of use cases, including the following common ones:
+<ul>
+<li>Storefront-type user interface (i.e. browsing apps, songs, products)</li>
+<li>Interactive photo libraries</li>
+</ul>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you need to handle pointer events for a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement"><strong>UIElement</strong></a> in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations">UIElement.CancelDirectmanipulation()</a>. To re-enable manipulation events in the view, call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation">UIElement.TryStartDirectManipulation()</a>.</p>
+</div>
+<h3 id="examples-3">Examples</h3>
+<p>This example shows a typical grid view layout, in this case for browsing apps. Metadata for grid view items is usually restricted to a few lines of text and an item rating.</p>
+<p><img src="images/controls-gridview-example-02.png" alt="Example of a grid view layout"></p>
+<p>A grid view is an ideal solution for a content library, which is often used to present media such as pictures and videos. In a content library, users expect to be able to tap an item to invoke an action.</p>
+<p><img src="images/gridview-simple-example-final.png" alt="Example of a content library"></p>
+<h3 id="related-articles-2">Related articles</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="listview-and-gridview.html">List view and grid view</a></td>
+<td>Learn the essentials of using a list view or grid view in your app.</td>
+</tr>
+<tr>
+<td><a href="item-containers-templates.html">Item containers and templates</a></td>
+<td>The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates.</td>
+</tr>
+<tr>
+<td><a href="item-templates-gridview.html">Item templates for grid view</a></td>
+<td>Use these example item templates for a ListView to get the look of common app types.</td>
+</tr>
+<tr>
+<td><a href="nested-ui.html">Nested UI</a></td>
+<td>Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="flip-view">Flip view</h2>
+<p>Flip views are suited for browsing image-based content collections, specifically where the desired experience is for only one image to be visible at a time. A flip view allows the user to move or &quot;flip&quot; through the collection items (either vertically or horizontally), having each item appear one at a time  after the user interaction.</p>
+<h3 id="is-this-the-right-control-3">Is this the right control?</h3>
+<p>Use a flip view to:</p>
+<ul>
+<li>Display a small to medium (less than 25 items) collection, where the collection is made up of images with little to no metadata.</li>
+<li>Display items one at a time, and allow the end-user to flip through the items at their own pace.</li>
+<li>Accommodate a variety of use cases, including the following common ones:
+<ul>
+<li>Photo galleries</li>
+<li>Product galleries or showcases</li>
+</ul>
+</li>
+</ul>
+<h3 id="examples-4">Examples</h3>
+<p>The following two examples show a FlipView that flips horizontally and vertically, respectively.</p>
+<p><img src="images/controls-flipview-horizonal.jpg" alt="Horizontal flip view"></p>
+<p><img src="images/controls-flipview-vertical.jpg" alt="Vertical Flip view"></p>
+<h3 id="related-articles-3">Related articles</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="flipview.html">Flip view</a></td>
+<td>Learn the essentials of using a flip view in your app, along with how to customize the look of your items within a flip view.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tree-view">Tree view</h2>
+<p>Tree views are suited for displaying text-based collections that have an important hierarchy that needs to be showcased. Tree view items are collapsible/expandable, are shown in a visual hierarchy, can be supplemented with icons, and can be dragged and dropped between tree views. Tree views allow for N-level nesting.</p>
+<h3 id="is-this-the-right-control-4">Is this the right control?</h3>
+<p>Use a tree view to:</p>
+<ul>
+<li>Display a collection of nested items whose context and meaning is dependent on a hierarchy or specific organizational chain.</li>
+<li>Accommodate a variety of use cases, including the following common ones:
+<ul>
+<li>File browser</li>
+<li>Company organizational chart</li>
+</ul>
+</li>
+</ul>
+<h3 id="examples-5">Examples</h3>
+<p>Here is an example of a tree view that represents a file explorer, and displays many different nested items supplemented by icons.</p>
+<p><img src="images/treeview-icons.png" alt="Tree view with icons"></p>
+<h3 id="related-articles-4">Related articles</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="tree-view.html">Tree view</a></td>
+<td>Learn the essentials of using a tree view in your app, along with how to customize the look and interaction behavior of your items within a tree view.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="itemsrepeater">ItemsRepeater</h2>
+<p>ItemsRepeater is different from the rest of the collection controls shown on this page because it does not provide any styling or interaction out-of-box, i.e. when simply placed on a page without defining any properties. ItemsRepeater is rather a building block that you as a developer can use to create your own custom collections control, specifically one that cannot be achieved by using the other controls in this article. ItemsRepeater is a data-driven and high-performance panel that can be tailored to fit your exact needs.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The ItemsView control is built on top of ItemsRepeater and provides many of the benefits of ItemsRepeater without the need to create your own custom collection control.</p>
+</div>
+<h3 id="is-this-the-right-control-5">Is this the right control?</h3>
+<p>Use an ItemsRepeater if:</p>
+<ul>
+<li>You have a specific user interface and user experience in mind that cannot be created using existing collection controls.</li>
+<li>You have an existing data source for your items (such as data pulled from the internet, a database, or a pre-existing collection in your code-behind).</li>
+</ul>
+<h3 id="examples-6">Examples</h3>
+<p>The following three examples are all ItemsRepeater controls that are bound to the same data source (a collection of numbers). The collection of numbers is represented in three ways, with each of the ItemsRepeaters below using a different custom <a href="/uwp/api/microsoft.ui.xaml.controls.layout">Layout</a> and a different custom <a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate">ItemTemplate</a>.</p>
+<p><img src="images/itemsrepeater-1.png" alt="ItemsRepeater with horizontal bars">
+<img src="images/itemsrepeater-2.png" alt="ItemsRepeater with vertical bars">
+<img src="images/itemsrepeater-3.png" alt="ItemsRepeater with circular representation"></p>
+<h3 id="related-articles-5">Related articles</h3>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="items-repeater.html">ItemsRepeater</a></td>
+<td>Learn the essentials of using an ItemsRepeater in your app, along with how to implement all of the necessary interaction and visual components for your collection view.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="globalization-and-localization-checklist">Globalization and localization checklist</h2>
+<ul>
+<li><strong>Wrapping</strong>: Allow two lines for the list label.</li>
+<li><strong>Horizontal expansion</strong>: Make sure fields can accommodate text expansion and are scrollable.</li>
+<li><strong>Vertical spacing</strong>: Use non-Latin characters for vertical spacing to ensure non-Latin scripts will display properly.</li>
+</ul>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI Gallery sample</a> - See all the XAML controls in an interactive format.</li>
+</ul>
+<h2 id="related-articles-6">Related articles</h2>
+<p><strong>Design and UX Guidelines</strong></p>
+<ul>
+<li><a href="list-details.html">List/details</a></li>
+<li><a href="navigationview.html">Nav pane</a></li>
+<li><a href="semantic-zoom.html">Semantic zoom</a></li>
+<li><a href="../input/drag-and-drop.html">Drag and drop</a></li>
+<li><a href="/windows/uwp/files/thumbnails">Thumbnail images</a></li>
+</ul>
+<p><strong>API reference</strong></p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView">ListView class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView">GridView class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox">ComboBox class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListBox">ListBox class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/lists.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

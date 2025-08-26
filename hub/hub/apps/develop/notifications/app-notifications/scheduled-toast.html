@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Schedule an app notification </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Schedule an app notification ">
+    
+    <meta name="description" content="Learn how to schedule a local app notification to appear at a later time.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="schedule-an-app-notification">Schedule an app notification</h1>
+
+<p>Scheduled app notifications allow you to schedule a notification to appear at a later time, regardless of whether your app is running at that time. This is useful for scenarios like displaying reminders or other follow-up tasks for the user, where the time and content of the notification is known ahead-of-time.</p>
+<p>Note that scheduled app notifications have a delivery window of 5 minutes. If the computer is turned off during the scheduled delivery time, and remains off for longer than 5 minutes, the notification will be &quot;dropped&quot; as no longer relevant to the user. If you need guaranteed delivery of notifications regardless of how long the computer was off, we recommend using a background task with a time trigger, as illustrated in <a href="https://github.com/WindowsNotifications/quickstart-snoozable-toasts-even-if-computer-is-off">this code sample</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Desktop applications (both packaged and unpackaged) have slightly different steps for sending notifications and handling activation. Follow along with the instructions below, however replace <code>ToastNotificationManager</code> with the <code>DesktopNotificationManagerCompat</code> class from the <a href="toast-desktop-apps.html">desktop apps</a> documentation.</p>
+</div>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification Class</a></p>
+</blockquote>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To fully understand this topic, the following will be helpful...</p>
+<ul>
+<li>A working knowledge of app notification terms and concepts. For more information, see <a href="/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10">Toast and action center overview</a>.</li>
+<li>A familiarity with Windows 10 app notification content. For more information, see <a href="adaptive-interactive-toasts.html">App notification content</a> documentation.</li>
+<li>A Windows 10 UWP app project</li>
+</ul>
+<h2 id="step-1-install-nuget-package">Step 1: Install NuGet package</h2>
+<p>Install the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">Microsoft.Toolkit.Uwp.Notifications NuGet package</a>. Our code sample will use this package. At the end of the article we'll provide the &quot;plain&quot; code snippets that don't use any NuGet packages. This package allows you to create app notifications without using XML.</p>
+<h2 id="step-2-add-namespace-declarations">Step 2: Add namespace declarations</h2>
+<pre><code class="lang-csharp">using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
+</code></pre>
+<h2 id="step-3-schedule-the-notification">Step 3: Schedule the notification</h2>
+<p>We'll use a simple text-based notification reminding a student about the homework they have due today. Construct the notification and schedule it!</p>
+<pre><code class="lang-csharp">// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument(&quot;action&quot;, &quot;viewItemsDueToday&quot;)
+    .AddText(&quot;ASTR 170B1&quot;)
+    .AddText(&quot;You have 3 items due today!&quot;);
+    .Schedule(DateTime.Now.AddSeconds(5));
+</code></pre>
+<h2 id="provide-a-primary-key-for-your-notification">Provide a primary key for your notification</h2>
+<p>If you want to programmatically cancel, remove, or replace the scheduled notification, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to cancel, remove, or replace the notification.</p>
+<p>To see more details on replacing/removing already delivered app notifications, please see <a href="/previous-versions/windows/apps/dn631260(v=win.10)">Quickstart: Managing toast notifications in action center (XAML)</a>.</p>
+<p>Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like &quot;wallPosts&quot;, &quot;messages&quot;, &quot;friendRequests&quot;, etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the <a href="/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_">RemoveGroup API</a>.</p>
+<pre><code class="lang-csharp">// Construct the content and schedule the toast!
+new ToastContentBuilder()
+    .AddArgument(&quot;action&quot;, &quot;viewItemsDueToday&quot;)
+    .AddText(&quot;ASTR 170B1&quot;)
+    .AddText(&quot;You have 3 items due today!&quot;);
+    .Schedule(DateTime.Now.AddSeconds(5), toast =&gt;
+    {
+        toast.Tag = &quot;18365&quot;;
+        toast.Group = &quot;ASTR 170B1&quot;;
+    });
+</code></pre>
+<h2 id="cancel-scheduled-notifications">Cancel scheduled notifications</h2>
+<p>To cancel a scheduled notification, you first have to retrieve the list of all scheduled notifications.</p>
+<p>Then, find your scheduled app notification matching the tag (and optionally group) you specified earlier, and call RemoveFromSchedule().</p>
+<pre><code class="lang-csharp">// Create the toast notifier
+ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
+
+// Get the list of scheduled toasts that haven't appeared yet
+IReadOnlyList&lt;ScheduledToastNotification&gt; scheduledToasts = notifier.GetScheduledToastNotifications();
+
+// Find our scheduled toast we want to cancel
+var toRemove = scheduledToasts.FirstOrDefault(i =&gt; i.Tag == &quot;18365&quot; &amp;&amp; i.Group == &quot;ASTR 170B1&quot;);
+if (toRemove != null)
+{
+    // And remove it from the schedule
+    notifier.RemoveFromSchedule(toRemove);
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>An unpackaged (lacks package identity at runtime) Win32 app must use the <strong>ToastNotificationManagerCompat</strong> class as seen above. If you use <strong>ToastNotificationManager</strong> itself, then you'll receive an element-not-found exception. All types of apps can use the <strong>Compat</strong> class, and it will work correctly.</p>
+</div>
+<h2 id="activation-handling">Activation handling</h2>
+<p>See the <a href="send-local-toast.html">send a local app notification</a> docs to learn more about handling activation. Activation of a scheduled app notification is handled the same as activation of a local app notification.</p>
+<h2 id="adding-actions-inputs-and-more">Adding actions, inputs, and more</h2>
+<p>See the <a href="send-local-toast.html">send a local app notification</a> docs to learn more about advanced topics like actions and inputs. Actions and inputs work the same in local app notifications as they do in scheduled app notifications.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="adaptive-interactive-toasts.html">App notification content documentation</a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.ScheduledToastNotification">ScheduledToastNotification Class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/scheduled-toast.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

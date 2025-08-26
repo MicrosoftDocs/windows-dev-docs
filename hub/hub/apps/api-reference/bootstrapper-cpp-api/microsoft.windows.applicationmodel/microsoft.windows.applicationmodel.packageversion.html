@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PackageVersion class </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PackageVersion class ">
+    
+    <meta name="description" content="Represents a version of the Windows App SDK framework package (C++).">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="packageversion-class">PackageVersion class</h1>
+
+<p>Represents a version of the Windows App SDK framework package.</p>
+<h2 id="syntax">Syntax</h2>
+<pre><code class="lang-cpp">class PackageVersion : public PACKAGE_VERSION;
+</code></pre>
+<h2 id="requirements">Requirements</h2>
+<p><strong>Minimum supported SDK:</strong> Windows App SDK version 1.1</p>
+<p><strong>Namespace:</strong> Microsoft::Windows::ApplicationModel</p>
+<p><strong>Header:</strong> MddBootstrap.h</p>
+<h2 id="constructors">Constructors</h2>
+<table>
+<thead>
+<tr>
+<th>Constructor</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#packageversionpackageversion-constructor">PackageVersion constructor</a></td>
+<td>Initializes a new instance of the <strong>PackageVersion</strong> class.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="member-functions">Member functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#packageversiontostring-function">PackageVersion::ToString function</a></td>
+<td>Retrieves the version as a <strong>std::wstring</strong>.</td>
+</tr>
+<tr>
+<td><a href="#packageversiontoversion-function">PackageVersion::ToVersion function</a></td>
+<td>Retrieves the version as a <strong>uint64_t</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="packageversionpackageversion-constructor">PackageVersion::PackageVersion constructor</h2>
+<p>Initializes a new instance of the <strong>PackageVersion</strong> class.</p>
+<h3 id="syntax-1">Syntax</h3>
+<pre><code class="lang-cpp">PackageVersion();
+PackageVersion(uint16_t major, uint16_t minor = 0, uint16_t build = 0, uint16_t revision = 0);
+PackageVersion(uint64_t version);
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+<p><code>major</code>
+A <strong>uint16_t</strong> value representing the <code>major</code> position of a <code>major.minor.build.revision</code> sequence.</p>
+<p><code>minor</code>
+An optional <strong>uint16_t</strong> value representing the <code>minor</code> position of a <code>major.minor.build.revision</code> sequence. Defaults to 0.</p>
+<p><code>build</code>
+An optional <strong>uint16_t</strong> value representing the <code>build</code> position of a <code>major.minor.build.revision</code> sequence. Defaults to 0.</p>
+<p><code>revision</code>
+An optional <strong>uint16_t</strong> value representing the <code>revision</code> position of a <code>major.minor.build.revision</code> sequence. Defaults to 0.</p>
+<p><code>version</code>
+A <code>major.minor.build.revision</code> sequence encoded as a (little-endian) <strong>uint64_t</strong> (so that the first 16 bits contain the revision, and so on).</p>
+<h2 id="packageversiontostring-function">PackageVersion::ToString function</h2>
+<p>Retrieves the version as a <strong>std::wstring</strong>.</p>
+<h3 id="syntax-2">Syntax</h3>
+<pre><code class="lang-cpp">std::wstring ToString() const;
+</code></pre>
+<h3 id="return-value">Return value</h3>
+<p>The <code>major.minor.build.revision</code> sequence encoded as a string (<strong>std::wstring</strong>) in the format &quot;12345.12345.12345.12345&quot; + null-terminator.</p>
+<h2 id="packageversiontoversion-function">PackageVersion::ToVersion function</h2>
+<p>Retrieves the version as a <strong>uint64_t</strong>.</p>
+<h3 id="syntax-3">Syntax</h3>
+<pre><code class="lang-cpp">uint64_t ToVersion() const;
+</code></pre>
+<h3 id="return-value-1">Return value</h3>
+<p>The <code>major.minor.build.revision</code> sequence encoded as a (little-endian) <strong>uint64_t</strong> (so that the first 16 bits contain the revision, and so on).</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="microsoft.windows.applicationmodel.html">Microsoft::Windows::ApplicationModel namespace</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

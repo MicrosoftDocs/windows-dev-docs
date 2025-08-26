@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Notification listener </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Notification listener ">
+    
+    <meta name="description" content="Learn how to use Notification Listener to access all of the user&#39;s notifications.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="notification-listener-access-all-notifications">Notification listener: Access all notifications</h1>
+
+<p>The notification listener provides access to a user's notifications. Smartwatches and other wearables can use the notification listener to send the phone's notifications to the wearable device. Home automation apps can use notification listener to perform specific actions when notifications are received, such as making the lights blink when you receive a call.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires Anniversary Update</strong>: You must target SDK 14393 and be running build 14393 or later to use Notification Listener.</p>
+</div>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener">UserNotificationListener class</a>, <a href="/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger">UserNotificationChangedTrigger class</a></p>
+</blockquote>
+<h2 id="enable-the-listener-by-adding-the-user-notification-capability">Enable the listener by adding the User Notification capability</h2>
+<p>To use the notification listener, you must add the User Notification Listener capability to your app manifest.</p>
+<ol>
+<li>In Visual Studio, in the Solution Explorer, double click your <code>Package.appxmanifest</code> file to open the manifest designer.</li>
+<li>Open the Capabilities tab.</li>
+<li>Check the <strong>User Notification Listener</strong> capability.</li>
+</ol>
+<h2 id="check-whether-the-listener-is-supported">Check whether the listener is supported</h2>
+<p>If your app supports older versions of Windows 10, you need to use the <a href="/uwp/api/Windows.Foundation.Metadata.ApiInformation">ApiInformation class</a> to check whether the listener is supported.  If the listener isn't supported, avoid executing any calls to the listener APIs.</p>
+<pre><code class="lang-csharp">if (ApiInformation.IsTypePresent(&quot;Windows.UI.Notifications.Management.UserNotificationListener&quot;))
+{
+    // Listener supported!
+}
+ 
+else
+{
+    // Older version of Windows, no Listener
+}
+</code></pre>
+<h2 id="requesting-access-to-the-listener">Requesting access to the listener</h2>
+<p>Since the listener allows access to the user's notifications, users must give your app permission to access their notifications. During your app's first-run experience, you should request access to use the notification listener. If you want, you can show some preliminary UI that explains why your app needs access to the user's notifications before you call <a href="/uwp/api/windows.ui.notifications.management.usernotificationlistener.RequestAccessAsync">RequestAccessAsync</a>, so that the user understands why they should allow access.</p>
+<pre><code class="lang-csharp">// Get the listener
+UserNotificationListener listener = UserNotificationListener.Current;
+ 
+// And request access to the user's notifications (must be called from UI thread)
+UserNotificationListenerAccessStatus accessStatus = await listener.RequestAccessAsync();
+ 
+switch (accessStatus)
+{
+    // This means the user has granted access.
+    case UserNotificationListenerAccessStatus.Allowed:
+ 
+        // Yay! Proceed as normal
+        break;
+ 
+    // This means the user has denied access.
+    // Any further calls to RequestAccessAsync will instantly
+    // return Denied. The user must go to the Windows settings
+    // and manually allow access.
+    case UserNotificationListenerAccessStatus.Denied:
+ 
+        // Show UI explaining that listener features will not
+        // work until user allows access.
+        break;
+ 
+    // This means the user closed the prompt without
+    // selecting either allow or deny. Further calls to
+    // RequestAccessAsync will show the dialog again.
+    case UserNotificationListenerAccessStatus.Unspecified:
+ 
+        // Show UI that allows the user to bring up the prompt again
+        break;
+}
+</code></pre>
+<p>The user can revoke access at any time via Windows Settings. Therefore, your app should always check the access status via the <a href="/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetAccessStatus">GetAccessStatus</a> method before executing code that uses the notification listener. If the user revokes access, the APIs will silently fail rather than throwing an exception (for example, the API to get all notifications will simply return an empty list).</p>
+<h2 id="access-the-users-notifications">Access the user's notifications</h2>
+<p>With the notification listener, you can get a list of the user's current notifications. Simply call the <a href="/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync">GetNotificationsAsync</a> method, and specify the type of notifications you want to get (currently, the only type of notifications supported are toast notifications).</p>
+<pre><code class="lang-csharp">// Get the toast notifications
+IReadOnlyList&lt;UserNotification&gt; notifs = await listener.GetNotificationsAsync(NotificationKinds.Toast);
+</code></pre>
+<h2 id="displaying-the-notifications">Displaying the notifications</h2>
+<p>Each notification is represented as a <a href="/uwp/api/windows.ui.notifications.usernotification">UserNotification</a>, which provides information about the app that the notification is from, the time the notification was created, the notification's ID, and the notification itself.</p>
+<pre><code class="lang-csharp">public sealed class UserNotification
+{
+    public AppInfo AppInfo { get; }
+    public DateTimeOffset CreationTime { get; }
+    public uint Id { get; }
+    public Notification Notification { get; }
+}
+</code></pre>
+<p>The <a href="/uwp/api/windows.ui.notifications.usernotification.AppInfo">AppInfo</a> property provides the info you need to display the notification.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend surrounding all your code for processing a single notification in a try/catch, in case an unexpected exception occurs when you are capturing a single notification. You shouldn't completely fail to display other notifications just because of an issue with one specific notification.</p>
+</div>
+<pre><code class="lang-csharp">// Select the first notification
+UserNotification notif = notifs[0];
+ 
+// Get the app's display name
+string appDisplayName = notif.AppInfo.DisplayInfo.DisplayName;
+ 
+// Get the app's logo
+BitmapImage appLogo = new BitmapImage();
+RandomAccessStreamReference appLogoStream = notif.AppInfo.DisplayInfo.GetLogo(new Size(16, 16));
+await appLogo.SetSourceAsync(await appLogoStream.OpenReadAsync());
+</code></pre>
+<p>The content of the notification itself, such as the notification text, is contained in the <a href="/uwp/api/windows.ui.notifications.usernotification.Notification">Notification</a> property. This property contains the visual portion of the notification. (If you are familiar with sending notifications on Windows, you will notice that the <a href="/uwp/api/windows.ui.notifications.notification.Visual">Visual</a> and <a href="/uwp/api/windows.ui.notifications.notificationvisual.Bindings">Visual.Bindings</a> properties in the <a href="/uwp/api/windows.ui.notifications.notification">Notification</a> object correspond to what developers send when popping a notification.)</p>
+<p>We want to look for the toast binding (for error-proof code, you should check that the binding isn't null). From the binding, you can obtain the text elements. You can choose to display as many text elements as you would like. (Ideally, you should display them all.) You can choose to treat the text elements differently; for example, treat the first one as title text, and subsequent elements as body text.</p>
+<pre><code class="lang-csharp">// Get the toast binding, if present
+NotificationBinding toastBinding = notif.Notification.Visual.GetBinding(KnownNotificationBindings.ToastGeneric);
+ 
+if (toastBinding != null)
+{
+    // And then get the text elements from the toast binding
+    IReadOnlyList&lt;AdaptiveNotificationText&gt; textElements = toastBinding.GetTextElements();
+ 
+    // Treat the first text element as the title text
+    string titleText = textElements.FirstOrDefault()?.Text;
+ 
+    // We'll treat all subsequent text elements as body text,
+    // joining them together via newlines.
+    string bodyText = string.Join(&quot;\n&quot;, textElements.Skip(1).Select(t =&gt; t.Text));
+}
+</code></pre>
+<h2 id="remove-a-specific-notification">Remove a specific notification</h2>
+<p>If your wearable or service allows the user to dismiss notifications, you can remove the actual notification so the user doesn't see it later on their phone or PC. Simply provide the notification ID (obtained from the <a href="/uwp/api/windows.ui.notifications.usernotification">UserNotification</a> object) of the notification you'd like to remove:</p>
+<pre><code class="lang-csharp">// Remove the notification
+listener.RemoveNotification(notifId);
+</code></pre>
+<h2 id="clear-all-notifications">Clear all notifications</h2>
+<p>The <a href="/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications">UserNotificationListener.ClearNotifications</a> method clears all the user's notifications. Use this method with caution. You should only clear all notifications if your wearable or service displays ALL notifications. If your wearable or service only displays certain notifications, when the user clicks your &quot;Clear notifications&quot; button, the user is only expecting those specific notifications to be removed; however, calling the <a href="/uwp/api/windows.ui.notifications.management.usernotificationlistener.ClearNotifications">ClearNotifications</a> method would actually cause all the notifications, including ones that your wearable or service wasn't displaying, to be removed.</p>
+<pre><code class="lang-csharp">// Clear all notifications. Use with caution.
+listener.ClearNotifications();
+</code></pre>
+<h2 id="background-task-for-notification-addeddismissed">Background task for notification added/dismissed</h2>
+<p>A common way to enable an app to listen to notifications is to set up a background task, so that you can know when a notification was added or dismissed regardless of whether your app is currently running.</p>
+<p>Thanks to the <a href="/windows/uwp/launch-resume/create-and-register-an-inproc-background-task">single process model</a> added in the Anniversary Update, adding background tasks is fairly simple. In your main app's code, after you have obtained the user's access to Notification Listener and obtained access to run background tasks by calling <a href="/uwp/api/windows.ui.notifications.management.usernotificationlistener.requestaccessasync">UserNotificationListener.Current.RequestAccessAsync</a> and <a href="/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync">BackgroundExecutionManager.RequestAccessAsync</a> respectively, simply register a new background task, and set the <a href="/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger">UserNotificationChangedTrigger</a> using the <a href="/uwp/api/windows.ui.notifications.notificationkinds">Toast notification kind</a>.</p>
+<pre><code class="lang-csharp">// TODO: Request/check Listener access via UserNotificationListener.Current.RequestAccessAsync
+ 
+// TODO: Request/check background task access via BackgroundExecutionManager.RequestAccessAsync
+ 
+// If background task isn't registered yet
+if (!BackgroundTaskRegistration.AllTasks.Any(i =&gt; i.Value.Name.Equals(&quot;UserNotificationChanged&quot;)))
+{
+    // Specify the background task
+    var builder = new BackgroundTaskBuilder()
+    {
+        Name = &quot;UserNotificationChanged&quot;
+    };
+ 
+    // Set the trigger for Listener, listening to Toast Notifications
+    builder.SetTrigger(new UserNotificationChangedTrigger(NotificationKinds.Toast));
+ 
+    // Register the task
+    builder.Register();
+}
+</code></pre>
+<p>Then, in your App.xaml.cs, override the <a href="/uwp/api/windows.ui.xaml.application.OnBackgroundActivated">OnBackgroundActivated</a> method if you haven't yet, and use a switch statement on the task name to determine which of your many background task triggers was invoked.</p>
+<pre><code class="lang-csharp">protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+{
+    var deferral = args.TaskInstance.GetDeferral();
+ 
+    switch (args.TaskInstance.Task.Name)
+    {
+        case &quot;UserNotificationChanged&quot;:
+            // Call your own method to process the new/removed notifications
+            // The next section of documentation discusses this code
+            await MyWearableHelpers.SyncNotifications();
+            break;
+    }
+ 
+    deferral.Complete();
+}
+</code></pre>
+<p>The background task is simply a &quot;shoulder tap&quot;: it doesn't provide any information about which specific notification was added or removed. When your background task is triggered, you should sync the notifications on your wearable so that they reflect the notifications in the platform. This ensures that if your background task fails, notifications on your wearable can still be recovered the next time your background task executes.</p>
+<p><code>SyncNotifications</code> is a method you implement; the next section shows how.</p>
+<h2 id="determining-which-notifications-were-added-and-removed">Determining which notifications were added and removed</h2>
+<p>In your <code>SyncNotifications</code> method, to determine which notifications have been added or removed (syncing notifications with your wearable), you have to calculate the delta between your current notification collection, and the notifications in the platform.</p>
+<pre><code class="lang-csharp">// Get all the current notifications from the platform
+IReadOnlyList&lt;UserNotification&gt; userNotifications = await listener.GetNotificationsAsync(NotificationKinds.Toast);
+ 
+// Obtain the notifications that our wearable currently has displayed
+IList&lt;uint&gt; wearableNotificationIds = GetNotificationsOnWearable();
+ 
+// Copy the currently displayed into a list of notification ID's to be removed
+var toBeRemoved = new List&lt;uint&gt;(wearableNotificationIds);
+ 
+// For each notification in the platform
+foreach (UserNotification userNotification in userNotifications)
+{
+    // If we've already displayed this notification
+    if (wearableNotificationIds.Contains(userNotification.Id))
+    {
+        // We want to KEEP it displayed, so take it out of the list
+        // of notifications to remove.
+        toBeRemoved.Remove(userNotification.Id);
+    }
+ 
+    // Otherwise it's a new notification
+    else
+    {
+        // Display it on the Wearable
+        SendNotificationToWearable(userNotification);
+    }
+}
+ 
+// Now our toBeRemoved list only contains notification ID's that no longer exist in the platform.
+// So we will remove all those notifications from the wearable.
+foreach (uint id in toBeRemoved)
+{
+    RemoveNotificationFromWearable(id);
+}
+</code></pre>
+<h2 id="foreground-event-for-notification-addeddismissed">Foreground event for notification added/dismissed</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Known issue: In builds before Build 17763 / October 2018 Update / Version 1809, The foreground event will cause a CPU loop and/or didn't work. If you need support on those earlier builds, use the background task instead.</p>
+</div>
+<p>You can also listen to notifications from an in-memory event handler...</p>
+<pre><code class="lang-csharp">// Subscribe to foreground event
+listener.NotificationChanged += Listener_NotificationChanged;
+ 
+private void Listener_NotificationChanged(UserNotificationListener sender, UserNotificationChangedEventArgs args)
+{
+    // Your code for handling the notification
+}
+</code></pre>
+<h2 id="howto-fixdelays-in-the-background-task">How to fix delays in the background task</h2>
+<p>When testing your app, you might notice that the background task is sometimes delayed and doesn't trigger for several minutes. To fix the delay, prompt the user to go to the system settings -&gt; System -&gt; Battery -&gt; Battery usage by app, find your app in the list, select it, and set it to be &quot;Always allowed in background.&quot; After this, the background task should always be triggered within around a second of the notification being received.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/notification-listener.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

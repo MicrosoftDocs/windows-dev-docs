@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Touch interactions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Touch interactions ">
+    
+    <meta name="description" content="Design Windows apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="touch-interactions">Touch interactions</h1>
+
+<p>This topic provides design guidelines for building custom, touch-optimized experiences in Windows apps.</p>
+<h2 id="overview">Overview</h2>
+<p>Touch is a primary form of input across Windows and Windows apps that involves the use of one or more fingers (or touch contacts). These touch contacts, and their movement, are interpreted as touch gestures and manipulations that support a variety of user interactions.</p>
+<p>Both the Windows SDK and the Windows App SDK include comprehensive collections of touch-optimized controls that provide robust and consistent experiences across Windows apps.</p>
+<p>Use these guidelines when creating custom controls, experiences, and frameworks for your Windows apps.</p>
+<h2 id="design-principles">Design principles</h2>
+<p>Consider the following as you design the touch experience in your Windows app.</p>
+<h3 id="touch-optimized">Touch Optimized</h3>
+<p>Windows app experiences should feel inviting to touch, allow for direct manipulation, and accommodate less-precise interactions. Consider touch accelerators including gestures and pen and voice integration.</p>
+<h3 id="consistent-across-postures">Consistent Across Postures</h3>
+<p>Your app should have a consistent experience regardless of the input method or posture the user is in. Changes from traditional desktop posture to tablet posture (see <a href="/windows-hardware/customize/desktop/settings-for-better-tablet-experiences">Recommended settings for better tablet experiences</a>), as well as changes in orientation, should not be disorienting, but rather subtle and only as necessary. Your app should reflow UI in subtle ways to create a familiar, cohesive experience that meets users where they are.</p>
+<h3 id="responsive">Responsive</h3>
+<p>Apps and interactions should provide users with feedback at every phase (Touch down, action, touch up) of an interaction using animations that respond to a user's existing state while indicating possible actions. Animations should also maintain at least 60 fps to feel smooth and modern.</p>
+<h2 id="honoring-touch-conventions">Honoring Touch Conventions</h2>
+<h3 id="responsive-feedback">Responsive Feedback</h3>
+<p>Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and the Windows platform.  Provide immediate and continuous feedback in response to the user's touch, that is noticeable, comprehensible, and not lost by distractions. This immediate feedback is how users will learn and explore the interactive elements of your app.​</p>
+<ul>
+<li>Feedback should be immediate on touch down and moving objects should stick to the user's finger.​</li>
+<li>UI should respond to gestures by matching user speed and movements, avoid using keyframe animations.</li>
+<li>Visual feedback should convey possible outcomes before the user commits to an action.</li>
+</ul>
+<section class="row">
+<div class="column">
+<p>Do</p>
+</div>
+<div class="column">
+<p>Don't</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-follow-finger-do.gif" alt="Animated GIF of object sticking to user's finger on swipe up.">
+</span>
+</p>
+</div>
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-follow-finger-dont.gif" alt="Animated GIF of object not sticking to user's finger on swipe up.">
+</span>
+</p>
+</div>
+</section>
+<p>For more info, see <a href="guidelines-for-visualfeedback.html">Guidelines for visual feedback</a> and <a href="../signature-experiences/motion.html">Motion in Windows 11</a></p>
+<h2 id="touch-interaction-patterns">Touch Interaction Patterns</h2>
+<p>Honor these common interaction and gestures patterns to bring consistency and predictably to your experience.</p>
+<h3 id="common-interactions">Common Interactions</h3>
+<p>There are a set of common touch behaviors and gestures that users are familiar with and expect to work consistently across all Windows experiences.</p>
+<ul>
+<li><strong>Tap</strong> to activate or select an item​</li>
+<li><strong>Short press and drag</strong> to move an object​</li>
+<li><strong>Press and hold</strong> to access a menu of secondary, contextual commands</li>
+<li><strong>Swipe (or drag and release)</strong> for contextual commands</li>
+<li><strong>Rotate</strong> clockwise or counterclockwise to pivot</li>
+</ul>
+<section class="row">
+<div class="column span2">
+<p><strong>Interactions</strong></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-tap-to-activate.gif" alt="Animated GIF of user tapping an object to select or activate it.">
+</span>
+Tap</p>
+</div>
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-drag-to-reveal-ui.gif" alt="Animated GIF of user dragging an object to reveal contextual commands.">
+</span>
+Swipe (or drag and release)</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-rearrange.gif" alt="Animated GIF of user pressing and dragging an object to rearrange it.">
+</span>
+Short press and drag</p>
+</div>
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-rotate.gif" alt="Animated GIF of user pressing with two fingers and rotating an object.">
+</span>
+Rotate</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-hold-to-invoke-context-menu.gif" alt="Animated GIF of user pressing and holding an object to display a menu of contextual, secondary commands.">
+</span>
+Press and hold</p>
+</div>
+<div class="column">
+</div>
+</section>
+<p>For more info, see <a href="guidelines-for-visualfeedback.html">Guidelines for visual feedback</a> and <a href="../signature-experiences/motion.html">Motion in Windows 11</a></p>
+<h3 id="gestures">Gestures</h3>
+<p>Gestures lower the effort required by users to navigate and act on common interactions. Where possible, support UI with touch gestures to make it easy for users to navigate and act in an app.</p>
+<p>If navigating between views, use connected animations so existing and new states are both visible mid-drag. If interacting with UI, items should follow user movement, provide feedback and, on release, react with additional actions based on drag position thresholds.</p>
+<p>Gestures should also be actionable with flicks and swipes based on inertia and be within a comfortable range of motion.​</p>
+<ul>
+<li>Drag or flick to go back and forth​</li>
+<li>Drag to dismiss​</li>
+<li>Pull to refresh​</li>
+</ul>
+<section class="row">
+<div class="column span2">
+<p>Gestures</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-drag-flick-to-go-back-forth.gif" alt="Animated GIF of user dragging a carousel of objects back and forth.">
+</span>
+Drag or flick to go back and forth​</p>
+</div>
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-pull-to-refresh.gif" alt="Animated GIF of user pulling down on a collection of objects to refresh [2].">
+</span>
+Pull to refresh</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-drag-to-dismiss.gif" alt="Animated GIF of user dragging an object off-screen to dismiss.">
+</span>
+Drag to dismiss</p>
+</div>
+<div class="column">
+</div>
+</section>
+<p>For more info, see <a href="../motion/page-transitions.html">Page transitions</a> and <a href="../controls/pull-to-refresh.html">Pull to refresh</a>.</p>
+<h4 id="custom-gestures">Custom gestures</h4>
+<p>Use custom gestures to bring high frequency keyboard shortcut keys and trackpad gestures to a touch interaction. Aid discoverability and response through dedicated affordances with animations and visual states (for example, placing three fingers on screen causes windows to shrink for visual feedback).</p>
+<ul>
+<li>Do not override common gestures as this can cause confusion for users.</li>
+<li>Consider using multi-finger gestures for custom actions but be aware that the system has reserved some multi-finger gestures for rapid switching between apps and desktops.</li>
+<li>Be mindful of custom gestures originating near the edges of a screen as edge gestures are reserved for OS-level behaviors, which can be invoked accidentally.</li>
+</ul>
+<h4 id="avoid-accidental-navigation">Avoid accidental navigation</h4>
+<p>If you your app or game might involve frequent interactions near the edges of the screen, consider presenting your experience in a <a href="https://devblogs.microsoft.com/directx/demystifying-full-screen-optimizations/">Fullscreen Exclusive (FSE) mode</a> to avoid accidental activations of system flyouts (users will have to swipe directly on the temporary tab in order to pull in the associated system flyout).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Avoid using this unless absolutely necessary as it will make it harder for users to navigate away from your app or use it in conjunction with others.</p>
+</div>
+<h2 id="touch-keyboard-experiences">Touch keyboard ​experiences</h2>
+<p>The touch keyboard enables text entry for devices that support touch. Windows app text input controls invoke the touch keyboard by default when a user taps on an editable input field.</p>
+<p><span class="mx-imgBorder">
+<img src="images/keyboard/default.png" alt="The touch keyboard in default layout mode.">
+</span>
+</p>
+<h3 id="invoke-on-text-field-tap">Invoke on text field tap​</h3>
+<p>Touch keyboard should pop up when a user taps on a text input field​ – this will work automatically by using our system APIs to show and hide the keyboard. See <a href="respond-to-the-presence-of-the-touch-keyboard.html">Respond to the presence of the touch keyboard</a>.</p>
+<h3 id="use-standard-text-input-controls">Use standard text input controls​</h3>
+<p>Using common controls provides expected behavior and minimizes surprises for users.</p>
+<p>Text controls that support the Text Services Framework (TSF) provide shape-writing (swipe keyboard) capabilities.</p>
+<h3 id="touch-keyboard-signals">Touch keyboard signals​</h3>
+<p>Account for input, posture, hardware signals that make touch keyboard the main mode of input (hardware keyboard is detached, entrypoints are invoked with touch, clear user intent to type).​</p>
+<h3 id="reflow-appropriately">Reflow appropriately​</h3>
+<ul>
+<li>Be aware that the keyboard can take up 50% of the screen on smaller devices.</li>
+<li>Don't obscure the active text field with the touch keyboard​.</li>
+<li>If the touch keyboard is obscuring the active text field, scroll the app content up (with animation) until the field is visible.</li>
+<li>If the touch keyboard is obscuring the active text field but the app content cannot scroll up, try to move the app container (with animation).</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="images/touch/touch-invoke-sip-with-search.gif" alt="Animated GIF of user invoking the touch keyboard from a search field.">
+</span>
+</p>
+<h2 id="hit-targets">Hit Targets</h2>
+<p>Make sure hit targets are comfortable and inviting to touch. If hit targets are too small or crowded, users must be more precise, which is difficult with touch and can result in a poor experience.​</p>
+<h3 id="touchable">Touchable</h3>
+<p>We define touchable as a minimum of 40 x 40 epx​, even if the visual is smaller, or 32 epx tall if the width is at least 120 epx.</p>
+<p>Our common controls conform to this standard (they are optimized for both mouse and touch users).</p>
+<h3 id="touch-optimized-1">Touch-optimized</h3>
+<p>For a touch-optimized UI, consider increasing the target size to 44 x 44 epx with at least 4 epx of visible space between targets.</p>
+<p>We recommend two default behaviors: Always touch optimized or transition based on device signals.</p>
+<p>When an app can be optimized for touch without compromising mouse users, especially if the app is used primarily with touch, then always touch optimize.</p>
+<p>If you transition the UI based on device signals for device posture, always provide consistent experiences across postures.</p>
+<h3 id="match-visuals-to-touch-target">Match visuals to touch target</h3>
+<p>Consider updating visuals when touch target dimensions change. For example, if hit targets increase when users enter tablet posture, UI representing the hit targets should also update to help users understand the state change and updated affordance. For more info, see <a href="../basics/content-basics.html">Content design basics for Windows apps</a>, <a href="guidelines-for-targeting.html">Guidelines for touch targets</a>, <a href="../style/spacing.html">Control size and density</a>.</p>
+<h2 id="portrait-optimization">Portrait Optimization</h2>
+<p>Support responsive layouts that account for both tall and wide windows to ensure an app is optimized for both landscape and portrait orientations.</p>
+<p>This will also ensure app windows display core UI visuals properly in multitasking scenarios (apps snapped side-by-side with portrait aspect ratios)​ regardless of orientation and screen sizes.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/touch-interactions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

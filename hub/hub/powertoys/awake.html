@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Awake - Keep Windows Computer Awake Tool </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Awake - Keep Windows Computer Awake Tool ">
+    
+    <meta name="description" content="Learn how to use PowerToys Awake to keep your Windows computer awake without changing power settings. Configure timed, indefinite, or scheduled awake modes with CLI support.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="powertoys-awake-utility">PowerToys Awake utility</h1>
+
+<p>PowerToys Awake is a Windows utility that keeps your computer awake without modifying <a href="https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679">power and sleep settings</a>. This tool helps prevent your computer from sleeping during long-running tasks, presentations, or downloads, ensuring your work continues uninterrupted.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>You can use PowerToys Awake directly from PowerToys Settings or as a standalone executable (<code>PowerToys.Awake.exe</code> in the PowerToys installation folder).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>PowerToys Awake does not modify any of the Windows power plan settings and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine. Once PowerToys Awake exits, the threads are terminated and the computer will resume its standard power plan behavior.</p>
+</div>
+<h2 id="settings">Settings</h2>
+<p>In the PowerToys Settings, start PowerToys Awake by toggling <strong>Enable Awake</strong> on. Once enabled, the application will manage the power and screen state of the computer.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-awake/pt-awake-settings-menu.png" alt="Screenshot of PowerToys Awake settings menu showing enable toggle and power mode options.">
+</span>
+</p>
+<p>PowerToys Awake supports a variety of modes that can be used to control computer and screen power behaviors:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Keep using the selected power plan</td>
+<td style="text-align: left;">The computer power state is unaffected. PowerToys Awake runs in the background but does not request any custom power behaviors.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Keep awake indefinitely</td>
+<td style="text-align: left;">The computer stays awake indefinitely until you explicitly put the machine to sleep or close/disable the application.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Keep awake for a time interval</td>
+<td style="text-align: left;">Keep machine awake for a predefined limited time. After the time period elapses, PowerToys Awake returns to the disable state.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Keep awake until expiration</td>
+<td style="text-align: left;">Keep machine awake until a defined date and time is hit.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changing the hours or minutes while the computer is kept awake for a time interval will reset the timer. Timer starts from last input.</p>
+</div>
+<h3 id="keep-screen-on">Keep screen on</h3>
+<p>While PowerToys Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off even if the computer stays awake. If you need the displays to be available, use the <strong>Keep screen on</strong> switch, which will keep displays active.</p>
+<p>This feature only works when PowerToys Awake is enabled and has one of the custom power states selected. It also does not prevent any user-initiated actions, such as manually putting the computer to sleep or hibernating it.</p>
+<h2 id="system-tray">System tray</h2>
+<p>To manage the execution of the tool from the system tray, right-click on the PowerToys Awake icon.</p>
+<p><img src="../images/powertoys-awake/icon-change-selection.gif" alt="Awake settings managed from the system tray on Windows"></p>
+<p>PowerToys Awake tray icon represents the currently selected mode:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">State</th>
+<th style="text-align: left;">Icon</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Disabled (Passive)</td>
+<td style="text-align: left;"><img src="../images/powertoys-awake/passive.png" alt="Passive mode icon for PowerToys Awake"></td>
+<td style="text-align: left;">PowerToys Awake is running but does not hold any power states. Your operating system's power plan is in effect.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Timed (Interval)</td>
+<td style="text-align: left;"><img src="../images/powertoys-awake/timed.png" alt="Timed mode icon for PowerToys Awake"></td>
+<td style="text-align: left;">You set PowerToys Awake to keep your computer awake for a pre-defined time interval (for example, 30 minutes).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Expirable</td>
+<td style="text-align: left;"><img src="../images/powertoys-awake/expirable.png" alt="Expirable mode icon for PowerToys Awake"></td>
+<td style="text-align: left;">PowerToys Awake will be keeping the defined power request until a date and time that you've set through PowerToys settings or in the configuration file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Indefinite</td>
+<td style="text-align: left;"><img src="../images/powertoys-awake/indefinite.png" alt="Indefinite mode icon for PowerToys Awake"></td>
+<td style="text-align: left;">PowerToys Awake will continue to keep your computer awake until you exit the application.</td>
+</tr>
+</tbody>
+</table>
+<p>The tray icon tooltip will also provide a hint about the currently active PowerToys Awake mode.</p>
+<h2 id="command-line-interface-cli">Command Line Interface (CLI)</h2>
+<p>PowerToys Awake can also be executed as a standalone application, directly from the PowerToys folder. The following command line arguments can be used when running <code>PowerToys.Awake.exe</code> from the terminal:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Argument</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>--use-pt-config</code></td>
+<td style="text-align: left;">Use the PowerToys configuration file to manage the settings. This assumes that there is a <code>settings.json</code> file for PowerToys Awake, generated by PowerToys, that contains all required runtime information. This includes the operating mode (indefinite, timed, expirable, or disabled), whether screens should be kept on, and the values for a temporary keep-awake.<br>When this argument is used, all other arguments are ignored. PowerToys Awake will look for changes in the <code>settings.json</code> file to update its state.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--display-on</code></td>
+<td style="text-align: left;">Keep displays on or off while the machine is kept awake. Expected values are <code>true</code> or <code>false</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--time-limit</code></td>
+<td style="text-align: left;">Duration, in seconds, during which PowerToys Awake keeps the computer awake. Can be used in combination with <code>--display-on</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--expire-at</code></td>
+<td style="text-align: left;">Expiration date and/or time when PowerToys Awake will turn off and resume the standard power state. Can be used in combination with <code>--display-on</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--pid</code></td>
+<td style="text-align: left;">Attaches the execution of Awake to a Process ID (PID). When the process with a given PID terminates, PowerToys Awake terminates as well.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--use-parent-pid</code></td>
+<td style="text-align: left;">Attaches the execution of Awake to a parent process. When the parent process terminates, PowerToys Awake terminates as well.</td>
+</tr>
+</tbody>
+</table>
+<p>In absence of command-line arguments, PowerToys Awake will keep the computer awake indefinitely.</p>
+<p>When setting the value for the <code>--time-limit</code> parameter, both of these formats will be accepted:</p>
+<ul>
+<li><code>PowerToys.Awake.exe --time-limit 36000</code></li>
+<li><code>PowerToys.Awake.exe --time-limit=36000</code></li>
+</ul>
+<p>When setting the value for the <code>--expire-at</code> parameter, the following formats will be accepted:</p>
+<ul>
+<li><code>PowerToys.Awake.exe --expire-at=17:00:00</code> will expire at 5PM of the current day, based on the computer clock.</li>
+<li><code>PowerToys.Awake.exe --expire-at=&quot;4/13/2023 17:00:00&quot;</code> will expire at 5PM on April 13, 2023, based on the computer clock.</li>
+</ul>
+<h2 id="custom-settings">Custom settings</h2>
+<p>The <code>settings.json</code> configuration file is located in <code>%HomePath%\AppData\Local\Microsoft\PowerToys\Awake\</code>.</p>
+<p><strong>Keep awake temporarily</strong> options in the system tray can be adjusted by modifying the <code>&quot;customTrayTimes&quot;</code> property, a dictionary consisting of key-value pairs that contain the name of the shortcut and its duration (in seconds) to stay awake.</p>
+<p>For example, the following <code>settings.json</code> file contains custom tray time shortcut definitions:</p>
+<pre><code class="lang-json">
+{
+    &quot;properties&quot;:
+    {
+        &quot;keepDisplayOn&quot;: true,
+        &quot;mode&quot;: 1,
+        &quot;intervalHours&quot;: 2,
+        &quot;intervalMinutes&quot;: 0,
+        &quot;expirationDateTime&quot;: &quot;2024-07-29T15:53:00-07:00&quot;,
+        &quot;customTrayTimes&quot;:
+        {
+            &quot;8 hours&quot;: 28800,
+            &quot;12 hours&quot;: 43200
+        }
+    },
+    &quot;name&quot;: &quot;Awake&quot;,
+    &quot;version&quot;: &quot;1.0&quot;
+}
+</code></pre>
+<p>For the <code>mode</code> property, the following values can be used:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>0</code></td>
+<td style="text-align: left;">Passive (disabled)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>1</code></td>
+<td style="text-align: left;">Indefinite</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>2</code></td>
+<td style="text-align: left;">Timed (interval)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>3</code></td>
+<td style="text-align: left;">Expirable at date/time</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/awake.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

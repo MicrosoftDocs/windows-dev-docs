@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create a PWA or Hybrid web app for Android </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create a PWA or Hybrid web app for Android ">
+    
+    <meta name="description" content="Get started developing Android apps using the PWA approach on Windows.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-developing-a-pwa-or-hybrid-web-app-for-android">Get started developing a PWA or Hybrid web app for Android</h1>
+
+<p>This guide will help you to get started creating a hybrid web app or Progressive Web App (PWA) on Windows using a single HTML/CSS/JavaScript codebase that can be used on the web and across device platforms (Android, iOS, Windows).</p>
+<p>By using the right frameworks and components, web-based applications can work on an Android device in a way that looks to users very similar to a native app.</p>
+<h2 id="features-of-a-pwa-or-hybrid-web-app">Features of a PWA or Hybrid web app</h2>
+<p>There are two main types of web apps that can be installed on Android devices. The main difference being whether your application code is embedded in an app package (hybrid) or hosted on a web server (pwa).</p>
+<ul>
+<li><p><strong>Hybrid web apps</strong>: Code (HTML, JS, CSS) is packaged in an APK and can be distributed via the Google Play Store. The viewing engine is isolated from the users' internet browser, no session or cache sharing.</p>
+</li>
+<li><p><strong>Progressive Web Apps (PWAs)</strong>: Code (HTML, JS, CSS) lives on the web and doesn't need to be packaged as an APK. Resources are downloaded and updated as needed using a Service Worker. The Chrome browser will render and display your app, but will look native and not include the normal browser address bar, etc. You can share storage, cache, and sessions with the browser. This is basically like installing a shortcut to the Chrome browser in a special mode. PWAs can also be listed in the Google Play Store using Trusted Web Activity.</p>
+</li>
+</ul>
+<p>PWAs and hybrid web apps are very similar to a native Android app in that they:</p>
+<ul>
+<li>Can be installed via the App Store (Google Play Store and/or Microsoft Store)</li>
+<li>Have access to native device features like camera, GPS, Bluetooth, notifications, and list of contacts</li>
+<li>Work Offline (no internet connection)</li>
+</ul>
+<p>PWAs also have a few unique features:</p>
+<ul>
+<li>Can be installed on the Android home screen directly from the web (without an App Store)</li>
+<li>Can additionally be installed via the Google Play Store <a href="https://css-tricks.com/how-to-get-a-progressive-web-app-into-the-google-play-store/">using a Trusted Web Activity</a></li>
+<li>Can be discovered via web search or shared via a URL link</li>
+<li>Rely on a <a href="https://developers.google.com/web/fundamentals/primers/service-workers">Service Worker</a> to avoid the need to package native code</li>
+</ul>
+<p>You don't need a framework to create a Hybrid app or PWA, but there are a few popular frameworks that will be covered in this guide, including PhoneGap (with Cordova) and Ionic (with Cordova or Capacitor using Angular or React).</p>
+<h2 id="apache-cordova">Apache Cordova</h2>
+<p><a href="https://cordova.apache.org/">Apache Cordova</a> is an open-source framework that can simplify the communication between your JavaScript code living in a native <a href="https://developer.android.com/reference/android/webkit/WebView">WebView</a> and the native Android platform by using <a href="https://cordova.apache.org/plugins/?platforms=cordova-android">plugins</a>. These plugins expose JavaScript endpoints that can be called from your code and used to call native Android device APIs. Some example Cordova plugins include access to device services like battery status, file access, vibration / ring tones, etc. These features are not typically available to web apps or browsers.</p>
+<p>There are two popular distributions of Cordova:</p>
+<ul>
+<li><p>PhoneGap: Support has been discontinued by Adobe.</p>
+</li>
+<li><p><a href="https://ionicframework.com/">Ionic</a></p>
+</li>
+</ul>
+<h2 id="ionic">Ionic</h2>
+<p><a href="https://ionicframework.com/">Ionic</a> is a framework that adjusts the user interface (UI) of your app to match the design language of each platform (Android, iOS, Windows). Ionic enables you to use either <a href="https://ionicframework.com/docs/developer-resources/guides/first-app-v4/intro">Angular</a> or <a href="https://ionicframework.com/react">React</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There is a new version of Ionic that uses an alternative to Cordova, called <a href="https://capacitor.ionicframework.com/">Capacitor</a>. This alternative uses containers to make your app <a href="https://ionicframework.com/blog/announcing-capacitor-1-0/">more web-friendly</a>.</p>
+</div>
+<h3 id="get-started-with-ionic-by-installing-required-tools">Get started with Ionic by installing required tools</h3>
+<p>To get started building a PWA or hybrid web app with Ionic, you should first install the following tools:</p>
+<ul>
+<li><p>Node.js for interacting with the Ionic ecosystem. <a href="https://nodejs.org/en/">Download NodeJS for Windows</a> or follow the <a href="../dev-environment/javascript/nodejs-on-wsl.html">NodeJS installation guide</a> using Windows Subsystem for Linux (WSL). You may want to consider using <a href="../dev-environment/javascript/nodejs-on-wsl.html#install-nvm-nodejs-and-npm">Node Version Manager (nvm)</a> if you will be working with multiple projects and version of NodeJS.</p>
+</li>
+<li><p>VS Code for writing your code. <a href="https://code.visualstudio.com/">Download VS Code for Windows</a>. You may also want to install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">WSL Remote Extension</a> if you prefer to build your app with a Linux command line.</p>
+</li>
+<li><p>Windows Terminal for working with your preferred command-line interface (CLI). <a href="https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab">Install Windows Terminal from Microsoft Store</a>.</p>
+</li>
+<li><p>Git for version control. <a href="https://git-scm.com/downloads">Download Git</a>.</p>
+</li>
+</ul>
+<h2 id="create-a-new-project-with-ionic-cordova-and-angular">Create a new project with Ionic Cordova and Angular</h2>
+<p>Install Ionic and Cordova by entering the following in your command line:</p>
+<pre><code class="lang-bash">npm install -g @ionic/cli cordova
+</code></pre>
+<p>Create an Ionic Angular app using the &quot;Tabs&quot; app template by entering the command:</p>
+<pre><code class="lang-bash">ionic start photo-gallery tabs
+</code></pre>
+<p>Change into the app folder:</p>
+<pre><code class="lang-bash">cd photo-gallery
+</code></pre>
+<p>Run the app in your web browser:</p>
+<pre><code class="lang-bash">ionic serve
+</code></pre>
+<p>For more information, see the <a href="https://ionicframework.com/docs/developer-resources/guides/first-app-v4/intro">Ionic Cordova Angular docs</a>. Visit the <a href="https://ionicframework.com/docs/angular/pwa">Making your Angular app a PWA</a> section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.</p>
+<h2 id="create-a-new-project-with-ionic-capacitor-and-angular">Create a new project with Ionic Capacitor and Angular</h2>
+<p>Install Ionic and Cordova-Res by entering the following in your command line:</p>
+<pre><code class="lang-bash">npm install -g @ionic/cli native-run cordova-res
+</code></pre>
+<p>Create an Ionic Angular app using the &quot;Tabs&quot; app template and adding Capacitor by entering the command:</p>
+<pre><code class="lang-bash">ionic start photo-gallery tabs --type=angular --capacitor
+</code></pre>
+<p>Change into the app folder:</p>
+<pre><code class="lang-bash">cd photo-gallery
+</code></pre>
+<p>Add components to make the app a PWA:</p>
+<pre><code class="lang-bash">npm install @ionic/pwa-elements
+</code></pre>
+<p>Import @ionic/pwa-elements by add the following to your <code>src/main.ts</code> file:</p>
+<pre><code class="lang-typescript">import { defineCustomElements } from '@ionic/pwa-elements/loader';
+
+// Call the element loader after the platform has been bootstrapped
+defineCustomElements(window);
+</code></pre>
+<p>Run the app in your web browser:</p>
+<pre><code class="lang-bash">ionic serve
+</code></pre>
+<p>For more information, see the <a href="https://ionicframework.com/docs/angular/your-first-app">Ionic Capacitor Angular docs</a>. Visit the <a href="https://ionicframework.com/docs/angular/pwa">Making your Angular app a PWA</a> section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.</p>
+<h2 id="create-a-new-project-with-ionic-and-react">Create a new project with Ionic and React</h2>
+<p>Install the Ionic CLI by entering the following in your command line:</p>
+<pre><code class="lang-bash">npm install -g @ionic/cli
+</code></pre>
+<p>Create a new project with React by entering the command:</p>
+<pre><code class="lang-bash">ionic start myApp blank --type=react
+</code></pre>
+<p>Change into the app folder:</p>
+<pre><code class="lang-bash">cd myApp
+</code></pre>
+<p>Run the app in your web browser:</p>
+<pre><code class="lang-bash">ionic serve
+</code></pre>
+<p>For more information, see the <a href="https://ionicframework.com/docs/react/quickstart">Ionic React docs</a>. Visit the <a href="https://ionicframework.com/docs/react/pwa">Making your React app a PWA</a> section of the Ionic docs to learn how to move your app from being a hybrid to a PWA.</p>
+<h2 id="test-your-ionic-app-on-a-device-or-emulator">Test your Ionic app on a device or emulator</h2>
+<p>To test your Ionic app on an Android device, plug-in your device (<a href="emulator.html#enable-your-device-for-development">make sure it is first enabled for development</a>), then in your command line enter:</p>
+<pre><code class="lang-bash">ionic cordova run android
+</code></pre>
+<p>To test your Ionic app on an Android device emulator, you must:</p>
+<ol>
+<li><p><a href="https://cordova.apache.org/docs/en/latest/guide/platforms/android/#installing-the-requirements">Install the required components -- Java Development Kit (JDK), Gradle, and the Android SDK</a>.</p>
+</li>
+<li><p>Create an Android Virtual Device (AVD): See the [Android developer guide]](<a href="https://developer.android.com/studio/run/managing-avds.html">https://developer.android.com/studio/run/managing-avds.html</a>).</p>
+</li>
+<li><p>Enter the command for Ionic to build and deploy your app to the emulator: <code>ionic cordova emulate [&lt;platform&gt;] [options]</code>. In this case, the command should be:</p>
+</li>
+</ol>
+<pre><code class="lang-bash">ionic cordova emulate android --list
+</code></pre>
+<p>See the <a href="https://ionicframework.com/docs/cli/commands/cordova-emulate">Cordova Emulator</a> in the Ionic docs for more info.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/android/pwa.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

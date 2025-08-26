@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Check for installed versions of the Windows App SDK runtime </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Check for installed versions of the Windows App SDK runtime ">
+    
+    <meta name="description" content="This article provides instructions for verifying the version of the Windows App SDK runtime installed on your development computer.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="check-for-installed-versions-of-the-windows-app-sdk-runtime">Check for installed versions of the Windows App SDK runtime</h1>
+
+<p>To check which versions of the Windows App SDK runtime are installed on your development computer, open a <strong>PowerShell</strong> window and run one of the following commands.</p>
+<pre><code class="lang-Powershell"># For 1.0 and 1.0 Preview releases and later
+get-appxpackage *appruntime*
+# For shorter output displaying only PackageFullName
+(get-appxpackage micro*win*appruntime*).packagefullname
+
+# For 1.0 Experimental
+get-appxpackage *WindowsAppSDK* 
+
+# For version 0.8
+get-appxpackage *reunion*
+
+</code></pre>
+<p>You should see output similar to the following, which will include the <code>x64</code>, <code>x86</code>, or <code>Arm64</code> versions of the Framework package, Dynamic Dependency Lifetime Manager (DDLM) package, Main package, and Singleton package, depending on your computer and Windows App SDK version.</p>
+<pre><code class="lang-console">Name              : Microsoft.WindowsAppRuntime.1.0
+Publisher         : CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+Architecture      : X64
+ResourceId        :
+Version           : 0.318.928.0
+PackageFullName   : Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe
+InstallLocation   : C:\Program Files\WindowsApps\Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe
+IsFramework       : True
+PackageFamilyName : Microsoft.WindowsAppRuntime.1.0_8wekyb3d8bbwe
+PublisherId       : 8wekyb3d8bbwe
+IsResourcePackage : False
+IsBundle          : False
+IsDevelopmentMode : False
+NonRemovable      : False
+IsPartiallyStaged : False
+SignatureKind     : Store
+Status            : Ok
+
+Name              : Microsoft.WindowsAppRuntime.1.0
+Publisher         : CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+Architecture      : X86
+ResourceId        :
+Version           : 0.318.928.0
+PackageFullName   : Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x86__8wekyb3d8bbwe
+InstallLocation   : C:\Program Files\WindowsApps\Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x86__8wekyb3d8bbwe
+IsFramework       : True
+PackageFamilyName : Microsoft.WindowsAppRuntime.1.0_8wekyb3d8bbwe
+PublisherId       : 8wekyb3d8bbwe
+IsResourcePackage : False
+IsBundle          : False
+IsDevelopmentMode : False
+NonRemovable      : False
+IsPartiallyStaged : False
+SignatureKind     : Store
+Status            : Ok
+
+Name              : MicrosoftCorporationII.WindowsAppRuntime.Main.1.0
+Publisher         : CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+Architecture      : X64
+ResourceId        :
+Version           : 0.318.928.0
+PackageFullName   : MicrosoftCorporationII.WindowsAppRuntime.Main.1.0_0.318.928.0_x64__8wekyb3d8bbwe
+InstallLocation   : C:\Program
+                    Files\WindowsApps\MicrosoftCorporationII.WindowsAppRuntime.Main.1.0_0.318.928.0_x64__8wekyb3d8bbwe
+IsFramework       : False
+PackageFamilyName : MicrosoftCorporationII.WindowsAppRuntime.Main.1.0_8wekyb3d8bbwe
+PublisherId       : 8wekyb3d8bbwe
+IsResourcePackage : False
+IsBundle          : False
+IsDevelopmentMode : False
+NonRemovable      : False
+Dependencies      : {Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe}
+IsPartiallyStaged : False
+SignatureKind     : Store
+Status            : Ok
+
+Name              : Microsoft.WindowsAppRuntime.Singleton
+Publisher         : CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+Architecture      : X64
+ResourceId        :
+Version           : 0.318.928.0
+PackageFullName   : Microsoft.WindowsAppRuntime.Singleton_0.318.928.0_x64__8wekyb3d8bbwe
+InstallLocation   : C:\Program Files\WindowsApps\Microsoft.WindowsAppRuntime.Singleton_0.318.928.0_x64__8wekyb3d8bbwe
+IsFramework       : False
+PackageFamilyName : Microsoft.WindowsAppRuntime.Singleton_8wekyb3d8bbwe
+PublisherId       : 8wekyb3d8bbwe
+IsResourcePackage : False
+IsBundle          : False
+IsDevelopmentMode : False
+NonRemovable      : False
+Dependencies      : {Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe}
+IsPartiallyStaged : False
+SignatureKind     : Store
+Status            : Ok
+
+Name              : Microsoft.WinAppRuntime.DDLM.0.318.928.0-x6
+Publisher         : CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+Architecture      : X64
+ResourceId        :
+Version           : 0.318.928.0
+PackageFullName   : Microsoft.WinAppRuntime.DDLM.0.318.928.0-x6_0.318.928.0_x64__8wekyb3d8bbwe
+InstallLocation   : C:\Program
+                    Files\WindowsApps\Microsoft.WinAppRuntime.DDLM.0.318.928.0-x6_0.318.928.0_x64__8wekyb3d8bbwe
+IsFramework       : False
+PackageFamilyName : Microsoft.WinAppRuntime.DDLM.0.318.928.0-x6_8wekyb3d8bbwe
+PublisherId       : 8wekyb3d8bbwe
+IsResourcePackage : False
+IsBundle          : False
+IsDevelopmentMode : False
+NonRemovable      : False
+Dependencies      : {Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe}
+IsPartiallyStaged : False
+SignatureKind     : Developer
+Status            : Ok
+
+Name              : Microsoft.WinAppRuntime.DDLM.0.318.928.0-x8
+Publisher         : CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US
+Architecture      : X86
+ResourceId        :
+Version           : 0.318.928.0
+PackageFullName   : Microsoft.WinAppRuntime.DDLM.0.318.928.0-x8_0.318.928.0_x86__8wekyb3d8bbwe
+InstallLocation   : C:\Program
+                    Files\WindowsApps\Microsoft.WinAppRuntime.DDLM.0.318.928.0-x8_0.318.928.0_x86__8wekyb3d8bbwe
+IsFramework       : False
+PackageFamilyName : Microsoft.WinAppRuntime.DDLM.0.318.928.0-x8_8wekyb3d8bbwe
+PublisherId       : 8wekyb3d8bbwe
+IsResourcePackage : False
+IsBundle          : False
+IsDevelopmentMode : False
+NonRemovable      : False
+Dependencies      : {Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x86__8wekyb3d8bbwe}
+IsPartiallyStaged : False
+SignatureKind     : Developer
+Status            : Ok
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="deployment-architecture.html">Runtime architecture</a></li>
+<li><a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a></li>
+<li><a href="remove-windows-app-sdk-versions.html">Remove outdated Windows App SDK runtime versions from your development computer</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/check-windows-app-sdk-versions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

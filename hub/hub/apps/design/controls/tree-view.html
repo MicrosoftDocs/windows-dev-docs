@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tree view </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tree view ">
+    
+    <meta name="description" content="Tree view and data binding.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tree-view">Tree view</h1>
+
+<p>The tree view control enables a hierarchical list with expanding and collapsing nodes that contain nested items. It can be used to illustrate a folder structure or nested relationships in your UI.</p>
+<p>The tree view uses a combination of indentation and icons to represent the nested relationship between parent nodes and child nodes. Collapsed nodes use a chevron pointing to the right, and expanded nodes use a chevron pointing down.</p>
+<p><img src="images/treeview-simple.png" alt="The chevron icon in TreeView"></p>
+<p>You can include an icon in the tree view item data template to represent nodes. For example, if you show a file system hierarchy, you could use folder icons for the parent notes and file icons for the leaf nodes.</p>
+<p><img src="images/treeview-icons.png" alt="The chevron and folder icons together in a TreeView"></p>
+<p>The <strong>TreeView</strong> APIs support the following features:</p>
+<ul>
+<li>N-level nesting</li>
+<li>Selection of single or multiple nodes</li>
+<li>Data binding to the <strong>ItemsSource</strong> property on <strong>TreeView</strong> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem">TreeViewItem</a></li>
+<li><strong>TreeViewItem</strong> as the root of the <strong>TreeView</strong> item template</li>
+<li>Arbitrary types of content in a <strong>TreeViewItem</strong></li>
+<li>Drag and drop between tree views</li>
+</ul>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<ul>
+<li><p>Use a <strong>TreeView</strong> when items have nested list items, and if it is important to illustrate the hierarchical relationship of items to their peers and nodes.</p>
+</li>
+<li><p>Avoid using <strong>TreeView</strong> if highlighting the nested relationship of an item is not a priority. For most drill-in scenarios, a regular list view is appropriate.</p>
+</li>
+</ul>
+<h2 id="create-a-tree-view">Create a tree view</h2>
+<p>You can create a tree view by binding the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource">ItemsSource</a> to a hierarchical data source, or you can create and manage <strong>TreeViewNode</strong> objects yourself.</p>
+<p>To create a tree view, you use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview">TreeView</a> control and a hierarchy of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode">TreeViewNode</a> objects. You create the node hierarchy by adding one or more root nodes to the <strong>TreeView</strong> control's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.rootnodes">RootNodes</a> collection. Each <strong>TreeViewNode</strong> can then have more nodes added to its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.children">Children</a> collection. You can nest tree view nodes to whatever depth you require.</p>
+<p>You can bind a hierarchical data source to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource">ItemsSource</a> property to provide the tree view content, just as you would with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a>'s <strong>ItemsSource</strong>. Similarly, use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate">ItemTemplate</a> (and the optional <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate">ItemTemplateSelector</a>) to provide a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> that renders the item.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>ItemsSource</strong> and its related APIs require Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-sdk">SDK 17763</a>) or later, or <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>.</p>
+<p><strong>ItemsSource</strong> is an alternative mechanism to <strong>TreeView.RootNodes</strong> for putting content into the <strong>TreeView</strong> control. You cannot set both <strong>ItemsSource</strong> and <strong>RootNodes</strong> at the same time. When you use <strong>ItemsSource</strong>, nodes are created for you, and you can access them from the <strong>TreeView.RootNodes</strong> property.</p>
+</div>
+<p>Here's an example of a simple tree view declared in XAML. You typically add the nodes in code, but we show the XAML hierarchy here because it can be helpful for visualizing how the hierarchy of nodes is created.</p>
+<pre><code class="lang-xaml">&lt;muxc:TreeView&gt;
+    &lt;muxc:TreeView.RootNodes&gt;
+        &lt;muxc:TreeViewNode Content=&quot;Flavors&quot;
+                           IsExpanded=&quot;True&quot;&gt;
+            &lt;muxc:TreeViewNode.Children&gt;
+                &lt;muxc:TreeViewNode Content=&quot;Vanilla&quot;/&gt;
+                &lt;muxc:TreeViewNode Content=&quot;Strawberry&quot;/&gt;
+                &lt;muxc:TreeViewNode Content=&quot;Chocolate&quot;/&gt;
+            &lt;/muxc:TreeViewNode.Children&gt;
+        &lt;/muxc:TreeViewNode&gt;
+    &lt;/muxc:TreeView.RootNodes&gt;
+&lt;/muxc:TreeView&gt;
+</code></pre>
+<p>In most cases, your tree view displays data from a data source, so you typically declare the root <strong>TreeView</strong> control in XAML, but add the <strong>TreeViewNode</strong> objects in code or using data binding.</p>
+<h3 id="bind-to-a-hierarchical-data-source">Bind to a hierarchical data source</h3>
+<p>To create a tree view using data binding, set a hierarchical collection to the <strong>TreeView.ItemsSource</strong> property. Then in the <strong>ItemTemplate</strong>, set the child items collection to the <strong>TreeViewItem.ItemsSource</strong> property.</p>
+<pre><code class="lang-xaml">&lt;muxc:TreeView ItemsSource=&quot;{x:Bind DataSource}&quot;&gt;
+    &lt;muxc:TreeView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;local:Item&quot;&gt;
+            &lt;muxc:TreeViewItem ItemsSource=&quot;{x:Bind Children}&quot;
+                               Content=&quot;{x:Bind Name}&quot;/&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/muxc:TreeView.ItemTemplate&gt;
+&lt;/muxc:TreeView&gt;
+</code></pre>
+<p>See <a href="#tree-view-using-data-binding">Tree view using data binding</a> for the full code.</p>
+<h4 id="items-and-item-containers">Items and item containers</h4>
+<p>If you use <strong>TreeView.ItemsSource</strong>, these APIs are available to get the node or data item from the container, and vice versa.</p>
+<table>
+<thead>
+<tr>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem">TreeViewItem</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemfromcontainer">TreeView.ItemFromContainer</a></td>
+<td>Gets the data item for the specified <strong>TreeViewItem</strong> container.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.containerfromitem">TreeView.ContainerFromItem</a></td>
+<td>Gets the <strong>TreeViewItem</strong> container for the specified data item.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode">TreeViewNode</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.nodefromcontainer">TreeView.NodeFromContainer</a></td>
+<td>Gets the <strong>TreeViewNode</strong> for the specified <strong>TreeViewItem</strong> container.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.containerfromnode">TreeView.ContainerFromNode</a></td>
+<td>Gets the <strong>TreeViewItem</strong> container for the specified <strong>TreeViewNode</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="manage-tree-view-nodes">Manage tree view nodes</h3>
+<p>This tree view is the same as the one created previously in XAML, but the nodes are created in code instead.</p>
+<pre><code class="lang-xaml">&lt;muxc:TreeView x:Name=&quot;sampleTreeView&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void InitializeTreeView()
+{
+    muxc.TreeViewNode rootNode = new muxc.TreeViewNode() { Content = &quot;Flavors&quot; };
+    rootNode.IsExpanded = true;
+    rootNode.Children.Add(new muxc.TreeViewNode() { Content = &quot;Vanilla&quot; });
+    rootNode.Children.Add(new muxc.TreeViewNode() { Content = &quot;Strawberry&quot; });
+    rootNode.Children.Add(new muxc.TreeViewNode() { Content = &quot;Chocolate&quot; });
+
+    sampleTreeView.RootNodes.Add(rootNode);
+}
+</code></pre>
+<pre><code class="lang-vb">Private Sub InitializeTreeView()
+    Dim rootNode As New muxc.TreeViewNode With {.Content = &quot;Flavors&quot;, .IsExpanded = True}
+    With rootNode.Children
+        .Add(New muxc.TreeViewNode With {.Content = &quot;Vanilla&quot;})
+        .Add(New muxc.TreeViewNode With {.Content = &quot;Strawberry&quot;})
+        .Add(New muxc.TreeViewNode With {.Content = &quot;Chocolate&quot;})
+    End With
+    sampleTreeView.RootNodes.Add(rootNode)
+End Sub
+</code></pre>
+<p>These APIs are available for managing the data hierarchy of your tree view.</p>
+<table>
+<thead>
+<tr>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview">TreeView</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.rootnodes">RootNodes</a></td>
+<td>A tree view can have one or more root nodes. Add a <strong>TreeViewNode</strong> object to the <strong>RootNodes</strong> collection to create a root node. The <strong>Parent</strong> of a root node is always <strong>null</strong>. The <strong>Depth</strong> of a root node is 0.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode">TreeViewNode</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.children">Children</a></td>
+<td>Add <strong>TreeViewNode</strong> objects to the <strong>Children</strong> collection of a parent node to create your node hierarchy. A node is the <strong>Parent</strong> of all nodes in its <strong>Children</strong> collection.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.haschildren">HasChildren</a></td>
+<td><strong>true</strong> if the node has realized children. <strong>false</strong> indicates an empty folder or an item.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren">HasUnrealizedChildren</a></td>
+<td>Use this property if you're filling nodes as they're expanded. See <a href="#fill-a-node-when-its-expanding">Fill a node when it's expanding</a> later in this article.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.depth">Depth</a></td>
+<td>Indicates how far from the root node a child node is.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.parent">Parent</a></td>
+<td>Gets the <strong>TreeViewNode</strong> that owns the <strong>Children</strong> collection that this node is part of.</td>
+</tr>
+</tbody>
+</table>
+<p>The tree view uses the <strong>HasChildren</strong> and <strong>HasUnrealizedChildren</strong> properties to determine whether the expand/collapse icon is shown. If either property is <strong>true</strong>, the icon is shown; otherwise, it's not shown.</p>
+<h2 id="tree-view-node-content">Tree view node content</h2>
+<p>You can store the data item that a tree view node represents in its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.content">Content</a> property.</p>
+<p>In the previous examples, the content was a simple string value. Here, a tree view node represents the user's <strong>Pictures</strong> folder, so the pictures library <a href="/uwp/api/windows.storage.storagefolder">StorageFolder</a> is assigned to the node's <strong>Content</strong> property.</p>
+<pre><code class="lang-csharp">StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
+muxc.TreeViewNode pictureNode = new muxc.TreeViewNode();
+pictureNode.Content = picturesFolder;
+</code></pre>
+<pre><code class="lang-vb">Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To get access to the <strong>Pictures</strong> folder, you need to specify the <strong>Pictures Library</strong> capability in the app manifest. See <a href="/windows/uwp/packaging/app-capability-declarations">App capability declarations</a> for more information.</p>
+</div>
+<p>You can provide a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> to specify how the data item is displayed in the tree view.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In Windows 10, version 1803, you have to re-template the <strong>TreeView</strong> control and specify a custom <strong>ItemTemplate</strong> if your content is not a string. In later versions, set the <strong>ItemTemplate</strong> property. For more info, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate">TreeView.ItemTemplate</a>.</p>
+</div>
+<h3 id="item-container-style">Item container style</h3>
+<p>Whether you use <strong>ItemsSource</strong> or <strong>RootNodes</strong>, the actual element used to display each node – called the &quot;container&quot; – is a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem">TreeViewItem</a> object. You can modify <strong>TreeViewItem</strong> properties to style the container using the <strong>TreeView</strong>'s <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemcontainerstyle">ItemContainerStyle</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemcontainerstyleselector">ItemContainerStyleSelector</a> properties.</p>
+<p>This example shows how to change the expanded/collapsed glyphs to orange +/- signs. In the default <strong>TreeViewItem</strong> template, the glyphs are set to use the <code>Segoe MDL2 Assets</code> font. You can set the <strong>Setter.Value</strong> property by providing the Unicode character value in the format used by XAML, like this: <code>Value=&quot;&amp;#xE948;&quot;</code>.</p>
+<pre><code class="lang-xaml">&lt;muxc:TreeView&gt;
+    &lt;muxc:TreeView.ItemContainerStyle&gt;
+        &lt;Style TargetType=&quot;muxc:TreeViewItem&quot;&gt;
+            &lt;Setter Property=&quot;CollapsedGlyph&quot; Value=&quot;&amp;#xE948;&quot;/&gt;
+            &lt;Setter Property=&quot;ExpandedGlyph&quot; Value=&quot;&amp;#xE949;&quot;/&gt;
+            &lt;Setter Property=&quot;GlyphBrush&quot; Value=&quot;DarkOrange&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/muxc:TreeView.ItemContainerStyle&gt;
+    &lt;muxc:TreeView.RootNodes&gt;
+        &lt;muxc:TreeViewNode Content=&quot;Flavors&quot;
+               IsExpanded=&quot;True&quot;&gt;
+            &lt;muxc:TreeViewNode.Children&gt;
+                &lt;muxc:TreeViewNode Content=&quot;Vanilla&quot;/&gt;
+                &lt;muxc:TreeViewNode Content=&quot;Strawberry&quot;/&gt;
+                &lt;muxc:TreeViewNode Content=&quot;Chocolate&quot;/&gt;
+            &lt;/muxc:TreeViewNode.Children&gt;
+        &lt;/muxc:TreeViewNode&gt;
+    &lt;/muxc:TreeView.RootNodes&gt;
+&lt;/muxc:TreeView&gt;
+</code></pre>
+<h3 id="item-template-selectors">Item template selectors</h3>
+<p>By default, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview">TreeView</a> shows the string representation of the data item for each node. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate">ItemTemplate</a> property to change what is displayed for all nodes. Or, you can use an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplateselector">ItemTemplateSelector</a> to choose a different <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> for the tree view items based on the type of item or some other criteria you specify.</p>
+<p>For example, in a file explorer app, you could use one data template for folders, and another for files.</p>
+<p><img src="images/treeview-icons.png" alt="Folders and files using different data templates"></p>
+<p>Here is an example of how to create and use an item template selector.  For more info, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector">DataTemplateSelector</a> class.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This code is part of a larger example and won't work on its own. To see the full example, including the code that defines <code>ExplorerItem</code>, check out the <a href="https://github.com/Microsoft/WinUI-Gallery">Xaml-Controls-Gallery repository</a> on GitHub. <a href="https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml">TreeViewPage.xaml</a> and <a href="https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml.cs">TreeViewPage.xaml.cs</a> contain the relevant code.</p>
+</div>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;DataTemplate x:Key=&quot;FolderTemplate&quot; x:DataType=&quot;local:ExplorerItem&quot;&gt;
+        &lt;muxc:TreeViewItem ItemsSource=&quot;{x:Bind Children}&quot;&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+                &lt;Image Width=&quot;20&quot; Source=&quot;Assets/folder.png&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind Name}&quot; /&gt;
+            &lt;/StackPanel&gt;
+        &lt;/muxc:TreeViewItem&gt;
+    &lt;/DataTemplate&gt;
+
+    &lt;DataTemplate x:Key=&quot;FileTemplate&quot; x:DataType=&quot;local:ExplorerItem&quot;&gt;
+        &lt;muxc:TreeViewItem&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+                &lt;Image Width=&quot;20&quot; Source=&quot;Assets/file.png&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind Name}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/muxc:TreeViewItem&gt;
+    &lt;/DataTemplate&gt;
+
+    &lt;local:ExplorerItemTemplateSelector
+            x:Key=&quot;ExplorerItemTemplateSelector&quot;
+            FolderTemplate=&quot;{StaticResource FolderTemplate}&quot;
+            FileTemplate=&quot;{StaticResource FileTemplate}&quot; /&gt;
+&lt;/Page.Resources&gt;
+
+&lt;Grid&gt;
+    &lt;muxc:TreeView
+        ItemsSource=&quot;{x:Bind DataSource}&quot;
+        ItemTemplateSelector=&quot;{StaticResource ExplorerItemTemplateSelector}&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class ExplorerItemTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate FolderTemplate { get; set; }
+    public DataTemplate FileTemplate { get; set; }
+
+    protected override DataTemplate SelectTemplateCore(object item)
+    {
+        var explorerItem = (ExplorerItem)item;
+        if (explorerItem.Type == ExplorerItem.ExplorerItemType.Folder) return FolderTemplate;
+
+        return FileTemplate;
+    }
+}
+</code></pre>
+<p>The type of object passed to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore">SelectTemplateCore</a> method depends on whether you create the tree view by setting the <strong>ItemsSource</strong> property, or by creating and managing <strong>TreeViewNode</strong> objects yourself.</p>
+<ul>
+<li>If <strong>ItemsSource</strong> is set, the object will be of whatever type the data item is. In the previous example, the object was an <code>ExplorerItem</code>, so it could be used after a simple cast to <code>ExplorerItem</code>: <code>var explorerItem = (ExplorerItem)item;</code>.</li>
+<li>If <strong>ItemsSource</strong> is not set and you manage the tree view nodes yourself, the object passed to <strong>SelectTemplateCore</strong> is a <strong>TreeViewNode</strong>. In this case, you can get the data item from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.content">TreeViewNode.Content</a> property.</li>
+</ul>
+<p>Here's a data template selector from the <a href="#pictures-and-music-library-tree-view">Pictures and Music library tree view</a> example shown later. The <strong>SelectTemplateCore</strong> method receives a <strong>TreeViewNode</strong>, which might have either a <a href="/uwp/api/windows.storage.storagefolder">StorageFolder</a> or a <a href="/uwp/api/windows.storage.storagefile">StorageFile</a> as its content. Based on the content, you can return a default template, or a specific template for the music folder, the picture folder, music files, or picture files.</p>
+<pre><code class="lang-csharp">protected override DataTemplate SelectTemplateCore(object item)
+{
+    var node = (TreeViewNode)item;
+    if (node.Content is StorageFolder)
+    {
+        var content = node.Content as StorageFolder;
+        if (content.DisplayName.StartsWith(&quot;Pictures&quot;)) return PictureFolderTemplate;
+        if (content.DisplayName.StartsWith(&quot;Music&quot;)) return MusicFolderTemplate;
+    }
+    else if (node.Content is StorageFile)
+    {
+        var content = node.Content as StorageFile;
+        if (content.ContentType.StartsWith(&quot;image&quot;)) return PictureItemTemplate;
+        if (content.ContentType.StartsWith(&quot;audio&quot;)) return MusicItemTemplate;
+    }
+    return DefaultTemplate;
+}
+</code></pre>
+<pre><code class="lang-vb">Protected Overrides Function SelectTemplateCore(ByVal item As Object) As DataTemplate
+    Dim node = CType(item, muxc.TreeViewNode)
+
+    If TypeOf node.Content Is StorageFolder Then
+        Dim content = TryCast(node.Content, StorageFolder)
+        If content.DisplayName.StartsWith(&quot;Pictures&quot;) Then Return PictureFolderTemplate
+        If content.DisplayName.StartsWith(&quot;Music&quot;) Then Return MusicFolderTemplate
+    ElseIf TypeOf node.Content Is StorageFile Then
+        Dim content = TryCast(node.Content, StorageFile)
+        If content.ContentType.StartsWith(&quot;image&quot;) Then Return PictureItemTemplate
+        If content.ContentType.StartsWith(&quot;audio&quot;) Then Return MusicItemTemplate
+    End If
+
+    Return DefaultTemplate
+End Function
+</code></pre>
+<h2 id="interacting-with-a-tree-view">Interacting with a tree view</h2>
+<p>You can configure a tree view to let a user interact with it in several different ways:</p>
+<ul>
+<li>Expand or collapse nodes</li>
+<li>Single- or multi-select items</li>
+<li>Click to invoke an item</li>
+</ul>
+<h3 id="expandcollapse">Expand/collapse</h3>
+<p>Any tree view node that has children can always be expanded or collapsed by clicking the expand/collapse glyph. You can also expand or collapse a node programmatically, and respond when a node changes state.</p>
+<h4 id="expandcollapse-a-node-programmatically">Expand/collapse a node programmatically</h4>
+<p>There are 2 ways you can expand or collapse a tree view node in your code.</p>
+<ul>
+<li><p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview">TreeView</a> class has the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.collapse">Collapse</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.expand">Expand</a> methods. When you call these methods, you pass in the <strong>TreeViewNode</strong> that you want to expand or collapse.</p>
+</li>
+<li><p>Each <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode">TreeViewNode</a> has the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.isexpanded">IsExpanded</a> property. You can use this property to check the state of a node, or set it to change the state. You can also set this property in XAML to set the initial state of a node.</p>
+</li>
+</ul>
+<h3 id="fill-a-node-when-its-expanding">Fill a node when it's expanding</h3>
+<p>You might need to show a large number of nodes in your tree view, or you might not know ahead of time how many nodes it will have. The <strong>TreeView</strong> control is not virtualized, so you can manage resources by filling each node as it's expanded, and removing the child nodes when it's collapsed.</p>
+<p>Handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.expand">Expanding</a> event and use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren">HasUnrealizedChildren</a> property to add children to a node when it's being expanded. The <strong>HasUnrealizedChildren</strong> property indicates whether the node needs to be filled, or if its <strong>Children</strong> collection has already been populated. It's important to remember that the <strong>TreeViewNode</strong> doesn't set this value, you need to manage it in your app code.</p>
+<p>Here's an example of these APIs in use. See the complete example code at the end of this article for context, including the implementation of <strong>FillTreeNode</strong>.</p>
+<pre><code class="lang-csharp">private void SampleTreeView_Expanding(muxc.TreeView sender, muxc.TreeViewExpandingEventArgs args)
+{
+    if (args.Node.HasUnrealizedChildren)
+    {
+        FillTreeNode(args.Node);
+    }
+}
+</code></pre>
+<pre><code class="lang-vb">Private Sub SampleTreeView_Expanding(sender As muxc.TreeView, args As muxc.TreeViewExpandingEventArgs)
+    If args.Node.HasUnrealizedChildren Then
+        FillTreeNode(args.Node)
+    End If
+End Sub
+</code></pre>
+<p>It's not required, but you might want to also handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.collapsed">Collapsed</a> event and remove the child nodes when the parent node is closed. This can be important if your tree view has many nodes, or if the node data uses a lot of resources. You should consider the performance impact of filling a node each time it's opened versus leaving the children on a closed node. The best option will depend on your app.</p>
+<p>Here's an example of a handler for the <strong>Collapsed</strong> event.</p>
+<pre><code class="lang-csharp">private void SampleTreeView_Collapsed(muxc.TreeView sender, muxc.TreeViewCollapsedEventArgs args)
+{
+    args.Node.Children.Clear();
+    args.Node.HasUnrealizedChildren = true;
+}
+</code></pre>
+<pre><code class="lang-vb">Private Sub SampleTreeView_Collapsed(sender As muxc.TreeView, args As muxc.TreeViewCollapsedEventArgs)
+    args.Node.Children.Clear()
+    args.Node.HasUnrealizedChildren = True
+End Sub
+</code></pre>
+<h3 id="invoking-an-item">Invoking an item</h3>
+<p>A user can invoke an action (treating the item like a button) instead of selecting the item. You handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.iteminvoked">ItemInvoked</a> event to respond to this user interaction.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Unlike <strong>ListView</strong>, which has the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.isitemclickenabled">IsItemClickEnabled</a> property, invoking an item is always enabled on the tree view. You can still choose whether to handle the event or not.</p>
+</div>
+<p><strong><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewiteminvokedeventargs">TreeViewItemInvokedEventArgs</a> class</strong></p>
+<p>The <strong>ItemInvoked</strong> event args give you access to the invoked item. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewiteminvokedeventargs.invokeditem">InvokedItem</a> property has the node that was invoked. You can cast it to a <strong>TreeViewNode</strong> and get the data item from the <strong>TreeViewNode.Content</strong> property.</p>
+<p>Here's an example of an <strong>ItemInvoked</strong> event handler. The data item is an <a href="/uwp/api/windows.storage.istorageitem">IStorageItem</a>, and this example just displays some info about the file and tree. Also, if the node is a folder node, it expands or collapses the node at the same time. Otherwise, the node expands or collapses only when the chevron is clicked.</p>
+<pre><code class="lang-csharp">private void SampleTreeView_ItemInvoked(muxc.TreeView sender, muxc.TreeViewItemInvokedEventArgs args)
+{
+    var node = args.InvokedItem as muxc.TreeViewNode;
+    if (node.Content is IStorageItem item)
+    {
+        FileNameTextBlock.Text = item.Name;
+        FilePathTextBlock.Text = item.Path;
+        TreeDepthTextBlock.Text = node.Depth.ToString();
+
+        if (node.Content is StorageFolder)
+        {
+            node.IsExpanded = !node.IsExpanded;
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-vb">Private Sub SampleTreeView_ItemInvoked(sender As muxc.TreeView, args As muxc.TreeViewItemInvokedEventArgs)
+    Dim node = TryCast(args.InvokedItem, muxc.TreeViewNode)
+    Dim item = TryCast(node.Content, IStorageItem)
+    If item IsNot Nothing Then
+        FileNameTextBlock.Text = item.Name
+        FilePathTextBlock.Text = item.Path
+        TreeDepthTextBlock.Text = node.Depth.ToString()
+        If TypeOf node.Content Is StorageFolder Then
+            node.IsExpanded = Not node.IsExpanded
+        End If
+    End If
+End Sub
+</code></pre>
+<h3 id="item-selection">Item selection</h3>
+<p>The <strong>TreeView</strong> control supports both single-selection and multi-selection. By default, selection of nodes is turned off, but you can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectionmode">TreeView.SelectionMode</a> property to allow selection of nodes. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewselectionmode">TreeViewSelectionMode</a> values are <strong>None</strong>, <strong>Single</strong>, and <strong>Multiple</strong>.</p>
+<h4 id="multiple-selection">Multiple selection</h4>
+<p>When multiple selection is enabled, a checkbox is shown next to each tree view node, and selected items are highlighted. A user can select or de-select an item by using the checkbox; clicking the item still causes it to be invoked.</p>
+<p>Selecting or de-selecting a parent node will select or de-select all children under that node. If some, but not all, of the children under a parent node are selected, the checkbox for the parent node is shown in the indeterminate state.</p>
+<p><img src="images/treeview-selection.png" alt="Multiple selection in a tree view"></p>
+<p>Selected nodes are added to the tree view's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectednodes">SelectedNodes</a> collection. You can call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectall">SelectAll</a> method to select all the nodes in a tree view.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you call <strong>SelectAll</strong>, all realized nodes are selected, regardless of the <strong>SelectionMode</strong>. To provide a consistent user experience, you should only call <strong>SelectAll</strong> if <strong>SelectionMode</strong> is <strong>Multiple</strong>.</p>
+</div>
+<h4 id="selection-and-realizedunrealized-nodes">Selection and realized/unrealized nodes</h4>
+<p>If your tree view has unrealized nodes, they are not taken into account for selection. Here are some things you need to keep in mind regarding selection with unrealized nodes.</p>
+<ul>
+<li>If a user selects a parent node, all the realized children under that parent are also selected. Similarly, if all the child nodes are selected, the parent node also becomes selected.</li>
+<li>The <strong>SelectAll</strong> method only adds realized nodes to the <strong>SelectedNodes</strong> collection.</li>
+<li>If a parent node with unrealized children is selected, the children will be selected as they are realized.</li>
+</ul>
+<h4 id="selecteditemselecteditems">SelectedItem/SelectedItems</h4>
+<p>TreeView has the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selecteditem">SelectedItem</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selecteditems">SelectedItems</a> properties. You can use these properties to get the content of selected nodes directly. If multiple selection is enabled, SelectedItem contains the first item in the SelectedItems collection.</p>
+<h4 id="selectionchanged">SelectionChanged</h4>
+<p>You can handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.selectionchanged">SelectionChanged</a> event to respond when the collection of selected items changes, either programmatically or through user interaction.</p>
+<pre><code class="lang-xaml">&lt;TreeView ItemsSource=&quot;{x:Bind Folders}&quot;
+          SelectionMode=&quot;Multiple&quot;
+          SelectionChanged=&quot;TreeView_SelectionChanged&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">public void TreeView_SelectionChanged(TreeView sender, TreeViewSelectionChangedEventArgs args)
+{
+    foreach (object item in args.RemovedItems)
+    {
+        this.SelectedFolders.Remove((Folder)item);
+    }
+
+    foreach (object item in args.AddedItems)
+    {
+        this.SelectedFolders.Add((Folder)item);
+    }
+}
+</code></pre>
+<h2 id="code-examples">Code examples</h2>
+<p>The following code examples demonstrate various features of the tree view control.</p>
+<h3 id="tree-view-using-xaml">Tree view using XAML</h3>
+<p>This example shows how to create a simple tree view structure in XAML. The tree view shows ice cream flavors and toppings that the user can choose from, arranged in categories. Multi-selection is enabled, and when the user clicks a button, the selected items are displayed in the main app UI.</p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;TreeViewTest.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+    mc:Ignorable=&quot;d&quot;
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;
+          Padding=&quot;100&quot;&gt;
+        &lt;SplitView IsPaneOpen=&quot;True&quot;
+               DisplayMode=&quot;Inline&quot;
+               OpenPaneLength=&quot;296&quot;&gt;
+            &lt;SplitView.Pane&gt;
+                &lt;muxc:TreeView x:Name=&quot;DessertTree&quot; SelectionMode=&quot;Multiple&quot;&gt;
+                    &lt;muxc:TreeView.RootNodes&gt;
+                        &lt;muxc:TreeViewNode Content=&quot;Flavors&quot; IsExpanded=&quot;True&quot;&gt;
+                            &lt;muxc:TreeViewNode.Children&gt;
+                                &lt;muxc:TreeViewNode Content=&quot;Vanilla&quot;/&gt;
+                                &lt;muxc:TreeViewNode Content=&quot;Strawberry&quot;/&gt;
+                                &lt;muxc:TreeViewNode Content=&quot;Chocolate&quot;/&gt;
+                            &lt;/muxc:TreeViewNode.Children&gt;
+                        &lt;/muxc:TreeViewNode&gt;
+
+                        &lt;muxc:TreeViewNode Content=&quot;Toppings&quot;&gt;
+                            &lt;muxc:TreeViewNode.Children&gt;
+                                &lt;muxc:TreeViewNode Content=&quot;Candy&quot;&gt;
+                                    &lt;muxc:TreeViewNode.Children&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Chocolate&quot;/&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Mint&quot;/&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Sprinkles&quot;/&gt;
+                                    &lt;/muxc:TreeViewNode.Children&gt;
+                                &lt;/muxc:TreeViewNode&gt;
+                                &lt;muxc:TreeViewNode Content=&quot;Fruits&quot;&gt;
+                                    &lt;muxc:TreeViewNode.Children&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Mango&quot;/&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Peach&quot;/&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Kiwi&quot;/&gt;
+                                    &lt;/muxc:TreeViewNode.Children&gt;
+                                &lt;/muxc:TreeViewNode&gt;
+                                &lt;muxc:TreeViewNode Content=&quot;Berries&quot;&gt;
+                                    &lt;muxc:TreeViewNode.Children&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Strawberry&quot;/&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Blueberry&quot;/&gt;
+                                        &lt;muxc:TreeViewNode Content=&quot;Blackberry&quot;/&gt;
+                                    &lt;/muxc:TreeViewNode.Children&gt;
+                                &lt;/muxc:TreeViewNode&gt;
+                            &lt;/muxc:TreeViewNode.Children&gt;
+                        &lt;/muxc:TreeViewNode&gt;
+                    &lt;/muxc:TreeView.RootNodes&gt;
+                &lt;/muxc:TreeView&gt;
+            &lt;/SplitView.Pane&gt;
+
+            &lt;StackPanel Grid.Column=&quot;1&quot; Margin=&quot;12,0&quot;&gt;
+                &lt;Button Content=&quot;Select all&quot; Click=&quot;SelectAllButton_Click&quot;/&gt;
+                &lt;Button Content=&quot;Create order&quot; Click=&quot;OrderButton_Click&quot; Margin=&quot;0,12&quot;/&gt;
+                &lt;TextBlock Text=&quot;Your flavor selections:&quot; Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;FlavorList&quot; Margin=&quot;0,0,0,12&quot;/&gt;
+                &lt;TextBlock Text=&quot;Your topping selections:&quot; Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;ToppingList&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/SplitView&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<pre><code class="lang-csharp">using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using muxc = Microsoft.UI.Xaml.Controls;
+
+namespace TreeViewTest
+{
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+        }
+
+        private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlavorList.Text = string.Empty;
+            ToppingList.Text = string.Empty;
+
+            foreach (muxc.TreeViewNode node in DessertTree.SelectedNodes)
+            {
+                if (node.Parent.Content?.ToString() == &quot;Flavors&quot;)
+                {
+                    FlavorList.Text += node.Content + &quot;; &quot;;
+                }
+                else if (node.HasChildren == false)
+                {
+                    ToppingList.Text += node.Content + &quot;; &quot;;
+                }
+            }
+        }
+
+        private void SelectAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DessertTree.SelectionMode == muxc.TreeViewSelectionMode.Multiple)
+            {
+                DessertTree.SelectAll();
+            }
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-vb">Private Sub OrderButton_Click(sender As Object, e As RoutedEventArgs)
+    FlavorList.Text = String.Empty
+    ToppingList.Text = String.Empty
+    For Each node As muxc.TreeViewNode In DessertTree.SelectedNodes
+        If node.Parent.Content?.ToString() = &quot;Flavors&quot; Then
+            FlavorList.Text += node.Content &amp; &quot;; &quot;
+        ElseIf node.HasChildren = False Then
+            ToppingList.Text += node.Content &amp; &quot;; &quot;
+        End If
+    Next
+End Sub
+
+Private Sub SelectAllButton_Click(sender As Object, e As RoutedEventArgs)
+    If DessertTree.SelectionMode = muxc.TreeViewSelectionMode.Multiple Then
+        DessertTree.SelectAll()
+    End If
+End Sub
+</code></pre>
+<h3 id="tree-view-using-data-binding">Tree view using data binding</h3>
+<p>This example shows how to create the same tree view as the previous example. However, instead of creating the data hierarchy in XAML, the data is created in code and bound to the tree view's <strong>ItemsSource</strong> property. (The button event handlers shown in the previous example apply to this example also.)</p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;TreeViewTest.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+    xmlns:local=&quot;using:TreeViewTest&quot;
+    mc:Ignorable=&quot;d&quot;
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;
+          Padding=&quot;100&quot;&gt;
+        &lt;SplitView IsPaneOpen=&quot;True&quot;
+                   DisplayMode=&quot;Inline&quot;
+                   OpenPaneLength=&quot;296&quot;&gt;
+            &lt;SplitView.Pane&gt;
+                &lt;muxc:TreeView Name=&quot;DessertTree&quot;
+                                      SelectionMode=&quot;Multiple&quot;
+                                      ItemsSource=&quot;{x:Bind DataSource}&quot;&gt;
+                    &lt;muxc:TreeView.ItemTemplate&gt;
+                        &lt;DataTemplate x:DataType=&quot;local:Item&quot;&gt;
+                            &lt;muxc:TreeViewItem
+                                ItemsSource=&quot;{x:Bind Children}&quot;
+                                Content=&quot;{x:Bind Name}&quot;/&gt;
+                        &lt;/DataTemplate&gt;
+                    &lt;/muxc:TreeView.ItemTemplate&gt;
+                &lt;/muxc:TreeView&gt;
+            &lt;/SplitView.Pane&gt;
+
+            &lt;StackPanel Grid.Column=&quot;1&quot; Margin=&quot;12,0&quot;&gt;
+                &lt;Button Content=&quot;Select all&quot;
+                        Click=&quot;SelectAllButton_Click&quot;/&gt;
+                &lt;Button Content=&quot;Create order&quot;
+                        Click=&quot;OrderButton_Click&quot;
+                        Margin=&quot;0,12&quot;/&gt;
+                &lt;TextBlock Text=&quot;Your flavor selections:&quot;
+                           Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;FlavorList&quot; Margin=&quot;0,0,0,12&quot;/&gt;
+                &lt;TextBlock Text=&quot;Your topping selections:&quot;
+                           Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;ToppingList&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/SplitView&gt;
+    &lt;/Grid&gt;
+
+&lt;/Page&gt;
+</code></pre>
+<pre><code class="lang-csharp">using System.Collections.ObjectModel;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using muxc = Microsoft.UI.Xaml.Controls;
+
+namespace TreeViewTest
+{
+    public sealed partial class MainPage : Page
+    {
+        private ObservableCollection&lt;Item&gt; DataSource = new ObservableCollection&lt;Item&gt;();
+
+        public MainPage()
+        {
+            this.InitializeComponent();
+            DataSource = GetDessertData();
+        }
+
+        private ObservableCollection&lt;Item&gt; GetDessertData()
+        {
+            var list = new ObservableCollection&lt;Item&gt;();
+
+            Item flavorsCategory = new Item()
+            {
+                Name = &quot;Flavors&quot;,
+                Children =
+                {
+                    new Item() { Name = &quot;Vanilla&quot; },
+                    new Item() { Name = &quot;Strawberry&quot; },
+                    new Item() { Name = &quot;Chocolate&quot; }
+                }
+            };
+
+            Item toppingsCategory = new Item()
+            {
+                Name = &quot;Toppings&quot;,
+                Children =
+                {
+                    new Item()
+                    {
+                        Name = &quot;Candy&quot;,
+                        Children =
+                        {
+                            new Item() { Name = &quot;Chocolate&quot; },
+                            new Item() { Name = &quot;Mint&quot; },
+                            new Item() { Name = &quot;Sprinkles&quot; }
+                        }
+                    },
+                    new Item()
+                    {
+                        Name = &quot;Fruits&quot;,
+                        Children =
+                        {
+                            new Item() { Name = &quot;Mango&quot; },
+                            new Item() { Name = &quot;Peach&quot; },
+                            new Item() { Name = &quot;Kiwi&quot; }
+                        }
+                    },
+                    new Item()
+                    {
+                        Name = &quot;Berries&quot;,
+                        Children =
+                        {
+                            new Item() { Name = &quot;Strawberry&quot; },
+                            new Item() { Name = &quot;Blueberry&quot; },
+                            new Item() { Name = &quot;Blackberry&quot; }
+                        }
+                    }
+                }
+            };
+
+            list.Add(flavorsCategory);
+            list.Add(toppingsCategory);
+            return list;
+        }
+
+        private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            FlavorList.Text = string.Empty;
+            ToppingList.Text = string.Empty;
+
+            foreach (muxc.TreeViewNode node in DessertTree.SelectedNodes)
+            {
+                if (node.Parent.Content?.ToString() == &quot;Flavors&quot;)
+                {
+                    FlavorList.Text += node.Content + &quot;; &quot;;
+                }
+                else if (node.HasChildren == false)
+                {
+                    ToppingList.Text += node.Content + &quot;; &quot;;
+                }
+            }
+        }
+
+        private void SelectAllButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (DessertTree.SelectionMode == muxc.TreeViewSelectionMode.Multiple)
+            {
+                DessertTree.SelectAll();
+            }
+        }
+    }
+
+    public class Item
+    {
+        public string Name { get; set; }
+        public ObservableCollection&lt;Item&gt; Children { get; set; } = new ObservableCollection&lt;Item&gt;();
+
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+}
+
+</code></pre>
+<h3 id="pictures-and-music-library-tree-view">Pictures and Music library tree view</h3>
+<p>This example shows how to create a tree view that shows the contents and structure of the user's <strong>Pictures</strong> and <strong>Music</strong> libraries. The number of items can't be known ahead of time, so each node is filled when it's expanded, and emptied when it's collapsed.</p>
+<p>A custom item template is used to display the data items, which are of type <a href="/uwp/api/windows.storage.istorageitem">IStorageItem</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The code in this example requires the <strong>picturesLibrary</strong> and <strong>musicLibrary</strong> capabilities. For more info about file access, see <a href="/windows/uwp/files/file-access-permissions">File access permissions</a>, <a href="/windows/uwp/files/quickstart-listing-files-and-folders">Enumerate and query files and folders</a>, and <a href="/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries">Files and folders in the Music, Pictures, and Videos libraries</a>.</p>
+</div>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;TreeViewTest.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:TreeViewTest&quot;
+    xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+    xmlns:storage=&quot;using:Windows.Storage&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+    &lt;Page.Resources&gt;
+        &lt;DataTemplate x:Key=&quot;TreeViewItemDataTemplate&quot; x:DataType=&quot;muxc:TreeViewNode&quot;&gt;
+            &lt;Grid Height=&quot;44&quot;&gt;
+                &lt;TextBlock Text=&quot;{x:Bind ((storage:IStorageItem)Content).Name}&quot;
+                           HorizontalAlignment=&quot;Left&quot;
+                           VerticalAlignment=&quot;Center&quot;
+                           Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;/&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+
+        &lt;DataTemplate x:Key=&quot;MusicItemDataTemplate&quot; x:DataType=&quot;muxc:TreeViewNode&quot;&gt;
+            &lt;StackPanel Height=&quot;44&quot; Orientation=&quot;Horizontal&quot;&gt;
+                &lt;SymbolIcon Symbol=&quot;Audio&quot; Margin=&quot;0,0,4,0&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind ((storage:StorageFile)Content).DisplayName}&quot;
+                           HorizontalAlignment=&quot;Left&quot;
+                           VerticalAlignment=&quot;Center&quot;
+                           Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+
+        &lt;DataTemplate x:Key=&quot;PictureItemDataTemplate&quot; x:DataType=&quot;muxc:TreeViewNode&quot;&gt;
+            &lt;StackPanel Height=&quot;44&quot; Orientation=&quot;Horizontal&quot;&gt;
+                &lt;FontIcon FontFamily=&quot;Segoe MDL2 Assets&quot; Glyph=&quot;&amp;#xEB9F;&quot;
+                          Margin=&quot;0,0,4,0&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind ((storage:StorageFile)Content).DisplayName}&quot;
+                           HorizontalAlignment=&quot;Left&quot;
+                           VerticalAlignment=&quot;Center&quot;
+                           Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+
+        &lt;DataTemplate x:Key=&quot;MusicFolderDataTemplate&quot; x:DataType=&quot;muxc:TreeViewNode&quot;&gt;
+            &lt;StackPanel Height=&quot;44&quot; Orientation=&quot;Horizontal&quot;&gt;
+                &lt;SymbolIcon Symbol=&quot;MusicInfo&quot; Margin=&quot;0,0,4,0&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind ((storage:StorageFolder)Content).DisplayName}&quot;
+                           HorizontalAlignment=&quot;Left&quot;
+                           VerticalAlignment=&quot;Center&quot;
+                           Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+
+        &lt;DataTemplate x:Key=&quot;PictureFolderDataTemplate&quot; x:DataType=&quot;muxc:TreeViewNode&quot;&gt;
+            &lt;StackPanel Height=&quot;44&quot; Orientation=&quot;Horizontal&quot;&gt;
+                &lt;SymbolIcon Symbol=&quot;Pictures&quot; Margin=&quot;0,0,4,0&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind ((storage:StorageFolder)Content).DisplayName}&quot;
+                           HorizontalAlignment=&quot;Left&quot;
+                           VerticalAlignment=&quot;Center&quot;
+                           Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+
+        &lt;local:ExplorerItemTemplateSelector
+            x:Key=&quot;ExplorerItemTemplateSelector&quot;
+            DefaultTemplate=&quot;{StaticResource TreeViewItemDataTemplate}&quot;
+            MusicItemTemplate=&quot;{StaticResource MusicItemDataTemplate}&quot;
+            MusicFolderTemplate=&quot;{StaticResource MusicFolderDataTemplate}&quot;
+            PictureItemTemplate=&quot;{StaticResource PictureItemDataTemplate}&quot;
+            PictureFolderTemplate=&quot;{StaticResource PictureFolderDataTemplate}&quot;/&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;SplitView IsPaneOpen=&quot;True&quot;
+                   DisplayMode=&quot;Inline&quot;
+                   OpenPaneLength=&quot;296&quot;&gt;
+            &lt;SplitView.Pane&gt;
+                &lt;Grid&gt;
+                    &lt;Grid.RowDefinitions&gt;
+                        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+                        &lt;RowDefinition/&gt;
+                    &lt;/Grid.RowDefinitions&gt;
+                    &lt;Button Content=&quot;Refresh tree&quot; Click=&quot;RefreshButton_Click&quot; Margin=&quot;24,12&quot;/&gt;
+                    &lt;muxc:TreeView x:Name=&quot;sampleTreeView&quot; Grid.Row=&quot;1&quot; SelectionMode=&quot;Single&quot;
+                              ItemTemplateSelector=&quot;{StaticResource ExplorerItemTemplateSelector}&quot;
+                              Expanding=&quot;SampleTreeView_Expanding&quot;
+                              Collapsed=&quot;SampleTreeView_Collapsed&quot;
+                              ItemInvoked=&quot;SampleTreeView_ItemInvoked&quot;/&gt;
+                &lt;/Grid&gt;
+            &lt;/SplitView.Pane&gt;
+
+            &lt;StackPanel Grid.Column=&quot;1&quot; Margin=&quot;12,72&quot;&gt;
+                &lt;TextBlock Text=&quot;File name:&quot; Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;FileNameTextBlock&quot; Margin=&quot;0,0,0,12&quot;/&gt;
+
+                &lt;TextBlock Text=&quot;File path:&quot; Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;FilePathTextBlock&quot; Margin=&quot;0,0,0,12&quot;/&gt;
+
+                &lt;TextBlock Text=&quot;Tree depth:&quot; Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock x:Name=&quot;TreeDepthTextBlock&quot; Margin=&quot;0,0,0,12&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/SplitView&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using Windows.Storage;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using muxc = Microsoft.UI.Xaml.Controls;
+
+namespace TreeViewTest
+{
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+            InitializeTreeView();
+        }
+
+        private void InitializeTreeView()
+        {
+            // A TreeView can have more than 1 root node. The Pictures library
+            // and the Music library will each be a root node in the tree.
+            // Get Pictures library.
+            StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
+            muxc.TreeViewNode pictureNode = new muxc.TreeViewNode();
+            pictureNode.Content = picturesFolder;
+            pictureNode.IsExpanded = true;
+            pictureNode.HasUnrealizedChildren = true;
+            sampleTreeView.RootNodes.Add(pictureNode);
+            FillTreeNode(pictureNode);
+
+            // Get Music library.
+            StorageFolder musicFolder = KnownFolders.MusicLibrary;
+            muxc.TreeViewNode musicNode = new muxc.TreeViewNode();
+            musicNode.Content = musicFolder;
+            musicNode.IsExpanded = true;
+            musicNode.HasUnrealizedChildren = true;
+            sampleTreeView.RootNodes.Add(musicNode);
+            FillTreeNode(musicNode);
+        }
+
+        private async void FillTreeNode(muxc.TreeViewNode node)
+        {
+            // Get the contents of the folder represented by the current tree node.
+            // Add each item as a new child node of the node that's being expanded.
+
+            // Only process the node if it's a folder and has unrealized children.
+            StorageFolder folder = null;
+
+            if (node.Content is StorageFolder &amp;&amp; node.HasUnrealizedChildren == true)
+            {
+                folder = node.Content as StorageFolder;
+            }
+            else
+            {
+                // The node isn't a folder, or it's already been filled.
+                return;
+            }
+
+            IReadOnlyList&lt;IStorageItem&gt; itemsList = await folder.GetItemsAsync();
+
+            if (itemsList.Count == 0)
+            {
+                // The item is a folder, but it's empty. Leave HasUnrealizedChildren = true so
+                // that the chevron appears, but don't try to process children that aren't there.
+                return;
+            }
+
+            foreach (var item in itemsList)
+            {
+                var newNode = new muxc.TreeViewNode();
+                newNode.Content = item;
+
+                if (item is StorageFolder)
+                {
+                    // If the item is a folder, set HasUnrealizedChildren to true.
+                    // This makes the collapsed chevron show up.
+                    newNode.HasUnrealizedChildren = true;
+                }
+                else
+                {
+                    // Item is StorageFile. No processing needed for this scenario.
+                }
+
+                node.Children.Add(newNode);
+            }
+
+            // Children were just added to this node, so set HasUnrealizedChildren to false.
+            node.HasUnrealizedChildren = false;
+        }
+
+        private void SampleTreeView_Expanding(muxc.TreeView sender, muxc.TreeViewExpandingEventArgs args)
+        {
+            if (args.Node.HasUnrealizedChildren)
+            {
+                FillTreeNode(args.Node);
+            }
+        }
+
+        private void SampleTreeView_Collapsed(muxc.TreeView sender, muxc.TreeViewCollapsedEventArgs args)
+        {
+            args.Node.Children.Clear();
+            args.Node.HasUnrealizedChildren = true;
+        }
+
+        private void SampleTreeView_ItemInvoked(muxc.TreeView sender, muxc.TreeViewItemInvokedEventArgs args)
+        {
+            var node = args.InvokedItem as muxc.TreeViewNode;
+
+            if (node.Content is IStorageItem item)
+            {
+                FileNameTextBlock.Text = item.Name;
+                FilePathTextBlock.Text = item.Path;
+                TreeDepthTextBlock.Text = node.Depth.ToString();
+
+                if (node.Content is StorageFolder)
+                {
+                    node.IsExpanded = !node.IsExpanded;
+                }
+            }
+        }
+
+        private void RefreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            sampleTreeView.RootNodes.Clear();
+            InitializeTreeView();
+        }
+    }
+
+    public class ExplorerItemTemplateSelector : DataTemplateSelector
+    {
+        public DataTemplate DefaultTemplate { get; set; }
+        public DataTemplate MusicItemTemplate { get; set; }
+        public DataTemplate PictureItemTemplate { get; set; }
+        public DataTemplate MusicFolderTemplate { get; set; }
+        public DataTemplate PictureFolderTemplate { get; set; }
+
+        protected override DataTemplate SelectTemplateCore(object item)
+        {
+            var node = (muxc.TreeViewNode)item;
+
+            if (node.Content is StorageFolder)
+            {
+                var content = node.Content as StorageFolder;
+                if (content.DisplayName.StartsWith(&quot;Pictures&quot;)) return PictureFolderTemplate;
+                if (content.DisplayName.StartsWith(&quot;Music&quot;)) return MusicFolderTemplate;
+            }
+            else if (node.Content is StorageFile)
+            {
+                var content = node.Content as StorageFile;
+                if (content.ContentType.StartsWith(&quot;image&quot;)) return PictureItemTemplate;
+                if (content.ContentType.StartsWith(&quot;audio&quot;)) return MusicItemTemplate;
+
+            }
+            return DefaultTemplate;
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-vb">Public NotInheritable Class MainPage
+    Inherits Page
+
+    Public Sub New()
+        InitializeComponent()
+        InitializeTreeView()
+    End Sub
+
+    Private Sub InitializeTreeView()
+        ' A TreeView can have more than 1 root node. The Pictures library
+        ' and the Music library will each be a root node in the tree.
+        ' Get Pictures library.
+        Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+        Dim pictureNode As New muxc.TreeViewNode With {
+        .Content = picturesFolder,
+        .IsExpanded = True,
+        .HasUnrealizedChildren = True
+    }
+        sampleTreeView.RootNodes.Add(pictureNode)
+        FillTreeNode(pictureNode)
+
+        ' Get Music library.
+        Dim musicFolder As StorageFolder = KnownFolders.MusicLibrary
+        Dim musicNode As New muxc.TreeViewNode With {
+        .Content = musicFolder,
+        .IsExpanded = True,
+        .HasUnrealizedChildren = True
+    }
+        sampleTreeView.RootNodes.Add(musicNode)
+        FillTreeNode(musicNode)
+    End Sub
+
+    Private Async Sub FillTreeNode(node As muxc.TreeViewNode)
+        ' Get the contents of the folder represented by the current tree node.
+        ' Add each item as a new child node of the node that's being expanded.
+
+        ' Only process the node if it's a folder and has unrealized children.
+        Dim folder As StorageFolder = Nothing
+        If TypeOf node.Content Is StorageFolder AndAlso node.HasUnrealizedChildren Then
+            folder = TryCast(node.Content, StorageFolder)
+        Else
+            ' The node isn't a folder, or it's already been filled.
+            Return
+        End If
+
+        Dim itemsList As IReadOnlyList(Of IStorageItem) = Await folder.GetItemsAsync()
+        If itemsList.Count = 0 Then
+            ' The item is a folder, but it's empty. Leave HasUnrealizedChildren = true so
+            ' that the chevron appears, but don't try to process children that aren't there.
+            Return
+        End If
+
+        For Each item In itemsList
+            Dim newNode As New muxc.TreeViewNode With {
+            .Content = item
+        }
+            If TypeOf item Is StorageFolder Then
+                ' If the item is a folder, set HasUnrealizedChildren to True.
+                ' This makes the collapsed chevron show up.
+                newNode.HasUnrealizedChildren = True
+            Else
+                ' Item is StorageFile. No processing needed for this scenario.
+            End If
+            node.Children.Add(newNode)
+        Next
+
+        ' Children were just added to this node, so set HasUnrealizedChildren to False.
+        node.HasUnrealizedChildren = False
+    End Sub
+
+    Private Sub SampleTreeView_Expanding(sender As muxc.TreeView, args As muxc.TreeViewExpandingEventArgs)
+        If args.Node.HasUnrealizedChildren Then
+            FillTreeNode(args.Node)
+        End If
+    End Sub
+
+    Private Sub SampleTreeView_Collapsed(sender As muxc.TreeView, args As muxc.TreeViewCollapsedEventArgs)
+        args.Node.Children.Clear()
+        args.Node.HasUnrealizedChildren = True
+    End Sub
+
+    Private Sub SampleTreeView_ItemInvoked(sender As muxc.TreeView, args As muxc.TreeViewItemInvokedEventArgs)
+        Dim node = TryCast(args.InvokedItem, muxc.TreeViewNode)
+        Dim item = TryCast(node.Content, IStorageItem)
+        If item IsNot Nothing Then
+            FileNameTextBlock.Text = item.Name
+            FilePathTextBlock.Text = item.Path
+            TreeDepthTextBlock.Text = node.Depth.ToString()
+            If TypeOf node.Content Is StorageFolder Then
+                node.IsExpanded = Not node.IsExpanded
+            End If
+        End If
+    End Sub
+
+    Private Sub RefreshButton_Click(sender As Object, e As RoutedEventArgs)
+        sampleTreeView.RootNodes.Clear()
+        InitializeTreeView()
+    End Sub
+
+End Class
+
+Public Class ExplorerItemTemplateSelector
+    Inherits DataTemplateSelector
+
+    Public Property DefaultTemplate As DataTemplate
+    Public Property MusicItemTemplate As DataTemplate
+    Public Property PictureItemTemplate As DataTemplate
+    Public Property MusicFolderTemplate As DataTemplate
+    Public Property PictureFolderTemplate As DataTemplate
+
+    Protected Overrides Function SelectTemplateCore(ByVal item As Object) As DataTemplate
+        Dim node = CType(item, muxc.TreeViewNode)
+
+        If TypeOf node.Content Is StorageFolder Then
+            Dim content = TryCast(node.Content, StorageFolder)
+            If content.DisplayName.StartsWith(&quot;Pictures&quot;) Then Return PictureFolderTemplate
+            If content.DisplayName.StartsWith(&quot;Music&quot;) Then Return MusicFolderTemplate
+        ElseIf TypeOf node.Content Is StorageFile Then
+            Dim content = TryCast(node.Content, StorageFile)
+            If content.ContentType.StartsWith(&quot;image&quot;) Then Return PictureItemTemplate
+            If content.ContentType.StartsWith(&quot;audio&quot;) Then Return MusicItemTemplate
+        End If
+
+        Return DefaultTemplate
+    End Function
+End Class
+</code></pre>
+<h3 id="drag-and-drop-items-between-tree-views">Drag and drop items between tree views</h3>
+<p>The following example demonstrates how to create two tree views whose items can be dragged and dropped between each other. When an item is dragged to the other tree view, it is added to the end of the list. However, items can be re-ordered within a tree view. This example also only takes into account tree views with one root node.</p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;TreeViewTest.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition/&gt;
+            &lt;ColumnDefinition/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+
+        &lt;TreeView x:Name=&quot;treeView1&quot;
+                  AllowDrop=&quot;True&quot;
+                  CanDragItems=&quot;True&quot;
+                  CanReorderItems=&quot;True&quot;
+                  DragOver=&quot;TreeView_DragOver&quot;
+                  Drop=&quot;TreeView_Drop&quot;
+                  DragItemsStarting=&quot;TreeView_DragItemsStarting&quot;
+                  DragItemsCompleted=&quot;TreeView_DragItemsCompleted&quot;/&gt;
+        &lt;TreeView x:Name=&quot;treeView2&quot;
+                  AllowDrop=&quot;True&quot;
+                  Grid.Column=&quot;1&quot;
+                  CanDragItems=&quot;True&quot;
+                  CanReorderItems=&quot;True&quot;
+                  DragOver=&quot;TreeView_DragOver&quot;
+                  Drop=&quot;TreeView_Drop&quot;
+                  DragItemsStarting=&quot;TreeView_DragItemsStarting&quot;
+                  DragItemsCompleted=&quot;TreeView_DragItemsCompleted&quot;/&gt;
+
+    &lt;/Grid&gt;
+
+&lt;/Page&gt;
+</code></pre>
+<pre><code class="lang-csharp">using System;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+
+namespace TreeViewTest
+{
+    public sealed partial class MainPage : Page
+    {
+        private TreeViewNode deletedItem;
+        private TreeView sourceTreeView;
+
+        public MainPage()
+        {
+            this.InitializeComponent();
+            InitializeTreeView();
+        }
+
+        private void InitializeTreeView()
+        {
+            TreeViewNode parentNode1 = new TreeViewNode() { Content = &quot;tv1&quot; };
+            TreeViewNode parentNode2 = new TreeViewNode() { Content = &quot;tv2&quot; };
+
+            parentNode1.Children.Add(new TreeViewNode() { Content = &quot;tv1FirstChild&quot; });
+            parentNode1.Children.Add(new TreeViewNode() { Content = &quot;tv1SecondChild&quot; });
+            parentNode1.Children.Add(new TreeViewNode() { Content = &quot;tv1ThirdChild&quot; });
+            parentNode1.Children.Add(new TreeViewNode() { Content = &quot;tv1FourthChild&quot; });
+            parentNode1.IsExpanded = true;
+            treeView1.RootNodes.Add(parentNode1);
+
+            parentNode2.Children.Add(new TreeViewNode() { Content = &quot;tv2FirstChild&quot; });
+            parentNode2.Children.Add(new TreeViewNode() { Content = &quot;tv2SecondChild&quot; });
+            parentNode2.IsExpanded = true;
+            treeView2.RootNodes.Add(parentNode2);
+        }
+
+        private void TreeView_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.DataView.Contains(StandardDataFormats.Text))
+            {
+                e.AcceptedOperation = DataPackageOperation.Move;
+            }
+        }
+
+        private async void TreeView_Drop(object sender, DragEventArgs e)
+        {
+            if (e.DataView.Contains(StandardDataFormats.Text))
+            {
+                string text = await e.DataView.GetTextAsync();
+                TreeView destinationTreeView = sender as TreeView;
+
+                if (destinationTreeView.RootNodes != null)
+                {
+                    TreeViewNode newNode = new TreeViewNode() { Content = text };
+                    destinationTreeView.RootNodes[0].Children.Add(newNode);
+                    deletedItem = newNode;
+                }
+            }
+        }
+
+        private void TreeView_DragItemsStarting(TreeView sender, TreeViewDragItemsStartingEventArgs args)
+        {
+            if (args.Items.Count == 1)
+            {
+                args.Data.RequestedOperation = DataPackageOperation.Move;
+                sourceTreeView = sender;
+
+                foreach (var item in args.Items)
+                {
+                    args.Data.SetText(item.ToString());
+                }
+            }
+        }
+
+        private void TreeView_DragItemsCompleted(TreeView sender, TreeViewDragItemsCompletedEventArgs args)
+        {
+            var children = sourceTreeView.RootNodes[0].Children;
+
+            if (deletedItem != null)
+            {
+                for (int i = 0; i &lt; children.Count; i++)
+                {
+                    if (children[i].Content.ToString() == deletedItem.Content.ToString())
+                    {
+                        children.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
+
+            sourceTreeView = null;
+            deletedItem = null;
+        }
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The TreeView for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in both the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> (UWP) and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> (WinUI) namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.treeview">TreeView class</a>, <a href="/uwp/api/windows.ui.xaml.controls.treeviewnode">TreeViewNode class</a>, <a href="/uwp/api/windows.ui.xaml.controls.treeview.itemssource">TreeView.ItemsSource property</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.treeview">TreeView class</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode">TreeViewNode class</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource">TreeView.ItemsSource property</a></li>
+<li><a href="winui2gallery:/item/TreeView">Open the WinUI 2 Gallery app and see the TreeView in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles, templates, and features for all controls.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:TreeView&gt;
+    &lt;muxc:TreeView.RootNodes&gt;
+        &lt;muxc:TreeViewNode Content=&quot;Flavors&quot;&gt;
+            &lt;muxc:TreeViewNode.Children&gt;
+                &lt;muxc:TreeViewNode Content=&quot;Vanilla&quot;/&gt;
+            &lt;/muxc:TreeViewNode.Children&gt;
+        &lt;/muxc:TreeViewNode&gt;
+    &lt;/muxc:TreeView.RootNodes&gt;
+&lt;/muxc:TreeView&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview">TreeView class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView class</a></li>
+<li><a href="listview-and-gridview.html">ListView and GridView</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/tree-view.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

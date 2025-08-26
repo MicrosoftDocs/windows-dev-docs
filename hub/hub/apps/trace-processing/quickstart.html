@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Quickstart Process a trace - .NET TraceProcessing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Quickstart Process a trace - .NET TraceProcessing ">
+    
+    <meta name="description" content="In this quickstart, learn how to access data in an ETW trace.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="quickstart-process-your-first-trace">Quickstart: Process your first trace</h1>
+
+<p>Try out TraceProcessor to access data in an Event Tracing for Windows (ETW) trace. TraceProcessor allows you to access ETW trace data as .NET objects.</p>
+<p>In this quick start you learn how to:</p>
+<ol>
+<li>Install the TraceProcessing NuGet package.</li>
+<li>Create a TraceProcessor.</li>
+<li>Use TraceProcessor to access process command lines contained in the trace.</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Visual Studio 2019</p>
+<h2 id="install-the-traceprocessing-nuget-package">Install the TraceProcessing NuGet package</h2>
+<p>.NET TraceProcessing is available from <a href="https://www.nuget.org/packages/Microsoft.Windows.EventTracing.Processing.All">NuGet</a> with the following package ID:</p>
+<p>Microsoft.Windows.EventTracing.Processing.All</p>
+<p>You can use this package in a console app to list the process command lines contained in an ETW trace (.etl file).</p>
+<ol>
+<li><p>Create a new .NET Console App. In Visual Studio, select File, New, Project..., and choose the Console App template for C#.</p>
+<p>Enter a Project name, for example, TraceProcessorQuickstart, and choose Create.</p>
+</li>
+<li><p>In Solution Explorer, right-click on Dependencies and choose Manage NuGet Packages... and switch to the Browse tab.</p>
+</li>
+<li><p>In the Search box, enter Microsoft.Windows.EventTracing.Processing.All and search.</p>
+<p>Select Install on the NuGet package with that name, and close the NuGet window.</p>
+</li>
+</ol>
+<h2 id="create-a-traceprocessor">Create a TraceProcessor</h2>
+<ol>
+<li><p>Change Program.cs to the following contents:</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.EventTracing;
+using Microsoft.Windows.EventTracing.Processes;
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        if (args.Length != 1)
+        {
+            Console.Error.WriteLine(&quot;Usage: &lt;trace.etl&gt;&quot;);
+            return;
+        }
+
+        using (ITraceProcessor trace = TraceProcessor.Create(args[0]))
+        {
+            // TODO: call trace.Use...
+
+            trace.Process();
+
+            Console.WriteLine(&quot;TODO: Access data from the trace&quot;);
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Provide a trace name to use when running the project.</p>
+<p>In Solution Explorer, right-click on the project and choose Properties. Switch to the Debug tab and enter the path to a trace (.etl file) in Application arguments.</p>
+<p>If you do not already have a trace file, you can use <a href="/windows-hardware/test/wpt/windows-performance-recorder">Windows Performance Recorder</a> to create one.</p>
+</li>
+<li><p>Run the application.</p>
+<p>Choose Debug, Start Without Debugging to run your code.</p>
+</li>
+</ol>
+<h2 id="use-traceprocessor-to-access-process-command-lines-contained-in-the-trace">Use TraceProcessor to access process command lines contained in the trace</h2>
+<ol>
+<li><p>Change Program.cs to the following contents:</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.EventTracing;
+using Microsoft.Windows.EventTracing.Processes;
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        if (args.Length != 1)
+        {
+            Console.Error.WriteLine(&quot;Usage: &lt;trace.etl&gt;&quot;);
+            return;
+        }
+
+        using (ITraceProcessor trace = TraceProcessor.Create(args[0]))
+        {
+            IPendingResult&lt;IProcessDataSource&gt; pendingProcessData = trace.UseProcesses();
+
+            trace.Process();
+
+            IProcessDataSource processData = pendingProcessData.Result;
+
+            foreach (IProcess process in processData.Processes)
+            {
+                Console.WriteLine(process.CommandLine);
+            }
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Run the application again.</p>
+<p>This time, you should see a list command lines from all processes that were executing while the trace was being recorded.</p>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<p>In this quickstart, you created a console application, installed TraceProcessor, and used it to access process command lines from an ETW trace. Now you have an application that accesses trace data.</p>
+<p>Process information is just one of many kinds of data stored in an ETW trace that your application can access.</p>
+<p>The next step is to <a href="tutorial.html">look closer at TraceProcessor</a> and the other data sources it can access.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/trace-processing/quickstart.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

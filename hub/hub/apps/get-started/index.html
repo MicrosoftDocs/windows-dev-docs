@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Overview of framework options </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Overview of framework options ">
+    
+    <meta name="description" content="An overview of Windows app development frameworks">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="overview-of-framework-options">Overview of framework options</h1>
+
+<p>This article contains the information you need to get started building apps for Windows.</p>
+<p>Windows offers a wide range of languages, frameworks, and tools for building apps, including WinUI, React Native for Desktop, WPF, C++, C#, .NET, and a variety of cross-platform frameworks. Here, we provide information to help you decide which option is best for you.</p>
+<h2 id="winui">WinUI</h2>
+<p><span class="mx-imgBorder">
+<img src="images/winui-header.png" alt="WinUI logo.">
+</span>
+</p>
+<p>We recommend WinUI and the Windows App SDK to create apps that look great and take advantage of the latest Windows releases. If you're new to Windows development, or starting work on a new Windows app, WinUI provides the resources you need to create great <a href="https://www.microsoft.com/en-us/windows/windows-11-apps">apps for Windows 11</a>.</p>
+<!-- The en-us is needed in this link. Please leave it there.  -->
+<p><a href="../winui/index.html">WinUI</a> is a XAML markup-based user interface layer that contains modern controls and styles for building Windows apps. As the native UI layer for the Windows App SDK, it embodies <a href="https://fluent2.microsoft.design/">Fluent Design</a>, giving each Windows app the polished feel that customers expect.</p>
+<div class="button">
+<p><a href="start-here.html">Get started with WinUI</a></p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="../windows-app-sdk/index.html">Windows App SDK</a> is a set of new developer components and tools that represent the latest evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by desktop apps on Windows 11 and downlevel to Windows 10, version 1809.</p>
+<p>While WinUI is the native UI layer, you can use the Windows App SDK with WPF, WinForms, or Win32 apps. If you've developed apps for Windows before, but are looking to get started with the Windows App SDK in an existing app, see <a href="../windows-app-sdk/use-windows-app-sdk-in-existing-project.html">Framework-specific guides</a>.</p>
+</div>
+<h2 id="react-native-for-desktop">React Native for Desktop</h2>
+<p><a href="https://reactnative.dev">React Native</a> is a development platform which allows building cross-platform apps. <a href="/windows/dev-environment/javascript/react-native-for-windows">React Native for Desktop</a> encompasses React Native for Windows and macOS, bringing React Native support to the Windows SDK. React Native for Desktop lets you use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed Reality devices, etc.</p>
+<p>With React Native for Desktop, you write most or all of your app code in JavaScript - or TypeScript - and the framework produces a native UWP XAML application. If your app needs to call a platform API, you can usually do so through one of the many <a href="https://reactnative.directory">community modules</a>, or if a module does not yet exist, you can easily <a href="https://aka.ms/RNW-NativeModules">write a native module to expose it</a>.</p>
+<p>Here are some reasons to choose React Native for Desktop:</p>
+<ul>
+<li>You want to share code across platforms as much as possible, or you have web properties that you want to share code with.</li>
+<li>Improved developer productivity and inner loop, thanks to fast refresh.</li>
+<li>Your app's fundamentals (performance, accessibility, internationalization) are as good as a native UWP app.</li>
+<li>You have experience with and a preference for JavaScript or TypeScript</li>
+<li>You would like to leverage JavaScript-only libraries on <a href="https://www.npmjs.com/">npmjs.com</a>, and many native libraries too.</li>
+<li>Your app will use the native controls, visual appearance, animations and colors, and therefore will feel integrated into the design language used in Windows. In addition, React Native for Desktop apps do not have to compromise on the set of APIs they can call, as the framework allows you to call platform APIs as well as write your own view managers and native modules.</li>
+<li>Large and growing community momentum, with lots of <a href="https://reactnative.directory">community modules</a>.</li>
+</ul>
+<div class="button">
+<p><a href="https://aka.ms/ReactNativeGuideWindows">Get started with React Native for Desktop</a></p>
+</div>
+<p>For more information about React Native for Desktop, see the following links:</p>
+<ul>
+<li><a href="https://github.com/microsoft/react-native-windows">React Native for Windows repo on GitHub</a></li>
+<li><a href="https://github.com/microsoft/react-native-macos">React Native for macOS repo on GitHub</a></li>
+<li><a href="https://microsoft.github.io/react-native-windows/docs/Native-API-Reference">API reference</a></li>
+<li><a href="https://microsoft.github.io/react-native-windows/resources">React Native for Desktop resources</a></li>
+</ul>
+<h2 id="wpf">WPF</h2>
+<p>WPF is a well-established framework for Windows desktop applications with access to <a href="/dotnet/desktop/wpf/overview/">.NET</a> or the <a href="/dotnet/framework/wpf/getting-started/">.NET Framework</a>. Like WinUI, it also uses XAML markup to separate UI from code. WPF provides a comprehensive set of application development features that include controls, data binding, layout, 2D and 3D graphics, animation, styles, templates, documents, media, text, and typography. WPF is part of .NET, so you can build applications that incorporate other elements of the .NET API.</p>
+<p>Additionally, you can now integrate a sandbox environment into your packaged WPF applications, providing an additional layer of security. This enhancement requires little to no change to your code, thanks to the new <a href="https://github.com/microsoft/win32-app-isolation">Win32 App Isolation</a> security feature.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you've already invested in WPF, you can continue to use it and take advantage of the modernization options in .NET 9. You can build your apps knowing that Microsoft is continuing to invest in WPF. See the <a href="windows-developer-faq.yml">Windows developer FAQ</a> for more information.</p>
+</div>
+<div class="button">
+<p><a href="/dotnet/desktop/wpf/overview/">Get started with WPF</a></p>
+</div>
+<p>If you have a <a href="/dotnet/desktop/wpf/overview/">WPF .NET</a> app, you also have access to modern Windows platform features and APIs provided by the <strong>Windows App SDK</strong>. For more information, see <a href="/windows/apps/windows-app-sdk/wpf-plus-winappsdk">Use the Windows App SDK in a WPF app</a> and <a href="../desktop/modernize/index.html">Modernize your desktop apps</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you need more help deciding which framework is the best choice for your app, see the <a href="/training/modules/windows-choose-best-app-framework/"><strong>Choose the best application framework for a Windows development project</strong></a> training module.</p>
+</div>
+<h2 id="other-native-platform-options">Other native platform options</h2>
+<p>Many apps for Windows are written using <a href="/windows/win32/">Win32</a>, <a href="/dotnet/desktop/winforms/">Windows Forms</a>, or <a href="/windows/uwp">UWP</a>. Each of these frameworks is supported and will continue to receive bug, reliability, and security fixes, but varying levels of investment for new features and styles. For more information about these app types see the following tabs.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cpp-win32" role="tab" aria-controls="tabpanel_1_cpp-win32" data-tab="cpp-win32" tabindex="0" aria-selected="true">Win32</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_windows-forms" role="tab" aria-controls="tabpanel_1_windows-forms" data-tab="windows-forms" tabindex="-1">Windows Forms</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_uwp" role="tab" aria-controls="tabpanel_1_uwp" data-tab="uwp" tabindex="-1">UWP</a>
+</li>
+</ul>
+<section id="tabpanel_1_cpp-win32" role="tabpanel" data-tab="cpp-win32">
+
+<p>Win32 desktop apps (also sometimes called <em>classic desktop apps</em>) are the original app type for native Windows applications that require direct access to Windows and hardware. This makes Win32 the app type of choice for applications that need the highest level of performance and direct access to system hardware.</p>
+<p>Using the Win32 API with C++ makes it possible to achieve the highest levels of performance and efficiency by taking more control of the target platform with un-managed code than is possible on a managed runtime environment like WinRT and .NET. However, exercising such a level of control over your application's execution requires greater care and attention to get right, and trades development productivity for runtime performance.</p>
+<p>Here are a few highlights of what the Win32 API and C++ offers to enable you to build high-performance applications.</p>
+<ul>
+<li>Hardware-level optimizations, including tight control over resource allocation, object lifetimes, data layout, alignment, byte packing, and more.</li>
+<li>Access to performance-oriented instruction sets like SSE and AVX through intrinsic functions.</li>
+<li>Efficient, type-safe generic programming by using templates.</li>
+<li>Efficient and safe containers and algorithms.</li>
+<li>DirectX, in particular Direct3D and DirectCompute.</li>
+<li>Use <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a> to create modern desktop Win32 apps with first-class access to Windows Runtime (WinRT) APIs.</li>
+</ul>
+<p>Additionally, you can now integrate a sandbox environment into your Win32 applications, providing an additional layer of security. This enhancement requires little to no change to your code, thanks to the new <a href="https://github.com/microsoft/win32-app-isolation">Win32 App Isolation</a> security feature.</p>
+<div class="button">
+<p><a href="/windows/win32/desktop-programming/">Get started with Win32</a></p>
+</div>
+<p>You also have access to modern Windows platform features and APIs provided by the <strong>Windows App SDK</strong>. For more information, see <a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project">Use the Windows App SDK in an existing project</a> and <a href="../desktop/modernize/index.html">Modernize your desktop apps</a>.</p>
+</section>
+<section id="tabpanel_1_windows-forms" role="tabpanel" data-tab="windows-forms" aria-hidden="true" hidden="hidden">
+
+<p>Windows Forms is the original platform for managed Windows applications with a lightweight UI model and access to <a href="/dotnet/desktop/winforms/overview">.NET</a> or the <a href="/dotnet/framework/winforms/getting-started-with-windows-forms">.NET Framework</a>. It excels at enabling developers to quickly get started building applications, even for developers new to the platform. This is a forms-based, rapid application development platform with a large built-in collection of visual and non-visual drag-and-drop controls. Windows Forms does not use XAML, so deciding later to rewrite your application to WinUI entails a complete re-write of your UI.</p>
+<p>Additionally, you can now integrate a sandbox environment into your packaged Windows Forms applications, providing an additional layer of security. This enhancement requires little to no change to your code, thanks to the new <a href="https://github.com/microsoft/win32-app-isolation">Win32 App Isolation</a> security feature.</p>
+<div class="button">
+<p><a href="/dotnet/desktop/winforms/overview">Get started with Windows Forms</a></p>
+</div>
+<p>If you have a <a href="/dotnet/desktop/winforms/overview/">Windows Forms .NET</a> app, you also have access to modern Windows platform features and APIs provided by the <strong>Windows App SDK</strong>. For more information, see <a href="/windows/apps/windows-app-sdk/winforms-plus-winappsdk">Use the Windows App SDK in a Windows Forms (WinForms) app</a> and <a href="../desktop/modernize/index.html">Modernize your desktop apps</a>.</p>
+</section>
+<section id="tabpanel_1_uwp" role="tabpanel" data-tab="uwp" aria-hidden="true" hidden="hidden">
+
+<p>The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices in the Universal Windows Platform. Not only can you use UWP to create desktop applications for Windows PCs, but UWP is also the only supported platform to write a single native universal app that runs across Xbox, HoloLens, and Surface Hub. UWP apps can be native or managed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Your existing UWP app will continue to function as expected. However, to take advantage of modern features in <a href="../winui/winui3/index.html">WinUI 3</a> and the <a href="/windows/apps/windows-app-sdk">Windows App SDK</a> we recommend migrating your app.</p>
+</div>
+<div class="button">
+<p><a href="/windows/uwp/get-started/">Get started with UWP</a></p>
+</div>
+<p>You will not have access to the APIs provided by the <strong>Windows App SDK</strong> or .NET 6 and later. To use the Windows App SDK, you will have to migrate your UWP app to WinUI and the Windows App SDK. For more information, see <a href="../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.html">Migrate to the Windows App SDK</a>.</p>
+</section>
+</div>
+<h2 id="other-cross-platform-options">Other cross-platform options</h2>
+<p>If you need your app to be cross-platform, in addition to React Native for Desktop, you should consider <a href="/dotnet/maui/what-is-maui">.NET MAUI</a>, <a href="/aspnet/core/blazor/hybrid/">Blazor Hybrid</a>, or a <a href="/microsoft-edge/progressive-web-apps-chromium/">Progressive Web App (PWA)</a>. There are many other choices available (<a href="../../dev-environment/index.html">here's a list of popular options</a>), but these are some good starting points.</p>
+<p>.NET MAUI harnesses the power of WinUI on Windows, while also enabling execution on other operating systems. Blazor Hybrid blends desktop and mobile native client frameworks with .NET and Blazor. Another cross-platform option, Progressive Web Apps (PWAs), are websites that function like installed, native apps on Windows and other supported platforms, while functioning like regular websites on browsers.</p>
+<p>For more information, see the following tabs.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_net-maui" role="tab" aria-controls="tabpanel_2_net-maui" data-tab="net-maui" tabindex="0" aria-selected="true">.NET MAUI</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_blazor-hybrid" role="tab" aria-controls="tabpanel_2_blazor-hybrid" data-tab="blazor-hybrid" tabindex="-1">Blazor Hybrid</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_pwa" role="tab" aria-controls="tabpanel_2_pwa" data-tab="pwa" tabindex="-1">Progressive Web Apps (PWAs)</a>
+</li>
+</ul>
+<section id="tabpanel_2_net-maui" role="tabpanel" data-tab="net-maui">
+
+<p>.NET Multi-platform App UI (MAUI) is an open-source, cross-platform framework for building Android, iOS, macOS, and Windows applications that leverage the native UI and services of each platform from a single .NET code base. Because .NET MAUI favors platform native experiences, it uses WinUI and the Windows App SDK so apps get the latest user experience on Windows. This gives your apps access to everything you get with WinUI plus the ability to reach to other platforms.</p>
+<p>.NET MAUI for Windows is a great choice if:</p>
+<ul>
+<li>You want to share as much .NET code as possible across mobile and desktop applications.</li>
+<li>You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.</li>
+<li>You want to use C# and/or XAML for building cross-platform apps.</li>
+<li>You're using Blazor for web development and wish to include all or part of that in a mobile or desktop application.</li>
+</ul>
+<div class="button">
+<p><a href="/dotnet/maui/get-started/installation">Get started with .NET MAUI</a></p>
+</div>
+<p>For more information about .NET MAUI, see the following links:</p>
+<ul>
+<li><a href="/dotnet/maui/">.NET MAUI documentation</a></li>
+<li><a href="https://github.com/dotnet/maui">.NET MAUI on GitHub</a></li>
+<li><a href="https://github.com/dotnet/maui/wiki/Roadmap">.NET MAUI Product Roadmap</a></li>
+<li><a href="../windows-dotnet-maui/index.html">Build Windows apps with .NET MAUI</a></li>
+<li><a href="/dotnet/maui/get-started/resources/">Resources for learning .NET MAUI</a></li>
+<li><a href="/shows/dotnet-maui-for-beginners/">Video Series - .NET MAUI for Beginners</a></li>
+<li><a href="https://www.youtube.com/watch?v=IbwgHJPoE-M">Build 2022: Build native apps for any device with .NET and Visual Studio</a></li>
+</ul>
+</section>
+<section id="tabpanel_2_blazor-hybrid" role="tabpanel" data-tab="blazor-hybrid" aria-hidden="true" hidden="hidden">
+
+<p>In an ASP.NET Core Blazor Hybrid app, <a href="/aspnet/core/blazor/components/">Razor components</a> run natively on the desktop or mobile device. Components render to a custom embedded Web View control through a local interop channel. The components don't run in the browser, and WebAssembly isn't used. Components have full access to the native capabilities of the device through the .NET platform. All component styles rendered in a Web View are platform dependent. If you're planning to deploy across multiple platforms, you may have to account for rendering differences across the platforms using custom stylesheets.</p>
+<p>Blazor Hybrid apps can be built using .NET MAUI, WPF, or Windows Forms. Visual Studio provides a template for creating a Blazor Hybrid app using .NET MAUI. You can also create a Blazor Hybrid app using WPF or Windows Forms by adding a BlazorWebView control to your existing WPF or Windows Forms app. See the links below for more information.</p>
+<p>Blazor Hybrid is a great choice if:</p>
+<ul>
+<li>Your team is already familiar with ASP.NET Core, Razor components, and CSS.</li>
+<li>You want to use C# and/or Razor components for building cross-platform apps.</li>
+<li>You want to share as much .NET code (and Razor components) as possible across applications.</li>
+<li>You want to ship your application beyond Windows to other desktop and mobile targets with native platform experiences.</li>
+<li>You have existing .NET MAUI, WPF, or Windows Forms apps and want to add Blazor components to them.</li>
+</ul>
+<p>For more information about Blazor Hybrid, see the following links:</p>
+<ul>
+<li><a href="/aspnet/core/blazor/hybrid/">ASP.NET Core Blazor Hybrid documentation</a></li>
+<li><a href="/aspnet/core/blazor/hybrid/tutorials/maui">Build a .NET MAUI Blazor Hybrid app</a></li>
+<li><a href="/aspnet/core/blazor/hybrid/tutorials/wpf">Build a Windows Presentation Foundation (WPF) Blazor app</a></li>
+<li><a href="/aspnet/core/blazor/hybrid/tutorials/windows-forms">Build a Windows Forms Blazor app</a></li>
+<li><a href="/aspnet/core/blazor/hybrid/troubleshoot">Troubleshoot ASP.NET Core Blazor Hybrid</a></li>
+<li><a href="/dotnet/api/microsoft.aspnetcore.components.webview.maui.blazorwebview">BlazorWebView Class</a></li>
+</ul>
+</section>
+<section id="tabpanel_2_pwa" role="tabpanel" data-tab="pwa" aria-hidden="true" hidden="hidden">
+
+<p><a href="/microsoft-edge/progressive-web-apps-chromium/">Progressive Web Apps (PWAs)</a> provide access to open web technologies to provide cross-platform interoperability. PWAs provide your users with an app-like experience that's customized for their devices. PWAs are websites that are <a href="https://alistapart.com/article/understandingprogressiveenhancement">progressively enhanced</a> to function like installed, native apps on supporting platforms (including Windows), while functioning like regular websites on other browsers.</p>
+<p>When installed on Windows, PWAs are just like other apps. For example:</p>
+<ul>
+<li>A PWA can be added to the Start menu.</li>
+<li>A PWA can be pinned to the Taskbar.</li>
+<li>PWAs can handle files.</li>
+<li>PWAs can run when the user signs in.</li>
+<li>PWAs can be submitted to the Microsoft Store where millions of Windows users can discover and easily install them alongside other Windows apps.</li>
+</ul>
+<div class="button">
+<p><a href="/microsoft-edge/progressive-web-apps-chromium/how-to/">Get started with PWAs</a></p>
+</div>
+<p>For more information about building PWAs, see the following links:</p>
+<ul>
+<li><a href="/microsoft-edge/progressive-web-apps-chromium/">Overview of PWAs</a></li>
+<li><a href="/microsoft-edge/progressive-web-apps-chromium/how-to/microsoft-store">Publish a PWA to the Microsoft Store</a></li>
+<li><a href="/microsoft-edge/progressive-web-apps-chromium/how-to/notifications-badges">Re-engage users with badges, notifications, and push messages</a></li>
+<li><a href="/microsoft-edge/progressive-web-apps-chromium/how-to/widgets">Build PWA-driven widgets</a></li>
+<li><a href="/microsoft-edge/progressive-web-apps-chromium/demo-pwas">Progressive Web App demos</a></li>
+<li><a href="https://www.pwabuilder.com/">PWABuilder - Helping developers build and publish PWAs</a></li>
+</ul>
+</section>
+</div>
+<h2 id="app-development-framework-feature-comparison">App development framework feature comparison</h2>
+<p>There is a wide range of options for developing applications for Windows. The best option for you depends on your application requirements, your existing code, and your familiarity with the technology. The following table lists the most popular app development frameworks available on Windows and the features supported by each framework.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>.NET MAUI</th>
+<th>Blazor Hybrid</th>
+<th>React Native for Desktop</th>
+<th>UWP XAML (Windows.UI.Xaml)</th>
+<th>Win32 (MFC or ATL)</th>
+<th>Windows Forms</th>
+<th>WinUI 3</th>
+<th>WPF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Language</strong></td>
+<td>C#</td>
+<td>C#</td>
+<td>JavaScript, TypeScript</td>
+<td>C#, C++, Visual Basic</td>
+<td>C++, Rust</td>
+<td>C#, Visual Basic</td>
+<td>C#, C++</td>
+<td>C#, Visual Basic</td>
+</tr>
+<tr>
+<td><strong>UI language</strong></td>
+<td>XAML/Code</td>
+<td>Razor</td>
+<td>JSX</td>
+<td>XAML</td>
+<td>Code</td>
+<td>Code</td>
+<td>XAML</td>
+<td>XAML</td>
+</tr>
+<tr>
+<td><strong>UI designer</strong><br>(drag &amp; drop)</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td><strong>UI debugging</strong></td>
+<td><a href="/dotnet/maui/xaml/hot-reload">Hot Reload</a></td>
+<td><a href="/aspnet/core/test/hot-reload">Hot Reload</a></td>
+<td><a href="https://reactnative.dev/docs/fast-refresh">Fast Refresh</a></td>
+<td><a href="/visualstudio/xaml-tools/xaml-hot-reload">Hot Reload</a></td>
+<td>-</td>
+<td><a href="/visualstudio/debugger/hot-reload">Hot Reload</a></td>
+<td><a href="/visualstudio/xaml-tools/xaml-hot-reload">Hot Reload</a></td>
+<td><a href="/visualstudio/xaml-tools/xaml-hot-reload">Hot Reload</a></td>
+</tr>
+<tr>
+<td><strong>Fluent Design</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong> (via <a href="/windows/apps/winui/winui2">WinUI 2</a>)</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>.NET</strong></td>
+<td>.NET</td>
+<td>.NET</td>
+<td>N/A</td>
+<td>.NET Core &amp; .NET Native</td>
+<td>N/A</td>
+<td>.NET &amp; .NET Framework</td>
+<td>.NET</td>
+<td>.NET &amp; .NET Framework</td>
+</tr>
+<tr>
+<td><strong>Windows App SDK</strong></td>
+<td><strong>Supported</strong> (<a href="/dotnet/maui/platform-integration/invoke-platform-code">more info</a>)</td>
+<td><strong>Supported</strong> <a href="/dotnet/maui/platform-integration/invoke-platform-code">via MAUI</a></td>
+<td><strong>Supported</strong> (<a href="https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093">more info</a>)</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong> (<a href="../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.html">more info</a>)</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong> (<a href="../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.html">more info</a>)</td>
+</tr>
+<tr>
+<td><strong>Great for touch</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>Cross-platform</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>Xbox/HoloLens apps</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>Sandboxing (AppContainer)</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>Currently supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td><strong>Receiving updates</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong> (security &amp; bugfix)</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td><strong>Roadmap</strong></td>
+<td><a href="https://github.com/dotnet/maui/wiki/Roadmap">GitHub</a></td>
+<td><a href="https://aka.ms/aspnet/roadmap">GitHub</a></td>
+<td><a href="https://aka.ms/rnw-roadmap">GitHub</a></td>
+<td>n/a</td>
+<td>n/a</td>
+<td><a href="https://github.com/dotnet/winforms/blob/main/docs/roadmap.md">GitHub</a></td>
+<td><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/docs/roadmap.md">GitHub</a></td>
+<td><a href="https://github.com/dotnet/wpf/blob/main/roadmap.md">GitHub</a></td>
+</tr>
+</tbody>
+</table>
+<p>Learn more about each of these options:</p>
+<ul>
+<li><a href="windows-developer-faq.yml">Windows developer FAQ</a></li>
+<li><a href="/dotnet/maui/">.NET Multi-platform App UI (.NET MAUI)</a></li>
+<li><a href="/aspnet/core/blazor/hybrid">ASP.NET Core Blazor Hybrid</a></li>
+<li><a href="/windows/dev-environment/javascript/react-native-for-windows">React Native for Desktop</a></li>
+<li><a href="/windows/uwp/">Universal Windows Platform (UWP)</a></li>
+<li><a href="/cpp/atl/recommendations-for-choosing-between-atl-and-mfc">Recommendations for Choosing Between ATL and MFC</a></li>
+<li><a href="/dotnet/desktop/winforms/">Windows Forms</a></li>
+<li><a href="/dotnet/desktop/wpf/">Windows Presentation Foundation (WPF)</a></li>
+<li><a href="/windows/apps/winui/winui3/">WinUI in the Windows App SDK (WinUI 3)</a></li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li><a href="start-here.html">Use WinUI to start developing apps for Windows</a>
+<blockquote>
+<p>WinUI is our recommended platform for Windows apps, and these steps will quickly get you started.</p>
+</blockquote>
+</li>
+<li><a href="/windows/dev-environment/">Set up your development environment on Windows</a>
+<blockquote>
+<p>Windows isn't just great for developing apps that run on Windows, it's also a powerful environment for developing apps for any platform. Learn more about the tools and options available to maximize your development.</p>
+</blockquote>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/get-started/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

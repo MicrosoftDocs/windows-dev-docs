@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Customize the widget header area </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Customize the widget header area ">
+    
+    <meta name="description" content="Learn how to customize the header area of a Windows widget.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="customize-the-widget-header-area">Customize the widget header area</h1>
+
+<p>In the latest release, apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. Header customization is implemented in the Adaptive Card payload you pass to the OS from your widget provider, so the steps are the same regardless of the language your widget provider is implemented in. For a walkthrough of creating a widget provider, see <a href="implement-widget-provider-cs.html">Implement a widget provider in a C# Windows App</a> or <a href="implement-widget-provider-win32.html">Implement a widget provider in a win32 app (C++/WinRT)</a>.</p>
+<h2 id="the-default-header">The default header</h2>
+<p>By default, the widget header shows the display name and the icon specified in the app manifest file. The display name is specified with the <strong>DisplayName</strong> attribute of the <strong>Definition</strong> element and the icon is specified with an <strong>Icon</strong> element under <strong>ThemeResources</strong>. For more information about the widget app manifest file format, see <a href="widget-provider-manifest.html">Widget provider package manifest XML format</a>.</p>
+<p>The following example shows a portion of the Adaptive Card JSON payload for a widget that uses the default presentation. In the sections below, examples will be provided that modify this template to override the default header.</p>
+<pre><code class="lang-json">{ 
+    &quot;type&quot;: &quot;AdaptiveCard&quot;, 
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;, 
+    &quot;version&quot;: &quot;1.6&quot;, 
+    &quot;body&quot;: [
+        ...
+    ] 
+  } 
+</code></pre>
+<h2 id="override-the-display-name-string">Override the display name string</h2>
+<p>You can override the value specified in the <strong>DisplayName</strong> element in the app manifest by adding a <code>header</code> field to with the new display name in the JSON payload before sending it to the widget host.</p>
+<p>The following example demonstrates overriding the display name string.</p>
+<pre><code class="lang-json">{ 
+    &quot;type&quot;: &quot;AdaptiveCard&quot;, 
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;, 
+    &quot;version&quot;: &quot;1.6&quot;, 
+    &quot;body&quot;: [
+        ...
+    ] ,
+    &quot;header&quot;: &quot;Redmond Weather&quot;
+  } 
+</code></pre>
+<h2 id="override-the-display-name-string-and-icon">Override the display name string and icon</h2>
+<p>To override both the display name string and the icon specified in the app manifest, add a <code>header</code> object with fields for <code>text</code> and <code>iconUrl</code>.</p>
+<p>The following example demonstrates overriding the display name string and icon.</p>
+<pre><code class="lang-json">{ 
+    &quot;type&quot;: &quot;AdaptiveCard&quot;, 
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;, 
+    &quot;version&quot;: &quot;1.6&quot;, 
+    &quot;body&quot;: [
+        ...
+    ] ,
+    &quot;header&quot;: { 
+         &quot;text&quot;: &quot;Redmond weather&quot;, 
+         &quot;iconUrl&quot;: &quot;https://contoso.com/weatherimage.png&quot; 
+      } 
+  } 
+</code></pre>
+<h2 id="set-the-header-to-be-empty">Set the header to be empty</h2>
+<p>Some widget providers may want to allow their full UX to expand into the header region of the widget, even though this area of the widget isn't actionable. For this scenario, you can set the header to be empty by setting the <code>header</code> feel to <code>null</code>. Note that the UX in the header is not clickable by the user.</p>
+<p>The following example demonstrates setting an empty header.</p>
+<pre><code class="lang-json">{ 
+    &quot;type&quot;: &quot;AdaptiveCard&quot;, 
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;, 
+    &quot;version&quot;: &quot;1.6&quot;, 
+    &quot;body&quot;: [
+        ...
+    ] ,
+    &quot;header&quot;: null
+} 
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/widgets/widget-header-customization.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

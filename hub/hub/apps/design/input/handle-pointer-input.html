@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Handle pointer input </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Handle pointer input ">
+    
+    <meta name="description" content="Receive, process, and manage input data from pointing devices such as touch, mouse, pen/stylus, and touchpad, in your Windows applications.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="handle-pointer-input">Handle pointer input</h1>
+
+<p>Receive, process, and manage input data from pointing devices (such as touch, mouse, pen/stylus, and touchpad) in your Windows applications.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Create custom interactions only if there is a clear, well-defined requirement and the interactions supported by the platform controls don't support your scenario.<br>
+If you customize the interaction experiences in your Windows application, users expect them to be consistent, intuitive, and discoverable. For these reasons, we recommend that you model your custom interactions on those supported by the <a href="../controls/index.html">platform controls</a>. The platform controls provide the full Windows app user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility.</p>
+</div>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/uwp/api/Windows.Devices.Input">Windows.Devices.Input</a></li>
+<li><a href="/uwp/api/Windows.UI.Core">Windows.UI.Input</a></li>
+<li><a href="/uwp/api/Windows.UI.Input">Windows.UI.Xaml.Input</a></li>
+</ul>
+<h2 id="pointers">Pointers</h2>
+<p>Most interaction experiences typically involve the user identifying the object they want to interact with by pointing at it through input devices such as touch, mouse, pen/stylus, and touchpad. Because the raw Human Interface Device (HID) data provided by these input devices includes many common properties, the data is promoted and consolidated into a unified input stack and exposed as device-agnostic pointer data. Your Windows applications can then consume this data without worrying about the input device being used.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Device-specific info is also promoted from the raw HID data should your app require it.</p>
+</div>
+<p>Each input point (or contact) on the input stack is represented by a <a href="/uwp/api/Windows.UI.Xaml.Input.Pointer"><strong>Pointer</strong></a> object exposed through the <a href="/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs"><strong>PointerRoutedEventArgs</strong></a> parameter in the various pointer event handlers. In the case of multi-pen or multi-touch input, each contact is treated as a unique input pointer.</p>
+<h2 id="pointer-events">Pointer events</h2>
+<p>Pointer events expose basic info such as input device type and detection state (in range or in contact), and extended info such as location, pressure, and contact geometry. In addition, specific device properties such as which mouse button a user pressed or whether the pen eraser tip is being used are also available. If your app needs to differentiate between input devices and their capabilities, see <a href="identify-input-devices.html">Identify input devices</a>.</p>
+<p>Windows apps can listen for the following pointer events:</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Constrain pointer input to a specific UI element by calling  <a href="/uwp/api/windows.ui.xaml.uielement.capturepointer"><strong>CapturePointer</strong></a> on that element within a pointer event handler. When a pointer is captured by an element, only that object receives pointer input events, even when the pointer moves outside the bounding area of the object. The <a href="/uwp/api/windows.ui.xaml.input.pointer.isincontact"><strong>IsInContact</strong></a> (mouse button pressed, touch or stylus in contact) must be true for <strong>CapturePointer</strong> to be successful.</p>
+</div>
+<table>
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></p></td>
+<td align="left"><p>Occurs when a pointer is canceled by the platform. This can occur in the following circumstances:</p>
+<ul>
+<li>Touch pointers are canceled when a pen is detected within range of the input surface.</li>
+<li>An active contact is not detected for more than 100 ms.</li>
+<li>Monitor/display is changed (resolution, settings, multi-mon configuration).</li>
+<li>The desktop is locked or the user has logged off.</li>
+<li>The number of simultaneous contacts exceeded the number supported by the device.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></p></td>
+<td align="left"><p>Occurs when another UI element captures the pointer, the pointer was released, or another pointer was programmatically captured.</p>
+<div class="alert">
+<strong>Note</strong>  There is no corresponding pointer capture event.
+</div>
+<div>
+ 
+</div></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></p></td>
+<td align="left"><p>Occurs when a pointer enters the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
+<ul>
+<li>Touch requires a finger contact to fire this event, either from a direct touch down on the element or from moving into the bounding area of the element.</li>
+<li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
+<li>Like touch, pen fires this event with a direct pen down on the element or from moving into the bounding area of the element. However, pen also has a hover state (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) that, when true, fires this event.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></p></td>
+<td align="left"><p>Occurs when a pointer leaves the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
+<ul>
+<li>Touch requires a finger contact and fires this event when the pointer moves out of the bounding area of the element.</li>
+<li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
+<li>Like touch, pen fires this event when moving out of the bounding area of the element. However, pen also has a hover state (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) that fires this event when the state changes from true to false.</li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></p></td>
+<td align="left"><p>Occurs when a pointer changes coordinates, button state, pressure, tilt, or contact geometry (for example, width and height) within the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.</p>
+<ul>
+<li>Touch requires a finger contact and fires this event only when in contact within the bounding area of the element.</li>
+<li>Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.</li>
+<li>Like touch, pen fires this event when in contact within the bounding area of the element. However, pen also has a hover state (<a href="/uwp/api/windows.ui.xaml.input.pointer.isinrange">IsInRange</a>) that, when true and within the bounding area of the element, fires this event.</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></p></td>
+<td align="left"><p>Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.</p>
+<p><a href="/uwp/api/windows.ui.xaml.uielement.capturepointer">CapturePointer</a> must be called from the handler for this event.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></p></td>
+<td align="left"><p>Occurs when the pointer indicates a release action (such as a touch up, mouse button up, pen up, or touchpad button up) within the bounding area of an element or, if the pointer is captured, outside the bounding area.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p><a href="/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></p></td>
+<td align="left"><p>Occurs when the mouse wheel is rotated.</p>
+<p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved">PointerMoved</a> event.</p></td>
+</tr>
+</tbody>
+</table> 
+<h2 id="pointer-event-example">Pointer event example</h2>
+<p>Here are some code snippets from a basic pointer tracking app that show how to listen for and handle events for multiple pointers, and get various properties for the associated pointers.</p>
+<p><img src="images/pointers/pointers1.gif" alt="Pointer application UI"></p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip">Pointer input sample (basic)</a></strong></p>
+<h3 id="create-the-ui">Create the UI</h3>
+<p>For this example, we use a <a href="/uwp/api/windows.ui.xaml.shapes.rectangle">Rectangle</a> (<code>Target</code>) as the object consuming pointer input. The color of the target changes when the pointer status changes.</p>
+<p>Details for each pointer are displayed in a floating <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> that follows the pointer as it moves. The pointer events themselves are reported in the <a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock">RichTextBlock</a> to the right of the rectangle.</p>
+<p>This is the Extensible Application Markup Language (XAML) for the UI in this example.</p>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition Width=&quot;*&quot; /&gt;
+        &lt;ColumnDefinition Width=&quot;250&quot;/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;*&quot; /&gt;
+        &lt;RowDefinition Height=&quot;320&quot; /&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;Canvas Name=&quot;Container&quot; 
+            Grid.Column=&quot;0&quot;
+            Grid.Row=&quot;1&quot;
+            HorizontalAlignment=&quot;Center&quot; 
+            VerticalAlignment=&quot;Center&quot; 
+            Margin=&quot;245,0&quot; 
+            Height=&quot;320&quot;  Width=&quot;640&quot;&gt;
+        &lt;Rectangle Name=&quot;Target&quot; 
+                    Fill=&quot;#FF0000&quot; 
+                    Stroke=&quot;Black&quot; 
+                    StrokeThickness=&quot;0&quot;
+                    Height=&quot;320&quot; Width=&quot;640&quot; /&gt;
+    &lt;/Canvas&gt;
+    &lt;Grid Grid.Column=&quot;1&quot; Grid.Row=&quot;0&quot; Grid.RowSpan=&quot;3&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;50&quot; /&gt;
+            &lt;RowDefinition Height=&quot;*&quot; /&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;Button Name=&quot;buttonClear&quot; 
+                Grid.Row=&quot;0&quot;
+                Content=&quot;Clear&quot;
+                Foreground=&quot;White&quot;
+                HorizontalAlignment=&quot;Stretch&quot; 
+                VerticalAlignment=&quot;Stretch&quot;&gt;
+        &lt;/Button&gt;
+        &lt;ScrollViewer Name=&quot;eventLogScrollViewer&quot; Grid.Row=&quot;1&quot; 
+                        VerticalScrollMode=&quot;Auto&quot; 
+                        Background=&quot;Black&quot;&gt;                
+            &lt;RichTextBlock Name=&quot;eventLog&quot;  
+                        TextWrapping=&quot;Wrap&quot; 
+                        Foreground=&quot;#FFFFFF&quot; 
+                        ScrollViewer.VerticalScrollBarVisibility=&quot;Visible&quot; 
+                        ScrollViewer.HorizontalScrollBarVisibility=&quot;Disabled&quot;
+                        Grid.ColumnSpan=&quot;2&quot;&gt;
+            &lt;/RichTextBlock&gt;
+        &lt;/ScrollViewer&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h3 id="listen-for-pointer-events">Listen for pointer events</h3>
+<p>In most cases, we recommend that you get pointer info through the <a href="/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs"><strong>PointerRoutedEventArgs</strong></a> of the event handler.</p>
+<p>If the event argument doesn't expose the pointer details required, you can get access to extended <a href="/uwp/api/Windows.UI.Input.PointerPoint"><strong>PointerPoint</strong></a> info exposed through the <a href="/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint"><strong>GetCurrentPoint</strong></a> and <a href="/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints"><strong>GetIntermediatePoints</strong></a> methods of <a href="/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs"><strong>PointerRoutedEventArgs</strong></a>.</p>
+<p>The following code sets up the global dictionary object for tracking each active pointer, and identifies the various pointer event listeners for the target object.</p>
+<pre><code class="lang-CSharp">// Dictionary to maintain information about each active pointer. 
+// An entry is added during PointerPressed/PointerEntered events and removed 
+// during PointerReleased/PointerCaptureLost/PointerCanceled/PointerExited events.
+Dictionary&lt;uint, Windows.UI.Xaml.Input.Pointer&gt; pointers;
+
+public MainPage()
+{
+    this.InitializeComponent();
+
+    // Initialize the dictionary.
+    pointers = new Dictionary&lt;uint, Windows.UI.Xaml.Input.Pointer&gt;();
+
+    // Declare the pointer event handlers.
+    Target.PointerPressed += 
+        new PointerEventHandler(Target_PointerPressed);
+    Target.PointerEntered += 
+        new PointerEventHandler(Target_PointerEntered);
+    Target.PointerReleased += 
+        new PointerEventHandler(Target_PointerReleased);
+    Target.PointerExited += 
+        new PointerEventHandler(Target_PointerExited);
+    Target.PointerCanceled += 
+        new PointerEventHandler(Target_PointerCanceled);
+    Target.PointerCaptureLost += 
+        new PointerEventHandler(Target_PointerCaptureLost);
+    Target.PointerMoved += 
+        new PointerEventHandler(Target_PointerMoved);
+    Target.PointerWheelChanged += 
+        new PointerEventHandler(Target_PointerWheelChanged);
+
+    buttonClear.Click += 
+        new RoutedEventHandler(ButtonClear_Click);
+}
+</code></pre>
+<h3 id="handle-pointer-events">Handle pointer events</h3>
+<p>Next, we use UI feedback to demonstrate basic pointer event handlers.</p>
+<ul>
+<li><p>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a> event. We add the event to the event log, add the pointer to the active pointer dictionary, and display the pointer details.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a> events do not always occur in pairs. Your app should listen for and handle any event that might conclude a pointer down (such as <a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a>, and <a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a>).</p>
+</div>
+</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer pressed event handler.
+/// PointerPressed and PointerReleased don't always occur in pairs. 
+/// Your app should listen for and handle any event that can conclude 
+/// a pointer down (PointerExited, PointerCanceled, PointerCaptureLost).
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+void Target_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Update event log.
+    UpdateEventLog(&quot;Down: &quot; + ptrPt.PointerId);
+
+    // Lock the pointer to the target.
+    Target.CapturePointer(e.Pointer);
+
+    // Update event log.
+    UpdateEventLog(&quot;Pointer captured: &quot; + ptrPt.PointerId);
+
+    // Check if pointer exists in dictionary (ie, enter occurred prior to press).
+    if (!pointers.ContainsKey(ptrPt.PointerId))
+    {
+        // Add contact to dictionary.
+        pointers[ptrPt.PointerId] = e.Pointer;
+    }
+
+    // Change background color of target when pointer contact detected.
+    Target.Fill = new SolidColorBrush(Windows.UI.Colors.Green);
+
+    // Display pointer details.
+    CreateInfoPop(ptrPt);
+}
+</code></pre>
+<ul>
+<li>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a> event. We add the event to the event log, add the pointer to the pointer collection, and display the pointer details.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer entered event handler.
+/// We do not capture the pointer on this event.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Update event log.
+    UpdateEventLog(&quot;Entered: &quot; + ptrPt.PointerId);
+
+    // Check if pointer already exists (if enter occurred prior to down).
+    if (!pointers.ContainsKey(ptrPt.PointerId))
+    {
+        // Add contact to dictionary.
+        pointers[ptrPt.PointerId] = e.Pointer;
+    }
+
+    if (pointers.Count == 0)
+    {
+        // Change background color of target when pointer contact detected.
+        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Blue);
+    }
+
+    // Display pointer details.
+    CreateInfoPop(ptrPt);
+}
+</code></pre>
+<ul>
+<li><p>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a> event. We add the event to the event log and update the pointer details.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a> event. The <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a> event is fired only when that same mouse button is released (no other button can be associated with the pointer until this event is complete). Because of this exclusive association, other mouse button clicks are routed through the <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a> event.</p>
+</div>
+</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer moved event handler.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Multiple, simultaneous mouse button inputs are processed here.
+    // Mouse input is associated with a single pointer assigned when 
+    // mouse input is first detected. 
+    // Clicking additional mouse buttons (left, wheel, or right) during 
+    // the interaction creates secondary associations between those buttons 
+    // and the pointer through the pointer pressed event. 
+    // The pointer released event is fired only when the last mouse button 
+    // associated with the interaction (not necessarily the initial button) 
+    // is released. 
+    // Because of this exclusive association, other mouse button clicks are 
+    // routed through the pointer move event.          
+    if (ptrPt.PointerDevice.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Mouse)
+    {
+        if (ptrPt.Properties.IsLeftButtonPressed)
+        {
+            UpdateEventLog(&quot;Left button: &quot; + ptrPt.PointerId);
+        }
+        if (ptrPt.Properties.IsMiddleButtonPressed)
+        {
+            UpdateEventLog(&quot;Wheel button: &quot; + ptrPt.PointerId);
+        }
+        if (ptrPt.Properties.IsRightButtonPressed)
+        {
+            UpdateEventLog(&quot;Right button: &quot; + ptrPt.PointerId);
+        }
+    }
+
+    // Display pointer details.
+    UpdateInfoPop(ptrPt);
+}
+</code></pre>
+<ul>
+<li>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a> event. We add the event to the event log, add the pointer to the pointer array (if necessary), and display the pointer details.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer wheel event handler.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Update event log.
+    UpdateEventLog(&quot;Mouse wheel: &quot; + ptrPt.PointerId);
+
+    // Check if pointer already exists (for example, enter occurred prior to wheel).
+    if (!pointers.ContainsKey(ptrPt.PointerId))
+    {
+        // Add contact to dictionary.
+        pointers[ptrPt.PointerId] = e.Pointer;
+    }
+
+    // Display pointer details.
+    CreateInfoPop(ptrPt);
+}
+</code></pre>
+<ul>
+<li>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a> event where contact with the digitizer is terminated. We add the event to the event log, remove the pointer from the pointer collection, and update the pointer details.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer released event handler.
+/// PointerPressed and PointerReleased don't always occur in pairs. 
+/// Your app should listen for and handle any event that can conclude 
+/// a pointer down (PointerExited, PointerCanceled, PointerCaptureLost).
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Update event log.
+    UpdateEventLog(&quot;Up: &quot; + ptrPt.PointerId);
+
+    // If event source is mouse or touchpad and the pointer is still 
+    // over the target, retain pointer and pointer details.
+    // Return without removing pointer from pointers dictionary.
+    // For this example, we assume a maximum of one mouse pointer.
+    if (ptrPt.PointerDevice.PointerDeviceType != Windows.Devices.Input.PointerDeviceType.Mouse)
+    {
+        // Update target UI.
+        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Red);
+
+        DestroyInfoPop(ptrPt);
+
+        // Remove contact from dictionary.
+        if (pointers.ContainsKey(ptrPt.PointerId))
+        {
+            pointers[ptrPt.PointerId] = null;
+            pointers.Remove(ptrPt.PointerId);
+        }
+
+        // Release the pointer from the target.
+        Target.ReleasePointerCapture(e.Pointer);
+
+        // Update event log.
+        UpdateEventLog(&quot;Pointer released: &quot; + ptrPt.PointerId);
+    }
+    else
+    {
+        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Blue);
+    }
+}
+</code></pre>
+<ul>
+<li>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a> event (when contact with the digitizer is maintained). We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer exited event handler.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Update event log.
+    UpdateEventLog(&quot;Pointer exited: &quot; + ptrPt.PointerId);
+
+    // Remove contact from dictionary.
+    if (pointers.ContainsKey(ptrPt.PointerId))
+    {
+        pointers[ptrPt.PointerId] = null;
+        pointers.Remove(ptrPt.PointerId);
+    }
+
+    if (pointers.Count == 0)
+    {
+        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Red);
+    }
+
+    // Update the UI and pointer details.
+    DestroyInfoPop(ptrPt);
+}
+</code></pre>
+<ul>
+<li>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a> event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer canceled event handler.
+/// Fires for various reasons, including: 
+///    - Touch contact canceled by pen coming into range of the surface.
+///    - The device doesn't report an active contact for more than 100ms.
+///    - The desktop is locked or the user logged off. 
+///    - The number of simultaneous contacts exceeded the number supported by the device.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Update event log.
+    UpdateEventLog(&quot;Pointer canceled: &quot; + ptrPt.PointerId);
+
+    // Remove contact from dictionary.
+    if (pointers.ContainsKey(ptrPt.PointerId))
+    {
+        pointers[ptrPt.PointerId] = null;
+        pointers.Remove(ptrPt.PointerId);
+    }
+
+    if (pointers.Count == 0)
+    {
+        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Black);
+    }
+
+    DestroyInfoPop(ptrPt);
+}
+</code></pre>
+<ul>
+<li><p>This handler manages the <a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a> event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a> can occur instead of <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a>. Pointer capture can be lost for various reasons including user interaction, programmatic capture of another pointer, calling <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a>.</p>
+</div>
+</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// The pointer capture lost event handler.
+/// Fires for various reasons, including: 
+///    - User interactions
+///    - Programmatic capture of another pointer
+///    - Captured pointer was deliberately released
+// PointerCaptureLost can fire instead of PointerReleased. 
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer event.&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer routed event.&lt;/param&gt;
+private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
+{
+    // Prevent most handlers along the event route from handling the same event again.
+    e.Handled = true;
+
+    PointerPoint ptrPt = e.GetCurrentPoint(Target);
+
+    // Update event log.
+    UpdateEventLog(&quot;Pointer capture lost: &quot; + ptrPt.PointerId);
+
+    if (pointers.Count == 0)
+    {
+        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Black);
+    }
+
+    // Remove contact from dictionary.
+    if (pointers.ContainsKey(ptrPt.PointerId))
+    {
+        pointers[ptrPt.PointerId] = null;
+        pointers.Remove(ptrPt.PointerId);
+    }
+
+    DestroyInfoPop(ptrPt);
+}
+</code></pre>
+<h3 id="get-pointer-properties">Get pointer properties</h3>
+<p>As stated earlier, you must get most extended pointer info from a <a href="/uwp/api/Windows.UI.Input.PointerPoint"><strong>Windows.UI.Input.PointerPoint</strong></a> object obtained through the <a href="/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint"><strong>GetCurrentPoint</strong></a> and <a href="/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints"><strong>GetIntermediatePoints</strong></a> methods of <a href="/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs"><strong>PointerRoutedEventArgs</strong></a>. The following code snippets show how.</p>
+<ul>
+<li>First, we create a new <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> for each pointer.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Create the pointer info popup.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;ptrPt&quot;&gt;Reference to the input pointer.&lt;/param&gt;
+void CreateInfoPop(PointerPoint ptrPt)
+{
+    TextBlock pointerDetails = new TextBlock();
+    pointerDetails.Name = ptrPt.PointerId.ToString();
+    pointerDetails.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+    pointerDetails.Text = QueryPointer(ptrPt);
+
+    TranslateTransform x = new TranslateTransform();
+    x.X = ptrPt.Position.X + 20;
+    x.Y = ptrPt.Position.Y + 20;
+    pointerDetails.RenderTransform = x;
+
+    Container.Children.Add(pointerDetails);
+}
+</code></pre>
+<ul>
+<li>Then we provide a way to update the pointer info in an existing <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> associated with that pointer.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Update the pointer info popup.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;ptrPt&quot;&gt;Reference to the input pointer.&lt;/param&gt;
+void UpdateInfoPop(PointerPoint ptrPt)
+{
+    foreach (var pointerDetails in Container.Children)
+    {
+        if (pointerDetails.GetType().ToString() == &quot;Windows.UI.Xaml.Controls.TextBlock&quot;)
+        {
+            TextBlock textBlock = (TextBlock)pointerDetails;
+            if (textBlock.Name == ptrPt.PointerId.ToString())
+            {
+                // To get pointer location details, we need extended pointer info.
+                // We get the pointer info through the getCurrentPoint method
+                // of the event argument. 
+                TranslateTransform x = new TranslateTransform();
+                x.X = ptrPt.Position.X + 20;
+                x.Y = ptrPt.Position.Y + 20;
+                pointerDetails.RenderTransform = x;
+                textBlock.Text = QueryPointer(ptrPt);
+            }
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>Finally, we query various pointer properties.</li>
+</ul>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Get pointer details.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;ptrPt&quot;&gt;Reference to the input pointer.&lt;/param&gt;
+/// &lt;returns&gt;A string composed of pointer details.&lt;/returns&gt;
+String QueryPointer(PointerPoint ptrPt)
+{
+    String details = &quot;&quot;;
+
+    switch (ptrPt.PointerDevice.PointerDeviceType)
+    {
+        case Windows.Devices.Input.PointerDeviceType.Mouse:
+            details += &quot;\nPointer type: mouse&quot;;
+            break;
+        case Windows.Devices.Input.PointerDeviceType.Pen:
+            details += &quot;\nPointer type: pen&quot;;
+            if (ptrPt.IsInContact)
+            {
+                details += &quot;\nPressure: &quot; + ptrPt.Properties.Pressure;
+                details += &quot;\nrotation: &quot; + ptrPt.Properties.Orientation;
+                details += &quot;\nTilt X: &quot; + ptrPt.Properties.XTilt;
+                details += &quot;\nTilt Y: &quot; + ptrPt.Properties.YTilt;
+                details += &quot;\nBarrel button pressed: &quot; + ptrPt.Properties.IsBarrelButtonPressed;
+            }
+            break;
+        case Windows.Devices.Input.PointerDeviceType.Touch:
+            details += &quot;\nPointer type: touch&quot;;
+            details += &quot;\nrotation: &quot; + ptrPt.Properties.Orientation;
+            details += &quot;\nTilt X: &quot; + ptrPt.Properties.XTilt;
+            details += &quot;\nTilt Y: &quot; + ptrPt.Properties.YTilt;
+            break;
+        default:
+            details += &quot;\nPointer type: n/a&quot;;
+            break;
+    }
+
+    GeneralTransform gt = Target.TransformToVisual(this);
+    Point screenPoint;
+
+    screenPoint = gt.TransformPoint(new Point(ptrPt.Position.X, ptrPt.Position.Y));
+    details += &quot;\nPointer Id: &quot; + ptrPt.PointerId.ToString() +
+        &quot;\nPointer location (target): &quot; + Math.Round(ptrPt.Position.X) + &quot;, &quot; + Math.Round(ptrPt.Position.Y) +
+        &quot;\nPointer location (container): &quot; + Math.Round(screenPoint.X) + &quot;, &quot; + Math.Round(screenPoint.Y);
+
+    return details;
+}
+</code></pre>
+<h2 id="primary-pointer">Primary pointer</h2>
+<p>Some input devices, such as a touch digitizer or touchpad, support more than the typical single pointer of a mouse or a pen (in most cases as the Surface Hub supports two pen inputs).</p>
+<p>Use the read-only <strong><a href="/uwp/api/windows.ui.input.pointerpointproperties.IsPrimary">IsPrimary</a></strong> property of the <strong><a href="/uwp/api/windows.ui.input.pointerpointproperties">PointerPointerProperties</a></strong> class to identify and differentiate a single primary pointer (the primary pointer is always the first pointer detected during an input sequence).</p>
+<p>By identifying the primary pointer, you can use it to emulate mouse or pen input, customize interactions, or provide some other specific functionality or UI.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the primary pointer is released, canceled, or lost during an input sequence, a primary input pointer is not created until a new input sequence is initiated (an input sequence ends when all pointers have been released, canceled, or lost).</p>
+</div>
+<h2 id="primary-pointer-animation-example">Primary pointer animation example</h2>
+<p>These code snippets show how you can provide special visual feedback to help a user differentiate between pointer inputs in your application.</p>
+<p>This particular app uses both color and animation to highlight the primary pointer.</p>
+<p><img src="images/pointers/pointers-usercontrol-animation.gif" alt="Pointer application with animated visual feedback"></p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip">Pointer input sample (UserControl with animation)</a></strong></p>
+<h3 id="visual-feedback">Visual feedback</h3>
+<p>We define a <strong><a href="/uwp/api/windows.ui.xaml.controls.usercontrol">UserControl</a></strong>, based on a XAML <strong><a href="/uwp/api/windows.ui.xaml.shapes.ellipse">Ellipse</a></strong> object, that highlights where each pointer is on the canvas and uses a <strong><a href="/uwp/api/windows.ui.xaml.media.animation.storyboard">Storyboard</a></strong> to animate the ellipse that corresponds to the primary pointer.</p>
+<p><strong>Here's the XAML:</strong></p>
+<pre><code class="lang-xaml">&lt;UserControl
+    x:Class=&quot;UWP_Pointers.PointerEllipse&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:UWP_Pointers&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;
+    d:DesignHeight=&quot;100&quot;
+    d:DesignWidth=&quot;100&quot;&gt;
+
+    &lt;UserControl.Resources&gt;
+        &lt;Style x:Key=&quot;EllipseStyle&quot; TargetType=&quot;Ellipse&quot;&gt;
+            &lt;Setter Property=&quot;Transitions&quot;&gt;
+                &lt;Setter.Value&gt;
+                    &lt;TransitionCollection&gt;
+                        &lt;ContentThemeTransition/&gt;
+                    &lt;/TransitionCollection&gt;
+                &lt;/Setter.Value&gt;
+            &lt;/Setter&gt;
+        &lt;/Style&gt;
+        
+        &lt;Storyboard x:Name=&quot;myStoryboard&quot;&gt;
+            &lt;!-- Animates the value of a Double property between 
+            two target values using linear interpolation over the 
+            specified Duration. --&gt;
+            &lt;DoubleAnimation
+              Storyboard.TargetName=&quot;ellipse&quot;
+              Storyboard.TargetProperty=&quot;(RenderTransform).(ScaleTransform.ScaleY)&quot;  
+              Duration=&quot;0:0:1&quot; 
+              AutoReverse=&quot;True&quot; 
+              RepeatBehavior=&quot;Forever&quot; From=&quot;1.0&quot; To=&quot;1.4&quot;&gt;
+            &lt;/DoubleAnimation&gt;
+
+            &lt;!-- Animates the value of a Double property between 
+            two target values using linear interpolation over the 
+            specified Duration. --&gt;
+            &lt;DoubleAnimation
+              Storyboard.TargetName=&quot;ellipse&quot;
+              Storyboard.TargetProperty=&quot;(RenderTransform).(ScaleTransform.ScaleX)&quot;  
+              Duration=&quot;0:0:1&quot; 
+              AutoReverse=&quot;True&quot; 
+              RepeatBehavior=&quot;Forever&quot; From=&quot;1.0&quot; To=&quot;1.4&quot;&gt;
+            &lt;/DoubleAnimation&gt;
+
+            &lt;!-- Animates the value of a Color property between 
+            two target values using linear interpolation over the 
+            specified Duration. --&gt;
+            &lt;ColorAnimation 
+                Storyboard.TargetName=&quot;ellipse&quot; 
+                EnableDependentAnimation=&quot;True&quot; 
+                Storyboard.TargetProperty=&quot;(Fill).(SolidColorBrush.Color)&quot; 
+                From=&quot;White&quot; To=&quot;Red&quot;  Duration=&quot;0:0:1&quot; 
+                AutoReverse=&quot;True&quot; RepeatBehavior=&quot;Forever&quot;/&gt;
+        &lt;/Storyboard&gt;
+    &lt;/UserControl.Resources&gt;
+
+    &lt;Grid x:Name=&quot;CompositionContainer&quot;&gt;
+        &lt;Ellipse Name=&quot;ellipse&quot; 
+        StrokeThickness=&quot;2&quot; 
+        Width=&quot;{x:Bind Diameter}&quot; 
+        Height=&quot;{x:Bind Diameter}&quot;  
+        Style=&quot;{StaticResource EllipseStyle}&quot; /&gt;
+    &lt;/Grid&gt;
+&lt;/UserControl&gt;
+</code></pre>
+<p>And here's the code-behind:</p>
+<pre><code class="lang-csharp">using Windows.Foundation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+
+// The User Control item template is documented at 
+// https://go.microsoft.com/fwlink/?LinkId=234236
+
+namespace UWP_Pointers
+{
+    /// &lt;summary&gt;
+    /// Pointer feedback object.
+    /// &lt;/summary&gt;
+    public sealed partial class PointerEllipse : UserControl
+    {
+        // Reference to the application canvas.
+        Canvas canvas;
+
+        /// &lt;summary&gt;
+        /// Ellipse UI for pointer feedback.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;c&quot;&gt;The drawing canvas.&lt;/param&gt;
+        public PointerEllipse(Canvas c)
+        {
+            this.InitializeComponent();
+            canvas = c;
+        }
+
+        /// &lt;summary&gt;
+        /// Gets or sets the pointer Id to associate with the PointerEllipse object.
+        /// &lt;/summary&gt;
+        public uint PointerId
+        {
+            get { return (uint)GetValue(PointerIdProperty); }
+            set { SetValue(PointerIdProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for PointerId.  
+        // This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PointerIdProperty =
+            DependencyProperty.Register(&quot;PointerId&quot;, typeof(uint), 
+                typeof(PointerEllipse), new PropertyMetadata(null));
+
+
+        /// &lt;summary&gt;
+        /// Gets or sets whether the associated pointer is Primary.
+        /// &lt;/summary&gt;
+        public bool PrimaryPointer
+        {
+            get { return (bool)GetValue(PrimaryPointerProperty); }
+            set
+            {
+                SetValue(PrimaryPointerProperty, value);
+            }
+        }
+        // Using a DependencyProperty as the backing store for PrimaryPointer.  
+        // This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PrimaryPointerProperty =
+            DependencyProperty.Register(&quot;PrimaryPointer&quot;, typeof(bool), 
+                typeof(PointerEllipse), new PropertyMetadata(false));
+
+
+        /// &lt;summary&gt;
+        /// Gets or sets the ellipse style based on whether the pointer is Primary.
+        /// &lt;/summary&gt;
+        public bool PrimaryEllipse 
+        {
+            get { return (bool)GetValue(PrimaryEllipseProperty); }
+            set
+            {
+                SetValue(PrimaryEllipseProperty, value);
+                if (value)
+                {
+                    SolidColorBrush fillBrush = 
+                        (SolidColorBrush)Application.Current.Resources[&quot;PrimaryFillBrush&quot;];
+                    SolidColorBrush strokeBrush = 
+                        (SolidColorBrush)Application.Current.Resources[&quot;PrimaryStrokeBrush&quot;];
+
+                    ellipse.Fill = fillBrush;
+                    ellipse.Stroke = strokeBrush;
+                    ellipse.RenderTransform = new CompositeTransform();
+                    ellipse.RenderTransformOrigin = new Point(.5, .5);
+                    myStoryboard.Begin();
+                }
+                else
+                {
+                    SolidColorBrush fillBrush = 
+                        (SolidColorBrush)Application.Current.Resources[&quot;SecondaryFillBrush&quot;];
+                    SolidColorBrush strokeBrush = 
+                        (SolidColorBrush)Application.Current.Resources[&quot;SecondaryStrokeBrush&quot;];
+                    ellipse.Fill = fillBrush;
+                    ellipse.Stroke = strokeBrush;
+                }
+            }
+        }
+        // Using a DependencyProperty as the backing store for PrimaryEllipse.  
+        // This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PrimaryEllipseProperty =
+            DependencyProperty.Register(&quot;PrimaryEllipse&quot;, 
+                typeof(bool), typeof(PointerEllipse), new PropertyMetadata(false));
+
+
+        /// &lt;summary&gt;
+        /// Gets or sets the diameter of the PointerEllipse object.
+        /// &lt;/summary&gt;
+        public int Diameter
+        {
+            get { return (int)GetValue(DiameterProperty); }
+            set { SetValue(DiameterProperty, value); }
+        }
+        // Using a DependencyProperty as the backing store for Diameter.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DiameterProperty =
+            DependencyProperty.Register(&quot;Diameter&quot;, typeof(int), 
+                typeof(PointerEllipse), new PropertyMetadata(120));
+    }
+}
+</code></pre>
+<h3 id="create-the-ui-1">Create the UI</h3>
+<p>The UI in this example is limited to the input <strong><a href="/uwp/api/windows.ui.xaml.controls.canvas">Canvas</a></strong> where we track any pointers and render the pointer indicators and primary pointer animation (if applicable), along with a header bar containing a pointer counter and a primary pointer identifier.</p>
+<p>Here's the MainPage.xaml:</p>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;StackPanel x:Name=&quot;HeaderPanel&quot; 
+                Orientation=&quot;Horizontal&quot; 
+                Grid.Row=&quot;0&quot;&gt;
+        &lt;StackPanel.Transitions&gt;
+            &lt;TransitionCollection&gt;
+                &lt;AddDeleteThemeTransition/&gt;
+            &lt;/TransitionCollection&gt;
+        &lt;/StackPanel.Transitions&gt;
+        &lt;TextBlock x:Name=&quot;Header&quot; 
+                    Text=&quot;Basic pointer tracking sample - IsPrimary&quot; 
+                    Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot; 
+                    Margin=&quot;10,0,0,0&quot; /&gt;
+        &lt;TextBlock x:Name=&quot;PointerCounterLabel&quot;
+                    VerticalAlignment=&quot;Center&quot;                 
+                    Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                    Text=&quot;Number of pointers: &quot; 
+                    Margin=&quot;50,0,0,0&quot;/&gt;
+        &lt;TextBlock x:Name=&quot;PointerCounter&quot;
+                    VerticalAlignment=&quot;Center&quot;                 
+                    Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                    Text=&quot;0&quot; 
+                    Margin=&quot;10,0,0,0&quot;/&gt;
+        &lt;TextBlock x:Name=&quot;PointerPrimaryLabel&quot;
+                    VerticalAlignment=&quot;Center&quot;                 
+                    Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                    Text=&quot;Primary: &quot; 
+                    Margin=&quot;50,0,0,0&quot;/&gt;
+        &lt;TextBlock x:Name=&quot;PointerPrimary&quot;
+                    VerticalAlignment=&quot;Center&quot;                 
+                    Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                    Text=&quot;n/a&quot; 
+                    Margin=&quot;10,0,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+    
+    &lt;Grid Grid.Row=&quot;1&quot;&gt;
+        &lt;!--The canvas where we render the pointer UI.--&gt;
+        &lt;Canvas x:Name=&quot;pointerCanvas&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h3 id="handle-pointer-events-1">Handle pointer events</h3>
+<p>Finally, we define our basic pointer event handlers in the MainPage.xaml.cs code-behind. We won't reproduce the code here as the basics were covered in the previous example, but you can download the working sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip">Pointer input sample (UserControl with animation)</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<h3 id="topic-samples">Topic samples</h3>
+<ul>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip">Pointer input sample (basic)</a></li>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers-animation.zip">Pointer input sample (UserControl with animation)</a></li>
+</ul>
+<h3 id="other-samples">Other samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode">User interaction mode sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+</ul>
+<h3 id="archive-samples">Archive samples</h3>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample">Input: XAML user input events sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer">Input: Manipulations and gestures sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample">Input: Touch hit testing sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample">XAML scrolling, panning, and zooming sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample">Input: Simplified ink sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/handle-pointer-input.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

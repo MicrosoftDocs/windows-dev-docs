@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Responsive interactions and Windows Application Performance </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Responsive interactions and Windows Application Performance ">
+    
+    <meta name="description" content="This guide will help you to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="improve-the-responsiveness-of-your-windows-app">Improve the responsiveness of your Windows app</h1>
+
+<p>This guide will help you to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions. Quick, responsive interactions (otherwise known as low-latency interactions) creates a better user experience. Understanding interaction expectations, measuring current durations, and setting goals for improvement depending on the interaction class can lead to significant improvements in your users experience and satisfaction.</p>
+<h2 id="step-by-step-guide-to-optimizing-interactions-for-responsive-behavior">Step by step guide to optimizing interactions for responsive behavior</h2>
+<p>Customers can feel when an application launch, menu navigation, or page/content load is slow. They have come to expect a fast, seamless experience and we have shared some steps and guidance to better understand those expectations below.</p>
+<p>The basic steps to drive latency optimization are:</p>
+<ol>
+<li><p>Define the scenario and add TraceLogging events.</p>
+<p>Make a list of the key interactions that a user will go through while using your app, such as launch, opening a menu, navigating to a new page and rendering content, etc. For each of these interactions, add a start event and stop event to be used for measurement and analysis. Learn more about how to add <a href="/windows/win32/tracelogging/trace-logging-portal">TraceLogging</a>, a format for self-describing Event Tracing for Windows (ETW).</p>
+</li>
+<li><p>Set goals based on the interaction class.</p>
+<p>Users have different expectations for an app's performance and responsiveness depending on the type of interaction. For example, how quickly an app launches versus how quickly a page loads. Think of the acceptable range of elapsed time that it takes for users to complete the key interactions in your app. This may range from 200 milliseconds (ms) to 5 seconds (sec). Then assign each task an interaction class label with an associated goal. Below are a few basic guidelines, along with suggestions for how you might include a user interface (UI) to improve the perception of responsiveness:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Interaction class label</th>
+<th>User perception</th>
+<th>Range of delay</th>
+<th>Examples</th>
+<th>Suggested UI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fast</td>
+<td>Minimally noticeable delay</td>
+<td>100 - 200 milliseconds</td>
+<td>Open app bar, right click menu</td>
+<td></td>
+</tr>
+<tr>
+<td>Interactive</td>
+<td>Quick, but not fast</td>
+<td>300 - 500 ms</td>
+<td>Exit an app, display cached search results</td>
+<td></td>
+</tr>
+<tr>
+<td>Pause</td>
+<td>Not quick, but feels responsive</td>
+<td>500 ms - 1 sec</td>
+<td>Navigate to a different page, resume the app from a suspended state, display web search results</td>
+<td>An entrance animation (e.g. fly in new content) may be used to mask the time taken for this scenario.</td>
+</tr>
+<tr>
+<td>Wait</td>
+<td>Not quick due to amount of work for scenario</td>
+<td>1 - 3 sec</td>
+<td>Launching the app</td>
+<td>A spinning/waiting cursor may be used to note progress. Both an exit and entrance animation (e.g. fly old page out, fly new page in) may be used to mask the time taken for this scenario.</td>
+</tr>
+<tr>
+<td>Long wait</td>
+<td>No longer feels responsive</td>
+<td>2 - 5 sec</td>
+<td>Large app launches (use extended splash screen), starting an HD video stream</td>
+<td>A &quot;loading UI&quot; is displayed – where possible, include a &quot;cancel&quot; option for the user. The loading UI should appear within the Fast interaction class. The loading UI does not need to display a percentage or time remaining.</td>
+</tr>
+<tr>
+<td>Captive</td>
+<td>A long wait – reserved for unavoidably long/complex scenarios</td>
+<td>5 - 10 sec</td>
+<td>System login</td>
+<td>A &quot;loading UI&quot; or dialog is displayed – where possible, include a &quot;cancel&quot; option for the user. The dialog should appear within the Fast interaction class. The dialog should display a percentage or time remaining if this would provide useful context to the user.</td>
+</tr>
+<tr>
+<td>Long-running</td>
+<td>Long operations – users will probably multitask (switch away during operation)</td>
+<td>10 - 30+ sec</td>
+<td>Installing new features or updates, large file downloads</td>
+<td>UI should be designed to reflect multitasking possibility. A progress dialog should be displayed including an estimate of completion (percentage, time remaining, etc.). Alternatively, the UI can minimize completely and only notify the user when the scenario has finished by using a toast notification.</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li><p>To check the exact durations for specific interactions, you can capture and analyze a trace using <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer (WPA)</a>.</p>
+<ul>
+<li><p>Before capturing your trace, get your test device to idle by opening Task Manager and ensuring that CPU utilization is less than 5%. Doing so will minimize measurement interference and provide reasonable size traces. This will help you to better isolate the interaction that you aim to measure.</p>
+</li>
+<li><p>To capture a trace, open a <a href="/windows/terminal/">command line</a> (PowerShell or Command Prompt) in <a href="/windows/terminal/faq#how-do-i-run-a-shell-in-windows-terminal-in-administrator-mode">administrator mode</a>.</p>
+</li>
+<li><p>Enter the command: <code>wpr -start GeneralProfile -filemode</code></p>
+</li>
+<li><p>Run the interaction scenario on your app.</p>
+</li>
+<li><p>Enter the command: <code>wpr -stop Trace.etl</code></p>
+</li>
+</ul>
+</li>
+<li><p>Analyze the trace and find improvement opportunities.</p>
+<p>Analyze the duration of each key interaction supported by your app by opening the trace that you just captured in <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer (WPA)</a>.</p>
+<ul>
+<li>To open the trace in WPA, in your command line, enter: <code>wpa.exe Trace.etl</code></li>
+<li>Expand the <strong>System Activity</strong> dropdown and double-click on &quot;Generic Events&quot; to open the analysis view.</li>
+<li>Choose the event series related to your application and expand the &quot;Provider Name&quot; dropdown until you are able to find the Process, Task Name, and Event name associated with the key interaction you are seeking. The duration of the interaction event will be listed in the <strong>Time</strong> column, as well as in the graph, showing <strong>Duration</strong>, <strong>Start Time</strong>, and <strong>End Time</strong>.</li>
+</ul>
+<p>If the duration from your trace does not meet the interaction class goals (ex: 500ms), identify the key threads for your App (likely the UI thread), and look at the top stacks for CPU usage and waits. *Remember that as you perform the analysis, some issues may not be specific to your own application's code.</p>
+<p><img src="images/responsive-analysis.png" alt="Analysis of trace event duration"></p>
+</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><p><a href="/windows-hardware/test/wpt/wpa-step-by-step-guide">Windows Performance Analyzer step-by-step guide</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/optimizing-performance-and-responsiveness">Windows Performance Analyzer: Optimizing Performance and Responsiveness</a></p>
+</li>
+<li><p><a href="/windows/win32/tracelogging/trace-logging-portal">TraceLogging</a></p>
+</li>
+<li><p><a href="/windows/win32/tracelogging/trace-logging-portal">Event Tracing for Windows</a></p>
+</li>
+<li><p><a href="/windows/uwp/debug-test-perf/planning-and-measuring-performance">Planning for performance</a></p>
+</li>
+<li><p><a href="/answers/questions/812324/i-don39t-have-sampled-cpu-usage-data-in-my-profile.html">Q&amp;A forum</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/list-of-wpa-graphs">List of Windows Performance Toolkit (WPA) Graphs</a></p>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/performance/responsive.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

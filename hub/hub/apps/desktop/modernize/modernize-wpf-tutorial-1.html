@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Migrate the Contoso Expenses app to .NET Core 3 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Migrate the Contoso Expenses app to .NET Core 3 ">
+    
+    <meta name="description" content="This tutorial demonstrates how to migrate the entire Contoso Expenses app from the .NET Framework 4.7.2 to .NET Core 3.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="part-1-migrate-the-contoso-expenses-app-to-net-core-3">Part 1: Migrate the Contoso Expenses app to .NET Core 3</h1>
+
+<p>This is the first part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see <a href="modernize-wpf-tutorial.html">Tutorial: Modernize a WPF app</a>.</p>
+<p>In this part of the tutorial, you will migrate the entire Contoso Expenses app from the .NET Framework 4.7.2 to <a href="modernize-wpf-tutorial.html#net-core-3">.NET Core 3</a>. Before you start this part of the tutorial, make sure you <a href="modernize-wpf-tutorial.html#get-the-contoso-expenses-sample-app">open and build the ContosoExpenses sample</a> in Visual Studio 2019.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For more information about migrating a WPF application from the .NET Framework to .NET Core 3, see <a href="https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/">this blog series</a>.</p>
+</div>
+<h2 id="migrate-the-contosoexpenses-project-to-net-core-3">Migrate the ContosoExpenses project to .NET Core 3</h2>
+<p>In this section, you'll migrate the ContosoExpenses project in the Contoso Expenses app to .NET Core 3. You'll do this by creating a new project file that contains the same files as the existing ContosoExpenses project but targets .NET Core 3 instead of the .NET Framework 4.7.2. This enables you to maintain a single solution with both .NET Framework and .NET Core versions of the app.</p>
+<ol>
+<li><p>Verify that the ContosoExpenses project currently targets the .NET Framework 4.7.2. In Solution Explorer, right-click the <strong>ContosoExpenses</strong> project, choose <strong>Properties</strong>, and confirm that the <strong>Target framework</strong> property on the <strong>Application</strong> tab is set to the .NET Framework 4.7.2.</p>
+<p><img src="images/wpf-modernize-tutorial/NETFramework472.png" alt=".NET Framework version 4.7.2 for the project"></p>
+</li>
+<li><p>In Windows Explorer, navigate to the <strong>C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses</strong> folder and create a new text file named <strong>ContosoExpenses.Core.csproj</strong>.</p>
+</li>
+<li><p>Right click on the file, choose <strong>Open with</strong>, and then open it in a text editor of your choice, such as Notepad, Visual Studio Code or Visual Studio.</p>
+</li>
+<li><p>Copy the following text to the file and save it.</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk.WindowsDesktop&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;netcoreapp3.0&lt;/TargetFramework&gt;
+    &lt;UseWPF&gt;true&lt;/UseWPF&gt;
+ &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>Close the file and return to the <strong>ContosoExpenses</strong> solution in Visual Studio.</p>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses</strong> solution and choose <strong>Add -&gt; Existing Project</strong>. Select the <strong>ContosoExpenses.Core.csproj</strong> file you just created in the <code>C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses</code> folder to add it to the solution.</p>
+</li>
+</ol>
+<p>The <strong>ContosoExpenses.Core.csproj</strong> includes the following elements:</p>
+<ul>
+<li>The <strong>Project</strong> element specifies an SDK version of <strong>Microsoft.NET.Sdk.WindowsDesktop</strong>. This refers to .NET applications for Windows Desktop, and it includes components for WPF and Windows Forms apps.</li>
+<li>The <strong>PropertyGroup</strong> element contains child elements that indicate the project output is an executable (not a DLL), targets .NET Core 3, and uses WPF. For a Windows Forms app, you would use a <strong>UseWinForms</strong> element instead of the <strong>UseWPF</strong> element.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When working with the .csproj format introduced with .NET Core 3.0, all the files in the same folder as the .csproj are considered part of the project. Therefore, you don't have to specify every file included in the project. You must specify only those files for which you want to define a custom build action or that you want to exclude.</p>
+</div>
+<h2 id="migrate-the-contosoexpensesdata-project-to-net-standard">Migrate the ContosoExpenses.Data project to .NET Standard</h2>
+<p>The <strong>ContosoExpenses</strong> solution includes a <strong>ContosoExpenses.Data</strong> class library that contains models and interfaces for services and targets .NET 4.7.2. .NET Core 3.0 apps can use .NET Framework libraries, as long as they don't use APIs which aren't available in .NET Core. However, the best modernization path is to move your libraries to .NET Standard. This will make sure that your library is fully supported by your .NET Core 3.0 app. Additionally, you can reuse the library also with other platforms, such as web (through ASP.NET Core).</p>
+<p>To migrate the <strong>ContosoExpenses.Data</strong> project to .NET Standard:</p>
+<ol>
+<li><p>In Visual Studio, right-click the <strong>ContosoExpenses.Data</strong> project and choose <strong>Unload Project</strong>. Right-click the project again and then choose <strong>Edit ContosoExpenses.Data.csproj</strong>.</p>
+</li>
+<li><p>Delete the entire contents of the project file.</p>
+</li>
+<li><p>Copy and paste the following XML and save the file.</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+
+  &lt;PropertyGroup&gt;
+    &lt;TargetFramework&gt;netstandard2.0&lt;/TargetFramework&gt;
+  &lt;/PropertyGroup&gt;
+
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Data</strong> project and choose <strong>Reload Project</strong>.</p>
+</li>
+</ol>
+<h2 id="configure-nuget-packages-and-dependencies">Configure NuGet packages and dependencies</h2>
+<p>When you migrated the <strong>ContosoExpenses.Core</strong> and <strong>ContosoExpenses.Data</strong> projects in the previous sections, you removed the NuGet package references from the projects. In this section, you'll add these references back.</p>
+<p>To configure NuGet packages for the <strong>ContosoExpenses.Data</strong> project:</p>
+<ol>
+<li><p>In the <strong>ContosoExpenses.Data</strong> project, expand the <strong>Dependencies</strong> node. Note that the <strong>NuGet</strong> section is missing.</p>
+<p><img src="images/wpf-modernize-tutorial/NuGetPackages.png" alt="NuGet packages"></p>
+<p>If you open the <strong>Packages.config</strong> in the <strong>Solution Explorer</strong> you will find the 'old' references of the NuGet packages used the project when it was using the full .NET Framework.</p>
+<p><img src="images/wpf-modernize-tutorial/Packages.png" alt="Dependencies and packages"></p>
+<p>Here is the content of the <strong>Packages.config</strong> file. You will notice that all the NuGet Packages target the Full .NET Framework 4.7.2:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;packages&gt;
+  &lt;package id=&quot;Bogus&quot; version=&quot;26.0.2&quot; targetFramework=&quot;net472&quot; /&gt;
+  &lt;package id=&quot;LiteDB&quot; version=&quot;4.1.4&quot; targetFramework=&quot;net472&quot; /&gt;
+&lt;/packages&gt;
+</code></pre>
+</li>
+<li><p>In the <strong>ContosoExpenses.Data</strong> project, delete the <strong>Packages.config</strong> file.</p>
+</li>
+<li><p>In the <strong>ContosoExpenses.Data</strong> project, right-click the <strong>Dependencies</strong> node and choose <strong>Manage NuGet Packages</strong>.</p>
+</li>
+</ol>
+<p><img src="images/wpf-modernize-tutorial/ManageNugetNETCORE3.png" alt="Manage NuGet Packages..."></p>
+<ol start="5">
+<li><p>In the <strong>NuGet Package Manager</strong> window, click <strong>Browse</strong>. Search for the <code>Bogus</code> package and install the latest stable version.</p>
+<p><img src="images/wpf-modernize-tutorial/Bogus.png" alt="Bogus NuGet package"></p>
+</li>
+<li><p>Search for the <code>LiteDB</code> package and install the latest stable version.</p>
+<p><img src="images/wpf-modernize-tutorial/LiteDB.png" alt="LiteDB NuGet package"></p>
+<p>You may be wondering where these list of NuGet packages is stored, since the project no longer has a packages.config file. The referenced NuGet packages are stored directly in the .csproj file. You can check this by viewing the contents of the <strong>ContosoExpenses.Data.csproj</strong> project file in a text editor. You will find the following lines added at the end of the file:</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+   &lt;PackageReference Include=&quot;Bogus&quot; Version=&quot;26.0.2&quot; /&gt;
+   &lt;PackageReference Include=&quot;LiteDB&quot; Version=&quot;4.1.4&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may also notice that you're installing the same packages for this .NET Core 3 project as the ones used by .NET Framework 4.7.2 projects. NuGet packages supports multi-targeting. Library authors can include different versions of a library in the same package, compiled for different architectures and platforms. These packages support the full .NET Framework as well as .NET Standard 2.0, which is compatible with .NET Core 3 projects. For more info about the differences .NET Framework, .NET Core and .NET Standard, see <a href="/dotnet/standard/net-standard">.NET Standard</a>.</p>
+</div>
+</li>
+</ol>
+<p>To configure NuGet packages for the <strong>ContosoExpenses.Core</strong> project:</p>
+<ol>
+<li><p>In the <strong>ContosoExpenses.Core</strong> project, open the <strong>packages.config</strong> file. Notice that it currently contains the following references that target the .NET Framework 4.7.2.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;packages&gt;
+  &lt;package id=&quot;CommonServiceLocator&quot; version=&quot;2.0.2&quot; targetFramework=&quot;net472&quot; /&gt;
+  &lt;package id=&quot;MvvmLightLibs&quot; version=&quot;5.4.1.1&quot; targetFramework=&quot;net472&quot; /&gt;
+  &lt;package id=&quot;System.Runtime.CompilerServices.Unsafe&quot; version=&quot;4.5.2&quot; targetFramework=&quot;net472&quot; /&gt;
+  &lt;package id=&quot;Unity&quot; version=&quot;5.10.2&quot; targetFramework=&quot;net472&quot; /&gt;
+&lt;/packages&gt;
+</code></pre>
+<p>In the following steps you'll .NET Standard versions of the <code>MvvmLightLibs</code> and <code>Unity</code> packages. The other two are dependencies automatically downloaded by NuGet when you install these two libraries.</p>
+</li>
+<li><p>In the <strong>ContosoExpenses.Core</strong> project, delete the <strong>Packages.config</strong> file.</p>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Manage NuGet Packages</strong>.</p>
+</li>
+<li><p>In the <strong>NuGet Package Manager</strong> window, click <strong>Browse</strong>. Search for the <code>Unity</code> package and install the latest stable version.</p>
+<p><img src="images/wpf-modernize-tutorial/UnityPackage.png" alt="Unity package"></p>
+</li>
+<li><p>Search for the <code>MvvmLightLibsStd10</code> package and install the latest stable version. This is the .NET Standard version of the <code>MvvmLightLibs</code> package. For this package, the author chose to package the .NET Standard version of the library in a separate package than the .NET Framework version.</p>
+<p><img src="images/wpf-modernize-tutorial/MvvmLightsLibsPackage.png" alt="MvvmLightsLibs package"></p>
+</li>
+<li><p>In the <strong>ContosoExpenses.Core</strong> project, right-click the <strong>Dependencies</strong> node and choose <strong>Add Reference</strong>.</p>
+</li>
+<li><p>In the <strong>Projects &gt; Solution</strong> category, select <strong>ContosoExpenses.Data</strong> and click <strong>OK</strong>.</p>
+<p><img src="images/wpf-modernize-tutorial/AddReference.png" alt="Add Reference"></p>
+</li>
+</ol>
+<h2 id="disable-auto-generated-assembly-attributes">Disable auto-generated assembly attributes</h2>
+<p>At this point in the migration process, if you try to build the <strong>ContosoExpenses.Core</strong> project you'll see some errors.</p>
+<p><img src="images/wpf-modernize-tutorial/NETCORE3BuildNewErrors.png" alt=".NET Core 3 build new errors"></p>
+<p>This problem is happening because the new .csproj format introduced with .NET Core 3.0 stores the assembly info in the project file rather than the <strong>AssemblyInfo.cs</strong> file. To fix these errors, disable this behavior and let the project continue to use the <strong>AssemblyInfo.cs</strong> file.</p>
+<ol>
+<li><p>In Visual Studio, right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Unload Project</strong>. Right-click the project again and then choose <strong>Edit ContosoExpenses.Core.csproj</strong>.</p>
+</li>
+<li><p>Add the following element in the <strong>PropertyGroup</strong> section and save the file.</p>
+<pre><code class="lang-XML">&lt;GenerateAssemblyInfo&gt;false&lt;/GenerateAssemblyInfo&gt;
+</code></pre>
+<p>After adding this element, the <strong>PropertyGroup</strong> section should now look like this:</p>
+<pre><code class="lang-XML">&lt;PropertyGroup&gt;
+  &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+  &lt;TargetFramework&gt;netcoreapp3.0&lt;/TargetFramework&gt;
+  &lt;UseWPF&gt;true&lt;/UseWPF&gt;
+  &lt;GenerateAssemblyInfo&gt;false&lt;/GenerateAssemblyInfo&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Reload Project</strong>.</p>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Data</strong> project and choose <strong>Unload Project</strong>. Right-click the project again and then choose <strong>Edit ContosoExpenses.Data.csproj</strong>.</p>
+</li>
+<li><p>Add the same entry in the <strong>PropertyGroup</strong> section and save the file.</p>
+<pre><code class="lang-xml">&lt;GenerateAssemblyInfo&gt;false&lt;/GenerateAssemblyInfo&gt;
+</code></pre>
+<p>After adding this element, the <strong>PropertyGroup</strong> section should now look like this:</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;TargetFramework&gt;netstandard2.0&lt;/TargetFramework&gt;
+  &lt;GenerateAssemblyInfo&gt;false&lt;/GenerateAssemblyInfo&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Data</strong> project and choose <strong>Reload Project</strong>.</p>
+</li>
+</ol>
+<h2 id="add-the-windows-compatibility-pack">Add the Windows Compatibility Pack</h2>
+<p>If you now try to compile the <strong>ContosoExpenses.Core</strong> and <strong>ContosoExpenses.Data</strong> projects, you'll see that the previous errors are now fixed but there are still some errors in the <strong>ContosoExpenses.Data</strong> library similar to these.</p>
+<p><code>Services\RegistryService.cs(9,26,9,34): error CS0103: The name 'Registry' does not exist in the current context</code>
+<code>Services\RegistryService.cs(12,26,12,34): error CS0103: The name 'Registry' does not exist in the current context</code>
+<code>Services\RegistryService.cs(12,97,12,123): error CS0103: The name 'RegistryKeyPermissionCheck' does not exist in the current context</code></p>
+<p>These errors are a result of converting the <strong>ContosoExpenses.Data</strong> project from a .NET Framework library (which is specific for Windows) to a .NET Standard library, which can run on multiple platforms including Linux, Android, iOS, and more. The <strong>ContosoExpenses.Data</strong> project contains a class called <strong>RegistryService</strong>, which interacts with the registry, a Windows-only concept.</p>
+<p>To resolve these errors, install the <a href="https://www.nuget.org/packages/Microsoft.Windows.Compatibility">Windows Compatibility</a> NuGet package. This package provides support for many Windows-specific APIs to be used in a .NET Standard library. The library will no longer be cross-platform after using this package, but it will still target .NET Standard.</p>
+<ol>
+<li><p>Right-click on the <strong>ContosoExpenses.Data</strong> project.</p>
+</li>
+<li><p>Choose <strong>Manage NuGet Packages</strong>.</p>
+</li>
+<li><p>In the <strong>NuGet Package Manager</strong> window, click <strong>Browse</strong>. Search for the <code>Microsoft.Windows.Compatibility</code> package and install the latest stable version.</p>
+<p><img src="images/wpf-modernize-tutorial/WindowsCompatibilityPack.png" alt="Install NuGet package"></p>
+</li>
+<li><p>Now try again to compile the project, by right clicking on the <strong>ContosoExpenses.Data</strong> project and choosing <strong>Build</strong>.</p>
+</li>
+</ol>
+<p>This time the build process will complete without errors.</p>
+<h2 id="test-and-debug-the-migration">Test and debug the migration</h2>
+<p>Now that the projects are building successfully, you are ready to run and test the app to see if there are any runtime errors.</p>
+<ol>
+<li><p>Right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Set as Startup Project</strong>.</p>
+</li>
+<li><p>Press F5 to start the <strong>ContosoExpenses.Core</strong> project in the debugger. You'll see an exception similar to the following.</p>
+<p><img src="images/wpf-modernize-tutorial/ExceptionNETCore3.png" alt="Exception displayed in Visual Studio"></p>
+<p>This exception is being raised because when you deleted the content from the .csproj file at the beginning of the migration, you removed the information about the <strong>Build action</strong> for the image files. The following steps fix this issue.</p>
+</li>
+<li><p>Stop the debugger.</p>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Unload Project</strong>. Right-click the project again and then choose <strong>Edit ContosoExpenses.Core.csproj</strong>.</p>
+</li>
+<li><p>Before the closing <strong>Project</strong> element, add the following entry:</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+  &lt;Content Include=&quot;Images/*&quot;&gt;
+    &lt;CopyToOutputDirectory&gt;PreserveNewest&lt;/CopyToOutputDirectory&gt;
+  &lt;/Content&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Reload Project</strong>.</p>
+</li>
+<li><p>To assign the Contoso.ico to the app, right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Properties</strong>. In the opened page, click drop-down under <strong>Icon</strong> and select <code>Images\contoso.ico</code>.</p>
+<p><img src="images/wpf-modernize-tutorial/ContosoIco.png" alt="Contoso icon in the Project's Properties"></p>
+</li>
+<li><p>Click <strong>Save</strong>.</p>
+</li>
+<li><p>Press F5 to start the <strong>ContosoExpenses.Core</strong> project in the debugger. Confirm that the app now runs.</p>
+</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>At this point in the tutorial, you have successfully migrated the Contoso Expenses app to .NET Core 3. You are now ready for <a href="modernize-wpf-tutorial-2.html">Part 2: Add a UWP InkCanvas control using XAML Islands</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have a high resolution screen, you may notice that the app looks very small. You'll address this problem in the next step of the tutorial.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/modernize-wpf-tutorial-1.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

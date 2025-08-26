@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Moving from Mac (Unix) to Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Moving from Mac (Unix) to Windows ">
+    
+    <meta name="description" content="A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="guide-for-changing-your-dev-environment-from-mac-to-windows">Guide for changing your dev environment from Mac to Windows</h1>
+
+<p>The following tips and control equivalents should help you in your transition between a Mac and Windows (or WSL/Linux) development environment.</p>
+<p>For app development, the nearest equivalent to Xcode would be <a href="https://visualstudio.microsoft.com">Visual Studio</a>. There is also a version of <a href="https://visualstudio.microsoft.com/vs/mac/">Visual Studio for Mac</a>, if you ever feel the need to go back. For cross-platform source code editing (and a huge number of plug-ins) <a href="https://code.visualstudio.com/?wt.mc_id=DX_841432">Visual Studio Code</a> is the most popular choice.</p>
+<h2 id="keyboard-shortcuts">Keyboard shortcuts</h2>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use <a href="../powertoys/keyboard-manager.html">PowerToys Keyboard Manager</a> to map Windows shortcuts to the shortcuts you use on a Mac.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>Mac</strong></th>
+<th><strong>Windows</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copy</td>
+<td>Command+C</td>
+<td>Ctrl+C</td>
+</tr>
+<tr>
+<td>Cut</td>
+<td>Command+X</td>
+<td>Ctrl+X</td>
+</tr>
+<tr>
+<td>Paste</td>
+<td>Command+V</td>
+<td>Ctrl+V</td>
+</tr>
+<tr>
+<td>Undo</td>
+<td>Command+Z</td>
+<td>Ctrl+Z</td>
+</tr>
+<tr>
+<td>Save</td>
+<td>Command+S</td>
+<td>Ctrl+S</td>
+</tr>
+<tr>
+<td>Open</td>
+<td>Command+O</td>
+<td>Ctrl+O</td>
+</tr>
+<tr>
+<td>Lock computer</td>
+<td>Command+Control+Q</td>
+<td>WindowsKey+L</td>
+</tr>
+<tr>
+<td>Show desktop</td>
+<td>Command+F3</td>
+<td>WindowsKey+D</td>
+</tr>
+<tr>
+<td>Open file browser</td>
+<td>Command+N</td>
+<td>WindowsKey+E</td>
+</tr>
+<tr>
+<td>Minimize windows</td>
+<td>Command+M</td>
+<td>WindowsKey+M</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>Command+Space</td>
+<td>WindowsKey</td>
+</tr>
+<tr>
+<td>Close active window</td>
+<td>Command+W</td>
+<td>Control+W</td>
+</tr>
+<tr>
+<td>Switch current task</td>
+<td>Command+Tab</td>
+<td>Alt+Tab</td>
+</tr>
+<tr>
+<td>Maximize a window to full screen</td>
+<td>Control+Command+F</td>
+<td>WindowsKey+Up</td>
+</tr>
+<tr>
+<td>Save screen (Screenshot)</td>
+<td>Command+Shift+3</td>
+<td>WindowsKey+Shift+S</td>
+</tr>
+<tr>
+<td>Save window</td>
+<td>Command+Shift+4</td>
+<td>WindowsKey+Shift+S</td>
+</tr>
+<tr>
+<td>View item information or properties</td>
+<td>Command+I</td>
+<td>Alt+Enter</td>
+</tr>
+<tr>
+<td>Select all items</td>
+<td>Command+A</td>
+<td>Ctrl+A</td>
+</tr>
+<tr>
+<td>Select more than one item in a list (noncontiguous)</td>
+<td>Command, then click each item</td>
+<td>Control, then click each item</td>
+</tr>
+<tr>
+<td>Type special characters</td>
+<td>Option+ character key</td>
+<td>Alt+ character key</td>
+</tr>
+</tbody>
+</table>
+<h2 id="trackpad-shortcuts">Trackpad shortcuts</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some of these shortcuts require a &quot;Precision Trackpad&quot;, such as the trackpad on Surface devices and some other third-party laptops.</p>
+<p>Trackpad options are configurable on both platforms.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th><strong>Operation</strong></th>
+<th><strong>Mac</strong></th>
+<th><strong>Windows</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scroll</td>
+<td>Two finger vertical swipe</td>
+<td>Two finger vertical swipe</td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td>Two finger pinch in and out</td>
+<td>Two finger pinch in and out</td>
+</tr>
+<tr>
+<td>Swipe back and forward between views</td>
+<td>Two finger sideways swipe</td>
+<td>Two finger sideways swipe</td>
+</tr>
+<tr>
+<td>Switch virtual workspaces</td>
+<td>Four fingers sideways swipe</td>
+<td>Four fingers sideways swipe</td>
+</tr>
+<tr>
+<td>Display currently open apps</td>
+<td>Four fingers upward swipe</td>
+<td>Three fingers upward swipe</td>
+</tr>
+<tr>
+<td>Switch between apps</td>
+<td>N/A</td>
+<td>Slow three finger sideways swipe</td>
+</tr>
+<tr>
+<td>Go to desktop</td>
+<td>Spread out four fingers</td>
+<td>Three finger swipe downwards</td>
+</tr>
+<tr>
+<td>Open Cortana / Action center</td>
+<td>Two finger slide from right</td>
+<td>Three finger tap</td>
+</tr>
+<tr>
+<td>Open extra information</td>
+<td>Three finger tap</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Show launchpad / start an app</td>
+<td>Pinch with four fingers</td>
+<td>Tap with four fingers</td>
+</tr>
+</tbody>
+</table>
+<h2 id="command-line-shells-and-terminals">Command-line shells and terminals</h2>
+<p>Windows supports several command-line shells and terminals which sometimes work a little differently to the Mac's BASH shell and terminal emulator apps like Terminal and iTerm.</p>
+<h3 id="windows-shells">Windows shells</h3>
+<p>Windows has two primary command-line shells:</p>
+<ol>
+<li><p><strong><a href="/powershell/scripting/overview">PowerShell</a></strong> - PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language built on .NET. Using PowerShell, administrators, developers, and power-users can rapidly control and automate tasks that manage complex processes and various aspects of the environment and operating system upon which it is run. PowerShell is <a href="https://github.com/powershell/powershell">fully open-source</a>, and because it is cross-platform, also <a href="/powershell/scripting/install/installing-powershell">available for Mac and Linux</a>.</p>
+<p><strong>Mac and Linux BASH shell users</strong>: PowerShell also supports many command-aliases that you are already familiar with. For example:</p>
+<ul>
+<li>List the contents of the current directory, using: <code>ls</code></li>
+<li>Move files with: <code>mv</code></li>
+<li>Move to a new directory with: <code>cd &lt;path&gt;</code></li>
+</ul>
+<p>Some commands and arguments are different in PowerShell vs. BASH. Learn more by entering: <a href="/powershell/scripting/learn/ps101/02-help-system"><code>get-help</code></a> in PowerShell or checkout the <a href="/powershell/scripting/samples/appendix-1---compatibility-aliases">compatibility aliases</a> in the docs.</p>
+<p>To run PowerShell as an Administrator, enter &quot;PowerShell&quot; in your Windows start menu, then select &quot;Run as Administrator.&quot;</p>
+</li>
+<li><p><strong>Windows Command Line (Cmd)</strong>: Windows still ships the traditional Command Prompt (and Console – see below), providing compatibility with current and legacy MS-DOS-compatible commands and batch files. Cmd is useful when running existing/older batch files or command-line operations, but in general, users are recommended to learn and use PowerShell since Cmd is now in maintenance, and will not be receiving any improvements or new features in the future.</p>
+</li>
+</ol>
+<h3 id="linux-shells">Linux shells</h3>
+<p>Windows Subsystem for Linux (WSL) can now be installed to support running a Linux shell within Windows. This means that you can run <strong>bash</strong>, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL will provide the kind of environment most familiar to Mac users. For example, you will <strong>ls</strong> to list the files in a current directory, not <strong>dir</strong> as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the <a href="/windows/wsl/install">Windows Subsystem for Linux Installation Guide</a>. Linux distributions that can be installed on Windows with WSL include:</p>
+<ol>
+<li><a href="https://www.microsoft.com/store/apps/9n6svws3rx71">Ubuntu 20.04 LTS</a></li>
+<li><a href="https://www.microsoft.com/store/apps/9PKR34TNCV07">Kali Linux</a></li>
+<li><a href="https://www.microsoft.com/store/apps/9MSVKQC78PK6">Debian GNU/Linux</a></li>
+<li><a href="https://www.microsoft.com/store/apps/9NJFZK00FGKV">openSUSE Leap 15.1</a></li>
+<li><a href="https://www.microsoft.com/store/apps/9PN498VPMF3Z">SUSE Linux Enterprise Server 15 SP1</a></li>
+</ol>
+<p>Just to name a few. Find more in the <a href="/windows/wsl/install-win10#install-your-linux-distribution-of-choice">WSL install docs</a> and install them directly from the <a href="https://aka.ms/wslstore">Microsoft Store</a>.</p>
+<h2 id="windows-terminals">Windows Terminals</h2>
+<p>In addition to many 3rd party offerings, Microsoft provides two &quot;terminals&quot; – GUI applications that provide access to command-line shells and applications.</p>
+<ol>
+<li><p><strong><a href="/windows/terminal/">Windows Terminal</a></strong>: Windows Terminal is a new, modern, highly configurable command-line terminal application that provides very high performance, low-latency command-line user experience, multiple tabs, split window panes, custom themes and styles, multiple &quot;profiles&quot; for different shells or command-line apps, and considerable opportunities for you to configure and personalize many aspects of your command-line user experience.</p>
+<p>You can use Windows Terminal to open tabs connected to PowerShell, WSL shells (like Ubuntu or Debian), the traditional Windows Command Prompt, or any other command-line app (e.g. SSH, Azure CLI, Git Bash).</p>
+</li>
+<li><p><strong><a href="/windows/console/">Console</a></strong>: On Mac and Linux, users usually start their preferred terminal application which then creates and connects to the user's default shell (e.g. BASH).</p>
+<p>However, due to a quirk of history, Windows users traditionally start their shell, and Windows automatically starts and connects a GUI Console app.</p>
+<p>While one can still launch shells directly and use the legacy Windows Console, it's highly recommended that users instead install and use Windows Terminal to experience the best, fastest, most productive command-line experience.</p>
+</li>
+</ol>
+<h2 id="apps-and-utilities">Apps and utilities</h2>
+<table>
+<thead>
+<tr>
+<th><strong>App</strong></th>
+<th><strong>Mac</strong></th>
+<th><strong>Windows</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Settings and Preferences</td>
+<td>System Preferences</td>
+<td>Settings</td>
+</tr>
+<tr>
+<td>Task manager</td>
+<td>Activity Monitor</td>
+<td>Task Manager</td>
+</tr>
+<tr>
+<td>Disk formatting</td>
+<td>Disk Utility</td>
+<td>Disk Management</td>
+</tr>
+<tr>
+<td>Text editing</td>
+<td>TextEdit</td>
+<td>Notepad</td>
+</tr>
+<tr>
+<td>Event viewing</td>
+<td>Console</td>
+<td>Event Viewer</td>
+</tr>
+<tr>
+<td>Find files/apps</td>
+<td>Command+Space</td>
+<td>Windows key</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/mac-to-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

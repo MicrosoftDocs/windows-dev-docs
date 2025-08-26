@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Globalization and localization </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Globalization and localization ">
+    
+    <meta name="description" content="Learn about the benefits of globalizing and localizing your app, and exactly what these terms mean.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="globalization-and-localization">Globalization and localization</h1>
+
+<p>Windows is used worldwide by audiences that are diverse in terms of language, region, and culture. Your users speak a variety of different languages and in a variety of different countries and regions. Some users speak more than one language. So, your app runs on configurations that involve many permutations of system settings for language, region, and culture. You can increase the potential market for your app by designing it to be readily adaptable, using <em>globalization</em> and <em>localization</em>.</p>
+<p>For a short video that demonstrates how to prepare your app for the world, see <a href="https://web.archive.org/web/20210123201259/https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization">Introduction to globalization and localization</a>.</p>
+<p><strong>Globalization</strong> is the process of designing and developing your app in such a way that it functions appropriately in different global markets (on systems with different language and culture configurations) without requiring culture-specific changes or customization.</p>
+<ul>
+<li>Take culture into account when manipulating strings, for example don't change the case of strings before comparing them.</li>
+<li>Use calendars that are appropriate for the current culture.</li>
+<li>Use globalization APIs to display data that are formatted appropriately for the country or region, such as numbers, dates, times, and currencies.</li>
+<li>Take into account that different cultures have different rules for collating (sorting) text and other data.</li>
+</ul>
+<p>Your code needs to function equally well in any of the cultures that you've determined that your app will support. Ideally, your code will function equally well in the context of <em>any</em> language, region, or culture. The most efficient way to globalize your app's functions is to use the concept of cultures/locales. A culture/locale is a set of rules and a set of data that are specific to a given language and geographic area. These rules and data include information about the following.</p>
+<ul>
+<li>Character classification</li>
+<li>Writing system</li>
+<li>Date and time formatting</li>
+<li>Numeric, currency, weight, and measure conventions</li>
+<li>Sorting rules</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For a list of supported locale names by Windows operating system version, see the Language tag column of the table in <a href="/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c">Appendix A: Product Behavior</a> in the <a href="/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f">Windows Language Code Identifier (LCID) Reference</a>.</p>
+</div>
+<p><strong>Localizability</strong> is the process of preparing a globalized app for localization and/or verifying that the app is ready for localization. Correctly making an app localizable means that the later localization process will not uncover any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from the app's localizable resources.</p>
+<ul>
+<li>Strings translated into different languages can vary greatly in length. So, design your UI to accommodate different text lengths and font sizes for labels and text input controls.</li>
+<li>Try to avoid text and/or culturally-sensitive material in images.</li>
+<li>Don't hard-code strings and culture-dependent images in your app's code and markup. Instead, store them as string and image resources so that they can be adapted to different local markets independently of your app's built binaries.</li>
+<li>Pseudo-localize your app to disclose any localizability issues.</li>
+</ul>
+<p><strong>Localization</strong> is the process of adapting or translating your app's localizable resources to meet the language, cultural, and political requirements of the specific local markets that the app is intended to support. By the time you reach the stage of localizing your app, if your app is localizable then you will not have to modify any logic during this process.</p>
+<ul>
+<li>Translate the string resources and other assets of the app for the new market.</li>
+<li>Modify any culture-dependent images as necessary.</li>
+<li>Files can also vary depending on a user's region, separate from their language. For example, a map may have different borders depending on the user's location, but the labels should follow the user's preferred language.</li>
+</ul>
+<p>Most localization teams use special tools to aid the process. For example, by recycling translations of recurring text.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="guidelines-and-checklist-for-globalizing-your-app.html">Guidelines for globalization</a></td>
+<td>Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.</td>
+</tr>
+<tr>
+<td><a href="manage-language-and-region.html">Understand user profile languages and app manifest languages</a></td>
+<td>This topic defines the terms &quot;user profile language list&quot;, &quot;app manifest language list&quot;, and &quot;app runtime language list&quot;. We'll be using these terms in this topic and other topics in this feature area, so it's important to know what they mean.</td>
+</tr>
+<tr>
+<td><a href="use-global-ready-formats.html">Globalize your date/time/number formats</a></td>
+<td>Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.</td>
+</tr>
+<tr>
+<td><a href="use-patterns-to-format-dates-and-times.html">Use templates and patterns to format dates and times</a></td>
+<td>Use classes in the <a href="/uwp/api/windows.globalization.datetimeformatting?branch=live"><strong>Windows.Globalization.DateTimeFormatting</strong></a> namespace with custom templates and patterns to display dates and times in exactly the format you wish.</td>
+</tr>
+<tr>
+<td><a href="adjust-layout-and-fonts--and-support-rtl.html">Adjust layout and fonts, and support RTL</a></td>
+<td>Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.</td>
+</tr>
+<tr>
+<td><a href="glob-numeralsystem-values.html">NumeralSystem values</a></td>
+<td>This topic lists the values available to the <strong>NumeralSystem</strong> property of various classes in the <a href="/uwp/api/windows.globalization?branch=live"><strong>Windows.Globalization</strong></a> namespace.</td>
+</tr>
+<tr>
+<td><a href="prepare-your-app-for-localization.html">Make your app localizable</a></td>
+<td>A localized app is one that can be localized to other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources.</td>
+</tr>
+<tr>
+<td><a href="loc-international-fonts.html">International fonts</a></td>
+<td>This topic lists the fonts available for Windows apps that are localized into languages other than U.S. English.</td>
+</tr>
+<tr>
+<td><a href="design-for-bidi-text.html">Design your app for bidirectional text</a></td>
+<td>Design your app to provide bi-directional text support (BiDi) so that you can combine script from left-to-right and right-to-left writing systems.</td>
+</tr>
+<tr>
+<td><a href="use-mat.html">Use the Multilingual App Toolkit 4.0</a></td>
+<td>The Multilingual App Toolkit (MAT) 4.0 integrates with Microsoft Visual Studio 2017 and later to provide Windows apps with translation support, translation file management, and editor tools.</td>
+</tr>
+<tr>
+<td><a href="mat-faq-troubleshooting.yml">Multilingual App Toolkit 4.0 FAQ &amp; troubleshooting</a></td>
+<td>This topic provides answers to frequently-asked questions and issues related to the Multilingual App Toolkit (MAT) 4.0.</td>
+</tr>
+<tr>
+<td><a href="use-utf8-code-page.html">Use the UTF-8 code page</a></td>
+<td>UTF-8 is the universal code page for internationalization.</td>
+</tr>
+<tr>
+<td><a href="japanese-era-change.html">Prepare your application for the Japanese era change</a></td>
+<td>Learn about the May 2019 Japanese era change and how to prepare your application.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/globalizing-portal.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

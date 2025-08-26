@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Teaching tips </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Teaching tips ">
+    
+    <meta name="description" content="A teaching tip is a semi-persistent and content-rich flyout that provides contextual information.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="teaching-tip">Teaching tip</h1>
+
+<p>A teaching tip is a semi-persistent and content-rich flyout that provides contextual information. It is often used for informing, reminding, and teaching users about important and new features that may enhance their experience.</p>
+<p>A teaching tip may be light-dismiss or require explicit action to close. A teaching tip can target a specific UI element with its tail and also be used without a tail or target.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a <strong>TeachingTip</strong> control to focus a user's attention on new or important updates and features, remind a user of nonessential options that would improve their experience, or teach a user how a task should be completed.</p>
+<p>Because teaching tip is transient, it would not be the recommended control for prompting users about errors or important status changes.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Tips are impermanent and should not contain information or options that are critical to the experience of an application.</li>
+<li>Try to avoid showing teaching tips too often. Teaching tips are most likely to each receive individual attention when they are staggered throughout long sessions or across multiple sessions.</li>
+<li>Keep tips succinct and their topic clear. Research shows users, on average, only read 3-5 words and only comprehend 2-3 words before deciding whether to interact with a tip.</li>
+<li>Gamepad accessibility of a teaching tip is not guaranteed. For applications that predict gamepad input, please see <a href="../../input/gamepad-and-remote-interactions.html#xy-focus-navigation-and-interaction">gamepad and remote control interactions</a>. It is encouraged to test gamepad accessibility of each teaching tip using all possible configurations of an app's UI.</li>
+<li>When enabling a teaching tip to escape the xaml root, it is encouraged to also enable the IsLightDismissEnabled property and set the PreferredPlacement mode nearest to the center of the xaml root.</li>
+</ul>
+<h3 id="reconfiguring-an-open-teaching-tip">Reconfiguring an open teaching tip</h3>
+<p>Some content and properties can be reconfigured while the teaching tip is open and will take effect immediately. Other content and properties, such as the icon property, the Action and Close buttons, and reconfiguring between light-dismiss and explicit-dismiss will all require the teaching tip to be closed and reopened for changes to these properties to take affect. Note that changing dismissal behavior from manual-dismiss to light-dismiss while a teaching tip is open will cause the teaching tip to have its Close button removed before the light-dismiss behavior is enabled and the tip can remain stuck on-screen.</p>
+<h2 id="examples">Examples</h2>
+<p>A teaching tip can have several configurations, including these notable ones:</p>
+<p>A teaching tip can target a specific UI element with its tail to enhance contextual clarity of the information it is presenting.</p>
+<p><img src="../images/teaching-tip-targeted.png" alt="A sample app with a teaching tip targeting the save button. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<p>When the information presented does not pertain to a particular UI element, a nontargeted teaching tip can be created by removing the tail.</p>
+<p><img src="../images/teaching-tip-non-targeted.png" alt="A sample app with a teaching tip in the bottom right corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<p>A teaching tip can require the user to dismiss it via an &quot;X&quot; button in a top corner or a &quot;Close&quot; button at the bottom. A teaching tip may also be light-dismiss enabled in which case there is no dismiss button and the teaching tip will instead dismiss when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area.</p>
+<p><img src="../images/teaching-tip-light-dismiss.png" alt="A sample app with a light-dismiss teaching tip in the bottom right corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot;"></p>
+<h3 id="create-a-teaching-tip">Create a teaching tip</h3>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip">TeachingTip class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/TeachingTip">Open the WinUI 3 Gallery app and see the TeachingTip in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Here's the XAML for a targeted teaching tip control that demonstrates the default look of the TeachingTip with a title and subtitle.
+Note that the teaching tip can appear anywhere in the element tree or code behind. In this example below, it's located in a ResourceDictionary.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot;&gt;
+    &lt;Button.Resources&gt;
+        &lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+            Target=&quot;{x:Bind SaveButton}&quot;
+            Title=&quot;Save automatically&quot;
+            Subtitle=&quot;When you save your file to OneDrive, we save your changes as you go - so you never have to.&quot;&gt;
+        &lt;/TeachingTip&gt;
+    &lt;/Button.Resources&gt;
+&lt;/Button&gt;
+</code></pre>
+<pre><code class="lang-csharp">public MainPage()
+{
+    this.InitializeComponent();
+
+    if(!HaveExplainedAutoSave())
+    {
+        AutoSaveTip.IsOpen = true;
+        SetHaveExplainedAutoSave();
+    }
+}
+</code></pre>
+<p>Here's the result when the Page containing the button and teaching tip is shown:</p>
+<p><img src="../images/teaching-tip-targeted.png" alt="A sample app with a teaching tip targeting the save button. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<p>In the example above, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.title">Title</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.subtitle">Subtitle</a> properties are used to set the teaching tip's title and subtitle. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.target">Target</a> property is set to the &quot;SaveButton&quot; to establish the visual connection between itself and the button. To show the teaching tip, its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.isopen">IsOpen</a> property is set to <code>true</code>.</p>
+<h3 id="non-targeted-tips">Non-targeted tips</h3>
+<p>Not all tips relate to an element onscreen. For these scenarios, do not set a target and the teaching tip will instead display relative to the edges of the xaml root. However, a teaching tip can have the tail removed while retaining placement relative to a UI element by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.tailvisibility">TailVisibility</a> property to &quot;Collapsed&quot;. The following example is of a non-targeted teaching tip.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot; /&gt;
+
+&lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+    Title=&quot;Saving automatically&quot;
+    Subtitle=&quot;We save your changes as you go - so you never have to.&quot;&gt;
+&lt;/TeachingTip&gt;
+</code></pre>
+<p>Note that in this example the TeachingTip is in the element tree rather than in a ResourceDictionary or in code behind. This has no effect on behavior; the TeachingTip only displays when opened, and takes up no layout space.</p>
+<p><img src="../images/teaching-tip-non-targeted.png" alt="A sample app with a teaching tip in the bottom right corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<h3 id="preferred-placement">Preferred placement</h3>
+<p>Teaching tip replicates Flyout's <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutPlacementMode">FlyoutPlacementMode</a> placement behavior with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.preferredplacement">PreferredPlacement</a> property. The default placement mode will try to place a targeted teaching tip above its target and a non-targeted teaching tip centered at the bottom of the xaml root. As with Flyout, if the preferred placement mode would not leave room for the teaching tip to show, another placement mode will be automatically chosen.</p>
+<p>For applications that predict gamepad input, please see <a href="../../input/gamepad-and-remote-interactions.html#xy-focus-navigation-and-interaction">gamepad and remote control interactions</a>. It is encouraged to test gamepad accessibility of each teaching tip using all possible configurations of an app's UI.</p>
+<p>A targeted teaching tip with its PreferredPlacement set to &quot;BottomLeft&quot; will appear with the tail centered at the bottom of its target with the teaching tip's body shifted toward the left.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot;&gt;
+    &lt;Button.Resources&gt;
+        &lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+            Target=&quot;{x:Bind SaveButton}&quot;
+            Title=&quot;Saving automatically&quot;
+            Subtitle=&quot;We save your changes as you go - so you never have to.&quot;
+            PreferredPlacement=&quot;BottomLeft&quot;&gt;
+        &lt;/TeachingTip&gt;
+    &lt;/Button.Resources&gt;
+&lt;/Button&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-targeted-preferred-placement.png" alt="A sample app with a &quot;Save&quot; button that is being targeted by a teaching tip underneath its left corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<p>A non-targeted teaching tip with its PreferredPlacement set to &quot;BottomLeft&quot; will appear in the bottom left corner of the xaml root.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot; /&gt;
+
+&lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+    Title=&quot;Saving automatically&quot;
+    Subtitle=&quot;We save your changes as you go - so you never have to.&quot;
+    PreferredPlacement=&quot;BottomLeft&quot;&gt;
+&lt;/TeachingTip&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-non-targeted-preferred-placement.png" alt="A sample app with a teaching tip in the bottom left corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<p>The diagram below depicts the result of all 13 PreferredPlacement modes that can be set for targeted teaching tips.
+<img src="../images/teaching-tip-targeted-preferred-placement-modes.png" alt="Illustration containing 13 teaching tips, each demonstrating a different targeted placement mode. Each teaching tip is labeled with the mode it represents. The first word of a placement mode indicates the side of the target that the teaching tip will appear centered on. The tail of the teaching tip will always be located at the center of that side of the target and will point towards the target. If there is a second word in the placement mode, the body of the teaching tip will not be centered, but will instead be shifted in the specified direction. For example, the placement mode &quot;TopRight&quot; will make the teaching tip appear above the target and shifted right, with its tail pointing down at the center of the target's top edge. Because the body is shifted right, the tail is almost on the leftmost edge of the body of the teaching tip, and the teaching tip extends past the right edge of the target. The placement mode &quot;Center&quot; in unique and will make the teaching tip's tail point at the center of the target and the teaching tip will be centered over the top half of the target."></p>
+<p>The diagram below depicts the result of all 13 PreferredPlacement modes that can be set for non-targeted teaching tips.
+<img src="../images/teaching-tip-non-targeted-preferred-placement-modes.png" alt="Illustration containing nine teaching tips, each demonstrating a different non-targeted placement mode. Each teaching tip is labeled with the mode it represents. The first word of a placement mode indicates the side of the xaml root that the teaching tip will appear centered on. If there is a second word in the placement mode, the teaching tip will position itself toward that specified corner of the xaml root. For example, the placement mode &quot;TopRight&quot; will make the teaching tip appear in the top right corner of the xaml root. For non-targeted placement modes, the order of the two words does not affect the placement. TopRight is equivalent to RightTop. The placement mode &quot;Center&quot; in unique and will make the teaching tip appear in the vertical and horizontal center of the xaml root."></p>
+<h3 id="add-a-placement-margin">Add a placement margin</h3>
+<p>You can control how far a targeted teaching tip is set apart from its target and how far a non-targeted teaching tip is set apart from the edges of the xaml root by using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.placementmargin">PlacementMargin</a> property. Like <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.margin">Margin</a>, PlacementMargin has four values – left, right, top, and bottom – so only the relevant values are used. For example, PlacementMargin.Left applies when the tip is left of the target or on the left edge of the xaml root.</p>
+<p>The following example shows a non-targeted tip with the PlacementMargin's Left/Top/Right/Bottom all set to 80.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot; /&gt;
+
+&lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+    Title=&quot;Saving automatically&quot;
+    Subtitle=&quot;We save your changes as you go - so you never have to.&quot;
+    PreferredPlacement=&quot;BottomLeft&quot;
+    PlacementMargin=&quot;80&quot;&gt;
+&lt;/TeachingTip&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-placement-margin.png" alt="A sample app with a teaching tip positioned toward, but not fully against, the bottom right corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<h3 id="add-content">Add content</h3>
+<p>Content can be added to a teaching tip using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a> property. If there is more content to show than what the size of a teaching tip will allow, a scrollbar will be automatically enabled to allow a user to scroll the content area.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot;&gt;
+    &lt;Button.Resources&gt;
+        &lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+            Target=&quot;{x:Bind SaveButton}&quot;
+            Title=&quot;Saving automatically&quot;
+            Subtitle=&quot;We save your changes as you go - so you never have to.&quot;&gt;
+                &lt;StackPanel&gt;
+                    &lt;CheckBox x:Name=&quot;HideTipsCheckBox&quot; Content=&quot;Don't show tips at start up&quot; IsChecked=&quot;{x:Bind HidingTips, Mode=TwoWay}&quot; /&gt;
+                    &lt;TextBlock&gt;You can change your tip preferences in &lt;Hyperlink NavigateUri=&quot;app:/item/SettingsPage&quot;&gt;Settings&lt;/Hyperlink&gt; if you change your mind.&lt;/TextBlock&gt;
+                &lt;/StackPanel&gt;
+        &lt;/TeachingTip&gt;
+    &lt;/Button.Resources&gt;
+&lt;/Button&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-content.png" alt="A sample app with a teaching tip targeting the save button. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; In the content area of the teaching tip is a CheckBox labeled &quot;Don't show tips at startup&quot; and underneath is text that reads &quot;You can change your tip preferences in Settings if you change your mind&quot; where &quot;Settings&quot; is a link to the app's settings page. There is a close button on the top right corner of the teaching tip."></p>
+<h3 id="add-buttons">Add buttons</h3>
+<p>By default, a standard &quot;X&quot; close button is shown next to the title of a teaching tip. The Close button can be customized with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.closebuttoncontent">CloseButtonContent</a> property, in which case the button is moved to the bottom of the teaching tip.</p>
+<p><strong>Note: No close button will appear on light-dismiss enabled tips</strong></p>
+<p>A custom action button can be added by setting <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.actionbuttoncontent">ActionButtonContent</a> property (and optionally the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommand">ActionButtonCommand</a> and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.actionbuttoncommandparameter">ActionButtonCommandParameter</a> properties).</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot;&gt;
+    &lt;Button.Resources&gt;
+        &lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+            Target=&quot;{x:Bind SaveButton}&quot;
+            Title=&quot;Saving automatically&quot;
+            Subtitle=&quot;We save your changes as you go - so you never have to.&quot;
+            ActionButtonContent=&quot;Disable&quot;
+            ActionButtonCommand=&quot;{x:Bind DisableAutoSaveCommand}&quot;
+            CloseButtonContent=&quot;Got it!&quot;&gt;
+                &lt;StackPanel&gt;
+                    &lt;CheckBox x:Name=&quot;HideTipsCheckBox&quot; Content=&quot;Don't show tips at start up&quot; IsChecked=&quot;{x:Bind HidingTips, Mode=TwoWay}&quot; /&gt;
+                    &lt;TextBlock&gt;You can change your tip preferences in &lt;Hyperlink NavigateUri=&quot;app:/item/SettingsPage&quot;&gt;Settings&lt;/Hyperlink&gt; if you change your mind.&lt;/TextBlock&gt;
+                &lt;/StackPanel&gt;
+        &lt;/TeachingTip&gt;
+    &lt;/Button.Resources&gt;
+&lt;/Button&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-buttons.png" alt="A sample app with a teaching tip targeting the save button. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; In the content area of the teaching tip is a CheckBox labeled &quot;Don't show tips at startup&quot; and underneath is text that reads &quot;You can change your tip preferences in Settings if you change your mind&quot; where &quot;Settings&quot; is a link to the app's settings page. At the bottom of the teaching are two buttons, a gray one on the left that reads &quot;Disable&quot; and a blue one on the right that reads &quot;Got it!&quot;"></p>
+<h3 id="hero-content">Hero content</h3>
+<p>Edge to edge content can be added to a teaching tip by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.herocontent">HeroContent</a> property. The location of hero content can be set to the top or bottom of a teaching tip by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.herocontentplacement">HeroContentPlacement</a> property.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot;&gt;
+    &lt;Button.Resources&gt;
+        &lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+            Target=&quot;{x:Bind SaveButton}&quot;
+            Title=&quot;Saving automatically&quot;
+            Subtitle=&quot;We save your changes as you go - so you never have to.&quot;&gt;
+            &lt;TeachingTip.HeroContent&gt;
+                &lt;Image Source=&quot;Assets/cloud.png&quot; /&gt;
+            &lt;/TeachingTip.HeroContent&gt;
+        &lt;/TeachingTip&gt;
+    &lt;/Button.Resources&gt;
+&lt;/Button&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-hero-content.png" alt="A sample app with a teaching tip targeting the save button. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; At the bottom of the teaching tip is a border-to-border image of a cartoon man putting files in the cloud. There is a close button on the top right corner of the teaching tip."></p>
+<h3 id="add-an-icon">Add an icon</h3>
+<p>An icon can be added beside the title and subtitle using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.iconsource">IconSource</a> property. Recommended icon sizes include 16px, 24px, and 32px.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot;&gt;
+    &lt;Button.Resources&gt;
+        &lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+            Target=&quot;{x:Bind SaveButton}&quot;
+            Title=&quot;Saving automatically&quot;
+            Subtitle=&quot;We save your changes as you go - so you never have to.&quot;
+            &lt;TeachingTip.IconSource&gt;
+                &lt;SymbolIconSource Symbol=&quot;Save&quot; /&gt;
+            &lt;/TeachingTip.IconSource&gt;
+        &lt;/TeachingTip&gt;
+    &lt;/Button.Resources&gt;
+&lt;/Button&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-icon.png" alt="A sample app with a teaching tip targeting the save button. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; To the left of the title and subtitle is a floppy disk icon. There is a close button on the top right corner of the teaching tip."></p>
+<h3 id="enable-light-dismiss">Enable light-dismiss</h3>
+<p>Light-dismiss functionality is disabled by default but it can enabled by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.islightdismissenabled">IsLightDismissEnabled</a> property so that a teaching tip will dismiss, for example, when a user scrolls or interacts with other elements of the application. Because of this behavior, light-dismiss tips are the best solution when a tip needs to be placed in a scrollable area.</p>
+<p>The close button will be automatically removed from a light-dismiss enabled teaching tip to identify its light-dismiss behavior to users.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot; /&gt;
+
+&lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+    Title=&quot;Saving automatically&quot;
+    Subtitle=&quot;We save your changes as you go - so you never have to.&quot;
+    IsLightDismissEnabled=&quot;True&quot;&gt;
+&lt;/TeachingTip&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-light-dismiss.png" alt="A sample app with a light-dismiss teaching tip in the bottom right corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot;"></p>
+<h3 id="escaping-the-xaml-root-bounds">Escaping the XAML root bounds</h3>
+<p>Starting with Windows 10, version 1903 (Build 18362), a teaching tip can escape the bounds of the XAML root and the screen by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.shouldconstraintorootbounds">ShouldConstrainToRootBounds</a> property. When this property is enabled, a teaching tip will not attempt to stay in the bounds of the XAML root nor the screen and will always position at the set <code>PreferredPlacement</code> mode. It is encouraged to enable the <code>IsLightDismissEnabled</code> property and set the <code>PreferredPlacement</code> mode nearest to the center of the XAML root to ensure the best experience for users.</p>
+<p>On earlier versions of Windows, this property is ignored and the teaching tip always stays within the bounds of the XAML root.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;SaveButton&quot; Content=&quot;Save&quot; /&gt;
+
+&lt;TeachingTip x:Name=&quot;AutoSaveTip&quot;
+    Title=&quot;Saving automatically&quot;
+    Subtitle=&quot;We save your changes as you go - so you never have to.&quot;
+    PreferredPlacement=&quot;BottomRight&quot;
+    PlacementMargin=&quot;-80,-50,0,0&quot;
+    ShouldConstrainToRootBounds=&quot;False&quot;&gt;
+&lt;/TeachingTip&gt;
+</code></pre>
+<p><img src="../images/teaching-tip-escape-xaml-root.png" alt="A sample app with a teaching tip outside of the app's bottom right corner. The tip title reads &quot;Saving automatically&quot; and the subtitle reads &quot;We save your changes as you go - so you never have to.&quot; There is a close button on the top right corner of the teaching tip."></p>
+<h3 id="canceling-and-deferring-close">Canceling and deferring close</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.closing">Closing</a> event can be used to cancel and/or defer the close of a teaching tip. This can be used to keep the teaching tip open or allow time for an action or custom animation to occur. When the closing of a teaching tip is canceled, IsOpen will go back to true, however, it will stay false during the deferral. A programmatic close can also be canceled.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If no placement option would allow a teaching tip to fully show, teaching tip will iterate through its event lifecycle to force a close rather than display without an accessible close button. If the app cancels the Closing event, the teaching tip may remain open without an accessible Close button.</p>
+</div>
+<pre><code class="lang-xaml">&lt;TeachingTip x:Name=&quot;EnableNewSettingsTip&quot;
+    Title=&quot;New ways to protect your privacy!&quot;
+    Subtitle=&quot;Please close this tip and review our updated privacy policy and privacy settings.&quot;
+    Closing=&quot;OnTipClosing&quot;&gt;
+&lt;/TeachingTip&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventArgs args)
+{
+    if (args.Reason == muxc.TeachingTipCloseReason.CloseButton)
+    {
+        using(args.GetDeferral())
+        {
+            bool success = UpdateUserSettings(User thisUsersID);
+            if(!success)
+            {
+                // We were not able to update the settings!
+                // Don't close the tip and display the reason why.
+                args.Cancel = true;
+                ShowLastErrorMessage();
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The TeachingTip for UWP apps requires WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI</a>. APIs for this control exist in the <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.teachingtip">TeachingTip class</a></li>
+<li><a href="winui2gallery:/item/TeachingTip">Open the WinUI 2 Gallery app and see the TeachingTip in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:TeachingTip /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="index.html">Dialogs and flyouts</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/dialogs-and-flyouts/teaching-tip.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

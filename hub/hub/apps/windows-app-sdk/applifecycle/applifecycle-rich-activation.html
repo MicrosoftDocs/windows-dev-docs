@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Rich activation with the app lifecycle API (Windows App SDK) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Rich activation with the app lifecycle API (Windows App SDK) ">
+    
+    <meta name="description" content="Describes how to use rich activation features with the app lifecycle API in unpackaged apps (Windows App SDK).">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="rich-activation-with-the-app-lifecycle-api">Rich activation with the app lifecycle API</h1>
+
+<p>In the Windows App SDK, the app lifecycle API brings support for UWP-style rich activation behavior to all apps, packaged and unpackaged alike. This first release focuses on bringing the most commonly-used activation kinds to unpackaged apps, and future releases aim to support more of UWP's <a href="/uwp/api/Windows.ApplicationModel.Activation.ActivationKind">44 activation kinds</a>.</p>
+<p>Supporting rich activations requires two steps:</p>
+<ul>
+<li>Tell the system that your app supports one or more rich activation kinds.</li>
+<li>Receive and process the rich activation payloads your app receives when it is activated.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use the app lifecycle API in the Windows App SDK:</p>
+<ol>
+<li>Download and install the latest release of the Windows App SDK. For more information, see <a href="../../get-started/start-here.html">Get started with WinUI</a>.</li>
+<li>Follow the instructions to <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a> or to <a href="../use-windows-app-sdk-in-existing-project.html">use the Windows App SDK in an existing project</a>.</li>
+</ol>
+<h2 id="activation-details-for-unpackaged-apps">Activation details for unpackaged apps</h2>
+<p>The current version of the Windows App SDK supports the four most common activation kinds to unpackaged apps. These activation kinds are defined by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind">ExtendedActivationKind</a> enum.</p>
+<table>
+<thead>
+<tr>
+<th>Activation kind</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Launch</code></td>
+<td>Activate the app from the command line, when the user double-clicks the app's icon, or programmatically via <a href="/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw">ShellExecute</a> or <a href="/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw">CreateProcess</a>.</td>
+</tr>
+<tr>
+<td><code>File</code></td>
+<td>Activate an app that has registered for a file type when a file of the type is opened via <a href="/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw">ShellExecute</a>, <a href="/uwp/api/windows.system.launcher.launchfileasync">Launcher.LaunchFileAsync</a>, or the command line.</td>
+</tr>
+<tr>
+<td><code>Protocol</code></td>
+<td>Activate an app that has registered for a protocol when a string of that protocol is executed via <a href="/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw">ShellExecute</a>, <a href="/uwp/api/windows.system.launcher.launchuriasync">Launcher.LaunchUriAsync</a>, or the command-line.</td>
+</tr>
+<tr>
+<td><code>StartupTask</code></td>
+<td>Activate the app when the user logs into Windows, either because of a registry key, or because of a shortcut in a well-known startup folder.</td>
+</tr>
+</tbody>
+</table>
+<p>Each type of unpackaged app retrieves its command line arguments in different ways. For example, C++ Win32 apps expect to receive activation arguments to be passed into <code>WinMain</code> in the form of a string (though they also have the option to call <a href="/windows/win32/api/processenv/nf-processenv-getcommandlinew">GetCommandLineW</a>). Windows Forms apps, however, <em>must</em> call <a href="/dotnet/api/system.environment.getcommandlineargs">Environment.GetCommandLineArgs</a>, because arguments will not be automatically passed to them.</p>
+<h2 id="activation-details-for-packaged-apps">Activation details for packaged apps</h2>
+<p>Packaged apps that use the Windows App SDK support all 44 of UWP's <a href="/uwp/api/Windows.ApplicationModel.Activation.ActivationKind">activation kinds</a>. Each activation kind has its own corresponding implementation of <a href="/uwp/api/windows.applicationmodel.activation.iactivatedeventargs">IActivatedEventArgs</a> which contain properties relevant to that specific kind of activation.</p>
+<p>Packaged apps will always receive activation event arguments in their <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated">AppInstance.Activated</a> event handler, and also have the option of calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a>.</p>
+<h3 id="activation-registration">Activation registration</h3>
+<p>All apps support the <code>Launch</code> activation kind by default. Unlike UWP, the Windows App SDK <code>Launch</code> activation kind includes command line launches. Apps can register for additional activation kinds in several ways.</p>
+<ul>
+<li>Unpackaged apps that use the Windows App SDK can register (and unregister) for additional activation kinds via the app lifecycle API in the Windows App SDK.</li>
+<li>Unpackaged apps can continue to register for additional activation kinds using the traditional method of writing registry keys.</li>
+<li>Packaged apps can register for additional activation kinds via entries in their application manifest.</li>
+</ul>
+<p>Activation registrations are per-user. If your app is installed for multiple users, you will need to re-register activations for each user.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="register-for-rich-activation">Register for rich activation</h3>
+<p>Although apps can call the registration APIs at any time, the most common scenario is checking registrations on app startup.</p>
+<p>This example shows how an unpackaged app can use the following static methods of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager">ActivationRegistrationManager</a> class to register for several activation kinds when the app is launched:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforfiletypeactivation">RegisterForFileTypeActivation</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforprotocolactivation">RegisterForProtocolActivation</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforstartupactivation">RegisterForStartupActivation</a></li>
+</ul>
+<p>This example also demonstrates how to use the <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize">MddBootstrapInitialize</a> and <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown">MddBootstrapShutdown</a> functions to initialize and clean up references to the Windows App SDK framework package. All unpackaged app must do this to use APIs provided by the Windows App SDK. For more information, see <a href="../use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This example registers associations with three image file types at once. This is convenient, but the outcome is the same as registering each file type individually; registering new image types does not overwrite previous registrations. However, if an app re-registers an already registered file type with a different set of verbs, the previous set of verbs will be overwritten for that file type.</p>
+</div>
+<pre><code class="lang-c++">const UINT32 majorMinorVersion{ WINDOWSAPPSDK_RELEASE_MAJORMINOR };
+PCWSTR versionTag{ WINDOWSAPPSDK_RELEASE_VERSION_TAG_W };
+const PACKAGE_VERSION minVersion{ WINDOWSAPPSDK_RUNTIME_VERSION_UINT64 };
+WCHAR szExePath[MAX_PATH]{};
+WCHAR szExePathAndIconIndex[MAX_PATH + 8]{};
+
+int APIENTRY wWinMain(
+    _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
+{
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
+
+    // Initialize Windows App SDK framework package for unpackaged apps.
+    HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) };
+    if (FAILED(hr))
+    {
+        wprintf(L&quot;Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n&quot;,
+            hr, majorMinorVersion, versionTag, minVersion.Major, 
+            minVersion.Minor, minVersion.Build, minVersion.Revision);
+        return hr;
+    }
+
+    // Get the current executable filesystem path, so we can
+    // use it later in registering for activation kinds.
+    GetModuleFileName(NULL, szExePath, MAX_PATH);
+    wcscpy_s(szExePathAndIconIndex, szExePath);
+    wcscat_s(szExePathAndIconIndex, L&quot;,1&quot;);
+
+    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+    LoadStringW(hInstance, IDC_CLASSNAME, szWindowClass, MAX_LOADSTRING);
+    RegisterWindowClass(hInstance);
+    if (!InitInstance(hInstance, nCmdShow))
+    {
+        return FALSE;
+    }
+
+    MSG msg;
+    while (GetMessage(&amp;msg, nullptr, 0, 0))
+    {
+        TranslateMessage(&amp;msg);
+        DispatchMessage(&amp;msg);
+    }
+
+    // Uninitialize Windows App SDK.
+    MddBootstrapShutdown();
+    return (int)msg.wParam;
+}
+
+void RegisterForActivation()
+{
+    OutputMessage(L&quot;Registering for rich activation&quot;);
+
+    // Register one or more supported filetypes, specifying 
+    // an icon (specified by binary file path plus resource index),
+    // a display name to use in Shell and Settings,
+    // zero or more verbs for the File Explorer context menu,
+    // and the path to the EXE to register for activation.
+    hstring myFileTypes[3] = { L&quot;.foo&quot;, L&quot;.foo2&quot;, L&quot;.foo3&quot; };
+    hstring verbs[2] = { L&quot;view&quot;, L&quot;edit&quot; };
+    ActivationRegistrationManager::RegisterForFileTypeActivation(
+        myFileTypes,
+        szExePathAndIconIndex,
+        L&quot;Contoso File Types&quot;,
+        verbs,
+        szExePath
+    );
+
+    // Register a URI scheme for protocol activation,
+    // specifying the scheme name, icon, display name and EXE path.
+    ActivationRegistrationManager::RegisterForProtocolActivation(
+        L&quot;foo&quot;,
+        szExePathAndIconIndex,
+        L&quot;Contoso Foo Protocol&quot;,
+        szExePath
+    );
+
+    // Register for startup activation.
+    // As we're registering for startup activation multiple times,
+    // and this is a multi-instance app, we'll get multiple instances
+    // activated at startup.
+    ActivationRegistrationManager::RegisterForStartupActivation(
+        L&quot;ContosoStartupId&quot;,
+        szExePath
+    );
+
+    // If we don't specify the EXE, it will default to this EXE.
+    ActivationRegistrationManager::RegisterForStartupActivation(
+        L&quot;ContosoStartupId2&quot;,
+        L&quot;&quot;
+    );
+}
+</code></pre>
+<h3 id="get-rich-activation-event-arguments">Get rich activation event arguments</h3>
+<p>Once activated, an app must retrieve its activation event arguments. In this example, an unpackaged app calls the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> method to get the event args for the activation event and then uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments.kind">AppActivationArguments.Kind</a> property to retrieve the event args for different types of activations.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Win32 apps typically get command-line arguments very early their <code>WinMain</code> method. Similarly, these apps should call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> in the same place where they previously would have used the supplied the <code>lpCmdLine</code> parameter or called <code>GetCommandLineW</code>.</p>
+</div>
+<pre><code class="lang-c++">void GetActivationInfo()
+{
+    AppActivationArguments args = AppInstance::GetCurrent().GetActivatedEventArgs();
+    ExtendedActivationKind kind = args.Kind();
+    if (kind == ExtendedActivationKind::Launch)
+    {
+        ILaunchActivatedEventArgs launchArgs = 
+            args.Data().as&lt;ILaunchActivatedEventArgs&gt;();
+        if (launchArgs != NULL)
+        {
+            winrt::hstring argString = launchArgs.Arguments().c_str();
+            std::vector&lt;std::wstring&gt; argStrings = split_strings(argString);
+            OutputMessage(L&quot;Launch activation&quot;);
+            for (std::wstring s : argStrings)
+            {
+                OutputMessage(s.c_str());
+            }
+        }
+    }
+    else if (kind == ExtendedActivationKind::File)
+    {
+        IFileActivatedEventArgs fileArgs = 
+            args.Data().as&lt;IFileActivatedEventArgs&gt;();
+        if (fileArgs != NULL)
+        {
+            IStorageItem file = fileArgs.Files().GetAt(0);
+            OutputFormattedMessage(
+                L&quot;File activation: %s&quot;, file.Name().c_str());
+        }
+    }
+    else if (kind == ExtendedActivationKind::Protocol)
+    {
+        IProtocolActivatedEventArgs protocolArgs = 
+            args.Data().as&lt;IProtocolActivatedEventArgs&gt;();
+        if (protocolArgs != NULL)
+        {
+            Uri uri = protocolArgs.Uri();
+            OutputFormattedMessage(
+                L&quot;Protocol activation: %s&quot;, uri.RawUri().c_str());
+        }
+    }
+    else if (kind == ExtendedActivationKind::StartupTask)
+    {
+        IStartupTaskActivatedEventArgs startupArgs = 
+            args.Data().as&lt;IStartupTaskActivatedEventArgs&gt;();
+        if (startupArgs != NULL)
+        {
+            OutputFormattedMessage(
+                L&quot;Startup activation: %s&quot;, startupArgs.TaskId().c_str());
+        }
+    }
+}
+</code></pre>
+<h3 id="unregister">Unregister</h3>
+<p>This example demonstrates how an unpackaged app can unregister for specific activation kinds dynamically, using the following static methods of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager">ActivationRegistrationManager</a> class:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.unregisterforfiletypeactivation">UnregisterForFileTypeActivation</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.unregisterforprotocolactivation">UnregisterForProtocolActivation</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.unregisterforstartupactivation">UnregisterForStartupActivation</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When unregistering for startup activation, the app must use the same taskId that it used when it originally registered.</p>
+</div>
+<pre><code class="lang-c++">void UnregisterForActivation()
+{
+    OutputMessage(L&quot;Unregistering for rich activation&quot;);
+    
+    // Unregister one or more registered filetypes.
+    try
+    {
+        hstring myFileTypes[3] = { L&quot;.foo&quot;, L&quot;.foo2&quot;, L&quot;.foo3&quot; };
+        ActivationRegistrationManager::UnregisterForFileTypeActivation(
+            myFileTypes,
+            szExePath
+        );
+    }
+    catch (...)
+    {
+        OutputMessage(L&quot;Error unregistering file types&quot;);
+    }
+
+    // Unregister a protocol scheme.
+    ActivationRegistrationManager::UnregisterForProtocolActivation(
+        L&quot;foo&quot;,
+        L&quot;&quot;);
+
+    // Unregister for startup activation.
+    ActivationRegistrationManager::UnregisterForStartupActivation(
+        L&quot;ContosoStartupId&quot;);
+    ActivationRegistrationManager::UnregisterForStartupActivation(
+        L&quot;ContosoStartupId2&quot;);
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

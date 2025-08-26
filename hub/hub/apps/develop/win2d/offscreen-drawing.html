@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Offscreen drawing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Offscreen drawing ">
+    
+    <meta name="description" content="An introduction to drawing onto render targets to create textures for later use.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="offscreen-drawing">Offscreen drawing</h1>
+
+<p>Apps occasionally need to draw graphics to a target, where that target is not intended for immediate display. This type of drawing is sometimes called &quot;offscreen rendering&quot;, or &quot;drawing to a texture&quot;. This is useful when, for example, an app's output of a drawing operation is to be saved to a file, returned as an array of pixels, or used as an input to a later operation.</p>
+<p>Win2D supports these scenarios, and they are made easy with <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasRenderTarget.htm"><code>CanvasRenderTarget</code></a>.</p>
+<p><code>CanvasRenderTarget</code> extends <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm"><code>CanvasBitmap</code></a>, and has the method <a href="https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_CanvasRenderTarget_CreateDrawingSession.htm"><code>CreateDrawingSession()</code></a>. Use <code>CreateDrawingSession</code> to draw graphics content to a <code>CanvasRenderTarget</code>. For example:</p>
+<pre><code class="lang-csharp">CanvasDevice device = CanvasDevice.GetSharedDevice();
+CanvasRenderTarget offscreen = new CanvasRenderTarget(device, width, height, 96);
+
+using (CanvasDrawingSession ds = offscreen.CreateDrawingSession())
+{
+    ds.Clear(Colors.Black);
+    ds.DrawRectangle(100, 200, 5, 6, Colors.Red);
+}
+</code></pre>
+<p>Note that there is a method call to <code>Clear</code>. Without this, the bitmap will be initialized with undefined content. Drawing sessions created through <code>CanvasRenderTarget</code> are different from those created on Win2D's XAML controls, in terms of the <code>Clear</code> behavior. Controls are always cleared automatically by Win2D when a drawing session is created. <code>CanvasRenderTargets</code> are not. This way, apps have the ability to make incremental changes to <code>CanvasRenderTarget</code>-s, and avoid redrawing an entire scene every time.</p>
+<p>To draw a <code>CanvasRenderTarget</code> to another drawing session, simply use <code>DrawImage(ICanvasImage)</code> or one of its overloads. For example:</p>
+<pre><code class="lang-csharp">void canvasControl_Draw(CanvasControl sender, CanvasDrawEventArgs args)
+{
+    args.DrawingSession.DrawImage(offscreen, 23, 34);
+}
+</code></pre>
+<p>Or, to use a <code>CanvasRenderTarget</code> as an input to an effect, pass it in wherever the effect expects to use an <code>IGraphicsEffectSource</code> as a source. For example:</p>
+<pre><code class="lang-csharp">GaussianBlurEffect blurEffect = new GaussianBlurEffect()
+{
+    Source = offscreen,
+    BlurAmount = 3.0f
+};
+</code></pre>
+<p>An app can close, and re-open drawing sessions on a <code>CanvasRenderTarget</code> arbitrarily many times.</p>
+<p>Drawing operations are not committed to the <code>CanvasRenderTarget</code> until the drawing session object is disposed. In C#, a <code>using</code> block can organize this.</p>
+<p>It's worth pointing out that <code>CanvasRenderTarget</code> is not a XAML control, and does not involve the XAML tree at all. It is suitable for both XAML and non-XAML-based apps.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/offscreen-drawing.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

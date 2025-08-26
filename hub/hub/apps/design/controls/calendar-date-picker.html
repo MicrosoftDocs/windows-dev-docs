@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Calendar date picker </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Calendar date picker ">
+    
+    <meta name="description" content="The calendar date picker is a drop down control that&#39;s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="calendar-date-picker">Calendar date picker</h1>
+
+<p>The calendar date picker is a drop down control that's optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a <strong>calendar date picker</strong> to let a user pick a single date from a contextual calendar view. Use it for things like choosing an appointment or departure date.</p>
+<p>To let a user pick a known date, such as a date of birth, where the context of the calendar is not important, consider using a <a href="date-picker.html">date picker</a>.</p>
+<p>For more info about choosing the right control, see the <a href="date-and-time.html">Date and time controls</a> article.</p>
+<h2 id="examples">Examples</h2>
+<p>The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.</p>
+<p><img src="images/calendar-date-picker-2-views.png" alt="Screenshot of a Calendar Date Picker showing an empty select a date text box and then one populated with a calendar beneath it."></p>
+<h2 id="create-a-calendar-date-picker">Create a calendar date picker</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarDatePicker">CalendarDatePicker class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.date">Date property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.datechanged">DateChanged event</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/CalendarDatePicker">Open the WinUI 3 Gallery app and see the CalendarDatePicker in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<pre><code class="lang-xaml">&lt;CalendarDatePicker x:Name=&quot;arrivalCalendarDatePicker&quot; Header=&quot;Calendar&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
+arrivalCalendarDatePicker.Header = &quot;Calendar&quot;;
+</code></pre>
+<p>The resulting calendar date picker looks like this:</p>
+<p><img src="images/calendar-date-picker-closed.png" alt="Screenshot of a populated Calendar Date Picker with a label that says Calendar."></p>
+<p>The calendar date picker has an internal <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView">CalendarView</a> for picking a date. A subset of CalendarView properties, like <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.istodayhighlighted">IsTodayHighlighted</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.firstdayofweek">FirstDayOfWeek</a>, exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it.</p>
+<p>However, you can't change the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectionmode">SelectionMode</a> of the internal CalendarView to allow multiple selection. If you need to let a user pick multiple dates or need a calendar to be always visible, consider using a calendar view instead of a calendar date picker. See the <a href="calendar-view.html">Calendar view</a> article for more info on how you can modify the calendar display.</p>
+<h3 id="selecting-dates">Selecting dates</h3>
+<p>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.date">Date</a> property to get or set the selected date. By default, the Date property is <strong>null</strong>. When a user selects a date in the calendar view, this property is updated. A user can clear the date by clicking the selected date in the calendar view to deselect it.</p>
+<p>You can set the date in your code like this.</p>
+<pre><code class="lang-csharp">myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
+</code></pre>
+<p>When you set the Date in code, the value is constrained by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.mindate">MinDate</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.maxdate">MaxDate</a> properties.</p>
+<ul>
+<li>If <strong>Date</strong> is smaller than <strong>MinDate</strong>, the value is set to <strong>MinDate</strong>.</li>
+<li>If <strong>Date</strong> is greater than <strong>MaxDate</strong>, the value is set to <strong>MaxDate</strong>.</li>
+</ul>
+<p>You can handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.datechanged">DateChanged</a> event to be notified when the Date value has changed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For important info about date values, see <a href="date-and-time.html#datetime-and-calendar-values">DateTime and Calendar values</a> in the Date and time controls article.</p>
+</div>
+<h3 id="setting-a-header-and-placeholder-text">Setting a header and placeholder text</h3>
+<p>You can add a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.header">Header</a> (or label) and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.placeholdertext">PlaceholderText</a> (or watermark) to the calendar date picker to give the user an indication of what it's used for. To customize the look of the header, you can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.headertemplate">HeaderTemplate</a> property instead of Header.</p>
+<p>The default placeholder text is &quot;select a date&quot;. You can remove this by setting the PlaceholderText property to an empty string, or you can provide custom text as shown here.</p>
+<pre><code class="lang-xaml">&lt;CalendarDatePicker x:Name=&quot;arrivalCalendarDatePicker&quot; Header=&quot;Arrival date&quot;
+                    PlaceholderText=&quot;Choose your arrival date&quot;/&gt;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker">CalendarDatePicker class</a>, <a href="/uwp/api/windows.ui.xaml.controls.calendardatepicker.date">Date property</a>, <a href="/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged">DateChanged event</a></li>
+<li><a href="winui2gallery:/item/CalendarDatePicker">Open the WinUI 2 Gallery app and see the CalendarDatePicker in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="date-and-time.html">Date and time controls</a></li>
+<li><a href="calendar-view.html">Calendar view</a></li>
+<li><a href="date-picker.html">Date picker</a></li>
+<li><a href="time-picker.html">Time picker</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/calendar-date-picker.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

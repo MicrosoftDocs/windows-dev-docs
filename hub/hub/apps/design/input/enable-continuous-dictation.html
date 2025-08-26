@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Enable continuous dictation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Enable continuous dictation ">
+    
+    <meta name="description" content="Learn how to capture and recognize long-form, continuous dictation speech input.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="continuous-dictation">Continuous dictation</h1>
+
+<p>Learn how to capture and recognize long-form, continuous dictation speech input.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession"><strong>SpeechContinuousRecognitionSession</strong></a>, <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession"><strong>ContinuousRecognitionSession</strong></a></p>
+</blockquote>
+<p>In <a href="speech-recognition.html">Speech recognition</a>, you learned how to capture and recognize relatively short speech input using the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync"><strong>RecognizeAsync</strong></a> or <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync"><strong>RecognizeWithUIAsync</strong></a> methods of a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>SpeechRecognizer</strong></a> object, for example, when composing a short message service (SMS) message or when asking a question.</p>
+<p>For longer, continuous speech recognition sessions, such as dictation or email, use the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession"><strong>ContinuousRecognitionSession</strong></a> property of a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>SpeechRecognizer</strong></a> to obtain a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession"><strong>SpeechContinuousRecognitionSession</strong></a> object.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Dictation language support depends on the <a href="../devices/index.html">device</a> where your app is running. For PCs and laptops, only en-US is recognized, while Xbox and phones can recognize all languages supported by speech recognition. For more info, see <a href="specify-the-speech-recognizer-language.html">Specify the speech recognizer language</a>.</p>
+</div>
+<h2 id="set-up">Set up</h2>
+<p>Your app needs a few objects to manage a continuous dictation session:</p>
+<ul>
+<li>An instance of a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>SpeechRecognizer</strong></a> object.</li>
+<li>A reference to a UI dispatcher to update the UI during dictation.</li>
+<li>A way to track the accumulated words spoken by the user.</li>
+</ul>
+<p>Here, we declare a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>SpeechRecognizer</strong></a> instance as a private field of the code-behind class. Your app needs to store a reference elsewhere if you want continuous dictation to persist beyond a single Extensible Application Markup Language (XAML) page.</p>
+<pre><code class="lang-CSharp">private SpeechRecognizer speechRecognizer;
+</code></pre>
+<p>During dictation, the recognizer raises events from a background thread. Because a background thread cannot directly update the UI in XAML, your app must use a dispatcher to update the UI in response to recognition events.</p>
+<p>Here, we declare a private field that will be initialized later with the UI dispatcher.</p>
+<pre><code class="lang-CSharp">// Speech events may originate from a thread other than the UI thread.
+// Keep track of the UI thread dispatcher so that we can update the
+// UI in a thread-safe manner.
+private CoreDispatcher dispatcher;
+</code></pre>
+<p>To track what the user is saying, you need to handle recognition events raised by the speech recognizer. These events provide the recognition results for chunks of user utterances.</p>
+<p>Here, we use a <a href="/dotnet/api/system.text.stringbuilder"><strong>StringBuilder</strong></a> object to hold all the recognition results obtained during the session. New results are appended to the <strong>StringBuilder</strong> as they are processed.</p>
+<pre><code class="lang-CSharp">private StringBuilder dictatedTextBuilder;
+</code></pre>
+<h2 id="initialization">Initialization</h2>
+<p>During the initialization of continuous speech recognition, you must:</p>
+<ul>
+<li>Fetch the dispatcher for the UI thread if you update the UI of your app in the continuous recognition event handlers.</li>
+<li>Initialize the speech recognizer.</li>
+<li>Compile the built-in dictation grammar.
+<strong>Note</strong>   Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, a predefined dictation grammar is used. See <a href="speech-recognition.html">Speech recognition</a>.</li>
+<li>Set up the event listeners for recognition events.</li>
+</ul>
+<p>In this example, we initialize speech recognition in the <a href="/uwp/api/windows.ui.xaml.controls.page.onnavigatedto"><strong>OnNavigatedTo</strong></a> page event.</p>
+<ol>
+<li>Because events raised by the speech recognizer occur on a background thread, create a reference to the dispatcher for updates to the UI thread. <a href="/uwp/api/windows.ui.xaml.controls.page.onnavigatedto"><strong>OnNavigatedTo</strong></a> is always invoked on the UI thread.</li>
+</ol>
+<pre><code class="lang-csharp">this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
+</code></pre>
+<ol start="2">
+<li>We then initialize the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>SpeechRecognizer</strong></a> instance.</li>
+</ol>
+<pre><code class="lang-csharp">this.speechRecognizer = new SpeechRecognizer();
+</code></pre>
+<ol start="3">
+<li><p>We then add and compile the grammar that defines all of the words and phrases that can be recognized by the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>SpeechRecognizer</strong></a>.</p>
+<p>If you don't specify a grammar explicitly, a predefined dictation grammar is used by default. Typically, the default grammar is best for general dictation.</p>
+<p>Here, we call <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync"><strong>CompileConstraintsAsync</strong></a> immediately without adding a grammar.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">SpeechRecognitionCompilationResult result =
+      await speechRecognizer.CompileConstraintsAsync();
+</code></pre>
+<h2 id="handle-recognition-events">Handle recognition events</h2>
+<p>You can capture a single, brief utterance or phrase by calling <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync"><strong>RecognizeAsync</strong></a> or <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync"><strong>RecognizeWithUIAsync</strong></a>.</p>
+<p>However, to capture a longer, continuous recognition session, we specify event listeners to run in the background as the user speaks and define handlers to build the dictation string.</p>
+<p>We then use the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession"><strong>ContinuousRecognitionSession</strong></a> property of our recognizer to obtain a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession"><strong>SpeechContinuousRecognitionSession</strong></a> object that provides methods and events for managing a continuous recognition session.</p>
+<p>Two events in particular are critical:</p>
+<ul>
+<li><a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a>, which occurs when the recognizer has generated some results.</li>
+<li><a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed"><strong>Completed</strong></a>, which occurs when the continuous recognition session has ended.</li>
+</ul>
+<p>The <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event is raised as the user speaks. The recognizer continuously listens to the user and periodically raises an event that passes a chunk of speech input. You must examine the speech input, using the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result"><strong>Result</strong></a> property of the event argument, and take appropriate action in the event handler, such as appending the text to a StringBuilder object.</p>
+<p>As an instance of <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult"><strong>SpeechRecognitionResult</strong></a>, the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result"><strong>Result</strong></a> property is useful for determining whether you want to accept the speech input. A <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult"><strong>SpeechRecognitionResult</strong></a> provides two properties for this:</p>
+<ul>
+<li><a href="/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status"><strong>Status</strong></a> indicates whether the recognition was successful. Recognition can fail for a variety of reasons.</li>
+<li><a href="/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence"><strong>Confidence</strong></a> indicates the relative confidence that the recognizer understood the correct words.</li>
+</ul>
+<p>Here are the basic steps for supporting continuous recognition:</p>
+<ol>
+<li>Here, we register the handler for the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> continuous recognition event in the <a href="/uwp/api/windows.ui.xaml.controls.page.onnavigatedto"><strong>OnNavigatedTo</strong></a> page event.</li>
+</ol>
+<pre><code class="lang-csharp">speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
+        ContinuousRecognitionSession_ResultGenerated;
+</code></pre>
+<ol start="2">
+<li><p>We then check the <a href="/uwp/api/windows.media.speechrecognition.speechrecognitionresult.confidence"><strong>Confidence</strong></a> property. If the value of Confidence is <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionConfidence"><strong>Medium</strong></a> or better, we append the text to the StringBuilder. We also update the UI as we collect input.</p>
+<p><strong>Note</strong>  the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the [Speech and TTS sample] does), you must dispatch the updates to the UI thread through the <a href="/uwp/api/windows.ui.core.coredispatcher.runasync"><strong>RunAsync</strong></a> method of the dispatcher.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">private async void ContinuousRecognitionSession_ResultGenerated(
+      SpeechContinuousRecognitionSession sender,
+      SpeechContinuousRecognitionResultGeneratedEventArgs args)
+      {
+
+        if (args.Result.Confidence == SpeechRecognitionConfidence.Medium ||
+          args.Result.Confidence == SpeechRecognitionConfidence.High)
+          {
+            dictatedTextBuilder.Append(args.Result.Text + &quot; &quot;);
+
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =&gt;
+            {
+              dictationTextBox.Text = dictatedTextBuilder.ToString();
+              btnClearText.IsEnabled = true;
+            });
+          }
+        else
+        {
+          await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =&gt;
+            {
+              dictationTextBox.Text = dictatedTextBuilder.ToString();
+            });
+        }
+      }
+</code></pre>
+<ol start="3">
+<li><p>We then handle the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed"><strong>Completed</strong></a> event, which indicates the end of continuous dictation.</p>
+<p>The session ends when you call the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync"><strong>StopAsync</strong></a> or <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync"><strong>CancelAsync</strong></a> methods (described the next section). The session can also end when an error occurs, or when the user has stopped speaking. Check the <a href="/uwp/api/windows.media.speechrecognition.speechrecognitionresult.status"><strong>Status</strong></a> property of the event argument to determine why the session ended (<a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus"><strong>SpeechRecognitionResultStatus</strong></a>).</p>
+<p>Here, we register the handler for the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.completed"><strong>Completed</strong></a> continuous recognition event in the <a href="/uwp/api/windows.ui.xaml.controls.page.onnavigatedto"><strong>OnNavigatedTo</strong></a> page event.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">speechRecognizer.ContinuousRecognitionSession.Completed +=
+      ContinuousRecognitionSession_Completed;
+</code></pre>
+<ol start="4">
+<li><p>The event handler checks the Status property to determine whether the recognition was successful. It also handles the case where the user has stopped speaking. Often, a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResultStatus"><strong>TimeoutExceeded</strong></a> is considered successful recognition as it means the user has finished speaking. You should handle this case in your code for a good experience.</p>
+<p><strong>Note</strong>  the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the [Speech and TTS sample] does), you must dispatch the updates to the UI thread through the <a href="/uwp/api/windows.ui.core.coredispatcher.runasync"><strong>RunAsync</strong></a> method of the dispatcher.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">private async void ContinuousRecognitionSession_Completed(
+      SpeechContinuousRecognitionSession sender,
+      SpeechContinuousRecognitionCompletedEventArgs args)
+      {
+        if (args.Status != SpeechRecognitionResultStatus.Success)
+        {
+          if (args.Status == SpeechRecognitionResultStatus.TimeoutExceeded)
+          {
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =&gt;
+            {
+              rootPage.NotifyUser(
+                &quot;Automatic Time Out of Dictation&quot;,
+                NotifyType.StatusMessage);
+
+              DictationButtonText.Text = &quot; Continuous Recognition&quot;;
+              dictationTextBox.Text = dictatedTextBuilder.ToString();
+            });
+          }
+          else
+          {
+            await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =&gt;
+            {
+              rootPage.NotifyUser(
+                &quot;Continuous Recognition Completed: &quot; + args.Status.ToString(),
+                NotifyType.StatusMessage);
+
+              DictationButtonText.Text = &quot; Continuous Recognition&quot;;
+            });
+          }
+        }
+      }
+</code></pre>
+<h2 id="provide-ongoing-recognition-feedback">Provide ongoing recognition feedback</h2>
+<p>When people converse, they often rely on context to fully understand what is being said. Similarly, the speech recognizer often needs context to provide high-confidence recognition results. For example, by themselves, the words &quot;weight&quot; and &quot;wait&quot; are indistinguishable until more context can be gleaned from surrounding words. Until the recognizer has some confidence that a word, or words, have been recognized correctly, it will not raise the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event.</p>
+<p>This can result in a less than ideal experience for the user as they continue speaking and no results are provided until the recognizer has high enough confidence to raise the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event.</p>
+<p>Handle the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.hypothesisgenerated"><strong>HypothesisGenerated</strong></a> event to improve this apparent lack of responsiveness. This event is raised whenever the recognizer generates a new set of potential matches for the word being processed. The event argument provides a <a href="/uwp/api/windows.media.speechrecognition.speechrecognitionhypothesisgeneratedeventargs.hypothesis"><strong>Hypothesis</strong></a> property that contains the current matches. Show these to the user as they continue speaking and reassure them that processing is still active. Once confidence is high and a recognition result has been determined, replace the interim <strong>Hypothesis</strong> results with the final <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionresultgeneratedeventargs.result"><strong>Result</strong></a> provided in the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event.</p>
+<p>Here, we append the hypothetical text and an ellipsis (&quot;…&quot;) to the current value of the output <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a>. The contents of the text box are updated as new hypotheses are generated and until the final results are obtained from the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event.</p>
+<pre><code class="lang-CSharp">private async void SpeechRecognizer_HypothesisGenerated(
+  SpeechRecognizer sender,
+  SpeechRecognitionHypothesisGeneratedEventArgs args)
+  {
+
+    string hypothesis = args.Hypothesis.Text;
+    string textboxContent = dictatedTextBuilder.ToString() + &quot; &quot; + hypothesis + &quot; ...&quot;;
+
+    await dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =&gt;
+    {
+      dictationTextBox.Text = textboxContent;
+      btnClearText.IsEnabled = true;
+    });
+  }
+</code></pre>
+<h2 id="start-and-stop-recognition">Start and stop recognition</h2>
+<p>Before starting a recognition session, check the value of the speech recognizer <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.state"><strong>State</strong></a> property. The speech recognizer must be in an <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerState"><strong>Idle</strong></a> state.</p>
+<p>After checking the state of the speech recognizer, we start the session by calling the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.startasync"><strong>StartAsync</strong></a> method of the speech recognizer's <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession"><strong>ContinuousRecognitionSession</strong></a> property.</p>
+<pre><code class="lang-CSharp">if (speechRecognizer.State == SpeechRecognizerState.Idle)
+{
+  await speechRecognizer.ContinuousRecognitionSession.StartAsync();
+}
+</code></pre>
+<p>Recognition can be stopped in two ways:</p>
+<ul>
+<li><a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.stopasync"><strong>StopAsync</strong></a> lets any pending recognition events complete (<a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> continues to be raised until all pending recognition operations are complete).</li>
+<li><a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync"><strong>CancelAsync</strong></a> terminates the recognition session immediately and discards any pending results.</li>
+</ul>
+<p>After checking the state of the speech recognizer, we stop the session by calling the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync"><strong>CancelAsync</strong></a> method of the speech recognizer's <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession"><strong>ContinuousRecognitionSession</strong></a> property.</p>
+<pre><code class="lang-CSharp">if (speechRecognizer.State != SpeechRecognizerState.Idle)
+{
+  await speechRecognizer.ContinuousRecognitionSession.CancelAsync();
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event can occur after a call to <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync"><strong>CancelAsync</strong></a>.<br>
+Because of multithreading, a <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> event might still remain on the stack when <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.cancelasync"><strong>CancelAsync</strong></a> is called. If so, the <strong>ResultGenerated</strong> event still fires.<br>
+If you set any private fields when canceling the recognition session, always confirm their values in the <a href="/uwp/api/windows.media.speechrecognition.speechcontinuousrecognitionsession.resultgenerated"><strong>ResultGenerated</strong></a> handler. For example, don't assume a field is initialized in your handler if you set them to null when you cancel the session.</p>
+</div>
+<p></p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="speech-interactions.html">Speech interactions</a></li>
+</ul>
+<p><strong>Samples</strong></p>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis">Speech recognition and speech synthesis sample</a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/enable-continuous-dictation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

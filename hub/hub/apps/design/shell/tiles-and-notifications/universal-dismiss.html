@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Universal Dismiss </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Universal Dismiss ">
+    
+    <meta name="description" content="Learn how to use Universal Dismiss to dismiss a toast notification from one device and have the same notification dismissed on other devices.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="universal-dismiss">Universal Dismiss</h1>
+
+<p>Universal Dismiss, powered by Action Center in the Cloud, means that when you dismiss a notification from one device, the same notification on your other devices is also dismissed.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires Anniversary Update</strong>: You must target SDK 14393 and be running build 14393 or later to use Universal Dismiss.</p>
+</div>
+<p>The common example of this scenario is calendar reminders... you have a calendar app on both of your devices... you get a reminder on your phone and desktop... you click dismiss on your desktop... thanks to Universal Dismiss, the reminder on your phone is also dismissed! <strong>Enabling Universal Dismiss only requires one line of code!</strong></p>
+<img alt="Diagram of Universal Dismiss" src="images/universal-dismiss.gif" width="406">
+<p>In this scenario, the key fact is that <strong>the same app is installed on multiple devices</strong>, meaning that <strong>each device is already receiving notifications</strong>. A calendar app is the iconic example, since you typically have the same calendar app installed on both your Windows PC and your phone, and each instance of the app already sends you reminders on each device. By adding support for Universal Dismiss, those instances of the same reminders can be linked across devices.</p>
+<h2 id="how-to-enable-universal-dismiss">How to enable Universal Dismiss</h2>
+<p>As a developer, enabling Universal Dismiss is extremely easy. You simply need to provide an ID that allows us to link each notification across devices, so that when the user dismisses a notification from one device, the corresponding linked notification is dismissed from the other device.</p>
+<p><img src="images/universal-dismiss-remoteid.jpg" alt="Universal dismiss RemoteId diagram"></p>
+<blockquote>
+<p><strong>RemoteId</strong>: An identifier that uniquely identifies a notification <em>across devices</em>.</p>
+</blockquote>
+<p>t only takes one line of code to add RemoteId, enabling support for Universal Dismiss! How you generate your RemoteId is up to you - however, you need to make sure that it uniquely identifies your notification across devices, and that the same identifier can be generated from different instances of your app running on different devices.</p>
+<p>For example, in my homework planner app, I generate my RemoteId by saying that it is of type &quot;reminder&quot;, and then I include the online account ID and the online identifier of the homework item. I can consistently generate the exact same RemoteId, regardless of which device is sending the notification, since these online IDs are shared across the devices.</p>
+<pre><code class="lang-csharp">var toast = new ScheduledToastNotification(content.GetXml(), startTime);
+ 
+// If the RemoteId property is present
+if (ApiInformation.IsPropertyPresent(typeof(ScheduledToastNotification).FullName, nameof(ScheduledToastNotification.RemoteId)))
+{
+    // Assign the RemoteId to add support for Universal Dismiss
+    toast.RemoteId = $&quot;reminder_{account.AccountId}_{homework.Identifier}&quot;
+}
+  
+ToastNotificationManager.CreateToastNotifier().AddToSchedule(toast);
+</code></pre>
+<p>The following code runs on both my phone and desktop app, meaning that the notification on both devices will have the same RemoteId.</p>
+<p>That's all you have to do! When the user dismisses (or clicks on) a notification, we'll check if it has a RemoteId, and if so, we'll fan out a dismiss of that RemoteId across all the user's devices.</p>
+<p><strong>Known Issue</strong>: Retrieving the <strong>RemoteId</strong> via the <code>ToastNotificationHistory.GetHistory()</code> API's will always return empty string rather than the <strong>RemoteId</strong> you specified. Don't worry, everything is functional - it's only retrieving the value that's broken.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the user or enterprise disables <a href="notification-mirroring.html">notification mirroring</a> for your app (or completely disables notification mirroring), then Universal Dismiss will not work, since we do not have your notifications in the cloud.</p>
+</div>
+<h2 id="supported-devices">Supported devices</h2>
+<p>Since the Anniversary Update, Universal Dismiss is supported on Windows Mobile and Windows Desktop. Universal Dismiss works both directions, between PC-PC, PC-Phone, and Phone-Phone.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/shell/tiles-and-notifications/universal-dismiss.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

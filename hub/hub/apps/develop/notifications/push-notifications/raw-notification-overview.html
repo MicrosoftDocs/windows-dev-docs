@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Raw notification overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Raw notification overview ">
+    
+    <meta name="description" content="Learn about raw notifications, which are short, general purpose push notifications that are strictly instructional and don&#39;t include a UI component.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="raw-notification-overview">Raw notification overview</h1>
+
+<p>Raw notifications are short, general purpose push notifications. They are strictly instructional and do not include a UI component. As with other push notifications, the Windows Push Notification Services (WNS) feature delivers raw notifications from your cloud service to your app.</p>
+<p>You can use raw notifications for a variety of purposes, including to trigger your app to run a background task if the user has given the app permission to do so. By using WNS to communicate with your app, you can avoid the processing overhead of creating persistent socket connections, sending HTTP GET messages, and other service-to-app connections.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>To understand raw notifications, it's best to be familiar with the concepts discussed in the <a href="wns-overview.html">Windows Push Notification Services (WNS) overview</a>.</p>
+</div>
+<p></p>
+<p>As with toast, tile, and badge push notifications, a raw notification is pushed from your app's cloud service over an assigned channel Uniform Resource Identifier (URI) to WNS. WNS, in turn, delivers the notification to the device and user account associated with that channel. Unlike other push notifications, raw notifications don't have a specified format. The content of the payload is entirely app-defined.</p>
+<p>As an illustration of an app that could benefit from raw notifications, let's look at a theoretical document collaboration app. Consider two users who are editing the same document at the same time. The cloud service, which hosts the shared document, could use raw notifications to notify each user when changes are made by the other user. The raw notifications would not necessarily contain the changes to the document, but instead would signal each user's copy of the app to contact the central location and sync the available changes. By using raw notifications, the app and its cloud service can save the overhead of maintaining persistent connections the entire time the document is open.</p>
+<h2 id="how-raw-notifications-work">How raw notifications work</h2>
+<p>All raw notifications are push notifications. Therefore, the setup required to send and receive push notifications applies to raw notifications as well:</p>
+<ul>
+<li>You must have a valid WNS channel to send raw notifications. For more information about acquiring a push notification channel, see <a href="/previous-versions/windows/apps/hh465412(v=win.10)">How to request, create, and save a notification channel</a>.</li>
+<li>You must include the <strong>Internet</strong> capability in your app's manifest. In the Microsoft Visual Studio manifest editor, you will find this option under the <strong>Capabilities</strong> tab as <strong>Internet (Client)</strong>. For more information, see <a href="/uwp/schemas/appxpackage/appxmanifestschema/element-capabilities"><strong>Capabilities</strong></a>.</li>
+</ul>
+<p>The body of the notification is in an app-defined format. The client receives the data as a null-terminated string (<strong>HSTRING</strong>) that only needs to be understood by the app.</p>
+<p>If the client is offline, raw notifications will be cached by WNS only if the <a href="/previous-versions/windows/apps/hh465435(v=win.10)">X-WNS-Cache-Policy</a> header is included in the notification. However, only one raw notification will be cached and delivered once the device comes back online.</p>
+<p>There are only three possible paths for a raw notification to take on the client: they will be delivered to your running app through a notification delivery event, sent to a background task, or dropped. Therefore, if the client is offline and WNS attempts to deliver a raw notification, the notification is dropped.</p>
+<h2 id="creating-a-raw-notification">Creating a raw notification</h2>
+<p>Sending a raw notification is similar to sending a tile, toast, or badge push notification, with these differences:</p>
+<ul>
+<li>The HTTP Content-Type header must be set to &quot;application/octet-stream&quot;.</li>
+<li>The HTTP <a href="/previous-versions/windows/apps/hh465435(v=win.10)">X-WNS-Type</a> header must be set to &quot;wns/raw&quot;.</li>
+<li>The notification body can contain any string payload smaller than 5 KB in size, but must not be an empty string.</li>
+</ul>
+<p>Raw notifications are intended to be used as short messages that trigger your app to take an action, such as to directly contact the service to sync a larger amount of data or to make a local state modification based on the notification content. Note that WNS push notifications cannot be guaranteed to be delivered, so your app and cloud service must account for the possibility that the raw notification might not reach the client, such as when the client is offline.</p>
+<p>For more information on sending push notifications, see <a href="/previous-versions/windows/apps/hh868252(v=win.10)">Quickstart: Sending a push notification</a>.</p>
+<h2 id="receiving-a-raw-notification">Receiving a raw notification</h2>
+<p>There are two avenues through which your app can be receive raw notifications:</p>
+<ul>
+<li>Through <a href="#notification-delivery-events">notification delivery events</a> while your application is running.</li>
+<li>Through <a href="#background-tasks-triggered-by-raw-notifications">background tasks triggered by the raw notification</a> if your app is enabled to run background tasks.</li>
+</ul>
+<p>An app can use both mechanisms to receive raw notifications. If an app implements both the notification delivery event handler and background tasks that are triggered by raw notifications, the notification delivery event will take priority when the app is running.</p>
+<ul>
+<li>If the app is running, the notification delivery event will take priority over the background task and the app will have the first opportunity to process the notification.</li>
+<li>The notification delivery event handler can specify, by setting the event's <a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs.Cancel"><strong>PushNotificationReceivedEventArgs.Cancel</strong></a> property to <strong>true</strong>, that the raw notification should not be passed to its background task once the handler exits. If the <strong>Cancel</strong> property is set to <strong>false</strong> or is not set (the default value is <strong>false</strong>), the raw notification will trigger the background task after the notification delivery event handler has done its work.</li>
+</ul>
+<h3 id="notification-delivery-events">Notification delivery events</h3>
+<p>Your app can use a notification delivery event (<a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel.PushNotificationReceived"><strong>PushNotificationReceived</strong></a>) to receive raw notifications while the app is in use. When the cloud service sends a raw notification, the running app can receive it by handling the notification delivery event on the channel URI.</p>
+<p>If your app is not running and does not use <a href="#background-tasks-triggered-by-raw-notifications">background tasks</a>), any raw notification sent to that app is dropped by WNS on receipt. To avoid wasting your cloud service's resources, you should consider implementing logic on the service to track whether the app is active. There are two sources of this information: an app can explicitly tell the service that it's ready to start receiving notifications, and WNS can tell the service when to stop.</p>
+<ul>
+<li><p><strong>The app notifies the cloud service</strong>: The app can contact its service to let it know that the app is running in the foreground. The disadvantage of this approach is that the app can end up contacting your service very frequently. However, it has the advantage that the service will always know when the app is ready to receive incoming raw notifications. Another advantage is that when the app contacts its service, the service then knows to send raw notifications to the specific instance of that app rather than broadcast.</p>
+</li>
+<li><p><strong>The cloud service responds to WNS response messages</strong> : Your app service can use the <a href="/previous-versions/windows/apps/hh465435(v=win.10)">X-WNS-NotificationStatus</a> and <a href="/previous-versions/windows/apps/hh465435(v=win.10)">X-WNS-DeviceConnectionStatus</a> information returned by WNS to determine when to stop sending raw notifications to the app. When your service sends a notification to a channel as an HTTP POST, it can receive one of these messages in the response:</p>
+<ul>
+<li><strong>X-WNS-NotificationStatus: dropped</strong>: This indicates that the notification was not received by the client. It's a safe assumption that the <strong>dropped</strong> response is caused by your app no longer being in the foreground on the user's device.</li>
+<li><strong>X-WNS-DeviceConnectionStatus: disconnected</strong> or <strong>X-WNS-DeviceConnectionStatus: tempconnected</strong>: This indicates that the Windows client no longer has a connection to WNS. Note that to receive this message from WNS, you have to ask for it by setting the <a href="/previous-versions/windows/apps/hh465435(v=win.10)">X-WNS-RequestForStatus</a> header in the notification's HTTP POST.</li>
+</ul>
+<p>Your app's cloud service can use the information in these status messages to cease communication attempts through raw notifications. The service can resume sending raw notifications once it is contacted by the app, when the app switches back into the foreground.</p>
+<p>Note that you should not rely on <a href="/previous-versions/windows/apps/hh465435(v=win.10)">X-WNS-NotificationStatus</a> to determine whether the notification was successfully delivered to the client.</p>
+<p>For more information, see <a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification service request and response headers</a></p>
+</li>
+</ul>
+<h3 id="background-tasks-triggered-by-raw-notifications">Background tasks triggered by raw notifications</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Before using raw notification background tasks, an app must be granted background access via <a href="/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_"><strong>BackgroundExecutionManager.RequestAccessAsync</strong></a>.</p>
+</div>
+<p></p>
+<p>Your background task must be registered with a <a href="/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger"><strong>PushNotificationTrigger</strong></a>. If it is not registered, the task will not run when a raw notification is received.</p>
+<p>A background task that is triggered by a raw notification enables your app's cloud service to contact your app, even when the app is not running (though it might trigger it to run). This happens without the app having to maintain a continuous connection. Raw notifications are the only notification type that can trigger background tasks. However, while toast, tile, and badge push notifications cannot trigger background tasks, background tasks triggered by raw notifications can update tiles and invoke toast notifications through local API calls.</p>
+<p>As an illustration of how background tasks that are triggered by raw notifications work, let's consider an app used to read e-books. First, a user purchases a book online, possibly on another device. In response, the app's cloud service can send a raw notification to each of the user's devices, with a payload that states that the book was purchased and the app should download it. The app then directly contacts the app's cloud service to begin a background download of the new book so that later, when the user launches the app, the book is already there and ready for reading.</p>
+<p>To use a raw notification to trigger a background task, your app must:</p>
+<ol>
+<li>Request permission to run tasks in the background (which the user can revoke at any time) by using <a href="/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_"><strong>BackgroundExecutionManager.RequestAccessAsync</strong></a>.</li>
+<li>Implement the background task. For more information, see <a href="/windows/uwp/launch-resume/support-your-app-with-background-tasks">Support your app with background tasks</a></li>
+</ol>
+<p>Your background task is then invoked in response to the <a href="/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger"><strong>PushNotificationTrigger</strong></a>, each time a raw notification is received for your app. Your background task interprets the raw notification's app-specific payload and acts on it.</p>
+<p>For each app, only one background task can run at a time. If a background task is triggered for an app for which a background task is already running, the first background task must complete before the new one is run.</p>
+<h2 id="other-resources">Other resources</h2>
+<p>You can learn more by downloading the <a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Raw%20notifications%20sample%20(Windows%208)">Raw notifications sample</a> for Windows 8.1, and the <a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)">Push and periodic notifications sample</a> for Windows 8.1, and re-using their source code in your Windows 10 app.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="">Guidelines for raw notifications</a></li>
+<li><a href="/previous-versions/windows/apps/jj676800(v=win.10)">Quickstart: Creating and registering a raw notification background task</a></li>
+<li><a href="/previous-versions/windows/apps/jj709908(v=win.10)">Quickstart: Intercepting push notifications for running apps</a></li>
+<li><a href="/uwp/api/Windows.Networking.PushNotifications.RawNotification"><strong>RawNotification</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Background.BackgroundExecutionManager#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessAsync_System_String_"><strong>BackgroundExecutionManager.RequestAccessAsync</strong></a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/push-notifications/raw-notification-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

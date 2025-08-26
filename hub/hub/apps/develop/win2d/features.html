@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Features </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Features ">
+    
+    <meta name="description" content="A high level overview of all the main features in Win2D.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="features">Features</h1>
+
+<p>Win2D includes an extensive set of features to support lots of different scenarios. Here's a list of most of them, with useful links to related docs and API references to learn more.</p>
+<h2 id="bitmap-graphics">Bitmap graphics</h2>
+<ul>
+<li>Load, save and draw <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm">bitmap images</a></li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasRenderTarget.htm">Render to texture</a></li>
+<li>Use bitmaps as <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDrawingSession_CreateLayer.htm">opacity masks</a></li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSpriteBatch.htm">Sprite batch</a> API for efficiently drawing large numbers of bitmaps</li>
+<li>Use <a href="bitmap-block-compression.html">block compressed bitmap</a> formats to save memory</li>
+<li>Load, <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasImage_SaveAsync.htm">save</a>, and draw <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasVirtualBitmap.htm">virtual bitmaps</a>, which can be larger than the maximum GPU texture size and are automatically split into tiles</li>
+</ul>
+<h2 id="vector-graphics">Vector graphics</h2>
+<ul>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasDrawingSession.htm">Draw</a> primitive shapes (lines, rectangles, circles, etc.) or arbitrarily complex geometry</li>
+<li>Fill shapes using solid colors, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Brushes_CanvasImageBrush.htm">image brushes</a>, or <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Brushes_CanvasLinearGradientBrush.htm">linear</a> and <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Brushes_CanvasRadialGradientBrush.htm">radial</a> gradients</li>
+<li>Draw lines of any width with flexible <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Geometry_CanvasStrokeStyle.htm">stroke styles</a> (dotted, dashed, etc.)</li>
+<li>High quality antialiasing</li>
+<li>Rich <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Geometry_CanvasGeometry.htm">geometry manipulation</a> (union, intersect, compute point on path, tessellate, etc.)</li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDrawingSession_CreateLayer_6.htm">Clip drawing</a> to arbitrary geometric regions</li>
+<li>Capture drawing operations in <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasCommandList.htm">command lists</a> for later replay</li>
+<li>Rasterize <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDrawingSession_DrawInk.htm">ink strokes</a> (from a stylus)</li>
+<li>Load, draw, and manipulate <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_Svg_CanvasSvgDocument_LoadFromXml.htm">SVG</a> vector graphics</li>
+</ul>
+<h2 id="powerful-image-processing-effects">Powerful image processing effects</h2>
+<ul>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_GaussianBlurEffect.htm">Blurs</a></li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffect.htm">Blends</a></li>
+<li>Color adjustments (<a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_BrightnessEffect.htm">brightness</a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_ContrastEffect.htm">contrast</a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_ExposureEffect.htm">exposure</a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_HighlightsAndShadowsEffect.htm">highlights &amp; shadows</a>, etc.)</li>
+<li>Filters (<a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_ConvolveMatrixEffect.htm">convolve</a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_EdgeDetectionEffect.htm">edge detection</a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_EmbossEffect.htm">emboss</a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_SharpenEffect.htm">sharpen</a>)</li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_SpotSpecularEffect.htm">Lighting</a></li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_PixelShaderEffect.htm">Custom pixel shaders</a></li>
+<li><a href="custom-effects.html">Fully custom effects</a></li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/N_Microsoft_Graphics_Canvas_Effects.htm">And many more</a>...</li>
+</ul>
+<h2 id="text">Text</h2>
+<ul>
+<li>Fully internationalized <a href="https://microsoft.github.io/Win2D/WinUI2/html/N_Microsoft_Graphics_Canvas_Text.htm">Unicode text rendering</a></li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextLayout.htm">Text layouts</a> can be drawn, measured, or hit-tested against</li>
+<li>Convert <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_Geometry_CanvasGeometry_CreateText.htm">text outlines to geometry</a></li>
+<li><a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_Text_CanvasFontSet_GetSystemFontSet.htm">Enumerate fonts</a> and query their metrics</li>
+<li>Draw or manipulate individual <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Text_ICanvasTextRenderer.htm">glyph runs</a> to create <a href="https://github.com/Microsoft/Win2D-Samples/blob/master/ExampleGallery/CustomTextLayouts.xaml.cs">custom text layouts</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/features.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Package validation for MSI/EXE app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Package validation for MSI/EXE app ">
+    
+    <meta name="description" content="Manually run package validation checks before your MSI/EXE app has been submitted for review">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="package-validation-for-msiexe-app">Package validation for MSI/EXE app</h1>
+
+<p>You can validate your app packages against <a href="/windows/apps/publish/store-policies">Microsoft Store policy</a> section <strong>10.2 Security</strong> before you submit it for review. Manual validation helps reduce validation delay by fixing validation failures before you submit your app for review.</p>
+<p>To run the validation checks, follow these steps:</p>
+<ol>
+<li>Navigate to the Manage Packages page.</li>
+<li>Click the <strong>Run</strong> next to the app package you'd like to validate in the packages table. This starts the validation checks.</li>
+</ol>
+<p><span class="mx-imgBorder">
+<a href="images/msiexe-package-validation-on-packages-page.png#lightbox" data-linktype="relative-path">
+<img src="images/msiexe-package-validation-on-packages-page.png" alt="A screenshot of the Packages section showing how to run package validation.">
+</a>
+</span>
+</p>
+<ol start="3">
+<li>Once the tests have completed, you can click on <strong>View status</strong> to see the results of the validation checks.</li>
+</ol>
+<p><span class="mx-imgBorder">
+<a href="images/msiexe-package-validation-in-progress.png#lightbox" data-linktype="relative-path">
+<img src="images/msiexe-package-validation-in-progress.png" alt="A screenshot of the package validation section showing the checks in progress.">
+</a>
+</span>
+</p>
+<ol start="4">
+<li>You can also see the validation results on the Package Validation page.</li>
+</ol>
+<p><span class="mx-imgBorder">
+<a href="images/msiexe-package-validation-completed.png#lightbox" data-linktype="relative-path">
+<img src="images/msiexe-package-validation-completed.png" alt="A screenshot of the package validation section showing the checks are completed.">
+</a>
+</span>
+</p>
+<ol start="5">
+<li>If the validation report shows any issues, fix them and run the validation again.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To run the validation again on the same package, you need to update either the package binary or the silent install parameter.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msi/package-validation-pre-check.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

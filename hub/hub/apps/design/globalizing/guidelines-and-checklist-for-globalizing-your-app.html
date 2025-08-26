@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Guidelines for globalization </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Guidelines for globalization ">
+    
+    <meta name="description" content="Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="guidelines-for-globalization">Guidelines for globalization</h1>
+
+<p>Design and develop your app in such a way that it functions appropriately on systems with different language and culture configurations. Use <a href="/uwp/api/Windows.Globalization?branch=live"><strong>Globalization</strong></a> APIs to format data; and avoid assumptions in your code about language, region, character classification, writing system, date/time formatting, numbers, currencies, weights, and sorting rules.</p>
+<table>
+<thead>
+<tr>
+<th>Recommendation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Take culture into account when manipulating and comparing strings.</td>
+<td>For example, don't change the case of strings before comparing them. See <a href="/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage">Recommendations for String Usage</a>.</td>
+</tr>
+<tr>
+<td>When collating (sorting) strings and other data, don't assume that it's is always done alphabetically.</td>
+<td>For languages that don't use Latin script, collation is based on factors such as pronunciation, or number of pen strokes. Even languages that do use Latin script don't always use alphabetic sorting. For example, in some cultures, a phone book might not be sorted alphabetically. Windows can handle sorting for you, but if you create your own sorting algorithm then be sure to take into account the sorting methods used in your target markets.</td>
+</tr>
+<tr>
+<td>Appropriately format numbers, dates, times, addresses, and phone numbers.</td>
+<td>These formats vary between cultures, regions, languages, and markets. If you're displaying these data then use <a href="/uwp/api/Windows.Globalization?branch=live"><strong>Globalization</strong></a> APIs to get the format appropriate for a particular audience. See <a href="use-global-ready-formats.html">Globalize your date/time/number formats</a>. The order in which family and given names are displayed, and the format of addresses, can differ as well. Use standard date, time, and number displays. Use standard date and time picker controls. Use standard address information.</td>
+</tr>
+<tr>
+<td>Support international units of measurement and currency.</td>
+<td>Different units and scales are used in different countries, although the most popular are the metric system and the imperial system. Be sure to support the correct system measurement if you deal with measurements such as length, temperature, and area. Use the <a href="/uwp/api/windows.globalization.geographicregion.CurrenciesInUse"><strong>GeographicRegion.CurrenciesInUse</strong></a> property to get the set of currencies in use in a region.</td>
+</tr>
+<tr>
+<td>Use Unicode for character encoding.</td>
+<td>By default, Microsoft Visual Studio uses Unicode character encoding for all documents. If you're using a different editor, be sure to save source files in the appropriate Unicode character encodings. All Windows Runtime APIs return UTF-16 encoded strings.</td>
+</tr>
+<tr>
+<td>Support international paper sizes.</td>
+<td>The most common paper sizes differ between countries/regions, so if you include features that depend on paper size, such as printing, be sure to support and test common international sizes.</td>
+</tr>
+<tr>
+<td>Record the language of the keyboard or IME.</td>
+<td>When your app asks the user for text input, record the language tag for the currently enabled keyboard layout or Input Method Editor (IME). This ensures that when the input is displayed later it's presented to the user with the appropriate formatting. Use the <a href="/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag"><strong>Language.CurrentInputMethodLanguageTag</strong></a> property to get the current input language.</td>
+</tr>
+<tr>
+<td>Don't use language to assume a user's region; and don't use region to assume a user's language.</td>
+<td>Language and region are separate concepts. A user can speak a particular regional variant of a language, like en-GB for English as spoken in the UK, but the user might be in an entirely different country or region. Consider whether your app requires knowledge about the user's language (for UI text, for example), or region (for licensing, for example). For more info, see <a href="manage-language-and-region.html">Understand user profile languages and app manifest languages</a>.</td>
+</tr>
+<tr>
+<td>The rules for comparing language tags are non-trivial.</td>
+<td><a href="https://tools.ietf.org/html/bcp47">BCP-47 language tags</a> are complex. There are a number of issues when comparing language tags, including issues with matching script information, legacy tags, and multiple regional variants. The Resource Management System in Windows takes care of matching for you. You can specify a set of resources in any languages, and the system chooses the appropriate one for the user and the app. See <a href="/windows/uwp/app-resources/index">App resources and the Resource Management System</a> and <a href="/windows/uwp/app-resources/how-rms-matches-lang-tags">How the Resource Management System matches language tags</a>.</td>
+</tr>
+<tr>
+<td>Design your UI to accommodate different text lengths and font sizes for labels and text input controls.</td>
+<td>Strings translated into different languages can vary greatly in length, so you'll need your UI controls to dynamically size to their content. Common characters in other languages include marks above or below what is typically used in English (such as Å or Ņ). Use the standard font sizes and line heights to provide adequate vertical space. Be aware that fonts for other languages may require larger minimum font sizes to remain legible. See the classes in the <a href="/uwp/api/windows.globalization.fonts?branch=live">Windows.Globalization.Fonts</a> namespace.</td>
+</tr>
+<tr>
+<td>Support the mirroring of reading order.</td>
+<td>Text alignment and reading order can be left to right (as in English, for example), or right to left (RTL) (as in Arabic or Hebrew, for example). If you are localizing your product into languages that use a different reading order than your own, then be sure that the layout of your UI elements supports mirroring. Even items such as back buttons, UI transition effects, and images might need to be mirrored. For more info, see <a href="adjust-layout-and-fonts--and-support-rtl.html">Adjust layout and fonts, and support RTL</a>.</td>
+</tr>
+<tr>
+<td>Display text and fonts correctly.</td>
+<td>The ideal font, font size, and direction of text varies between different markets. For more info, see <a href="adjust-layout-and-fonts--and-support-rtl.html"><strong>Adjust layout and fonts, and support RTL</strong></a> and <a href="loc-international-fonts.html">International fonts</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="important-apis">Important APIs</h2>
+<p></p>
+<ul>
+<li><a href="/uwp/api/Windows.Globalization?branch=live">Globalization</a></li>
+<li><a href="/uwp/api/windows.globalization.geographicregion.CurrenciesInUse">GeographicRegion.CurrenciesInUse</a></li>
+<li><a href="/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag">Language.CurrentInputMethodLanguageTag</a></li>
+<li><a href="/uwp/api/windows.globalization.fonts?branch=live">Windows.Globalization.Fonts</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/dotnet/standard/base-types/best-practices-strings?branch=live#recommendations_for_string_usage">Recommendations for String Usage</a></li>
+<li><a href="use-global-ready-formats.html">Globalize your date/time/number formats</a></li>
+<li><a href="manage-language-and-region.html">Understand user profile languages and app manifest languages</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47">BCP-47 language tags</a></li>
+<li><a href="/windows/uwp/app-resources/index">App resources and the Resource Management System</a></li>
+<li><a href="/windows/uwp/app-resources/how-rms-matches-lang-tags">How the Resource Management System matches language tags</a></li>
+<li><a href="adjust-layout-and-fonts--and-support-rtl.html">Adjust layout and fonts, and support RTL</a></li>
+<li><a href="loc-international-fonts.html">International fonts</a></li>
+<li><a href="prepare-your-app-for-localization.html">Make your app localizable</a></li>
+</ul>
+<h2 id="samples">Samples</h2>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208)">Globalization preferences sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

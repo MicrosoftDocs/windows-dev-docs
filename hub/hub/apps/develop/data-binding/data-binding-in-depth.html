@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows data binding in depth </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows data binding in depth ">
+    
+    <meta name="description" content="Learn how to use data binding in Windows App SDK applications">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-data-binding-in-depth">Windows data binding in depth</h1>
+
+<p>In this article, we will describe the Windows App SDK data binding features for the APIs that reside in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data"><strong>Microsoft.UI.Xaml.Data</strong> namespace</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This topic describes data binding features in detail. For a short, practical introduction, see <a href="data-binding-overview.html">Data binding overview</a>.</p>
+</div>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/windows/uwp/xaml-platform/x-bind-markup-extension"><strong>{x:Bind} markup extension</strong></a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding"><strong>Binding class</strong></a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext"><strong>DataContext</strong></a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged"><strong>INotifyPropertyChanged</strong></a></li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.</p>
+<p>You can use data binding to simply display values from a data source when the UI is first shown, but not to respond to changes in those values. This is a mode of binding called <em>one-time</em>, and it works well for a value that doesn't change during run-time. Alternatively, you can choose to &quot;observe&quot; the values and to update the UI when they change. This mode is called <em>one-way</em>, and it works well for read-only data. Ultimately, you can choose to both observe and update, so that changes that the user makes to values in the UI are automatically pushed back into the data source. This mode is called <em>two-way</em>, and it works well for read-write data. Here are some examples.</p>
+<ul>
+<li>You could use the one-time mode to bind an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image"><strong>Image</strong></a> to the current user's photo.</li>
+<li>You could use the one-way mode to bind a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview"><strong>ListView</strong></a> to a collection of real-time news articles grouped by newspaper section.</li>
+<li>You could use the two-way mode to bind a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox"><strong>TextBox</strong></a> to a customer's name in a form.</li>
+</ul>
+<p>Independent of mode, there are two kinds of binding, and they're both typically declared in UI markup. You can choose to use either the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a> or the <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding} markup extension</a>. And you can even use a mixture of the two in the same app—even on the same UI element. <code>{x:Bind}</code> was new in UWP for Windows 10 and it has better performance. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.</p>
+<h3 id="uwp-sample-apps-that-demonstrate-xbind">UWP Sample apps that demonstrate {x:Bind}</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind">{x:Bind} sample</a>.</li>
+<li><a href="https://github.com/microsoft/Windows-appsample-networkhelper">QuizGame</a>.</li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics">XAML UI Basics sample</a>.</li>
+</ul>
+<h3 id="uwp-sample-apps-that-demonstrate-binding">UWP Sample apps that demonstrate {Binding}</h3>
+<ul>
+<li>Download the <a href="https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10">UWP Bookstore1</a> app.</li>
+<li>Download the <a href="https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10">Bookstore2</a> app.</li>
+</ul>
+<h2 id="every-binding-involves-these-pieces">Every binding involves these pieces</h2>
+<ul>
+<li>A <em>binding source</em>. This is the source of the data for the binding, and it can be an instance of any class that has members whose values you want to display in your UI.</li>
+<li>A <em>binding target</em>. This is a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty"><strong>DependencyProperty</strong></a> of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement"><strong>FrameworkElement</strong></a> in your UI that displays the data.</li>
+<li>A <em>binding object</em>. This is the piece that transfers data values from the source to the target, and optionally from the target back to the source. The binding object is created at XAML load time from your <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> or <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> markup extension.</li>
+</ul>
+<p>In the following sections, we'll take a closer look at the binding source, the binding target, and the binding object. And we'll link the sections together with the example of binding a button's content to a string property named <code>NextButtonText</code>, which belongs to a class named <code>HostViewModel</code>.</p>
+<h3 id="binding-source">Binding source</h3>
+<p>Here's a very rudimentary implementation of a class that we could use as a binding source.</p>
+<pre><code class="lang-csharp">public class HostViewModel
+{
+    public HostViewModel()
+    {
+        NextButtonText = &quot;Next&quot;;
+    }
+
+    public string NextButtonText { get; set; }
+}
+</code></pre>
+<p>That implementation of <code>HostViewModel</code>, and its property <code>NextButtonText</code>, are only appropriate for one-time binding. But one-way and two-way bindings are extremely common, and in those kinds of binding the UI automatically updates in response to changes in the data values of the binding source. In order for those kinds of binding to work correctly, you need to make your binding source <em>observable</em> to the binding object. So in our example, if we want to one-way or two-way bind to the <code>NextButtonText</code> property, then any changes that happen at run-time to the value of that property need to be made observable to the binding object.</p>
+<p>One way of doing that is to derive the class that represents your binding source from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject"><strong>DependencyObject</strong></a>, and expose a data value through a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty"><strong>DependencyProperty</strong></a>. That's how a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement"><strong>FrameworkElement</strong></a> becomes observable. A <code>FrameworkElement</code> is a good binding source right out of the box.</p>
+<p>A more lightweight way of making a class observable—and a necessary one for classes that already have a base class—is to implement <a href="/dotnet/api/system.componentmodel.inotifypropertychanged"><strong>System.ComponentModel.INotifyPropertyChanged</strong></a>. This really just involves implementing a single event named <code>PropertyChanged</code>. An example using <code>HostViewModel</code> is below.</p>
+<pre><code class="lang-csharp">...
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+...
+public class HostViewModel : INotifyPropertyChanged
+{
+    private string nextButtonText;
+
+    public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+    public HostViewModel()
+    {
+        NextButtonText = &quot;Next&quot;;
+    }
+
+    public string NextButtonText
+    {
+        get { return nextButtonText; }
+        set
+        {
+            nextButtonText = value;
+            OnPropertyChanged();
+        }
+    }
+
+    public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        // Raise the PropertyChanged event, passing the name of the property whose value has changed.
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+</code></pre>
+<p>Now the <code>NextButtonText</code> property is observable. When you author a one-way or a two-way binding to that property (we'll show how later), the resulting binding object subscribes to the <code>PropertyChanged</code> event. When that event is raised, the binding object's handler receives an argument containing the name of the property that has changed. That's how the binding object knows which property's value to go and read again.</p>
+<p>So that you don't have to implement the pattern shown above multiple times, if you're using C# then you can just derive from the <code>BindableBase</code> base class that you'll find in the <a href="https://github.com/microsoft/Windows-appsample-networkhelper">QuizGame</a> sample (in the &quot;Common&quot; folder). Here's an example of how that looks.</p>
+<pre><code class="lang-csharp">public class HostViewModel : BindableBase
+{
+    private string nextButtonText;
+
+    public HostViewModel()
+    {
+        NextButtonText = &quot;Next&quot;;
+    }
+
+    public string NextButtonText
+    {
+        get { return nextButtonText; }
+        set { SetProperty(ref nextButtonText, value); }
+    }
+}
+</code></pre>
+<p>Raising the <code>PropertyChanged</code> event with an argument of <a href="/dotnet/api/system.string.empty"><strong>String.Empty</strong></a> or <code>null</code> indicates that all non-indexer properties on the object should be re-read. You can raise the event to indicate that indexer properties on the object have changed by using an argument of &quot;Item[<em>indexer</em>]&quot; for specific indexers (where <em>indexer</em> is the index value), or a value of &quot;Item[]&quot; for all indexers.</p>
+<p>A binding source can be treated either as a single object whose properties contain data, or as a collection of objects. In C# code, you can one-time bind to an object that implements <a href="/dotnet/api/system.collections.generic.list-1"><strong>List&lt;T&gt;</strong></a> to display a collection that doesn't change at run-time. For an observable collection (observing when items are added to and removed from the collection), one-way bind to <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1"><strong>ObservableCollection&lt;T&gt;</strong></a> instead. To bind to your own collection classes, use the guidance in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>C# (CLR)</th>
+<th>C++/WinRT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bind to an object.</td>
+<td>Can be any object.</td>
+<td>Can be any object.</td>
+</tr>
+<tr>
+<td>Get property change notifications from a bound object.</td>
+<td>Object must implement <a href="/dotnet/api/system.componentmodel.inotifypropertychanged"><strong>INotifyPropertyChanged</strong></a>.</td>
+<td>Object must implement <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged"><strong>INotifyPropertyChanged</strong></a>.</td>
+</tr>
+<tr>
+<td>Bind to a collection.</td>
+<td><a href="/dotnet/api/system.collections.generic.list-1"><strong>List&lt;T&gt;</strong></a></td>
+<td><a href="/uwp/api/windows.foundation.collections.ivector_t_"><strong>IVector</strong></a> of <a href="/windows/win32/api/inspectable/nn-inspectable-iinspectable"><strong>IInspectable</strong></a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.ibindableobservablevector"><strong>IBindableObservableVector</strong></a>. See <a href="/windows/uwp/cpp-and-winrt-apis/binding-collection">XAML items controls; bind to a C++/WinRT collection</a> and <a href="/windows/uwp/cpp-and-winrt-apis/collections">Collections with C++/WinRT</a>.</td>
+</tr>
+<tr>
+<td>Get collection change notifications from a bound collection.</td>
+<td><a href="/dotnet/api/system.collections.objectmodel.observablecollection-1"><strong>ObservableCollection&lt;T&gt;</strong></a></td>
+<td><a href="/uwp/api/windows.foundation.collections.iobservablevector_t_"><strong>IObservableVector</strong></a> of <a href="/windows/win32/api/inspectable/nn-inspectable-iinspectable"><strong>IInspectable</strong></a>. For example, <a href="/uwp/cpp-ref-for-winrt/single-threaded-observable-vector"><strong>winrt::single_threaded_observable_vector&lt;T&gt;</strong></a>.</td>
+</tr>
+<tr>
+<td>Implement a collection that supports binding.</td>
+<td>Extend <a href="/dotnet/api/system.collections.generic.list-1"><strong>List&lt;T&gt;</strong></a> or implement <a href="/dotnet/api/system.collections.ilist"><strong>IList</strong></a>, <a href="/dotnet/api/system.collections.generic.ilist-1"><strong>IList</strong></a>&lt;<a href="/dotnet/api/system.object"><strong>Object</strong></a>&gt;, <a href="/dotnet/api/system.collections.ienumerable"><strong>IEnumerable</strong></a>, or <a href="/dotnet/api/system.collections.generic.ienumerable-1"><strong>IEnumerable</strong></a>&lt;Object&gt;. Binding to generic <code>IList&lt;T&gt;</code> and <code>IEnumerable&lt;T&gt;</code> is not supported.</td>
+<td>Implement <a href="/uwp/api/windows.foundation.collections.ivector_t_"><strong>IVector</strong></a> of <a href="/windows/win32/api/inspectable/nn-inspectable-iinspectable"><strong>IInspectable</strong></a>. See <a href="/windows/uwp/cpp-and-winrt-apis/binding-collection">XAML items controls; bind to a C++/WinRT collection</a> and <a href="/windows/uwp/cpp-and-winrt-apis/collections">Collections with C++/WinRT</a>.</td>
+</tr>
+<tr>
+<td>Implement a collection that supports collection change notifications.</td>
+<td>Extend <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1"><strong>ObservableCollection&lt;T&gt;</strong></a> or implement (non-generic) <a href="/dotnet/api/system.collections.ilist"><strong>IList</strong></a> and <a href="/dotnet/api/system.collections.specialized.inotifycollectionchanged"><strong>INotifyCollectionChanged</strong></a>.</td>
+<td>Implement <a href="/uwp/api/windows.foundation.collections.iobservablevector_t_"><strong>IObservableVector</strong></a> of <a href="/windows/win32/api/inspectable/nn-inspectable-iinspectable"><strong>IInspectable</strong></a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.ibindableobservablevector"><strong>IBindableObservableVector</strong></a>.</td>
+</tr>
+<tr>
+<td>Implement a collection that supports incremental loading.</td>
+<td>Extend <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1"><strong>ObservableCollection&lt;T&gt;</strong></a> or implement (non-generic) <a href="/dotnet/api/system.collections.ilist"><strong>IList</strong></a> and <a href="/dotnet/api/system.collections.specialized.inotifycollectionchanged"><strong>INotifyCollectionChanged</strong></a>. Additionally, implement <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.isupportincrementalloading"><strong>ISupportIncrementalLoading</strong></a>.</td>
+<td>Implement <a href="/uwp/api/windows.foundation.collections.iobservablevector_t_"><strong>IObservableVector</strong></a> of <a href="/windows/win32/api/inspectable/nn-inspectable-iinspectable"><strong>IInspectable</strong></a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.ibindableobservablevector"><strong>IBindableObservableVector</strong></a>. Additionally, implement <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.isupportincrementalloading"><strong>ISupportIncrementalLoading</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p>You can bind list controls to arbitrarily large data sources, and still achieve high performance, by using incremental loading. For example, you can bind list controls to Bing image query results without having to load all the results at once. Instead, you load only some results immediately, and load additional results as needed. To support incremental loading, you must implement <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.isupportincrementalloading"><strong>ISupportIncrementalLoading</strong></a> on a data source that supports collection change notifications. When the data binding engine requests more data, your data source must make the appropriate requests, integrate the results, and then send the appropriate notifications in order to update the UI.</p>
+<h3 id="binding-target">Binding target</h3>
+<p>In the two examples below, the <code>Button.Content</code> property is the binding target, and its value is set to a markup extension that declares the binding object. First <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> is shown, and then <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a>. Declaring bindings in markup is the common case (it's convenient, readable, and toolable). But you can avoid markup and imperatively (programmatically) create an instance of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding"><strong>Binding</strong></a> class instead if you need to.</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;{x:Bind ...}&quot; ... /&gt;
+</code></pre>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;{Binding ...}&quot; ... /&gt;
+</code></pre>
+<p>If you're using C++/WinRT, then you'll need to add the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute"><strong>BindableAttribute</strong></a> attribute to any runtime class that you want to use the <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> markup extension with.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're using C++/WinRT, then the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute"><strong>BindableAttribute</strong></a> attribute is available with Windows App SDK. Without that attribute, you'll need to implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider">ICustomPropertyProvider</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty">ICustomProperty</a> interfaces in order to be able to use the <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> markup extension.</p>
+</div>
+<h3 id="binding-object-declared-using-xbind">Binding object declared using {x:Bind}</h3>
+<p>There's one step we need to do before we author our <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> markup. We need to expose our binding source class from the class that represents our page of markup. We do that by adding a property (of type <code>HostViewModel</code> in this case) to our <code>MainWindow</code> window class.</p>
+<pre><code class="lang-csharp">namespace DataBindingInDepth
+{
+    public sealed partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            this.InitializeComponent();
+            ViewModel = new HostViewModel();
+        }
+    
+        public HostViewModel ViewModel { get; set; }
+    }
+}
+</code></pre>
+<p>That done, we can now take a closer look at the markup that declares the binding object. The example below uses the same <code>Button.Content</code> binding target we used in the &quot;Binding target&quot; section earlier, and shows it being bound to the <code>HostViewModel.NextButtonText</code> property.</p>
+<pre><code class="lang-xaml">&lt;!-- MainWindow.xaml --&gt;
+&lt;Window x:Class=&quot;DataBindingInDepth.MainWindow&quot; ... &gt;
+    &lt;Button Content=&quot;{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}&quot; ... /&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>Notice the value that we specify for <code>Path</code>. This value is interpreted in the context of the window itself, and in this case the path begins by referencing the <code>ViewModel</code> property that we just added to the <code>MainWindow</code> page. That property returns a <code>HostViewModel</code> instance, and so we can <em>dot</em> into that object to access the <code>HostViewModel.NextButtonText</code> property. And we specify <code>Mode</code>, to override the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> default of one-time.</p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.path"><strong>Path</strong></a> property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see <a href="/windows/uwp/xaml-platform/property-path-syntax">Property-path syntax</a>. Binding to string indexers gives you the effect of binding to dynamic properties without having to implement <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider"><strong>ICustomPropertyProvider</strong></a>. For other settings, see <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a>.</p>
+<p>To illustrate that the <code>HostViewModel.NextButtonText</code> property is indeed observable, add a <code>Click</code> event handler to the button, and update the value of <code>HostViewModel.NextButtonText</code>. Build, run, and click the button to see the value of the button's <code>Content</code> update.</p>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    ViewModel.NextButtonText = &quot;Updated Next button text&quot;;
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changes to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text"><strong>TextBox.Text</strong></a> are sent to a two-way bound source when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox"><strong>TextBox</strong></a> loses focus, and not after every user keystroke.</p>
+</div>
+<h3 id="datatemplate-and-xdatatype">DataTemplate and x:DataType</h3>
+<p>Inside a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate"><strong>DataTemplate</strong></a> (whether used as an item template, a content template, or a header template), the value of <code>Path</code> is not interpreted in the context of the window, but in the context of the data object being templated. When using <code>{x:Bind}</code> in a data template, so that its bindings can be validated (and efficient code generated for them) at compile-time, the <code>DataTemplate</code> needs to declare the type of its data object using <code>x:DataType</code>. The example given below could be used as the <code>ItemTemplate</code> of an items control bound to a collection of <code>SampleDataGroup</code> objects.</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:Key=&quot;SimpleItemTemplate&quot; x:DataType=&quot;data:SampleDataGroup&quot;&gt;
+    &lt;StackPanel Orientation=&quot;Vertical&quot; Height=&quot;50&quot;&gt;
+      &lt;TextBlock Text=&quot;{x:Bind Title}&quot;/&gt;
+      &lt;TextBlock Text=&quot;{x:Bind Description}&quot;/&gt;
+    &lt;/StackPanel&gt;
+  &lt;/DataTemplate&gt;
+</code></pre>
+<h3 id="weakly-typed-objects-in-your-path">Weakly-typed objects in your Path</h3>
+<p>Consider for example that you have a type named <code>SampleDataGroup</code>, which implements a string property named <code>Title</code>. And you have a property <code>MainWindow.SampleDataGroupAsObject</code>, which is of type <code>object</code>, but which actually returns an instance of <code>SampleDataGroup</code>. The binding <code>&lt;TextBlock Text=&quot;{x:Bind SampleDataGroupAsObject.Title}&quot;/&gt;</code> will result in a compile error because the <code>Title</code> property is not found on the type <code>object</code>. The remedy for this is to add a cast to your <code>Path</code> syntax like this: <code>&lt;TextBlock Text=&quot;{x:Bind ((data:SampleDataGroup)SampleDataGroupAsObject).Title}&quot;/&gt;</code>. Here's another example where <code>Element</code> is declared as <code>object</code> but is actually a <code>TextBlock</code>: <code>&lt;TextBlock Text=&quot;{x:Bind Element.Text}&quot;/&gt;</code>. And a cast remedies the issue: <code>&lt;TextBlock Text=&quot;{x:Bind ((TextBlock)Element).Text}&quot;/&gt;</code>.</p>
+<h3 id="if-your-data-loads-asynchronously">If your data loads asynchronously</h3>
+<p>Code to support <code>{x:Bind}</code> is generated at compile-time in the partial classes for your windows. These files can be found in your <code>obj</code> folder, with names like (for C#) <code>&lt;view name&gt;.g.cs</code>. The generated code includes a handler for your window's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.loading"><strong>Loading</strong></a> event, and that handler calls the <code>Initialize</code> method on a generated class that represent's your window's bindings. <code>Initialize</code> in turn calls <code>Update</code> to begin moving data between the binding source and the target. <code>Loading</code> is raised just before the first measure pass of the window or user control. So if your data is loaded asynchronously it may not be ready by the time <code>Initialize</code> is called. So, after you've loaded data, you can force one-time bindings to be initialized by calling <code>this.Bindings.Update();</code>. If you only need one-time bindings for asynchronously-loaded data then it's much cheaper to initialize them this way than it is to have one-way bindings and to listen for changes. If your data does not undergo fine-grained changes, and if it's likely to be updated as part of a specific action, then you can make your bindings one-time, and force a manual update at any time with a call to <code>Update</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>{x:Bind}</code> is not suited to late-bound scenarios, such as navigating the dictionary structure of a JSON object, nor duck typing. &quot;Duck typing&quot; is a weak form of typing based on lexical matches on property names (as in, &quot;if it walks, swims, and quacks like a duck, then it's a duck&quot;). With duck typing, a binding to the <code>Age</code> property would be equally satisfied with a <code>Person</code> or a <code>Wine</code> object (assuming that those types each had an <code>Age</code> property). For these scenarios, use the <code>{Binding}</code> markup extension.</p>
+</div>
+<h3 id="binding-object-declared-using-binding">Binding object declared using {Binding}</h3>
+<p>If you're using C++/WinRT then, to use the <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> markup extension, you'll need to add the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute"><strong>BindableAttribute</strong></a> attribute to any runtime class that you want to bind to. To use <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a>, you don't need that attribute.</p>
+<pre><code class="lang-cppwinrt">// HostViewModel.idl
+// Add this attribute:
+[Microsoft.UI.Xaml.Data.Bindable]
+runtimeclass HostViewModel : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+{
+    HostViewModel();
+    String NextButtonText;
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're using C++/WinRT, then the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute"><strong>BindableAttribute</strong></a> attribute is available with Windows App SDK. Without that attribute, you'll need to implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider">ICustomPropertyProvider</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty">ICustomProperty</a> interfaces in order to be able to use the <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> markup extension.</p>
+</div>
+<p><a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> assumes, by default, that you're binding to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext"><strong>DataContext</strong></a> of your markup window. So we'll set the <code>DataContext</code> of our window to be an instance of our binding source class (of type <code>HostViewModel</code> in this case). The example below shows the markup that declares the binding object. We use the same <code>Button.Content</code> binding target we used in the &quot;Binding target&quot; section earlier, and we bind to the <code>HostViewModel.NextButtonText</code> property.</p>
+<pre><code class="lang-xaml">&lt;Window xmlns:viewmodel=&quot;using:DataBindingInDepth&quot; ... &gt;
+    &lt;Window.DataContext&gt;
+        &lt;viewmodel:HostViewModel x:Name=&quot;viewModelInDataContext&quot;/&gt;
+    &lt;/Window.DataContext&gt;
+    ...
+    &lt;Button Content=&quot;{Binding Path=NextButtonText}&quot; ... /&gt;
+&lt;/Window&gt;
+</code></pre>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    viewModelInDataContext.NextButtonText = &quot;Updated Next button text&quot;;
+}
+</code></pre>
+<p>Notice the value that we specify for <code>Path</code>. This value is interpreted in the context of the window's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext"><strong>DataContext</strong></a>, which in this example is set to an instance of <code>HostViewModel</code>. The path references the <code>HostViewModel.NextButtonText</code> property. We can omit <code>Mode</code>, because the <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> default of one-way works here.</p>
+<p>The default value of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext"><strong>DataContext</strong></a> for a UI element is the inherited value of its parent. You can of course override that default by setting <code>DataContext</code> explicitly, which is in turn inherited by children by default. Setting <code>DataContext</code> explicitly on an element is useful when you want to have multiple bindings that use the same source.</p>
+<p>A binding object has a <code>Source</code> property, which defaults to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext"><strong>DataContext</strong></a> of the UI element on which the binding is declared. You can override this default by setting <code>Source</code>, <code>RelativeSource</code>, or <code>ElementName</code> explicitly on the binding (see <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> for details).</p>
+<p>Inside a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate"><strong>DataTemplate</strong></a>, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext"><strong>DataContext</strong></a> is automatically set to the data object being templated. The example given below could be used as the <code>ItemTemplate</code> of an items control bound to a collection of any type that has string properties named <code>Title</code> and <code>Description</code>.</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:Key=&quot;SimpleItemTemplate&quot;&gt;
+    &lt;StackPanel Orientation=&quot;Vertical&quot; Height=&quot;50&quot;&gt;
+      &lt;TextBlock Text=&quot;{Binding Title}&quot;/&gt;
+      &lt;TextBlock Text=&quot;{Binding Description&quot;/&gt;
+    &lt;/StackPanel&gt;
+  &lt;/DataTemplate&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default, changes to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text"><strong>TextBox.Text</strong></a> are sent to a two-way bound source when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox"><strong>TextBox</strong></a> loses focus. To cause changes to be sent after every user keystroke, set <code>UpdateSourceTrigger</code> to <code>PropertyChanged</code> on the binding in markup. You can also completely take control of when changes are sent to the source by setting <code>UpdateSourceTrigger</code> to <code>Explicit</code>. You then handle events on the text box (typically <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged"><strong>TextBox.TextChanged</strong></a>), call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.getbindingexpression"><strong>GetBindingExpression</strong></a> on the target to get a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindingexpression"><strong>BindingExpression</strong></a> object, and finally call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindingexpression.updatesource"><strong>BindingExpression.UpdateSource</strong></a> to programmatically update the data source.</p>
+</div>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.path"><strong>Path</strong></a> property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see <a href="/windows/uwp/xaml-platform/property-path-syntax">Property-path syntax</a>. Binding to string indexers gives you the effect of binding to dynamic properties without having to implement <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider"><strong>ICustomPropertyProvider</strong></a>. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.elementname"><strong>ElementName</strong></a> property is useful for element-to-element binding. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.relativesource"><strong>RelativeSource</strong></a> property has several uses, one of which is as a more powerful alternative to template binding inside a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.controltemplate"><strong>ControlTemplate</strong></a>. For other settings, see <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding} markup extension</a> and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding"><strong>Binding</strong></a> class.</p>
+<h2 id="what-if-the-source-and-the-target-are-not-the-same-type">What if the source and the target are not the same type?</h2>
+<p>If you want to control the visibility of a UI element based on the value of a boolean property, or if you want to render a UI element with a color that's a function of a numeric value's range or trend, or if you want to display a date and/or time value in a UI element property that expects a string, then you'll need to convert values from one type to another. There will be cases where the right solution is to expose another property of the right type from your binding source class, and keep the conversion logic encapsulated and testable there. But that isn't flexible nor scalable when you have large numbers, or large combinations, of source and target properties. In that case you have a couple of options:</p>
+<ul>
+<li>If using <code>{x:Bind}</code> then you can bind directly to a function to do that conversion</li>
+<li>Or you can specify a value converter which is an object designed to perform the conversion</li>
+</ul>
+<h2 id="value-converters">Value Converters</h2>
+<p>Here's a value converter, suitable for a one-time or a one-way binding, that converts a <a href="/dotnet/api/system.datetime"><strong>DateTime</strong></a> value to a <code>string</code> value containing the month. The class implements <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.ivalueconverter"><strong>IValueConverter</strong></a>.</p>
+<pre><code class="lang-csharp">public class DateToStringConverter : IValueConverter
+{
+    // Define the Convert method to convert a DateTime value to 
+    // a month string.
+    public object Convert(object value, Type targetType, 
+        object parameter, string language)
+    {
+        // value is the data from the source object.
+        DateTime thisDate = (DateTime)value;
+        int monthNum = thisDate.Month;
+        string month;
+        switch (monthNum)
+        {
+            case 1:
+                month = &quot;January&quot;;
+                break;
+            case 2:
+                month = &quot;February&quot;;
+                break;
+            default:
+                month = &quot;Month not found&quot;;
+                break;
+        }
+        // Return the value to pass to the target.
+        return month;
+    }
+
+    // ConvertBack is not implemented for a OneWay binding.
+    public object ConvertBack(object value, Type targetType, 
+        object parameter, string language)
+    {
+        throw new NotImplementedException();
+    }
+}
+</code></pre>
+<p>And here's how you consume that value converter in your binding object markup.</p>
+<pre><code class="lang-xaml">&lt;UserControl.Resources&gt;
+  &lt;local:DateToStringConverter x:Key=&quot;Converter1&quot;/&gt;
+&lt;/UserControl.Resources&gt;
+...
+&lt;TextBlock Grid.Column=&quot;0&quot; 
+  Text=&quot;{x:Bind ViewModel.Month, Converter={StaticResource Converter1}}&quot;/&gt;
+&lt;TextBlock Grid.Column=&quot;0&quot; 
+  Text=&quot;{Binding Month, Converter={StaticResource Converter1}}&quot;/&gt;
+</code></pre>
+<p>The binding engine calls the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.ivalueconverter.convert"><strong>Convert</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.ivalueconverter.convertback"><strong>ConvertBack</strong></a> methods if the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converter"><strong>Converter</strong></a> parameter is defined for the binding. When data is passed from the source, the binding engine calls <code>Convert</code> and passes the returned data to the target. When data is passed from the target (for a two-way binding), the binding engine calls <code>ConvertBack</code> and passes the returned data to the source.</p>
+<p>The converter also has optional parameters: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converterlanguage"><strong>ConverterLanguage</strong></a>, which allows specifying the language to be used in the conversion, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converterparameter"><strong>ConverterParameter</strong></a>, which allows passing a parameter for the conversion logic. For an example that uses a converter parameter, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.ivalueconverter"><strong>IValueConverter</strong></a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If there is an error in the conversion, do not throw an exception. Instead, return <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.unsetvalue"><strong>DependencyProperty.UnsetValue</strong></a>, which will stop the data transfer.</p>
+</div>
+<p>To display a default value to use whenever the binding source cannot be resolved, set the <code>FallbackValue</code> property on the binding object in markup. This is useful to handle conversion and formatting errors. It is also useful to bind to source properties that might not exist on all objects in a bound collection of heterogeneous types.</p>
+<p>If you bind a text control to a value that is not a string, the data binding engine will convert the value to a string. If the value is a reference type, the data binding engine will retrieve the string value by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider.getstringrepresentation"><strong>ICustomPropertyProvider.GetStringRepresentation</strong></a> or <a href="/windows/win32/api/windows.foundation/nf-windows-foundation-istringable-tostring"><strong>IStringable.ToString</strong></a> if available, and will otherwise call <a href="/dotnet/api/system.object.tostring#System_Object_ToString"><strong>Object.ToString</strong></a>. Note, however, that the binding engine will ignore any <code>ToString</code> implementation that hides the base-class implementation. Subclass implementations should override the base class <code>ToString</code> method instead. Similarly, in native languages, all managed objects appear to implement <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider"><strong>ICustomPropertyProvider</strong></a> and <a href="/windows/win32/api/windows.foundation/nn-windows-foundation-istringable"><strong>IStringable</strong></a>. However, all calls to <code>GetStringRepresentation</code> and <code>IStringable.ToString</code> are routed to <code>Object.ToString</code> or an override of that method, and never to a new <code>ToString</code> implementation that hides the base-class implementation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="/dotnet/communitytoolkit/windows/">Windows Community Toolkit</a> provides a <a href="/dotnet/api/communitytoolkit.winui.ui.converters.booltovisibilityconverter">BoolToVisibilityConverter</a>. The converter maps <code>true</code> to the <code>Visible</code> enumeration value and <code>false</code> to <code>Collapsed</code> so you can bind a <code>Visibility</code> property to a boolean without creating a converter. To use the converter, your project must add the <a href="https://www.nuget.org/packages/CommunityToolkit.WinUI.Converters">CommunityToolkit.WinUI.Converters</a> NuGet package.</p>
+</div>
+<h2 id="function-binding-in-xbind">Function binding in {x:Bind}</h2>
+<p><code>{x:Bind}</code> enables the final step in a binding path to be a function. This can be used to perform conversions, and to perform bindings that depend on more than one property. See <a href="function-bindings.html"><strong>Functions in x:Bind</strong></a></p>
+<p><span id="resource-dictionaries-with-x-bind"></span></p>
+<h2 id="element-to-element-binding">Element-to-element binding</h2>
+<p>You can bind the property of one XAML element to the property of another XAML element. Here's an example of how that looks in markup.</p>
+<pre><code class="lang-xaml">&lt;TextBox x:Name=&quot;myTextBox&quot; /&gt;
+&lt;TextBlock Text=&quot;{x:Bind myTextBox.Text, Mode=OneWay}&quot; /&gt;
+</code></pre>
+<h2 id="resource-dictionaries-with-xbind">Resource dictionaries with {x:Bind}</h2>
+<p>The <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a> depends on code generation, so it needs a code-behind file containing a constructor that calls <code>InitializeComponent</code> (to initialize the generated code). You re-use the resource dictionary by instantiating its type (so that <code>InitializeComponent</code> is called) instead of referencing its filename. Here's an example of what to do if you have an existing resource dictionary and you want to use <code>{x:Bind}</code> in it.</p>
+<pre><code class="lang-xaml">&lt;!-- TemplatesResourceDictionary.xaml --&gt;
+&lt;ResourceDictionary
+    x:Class=&quot;ExampleNamespace.TemplatesResourceDictionary&quot;
+    .....
+    xmlns:examplenamespace=&quot;using:ExampleNamespace&quot;&gt;
+    
+    &lt;DataTemplate x:Key=&quot;EmployeeTemplate&quot; x:DataType=&quot;examplenamespace:IEmployee&quot;&gt;
+        &lt;Grid&gt;
+            &lt;TextBlock Text=&quot;{x:Bind Name}&quot;/&gt;
+        &lt;/Grid&gt;
+    &lt;/DataTemplate&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<pre><code class="lang-csharp">// TemplatesResourceDictionary.xaml.cs
+using Microsoft.UI.Xaml.Data;
+ 
+namespace ExampleNamespace
+{
+    public partial class TemplatesResourceDictionary
+    {
+        public TemplatesResourceDictionary()
+        {
+            InitializeComponent();
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-xaml">&lt;!-- MainWindow.xaml --&gt;
+&lt;Window x:Class=&quot;ExampleNamespace.MainWindow&quot;
+    ....
+    xmlns:examplenamespace=&quot;using:ExampleNamespace&quot;&gt;
+
+    &lt;Window.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            .... 
+            &lt;ResourceDictionary.MergedDictionaries&gt;
+                &lt;examplenamespace:TemplatesResourceDictionary/&gt;
+            &lt;/ResourceDictionary.MergedDictionaries&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/Window.Resources&gt;
+&lt;/Window&gt;
+</code></pre>
+<h2 id="event-binding-and-icommand">Event binding and ICommand</h2>
+<p><a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> supports a feature called event binding. With this feature, you can specify the handler for an event using a binding, which is an additional option on top of handling events with a method on the code-behind file. Let's say you have a <code>ListViewDoubleTapped</code> event handler on your <code>MainWindow</code> class.</p>
+<pre><code class="lang-csharp">public sealed partial class MainWindow : Window
+{
+    ...
+    public void ListViewDoubleTapped()
+    {
+        // Handle double-tapped logic
+    }
+}
+</code></pre>
+<p>You can then bind a ListView's <strong>DoubleTapped</strong> event to a method on the <strong>MainWindow</strong> like this.</p>
+<pre><code class="lang-xaml">&lt;ListView DoubleTapped=&quot;{x:Bind ListViewDoubleTapped}&quot; /&gt;
+</code></pre>
+<p>Overloaded methods cannot be used to handle an event with this technique. Also, if the method that handles the event has parameters then they must all be assignable from the types of all of the event's parameters, respectively. In this case, <code>ListViewDoubleTapped</code> is not overloaded and it has no parameters (but it would still be valid even if it took two <code>object</code> parameters).</p>
+<p>The event binding technique is similar to implementing and consuming commands (a command is a property that returns an object that implements the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand"><strong>ICommand</strong></a> interface). Both <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> and <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> work with commands. So that you don't have to implement the command pattern multiple times, you can use the <code>DelegateCommand</code> helper class that you'll find in the <a href="https://github.com/microsoft/Windows-appsample-networkhelper">QuizGame</a> UWP sample (in the &quot;Common&quot; folder).</p>
+<h2 id="binding-to-a-collection-of-folders-or-files">Binding to a collection of folders or files</h2>
+<p>You can use the APIs in the <a href="/uwp/api/Windows.Storage"><strong>Windows.Storage</strong></a> namespace to retrieve folder and file data in your packaged Windows App SDK apps. However, the various <code>GetFilesAsync</code>, <code>GetFoldersAsync</code>, and <code>GetItemsAsync</code> methods do not return values that are suitable for binding to list controls. Instead, you must bind to the return values of the <a href="/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizedfilesvector"><strong>GetVirtualizedFilesVector</strong></a>, <a href="/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizedfoldersvector"><strong>GetVirtualizedFoldersVector</strong></a>, and <a href="/uwp/api/windows.storage.bulkaccess.fileinformationfactory.getvirtualizeditemsvector"><strong>GetVirtualizedItemsVector</strong></a> methods of the <a href="/uwp/api/Windows.Storage.BulkAccess.FileInformationFactory"><strong>FileInformationFactory</strong></a> class. The following code example from the <a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Windows%208.1%20Store%20app%20samples/99866-Windows%208.1%20Store%20app%20samples/StorageDataSource%20and%20GetVirtualizedFilesVector%20sample">StorageDataSource and GetVirtualizedFilesVector UWP sample</a> shows the typical usage pattern. Remember to declare the <strong>picturesLibrary</strong> capability in your app package manifest, and confirm that there are pictures in your Pictures library folder.</p>
+<pre><code class="lang-csharp">protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    var library = Windows.Storage.KnownFolders.PicturesLibrary;
+    var queryOptions = new Windows.Storage.Search.QueryOptions();
+    queryOptions.FolderDepth = Windows.Storage.Search.FolderDepth.Deep;
+    queryOptions.IndexerOption = Windows.Storage.Search.IndexerOption.UseIndexerWhenAvailable;
+
+    var fileQuery = library.CreateFileQueryWithOptions(queryOptions);
+
+    var fif = new Windows.Storage.BulkAccess.FileInformationFactory(
+        fileQuery,
+        Windows.Storage.FileProperties.ThumbnailMode.PicturesView,
+        190,
+        Windows.Storage.FileProperties.ThumbnailOptions.UseCurrentScale,
+        false
+        );
+
+    var dataSource = fif.GetVirtualizedFilesVector();
+    this.PicturesListView.ItemsSource = dataSource;
+}
+</code></pre>
+<p>You will typically use this approach to create a read-only view of file and folder info. You can create two-way bindings to the file and folder properties, for example to let users rate a song in a music view. However, any changes are not persisted until you call the appropriate <code>SavePropertiesAsync</code> method (for example, <a href="/uwp/api/windows.storage.fileproperties.musicproperties.savepropertiesasync"><strong>MusicProperties.SavePropertiesAsync</strong></a>). You should commit changes when the item loses focus because this triggers a selection reset.</p>
+<p>Note that two-way binding using this technique works only with indexed locations, such as <strong>Music</strong>. You can determine whether a location is indexed by calling the <a href="/uwp/api/windows.storage.bulkaccess.folderinformation.getindexedstateasync"><strong>FolderInformation.GetIndexedStateAsync</strong></a> method.</p>
+<p>Note also that a virtualized vector can return <code>null</code> for some items before it populates their value. For example, you should check for <code>null</code> before you use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem"><strong>SelectedItem</strong></a> value of a list control bound to a virtualized vector, or use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedindex"><strong>SelectedIndex</strong></a> instead.</p>
+<h2 id="binding-to-data-grouped-by-a-key">Binding to data grouped by a key</h2>
+<p>If you take a flat collection of items (books, for example, represented by a <code>BookSku</code> class) and you group the items by using a common property as a key (the <code>BookSku.AuthorName</code> property, for example) then the result is called grouped data. When you group data, it is no longer a flat collection. Grouped data is a collection of group objects, where each group object has:</p>
+<ul>
+<li>a key, and</li>
+<li>a collection of items whose property matches that key.</li>
+</ul>
+<p>To take the books example again, the result of grouping the books by author name results in a collection of author name groups where each group has:</p>
+<ul>
+<li>a key, which is an author name, and</li>
+<li>a collection of the <code>BookSku</code> objects whose <code>AuthorName</code> property matches the group's key.</li>
+</ul>
+<p>In general, to display a collection, you bind the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource"><strong>ItemsSource</strong></a> of an items control (such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview"><strong>ListView</strong></a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview"><strong>GridView</strong></a>) directly to a property that returns a collection. If that's a flat collection of items then you don't need to do anything special. But if it's a collection of group objects (as it is when binding to grouped data) then you need the services of an intermediary object called a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a> which sits between the items control and the binding source. You bind the <code>CollectionViewSource</code> to the property that returns grouped data, and you bind the items control to the <code>CollectionViewSource</code>. An extra value-add of a <code>CollectionViewSource</code> is that it keeps track of the current item, so you can keep more than one items control in sync by binding them all to the same <code>CollectionViewSource</code>. You can also access the current item programmatically through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icollectionview.currentitem"><strong>ICollectionView.CurrentItem</strong></a> property of the object returned by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource.view"><strong>CollectionViewSource.View</strong></a> property.</p>
+<p>To activate the grouping facility of a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a>, set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource.issourcegrouped"><strong>IsSourceGrouped</strong></a> to <code>true</code>. Whether you also need to set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource.itemspath"><strong>ItemsPath</strong></a> property depends on exactly how you author your group objects. There are two ways to author a group object: the &quot;is-a-group&quot; pattern, and the &quot;has-a-group&quot; pattern. In the &quot;is-a-group&quot; pattern, the group object derives from a collection type (for example, <code>List&lt;T&gt;</code>), so the group object actually is itself the group of items. With this pattern you do not need to set <code>ItemsPath</code>. In the &quot;has-a-group&quot; pattern, the group object has one or more properties of a collection type (such as <code>List&lt;T&gt;</code>), so the group &quot;has a&quot; group of items in the form of a property (or several groups of items in the form of several properties). With this pattern you need to set <code>ItemsPath</code> to the name of the property that contains the group of items.</p>
+<p>The example below illustrates the &quot;has-a-group&quot; pattern. The window class has a property named <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext"><strong>DataContext</strong></a>, which returns an instance of our view model. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a> binds to the <code>Authors</code> property of the view model (<code>Authors</code> is the collection of group objects) and also specifies that it's the <code>Author.BookSkus</code> property that contains the grouped items. Finally, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview"><strong>GridView</strong></a> is bound to the <code>CollectionViewSource</code>, and has its group style defined so that it can render the items in groups.</p>
+<pre><code class="lang-xaml">&lt;Window.Resources&gt;
+    &lt;CollectionViewSource
+    x:Name=&quot;AuthorHasACollectionOfBookSku&quot;
+    Source=&quot;{x:Bind ViewModel.Authors}&quot;
+    IsSourceGrouped=&quot;true&quot;
+    ItemsPath=&quot;BookSkus&quot;/&gt;
+&lt;/Window.Resources&gt;
+...
+&lt;GridView
+ItemsSource=&quot;{x:Bind AuthorHasACollectionOfBookSku}&quot; ...&gt;
+    &lt;GridView.GroupStyle&gt;
+        &lt;GroupStyle
+            HeaderTemplate=&quot;{StaticResource AuthorGroupHeaderTemplateWide}&quot; ... /&gt;
+    &lt;/GridView.GroupStyle&gt;
+&lt;/GridView&gt;
+</code></pre>
+<p>You can implement the &quot;is-a-group&quot; pattern in one of two ways. One way is to author your own group class. Derive the class from <code>List&lt;T&gt;</code> (where <em>T</em> is the type of the items). For example, <code>public class Author : List&lt;BookSku&gt;</code>. The second way is to use a <a href="/previous-versions/bb397926(v=vs.140)">LINQ</a> expression to dynamically create group objects (and a group class) from like property values of the <strong>BookSku</strong> items. This approach—maintaining only a flat list of items and grouping them together on the fly—is typical of an app that accesses data from a cloud service. You get the flexibility to group books by author or by genre (for example) without needing special group classes such as <strong>Author</strong> and <strong>Genre</strong>.</p>
+<p>The example below illustrates the &quot;is-a-group&quot; pattern using <a href="/dotnet/standard/linq/">LINQ</a>. This time we group books by genre, displayed with the genre name in the group headers. This is indicated by the &quot;Key&quot; property path in reference to the group <a href="/dotnet/api/system.linq.igrouping-2.key#System_Linq_IGrouping_2_Key"><strong>Key</strong></a> value.</p>
+<pre><code class="lang-csharp">using System.Linq;
+...
+private IOrderedEnumerable&lt;IGrouping&lt;string, BookSku&gt;&gt; genres;
+
+public IOrderedEnumerable&lt;IGrouping&lt;string, BookSku&gt;&gt; Genres
+{
+    get
+    {
+        if (genres == null)
+        {
+            genres = from book in bookSkus
+                     group book by book.genre into grp
+                     orderby grp.Key
+                     select grp;
+        }
+        return genres;
+    }
+}
+</code></pre>
+<p>Remember that when using <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> with data templates we need to indicate the type being bound to by setting an <code>x:DataType</code> value. If the type is generic then we can't express that in markup so we need to use <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> instead in the group style header template.</p>
+<pre><code class="lang-xaml">    &lt;Grid.Resources&gt;
+        &lt;CollectionViewSource x:Name=&quot;GenreIsACollectionOfBookSku&quot;
+        Source=&quot;{x:Bind Genres}&quot;
+        IsSourceGrouped=&quot;true&quot;/&gt;
+    &lt;/Grid.Resources&gt;
+    &lt;GridView ItemsSource=&quot;{x:Bind GenreIsACollectionOfBookSku}&quot;&gt;
+        &lt;GridView.ItemTemplate x:DataType=&quot;local:BookTemplate&quot;&gt;
+            &lt;DataTemplate&gt;
+                &lt;TextBlock Text=&quot;{x:Bind Title}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/GridView.ItemTemplate&gt;
+        &lt;GridView.GroupStyle&gt;
+            &lt;GroupStyle&gt;
+                &lt;GroupStyle.HeaderTemplate&gt;
+                    &lt;DataTemplate&gt;
+                        &lt;TextBlock Text=&quot;{Binding Key}&quot;/&gt;
+                    &lt;/DataTemplate&gt;
+                &lt;/GroupStyle.HeaderTemplate&gt;
+            &lt;/GroupStyle&gt;
+        &lt;/GridView.GroupStyle&gt;
+    &lt;/GridView&gt;
+</code></pre>
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.semanticzoom"><strong>SemanticZoom</strong></a> control is a great way for your users to view and navigate grouped data. The <a href="https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10">Bookstore2</a> UWP sample app illustrates how to use the <code>SemanticZoom</code>. In that app, you can view a list of books grouped by author (the zoomed-in view) or you can zoom out to see a jump list of authors (the zoomed-out view). The jump list affords much quicker navigation than scrolling through the list of books. The zoomed-in and zoomed-out views are actually <code>ListView</code> or <code>GridView</code> controls bound to the same <code>CollectionViewSource</code>.</p>
+<p><img src="images/sezo.png" alt="An illustration of a SemanticZoom"></p>
+<p>When you bind to hierarchical data—such as subcategories within categories—you can choose to display the hierarchical levels in your UI with a series of items controls. A selection in one items control determines the contents of subsequent items controls. You can keep the lists synchronized by binding each list to its own <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a> and binding the <code>CollectionViewSource</code> instances together in a chain. This is called a master/details (or list/details) view. For more info, see <a href="bind-to-hierarchical-data-and-create-a-master-details-view.html">How to bind to hierarchical data and create a master/details view</a>.</p>
+<p><span id="debugging"></span></p>
+<h2 id="diagnosing-and-debugging-data-binding-problems">Diagnosing and debugging data binding problems</h2>
+<p>Your binding markup contains the names of properties (and, for C#, sometimes fields and methods). So when you rename a property, you'll also need to change any binding that references it. Forgetting to do that leads to a typical example of a data binding bug, and your app either won't compile or won't run correctly.</p>
+<p>The binding objects created by <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> and <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> are largely functionally equivalent. But <code>{x:Bind}</code> has type information for the binding source, and it generates source code at compile-time. With <code>{x:Bind}</code> you get the same kind of problem detection that you get with the rest of your code. That includes compile-time validation of your binding expressions, and debugging by setting breakpoints in the source code generated as the partial class for your page. These classes can be found in the files in your <code>obj</code> folder, with names like (for C#) <code>&lt;view name&gt;.g.cs</code>). If you have a problem with a binding then turn on <strong>Break On Unhandled Exceptions</strong> in the Microsoft Visual Studio debugger. The debugger will break execution at that point, and you can then debug what has gone wrong. The code generated by <code>{x:Bind}</code> follows the same pattern for each part of the graph of binding source nodes, and you can use the info in the <strong>Call Stack</strong> window to help determine the sequence of calls that led up to the problem.</p>
+<p><a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a> does not have type information for the binding source. But when you run your app with the debugger attached, any binding errors appear in the <strong>Output</strong> and <strong>XAML Binding Failures</strong> windows in Visual Studio. For more information on debugging binding errors in Visual Studio, see <a href="/visualstudio/xaml-tools/xaml-data-binding-diagnostics">XAML data binding diagnostics</a>.</p>
+<h2 id="creating-bindings-in-code">Creating bindings in code</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This section only applies to <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding}</a>, because you can't create <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind}</a> bindings in code. However, some of the same benefits of <code>{x:Bind}</code> can be achieved with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.registerpropertychangedcallback"><strong>DependencyObject.RegisterPropertyChangedCallback</strong></a>, which enables you to register for change notifications on any dependency property.</p>
+</div>
+<p>You can also connect UI elements to data using procedural code instead of XAML. To do this, create a new <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding"><strong>Binding</strong></a> object, set the appropriate properties, then call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.setbinding"><strong>FrameworkElement.SetBinding</strong></a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindingoperations.setbinding"><strong>BindingOperations.SetBinding</strong></a>. Creating bindings programmatically is useful when you want to choose the binding property values at run-time or share a single binding among multiple controls. Note, however, that you cannot change the binding property values after you call <code>SetBinding</code>.</p>
+<p>The following example shows how to implement a binding in code.</p>
+<pre><code class="lang-xaml">&lt;TextBox x:Name=&quot;MyTextBox&quot; Text=&quot;Text&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Create an instance of the MyColors class 
+// that implements INotifyPropertyChanged.
+var textcolor = new MyColors();
+
+// Brush1 is set to be a SolidColorBrush with the value Red.
+textcolor.Brush1 = new SolidColorBrush(Colors.Red);
+
+// Set the DataContext of the TextBox MyTextBox.
+MyTextBox.DataContext = textcolor;
+
+// Create the binding and associate it with the text box.
+var binding = new Binding { Path = new PropertyPath(&quot;Brush1&quot;) };
+MyTextBox.SetBinding(TextBox.ForegroundProperty, binding);
+</code></pre>
+<h2 id="xbind-and-binding-feature-comparison">{x:Bind} and {Binding} feature comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>{x:Bind} vs. {Binding}</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path is the default property</td>
+<td><code>{x:Bind a.b.c}</code><br>-<br><code>{Binding a.b.c}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Path property</td>
+<td><code>{x:Bind Path=a.b.c}</code><br>-<br><code>{Binding Path=a.b.c}</code></td>
+<td>In <code>x:Bind</code>, <code>Path</code> is rooted at the Window by default, not the DataContext.</td>
+</tr>
+<tr>
+<td>Indexer</td>
+<td><code>{x:Bind Groups[2].Title}</code><br>-<br><code>{Binding Groups[2].Title}</code></td>
+<td>Binds to the specified item in the collection. Only integer-based indexes are supported.</td>
+</tr>
+<tr>
+<td>Attached properties</td>
+<td><code>{x:Bind Button22.(Grid.Row)}</code><br>-<br><code>{Binding Button22.(Grid.Row)}</code></td>
+<td>Attached properties are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document.</td>
+</tr>
+<tr>
+<td>Casting</td>
+<td><code>{x:Bind groups[0].(data:SampleDataGroup.Title)}</code><br>-<br>Not needed for <code>{Binding}</code>.</td>
+<td>Casts are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document.</td>
+</tr>
+<tr>
+<td>Converter</td>
+<td><code>{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}</code><br>-<br><code>{Binding IsShown, Converter={StaticResource BoolToVisibility}}</code></td>
+<td>Converters must be declared at the root of the Window/Control/ResourceDictionary, or in <strong>App.xaml</strong>.</td>
+</tr>
+<tr>
+<td>ConverterParameter, ConverterLanguage</td>
+<td><code>{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}</code><br>-<br><code>{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}</code></td>
+<td>Converters must be declared at the root of the Window/Control/ResourceDictionary, or in <strong>App.xaml</strong>.</td>
+</tr>
+<tr>
+<td>TargetNullValue</td>
+<td><code>{x:Bind Name, TargetNullValue=0}</code><br>-<br><code>{Binding Name, TargetNullValue=0}</code></td>
+<td>Used when the leaf of the binding expression is null. Use single quotes for a string value.</td>
+</tr>
+<tr>
+<td>FallbackValue</td>
+<td><code>{x:Bind Name, FallbackValue='empty'}</code><br>-<br><code>{Binding Name, FallbackValue='empty'}</code></td>
+<td>Used when any part of the path for the binding (except for the leaf) is null.</td>
+</tr>
+<tr>
+<td>ElementName</td>
+<td><code>{x:Bind slider1.Value}</code><br>-<br><code>{Binding Value, ElementName=slider1}</code></td>
+<td>With <code>{x:Bind}</code> you're binding to a field; <code>Path</code> is rooted at the Window by default, so any named element can be accessed via its field.</td>
+</tr>
+<tr>
+<td>RelativeSource: Self</td>
+<td><code>&lt;Rectangle x:Name=&quot;rect1&quot; Width=&quot;200&quot; Height=&quot;{x:Bind rect1.Width}&quot; ... /&gt;</code><br>-<br><code>&lt;Rectangle Width=&quot;200&quot; Height=&quot;{Binding Width, RelativeSource={RelativeSource Self}}&quot; ... /&gt;</code></td>
+<td>With <code>{x:Bind}</code>, name the element and use its name in <code>Path</code>.</td>
+</tr>
+<tr>
+<td>RelativeSource: TemplatedParent</td>
+<td>Not needed for <code>{x:Bind}</code><br>-<br><code>{Binding &lt;path&gt;, RelativeSource={RelativeSource TemplatedParent}}</code></td>
+<td>With <code>{x:Bind}</code>, <code>TargetType</code> on <code>ControlTemplate</code> indicates binding to template parent. For <code>{Binding}</code>, regular template binding can be used in control templates for most uses. But use <code>TemplatedParent</code> where you need to use a converter, or a two-way binding.</td>
+</tr>
+<tr>
+<td>Source</td>
+<td>Not needed for <code>{x:Bind}</code><br>-<br><code>&lt;ListView ItemsSource=&quot;{Binding Orders, Source={StaticResource MyData}}&quot;/&gt;</code></td>
+<td>For <code>{x:Bind}</code> you can directly use the named element, use a property or a static path.</td>
+</tr>
+<tr>
+<td>Mode</td>
+<td><code>{x:Bind Name, Mode=OneWay}</code><br>-<br><code>{Binding Name, Mode=TwoWay}</code></td>
+<td><code>Mode</code> can be <code>OneTime</code>, <code>OneWay</code>, or <code>TwoWay</code>. <code>{x:Bind}</code> defaults to <code>OneTime</code>; <code>{Binding}</code> defaults to <code>OneWay</code>.</td>
+</tr>
+<tr>
+<td>UpdateSourceTrigger</td>
+<td><code>{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}</code><br>-<br><code>{Binding UpdateSourceTrigger=PropertyChanged}</code></td>
+<td><code>UpdateSourceTrigger</code> can be <code>Default</code>, <code>LostFocus</code>, or <code>PropertyChanged</code>. <code>{x:Bind}</code> does not support <code>UpdateSourceTrigger=Explicit</code>. <code>{x:Bind}</code> uses <code>PropertyChanged</code> behavior for all cases except <code>TextBox.Text</code>, where it uses <code>LostFocus</code> behavior.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="data-binding-overview.html">Data binding overview</a></li>
+<li><a href="data-binding-and-mvvm.html">Data binding and MVVM</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-binding/data-binding-in-depth.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

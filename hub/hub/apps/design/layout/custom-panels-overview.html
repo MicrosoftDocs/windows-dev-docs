@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>XAML custom panels overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="XAML custom panels overview ">
+    
+    <meta name="description" content="You can define custom panels for XAML layout by deriving a custom class from the Panel class.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="xaml-custom-panels-overview">XAML custom panels overview</h1>
+
+<p>A <em>panel</em> is an object that provides a layout behavior for child elements it contains, when the Extensible Application Markup Language (XAML) layout system runs and your app UI is rendered.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a>, <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a>, <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a></p>
+</blockquote>
+<p>You can define custom panels for XAML layout by deriving a custom class from the <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> class. You provide behavior for your panel by overriding the <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a>, supplying logic that measures and arranges the child elements.</p>
+<h2 id="the-panel-base-class">The <strong>Panel</strong> base class</h2>
+<p>To define a custom panel class, you can either derive from the <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> class directly, or derive from one of the practical panel classes that aren't sealed, such as <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel"><strong>StackPanel</strong></a>. It's easier to derive from <strong>Panel</strong>, because it can be difficult to work around the existing layout logic of a panel that already has layout behavior. Also, a panel with behavior might have existing properties that aren't relevant for your panel's layout features.</p>
+<p>From <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a>, your custom panel inherits these APIs:</p>
+<ul>
+<li>The <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> property.</li>
+<li>The <a href="/uwp/api/windows.ui.xaml.controls.panel.background"><strong>Background</strong></a>, <a href="/uwp/api/windows.ui.xaml.controls.panel.childrentransitions"><strong>ChildrenTransitions</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.panel.isitemshost"><strong>IsItemsHost</strong></a> properties, and the dependency property identifiers. None of these properties are virtual, so you don't typically override or replace them. You don't typically need these properties for custom panel scenarios, not even for reading values.</li>
+<li>The layout override methods <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a>. These were originally defined by <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a>. The base <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> class doesn't override these, but practical panels like <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> do have override implementations that are implemented as native code and are run by the system. Providing new (or additive) implementations for <strong>ArrangeOverride</strong> and <strong>MeasureOverride</strong> is the bulk of the effort you need to define a custom panel.</li>
+<li>All the other APIs of <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.DependencyObject"><strong>DependencyObject</strong></a>, such as <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.visibility"><strong>Visibility</strong></a> and so on. You sometimes reference values of these properties in your layout overrides, but they aren't virtual so you don't typically override or replace them.</li>
+</ul>
+<p>This focus here is to describe XAML layout concepts, so you can consider all the possibilities for how a custom panel can and should behave in layout. If you'd rather jump right in and see an example custom panel implementation, see <a href="boxpanel-example-custom-panel.html">BoxPanel, an example custom panel</a>.</p>
+<h2 id="the-children-property">The <strong>Children</strong> property</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> property is relevant to a custom panel because all classes derived from <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> use the <strong>Children</strong> property as the place to store their contained child elements in a collection. <strong>Children</strong> is designated as the XAML content property for the <strong>Panel</strong> class, and all classes derived from <strong>Panel</strong> can inherit the XAML content property behavior. If a property is designated the XAML content property, that means that XAML markup can omit a property element when specifying that property in markup, and the values are set as immediate markup children (the &quot;content&quot;). For example, if you derive a class named <strong>CustomPanel</strong> from <strong>Panel</strong> that defines no new behavior, you can still use this markup:</p>
+<pre><code class="lang-XAML">&lt;local:CustomPanel&gt;
+  &lt;Button Name=&quot;button1&quot;/&gt;
+  &lt;Button Name=&quot;button2&quot;/&gt;
+&lt;/local:CustomPanel&gt;
+</code></pre>
+<p>When a XAML parser reads this markup, <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> is known to be the XAML content property for all <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> derived types, so the parser will add the two <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a> elements to the <a href="/uwp/api/Windows.UI.Xaml.Controls.UIElementCollection"><strong>UIElementCollection</strong></a> value of the <strong>Children</strong> property. The XAML content property facilitates a streamlined parent-child relationship in the XAML markup for a UI definition. For more info about XAML content properties, and how collection properties are populated when XAML is parsed, see the <a href="/windows/uwp/xaml-platform/xaml-syntax-guide">XAML syntax guide</a>.</p>
+<p>The collection type that's maintaining the value of the <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> property is the <a href="/uwp/api/Windows.UI.Xaml.Controls.UIElementCollection"><strong>UIElementCollection</strong></a> class. <strong>UIElementCollection</strong> is a strongly typed collection that uses <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> as its enforced item type. <strong>UIElement</strong> is a base type that's inherited by hundreds of practical UI element types, so the type enforcement here is deliberately loose. But it does enforce that you couldn't have a <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a> as a direct child of a <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a>, and it generally means that only elements that are expected to be visible in UI and participate in layout will be found as child elements in a <strong>Panel</strong>.</p>
+<p>Typically, a custom panel accepts any <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> child element by a XAML definition, by simply using the characteristics of the <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> property as-is. As an advanced scenario, you could support further type checking of child elements, when you iterate over the collection in your layout overrides.</p>
+<p>Besides looping through the <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> collection in the overrides, your panel logic might also be influenced by <code>Children.Count</code>. You might have logic that is allocating space at least partly based on the number of items, rather than desired sizes and the other characteristics of individual items.</p>
+<h2 id="overriding-the-layout-methods">Overriding the layout methods</h2>
+<p>The basic model for the layout override methods (<a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a>) is that they should iterate through all the children and call each child element's specific layout method. The first layout cycle starts when the XAML layout system sets the visual for the root window. Because each parent invokes layout on its children, this propagates a call to layout methods to every possible UI element that is supposed to be part of a layout. In XAML layout, there are two stages: measure, then arrange.</p>
+<p>You don't get any built-in layout method behavior for <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> from the base <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> class. Items in <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> won't automatically render as part of the XAML visual tree. It is up to you to make the items known to the layout process, by invoking layout methods on each of the items you find in <strong>Children</strong> through a layout pass within your <strong>MeasureOverride</strong> and <strong>ArrangeOverride</strong> implementations.</p>
+<p>There's no reason to call base implementations in layout overrides unless you have your own inheritance. The native methods for layout behavior (if they exist) run regardless, and not calling base implementation from overrides won't prevent the native behavior from happening.</p>
+<p>During the measure pass, your layout logic queries each child element for its desired size, by calling the <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> method on that child element. Calling the <strong>Measure</strong> method establishes the value for the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> property. The <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> return value is the desired size for the panel itself.</p>
+<p>During the arrange pass, the positions and sizes of child elements are determined in x-y space and the layout composition is prepared for rendering. Your code must call <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a> on each child element in <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> so that the layout system detects that the element belongs in the layout. The <strong>Arrange</strong> call is a precursor to composition and rendering; it informs the layout system where that element goes, when the composition is submitted for rendering.</p>
+<p>Many properties and values contribute to how the layout logic will work at runtime. A way to think about the layout process is that the elements with no children (generally the most deeply nested element in the UI) are the ones that can finalize measurements first. They don't have any dependencies on child elements that influence their desired size. They might have their own desired sizes, and these are size suggestions until the layout actually takes place. Then, the measure pass continues walking up the visual tree until the root element has its measurements and all the measurements can be finalized.</p>
+<p>The candidate layout must fit within the current app window or else parts of the UI will be clipped. Panels often are the place where the clipping logic is determined. Panel logic can determine what size is available from within the <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> implementation, and may have to push the size restrictions onto the children and divide space amongst children so that everything fits as best it can. The result of layout is ideally something that uses various properties of all parts of the layout but still fits within the app window. That requires both a good implementation for layout logic of the panels, and also a judicious UI design on the part of any app code that builds a UI using that panel. No panel design is going to look good if the overall UI design includes more child elements than can possibly fit in the app.</p>
+<p>A large part of what makes the layout system work is that any element that's based on <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> already has some of its own inherent behavior when acting as a child in a container. For example, there are several APIs of <strong>FrameworkElement</strong> that either inform layout behavior or are needed to make layout work at all. These include:</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> (actually a <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> property)</li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight"><strong>ActualHeight</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualwidth"><strong>ActualWidth</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.margin"><strong>Margin</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated"><strong>LayoutUpdated</strong></a> event</li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.horizontalalignment"><strong>HorizontalAlignment</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.verticalalignment"><strong>VerticalAlignment</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> methods</li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> methods: these have native implementations defined at the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> level, which handle the element-level layout action</li>
+</ul>
+<h2 id="measureoverride"><strong>MeasureOverride</strong></h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> method has a return value that's used by the layout system as the starting <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> for the panel itself, when the <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> method is called on the panel by its parent in layout. The logic choices within the method are just as important as what it returns, and the logic often influences what value is returned.</p>
+<p>All <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> implementations should loop through <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a>, and call the <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> method on each child element. Calling the <strong>Measure</strong> method establishes the value for the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> property. This might inform how much space the panel itself needs, as well as how that space is divided among elements or sized for a particular child element.</p>
+<p>Here's a very basic skeleton of a <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> method:</p>
+<pre><code class="lang-CSharp">protected override Size MeasureOverride(Size availableSize)
+{
+    Size returnSize; //TODO might return availableSize, might do something else
+     
+    //loop through each Child, call Measure on each
+    foreach (UIElement child in Children)
+    {
+        child.Measure(new Size()); // TODO determine how much space the panel allots for this child, that's what you pass to Measure
+        Size childDesiredSize = child.DesiredSize; //TODO determine how the returned Size is influenced by each child's DesiredSize
+        //TODO, logic if passed-in Size and net DesiredSize are different, does that matter?
+    }
+    return returnSize;
+}
+</code></pre>
+<p>Elements often have a natural size by the time they're ready for layout. After the measure pass, the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> might indicate that natural size, if the <em>availableSize</em> you passed for <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> was smaller. If the natural size is larger than <em>availableSize</em> you passed for <strong>Measure</strong>, the <strong>DesiredSize</strong> is constrained to <em>availableSize</em>. That's how <strong>Measure</strong>'s internal implementation behaves, and your layout overrides should take that behavior into account.</p>
+<p>Some elements don't have a natural size because they have <strong>Auto</strong> values for <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a>. These elements use the full <em>availableSize</em>, because that's what an <strong>Auto</strong> value represents: size the element to the maximum available size, which the immediate layout parent communicates by calling <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> with <em>availableSize</em>. In practice, there's always some measurement that a UI is sized to (even if that's the top level window.) Eventually, the measure pass resolves all the <strong>Auto</strong> values to parent constraints and all <strong>Auto</strong> value elements get real measurements (which you can get by checking <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualwidth"><strong>ActualWidth</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight"><strong>ActualHeight</strong></a>, after layout completes).</p>
+<p>It's legal to pass a size to <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> that has at least one infinite dimension, to indicate that the panel can attempt to size itself to fit measurements of its content. Each child element being measured sets its <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> value using its natural size. Then, during the arrange pass, the panel typically arranges using that size.</p>
+<p>Text elements such as <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> have a calculated <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualwidth"><strong>ActualWidth</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight"><strong>ActualHeight</strong></a> based on their text string and text properties even if no <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a> value is set, and these dimensions should be respected by your panel logic. Clipping text is a particularly bad UI experience.</p>
+<p>Even if your implementation doesn't use the desired size measurements, it's best to call the <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> method on each child element, because there are internal and native behaviors that are triggered by <strong>Measure</strong> being called. For an element to participate in layout, each child element must have <strong>Measure</strong> called on it during the measure pass and the <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a> method called on it during the arrange pass. Calling these methods sets internal flags on the object and populates values (such as the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> property) that the system's layout logic needs when it builds the visual tree and renders the UI.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> return value is based on the panel's logic interpreting the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> or other size considerations for each of the child elements in <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> when <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> is called on them. What to do with <strong>DesiredSize</strong> values from children and how the <strong>MeasureOverride</strong> return value should use them is up to your own logic's interpretation. You don't typically add up the values without modification, because the input of <strong>MeasureOverride</strong> is often a fixed available size that's being suggested by the panel's parent. If you exceed that size, the panel itself might get clipped. You'd typically compare the total size of children to the panel's available size and make adjustments if necessary.</p>
+<h3 id="tips-and-guidance">Tips and guidance</h3>
+<ul>
+<li>Ideally, a custom panel should be suitable for being the first true visual in a UI composition, perhaps at a level immediately under <a href="/uwp/api/Windows.UI.Xaml.Controls.Page"><strong>Page</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.UserControl"><strong>UserControl</strong></a> or another element that is the XAML page root. In <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> implementations, don't routinely return the input <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> without examining the values. If the return <strong>Size</strong> has an <strong>Infinity</strong> value in it, this can throw exceptions in runtime layout logic. An <strong>Infinity</strong> value can come from the main app window, which is scrollable and therefore doesn't have a maximum height. Other scrollable content might have the same behavior.</li>
+<li>Another common mistake in <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> implementations is to return a new default <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> (values for height and width are 0). You might start with that value, and it might even be the correct value if your panel determines that none of the children should be rendered. But, a default <strong>Size</strong> results in your panel not being sized correctly by its host. It requests no space in the UI, and therefore gets no space and doesn't render. All your panel code otherwise might be functioning fine, but you still won't see your panel or contents thereof if it's being composed with zero height, zero width.</li>
+<li>Within the overrides, avoid the temptation to cast child elements to <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> and use properties that are calculated as a result of layout, particularly <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualwidth"><strong>ActualWidth</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight"><strong>ActualHeight</strong></a>. For most common scenarios, you can base the logic on the child's <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> value and you won't need any of the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a> related properties of a child element. For specialized cases, where you know the type of element and have additional information, for example the natural size of an image file, you can use your element's specialized information because it's not a value that is actively being altered by layout systems. Including layout-calculated properties as part of layout logic substantially increases the risk of defining an unintentional layout loop. These loops cause a condition where a valid layout can't be created and the system can throw a <a href="/dotnet/api/windows.ui.xaml.layoutcycleexception?view=dotnet-uwp-10.0&amp;preserve-view=true"><strong>LayoutCycleException</strong></a> if the loop is not recoverable.</li>
+<li>Panels typically divide their available space between multiple child elements, although exactly how space is divided varies. For example, <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> implements layout logic that uses its <a href="/uwp/api/Windows.UI.Xaml.Controls.RowDefinition"><strong>RowDefinition</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition"><strong>ColumnDefinition</strong></a> values to divide the space into the <strong>Grid</strong> cells, supporting both star-sizing and pixel values. If they're pixel values, the size available for each child is already known, so that's what is passed as input size for a grid-style <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a>.</li>
+<li>Panels themselves can introduce reserved space for padding between items. If you do this, make sure to expose the measurements as a property that's distinct from <a href="/uwp/api/windows.ui.xaml.frameworkelement.margin"><strong>Margin</strong></a> or any <strong>Padding</strong> property.</li>
+<li>Elements might have values for their <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualwidth"><strong>ActualWidth</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight"><strong>ActualHeight</strong></a> properties based on a previous layout pass. If values change, app UI code can put handlers for <a href="/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated"><strong>LayoutUpdated</strong></a> on elements if there's special logic to run, but panel logic typically doesn't need to check for changes with event handling. The layout system is already making the determinations of when to re-run layout because a layout-relevant property changed value, and a panel's <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> or <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> are called automatically in the appropriate circumstances.</li>
+</ul>
+<h2 id="arrangeoverride"><strong>ArrangeOverride</strong></h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> method has a <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> return value that's used by the layout system when rendering the panel itself, when the <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a> method is called on the panel by its parent in layout. It's typical that the input <em>finalSize</em> and the <strong>ArrangeOverride</strong> returned <strong>Size</strong> are the same. If they aren't, that means the panel is attempting to make itself a different size than what the other participants in layout claim is available. The final size was based on having previously run the measure pass of layout through your panel code, so that's why returning a different size isn't typical: it means you are deliberately ignoring measure logic.</p>
+<p>Don't return a <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> with an <strong>Infinity</strong> component. Trying to use such a <strong>Size</strong> throws an exception from internal layout.</p>
+<p>All <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> implementations should loop through <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a>, and call the <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a> method on each child element. Like <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a>, <strong>Arrange</strong> doesn't have a return value. Unlike <strong>Measure</strong>, no calculated property gets set as a result (however, the element in question typically fires a <a href="/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated"><strong>LayoutUpdated</strong></a> event).</p>
+<p>Here's a very basic skeleton of an <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> method:</p>
+<pre><code class="lang-CSharp">protected override Size ArrangeOverride(Size finalSize)
+{
+    //loop through each Child, call Arrange on each
+    foreach (UIElement child in Children)
+    {
+        Point anchorPoint = new Point(); //TODO more logic for topleft corner placement in your panel
+       // for this child, and based on finalSize or other internal state of your panel
+        child.Arrange(new Rect(anchorPoint, child.DesiredSize)); //OR, set a different Size 
+    }
+    return finalSize; //OR, return a different Size, but that's rare
+}
+</code></pre>
+<p>The arrange pass of layout might happen without being preceded by a measure pass. However, this only happens when the layout system has determined no properties have changed that would have affected the previous measurements. For example, if an alignment changes, there's no need to re-measure that particular element because its <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> would not change when its alignment choice changes. On the other hand, if <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight"><strong>ActualHeight</strong></a> changes on any element in a layout, a new measure pass is needed. The layout system automatically detects true measure changes and invokes the measure pass again, and then runs another arrange pass.</p>
+<p>The input for <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a> takes a <a href="/uwp/api/Windows.Foundation.Rect"><strong>Rect</strong></a> value. The most common way to construct this <strong>Rect</strong> is to use the constructor that has a <a href="/uwp/api/Windows.Foundation.Point"><strong>Point</strong></a> input and a <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> input. The <strong>Point</strong> is the point where the top left corner of the bounding box for the element should be placed. The <strong>Size</strong> is the dimensions used to render that particular element. You often use the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> for that element as this <strong>Size</strong> value, because establishing the <strong>DesiredSize</strong> for all elements involved in layout was the purpose of the measure pass of layout. (The measure pass determines all-up sizing of the elements in an iterative way so that the layout system can optimize how elements are placed once it gets to the arrange pass.)</p>
+<p>What typically varies between <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> implementations is the logic by which the panel determines the <a href="/uwp/api/Windows.Foundation.Point"><strong>Point</strong></a> component of how it arranges each child. An absolute positioning panel such as <a href="/uwp/api/Windows.UI.Xaml.Controls.Canvas"><strong>Canvas</strong></a> uses the explicit placement info that it gets from each element through <a href="/uwp/api/windows.ui.xaml.controls.canvas.left"><strong>Canvas.Left</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.canvas.top"><strong>Canvas.Top</strong></a> values. A space-dividing panel such as <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> would have mathematical operations that divided the available space into cells and each cell would have an x-y value for where its content should be placed and arranged. An adaptive panel such as <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel"><strong>StackPanel</strong></a> might be expanding itself to fit content in its orientation dimension.</p>
+<p>There are still additional positioning influences on elements in layout, beyond what you directly control and pass to <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a>. These come from the internal native implementation of <strong>Arrange</strong> that's common to all <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> derived types and augmented by some other types such as text elements. For example, elements can have margin and alignment, and some can have padding. These properties often interact. For more info, see <a href="alignment-margin-padding.html">Alignment, margin, and padding</a>.</p>
+<h2 id="panels-and-controls">Panels and controls</h2>
+<p>Avoid putting functionality into a custom panel that should instead be built as a custom control. The role of a panel is to present any child element content that exists within it, as a function of layout that happens automatically. The panel might add decorations to content (similar to how a <a href="/uwp/api/Windows.UI.Xaml.Controls.Border"><strong>Border</strong></a> adds the border around the element it presents), or perform other layout-related adjustments like padding. But that's about as far as you should go when extending the visual tree output beyond reporting and using information from the children.</p>
+<p>If there's any interaction that's accessible to the user, you should write a custom control, not a panel. For example, a panel shouldn't add scrolling viewports to content it presents, even if the goal is to prevent clipping, because the scrollbars, thumbs and so on are interactive control parts. (Content might have scrollbars after all, but you should leave that up to the child's logic. Don't force it by adding scrolling as a layout operation.) You might create a control and also write a custom panel that plays an important role in that control's visual tree, when it comes to presenting content in that control. But the control and the panel should be distinct code objects.</p>
+<p>One reason the distinction between control and panel is important is because of Microsoft UI Automation and accessibility. Panels provide a visual layout behavior, not a logical behavior. How a UI element appears visually is not an aspect of UI that is typically important to accessibility scenarios. Accessibility is about exposing the parts of an app that are logically important to understanding a UI. When interaction is required, controls should expose the interaction possibilities to the UI Automation infrastructure. For more info, see <a href="../accessibility/custom-automation-peers.html">Custom automation peers</a>.</p>
+<h2 id="other-layout-api">Other layout API</h2>
+<p>There are some other APIs that are part of the layout system, but aren't declared by <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a>. You might use these in a panel implementation or in a custom control that uses panels.</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.updatelayout"><strong>UpdateLayout</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.invalidatemeasure"><strong>InvalidateMeasure</strong></a>, and <a href="/uwp/api/windows.ui.xaml.uielement.invalidatearrange"><strong>InvalidateArrange</strong></a> are methods that initiate a layout pass. <strong>InvalidateArrange</strong> might not trigger a measure pass, but the other two do. Never call these methods from within a layout method override, because they're almost sure to cause a layout loop. Control code doesn't typically need to call them either. Most aspects of layout are triggered automatically by detecting changes to the framework-defined layout properties such as <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a> and so on.</li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated"><strong>LayoutUpdated</strong></a> is an event that fires when some aspect of layout of the element has changed. This isn't specific to panels; the event is defined by <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a>.</li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.sizechanged"><strong>SizeChanged</strong></a> is an event that fires only after layout passes are finalized, and indicates that <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight"><strong>ActualHeight</strong></a> or <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualwidth"><strong>ActualWidth</strong></a> have changed as a result. This is another <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> event. There are cases where <a href="/uwp/api/windows.ui.xaml.frameworkelement.layoutupdated"><strong>LayoutUpdated</strong></a> fires, but <strong>SizeChanged</strong> does not. For example the internal contents might be rearranged, but the element's size didn't change.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>FrameworkElement.ArrangeOverride</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>FrameworkElement.MeasureOverride</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a></li>
+</ul>
+<p><strong>Concepts</strong></p>
+<ul>
+<li><a href="alignment-margin-padding.html">Alignment, margin, and padding</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/layout/custom-panels-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

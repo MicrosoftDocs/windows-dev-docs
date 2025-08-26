@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Menus and context menus </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Menus and context menus ">
+    
+    <meta name="description" content="Menus and context menus organize commands and save space by hiding those commands until the user needs them.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="menus-and-context-menus">Menus and context menus</h1>
+
+<p>Menus and context menus are similar in how they look and what they can contain. They both display an organized list of commands or options and save space by hiding until the user needs them. However there are differences between them, such as what you should use to create them and how they are accessed by a user.</p>
+<p><img src="images/contextmenu_rs2_icons.png" alt="Example of a typical context menu"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Menus and context menus are for organizing commands and saving space by hiding those commands until the user needs them. To display arbitrary content, such as a notification or confirmation request, use a <a href="dialogs-and-flyouts/index.html">dialog or a flyout</a>.</p>
+<p>If a particular command will be used frequently and you have the space available, consider placing it directly in its own element so that users don't have to go through a menu to get to it.</p>
+<h2 id="when-should-you-use-a-menu-or-a-context-menu">When should you use a menu or a context menu?</h2>
+<ul>
+<li>If the host element is a button or some other command element whose primary role is to present additional commands, use a menu.</li>
+<li>If the host element is some other type of element that has another primary purpose (such as presenting text or an image), use a context menu.</li>
+</ul>
+<p>If you want to add commands (such as Cut, Copy, and Paste) to a text or image element, use a context menu instead of a menu. In this scenario, the primary role of the text element is to present and edit text; additional commands (such as Cut, Copy, and Paste) are secondary and belong in a context menu.</p>
+<p><img src="images/context-menu-example.png" alt="Example of context menu in photo gallery"></p>
+<h2 id="context-menus">Context menus</h2>
+<p>Context menus have the following characteristics:</p>
+<ul>
+<li>Are attached to a single element and display secondary commands.</li>
+<li>Are invoked by right clicking (or an equivalent action, such as pressing and holding with your finger).</li>
+<li>Are associated with an element via its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout">ContextFlyout</a> property.</li>
+</ul>
+<p>In cases where your context menu will include common commands (such as Copy, Cut, Paste, Delete, Share, or text selection commands), use <a href="command-bar-flyout.html">command bar flyout</a> and group these common commands together as primary commands so that they will be shown as a single, horizontal row in the context menu.</p>
+<p>In cases where your context menu will not include common commands, either <a href="command-bar-flyout.html">command bar flyout</a> or <a href="menus.html">menu flyout</a> can be used to show a context menu. We recommend using CommandBarFlyout because it provides more functionality than MenuFlyout and, if desired, can achieve the same behavior and look of MenuFlyout by using only secondary commands.</p>
+<h2 id="menus">Menus</h2>
+<p>Menus have the following characteristics:</p>
+<ul>
+<li>Have a single entry point (a File menu at the top of the screen, for example) that is always displayed.</li>
+<li>Are usually attached to a button or a parent menu item.</li>
+<li>Are invoked by left-clicking (or an equivalent action, such as tapping with your finger).</li>
+<li>Are associated with an element via its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout">Flyout</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties">FlyoutBase.AttachedFlyout</a> properties, or grouped in a menu bar at the top of the app window.</li>
+</ul>
+<p>When the user invokes a command element (such as a button) whose primary role is to present additional commands, use <a href="menus.html">menu flyout</a> to host a single top-level menu to be shown inline as a flyout attached to the on-canvas UI element. Each MenuFlyout can host menu items and sub-menus. For apps that might need more organization or grouping, use a <a href="menus.html">menu bar</a> as a quick and simple way to show a set of multiple top-level menus in a horizontal row.</p>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The CommandBarFlyout and MenuBar controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for these controls exist in both the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.appbarbutton">AppBarButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbarseparator">AppBarSeparator class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbartogglebutton">AppBarToggleButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.commandbarflyout">CommandBarFlyout class</a>, <a href="/uwp/api/windows.ui.xaml.uielement.contextflyout">ContextFlyout property</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase#xaml-attached-properties">FlyoutBase.AttachedFlyout property</a>, <a href="/uwp/api/windows.ui.xaml.controls.menubar">MenuBar class</a>, <a href="/uwp/api/windows.ui.xaml.controls.menuflyout">MenuFlyout class</a>, <a href="/uwp/api/windows.ui.xaml.controls.textcommandbarflyout">TextCommandBarFlyout class</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout">CommandBarFlyout class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar">MenuBar class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout">TextCommandBarFlyout class</a></li>
+<li>Open the WinUI 2 Gallery app and see the <a href="winui2gallery:/item/MenuBar">MenuBar</a> or <a href="winui2gallery:/item/CommandBarFlyout">CommandBarFlyout</a> in action. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:CommandBarFlyout /&gt;
+&lt;muxc:MenuBar /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/commanding-basics.html">Command design basics for Windows apps</a></li>
+<li><a href="collection-commanding.html">Contextual commanding for collections and lists</a></li>
+<li><a href="menus.html">Menu flyout and menu bar</a></li>
+<li><a href="command-bar-flyout.html">Command bar flyout</a></li>
+<li><a href="command-bar.html">Command bar</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/menus-and-context-menus.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

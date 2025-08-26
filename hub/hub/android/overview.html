@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Android development on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Android development on Windows ">
+    
+    <meta name="description" content="A guide to help you get started developing for Android on Windows.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="overview-of-android-development-on-windows">Overview of Android development on Windows</h1>
+
+<p>A guide to help you set up your development environment on a Windows 10 or Windows 11 machine for developing Android apps. Android is a trademark of Google LLC. If you're a developer interested in using Windows operating system to build apps that work on Android devices and across other device platforms, this guide is for you.</p>
+<p>You can also learn about using Windows Subsystem for Android™️ to update and test your Android application so that it will run on a Windows 11 device using the Amazon Appstore. <a href="./wsa/index.md">Learn more</a>.</p>
+<h2 id="windows-as-your-development-environment">Windows as your development environment</h2>
+<p>There are multiple paths for developing an Android device app using the Windows operating system. These paths fall into three main types: <strong><a href="#native-android">Native Android development</a></strong>, <strong><a href="#cross-platform">Cross-platform development</a></strong>, and <strong><a href="#game-development">Android game development</a></strong>. This overview will help you decide which development path to follow for developing an Android app and then provide <a href="#next-steps">next steps</a> to help you get started using Windows to develop with:</p>
+<ul>
+<li><a href="native-android.html">Native Android</a></li>
+<li><a href="/dotnet/maui/what-is-maui">.NET MAUI</a></li>
+<li><a href="../dev-environment/javascript/react-native-for-android.html">React Native</a></li>
+<li><a href="pwa.html">PWA with Cordova or Ionic</a></li>
+<li><a href="native-android.html#use-c-or-c-for-android-game-development">C/C++ for game development</a></li>
+</ul>
+<p>*If you have been using Xamarin for cross-platform apps, see <a href="/dotnet/maui/migration/">Migrate from Xamarin to .NET MAUI</a>.</p>
+<p>In addition, this guide will provide tips on using Windows to:</p>
+<ul>
+<li><a href="emulator.html">Test on an Android device or emulator</a></li>
+<li><a href="/dual-screen/android/">Develop dual-screen apps for Android and get the Surface Duo device SDK</a></li>
+</ul>
+<h3 id="native-android">Native Android</h3>
+<p><a href="native-android.html">Native Android development on Windows</a> means that your app is targeting only Android (not iOS or Windows devices). You can use <a href="https://developer.android.com/studio/install#windows">Android Studio</a> or <a href="https://visualstudio.microsoft.com/vs/android/">Visual Studio</a> to develop within the ecosystem designed specifically for the Android operating system. Performance will be optimized for Android devices, the user-interface look and feel will be consistent with other native apps on the device, and any features or capabilities of the user's device will be straight-forward to access and utilize. Developing your app in a native format will help it to just 'feel right' because it follows all of the interaction patterns and user experience standards established specifically for Android devices.</p>
+<h3 id="cross-platform">Cross-platform</h3>
+<p>Cross-platform frameworks provide a single codebase that can (mostly) be shared between Android, iOS, and Windows devices. Using a cross-platform framework can help your app to maintain the same look, feel, and experience across device platforms, as well as benefiting from the automatic rollout of updates and fixes. Instead of needing to understand a variety of device-specific code languages, the app is developed in a shared codebase, typically in one language.</p>
+<p>While cross-platform frameworks aim to look and feel as close to native apps as possible, they will never be as seamlessly integrated as a natively developed app and may suffer from reduced speed and degraded performance. Additionally, the tools used to build cross-platform apps may not have all of the features offered by each different device platform, potentially requiring workarounds.</p>
+<p>A codebase is typically made up of <strong>UI code</strong>, for creating the user interface like pages, buttons controls, labels, lists, etc., and <strong>logic code</strong>, for calling web services, accessing a database, invoking hardware capabilities and managing state. On average, 90% of  this can be reused, though there is typically some need to customize code for each device platform. This generalization largely depends on the type of app you're building, but provides a bit of context that hopefully will help with your decision-making.</p>
+<h3 id="choosing-a-cross-platform-framework">Choosing a cross-platform framework</h3>
+<p><a href="/dotnet/maui/">.NET MAUI</a></p>
+<ul>
+<li>A cross-platform framework for creating native mobile and desktop apps with C# and XAML.</li>
+<li>Develop apps that can run on Android, iOS, macOS, and Windows from a single shared code-base, with deep access to every aspect of each native platform from a single unified API that enables a write-once, run-anywhere dev experience.</li>
+<li>Share UI layout and design across platforms.</li>
+<li>An open-source evolution of Xamarin.Forms, extended from mobile to desktop scenarios, with UI controls rebuilt for performance and extensibility.</li>
+<li><a href="/dotnet/maui/migration/android-projects">Migrate Xamarin.Android projects to .NET MAUI</a></li>
+</ul>
+<p><a href="../dev-environment/javascript/react-native-for-android.html">React Native</a></p>
+<ul>
+<li>UI code: JavaScript</li>
+<li>Logic code: JavaScript</li>
+<li>The goal of React Native isn't to write the code once and run it on any platform, rather to learn-once (the React way) and write-anywhere.</li>
+<li>The community has added tools such as Expo and Create React Native App to help those wanting to build apps without using Xcode or Android Studio.</li>
+<li>Similar to .NET MAUI (C#), React Native (JavaScript) calls native UI elements (without the need for writing Java/Kotlin or Swift).</li>
+</ul>
+<p><a href="pwa.html">Progressive Web Apps (PWAs)</a></p>
+<ul>
+<li>UI code: HTML, CSS, JavaScript</li>
+<li>Logic code: JavaScript</li>
+<li>PWAs are web apps built with standard patterns to allow them to take advantage of both web and native app features. They can be built without a framework, but a couple of popular frameworks to consider are <a href="https://ionicframework.com/docs/intro">Ionic</a> and <a href="https://cordova.apache.org">Apache Cordova</a>.</li>
+<li>PWAs can be installed on a device (Android, iOS, or Windows) and can work offline thanks to the incorporation of a service-worker.</li>
+<li>PWAs can be distributed and installed without an app store using only a web URL. The Microsoft Store and Google Play Store allow PWAs to be listed, the Apple Store currently does not, though they can still be installed on any iOS device running 12.2 or later.</li>
+<li>To learn more, check out this <a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Introduction">introduction to PWAs</a> on MDN.</li>
+</ul>
+<h3 id="game-development">Game development</h3>
+<p>Game development for Android is often unique from developing a standard Android app since games typically use custom rendering logic, often written in OpenGL or Vulkan. For this reason, and because of the many C libraries available that support game development, it's common for developers to use <a href="/cpp/cross-platform/">C/C++ with Visual Studio</a>, along with the Android <a href="/cpp/cross-platform/create-an-android-native-activity-app">Native Development Kit (NDK)</a>, to create games for Android. <a href="native-android.html#use-c-or-c-for-android-game-development">Get started with C/C++ for game development</a>.</p>
+<p>For more guidance on developing Android games, see the Android Developer site: <a href="https://developer.android.com/games/guides/basics">Game development basics</a>. You will find guidance on using a game engine (like Unity, Unreal, Defold, Godot), as well as using IDEs (like Android Studio or Visual Studio).</p>
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li><a href="native-android.html">Get started with native Android development on Windows</a></li>
+<li><a href="./wsa/index.md">Get started with Windows Subsystem for Android</a></li>
+<li><a href="/dotnet/maui">Get started developing for Android using .NET MAUI</a></li>
+<li><a href="../dev-environment/javascript/react-native-for-android.html">Get started developing for Android using React Native</a></li>
+<li><a href="pwa.html">Get started developing a PWA for Android</a></li>
+<li><a href="/dual-screen/android/">Develop Dual-screen apps for Android and get the Surface Duo device SDK</a></li>
+<li><a href="emulator.html#enable-virtualization-support">Enable Virtualization support to improve emulator performance</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/android/overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

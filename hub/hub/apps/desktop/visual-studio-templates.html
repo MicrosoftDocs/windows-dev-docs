@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Visual Studio project and item templates for Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Visual Studio project and item templates for Windows apps ">
+    
+    <meta name="description" content="This article provides an overview of Visual Studio project and item templates for Windows apps.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="visual-studio-project-and-item-templates-for-windows-apps">Visual Studio project and item templates for Windows apps</h1>
+
+<p>Visual Studio 2019 (and later) provides many project and item templates that help you build apps for Windows 11 and Windows 10 devices by using C# or C++. This topic describes the templates and helps you choose one for your scenario.</p>
+<ul>
+<li>Project templates include project files, code files, and other assets that are configured to build an app or a component that can be loaded and used by an app.</li>
+<li>Item templates are project files that contain commonly used code and XAML that can be added to a project to reduce development time. For example, you can use an item template to add a new window, page, or control to your app.</li>
+</ul>
+<p>For more information about installing and configuring Visual Studio to get access to these templates, see <a href="../get-started/start-here.html">Start developing Windows apps</a>.</p>
+<h2 id="winui-templates">WinUI templates</h2>
+<p><a href="../winui/index.html">WinUI</a> is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. <a href="../winui/index.html">WinUI 3</a> is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.</p>
+<p>WinUI 3 is available as part of <a href="../windows-app-sdk/index.html">the Windows App SDK</a>. It includes a VSIX package for Visual Studio 2019 (and later) that provides project and item templates that help you get started building apps with a WinUI-based interface.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs">Template Studio for WinUI (C#)</a> is a Visual Studio 2022 extension that accelerates the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.</p>
+<p>For more information about the available WinUI project and item templates, see <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>.</p>
+<h2 id="uwp-templates">UWP templates</h2>
+<p>Visual Studio provides a variety of project templates for building UWP apps with C# or C++. To use these project templates, you must include the <strong>Universal Windows Platform development</strong> workload when you install Visual Studio. For the C++ project templates, you must also include the <strong>C++ (v142) Universal Windows Platforms tools</strong> optional component for the <strong>Universal Windows Platform development</strong> workload.</p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForUWP">Template Studio for UWP</a> is a Visual Studio 2022 extension that accelerates the creation of new .NET UWP apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.</p>
+<h3 id="project-templates-for-c-and-uwp">Project templates for C# and UWP</h3>
+<p>To access the UWP C# project templates when you create a new project in Visual Studio, filter the language to <strong>C#</strong>, the platform to <strong>Windows</strong>, and the project type to <strong>UWP</strong>.</p>
+<p><img src="images/uwp-projects-csharp.png" alt="UWP C# project templates"></p>
+<p>You can use these project templates to create C# UWP apps.</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank App (Universal Windows)</td>
+<td>Creates a UWP app. The generated project includes a basic page that derives from the <a href="/uwp/api/windows.ui.xaml.controls.page">Windows.UI.Xaml.Controls.Page</a> class that you can use to start building your UI.</td>
+</tr>
+<tr>
+<td>Unit Test App (Universal Windows)</td>
+<td>Creates a unit test project in C# for a UWP app. For more information, see <a href="/visualstudio/test/unit-testing-visual-csharp-code-in-a-store-app">Unit test C# code</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>You can use these project templates to build pieces of a C# UWP app.</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class Library (Universal Windows)</td>
+<td>Creates a managed class library (DLL) in C# that can be used by other UWP apps written in managed code.</td>
+</tr>
+<tr>
+<td>Windows Runtime Component (Universal Windows)</td>
+<td>Creates a <a href="/windows/uwp/winrt-components/">Windows Runtime component</a> in C# that can be consumed by any UWP app, regardless of the programming language in which the app is written.</td>
+</tr>
+<tr>
+<td>Optional Code Package (Universal Windows)</td>
+<td>Creates an optional package with executable C# code that can be loaded by an app. For more information, see <a href="/windows/msix/package/optional-packages-with-executable-code">Optional packages with executable code</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="project-templates-for-c-and-uwp-1">Project templates for C++ and UWP</h3>
+<p>There are two different technologies you can use to build C++ UWP apps:</p>
+<ul>
+<li>The recommended technology is <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>. This is a C++ language projection that is implemented entirely in header files, and designed to provide you with first-class access to the modern WinRT API.</li>
+<li>Alternatively, you can use the older <a href="/cpp/cppcx/visual-c-language-reference-c-cx">C++/CX</a> set of extensions. C++/CX is still supported, but we recommend that you use C++/WinRT instead.</li>
+</ul>
+<p>To access the UWP C++ project templates when you create a new project in Visual Studio, filter the language to <strong>C++</strong>, the platform to <strong>Windows</strong>, and the project type to <strong>UWP</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default, the <strong>Universal Windows Platform development</strong> workload in Visual Studio only provides access to the C++/CX project templates. To access the C++/WinRT project templates, you must install the <a href="/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package">C++/WinRT VSIX</a> package.</p>
+</div>
+<p><img src="images/uwp-projects-cpp.png" alt="UWP C++ project templates"></p>
+<p>You can use these project templates to create C++ UWP apps.</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank App (C++/WinRT)</td>
+<td>Creates a C++/WinRT UWP app with a XAML user interface. The generated project includes a basic page that derives from the <a href="/uwp/api/windows.ui.xaml.controls.page">Windows.UI.Xaml.Controls.Page</a> class that you can use to start building your UI.</td>
+</tr>
+<tr>
+<td>Core App (C++/WinRT)</td>
+<td>Creates a C++/WinRT UWP app that uses <a href="/uwp/api/Windows.ApplicationModel.Core.CoreApplication">CoreApplication</a> to integrate with a variety of UI frameworks instead of a XAML user interface. For a walkthrough that demonstrates how to use this project template to create a simple game that uses DirectX, see <a href="/windows/uwp/gaming/tutorial--create-your-first-uwp-directx-game">Create a simple UWP game with DirectX</a>.</td>
+</tr>
+<tr>
+<td>Blank App (Universal Windows - C++/CX)</td>
+<td>Creates a C++/WinRT UWP app with a XAML user interface. The generated project includes a basic page that derives from the <a href="/uwp/api/windows.ui.xaml.controls.page">Windows.UI.Xaml.Controls.Page</a> class in the WinUI library that you can use to start building your UI.</td>
+</tr>
+<tr>
+<td>DirectX 11 and XAML App (Universal Windows - C++/CX)</td>
+<td>Creates a UWP app that uses DirectX 11 and a <strong>SwapChainPanel</strong> so you can use XAML UI controls. For more information, see <a href="/windows/uwp/gaming/user-interface">DirectX game project templates</a>.</td>
+</tr>
+<tr>
+<td>DirectX 11 App (Universal Windows - C++/CX)</td>
+<td>Creates a UWP app that uses DirectX 11. For more information, see <a href="/windows/uwp/gaming/user-interface">DirectX game project templates</a>.</td>
+</tr>
+<tr>
+<td>DirectX 12 App (Universal Windows - C++/CX)</td>
+<td>Creates a UWP app that uses DirectX 12. For more information, see <a href="/windows/uwp/gaming/user-interface">DirectX game project templates</a>.</td>
+</tr>
+<tr>
+<td>Unit Test App (Universal Windows - C++/CX)</td>
+<td>Creates a unit test project in C++/CX for a UWP app. For more information, see <a href="/visualstudio/test/unit-testing-a-visual-cpp-dll-for-store-apps">How to test a C++ UWP DLL</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>You can use these project templates to build pieces of a C++ UWP app.</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Runtime Component (C++/WinRT)</td>
+<td>Creates a <a href="/windows/uwp/winrt-components/">Windows Runtime component</a> in C++/WinRT that can be consumed by any UWP app, regardless of the programming language in which the app is written.</td>
+</tr>
+<tr>
+<td>Windows Runtime Component (Universal Windows)</td>
+<td>Creates a <a href="/windows/uwp/winrt-components/">Windows Runtime component</a> in C++/CX that can be consumed by any UWP app, regardless of the programming language in which the app is written.</td>
+</tr>
+<tr>
+<td>DLL (Universal Windows)</td>
+<td>A project for creating a dynamic-link library (DLL) in C++/CX that can be used in a UWP app. For more information, see <a href="/cpp/cppcx/dlls-c-cx">DLLs (C++/CX)</a>.</td>
+</tr>
+<tr>
+<td>Static Library (Universal Windows)</td>
+<td>A project for creating a static library (LIB) in C++/CX that can be used in a UWP app. For more information, see <a href="/cpp/cppcx/static-libraries-c-cx">Static libraries (C++/CX)</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c-desktop-win32-templates">C++ desktop (Win32) templates</h2>
+<p>Visual Studio provides a variety of project templates for building desktop Windows apps with native C++ and direct access to the Win32 API. To use these project templates, you must include the <strong>Desktop development with C++</strong> workload when you install Visual Studio. This workload includes project templates for building desktop apps, console apps, and libraries.</p>
+<p>The recommended technology is <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>. This is a C++ language projection that is implemented entirely in header files, and designed to provide you with first-class access to the modern WinRT API.</p>
+<h3 id="project-templates-for-c-desktop-apps">Project templates for C++ desktop apps</h3>
+<p>To access the C++ project templates for desktop apps when you create a new project in Visual Studio, filter the language to <strong>C++</strong>, the platform to <strong>Windows</strong>, and the project type to <strong>Desktop</strong>.</p>
+<p><img src="images/desktop-app-projects-cpp.png" alt="Native C++ app project templates"></p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Desktop Application (C++/WinRT)</td>
+<td>Creates a <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a> client application for Windows desktop. For more information, see <a href="/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#windows-desktop-application-cwinrt">Windows Desktop Application (C++/WinRT)</a>. This project template requires the <a href="/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package">C++/WinRT VSIX</a>.</td>
+</tr>
+<tr>
+<td>Windows Desktop Application</td>
+<td>Creates a classic Windows desktop app with C++. For more information, see <a href="/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp">Walkthrough: Create a traditional Windows Desktop application</a>.</td>
+</tr>
+<tr>
+<td>Windows Desktop Wizard</td>
+<td>Provides a step-by-step wizard you can use to create one of the following types of projects: a classic Windows desktop app, a console app, a dynamic-link library (DLL), or a static library. For more information, see <a href="/cpp/windows/windows-desktop-wizard">Windows Desktop Wizard</a> and <a href="/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp">Walkthrough: Create a traditional Windows Desktop application</a>.</td>
+</tr>
+<tr>
+<td>Windows Application Packaging Project</td>
+<td>Creates a project that you can use to build a desktop app into an <a href="/windows/msix/overview">MSIX package</a>. This provides a modern deployment experience, the ability to integrate with Windows features via package extensions, and much more. For more information, see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="project-templates-for-c-console-apps">Project templates for C++ console apps</h3>
+<p>To access the C++ project templates for console apps, filter the language to <strong>C++</strong>, the platform to <strong>Windows</strong>, and the project type to <strong>Console</strong>.</p>
+<p><img src="images/desktop-console-projects-cpp.png" alt="Native C++ console project templates"></p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Console Application (C++/WinRT)</td>
+<td>Creates a <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a> console app without a user interface. For more information, see <a href="/windows/uwp/cpp-and-winrt-apis/get-started#a-cwinrt-quick-start">C++/WinRT quick-start</a>. This project template requires the <a href="/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package">C++/WinRT VSIX</a>.</td>
+</tr>
+<tr>
+<td>Console App</td>
+<td>Creates a console app without a user interface. For more information, see <a href="/cpp/windows/walkthrough-creating-a-standard-cpp-program-cpp">Walkthrough: Creating a Standard C++ Program</a>.</td>
+</tr>
+<tr>
+<td>Empty Project</td>
+<td>An empty project for creating an application, library, or DLL. You must add any code or resources required.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="project-templates-for-c-libraries">Project templates for C++ libraries</h3>
+<p>To access the C++ project templates for libraries, filter the language to <strong>C++</strong>, the platform to <strong>Windows</strong>, and the project type to <strong>Library</strong>.</p>
+<p><img src="images/desktop-library-projects-cpp.png" alt="Native C++ library project templates"></p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dynamic-Link Library (DLL)</td>
+<td>A project for creating a dynamic-link library (DLL). For more information, see <a href="/cpp/build/walkthrough-creating-and-using-a-dynamic-link-library-cpp">Walkthrough: Creating and using a dynamic link library</a>.</td>
+</tr>
+<tr>
+<td>Static Library</td>
+<td>A project for creating a static library (LIB). For more information, see <a href="/cpp/build/walkthrough-creating-and-using-a-static-library-cpp">Walkthrough: Create and use a static library</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="item-templates-for-c-desktop-apps">Item templates for C++ desktop apps</h3>
+<p>The C++ project templates for include many item templates that you can use to perform tasks like adding new files and resources to your project. For a comprehensive list, see <a href="/cpp/build/reference/using-visual-cpp-add-new-item-templates">Using Visual C++ Add New Item Templates</a>.</p>
+<h2 id="net-templates">.NET templates</h2>
+<p>Visual Studio provides a variety of project templates for building desktop Windows apps that use .NET and C#. To use these project templates, you must include the <strong>.NET desktop development</strong> workload when you install Visual Studio.</p>
+<p>To access the .NET C# project templates when you create a new project in Visual Studio, filter the language to <strong>C#</strong>, the platform to <strong>Windows</strong>, and the project type to <strong>Desktop</strong>.</p>
+<p><img src="images/dotnet-projects-csharp.png" alt=".NET C# project templates"></p>
+<p>You can use these project templates to create apps using C# and .NET.</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WPF Application</td>
+<td>Creates a <a href="/dotnet/framework/wpf/">WPF</a> app that targets <a href="/dotnet/core/whats-new/dotnet-6">.NET 6</a> (or later). For a walkthrough of this project template, see <a href="/visualstudio/get-started/csharp/tutorial-wpf">Create a WPF application</a>.</td>
+</tr>
+<tr>
+<td>WPF App (.NET Framework)</td>
+<td>Creates a <a href="/dotnet/framework/wpf/">WPF</a> app that targets the <a href="/dotnet/framework/">.NET Framework</a>. For a walkthrough of this project template, see <a href="/dotnet/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application">Tutorial: Create your first WPF application</a>.</td>
+</tr>
+<tr>
+<td>Windows Forms App</td>
+<td>Creates a <a href="/dotnet/framework/winforms/">Windows Forms</a> app that targets <a href="/dotnet/core/whats-new/dotnet-6">.NET 6</a> (or later).</td>
+</tr>
+<tr>
+<td>Windows Forms App (.NET Framework)</td>
+<td>Creates a <a href="/dotnet/framework/winforms/">Windows Forms</a> app that targets the <a href="/dotnet/framework/">.NET Framework</a>. For a walkthrough of this project template, see <a href="/visualstudio/ide/create-csharp-winform-visual-studio">Create a Windows Forms app in Visual Studio with C#</a>.</td>
+</tr>
+<tr>
+<td>Windows Application Packaging Project</td>
+<td>Creates a project that you can use to build a WPF or Windows Forms app into an <a href="/windows/msix/overview">MSIX package</a>. This provides a modern deployment experience, the ability to integrate with Windows features via package extensions, and much more. For more information, see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a>.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/visual-studio-templates.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

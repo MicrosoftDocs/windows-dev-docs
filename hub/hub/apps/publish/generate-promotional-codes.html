@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Generate promotional codes </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Generate promotional codes ">
+    
+    <meta name="description" content="You can generate promotional codes for an app or add-on that you have published in the Microsoft Store.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="generate-promotional-codes">Generate promotional codes</h1>
+
+<p><a href="https://partner.microsoft.com/dashboard">Partner Center</a> lets you generate promotional codes for an app or add-on that you have published in the Microsoft Store. Promotional codes are an easy way to give influential users free access to your app or add-on. You might also use promotional codes to address customer service scenarios by giving users free access to your app or add-on, or for <a href="beta-testing-and-targeted-distribution.html">beta testing</a>.</p>
+<p>Each promotional code has a corresponding unique redeemable URL that a customer can click in order to redeem the code and install your app or add-on from the Microsoft Store.  Note that your app must pass the final publishing phase of the <a href="publish-your-app/msix/app-certification-process.html">app certification process</a> before customers can redeem a promotional code to install it.</p>
+<p>You can generate single-use codes (and distribute one to each customer), or you can choose to generate a code that can be used multiple times by a specified number of customers.</p>
+<h2 id="promotional-code-policies">Promotional code policies</h2>
+<p>Be aware of the following policies for promotional codes:</p>
+<ul>
+<li>You can generate promotional codes for any app or add-on (with the exception of subscription add-ons) that you have published to the Microsoft Store. Customers can redeem the codes on any version of Windows that is supported by your app or add-on.</li>
+<li>For games:
+<ul>
+<li>You can generate up to 5000 promotional codes per game.</li>
+<li>Promotional codes generated for games never expire.</li>
+</ul>
+</li>
+<li>For all other types of apps or add-ons:
+<ul>
+<li>In any six-month period, you may generate up to 1600 single-use promotional codes, or any number of multiple-use codes such that the total allowed redemptions does not exceed 1600.</li>
+<li>The 6 month period begins when you generate the first promotional code and lasts for 6 months regardless of whether or not you set an earlier expiration date on the codes.</li>
+<li>Any codes created during an existing 6 month period will count toward the number of codes generated within that period, even if they will expire after the period ends. For example, if you generate a code on the last day of the six-month window, it will be will be still be valid for a full 6 months from its creation.</li>
+</ul>
+</li>
+<li>You must follow the requirements defined in the <a href="/legal/windows/agreements/app-developer-agreement">App Developer Agreement</a>, including section <strong>3k. Promotional Codes</strong>.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can use promotional codes even if your app is unavailable to customers (that is, if you have selected <strong>Make this product available but not discoverable in the Store</strong> with the <strong>Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device</strong> option in your submission's <a href="publish-your-app/msix/visibility-options.html#discoverability">Discoverability</a> section). With this option, customers must be on Windows 10 or Windows 11 (including Xbox) in order to acquire your product with a promotional code.</p>
+</div>
+<h2 id="order-promotional-codes">Order promotional codes</h2>
+<p>To order promotional codes for an app or add-on:</p>
+<ol>
+<li><p>In the left navigation menu of <a href="https://partner.microsoft.com/dashboard">Partner Center</a>, expand <strong>Attract</strong> and then select <strong>Promo codes</strong>.</p>
+</li>
+<li><p>On the <strong>Promotional codes</strong> page, click <strong>Order codes</strong>.</p>
+</li>
+<li><p>On the <strong>New promotional codes order</strong> page, enter the following:</p>
+<ul>
+<li>Select the app or add-on for which you want to generate codes. (Note that you can't generate promotional codes for subscription add-ons.)</li>
+<li>Specify a name for the order. You can use this name to differentiate between different orders of codes when reviewing your promotional code usage data.</li>
+<li>Select the order type. You can choose to generate a set of promo codes that can each be used once, or you can choose to generate one promo code that can be used multiple times.</li>
+<li>Specify the number of codes to order (if generating a set of codes) or the number of times the code can be redeemed (if generating one code to be used multiple times).</li>
+<li>Specify when the promotional codes should become active. To choose a specific start date and time, clear the <strong>Codes are active immediately</strong> check box. Otherwise, the codes will become active right away (although your product must have completed the publishing process in order for a customer to use the code).</li>
+<li>Specify when the promotional codes should expire. To choose a specific expire date and time earlier than 6 months, clear the <strong>Codes expire after 6 months</strong> check box.</li>
+</ul>
+</li>
+<li><p>Click <strong>Order codes</strong>. You'll then be returned to the <strong>Promotional codes</strong> page, where you'll be able to see your new order in the summary table of promotional code orders for that app.</p>
+</li>
+</ol>
+<h2 id="download-and-distribute-promotional-codes">Download and distribute promotional codes</h2>
+<p>To download a fulfilled promotional code order and distribute the codes to customers:</p>
+<ol>
+<li><p>In the left navigation menu of <a href="https://partner.microsoft.com/dashboard">Partner Center</a>, expand <strong>Attract</strong> and then select <strong>Promo codes.</strong></p>
+</li>
+<li><p>Click the <strong>Download</strong> link for the promotional code order, then save the generated file to your computer. This file contains information about your promotional codes order in tab-separated value (.tsv) format.</p>
+</li>
+<li><p>Open the .tsv file in the editor of your choice. For the best experience, open the .tsv file in an application that can display the data in a tabular structure, such as Microsoft Excel. However, you can open the file in any text editor.</p>
+<p>The file contains the following columns of data for each code:</p>
+<ul>
+<li><strong>Product name</strong>: The name of the app or add-on that the code is associated with.</li>
+<li><strong>Order name</strong>: The name of the order in which this code was generated.</li>
+<li><strong>Promotional code</strong>: The code itself. This is a 5x5 string of alphanumeric characters separated by hyphens. For example: DM3GY-M2GYM-6YMW6-4QHHT-23W2Z</li>
+<li><strong>Redeemable URL</strong>: The URL that a customer can use to redeem the code and install your app or add-on. The URL has the following format: <code>https://go.microsoft.com/fwlink/?LinkId=532540&amp;mstoken=&lt;promotional_code&gt;</code></li>
+<li><strong>Start date</strong>: The date this code became active.</li>
+<li><strong>Expire date</strong>: The date this code expires.</li>
+<li><strong>Code ID</strong>: A unique ID for this code.</li>
+<li><strong>Order ID</strong>: A unique ID for the order in which this code was generated.</li>
+<li><strong>Given to</strong>: An empty field that you can use to keep track of which customer you gave the code to.</li>
+<li><strong>Available</strong>: The number of times the code is still available to redeem (at the time the file was generated).</li>
+<li><strong>Redeemed</strong>: The number of times that the code has been redeemed (at the time the file was generated).</li>
+</ul>
+</li>
+<li><p>Distribute the redeemable URLs to your customers via any communication format you prefer (for example targeted notifications, email, SMS messages, or printed cards). We recommend that your communication includes the following:</p>
+<ul>
+<li>An explanation of which app or add-on the promotional code is for, and optionally a description of why the customer is receiving the code.</li>
+<li>The redeemable URL for the code.</li>
+<li>Instructions that guide the customer to visit the redeemable URL, log in using their Microsoft account, and follow the instructions to download and install your app.</li>
+</ul>
+</li>
+</ol>
+<h2 id="code-redemption-user-experience">Code redemption user experience</h2>
+<p>After you distribute a promotional code (or its redeemable URL) to a customer, they can click the URL to get the product for free. Clicking the redeemable URL will launch an authenticated <strong>Redeem your code</strong> page at <code>https://account.microsoft.com/billing/redeem</code>. This page includes a description of the app the user is about to redeem. If the customer is not logged in with their Microsoft account, they may be prompted to do so. Your customer can also visit <code>https://account.microsoft.com/billing/redeem</code> and enter the code directly.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We recommend that you don't distribute promotional codes to your customers until your product has completed the publishing process (even if you have selected <strong>Make this product available but not discoverable in the Store</strong>). Customers will see an error if they try to use a promotional code for a product which hasn't been published yet.</p>
+</div>
+<p>After the customer clicks <strong>Redeem</strong>, the Microsoft Store will open to the overview page for the app (if they are on a Windows 10 or Windows 11 device), where they can click <strong>Install</strong> to download and install the app for free. If the customer is on a computer or device that does not have the Microsoft Store installed, the link will launch the Microsoft Store web page for the app. The code will be applied to the customer's Microsoft account, so they can later download the app on a Windows device (that is associated with the same Microsoft account) for free.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In some cases, a customer may see a <strong>Buy</strong> button instead of <strong>Install</strong>, even though the app was successfully redeemed via the promotional code. The customer can click <strong>Buy</strong> to install the app for no charge.</p>
+</div>
+<h2 id="review-your-promotional-codes">Review your promotional codes</h2>
+<p>To review a detailed summary of promotional code orders for your apps and add-ons, navigate to the <strong>Promotional codes</strong> page (in the left navigation menu of Partner Center, expand <strong>Attract</strong> and then select <strong>Promo codes</strong>). You can review the following details for all of your current and inactive promotional codes:</p>
+<ul>
+<li>Order name</li>
+<li>App or add-on</li>
+<li>Start date</li>
+<li>Expire date</li>
+<li>Available</li>
+<li>Redeemed</li>
+</ul>
+<p>You can also <a href="#download-and-distribute-promotional-codes">download</a> an order from this table.</p>
+<h2 id="distribute-promotional-codes-for-transitioning-users-from-desktop-to-packaged-app">Distribute promotional codes for transitioning users from desktop to packaged app</h2>
+<p>When you convert your current Win32 application into an MSIX package for Store distribution, you have the option to distribute promotional codes via email to your current users. This enables them to seamlessly migrate to your packaged app while retaining access to the features obtained through their initial purchase.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/generate-promotional-codes.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

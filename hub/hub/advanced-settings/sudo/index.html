@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Sudo for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Sudo for Windows ">
+    
+    <meta name="description" content="Learn how to use sudo in your command line to run elevated commands (as an administrator) directly from an unelevated console session on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sudo-for-windows">Sudo for Windows</h1>
+
+<p><strong>Sudo for Windows</strong> is a new way for users to run elevated commands (as an administrator) directly from an unelevated console session on Windows.</p>
+<p><a href="https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/">Read the announcement</a>, which includes a demo video and deep-dive into how Sudo for Windows works.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The Sudo for Windows command is available in <a href="https://support.microsoft.com/topic/windows-11-version-24h2-update-history-0929c747-1815-4543-8461-0160d16f15e5">Windows 11, version 24H2</a> or higher. (<a href="ms-settings:windowsupdate">Check for Windows updates</a>).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Sudo for Windows is not yet available for Windows 10, but may be in the future.</p>
+</div>
+<h2 id="how-to-enable-sudo-for-windows">How to enable Sudo for Windows</h2>
+<p>To enable Sudo for Windows, open <code>Settings &gt; System &gt; For Developers</code> and set <strong>Enable sudo</strong> to <strong>On</strong>.</p>
+<p><img src="../../images/sudo-enable.png" alt="Enable Sudo"></p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Sudo for Windows can be used as a potential escalation of privilege vector when enabled in certain configurations. You should make sure to be aware of the <a href="#security-considerations">security considerations</a> when enabling the sudo command on your machine.</p>
+</div>
+<h2 id="how-to-configure-sudo-for-windows">How to configure Sudo for Windows</h2>
+<p>Sudo for Windows currently supports three different configuration options. The configuration can be set from the <code>Settings &gt; For Developers</code> menu or programmatically, using the command line. The configuration options include:</p>
+<ul>
+<li><p><strong>In a new window</strong> (<code>forceNewWindow</code>): The <code>forceNewWindow</code> configuration option is the default configuration option for Sudo for Windows. Use <code>sudo</code> in this configuration to run the command in a new window. This is similar to the behavior of the <code>runas /user:admin</code> command.</p>
+</li>
+<li><p><strong>Input closed</strong> (<code>disableInput</code>): The <code>disableInput</code> configuration option will run the elevated process in the current window, but with the input handle closed. This means that the elevated process will not be able to receive input from the current console window. This is useful for scenarios where you want to run a command as an administrator, but do not want to allow the command to receive input from the current console window. This configuration option provides some of the convenience of the <code>inline</code> configuration option while mitigating some of the associated <a href="#security-considerations">security risks</a>.</p>
+</li>
+<li><p><strong>Inline</strong> (<code>normal</code>): The <code>normal</code> configuration option is most similar to how sudo behaves on other operating systems. This configuration will run the elevated process in the current window and the process will be able to receive input from the current console session. This is useful for scenarios where you want to run a command as an administrator and want to allow the command to receive input from the current console window. This configuration option provides the most convenience, but you should only choose this option if you are familiar with the associated <a href="#security-considerations">security risks</a>.</p>
+</li>
+</ul>
+<p>You can select among these configurations from the <code>Settings &gt; For Developers</code> menu or change the configuration programmatically, in an elevated command line (admin console), using:</p>
+<ul>
+<li><code>sudo config --enable &lt;configuration_option&gt;</code></li>
+</ul>
+<p>Update <code>&lt;configuration_option&gt;</code> to either <code>forceNewWindow</code>, <code>disableInput</code>, or <code>normal</code>.</p>
+<h2 id="how-to-use-sudo-for-windows">How to use Sudo for Windows</h2>
+<p>To use Sudo for Windows, simply prepend <code>sudo</code> to the command you want to run as an administrator. For example, to run <code>netstat -ab</code> as an administrator, you would run <code>sudo netstat -ab</code> in your console window.</p>
+<p>Because <code>sudo</code> elevates the targeted process to run with administrator-level permission, a prompt will open asking you to verify that you want to continue.</p>
+<h2 id="security-considerations">Security Considerations</h2>
+<p>There are risks associated with running sudo in the <strong>Input closed</strong> (<code>inputClosed</code>) or <strong>Inline</strong> (<code>normal</code>) configurations. It is possible for malicious processes to attempt to drive the elevated process using the connection established by the unelevated sudo.exe and the elevated sudo.exe process.</p>
+<p>The <code>inputClosed</code> configuration option mitigates risk by closing the input handle. Disconnecting the input handle from the current console window means that unelevated processes cannot send input to the elevated process.</p>
+<p>The <code>inline</code> configuration option runs the elevated process in the current window and the process is able to receive input from the current console session. An unelevated process can send input to the elevated process within the same console windows or get information from the output in the current windows in this configuration.</p>
+<h2 id="faq">FAQ</h2>
+<h3 id="how-is-sudo-for-windows-different-from-the-existing-runas-command">How is Sudo for Windows different from the existing <code>runas</code> command?</h3>
+<p>The <code>sudo</code> command offers a way to quickly elevate a command as administrator from your current unelevated command line context and is familiar to some users coming from other operating systems. The <code>runas</code> command offers a way to run programs as any user, including administrator if you so choose. At this point in time, the <code>sudo</code> command on Windows does not support running programs as other users. Other key differences between <code>sudo</code> and <code>runas</code> include:</p>
+<ul>
+<li><p><code>runas</code> allows you to run programs as other users, including but not limited to as administrator. This functionality is on the roadmap for the sudo command, but does not yet exist.</p>
+</li>
+<li><p><code>sudo</code> allows you to quickly elevate a process (as administrator):</p>
+<ul>
+<li>You can choose to do so in a new window, which resembles the <code>runas</code> administrator flow.</li>
+<li>You can choose to connect the elevated process to the current console window with the <code>disableInput</code> and <code>normal</code> configuration options. This is not supported with <code>runas</code>.</li>
+</ul>
+</li>
+<li><p><code>runas</code> can prompt users for a password in the command-line.</p>
+</li>
+<li><p><code>sudo</code> can only be elevated via the User Account Control (UAC) security feature designed to protect the operating system from unauthorized changes using verification prompt.</p>
+</li>
+</ul>
+<p>You should consider your particular use-case and plan to use the command that best meets your needs. You should also consider the security implications of running sudo in the <code>inputClosed</code> and <code>normal</code> modes. The default <code>forceNewWindow</code> configuration option is recommended unless you are familiar and comfortable with the risks associated with the other <code>sudo</code> configurations.</p>
+<h2 id="sudo-for-windows-open-source-repository">Sudo for Windows open source repository</h2>
+<p>Sudo for Windows is open source and welcomes your contributions and feedback. You can find the source code for Sudo for Windows on <a href="https://github.com/microsoft/sudo">GitHub</a>.</p>
+<h2 id="additional-functionality">Additional functionality</h2>
+<p>If you’re looking for additional functionality that Sudo for Windows does not provide, check out <a href="https://github.com/gerardog/gsudo">gsudo by Gerardo Grignoli</a> which has a number of additional features and configuration options or check out other solutions from the community.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/advanced-settings/sudo/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

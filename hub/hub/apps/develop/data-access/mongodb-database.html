@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use a MongoDB database in a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use a MongoDB database in a Windows app ">
+    
+    <meta name="description" content="Learn how to connect your Windows app directly to a MongoDB database and test the connection programmatically.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-a-mongodb-database-in-a-windows-app">Use a MongoDB database in a Windows app</h1>
+
+<p>This article contains the steps required to enable working with a MongoDB database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.</p>
+<h2 id="set-up-your-solution">Set up your solution</h2>
+<p>This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to MongoDB. Follow these steps to install the package and try out the example code to read data from an existing MongoDB database.</p>
+<ol>
+<li>Open the <strong>Package Manager Console</strong> (View -&gt; Other Windows -&gt; Package Manager Console).</li>
+<li>Use the command <code>Install-Package MongoDB.Driver</code> to install the NuGet package for the official driver for MongoDB.</li>
+</ol>
+<p>This will allow you to programmatically access MongoDB databases.</p>
+<h2 id="test-your-connection-using-sample-code">Test your connection using sample code</h2>
+<p>The following sample code gets a collection from a remote MongoDB client, then adds a new document to that collection. Then it uses MongoDB APIs to retrieve the new size of the collection as well as the inserted document, and prints them out.</p>
+<pre><code class="lang-csharp">var client = new MongoClient(&quot;mongodb://10.xxx.xx.xxx:27017&quot;);
+IMongoDatabase database = client.GetDatabase(&quot;foo&quot;);
+IMongoCollection&lt;BsonDocument&gt; collection = database.GetCollection&lt;BsonDocument&gt;(&quot;bar&quot;);
+var document = new BsonDocument
+{
+     { &quot;name&quot;,&quot;MongoDB&quot;},
+     { &quot;type&quot;,&quot;Database&quot;},
+     { &quot;count&quot;,1},
+     { &quot;info&quot;,new BsonDocument { { &quot;x&quot;, 203 }, { &quot;y&quot;, 102 } }}
+};
+collection.InsertOne(document);
+long count = collection.CountDocuments(document);
+Console.WriteLine(count);
+IFindFluent&lt;BsonDocument, BsonDocument&gt; document1 = collection.Find(document);
+Console.WriteLine(document1.ToString());
+</code></pre>
+<p>Note that the IP address and database name will need to be customized. The port, 27017, is the default MongoDB port number. In a production application, connection information such as server address and database name should be stored in app configuration rather than hard-coded (see <a href="/visualstudio/azure/vs-azure-tools-connected-services-app-configuration"><strong>Adding Azure App Configuration by using Visual Studio Connected Services</strong></a>).</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="sql-server-database.html">Use a SQL Server database in a Windows app</a></li>
+<li><a href="mysql-database.html">Use a MySQL database in a Windows app</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-access/mongodb-database.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

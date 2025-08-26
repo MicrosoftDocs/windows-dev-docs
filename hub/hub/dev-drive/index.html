@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Set up a Dev Drive on Windows 11 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Set up a Dev Drive on Windows 11 ">
+    
+    <meta name="description" content="Learn about the new Dev Drive storage available to improve file system performance for development scenarios using the ReFS volume format, including how to set it up, designate trust to use performance mode for Microsoft Defender Antivirus, customized filters, and FAQs.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="set-up-a-dev-drive-on-windows-11">Set up a Dev Drive on Windows 11</h1>
+
+<p><strong>Dev Drive</strong> is a new form of storage volume available to improve performance for key developer workloads.</p>
+<p>Dev Drive builds on <a href="/windows-server/storage/refs/refs-overview">ReFS</a> technology to employ targeted file system optimizations and provide more control over storage volume settings and security, including trust designation, antivirus configuration, and administrative control over what filters are attached.</p>
+<p>See the blog post: <a href="https://aka.ms/vsdevdrive">Dev Drive for Performance Improvements in Visual Studio and Dev Boxes</a> for some average improvement measurements across common dev operations.</p>
+<h2 id="how-to-set-up-a-dev-drive">How to set up a Dev Drive</h2>
+<p>To set up a new Dev Drive, open Windows <strong>Settings</strong> and navigate to <strong>System</strong> &gt; <strong>Storage</strong> &gt; <strong>Advanced Storage Settings</strong> &gt; <strong>Disks &amp; volumes</strong>. Select <strong>Create dev drive</strong>. Existing storage volumes cannot be converted to be a Dev Drive. The Dev Drive designation happens only at the original format time.</p>
+<p>Before setting up a Dev Drive, <strong>ensure that the prerequisites are met.</strong></p>
+<p><img src="../images/dev-drive-create.png" alt="Screenshot of System &gt; Storage &gt; Disks &amp; volumes"></p>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Windows 11, Build #10.0.22621.2338 or later (<a href="ms-settings:windowsupdate">Check for Windows updates</a>)</li>
+<li>Recommend 16 GB memory (minimum of 8 GB)</li>
+<li>Minimum 50 GB free disk space</li>
+<li>Dev Drives are available on all Windows SKU versions.</li>
+<li>Local administrator permissions.</li>
+</ul>
+<p>When updating to the latest Windows 11 release, you may need an additional reboot before the Dev Drive feature becomes available. If you are working in a business enterprise environment, your security administrator will need to <a href="group-policy.html">Configure Dev Drive security policy</a> in order to enable Dev Drive.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Dev Drive is intended only for <a href="#what-should-i-put-on-my-dev-drive">key developer scenarios</a> and any custom settings will still be covered by <a href="/windows/client-management/manage-settings-app-with-group-policy">Group Policy</a> settings in Business or Enterprise work environments. Learn more about how to <a href="group-policy.html">Configure Dev Drive security policy</a>.</p>
+</div>
+<h3 id="set-up-options">Set up options</h3>
+<p>You will be given three options:</p>
+<ol>
+<li><strong>Create new VHD</strong> - Build volume on a new virtual hard disk</li>
+<li><strong>Resize an existing volume</strong> - Create new unallocated space to build on</li>
+<li><strong>Unallocated space on disk</strong> - Use the unallocated space on an existing disk. *<em>This option will only display if you have previously set up unallocated space in your storage.</em></li>
+</ol>
+<p><img src="../images/dev-drive-choose-location.png" alt="Screenshot of create dev drive"></p>
+<h3 id="how-to-choose-between-using-a-disk-partition-or-vhd">How to choose between using a disk partition or VHD</h3>
+<p>There are advantages and trade-offs to consider when choosing whether to <a href="https://support.microsoft.com/windows/create-and-format-a-hard-disk-partition-bbb8e185-1bda-ecd1-3465-c9728f7d7d2e">create a disk partition</a> or <a href="#create-new-vhd">create a new VHD</a> to store your Dev Drive.</p>
+<ul>
+<li><p><strong>Create a disk partition</strong>: Storing your Dev Drive on a disk partition will generally offer faster performance because it directly uses the physical disk without any additional layers. The trade-offs are that using a partitioned disk will be less flexible, since resizing partitions can be more complex and risky, and less portability, since the partition is tied to the physical disk.</p>
+</li>
+<li><p><strong>Create a new VHD</strong>: Storing your Dev Drive in a Virtual Hard Disk (VHD) may have slightly lower performance due to the overhead of managing the virtual disk layer. The trade-offs are that VHDs offer more flexibility for dynamic resizing (if you need to manage disk space efficiently), moving, or backing up data. VHDs are also highly portable,allowing the VHD file to be transferred to another machine or backup location. However, keep in mind that when a VHD is hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive.</p>
+</li>
+</ul>
+<h3 id="create-new-vhd">Create new VHD</h3>
+<p>When choosing the <strong>Create new VHD</strong> option to set up a Dev Drive, you will then need to determine the following:</p>
+<ul>
+<li><strong>Virtual hard disk name</strong>: Give a name to your VHD (Dev Drive).</li>
+<li><strong>Location</strong>: Assign a directory path where the Dev Drive VHD will be located on your machine. The default location is <code>C:\</code>, unless creating a Dev Drive using <a href="../dev-home/index.md">Dev Home</a>, in which case the default location is <code>%userprofile%\DevDrives</code>. We recommend using a per-user directory path location to store your Dev Drive to avoid any unintentional sharing.</li>
+<li><strong>Virtual hard disk size</strong>: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50 GB.</li>
+<li><strong>Virtual hard disk format</strong>:
+<ul>
+<li><strong>VHD</strong>: Supports virtual disks up to 2040 GB in size.</li>
+<li><strong>VHDX</strong> (Recommended): Supports a maximum of 64 TB and offers more resilient protection against unexpected IO failure caused by issues like power outage. <a href="/windows-server/storage/disk-management/manage-virtual-hard-disks">Learn more about Managing VHDs</a>.</li>
+</ul>
+</li>
+<li><strong>Disk type</strong>:
+<ul>
+<li><strong>Fixed size</strong> - This virtual hard disk file is allocated to the maximum size when created.</li>
+<li><strong>Dynamically expanding</strong> - The virtual hard disk file grows to its maximum size as data is written to the disk. (Recommended)</li>
+</ul>
+</li>
+</ul>
+<p>Once you complete the process of selecting between these options, your Dev Drive will be created.</p>
+<p><img src="../images/dev-drive-create-vhd-options.png" alt="Screenshot of Create and attach a virtual hard disk"></p>
+<h3 id="resize-an-existing-volume-or-use-unallocated-space-on-an-existing-disk">Resize an existing volume or use unallocated space on an existing disk</h3>
+<p>To <strong>Resize an existing volume</strong>:</p>
+<ol>
+<li><p>Choose a volume to resize.</p>
+<p><img src="../images/dev-drive-choose-volume-to-resize.png" alt="Screenshot of Dev Drive choose volume to resize in Settings."></p>
+</li>
+<li><p>Choose a new size for the volume. You will need to have at least 50 GB of unallocated space available, the minimum size needed for a Dev Drive. Once the size is set, select <strong>Next</strong>.</p>
+<p><img src="../images/dev-drive-change-size.png" alt="Screenshot of Dev Drive size change setting."></p>
+</li>
+<li><p>To format a Dev Drive on the new free space, specify the <strong>Label</strong> (drive name), <strong>Drive Letter</strong>, and <strong>Size</strong> allocation. The maximum size will be the amount of free space you allocated in the previous step, the minimum size for a Dev Drive is 50 GB.</p>
+<p><img src="../images/dev-drive-new.png" alt="Screenshot of Dev Drive label, drive letter, and size settings"></p>
+</li>
+</ol>
+<p>Congratulations! You've now resized your Dev Drive.</p>
+<p>To find and <strong>use unallocated space on an existing drive</strong>, you can open <strong>System</strong> &gt; <strong>Storage</strong> &gt; <strong>Disks &amp; volumes</strong>, look through the page to see whether any storage space is listed as &quot;Unallocated&quot;. Select <strong>Create volume</strong> and you will be given the choices to <strong>Create Simple Volume</strong> (a standard NTFS storage volume) or <strong>Create Dev Drive</strong>. To create a Dev Drive, the steps are the same as above, you will need to add a <strong>Label</strong> (drive name), <strong>Drive Letter</strong>, and confirm the <strong>Size</strong> allocation.</p>
+<p><img src="../images/dev-drive-unallocated.png" alt="Screenshot of Disks &amp; volumes storage list with unallocated storage space."></p>
+<h3 id="format-a-storage-volume-as-a-dev-drive-from-the-command-line">Format a storage volume as a Dev Drive from the command line</h3>
+<p>As an alternative to using Windows Settings, there are two options for creating Dev Drive storage volumes from the command line. Both options require that you open the command line as an Administrator. You must be a member of the Admin group to format a hard drive. These command line formatting methods may be preferred when creating multiple Dev Drives or as an admin for multiple machines.</p>
+<ol>
+<li>Using the <a href="/windows-server/administration/windows-commands/format">Format</a> command line tool from Windows CMD or PowerShell:</li>
+</ol>
+<pre><code class="lang-CMD">Format D: /DevDrv /Q
+</code></pre>
+<ol start="2">
+<li>Using the <a href="/powershell/module/storage/format-volume#-devdrive">Format-Volume</a> cmdlet from PowerShell:</li>
+</ol>
+<pre><code class="lang-PowerShell">Format-Volume -DriveLetter D -DevDrive
+</code></pre>
+<p>These code samples require that you replace <code>D:</code> with the drive location you wish to target. See the links for more options and command parameters.</p>
+<h2 id="how-does-dev-drive-work">How does Dev Drive work?</h2>
+<p>A <a href="/windows-hardware/drivers/ifs/storage-device-stacks--storage-volumes--and-file-system-stacks#storage-volumes">Storage Volume</a> specifies how data is stored on the file system, via directories and files, in a particular format. Windows uses NTFS for the system drive and, by default, for most non-removable drives. The <a href="/windows-server/storage/refs/refs-overview">Resilient File System (ReFS)</a> is a newer Microsoft file system format, designed to maximize data availability, scale efficiently to large data sets across diverse workloads, and provide data integrity with resiliency to corruption. It seeks to address an expanding set of storage scenarios and establish a foundation for future innovations.</p>
+<p>The <strong>Dev Drive</strong> utilizes ReFS enabling you to initialize a storage volume specifically for development workloads, providing faster performance, and customizable settings that are optimized for development scenarios. ReFS contains several file system specific optimizations to improve the performance of key developer scenarios.</p>
+<p>Learn more about <a href="#understanding-security-risks-and-trust-in-relation-to-dev-drive">how Dev Drive handles security</a>.</p>
+<h2 id="what-should-i-put-on-my-dev-drive">What should I put on my Dev Drive?</h2>
+<p>The Dev Drive is intended for:</p>
+<ul>
+<li>Source code repositories and project files</li>
+<li>Package caches</li>
+<li>Build output and intermediate files</li>
+</ul>
+<p><strong>Considerations for Installing Developer Tools and SDKs on Dev Drive:</strong> Developer tools and SDKs are typically placed in either an administrator or per-user location. These locations provide specific security and isolation guarantees on Windows and impact Microsoft Defender behavior. However, many tools provide the flexibility to choose the installation location, including a Dev Drive.</p>
+<p>Before proceeding with the installation of developer tools or SDKs on a Dev Drive, evaluate the trade-offs associated with the system and asynchronous scanning to ensure it aligns with the security requirements of your device and organization. You have the option to create an administrator or per-user folder on the Dev Drive. Additionally, it is important to verify that Microsoft Defender Performance Mode (e.g., asynchronous scanning) meets your needs for handling binaries.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>IT Admins will want to create per-user Access Control List (ACL) folders for multi-user devices as a best practice to avoid EOP attacks.</p>
+</div>
+<h3 id="storing-package-cache-on-dev-drive">Storing package cache on Dev Drive</h3>
+<p>A package cache is the global folder location used by applications to store files for installed software. These source files are needed when you want to update, uninstall, or repair the installed software. Visual Studio is one such application that stores a large portion of its data in the Package Cache. After changing your environment variables, <strong>you may need to either restart all open console windows or reboot the device</strong> for the new values to be applied.</p>
+<ul>
+<li><p><strong>Npm cache (NodeJS)</strong>: Create an npm cache directory in your Dev Drive, for example <code>D:\packages\npm</code>, then set a global environment variable <code>npm_config_cache</code> to that path, for example <code>setx /M npm_config_cache D:\packages\npm</code>. If you have already installed NodeJS on your machine, move the contents of <code>%AppData%\npm-cache</code> to this directory. (On some systems the npm cache may be in <code>%LocalAppData%\npm-cache</code>). Learn more in the npm docs: <a href="https://docs.npmjs.com/cli/v6/commands/npm-cache">npm-cache</a> and <a href="https://docs.npmjs.com/cli/v9/using-npm/config#cache">npm config: cache</a>.</p>
+</li>
+<li><p><strong>NuGet global-packages folder</strong>: The NuGet global-packages folder is used by dotnet, MSBuild, and Visual Studio. Create a user specific NuGet directory in your CopyOnWrite (CoW) filesystem. For example: <code>D:\&lt;username&gt;\.nuget\packages</code>. Use one of the following ways to change the global-packages folder from the default location to your newly created folder (to manage the globally installed packages):</p>
+<ul>
+<li><p>Set a global environment variable <code>NUGET_PACKAGES</code> to that path. For example: <code>setx /M NUGET_PACKAGES D:\&lt;username&gt;\.nuget\packages</code>.</p>
+</li>
+<li><p>Set <code>globalPackagesFolder</code>, when using <code>PackageReference</code>, or <code>repositoryPath</code>, when using <code>packages.config</code>, to that path in configuration settings.</p>
+</li>
+<li><p>Set the <code>RestorePackagesPath</code> MSBuild property (MSBuild only) to that path.</p>
+<p>To verify the global-packages folder, run the dotnet nuget locals command: <code>dotnet nuget locals global-packages --list</code>. The restore will install and download packages into the new path. The default NuGet global-packages folder can be deleted. Learn more in the <a href="/nuget/consume-packages/managing-the-global-packages-and-cache-folders">NuGet docs: Managing the global packages, cache, and temp folders</a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There is currently a known issue: <a href="https://github.com/dotnet/sdk/issues/15306">Dotnet tool command doesn't respect nuget packages path</a>. The .NET team is aware and investigating a fix for .NET 10 and a servicing release update for 8.0 and 9.0.</p>
+</div>
+<ul>
+<li><p><strong>vcpkg cache</strong>: Create a vcpkg cache directory in your Dev Drive, for example <code>D:\packages\vcpkg</code>, then set a global environment variable <code>VCPKG_DEFAULT_BINARY_CACHE</code> to that path, for example <code>setx /M VCPKG_DEFAULT_BINARY_CACHE D:\packages\vcpkg</code>. If you have already installed packages, move the contents of <code>%LOCALAPPDATA%\vcpkg\archives</code> or <code>%APPDATA%\vcpkg\archives</code> to this directory. Learn more in the vcpkg docs: <a href="/vcpkg/users/binarycaching">vcpkg Binary Caching</a>.</p>
+</li>
+<li><p><strong>Pip cache (Python)</strong>: Create a pip cache directory in your Dev Drive, for example <code>D:\packages\pip</code>, then set a global environment variable <code>PIP_CACHE_DIR</code> to that path, for example <code>setx /M PIP_CACHE_DIR D:\packages\pip</code>. If you have already restored pip packages and Wheels on your machine, move the contents of <code>%LocalAppData%\pip\Cache</code> to this directory. Learn more in the pip docs: <a href="https://pip.pypa.io/en/stable/topics/caching/">pip caching</a> and see StackOverflow to <a href="https://stackoverflow.com/questions/64180511/pip-change-directory-of-pip-cache-on-linux">Change directory of pip cache on Linux?</a>.</p>
+</li>
+<li><p><strong>Cargo cache (Rust)</strong>: Create a Cargo cache directory in your Dev Drive, for example <code>D:\packages\cargo</code>, then set a global environment variable <code>CARGO_HOME</code> to that path, for example <code>setx /M CARGO_HOME D:\packages\cargo</code>. If you have already restored Cargo packages on your machine, move the contents of <code>%USERPROFILE%\.cargo</code> to this directory. Learn more in the Cargo docs: <a href="https://doc.rust-lang.org/cargo/reference/environment-variables.html">Cargo Environmental Variables</a>.</p>
+</li>
+<li><p><strong>Maven cache (Java)</strong>: Create a Maven cache directory in your Dev Drive, for example <code>D:\packages\maven</code>, then set a global environment variable <code>MAVEN_OPTS</code> to add a configuration setting to that path, for example <code>setx /M MAVEN_OPTS &quot;-Dmaven.repo.local=D:\packages\maven&quot;</code>. Move the contents of <code>%USERPROFILE%\.m2\repository</code> to this directory (this includes only the dependencies, plugins, and other artifacts that Maven downloads into the <code>repository</code> folder and uses for your projects). Learn more in the <a href="https://maven.apache.org/settings.html">Maven docs</a> and see StackOverflow for <a href="https://stackoverflow.com/questions/16649420/how-to-specify-an-alternate-location-for-the-m2-folder-or-settings-xml-permanen">How to specify an alternate location for the .m2 folder or settings.xml permanently?</a>.</p>
+</li>
+<li><p><strong>Gradle cache (Java)</strong>: Create a Gradle cache directory in your Dev Drive, for example, <code>D:\packages\gradle</code>. Then, set a global environment variable <code>GRADLE_USER_HOME</code> to point to that path, for example, use <code>setx /M GRADLE_USER_HOME &quot;D:\packages\gradle&quot;</code> in the command line to set it system-wide. After setting this variable, Gradle will use the specified directory (<code>D:\packages\gradle</code>) for its caches and configuration files. If you have existing Gradle files, move the contents of <code>%USERPROFILE%\.gradle</code> to this new directory. For more detailed information, you can refer to the <a href="https://docs.gradle.org/current/userguide/userguide.html">Gradle documentation</a> and explore community resources like StackOverflow for <a href="https://stackoverflow.com/questions/56350799/gradle-user-home-set-in-gradle-properties-build-gradle-or-settings-gradle-to">tips on managing Gradle configurations and cache directories</a>.</p>
+</li>
+</ul>
+<h2 id="understanding-security-risks-and-trust-in-relation-to-dev-drive">Understanding security risks and trust in relation to Dev Drive</h2>
+<p>Security and trust are important considerations when working with project files. Typically, there is a tradeoff between performance and security. Using a Dev Drive places control over this balance in the hands of developers and security administrators, with a responsibility for choosing which filters are attached and the settings for Microsoft Defender Antivirus scans.</p>
+<p>Antivirus filters, including both Microsoft Defender and 3rd-party antivirus filters, are attached to a Dev Drive by default. Microsoft Defender Antivirus defaults to the new <a href="#what-is-microsoft-defender-performance-mode">&quot;performance mode&quot;</a> setting on Dev Drives, taking speed and performance into account, while providing a secure alternative to folder exclusions. For an increased level of protection, Microsoft Defender also offers <a href="/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode#performance-mode-compared-to-real-time-protection">&quot;Real-time protection mode&quot;</a>.</p>
+<p>Any product or features requiring additional filters will not work unless the <a href="#how-do-i-configure-additional-filters-on-dev-drive">filter is added to Dev Drive</a>.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Dev Drives can be run with no antivirus filters attached. Exercise extreme caution! Removing antivirus filters is a security risk and means that your storage drive will not be covered by the standard security scans. You are responsible for evaluating the risks associated with detaching antivirus filters and should only do so when confident that your files stored on the Dev Drive will not be exposed to malicious attacks.</p>
+</div>
+<p>Microsoft recommends using the default <a href="#what-is-microsoft-defender-performance-mode">performance mode</a> setting when using a <em>trusted</em> Dev Drive.</p>
+<h3 id="what-is-a-trusted-dev-drive">What is a “trusted” Dev Drive?</h3>
+<p>Dev Drives are automatically designated as <em>trusted</em> using a flag stored in the system registry during the original formatting time, providing the best possible performance by default. A <em>trusted</em> Dev Drive means that the developer using the volume has high confidence in the security of the content stored there.</p>
+<p>Similar to when a developer chooses to <a href="https://support.microsoft.com/windows/add-an-exclusion-to-windows-security-811816c0-4dfd-af4a-47e4-c301afe13b26">Add an exclusion to Windows Security</a>, the developer takes on the responsibility for managing the security of the content stored in order to gain additional performance.</p>
+<p>A Dev Drive marked as <em>trusted</em> is a signal for Microsoft Defender to run in <a href="#what-is-microsoft-defender-performance-mode">performance mode</a>. Running Microsoft Defender in performance mode provides a balance between threat protection and performance. Real-time protection will still be enabled on all other storage volumes.</p>
+<p>Due to the security considerations of having filters detached, transporting a dev drive between machines will result in the volume being treated as an ordinary volume without special filter attach policies. The volume needs to be marked as <em>trusted</em> when it is attached to a new machine. See <a href="#how-do-i-designate-a-dev-drive-as-trusted">How do I designate a Dev Drive as trusted?</a>.</p>
+<p>An <em>untrusted</em> Dev Drive will not have the same privileges as a <em>trusted</em> Dev Drive. Security will run in <a href="/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode#performance-mode-compared-to-real-time-protection">real-time protection mode</a> when a Dev Drive is <em>untrusted</em>. Exercise caution if designating trust to a Dev Drive outside of the time that it is first created.</p>
+<h3 id="how-do-i-designate-a-dev-drive-as-trusted">How do I designate a Dev Drive as trusted?</h3>
+<p>To designate a Dev Drive as <em>trusted</em>:</p>
+<ol>
+<li>Open PowerShell (or CMD) with elevated permissions by right-clicking and selecting &quot;Run as Administrator&quot;.</li>
+<li>To designate your Dev Drive as <em>trusted</em> enter the command below, replacing <code>&lt;drive-letter&gt;</code> with the letter of the storage drive you are designating trust to. For example, <code>fsutil devdrv trust D:</code>.</li>
+</ol>
+<pre><code class="lang-powershell">fsutil devdrv trust &lt;drive-letter&gt;:
+</code></pre>
+<p>To confirm whether a Dev Drive is trusted, enter the command:</p>
+<pre><code class="lang-powershell">fsutil devdrv query &lt;drive-letter&gt;:
+</code></pre>
+<p>The C: drive on your machine cannot be designated as a Dev Drive. Developer tools, such as Visual Studio, MSBuild, .NET SDK, Windows SDK, etc, should be stored on your C: drive and not in a Dev Drive.</p>
+<h3 id="what-is-microsoft-defender-performance-mode">What is Microsoft Defender performance mode?</h3>
+<p>Performance mode is now available on Windows 11 as a new Microsoft Defender Antivirus capability. This capability reduces the performance impact of Microsoft Defender Antivirus scans for files stored on a designated Dev Drive.</p>
+<p>To learn more about performance mode and how it compares with real-time protection, see <a href="/microsoft-365/security/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode">Microsoft Defender: Protecting Dev Drive using performance mode</a>.</p>
+<p>For performance mode to be enabled, the Dev Drive must be designated as <em>trusted</em> and Microsoft Defender Real-time protection must be set to &quot;On&quot;.</p>
+<h3 id="how-do-i-configure-additional-filters-on-dev-drive">How do I configure additional filters on Dev Drive?</h3>
+<p>By default, <a href="/windows-hardware/drivers/ifs/filter-manager-concepts">Filter Manager</a> will turn OFF all filters on a Dev Drive, with the exception of antivirus filters. An antivirus filter is a filter that's attached in the <code>FSFilter Anti-Virus</code> altitude range (i.e., 320000-329999). <code>FSFilter Anti-Virus</code> includes filters that detect and disinfect viruses during file I/O.</p>
+<p>The default policy can be configured not to attach antivirus filters to Dev Drive using <code>fsutil</code>. <strong>CAUTION</strong>: This policy applies to ALL Dev Drives on the system.</p>
+<pre><code class="lang-powershell">fsutil devdrv enable /disallowAv
+</code></pre>
+<p>The command, <code>fsutil devdrv enable [/allowAv|/disallowAv]</code>, includes the following two options:</p>
+<ul>
+<li><p><code>disallowAv</code>: Specifies that your Dev Drive(s) do not have any attached filters (not even antivirus). Filters can be added back using <code>fsutil devdrv setfiltersallowed &lt;Filter-1&gt;</code> command. (Replacing <code>&lt;Filter-1&gt;</code> with the name of your desired filter.)</p>
+</li>
+<li><p><code>allowAv</code>: Specifies that Dev Drives are to be protected by the default antivirus filter.</p>
+</li>
+</ul>
+<p>For help, enter the command: <code>fsutil devdrv enable /?</code>. If neither <code>/allowAv</code> nor <code>/disallowAv</code> is specified, the antivirus policy for your Dev Drive is not configured and the system default is to have Dev Drives protected by antivirus filter.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Exercise extreme caution when detaching filters. Detaching antivirus filters is a security risk and means that your storage will not be covered by the standard Microsoft Defender real-time protection or performance mode scans. You are responsible for evaluating the risks associated with detaching antivirus filters and should only do so when confident that your files will not be exposed to malicious attacks.</p>
+</div>
+<p>To learn more about filters, see <a href="/windows-hardware/drivers/ifs/about-file-system-filter-drivers">About file system filter drivers</a>, <a href="/windows-hardware/drivers/ifs/installing-a-minifilter-driver">Installing a filter driver</a>, <a href="/windows-hardware/drivers/ifs/filter-manager-concepts">Filter Manager Concepts</a>, <a href="/windows-hardware/drivers/ifs/load-order-groups-and-altitudes-for-minifilter-drivers">Load order groups and altitudes for minifilter drivers</a>.</p>
+<h3 id="allowing-select-filters-to-attach-on-dev-drive">Allowing select filters to attach on Dev Drive</h3>
+<p>If you are working in a Business or Enterprise environment, your company's group policy may be configured for select filters to attach on Dev Drives, in addition to the above policy. A system administrator may also choose to attach additional filters to a specific Dev Drive or all Dev Drives using an <strong>allow list</strong>.</p>
+<p>A system admin may want to add a filter called &quot;Foo&quot;, we will refer to it as <code>FooFlt</code>. They may only want that filter enabled on the Dev Drive mounted as <code>D:</code>. They do not need this filter on another Dev Drive mounted as <code>E:</code>. The admin can make changes to an allow list of filters on the Dev Drive using <a href="/windows-server/administration/windows-commands/fsutil">fsutil.exe</a>, a system-supplied command line utility.</p>
+<p>Filters specifically set as <strong>Allowed</strong> can attach to a Dev Drive in addition to antivirus filter policy discussed above.</p>
+<h2 id="allow-list-filter-examples">Allow list filter examples</h2>
+<p>The following examples demonstrate an administrator's ability to set filters allowed on all Dev Drives on a machine, using an allow list.</p>
+<p>To use the <code>setfiltersallowed</code> command to allow <code>Filter-01</code> and <code>Filter-02</code> on all Dev Drives, use the command:</p>
+<pre><code class="lang-powershell">fsutil devdrv setfiltersallowed Filter-01, Filter-02
+</code></pre>
+<p>To display the filter attach policy for all Dev Drives, use the command:</p>
+<pre><code class="lang-powershell">fsutil devdrv query
+</code></pre>
+<p>The result will display the following:</p>
+<ul>
+<li>Developer volumes are enabled.</li>
+<li>Developer volumes are protected by antivirus filter.</li>
+<li>Filters allowed on any Dev Drive: <code>Filter-01</code>, <code>Filter-02</code></li>
+</ul>
+<p>To change this Dev Drive configuration to allow only <code>Filter-03</code> on your Dev Drive(s), with <code>Filter-01</code> and <code>Filter-02</code> no longer allowed to attach, use the command:</p>
+<pre><code class="lang-powershell">fsutil devdrv setfiltersallowed Filter-03
+</code></pre>
+<p>See <code>fsutil devdrv /?</code> for other related commands.</p>
+<h3 id="filters-for-common-scenarios">Filters for common scenarios</h3>
+<p>The following filters may be used with Dev Drive:</p>
+<table>
+<thead>
+<tr>
+<th>Scenario: Description</th>
+<th>Filter Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GVFS: Sparse enlistments of Windows</td>
+<td>PrjFlt</td>
+</tr>
+<tr>
+<td>MSSense:  Microsoft Defender for Endpoint for EDR Sensor</td>
+<td>MsSecFlt</td>
+</tr>
+<tr>
+<td>Defender:  Windows Defender Filter</td>
+<td>WdFilter</td>
+</tr>
+<tr>
+<td>Docker:  Running containers out of Dev Drive</td>
+<td>bindFlt, wcifs</td>
+</tr>
+<tr>
+<td>Windows Performance Recorder:  Measure file system operations</td>
+<td>FileInfo</td>
+</tr>
+<tr>
+<td>Resource Monitor: Shows resource usage. Required to show file names in Disk Activity</td>
+<td>FileInfo</td>
+</tr>
+<tr>
+<td>Process Monitor - Sysinternals:  Monitor file system activities</td>
+<td>ProcMon24</td>
+</tr>
+<tr>
+<td>Windows Upgrade: Used during OS Upgrade. Required if user moves TEMP environment variable to Dev Drive</td>
+<td>WinSetupMon</td>
+</tr>
+<tr>
+<td><a href="/windows/security/application-security/application-control/windows-defender-application-control/design/configure-authorized-apps-deployed-with-a-managed-installer#configure-managed-installer-tracking-with-applocker-and-wdac">Windows Defender Application Control (WDAC)</a>: Managed installer tracking with AppLocker identity services</td>
+<td>applockerfltr</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>WdFilter</code> is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:</p>
+<pre><code class="lang-powershell">fsutil devdrv setfiltersallowed &quot;PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24&quot;
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To determine the filters required for a specific scenario, you may need to temporarily mark a Dev Drive as <em>untrusted</em>. Then, run the scenario and make note of all filters that attached to the volume. Designate the Dev Drive as <a href="#how-do-i-designate-a-dev-drive-as-trusted"><em>trusted</em></a> again and then add the filters to the Allow list for that Dev Drive to ensure the scenario succeeds. Finally, remove any filters that may not be needed, one at a time, while ensuring that the scenario works as expected.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The filter name for Process Monitor may change. If adding the filter name &quot;ProcMon24&quot; doesn't seem to capture file system activities on a Dev Drive, list the filters using the command <code>fltmc filters</code>, find the filter name for Process Monitor, and use that name instead of &quot;ProcMon24&quot;.</p>
+</div>
+<h2 id="block-cloning-support">Block Cloning Support</h2>
+<p>Beginning in Windows 11 24H2 &amp; Windows Server 2025, Block cloning is now supported on Dev Drive. Because Dev Drive utilizes the <a href="/windows-server/storage/refs/refs-overview">ReFS</a> file system format, Block cloning support will mean free performance benefits whenever you copy a file using Dev Drive. Block cloning allows the file system to copy a range of file bytes on behalf of an application as a low-cost metadata operation, rather than performing expensive read and write operations to the underlying physical data. <strong>This results in faster copy completion, less I/O to the underlying storage, and improved storage capacity</strong> by enabling multiple files to share the same logical clusters. Learn more about <a href="/windows-server/storage/refs/block-cloning">Block cloning</a>.</p>
+<h2 id="what-scenarios-are-unsupported-by-dev-drive-what-are-the-limitations">What scenarios are unsupported by Dev Drive? What are the limitations?</h2>
+<p>There are a few scenarios in which we do not recommend using a Dev Drive. These include:</p>
+<ul>
+<li>Reformatting an existing storage volume to be a &quot;Dev Drive&quot; will destroy any content stored in that volume. Reformatting an existing volume while preserving the content stored there is not supported.</li>
+<li>When you create a Virtual Hard Disk (VHD) hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive.</li>
+<li>A volume stored on a removable or hot-pluggable disk (such as a USB, HDD, or SSD external drive) does not support designation as a Dev Drive.</li>
+<li>A volume in a VHD hosted by a removable or hot-pluggable disk does not support designation as a Dev Drive.</li>
+<li>The C: drive on your machine cannot be designated as a Dev Drive.</li>
+<li>The purpose of a Dev Drive is to host files for building and debugging software projects designated to store repositories, package caches, working directories, and temp folders. We do not recommend installing applications on a Dev Drive.</li>
+<li>Using Dev Drive on <a href="/windows/win32/fileio/basic-and-dynamic-disks#dynamic-disks">Dynamic Disks</a> is unsupported. Instead, use <a href="https://support.microsoft.com/windows/storage-spaces-in-windows-b6c8b540-b8d8-fb8a-e7ab-4a75ba11f9f2#WindowsVersion=Windows_11">Storage Spaces</a>, which will help protect your data from drive failures and extend storage over time as you add drives to your PC.</li>
+</ul>
+<h2 id="how-to-delete-a-dev-drive">How to delete a Dev Drive</h2>
+<p>You can delete a Dev Drive in the Windows 11 System Settings: <code>System</code> &gt; <code>Storage</code> &gt; <code>Disks &amp; volumes</code>.</p>
+<p>Open Windows <strong>Settings</strong> menu, then choose <strong>Storage</strong>, then <strong>Advanced Storage Settings</strong>, then <strong>Disks &amp; volumes</strong>, where you will find a list of the storage volumes on your device. Select <strong>Properties</strong> next to the Dev Drive storage volume that you want to delete. In the drive's properties, you will find the option to <strong>Delete</strong> under the <strong>Format</strong> label.</p>
+<p><img src="../images/dev-drive-delete.png" alt="Delete a Dev Drive in Windows Settings"></p>
+<p>The Dev Drive will now be deleted. <strong>However</strong>, if the Dev Drive was created as a new VHD, the VHD will need to be deleted to reclaim the storage space used by that VHD. To accomplish this, you must detach the virtual disk so that the VHD file hosting the Dev Drive can be deleted, following these steps:</p>
+<ol>
+<li>Open the Disk Management tool by entering &quot;Computer Management&quot; in the search box on the taskbar. Select <strong>Disk Management</strong> under the Storage heading. Select the <strong>Disk</strong> (not the Volume) of the Dev Drive. Right-click the selected Disk hosting the Dev Drive and, from the resulting menu, select <strong>Detach VHD</strong>.</li>
+<li>A pop-up window will appear informing you that detaching a virtual hard disk will make it unavailable.</li>
+<li>Once detached, the VHD can be deleted.</li>
+</ol>
+<p><img src="../images/dev-drive-disk-management-detach-vhd.png" alt="Screenshot of the Disk Management tool showing that the VHD can be selected and Detach VHD is an option in the action menu."></p>
+<h2 id="dev-drive-faqs">Dev Drive FAQs</h2>
+<p>Some frequently asked questions about Dev Drive, include:</p>
+<h3 id="how-can-i-customize-a-dev-drive-to-meet-my-needs">How can I customize a Dev Drive to meet my needs?</h3>
+<p>The Dev Drive default settings have been optimized for common development scenarios, but can be customized, allowing control over drivers and services run on the storage volume. To customize Dev Drive settings, open the <strong>Settings</strong> menu. Under <strong>System</strong> &gt; <strong>Storage</strong> &gt; <strong>Disks &amp; volumes</strong>, go to <strong>Properties</strong>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If working for a business or enterprise, the Dev Drive would still be managed by your enterprise settings. Some customizations may therefore be unavailable depending on the company policy.</p>
+</div>
+<h3 id="do-i-need-to-reinstall-my-applications-to-use-a-dev-drive">Do I need to reinstall my applications to use a Dev Drive?</h3>
+<p>No, applications or tools installed on your machine’s C: drive can utilize files from a Dev Drive. For development projects, however, we recommend storing any project-specific directories, files, and package caches inside the Dev Drive. The Dev Drive can be pinned to File Explorer’s <strong>Quick Access</strong> as a reminder.</p>
+<h3 id="does-refs-use-more-memory-than-ntfs-does">Does ReFS use more memory than NTFS does?</h3>
+<p>Yes, ReFS uses slightly more memory than NTFS. We recommend a machine with at least 8 GB of memory, ideally 16 GB.</p>
+<h3 id="can-i-have-more-than-one-dev-drive-on-my-machine">Can I have more than one Dev Drive on my machine?</h3>
+<p>Yes. If you have the space, you can create as many Dev Drives as you would like. Using a separate Dev Drive for each software development project would allow you to simply delete the drive at the end of development, rather than repartitioning your disk again. However, keep in mind that the minimum size for a Dev Drive is 50 GB.</p>
+<h3 id="what-do-i-need-to-know-about-using-dev-drive-with-visual-studio">What do I need to know about using Dev Drive with Visual Studio?</h3>
+<p>Once you have a Dev Drive created, Visual Studio will automatically recognize it when you're creating a new project, or cloning an existing project, and pick that filepath by default. To optimize performance when using Visual Studio, we recommend moving any project code, <a href="#storing-package-cache-on-dev-drive">package caches</a>, and <code>Copy on write</code> MS Build tasks to the Dev Drive that may have previously been saved elsewhere. (See <a href="/visualstudio/ide/how-to-change-the-build-output-directory">How to change the build output directory</a> in the Visual Studio docs.) We also recommend that you consider redirecting <code>%TEMP%</code> and <code>%TMP%</code> envvars to Dev Drive. This will require also adding the <code>WinSetupMon</code> filter, which is needed for the Windows Update process. (See <a href="#filters-for-common-scenarios">Filters for common scenarios</a>. Many programs use these, so beware of potential side effects. We also recommend using <a href="#what-is-microsoft-defender-performance-mode">performance mode for Microsoft Defender</a> for asynchronous performance gains using Dev Drive. Turning Microsoft Defender completely off may result in the most maximum performance gains, but this may increase security risks and is a setting controlled by the system admin.</p>
+<p>For more information, see the blog post: <a href="https://aka.ms/vsdevdrive">Dev Drive for Performance Improvements in Visual Studio and Dev Boxes</a>.</p>
+<h3 id="does-dev-drive-work-with-wsl-project-files">Does Dev Drive work with WSL project files?</h3>
+<p>You can access Dev Drive project files, which run on the Windows file system, from a Linux distribution running via WSL. However, WSL runs in a VHD and for the best performance files should be stored on the Linux file system. WSL is out of the scope of Windows file system so you should not expect to see any performance improvement when accessing project files in Dev Drive from a Linux distribution running via WSL.</p>
+<h3 id="what-method-is-used-to-format-a-windows-storage-volume">What method is used to format a Windows storage volume?</h3>
+<p>See <a href="/windows-hardware/drivers/storage/format-msft-volume"><code>MSFT_Volume class</code></a> in the Windows Driver docs.</p>
+<h3 id="how-to-configure-and-use-live-unit-testing-with-a-dev-drive">How to configure and use Live Unit Testing with a Dev Drive?</h3>
+<p>You can find guidance on <a href="/visualstudio/test/live-unit-testing">How to configure and use Live Unit Testing</a> in the Visual Studio documentation. However, be aware that there is a dependency on <a href="/windows/win32/projfs/projected-file-system">ProjFS</a>. You will need to move the Live Unit Testing workspace root to the Dev Drive and add Windows Projected File System to the allowed filter list. You can do so using the following command in PowerShell:</p>
+<pre><code class="lang-powershell">fsutil devdrv setfiltersallowed PrjFlt
+</code></pre>
+<h3 id="will-a-vhd-created-for-use-as-a-dev-drive-be-encrypted-when-the-drive-storing-it-is-bitlocker-enabled">Will a VHD created for use as a Dev Drive be encrypted when the drive storing it is BitLocker enabled?</h3>
+<p>Yes, the Dev Drive VHD will be included in the BitLocker encryption of the hosting volume. It is not necessary to enable BitLocker on the mounted VHD.</p>
+<h3 id="can-dev-drive-make-java-development-faster-on-windows">Can Dev Drive make Java development faster on Windows?</h3>
+<p>Yes, using a Dev Drive can enhance efficiency and reduce build times when working on a Java development project. See the blog post <a href="https://devblogs.microsoft.com/java/speed-up-your-java-development-on-windows-with-microsoft-dev-drive/">&quot;Speed up your Java Development on Windows with Dev Drive&quot;</a>.</p>
+<h3 id="can-dev-drive-performance-mode-be-applied-to-antivirus-programs-besides-microsoft-defender">Can Dev Drive Performance Mode be applied to Antivirus programs besides Microsoft Defender?</h3>
+<p><a href="/defender-endpoint/microsoft-defender-endpoint-antivirus-performance-mode">Dev Drive Performance Mode</a> is specifically a Microsoft Defender Antivirus capability related to Defender’s real-time protection. When using alternative Antivirus programs with Dev Drive, Performance Mode will not be applied, but it is possible to <a href="#allowing-select-filters-to-attach-on-dev-drive">adjust  the Allow List of security filters</a> that are attached to the Dev Drive in order to find the right balance between performance and security for your development work. You will need to ensure that you understand the function of any attached filters when making changes to the attached filter list. Find a list with descriptions in <a href="#filters-for-common-scenarios">Filters for common scenarios</a>.</p>
+<h3 id="how-can-i-find-a-dev-drive-that-i-created-and-lost-track-of">How can I find a Dev Drive that I created and lost track of?</h3>
+<p>When a dev drive is mounted but you forgot where its located, the following methods can be used to find it:</p>
+<ul>
+<li><p>Use <a href="/windows-server/administration/windows-commands/diskpart">DiskPart</a> and the <a href="/windows-server/administration/windows-commands/list">&quot;list vdisk&quot; command</a> to show the full path to the vhdx: 1) Open a command line and enter <code>diskpart</code>, 2) Once DiskPart opens, enter <code>list vdisk</code>.</p>
+</li>
+<li><p>Use Powershell and &quot;<a href="/powershell/module/storage/get-disk">Get-Disk</a> | <a href="/powershell/module/microsoft.powershell.utility/select-object">Select-Object</a> FriendlyName,Location]&quot;: Open PowerShell and enter <code>Get-Disk | Select-Object FriendlyName,Location</code>.</p>
+</li>
+</ul>
+<h3 id="how-to-contribute-to-these-docs-and-faqs">How to contribute to these docs and FAQs?</h3>
+<p>If you find any issues in this documentation or would like to contribute additional FAQ suggestions, visit the <a href="https://github.com/MicrosoftDocs/windows-dev-docs/issues">Windows Dev Docs open source repo on GitHub</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-drive/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

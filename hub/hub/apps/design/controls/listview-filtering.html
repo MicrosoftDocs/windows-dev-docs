@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Filtering collections </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Filtering collections ">
+    
+    <meta name="description" content="Filter the items in your collection through user input.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="filtering-collections-and-lists-through-user-input">Filtering collections and lists through user input</h1>
+
+<p>If your collection displays many items or is heavily tied to user interaction, filtering is a useful feature to implement. Filtering using the method described in this article can be implemented with most collection controls, including <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview">GridView</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview">ItemsView</a>. Many types of user input can be used to filter a collection - such as checkboxes, radio buttons, and sliders - but this article demonstrates taking text-based user input and using it to update a ListView in real time, according to the user's search.</p>
+<h2 id="setting-up-the-ui-for-filtering">Setting up the UI for filtering</h2>
+<p>To implement text filtering, your app will need a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> and a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox">TextBox</a> or other control that allows user input. The text that the user types into the TextBox is used as the filter; that is, only results that contain the user's text input will appear in the ListView. As the user types into the TextBox, the ListView constantly updates with filtered results.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article demonstrates filtering with a ListView. However, the filtering that is demonstrated can also be applied to other collection controls such as GridView, ItemsView, or TreeView.</p>
+</div>
+<p>The following XAML shows a UI with a simple ListView along with an accompanying TextBox. In this example, the ListView displays a collection of <code>Contact</code> objects. <code>Contact</code> is a class defined in the code-behind, and each <code>Contact</code> object has the following properties: <code>FirstName</code>, <code>LastName</code>, and <code>Company</code>.</p>
+<p>The user can type a filtering term into the TextBox to filter the list of <code>Contact</code> objects by last name. The TextBox has it's <code>x:Name</code> attribute set (<code>FilterByLastName</code>) so you can access the TextBox's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text">Text</a> property in the code-behind. You also handle it's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged">TextChanged</a> event (<code>OnFilterChanged</code>). The TextChanged event occurs whenever the user types in the TextBox, letting you perform a filtering operation upon receiving user input.</p>
+<p>For filtering to work, the ListView must have a data source that can be manipulated in the code-behind, such as an <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;T&gt;</a>. In this case, the ListView's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> property is assigned to an <code>ObservableCollection&lt;Contact&gt;</code> in the code-behind.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This is a simplified version of the example in the ListView page of the <a href="#get-the-sample-code">WinUI Gallery app</a>. Use the WinUI Gallery app to run and view the full code, including the ListView's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> and the <code>Contact</code> class.</p>
+</div>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;StackPanel Width=&quot;300&quot; Margin=&quot;24&quot;
+                HorizontalAlignment=&quot;Left&quot;&gt;
+        &lt;TextBox x:Name=&quot;FilterByLastName&quot;
+                 Header=&quot;Filter by Last Name&quot;
+                 TextChanged=&quot;OnFilterChanged&quot;/&gt;
+        &lt;ListView x:Name=&quot;FilteredListView&quot;
+                  ItemTemplate=&quot;{StaticResource ContactListViewTemplate}&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="filtering-the-data">Filtering the data</h2>
+<p><a href="/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries">Linq</a> queries let you group, order, and select certain items in a collection. To filter a list, you construct a Linq query that selects only items that match the user-entered filtering term, entered in the <code>FilterByLastName</code> TextBox. The query result can be assigned to an <a href="/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a> collection object. Once you have this collection, you can use it to compare with the original list, removing items that don't match and adding back items that do match (in case of a backspace).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In order for the ListView to animate in the most intuitive way when adding and removing items, it's important to add and remove items in the ListView's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> collection itself, rather than create a new collection of filtered objects and assign that to the ListView's ItemsSource property.</p>
+</div>
+<p>To start, you'll need to initialize your original data source in a separate collection, such as a <a href="/dotnet/api/system.collections.generic.list-1">List&lt;T&gt;</a>. In this example, you have a <code>List&lt;Contact&gt;</code> called <code>allContacts</code> that holds all of the <code>Contact</code> objects that can potentially be shown in the ListView.</p>
+<p>You'll also need a collection to hold the filtered data, which will constantly change every time a filter is applied. For this, you'll use an <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection&lt;T&gt;</a> so that the ListView is notified to update whenever the collection changes. In this example, it's an <code>ObservableCollection&lt;Person&gt;</code> called <code>contactsFiltered</code>, and is the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> for the ListView. At initialization, it will have the same contents as <code>allContacts</code>.</p>
+<p>The filtering operation is performed through these steps, shown in the following code:</p>
+<ul>
+<li>Set the ListView's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> property to <code>contactsFiltered</code>.</li>
+<li>Handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged">TextChanged</a> event (<code>OnFilterChanged</code>) for the <code>FilterByLastName</code> TextBox. Inside this event handler function, filter the data.</li>
+<li>To filter the data, access the user-entered filtering term through the <code>FilterByLastName.Text</code> property. Use a <a href="/dotnet/csharp/programming-guide/concepts/linq/introduction-to-linq-queries">Linq</a> query to select the items in <code>allContacts</code> where the last name contains the term in <code>FilterByLastName.Text</code>, and add those matching items into a collection called <code>filtered</code>.</li>
+<li>Compare the current <code>contactsFiltered</code> collection with the newly filtered items in <code>filtered</code>, removing and adding items in <code>contactsFiltered</code> where necessary to make it match <code>filtered</code>.</li>
+<li>As items are removed and added in <code>contactsFiltered</code>, the ListView updates and animates accordingly.</li>
+</ul>
+<pre><code class="lang-csharp">using System.Linq;
+
+public sealed partial class MainPage : Page
+{
+   // Define Contact collection to hold all Contact objects.
+   IList&lt;Contact&gt; allContacts = new List&lt;Contact&gt;();
+   // Define an ObservableCollection&lt;Contact&gt; object to serve as the ListView's
+   // ItemsSource. This collection will get updated after the filters are used:
+   ObservableCollection&lt;Contact&gt; contactsFiltered;
+
+   public MainPage()
+   {
+       this.InitializeComponent();
+
+       // Populate allContacts collection.
+       allContacts.Add(new Contact(&quot;Kendall&quot;, &quot;Collins&quot;, &quot;Adatum Corporation&quot;));
+       allContacts.Add(new Contact(&quot;Victoria&quot;, &quot;Burke&quot;, &quot;Bellows College&quot;));
+       allContacts.Add(new Contact(&quot;Preston&quot;, &quot;Morales&quot;, &quot;Margie's Travel&quot;));
+       allContacts.Add(new Contact(&quot;Miguel&quot;, &quot;Reyes&quot;, &quot;Tailspin Toys&quot;));
+
+       // Populate contactsFiltered with all Contact objects (in this case,
+       // allContacts holds all of our Contact objects so we copy them into
+       // contactsFiltered). Set this newly populated collection as the
+       // ItemsSource for the ListView.
+       contactsFiltered = new ObservableCollection&lt;Contact&gt;(allContacts);
+       Filtereditemscontrol.itemssource = contactsFiltered;
+   }
+
+   // Whenever text changes in the filtering text box, this function is called:
+   private void OnFilterChanged(object sender, TextChangedEventArgs args)
+   {
+       // This is a Linq query that selects only items that return true after
+       // being passed through the Filter function, and adds all of those
+       // selected items to filtered.
+       var filtered = allContacts.Where(contact =&gt; Filter(contact));
+       Remove_NonMatching(filtered);
+       AddBack_Contacts(filtered);
+   }
+
+   // The following functions are called inside OnFilterChanged:
+
+   // When the text in any filter is changed, perform a check on each item in
+   // the original contact list to see if the item should be displayed. If the
+   // item passes the check, the function returns true and the item is added to
+   // the filtered list. Make sure all text is case-insensitive when comparing.
+   private bool Filter(Contact contact)
+   {
+       return contact.LastName.Contains
+           (FilterByLastName.Text, StringComparison.InvariantCultureIgnoreCase);
+   }
+
+   // These functions go through the current list being displayed
+   // (contactsFiltered), and remove any items not in the filtered collection
+   // (any items that don't belong), or add back any items from the original
+   // allContacts list that are now supposed to be displayed. (Adding/removing
+   // the items ensures the list view uses the desired add/remove animations.)
+
+   private void Remove_NonMatching(IEnumerable&lt;Contact&gt; filteredData)
+   {
+       for (int i = contactsFiltered.Count - 1; i &gt;= 0; i--)
+       {
+           var item = contactsFiltered[i];
+           // If contact is not in the filtered argument list,
+           // remove it from the ListView's source.
+           if (!filteredData.Contains(item))
+           {
+               contactsFiltered.Remove(item);
+           }
+       }
+   }
+
+   private void AddBack_Contacts(IEnumerable&lt;Contact&gt; filteredData)
+   {
+       foreach (var item in filteredData)
+       {
+           // If the item in the filtered list is not currently in
+           // the ListView's source collection, add it back in.
+           if (!contactsFiltered.Contains(item))
+           {
+               contactsFiltered.Add(item);
+           }
+       }
+   }
+}
+</code></pre>
+<p>Now, as the user types in their filtering string in the <code>FilterByLastName</code> TextBox, the ListView immediately updates to show only the people whose last name contains the filtering string.</p>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/ItemsView">Open the WinUI 3 Gallery app and see the ListView in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<blockquote>
+<p>For UWP: The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</p>
+</blockquote>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="lists.html">Lists</a></li>
+<li><a href="itemsview.html">Items view</a></li>
+<li><a href="listview-and-gridview.html">List view and grid view</a></li>
+<li><a href="collection-commanding.html">Collection commanding</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/listview-filtering.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

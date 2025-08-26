@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Semantic zoom </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Semantic zoom ">
+    
+    <meta name="description" content="A semantic zoom control allows the user to zoom between two different semantic views of the same data set.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="semantic-zoom">Semantic zoom</h1>
+
+<p>Semantic zoom lets the user switch between two different views of the same content so that they can quickly navigate through a large set of grouped data.</p>
+<ul>
+<li>The zoomed-in view is the main view of the content. This is the main view where you show individual data items.</li>
+<li>The zoomed-out view is a higher-level view of the same content. You typically show the group headers for a grouped data set in this view.</li>
+</ul>
+<p>For example, when viewing an address book, the user could zoom out to quickly jump to the letter &quot;W&quot;, and zoom in on that letter to see the names associated with it.</p>
+<p><strong>Features</strong>:</p>
+<ul>
+<li>The size of the zoomed-out view is constrained by the bounds of the semantic zoom control.</li>
+<li>Tapping on a group header toggles views. Pinching as a way to toggle between views can be enabled.</li>
+<li>Active headers switch between views.</li>
+</ul>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a <strong>SemanticZoom</strong> control when you need to show a grouped data set that's large enough that it can't all be shown on one or two pages.</p>
+<p>Don't confuse semantic zooming with optical zooming. While they share both the same interaction and basic behavior (displaying more or less detail based on a zoom factor), optical zoom refers to the adjustment of magnification for a content area or object such as a photograph. For info about a control that performs optical zooming, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> control.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>When using semantic zoom in your app, be sure that the item layout and panning direction don't change based on the zoom level. Layouts and panning interactions should be consistent and predictable across zoom levels.</li>
+<li>Semantic zoom enables the user to jump quickly to content, so limit the number of pages/screens to three in the zoomed-out mode. Too much panning diminishes the practicality of semantic zoom.</li>
+<li>Avoid using semantic zoom to change the scope of the content. For example, a photo album shouldn't switch to a folder view in File Explorer.</li>
+<li>Use a structure and semantics that are essential to the view.</li>
+<li>Use group names for items in a grouped collection.</li>
+<li>Use sort ordering for a collection that is ungrouped but sorted, such as chronological for dates or alphabetical for a list of names.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<h3 id="winui-gallery">WinUI Gallery</h3>
+<p>The SemanticZoom section within the Controls Gallery demonstrates a navigation experience that allows users to quickly zoom in and out of grouped sections of control types.</p>
+<p><img src="images/semanticzoom-gallery.gif" alt="example of semantic zoom used in the WinUI Gallery"></p>
+<h3 id="photos-app">Photos app</h3>
+<p>Here's a semantic zoom used in the Photos app. Photos are grouped by month. Selecting a month header in the default grid view zooms out to the month list view for quicker navigation.</p>
+<p><img src="images/control-examples/semantic-zoom-photos.png" alt="A semantic zoom used in the Photos app"></p>
+<h2 id="create-a-semantic-zoom">Create a semantic zoom</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.SemanticZoom">SemanticZoom class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView">ListView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView">GridView class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/SemanticZoom">Open the WinUI 3 Gallery app and see SemanticZoom in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>The <strong>SemanticZoom</strong> control doesn't have any visual representation of its own. It's a host control that manages the transition between 2 other controls that provide the views of your content, typically <strong>ListView</strong> or <strong>GridView</strong> controls.  You set the view controls to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.semanticzoom.zoomedinview">ZoomedInView</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.semanticzoom.zoomedoutview">ZoomedOutView</a> properties of the SemanticZoom.</p>
+<p>The 3 elements you need for a semantic zoom are:</p>
+<ul>
+<li>A grouped data source. (Groups are defined by the GroupStyle definition in the zoomed-in view.)</li>
+<li>A zoomed-in view that shows the item-level data.</li>
+<li>A zoomed-out view that shows the group-level data.</li>
+</ul>
+<p>Before you use a semantic zoom, you should understand how to use a list view with grouped data. For more info, see <a href="listview-and-gridview.html">List view and grid view</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To define the zoomed-in view and the zoomed-out view of the SemanticZoom control, you can use any two controls that implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ISemanticZoomInformation">ISemanticZoomInformation</a> interface. The XAML framework provides 3 controls that implement this interface: ListView, GridView, and Hub.</p>
+</div>
+<p>This XAML shows the structure of the SemanticZoom control. You assign other controls to the ZoomedInView and ZoomedOutView properties.</p>
+<pre><code class="lang-xaml">&lt;SemanticZoom&gt;
+   &lt;SemanticZoom.ZoomedInView&gt;
+       &lt;!-- Put the GridView for the zoomed in view here. --&gt;
+   &lt;/SemanticZoom.ZoomedInView&gt;
+
+   &lt;SemanticZoom.ZoomedOutView&gt;
+       &lt;!-- Put the ListView for the zoomed out view here. --&gt;
+   &lt;/SemanticZoom.ZoomedOutView&gt;
+&lt;/SemanticZoom&gt;
+</code></pre>
+<p>The examples here are taken from the SemanticZoom page of the <a href="https://github.com/Microsoft/WinUI-Gallery">WinUI Gallery sample</a>. You can download the sample to see the complete code including the data source. This semantic zoom uses a GridView to supply the zoomed-in view and a ListView for the zoomed-out view.</p>
+<h3 id="define-the-zoomed-in-view">Define the zoomed-in view</h3>
+<p>Here's the GridView control for the zoomed-in view. The zoomed-in view should display the individual data items in groups. This example shows how to display the items in a grid with an image and text.</p>
+<pre><code class="lang-xaml">&lt;SemanticZoom.ZoomedInView&gt;
+    &lt;GridView ItemsSource=&quot;{x:Bind cvsGroups.View}&quot;
+              ScrollViewer.IsHorizontalScrollChainingEnabled=&quot;False&quot;
+              SelectionMode=&quot;None&quot;
+              ItemTemplate=&quot;{StaticResource ZoomedInTemplate}&quot;&gt;
+        &lt;GridView.GroupStyle&gt;
+            &lt;GroupStyle HeaderTemplate=&quot;{StaticResource ZoomedInGroupHeaderTemplate}&quot;/&gt;
+        &lt;/GridView.GroupStyle&gt;
+    &lt;/GridView&gt;
+&lt;/SemanticZoom.ZoomedInView&gt;
+</code></pre>
+<p>The look of the group headers is defined in the <code>ZoomedInGroupHeaderTemplate</code> resource. The look of the items is defined in the <code>ZoomedInTemplate</code> resource.</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:Key=&quot;ZoomedInGroupHeaderTemplate&quot; x:DataType=&quot;data:ControlInfoDataGroup&quot;&gt;
+    &lt;TextBlock Text=&quot;{x:Bind Title}&quot;
+               Foreground=&quot;{ThemeResource ApplicationForegroundThemeBrush}&quot;
+               Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot;/&gt;
+&lt;/DataTemplate&gt;
+
+&lt;DataTemplate x:Key=&quot;ZoomedInTemplate&quot; x:DataType=&quot;data:ControlInfoDataItem&quot;&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot; MinWidth=&quot;200&quot; Margin=&quot;12,6,0,6&quot;&gt;
+        &lt;Image Source=&quot;{x:Bind ImagePath}&quot; Height=&quot;80&quot; Width=&quot;80&quot;/&gt;
+        &lt;StackPanel Margin=&quot;20,0,0,0&quot;&gt;
+            &lt;TextBlock Text=&quot;{x:Bind Title}&quot;
+                       Style=&quot;{StaticResource BaseTextBlockStyle}&quot;/&gt;
+            &lt;TextBlock Text=&quot;{x:Bind Subtitle}&quot;
+                       TextWrapping=&quot;Wrap&quot; HorizontalAlignment=&quot;Left&quot;
+                       Width=&quot;300&quot; Style=&quot;{StaticResource BodyTextBlockStyle}&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/StackPanel&gt;
+&lt;/DataTemplate&gt;
+</code></pre>
+<h3 id="define-the-zoomed-out-view">Define the zoomed-out view</h3>
+<p>This XAML defines a ListView control for the zoomed-out view. This example shows how to display the group headers as text in a list.</p>
+<pre><code class="lang-xaml">&lt;SemanticZoom.ZoomedOutView&gt;
+    &lt;ListView ItemsSource=&quot;{x:Bind cvsGroups.View.CollectionGroups}&quot;
+              SelectionMode=&quot;None&quot;
+              ItemTemplate=&quot;{StaticResource ZoomedOutTemplate}&quot; /&gt;
+&lt;/SemanticZoom.ZoomedOutView&gt;
+</code></pre>
+<p>The look is defined in the <code>ZoomedOutTemplate</code> resource.</p>
+<pre><code class="lang-xaml">&lt;DataTemplate x:Key=&quot;ZoomedOutTemplate&quot; x:DataType=&quot;wuxdata:ICollectionViewGroup&quot;&gt;
+    &lt;TextBlock Text=&quot;{x:Bind Group.(data:ControlInfoDataGroup.Title)}&quot;
+               Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; TextWrapping=&quot;Wrap&quot;/&gt;
+&lt;/DataTemplate&gt;
+</code></pre>
+<h3 id="synchronize-the-views">Synchronize the views</h3>
+<p>The zoomed-in view and zoomed-out view should be synchronized, so if a user selects a group in the zoomed-out view, the details of that same group are shown in the zoomed-in view. You can use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.CollectionViewSource">CollectionViewSource</a> or add code to synchronize the views.</p>
+<p>Any controls that you bind to the same CollectionViewSource always have the same current item. If both views use the same CollectionViewSource as their data source, the CollectionViewSource synchronizes the views automatically. For more info, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.CollectionViewSource">CollectionViewSource</a>.</p>
+<p>If you don't use a CollectionViewSource to synchronize the views, you should handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.semanticzoom.viewchangestarted">ViewChangeStarted</a> event and synchronize the items in the event handler, as shown here.</p>
+<pre><code class="lang-xaml">&lt;SemanticZoom x:Name=&quot;semanticZoom&quot; ViewChangeStarted=&quot;SemanticZoom_ViewChangeStarted&quot;&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChangedEventArgs e)
+{
+    if (e.IsSourceZoomedInView == false)
+    {
+        e.DestinationItem.Item = e.SourceItem.Item;
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom">SemanticZoom class</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListView">ListView class</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.GridView">GridView class</a></li>
+<li><a href="winui2gallery:/item/SemanticZoom">Open the WinUI 2 Gallery app and see the SemanticZoom in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/navigation-basics.html">Navigation design basics</a></li>
+<li><a href="listview-and-gridview.html">List view and grid view</a></li>
+<li><a href="item-containers-templates.html">Item containers and templates</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/semantic-zoom.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

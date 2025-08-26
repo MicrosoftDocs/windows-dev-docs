@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Package and deploy with MSIX </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Package and deploy with MSIX ">
+    
+    <meta name="description" content="This tutorial demonstrates how to package and deploy the app using MSIX.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="part-5-package-and-deploy-with-msix">Part 5: Package and deploy with MSIX</h1>
+
+<p>This is the final part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see <a href="modernize-wpf-tutorial.html">Tutorial: Modernize a WPF app</a>. This article assumes you have already completed <a href="modernize-wpf-tutorial-4.html">part 4</a>.</p>
+<p>In <a href="modernize-wpf-tutorial-4.html">part 4</a> you learned that some WinRT APIs, including the notifications API, require package identity before they can be used in an app. You can obtain package identity by packaging Contoso Expenses using <a href="/windows/msix">MSIX</a>, the packaging format introduced in Windows 10 to package and deploy Windows applications. MSIX provides advantages for developers and IT Pros, including:</p>
+<ul>
+<li>Optimized network usage and storage space.</li>
+<li>Complete clean uninstall, thanks to a lightweight container where the app is executed. No registry keys and temporary files are left on the system.</li>
+<li>Decouples OS updates from application updates and customizations.</li>
+<li>Simplifies the install, update, and uninstall process.</li>
+</ul>
+<p>In this part of the tutorial you'll learn how to package the Contoso Expenses app in an MSIX package.</p>
+<h2 id="package-the-application">Package the application</h2>
+<p>Visual Studio 2019 provides an easy way to package a desktop application by using the Windows Application Packaging Project.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>ContosoExpenses</strong> solution and choose <strong>Add -&gt; New project</strong>.</p>
+<p><img src="images/wpf-modernize-tutorial/AddNewProject.png" alt="Add New Project"></p>
+</li>
+<li><p>In the <strong>Add a new project</strong> dialog box, search for <code>packaging</code>, choose the <strong>Windows Application Packaging Project</strong> project template in the C# category, and click <strong>Next</strong>.</p>
+<p><img src="images/wpf-modernize-tutorial/WAP.png" alt="Windows Application Packaging Project"></p>
+</li>
+<li><p>Name the new project <code>ContosoExpenses.Package</code> and click <strong>Create</strong>.</p>
+</li>
+<li><p>Select <strong>Windows 10, version 1903 (10.0; Build 18362)</strong> for both the <strong>Target version</strong> and <strong>Minimum version</strong> and click <strong>OK</strong>.</p>
+<p>The <strong>ContosoExpenses.Package</strong> project is added to the <strong>ContosoExpenses</strong> solution. This project includes a <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">package manifest</a>, which describes the application, and some default assets that are used for items such as the icon in the Programs menu and the tile in the Start screen. However, unlike a UWP project, the packaging project doesn't contain code. Its purpose is to package an existing desktop app.</p>
+</li>
+<li><p>In the <strong>ContosoExpenses.Package</strong> project, right-click the <strong>Applications</strong> node and choose <strong>Add reference</strong>. This node specifies which applications in your solution will be included in the package.</p>
+</li>
+<li><p>In the list of projects, select <strong>ContosoExpenses.Core</strong> and click <strong>OK</strong>.</p>
+</li>
+<li><p>Expand the <strong>Applications</strong> node and confirm that the <strong>ContosoExpense.Core</strong> project is referenced and highlighted in bold. This means that it will be used as a starting point for the package.</p>
+</li>
+<li><p>Right-click the <strong>ContosoExpenses.Package</strong> project and choose <strong>Set As Startup Project</strong>.</p>
+</li>
+<li><p>Press <strong>F5</strong> to start the packaged app in the debugger.</p>
+</li>
+</ol>
+<p>At this point, you can notice some changes that indicate the app is now running as packaged:</p>
+<ul>
+<li><p>The icon in the taskbar or in the Start menu is now the default asset that is included in every <strong>Windows Application Packaging Project</strong>.</p>
+</li>
+<li><p>If you right-click the <strong>ContosoExpense.Package</strong> application listed in the Start menu, you'll notice options that are typically reserved for apps downloaded from the Microsoft Store, such as <strong>App settings</strong>, <strong>Rate and review</strong> and <strong>Share</strong>.</p>
+<p><img src="images/wpf-modernize-tutorial/StartMenu.png" alt="ContosoExpenses in Start Menu"></p>
+</li>
+<li><p>If you want to uninstall the app, you can right-click <strong>ContosoExpense.Package</strong> in the Start menu and choose <strong>Uninstall</strong>. The app will be immediately removed, without leaving any leftover on the system.</p>
+</li>
+</ul>
+<h2 id="test-the-notification">Test the notification</h2>
+<p>Now that you have packaged the Contoso Expenses app with MSIX, you can test the notification scenario which wasn't working at the end of <a href="modernize-wpf-tutorial-4.html">part 4</a>.</p>
+<ol>
+<li>In the Contoso Expenses app, choose an employee from the list and then click the <strong>Add new expense</strong> button.</li>
+<li>Complete all fields in the form and press <strong>Save</strong>.</li>
+<li>Confirm that you see an OS notification.</li>
+</ol>
+<p><img src="images/wpf-modernize-tutorial/ToastNotification.png" alt="Toast notification"></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/modernize-wpf-tutorial-5.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

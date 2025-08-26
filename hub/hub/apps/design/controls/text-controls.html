@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Text controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Text controls ">
+    
+    <meta name="description" content="Consider how often we read text in our daily lives - in email, a book, a road sign, the prices on a menu, tire pressure markings, or posters on a street pole.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="text-controls">Text controls</h1>
+
+<p>Text controls consist of text input boxes, password boxes, auto-suggest boxes, and text blocks. The XAML framework provides several controls for rendering, entering, and editing text, and a set of properties for formatting the text.</p>
+<ul>
+<li>The controls for displaying read-only text are <a href="text-block.html">TextBlock</a> and <a href="rich-text-block.html">RichTextBlock</a>.</li>
+<li>The controls for text entry and editing are: <a href="text-box.html">TextBox</a>, <a href="rich-edit-box.html">RichEditBox</a>, <a href="auto-suggest-box.html">AutoSuggestBox</a>, and <a href="password-box.html">PasswordBox</a>.</li>
+</ul>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock">TextBlock class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichTextBlock">RichTextBlock class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox">TextBox class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox">RichEditBox class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AutoSuggestBox">AutoSuggestBox class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox">PasswordBox class</a></p>
+</blockquote>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>The text control you use depends on your scenario. Use this info to pick the right text control to use in your app.</p>
+<h3 id="render-read-only-text">Render read-only text</h3>
+<p>Use a <strong>TextBlock</strong> to display most read-only text in your app. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.</p>
+<p>TextBlock is typically easier to use and provides better text rendering performance than RichTextBlock, so it's preferred for most app UI text. You can easily access and use text from a TextBlock in your app by getting the value of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text</a> property.</p>
+<p>It also provides many of the same formatting options for customizing how your text is rendered. Although you can put line breaks in the text, TextBlock is designed to display a single paragraph and doesn't support text indentation.</p>
+<p>Use a <strong>RichTextBlock</strong> when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images. RichTextBlock provides several features for advanced text layout.</p>
+<p>The content property of RichTextBlock is the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock.blocks">Blocks</a> property, which supports paragraph based text via the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Paragraph">Paragraph</a> element. It doesn't have a <strong>Text</strong> property that you can use to easily access the control's text content in your app.</p>
+<h3 id="text-input">Text input</h3>
+<p>Use a <strong>TextBox</strong> control to let a user enter and edit unformatted text, such as in a form. You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text">Text</a> property to get and set the text in a TextBox.</p>
+<p>You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a TextBlock instead.</p>
+<p>Use a <strong>PasswordBox</strong> control to collect a password or other private data, such as a Social Security number. A password box is a text input box that conceals the characters typed in it for the sake of privacy. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered. The bullet character can be customized.</p>
+<p>Use an <strong>AutoSuggestBox</strong> control to show the user a list of suggestions to choose from as they type. An auto-suggest box is a text entry box that triggers a list of basic search suggestions. Suggested terms can draw from a combination of popular search terms and historical user-entered terms.</p>
+<p>You should also use an AutoSuggestBox control to implement a search box.</p>
+<p>Use a <strong>RichEditBox</strong> to display and edit text files. You don't use a RichEditBox to get user input into your app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.</p>
+<p><strong>Is text input the best option?</strong></p>
+<p>There are many ways you can get user input in your app. These questions will help answer whether one of the standard text input boxes or another control is the best fit for getting user input.</p>
+<ul>
+<li><strong>Is it practical to efficiently enumerate all valid values?</strong> If so, consider using one of the selection controls, such as a <a href="checkbox.html">check box</a>, <a href="lists.html">drop-down list</a>, list box, <a href="radio-button.html">radio button</a>, <a href="slider.html">slider</a>, <a href="toggles.html">toggle switch</a>, <a href="date-and-time.html">date picker</a>, or time picker.</li>
+<li><strong>Is there a fairly small set of valid values?</strong> If so, consider a <a href="lists.html">drop-down list</a> or a list box, especially if the values are more than a few characters long.</li>
+<li><strong>Is the valid data completely unconstrained? Or is the valid data only constrained by format (constrained length or character types)?</strong> If so, use a text input control. You can limit the number of characters that can be entered, and you can validate the format in your app code.</li>
+<li><strong>Does the value represent a data type that has a specialized common control?</strong> If so, use the appropriate control instead of a text input control. For example, use a <a href="/previous-versions/windows/apps/br211681(v=win.10)">DatePicker</a> instead of a text input control to accept a date entry.</li>
+<li>If the data is strictly numeric:
+<ul>
+<li><strong>Is the value being entered approximate and/or relative to another quantity on the same page?</strong> If so, use a <a href="slider.html">slider</a>.</li>
+<li><strong>Would the user benefit from instant feedback on the effect of setting changes?</strong> If so, use a <a href="slider.html">slider</a>, possibly with an accompanying control.</li>
+<li><strong>Is the value entered likely to be adjusted after the result is observed, such as with volume or screen brightness?</strong> If so, use a <a href="slider.html">slider</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<table>
+<th align="left">WinUI 2 Gallery</th><th>
+</th><tr>
+<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></td>
+<td>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/category/Text">open the app and see the text controls in action</a>.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+<p>Text box</p>
+<p><img src="images/text-box.png" alt="A text box"></p>
+<p>Auto suggest box</p>
+<p><img src="images/controls-autosuggest-expanded-01.png" alt="Example of the expanded auto-suggest control"></p>
+<p>Password box</p>
+<p><img src="images/passwordbox-focus-typing.png" alt="Password box focus state typing text"></p>
+<h2 id="create-a-text-control">Create a text control</h2>
+<p>See these articles for info and examples specific to each text control.</p>
+<ul>
+<li><a href="auto-suggest-box.html">AutoSuggestBox</a></li>
+<li><a href="password-box.html">PasswordBox</a></li>
+<li><a href="rich-edit-box.html">RichEditBox</a></li>
+<li><a href="rich-text-block.html">RichTextBlock</a></li>
+<li><a href="text-block.html">TextBlock</a></li>
+<li><a href="text-box.html">TextBox</a></li>
+</ul>
+<h2 id="font-and-style-guidelines">Font and style guidelines</h2>
+<p>See these articles for font guidelines:</p>
+<ul>
+<li><a href="../style/typography.md">Typography guidelines</a></li>
+<li><a href="../style/segoe-ui-symbol-font.html">Segoe MDL2 icon list and guidelines</a></li>
+</ul>
+<h2 id="pen-input">Pen input</h2>
+<p><strong>Applies to:</strong> TextBox, RichEditBox, AutoSuggestBox</p>
+<p>Starting with Windows 10, version 1803, XAML text input boxes feature embedded support for pen input using <a href="../input/pen-and-stylus-interactions.html">Windows Ink</a>. When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.</p>
+<p><img src="images/handwritingview/handwritingview2.gif" alt="Text box expands when tapped with pen"></p>
+<p>For more info, see <a href="text-handwriting-view.html">Text input with the handwriting view</a>.</p>
+<h2 id="choose-the-right-keyboard-for-your-text-control">Choose the right keyboard for your text control</h2>
+<p><strong>Applies to:</strong> TextBox, PasswordBox RichEditBox</p>
+<p>To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.</p>
+<blockquote>
+<p>Tip
+This info applies only to the SIP. It does not apply to hardware keyboards or the On-Screen Keyboard available in the Windows Ease of Access options.</p>
+</blockquote>
+<p>The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.</p>
+<p>For example, if a text box is used only to enter a 4-digit PIN, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.inputscope">InputScope</a> property to <strong>Number</strong>. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.</p>
+<blockquote>
+<p>Important<br>
+The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.</p>
+</blockquote>
+<p>For more info, see <a href="../input/use-input-scope-to-change-the-touch-keyboard.html">Use input scope to change the touch keyboard</a>.</p>
+<h2 id="color-fonts">Color fonts</h2>
+<p><strong>Applies to:</strong> TextBlock, RichTextBlock, TextBox, RichEditBox</p>
+<p>Windows has the ability for fonts to include multiple colored layers for each glyph. For example, the Segoe UI Emoji font defines color versions of the Emoticon and other Emoji characters.</p>
+<p>The standard and rich text controls support display color fonts. By default, the <strong>IsColorFontEnabled</strong> property is <strong>true</strong> and fonts with these additional layers are rendered in color. The default color font on the system is Segoe UI Emoji and the controls will fall back to this font to display the glyphs in color.</p>
+<pre><code class="lang-xaml">&lt;TextBlock FontSize=&quot;30&quot;&gt;Hello ☺⛄☂♨⛅&lt;/TextBlock&gt;
+</code></pre>
+<p>The rendered text looks like this:</p>
+<p><img src="images/text-block-color-fonts.png" alt="Text block with color font"></p>
+<p>For more info, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.iscolorfontenabled">IsColorFontEnabled</a> property.</p>
+<h2 id="guidelines-for-line-and-paragraph-separators">Guidelines for line and paragraph separators</h2>
+<p><strong>Applies to:</strong> TextBlock, RichTextBlock, multi-line TextBox, RichEditBox</p>
+<p>Use the line separator character (0x2028) and the paragraph separator character (0x2029) to divide plain text. A new line is begun after each line separator. A new paragraph is begun after each paragraph separator.</p>
+<p>It isn't necessary to start the first line or paragraph in a file with these characters or to end the last line or paragraph with them; doing so indicates that there is an empty line or paragraph in that location.</p>
+<p>Your app can use the line separator to indicate an unconditional end of line. However, line separators do not correspond to the separate carriage return and linefeed characters, or to a combination of these characters. Line separators must be processed separately from carriage return and linefeed characters.</p>
+<p>Your app can insert a paragraph separator between paragraphs of text. Use of this separator allows creation of plain text files that can be formatted with different line widths on different operating systems. The target system can ignore any line separators and break paragraphs only at the paragraph separators.</p>
+<h2 id="guidelines-for-spell-checking">Guidelines for spell checking</h2>
+<p><strong>Applies to:</strong> TextBox, RichEditBox</p>
+<p>During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and provides a way for the user to correct the misspelling.</p>
+<p>Here's an example of the built-in spell checker:</p>
+<p><img src="images/spellchecking.png" alt="the built-in spell checker"></p>
+<p>Use spell checking with text input controls for these two purposes:</p>
+<ul>
+<li><p><strong>To auto-correct misspellings</strong></p>
+<p>The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes &quot;teh&quot; to &quot;the.&quot;</p>
+</li>
+<li><p><strong>To show alternate spellings</strong></p>
+<p>When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.</p>
+</li>
+<li><p>Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.</p>
+</li>
+<li><p>Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on if the text box is intended to capture a telephone number or name.</p>
+</li>
+<li><p>Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.</p>
+</li>
+</ul>
+<p>For TextBox and RichEditBox controls, spell checking is turned on by default. You can turn it off by setting the <strong>IsSpellCheckEnabled</strong> property to <strong>false</strong>.</p>
+<h2 id="related-articles">Related articles</h2>
+<p><strong>For designers</strong></p>
+<ul>
+<li><a href="../style/typography.md">Typography guidelines</a></li>
+<li><a href="../style/segoe-ui-symbol-font.html">Segoe MDL2 icon list and guidelines</a></li>
+<li><a href="/previous-versions/windows/apps/hh465231(v=win.10)">Adding search</a></li>
+</ul>
+<p><strong>For developers (XAML)</strong></p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox">TextBox class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox">Windows.UI.Xaml.Controls PasswordBox class</a></li>
+<li><a href="/dotnet/api/system.string.length">String.Length property</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/text-controls.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

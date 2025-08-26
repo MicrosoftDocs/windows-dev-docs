@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>XAML styles </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="XAML styles ">
+    
+    <meta name="description" content="Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="xaml-styles">XAML styles</h1>
+
+<p>You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
+<h2 id="winui-and-styles">WinUI and styles</h2>
+<p>Starting with WinUI 2.2, we have used <a href="../../../winui/index.html">WinUI</a> to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.</p>
+<p>Starting with WinUI 2.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.</p>
+<p>You can change the style version by setting the <code>ControlsResourcesVersion</code> property on the <code>XamlControlsResources</code> that you include in your <code>Application.Resources</code> when you use WinUI version 2. <code>ControlsResourcesVersion</code> defaults to the enum value <code>Version2</code>.</p>
+<p>Setting this value to <code>Version1</code> causes <code>XamlControlsResources</code> to load the previous style versions instead of the new styles used by the latest WinUI version. Changing this property at runtime is not supported and VisualStudio's hot reload functionality will not work; however, after you rebuild your application you will see the control styles change.</p>
+<pre><code class="lang-xaml">&lt;Application.Resources&gt;
+    &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot; 
+                           ControlsResourcesVersion=&quot;Version1&quot;/&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<h2 id="style-basics">Style basics</h2>
+<p>Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the <a href="/uwp/api/windows.ui.xaml.controls.control.borderbrush">BorderBrush</a>, <a href="/uwp/api/windows.ui.xaml.controls.control.borderthickness">BorderThickness</a> and <a href="/uwp/api/windows.ui.xaml.controls.control.foreground">Foreground</a> properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.</p>
+<p><img src="images/styles-rainbow-buttons.png" alt="Screenshot of three styled buttons arranged side by side."></p>
+<p>You can define a style inline in the XAML for a control, or as a reusable resource. Define resources in an individual page's XAML file, in the App.xaml file, or in a separate resource dictionary XAML file. A resource dictionary XAML file can be shared across apps, and more than one resource dictionary can be merged in a single app. Where the resource is defined determines the scope in which it can be used. Page-level resources are available only in the page where they are defined. If resources with the same key are defined in both App.xaml and in a page, the resource in the page overrides the resource in App.xaml. If a resource is defined in a separate resource dictionary file, its scope is determined by where the resource dictionary is referenced.</p>
+<p>In the <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> definition, you need a <a href="/uwp/api/windows.ui.xaml.style.targettype">TargetType</a> attribute and a collection of one or more <a href="/uwp/api/Windows.UI.Xaml.Setter">Setter</a> elements. The <strong>TargetType</strong> attribute is a string that specifies a <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement">FrameworkElement</a> type to apply the style to. The <strong>TargetType</strong> value must specify a <strong>FrameworkElement</strong>-derived type that's defined by the Windows Runtime or a custom type that's available in a referenced assembly. If you try to apply a style to a control and the control's type doesn't match the <strong>TargetType</strong> attribute of the style you're trying to apply, an exception occurs.</p>
+<p>Each <a href="/uwp/api/Windows.UI.Xaml.Setter">Setter</a> element requires a <a href="/uwp/api/windows.ui.xaml.setter.property">Property</a> and a <a href="/uwp/api/windows.ui.xaml.setter.value">Value</a>. These property settings indicate what control property the setting applies to, and the value to set for that property. You can set the <strong>Setter.Value</strong> with either attribute or property element syntax. The XAML here shows the style applied to the buttons shown previously. In this XAML, the first two <strong>Setter</strong> elements use attribute syntax, but the last <strong>Setter</strong>, for the <a href="/uwp/api/windows.ui.xaml.controls.control.borderbrush">BorderBrush</a> property, uses property element syntax. The example doesn't use the <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key attribute</a> attribute, so the style is implicitly applied to the buttons. Applying styles implicitly or explicitly is explained in the next section.</p>
+<pre><code class="lang-XAML">&lt;Page.Resources&gt;
+    &lt;Style TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;5&quot; /&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Black&quot; /&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; &gt;
+            &lt;Setter.Value&gt;
+                &lt;LinearGradientBrush StartPoint=&quot;0.5,0&quot; EndPoint=&quot;0.5,1&quot;&gt;
+                    &lt;GradientStop Color=&quot;Yellow&quot; Offset=&quot;0.0&quot; /&gt;
+                    &lt;GradientStop Color=&quot;Red&quot; Offset=&quot;0.25&quot; /&gt;
+                    &lt;GradientStop Color=&quot;Blue&quot; Offset=&quot;0.75&quot; /&gt;
+                    &lt;GradientStop Color=&quot;LimeGreen&quot; Offset=&quot;1.0&quot; /&gt;
+                &lt;/LinearGradientBrush&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+    &lt;/Style&gt;
+&lt;/Page.Resources&gt;
+
+&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;Button Content=&quot;Button&quot;/&gt;
+    &lt;Button Content=&quot;Button&quot;/&gt;
+    &lt;Button Content=&quot;Button&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<h2 id="apply-an-implicit-or-explicit-style">Apply an implicit or explicit style</h2>
+<p>If you define a style as a resource, there are two ways to apply it to your controls:</p>
+<ul>
+<li>Implicitly, by specifying only a <a href="/uwp/api/windows.ui.xaml.style.targettype">TargetType</a> for the <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a>.</li>
+<li>Explicitly, by specifying a <a href="/uwp/api/windows.ui.xaml.style.targettype">TargetType</a> and an <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key attribute</a> attribute for the <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> and then by setting the target control's <a href="/uwp/api/windows.ui.xaml.frameworkelement.style">Style</a> property with a <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">{StaticResource} markup extension</a> reference that uses the explicit key.</li>
+</ul>
+<p>If a style contains the <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key attribute</a>, you can only apply it to a control by setting the <a href="/uwp/api/windows.ui.xaml.frameworkelement.style">Style</a> property of the control to the keyed style. In contrast, a style without an x:Key attribute is automatically applied to every control of its target type, that doesn't otherwise have an explicit style setting.</p>
+<p>Here are two buttons that demonstrate implicit and explicit styles.</p>
+<p><img src="images/styles-buttons-implicit-explicit.png" alt="implicitly and explicitly styled buttons."></p>
+<p>In this example, the first style has an <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key attribute</a> and its target type is <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a>. The first button's <a href="/uwp/api/windows.ui.xaml.frameworkelement.style">Style</a> property is set to this key, so this style is applied explicitly. The second style is applied implicitly to the second button because its target type is <strong>Button</strong> and the style doesn't have an x:Key attribute.</p>
+<pre><code class="lang-XAML">&lt;Page.Resources&gt;
+    &lt;Style x:Key=&quot;PurpleStyle&quot; TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;FontFamily&quot; Value=&quot;Segoe UI&quot;/&gt;
+        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;14&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Purple&quot;/&gt;
+    &lt;/Style&gt;
+
+    &lt;Style TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;FontFamily&quot; Value=&quot;Segoe UI&quot;/&gt;
+        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;14&quot;/&gt;
+        &lt;Setter Property=&quot;RenderTransform&quot;&gt;
+            &lt;Setter.Value&gt;
+                &lt;RotateTransform Angle=&quot;25&quot;/&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;Green&quot;/&gt;
+        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;2&quot;/&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Green&quot;/&gt;
+    &lt;/Style&gt;
+&lt;/Page.Resources&gt;
+
+&lt;Grid x:Name=&quot;LayoutRoot&quot;&gt;
+    &lt;Button Content=&quot;Button&quot; Style=&quot;{StaticResource PurpleStyle}&quot;/&gt;
+    &lt;Button Content=&quot;Button&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="use-based-on-styles">Use based-on styles</h2>
+<p>To make styles easier to maintain and to optimize style reuse, you can create styles that inherit from other styles. You use the <a href="/uwp/api/windows.ui.xaml.style.basedon">BasedOn</a> property to create inherited styles. Styles that inherit from other styles must target the same type of control or a control that derives from the type targeted by the base style. For example, if a base style targets <a href="/uwp/api/Windows.UI.Xaml.Controls.ContentControl">ContentControl</a>, styles that are based on this style can target <strong>ContentControl</strong> or types that derive from <strong>ContentControl</strong> such as <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer">ScrollViewer</a>. If a value is not set in the based-on style, it's inherited from the base style. To change a value from the base style, the based-on style overrides that value. The next example shows a <strong>Button</strong> and a <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox">CheckBox</a> with styles that inherit from the same base style.</p>
+<p><img src="images/styles-buttons-based-on.png" alt="styled buttons usign based-on styles."></p>
+<p>The base style targets <a href="/uwp/api/Windows.UI.Xaml.Controls.ContentControl">ContentControl</a>, and sets the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height">Height</a>, and <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width">Width</a> properties. The styles based on this style target <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox">CheckBox</a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a>, which derive from <strong>ContentControl</strong>. The based-on styles set different colors for the <a href="/uwp/api/windows.ui.xaml.controls.control.borderbrush">BorderBrush</a> and <a href="/uwp/api/windows.ui.xaml.controls.control.foreground">Foreground</a> properties. (You don't typically put a border around a <strong>CheckBox</strong>. We do it here to show the effects of the style.)</p>
+<pre><code class="lang-XAML">&lt;Page.Resources&gt;
+    &lt;Style x:Key=&quot;BasicStyle&quot; TargetType=&quot;ContentControl&quot;&gt;
+        &lt;Setter Property=&quot;Width&quot; Value=&quot;130&quot; /&gt;
+        &lt;Setter Property=&quot;Height&quot; Value=&quot;30&quot; /&gt;
+    &lt;/Style&gt;
+
+    &lt;Style x:Key=&quot;ButtonStyle&quot; TargetType=&quot;Button&quot;
+           BasedOn=&quot;{StaticResource BasicStyle}&quot;&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;Orange&quot; /&gt;
+        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;2&quot; /&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Red&quot; /&gt;
+    &lt;/Style&gt;
+
+    &lt;Style x:Key=&quot;CheckBoxStyle&quot; TargetType=&quot;CheckBox&quot;
+           BasedOn=&quot;{StaticResource BasicStyle}&quot;&gt;
+        &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;Blue&quot; /&gt;
+        &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;2&quot; /&gt;
+        &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Green&quot; /&gt;
+    &lt;/Style&gt;
+&lt;/Page.Resources&gt;
+
+&lt;StackPanel&gt;
+    &lt;Button Content=&quot;Button&quot; Style=&quot;{StaticResource ButtonStyle}&quot; Margin=&quot;0,10&quot;/&gt;
+    &lt;CheckBox Content=&quot;CheckBox&quot; Style=&quot;{StaticResource CheckBoxStyle}&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<h2 id="use-tools-to-work-with-styles-easily">Use tools to work with styles easily</h2>
+<p>A fast way to apply styles to your controls is to right-click on a control on the Microsoft Visual Studio XAML design surface and select <strong>Edit Style</strong> or <strong>Edit Template</strong> (depending on the control you are right-clicking on). You can then apply an existing style by selecting <strong>Apply Resource</strong> or define a new style by selecting <strong>Create Empty</strong>. If you create an empty style, you are given the option to define it in the page, in the App.xaml file, or in a separate resource dictionary.</p>
+<h2 id="lightweight-styling">Lightweight styling</h2>
+<p>Overriding the system brushes is generally done at the App or Page level, and in either case the color override will affect all controls that reference that brush – and in XAML many controls can reference the same system brush.</p>
+<p><img src="images/lightweight-styling-button-states-example.png" alt="Screenshot of two buttons: one in its rest state and one with lightweight Styling applied."></p>
+<pre><code class="lang-XAML">&lt;Page.Resources&gt;
+    &lt;ResourceDictionary&gt;
+        &lt;ResourceDictionary.ThemeDictionaries&gt;
+            &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+                 &lt;SolidColorBrush x:Key=&quot;ButtonBackground&quot; Color=&quot;Transparent&quot;/&gt;
+                 &lt;SolidColorBrush x:Key=&quot;ButtonForeground&quot; Color=&quot;MediumSlateBlue&quot;/&gt;
+                 &lt;SolidColorBrush x:Key=&quot;ButtonBorderBrush&quot; Color=&quot;MediumSlateBlue&quot;/&gt;
+            &lt;/ResourceDictionary&gt;
+        &lt;/ResourceDictionary.ThemeDictionaries&gt;
+    &lt;/ResourceDictionary&gt;
+&lt;/Page.Resources&gt;
+</code></pre>
+<p>For states like PointerOver (mouse is hovered over the button), <strong>PointerPressed</strong> (button has been invoked), or Disabled (button is not interactable). These endings are appended onto the original Lightweight styling names: <strong>ButtonBackgroundPointerOver</strong>, <strong>ButtonForegroundPressed</strong>, <strong>ButtonBorderBrushDisabled</strong>, etc. Modifying those brushes as well, will make sure that your controls are colored consistently to your app's theme.</p>
+<p>Placing these brush overrides at the <strong>App.Resources</strong> level, will alter all the buttons within the entire app, instead of on a single page.</p>
+<h3 id="per-control-styling">Per-control styling</h3>
+<p>In other cases, changing a single control on one page only to look a certain way, without altering any other versions of that control, is desired:</p>
+<p><img src="images/lightweight-styling-checkbox-example.png" alt="Screenshot of three styled buttons arranged stacked one on top of the other."></p>
+<pre><code class="lang-XAML">&lt;CheckBox Content=&quot;Normal CheckBox&quot; Margin=&quot;5&quot;/&gt;
+&lt;CheckBox Content=&quot;Special CheckBox&quot; Margin=&quot;5&quot;&gt;
+    &lt;CheckBox.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;ResourceDictionary.ThemeDictionaries&gt;
+                &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+                    &lt;SolidColorBrush x:Key=&quot;CheckBoxForegroundUnchecked&quot;
+                        Color=&quot;Purple&quot;/&gt;
+                    &lt;SolidColorBrush x:Key=&quot;CheckBoxForegroundChecked&quot;
+                        Color=&quot;Purple&quot;/&gt;
+                    &lt;SolidColorBrush x:Key=&quot;CheckBoxCheckGlyphForegroundChecked&quot;
+                        Color=&quot;White&quot;/&gt;
+                    &lt;SolidColorBrush x:Key=&quot;CheckBoxCheckBackgroundStrokeChecked&quot;  
+                        Color=&quot;Purple&quot;/&gt;
+                    &lt;SolidColorBrush x:Key=&quot;CheckBoxCheckBackgroundFillChecked&quot;
+                        Color=&quot;Purple&quot;/&gt;
+                &lt;/ResourceDictionary&gt;
+            &lt;/ResourceDictionary.ThemeDictionaries&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/CheckBox.Resources&gt;
+&lt;/CheckBox&gt;
+&lt;CheckBox Content=&quot;Normal CheckBox&quot; Margin=&quot;5&quot;/&gt;
+</code></pre>
+<p>This would only effect that one &quot;Special CheckBox&quot; on the page where that control existed.</p>
+<h3 id="custom-controls">Custom controls</h3>
+<p>When you are building your own custom controls that may be visually and/or functionally aligned with our built-in controls, consider using implicit styling and Lightweight styling resources to define your custom content. You can either use the resources directly, or create a new alias for the resource.</p>
+<h4 id="using-control-resources-directly">Using control resources directly</h4>
+<p>For example, if you are writing a control that looks like a Button, you can have your control reference the button resources directly, like this:</p>
+<pre><code class="lang-xaml">&lt;Style TargetType=&quot;local:MyCustomControl&quot;&gt;
+  &lt;Setter Property=&quot;Background&quot; Value=&quot;{ThemeResource ButtonBackground}&quot; /&gt;
+  &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;{ThemeResource ButtonBorderBrush}&quot; /&gt;
+&lt;/Style&gt;
+</code></pre>
+<h4 id="aliasing-control-resources-to-new-names">Aliasing control resources to new names</h4>
+<p>Alternatively, if you prefer to make your own resources, you should alias those custom names to our default Lightweight styling resources.</p>
+<p>For example, your custom control's style might have special resource definitions:</p>
+<pre><code class="lang-xaml">&lt;Style TargetType=&quot;local:MyCustomControl&quot;&gt;
+  &lt;Setter Property=&quot;Background&quot; Value=&quot;{ThemeResource MyCustomControlBackground}&quot; /&gt;
+  &lt;Setter Property=&quot;BorderBrush&quot; Value=&quot;{ThemeResource MyCustomControlBorderBrush}&quot;/&gt;
+&lt;/Style&gt;
+</code></pre>
+<p>In your Resource Dictionary or main definition, you would hook up the Lightweight styling resources to your custom ones:</p>
+<pre><code class="lang-xaml">&lt;ResourceDictionary.ThemeDictionaries&gt;
+    &lt;ResourceDictionary x:Key=&quot;Default&quot;&gt;
+        &lt;StaticResource x:Key=&quot;MyCustomControlBackground&quot; ResourceKey=&quot;ButtonBackground&quot; /&gt;
+        &lt;StaticResource x:Key=&quot;MyCustomControlBorderBrush&quot; ResourceKey=&quot;ButtonBorderBrush&quot; /&gt;
+    &lt;/ResourceDictionary&gt;        
+    &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+        &lt;StaticResource x:Key=&quot;MyCustomControlBackground&quot; ResourceKey=&quot;ButtonBackground&quot; /&gt;
+        &lt;StaticResource x:Key=&quot;MyCustomControlBorderBrush&quot; ResourceKey=&quot;ButtonBorderBrush&quot; /&gt;
+    &lt;/ResourceDictionary&gt;
+    &lt;ResourceDictionary x:Key=&quot;HighContrast&quot;&gt;
+        &lt;StaticResource x:Key=&quot;MyCustomControlBackground&quot; ResourceKey=&quot;ButtonBackground&quot; /&gt;
+        &lt;StaticResource x:Key=&quot;MyCustomControlBorderBrush&quot; ResourceKey=&quot;ButtonBorderBrush&quot; /&gt;
+    &lt;/ResourceDictionary&gt;
+&lt;/ResourceDictionary.ThemeDictionaries&gt;
+</code></pre>
+<p>Its required that you use a <code>ThemeDictionary</code> that is duplicated three times in order to handle the three different theme changes properly (<code>Default</code>, <code>Light</code>, <code>HighContrast</code>).</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>If you assign a Lightweight styling resource to a new alias, and also redefine the Lightweight styling resource, your customization might not be applied if the resource lookup is not in the correct order. For example, if you override <code>ButtonBackground</code> in a spot that is searched before <code>MyCustomControlBackground</code> is found, the override would be missed.</p>
+</div>
+<h2 id="avoid-restyling-controls">Avoid restyling controls</h2>
+<p>The <a href="/windows/uwp/get-started/winui2/">WinUI</a> 2.2 or later includes new styles and templates for both WinUI and system controls.</p>
+<p>The best way to stay current with our latest visual styles is to use the latest WinUI 2 package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.</p>
+<p>For system controls that use WinUI styles (<code>Windows.UI.Xaml.Controls</code> namespace), set <code>BasedOn=&quot;{StaticResource Default&lt;ControlName&gt;Style}&quot;</code>, where <code>&lt;ControlName&gt;</code> is the name of the control. For example:</p>
+<pre><code class="lang-xaml">&lt;Style TargetType=&quot;TextBox&quot; BasedOn=&quot;{StaticResource DefaultTextBoxStyle}&quot;&gt;
+    &lt;Setter Property=&quot;Foreground&quot; Value=&quot;Blue&quot;/&gt;
+&lt;/Style&gt;
+</code></pre>
+<p>For WinUI 2 controls (<code>Microsoft.UI.Xaml.Controls</code> namespace), the default style is defined in the metadata, so omit <code>BasedOn</code>.</p>
+<h3 id="derived-controls">Derived controls</h3>
+<p>If you derive a custom control from an existing XAML control, it will not get the WinUI 2 styles by default. To apply the WinUI 2 styles:</p>
+<ul>
+<li>Create a new <a href="/uwp/api/windows.ui.xaml.style">Style</a> with its <a href="/uwp/api/windows.ui.xaml.style.targettype">TargetType</a> set to your custom control.</li>
+<li>Base the Style on the default style of the control you derived from.</li>
+</ul>
+<p>One common scenario for this is to derive a new control from <a href="/uwp/api/windows.ui.xaml.controls.contentdialog">ContentDialog</a>. This example shows how to create a new Style that applies <code>DefaultContentDialogStyle</code> to your custom dialog.</p>
+<pre><code class="lang-xaml">&lt;ContentDialog
+    x:Class=&quot;ExampleApp.SignInContentDialog&quot;
+    ... &gt;
+
+    &lt;ContentDialog.Resources&gt;
+        &lt;Style TargetType=&quot;local:SignInContentDialog&quot; BasedOn=&quot;{StaticResource DefaultContentDialogStyle}&quot;/&gt;
+        ...
+    &lt;/ContentDialog.Resources&gt; 
+    &lt;!-- CONTENT --&gt;
+&lt;/ContentDialog&gt;        
+</code></pre>
+<h2 id="the-template-property">The template property</h2>
+<p>A style setter can be used for the <a href="/uwp/api/windows.ui.xaml.controls.control.template">Template</a> property of a <a href="/uwp/api/Windows.UI.Xaml.Controls.Control">Control</a>, and in fact this makes up the majority of a typical XAML style and an app's XAML resources. This is discussed in more detail in the topic <a href="xaml-control-templates.html">Control templates</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/xaml/xaml-styles.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

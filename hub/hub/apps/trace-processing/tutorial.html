@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Access trace data - .NET TraceProcessing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Access trace data - .NET TraceProcessing ">
+    
+    <meta name="description" content="In this tutorial, learn how to access trace data using TraceProcessor.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="access-trace-data">Access trace data</h1>
+
+<p>.NET TraceProcessing is available from <a href="https://www.nuget.org/packages/Microsoft.Windows.EventTracing.Processing.All">NuGet</a> with the following package ID:</p>
+<p>Microsoft.Windows.EventTracing.Processing.All</p>
+<p>This package allows you to access data in a trace file. If you do not already have a trace file, you can use <a href="/windows-hardware/test/wpt/windows-performance-recorder">Windows Performance Recorder</a> to create one.</p>
+<p>The following example console app shows how to access the command lines of all processes contained in the trace:</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.EventTracing;
+using Microsoft.Windows.EventTracing.Processes;
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        if (args.Length != 1)
+        {
+            Console.Error.WriteLine(&quot;Usage: &lt;trace.etl&gt;&quot;);
+            return;
+        }
+
+        using (ITraceProcessor trace = TraceProcessor.Create(args[0]))
+        {
+            IPendingResult&lt;IProcessDataSource&gt; pendingProcessData = trace.UseProcesses();
+
+            trace.Process();
+
+            IProcessDataSource processData = pendingProcessData.Result;
+
+            foreach (IProcess process in processData.Processes)
+            {
+                Console.WriteLine(process.CommandLine);
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="using-traceprocessor">Using TraceProcessor</h2>
+<p>To process a trace, call <a href="/dotnet/api/microsoft.windows.eventtracing.traceprocessor.create">TraceProcessor.Create</a>. The core interface is <a href="/dotnet/api/microsoft.windows.eventtracing.itraceprocessor">ITraceProcessor</a>, and using this interface involves the following pattern:</p>
+<ol>
+<li>First, tell the processor what data you want to use from a trace</li>
+<li>Second, process the trace; and</li>
+<li>Finally, access the results.</li>
+</ol>
+<p>Telling the processor what kinds of data you want up front means you do not need to spend time processing large volumes of all possible kinds of trace data. Instead, <a href="/dotnet/api/microsoft.windows.eventtracing.traceprocessor">TraceProcessor</a> just does the work needed to provide the specific kinds of data you request.</p>
+<h2 id="recommended-project-settings">Recommended project settings</h2>
+<p>There are a couple of project settings we recommend using with TraceProcessor:</p>
+<ol>
+<li><p>We recommend running exes as 64-bit.</p>
+<p>The Visual Studio default for a new C# .NET Framework console application is Any CPU with Prefer 32-bit checked. The default for .NET may already have the recommended setting.</p>
+<p>Trace processing can be memory-intensive, especially with larger traces, and we recommend changing Platform target to x64 (or unchecking Prefer 32-bit) in exes that use TraceProcessor. To change these settings, see the Build tab under Properties for the project. To change these settings for all configurations, ensure that the Configuration dropdown is set to All Configurations, rather than the default of the current configuration only.</p>
+</li>
+<li><p>We suggest using NuGet with the newer-style PackageReference mode rather than the older packages.config mode.</p>
+<p>To change the default for new projects, see Tools, NuGet Package Manager, Package Manager Settings, Package Management, Default package management format.</p>
+</li>
+</ol>
+<h2 id="built-in-data-sources">Built-in data sources</h2>
+<p>An .etl file can capture many kinds of data in a trace. Note that which data is in an .etl file depends on what providers were enabled when the trace was captured. The following list shows the kinds of trace data available from TraceProcessor:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Related WPA Items</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trace.UseClassicEvents()</td>
+<td>Provides classic ETW events from a trace, which do not include schema information.</td>
+<td>Generic Events table (when Event Type is Classic or WPP)</td>
+</tr>
+<tr>
+<td>trace.UseConnectedStandbyData()</td>
+<td>Provides data from a trace about the system entering and exiting connected standby.</td>
+<td>CS Summary table</td>
+</tr>
+<tr>
+<td>trace.UseCpuIdleStates()</td>
+<td>Provides data from a trace about CPU C-states.</td>
+<td>CPU Idle States table (when Type is Actual)</td>
+</tr>
+<tr>
+<td>trace.UseCpuSamplingData()</td>
+<td>Provides data from a trace about CPU usage based on periodic sampling of the instruction pointer.</td>
+<td>CPU Usage (Sampled) table</td>
+</tr>
+<tr>
+<td>trace.UseCpuSchedulingData()</td>
+<td>Provides data from a trace about CPU thread scheduling, including context switches and ready thread events.</td>
+<td>CPU Usage (Precise) table</td>
+</tr>
+<tr>
+<td>trace.UseDevicePowerData()</td>
+<td>Provides data from a trace about device D-states.</td>
+<td>Device DState table</td>
+</tr>
+<tr>
+<td>trace.UseDirectXData()</td>
+<td>Provides data from a trace about DirectX activity.</td>
+<td>GPU Utilization table</td>
+</tr>
+<tr>
+<td>traceUseDiskIOData()</td>
+<td>Provides data from a trace about Disk I/O activity.</td>
+<td>Disk Usage table</td>
+</tr>
+<tr>
+<td>trace.UseEnergyEstimationData()</td>
+<td>Provides data from a trace about estimated per-process energy usage from Energy Estimation Engine.</td>
+<td>Energy Estimation Engine Summary (by Process) table</td>
+</tr>
+<tr>
+<td>trace.UseEnergyMeterData()</td>
+<td>Provides data from a trace about measured energy usage from Energy Meter Interface (EMI).</td>
+<td>Energy Estimation Engine (by Emi) table</td>
+</tr>
+<tr>
+<td>trace.UseFileIOData()</td>
+<td>Provides data from a trace about File I/O activity.</td>
+<td>File I/O table</td>
+</tr>
+<tr>
+<td>trace.UseGenericEvents()</td>
+<td>Provides manifested and TraceLogging events from a trace.</td>
+<td>Generic Events table (when Event Type is Manifested or TraceLogging)</td>
+</tr>
+<tr>
+<td>trace.UseHandles()</td>
+<td>Provides partial data from a trace about active kernel handles.</td>
+<td>Handles table</td>
+</tr>
+<tr>
+<td>trace.UseHardFaults()</td>
+<td>Provides data from a trace about hard page faults.</td>
+<td>Hard Faults table</td>
+</tr>
+<tr>
+<td>trace.UseHeapSnapshots()</td>
+<td>Provides data from a trace about process heap usage.</td>
+<td>Heap Snapshot table</td>
+</tr>
+<tr>
+<td>trace.UseHypercalls()</td>
+<td>Provides data about Hyper-V hypercalls that occurred during a trace.</td>
+<td></td>
+</tr>
+<tr>
+<td>trace.UseImageSections()</td>
+<td>Provides data from a trace about the sections of an image.</td>
+<td>Section Name column of the CPU Usage (Sampled) table</td>
+</tr>
+<tr>
+<td>trace.UseInterruptHandlingData()</td>
+<td>Provides data from a trace about Interrupt Service Routine (ISR) and Deferred Procedure Call (DPC) activity.</td>
+<td>DPC/ISR table</td>
+</tr>
+<tr>
+<td>trace.UseMarks()</td>
+<td>Provides the marks (labeled timestamps) from a trace.</td>
+<td>Marks table</td>
+</tr>
+<tr>
+<td>trace.UseMemoryUtilizationData()</td>
+<td>Provides data from a trace about total system memory utilization.</td>
+<td>Memory Utilization table</td>
+</tr>
+<tr>
+<td>trace.UseMetadata()</td>
+<td>Provides trace metadata available without further processing.</td>
+<td>System Configuration, Traces and General</td>
+</tr>
+<tr>
+<td>trace.UsePlatformIdleStates()</td>
+<td>Provides data from a trace about the target and actual platform idle states of a system.</td>
+<td>Platform Idle State table</td>
+</tr>
+<tr>
+<td>trace.UsePoolAllocations()</td>
+<td>Provides data from a trace about kernel pool memory usage.</td>
+<td>Pool Summary table</td>
+</tr>
+<tr>
+<td>trace.UsePowerConfigurationData()</td>
+<td>Provides data from a trace about system power configuration.</td>
+<td>System Configuration, Power Settings</td>
+</tr>
+<tr>
+<td>trace.UsePowerDependencyCoordinatorData()</td>
+<td>Provides data from a trace about active power dependency coordinator phases.</td>
+<td>Notification Phase Summary table</td>
+</tr>
+<tr>
+<td>trace.UseProcesses()</td>
+<td>Provides data about processes active during a trace as well as their images and PDBs.</td>
+<td>Processes table; Images table; Symbols Hub</td>
+</tr>
+<tr>
+<td>trace.UseProcessorCounters()</td>
+<td>Provides data from a trace about processor performance counter values from Processor Counter Monitor (PCM).</td>
+<td></td>
+</tr>
+<tr>
+<td>trace.UseProcessorFrequencyData()</td>
+<td>Provides data from a trace about the frequency at which processors ran.</td>
+<td>Processor Frequency table (when Type is Actual)</td>
+</tr>
+<tr>
+<td>trace.UseProcessorProfileData()</td>
+<td>Provides data from a trace about the active processor power profile.</td>
+<td>Processor Profiles table</td>
+</tr>
+<tr>
+<td>trace.UseProcessorParkingData()</td>
+<td>Provides data from a trace about which processors were parked or unparked.</td>
+<td>Processor Parking State table</td>
+</tr>
+<tr>
+<td>trace.UseProcessorParkingLimits()</td>
+<td>Provides data from a trace about the maximum allowed number of unparked processors.</td>
+<td>Core Parking Cap State table</td>
+</tr>
+<tr>
+<td>trace.UseProcessorQualityOfServiceData()</td>
+<td>Provides data from a trace about the quality of service level for each processor.</td>
+<td>Processor Qos Class table</td>
+</tr>
+<tr>
+<td>trace.UseProcessorThrottlingData()</td>
+<td>Provides data from a trace about processor maximum frequency throttling.</td>
+<td>Processor Constraints table</td>
+</tr>
+<tr>
+<td>trace.UseReadyBootData()</td>
+<td>Provides data from a trace about boot prefetching activity from Ready Boot.</td>
+<td>Ready Boot Events table</td>
+</tr>
+<tr>
+<td>trace.UseReferenceSetData()</td>
+<td>Provides data from a trace about pages of virtual memory used by each process.</td>
+<td>Reference Set table</td>
+</tr>
+<tr>
+<td>trace.UseRegionsOfInterest()</td>
+<td>Provides named regions of interest intervals from a trace as specified in an xml configuration file.</td>
+<td>Regions of Interest table</td>
+</tr>
+<tr>
+<td>trace.UseRegistryData()</td>
+<td>Provides data about registry activity during a trace.</td>
+<td>Registry table</td>
+</tr>
+<tr>
+<td>trace.UseResidentSetData()</td>
+<td>Provides data from a trace about the pages of virtual memory for each process that were resident in physical memory.</td>
+<td>Resident Set table</td>
+</tr>
+<tr>
+<td>trace.UseRundownData()</td>
+<td>Provides data from a trace about intervals during which trace rundown data collection occurred.</td>
+<td>Shaded regions in the graph timeline</td>
+</tr>
+<tr>
+<td>trace.UseScheduledTasks()</td>
+<td>Provides data about scheduled tasks that ran during a trace.</td>
+<td>Scheduled Tasks table</td>
+</tr>
+<tr>
+<td>trace.UseServices()</td>
+<td>Provides data about services that were active or had their state captured during a trace.</td>
+<td>Services table; System Configuration, Services</td>
+</tr>
+<tr>
+<td>trace.UseStacks()</td>
+<td>Provides data about stacks recorded during a trace.</td>
+<td></td>
+</tr>
+<tr>
+<td>trace.UseStackEvents()</td>
+<td>Provides data about events associated with stacks recorded during a trace.</td>
+<td>Stacks table</td>
+</tr>
+<tr>
+<td>trace.UseStackTags()</td>
+<td>Provides a mapper that groups stacks from a trace into stack tags as specified in an XML configuration file.</td>
+<td>Columns such as Stack Tag and Stack (Frame Tags)</td>
+</tr>
+<tr>
+<td>trace.UseSymbols()</td>
+<td>Provides the ability to load symbols for a trace.</td>
+<td>Configure Symbol Paths; Load Symbols</td>
+</tr>
+<tr>
+<td>trace.UseSyscalls()</td>
+<td>Provides data about syscalls that occurred during a trace.</td>
+<td>Syscalls table</td>
+</tr>
+<tr>
+<td>trace.UseSystemMetadata()</td>
+<td>Provides general, system-wide metadata from a trace.</td>
+<td>System Configuration</td>
+</tr>
+<tr>
+<td>trace.UseSystemPowerSourceData()</td>
+<td>Provides data from a trace about the active system power source (AC vs DC).</td>
+<td>System Power Source table</td>
+</tr>
+<tr>
+<td>trace.UseSystemSleepData()</td>
+<td>Provides data from a trace about overall system power state.</td>
+<td>Power Transition table</td>
+</tr>
+<tr>
+<td>trace.UseTargetCpuIdleStates()</td>
+<td>Provides data from a trace about target CPU C-states.</td>
+<td>CPU Idle States table (when Type is Target)</td>
+</tr>
+<tr>
+<td>trace.UseTargetProcessorFrequencyData()</td>
+<td>Provides data from a trace about target processor frequencies.</td>
+<td>Processor Frequency table (when Type is Target)</td>
+</tr>
+<tr>
+<td>trace.UseThreads()</td>
+<td>Provides data about threads active during a trace.</td>
+<td>Thread Lifetimes table</td>
+</tr>
+<tr>
+<td>trace.UseTraceStatistics()</td>
+<td>Provides statistics about the events in a trace.</td>
+<td>System Configuration, Trace Statistics</td>
+</tr>
+<tr>
+<td>trace.UseUtcData()</td>
+<td>Provides data from a trace about Microsoft telemetry activity using Universal Telemetry Client (UTC).</td>
+<td>Utc table</td>
+</tr>
+<tr>
+<td>trace.UseWindowInFocus()</td>
+<td>Provides data from a trace about changes to the active UI window in focus.</td>
+<td>Window in Focus table</td>
+</tr>
+<tr>
+<td>trace.UseWindowsTracePreprocessorEvents()</td>
+<td>Provides Windows software trace preprocessor (WPP) events from a trace.</td>
+<td>WPP Trace table; Generic Events table (when Event Type is WPP)</td>
+</tr>
+<tr>
+<td>trace.UseWinINetData()</td>
+<td>Provides data from a trace about internet activity via Windows Internet (WinINet).</td>
+<td>Download Details table</td>
+</tr>
+<tr>
+<td>trace.UseWorkingSetData()</td>
+<td>Provides data from a trace about pages of virtual memory that were in the working set for each process or kernel category.</td>
+<td>Virtual Memory Snapshots table</td>
+</tr>
+</tbody>
+</table>
+<p>See also the extension methods on <a href="/dotnet/api/microsoft.windows.eventtracing.itracesource">ITraceSource</a> for all available trace data, or examine the method available from &quot;trace.&quot; shown by IntelliSense.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>In this overview, you learned how to access trace data using TraceProcessor and the built-in data sources that it can access.</p>
+<p>The next step is to learn how to <a href="extensibility.html">extend</a> TraceProcessor to access custom trace data.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/trace-processing/tutorial.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

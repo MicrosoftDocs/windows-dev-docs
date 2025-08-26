@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Adjust layout and fonts, and support RTL </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Adjust layout and fonts, and support RTL ">
+    
+    <meta name="description" content="Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adjust-layout-and-fonts-and-support-rtl">Adjust layout and fonts, and support RTL</h1>
+
+<p>Design your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction. Flow direction is the direction in which script is written and displayed, and the UI elements on the page are scanned by the eye.</p>
+<h2 id="layout-guidelines">Layout guidelines</h2>
+<p>Languages such as German and Finnish typically use more characters than English does. East Asian fonts typically require more height. And languages such as Arabic and Hebrew require that layout panels and text elements be laid out in right-to-left (RTL) reading order.</p>
+<p>Because of these variations in the metrics of translated text, we recommend that you don't bake absolute positioning, fixed widths, or fixed heights into your user interface (UI). Instead, take advantage of the dynamic layout mechanisms that are built into the Windows UI elements. For example, content controls (such as buttons), items controls (such as grid views and list views), and layout panels (such as grids and stackpanels) automatically resize and reflow by default to fit their content. Pseudo-localize your app to uncover any problematic edge cases where your UI elements don't size to content properly.</p>
+<p>Dynamic layout is the recommended technique, and you'll be able to use it in the majority of cases. Less preferable, but still better than baking sizes into your UI markup, is to set layout values as a function of language. Here's an example of how you can expose a Width property in your app as a resource that localizers can set appropriately per language. First, in your app's Resources File (.resw), add a property identifier with the name &quot;TitleText.Width&quot; (instead of &quot;TitleText&quot;, you can use any name you like). Then, use an <strong>x:Uid</strong> to associate one or more UI elements with this property identifier.</p>
+<pre><code class="lang-xaml">&lt;TextBlock x:Uid=&quot;TitleText&quot;&gt;
+</code></pre>
+<p>For more info about Resources Files (.resw), property identifiers, and <strong>x:Uid</strong>, see <a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a>.</p>
+<h2 id="fonts">Fonts</h2>
+<p>Use the <a href="/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live"><strong>LanguageFont</strong></a> font-mapping class for programmatic access to the recommended font family, size, weight, and style for a particular language. The <strong>LanguageFont</strong> class provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts.</p>
+<h2 id="mirroring-images">Mirroring images</h2>
+<p>If your app has images that must be mirrored (that is, the same image can be flipped) for RTL, then you can use <strong>FlowDirection</strong>.</p>
+<pre><code class="lang-xaml">&lt;!-- en-US\localized.xaml --&gt;
+&lt;Image ... FlowDirection=&quot;LeftToRight&quot; /&gt;
+
+&lt;!-- ar-SA\localized.xaml --&gt;
+&lt;Image ... FlowDirection=&quot;RightToLeft&quot; /&gt;
+</code></pre>
+<p>If your app requires a different image to flip the image correctly, then you can use the resource management system with the <code>LayoutDirection</code> qualifier (see the LayoutDirection section of <a href="/windows/uwp/app-resources/tailor-resources-lang-scale-contrast#layoutdirection">Tailor your resources for language, scale, and other qualifiers</a>). The system chooses an image named <code>file.layoutdir-rtl.png</code> when the app runtime language (see <a href="manage-language-and-region.html">Understand user profile languages and app manifest languages</a>) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.</p>
+<h2 id="handling-right-to-left-rtl-languages">Handling right-to-left (RTL) languages</h2>
+<p>When your app is localized for right-to-left (RTL) languages, use the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection"><strong>FrameworkElement.FlowDirection</strong></a> property, and set symmetrical padding and margins. Layout panels such as <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live"><strong>Grid</strong></a> scale and flip automatically with the value of <strong>FlowDirection</strong> that you set.</p>
+<p>Set <strong>FlowDirection</strong> on the root layout panel (or frame) of your Page, or on the Page itself. This causes all of the controls contained within to inherit that property.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>However, <strong>FlowDirection</strong> is <em>not</em> set automatically based on the user's selected display language in Windows settings; nor does it change dynamically in response to the user switching display language. If the user switches Windows settings from English to Arabic, for example, then the <strong>FlowDirection</strong> property will <em>not</em> automatically change from left-to-right to right-to-left. As the app developer, you have to set <strong>FlowDirection</strong> appropriately for the language that you are currently displaying.</p>
+</div>
+<p>The programmatic technique is to use the <code>LayoutDirection</code> property of the preferred user display language to set the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection"><strong>FlowDirection</strong></a> property (see the code example below). Most controls included in Windows use <strong>FlowDirection</strong> already. If you're implementing a custom control, it should use <strong>FlowDirection</strong> to make appropriate layout changes for RTL and LTR languages.</p>
+<pre><code class="lang-csharp">this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
+
+// For bidirectional languages, determine flow direction for the root layout panel, and all contained UI.
+
+var flowDirectionSetting = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues[&quot;LayoutDirection&quot;];
+if (flowDirectionSetting == &quot;LTR&quot;)
+{
+    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.LeftToRight;
+}
+else
+{
+    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.RightToLeft;
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">#include &lt;winrt/Windows.ApplicationModel.Resources.Core.h&gt;
+#include &lt;winrt/Windows.Globalization.h&gt;
+...
+
+m_languageTag = Windows::Globalization::ApplicationLanguages::Languages().GetAt(0);
+
+// For bidirectional languages, determine flow direction for the root layout panel, and all contained UI.
+
+auto flowDirectionSetting = Windows::ApplicationModel::Resources::Core::ResourceContext::GetForCurrentView().QualifierValues().Lookup(L&quot;LayoutDirection&quot;);
+if (flowDirectionSetting == L&quot;LTR&quot;)
+{
+    layoutRoot().FlowDirection(Windows::UI::Xaml::FlowDirection::LeftToRight);
+}
+else
+{
+    layoutRoot().FlowDirection(Windows::UI::Xaml::FlowDirection::RightToLeft);
+}
+</code></pre>
+<pre><code class="lang-cpp">this-&gt;languageTag = Windows::Globalization::ApplicationLanguages::Languages-&gt;GetAt(0);
+
+// For bidirectional languages, determine flow direction for the root layout panel, and all contained UI.
+
+auto flowDirectionSetting = Windows::ApplicationModel::Resources::Core::ResourceContext::GetForCurrentView()-&gt;QualifierValues-&gt;Lookup(&quot;LayoutDirection&quot;);
+if (flowDirectionSetting == &quot;LTR&quot;)
+{
+    this-&gt;layoutRoot-&gt;FlowDirection = Windows::UI::Xaml::FlowDirection::LeftToRight;
+}
+else
+{
+    this-&gt;layoutRoot-&gt;FlowDirection = Windows::UI::Xaml::FlowDirection::RightToLeft;
+}
+</code></pre>
+<p>The technique above makes <strong>FlowDirection</strong> a function of the <code>LayoutDirection</code> property of the preferred user display language. If for whatever reason you don't want that logic, then you can expose a FlowDirection property in your app as a resource that localizers can set appropriately for each language they translate into.</p>
+<p>First, in your app's Resources File (.resw), add a property identifier with the name &quot;MainPage.FlowDirection&quot; (instead of &quot;MainPage&quot;, you can use any name you like). Then, use an <strong>x:Uid</strong> to associate your main <strong>Page</strong> element (or its root layout panel or frame) with this property identifier.</p>
+<pre><code class="lang-xaml">&lt;Page x:Uid=&quot;MainPage&quot;&gt;
+</code></pre>
+<p>Instead of a single line of code for all languages, this depends on the translator &quot;translating&quot; this property resource correctly for each translated language; so be aware that there's that extra opportunity for human error when you use this technique.</p>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection">FrameworkElement.FlowDirection</a></li>
+<li><a href="/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live">LanguageFont</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a></li>
+<li><a href="/windows/uwp/app-resources/tailor-resources-lang-scale-contrast">Tailor your resources for language, scale, and other qualifiers</a></li>
+<li><a href="manage-language-and-region.html">Understand user profile languages and app manifest languages</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

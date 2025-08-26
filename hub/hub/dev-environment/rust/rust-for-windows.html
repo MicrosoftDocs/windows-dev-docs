@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Rust for Windows, and the windows crate </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Rust for Windows, and the windows crate ">
+    
+    <meta name="description" content="Using the *windows* crate, and calling Windows APIs.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="rust-for-windows-and-the-windows-crate">Rust for Windows, and the <em>windows</em> crate</h1>
+
+<p> </p>
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/-oZrsCPKsn4?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="introducing-rust-for-windows">Introducing Rust for Windows</h2>
+<p>In the <a href="overview.html">Overview of developing on Windows with Rust</a> topic, we demonstrated a simple app that outputs a <em>Hello, world!</em> message. But not only can you use Rust <em>on</em> Windows, you can also write apps <em>for</em> Windows using Rust.</p>
+<p>You can find all of the latest updates in the <a href="https://github.com/microsoft/windows-rs/releases">Release log of the Rust for Windows repo</a> on GitHub.</p>
+<p>Rust for Windows lets you use any Windows API (past, present, and future) directly and seamlessly via <a href="https://crates.io/crates/windows">the <em>windows</em> crate</a> (<em>crate</em> is Rust's term for a binary or a library, and/or the source code that builds into one).</p>
+<p>Whether it's timeless functions such as <a href="/windows/win32/api/synchapi/nf-synchapi-createeventw">CreateEventW</a> and <a href="/windows/win32/api/synchapi/nf-synchapi-waitforsingleobject">WaitForSingleObject</a>, powerful graphics engines such as <a href="/windows/win32/direct3d12/directx-12-programming-guide">Direct3D</a>, traditional windowing functions such as <a href="/windows/win32/api/winuser/nf-winuser-createwindowexw">CreateWindowExW</a> and <a href="/windows/win32/api/winuser/nf-winuser-dispatchmessagew">DispatchMessageW</a>, or more recent user interface (UI) frameworks such as <a href="/uwp/api/windows.ui.composition">Composition</a>, <a href="https://crates.io/crates/windows">the <em>windows</em> crate</a> has you covered.</p>
+<p>The <a href="https://github.com/microsoft/win32metadata">win32metadata</a> project aims to provide metadata for Win32 APIs. This metadata describes the API surface—strongly-typed API signatures, parameters, and types. This enables the entire Windows API to be projected in an automated and complete way for consumption by Rust (as well as languages such as C# and C++). Also see <a href="https://blogs.windows.com/windowsdeveloper/2021/01/21/making-win32-apis-more-accessible-to-more-languages/">Making Win32 APIs more accessible to more languages</a>.</p>
+<p>As a Rust developer, you'll use Cargo (Rust's package management tool)—along with <code>https://crates.io</code> (the Rust community's crate registry)—to manage the dependencies in your projects. The good news is that you can reference <a href="https://crates.io/crates/windows">the <em>windows</em> crate</a> from your Rust apps, and then immediately begin calling Windows APIs. You can also find Rust <a href="https://docs.rs/windows/latest/windows/">documentation for the <em>windows</em> crate</a> over on <code>https://docs.rs</code>.</p>
+<p>Similar to <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>, <a href="https://github.com/microsoft/windows-rs">Rust for Windows</a> is an open source language projection developed on GitHub. Use the <a href="https://github.com/microsoft/windows-rs">Rust for Windows</a> repo if you have questions about Rust for Windows, or if you wish to report issues with it.</p>
+<p>The Rust for Windows repo also has <a href="https://github.com/microsoft/windows-rs/tree/master/crates/samples">some simple examples</a> that you can follow. And there's an excellent sample app in the form of Robert Mikhayelyan's <a href="https://github.com/robmikh/minesweeper-rs">Minesweeper</a>.</p>
+<h2 id="contribute-to-rust-for-windows">Contribute to Rust for Windows</h2>
+<p><a href="https://github.com/microsoft/windows-rs">Rust for Windows</a> welcomes your contributions!</p>
+<h2 id="rust-documentation-for-the-windows-api">Rust documentation for the Windows API</h2>
+<p>Rust for Windows benefits from the polished toolchain that Rust developers enjoy. But if having the entire Windows API at your fingertips seems a little daunting, there's also <a href="https://microsoft.github.io/windows-docs-rs/doc/windows/">Rust documentation for the Windows API</a>.</p>
+<p>This resource essentially documents how the Windows APIs and types are projected into idiomatic Rust. Use it to browse or search for the APIs you need to know about, and that you need to know how to call.</p>
+<h2 id="writing-an-app-with-rust-for-windows">Writing an app with Rust for Windows</h2>
+<p>The next topic is the <a href="rss-reader-rust-for-windows.html">RSS reader tutorial</a>, where we'll walk through writing a simple app with Rust for Windows.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="overview.html">Overview of developing on Windows with Rust</a></li>
+<li><a href="rss-reader-rust-for-windows.html">RSS reader tutorial</a></li>
+<li><a href="https://crates.io/crates/windows">The <em>windows</em> crate</a></li>
+<li><a href="https://docs.rs/windows/0.3.1/windows/">Documentation for the <em>windows</em> crate</a></li>
+<li><a href="https://github.com/microsoft/win32metadata">Win32 metadata</a></li>
+<li><a href="https://blogs.windows.com/windowsdeveloper/2021/01/21/making-win32-apis-more-accessible-to-more-languages/">Making Win32 APIs more accessible to more languages</a></li>
+<li><a href="https://microsoft.github.io/windows-docs-rs/doc/windows/">Rust documentation for the Windows API</a></li>
+<li><a href="https://github.com/microsoft/windows-rs">Rust for Windows</a></li>
+<li><a href="https://github.com/robmikh/minesweeper-rs">Minesweeper sample app</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/rust/rust-for-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

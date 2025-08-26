@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>User interface migration (including WinUI 3) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="User interface migration (including WinUI 3) ">
+    
+    <meta name="description" content="This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI 3](../../../winui/index.md).">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="user-interface-migration-including-winui-3">User interface migration (including WinUI 3)</h1>
+
+<p>This topic shows how to migrate your user interface (UI) code, including migrating to <a href="../../../winui/index.html">WinUI 3</a>.</p>
+<h2 id="summary-of-api-andor-feature-differences">Summary of API and/or feature differences</h2>
+<p>The <strong>Window.Current</strong> property migrates to <strong>App.Window</strong>. And the <strong>CoreDispatcher.RunAsync</strong> method migrates to <strong>DispatcherQueue.TryEnqueue</strong>.</p>
+<p>You need to set your window's <em>handle</em> (<strong>HWND</strong>) on a <strong>MessageDialog</strong>, and on <strong>Picker</strong>s.</p>
+<p>To use <strong>DataTransferManager</strong> APIs, you need to associate them with your window.</p>
+<p>For <strong>ContentDialog</strong> and <strong>Popup</strong>, you need to set their <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands">XamlRoot</a> property.</p>
+<p>You may need to refactor your Visual State Manager and <strong>Page.Resources</strong> XAML markup.</p>
+<p>In the Windows App SDK, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush"><strong>AcrylicBrush</strong></a> always samples from the app content.</p>
+<h2 id="change-windowsuixamlwindowcurrent-to-appwindow">Change Windows.UI.Xaml.Window.Current to App.Window</h2>
+<p>This section applies if you're using the <a href="/uwp/api/windows.ui.xaml.window.current"><strong>Windows.UI.Xaml.Window.Current</strong></a> property in your UWP app. That property isn't supported in the Windows App SDK, so this section describes how to port UWP code that uses <strong>Window.Current</strong>.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a UWP app
+var width = Window.Current.Bounds.Width;
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a UWP app
+auto width{ Window::Current().Bounds().Width };
+</code></pre>
+<p>Your Windows App SDK app can add its own notion of a <em>current</em>, or <em>main</em> window by using a public static property on your <strong>App</strong> class.</p>
+<pre><code class="lang-csharp">// App.xaml.cs in a Windows App SDK app
+public partial class App : Application
+{
+    ...
+    public static Window Window { get { return m_window; } }
+    private static Window m_window;
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// App.xaml.h in a Windows App SDK app
+...
+struct App : AppT&lt;App&gt;
+{
+    ...
+    static winrt::Microsoft::UI::Xaml::Window Window(){ return window; };
+
+private:
+    static winrt::Microsoft::UI::Xaml::Window window;
+};
+...
+
+// App.xaml.cpp
+...
+winrt::Microsoft::UI::Xaml::Window App::window{ nullptr };
+...
+</code></pre>
+<p>Then, within the <strong>App</strong> class itself, you can change <code>Window.Current</code> to simply <code>window</code>. Outside of the <strong>App</strong> class, change <code>Window.Current</code> to <code>App.Window</code>, like this:</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a UWP app
+var width = App.Window.Bounds.Width;
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a UWP app
+#include &lt;App.xaml.h&gt;
+auto width{ App::Window().Bounds().Width };
+</code></pre>
+<h2 id="messagedialog-and-pickers">MessageDialog, and Pickers</h2>
+<p>In your UWP app, if you use certain types from the <a href="/uwp/api/windows.ui.popups"><strong>Windows.UI.Popups</strong></a> or <a href="/uwp/api/windows.storage.pickers"><strong>Windows.Storage.Pickers</strong></a> namespaces, then this section contains info to help you migrate that code. The code examples below use <strong>MessageDialog</strong>, but you can apply exactly the same techniques to displaying a picker (for example, a <a href="/uwp/api/windows.storage.pickers.fileopenpicker"><strong>FileOpenPicker</strong></a>, a <a href="/uwp/api/windows.storage.pickers.filesavepicker"><strong>FileSavePicker</strong></a>, or a <a href="/uwp/api/windows.storage.pickers.folderpicker"><strong>FolderPicker</strong></a>).</p>
+<p>The steps that you have to follow in a desktop app are described in <a href="../../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For new apps, we recommend using the <a href="/uwp/api/windows.ui.xaml.controls.contentdialog"><strong>ContentDialog</strong></a> control instead of <a href="/uwp/api/windows.ui.popups.messagedialog"><strong>MessageDialog</strong></a>. For more info, see the <a href="#contentdialog-and-popup">ContentDialog, and Popup</a> section below.</p>
+</div>
+<p>Here's some typical UWP code to display a <a href="/uwp/api/windows.ui.popups.messagedialog"><strong>MessageDialog</strong></a>.</p>
+<pre><code class="lang-csharp">// In a UWP app
+var showDialog = new Windows.UI.Popups.MessageDialog(&quot;Message here&quot;);
+await showDialog.ShowAsync();
+</code></pre>
+<pre><code class="lang-cppwinrt">// In a UWP app
+auto showDialog{ Windows::UI::Popups::MessageDialog(L&quot;Message here&quot;) };
+co_await showDialog.ShowAsync();
+</code></pre>
+<p>And here's the equivalent code in a Windows App SDK app.</p>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs in a WinUI 3 app
+var showDialog = new Windows.UI.Popups.MessageDialog(&quot;Message here&quot;);
+WinRT.Interop.InitializeWithWindow.Initialize(showDialog,
+    WinRT.Interop.WindowNative.GetWindowHandle(this));
+await showDialog.ShowAsync();
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h in a WinUI 3 app
+...
+#include &lt;Shobjidl.h&gt;
+#include &lt;microsoft.ui.xaml.window.h&gt;
+#include &lt;winrt/Windows.UI.Popups.h&gt;
+...
+
+// MainWindow.xaml.cpp
+...
+auto showDialog{ Windows::UI::Popups::MessageDialog(L&quot;Message here&quot;) };
+
+auto windowNative{ this-&gt;m_inner.as&lt;::IWindowNative&gt;() };
+HWND hWnd{ 0 };
+windowNative-&gt;get_WindowHandle(&amp;hWnd);
+showDialog.as&lt;::IInitializeWithWindow&gt;()-&gt;Initialize(hWnd);
+
+co_await showDialog.ShowAsync();
+</code></pre>
+<h2 id="datatransfermanager">DataTransferManager</h2>
+<p>In your UWP app, if you call the <a href="/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui#Windows_ApplicationModel_DataTransfer_DataTransferManager_ShowShareUI"><strong>DataTransferManager.ShowShareUI</strong></a> method, then this section contains info to help you migrate that code.</p>
+<p>Here's some typical UWP code that calls <strong>ShowShareUI</strong>.</p>
+<pre><code class="lang-csharp">// In a UWP app
+var dataTransferManager = Windows.ApplicationModel.DataTransfer.DataTransferManager.GetForCurrentView();
+
+dataTransferManager.DataRequested += (sender, args) =&gt;
+{
+    args.Request.Data.Properties.Title = &quot;In a UWP app...&quot;;
+    args.Request.Data.SetText(&quot;...display the user interface for sharing content with another app.&quot;);
+    args.Request.Data.RequestedOperation =
+        Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+};
+
+Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI();
+</code></pre>
+<pre><code class="lang-cppwinrt">// In a UWP app
+#include &lt;winrt/Windows.ApplicationModel.DataTransfer.h&gt;
+...
+auto dataTransferManager{ Windows::ApplicationModel::DataTransfer::DataTransferManager::GetForCurrentView() };
+
+dataTransferManager.DataRequested([](Windows::ApplicationModel::DataTransfer::DataTransferManager const&amp; /* sender */,
+    Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs const&amp; args)
+    {
+        args.Request().Data().Properties().Title(L&quot;In a UWP app...&quot;);
+        args.Request().Data().SetText(L&quot;...display the user interface for sharing content with another app.&quot;);
+        args.Request().Data().RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation::Copy);
+    });
+
+Windows::ApplicationModel::DataTransfer::DataTransferManager::ShowShareUI();
+</code></pre>
+<p>To use <strong>DataTransferManager.ShowShareUI</strong> in your Windows App SDK app, you need to associate the Share UI with your window. And that needs to be done manually. For more info, and code examples, see <a href="../../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<h2 id="contentdialog-and-popup">ContentDialog, and Popup</h2>
+<p>If in your UWP app you're using the <a href="/uwp/api/windows.ui.xaml.controls.contentdialog"><strong>Windows.UI.Xaml.Controls.ContentDialog</strong></a> or <a href="/uwp/api/windows.ui.xaml.controls.primitives.popup"><strong>Windows.UI.Xaml.Controls.Primitives.Popup</strong></a> classes, then this section contains info to help you migrate that code. The code examples below use <strong>ContentDialog</strong>, but you can apply exactly the same techniques to displaying a <strong>Popup</strong> object.</p>
+<p>Here's some typical UWP code to display a <strong>ContentDialog</strong>.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a UWP app
+var unsupportedFilesDialog = new ContentDialog();
+// Set Title, Content, etc.
+await unsupportedFilesDialog.ShowAsync();
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a UWP app
+ContentDialog unsupportedFilesDialog{};
+// Set Title, Content, etc.
+co_await unsupportedFilesDialog.ShowAsync();
+</code></pre>
+<p>In your Windows App SDK app, you just need to also set the dialog's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands">XamlRoot</a> property. Here's how.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a Windows App SDK app
+var unsupportedFilesDialog = new ContentDialog();
+// Set Title, Content, etc.
+unsupportedFilesDialog.XamlRoot = this.Content.XamlRoot;
+await unsupportedFilesDialog.ShowAsync();
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a Windows App SDK app
+ContentDialog unsupportedFilesDialog{};
+// Set Title, Content, etc.
+unsupportedFilesDialog.XamlRoot(this-&gt;Content().XamlRoot());
+co_await unsupportedFilesDialog.ShowAsync();
+</code></pre>
+<h2 id="do-i-need-to-implement-page-navigation">Do I need to implement page navigation?</h2>
+<p>In a UWP project, by default there will be navigation code in the methods of the <strong>App</strong> class, even if your app is simple enough that it has only one <strong>Page</strong>.</p>
+<p>When you create a new Windows App SDK project in Visual Studio, the project template provides you with a <strong>MainWindow</strong> class (of type <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Microsoft.UI.Xaml.Window</strong></a>), but no <strong>Page</strong>. And the project template doesn't provide any navigation code.</p>
+<p>For a Windows App SDK app that's simple enough (a single-page app), you might be able to simplify it. It might be that you needn't create pages or user controls in your Windows App SDK project—but instead copy the XAML markup and code-behind of that single page into <strong>MainWindow</strong>. However, there are some things that <strong>MainWindow</strong> doesn't support. <strong>Window</strong> isn't a DependencyObject, so capabilities such as <strong>Resources</strong> and <strong>DataContext</strong> don't exist on it. Neither do events such as <strong>Load</strong> and <strong>Unload</strong>. For more info, and workarounds, see <a href="#visual-state-manager-and-pageresources">Visual State Manager, and Page.Resources</a>.</p>
+<p>If on the other hand you want or need navigation between pages in your Windows App SDK app, then you can do so by migrating the <strong>App.OnLaunched</strong> and <strong>App::OnNavigationFailed</strong> methods from your UWP app. In <strong>App.OnLaunched</strong>, locate the navigation code (the code that creates <em>rootFrame</em>, and navigates to the first page of your app) and merge it right in between the two existing lines of code (the lines that create a window and then activate it). You'll also need to migrate the code you've copy-pasted. For a simple code example, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page#examples"><strong>Page class</strong></a>.</p>
+<h2 id="visual-state-manager-and-pageresources">Visual State Manager, and Page.Resources</h2>
+<p>Also see <a href="#do-i-need-to-implement-page-navigation">Do I need to implement page navigation?</a>. If you <em>do</em> have a UWP app that's simple enough where you can copy your XAML markup and code-behind into <strong>MainWindow</strong>, then bear in mind these exceptions.</p>
+<p>Your <strong>MainWindow</strong> class (of type <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Microsoft.UI.Xaml.Window</strong></a>) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see <a href="../../../design/layout/layouts-with-xaml.html">Tutorial: Create adaptive layouts</a>). You have these two options, though:</p>
+<ul>
+<li>Add a <strong>UserControl</strong> item to the project, and migrate your markup and code-behind to that. Then place an instance of that user control in <strong>MainWindow</strong>.</li>
+<li>Add a <strong>Page</strong> item to the project, and migrate your markup and code-behind to that. Then add code to your <strong>App</strong> class to navigate to that <strong>Page</strong> on startup, as described in <a href="#do-i-need-to-implement-page-navigation">Do I need to implement page navigation?</a>.</li>
+</ul>
+<p>In addition, you won't be able to copy a <code>&lt;Page.Resources&gt;</code> element over to <strong>MainWindow</strong> and just rename it to <code>&lt;Window.Resources&gt;</code>. Instead, parent the <strong>Resources</strong> element under the root layout container (for example, a <strong>Grid</strong>) in the XAML markup for <strong>MainWindow</strong>. That will look like this:</p>
+<pre><code class="lang-xaml">&lt;Window ...&gt;
+    &lt;Grid&gt;
+        &lt;Grid.Resources&gt;...&lt;/Grid.Resources&gt;
+        ...
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<h2 id="acrylicbrushbackgroundsource-property">AcrylicBrush.BackgroundSource property</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource"><strong>AcrylicBrush.BackgroundSource</strong></a> property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush"><strong>AcrylicBrush</strong></a> always samples from the app content.</p>
+<p>So if you're accessing the <strong>AcrylicBrush.BackgroundSource</strong> property in the source code of your UWP app (whether that's in XAML markup or in imperative code), then remove that code when migrating your app to the Windows App SDK. Instead, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller">DesktopAcrylicController</a> class.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../../support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="../../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

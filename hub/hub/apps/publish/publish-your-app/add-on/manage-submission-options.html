@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manage submission options for add-on </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manage submission options for add-on ">
+    
+    <meta name="description" content="Manage your app submission options, including publishing hold options and notes for certification to provide additional info to the certification testers. Additionally, monitor the status of your draft app add-on submissions.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manage-submission-options">Manage submission options</h1>
+
+<p>The <strong>Submission options</strong> page of the app submission process is where you can provide more information to help us test your product properly. This is an optional step, but is recommended for many submissions. You can also optionally set publishing hold options if you want to delay the publishing process.</p>
+<h2 id="publishing-hold-options">Publishing hold options</h2>
+<p>By default, we'll publish your submission as soon as it passes certification (or per any dates you specified in the <a href="configure-release-schedule.html#configure-precise-release-scheduling">Schedule</a> section of the <strong>Configure release schedule</strong> page). You can optionally choose to place a hold on publishing your submission until a certain date, or until you manually indicate that it should be published. The options in this section are described below.</p>
+<h3 id="publish-your-submission-as-soon-as-it-passes-certification-or-per-dates-you-specify">Publish your submission as soon as it passes certification (or per dates you specify)</h3>
+<p><strong>Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)</strong> is the default selection, and means that your submission will begin the publishing process as soon as it passes certification, unless you have configured dates in the <a href="configure-release-schedule.html#configure-precise-release-scheduling">Schedule</a> section of the <strong>Configure release schedule</strong> page.</p>
+<p>For most submissions, we recommend keeping the <strong>Publishing hold options</strong> section set to the default. If you want your submission to be published on specific dates, configure those dates in the <strong>Schedule</strong> section. The default publishing hold option will ensure your submission is not published before the dates you set in the <strong>Schedule</strong> section. Your product will become available to customers in the Store based on the schedule you specify.</p>
+<h3 id="publish-your-submission-manually">Publish your submission manually</h3>
+<p>If you don’t want to set a release date yet, and you prefer your submission to remain unpublished until you manually decide to start the publishing process, you can choose <strong>Don't publish this submission until I select Publish now</strong>. Choosing this option means that your submission won’t be published until you indicate that it should be. After your submission passes certification, you can publish it by selecting <strong>Publish now</strong> on the certification status page, or by selecting a specific date in the same manner as described below.</p>
+<h3 id="start-publishing-your-submission-on-a-certain-date">Start publishing your submission on a certain date</h3>
+<p>Choose <strong>Start publishing this submission on</strong> if you want to delay publishing until a specific date. With this option, your submission will be released as soon as possible on or after the date you specify (which must be at least 24 hours in the future). You can also set the exact time for publishing to begin.</p>
+<p>You can update this release date after submitting your product, as long as it hasn’t entered the Publish step.</p>
+<p>Remember, if you want your submission to be published on certain dates, you can use the <strong>Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)</strong> option and leave the <strong>Publishing hold options</strong> set to default. The <strong>Start publishing this submission on</strong> option ensures your submission won’t begin publishing until your chosen date, but delays during certification or publishing may result in the actual release occurring later than planned.</p>
+<h2 id="restricted-capabilities">Restricted capabilities</h2>
+<p>If we detect that your packages declare any <a href="/windows/uwp/packaging/app-capability-declarations#restricted-capabilities">restricted capabilities</a>, you’ll need to provide info in this section in order to receive approval. For each capability, tell us why your app needs to declare the capability and how it is used. Be sure to provide as much detail as possible to help us understand why your product needs to declare the capability.</p>
+<p>During the certification process, our testers will review the info you provide to determine whether your submission is approved to use the capability. Note that this may add some additional time for your submission to complete the certification process. If we approve your use of the capability, your app will continue through the rest of the certification process. You generally will not have to repeat the capability approval process when you submit updates to your app (unless you declare additional capabilities).</p>
+<p>If we don’t approve your use of the capability, your submission will fail certification, and we will provide feedback in the certification report. You then have the option to create a new submission and upload packages which don’t declare the capability, or, if applicable, address any issues related to your use of the capability and request approval in a new submission.</p>
+<p>Note that there are some restricted capabilities which will very rarely be approved. For more info about each restricted capability, see <a href="/windows/uwp/packaging/app-capability-declarations">App capability declarations</a>.</p>
+<h2 id="notes-for-certification">Notes for certification</h2>
+<p>As you submit your app, you can use the <strong>Notes for certification</strong> page to give certification testers extra information that will help them test your app correctly. Providing these notes is especially important for apps that use Xbox Live Services or require users to log in. If testers can’t fully test your app, your submission may fail certification.</p>
+<p>Be sure to include the following details if they apply to your app:</p>
+<ul>
+<li><p><strong>User names and passwords for test accounts</strong>: If your app requires login to a service or social media, provide a test account’s user name and password. Testers will use this account during their review.</p>
+</li>
+<li><p><strong>Steps to access hidden or locked features</strong>: Briefly explain how testers can access any features, modes, or content that aren’t obvious. Apps that seem incomplete may fail certification.</p>
+</li>
+<li><p><strong>Steps to verify background audio usage</strong>: If your app supports background audio, give instructions so testers can confirm this feature works as intended.</p>
+</li>
+<li><p><strong>Expected differences in behavior based on region or other customer settings</strong>: If your app behaves differently for users in different regions or with different settings, explain these differences so testers know what to expect.</p>
+</li>
+<li><p><strong>Info about what's changed in an app update</strong>: For updates, let testers know what’s new, especially if only your app listing has changed (like screenshots, category, or description) and not the app package itself.</p>
+</li>
+<li><p><strong>The date you're entering the notes</strong>: This is important if you’re using a development sandbox in Partner Center (such as for Xbox Live integration). The date helps testers know if any issues mentioned might no longer apply.</p>
+</li>
+<li><p><strong>Anything else you think testers will need to understand about your submission</strong></p>
+</li>
+</ul>
+<p>When writing your notes, keep these tips in mind:</p>
+<ul>
+<li><p><strong>A real person will read these notes.</strong> Testers appreciate polite, clear, and helpful instructions.</p>
+</li>
+<li><p><strong>Be succinct and keep instructions simple.</strong> If you need to provide detailed explanations, you can include a URL for more information. Remember, customers won’t see these notes. If your instructions are complicated, consider simplifying your app so both customers and testers can use it easily.</p>
+</li>
+<li><p><strong>Services and external components must be online and available.</strong> If your app depends on an online service, make sure it’s available during testing and provide any needed information, such as login details. If testers can’t connect to required services, your app may fail certification.</p>
+</li>
+</ul>
+<h2 id="app-submission-controls">App submission controls</h2>
+<h3 id="delete-draft-submissions-and-apps">Delete draft submissions and apps</h3>
+<p>To delete a draft submission, follow these steps:</p>
+<ol>
+<li>Go to the Apps and Games overview page and open the app for which you want to delete the app add-on. You can only delete an app add-on that is not submitted or live on the Store.</li>
+<li>Click the app add-on you want to delete.</li>
+<li>Click delete from the Action section.</li>
+<li>Confirm the delete action.</li>
+</ol>
+<h3 id="cancel-review">Cancel review</h3>
+<p>To cancel a review process, follow these steps:</p>
+<ol>
+<li>Go to the Apps and Games overview page and open the app for which you submitted the app add-on for review or certification.</li>
+<li>Click the app add-on for which you want to cancel the certification process.</li>
+<li>Click <strong>View progress</strong> to for the app add-on submission for which you'd like to cancel the review process.</li>
+<li>Click <strong>Cancel certification</strong>.</li>
+<li>Confirm that you want to cancel the review process.</li>
+</ol>
+<h3 id="make-product-available-or-unavailable">Make product available or unavailable</h3>
+<p>To make your app unavailable without deleting it from the store, follow these steps.</p>
+<ol>
+<li>Go to the Apps and Games overview page and open the app for which you want to make the app add-on unavailable.</li>
+<li>Click the app add-on you want to make unavailable.</li>
+<li>From the action section on the right-hand side, click <strong>Make product unavailable</strong>.</li>
+<li>Confirm that you want to make your app add-on unavailable.</li>
+</ol>
+<p>To make your app add-on available again, perform the same steps as above, but click <strong>Make product available</strong> instead.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/add-on/manage-submission-options.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

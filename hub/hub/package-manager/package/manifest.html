@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create your package manifest </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create your package manifest ">
+    
+    <meta name="description" content="If you want to submit a software package to the Windows Package Manager repository, start by creating a package manifest.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-your-package-manifest">Create your package manifest</h1>
+
+<p>If you want to submit a software package to the <a href="repository.html">Windows Package Manager Community Repository</a>, start by creating a package manifest. The manifest is a YAML file that describes the application to be installed.</p>
+<p>You may either use the <a href="https://github.com/microsoft/winget-create">Windows Package Manager Manifest Creator</a>, the <a href="#using-the-yamlcreateps1">YAMLCreate</a> PowerShell script, or you can craft a manifest manually following the instructions below.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>See the <a href="#manifest-faq">Manifest FAQ</a> below for more general high-level information explaining manifests, packages, and versions.</p>
+</div>
+<h2 id="options-for-manifest-creation">Options for Manifest Creation</h2>
+<h3 id="using-wingetcreate-utility">Using WinGetCreate Utility</h3>
+<p>You can install the <code>wingetcreate</code> utility using the command below.</p>
+<pre><code class="lang-powershell">winget install wingetcreate
+</code></pre>
+<p>After installation, you can run <code>wingetcreate new</code> to create a new package and fill in the prompts. The last option in the <strong>WinGetCreate</strong> prompts is to submit the manifest to the packages repository. If you choose yes, you will automatically submit your Pull Request (PR) to the <a href="https://github.com/microsoft/winget-pkgs">Windows Package Manager Community Repository</a>.</p>
+<h3 id="using-the-yamlcreateps1">Using the YAMLCreate.ps1</h3>
+<p>To help author manifest files, we have provided a YAMLCreate.ps1 powershell script located in the Tools folder on the <a href="https://github.com/microsoft/winget-pkgs">Windows Package Manager Community Repository</a>. You can use the script by cloning the repo on your PC and running the script directly from the <strong>Tools</strong> folder. The script will prompt you for the URL to the installer, then will prompt you to fill in metadata. Similar to using <strong>WinGetCreate</strong>, this script will offer the option to submit your manifest automatically.</p>
+<h2 id="yaml-basics">YAML basics</h2>
+<p>The YAML format was chosen for package manifests because of its relative ease of human readability and consistency with other Microsoft development tools. If you are not familiar with YAML syntax, you can learn the basics at <a href="https://learnxinyminutes.com/docs/yaml/">Learn YAML in Y Minutes</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Manifests for Windows Package Manager currently do not support all YAML features. Unsupported YAML features include anchors, complex keys, and sets.</p>
+</div>
+<h2 id="conventions">Conventions</h2>
+<p>These conventions are used in this article:</p>
+<ul>
+<li>To the left of <code>:</code> is a literal keyword used in manifest definitions.</li>
+<li>To the right of <code>:</code> is a data type. The data type can be a primitive type like <strong>string</strong> or a reference to a rich structure defined elsewhere in this article.</li>
+<li>The notation <code>[</code> <em>datatype</em> <code>]</code> indicates an array of the mentioned data type. For example, <code>[ string ]</code> is an array of strings.</li>
+<li>The notation <code>{</code> <em>datatype</em> <code>:</code> <em>datatype</em> <code>}</code> indicates a mapping of one data type to another. For example, <code>{ string: string }</code> is a mapping of strings to strings.</li>
+</ul>
+<h2 id="manifest-contents">Manifest contents</h2>
+<p>A package manifest consists of required items and optional items that can help improve the customer experience of installing your software. This section provides a brief summary of the required manifest schema and complete manifest schemas with examples of each.</p>
+<p>Each field in the manifest file must be Pascal-cased and cannot be duplicated.</p>
+<p>For a complete list and descriptions of items in a manifest, see the <a href="https://github.com/microsoft/winget-pkgs/tree/master/doc/manifest/schema">manifest specification</a> in the <a href="https://github.com/microsoft/winget-pkgs">Windows Package Manager Community Repository</a>.</p>
+<h3 id="minimal-required-schema">Minimal required schema</h3>
+<p>As specified in the <a href="https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.6.0/manifest.singleton.1.6.0.json">singleton JSON schema</a>,
+only certain fields are required. The minimal supported YAML file would look like the example below. The singleton format is only valid for packages containing a single installer and a single locale. If more than one installer or locale is provided, the multiple YAML file format and schema must be used.</p>
+<p>The partitioning scheme was added to help with GitHub's UX. Folders with thousands of children do not render well in the browser.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_minschema" role="tab" aria-controls="tabpanel_1_minschema" data-tab="minschema" tabindex="0" aria-selected="true">Minimal required schema</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_minexample" role="tab" aria-controls="tabpanel_1_minexample" data-tab="minexample" tabindex="-1">Example</a>
+</li>
+</ul>
+<section id="tabpanel_1_minschema" role="tabpanel" data-tab="minschema">
+
+<pre><code class="lang-YAML">PackageIdentifier:  # Publisher.package format.
+PackageVersion:     # Version numbering format.
+PackageLocale:      # BCP 47 format (e.g. en-US)
+Publisher:          # The name of the publisher.
+PackageName:        # The name of the application.
+License:            # The license of the application.
+ShortDescription:   # The description of the application.
+Installers: 
+ - Architecture:    # Enumeration of supported architectures.
+   InstallerType:   # Enumeration of supported installer types (exe, msi, msix, inno, wix, nullsoft, appx).
+   InstallerUrl:    # Path to download installation file.
+   InstallerSha256: # SHA256 calculated from installer.
+ManifestType:       # The manifest file type
+ManifestVersion: 1.6.0
+</code></pre>
+</section>
+<section id="tabpanel_1_minexample" role="tabpanel" data-tab="minexample" aria-hidden="true" hidden="hidden">
+
+<p>Path: manifests / m / Microsoft / WindowsTerminal / 1.6.10571.0 / Microsoft.WindowsTerminal.yaml</p>
+<pre><code class="lang-YAML">PackageIdentifier: Microsoft.WindowsTerminal
+PackageVersion: 1.6.10571.0
+PackageLocale: en-US
+Publisher: Microsoft
+PackageName: Windows Terminal
+License: MIT
+ShortDescription: The new Windows Terminal, a tabbed command line experience for Windows.
+Installers: 
+ - Architecture: x64
+   InstallerType: msix
+   InstallerUrl: https://github.com/microsoft/terminal/releases/download/v1.6.10571.0/Microsoft.WindowsTerminal_1.6.10571.0_8wekyb3d8bbwe.msixbundle
+   InstallerSha256: 092aa89b1881e058d31b1a8d88f31bb298b5810afbba25c5cb341cfa4904d843
+   SignatureSha256: e53f48473621390c8243ada6345826af7c713cf1f4bbbf0d030599d1e4c175ee
+ManifestType: singleton
+ManifestVersion: 1.6.0
+</code></pre>
+</section>
+</div>
+<h3 id="multiple-manifest-files">Multiple manifest files</h3>
+<p>To provide the best user experience, manifests should contain as much meta-data as possible. In order to separate concerns for validating installers
+and providing localized metadata, manifests should be split into multiple files. The minimum number of YAML files for this kind of manifest is three. Additional locales should also be provided.</p>
+<ul>
+<li>A <a href="https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.6.0/version.md">version</a> (<a href="https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.6.0/manifest.version.1.6.0.json">JSON Schema</a>) file.</li>
+<li>The <a href="https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.6.0/defaultLocale.md">default locale</a> (<a href="https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.6.0/manifest.defaultLocale.1.6.0.json">JSON Schema</a>) file.</li>
+<li>An <a href="https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.6.0/installer.md">installer</a> (<a href="https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.6.0/manifest.installer.1.6.0.json">JSON Schema</a>) file.</li>
+<li>Additional <a href="https://github.com/microsoft/winget-pkgs/blob/master/doc/manifest/schema/1.6.0/locale.md">locale</a> (<a href="https://github.com/microsoft/winget-cli/blob/master/schemas/JSON/manifests/v1.6.0/manifest.locale.1.6.0.json">JSON Schema</a>) files.</li>
+</ul>
+<p>The example below shows many optional metadata fields and multiple locales. Note the default locale has more requirements than additional locales. In the <a href="../winget/show.html">show command</a>, any required fields that aren't provided for additional locales will display fields from the default locale.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_version-example" role="tab" aria-controls="tabpanel_2_version-example" data-tab="version-example" tabindex="0" aria-selected="true">Version file example</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_default-locale-example" role="tab" aria-controls="tabpanel_2_default-locale-example" data-tab="default-locale-example" tabindex="-1">Default locale file example</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_additional-locale-example" role="tab" aria-controls="tabpanel_2_additional-locale-example" data-tab="additional-locale-example" tabindex="-1">Additional locale file example</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_installer-example" role="tab" aria-controls="tabpanel_2_installer-example" data-tab="installer-example" tabindex="-1">Installer file example</a>
+</li>
+</ul>
+<section id="tabpanel_2_version-example" role="tabpanel" data-tab="version-example">
+
+<p>Path: manifests / m / Microsoft / WindowsTerminal / 1.6.10571.0 / Microsoft.WindowsTerminal.yaml</p>
+<pre><code class="lang-YAML">PackageIdentifier: &quot;Microsoft.WindowsTerminal&quot;
+PackageVersion: &quot;1.6.10571.0&quot;
+DefaultLocale: &quot;en-US&quot;
+ManifestType: &quot;version&quot;
+ManifestVersion: &quot;1.6.0&quot;
+</code></pre>
+</section>
+<section id="tabpanel_2_default-locale-example" role="tabpanel" data-tab="default-locale-example" aria-hidden="true" hidden="hidden">
+
+<p>Path: manifests / m / Microsoft / WindowsTerminal / 1.6.10571.0 / Microsoft.WindowsTerminal.locale.en-US.yaml</p>
+<pre><code class="lang-YAML">PackageIdentifier: &quot;Microsoft.WindowsTerminal&quot;
+PackageVersion: &quot;1.6.10571.0&quot;
+PackageLocale: &quot;en-US&quot;
+Publisher: &quot;Microsoft&quot;
+PublisherUrl: &quot;https://www.microsoft.com/&quot;
+PrivacyUrl: &quot;https://privacy.microsoft.com/&quot;
+PackageName: &quot;Windows Terminal&quot;
+PackageUrl: &quot;https://learn.microsoft.com/windows/terminal/&quot;
+License: &quot;MIT&quot;
+LicenseUrl: &quot;https://github.com/microsoft/terminal/blob/master/LICENSE&quot;
+ShortDescription: &quot;The new Windows Terminal, a tabbed command line experience for Windows.&quot;
+Tags: 
+- &quot;Console&quot;
+- &quot;Command-Line&quot;
+- &quot;Shell&quot;
+- &quot;Command-Prompt&quot;
+- &quot;PowerShell&quot;
+- &quot;WSL&quot;
+- &quot;Developer-Tools&quot;
+- &quot;Utilities&quot;
+- &quot;cli&quot;
+- &quot;cmd&quot;
+- &quot;ps&quot;
+- &quot;terminal&quot;
+ManifestType: &quot;defaultLocale&quot;
+ManifestVersion: &quot;1.6.0&quot;
+</code></pre>
+</section>
+<section id="tabpanel_2_additional-locale-example" role="tabpanel" data-tab="additional-locale-example" aria-hidden="true" hidden="hidden">
+
+<p>Path: manifests / m / Microsoft / WindowsTerminal / 1.6.10571.0 / Microsoft.WindowsTerminal.locale.fr-FR.yaml</p>
+<pre><code class="lang-YAML">PackageIdentifier: &quot;Microsoft.WindowsTerminal&quot;
+PackageVersion: &quot;1.6.10571.0&quot;
+PackageLocale: &quot;fr-FR&quot;
+Publisher: &quot;Microsoft&quot;
+ShortDescription: &quot;Le nouveau terminal Windows, une expérience de ligne de commande à onglets pour Windows.&quot;
+ManifestType: &quot;locale&quot;
+ManifestVersion: &quot;1.6.0&quot;
+</code></pre>
+</section>
+<section id="tabpanel_2_installer-example" role="tabpanel" data-tab="installer-example" aria-hidden="true" hidden="hidden">
+
+<p>Path: manifests / m / Microsoft / WindowsTerminal / 1.6.10571.0 / Microsoft.WindowsTerminal.installer.yaml</p>
+<pre><code class="lang-YAML">PackageIdentifier: &quot;Microsoft.WindowsTerminal&quot;
+PackageVersion: &quot;1.6.10571.0&quot;
+Platform: 
+ - &quot;Windows.Desktop&quot;
+MinimumOSVersion: &quot;10.0.18362.0&quot;
+InstallerType: &quot;msix&quot;
+InstallModes: 
+ - &quot;silent&quot;
+PackageFamilyName: &quot;Microsoft.WindowsTerminal_8wekyb3d8bbwe&quot;
+Installers: 
+ - Architecture: &quot;x64&quot;
+   InstallerUrl: &quot;https://github.com/microsoft/terminal/releases/download/v1.6.10571.0/Microsoft.WindowsTerminal_1.6.10571.0_8wekyb3d8bbwe.msixbundle&quot;
+   InstallerSha256: 092aa89b1881e058d31b1a8d88f31bb298b5810afbba25c5cb341cfa4904d843
+   SignatureSha256: e53f48473621390c8243ada6345826af7c713cf1f4bbbf0d030599d1e4c175ee
+ - Architecture: &quot;arm64&quot;
+   InstallerUrl: &quot;https://github.com/microsoft/terminal/releases/download/v1.6.10571.0/Microsoft.WindowsTerminal_1.6.10571.0_8wekyb3d8bbwe.msixbundle&quot;
+   InstallerSha256: 092aa89b1881e058d31b1a8d88f31bb298b5810afbba25c5cb341cfa4904d843
+   SignatureSha256: e53f48473621390c8243ada6345826af7c713cf1f4bbbf0d030599d1e4c175ee
+ - Architecture: &quot;x86&quot;
+   InstallerUrl: &quot;https://github.com/microsoft/terminal/releases/download/v1.6.10571.0/Microsoft.WindowsTerminal_1.6.10571.0_8wekyb3d8bbwe.msixbundle&quot;
+   InstallerSha256: 092aa89b1881e058d31b1a8d88f31bb298b5810afbba25c5cb341cfa4904d843
+   SignatureSha256: e53f48473621390c8243ada6345826af7c713cf1f4bbbf0d030599d1e4c175ee
+ManifestType: &quot;installer&quot;
+ManifestVersion: &quot;1.6.0&quot;
+</code></pre>
+</section>
+</div>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your installer is an .exe and it was built using Nullsoft or Inno, you may specify those values instead. When Nullsoft or Inno are specified, the client will automatically set the silent and silent with progress install behaviors for the installer.</p>
+</div>
+<h2 id="installer-switches">Installer switches</h2>
+<p>You can often figure out what silent <code>Switches</code> are available for an installer by passing in a <code>-?</code> to the installer from the command line. Here are some common silent <code>Switches</code> that can be used for different installer types.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Installer</th>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Documentation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">MSI</td>
+<td style="text-align: left;"><code>/q</code></td>
+<td style="text-align: left;"><a href="/windows/win32/msi/command-line-options">MSI Command-Line Options</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">InstallShield</td>
+<td style="text-align: left;"><code>/s</code></td>
+<td style="text-align: left;"><a href="https://community.flexera.com/t5/InstallShield-Knowledge-Base/Installshield-Setup-exe-Command-Line-Parameters/ta-p/4270">InstallShield Command-Line Parameters</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Inno Setup</td>
+<td style="text-align: left;"><code>/SILENT or /VERYSILENT</code></td>
+<td style="text-align: left;"><a href="https://jrsoftware.org/ishelp/">Inno Setup documentation</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Nullsoft</td>
+<td style="text-align: left;"><code>/S</code></td>
+<td style="text-align: left;"><a href="https://nsis.sourceforge.io/Docs/Chapter4.html#silent">Nullsoft Silent Installers/Uninstallers</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tips-and-best-practices">Tips and best practices</h2>
+<ul>
+<li>The package identifier must be unique. You cannot have multiple submissions with the same package identifier. Only one pull request per package version is allowed.</li>
+<li>Avoid creating multiple publisher folders. For example, do not create &quot;Contoso Ltd.&quot; if there is already a &quot;Contoso&quot; folder.</li>
+<li>All tools must support a silent install. If you have an executable that does not support a silent install, then we cannot provide that tool at this time.</li>
+<li>Provide as many fields as possible.  The more meta-data you provide the better the user experience will be. In some cases, the fields may not yet be supported by the Windows Package Manager client (winget.exe). For example, the <code>AppMoniker</code> field is optional. However, if you include this field, customers will see results associated with the <code>Moniker</code> value when performing the <a href="../winget/search.html">search</a> command (for example, <strong>vscode</strong> for <strong>Visual Studio Code</strong>). If there is only one app with the specified <code>Moniker</code> value, customers can install your application by specifying the moniker rather than the fully qualified package identifier.</li>
+<li>The length of strings in this specification should be limited to 100 characters before a line break.</li>
+<li>The <code>PackageName</code> should match the entry made in <strong>Add / Remove Programs</strong> to help the correlation with manifests to support <strong>export</strong>, and <strong>upgrade</strong>.</li>
+<li>The <code>Publisher</code> should match the entry made in <strong>Add / Remove Programs</strong> to help the correlation with manifests to support <strong>export</strong>, and <strong>upgrade</strong>.</li>
+<li>Package installers in MSI format use <a href="/windows/win32/msi/product-codes">product codes</a> to uniquely identify applications. The product code for a given version of a package should be included in the manifest to help ensure the best <strong>upgrade</strong> experience.</li>
+<li>When more than one installer type exists for the specified version of the package, an instance of <code>InstallerType</code> can be placed under each of the <code>Installers</code>.</li>
+</ul>
+<h2 id="manifest-faq">Manifest FAQ</h2>
+<h3 id="what-is-a-manifest">What is a manifest?</h3>
+<p>Manifests are YAML files containing metadata used by the Windows Package Manager to install and upgrade software on the Windows operating system. There are thousands of these files partitioned under the <a href="https://github.com/microsoft/winget-pkgs/tree/master/manifests">manifests directory in the winget-pkgs repository on GitHub</a>. The Windows Package Manager directory structure had to be partitioned so you don't have to scroll as much in the site when looking for a manifest.</p>
+<h3 id="what-is-a-package">What is a package?</h3>
+<p>Think of a package as an application or a software program. Windows Package Manager uses a &quot;PackageIdentifier&quot; to represent a unique package. These are generally in the form of <code>Publisher.Package</code>. Sometimes you might see additional values separated by a second period.</p>
+<h3 id="what-is-a-version">What is a version?</h3>
+<p>Package versions are associated with a specific release. In some cases you will see a perfectly formed semantic version numbers and in other cases you might see something different. These may be date driven or they might have other characters with some package-specific meaning. The YAML key for a package version is &quot;PackageVersion&quot;.</p>
+<p>For more information on understanding the directory structure and creating your first manifest, see <a href="https://github.com/microsoft/winget-pkgs/blob/master/doc/Authoring.md">Authoring Manifests</a> in the winget-pkgs repo on GitHub.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/package/manifest.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Input Method Editor (IME) requirements </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Input Method Editor (IME) requirements ">
+    
+    <meta name="description" content="Develop a custom Input Method Editor (IME) to help a user input text in a language that can&#39;t be represented easily on a standard QWERTY keyboard.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="custom-input-method-editor-ime-requirements">Custom Input Method Editor (IME) requirements</h1>
+
+<p>These guidelines and requirements can help you to develop a custom Input Method Editor (IME) to help a user input text in a language that can't be represented easily on a standard QWERTY keyboard.</p>
+<p>For an overview of IMEs, see <a href="input-method-editors.html">Input Method Editor (IME)</a>.</p>
+<h2 id="default-ime">Default IME</h2>
+<p>A user can select any of their active IMEs (<strong>Settings -&gt; Time &amp; Language -&gt; Language -&gt; Preferred languages -&gt; Language pack - Options</strong>) to be the default IME for their preferred language.</p>
+<p><span class="mx-imgBorder">
+<img src="images/IMEs/ime-preferred-languages.png" alt="Preferred language setting">
+</span>
+</p>
+<p>Select the default keyboard on the Language options settings screen for the preferred language.</p>
+<p><span class="mx-imgBorder">
+<img src="images/IMEs/ime-preferred-languages-keyboard.png" alt="Preferred language keyboard">
+</span>
+</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We do not recommend writing directly to the registry to set the default keyboard for your custom IME.</p>
+</div>
+<h2 id="compatibility-requirements">Compatibility requirements</h2>
+<p>The following are the basic compatibility requirements for a custom IME.</p>
+<h3 id="ime-must-be-compatible-with-windows-apps">IME must be compatible with Windows apps</h3>
+<p>Use the <a href="/windows/win32/tsf/text-services-framework">Text Services Framework (TSF)</a> to implement IMEs. Previously, you had the option of using the <a href="/windows/win32/intl/input-method-manager">Input Method Manager (IMM32)</a> for input services. Now the system blocks IMEs that are implemented by using Input Method Manager (IMM32).</p>
+<p>When an app starts, TSF loads the IME DLL for the IME that's currently selected by the user. When an IME is loaded, it's subject to the same app container restrictions as the app. For example, an IME can't access the Internet if an app hasn't requested Internet access in its manifest. This behavior ensures that IMEs can't violate security contracts.</p>
+<p>TSF is the intermediary between the app and your IME. TSF communicates input events to the IME and receives input characters back from the IME after the user has selected a character.</p>
+<p>This behavior is the same as previous versions of Windows, but being loaded into a Windows app affects the potential capabilities of an IME.</p>
+<p>If your IME needs to provide different functionality or UI between Windows apps and desktop apps, ensure that the DLL that’s loaded by TSF checks which type of app it's being loaded into. Call the <a href="/windows/win32/api/msctf/nf-msctf-itfthreadmgrex-getactiveflags">ITfThreadMgrEx::GetActiveFlags</a> method in your IME and check the TF_TMF_IMMERSIVEMODE flag, so your IME triggers different application logic depending on the result.</p>
+<p>Windows apps do not support Table Text Service (TTS) IMEs.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some tools for generating TTS IMEs produce IMEs that are marked as malware by Windows.</p>
+</div>
+<h3 id="ime-must-be-compatible-with-the-system-tray">IME must be compatible with the system tray</h3>
+<p>There is no language bar to host IME icons. Instead, an Input Indicator shows on the system tray that indicates the current input option. The Input Indicator shows only the IME branding icon to indicate the currently running IME. Also, there's one IME mode icon that shows on the left of the IME branding icon for users to perform the most commonly used IME mode switch, like turning the IME on or off.</p>
+<p>The Input Indicator shows the IME branding icon and mode icon only for compatible IMEs. IMEs that aren't compatible don't have the branding icon and mode icon displayed in the system tray. Instead, the Input Indicator shows the language abbreviation instead of the IME branding icon.</p>
+<p>Store the IME icons in a DLL or EXE file, instead of a standalone .ico file. The design of IME icons must follow the guidelines described in the following UI design guidelines section.</p>
+<h3 id="ime-branding-icon">IME branding icon</h3>
+<p>The Input Indicator gets the IME branding icon from the IME DLL by using the resource ID defined by the IME when it was registered on the system.</p>
+<h3 id="ime-mode-icon">IME mode icon</h3>
+<p>Some IMEs may need to rely on the Input Indicator showing on the system tray to display the IME mode icon. In this case, the IME passes the IME mode icon to the Input Indicator by using GUID_LBI_INPUTMODE.</p>
+<p>When passing the IME mode icons to the Input Indicator on the system tray, the default size of the IME mode icon is 16x16 pixels. The UI scaling follows DPI.</p>
+<p>When passing the IME mode icon to the Input Indicator on UAC (User Account Control in Secure Desktop), the default size of the IME mode icon is 20x20 pixels. The UI scaling for IME mode icon on UAC follows PPI.</p>
+<h2 id="ime-must-work-in-app-container">IME must work in app container</h2>
+<p>Some IME functions are affected in an app container.</p>
+<ul>
+<li><strong>Dictionary Files</strong> - Frequently, IMEs have read-only dictionary files to map user input to specific characters. To access these files from inside an app container, your IME must place them under the Program Files or Windows directories. By default, these directories can be read from an app container, so IMEs can access dictionary files that are stored in these locations. If your IME must store the dictionary file somewhere else, it must explicitly manipulate the <a href="/windows/win32/secauthz/access-control-lists">Access Control Lists (ACL)</a> of the dictionary files to allow access from app containers.</li>
+<li><strong>Internet Updating</strong> - If your IME needs to update its dictionaries using data from the Internet, it can't reliably do so inside an app container, because Internet access isn't always permitted. Instead, your IME should run a separate desktop process that's responsible for updating the dictionary files with data from the Internet.</li>
+<li><strong>On-the-fly learning</strong> - If an IME is running in an app container that has Internet access, there's no restriction on the endpoints that the IME can communicate with. In this case, an IME can use a cloud server to provide on-the-fly learning services. Some IMEs download and upload user input on the fly, while the user is typing. Since Internet access is not guaranteed in an app container, this may not always be allowed.</li>
+<li><strong>Sharing information between processes</strong> - IMEs may need to share data about the user’s input preferences between apps that are in different app containers. Use a web service to share data between apps.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you try to circumvent app container security rules, your IME may be treated as malware and blocked.</p>
+</div>
+<h2 id="ime-and-touch-keyboard">IME and touch keyboard</h2>
+<p>Your IME must ensure that its candidate pane's UI, and other UI elements, aren't drawn underneath the touch keyboard. The touch keyboard is displayed in a higher z-order band than all apps, and the IME UI is displayed in the same z-order band as the app it's active in. As a result, the touch keyboard can overlap and hide the IME UI. In most cases, the app should resize its window to account for the touch keyboard. If an app doesn't resize, the IME still can use the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iframeworkinputpane">InputPane</a> API to get the position of the touch keyboard. The IME queries the <a href="/windows/win32/api/shobjidl_core/nf-shobjidl_core-iframeworkinputpane-location">Location</a> property, or it registers a handler for the touch keyboard's Show and Hide events. The Show event is raised every time the user taps in an edit field, even if the touch keyboard is displayed currently. Your IME can use this API to get the screen space used by the touch keyboard before the IME draws candidate (or other) UI, and to reflow the IMEs UI to avoid drawing beneath the touch keyboard.</p>
+<h3 id="specifying-the-preferred-touch-keyboard-layout">Specifying the preferred touch keyboard layout</h3>
+<p>The IME can specify which touch keyboard layout to use, and the IME is enabled to work with touch-optimized layouts. This functionality is limited to IMEs for the Korean, Japanese, Chinese Simplified, and Chinese Traditional input languages.</p>
+<p>There are seven layouts supported by the touch keyboard, three of which are classic layouts and four of which are touch-optimized layouts. The classic layouts look and behave like a physical keyboard.</p>
+<p>All of the three classic layouts are for inputting traditional Chinese in different forms:</p>
+<ul>
+<li>Phonetic-based input</li>
+<li>Changjie input</li>
+<li>Dayi input</li>
+</ul>
+<p>In addition to the classic layouts, there is one touch-optimized layout for each of the Korean, Japanese, Simplified Chinese, and Traditional Chinese input languages.</p>
+<p>To use this functionality, your IME must implement the <a href="/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout">ITfFnGetPreferredTouchKeyboardLayout</a> interface, which is exported by the IME by using the Text Services Framework <a href="/windows/win32/api/msctf/nn-msctf-itffunctionprovider">ITfFunctionProvider</a> API.</p>
+<p>If your IME doesn't support the ITfFnGetPreferredTouchKeyboardLayout interface, using the IME results in the default classic layout for the language that is displayed by the touch keyboard.</p>
+<p>If your IME needs to set one of the classic layouts as the preferred layout, no additional work is required on the IME side beyond supporting the ITfFnGetPreferredTouchKeyboardLayout and ITfFunctionProvider interfaces. But additional work is required in the IME to work with the touch-optimized layouts, and this is described in the next section.</p>
+<h3 id="touch-optimized-layout">Touch-optimized layout</h3>
+<p>The touch-optimized keyboards for the Korean, Japanese, Simplified Chinese, and Traditional Chinese input languages display a different layout for IME On and IME Off conversion modes. There's a key on the touch keyboard to set the IME conversion mode to On or Off, but the IME mode of the keyboard also may change as focus changes among edit controls.</p>
+<p>The touch-optimized keyboards for the Japanese, Simplified Chinese, and Traditional Chinese input languages contain a key, or keys, which the IME uses to navigate through candidate pages. For Japanese and Simplified Chinese, the candidate page key displays on the touch-optimized layout. For Traditional Chinese, there are separate keys for the previous and next candidate pages.</p>
+<p>When these keys are pressed, the touch keyboard calls the <a href="/windows/win32/api/winuser/nf-winuser-sendinput">SendInput</a> function to send the following Unicode Private Use Area characters to the focused application, which the IME can intercept and act on:</p>
+<ul>
+<li><strong>Next page (0xF003)</strong> - Sent when the candidate page key is pressed on the touch-optimized keyboard for Japanese and Simplified Chinese, or when the next page key is pressed on the touch-optimized keyboard for Traditional Chinese.</li>
+<li><strong>Previous page (0xF004)</strong> - Sent when either the candidate page key is pressed at the same time as the Shift key on the touch-optimized keyboard for Japanese and Simplified Chinese, or when the previous page key is pressed on the touch-optimized keyboard for Traditional Chinese.</li>
+</ul>
+<p>These characters are sent as Unicode input. The next paragraph details how to extract the character information during the key event sink notifications that the Text Services Framework IME will receive. These character values are not defined in any header file, so you will need to define them in your code.</p>
+<p>To intercept keyboard input, your IME must register as a key event sink. For Unicode input that is generated by using the SendInput function, the WPARAM parameter of the <a href="/windows/win32/api/msctf/nn-msctf-itfkeyeventsink">ITfKeyEventSink</a> callbacks (OnKeyDown, OnKeyUp, OnTestKeyDown, OnTestKeyUp) always contains the virtual key VK_PACKET and doesn't identify the character directly.</p>
+<p>Implement the following call sequence to access the character:</p>
+<pre><code class="lang-cpp">// Keyboard state
+BYTE abKbdState[256];
+if (!GetKeyboardState(abKbdState))
+{
+   return 0;
+}
+
+// Map virtual key to character code
+WCHAR wch;
+if (ToUnicode(VK_PACKET, 0, abKbdState, &amp;wch, 1, 0) == 1)
+{
+   return wch;
+}
+</code></pre>
+<h2 id="ime-search-integration">IME search integration</h2>
+<p>Provide users with search features through the search contract and integration with the search pane.</p>
+<p><span class="mx-imgBorder">
+<img src="images/IMEs/ime-search-pane.png" alt="Search pane and IME suggestions">
+</span>
+<br>
+<em>Search pane and IME suggestions</em></p>
+<p>The search pane is a central location for users to perform searches across all of their apps. For IME users, Windows provides a unique search experience that lets compatible IMEs integrate with Windows for greater efficiency and usability.</p>
+<p>Users who type with an IME that's compatible with search get two main benefits:</p>
+<ul>
+<li>Seamless interaction between the IME and the search experience. IME candidates are shown inline under the search box without occluding search suggestions. The user can use the keyboard to navigate seamlessly between the search box, the IME conversion candidates, and the search suggestions.</li>
+<li>Faster access to relevant results and suggestions provided by applications. The app has access to all current conversion candidates to provide more relevant suggestions. To better prioritize search suggestions, conversions are given to apps in order of relevance. Users find and select the result they want without converting, just by typing in phonetic.</li>
+</ul>
+<p>An IME is compatible with the integrated search experience if it meets the following criteria:</p>
+<ul>
+<li>Compatible with the Windows style shell.</li>
+<li>Implement the TSF UILess mode APIs. For more info, see <a href="/windows/win32/tsf/uiless-mode-overview">UILess Mode Overview</a>.</li>
+<li>Implement the TSF search integration APIs, <a href="/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider">ITfFnSearchCandidateProvider</a> and <a href="/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement">ITfIntegratableCandidateListUIElement</a>.</li>
+</ul>
+<p>When activated in the search pane, a compatible IME is placed in UIless mode and can't show its UI. Instead, it sends conversion candidates to Windows, which displays them in the inline candidate list control, as shown in the previous screenshot.</p>
+<p>Also, the IME sends candidates that should be used to run the current search. These candidates could be the same as the conversion candidates, or they could be tailored for search.</p>
+<p>Good search candidates meet the following criteria:</p>
+<ul>
+<li>No prefix overlap. For example, 北京大学 and北京 are redundant because one is a prefix of the other.</li>
+<li>No redundant candidates. Any redundant candidate isn't useful for search because it doesn't help filter results. For example, any result that matches 北京大学 also matches 北京.</li>
+<li>No prediction candidate, only conversion. For example, if the user types &quot;be&quot;, the IME can return 北 as a candidate, but not 北京大学. Usually, prediction candidates are too restrictive.</li>
+</ul>
+<p>IMEs that don't meet the criteria aren't compatible with search display in the same way as other controls, and can't take advantage of UI integration and search candidates. Apps receive queries only after the user has finished composing.</p>
+<p>When an app that supports the search contract receives a query, the query event contains a &quot;queryTextAlternatives&quot; array that contains all known alternatives, ranked from the most relevant (likely) to least relevant (unlikely).</p>
+<p>When alternatives are provided, the app should treat each alternative as a query and return all results that match any of the alternatives. The app should behave as if the user had issued multiple queries at the same time, essentially issuing an &quot;or&quot; query to the service providing the results. For performance considerations, apps often limit matching to between 5 and 20 of the most relevant alternatives.</p>
+<h2 id="ui-design-guidelines">UI design guidelines</h2>
+<p>All IMEs must follow the user experience guidelines described in <a href="../index.html">Design and code Windows apps</a>.</p>
+<h3 id="dont-use-sticky-windows">Don't use sticky windows</h3>
+<p>Your IME windows should appear only when needed, and they shouldn't be visible all the time. When users don't need to type, IME windows shouldn't show. The IME window shouldn't be a full screen window. IME windows shouldn't overlap each other. The windows should be designed in a Windows style and follow UI scaling.</p>
+<h3 id="ime-icons">IME icons</h3>
+<p>There are two kinds of IME icons, branding icons and mode icons. All IME icons must be designed with black and white colors only. The new IME icons borrow from the glyphic look of the system tray icons. This style has been created so all languages can use it to complement the familial look while also differentiating from each other.</p>
+<p>The file format for IME icons is ICO. You must provide the following icon sizes.</p>
+<ul>
+<li>16x16 pixels</li>
+<li>20x20 pixels</li>
+<li>24x24 pixels</li>
+<li>32x32 pixels</li>
+<li>40x40 pixels</li>
+<li>48x48 pixels</li>
+</ul>
+<p>Ensure that 32-bit icons with alpha channel are provided in all resolutions.</p>
+<p>IME brand icons are defined by a white box in which a typographic glyph rendered in a modern typeface is placed. Each defining glyph is chosen by each language team. The glyph is black. The box includes an outer stroke of 1 pixel in black at 50% opacity. &quot;New&quot; versions are defined by a rounded corner in the upper left of the box.</p>
+<p>IME mode icons are defined by a white typographic glyph in a modern typeface which includes an outer stroke of 1 pixel in black at 50% opacity.</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="mx-imgBorder">
+<img src="images/IMEs/ime-brand-icon-traditional-chinese.png" alt="Example IME brand icon for Traditional Chinese ChangeJie.">
+</span>
+</td>
+<td>Example IME brand icon for Traditional Chinese ChangeJie.</td>
+</tr>
+<tr>
+<td><span class="mx-imgBorder">
+<img src="images/IMEs/ime-brand-icon-traditional-chinese-new.png" alt="Example IME brand icon for Traditional Chinese New ChangeJie.">
+</span>
+</td>
+<td>Example IME brand icon for Traditional Chinese ChangeJie.</td>
+</tr>
+<tr>
+<td><span class="mx-imgBorder">
+<img src="images/IMEs/ime-mode-icon-chinese.png" alt="Chinese mode icon">
+</span>
+</td>
+<td>Example IME mode icon.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="owned-window">Owned window</h3>
+<p>To display candidate UI, an IME must set its window to be owned-window, so it can display over the currently running app. Use the <a href="/windows/win32/api/msctf/nf-msctf-itfcontextview-getwnd">ITfContextView::GetWnd</a> method to retrieve the window to own to. If GetWnd returns an error or a NULLHWND, call the <a href="/windows/win32/api/msctf/nf-msctf-itfthreadmgr-getfocus">GetFocus</a> function.</p>
+<p><code>if (FAILED(pView-&gt;GetWnd(&amp;parentWndHandle)) || (parentWndHandle == nullptr)) { parentWndHandle = GetFocus(); }</code></p>
+<h3 id="ime-candidate-window-interaction-with-light-dismiss-surfaces">IME candidate window interaction with light dismiss surfaces</h3>
+<p>The dismissal model for popup windows is called &quot;light dismiss&quot; because it's easy for a user to close such windows. For IMEs to function well in the Windows interaction model, the IME windows must participate in the light dismiss model.</p>
+<p>In order to participate in the light dismiss model, your IME must raise three new Windows events by using the <a href="/windows/win32/api/winuser/nf-winuser-notifywinevent">NotifyWinEvent</a> function or a similar function. These new events are:</p>
+<ul>
+<li><strong>EVENT_OBJECT_IME_SHOW</strong> - Raise this event when the IME becomes visible.</li>
+<li><strong>EVENT_OBJECT_IME_HIDE</strong> - Raise this event when the IME is hidden.</li>
+<li><strong>EVENT_OBJECT_IME_CHANGE</strong> - Raise this event when the IME moves or changes size.</li>
+</ul>
+<h3 id="declaring-compatibility">Declaring compatibility</h3>
+<p>IMEs declare that they are compatible by registering the category GUID_TFCAT_TIPCAP_IMMERSIVESUPPORT for their IME using <a href="/windows/win32/api/msctf/nf-msctf-itfcategorymgr-registercategory">ITfCategoryMgr::RegisterCategory</a>.</p>
+<h3 id="set-the-default-ime-mode-to-on">Set the default IME mode to on</h3>
+<p>We provide a better UX for IMEs.</p>
+<h2 id="dpi-scaling-support-for-desktop-applications">DPI scaling support for desktop applications</h2>
+<p>Enhanced DPI scaling support enables querying the declared DPI awareness level of each desktop process to determine if it needs to scale the UI. In a multi-monitor scenario, Windows scales the UI appropriately for different DPI settings on each monitor.</p>
+<p>Because your IME runs in the context of each application's process, you shouldn't declare a DPI awareness level for your IME. This ensures that your IME runs at the DPI awareness level of the current process.</p>
+<p>To ensure that all IME UI elements have scaling parity with the UI elements of the process in which you are running, you must respond appropriately to different DPI values.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To ensure parity with new desktop applications, your IME should support per monitor–DPI awareness, but shouldn't declare a level of awareness itself. The system determines the appropriate scaling requirements in each scenario.</p>
+</div>
+<p>For details about DPI scaling support requirements for Desktop applications, see <a href="/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows">High DPI</a>.</p>
+<h2 id="ime-installation">IME installation</h2>
+<p>If you build your IME by using Microsoft Visual Studio, create an installation experience for your IME by using a third-party installer, like InstallShield from Flexera Software.</p>
+<p>The following steps show how to use InstallShield to create a setup project for your IME DLL.</p>
+<ul>
+<li>Install Visual Studio.</li>
+<li>Start Visual Studio.</li>
+<li>On the <strong>File</strong> menu, point to <strong>New</strong> and select <strong>Project</strong>. The <strong>New Project</strong> dialog opens.</li>
+<li>In the left pane, navigate to <strong>Templates &gt; Other Project Types &gt; Setup and Deployment</strong>, click <strong>Enable InstallShield Limited Edition</strong>, and click <strong>OK</strong>. Follow the installation instructions.</li>
+<li>Restart Visual Studio.</li>
+<li>Open the IME solution (.sln) file.</li>
+<li>In Solution Explorer, right-click the solution, point to <strong>Add</strong>, and select <strong>New Project</strong>. The <strong>Add New Project</strong> dialog opens.</li>
+<li>In the left tree view control, navigate to <strong>Templates &gt; Other Project Types &gt; InstallShield Limited Edition</strong>.</li>
+<li>In the center window, click <strong>InstallShield Limited Edition Project</strong>.</li>
+<li>In the <strong>Name</strong> text box, type &quot;SetupIME&quot; and click <strong>OK</strong>.</li>
+<li>In the <strong>Project Assistant</strong> dialog, click <strong>Application Information</strong>.</li>
+<li>Fill in your company name and the other fields.</li>
+<li>Click <strong>Application Files</strong>.</li>
+<li>In the left pane, right-click the <strong>[INSTALLDIR]</strong> folder, and select <strong>New Folder</strong>. Name the folder &quot;Plugins&quot;.</li>
+<li>Click <strong>Add Files</strong>. Navigate to your IME DLL and add it to the <strong>Plugins</strong> folder. Repeat this step for the IME dictionary.</li>
+<li>Right-click the IME DLL and select <strong>Properties</strong>. The <strong>Properties</strong> dialog opens.</li>
+<li>In the <strong>Properties</strong> dialog, click the <strong>COM &amp; .NET Settings</strong> tab.</li>
+<li>Under <strong>Registration Type</strong>, select <strong>Self-registration</strong> and click <strong>OK</strong>.</li>
+<li>Build the solution. The IME DLL is built, and InstallShield creates a setup.exe file that enables users to install your IME on Windows.</li>
+</ul>
+<p>To create your own installation experience, call the <a href="/windows/win32/api/msctf/nf-msctf-itfinputprocessorprofilemgr-registerprofile">ITfInputProcessorProfileMgr::RegisterProfile</a> method to register the IME during installation. Don't write registry entries directly.</p>
+<p>If the IME must be usable immediately after installation, call <a href="/windows/win32/tsf/installlayoutortip">InstallLayoutOrTip</a> to add the IME to user-enabled input methods, using the following format for the psz parameter:</p>
+<p><code>&lt;LangID 1&gt;:{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}{xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx}</code></p>
+<h2 id="ime-accessibility">IME accessibility</h2>
+<p>Implement the following convention to make your IMEs conform to the accessibility requirements and to work with Narrator. To make candidate lists accessible, your IMEs must follow this convention.</p>
+<ul>
+<li>The candidate list must have a <strong>UIA_AutomationIdPropertyId</strong> equal to &quot;IME_Candidate_Window&quot; for lists of conversion candidates or &quot;IME_Prediction_Window&quot; for lists of prediction candidates.</li>
+<li>When the candidate list appears and disappears, it raises events of type <strong>UIA_MenuOpenedEventId</strong> and <strong>UIA_MenuClosedEventId</strong>, respectively</li>
+<li>When the current selected candidate changes, the candidate list raises a <strong>UIA_SelectionItem_ElementSelectedEventId</strong>. The selected element should have a property <strong>UIA_SelectionItemIsSelectedPropertyId</strong> equal to <strong>TRUE</strong>.</li>
+<li>The <strong>UIA_NamePropertyId</strong> for each item in the candidate list must be the name of the candidate. Optionally, you can provide additional information to disambiguate candidates through <strong>UIA_HelpTextPropertyId</strong>.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="input-method-editors.html">Input Method Editor (IME)</a></li>
+<li><a href="/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout">ITfFnGetPreferredTouchKeyboardLayout</a></li>
+<li><a href="/windows/win32/api/msctf/nn-msctf-itfcompartmenteventsink">ITfCompartmentEventSink</a></li>
+<li><a href="/windows/win32/api/msctf/nf-msctf-itfthreadmgrex-getactiveflags">ITfThreadMgrEx::GetActiveFlags</a></li>
+<li><a href="/windows/win32/api/msctf/nf-msctf-itfcontextview-getwnd">ITfContextView::GetWnd</a></li>
+<li><a href="/windows/win32/api/msctf/ns-msctf-tf_inputprocessorprofile">TF_INPUTPROCESSORPROFILE</a></li>
+<li><a href="/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider">ITfFnSearchCandidateProvider</a></li>
+<li><a href="/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement">ITfIntegratableCandidateListUIElement</a></li>
+<li><a href="/windows/win32/api/winuser/nf-winuser-sendinput">SendInput</a></li>
+<li><a href="../accessibility/accessibility.html">Accessibility</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/input-method-editor-requirements.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

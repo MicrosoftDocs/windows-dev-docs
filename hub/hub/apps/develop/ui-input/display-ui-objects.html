@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Display WinRT UI objects that depend on CoreWindow </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Display WinRT UI objects that depend on CoreWindow ">
+    
+    <meta name="description" content="You can use certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects in your desktop app by adding a little bit of interoperation code.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="display-winrt-ui-objects-that-depend-on-corewindow">Display WinRT UI objects that depend on CoreWindow</h1>
+
+<p>Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a <a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a>; typically to display a user-interface (UI). Even though <strong>CoreWindow</strong> isn't supported in desktop apps (see <a href="../../desktop/modernize/desktop-to-uwp-supported-api.html#core-unsupported-classes">Core unsupported classes</a>), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.</p>
+<p>Your desktop app can be <a href="../../winui/winui3/index.html">WinUI 3</a>, <a href="/dotnet/desktop/wpf/">Windows Presentation Foundation (WPF)</a>, or <a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a> apps. Code examples are presented in C# and <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>.</p>
+<h2 id="set-the-owner-window-handle-hwnd-for-a-winrt-ui-object">Set the owner window handle (HWND) for a WinRT UI object</h2>
+<p>For classes that implement the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow"><strong>IInitializeWithWindow</strong></a> interface (or the equivalent <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop"><strong>IDataTransferManagerInterop</strong></a> interface), you can use that interface to set an owner window on the object before you display it. It's a two-step process.</p>
+<ol>
+<li>Decide which window will be the owner of the UI object that you want to display, and retrieve that window's HWND. For more details and code examples for this step, see <a href="retrieve-hwnd.html">Retrieve a window handle (HWND)</a>.</li>
+<li>Then call the appropriate interoperability API (for C# or C++/WinRT) to set an owner window handle (HWND) for the WinRT UI object.</li>
+</ol>
+<h2 id="for-classes-that-implement-iinitializewithwindow">For classes that implement IInitializeWithWindow</h2>
+<p>These classes implement <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow"><strong>IInitializeWithWindow</strong></a>:</p>
+<ul>
+<li><a href="/uwp/api/windows.applicationmodel.contacts.pinnedcontactmanager"><strong>Windows.ApplicationModel.Contacts.PinnedContactManager</strong></a></li>
+<li><a href="/uwp/api/windows.applicationmodel.payments.paymentmediator"><strong>Windows.ApplicationModel.Payments.PaymentMediator</strong></a></li>
+<li><a href="/uwp/api/windows.devices.enumeration.devicepicker"><strong>Windows.Devices.Enumeration.DevicePicker</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.capture.graphicscapturepicker"><strong>Windows.Graphics.Capture.GraphicsCapturePicker</strong></a></li>
+<li><a href="/uwp/api/windows.media.casting.castingdevicepicker"><strong>Windows.Media.Casting.CastingDevicePicker</strong></a></li>
+<li><a href="/uwp/api/windows.media.dialprotocol.dialdevicepicker"><strong>Windows.Media.DialProtocol.DialDevicePicker</strong></a></li>
+<li><a href="/uwp/api/windows.networking.networkoperators.provisioningagent"><strong>Windows.Networking.NetworkOperators.ProvisioningAgent</strong></a></li>
+<li><a href="/uwp/api/windows.security.authentication.onlineid.onlineidauthenticator"><strong>Windows.Security.Authentication.OnlineId.OnlineIdAuthenticator</strong></a></li>
+<li><a href="/uwp/api/windows.services.store.storecontext"><strong>Windows.Services.Store.StoreContext</strong></a></li>
+<li><a href="/uwp/api/windows.storage.pickers.fileopenpicker"><strong>Windows.Storage.Pickers.FileOpenPicker</strong></a></li>
+<li><a href="/uwp/api/windows.storage.pickers.filesavepicker"><strong>Windows.Storage.Pickers.FileSavePicker</strong></a></li>
+<li><a href="/uwp/api/windows.storage.pickers.folderpicker"><strong>Windows.Storage.Pickers.FolderPicker</strong></a></li>
+<li><a href="/uwp/api/windows.system.folderlauncheroptions"><strong>Windows.System.FolderLauncherOptions</strong></a>—Windows 10, version 1903 (10.0; Build 18362) and later</li>
+<li><a href="/uwp/api/windows.system.launcheroptions"><strong>Windows.System.LauncherOptions</strong></a>—Windows 10, version 1903 (10.0; Build 18362) and later</li>
+<li><a href="/uwp/api/windows.ui.core.corewindowdialog"><strong>Windows.UI.Core.CoreWindowDialog</strong></a></li>
+<li><a href="/uwp/api/windows.ui.core.corewindowflyout"><strong>Windows.UI.Core.CoreWindowFlyout</strong></a></li>
+<li><a href="/uwp/api/windows.ui.popups.messagedialog"><strong>Windows.UI.Popups.MessageDialog</strong></a>. But for new apps we recommend using the <a href="/uwp/api/windows.ui.xaml.controls.contentdialog"><strong>ContentDialog</strong></a> control instead.</li>
+<li><a href="/uwp/api/windows.ui.popups.popupmenu"><strong>Windows.UI.Popups.PopupMenu</strong></a></li>
+<li><a href="/uwp/api/windows.ui.startscreen.secondarytile"><strong>Windows.UI.StartScreen.SecondaryTile</strong></a></li>
+<li><a href="/uwp/api/windows.web.http.filters.httpbaseprotocolfilter"><strong>Windows.Web.Http.Filters.HttpBaseProtocolFilter</strong></a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The list above is necessarily incomplete—refer to a type's documentation to see whether it implements <strong>IInitializeWithWindow</strong> (or an equivalent interop interface).</p>
+</div>
+<p>The next sections contain code examples to display a <a href="/uwp/api/windows.storage.pickers.fileopenpicker"><strong>FolderPicker</strong></a>. But it's the same technique to display any of the APIs listed above.</p>
+<h3 id="winui-3-with-c-also-wpfwinforms-with-net-6-or-later">WinUI 3 with C# (also WPF/WinForms with .NET 6 or later)</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The code examples in this section use the <strong>WinRT.Interop.WindowNative</strong> C# interop class. If you target .NET 6 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see <a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>.</p>
+</div>
+<p>The C# code below expects that you've already used the pattern documented in <a href="retrieve-hwnd.html">Retrieve a window handle (HWND)</a>. Then, to set the owner window for the UI object that you want to display, the code calls the <strong>Initialize</strong> method on the <strong>WinRT.Interop.InitializeWithWindow</strong> C# interop class. For more info about the C# interop classes, see <a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>.</p>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+private async void ShowFolderPickerAsync(IntPtr hWnd)
+{
+    // Create a folder picker.
+    var folderPicker = new Windows.Storage.Pickers.FolderPicker();
+
+    // Initialize the folder picker with the window handle (HWND).
+    WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hWnd);
+
+    // Use the folder picker as usual.
+    folderPicker.FileTypeFilter.Add(&quot;*&quot;);
+    var folder = await folderPicker.PickSingleFolderAsync();
+}
+</code></pre>
+<h3 id="winui-3-with-c">WinUI 3 with C++</h3>
+<p>The C++/WinRT code below expects that you've already used the pattern documented in <a href="retrieve-hwnd.html">Retrieve a window handle (HWND)</a>. Then, to set the owner window for the UI object that you want to display, the code calls the interoperability method <a href="/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize"><strong>IInitializeWithWindow::Initialize</strong></a>.</p>
+<pre><code class="lang-cppwinrt">// pch.h
+...
+#include &lt;microsoft.ui.xaml.window.h&gt;
+#include &lt;Shobjidl.h&gt;
+#include &lt;winrt/Windows.Storage.Pickers.h&gt;
+
+// MainWindow.xaml.cpp
+winrt::fire_and_forget ShowFolderPickerAsync(HWND hWnd)
+{
+    // Create a folder picker.
+    Windows::Storage::Pickers::FolderPicker folderPicker;
+
+    // Initialize the folder picker with the window handle (HWND).
+    auto initializeWithWindow{ folderPicker.as&lt;::IInitializeWithWindow&gt;() };
+    initializeWithWindow-&gt;Initialize(hWnd);
+
+    // Use the folder picker as usual.
+    folderPicker.FileTypeFilter().Append(L&quot;*&quot;);
+    auto folder{ co_await folderPicker.PickSingleFolderAsync() };
+}
+</code></pre>
+<h2 id="for-classes-that-implement-idatatransfermanagerinterop">For classes that implement IDataTransferManagerInterop</h2>
+<p>The <a href="/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager"><strong>Windows.ApplicationModel.DataTransfer.DataTransferManager</strong></a> class implements the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop"><strong>IDataTransferManagerInterop</strong></a> interface (which, like <strong>IInitializeWithWindow</strong>, lets you set an owner window).</p>
+<p>In a desktop app, instead of calling the <a href="/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui"><strong>DataTransferManager.ShowShareUI</strong></a> method, you call <a href="/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow"><strong>IDataTransferManagerInterop::ShowShareUIForWindow</strong></a>, as shown in the code examples below.</p>
+<h3 id="winui-3-with-c-also-wpfwinforms-with-net-6-or-later-1">WinUI 3 with C# (also WPF/WinForms with .NET 6 or later)</h3>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+...
+public sealed partial class MainWindow : Window
+{
+    ...
+
+    [System.Runtime.InteropServices.ComImport]
+    [System.Runtime.InteropServices.Guid(&quot;3A3DCD6C-3EAB-43DC-BCDE-45671CE800C8&quot;)]
+    [System.Runtime.InteropServices.InterfaceType(
+        System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown)]
+    interface IDataTransferManagerInterop
+    {
+        IntPtr GetForWindow([System.Runtime.InteropServices.In] IntPtr appWindow,
+            [System.Runtime.InteropServices.In] ref Guid riid);
+        void ShowShareUIForWindow(IntPtr appWindow);
+    }
+
+    static readonly Guid _dtm_iid = 
+        new Guid(0xa5caee9b, 0x8708, 0x49d1, 0x8d, 0x36, 0x67, 0xd2, 0x5a, 0x8d, 0xa0, 0x0c);
+
+    private void myButton_Click(object sender, RoutedEventArgs e)
+    {
+        // Retrieve the window handle (HWND) of the current WinUI 3 window.
+        var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+        IDataTransferManagerInterop interop =
+        Windows.ApplicationModel.DataTransfer.DataTransferManager.As
+            &lt;IDataTransferManagerInterop&gt;();
+
+        IntPtr result = interop.GetForWindow(hWnd, _dtm_iid);
+        var dataTransferManager = WinRT.MarshalInterface
+            &lt;Windows.ApplicationModel.DataTransfer.DataTransferManager&gt;.FromAbi(result);
+
+        dataTransferManager.DataRequested += (sender, args) =&gt;
+        {
+            args.Request.Data.Properties.Title = &quot;In a desktop app...&quot;;
+            args.Request.Data.SetText(&quot;...display WinRT UI objects that depend on CoreWindow.&quot;);
+            args.Request.Data.RequestedOperation = 
+                Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
+        };
+
+        // Show the Share UI
+        interop.ShowShareUIForWindow(hWnd);
+    }
+}
+...
+</code></pre>
+<h3 id="winui-3-with-c-1">WinUI 3 with C++</h3>
+<pre><code class="lang-cppwinrt">// pch.h in a Windows App SDK app
+...
+#include &lt;shobjidl_core.h&gt;
+#include &lt;microsoft.ui.xaml.window.h&gt;
+#include &lt;winrt/Windows.ApplicationModel.DataTransfer.h&gt;
+...
+
+// MainWindow.xaml.cpp
+...
+void MainWindow::myButton_Click(IInspectable const&amp;, RoutedEventArgs const&amp;)
+{
+    // Retrieve the window handle (HWND) of the current WinUI 3 window.
+    auto windowNative{ this-&gt;m_inner.as&lt;::IWindowNative&gt;() };
+    HWND hWnd{ 0 };
+    windowNative-&gt;get_WindowHandle(&amp;hWnd);
+
+    winrt::com_ptr&lt;IDataTransferManagerInterop&gt; interop = 
+        winrt::get_activation_factory&lt;Windows::ApplicationModel::DataTransfer::DataTransferManager,
+        IDataTransferManagerInterop&gt;();
+
+    winrt::guid _dtm_iid{ 0xa5caee9b, 0x8708, 0x49d1, { 0x8d, 0x36, 0x67, 0xd2, 0x5a, 0x8d, 0xa0, 0x0c } };
+    Windows::ApplicationModel::DataTransfer::DataTransferManager dataTransferManager{ nullptr };
+    interop-&gt;GetForWindow(hWnd, _dtm_iid, winrt::put_abi(dataTransferManager));
+
+    dataTransferManager.DataRequested([](Windows::ApplicationModel::DataTransfer::DataTransferManager const&amp; /* sender */,
+        Windows::ApplicationModel::DataTransfer::DataRequestedEventArgs const&amp; args)
+    {
+        args.Request().Data().Properties().Title(L&quot;In a desktop app...&quot;);
+        args.Request().Data().SetText(L&quot;...display WinRT UI objects that depend on CoreWindow.&quot;);
+        args.Request().Data().RequestedOperation(Windows::ApplicationModel::DataTransfer::DataPackageOperation::Copy);
+    });
+
+    interop-&gt;ShowShareUIForWindow(hWnd);
+}
+...
+</code></pre>
+<h2 id="for-classes-that-implement-iuserconsentverifierinterop">For classes that implement IUserConsentVerifierInterop</h2>
+<p>The <a href="/uwp/api/windows.security.credentials.ui.userconsentverifier"><strong>Windows.Security.Credentials.UI.UserConsentVerifier</strong></a> class implements the <a href="/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop"><strong>IUserConsentVerifierInterop</strong></a> interface (which, like <strong>IInitializeWithWindow</strong>, lets you set an owner window).</p>
+<p>In a desktop app, instead of calling the <a href="/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync"><strong>UserConsentVerifier.RequestVerificationAsync</strong></a> method:</p>
+<ul>
+<li><strong>C#</strong>. Call the <strong>RequestVerificationForWindowAsync</strong> method of the <strong>Windows.Security.Credentials.UI.UserConsentVerifierInterop</strong> C# interop class. For more info about the C# interop classes, see <a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>.</li>
+<li><strong>C++/WinRT</strong>. Call <a href="/windows/win32/api/userconsentverifierinterop/nf-userconsentverifierinterop-iuserconsentverifierinterop-requestverificationforwindowasync"><strong>IUserConsentVerifierInterop::RequestVerificationForWindowAsync</strong></a>.</li>
+</ul>
+<p>For more info, and code examples, see <a href="/uwp/api/windows.security.credentials.ui.userconsentverifier"><strong>UserConsentVerifier</strong></a>.</p>
+<h2 id="for-classes-that-implement-other-interop-interfaces">For classes that implement other interop interfaces</h2>
+<p>These interfaces have <strong>XxxForWindow</strong> methods, which let you set an owner window handle (HWND). You can use these interfaces directly from C++/WinRT. Versions of the interfaces also exist in the form of C# classes—for more details, see <a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>.</p>
+<ul>
+<li><a href="/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop"><strong>IAccountsSettingsPaneInterop</strong></a></li>
+<li><a href="/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop"><strong>IDragDropManagerInterop</strong></a></li>
+<li><a href="/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop"><strong>IInputPaneInterop</strong></a></li>
+<li><a href="/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop"><strong>IPlayToManagerInterop</strong></a></li>
+<li><a href="/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop"><strong>IPrintManagerInterop</strong></a></li>
+<li><a href="/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop"><strong>IRadialControllerConfigurationInterop</strong></a></li>
+<li><strong>IRadialControllerIndependentInputSourceInterop</strong></li>
+<li><a href="/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop"><strong>IRadialControllerInterop</strong></a></li>
+<li><a href="/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop"><strong>ISpatialInteractionManagerInterop</strong></a></li>
+<li><a href="/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop"><strong>ISystemMediaTransportControlsInterop</strong></a></li>
+<li><a href="/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop"><strong>IUIViewSettingsInterop</strong></a></li>
+<li><a href="/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop"><strong>IWebAuthenticationCoreManagerInterop</strong></a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="retrieve-hwnd.html">Retrieve a window handle (HWND)</a></li>
+<li><a href="../../winui/winui3/index.html">WinUI 3</a></li>
+<li><a href="/dotnet/desktop/wpf/">Windows Presentation Foundation (WPF)</a></li>
+<li><a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a></li>
+<li><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></li>
+<li><a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/ui-input/display-ui-objects.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

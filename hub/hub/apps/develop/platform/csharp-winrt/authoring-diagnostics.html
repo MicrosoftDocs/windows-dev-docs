@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Diagnose C#/WinRT component errors </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Diagnose C#/WinRT component errors ">
+    
+    <meta name="description" content="C#/WinRT diagnostic error messages for authored components">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="diagnose-cwinrt-component-errors">Diagnose C#/WinRT component errors</h1>
+
+<p>This article provides additional information about restrictions on Windows Runtime Components written with C#/WinRT. It expands on the information that is provided in error messages from C#/WinRT when an author builds their component. For existing UWP .NET Native managed components, the metadata for C# WinRT components is generated using <a href="/dotnet/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool">Winmdexp.exe</a>, a .NET tool. Now that Windows Runtime support is decoupled from .NET, C#/WinRT provides the tooling to generate a .winmd file from your component. The Windows Runtime has more constraints on code than a C# class library, and the C#/WinRT Diagnostic Scanner alerts you of these before generating a .winmd file.</p>
+<p>This article covers the errors reported in your build from C#/WinRT. This article serves as an updated version of the information on restrictions for <a href="/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic">existing UWP .NET Native managed components</a> which use the Winmdexp.exe tool.</p>
+<p>Search for the error message text (omitting specific values for placeholders) or the message number. If you don’t find the information you need here, you can help us improve the documentation by using the feedback button at the end of this article. In your feedback, please include the error message. Alternatively, you can file a bug at the <a href="https://github.com/microsoft/CsWinRT">C#/WinRT repo</a>.</p>
+<p>This article organizes error messages by scenario.</p>
+<h2 id="implementing-interfaces-that-arent-valid-windows-runtime-interfaces">Implementing interfaces that aren't valid Windows Runtime interfaces</h2>
+<p>C#/WinRT components cannot implement certain Windows Runtime interfaces, such as the Windows Runtime interfaces that represent asynchronous actions or operations (<strong>IAsyncAction</strong>, <strong>IAsyncActionWithProgress&lt;TProgress&gt;</strong>, <strong>IAsyncOperation&lt;TResult&gt;</strong>, or <strong>IAsyncOperationWithProgress&lt;TResult,TProgress&gt;</strong>). Instead, use the <strong>AsyncInfo</strong> class for generating async operations in Windows Runtime components. Note: these are not the only invalid interfaces, for example a class cannot implement <strong>System.Exception</strong>.</p>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1008</p></td>
+<td><p>Windows Runtime component type {0} cannot implement interface {1}, as the interface is not a valid Windows Runtime interface</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="attribute-related-errors">Attribute related errors</h2>
+<p>In the Windows Runtime, overloaded methods can have the same number of parameters only if one overload is specified as the default overload. Use the attribute <strong>Windows.Foundation.Metadata.DefaultOverload</strong> (CsWinRT1015, 1016).</p>
+<p>When arrays are used as inputs or outputs in either functions or properties, they must be either read-only or write-only (CsWinRT 1025). The attributes <strong>System.Runtime.InteropServices.WindowsRuntime.ReadOnlyArray</strong> and <strong>System.Runtime.InteropServices.WindowsRuntime.WriteOnlyArray</strong> are provided for you to use. The provided attributes are only for use on parameters of the array type (CsWinRT1026), and only one should be applied per parameter (CsWinRT1023).</p>
+<p>You do not need to apply any attribute to an array parameter marked <strong>out</strong>, as it is assumed to be write-only. There is an error message if you decorate it as read-only in this case (CsWinRT1024).</p>
+<p>The attributes <strong>System.Runtime.InteropServices.InAttribute</strong> and <strong>System.Runtime.InteropServices.OutAttribute</strong> should not be used on parameters of any type (CsWinRT1021,1022).</p>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1015</p></td>
+<td><p>In class {2}: Multiple {0}-parameter overloads of '{1}' are decorated with Windows.Foundation.Metadata.DefaultOverloadAttribute. The attribute may only be applied to one overload of the method.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1016</p></td>
+<td><p>In class {2}: The {0}-parameter overloads of {1} must have exactly one method specified as the default overload by decorating it with the attribute  Windows.Foundation.Metadata.DefaultOverloadAttribute.</p></td>
+</tr>
+<tr class="odd">
+<td><p>CsWinRT1021</p></td>
+<td><p>Method '{0}' has parameter '{1}' which is an array, and which has either a System.Runtime.InteropServices.InAttribute or a System.Runtime.InteropServices.OutAttribute. In the Windows Runtime, array parameters must have either ReadOnlyArray or WriteOnlyArray. Please remove these attributes or replace them with the appropriate Windows Runtime attribute if necessary.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1022</p></td>
+<td><p>Method '{0}' has parameter '{1}' with a System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute.Windows Runtime does not support marking parameters with System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Please consider removing System.Runtime.InteropServices.InAttribute and replace System.Runtime.InteropServices.OutAttribute with 'out' modifier instead.</p></td>
+</tr>
+<tr class="odd">
+<td><p>CsWinRT1023</p></td>
+<td><p>Method '{0}' has parameter '{1}' which is an array, and which has both ReadOnlyArray and WriteOnlyArray. In the Windows Runtime, the contents array parameters must be either readable or writable. Please remove one of the attributes from '{1}'.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1024</p></td>
+<td><p>Method '{0}' has an output parameter '{1}' which is an array, but which has ReadOnlyArray attribute. In the Windows Runtime, the contents of output arrays are writable.  Please remove the attribute from '{1}'.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1025</p></td>
+<td><p>Method '{0}' has parameter '{1}' which is an array. In the Windows Runtime, the contents of array parameters must be either readable or writable. Please apply either ReadOnlyArray or WriteOnlyArray to '{1}'.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1026</p></td>
+<td><p>Method '{0}' has parameter '{1}' which is not an array, and which has either a ReadOnlyArray attribute or a WriteOnlyArray attribute. Windows Runtime does not support marking non-array parameters with ReadOnlyArray or WriteOnlyArray."</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="namespace-errors-and-invalid-names-for-the-output-file">Namespace errors and invalid names for the output file</h2>
+<p>In the Windows Runtime, all the public types in a Windows metadata (.winmd) file must be in a namespace that shares the .winmd file name, or in sub-namespaces of the file name. For example, if your Visual Studio project is named A.B (that is, your Windows Runtime component is A.B.winmd), it can contain public classes A.B.Class1 and A.B.C.Class2, but not A.Class3 or D.Class4.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These restrictions apply only to public types, not to private types used in your implementation.</p>
+</div>
+<p>In the case of A.Class3, you can either move Class3 to another namespace or change the name of the Windows Runtime component to A.winmd. In the previous example, code that calls A.B.winmd will be unable to locate A.Class3.</p>
+<p>In the case of D.Class4, no file name can contain both D.Class4 and classes in the A.B namespace, so changing the name of the Windows Runtime component is not an option. You can either move D.Class4 to another namespace, or put it in another Windows Runtime component.</p>
+<p>The file system can't distinguish between uppercase and lowercase, so namespaces that differ by case are not allowed (CsWinRT1002).</p>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1001</p></td>
+<td><p>A public type has a namespace ('{1}') that shares no common prefix with other namespaces ('{0}'). All types within a Windows Metadata file must exist in a sub namespace of the namespace that is implied by the file name.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1002</p></td>
+<td><p>Multiple namespaces found with the name '{0}'; namespace names cannot differ only by case in the Windows Runtime.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="exporting-types-that-arent-valid-windows-runtime-types">Exporting types that aren't valid Windows Runtime types</h2>
+<p>The public interface of your component must expose only Windows Runtime types. However, .NET provides mappings for a number of commonly used types that are slightly different in .NET and the Windows Runtime. This enables the .NET developer to work with familiar types instead of learning new ones. You can use these mapped .NET Framework types in the public interface of your component. For more information, see <a href="/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic#declaring-types-in-windows-runtime-components">Declaring types in Windows Runtime Components</a>, <a href="/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic#passing-windows-runtime-types-to-managed-code">Passing Windows Runtime types to managed code</a>, and <a href="/windows/uwp/winrt-components/net-framework-mappings-of-windows-runtime-types">.NET mappings of Windows Runtime types</a>.</p>
+<p>Many of these mappings are interfaces. For example, IList&lt;T&gt; maps to the Windows Runtime interface IVector&lt;T&gt;. If you use List&lt;string&gt; instead of IList&lt;string&gt; as a parameter type, C#/WinRT provides a list of alternatives that includes all the mapped interfaces implemented by List&lt;T&gt;. If you use nested generic types, such as List&lt;Dictionary&lt;int, string&gt;&gt;, C#/WinRT offers choices for each level of nesting. These lists can become quite long.</p>
+<p>In general, the best choice is the interface that is closest to the type. For example, for Dictionary&lt;int, string&gt;, the best choice is most likely IDictionary&lt;int, string&gt;.</p>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1006</p></td>
+<td><p>The member '{0}' has the type '{1}' in its signature. The type '{1}' is not a valid Windows Runtime type. Yet, the type (or its generic parameters) implement interfaces that are valid Windows Runtime types. Consider changing the type '{1} in the member signature to one of the following types from System.Collections.Generic: {2}.</p></td>
+</tr>
+</tbody>
+</table>
+<p>In the Windows Runtime, arrays in member signatures must be one-dimensional with a lower bound of 0 (zero). Nested array types such as <code>myArray[][]</code> (CsWinRT1017) and <code>myArray[,]</code> (CsWinRT1018) are not allowed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This restriction does not apply to arrays you use internally in your implementation.</p>
+</div>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1017</p></td>
+<td><p>Method {0} has a nested array of type {1} in its signature. Arrays in Windows Runtime method signature cannot be nested.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1018</p></td>
+<td><p>Method '{0}' has a multi-dimensional array of type '{1}' in its signature. Arrays in Windows Runtime method signatures must be one dimensional.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="structures-that-contain-fields-of-disallowed-types">Structures that contain fields of disallowed types</h2>
+<p>In the Windows Runtime, a structure can contain only fields, and only structures can contain fields. Those fields must be public. Valid field types include enumerations, structures, and primitive types.</p>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1007</p></td>
+<td><p>Structure {0} contains no public fields. Windows Runtime structures must contain at least one public field.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1011</p></td>
+<td><p>Structure {0} has non-public field. All fields must be public for Windows Runtime structures.</p></td>
+</tr>
+<tr class="odd">
+<td><p>CsWinRT1012</p></td>
+<td><p>Structure {0} has const field. Constants can only appear on Windows Runtime enumerations.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1013</p></td>
+<td><p>Structure {0} has field of type {1}; {1} is not a valid Windows Runtime field type. Each field in a Windows Runtime structure can only be UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, or itself a structure.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="parameter-name-conflicts-with-generated-code">Parameter name conflicts with generated code</h2>
+<p>In the Windows Runtime, return values are considered to be output parameters, and the names of parameters must be unique. By default, C#/WinRT gives the return value the name <code>__retval</code>. If your method has a parameter named <code>__retval</code>, you will get error CsWinRT1010. To correct this, give your parameter a name other than <code>__retvalue</code>.</p>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1010</p></td>
+<td><p>The parameter name {1} in method {0} is the same as the return value parameter name used in the generated C#/WinRT interop; use a different parameter name.</p></td>
+</tr>
+</tbody>
+</table>
+<h2 id="miscellaneous">Miscellaneous</h2>
+<p>Other restrictions in a C#/WinRT authored component include:</p>
+<ul>
+<li>You cannot expose overloaded operators on public types.</li>
+<li>Classes and interfaces cannot be generic.</li>
+<li>Classes must be sealed.</li>
+<li>Parameters cannot be passed by reference, e.g. using the <strong>ref</strong> keyword.</li>
+<li>Properties must have a public get method.</li>
+<li>There must be at least one public type (class or interface) in your component's namespace.</li>
+</ul>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1014</p></td>
+<td><p>'{0}' is an operator overload. Managed types cannot expose operator overloads in the Windows Runtime.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1004</p></td>
+<td><p>Type {0} is generic. Windows Runtime types cannot be generic.</p></td>
+</tr>
+<tr class="odd">
+<td><p>CsWinRT1005</p></td>
+<td><p>Exporting unsealed types is not supported in CsWinRT. Please mark type {0} as sealed.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1020</p></td>
+<td><p>Method '{0}' has parameter '{1}' marked `ref`. Reference parameters are not allowed in Windows Runtime.</p></td>
+</tr>
+<tr class="odd">
+<td><p>CsWinRT1000</p></td>
+<td><p>Property '{0}' does not have a public getter method. Windows Runtime does not support setter-only properties.</p></td>
+</tr>
+<tr class="even">
+<td><p>CsWinRT1003</p></td>
+<td><p>Windows Runtime components must have at least one public type</p></td>
+</tr>
+</tbody>
+</table>
+<p>In the Windows Runtime, a class can have only one constructor with a given number of parameters. For example, you can't have one constructor that has a single parameter of type <strong>string</strong> and another constructor that has a single parameter of type <strong>int</strong>. The only workaround is to use a different number of parameters for each constructor.</p>
+<table>
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Error number</p></th>
+<th><p>Message text</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>CsWinRT1009</p></td>
+<td><p>Classes cannot have multiple constructors of the same arity in the Windows Runtime, class {0} has multiple {1}-arity constructors.</p></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/csharp-winrt/authoring-diagnostics.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>App instancing with the app lifecycle API (WinUI) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="App instancing with the app lifecycle API (WinUI) ">
+    
+    <meta name="description" content="Describes how to use app instancing features with the app lifecycle API in WinUI with the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="app-instancing-with-the-app-lifecycle-api">App instancing with the app lifecycle API</h1>
+
+<p>An app's instancing model determines whether multiple instances of your app's process can run at the same time. The app lifecycle API in the Windows App SDK provides a way to control how many instances of your app can run at the same time, and to redirect activations to other instances when necessary.</p>
+<p>This article describes how to use the app lifecycle API to control app instancing in your WinUI apps.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use the app lifecycle API in WinUI 3 apps:</p>
+<ul>
+<li>Download and install the latest release of the Windows App SDK. For more information, see <a href="../../get-started/start-here.html">Get started with WinUI</a>.</li>
+<li>Follow the instructions to <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a> or to <a href="../use-windows-app-sdk-in-existing-project.html">use the Windows App SDK in an existing project</a>.</li>
+</ul>
+<h2 id="single-instance-apps">Single-instance apps</h2>
+<p>Apps are single-instanced if there can be only one main process running at a time. Attempting to launch a second instance of a single-instanced app typically results in the first instance's main window being activated instead. Note that this only applies to the main process. Single-instanced apps can create multiple background processes and still be considered single instanced.</p>
+<p>WinUI apps are multi-instanced by default but have the ability to become single-instanced by deciding at launch-time whether to create a new instance or activate an existing instance instead.</p>
+<p>The <a href="https://apps.microsoft.com/detail/9WZDNCRFJBH4">Microsoft Photos</a> app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.</p>
+<p>For an example of how to implement single instancing in a WinUI 3 app with C#, see <a href="applifecycle-single-instance.html">Create a single-instanced WinUI app</a>.</p>
+<h2 id="multi-instanced-apps">Multi-instanced apps</h2>
+<p>Apps are multi-instanced if the main process can be run multiple times simultaneously. Attempting to launch a second instance of a multi-instanced app creates a new process and main window.</p>
+<p>Traditionally, unpackaged apps are multi-instanced by default, but can implement single-instancing when necessarily. Typically this is done using a single named mutex to indicate if an app is already running.</p>
+<p>Notepad is a good example of a multi instanced app. Each time you attempt to launch Notepad, a new instance of Notepad will be created regardless of how many instances are already running.</p>
+<h2 id="how-the-windows-app-sdk-instancing-differs-from-uwp-instancing">How the Windows App SDK instancing differs from UWP instancing</h2>
+<p>Instancing behavior in the Windows App SDK is based on UWP's model, class, but with some key differences:</p>
+<h3 id="appinstance-class">AppInstance class</h3>
+<ul>
+<li><strong>UWP</strong>: The <a href="/uwp/api/windows.applicationmodel.appinstance">Windows.ApplicationModel.AppInstance</a> class is focused purely on instance redirection scenarios.</li>
+<li><strong>Windows App SDK</strong>: The <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance">Microsoft.Windows.AppLifeycle.AppInstance</a> class supports instance redirection scenarios, and contains additional functionality to support new features in later releases.</li>
+</ul>
+<h3 id="list-of-instances">List of instances</h3>
+<ul>
+<li><strong>UWP</strong>: <a href="/uwp/api/windows.applicationmodel.appinstance.getinstances">GetInstances</a> returns only the instances that the app explicitly registered for potential redirection.</li>
+<li><strong>Windows App SDK</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getinstances">GetInstances</a> returns all running instances of the app that are using the AppInstance API, whether or not they have registered a key. This can include the current instance. If you want the current instance to be included in the list, call <code>AppInstance.GetCurrent</code>. Separate lists are maintained for different versions of the same app, as well as instances of apps launched by different users.</li>
+</ul>
+<h3 id="registering-keys">Registering keys</h3>
+<p>Each instance of a multi-instanced app can register an arbitrary key via the <code>FindOrRegisterForKey</code> method. Keys have no inherent meaning; apps can use keys in whatever form or way they wish.</p>
+<p>An instance of an app can set its key at any time, but only one key is allowed for each instance; setting a new value overwrites the previous value.</p>
+<p>An instance of an app cannot set its key to the same value that another instance has already registered. Attempting to register an existing key will result in <code>FindOrRegisterForKey</code> returning the app instance that has already registered that key.</p>
+<ul>
+<li><strong>UWP</strong>: An instance must register a key in order to be included in the list returned from <a href="/uwp/api/windows.applicationmodel.appinstance.getinstances">GetInstances</a>.</li>
+<li><strong>Windows App SDK</strong>: Registering a key is decoupled from the list of instances. An instance does not need to register a key in order to be included in the list.</li>
+</ul>
+<h3 id="unregistering-keys">Unregistering keys</h3>
+<p>An instance of an app can unregister its key.</p>
+<ul>
+<li><strong>UWP</strong>: When an instance unregisters its key, it is no longer available for activation redirection and is not included in the list of instances returned from <a href="/uwp/api/windows.applicationmodel.appinstance.getinstances">GetInstances</a>.</li>
+<li><strong>Windows App SDK</strong>: An instance that has unregistered its key is still available for activation redirection and is still included in the list of instances returned from <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getinstances">GetInstances</a>.</li>
+</ul>
+<h3 id="instance-redirection-targets">Instance redirection targets</h3>
+<p>Multiple instances of an app can activate each other, a process called &quot;activation redirection&quot;. For example, an app might implement single instancing by only initializing itself if no other instances of the app are found at startup, and instead redirect and exit if another instance exists. Multi-instanced apps can redirect activations when appropriate according to that app's business logic. When an activation is redirected to another instance, it uses that instance's <code>Activated</code> callback, the same callback that's used in all other activation scenarios.</p>
+<ul>
+<li><strong>UWP</strong>: Only instances that have registered a key can be a target for redirection.</li>
+<li><strong>Windows App SDK</strong>: Any instance can be a redirection target, whether or not it has a registered key.</li>
+</ul>
+<h3 id="post-redirection-behavior">Post-redirection behavior</h3>
+<ul>
+<li><p><strong>UWP</strong>: Redirection is a terminal operation; the app is terminated after redirecting the activation, even if the redirect failed.</p>
+</li>
+<li><p><strong>Windows App SDK</strong>: In the Windows App SDK, redirection is not a terminal operation. This in part reflects the potential problems in arbitrarily terminating a Win32 app that may have already allocated some memory, but also allows support of more sophisticated redirection scenarios. Consider a multi-instanced app where an instance receives an activation request while performing a large amount of CPU-intensive work. That app can redirect the activation request to another instance and continue its processing. That scenario would not be possible if the app was terminated after redirection.</p>
+</li>
+</ul>
+<p>An activation request can be redirected multiple times. Instance A could redirect to instance B, which could in turn redirect to instance C. Windows App SDK apps taking advantage of this functionality must guard against circular redirection - if C redirects to A in the example above, there is a potential infinite activation loop. It is up to the app to determine how to handle circular redirection depending on what makes sense for the workflows that app supports.</p>
+<h3 id="activation-events">Activation events</h3>
+<p>In order to handle reactivation, the app can register for an Activated event.</p>
+<ul>
+<li><strong>UWP</strong>: The event passes an <a href="/uwp/api/windows.applicationmodel.activation.iactivatedeventargs">IActivatedEventArgs</a> to the app.</li>
+<li><strong>Windows App SDK</strong>: The event passes a <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments">Microsoft.Windows.AppLifecycle.AppActivationArguments</a> instance to the app, which contains one of the <code>-ActivatedEventArgs</code> instances.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<h3 id="handling-activations">Handling activations</h3>
+<p>This example demonstrates how an app registers for and handles an <code>Activated</code> event. When it receives an <code>Activated</code> event, this app uses the event arguments to determine what sort of action caused the activation, and responds appropriately.</p>
+<pre><code class="lang-cpp">int APIENTRY wWinMain(
+    _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
+{
+    UNREFERENCED_PARAMETER(hPrevInstance);
+    UNREFERENCED_PARAMETER(lpCmdLine);
+
+    // Initialize the Windows App SDK framework package for unpackaged apps.
+    HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) };
+    if (FAILED(hr))
+    {
+        OutputFormattedDebugString(
+            L&quot;Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n&quot;,
+            hr, majorMinorVersion, versionTag, 
+            minVersion.Major, minVersion.Minor, minVersion.Build, minVersion.Revision);
+        return hr;
+    }
+
+    if (DecideRedirection())
+    {
+        return 1;
+    }
+
+    // Connect the Activated event, to allow for this instance of the app
+    // getting reactivated as a result of multi-instance redirection.
+    AppInstance thisInstance = AppInstance::GetCurrent();
+    auto activationToken = thisInstance.Activated(
+        auto_revoke, [&amp;thisInstance](
+            const auto&amp; sender, const AppActivationArguments&amp; args)
+        { OnActivated(sender, args); }
+    );
+
+    // Carry on with regular Windows initialization.
+    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+    LoadStringW(hInstance, IDC_CLASSNAME, szWindowClass, MAX_LOADSTRING);
+    RegisterWindowClass(hInstance);
+    if (!InitInstance(hInstance, nCmdShow))
+    {
+        return FALSE;
+    }
+
+    MSG msg;
+    while (GetMessage(&amp;msg, nullptr, 0, 0))
+    {
+        TranslateMessage(&amp;msg);
+        DispatchMessage(&amp;msg);
+    }
+
+    MddBootstrapShutdown();
+    return (int)msg.wParam;
+}
+
+void OnActivated(const IInspectable&amp;, const AppActivationArguments&amp; args)
+{
+    int const arraysize = 4096;
+    WCHAR szTmp[arraysize];
+    size_t cbTmp = arraysize * sizeof(WCHAR);
+    StringCbPrintf(szTmp, cbTmp, L&quot;OnActivated (%d)&quot;, activationCount++);
+
+    ExtendedActivationKind kind = args.Kind();
+    if (kind == ExtendedActivationKind::Launch)
+    {
+        ReportLaunchArgs(szTmp, args);
+    }
+    else if (kind == ExtendedActivationKind::File)
+    {
+        ReportFileArgs(szTmp, args);
+    }
+}
+</code></pre>
+<h3 id="redirection-logic-based-on-activation-kind">Redirection logic based on activation kind</h3>
+<p>In this example, the app registers a handler for the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated">Activated</a> event, and also checks for the activation event args to decide whether to redirect activation to another instance.</p>
+<p>For most types of activations, the app continues with its regular initialization process. However, if the activation was caused by an associated file type being opened, and if another instance of this app already has the file opened, the current instance will redirect the activation to the existing instance and exit.</p>
+<p>This app uses key registration to determine which files are open in which instances. When an instance opens a file, it registers a key that includes that filename. Other instances can then examine the registered keys and look for particular filenames, and register themselves as that file's instance if no other instance already has.</p>
+<p>Note that, though key registration itself is part of the app lifecycle API in the Windows App SDK's, the contents of the key are specified only within the app itself. An app does not need to register a file name, or any other meaningful data. This app, however, has decided to track open files via keys based on its particular needs and supported workflows.</p>
+<pre><code class="lang-cpp">bool DecideRedirection()
+{
+    // Get the current executable filesystem path, so we can
+    // use it later in registering for activation kinds.
+    GetModuleFileName(NULL, szExePath, MAX_PATH);
+    wcscpy_s(szExePathAndIconIndex, szExePath);
+    wcscat_s(szExePathAndIconIndex, L&quot;,1&quot;);
+
+    // Find out what kind of activation this is.
+    AppActivationArguments args = AppInstance::GetCurrent().GetActivatedEventArgs();
+    ExtendedActivationKind kind = args.Kind();
+    if (kind == ExtendedActivationKind::Launch)
+    {
+        ReportLaunchArgs(L&quot;WinMain&quot;, args);
+    }
+    else if (kind == ExtendedActivationKind::File)
+    {
+        ReportFileArgs(L&quot;WinMain&quot;, args);
+
+        try
+        {
+            // This is a file activation: here we'll get the file information,
+            // and register the file name as our instance key.
+            IFileActivatedEventArgs fileArgs = args.Data().as&lt;IFileActivatedEventArgs&gt;();
+            if (fileArgs != NULL)
+            {
+                IStorageItem file = fileArgs.Files().GetAt(0);
+                AppInstance keyInstance = AppInstance::FindOrRegisterForKey(file.Name());
+                OutputFormattedMessage(
+                    L&quot;Registered key = %ls&quot;, keyInstance.Key().c_str());
+
+                // If we successfully registered the file name, we must be the
+                // only instance running that was activated for this file.
+                if (keyInstance.IsCurrent())
+                {
+                    // Report successful file name key registration.
+                    OutputFormattedMessage(
+                        L&quot;IsCurrent=true; registered this instance for %ls&quot;,
+                        file.Name().c_str());
+                }
+                else
+                {
+                    keyInstance.RedirectActivationToAsync(args).get();
+                    return true;
+                }
+            }
+        }
+        catch (...)
+        {
+            OutputErrorString(L&quot;Error getting instance information&quot;);
+        }
+    }
+    return false;
+}
+</code></pre>
+<h3 id="arbitrary-redirection">Arbitrary redirection</h3>
+<p>This example expands on the previous example by adding more sophisticated redirection rules. The app still performs the open file check from the previous example. However, where the previous example would always create a new instance if it did not redirect based on the open file check, this example adds the concept of a &quot;reusable&quot; instance. If a reusable instance is found, the current instance redirects to the reusable instance and exits. Otherwise, it registers itself as reusable and continues with its normal initialization.</p>
+<p>Again, note that the concept of a &quot;reusable&quot; instance does not exist in the app lifecycle API; it is created and used only within the app itself.</p>
+<pre><code class="lang-cpp">int APIENTRY wWinMain(
+    _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
+    _In_ LPWSTR lpCmdLine, _In_ int nCmdShow)
+{
+    // Initialize COM.
+    winrt::init_apartment();
+
+    AppActivationArguments activationArgs =
+        AppInstance::GetCurrent().GetActivatedEventArgs();
+
+    // Check for any specific activation kind we care about.
+    ExtendedActivationKind kind = activationArgs.Kind;
+    if (kind == ExtendedActivationKind::File)
+    {
+        // etc... as in previous scenario.
+    }
+    else
+    {
+        // For other activation kinds, we'll trawl all instances to see if
+        // any are suitable for redirecting this request. First, get a list
+        // of all running instances of this app.
+        auto instances = AppInstance::GetInstances();
+
+        // In the simple case, we'll redirect to any other instance.
+        AppInstance instance = instances.GetAt(0);
+
+        // If the app re-registers re-usable instances, we can filter for these instead.
+        // In this example, the app uses the string &quot;REUSABLE&quot; to indicate to itself
+        // that it can redirect to a particular instance.
+        bool isFound = false;
+        for (AppInstance instance : instances)
+        {
+            if (instance.Key == L&quot;REUSABLE&quot;)
+            {
+                isFound = true;
+                instance.RedirectActivationToAsync(activationArgs).get();
+                break;
+            }
+        }
+        if (!isFound)
+        {
+            // We'll register this as a reusable instance, and then
+            // go ahead and do normal initialization.
+            winrt::hstring szKey = L&quot;REUSABLE&quot;;
+            AppInstance::FindOrRegisterForKey(szKey);
+            RegisterClassAndStartMessagePump(hInstance, nCmdShow);
+        }
+    }
+    return 1;
+}
+</code></pre>
+<h3 id="redirection-orchestration">Redirection orchestration</h3>
+<p>This example again adds more sophisticated redirection behavior. Here, an app instance can register itself as the instance that handles all activations of a specific kind. When an instance of an app receives a <code>Protocol</code> activation, it first checks for an instance that has already registered to handle <code>Protocol</code> activations. If it finds one, it redirects the activation to that instance. If not, the current instance registers itself for <code>Protocol</code> activations, and then applies additional logic (not shown) which may redirect the activation for some other reason.</p>
+<pre><code class="lang-cpp">void OnActivated(const IInspectable&amp;, const AppActivationArguments&amp; args)
+{
+    const ExtendedActivationKind kind = args.Kind;
+
+    // For example, we might want to redirect protocol activations.
+    if (kind == ExtendedActivationKind::Protocol)
+    {
+        auto protocolArgs = args.Data().as&lt;ProtocolActivatedEventArgs&gt;();
+        Uri uri = protocolArgs.Uri();
+
+        // We'll try to find the instance that handles protocol activations.
+        // If there isn't one, then this instance will take over that duty.
+        auto instance = AppInstance::FindOrRegisterForKey(uri.AbsoluteUri());
+        if (!instance.IsCurrent)
+        {
+            instance.RedirectActivationToAsync(args).get();
+        }
+        else
+        {
+            DoSomethingWithProtocolArgs(uri);
+        }
+    }
+    else
+    {
+        // In this example, this instance of the app handles all other
+        // activation kinds.
+        DoSomethingWithNewActivationArgs(args);
+    }
+}
+</code></pre>
+<p>Unlike the UWP version of <code>RedirectActivationTo</code>, the Windows App SDK's implementation of <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync">RedirectActivationToAsync</a> requires explicitly passing event arguments when redirecting activations. This is necessary because whereas UWP tightly controls activations and can ensure the correct activation arguments are passed to the correct instances, the Windows App SDK's version supports many platforms, and cannot rely on UWP-specific features. One benefit of this model is that apps that use the Windows App SDK have the chance to modify or replace the arguments that will be passed to the target instance.</p>
+<h3 id="redirection-without-blocking">Redirection without blocking</h3>
+<p>Most apps will want to redirect as early as possible, before doing unnecessary initialization work. For some app types, initialization logic runs on an STA thread, which must not be blocked. <strong>AppInstance.RedirectActivationToAsync</strong> method is asynchronous, and the calling app must wait for the method to complete, otherwise the redirection will fail. However, waiting on an async call will block the STA. In these situations, call <strong>RedirectActivationToAsync</strong> in another thread, and set an event when the call completes. Then wait on that event using non-blocking APIs.</p>
+<p>The following is a C# sample for a WPF app:</p>
+<pre><code class="lang-csharp">private static bool DecideRedirection(string key)
+{
+    bool isRedirect = false;
+
+    // Find out what kind of activation this is.
+    AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
+    ExtendedActivationKind kind = args.Kind;
+
+    if (kind == ExtendedActivationKind.Launch)
+    {
+        try
+        {
+            AppInstance keyInstance = AppInstance.FindOrRegisterForKey(key);
+
+            // If we successfully registered the key, we must be the
+            // only instance running that was activated for this key.
+            if (keyInstance.IsCurrent)
+            {
+                // Hook up the Activated event, to allow for this instance of the app
+                // getting reactivated as a result of multi-instance redirection.
+                keyInstance.Activated += OnKeyInstanceActivated;
+            }
+            else
+            {
+                isRedirect = true;
+
+                // Ensure we don't block the STA, by doing the redirect operation
+                // in another thread, and using an event to signal when it has completed.
+                var redirectSemaphore = new Semaphore(0, 1);
+                Task.Run(() =&gt;
+                {
+                    keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
+                    redirectSemaphore.Release();
+                });
+                redirectSemaphore.WaitOne();
+
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($&quot;Error getting instance information: {ex.Message}&quot;);
+        }
+    }
+
+    return isRedirect;
+}
+</code></pre>
+<h3 id="unregister-for-redirection">Unregister for redirection</h3>
+<p>Apps that have registered a key can unregister that key at any time. This example assumes the current instance had previously registered a key indicating that it had a specific file opened, meaning subsequent attempts to open that file would be redirected to it. When that file is closed, the key that contains the filename must be deleted.</p>
+<pre><code class="lang-cpp">void CALLBACK OnFileClosed(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    AppInstance::GetCurrent().UnregisterKey();
+}
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Although keys are automatically unregistered when their process terminates, race conditions are possible where another instance may have initiated a redirection to the terminated instance before the terminated instance was unregistered. To mitigate this possibility, an app can use <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.unregisterkey">UnregisterKey</a> to manually unregister its key before it is terminated, giving the app a chance to redirect activations to another app that is not in the process of exiting.</p>
+</div>
+<h3 id="instance-information">Instance information</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance">Microsoft.Windows.AppLifeycle.AppInstance</a> class represents a single instance of an app. In the current preview, <code>AppInstance</code> only includes the methods and properties necessary to support activation redirection. In later releases, <code>AppInstance</code> will expand to include other methods and properties relevant to an app instance.</p>
+<pre><code class="lang-cpp">void DumpExistingInstances()
+{
+    for (AppInstance const&amp; instance : AppInstance::GetInstances())
+    {
+        std::wostringstream sStream;
+        sStream &lt;&lt; L&quot;Instance: ProcessId = &quot; &lt;&lt; instance.ProcessId
+            &lt;&lt; L&quot;, Key = &quot; &lt;&lt; instance.Key().c_str() &lt;&lt; std::endl;
+        ::OutputDebugString(sStream.str().c_str());
+    }
+}
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<p><a href="applifecycle-single-instance.html">Create a single-instanced WinUI app</a></p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance">Microsoft.Windows.AppLifeycle.AppInstance</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/applifecycle/applifecycle-instancing.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

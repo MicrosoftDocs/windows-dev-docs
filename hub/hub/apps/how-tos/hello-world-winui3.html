@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to build a Hello World app using C# / WinUI / Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to build a Hello World app using C# / WinUI / Windows App SDK ">
+    
+    <meta name="description" content="Get started with WinUI / Windows App SDK by building a simple Windows desktop app that displays &quot;Hello world!&quot;.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-a-hello-world-app-using-c-and-winui--windows-app-sdk">Build a Hello World app using C# and WinUI / Windows App SDK</h1>
+
+<p>In this how-to, we'll use Visual Studio 2022, WinUI, and Windows App SDK to build a Windows desktop app that displays &quot;Hello world!&quot; when launched:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/end-result.png" alt="A screenshot of the 'Hello world' app we're building.">
+</span>
+</p>
+<p>This how-to is targeted at <strong>beginners</strong> and makes no assumptions about your familiarity with Windows desktop development.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This tutorial uses Visual Studio and builds on the WinUI blank app template. To get set up, follow the instructions in <a href="../get-started/start-here.html">Get started with WinUI</a>. You'll install Visual Studio, configure it for developing apps with WinUI, create the Hello World project, and make sure you have the latest version of WinUI.</p>
+<p>When you've done that, come back here to learn more about the Hello World project and make some updates to it.</p>
+<h2 id="review-the-blank-app-project">Review the blank app project</h2>
+<p>The WinUI project templates in Visual Studio contain everything you need to build and run your app. The Blank App template creates a Window with an interactive Button that looks like this when you run it in debug mode.</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/click-me.png" alt="A screenshot of the templated project built and running.">
+</span>
+</p>
+<p>Click the <code>Click Me</code> button for a demonstration of <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">event handling</a>:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/clicked-me.png" alt="A screenshot of the 'Click Me' button.">
+</span>
+</p>
+<p>In this case, a <a href="../design/controls/buttons.html#create-a-button">Button</a> control's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event is bound to the <code>myButton_Click</code> event handler located in <code>MainWindow.xaml.cs</code>:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/code-screenshot.png" alt="A screenshot of the 'Click Me' button's event handler, located in your main window's code-behind file.">
+</span>
+</p>
+<p>While <code>MainWindow.xaml.cs</code> contains our main window's <strong>business logic</strong> concerns in the form of a code-behind file, its <strong>presentation</strong> concerns live in <code>MainWindow.xaml</code>:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/markup-screenshot.png" alt="A screenshot of the 'Click Me' button's XML markup, located in your main window's markup file.">
+</span>
+</p>
+<p>This separation of <strong>business logic</strong> and <strong>presentation</strong> concerns lets you bind data and events to and from your application's UI using a consistent application development pattern.</p>
+<h3 id="the-projects-file-structure">The project's file structure</h3>
+<p>Let's review the project's file structure before making code changes. This is located in the <a href="/visualstudio/ide/use-solution-explorer">Solution Explorer</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To locate features like the Solution Explorer, click on Search on navigation bar and use the Feature Search option.  <span class="mx-imgBorder">
+<img src="images/hello-world/feature-search.png" alt="A screenshot of the Feature Search option in Visual Studio.">
+</span>
+</p>
+</div>
+<p>The project's file structure currently looks like this:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/expanded-file-structure.png" alt="A screenshot of Solution Explorer in Visual Studio, showing an overview of the file structure.">
+</span>
+</p>
+<p>This table describes the files, starting from the top and working down:</p>
+<table>
+<thead>
+<tr>
+<th>File Name and <br> Image Reference Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Solution 'Hello World'</code><br> 1.</td>
+<td>This is a <strong>solution file</strong>, a logical container for your <strong>projects</strong>. Projects are often apps, but they can also be supporting class libraries.</td>
+</tr>
+<tr>
+<td><code>Hello World</code> <br> 2.</td>
+<td>This is a <strong>project file</strong>, a logical container for your app's files.</td>
+</tr>
+<tr>
+<td><code>Dependencies</code> <br> 3.</td>
+<td>Your app depends on <strong>frameworks</strong> (like <a href="/dotnet/fundamentals/">.NET</a> and the <a href="https://developer.microsoft.com/windows/downloads/windows-sdk/">Windows SDK</a>) and <strong>packages</strong> (like <a href="https://www.nuget.org/packages/Microsoft.WindowsAppSDK/#versions-body-tab">Windows App SDK</a>). As you introduce more sophisticated functionality and third-party libraries into your app, additional dependencies will appear here.</td>
+</tr>
+<tr>
+<td><code>Properties</code> <br> 4.</td>
+<td>By convention, WinUI projects place publish profiles and launch configuration files in this folder.</td>
+</tr>
+<tr>
+<td><code>PublishProfiles</code> <br> 5.</td>
+<td>Your <strong>publish profiles</strong> specify your app's publishing configuration across a variety of platforms.</td>
+</tr>
+<tr>
+<td><code>launchSettings.json</code> <br> 6.</td>
+<td>This file lets you configure <strong>launch profiles</strong> that can be used when running your app via <code>dotnet run</code>.</td>
+</tr>
+<tr>
+<td><code>Assets</code> <br> 7.</td>
+<td>This folder contains your app's logo, images, and other media assets.</td>
+</tr>
+<tr>
+<td><code>app.manifest</code> <br> 8.</td>
+<td>This app manifest file contains configuration related to the way that Windows displays your app when installed on user devices.</td>
+</tr>
+<tr>
+<td><code>App.xaml</code> <br> 9.</td>
+<td>This markup file specifies the shared, globally accessible resources that your app depends on.</td>
+</tr>
+<tr>
+<td><code>App.xaml.cs</code> <br> 10.</td>
+<td>This code-behind file represents the entry point to your app's business logic. It's responsible for creating and activating an instance of your <code>MainWindow</code>.</td>
+</tr>
+<tr>
+<td><code>MainWindow.xaml</code> <br> 11.</td>
+<td>This markup file contains the presentation concerns for your app's main window.</td>
+</tr>
+<tr>
+<td><code>MainWindow.xaml.cs</code> <br> 12.</td>
+<td>This code-behind file contains the business logic concerns associated with your app's main window.</td>
+</tr>
+<tr>
+<td><code>Package.appxmanifest</code> <br> 13.</td>
+<td>This <a href="/uwp/schemas/appxpackage/uapmanifestschema/generate-package-manifest">package manifest file</a> lets you configure publisher information, logos, processor architectures, and other details that determine how your app appears in the Windows Store.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="display-hello-world">Display &quot;Hello world!&quot;</h2>
+<p>To display &quot;Hello world!&quot; instead of the &quot;Click me&quot; button, navigate to <code>MainWindow.xaml</code>. You should see a <code>StackPanel</code> control's XAML markup:</p>
+<pre><code class="lang-xml">&lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+   &lt;Button x:Name=&quot;myButton&quot; Click=&quot;myButton_Click&quot;&gt;Click Me&lt;/Button&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You'll frequently refer to <strong>API reference docs</strong> while building Windows apps. <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel">StackPanel's reference docs</a> tell you more about the <code>StackPanel</code> control and how to customize it.</p>
+</div>
+<p>Let's update the <code>StackPanel</code> control to display <code>Hello world!</code> with red text:</p>
+<pre><code class="lang-xml">&lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;TextBlock x:Name=&quot;myText&quot; Text=&quot;Hello world!&quot; Foreground=&quot;Red&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>If you try to run your app now, Visual Studio will throw an error along the lines of <code>The name 'myButton' does not exist in the current context</code>. This is because we updated the presentation layer with a new control, but we didn't update the old control's business logic in our code-behind file.</p>
+<p>Navigate to <code>MainWindow.xaml.cs</code> and delete the <code>myButton_Click</code> event handler. We can do this because we've replaced the interactive <code>Click me</code> button with static <code>Hello world!</code> text. Our main window's business logic should now look like this:</p>
+<pre><code class="lang-csharp">public sealed partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        this.InitializeComponent();
+    }
+
+    // ↓ you can delete this ↓
+    //private void myButton_Click(object sender, RoutedEventArgs e)
+    //{
+    //    myButton.Content = &quot;Clicked&quot;;
+    //}
+}
+</code></pre>
+<p>Reset your app by selecting Build &gt; Rebuild Solution from the menu or pressing Ctrl + Shift + B. Then Start your app again by clicking the &quot;Start&quot; button in the Visual Studio toolbar or by pressing F5.</p>
+<p>The app will update and you should see a red <code>Hello world!</code>:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/red-hello.png" alt="A screenshot of a window with a red 'Hello world!' label.">
+</span>
+</p>
+<h2 id="update-your-apps-title-bar">Update your app's title bar</h2>
+<p>Add <code>this.Title = &quot;Hello world!&quot;;</code> to your <code>MainWindow.xaml.cs</code> code-behind file:</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+    this.Title = &quot;Hello world!&quot;; // &lt;- this is new
+}
+</code></pre>
+<p>If you restart your app, you should now see <code>Hello world!</code> in both the body and title bar:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/red-hello-titled.png" alt="A screenshot of the 'Hello, world!' app we built.">
+</span>
+</p>
+<p>Congratulations! You've built your first WinUI app with Windows App SDK and C#.</p>
+<h2 id="recap">Recap</h2>
+<p>Here's what you accomplished in this how-to:</p>
+<ol>
+<li>You started with Visual Studio's <strong>project template</strong>.</li>
+<li>You experienced an <strong>event handler</strong> that bound a <strong><code>Button</code> control's</strong> <strong><code>Click</code> event</strong> to a UI update.</li>
+<li>You familiarized yourself with the <strong>convention of separating presentation concerns</strong> from <strong>business logic</strong> using tightly-coupled <strong>XAML markup files</strong> and <strong>C# code-behind files</strong>, respectively.</li>
+<li>You reviewed the default WinUI project <strong>file structure</strong>.</li>
+<li>You modified both the presentation layer (XAML markup) and business logic (code-behind) to support a new <strong><code>TextBlock</code> control</strong> within a <strong><code>StackPanel</code></strong>.</li>
+<li>You reviewed <strong>reference docs</strong> to better understand the <strong><code>StackPanel</code> control's properties</strong>.</li>
+<li>You updated your main window's <strong>title bar</strong>.</li>
+</ol>
+<h2 id="full-code-files">Full code files</h2>
+<pre><code class="lang-xaml">&lt;!-- MainWindow.xaml --&gt;
+&lt;Window
+    x:Class=&quot;Hello_World.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:Hello_World&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+        &lt;TextBlock x:Name=&quot;myText&quot; Text=&quot;Hello world!&quot; Foreground=&quot;Red&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Window&gt;
+</code></pre>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Navigation;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+
+namespace Hello_World
+{
+    public sealed partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            this.InitializeComponent();
+            this.Title = &quot;Hello world!&quot;;
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-xaml">&lt;!-- App.xaml --&gt;
+&lt;Application
+    x:Class=&quot;Hello_World.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:Hello_World&quot;&gt;
+    &lt;Application.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;ResourceDictionary.MergedDictionaries&gt;
+                &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot; /&gt;
+                &lt;!-- Other merged dictionaries here --&gt;
+            &lt;/ResourceDictionary.MergedDictionaries&gt;
+            &lt;!-- Other app resources here --&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/Application.Resources&gt;
+&lt;/Application&gt;
+</code></pre>
+<pre><code class="lang-csharp">// App.xaml.cs
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Navigation;
+using Microsoft.UI.Xaml.Shapes;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel;
+using Windows.ApplicationModel.Activation;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+
+namespace Hello_World
+{
+    public partial class App : Application
+    {
+        public App()
+        {
+            this.InitializeComponent();
+        }
+
+        protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+        {
+            m_window = new MainWindow();
+            m_window.Activate();
+        }
+
+        private Window m_window;
+    }
+}
+</code></pre>
+<h2 id="faq">FAQ</h2>
+<p><strong>Q: What's the difference between WinUI and WinUI 3?</strong></p>
+<p>In the context of this article, WinUI and WinUI 3 are the same thing. The term &quot;WinUI 3&quot; was used to refer to the latest version of the Windows UI Library, which is a part of the Windows App SDK. These apps are now simply referred to as &quot;WinUI&quot; apps. WinUI 2 is the previous version of the Windows UI Library, which is still supported for building UWP apps but is not recommended for new projects.</p>
+<p><strong>Q: What does &quot;packaged&quot; mean?</strong></p>
+<p>Windows apps can be delivered to end-users using a variety of application packaging formats. When working with WinUI and Windows App SDK, <strong>packaged apps</strong> use MSIX to bundle your app in a way that offers convenient installation and updates to end-users. Visit <a href="../windows-app-sdk/deployment-architecture.html">Deployment architecture and overview for framework-dependent apps</a> to learn more.</p>
+<p><strong>Q: Can I use VS Code to build WinUI apps?</strong></p>
+<p>Although technically possible, we strongly recommend using Visual Studio 2022 to build desktop apps with WinUI and Windows App SDK. See <a href="../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-apps">the Windows developer FAQ</a> for more information.</p>
+<p><strong>Q: Can I use C++ to build WinUI apps?</strong></p>
+<p>Yes! For more information, see <a href="/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt">Introduction to C++/WinRT</a>.</p>
+<p><strong>Q: Can I use Visual Basic to build WinUI apps?</strong></p>
+<p>No, Visual Basic (VB) is not supported for building WinUI apps. The supported languages for WinUI development are C# and C++. VB is supported for building desktop apps with Windows Forms and WPF, but not for WinUI apps.</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="../get-started/samples.html">Sample applications for Windows development</a></li>
+<li><a href="../get-started/windows-developer-faq.yml">Windows developer FAQ</a></li>
+<li><a href="../get-started/windows-developer-glossary.html">Windows developer glossary</a></li>
+<li><a href="../get-started/best-practices.html">Windows development best practices</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/how-tos/hello-world-winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

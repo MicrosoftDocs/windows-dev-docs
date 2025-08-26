@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>ResourceDictionary and XAML resource references </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="ResourceDictionary and XAML resource references ">
+    
+    <meta name="description" content="Explains how to define a ResourceDictionary element and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="resourcedictionary-and-xaml-resource-references">ResourceDictionary and XAML resource references</h1>
+
+<p>You can define the UI or resources for your app using XAML. Resources are typically definitions of some object that you expect to use more than once. To refer to a XAML resource later, you specify a key for a resource that acts like its name. You can reference a resource throughout an app or from any XAML page within it. You can define your resources using a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> element from the Windows Runtime XAML. Then, you can reference your resources by using a <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">StaticResource markup extension</a> or <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">ThemeResource markup extension</a>.</p>
+<p>The XAML elements you might want to declare most often as XAML resources include <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">ControlTemplate</a>, animation components, and <a href="/uwp/api/Windows.UI.Xaml.Media.Brush">Brush</a> subclasses. Here, we explain how to define a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package. We also explain resource dictionary advanced features such as <a href="/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries">MergedDictionaries</a> and <a href="/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries">ThemeDictionaries</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>A solid understanding of XAML markup. We recommend reading <a href="/windows/uwp/xaml-platform/xaml-overview">XAML overview</a>.</p>
+<h2 id="define-and-use-xaml-resources">Define and use XAML resources</h2>
+<p>XAML resources are objects that are referenced from markup more than once. Resources are defined in a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>, typically in a separate file or at the top of the markup page, like this.</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;MSDNSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+
+    &lt;Page.Resources&gt;
+        &lt;x:String x:Key=&quot;greeting&quot;&gt;Hello world&lt;/x:String&gt;
+        &lt;x:String x:Key=&quot;goodbye&quot;&gt;Goodbye world&lt;/x:String&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;TextBlock Text=&quot;{StaticResource greeting}&quot; Foreground=&quot;Gray&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>In this example:</p>
+<ul>
+<li><code>&lt;Page.Resources&gt;…&lt;/Page.Resources&gt;</code> - Defines the resource dictionary.</li>
+<li><code>&lt;x:String&gt;</code> - Defines the resource with the key &quot;greeting&quot;.</li>
+<li><code>{StaticResource greeting}</code> - Looks up the resource with the key &quot;greeting&quot;, which is assigned to the <a href="/uwp/api/windows.ui.xaml.controls.textblock.text">Text</a> property of the <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a>.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>  Don't confuse the concepts related to <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> with the <strong>Resource</strong> build action, resource (.resw) files, or other &quot;resources&quot; that are discussed in the context of structuring the code project that produces your app package.</p>
+</blockquote>
+<p>Resources don't have to be strings; they can be any shareable object, such as styles, templates, brushes, and colors. However, controls, shapes, and other <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement">FrameworkElement</a>s are not shareable, so they can't be declared as reusable resources. For more info about sharing, see the <a href="#xaml-resources-must-be-shareable">XAML resources must be shareable</a> section later in this topic.</p>
+<p>Here, both a brush and a string are declared as resources and used by controls in a page.</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;SpiderMSDN.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+
+    &lt;Page.Resources&gt;
+        &lt;SolidColorBrush x:Key=&quot;myFavoriteColor&quot; Color=&quot;green&quot;/&gt;
+        &lt;x:String x:Key=&quot;greeting&quot;&gt;Hello world&lt;/x:String&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;TextBlock Foreground=&quot;{StaticResource myFavoriteColor}&quot; Text=&quot;{StaticResource greeting}&quot; VerticalAlignment=&quot;Top&quot;/&gt;
+    &lt;Button Foreground=&quot;{StaticResource myFavoriteColor}&quot; Content=&quot;{StaticResource greeting}&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>All resources need to have a key. Usually that key is a string defined with <code>x:Key=&quot;myString&quot;</code>. However, there are a few other ways to specify a key:</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">ControlTemplate</a> require a <strong>TargetType</strong>, and will use the <strong>TargetType</strong> as the key if <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key</a> is not specified. In this case, the key is the actual Type object, not a string. (See examples below)</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.DataTemplate">DataTemplate</a> resources that have a <strong>TargetType</strong> will use the <strong>TargetType</strong> as the key if <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key</a> is not specified. In this case, the key is the actual Type object, not a string.</li>
+<li><a href="/windows/uwp/xaml-platform/x-name-attribute">x:Name</a> can be used instead of <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key</a>. However, x:Name also generates a code behind field for the resource. As a result, x:Name is less efficient than x:Key because that field needs to be initialized when the page is loaded.</li>
+</ul>
+<p>The <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">StaticResource markup extension</a> can retrieve resources only with a string name (<a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key</a> or <a href="/windows/uwp/xaml-platform/x-name-attribute">x:Name</a>). However, the XAML framework also looks for implicit style resources (those which use <strong>TargetType</strong> rather than x:Key or x:Name) when it decides which style &amp; template to use for a control that hasn't set the <a href="/uwp/api/windows.ui.xaml.frameworkelement.style">Style</a> and <a href="/uwp/api/windows.ui.xaml.controls.contentcontrol.contenttemplate">ContentTemplate</a> or <a href="/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate</a> properties.</p>
+<p>Here, the <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> has an implicit key of <strong>typeof(Button)</strong>, and since the <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a> at the bottom of the page doesn't specify a <a href="/uwp/api/windows.ui.xaml.frameworkelement.style">Style</a> property, it looks for a style with key of <strong>typeof(Button)</strong>:</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;MSDNSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+
+    &lt;Page.Resources&gt;
+        &lt;Style TargetType=&quot;Button&quot;&gt;
+            &lt;Setter Property=&quot;Background&quot; Value=&quot;Red&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/Page.Resources&gt;
+    &lt;Grid&gt;
+       &lt;!-- This button will have a red background. --&gt;
+       &lt;Button Content=&quot;Button&quot; Height=&quot;100&quot; VerticalAlignment=&quot;Center&quot; Width=&quot;100&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>For more info about implicit styles and how they work, see <a href="xaml-styles.html">Styling controls</a> and <a href="xaml-control-templates.html">Control templates</a>.</p>
+<h2 id="look-up-resources-in-code">Look up resources in code</h2>
+<p>You access members of the resource dictionary like any other dictionary.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>When you perform a resource lookup in code, only the resources in the <code>Page.Resources</code> dictionary are looked at. Unlike the <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">StaticResource markup extension</a>, the code doesn't fall back to the <code>Application.Resources</code> dictionary if the resources aren't found in the first dictionary.</p>
+</div>
+<p></p>
+<p>This example shows how to retrieve the <code>redButtonStyle</code> resource out of a page's resource dictionary:</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;MSDNSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+
+    &lt;Page.Resources&gt;
+        &lt;Style TargetType=&quot;Button&quot; x:Key=&quot;redButtonStyle&quot;&gt;
+            &lt;Setter Property=&quot;Background&quot; Value=&quot;red&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/Page.Resources&gt;
+&lt;/Page&gt;
+</code></pre>
+<pre><code class="lang-csharp">    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+            Style redButtonStyle = (Style)this.Resources[&quot;redButtonStyle&quot;];
+        }
+    }
+</code></pre>
+<pre><code class="lang-cppwinrt">    MainPage::MainPage()
+    {
+        InitializeComponent();
+        Windows::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L&quot;redButtonStyle&quot;)).as&lt;Windows::UI::Xaml::Style&gt;();
+    }
+</code></pre>
+<p>To look up app-wide resources from code, use <strong>Application.Current.Resources</strong> to get the app's resource dictionary, as shown here.</p>
+<pre><code class="lang-XAML">&lt;Application
+    x:Class=&quot;MSDNSample.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:SpiderMSDN&quot;&gt;
+    &lt;Application.Resources&gt;
+        &lt;Style TargetType=&quot;Button&quot; x:Key=&quot;appButtonStyle&quot;&gt;
+            &lt;Setter Property=&quot;Background&quot; Value=&quot;red&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/Application.Resources&gt;
+
+&lt;/Application&gt;
+</code></pre>
+<pre><code class="lang-csharp">    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+            Style appButtonStyle = (Style)Application.Current.Resources[&quot;appButtonStyle&quot;];
+        }
+    }
+</code></pre>
+<pre><code class="lang-cppwinrt">    MainPage::MainPage()
+    {
+        InitializeComponent();
+        Windows::UI::Xaml::Style style = Application::Current().Resources()
+                                                               .TryLookup(winrt::box_value(L&quot;appButtonStyle&quot;))
+                                                               .as&lt;Windows::UI::Xaml::Style&gt;();
+    }
+</code></pre>
+<p>You can also add an application resource in code.</p>
+<p>There are two things to keep in mind when doing this.</p>
+<ul>
+<li>First, you need to add the resources before any page tries to use the resource.</li>
+<li>Second, you can't add resources in the App's constructor.</li>
+</ul>
+<p>You can avoid both problems if you add the resource in the <a href="/uwp/api/windows.ui.xaml.application.onlaunched">Application.OnLaunched</a> method, like this.</p>
+<pre><code class="lang-csharp">// App.xaml.cs
+    
+sealed partial class App : Application
+{
+    protected override void OnLaunched(LaunchActivatedEventArgs e)
+    {
+        Frame rootFrame = Window.Current.Content as Frame;
+        if (rootFrame == null)
+        {
+            SolidColorBrush brush = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 255, 0)); // green
+            this.Resources[&quot;brush&quot;] = brush;
+            // … Other code that VS generates for you …
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// App.cpp
+
+void App::OnLaunched(LaunchActivatedEventArgs const&amp; e)
+{
+    Frame rootFrame{ nullptr };
+    auto content = Window::Current().Content();
+    if (content)
+    {
+        rootFrame = content.try_as&lt;Frame&gt;();
+    }
+
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active
+    if (rootFrame == nullptr)
+    {
+        Windows::UI::Xaml::Media::SolidColorBrush brush{ Windows::UI::ColorHelper::FromArgb(255, 0, 255, 0) };
+        Resources().Insert(winrt::box_value(L&quot;brush&quot;), winrt::box_value(brush));
+        // … Other code that VS generates for you …
+</code></pre>
+<h2 id="every-frameworkelement-can-have-a-resourcedictionary">Every FrameworkElement can have a ResourceDictionary</h2>
+<p><a href="/uwp/api/Windows.UI.Xaml.FrameworkElement">FrameworkElement</a> is a base class that controls inherit from, and it has a <a href="/uwp/api/windows.ui.xaml.frameworkelement.resources">Resources</a> property. So, you can add a local resource dictionary to any <strong>FrameworkElement</strong>.</p>
+<p>Here, both the <a href="/uwp/api/Windows.UI.Xaml.Controls.Page">Page</a> and the <a href="/uwp/api/Windows.UI.Xaml.Controls.Border">Border</a> have resource dictionaries, and they both have a resource called &quot;greeting&quot;. The <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> named 'textBlock2' is inside the <strong>Border</strong>, so its resource lookup looks first to the <strong>Border</strong>'s resources, then the <strong>Page</strong>'s resources, and then the <a href="/uwp/api/Windows.UI.Xaml.Application">Application</a> resources. The <strong>TextBlock</strong> will read &quot;Hola mundo&quot;.</p>
+<p>To access that element's resources from code, use that element's <a href="/uwp/api/windows.ui.xaml.frameworkelement.resources">Resources</a> property. Accessing a <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement">FrameworkElement</a>'s resources in code, rather than XAML, will look only in that dictionary, not in parent element's dictionaries.</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;MSDNSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+    &lt;Page.Resources&gt;
+        &lt;x:String x:Key=&quot;greeting&quot;&gt;Hello world&lt;/x:String&gt;
+    &lt;/Page.Resources&gt;
+    
+    &lt;StackPanel&gt;
+        &lt;!-- Displays &quot;Hello world&quot; --&gt;
+        &lt;TextBlock x:Name=&quot;textBlock1&quot; Text=&quot;{StaticResource greeting}&quot;/&gt;
+
+        &lt;Border x:Name=&quot;border&quot;&gt;
+            &lt;Border.Resources&gt;
+                &lt;x:String x:Key=&quot;greeting&quot;&gt;Hola mundo&lt;/x:String&gt;
+            &lt;/Border.Resources&gt;
+            &lt;!-- Displays &quot;Hola mundo&quot; --&gt;
+            &lt;TextBlock x:Name=&quot;textBlock2&quot; Text=&quot;{StaticResource greeting}&quot;/&gt;
+        &lt;/Border&gt;
+
+        &lt;!-- Displays &quot;Hola mundo&quot;, set in code. --&gt;
+        &lt;TextBlock x:Name=&quot;textBlock3&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Page&gt;
+
+</code></pre>
+<pre><code class="lang-csharp">    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+            textBlock3.Text = (string)border.Resources[&quot;greeting&quot;];
+        }
+    }
+</code></pre>
+<pre><code class="lang-cppwinrt">    MainPage::MainPage()
+    {
+        InitializeComponent();
+        textBlock3().Text(unbox_value&lt;hstring&gt;(border().Resources().TryLookup(winrt::box_value(L&quot;greeting&quot;))));
+    }
+</code></pre>
+<h2 id="merged-resource-dictionaries">Merged resource dictionaries</h2>
+<p>A <em>merged resource dictionary</em> combines one resource dictionary into another, usually in another file.</p>
+<blockquote>
+<p><strong>Tip</strong>  You can create a resource dictionary file in Microsoft Visual Studio by using the <strong>Add &gt; New Item… &gt; Resource Dictionary</strong> option from the <strong>Project</strong> menu.</p>
+</blockquote>
+<p>Here, you define a resource dictionary in a separate XAML file called Dictionary1.xaml.</p>
+<pre><code class="lang-XAML">&lt;!-- Dictionary1.xaml --&gt;
+&lt;ResourceDictionary
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; 
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:MSDNSample&quot;&gt;
+
+    &lt;SolidColorBrush x:Key=&quot;brush&quot; Color=&quot;Red&quot;/&gt;
+
+&lt;/ResourceDictionary&gt;
+
+</code></pre>
+<p>To use that dictionary, you merge it with your page's dictionary:</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;MSDNSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+    &lt;Page.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;ResourceDictionary.MergedDictionaries&gt;
+                &lt;ResourceDictionary Source=&quot;Dictionary1.xaml&quot;/&gt;
+            &lt;/ResourceDictionary.MergedDictionaries&gt;
+
+            &lt;x:String x:Key=&quot;greeting&quot;&gt;Hello world&lt;/x:String&gt;
+
+        &lt;/ResourceDictionary&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;TextBlock Foreground=&quot;{StaticResource brush}&quot; Text=&quot;{StaticResource greeting}&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Here's what happens in this example. In <code>&lt;Page.Resources&gt;</code>, you declare <code>&lt;ResourceDictionary&gt;</code>. The XAML framework implicitly creates a resource dictionary for you when you add resources to <code>&lt;Page.Resources&gt;</code>; however, in this case, you don't want just any resource dictionary, you want one that contains merged dictionaries.</p>
+<p>So you declare <code>&lt;ResourceDictionary&gt;</code>, then add things to its <code>&lt;ResourceDictionary.MergedDictionaries&gt;</code> collection. Each of those entries takes the form <code>&lt;ResourceDictionary Source=&quot;Dictionary1.xaml&quot;/&gt;</code>. To add more than one dictionary, just add a <code>&lt;ResourceDictionary Source=&quot;Dictionary2.xaml&quot;/&gt;</code> entry after the first entry.</p>
+<p>After <code>&lt;ResourceDictionary.MergedDictionaries&gt;…&lt;/ResourceDictionary.MergedDictionaries&gt;</code>, you can optionally put additional resources in your main dictionary. You use resources from a merged to dictionary just like a regular dictionary. In the example above, <code>{StaticResource brush}</code> finds the resource in the child/merged dictionary (Dictionary1.xaml), while <code>{StaticResource greeting}</code> finds its resource in the main page dictionary.</p>
+<p>In the resource-lookup sequence, a <a href="/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries">MergedDictionaries</a> dictionary is checked only after a check of all the other keyed resources of that <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>. After searching that level, the lookup reaches the merged dictionaries, and each item in <strong>MergedDictionaries</strong> is checked. If multiple merged dictionaries exist, these dictionaries are checked in the inverse of the order in which they are declared in the <strong>MergedDictionaries</strong> property. In the following example, if both Dictionary2.xaml and Dictionary1.xaml declared the same key, the key from Dictionary2.xaml is used first because it's last in the <strong>MergedDictionaries</strong> set.</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;MSDNSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+    &lt;Page.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;ResourceDictionary.MergedDictionaries&gt;
+                &lt;ResourceDictionary Source=&quot;Dictionary1.xaml&quot;/&gt;
+                &lt;ResourceDictionary Source=&quot;Dictionary2.xaml&quot;/&gt;
+            &lt;/ResourceDictionary.MergedDictionaries&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;TextBlock Foreground=&quot;{StaticResource brush}&quot; Text=&quot;greetings!&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Within the scope of any one <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>, the dictionary is checked for key uniqueness. However, that scope does not extend across different items in different <a href="/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries">MergedDictionaries</a> files.</p>
+<p>You can use the combination of the lookup sequence and lack of unique key enforcement across merged-dictionary scopes to create a fallback value sequence of <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> resources. For example, you might store user preferences for a particular brush color in the last merged resource dictionary in the sequence, using a resource dictionary that synchronizes to your app's state and user preference data. However, if no user preferences exist yet, you can define that same key string for a <strong>ResourceDictionary</strong> resource in the initial <a href="/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries">MergedDictionaries</a> file, and it can serve as the fallback value. Remember that any value you provide in a primary resource dictionary is always checked before the merged dictionaries are checked, so if you want to use the fallback technique, don't define that resource in a primary resource dictionary.</p>
+<h2 id="theme-resources-and-theme-dictionaries">Theme resources and theme dictionaries</h2>
+<p>A <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">ThemeResource</a> is similar to a <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">StaticResource</a>, but the resource lookup is reevaluated when the theme changes.</p>
+<p>In this example, you set the foreground of a <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> to a value from the current theme.</p>
+<pre><code class="lang-XAML">&lt;TextBlock Text=&quot;hello world&quot; Foreground=&quot;{ThemeResource FocusVisualWhiteStrokeThemeBrush}&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+</code></pre>
+<p>A theme dictionary is a special type of merged dictionary that holds the resources that vary with the theme a user is currently using on his or her device. For example, the &quot;light&quot; theme might use a white color brush whereas the &quot;dark&quot; theme might use a dark color brush. The brush changes the resource that it resolves to, but otherwise the composition of a control that uses the brush as a resource could be the same. To reproduce the theme-switching behavior in your own templates and styles, instead of using <a href="/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries">MergedDictionaries</a> as the property to merge items into the main dictionaries, use the <a href="/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries">ThemeDictionaries</a> property.</p>
+<p>Each <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> element within <a href="/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries">ThemeDictionaries</a> must have an <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key</a> value. The value is a string that names the relevant theme—for example, &quot;Default&quot;, &quot;Dark&quot;, &quot;Light&quot;, or &quot;HighContrast&quot;. Typically, <code>Dictionary1</code> and <code>Dictionary2</code> will define resources that have the same names but different values.</p>
+<p>Here, you use red text for the light theme and blue text for the dark theme.</p>
+<pre><code class="lang-XAML">&lt;!-- Dictionary1.xaml --&gt;
+&lt;ResourceDictionary
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; 
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:MSDNSample&quot;&gt;
+
+    &lt;SolidColorBrush x:Key=&quot;brush&quot; Color=&quot;Red&quot;/&gt;
+
+&lt;/ResourceDictionary&gt;
+
+&lt;!-- Dictionary2.xaml --&gt;
+&lt;ResourceDictionary
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot; 
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:MSDNSample&quot;&gt;
+
+    &lt;SolidColorBrush x:Key=&quot;brush&quot; Color=&quot;blue&quot;/&gt;
+
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>In this example, you set the foreground of a <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> to a value from the current theme.</p>
+<pre><code class="lang-XAML">&lt;Page
+    x:Class=&quot;MSDNSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;&gt;
+    &lt;Page.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;ResourceDictionary.ThemeDictionaries&gt;
+                &lt;ResourceDictionary Source=&quot;Dictionary1.xaml&quot; x:Key=&quot;Light&quot;/&gt;
+                &lt;ResourceDictionary Source=&quot;Dictionary2.xaml&quot; x:Key=&quot;Dark&quot;/&gt;
+            &lt;/ResourceDictionary.ThemeDictionaries&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/Page.Resources&gt;
+    &lt;TextBlock Foreground=&quot;{StaticResource brush}&quot; Text=&quot;hello world&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>For theme dictionaries, the active dictionary to be used for resource lookup changes dynamically, whenever <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">ThemeResource markup extension</a> is used to make the reference and the system detects a theme change. The lookup behavior that is done by the system is based on mapping the active theme to the <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key</a> of a specific theme dictionary.</p>
+<p>It can be useful to examine the way that the theme dictionaries are structured in the default XAML design resources, which parallel the templates that the Windows Runtime uses by default for its controls. Open the XAML files in \(Program Files)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\&lt;SDK version&gt;\Generic using a text editor or your IDE. Note how the theme dictionaries are defined first in generic.xaml, and how each theme dictionary defines the same keys. Each such key is then referenced by elements of composition in the various keyed elements that are outside the theme dictionaries and defined later in the XAML. There's also a separate themeresources.xaml file for design that contains only the theme resources and extra templates, not the default control templates. The theme areas are duplicates of what you'd see in generic.xaml.</p>
+<p>When you use XAML design tools to edit copies of styles and templates, the design tools extract sections from the XAML design resource dictionaries and place them as local copies of XAML dictionary elements that are part of your app and project.</p>
+<p>For more info and for a list of the theme-specific and system resources that are available to your app, see <a href="xaml-theme-resources.html">XAML theme resources</a>.</p>
+<h2 id="lookup-behavior-for-xaml-resource-references">Lookup behavior for XAML resource references</h2>
+<p><em>Lookup behavior</em> is the term that describes how the XAML resources system tries to find a XAML resource. The lookup occurs when a key is referenced as a XAML resource reference from somewhere in the app's XAML. First, the resources system has predictable behavior for where it will check for the existence of a resource based on scope. If a resource isn't found in the initial scope, the scope expands. The lookup behavior continues on throughout the locations and scopes that a XAML resource could possibly be defined by an app or by the system. If all possible resource lookup attempts fail, an error often results. It's usually possible to eliminate these errors during the development process.</p>
+<p>The lookup behavior for XAML resource references starts with the object where the actual usage is applied and its own <a href="/uwp/api/windows.ui.xaml.frameworkelement.resources">Resources</a> property. If a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> exists there, that <strong>ResourceDictionary</strong> is checked for an item that has the requested key. This first level of lookup is rarely relevant because you usually do not define and then reference a resource on the same object. In fact, a <strong>Resources</strong> property often doesn't exist here. You can make XAML resource references from nearly anywhere in XAML; you aren't limited to properties of <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement">FrameworkElement</a> subclasses.</p>
+<p>The lookup sequence then checks the next parent object in the runtime object tree of the app. If a <a href="/uwp/api/windows.ui.xaml.frameworkelement.resources">FrameworkElement.Resources</a> exists and holds a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>, the dictionary item with the specified key string is requested. If the resource is found, the lookup sequence stops and the object is provided to the location where the reference was made. Otherwise, the lookup behavior advances to the next parent level towards the object tree root. The search continues recursively upwards until the root element of the XAML is reached, exhausting the search of all possible immediate resource locations.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is a common practice to define all the immediate resources at the root level of a page, both to take advantage of this resource-lookup behavior and also as a convention of XAML markup style.</p>
+</div>
+<p>If the requested resource is not found in the immediate resources, the next lookup step is to check the <a href="/uwp/api/windows.ui.xaml.application.resources">Application.Resources</a> property. <strong>Application.Resources</strong> is the best place to put any app-specific resources that are referenced by multiple pages in your app's navigation structure.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The order of resources added to a ResourceDictionary affects the order in which they are applied. The <code>XamlControlsResources</code> dictionary overrides many default resource keys and should therefore be added to <code>Application.Resources</code> first so that it doesn't override any other custom styles or resources in your app.</p>
+</div>
+<p>Control templates have another possible location in the reference lookup: theme dictionaries. A theme dictionary is a single XAML file that has a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> element as its root. The theme dictionary might be a merged dictionary from <a href="/uwp/api/windows.ui.xaml.application.resources">Application.Resources</a>. The theme dictionary might also be the control-specific theme dictionary for a templated custom control.</p>
+<p>Finally, there is a resource lookup against platform resources. Platform resources include the control templates that are defined for each of the system UI themes, and which define the default appearance of all the controls that you use for UI in a Windows Runtime app. Platform resources also include a set of named resources that relate to system-wide appearance and themes. These resources are technically a <a href="/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries">MergedDictionaries</a> item, and thus are available for lookup from XAML or code once the app has loaded. For example, the system theme resources include a resource named &quot;SystemColorWindowTextColor&quot; that provides a <a href="/uwp/api/Windows.UI.Color">Color</a> definition to match app text color to a system window's text color that comes from the operating system and user preferences. Other XAML styles for your app can refer to this style, or your code can get a resource lookup value (and cast it to <strong>Color</strong> in the example case).</p>
+<p>For more info and for a list of the theme-specific and system resources that are available to a Windows app that uses XAML, see <a href="xaml-theme-resources.html">XAML theme resources</a>.</p>
+<p>If the requested key is still not found in any of these locations, a XAML parsing error/exception occurs. In certain circumstances, the XAML parse exception may be a run-time exception that is not detected either by a XAML markup compile action, or by a XAML design environment.</p>
+<p>Because of the tiered lookup behavior for resource dictionaries, you can deliberately define multiple resource items that each have the same string value as the key, as long as each resource is defined at a different level. In other words, although keys must be unique within any given <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>, the uniqueness requirement does not extend to the lookup behavior sequence as a whole. During lookup, only the first such object that's successfully retrieved is used for the XAML resource reference, and then the lookup stops. You could use this behavior to request the same XAML resource by key at various positions within your app's XAML but get different resources back, depending on the scope from which the XAML resource reference was made and how that particular lookup behaves.</p>
+<h2 id="forward-references-within-a-resourcedictionary">Forward references within a ResourceDictionary</h2>
+<p>XAML resource references within a particular resource dictionary must reference a resource that has already been defined with a key, and that resource must appear lexically before the resource reference. Forward references cannot be resolved by a XAML resource reference. For this reason, if you use XAML resource references from within another resource, you must design your resource dictionary structure so that the resources that are used by other resources are defined first in a resource dictionary.</p>
+<p>Resources defined at the app level cannot make references to immediate resources. This is equivalent to attempting a forward reference, because the app resources are actually processed first (when the app first starts, and before any navigation-page content is loaded). However, any immediate resource can make a reference to an app resource, and this can be a useful technique for avoiding forward-reference situations.</p>
+<h2 id="xaml-resources-must-be-shareable">XAML resources must be shareable</h2>
+<p>For an object to exist in a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>, that object must be <em>shareable</em>.</p>
+<p>Being shareable is required because, when the object tree of an app is constructed and used at run time, objects cannot exist at multiple locations in the tree. Internally, the resource system creates copies of resource values to use in the object graph of your app when each XAML resource is requested.</p>
+<p>A <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> and Windows Runtime XAML in general supports these objects for shareable usage:</p>
+<ul>
+<li>Styles and templates (<a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> and classes derived from <a href="/uwp/api/Windows.UI.Xaml.FrameworkTemplate">FrameworkTemplate</a>)</li>
+<li>Brushes and colors (classes derived from <a href="/uwp/api/Windows.UI.Xaml.Media.Brush">Brush</a>, and <a href="/uwp/api/Windows.UI.Color">Color</a> values)</li>
+<li>Animation types including <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard">Storyboard</a></li>
+<li>Transforms (classes derived from <a href="/uwp/api/Windows.UI.Xaml.Media.GeneralTransform">GeneralTransform</a>)</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.Matrix">Matrix</a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Media3D.Matrix3D">Matrix3D</a></li>
+<li><a href="/uwp/api/Windows.Foundation.Point">Point</a> values</li>
+<li>Certain other UI-related structures such as <a href="/uwp/api/Windows.UI.Xaml.Thickness">Thickness</a> and <a href="/uwp/api/Windows.UI.Xaml.CornerRadius">CornerRadius</a></li>
+<li><a href="/windows/uwp/xaml-platform/xaml-intrinsic-data-types">XAML intrinsic data types</a></li>
+</ul>
+<p>You can also use custom types as a shareable resource if you follow the necessary implementation patterns. You define such classes in your backing code (or in runtime components that you include) and then instantiate those classes in XAML as a resource. Examples are object data sources and <a href="/uwp/api/Windows.UI.Xaml.Data.IValueConverter">IValueConverter</a> implementations for data binding.</p>
+<p>Custom types must have a default constructor, because that's what a XAML parser uses to instantiate a class. Custom types used as resources can't have the <a href="/uwp/api/Windows.UI.Xaml.UIElement">UIElement</a> class in their inheritance, because a <strong>UIElement</strong> can never be shareable (it's always intended to represent exactly one UI element that exists at one position in the object graph of your runtime app).</p>
+<h2 id="usercontrol-usage-scope">UserControl usage scope</h2>
+<p>A <a href="/uwp/api/Windows.UI.Xaml.Controls.UserControl">UserControl</a> element has a special situation for resource-lookup behavior because it has the inherent concepts of a definition scope and a usage scope. A <strong>UserControl</strong> that makes a XAML resource reference from its definition scope must be able to support the lookup of that resource within its own definition-scope lookup sequence—that is, it cannot access app resources. From a <strong>UserControl</strong> usage scope, a resource reference is treated as being within the lookup sequence towards its usage page root (just like any other resource reference made from an object in a loaded object tree) and can access app resources.</p>
+<h2 id="resourcedictionary-and-xamlreaderload">ResourceDictionary and XamlReader.Load</h2>
+<p>You can use a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> as either the root or a part of the XAML input for the <a href="/uwp/api/windows.ui.xaml.markup.xamlreader.load">XamlReader.Load</a> method. You can also include XAML resource references in that XAML if all such references are completely self-contained in the XAML submitted for loading. <strong>XamlReader.Load</strong> parses the XAML in a context that is not aware of any other <strong>ResourceDictionary</strong> objects, not even <a href="/uwp/api/windows.ui.xaml.application.resources">Application.Resources</a>. Also, don't use <code>{ThemeResource}</code> from within XAML submitted to <strong>XamlReader.Load</strong>.</p>
+<h2 id="using-a-resourcedictionary-from-code">Using a ResourceDictionary from code</h2>
+<p>Most of the scenarios for a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> are handled exclusively in XAML. You declare the <strong>ResourceDictionary</strong> container and the resources within as a XAML file or set of XAML nodes in a UI definition file. And then you use XAML resource references to request those resources from other parts of XAML. Still, there are certain scenarios where your app might want to adjust the contents of a <strong>ResourceDictionary</strong> using code that executes while the app is running, or at least to query the contents of a <strong>ResourceDictionary</strong> to see if a resource is already defined. These code calls are made on a <strong>ResourceDictionary</strong> instance, so you must first retrieve one—either an immediate <strong>ResourceDictionary</strong> somewhere in the object tree by getting <a href="/uwp/api/windows.ui.xaml.frameworkelement.resources">FrameworkElement.Resources</a>, or <code>Application.Current.Resources</code>.</p>
+<p>In C# or Microsoft Visual Basic code, you can reference a resource in a given <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> by using the indexer (<a href="/dotnet/api/system.windows.resourcedictionary.item">Item</a>). A <strong>ResourceDictionary</strong> is a string-keyed dictionary, so the indexer uses the string key instead of an integer index. In Visual C++ component extensions (C++/CX) code, use <a href="/uwp/api/windows.ui.xaml.resourcedictionary.lookup">Lookup</a>.</p>
+<p>When using code to examine or change a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>, the behavior for APIs like <a href="/uwp/api/windows.ui.xaml.resourcedictionary.lookup">Lookup</a> or <a href="/dotnet/api/system.windows.resourcedictionary.item">Item</a> does not traverse from immediate resources to app resources; that's a XAML parser behavior that only happens as XAML pages are loaded. At run time, scope for keys is self-contained to the <strong>ResourceDictionary</strong> instance that you are using at the time. However, that scope does extend into <a href="/uwp/api/windows.ui.xaml.resourcedictionary.mergeddictionaries">MergedDictionaries</a>.</p>
+<p>Also, if you request a key that does not exist in the <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a>, there may not be an error; the return value may simply be provided as <strong>null</strong>. You may still get an error, though, if you try to use the returned <strong>null</strong> as a value. The error would come from the property's setter, not your <strong>ResourceDictionary</strong> call. The only way you'd avoid an error is if the property accepted <strong>null</strong> as a valid value. Note how this behavior contrasts with XAML lookup behavior at XAML parse time; a failure to resolve the provided key from XAML at parse time results in a XAML parse error, even in cases where the property could have accepted <strong>null</strong>.</p>
+<p>Merged resource dictionaries are included into the index scope of the primary resource dictionary that references the merged dictionary at run time. In other words, you can use <strong>Item</strong> or <a href="/uwp/api/windows.ui.xaml.resourcedictionary.lookup">Lookup</a> of the primary dictionary to find any objects that were actually defined in the merged dictionary. In this case, the lookup behavior does resemble the parse-time XAML lookup behavior: if there are multiple objects in merged dictionaries that each have the same key, the object from the last-added dictionary is returned.</p>
+<p>You are permitted to add items to an existing <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> by calling <strong>Add</strong> (C# or Visual Basic) or <a href="/uwp/api/windows.ui.xaml.resourcedictionary.insert">Insert</a> (C++/CX). You could add the items to either immediate resources or app resources. Either of these API calls requires a key, which satisfies the requirement that each item in a <strong>ResourceDictionary</strong> must have a key. However, items that you add to a <strong>ResourceDictionary</strong> at run time are not relevant to XAML resource references. The necessary lookup for XAML resource references happens when that XAML is first parsed as the app is loaded (or a theme change is detected). Resources added to collections at run time weren't available then, and altering the <strong>ResourceDictionary</strong> doesn't invalidate an already retrieved resource from it even if you change the value of that resource.</p>
+<p>You also can remove items from a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> at run time, make copies of some or all items, or other operations. The members listing for <strong>ResourceDictionary</strong> indicates which APIs are available. Note that because <strong>ResourceDictionary</strong> has a projected API to support its underlying collection interfaces, your API options differ depending on whether you are using C# or Visual Basic versus C++/CX.</p>
+<h2 id="resourcedictionary-and-localization">ResourceDictionary and localization</h2>
+<p>A XAML <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> might initially contain strings that are to be localized. If so, store these strings as project resources instead of in a <strong>ResourceDictionary</strong>. Take the strings out of the XAML, and instead give the owning element an <a href="/windows/uwp/xaml-platform/x-uid-directive">x:Uid directive</a> value. Then, define a resource in a resources file. Provide a resource name in the form <em>XUIDValue</em>.<em>PropertyName</em> and a resource value of the string that should be localized.</p>
+<h2 id="custom-resource-lookup">Custom resource lookup</h2>
+<p>For advanced scenarios, you can implement a class that can have different behavior than the XAML resource reference lookup behavior described in this topic. To do this, you implement the class <a href="/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader">CustomXamlResourceLoader</a>, and then you can access that behavior by using the <a href="/windows/uwp/xaml-platform/customresource-markup-extension">CustomResource markup extension</a> for resource references rather than using <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">StaticResource</a> or <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">ThemeResource</a>. Most apps won't have scenarios that require this. For more info, see <a href="/uwp/api/Windows.UI.Xaml.Resources.CustomXamlResourceLoader">CustomXamlResourceLoader</a>.</p>
+<p></p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a></li>
+<li><a href="/windows/uwp/xaml-platform/xaml-overview">XAML overview</a></li>
+<li><a href="/windows/uwp/xaml-platform/staticresource-markup-extension">StaticResource markup extension</a></li>
+<li><a href="/windows/uwp/xaml-platform/themeresource-markup-extension">ThemeResource markup extension</a></li>
+<li><a href="xaml-theme-resources.html">XAML theme resources</a></li>
+<li><a href="xaml-styles.html">Styling controls</a></li>
+<li><a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key attribute</a></li>
+</ul>
+<p></p>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/xaml/xaml-resource-dictionary.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

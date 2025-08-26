@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use UTF-8 code pages in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use UTF-8 code pages in Windows apps ">
+    
+    <meta name="description" content="How to use UTF code pages in Windows apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-utf-8-code-pages-in-windows-apps">Use UTF-8 code pages in Windows apps</h1>
+
+<p>Use Unicode Transformation Format 8-bit (<a href="http://www.utf-8.com/">UTF-8</a>) character encoding to maximize compatibility between web apps and other *nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.</p>
+<p>UTF-8 is the universal code page for internationalization and is able to encode the entire Unicode character set. It is used extensively on the web and is the default encoding for both XML and *nix-based platforms.</p>
+<h2 id="set-a-process-code-page-to-utf-8">Set a process code page to UTF-8</h2>
+<p>As of Windows Version 1903 (May 2019 Update), you can specify the <a href="/windows/win32/sbscs/application-manifests#activecodepage">activeCodePage</a> property in the appxmanifest for packaged apps (or the fusion manifest for unpackaged apps) to force a process to use UTF-8 as the process code page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows graphics device interface (GDI) doesn't currently support setting the activeCodePage property per process. Instead, GDI defaults to the active system codepage. To configure your app to render UTF-8 text via GDI, go to Windows <strong>Settings</strong> &gt; <strong>Time &amp; language</strong> &gt; <strong>Language &amp; region</strong> &gt; <strong>Administrative language settings</strong> &gt; <strong>Change system locale</strong>, and check <strong>Beta: Use Unicode UTF-8 for worldwide language support</strong>. Then reboot the PC for the change to take effect.</p>
+</div>
+<p>You can declare the activeCodePage property, and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual. With a minimum target version of Windows Version 1903, the process code page will always be UTF-8, so legacy code page detection and conversion can be avoided.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In UTF-8, an encoded character is represented by a sequence of 1 to 4 bytes. (See <a href="https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-3/#G27817">definition D92 in Chapter 3</a> of <a href="https://www.unicode.org/versions/latest/">The Unicode Standard</a> for the formal specification.)</p>
+</div>
+<h2 id="examples">Examples</h2>
+<p><strong>Appx manifest for a packaged app:</strong></p>
+<pre><code class="lang-xaml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Package xmlns=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10&quot;
+         ...
+         xmlns:uap7=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/7&quot;
+         xmlns:uap8=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/8&quot;
+         ...
+         IgnorableNamespaces=&quot;... uap7 uap8 ...&quot;&gt;
+
+  &lt;Applications&gt;
+    &lt;Application ...&gt;
+      &lt;uap7:Properties&gt;
+        &lt;uap8:activeCodePage&gt;UTF-8&lt;/uap8:activeCodePage&gt;
+      &lt;/uap7:Properties&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><strong>Fusion manifest for an unpackaged Win32 app:</strong></p>
+<pre><code class="lang-xaml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;assembly manifestVersion=&quot;1.0&quot; xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot;&gt;
+  &lt;assemblyIdentity type=&quot;win32&quot; name=&quot;...&quot; version=&quot;6.0.0.0&quot;/&gt;
+  &lt;application&gt;
+    &lt;windowsSettings&gt;
+      &lt;activeCodePage xmlns=&quot;http://schemas.microsoft.com/SMI/2019/WindowsSettings&quot;&gt;UTF-8&lt;/activeCodePage&gt;
+    &lt;/windowsSettings&gt;
+  &lt;/application&gt;
+&lt;/assembly&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Add a manifest to an existing executable from the command line with <code>mt.exe -manifest &lt;MANIFEST&gt; -outputresource:&lt;EXE&gt;;#1</code>.</p>
+</div>
+<h2 id="-a-vs--w-apis">-A vs. -W APIs</h2>
+<p>Win32 APIs often support both -A and -W variants.</p>
+<p>-A variants recognize the ANSI code page configured on the system and support <code>char*</code>, while -W variants operate in UTF-16 and support <code>WCHAR</code>.</p>
+<p>Until recently, Windows has emphasized &quot;Unicode&quot; -W variants over -A APIs. However, recent releases have used the ANSI code page and -A APIs as a means to introduce UTF-8 support to apps. If the ANSI code page is configured for UTF-8, then -A APIs typically operate in UTF-8. This model has the benefit of supporting existing code built with -A APIs without any code changes.</p>
+<h2 id="code-page-conversion">Code page conversion</h2>
+<p>Because Windows operates natively in UTF-16 (<code>WCHAR</code>), you might need to convert UTF-8 data to UTF-16 (or vice versa) to interoperate with Windows APIs.</p>
+<p><a href="/windows/desktop/api/stringapiset/nf-stringapiset-multibytetowidechar">MultiByteToWideChar</a> and <a href="/windows/desktop/api/stringapiset/nf-stringapiset-widechartomultibyte">WideCharToMultiByte</a> let you convert between UTF-8 and UTF-16 (<code>WCHAR</code>) (and other code pages). This is particularly useful when a legacy Win32 API might only understand <code>WCHAR</code>. These functions allow you to convert UTF-8 input to <code>WCHAR</code> to pass into a -W API and then convert any results back if necessary.</p>
+<p>Use <code>dwFlags</code> of either <code>0</code> or <code>MB_ERR_INVALID_CHARS</code> when using these functions with <code>CodePage</code> set to <code>CP_UTF8</code> (otherwise an <code>ERROR_INVALID_FLAGS</code> occurs).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>CP_ACP</code> equates to <code>CP_UTF8</code> only if running on Windows Version 1903 (May 2019 Update) or above and the activeCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using <code>CP_UTF8</code> explicitly.</p>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/desktop/Intl/code-pages">Code pages</a></li>
+<li><a href="/windows/desktop/Intl/code-page-identifiers">Code Page Identifiers</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/use-utf8-code-page.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

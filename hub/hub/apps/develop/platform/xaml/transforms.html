@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Transforms overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Transforms overview ">
+    
+    <meta name="description" content="Learn how to use transforms in the Windows Runtime&amp;\#160;API, by changing the relative coordinate systems of elements in the UI.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="transforms-overview">Transforms overview</h1>
+
+<p>Learn how to use transforms in the Windows Runtime API, by changing the relative coordinate systems of elements in the UI. This can be used to adjust the appearance of individual XAML elements, such as scaling, rotating, or transforming the position in x-y space.</p>
+<h2 id="what-is-a-transform"><span id="What_is_a_transform_"></span><span id="what_is_a_transform_"></span><span id="WHAT_IS_A_TRANSFORM_"></span>What is a transform?</h2>
+<p>A <em>transform</em> defines how to map, or transform, points from one coordinate space to another coordinate space. When a transform is applied to a UI element, it changes how that UI element is rendered to the screen as part of the UI.</p>
+<p>Think of transforms in four broad classifications: translation, rotation, scaling and skew (or shear). For the purposes of using graphics APIs to change the appearance of UI elements, it's usually easiest to create transforms that define only one operation at a time. So the Windows Runtime defines a discrete class for each of these transform classifications:</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a>: translates an element in x-y space, by setting values for <a href="/uwp/api/windows.ui.xaml.media.translatetransform.x"><strong>X</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.translatetransform.y"><strong>Y</strong></a>.</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.ScaleTransform"><strong>ScaleTransform</strong></a>: scales the transform based on a center point, by setting values for <a href="/uwp/api/windows.ui.xaml.media.scaletransform.centerx"><strong>CenterX</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.scaletransform.centery"><strong>CenterY</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.scaletransform.scalex"><strong>ScaleX</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.scaletransform.scaleyproperty"><strong>ScaleY</strong></a>.</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.RotateTransform"><strong>RotateTransform</strong></a>: rotates in x-y space, by setting values for <a href="/uwp/api/windows.ui.xaml.media.rotatetransform.angle"><strong>Angle</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.rotatetransform.centerx"><strong>CenterX</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.rotatetransform.centery"><strong>CenterY</strong></a>.</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.SkewTransform"><strong>SkewTransform</strong></a>: skews or shears in x-y space, by setting values for <a href="/uwp/api/windows.ui.xaml.media.skewtransform.anglex"><strong>AngleX</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.skewtransform.angley"><strong>AngleY</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.skewtransform.centerx"><strong>CenterX</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.scaletransform.centeryproperty"><strong>CenterY</strong></a>.</li>
+</ul>
+<p>Of these, you're likely to use <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.ScaleTransform"><strong>ScaleTransform</strong></a> most often for UI scenarios.</p>
+<p>You can combine transforms, and there are two Windows Runtime classes that support this: <a href="/uwp/api/Windows.UI.Xaml.Media.CompositeTransform"><strong>CompositeTransform</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.TransformGroup"><strong>TransformGroup</strong></a>. In a <strong>CompositeTransform</strong>, transforms are applied in this order: scale, skew, rotate, translate. Use <strong>TransformGroup</strong> instead of <strong>CompositeTransform</strong> if you want the transforms applied in a different order. For more info, see <a href="/uwp/api/Windows.UI.Xaml.Media.CompositeTransform"><strong>CompositeTransform</strong></a>.</p>
+<h2 id="transforms-and-layout"><span id="Transforms_and_layout"></span><span id="transforms_and_layout"></span><span id="TRANSFORMS_AND_LAYOUT"></span>Transforms and layout</h2>
+<p>In XAML layout, transforms are applied after the layout pass is complete, so available space calculations and other layout decisions have been made before the transforms are applied. Because layout comes first, you'll sometimes get unexpected results if you transform elements that are in a <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> cell or similar layout container that allocates space during layout. The transformed element may appear truncated or obscured because it's trying to draw into an area that didn't calculate the post-transform dimensions when dividing space within its parent container. You may need to experiment with the transform results and adjust some settings. For example, instead of relying on adaptive layout and star sizing, you may need to change the <strong>Center</strong> properties or declare fixed pixel measurements for layout space to make sure the parent allots enough space.</p>
+<p><strong>Migration note:</strong>  Windows Presentation Foundation (WPF) had a <strong>LayoutTransform</strong> property that applied transforms prior to the layout pass. But Windows Runtime XAML doesn't support a <strong>LayoutTransform</strong> property. (Microsoft Silverlight didn't have this property either.)</p>
+<p>As an alternative, the Windows Community Toolkit provides the <a href="/dotnet/communitytoolkit/windows/layouttransformcontrol/layouttransformcontrol">LayoutTransformControl</a> that applies Matrix transformations on any FrameworkElement of your application.</p>
+<h2 id="applying-a-transform-to-a-ui-element"><span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Applying a transform to a UI element</h2>
+<p>When you apply a transform to an object, you typically do so to set the property <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>UIElement.RenderTransform</strong></a>. Setting this property does not literally change the object pixel by pixel. What the property really does is apply the transform within the local coordinate space in which that object exists. Then the rendering logic and operation (post-layout) renders the combined coordinate spaces, making it look like the object has changed appearance and also potentially its layout position (if <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a> was applied).</p>
+<p>By default, each render transform is centered at the origin of the target object's local coordinate system—its (0,0). The only exception is a <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a>, which has no center properties to set because the translation effect is the same regardless of where it is centered. But the other transforms each have properties that set <strong>CenterX</strong> and <strong>CenterY</strong> values.</p>
+<p>Whenever you use transforms with <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>UIElement.RenderTransform</strong></a>, remember that there's another property on <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> that affects how the transform behaves: <a href="/uwp/api/windows.ui.xaml.uielement.rendertransformorigin"><strong>RenderTransformOrigin</strong></a>. What <strong>RenderTransformOrigin</strong> declares is whether the whole transform should apply to the default (0,0) point of an element or to some other origin point within the relative coordinate space of that element. For typical elements, (0,0) places the transform to the top left corner. Depending on what effect you want, you might choose to change <strong>RenderTransformOrigin</strong> rather than adjusting the <strong>CenterX</strong> and <strong>CenterY</strong> values on transforms. Note that if you apply both <strong>RenderTransformOrigin</strong> and <strong>CenterX</strong> / <strong>CenterY</strong> values, the results can be pretty confusing, especially if you're animating any of the values.</p>
+<p>For hit-testing purposes, an object to which a transform is applied continues to respond to input in an expected way that's consistent to its visual appearance in x-y space. For example, if you've used a <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a> to move a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> 400 pixels laterally in the UI, that <strong>Rectangle</strong> responds to <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a> events when the user presses the point where the <strong>Rectangle</strong> appears visually. You won't get false events if the user presses the area where the <strong>Rectangle</strong> was before being translated. For any z-index considerations that affect hit testing, applying a transform makes no difference; the z-index that governs which element handles input events for a point in x-y space is still evaluated using the child order as declared in a container. That order is usually the same as the order in which you declare the elements in XAML, although for child elements of a <a href="/uwp/api/Windows.UI.Xaml.Controls.Canvas"><strong>Canvas</strong></a> object you can adjust the order by applying the <a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)"><strong>Canvas.ZIndex</strong></a> attached property to child elements.</p>
+<h2 id="other-transform-properties"><span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>Other transform properties</h2>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.media.brush.transform"><strong>Brush.Transform</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.brush.relativetransform"><strong>Brush.RelativeTransform</strong></a>: These influence how a <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a> uses coordinate space within the area that the <strong>Brush</strong> is applied to set visual properties such as foregrounds and backgrounds. These transforms aren't relevant for the most common brushes (which are typically setting solid colors with <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a>) but might be occasionally useful when painting areas with an <a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush"><strong>LinearGradientBrush</strong></a>.</li>
+<li><a href="/uwp/api/windows.ui.xaml.media.geometry.transform"><strong>Geometry.Transform</strong></a>: You might use this property to apply a transform to a geometry prior to using that geometry for a <a href="/uwp/api/windows.ui.xaml.shapes.path.data"><strong>Path.Data</strong></a> property value.</li>
+</ul>
+<h2 id="animating-a-transform"><span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>Animating a transform</h2>
+<p><a href="/uwp/api/Windows.UI.Xaml.Media.Transform"><strong>Transform</strong></a> objects can be animated. To animate a <strong>Transform</strong>, apply an animation of a compatible type to the property you want to animate. This typically means you're using <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation"><strong>DoubleAnimation</strong></a> or <a href="/uwp/api/windows.ui.xaml.media.animation.doubleanimationusingkeyframes"><strong>DoubleAnimationUsingKeyFrames</strong></a> objects to define the animation, because all of the transform properties are of type <a href="/dotnet/api/system.double"><strong>Double</strong></a>. Animations that affect a transform that's used for a <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>UIElement.RenderTransform</strong></a> value are not considered to be dependent animations, even if they have a nonzero duration. For more info about dependent animations, see <a href="../../../design/motion/storyboarded-animations.html">Storyboarded animations</a>.</p>
+<p>If you animate properties to produce an effect similar to a transform in terms of the net visual appearance—for example, animating the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> of a <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement"><strong>FrameworkElement</strong></a> rather than applying a <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a>—such animations are almost always treated as dependent animations. You'd have to enable the animations and there could be significant performance issues with the animation, especially if you're trying to support user interaction while that object is being animated. For that reason it's preferable to use a transform and animate it rather than animating any other property where the animation would be treated as a dependent animation.</p>
+<p>To target the transform, there must be an existing <a href="/uwp/api/Windows.UI.Xaml.Media.Transform"><strong>Transform</strong></a> as the value for <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>RenderTransform</strong></a>. You typically put an element for the appropriate transform type in the initial XAML, sometimes with no properties set on that transform.</p>
+<p>You typically use an indirect targeting technique to apply animations to the properties of a transform. For more info about indirect targeting syntax, see <a href="../../../design/motion/storyboarded-animations.html">Storyboarded animations</a> and <a href="/windows/uwp/xaml-platform/property-path-syntax">Property-path syntax</a>.</p>
+<p>Default styles for controls sometimes define animations of transforms as part of their visual-state behavior. For example, the visual states for <a href="/uwp/api/Windows.UI.Xaml.Controls.ProgressRing"><strong>ProgressRing</strong></a> use animated <a href="/uwp/api/Windows.UI.Xaml.Media.RotateTransform"><strong>RotateTransform</strong></a> values to &quot;spin&quot; the dots in the ring.</p>
+<p>Here's a simple example of how to animate a transform. In this case, it's animating the <a href="/uwp/api/windows.ui.xaml.media.rotatetransform.angle"><strong>Angle</strong></a> of a <a href="/uwp/api/Windows.UI.Xaml.Media.RotateTransform"><strong>RotateTransform</strong></a> to spin a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> in place around its visual center. This example names the <strong>RotateTransform</strong> so doesn't need indirect animation targeting, but you could alternatively leave the transform unnamed, name the element that the transform's applied to, and use indirect targeting such as <code>(UIElement.RenderTransform).(RotateTransform.Angle)</code>.</p>
+<pre><code class="lang-xml">&lt;StackPanel Margin=&quot;15&quot;&gt;
+  &lt;StackPanel.Resources&gt;
+    &lt;Storyboard x:Name=&quot;myStoryboard&quot;&gt;
+      &lt;DoubleAnimation
+       Storyboard.TargetName=&quot;myTransform&quot;
+       Storyboard.TargetProperty=&quot;Angle&quot;
+       From=&quot;0&quot; To=&quot;360&quot; Duration=&quot;0:0:5&quot; 
+       RepeatBehavior=&quot;Forever&quot; /&gt;
+    &lt;/Storyboard&gt;
+  &lt;/StackPanel.Resources&gt;
+  &lt;Rectangle Width=&quot;50&quot; Height=&quot;50&quot; Fill=&quot;RoyalBlue&quot;
+   PointerPressed=&quot;StartAnimation&quot;&gt;
+    &lt;Rectangle.RenderTransform&gt;
+      &lt;RotateTransform x:Name=&quot;myTransform&quot; Angle=&quot;45&quot; CenterX=&quot;25&quot; CenterY=&quot;25&quot; /&gt;
+    &lt;/Rectangle.RenderTransform&gt;
+  &lt;/Rectangle&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-xml">void StartAnimation (object sender, RoutedEventArgs e) {
+    myStoryboard.Begin();
+}
+</code></pre>
+<h2 id="accounting-for-coordinate-frames-of-reference-at-run-time"><span id="Accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"></span>Accounting for coordinate frames of reference at run time</h2>
+<p><a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> has a method named <a href="/uwp/api/windows.ui.xaml.uielement.transformtovisual"><strong>TransformToVisual</strong></a>, which can generate a <a href="/uwp/api/Windows.UI.Xaml.Media.Transform"><strong>Transform</strong></a> that correlates the coordinate frames of reference for two UI elements. You can use this to compare an element to the app's default coordinate frame of reference if you pass the root visual as the first parameter. This can be useful if you've captured an input event from a different element, or if you are trying to predict layout behavior without actually requesting a layout pass.</p>
+<p>Event data obtained from pointer events provides access to a <a href="/uwp/api/windows.ui.input.pointerpoint.getcurrentpoint"><strong>GetCurrentPoint</strong></a> method, where you can specify a <em>relativeTo</em> parameter to change the coordinate frame of reference to a specific element rather than the app default. This approach simply applies a translate transform internally and transforms the x-y coordinate data for you when it creates the returned <a href="/uwp/api/Windows.UI.Input.PointerPoint"><strong>PointerPoint</strong></a> object.</p>
+<h2 id="describing-a-transform-mathematically"><span id="Describing_a_transform_mathematically"></span><span id="describing_a_transform_mathematically"></span><span id="DESCRIBING_A_TRANSFORM_MATHEMATICALLY"></span>Describing a transform mathematically</h2>
+<p>A transform can be described in terms of a transformation matrix. A 3×3 matrix is used to describe the transformations in a two-dimensional, x-y plane. Affine transformation matrices can be multiplied to form any number of linear transformations, such as rotation and skew (shear), followed by translation. The final column of an affine transformation matrix is equal to (0, 0, 1), so you need to specify only the members of the first two columns in the mathematical description.</p>
+<p>The mathematical description of a transform might be useful to you if you have a mathematical background or a familiarity with graphics-programming techniques that also use matrices to describe transformations of coordinate space. There's a <a href="/uwp/api/Windows.UI.Xaml.Media.Transform"><strong>Transform</strong></a>-derived class that enables you to express a transformation directly in terms of its 3×3 matrix: <a href="/uwp/api/Windows.UI.Xaml.Media.MatrixTransform"><strong>MatrixTransform</strong></a>. <strong>MatrixTransform</strong> has a <a href="/uwp/api/windows.ui.xaml.media.matrixtransform.matrix"><strong>Matrix</strong></a> property, which holds a structure that has six properties: <a href="/uwp/api/windows.ui.xaml.media.matrix.m11"><strong>M11</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.matrix.m12"><strong>M12</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.matrix.m21"><strong>M21</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.matrix.m22"><strong>M22</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.matrix.offsetx"><strong>OffsetX</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.matrix.offsety"><strong>OffsetY</strong></a>. Each <a href="/uwp/api/Windows.UI.Xaml.Media.Matrix"><strong>Matrix</strong></a> property uses a <strong>Double</strong> value and corresponds to the six relevant values (columns 1 and 2) of an affine transformation matrix.</p>
+<table>
+<thead>
+<tr>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.media.matrix.m11"><strong>M11</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.media.matrix.m12"><strong>M12</strong></a></td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.media.matrix.m21"><strong>M21</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.media.matrix.m22"><strong>M22</strong></a></td>
+<td>0</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.media.matrix.offsetx"><strong>OffsetX</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.media.matrix.offsety"><strong>OffsetY</strong></a></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Any transform that you could describe with a <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Media.ScaleTransform"><strong>ScaleTransform</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Media.RotateTransform"><strong>RotateTransform</strong></a>, or <a href="/uwp/api/Windows.UI.Xaml.Media.SkewTransform"><strong>SkewTransform</strong></a> object could be described equally by a <a href="/uwp/api/Windows.UI.Xaml.Media.MatrixTransform"><strong>MatrixTransform</strong></a> with a <a href="/uwp/api/Windows.UI.Xaml.Media.Matrix"><strong>Matrix</strong></a> value. But you typically just use <strong>TranslateTransform</strong> and the others because the properties on those transform classes are easier to conceptualize than setting the vector components in a <strong>Matrix</strong>. It's also easier to animate the discrete properties of transforms; a <strong>Matrix</strong> is actually a structure and not a <a href="/uwp/api/Windows.UI.Xaml.DependencyObject"><strong>DependencyObject</strong></a>, so it can't support animated individual values.</p>
+<p>Some XAML design tools that enable you to apply transformation operations will serialize the results as a <a href="/uwp/api/Windows.UI.Xaml.Media.MatrixTransform"><strong>MatrixTransform</strong></a>. In this case it may be best to use the same design tool again to change the transformation effect and serialize the XAML again, rather than trying to manipulate the <a href="/uwp/api/Windows.UI.Xaml.Media.Matrix"><strong>Matrix</strong></a> values yourself directly in the XAML.</p>
+<h2 id="3-d-transforms"><span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>3-D transforms</h2>
+<p>In Windows 10, XAML introduced a new property, <a href="/uwp/api/windows.ui.xaml.uielement.transform3d"><strong>UIElement.Transform3D</strong></a>, that can be used to create 3D effects with UI. To do this, use <a href="/uwp/api/windows.ui.xaml.media.media3d.perspectivetransform3d"><strong>PerspectiveTransform3D</strong></a> to add a shared 3D perspective or &quot;camera&quot; to your scene, and then use <a href="/uwp/api/windows.ui.xaml.media.media3d.compositetransform3d"><strong>CompositeTransform3D</strong></a> to transform an element in 3D space, like you would use <a href="/uwp/api/Windows.UI.Xaml.Media.CompositeTransform"><strong>CompositeTransform</strong></a>. See <a href="/uwp/api/windows.ui.xaml.uielement.transform3d"><strong>UIElement.Transform3D</strong></a> for a discussion of how to implement 3D transforms.</p>
+<p>For simpler 3D effects that only apply to a single object, the <a href="/uwp/api/windows.ui.xaml.uielement.projection"><strong>UIElement.Projection</strong></a> property can be used. Using a <a href="/uwp/api/Windows.UI.Xaml.Media.PlaneProjection"><strong>PlaneProjection</strong></a> as the value for this property is equivalent to applying a fixed perspective transform and one or more 3D transforms to the element. This type of transform is described in more detail in <a href="3-d-perspective-effects.html">3-D perspective effects for XAML UI</a>.</p>
+<h2 id="related-topics"><span id="related_topics"></span>Related topics</h2>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.transform3d"><strong>UIElement.Transform3D</strong></a></li>
+<li><a href="3-d-perspective-effects.html">3-D perspective effects for XAML UI</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.Transform"><strong>Transform</strong></a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/xaml/transforms.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

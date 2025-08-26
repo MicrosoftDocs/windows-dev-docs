@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Hyperlinks </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Hyperlinks ">
+    
+    <meta name="description" content="Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hyperlinks">Hyperlinks</h1>
+
+<p>Hyperlinks navigate the user to another part of the app, to another app, or launch a specific uniform resource identifier (URI) using a separate browser app. There are two ways that you can add a hyperlink to a XAML app: the <strong>Hyperlink</strong> text element and <strong>HyperlinkButton</strong> control.</p>
+<p><img src="images/controls/hyperlink-button.png" alt="A hyperlink button"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a hyperlink when you need text that responds when pressed and navigates the user to more information about the text that was pressed.</p>
+<p>Choose the right type of hyperlink based on your needs:</p>
+<ul>
+<li>Use an inline <strong>Hyperlink</strong> text element inside of a text control. A Hyperlink element flows with other text elements and you can use it in any InlineCollection. Use a text hyperlink if you want automatic text wrapping and don't necessarily need a large hit target. Hyperlink text can be small and difficult to target, especially for touch.</li>
+<li>Use a <strong>HyperlinkButton</strong> for stand-alone hyperlinks. A HyperlinkButton is a specialized Button control that you can use anywhere that you would use a Button.</li>
+<li>Use a <strong>HyperlinkButton</strong> with an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image">Image</a> as its content to make a clickable image.</li>
+</ul>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Only use hyperlinks for navigation; don't use them for other actions.</li>
+<li>Use the Body style from the type ramp for text-based hyperlinks. Read about <a href="../style/typography.md">fonts and the Windows type ramp</a>.</li>
+<li>Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.</li>
+<li>Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.</li>
+</ul>
+<h2 id="create-a-hyperlink-text-element">Create a Hyperlink text element</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Hyperlink">Hyperlink text element</a></li>
+</ul>
+</div>
+<p>This example shows how to use a Hyperlink text element inside of a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock">TextBlock</a>.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Width=&quot;200&quot;&gt;
+    &lt;TextBlock Text=&quot;Privacy&quot; Style=&quot;{StaticResource SubheaderTextBlockStyle}&quot;/&gt;
+    &lt;TextBlock TextWrapping=&quot;WrapWholeWords&quot;&gt;
+        &lt;Span xml:space=&quot;preserve&quot;&gt;&lt;Run&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Read the &lt;/Run&gt;&lt;Hyperlink NavigateUri=&quot;http://www.contoso.com&quot;&gt;Contoso Privacy Statement&lt;/Hyperlink&gt;&lt;Run&gt; in your browser.&lt;/Run&gt; Donec pharetra, enim sit amet mattis tincidunt, felis nisi semper lectus, vel porta diam nisi in augue.&lt;/Span&gt;
+    &lt;/TextBlock&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>The hyperlink appears inline and flows with the surrounding text:</p>
+<p><img src="images/controls-hyperlink-element.png" alt="Example of a hyperlink as a text element"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When you use a Hyperlink in a text control with other text elements in XAML, place the content in a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span">Span</a> container and apply the <code>xml:space=&quot;preserve&quot;</code> attribute to the Span to keep the white space between the Hyperlink and other elements.</p>
+</div>
+<h2 id="create-a-hyperlinkbutton">Create a HyperlinkButton</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton">HyperlinkButton control</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/HyperlinkButton">Open the WinUI 3 Gallery app and see the Hyperlinks in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Here's how to use a HyperlinkButton, both with text and with an image.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;TextBlock Text=&quot;About&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot;/&gt;
+    &lt;HyperlinkButton NavigateUri=&quot;http://www.contoso.com&quot;&gt;
+        &lt;Image Source=&quot;Assets/ContosoLogo.png&quot;/&gt;
+    &lt;/HyperlinkButton&gt;
+    &lt;TextBlock Text=&quot;Version: 1.0.0001&quot; Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+    &lt;HyperlinkButton Content=&quot;Contoso.com&quot; NavigateUri=&quot;http://www.contoso.com&quot;/&gt;
+    &lt;HyperlinkButton Content=&quot;Acknowledgments&quot; NavigateUri=&quot;http://www.contoso.com&quot;/&gt;
+    &lt;HyperlinkButton Content=&quot;Help&quot; NavigateUri=&quot;http://www.contoso.com&quot;/&gt;
+&lt;/StackPanel&gt;
+
+</code></pre>
+<p>The hyperlink buttons with text content appear as marked-up text. The Contoso logo image is also a clickable hyperlink:</p>
+<p><img src="images/controls-hyperlink-button-image.png" alt="Example of a hyperlink as a button control"></p>
+<p>This example shows how to create a HyperlinkButton in code.</p>
+<pre><code class="lang-csharp">HyperlinkButton helpLinkButton = new HyperlinkButton();
+helpLinkButton.Content = &quot;Help&quot;;
+helpLinkButton.NavigateUri = new Uri(&quot;http://www.contoso.com&quot;);
+</code></pre>
+<h2 id="handle-navigation">Handle navigation</h2>
+<p>For both kinds of hyperlinks, you handle navigation the same way; you can set the <strong>NavigateUri</strong> property, or handle the <strong>Click</strong> event.</p>
+<h3 id="navigate-to-a-uri">Navigate to a URI</h3>
+<p>To use the hyperlink to navigate to a URI, set the NavigateUri property. When a user clicks or taps the hyperlink, the specified URI opens in the default browser. The default browser runs in a separate process from your app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A URI is represented by the <a href="/uwp/api/windows.foundation.uri">Windows.Foundation.Uri</a> class. When programming with .NET, this class is hidden and you should use the <a href="/dotnet/api/system.uri">System.Uri</a> class. For more info, see the reference pages for these classes.</p>
+</div>
+<p>You don't have to use <strong>http:</strong> or <strong>https:</strong> schemes. You can use schemes such as <strong>ms-appx:</strong>, <strong>ms-appdata:</strong>, or <strong>ms-resources:</strong>, if there's resource content at these locations that's appropriate to load in a browser. However, the <strong>file:</strong> scheme is specifically blocked. For more info, see <a href="/windows/uwp/app-resources/uri-schemes">URI schemes</a>.</p>
+<p>When a user clicks the hyperlink, the value of the NavigateUri property is passed to a system handler for URI types and schemes. The system then launches the app that is registered for the scheme of the URI provided for NavigateUri.</p>
+<p>If you don't want the hyperlink to load content in a default Web browser (and don't want a browser to appear), then don't set a value for NavigateUri. Instead, handle the Click event, and write code that does what you want.</p>
+<h2 id="handle-the-click-event">Handle the Click event</h2>
+<p>Use the Click event for actions other than launching a URI in a browser, such as navigation within the app. For example, if you want to load a new app page rather than opening a browser, call a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.navigate">Frame.Navigate</a> method within your Click event handler to navigate to the new app page. If you want an external, absolute URI to load within a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2">WebView</a> control that also exists in your app, call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2.navigatetostring">WebView.Navigate</a> as part of your Click handler logic.</p>
+<p>You don't typically handle the Click event as well as specifying a NavigateUri value, as these represent two different ways of using the hyperlink element. If your intent is to open the URI in the default browser, and you have specified a value for NavigateUri, don't handle the Click event. Conversely, if you handle the Click event, don't specify a NavigateUri.</p>
+<p>There's nothing you can do within the Click event handler to prevent the default browser from loading any valid target specified for NavigateUri; that action takes place automatically (asynchronously) when the hyperlink is activated and can't be canceled from within the Click event handler.</p>
+<h2 id="hyperlink-underlines">Hyperlink underlines</h2>
+<p>By default, hyperlinks are underlined. This underline is important because it helps meet accessibility requirements. Color-blind users use the underline to distinguish between hyperlinks and other text. If you disable underlines, you should consider adding some other type of formatting difference to distinguish hyperlinks from other text, such as FontWeight or FontStyle.</p>
+<h3 id="hyperlink-text-elements">Hyperlink text elements</h3>
+<p>You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.hyperlink.underlinestyle">UnderlineStyle</a> property to disable the underline. If you do, consider using <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.fontweight">FontWeight</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.fontstyle">FontStyle</a> to differentiate your link text.</p>
+<h3 id="hyperlinkbutton">HyperlinkButton</h3>
+<p>By default, the HyperlinkButton appears as underlined text when you set a string as the value for the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a> property.</p>
+<p>The text does not appear underlined in the following cases:</p>
+<ul>
+<li>You set a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock">TextBlock</a> as the value for the Content property, and set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text</a> property on the TextBlock.</li>
+<li>You re-template the HyperlinkButton and change the name of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentpresenter">ContentPresenter</a> template part.</li>
+</ul>
+<p>If you need a button that appears as non-underlined text, consider using a standard Button control and applying the built-in <code>TextBlockButtonStyle</code> system resource to its Style property.</p>
+<h2 id="notes-for-hyperlink-text-element">Notes for Hyperlink text element</h2>
+<p>This section applies only to the Hyperlink text element, not to the HyperlinkButton control.</p>
+<h3 id="input-events">Input events</h3>
+<p>Because a Hyperlink is not a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement">UIElement</a>, it does not have the set of UI element input events such as Tapped, PointerPressed, and so on. Instead, a Hyperlink has its own Click event, plus the implicit behavior of the system loading any URI specified as the NavigateUri. The system handles all input actions that should invoke the Hyperlink actions and raises the Click event in response.</p>
+<h3 id="content">Content</h3>
+<p>Hyperlink has restrictions on the content that can exist in its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span.inlines">Inlines</a> collection. Specifically, a Hyperlink only permits <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.run">Run</a> and other <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.span">Span</a> types that aren't another Hyperlink. <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.inlineuicontainer">InlineUIContainer</a> can't be in the Inlines collection of a Hyperlink. Attempting to add restricted content throws an invalid argument exception or XAML parse exception.</p>
+<h3 id="hyperlink-and-themestyle-behavior">Hyperlink and theme/style behavior</h3>
+<p>Hyperlink doesn't inherit from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control">Control</a>, so it doesn't have a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.style">Style</a> property or a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.template">Template</a>. You can edit the properties that are inherited from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement">TextElement</a>, such as Foreground or FontFamily, to change the appearance of a Hyperlink, but you can't use a common style or template to apply changes. Instead of using a template, consider using common resources for values of Hyperlink properties to provide consistency. Some properties of Hyperlink use defaults from a {ThemeResource} markup extension value provided by the system. This enables the Hyperlink appearance to switch in appropriate ways when the user changes the system theme at run-time.</p>
+<p>The default color of the hyperlink is the accent color of the system. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.foreground">Foreground</a> property to override this.</p>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Documents.Hyperlink">Hyperlink text element</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton">HyperlinkButton control</a></li>
+<li><a href="winui2gallery:/item/HyperlinkButton">Open the WinUI 2 Gallery app and see Hyperlinks in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="text-controls.html">Text controls</a></li>
+<li><a href="tooltips.html">Guidelines for tooltips</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Hyperlink">Hyperlink class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton">HyperlinkButton class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/hyperlinks.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

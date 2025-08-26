@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows App SDK deployment architecture and overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows App SDK deployment architecture and overview ">
+    
+    <meta name="description" content="This article provides a high level explanation of the Windows App SDK deployment architecture and scenarios.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="deployment-architecture-and-overview-for-framework-dependent-apps">Deployment architecture and overview for framework-dependent apps</h1>
+
+<p>This article explains a high-level architecture of Windows App SDK deployment. The concepts below apply primarily to Windows App SDK framework-dependent apps. A framework-dependent app depends on the Windows App SDK runtime being present on the target machine.</p>
+<p>There are two main options to distribute a framework-dependent app:</p>
+<table>
+<thead>
+<tr>
+<th>App deployment method</th>
+<th>Requirements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Packaged</td>
+<td>- Must declare dependency on Framework package in the package manifest. <br> - Deployment API is required for Microsoft Store distributed apps and recommended for non-Store distributed apps to ensure runtime dependencies are installed.</td>
+</tr>
+<tr>
+<td>Packaged with external location or unpackaged</td>
+<td>- Must distribute runtime either using the Installer or by installing required MSIX packages directly. <br> - Additional runtime requirements: Must initialize access to the Windows App SDK runtime via the Bootstrap API.</td>
+</tr>
+</tbody>
+</table>
+<p>For more details on these requirements, see the following articles:</p>
+<ul>
+<li><a href="deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a></li>
+<li><a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+</ul>
+<h2 id="key-terms">Key terms</h2>
+<p>The following sections define key terms for Windows App SDK deployment and additional details on some of these packages.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Windows App SDK runtime</strong></td>
+<td>The MSIX packages required by an app to use the Windows App SDK. These packages include: Framework, Main, Singleton, and DDLM. Depending on the features used and your app deployment method, you will need a certain set of these packages on the target machine.</td>
+</tr>
+<tr>
+<td><strong>Framework package</strong></td>
+<td>Contains binaries used at run time by apps (most Windows App SDK features). The framework includes a bootstrapper component that enables apps to automatically install the latest version of the Windows App SDK, which will be updated on a regular release cadence.</td>
+</tr>
+<tr>
+<td><strong>Main package</strong></td>
+<td>Package that contains background tasks to keep track of dynamic dependencies, and enables automatic updates to the Framework package from the Microsoft Store.</td>
+</tr>
+<tr>
+<td><strong>Singleton package</strong></td>
+<td>Contains background tasks, services, app extensions, and other components not included in the Framework package such as Push Notifications. This is generally a single long-running process that is brokered between apps.</td>
+</tr>
+<tr>
+<td><strong>Dynamic Dependency Lifetime Manager (DDLM) package</strong></td>
+<td>Prevents the OS from performing servicing updates to the MSIX packages while a packaged with external location or unpackaged app is in use.</td>
+</tr>
+<tr>
+<td><strong>Bootstrapper</strong></td>
+<td>An app-local binary used by packaged with external location and unpackaged apps to locate and load the best Windows App SDK version match as needed by the app.</td>
+</tr>
+<tr>
+<td><strong>Provisioning</strong></td>
+<td>The process of installing and registering packages (including files and registry keys) system-wide to eliminate the need for repeated installation by the other users. It can be done either as part of the OS or done during installation of an app.</td>
+</tr>
+<tr>
+<td><strong>Installer</strong></td>
+<td>Refers to the .exe installer which deploys the Framework, Main, Singleton, and DDLM packages.</td>
+</tr>
+<tr>
+<td><strong>MSIX</strong></td>
+<td>Modern installer technology that enables users to safely install an app per user, directly from the Microsoft Store or a web site. On Enterprise or shared PCs, apps can be installed for all users via PowerShell and MDM.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="framework-package">Framework package</h3>
+<p>When you build an app that uses the Windows App SDK, your app references a set of Windows App SDK runtime components that are distributed to end users via a <em>framework package</em>. The framework package allows apps to access Windows App SDK components through a single shared source on the user's device, instead of bundling them into the app package. The framework package also carries its own resources, such as DLLs and API definitions (COM and Windows Runtime registrations). These resources run in the context of your app, so they inherit the capabilities and privileges of your app, and don't assert any capabilities or privileges of their own. For more information about framework package dependencies, see <a href="../desktop/modernize/framework-packages/framework-packages-overview.html">MSIX framework packages and dynamic dependencies</a>.</p>
+<p>The Windows App SDK framework package is an MSIX package that is deployed to end users through the Microsoft Store. It can be easily and quickly updated with servicing releases, which may include security and reliability fixes. All framework-dependent apps that use the Windows App SDK have a dependency on a shared instance of the framework package, as illustrated in the following diagram.</p>
+<p><a href="images/framework.png#lightbox"><img src="images/framework.png" alt="Diagram of how apps access the Windows App SDK framework package"> </a></p>
+<p>When a new version of the Windows App SDK framework package is serviced, all framework-dependent apps are updated to the new version without themselves having to redistribute a copy. Windows updates to the newest version of frameworks as they are released, and apps will automatically reference the latest framework package version during relaunch. Older framework package versions will not be removed from the system until they are no longer running or being actively used by apps on the system.</p>
+<p><a href="images/framework-update.png#lightbox"><img src="images/framework-update.png" alt="Diagram of how apps get updates to the Windows App SDK framework package"> </a></p>
+<p>Because app compatibility is important to Microsoft and to apps that depend on the Windows App SDK, the Windows App SDK framework package follows <a href="https://semver.org/">Semantic Versioning 2.0.0</a> rules. This means that after we release version 1.0 of the Windows App SDK, the Windows App SDK framework package will guarantee compatibility between minor and patch version changes, and breaking changes will occur only between major version updates.</p>
+<h3 id="singleton-package">Singleton package</h3>
+<p>The <strong>singleton package</strong> ensures that a single long-running process can handle services that are used across multiple apps, which may be running on different versions of the Windows App SDK.</p>
+<p>The Windows App SDK singleton is needed to enable <a href="notifications/push-notifications/index.md">push notifications</a> for unpackaged apps and packaged Win32 applications using Windows versions below 20H1, which cannot be supported by the existing UWP <a href="/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger">PushNotificationTrigger</a> and <a href="/uwp/api/windows.applicationmodel.background.toastnotificationactiontrigger">ToastNotificationActionTrigger</a> class. Future Windows App SDK features that cannot be supported by the Framework package will be added to the Singleton package.</p>
+<h2 id="additional-requirements-for-unpackaged-apps">Additional requirements for unpackaged apps</h2>
+<h3 id="bootstrapper">Bootstrapper</h3>
+<p>The bootstrapper is a library that must be included with your packaged with external location or unpackaged app. It provides the bootstrapper API (see <a href="use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>), which enables unpackaged apps to perform these important tasks:</p>
+<ul>
+<li>Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.</li>
+<li>Find and load the Windows App SDK framework package to the app's package graph.</li>
+</ul>
+<p>To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set <code>&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;</code> in your project file. In advanced scenarios, if you want control over the initialization, you can call the bootstrapper API directly in your app's startup code (see <a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>) so that it can properly initialize the system for the unpackaged app. Your app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.</p>
+<p>The bootstrapper library in the Windows App SDK 1.0 release includes:</p>
+<ul>
+<li><strong>Microsoft.WindowsAppRuntime.Bootstrap.dll</strong> (C++ and C#)</li>
+<li><strong>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</strong> (C# wrapper)</li>
+</ul>
+<h3 id="dynamic-dependency-lifetime-manager-ddlm">Dynamic Dependency Lifetime Manager (DDLM)</h3>
+<p>The purpose of the DDLM is to prevent servicing of the Windows App SDK framework package while it is in use by an unpackaged app. It contains a server that must be initialized by the bootstrapper early in an app's startup to provide that functionality.</p>
+<p>There is one DDLM for each version and architecture of the Windows App SDK framework package. This means on an <code>x64</code> computer, you may have both an <code>x86</code> and an <code>x64</code> version of the DDLM to support apps of both architectures.</p>
+<h2 id="additional-requirements">Additional requirements</h2>
+<ul>
+<li>For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see <a href="/troubleshoot/cpp/c-runtime-packages-desktop-bridge">C++ Runtime framework packages for Desktop Bridge</a>.</li>
+<li>For unpackaged apps, the Visual C++ Redistributable is a requirement. For more info, see <a href="/cpp/windows/latest-supported-vc-redist">Microsoft Visual C++ Redistributable latest supported downloads</a>.</li>
+<li><strong>C#</strong>. For the .NET runtime, see <a href="https://dotnet.microsoft.com/download">Download .NET</a>.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a></li>
+<li><a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/deployment-architecture.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

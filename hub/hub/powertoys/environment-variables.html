@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Environment Variables for Windows - Manage Variables </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Environment Variables for Windows - Manage Variables ">
+    
+    <meta name="description" content="Manage Windows environment variables efficiently with PowerToys Environment Variables utility. Create profiles, edit variables, and streamline your development workflow.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="environment-variables">Environment Variables</h1>
+
+<p>PowerToys Environment Variables offers an easy and convenient way to manage Windows environment variables. This utility allows you to create profiles for managing a set of variables together, streamlining your development workflow. Profile variables have precedence over User and System variables.</p>
+<p>Applying the profile adds variables to User environment variables in the background. When a profile is applied, if there is an existing User variable with the same name, a backup variable is created in User variables which will be reverted to the original value on profile un-apply. The Applied variables list shows the current state of the environment, respecting the order of evaluation of environment variables (Profile &gt; User &gt; System). The Evaluated Path variable value is shown at the top of the list.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-environment-variables.png" alt="Screenshot of PowerToys Environment Variables interface showing profile management and variable lists.">
+</span>
+</p>
+<h2 id="editremove-variable">Edit/Remove variable</h2>
+<p>To edit or remove a variable (profile, User or System), select the <strong>more</strong> button (•••) on the desired variable:</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-environment-variables-edit-variable.gif" alt="Screenshot of editing and removing environment variables in PowerToys Environment Variables utility.">
+</span>
+</p>
+<h2 id="add-profile">Add profile</h2>
+<p>To add a new profile:</p>
+<ul>
+<li>Select <strong>New profile</strong></li>
+<li>Enter profile name</li>
+<li>Set <strong>Enabled</strong> toggle to On to apply the profile right after creation</li>
+<li>Select <strong>Add variable</strong> to add variables to profile (either new variable or existing User/System variables)</li>
+<li>Select <strong>Save</strong></li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-environment-variables-add-profile.gif" alt="Screenshot of creating a new profile in PowerToys Environment Variables with variable configuration.">
+</span>
+</p>
+<p>To edit or remove a profile, select the <strong>more</strong> button (•••) on the desired profile.</p>
+<h2 id="apply-profile">Apply profile</h2>
+<p>To apply a profile, set the <strong>profile</strong> toggle to On. Only one profile can be applied at a time. The Applied variables list will show applied profile variables at the top (below Path variable):</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-environment-variables-apply-profile.gif" alt="Screenshot of applying an environment variables profile in PowerToys showing toggle activation.">
+</span>
+</p>
+<h2 id="settings">Settings</h2>
+<p>From the settings, the following options can be configured:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Open as administrator</td>
+<td style="text-align: left;">Allow management of System variables. If off, only profile and User variables can be modified. Environment Variables is opened as administrator by default.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/environment-variables.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

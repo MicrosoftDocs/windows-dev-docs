@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tutorial on React for beginners </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tutorial on React for beginners ">
+    
+    <meta name="description" content="A guide to help beginners get started with React development on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-react-on-windows-for-beginners">Tutorial: React on Windows for beginners</h1>
+
+<p>If you're brand new to using React, this guide will help you to get started with some basics.</p>
+<ul>
+<li><a href="#a-few-basic-terms-and-concepts">A few basic terms and concepts</a></li>
+<li><a href="#try-using-react-in-visual-studio-code">Try using React in Visual Studio Code</a></li>
+<li><a href="#try-using-react-with-an-api">Try using React with an API</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="react-on-windows.html">Install React on Windows</a></li>
+<li><a href="react-on-wsl.html">Install React on Windows Subsystem for Linux</a></li>
+<li><a href="https://code.visualstudio.com/download">Install VS Code</a>. We recommend installing VS Code on Windows, regardless of whether you plan to use React on Windows or WSL.</li>
+</ul>
+<h2 id="a-few-basic-terms-and-concepts">A few basic terms and concepts</h2>
+<p>React is a JavaScript library for building user interfaces.</p>
+<ul>
+<li><p>It is <a href="https://github.com/facebook/react">open-source</a>, meaning that you can contribute to it by filing issues or pull requests. <em>(Just like <a href="/contribute/">these docs</a>!)</em></p>
+</li>
+<li><p>It is <a href="https://en.wikipedia.org/wiki/Declarative_programming">declarative</a>, meaning that you write the code that you want and React takes that declared code and performs all of the JavaScript/DOM steps to get the desired result.</p>
+</li>
+<li><p>It is <a href="https://en.wikipedia.org/wiki/Component-based_software_engineering">component-based</a>, meaning that applications are created using prefabricated and reusable independent code modules that manage their own state and can be glued together using the React framework, making it possible to pass data through your app while keeping state out of the DOM.</p>
+</li>
+<li><p>The React motto is &quot;Learn once, write anywhere.&quot; The intention is for <a href="https://en.wikipedia.org/wiki/Code_reuse">code reuse</a> and not making assumptions about how you will use React UI with other technologies, but to make components reusable without the need to rewrite existing code.</p>
+</li>
+<li><p><a href="https://react.dev/learn/writing-markup-with-jsx">JSX</a> is a syntax extension for JavaScript written to be used with React that looks like HTML, but is actually a JavaScript file that needs to be compiled, or translated into regular JavaScript.</p>
+</li>
+<li><p><a href="https://reactjs.org/docs/faq-internals.html">Virtual DOM</a>: <a href="https://en.wikipedia.org/wiki/Document_Object_Model">DOM</a> stands for Document Object Model and represents the UI of your app. Every time the state of your app's UI changes, the DOM gets updated to represent the change. When a DOM is frequently updating, performance becomes slow. A Virtual DOM is only a visual representation of the DOM, so when the state of the app changes, the virtual DOM is updated rather than the real DOM, reducing the performance cost. It's a <em>representation</em> of a DOM object, like a lightweight copy.</p>
+</li>
+<li><p><em>Views</em>: are what the user sees rendered in the browser. In React, view is related to the concept of <a href="https://reactjs.org/docs/rendering-elements.html">rendering elements</a> that you want a user to see on their screen.</p>
+</li>
+<li><p><a href="https://react.dev/learn/state-a-components-memory">State</a>: refers to the data stored by different views. The state will typically rely on who the user is and what the user is doing. For example, signing into a website may show your user profile (view) with your name (state). The state data will change based on the user, but the view will remain the same. State is used to achieve most of the user interactivity with the application.</p>
+</li>
+<li><p><a href="https://react.dev/learn/passing-props-to-a-component">Component Props</a>: is a way for parent component to pass some information as a value or data(including objects, arrays, and functions) to its child components. Props are read-only and cannot be updated by the child component.</p>
+</li>
+</ul>
+<h2 id="try-using-react-in-visual-studio-code">Try using React in Visual Studio Code</h2>
+<p>There are many ways to create an application with React (see the <a href="react-overview.html">React Overview</a> for examples). This tutorial will walk through how to use <a href="https://vitejs.dev/">vite</a> to fast-forward the set up for a functioning React app so that you can see it running and focus on experimenting with the code, not yet concerning yourself with the build tools.</p>
+<ol>
+<li><p>Use vite on Windows or WSL (see the <a href="#prerequisites">prerequisites above</a>) to create a new project: <code>npm create vite@latest hello-world -- --template react</code></p>
+</li>
+<li><p>Change directories so that you're inside the folder for your new app: <code>cd hello-world</code>, install the dependencies: <code>npm install</code> and then start your local development server: <code>npm run dev</code></p>
+<p>Your new React Hello World app will compile and open your default web browser to show that it's running on <code>http://localhost:5173</code>.</p>
+</li>
+<li><p>Stop running your React app (Ctrl+c) and open it's code files in VS Code by entering: <code>code .</code></p>
+</li>
+<li><p>Find the src/App.jsx file and find the header section that reads:</p>
+<pre><code class="lang-JavaScript">&lt;p&gt;Edit &lt;code&gt;src/App.jsx&lt;/code&gt; and save to test HMR&lt;/p&gt;
+</code></pre>
+<p>Change it to read:</p>
+<pre><code class="lang-JavaScript">&lt;p&gt;Hello World! This is my first React app.&lt;/p&gt;
+</code></pre>
+</li>
+<li><p>Open your terminal window and start your local development server: <code>npm run dev</code> or you can use the integrated VS Code terminal (Ctrl + `) and start your development server from there.</p>
+<p><img src="../../images/react-hello-world.png" alt="Screenshot of HelloWorld React app in browser"></p>
+</li>
+</ol>
+<p>Throughout the development of your React app you can keep your local development server running and all the changes will immediately be rendered at <code>http://localhost:5173</code> in your browser.</p>
+<h2 id="application-file-structure">Application file structure</h2>
+<p>The initial file structure looks like</p>
+<pre><code class="lang-markdown">hello-world
+├── node_modules 
+├── README.md 
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+│   └── vite.svg
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   │   └── react.svg
+│   ├── index.css
+│   └── main.jsx
+└── vite.config.js
+</code></pre>
+<p>For starters, these are the important files and folders you need to know.</p>
+<p><code>index.html</code> is the file in which Vite injects your code from <code>src</code> folder for your browser to run it. This file should not be edited except to change the title of your React application.</p>
+<p>The <code>src</code> folder is where the source code of your React application lives. This is the place where you create your custom components, CSS files and other code files you need to build your application. These files are processed by Vite's build tools to parse and build them to create your final React project.</p>
+<p>The <code>public</code> folder contains all your static files that will be served directly to your browser. These files are not processed by Vite.</p>
+<h2 id="try-using-react-with-an-api">Try using React with an API</h2>
+<p>Using the same Hello World! app that you built with React and updated with Visual Studio Code, let's try adding an API call to display some data.</p>
+<ol>
+<li><p>Lets start fresh. We will remove almost all the boilerplate code provided by Vite and keep only our code from the previous step.</p>
+<p>Your App.jsx file should now look like this:</p>
+<pre><code class="lang-JavaScript">import &quot;./App.css&quot;;
+
+function App() {
+  return (
+    &lt;&gt;
+      &lt;p&gt;Hello world! This is my first React app.&lt;/p&gt;
+    &lt;/&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p><img src="../../images/react-hello-world-2.png" alt="Screenshot of simplified HelloWorld React app in browser"></p>
+</li>
+<li><p>Next, let's set a local state where we can save data from an API. A state is where we can store data to be used in the view.</p>
+<p>To add a local state, we need to first import the <a href="https://react.dev/reference/react/useState">useState</a> React Hook that lets you add state variable to your component.</p>
+<p>We also need to initialize the local state. The <code>useState</code> returns an array of two values; current state and a <code>set</code> function. We will call our current state as <code>posts</code> initialised as an empty array that we can fill with post data later from our API using the <code>setPosts</code> function.</p>
+<p>Your App.jsx file should now look like this:</p>
+<pre><code class="lang-JavaScript">import { useState } from &quot;react&quot;;
+import &quot;./App.css&quot;;
+
+function App() {
+  const [posts, setPosts] = useState([]);
+
+  return (
+    &lt;&gt;
+      &lt;p&gt;Hello world! This is my first React app.&lt;/p&gt;
+    &lt;/&gt;
+  );
+}
+
+export default App;
+</code></pre>
+</li>
+<li><p>To call an API with data for us to use in our React app, we will use the .fetch JavaScript method. The API we will call is <a href="https://jsonplaceholder.typicode.com/guide/">JSONPlaceholder</a>, a free API for testing and prototyping that serves up fake placeholder data in JSON format.</p>
+<p>We use the <a href="https://react.dev/reference/react/useEffect">useEffect</a> React Hook to update the <code>posts</code> state by using the <a href="https://react.dev/reference/react/useState#setstate">set function</a>.</p>
+<pre><code class="lang-Javascript">import { useState, useEffect } from &quot;react&quot;;
+import &quot;./App.css&quot;;
+
+function App() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() =&gt; {
+    const url = &quot;https://jsonplaceholder.typicode.com/albums/1/photos&quot;;
+    fetch(url)
+      .then((response) =&gt; response.json())
+      .then((data) =&gt; setPosts(data));
+  }, []);
+
+  return (
+    &lt;&gt;
+      &lt;p&gt;Hello world! This is my first React app.&lt;/p&gt;
+    &lt;/&gt;
+  );
+}
+
+export default App;
+</code></pre>
+</li>
+<li><p>Let's take a look at what sort of data the API has saved in our <code>posts</code> state. Below is some of the contents of the <a href="https://jsonplaceholder.typicode.com/albums/1/photos">fake JSON API file</a>. We can see the format the data is listed in, using the categories: &quot;albumId&quot;, &quot;id&quot;, &quot;title&quot;, &quot;url&quot;, and &quot;thumbnailUrl&quot;.</p>
+<pre><code class="lang-json">[
+  {
+    &quot;albumId&quot;: 1,
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;accusamus beatae ad facilis cum similique qui sunt&quot;,
+    &quot;url&quot;: &quot;https://via.placeholder.com/600/92c952&quot;,
+    &quot;thumbnailUrl&quot;: &quot;https://via.placeholder.com/150/92c952&quot;
+  },
+  {
+    &quot;albumId&quot;: 1,
+    &quot;id&quot;: 2,
+    &quot;title&quot;: &quot;reprehenderit est deserunt velit ipsam&quot;,
+    &quot;url&quot;: &quot;https://via.placeholder.com/600/771796&quot;,
+    &quot;thumbnailUrl&quot;: &quot;https://via.placeholder.com/150/771796&quot;
+  }
+]
+</code></pre>
+</li>
+<li><p>To display the API data, we will now need to add a bit of JSX code inside the rendered <code>return()</code> statement. We will use the <a href="https://react.dev/learn/rendering-lists"><code>map()</code></a> method to display our data from the <code>posts</code> object that we stored it in as keys. Each post will display a header with &quot;ID #&quot; and then the post.id key value + post.title key value from our JSON data. Followed by the body displaying the image based on the thumbnailUrl key value.</p>
+<pre><code class="lang-javascript">// rest of the code 
+  return (
+    &lt;article&gt;
+      &lt;h1&gt;Posts from our API call&lt;/h1&gt;
+      {posts.map((post) =&gt; (
+        &lt;article key={post.id}&gt;
+          &lt;h2&gt;ID #{post.id} {post.title}&lt;/h2&gt;
+          &lt;img src={post.thumbnailUrl} /&gt;
+        &lt;/article&gt;
+      ))}
+    &lt;/article&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p><img src="../../images/react-app-api-demo.png" alt="React app displaying placeholder data from an API"></p>
+</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>The <a href="https://react.dev/">official React docs</a> offer all of the latest, up-to-date information on React</li>
+<li><a href="https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil">Microsoft Edge Add-ons for React Developer Tools</a>: Adds two tabs to your Microsoft Edge dev tools to help with your React development: Components and Profiler.</li>
+<li>The <a href="/training/paths/react/">React learning path</a> contains online course modules to help you get started with the basics.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/react-beginners-tutorial.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

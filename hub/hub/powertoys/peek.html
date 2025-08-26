@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Peek Utility - Preview Files Without Opening Apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Peek Utility - Preview Files Without Opening Apps ">
+    
+    <meta name="description" content="Preview files instantly with PowerToys Peek utility for Windows. View images, documents, videos, and code without opening multiple apps. Download PowerToys today.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="peek-utility">Peek utility</h1>
+
+<p>PowerToys Peek utility is a system-wide tool for Windows that lets you preview file content without opening multiple applications or interrupting your workflow. This utility offers a seamless and quick file preview experience for various file types, including images, Office documents, videos, web pages, Markdown files, text files, and developer files. Peek also displays summary information about folders, helping you work more efficiently.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-peek.png" alt="Screenshot of PowerToys Peek utility displaying a file preview window with navigation options and file information overlay.">
+</span>
+</p>
+<h2 id="preview-a-file">Preview a file</h2>
+<p>Select a file in File Explorer and open the Peek preview using the activation / deactivation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Space</kbd>).</p>
+<p>Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>, you can scroll between all files in the current folder. Select multiple files in File Explorer for previewing to scroll only between selected ones.</p>
+<h2 id="pin-preview-window-position-and-size">Pin preview window position and size</h2>
+<p>The Peek window adjusts its size based on the dimensions of the images being previewed. However, if you prefer to keep the window's size and position, you can use the pinning feature.</p>
+<p>By selecting the pinning button, the window will preserve the current size and position. Selecting the pinning button again will unpin the window. When unpinned, the Peek window will return to the default position and size when previewing the next file.</p>
+<h2 id="open-file-with-the-default-program">Open file with the default program</h2>
+<p>Select <strong>Open with</strong> or <kbd>Enter</kbd> to open the current file with the default program.</p>
+<h2 id="see-extra-information-about-the-current-file">See extra information about the current file</h2>
+<p>Hover over the preview to see extra information about the file, including its size, type, and when it was last modified.</p>
+<h2 id="delete-files">Delete files</h2>
+<p>Press the <kbd>Delete</kbd> key to move the current file to the Recycle Bin.</p>
+<p>By default, a confirmation dialog will appear before deletions. To skip future confirmations, either:</p>
+<ul>
+<li>Check the &quot;Don't show this warning again&quot; checkbox in the dialog.</li>
+<li>Uncheck the &quot;Ask for confirmation before deleting files&quot; option in Peek's settings page.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-peek-delete-confirmation.png" alt="Screenshot of PowerToys Peek file deletion confirmation dialog with checkbox option to skip future warnings.">
+</span>
+</p>
+<p>After deleting the file, Peek will automatically preview the next file. If there are no more files to preview, a message will be displayed.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Only files may be deleted. Folders may not be deleted, even if they are empty.</p>
+</div>
+<h2 id="settings">Settings</h2>
+<p>From the settings page, the following options can be configured:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to open Peek for the selected file(s).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Always run without elevation, even when PowerToys is elevated</td>
+<td style="text-align: left;">Tries to run Peek without elevated permissions, to fix access to network shares.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Automatically close the Peek window after it loses focus</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Confirm before deleting files</td>
+<td style="text-align: left;">When enabled, Peek shows a confirmation dialog before deleting files.</td>
+</tr>
+</tbody>
+</table>
+<p>The following settings are available for source code files but are still in preview:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Wrap text</strong></td>
+<td style="text-align: left;">When enabled, this option wraps long lines of code in the preview window.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Try to format the source for preview</strong></td>
+<td style="text-align: left;">When enabled, this option attempts to format the source code for better readability in the preview window.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Font size</strong></td>
+<td style="text-align: left;">Adjust the font size used in the preview window.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Enable sticky scroll</strong></td>
+<td style="text-align: left;">When enabled, this option keeps the code preview in sync with the editor's scroll position.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Show minimap</strong></td>
+<td style="text-align: left;">When enabled, this option displays a minimap of the code in the preview window.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/peek.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

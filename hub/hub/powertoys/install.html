@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to Install PowerToys on Windows 11 and Windows 10 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to Install PowerToys on Windows 11 and Windows 10 ">
+    
+    <meta name="description" content="Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="install-powertoys-on-windows">Install PowerToys on Windows</h1>
+
+<p>PowerToys is a set of utilities for customizing Windows that you can install using multiple methods. This article explains how to install PowerToys on Windows 11 and Windows 10 using an executable file, Microsoft Store, or package managers like WinGet, Chocolatey, and Scoop.</p>
+<p>We recommend installing PowerToys via <a href="https://aka.ms/installpowertoys">GitHub</a> or <a href="https://aka.ms/getPowertoys">Microsoft Store</a>, but alternative install methods are also listed if you prefer using a package manager.</p>
+<h2 id="system-requirements">System requirements</h2>
+<p>The following are the minimum requirements to install and run PowerToys:</p>
+<ul>
+<li>Supported Operating Systems:
+<ul>
+<li>Windows 11 (all versions)</li>
+<li>Windows 10 v2004 (19041) or newer</li>
+</ul>
+</li>
+<li>System architecture
+<ul>
+<li>x64 and Arm64 architectures are currently supported.</li>
+</ul>
+</li>
+<li>The PowerToys installer will install the following runtimes:
+<ul>
+<li><a href="https://go.microsoft.com/fwlink/p/?LinkId=2124703">Microsoft Edge WebView2 Runtime</a> bootstrapper (this will always install the latest version available)</li>
+</ul>
+</li>
+</ul>
+<p>To see if your machine meets these requirements, check your Windows version and build number by opening a Run dialog (Win+R), then type <code>winver</code> and select <kbd>OK</kbd> or <kbd>Enter</kbd>. Alternatively, enter the <code>ver</code> command in Windows Command Prompt or <a href="/windows/terminal/">Windows Terminal</a>. You may be able to <a href="ms-settings:windowsupdate">update to the latest Windows version</a> in <strong>Windows Update</strong>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use AI assistance to <a href="#ask-copilot-for-help-with-command-line-arguments">create Windows Package Manager install commands for PowerToys with Copilot</a>.</p>
+</div>
+<h2 id="install-with-windows-executable-file-from-github">Install with Windows executable file from GitHub</h2>
+<div class="nextstepaction">
+<p><a href="https://aka.ms/installpowertoys">Install PowerToys</a></p>
+</div>
+<p>To install PowerToys using a Windows executable file:</p>
+<ol>
+<li>Visit the <a href="https://aka.ms/installpowertoys">Microsoft PowerToys GitHub releases page</a>.</li>
+<li>Select the <strong>Assets</strong> drop-down menu to display the files for the release.</li>
+<li>Select the <code>PowerToysSetup-0.##.#-x64.exe</code> or <code>PowerToysSetup-0.##.#-arm64.exe</code> file to download the PowerToys executable installer.</li>
+<li>Once downloaded, open the executable file and follow the installation prompts.</li>
+</ol>
+<h2 id="install-with-microsoft-store">Install with Microsoft Store</h2>
+<p>You can install PowerToys from the <a href="https://aka.ms/getPowertoys">Microsoft Store's PowerToys page</a>.</p>
+<h2 id="install-with-windows-package-manager">Install with Windows Package Manager</h2>
+<p>To install PowerToys using the <a href="../package-manager/winget/index.html">Windows Package Manager</a>, it's as simple as running the following command from the command line / PowerShell:</p>
+<pre><code class="lang-powershell">winget install --id Microsoft.PowerToys --source winget
+</code></pre>
+<p>PowerToys supports configuring through <code>winget configure</code> using <a href="dsc-configure.html">Desired State Configuration</a>.</p>
+<h2 id="command-line-installer-arguments">Command-line installer arguments</h2>
+<p>The installer executable accepts the <a href="/windows/win32/msi/standard-installer-command-line-options">Microsoft Standard Installer command-line options</a>.</p>
+<p>Here are some common commands you may want to use:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Abbreviation</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/quiet</td>
+<td>/q</td>
+<td>Silent install</td>
+</tr>
+<tr>
+<td>/silent</td>
+<td>/s</td>
+<td>Silent install</td>
+</tr>
+<tr>
+<td>/passive</td>
+<td></td>
+<td>progress bar only install</td>
+</tr>
+<tr>
+<td>/layout</td>
+<td></td>
+<td>create a local image of the bootstrapper</td>
+</tr>
+<tr>
+<td>/log</td>
+<td>/l</td>
+<td>log to a specific file</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ask-copilot-for-help-with-command-line-arguments">Ask Copilot for help with command-line arguments</h3>
+<p>You can get AI assistance from <a href="https://copilot.microsoft.com/">Copilot</a> to generate a <code>winget</code> command with the arguments you need. You can customize the prompt to generate a string per your requirements.</p>
+<p>The following text shows an example prompt for Copilot:</p>
+<pre><code class="lang-copilot-prompt">Generate a `winget` command to install Microsoft PowerToys with arguments to install silently and log the output to a file at the following path: C:\temp\install.log
+</code></pre>
+<p>Copilot is powered by AI, so surprises and mistakes are possible. For more information, see <a href="https://www.microsoft.com/microsoft-copilot/learn/">Copilot FAQs</a>.</p>
+<h3 id="extracting-the-msi-from-the-bundle">Extracting the MSI from the bundle</h3>
+<p>Make sure to have <a href="https://docs.firegiant.com/wix/wix3/">WiX Toolset v3</a> installed. The command doesn't work with WiX Toolset v4.</p>
+<p>This PowerShell example assumes the default install location for WiX Toolset and that the PowerToys installer has been downloaded to the Windows desktop.</p>
+<pre><code class="lang-powershell">cd $Env:WIX\&quot;bin&quot;
+
+# dark.exe -x OUTPUT_FOLDER INSTALLER_PATH
+.\dark.exe -x ${Env:\USERPROFILE}&quot;\Desktop\extractedPath&quot; ${Env:\USERPROFILE}&quot;\Desktop\PowerToysSetup-0.53.0-x64.exe&quot;
+</code></pre>
+<h3 id="fixes-for-uninstalling-051-and-earlier-builds-issues">Fixes for uninstalling 0.51 and earlier builds issues</h3>
+<p>If you have an issue with the MSI being inaccessible, you can download the installer that corresponds with the installed version via the <a href="https://github.com/microsoft/PowerToys/releases">PowerToys releases page</a> and run the following command. You'll need to change EXECUTABLE_INSTALLER_NAME to the actual file name.</p>
+<p>In PowerShell, run <code>.\EXECUTABLE_INSTALLER_NAME.exe --extract_msi</code> and this will extract the MSI to your desktop.</p>
+<h3 id="clean-up-scripts">Clean-up scripts</h3>
+<p>If there are problems while uninstalling a version, there are cleanup scripts available:</p>
+<ul>
+<li>&lt;github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool&gt;</li>
+<li>&lt;github.com/microsoft/PowerToys/tree/main/tools/CleanUp_tool_powershell_script&gt;</li>
+</ul>
+<h2 id="community-driven-install-tools">Community-driven install tools</h2>
+<p>These community-driven alternative install methods aren't officially supported, and the PowerToys team doesn't update or manage these packages.</p>
+<h3 id="install-with-chocolatey">Install with Chocolatey</h3>
+<p>To install <a href="https://community.chocolatey.org/packages/powertoys">PowerToys</a> using <a href="https://chocolatey.org/">Chocolatey</a>, run the following command from your command line / PowerShell:</p>
+<pre><code class="lang-powershell">choco install powertoys
+</code></pre>
+<p>To upgrade PowerToys, run:</p>
+<pre><code class="lang-powershell">choco upgrade powertoys
+</code></pre>
+<p>If you have issues when installing/upgrading, create an issue at the <a href="https://github.com/mkevenaar/chocolatey-packages/issues">maintainers GitHub repository</a> or follow the <a href="https://docs.chocolatey.org/en-us/community-repository/users/package-triage-process">Chocolatey triage process</a>.</p>
+<h3 id="install-with-scoop">Install with Scoop</h3>
+<p>To install PowerToys using <a href="https://scoop.sh/">Scoop</a>, run the following command from the command line / PowerShell:</p>
+<pre><code class="lang-powershell">scoop bucket add extras
+scoop install powertoys
+</code></pre>
+<p>To update PowerToys using Scoop, run the following command from the command line / PowerShell:</p>
+<pre><code class="lang-powershell">scoop update powertoys
+</code></pre>
+<p>If you have issues when installing/updating, file an issue in the <a href="https://github.com/lukesampson/scoop/issues">Scoop repo on GitHub</a>.</p>
+<h2 id="after-installation">After installation</h2>
+<p>After successfully installing PowerToys, an overview window will display with introductory guidance for each of the available utilities.</p>
+<p>If you view the Home view of the PowerToys settings, you can get quick access to some of the utilities, see an overview of the available shortcuts, and enable or disable individual utilities.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-settings-home.png" alt="A screenshot of the Home page of the PowerToys settings.">
+</span>
+</p>
+<h2 id="updates">Updates</h2>
+<p>PowerToys uses an automatic update checker that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. You can also check for updates manually from the PowerToys Settings.</p>
+<p><img src="../images/powertoys-updates.png" alt="PowerToys Update"></p>
+<h2 id="related-content">Related content</h2>
+<p><a href="index.html">Microsoft PowerToys: Utilities to customize Windows</a></p>
+<p><a href="general.html">General settings for PowerToys</a></p>
+<p><a href="https://github.com/microsoft/PowerToys">PowerToys on GitHub</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/install.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Overview of developing on Windows with Rust </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Overview of developing on Windows with Rust ">
+    
+    <meta name="description" content="An overview for beginners interested in developing on Windows with Rust.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="overview-of-developing-on-windows-with-rust">Overview of developing on Windows with Rust</h1>
+
+<p>It's not hard to get started with <a href="https://www.rust-lang.org/">Rust</a>. If you're a beginner who's interested in learning Rust using Windows, then we recommend that you follow each detail of this step-by-step guide. It shows you what to install, and how to set up your development environment.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you're already sold on Rust and you have your Rust environment already set up, and you just want to start calling Windows APIs, then feel free to jump forward to the <a href="rust-for-windows.html">Rust for Windows, and the windows crate</a> topic.</p>
+</div>
+<h2 id="what-is-rust">What is Rust?</h2>
+<p>Rust is a systems programming language, so it's used for writing systems (such as operating systems). But it can also be used for applications where performance and trustworthiness are important. The Rust language syntax is comparable to that of C++, provides performance on par with modern C++, and for many experienced developers Rust hits all the right notes when it comes to compilation and runtime model, type system, and deterministic finalization.</p>
+<p>In addition, Rust is designed around the promise of guaranteed memory safety, without the need for garbage collection.</p>
+<p>So why did we choose Rust for the latest language projection for Windows? One factor is that Stack Overflow's <a href="https://insights.stackoverflow.com/survey">annual developer survey</a> shows Rust to be the best-loved programming language by far, year after year. While you might find that the language has a steep learning curve, once you're over the hump it's hard not to fall in love.</p>
+<p>Furthermore, Microsoft is a founding member of the <a href="https://foundation.rust-lang.org/">Rust Foundation</a>. The Foundation is an independent non-profit organization, with a new approach to sustaining and growing a large, participatory, open source ecosystem.</p>
+<h2 id="the-pieces-of-the-rust-development-toolsetecosystem">The pieces of the Rust development toolset/ecosystem</h2>
+<p>We'll introduce some Rust tools and terms in this section. You can refer back here to refresh yourself on any of the descriptions.</p>
+<ul>
+<li>A <em>crate</em> is a Rust unit of compilation and linking. A crate can exist in source code form, and from there it can be processed into a crate in the form of either a binary executable (<em>binary</em> for short), or a binary library (<em>library</em> for short).</li>
+<li>A Rust project is known as a <em>package</em>. A package contains one or more crates, together with a <code>Cargo.toml</code> file that describes how to build those crates.</li>
+<li><code>rustup</code> is the installer and updater for the Rust toolchain.</li>
+<li><em>Cargo</em> is the name of Rust's package management tool.</li>
+<li><code>rustc</code> is the compiler for Rust. Most of the time, you won't invoke <code>rustc</code> directly; you'll invoke it indirectly via Cargo.</li>
+<li><em>crates.io</em> (<code>https://crates.io/</code>) is the Rust community's crate registry.</li>
+</ul>
+<h2 id="setting-up-your-development-environment">Setting up your development environment</h2>
+<p>In the next topic, we'll see how to <a href="setup.html">set up your dev environment on Windows for Rust</a>.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="https://www.rust-lang.org/">The Rust website</a></li>
+<li><a href="rust-for-windows.html">Rust for Windows, and the windows crate</a></li>
+<li><a href="https://insights.stackoverflow.com/survey">Stack Overflow annual developer survey</a></li>
+<li><a href="https://foundation.rust-lang.org/">Rust Foundation</a></li>
+<li><a href="https://crates.io/">crates.io</a></li>
+<li><a href="setup.html">Set up your dev environment on Windows for Rust</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/rust/overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

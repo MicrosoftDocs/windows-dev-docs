@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Designing for Xbox and TV </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Designing for Xbox and TV ">
+    
+    <meta name="description" content="Design your app so that it looks good and functions well on your television.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="designing-for-xbox-and-tv">Designing for Xbox and TV</h1>
+
+<p>Design your Windows app so that it looks good and functions well on Xbox One and television screens.</p>
+<p>See <a href="../input/gamepad-and-remote-interactions.html">Gamepad and remote control interactions</a> for guidance on interaction experiences in UWP applications in the <em>10-foot</em> experience.</p>
+<h2 id="overview">Overview</h2>
+<p>The Universal Windows Platform lets you create delightful experiences across multiple Windows devices.
+Most of the functionality provided by the UWP framework enables apps to use the same user interface (UI) across these devices, without additional work.
+However, tailoring and optimizing your app to work great on Xbox One and TV screens requires special considerations.</p>
+<p>The experience of sitting on your couch across the room, using a gamepad or remote to interact with your TV, is called the <strong>10-foot experience</strong>.
+It is so named because the user is generally sitting approximately 10 feet away from the screen.
+This provides unique challenges that aren't present in, say, the <em>2-foot</em> experience, or interacting with a PC.
+If you are developing an app for Xbox One or any other device that outputs to the TV screen and uses a controller for input, you should always keep this in mind.</p>
+<p>Not all of the steps in this article are required to make your app work well for 10-foot experiences, but understanding them and making the appropriate decisions for your app will result in a better 10-foot experience tailored for your app's specific needs.
+As you bring your app to life in the 10-foot environment, consider the following design principles.</p>
+<h3 id="simple">Simple</h3>
+<p>Designing for the 10-foot environment presents a unique set of challenges. Resolution and viewing distance can make it difficult for people to process too much information.
+Try to keep your design clean, reduced to the simplest possible components. The amount of information displayed on a TV should be comparable to what you'd see on a mobile phone, rather than on a desktop.</p>
+<p><img src="images/designing-for-tv/xbox-home-screen.png" alt="Xbox One home screen"></p>
+<h3 id="coherent">Coherent</h3>
+<p>UWP apps in the 10-foot environment should be intuitive and easy to use. Make the focus clear and unmistakable.
+Arrange content so that movement across the space is consistent and predictable. Give people the shortest path to what they want to do.</p>
+<p><img src="images/designing-for-tv/xbox-movies-app.png" alt="Xbox One Movies app"></p>
+<p><em><strong>All movies shown in the screenshot are available on Microsoft Movies &amp; TV.</strong></em></p>
+<h3 id="captivating">Captivating</h3>
+<p>The most immersive, cinematic experiences take place on the big screen. Edge-to-edge scenery, elegant motion, and vibrant use of color and typography take your apps to the next level. Be bold and beautiful.</p>
+<p><img src="images/designing-for-tv/xbox-avatar-app.png" alt="Xbox One Avatar app"></p>
+<h3 id="optimizations-for-the-10-foot-experience">Optimizations for the 10-foot experience</h3>
+<p>Now that you know the principles of good UWP app design for the 10-foot experience, read through the following overview of the specific ways you can optimize your app and make for a great user experience.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#ui-element-sizing">UI element sizing</a></td>
+<td>The Universal Windows Platform uses <a href="../layout/screen-sizes-and-breakpoints-for-responsive-design.html#effective-pixels-and-scale-factor">scaling and effective pixels</a> to scale the UI according to the viewing distance. Understanding sizing and applying it across your UI will help optimize your app for the 10-foot environment.</td>
+</tr>
+<tr>
+<td><a href="#tv-safe-area">TV-safe area</a></td>
+<td>The UWP will automatically avoid displaying any UI in TV-unsafe areas (areas close to the edges of the screen) by default. However, this creates a &quot;boxed-in&quot; effect in which the UI looks letterboxed. For your app to be truly immersive on TV, you will want to modify it so that it extends to the edges of the screen on TVs that support it.</td>
+</tr>
+<tr>
+<td><a href="#colors">Colors</a></td>
+<td>The UWP supports color themes, and an app that respects the system theme will default to <strong>dark</strong> on Xbox One. If your app has a specific color theme, you should consider that some colors don't work well for TV and should be avoided.</td>
+</tr>
+<tr>
+<td><a href="../style/sound.html">Sound</a></td>
+<td>Sounds play a key role in the 10-foot experience, helping to immerse and give feedback to the user. The UWP provides functionality that automatically turns on sounds for common controls when the app is running on Xbox One. Find out more about the sound support built into the UWP and learn how to take advantage of it.</td>
+</tr>
+<tr>
+<td><a href="#guidelines-for-ui-controls">Guidelines for UI controls</a></td>
+<td>There are several UI controls that work well across multiple devices, but have certain considerations when used on TV. Read about some best practices for using these controls when designing for the 10-foot experience.</td>
+</tr>
+<tr>
+<td><a href="#custom-visual-state-trigger-for-xbox">Custom visual state trigger for Xbox</a></td>
+<td>To tailor your UWP app for the 10-foot experience, we recommend that you use a custom <em>visual state trigger</em> to make layout changes when the app detects that it has been launched on an Xbox console.</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the preceding design and layout considerations, there are a number of <a href="../input/gamepad-and-remote-interactions.html">gamepad and remote control interaction</a> optimizations you should consider when building your app.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../input/gamepad-and-remote-interactions.html#xy-focus-navigation-and-interaction">XY focus navigation and interaction</a></td>
+<td><strong>XY focus navigation</strong> enables the user to navigate around your app's UI. However, this limits the user to navigating up, down, left, and right. Recommendations for dealing with this and other considerations are outlined in this section.</td>
+</tr>
+<tr>
+<td><a href="../input/gamepad-and-remote-interactions.html#mouse-mode">Mouse mode</a></td>
+<td>XY focus navigation isn't practical, or even possible, for some types of applications, such as maps or drawing and painting apps. In these cases, <strong>mouse mode</strong> lets users navigate freely with a gamepad or remote control, just like a mouse on a PC.</td>
+</tr>
+<tr>
+<td><a href="../input/gamepad-and-remote-interactions.html#focus-visual">Focus visual</a></td>
+<td>The focus visual is a border that highlights the currently focused UI element. This helps the user quickly identify the UI they are navigating through or interacting with.</td>
+</tr>
+<tr>
+<td><a href="../input/gamepad-and-remote-interactions.html#focus-engagement">Focus engagement</a></td>
+<td>Focus engagement requires the user to press the <strong>A/Select</strong> button on a gamepad or remote control when a UI element has focus in order to interact with it.</td>
+</tr>
+<tr>
+<td><a href="../input/gamepad-and-remote-interactions.html#hardware-buttons">Hardware buttons</a></td>
+<td>The gamepad and remote control provide very different buttons and configurations.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Most of the code snippets in this topic are in XAML/C#; however, the principles and concepts apply to all UWP apps. If you're developing an HTML/JavaScript UWP app for Xbox, check out the excellent <a href="https://github.com/Microsoft/TVHelpers/wiki">TVHelpers</a> library on GitHub.</p>
+</div>
+<h2 id="ui-element-sizing">UI element sizing</h2>
+<p>Because the user of an app in the 10-foot environment is using a remote control or gamepad and is sitting several feet away from the screen, there are some UI considerations that need to be factored into your design.
+Make sure that the UI has an appropriate content density and is not too cluttered so that the user can easily navigate and select elements. Remember: simplicity is key.</p>
+<h3 id="scale-factor-and-adaptive-layout">Scale factor and adaptive layout</h3>
+<p><strong>Scale factor</strong> helps with ensuring that UI elements are displayed with the right sizing for the device on which the app is running.
+On desktop, this setting can be found in <strong>Settings &gt; System &gt; Display</strong> as a sliding value.
+This same setting exists on phone as well if the device supports it.</p>
+<p><img src="images/designing-for-tv/ui-scaling.png" alt="Change the size of text, apps, and other items"></p>
+<p>On Xbox One, there is no such system setting; however, for UWP UI elements to be sized appropriately for TV, they are scaled at a default of <strong>200%</strong> for XAML apps and <strong>150%</strong> for HTML apps.
+As long as UI elements are appropriately sized for other devices, they will be appropriately sized for TV.
+Xbox One renders your app at 1080p (1920 x 1080 pixels). Therefore, when bringing an app from other devices such as PC,
+ensure that the UI looks great at 960 x 540 px at 100% scale (or 1280 x 720 px at 100% scale for HTML apps) utilizing <a href="../layout/screen-sizes-and-breakpoints-for-responsive-design.html">adaptive techniques</a>.</p>
+<p>Designing for Xbox is a little different from designing for PC because you only need to worry about one resolution, 1920 x 1080.
+It doesn't matter if the user has a TV that has better resolution—UWP apps will always scale to 1080p.</p>
+<p>Correct asset sizes from the 200% (or 150% for HTML apps) set will also be pulled in for your app when running on Xbox One, regardless of TV resolution.</p>
+<h3 id="content-density">Content density</h3>
+<p>When designing your app, remember that the user will be viewing the UI from a distance and interacting with it by using a remote or game controller, which takes more time to navigate than using mouse or touch input.</p>
+<h4 id="sizes-of-ui-controls">Sizes of UI controls</h4>
+<p>Interactive UI elements should be sized at a minimum height of 32 epx (effective pixels). This is the default for common UWP controls, and when used at 200% scale, it ensures that UI elements are visible from a distance and helps reduce content density.</p>
+<p><img src="images/designing-for-tv/button-100-200.png" alt="UWP button at 100% and 200% scale"></p>
+<h4 id="number-of-clicks">Number of clicks</h4>
+<p>When the user is navigating from one edge of the TV screen to the other, it should take no more than <strong>six clicks</strong> to simplify your UI. Again, the principle of <strong>simplicity</strong> applies here.</p>
+<p><img src="images/designing-for-tv/six-clicks.png" alt="6 icons across"></p>
+<h3 id="text-sizes">Text sizes</h3>
+<p>To make your UI visible from a distance, use the following rules of thumb:</p>
+<ul>
+<li>Main text and reading content: 15 epx minimum</li>
+<li>Non-critical text and supplemental content: 12 epx minimum</li>
+</ul>
+<p>When using larger text in your UI, pick a size that does not limit screen real estate too much, taking up space that other content could potentially fill.</p>
+<h3 id="opting-out-of-scale-factor">Opting out of scale factor</h3>
+<p>We recommend that your app take advantage of scale factor support, which will help it run appropriately on all devices by scaling for each device type.
+However, it is possible to opt out of this behavior and design all of your UI at 100% scale. Note that you cannot change the scale factor to anything other than 100%.</p>
+<p>For XAML apps, you can opt out of scale factor by using the following code snippet:</p>
+<pre><code class="lang-csharp">bool result =
+    Windows.UI.ViewManagement.ApplicationViewScaling.TrySetDisableLayoutScaling(true);
+</code></pre>
+<p><code>result</code> will inform you whether you successfully opted out.</p>
+<p>For more information, including sample code for HTML/JavaScript, see <a href="/windows/uwp/xbox-apps/disable-scaling">How to turn off scaling</a>.</p>
+<p>Please be sure to calculate the appropriate sizes of UI elements by doubling the <em>effective</em> pixel values mentioned in this topic to <em>actual</em> pixel values (or multiplying by 1.5 for HTML apps).</p>
+<h2 id="tv-safe-area">TV-safe area</h2>
+<p>Not all TVs display content all the way to the edges of the screen due to historical and technological reasons. By default, the UWP will avoid displaying any UI content in TV-unsafe areas and instead will only draw the page background.</p>
+<p>The TV-unsafe area is represented by the blue area in the following image.</p>
+<p><img src="images/designing-for-tv/tv-unsafe-area.png" alt="TV-unsafe area"></p>
+<p>You can set the background to a static or themed color, or to an image, as the following code snippets demonstrate.</p>
+<h3 id="theme-color">Theme color</h3>
+<pre><code class="lang-xml">&lt;Page x:Class=&quot;Sample.MainPage&quot;
+      Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;/&gt;
+</code></pre>
+<h3 id="image">Image</h3>
+<pre><code class="lang-xml">&lt;Page x:Class=&quot;Sample.MainPage&quot;
+      Background=&quot;\Assets\Background.png&quot;/&gt;
+</code></pre>
+<p>This is what your app will look like without additional work.</p>
+<p><img src="images/designing-for-tv/tv-safe-area.png" alt="TV-safe area"></p>
+<p>This is not optimal because it gives the app a &quot;boxed-in&quot; effect, with parts of the UI such as the nav pane and grid seemingly cut off. However, you can make optimizations to extend parts of the UI to the edges of the screen to give the app a more cinematic effect.</p>
+<h3 id="drawing-ui-to-the-edge">Drawing UI to the edge</h3>
+<p>We recommend that you use certain UI elements to extend to the edges of the screen to provide more immersion to the user. These include <a href="/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer">ScrollViewers</a>, <a href="../controls/navigationview.html">nav panes</a>, and <a href="/uwp/api/Windows.UI.Xaml.Controls.CommandBar">CommandBars</a>.</p>
+<p>On the other hand, it's also important that interactive elements and text always avoid the screen edges to ensure that they won't be cut off on some TVs. We recommend that you draw only non-essential visuals within 5% of the screen edges. As mentioned in <a href="#ui-element-sizing">UI element sizing</a>, a UWP app following the Xbox One console's default scale factor of 200% will utilize an area of 960 x 540 epx, so in your app's UI, you should avoid putting essential UI in the following areas:</p>
+<ul>
+<li>27 epx from the top and bottom</li>
+<li>48 epx from the left and right sides</li>
+</ul>
+<p>The following sections describe how to make your UI extend to the screen edges.</p>
+<h4 id="core-window-bounds">Core window bounds</h4>
+<p>For UWP apps targeting only the 10-foot experience, using core window bounds is a more straightforward option.</p>
+<p>In the <code>OnLaunched</code> method of <code>App.xaml.cs</code>, add the following code:</p>
+<pre><code class="lang-csharp">Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMode
+    (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
+</code></pre>
+<p>With this line of code, the app window will extend to the edges of the screen, so you will need to move all interactive and essential UI into the TV-safe area described earlier. Transient UI, such as context menus and opened <a href="/uwp/api/Windows.UI.Xaml.Controls.ComboBox">ComboBoxes</a>, will automatically remain inside the TV-safe area.</p>
+<p><img src="images/designing-for-tv/core-window-bounds.png" alt="Core window bounds"></p>
+<h4 id="pane-backgrounds">Pane backgrounds</h4>
+<p>Navigation panes are typically drawn near the edge of the screen, so the background should extend into the TV-unsafe area so as not to introduce awkward gaps. You can do this by simply changing the color of the nav pane's background to the color of the app's background.</p>
+<p>Using the core window bounds as previously described will allow you to draw your UI to the edges of the screen, but you should then use positive margins on the <a href="/uwp/api/Windows.UI.Xaml.Controls.SplitView">SplitView</a>'s content to keep it within the TV-safe area.</p>
+<p><img src="images/designing-for-tv/tv-safe-areas-2.png" alt="Nav pane extended to edges of screen"></p>
+<p>Here, the nav pane's background has been extended to the edges of the screen, while its navigation items are kept in the TV-safe area.
+The content of the <code>SplitView</code> (in this case, a grid of items) has been extended to the bottom of the screen so that it looks like it continues and isn't cut off, while the top of the grid is still within the TV-safe area. (Learn more about how to do this in <a href="#scrolling-ends-of-lists-and-grids">Scrolling ends of lists and grids</a>).</p>
+<p>The following code snippet achieves this effect:</p>
+<pre><code class="lang-xml">&lt;SplitView x:Name=&quot;RootSplitView&quot;
+           Margin=&quot;48,0,48,0&quot;&gt;
+    &lt;SplitView.Pane&gt;
+        &lt;ListView x:Name=&quot;NavMenuList&quot;
+                  ContainerContentChanging=&quot;NavMenuItemContainerContentChanging&quot;
+                  ItemContainerStyle=&quot;{StaticResource NavMenuItemContainerStyle}&quot;
+                  ItemTemplate=&quot;{StaticResource NavMenuItemTemplate}&quot;
+                  ItemInvoked=&quot;NavMenuList_ItemInvoked&quot;
+                  ItemsSource=&quot;{Binding NavMenuListItems}&quot;/&gt;
+    &lt;/SplitView.Pane&gt;
+    &lt;Frame x:Name=&quot;frame&quot;
+           Navigating=&quot;OnNavigatingToPage&quot;
+           Navigated=&quot;OnNavigatedToPage&quot;/&gt;
+&lt;/SplitView&gt;
+</code></pre>
+<p><a href="/uwp/api/Windows.UI.Xaml.Controls.CommandBar">CommandBar</a> is another example of a pane that is commonly positioned near one or more edges of the app, and as such on TV its background should extend to the edges of the screen. It also usually contains a <strong>More</strong> button, represented by &quot;...&quot; on the right side, which should remain in the TV-safe area. The following are a few different strategies to achieve the desired interactions and visual effects.</p>
+<p><strong>Option 1</strong>: Change the <code>CommandBar</code> background color to either transparent or the same color as the page background:</p>
+<pre><code class="lang-xml">&lt;CommandBar x:Name=&quot;topbar&quot;
+            Background=&quot;{ThemeResource SystemControlBackgroundAltHighBrush}&quot;&gt;
+            ...
+&lt;/CommandBar&gt;
+</code></pre>
+<p>Doing this will make the <code>CommandBar</code> look like it is on top of the same background as the rest of the page, so the background seamlessly flows to the edge of the screen.</p>
+<p><strong>Option 2</strong>: Add a background rectangle whose fill is the same color as the <code>CommandBar</code> background, and have it lie below the <code>CommandBar</code> and across the rest of the page:</p>
+<pre><code class="lang-xml">&lt;Rectangle VerticalAlignment=&quot;Top&quot;
+            HorizontalAlignment=&quot;Stretch&quot;      
+            Fill=&quot;{ThemeResource SystemControlBackgroundChromeMediumBrush}&quot;/&gt;
+&lt;CommandBar x:Name=&quot;topbar&quot;
+            VerticalAlignment=&quot;Top&quot;
+            HorizontalContentAlignment=&quot;Stretch&quot;&gt;
+            ...
+&lt;/CommandBar&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If using this approach, be aware that the <strong>More</strong> button changes the height of the opened <code>CommandBar</code> if necessary, in order to show the labels of the <code>AppBarButton</code>s below their icons. We recommend that you move the labels to the <em>right</em> of their icons to avoid this resizing. For more information, see <a href="#commandbar-labels">CommandBar labels</a>.</p>
+</div>
+<p>Both of these approaches also apply to the other types of controls listed in this section.</p>
+<h4 id="scrolling-ends-of-lists-and-grids">Scrolling ends of lists and grids</h4>
+<p>It's common for lists and grids to contain more items than can fit onscreen at the same time. When this is the case, we recommend that you extend the list or grid to the edge of the screen. Horizontally scrolling lists and grids should extend to the right edge, and vertically scrolling ones should extend to the bottom.</p>
+<p><img src="images/designing-for-tv/tv-safe-area-grid-cutoff.png" alt="TV safe area grid cutoff"></p>
+<p>While a list or grid is extended like this, it's important to keep the focus visual and its associated item inside the TV-safe area.</p>
+<p><img src="images/designing-for-tv/scrolling-grid-focus.png" alt="Scrolling grid focus should be kept in TV-safe area"></p>
+<p>The UWP has functionality that will keep the focus visual inside the <a href="/uwp/api/windows.ui.viewmanagement.applicationview.visiblebounds">VisibleBounds</a>, but you need to add padding to ensure that the list/grid items can scroll into view of the safe area. Specifically, you add a positive margin to the <a href="/uwp/api/Windows.UI.Xaml.Controls.ListView">ListView</a> or <a href="/uwp/api/Windows.UI.Xaml.Controls.GridView">GridView</a>'s <a href="/uwp/api/Windows.UI.Xaml.Controls.ItemsPresenter">ItemsPresenter</a>, as in the following code snippet:</p>
+<pre><code class="lang-xml">&lt;Style x:Key=&quot;TitleSafeListViewStyle&quot;
+       TargetType=&quot;ListView&quot;&gt;
+    &lt;Setter Property=&quot;Template&quot;&gt;
+        &lt;Setter.Value&gt;
+            &lt;ControlTemplate TargetType=&quot;ListView&quot;&gt;
+                &lt;Border BorderBrush=&quot;{TemplateBinding BorderBrush}&quot;
+                        Background=&quot;{TemplateBinding Background}&quot;
+                        BorderThickness=&quot;{TemplateBinding BorderThickness}&quot;&gt;
+                    &lt;ScrollViewer x:Name=&quot;ScrollViewer&quot;
+                                  TabNavigation=&quot;{TemplateBinding TabNavigation}&quot;
+                                  HorizontalScrollMode=&quot;{TemplateBinding ScrollViewer.HorizontalScrollMode}&quot;
+                                  HorizontalScrollBarVisibility=&quot;{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}&quot;
+                                  IsHorizontalScrollChainingEnabled=&quot;{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}&quot;
+                                  VerticalScrollMode=&quot;{TemplateBinding ScrollViewer.VerticalScrollMode}&quot;
+                                  VerticalScrollBarVisibility=&quot;{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}&quot;
+                                  IsVerticalScrollChainingEnabled=&quot;{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}&quot;
+                                  IsHorizontalRailEnabled=&quot;{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}&quot;
+                                  IsVerticalRailEnabled=&quot;{TemplateBinding ScrollViewer.IsVerticalRailEnabled}&quot;
+                                  ZoomMode=&quot;{TemplateBinding ScrollViewer.ZoomMode}&quot;
+                                  IsDeferredScrollingEnabled=&quot;{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}&quot;
+                                  BringIntoViewOnFocusChange=&quot;{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}&quot;
+                                  AutomationProperties.AccessibilityView=&quot;Raw&quot;&gt;
+                        &lt;ItemsPresenter Header=&quot;{TemplateBinding Header}&quot;
+                                        HeaderTemplate=&quot;{TemplateBinding HeaderTemplate}&quot;
+                                        HeaderTransitions=&quot;{TemplateBinding HeaderTransitions}&quot;
+                                        Footer=&quot;{TemplateBinding Footer}&quot;
+                                        FooterTemplate=&quot;{TemplateBinding FooterTemplate}&quot;
+                                        FooterTransitions=&quot;{TemplateBinding FooterTransitions}&quot;
+                                        Padding=&quot;{TemplateBinding Padding}&quot;
+                                        Margin=&quot;0,27,0,27&quot;/&gt;
+                    &lt;/ScrollViewer&gt;
+                &lt;/Border&gt;
+            &lt;/ControlTemplate&gt;
+        &lt;/Setter.Value&gt;
+    &lt;/Setter&gt;
+&lt;/Style&gt;
+</code></pre>
+<p>You would put the previous code snippet in either the page or app resources, and then access it in the following way:</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;Grid&gt;
+        &lt;ListView Style=&quot;{StaticResource TitleSafeListViewStyle}&quot;
+                  ... /&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This code snippet is specifically for <code>ListView</code>s; for a <code>GridView</code> style, set the <a href="/uwp/api/windows.ui.xaml.controls.controltemplate.targettype">TargetType</a> attribute for both the <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate">ControlTemplate</a> and the <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> to <code>GridView</code>.</p>
+</div>
+<p>For more fine-grained control over how items are brought into view, if your application targets version 1803 or later, you can use the <a href="/uwp/api/windows.ui.xaml.uielement.bringintoviewrequested">UIElement.BringIntoViewRequested event</a>. You can put it on the <a href="/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel">ItemsPanel</a> for the <strong>ListView</strong>/<strong>GridView</strong> to catch it before the internal <strong>ScrollViewer</strong> does, as in the following code snippets:</p>
+<pre><code class="lang-xaml">&lt;GridView x:Name=&quot;gridView&quot;&gt;
+    &lt;GridView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid Orientation=&quot;Horizontal&quot;
+                           BringIntoViewRequested=&quot;ItemsWrapGrid_BringIntoViewRequested&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/GridView.ItemsPanel&gt;
+&lt;/GridView&gt;
+</code></pre>
+<pre><code class="lang-cs">// The BringIntoViewRequested event is raised by the framework when items receive keyboard (or Narrator) focus or 
+// someone triggers it with a call to UIElement.StartBringIntoView.
+private void ItemsWrapGrid_BringIntoViewRequested(UIElement sender, BringIntoViewRequestedEventArgs args)
+{
+    if (args.VerticalAlignmentRatio != 0.5)  // Guard against our own request
+    {
+        args.Handled = true;
+        // Swallow this request and restart it with a request to center the item.  We could instead have chosen
+        // to adjust the TargetRect's Y and Height values to add a specific amount of padding as it bubbles up, 
+        // but if we just want to center it then this is easier.
+
+        // (Optional) Account for sticky headers if they exist
+        var headerOffset = 0.0;
+        var itemsWrapGrid = sender as ItemsWrapGrid;
+        if (gridView.IsGrouping &amp;&amp; itemsWrapGrid.AreStickyGroupHeadersEnabled)
+        {
+            var header = gridView.GroupHeaderContainerFromItemContainer(args.TargetElement as GridViewItem);
+            if (header != null)
+            {
+                headerOffset = ((FrameworkElement)header).ActualHeight;
+            }
+        }
+
+        // Issue a new request
+        args.TargetElement.StartBringIntoView(new BringIntoViewOptions()
+        {
+            AnimationDesired = true,
+            VerticalAlignmentRatio = 0.5, // a normalized alignment position (0 for the top, 1 for the bottom)
+            VerticalOffset = headerOffset, // applied after meeting the alignment ratio request
+        });
+    }
+}
+</code></pre>
+<h2 id="colors">Colors</h2>
+<p>By default, the Universal Windows Platform scales your app's colors to the TV-safe range (see <a href="#tv-safe-colors">TV-safe colors</a> for more information) so that your app looks good on any TV. In addition, there are improvements that you can make to the set of colors your app uses to improve the visual experience on TV.</p>
+<h3 id="application-theme">Application theme</h3>
+<p>You can choose an <strong>Application theme</strong> (dark or light) according to what is right for your app, or you can opt out of theming. Read more about general recommendations for themes in <a href="../style/color.md">Color themes</a>.</p>
+<p>The UWP also allows apps to dynamically set the theme based on the system settings provided by the devices on which they run.
+While the UWP always respects the theme settings specified by the user, each device also provides an appropriate default theme.
+Because of the nature of Xbox One, which is expected to have more <em>media</em> experiences than <em>productivity</em> experiences, it defaults to a dark system theme.
+If your app's theme is based on the system settings, expect it to default to dark on Xbox One.</p>
+<h3 id="accent-color">Accent color</h3>
+<p>The UWP provides a convenient way to expose the <strong>accent color</strong> that the user has selected from their system settings.</p>
+<p>On Xbox One, the user is able to select a user color, just as they can select an accent color on a PC.
+As long as your app calls these accent colors through brushes or color resources, the color that the user selected in the system settings will be used. Note that accent colors on Xbox One are per user, not per system.</p>
+<p>Please also note that the set of user colors on Xbox One is not the same as that on PCs, phones, and other devices.</p>
+<p>As long as your app uses a brush resource such as <strong>SystemControlForegroundAccentBrush</strong>, or a color resource (<strong>SystemAccentColor</strong>), or instead calls accent colors directly through the <a href="/uwp/api/Windows.UI.ViewManagement.UIColorType">UIColorType.Accent*</a> API, those colors are replaced with accent colors available on Xbox One. High contrast brush colors are also pulled in from the system the same way as on a PC and phone.</p>
+<p>To learn more about accent color in general, see <a href="../style/color.md#accent-color">Accent color</a>.</p>
+<h3 id="color-variance-among-tvs">Color variance among TVs</h3>
+<p>When designing for TV, note that colors display quite differently depending on the TV on which they are rendered. Don't assume colors will look exactly as they do on your monitor. If your app relies on subtle differences in color to differentiate parts of the UI, colors could blend together and users could get confused. Try to use colors that are different enough that users will be able to clearly differentiate them, regardless of the TV they are using.</p>
+<h3 id="tv-safe-colors">TV-safe colors</h3>
+<p>A color's RGB values represent intensities for red, green, and blue. TVs don't handle extreme intensities very well—they can produce an odd banded effect, or appear washed out on certain TVs. Additionally, high-intensity colors may cause blooming (nearby pixels start drawing the same colors). While there are different schools of thought in what are considered TV-safe colors, colors within the RGB values of 16-235 (or 10-EB in hexadecimal) are generally safe to use for TV.</p>
+<p><img src="images/designing-for-tv/tv-safe-colors-2.png" alt="TV-safe color range"></p>
+<p>Historically, apps on Xbox had to tailor their colors to fall within this &quot;TV-safe&quot; color range; however, starting with the Fall Creators Update, Xbox One automatically scales full range content into the TV-safe range. This means that most app developers no longer have to worry about TV-safe colors.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Video content that's already in the TV-safe color range doesn't have this color scaling effect applied when played back using <a href="/windows/desktop/medfound/microsoft-media-foundation-sdk">Media Foundation</a>.</p>
+</div>
+<p>If you're developing an app using DirectX 11 or DirectX 12 and creating your own swap chain to render UI or video, you can specify the color space you use by calling <a href="/windows/desktop/api/dxgi1_4/nf-dxgi1_4-idxgiswapchain3-setcolorspace1">IDXGISwapChain3::SetColorSpace1</a>, which will let the system know if it needs to scale colors or not.</p>
+<h2 id="guidelines-for-ui-controls">Guidelines for UI controls</h2>
+<p>There are several UI controls that work well across multiple devices, but have certain considerations when used on TV. Read about some best practices for using these controls when designing for the 10-foot experience.</p>
+<p><a name="navigation-pane"></a></p>
+<h3 id="navigation-pane">Navigation pane</h3>
+<p>A navigation pane (also known as a <em>hamburger menu</em>) is a navigation control commonly used in UWP apps. Typically it is a pane with several options to choose from in a list style menu that will take the user to different pages. Generally this pane starts out collapsed to save space, and the user can open it by clicking on a button.</p>
+<p>While nav panes are very accessible with mouse and touch, gamepad/remote makes them less accessible since the user has to navigate to a button to open the pane. Therefore, a good practice is to have the <strong>View</strong> button open the nav pane, as well as allow the user to open it by navigating all the way to the left of the page. Code sample on how to implement this design pattern can be found in <a href="../input/focus-navigation-programmatic.html#split-view-code-sample">Programmatic focus navigation</a> document. This will provide the user with very easy access to the contents of the pane. For more information about how nav panes behave in different screen sizes as well as best practices for gamepad/remote navigation, see <a href="../controls/navigationview.html">Nav panes</a>.</p>
+<h3 id="commandbar-labels">CommandBar labels</h3>
+<p>It is a good idea to have the labels placed to the right of the icons on a <a href="/uwp/api/Windows.UI.Xaml.Controls.CommandBar">CommandBar</a> so that its height is minimized and stays consistent. You can do this by setting the <a href="/uwp/api/windows.ui.xaml.controls.commandbar.defaultlabelpositionproperty">CommandBar.DefaultLabelPosition</a> property to <code>CommandBarDefaultLabelPosition.Right</code>.</p>
+<p><img src="images/designing-for-tv/commandbar.png" alt="CommandBar with labels to the right of icons"></p>
+<p>Setting this property will also cause the labels to always be displayed, which works well for the 10-foot experience because it minimizes the number of clicks for the user. This is also a great model for other device types to follow.</p>
+<h3 id="tooltip">Tooltip</h3>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.ToolTip">Tooltip</a> control was introduced as a way to provide more information in the UI when the user hovers the mouse over, or taps and holds their figure on, an element. For gamepad and remote, <code>Tooltip</code> appears after a brief moment when the element gets focus, stays onscreen for a short time, and then disappears. This behavior could be distracting if too many <code>Tooltip</code>s are used. Try to avoid using <code>Tooltip</code> when designing for TV.</p>
+<h3 id="button-styles">Button styles</h3>
+<p>While the standard UWP buttons work well on TV, some visual styles of buttons call attention to the UI better, which you may want to consider for all platforms, particularly in the 10-foot experience, which benefits from clearly communicating where the focus is located. To read more about these styles, see <a href="../controls/buttons.html">Buttons</a>.</p>
+<h3 id="nested-ui-elements">Nested UI elements</h3>
+<p>Nested UI exposes nested actionable items enclosed inside a container UI element where both the nested item as well as the container item can take independent focus from each other.</p>
+<p>Nested UI works well for some input types, but not always for gamepad and remote, which rely on XY navigation. Be sure to follow the guidance in this topic to ensure that your UI is optimized for the 10-foot environment, and that the user can access all interactable elements easily. One common solution is to place nested UI elements in a <code>ContextFlyout</code>.</p>
+<p>For more information on nested UI, see <a href="../controls/nested-ui.html">Nested UI in list items</a>.</p>
+<h3 id="mediatransportcontrols">MediaTransportControls</h3>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls">MediaTransportControls</a> element lets users interact with their media by providing a default playback experience that allows them to play, pause, turn on closed captions, and more. This control is a property of <a href="/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement">MediaPlayerElement</a> and supports two layout options: <em>single-row</em> and <em>double-row</em>. In the single-row layout, the slider and playback buttons are all located in one row, with the play/pause button located to the left of the slider. In the double-row layout, the slider occupies its own row, with the playback buttons on a separate lower row. When designing for the 10-foot experience, the double-row layout should be used, as it provides better navigation for gamepad. To enable the double-row layout, set <code>IsCompact=&quot;False&quot;</code> on the <code>MediaTransportControls</code> element in the <a href="/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols">TransportControls</a> property of the <code>MediaPlayerElement</code>.</p>
+<pre><code class="lang-xml">&lt;MediaPlayerElement x:Name=&quot;mediaPlayerElement1&quot;  
+                    Source=&quot;Assets/video.mp4&quot;
+                    AreTransportControlsEnabled=&quot;True&quot;&gt;
+    &lt;MediaPlayerElement.TransportControls&gt;
+        &lt;MediaTransportControls IsCompact=&quot;False&quot;/&gt;
+    &lt;/MediaPlayerElement.TransportControls&gt;
+&lt;/MediaPlayerElement&gt;
+</code></pre>
+<p>Visit <a href="../controls/media-playback.html">Media playback</a> to learn more about adding media to your app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>MediaPlayerElement</code> is only available in Windows 10, version 1607 and later. If you're developing an app for an earlier version of Windows 10, you'll need to use <a href="/uwp/api/Windows.UI.Xaml.Controls.MediaElement">MediaElement</a> instead. The recommendations above apply to <code>MediaElement</code> as well, and the <code>TransportControls</code> property is accessed in the same way.</p>
+</div>
+<h3 id="search-experience">Search experience</h3>
+<p>Searching for content is one of the most commonly performed functions in the 10-foot experience. If your app provides a search experience, it is helpful for the user to have quick access to it by using the <strong>Y</strong> button on the gamepad as an accelerator.</p>
+<p>Most customers should already be familiar with this accelerator, but if you like you can add a visual <strong>Y</strong> glyph to the UI to indicate that the customer can use the button to access search functionality. If you do add this cue, be sure to use the symbol from the <strong>Segoe Xbox MDL2 Symbol</strong> font (<code>&amp;#xE3CC;</code> for XAML apps, <code>\E426</code> for HTML apps) to provide consistency with the Xbox shell and other apps.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because the <strong>Segoe Xbox MDL2 Symbol</strong> font is only available on Xbox, the symbol won't appear correctly on your PC. However, it will show up on the TV once you deploy to Xbox.</p>
+</div>
+<p>Since the <strong>Y</strong> button is only available on gamepad, make sure to provide other methods of access to search, such as buttons in the UI. Otherwise, some customers may not be able to access the functionality.</p>
+<p>In the 10-foot experience, it is often easier for customers to use a full screen search experience because there is limited room on the display. Whether you have full screen or partial-screen, &quot;in-place&quot; search, we recommend that when the user opens the search experience, the onscreen keyboard appears already opened, ready for the customer to enter search terms.</p>
+<h2 id="custom-visual-state-trigger-for-xbox">Custom visual state trigger for Xbox</h2>
+<p>To tailor your UWP app for the 10-foot experience, we recommend that you make layout changes when the app detects that it has been launched on an Xbox console. One way to do this is by using a custom <em>visual state trigger</em>. Visual state triggers are most useful when you want to edit in <strong>Blend for Visual Studio</strong>. The following code snippet shows how to create a visual state trigger for Xbox:</p>
+<pre><code class="lang-xml">&lt;VisualStateManager.VisualStateGroups&gt;
+    &lt;VisualStateGroup&gt;
+        &lt;VisualState&gt;
+            &lt;VisualState.StateTriggers&gt;
+                &lt;triggers:DeviceFamilyTrigger DeviceFamily=&quot;Windows.Xbox&quot;/&gt;
+            &lt;/VisualState.StateTriggers&gt;
+            &lt;VisualState.Setters&gt;
+                &lt;Setter Target=&quot;RootSplitView.OpenPaneLength&quot;
+                        Value=&quot;368&quot;/&gt;
+                &lt;Setter Target=&quot;RootSplitView.CompactPaneLength&quot;
+                        Value=&quot;96&quot;/&gt;
+                &lt;Setter Target=&quot;NavMenuList.Margin&quot;
+                        Value=&quot;0,75,0,27&quot;/&gt;
+                &lt;Setter Target=&quot;Frame.Margin&quot;
+                        Value=&quot;0,27,48,27&quot;/&gt;
+                &lt;Setter Target=&quot;NavMenuList.ItemContainerStyle&quot;
+                        Value=&quot;{StaticResource NavMenuItemContainerXboxStyle}&quot;/&gt;
+            &lt;/VisualState.Setters&gt;
+        &lt;/VisualState&gt;
+    &lt;/VisualStateGroup&gt;
+&lt;/VisualStateManager.VisualStateGroups&gt;
+</code></pre>
+<p>To create the trigger, add the following class to your app. This is the class that is referenced by the XAML code above:</p>
+<pre><code class="lang-csharp">class DeviceFamilyTrigger : StateTriggerBase
+{
+    private string _currentDeviceFamily, _queriedDeviceFamily;
+
+    public string DeviceFamily
+    {
+        get
+        {
+            return _queriedDeviceFamily;
+        }
+
+        set
+        {
+            _queriedDeviceFamily = value;
+            _currentDeviceFamily = AnalyticsInfo.VersionInfo.DeviceFamily;
+            SetActive(_queriedDeviceFamily == _currentDeviceFamily);
+        }
+    }
+}
+</code></pre>
+<p>After you've added your custom trigger, your app will automatically make the layout modifications you specified in your XAML code whenever it detects that it is running on an Xbox One console.</p>
+<p>Another way you can check whether your app is running on Xbox and then make the appropriate adjustments is through code. You can use the following simple variable to check if your app is running on Xbox:</p>
+<pre><code class="lang-csharp">bool IsTenFoot = (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily ==
+                    &quot;Windows.Xbox&quot;);
+</code></pre>
+<p>Then, you can make the appropriate adjustments to your UI in the code block following this check.</p>
+<h2 id="summary">Summary</h2>
+<p>Designing for the 10-foot experience has special considerations to take into account that make it different from designing for any other platform. While you can certainly do a straight port of your UWP app to Xbox One and it will work, it won't necessarily be optimized for the 10-foot experience and can lead to user frustration. Following the guidelines in this article will make sure that your app is as good as it can be on TV.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="index.html">Device primer for Windows apps</a></li>
+<li><a href="../input/gamepad-and-remote-interactions.html">Gamepad and remote control interactions</a></li>
+<li><a href="../style/sound.html">Sound in UWP apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/devices/designing-for-tv.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Share certificates between Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Share certificates between Windows apps ">
+    
+    <meta name="description" content="Learn how to authenticate multiple Windows apps using the same certificate, and how to provide a method for users to import a certificate that was provided for access to secured web services.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="share-certificates-between-windows-apps">Share certificates between Windows apps</h1>
+
+<p>Windows apps that require secure authentication beyond a user Id and password combination can use certificates for authentication. Certificate authentication provides a high level of trust when authenticating a user. In some cases, a group of services will want to authenticate a user for multiple apps. This article shows how you can authenticate multiple Windows apps using the same certificate, and how you can provide a method for users to import a certificate that was provided for access to secured web services.</p>
+<p>Apps can authenticate to a web service using a certificate, and multiple apps can use a single certificate from the certificate store to authenticate the same user. If a certificate does not exist in the store, you can add code to your app to import a certificate from a PFX file. The client app in this quickstart is a WinUI app, and the web service is an ASP.NET Core web API.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><a href="https://copilot.microsoft.com/">Microsoft Copilot</a> is a great resource if you have questions about getting started writing Windows apps or ASP.NET Core web APIs. Copilot can help you write code, find examples, and learn more about best practices for creating secure apps.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="https://visualstudio.microsoft.com/">Visual Studio</a> with the <strong>ASP.NET and web development</strong> and <strong>WinUI application development</strong> workloads installed.</li>
+<li>The latest <a href="https://developer.microsoft.com/windows/downloads/windows-sdk/">Windows Software Development Kit (SDK)</a> to use the Windows Runtime (WinRT) APIs in your WinUI app.</li>
+<li><a href="/powershell/scripting/install/installing-powershell-on-windows">PowerShell</a> for working with self-signed certificates.</li>
+</ul>
+<h2 id="create-and-publish-a-secured-web-service">Create and publish a secured web service</h2>
+<ol>
+<li><p>Open Microsoft Visual Studio and select <strong>Create a new project</strong> from the start screen.</p>
+</li>
+<li><p>In the Create a new project dialog, select <strong>API</strong> in the <strong>Select a project type</strong> dropdown list to filter the available project templates.</p>
+</li>
+<li><p>Select the <strong>ASP.NET Core Web API</strong> template and select <strong>Next</strong>.</p>
+</li>
+<li><p>Name the application &quot;FirstContosoBank&quot; and select <strong>Next</strong>.</p>
+</li>
+<li><p>Choose <strong>.NET 8.0</strong> or later as the <strong>Framework</strong>, set the <strong>Authentication type</strong> to <strong>None</strong>, ensure <strong>Configure for HTTPS</strong> is checked, uncheck <strong>Enable OpenAPI support</strong>, check <strong>Do not use top-level statements</strong> and <strong>Use controllers</strong>, and select <strong>Create</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="images/share-certificates-create-web-project-details.png" alt="A screenshot of the Visual Studio create new project details for the ASP.NET Core web API project">
+</span>
+</p>
+</li>
+<li><p>Right-click the <strong>WeatherForecastController.cs</strong> file in the <strong>Controllers</strong> folder and select <strong>Rename</strong>. Change the name to <strong>BankController.cs</strong> and let Visual Studio rename the class and all references to the class.</p>
+</li>
+<li><p>In the <strong>launchSettings.json</strong> file, change the value of &quot;launchUrl&quot; from &quot;weatherforecast&quot; to &quot;bank&quot; for all three configuration what use the value.</p>
+</li>
+<li><p>In the <strong>BankController.cs</strong> file, add following &quot;Login&quot; method.</p>
+<pre><code class="lang-cs">[HttpGet]
+[Route(&quot;login&quot;)]
+public string Login()
+{
+    // Return any value you like here.
+    // The client is just looking for a 200 OK response.
+    return &quot;true&quot;;
+}
+</code></pre>
+</li>
+<li><p>Open the NuGet Package Manager and search for and install latest stable version of the <strong>Microsoft.AspNetCore.Authentication.Certificate</strong> package. This package provides middleware for certificate authentication in ASP.NET Core.</p>
+</li>
+<li><p>Add a new class to the project named <strong>SecureCertificateValidationService</strong>. Add the following code to the class to configure the certificate authentication middleware.</p>
+<pre><code class="lang-cs">using System.Security.Cryptography.X509Certificates;
+
+public class SecureCertificateValidationService
+{
+    public bool ValidateCertificate(X509Certificate2 clientCertificate)
+    {
+        // Values are hard-coded for this example.
+        // You should load your valid thumbprints from a secure location.
+        string[] allowedThumbprints = { &quot;YOUR_CERTIFICATE_THUMBPRINT_1&quot;, &quot;YOUR_CERTIFICATE_THUMBPRINT_2&quot; };
+        if (allowedThumbprints.Contains(clientCertificate.Thumbprint))
+        {
+            return true;
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Open <strong>Program.cs</strong> and replace the code in the <strong>Main</strong> method with the following code:</p>
+<pre><code class="lang-csharp">public static void Main(string[] args)
+{
+    var builder = WebApplication.CreateBuilder(args);
+
+    // Add our certificate validation service to the DI container.
+    builder.Services.AddTransient&lt;SecureCertificateValidationService&gt;();
+
+    builder.Services.Configure&lt;KestrelServerOptions&gt;(options =&gt;
+    {
+        // Configure Kestrel to require a client certificate.
+        options.ConfigureHttpsDefaults(options =&gt;
+        {
+            options.ClientCertificateMode = ClientCertificateMode.RequireCertificate;
+            options.AllowAnyClientCertificate();
+        });
+    });
+
+    builder.Services.AddControllers();
+
+    // Add certificate authentication middleware.
+    builder.Services.AddAuthentication(
+    CertificateAuthenticationDefaults.AuthenticationScheme)
+       .AddCertificate(options =&gt;
+    {
+        options.AllowedCertificateTypes = CertificateTypes.SelfSigned;
+        options.Events = new CertificateAuthenticationEvents
+        {
+            // Validate the certificate with the validation service.
+            OnCertificateValidated = context =&gt;
+            {
+                var validationService = context.HttpContext.RequestServices.GetService&lt;SecureCertificateValidationService&gt;();
+
+                if (validationService.ValidateCertificate(context.ClientCertificate))
+                {
+                    context.Success();
+                }
+                else
+                {
+                    context.Fail(&quot;Invalid certificate&quot;);
+                }
+
+                return Task.CompletedTask;
+            },
+            OnAuthenticationFailed = context =&gt;
+            {
+                context.Fail(&quot;Invalid certificate&quot;);
+                return Task.CompletedTask;
+            }
+        };
+     });
+
+     var app = builder.Build();
+
+     // Add authentication/authorization middleware.
+     app.UseHttpsRedirection();
+     app.UseAuthentication();
+     app.UseAuthorization();
+
+     app.MapControllers();
+     app.Run();
+ }
+</code></pre>
+<p>The code above configures the Kestrel server to require a client certificate and adds the certificate authentication middleware to the app. The middleware validates the client certificate using the <code>SecureCertificateValidationService</code> class. The <code>OnCertificateValidated</code> event is called when a certificate is validated. If the certificate is valid, the event calls the <code>Success</code> method. If the certificate is invalid, the event calls the <code>Fail</code> method with an error message, which will be returned to the client.</p>
+</li>
+<li><p>Start debugging the project to launch the web service. You may receive messages about trusting and installing an SSL certificate. Click <strong>Yes</strong> for each of these messages to trust the certificate and continue debugging the project.</p>
+<p><span class="mx-imgBorder">
+<img src="images/share-certificates-trust-cert.png" alt="A screenshot of a dialog askng the user if they want to trust a certificate">
+</span>
+</p>
+<p><span class="mx-imgBorder">
+<img src="images/share-certificates-install-cert.png" alt="A screenshot of a Windows dialog asking the user if they want to install a certificate">
+</span>
+</p>
+</li>
+<li><p>The web service will be available at <code>https://localhost:7072/bank</code>. You can test the web service by opening a web browser and entering the web address. You will see the generated weather forecast data formatted as JSON. Keep the web service running while you create the client app.</p>
+</li>
+</ol>
+<p>For more information on working with ASP.NET Core controller-based web APIs, see <a href="/aspnet/core/tutorials/first-web-api">Create a web API with ASP.NET Core</a>.</p>
+<h2 id="create-a-winui-app-that-uses-certificate-authentication">Create a WinUI app that uses certificate authentication</h2>
+<p>Now that you have one or more secured web services, your apps can use certificates to authenticate to those web services. When you make a request to an authenticated web service using the <a href="/uwp/api/Windows.Web.Http.HttpClient">HttpClient</a> object from the WinRT APIs, the initial request will not contain a client certificate. The authenticated web service will respond with a request for client authentication. When this occurs, the Windows client will automatically query the certificate store for available client certificates. Your user can select from these certificates to authenticate to the web service. Some certificates are password protected, so you will need to provide the user with a way to input the password for a certificate.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There are no Windows App SDK APIs for managing certificates yet. You must use the WinRT APIs to manage certificates in your app. We will also be using WinRT storage APIs to import a certificate from a PFX file. Many WinRT APIs can be used by any Windows app with package identity, including WinUI apps.</p>
+<p>The HTTP client code we'll implement uses .NET's <a href="/dotnet/api/system.net.http.httpclient">HttpClient</a>. The <a href="/uwp/api/windows.web.http.httpclient">HttpClient</a> included in the WinRT APIs doesn't support client certificates.</p>
+</div>
+<p>If there are no client certificates available, then the user will need to add a certificate to the certificate store. You can include code in your app that enables a user to select a PFX file that contains a client certificate and then import that certificate into the client certificate store.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use the PowerShell cmdlets <strong>New-SelfSignedCertificate</strong> and <strong>Export-PfxCertificate</strong> to create a self-signed certificate and export it to a PFX file to use with this quickstart. For information, see <a href="/powershell/module/pki/new-selfsignedcertificate">New-SelfSignedCertificate</a> and <a href="/powershell/module/pki/export-pfxcertificate">Export-PfxCertificate</a>.</p>
+<p>Note that when generating the certificate, you should save the thumbprint of the certificate to use in the web service for validation.</p>
+</div>
+<ol>
+<li><p>Open Visual Studio and create a new WinUI project from the start page. Name the new project &quot;FirstContosoBankApp&quot;. Click <strong>Create</strong> to create the new project.</p>
+</li>
+<li><p>In the <strong>MainWindow.xaml</strong> file, add the following XAML to a <strong>Grid</strong> element, replacing the existing <strong>StackPanel</strong> element and its contents. This XAML includes a button to browse for a PFX file to import, a text box to enter a password for a password-protected PFX file, a button to import a selected PFX file, a button to log in to the secured web service, and a text block to display the status of the current action.</p>
+<pre><code class="lang-xml">&lt;Button x:Name=&quot;Import&quot; Content=&quot;Import Certificate (PFX file)&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;352,305,0,0&quot; VerticalAlignment=&quot;Top&quot; Height=&quot;77&quot; Width=&quot;260&quot; Click=&quot;Import_Click&quot; FontSize=&quot;16&quot;/&gt;
+&lt;Button x:Name=&quot;Login&quot; Content=&quot;Login&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;611,305,0,0&quot; VerticalAlignment=&quot;Top&quot; Height=&quot;75&quot; Width=&quot;240&quot; Click=&quot;Login_Click&quot; FontSize=&quot;16&quot;/&gt;
+&lt;TextBlock x:Name=&quot;Result&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;355,398,0,0&quot; TextWrapping=&quot;Wrap&quot; VerticalAlignment=&quot;Top&quot; Height=&quot;153&quot; Width=&quot;560&quot;/&gt;
+&lt;PasswordBox x:Name=&quot;PfxPassword&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;483,271,0,0&quot; VerticalAlignment=&quot;Top&quot; Width=&quot;229&quot;/&gt;
+&lt;TextBlock HorizontalAlignment=&quot;Left&quot; Margin=&quot;355,271,0,0&quot; TextWrapping=&quot;Wrap&quot; Text=&quot;PFX password&quot; VerticalAlignment=&quot;Top&quot; FontSize=&quot;18&quot; Height=&quot;32&quot; Width=&quot;123&quot;/&gt;
+&lt;Button x:Name=&quot;Browse&quot; Content=&quot;Browse for PFX file&quot; HorizontalAlignment=&quot;Left&quot; Margin=&quot;352,189,0,0&quot; VerticalAlignment=&quot;Top&quot; Click=&quot;Browse_Click&quot; Width=&quot;499&quot; Height=&quot;68&quot; FontSize=&quot;16&quot;/&gt;
+&lt;TextBlock HorizontalAlignment=&quot;Left&quot; Margin=&quot;717,271,0,0&quot; TextWrapping=&quot;Wrap&quot; Text=&quot;(Optional)&quot; VerticalAlignment=&quot;Top&quot; Height=&quot;32&quot; Width=&quot;83&quot; FontSize=&quot;16&quot;/&gt;
+</code></pre>
+</li>
+<li><p>Save the <strong>MainWindow</strong> changes.</p>
+</li>
+<li><p>Open the <strong>MainWindow.xaml.cs</strong> file, and add the following <code>using</code> statements.</p>
+<pre><code class="lang-cs">using System;
+using System.Security.Cryptography.X509Certificates;
+using System.Diagnostics;
+using System.Net.Http;
+using System.Net;
+using System.Text;
+using Microsoft.UI.Xaml;
+using Windows.Security.Cryptography.Certificates;
+using Windows.Storage.Pickers;
+using Windows.Storage;
+using Windows.Storage.Streams;
+</code></pre>
+</li>
+<li><p>In the MainWindow.xaml.cs file, add the following variables to the <strong>MainWindow</strong> class. They specify the address for the secured <strong>login</strong> service endpoint of your &quot;FirstContosoBank&quot; web service, and a global variable that holds a PFX certificate to import into the certificate store. Update the <code>&lt;server-name&gt;</code> to <code>localhost:7072</code> or whichever port is specified in the &quot;https&quot; configuration in your API project's launchSettings.json file.</p>
+<pre><code class="lang-cs">private Uri requestUri = new Uri(&quot;https://&lt;server-name&gt;/bank/login&quot;);
+private string pfxCert = null;
+</code></pre>
+</li>
+<li><p>In the <strong>MainWindow.xaml.cs</strong> file, add the following click handler for the login button and method to access the secured web service.</p>
+<pre><code class="lang-cs">private void Login_Click(object sender, RoutedEventArgs e)
+{
+    MakeHttpsCall();
+}
+
+private async void MakeHttpsCall()
+{
+    var result = new StringBuilder(&quot;Login &quot;);
+
+    // Load the certificate
+    var certificate = new X509Certificate2(Convert.FromBase64String(pfxCert),
+                                           PfxPassword.Password);
+
+    // Create HttpClientHandler and add the certificate
+    var handler = new HttpClientHandler();
+    handler.ClientCertificates.Add(certificate);
+    handler.ClientCertificateOptions = ClientCertificateOption.Automatic;
+
+    // Create HttpClient with the handler
+    var client = new HttpClient(handler);
+
+    try
+    {
+        // Make a request
+        var response = await client.GetAsync(requestUri);
+
+        if (response.StatusCode == HttpStatusCode.OK)
+        {
+            result.Append(&quot;successful&quot;);
+        }
+        else
+        {
+            result = result.Append(&quot;failed with &quot;);
+            result = result.Append(response.StatusCode);
+        }
+    }
+    catch (Exception ex)
+    {
+        result = result.Append(&quot;failed with &quot;);
+        result = result.Append(ex.Message);
+    }
+
+    Result.Text = result.ToString();
+}
+</code></pre>
+</li>
+<li><p>Next, add the following click handlers for the button to browse for a PFX file and the button to import a selected PFX file into the certificate store.</p>
+<pre><code class="lang-cs">private async void Import_Click(object sender, RoutedEventArgs e)
+{
+    try
+    {
+        Result.Text = &quot;Importing selected certificate into user certificate store....&quot;;
+        await CertificateEnrollmentManager.UserCertificateEnrollmentManager.ImportPfxDataAsync(
+              pfxCert,
+              PfxPassword.Password,
+              ExportOption.Exportable,
+              KeyProtectionLevel.NoConsent,
+              InstallOptions.DeleteExpired,
+              &quot;Import Pfx&quot;);
+
+        Result.Text = &quot;Certificate import succeeded&quot;;
+    }
+    catch (Exception ex)
+    {
+        Result.Text = &quot;Certificate import failed with &quot; + ex.Message;
+    }
+}
+
+private async void Browse_Click(object sender, RoutedEventArgs e)
+{
+    var result = new StringBuilder(&quot;Pfx file selection &quot;);
+    var pfxFilePicker = new FileOpenPicker();
+    IntPtr hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+    WinRT.Interop.InitializeWithWindow.Initialize(pfxFilePicker, hwnd);
+    pfxFilePicker.FileTypeFilter.Add(&quot;.pfx&quot;);
+    pfxFilePicker.CommitButtonText = &quot;Open&quot;;
+    try
+    {
+        StorageFile pfxFile = await pfxFilePicker.PickSingleFileAsync();
+        if (pfxFile != null)
+        {
+            IBuffer buffer = await FileIO.ReadBufferAsync(pfxFile);
+            using (DataReader dataReader = DataReader.FromBuffer(buffer))
+            {
+                byte[] bytes = new byte[buffer.Length];
+                dataReader.ReadBytes(bytes);
+                pfxCert = System.Convert.ToBase64String(bytes);
+                PfxPassword.Password = string.Empty;
+                result.Append(&quot;succeeded&quot;);
+            }
+        }
+        else
+        {
+            result.Append(&quot;failed&quot;);
+        }
+    }
+    catch (Exception ex)
+    {
+        result.Append(&quot;failed with &quot;);
+        result.Append(ex.Message); ;
+    }
+
+    Result.Text = result.ToString();
+}
+</code></pre>
+</li>
+<li><p>Open the <strong>Package.appxmanifest</strong> file and add the following capabilities to the <strong>Capabilities</strong> tab.</p>
+<ul>
+<li><strong>EnterpriseAuthentication</strong></li>
+<li><strong>SharedUserCertificates</strong></li>
+</ul>
+</li>
+<li><p>Run your app and log in to your secured web service as well as import a PFX file into the local certificate store.</p>
+<p><span class="mx-imgBorder">
+<img src="images/share-certificates-winui-client-window.png" alt="A screenshot of the WinUI app with buttons to browse for a PFX file, import a certificate, and log in to a secured web service">
+</span>
+</p>
+</li>
+</ol>
+<p>You can use these steps to create multiple apps that use the same user certificate to access the same or different secured web services.</p>
+<h2 id="related-content">Related content</h2>
+<p><a href="windows-hello.html">Windows Hello</a></p>
+<p><a href="index.html">Security and identity</a></p>
+<p><a href="/aspnet/core/tutorials/first-web-api">Create a web API with ASP.NET Core</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/share-certificates.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

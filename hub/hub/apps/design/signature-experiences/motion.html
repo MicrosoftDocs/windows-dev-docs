@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Motion in Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Motion in Windows ">
+    
+    <meta name="description" content="An overview of where and how motion is used in Windows">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="motion-in-windows">Motion in Windows</h1>
+
+<p>Motion describes the way the interface animates and responds to user interaction. Motion in Windows is reactive, direct, and context appropriate. It provides feedback to user input and reinforces spatial paradigms that support way-finding.</p>
+<p><span class="mx-imgBorder">
+<img src="images/motion-resourceful.gif" alt="An animated image that shows several examples of motion in the Windows UI.">
+</span>
+</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This article describes how the <a href="https://fluent2.microsoft.design/">Fluent Design language</a> is applied to Windows apps. For more information, see <a href="https://fluent2.microsoft.design/motion"><strong>Fluent Design - Motion</strong></a>.</p>
+</div>
+<h2 id="motion-principles">Motion principles</h2>
+<p>These principles guide the use of motion in Windows.</p>
+<h3 id="connected-elements-of-actions-connect-seamlessly">Connected: Elements of actions connect seamlessly</h3>
+<p>Elements that change position and size should visually connect from one state to another, even if they aren't connected under the hood. Users are guided to follow elements going from point to point, lowering the cognitive load of static state changes.</p>
+<p><em>Example:</em> When a window transitions between floating, snapped, and maximized, it always feels like the same window.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-light-effortless.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-light-effortless.png" alt="An animated image that shows a Microsoft Edge window transitioning between floating, snapped, and maximized views.">
+</a>
+</span>
+</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To improve accessibility and readability, this page uses still images in the default view. You can click an image to see the animated version.</p>
+</div>
+<h3 id="consistent-elements-should-behave-in-similar-ways-when-sharing-entry-points">Consistent: Elements should behave in similar ways when sharing entry points</h3>
+<p>Surfaces that share the same UI entry point should invoke and dismiss the same way to bring consistency to interactions. Each transition should respect the timing, easing, and direction of other elements so a surface feels cohesive.</p>
+<p><em>Example:</em> All taskbar flyouts slide up when invoked, and slide down when dismissed.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-consistent.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-consistent.png" alt="An animated image that shows several Windows UI surfaces in succession, such as the start menu and search pane. Each surface slides up from the taskbar when invoked, and slides down when dismissed, in a consistent manner.">
+</a>
+</span>
+</p>
+<p><em>Click the image to see it animated.</em></p>
+<h3 id="responsive-the-system-responds-and-adapts-to-user-input-and-choices">Responsive: The system responds and adapts to user input and choices</h3>
+<p>Clear indicators show the system recognizes and adapts gracefully to different input, postures, and orientations. Apps should build on OS behaviors to feel responsive, alive, and aid usage depending on input methods.</p>
+<p><em>Example:</em> Taskbar icons spread out when keyboards are detached. Window edges invoke a different visual depending on cursor or touch input.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-adaptive.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-adaptive.png" alt="An animated image. On the left, taskbar icons spread out when a keyboard is detached. On the right, window edges have different visual effects when manipulated with the cursor or touch input.">
+</a>
+</span>
+</p>
+<p><em>Click the image to see it animated.</em></p>
+<h3 id="delightful-unexpected-moments-of-joy-with-purpose">Delightful: Unexpected moments of joy with purpose</h3>
+<p>Motion adds personality and energy to the experience in order to transform simple actions into moments of delight. These moments are always brief and fleeting, and help reinforce user actions.</p>
+<p><em>Example:</em> Minimizing a window causes an app icon to bounce down, while restoring bounces an app icon up.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-minimize-restore.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-minimize-restore.png" alt="An animated image that shows an app icon bounce down when the window is minimized, and bounce up when the window is restored.">
+</a>
+</span>
+</p>
+<p><em>Click the image to see it animated.</em></p>
+<h3 id="resourceful-utilizes-existing-controls-to-bring-consistency-where-possible">Resourceful: Utilizes existing controls to bring consistency where possible</h3>
+<p>Avoid custom animations where possible. Use animation resources like <a href="../../winui/index.html">WinUI</a> controls for page transitions, in-page focus, and micro interactions. If you can't use WinUI controls, mimic existing OS behaviors based on where the app entry point lives.</p>
+<p><em>Example:</em> <a href="../motion/page-transitions.html">Page transitions</a>, <a href="../motion/connected-animation.html">connected animations</a>, and <a href="../controls/animated-icon.html">animated icons</a> are the recommended WinUI controls that add delightful and necessary motion to apps.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-resourceful.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-resourceful.png" alt="An animated image that shows examples of page  transitions, connected animations, and animated icons in the Windows UI.">
+</a>
+</span>
+</p>
+<p><em>Click the image to see it animated.</em></p>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery://category/Motion">Open the WinUI 3 Gallery app and see Motion examples in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="usage">Usage</h2>
+<h3 id="animation-properties">Animation properties</h3>
+<p>Windows motion is fast, direct, and context-appropriate. Timing and easing curves are adjusted based on the purpose of the animation to create a coherent experience.</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Definition</th>
+<th>Ease</th>
+<th>Timing</th>
+<th>Used For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct Entrance</td>
+<td>Fast – In</td>
+<td>Cubic-bezier(0,0,0,1)</td>
+<td>167, 250, 333</td>
+<td>Position, Scale, Rotation</td>
+</tr>
+<tr>
+<td>Existing Elements</td>
+<td>Point to Point</td>
+<td>Cubic-bezier(0.55,0.55,0,1)</td>
+<td>167, 250, 333ms</td>
+<td>Position, Scale, Rotation</td>
+</tr>
+<tr>
+<td>Direct Exit</td>
+<td>Fast – Out</td>
+<td>Cubic-bezier(0,0,0,1)</td>
+<td>167ms</td>
+<td>Position, Scale, Rotation (ALWAYS combine with fade out)</td>
+</tr>
+<tr>
+<td>Gentle Exit</td>
+<td>Soft – Out</td>
+<td>Cubic-bezier(1,0,1,1)</td>
+<td>167ms</td>
+<td>Position, Scale</td>
+</tr>
+<tr>
+<td>Bare Minimum</td>
+<td>Fade – In + Out</td>
+<td>Linear</td>
+<td>83ms</td>
+<td>Opacity</td>
+</tr>
+<tr>
+<td>Strong Entrance</td>
+<td>Elastic In (3 Keyframes)</td>
+<td>(3 values below)</td>
+<td>(3 values below)</td>
+<td>Position, Scale</td>
+</tr>
+<tr>
+<td></td>
+<td>Keyframe 1</td>
+<td>Cubic-Bezier(0.85, 0, 0, 1)</td>
+<td>167ms</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Keyframe 2</td>
+<td>Cubic-Bezier(0.85, 0, 0.75, 1)</td>
+<td>167ms</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>Keyframe 3</td>
+<td>Cubic-Bezier(0.85, 0, 0, 1)</td>
+<td>333ms</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="controls">Controls</h3>
+<p>This release of Windows introduces purposeful micro-interactions in <a href="../../winui/index.html">WinUI</a> controls. Add these controls to your app to help better organize information, and help your app's users transition from page to page, layer to layer, and state to state of an interaction.</p>
+<h4 id="page-transition-page-to-page-transitions-within-the-same-surface">Page Transition: Page-to-page transitions within the same surface</h4>
+<p>Use <a href="../motion/page-transitions.html">page transitions</a> to transition smoothly from page to page, and configure animation directions to respect the flow of an app.</p>
+<p>Page transitions guide your user's eyes to incoming and outgoing content, lowering cognitive load.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-page-transitions.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-page-transitions.png" alt="An animated image that shows navigation between several pages in the Windows Settings app. Top-level pages slide up from the bottom. When navigating between top-level and sub-pages, pages slide left and right.">
+</a>
+</span>
+</p>
+<p><em>Click the image to see it animated.</em></p>
+<h4 id="connected-animation-layer-to-layer-transitions-within-the-same-page">Connected Animation: Layer-to-layer transitions within the same page</h4>
+<p>Use <a href="../motion/connected-animation.html">connected animations</a> to highlight specific pieces of information within a page or surface, while retaining context.</p>
+<p>Connected animations give focus to selected elements, and seamlessly transition between the focused and non-focused states.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-connected-animations.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-connected-animations.png" alt="An animated image of the Microsoft Store app that shows an image in a page that animates to a zoomed-in view of the image.">
+</a>
+</span>
+</p>
+<p><em>Click the image to see it animated.</em></p>
+<h4 id="animated-icon-adds-delight-and-reveals-information-through-micro-interactions">Animated Icon: Adds delight and reveals information through micro interactions</h4>
+<p>Use <a href="../controls/animated-icon.html">animated icons</a> to implement lightweight, vector-based icons and illustrations with motion using <a href="/windows/communitytoolkit/animations/lottie">Lottie</a> animations.</p>
+<p>Animated icons draw attention to specific entry points, provide feedback from state to state, and add delight to an interaction.</p>
+<p><span class="mx-imgBorder">
+<a href="images/motion-animated-icons.gif#lightbox" data-linktype="relative-path">
+<img src="images/motion-animated-icons.png" alt="An animated image that shows a grid of various examples of animated icon controls.">
+</a>
+</span>
+</p>
+<p><em>Click the image to see it animated.</em></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/signature-experiences/motion.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

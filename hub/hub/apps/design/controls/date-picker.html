@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Date picker </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Date picker ">
+    
+    <meta name="description" content="The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="date-picker">Date picker</h1>
+
+<p>The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input.</p>
+<p><img src="images/date-picker-closed.png" alt="Example of date picker"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.</p>
+<p>If the context of a calendar is important, consider using a <a href="calendar-date-picker.html">calendar date picker</a> or <a href="calendar-view.html">calendar view</a>.</p>
+<p>For more info about choosing the right date control, see the <a href="date-and-time.html">Date and time controls</a> article.</p>
+<h2 id="examples">Examples</h2>
+<p>The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.</p>
+<p><img src="images/controls-datepicker-expand.gif" alt="Example of the date picker expanding"></p>
+<h2 id="create-a-date-picker">Create a date picker</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.DatePicker">DatePicker class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate">SelectedDate property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/DatePicker">Open the WinUI 3 Gallery app and see the DatePicker in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example shows how to create a simple date picker with a header.</p>
+<pre><code class="lang-xaml">&lt;DatePicker x:Name=&quot;exampleDatePicker&quot; Header=&quot;Pick a date&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">DatePicker exampleDatePicker = new DatePicker();
+exampleDatePicker.Header = &quot;Pick a date&quot;;
+</code></pre>
+<p>The resulting date picker looks like this:</p>
+<p><img src="images/date-picker-closed.png" alt="Example of date picker"></p>
+<h3 id="formatting-the-date-picker">Formatting the date picker</h3>
+<p>By default, the date picker shows the day, month, and year. If your scenario for the date picker doesn't require all the fields, you can hide the ones you don't need. To hide a field, set its corresponding <em>field</em>Visible property to <code>false</code>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayvisible">DayVisible</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthvisible">MonthVisible</a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearvisible">YearVisible</a>.</p>
+<p>Here, only the year is needed, so the day and month fields are hidden.</p>
+<pre><code class="lang-xaml">&lt;DatePicker x:Name=&quot;yearDatePicker&quot; Header=&quot;In what year was Microsoft founded?&quot; 
+            MonthVisible=&quot;False&quot; DayVisible=&quot;False&quot;/&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="images/date-time/date-picker-year-only.png" alt="A date picker with the day and month fields hidden.">
+</span>
+</p>
+<p>The string content of each <code>ComboBox</code> in the <code>DatePicker</code> is created by a <a href="/uwp/api/windows.globalization.datetimeformatting.datetimeformatter">DateTimeFormatter</a>. You inform the <code>DateTimeFormatter</code> how to format the date value by providing a string that is either a <em>format template</em> or a <em>format pattern</em>. For more info, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.dayformat">DayFormat</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.monthformat">MonthFormat</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.yearformat">YearFormat</a> properties.</p>
+<p>Here, a <em>format pattern</em> is used to show the month as an integer and abbreviation. You can add literal strings to the format pattern, such as the parentheses around the month abbreviation: <code>({month.abbreviated})</code>.</p>
+<pre><code class="lang-xaml">&lt;DatePicker MonthFormat=&quot;{}{month.integer(2)} ({month.abbreviated})&quot; DayVisible=&quot;False&quot;/&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="images/date-time/date-picker-day-hidden.png" alt="A date picker with the day field hidden.">
+</span>
+</p>
+<h3 id="date-values">Date values</h3>
+<p>The date picker control has both <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.date">Date</a>/<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.datechanged">DateChanged</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate">SelectedDate</a>/<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddatechanged">SelectedDateChanged</a> APIs. The difference between these is that <code>Date</code> is not nullable, while <code>SelectedDate</code> is nullable.</p>
+<p>The value of <code>SelectedDate</code> is used to populate the date picker and is <code>null</code> by default. If <code>SelectedDate</code> is <code>null</code>, the <code>Date</code> property is set to 12/31/1600; otherwise, the <code>Date</code> value is synchronized with the <code>SelectedDate</code> value. When <code>SelectedDate</code> is <code>null</code>, the picker is 'unset' and shows the field names instead of a date.</p>
+<p><span class="mx-imgBorder">
+<img src="images/date-time/date-picker-no-selected-date.png" alt="A date picker with no date selected.">
+</span>
+</p>
+<p>You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.minyear">MinYear</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.maxyear">MaxYear</a> properties to restrict the date values in the picker. By default, <code>MinYear</code> is set to 100 years prior to the current date and <code>MaxYear</code> is set to 100 years past the current date.</p>
+<p>If you set only <code>MinYear</code> or <code>MaxYear</code>, you need to ensure that a valid date range is created by the date you set and the default value of the other date; otherwise, no date will be available to select in the picker. For example, setting only <code>yearDatePicker.MaxYear = new DateTimeOffset(new DateTime(900, 1, 1));</code> creates an invalid date range with the default value of <code>MinYear</code>.</p>
+<h4 id="initializing-a-date-value">Initializing a date value</h4>
+<p>The date properties can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as <a href="/uwp/api/windows.foundation.datetime">DateTime</a> / <a href="/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0&amp;preserve-view=true">DateTimeOffset</a> objects. Here are some suggested ways these objects can be defined in code and set to a date other than the current date.</p>
+<ul>
+<li><a href="/uwp/api/windows.foundation.datetime">DateTime</a>: Instantiate a <a href="/uwp/api/windows.globalization.calendar">Windows.Globalization.Calendar</a> object (it is initialized to the current date). Set <a href="/uwp/api/windows.globalization.calendar.year">Year</a>, or call <a href="/uwp/api/windows.globalization.calendar.addyears">AddYears</a>, to adjust the date. Then, call <a href="/uwp/api/windows.globalization.calendar.getdatetime">Calendar.GetDateTime</a> and use the returned <code>DateTime</code> to set the date property.</li>
+<li><a href="/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0&amp;preserve-view=true">DateTimeOffset</a>: Call the  constructor. For the inner <a href="/dotnet/api/system.datetime?view=dotnet-uwp-10.0&amp;preserve-view=true">System.DateTime</a>, use the  constructor signature. Or, construct a default <a href="/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0&amp;preserve-view=true">DateTimeOffset</a> (it is initialized to the current date) and call <a href="/dotnet/api/system.datetimeoffset.addyears?view=dotnet-uwp-10.0&amp;preserve-view=true">AddYears</a>.</li>
+</ul>
+<p>Another possible technique is to define a date that's available as a data object or in the data context, then set the date property as a XAML attribute that references a <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding} markup extension</a> that can access the date as data.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For important info about date values, see <a href="date-and-time.html#datetime-and-calendar-values">DateTime and Calendar values</a> in the Date and time controls article.</p>
+</div>
+<p>This example demonstrates setting the <code>SelectedDate</code>, <code>MinYear</code>, and <code>MaxYear</code> properties on different <code>DatePicker</code> controls.</p>
+<pre><code class="lang-xaml">&lt;DatePicker x:Name=&quot;yearDatePicker&quot; MonthVisible=&quot;False&quot; DayVisible=&quot;False&quot;/&gt;
+&lt;DatePicker x:Name=&quot;arrivalDatePicker&quot; Header=&quot;Arrival date&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">public MainPage()
+{
+    this.InitializeComponent();
+
+    // Set minimum year to 1900 and maximum year to 1999.
+    yearDatePicker.SelectedDate = new DateTimeOffset(new DateTime(1950, 1, 1));
+    yearDatePicker.MinYear = new DateTimeOffset(new DateTime(1900, 1, 1));
+    // Using a different DateTimeOffset constructor.
+    yearDatePicker.MaxYear = new DateTimeOffset(1999, 12, 31, 0, 0, 0, new TimeSpan());
+
+    // Set minimum to the current year and maximum to five years from now.
+    arrivalDatePicker.MinYear = DateTimeOffset.Now;
+    arrivalDatePicker.MaxYear = DateTimeOffset.Now.AddYears(5);
+}
+</code></pre>
+<h3 id="using-the-date-values">Using the date values</h3>
+<p>To use the date value in your app, you typically use a data binding to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate">SelectedDate</a> property, or handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddatechanged">SelectedDateChanged</a> event.</p>
+<blockquote>
+<p>For an example of using a <code>DatePicker</code> and <code>TimePicker</code> together to update a single <code>DateTime</code> value, see <a href="date-and-time.html#use-a-date-picker-and-time-picker-together">Calendar, date, and time controls - Use a date picker and time picker together</a>.</p>
+</blockquote>
+<p>Here, you use a <code>DatePicker</code> to let a user select their arrival date. You handle the <code>SelectedDateChanged</code> event to update a <a href="/uwp/api/windows.foundation.datetime">DateTime</a> instance named <code>arrivalDateTime</code>.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;DatePicker x:Name=&quot;arrivalDatePicker&quot; Header=&quot;Arrival date&quot;
+                DayFormat=&quot;{}{day.integer} ({dayofweek.abbreviated})&quot;
+                SelectedDateChanged=&quot;arrivalDatePicker_SelectedDateChanged&quot;/&gt;
+    &lt;Button Content=&quot;Clear&quot; Click=&quot;ClearDateButton_Click&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;arrivalText&quot; Margin=&quot;0,12&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">public sealed partial class MainPage : Page
+{
+    DateTime arrivalDateTime;
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Set minimum to the current year and maximum to five years from now.
+        arrivalDatePicker.MinYear = DateTimeOffset.Now;
+        arrivalDatePicker.MaxYear = DateTimeOffset.Now.AddYears(5);
+    }
+
+    private void arrivalDatePicker_SelectedDateChanged(DatePicker sender, DatePickerSelectedValueChangedEventArgs args)
+    {
+        if (arrivalDatePicker.SelectedDate != null)
+        {
+            arrivalDateTime = new DateTime(args.NewDate.Value.Year, args.NewDate.Value.Month, args.NewDate.Value.Day);
+        }
+        arrivalText.Text = arrivalDateTime.ToString();
+    }
+
+    private void ClearDateButton_Click(object sender, RoutedEventArgs e)
+    {
+        arrivalDatePicker.SelectedDate = null;
+        arrivalText.Text = string.Empty;
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.DatePicker">DatePicker class</a>, <a href="/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate">SelectedDate property</a></li>
+<li><a href="winui2gallery:/item/DatePicker">Open the WinUI 2 Gallery app and see the DatePicker in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="date-and-time.html">Date and time controls</a></li>
+<li><a href="calendar-date-picker.html">Calendar date picker</a></li>
+<li><a href="calendar-view.html">Calendar view</a></li>
+<li><a href="time-picker.html">Time picker</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/date-picker.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Enabling tab completion with the winget tool </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Enabling tab completion with the winget tool ">
+    
+    <meta name="description" content="Provides steps on how to enable and use tab completion with the winget tool.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tab-completion-winget">Tab completion (winget)</h1>
+
+<p>The winget command line tool offers a <code>complete</code> command to provide context-sensitive tab completion. It supports completion of command names, argument names, and argument values, dependent on the current command line state.</p>
+<h2 id="enable-tab-completion">Enable tab completion</h2>
+<p>To enable tab completion with winget, you must add the following script to your <code>$PROFILE</code> in PowerShell.</p>
+<ol>
+<li><p>Open PowerShell and enter the following command to open your <code>$PROFILE</code> in Notepad: <code>notepad.exe $PROFILE</code></p>
+</li>
+<li><p>Copy and paste the following script into the <code>$PROFILE</code> file that has opened in Notepad:</p>
+<pre><code class="lang-PowerShell">Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+        $Local:word = $wordToComplete.Replace('&quot;', '&quot;&quot;')
+        $Local:ast = $commandAst.ToString().Replace('&quot;', '&quot;&quot;')
+        winget complete --word=&quot;$Local:word&quot; --commandline &quot;$Local:ast&quot; --position $cursorPosition | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+}
+</code></pre>
+</li>
+<li><p>Save the <code>$PROFILE</code> with your script. Then close and reopen PowerShell. Once PowerShell has been reopened, winget tab completion will be enabled.</p>
+</li>
+</ol>
+<h2 id="examples-of-tab-completion">Examples of tab completion</h2>
+<p>Repeated presses of tab (<code>⇥</code>) will result in cycling through the possible values.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Result</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>winget ⇥</code></td>
+<td><code>winget install</code></td>
+<td><code>install</code> is the first command below the root</td>
+</tr>
+<tr>
+<td><code>winget sh⇥</code></td>
+<td><code>winget show</code></td>
+<td><code>show</code> is the first command that starts with <code>sh</code></td>
+</tr>
+<tr>
+<td><code>winget source l⇥</code></td>
+<td><code>winget source list</code></td>
+<td><code>list</code> is the first sub-command of source that starts with <code>l</code></td>
+</tr>
+<tr>
+<td><code>winget -⇥</code></td>
+<td><code>winget --version</code></td>
+<td><code>--version</code> is the first argument defined for the root</td>
+</tr>
+<tr>
+<td><code>winget install power⇥</code></td>
+<td><code>winget install &quot;Power Toys&quot;</code></td>
+<td><code>&quot;Power Toys&quot;</code> is the first package whose Id, Name, or Moniker starts with <code>power</code></td>
+</tr>
+<tr>
+<td><code>winget install &quot;Power Toys&quot; --version ⇥</code></td>
+<td><code>winget install &quot;Power Toys&quot; --version 0.19.2</code></td>
+<td><code>0.19.2</code> is the highest version of Power Toys at the time of writing</td>
+</tr>
+</tbody>
+</table>
+<h2 id="command-reference">Command Reference</h2>
+<p>The complete command takes 3 required arguments:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--word</code></td>
+<td>The current word that is being completed; the token that the cursor is located within. Can be empty to indicate no current value at the cursor, but if provided, it must appear as a substring in the command line.</td>
+</tr>
+<tr>
+<td><code>--commandline</code></td>
+<td>The entire current command line, including <code>winget</code>. See the examples above; everything but the tab character (<code>⇥</code>) should be provided to this argument.</td>
+</tr>
+<tr>
+<td><code>--position</code></td>
+<td>The current position of the cursor in the command line. Can be greater than the length of the command line string to indicate at the end.</td>
+</tr>
+</tbody>
+</table>
+<p>When a word value is provided, the completion operates in replacement mode.  It will suggest completions that would fit correctly at this location that also start with the given word value.</p>
+<p>When a word value is not provided (an empty value is provided for word, ex. <code>--word=</code>), the completion operates in insertion mode.  It will suggest completions that would fit as a new value in the cursor's location.</p>
+<p>Based on the arguments, the completions suggested can be one of:</p>
+<ol>
+<li>A sub command :: The cursor is located just after a command and there are sub commands available.</li>
+<li>An argument specifier :: The cursor is not positioned after an argument specifier that expects a value, and there are arguments available.</li>
+<li>An argument value :: The cursor is positioned after an argument specifier that expects a value, or a positional argument is expected.</li>
+</ol>
+<p>After evaluating all of these cases, the potential completions are output, one on each line. If the completion string contains a space, it is wrapped in quotations.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+<li><a href="../package/index.html">Submit packages to Windows Package Manager</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/tab-completion.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

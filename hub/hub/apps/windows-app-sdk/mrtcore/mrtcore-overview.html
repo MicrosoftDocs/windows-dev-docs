@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manage resources MRT Core (Windows App SDK) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manage resources MRT Core (Windows App SDK) ">
+    
+    <meta name="description" content="Overview of MRT Core components, and how they work to load application resources (Windows App SDK)">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manage-resources-with-mrt-core">Manage resources with MRT Core</h1>
+
+<p>MRT Core is a streamlined version of the modern Windows <a href="/windows/uwp/app-resources/resource-management-system">Resource Management System</a> that is distributed as part of <a href="../index.html">the Windows App SDK</a>.</p>
+<p>MRT Core has both build-time and run-time features. At build time, the system creates an index of all the different variants of the resources that are packaged up with your app. This index is the Package Resource Index, or PRI, and it's also included in your app's package.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use MRT Core APIs in the Windows App SDK:</p>
+<ol>
+<li>Download and install the latest release of the Windows App SDK. For more information, see <a href="../../get-started/start-here.html">Get started with WinUI</a>.</li>
+<li>Follow the instructions to <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a> or to <a href="../use-windows-app-sdk-in-existing-project.html">use the Windows App SDK in an existing project</a>.</li>
+</ol>
+<p>To learn more about the availability of MRT Core in the Windows App SDK, see <a href="../release-channels.html">release channels</a>.</p>
+<h2 id="package-resource-index-pri-file">Package Resource Index (PRI) file</h2>
+<p>Every app package should contain a binary index of the resources in the app. This index is created at build time and it is contained in one or more PRI files. Each PRI file contains a named collection of resources, referred to as a resource map.</p>
+<p>A PRI file contains actual string resources. Embedded binary and file path resources are indexed directly from the project files. A package typically contains a single PRI file per language, named <strong>resources.pri</strong>. The <strong>resources.pri</strong> file at the root of each package is automatically loaded when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager">ResourceManager</a> object is instantiated.</p>
+<p>PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For .NET apps, in Windows App SDK version 0.8 and onward, the <strong>Build Action</strong> file property for resource files in Visual Studio is automatically set, reducing the need for manual project configuration. Version 1.0 introduced <a href="https://github.com/microsoft/WindowsAppSDK/issues/1674">issue 1674</a>. This is fixed in 1.1 (from the stable channel), but the fix requires .NET SDK 6.0.300 or later. If you're using a lower version of the .NET SDK, please continue to use the workaround in the 1.0 release notes.</p>
+</div>
+<h2 id="access-app-resources-with-mrt-core">Access app resources with MRT Core</h2>
+<p>MRT Core provides several different ways to access your app resources.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In Windows App SDK 1.0 Preview 1 and later releases, MRT Core APIs are in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources">Microsoft.Windows.ApplicationModel.Resources</a> namespace. In earlier releases, they are in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.applicationmodel.resources">Microsoft.ApplicationModel.Resources</a> namespace.</p>
+</div>
+<h3 id="basic-functionality-with-resourceloader">Basic functionality with ResourceLoader</h3>
+<p>The simplest way to access your app resources programmatically is by using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourceloader">ResourceLoader</a> class. <strong>ResourceLoader</strong> provides you basic access to string resources from the set of resource files, referenced libraries, or other packages.</p>
+<h3 id="advanced-functionality-with-resourcemanager">Advanced functionality with ResourceManager</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager">ResourceManager</a> class provides additional info about resources, such as enumeration and inspection. This goes beyond what the <strong>ResourceLoader</strong> class provides.</p>
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecandidate">ResourceCandidate</a> object represents a single concrete resource value and its qualifiers, such as the string &quot;Hello World&quot; for English, or &quot;logo.scale-100.jpg&quot; as a qualified image resource that's specific to the scale-100 resolution.</p>
+<p>Resources available to an app are stored in hierarchical collections, which you can access with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap">ResourceMap</a> object. The <strong>ResourceManager</strong> class provides access to the various top-level <strong>ResourceMap</strong> instances used by the app, which correspond to the various packages for the app. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager.mainresourcemap">ResourceManager.MainResourceMap</a> value corresponds to the resource map for the current app package, and it excludes any referenced framework packages. Each <strong>ResourceMap</strong> is named for the package name that is specified in the package's manifest. Within a <strong>ResourceMap</strong> are subtrees (see <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getsubtree">ResourceMap.GetSubtree</a>). The subtrees typically correspond to the resource files that contains the resource.</p>
+<p>The <strong>ResourceManager</strong> not only supports access to an app's string resources, it also maintains the ability to enumerate and inspect the various file resources as well. In order to avoid collisions between files and other resources that originate from within a file, indexed file paths all reside within a reserved &quot;Files&quot; <strong>ResourceMap</strong> subtree. For example, the file '\Images\logo.png' corresponds to the resource name 'Files/images/logo.png'.</p>
+<h3 id="qualify-resource-selection-with-resourcecontext">Qualify resource selection with ResourceContext</h3>
+<p>Resource candidates are chosen based on a particular <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext">ResourceContext</a>, which is a collection of resource qualifier values (language, scale, contrast, and so on). A default context uses the app's current configuration for each qualifier value, unless overridden. For example, resources such as images can be qualified for scale, which varies from one monitor to another and hence from one application view to another. For this reason, each application view has a distinct default context. Whenever you retrieve a resource candidate, you should pass in a <strong>ResourceContext</strong> instance to obtain the most appropriate value for a given view.</p>
+<h2 id="sample">Sample</h2>
+<p>For a sample that demonstrates how to use the MRT Core API, see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement">MRT Core sample</a>.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/uwp/app-resources/resource-management-system">UWP Resource Management System</a></li>
+<li><a href="localize-strings.html">Localize strings in your UI and app package manifest</a></li>
+<li><a href="images-tailored-for-scale-theme-contrast.html">Load images and assets tailored for scale, theme, high contrast, and others</a></li>
+<li><a href="tailor-resources-lang-scale-contrast.html">Tailor your resources for language, scale, high contrast, and other qualifiers</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/mrtcore/mrtcore-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

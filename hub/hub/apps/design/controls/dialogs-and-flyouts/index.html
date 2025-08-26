@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Dialogs and flyouts </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Dialogs and flyouts ">
+    
+    <meta name="description" content="Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dialogs-and-flyouts">Dialogs and flyouts</h1>
+
+<p>Dialogs and flyouts are transient UI elements that appear when something happens that requires notification, approval, or additional information from the user.</p>
+<p><strong>Dialogs</strong></p>
+<p><img src="../images/dialogs/dialog_RS2_delete_file.png" alt="Example of a dialog"></p>
+<p>Dialogs are modal UI overlays that provide contextual app information. Dialogs block interactions with the app window until being explicitly dismissed. They often request some kind of action from the user.</p>
+<p><strong>Flyouts</strong></p>
+<p><img src="../images/flyout-example2.png" alt="Example of a flyout"></p>
+<p>A flyout is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to reveal a secondary control or show more detail about an item.</p>
+<p>Unlike a dialog, a flyout can be quickly dismissed by tapping or clicking somewhere outside the flyout, pressing the Escape key or Back button, resizing the app window, or changing the device's orientation.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Dialogs and flyouts make sure that users are aware of important information, but they also disrupt the user experience. Because dialogs are modal (blocking), they interrupt users, preventing them from doing anything else until they interact with the dialog. Flyouts provide a less jarring experience, but displaying too many flyouts can be distracting.</p>
+<p>Once you've determined that you want to use a dialog or flyout, you need to choose which one to use.</p>
+<p>Given that dialogs block interactions and flyouts do not, dialogs should be reserved for situations where you want the user to drop everything to focus on a specific bit of information or answer a question. Flyouts, on the other hand, can be used when you want to call attention to something, but it's ok if the user wants to ignore it.</p>
+<p><strong>Use a dialog for...</strong></p>
+<ul>
+<li>Expressing important information that the user <strong>must</strong> read and acknowledge before proceeding. Examples include:
+<ul>
+<li>When the user's security might be compromised</li>
+<li>When the user is about to permanently alter a valuable asset</li>
+<li>When the user is about to delete a valuable asset</li>
+<li>To confirm an in-app purchase</li>
+</ul>
+</li>
+<li>Error messages that apply to the overall app context, such as a connectivity error.</li>
+<li>Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.</li>
+</ul>
+<p><strong>Use a flyout for...</strong></p>
+<ul>
+<li>Collecting additional information needed before an action can be completed.</li>
+<li>Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.</li>
+<li>Displaying more information, such as details or longer descriptions of an item on the page.</li>
+</ul>
+<h2 id="ways-to-avoid-using-dialogs-and-flyouts">Ways to avoid using dialogs and flyouts</h2>
+<p>Consider the importance of the information you want to share: is it important enough to interrupt the user? Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead. For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on.</p>
+<p>Dialogs are frequently used to confirm an action (such as deleting a file) before executing it. If you expect the user to perform a particular action frequently, consider providing a way for the user to undo the action if it was a mistake, rather than forcing users to confirm the action every time.</p>
+<h2 id="examples">Examples</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog">ContentDialog class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout">Flyout class</a></li>
+</ul>
+</div>
+<blockquote>
+<ul>
+<li>If you have the <strong>WinUI 3 Gallery</strong> app installed, click here to open the app and see the <a href="winui3gallery:/item/ContentDialog">ContentDialog</a> or <a href="winui3gallery:/item/Flyout">Flyout</a> in action. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery/tree/main">GitHub</a>.</li>
+</ul>
+</blockquote>
+<h2 id="how-to-create-a-dialog">How to create a dialog</h2>
+<p>See the <a href="dialogs.html">Dialogs article</a>.</p>
+<h2 id="how-to-create-a-flyout">How to create a flyout</h2>
+<p>See the <a href="flyouts.html">Flyout article</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/dialogs-and-flyouts/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

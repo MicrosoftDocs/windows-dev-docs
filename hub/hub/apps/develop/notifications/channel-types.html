@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Choosing the right push notification channel type </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Choosing the right push notification channel type ">
+    
+    <meta name="description" content="Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. There are many ways to send the notifications depending on the needs of your application">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="choosing-the-right-push-notification-channel-type">Choosing the right push notification channel type</h1>
+
+<p>This article covers the three types of Windows push notification channels (primary, secondary, and alternate) that help you deliver content to your app.</p>
+<p>(For details on how to create push notifications, see the <a href="push-notifications/wns-overview.html">Windows Push Notification Services (WNS) overview</a>.)</p>
+<h2 id="types-of-push-channels">Types of push channels</h2>
+<p>There are three types of push channels that can be used to send notifications to a Windows app. They are:</p>
+<p><a href="/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_">Primary channel</a> - the &quot;traditional&quot; push channel. Can be used by any app in the store to send toast, tile, raw, or badge notifications. <a href="push-notifications/wns-overview.html">Learn more here</a>.</p>
+<p><a href="/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_">Secondary tile channel</a> - used to push tile updates to a secondary tile. Can only be used to send tile or badge notifications to a secondary tile pinned on the user's start screen</p>
+<p><a href="/uwp/api/windows.networking.pushnotifications.pushnotificationchannelmanagerforuser#Methods_">Alternate channel</a> - <strong>No longer supported</strong> - A new type of channel added in the Creators Update. It allows for raw notifications to be sent to any Windows app, including those which aren't registered in the Store. Again, note that the alternate channel is no longer supported.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>No matter which push channel you use, once your app is running on the device, it will always be able to send local toast, tile, or badge notifications. It can send local notifications from the foreground app processes or from a background task.</p>
+</div>
+<h2 id="primary-channels">Primary channels</h2>
+<p>These are the most commonly used channels on Windows right now, and are good for almost any scenario where your app is going to be distributed through the Microsoft Store. They allow you to send all types of notifications to the app.</p>
+<h3 id="what-do-primary-channels-enable">What do primary channels enable?</h3>
+<ul>
+<li><strong>Sending tile or badge updates to the primary tile.</strong> If the user has chosen to pin your tile to the start screen, this is your chance to show off. Send updates with useful information or reminders of experiences within your app.</li>
+<li><strong>Sending toast notifications.</strong> Toast notifications are a chance to get some information in front of the user immediately. They are painted by the shell over top of most apps, and live in the action center so the user can go back and interact with them later.</li>
+<li><strong>Sending raw notifications to trigger a background task.</strong> Sometimes you want to do some work on behalf of the user based on a notification. Raw notifications allow your app's background tasks to run</li>
+<li><strong>Message encryption in transit provided by Windows using TLS.</strong> Messages are encrypted on the wire both coming into WNS and going to the user's device.</li>
+</ul>
+<h3 id="limitations-of-primary-channels">Limitations of primary channels</h3>
+<ul>
+<li>Requires using the WNS REST API to push notifications, which isn't standard across device vendors.</li>
+<li>Only one channel can be created per app</li>
+<li>Requires your app to be registered in the Microsoft Store</li>
+</ul>
+<h3 id="creating-a-primary-channel">Creating a primary channel</h3>
+<pre><code class="lang-csharp">PushNotificationChannel channel = 
+	await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+</code></pre>
+<h2 id="secondary-tile-channels">Secondary tile channels</h2>
+<p>These are channels that can be used to push tile and badge updates to a secondary tile. These are used by apps to notify users of interesting actions or information that they can interact with in the app, such as new messages in a group chat or an updated sports score.</p>
+<h3 id="what-do-secondary-tile-channels-enable">What do secondary tile channels enable?</h3>
+<ul>
+<li>Sending tile or badge notifications to secondary tiles. Secondary tiles are a great way to pull users back into your app. They are a deep link to information they care about, and putting relevant information on the tiles helps to bring them back again and again.</li>
+<li>Separation of channels (and expiries) between various tiles. This allows you to separate the logic in the backend between the various types of secondary tiles that a user might pin to their start screen.</li>
+<li>Message encryption in transit provided by Windows using TLS. Messages are encrypted on the wire both coming into WNS and going to the user's device.</li>
+</ul>
+<h3 id="limitations-of-secondary-tile-channels">Limitations of secondary tile channels</h3>
+<ul>
+<li>No toast or raw notifications allowed. Toast or raw notifications sent to a secondary tile are ignored by the system.</li>
+<li>Requires your app to be registered in the Microsoft Store</li>
+</ul>
+<h3 id="creating-a-secondary-tile-channel">Creating a secondary tile channel</h3>
+<pre><code class="lang-csharp">PushNotificationChannel channel = 
+	await PushNotificationChannelManager.CreatePushNotificationChannelForSecondaryTileAsync(tileId);
+</code></pre>
+<h2 id="alternate-channels">Alternate channels</h2>
+<p>Alternate channels enable apps to send push notifications without registering to the Microsoft Store or creating push channels outside of the primary one used for the app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>As of July 1, 2021 applications that want to use the web push channel or the alternate channel to send browser based notifications through WNS will need to be onboarded to the Microsoft Store.</p>
+</div>
+<h3 id="what-do-alternate-channels-enable">What do alternate channels enable?</h3>
+<ul>
+<li>Send raw push notifications to a Windows running on any Windows device. Alternate channels only allow for raw notifications (however you can still wake up a background task to locally show toast or tile notifications).</li>
+<li>Allows apps to create multiple raw push channels for different features within the app. An app can create up to 1000 alternate channels, and each one is valid for 30 days. Each of these channels can be managed or revoked separately by the app.</li>
+<li>Alternate push channels can be created without registering an app with the Microsoft Store. If you app is going to be installed on devices without registering it in the Microsoft Store, it will still be able to receive push notifications.</li>
+<li>Servers can push notifications using the W3C standard REST APIs and VAPID protocol. Alternate channels use the W3C standard protocol, this allows you to simplify the server logic that needs to be maintained.</li>
+<li>Full, end-to-end, message encryption. While the primary channel provides encryption while in transit, if you want to be extra secure, alternate channels enable your app to pass through encryption headers to protect a message.</li>
+</ul>
+<h3 id="limitations-of-alternate-channels">Limitations of alternate channels</h3>
+<ul>
+<li>Your app's server cannot send push toast, tile, or badge type notifications. You can only send push raw notifications. Your app is still able to send local notifications from your background task.</li>
+<li>Requires a different REST API than either primary or secondary tile channels. Using the standard W3C REST API means that your app will need to have different logic for sending push toast or tile updates</li>
+</ul>
+<h3 id="creating-an-alternate-channel">Creating an alternate channel</h3>
+<pre><code class="lang-csharp">PushNotificationChannel webChannel = 
+	await PushNotificationChannelManager.GetDefault().CreateRawPushNotificationChannelWithAlternateKeyForApplicationAsync(applicationServerKey, appChannelId);
+</code></pre>
+<h2 id="channel-type-comparison">Channel type comparison</h2>
+<p>Here is a quick comparison between the different types of channels:</p>
+<table>
+<tr class="header">
+<th align="left"><b>Type</b></th>
+<th align="left"><b>Push toast?</b></th>
+<th align="left"><b>Push tile/badge?</b></th>
+<th align="left"><b>Push raw notifications?</b></th>
+<th align="left"><b>Authentication</b></th>
+<th align="left"><b>API</b></th>
+<th align="left"><b>Store registration required?</b></th>
+<th align="left"><b>Channels</b></th>
+<th align="left"><b>Encryption</b></th>
+</tr>
+<tr class="odd">
+<td align="left">Primary</td>
+<td align="left">Yes</td>
+<td align="left">Yes - primary tile only</td>
+<td align="left">Yes</td>
+<td align="left">OAuth</td>
+<td align="left">WNS REST API</td>
+<td align="left">Yes</td>
+<td align="left">One per app</td>
+<td align="left">In Transit</td>
+</tr>
+<tr class="even">
+<td align="left">Secondary Tile</td>
+<td align="left">No</td>
+<td align="left">Yes - secondary tile only</td>
+<td align="left">No</td>
+<td align="left">OAuth</td>
+<td align="left">WNS REST API</td>
+<td align="left">Yes</td>
+<td align="left">One per secondary tile</td>
+<td align="left">In Transit</td>
+</tr>
+<tr class="odd">
+<td align="left">Alternate</td>
+<td align="left">No</td>
+<td align="left">No</td>
+<td align="left">Yes</td>
+<td align="left">VAPID</td>
+<td align="left">WebPush W3C Standard</td>
+<td align="left">No</td>
+<td align="left">1,000 per app</td>
+<td align="left">In transit + end to end encryption possible with header pass through (requires app code)</td>
+</tr>
+</table>
+<h2 id="choosing-the-right-channel">Choosing the right channel</h2>
+<p>In general, we recommend using the primary channel in your app, with a few exceptions:</p>
+<ol>
+<li>If you are pushing a tile update to a secondary tile, use the secondary tile push channel.</li>
+<li>If you are passing out channels to other services (such as in the case of a browser) use the alternate channel.</li>
+<li>If you are creating an app that won't be listed in the Windows store (such as an LOB app) use an alternate channel.</li>
+<li>If you have existing web push code on your server you wish to reuse or have a need for multiple channels in your backend service, use alternate channels.</li>
+</ol>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/uwp/launch-resume/sending-a-local-tile-notification">Send a local tile notification</a></li>
+<li><a href="app-notifications/adaptive-interactive-toasts.html">Adaptive and interactive toast notifications</a></li>
+<li><a href="/previous-versions/windows/apps/hh868252(v=win.10)">Quickstart: Sending a push notification</a></li>
+<li><a href="/previous-versions/windows/apps/hh465450(v=win.10)">How to update a badge through push notifications</a></li>
+<li><a href="/previous-versions/windows/apps/hh465412(v=win.10)">How to request, create, and save a notification channel</a></li>
+<li><a href="/previous-versions/windows/apps/hh465450(v=win.10)">How to intercept notifications for running applications</a></li>
+<li><a href="/previous-versions/windows/apps/hh465407(v=win.10)">How to authenticate with the Windows Push Notification Service (WNS)</a></li>
+<li><a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification service request and response headers</a></li>
+<li><a href="push-notifications/wns-overview.html">Guidelines and checklist for push notifications</a></li>
+<li><a href="push-notifications/raw-notification-overview.html">Raw notifications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/channel-types.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

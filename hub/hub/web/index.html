@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Web development on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Web development on Windows ">
+    
+    <meta name="description" content="A guide to Microsoft web development tools available on Windows, including Microsoft Edge, DevTools, WebView, PWAs, Visual Studio Code extensions, virtual machines, terminal, package manager, and more.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="web-development-on-windows">Web development on Windows</h1>
+
+<p>Microsoft offers a variety of resources for web developers, including new tools and features supporting web development using Windows. This guide covers many of the tools available to make Windows your ideal environment to develop on for the web. For a list of APIs, see <a href="apis.html">APIs for web development</a>.</p>
+<div class="nextstepaction">
+<p><a href="../dev-environment/index.html">Set up your development environment on Windows</a></p>
+</div>
+<h2 id="webview-devtools-pwas">WebView, DevTools, PWAs</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://developer.microsoft.com/microsoft-edge/webview2/"><img src="../images/webview2.png" alt="WebView 2 icon"></a><br>
+<strong><a href="https://developer.microsoft.com/microsoft-edge/webview2/">WebView 2</a></strong><br>
+Embed web content (HTML, CSS, and JavaScript) in your native applications with Microsoft Edge WebView2.
+<a href="https://developer.microsoft.com/microsoft-edge/webview2/#download-section">Download WebView 2</a></p>
+</div>
+<div class="column">
+<p><a href="/microsoft-edge/devtools-guide-chromium/landing/"><img src="../images/microsoftedge-devtools.png" alt="Microsoft Edge DevTools icon"></a><br>
+<strong><a href="/microsoft-edge/devtools-guide-chromium/">Microsoft Edge DevTools</a></strong><br>
+Microsoft Edge Developer Tools are a set of inspection and debugging tools built directly into the Microsoft Edge browser.
+To open DevTools, with Microsoft Edge in focus:</p>
+<ul>
+<li>Right-click then Inspect</li>
+<li>Select the <code>F12</code> key</li>
+<li><code>Ctrl</code> + <code>Shift</code> + <code>i</code></li>
+</ul>
+</div>
+<div class="column">
+<p><a href="/microsoft-edge/progressive-web-apps-chromium/"><img src="../images/pwa-icon.png" alt="PWA icon"></a><br>
+<strong><a href="/microsoft-edge/progressive-web-apps-chromium/">Progressive Web Apps on Windows</a></strong><br>
+Progressive Web Apps (PWAs) provide your users with a native, app-like experience customized for their devices. They are websites that are progressively enhanced to function like native apps on supporting platforms.<br>
+<a href="/microsoft-edge/progressive-web-apps-chromium/get-started">Get started with PWAs</a></p>
+</div>
+</section>
+<h2 id="microsoft-edge-browser">Microsoft Edge browser</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://www.microsoft.com/edge"><img src="../images/microsoftedge.png" alt="Microsoft Edge icon"></a><br>
+<strong><a href="https://developer.microsoft.com/microsoft-edge/">Microsoft Edge for Developers</a></strong><br>
+The new Microsoft Edge  is based on Chromium to create better web compatibility and less fragmentation of underlying web platforms. Released January 15, 2020, it is supported on Windows, macOS, iOS, and Android. <br>
+<a href="https://www.microsoft.com/edge">Install the new Microsoft Edge</a></p>
+</div>
+<div class="column">
+<p><a href="/deployedge/"><img src="../images/microsoftedge-enterprise.png" alt="Microsoft Edge for Business"></a><br>
+<strong><a href="/deployedge/">Microsoft Edge for Business</a></strong><br>
+Microsoft Edge is based on Chromium and offers enterprise support. Get step-by-step guidance on how to configure and deploy the multiple channels available.<br>
+<a href="https://www.microsoft.com/edge/business/download">Download Microsoft Edge channel</a></p>
+</div>
+<div class="column">
+<p><a href="https://www.microsoft.com/edge/download/insider"><img src="../images/microsoftedge-beta.png" alt="Microsoft Edge Insider icon"></a><br>
+<strong><a href="https://www.microsoft.com/edge/download/insider">Microsoft Edge Insider</a></strong><br>
+We're building something new for Microsoft Edge every day. Learn about our recent progress and how you can get involved.
+<a href="https://www.microsoft.com/edge/download/insider">Download Microsoft Edge Beta version</a></p>
+</div>
+<div class="column">
+<p><a href="https://support.microsoft.com/microsoft-edge"><img src="../images/microsoftedge-support.png" alt="Microsoft Edge Support icon"></a><br>
+<strong><a href="https://support.microsoft.com/microsoft-edge">Microsoft Edge Support</a></strong><br>
+Get help with customizing your browser, adding extensions, tracking prevention, troubleshooting, and more.
+<a href="https://support.microsoft.com/microsoft-edge">Get help with Microsoft Edge</a></p>
+</div>
+</section>
+<h2 id="debugging-testing-and-accessibility">Debugging, Testing and Accessibility</h2>
+<section class="row">
+<div class="column">
+<p><a href="/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension"><img src="../images/visualstudio-edge-debugger.png" alt="VS Marketplace Edge Debugger extension"></a><br>
+<strong><a href="/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension">Microsoft Edge Tools for VS Code</a></strong><br>
+Without leaving Visual Studio Code, use Microsoft Edge DevTools to connect to an instance and view the runtime HTML structure, change layouts, styles (CSS), read console messages, and view network requests.<br>
+<a href="https://marketplace.visualstudio.com/items?itemName=ms-edgedevtools.vscode-edge-devtools">Install Microsoft Edge Tools for VS Code</a></p>
+</div>
+<div class="column">
+<p><a href="https://webhint.io/"><img src="../images/webhint.png" alt="WebHint icon"></a><br>
+<strong><a href="https://webhint.io/">WebHint for Accessibility</a></strong><br>
+A customizable linting tool that helps you improve your site's accessibility, speed, cross-browser compatibility, and more by checking your code for best practices and common errors.<br>
+<a href="https://webhint.io/docs/user-guide/extensions/vscode-webhint/">Install VS Code extension</a><br>
+<a href="https://webhint.io/docs/user-guide/extensions/extension-browser/">Install browser extension</a><br>
+<a href="https://webhint.io/docs/user-guide/">Install CLI</a></p>
+</div>
+<div class="column">
+<p><a href="/microsoft-edge/webdriver-chromium/"><img src="../images/webdriver.png" alt="WebDriver icon"></a><br>
+<strong><a href="/microsoft-edge/webdriver-chromium/">WebDriver</a></strong><br>
+Close the loop on your developer cycle by automating testing of your website in Microsoft Edge with Microsoft WebDriver.<br>
+<a href="https://developer.microsoft.com/microsoft-edge/tools/webdriver/">Install WebDriver</a></p>
+</div>
+</section>
+<h2 id="visual-studio-code-editors">Visual Studio code editors</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://code.visualstudio.com/docs"><img src="../images/Vscode.png" alt="VS Code icon"></a><br>
+<strong><a href="https://code.visualstudio.com/docs">VS Code</a></strong><br>
+A lightweight source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).<br>
+<a href="https://code.visualstudio.com/download">Install VS Code</a></p>
+</div>
+<div class="column">
+<p><a href="/visualstudio/windows/"><img src="../images/visualstudio.png" alt="Visual Studio icon"></a><br>
+<strong><a href="/visualstudio/windows/">Visual Studio (IDE)</a></strong><br>
+An integrated development environment that you can use to edit, debug, build code, and publish apps, including compilers, intellisense code completion, and many more features.<br>
+<a href="/visualstudio/install/install-visual-studio">Install Visual Studio</a></p>
+</div>
+<div class="column">
+<p><a href="https://marketplace.visualstudio.com/vscode"><img src="../images/vs-code-marketplace.png" alt="VS Code marketplace icon"></a><br>
+<strong><a href="https://marketplace.visualstudio.com/vscode">VS Code Marketplace for Extensions</a></strong><br>
+Explore the many different extensions available to customize your Visual Studio Code editor.<br>
+<a href="https://marketplace.visualstudio.com/vscode">Install Extensions</a></p>
+</div>
+<div class="column">
+<p><a href="https://marketplace.visualstudio.com/vs/"><img src="../images/vs-marketplace.png" alt="Visual Studio marketplace icon"></a><br>
+<strong><a href="https://marketplace.visualstudio.com/vs">Visual Studio Marketplace for Extensions</a></strong><br>
+Explore the many different extensions available to customize your Visual Studio integrated development environment.<br>
+<a href="https://marketplace.visualstudio.com/vs">Install Extensions</a></p>
+</div>
+</section>
+<h2 id="wsl-terminal-package-manager-docker-desktop">WSL, Terminal, Package Manager, Docker Desktop</h2>
+<section class="row">
+<div class="column">
+<p><a href="/windows/wsl/"><img src="../images/windows-linux-dev-env.png" alt="WSL icon"></a><br>
+<strong><a href="/windows/wsl/">Windows Subsystem for Linux</a></strong><br>
+Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
+<a href="/windows/wsl/install">Install WSL</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/terminal/"><img src="../images/terminal.png" alt="Windows Terminal icon"></a><br>
+<strong><a href="/windows/terminal/">Windows Terminal</a></strong><br>
+Customize your terminal environment to work with multiple command line shells.
+<br>
+<a href="https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&amp;activetab=pivot:overviewtab">Install Terminal</a></p>
+</div>
+<div class="column">
+<p><a href="../package-manager/index.html"><img src="../images/winget.png" alt="Windows Package Manager icon"></a><br>
+<strong><a href="../package-manager/index.html">Windows Package Manager</a></strong><br>
+Use the winget.exe client with your command line to install apps on Windows or <a href="../package-manager/package/index.html">submit your own packages to Windows Package Manager</a>.<br>
+<a href="../package-manager/winget/index.html">Install Windows Package Manager winget client</a></p>
+</div>
+<div class="column">
+<p><a href="../dev-environment/docker/overview.html"><img src="../images/docker-icon.png" alt="Docker Desktop for Windows icon"></a><br>
+<strong><a href="../dev-environment/docker/overview.html">Docker Desktop for Windows</a></strong><br>
+Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.<br>
+<a href="https://docs.docker.com/desktop/setup/install/windows-install/">Install Docker Desktop for Windows</a></p>
+</div>
+</section>
+<h2 id="aspnet-typescript-net-maui">ASP.NET, Typescript, .NET MAUI</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://dotnet.microsoft.com/apps/aspnet"><img src="../images/aspnet.png" alt="ASP.NET icon"></a><br>
+<strong><a href="/aspnet/">ASP.NET</a></strong><br>
+A cross-platform framework for building web apps and services, Internet of Things (IoT) apps, or mobile backends with .NET and C#. Build rich interactive web UI with <a href="/aspnet/core/blazor/">Blazor</a>. Use your favorite dev tools on Windows, macOS, and Linux. Deploy to the cloud or on-premises. Run on .NET.<br>
+<a href="https://dotnet.microsoft.com/download">Install ASP.NET</a></p>
+</div>
+<div class="column">
+<p><a href="https://www.typescriptlang.org/"><img src="../images/typescript-icon.png" alt="Typescript icon"></a><br>
+<strong><a href="https://www.typescriptlang.org/">Typescript</a></strong><br>
+TypeScript extends JavaScript by adding types to the language. For example, JavaScript provides language primitives like string, number, and object, but it doesn’t check that you’ve consistently assigned these. TypeScript does.<br>
+<a href="https://www.typescriptlang.org/play/">Try in your browser</a>
+<a href="https://www.typescriptlang.org/#installation">Install locally</a></p>
+</div>
+<div class="column">
+<p><a href="/dotnet/maui/"><img src="../images/dotnet.png" alt=".NET MAUI icon"></a><br>
+<strong><a href="/dotnet/maui/">.NET MAUI</a></strong><br>
+.NET Multi-platform App UI (.NET MAUI) lets you build native apps using a .NET cross-platform UI toolkit that targets the mobile and desktop form factors on Android, iOS, macOS, Windows, and Tizen.
+<br>
+<a href="/dotnet/maui/get-started/installation">Install .NET MAUI</a></p>
+</div>
+</section>
+<h2 id="open-source-contributions">Open Source contributions</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://opensource.microsoft.com/"><img src="../images/opensource-icon.png" alt="OpenSource icon"></a><br>
+<strong><a href="https://opensource.microsoft.com/">Open Source at Microsoft</a></strong><br>
+Thousands of Microsoft engineers use, contribute to and release open source every day. Popular projects include Visual Studio Code, TypeScript, .NET, and ChakraCore.<br>
+<a href="https://opensource.microsoft.com/collaborate">Get involved</a></p>
+</div>
+<div class="column">
+<p><a href="/contribute/"><img src="../images/docs.png" alt="docs icon"></a><br>
+<strong><a href="/contribute/">Contribute to the docs</a></strong><br>
+Most of the documentation sets at Microsoft are open source and hosted on GitHub. Contribute by filing issues or authoring pull requests.
+<br>
+<a href="/contribute/">Learn how</a></p>
+</div>
+</section>
+<h2 id="cloud-development-with-azure">Cloud development with Azure</h2>
+<section class="row">
+<div class="column">
+<p><a href="/azure/guides/developer/azure-developer-guide"><img src="../images/Azure.png" alt="Azure icon"></a><br>
+<strong><a href="/azure/guides/developer/azure-developer-guide">Azure</a></strong><br>
+A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
+<a href="https://azure.microsoft.com/free/">Set up an Azure account</a></p>
+</div>
+<div class="column">
+<p><a href="/azure/cognitive-services/what-are-cognitive-services"><img src="../images/azure-cognitive-services.png" alt="Azure cognitive services icon"></a><br>
+<strong><a href="/azure/cognitive-services/what-are-cognitive-services">Azure Cognitive Services</a></strong><br>
+Cloud-based services with REST APIs and client library SDKs available to help you build cognitive intelligence into your applications.<br>
+<a href="https://azure.microsoft.com/services/cognitive-services/">Try Cognitive Service</a></p>
+</div>
+<div class="column">
+<p><a href="/azure/"><img src="../images/Azure.png" alt="Azure dev guide icon"></a><br>
+<strong><a href="/azure/">Browse Azure products</a></strong><br>
+Azure offers a huge variety of products and services - take a look at through the documentation or see the <a href="https://azure.microsoft.com/products/">Azure product descriptions and pricing</a>.<br>
+<a href="https://azure.microsoft.com/free/">Set up an Azure account</a></p>
+</div>
+</section>
+<h2 id="additional-resources">Additional resources</h2>
+<section class="row">
+<div class="column">
+<p><a href="../dev-environment/index.html"><img src="../images/dev-environment-icon.png" alt="Set up dev environment icon"></a><br>
+<strong><a href="../dev-environment/index.html">Set up your development environment on Windows</a></strong><br>
+Get help setting up your development environment to work with Python, NodeJS, C#, C, C++, build Android apps, build Windows desktop apps, build Docker containers, run PowerShell scripts, and more.
+<br>
+<a href="../dev-environment/index.html">Get started</a></p>
+</div>
+<div class="column">
+<p><a href="https://microsoft.github.io/react-native-windows/"><img src="../images/reactnative-windows.png" alt="React Native for Desktop icon"></a><br>
+<strong><a href="https://microsoft.github.io/react-native-windows/">React Native for Desktop</a></strong><br>
+Bring React Native support to the Windows SDK and macOS 10.13 SDK. Use JavaScript to build native Windows apps for all devices supported by Windows including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
+<br>
+<a href="https://microsoft.github.io/react-native-windows/docs/getting-started">Install React Native for Windows</a><br>
+<a href="https://microsoft.github.io/react-native-windows/docs/rnm-getting-started">Install React Native for MacOS</a></p>
+</div>
+<div class="column">
+<p><a href="/training/browse/?terms=web"><img src="../images/learn-icon.png" alt="Learn icon"></a><br>
+<strong><a href="/training/browse/?terms=web">Microsoft Learn courses related to web development</a></strong><br>
+Microsoft Learn offers free online courses to learn a variety of new skills and discover Microsoft products and services with step-by-step guidance.
+<br>
+<a href="/training/browse/?terms=web">Start Learning</a></p>
+</div>
+</section>
+<h2 id="transitioning-between-mac-and-windows">Transitioning between Mac and Windows</h2>
+<p>Check out our <a href="../dev-environment/mac-to-windows.html">guide to transitioning between a Mac and Windows</a> (or Windows Subsystem for Linux) development environment.</p>
+<ul>
+<li><a href="../dev-environment/mac-to-windows.html#keyboard-shortcuts">Keyboard shortcuts</a></li>
+<li><a href="../dev-environment/mac-to-windows.html#trackpad-shortcuts">Trackpad shortcuts</a></li>
+<li><a href="../dev-environment/mac-to-windows.html#command-line-shells-and-terminals">Terminal and shell tools</a></li>
+<li><a href="../dev-environment/mac-to-windows.html#apps-and-utilities">Apps and utilities</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/web/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

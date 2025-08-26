@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create your first WinUI 3 (Windows App SDK) project </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create your first WinUI 3 (Windows App SDK) project ">
+    
+    <meta name="description" content="Learn how to use Visual Studio to create a new project for a C# .NET or C++ app that has a WinUI 3 user interface (UI).">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-your-first-winui-3-windows-app-sdk-project">Create your first WinUI 3 (Windows App SDK) project</h1>
+
+<p>In this topic we'll see how to use Visual Studio to create a new <a href="/windows/apps/windows-app-sdk/">Windows App SDK</a> project for a C# .NET or C++ app that has a <a href="/windows/apps/winui/winui3/">WinUI 3</a> user interface (UI). We'll also take a look at some of the code in the resulting project, what it does, and how it works.</p>
+<p>Links to full installation details are in the steps below. We recommend that you install and target the latest Stable release of the Windows App SDK (see <a href="/windows/apps/windows-app-sdk/stable-channel">Stable channel release notes</a>).</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>No matter what version of the Windows App SDK you choose to install and target (or what version of Visual Studio you use), it's important to check any <em>limitations and known issues</em> in the release notes for that version (see <a href="/windows/apps/windows-app-sdk/release-channels">Windows App SDK release channels</a>). By knowing about any <em>limitations and known issues</em> for your version of the Windows App SDK, you'll be able to work around them should you run into any of them while following along with the steps in this topic.</p>
+<p>If you encounter any other issues, then you'll likely find info about them in GitHub issues, or on the <a href="https://github.com/microsoft/WindowsAppSDK/discussions">Discussions tab</a>, of the <strong>WindowsAppSDK</strong> GitHub repo; or via an online search.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're working on a UWP app, then refer to <a href="../../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+<h2 id="packaged-unpackaged-and-packaged-with-external-location">Packaged, unpackaged, and packaged with external location</h2>
+<p>Packaging is an important consideration of any Windows App SDK project. For more info about your packaging options, see <a href="/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app">Advantages and disadvantages of packaging your app</a>.</p>
+<h2 id="packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app">Packaged: Create a new project for a packaged C# or C++ WinUI 3 desktop app</h2>
+<ol>
+<li><p>To set up your development computer, see <a href="/windows/apps/windows-app-sdk/set-up-your-development-environment">Install tools for the Windows App SDK</a>.</p>
+</li>
+<li><p>In Visual Studio, select <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong>.</p>
+</li>
+<li><p>In the <strong>New Project</strong> dialog's drop-down filters, select <strong>C#</strong> or <strong>C++</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>, respectively.</p>
+</li>
+<li><p>Select the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template, and click <strong>Next</strong>. That template creates a desktop app with a WinUI 3-based user interface. The generated project is configured with the package manifest and other support needed to build the app into an MSIX package (see <a href="/windows/msix/overview">What is MSIX?</a>). For more information about this project template, see <a href="/windows/apps/windows-app-sdk/single-project-msix">Package your app using single-project MSIX</a>.</p>
+<p><span class="mx-imgBorder">
+<a href="images/WinUI3-csharp-newproject-1.0-later.png#lightbox" data-linktype="relative-path">
+<img src="images/WinUI3-csharp-newproject-1.0-later.png" alt="Screenshot of Create a new project wizard with the Blank App Packaged (Win UI in Desktop) option highlighted.">
+</a>
+</span>
+</p>
+</li>
+<li><p>Enter a project name, choose any other options as desired, and click <strong>Create</strong>.</p>
+<p>The project that Visual Studio generates contains your app's code. The <strong>App.xaml</strong> file and code-behind file(s) define an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application"><strong>Application</strong></a>-derived class that represents your running app. The <strong>MainWindow.xaml</strong> file and code-behind file(s) define a <strong>MainWindow</strong> class that represents the main window displayed by your app. Those classes derive from types in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml"><strong>Microsoft.UI.Xaml</strong></a> namespace provided by WinUI 3.</p>
+<p>The project also includes the package manifest for building the app into an <a href="/windows/msix/overview">MSIX package</a>.</p>
+<p><img src="images/WinUI-csharp-appproject-1.0-later.png" alt="Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file for single project M S I X."></p>
+</li>
+<li><p>Press F5 or use the <strong>Debug</strong> &gt; <strong>Start Debugging</strong> menu option to build and run your solution on your development computer and confirm that the app runs without errors.</p>
+</li>
+</ol>
+<p>The Blank App template creates a simple app with a single window for your content. Apps are typically more complex, and you'll want to add elements as your app progresses, like new windows, pages, or custom user controls. For more details about the available items, and instructions for how to add them, see <a href="/windows/apps/winui/winui3/winui-project-templates-in-visual-studio">WinUI 3 templates in Visual Studio</a>.</p>
+<p><img src="images/winui3-addnewitem.png" alt="Screenshot of the Add New Item dialog box with the Installed &gt; Visual C sharp Items &gt; Win U I selected and the Blank Page option highlighted."></p>
+<h2 id="unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app">Unpackaged: Create a new project for an unpackaged C# or C++ WinUI 3 desktop app</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from an app packaged with external location or an unpackaged app is to use <em>auto-initialization</em> via the <code>&lt;WindowsPackageType&gt;</code> project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, continue reading this section. Or, if you have an existing project that's not WinUI 3, then see <a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project">Use the Windows App SDK in an existing project</a>.</p>
+</div>
+<ol>
+<li><p>To set up your development computer, see <a href="/windows/apps/windows-app-sdk/set-up-your-development-environment">Install tools for the Windows App SDK</a>.</p>
+</li>
+<li><p>Download and run the latest <em>installer</em> for the Windows App SDK from <a href="/windows/apps/windows-app-sdk/downloads">Downloads for the Windows App SDK</a>. That will install the runtime package dependencies required to run and deploy an app packaged with external location or an unpackaged app on the target device (see <a href="/windows/apps/windows-app-sdk/deploy-unpackaged-apps">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a>).</p>
+</li>
+<li><p><strong>C++</strong>. Install the <a href="/cpp/windows/latest-supported-vc-redist">Microsoft Visual C++ Redistributable (VCRedist)</a> appropriate for the architecture of the target device.</p>
+<ul>
+<li>The latest version of the VCRedist is compatible with the latest Visual Studio generally-available (GA) release (that is, not preview), as well as all versions of Visual Studio that can be used to build Windows App SDK binaries.</li>
+<li>Insider builds of Visual Studio might have installed a later version of the VCRedist, and running the public version will then fail with this error (which you can ignore): <strong>Error 0x80070666: Cannot install a product when a newer version is installed.</strong></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you don't have the VCRedist installed on the target device, then dynamic links to <code>c:\windows\system32\vcruntime140.dll</code> fail. That failure can manifest to end users in various ways.</p>
+</div>
+</li>
+<li><p>In Visual Studio, select <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong>.</p>
+</li>
+<li><p>In the New Project dialog's drop-down filters, select <strong>C#</strong> or <strong>C++</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>, respectively.</p>
+</li>
+<li><p>You need to start with a packaged project in order to use XAML diagnostics. So select the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template, and click <strong>Next</strong>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Make sure that the project you just created is targeting the version of the Windows App SDK that you installed with the <em>installer</em> in step 2. To do that, in Visual Studio, click <strong>Tools</strong> &gt; <strong>NuGet Package Manager</strong> &gt; <strong>Manage NuGet Packages for Solution...</strong> &gt; <strong>Updates</strong>. And if necessary update the reference to the <em>Microsoft.WindowsAppSDK</em> NuGet package. You can see which version is installed on the <strong>Installed</strong> tab.</p>
+</div>
+</li>
+<li><p>Add the following property to your project file—either your <code>.csproj</code> (C#) or <code>.vcxproj</code> (C++) file. Put it inside the <strong>PropertyGroup</strong> element that's already there (for C++, the element will have <code>Label=&quot;Globals&quot;</code>):</p>
+<pre><code class="lang-xml">&lt;Project ...&gt;
+  ...
+  &lt;PropertyGroup&gt;
+    ...
+    &lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;
+    ...
+  &lt;/PropertyGroup&gt; 
+  ...
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p><strong>C++</strong>. In your C++ project (<code>.vcxproj</code>) file, inside the <strong>PropertyGroup</strong> element that's already there, set the <em>AppxPackage</em> property to <em>false</em>:</p>
+<pre><code class="lang-xml">&lt;Project ...&gt;
+  ...
+  &lt;PropertyGroup Label=&quot;Globals&quot;&gt;
+    ...
+    &lt;AppxPackage&gt;false&lt;/AppxPackage&gt;
+    ...
+  &lt;/PropertyGroup&gt; 
+  ...
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p><strong>C#</strong>. To start a C# app from Visual Studio (either <strong>Debugging</strong> or <strong>Without Debugging</strong>), select the <em>Unpackaged</em> launch profile from the <strong>Start</strong> drop-down. If the <em>Package</em> profile is selected, then you'll see a deployment error in Visual Studio. This step isn't necessary if you start the application (<code>.exe</code>) from the command line or from Windows File Explorer.</p>
+<p><span class="mx-imgBorder">
+<img src="images/winui3-csharp-launch-profile.png" alt="Visual Studio - Start drop-down with C# application unpackaged launch profile highlighted">
+</span>
+</p>
+</li>
+<li><p>Build and run.</p>
+</li>
+</ol>
+<h3 id="the-bootstrapper-api">The bootstrapper API</h3>
+<p>Setting the <code>&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;</code> project property causes the <em>auto-initializer</em> to locate and load a version of the Windows App SDK version that's most appropriate for your app.</p>
+<p>If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see <a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>, and <a href="/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>.</p>
+<p>For more info about the bootstrapper, see <a href="/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper">Deployment architecture and overview for framework-dependent apps</a>.</p>
+<h2 id="a-look-at-the-code-in-the-project-template">A look at the code in the project template</h2>
+<p>In this walkthrough, we used the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template, which creates a desktop app with a WinUI 3-based user interface. Let's take a look at some of the code that comes with that template, and what it does. For more info on available WinUI 3 project and item templates, see <a href="/windows/apps/winui/winui3/winui-project-templates-in-visual-studio">WinUI 3 templates in Visual Studio</a>.</p>
+<h3 id="the-apps-entry-point">The app's entry point</h3>
+<p>When the Windows operating system (OS) runs an app, the OS begins execution in the app's <em>entry point</em>. That entry point takes the form of a <strong>Main</strong> (or <strong>wWinMain</strong> for C++/WinRT) function. Ordinarily, a new project configures that function to be auto-generated by the Visual Studio build process. And it's hidden by default, so you don't need to be concerned with it. But if you <em>are</em> curious for more info, then see <a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle#single-instancing-in-main-or-wwinmain">Single-instancing in Main or wWinMain</a>.</p>
+<h3 id="the-app-class">The App class</h3>
+<p>The app as a whole is represented by a class that's typically called simply <strong>App</strong>. That class is defined in <strong>App.xaml</strong> and in its code-behind file(s) (<code>App.xaml.cs</code>, or <code>App.xaml.h</code> and <code>.cpp</code>). <strong>App</strong> is derived from the WinUI 3 <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application"><strong>Microsoft.UI.Xaml.Application</strong></a> class.</p>
+<p>The generated code in the entry point creates an instance of <strong>App</strong>, and sets it running.</p>
+<p>In the constructor of <strong>App</strong>, you'll see the <strong>InitializeComponent</strong> method being called. That method essentially parses the contents of <strong>App.xaml</strong>, which is XAML markup. And that's important because <strong>App.xaml</strong> contains merged resources that need to be resolved and loaded into a dictionary for the running app to use.</p>
+<p>Another interesting method of <strong>App</strong> is <strong>OnLaunched</strong>. In there we create and activate a new instance of the <strong>MainWindow</strong> class (which we'll look at next).</p>
+<h3 id="the-mainwindow-class">The MainWindow class</h3>
+<p>The main window displayed by the app is of course represented by the <strong>MainWindow</strong> class. That class is defined in <strong>MainWindow.xaml</strong> and in its code-behind file(s) (<code>MainWindow.xaml.cs</code>, or <code>MainWindow.xaml.h</code> and <code>.cpp</code>). <strong>MainWindow</strong> is derived from the WinUI 3 <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Microsoft.UI.Xaml.Window</strong></a> class.</p>
+<p>The constructor of <strong>MainWindow</strong> calls its own <strong>InitializeComponent</strong> method. Again, its job is to turn the XAML markup inside <strong>MainWindow.xaml</strong> into a graph of user interface (UI) objects.</p>
+<p>In <strong>MainWindow.xaml</strong> you'll see the basic layout of <strong>MainWindow</strong>. At the layout root is a dynamic panel called a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel"><strong>Microsoft.UI.Xaml.Controls.StackPanel</strong></a>. For more info about layout panels, see <a href="/windows/apps/design/layout/layout-panels">Layout panels</a>.</p>
+<p>Inside that <strong>StackPanel</strong> is a <a href="/uwp/api/windows.ui.xaml.controls.button"><strong>Microsoft.UI.Xaml.Controls.Button</strong></a>. And that <strong>Button</strong> uses the markup <code>Click=&quot;myButton_Click&quot;</code> to declaratively hook up an event handler method for the <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click"><strong>Click</strong></a> event.</p>
+<p>That method is named <strong>myButton_Click</strong>, and you can find the implementation of that method in <code>MainWindow.xaml.cs</code>, or in <code>MainWindow.xaml.cpp</code>. In it, the content of the button is changed from the default &quot;Click Me&quot; to &quot;Clicked&quot;.</p>
+<p><strong>C++</strong>. If you created a C++ project, then you'll also see a <code>MainWindow.idl</code> file. For more info, see the <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a> documentation. <a href="/windows/uwp/cpp-and-winrt-apis/binding-property">XAML controls; bind to a C++/WinRT property</a> is a good place to start learning about the purpose and usage of <code>.idl</code> files.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>This topic showed how to create a Visual Studio project for a packaged or an unpackaged app. For an example of adding functionality to such an app, see <a href="/windows/apps/get-started/simple-photo-viewer-winui3">Tutorial: Create a simple photo viewer with WinUI 3</a>. That topic walks through the process of building a simple app to display photos.</p>
+<p>Then, to continue your development journey with the Windows App SDK, see <a href="/windows/apps/develop/">Develop Windows desktop apps</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/apps/winui/winui3/">WinUI 3</a></li>
+<li><a href="/windows/apps/windows-app-sdk/release-channels">Windows App SDK release channels</a></li>
+<li><a href="/windows/apps/windows-app-sdk/set-up-your-development-environment">Install tools for the Windows App SDK</a></li>
+<li><a href="/windows/msix/overview">What is MSIX?</a></li>
+<li><a href="/windows/apps/windows-app-sdk/single-project-msix">Package your app using single-project MSIX</a></li>
+<li><a href="/windows/apps/winui/winui3/winui-project-templates-in-visual-studio">WinUI 3 project templates in Visual Studio</a></li>
+<li><a href="/windows/apps/windows-app-sdk/deploy-unpackaged-apps">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="/cpp/windows/latest-supported-vc-redist">Microsoft Visual C++ Redistributable (VCRedist)</a></li>
+<li><a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a></li>
+<li><a href="/windows/apps/windows-app-sdk/deployment-architecture">Deployment architecture for the Windows App SDK</a></li>
+<li><a href="/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a></li>
+<li><a href="/windows/apps/develop/">Develop Windows desktop apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/create-your-first-winui3-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

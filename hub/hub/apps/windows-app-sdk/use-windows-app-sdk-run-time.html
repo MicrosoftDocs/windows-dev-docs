@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use the Windows App SDK runtime for apps packaged with external location or unpackaged </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use the Windows App SDK runtime for apps packaged with external location or unpackaged ">
+    
+    <meta name="description" content="If your app isn&#39;t installed by using MSIX (that is, it&#39;s packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-the-windows-app-sdk-runtime-for-apps-packaged-with-external-location-or-unpackaged">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your app is installed by using MSIX technology, then see <a href="deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a>.</p>
+</div>
+<p>If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore. Your app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK.</p>
+<ul>
+<li>Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property <code>&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;</code>). For a demonstration, see <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>.</li>
+<li>But if you have advanced needs (such as handling errors by showing your own custom UI or logging, or if you need to load a version of the Windows App SDK that's different from the version you built with), then continue reading this topic. In those scenarios, instead of auto-initialization, you can call the bootstrapper API explicitly.</li>
+</ul>
+<p>Either of the two techniques above allows an app that doesn't use MSIX to take a dynamic dependency on the Windows App SDK at run time.</p>
+<p>For background information about dynamic dependencies, see <a href="../desktop/modernize/framework-packages/framework-packages-overview.html">MSIX framework packages and dynamic dependencies</a>.</p>
+<h2 id="behind-the-scenes-and-opting-out-of-automatic-module-initialization">Behind the scenes, and opting out of automatic module initialization</h2>
+<p>The code generated by the <code>WindowsPackageType</code> property mentioned above leverages module initializers to call the bootstrapper API. The bootstrapper does the heavy lifting to find the Windows App SDK and enable the current process to use it. The generated code handles both initialization and shutdown. You can control initialization's behavior with the following project properties:</p>
+<ul>
+<li><code>&lt;WindowsAppSDKBootstrapAutoInitializeOptions_Default&gt;true&lt;/WindowsAppSDKBootstrapAutoInitializeOptions_Default&gt;</code>
+<ul>
+<li>Use default options.</li>
+</ul>
+</li>
+<li><code>&lt;WindowsAppSDKBootstrapAutoInitializeOptions_None&gt;true&lt;/WindowsAppSDKBootstrapAutoInitializeOptions_None&gt;</code>
+<ul>
+<li>Use no options.</li>
+</ul>
+</li>
+<li><code>&lt;WindowsAppSDKBootstrapAutoInitializeOptions_OnError_DebugBreak&gt;true&lt;/WindowsAppSDKBootstrapAutoInitializeOptions_OnError_DebugBreak&gt;</code>
+<ul>
+<li>Call <a href="/windows/win32/api/debugapi/nf-debugapi-debugbreak">DebugBreak()</a> if an error occurs.</li>
+</ul>
+</li>
+<li><code>&lt;WindowsAppSDKBootstrapAutoInitializeOptions_OnError_DebugBreak_IfDebuggerAttached&gt;true&lt;/WindowsAppSDKBootstrapAutoInitializeOptions_OnError_DebugBreak_IfDebuggerAttached&gt;</code>
+<ul>
+<li>Call <a href="/windows/win32/api/debugapi/nf-debugapi-debugbreak">DebugBreak()</a> if an error occurs only if a debugger is attached to the process.</li>
+</ul>
+</li>
+<li><code>&lt;WindowsAppSDKBootstrapAutoInitializeOptions_OnError_FailFast&gt;true&lt;/WindowsAppSDKBootstrapAutoInitializeOptions_OnError_FailFast&gt;</code>
+<ul>
+<li>Perform a fail-fast if an error occurs.</li>
+</ul>
+</li>
+<li><code>&lt;WindowsAppSDKBootstrapAutoInitializeOptions_OnNoMatch_ShowUI&gt;true&lt;/WindowsAppSDKBootstrapAutoInitializeOptions_OnNoMatch_ShowUI&gt;</code>
+<ul>
+<li>Prompt the user to acquire the Windows App SDK runtime if a matching one cannot be found.</li>
+</ul>
+</li>
+<li><code>&lt;WindowsAppSDKBootstrapAutoInitializeOptions_OnPackageIdentity_NoOp&gt;true&lt;/WindowsAppSDKBootstrapAutoInitializeOptions_OnPackageIdentity_NoOp&gt;</code>
+<ul>
+<li>Succceed if called in a process with package identity (otherwise it fails and an error is returned).</li>
+</ul>
+</li>
+</ul>
+<!-- TODO for 1.1 GA: See INSERT-LINK-HERE-TO-BOOTSTRAP-ENUM-InitializeOptions for more details. -->
+<p>If you want your app to have explicit control, then you can directly call the boostrapper API early in your application's startup. In that case you don't need <code>WindowsPackageType</code> in your project file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In addition to the automatic initialization and the bootstrapper API, the Windows App SDK also provides an implementation of the <em>dynamic dependency API</em>. This API enables your unpackaged apps to take a dependency on <em>any</em> framework package (not just the Windows App SDK framework package), and it is used internally by the bootstrapper API. For more information about the dynamic dependency API, see <a href="../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.html">Use the dynamic dependency API to reference MSIX packages at run time</a>.</p>
+</div>
+<h3 id="opting-out-of-or-into-automatic-module-initialization">Opting out of (or into) automatic module initialization</h3>
+<p>The project property <code>&lt;WindowsAppSdkBootstrapInitialize&gt;false&lt;/WindowsAppSdkBootstrapInitialize&gt;</code> disables the automatic module initialization described above (the bootstrapper API isn't called). That allows your app to take responsibility and directly call the bootstrapper API.</p>
+<p>As of version 1.2 of the Windows App SDK (from the stable channel), automatic module initialization applies only to projects that produce an executable (that is, the <strong>OutputType</strong> project property is set to <em>Exe</em> or <em>WinExe</em>). This is to prevent adding auto-initializers into class library DLLs and other non-executables by default. If you <em>do</em> need an auto-initializer in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize the bootstrapper), then you can explicitly enable an auto-initializer in your project with <code>&lt;WindowsAppSdkBootstrapInitialize&gt;true&lt;/WindowsAppSdkBootstrapInitialize&gt;</code>.</p>
+<h2 id="using-the-bootstrapper-api">Using the bootstrapper API</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <strong>MddBootstrapInitialize2</strong> function mentioned below is available starting in version 1.1.</p>
+</div>
+<p>The bootstrapper API consists of three C/C++ functions that are declared in the <a href="/windows/windows-app-sdk/api/win32/mddbootstrap">mddbootstrap.h</a> header file in the Windows App SDK: <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize"><strong>MddBootstrapInitialize</strong></a>, <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize2"><strong>MddBootstrapInitialize2</strong></a>, and <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown"><strong>MddBootstrapShutdown</strong></a>. Those functions are provided by the bootstrapper library in the Windows App SDK. That library is a small DLL that you must distribute with your app; it's not part of the framework package itself.</p>
+<h3 id="mddbootstrapinitialize2">MddBootstrapInitialize2</h3>
+<p>This function initializes the calling process to use the version of the Windows App SDK framework package that best matches the criteria that you pass to the function parameters. Typically, that results in referencing the version of the framework package that matches the Windows App SDK NuGet package that's installed. If multiple packages meet the criteria, then the best candidate is selected. This function must be one of the first calls in the app's startup to ensure the bootstrapper component can properly initialize the Windows App SDK and add the run-time reference to the framework package.</p>
+<p>The bootstrapper API uses the <a href="/windows/windows-app-sdk/api/win32/_dynamicdependency/">Dynamic Dependencies API</a> to add the Windows App SDK runtime's framework package to the current process's <a href="../desktop/modernize/framework-packages/framework-packages-overview.html#framework-packages-and-the-package-graph">package graph</a> and otherwise enable access to the package.</p>
+<p>This function also initializes the Dynamic Dependency Lifetime Manager (DDLM). That component provides infrastructure to prevent the OS from servicing the Windows App SDK framework package while it's being used by an unpackaged app.</p>
+<h3 id="mddbootstrapshutdown">MddBootstrapShutdown</h3>
+<p>This function removes the changes to the current process that were made by a call to <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize"><strong>MddBootstrapInitialize</strong></a>. After this function is called, your app can no longer call Windows App SDK APIs, including the dynamic dependencies API.</p>
+<p>This function also shuts down the Dynamic Dependency Lifetime Manager (DDLM) so that Windows can service the framework package as necessary.</p>
+<h2 id="net-wrapper-for-the-bootstrapper-api">.NET wrapper for the bootstrapper API</h2>
+<p>Although you can call the C/C++ bootstrapper API directly from .NET apps, that requires the use of <a href="/dotnet/framework/interop/consuming-unmanaged-dll-functions">platform invoke</a> to call the functions. In Windows App SDK 1.0 and later releases, a .NET wrapper for the bootstrapper API is available in the <code>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</code> assembly. That assembly provides an easier and more natural API for .NET developers to access the bootstrapper's functionality. The <strong>Bootstrap</strong> class provides static <strong>Initialize</strong>, <strong>TryInitialize</strong>, and <strong>Shutdown</strong> functions that wrap calls to the <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize"><strong>MddBootstrapInitialize</strong></a> and <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown"><strong>MddBootstrapShutdown</strong></a> functions for most common scenarios. For an example that demonstrates how to use the .NET wrapper for the bootstrapper API, see the C# instructions in <a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>.</p>
+<p>For more information about the .NET wrapper for the bootstrapper API, see these resources:</p>
+<ul>
+<li><a href="../api-reference/cs-bootstrapper-apis/index.html">Bootstrapper C# APIs</a>.</li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md#614-microsoftwindowsapplicationmodeldynamicdependency-c">Section 6.1.4</a> of the dynamic dependencies specification.</li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/dev/Bootstrap/CS/Microsoft.WindowsAppRuntime.Bootstrap.Net/Bootstrap.cs">Bootstrap.cs</a>: The open source implementation of the .NET wrapper for the bootstrapper API.</li>
+</ul>
+<h2 id="c-wrapper-for-the-bootstrapper-api">C++ wrapper for the bootstrapper API</h2>
+<p>A C++ wrapper for the bootstrapper API is available starting in Windows App SDK 1.1.</p>
+<p>See <a href="../api-reference/bootstrapper-cpp-api/index.html">Bootstrapper C++ API</a>.</p>
+<h2 id="declare-os-compatibility-in-your-application-manifest">Declare OS compatibility in your application manifest</h2>
+<p>To declare operating system (OS) compatibility, and to avoid the Windows App SDK defaulting to Windows 8 behavior (and potential crashes), you can include a side-by-side application manifest with your packaged with external location or unpackaged app. See <a href="/windows/win32/sbscs/application-manifests">Application manifests</a> (it's the file that declares things like DPI awareness, and is embedded into your app's <code>.exe</code> during build). This might be an issue if you're adding Windows App SDK support to an existing app, rather than creating a new one via a Visual Studio project template.</p>
+<p>If you don't already have a side-by-side application manifest in your project, then add a new XML file to your project, and name it as recommended in <a href="/windows/win32/sbscs/application-manifests">Application manifests</a>. Add to the file the <strong>compatibility</strong> element and the child elements shown in the following example. These values control the quirks level for the components running in your app's process.</p>
+<p>Replace the <strong>Id</strong> attribute of the <strong>maxversiontested</strong> element with the version number of Windows that you're targeting (must be 10.0.17763.0 or a later release). Note that setting a higher value means that older versions of Windows won't run your app properly because every Windows release knows only of versions before it. So if you want your app to run on Windows 10, version 1809 (10.0; Build 17763), then you should either leave the 10.0.17763.0 value as is, or add multiple <strong>maxversiontested</strong> elements for the different values that your app supports.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;
+    &lt;compatibility xmlns=&quot;urn:schemas-microsoft-com:compatibility.v1&quot;&gt;
+        &lt;application&gt;
+            &lt;!-- Windows 10, version 1809 (10.0; Build 17763) --&gt;
+            &lt;maxversiontested Id=&quot;10.0.17763.0&quot;/&gt;
+            &lt;supportedOS Id=&quot;{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}&quot; /&gt;
+        &lt;/application&gt;
+    &lt;/compatibility&gt;
+&lt;/assembly&gt;
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md">Dynamic dependencies specification</a></li>
+<li><a href="../desktop/modernize/framework-packages/framework-packages-overview.html">MSIX framework packages and dynamic dependencies</a></li>
+<li><a href="deployment-architecture.html">Runtime architecture for the Windows App SDK</a></li>
+<li><a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/use-windows-app-sdk-run-time.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

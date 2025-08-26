@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Install Nuxt.js on WSL </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Install Nuxt.js on WSL ">
+    
+    <meta name="description" content="A guide to help you get started using the Nuxt.js web frameworks on Windows Subsystem for Linux.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-with-nuxtjs-on-windows">Get started with Nuxt.js on Windows</h1>
+
+<p>A guide to help you install the Nuxt.js web framework and get up and running on Windows.</p>
+<p>Nuxt.js is a framework for creating server-rendered JavaScript apps based on Vue.js, Node.js, Webpack and Babel.js. It was inspired by Next.js. It is basically a project boilerplate for Vue. Just like Next.js, it is crafted with attention to best practices and allows you to create &quot;universal&quot; web apps in a simple, consistent way, with hardly any configuration. These &quot;universal&quot; server-rendered web apps are also sometimes called “isomorphic”, meaning that code is shared between the client and server.</p>
+<p>To learn more about Vue, see the <a href="vue-overview.html">Vue overview</a> page.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This guide assumes that you've already completed the steps to set up your Node.js development environment, including:</p>
+<ul>
+<li><a href="/windows/wsl/install-win10">Install Windows Subsystem for Linux (WSL)</a>, including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: <code>wsl -l -v</code></li>
+<li><a href="nodejs-on-wsl.html">Install Node.js on WSL 2</a>: This includes a version manager, package manager, Visual Studio Code, and the Remote Development extension.</li>
+</ul>
+<p>We recommend using the Windows Subsystem for Linux when working with NodeJS apps for better performance speed, system call compatibility, and for parody when running Linux servers or Docker containers.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Installing a Linux distribution with WSL will create a directory for storing files: <code>\\wsl\Ubuntu-20.04</code> (substitute Ubuntu-20.04 with whatever Linux distribution you're using). To open this directory in Windows File Explorer, open your WSL command line, select your home directory using <code>cd ~</code>, then enter the command <code>explorer.exe .</code> Be careful not to install NodeJS or store files that you will be working with on the mounted C drive (<code>/mnt/c/Users/yourname$</code>). Doing so will significantly slow down your install and build times.</p>
+</div>
+<h2 id="install-nuxtjs">Install Nuxt.js</h2>
+<p>To install Nuxt.js, you will need to answer a series of questions about what sort of integrated server-side framework, UI framework, testing framework, mode, modules, and linter you would like to install:</p>
+<ol>
+<li><p>Open a WSL command line (ie. Ubuntu).</p>
+</li>
+<li><p>Create a new project folder: <code>mkdir NuxtProjects</code> and enter that directory: <code>cd NuxtProjects</code>.</p>
+</li>
+<li><p>Install Nuxt.js and create a project (replacing 'my-nuxt-app' with whatever you'd like to call your app): <code>npm create nuxt-app my-nuxt-app</code></p>
+</li>
+<li><p>The Nuxt.js installer will now ask you the following questions:</p>
+<ul>
+<li>Project Name: my-nuxtjs-app</li>
+<li>Project description: Description of my Nuxt.js app.</li>
+<li>Author name: I use my GitHub alias.</li>
+<li>Choose the package manager: Yarn or <strong>Npm</strong> - we use NPM for our examples.</li>
+<li>Choose UI framework: None, Ant Design Vue, Bootstrap Vue, etc. Let's choose <strong>Vuetify</strong> for this example, but the Vue Community created a nice <a href="https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr">summary comparing these UI frameworks</a> to help you choose the best fit for your project.</li>
+<li>Choose custom server frameworks: None, AdonisJs, Express, Fastify, etc. Let's choose <strong>None</strong> for this example, but you can find a <a href="https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm">2019-2020 server framework comparison</a> on the Dev.to site.</li>
+<li>Choose Nuxt.js modules (use spacebar to select modules or just enter if you don't want any): Axios (for simplifying HTTP requests) or <a href="https://pwa.nuxtjs.org/">PWA support</a> (for adding a service-worker, manifest.json file, etc). Let's not add a module for this example.</li>
+<li>Choose linting tools: <strong>ESLint</strong>, Prettier, Lint staged files. Let's choose <strong>ESLint</strong> (a tool for analyzing your code and warning you of potential errors).</li>
+<li>Choose a test framework: <strong>None</strong>, Jest, AVA. Let's choose <strong>None</strong> as we won't cover testing in this quickstart.</li>
+<li>Choose rendering mode: <strong>Universal (SSR)</strong> or Single Page App (SPA). Let's choose <strong>Universal (SSR)</strong> for our example, but the <a href="https://nuxtjs.org/guide#server-rendered-universal-ssr-">Nuxt.js docs</a> point out some of the differences -- SSR requiring a Node.js server running to server-render your app and SPA for static hosting.</li>
+<li>Choose development tools: <strong>jsconfig.json</strong> (recommended for VS Code so Intellisense code completion works)</li>
+</ul>
+</li>
+<li><p>Once your project is created, <code>cd my-nuxtjs-app</code> to enter your Nuxt.js project directory, then enter <code>code .</code> to open the project in the VS Code WSL-Remote environment.</p>
+<p><img src="../../images/wsl-remote-extension.png" alt="WSL-Remote Extension"></p>
+</li>
+<li><p>There are 3 commands you need to know once Nuxt.js is installed:</p>
+<ul>
+<li><code>npm run dev</code> for running a development instance with hot-reloading, file watching and task re-running.</li>
+<li><code>npm run build</code> for compiling your project.</li>
+<li><code>npm start</code> for starting your app in production mode.</li>
+</ul>
+<p>Open the WSL terminal integrated in VS Code (<strong>View &gt; Terminal</strong>). Make sure that the terminal path is pointed to your project directory (ie. <code>~/NuxtProjects/my-nuxt-app$</code>). Then try running a development instance of your new Nuxt.js app using: <code>npm run dev</code></p>
+</li>
+<li><p>The local development server will start (displaying some kind of cool progress bars for the client and server compiles). Once your project is done building, your terminal will display &quot;Compiled successfully&quot; along with how much time it took to compile. Point your web browser to <code>http://localhost:3000</code> to open your new Nuxt.js app.</p>
+<p><img src="../../images/nuxt-app.png" alt="Your Nuxt.js app running in localhost:3000"></p>
+</li>
+<li><p>Open the <code>pages/index.vue</code> file in your VS Code editor. Find the page title <code>&lt;v-card-title class=&quot;headline&quot;&gt;Welcome to the Vuetify + Nuxt.js template&lt;/v-card-title&gt;</code> and change it to <code>&lt;v-card-title class=&quot;headline&quot;&gt;This is my new Nuxt.js app!&lt;/v-card-title&gt;</code>. With your web browser still open to localhost:3000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.</p>
+</li>
+<li><p>Let's see how Nuxt.js handles errors. Remove the <code>&lt;/v-card-title&gt;</code> closing tag so that your title code now looks like this: <code>&lt;v-card-title class=&quot;headline&quot;&gt;This is my new Nuxt.js app!</code>. Save this change and notice that a compiling error will display in your browser, and in your terminal, letting your know that a closing tag for <code>&lt;v-card-title&gt;</code> is missing, along with the line numbers where the error can be found in your code. Replace the <code>&lt;/v-card-title&gt;</code> closing tag, save, and the page will reload.</p>
+</li>
+</ol>
+<p>You can use VS Code's debugger with your Nuxt.js app by selecting the F5 key, or by going to <strong>View &gt; Debug</strong> (Ctrl+Shift+D) and <strong>View &gt; Debug Console</strong> (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (<code>launch.json</code>) file will be created for you to save debugging setup details. To learn more, see <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging">VS Code Debugging</a>.</p>
+<p><img src="../../images/vscode-debug-launch-configuration.png" alt="VS Code debug window and launch.json config icon"></p>
+<p>To learn more about Nuxt.js, see the  <a href="https://nuxtjs.org/guide">Nuxt.js guide</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/nuxtjs-on-wsl.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Constants for use with the Bootstrapper C++ API </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Constants for use with the Bootstrapper C++ API ">
+    
+    <meta name="description" content="The following constants (for use with the Bootstrapper C++ API) are declared in `WindowsAppSDK-VersionInfo.h`.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="constants-for-use-with-the-bootstrapper-c-api">Constants for use with the Bootstrapper C++ API</h1>
+
+<p>The following constants (for use with the Bootstrapper C++ API) are declared in <code>WindowsAppSDK-VersionInfo.h</code>.</p>
+<h2 id="microsoftwindowsappsdkrelease-namespace">Microsoft::WindowsAppSDK::Release namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR Channel</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK release's channel; for example, L&quot;preview&quot;, or empty string for stable.</td>
+</tr>
+<tr>
+<td>constexpr PCWSTR FormattedVersionShortTag</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK release's short-form version tag, formatted for concatenation when constructing identifiers; for example, &quot;-p2&quot;, or empty string for stable.</td>
+</tr>
+<tr>
+<td>constexpr PCWSTR FormattedVersionTag</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK release's version tag, formatted for concatenation when constructing identifiers; for example, &quot;-preview2&quot;, or empty string for stable.</td>
+</tr>
+<tr>
+<td>constexpr uint16_t Major</td>
+<td>[release-dependent]</td>
+<td>The major version of the Windows App SDK release.</td>
+</tr>
+<tr>
+<td>constexpr uint32_t MajorMinor</td>
+<td>[release-dependent]</td>
+<td>The major and minor version of the Windows App SDK release, encoded as a uint32_t (0xMMMMNNNN where M=major, N=minor).</td>
+</tr>
+<tr>
+<td>constexpr uint16_t Minor</td>
+<td>[release-dependent]</td>
+<td>The minor version of the Windows App SDK release.</td>
+</tr>
+<tr>
+<td>constexpr uint16_t Patch</td>
+<td>[release-dependent]</td>
+<td>The patch version of the Windows App SDK release.</td>
+</tr>
+<tr>
+<td>constexpr PCWSTR VersionShortTag</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK release's short-form version tag; for example, L&quot;p2&quot;, or empty string for stable.</td>
+</tr>
+<tr>
+<td>constexpr PCWSTR VersionTag</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK release's version tag; for example, L&quot;preview2&quot;, or empty string for stable.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimeidentity-namespace">Microsoft::WindowsAppSDK::Runtime::Identity namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR Publisher</td>
+<td>L&quot;CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US&quot;</td>
+<td>The Windows App SDK runtime's package identity's Publisher.</td>
+</tr>
+<tr>
+<td>constexpr PCWSTR PublisherId</td>
+<td>L&quot;8wekyb3d8bbwe&quot;</td>
+<td>The Windows App SDK runtime's package identity's PublisherId.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimepackagesframework-namespace">Microsoft::WindowsAppSDK::Runtime::Packages::Framework namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR PackageFamilyName</td>
+<td>&quot;Microsoft.WindowsAppRuntime.1.1-preview1_8wekyb3d8bbwe&quot;</td>
+<td>The Windows App SDK runtime's Framework package's family name.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimepackagesddlmarm64-namespace">Microsoft::WindowsAppSDK::Runtime.Packages.DDLM.Arm64 namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR PackageFamilyName</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK runtime's Dynamic Dependency Lifetime Manager (DDLM) package's family name, for arm64.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimepackagesddlmx64-namespace">Microsoft::WindowsAppSDK::Runtime.Packages.DDLM.X64 namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR PackageFamilyName</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK runtime's Dynamic Dependency Lifetime Manager (DDLM) package's family name, for x64.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimepackagesddlmx86-namespace">Microsoft::WindowsAppSDK::Runtime.Packages.DDLM.X86 namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR PackageFamilyName</td>
+<td>[release-dependent]</td>
+<td>The Windows App SDK runtime's Dynamic Dependency Lifetime Manager (DDLM) package's family name, for x86.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimepackagesmain-namespace">Microsoft::WindowsAppSDK::Runtime::Packages::Main namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR PackageFamilyName</td>
+<td>L&quot;MicrosoftCorporationII.WinAppRuntime.Main.1.1-p1_8wekyb3d8bbwe&quot;</td>
+<td>The Windows App SDK runtime's Main package's family name.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimepackagessingleton-namespace">Microsoft::WindowsAppSDK::Runtime::Packages::Singleton namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr PCWSTR PackageFamilyName</td>
+<td>L&quot;Microsoft.WindowsAppRuntime.Singleton-preview1_8wekyb3d8bbwe&quot;</td>
+<td>The Windows App SDK runtime's Singleton package's family name.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoftwindowsappsdkruntimeversion-namespace">Microsoft::WindowsAppSDK::Runtime::Version namespace</h2>
+<table>
+<thead>
+<tr>
+<th>Constant</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>constexpr uint16_t Build</td>
+<td>[release-dependent]</td>
+<td>The build version of the Windows App SDK runtime; for example, 804.</td>
+</tr>
+<tr>
+<td>constexpr PCWSTR DotQuadString</td>
+<td>[release-dependent]</td>
+<td>The version of the Windows App SDK runtime, as a string (const wchar_t*); for example, L&quot;1000.446.804.0&quot;.</td>
+</tr>
+<tr>
+<td>constexpr uint16_t Major</td>
+<td>[release-dependent]</td>
+<td>The major version of the Windows App SDK runtime; for example, 1000.</td>
+</tr>
+<tr>
+<td>constexpr uint16_t Minor</td>
+<td>[release-dependent]</td>
+<td>The minor version of the Windows App SDK runtime; for example, 446.</td>
+</tr>
+<tr>
+<td>constexpr uint16_t Revision</td>
+<td>[release-dependent]</td>
+<td>The revision version of the Windows App SDK runtime; for example, 0.</td>
+</tr>
+<tr>
+<td>constexpr uint64_t UInt64</td>
+<td>[release-dependent]</td>
+<td>The version of the Windows App SDK runtime, as a uint64l for example, 0x03E801BE03240000.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="requirements">Requirements</h2>
+<p><strong>Minimum supported SDK:</strong> Windows App SDK version 1.1</p>
+<p><strong>Namespace:</strong> Microsoft::WindowsAppSDK</p>
+<p><strong>Header:</strong> WindowsAppSDK-VersionInfo.h</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../index.html">Bootstrapper C++ API</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/api-reference/bootstrapper-cpp-api/bootstrapper-cpp-api-constants.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

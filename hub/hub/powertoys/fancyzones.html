@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>FancyZones Window Manager for Windows - PowerToys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="FancyZones Window Manager for Windows - PowerToys ">
+    
+    <meta name="description" content="FancyZones is a powerful window manager utility in PowerToys that helps you arrange and snap windows into custom layouts for improved productivity. Learn how to create zones and manage windows efficiently.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="fancyzones-window-manager-utility">FancyZones window manager utility</h1>
+
+<p>FancyZones is a powerful window manager utility in PowerToys that helps you arrange and snap windows into custom layouts for improved productivity and workflow efficiency. This utility allows you to define specific zone locations on your desktop as targets for windows, automatically resizing and repositioning them when dragged into zones or activated via keyboard shortcuts.</p>
+<h2 id="snap-to-a-single-zone-with-mouse">Snap to a single zone with mouse</h2>
+<p>Drag the window. By default, you'll also need to select and hold <kbd>Shift</kbd>. You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone.</p>
+<p>You can also trigger zone selection mode by using a non-primary mouse button if <strong>Use non-primary mouse button to toggle zone activation</strong> is selected.</p>
+<p>If both <strong>Hold Shift key to activate zones while dragging</strong> and <strong>Use non-primary mouse button to toggle zone activation</strong> are cleared, zones will appear immediately after you start dragging the window.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-fancy-zones2.png" alt="Screenshot of FancyZones utility showing window zones highlighted on desktop during window dragging operation.">
+</span>
+</p>
+<h2 id="snap-to-a-single-zone-with-keyboard">Snap to a single zone with keyboard</h2>
+<p>Select <strong>Override Windows Snap</strong> in the FancyZones settings. Use <kbd>Win</kbd>+[arrow keys] to snap a window to a zone. Use <strong>Move windows based on</strong> to choose whether to move windows based the zone index or a window's relative position.</p>
+<p><img src="../images/pt-window-snap-multiple-zones-w-keyboard-settings.png" alt="Settings for Snapping to Multiple Zones via Keyboard"></p>
+<h2 id="snap-to-multiple-zones">Snap to multiple zones</h2>
+<p>A window can be snapped to more than one zone in the following ways.</p>
+<h3 id="snap-to-two-zones-by-hovering-the-edges">Snap to two zones by hovering the edges</h3>
+<p>If two zones are adjacent, you can snap a window to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.</p>
+<h3 id="snap-to-multiple-zones-with-the-mouse-and-keyboard">Snap to multiple zones with the mouse and keyboard</h3>
+<p>Drag the window until one zone is activated, then hold <kbd>Ctrl</kbd> while dragging the window to select multiple zones.</p>
+<p><img src="../images/pt-fancyzones-twozones.png" alt="Two Zones Activation screenshot"></p>
+<h3 id="snap-to-multiple-zones-with-only-the-keyboard">Snap to multiple zones with only the keyboard</h3>
+<p>Turn on the <strong>Override Windows Snap</strong> toggle and select <strong>Move windows based on: Relative position</strong>. Use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[arrow keys] to expand the window to multiple zones.</p>
+<p><img src="../images/pt-window-snap-multiple-zones-w-keyboard-settings.png" alt="Settings for Snapping to Multiple Zones via Keyboard"></p>
+<h3 id="window-switching">Window switching</h3>
+<p>When two or more windows are snapped in the same zone, cycle between the snapped windows in that zone by using the shortcut <kbd>Win</kbd>+<kbd>PgUp/PgDn</kbd>.</p>
+<h3 id="shortcut-keys">Shortcut keys</h3>
+<table>
+<thead>
+<tr>
+<th>Shortcut</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd></td>
+<td>Opens the editor (this shortcut can be changed in the Settings window)</td>
+</tr>
+<tr>
+<td><kbd>⊞ Win</kbd>+<kbd>Left/Right</kbd></td>
+<td>Move focused window between zones (only if <strong>Override Windows Snap hotkeys</strong> is selected and <strong>Zone index</strong> is chosen; in that case only the <kbd>⊞ Win</kbd>+<kbd>Left</kbd> and <kbd>⊞ Win</kbd>+<kbd>Right</kbd> are overridden, while the <kbd>⊞ Win</kbd>+<kbd>Up</kbd> and <kbd>⊞ Win</kbd>+<kbd>Down</kbd> keep working as usual)</td>
+</tr>
+<tr>
+<td><kbd>⊞ Win</kbd>+<kbd>Left/Right/Up/Down</kbd></td>
+<td>Move focused window between zones (only if <strong>Override Windows Snap hotkeys</strong> is selected and <strong>Relative position</strong> is chosen; in that case all the <kbd>⊞ Win</kbd>+<kbd>Left</kbd>, <kbd>⊞ Win</kbd>+<kbd>Right</kbd>, <kbd>⊞ Win</kbd>+<kbd>Up</kbd> and <kbd>⊞ Win</kbd>+<kbd>Down</kbd> are overridden)</td>
+</tr>
+<tr>
+<td><kbd>⊞ Win</kbd>+<kbd>PgUp/PgDn</kbd></td>
+<td>Cycle between windows snapped to the same zone</td>
+</tr>
+<tr>
+<td><kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[number]</td>
+<td>Quickly apply custom layout (you need to assign number to the custom layout in the editor first)</td>
+</tr>
+</tbody>
+</table>
+<p>FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+[arrow keys] to quickly move a window to an adjacent monitor.</p>
+<h3 id="snap-apps-with-elevated-permission">Snap apps with elevated permission</h3>
+<p>To snap applications that are elevated (such as Windows Terminal or Task Manager), run PowerToys in administrator mode. Read <a href="administrator.html">Running as administrator</a> for more information.</p>
+<h2 id="get-started-with-the-editor">Get started with the editor</h2>
+<p>FancyZones includes an editor for layouts that can be accessed in PowerToys Settings.</p>
+<h3 id="open-the-layout-editor">Open the layout editor</h3>
+<p>Open the layout editor by selecting <strong>Open layout editor</strong> or with <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>`</kbd> (&quot;back-tick&quot; or &quot;accent grave&quot;). You can change the FancyZones layout editor shortcut in PowerToys Settings.</p>
+<p><img src="../images/pt-fancyzones-settings.png" alt="FancyZones Settings UI"></p>
+<h3 id="layout-editor-choose-your-layout">Layout Editor: Choose your layout</h3>
+<p>When you first open the layout editor, you'll see a list of layouts that can be adjusted by how many windows are on the monitor. Selecting a layout shows a preview of that layout on the screen. The selected layout is applied automatically. Double-clicking a layout will apply it and close the editor. Select a monitor, and it becomes the target of the selected layout.</p>
+<p><img src="../images/pt-fancyzones-multimon.png" alt="FancyZones Picker Multiple Monitors"></p>
+<h4 id="space-around-zones">Space around zones</h4>
+<p><strong>Show space around zones</strong> sets the size of margin around each FancyZone window. Enter a custom width of the margin in <strong>Space around zones</strong>. With the layout editor open, change <strong>Show space around zones</strong> after changing the values to see the new value applied.</p>
+<p><strong>Distance to highlight adjacent zones</strong> sets a custom value for the amount of space between zones until they snap together, or before both are highlighted enabling them to merge together.</p>
+<p><strong>Default layout for horizontal monitor orientation</strong> and <strong>Default layout for vertical monitor orientation</strong> set which layout to use as the default when the display configuration is changed in the system (for example, if you add a new display).</p>
+<p><img src="../images/pt-fancyzones-spacearound.png" alt="FancyZones space around zones screenshot"></p>
+<h3 id="create-a-custom-layout">Create a custom layout</h3>
+<p>Select <strong>Create new layout</strong> at the bottom.</p>
+<p>There are two styles of custom zone layouts: <strong>Grid</strong> and <strong>Canvas</strong>.</p>
+<p>The <strong>Grid</strong> model starts with a three column grid and allows zones to be created by splitting and merging zones, moving the gutter between zones as desired. This is a relative layout and will resize with different screen sizes. You can edit the layout using mouse or keyboard.</p>
+<h4 id="mouse">Mouse</h4>
+<ul>
+<li>To divide a zone: click your mouse. To rotate the divider: hold down <kbd>Shift</kbd>.</li>
+<li>To move a divider: click on the thumb and drag or select the thumb by focusing the layout.</li>
+<li>To merge/delete zones: select a zone, hold the left mouse button and drag the mouse until multiple zones are selected. Release the button and a popup menu will show up. Select <strong>Merge</strong> and they will become one zone. This is how a zone should be deleted, by merging it into another zone.</li>
+</ul>
+<h4 id="keyboard">Keyboard</h4>
+<ul>
+<li>First, focus the layout by pressing <kbd>Ctrl</kbd>+<kbd>Tab</kbd>. All zones and dividers can be focused by pressing <kbd>Tab</kbd>.</li>
+<li>To divide a zone: focus the zone you want to divide and press <kbd>S</kbd> or <kbd>Shift</kbd>+<kbd>S</kbd> to divide it.</li>
+<li>To move a divider: focus the divider and press arrow keys to move it.</li>
+<li>To merge/delete zones: focus the divider between zones and press <kbd>Delete</kbd>. All zones adjacent to deleted divider will be merged into one zone.</li>
+</ul>
+<p><img src="../images/pt-fancyzones-grideditor.png" alt="FancyZones Table Editor Mode"></p>
+<p>The <strong>Canvas</strong> model starts with one zone and supports adding zones that can be moved and resized, similar to windows. Zones in the canvas model may be overlapping.</p>
+<p>Canvas layout also has keyboard support for zone editing. Use the arrow keys (Left, Right, Up, Down) to move a zone by 10 pixels, or <kbd>Ctrl</kbd>+arrow to move a zone by 1 pixel. Use <kbd>Shift</kbd>+arrow to resize a zone by 10 pixels (5 per edge), or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+arrow to resize a zone by 2 pixels (1 per edge). To switch between the editor and dialog, press <kbd>Ctrl</kbd>+<kbd>Tab</kbd>.</p>
+<p><img src="../images/pt-fancyzones-canvaseditor.png" alt="FancyZones Window Editor Mode"></p>
+<h3 id="quickly-switch-between-custom-layouts">Quickly switch between custom layouts</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Select <strong>Enable quick layout switch</strong> to use this feature.</p>
+</div>
+<p>A custom layout can be configured to have a user-defined hotkey to quickly apply it to the active screen. The hotkey can be set by opening the custom layout's edit dialog. Once set, the custom layout can be applied by pressing the <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[number] binding. The layout can also be applied by pressing the hotkey when dragging a window.</p>
+<p>In the demo below, we start with a default template applied to the screen and two custom layouts that we assign hotkeys for. We then use the <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[number] binding to apply the first custom layout and snap a window to it. Finally, we apply the second custom layout while dragging a window and snap the window to it.</p>
+<p><img src="../images/pt-fancyzones-quickswap.gif" alt="FancyZones Quick-Swap Layouts settings and usage"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The settings for custom zone layouts are saved in the file <code>%LocalAppData%\Microsoft\PowerToys\FancyZones\custom-layouts.json</code>. This file can be manually changed to tweak zones, and exported to share layouts across devices. Other json files in the same directory can be modified to alter settings for monitors, layout hotkeys, etc. Be warned that editing these files is not recommended as it may cause other issues with FancyZones functionality.</p>
+</div>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">To change the default hotkey, click on the control and enter the desired key combination.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Open editor on the display</td>
+<td style="text-align: left;">Select where the Editor will show.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hold Shift key to activate zones while dragging</td>
+<td style="text-align: left;">Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the <kbd>Shift</kbd> key during a drag enables snapping.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Use a non-primary mouse button to toggle zone activation</td>
+<td style="text-align: left;">Clicking a non-primary mouse button toggles the zones activation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Use middle mouse button to toggle multiple zones spanning</td>
+<td style="text-align: left;">Use the middle mouse button to select multiple zones</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show zones on all monitors while dragging a window</td>
+<td style="text-align: left;">By default, FancyZones shows only the zones available on the focused monitor. (This feature may have a performance impact when selected)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Allow zones to span across monitors (all monitors must have the same DPI scaling)</td>
+<td style="text-align: left;">Treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor. (There might be unexpected effects when using monitors in different orientations)</td>
+</tr>
+<tr>
+<td style="text-align: left;">When multiple zones overlap</td>
+<td style="text-align: left;">Choose how to deal with overlapping zones.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Zone appearance</td>
+<td style="text-align: left;">Choose system or custom colors for the layouts</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show zone number</td>
+<td style="text-align: left;">Should the number of the zone be visible when layout is shown</td>
+</tr>
+<tr>
+<td style="text-align: left;">Opacity (%)</td>
+<td style="text-align: left;">The percentage of opacity of active and inactive zones. (default: 50%)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Highlight color</td>
+<td style="text-align: left;">The color of a zone when it is the active drop target during the dragging of a window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Inactive color</td>
+<td style="text-align: left;">The color of zones when they are not an active drop during the dragging of a window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Border color</td>
+<td style="text-align: left;">The color of the border of active and inactive zones.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Number color</td>
+<td style="text-align: left;">The color of the number of the zone</td>
+</tr>
+<tr>
+<td style="text-align: left;">Keep windows in their zones when the screen resolution changes</td>
+<td style="text-align: left;">FancyZones will resize and reposition windows into the zones they were previously in, after a screen resolution change.</td>
+</tr>
+<tr>
+<td style="text-align: left;">During zone layout changes, windows assigned to a zone will match new size/position</td>
+<td style="text-align: left;">FancyZones will resize and position windows into the new zone layout by maintaining the previous zone number location of each window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Move newly created windows to the last known zone</td>
+<td style="text-align: left;">Automatically move a newly opened window into the last zone location that application was in.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Move newly created windows to the current active monitor</td>
+<td style="text-align: left;">When this option is selected, and <strong>Move newly created windows to the last known zone</strong> is cleared or the application doesn't have a last known zone, it moves the application on the current active monitor.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Restore the original size of windows when unsnapping</td>
+<td style="text-align: left;">Unsnapping a window will restore its size as before it was snapped.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Make dragged window transparent</td>
+<td style="text-align: left;">When the zones are activated, the window being dragged is made transparent to improve the layout visibility.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Allow popup windows snapping</td>
+<td style="text-align: left;">Popup windows couldn't be snapped by default. However, this could be the reason why some windows don't trigger FancyZones when dragging. This setting affects all popup windows including notifications.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Allow child windows snapping</td>
+<td style="text-align: left;">Child windows couldn't be snapped by default. However, this could be the reason why some windows don't trigger FancyZones when dragging.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Disable round corners when window is snapped</td>
+<td style="text-align: left;">Only for Windows 11.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Switch between windows in the current zone</td>
+<td style="text-align: left;">Allows cycling activation between windows in the same zone.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Next window</td>
+<td style="text-align: left;">To change the default hotkey, click on the control and then enter the desired key combination.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Previous window</td>
+<td style="text-align: left;">To change the default hotkey, click on the control and then enter the desired key combination.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Override Windows Snap hotkeys (Win + arrow) to move between zones</td>
+<td style="text-align: left;">When this option is checked and FancyZones is running, it overrides the Windows Snap keys: <kbd>⊞ Win</kbd>+<kbd>Left</kbd>, <kbd>⊞ Win</kbd>+<kbd>Right</kbd>, <kbd>⊞ Win</kbd>+<kbd>Up</kbd> and <kbd>⊞ Win</kbd>+<kbd>Down</kbd>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Move windows based on</td>
+<td style="text-align: left;"><strong>Zone index</strong> allows to use <kbd>⊞ Win</kbd>+<kbd>Left</kbd> and <kbd>⊞ Win</kbd>+<kbd>Right</kbd> to snap a window based on its index. <kbd>⊞ Win</kbd>+<kbd>Up</kbd>, <kbd>⊞ Win</kbd>+<kbd>Down</kbd> are not overridden. <br><strong>Relative position</strong> overwrites all <kbd>⊞ Win</kbd>+[arrow keys] and chooses zone to snap relative to the zone layout</td>
+</tr>
+<tr>
+<td style="text-align: left;">Move windows between zones across all monitors</td>
+<td style="text-align: left;">Cleared: snapping with <kbd>⊞ Win</kbd>+[arrow keys] cycles the window through the zones on the current monitor.<br>Selected: it cycles the window through all the zones on all monitors.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Enable quick layout switch</td>
+<td style="text-align: left;">Enables hotkeys to quickly changes layouts - see individual layout settings.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Flash zones when switching layout</td>
+<td style="text-align: left;">The zones will flash when a layout is selected via the shortcut.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exclude applications from snapping to zones</td>
+<td style="text-align: left;">Add an application's name, or part of the name, one per line (e.g. adding <code>Notepad</code> will match both <code>Notepad.exe</code> and <code>Notepad++.exe</code>; to match only <code>Notepad.exe</code> add the <code>.exe</code> extension)</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../images/pt-fancyzones-settings2.png" alt="FancyZones Settings bottom screenshot"></p>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/fancyzones.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

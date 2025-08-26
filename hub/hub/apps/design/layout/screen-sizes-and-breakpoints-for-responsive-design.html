@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Screen sizes and break points for responsive design. </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Screen sizes and break points for responsive design. ">
+    
+    <meta name="description" content="Rather than optimizing your UI for the many devices across the Windows ecosystem, we recommended designing for a few key width categories called breakpoints.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="screen-sizes-and-breakpoints">Screen sizes and breakpoints</h1>
+
+<p>Windows apps can run on any device running Windows, which includes tablets, desktops, TVs, and more. With a huge number of device targets and screen sizes across the Windows ecosystem, rather than optimizing your UI for each device, we recommended designing for a few key width categories (also called &quot;breakpoints&quot;):</p>
+<ul>
+<li>Small (smaller than 640px)</li>
+<li>Medium (641px to 1007px)</li>
+<li>Large (1008px and larger)</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When designing for specific breakpoints, design for the amount of screen space available to your app (the app's window), not the screen size. When the app is running full-screen, the app window is the same size as the screen, but when the app is not full-screen, the window is smaller than the screen.</p>
+</div>
+<h2 id="breakpoints">Breakpoints</h2>
+<p>This table describes the different size classes and breakpoints.</p>
+<p><img src="images/breakpoints/size-classes.svg" alt="Responsive design breakpoints"></p>
+<table>
+<thead>
+<tr>
+<th>Size class</th>
+<th>Breakpoints</th>
+<th>Typical screen size</th>
+<th>Devices</th>
+<th>Window Sizes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Small</td>
+<td>up to 640px</td>
+<td>20&quot; to 65&quot;</td>
+<td>TVs</td>
+<td>320x569, 360x640, 480x854</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>641 - 1007px</td>
+<td>7&quot; to 12&quot;</td>
+<td>Tablets</td>
+<td>960x540</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>1008px and up</td>
+<td>13&quot; and up</td>
+<td>PCs, Laptops, Surface Hub</td>
+<td>1024x640, 1366x768, 1920x1080</td>
+</tr>
+</tbody>
+</table>
+<h2 id="why-are-tvs-considered-small">Why are TVs considered &quot;small&quot;?</h2>
+<p>While most TVs are physically quite large (40 to 65 inches is common) and have high resolutions (HD or 4k), designing for a 1080P TV that you view from 10 feet away is different from designing for a 1080p monitor sitting a foot away on your desk. When you account for distance, the TV's 1080 pixels are more like a 540-pixel monitor that's much closer.</p>
+<p>XAML's effective pixel system automatically takes viewing distance in account for you. When you specify a size for a control or a breakpoint range, you're actually using &quot;effective&quot; pixels. For example, if you create responsive code for 1080 pixels or more, a 1080 monitor will use that code, but a 1080p TV will not--because although a 1080p TV has 1080 physical pixels, it only has 540 effective pixels. Which makes designing for a TV similar to designing for a small screen.</p>
+<h2 id="effective-pixels-and-scale-factor">Effective pixels and scale factor</h2>
+<p>XAML helps by automatically adjusting UI elements so that they're legible and easy to interact with on all devices and screen sizes.</p>
+<p>When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on a large presentation screen 10 feet away is just as legible to the user as a 24 px font on a small portable screen that's a few inches away.</p>
+<p><span class="mx-imgBorder">
+<img src="images/scaling-chart.png" alt="Content is scaled differently on different devices based on how far away the user is expected to be from the device's screen">
+</span>
+</p>
+<p>Because of how the scaling system works, when you design your XAML app, you're designing in effective pixels, not actual physical pixels. Effective pixels (epx) are a virtual unit of measurement, and they're used to express layout dimensions and spacing, independent of screen density. (In our guidelines, epx, ep, and px are used interchangeably.)</p>
+<p>You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting.</p>
+</div>
+<h2 id="multiples-of-four">Multiples of Four</h2>
+<p><span class="mx-imgBorder">
+<img src="images/4epx.svg" alt="A 4 epx image being scaled to many dimensions without fractional pixels.">
+</span>
+</p>
+<p>The sizes, margins, and positions of UI elements should always be in multiples of 4 epx in your XAML apps.</p>
+<p>XAML scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it can be scaled to these plateaus as a whole number (for example; 4 x 125% = 5, 4 x 150% = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://fluent2.microsoft.design/layout">Fluent Design - Layout</a></li>
+<li><a href="responsive-design.html">Responsive design</a></li>
+<li><a href="layouts-with-xaml.html">Responsive layouts with XAML</a></li>
+<li><a href="../controls/index.html">XAML controls</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

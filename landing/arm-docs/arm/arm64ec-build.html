@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Get started with Arm64EC apps for Windows 11 on Arm </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Get started with Arm64EC apps for Windows 11 on Arm ">
+    
+    <meta name="description" content="Build Arm64EC apps that run on Arm-powered devices with Windows 11.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-with-arm64ec">Get started with Arm64EC</h1>
+
+<p>To get started building your app or project using <a href="arm64ec.html">Arm64EC</a>, you will need to install some prerequisites and add an Arm64EC configuration.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>The latest <a href="https://developer.microsoft.com/windows/downloads/windows-sdk/">Windows 11 SDK build</a>. If using the Windows 11 SDK version 22000, the updated version on July 29, 2022 includes key fixes for building Arm64EC apps.</li>
+<li>Visual Studio 2022 version 17.3 or later.</li>
+<li>Arm64EC tools installed with the Visual Studio Installer.</li>
+</ul>
+<p>In the Visual Studio Installer, you can add the Arm64EC tools by searching under <strong>Individual components</strong> and selecting the <strong>MSVC v143 - VS 2022 C++ ARM64 build tools</strong> checkbox.</p>
+<p><img src="images/arm64ec-vs-installer.png" alt="Visual Studio Installer Arm64EC checkbox screenshot"></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>As of Visual Studio 2022 version 17.4, the Arm64EC tools are included when installing the Arm64 tools (<strong>MSVC v143 - VS 2022 C++ ARM64 build tools</strong>). You no longer need to select a separate option for Arm64EC tools.</p>
+</div>
+<p>Once you have installed the prerequisites and tools, you can target Arm64EC in your MSBuild and CMake projects.</p>
+<h2 id="msbuild-projects">MSBuild Projects</h2>
+<ol>
+<li><p>With the tools and SDK installed, create a new C++ project or open an existing one.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your project is using a pre-Windows 11 SDK or a version of MSVC older than VS 17.3, you'll need to retarget the solution to use the latest version of each.</p>
+</div>
+</li>
+<li><p>To add the Arm64EC platform:</p>
+<ul>
+<li>In the <strong>Build</strong> menu, select <strong>Configuration Manager</strong>.</li>
+<li>In the <strong>Active solution platform</strong> box, select <strong><code>&lt;New…&gt;</code></strong> to create a new platform.</li>
+<li>Select <strong>ARM64EC</strong>, Copy settings from <strong>x64</strong>, and check the <strong>Create new project platforms</strong> checkbox.</li>
+</ul>
+<p><img src="images/arm64ec-vs-new-platform.png" alt="Visual Studio Installer New Arm64EC Platform screenshot"></p>
+<p>You can choose to leave parts of the solution as x64 as needed. However, the more code built as Arm64EC, the more code that will run with native performance on Windows 11 on Arm. For any external dependencies, ensure that your project links against the x64 or Arm64EC versions of those projects.</p>
+</li>
+<li><p>With the new solution platform in place and selected, select <strong>Build</strong> in Visual Studio to start building Arm64EC binaries.</p>
+</li>
+</ol>
+<p>By design, not all projects in an Arm64EC solution need to be targeting Arm64EC as they can target x64 instead. For any such projects that you want to remain as x64, ensure that you configure those projects in the configuration manager to target x64 under the ARM64EC solution build.</p>
+<h2 id="cmake-projects">CMake Projects</h2>
+<ol>
+<li><p>Open your &quot;C++ CMake&quot; project or create a new one.</p>
+</li>
+<li><p>Open up the CMakePresets.json file by going to the active configuration dropdown and selecting <strong>Manage Configurations</strong>.</p>
+</li>
+<li><p>Modify the architecture property under the windows configuration you want for Arm64EC.</p>
+<pre><code class="lang-cpp"> &quot;architecture&quot;: { 
+    &quot;value&quot;: &quot;arm64ec&quot;, 
+    &quot;strategy&quot;: &quot;external&quot;
+ }
+</code></pre>
+<p>The default generator is Ninja. If using the Visual Studio generator, change the strategy field to <strong>set</strong>.</p>
+</li>
+<li><p>If using the Ninja generator, you'll also need to set some environment variables by adding the environment object to your CMakePresets configuration.</p>
+<pre><code class="lang-cpp"> &quot;environment&quot;: { 
+    &quot;CXXFLAGS&quot;: &quot;/arm64EC&quot;,
+    &quot;CFLAGS&quot;: &quot;/arm64EC&quot; 
+ }
+</code></pre>
+</li>
+<li><p>Save the CMakePresets file and make sure the active configuration is set to the Arm64EC configuration. From the menu bar, select <strong>project menu</strong>, then select <strong>Configure [Project Name]</strong> in order to generate your CMake cache.</p>
+</li>
+<li><p>Build your CMake Project targeting Arm64EC like any other CMake project by navigating to the <strong>Build Menu</strong> and selecting <strong>Build All</strong>.</p>
+</li>
+</ol>
+<h2 id="developer-command-prompt">Developer Command Prompt</h2>
+<p>If you are interested in using the Visual Studio Developer Command Prompt for compiling and linking source files for Arm64EC, you need to use the <strong>Arm64</strong> Developer Command Prompt, and then run your <code>cl</code> and <code>link</code> commands separately.  Use the <code>/arm64EC</code> switch for <code>cl</code> and <code>/MACHINE:ARM64EC</code> for <code>link</code> to build and link Arm64EC code.</p>
+<pre><code class="lang-cpp">cl /arm64EC /c &lt;args&gt;
+
+link /MACHINE:ARM64EC &lt;args&gt;
+</code></pre>
+<p>Learn more about how to <a href="/cpp/build/building-on-the-command-line">Use the Microsoft C++ toolset from the command line</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/arm64ec-build.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

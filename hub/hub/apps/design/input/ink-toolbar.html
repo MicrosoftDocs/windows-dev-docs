@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Add an InkToolbar to a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Add an InkToolbar to a Windows app ">
+    
+    <meta name="description" content="Add a default InkToolbar to a Windows app inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="add-an-inktoolbar-to-a-windows-app">Add an InkToolbar to a Windows app</h1>
+
+<p>There are two different controls that facilitate inking in Windows apps: <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas"><strong>InkCanvas</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar"><strong>InkToolbar</strong></a>.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas"><strong>InkCanvas</strong></a> control provides basic Windows Ink functionality. Use it to render pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke.</p>
+<blockquote>
+<p>For InkCanvas implementation details, see <a href="pen-and-stylus-interactions.html">Pen and stylus interactions in Windows apps</a>.</p>
+</blockquote>
+<p>As a completely transparent overlay, the InkCanvas does not provide any built-in UI for setting ink stroke properties. If you want to change the default inking experience, let users set ink stroke properties, and support other custom inking features, you have two options:</p>
+<ul>
+<li><p>In code-behind, use the underlying <a href="/uwp/api/windows.ui.input.inking.inkpresenter"><strong>InkPresenter</strong></a> object bound to the InkCanvas.</p>
+<p>The InkPresenter APIs support extensive customization of the inking experience. For more detail, see <a href="pen-and-stylus-interactions.html">Pen and stylus interactions in Windows apps</a>.</p>
+</li>
+<li><p>Bind an <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar"><strong>InkToolbar</strong></a> to the InkCanvas. By default, the InkToolbar provides a customizable and extensible collection of buttons for activating ink-related features such as stroke size, ink color, and pen tip.</p>
+<p>We discuss the InkToolbar in this topic.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas"><strong>InkCanvas class</strong></a>, <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar"><strong>InkToolbar class</strong></a>, <a href="/uwp/api/windows.ui.input.inking.inkpresenter"><strong>InkPresenter class</strong></a>, <a href="/uwp/api/Windows.UI.Input.Inking"><strong>Windows.UI.Input.Inking</strong></a></p>
+</blockquote>
+<h2 id="default-inktoolbar">Default InkToolbar</h2>
+<p>By default, the <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar"><strong>InkToolbar</strong></a> includes buttons for drawing, erasing, highlighting, and displaying a stencil (ruler or protractor). Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.</p>
+<p><img src="images/ink/ink-tools-invoked-toolbar-small.png" alt="InkToolbar"><br>
+<em>Default Windows Ink toolbar</em></p>
+<p>To add a default <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar"><strong>InkToolbar</strong></a> to an inking app, just place it on the same page as your <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas"><strong>InkCanvas</strong></a> and associate the two controls.</p>
+<ol>
+<li>In MainPage.xaml, declare a container object (for this example, we use a Grid control) for the inking surface.</li>
+<li>Declare an InkCanvas object as a child of the container. (The InkCanvas size is inherited from the container.)</li>
+<li>Declare an InkToolbar and use the TargetInkCanvas attribute to bind it to the InkCanvas.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Ensure the InkToolbar is declared after the InkCanvas. If not, the InkCanvas overlay renders the InkToolbar inaccessible.</p>
+</div>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;StackPanel x:Name=&quot;HeaderPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;0&quot;&gt;
+        &lt;TextBlock x:Name=&quot;Header&quot;
+                   Text=&quot;Basic ink sample&quot;
+                   Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot;
+                   Margin=&quot;10,0,0,0&quot; /&gt;
+    &lt;/StackPanel&gt;
+    &lt;Grid Grid.Row=&quot;1&quot;&gt;
+        &lt;Image Source=&quot;Assets\StoreLogo.png&quot; /&gt;
+        &lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+        &lt;InkToolbar x:Name=&quot;inkToolbar&quot;
+          VerticalAlignment=&quot;Top&quot;
+          TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot; /&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="basic-customization">Basic customization</h2>
+<p>In this section, we cover some basic Windows Ink toolbar customization scenarios.</p>
+<h3 id="specify-location-and-orientation">Specify location and orientation</h3>
+<p>When you add an ink toolbar to your app, you can accept the default location and orientation of the toolbar or set them as required by your app or user.</p>
+<p><strong>XAML</strong></p>
+<p>Explicitly specify the location and orientation of the toolbar through its <a href="/uwp/api/windows.ui.xaml.frameworkelement.VerticalAlignment">VerticalAlignment</a>, <a href="/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment">HorizontalAlignment</a>, and <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar?branch=rs3.Orientation">Orientation</a> properties.</p>
+<table>
+<thead>
+<tr>
+<th>Default</th>
+<th>Explicit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/ink/location-default-small.png" alt="Default ink toolbar location and orientation"></td>
+<td><img src="images/ink/location-explicit-small.png" alt="Explicit ink toolbar location and orientation"></td>
+</tr>
+<tr>
+<td><em>Windows Ink toolbar default location and orientation</em></td>
+<td><em>Windows Ink toolbar explicit location and orientation</em></td>
+</tr>
+</tbody>
+</table>
+<p>Here's the code for explicitly setting the location and orientation of the ink toolbar in XAML.</p>
+<pre><code class="lang-xaml">&lt;InkToolbar x:Name=&quot;inkToolbar&quot; 
+    VerticalAlignment=&quot;Center&quot; 
+    HorizontalAlignment=&quot;Right&quot; 
+    Orientation=&quot;Vertical&quot; 
+    TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot; /&gt;
+</code></pre>
+<p><strong>Initialize based on user preferences or device state</strong></p>
+<p>In some cases, you might want to set the location and orientation of the ink toolbar based on user preference or device state. The following example demonstrates how to set the location and orientation of the ink toolbar based on the left or right-hand writing preferences specified through <strong>Settings &gt; Devices &gt; Pen &amp; Windows Ink &gt; Pen &gt; Choose which hand you write with</strong>.</p>
+<p><img src="images/ink/location-handedness-setting.png" alt="Dominant hand setting"><br>
+<em>Dominant hand setting</em></p>
+<p>You can query this setting through the HandPreference property of Windows.UI.ViewManagement and set the <a href="/uwp/api/windows.ui.xaml.frameworkelement.HorizontalAlignment">HorizontalAlignment</a> based on the value returned. In this example, we locate the toolbar on the left side of the app for a left-handed person and on the right side for a right-handed person.</p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip">Ink toolbar location and orientation sample (basic)</a></strong></p>
+<pre><code class="lang-csharp">public MainPage()
+{
+    this.InitializeComponent();
+
+    Windows.UI.ViewManagement.UISettings settings = 
+        new Windows.UI.ViewManagement.UISettings();
+    HorizontalAlignment alignment = 
+        (settings.HandPreference == 
+            Windows.UI.ViewManagement.HandPreference.LeftHanded) ? 
+            HorizontalAlignment.Left : HorizontalAlignment.Right;
+    inkToolbar.HorizontalAlignment = alignment;
+}
+</code></pre>
+<p><strong>Dynamically adjust to user or device state</strong></p>
+<p>You can also use binding to look after UI updates based on changes to user preferences, device settings, or device states. In the following example, we expand on the previous example and show how to dynamically position the ink toolbar based on device orientation using binding, a ViewMOdel object, and the <a href="/uwp/api/windows.ui.xaml.data.inotifypropertychanged">INotifyPropertyChanged</a> interface.</p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip">Ink toolbar location and orientation sample (dynamic)</a></strong></p>
+<ol>
+<li><p>First, let's add our ViewModel.</p>
+<ol>
+<li><p>Add a new folder to your project and call it <strong>ViewModels</strong>.</p>
+</li>
+<li><p>Add a new class to the ViewModels folder (for this example, we called it <strong>InkToolbarSnippetHostViewModel.cs</strong>).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We used the <a href="/previous-versions/msp-n-p/ff650849(v=pandp.10)">Singleton pattern</a> as we only need one object of this type for the life of the application</p>
+</div>
+</li>
+<li><p>Add <code>using System.ComponentModel</code> namespace to the file.</p>
+</li>
+<li><p>Add a static member variable called <strong>instance</strong>, and a static read only property named <strong>Instance</strong>. Make the constructor private to ensure this class can only be accessed via the Instance property.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This class inherits from <a href="/uwp/api/windows.ui.xaml.data.inotifypropertychanged">INotifyPropertyChanged</a> interface, which is used to notify clients, typically binding clients, that a property value has changed. We'll be using this to handle changes to the device orientation (we'll expand this code and explain further in a later step).</p>
+</div>
+<pre><code class="lang-csharp">using System.ComponentModel;
+
+namespace locationandorientation.ViewModels
+{
+    public class InkToolbarSnippetHostViewModel : INotifyPropertyChanged
+    {
+        private static InkToolbarSnippetHostViewModel instance;
+
+        public static InkToolbarSnippetHostViewModel Instance
+        {
+            get
+            {
+                if (null == instance)
+                {
+                    instance = new InkToolbarSnippetHostViewModel();
+                }
+                return instance;
+            }
+        }
+    }
+
+    private InkToolbarSnippetHostViewModel() { }
+}
+</code></pre>
+</li>
+<li><p>Add two bool properties to the InkToolbarSnippetHostViewModel class: <strong>LeftHandedLayout</strong> (same functionality as the previous XAML-only example) and <strong>PortraitLayout</strong> (orientation of the device).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The PortraitLayout property is settable and includes the definition for the <a href="/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged">PropertyChanged</a> event.</p>
+</div>
+<pre><code class="lang-csharp">public bool LeftHandedLayout
+{
+    get
+    {
+        bool leftHandedLayout = false;
+        Windows.UI.ViewManagement.UISettings settings =
+            new Windows.UI.ViewManagement.UISettings();
+        leftHandedLayout = (settings.HandPreference ==
+            Windows.UI.ViewManagement.HandPreference.LeftHanded);
+        return leftHandedLayout;
+    }
+}
+
+public bool portraitLayout = false;
+public bool PortraitLayout
+{
+    get
+    {
+        Windows.UI.ViewManagement.ApplicationViewOrientation winOrientation = 
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().Orientation;
+        portraitLayout = 
+            (winOrientation == 
+                Windows.UI.ViewManagement.ApplicationViewOrientation.Portrait);
+        return portraitLayout;
+    }
+    set
+    {
+        if (value.Equals(portraitLayout)) return;
+        portraitLayout = value;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(&quot;PortraitLayout&quot;));
+    }
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>Now, let's add a couple of converter classes to our project. Each class contains a Convert object that returns an alignment value (either <a href="/uwp/api/windows.ui.xaml.horizontalalignment">HorizontalAlignment</a> or <a href="/uwp/api/windows.ui.xaml.verticalalignment">VerticalAlignment</a>).</p>
+<ol>
+<li><p>Add a new folder to your project and call it <strong>Converters</strong>.</p>
+</li>
+<li><p>Add two new classes to the Converters folder (for this example, we call them <strong>HorizontalAlignmentFromHandednessConverter.cs</strong> and <strong>VerticalAlignmentFromAppViewConverter.cs</strong>).</p>
+</li>
+<li><p>Add <code>using Windows.UI.Xaml</code> and <code>using Windows.UI.Xaml.Data</code> namespaces to each file.</p>
+</li>
+<li><p>Change each class to <code>public</code> and specify that it implements the <a href="/uwp/api/windows.ui.xaml.data.ivalueconverter">IValueConverter</a> interface.</p>
+</li>
+<li><p>Add the <a href="/uwp/api/windows.ui.xaml.data.ivalueconverter.convert">Convert</a> and <a href="/uwp/api/windows.ui.xaml.data.ivalueconverter.convertback">ConvertBack</a> methods to each file, as shown here (we leave the ConvertBack method unimplemented).</p>
+<ul>
+<li>HorizontalAlignmentFromHandednessConverter positions the ink toolbar to the right side of the app for right-handed users and to the left side of the app for left-handed users.</li>
+</ul>
+<pre><code class="lang-csharp">using System;
+
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Data;
+
+namespace locationandorientation.Converters
+{
+    public class HorizontalAlignmentFromHandednessConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType,
+            object parameter, string language)
+        {
+            bool leftHanded = (bool)value;
+            HorizontalAlignment alignment = HorizontalAlignment.Right;
+            if (leftHanded)
+            {
+                alignment = HorizontalAlignment.Left;
+            }
+            return alignment;
+        }
+
+        public object ConvertBack(object value, Type targetType,
+            object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>VerticalAlignmentFromAppViewConverter positions the ink toolbar to the center of the app for portrait orientation and to the top of the app for landscape orientation (while intended to improve usability, this is just an arbitrary choice for demonstration purposes).</li>
+</ul>
+<pre><code class="lang-csharp">using System;
+
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Data;
+
+namespace locationandorientation.Converters
+{
+    public class VerticalAlignmentFromAppViewConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType,
+            object parameter, string language)
+        {
+            bool portraitOrientation = (bool)value;
+            VerticalAlignment alignment = VerticalAlignment.Top;
+            if (portraitOrientation)
+            {
+                alignment = VerticalAlignment.Center;
+            }
+            return alignment;
+        }
+
+        public object ConvertBack(object value, Type targetType,
+            object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>Now, open the MainPage.xaml.cs file.</p>
+<ol>
+<li>Add <code>using using locationandorientation.ViewModels</code> to the list of namespaces to associate our ViewModel.</li>
+<li>Add <code>using Windows.UI.ViewManagement</code> to the list of namespaces to enable listening for changes to the device orientation.</li>
+<li>Add the <a href="/uwp/api/windows.ui.xaml.windowsizechangedeventhandler">WindowSizeChangedEventHandler</a> code.</li>
+<li>Set the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.DataContext">DataContext</a> for the view to the singleton instance of the InkToolbarSnippetHostViewModel class.</li>
+</ol>
+<pre><code class="lang-csharp">using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+
+using locationandorientation.ViewModels;
+using Windows.UI.ViewManagement;
+
+namespace locationandorientation
+{
+    public sealed partial class MainPage : Page
+    {
+        public MainPage()
+        {
+            this.InitializeComponent();
+
+            Window.Current.SizeChanged += (sender, args) =&gt;
+            {
+                ApplicationView currentView = ApplicationView.GetForCurrentView();
+
+                if (currentView.Orientation == ApplicationViewOrientation.Landscape)
+                {
+                    InkToolbarSnippetHostViewModel.Instance.PortraitLayout = false;
+                }
+                else if (currentView.Orientation == ApplicationViewOrientation.Portrait)
+                {
+                    InkToolbarSnippetHostViewModel.Instance.PortraitLayout = true;
+                }
+            };
+
+            DataContext = InkToolbarSnippetHostViewModel.Instance;
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Next, open the MainPage.xaml file.</p>
+<ol>
+<li><p>Add <code>xmlns:converters=&quot;using:locationandorientation.Converters&quot;</code> to the <code>Page</code> element for binding to our converters.</p>
+<pre><code class="lang-xaml">&lt;Page
+x:Class=&quot;locationandorientation.MainPage&quot;
+xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+xmlns:local=&quot;using:locationandorientation&quot;
+xmlns:converters=&quot;using:locationandorientation.Converters&quot;
+xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+mc:Ignorable=&quot;d&quot;&gt;
+</code></pre>
+</li>
+<li><p>Add a <code>PageResources</code> element and specify references to our converters.</p>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;converters:HorizontalAlignmentFromHandednessConverter x:Key=&quot;HorizontalAlignmentConverter&quot;/&gt;
+    &lt;converters:VerticalAlignmentFromAppViewConverter x:Key=&quot;VerticalAlignmentConverter&quot;/&gt;
+&lt;/Page.Resources&gt;
+</code></pre>
+</li>
+<li><p>Add the InkCanvas and InkToolbar elements and bind the VerticalAlignment and HorizontalAlignment properties of the InkToolbar.</p>
+<pre><code class="lang-xaml">&lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+&lt;InkToolbar x:Name=&quot;inkToolbar&quot; 
+            VerticalAlignment=&quot;{Binding PortraitLayout, Converter={StaticResource VerticalAlignmentConverter} }&quot; 
+            HorizontalAlignment=&quot;{Binding LeftHandedLayout, Converter={StaticResource HorizontalAlignmentConverter} }&quot; 
+            Orientation=&quot;Vertical&quot; 
+            TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot; /&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>Return to the InkToolbarSnippetHostViewModel.cs file to add our <code>PortraitLayout</code> and <code>LeftHandedLayout</code> bool properties to the <code>InkToolbarSnippetHostViewModel</code> class, along with support for rebinding <code>PortraitLayout</code> when that property value changes.</p>
+<pre><code class="lang-csharp">public bool LeftHandedLayout
+{
+    get
+    {
+        bool leftHandedLayout = false;
+        Windows.UI.ViewManagement.UISettings settings =
+            new Windows.UI.ViewManagement.UISettings();
+        leftHandedLayout = (settings.HandPreference ==
+            Windows.UI.ViewManagement.HandPreference.LeftHanded);
+        return leftHandedLayout;
+    }
+}
+
+public bool portraitLayout = false;
+public bool PortraitLayout
+{
+    get
+    {
+        Windows.UI.ViewManagement.ApplicationViewOrientation winOrientation = 
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().Orientation;
+        portraitLayout = 
+            (winOrientation == 
+                Windows.UI.ViewManagement.ApplicationViewOrientation.Portrait);
+        return portraitLayout;
+    }
+    set
+    {
+        if (value.Equals(portraitLayout)) return;
+        portraitLayout = value;
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(&quot;PortraitLayout&quot;));
+    }
+}
+
+#region INotifyPropertyChanged Members
+
+public event PropertyChangedEventHandler PropertyChanged;
+
+protected void OnPropertyChanged(string property)
+{
+    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+}
+
+#endregion
+</code></pre>
+</li>
+</ol>
+<p>You should now have an inking app that adapts to both the dominant hand preference of the user and dynamically responds to the orientation of the user's device.</p>
+<h3 id="specify-the-selected-button">Specify the selected button</h3>
+<p><img src="images/ink/ink-tools-default-toolbar.png" alt="Pencil button selected at initialization"><br>
+<em>Windows Ink toolbar with pencil button selected at initialization</em></p>
+<p>By default, the first (or leftmost) button is selected when your app is launched and the toolbar is initialized. In the default Windows Ink toolbar, this is the ballpoint pen button.</p>
+<p>Because the framework defines the order of the built-in buttons, the first button might not be the pen or tool you want to activate by default.</p>
+<p>You can override this default behavior and specify the selected button on the toolbar.</p>
+<p>For this example, we initialize the default toolbar with the pencil button selected and the pencil activated (instead of the ballpoint pen).</p>
+<ol>
+<li>Use the XAML declaration for the InkCanvas and InkToolbar from the previous example.</li>
+<li>In code-behind, set up a handler for the <a href="/uwp/api/windows.ui.xaml.frameworkelement.loaded">Loaded</a> event of the <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar</a> object.</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// An empty page that can be used on its own or navigated to within a Frame.
+/// Here, we set up InkToolbar event listeners.
+/// &lt;/summary&gt;
+public MainPage_CodeBehind()
+{
+    this.InitializeComponent();
+    // Add handlers for InkToolbar events.
+    inkToolbar.Loaded += inkToolbar_Loaded;
+}
+</code></pre>
+<ol start="3">
+<li><p>In the handler for the <a href="/uwp/api/windows.ui.xaml.frameworkelement.loaded">Loaded</a> event:</p>
+<ol>
+<li>Get a reference to the built-in <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton">InkToolbarPencilButton</a>.</li>
+</ol>
+<p>Passing an <a href="/uwp/api/windows.ui.xaml.controls.inktoolbartool">InkToolbarTool.Pencil</a> object in the <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar.gettoolbutton">GetToolButton</a> method returns an <a href="/uwp/api/windows.ui.xaml.controls.inktoolbartoolbutton">InkToolbarToolButton</a> object for the <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton">InkToolbarPencilButton</a>.</p>
+<ol start="2">
+<li>Set <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar.activetool">ActiveTool</a> to the object returned in the previous step.</li>
+</ol>
+</li>
+</ol>
+<pre><code class="lang-CSharp">/// &lt;summary&gt;
+/// Handle the Loaded event of the InkToolbar.
+/// By default, the active tool is set to the first tool on the toolbar.
+/// Here, we set the active tool to the pencil button.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+private void inkToolbar_Loaded(object sender, RoutedEventArgs e)
+{
+    InkToolbarToolButton pencilButton = inkToolbar.GetToolButton(InkToolbarTool.Pencil);
+    inkToolbar.ActiveTool = pencilButton;
+}
+</code></pre>
+<h3 id="specify-the-built-in-buttons">Specify the built-in buttons</h3>
+<p><img src="images/ink/ink-tools-specific.png" alt="Specific buttons included at initialization"><br>
+<em>Specific buttons included at initialization</em></p>
+<p>As mentioned, the Windows Ink toolbar includes a collection of default, built-in buttons. These buttons are displayed in the following order (from left to right):</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton">InkToolbarBallpointPenButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton">InkToolbarPencilButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.inktoolbarhighlighterbutton">InkToolbarHighlighterButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton">InkToolbarEraserButton</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.inktoolbarrulerbutton">InkToolbarRulerButton</a></li>
+</ul>
+<p>For this example, we initialize the toolbar with only the built-in ballpoint pen, pencil, and eraser buttons.</p>
+<p>You can do this using either XAML or code-behind.</p>
+<p><strong>XAML</strong></p>
+<p>Modify the XAML declaration for the InkCanvas and InkToolbar from the first example.</p>
+<ul>
+<li>Add an <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar.initialcontrols">InitialControls</a> attribute and set its value to &quot;<a href="/uwp/api/windows.ui.xaml.controls.inktoolbarinitialcontrols">None</a>&quot;. This clears the default collection of built-in buttons.</li>
+<li>Add the specific InkToolbar buttons required by your app. Here, we add <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton">InkToolbarBallpointPenButton</a>, <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton">InkToolbarPencilButton</a>, and <a href="/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton">InkToolbarEraserButton</a> only.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Buttons are added to the toolbar in the order defined by the framework, not the order specified here.</p>
+</div>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;StackPanel x:Name=&quot;HeaderPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;0&quot;&gt;
+        &lt;TextBlock x:Name=&quot;Header&quot;
+                   Text=&quot;Basic ink sample&quot;
+                   Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot;
+                   Margin=&quot;10,0,0,0&quot; /&gt;
+    &lt;/StackPanel&gt;
+    &lt;Grid Grid.Row=&quot;1&quot;&gt;
+        &lt;Image Source=&quot;Assets\StoreLogo.png&quot; /&gt;
+        &lt;!-- Clear the default InkToolbar buttons by setting InitialControls to None. --&gt;
+        &lt;!-- Set the active tool to the pencil button. --&gt;
+        &lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+        &lt;InkToolbar x:Name=&quot;inkToolbar&quot;
+                    VerticalAlignment=&quot;Top&quot;
+                    TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot;
+                    InitialControls=&quot;None&quot;&gt;
+            &lt;!--
+             Add only the ballpoint pen, pencil, and eraser.
+             Note that the buttons are added to the toolbar in the order
+             defined by the framework, not the order we specify here.
+            --&gt;
+            &lt;InkToolbarEraserButton /&gt;
+            &lt;InkToolbarBallpointPenButton /&gt;
+            &lt;InkToolbarPencilButton/&gt;
+        &lt;/InkToolbar&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p><strong>Code-behind</strong></p>
+<ol>
+<li>Use the XAML declaration for the InkCanvas and InkToolbar from the first example.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;StackPanel x:Name=&quot;HeaderPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;0&quot;&gt;
+        &lt;TextBlock x:Name=&quot;Header&quot;
+                   Text=&quot;Basic ink sample&quot;
+                   Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot;
+                   Margin=&quot;10,0,0,0&quot; /&gt;
+    &lt;/StackPanel&gt;
+    &lt;Grid Grid.Row=&quot;1&quot;&gt;
+        &lt;Image Source=&quot;Assets\StoreLogo.png&quot; /&gt;
+        &lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+        &lt;InkToolbar x:Name=&quot;inkToolbar&quot;
+        VerticalAlignment=&quot;Top&quot;
+        TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot; /&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+</code></pre>
+<ol start="2">
+<li>In code-behind, set up a handler for the <a href="/uwp/api/windows.ui.xaml.frameworkelement.loading">Loading</a> event of the <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar</a> object.</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// An empty page that can be used on its own or navigated to within a Frame.
+/// Here, we set up InkToolbar event listeners.
+/// &lt;/summary&gt;
+public MainPage_CodeBehind()
+{
+    this.InitializeComponent();
+    // Add handlers for InkToolbar events.
+    inkToolbar.Loading += inkToolbar_Loading;
+}
+</code></pre>
+<ol start="3">
+<li>Set <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar.initialcontrols">InitialControls</a> to &quot;<a href="/uwp/api/windows.ui.xaml.controls.inktoolbarinitialcontrols">None</a>&quot;.</li>
+<li>Create object references for the buttons required by your app. Here, we add <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarballpointpenbutton">InkToolbarBallpointPenButton</a>, <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpencilbutton">InkToolbarPencilButton</a>, and <a href="/uwp/api/windows.ui.xaml.controls.inktoolbareraserbutton">InkToolbarEraserButton</a> only.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Buttons are added to the toolbar in the order defined by the framework, not the order specified here.</p>
+</div>
+<ol start="5">
+<li>Add the buttons to the InkToolbar.</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Handles the Loading event of the InkToolbar.
+/// Here, we identify the buttons to include on the InkToolbar.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;The InkToolbar&lt;/param&gt;
+/// &lt;param name=&quot;args&quot;&gt;The InkToolbar event data.
+/// If there is no event data, this parameter is null&lt;/param&gt;
+private void inkToolbar_Loading(FrameworkElement sender, object args)
+{
+    // Clear all built-in buttons from the InkToolbar.
+    inkToolbar.InitialControls = InkToolbarInitialControls.None;
+
+    // Add only the ballpoint pen, pencil, and eraser.
+    // Note that the buttons are added to the toolbar in the order
+    // defined by the framework, not the order we specify here.
+    InkToolbarBallpointPenButton ballpoint = new InkToolbarBallpointPenButton();
+    InkToolbarPencilButton pencil = new InkToolbarPencilButton();
+    InkToolbarEraserButton eraser = new InkToolbarEraserButton();
+    inkToolbar.Children.Add(eraser);
+    inkToolbar.Children.Add(ballpoint);
+    inkToolbar.Children.Add(pencil);
+}
+</code></pre>
+<!--
+### Support touch input
+By default, the InkToolbar supports both pen and mouse input, you have to enable support for touch input.
+-->
+<h2 id="custom-buttons-and-inking-features">Custom buttons and inking features</h2>
+<p>You can customize and extend the collection of buttons (and associated inking features) that are provided through the InkToolbar.</p>
+<p>The InkToolbar consists of two distinct groups of button types:</p>
+<ol>
+<li>A group of &quot;tool&quot; buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>  Feature selection is mutually exclusive.</p>
+</blockquote>
+<ol start="2">
+<li>A group of &quot;toggle&quot; buttons containing the built-in ruler button. Custom toggles are added here.</li>
+</ol>
+<blockquote>
+<p><strong>Note</strong>  Features are not mutually exclusive and can be used concurrently with other active tools.</p>
+</blockquote>
+<p>Depending on your application and the inking functionality required, you can add any of the following buttons (bound to your custom ink features) to the InkToolbar:</p>
+<ul>
+<li>Custom pen – a pen for which the ink color palette and pen tip properties, such as shape, rotation, and size, are defined by the host app.</li>
+<li>Custom tool – a non-pen tool, defined by the host app.</li>
+<li>Custom toggle – Sets the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.</li>
+</ul>
+<blockquote>
+<p><strong>Note</strong>  You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)</p>
+</blockquote>
+<h3 id="custom-pen">Custom pen</h3>
+<p>You can create a custom pen (activated through a custom pen button) where you define the ink color palette and pen tip properties, such as shape, rotation, and size.</p>
+<p><img src="images/ink/ink-tools-custompen.png" alt="Custom calligraphic pen button"><br>
+<em>Custom calligraphic pen button</em></p>
+<p>For this example, we define a custom pen with a broad tip that enables basic calligraphic ink strokes. We also customize the collection of brushes in the palette displayed on the button flyout.</p>
+<p><strong>Code-behind</strong></p>
+<p>First, we define our custom pen and specify the drawing attributes in code-behind. We reference this custom pen from XAML later.</p>
+<ol>
+<li>Right click the project in Solution Explorer and select Add -&gt; New item.</li>
+<li>Under Visual C# -&gt; Code, add a new Class file and call it CalligraphicPen.cs.</li>
+<li>In Calligraphic.cs, replace the default using block with the following:</li>
+</ol>
+<pre><code class="lang-csharp">using System.Numerics;
+using Windows.UI;
+using Windows.UI.Input.Inking;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+</code></pre>
+<ol start="4">
+<li>Specify that the CalligraphicPen class is derived from <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarcustompen">InkToolbarCustomPen</a>.</li>
+</ol>
+<pre><code class="lang-csharp">class CalligraphicPen : InkToolbarCustomPen
+{
+}
+</code></pre>
+<ol start="5">
+<li>Override  <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarcustompen.createinkdrawingattributescore">CreateInkDrawingAttributesCore</a>  to specify your own brush and stroke size.</li>
+</ol>
+<pre><code class="lang-csharp">class CalligraphicPen : InkToolbarCustomPen
+{
+    protected override InkDrawingAttributes
+      CreateInkDrawingAttributesCore(Brush brush, double strokeWidth)
+    {
+    }
+}
+</code></pre>
+<ol start="6">
+<li>Create an <a href="/uwp/api/windows.ui.input.inking.inkdrawingattributes">InkDrawingAttributes</a> object and set the <a href="/uwp/api/windows.ui.input.inking.inkdrawingattributes.pentip">pen tip shape</a>, <a href="/uwp/api/windows.ui.input.inking.inkdrawingattributes.pentiptransform">tip rotation</a>, <a href="/uwp/api/windows.ui.input.inking.inkdrawingattributes.size">stroke size</a>, and <a href="/uwp/api/windows.ui.input.inking.inkdrawingattributes.color">ink color</a>.</li>
+</ol>
+<pre><code class="lang-csharp">class CalligraphicPen : InkToolbarCustomPen
+{
+    protected override InkDrawingAttributes
+      CreateInkDrawingAttributesCore(Brush brush, double strokeWidth)
+    {
+        InkDrawingAttributes inkDrawingAttributes =
+          new InkDrawingAttributes();
+        inkDrawingAttributes.PenTip = PenTipShape.Circle;
+        inkDrawingAttributes.Size =
+          new Windows.Foundation.Size(strokeWidth, strokeWidth * 20);
+        SolidColorBrush solidColorBrush = brush as SolidColorBrush;
+        if (solidColorBrush != null)
+        {
+            inkDrawingAttributes.Color = solidColorBrush.Color;
+        }
+        else
+        {
+            inkDrawingAttributes.Color = Colors.Black;
+        }
+
+        Matrix3x2 matrix = Matrix3x2.CreateRotation(45);
+        inkDrawingAttributes.PenTipTransform = matrix;
+
+        return inkDrawingAttributes;
+    }
+}
+</code></pre>
+<p><strong>XAML</strong></p>
+<p>Next, we add the necessary references to the custom pen in MainPage.xaml.</p>
+<ol>
+<li>We declare a local page resource dictionary that creates a reference to the custom pen (<code>CalligraphicPen</code>) defined in CalligraphicPen.cs, and a <a href="/uwp/api/Windows.UI.Xaml.Media.BrushCollection">brush collection</a> supported by the custom pen (<code>CalligraphicPenPalette</code>).</li>
+</ol>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;!-- Add the custom CalligraphicPen to the page resources. --&gt;
+    &lt;local:CalligraphicPen x:Key=&quot;CalligraphicPen&quot; /&gt;
+    &lt;!-- Specify the colors for the palette of the custom pen. --&gt;
+    &lt;BrushCollection x:Key=&quot;CalligraphicPenPalette&quot;&gt;
+        &lt;SolidColorBrush Color=&quot;Blue&quot; /&gt;
+        &lt;SolidColorBrush Color=&quot;Red&quot; /&gt;
+    &lt;/BrushCollection&gt;
+&lt;/Page.Resources&gt;
+</code></pre>
+<ol start="2">
+<li>We then add an InkToolbar with a child <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarcustompenbutton">InkToolbarCustomPenButton</a> element.</li>
+</ol>
+<p>The custom pen button includes the two static resource references declared in the page resources: <code>CalligraphicPen</code> and <code>CalligraphicPenPalette</code>.</p>
+<p>We also specify the range for the stroke size slider (<a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpenbutton.minstrokewidth">MinStrokeWidth</a>, <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpenbutton.maxstrokewidth">MaxStrokeWidth</a>, and <a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpenbutton.selectedstrokewidthproperty">SelectedStrokeWidth</a>), the selected brush (<a href="/uwp/api/windows.ui.xaml.controls.inktoolbarpenbutton.selectedbrushindex">SelectedBrushIndex</a>), and the icon for the custom pen button (<a href="/uwp/api/windows.ui.xaml.controls.symbolicon">SymbolIcon</a>).</p>
+<pre><code class="lang-xaml">&lt;Grid Grid.Row=&quot;1&quot;&gt;
+    &lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+    &lt;InkToolbar x:Name=&quot;inkToolbar&quot;
+                VerticalAlignment=&quot;Top&quot;
+                TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot;&gt;
+        &lt;InkToolbarCustomPenButton
+            CustomPen=&quot;{StaticResource CalligraphicPen}&quot;
+            Palette=&quot;{StaticResource CalligraphicPenPalette}&quot;
+            MinStrokeWidth=&quot;1&quot; MaxStrokeWidth=&quot;3&quot; SelectedStrokeWidth=&quot;2&quot;
+            SelectedBrushIndex =&quot;1&quot;&gt;
+            &lt;SymbolIcon Symbol=&quot;Favorite&quot; /&gt;
+            &lt;InkToolbarCustomPenButton.ConfigurationContent&gt;
+                &lt;InkToolbarPenConfigurationControl /&gt;
+            &lt;/InkToolbarCustomPenButton.ConfigurationContent&gt;
+        &lt;/InkToolbarCustomPenButton&gt;
+    &lt;/InkToolbar&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h3 id="custom-toggle">Custom toggle</h3>
+<p>You can create a custom toggle (activated through a custom toggle button) to set the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.</p>
+<p>In this example, we define a custom toggle button that enables inking with touch input (by default, touch inking is not enabled).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you need to support inking with touch, we recommended that you enable it using a CustomToggleButton, with the icon and <a href="../controls/tooltips.html">tooltip</a> specified in this example.</p>
+</div>
+<p>Typically, touch input is used for direct manipulation of an object or the app UI. To demonstrate the differences in behavior when touch inking is enabled, we place the InkCanvas within a ScrollViewer container and set the dimensions of the ScrollViewer to be smaller than the InkCanvas.</p>
+<p>When the app starts, only pen inking is supported and touch is used to pan or zoom the inking surface. When touch inking is enabled, the inking surface cannot be panned or zoomed through touch input.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>See <a href="../controls/inking-controls.html">Inking controls</a> for both <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.InkToolbar"><strong>InkToolbar</strong></a> UX guidelines. The following recommendations are relevant to this example:</p>
+<ul>
+<li>The <a href="/uwp/api/Windows.UI.Xaml.Controls.InkToolbar"><strong>InkToolbar</strong></a>, and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app.</li>
+<li>If supporting inking with touch input, we recommend using the &quot;ED5F&quot; icon from the &quot;Segoe MLD2 Assets&quot; font for the toggle button, with a &quot;Touch writing&quot; tooltip.</li>
+</ul>
+</div>
+<p><strong>XAML</strong></p>
+<ol>
+<li>First, we declare an <a href="/uwp/api/Windows.UI.Xaml.Controls.InkToolbarCustomToggleButton"><strong>InkToolbarCustomToggleButton</strong></a> element (toggleButton) with a Click event listener that specifies the event handler (Toggle_Custom).</li>
+</ol>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+
+    &lt;StackPanel Grid.Row=&quot;0&quot; 
+                x:Name=&quot;HeaderPanel&quot; 
+                Orientation=&quot;Horizontal&quot;&gt;
+        &lt;TextBlock x:Name=&quot;Header&quot; 
+                   Text=&quot;Basic ink sample&quot; 
+                   Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot; 
+                   Margin=&quot;10&quot; /&gt;
+    &lt;/StackPanel&gt;
+
+    &lt;ScrollViewer Grid.Row=&quot;1&quot; 
+                  HorizontalScrollBarVisibility=&quot;Auto&quot; 
+                  VerticalScrollBarVisibility=&quot;Auto&quot;&gt;
+        
+        &lt;Grid HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot;&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+            &lt;/Grid.RowDefinitions&gt;
+            
+            &lt;InkToolbar Grid.Row=&quot;0&quot; 
+                        Margin=&quot;10&quot;
+                        x:Name=&quot;inkToolbar&quot; 
+                        VerticalAlignment=&quot;Top&quot;
+                        TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot;&gt;
+                &lt;InkToolbarCustomToggleButton 
+                x:Name=&quot;toggleButton&quot; 
+                Click=&quot;CustomToggle_Click&quot; 
+                ToolTipService.ToolTip=&quot;Touch Writing&quot;&gt;
+                    &lt;SymbolIcon Symbol=&quot;{x:Bind TouchWritingIcon}&quot;/&gt;
+                &lt;/InkToolbarCustomToggleButton&gt;
+            &lt;/InkToolbar&gt;
+            
+            &lt;ScrollViewer Grid.Row=&quot;1&quot; 
+                          Height=&quot;500&quot;
+                          Width=&quot;500&quot;
+                          x:Name=&quot;scrollViewer&quot; 
+                          ZoomMode=&quot;Enabled&quot; 
+                          MinZoomFactor=&quot;.1&quot; 
+                          VerticalScrollMode=&quot;Enabled&quot; 
+                          VerticalScrollBarVisibility=&quot;Auto&quot; 
+                          HorizontalScrollMode=&quot;Enabled&quot; 
+                          HorizontalScrollBarVisibility=&quot;Auto&quot;&gt;
+                
+                &lt;Grid x:Name=&quot;outputGrid&quot; 
+                      Height=&quot;1000&quot;
+                      Width=&quot;1000&quot;
+                      Background=&quot;{ThemeResource SystemControlBackgroundChromeWhiteBrush}&quot;&gt;
+                    &lt;InkCanvas x:Name=&quot;inkCanvas&quot;/&gt;
+                &lt;/Grid&gt;
+                
+            &lt;/ScrollViewer&gt;
+        &lt;/Grid&gt;
+    &lt;/ScrollViewer&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p><strong>Code-behind</strong></p>
+<ol start="2">
+<li><p>In the previous snippet, we declared a Click event listener and handler (Toggle_Custom) on the custom toggle button for touch inking (toggleButton). This handler simply toggles support for CoreInputDeviceTypes.Touch through the InputDeviceTypes property of the InkPresenter.</p>
+<p>We also specified an icon for the button using the SymbolIcon element and the {x:Bind} markup extension that binds it to a field defined in the code-behind file (TouchWritingIcon).</p>
+<p>The following snippet includes both the Click event handler and the definition of TouchWritingIcon.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">namespace Ink_Basic_InkToolbar
+{
+    /// &lt;summary&gt;
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// &lt;/summary&gt;
+    public sealed partial class MainPage_AddCustomToggle : Page
+    {
+        Symbol TouchWritingIcon = (Symbol)0xED5F;
+
+        public MainPage_AddCustomToggle()
+        {
+            this.InitializeComponent();
+        }
+
+        // Handler for the custom toggle button that enables touch inking.
+        private void CustomToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (toggleButton.IsChecked == true)
+            {
+                inkCanvas.InkPresenter.InputDeviceTypes |= CoreInputDeviceTypes.Touch;
+            }
+            else
+            {
+                inkCanvas.InkPresenter.InputDeviceTypes &amp;= ~CoreInputDeviceTypes.Touch;
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="custom-tool">Custom tool</h3>
+<p>You can create a custom tool button to invoke a non-pen tool that is defined by your app.</p>
+<p>By default, an <a href="/uwp/api/Windows.UI.Input.Inking.InkPresenter"><strong>InkPresenter</strong></a> processes all input as either an ink stroke or an erase stroke. This includes input modified by a secondary hardware affordance such as a pen barrel button, a right mouse button, or similar. However, <a href="/uwp/api/Windows.UI.Input.Inking.InkPresenter"><strong>InkPresenter</strong></a> can be configured to leave specific input unprocessed, which can then be passed through to your app for custom processing.</p>
+<p>In this example, we define a custom tool button that, when selected, causes subsequent strokes to be processed and rendered as a selection lasso (dashed line) instead of ink. All ink strokes within the bounds of the selection area are set to <a href="/uwp/api/windows.ui.input.inking.inkstroke.selected"><strong>Selected</strong></a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>See Inking controls for both InkCanvas and InkToolbar UX guidelines. The following recommendation is relevant to this example:</p>
+<ul>
+<li>If providing stroke selection, we recommend using the &quot;EF20&quot; icon from the &quot;Segoe MLD2 Assets&quot; font for the tool button, with a &quot;Selection tool&quot; tooltip.</li>
+</ul>
+</div>
+<p><strong>XAML</strong></p>
+<ol>
+<li><p>First, we declare an <a href="/uwp/api/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton"><strong>InkToolbarCustomToolButton</strong></a> element (customToolButton) with a Click event listener that specifies the event handler (customToolButton_Click) where stroke selection is configured. (We've also added a set of buttons for copying, cutting, and pasting the stroke selection.)</p>
+</li>
+<li><p>We also add a Canvas element for drawing our selection stroke. Using a separate layer to draw the selection stroke ensures the <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a> and its content remain untouched.</p>
+</li>
+</ol>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;StackPanel x:Name=&quot;HeaderPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;0&quot;&gt;
+        &lt;TextBlock x:Name=&quot;Header&quot; 
+                   Text=&quot;Basic ink sample&quot; 
+                   Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot; 
+                   Margin=&quot;10,0,0,0&quot; /&gt;
+    &lt;/StackPanel&gt;
+    &lt;StackPanel x:Name=&quot;ToolPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;1&quot;&gt;
+        &lt;InkToolbar x:Name=&quot;inkToolbar&quot; 
+                    VerticalAlignment=&quot;Top&quot; 
+                    TargetInkCanvas=&quot;{x:Bind inkCanvas}&quot;&gt;
+            &lt;InkToolbarCustomToolButton 
+                x:Name=&quot;customToolButton&quot; 
+                Click=&quot;customToolButton_Click&quot; 
+                ToolTipService.ToolTip=&quot;Selection tool&quot;&gt;
+                &lt;SymbolIcon Symbol=&quot;{x:Bind SelectIcon}&quot;/&gt;
+            &lt;/InkToolbarCustomToolButton&gt;
+        &lt;/InkToolbar&gt;
+        &lt;Button x:Name=&quot;cutButton&quot; 
+                Content=&quot;Cut&quot; 
+                Click=&quot;cutButton_Click&quot;
+                Width=&quot;100&quot;
+                Margin=&quot;5,0,0,0&quot;/&gt;
+        &lt;Button x:Name=&quot;copyButton&quot; 
+                Content=&quot;Copy&quot;  
+                Click=&quot;copyButton_Click&quot;
+                Width=&quot;100&quot;
+                Margin=&quot;5,0,0,0&quot;/&gt;
+        &lt;Button x:Name=&quot;pasteButton&quot; 
+                Content=&quot;Paste&quot;  
+                Click=&quot;pasteButton_Click&quot;
+                Width=&quot;100&quot;
+                Margin=&quot;5,0,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+    &lt;Grid Grid.Row=&quot;2&quot; x:Name=&quot;outputGrid&quot; 
+              Background=&quot;{ThemeResource SystemControlBackgroundChromeWhiteBrush}&quot; 
+              Height=&quot;Auto&quot;&gt;
+        &lt;!-- Canvas for displaying selection UI. --&gt;
+        &lt;Canvas x:Name=&quot;selectionCanvas&quot;/&gt;
+        &lt;!-- Canvas for displaying ink. --&gt;
+        &lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p><strong>Code-behind</strong></p>
+<ol start="2">
+<li><p>We then handle the Click event for the <a href="/uwp/api/Windows.UI.Xaml.Controls.InkToolbarCustomToolButton"><strong>InkToolbarCustomToolButton</strong></a> in the MainPage.xaml.cs code-behind file.</p>
+<p>This handler configures the <a href="/uwp/api/Windows.UI.Input.Inking.InkPresenter"><strong>InkPresenter</strong></a> to pass unprocessed input through to the app.</p>
+<p>For a more detailed step through of this code:  See the Pass-through input for advanced processing section of <a href="pen-and-stylus-interactions.html">Pen interactions and Windows Ink in Windows apps</a>.</p>
+<p>We also specified an icon for the button using the SymbolIcon element and the {x:Bind} markup extension that binds it to a field defined in the code-behind file (SelectIcon).</p>
+<p>The following snippet includes both the Click event handler and the definition of SelectIcon.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">namespace Ink_Basic_InkToolbar
+{
+    /// &lt;summary&gt;
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// &lt;/summary&gt;
+    public sealed partial class MainPage_AddCustomTool : Page
+    {
+        // Icon for custom selection tool button.
+        Symbol SelectIcon = (Symbol)0xEF20;
+
+        // Stroke selection tool.
+        private Polyline lasso;
+        // Stroke selection area.
+        private Rect boundingRect;
+
+        public MainPage_AddCustomTool()
+        {
+            this.InitializeComponent();
+
+            // Listen for new ink or erase strokes to clean up selection UI.
+            inkCanvas.InkPresenter.StrokeInput.StrokeStarted +=
+                StrokeInput_StrokeStarted;
+            inkCanvas.InkPresenter.StrokesErased +=
+                InkPresenter_StrokesErased;
+        }
+
+        private void customToolButton_Click(object sender, RoutedEventArgs e)
+        {
+            // By default, the InkPresenter processes input modified by 
+            // a secondary affordance (pen barrel button, right mouse 
+            // button, or similar) as ink.
+            // To pass through modified input to the app for custom processing 
+            // on the app UI thread instead of the background ink thread, set 
+            // InputProcessingConfiguration.RightDragAction to LeaveUnprocessed.
+            inkCanvas.InkPresenter.InputProcessingConfiguration.RightDragAction =
+                InkInputRightDragAction.LeaveUnprocessed;
+
+            // Listen for unprocessed pointer events from modified input.
+            // The input is used to provide selection functionality.
+            inkCanvas.InkPresenter.UnprocessedInput.PointerPressed +=
+                UnprocessedInput_PointerPressed;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerMoved +=
+                UnprocessedInput_PointerMoved;
+            inkCanvas.InkPresenter.UnprocessedInput.PointerReleased +=
+                UnprocessedInput_PointerReleased;
+        }
+
+        // Handle new ink or erase strokes to clean up selection UI.
+        private void StrokeInput_StrokeStarted(
+            InkStrokeInput sender, Windows.UI.Core.PointerEventArgs args)
+        {
+            ClearSelection();
+        }
+
+        private void InkPresenter_StrokesErased(
+            InkPresenter sender, InkStrokesErasedEventArgs args)
+        {
+            ClearSelection();
+        }
+
+        private void cutButton_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+            inkCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+            ClearSelection();
+        }
+
+        private void copyButton_Click(object sender, RoutedEventArgs e)
+        {
+            inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+        }
+
+        private void pasteButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (inkCanvas.InkPresenter.StrokeContainer.CanPasteFromClipboard())
+            {
+                inkCanvas.InkPresenter.StrokeContainer.PasteFromClipboard(
+                    new Point(0, 0));
+            }
+            else
+            {
+                // Cannot paste from clipboard.
+            }
+        }
+
+        // Clean up selection UI.
+        private void ClearSelection()
+        {
+            var strokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+            foreach (var stroke in strokes)
+            {
+                stroke.Selected = false;
+            }
+            ClearBoundingRect();
+        }
+
+        private void ClearBoundingRect()
+        {
+            if (selectionCanvas.Children.Any())
+            {
+                selectionCanvas.Children.Clear();
+                boundingRect = Rect.Empty;
+            }
+        }
+
+        // Handle unprocessed pointer events from modified input.
+        // The input is used to provide selection functionality.
+        // Selection UI is drawn on a canvas under the InkCanvas.
+        private void UnprocessedInput_PointerPressed(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Initialize a selection lasso.
+            lasso = new Polyline()
+            {
+                Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
+                StrokeThickness = 1,
+                StrokeDashArray = new DoubleCollection() { 5, 2 },
+            };
+
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+
+            selectionCanvas.Children.Add(lasso);
+        }
+
+        private void UnprocessedInput_PointerMoved(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Add a point to the lasso Polyline object.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+        }
+
+        private void UnprocessedInput_PointerReleased(
+            InkUnprocessedInput sender, PointerEventArgs args)
+        {
+            // Add the final point to the Polyline object and 
+            // select strokes within the lasso area.
+            // Draw a bounding box on the selection canvas 
+            // around the selected ink strokes.
+            lasso.Points.Add(args.CurrentPoint.RawPosition);
+
+            boundingRect =
+                inkCanvas.InkPresenter.StrokeContainer.SelectWithPolyLine(
+                    lasso.Points);
+
+            DrawBoundingRect();
+        }
+
+        // Draw a bounding rectangle, on the selection canvas, encompassing 
+        // all ink strokes within the lasso area.
+        private void DrawBoundingRect()
+        {
+            // Clear all existing content from the selection canvas.
+            selectionCanvas.Children.Clear();
+
+            // Draw a bounding rectangle only if there are ink strokes 
+            // within the lasso area.
+            if (!((boundingRect.Width == 0) ||
+                (boundingRect.Height == 0) ||
+                boundingRect.IsEmpty))
+            {
+                var rectangle = new Rectangle()
+                {
+                    Stroke = new SolidColorBrush(Windows.UI.Colors.Blue),
+                    StrokeThickness = 1,
+                    StrokeDashArray = new DoubleCollection() { 5, 2 },
+                    Width = boundingRect.Width,
+                    Height = boundingRect.Height
+                };
+
+                Canvas.SetLeft(rectangle, boundingRect.X);
+                Canvas.SetTop(rectangle, boundingRect.Y);
+
+                selectionCanvas.Children.Add(rectangle);
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="custom-ink-rendering">Custom ink rendering</h3>
+<p>By default, ink input is processed on a low-latency background thread and rendered &quot;wet&quot; as it is drawn. When the stroke is completed (pen or finger lifted, or mouse button released), the stroke is processed on the UI thread and rendered &quot;dry&quot; to the <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a> layer (above the application content and replacing the wet ink).</p>
+<p>The ink platform enables you to override this behavior and completely customize the inking experience by custom drying the ink input.</p>
+<p>For more info on custom drying, see <a href="pen-and-stylus-interactions.html#custom-ink-rendering">Pen interactions and Windows Ink in Windows apps</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Custom drying and the <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar"><strong>InkToolbar</strong></a><br>
+If your app overrides the default ink rendering behavior of the <a href="/uwp/api/Windows.UI.Input.Inking.InkPresenter"><strong>InkPresenter</strong></a> with a custom drying implementation, the rendered ink strokes are no longer available to the InkToolbar and the built-in erase commands of the InkToolbar do not work as expected. To provide erase functionality, you must handle all pointer events, perform hit-testing on each stroke, and override the built-in &quot;Erase all ink&quot; command.</p>
+</div>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="pen-and-stylus-interactions.html">Pen and stylus interactions</a></li>
+</ul>
+<h3 id="topic-samples">Topic samples</h3>
+<ul>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness.zip">Ink toolbar location and orientation sample (basic)</a></li>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-toolbar-handedness-dynamic.zip">Ink toolbar location and orientation sample (dynamic)</a></li>
+</ul>
+<h3 id="other-samples">Other samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk">Simple ink sample (C#/C++)</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk">Complex ink sample (C++)</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208)">Ink sample (JavaScript)</a></li>
+<li><a href="https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink">Get Started Tutorial: Support ink in your Windows app</a></li>
+<li><a href="https://github.com/Microsoft/Windows-appsample-coloringbook">Coloring book sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-appsample-familynotes">Family notes sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/ink-toolbar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

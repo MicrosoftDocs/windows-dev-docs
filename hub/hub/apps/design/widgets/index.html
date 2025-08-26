@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Widgets </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Widgets ">
+    
+    <meta name="description" content="Learn how to support your app with Windows widgets, displayed on the widgets board built into Windows 11.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="widgets-overview">Widgets overview</h1>
+
+<p>Windows Widgets are small UI containers that display text and graphics, associated with an app installed on the device. Installed widgets are displayed in a grid in the Widgets Board: a flyout plane that overlays the Windows desktop when the user clicks Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the screen. Widgets help people stay on top of what's important to them by aggregating personalized content and quick actions from the apps they use. They are quickly consumable and actionable. Widgets are not meant to replace apps and websites, but rather provide frictionless access to most-needed information or often-used functionalities that people can read/trigger right away. When designing your widget, consider the kind of value it will bring to your consumers.</p>
+<p><span class="mx-imgBorder">
+<img src="images/widgets-hero-image.png" alt="Screenshot of the Widgets Board. The board is a rounded rectangle with the time displayed at the top, followed by a search bar. The rest of the board is a grid of rounded rectangles each representing a widget. The individual widgets show top news stories, current weather, current traffic, etc.">
+</span>
+</p>
+<h2 id="widgets-terminology">Widgets terminology</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Widgets host</td>
+<td>An application that displays and manages Windows widgets. In the current release, the only Widgets host is the Widgets Board built into Windows 11.</td>
+</tr>
+<tr>
+<td>Widgets Board</td>
+<td>The Widgets Board is a Windows 11 system component that is displayed over the desktop when the user clicks the Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the screen. The Widgets Board displays widgets and manages their layout the on the board.</td>
+</tr>
+<tr>
+<td>Widget</td>
+<td>A widget is an <a href="https://adaptivecards.io/">Adaptive Card</a> that presents important content or actions from an app. It allows users to access desired information instantly without the need to launch the associated app or website. Widget content is refreshed dynamically throughout the day to provide the user with current and interesting content that can be consumed at a glance. Widgets provide basic interactive features that allow the user to launch the associated app for deeper engagement. Widgets are not intended to replace apps and websites.</td>
+</tr>
+<tr>
+<td>Widget provider</td>
+<td>A widget provider is a Windows app that provides content to be displayed in the widget. The widget provider owns the content, layout, and interactive elements of the widget.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="widget-design-guidance">Widget design guidance</h3>
+<p>The visual experience of a widget includes visual elements and interaction elements that are defined using the Adaptive Cards JSON format. The <a href="https://www.adaptivecards.io/designer/">Adaptive Cards Designer</a> provides a real-time editor for designing adaptive cards as well as templates for the supported widget sizes and themes. It's important that your widget's design adhere the Windows Widget design principles to help ensure that the Widgets Board provides a consistent and familiar experience for all widgets.</p>
+<p>For a high-level walkthrough of the visual elements of a widget see <a href="widgets-states-and-ui.html">Widget states and built-in UI components</a>.</p>
+<h2 id="widget-principles">Widget principles</h2>
+<p>To create great Windows Widgets, consider the following principles as you design and develop your widgets:</p>
+<h3 id="glanceable">Glanceable</h3>
+<p>Users can take a quick peek to get the most value out of the widget. They only need to click on it if they want richer details or deeper interactions.</p>
+<h3 id="dependable">Dependable</h3>
+<p>Surface frequently used information instantly to save users time in repeating those steps. Drive consistent re-engagement to your app.</p>
+<h3 id="useful">Useful</h3>
+<p>Elevate the most useful and relevant information.</p>
+<h3 id="personal">Personal</h3>
+<p>Provide personalized content and build an emotional connection with customers. Widgets should never contain ads. Customers are in control of their widget content and layout.</p>
+<h3 id="focused">Focused</h3>
+<p>Each widget should generally focus on one main task or scenario. Widgets are not intended to replace your apps and websites.</p>
+<h3 id="fresh">Fresh</h3>
+<p>Content should dynamically refresh based on available context. It is up to date and provides the right content at the right time.</p>
+<h2 id="planning-your-apps-widget-experience">Planning your app's widget experience</h2>
+<ol>
+<li>Based on your understanding of your customers, identify the most important content or most useful actions that your users would love to have quick access to without opening your app or website. Consider the principles enumerated in the <a href="#widget-principles">Widget principles</a> section and think about how they can apply to your app.</li>
+<li>Your app can support multiple individual widgets. Determine the number of separate widgets you want to support so that each widget focuses on a specific purpose.</li>
+<li>Determine the content you want to include for each widget. A single widget can support three different sizes; small, medium, and large. For each widget, think about what content would bring the most value to users and your business needs. For each size from small to large, the purpose of the widget should remain the same, but the amount of information displayed should expand with larger sizes. We recommend that widget providers implement all widget sizes to give users flexibility when customizing the widget layout.</li>
+<li>Think about the user interactions your widget will support. Users can click on the widget title or any click targets that you've defined on the widget. These interactions can activate deep-link shortcuts into your app or web site that take users directly to what they're interested in, so that they don't have to navigate from the root of your app. Consider the different navigational models offered.</li>
+<li>Apps must implement a widget provider that implements the back-end functionality to send your widget's layout and data to the widgets board to be displayed. Currently you can implement a widget provider using a packaged Win32 desktop app or a Progressive Web App (PWA). For more information on creating a Win32 widget provider, see <a href="../../develop/widgets/widget-providers.html">Widget service providers</a>. For information on PWA widget providers, see <a href="/microsoft-edge/progressive-web-apps-chromium/how-to/widgets">Build PWA-driven widgets</a>.</li>
+</ol>
+<h2 id="in-this-section">In this section</h2>
+<p><a href="widgets-states-and-ui.html">Widget states and UI</a></p>
+<p><a href="widgets-design-fundamentals.html">Widget design fundamentals</a></p>
+<p><a href="widgets-interaction-design.html">Widget interaction design</a></p>
+<p><a href="widgets-create-a-template.html">Create a widget template with the Adaptive Card Designer</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/widgets/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

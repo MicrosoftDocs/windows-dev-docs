@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Set up Node.js on native Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Set up Node.js on native Windows ">
+    
+    <meta name="description" content="A guide to help you get your Node.js development environment set up directly on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="install-nodejs-on-windows">Install Node.js on Windows</h1>
+
+<p>This guide will help you to install Node.js in a Windows development environment.</p>
+<p>For those who prefer using Node.js in a Linux environment, see <a href="nodejs-on-wsl.html">Install Node.js on Windows Subsystem for Linux (WSL2)</a>.</p>
+<p>Consider the following when deciding where to install and whether to develop with Node.js in a native Windows versus a Linux (WSL 2) environment:</p>
+<ul>
+<li><strong>Skill level</strong>: If you are new to developing with Node.js and want to get up and running quickly so that you can learn, <a href="nodejs-on-windows.html">install Node.js on Windows</a>. Installing and using Node.js on Windows will provide a less complex environment for beginners than using WSL.</li>
+<li><strong>Command line client tool</strong>: If you prefer PowerShell, use Node.js on Windows. If you prefer Bash, use Node.js on Linux (WSL 2).</li>
+<li><strong>Production server</strong>: If you plan to deploy your Node.js app on Windows Server, use Node.js on Windows. If you plan to deploy on a Linux Server, use Node.js on Linux (WSL 2). WSL allows you to install your preferred Linux distribution (with Ubuntu as the default), ensuring consistency between your development environment (where you write code) and your production environment (the server where your code is deployed).</li>
+<li><strong>Performance speed and system call compatibility</strong>: There is continuous debate and development on Linux vs Windows performance, but the key when using a Windows machine is to keep your development project files in the same file system where you have installed Node.js. If you install Node.js on the Windows file system, keep your files on a Windows drive (for example, C:/). If you install Node.js on a Linux distribution (like Ubuntu), keep your project files in the Linux file system directory associated with the distribution that you are using. (Enter <code>explorer.exe .</code> from your WSL distribution command line to browse the directory using Windows File Explorer.)</li>
+<li><strong>Docker containers</strong>: If you want to use Docker containers to develop your project on Windows, we recommend that you <a href="https://docs.docker.com/desktop/setup/install/windows-install/">Install Docker Desktop on Windows</a>. To use Docker in a Linux workspace, see <a href="/windows/wsl/tutorials/wsl-containers">set up Docker Desktop for Windows with WSL 2</a> to avoid having to maintain both Linux and Windows build scripts.</li>
+</ul>
+<h2 id="install-nvm-windows-nodejs-and-npm">Install nvm-windows, node.js, and npm</h2>
+<p>Besides choosing whether to install on Windows or WSL, there are additional choices to make when installing Node.js. We recommend using a version manager as versions change very quickly. You will likely need to switch between multiple Node.js versions based on the needs of different projects you're working on. Node Version Manager, more commonly called nvm, is the most popular way to install multiple versions of Node.js, but is only available for Mac/Linux and not supported on Windows. Instead, we recommend installing nvm-windows and then using it to install Node.js and Node Package Manager (npm). There are <a href="#alternative-version-managers">alternative version managers</a> to consider as well covered in the next section.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>It is always recommended to remove any existing installations of Node.js or npm from your operating system before installing a version manager as the different types of installation can lead to strange and confusing conflicts. This includes deleting any existing Node.js installation directories (e.g., &quot;C:\Program Files\nodejs&quot;) that might remain. NVM's generated symlink will not overwrite an existing (even empty) installation directory. For help with removing previous installations, see <a href="https://stackoverflow.com/questions/20711240/how-to-completely-remove-node-js-from-windows">How to completely remove node.js from Windows</a>.)</p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>NVM is designed to be installed per-user, and invoked per-shell. It is not designed for shared developer boxes or build servers with multiple build agents. NVM works by using a symbolic link. Using nvm in shared scenarios creates a problem because that link points to a user's app data folder -- so if user x runs <code>nvm use lts</code>, the link will point node for the entire box to their app data folder. If user y runs node or npm, they will be directed to run files under x's user account and in the case of <code>npm -g</code>, they will be modifying x's files, which by default is not allowed. So nvm is only prescribed for one developer box. This goes for build servers too. If two build agents are on the same vm/box, they can compete and cause odd behavior in the builds.</p>
+</div>
+<ol>
+<li><p>Follow the install instructions on the <a href="https://github.com/coreybutler/nvm-windows#installation--upgrades">nvm-windows repository</a>. We recommend using the installer, but if you have a more advanced understanding of your needs, you may want to consider the manual installation. The installer will point you to the <a href="https://github.com/coreybutler/nvm-windows/releases">releases page</a> for the most recent version.</p>
+</li>
+<li><p>Download the <strong>nvm-setup.zip</strong> file for the most recent release.</p>
+</li>
+<li><p>Once downloaded, open the zip file, then open the <strong>nvm-setup.exe</strong> file.</p>
+</li>
+<li><p>The Setup-NVM-for-Windows installation wizard will walk you through the setup steps, including choosing the directory where both nvm-windows and Node.js will be installed.</p>
+<p><img src="../../images/install-nvm-for-windows-wizard.png" alt="NVM for Windows installation wizard"></p>
+</li>
+<li><p>Once the installation is complete. Open PowerShell (recommend opening with elevated Admin permissions) and try using nvm-windows to list which versions of Node are currently installed (should be none at this point): <code>nvm ls</code></p>
+<p><img src="../../images/windows-nvm-powershell-no-node.png" alt="NVM list showing no Node versions"></p>
+</li>
+<li><p>Install the current release of Node.js (for testing the newest feature improvements, but more likely to have issues than the LTS version): <code>nvm install latest</code></p>
+</li>
+<li><p>Install the latest stable LTS release of Node.js (recommended) by first looking up what the current LTS version number is with: <code>nvm list available</code>, then installing the LTS version number with: <code>nvm install &lt;version&gt;</code> (replacing <code>&lt;version&gt;</code> with the number, ie: <code>nvm install 12.14.0</code>).</p>
+<p><img src="../../images/windows-nvm-list.png" alt="NVM list of available versions"></p>
+</li>
+<li><p>List what versions of Node are installed: <code>nvm ls</code> ...now you should see the two versions that you just installed listed.</p>
+<p><img src="../../images/windows-nvm-node-installs.png" alt="NVM list showing installed Node versions"></p>
+</li>
+<li><p>After installing the Node.js version numbers you need, select the version that you would like to use by entering: <code>nvm use &lt;version&gt;</code> (replacing <code>&lt;version&gt;</code> with the number, ie: <code>nvm use 12.9.0</code>).</p>
+</li>
+<li><p>To change the version of Node.js you would like to use for a project, create a new project directory <code>mkdir NodeTest</code>, and enter the directory <code>cd NodeTest</code>, then enter <code>nvm use &lt;version&gt;</code> replacing <code>&lt;version&gt;</code> with the version number you'd like to use (ie v10.16.3`).</p>
+</li>
+<li><p>Verify which version of npm is installed with: <code>npm --version</code>, this version number will automatically change to whichever npm version is associated with your current version of Node.js.</p>
+</li>
+</ol>
+<h3 id="alternative-version-managers">Alternative version managers</h3>
+<p>While NVM for Windows (nvm-windows) is currently the most popular version manager for node, there are alternatives to consider:</p>
+<ul>
+<li><p><a href="https://github.com/jasongin/nvs">nvs</a> (Node Version Switcher) is a cross-platform <code>nvm</code> alternative with the ability to <a href="https://github.com/jasongin/nvs/blob/master/doc/VSCODE.md">integrate with VS Code</a>.</p>
+</li>
+<li><p><a href="https://github.com/volta-cli/volta#installing-volta">Volta</a> is a new version manager from the LinkedIn team that claims improved speed and cross-platform support.</p>
+</li>
+</ul>
+<p>To install Volta as your version manager, go to the <strong>Windows Installation</strong> section of their <a href="https://docs.volta.sh/guide/getting-started">Getting Started guide</a>, then download and run their Windows installer, following the setup instructions.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must ensure that <a href="/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers">Developer Mode</a> is enabled on your Windows machine before installing Volta.</p>
+</div>
+<p>To learn more about using Volta to install multiple versions of Node.js on Windows, see the <a href="https://docs.volta.sh/guide/understanding#managing-your-toolchain">Volta Docs</a>.</p>
+<h2 id="install-visual-studio-code">Install Visual Studio Code</h2>
+<p>We recommend you <a href="https://code.visualstudio.com">install Visual Studio Code</a> for developing with Node.js on Windows. For help, see <a href="https://code.visualstudio.com/docs/nodejs/nodejs-tutorial">Node.js tutorial in Visual Studio Code</a>.</p>
+<h3 id="alternative-code-editors">Alternative code editors</h3>
+<p>If you prefer to use a code editor or IDE other than Visual Studio Code, the following are also good options for your Node.js development environment:</p>
+<ul>
+<li><a href="https://www.jetbrains.com/webstorm/download/#section=windows">WebStorm</a></li>
+<li><a href="https://www.sublimetext.com/3">Sublime Text</a></li>
+<li><a href="https://atom.io/">Atom</a></li>
+<li><a href="http://brackets.io/">Brackets</a></li>
+<li><a href="https://notepad-plus-plus.org/">Notepad++</a></li>
+</ul>
+<h2 id="install-git">Install Git</h2>
+<p>If you plan to collaborate with others, or host your project on an open-source site (like GitHub), VS Code supports <a href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support">version control with Git</a>. The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI. You first need to install Git to power the Source Control panel.</p>
+<ol>
+<li><p>Download and install Git for Windows from <a href="https://git-scm.com/download/win">the git-scm website</a>.</p>
+</li>
+<li><p>An Install Wizard is included that will ask you a series of questions about settings for your Git installation. We recommend using all of the default settings, unless you have a specific reason for changing something.</p>
+</li>
+<li><p>If you've never worked with Git before, <a href="https://guides.github.com/">GitHub Guides</a> can help you get started.</p>
+</li>
+<li><p>We recommend adding a <a href="https://help.github.com/en/articles/ignoring-files">.gitignore file</a> to your Node projects. Here is <a href="https://github.com/github/gitignore/blob/master/Node.gitignore">GitHub's default gitignore template for Node.js</a>.</p>
+</li>
+</ol>
+<h2 id="nodejs-on-windows-server">Node.js on Windows Server</h2>
+<p>If you are in the (somewhat rare) situation of needing to host a Node.js app on a Windows server, the most common scenario seems to be <a href="https://medium.com/intrinsic/why-should-i-use-a-reverse-proxy-if-node-js-is-production-ready-5a079408b2ca">using a reverse proxy</a>. There are two ways to do this: 1) <a href="https://harveywilliams.net/blog/installing-iisnode">using iisnode</a> or <a href="https://dev.to/petereysermans/hosting-a-node-js-application-on-windows-with-iis-as-reverse-proxy-397b">directly</a>. We do not maintain these resources and recommend <a href="/azure/app-service/app-service-web-get-started-nodejs">using Linux servers to host your Node.js apps</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/nodejs-on-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Assign product level custom permissions to account users </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Assign product level custom permissions to account users ">
+    
+    <meta name="description" content="Learn how to assign custom permissions at product level when adding users to your Partner Center account.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="assign-product-level-custom-permissions-to-account-users">Assign product level custom permissions to account users</h1>
+
+<p>The permissions in this section can be granted to all products in the account, or can be customized to allow the permission only for one or more specific products.</p>
+<p>Product-level permissions are grouped into four categories: <strong>Analytics</strong>, <strong>Monetization</strong>, <strong>Publishing</strong>, and <strong>Xbox Live</strong>. You can expand each of these categories to view the individual permissions in each category. You also have the option to enable <strong>All permissions</strong> for one or more specific products.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default, an Owner or Manager has all custom permissions. Other standard roles such as Developer get assigned few custom permissions.</p>
+</div>
+<p>To grant a permission for every product in the account, make your selections for that permission (by toggling the box to indicate <strong>Read only</strong> or <strong>Read/write</strong>) in the row marked <strong>All products</strong>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Selections made for <strong>All products</strong> will apply to every product currently in the account, as well as any future products created in the account. To prevent permissions from applying to future products, select all of the products individually rather than choosing <strong>All products</strong>.</p>
+</div>
+<p>Below the <strong>All products</strong> row, you’ll see each product in the account listed on a separate row. To grant a permission for only a specific product, make your selections for that permission in the row for that product.</p>
+<p>Each add-on is listed in a separate row underneath its parent product, along with an <strong>All add-ons</strong> row. Selections made for <strong>All add-ons</strong> will apply to all current add-ons for that product, as well as any future add-ons created for that product.</p>
+<p>Note that some permissions cannot be set for add-ons. This is either because they don’t apply to add-ons (for example, the <strong>Customer feedback</strong> permission) or because the permission granted at the parent product level applies to all add-ons for that product (for example, <strong>Promotional codes</strong>). Note, however, that any permission that is available for add-ons must be set separately; add-ons do not inherit selections made for the parent product. For example, if you wish to allow a user to make pricing and availability selections for an add-on, you would need to enable the <strong>Pricing and availability</strong> permission for the add-on (or for <strong>All add-ons</strong>), whether or not you have granted the <strong>Pricing and availability</strong> permission for the parent product.</p>
+<h2 id="analytics">Analytics</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Permission name</strong></th>
+<th><strong>Read only</strong></th>
+<th><strong>Read/write</strong></th>
+<th><strong>Read only (Add‑on)</strong></th>
+<th><strong>Read‑write (Add‑on)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acquisitions</strong> (including Near Real Time data)</td>
+<td>Can view the <a href="..\acquisitions-report.md">Acquisitions</a> and <a href="..\acquisitions-report.md">Add-on acquisitions</a> reports for the product.</td>
+<td>N/A</td>
+<td>N/A (settings for parent product include the <strong>Add-on acquisitions</strong> report)</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Usage</strong></td>
+<td>Can view the <a href="..\usage-report.md">Usage report</a> for the product.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Health</strong> (including Near Real Time data)</td>
+<td>Can view the <a href="..\health-report.md">Health report</a> for the product.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Reviews</strong></td>
+<td>Can view the <a href="..\reviews-report.md">Reviews</a> report for the product.</td>
+<td>N/A (to respond to reviews, the <strong>Contact customer</strong> permission must be granted)</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Xbox analytics</strong></td>
+<td>Can view the <a href="..\xbox-analytics-report.md">Xbox analytics report</a> for the product.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="monetization">Monetization</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Permission name</strong></th>
+<th><strong>Read only</strong></th>
+<th><strong>Read/write</strong></th>
+<th><strong>Read only (Add‑on)</strong></th>
+<th><strong>Read‑write (Add‑on)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Promotional codes</strong></td>
+<td>Can view <a href="../generate-promotional-codes.html">promotional code</a> orders and usage info for the product and its add-ons, and can view usage info.</td>
+<td>Can view, manage, and create <a href="../generate-promotional-codes.html">promotional code</a> orders for the product and its add-ons, and can view usage info.</td>
+<td>N/A (settings for parent product apply to all add-ons)</td>
+<td>N/A (settings for parent product apply to all add-ons)</td>
+</tr>
+<tr>
+<td><strong>Store sale events</strong> *</td>
+<td>Can view sale event status for the product.</td>
+<td>Can add the product to sale events and configure discounts.</td>
+<td>Can view sale event status for the product.</td>
+<td>Can add the product to sale events and configure discounts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="publishing">Publishing</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Permission name</strong></th>
+<th><strong>Read only</strong></th>
+<th><strong>Read/write</strong></th>
+<th><strong>Read only (Add‑on)</strong></th>
+<th><strong>Read‑write (Add‑on)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Product Setup</strong></td>
+<td>Can view the product setup page of products.</td>
+<td>Can view and edit the product setup page of products.</td>
+<td>Can view the product setup page of add-ons.</td>
+<td>Can view and edit the product setup page add-ons.</td>
+</tr>
+<tr>
+<td><strong>Pricing and availability</strong></td>
+<td>Can view the <a href="../publish-your-app/msix/price-and-availability.html">Pricing and availability</a> page of products.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/price-and-availability.html">Pricing and availability</a> page of products.</td>
+<td>Can view the <a href="../publish-your-app/msix/price-and-availability.html">Pricing and availability</a> page of add-ons.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/price-and-availability.html">Pricing and availability</a> page of add-ons.</td>
+</tr>
+<tr>
+<td><strong>Properties</strong></td>
+<td>Can view the <a href="../publish-your-app/msix/enter-app-properties.html">Properties</a> page of products.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/enter-app-properties.html">Properties</a> page of products.</td>
+<td>Can view the <a href="../publish-your-app/msix/enter-app-properties.html">Properties</a> page of add-ons.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/enter-app-properties.html">Properties</a> page of add-ons.</td>
+</tr>
+<tr>
+<td><strong>Age ratings</strong></td>
+<td>Can view the <a href="../publish-your-app/msix/age-ratings.html">Age ratings</a> page of products.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/age-ratings.html">Age ratings</a> page of products.</td>
+<td>Can view the Age ratings page of add-ons.</td>
+<td>Can view and edit the Age ratings page of add-ons.</td>
+</tr>
+<tr>
+<td><strong>Packages</strong></td>
+<td>Can view the <a href="../publish-your-app/msix/upload-app-packages.html">Packages</a> page of products.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/upload-app-packages.html">Packages</a> page of products, including uploading packages.</td>
+<td>Can view the <a href="../publish-your-app/msix/upload-app-packages.html">Packages</a> page of addons (if applicable).</td>
+<td>Can view and edit <a href="../publish-your-app/msix/upload-app-packages.html">Packages</a> page of addons (if applicable).</td>
+</tr>
+<tr>
+<td><strong>Store listings</strong></td>
+<td>Can view the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.html">Store listing page(s)</a> of products.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.html">Store listing page(s)</a> of products, and can add new Store listings for different languages.</td>
+<td>Can view the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.html">Store listing page(s)</a> of add-ons.</td>
+<td>Can view and edit the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.html">Store listing page(s)</a> of add-ons, and can add Store listings for different languages.</td>
+</tr>
+<tr>
+<td><strong>Store submission</strong></td>
+<td>No access is granted if this permission is set to read-only.</td>
+<td>Can submit the product to the Store and view certification reports. Includes both new and updated submissions.</td>
+<td>No access is granted if this permission is set to read-only.</td>
+<td>Can submit the add-on to the Store and view certification reports. Includes both new and updated submissions.</td>
+</tr>
+<tr>
+<td><strong>New submission creation</strong></td>
+<td>No access is granted if this permission is set to read-only.</td>
+<td>Can create new <a href="../publish-your-app/msix/create-app-submission.html">submissions</a> for the product.</td>
+<td>No access is granted if this permission is set to read-only.</td>
+<td>Can create new <a href="../publish-your-app/msix/create-app-submission.html">submissions</a> for the add-on.</td>
+</tr>
+<tr>
+<td><strong>New add-ons</strong></td>
+<td>No access is granted if this permission is set to read-only.</td>
+<td>Can <a href="../publish-your-app/msix/overview.md">create new add-ons</a> for the product.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Name reservations</strong></td>
+<td>Can view the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product.</td>
+<td>Can view and edit the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product, including reserving additional names and deleting reserved names.</td>
+<td>Can view reserved names for the add-on.</td>
+<td>Can view and edit reserved names for the add-on.</td>
+</tr>
+<tr>
+<td><strong>Name reservations</strong></td>
+<td>Can view the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product.</td>
+<td>Can view and edit the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product, including reserving additional names and deleting reserved names.</td>
+<td>Can view reserved names for the add-on.</td>
+<td>Can view and edit reserved names for the add-on.</td>
+</tr>
+<tr>
+<td><strong>Royalty program publishing</strong></td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+<td>TBD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xbox-live-">Xbox Live *</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Permission name</strong></th>
+<th><strong>Read only</strong></th>
+<th><strong>Read/write</strong></th>
+<th><strong>Read only (Add‑on)</strong></th>
+<th><strong>Read‑write (Add‑on)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Relying Parties</strong> *</td>
+<td>Can view the Relying parties page of an account.</td>
+<td>Can view and edit the Relying parties page of an account.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Partner Services</strong> *</td>
+<td>Can view the Web services page of an account.</td>
+<td>Can view and edit the Web services page of an account.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Xbox Test Accounts</strong> *</td>
+<td>Can view the Xbox Test Accounts page of an account.</td>
+<td>Can view and edit the Xbox Test Accounts page of an account.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Xbox Test Accounts per Sandbox</strong> *</td>
+<td>Can view the Xbox Test Accounts page for only the specified sandboxes of an account.</td>
+<td>Can view and edit the Xbox Test.</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Accounts page for only the specified sandboxes of an account</strong></td>
+<td>N/A</td>
+<td>N/A</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Xbox Devices</strong> *</td>
+<td>Can view the Xbox one development consoles page of an account.</td>
+<td>Can view and edit the Xbox one development consoles page of an account.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Xbox Devices per Sandbox</strong> *</td>
+<td>Can view the Xbox one development consoles page for only the specified sandboxes of an account.</td>
+<td>Can view and edit the Xbox one development consoles page for only the specified sandboxes of an account.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>App Channels</strong> *</td>
+<td>N/A</td>
+<td>Can publish promotional video channels to the Xbox console for viewing through OneGuide.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Service Configuration</strong> *</td>
+<td>Can view the Xbox Live Service configuration page of a product.</td>
+<td>Can view and edit the Xbox Live Service configuration page of a product.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Tools Access</strong> *</td>
+<td>Can run Xbox Live tools on a product to only view data.</td>
+<td>Can run Xbox Live tools on a product to view and edit data.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Proprietary access</strong> *</td>
+<td>Can view support inquires.</td>
+<td>Can view and edit support inquires.</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>* Permissions marked with an asterisk (*) grant access to features which are not available to all accounts. If your account has not been enabled for these features, your selections for these permissions will not have any effect.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/partner-center/assign-product-level-custom-permissions-to-account-users.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

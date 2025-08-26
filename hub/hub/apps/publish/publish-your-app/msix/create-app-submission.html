@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create an app submission for your MSIX app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create an app submission for your MSIX app ">
+    
+    <meta name="description" content="Create an app submission for your MSIX app">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-app-submission">Create app submission</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the <a href="/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services">Microsoft Store submission API</a> to automate app submissions.</p>
+</div>
+<p>Once you've <a href="reserve-your-apps-name.html">created your app by reserving a name</a>, you can start working on getting it published. The first step is to create a submission. After you have reserved your app name, you will be redirected to your app's application overview page. From the Product release section, click on <strong>Start submission</strong>. A product submission in draft status will appear. This draft includes all the submission steps that need to be completed. Refer to the app submission checklist below to complete the steps:</p>
+<h2 id="app-submission-checklist">App submission checklist</h2>
+<p>Here are the details that you can provide when creating your app submission, with links to more info.</p>
+<p>Items that you are required to provide or specify are noted below. Some areas are optional, or have default values provided that you can change as desired. You don't have to work on these sections in the order listed here.</p>
+<h3 id="pricing-and-availability-page">Pricing and availability page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Markets</strong></td>
+<td><strong>Required</strong></td>
+<td>Default: All possible markets</td>
+</tr>
+<tr>
+<td><strong>Audience</strong></td>
+<td><strong>Required</strong></td>
+<td>Default: Public audience</td>
+</tr>
+<tr>
+<td><strong>Discoverability</strong></td>
+<td><strong>Required</strong></td>
+<td>Default: Make this product available and discoverable in the Microsoft Store</td>
+</tr>
+<tr>
+<td><strong>Schedule</strong></td>
+<td><strong>Required</strong></td>
+<td>Default: Release - as soon as possible; Stop acquisition - never</td>
+</tr>
+<tr>
+<td><strong>Base price</strong></td>
+<td><strong>Required</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Free trial</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Sale pricing</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Organizational licensing</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Pricing and availability</strong> fields, see the <a href="price-and-availability.html">Set pricing and availability</a> section.</p>
+</div>
+<h3 id="properties-page">Properties page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Category</strong></td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><strong>Subcategory</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>Secondary category</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>Privacy policy URL</strong></td>
+<td><strong>Required</strong> if your app collects/transmits personal information</td>
+</tr>
+<tr>
+<td><strong>Website</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>Support contact info</strong></td>
+<td><strong>Required</strong> if your product is available on Xbox.</td>
+</tr>
+<tr>
+<td><strong>Contact details</strong></td>
+<td><strong>Required</strong> for business/company accounts</td>
+</tr>
+<tr>
+<td><strong>Game settings</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>Display mode</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>Product declarations</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>System requirements</strong></td>
+<td>Not required</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Properties</strong> fields, see the <a href="enter-app-properties.html">Add app properties</a> section.</p>
+</div>
+<h3 id="age-ratings-page">Age ratings page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>All questions</strong></td>
+<td><strong>Required</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Age ratings</strong> fields, see the <a href="age-ratings.html">Generate age ratings</a> section.</p>
+</div>
+<h3 id="packages-page">Packages page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>App package</strong></td>
+<td><strong>Required</strong></td>
+<td>At least one package required.</td>
+</tr>
+<tr>
+<td><strong>Device family availability</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Packages</strong> fields, see the <a href="upload-app-packages.html">Upload package</a> section.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Packages section will show as &quot;Incomplete&quot; until all required fields are completed, even if individual packages show &quot;Validated&quot; status. Package validation confirms that uploaded files are valid, but section completion requires that all mandatory package-related configurations are set. For detailed guidance on package upload and validation, see <a href="upload-app-packages.html">Upload app packages</a>.</p>
+</div>
+<h3 id="store-listings">Store listings</h3>
+<p>You'll need all the required info for at least one of the languages that your app supports. We recommend providing <a href="add-and-edit-store-listing-info.html">Store listings</a> in all of the languages your app supports, and you can also provide Store listings in additional languages. To make it easier to manage multiple listings for the same product, you can import and export Store listings.</p>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td><strong>Required</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>What's new in this version</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>App features</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Screenshots</strong></td>
+<td><strong>Required</strong></td>
+<td>At least one screenshot required; four or more recommended</td>
+</tr>
+<tr>
+<td><strong>Store logos</strong></td>
+<td><strong>Required</strong> for some OS versions</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Trailers</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Windows 10 or Windows 11 and Xbox image (16:9 Super hero art)</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Xbox images</strong></td>
+<td><strong>Required</strong> for proper display if you publish to Xbox</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Supplemental fields</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Keywords</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Copyright and trademark info</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Additional license terms</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Developed by</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Store listings</strong> fields, see the <a href="add-and-edit-store-listing-info.html">Store listings</a> section.</p>
+</div>
+<h3 id="submission-options-page">Submission options page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Publishing hold options</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>Notes for certification</strong></td>
+<td>Not required</td>
+</tr>
+<tr>
+<td><strong>Restricted capabilities</strong></td>
+<td><strong>Required</strong> if your product declares any restricted capabilities</td>
+</tr>
+<tr>
+<td><strong>Submission notification audience</strong></td>
+<td>Not required</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Submission options</strong> fields, see the <a href="manage-submission-options.html">Submission options</a> section.</p>
+</div>
+<p>Once you have completed all the sections, you can submit your app for certification by clicking <strong>Submit for certification</strong> button on the Application overview page.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To refer to common questions, please refer to <a href="../../faq/submit-your-app.html">Frequently Asked Questions</a> section.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must have an active <a href="https://developer.microsoft.com/store/register">developer account</a> in <a href="https://partner.microsoft.com/dashboard">Partner Center</a> in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msix/create-app-submission.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

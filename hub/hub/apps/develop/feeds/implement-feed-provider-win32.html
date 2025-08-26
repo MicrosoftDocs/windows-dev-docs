@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Implement a feed provider in a Win32 app (C++/WinRT) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Implement a feed provider in a Win32 app (C++/WinRT) ">
+    
+    <meta name="description" content="This article walks you through the process of creating a feed provider, implemented in WinRT/C++, that registers a feed content URI and responds to requests from the Widgets Board.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="implement-a-feed-provider-in-a-win32-app-cwinrt">Implement a feed provider in a win32 app (C++/WinRT)</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</strong></p>
+</div>
+<p>This article walks you through creating a simple feed provider that registers a feed content URI and implements the <strong>IFeedProvider</strong> interface. The methods of this interface are invoked by the Widgets Board to request custom query string parameters, typically to support authentication scenarios. Feed providers can support a single feed or multiple feeds.</p>
+<p>To implement a feed provider using C++/WinRT, see <a href="implement-feed-provider-cs.html">Implement a feed provider in a C# Windows app (C++/WinRT)</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Your device must have developer mode enabled. For more information see <a href="/windows/apps/get-started/enable-your-device-for-development">Enable your device for development</a>.</li>
+<li>Visual Studio 2022 or later with the <strong>Universal Windows Platform development</strong> workload. Make sure to add the component for C++ (v143) from the optional dropdown.</li>
+</ul>
+<h2 id="create-a-new-cwinrt-win32-console-app">Create a new C++/WinRT win32 console app</h2>
+<p>In Visual Studio, create a new project. In the <strong>Create a new project</strong> dialog, set the language filter to &quot;C++&quot; and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project &quot;ExampleFeedProvider&quot;. For this walkthrough, make sure that <strong>Place solution and project in the same directory</strong> is unchecked. When prompted, set the target Windows version for the app to 10.022631.2787 or later.</p>
+<h2 id="add-references-to-the-windows-app-sdk-and-windows-implementation-library-nuget-packages">Add references to the Windows App SDK and Windows Implementation Library NuGet packages</h2>
+<p>This sample uses the latest stable Windows App SDK NuGet package. In <strong>Solution Explorer</strong>, right-click <strong>References</strong> and select <strong>Manage NuGet packages...</strong>. In the NuGet package manager, select the <strong>Browse</strong> tab and search for &quot;Microsoft.WindowsAppSDK&quot;. Select the latest stable version in the <strong>Version</strong> drop-down and then click <strong>Install</strong>.</p>
+<p>This sample also uses the Windows Implementation Library NuGet package. In <strong>Solution Explorer</strong>, right-click <strong>References</strong> and select <strong>Manage NuGet packages...</strong>. In the NuGet package manager, select the <strong>Browse</strong> tab and search for &quot;Microsoft.Windows.ImplementationLibrary&quot;. Select the latest version in the <strong>Version</strong> drop-down and then click <strong>Install</strong>.</p>
+<p>In the precompiled header file, pch.h, add the following include directives.</p>
+<pre><code class="lang-cpp">//pch.h 
+#pragma once
+#include &lt;wil/cppwinrt.h&gt;
+#include &lt;wil/resource.h&gt;
+...
+#include &lt;winrt/Microsoft.Windows.Widgets.Providers.h&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must include the wil/cppwinrt.h header first, before any WinRT headers.</p>
+</div>
+<p>In order to handle shutting down the feed provider app correctly, we need to a custom implementation of <strong>winrt::get_module_lock</strong>. We pre-declare the <strong>SignalLocalServerShutdown</strong> method which will be defined in our main.cpp file and will set an event that signals the app to exit. Add the following code to your pch.h file, just below the <code>#pragma once</code> directive, before the other includes.</p>
+<pre><code class="lang-cpp">//pch.h
+#include &lt;stdint.h&gt;
+#include &lt;combaseapi.h&gt;
+
+// In .exe local servers the class object must not contribute to the module ref count, and use
+// winrt::no_module_lock, the other objects must and this is the hook into the C++ WinRT ref counting system
+// that enables this.
+void SignalLocalServerShutdown();
+
+namespace winrt
+{
+    inline auto get_module_lock() noexcept
+    {
+        struct service_lock
+        {
+            uint32_t operator++() noexcept
+            {
+                return ::CoAddRefServerProcess();
+            }
+
+            uint32_t operator--() noexcept
+            {
+                const auto ref = ::CoReleaseServerProcess();
+
+                if (ref == 0)
+                {
+                    SignalLocalServerShutdown();
+                }
+                return ref;
+            }
+        };
+
+        return service_lock{};
+    }
+}
+
+
+#define WINRT_CUSTOM_MODULE_LOCK
+</code></pre>
+<h2 id="add-a-feedprovider-class-to-handle-feed-operations">Add a FeedProvider class to handle feed operations</h2>
+<p>In Visual Studio, right-click the <code>ExampleFeedProvider</code> project in <strong>Solution Explorer</strong> and select <strong>Add-&gt;Class</strong>. In the <strong>Add class</strong> dialog, name the class &quot;FeedProvider&quot; and click <strong>Add</strong>.</p>
+<h2 id="declare-a-class-that-implements-the-ifeedprovider-interface">Declare a class that implements the IFeedProvider interface</h2>
+<p>The <strong>IFeedProvider</strong> interface defines methods that the Widgets Board will invoke to initiate operations with the feed provider. Replace the empty class definition in the FeedProvider.h file with the following code. This code declares a structure that implements the <strong>IFeedProvider</strong> interface and declares prototypes for the interface methods.</p>
+<pre><code class="lang-cpp">// FeedProvider.h
+#pragma once
+struct FeedProvider : winrt::implements&lt;FeedProvider, winrt::Microsoft::Windows::Widgets::Feeds::Providers::IFeedProvider&gt;
+{
+    FeedProvider() {}
+
+    /* IFeedrovider required functions that need to be implemented */
+    void OnFeedProviderEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderEnabledArgs args);
+    void OnFeedProviderDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderDisabledArgs args);
+    void OnFeedEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedEnabledArgs args);
+    void OnFeedDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedDisabledArgs args);
+    void OnCustomQueryParametersRequested(winrt::Microsoft::Windows::Widgets::Feeds::Providers::CustomQueryParametersRequestedArgs args);
+    /* IFeedProvider required functions that need to be implemented */
+
+};
+</code></pre>
+<h2 id="implement-the-ifeedprovider-methods">Implement the IFeedProvider methods</h2>
+<p>In the next few sections, we'll implement the methods of the <strong>IFeedProvider</strong> interface. Before diving into the interface methods, add the following lines to <code>FeedProvider.cpp</code>, after the include directives, to pull the feed provider APIs into the <strong>winrt</strong> namespace and allow access to the map we declared in the previous step.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Objects passed into the callback methods of the <strong>IFeedProvider</strong> interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.</p>
+</div>
+<pre><code class="lang-cpp">// WidgetProvider.cpp
+namespace winrt
+{
+    using namespace Microsoft::Windows::Widgets::Feeds::Providers;
+}
+
+</code></pre>
+<h2 id="onfeedproviderenabled">OnFeedProviderEnabled</h2>
+<p>The <strong>OnFeedProviderEnabled</strong> method is invoked when a feed associated with the provider is created by the Widgets Board host. In the implementation of this method, generate a query string with the parameters that will be passed to the URL that provides the feed content, including any necessary authentication tokens. Create an instance of <strong>CustomQueryParametersUpdateOptions</strong>, passing in the <strong>FeedProviderDefinitionId</strong> from the event args that identifies the feed that has been enabled and the query string. Get the default <strong>FeedManager</strong> and call <strong>SetCustomQueryParameters</strong> to register the query string parameters with the Widgets Board.</p>
+<pre><code class="lang-csharp">// FeedProvider.cs
+void FeedProvider::OnFeedProviderEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderEnabledArgs args)
+{
+    std::wstringstream wstringstream;
+wstringstream &lt;&lt; args.FeedProviderDefinitionId().c_str() &lt;&lt; L&quot; feed provider was enabled.&quot; &lt;&lt; std::endl;
+    _putws(wstringstream.str().c_str());
+
+    auto updateOptions = winrt::CustomQueryParametersUpdateOptions(args.FeedProviderDefinitionId(), L&quot;param1&amp;param2&quot;);
+    winrt::FeedManager::GetDefault().SetCustomQueryParameters(updateOptions);
+}
+
+</code></pre>
+<h2 id="onfeedproviderdisabled">OnFeedProviderDisabled</h2>
+<p><strong>OnFeedProviderDisabled</strong> is called when the Widgets Board when all of the feeds for this provider have been disabled. Feed providers are not required to perform any actions in response to these this method call. The method invocation can be used for telemetry purposes or to update the query string parameters or revoke authentication tokens, if needed. If the app only supports a single feed provider or if all feed providers supported by the app have been disabled, then the app can exit in response to this callback.</p>
+<pre><code class="lang-csharp">// FeedProvider.cs
+
+void FeedProvider::OnFeedProviderDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderDisabledArgs args)
+{
+    std::wstringstream wstringstream;
+    wstringstream &lt;&lt; args.FeedProviderDefinitionId().c_str() &lt;&lt; L&quot; feed provider was disabled.&quot; &lt;&lt; std::endl;
+    _putws(wstringstream.str().c_str());
+}
+</code></pre>
+<h2 id="onfeedenabled-onfeeddisabled">OnFeedEnabled, OnFeedDisabled</h2>
+<p><strong>OnFeedEnabled</strong> and <strong>OnFeedDisabled</strong> are invoked by the Widgets Board when a feed is enabled or disabled. Feed providers are not required to perform any actions in response to these method calls. The method invocation can be used for telemetry purposes or to update the query string parameters or revoke authentication tokens, if needed.</p>
+<pre><code class="lang-csharp">// FeedProvider.cs
+
+void FeedProvider::OnFeedEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedEnabledArgs args)
+{
+    std::wstringstream wstringstream;
+    wstringstream &lt;&lt; args.FeedDefinitionId().c_str() &lt;&lt; L&quot; feed was enabled.&quot; &lt;&lt; std::endl;
+    _putws(wstringstream.str().c_str());
+}
+</code></pre>
+<pre><code class="lang-csharp">// FeedProvider.cs
+
+void FeedProvider::OnFeedDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedDisabledArgs args)
+{
+    std::wstringstream wstringstream;
+    wstringstream &lt;&lt; args.FeedDefinitionId().c_str() &lt;&lt; L&quot; feed was disabled.&quot; &lt;&lt; std::endl;
+    _putws(wstringstream.str().c_str());
+}
+</code></pre>
+<h2 id="oncustomqueryparametersrequested">OnCustomQueryParametersRequested</h2>
+<p><strong>OnCustomQueryParametersRequested</strong> is raised when the Widgets Board determines that the custom query parameters associated with the feed provider need to be refreshed. For example, this method may be raised if the operation to fetch feed content from the remote web service fails. The <strong>FeedProviderDefinitionId</strong> property of the <strong>CustomQueryParametersRequestedArgs</strong> passed into this method specifies the feed for which query string params are being requested. The provider should regenerate the query string and pass it back to the Widgets Board by calling <strong>SetCustomQueryParameters</strong>.</p>
+<pre><code class="lang-csharp">// FeedProvider.cs
+
+void FeedProvider::OnCustomQueryParametersRequested(winrt::Microsoft::Windows::Widgets::Feeds::Providers::CustomQueryParametersRequestedArgs args)
+{
+    std::wstringstream wstringstream;
+    wstringstream &lt;&lt; L&quot;CustomQueryParameters were requested for &quot; &lt;&lt; args.FeedProviderDefinitionId().c_str() &lt;&lt; std::endl;
+    _putws(wstringstream.str().c_str());
+
+    auto updateOptions = winrt::CustomQueryParametersUpdateOptions(args.FeedProviderDefinitionId(), L&quot;param1&amp;param2&quot;);
+    winrt::FeedManager::GetDefault().SetCustomQueryParameters(updateOptions);
+}
+</code></pre>
+<h2 id="register-a-class-factory-that-will-instantiate-feedprovider-on-request">Register a class factory that will instantiate FeedProvider on request</h2>
+<p>Add the header that defines the <strong>FeedProvider</strong> class to the includes at the top of your app's <code>main.cpp</code> file. We will also be including <strong>mutex</strong> here.</p>
+<pre><code class="lang-cpp">// main.cpp
+...
+#include &quot;FeedProvider.h&quot;
+#include &lt;mutex&gt;
+</code></pre>
+<p>Declare the event that will trigger our app to exit and the <strong>SignalLocalServerShutdown</strong> function that will set the event. Paste the following code in main.cpp.</p>
+<pre><code class="lang-cpp">// main.cpp
+wil::unique_event g_shudownEvent(wil::EventOptions::None);
+
+void SignalLocalServerShutdown()
+{
+    g_shudownEvent.SetEvent();
+}
+</code></pre>
+<p>Next, you will need to create a <a href="/windows/win32/com/com-class-objects-and-clsids">CLSID</a> that will be used to identify your feed provider for COM activation. Generate a GUID in Visual Studio by going to <strong>Tools-&gt;Create GUID</strong>. Select the option &quot;static const GUID =&quot; and click <strong>Copy</strong> and then paste that into <code>main.cpp</code>. Update the GUID definition with the following C++/WinRT syntax, setting the GUID variable name feed_provider_clsid. Leave the commented version of the GUID because you will need this format later, when packaging your app.</p>
+<pre><code class="lang-cpp">// main.cpp
+...
+// {80F4CB41-5758-4493-9180-4FB8D480E3F5}
+static constexpr GUID feed_provider_clsid
+{
+    0x80f4cb41, 0x5758, 0x4493, { 0x91, 0x80, 0x4f, 0xb8, 0xd4, 0x80, 0xe3, 0xf5 }
+};
+</code></pre>
+<p>Add the following class factory definition to <code>main.cpp</code>. This is mostly boilerplate code that is not specific to feed provider implementations. Note that <strong>CoWaitForMultipleObjects</strong> waits for our shutdown event to be triggered before the app exits.</p>
+<pre><code class="lang-cpp">// main.cpp
+template &lt;typename T&gt;
+struct SingletonClassFactory : winrt::implements&lt;SingletonClassFactory&lt;T&gt;, IClassFactory&gt;
+{
+    STDMETHODIMP CreateInstance(
+        ::IUnknown* outer,
+        GUID const&amp; iid,
+        void** result) noexcept final
+    {
+        *result = nullptr;
+
+        std::unique_lock lock(mutex);
+
+        if (outer)
+        {
+            return CLASS_E_NOAGGREGATION;
+        }
+
+        if (!instance)
+        {
+            instance = winrt::make&lt;FeedProvider&gt;();
+        }
+
+        return instance.as(iid, result);
+    }
+
+    STDMETHODIMP LockServer(BOOL) noexcept final
+    {
+        return S_OK;
+    }
+
+private:
+    T instance{ nullptr };
+    std::mutex mutex;
+};
+
+int main()
+{
+    winrt::init_apartment();
+    wil::unique_com_class_object_cookie feedProviderFactory;
+    auto factory = winrt::make&lt;SingletonClassFactory&lt;winrt::Microsoft::Windows::Widgets::Feeds::Providers::IFeedProvider&gt;&gt;();
+
+    winrt::check_hresult(CoRegisterClassObject(
+        feed_provider_clsid,
+        factory.get(),
+        CLSCTX_LOCAL_SERVER,
+        REGCLS_MULTIPLEUSE,
+        feedProviderFactory.put()));
+
+    DWORD index{};
+    HANDLE events[] = { g_shudownEvent.get() };
+    winrt::check_hresult(CoWaitForMultipleObjects(CWMO_DISPATCH_CALLS | CWMO_DISPATCH_WINDOW_MESSAGES,
+        INFINITE,
+        static_cast&lt;ULONG&gt;(std::size(events)), events, &amp;index));
+
+    return 0;
+}
+</code></pre>
+<h2 id="package-your-feed-provider-app">Package your feed provider app</h2>
+<p>In the current release, only packaged apps can be registered as feed providers. The following steps will take you through the process of packaging your app and updating the app manifest to register your app with the OS as a feed provider.</p>
+<h3 id="create-an-msix-packaging-project">Create an MSIX packaging project</h3>
+<p>In <strong>Solution Explorer</strong>, right-click your solution and select <strong>Add-&gt;New Project...</strong>. In the <strong>Add a new project</strong> dialog, select the &quot;Windows Application Packaging Project&quot; template and click <strong>Next</strong>. Set the project name to &quot;ExampleFeedProviderPackage&quot; and click <strong>Create</strong>. When prompted, set the target version to version 1809 or later and click <strong>OK</strong>.
+Next, right-click the ExampleFeedProviderPackage project and select <strong>Add-&gt;Project reference</strong>. Select the <strong>ExampleFeedProvider</strong> project and click OK.</p>
+<h3 id="add-windows-app-sdk-package-reference-to-the-packaging-project">Add Windows App SDK package reference to the packaging project</h3>
+<p>You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In <strong>Solution Explorer</strong>, double-click the ExampleFeedProviderPackage project to open the ExampleFeedProviderPackage.wapproj file. Add the following xml inside the <strong>Project</strong> element.</p>
+<pre><code class="lang-xml">&lt;!--ExampleFeedProviderPackage.wapproj--&gt;
+&lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Microsoft.WindowsAppSDK&quot; Version=&quot;1.5.231116003-experimentalpr&quot;&gt;
+        &lt;IncludeAssets&gt;build&lt;/IncludeAssets&gt;
+    &lt;/PackageReference&gt;  
+&lt;/ItemGroup&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Make sure the <strong>Version</strong> specified in the <strong>PackageReference</strong> element matches the latest stable version you referenced in the previous step.</p>
+</div>
+<p>If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleFeedProviderPackage project.</p>
+<pre><code class="lang-xml">&lt;!--Package.appxmanifest--&gt;
+...
+&lt;Dependencies&gt;
+...
+    &lt;PackageDependency Name=&quot;Microsoft.WindowsAppRuntime.1.5.233430000-experimental1&quot; MinVersion=&quot;2000.638.7.0&quot; Publisher=&quot;CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US&quot; /&gt;
+...
+&lt;/Dependencies&gt;
+...
+</code></pre>
+<h3 id="update-the-package-manifest">Update the package manifest</h3>
+<p>In <strong>Solution Explorer</strong> right-click the <code>Package.appxmanifest</code> file and select <strong>View Code</strong> to open the manifest xml file. Next you need to add some namespace declarations for the app package extensions we will be using. Add the following namespace definitions to the top-level <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-package">Package</a> element.</p>
+<pre><code class="lang-xml">&lt;!-- Package.appmanifest --&gt;
+&lt;Package
+  ...
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;
+</code></pre>
+<p>Inside the <strong>Application</strong> element, create a new empty element named <strong>Extensions</strong>. Make sure this comes after the closing tag for <strong>uap:VisualElements</strong>.</p>
+<pre><code class="lang-xml">&lt;!-- Package.appxmanifest --&gt;
+&lt;Application&gt;
+...
+    &lt;Extensions&gt;
+
+    &lt;/Extensions&gt;
+&lt;/Application&gt;
+</code></pre>
+<p>The first extension we need to add is the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver">ComServer</a> extension. This registers the entry point of the executable with the OS. This extension is the packaged app equivalent of registering a COM server by setting a registry key, and is not specific to feed providers.Add the following <strong>com:Extension</strong> element as a child of the <strong>Extensions</strong> element. Change the GUID in the <strong>Id</strong> attribute of the <strong>com:Class</strong> element to the GUID you generated in a previous step.</p>
+<pre><code class="lang-xml">&lt;!-- Package.appxmanifest --&gt;
+&lt;Extensions&gt;
+    &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+        &lt;com:ComServer&gt;
+            &lt;com:ExeServer Executable=&quot;ExampleFeedProvider\ExampleFeedProvider.exe&quot; Arguments=&quot;-RegisterProcessAsComServer&quot; DisplayName=&quot;C++ Feed Provider App&quot;&gt;
+                &lt;com:Class Id=&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&quot; DisplayName=&quot;FeedProvider&quot; /&gt;
+            &lt;/com:ExeServer&gt;
+        &lt;/com:ComServer&gt;
+    &lt;/com:Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+<p>Next, add the extension that registers the app as a feed provider. Paste the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-extension-manual">uap3:Extension</a> element in the following code snippet, as a child of the <strong>Extensions</strong> element. Be sure to replace the <strong>ClassId</strong> attribute of the <strong>COM</strong> element with the GUID you used in previous steps.</p>
+<pre><code class="lang-xml">&lt;!-- Package.appxmanifest --&gt;
+&lt;Extensions&gt;
+    ...
+    &lt;uap3:Extension Category=&quot;windows.appExtension&quot;&gt;
+        &lt;uap3:AppExtension Name=&quot;com.microsoft.windows.widgets.feeds&quot; DisplayName=&quot;ContosoFeed&quot; Id=&quot;com.examplewidgets.examplefeed&quot; PublicFolder=&quot;Public&quot;&gt;
+            &lt;uap3:Properties&gt;
+                &lt;FeedProvider Icon=&quot;ms-appx:Assets\StoreLogo.png&quot; Description=&quot;FeedDescription&quot;&gt;
+                    &lt;Activation&gt;
+                        &lt;!-- Apps exports COM interface which implements IFeedProvider --&gt;
+                        &lt;CreateInstance ClassId=&quot;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&quot; /&gt;
+                    &lt;/Activation&gt;
+                    &lt;Definitions&gt;
+                        &lt;Definition Id=&quot;Contoso_Feed&quot;
+                            DisplayName=&quot;Contoso_Feed Feed&quot;
+                            Description=&quot;Feed representing Contoso&quot;
+                            ContentUri=&quot;https://www.contoso.com/&quot;
+                            Icon=&quot;ms-appx:Images\StoreLogo.png&quot;&gt;
+                        &lt;/Definition&gt;
+                        &lt;Definition Id=&quot;Fabrikam_Feed&quot;
+                            DisplayName=&quot;Fabrikam Feed&quot;
+                            Description=&quot;Feed representing Example&quot;
+                            ContentUri=&quot;https://www.fabrikam.com/&quot;
+                            Icon=&quot;ms-appx:Images\StoreLogo.png&quot;&gt;
+                        &lt;/Definition&gt;
+                    &lt;/Definitions&gt;
+                &lt;/FeedProvider&gt;
+            &lt;/uap3:Properties&gt;
+        &lt;/uap3:AppExtension&gt;
+    &lt;/uap3:Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+<p>For detailed descriptions and format information for all of these elements, see <a href="feed-provider-manifest.html">Feed provider package manifest XML format</a>.</p>
+<h2 id="add-icons-to-your-packaging-project">Add icons to your packaging project</h2>
+<p>In <strong>Solution Explorer</strong>, right-click your <strong>ExampleFeedProviderPackage</strong> and select <strong>Add-&gt;New Folder</strong>. Name this folder ProviderAssets as this is what was used in the <code>Package.appxmanifest</code> from the previous step. This is where we will store our <strong>Icon</strong> for our feeds. Once you add your desired Icons , make sure the image names match what comes after <strong>Path=ProviderAssets\</strong> in your <code>Package.appxmanifest</code> or the feeds will not show up in the Widget Board.</p>
+<h2 id="testing-your-feed-provider">Testing your feed provider</h2>
+<p>Make sure you have selected the architecture that matches your development machine from the <strong>Solution Platforms</strong> drop-down, for example &quot;x64&quot;. In <strong>Solution Explorer</strong>, right-click your solution and select <strong>Build Solution</strong>.  Once this is done, right-click your <strong>ExampleWidgetProviderPackage</strong> and select <strong>Deploy</strong>. The console app should launch on deploy and you will see the feeds get enabled in the console output. Open the Widgets Board and you should see the new feeds in the tabs along the top of the feeds section.</p>
+<h2 id="debugging-your-feed-provider">Debugging your feed provider</h2>
+<p>After you have pinned your feeds, the Widget Platform will start your feed provider application in order to receive and send relevant information about the feed. To debug the running feed you can either attach a debugger to the running feed provider application or you can set up Visual Studio to automatically start debugging the feed provider process once it's started.</p>
+<p>In order to attach to the running process:</p>
+<ol>
+<li>In Visual Studio click <strong>Debug -&gt; Attach to process</strong>.</li>
+<li>Filter the processes and find your desired feed provider application.</li>
+<li>Attach the debugger.</li>
+</ol>
+<p>In order to automatically attach the debugger to the process when it's initially started:</p>
+<ol>
+<li>In Visual Studio click <strong>Debug -&gt; Other Debug Targets -&gt; Debug Installed App Package</strong>.</li>
+<li>Filter the packages and find your desired feed provider package.</li>
+<li>Select it and check the box that says Do not launch, but debug my code when it starts.</li>
+<li>Click <strong>Attach</strong>.</li>
+</ol>
+<h2 id="convert-your-console-app-to-a-windows-app">Convert your console app to a Windows app</h2>
+<p>To convert the console app created in this walkthrough to a Windows app:</p>
+<ol>
+<li>Right-click on the ExampleWidgetProvider project in <strong>Solution Explorer</strong> and select <strong>Properties</strong>. Navigate to <strong>Linker -&gt; System</strong> and change <strong>SubSystem</strong> from &quot;Console&quot; to &quot;Windows&quot;. This can also be done by adding &lt;SubSystem&gt;Windows&lt;/SubSystem&gt; to the &lt;Link&gt;..&lt;/Link&gt; section of the .vcxproj.</li>
+<li>In main.cpp, change <code>int main()</code> to <code>int WINAPI wWinMain(_In_ HINSTANCE /*hInstance*/, _In_opt_ HINSTANCE /*hPrevInstance*/, _In_ PWSTR pCmdLine, _In_ int /*nCmdShow*/)</code>.</li>
+</ol>
+<p><span class="mx-imgBorder">
+<img src="images/convert-to-windows-app-cs.png" alt="A screenshot showing the C++ feed provider project properties with the output type set to Windows Application">
+</span>
+</p>
+<h2 id="publishing-your-feed-provider-app">Publishing your feed provider app</h2>
+<p>After you have developed and tested your feed provider you can publish your app on the Microsoft Store in order for users to install your feeds on their devices. For step by step guidance for publishing an app, see <a href="/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix">Publish your app in the Microsoft Store</a>.</p>
+<h3 id="the-feeds-store-collection">The Feeds Store Collection</h3>
+<p>After your app has been published on the Microsoft Store, you can request for your app to be included in the feeds Store Collection that helps users discover apps that feature Windows feeds. To submit your request, see <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR33MBPKauFRGiaSf7B00-UBUMk9FU1M0TEVOTjA4R0xGQTQwNU1aTFVQNi4u">Submit your Feed/Board for addition to the Store Collection</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/feeds/implement-feed-provider-win32.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

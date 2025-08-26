@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manual camera controls for photo and video capture </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manual camera controls for photo and video capture ">
+    
+    <meta name="description" content="Learn how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manual-camera-controls-for-photo-and-video-capture">Manual camera controls for photo and video capture</h1>
+
+<p>This article shows you how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.</p>
+<p>The controls discussed in this article are all added to your app using the same pattern. First, check to see if the control is supported on the current device on which your app is running. If the control is supported, set the desired mode for the control. Typically, if a particular control is unsupported on the current device, you should disable or hide the UI element that allows the user to enable the feature.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article builds on concepts and code discussed in <a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a>, which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of <strong>MediaCapture</strong> that has been properly initialized.</p>
+</div>
+<h2 id="exposure">Exposure</h2>
+<p>The <a href="/uwp/api/Windows.Media.Devices.ExposureControl"><strong>ExposureControl</strong></a> allows you to set the shutter speed used during photo or video capture.</p>
+<p>This example uses a <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider"><strong>Slider</strong></a> control to adjust the current exposure value and a checkbox to toggle automatic exposure adjustment.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>ExposureControl</strong> by checking the <a href="/uwp/api/windows.media.devices.exposurecontrol.supported"><strong>Supported</strong></a> property. If the control is supported, you can show and enable the UI for this feature. Set the checked state of the checkbox to indicate if automatic exposure adjustment is currently active to the value of the <a href="/uwp/api/windows.media.devices.exposurecontrol.auto"><strong>Auto</strong></a> property.</p>
+<p>The exposure value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the <a href="/uwp/api/windows.media.devices.exposurecontrol.min"><strong>Min</strong></a>, <a href="/uwp/api/windows.media.devices.exposurecontrol.max"><strong>Max</strong></a>, and <a href="/uwp/api/windows.media.devices.exposurecontrol.step"><strong>Step</strong></a> properties, which are used to set the corresponding properties of the slider control.</p>
+<p>Set the slider control's value to the current value of the <strong>ExposureControl</strong> after unregistering the <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged"><strong>ValueChanged</strong></a> event handler so that the event is not triggered when the value is set.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>ValueChanged</strong> event handler, get the current value of the control and the set the exposure value by calling <a href="/uwp/api/windows.media.devices.exposurecontrol.setvalueasync"><strong>SetValueAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>CheckedChanged</strong> event handler of the auto exposure checkbox, turn automatic exposure adjustment on or off by calling <a href="/uwp/api/windows.media.devices.exposurecontrol.setautoasync"><strong>SetAutoAsync</strong></a> and passing in a boolean value.</p>
+<div class="lang-csharp">
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Automatic exposure mode is only supported while the preview stream is running. Check to make sure that the preview stream is running before turning on automatic exposure.</p>
+</div>
+<h2 id="exposure-compensation">Exposure compensation</h2>
+<p>The <a href="/uwp/api/Windows.Media.Devices.ExposureCompensationControl"><strong>ExposureCompensationControl</strong></a> allows you to set the exposure compensation used during photo or video capture.</p>
+<p>This example uses a <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider"><strong>Slider</strong></a> control to adjust the current exposure compensation value.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>ExposureCompensationControl</strong> by checking the <a href="/windows/uwp/audio-video-camera/supported-codecs">Supported</a> property. If the control is supported, you can show and enable the UI for this feature.</p>
+<p>The exposure compensation value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the <a href="/uwp/api/windows.media.devices.exposurecompensationcontrol.min"><strong>Min</strong></a>, <a href="/uwp/api/windows.media.devices.exposurecompensationcontrol.max"><strong>Max</strong></a>, and <a href="/uwp/api/windows.media.devices.exposurecompensationcontrol.step"><strong>Step</strong></a> properties, which are used to set the corresponding properties of the slider control.</p>
+<p>Set slider control's value to the current value of the <strong>ExposureCompensationControl</strong> after unregistering the <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged"><strong>ValueChanged</strong></a> event handler so that the event is not triggered when the value is set.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>ValueChanged</strong> event handler, get the current value of the control and the set the exposure value by calling <a href="/uwp/api/windows.media.devices.exposurecompensationcontrol.setvalueasync"><strong>SetValueAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="flash">Flash</h2>
+<p>The <a href="/uwp/api/Windows.Media.Devices.FlashControl"><strong>FlashControl</strong></a> allows you to enable or disable the flash or to enable automatic flash, where the system dynamically determines whether to use the flash. This control also allows you to enable automatic red eye reduction on devices that support it. These settings all apply to capturing photos. The <a href="/uwp/api/Windows.Media.Devices.TorchControl"><strong>TorchControl</strong></a> is a separate control for turning the torch on or off for video capture.</p>
+<p>This example uses a set of radio buttons to allow the user to switch between on, off, and auto flash settings. A checkbox is also provided to allow toggling of red eye reduction and the video torch.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>FlashControl</strong> by checking the <a href="/uwp/api/windows.media.devices.focuscontrol.supported"><strong>Supported</strong></a> property. If the control is supported, you can show and enable the UI for this feature. If the <strong>FlashControl</strong> is supported, automatic red eye reduction may or may not be supported, so check the <a href="/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported"><strong>RedEyeReductionSupported</strong></a> property before enabling the UI. Because the <strong>TorchControl</strong> is separate from the flash control, you must also check its <a href="/uwp/api/windows.media.devices.torchcontrol.supported"><strong>Supported</strong></a> property before using it.</p>
+<p>In the <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked"><strong>Checked</strong></a> event handler for each of the flash radio buttons, enable or disable the appropriate corresponding flash setting. Note that to set the flash to always be used, you must set the <a href="/uwp/api/windows.media.devices.flashcontrol.enabled"><strong>Enabled</strong></a> property to true and the <a href="/uwp/api/windows.media.devices.flashcontrol.auto"><strong>Auto</strong></a> property to false.</p>
+<div class="lang-csharp">
+</div>
+<div class="lang-csharp">
+</div>
+<p>In the handler for the red eye reduction checkbox, set the <a href="/uwp/api/windows.media.devices.flashcontrol.redeyereduction"><strong>RedEyeReduction</strong></a> property to the appropriate value.</p>
+<div class="lang-csharp">
+</div>
+<p>Finally, in the handler for the video torch checkbox, set the <a href="/uwp/api/windows.media.devices.torchcontrol.enabled"><strong>Enabled</strong></a> property to the appropriate value.</p>
+<div class="lang-csharp">
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On some devices the torch will not emit light, even if <a href="/uwp/api/windows.media.devices.torchcontrol.enabled"><strong>TorchControl.Enabled</strong></a> is set to true, unless the device has a preview stream running and is actively capturing video. The recommended order of operations is to turn on the video preview, turn on the torch by setting <strong>Enabled</strong> to true, and then initiate video capture. On some devices the torch will light up after the preview is started. On other devices, the torch may not light up until video capture is started.</p>
+</div>
+<h2 id="focus">Focus</h2>
+<p>Three different commonly used methods for adjusting the focus of the camera are supported by the <a href="/uwp/api/Windows.Media.Devices.FocusControl"><strong>FocusControl</strong></a> object, continuous autofocus, tap to focus, and manual focus. A camera app may support all three of these methods, but for readability, this article discusses each technique separately. This section also discusses how to enable the focus assist light.</p>
+<h3 id="continuous-autofocus">Continuous autofocus</h3>
+<p>Enabling continuous autofocus instructs the camera to adjust the focus dynamically to try to keep the subject of the photo or video in focus. This example uses a radio button to toggle continuous autofocus on and off.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>FocusControl</strong> by checking the <a href="/uwp/api/windows.media.devices.flashcontrol.supported"><strong>Supported</strong></a> property. Next, determine if continuous autofocus is supported by checking the <a href="/uwp/api/windows.media.devices.focuscontrol.supportedfocusmodes"><strong>SupportedFocusModes</strong></a> list to see if it contains the value <a href="/uwp/api/Windows.Media.Devices.FocusMode"><strong>FocusMode.Continuous</strong></a>, and if so, show the continuous autofocus radio button.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked"><strong>Checked</strong></a> event handler for the continuous autofocus radio button, use the <a href="/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol"><strong>VideoDeviceController.FocusControl</strong></a> property to get an instance of the control. Call <a href="/uwp/api/windows.media.devices.focuscontrol.unlockasync"><strong>UnlockAsync</strong></a> to unlock the control in case your app has previously called <a href="/uwp/api/windows.media.devices.focuscontrol.lockasync"><strong>LockAsync</strong></a> to enable one of the other focus modes.</p>
+<p>Create a new <a href="/uwp/api/Windows.Media.Devices.FocusSettings"><strong>FocusSettings</strong></a> object and set the <a href="/uwp/api/windows.media.devices.focussettings.mode"><strong>Mode</strong></a> property to <strong>Continuous</strong>. Set the <a href="/uwp/api/windows.media.devices.focussettings.autofocusrange"><strong>AutoFocusRange</strong></a> property to a value appropriate for your app scenario or selected by the user from your UI. Pass your <strong>FocusSettings</strong> object into the <a href="/uwp/api/windows.media.devices.focuscontrol.configure"><strong>Configure</strong></a> method, and then call <a href="/uwp/api/windows.media.devices.focuscontrol.focusasync"><strong>FocusAsync</strong></a> to initiate continuous autofocus.</p>
+<div class="lang-csharp">
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Autofocus mode is only supported while the preview stream is running. Check to make sure that the preview stream is running before turning on continuous autofocus.</p>
+</div>
+<h3 id="tap-to-focus">Tap to focus</h3>
+<p>The tap-to-focus technique uses the <a href="/uwp/api/Windows.Media.Devices.FocusControl"><strong>FocusControl</strong></a> and the <a href="/uwp/api/Windows.Media.Devices.RegionsOfInterestControl"><strong>RegionsOfInterestControl</strong></a> to specify a subregion of the capture frame where the capture device should focus. The region of focus is determined by the user tapping on the screen displaying the preview stream.</p>
+<p>This example uses a radio button to enable and disable tap-to-focus mode.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>FocusControl</strong> by checking the <a href="/uwp/api/windows.media.devices.flashcontrol.supported"><strong>Supported</strong></a> property. The <strong>RegionsOfInterestControl</strong> must be supported, and must support at least one region, in order to use this technique. Check the <a href="/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported"><strong>AutoFocusSupported</strong></a> and <a href="/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions"><strong>MaxRegions</strong></a> properties to determine whether to show or hide the radio button for tap-to-focus.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked"><strong>Checked</strong></a> event handler for the tap-to-focus radio button, use the <a href="/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol"><strong>VideoDeviceController.FocusControl</strong></a> property to get an instance of the control. Call <a href="/uwp/api/windows.media.devices.focuscontrol.lockasync"><strong>LockAsync</strong></a> to lock the control in case your app has previously called <a href="/uwp/api/windows.media.devices.focuscontrol.unlockasync"><strong>UnlockAsync</strong></a> to enable continuous autofocus, and then wait for the user to tap the screen to change the focus.</p>
+<div class="lang-csharp">
+</div>
+<p>This example focuses on a region when the user taps the screen, and then removes the focus from that region when the user taps again, like a toggle. Use a boolean variable to track the current toggled state.</p>
+<div class="lang-csharp">
+</div>
+<p>The next step is to listen for the event when the user taps the screen by handling the <a href="/uwp/api/windows.ui.xaml.uielement.tapped"><strong>Tapped</strong></a> event of the <a href="/uwp/api/Windows.UI.Xaml.Controls.CaptureElement"><strong>CaptureElement</strong></a> that is currently displaying the capture preview stream. If the camera isn't currently previewing, or if tap-to-focus mode is disabled, return from the handler without doing anything.</p>
+<p>If the tracking variable <em>_isFocused</em> is toggled to false, and if the camera isn't currently in the process of focus (determined by the <a href="/uwp/api/windows.media.devices.focuscontrol.focusstate"><strong>FocusState</strong></a> property of the <strong>FocusControl</strong>), begin the tap-to-focus process. Get the position of the user's tap from the event args passed into the handler. This example also uses this opportunity to pick the size of the region that will be focused upon. In this case, the size is 1/4 of the smallest dimension of the capture element. Pass the tap position and the region size into the <strong>TapToFocus</strong> helper method that is defined in the next section.</p>
+<p>If the <em>_isFocused</em> toggle is set to true, the user tap should clear the focus from the previous region. This is done in the <strong>TapUnfocus</strong> helper method shown below.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>TapToFocus</strong> helper method, first set the <em>_isFocused</em> toggle to true so that the next screen tap will release the focus from the tapped region.</p>
+<p>The next task in this helper method is to determine the rectangle within the preview stream that will be assigned to the focus control. This requires two steps. The first step is to determine the rectangle that the preview stream takes up within the <a href="/uwp/api/Windows.UI.Xaml.Controls.CaptureElement"><strong>CaptureElement</strong></a> control. This depends on the dimensions of the preview stream and the orientation of the device. The helper method <strong>GetPreviewStreamRectInControl</strong>, shown at the end of this section, performs this task and returns the rectangle containing the preview stream.</p>
+<p>The next task in <strong>TapToFocus</strong> is to convert the tap location and desired focus rectangle size, which were determined within the <strong>CaptureElement.Tapped</strong> event handler, into coordinates within capture stream. The <strong>ConvertUiTapToPreviewRect</strong> helper method, shown later in this section, performs this conversion and returns the rectangle, in capture stream coordinates, where the focus will be requested.</p>
+<p>Now that the target rectangle has been obtained, create a new <a href="/uwp/api/Windows.Media.Devices.RegionOfInterest"><strong>RegionOfInterest</strong></a> object, setting the <a href="/uwp/api/windows.media.devices.regionofinterest.bounds"><strong>Bounds</strong></a> property to the target rectangle obtained in the previous steps.</p>
+<p>Get the capture device's <a href="/uwp/api/Windows.Media.Devices.FocusControl"><strong>FocusControl</strong></a>. Create a new <a href="/uwp/api/Windows.Media.Devices.FocusSettings"><strong>FocusSettings</strong></a> object and set the <a href="/uwp/api/windows.media.devices.focuscontrol.mode"><strong>Mode</strong></a> and <a href="/uwp/api/windows.media.devices.focussettings.autofocusrange"><strong>AutoFocusRange</strong></a> to your desired values, after checking to make sure that they are supported by the <strong>FocusControl</strong>. Call <a href="/uwp/api/windows.media.devices.focuscontrol.configure"><strong>Configure</strong></a> on the <strong>FocusControl</strong> to make your settings active and signal the device to begin focusing on the specified region.</p>
+<p>Next, get the capture device's <a href="/uwp/api/Windows.Media.Devices.RegionsOfInterestControl"><strong>RegionsOfInterestControl</strong></a> and call <a href="/uwp/api/windows.media.devices.regionsofinterestcontrol.setregionsasync"><strong>SetRegionsAsync</strong></a> to set the active region. Multiple regions of interest can be set on devices that support it, but this example only sets a single region.</p>
+<p>Finally, call <a href="/uwp/api/windows.media.devices.focuscontrol.focusasync"><strong>FocusAsync</strong></a> on the <strong>FocusControl</strong> to initiate focusing.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When implementing tap to focus, the order of operations is important. You should call these APIs in the following order:</p>
+<ol>
+<li><a href="/uwp/api/windows.media.devices.focuscontrol.configure"><strong>FocusControl.Configure</strong></a></li>
+<li><a href="/uwp/api/windows.media.devices.regionsofinterestcontrol.setregionsasync"><strong>RegionsOfInterestControl.SetRegionsAsync</strong></a></li>
+<li><a href="/uwp/api/windows.media.devices.focuscontrol.focusasync"><strong>FocusControl.FocusAsync</strong></a></li>
+</ol>
+</div>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>TapUnfocus</strong> helper method, obtain the <strong>RegionsOfInterestControl</strong> and call <a href="/uwp/api/windows.media.devices.regionsofinterestcontrol.clearregionsasync"><strong>ClearRegionsAsync</strong></a> to clear the region that was registered with the control within the <strong>TapToFocus</strong> helper method. Then, get the <strong>FocusControl</strong> and call <a href="/uwp/api/windows.media.devices.focuscontrol.focusasync"><strong>FocusAsync</strong></a> to cause the device to refocus without a region of interest.</p>
+<div class="lang-csharp">
+</div>
+<p>The <strong>GetPreviewStreamRectInControl</strong> helper method uses the resolution of the preview stream and the orientation of the device to determine the rectangle within the preview element that contains the preview stream, trimming off any letterboxed padding that the control may provide to maintain the stream's aspect ratio. This method uses class member variables defined in the basic media capture example code found in <a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a>.</p>
+<div class="lang-csharp">
+</div>
+<p>The <strong>ConvertUiTapToPreviewRect</strong> helper method takes as arguments the location of the tap event, the desired size of the focus region, and the rectangle containing the preview stream obtained from the <strong>GetPreviewStreamRectInControl</strong> helper method. This method uses these values and the device's current orientation to calculate the rectangle within the preview stream that contains the desired region. Once again, this method uses class member variables defined in the basic media capture example code found in <a href="basic-photo-capture.html">Capture Photos and Video with MediaCapture</a>.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="manual-focus">Manual focus</h3>
+<p>The manual focus technique uses a <strong>Slider</strong> control to set the current focus depth of the capture device. A radio button is used to toggle manual focus on and off.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>FocusControl</strong> by checking the <a href="/uwp/api/windows.media.devices.focuscontrol.supported"><strong>Supported</strong></a> property. If the control is supported, you can show and enable the UI for this feature.</p>
+<p>The focus value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the <a href="/uwp/api/windows.media.devices.focuscontrol.min"><strong>Min</strong></a>, <a href="/uwp/api/windows.media.devices.focuscontrol.max"><strong>Max</strong></a>, and <a href="/uwp/api/windows.media.devices.focuscontrol.step"><strong>Step</strong></a> properties, which are used to set the corresponding properties of the slider control.</p>
+<p>Set the slider control's value to the current value of the <strong>FocusControl</strong> after unregistering the <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged"><strong>ValueChanged</strong></a> event handler so that the event is not triggered when the value is set.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>Checked</strong> event handler for the manual focus radio button, get the <strong>FocusControl</strong> object and call <a href="/uwp/api/windows.media.devices.focuscontrol.lockasync"><strong>LockAsync</strong></a> in case your app had previously unlocked the focus with a call to <a href="/uwp/api/windows.media.devices.focuscontrol.unlockasync"><strong>UnlockAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>ValueChanged</strong> event handler of the manual focus slider, get the current value of the control and the set the focus value by calling <a href="/uwp/api/windows.media.devices.focuscontrol.setvalueasync"><strong>SetValueAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="enable-the-focus-light">Enable the focus light</h3>
+<p>On devices that support it, you can enable a focus assist light to help the device focus. This example uses a checkbox to enable or disable the focus assist light.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>FlashControl</strong> by checking the <a href="/uwp/api/windows.media.devices.flashcontrol.supported"><strong>Supported</strong></a> property. Also check the <a href="/uwp/api/windows.media.devices.flashcontrol.assistantlightsupported"><strong>AssistantLightSupported</strong></a> to make sure the assist light is also supported. If these are both supported, you can show and enable the UI for this feature.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>CheckedChanged</strong> event handler, get the capture devices <a href="/uwp/api/Windows.Media.Devices.FlashControl"><strong>FlashControl</strong></a> object. Set the <a href="/uwp/api/windows.media.devices.flashcontrol.assistantlightenabled"><strong>AssistantLightEnabled</strong></a> property to enable or disable the focus light.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="iso-speed">ISO speed</h2>
+<p>The <a href="/uwp/api/Windows.Media.Devices.IsoSpeedControl"><strong>IsoSpeedControl</strong></a> allows you to set the ISO speed used during photo or video capture.</p>
+<p>This example uses a <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider"><strong>Slider</strong></a> control to adjust the current exposure compensation value and a checkbox to toggle automatic ISO speed adjustment.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>IsoSpeedControl</strong> by checking the <a href="/uwp/api/windows.media.devices.isospeedcontrol.supported"><strong>Supported</strong></a> property. If the control is supported, you can show and enable the UI for this feature. Set the checked state of the checkbox to indicate if automatic ISO speed adjustment is currently active to the value of the <a href="/uwp/api/windows.media.devices.isospeedcontrol.auto"><strong>Auto</strong></a> property.</p>
+<p>The ISO speed value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the <a href="/uwp/api/windows.media.devices.isospeedcontrol.min"><strong>Min</strong></a>, <a href="/uwp/api/windows.media.devices.isospeedcontrol.max"><strong>Max</strong></a>, and <a href="/uwp/api/windows.media.devices.isospeedcontrol.step"><strong>Step</strong></a> properties, which are used to set the corresponding properties of the slider control.</p>
+<p>Set the slider control's value to the current value of the <strong>IsoSpeedControl</strong> after unregistering the <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged"><strong>ValueChanged</strong></a> event handler so that the event is not triggered when the value is set.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>ValueChanged</strong> event handler, get the current value of the control and the set the ISO speed value by calling <a href="/uwp/api/windows.media.devices.isospeedcontrol.setvalueasync"><strong>SetValueAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>CheckedChanged</strong> event handler of the auto ISO speed checkbox, turn on automatic ISO speed adjustment by calling <a href="/uwp/api/windows.media.devices.isospeedcontrol.setautoasync"><strong>SetAutoAsync</strong></a>. Turn automatic ISO speed adjustment off by calling <a href="/uwp/api/windows.media.devices.isospeedcontrol.setvalueasync"><strong>SetValueAsync</strong></a> and passing in the current value of the slider control.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="optical-image-stabilization">Optical image stabilization</h2>
+<p>Optical image stabilization (OIS) stabilizes a captured video stream by mechanically manipulating the hardware capture device, which can provide a superior result than digital stabilization. On devices that don't support OIS, you can use the VideoStabilizationEffect to perform digital stabilization on your captured video. For more information, see <a href="effects-for-video-capture.html">Effects for video capture</a>.</p>
+<p>Determine if OIS is supported on the current device by checking the <a href="/uwp/api/windows.media.devices.opticalimagestabilizationcontrol.supported"><strong>OpticalImageStabilizationControl.Supported</strong></a> property.</p>
+<p>The OIS control supports three modes: on, off, and automatic, which means that the device dynamically determines if OIS would improve the media capture and, if so, enables OIS. To determine if a particular mode is supported on a device, check to see if the <a href="/uwp/api/windows.media.devices.opticalimagestabilizationcontrol.supportedmodes"><strong>OpticalImageStabilizationControl.SupportedModes</strong></a> collection contains the desired mode.</p>
+<p>Enable or disable OIS by setting the <a href="/uwp/api/Windows.Media.Devices.OpticalImageStabilizationMode"><strong>OpticalImageStabilizationControl.Mode</strong></a> to the desired mode.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="powerline-frequency">Powerline frequency</h2>
+<p>Some camera devices support anti-flicker processing that depends on knowing the AC frequency of the powerlines in the current environment. Some devices support automatic determination of the powerline frequency, while others require that the frequency be set manually. The following code example shows how to determine powerline frequency support on the device and, if needed, how to set the frequency manually.</p>
+<p>First, call the <strong>VideoDeviceController</strong> method <a href="/uwp/api/windows.media.devices.videodevicecontroller.trygetpowerlinefrequency"><strong>TryGetPowerlineFrequency</strong></a>, passing in an output parameter of type <a href="/uwp/api/Windows.Media.Capture.PowerlineFrequency"><strong>PowerlineFrequency</strong></a>; if this call fails, the powerline frequency control is not supported on the current device. If the feature is supported, you can determine if automatic mode is available on the device by trying to set auto mode. Do this by calling <a href="/uwp/api/windows.media.devices.videodevicecontroller.trysetpowerlinefrequency"><strong>TrySetPowerlineFrequency</strong></a> and passing in the value <strong>Auto</strong>. If the call succeeds, that means that your auto powerline frequency is supported. If the powerline frequency controller is supported on the device but automatic frequency detection is not, you can still manually set the frequency by using <strong>TrySetPowerlineFrequency</strong>. In this example, <strong>MyCustomFrequencyLookup</strong> is a custom method that you implement to determine the correct frequency for the device's current location.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="white-balance">White balance</h2>
+<p>The <a href="/uwp/api/windows.media.devices.videodevicecontroller.whitebalancecontrol"><strong>WhiteBalanceControl</strong></a> allows you to set the white balance used during photo or video capture.</p>
+<p>This example uses a <a href="/uwp/api/Windows.UI.Xaml.Controls.ComboBox"><strong>ComboBox</strong></a> control to select from built-in color temperature presets and a <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider"><strong>Slider</strong></a> control for manual white balance adjustment.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>WhiteBalanceControl</strong> by checking the <a href="/uwp/api/windows.media.devices.whitebalancecontrol.supported"><strong>Supported</strong></a> property. If the control is supported, you can show and enable the UI for this feature. Set the items of the combo box to the values of the <a href="/uwp/api/Windows.Media.Devices.ColorTemperaturePreset"><strong>ColorTemperaturePreset</strong></a> enumeration. And set the selected item to the current value of the <a href="/uwp/api/windows.media.devices.whitebalancecontrol.preset"><strong>Preset</strong></a> property.</p>
+<p>For manual control, the white balance value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the <a href="/uwp/api/windows.media.devices.whitebalancecontrol.min"><strong>Min</strong></a>, <a href="/uwp/api/windows.media.devices.whitebalancecontrol.max"><strong>Max</strong></a>, and <a href="/uwp/api/windows.media.devices.whitebalancecontrol.step"><strong>Step</strong></a> properties, which are used to set the corresponding properties of the slider control. Before enabling manual control, check to make sure that the range between the minimum and maximum supported values is greater than the step size. If it is not, manual control is not supported on the current device.</p>
+<p>Set the slider control's value to the current value of the <strong>WhiteBalanceControl</strong> after unregistering the <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged"><strong>ValueChanged</strong></a> event handler so that the event is not triggered when the value is set.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <a href="/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged"><strong>SelectionChanged</strong></a> event handler of the color temperature preset combo box, get the currently selected preset and set the value of the control by calling <a href="/uwp/api/windows.media.devices.whitebalancecontrol.setpresetasync"><strong>SetPresetAsync</strong></a>. If the selected preset value is not <strong>Manual</strong>, disable the manual white balance slider.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>ValueChanged</strong> event handler, get the current value of the control and the set the white balance value by calling <a href="/uwp/api/windows.media.devices.exposurecontrol.setvalueasync"><strong>SetValueAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Adjusting the white balance is only supported while the preview stream is running. Check to make sure that the preview stream is running before setting the white balance value or preset.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <strong>ColorTemperaturePreset.Auto</strong> preset value instructs the system to automatically adjust the white balance level. For some scenarios, such as capturing a photo sequence where the white balance levels should be the same for each frame, you may want to lock the control to the current automatic value. To do this, call <a href="/uwp/api/windows.media.devices.whitebalancecontrol.setpresetasync"><strong>SetPresetAsync</strong></a> and specify the <strong>Manual</strong> preset and do not set a value on the control using <a href="/uwp/api/windows.media.devices.whitebalancecontrol.setvalueasync"><strong>SetValueAsync</strong></a>. This will cause the device to lock the current value. Do not attempt to read the current control value and then pass the returned value into <strong>SetValueAsync</strong> because this value is not guaranteed to be correct.</p>
+</div>
+<h2 id="zoom">Zoom</h2>
+<p>The <a href="/uwp/api/Windows.Media.Devices.ZoomControl"><strong>ZoomControl</strong></a> allows you to set the zoom level used during photo or video capture.</p>
+<p>This example uses a <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider"><strong>Slider</strong></a> control to adjust the current zoom level. The following section shows how to adjust zoom based on a pinch gesture on the screen.</p>
+<div class="lang-xml">
+</div>
+<p>Check to see if the current capture device supports the <strong>ZoomControl</strong> by checking the <a href="/uwp/api/windows.media.devices.zoomcontrol.supported"><strong>Supported</strong></a> property. If the control is supported, you can show and enable the UI for this feature.</p>
+<p>The zoom level value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the <a href="/uwp/api/windows.media.devices.zoomcontrol.min"><strong>Min</strong></a>, <a href="/uwp/api/windows.media.devices.zoomcontrol.max"><strong>Max</strong></a>, and <a href="/uwp/api/windows.media.devices.zoomcontrol.step"><strong>Step</strong></a> properties, which are used to set the corresponding properties of the slider control.</p>
+<p>Set the slider control's value to the current value of the <strong>ZoomControl</strong> after unregistering the <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged"><strong>ValueChanged</strong></a> event handler so that the event is not triggered when the value is set.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>ValueChanged</strong> event handler, create a new instance of the <a href="/uwp/api/Windows.Media.Devices.ZoomSettings"><strong>ZoomSettings</strong></a> class, setting the <a href="/uwp/api/windows.media.devices.zoomsettings.value"><strong>Value</strong></a> property to the current value of the zoom slider control. If the <a href="/uwp/api/windows.media.devices.zoomcontrol.supportedmodes"><strong>SupportedModes</strong></a> property of the <strong>ZoomControl</strong> contains <a href="/uwp/api/Windows.Media.Devices.ZoomTransitionMode"><strong>ZoomTransitionMode.Smooth</strong></a>, it means the device supports smooth transitions between zoom levels. Since this modes provides a better user experience, you will typically want to use this value for the <a href="/uwp/api/windows.media.devices.zoomsettings.mode"><strong>Mode</strong></a> property of the <strong>ZoomSettings</strong> object.</p>
+<p>Finally, change the current zoom settings by passing your <strong>ZoomSettings</strong> object into the <a href="/uwp/api/windows.media.devices.zoomcontrol.configure"><strong>Configure</strong></a> method of the <strong>ZoomControl</strong> object.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="smooth-zoom-using-pinch-gesture">Smooth zoom using pinch gesture</h3>
+<p>As discussed in the previous section, on devices that support it, smooth zoom mode allows the capture device to smoothly transition between digital zoom levels, allowing the user to dynamically adjust the zoom level during the capture operation without discrete and jarring transitions. This section describes how to adjust the zoom level in response to a pinch gesture.</p>
+<p>First, determine if the digital zoom control is supported on the current device by checking the <a href="/uwp/api/windows.media.devices.zoomcontrol.supported"><strong>ZoomControl.Supported</strong></a> property. Next, determine if smooth zoom mode is available by checking the <a href="/uwp/api/windows.media.devices.zoomcontrol.supportedmodes"><strong>ZoomControl.SupportedModes</strong></a> to see if it contains the value <a href="/uwp/api/Windows.Media.Devices.ZoomTransitionMode"><strong>ZoomTransitionMode.Smooth</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>On a multi-touch enabled device, a typical scenario is to adjust the zoom factor based on a two-finger pinch gesture. Set the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationmode"><strong>ManipulationMode</strong></a> property of the <a href="/uwp/api/Windows.UI.Xaml.Controls.CaptureElement"><strong>CaptureElement</strong></a> control to <a href="/uwp/api/Windows.UI.Xaml.Input.ManipulationModes"><strong>ManipulationModes.Scale</strong></a> to enable the pinch gesture. Then, register for the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationdelta"><strong>ManipulationDelta</strong></a> event which is raised when the pinch gesture changes size.</p>
+<div class="lang-csharp">
+</div>
+<p>In the handler for the <strong>ManipulationDelta</strong> event, update the zoom factor based on the change in the user's pinch gesture. The <a href="/uwp/api/Windows.UI.Input.ManipulationDelta"><strong>ManipulationDelta.Scale</strong></a> value represents the change in scale of the pinch gesture such that a small increase in the size of the pinch is a number slightly larger than 1.0 and a small decrease in the pinch size is a number slightly smaller than 1.0. In this example, the current value of the zoom control is multiplied by the scale delta.</p>
+<p>Before setting the zoom factor, you must make sure that the value is not less than the minimum value supported by the device as indicated by the <a href="/uwp/api/windows.media.devices.zoomcontrol.min"><strong>ZoomControl.Min</strong></a> property. Also, make sure that the value is less than or equal to the <a href="/uwp/api/windows.media.devices.zoomcontrol.max"><strong>ZoomControl.Max</strong></a> value. Finally, you must make sure that the zoom factor is a multiple of the zoom step size supported by the device as indicated by the <a href="/uwp/api/windows.media.devices.zoomcontrol.step"><strong>Step</strong></a> property. If your zoom factor does not meet these requirements, an exception will be thrown when you attempt to set the zoom level on the capture device.</p>
+<p>Set the zoom level on the capture device by creating a new <a href="/uwp/api/Windows.Media.Devices.ZoomSettings"><strong>ZoomSettings</strong></a> object. Set the <a href="/uwp/api/windows.media.devices.zoomsettings.mode"><strong>Mode</strong></a> property to <a href="/uwp/api/Windows.Media.Devices.ZoomTransitionMode"><strong>ZoomTransitionMode.Smooth</strong></a> and then set the <a href="/uwp/api/windows.media.devices.zoomsettings.value"><strong>Value</strong></a> property to your desired zoom factor. Finally, call <a href="/uwp/api/windows.media.devices.zoomcontrol.configure"><strong>ZoomControl.Configure</strong></a> to set the new zoom value on the device. The device will smoothly transition to the new zoom value.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="camera.html">Camera</a></li>
+<li><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/capture-device-controls-for-photo-and-video-capture.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

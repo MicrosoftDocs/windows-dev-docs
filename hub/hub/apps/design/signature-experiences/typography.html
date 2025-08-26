@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Typography in Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Typography in Windows ">
+    
+    <meta name="description" content="Segoe UI Variable and the way Windows uses typography to communicate information">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="typography-in-windows">Typography in Windows</h1>
+
+<p><img src="images/typography_QuickBrownFox.svg" alt="Several words rendered in Segoe UI Variable"></p>
+<p>As the visual representation of language, typography's main task is to communicate information. The Windows type system helps you create structure and hierarchy in your content in order to maximize legibility and readability in your UI.</p>
+<p><a href="..%5Cdownloads%5Cindex.md#fonts">Segoe UI Variable</a> is the new system font for Windows. It is a refreshed take on the classic Segoe and uses variable font technology to dynamically provide great legibility at very small sizes, and improved outlines at display sizes.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This article describes how the <a href="https://fluent2.microsoft.design/">Fluent Design language</a> is applied to Windows apps. For more information, see <a href="https://fluent2.microsoft.design/typography"><strong>Fluent Design - Typography</strong></a>.</p>
+</div>
+<h2 id="using-segoe-fluent-variable">Using Segoe Fluent Variable</h2>
+<p>Segoe UI Variable supports two axes for finer control of text: <strong>weight</strong> and <strong>optical size</strong>.</p>
+<ul>
+<li>The weight axis (<code>wght</code>) is incremental with weights from Thin (100) to Bold (700).</li>
+<li>The optical size axis (<code>opsz</code>) is automatic and on by default. It controls the shape and size of the counters in the font, to prioritize legibility at the small sizes and personality at the large sizes (for optical scaling from 8pt to 36pt).</li>
+</ul>
+<p>When using XAML common controls, the Segoe UI Variable font will be selected by default for supported <a href="#languages">languages</a>. When this font or another variable font with an optical axis is used, the optical size will automatically match the requested font-size. When using HTML, optical scaling is also automatic, but you will need to specify the Segoe UI Variable font in CSS.</p>
+<p><img src="images/typography_Metrics.svg" alt="The word 'Segoe' rendered in Segoe UI Variable with several aspects of the typeface highlighted"></p>
+<h3 id="weights">Weights</h3>
+<table>
+<thead>
+<tr>
+<th>Weight name</th>
+<th style="text-align: center;">Weight axis value</th>
+<th>Visual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Light</strong></td>
+<td style="text-align: center;">300</td>
+<td><img src="images/typography_SegoeLight.svg" alt="The word 'Segoe' rendered in Segoe UI Variable light"></td>
+</tr>
+<tr>
+<td><strong>Semilight</strong></td>
+<td style="text-align: center;">350</td>
+<td><img src="images/typography_SegoeSemiLight.svg" alt="The word 'Segoe' rendered in Segoe UI Variable semilight"></td>
+</tr>
+<tr>
+<td><strong>Regular</strong></td>
+<td style="text-align: center;">400</td>
+<td><img src="images/typography_SegoeRegular.svg" alt="The word 'Segoe' rendered in Segoe UI Variable regular"></td>
+</tr>
+<tr>
+<td><strong>Semibold</strong></td>
+<td style="text-align: center;">600</td>
+<td><img src="images/typography_SegoeSemiBold.svg" alt="The word 'Segoe' rendered in Segoe UI Variable semibold"></td>
+</tr>
+<tr>
+<td><strong>Bold</strong></td>
+<td style="text-align: center;">700</td>
+<td><img src="images/typography_SegoeBold.svg" alt="The word 'Segoe' rendered in Segoe UI Variable bold"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="optical-axis">Optical axis</h3>
+<p><img src="images/typography_OpticalAxis.svg" alt="A lower case letter a rendered in Segoe UI Variable with outlines of the different shapes it can have based on the context in which it is being rendered"></p>
+<h2 id="typography-best-practices-in-windows-11">Typography best practices in Windows 11</h2>
+<p>Windows 11 uses Segoe UI Variable with the following attributes based on the context in which the text is being displayed.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Weight</strong></td>
+<td>Regular, Semibold</td>
+<td>Use regular weight for most text, use Semibold for titles</td>
+</tr>
+<tr>
+<td><strong>Alignment</strong></td>
+<td>Left, Center</td>
+<td>Align left by default, Align center only in rare cases such as text below icons</td>
+</tr>
+<tr>
+<td><strong>Minimum values</strong></td>
+<td>14px Semibold, 12px Regular</td>
+<td>Text smaller than these sizes and weights are illegible in some languages</td>
+</tr>
+<tr>
+<td><strong>Casing</strong></td>
+<td>Sentence case</td>
+<td>Use sentence casing for all UI text, including titles</td>
+</tr>
+<tr>
+<td><strong>Truncation</strong></td>
+<td>Ellipses and clipping</td>
+<td>Use ellipses in most cases; clipping is only used in rare cases</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/Typography">Open the WinUI 3 Gallery app and see Typography principles in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="typography-in-windows-apps">Typography in Windows Apps</h2>
+<p><img src="../style/images/header-typography.svg" alt="hero image"></p>
+<p>As the visual representation of language, typography's main task is to communicate information. Its style should never get in the way of that goal. In this article, we'll discuss how to style typography in your Windows app to help users understand content easily and efficiently.</p>
+<h3 id="font">Font</h3>
+<p>You should use one font throughout your app's UI, and we recommend sticking with the default font for Windows apps, <strong>Segoe UI Variable</strong>. It's designed to maintain optimal legibility across sizes and pixel densities and offers a clean, light, and open aesthetic that complements the content of the system.</p>
+<p><img src="../style/images/type/segoe-sample.svg" alt="Sample text of Segoe UI Variable font."></p>
+<p>To display non-English languages or to select a different font for your app, please see <a href="#languages">Languages</a> and <a href="#fonts">Fonts</a> for our recommended fonts for Windows apps.</p>
+<h3 id="size-and-scaling">Size and scaling</h3>
+<p>Font sizes in XAML apps automatically scale on all devices. The scaling algorithm ensures that a 24 px font on a large screen 10 feet away is just as legible as a 24 px font on a small screen that's a few inches away.</p>
+<p><img src="../style/images/type/scaling-chart.svg" alt="viewing distances for different devices."></p>
+<p>Because of how the scaling system works, you're designing in effective pixels, not actual physical pixels, and you shouldn't have to alter font sizes for different screens sizes or resolutions.</p>
+<h3 id="hierarchy">Hierarchy</h3>
+<section class="row">
+<div class="column">
+<p>Users rely on visual hierarchy when scanning a page: headers summarize content, and body text provides more detail. To create a clear visual hierarchy in your app, follow the Windows type ramp.</p>
+</div>
+<div class="column">
+<p><img src="../style/images/type/type-hierarchy.svg" alt="Screenshot of three lines of text where the font size gets smaller from one line to the next."></p>
+</div>
+</section>
+<h3 id="type-ramp">Type ramp</h3>
+<p>The Windows type ramp establishes crucial relationships between the type styles on a page, helping users read content easily. All sizes are in effective pixels and are optimized for Windows apps running on all screen sizes.</p>
+<p>Windows 11 uses the following values for various types of text in the UI.</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Weight</th>
+<th>Size/line height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/typography_caption.svg" alt="Example of caption text"></td>
+<td>Small</td>
+<td>12/16 epx</td>
+</tr>
+<tr>
+<td><img src="images/typography_body.svg" alt="Example of body text"></td>
+<td>Text</td>
+<td>14/20 epx</td>
+</tr>
+<tr>
+<td><img src="images/typography_body_strong.svg" alt="Example of body strong text"></td>
+<td>Text semibold</td>
+<td>14/20 epx</td>
+</tr>
+<tr>
+<td><img src="images/typography_body_large.svg" alt="Example of body large text"></td>
+<td>Text</td>
+<td>18/24 epx</td>
+</tr>
+<tr>
+<td><img src="images/typography_subtitle.svg" alt="Example of subtitle text"></td>
+<td>Display semibold</td>
+<td>20/28 epx</td>
+</tr>
+<tr>
+<td><img src="images/typography_title.svg" alt="Example of title text"></td>
+<td>Display semibold</td>
+<td>28/36 epx</td>
+</tr>
+<tr>
+<td><img src="images/typography_title_large.svg" alt="Example of title large text"></td>
+<td>Display semibold</td>
+<td>40/52 epx</td>
+</tr>
+<tr>
+<td><img src="images/typography_display.svg" alt="Example of display text"></td>
+<td>Display semibold</td>
+<td>68/92 epx</td>
+</tr>
+</tbody>
+</table>
+<p>Check out the guidance on using the <a href="../../develop/platform/xaml/xaml-theme-resources.html#the-xaml-type-ramp">XAML type ramp</a> for more details.</p>
+<h3 id="alignment">Alignment</h3>
+<p>The default <a href="/uwp/api/windows.ui.xaml.textalignment">TextAlignment</a> is Left, and in most instances, flush-left and ragged right provides consistent anchoring of the content and a uniform layout. For RTL languages, see <a href="../globalizing/adjust-layout-and-fonts--and-support-rtl.html">Adjusting layout and fonts to support globalization</a>.</p>
+<p><img src="../style/images/type/alignment.svg" alt="Shows flush-left text."></p>
+<pre><code class="lang-xaml">&lt;TextBlock TextAlignment=&quot;Left&quot;&gt;
+</code></pre>
+<h3 id="character-count">Character count</h3>
+<section class="row">
+<div class="column">
+<p><img src="../style/images/do.svg" alt="Fourth screenshot of a green bar that has a green check mark and the word Do in it.">
+Keep to 50–60 letters per line for ease of reading.</p>
+</div>
+<div class="column">
+<p><img src="../style/images/dont.svg" alt="don't">
+Don't use fewer than 20 characters or more than 60 characters per line as this is difficult to read.</p>
+</div>
+</section>
+<h3 id="clipping-and-ellipses">Clipping and ellipses</h3>
+<p>When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most <a href="../controls/text-controls.html">UWP text controls</a>.</p>
+<p><img src="../style/images/type/clipping.svg" alt="Shows a device frame with some text clipping."></p>
+<pre><code class="lang-xaml">&lt;TextBlock TextWrapping=&quot;WrapWholeWords&quot; TextTrimming=&quot;Clip&quot;/&gt;
+</code></pre>
+<section class="row">
+<div class="column">
+<p><img src="../style/images/do.svg" alt="Fifth screenshot of a green bar that has a green check mark and the word Do in it.">
+Clip text, and wrap if multiple lines are enabled.</p>
+</div>
+<div class="column">
+<p><img src="../style/images/dont.svg" alt="don't">
+Don't use ellipses to avoid visual clutter.</p>
+</div>
+</section>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If containers are not well-defined (for example, no differentiating background color), or when there is a link to see more text, then use ellipses.</p>
+</div>
+<h2 id="languages">Languages</h2>
+<p>Segoe UI Variable is our font for English, European languages, Greek, and Russian. For other languages, see the following recommendations.</p>
+<h3 id="globalizinglocalizing-fonts">Globalizing/localizing fonts</h3>
+<p>Use the <a href="/uwp/api/windows.globalization.fonts.languagefont">LanguageFont font-mapping APIs</a> for programmatic access to the recommended font family, size, weight, and style for a particular language. The LanguageFont object provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts. For more info, see <a href="../globalizing/adjust-layout-and-fonts--and-support-rtl.html">Adjusting layout and fonts to support globalization</a>.</p>
+<h3 id="fonts-for-non-latin-languages">Fonts for non-Latin languages</h3>
+<table>
+<thead>
+<tr>
+<th>Font-family</th>
+<th>Styles</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ebrima</td>
+<td>Regular, Bold</td>
+<td>User-interface font for African scripts (ADLaM, Ethiopic, N'Ko, Osmanya, Tifinagh, Vai).</td>
+</tr>
+<tr>
+<td>Gadugi</td>
+<td>Regular, Bold</td>
+<td>User-interface font for North American scripts (Canadian Syllabics, Cherokee, Osage).</td>
+</tr>
+<tr>
+<td>Leelawadee UI</td>
+<td>Regular, Semilight, Bold</td>
+<td>User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai).</td>
+</tr>
+<tr>
+<td>Malgun Gothic</td>
+<td>Regular</td>
+<td>User-interface font for Korean.</td>
+</tr>
+<tr>
+<td>Microsoft JhengHei UI</td>
+<td>Regular, Bold, Light</td>
+<td>User-interface font for Traditional Chinese.</td>
+</tr>
+<tr>
+<td>Microsoft YaHei UI</td>
+<td>Regular, Bold, Light</td>
+<td>User-interface font for Simplified Chinese.</td>
+</tr>
+<tr>
+<td>Myanmar Text</td>
+<td>Regular</td>
+<td>Fallback font for Myanmar script.</td>
+</tr>
+<tr>
+<td>Nirmala UI</td>
+<td>Regular, Semilight, Bold</td>
+<td>User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu).</td>
+</tr>
+<tr>
+<td>Segoe UI</td>
+<td>Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black</td>
+<td>User-interface font for Arabic, Armenian, Georgian, and Hebrew.</td>
+</tr>
+<tr>
+<td>SimSun</td>
+<td>Regular</td>
+<td>A legacy Chinese UI font.</td>
+</tr>
+<tr>
+<td>Yu Gothic UI</td>
+<td>Light, Semilight, Regular, Semibold, Bold</td>
+<td>User-interface font for Japanese.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fonts">Fonts</h2>
+<h3 id="sans-serif-fonts">Sans-serif fonts</h3>
+<p>Sans-serif fonts are a great choice for headings and UI elements.</p>
+<table>
+<thead>
+<tr>
+<th>Font-family</th>
+<th>Styles</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arial</td>
+<td>Regular, Italic, Bold, Bold Italic, Black</td>
+<td>Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew). Black weight supports European scripts only.</td>
+</tr>
+<tr>
+<td>Calibri</td>
+<td>Regular, Italic, Bold, Bold Italic, Light, Light Italic</td>
+<td>Supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic and Hebrew). Arabic available in the uprights only.</td>
+</tr>
+<tr>
+<td>Consolas</td>
+<td>Regular, Italic, Bold, Bold Italic</td>
+<td>Fixed width font that supports European scripts (Latin, Greek and Cyrillic).</td>
+</tr>
+<tr>
+<td>Segoe UI</td>
+<td>Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black</td>
+<td>User-interface font for European and Middle East scripts (Arabic, Armenian, Cyrillic, Georgian, Greek, Hebrew, Latin), and also Lisu script.</td>
+</tr>
+<tr>
+<td>Selawik</td>
+<td>Regular, Semilight, Light, Bold, Semibold</td>
+<td>An open-source font that's metrically compatible with Segoe UI, intended for apps on other platforms that don't want to bundle Segoe UI. <a href="https://github.com/Microsoft/Selawik">Get Selawik on GitHub</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="serif-fonts">Serif fonts</h3>
+<p>Serif fonts are good for presenting large amounts of text.</p>
+<table>
+<thead>
+<tr>
+<th>Font-family</th>
+<th>Styles</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cambria</td>
+<td>Regular</td>
+<td>Serif font that supports European scripts (Latin, Greek, Cyrillic).</td>
+</tr>
+<tr>
+<td>Courier New</td>
+<td>Regular, Italic, Bold, Bold Italic</td>
+<td>Serif fixed width font that supports European and Middle Eastern scripts (Latin, Greek, Cyrillic, Arabic, Armenian, and Hebrew).</td>
+</tr>
+<tr>
+<td>Georgia</td>
+<td>Regular, Italic, Bold, Bold Italic</td>
+<td>Supports European scripts (Latin, Greek and Cyrillic).</td>
+</tr>
+<tr>
+<td>Times New Roman</td>
+<td>Regular, Italic, Bold, Bold Italic</td>
+<td>Legacy font that supports European scripts (Latin, Greek, Cyrillic, Arabic, Armenian, Hebrew).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="variable-fonts">Variable fonts</h3>
+<p>Variable fonts are good for precisely controlling the appearance of text.</p>
+<table>
+<thead>
+<tr>
+<th>Font-family</th>
+<th>Axes</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bahnschrift</td>
+<td>Weight, Width</td>
+<td>Variable font that supports Latin, Greek, and Cyrillic.</td>
+</tr>
+<tr>
+<td>Segoe UI Variable</td>
+<td>Weight, Optical Size</td>
+<td>Variable font that supports Latin, Greek, and Cyrillic.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="symbols-and-icons">Symbols and icons</h3>
+<table>
+<thead>
+<tr>
+<th>Font-family</th>
+<th>Styles</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Segoe MDL2 Assets</td>
+<td>Regular</td>
+<td>User-interface font for app icons. For more info, see the <a href="../style/segoe-fluent-icons-font.html">Segoe Fluent Icons font</a> article.</td>
+</tr>
+<tr>
+<td>Segoe UI Emoji</td>
+<td>Regular</td>
+<td>User-interface font for Emoji.</td>
+</tr>
+<tr>
+<td>Segoe UI Symbol</td>
+<td>Regular</td>
+<td>Fallback font for symbols.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../controls/text-controls.html">Text controls</a></li>
+<li><a href="../../develop/platform/xaml/xaml-theme-resources.html#the-xaml-type-ramp">XAML theme resources</a></li>
+<li><a href="../../develop/platform/xaml/xaml-styles.html">XAML styles</a></li>
+<li><a href="/typography/">Microsoft Typography</a></li>
+<li><a href="/typography/develop/font-variations">Variable Fonts</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/signature-experiences/typography.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

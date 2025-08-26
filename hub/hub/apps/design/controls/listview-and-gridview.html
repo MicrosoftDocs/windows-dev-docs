@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>List view and grid view </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="List view and grid view ">
+    
+    <meta name="description" content="Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="list-view-and-grid-view">List view and grid view</h1>
+
+<p>Most applications manipulate and display sets of data, such as a gallery of images or a set of email messages. The XAML UI framework provides ListView and GridView controls that make it easy to display and manipulate data in your app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>ListView and GridView both derive from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase">ListViewBase</a> class, so they have the same functionality but display data differently. In this article, discussions about <em>list view</em> apply to both the ListView and GridView controls, unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the <em>List</em> prefix can be replaced with <em>Grid</em> for the corresponding grid equivalent (GridView or GridViewItem).</p>
+</div>
+<p>ListView and GridView controls provide many benefits as you work with collections. Both are easy to implement and provide basic UI, interaction, and scrolling while being easily customizable. And both can be bound to existing dynamic data sources or to hard-coded data that's provided in the XAML itself or the code-behind.</p>
+<p>Both controls are flexible to use in a variety of scenarios but, overall, they work best with collections in which all items have the same basic structure and appearance, as well as the same interaction behavior. That is, they all should perform the same action when they're clicked (for example, to open a link or browse).</p>
+<h2 id="compare-listview-and-gridview">Compare ListView and GridView</h2>
+<h3 id="listview">ListView</h3>
+<p>The ListView control displays data stacked vertically in a single column. ListView works better for items that have text as a focal point, and for collections that are meant to be read top to bottom (for example, alphabetically ordered). A few common use cases for ListView include lists of messages and search results. If you need to display collections in multiple columns or in a table-like format, you should <em>not</em> use ListView. Instead, consider using a <a href="/windows/communitytoolkit/controls/datagrid">DataGrid</a> control.</p>
+<p><img src="images/listview-grouped-example-resized-final.png" alt="Screenshot of a list view of data that's grouped alphabetically."></p>
+<h3 id="gridview">GridView</h3>
+<p>The GridView control presents a collection of items in rows and columns that can be scrolled vertically. Data is stacked horizontally until it fills a column, and then continues with the next row in the column. GridView works better for collections that have images as their focal point or whose items can be read from side-to-side or are not sorted in a specific order. A common use case for GridView is a photo or product gallery.</p>
+<p><img src="images/gridview-simple-example-final.png" alt="Screenshot of a content library of photos displayed as a grid view."></p>
+<h2 id="which-collection-control-should-you-use-a-comparison-with-itemsrepeater">Which collection control should you use? A Comparison with ItemsRepeater</h2>
+<p>It's important to understand the differences between these types of controls before you decide which one to use.</p>
+<h3 id="listview-and-gridview">ListView and GridView</h3>
+<p>The feature-rich ListView and GridView controls work <em>out of box</em>. They require no customization, but they can be customized easily. Each has its own built-in UI and UX and is designed to display nearly any type of collection as is.</p>
+<h3 id="itemsrepeater">ItemsRepeater</h3>
+<p>The <a href="items-repeater.html">ItemsRepeater</a> control also is used to display collections, but it's designed as a building block for creating a custom control to suit your particular UI requirements. It doesn't have the same built-in features and functionality as ListView and GridView, so you'll need to implement any necessary features or interactions. Use ItemsRepeater if you have a highly customized UI that you can't create by using either ListView or GridView, or if your data source requires different behavior for each item.</p>
+<p>Learn more about ItemsRepeater by reading its <a href="items-repeater.html">Guidelines</a> and <a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater">API documentation</a>.</p>
+<h2 id="create-a-list-view-or-a-grid-view">Create a list view or a grid view</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview">GridView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items">Items property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p>Open the WinUI 3 Gallery app and see the <a href="winui3gallery:/item/ListView">ListView</a> or the <a href="winui3gallery:/item/GridView">GridView</a> in action.</p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>ListView and GridView are both <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol">ItemsControl</a> types, so they can contain a collection of items of any type. A ListView or GridView control must have items in its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items">Items</a> collection before it can display anything on the screen. To populate the view, you can <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items">add items directly to the collection</a> or set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> property to a data source.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>You can use either the Items or ItemsSource property to populate the list, but you can't use both at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.</p>
+</div>
+<p>Many of the examples in this article populate the Items collection directly for the sake of simplicity. However, it's more common for the items in a list to come from a dynamic source, such as a list of books from an online database. You use the ItemsSource property for this purpose.</p>
+<h3 id="add-items-to-a-listview-or-gridview-control">Add items to a ListView or GridView control</h3>
+<p>You can add items to the ListView or GridView <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items">Items</a> collection by using either XAML or code to yield the same result. You would ordinarily add items through XAML if you have a small number of items that don't change and are easily defined, or if you generate the items in code at runtime.</p>
+<p><strong>Method 1: Add items to the Items collection</strong></p>
+<ul>
+<li><p>Option 1: Add items through XAML</p>
+<pre><code class="lang-xaml">&lt;!-- No corresponding C# code is needed for this example. --&gt;
+
+&lt;ListView x:Name=&quot;Fruits&quot;&gt;
+&lt;x:String&gt;Apricot&lt;/x:String&gt;
+&lt;x:String&gt;Banana&lt;/x:String&gt;
+&lt;x:String&gt;Cherry&lt;/x:String&gt;
+&lt;x:String&gt;Orange&lt;/x:String&gt;
+&lt;x:String&gt;Strawberry&lt;/x:String&gt;
+&lt;/ListView&gt;
+</code></pre>
+</li>
+<li><p>Option 2: Add items through code</p>
+<pre><code class="lang-xaml">&lt;StackPanel Name=&quot;FruitsPanel&quot;&gt;&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Create a new ListView and add content.
+ListView Fruits = new ListView();
+Fruits.Items.Add(&quot;Apricot&quot;);
+Fruits.Items.Add(&quot;Banana&quot;);
+Fruits.Items.Add(&quot;Cherry&quot;);
+Fruits.Items.Add(&quot;Orange&quot;);
+Fruits.Items.Add(&quot;Strawberry&quot;);
+
+// Add the ListView to a parent container in the visual tree (which you created in the corresponding XAML file).
+FruitsPanel.Children.Add(Fruits);
+</code></pre>
+</li>
+</ul>
+<p>Both of these options produce the same list view, as shown here:</p>
+<p><img src="images/listview-basic-code-example2.png" alt="Screenshot of a simple list view displaying a list of fruits."></p>
+<p><strong>Method 2: Add items by setting the ItemsSource property</strong></p>
+<p>You would ordinarily use a ListView or GridView to display data from a source such as a database or the internet. To populate a ListView or GridView control from a data source, you set its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> property to a collection of data items. This method works better if ListView or GridView is going to hold custom class objects, as shown in the following examples.</p>
+<ul>
+<li><p>Option 1: Set ItemsSource in code</p>
+<p>Here, the ListView ItemsSource property is set in code directly to an instance of a collection.</p>
+<pre><code class="lang-xaml">&lt;StackPanel x:Name=&quot;ContactPanel&quot;&gt;&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Class definition should be provided within the namespace being used, outside of any other classes.
+
+this.InitializeComponent();
+
+// Instead of adding hard coded items to an ObservableCollection as shown here,
+//the data could be pulled asynchronously from a database or the internet.
+ObservableCollection&lt;Contact&gt; Contacts = new ObservableCollection&lt;Contact&gt;();
+
+// You create Contact objects by providing a first name, last name, and company for the Contact constructor.
+// They are then added to the ObservableCollection Contacts.
+Contacts.Add(new Contact(&quot;John&quot;, &quot;Doe&quot;, &quot;Contoso, LTD.&quot;));
+Contacts.Add(new Contact(&quot;Jane&quot;, &quot;Doe&quot;, &quot;Fabrikam, Inc.&quot;));
+Contacts.Add(new Contact(&quot;Santa&quot;, &quot;Claus&quot;, &quot;Alpine Ski House&quot;));
+
+// Create a new ListView (or GridView) for the UI, and add content by setting ItemsSource
+ListView ContactsLV = new ListView();
+ContactsLV.ItemsSource = Contacts;
+
+// Add the ListView to a parent container in the visual tree (which you created in the corresponding XAML file)
+ContactPanel.Children.Add(ContactsLV);
+</code></pre>
+</li>
+<li><p>Option 2: Set ItemsSource in XAML</p>
+<p>You can also bind the ItemsSource property to a collection in the XAML. Here, ItemsSource is bound to a public property named Contacts, which exposes the page's private data collection, named <em>_contacts</em>.</p>
+<pre><code class="lang-xaml">&lt;ListView x:Name=&quot;ContactsLV&quot; ItemsSource=&quot;{x:Bind Contacts}&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Provide a class definition within the namespace being used, outside of any other classes.
+// These two declarations belong outside the main page class.
+private ObservableCollection&lt;Contact&gt; _contacts = new ObservableCollection&lt;Contact&gt;();
+
+public ObservableCollection&lt;Contact&gt; Contacts
+{
+    get { return this._contacts; }
+}
+
+// Define this method within your main page class.
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    base.OnNavigatedTo(e);
+
+    // Instead of hard coded items, the data could be pulled
+    // asynchronously from a database or the internet.
+    Contacts.Add(new Contact(&quot;John&quot;, &quot;Doe&quot;, &quot;Contoso, LTD.&quot;));
+    Contacts.Add(new Contact(&quot;Jane&quot;, &quot;Doe&quot;, &quot;Fabrikam, Inc.&quot;));
+    Contacts.Add(new Contact(&quot;Santa&quot;, &quot;Claus&quot;, &quot;Alpine Ski House&quot;));
+}
+</code></pre>
+</li>
+</ul>
+<p>Both of these options will produce the same list view, as shown in the following screenshot. (The list view shows the string representation of each item, because a data template isn't defined for this exercise.)</p>
+<p><img src="images/listview-basic-code-example-final.png" alt="Screenshot displaying a simple list view with the ItemsSource property set."></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Without a defined data template, custom class objects will appear in the list view with their string value only if they have a defined <a href="/uwp/api/windows.foundation.istringable.tostring">ToString</a> method.</p>
+</div>
+<p>The next section goes into greater detail about how to visually represent simple and custom class items properly in a ListView or GridView template.</p>
+<p>For more info about data binding, see <a href="/windows/uwp/data-binding/data-binding-quickstart">Data binding overview</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you need to show grouped data in your list view, you must bind to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.CollectionViewSource">CollectionViewSource</a> class. CollectionViewSource acts as a proxy for the collection class in XAML and enables grouping support. For more info, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.CollectionViewSource">CollectionViewSource</a>.</p>
+</div>
+<h2 id="customize-the-look-with-a-data-template">Customize the look with a data template</h2>
+<p>By using a data template in a ListView or GridView control, you can define how the items and data are to be visualized. By default, a data item is displayed in the list view as the string representation of the data object it's bound to. You can show the string representation of a particular property of the data item by setting <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.displaymemberpath">DisplayMemberPath</a> to that property.</p>
+<p>However, you might ordinarily want to show a richer presentation of your data. To specify how items in the list view or grid view are to be displayed, you create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate">DataTemplate</a> class. The XAML in DataTemplate defines the layout and appearance of the controls that are used to display an individual item. The controls in the layout can be bound to the properties of a data object, or they can have static content that's defined inline.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When you use the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">x:Bind markup extension</a> in DataTemplate, you have to specify the data type (<code>x:DataType</code>) on the data template.</p>
+</div>
+<h4 id="a-simple-listview-data-template">A simple ListView data template</h4>
+<p>In this example, the data item is a simple string. To add an image to the left of the string, and to display the string in teal, you define DataTemplate inline within the ListView definition. This is the same ListView control that you created earlier by using option 1 under method 1.</p>
+<pre><code class="lang-xaml">&lt;!--No corresponding code is needed for this example.--&gt;
+&lt;ListView x:Name=&quot;FruitsList&quot;&gt;
+                &lt;ListView.ItemTemplate&gt;
+                    &lt;DataTemplate x:DataType=&quot;x:String&quot;&gt;
+                        &lt;Grid&gt;
+                            &lt;Grid.ColumnDefinitions&gt;
+                                &lt;ColumnDefinition Width=&quot;47&quot;/&gt;
+                                &lt;ColumnDefinition/&gt;
+                            &lt;/Grid.ColumnDefinitions&gt;
+                            &lt;Image Source=&quot;Assets/placeholder.png&quot; Width=&quot;32&quot; Height=&quot;32&quot;
+                                HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+                            &lt;TextBlock Text=&quot;{x:Bind}&quot; Foreground=&quot;Teal&quot; FontSize=&quot;14&quot;
+                                Grid.Column=&quot;1&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+                        &lt;/Grid&gt;
+                    &lt;/DataTemplate&gt;
+                &lt;/ListView.ItemTemplate&gt;
+                &lt;x:String&gt;Apricot&lt;/x:String&gt;
+                &lt;x:String&gt;Banana&lt;/x:String&gt;
+                &lt;x:String&gt;Cherry&lt;/x:String&gt;
+                &lt;x:String&gt;Orange&lt;/x:String&gt;
+                &lt;x:String&gt;Strawberry&lt;/x:String&gt;
+            &lt;/ListView&gt;
+
+</code></pre>
+<p>Here's how the data items are displayed when you apply a simple ListView data template:</p>
+<p><img src="images/listview-w-datatemplate1-final.png" alt="Screenshot of list that's displayed after a simple ListView data template is applied."></p>
+<h4 id="a-listview-data-template-for-custom-class-objects">A ListView data template for custom class objects</h4>
+<p>In the following example, the data item is a Contact object. To add the contact image to the left of the Contact name and company, you define DataTemplate inline within the ListView definition. This ListView data template was created in option 2 under method 2, as shown earlier.</p>
+<pre><code class="lang-xaml">&lt;ListView x:Name=&quot;ContactsLV&quot; ItemsSource=&quot;{x:Bind Contacts}&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;local:Contact&quot;&gt;
+            &lt;Grid&gt;
+                &lt;Grid.RowDefinitions&gt;
+                    &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                    &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                &lt;/Grid.RowDefinitions&gt;
+                &lt;Grid.ColumnDefinitions&gt;
+                    &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;*&quot;/&gt;
+                &lt;/Grid.ColumnDefinitions&gt;
+                &lt;Image Grid.Column=&quot;0&quot; Grid.RowSpan=&quot;2&quot; Source=&quot;Assets/grey-placeholder.png&quot; Width=&quot;32&quot;
+                    Height=&quot;32&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;&lt;/Image&gt;
+                &lt;TextBlock Grid.Column=&quot;1&quot; Text=&quot;{x:Bind Name}&quot; Margin=&quot;12,6,0,0&quot;
+                    Style=&quot;{ThemeResource BaseTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock  Grid.Column=&quot;1&quot; Grid.Row=&quot;1&quot; Text=&quot;{x:Bind Company}&quot; Margin=&quot;12,0,0,6&quot;
+                    Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;/&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p>Here's how the data items are displayed when you apply a ListView data template for custom class objects:</p>
+<p><img src="images/listview-customclass-datatemplate-final.png" alt="Screenshot of a list that's displayed after a ListView data template for custom class objects is applied."></p>
+<p>Data templates are the primary way you define the look of your ListView. They can also significantly affect performance if your list holds a large number of items.</p>
+<p>You can define your data template inline within the ListView or GridView definition, as shown in the preceding code, or separately in a Resources section. If you define it outside the ListView or GridView definition, you must give the data template an <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key</a> attribute and assign it to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate</a> property of the ListView or GridView by using that key.</p>
+<p>For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see <a href="item-containers-templates.html">Item containers and templates</a>.</p>
+<h2 id="change-the-layout-of-items">Change the layout of items</h2>
+<p>When you add items to a ListView or GridView control, it automatically wraps each item in an item container and then lays out all of the item containers. How these item containers are laid out depends on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel">ItemsPanel</a> property of the control.</p>
+<ul>
+<li><p><strong>ListView</strong>, by default, uses <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel">ItemsStackPanel</a>, which produces a vertical list:</p>
+<p><img src="images/listview-simple.png" alt="Screenshot of a simple list view displaying a vertical list of items."></p>
+</li>
+<li><p><strong>GridView</strong> uses <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemswrapgrid">ItemsWrapGrid</a>, which adds items horizontally, and wraps and scrolls vertically:</p>
+<p><img src="images/gridview-simple.png" alt="Screenshot of a simple grid view displaying a horizontal list of items."></p>
+</li>
+</ul>
+<p>You can modify the layout of items by adjusting the properties on the items panel, or you can replace the default panel with another panel.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you change ItemsPanel, do <em>not</em> disable virtualization. Both ItemsStackPanel and ItemsWrapGrid support virtualization, so these classes are safe to use. If you use any other panel, you might disable virtualization and slow the performance of the list view. For more info, see the list view articles under <a href="/windows/uwp/debug-test-perf/performance-and-xaml-ui">Performance</a>.</p>
+</div>
+<p>This example shows how to make a ListView control lay out its item containers in a horizontal list by changing the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel.orientation">Orientation</a> property of ItemsStackPanel.</p>
+<p>Because the list view scrolls vertically, by default, you also need to adjust some properties on the list view's internal <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> to make it scroll horizontally.</p>
+<ul>
+<li>Change <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.horizontalscrollmode">ScrollViewer.HorizontalScrollMode</a> to <strong>Enabled</strong> or <strong>Auto</strong>.</li>
+<li>Change <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility">ScrollViewer.HorizontalScrollBarVisibility</a> to <strong>Auto</strong>.</li>
+<li>Change <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.verticalscrollmode">ScrollViewer.VerticalScrollMode</a> to <strong>Disabled</strong>.</li>
+<li>Change <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility">ScrollViewer.VerticalScrollBarVisibility</a> to <strong>Hidden</strong>.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The following examples are shown with the list view width unconstrained, so the horizontal scrollbars aren't displayed. If you run this code, you can set <code>Width=&quot;180&quot;</code> for ListView to display the scrollbars.</p>
+</div>
+<pre><code class="lang-xaml">&lt;ListView Height=&quot;60&quot;
+          ScrollViewer.HorizontalScrollMode=&quot;Enabled&quot;
+          ScrollViewer.HorizontalScrollBarVisibility=&quot;Auto&quot;
+          ScrollViewer.VerticalScrollMode=&quot;Disabled&quot;
+          ScrollViewer.VerticalScrollBarVisibility=&quot;Hidden&quot;&gt;
+    &lt;ListView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsStackPanel Orientation=&quot;Horizontal&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/ListView.ItemsPanel&gt;
+    &lt;x:String&gt;Apricot&lt;/x:String&gt;
+    &lt;x:String&gt;Banana&lt;/x:String&gt;
+    &lt;x:String&gt;Cherry&lt;/x:String&gt;
+    &lt;x:String&gt;Orange&lt;/x:String&gt;
+    &lt;x:String&gt;Strawberry&lt;/x:String&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p>Here's how the list is displayed:</p>
+<p><img src="images/listview-horizontal2-final.png" alt="Screenshot of a horizontal list view."></p>
+<p>In the next example, ListView lays out items in a vertical wrapping list by using ItemsWrapGrid instead of ItemsStackPanel.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must constrain the height of the list view to force the control to wrap the containers.</p>
+</div>
+<pre><code class="lang-xaml">&lt;ListView Height=&quot;100&quot;
+          ScrollViewer.HorizontalScrollMode=&quot;Enabled&quot;
+          ScrollViewer.HorizontalScrollBarVisibility=&quot;Auto&quot;
+          ScrollViewer.VerticalScrollMode=&quot;Disabled&quot;
+          ScrollViewer.VerticalScrollBarVisibility=&quot;Hidden&quot;&gt;
+    &lt;ListView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/ListView.ItemsPanel&gt;
+    &lt;x:String&gt;Apricot&lt;/x:String&gt;
+    &lt;x:String&gt;Banana&lt;/x:String&gt;
+    &lt;x:String&gt;Cherry&lt;/x:String&gt;
+    &lt;x:String&gt;Orange&lt;/x:String&gt;
+    &lt;x:String&gt;Strawberry&lt;/x:String&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p>Here's how the list is displayed:</p>
+<p><img src="images/listview-itemswrapgrid2-final.png" alt="Screenshot of a list view with a grid layout."></p>
+<p>If you show grouped data in your list view, ItemsPanel determines how the item groups are laid out, not how the individual items are laid out. For example, if you use the previously shown horizontal ItemsStackPanel to show grouped data, the groups are arranged horizontally, but the items in each group are still stacked vertically, as shown here:</p>
+<p><img src="images/listview-horizontal-groups.png" alt="Screenshot of a grouped horizontal list view.">.</p>
+<h2 id="item-selection-and-interaction">Item selection and interaction</h2>
+<p>You can choose from a variety of ways to let users interact with a list view. By default, users can select a single item. You can change the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode">SelectionMode</a> property to enable multi-selection or to disable selection. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.isitemclickenabled">IsItemClickEnabled</a> property so that users click an item (for example, a button) to invoke an action instead of selecting the item.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Both ListView and GridView use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewselectionmode">ListViewSelectionMode</a> enumeration for their SelectionMode properties. IsItemClickEnabled is set to <strong>False</strong> by default, so you need only to set it to enable click mode.</p>
+</div>
+<p>This table shows the ways a user can interact with a list view, and how you can respond to the interaction.</p>
+<table>
+<thead>
+<tr>
+<th>To enable this interaction:</th>
+<th>Use these settings:</th>
+<th>Handle this event:</th>
+<th>Use this property to get the selected item:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No interaction</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode">SelectionMode</a>=&quot;None&quot;<br><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.isitemclickenabled">IsItemClickEnabled</a>=&quot;False&quot;</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Single selection</td>
+<td>SelectionMode=&quot;Single&quot;<br>IsItemClickEnabled=&quot;False&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged">SelectionChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem">SelectedItem</a><br><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedindex">SelectedIndex</a></td>
+</tr>
+<tr>
+<td>Multiple selection</td>
+<td>SelectionMode=&quot;Multiple&quot;<br>IsItemClickEnabled=&quot;False&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged">SelectionChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selecteditems">SelectedItems</a></td>
+</tr>
+<tr>
+<td>Extended selection</td>
+<td>SelectionMode=&quot;Extended&quot;<br>IsItemClickEnabled=&quot;False&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged">SelectionChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selecteditems">SelectedItems</a></td>
+</tr>
+<tr>
+<td>Click</td>
+<td>SelectionMode=&quot;None&quot;<br>IsItemClickEnabled=&quot;True&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.itemclick">ItemClick</a></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can enable IsItemClickEnabled to raise an ItemClick event while SelectionMode is also set to <strong>Single</strong>, <strong>Multiple</strong>, or <strong>Extended</strong>. If you do this, the ItemClick event is raised first, and then the SelectionChanged event is raised. In some cases (for example, if you go to another page in the ItemClick event handler), the SelectionChanged event isn't raised and the item isn't selected.</p>
+</div>
+<p>You can set these properties in XAML or in code, as shown here:</p>
+<pre><code class="lang-xaml">&lt;ListView x:Name=&quot;myListView&quot; SelectionMode=&quot;Multiple&quot;/&gt;
+
+&lt;GridView x:Name=&quot;myGridView&quot; SelectionMode=&quot;None&quot; IsItemClickEnabled=&quot;True&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">myListView.SelectionMode = ListViewSelectionMode.Multiple;
+
+myGridView.SelectionMode = ListViewSelectionMode.None;
+myGridView.IsItemClickEnabled = true;
+</code></pre>
+<h3 id="read-only">Read-only</h3>
+<p>You can set the SelectionMode property to <strong>ListViewSelectionMode.None</strong> to disable item selection. This puts the control in read-only mode, so that it's used for displaying data, but not for interacting with it. That is, the item selection is disabled, but the control itself is not.</p>
+<h3 id="single-selection">Single selection</h3>
+<p>This table describes keyboard, mouse, and touch interactions when SelectionMode is set to <strong>Single</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier key</th>
+<th>Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td><li>Users can select a single item by using the space bar, mouse clicks, or taps.</li></td>
+</tr>
+<tr>
+<td>Ctrl</td>
+<td><li>Users can deselect a single item by using the space bar, mouse clicks, or taps.<li>By using the arrow keys, users can move the focus independent of the selection.</li></td>
+</tr>
+</tbody>
+</table>
+<p>When SelectionMode is set to <strong>Single</strong>, you can get the selected data item from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem">SelectedItem</a> property. You can get the index in the collection of the selected item by using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedindex">SelectedIndex</a> property. If no item is selected, SelectedItem is <strong>null</strong>, and SelectedIndex is -1.</p>
+<p>If you try to set an item that's not in the Items collection as SelectedItem, the operation is ignored and SelectedItem is <strong>null</strong>. However, if you try to set SelectedIndex to an index that's out of the range of the items in the list, a System.ArgumentException exception occurs.</p>
+<h3 id="multiple-selection">Multiple selection</h3>
+<p>This table describes the keyboard, mouse, and touch interactions when SelectionMode is set to <strong>Multiple</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier key</th>
+<th>Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td><li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of their selection.</li></td>
+</tr>
+<tr>
+<td>Shift</td>
+<td><li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key.</li></td>
+</tr>
+</tbody>
+</table>
+<h3 id="extended-selection">Extended selection</h3>
+<p>This table describes the keyboard, mouse, and touch interactions when SelectionMode is set to <strong>Extended</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier key</th>
+<th>Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td><li>The behavior is the same as <strong>Single</strong> selection.</li></td>
+</tr>
+<tr>
+<td>Ctrl</td>
+<td><li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of the selection.</li></td>
+</tr>
+<tr>
+<td>Shift</td>
+<td><li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key.</li></td>
+</tr>
+</tbody>
+</table>
+<p>When SelectionMode is set to <strong>Multiple</strong> or <strong>Extended</strong>, you can get the selected data items from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selecteditems">SelectedItems</a> property.</p>
+<p>The SelectedIndex, SelectedItem, and SelectedItems properties are synchronized. For example, if you set SelectedIndex to -1, SelectedItem is set to <strong>null</strong> and SelectedItems is empty. And if you set SelectedItem to <strong>null</strong>, SelectedIndex is set to -1 and SelectedItems is empty.</p>
+<p>In multi-select mode, SelectedItem contains the item that was selected first, and Selectedindex contains the index of the item that was selected first.</p>
+<h3 id="respond-to-selection-changes">Respond to selection changes</h3>
+<p>To respond to selection changes in a list view, handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged">SelectionChanged</a> event. In the event handler code, you can get the list of selected items from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.addeditems">SelectionChangedEventArgs.AddedItems</a> property. You can get any items that were deselected from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.removeditems">SelectionChangedEventArgs.RemovedItems</a> property. The AddedItems and RemovedItems collections contain at most one item, unless users select a range of items by holding down the Shift key.</p>
+<p>The following example shows how to handle the SelectionChanged event and access the various Item collections:</p>
+<pre><code class="lang-xaml">&lt;StackPanel HorizontalAlignment=&quot;Right&quot;&gt;
+    &lt;ListView x:Name=&quot;listView1&quot; SelectionMode=&quot;Multiple&quot;
+              SelectionChanged=&quot;ListView1_SelectionChanged&quot;&gt;
+        &lt;x:String&gt;Apricot&lt;/x:String&gt;
+        &lt;x:String&gt;Banana&lt;/x:String&gt;
+        &lt;x:String&gt;Cherry&lt;/x:String&gt;
+        &lt;x:String&gt;Orange&lt;/x:String&gt;
+        &lt;x:String&gt;Strawberry&lt;/x:String&gt;
+    &lt;/ListView&gt;
+    &lt;TextBlock x:Name=&quot;selectedItem&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;selectedIndex&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;selectedItemCount&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;addedItems&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;removedItems&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    if (listView1.SelectedItem != null)
+    {
+        selectedItem.Text =
+            &quot;Selected item: &quot; + listView1.SelectedItem.ToString();
+    }
+    else
+    {
+        selectedItem.Text =
+            &quot;Selected item: null&quot;;
+    }
+    selectedIndex.Text =
+        &quot;Selected index: &quot; + listView1.SelectedIndex.ToString();
+    selectedItemCount.Text =
+        &quot;Items selected: &quot; + listView1.SelectedItems.Count.ToString();
+    addedItems.Text =
+        &quot;Added: &quot; + e.AddedItems.Count.ToString();
+    removedItems.Text =
+        &quot;Removed: &quot; + e.RemovedItems.Count.ToString();
+}
+</code></pre>
+<h3 id="click-mode">Click mode</h3>
+<p>You can change a list view so that users click buttons and other items instead of selecting them. For example, this is useful if your app opens a new page when users click an item in a list or grid.</p>
+<p>To enable this behavior:</p>
+<ul>
+<li>Set SelectionMode to <strong>None</strong>.</li>
+<li>Set IsItemClickEnabled to <strong>True</strong>.</li>
+<li>Handle the ItemClick event to do something when users click an item.</li>
+</ul>
+<p>Here's a list view with clickable items. The code in the ItemClick event handler opens a new page in the app.</p>
+<pre><code class="lang-xaml">&lt;ListView SelectionMode=&quot;None&quot;
+          IsItemClickEnabled=&quot;True&quot;
+          ItemClick=&quot;ListView1_ItemClick&quot;&gt;
+    &lt;x:String&gt;Page 1&lt;/x:String&gt;
+    &lt;x:String&gt;Page 2&lt;/x:String&gt;
+    &lt;x:String&gt;Page 3&lt;/x:String&gt;
+    &lt;x:String&gt;Page 4&lt;/x:String&gt;
+    &lt;x:String&gt;Page 5&lt;/x:String&gt;
+&lt;/ListView&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ListView1_ItemClick(object sender, ItemClickEventArgs e)
+{
+    switch (e.ClickedItem.ToString())
+    {
+        case &quot;Page 1&quot;:
+            this.Frame.Navigate(typeof(Page1));
+            break;
+
+        case &quot;Page 2&quot;:
+            this.Frame.Navigate(typeof(Page2));
+            break;
+
+        case &quot;Page 3&quot;:
+            this.Frame.Navigate(typeof(Page3));
+            break;
+
+        case &quot;Page 4&quot;:
+            this.Frame.Navigate(typeof(Page4));
+            break;
+
+        case &quot;Page 5&quot;:
+            this.Frame.Navigate(typeof(Page5));
+            break;
+
+        default:
+            break;
+    }
+}
+</code></pre>
+<h3 id="select-a-range-of-items-programmatically">Select a range of items programmatically</h3>
+<p>Sometimes, you might need to manipulate a ListView item selection programmatically. For example, you might display a <strong>Select all</strong> button to let users select all items in a list. In this case, it's usually not very efficient to add and remove items from the SelectedItems collection one by one. Each item change causes a SelectionChanged event, and when you work with the items directly instead of working with index values, the item is de-virtualized.</p>
+<p>It's more efficient to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectall">SelectAll</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectrange">SelectRange</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.deselectrange">DeselectRange</a> methods to modify the selection than to use the SelectedItems property. These methods select (or deselect) items by using ranges of item indexes. Items that are virtualized remain virtualized, because only the index is used. All items in the specified range are selected (or deselected), regardless of their original selection state. The SelectionChanged event occurs only once for each call to these methods.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You should call these methods only when the SelectionMode property is set to <strong>Multiple</strong> or <strong>Extended</strong>. If you call SelectRange when SelectionMode is <strong>Single</strong> or <strong>None</strong>, an exception is thrown.</p>
+</div>
+<p>When you select items by using index ranges, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectedranges">SelectedRanges</a> property to get all selected ranges in the list.</p>
+<p>If the ItemsSource property implements <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.iitemsrangeinfo">IItemsRangeInfo</a>, and you use these methods to modify the selection, the AddedItems and RemovedItems properties aren't set in SelectionChangedEventArgs. Setting these properties requires de-virtualizing the item object. Use the SelectedRanges property to get the items instead.</p>
+<p>You can select all items in a collection by calling the SelectAll method. However, there is no corresponding method to deselect all items. You can deselect all items by calling DeselectRange and passing an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.itemindexrange">ItemIndexRange</a> with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.itemindexrange.firstindex">FirstIndex</a> value of 0 and a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.itemindexrange.length">Length</a> value equal to the number of items in the collection. This is shown in the following example, along with an option to select all items.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Width=&quot;160&quot;&gt;
+    &lt;Button Content=&quot;Select all&quot; Click=&quot;SelectAllButton_Click&quot;/&gt;
+    &lt;Button Content=&quot;Deselect all&quot; Click=&quot;DeselectAllButton_Click&quot;/&gt;
+    &lt;ListView x:Name=&quot;listView1&quot; SelectionMode=&quot;Multiple&quot;&gt;
+        &lt;x:String&gt;Apricot&lt;/x:String&gt;
+        &lt;x:String&gt;Banana&lt;/x:String&gt;
+        &lt;x:String&gt;Cherry&lt;/x:String&gt;
+        &lt;x:String&gt;Orange&lt;/x:String&gt;
+        &lt;x:String&gt;Strawberry&lt;/x:String&gt;
+    &lt;/ListView&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void SelectAllButton_Click(object sender, RoutedEventArgs e)
+{
+    if (listView1.SelectionMode == ListViewSelectionMode.Multiple ||
+        listView1.SelectionMode == ListViewSelectionMode.Extended)
+    {
+        listView1.SelectAll();
+    }
+}
+
+private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
+{
+    if (listView1.SelectionMode == ListViewSelectionMode.Multiple ||
+        listView1.SelectionMode == ListViewSelectionMode.Extended)
+    {
+        listView1.DeselectRange(new ItemIndexRange(0, (uint)listView1.Items.Count));
+    }
+}
+</code></pre>
+<p>For info about how to change the look of selected items, see <a href="item-containers-templates.html">Item containers and templates</a>.</p>
+<h3 id="drag-and-drop">Drag and drop</h3>
+<p>ListView and GridView controls support dragging and dropping items within their own controls, and between themselves and other ListView and GridView controls. For more info about implementing drag and drop functionality, see <a href="../input/drag-and-drop.html">Drag and drop</a>.</p>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for these controls exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.listview">ListView class</a>, <a href="/uwp/api/windows.ui.xaml.controls.gridview">GridView class</a>, <a href="/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource">ItemsSource property</a>, <a href="/uwp/api/windows.ui.xaml.controls.itemscontrol.items">Items property</a></li>
+<li>Open the WinUI 2 Gallery app and see the <a href="winui2gallery:/item/ListView">ListView</a> or the <a href="winui2gallery:/item/GridView">GridView</a> in action. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<h3 id="get-the-sample-code">Get the sample code</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView">XAML ListView and GridView sample</a>: Demonstrates the ListView and GridView controls.</li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop">XAML drag and drop sample</a>: Demonstrates drag and drop with the ListView control.</li>
+</ul>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="lists.html">Lists</a></li>
+<li><a href="item-containers-templates.html">Item containers and templates</a></li>
+<li><a href="../input/drag-and-drop.html">Drag and drop</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/listview-and-gridview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

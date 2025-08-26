@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tutorial on Vue for beginners </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tutorial on Vue for beginners ">
+    
+    <meta name="description" content="A guide to help beginners get started with Vue.js development on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-vuejs-for-beginners">Tutorial: Vue.js for Beginners</h1>
+
+<p>If you're brand new to using Vue.js, this guide will help you to get started with some basics.</p>
+<ul>
+<li><a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-hello-world">Try the Vue.js HelloWorld code sandbox</a></li>
+<li><a href="#try-nodejs-with-visual-studio-code">Try using Node.js in Visual Studio Code</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>You must first install Vue.js on <a href="vue-on-windows.html">Windows</a> or on <a href="vue-on-wsl.html">Windows Subsystem for Linux</a>.</li>
+</ul>
+<h2 id="try-nodejs-with-visual-studio-code">Try NodeJS with Visual Studio Code</h2>
+<p>If you don't already have it, <a href="https://code.visualstudio.com/download">install VS Code</a>. We recommend installing VS Code on Windows, regardless of whether you plan to use Vue on Windows or WSL.</p>
+<ol>
+<li><p>Open your command line and create a new directory: <code>mkdir HelloVue</code>, then enter the directory: <code>cd HelloVue</code></p>
+</li>
+<li><p>Install the Vue CLI: <code>npm install -g @vue/cli</code></p>
+</li>
+<li><p>Create your Vue app: <code>vue create hello-vue-app</code></p>
+<p>You'll need to choose whether to use <a href="https://v3.vuejs.org/guide/migration/introduction.html#overview">Vue 2  or Vue 3 Preview</a>, or manually select the features you want.</p>
+<p><img src="../../images/vue-cli-preset.png" alt="Vue CLI preset"></p>
+</li>
+<li><p>Open the directory of your new hello-vue-app: <code>cd hello-vue-app</code></p>
+</li>
+<li><p>Try running you new Vue app in your web browser: <code>npm run serve</code></p>
+<p>You should see &quot;Welcome to your Vue.js App&quot; on http://localhost:8080 in your browser. You can press <code>Ctrl+C</code> to stop the vue-cli-service server.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If using WSL (with Ubuntu or your favorite Linux distribution) for this tutorial, you'll need to make sure that you have the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl">Remote - WSL Extension</a> installed for the best experience running and editing your code with VS remote server.</p>
+</div>
+</li>
+<li><p>Try updating the welcome message by opening your Vue app's source code in VS Code, enter: <code>code .</code></p>
+</li>
+<li><p>VS Code will launch and display your Vue application in the File Explorer. Run your app in the terminal again with <code>npm run serve</code> and have your web browser open to the localhost so that you can see the Vue page welcome page displayed. Find the <code>App.vue</code> file in VS Code. Try changing &quot;Welcome to your Vue.js App&quot; to &quot;Welcome to the Jungle!&quot;. You will see your Vue app &quot;hot reload&quot; as soon as you save your change.</p>
+<p><img src="../../images/vue-app-update.gif" alt="Vue app hot reload on change animated gif"></p>
+</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><p><a href="https://code.visualstudio.com/docs/nodejs/vuejs-tutorial">Using Vue in Visual Studio Code</a>: Find more about using Vue with VS Code, including the Vetur extension that provides Vue syntax highlighting, IntelliSense, debugging support, and more.</p>
+</li>
+<li><p><a href="https://vuejs.org/v2/guide/#What-is-Vue-js">Vue.js docs</a></p>
+</li>
+<li><p><a href="https://vuejs.org/v2/guide/comparison.html">Vue comparison with other frameworks like React or Angular</a></p>
+</li>
+<li><p><a href="vue-overview.html">Vue.js overview</a></p>
+</li>
+<li><p><a href="/training/paths/vue-first-steps/">Take your first steps with Vue.js</a> learning path</p>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/vue-beginners-tutorial.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

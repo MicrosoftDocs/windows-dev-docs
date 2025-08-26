@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Contextual commanding </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Contextual commanding ">
+    
+    <meta name="description" content="How to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="contextual-commanding-for-collections-and-lists">Contextual commanding for collections and lists</h1>
+
+<p>Many apps contain collections of content in the form of lists, grids, and trees that users can manipulate. For example, users might be able to delete, rename, flag, or refresh items. This article shows you how to use contextual commands to implement these sorts of actions in a way that provides the best possible experience for all input types.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand">ICommand interface</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.ContextFlyout">UIElement.ContextFlyout property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged">INotifyPropertyChanged interface</a></p>
+</blockquote>
+<p><img src="images/contextual-command-add-favorites.png" alt="Use a variety of inputs to perform the Favorite command"></p>
+<h2 id="creating-commands-for-all-input-types">Creating commands for all input types</h2>
+<p>Because users can interact with a Windows app using <a href="../devices/index.html">a broad range of devices and inputs</a>, your app should expose commands though both input-agnostic context menus and input-specific accelerators. Including both lets the user quickly invoke commands on content, regardless of input or device type.</p>
+<p>This table shows some typical collection commands and ways to expose those commands.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Input-agnostic</th>
+<th>Mouse accelerator</th>
+<th>Keyboard accelerator</th>
+<th>Touch accelerator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete item</td>
+<td>Context menu</td>
+<td>Hover button</td>
+<td>DEL key</td>
+<td>Swipe to delete</td>
+</tr>
+<tr>
+<td>Flag item</td>
+<td>Context menu</td>
+<td>Hover button</td>
+<td>Ctrl+Shift+G</td>
+<td>Swipe to flag</td>
+</tr>
+<tr>
+<td>Refresh data</td>
+<td>Context menu</td>
+<td>N/A</td>
+<td>F5 key</td>
+<td>Pull to refresh</td>
+</tr>
+<tr>
+<td>Favorite an item</td>
+<td>Context menu</td>
+<td>Hover button</td>
+<td>F, Ctrl+S</td>
+<td>Swipe to favorite</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>In general, you should make all commands for an item available in the item's <a href="menus-and-context-menus.html">context menu</a>.</strong> Context menus are accessible to users regardless of input type, and should contain all of the contextual commands that user can perform.</p>
+</li>
+<li><p><strong>For frequently accessed commands, consider using input accelerators.</strong> Input accelerators let the user perform actions quickly, based on their input device. Input accelerators include:</p>
+<ul>
+<li>Swipe-to-action (touch accelerator)</li>
+<li>Pull to refresh data (touch accelerator)</li>
+<li>Keyboard shortcuts (keyboard accelerator)</li>
+<li>Access keys (keyboard accelerator)</li>
+<li>Mouse &amp; Pen hover buttons (pointer accelerator)</li>
+</ul>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Users should be able to access all commands from any type of device. For example, if your app's commands are only exposed through hover button pointer accelerators, touch users won't be able to access them. At a minimum, use a context menu to provide access to all commands.</p>
+</div>
+<h2 id="example-the-podcastobject-data-model">Example: The PodcastObject data model</h2>
+<p>To demonstrate our commanding recommendations, this article creates a list of podcasts for a podcast app. The example code demonstrate how to enable the user to &quot;favorite&quot; a particular podcast from a list.</p>
+<p>Here's the definition for the podcast object we'll be working with:</p>
+<pre><code class="lang-csharp">public class PodcastObject : INotifyPropertyChanged
+{
+    // The title of the podcast
+    public String Title { get; set; }
+
+    // The podcast's description
+    public String Description { get; set; }
+
+    // Describes if the user has set this podcast as a favorite
+    public bool IsFavorite
+    {
+        get
+        {
+            return _isFavorite;
+        }
+        set
+        {
+            _isFavorite = value;
+            OnPropertyChanged(&quot;IsFavorite&quot;);
+        }
+    }
+    private bool _isFavorite = false;
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    private void OnPropertyChanged(String property)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+    }
+}
+</code></pre>
+<p>Notice that the PodcastObject implements <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.INotifyPropertyChanged">INotifyPropertyChanged</a> to respond to property changes when the user toggles the IsFavorite property.</p>
+<h2 id="defining-commands-with-the-icommand-interface">Defining commands with the ICommand interface</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand">ICommand interface</a> helps you to define a command that's  available for multiple input types. For example, instead of writing the same code for a delete command in two different event handlers, one for when the user presses the Delete key and one for when the user right clicks &quot;Delete&quot; in a context menu, you can implement your delete logic once, as an <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand">ICommand</a>,  and then make it available to different input types.</p>
+<p>We need to define the ICommand that represents the &quot;Favorite&quot; action. We will use the command's <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand.Execute">Execute</a> method to favorite a podcast. The particular podcast will be provided to the execute method via the command's parameter, which can be bound using the CommandParameter property.</p>
+<pre><code class="lang-csharp">public class FavoriteCommand: ICommand
+{
+    public event EventHandler CanExecuteChanged;
+
+    public bool CanExecute(object parameter)
+    {
+        return true;
+    }
+    public void Execute(object parameter)
+    {
+        // Perform the logic to &quot;favorite&quot; an item.
+        (parameter as PodcastObject).IsFavorite = true;
+    }
+}
+</code></pre>
+<p>To use the same command with multiple collections and elements, you can store the command as a resource on the page or on the app.</p>
+<pre><code class="lang-xaml">&lt;Application.Resources&gt;
+    &lt;local:FavoriteCommand x:Key=&quot;favoriteCommand&quot; /&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<p>To execute the command, you call its <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand.Execute">Execute</a> method.</p>
+<pre><code class="lang-csharp">// Favorite the item using the defined command
+var favoriteCommand = Application.Current.Resources[&quot;favoriteCommand&quot;] as ICommand;
+favoriteCommand.Execute(PodcastObject);
+</code></pre>
+<h2 id="creating-a-usercontrol-to-respond-to-a-variety-of-inputs">Creating a UserControl to respond to a variety of inputs</h2>
+<p>When you have a list of items and each of those items should respond to multiple inputs, you can simplify your code by defining a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.UserControl">UserControl</a> for the item and using it to define your items' context menu and event handlers.</p>
+<p>To create a UserControl in Visual Studio:</p>
+<ol>
+<li>In the Solution Explorer, right click the project. A context menu appears.</li>
+<li>Select <strong>Add &gt; New Item...</strong> <br>The <strong>Add New Item</strong> dialog appears.</li>
+<li>Select UserControl from the list of items. Give it the name you want and click <strong>Add</strong>. Visual Studio will generate a stub UserControl for you.</li>
+</ol>
+<p>In our podcast example, each podcast will be displayed in a list, which will expose a variety of ways to &quot;Favorite&quot; a podcast. The user will be able to perform the following actions to &quot;Favorite&quot; the podcast:</p>
+<ul>
+<li>Invoke a context menu</li>
+<li>Perform keyboard shortcuts</li>
+<li>Show a hover button</li>
+<li>Perform a swipe gesture</li>
+</ul>
+<p>In order to encapsulate these behaviors and use the FavoriteCommand, let's create a new <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.UserControl">UserControl</a> named &quot;PodcastUserControl&quot; to represent a podcast in the list.</p>
+<p>The PodcastUserControl displays the fields of the PodcastObject as TextBlocks, and responds to various user interactions. We will reference and expand upon the PodcastUserControl throughout this article.</p>
+<p><strong>PodcastUserControl.xaml</strong></p>
+<pre><code class="lang-xaml">&lt;UserControl
+    x:Class=&quot;ContextCommanding.PodcastUserControl&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;
+    IsTabStop=&quot;True&quot; UseSystemFocusVisuals=&quot;True&quot;
+    &gt;
+    &lt;Grid Margin=&quot;12,0,12,0&quot;&gt;
+        &lt;StackPanel&gt;
+            &lt;TextBlock Text=&quot;{x:Bind PodcastObject.Title, Mode=OneWay}&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot; /&gt;
+            &lt;TextBlock Text=&quot;{x:Bind PodcastObject.Description, Mode=OneWay}&quot; Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; /&gt;
+            &lt;TextBlock Text=&quot;{x:Bind PodcastObject.IsFavorite, Mode=OneWay}&quot; Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/UserControl&gt;
+</code></pre>
+<p><strong>PodcastUserControl.xaml.cs</strong></p>
+<pre><code class="lang-csharp">public sealed partial class PodcastUserControl : UserControl
+{
+    public static readonly DependencyProperty PodcastObjectProperty =
+        DependencyProperty.Register(
+            &quot;PodcastObject&quot;,
+            typeof(PodcastObject),
+            typeof(PodcastUserControl),
+            new PropertyMetadata(null));
+
+    public PodcastObject PodcastObject
+    {
+        get { return (PodcastObject)GetValue(PodcastObjectProperty); }
+        set { SetValue(PodcastObjectProperty, value); }
+    }
+
+    public PodcastUserControl()
+    {
+        this.InitializeComponent();
+
+        // TODO: We will add event handlers here.
+    }
+}
+</code></pre>
+<p>Notice that the PodcastUserControl maintains a reference to the PodcastObject as a DependencyProperty. This enables us to bind PodcastObjects to the PodcastUserControl.</p>
+<p>After you have generated some PodcastObjects, you can create a list of podcasts by binding the PodcastObjects to a ListView. The PodcastUserControl objects describe the visualization of the PodcastObjects, and are therefore set using the ListView's ItemTemplate.</p>
+<p><strong>MainPage.xaml</strong></p>
+<pre><code class="lang-xaml">&lt;ListView x:Name=&quot;ListOfPodcasts&quot;
+            ItemsSource=&quot;{x:Bind podcasts}&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;local:PodcastObject&quot;&gt;
+            &lt;local:PodcastUserControl PodcastObject=&quot;{x:Bind Mode=OneWay}&quot; /&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+    &lt;ListView.ItemContainerStyle&gt;
+        &lt;!-- The PodcastUserControl will entirely fill the ListView item and handle tabbing within itself. --&gt;
+        &lt;Style TargetType=&quot;ListViewItem&quot; BasedOn=&quot;{StaticResource ListViewItemRevealStyle}&quot;&gt;
+            &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Stretch&quot; /&gt;
+            &lt;Setter Property=&quot;Padding&quot; Value=&quot;0&quot;/&gt;
+            &lt;Setter Property=&quot;IsTabStop&quot; Value=&quot;False&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/ListView.ItemContainerStyle&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h2 id="creating-context-menus">Creating context menus</h2>
+<p>Context menus display a list of commands or options when the user requests them. Context menus provide contextual commands related to their attached element, and are generally reserved for secondary actions specific to that item.</p>
+<p><img src="images/contextual-command-right-click.png" alt="Show a context menu on the item"></p>
+<p>The user can invoke context menus using these &quot;context actions&quot;:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Context action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mouse</td>
+<td>Right click</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td>Shift+F10, Menu button</td>
+</tr>
+<tr>
+<td>Touch</td>
+<td>Long press on item</td>
+</tr>
+<tr>
+<td>Pen</td>
+<td>Barrel button press, long press on item</td>
+</tr>
+<tr>
+<td>Gamepad</td>
+<td>Menu button</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Since the user can open a context menu regardless of input type, your context menu should contain all of the contextual commands available for the list item.</strong></p>
+<h3 id="contextflyout">ContextFlyout</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.ContextFlyout">ContextFlyout property</a>, defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a &quot;context action&quot; as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.</p>
+<p>See <a href="menus-and-context-menus.html">menus and context menus</a> for help identifying menu vs. context menu scenarios and guidance on when to use <a href="menus.html">menu flyout</a> vs. <a href="command-bar-flyout.html">command bar flyout</a>.</p>
+<p>For this example, we will use MenuFlyout and will start by adding a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParameter bound to the PodcastObject.</p>
+<p><strong>PodcastUserControl.xaml</strong></p>
+<pre><code class="lang-xaml">&lt;UserControl&gt;
+    &lt;UserControl.ContextFlyout&gt;
+        &lt;MenuFlyout&gt;
+            &lt;MenuFlyoutItem Text=&quot;Favorite&quot; Command=&quot;{StaticResource favoriteCommand}&quot; CommandParameter=&quot;{x:Bind PodcastObject, Mode=OneWay}&quot; /&gt;
+        &lt;/MenuFlyout&gt;
+    &lt;/UserControl.ContextFlyout&gt;
+    &lt;Grid Margin=&quot;12,0,12,0&quot;&gt;
+        &lt;!-- ... --&gt;
+    &lt;/Grid&gt;
+&lt;/UserControl&gt;
+
+</code></pre>
+<p>Note that you can also use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.ContextRequested">ContextRequested</a> event to respond to context actions. The ContextRequested event will not fire if a ContextFlyout has been specified.</p>
+<h2 id="creating-input-accelerators">Creating input accelerators</h2>
+<p>Although each item in the collection should have a context menu containing all contextual commands, you might want to enable users to quickly perform a smaller set of frequently performed commands. For example, a mailing app may have secondary commands like Reply, Archive, Move to Folder, Set Flag, and Delete which appear in a context menu, but the most common commands are Delete and Flag. After you have identified which commands are most common, you can use input-based accelerators to make these commands easier for a user to perform.</p>
+<p>In the podcast app, the frequently performed command is the &quot;Favorite&quot; command.</p>
+<h3 id="keyboard-accelerators">Keyboard accelerators</h3>
+<h4 id="shortcuts-and-direct-key-handling">Shortcuts and direct key handling</h4>
+<p><img src="images/contextual-command-keyboard.png" alt="Press Ctrl and F to perform an action"></p>
+<p>Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a <a href="tooltips.html">tooltip</a> to teach the user about the shortcut command.</p>
+<p>Your app can respond when the user presses a key using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.KeyDownEvent">KeyDown</a> event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.</p>
+<p>This example walks through how to add the KeyDown handler to the PodcastUserControl to favorite a podcast when the user presses Ctrl+S or F. It uses the same command as before.</p>
+<p><strong>PodcastUserControl.xaml.cs</strong></p>
+<pre><code class="lang-csharp">// Respond to the F and Ctrl+S keys to favorite the focused item.
+protected override void OnKeyDown(KeyRoutedEventArgs e)
+{
+    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
+    var isCtrlPressed = (ctrlState &amp; CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down || (ctrlState &amp; CoreVirtualKeyStates.Locked) == CoreVirtualKeyStates.Locked;
+
+    if (e.Key == Windows.System.VirtualKey.F || (e.Key == Windows.System.VirtualKey.S &amp;&amp; isCtrlPressed))
+    {
+        // Favorite the item using the defined command
+        var favoriteCommand = Application.Current.Resources[&quot;favoriteCommand&quot;] as ICommand;
+        favoriteCommand.Execute(PodcastObject);
+    }
+}
+</code></pre>
+<h3 id="mouse-accelerators">Mouse accelerators</h3>
+<p><img src="images/contextual-command-hover-to-reveal.png" alt="Hover the mouse over an item to reveal a button"></p>
+<p>Users are familiar with right-click context menus, but you may wish to empower users to perform common commands using only a single click of the mouse. To enable this experience, you can include dedicated buttons on your collection item's canvas. To both empower users to act quickly using mouse, and to minimize visual clutter, you can choose to only reveal these buttons when the user has their pointer within a particular list item.</p>
+<p>In this example, the Favorite command is represented by a button defined directly in the PodcastUserControl. Note that the button in this example uses the same command, FavoriteCommand, as before. To toggle visibility of this button, you can use the VisualStateManager to switch between visual states when the pointer enters and exits the control.</p>
+<p><strong>PodcastUserControl.xaml</strong></p>
+<pre><code class="lang-xaml">&lt;UserControl&gt;
+    &lt;UserControl.ContextFlyout&gt;
+        &lt;!-- ... --&gt;
+    &lt;/UserControl.ContextFlyout&gt;
+    &lt;Grid Margin=&quot;12,0,12,0&quot;&gt;
+        &lt;VisualStateManager.VisualStateGroups&gt;
+            &lt;VisualStateGroup x:Name=&quot;HoveringStates&quot;&gt;
+                &lt;VisualState x:Name=&quot;HoverButtonsShown&quot;&gt;
+                    &lt;VisualState.Setters&gt;
+                        &lt;Setter Target=&quot;hoverArea.Visibility&quot; Value=&quot;Visible&quot; /&gt;
+                    &lt;/VisualState.Setters&gt;
+                &lt;/VisualState&gt;
+                &lt;VisualState x:Name=&quot;HoverButtonsHidden&quot; /&gt;
+            &lt;/VisualStateGroup&gt;
+        &lt;/VisualStateManager.VisualStateGroups&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition Width=&quot;*&quot; /&gt;
+            &lt;ColumnDefinition Width=&quot;Auto&quot; /&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+        &lt;StackPanel&gt;
+            &lt;TextBlock Text=&quot;{x:Bind PodcastObject.Title, Mode=OneWay}&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot; /&gt;
+            &lt;TextBlock Text=&quot;{x:Bind PodcastObject.Description, Mode=OneWay}&quot; Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; /&gt;
+            &lt;TextBlock Text=&quot;{x:Bind PodcastObject.IsFavorite, Mode=OneWay}&quot; Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot;/&gt;
+        &lt;/StackPanel&gt;
+        &lt;Grid Grid.Column=&quot;1&quot; x:Name=&quot;hoverArea&quot; Visibility=&quot;Collapsed&quot; VerticalAlignment=&quot;Stretch&quot;&gt;
+            &lt;AppBarButton Icon=&quot;OutlineStar&quot; Label=&quot;Favorite&quot; Command=&quot;{StaticResource favoriteCommand}&quot; CommandParameter=&quot;{x:Bind PodcastObject, Mode=OneWay}&quot; IsTabStop=&quot;False&quot; VerticalAlignment=&quot;Stretch&quot;  /&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+&lt;/UserControl&gt;
+</code></pre>
+<p>The hover buttons should appear and disappear when the mouse enters and exits the item. To respond to mouse events, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.PointerEnteredEvent">PointerEntered</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.PointerExitedEvent">PointerExited</a> events on the PodcastUserControl.</p>
+<p><strong>PodcastUserControl.xaml.cs</strong></p>
+<pre><code class="lang-csharp">protected override void OnPointerEntered(PointerRoutedEventArgs e)
+{
+    base.OnPointerEntered(e);
+
+    // Only show hover buttons when the user is using mouse or pen.
+    if (e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Mouse || e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
+    {
+        VisualStateManager.GoToState(this, &quot;HoverButtonsShown&quot;, true);
+    }
+}
+
+protected override void OnPointerExited(PointerRoutedEventArgs e)
+{
+    base.OnPointerExited(e);
+
+    VisualStateManager.GoToState(this, &quot;HoverButtonsHidden&quot;, true);
+}
+</code></pre>
+<p>The buttons displayed in the hover state will only be accessible via the pointer input type. Because these buttons are limited to pointer input, you may choose to minimize or remove the padding around the icon of the button to optimize for pointer input. If you choose to do so, ensure that the button footprint is at least 20x20px to remain usable with pen and mouse.</p>
+<h3 id="touch-accelerators">Touch accelerators</h3>
+<h4 id="swipe">Swipe</h4>
+<p><img src="images/contextual-command-swipe.png" alt="Swipe an item to reveal the command"></p>
+<p>Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the <a href="swipe.html">swipe commanding</a> article to learn more.</p>
+<p>In order to integrate swipe into your collection, you need two components: SwipeItems, which hosts the commands; and a SwipeControl, which wraps the item and allows for swipe interaction.</p>
+<p>The SwipeItems can be defined as a Resource in the PodcastUserControl. In this example, SwipeItems contains a command to Favorite an item.</p>
+<pre><code class="lang-xaml">&lt;UserControl.Resources&gt;
+    &lt;SymbolIconSource x:Key=&quot;FavoriteIcon&quot; Symbol=&quot;Favorite&quot;/&gt;
+    &lt;SwipeItems x:Key=&quot;RevealOtherCommands&quot; Mode=&quot;Reveal&quot;&gt;
+        &lt;SwipeItem IconSource=&quot;{StaticResource FavoriteIcon}&quot; Text=&quot;Favorite&quot; Background=&quot;Yellow&quot; Invoked=&quot;SwipeItem_Invoked&quot;/&gt;
+    &lt;/SwipeItems&gt;
+&lt;/UserControl.Resources&gt;
+</code></pre>
+<p>The SwipeControl wraps the item and allows the user to interact with it using the swipe gesture. Notice that the SwipeControl contains a reference to the SwipeItems as its RightItems. The Favorite item will show when the user swipes from right to left.</p>
+<pre><code class="lang-xaml">&lt;SwipeControl x:Name=&quot;swipeContainer&quot; RightItems=&quot;{StaticResource RevealOtherCommands}&quot;&gt;
+   &lt;!-- The visual state groups moved from the Grid to the SwipeControl, since the SwipeControl wraps the Grid. --&gt;
+   &lt;VisualStateManager.VisualStateGroups&gt;
+       &lt;VisualStateGroup x:Name=&quot;HoveringStates&quot;&gt;
+           &lt;VisualState x:Name=&quot;HoverButtonsShown&quot;&gt;
+               &lt;VisualState.Setters&gt;
+                   &lt;Setter Target=&quot;hoverArea.Visibility&quot; Value=&quot;Visible&quot; /&gt;
+               &lt;/VisualState.Setters&gt;
+           &lt;/VisualState&gt;
+           &lt;VisualState x:Name=&quot;HoverButtonsHidden&quot; /&gt;
+       &lt;/VisualStateGroup&gt;
+   &lt;/VisualStateManager.VisualStateGroups&gt;
+   &lt;Grid Margin=&quot;12,0,12,0&quot;&gt;
+       &lt;Grid.ColumnDefinitions&gt;
+           &lt;ColumnDefinition Width=&quot;*&quot; /&gt;
+           &lt;ColumnDefinition Width=&quot;Auto&quot; /&gt;
+       &lt;/Grid.ColumnDefinitions&gt;
+       &lt;StackPanel&gt;
+           &lt;TextBlock Text=&quot;{x:Bind PodcastObject.Title, Mode=OneWay}&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot; /&gt;
+           &lt;TextBlock Text=&quot;{x:Bind PodcastObject.Description, Mode=OneWay}&quot; Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; /&gt;
+           &lt;TextBlock Text=&quot;{x:Bind PodcastObject.IsFavorite, Mode=OneWay}&quot; Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot;/&gt;
+       &lt;/StackPanel&gt;
+       &lt;Grid Grid.Column=&quot;1&quot; x:Name=&quot;hoverArea&quot; Visibility=&quot;Collapsed&quot; VerticalAlignment=&quot;Stretch&quot;&gt;
+           &lt;AppBarButton Icon=&quot;OutlineStar&quot; Command=&quot;{StaticResource favoriteCommand}&quot; CommandParameter=&quot;{x:Bind PodcastObject, Mode=OneWay}&quot; IsTabStop=&quot;False&quot; LabelPosition=&quot;Collapsed&quot; VerticalAlignment=&quot;Stretch&quot;  /&gt;
+       &lt;/Grid&gt;
+   &lt;/Grid&gt;
+&lt;/SwipeControl&gt;
+</code></pre>
+<p>When the user swipes to invoke the Favorite command, the Invoked method is called.</p>
+<pre><code class="lang-csharp">private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
+{
+    // Favorite the item using the defined command
+    var favoriteCommand = Application.Current.Resources[&quot;favoriteCommand&quot;] as ICommand;
+    favoriteCommand.Execute(PodcastObject);
+}
+</code></pre>
+<h4 id="pull-to-refresh">Pull to refresh</h4>
+<p>Pull to refresh lets a user pull down on a collection of data using touch in order to retrieve more data. See the <a href="pull-to-refresh.html">pull to refresh</a> article to learn more.</p>
+<h3 id="pen-accelerators">Pen accelerators</h3>
+<p>The pen input type provides the precision of pointer input. Users can perform common actions such as opening context menus using pen-based accelerators. To open a context menu, users can tap the screen with the barrel button pressed, or long press on the content. Users can also use the pen to hover over content to get a deeper understanding of the UI like displaying tooltips, or to reveal secondary hover actions, similar to mouse.</p>
+<p>To optimize your app for pen input, see the <a href="../input/pen-and-stylus-interactions.html">pen and stylus interaction</a> article.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Make sure that users can access all commands from all types of Windows devices.</li>
+<li>Include a context menu that provides access to all the commands available for a collection item.</li>
+<li>Provide input accelerators for frequently-used commands.</li>
+<li>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand">ICommand interface</a> to implement commands.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../basics/commanding-basics.html">Command design basics for Windows apps</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand">ICommand Interface</a></li>
+<li><a href="menus-and-context-menus.html">Menus and context menus</a></li>
+<li><a href="swipe.html">Swipe</a></li>
+<li><a href="pull-to-refresh.html">Pull to refresh</a></li>
+<li><a href="../input/pen-and-stylus-interactions.html">Pen and stylus interaction</a></li>
+<li><a href="../devices/designing-for-tv.html">Designing for Xbox and TV</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/collection-commanding.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

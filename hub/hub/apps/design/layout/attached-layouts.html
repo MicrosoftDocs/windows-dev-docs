@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>AttachedLayout </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="AttachedLayout ">
+    
+    <meta name="description" content="You can define a attached layouts for use with containers such as the ItemsRepeater control.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="attached-layouts">Attached Layouts</h1>
+
+<p>A container (for example, Panel) that delegates its layout logic to another object relies on the attached layout object to provide the layout behavior for its child elements.  An attached layout model provides flexibility for an application to alter the layout of items at runtime, or more easily share aspects of layout between different parts of the UI (for example, items in the rows of a table that appear to be aligned within a column).</p>
+<p>In this topic, we cover what's involved in creating an attached layout (virtualizing and non-virtualizing), the concepts and classes you'll need to understand, and the trade-offs you'll need to consider when deciding between them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Get WinUI</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>This control is included as part of WinUI, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the <a href="/uwp/toolkits/winui/">WinUI overview</a>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Important APIs</strong>:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer</a></li>
+<li><a href="../controls/items-repeater.html">ItemsRepeater</a></li>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.layout">Layout</a>
+<ul>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout">NonVirtualizingLayout</a></li>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout">VirtualizingLayout</a></li>
+</ul>
+</li>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.layoutcontext">LayoutContext</a>
+<ul>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext">NonVirtualizingLayoutContext</a></li>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext">VirtualizingLayoutContext</a></li>
+</ul>
+</li>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.layoutpanel">LayoutPanel</a> (Preview)</li>
+</ul>
+</blockquote>
+<h2 id="key-concepts">Key Concepts</h2>
+<p>Performing layout requires that two questions be answered for every element:</p>
+<ol>
+<li><p>What <em><strong>size</strong></em> will this element be?</p>
+</li>
+<li><p>What will the <em><strong>position</strong></em> of this element be?</p>
+</li>
+</ol>
+<p>XAML's layout system, which answers these questions, is briefly covered as part of the discussion of <a href="custom-panels-overview.html">Custom panels</a>.</p>
+<h3 id="containers-and-context">Containers and Context</h3>
+<p>Conceptually, XAML's <a href="/uwp/api/windows.ui.xaml.controls.panel">Panel</a> fills two important roles in the framework:</p>
+<ol>
+<li>It can contain child elements and introduces branching in the tree of elements.</li>
+<li>It applies a specific layout strategy to those children.</li>
+</ol>
+<p>For this reason, a Panel in XAML has often been synonymous with layout, but technically-speaking, does more than just layout.</p>
+<p>The <a href="../controls/items-repeater.html">ItemsRepeater</a> also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="/uwp/api/microsoft.ui.xaml.controls.layoutpanel">LayoutPanel</a> is a container, derived from Panel, that delegates its logic to the attached <a href="/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout">Layout</a> object.  LayoutPanel is in <em>Preview</em> and is currently available only in the <em>Prerelease</em> drops of the WinUI package.</p>
+</div>
+<h4 id="containers">Containers</h4>
+<p>Conceptually, <a href="/uwp/api/windows.ui.xaml.controls.panel">Panel</a> is a container of elements that also has the ability to render pixels for a <a href="/uwp/api/windows.ui.xaml.controls.panel.background">Background</a>.  Panels provide a way to encapsulate common layout logic in an easy to use package.</p>
+<p>The concept of <strong>attached layout</strong> makes the distinction between the two roles of container and layout more clear.  If the container delegates its layout logic to another object we would call that object the attached layout as seen in the snippet below. Containers that inherit from <a href="/uwp/api/windows.ui.xaml.frameworkelement">FrameworkElement</a>, such as the LayoutPanel, automatically expose the common properties that provide input to XAML's layout process (for example, Height and Width).</p>
+<pre><code class="lang-xaml">&lt;LayoutPanel&gt;
+    &lt;LayoutPanel.Layout&gt;
+        &lt;UniformGridLayout/&gt;
+    &lt;/LayoutPanel.Layout&gt;
+    &lt;Button Content=&quot;1&quot;/&gt;
+    &lt;Button Content=&quot;2&quot;/&gt;
+    &lt;Button Content=&quot;3&quot;/&gt;
+&lt;/LayoutPanel&gt;
+</code></pre>
+<p>During the layout process the container relies on the attached <em>UniformGridLayout</em> to measure and arrange its children.</p>
+<h4 id="per-container-state">Per-Container State</h4>
+<p>With an attached layout, a single instance of the layout object may be associated with <em>many</em> containers like in the snippet below; therefore, it must not depend on or directly reference the host container.  For example:</p>
+<pre><code class="lang-xaml">&lt;!-- ... ---&gt;
+&lt;Page.Resources&gt;
+    &lt;ExampleLayout x:Name=&quot;exampleLayout&quot;/&gt;
+&lt;Page.Resources&gt;
+
+&lt;LayoutPanel x:Name=&quot;example1&quot; Layout=&quot;{StaticResource exampleLayout}&quot;/&gt;
+&lt;LayoutPanel x:Name=&quot;example2&quot; Layout=&quot;{StaticResource exampleLayout}&quot;/&gt;
+&lt;!-- ... ---&gt;
+</code></pre>
+<p>For this situation <em>ExampleLayout</em> must carefully consider the state that it uses in its layout calculation and where that state is stored to avoid impacting the layout for elements in one panel with the other.  It would be analogous to a custom Panel whose MeasureOverride and ArrangeOverride logic depends on the values of its <em>static</em> properties.</p>
+<h4 id="layoutcontext">LayoutContext</h4>
+<p>The purpose of the <a href="/uwp/api/microsoft.ui.xaml.controls.layoutcontext">LayoutContext</a> is to deal with those challenges.  It provides the attached layout the ability to interact with the host container, such as retrieving child elements, without introducing a direct dependency between the two. The context also enables the layout to store any state it requires that might be related to the container's child elements.</p>
+<p>Simple, non-virtualizing layouts often do not need to maintain any state, making it a non-issue. A more complex layout, such as Grid, however, may choose to maintain state between the measure and arrange call to avoid re-computing a value.</p>
+<p>Virtualizing layouts <em>often</em> need to maintain some state between both the measure and arrange as well as between iterative layout passes.</p>
+<h4 id="initializing-and-uninitializing-per-container-state">Initializing and Uninitializing Per-Container State</h4>
+<p>When a layout is attached to a container, its <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore">InitializeForContextCore</a> method is called and provides an opportunity to initialize an object to store state.</p>
+<p>Similarly, when the layout is being removed from a container, the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore">UninitializeForContextCore</a> method will be called.  This gives the layout an opportunity to clean up any state it had associated with that container.</p>
+<p>The layout's state object can be stored with and retrieved from the container with the <a href="/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate">LayoutState</a> property on the context.</p>
+<h3 id="ui-virtualization">UI Virtualization</h3>
+<p>UI virtualization means delaying the creation of a UI object until <em>when it's needed</em>.  It's a performance optimization.  For non-scrolling scenarios determining <em>when needed</em> may be based on any number of things that are app-specific.  In those cases, apps should consider using the <a href="/windows/uwp/xaml-platform/x-load-attribute">x:Load</a>. It does not require any special handling in your layout.</p>
+<p>In scrolling-based scenarios such as a list, determining <em>when needed</em> is often based on &quot;will it be visible to a user&quot; which depends heavily on where it was placed during the layout process and requires special considerations.  This scenario is a focus for this document.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although not covered in this document, the same capabilities that enable UI virtualization in scrolling scenarios could be applied in non-scrolling scenarios.  For example, a data-driven ToolBar control that manages the lifetime of the commands it presents and responds to changes in available space by recycling / moving elements between a visible area and an overflow menu.</p>
+</div>
+<h2 id="getting-started">Getting Started</h2>
+<p>First, decide whether the layout you need to create should support UI virtualization.</p>
+<p><strong>A few things to keep in mind…</strong></p>
+<ol>
+<li>Non-virtualizing layouts are easier to author. If the number of items will always be small then authoring a non-virtualizing layout is recommended.</li>
+<li>The platform provides a set of attached layouts that work with the <a href="../controls/items-repeater.html#change-the-layout-of-items">ItemsRepeater</a> and <a href="/uwp/api/microsoft.ui.xaml.controls.layoutpanel">LayoutPanel</a> to cover common needs.  Familiarize yourself with those before deciding you need to define a custom layout.</li>
+<li>Virtualizing layouts always have some additional CPU and memory cost/complexity/overhead compared to a non-virtualizing layout.  As a general rule of thumb if the children the layout will need to manage will likely fit in an area that is 3x the size of the viewport, then there may not be much gain from a virtualizing layout. The 3x size is discussed in greater detail later in this doc, but is due to the asynchronous nature of scrolling on Windows and its impact on virtualization.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>As a point of reference, the default settings for the <a href="/uwp/api/windows.ui.xaml.controls.listview">ListView</a> (and <a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater">ItemsRepeater</a>) are that recycling doesn't begin until the number of items are enough to fill up 3x the size of the current viewport.</p>
+</div>
+<p><strong>Choose your base type</strong></p>
+<p><img src="images/xaml-attached-layout-hierarchy.png" alt="attached layout hierarchy"></p>
+<p>The base <a href="/uwp/api/microsoft.ui.xaml.controls.layout">Layout</a> type has two derived types that serve as the start point for authoring an attached layout:</p>
+<ol>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout">NonVirtualizingLayout</a></li>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout">VirtualizingLayout</a></li>
+</ol>
+<h2 id="non-virtualizing-layout">Non-Virtualizing Layout</h2>
+<p>The approach for creating a non-virtualizing layout should feel familiar to anyone that has created a <a href="custom-panels-overview.html">Custom Panel</a>.  The same concepts apply.  The primary difference is that a <a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext">NonVirtualizingLayoutContext</a> is used to access the <a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext.children">Children</a> collection, and layout may choose to store state.</p>
+<ol>
+<li>Derive from the base type <a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout">NonVirtualizingLayout</a> (instead of Panel).</li>
+<li><em>(Optional)</em> Define dependency properties that when changed will invalidate the layout.</li>
+<li><em>(<strong>New</strong>/Optional)</em> Initialize any state object required by the layout as part of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore">InitializeForContextCore</a>. Stash it with the host container by using the <a href="/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate">LayoutState</a> provided with the context.</li>
+<li>Override the <a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.measureoverride">MeasureOverride</a> and call the <a href="/uwp/api/windows.ui.xaml.uielement.measure">Measure</a> method on all the children.</li>
+<li>Override the <a href="/uwp/api/microsoft.ui.xaml.controls.nonvirtualizinglayout.arrangeoverride">ArrangeOverride</a> and call the <a href="/uwp/api/windows.ui.xaml.uielement.arrange">Arrange</a> method on all the children.</li>
+<li><em>(<strong>New</strong>/Optional)</em> Clean up any saved state as part of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore">UninitializeForContextCore</a>.</li>
+</ol>
+<h3 id="example-a-simple-stack-layout-varying-sized-items">Example: A Simple Stack Layout (Varying-Sized Items)</h3>
+<p><img src="images/xaml-attached-layout-mystacklayout.png" alt="MyStackLayout"></p>
+<p>Here is a very basic non-virtualizing stack layout of varying sized items. It lacks any properties to adjust the layout's behavior. The implementation below illustrates how the layout relies on the context object provided by the container to:</p>
+<ol>
+<li>Get the count of children, and</li>
+<li>Access each child element by index.</li>
+</ol>
+<pre><code class="lang-csharp">public class MyStackLayout : NonVirtualizingLayout
+{
+    protected override Size MeasureOverride(NonVirtualizingLayoutContext context, Size availableSize)
+    {
+        double extentHeight = 0.0;
+        foreach (var element in context.Children)
+        {
+            element.Measure(availableSize);
+            extentHeight += element.DesiredSize.Height;
+        }
+
+        return new Size(availableSize.Width, extentHeight);
+    }
+
+    protected override Size ArrangeOverride(NonVirtualizingLayoutContext context, Size finalSize)
+    {
+        double offset = 0.0;
+        foreach (var element in context.Children)
+        {
+            element.Arrange(
+                new Rect(0, offset, finalSize.Width, element.DesiredSize.Height));
+            offset += element.DesiredSize.Height;
+        }
+
+        return finalSize;
+    }
+}
+</code></pre>
+<pre><code class="lang-xaml"> &lt;LayoutPanel MaxWidth=&quot;196&quot;&gt;
+    &lt;LayoutPanel.Layout&gt;
+        &lt;local:MyStackLayout/&gt;
+    &lt;/LayoutPanel.Layout&gt;
+
+    &lt;Button HorizontalAlignment=&quot;Stretch&quot;&gt;1&lt;/Button&gt;
+    &lt;Button HorizontalAlignment=&quot;Right&quot;&gt;2&lt;/Button&gt;
+    &lt;Button HorizontalAlignment=&quot;Center&quot;&gt;3&lt;/Button&gt;
+    &lt;Button&gt;4&lt;/Button&gt;
+
+&lt;/LayoutPanel&gt;
+</code></pre>
+<h2 id="virtualizing-layouts">Virtualizing Layouts</h2>
+<p>Similar to a non-virtualizing layout, the high-level steps for a virtualizing layout are the same.  The complexity is largely in determining what elements will fall within the viewport and should be realized.</p>
+<ol>
+<li>Derive from the base type <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout">VirtualizingLayout</a>.</li>
+<li>(Optional) Define your dependency properties that when changed will invalidate the layout.</li>
+<li>Initialize any state object that will be required by the layout as part of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.initializeforcontextcore">InitializeForContextCore</a>. Stash it with the host container by using the <a href="/uwp/api/microsoft.ui.xaml.controls.layoutcontext.layoutstate">LayoutState</a> provided with the context.</li>
+<li>Override the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride">MeasureOverride</a> and call the <a href="/uwp/api/windows.ui.xaml.uielement.measure">Measure</a> method for each child that should be realized.
+<ol>
+<li>The <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat">GetOrCreateElementAt</a> method is used to retrieve a UIElement that has been prepared by the framework (for example, data bindings applied).</li>
+</ol>
+</li>
+<li>Override the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride">ArrangeOverride</a> and call the <a href="/uwp/api/windows.ui.xaml.uielement.arrange">Arrange</a> method for each realized child.</li>
+<li>(Optional) Clean up any saved state as part of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.uninitializeforcontextcore">UninitializeForContextCore</a>.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The value returned by the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout">MeasureOverride</a> is used as the size of the virtualized content.</p>
+</div>
+<p>There are two general approaches to consider when authoring a virtualizing layout.  Whether to choose one or the other largely depends on &quot;how will you determine the size of an element&quot;.  If its enough to know the index of an item in the data set or the data itself dictates its eventual size, then we'd consider it <strong>data-dependent</strong>.  These are more straightforward to create.  If, however, the only way to determine the size for an item is to create and measure the UI then we'd say it is <strong>content-dependent</strong>.  These are more complex.</p>
+<h3 id="the-layout-process">The Layout Process</h3>
+<p>Whether you're creating a data or content-dependent layout, it's important to understand the layout process and the impact of Windows' asynchronous scrolling.</p>
+<p>An (over)simplified view of the steps performed by the framework from start-up to displaying UI on screen is that:</p>
+<ol>
+<li><p>It parses the markup.</p>
+</li>
+<li><p>Generates a tree of elements.</p>
+</li>
+<li><p>Performs a layout pass.</p>
+</li>
+<li><p>Performs a render pass.</p>
+</li>
+</ol>
+<p>With UI virtualization, creating the elements that would normally be done in step 2 is delayed or ended early once its been determined that sufficient content has been created to fill the viewport. A virtualizing container (for example, ItemsRepeater) defers to its attached layout to drive this process. It provides the attached layout with a <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext">VirtualizingLayoutContext</a> that surfaces the additional information that a virtualizing layout needs.</p>
+<p><strong>The RealizationRect (i.e. Viewport)</strong></p>
+<p>Scrolling on Windows happens asynchronous to the UI thread. It is not controlled by the framework's layout.  Rather, the interaction and movement occurs in the system's compositor. The advantage of this approach is that panning content can always be done at 60fps.  The challenge, however, is that the &quot;viewport&quot;, as seen by the layout, might be slightly out-of-date relative to what is actually visible on screen. If a user scrolls quickly, they may outpace the speed of the UI thread to generate new content and &quot;pan to black&quot;. For this reason, it's often necessary for a virtualizing layout to generate an additional buffer of prepared elements sufficient to fill an area larger than the viewport. When under heavier load during scrolling the user is still presented with content.</p>
+<p><img src="images/xaml-attached-layout-realizationrect.png" alt="Realization rect"></p>
+<p>Since element creation is costly, virtualizing containers (for example, <a href="../controls/items-repeater.html">ItemsRepeater</a>) will initially provide the attached layout with a <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect">RealizationRect</a> that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its <a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength">VerticalCacheLength</a> and <a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength">HorizontalCacheLength</a> properties.</p>
+<p><strong>Re-using Elements (Recycling)</strong></p>
+<p>The layout is expected to size and position the elements to fill the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect">RealizationRect</a> each time it is run. By default the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout">VirtualizingLayout</a> will recycle any unused elements at the end of each layout pass.</p>
+<p>The <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext">VirtualizingLayoutContext</a> that is passed to the layout as part of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride">MeasureOverride</a> and <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride">ArrangeOverride</a> provides the additional information a virtualizing layout needs. Some of the most commonly used things it provides are the ability to:</p>
+<ol>
+<li>Query the number of items in the data (<a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.itemcount">ItemCount</a>).</li>
+<li>Retrieve a specific item using the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getitemat">GetItemAt</a> method.</li>
+<li>Retrieve a <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect">RealizationRect</a> that represents the viewport and buffer that the layout should fill with realized elements.</li>
+<li>Request the UIElement for a specific item with the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat">GetOrCreateElement</a> method.</li>
+</ol>
+<p>Requesting an element for a given index will cause that element to be marked as &quot;in use&quot; for that pass of the layout. If the element does not already exist, then it will be realized and automatically prepared for use (for example, inflating the UI tree defined in a DataTemplate, processing any data binding, etc.).  Otherwise, it will be retrieved from a pool of existing instances.</p>
+<p>At the end of each measure pass, any existing, realized element that was not marked &quot;in use&quot; is automatically considered available for re-use unless the option to <a href="/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions">SuppressAutoRecycle</a> was used when the element was retrieved via the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat">GetOrCreateElementAt</a> method. The framework automatically moves it to a recycle pool and makes it available. It may subsequently be pulled for use by a different container. The framework tries to avoid this when possible as there is some cost associated with re-parenting an element.</p>
+<p>If a virtualizing layout knows at the beginning of each measure which elements will no longer fall within the realization rect then it can optimize its re-use. Rather than relying on the framework's default behavior. The layout can preemptively move elements to the recycle pool by using the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recycleelement">RecycleElement</a> method.  Calling this method before requesting new elements causes those existing elements to be available when the layout later issues a <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat">GetOrCreateElementAt</a> request for an index that isn't already associated with an element.</p>
+<p>The VirtualizingLayoutContext provides two additional properties designed for layout authors creating a content-dependent layout. They are discussed in more detail later.</p>
+<ol>
+<li>A <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex">RecommendedAnchorIndex</a> that provides an optional <em>input</em> to layout.</li>
+<li>A <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin">LayoutOrigin</a> that is an optional <em>output</em> of the layout.</li>
+</ol>
+<h2 id="data-dependent-virtualizing-layouts">Data-dependent Virtualizing Layouts</h2>
+<p>A virtualizing layout is easier if you know what the size of every item should be without needing to measure the content to show.  In this doc we'll simply refer to this category of virtualizing layouts as <strong>data layouts</strong> since they usually involve inspecting the data.  Based on the data an app may pick a visual representation with a known size - perhaps because its part of the data or was previously determined by design.</p>
+<p>The general approach is for the layout to:</p>
+<ol>
+<li>Calculate a size and position of every item.</li>
+<li>As part of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride">MeasureOverride</a>:
+<ol>
+<li>Use the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect">RealizationRect</a> to determine which items should appear within the viewport.</li>
+<li>Retrieve the UIElement that should represent the item with the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat">GetOrCreateElementAt</a> method.</li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.measure">Measure</a> the UIElement with the pre-calculated size.</li>
+</ol>
+</li>
+<li>As part of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.arrangeoverride">ArrangeOverride</a>, <a href="/uwp/api/windows.ui.xaml.uielement.arrange">Arrange</a> each realized UIElement with the precalculated position.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A data layout approach is often incompatible with <em>data virtualization</em>.  Specifically, where the only data loaded into memory is that data required to fill what's visible to the user.  Data virtualization isn't referring to lazy or incremental loading of data as a user scrolls down where that data remains resident.  Rather, it's referring to when items are released from memory as they're scrolled out of view.  Having a data layout that inspects every data item as part of a data layout would prevent data virtualization from working as expected.  An exception is a layout like the UniformGridLayout which assumes that everything has the same size.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you're creating a custom control for a control library that will be used by others in a wide variety of situations then a data layout may not be an option for you.</p>
+</div>
+<h3 id="example-xbox-activity-feed-layout">Example: Xbox Activity Feed layout</h3>
+<p>The UI for the Xbox Activity Feed uses a repeating pattern where each line has a wide tile, followed by two narrow tiles that is inverted on the subsequent line. In this layout, the size for every item is a function of the item's position in the data set and the known size for the tiles (wide vs narrow).</p>
+<p><img src="images/xaml-attached-layout-activityfeedscreenshot.png" alt="Xbox activity feed"></p>
+<p>The code below walks through what a custom virtualizing UI for the activity feed might be to illustrate the general approach you might take for a <strong>data layout</strong>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you have the <strong>WinUI 3 Gallery</strong> app installed, click here to <a href="winui3gallery:/item/ItemsRepeater">open the app and see the ItemsRepeater in action</a>. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a>.</p>
+</div>
+<h4 id="implementation">Implementation</h4>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+///  This is a custom layout that displays elements in two different sizes
+///  wide (w) and narrow (n). There are two types of rows 
+///  odd rows - narrow narrow wide
+///  even rows - wide narrow narrow
+///  This pattern repeats.
+/// &lt;/summary&gt;
+
+public class ActivityFeedLayout : VirtualizingLayout // STEP #1 Inherit from base attached layout
+{
+    // STEP #2 - Parameterize the layout
+    #region Layout parameters
+
+    // We'll cache copies of the dependency properties to avoid calling GetValue during layout since that
+    // can be quite expensive due to the number of times we'd end up calling these.
+    private double _rowSpacing;
+    private double _colSpacing;
+    private Size _minItemSize = Size.Empty;
+
+    /// &lt;summary&gt;
+    /// Gets or sets the size of the whitespace gutter to include between rows
+    /// &lt;/summary&gt;
+    public double RowSpacing
+    {
+        get { return _rowSpacing; }
+        set { SetValue(RowSpacingProperty, value); }
+    }
+
+    /// &lt;summary&gt;
+    /// Gets or sets the size of the whitespace gutter to include between items on the same row
+    /// &lt;/summary&gt;
+    public double ColumnSpacing
+    {
+        get { return _colSpacing; }
+        set { SetValue(ColumnSpacingProperty, value); }
+    }
+
+    public Size MinItemSize
+    {
+        get { return _minItemSize; }
+        set { SetValue(MinItemSizeProperty, value); }
+    }
+
+    public static readonly DependencyProperty RowSpacingProperty =
+        DependencyProperty.Register(
+            nameof(RowSpacing),
+            typeof(double),
+            typeof(ActivityFeedLayout),
+            new PropertyMetadata(0, OnPropertyChanged));
+
+    public static readonly DependencyProperty ColumnSpacingProperty =
+        DependencyProperty.Register(
+            nameof(ColumnSpacing),
+            typeof(double),
+            typeof(ActivityFeedLayout),
+            new PropertyMetadata(0, OnPropertyChanged));
+
+    public static readonly DependencyProperty MinItemSizeProperty =
+        DependencyProperty.Register(
+            nameof(MinItemSize),
+            typeof(Size),
+            typeof(ActivityFeedLayout),
+            new PropertyMetadata(Size.Empty, OnPropertyChanged));
+
+    private static void OnPropertyChanged(DependencyObject obj, DependencyPropertyChangedEventArgs args)
+    {
+        var layout = obj as ActivityFeedLayout;
+        if (args.Property == RowSpacingProperty)
+        {
+            layout._rowSpacing = (double)args.NewValue;
+        }
+        else if (args.Property == ColumnSpacingProperty)
+        {
+            layout._colSpacing = (double)args.NewValue;
+        }
+        else if (args.Property == MinItemSizeProperty)
+        {
+            layout._minItemSize = (Size)args.NewValue;
+        }
+        else
+        {
+            throw new InvalidOperationException(&quot;Don't know what you are talking about!&quot;);
+        }
+
+        layout.InvalidateMeasure();
+    }
+
+    #endregion
+
+    #region Setup / teardown // STEP #3: Initialize state
+
+    protected override void InitializeForContextCore(VirtualizingLayoutContext context)
+    {
+        base.InitializeForContextCore(context);
+
+        var state = context.LayoutState as ActivityFeedLayoutState;
+        if (state == null)
+        {
+            // Store any state we might need since (in theory) the layout could be in use by multiple
+            // elements simultaneously
+            // In reality for the Xbox Activity Feed there's probably only a single instance.
+            context.LayoutState = new ActivityFeedLayoutState();
+        }
+    }
+
+    protected override void UninitializeForContextCore(VirtualizingLayoutContext context)
+    {
+        base.UninitializeForContextCore(context);
+
+        // clear any state
+        context.LayoutState = null;
+    }
+
+    #endregion
+
+    #region Layout // STEP #4,5 - Measure and Arrange
+
+    protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
+    {
+        if (this.MinItemSize == Size.Empty)
+        {
+            var firstElement = context.GetOrCreateElementAt(0);
+            firstElement.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+
+            // setting the member value directly to skip invalidating layout
+            this._minItemSize = firstElement.DesiredSize;
+        }
+
+        // Determine which rows need to be realized.  We know every row will have the same height and
+        // only contain 3 items.  Use that to determine the index for the first and last item that
+        // will be within that realization rect.
+        var firstRowIndex = Math.Max(
+            (int)(context.RealizationRect.Y / (this.MinItemSize.Height + this.RowSpacing)) - 1,
+            0);
+        var lastRowIndex = Math.Min(
+            (int)(context.RealizationRect.Bottom / (this.MinItemSize.Height + this.RowSpacing)) + 1,
+            (int)(context.ItemCount / 3));
+
+        // Determine which items will appear on those rows and what the rect will be for each item
+        var state = context.LayoutState as ActivityFeedLayoutState;
+        state.LayoutRects.Clear();
+
+        // Save the index of the first realized item.  We'll use it as a starting point during arrange.
+        state.FirstRealizedIndex = firstRowIndex * 3;
+
+        // ideal item width that will expand/shrink to fill available space
+        double desiredItemWidth = Math.Max(this.MinItemSize.Width, (availableSize.Width - this.ColumnSpacing * 3) / 4);
+
+        // Foreach item between the first and last index,
+        //     Call GetElementOrCreateElementAt which causes an element to either be realized or retrieved
+        //       from a recycle pool
+        //     Measure the element using an appropriate size
+        //
+        // Any element that was previously realized which we don't retrieve in this pass (via a call to
+        // GetElementOrCreateAt) will be automatically cleared and set aside for later re-use.
+        // Note: While this work fine, it does mean that more elements than are required may be
+        // created because it isn't until after our MeasureOverride completes that the unused elements
+        // will be recycled and available to use.  We could avoid this by choosing to track the first/last
+        // index from the previous layout pass.  The diff between the previous range and current range
+        // would represent the elements that we can pre-emptively make available for re-use by calling
+        // context.RecycleElement(element).
+        for (int rowIndex = firstRowIndex; rowIndex &lt; lastRowIndex; rowIndex++)
+        {
+            int firstItemIndex = rowIndex * 3;
+            var boundsForCurrentRow = CalculateLayoutBoundsForRow(rowIndex, desiredItemWidth);
+
+            for (int columnIndex = 0; columnIndex &lt; 3; columnIndex++)
+            {
+                var index = firstItemIndex + columnIndex;
+                var rect = boundsForCurrentRow[index % 3];
+                var container = context.GetOrCreateElementAt(index);
+
+                container.Measure(
+                    new Size(boundsForCurrentRow[columnIndex].Width, boundsForCurrentRow[columnIndex].Height));
+
+                state.LayoutRects.Add(boundsForCurrentRow[columnIndex]);
+            }
+        }
+
+        // Calculate and return the size of all the content (realized or not) by figuring out
+        // what the bottom/right position of the last item would be.
+        var extentHeight = ((int)(context.ItemCount / 3) - 1) * (this.MinItemSize.Height + this.RowSpacing) + this.MinItemSize.Height;
+
+        // Report this as the desired size for the layout
+        return new Size(desiredItemWidth * 4 + this.ColumnSpacing * 2, extentHeight);
+    }
+
+    protected override Size ArrangeOverride(VirtualizingLayoutContext context, Size finalSize)
+    {
+        // walk through the cache of containers and arrange
+        var state = context.LayoutState as ActivityFeedLayoutState;
+        var virtualContext = context as VirtualizingLayoutContext;
+        int currentIndex = state.FirstRealizedIndex;
+
+        foreach (var arrangeRect in state.LayoutRects)
+        {
+            var container = virtualContext.GetOrCreateElementAt(currentIndex);
+            container.Arrange(arrangeRect);
+            currentIndex++;
+        }
+
+        return finalSize;
+    }
+
+    #endregion
+    #region Helper methods
+
+    private Rect[] CalculateLayoutBoundsForRow(int rowIndex, double desiredItemWidth)
+    {
+        var boundsForRow = new Rect[3];
+
+        var yoffset = rowIndex * (this.MinItemSize.Height + this.RowSpacing);
+        boundsForRow[0].Y = boundsForRow[1].Y = boundsForRow[2].Y = yoffset;
+        boundsForRow[0].Height = boundsForRow[1].Height = boundsForRow[2].Height = this.MinItemSize.Height;
+
+        if (rowIndex % 2 == 0)
+        {
+            // Left tile (narrow)
+            boundsForRow[0].X = 0;
+            boundsForRow[0].Width = desiredItemWidth;
+            // Middle tile (narrow)
+            boundsForRow[1].X = boundsForRow[0].Right + this.ColumnSpacing;
+            boundsForRow[1].Width = desiredItemWidth;
+            // Right tile (wide)
+            boundsForRow[2].X = boundsForRow[1].Right + this.ColumnSpacing;
+            boundsForRow[2].Width = desiredItemWidth * 2 + this.ColumnSpacing;
+        }
+        else
+        {
+            // Left tile (wide)
+            boundsForRow[0].X = 0;
+            boundsForRow[0].Width = (desiredItemWidth * 2 + this.ColumnSpacing);
+            // Middle tile (narrow)
+            boundsForRow[1].X = boundsForRow[0].Right + this.ColumnSpacing;
+            boundsForRow[1].Width = desiredItemWidth;
+            // Right tile (narrow)
+            boundsForRow[2].X = boundsForRow[1].Right + this.ColumnSpacing;
+            boundsForRow[2].Width = desiredItemWidth;
+        }
+
+        return boundsForRow;
+    }
+
+    #endregion
+}
+
+internal class ActivityFeedLayoutState
+{
+    public int FirstRealizedIndex { get; set; }
+
+    /// &lt;summary&gt;
+    /// List of layout bounds for items starting with the
+    /// FirstRealizedIndex.
+    /// &lt;/summary&gt;
+    public List&lt;Rect&gt; LayoutRects
+    {
+        get
+        {
+            if (_layoutRects == null)
+            {
+                _layoutRects = new List&lt;Rect&gt;();
+            }
+
+            return _layoutRects;
+        }
+    }
+
+    private List&lt;Rect&gt; _layoutRects;
+}
+</code></pre>
+<h3 id="optional-managing-the-item-to-uielement-mapping">(Optional) Managing the Item to UIElement Mapping</h3>
+<p>By default, the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext">VirtualizingLayoutContext</a> maintains a mapping between the realized elements and the index in the data source they represent.  A layout can choose to manage this mapping itself by always requesting the option to <a href="/uwp/api/microsoft.ui.xaml.controls.elementrealizationoptions">SuppressAutoRecycle</a> when retrieving an element via the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.getorcreateelementat">GetOrCreateElementAt</a> method which prevents the default auto-recycling behavior.  A layout may choose to do this, for example, if it will only be used when scrolling is restricted to one direction and the items it considers will always be contiguous (i.e. knowing the index of the first and last element is enough to know all the elements that should be realized).</p>
+<h4 id="example-xbox-activity-feed-measure">Example: Xbox Activity Feed measure</h4>
+<p>The snippet below shows the additional logic that could be added to the MeasureOverride in the previous sample to manage the mapping.</p>
+<pre><code class="lang-csharp">    protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
+    {
+        //...
+
+        // Determine which items will appear on those rows and what the rect will be for each item
+        var state = context.LayoutState as ActivityFeedLayoutState;
+        state.LayoutRects.Clear();
+
+         // Recycle previously realized elements that we know we won't need so that they can be used to
+        // fill in gaps without requiring us to realize additional elements.
+        var newFirstRealizedIndex = firstRowIndex * 3;
+        var newLastRealizedIndex = lastRowIndex * 3 + 3;
+        for (int i = state.FirstRealizedIndex; i &lt; newFirstRealizedIndex; i++)
+        {
+            context.RecycleElement(state.IndexToElementMap.Get(i));
+            state.IndexToElementMap.Clear(i);
+        }
+
+        for (int i = state.LastRealizedIndex; i &lt; newLastRealizedIndex; i++)
+        {
+            context.RecycleElement(context.IndexElementMap.Get(i));
+            state.IndexToElementMap.Clear(i);
+        }
+
+        // ...
+
+        // Foreach item between the first and last index,
+        //     Call GetElementOrCreateElementAt which causes an element to either be realized or retrieved
+        //       from a recycle pool
+        //     Measure the element using an appropriate size
+        //
+        for (int rowIndex = firstRowIndex; rowIndex &lt; lastRowIndex; rowIndex++)
+        {
+            int firstItemIndex = rowIndex * 3;
+            var boundsForCurrentRow = CalculateLayoutBoundsForRow(rowIndex, desiredItemWidth);
+
+            for (int columnIndex = 0; columnIndex &lt; 3; columnIndex++)
+            {
+                var index = firstItemIndex + columnIndex;
+                var rect = boundsForCurrentRow[index % 3];
+                UIElement container = null;
+                if (state.IndexToElementMap.Contains(index))
+                {
+                    container = state.IndexToElementMap.Get(index);
+                }
+                else
+                {
+                    container = context = context.GetOrCreateElementAt(index, ElementRealizationOptions.ForceCreate | ElementRealizationOptions.SuppressAutoRecycle);
+                    state.IndexToElementMap.Add(index, container);
+                }
+
+                container.Measure(
+                    new Size(boundsForCurrentRow[columnIndex].Width, boundsForCurrentRow[columnIndex].Height));
+
+                state.LayoutRects.Add(boundsForCurrentRow[columnIndex]);
+            }
+        }
+
+        // ...
+   }
+
+internal class ActivityFeedLayoutState
+{
+    // ...
+    Dictionary&lt;int, UIElement&gt; IndexToElementMap { get; set; }
+    // ...
+}
+</code></pre>
+<h2 id="content-dependent-virtualizing-layouts">Content-dependent Virtualizing Layouts</h2>
+<p>If you must first measure the UI content for an item to figure out its exact size then it is a <strong>content-dependent layout</strong>.  You can also think of it as a layout where each item must size itself rather than the layout telling the item its size. Virtualizing layouts that fall into this category are more involved.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Content-dependent layouts don't (shouldn't) break data virtualization.</p>
+</div>
+<h3 id="estimations">Estimations</h3>
+<p>Content-dependent layouts rely on estimation to guess both the size of unrealized content and the position of the realized content. As those estimates change it will cause the realized content to regularly shift positions within the scrollable area. This can lead to a very frustrating and jarring user experience if not mitigated. The potential issues and mitigations are discussed here.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Data layouts that consider every item and know the exact size of all items, realized or not, and their positions can avoid these issues entirely.</p>
+</div>
+<p><strong>Scroll Anchoring</strong></p>
+<p>XAML provides a mechanism to mitigate sudden viewport shifts by having scrolling controls support <a href="/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider">scroll anchoring</a> by implementing the <a href="/uwp/api/windows.ui.xaml.controls.iscrollanchorprovider">IScrollAnchorPovider</a> interface. As the user manipulates the content, the scrolling control continually selects an element from the set of candidates that were opted-in to be tracked. If the position of the anchor element shifts during the layout then the scroll control automatically shifts its viewport to maintain the viewport.</p>
+<p>The value of the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex">RecommendedAnchorIndex</a> provided to the layout may reflect that currently selected anchor element chosen by the scrolling control. Alternatively, if a developer explicitly requests that an element be realized for an index with the <a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.getorcreateelement">GetOrCreateElement</a> method on the <a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater">ItemsRepeater</a>, then that index is given as the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex">RecommendedAnchorIndex</a> on the next layout pass. This enables the layout to be prepared for the likely scenario that a developer realizes an element and subsequently requests that it be brought into view via the <a href="/uwp/api/windows.ui.xaml.uielement.startbringintoview">StartBringIntoView</a> method.</p>
+<p>The <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.recommendedanchorindex">RecommendedAnchorIndex</a> is the index for the item in the data source that a content-dependent layout should position first when estimating the position of its items. It should serve as the starting point for positioning other realized items.</p>
+<p><strong>Impact on ScrollBars</strong></p>
+<p>Even with scroll anchoring, if the layout's estimates vary a lot, perhaps due to significant variations in the size of content, then the position of the thumb for the ScrollBar may appear to jump around.  This can be jarring for a user if the thumb doesn't appear to track the position of their mouse pointer when they're dragging it.</p>
+<p>The more accurate the layout can be in its estimations then the less likely a user will see the ScrollBar's thumb jumping.</p>
+<h3 id="layout-corrections">Layout Corrections</h3>
+<p>A content-dependent layout should be prepared to rationalize its estimate with reality.  For example, as the user scrolls to the top of the content and the layout realizes the very first element, it may find that the element's anticipated position relative to the element from which it started would cause it to appear somewhere other than the origin of (x:0, y:0). When this occurs, the layout can use the <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.layoutorigin">LayoutOrigin</a> property to set the position it calculated as the new layout origin.  The net result is similar to scroll anchoring in which the scrolling control's viewport is automatically adjusted to account for the content's position as reported by the layout.</p>
+<p><img src="images/xaml-attached-layout-origincorrection.png" alt="Correcting the LayoutOrigin"></p>
+<h3 id="disconnected-viewports">Disconnected Viewports</h3>
+<p>The size returned from the layout's <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayout.measureoverride">MeasureOverride</a> method represents the best guess at the size of the content which may change with each successive layout.  As a user scrolls the layout will be continually re-evaluated with an updated <a href="/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect">RealizationRect</a>.</p>
+<p>If a user drags the thumb very quickly then  its possible for the viewport, from the perspective of the layout, to appear to make large jumps where the prior position doesn't overlap the now current position.  This is due to the asynchronous nature of scrolling. It's also possible for an app that is consuming the layout to request that an element be brought into view for an item that is not currently realized and is estimated to lay outside the current range tracked by the layout.</p>
+<p>When the layout discovers its guess is incorrect and/or sees an unexpected viewport shift, it needs to reorient its starting position.  The virtualizing layouts that ship as part of the XAML controls are developed as content-dependent layouts as they place fewer restrictions on the nature of the content that will be shown.</p>
+<h3 id="example-simple-virtualizing-stack-layout-for-variable-sized-items">Example: Simple Virtualizing Stack Layout for Variable-Sized Items</h3>
+<p>The sample below demonstrates a simple stack layout for variable-sized items that:</p>
+<ul>
+<li>supports UI virtualization,</li>
+<li>uses estimations to guess the size of unrealized items,</li>
+<li>is aware of potential discontinuous viewport shifts, and</li>
+<li>applies layout corrections to account for those shifts.</li>
+</ul>
+<p><strong>Usage: Markup</strong></p>
+<pre><code class="lang-xaml">&lt;ScrollViewer&gt;
+
+  &lt;ItemsRepeater x:Name=&quot;repeater&quot; &gt;
+    &lt;ItemsRepeater.Layout&gt;
+
+      &lt;local:VirtualizingStackLayout /&gt;
+
+    &lt;/ItemsRepeater.Layout&gt;
+    &lt;ItemsRepeater.ItemTemplate&gt;
+      &lt;DataTemplate x:Key=&quot;item&quot;&gt;
+        &lt;UserControl IsTabStop=&quot;True&quot; UseSystemFocusVisuals=&quot;True&quot; Margin=&quot;5&quot;&gt;
+          &lt;StackPanel BorderThickness=&quot;1&quot; Background=&quot;LightGray&quot; Margin=&quot;5&quot;&gt;
+            &lt;Image x:Name=&quot;recipeImage&quot; Source=&quot;{Binding ImageUri}&quot;  Width=&quot;100&quot; Height=&quot;100&quot;/&gt;
+              &lt;TextBlock x:Name=&quot;recipeDescription&quot;
+                         Text=&quot;{Binding Description}&quot;
+                         TextWrapping=&quot;Wrap&quot;
+                         Margin=&quot;10&quot; /&gt;
+          &lt;/StackPanel&gt;
+        &lt;/UserControl&gt;
+      &lt;/DataTemplate&gt;
+    &lt;/ItemsRepeater.ItemTemplate&gt;
+  &lt;/ItemsRepeater&gt;
+
+&lt;/ScrollViewer&gt;
+</code></pre>
+<p><strong>Codebehind: Main.cs</strong></p>
+<pre><code class="lang-csharp">string _lorem = @&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet erat vel massa rutrum, eget mollis massa vulputate. Vivamus semper augue leo, eget faucibus nulla mattis nec. Donec scelerisque lacus at dui ultricies, eget auctor ipsum placerat. Integer aliquet libero sed nisi eleifend, nec rutrum arcu lacinia. Sed a sem et ante gravida congue sit amet ut augue. Donec quis pellentesque urna, non finibus metus. Proin sed ornare tellus.&quot;;
+
+var rnd = new Random();
+var data = new ObservableCollection&lt;Recipe&gt;(Enumerable.Range(0, 300).Select(k =&gt;
+               new Recipe
+               {
+                   ImageUri = new Uri(string.Format(&quot;ms-appx:///Images/recipe{0}.png&quot;, k % 8 + 1)),
+                   Description = k + &quot; - &quot; + _lorem.Substring(0, rnd.Next(50, 350))
+               }));
+
+repeater.ItemsSource = data;
+</code></pre>
+<p><strong>Code: VirtualizingStackLayout.cs</strong></p>
+<pre><code class="lang-csharp">// This is a sample layout that stacks elements one after
+// the other where each item can be of variable height. This is
+// also a virtualizing layout - we measure and arrange only elements
+// that are in the viewport. Not measuring/arranging all elements means
+// that we do not have the complete picture and need to estimate sometimes.
+// For example the size of the layout (extent) is an estimation based on the
+// average heights we have seen so far. Also, if you drag the mouse thumb
+// and yank it quickly, then we estimate what goes in the new viewport.
+
+// The layout caches the bounds of everything that are in the current viewport.
+// During measure, we might get a suggested anchor (or start index), we use that
+// index to start and layout the rest of the items in the viewport relative to that
+// index. Note that since we are estimating, we can end up with negative origin when
+// the viewport is somewhere in the middle of the extent. This is achieved by setting the
+// LayoutOrigin property on the context. Once this is set, future viewport will account
+// for the origin.
+public class VirtualizingStackLayout : VirtualizingLayout
+{
+    // Estimation state
+    List&lt;double&gt; m_estimationBuffer = Enumerable.Repeat(0d, 100).ToList();
+    int m_numItemsUsedForEstimation = 0;
+    double m_totalHeightForEstimation = 0;
+
+    // State to keep track of realized bounds
+    int m_firstRealizedDataIndex = 0;
+    List&lt;Rect&gt; m_realizedElementBounds = new List&lt;Rect&gt;();
+
+    Rect m_lastExtent = new Rect();
+
+    protected override Size MeasureOverride(VirtualizingLayoutContext context, Size availableSize)
+    {
+        var viewport = context.RealizationRect;
+        DebugTrace(&quot;MeasureOverride: Viewport &quot; + viewport);
+
+        // Remove bounds for elements that are now outside the viewport.
+        // Proactive recycling elements means we can reuse it during this measure pass again.
+        RemoveCachedBoundsOutsideViewport(viewport);
+
+        // Find the index of the element to start laying out from - the anchor
+        int startIndex = GetStartIndex(context, availableSize);
+
+        // Measure and layout elements starting from the start index, forward and backward.
+        Generate(context, availableSize, startIndex, forward:true);
+        Generate(context, availableSize, startIndex, forward:false);
+
+        // Estimate the extent size. Note that this can have a non 0 origin.
+        m_lastExtent = EstimateExtent(context, availableSize);
+        context.LayoutOrigin = new Point(m_lastExtent.X, m_lastExtent.Y);
+        return new Size(m_lastExtent.Width, m_lastExtent.Height);
+    }
+
+    protected override Size ArrangeOverride(VirtualizingLayoutContext context, Size finalSize)
+    {
+        DebugTrace(&quot;ArrangeOverride: Viewport&quot; + context.RealizationRect);
+        for (int realizationIndex = 0; realizationIndex &lt; m_realizedElementBounds.Count; realizationIndex++)
+        {
+            int currentDataIndex = m_firstRealizedDataIndex + realizationIndex;
+            DebugTrace(&quot;Arranging &quot; + currentDataIndex);
+
+            // Arrange the child. If any alignment needs to be done, it
+            // can be done here.
+            var child = context.GetOrCreateElementAt(currentDataIndex);
+            var arrangeBounds = m_realizedElementBounds[realizationIndex];
+            arrangeBounds.X -= m_lastExtent.X;
+            arrangeBounds.Y -= m_lastExtent.Y;
+            child.Arrange(arrangeBounds);
+        }
+
+        return finalSize;
+    }
+
+    // The data collection has changed, since we are maintaining the bounds of elements
+    // in the viewport, we will update the list to account for the collection change.
+    protected override void OnItemsChangedCore(VirtualizingLayoutContext context, object source, NotifyCollectionChangedEventArgs args)
+    {
+        InvalidateMeasure();
+        if (m_realizedElementBounds.Count &gt; 0)
+        {
+            switch (args.Action)
+            {
+                case NotifyCollectionChangedAction.Add:
+                    OnItemsAdded(args.NewStartingIndex, args.NewItems.Count);
+                    break;
+                case NotifyCollectionChangedAction.Replace:
+                    OnItemsRemoved(args.OldStartingIndex, args.OldItems.Count);
+                    OnItemsAdded(args.NewStartingIndex, args.NewItems.Count);
+                    break;
+                case NotifyCollectionChangedAction.Remove:
+                    OnItemsRemoved(args.OldStartingIndex, args.OldItems.Count);
+                    break;
+                case NotifyCollectionChangedAction.Reset:
+                    m_realizedElementBounds.Clear();
+                    m_firstRealizedDataIndex = 0;
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+        }
+    }
+
+    // Figure out which index to use as the anchor and start laying out around it.
+    private int GetStartIndex(VirtualizingLayoutContext context, Size availableSize)
+    {
+        int startDataIndex = -1;
+        var recommendedAnchorIndex = context.RecommendedAnchorIndex;
+        bool isSuggestedAnchorValid = recommendedAnchorIndex != -1;
+
+        if (isSuggestedAnchorValid)
+        {
+            if (IsRealized(recommendedAnchorIndex))
+            {
+                startDataIndex = recommendedAnchorIndex;
+            }
+            else
+            {
+                ClearRealizedRange();
+                startDataIndex = recommendedAnchorIndex;
+            }
+        }
+        else
+        {
+            // Find the first realized element that is visible in the viewport.
+            startDataIndex = GetFirstRealizedDataIndexInViewport(context.RealizationRect);
+            if (startDataIndex &lt; 0)
+            {
+                startDataIndex = EstimateIndexForViewport(context.RealizationRect, context.ItemCount);
+                ClearRealizedRange();
+            }
+        }
+
+        // We have an anchorIndex, realize and measure it and
+        // figure out its bounds.
+        if (startDataIndex != -1 &amp; context.ItemCount &gt; 0)
+        {
+            if (m_realizedElementBounds.Count == 0)
+            {
+                m_firstRealizedDataIndex = startDataIndex;
+            }
+
+            var newAnchor = EnsureRealized(startDataIndex);
+            DebugTrace(&quot;Measuring start index &quot; + startDataIndex);
+            var desiredSize = MeasureElement(context, startDataIndex, availableSize);
+
+            var bounds = new Rect(
+                0,
+                newAnchor ?
+                    (m_totalHeightForEstimation / m_numItemsUsedForEstimation) * startDataIndex : GetCachedBoundsForDataIndex(startDataIndex).Y,
+                availableSize.Width,
+                desiredSize.Height);
+            SetCachedBoundsForDataIndex(startDataIndex, bounds);
+        }
+
+        return startDataIndex;
+    }
+
+
+    private void Generate(VirtualizingLayoutContext context, Size availableSize, int anchorDataIndex, bool forward)
+    {
+        // Generate forward or backward from anchorIndex until we hit the end of the viewport
+        int step = forward ? 1 : -1;
+        int previousDataIndex = anchorDataIndex;
+        int currentDataIndex = previousDataIndex + step;
+        var viewport = context.RealizationRect;
+        while (IsDataIndexValid(currentDataIndex, context.ItemCount) &amp;&amp;
+            ShouldContinueFillingUpSpace(previousDataIndex, forward, viewport))
+        {
+            EnsureRealized(currentDataIndex);
+            DebugTrace(&quot;Measuring &quot; + currentDataIndex);
+            var desiredSize = MeasureElement(context, currentDataIndex, availableSize);
+            var previousBounds = GetCachedBoundsForDataIndex(previousDataIndex);
+            Rect currentBounds = new Rect(0,
+                                          forward ? previousBounds.Y + previousBounds.Height : previousBounds.Y - desiredSize.Height,
+                                          availableSize.Width,
+                                          desiredSize.Height);
+            SetCachedBoundsForDataIndex(currentDataIndex, currentBounds);
+            previousDataIndex = currentDataIndex;
+            currentDataIndex += step;
+        }
+    }
+
+    // Remove bounds that are outside the viewport, leaving one extra since our
+    // generate stops after generating one extra to know that we are outside the
+    // viewport.
+    private void RemoveCachedBoundsOutsideViewport(Rect viewport)
+    {
+        int firstRealizedIndexInViewport = 0;
+        while (firstRealizedIndexInViewport &lt; m_realizedElementBounds.Count &amp;&amp;
+               !Intersects(m_realizedElementBounds[firstRealizedIndexInViewport], viewport))
+        {
+            firstRealizedIndexInViewport++;
+        }
+
+        int lastRealizedIndexInViewport = m_realizedElementBounds.Count - 1;
+        while (lastRealizedIndexInViewport &gt;= 0 &amp;&amp;
+            !Intersects(m_realizedElementBounds[lastRealizedIndexInViewport], viewport))
+        {
+            lastRealizedIndexInViewport--;
+        }
+
+        if (firstRealizedIndexInViewport &gt; 0)
+        {
+            m_firstRealizedDataIndex += firstRealizedIndexInViewport;
+            m_realizedElementBounds.RemoveRange(0, firstRealizedIndexInViewport);
+        }
+
+        if (lastRealizedIndexInViewport &gt;= 0 &amp;&amp; lastRealizedIndexInViewport &lt; m_realizedElementBounds.Count - 2)
+        {
+            m_realizedElementBounds.RemoveRange(lastRealizedIndexInViewport + 2, m_realizedElementBounds.Count - lastRealizedIndexInViewport - 3);
+        }
+    }
+
+    private bool Intersects(Rect bounds, Rect viewport)
+    {
+        return !(bounds.Bottom &lt; viewport.Top ||
+            bounds.Top &gt; viewport.Bottom);
+    }
+
+    private bool ShouldContinueFillingUpSpace(int dataIndex, bool forward, Rect viewport)
+    {
+        var bounds = GetCachedBoundsForDataIndex(dataIndex);
+        return forward ?
+            bounds.Y &lt; viewport.Bottom :
+            bounds.Y &gt; viewport.Top;
+    }
+
+    private bool IsDataIndexValid(int currentDataIndex, int itemCount)
+    {
+        return currentDataIndex &gt;= 0 &amp;&amp; currentDataIndex &lt; itemCount;
+    }
+
+    private int EstimateIndexForViewport(Rect viewport, int dataCount)
+    {
+        double averageHeight = m_totalHeightForEstimation / m_numItemsUsedForEstimation;
+        int estimatedIndex = (int)(viewport.Top / averageHeight);
+        // clamp to an index within the collection
+        estimatedIndex = Math.Max(0, Math.Min(estimatedIndex, dataCount));
+        return estimatedIndex;
+    }
+
+    private int GetFirstRealizedDataIndexInViewport(Rect viewport)
+    {
+        int index = -1;
+        if (m_realizedElementBounds.Count &gt; 0)
+        {
+            for (int i = 0; i &lt; m_realizedElementBounds.Count; i++)
+            {
+                if (m_realizedElementBounds[i].Y &lt; viewport.Bottom &amp;&amp;
+                   m_realizedElementBounds[i].Bottom &gt; viewport.Top)
+                {
+                    index = m_firstRealizedDataIndex + i;
+                    break;
+                }
+            }
+        }
+
+        return index;
+    }
+
+    private Size MeasureElement(VirtualizingLayoutContext context, int index, Size availableSize)
+    {
+        var child = context.GetOrCreateElementAt(index);
+        child.Measure(availableSize);
+
+        int estimationBufferIndex = index % m_estimationBuffer.Count;
+        bool alreadyMeasured = m_estimationBuffer[estimationBufferIndex] != 0;
+        if (!alreadyMeasured)
+        {
+            m_numItemsUsedForEstimation++;
+        }
+
+        m_totalHeightForEstimation -= m_estimationBuffer[estimationBufferIndex];
+        m_totalHeightForEstimation += child.DesiredSize.Height;
+        m_estimationBuffer[estimationBufferIndex] = child.DesiredSize.Height;
+
+        return child.DesiredSize;
+    }
+
+    private bool EnsureRealized(int dataIndex)
+    {
+        if (!IsRealized(dataIndex))
+        {
+            int realizationIndex = RealizationIndex(dataIndex);
+            Debug.Assert(dataIndex == m_firstRealizedDataIndex - 1 ||
+                dataIndex == m_firstRealizedDataIndex + m_realizedElementBounds.Count ||
+                m_realizedElementBounds.Count == 0);
+
+            if (realizationIndex == -1)
+            {
+                m_realizedElementBounds.Insert(0, new Rect());
+            }
+            else
+            {
+                m_realizedElementBounds.Add(new Rect());
+            }
+
+            if (m_firstRealizedDataIndex &gt; dataIndex)
+            {
+                m_firstRealizedDataIndex = dataIndex;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    // Figure out the extent of the layout by getting the number of items remaining
+    // above and below the realized elements and getting an estimation based on
+    // average item heights seen so far.
+    private Rect EstimateExtent(VirtualizingLayoutContext context, Size availableSize)
+    {
+        double averageHeight = m_totalHeightForEstimation / m_numItemsUsedForEstimation;
+
+        Rect extent = new Rect(0, 0, availableSize.Width, context.ItemCount * averageHeight);
+
+        if (context.ItemCount &gt; 0 &amp;&amp; m_realizedElementBounds.Count &gt; 0)
+        {
+            extent.Y = m_firstRealizedDataIndex == 0 ?
+                            m_realizedElementBounds[0].Y :
+                            m_realizedElementBounds[0].Y - (m_firstRealizedDataIndex - 1) * averageHeight;
+
+            int lastRealizedIndex = m_firstRealizedDataIndex + m_realizedElementBounds.Count;
+            if (lastRealizedIndex == context.ItemCount - 1)
+            {
+                var lastBounds = m_realizedElementBounds[m_realizedElementBounds.Count - 1];
+                extent.Y = lastBounds.Bottom;
+            }
+            else
+            {
+                var lastBounds = m_realizedElementBounds[m_realizedElementBounds.Count - 1];
+                int lastRealizedDataIndex = m_firstRealizedDataIndex + m_realizedElementBounds.Count;
+                int numItemsAfterLastRealizedIndex = context.ItemCount - lastRealizedDataIndex;
+                extent.Height = lastBounds.Bottom + numItemsAfterLastRealizedIndex * averageHeight - extent.Y;
+            }
+        }
+
+        DebugTrace(&quot;Extent &quot; + extent + &quot; with average height &quot; + averageHeight);
+        return extent;
+    }
+
+    private bool IsRealized(int dataIndex)
+    {
+        int realizationIndex = dataIndex - m_firstRealizedDataIndex;
+        return realizationIndex &gt;= 0 &amp;&amp; realizationIndex &lt; m_realizedElementBounds.Count;
+    }
+
+    // Index in the m_realizedElementBounds collection
+    private int RealizationIndex(int dataIndex)
+    {
+        return dataIndex - m_firstRealizedDataIndex;
+    }
+
+    private void OnItemsAdded(int index, int count)
+    {
+        // Using the old indexes here (before it was updated by the collection change)
+        // if the insert data index is between the first and last realized data index, we need
+        // to insert items.
+        int lastRealizedDataIndex = m_firstRealizedDataIndex + m_realizedElementBounds.Count - 1;
+        int newStartingIndex = index;
+        if (newStartingIndex &gt; m_firstRealizedDataIndex &amp;&amp;
+            newStartingIndex &lt;= lastRealizedDataIndex)
+        {
+            // Inserted within the realized range
+            int insertRangeStartIndex = newStartingIndex - m_firstRealizedDataIndex;
+            for (int i = 0; i &lt; count; i++)
+            {
+                // Insert null (sentinel) here instead of an element, that way we do not
+                // end up creating a lot of elements only to be thrown out in the next layout.
+                int insertRangeIndex = insertRangeStartIndex + i;
+                int dataIndex = newStartingIndex + i;
+                // This is to keep the contiguousness of the mapping
+                m_realizedElementBounds.Insert(insertRangeIndex, new Rect());
+            }
+        }
+        else if (index &lt;= m_firstRealizedDataIndex)
+        {
+            // Items were inserted before the realized range.
+            // We need to update m_firstRealizedDataIndex;
+            m_firstRealizedDataIndex += count;
+        }
+    }
+
+    private void OnItemsRemoved(int index, int count)
+    {
+        int lastRealizedDataIndex = m_firstRealizedDataIndex + m_realizedElementBounds.Count - 1;
+        int startIndex = Math.Max(m_firstRealizedDataIndex, index);
+        int endIndex = Math.Min(lastRealizedDataIndex, index + count - 1);
+        bool removeAffectsFirstRealizedDataIndex = (index &lt;= m_firstRealizedDataIndex);
+
+        if (endIndex &gt;= startIndex)
+        {
+            ClearRealizedRange(RealizationIndex(startIndex), endIndex - startIndex + 1);
+        }
+
+        if (removeAffectsFirstRealizedDataIndex &amp;&amp;
+            m_firstRealizedDataIndex != -1)
+        {
+            m_firstRealizedDataIndex -= count;
+        }
+    }
+
+    private void ClearRealizedRange(int startRealizedIndex, int count)
+    {
+        m_realizedElementBounds.RemoveRange(startRealizedIndex, count);
+        if (startRealizedIndex == 0)
+        {
+            m_firstRealizedDataIndex = m_realizedElementBounds.Count == 0 ? 0 : m_firstRealizedDataIndex + count;
+        }
+    }
+
+    private void ClearRealizedRange()
+    {
+        m_realizedElementBounds.Clear();
+        m_firstRealizedDataIndex = 0;
+    }
+
+    private Rect GetCachedBoundsForDataIndex(int dataIndex)
+    {
+        return m_realizedElementBounds[RealizationIndex(dataIndex)];
+    }
+
+    private void SetCachedBoundsForDataIndex(int dataIndex, Rect bounds)
+    {
+        m_realizedElementBounds[RealizationIndex(dataIndex)] = bounds;
+    }
+
+    private Rect GetCachedBoundsForRealizationIndex(int relativeIndex)
+    {
+        return m_realizedElementBounds[relativeIndex];
+    }
+
+    void DebugTrace(string message, params object[] args)
+    {
+        Debug.WriteLine(message, args);
+    }
+}
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/uwp/api/microsoft.ui.xaml.controls.itemsrepeater">ItemsRepeater</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/layout/attached-layouts.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

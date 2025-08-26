@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Content design basics for Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Content design basics for Windows apps ">
+    
+    <meta name="description" content="An overview of common page patterns and UI elements for displaying content in your Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="content-design-basics-for-windows-apps">Content design basics for Windows apps</h1>
+
+<p>This article provides some practical tips and examples to help you design the content of your app: Windows spacing rationale, using the type ramp to demonstrate hierarchy, lists and grids, and how to group controls.</p>
+<h2 id="spacing-and-gutters">Spacing and gutters</h2>
+<p>The use of consistently sized spacing and gutters semantically groups an experience into separate components. These values map to our rounded corner logic and together help create a cohesive and usable layout.</p>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/geometry_spacing_buttons_626.png" alt="Two buttons separated by 8 pixels.">
+</span>
+</p>
+</div>
+<div class="column">
+<p><strong>8epx</strong> between buttons</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/geometry_spacing_flyout.svg" alt="A button and a flyout separated by 8 pixels.">
+</span>
+</p>
+</div>
+<div class="column">
+<p><strong>8epx</strong> between buttons and flyouts</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/geometry_spacing_header.svg" alt="A control and a header separated by 8 pixels.">
+</span>
+</p>
+</div>
+<div class="column">
+<p><strong>8epx</strong> between control and header</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/geometry_spacing_label.svg" alt="A Control and a label separated by 12 pixels">
+</span>
+</p>
+</div>
+<div class="column">
+<p><strong>12epx</strong> between control and label</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/geometry_spacing_cards.svg" alt="Two content areas separated by 12 pixels.">
+</span>
+</p>
+</div>
+<div class="column">
+<p><strong>12epx</strong> between content areas</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/geometry_spacing_margins.svg" alt="A surface containing text with 12 pixel gutters on both sides.">
+</span>
+</p>
+</div>
+<div class="column">
+<p><strong>16epx</strong> between surface and edge text</p>
+</div>
+</section>
+<h2 id="text--hierarchy">Text + hierarchy</h2>
+<p>Our type ramp (link) is designed to provide an array of sizes that can help communicate hierarchy within an app.</p>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/title-subtitle-body.png" alt="An example of text using title, subtitle, and body styles when there is adequate space.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>Using Title, Subtitle and Body with 12epx spacing.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/body-strong-confined-space.png" alt="An example of using Body Strong instead of Title in a confined space.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>When differentiating a title in a confined UI space, use Body Strong for the title without any additional spacing between text blocks.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/confined-space-captions.png" alt="An example of using the Caption style in a confined space.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>Use caption size for very confined spaces where text is needed, such as command buttons.</p>
+</div>
+</section>
+<h2 id="lists-and-grids">Lists and grids</h2>
+<p>There are a variety of list and grid styles that can be created. Below are a variety of compositions used in Windows.</p>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/multi-line-list.png" alt="An example list with multi-element list items.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>For multi-line lists, use Body and Caption from the type ramp, and 32epx icons.<br><br>Use Body Strong for section headers.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/horizontal-lists.png" alt="An example of horizontal lists.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>When using icons or person picture elements for grid items, use Caption text that is center-aligned.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/album-list.png" alt="An example list containing large list items.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>Use Body style for primary text and left-align to the image if your list contains large graphical elements with text.</p>
+</div>
+</section>
+<h2 id="using-controls">Using controls</h2>
+<p>Some examples of how controls can relate to each other in common configurations.</p>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/expander-with-controls.png" alt="An example of an expander with child controls.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>Examples showing how to use an expander control (link) with list styles and common controls. Controls should be right-aligned with 16epx between the control and expander button.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/expander-content-alignment.png" alt="An example how controls inside an expander are aligned.">
+</span>
+</p>
+</div>
+<div class="column">
+<p>This example shows controls alignment when placed inside the expander. Indent the controls 48epx.</p>
+</div>
+</section>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/basics/content-basics.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

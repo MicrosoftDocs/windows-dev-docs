@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Microsoft Store Developer CLI (preview) Commands </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Microsoft Store Developer CLI (preview) Commands ">
+    
+    <meta name="description" content="How to run the Microsoft Store Developer CLI (preview) commands.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="commands">Commands</h1>
+
+<h2 id="installation">Installation</h2>
+<div class="zone has-pivot" data-pivot="msstoredevcli-installer-windows">
+<h3 id="step-1-install-net-windows-runtime">Step 1: Install .NET Windows Runtime</h3>
+<p>If you haven't done so already, install the latest version of the <a href="https://dotnet.microsoft.com/download/dotnet/8.0">.NET 8 Desktop Runtime</a>. This is a requirement to run the Microsoft Store Developer CLI.</p>
+<p>The easiest way to install it is to use <em>winget</em>:</p>
+<pre><code class="lang-console">winget install Microsoft.DotNet.DesktopRuntime.8
+</code></pre>
+<h3 id="step-2-install-the-microsoft-store-developer-cli-on-windows">Step 2: Install the Microsoft Store Developer CLI on Windows</h3>
+<p>You can download the Microsoft Store Developer CLI from the <a href="https://www.microsoft.com/store/apps/9P53PC5S0PHJ">Microsoft Store</a>. Alternatively, you can use <em>winget</em>:</p>
+<pre><code class="lang-console">winget install &quot;Microsoft Store Developer CLI&quot;
+</code></pre>
+</div>
+<div class="zone has-pivot" data-pivot="msstoredevcli-installer-macos">
+<h3 id="step-1-install-net-macos-runtime">Step 1: Install .NET macOS Runtime</h3>
+<p>If you haven't done so already, install the latest version of the <a href="https://dotnet.microsoft.com/download/dotnet/8.0">.NET 8 Runtime</a>. This is a requirement to run the Microsoft Store Developer CLI.</p>
+<h3 id="step-2-install-the-microsoft-store-developer-cli-on-macos">Step 2: Install the Microsoft Store Developer CLI on macOS</h3>
+<p>You can download the macOS <em>.tar.gz</em> for your specific architecture (x64 or Arm64) from the <a href="https://aka.ms/msstoredevcli/releases">Microsoft Store Developer CLI releases page</a>. Once downloaded, extract the archive and put it in your PATH, however you want to do that, for example:</p>
+<pre><code class="lang-console">mkdir MSStoreCLI
+curl https://github.com/microsoft/msstore-cli/releases/latest/download/MSStoreCLI-osx-x64.tar.gz -o MSStoreCLI-osx-x64.tar.gz
+tar -xvf MSStoreCLI-osx-x64.tar.gz -C ./MSStoreCLI
+sudo cp -R MSStoreCLI/. /usr/local/bin
+</code></pre>
+<p>Alternatively, you can use <em>brew</em>:</p>
+<pre><code class="lang-console">brew install microsoft/msstore-cli/msstore-cli
+</code></pre>
+</div>
+<div class="zone has-pivot" data-pivot="msstoredevcli-installer-linux">
+<h3 id="step-1-install-net-linux-runtime">Step 1: Install .NET Linux Runtime</h3>
+<p>If you haven't done so already, install the latest version of the <a href="https://dotnet.microsoft.com/download/dotnet/8.0">.NET 8 Runtime</a>. This is a requirement to run the Microsoft Store Developer CLI.</p>
+<h3 id="step-2-install-the-microsoft-store-developer-cli-on-linux">Step 2: Install the Microsoft Store Developer CLI on Linux</h3>
+<p>You can download the Linux <em>.tar.gz</em> for your specific architecture (x64 or Arm64) from the <a href="https://aka.ms/msstoredevcli/releases">Microsoft Store Developer CLI releases page</a>. Once downloaded, extract the archive and put it in your PATH, however you want to do that, for example:</p>
+<pre><code class="lang-console">mkdir MSStoreCLI
+wget https://github.com/microsoft/msstore-cli/releases/latest/download/MSStoreCLI-linux-x64.tar.gz
+tar -xvf MSStoreCLI-linux-x64.tar.gz -C ./MSStoreCLI
+sudo cp -R MSStoreCLI/. /usr/local/bin
+</code></pre>
+<p>Alternatively, you can use <em>brew</em>:</p>
+<pre><code class="lang-console">brew install microsoft/msstore-cli/msstore-cli
+</code></pre>
+</div>
+<h2 id="info-command">Info Command</h2>
+<p>Print existing configuration.</p>
+<h3 id="info-command---usage">Info Command - Usage</h3>
+<pre><code class="lang-console">msstore info
+</code></pre>
+<h3 id="info-command---options">Info Command - Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v, --verbose</td>
+<td>Print verbose output.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reconfigure-command">Reconfigure Command</h2>
+<p>Re-configure the Microsoft Store Developer CLI. You can provide either a Client Secret or a Certificate. Certificates can be provided either through its Thumbprint or by providing a file path (with or without a password).</p>
+<h3 id="reconfigure---usage">Reconfigure - Usage</h3>
+<pre><code class="lang-console">msstore reconfigure
+</code></pre>
+<h3 id="reconfigure---options">Reconfigure - Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-t, --tenantId</td>
+<td>Specify the tenant Id that should be used.</td>
+</tr>
+<tr>
+<td>-s, --sellerId</td>
+<td>Specify the seller Id that should be used.</td>
+</tr>
+<tr>
+<td>-c, --clientId</td>
+<td>Specify the client Id that should be used.</td>
+</tr>
+<tr>
+<td>-cs, --clientSecret</td>
+<td>Specify the client Secret that should be used.</td>
+</tr>
+<tr>
+<td>-ct, --certificateThumbprint</td>
+<td>Specify the certificate Thumbprint that should be used.</td>
+</tr>
+<tr>
+<td>-cfp, --certificateFilePath</td>
+<td>Specify the certificate file path that should be used.</td>
+</tr>
+<tr>
+<td>-cp, --certificatePassword</td>
+<td>Specify the certificate password that should be used.</td>
+</tr>
+<tr>
+<td>--reset</td>
+<td>Only reset the credentials, without starting over.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-command">Settings Command</h2>
+<p>Change settings of the Microsoft Store Developer CLI.</p>
+<h3 id="settings---usage">Settings - Usage</h3>
+<pre><code class="lang-console">msstore settings
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Sub-Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setpdn</td>
+<td>Set the Publisher Display Name property that is used by the init command.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="settings---options">Settings - Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-t, --enableTelemetry</td>
+<td>Enable (empty/true) or Disable (false) telemetry.</td>
+</tr>
+<tr>
+<td>-v, --verbose</td>
+<td>Print verbose output.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="settings---setpdn-command-usage">Settings - SetPDN Command Usage</h3>
+<pre><code class="lang-console">msstore settings setpdn &lt;publisherDisplayName&gt;
+</code></pre>
+<h4 id="arguments">Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>publisherDisplayName</code></td>
+<td>The Publisher Display Name property that will be set globally.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="help">Help</h4>
+<pre><code class="lang-console">msstore settings setpdn --help
+</code></pre>
+<h2 id="apps-command">Apps Command</h2>
+<table>
+<thead>
+<tr>
+<th>Sub-Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#apps---list-command-usage">list</a></td>
+<td>Lists all the applications in your account.</td>
+</tr>
+<tr>
+<td><a href="#apps---get-command-usage">get</a></td>
+<td>Gets the details of a specific application.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="apps---list-command-usage">Apps - List Command Usage</h3>
+<pre><code class="lang-console">msstore apps list
+</code></pre>
+<h4 id="list-command---help">List Command - Help</h4>
+<pre><code class="lang-console">msstore apps list --help
+</code></pre>
+<h3 id="apps---get-command-usage">Apps - Get Command Usage</h3>
+<pre><code class="lang-console">msstore apps get &lt;productId&gt;
+</code></pre>
+<h4 id="apps---get-command-arguments">Apps - Get Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="apps---get-command-help">Apps - Get Command Help</h4>
+<pre><code class="lang-console">msstore apps get --help
+</code></pre>
+<h2 id="submission-command">Submission Command</h2>
+<table>
+<thead>
+<tr>
+<th>Sub-Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#submission---status-command-usage">status</a></td>
+<td>Gets the status of a submission.</td>
+</tr>
+<tr>
+<td><a href="#submission---get-command-usage">get</a></td>
+<td>Gets the details of a specific submission.</td>
+</tr>
+<tr>
+<td><a href="#submission---getlistingassets-command-usage">getListingAssets</a></td>
+<td>Gets the listing assets of a specific submission.</td>
+</tr>
+<tr>
+<td><a href="#submission---updatemetadata-command-usage">updateMetadata</a></td>
+<td>Updates the metadata of a specific submission.</td>
+</tr>
+<tr>
+<td><a href="#submission---update-command-usage">update</a></td>
+<td>Updates the details of a specific submission.</td>
+</tr>
+<tr>
+<td><a href="#submission---poll-command-usage">poll</a></td>
+<td>Polls the status of a submission.</td>
+</tr>
+<tr>
+<td><a href="#submission---publish-command-usage">publish</a></td>
+<td>Publishes a specific submission.</td>
+</tr>
+<tr>
+<td><a href="#submission---delete-command-usage">delete</a></td>
+<td>Deletes a specific submission.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="submission---status-command-usage">Submission - Status Command Usage</h3>
+<pre><code class="lang-console">msstore submission status &lt;productId&gt;
+</code></pre>
+<h4 id="submission---status-command-arguments">Submission - Status Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---status-command-help">Submission - Status Command Help</h4>
+<pre><code class="lang-console">msstore submission status --help
+</code></pre>
+<h3 id="submission---get-command-usage">Submission - Get Command Usage</h3>
+<pre><code class="lang-console">msstore submission get &lt;productId&gt;
+</code></pre>
+<h4 id="submission---get-command-arguments">Submission - Get Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---get-command-options">Submission - Get Command Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-m, --module</td>
+<td>Select which module you want to retrieve ('availability', 'listings' or 'properties').</td>
+</tr>
+<tr>
+<td>-l, --language</td>
+<td>Select which language you want to retrieve. [default: en]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---get-command-help">Submission - Get Command Help</h4>
+<pre><code class="lang-console">msstore submission get --help
+</code></pre>
+<h3 id="submission---getlistingassets-command-usage">Submission - GetListingAssets Command Usage</h3>
+<p>Retrieves the existing draft listing assets from the store submission.</p>
+<pre><code class="lang-console">msstore submission getListingAssets &lt;productId&gt;
+</code></pre>
+<h4 id="submission---getlistingassets-command-arguments">Submission - GetListingAssets Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---getlistingassets-command-options">Submission - GetListingAssets Command Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-l, --language</td>
+<td>Select which language you want to retrieve. [default: en]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---getlistingassets-command-help">Submission - GetListingAssets Command Help</h4>
+<pre><code class="lang-console">msstore submission getListingAssets --help
+</code></pre>
+<h3 id="submission---updatemetadata-command-usage">Submission - UpdateMetadata Command Usage</h3>
+<pre><code class="lang-console">msstore submission updateMetadata &lt;productId&gt; &lt;metadata&gt;
+</code></pre>
+<h4 id="submission---updatemetadata-command-arguments">Submission - UpdateMetadata Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>The updated JSON metadata representation.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---updatemetadata-command-options">Submission - UpdateMetadata Command Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-s, --skipInitialPolling</td>
+<td>Skip the initial polling before executing the action. [default: False]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---updatemetadata-command-help">Submission - UpdateMetadata Command Help</h4>
+<pre><code class="lang-console">msstore submission updateMetadata --help
+</code></pre>
+<h3 id="submission---update-command-usage">Submission - Update Command Usage</h3>
+<pre><code class="lang-console">msstore submission update &lt;productId&gt; &lt;product&gt;
+</code></pre>
+<h4 id="submission---update-command-arguments">Submission - Update Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+<tr>
+<td><code>product</code></td>
+<td>The updated JSON product representation.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---update-command-options">Submission - Update Command Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-s, --skipInitialPolling</td>
+<td>Skip the initial polling before executing the action. [default: False]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---update-command-help">Submission - Update Command Help</h4>
+<pre><code class="lang-console">msstore submission update --help
+</code></pre>
+<h3 id="submission---poll-command-usage">Submission - Poll Command Usage</h3>
+<pre><code class="lang-console">msstore submission poll &lt;productId&gt;
+</code></pre>
+<h4 id="submission---poll-command-arguments">Submission - Poll Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---poll-command-help">Submission - Poll Command Help</h4>
+<pre><code class="lang-console">msstore submission poll --help
+</code></pre>
+<h3 id="submission---publish-command-usage">Submission - Publish Command Usage</h3>
+<pre><code class="lang-console">msstore submission publish &lt;productId&gt;
+</code></pre>
+<h4 id="submission---publish-command-arguments">Submission - Publish Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---publish-command-help">Submission - Publish Command Help</h4>
+<pre><code class="lang-console">msstore submission publish --help
+</code></pre>
+<h3 id="submission---delete-command-usage">Submission - Delete Command Usage</h3>
+<p>Deletes the pending submission from the store.</p>
+<h4 id="submission---delete-command-arguments">Submission - Delete Command Arguments</h4>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>productId</code></td>
+<td>The product ID.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---delete-command-options">Submission - Delete Command Options</h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--no-confirm</td>
+<td>Do not prompt for confirmation. [default: False]</td>
+</tr>
+</tbody>
+</table>
+<h4 id="submission---delete-command-help">Submission - Delete Command Help</h4>
+<pre><code class="lang-console">msstore submission delete --help
+</code></pre>
+<h2 id="init-command">Init Command</h2>
+<p>The <code>init</code> command helps you setup your application to publish to the Microsoft Store. It currently supports the following application types:</p>
+<ul>
+<li>Windows App SDK/WinUI 3</li>
+<li>UWP</li>
+<li>.NET MAUI</li>
+<li>Flutter</li>
+<li>Electron</li>
+<li>React Native for Desktop</li>
+<li>PWA</li>
+</ul>
+<h3 id="init-command---usage-examples">Init Command - Usage Examples</h3>
+<h4 id="init-command---windows-app-sdkwinui-3">Init Command - Windows App SDK/WinUI 3</h4>
+<pre><code class="lang-console">msstore init &quot;C:\path\to\winui3_app&quot;
+</code></pre>
+<h4 id="init-command---uwp">Init Command - UWP</h4>
+<pre><code class="lang-console">msstore init &quot;C:\path\to\uwp_app&quot;
+</code></pre>
+<h4 id="init-command---net-maui">Init Command - .NET MAUI</h4>
+<pre><code class="lang-console">msstore init &quot;C:\path\to\maui_app&quot;
+</code></pre>
+<h4 id="init-command---flutter">Init Command - Flutter</h4>
+<pre><code class="lang-console">msstore init &quot;C:\path\to\flutter_app&quot;
+</code></pre>
+<h4 id="init-command---electron">Init Command - Electron</h4>
+<pre><code class="lang-console">msstore init &quot;C:\path\to\electron_app&quot;
+</code></pre>
+<h4 id="init-command---react-native-for-desktop">Init Command - React Native for Desktop</h4>
+<pre><code class="lang-console">msstore init &quot;C:\path\to\react_native_app&quot;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For Electron, as well as React Native for Desktop projects, both <code>Npm</code> and <code>Yarn</code> are supported. The presence of the <code>Yarn</code> lock file (<code>yarn.lock</code>) will be used to determine which package manager to use, so make sure that you check in your lock file into your source control system.</p>
+</div>
+<h4 id="init-command---pwa">Init Command - PWA</h4>
+<pre><code class="lang-console">msstore init https://contoso.com --output .
+</code></pre>
+<h3 id="init-command---arguments">Init Command - Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pathOrUrl</code></td>
+<td>The root directory path where the project file is, or a public URL that points to a PWA.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="init-command---options">Init Command - Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-n, --publisherDisplayName</td>
+<td>The Publisher Display Name used to configure the application. If provided, avoids an extra APIs call.</td>
+</tr>
+<tr>
+<td>--package</td>
+<td>If supported by the app type, automatically packs the project.</td>
+</tr>
+<tr>
+<td>--publish</td>
+<td>If supported by the app type, automatically publishes the project. Implies '--package true'</td>
+</tr>
+<tr>
+<td>-f, --flightId</td>
+<td>Specifies the Flight Id where the package will be published.</td>
+</tr>
+<tr>
+<td>-prp, --packageRolloutPercentage</td>
+<td>Specifies the rollout percentage of the package. The value must be between 0 and 100.</td>
+</tr>
+<tr>
+<td>-a, --arch</td>
+<td>The architecture(s) to build for. If not provided, the default architecture for the current OS, and project type, will be used. Allowed values: &quot;x86&quot;, &quot;x64&quot;, &quot;arm64&quot;. Only used it used in conjunction with '--package true'.</td>
+</tr>
+<tr>
+<td>-o, --output</td>
+<td>The output directory where the packaged app will be stored. If not provided, the default directory for each different type of app will be used.</td>
+</tr>
+<tr>
+<td>-ver, --version</td>
+<td>The version used when building the app. If not provided, the version from the project file will be used.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="package-command">Package Command</h2>
+<p>Helps you package your Microsoft Store Application as an MSIX.</p>
+<h3 id="package-command---usage-examples">Package Command - Usage Examples</h3>
+<h4 id="package-command---windows-app-sdkwinui-3">Package Command - Windows App SDK/WinUI 3</h4>
+<pre><code class="lang-console">msstore package &quot;C:\path\to\winui3_app&quot;
+</code></pre>
+<h4 id="package-command---uwp">Package Command - UWP</h4>
+<pre><code class="lang-console">msstore package &quot;C:\path\to\uwp_app&quot;
+</code></pre>
+<h4 id="package-command---net-maui">Package Command - .NET MAUI</h4>
+<pre><code class="lang-console">msstore package &quot;C:\path\to\maui_app&quot;
+</code></pre>
+<h4 id="package-command---flutter">Package Command - Flutter</h4>
+<pre><code class="lang-console">msstore package &quot;C:\path\to\flutter_app&quot;
+</code></pre>
+<h4 id="package-command---electron">Package Command - Electron</h4>
+<pre><code class="lang-console">msstore package &quot;C:\path\to\electron_app&quot;
+</code></pre>
+<h4 id="package-command---react-native-for-desktop">Package Command - React Native for Desktop</h4>
+<pre><code class="lang-console">msstore package &quot;C:\path\to\react_native_app&quot;
+</code></pre>
+<h4 id="package-command---pwa">Package Command - PWA</h4>
+<pre><code class="lang-console">msstore package &quot;C:\path\to\pwa_app&quot;
+</code></pre>
+<h3 id="package-command---arguments">Package Command - Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pathOrUrl</code></td>
+<td>The root directory path where the project file is, or a public URL that points to a PWA.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="package-command---options">Package Command - Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-o, --output</td>
+<td>The output directory where the packaged app will be stored. If not provided, the default directory for each different type of app will be used.</td>
+</tr>
+<tr>
+<td>-a, --arch</td>
+<td>The architecture(s) to build for. If not provided, the default architecture for the current OS, and project type, will be used. Allowed values: &quot;x86&quot;, &quot;x64&quot;, &quot;arm64&quot;.</td>
+</tr>
+<tr>
+<td>-ver, --version</td>
+<td>The version used when building the app. If not provided, the version from the project file will be used.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="publish-command">Publish Command</h2>
+<p>Publishes your Application to the Microsoft Store.</p>
+<h3 id="publish-command---usage-examples">Publish Command - Usage Examples</h3>
+<h4 id="publish-command---windows-app-sdkwinui-3">Publish Command - Windows App SDK/WinUI 3</h4>
+<pre><code class="lang-console">msstore publish &quot;C:\path\to\winui3_app&quot;
+</code></pre>
+<h4 id="publish-command---uwp">Publish Command - UWP</h4>
+<pre><code class="lang-console">msstore publish &quot;C:\path\to\uwp_app&quot;
+</code></pre>
+<h4 id="publish-command---net-maui">Publish Command - .NET MAUI</h4>
+<pre><code class="lang-console">msstore publish &quot;C:\path\to\maui_app&quot;
+</code></pre>
+<h4 id="publish-command---flutter">Publish Command - Flutter</h4>
+<pre><code class="lang-console">msstore publish &quot;C:\path\to\flutter_app&quot;
+</code></pre>
+<h4 id="publish-command---electron">Publish Command - Electron</h4>
+<pre><code class="lang-console">msstore publish &quot;C:\path\to\electron_app&quot;
+</code></pre>
+<h4 id="publish-command---react-native-for-desktop">Publish Command - React Native for Desktop</h4>
+<pre><code class="lang-console">msstore publish &quot;C:\path\to\react_native_app&quot;
+</code></pre>
+<h4 id="publish-command---pwa">Publish Command - PWA</h4>
+<pre><code class="lang-console">msstore publish &quot;C:\path\to\pwa_app&quot;
+</code></pre>
+<h3 id="publish-command---arguments">Publish Command - Arguments</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pathOrUrl</code></td>
+<td>The root directory path where the project file is, or a public URL that points to a PWA.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="publish-command---options">Publish Command - Options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-i, --inputDirectory</td>
+<td>The directory where the '.msix' or '.msixupload' file to be used for the publishing command. If not provided, the cli will try to find the best candidate based on the 'pathOrUrl' argument.</td>
+</tr>
+<tr>
+<td>-id, --appId</td>
+<td>Specifies the Application Id. Only needed if the project has not been initialized before with the 'init' command.</td>
+</tr>
+<tr>
+<td>-nc, --noCommit</td>
+<td>Disables committing the submission, keeping it in draft state.</td>
+</tr>
+<tr>
+<td>-f, --flightId</td>
+<td>Specifies the Flight Id where the package will be published.</td>
+</tr>
+<tr>
+<td>-prp, --packageRolloutPercentage</td>
+<td>Specifies the rollout percentage of the package. The value must be between 0 and 100.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cicd-environments">CI/CD Environments</h2>
+<p>The Microsoft Store Developer CLI (preview) supports running in CI/CD environments. This means that you can use the Microsoft Store Developer CLI (preview) in your CI/CD pipelines to, for example, automatically publish your applications to the Microsoft Store.</p>
+<p>The firststep to achieve this it to install the Microsoft Store Developer CLI (preview) on your CI/CD environment. You can find instructions on how to do this <a href="commands.html#installation">here</a>.</p>
+<p>After installing the Microsoft Store Developer CLI (preview), you have to configure your environment to be able to run commands. You can do this by running the <code>msstore reconfigure</code> command with the specific parameters that identify your partner center account (<em>TenantId</em>, <em>SellerId</em>, <em>ClientId</em>). You also need to provide either a <em>ClientSecret</em> or a <em>Certificate</em>.</p>
+<p>It is very important to hide these credentials, as they will be visible in the logs of your CI/CD pipeline. You can do this by using <strong>secrets</strong>. Each CI/CD pipeline system have different names for these secrets. For example, Azure DevOps call them <a href="/azure/devops/pipelines/process/set-secret-variables"><em>Secret Variables</em></a>, but GitHub Action calls them <a href="https://docs.github.com/actions/security-guides/encrypted-secrets">Encrypted Secrets</a>. Create one <strong>secret</strong> for each of the parameters (<em>TenantId</em>, <em>SellerId</em>, <em>ClientId</em>, and <em>ClientSecret</em> or a <em>Certificate</em>), and then use the <code>reconfigure</code> command to setup your environment.</p>
+<p>For example:</p>
+<h3 id="azure-devops">Azure DevOps</h3>
+<pre><code class="lang-yaml">- task: UseMSStoreCLI@0
+  displayName: Setup Microsoft Store Developer CLI
+- script: msstore reconfigure --tenantId $(PARTNER_CENTER_TENANT_ID) --sellerId $(PARTNER_CENTER_SELLER_ID) --clientId $(PARTNER_CENTER_CLIENT_ID) --clientSecret $(PARTNER_CENTER_CLIENT_SECRET)
+  displayName: Configure Microsoft Store Developer CLI
+</code></pre>
+<h3 id="github-actions">GitHub Actions</h3>
+<pre><code class="lang-yaml">- name: Setup Microsoft Store Developer CLI
+  uses: microsoft/setup-msstore-cli@v1
+- name: Configure Microsoft Store Developer CLI
+  run: msstore reconfigure --tenantId ${{ secrets.PARTNER_CENTER_TENANT_ID }} --sellerId ${{ secrets.PARTNER_CENTER_SELLER_ID }} --clientId ${{ secrets.PARTNER_CENTER_CLIENT_ID }} --clientSecret ${{ secrets.PARTNER_CENTER_CLIENT_SECRET }}
+</code></pre>
+<p>Once this command is executed, the Microsoft Store Developer CLI (preview) will be configured to use the credentials provided. You can now use the Microsoft Store Developer CLI (preview) in your CI/CD pipeline.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/msstore-dev-cli/commands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

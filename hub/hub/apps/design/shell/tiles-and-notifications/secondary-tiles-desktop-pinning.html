@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Pin secondary tiles from desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Pin secondary tiles from desktop apps ">
+    
+    <meta name="description" content="A desktop app such as a WinUI 3 app (using the Windows App SDK), or a Windows Presentation Foundation (WPF) or Windows Forms (WinForms) app, can pin a secondary tile by using a packaged app (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). This was formerly known as Desktop Bridge.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="pin-secondary-tiles-from-desktop-apps">Pin secondary tiles from desktop apps</h1>
+
+<p>A desktop app such as a WinUI 3 app (using the Windows App SDK), or a Windows Presentation Foundation (WPF) or Windows Forms (WinForms) app, can pin a secondary tile by using a packaged app (see <a href="/windows/msix/desktop/source-code-overview">Building an MSIX package from your code</a>). This was formerly known as Desktop Bridge.</p>
+<p><img src="images/secondarytiles.png" alt="Screenshot of secondary tiles"></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires Fall Creators Update</strong>: You must target SDK 16299 and be running build 16299 or later to pin secondary tiles from Desktop Bridge apps.</p>
+</div>
+<p>Adding a secondary tile from your Windows App SDK, WPF, or WinForms application is very similar to a pure UWP app. The only difference is that you must specify your main window handle (HWND). This is because when pinning a tile, Windows displays a modal dialog asking the user to confirm whether they would like to pin the tile. If the desktop application doesn't configure the <a href="/uwp/api/windows.ui.startscreen.secondarytile"><strong>SecondaryTile</strong></a> object with the owner window, then Windows doesn't know where to draw the dialog, and the operation will fail.</p>
+<h2 id="package-your-app">Package your app</h2>
+<p>If you're creating a Windows App SDK application with WinUI 3, you must use a packaged application to pin secondary tiles. There are no extra steps required to package your app if you start with the packaged app template.</p>
+<p>If you're using WPF or WinForms, and you haven't packaged your app with the Desktop Bridge, then you'll need to do that before you can use any Windows Runtime APIs (see <a href="/windows/msix/desktop/source-code-overview">Building an MSIX package from your code</a>).</p>
+<h2 id="initialize-and-pin-a-secondary-tile-using-the-iinitializewithwindow-interface">Initialize and pin a secondary tile using the IInitializeWithWindow interface</h2>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_csharpnet6" role="tab" aria-controls="tabpanel_1_csharpnet6" data-tab="csharpnet6" tabindex="0" aria-selected="true">C# (.NET 6 or later)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_csharp" role="tab" aria-controls="tabpanel_1_csharp" data-tab="csharp" tabindex="-1">C# (Earlier versions of .NET)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_1_csharpnet6" role="tabpanel" data-tab="csharpnet6">
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This section is for WinUI 3; and for WPF/WinForms with .NET 6 or later.</p>
+</div>
+<ol>
+<li><p>In the project file, set the <strong>TargetFramework</strong> property to a value that gives you access to the Windows Runtime APIs (see <a href="../../../desktop/modernize/desktop-to-uwp-enhance.html#net-6-and-later-use-the-target-framework-moniker-option">.NET 6 and later: Use the Target Framework Moniker option</a>). That includes access to the <strong>WinRT.Interop</strong> namespace (see <a href="../../../desktop/modernize/winrt-com-interop-csharp.html#available-via-target-framework-moniker">Call interop APIs from a .NET app</a>). For example:</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;!-- You can also target other versions of the Windows SDK and .NET; for example, &quot;net8.0-windows10.0.19041.0&quot; --&gt;
+  &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+<li><p>Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see <a href="secondary-tiles-pinning.md">Pin secondary tiles</a>.</p>
+<pre><code class="lang-csharp">// Initialize the tile with required arguments
+var tile = new Windows.UI.StartScreen.SecondaryTile(
+    &quot;myTileId5391&quot;,
+    &quot;Display name&quot;,
+    &quot;myActivationArgs&quot;,
+    new Uri(&quot;ms-appx:///Assets/Square150x150Logo.png&quot;),
+    TileSize.Default);
+</code></pre>
+</li>
+<li><p>Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, <code>this</code> is a reference to the Window object (whether a WinUI 3 window, a WPF window, or a WinForms window). For more info, see <a href="../../../develop/ui-input/retrieve-hwnd.html">Retrieve a window handle (HWND)</a> and <a href="../../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<pre><code class="lang-csharp">var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+WinRT.Interop.InitializeWithWindow.Initialize(tile, hWnd);
+</code></pre>
+</li>
+<li><p>Finally, request to pin the tile as you would in a normal UWP app.</p>
+<pre><code class="lang-csharp">// Pin the tile
+bool isPinned = await tile.RequestCreateAsync();
+
+// Here, update UI to reflect whether user can now either unpin or pin
+</code></pre>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This section is for WPF/WinForms with a version of .NET earlier than 5.</p>
+</div>
+<ol>
+<li><p>Use the <a href="/dotnet/api/system.runtime.interopservices.comimportattribute"><strong>ComImport</strong></a> and <strong>Guid</strong> attributes to declare the <strong>IInitializeWithWindow</strong> interface.</p>
+<pre><code class="lang-csharp">[System.Runtime.InteropServices.ComImport]
+[System.Runtime.InteropServices.Guid(&quot;3E68D4BD-7135-4D10-8018-9FB6D9F33FA1&quot;)]
+[System.Runtime.InteropServices.InterfaceType(
+    System.Runtime.InteropServices.ComInterfaceType.InterfaceIsIUnknown
+)]
+public interface IInitializeWithWindow
+{
+    void Initialize(IntPtr hWnd);
+}
+</code></pre>
+</li>
+<li><p>Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see <a href="secondary-tiles-pinning.md">Pin secondary tiles</a>.</p>
+<pre><code class="lang-csharp">// Initialize the tile with required arguments
+var tile = new Windows.UI.StartScreen.SecondaryTile(
+    &quot;myTileId5391&quot;,
+    &quot;Display name&quot;,
+    &quot;myActivationArgs&quot;,
+    new Uri(&quot;ms-appx:///Assets/Square150x150Logo.png&quot;),
+    TileSize.Default);
+</code></pre>
+</li>
+<li><p>Retrieve a window handle, and initialize the secondary tile object with that handle. For more info, see <a href="../../../develop/ui-input/retrieve-hwnd.html">Retrieve a window handle (HWND)</a> and <a href="../../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<pre><code class="lang-csharp">var wih = new System.Windows.Interop.WindowInteropHelper(this);
+var hWnd = wih.Handle; // For a WinForms window object, access the NativeWindow.Handle property instead.
+IInitializeWithWindow initWindow = (IInitializeWithWindow)(object)tile;
+initWindow.Initialize(hWnd);
+</code></pre>
+</li>
+<li><p>Finally, request to pin the tile as you would in a normal UWP app.</p>
+<pre><code class="lang-csharp">// Pin the tile
+bool isPinned = await tile.RequestCreateAsync();
+
+// Here, update UI to reflect whether user can now either unpin or pin
+</code></pre>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<ol>
+<li><p>Add the following includes to your <code>pch.h</code> file. <code>shobjidl.h</code> provides access to the <strong>IInitializeWithWindow</strong> interface; <code>Microsoft.UI.Xaml.Window.h</code> provides access to the WinUI 3 <strong>Window</strong> class.</p>
+<pre><code class="lang-cppwinrt">#include &lt;shobjidl.h&gt;
+#include &lt;winrt/Windows.Foundation.h&gt; 
+#include &lt;winrt/Windows.UI.StartScreen.h&gt;
+#include &lt;Microsoft.UI.Xaml.Window.h&gt;
+</code></pre>
+</li>
+<li><p>Initialize a new secondary tile object exactly like you would with a normal UWP app. To learn more about creating and pinning secondary tiles, see <a href="secondary-tiles-pinning.md">Pin secondary tiles</a>.</p>
+<pre><code class="lang-cppwinrt">auto tile = Windows::UI::StartScreen::SecondaryTile(
+        L&quot;myTileId5391&quot;,
+        L&quot;Display name&quot;,
+        L&quot;myActivationArgs&quot;,
+        Windows::Foundation::Uri(L&quot;ms-appx:///Assets/Square150x150Logo.png&quot;),
+        Windows::UI::StartScreen::TileSize::Default);
+</code></pre>
+</li>
+<li><p>Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, <code>this</code> is a pointer to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">WinUI 3 Window</a> object. For more info, see <a href="../../../develop/ui-input/retrieve-hwnd.html">Retrieve a window handle (HWND)</a> and <a href="../../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<pre><code class="lang-cppwinrt">auto windowNative{ this-&gt;m_inner.as&lt;::IWindowNative&gt;() };
+HWND hWnd{ 0 };
+windowNative-&gt;get_WindowHandle(&amp;hWnd);
+
+tile.as&lt;IInitializeWithWindow&gt;()-&gt;Initialize(hWnd);
+</code></pre>
+</li>
+<li><p>Finally, request to pin the tile as you would in a normal UWP app.</p>
+<pre><code class="lang-cppwinrt">// Pin the tile
+bool isPinned = co_await tile.RequestCreateAsync();
+
+// Here, update UI to reflect whether user can now either unpin or pin
+</code></pre>
+</li>
+</ol>
+</section>
+</div>
+<h2 id="send-tile-notifications">Send tile notifications</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires April 2018 version 17134.81 or later</strong>: You must be running build 17134.81 or later to send tile or badge notifications to secondary tiles from Desktop Bridge apps. Before this .81 servicing update, a 0x80070490 <em>Element not found</em> exception would occur when sending tile or badge notifications to secondary tiles from Desktop Bridge apps.</p>
+</div>
+<p>Sending tile or badge notifications is the same as UWP apps. See <a href="sending-a-local-tile-notification.md">Send a local tile notification</a> to get started.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample">Secondary tile sample app</a></li>
+<li><a href="secondary-tiles.md">Secondary tiles overview</a></li>
+<li><a href="secondary-tiles-pinning.md">Pin secondary tiles (UWP)</a></li>
+<li><a href="/windows/msix/desktop/source-code-overview">Desktop Bridge</a></li>
+<li><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples">Desktop Bridge code samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/shell/tiles-and-notifications/secondary-tiles-desktop-pinning.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

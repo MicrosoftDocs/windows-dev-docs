@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build XAML controls with C++/WinRT </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build XAML controls with C++/WinRT ">
+    
+    <meta name="description" content="This article walks you through creating a XAML templated control for WinUI 3 with C++/WinRT.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-xaml-controls-with-cwinrt">Build XAML controls with C++/WinRT</h1>
+
+<p>This article walks you through creating a templated XAML control for WinUI 3 with C++/WinRT. Templated controls inherit from <strong>Microsoft.UI.Xaml.Controls.Control</strong> and have visual structure and visual behavior that can be customized using XAML control templates. This article describes the same scenario as the article <a href="/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl">XAML custom (templated) controls with C++/WinRT</a> but has been adapted to use WinUI 3.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li><a href="../../get-started/start-here.html">Start developing Windows apps</a></li>
+<li>Download and install the latest version of the <a href="https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264">C++/WinRT Visual Studio Extension (VSIX)</a></li>
+</ol>
+<h2 id="create-a-blank-app-bglabelcontrolapp">Create a Blank App (BgLabelControlApp)</h2>
+<p>Begin by creating a new project in Microsoft Visual Studio. In the <code>Create a new project</code> dialog, select the <strong>Blank App (WinUI in UWP)</strong> project template, making sure to select the C++ language version. Set the project name to &quot;BgLabelControlApp&quot; so that the file names align with the code in the examples below. Set the <strong>Target version</strong> to Windows 10, version 1903 (build 18362) and <strong>Minimum version</strong> to Windows 10, version 1803 (build 17134). This walkthrough will also work for desktop apps created with the <strong>Blank App, Packaged (WinUI in Desktop)</strong> project template, just make sure to perform all of the steps in the <strong>BgLabelControlApp (Desktop)</strong> project.</p>
+<p><img src="images/WinUI-cpp-newproject-UWP.png" alt="Blank App Project Template"></p>
+<h2 id="add-a-templated-control-to-your-app">Add a templated control to your app</h2>
+<p>To add a templated control, click the <strong>Project</strong> menu in the toolbar or right-click your project in <strong>Solution Explorer</strong> and select  <strong>Add New Item</strong> . Under <strong>Visual C++-&gt;WinUI</strong> select the <strong>Custom Control (WinUI)</strong> template. Name the new control &quot;BgLabelControl&quot; and click <em>Add</em>. This will add three new files to your project. <code>BgLabelControl.h</code> is the header containing the control declarations and <code>BgLabelControl.cpp</code> contains the C++/WinRT implementation of the control. <code>BgLabelControl.idl</code> is the Interface Definition file that allows the control to be instantiated as a runtime class.</p>
+<h2 id="implement-the-bglabelcontrol-custom-control-class">Implement the BgLabelControl custom control class</h2>
+<p>In the following steps you will update the code in the <code>BgLabelControl.idl</code>, <code>BgLabelControl.h</code>, and <code>BgLabelControl.cpp</code> files in the project directory to implement the runtime class.</p>
+<p>The templated control class will be instantiated from XAML markup, and for that reason it's going to be a runtime class. When you build the finished project, the MIDL compiler (midl.exe) will use the <code>BgLabelControl.idl</code> file to a generate the Windows Runtime metadata file (.winmd) for your control, which consumers of your component will reference. For more information on creating runtime classes, see <a href="/windows/uwp/cpp-and-winrt-apis/author-apis">Author APIs with C++/WinRT</a>.</p>
+<p>The templated control we are creating will expose a single property which is a string that will be used as a label for the control. Replace the contents of <code>BgLabelControl.idl</code> with the following code..</p>
+<pre><code class="lang-cppwinrt">// BgLabelControl.idl
+namespace BgLabelControlApp
+{
+    runtimeclass BgLabelControl : Microsoft.UI.Xaml.Controls.Control
+    {
+        BgLabelControl();
+        static Microsoft.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        String Label;
+    }
+}
+</code></pre>
+<p>The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in <a href="/windows/uwp/xaml-platform/custom-attached-properties">Custom attached properties</a>.</p>
+<p>Note that the XAML classes referenced in the code above are in Microsoft.UI.Xaml namespaces. This is what distinguishes them as WinUI controls as opposed to UWP XAML controls, which are defined in Windows.UI.XAML namespaces.</p>
+<p>Replace the contents of BgLabelControl.h with the following code.</p>
+<pre><code class="lang-cppwinrt">// BgLabelControl.h
+#pragma once
+#include &quot;BgLabelControl.g.h&quot;
+
+namespace winrt::BgLabelControlApp::implementation
+{
+    struct BgLabelControl : BgLabelControlT&lt;BgLabelControl&gt;
+    {
+        BgLabelControl() { DefaultStyleKey(winrt::box_value(L&quot;BgLabelControlApp.BgLabelControl&quot;)); }
+
+        winrt::hstring Label()
+        {
+            return winrt::unbox_value&lt;winrt::hstring&gt;(GetValue(m_labelProperty));
+        }
+
+        void Label(winrt::hstring const&amp; value)
+        {
+            SetValue(m_labelProperty, winrt::box_value(value));
+        }
+
+        static Microsoft::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
+
+        static void OnLabelChanged(Microsoft::UI::Xaml::DependencyObject const&amp;, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const&amp;);
+
+    private:
+        static Microsoft::UI::Xaml::DependencyProperty m_labelProperty;
+    };
+}
+namespace winrt::BgLabelControlApp::factory_implementation
+{
+    struct BgLabelControl : BgLabelControlT&lt;BgLabelControl, implementation::BgLabelControl&gt;
+    {
+    };
+}
+</code></pre>
+<p>The code shown above implements the <strong>Label</strong> and <strong>LabelProperty</strong> properties, add a static event handler named <strong>OnLabelChanged</strong> to process changes to the value of the dependency property, and adds a private member to store the backing field for <strong>LabelProperty</strong>. Again, note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI 3 framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.</p>
+<p>Next, replace the contents of BgLabelControl.cpp with the following code.</p>
+<pre><code class="lang-cppwinrt">// BgLabelControl.cpp
+#include &quot;pch.h&quot;
+#include &quot;BgLabelControl.h&quot;
+#if __has_include(&quot;BgLabelControl.g.cpp&quot;)
+#include &quot;BgLabelControl.g.cpp&quot;
+#endif
+
+namespace winrt::BgLabelControlApp::implementation
+{
+    Microsoft::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
+        Microsoft::UI::Xaml::DependencyProperty::Register(
+            L&quot;Label&quot;,
+            winrt::xaml_typename&lt;winrt::hstring&gt;(),
+            winrt::xaml_typename&lt;BgLabelControlApp::BgLabelControl&gt;(),
+            Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(L&quot;default label&quot;), Microsoft::UI::Xaml::PropertyChangedCallback{ &amp;BgLabelControl::OnLabelChanged } }
+    );
+
+    void BgLabelControl::OnLabelChanged(Microsoft::UI::Xaml::DependencyObject const&amp; d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const&amp; /* e */)
+    {
+        if (BgLabelControlApp::BgLabelControl theControl{ d.try_as&lt;BgLabelControlApp::BgLabelControl&gt;() })
+        {
+            // Call members of the projected type via theControl.
+
+            BgLabelControlApp::implementation::BgLabelControl* ptr{ winrt::get_self&lt;BgLabelControlApp::implementation::BgLabelControl&gt;(theControl) };
+            // Call members of the implementation type via ptr.
+        }
+    }
+}
+</code></pre>
+<p>This walkthrough won't use the <strong>OnLabelChanged</strong> callback, but it's provided so that you can see how to register a dependency property with a property-changed callback. The implementation of <strong>OnLabelChanged</strong> also shows how to obtain a derived projected type from a base projected type (the base projected type is DependencyObject, in this case). And it shows how to then obtain a pointer to the type that implements the projected type. That second operation will naturally only be possible in the project that implements the projected type (that is, the project that implements the runtime class).</p>
+<p>The <a href="/uwp/cpp-ref-for-winrt/xaml-typename">xaml_typename</a> function is provided by the Windows.UI.Xaml.Interop namespace that is not included by default in the WinUI 3 project template. Add a line to the precompiled header file for your project, <code>pch.h</code>, to include the header file associated with this namespace.</p>
+<pre><code class="lang-cppwinrt">// pch.h
+...
+#include &lt;winrt/Windows.UI.Xaml.Interop.h&gt;
+...
+</code></pre>
+<h2 id="define-the-default-style-for-bglabelcontrol">Define the default style for BgLabelControl</h2>
+<p>In its constructor, <strong>BgLabelControl</strong> sets a default style key for itself. A templated control needs to have a default style — containing a default control template — which it can use to render itself with in case the consumer of the control doesn't set a style and/or template. In this section we'll add a markup file to the project containing our default style.</p>
+<p>Make sure that <strong>Show All Files</strong> is still toggled on (in <strong>Solution Explorer</strong>). Under your project node, create a new folder (not a filter, but a folder) and name it &quot;Themes&quot;. Under <code>Themes</code>, add a new item of type <strong>Visual C++ &gt; WinUI &gt; Resource Dictionary (WinUI)</strong>, and name it &quot;Generic.xaml&quot;. The folder and file names have to be like this in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.</p>
+<pre><code class="lang-xaml">&lt;!-- \Themes\Generic.xaml --&gt;
+&lt;ResourceDictionary
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:BgLabelControlApp&quot;&gt;
+
+    &lt;Style TargetType=&quot;local:BgLabelControl&quot; &gt;
+        &lt;Setter Property=&quot;Template&quot;&gt;
+            &lt;Setter.Value&gt;
+                &lt;ControlTemplate TargetType=&quot;local:BgLabelControl&quot;&gt;
+                    &lt;Grid Width=&quot;100&quot; Height=&quot;100&quot; Background=&quot;{TemplateBinding Background}&quot;&gt;
+                        &lt;TextBlock HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot; Text=&quot;{TemplateBinding Label}&quot;/&gt;
+                    &lt;/Grid&gt;
+                &lt;/ControlTemplate&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+    &lt;/Style&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>In this case, the only property that the default style sets is the control template. The template consists of a square (whose background is bound to the <strong>Background</strong> property that all instances of the XAML <strong>Control</strong> type have), and a text element (whose text is bound to the <strong>BgLabelControl::Label</strong> dependency property).</p>
+<h2 id="add-an-instance-of-bglabelcontrol-to-the-main-ui-page">Add an instance of BgLabelControl to the main UI page</h2>
+<p>Open <code>MainWindow.xaml</code>, which contains the XAML markup for our main UI page. Immediately after the <strong>Button</strong> element (inside the <strong>StackPanel</strong>), add the following markup.</p>
+<pre><code class="lang-xaml">&lt;local:BgLabelControl Background=&quot;Red&quot; Label=&quot;Hello, World!&quot;/&gt;
+</code></pre>
+<p>Also, add the following include directive to <code>MainWindow.h</code> so that the <strong>MainWindow</strong> type (a combination of compiling XAML markup and imperative code) is aware of the <strong>BgLabelControl</strong> templated control type. If you want to use <strong>BgLabelControl</strong> from another XAML page, then add this same include directive to the header file for that page, too. Or, alternatively, just put a single include directive in your precompiled header file.</p>
+<pre><code class="lang-cppwinrt">//MainWindow.h
+...
+#include &quot;BgLabelControl.h&quot;
+...
+</code></pre>
+<p>Now build and run the project. You'll see that the default control template is binding to the background brush, and to the label, of the <strong>BgLabelControl</strong> instance in the markup.</p>
+<p><img src="images/winui-templated-control-result.png" alt="Templated control result"></p>
+<h2 id="implementing-overridable-functions-such-as-measureoverride-and-onapplytemplate">Implementing overridable functions, such as <strong>MeasureOverride</strong> and <strong>OnApplyTemplate</strong></h2>
+<p>You derive a templated control from the <strong>Control</strong> runtime class, which itself further derives from base runtime classes. And there are overridable methods of <strong>Control</strong>, <strong>FrameworkElement</strong>, and <strong>UIElement</strong> that you can override in your derived class. Here's a code example showing you how to do that.</p>
+<pre><code class="lang-cppwinrt">// Control overrides.
+void OnPointerPressed(Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const&amp; /* e */) const { ... };
+
+// FrameworkElement overrides.
+Windows::Foundation::Size MeasureOverride(Windows::Foundation::Size const&amp; /* availableSize */) const { ... };
+void OnApplyTemplate() const { ... };
+
+// UIElement overrides.
+Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const { ... };
+</code></pre>
+<p><em>Overridable</em> functions present themselves differently in different language projections. In C#, for example, overridable functions typically appear as protected virtual functions. In C++/WinRT, they're neither virtual nor protected, but you can still override them and provide your own implementation, as shown above.</p>
+<h2 id="generating-the-control-source-files-without-using-a-template">Generating the control source files without using a template.</h2>
+<p>This section shows how you can generate the necessary source files for creating your custom control without using the <strong>Custom Control</strong> item template.</p>
+<p>First, add a new Midl File (.idl) item to the project. From the <strong>Project</strong> menu, select <strong>Add New Item...</strong> and type &quot;MIDL&quot; in the search box to find the .idl file item. Name the new file <code>BgLabelControl.idl</code> so that the name will be consistent with the steps in this article. Delete the default contents of <code>BgLabelControl.idl</code>, and paste in the runtime class declaration shown in the steps above.</p>
+<p>After saving the new .idl file, the next step is to generate the Windows Runtime metadata file (.winmd) and stubs for the .cpp and .h implementation files that you will use to implement the templated control. Generate these files by building the solution, which will cause the MIDL compiler (midl.exe) to compile the .idl file you created. Note that the Solution will not build successfully and Visual Studio will show build errors in the output window, but the necessary files will be generated.</p>
+<p>Copy the stub files BgLabelControl.h and BgLabelControl.cpp from \BgLabelControlApp\BgLabelControlApp\Generated Files\sources\ into the project folder. In <strong>Solution Explorer</strong>, make sure Show All Files is toggled on. Right-click the stub files that you copied, and click <strong>Include In Project</strong>.</p>
+<p>The compiler places a static_assert line at the top of BgLabelControl.h and BgLabelControl.cpp to prevent the generated files from being compiled. When implementing your control, you should remove these lines from the files you have placed in your project directory. For this walkthrough, you can just overwrite the entire contents of the files with the code provided above.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../windows-app-sdk/index.html">Windows App SDK</a></li>
+<li><a href="../../windows-app-sdk/stable-channel.html">Stable release channel for the Windows App SDK</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

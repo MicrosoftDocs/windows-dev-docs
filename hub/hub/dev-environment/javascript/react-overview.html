@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>React on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="React on Windows ">
+    
+    <meta name="description" content="A guide to help you set up a React JavaScript development environment on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="react-overview">React overview</h1>
+
+<h2 id="what-is-react-js">What is React JS?</h2>
+<p>React is an open-source JavaScript library for building front end user interfaces. Unlike other JavaScript libraries that provide a full application framework, React is focused solely on creating application views through encapsulated units called <strong>components</strong> that maintain state and generate UI elements. You can place an individual component on a web page or nest hierarchies of components to create a complex UI.</p>
+<p>React components are typically written in JavaScript and JSX (JavaScript XML) which is a JavaScript extension that looks like a lot like HTML, but has some syntax features that make it easier to do common tasks like registering event handlers for UI elements. A React component implements the <strong>render</strong> method, which returns the JSX representing the component's UI. In a web app, the JSX code returned by the component is translated into browser-compliant HTML rendered in the browser.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>In February 2025, the React team <a href="https://react.dev/blog/2025/02/14/sunsetting-create-react-app">announced</a> that Create React App (CRA) has been deprecated for new apps. The team recommends that existing apps migrate to a framework like Next.js or React Router or migrate to a build tool like Vite, Parcel, or RSBuild.</p>
+</div>
+<h2 id="does-react-work-on-windows">Does React work on Windows?</h2>
+<p>Yes. Windows supports two different environments for developing React apps:</p>
+<ul>
+<li><a href="react-on-windows.html">Install a React development environment on Windows</a></li>
+<li><a href="react-on-wsl.html">Install a React development environment on Windows Subsystem for Linux</a></li>
+</ul>
+<h2 id="what-can-you-do-with-react">What can you do with React?</h2>
+<p>Windows supports a wide range of scenarios for React developers, including:</p>
+<ul>
+<li><p><strong>Basic web apps</strong>: If you are new to React and primarily interested in learning about building a basic web app with React, we recommend that you <a href="react-on-windows.html">create a React app using the vite frontend tooling on Windows</a>. If you're planning to create a web app that will be deployed for production, you may want to consider <a href="react-on-wsl.html">create a React app using the vite frontend tooling on Windows Subsystem for Linux (WSL)</a>, for better performance speed, system call compatibility, and alignment between your local development environment and deployment environment (which is often a Linux server).</p>
+</li>
+<li><p><strong>Single-Page Apps (SPAs)</strong>: These are websites that interact with the user by dynamically rewriting the current web page with new data from a server, rather than the browser default of loading entire new pages. If you want to build a static content-oriented SPA website, we recommend installing <a href="gatsby-on-wsl.html">Gatsby on WSL</a>. If you want to build a server-rendered SPA website with a Node.js backend, we recommend <a href="nextjs-on-wsl.html">installing Next.js on WSL</a>. (Though Next.js now also offers <a href="https://nextjs.org/docs/app/building-your-application/optimizing/static-assets">static file serving</a>).</p>
+</li>
+<li><p><strong>Native desktop apps</strong>: <a href="https://microsoft.github.io/react-native-windows/">React Native for Desktop + macOS</a> enables you to build native desktop applications with JavaScript that run across various types of desktop PCs, laptops, tablets, Xbox, and Mixed Reality devices. It supports both the <a href="https://microsoft.github.io/react-native-windows/docs/rnw-dependencies">Windows SDK</a> and <a href="https://microsoft.github.io/react-native-windows/docs/rnm-dependencies">macOS SDK</a>.</p>
+</li>
+<li><p><strong>Native mobile apps</strong>: <a href="https://reactnative.dev/docs/environment-setup">React Native</a> is a cross-platform way to create Android and iOS apps with JavaScript that render to native platform UI code. There are two main ways to install React Native -- the Expo CLI and the React Native CLI. There's a good <a href="https://stackoverflow.com/questions/54862388/what-is-the-difference-between-expo-cli-and-react-native-cli">comparison of the two on StackOverflow</a>. Expo has a client app for iOS and Android mobile devices for running and testing your apps. For instructions on developing an Android app using Windows, React Native, and the Expo CLI see <a href="react-native-for-android.html">React Native for Android development on Windows</a>.</p>
+</li>
+</ul>
+<h2 id="installation-options">Installation options</h2>
+<p>There are several different ways to install React along with an integrated toolchain that best works for your use-case scenario. Here are a few of the most popular.</p>
+<ul>
+<li><strong><a href="react-on-windows.html">Install React using Vite directly on Windows</a></strong></li>
+<li><strong><a href="react-on-wsl.html">Install React using Vite on Windows Subsystem for Linux (WSL)</a></strong></li>
+<li><strong><a href="nextjs-on-wsl.html">Install the Next.js framework on WSL</a></strong></li>
+<li><strong><a href="gatsby-on-wsl.html">Install the Gatsby framework on WSL</a></strong></li>
+<li><strong><a href="react-native-for-windows.html">Install React Native for Desktop desktop development</a></strong></li>
+<li><strong><a href="react-native-for-android.html">Install React Native for Android development on Windows</a></strong></li>
+<li><strong><a href="https://reactnative.dev/docs/environment-setup">Install React Native for mobile development across platforms</a></strong>)</li>
+<li><strong><a href="https://reactjs.org/docs/add-react-to-a-website.html">Install React in the browser with no toolchain</a></strong>: Since React is a JavaScript library that is, in its most basic form, just a collection of text files, you can create React apps without installing any tools or libraries on your computer. You may only want to add a few &quot;sprinkles of interactivity&quot; to a web page and not need build tooling. You can add a React component by just adding a plain <code>&lt;script&gt;</code> tag on an HTML page. Follow the <a href="https://reactjs.org/docs/add-react-to-a-website.html">&quot;Add React in One Minute&quot;</a> steps in the React docs.</li>
+</ul>
+<h2 id="react-tools">React tools</h2>
+<p>While writing a simple React component in a plain text editor is a good introduction to React, code generated this way is bulky, difficult to maintain and deploy, and slow. There are some common tasks production apps will need to perform. These tasks are handled by other JavaScript frameworks that are taken by the app as a dependency. These tasks include:</p>
+<ul>
+<li><strong>Compilation</strong> - JSX is the language commonly used for React apps, but browsers can't process this syntax directly. Instead, the code needs to be compiled into standard JavaScript syntax and customized for different browsers. <a href="https://babeljs.io/">Babel</a> is an example of a compiler that supports JSX.</li>
+<li><strong>Bundling</strong> - Since performance is key for modern web apps, it's important that an app's JavaScript includes only the needed code for the app and combined into as few files as possible. A bundler, such as <a href="https://webpack.js.org/">webpack</a> performs this task for you.</li>
+<li><strong>Package management</strong> - Package managers make it easy to include the functionality of third-party packages in your app, including updating them and managing dependencies. Commonly used package managers include <a href="https://yarnpkg.com/">Yarn</a> and <a href="https://www.npmjs.com/">npm</a>.</li>
+</ul>
+<p>Together, the suite of frameworks that help you create, build, and deploy your app are called a toolchain. An easy to setup development environment for react that uses this toolchain is <a href="https://vitejs.dev/">Vite</a> which generates a simple one-page app for you. The only setup required to use <strong>Vite</strong> is Node.js.</p>
+<ul>
+<li>For Windows development, follow the instructions to <a href="nodejs-on-wsl.html">install Node.js on WSL</a> or <a href="nodejs-on-windows.html">install Node.js on Windows</a>.</li>
+</ul>
+<h3 id="react-native-component-directory">React Native component directory</h3>
+<p>The components that can be used in a React Native app include the following:</p>
+<ul>
+<li>Core components - Components that are developed and supported as part of the React Native framework.</li>
+<li>Community components - Components that are developed and maintained by the community.</li>
+<li>Native components - Components that you author yourself, using platform-native code, and register to be accessible from React Native.</li>
+</ul>
+<p>The <a href="https://reactnative.directory/">React Native Directory</a> provides a list of component libraries that can be filtered by target platform.</p>
+<h2 id="fullstack-react-toolchain-options">Fullstack React toolchain options</h2>
+<p>React is a library, not a framework, so may require additional tools to create a more complex app. In addition to using React, you may want to consider using:</p>
+<ul>
+<li>Package manager: Two popular package managers for React are <a href="https://www.npmjs.com/">npm</a> (which is included with NodeJS) and <a href="https://yarnpkg.com/">yarn</a>. Both support a broad library of well-maintained packages that can be installed.</li>
+<li><a href="https://reactrouter.com/">React Router</a>: a collection of navigational components that can help you with things like bookmarkable URLs for your web app or a composable way to navigate in React Native. React is really only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of a routing library like React Router.</li>
+<li><a href="https://react-redux.js.org/">Redux</a>: A predictable state container that helps with data-flow architecture. It is likely not something you need until you get into more advanced React development. To quote Dan Abramov, one of the creators of Redux: &quot;Don't use Redux until you have problems with vanilla React.&quot;</li>
+<li><a href="https://webpack.js.org/">Webpack</a>: A build tool that lets you compile JavaScript modules, also known as module bundler. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.</li>
+<li><a href="https://www.npmjs.com/package/uglify-js">Uglify</a>: A JavaScript parser, minifier, compressor and beautifier toolkit.</li>
+<li><a href="https://babeljs.io/">Babel</a>: A JavaScript compiler mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments. It can also be helpful to use <a href="https://babeljs.io/docs/en/babel-preset-env">babel-preset-env</a> so that you don't need to micromanage syntax transforms or browser polyfills and can define what internet browsers to support.</li>
+<li><a href="https://eslint.org/">ESLint</a>: A tool for identifying and reporting on patterns found in your JavaScript code that helps you make your code more consistent and avoid bugs.</li>
+<li><a href="https://enzymejs.github.io/enzyme/">Enzyme</a>: A JavaScript testing utility for React that makes it easier to test your React Components' output.</li>
+<li><a href="https://jestjs.io/">Jest</a>: A testing framework that works together with Babel to help with writing idiomatic JavaScript tests in React apps.</li>
+<li><a href="https://mochajs.org/">Mocha</a>: A testing framework that runs on Node.js and in the browser to help with asynchronous testing, reporting, and mapping uncaught exceptions to the correct test cases.</li>
+</ul>
+<h2 id="react-courses-and-tutorials">React courses and tutorials</h2>
+<p>Here are a few recommended places to learn React and build sample apps:</p>
+<ul>
+<li>The <a href="/training/paths/react/">React learning path</a> contains online course modules to help you get started with the basics.</li>
+<li>Build a single-page app (SPA) that runs in the browser (like this <a href="/graph/tutorials/react">sample web app that retrieves calendar info for a user with the Microsoft Graph API</a>)</li>
+<li>Build a server-rendered app with <a href="nextjs-on-wsl.html">Next.js</a> or a static-site-generated app with <a href="gatsby-on-wsl.html">Gatsby</a></li>
+<li>Create a user interface (UI) for a <a href="https://microsoft.github.io/react-native-windows/docs/view-managers">native app that runs on Windows, Android, and iOS devices</a> (checkout these <a href="https://github.com/microsoft/react-native-windows-samples/tree/main/samples">native Windows app samples</a> or this <a href="/graph/tutorials/react-native">sample native app that retrieves calendar info for a user with the Microsoft Graph API</a>)</li>
+<li><a href="/dual-screen/react-native/">Develop an app for Surface Duo dual-screen device</a></li>
+<li>Create a web app or native app using <a href="https://developer.microsoft.com/fluentui#/">Fluent UI React components</a></li>
+<li>Build a <a href="https://react.dev/learn/typescript">React app with TypeScript</a></li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>The <a href="https://react.dev/">official React docs</a> offers all of the latest, up-to-date information on React</li>
+<li><a href="https://microsoftedge.microsoft.com/addons/detail/react-developer-tools/gpphkfbcpidddadnkolkpfckpihlkkil">Microsoft Edge Add-ons for React Developer Tools</a>: Adds two tabs to your Microsoft Edge dev tools to help with your React development: Components and Profiler.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/react-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

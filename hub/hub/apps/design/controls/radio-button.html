@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Guidelines for radio buttons </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Guidelines for radio buttons ">
+    
+    <meta name="description" content="Learn how to use radio buttons to let users select one option from a collection of two or more mutually exclusive, but related, options.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="radio-buttons">Radio buttons</h1>
+
+<p>Radio buttons, also called option buttons, let users select one option from a collection of two or more mutually exclusive, but related, options. Radio buttons are always used in groups, and each option is represented by one radio button in the group.</p>
+<p>In the default state, no radio button in a RadioButtons group is selected. That is, all radio buttons are cleared. However, once a user has selected a radio button, the user can't deselect the button to restore the group to its initial cleared state.</p>
+<p>The singular behavior of a RadioButtons group distinguishes it from <a href="checkbox.html">check boxes</a>, which support multi-selection and deselection, or clearing.</p>
+<p><img src="images/controls/radio-button.png" alt="Example of a RadioButtons group, with one radio button selected">
+</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use radio buttons to let users select from two or more mutually exclusive options.</p>
+<p><img src="images/radiobutton_basic.png" alt="A RadioButtons group, with one radio button selected">
+</p>
+<p>Use radio buttons when users need to see all options before they make a selection. Radio buttons emphasize all options equally, which means that some options might draw more attention than is necessary or desired.</p>
+<p>Unless all options deserve equal attention, consider using other controls. For example, to recommend a single best option for most users and in most situations, use a <a href="combo-box.html">combo box</a> to display that best option as the default option.</p>
+<p><img src="images/combo-box-collapsed.png" alt="A combo box, displaying a default option">
+</p>
+<p>If there are only two possible options that can be expressed clearly as a single binary choice, such as on/off or yes/no, combine them into a single <a href="checkbox.html">check box</a> or <a href="toggles.html">toggle switch</a> control. For example, use a single check box for &quot;I agree&quot; instead of two radio buttons for &quot;I agree&quot; and &quot;I don't agree.&quot;</p>
+<p>Don't use two radio buttons for a single binary choice:</p>
+<p><img src="images/radiobutton-vs-checkbox-rb.png" alt="Two radio buttons presenting a binary choice">
+</p>
+<p>Use a check box instead:</p>
+<p><img src="images/radiobutton-vs-checkbox-cb.png" alt="A check box is a good alternative for presenting a binary choice">
+</p>
+<p>When users can select multiple options, use <a href="checkbox.html">check boxes</a>.</p>
+<p><img src="images/checkbox2.png" alt="Check boxes support multiselection">
+</p>
+<p>When users' options lie within a range of values (for example, <em>10, 20, 30, ... 100</em>), use a <a href="slider.html">slider</a> control.</p>
+<p><img src="images/controls/slider.png" alt="A slider control, displaying one value in a range of values">
+</p>
+<p>If there are more than eight options, use a <a href="combo-box.html">combo box</a>.</p>
+<p><img src="images/combo-box-scroll.png" alt="A list box, displaying multiple options">
+</p>
+<p>If the available options are based on an app's current context, or they can otherwise vary dynamically, use a list control.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Make sure that the purpose and current state of a set of radio buttons is explicit.</li>
+<li>Limit the radio button's text label to a single line.</li>
+<li>If the text label is dynamic, consider how the button will automatically resize and what will happen to any visuals around it.</li>
+<li>Use the default font unless your brand guidelines tell you otherwise.</li>
+<li>Don't put two RadioButtons groups side by side. When two RadioButtons groups are right next to each other, it can be difficult for users to determine which buttons belong to which group.</li>
+</ul>
+<h2 id="radiobuttons-overview">RadioButtons overview</h2>
+<h3 id="radiobuttons-vs-radiobutton">RadioButtons vs RadioButton</h3>
+<p>There are two ways to create radio button groups: RadioButtons and RadioButton.</p>
+<ul>
+<li>We recommend the <strong><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons">RadioButtons</a></strong> control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.</li>
+<li>You can use groups of individual <strong><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton">RadioButton</a></strong> controls.</li>
+</ul>
+<p>Keyboard access and navigation behavior have been optimized in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons">RadioButtons</a> control. These improvements help both accessibility and keyboard power users move through the list of options more quickly and easily.</p>
+<p>In addition to these improvements, the default visual layout of individual radio buttons in a RadioButtons group has been optimized through automated orientation, spacing, and margin settings. This optimization eliminates the requirement to specify these properties, as you might have to do when you use a more primitive grouping control, such as <a href="../layout/layout-panels.html#stackpanel">StackPanel</a> or <a href="../layout/layout-panels.html#grid">Grid</a>.</p>
+<h3 id="navigating-a-radiobuttons-group">Navigating a RadioButtons group</h3>
+<p>The <code>RadioButtons</code> control has special navigation behavior that helps keyboard users navigate the list more quickly and more easily.</p>
+<h4 id="keyboard-focus">Keyboard focus</h4>
+<p>The <code>RadioButtons</code> control supports two states:</p>
+<ul>
+<li>No radio button is selected</li>
+<li>One radio button is selected</li>
+</ul>
+<p>The next sections describe the focus behavior of the control in each state.</p>
+<h5 id="no-radio-button-is-selected">No radio button is selected</h5>
+<p>When no radio button is selected, the first radio button in the list gets focus.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The item that receives tab focus from the initial tab navigation is not selected.</p>
+</div>
+<section class="row">
+<div class="column span">
+<p><strong><em>List without tab focus, no selection</em></strong></p>
+<p><img src="images/radiobutton-no-selected-item-no-tab-focus.png" alt="List without tab focus and no selected item"></p>
+</div>
+<div class="column span">
+<p><strong><em>List with initial tab focus, no selection</em></strong></p>
+<p><img src="images/radiobutton-no-selected-item-tab-focus.png" alt="List with initial tab focus and no selected item"></p>
+</div>
+</section>
+<h5 id="one-radio-button-is-selected">One radio button is selected</h5>
+<p>When a user tabs into the list where a radio button is already selected, the selected radio button gets focus.</p>
+<section class="row">
+<div class="column span">
+<p><strong><em>List without tab focus</em></strong></p>
+<p><img src="images/radiobutton-selected-item-no-tab-focus.png" alt="List without tab focus and a selected item"></p>
+</div>
+<div class="column span">
+<p><strong><em>List with initial tab focus</em></strong></p>
+<p><img src="images/radiobutton-selected-item-tab-focus.png" alt="List with initial tab focus and a selected item"></p>
+</div>
+</section>
+<h4 id="keyboard-navigation">Keyboard navigation</h4>
+<p>For more information about general keyboard navigation behaviors, see <a href="../input/keyboard-interactions.html#navigation">Keyboard interactions - Navigation</a>.</p>
+<p>When an item in a <code>RadioButtons</code> group already has focus, the user can use arrow keys for &quot;inner navigation&quot; between the items within the group. The Up and Down arrow keys move to the &quot;next&quot; or &quot;previous&quot; logical item, as defined in your XAML markup. The Left and Right arrow keys move spatially.</p>
+<h5 id="navigation-within-single-column-or-single-row-layouts">Navigation within single-column or single-row layouts</h5>
+<p>In a single-column or single-row layout, keyboard navigation results in the following behavior:</p>
+<section class="row">
+<div class="column span">
+<p><strong><em>Single column</em></strong></p>
+<p><img src="images/radiobutton-keyboard-navigation-single-column.png" alt="Example of keyboard navigation in a single-column RadioButtons group"></p>
+<p>The Up arrow and Down arrow keys move between items.<br>The Left arrow and Right arrow keys do nothing.</p>
+</div>
+<div class="column span">
+<p><strong><em>Single row</em></strong></p>
+<p><img src="images/radiobutton-keyboard-navigation-single-row.png" alt="Example of keyboard navigation in a single-row RadioButtons group"></p>
+<p>The Left and Up arrow keys move to the previous item, and the Right and Down arrow keys move to the next item.</p>
+</div>
+</section>
+<h5 id="navigation-within-multi-column-multi-row-layouts">Navigation within multi-column, multi-row layouts</h5>
+<p>In a multi-column, multi-row grid layout, keyboard navigation results in this behavior:</p>
+<p><strong><em>Left/Right arrow keys</em></strong></p>
+<section class="row">
+<div class="column span">
+<p><img src="images/radiobutton-keyboard-navigation-multi-column-row-1.png" alt="Example of horizontal keyboard navigation in a multi-column/row RadioButtons group"></p>
+<p>The Left and Right arrow keys move focus horizontally between items in a row.</p>
+</div>
+<div class="column span">
+<p><img src="images/radiobutton-keyboard-navigation-multi-column-row-3.png" alt="Example of horizontal keyboard navigation with focus on last item in a column"></p>
+<p>When focus is on the last item in a column and the Right or Left arrow key is pressed, focus moves to the last item in the next or previous column (if any).</p>
+</div>
+</section>
+<p><strong><em>Up/Down arrow keys</em></strong></p>
+<section class="row">
+<div class="column span">
+<p><img src="images/radiobutton-keyboard-navigation-multi-column-row-2.png" alt="Example of vertical keyboard navigation in a multi-column/row RadioButtons group"></p>
+<p>The Up and Down arrow keys move focus vertically between items in a column.</p>
+</div>
+<div class="column span">
+<p><img src="images/radiobutton-keyboard-navigation-multi-column-row-4.png" alt="Example of vertical keyboard navigation with focus on the last item in a column"></p>
+<p>When focus is on the last item in a column and the Down arrow key is pressed, focus moves to the first item in the next column (if any). When focus is on the first item in a column and the Up arrow key is pressed, focus moves to the last item in the previous column (if any)</p>
+</div>
+</section>
+<p>For more information, see <a href="../input/keyboard-interactions.html#wrapping-homogeneous-list-and-grid-view-items">Keyboard interactions</a>.</p>
+<h6 id="wrapping">Wrapping</h6>
+<p>The RadioButtons group doesn't wrap focus from the first row or column to the last, or from the last row or column to the first. This is because, when users use a screen reader, a sense of boundary and a clear indication of beginning and end is lost, which makes it difficult for users with visual impairment to navigate the list.</p>
+<p>The <code>RadioButtons</code> control also doesn't support enumeration, because the control is intended to contain a reasonable number of items (see <a href="#is-this-the-right-control">Is this the right control?</a>).</p>
+<h3 id="selection-follows-focus">Selection follows focus</h3>
+<p>When you use the keyboard to navigate between items in a <code>RadioButtons</code> group, as focus moves from one item to the next, the newly focused item gets selected and the previously focused item is cleared.</p>
+<section class="row">
+<div class="column span">
+<p><strong><em>Before keyboard navigation</em></strong></p>
+<p><img src="images/radiobutton-two-selected-before-keyboard-navigation.png" alt="Example of focus and selection before keyboard navigation"></p>
+<p>Focus and selection before keyboard navigation.</p>
+</div>
+<div class="column span">
+<p><strong><em>After keyboard navigation</em></strong></p>
+<p><img src="images/radiobutton-three-selected-after-keyboard-navigation.png" alt="Example of focus and selection after keyboard navigation"></p>
+<p>Focus and selection after keyboard navigation, where the Down arrow key moves focus to radio button 3, selects it, and clears radio button 2.</p>
+</div>
+</section>
+<p>You can move focus without changing selection by using Ctrl+arrow keys to navigate. After focus is moved, you can use the Spacebar to select the item that currently has focus.</p>
+<h4 id="navigating-with-game-pad-and-remote-control">Navigating with game pad and remote control</h4>
+<p>If you use a game pad or remote control to move between radio buttons, the &quot;selection follows focus&quot; behavior is disabled, and the user must press the &quot;A&quot; button to select the radio button that currently has focus.</p>
+<h2 id="accessibility-behavior">Accessibility behavior</h2>
+<p>The following table describes how Narrator handles a <code>RadioButtons</code> group and what is announced. This behavior depends on how a user has set the Narrator detail preferences.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Action</th>
+<th style="text-align: left;">Narrator announcement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Focus moves to a selected item</td>
+<td style="text-align: left;">&quot;<em>name</em>, RadioButton, selected, <em>x</em> of <em>N</em>&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;">Focus moves to an unselected item<br> <em>(If navigating with Ctrl-arrow keys or Xbox gamepad,<br>which indicates selection is not following focus.)</em></td>
+<td style="text-align: left;">&quot;<em>name</em>, RadioButton, non-selected, <em>x</em> of <em>N</em>&quot;</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <em><strong>name</strong></em> that Narrator announces for each item is the value of the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty">AutomationProperties.Name</a> attached property if it is available for the item; otherwise, it is the value returned by the item's <a href="/dotnet/api/system.object.tostring?view=dotnet-uwp-10.0&amp;preserve-view=true">ToString</a> method.</p>
+<p><em><strong>x</strong></em> is the number of the current item. <em><strong>N</strong></em> is the total number of items in the group.</p>
+</div>
+<h2 id="create-a-winui-radiobuttons-group">Create a WinUI RadioButtons group</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons">RadioButtons class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem">SelectedItem property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex">SelectedIndex property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged">SelectionChanged event</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton">RadioButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked">IsChecked property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.Checked">Checked event</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/RadioButton">Open the WinUI 3 Gallery app and see the RadioButton in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>The <code>RadioButtons</code> control uses a content model similar to an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol">ItemsControl</a>. This means that you can:</p>
+<ul>
+<li>Populate it by adding items directly to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.items">Items</a> collection or by binding data to its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.itemssource">ItemsSource</a> property.</li>
+<li>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex">SelectedIndex</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem">SelectedItem</a> properties to get and set which option is selected.</li>
+<li>Handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged">SelectionChanged</a> event to take action when an option is chosen.</li>
+</ul>
+<p>Here, you declare a simple <code>RadioButtons</code> control with three options. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.header">Header</a> property is set to give the group a label, and the <code>SelectedIndex</code> property is set to provide a default option.</p>
+<pre><code class="lang-xaml">&lt;RadioButtons Header=&quot;Background color&quot;
+              SelectedIndex=&quot;0&quot;
+              SelectionChanged=&quot;BackgroundColor_SelectionChanged&quot;&gt;
+    &lt;x:String&gt;Red&lt;/x:String&gt;
+    &lt;x:String&gt;Green&lt;/x:String&gt;
+    &lt;x:String&gt;Blue&lt;/x:String&gt;
+&lt;/RadioButtons&gt;
+</code></pre>
+<p>The result looks like this:</p>
+<p><img src="images/radiobuttons-default-group.png" alt="A group of three radio buttons">
+</p>
+<p>To take an action when the user selects an option, handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged">SelectionChanged</a> event. Here, you change the background color of a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border">Border</a> element named &quot;ExampleBorder&quot; (<code>&lt;Border x:Name=&quot;ExampleBorder&quot; Width=&quot;100&quot; Height=&quot;100&quot;/&gt;</code>).</p>
+<pre><code class="lang-csharp">private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    if (ExampleBorder != null &amp;&amp; sender is RadioButtons rb)
+    {
+        string colorName = rb.SelectedItem as string;
+        switch (colorName)
+        {
+            case &quot;Red&quot;:
+                ExampleBorder.Background = new SolidColorBrush(Colors.Red);
+                break;
+            case &quot;Green&quot;:
+                ExampleBorder.Background = new SolidColorBrush(Colors.Green);
+                break;
+            case &quot;Blue&quot;:
+                ExampleBorder.Background = new SolidColorBrush(Colors.Blue);
+                break;
+        }
+    }
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can also get the selected item from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.addeditems">SelectionChangedEventArgs.AddedItems</a> property. There will only be one selected item, at index 0, so you could get the selected item like this: <code>string colorName = e.AddedItems[0] as string;</code>.</p>
+</div>
+<h3 id="selection-states">Selection states</h3>
+<p>A radio button has two states: selected or cleared. When an option is selected in a <code>RadioButtons</code> group, you can get its value from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem">SelectedItem</a> property, and its location in the collection from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex">SelectedIndex</a> property. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button group programmatically by setting it <code>SelectedItem = null</code>, or <code>SelectedIndex = -1</code>. (Setting <code>SelectedIndex</code> to any value outside the range of the <code>Items</code> collection results in no selection.)</p>
+<h3 id="radiobuttons-content">RadioButtons content</h3>
+<p>In the previous example, you populated the <code>RadioButtons</code> control with simple strings. The control provided the radio buttons, and used the strings as the label for each one.</p>
+<p>However, you can populate the <code>RadioButtons</code> control with any object. Typically, you want the object to provide a string representation that can be used as a text label. In some cases, an image might be appropriate in place of text.</p>
+<p>Here, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon">SymbolIcon</a> elements are used to populate the control.</p>
+<pre><code class="lang-xaml">&lt;RadioButtons Header=&quot;Select an icon option:&quot;&gt;
+    &lt;SymbolIcon Symbol=&quot;Back&quot;/&gt;
+    &lt;SymbolIcon Symbol=&quot;Attach&quot;/&gt;
+    &lt;SymbolIcon Symbol=&quot;HangUp&quot;/&gt;
+    &lt;SymbolIcon Symbol=&quot;FullScreen&quot;/&gt;
+&lt;/RadioButtons&gt;
+</code></pre>
+<p><img src="images/radiobuttons-symbolicon.png" alt="A group radio buttons with symbol icons">
+</p>
+<p>You can also use individual <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton">RadioButton</a> controls to populate the <code>RadioButtons</code> items. This is a special case that we discuss later. See <a href="#radiobutton-controls-in-a-radiobuttons-group">RadioButton controls in a RadioButtons group</a>.</p>
+<p>A benefit of being able to use any object is that you can bind the <code>RadioButtons</code> control to a custom type in your data model. The next section demonstrates this.</p>
+<h3 id="data-binding">Data binding</h3>
+<p>The <code>RadioButtons</code> control supports data binding to its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.itemssource">ItemsSource</a> property. This example shows how you can bind the control to a custom data source. The appearance and functionality of this example is the same as the previous background color example, but here, the color brushes are stored in the data model instead of being created in the <code>SelectionChanged</code> event handler.</p>
+<pre><code class="lang-xaml">&lt;RadioButtons Header=&quot;Background color&quot;
+              SelectedIndex=&quot;0&quot;
+              SelectionChanged=&quot;BackgroundColor_SelectionChanged&quot;
+              ItemsSource=&quot;{x:Bind colorOptionItems}&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">public sealed partial class MainPage : Page
+{
+    // Custom data item.
+    public class ColorOptionDataModel
+    {
+        public string Label { get; set; }
+        public SolidColorBrush ColorBrush { get; set; }
+
+        public override string ToString()
+        {
+            return Label;
+        }
+    }
+
+    List&lt;ColorOptionDataModel&gt; colorOptionItems;
+
+    public MainPage1()
+    {
+        this.InitializeComponent();
+
+        colorOptionItems = new List&lt;ColorOptionDataModel&gt;();
+        colorOptionItems.Add(new ColorOptionDataModel()
+            { Label = &quot;Red&quot;, ColorBrush = new SolidColorBrush(Colors.Red) });
+        colorOptionItems.Add(new ColorOptionDataModel()
+            { Label = &quot;Green&quot;, ColorBrush = new SolidColorBrush(Colors.Green) });
+        colorOptionItems.Add(new ColorOptionDataModel()
+            { Label = &quot;Blue&quot;, ColorBrush = new SolidColorBrush(Colors.Blue) });
+    }
+
+    private void BackgroundColor_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var option = e.AddedItems[0] as ColorOptionDataModel;
+        ExampleBorder.Background = option?.ColorBrush;
+    }
+}
+</code></pre>
+<h3 id="radiobutton-controls-in-a-radiobuttons-group">RadioButton controls in a RadioButtons group</h3>
+<p>You can use individual <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton">RadioButton</a> controls to populate the <code>RadioButtons</code> items. You might do this to get access to certain properties, like <code>AutomationProperties.Name</code>; or you might have existing <code>RadioButton</code> code, but want to take advantage of the layout and navigation of <code>RadioButtons</code>.</p>
+<pre><code class="lang-xaml">&lt;RadioButtons Header=&quot;Background color&quot;&gt;
+    &lt;RadioButton Content=&quot;Red&quot; Tag=&quot;red&quot; AutomationProperties.Name=&quot;red&quot;/&gt;
+    &lt;RadioButton Content=&quot;Green&quot; Tag=&quot;green&quot; AutomationProperties.Name=&quot;green&quot;/&gt;
+    &lt;RadioButton Content=&quot;Blue&quot; Tag=&quot;blue&quot; AutomationProperties.Name=&quot;blue&quot;/&gt;
+&lt;/RadioButtons&gt;
+</code></pre>
+<p>When you use <code>RadioButton</code> controls in a <code>RadioButtons</code> group, the <code>RadioButtons</code> control knows how to present the <code>RadioButton</code>, so you won't end up with two selection circles.</p>
+<p>However, there are some behaviors you should be aware of. We recommend that you handle state and events on the individual controls or on <code>RadioButtons</code>, but not both, to avoid conflicts.</p>
+<p>This table shows the related events and properties on both controls.</p>
+<table>
+<thead>
+<tr>
+<th>RadioButton</th>
+<th>RadioButtons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked">Checked</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.unchecked">Unchecked</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged">SelectionChanged</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked">IsChecked</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem">SelectedItem</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex">SelectedIndex</a></td>
+</tr>
+</tbody>
+</table>
+<p>If you handle events on an individual <code>RadioButton</code>, such as <code>Checked</code> or <code>Unchecked</code>, and also handle the <code>RadioButtons.SelectionChanged</code> event, both events will fire. The <code>RadioButton</code> event occurs first, and then the <code>RadioButtons.SelectionChanged</code> event occurs, which could result in conflicts.</p>
+<p>The <code>IsChecked</code>, <code>SelectedItem</code>, and <code>SelectedIndex</code> properties stay synchronized. A change to one property updates the other two.</p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton.groupname">RadioButton.GroupName</a> property is ignored. The group is created by the <code>RadioButtons</code> control.</p>
+<h3 id="defining-multiple-columns">Defining multiple columns</h3>
+<p>By default, the <code>RadioButtons</code> control arranges its radio buttons vertically in a single column. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.maxcolumns">MaxColumns</a> property to make the control arrange the radio buttons in multiple columns. (When you do this, they are laid out in column-major order, where items fill in from top to bottom, then left to right.)</p>
+<pre><code class="lang-xaml">&lt;RadioButtons Header=&quot;RadioButtons in columns&quot; MaxColumns=&quot;3&quot;&gt;
+    &lt;x:String&gt;Item 1&lt;/x:String&gt;
+    &lt;x:String&gt;Item 2&lt;/x:String&gt;
+    &lt;x:String&gt;Item 3&lt;/x:String&gt;
+    &lt;x:String&gt;Item 4&lt;/x:String&gt;
+    &lt;x:String&gt;Item 5&lt;/x:String&gt;
+    &lt;x:String&gt;Item 6&lt;/x:String&gt;
+&lt;/RadioButtons&gt;
+</code></pre>
+<p><img src="images/radiobuttons-multi-column.png" alt="Radio buttons in two three-column groups">
+</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To have items arranged in a single horizontal row, set <code>MaxColumns</code> equal to the number of items in the group.</p>
+</div>
+<h2 id="create-your-own-radiobutton-group">Create your own RadioButton group</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We recommend using the <code>RadioButtons</code> control to group <code>RadioButton</code> elements.</p>
+</div>
+<p>Radio buttons work in groups. You can group individual <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton">RadioButton</a> controls in either of two ways:</p>
+<ul>
+<li>Put them inside the same parent container.</li>
+<li>Set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton.GroupName">GroupName</a> property on each radio button to the same value.</li>
+</ul>
+<p>In this example, the first group of radio buttons is implicitly grouped by being in the same stack panel. The second group is divided between two stack panels, so <code>GroupName</code> is used to explicitly group them into a single group.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;StackPanel&gt;
+        &lt;TextBlock Text=&quot;Background&quot; Style=&quot;{ThemeResource BaseTextBlockStyle}&quot;/&gt;
+        &lt;!-- Group 1 - implicit grouping --&gt;
+        &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+            &lt;RadioButton Content=&quot;Green&quot; Tag=&quot;green&quot; Checked=&quot;BGRadioButton_Checked&quot;/&gt;
+            &lt;RadioButton Content=&quot;Yellow&quot; Tag=&quot;yellow&quot; Checked=&quot;BGRadioButton_Checked&quot;/&gt;
+            &lt;RadioButton Content=&quot;White&quot; Tag=&quot;white&quot; Checked=&quot;BGRadioButton_Checked&quot;
+                         IsChecked=&quot;True&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/StackPanel&gt;
+
+    &lt;StackPanel&gt;
+        &lt;TextBlock Text=&quot;BorderBrush&quot; Style=&quot;{ThemeResource BaseTextBlockStyle}&quot;/&gt;
+        &lt;!-- Group 2 - grouped by GroupName --&gt;
+        &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+            &lt;StackPanel&gt;
+                &lt;RadioButton Content=&quot;Green&quot; Tag=&quot;green&quot; GroupName=&quot;BorderBrush&quot;
+                             Checked=&quot;BorderRadioButton_Checked&quot;/&gt;
+                &lt;RadioButton Content=&quot;Yellow&quot; Tag=&quot;yellow&quot; GroupName=&quot;BorderBrush&quot;
+                             Checked=&quot;BorderRadioButton_Checked&quot; IsChecked=&quot;True&quot;/&gt;
+                &lt;RadioButton Content=&quot;White&quot; Tag=&quot;white&quot;  GroupName=&quot;BorderBrush&quot;
+                             Checked=&quot;BorderRadioButton_Checked&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/StackPanel&gt;
+    &lt;Border x:Name=&quot;ExampleBorder&quot;
+            BorderBrush=&quot;#FFFFD700&quot; Background=&quot;#FFFFFFFF&quot;
+            BorderThickness=&quot;10&quot; Height=&quot;50&quot; Margin=&quot;0,10&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void BGRadioButton_Checked(object sender, RoutedEventArgs e)
+{
+    RadioButton rb = sender as RadioButton;
+
+    if (rb != null &amp;&amp; ExampleBorder != null)
+    {
+        string colorName = rb.Tag.ToString();
+        switch (colorName)
+        {
+            case &quot;yellow&quot;:
+                ExampleBorder.Background = new SolidColorBrush(Colors.Yellow);
+                break;
+            case &quot;green&quot;:
+                ExampleBorder.Background = new SolidColorBrush(Colors.Green);
+                break;
+            case &quot;white&quot;:
+                ExampleBorder.Background = new SolidColorBrush(Colors.White);
+                break;
+        }
+    }
+}
+
+private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
+{
+    RadioButton rb = sender as RadioButton;
+
+    if (rb != null &amp;&amp; ExampleBorder != null)
+    {
+        string colorName = rb.Tag.ToString();
+        switch (colorName)
+        {
+            case &quot;yellow&quot;:
+                ExampleBorder.BorderBrush = new SolidColorBrush(Colors.Gold);
+                break;
+            case &quot;green&quot;:
+                ExampleBorder.BorderBrush = new SolidColorBrush(Colors.DarkGreen);
+                break;
+            case &quot;white&quot;:
+                ExampleBorder.BorderBrush = new SolidColorBrush(Colors.White);
+                break;
+        }
+    }
+}
+</code></pre>
+<p>These two groups of <code>RadioButton</code> controls look like this:</p>
+<p><img src="images/radio-button-groups.png" alt="Radio buttons in two groups">
+</p>
+<h3 id="radio-button-states">Radio button states</h3>
+<p>A radio button has two states: selected or cleared. When a radio button is selected, its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked">IsChecked</a> property is <code>true</code>. When a radio button is cleared, its <code>IsChecked</code> property is <code>false</code>. A radio button can be cleared if a user selects another radio button in the same group, but it can't be cleared if the user selects it again. However, you can clear a radio button programmatically by setting its <code>IsChecked</code> property to <code>false</code>.</p>
+<h3 id="visuals-to-consider">Visuals to consider</h3>
+<p>The default spacing of individual <code>RadioButton</code> controls is different than the spacing provided by a <code>RadioButtons</code> group. To apply the <code>RadioButtons</code> spacing to individual <code>RadioButton</code> controls, use a <code>Margin</code> value of <code>0,0,7,3</code>, as shown here.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;StackPanel.Resources&gt;
+        &lt;Style TargetType=&quot;RadioButton&quot;&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;0,0,7,3&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/StackPanel.Resources&gt;
+    &lt;TextBlock Text=&quot;Background&quot;/&gt;
+    &lt;RadioButton Content=&quot;Item 1&quot;/&gt;
+    &lt;RadioButton Content=&quot;Item 2&quot;/&gt;
+    &lt;RadioButton Content=&quot;Item 3&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>The following images show the preferred spacing of radio buttons in a group.</p>
+<p><img src="images/radiobutton-layout.png" alt="Image showing a set of radio buttons, arranged vertically">
+</p>
+<p><span class="mx-imgBorder">
+<img src="images/radiobutton-redline.png" alt="Image showing spacing guidelines for radio buttons">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you're using a WinUI RadioButtons control, the spacing, margins, and orientation are already optimized.</p>
+</div>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The RadioButtons control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for these controls exist in both the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs</strong>: <a href="/uwp/api/windows.ui.xaml.controls.radiobutton">RadioButton class</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked">IsChecked property</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked">Checked event</a></li>
+<li><strong>WinUI 2 Apis</strong>: <a href="/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons">RadioButtons class</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem">SelectedItem property</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex">SelectedIndex property</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged">SelectionChanged event</a></li>
+<li><a href="winui2gallery:/item/RadioButton">Open the WinUI 2 Gallery app and see the RadioButton in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>There are two ways to create radio button groups.</p>
+<ul>
+<li>Starting with WinUI 2.3, we recommend the <strong><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons">RadioButtons</a></strong> control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.</li>
+<li>You can use groups of individual <strong><a href="/uwp/api/windows.ui.xaml.controls.radiobutton">RadioButton</a></strong> controls. If your app does not use WinUI 2.3 or later, this is the only option.</li>
+</ul>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:RadioButtons /&gt;
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="buttons.html">Buttons</a></li>
+<li><a href="toggles.html">Toggle switches</a></li>
+<li><a href="checkbox.html">Check boxes</a></li>
+<li><a href="lists.html">Lists and combo boxes</a></li>
+<li><a href="slider.html">Sliders</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons">RadioButtons class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton">RadioButton class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/radio-button.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

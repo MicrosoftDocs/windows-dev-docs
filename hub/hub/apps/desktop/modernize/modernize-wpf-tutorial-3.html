@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Add a UWP CalendarView control using XAML Islands </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Add a UWP CalendarView control using XAML Islands ">
+    
+    <meta name="description" content="This tutorial demonstrates how to make it easier to choose the date for an expense report on a touch-enabled device.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="part-3-add-a-uwp-calendarview-control-using-xaml-islands">Part 3: Add a UWP CalendarView control using XAML Islands</h1>
+
+<p>This is the third part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see <a href="modernize-wpf-tutorial.html">Tutorial: Modernize a WPF app</a>. This article assumes you have already completed <a href="modernize-wpf-tutorial-2.html">part 2</a>.</p>
+<p>In the fictional scenario of this tutorial, the Contoso development team wants to make it easier to choose the date for an expense report on a touch-enabled device. In this part of the tutorial, you will add a UWP <a href="/windows/uwp/design/controls-and-patterns/calendar-view">CalendarView</a> control to the app. This is the same control that is used in the Windows date and time functionality on the taskbar.</p>
+<p><img src="images/wpf-modernize-tutorial/CalendarViewControl.png" alt="CalendarViewControl image"></p>
+<p>Unlike the <strong>InkCanvas</strong> control you added in <a href="modernize-wpf-tutorial-2.html">part 2</a>, the Windows Community Toolkit does not provide a wrapped version of the UWP <strong>CalendarView</strong> that can be used in WPF apps. As an alternative, you'll host an <strong>InkCanvas</strong> in the generic <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> control. You can use this control to host any first-party UWP control provided by the Windows SDK or WinUI library or any custom UWP control created by a third party. The <strong>WindowsXamlHost</strong> control is provided by the <code>Microsoft.Toolkit.Wpf.UI.XamlHost</code> package NuGet package. This package is included with the <code>Microsoft.Toolkit.Wpf.UI.Controls</code> NuGet package that you installed in <a href="modernize-wpf-tutorial-2.html">part 2</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This tutorial only demonstrates how to use <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> to host the first-party <strong>CalendarView</strong> control provided by the Windows SDK. For a walkthrough that demonstrates how to host a custom control, see <a href="xaml-islands/host-custom-control-with-xaml-islands.html">Host a custom UWP control in a WPF app using XAML Islands</a>.</p>
+</div>
+<p>In order to use the <strong>WindowsXamlHost</strong> control, you'll need to directly call WinRT APIs from code in the WPF app. The <code>Microsoft.Windows.SDK.Contracts</code> NuGet package contains the references necessary to enable you to call WinRT APIs from the app. This package is also included in the <code>Microsoft.Toolkit.Wpf.UI.Controls</code> NuGet package that you installed in <a href="modernize-wpf-tutorial-2.html">part 2</a>.</p>
+<h2 id="add-the-windowsxamlhost-control">Add the WindowsXamlHost control</h2>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, expand the <strong>Views</strong> folder in the <strong>ContosoExpenses.Core</strong> project and double-click the <strong>AddNewExpense.xaml</strong> file. This is the form used to add a new expense to the list. Here is how it appears in the current version of the app.</p>
+<p><img src="images/wpf-modernize-tutorial/AddNewExpense.png" alt="Add new expense"></p>
+<p>The date picker control included in WPF is meant for traditional computers with mouse and keyboard. Choosing a date with a touch screen isn't really feasible, due to the small size of the control and the limited space between each day in the calendar.</p>
+</li>
+<li><p>At the top of the <strong>AddNewExpense.xaml</strong> file, add the following attribute to the <strong>Window</strong> element.</p>
+<pre><code class="lang-xml">xmlns:xamlhost=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost&quot;
+</code></pre>
+<p>After adding this attribute, the <strong>Window</strong> element should now look like this.</p>
+<pre><code class="lang-xml">&lt;Window x:Class=&quot;ContosoExpenses.Views.AddNewExpense&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:xamlhost=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost&quot;
+        DataContext=&quot;{Binding Source={StaticResource ViewModelLocator},Path=AddNewExpenseViewModel}&quot;
+        xmlns:local=&quot;clr-namespace:ContosoExpenses&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;Add new expense&quot; Height=&quot;450&quot; Width=&quot;800&quot;
+        Background=&quot;{StaticResource AddNewExpenseBackground}&quot;&gt;
+</code></pre>
+</li>
+<li><p>Change the <strong>Height</strong> attribute of the <strong>Window</strong> element from 450 to 800. This is needed because the UWP <strong>CalendarView</strong> control takes more space than the WPF date picker.</p>
+<pre><code class="lang-xml">&lt;Window x:Class=&quot;ContosoExpenses.Views.AddNewExpense&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:xamlhost=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost&quot;
+        DataContext=&quot;{Binding Source={StaticResource ViewModelLocator},Path=AddNewExpenseViewModel}&quot;
+        xmlns:local=&quot;clr-namespace:ContosoExpenses&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;Add new expense&quot; Height=&quot;800&quot; Width=&quot;800&quot;
+        Background=&quot;{StaticResource AddNewExpenseBackground}&quot;&gt;
+</code></pre>
+</li>
+<li><p>Locate the <code>DatePicker</code> element near the bottom of the file, and replace this element with the following XAML.</p>
+<pre><code class="lang-xml">&lt;xamlhost:WindowsXamlHost InitialTypeName=&quot;Windows.UI.Xaml.Controls.CalendarView&quot; Grid.Column=&quot;1&quot; Grid.Row=&quot;6&quot; Margin=&quot;5, 0, 0, 0&quot; x:Name=&quot;CalendarUwp&quot;  /&gt;
+</code></pre>
+<p>This XAML adds the <strong>WindowsXamlHost</strong> control. The <strong>InitialTypeName</strong> property indicates the full name of the UWP control you want to host (in this case, <strong>Windows.UI.Xaml.Controls.CalendarView</strong>).</p>
+</li>
+<li><p>Press F5 to build and run the app in the debugger. Choose an employee from the list and then press the <strong>Add new expense</strong> button. Confirm that the following page hosts the new UWP <strong>CalendarView</strong> control.</p>
+<p><img src="images/wpf-modernize-tutorial/CalendarViewWrapper.png" alt="CalendarView wrapper"></p>
+</li>
+<li><p>Close the app.</p>
+</li>
+</ol>
+<h2 id="interact-with-the-windowsxamlhost-control">Interact with the WindowsXamlHost control</h2>
+<p>Next, you'll update the app to process the selected date, display it on the screen, and populate the <strong>Expense</strong> object to save in the database.</p>
+<p>The UWP <a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarView">CalendarView</a> contains two members that are relevant for this scenario:</p>
+<ul>
+<li>The <strong>SelectedDates</strong> property contains the date selected by the user.</li>
+<li>The <strong>SelectedDatesChanged</strong> event is raised when the user selects a date.</li>
+</ul>
+<p>However, the <strong>WindowsXamlHost</strong> control is a generic host control for <em>any</em> kind of UWP control. As such, it doesn't expose a property called <strong>SelectedDates</strong> or an event called <strong>SelectedDatesChanged</strong>, because they are specific of the <strong>CalendarView</strong> control. To access these members, you must write code that casts the <strong>WindowsXamlHost</strong> to the <strong>CalendarView</strong> type. The best place to do this is in response to the <strong>ChildChanged</strong> event of the <strong>WindowsXamlHost</strong> control, which is raised when the hosted control has been rendered.</p>
+<ol>
+<li><p>In the <strong>AddNewExpense.xaml</strong> file, add an event handler for the <strong>ChildChanged</strong> event of the <strong>WindowsXamlHost</strong> control you added earlier. When you are done, the <strong>WindowsXamlHost</strong> element should look like this.</p>
+<pre><code class="lang-xml">&lt;xamlhost:WindowsXamlHost InitialTypeName=&quot;Windows.UI.Xaml.Controls.CalendarView&quot; Grid.Column=&quot;1&quot; Grid.Row=&quot;6&quot; Margin=&quot;5, 0, 0, 0&quot; x:Name=&quot;CalendarUwp&quot;  ChildChanged=&quot;CalendarUwp_ChildChanged&quot; /&gt;
+</code></pre>
+</li>
+<li><p>In the same file, locate the <strong>Grid.RowDefinitions</strong> element of the main <strong>Grid</strong>. Add one more <strong>RowDefinition</strong> element with the <strong>Height</strong> equal to <strong>Auto</strong> at the end of the list of child elements. When you are done, the <strong>Grid.RowDefinitions</strong> element should look like this (there should now be 9 <strong>RowDefinition</strong> elements).</p>
+<pre><code class="lang-xml">&lt;Grid.RowDefinitions&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+&lt;/Grid.RowDefinitions&gt;
+</code></pre>
+</li>
+<li><p>Add the following XAML after the <strong>WindowsXamlHost</strong> element and before the <strong>Button</strong> element near the end of the file.</p>
+<pre><code class="lang-xml">&lt;TextBlock Text=&quot;Selected date:&quot; FontSize=&quot;16&quot; FontWeight=&quot;Bold&quot; Grid.Row=&quot;7&quot; Grid.Column=&quot;0&quot; /&gt;
+&lt;TextBlock Text=&quot;{Binding Path=Date}&quot; FontSize=&quot;16&quot; Grid.Row=&quot;7&quot; Grid.Column=&quot;1&quot; /&gt;
+</code></pre>
+</li>
+<li><p>Locate the <strong>Button</strong> element near the end of the file and change the <strong>Grid.Row</strong> property from <strong>7</strong> to <strong>8</strong>. This shifts the button down one row in the grid because you added a new row.</p>
+<pre><code class="lang-xml">&lt;Button Content=&quot;Save&quot; Grid.Row=&quot;8&quot; Grid.Column=&quot;0&quot; Command=&quot;{Binding Path=SaveExpenseCommand}&quot; Margin=&quot;5, 12, 0, 0&quot; HorizontalAlignment=&quot;Left&quot; Width=&quot;180&quot; /&gt;
+</code></pre>
+</li>
+<li><p>Open the <strong>AddNewExpense.xaml.cs</strong> code file.</p>
+</li>
+<li><p>Add the following statement to the top of the file.</p>
+<pre><code class="lang-csharp">using Microsoft.Toolkit.Wpf.UI.XamlHost;
+</code></pre>
+</li>
+<li><p>Add the following event handler to the <code>AddNewExpense</code> class. This code implements the <strong>ChildChanged</strong> event of the <strong>WindowsXamlHost</strong> control you declared earlier in the XAML file.</p>
+<pre><code class="lang-csharp">private void CalendarUwp_ChildChanged(object sender, System.EventArgs e)
+{
+    WindowsXamlHost windowsXamlHost = (WindowsXamlHost)sender;
+
+    Windows.UI.Xaml.Controls.CalendarView calendarView =
+        (Windows.UI.Xaml.Controls.CalendarView)windowsXamlHost.Child;
+
+    if (calendarView != null)
+    {
+        calendarView.SelectedDatesChanged += (obj, args) =&gt;
+        {
+            if (args.AddedDates.Count &gt; 0)
+            {
+                Messenger.Default.Send&lt;SelectedDateMessage&gt;(new SelectedDateMessage(args.AddedDates[0].DateTime));
+            }
+        };
+    }
+}
+</code></pre>
+<p>This code uses the <strong>Child</strong> property of the <strong>WindowsXamlHost</strong> control to access the UWP <strong>CalendarView</strong> control. The code then subscribes to the <strong>SelectedDatesChanged</strong> event, which is triggered when the user selects a date from the calendar. This event handler passes the selected date to the ViewModel where the new <strong>Expense</strong> object is created and saved to the database. To do this, the code uses the messaging infrastructure provided by the MVVM Light NuGet package. The code sends a message called <strong>SelectedDateMessage</strong> to the ViewModel, which will receive it and set the <strong>Date</strong> property with the selected value. In this scenario the <strong>CalendarView</strong> control is configured for single selection mode, so the collection will contain only one element.</p>
+<p>At this point, the project still won't compile because it is missing the implementation for the <strong>SelectedDateMessage</strong> class. The following steps implement this class.</p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>Messages</strong> folder and choose <strong>Add -&gt; Class</strong>. Name the new class <strong>SelectedDateMessage</strong> and click <strong>Add</strong>.</p>
+</li>
+<li><p>Replace the contents of the <strong>SelectedDateMessage.cs</strong> code file with the following code. This code adds a using statement for the <code>GalaSoft.MvvmLight.Messaging</code> namespace (from the MVVM Light NuGet package), inherits from the <strong>MessageBase</strong> class, and adds <strong>DateTime</strong> property that is initialized through the public constructor. When you are done, the file should look like this.</p>
+<pre><code class="lang-csharp">using GalaSoft.MvvmLight.Messaging;
+using System;
+
+namespace ContosoExpenses.Messages
+{
+    public class SelectedDateMessage: MessageBase
+    {
+        public DateTime SelectedDate { get; set; }
+
+        public SelectedDateMessage(DateTime selectedDate)
+        {
+            this.SelectedDate = selectedDate;
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Next, you'll update the ViewModel to receive this message and populate the <strong>Date</strong> property of the ViewModel. In <strong>Solution Explorer</strong>, expand the <strong>ViewModels</strong> folder and open the <strong>AddNewExpenseViewModel.cs</strong> file.</p>
+</li>
+<li><p>Locate the public constructor for the <code>AddNewExpenseViewModel</code> class and add the following code to the end of the constructor. This code registers to receive the <strong>SelectedDateMessage</strong>, extract the selected date from it through the <strong>SelectedDate</strong> property, and we use it to set the <strong>Date</strong> property exposed by the ViewModel. Because this property is bound with the <strong>TextBlock</strong> control you added earlier, you can see the date selected by the user.</p>
+<pre><code class="lang-csharp">Messenger.Default.Register&lt;SelectedDateMessage&gt;(this, message =&gt;
+{
+    Date = message.SelectedDate;
+});
+</code></pre>
+<p>When you are done, the <code>AddNewExpenseViewModel</code> constructor should look like this.</p>
+<pre><code class="lang-csharp">public AddNewExpenseViewModel(IDatabaseService databaseService, IStorageService storageService)
+{
+    this.databaseService = databaseService;
+    this.storageService = storageService;
+
+    Date = DateTime.Today;
+
+    Messenger.Default.Register&lt;SelectedDateMessage&gt;(this, message =&gt;
+    {
+        Date = message.SelectedDate;
+    });
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>SaveExpenseCommand</code> method in the same code file does the work of saving the expenses to the database. This method uses the <strong>Date</strong> property to create the new <strong>Expense</strong> object. This property is now being populated by the <strong>CalendarView</strong> control through the <code>SelectedDateMessage</code> message you just created.</p>
+</div>
+</li>
+<li><p>Press F5 to build and run the app in the debugger. Choose one of the available employees and then click the <strong>Add new expense</strong> button. Complete all fields in the form and choose a date from the new <strong>CalendarView</strong> control. Confirm the selected date is displayed as a string below the control.</p>
+</li>
+<li><p>Press the <strong>Save</strong> button. The form will be closed and the new expense is added to the end of the list of expenses. The first column with the expense date should be the date you selected in the <strong>CalendarView</strong> control.</p>
+</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>At this point in the tutorial, you have successfully replaced a WPF date time control with the UWP <strong>CalendarView</strong> control, which supports touch and digital pens in addition to mouse and keyboard input. Although the Windows Community Toolkit doesn't provide a wrapped version of the UWP <strong>CalendarView</strong> control that can be used directly in a WPF app, you were able to host the control by using the generic <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> control.</p>
+<p>You are now ready for <a href="modernize-wpf-tutorial-4.html">Part 4: Add Windows user activities and notifications</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/modernize-wpf-tutorial-3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

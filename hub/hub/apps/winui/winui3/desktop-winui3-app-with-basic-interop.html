@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build a C# .NET app with WinUI 3 and Win32 interop </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build a C# .NET app with WinUI 3 and Win32 interop ">
+    
+    <meta name="description" content="Build a C# .NET application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-a-c-net-app-with-winui-3-and-win32-interop">Build a C# .NET app with WinUI 3 and Win32 interop</h1>
+
+<p>In this topic, we step through how to build a basic <strong>C# .NET</strong> application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services (<a href="https://github.com/dotnet/pinvoke">PInvoke</a>).</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li><a href="../../get-started/start-here.html">Start developing Windows apps</a></li>
+</ol>
+<h2 id="basic-managed-cnet-app">Basic managed C#/.NET app</h2>
+<p>For this example, we'll specify the location and size of the app window, convert and scale it for the appropriate DPI, disable the window minimize and maximize buttons, and finally query the current process to show a list of the modules that are loaded into the current process.</p>
+<p>We're going to build our example app from the initial template application (see <a href="#prerequisites">Prerequisites</a>). Also see <a href="winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>.</p>
+<h3 id="the-mainwindowxaml-file">The MainWindow.xaml file</h3>
+<p>With WinUI 3, you can create instances of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> class in XAML markup.</p>
+<p>The XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> class has been extended to support desktop windows, turning it into an abstraction of each of the low-level window implementations used by the UWP and desktop app models. Specifically, CoreWindow for UWP and window handles (or HWNDs) for Win32.</p>
+<p>The following code shows the MainWindow.xaml file from the initial template app, which uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> class as the root element for the app.</p>
+<pre><code class="lang-xaml">&lt;Window
+    x:Class=&quot;WinUI_3_basic_win32_interop.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:WinUI_3_basic_win32_interop&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+        &lt;Button x:Name=&quot;myButton&quot; Click=&quot;myButton_Click&quot;&gt;Click Me&lt;/Button&gt;
+    &lt;/StackPanel&gt;
+&lt;/Window&gt;
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<ol>
+<li><p>To call Win32 APIs exported from <code>User32.dll</code>, you can use the <a href="https://github.com/microsoft/CsWin32"><strong>C#/Win32 P/Invoke Source Generator</strong></a> in your Visual Studio project. Click <strong>Tools</strong> &gt; <strong>NuGet Package Manager</strong> &gt; <strong>Manage NuGet Packages for Solution...</strong>, and (on the <strong>Browse</strong> tab) search for <em>Microsoft.Windows.CsWin32</em>. For more details, see <a href="/cpp/dotnet/calling-native-functions-from-managed-code">Calling Native Functions from Managed Code</a>.</p>
+<p>You can optionally confirm that installation was successful by confirming that <em>Microsoft.Windows.CsWin32</em> is listed under the <strong>Dependencies</strong> &gt; <strong>Packages</strong> node in Solution Explorer.</p>
+<p>You can also optionally double-click the application project file (or right click and select <strong>Edit project file</strong>) to open the file in a text editor, and confirm that the project file now includes a NuGet <code>PackageReference</code> for &quot;Microsoft.Windows.CsWin32&quot;.</p>
+<pre>
+<code class="lang-xml" highlight-lines="39">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+    &lt;TargetPlatformMinVersion&gt;10.0.17763.0&lt;/TargetPlatformMinVersion&gt;
+    &lt;RootNamespace&gt;WinUI_3_basic_win32_interop&lt;/RootNamespace&gt;
+    &lt;ApplicationManifest&gt;app.manifest&lt;/ApplicationManifest&gt;
+    &lt;Platforms&gt;x86;x64;ARM64&lt;/Platforms&gt;
+    &lt;RuntimeIdentifiers&gt;win-x86;win-x64;win-arm64&lt;/RuntimeIdentifiers&gt;
+    &lt;PublishProfile&gt;win-$(Platform).pubxml&lt;/PublishProfile&gt;
+    &lt;UseWinUI&gt;true&lt;/UseWinUI&gt;
+    &lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;
+    &lt;Nullable&gt;enable&lt;/Nullable&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;Content Include=&quot;Assets\SplashScreen.scale-200.png&quot; /&gt;
+    &lt;Content Include=&quot;Assets\LockScreenLogo.scale-200.png&quot; /&gt;
+    &lt;Content Include=&quot;Assets\Square150x150Logo.scale-200.png&quot; /&gt;
+    &lt;Content Include=&quot;Assets\Square44x44Logo.scale-200.png&quot; /&gt;
+    &lt;Content Include=&quot;Assets\Square44x44Logo.targetsize-24_altform-unplated.png&quot; /&gt;
+    &lt;Content Include=&quot;Assets\StoreLogo.png&quot; /&gt;
+    &lt;Content Include=&quot;Assets\Wide310x150Logo.scale-200.png&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+  &lt;ItemGroup&gt;
+    &lt;Manifest Include=&quot;$(ApplicationManifest)&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+  &lt;!--
+    Defining the &quot;Msix&quot; ProjectCapability here allows the Single-project MSIX Packaging
+    Tools extension to be activated for this project even if the Windows App SDK Nuget
+    package has not yet been restored.
+  --&gt;
+  &lt;ItemGroup Condition=&quot;&#39;$(DisableMsixProjectCapabilityAddedByProject)&#39;!=&#39;true&#39; and &#39;$(EnableMsixTooling)&#39;==&#39;true&#39;&quot;&gt;
+    &lt;ProjectCapability Include=&quot;Msix&quot; /&gt;
+  &lt;/ItemGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Include=&quot;Microsoft.Windows.CsWin32&quot; Version=&quot;0.3.183&quot;&gt;
+      &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
+      &lt;IncludeAssets&gt;runtime; build; native; contentfiles; analyzers; buildtransitive&lt;/IncludeAssets&gt;
+    &lt;/PackageReference&gt;
+    &lt;PackageReference Include=&quot;Microsoft.Windows.SDK.BuildTools&quot; Version=&quot;10.0.26100.1742&quot; /&gt;
+    &lt;PackageReference Include=&quot;Microsoft.WindowsAppSDK&quot; Version=&quot;1.6.250205002&quot; /&gt;
+  &lt;/ItemGroup&gt;
+
+  &lt;!--
+    Defining the &quot;HasPackageAndPublishMenuAddedByProject&quot; property here allows the Solution
+    Explorer &quot;Package and Publish&quot; context menu entry to be enabled for this project even if
+    the Windows App SDK Nuget package has not yet been restored.
+  --&gt;
+  &lt;PropertyGroup Condition=&quot;&#39;$(DisableHasPackageAndPublishMenuAddedByProject)&#39;!=&#39;true&#39; and &#39;$(EnableMsixTooling)&#39;==&#39;true&#39;&quot;&gt;
+    &lt;HasPackageAndPublishMenu&gt;true&lt;/HasPackageAndPublishMenu&gt;
+  &lt;/PropertyGroup&gt;
+
+  &lt;!-- Publish Properties --&gt;
+  &lt;PropertyGroup&gt;
+    &lt;PublishReadyToRun Condition=&quot;&#39;$(Configuration)&#39; == &#39;Debug&#39;&quot;&gt;False&lt;/PublishReadyToRun&gt;
+    &lt;PublishReadyToRun Condition=&quot;&#39;$(Configuration)&#39; != &#39;Debug&#39;&quot;&gt;True&lt;/PublishReadyToRun&gt;
+    &lt;PublishTrimmed Condition=&quot;&#39;$(Configuration)&#39; == &#39;Debug&#39;&quot;&gt;False&lt;/PublishTrimmed&gt;
+    &lt;PublishTrimmed Condition=&quot;&#39;$(Configuration)&#39; != &#39;Debug&#39;&quot;&gt;True&lt;/PublishTrimmed&gt;
+  &lt;/PropertyGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>Add a text file to your project, and name it <code>NativeMethods.txt</code>. The contents of this file inform the C#/Win32 P/Invoke Source Generator the functions and types for which you want P/Invoke source code generated. In other words, which functions and types you'll be calling and using in your C# code.</p>
+<pre>
+<code class="lang-csharp">GetDpiForWindow
+GetWindowLong
+SetWindowPos
+SetWindowLong
+HWND_TOP
+WINDOW_STYLE
+</code></pre>
+</li>
+</ol>
+<h3 id="code">Code</h3>
+<ol>
+<li><p>In the <code>App.xaml.cs</code> code-behind file, we get a handle to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Window</strong></a> by using the <strong>WindowNative.GetWindowHandle</strong> WinRT COM interop method (see <a href="../../develop/ui-input/retrieve-hwnd.html">Retrieve a window handle (HWND)</a>).</p>
+<p>That method is called from the app's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched"><strong>OnLaunched</strong></a> handler, as shown here:</p>
+<pre>
+<code class="lang-csharp">/// &lt;summary&gt;
+/// Invoked when the application is launched.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;args&quot;&gt;Details about the launch request and process.&lt;/param&gt;
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    m_window = new MainWindow();
+
+    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(m_window);
+
+    SetWindowDetails(hwnd, 800, 600);
+
+    m_window.Activate();
+}
+</code></pre>
+</li>
+<li><p>We then call a <code>SetWindowDetails</code> method, passing the Window handle and preferred dimensions.</p>
+<p>In this method:</p>
+<ul>
+<li>We call <a href="/windows/win32/api/winuser/nf-winuser-getdpiforwindow">GetDpiForWindow</a> to get the dots per inch (dpi) value for the window (Win32 uses physical pixels, while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor, and apply it to the width and height specified for the window.</li>
+<li>We then call <a href="/windows/win32/api/winuser/nf-winuser-setwindowpos">SetWindowPos</a> to specify the desired location of the window.</li>
+<li>Finally, we call <a href="/windows/win32/api/winuser/nf-winuser-setwindowlongw">SetWindowLong</a> to disable the <em>Minimize</em> and <em>Maximize</em> buttons.</li>
+</ul>
+<pre>
+<code class="lang-csharp" highlight-lines="3,8,18">private static void SetWindowDetails(IntPtr hwnd, int width, int height)
+{
+    var dpi = Windows.Win32.PInvoke.GetDpiForWindow((Windows.Win32.Foundation.HWND)hwnd);
+    float scalingFactor = (float)dpi / 96;
+    width = (int)(width * scalingFactor);
+    height = (int)(height * scalingFactor);
+
+    _ = Windows.Win32.PInvoke.SetWindowPos((Windows.Win32.Foundation.HWND)hwnd,
+                                Windows.Win32.Foundation.HWND.HWND_TOP,
+                                0, 0, width, height,
+                                Windows.Win32.UI.WindowsAndMessaging.SET_WINDOW_POS_FLAGS.SWP_NOMOVE);
+
+    var nIndex = Windows.Win32.PInvoke.GetWindowLong((Windows.Win32.Foundation.HWND)hwnd,
+              Windows.Win32.UI.WindowsAndMessaging.WINDOW_LONG_PTR_INDEX.GWL_STYLE) &amp;
+              ~(int)Windows.Win32.UI.WindowsAndMessaging.WINDOW_STYLE.WS_MINIMIZEBOX &amp;
+              ~(int)Windows.Win32.UI.WindowsAndMessaging.WINDOW_STYLE.WS_MAXIMIZEBOX;
+
+    _ = Windows.Win32.PInvoke.SetWindowLong((Windows.Win32.Foundation.HWND)hwnd,
+           Windows.Win32.UI.WindowsAndMessaging.WINDOW_LONG_PTR_INDEX.GWL_STYLE,
+           nIndex);
+}
+</code></pre>
+</li>
+<li><p>In the MainWindow.xaml file, we use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog">ContentDialog</a> with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> to display a list of all the modules loaded for the current process.</p>
+<pre>
+<code class="lang-xaml">&lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;Button x:Name=&quot;myButton&quot; Click=&quot;myButton_Click&quot;&gt;Display loaded modules&lt;/Button&gt;
+
+    &lt;ContentDialog x:Name=&quot;contentDialog&quot; CloseButtonText=&quot;Close&quot;&gt;
+        &lt;ScrollViewer&gt;
+            &lt;TextBlock x:Name=&quot;cdTextBlock&quot; TextWrapping=&quot;Wrap&quot; /&gt;
+        &lt;/ScrollViewer&gt;
+    &lt;/ContentDialog&gt;
+
+&lt;/StackPanel&gt;
+</code></pre>
+</li>
+<li><p>We then replace the <code>MyButton_Click</code> event handler with the following code.</p>
+<p>Here, we get a reference to the current process by calling <a href="/dotnet/api/system.diagnostics.process.getcurrentprocess">GetCurrentProcess</a>. We then iterate through the collection of <a href="/dotnet/api/system.diagnostics.process.modules">Modules</a> and append the filename of each <a href="/dotnet/api/system.diagnostics.processmodule">ProcessModule</a> to our display string.</p>
+<pre>
+<code class="lang-csharp">private async void myButton_Click(object sender, RoutedEventArgs e)
+{
+    myButton.Content = &quot;Clicked&quot;;
+
+    var description = new System.Text.StringBuilder();
+    var process = System.Diagnostics.Process.GetCurrentProcess();
+    foreach (System.Diagnostics.ProcessModule module in process.Modules)
+    {
+        description.AppendLine(module.FileName);
+    }
+
+    cdTextBlock.Text = description.ToString();
+    await contentDialog.ShowAsync();
+}
+</code></pre>
+</li>
+<li><p>Compile and run the app.</p>
+</li>
+<li><p>After the window appears, select the &quot;Display loaded modules&quot; button.</p>
+<p><span class="mx-imgBorder">
+<img src="images/build-basic/runtime-app-process-modules.png" alt="Screenshot of the basic Win32 interop application described in this topic.">
+</span>
+<br><em>The basic Win32 interop application described in this topic.</em></p>
+</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>In this topic we covered accessing the underlying window implementation (in this case Win32 and HWNDs) and using Win32 APIs along with the WinRT APIs. This demonstrates how you can use existing desktop application code when creating new WinUI 3 desktop apps.</p>
+<p>For a more extensive sample, see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">AppWindow gallery sample</a> in the <a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a> GitHub repo.</p>
+<h2 id="an-example-to-customize-the-window-title-bar">An example to customize the window title bar</h2>
+<p>In this second example, we show how to customize the window's title bar and its content. Before following along with it, review these topics:</p>
+<ul>
+<li><a href="/windows/apps/windows-app-sdk/set-up-your-development-environment">Install tools for the Windows App SDK</a>.</li>
+<li><a href="/windows/apps/winui/winui3/create-your-first-winui3-app">Create your first WinUI 3 project</a>.</li>
+</ul>
+<h3 id="create-a-new-project">Create a new project</h3>
+<ol>
+<li>In Visual Studio, create a new C# or C++/WinRT project from the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template.</li>
+</ol>
+<h3 id="configuration-1">Configuration</h3>
+<ol>
+<li><p>Again, reference the <em>Microsoft.Windows.CsWin32</em> NuGet package just like we did in the first example.</p>
+</li>
+<li><p>Add a <code>NativeMethods.txt</code> text file to your project.</p>
+<pre>
+<code class="lang-csharp">LoadImage
+SendMessage
+SetWindowText
+WM_SETICON
+</code></pre>
+</li>
+</ol>
+<h3 id="mainwindowxaml">MainWindow.xaml</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you need an icon file to use with this walkthrough, then you can download the <a href="https://github.com/microsoft/Windows-classic-samples/blob/main/Samples/Win7Samples/netds/wlan/WirelessHostedNetwork/HostedNetwork/res/computer.ico"><code>computer.ico</code> file</a> from the <strong>WirelessHostednetwork</strong> sample app. Place that file in your <code>Assets</code> folder, and add the file to your project as content. You'll then be able to refer to the file using the url <code>Assets/computer.ico</code>.</p>
+<p>Otherwise, feel free to use an icon file that you already have, and change the two references to it in the code listings below.</p>
+</div>
+<ol>
+<li>In the code listing below, you'll see that in <code>MainWindow.xaml</code> we've added two buttons, and specified <strong>Click</strong> handlers for each. In the <strong>Click</strong> handler for the first button (<strong>basicButton_Click</strong>), we set the title bar icon and text. In the second (<strong>customButton_Click</strong>), we demonstrate more significant customization by replacing the title bar with the content of the <strong>StackPanel</strong> named <em>customTitleBarPanel</em>.</li>
+</ol>
+<pre>
+<code class="lang-xaml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Window
+    x:Class=&quot;window_titlebar.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:window_titlebar&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;
+    Title=&quot;Basic WinUI 3 Window title bar sample&quot;&gt;
+
+    &lt;Grid x:Name=&quot;rootElement&quot; RowDefinitions=&quot;100, *, 100, *&quot;&gt;
+
+        &lt;StackPanel x:Name=&quot;customTitleBarPanel&quot; Grid.Row=&quot;0&quot; Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Stretch&quot; VerticalAlignment=&quot;Top&quot; Visibility=&quot;Collapsed&quot;&gt;
+            &lt;Image Source=&quot;Images/windowIcon.gif&quot; /&gt;
+            &lt;TextBlock VerticalAlignment=&quot;Center&quot; Text=&quot;Full customization of title bar&quot;/&gt;
+        &lt;/StackPanel&gt;
+
+        &lt;StackPanel x:Name=&quot;buttonPanel&quot;  Grid.Row=&quot;2&quot; Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+            &lt;Button x:Name=&quot;basicButton&quot; Click=&quot;basicButton_Click&quot; Margin=&quot;25&quot;&gt;Set the Window title and icon&lt;/Button&gt;
+            &lt;Button x:Name=&quot;customButton&quot; Click=&quot;customButton_Click&quot; Margin=&quot;25&quot;&gt;Customize the window title bar&lt;/Button&gt;
+        &lt;/StackPanel&gt;
+
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<h3 id="mainwindowxamlcscpp">MainWindow.xaml.cs/cpp</h3>
+<ol>
+<li>In the code listing below for the <strong>basicButton_Click</strong> handler—in order to keep the custom title bar hidden—we collapse the <em>customTitleBarPanel</em> <strong>StackPanel</strong>, and we set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar">ExtendsContentIntoTitleBar</a> property to <code>false</code>.</li>
+<li>We then call <strong>IWindowNative::get_WindowHandle</strong> (for C#, using the interop helper method <strong>GetWindowHandle</strong>) to retrieve the window handle (<strong>HWND</strong>) of the main window.</li>
+<li>Next, we set the application icon (for C#, using the <a href="https://www.nuget.org/packages/PInvoke.User32/">PInvoke.User32</a> NuGet package) by calling the <a href="/windows/win32/api/winuser/nf-winuser-loadimagea">LoadImage</a> and <a href="/windows/win32/api/winuser/nf-winuser-sendmessage">SendMessage</a> functions.</li>
+<li>Finally, we call <a href="/windows/win32/api/winuser/nf-winuser-setwindowtexta">SetWindowText</a> to update the title bar string.</li>
+</ol>
+<pre>
+<code class="lang-csharp" highlight-lines="3-7,8-9,12-23">private void basicButton_Click(object sender, RoutedEventArgs e)
+{
+    // Ensure the custom title bar content is not displayed.
+    customTitleBarPanel.Visibility = Visibility.Collapsed;
+
+    // Disable custom title bar content.
+    ExtendsContentIntoTitleBar = false;
+
+    //Get the Window&#39;s HWND
+    var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+    var hIcon = Windows.Win32.PInvoke.LoadImage(
+        null,
+        &quot;Images/windowIcon.ico&quot;,
+        Windows.Win32.UI.WindowsAndMessaging.GDI_IMAGE_TYPE.IMAGE_ICON,
+        20, 20,
+        Windows.Win32.UI.WindowsAndMessaging.IMAGE_FLAGS.LR_LOADFROMFILE);
+
+    Windows.Win32.PInvoke.SendMessage(
+        (Windows.Win32.Foundation.HWND)hwnd,
+        Windows.Win32.PInvoke.WM_SETICON,
+        (Windows.Win32.Foundation.WPARAM)0,
+        (Windows.Win32.Foundation.LPARAM)hIcon.DangerousGetHandle());
+
+    Windows.Win32.PInvoke.SetWindowText((Windows.Win32.Foundation.HWND)hwnd, &quot;Basic customization of title bar&quot;);
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h
+...
+#include &lt;microsoft.ui.xaml.window.h&gt;
+...
+
+// MainWindow.xaml.h
+...
+void basicButton_Click(Windows::Foundation::IInspectable const&amp; sender, Microsoft::UI::Xaml::RoutedEventArgs const&amp; args);
+...
+
+// MainWindow.xaml.cpp
+void MainWindow::basicButton_Click(IInspectable const&amp;, RoutedEventArgs const&amp;)
+{
+    // Ensure the that custom title bar content is not displayed.
+    customTitleBarPanel().Visibility(Visibility::Collapsed);
+
+    // Disable custom title bar content.
+    ExtendsContentIntoTitleBar(false);
+
+    // Get the window's HWND
+    auto windowNative{ this-&gt;m_inner.as&lt;::IWindowNative&gt;() };
+    HWND hWnd{ 0 };
+    windowNative-&gt;get_WindowHandle(&amp;hWnd);
+
+    HICON icon{ reinterpret_cast&lt;HICON&gt;(::LoadImage(nullptr, L&quot;Assets/computer.ico&quot;, IMAGE_ICON, 0, 0, LR_DEFAULTSIZE | LR_LOADFROMFILE)) };
+    ::SendMessage(hWnd, WM_SETICON, 0, (LPARAM)icon);
+
+    this-&gt;Title(L&quot;Basic customization of title bar&quot;);
+}
+</code></pre>
+<ol start="5">
+<li>In the <strong>customButton_Click</strong> handler, we set the visibility of the <em>customTitleBarPanel</em> <strong>StackPanel</strong> to <strong>Visible</strong>.</li>
+<li>We then set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar">ExtendsContentIntoTitleBar</a> property to <code>true</code>, and call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar">SetTitleBar</a> to display the <em>customTitleBarPanel</em> <strong>StackPanel</strong> as our custom title bar.</li>
+</ol>
+<pre>
+<code class="lang-csharp">private void customButton_Click(object sender, RoutedEventArgs e)
+{
+    customTitleBarPanel.Visibility = Visibility.Visible;
+
+    // Enable custom title bar content.
+    ExtendsContentIntoTitleBar = true;
+    // Set the content of the custom title bar.
+    SetTitleBar(customTitleBarPanel);
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainWindow.xaml.h
+...
+void customButton_Click(Windows::Foundation::IInspectable const&amp; sender, Microsoft::UI::Xaml::RoutedEventArgs const&amp; args);
+...
+
+// MainWindow.xaml.cpp
+void MainWindow::customButton_Click(IInspectable const&amp;, RoutedEventArgs const&amp;)
+{
+    customTitleBarPanel().Visibility(Visibility::Visible);
+
+    // Enable custom title bar content.
+    ExtendsContentIntoTitleBar(true);
+
+    // Set the content of the custom title bar.
+    SetTitleBar(customTitleBarPanel());
+}
+</code></pre>
+<h3 id="appxaml">App.xaml</h3>
+<ol>
+<li>In the <code>App.xaml</code> file, immediately after the <code>&lt;!-- Other app resources here --&gt;</code> comment, we've added some custom-colored brushes for the title bar, as shown below.</li>
+</ol>
+<pre>
+<code class="lang-csharp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Application
+    x:Class=&quot;window_titlebar.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:window_titlebar&quot;&gt;
+    &lt;Application.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            &lt;ResourceDictionary.MergedDictionaries&gt;
+                &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot; /&gt;
+                &lt;!-- Other merged dictionaries here --&gt;
+            &lt;/ResourceDictionary.MergedDictionaries&gt;
+            &lt;!-- Other app resources here --&gt;
+            &lt;SolidColorBrush x:Key=&quot;WindowCaptionBackground&quot;&gt;Green&lt;/SolidColorBrush&gt;
+            &lt;SolidColorBrush x:Key=&quot;WindowCaptionBackgroundDisabled&quot;&gt;LightGreen&lt;/SolidColorBrush&gt;
+            &lt;SolidColorBrush x:Key=&quot;WindowCaptionForeground&quot;&gt;Red&lt;/SolidColorBrush&gt;
+            &lt;SolidColorBrush x:Key=&quot;WindowCaptionForegroundDisabled&quot;&gt;Pink&lt;/SolidColorBrush&gt;
+        &lt;/ResourceDictionary&gt;
+    &lt;/Application.Resources&gt;
+&lt;/Application&gt;
+</code></pre>
+<ol>
+<li><p>If you've been following along with these steps in your own app, then you can build your project now, and run the app. You'll see an application window similar to the following (with the custom app icon):</p>
+<p><span class="mx-imgBorder">
+<img src="images/template-app-windowhandle.png" alt="Template app with no customization.">
+</span>
+<br><em>Template app.</em></p>
+</li>
+</ol>
+<ul>
+<li><p>Here's the basic custom title bar:</p>
+<p><span class="mx-imgBorder">
+<img src="images/template-app-windowhandle-basic-custom.png" alt="Template app with custom application icon.">
+</span>
+<br><em>Template app with custom application icon.</em></p>
+</li>
+<li><p>Here's the fully custom title bar:</p>
+<p><span class="mx-imgBorder">
+<img src="images/template-app-windowhandle-full-custom.png" alt="Template app with custom title bar.">
+</span>
+<br><em>Template app with custom title bar.</em></p>
+</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../windows-app-sdk/index.html">Windows App SDK</a></li>
+<li><a href="../../windows-app-sdk/stable-channel.html">Stable release channel for the Windows App SDK</a></li>
+<li><a href="../../develop/ui-input/manage-app-windows.html">Manage app windows</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/desktop-winui3-app-with-basic-interop.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

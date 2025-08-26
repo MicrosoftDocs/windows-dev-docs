@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Import and export store listings for add-on </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Import and export store listings for add-on ">
+    
+    <meta name="description" content="Import and export app add-on store listings so you can reuse them later">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="import-and-export-store-listings-for-add-on">Import and export store listings for add-on</h1>
+
+<p>Instead of <a href="create-app-store-listing.html">entering info for your Store listings directly in Partner Center</a>, you have the option to add or update info by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch, or to update listings you’ve already created.</p>
+<p>This option is especially useful if you want to create or update Store listings for your product in multiple languages, since you can copy/paste the same info into multiple fields and easily make any changes that should apply to specific languages.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can also use this feature to import and export Store listing details for an add-on. For add-ons, the process works the same except that <a href="#add-ons">only the fields relevant to add-ons</a> are included.
+Keep in mind that you can always create or update listings directly in Partner Center (even if you have previously used the import/export method). Updating directly in Partner Center may be easier when you are just making a simple change, but you can use either method at any time.</p>
+</div>
+<h2 id="export-listings">Export listings</h2>
+<p>On the app overview page for an app, click <strong>Export listing</strong> (in the <strong>Store listings</strong> section) to generate a .csv file encoded in UTF-8. Save this file to a location on your computer.</p>
+<p>You can use Microsoft Excel or another editor to edit this file. Note that Microsoft 365 versions of Excel will let you save a .csv file as <strong>CSV UTF-8 (Comma-delimited) (*.csv)</strong>, but other versions may not support this. You can find details about which versions of Excel support this feature at the <a href="https://support.office.com/article/what-s-new-in-excel-for-office-365-5fdb9208-ff33-45b6-9e08-1f5cdb3a6c73?ui=en-US&amp;rs=en-001&amp;ad=US">Excel 2016 New features bulletin</a>, and more info about encoding as UTF-8 in various editors <a href="https://help.surveygizmo.com/help/encode-an-excel-file-to-utf-8-or-utf-16">here</a>.</p>
+<p>If you haven’t created any listings for your product yet, the .csv file you exported will not contain any custom data. You’ll see columns for <strong>Field</strong>, <strong>ID</strong>, <strong>Type</strong>, and <strong>default</strong>, and rows which correspond to every item that can appear in a Store listing.</p>
+<p>If you have already created listings (or have uploaded packages), you’ll also see columns labelled with language-locale codes that correspond to the language for each listing that you’ve created (or that we’ve detected in your packages), as well as any listing info that you’ve previously provided.</p>
+<p>Here’s an overview of what’s contained in each of the columns in the exported .csv file:</p>
+<ul>
+<li>The <strong>Field</strong> column contains a name that is associated with every part of a Store listing. These correspond to the same items you can provide when creating Store listings in Partner Center, although some of the names are slightly different. For items where you can enter more than one of the same type of item, you’ll see multiple rows, up to the maximum number that you can provide. For example, for <strong>App features</strong> you will see <strong>Feature1</strong>, <strong>Feature2</strong>, etc., going up to <strong>Feature20</strong> (since you can provide up to 20 app features).</li>
+<li>The <strong>ID</strong> column contains a number that Partner Center associates with each field.</li>
+<li>The <strong>Type</strong> column provides general guidance about what type of info to provide for that field, such as <strong>Text</strong> or <strong>Relative path (or URL to file in Partner Center)</strong>.</li>
+<li>The <strong>default</strong> column (and any columns labelled with language-locale codes) represent the text or assets associated with each part of the Store listing. You can edit the fields in these columns to make updates to your Store listings.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Don’t change any of the info in the <strong>Field</strong>, <strong>ID</strong>, or <strong>Type</strong> columns. The info in these columns must remain unchanged in order for your imported file to be processed.</p>
+</div>
+<h2 id="update-listing-info">Update listing info</h2>
+<p>Once you’ve exported your listings and saved your .csv file, you can edit your listing info directly in the .csv file.</p>
+<p>Along with the <strong>default</strong> column, each language for which you’ve created a listing has its own column. The changes you make in a column will be applied to your description in that language. You can create listings for new languages by adding the language-locale code into the next empty column in the top row. For a list of valid language-locale codes, see <a href="../msix/app-package-requirements.html#supported-languages">Supported languages</a>.</p>
+<p>You can use the <strong>default</strong> column to enter info that you want to share across all of your app’s descriptions. If the field for a given language is left blank, the info from the default column will be used for that language. You can override that field for a particular language by entering different info for that language.</p>
+<p>Most of the Store listing fields are optional. The <strong>Description</strong> and one screenshot are required for each listing; for languages which don’t have associated packages, you will also need to provide a <strong>Title</strong> to indicate which of your reserved app names should be used for that listing. For all other fields, you can leave the field empty if you don’t want to include it in your listing. Remember that if you leave a field for a given language blank, we’ll check to see if there is info in that field in the default column. If so, that info will be used.</p>
+<p>For instance, consider the following example:</p>
+<p><img src="../../images/listing-import.png" alt="Exported listing example"></p>
+<ul>
+<li>The text “Default description” will be used for the <strong>Description</strong> field in the en-us and fr-fr listings. However, the <strong>Description</strong> field in the es-es listing would use the text “Spanish description”.</li>
+<li>For the <strong>ReleaseNotes</strong> field, the text “English release notes” will be used for en-us, and the text “French release notes” will be used for fr-fr. However, no release notes will appear for es-es.</li>
+</ul>
+<p>If you don’t want to make any edits to a particular field, you can delete the entire row from the spreadsheet, <strong>with the exception of the rows for trailers and their associated thumbnails and titles</strong>. Other than for these items, deleting a row will not impact the data associated with that field in your listings. This lets you remove any rows which you don’t intend to edit, so you can focus on the fields in which you’re making changes.</p>
+<p>Deleting the info in a field for one language, without removing the entire row, works differently, depending on the field. For fields whose <strong>Type</strong> is <strong>Text</strong>, deleting the info in a field will simply remove that entry from the listing in that language. However, deleting the info in a field for an image, such as a screenshot or logo, will not have any effect; the previous image will still be used unless you remove it by editing directly in Partner Center. Deleting the info for a trailer field will actually remove that trailer from Partner Center, so be sure you have a copy of any needed files before you do so.</p>
+<p>Many of the fields in your exported listings require text entry, such as the ones in the example above, <strong>Description</strong> and <strong>ReleaseNotes</strong>. For these types of fields, simply enter the appropriate text into the field for each language. Be sure to follow the length and other requirements for each field. For more info on these requirements, see <a href="create-app-store-listing.html">Create app Store listings</a>.</p>
+<p>Providing info for fields that correspond to assets, such as images and trailers, are a bit more complicated. Rather than <strong>Text</strong>, the <strong>Type</strong> for these assets is <strong>Relative path (or URL to file in Partner Center)</strong>.</p>
+<p>If you’ve already uploaded assets for your Store listings, these assets will then be represented by a URL. These URLs can be reused in multiple descriptions for a product, or even across different products within the same developer account, so you can copy these URLs to reuse them in a different field if you’d like.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To confirm which asset corresponds to a URL, you can enter the URL into a browser to view the image (or download the trailer video). You must be signed in to your Partner Center account in order for this URL to work.
+If you want to use a new asset that you haven’t previously added to Partner Center, you can do so by importing your listings as a folder, rather than as a single .csv file. You’ll need to create a folder that contains your .csv file. Then, add your images that same folder, either in the root folder or in a subfolder. You’ll need to enter the full path, including the root folder name, in the field.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For best results when importing your listings as a folder, be sure you are using the latest version of either Microsoft Edge, Chrome, or Firefox.
+For example, if your root folder is named <strong>my_folder</strong>, and you want to use an image called <strong>screenshot1.png</strong> for <strong>DesktopScreenshot1</strong>, you could add screenshot1.png to the root of that folder, then enter <strong>my_folder/screenshot1.png</strong> in the <strong>DesktopScreenshot1</strong> field. If you created an images folder within your root folder and then placed screenshot1.jpg there, you would enter <strong>my_folder/images/screenshot1.png</strong>. Note that after you import your listings using a folder, paths to your images will be converted to URLs to the files in Partner Center the next time you export your listings. You can copy and paste these URLs to use them again (for example, to use the same assets in several listing languages).</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If your exported listing includes trailers, be aware that deleting the URL to the trailer or its thumbnail image from your .csv file will completely remove the deleted file from Partner Center, and you will no longer be able to access it there (unless it is also used in another listing where it hasn’t been deleted).</p>
+</div>
+<h2 id="import-listings">Import listings</h2>
+<p>Once you have entered all of your changes into the .csv file (and included any assets you want to upload), you’ll need to save your file before uploading it. If you're using a version of Microsoft Excel that supports UTF-8 encoding, be sure to select <strong>Save as</strong> and use the <strong>CSV UTF-8 (Comma-delimited) (*.csv)</strong> format. If you use a different editor to view and edit your .csv file, make sure the .csv file is encoded in UTF-8 before you upload.</p>
+<p>When you’re ready to upload the updated .csv file and import your listing data, select <strong>Import listings</strong> on your app overview page. If you’re only importing a .csv file, choose <strong>Import .csv</strong>, browse to your file, and click <strong>Open</strong>. If you’re importing a folder with image files, choose Import folder, browse to your folder, and click <strong>Select folder</strong>. Make sure there is only one .csv file in your folder, along with any assets you’re uploading.</p>
+<p>As we process your imported .csv file, you’ll see a progress bar reflecting the import and validation status. This can take some time, especially if you have a lot of listings and/or image files.</p>
+<p>If we detect any problems, you’ll see a note indicating that you’ll need to make any needed updates and try again. Select the <strong>View errors</strong> link to see which fields are invalid and why. You’ll need to correct these issues in your .csv file (or replace any invalid assets) and then import your listings again.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can access this info again later via the <strong>View errors for last import</strong> link.
+None of the info from your .csv file will be saved in Partner Center until all of the errors in your file have been resolved, even for fields without errors. Once you have imported a .csv file that has no errors, the listing info you’ve provided will be saved in Partner Center, and will be used for that submission.</p>
+</div>
+<p>You can continue to make updates to your listings either by importing another updated .csv file, or by making changes directly in Partner Center.</p>
+<h2 id="add-ons">Add-ons</h2>
+<p>For add-ons, importing and exporting Store listings uses the same process described above, except that you'll only see the three fields relevant to <a href="create-app-store-listing.html">add-on Store listings</a>: <strong>Description</strong>, <strong>Title</strong>, and <strong>StoreLogo300x300</strong> (referred to as <strong>Icon</strong> in the Store listing page in Partner Center). The <strong>Title</strong> field is required, and the other two fields are optional.</p>
+<p>Note that you must import and export Store listings separately for each add-on in your app by navigating to the submission overview page for the add-on.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/add-on/import-and-export-store-listings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>repair Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="repair Command ">
+    
+    <meta name="description" content="Repairs the specified application.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="repair-command-winget">repair command (winget)</h1>
+
+<p>The <strong>repair</strong> command of the <a href="index.html">winget</a> tool repairs the specified application. This is useful when an app is malfunctioning or has corrupted files but doesn't require a full reinstall.</p>
+<p>Use the <a href="list.html"><strong>list</strong></a> command to identify the application you want to repair. The <strong>repair</strong> command requires that you specify the exact string to repair. If there is any ambiguity, you will be prompted to further filter the <strong>repair</strong> command to  an exact application.</p>
+<h2 id="usage">Usage</h2>
+<p><code>winget repair [[-q] &lt;query&gt; ...] [&lt;options&gt;]</code></p>
+<p><span class="mx-imgBorder">
+<a href="images/repair.png#lightbox" data-linktype="relative-path">
+<img src="images/repair.png" alt="Screenshot listing winget repair command options.">
+</a>
+</span>
+</p>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>fix</li>
+</ul>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-q,--query</strong></td>
+<td>The query used to search for an app.</td>
+</tr>
+</tbody>
+</table>
+<p>The query argument must be provided as a positional parameter. Wildcard syntax is not supported. Typically, this is a string that uniquely identifies the package you want to install.</p>
+<h2 id="options">Options</h2>
+<p>These options allow you to customize the install experience to meet your needs.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-m, --manifest</strong></td>
+<td>Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the repair experience from a local YAML file.</td>
+</tr>
+<tr>
+<td><strong>--id</strong></td>
+<td>Limits the install to the ID of the application.</td>
+</tr>
+<tr>
+<td><strong>--name</strong></td>
+<td>Limits the search to the name of the application.</td>
+</tr>
+<tr>
+<td><strong>--moniker</strong></td>
+<td>Limits the search to the moniker listed for the application.</td>
+</tr>
+<tr>
+<td><strong>-v, --version</strong></td>
+<td>Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application.</td>
+</tr>
+<tr>
+<td><strong>--product-code</strong></td>
+<td>Filters using the product code.</td>
+</tr>
+<tr>
+<td><strong>-a, --architecture</strong></td>
+<td>Select the architecture to install.</td>
+</tr>
+<tr>
+<td><strong>--scope</strong></td>
+<td>Allows you to specify if the installer should target user or machine scope. See <a href="troubleshooting.html#scope-for-specific-user-vs-machine-wide">known issues relating to package installation scope</a>.</td>
+</tr>
+<tr>
+<td><strong>-s, --source</strong></td>
+<td>Restricts the search to the source name provided. Must be followed by the source name.</td>
+</tr>
+<tr>
+<td><strong>-i, --interactive</strong></td>
+<td>Runs the installer in interactive mode. The default experience shows installer progress.</td>
+</tr>
+<tr>
+<td><strong>-h, --silent</strong></td>
+<td>Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress.</td>
+</tr>
+<tr>
+<td><strong>-o, --log</strong></td>
+<td>Directs the logging to a log file. You must provide a path to a file that you have the write rights to.</td>
+</tr>
+<tr>
+<td><strong>--ignore-local-archive-malware-scan</strong></td>
+<td>Ignore the malware scan performed as part of installing an archive type package from local manifest.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>--accept-package-agreements</strong></td>
+<td>Used to accept the license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>--locale</strong></td>
+<td>Specifies which locale to use (BCP47 format).</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--authentication-mode</strong></td>
+<td>Specify authentication window preference (silent, silentPreferred or interactive).</td>
+</tr>
+<tr>
+<td><strong>--authentication-account</strong></td>
+<td>Specify the account to be used for authentication.</td>
+</tr>
+<tr>
+<td><strong>--force</strong></td>
+<td>Direct run the command and continue with non security related issues.</td>
+</tr>
+<tr>
+<td><strong>--ignore-security-hash</strong></td>
+<td>Ignore the installer hash check failure. Not recommended.</td>
+</tr>
+<tr>
+<td><strong>-e, --exact</strong></td>
+<td>Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.</td>
+</tr>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-queries">Example queries</h3>
+<p>The following example repairs an application.</p>
+<pre><code class="lang-CMD">winget repair Micrososft.WinGetCreate
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/repair.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

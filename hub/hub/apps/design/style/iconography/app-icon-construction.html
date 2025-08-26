@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Construct your Windows app&#39;s icon </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Construct your Windows app&#39;s icon ">
+    
+    <meta name="description" content="How to turn your Windows app&#39;s app icon design into image files for your app.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="construct-your-windows-apps-icon">Construct your Windows app's icon</h1>
+
+<p><span class="mx-imgBorder">
+<img src="images/win-11-icon-locations.png" alt="A diagram that shows several icon locations in Windows 11.">
+</span>
+</p>
+<p>Once you've designed your app's icon, you need to create the icon files themselves. Because Windows supports multiple themes, display resolutions, and scale factors, you should provide multiple versions of your icon to make sure it looks great on every device, at any size.</p>
+<h2 id="icon-sizes-wpf-uwp-winui">Icon sizes (WPF, UWP, WinUI)</h2>
+<p>Windows will display your app icon at a variety of sizes depending on where your icon is being displayed and the user's display scale settings. The following table lists all the possible sizes that Windows may use to display your icon.</p>
+<h2 id="icon-sizes-win32">Icon sizes (Win32)</h2>
+<p>Windows ICO files have been around for a long time. There are standard sizes that are used which is a subset of the full set above.</p>
+<h2 id="icon-scaling">Icon scaling</h2>
+<p>When Windows displays your app's icon, it will look for an exact size match first. If there is no exact match it will look for the next size above and scale down. Including more icon sizes with your app means Windows will more often have a pixel-perfect match, and reduce the amount of scaling applied to scaled icons.</p>
+<table>
+<thead>
+<tr>
+<th>Windows 11 scale factor</th>
+<th>100%</th>
+<th>125%</th>
+<th>150%</th>
+<th>200%</th>
+<th>250%</th>
+<th>300%</th>
+<th>400%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Context menu, title bar, system tray</td>
+<td>16px</td>
+<td>20px</td>
+<td>24px</td>
+<td>32px</td>
+<td>40px</td>
+<td>48px</td>
+<td>64px</td>
+</tr>
+<tr>
+<td>Taskbar, search results, Start all apps list</td>
+<td>24px</td>
+<td>30px</td>
+<td>36px</td>
+<td>48px</td>
+<td>60px</td>
+<td>72px</td>
+<td>96px</td>
+</tr>
+<tr>
+<td>Start pins</td>
+<td>32px</td>
+<td>40px</td>
+<td>48px</td>
+<td>64px</td>
+<td>80px</td>
+<td>96px</td>
+<td>256px</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down, never up.</p>
+</div>
+<h2 id="transparent-backgrounds">Transparent backgrounds</h2>
+<p>Icons look best with a transparent background. If your app's branding requires your icon be plated on a background, that's okay too. However, you'll have to re-implement some theming functionality that transparent icons get for free. For example, you might provide a version of your app's icon plated on a two different backgrounds, one better suited to a light theme and the other to a dark theme.</p>
+<h2 id="complete-list-of-icons-and-variations">Complete list of icons and variations</h2>
+<p>Windows utilizes different icon assets in different UI contexts. The usage has changed a little between Windows 10 &amp; Windows 11.</p>
+<p>The lists below define the specific filenames Windows expects to contain each corresponding icon.</p>
+<h3 id="app-icon">App icon</h3>
+<p>In Windows 10 and 11, the AppList icon is your app's primary icon. It will be used in several places, including the Taskbar, Start pins, the all app list, and the search results list. Windows 11 selects an appropriate icon for the all apps list based on the current scale factor, but Windows 10 uses specific, explicitly defined icons if you provide them.</p>
+<p>Separate files for all three theme variations (default, light theme, dark theme) are required, even if the icon is the same. If you do not provide these files, your icon will appear on a system icon plate to ensure a minimum contrast ratio.</p>
+<p><strong>App List Target Size (Required)</strong></p>
+<ul>
+<li>AppList.targetsize-16.png</li>
+<li>AppList.targetsize-20.png</li>
+<li>AppList.targetsize-24.png</li>
+<li>AppList.targetsize-30.png</li>
+<li>AppList.targetsize-32.png</li>
+<li>AppList.targetsize-36.png</li>
+<li>AppList.targetsize-40.png</li>
+<li>AppList.targetsize-48.png</li>
+<li>AppList.targetsize-60.png</li>
+<li>AppList.targetsize-64.png</li>
+<li>AppList.targetsize-72.png</li>
+<li>AppList.targetsize-80.png</li>
+<li>AppList.targetsize-96.png</li>
+<li>AppList.targetsize-256.png</li>
+</ul>
+<p><strong>Dark theme (Required)</strong></p>
+<ul>
+<li>AppList.targetsize-16_altform-unplated.png</li>
+<li>AppList.targetsize-20_altform-unplated.png</li>
+<li>AppList.targetsize-24_altform-unplated.png</li>
+<li>AppList.targetsize-30_altform-unplated.png</li>
+<li>AppList.targetsize-32_altform-unplated.png</li>
+<li>AppList.targetsize-36_altform-unplated.png</li>
+<li>AppList.targetsize-40_altform-unplated.png</li>
+<li>AppList.targetsize-48_altform-unplated.png</li>
+<li>AppList.targetsize-60_altform-unplated.png</li>
+<li>AppList.targetsize-64_altform-unplated.png</li>
+<li>AppList.targetsize-72_altform-unplated.png</li>
+<li>AppList.targetsize-80_altform-unplated.png</li>
+<li>AppList.targetsize-96_altform-unplated.png</li>
+<li>AppList.targetsize-256_altform-unplated.png</li>
+</ul>
+<p><strong>Light theme (Required)</strong></p>
+<ul>
+<li>AppList.targetsize-16_altform-lightunplated.png</li>
+<li>AppList.targetsize-20_altform-lightunplated.png</li>
+<li>AppList.targetsize-24_altform-lightunplated.png</li>
+<li>AppList.targetsize-30_altform-lightunplated.png</li>
+<li>AppList.targetsize-32_altform-lightunplated.png</li>
+<li>AppList.targetsize-36_altform-lightunplated.png</li>
+<li>AppList.targetsize-40_altform-lightunplated.png</li>
+<li>AppList.targetsize-48_altform-lightunplated.png</li>
+<li>AppList.targetsize-60_altform-lightunplated.png</li>
+<li>AppList.targetsize-64_altform-lightunplated.png</li>
+<li>AppList.targetsize-72_altform-lightunplated.png</li>
+<li>AppList.targetsize-80_altform-lightunplated.png</li>
+<li>AppList.targetsize-96_altform-lightunplated.png</li>
+<li>AppList.targetsize-256_altform-lightunplated.png</li>
+</ul>
+<p><strong>App List Scale (Windows 10) (Optional)</strong></p>
+<ul>
+<li>AppList.scale-100.png</li>
+<li>AppList.scale-125.png</li>
+<li>AppList.scale-150.png</li>
+<li>AppList.scale-200.png</li>
+<li>AppList.scale-400.png</li>
+</ul>
+<p><strong>Light theme (Windows 10) (Optional)</strong></p>
+<ul>
+<li>AppList.scale-100_altform-colorful_theme-light.png</li>
+<li>AppList.scale-125_altform-colorful_theme-light.png</li>
+<li>AppList.scale-150_altform-colorful_theme-light.png</li>
+<li>AppList.scale-200_altform-colorful_theme-light.png</li>
+<li>AppList.scale-400_altform-colorful_theme-light.png</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you do not include the targetsize-*-altform-unplated assets above your icon will scale to a smaller size and will get an undesirable backplate behind the icon on Taskbar and Start.</p>
+</div>
+<h3 id="tiles">Tiles</h3>
+<p>Windows 10 supports four tile sizes: small, medium, wide, and large.</p>
+<p><strong>Default / dark theme (partially required)</strong></p>
+<ul>
+<li>SmallTile.scale-100.png</li>
+<li>SmallTile.scale-125.png</li>
+<li>SmallTile.scale-150.png</li>
+<li>SmallTile.scale-200.png</li>
+<li>SmallTile.scale-400.png</li>
+</ul>
+<ul>
+<li>MedTile.scale-100.png</li>
+<li>MedTile.scale-125.png</li>
+<li>MedTile.scale-150.png</li>
+<li>MedTile.scale-200.png</li>
+<li>MedTile.scale-400.png</li>
+</ul>
+<ul>
+<li>WideTile.scale-100.png</li>
+<li>WideTile.scale-125.png</li>
+<li>WideTile.scale-150.png</li>
+<li>WideTile.scale-200.png</li>
+<li>WideTile.scale-400.png</li>
+</ul>
+<ul>
+<li>LargeTile.scale-100.png</li>
+<li>LargeTile.scale-125.png</li>
+<li>LargeTile.scale-150.png</li>
+<li>LargeTile.scale-200.png</li>
+<li>LargeTile.scale-400.png</li>
+</ul>
+<p><strong>Light theme (optional)</strong></p>
+<ul>
+<li>SmallTile.scale-100_altform-colorful_theme-light.png</li>
+<li>SmallTile.scale-125_altform-colorful_theme-light.png</li>
+<li>SmallTile.scale-150_altform-colorful_theme-light.png</li>
+<li>SmallTile.scale-200_altform-colorful_theme-light.png</li>
+<li>SmallTile.scale-400_altform-colorful_theme-light.png</li>
+</ul>
+<ul>
+<li>MedTile.scale-100_altform-colorful_theme-light.png</li>
+<li>MedTile.scale-125_altform-colorful_theme-light.png</li>
+<li>MedTile.scale-150_altform-colorful_theme-light.png</li>
+<li>MedTile.scale-200_altform-colorful_theme-light.png</li>
+<li>MedTile.scale-400_altform-colorful_theme-light.png</li>
+</ul>
+<ul>
+<li>WideTile.scale-100_altform-colorful_theme-light.png</li>
+<li>WideTile.scale-125_altform-colorful_theme-light.png</li>
+<li>WideTile.scale-150_altform-colorful_theme-light.png</li>
+<li>WideTile.scale-200_altform-colorful_theme-light.png</li>
+<li>WideTile.scale-400_altform-colorful_theme-light.png</li>
+</ul>
+<ul>
+<li>LargeTile.scale-100_altform-colorful_theme-light.png</li>
+<li>LargeTile.scale-125_altform-colorful_theme-light.png</li>
+<li>LargeTile.scale-150_altform-colorful_theme-light.png</li>
+<li>LargeTile.scale-200_altform-colorful_theme-light.png</li>
+<li>LargeTile.scale-400_altform-colorful_theme-light.png</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows 11 does not use the tile assets, but currently at minimum the Medium tile assets at 100% are required to publish to the Microsoft Store. If your app is Windows 10 &amp; 11 compatible it is suggested that you include as many tile assets as possible.</p>
+</div>
+<h3 id="splash-screen">Splash screen</h3>
+<p>Splash screens can also be Light and Dark theme aware like the App icon assets.</p>
+<p><strong>Default</strong></p>
+<ul>
+<li>SplashScreen.scale-100.png</li>
+<li>SplashScreen.scale-125.png</li>
+<li>SplashScreen.scale-150.png</li>
+<li>SplashScreen.scale-200.png</li>
+<li>SplashScreen.scale-400.png</li>
+</ul>
+<p><strong>Dark theme (Optional)</strong></p>
+<ul>
+<li>SplashScreen.scale-100_altform-colorful_theme-dark.png</li>
+<li>SplashScreen.scale-125_altform-colorful_theme-dark.png</li>
+<li>SplashScreen.scale-150_altform-colorful_theme-dark.png</li>
+<li>SplashScreen.scale-200_altform-colorful_theme-dark.png</li>
+<li>SplashScreen.scale-400_altform-colorful_theme-dark.png</li>
+</ul>
+<p><strong>Light theme (Optional)</strong></p>
+<ul>
+<li>SplashScreen.scale-100_altform-colorful_theme-light.png</li>
+<li>SplashScreen.scale-125_altform-colorful_theme-light.png</li>
+<li>SplashScreen.scale-150_altform-colorful_theme-light.png</li>
+<li>SplashScreen.scale-200_altform-colorful_theme-light.png</li>
+<li>SplashScreen.scale-400_altform-colorful_theme-light.png</li>
+</ul>
+<h3 id="badge-logo">Badge logo</h3>
+<p>Badge icons are used on the Windows 10 lock screen and for most apps are not required.</p>
+<p><strong>Windows 10 (optional)</strong></p>
+<ul>
+<li>BadgeLogo.scale-100.png</li>
+<li>BadgeLogo.scale-125.png</li>
+<li>BadgeLogo.scale-150.png</li>
+<li>BadgeLogo.scale-200.png</li>
+<li>BadgeLogo.scale-400.png</li>
+</ul>
+<h3 id="package-logo-microsoft-store-logo">Package logo (Microsoft Store logo)</h3>
+<p>These assets are required to publish to the Microsoft Store.</p>
+<p><strong>Default / Dark theme (required)</strong></p>
+<ul>
+<li>StoreLogo.scale-100.png</li>
+<li>StoreLogo.scale-125.png</li>
+<li>StoreLogo.scale-150.png</li>
+<li>StoreLogo.scale-200.png</li>
+<li>StoreLogo.scale-400.png</li>
+</ul>
+<p><strong>Light theme (optional)</strong></p>
+<ul>
+<li>StoreLogo.scale-100_altform-colorful_theme-light.png</li>
+<li>StoreLogo.scale-125_altform-colorful_theme-light.png</li>
+<li>StoreLogo.scale-150_altform-colorful_theme-light.png</li>
+<li>StoreLogo.scale-200_altform-colorful_theme-light.png</li>
+<li>StoreLogo.scale-400_altform-colorful_theme-light.png</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/iconography/app-icon-construction.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

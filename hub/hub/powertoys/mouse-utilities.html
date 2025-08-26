@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Mouse Utilities in PowerToys for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Mouse Utilities in PowerToys for Windows ">
+    
+    <meta name="description" content="Mouse utilities in PowerToys enhance cursor functionality with Find my mouse, Mouse Highlighter, Mouse jump, and Crosshairs features for Windows users.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mouse-utilities">Mouse utilities</h1>
+
+<p>Mouse utilities in PowerToys is a collection of features that enhance mouse and cursor functionality on Windows. These utilities help you locate your cursor, highlight mouse clicks, jump across screens, and display crosshairs for improved precision and productivity.</p>
+<h2 id="find-my-mouse">Find my mouse</h2>
+<p>Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.</p>
+<p><img src="../images/pt-mouse-utilities-find-my-mouse.gif" alt="Screenshot of Find my mouse"></p>
+<h3 id="settings">Settings</h3>
+<p>From the settings page, the following options can be configured:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation method</td>
+<td style="text-align: left;">Choose between <strong>Press Left Ctrl twice</strong>, <strong>Press Right Ctrl twice</strong>, <strong>Shake mouse</strong> or <strong>Custom shortcut</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Minimum distance to shake</td>
+<td style="text-align: left;">Adjust sensitivity.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">The custom shortcut used to activate the spotlight.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Do not activate when Game Mode is on</td>
+<td style="text-align: left;">Prevents the spotlight from being used when actively playing a game on the system.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Overlay opacity</td>
+<td style="text-align: left;">The opacity of the spotlight backdrop. (default: 50%)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Background color</td>
+<td style="text-align: left;">The color of the spotlight backdrop. (default: #000000)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spotlight color</td>
+<td style="text-align: left;">The color of the circle that centers on the cursor. (default: #FFFFFF)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spotlight radius</td>
+<td style="text-align: left;">The radius of the circle that centers on the cursor. (default: 100px)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spotlight initial zoom</td>
+<td style="text-align: left;">The spotlight animation's zoom factor. Higher values result in more pronounced zoom animation as the spotlight closes in on the cursor position.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Animation duration</td>
+<td style="text-align: left;">Time for the spotlight animation. (default: 500ms)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Excluded apps</td>
+<td style="text-align: left;">Add an application's name, or part of the name, one per line (e.g. adding <code>Notepad</code> will match both <code>Notepad.exe</code> and <code>Notepad++.exe</code>; to match only <code>Notepad.exe</code> add the <code>.exe</code> extension).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mouse-highlighter">Mouse Highlighter</h2>
+<p>Display visual indicators when the left or right mouse buttons are clicked. By default, mouse highlighting can be turned on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.</p>
+<h3 id="settings-1">Settings</h3>
+<p><img src="../images/pt-mouse-highlighter.gif" alt="Screenshot of Mouse highlighter"></p>
+<p>From the settings page, the following options can be configured:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to turn mouse highlighting on or off.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Primary button highlight color</td>
+<td style="text-align: left;">The highlighter color for the user's primary mouse button.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Secondary button highlight color</td>
+<td style="text-align: left;">The highlighter color for the user's secondary mouse button.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Always highlight color</td>
+<td style="text-align: left;">The highlighter color for the mouse pointer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Highlight mode</td>
+<td style="text-align: left;">Determines how the cursor is highlighted. <strong>Spotlight</strong> dims the screen to spotlight the cursor. <strong>Circle highlight</strong> highlights the cursor with a circle, while keeping the rest of the screen unaffected.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Radius</td>
+<td style="text-align: left;">The radius of the highlighter - Measured in pixels.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fade delay</td>
+<td style="text-align: left;">How long it takes before a highlight starts to disappear - Measured in milliseconds.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fade duration</td>
+<td style="text-align: left;">Duration of the disappear animation - Measured in milliseconds.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mouse-jump">Mouse jump</h2>
+<p><img src="../images/pt-mouse-jump.gif" alt="Screenshot of Mouse jump"></p>
+<p>Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to activate the mouse jump.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Thumbnail Size</td>
+<td style="text-align: left;">Constrains the thumbnail image to a maximum size. The default size is 1600x1200 pixels.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Appearance</td>
+<td style="text-align: left;">Expand this section to adjust the popup appearance by customizing the colors, borders, spacing, and more.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mouse-pointer-crosshairs">Mouse pointer Crosshairs</h2>
+<p><img src="../images/pt-mouseutilities-crosshairs.png" alt="Screenshot of Crosshairs"></p>
+<p>Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to turn mouse crosshairs on or off.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Color</td>
+<td style="text-align: left;">The color for the crosshairs.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Opacity</td>
+<td style="text-align: left;">(default: 75%)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Center radius</td>
+<td style="text-align: left;">(default: 20px)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Crosshairs thickness</td>
+<td style="text-align: left;">(default: 5px)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Border color</td>
+<td style="text-align: left;">The color for the crosshair borders.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Border size</td>
+<td style="text-align: left;">Size of the border, in pixels.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Automatically hide crosshairs when the mouse pointer is hidden</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Fix crosshairs length</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Crosshairs fixed length (px)</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/mouse-utilities.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

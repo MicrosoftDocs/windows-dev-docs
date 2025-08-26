@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>List/details </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="List/details ">
+    
+    <meta name="description" content="The list/detail pattern displays a list of items and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="listdetails-pattern">List/details pattern</h1>
+
+<p>The list/details pattern has a list pane (usually with a <a href="lists.html">list view</a>) and a details pane for content. When an item in the list is selected, the details pane is updated. This pattern is frequently used for email and address books.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView">ListView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview">SplitView class</a></p>
+</blockquote>
+<p><img src="images/list-detail-pattern.png" alt="Example of list-details pattern"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you'd like to use a XAML control that implements this pattern for you, we recommend the <a href="/windows/communitytoolkit/controls/masterdetailsview">ListDetailsView XAML Control</a> from the Windows Community Toolkit.</p>
+</div>
+<h2 id="is-this-the-right-pattern">Is this the right pattern?</h2>
+<p>The list/details pattern works well if you want to:</p>
+<ul>
+<li>Build an email app, address book, or any app that is based on a list-details layout.</li>
+<li>Locate and prioritize a large collection of content.</li>
+<li>Allow the quick addition and removal of items from a list while working back-and-forth between contexts.</li>
+</ul>
+<h2 id="choose-the-right-style">Choose the right style</h2>
+<p>When implementing the list/details pattern, we recommend that you use either the stacked style or the side-by-side style, based on the amount of available screen space.</p>
+<table>
+<thead>
+<tr>
+<th>Available window width</th>
+<th>Recommended style</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>320 epx-640 epx</td>
+<td>Stacked</td>
+</tr>
+<tr>
+<td>641 epx or wider</td>
+<td>Side-by-side</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stacked-style">Stacked style</h2>
+<p>In the stacked style, only one pane is visible at a time: the list or the details.</p>
+<p><img src="images/patterns-md-stacked.png" alt="A list detail in stacked mode"></p>
+<p>The user starts at the list pane and &quot;drills down&quot; to the details pane by selecting an item in the list. To the user, it appears as though the list and details views exist on two separate pages.</p>
+<h3 id="create-a-stacked-listdetails-pattern">Create a stacked list/details pattern</h3>
+<p>One way to create the stacked list/details pattern is to use separate pages for the list pane and the details pane. Place the list view on one page, and the details pane on a separate page.</p>
+<p><img src="images/patterns-ld-stacked-parts.png" alt="Parts for the stacked-style list detail"></p>
+<p>For the list view page, a <a href="lists.html">list view</a> control works well for presenting lists that can contain images and text.</p>
+<p>For the details view page, use the <a href="../layout/layout-panels.html">content element</a> that makes the most sense. If you have a lot of separate fields, consider using a <strong>Grid</strong> layout to arrange elements into a form.</p>
+<p>For navigation between pages, see <a href="../basics/navigation-history-and-backwards-navigation.html">navigation history and backwards navigation for Windows apps</a>.</p>
+<h2 id="side-by-side-style">Side-by-side style</h2>
+<p>In the side-by-side style, the list pane and details pane are visible at the same time.</p>
+<p><img src="images/patterns-listdetail-400x227.png" alt="The list/detail pattern"></p>
+<p>The list in the list pane has a selection visual to indicate the currently selected item. Selecting a new item in the list updates the details pane.</p>
+<h3 id="create-a-side-by-side-listdetails-pattern">Create a side-by-side list/details pattern</h3>
+<p>One way to create a side-by-side list/details pattern is to use the <a href="split-view.html">split view</a> control. Place the list view in the split view pane, and the details view in the split view content.</p>
+<p><img src="images/patterns-ld-splitview-parts.png" alt="list detail split view parts"></p>
+<p>For the list pane, a <a href="lists.html">list view</a> control works well for presenting lists that can contain images and text.</p>
+<p>For the details content, use the <a href="../layout/layout-panels.html">content element</a> that makes the most sense. If you have a lot of separate fields, consider using a <strong>Grid</strong> layout to arrange elements into a form.</p>
+<h2 id="adaptive-layout">Adaptive layout</h2>
+<p>To implement a list/details pattern for any screen size, create a responsive UI with an <a href="../layout/layouts-with-xaml.html">adaptive layout</a>.</p>
+<p><img src="images/patterns_listdetail.png" alt="adaptive list detail layout"></p>
+<h3 id="create-an-adaptive-listdetails-pattern">Create an adaptive list/details pattern</h3>
+<p>To create an adaptive layout, define different <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstate"><strong>VisualStates</strong></a> for your UI, and declare breakpoints for the different states with <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.AdaptiveTrigger"><strong>AdaptiveTriggers</strong></a>.</p>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<p>The following samples implement the list/details pattern with adaptive layouts and demonstrate data binding to static, database, and online resources:</p>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail">Master/detail sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView">ListView and GridView sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customer orders database sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-appsample-rssreader">RSS Reader sample</a></li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you'd like to use a XAML control that implements this pattern for you, we recommend the <a href="/windows/communitytoolkit/controls/masterdetailsview">ListDetailsView XAML Control</a> from the Windows Community Toolkit.</p>
+</div>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="lists.html">Lists</a></li>
+<li><a href="command-bar.html">App and command bars</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView">ListView class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview">SplitView class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/list-details.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

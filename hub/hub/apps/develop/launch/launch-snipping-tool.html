@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Launch Snipping Tool </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Launch Snipping Tool ">
+    
+    <meta name="description" content="This topic describes how to use the new protocol launch framework for Snipping Tool. Your app can use these URI schemes to launch Snipping Tool&#39;s capture overlay to create a new snip or recording.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="launch-snipping-tool">Launch Snipping Tool</h1>
+
+<p>This article specifies the protocol for integrating first and third-party applications with the Windows Snipping Tool using the <strong>ms-screenclip:</strong> URI (Uniform Resource Identifier) scheme. The protocol facilitates the capture of images and video (with audio) via Snipping Tool. App callers can customize and choose which Snipping Tool features their app will display. The protocol is designed to offer flexibility, security, and ease of use, aligning closely with familiar HTTP-based interactions. This shift can make the protocol more intuitive for developers and facilitate its integration with web technologies.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This protocol launch replaces the previous existing experience documented <a href="launch-screen-snipping.html">here</a>.</p>
+</div>
+<h2 id="supported-features">Supported features</h2>
+<p>The Snipping Tool protocol supports the following features:</p>
+<ul>
+<li>Rectangle Capture</li>
+<li>Freeform Capture</li>
+<li>Window Capture</li>
+<li>Ability to launch directly into a Screenshot or Recording</li>
+<li>Customizing features available</li>
+<li>Autosave feature is available, but can be disabled</li>
+</ul>
+<h2 id="protocol-specification">Protocol Specification</h2>
+<p><strong>URI Scheme:</strong> <code>{scheme}://{host}/{path}?{query}</code></p>
+<p><strong>ms-screenclip:</strong> takes the following parameters:</p>
+<ul>
+<li><strong>Scheme:</strong> <code>ms-screenclip</code> - The custom scheme for Snipping Tool's protocol.</li>
+<li><strong>Host:</strong> Defines the Snipping Tool operation to perform (<code>capture</code> for snipping and recording, <code>discover</code> for querying capabilities).</li>
+<li><strong>Path:</strong> Specifies the media type to capture, such as an image (<code>/image</code>) or video (<code>/video</code>).</li>
+<li><strong>Query:</strong> Parameters for the specified schema.</li>
+</ul>
+<h2 id="host-required">Host (required)</h2>
+<ul>
+<li>Capture</li>
+<li>Discover</li>
+</ul>
+<h2 id="path-required">Path (required)</h2>
+<ul>
+<li>Image</li>
+<li>Video</li>
+</ul>
+<h2 id="query">Query</h2>
+<h3 id="capture-host">Capture Host</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Parameter</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Required</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Default</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>api-version</code></td>
+<td>string</td>
+<td>no</td>
+<td>Protocol version (e.g., <code>&quot;1.0&quot;</code>). Ensures compatibility with future enhancements.</td>
+<td>Latest version</td>
+</tr>
+<tr>
+<td><code>user-agent</code></td>
+<td>string</td>
+<td>yes</td>
+<td>Identifier for the calling application, used for logging and analytics.</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><code>x-request-correlation-id</code></td>
+<td>string</td>
+<td>no</td>
+<td>Unique identifier for requests, allowing reference to a particular transaction or event chain.</td>
+<td>Generated GUID if not provided.</td>
+</tr>
+<tr>
+<td><code>host</code></td>
+<td>string (enum)</td>
+<td>yes</td>
+<td>Specifies the <strong>Snipping Tool action</strong> to perform. Supported values: <br>- <code>capture</code> – Opens Snipping Tool to take a screenshot or recording. <br>- <code>discover</code> – Queries supported features.</td>
+<td><code>capture</code></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>string (enum)</td>
+<td>yes</td>
+<td>Specifies the <strong>type of media</strong> being captured: <br>- <code>image</code> – Screenshot capture. <br>- <code>video</code> – Screen recording.</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td><code>enabledModes</code></td>
+<td>string (list)</td>
+<td>no</td>
+<td>Controls which snipping or recording modes are <strong>enabled</strong> in the UI. <br> - <code>RectangleSnip</code> <br> - <code>WindowSnip</code> <br> - <code>FreeformSnip</code> <br> - <code>FullscreenSnip</code> <br> - <code>RectangleRecord</code> <br> - <code>SnippingAllModes</code> (all image modes) <br> - <code>RecordAllModes</code> (all recording modes) <br> - <code>All</code> (all supported modes)</td>
+<td>Defaults to the mode specified in the URI (<code>path</code>)</td>
+</tr>
+<tr>
+<td><code>auto-save</code></td>
+<td>boolean</td>
+<td>no</td>
+<td>Determines whether the captured <strong>Screenshot or Recording</strong> is automatically saved to the user's device. If set to <code>false</code>, the file is stored temporarily and can only be accessed using the token provided in the response. <br> <strong>Note:</strong> The screenshot or recording will only be automatically saved if the user has enabled the corresponding Snipping Tool settings: <br> - <strong>&quot;Automatically save original screenshots&quot;</strong> for screenshots. <br> - <strong>&quot;Automatically save original screen recordings&quot;</strong> for recordings.</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>redirect-uri</code></td>
+<td>URI</td>
+<td>yes</td>
+<td>Callback URI where the response will be sent. The calling application must register a handler for this protocol to receive and process the response.</td>
+<td>n/a</td>
+</tr>
+</tbody>
+</table>
+<h3 id="discover-host">Discover Host</h3>
+<p>The Snipping Tool protocol supports a <code>discover</code> endpoint that allows applications to retrieve available features, supported modes, and protocol versions dynamically. This is useful for ensuring compatibility with future updates or querying what capture methods are available.</p>
+<h3 id="how-to-use">How to Use</h3>
+<p>To retrieve Snipping Tool's supported capabilities, use the following URI:</p>
+<p><code>ms-screenclip://discover?redirect-uri=my-snip-protocol-test-app://response</code></p>
+<h3 id="response-format">Response Format</h3>
+<p>The response is a JSON object containing:</p>
+<ul>
+<li>Version number (version) of the protocol.</li>
+<li>List of available capture paths (path), including:
+<ul>
+<li>capture/image (for snipping)</li>
+<li>capture/video (for recording)</li>
+</ul>
+</li>
+<li>Supported HTTP-like methods (methods).</li>
+<li>Available parameters (parameters) that can be used in requests.</li>
+<li>Description of each capability.</li>
+</ul>
+<h3 id="example-response">Example Response</h3>
+<pre><code class="lang-json">{
+  &quot;version&quot;: 1.2,
+  &quot;capabilities&quot;: [
+    {
+      &quot;path&quot;: &quot;capture/image&quot;,
+      &quot;methods&quot;: [&quot;GET&quot;],
+      &quot;parameters&quot;: [&quot;rectangle&quot;, &quot;freeform&quot;, &quot;window&quot;],
+      &quot;description&quot;: &quot;Captures an image with options for shape.&quot;
+    },
+    {
+      &quot;path&quot;: &quot;capture/video&quot;,
+      &quot;methods&quot;: [&quot;GET&quot;],
+      &quot;parameters&quot;: [],
+      &quot;description&quot;: &quot;Captures a video in a defined area.&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="enabledmodes">EnabledModes</h2>
+<p>The <strong>enabledModes</strong> parameter is designed to give developers granular control over the available UI options when invoking the ms-screenclip protocol. This allows for a tailored user experience that matches the specific requirements of the calling application. By specifying the <strong>enabledModes</strong> parameter, developers can restrict the user's choices in Snipping Tool's UI to ensure the output format meets their expectations.</p>
+<h3 id="supported-modes">Supported modes</h3>
+<p>The <strong>enabledModes</strong> parameter can accept the following modes:</p>
+<ul>
+<li><strong>RectangleSnip:</strong> Enables rectangle capture mode.</li>
+<li><strong>WindowSnip:</strong> Enables window capture mode.</li>
+<li><strong>FreeformSnip:</strong> Enables freeform capture mode.</li>
+<li><strong>FullscreenSnip:</strong> Enables fullscreen capture mode.</li>
+<li><strong>SnippingAllModes:</strong> Enables all snipping (image capture) modes (RectangleSnip, WindowSnip, FreeformSnip, FullscreenSnip).</li>
+<li><strong>RectangleRecord:</strong> Enables rectangle recording mode.</li>
+<li><strong>RecordAllModes:</strong> Enables all recording modes (currently only RectangleRecord is available).</li>
+<li><strong>All:</strong> Enables all supported modes (RectangleSnip, WindowSnip, FreeformSnip, FullscreenSnip, RectangleRecord).</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If the <strong>enabledModes</strong> parameter is omitted, Snipping Tool will default to the mode explicitly specified in the URI (e.g., <code>rectangle</code>, <code>freeform</code>).</p>
+<ul>
+<li>If a mode is explicitly specified in the URI (such as <code>rectangle</code>), only that mode will be available in Snipping Tool's UI.</li>
+<li>If no default mode is specified in the URI, the request is considered invalid and will be ignored, even if <strong>enabledModes</strong> is provided.</li>
+<li>The default mode parameter (e.g., <code>rectangle</code>, <code>freeform</code>) is required for <strong>enabledModes</strong> to function and for the request to be considered valid.</li>
+</ul>
+</div>
+<h2 id="examples">Examples</h2>
+<h3 id="example-1-enable-only-rectangle-snip">Example 1: Enable Only Rectangle Snip</h3>
+<p><code>ms-screenclip://capture/image?rectangle&amp;enabledModes=RectangleSnip&amp;redirect-uri=my-snip-protocol-test-app://response</code></p>
+<p><em>Explanation: This command launches Snipping Tool's overlay with only the rectangle snipping mode enabled. The user will only be able to select a rectangular region for capture.</em></p>
+<h3 id="example-2-enable-rectangle-snip-and-window-snip">Example 2: Enable Rectangle Snip and Window Snip</h3>
+<p><code>ms-screenclip://capture/image?rectangle&amp;enabledModes=RectangleSnip,WindowSnip&amp;redirect-uri=my-snip-protocol-test-app://response</code></p>
+<p><em>Explanation: This command launches Snipping Tool's overlay with both the rectangle and window snipping modes enabled. The user can choose between capturing a rectangular region or an entire window.</em></p>
+<h3 id="example-3-enable-all-snipping-modes">Example 3: Enable All Snipping Modes</h3>
+<p><code>ms-screenclip://capture/image?rectangle&amp;enabledModes=SnippingAllModes&amp;redirect-uri=my-snip-protocol-test-app://response</code></p>
+<p><em>Explanation: This command launches Snipping Tool's overlay with all supported image snipping modes (RectangleSnip, WindowSnip, FreeformSnip, FullscreenSnip). The FullScreenSnip mode is excluded from interactive mode and will not be enabled.</em></p>
+<h3 id="example-4-enable-recording-mode-only">Example 4: Enable Recording Mode Only</h3>
+<p><code>ms-screenclip://capture/video?enabledModes=RecordAllModes&amp;redirect-uri=my-snip-protocol-test-app://response</code></p>
+<p><em>Explanation: This command launches Snipping Tool's overlay with only the recording mode enabled. The user will be limited to selecting a rectangular region for recording, with no option to take a screenshot.</em></p>
+<h3 id="example-5-enable-multiple-snipping-and-recording-modes">Example 5: Enable Multiple Snipping and Recording Modes</h3>
+<p><code>ms-screenclip://capture/image?freeform&amp;enabledModes=RectangleSnip,RectangleRecord&amp;redirect-uri=my-snip-protocol-test-app://response</code></p>
+<p><em>Explanation: This command launches the Snipping Tool overlay with freeform snip, rectangle snip, and rectangle recording modes available. Since freeform mode is specified in the URI, it will be pre-selected by default. Users can choose to snip in freeform, rectangle, or record the selected region.</em></p>
+<h3 id="example-6-enable-rectangle-snipping-only">Example 6: Enable Rectangle Snipping Only</h3>
+<p><code>ms-screenclip://capture/image?rectangle&amp;redirect-uri=my-snip-protocol-test-app://response</code></p>
+<p><em>Explanation: Since rectangle is specified in the URI, only rectangle snipping mode will be available in Snipping Tool's UI.</em></p>
+<h3 id="example-7-no-mode-specified">Example 7: No <code>mode</code> specified</h3>
+<p><code>ms-screenclip://capture/image?&amp;enabledModes=All&amp;redirect-uri=my-snip-protocol-test-app://response</code></p>
+<p><em>Explanation: This request is invalid because it does not specify a mode (e.g., <code>rectangle</code>, <code>window</code>, or <code>freeform</code>). Even though <code>enabledModes=All</code> is provided, a default mode must always be specified. As a result, Snipping Tool will ignore the call.</em></p>
+<h2 id="key-considerations">Key considerations</h2>
+<ul>
+<li><strong>Mode Restrictions:</strong> Developers should ensure that enabling specific modes aligns with the expected behavior of their application. Restricting UI options helps maintain a consistent user experience and ensures the resulting capture matches the application's needs.</li>
+<li><strong>Default Behavior:</strong> If no <code>enabledModes</code> parameter is specified, only the <code>mode</code> specified in the URI will be available on the UI.</li>
+</ul>
+<h2 id="security-considerations">Security Considerations</h2>
+<p>Important: Snipping Tool does not validate the redirect-uri parameter. It is the responsibility of the calling application to ensure that:</p>
+<ul>
+<li>The <code>redirect-uri</code> points to a trusted destination.</li>
+<li>The <code>redirect-uri</code> does not expose the captured content to unauthorized applications.</li>
+<li>The application handling the response sanitizes and validates all incoming parameters before processing them.</li>
+<li>The protocol handler for the <code>redirect-uri</code> is properly registered and secured against misuse.</li>
+<li><strong>Required Fields:</strong> Check that all required fields are provided and valid before proceeding with the snip operation.</li>
+</ul>
+<p>Response if expected parameters <strong>aren't</strong> supplied or overloaded.</p>
+<h2 id="responses-to-the-caller">Responses to the caller</h2>
+<p>To ensure the response back to the caller via <code>redirect-uri</code> follows HTTP-based interaction principles, the response will mimic the structure of an HTTP response, but will be conveyed through URI query parameters. This approach keeps the interaction web-standard compliant and familiar to developers.</p>
+<h3 id="use-of-shared-tokens">Use of shared tokens</h3>
+<p>The use of the <code>SharedStorageAccessManager</code> class and of sharing tokens is subject to the following requirements and restrictions:</p>
+<ul>
+<li>A sharing token can only be redeemed once. After that, the token is no longer valid.</li>
+<li>A sharing token expires after 14 days and is no longer valid.</li>
+<li>The source app cannot provide more than 1000 sharing tokens. After a token is redeemed, removed, or expires, however, it no longer counts against the quota of the source app.</li>
+</ul>
+<h3 id="response-parameters">Response parameters</h3>
+<p>The following parameters are returned in the redirect URI:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reason</td>
+<td>String</td>
+<td>The outcome and explanation for the snip.</td>
+</tr>
+<tr>
+<td>Token (for success)</td>
+<td>String</td>
+<td>A token representing the captured media, which the application can use to access the file.</td>
+</tr>
+<tr>
+<td>code</td>
+<td>Int</td>
+<td>The HTTP status code equivalent to provide a more granular understanding of the outcome.</td>
+</tr>
+<tr>
+<td>x-request-correlation-id</td>
+<td>String</td>
+<td>A unique identifier value attached to requests and messages that allows reference to a particular transaction or event chain.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="retrieving-a-token">Retrieving a token</h2>
+<p>A sample application is available to test the process of calling the protocol and converting the response token into media. Use the <a href="/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager">SharedStorageAccessManager</a> library to obtain the token.</p>
+<h2 id="status-codes">Status codes</h2>
+<p>The following table lists the status codes that can be returned in the redirect URI:</p>
+<table>
+<thead>
+<tr>
+<th>HTTP Status Code</th>
+<th>Reason</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Success</td>
+<td>The operation was successful.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request - Invalid or Missing Parameters</td>
+<td>The request cannot be processed due to client error.</td>
+</tr>
+<tr>
+<td>408</td>
+<td>Request Timeout - Operation Took Too Long</td>
+<td>The operation timed out before completion.</td>
+</tr>
+<tr>
+<td>499</td>
+<td>Client Closed Request - User Cancelled the Snip</td>
+<td>The user cancelled the snip, closing the request.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error - Processing Failed</td>
+<td>An error occurred on the server, preventing completion.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-responses">Example responses</h2>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Full URI Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Successful Capture</td>
+<td><code>my-snip-protocol-test-app://response/?code=200&amp;reason=Success&amp;request-correlation-id=CF99C5A5-3907-461E-A9A9-D8AAFFAD5031&amp;token=8930-ASDFA-ASDF4545</code></td>
+</tr>
+<tr>
+<td>Failed Capture</td>
+<td><code>my-snip-protocol-test-app://response/?code=400&amp;reason=Bad%20Request%20-%20Invalid%20value%20Missing%20Parameters&amp;request-correlation-id=C7696B38-52C8-419A-880F-F3350D7A6626</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="caller-example">Caller example</h2>
+<p>Below is a table displaying examples of full URIs constructed to initiate different types of snipping sessions using the screenclip: protocol. Each URI example demonstrates a combination of parameters to illustrate how you can customize Snipping Tool's behavior for different use cases.</p>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Example URI</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rectangle Mode</td>
+<td><code>ms-screenclip://capture/image?user-agent=TestApp&amp;Rectangle&amp;uri=my-snip-protocol-test-app://response</code></td>
+<td>An application initiates an interactive rectangle capture session, where the user selects the capture area. The result is redirected to a specific URI.</td>
+</tr>
+<tr>
+<td>Video Mode</td>
+<td><code>ms-screenclip://capture/video?api-version=1.0&amp;user-agent=TestApp&amp;redirect-uri=my-snip-protocol-test-app://response</code></td>
+<td>A video capture. Always in rectangle mode.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="https://support.microsoft.com/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b">Use Snipping Tool to capture screenshots</a></li>
+<li><a href="launch-screen-snipping.html">Launch screen snipping (Legacy)</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/launch-snipping-tool.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

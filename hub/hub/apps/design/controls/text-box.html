@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Text box </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Text box ">
+    
+    <meta name="description" content="The TextBox control lets a user enter text into an app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="text-box">Text box</h1>
+
+<p>The TextBox control lets a user type text into an app. It's typically used to capture a single line of text, but can be configured to capture multiple lines of text. The text displays on the screen in a simple, uniform, plaintext format.</p>
+<p><img src="images/text-box.png" alt="A text box"></p>
+<p>TextBox has a number of features that can simplify text entry. It comes with a familiar, built-in context menu with support for copying and pasting text. The &quot;clear all&quot; button lets a user quickly delete all text that has been entered. It also has spell checking capabilities built in and enabled by default.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a <strong>TextBox</strong> control to let a user enter and edit unformatted text, such as in a form. You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text">Text</a> property to get and set the text in a TextBox.</p>
+<p>You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a <a href="text-block.html">TextBlock</a> instead.</p>
+<p>Use a <a href="password-box.html">PasswordBox</a> control to collect a password or other private data, such as a Social Security number. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered.</p>
+<p>Use an <a href="auto-suggest-box.html">AutoSuggestBox</a> control to let the user enter search terms or to show the user a list of suggestions to choose from as they type.</p>
+<p>Use a <a href="rich-edit-box.html">RichEditBox</a> to display and edit rich text files.</p>
+<p>For more info about choosing the right text control, see the <a href="text-controls.html">Text controls</a> article.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Use a label or placeholder text if the purpose of the text box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.</li>
+<li>Give the text box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.</li>
+<li>A text input box is typically single-line (<code>TextWrap = &quot;NoWrap&quot;</code>). When users need to enter or edit a long string, set the text input box to multi-line (<code>TextWrap = &quot;Wrap&quot;</code>).</li>
+<li>Generally, a text input box is used for editable text. But you can make a text input box read-only so that its content can be read, selected, and copied, but not edited.</li>
+<li>If you need to reduce clutter in a view, consider making a set of text input boxes appear only when a controlling checkbox is checked. You can also bind the enabled state of a text input box to a control such as a checkbox.</li>
+<li>Consider how you want a text input box to behave when it contains a value and the user taps it. The default behavior is appropriate for editing the value rather than replacing it; the insertion point is placed between words and nothing is selected. If replacing is the most common use case for a given text input box, you can select all the text in the field whenever the control receives focus, and typing replaces the selection.</li>
+</ul>
+<h3 id="single-line-input-boxes">Single-line input boxes</h3>
+<ul>
+<li><p>Use several single-line text boxes to capture many small pieces of text information. If the text boxes are related in nature, group those together.</p>
+</li>
+<li><p>Make the size of single-line text boxes slightly wider than the longest anticipated input. If doing so makes the control too wide, separate it into two controls. For example, you could split a single address input into &quot;Address line 1&quot; and &quot;Address line 2&quot;.</p>
+</li>
+<li><p>Set a maximum length for characters that can be entered. If the backing data source doesn't allow a long input string, limit the input and use a validation popup to let users know when they reach the limit.</p>
+</li>
+<li><p>Use single-line text input controls to gather small pieces of text from users.</p>
+<p>The following example shows a single-line text box to capture an answer to a security question. The answer is expected to be short, and so a single-line text box is appropriate here.</p>
+<p><img src="images/single-line-text-input-type-text.png" alt="Basic data input"></p>
+</li>
+<li><p>Use a set of short, fixed-sized, single-line text input controls to enter data with a specific format.</p>
+<p><img src="images/textinput-example-productkey.png" alt="Formatted data input"></p>
+</li>
+<li><p>Use a single-line, unconstrained text input control to enter or edit strings, combined with a command button that helps users select valid values.</p>
+<p><img src="images/textinput-example-assisted.png" alt="Assisted data input"></p>
+</li>
+</ul>
+<h3 id="multi-line-text-input-controls">Multi-line text input controls</h3>
+<ul>
+<li><p>When you create a rich text box, provide styling buttons and implement their actions.</p>
+</li>
+<li><p>Use a font that's consistent with the style of your app.</p>
+</li>
+<li><p>Make the height of the text control tall enough to accommodate typical entries.</p>
+</li>
+<li><p>When capturing long spans of text with a maximum character or word count, use a plain text box and provide a live-running counter to show the user how many characters or words they have left before they reach the limit. You'll need to create the counter yourself; place it below the text box and dynamically update it as the user enters each character or word.</p>
+<p><img src="images/multi-line-text-input-text-limits.png" alt="A long span of text"></p>
+</li>
+<li><p>Don't let your text input controls grow in height while users type.</p>
+</li>
+<li><p>Don't use a multi-line text box when users only need a single line.</p>
+</li>
+<li><p>Don't use a rich text control if a plain text control is adequate.</p>
+</li>
+</ul>
+<h2 id="create-a-text-box">Create a text box</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox">TextBox class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text">Text property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/TextBox">Open the WinUI 3 Gallery app and see the TextBox in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Here's the XAML for a simple text box with a header and placeholder text.</p>
+<pre><code class="lang-xaml">&lt;TextBox Width=&quot;500&quot; Header=&quot;Notes&quot; PlaceholderText=&quot;Type your notes here&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">TextBox textBox = new TextBox();
+textBox.Width = 300;
+textBox.Header = &quot;Notes&quot;;
+textBox.PlaceholderText = &quot;Type your notes here&quot;;
+// Add the TextBox to the visual tree.
+rootGrid.Children.Add(textBox);
+</code></pre>
+<p>Here's the text box that results from this XAML.</p>
+<p><img src="images/text-box-ex1.png" alt="A simple text box"></p>
+<h3 id="use-a-text-box-for-data-input-in-a-form">Use a text box for data input in a form</h3>
+<p>It's common to use a text box to accept data input on a form, and use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text">Text</a> property to get the complete text string from the text box. You typically use an event like a submit button click to access the Text property, but you can handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged">TextChanged</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanging">TextChanging</a> event if you need to do something when the text changes.</p>
+<p>This example shows how to get and set the current content of a text box.</p>
+<pre><code class="lang-xaml">&lt;TextBox name=&quot;SampleTextBox&quot; Text=&quot;Sample Text&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = &quot;Sample text retrieved&quot;;
+</code></pre>
+<p>You can add a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.header">Header</a> (or label) and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.placeholdertext">PlaceholderText</a> (or watermark) to the text box to give the user an indication of what the text box is for. To customize the look of the header, you can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.headertemplate">HeaderTemplate</a> property instead of Header. <em>For design info, see Guidelines for labels</em>.</p>
+<p>You can restrict the number of characters the user can type by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.maxlength">MaxLength</a> property. However, MaxLength does not restrict the length of pasted text. Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.paste">Paste</a> event to modify pasted text if this is important for your app.</p>
+<p>The text box includes a clear all button (&quot;X&quot;) that appears when text is entered in the box. When a user clicks the &quot;X&quot;, the text in the text box is cleared. It looks like this.</p>
+<p><img src="images/text-box-clear-all.png" alt="A text box with a clear all button"></p>
+<p>The clear all button is shown only for editable, single-line text boxes that contain text and have focus.</p>
+<p>The clear all button is not shown in any of these cases:</p>
+<ul>
+<li><strong>IsReadOnly</strong> is <strong>true</strong></li>
+<li><strong>AcceptsReturn</strong> is <strong>true</strong></li>
+<li><strong>TextWrap</strong> has a value other than <strong>NoWrap</strong></li>
+</ul>
+<p>This example shows how to get and set the current content of a text box.</p>
+<pre><code class="lang-xaml">&lt;TextBox name=&quot;SampleTextBox&quot; Text=&quot;Sample Text&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">string sampleText = SampleTextBox.Text;
+...
+SampleTextBox.Text = &quot;Sample text retrieved&quot;;
+</code></pre>
+<h3 id="make-a-text-box-read-only">Make a text box read-only</h3>
+<p>You can make a text box read-only by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.isreadonly">IsReadOnly</a> property to <strong>true</strong>. You typically toggle this property in your app code based on conditions in your app. If need text that is always read-only, consider using a TextBlock instead.</p>
+<p>You can make a TextBox read-only by setting the IsReadOnly property to true. For example, you might have a TextBox for a user to enter comments that is enabled only under certain conditions. You can make the TextBox read-only until the conditions are met. If you need only to display text, consider using a TextBlock or RichTextBlock instead.</p>
+<p>A read-only text box looks the same as a read/write text box, so it might be confusing to a user.
+A user can select and copy text.
+IsEnabled</p>
+<h3 id="enable-multi-line-input">Enable multi-line input</h3>
+<p>There are two properties that you can use to control whether the text box displays text on more than one line. You typically set both properties to make a multi-line text box.</p>
+<ul>
+<li>To let the text box allow and display the newline or return characters, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.acceptsreturn">AcceptsReturn</a> property to <strong>true</strong>.</li>
+<li>To enable text wrapping, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textwrapping">TextWrapping</a> property to <strong>Wrap</strong>. This causes the text to wrap when it reaches the edge of the text box, independent of line separator characters.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>TextBox and RichEditBox don't support the <strong>WrapWholeWords</strong> value for their TextWrapping properties. If you try to use WrapWholeWords as a value for TextBox.TextWrapping or RichEditBox.TextWrapping an invalid argument exception is thrown.</p>
+</div>
+<p>A multi-line text box will continue to grow vertically as text is entered unless it's constrained by its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.height">Height</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.maxheight">MaxHeight</a> property, or by a parent container. You should test that a multi-line text box doesn't grow beyond its visible area, and constrain its growth if it does. We recommend that you always specify an appropriate height for a multi-line text box, and not let it grow in height as the user types.</p>
+<p>Scrolling using a scroll-wheel or touch is automatically enabled when needed. However, the vertical scrollbars are not visible by default. You can show the vertical scrollbars by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility">ScrollViewer.VerticalScrollBarVisibility</a> to <strong>Auto</strong> on the embedded ScrollViewer, as shown here.</p>
+<pre><code class="lang-xaml">&lt;TextBox AcceptsReturn=&quot;True&quot; TextWrapping=&quot;Wrap&quot;
+         MaxHeight=&quot;172&quot; Width=&quot;300&quot; Header=&quot;Description&quot;
+         ScrollViewer.VerticalScrollBarVisibility=&quot;Auto&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">TextBox textBox = new TextBox();
+textBox.AcceptsReturn = true;
+textBox.TextWrapping = TextWrapping.Wrap;
+textBox.MaxHeight = 172;
+textBox.Width = 300;
+textBox.Header = &quot;Description&quot;;
+ScrollViewer.SetVerticalScrollBarVisibility(textBox, ScrollBarVisibility.Auto);
+</code></pre>
+<p>Here's what the text box looks like after text is added.</p>
+<p><img src="images/text-box-multi-line.png" alt="A multi line text box"></p>
+<h3 id="format-the-text-display">Format the text display</h3>
+<p>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textalignment">TextAlignment</a> property to align text within a text box. To align the text box within the layout of the page, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.horizontalalignment">HorizontalAlignment</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.verticalalignment">VerticalAlignment</a> properties.</p>
+<p>While the text box supports only unformatted text, you can customize how the text is displayed in the text box to match your branding. You can set standard <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Control">Control</a> properties like <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontfamily">FontFamily</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontsize">FontSize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontstyle">FontStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.background">Background</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.foreground">Foreground</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.characterspacing">CharacterSpacing</a> to change the look of the text. These properties affect only how the text box displays the text locally, so if you were to copy and paste the text into a rich text control, for example, no formatting would be applied.</p>
+<p>This example shows a read-only text box with several properties set to customize the appearance of the text.</p>
+<pre><code class="lang-xaml">&lt;TextBox Text=&quot;Sample Text&quot; IsReadOnly=&quot;True&quot;
+         FontFamily=&quot;Verdana&quot; FontSize=&quot;24&quot;
+         FontWeight=&quot;Bold&quot; FontStyle=&quot;Italic&quot;
+         CharacterSpacing=&quot;200&quot; Width=&quot;300&quot;
+         Foreground=&quot;Blue&quot; Background=&quot;Beige&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">TextBox textBox = new TextBox();
+textBox.Text = &quot;Sample Text&quot;;
+textBox.IsReadOnly = true;
+textBox.FontFamily = new FontFamily(&quot;Verdana&quot;);
+textBox.FontSize = 24;
+textBox.FontWeight = Windows.UI.Text.FontWeights.Bold;
+textBox.FontStyle = Windows.UI.Text.FontStyle.Italic;
+textBox.CharacterSpacing = 200;
+textBox.Width = 300;
+textBox.Background = new SolidColorBrush(Windows.UI.Colors.Beige);
+textBox.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
+// Add the TextBox to the visual tree.
+rootGrid.Children.Add(textBox);
+</code></pre>
+<p>The resulting text box looks like this.</p>
+<p><img src="images/text-box-formatted.png" alt="A formatted text box"></p>
+<h3 id="modify-the-context-menu">Modify the context menu</h3>
+<p>By default, the commands shown in the text box context menu depend on the state of the text box. For example, the following commands can be shown when the text box is editable.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Shown when...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copy</td>
+<td>text is selected.</td>
+</tr>
+<tr>
+<td>Cut</td>
+<td>text is selected.</td>
+</tr>
+<tr>
+<td>Paste</td>
+<td>the clipboard contains text.</td>
+</tr>
+<tr>
+<td>Select all</td>
+<td>the TextBox contains text.</td>
+</tr>
+<tr>
+<td>Undo</td>
+<td>text has been changed.</td>
+</tr>
+</tbody>
+</table>
+<p>To modify the commands shown in the context menu, handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening">ContextMenuOpening</a> event. For an example of this, see the <strong>Customizing RichEditBox's CommandBarFlyout - adding 'Share'</strong> example in the <a href="winui2gallery:/item/RichEditBox">WinUI 2 Gallery</a>. For design info, see Guidelines for <a href="menus.html">context menus</a>.</p>
+<h3 id="select-copy-and-paste">Select, copy, and paste</h3>
+<p>You can get or set the selected text in a text box using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectedtext">SelectedText</a> property. Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionstart">SelectionStart</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionlength">SelectionLength</a> properties, and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.select">Select</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectall">SelectAll</a> methods, to manipulate the text selection. Handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionchanged">SelectionChanged</a> event to do something when the user selects or de-selects text. You can change the color used to highlight the selected text by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionhighlightcolor">SelectionHighlightColor</a> property.</p>
+<p>TextBox supports copy and paste by default. You can provide custom handling of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.paste">Paste</a> event on editable text controls in your app. For example, you might remove the line breaks from a multi-line address when pasting it into a single-line search box. Or, you might check the length of the pasted text and warn the user if it exceeds the maximum length that can be saved to a database. For more info and examples, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.paste">Paste</a> event.</p>
+<p>Here, we have an example of these properties and methods in use. When you select text in the first text box, the selected text is displayed in the second text box, which is read-only. The values of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionlength">SelectionLength</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionstart">SelectionStart</a> properties are shown in two text blocks. This is done using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.selectionchanged">SelectionChanged</a> event.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+   &lt;TextBox x:Name=&quot;textBox1&quot; Height=&quot;75&quot; Width=&quot;300&quot; Margin=&quot;10&quot;
+         Text=&quot;The text that is selected in this TextBox will show up in the read only TextBox below.&quot;
+         TextWrapping=&quot;Wrap&quot; AcceptsReturn=&quot;True&quot;
+         SelectionChanged=&quot;TextBox1_SelectionChanged&quot; /&gt;
+   &lt;TextBox x:Name=&quot;textBox2&quot; Height=&quot;75&quot; Width=&quot;300&quot; Margin=&quot;5&quot;
+         TextWrapping=&quot;Wrap&quot; AcceptsReturn=&quot;True&quot; IsReadOnly=&quot;True&quot;/&gt;
+   &lt;TextBlock x:Name=&quot;label1&quot; HorizontalAlignment=&quot;Center&quot;/&gt;
+   &lt;TextBlock x:Name=&quot;label2&quot; HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
+{
+    textBox2.Text = textBox1.SelectedText;
+    label1.Text = &quot;Selection length is &quot; + textBox1.SelectionLength.ToString();
+    label2.Text = &quot;Selection starts at &quot; + textBox1.SelectionStart.ToString();
+}
+</code></pre>
+<p>Here's the result of this code.</p>
+<p><img src="images/text-box-selection.png" alt="Selected text in a text box"></p>
+<h2 id="choose-the-right-keyboard-for-your-text-control">Choose the right keyboard for your text control</h2>
+<p>To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.</p>
+<p>The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a TextBox or RichEditBox. You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.</p>
+<p>For example, if a text box is used only to enter a 4-digit PIN, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.inputscope">InputScope</a> property to <strong>Number</strong>. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.</p>
+<blockquote>
+<p><strong>Important</strong>  The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.</p>
+</blockquote>
+<p>Other properties that affect the touch keyboard are <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.isspellcheckenabled">IsSpellCheckEnabled</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.istextpredictionenabled">IsTextPredictionEnabled</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus">PreventKeyboardDisplayOnProgrammaticFocus</a>. (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)</p>
+<p>For more info and examples, see <a href="../input/use-input-scope-to-change-the-touch-keyboard.html">Use input scope to change the touch keyboard</a> and the property documentation.</p>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox">TextBox class</a>, <a href="/uwp/api/windows.ui.xaml.controls.textbox.text">Text property</a></li>
+<li><a href="winui2gallery:/item/TextBox">Open the WinUI 2 Gallery app and see the TextBox in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="text-controls.html">Text controls</a></li>
+<li><a href="text-controls.html">Guidelines for spell checking</a></li>
+<li><a href="/previous-versions/windows/apps/hh465231(v=win.10)">Adding search</a></li>
+<li><a href="text-controls.html">Guidelines for text input</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox">TextBox class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox">PasswordBox class</a></li>
+<li><a href="/dotnet/api/system.string.length">String.Length property</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/text-box.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Troubleshooting Arm32 UWP apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Troubleshooting Arm32 UWP apps ">
+    
+    <meta name="description" content="Common issues with Arm32 apps when running on Arm, and how to fix them.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="troubleshooting-arm-uwp-apps">Troubleshooting Arm UWP apps</h1>
+
+<p>If your Arm32 or Arm64 UWP app isn't working correctly on Arm, here's some guidance that may help.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To build your UWP application to natively target the Arm64 platform, you must have Visual Studio 2017 version 15.9 or later, or Visual Studio 2019. For more information, see <a href="https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development">this blog post</a>.</p>
+</div>
+<h2 id="common-issues">Common issues</h2>
+<p>Here are some common issues to keep in mind when troubleshooting Arm32 and Arm64 apps.</p>
+<h3 id="using-windows-10-mobile-only-apis-on-arm-based-processors">Using Windows 10 Mobile-only APIs on Arm-based processors</h3>
+<p>Arm apps may run into problems when using mobile-only APIs (for example, <strong>HardwareButtons</strong>). To mitigate this, you can dynamically detect whether your app is running on Windows 10 Mobile before calling these APIs. For more info, see <a href="/windows/uwp/debug-test-perf/version-adaptive-apps#api-contracts">Dynamically detecting features with API contracts</a>.</p>
+<h3 id="including-dependencies-not-supported-by-uwp-apps">Including dependencies not supported by UWP apps</h3>
+<p>Universal Windows Platform (UWP) apps that aren't properly built with Visual Studio and the UWP SDK may have dependencies on OS components that aren't available to Arm apps running on an Arm64 system. Examples of these dependencies include:</p>
+<ul>
+<li>Expecting parts of the .NET Framework to be available.</li>
+<li>Referencing third-party .NET components that aren't compatible with UWP.</li>
+</ul>
+<p>These issues can be resolved by: removing the unavailable dependencies and rebuilding the app by using the latest Microsoft Visual Studio and UWP SDK versions; or as a last resort, removing the Arm app from the Microsoft Store, so that the x86 version of the app (if available) is downloaded to users' PCs.</p>
+<p>For more info on .NET APIs available for UWP apps, see <a href="/dotnet/api/index?view=dotnet-uwp-10.0&amp;preserve-view=true">.NET for UWP apps</a></p>
+<h3 id="compiling-an-app-with-an-older-version-of-visual-studio-and-sdk">Compiling an app with an older version of Visual Studio and SDK</h3>
+<p>If you're running into issues, be sure to use the latest versions of Microsoft Visual Studio and the Windows SDK to compile your app. Apps compiled with an earlier version of Visual Studio and the SDK may have issues that have been fixed in later versions.</p>
+<h2 id="debugging">Debugging</h2>
+<p>You can use existing tools for developing apps for the Arm platform. Here are some helpful resources.</p>
+<ul>
+<li>Visual Studio 15.5 Preview 1 and later supports running Arm32 apps by using Universal Authentication mode. This automatically bootstraps the necessary remote debugging tools.</li>
+<li>See <a href="/windows-hardware/drivers/debugger/debugging-arm64">Debugging on Arm64</a> to learn more about tools and strategies for debugging on Arm.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/apps-on-arm-troubleshooting-arm32.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

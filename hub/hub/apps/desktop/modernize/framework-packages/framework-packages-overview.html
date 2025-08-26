@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>MSIX framework packages and dynamic dependencies </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="MSIX framework packages and dynamic dependencies ">
+    
+    <meta name="description" content="Learn about the package graph and servicing model for MSIX framework packages.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="msix-framework-packages-and-dynamic-dependencies">MSIX framework packages and dynamic dependencies</h1>
+
+<p>This article introduces important concepts related to <em>MSIX framework packages</em>. The information in this article provides useful context to help you better understand the design and purpose of the <em>dynamic dependencies</em> feature in the Windows App SDK and in the Windows 11 OS. This feature enables your apps to reference and use MSIX framework packages at run time.</p>
+<h2 id="framework-packages-and-the-package-graph">Framework packages and the package graph</h2>
+<p><a href="/windows/msix">MSIX</a> is a package format that provides a modern packaging and deployment experience. It also provides a clean and trusted way to package redistributable libraries, content and components via <em>MSIX framework packages</em>. An MSIX framework package allows packaged apps to access components through a single shared source on the user's device, instead of bundling them into the app package. Common framework packages include the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> (including WinUI3), <a href="/windows/uwp/get-started/winui2/">WinUI2</a>, <a href="/troubleshoot/cpp/c-runtime-packages-desktop-bridge">VCLibs</a>, and the DirectX Runtime.</p>
+<p>Starting in Windows 8 and continuing through Windows 10 and Windows 11, every process has a <em>package graph</em> that provides the list of all the packages available to the app, including framework, resource, optional, and main packages. This graph allows the app to load DLLs, content, and run-time class declarations provided by a referenced package. Historically, this graph was fixed at process creation time, and there was no way to alter it at run time:</p>
+<ul>
+<li>For packaged apps, the graph was initialized based on the package dependencies declared in the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency">PackageDependency</a> element in the app's package manifest. When building a packaged app, this was typically done for you during the build process based on your project references and dependencies.</li>
+<li>For unpackaged apps, the package graph was empty, and couldn't be changed. Therefore, unpackaged apps were limited to <a href="/windows/win32/dlls/dynamic-link-library-search-order">standard DLL search order</a> and couldn't access framework packages.</li>
+</ul>
+<p>This static package graph restriction is lifted with the introduction of the dynamic dependencies support in both the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> and in Windows 11. Developers can use dynamic dependencies to reference and use MSIX framework packages from their apps at run time. Dynamic dependencies removes the static package graph restriction from apps, and developers can decide how they want to leverage framework packages.</p>
+<h2 id="primary-scenarios-for-dynamic-dependencies">Primary scenarios for dynamic dependencies</h2>
+<p>Although dynamic dependencies enables any app to add a package framework dependency at run time, this feature is primarily intended to be used by apps packaged with external location or unpackaged apps. Packaged apps can still continue to add static dependencies via the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency">PackageDependency</a> element in their package manifest.</p>
+<ul>
+<li>Most developers will use dynamic dependencies only to reference the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> framework package in a packaged with external location or unpackaged app, so that the app can call APIs provided by the Windows App SDK runtime. For more information about this scenario, see <a href="../../../windows-app-sdk/use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>.</li>
+<li>In some cases, developers may want to use dynamic dependencies to reference a different framework package (other than the Windows App SDK framework package) from an unpackaged app, such as the framework package for <a href="/windows/uwp/get-started/winui2/">WinUI2</a> or the DirectX Runtime. For more information about this scenario, see <a href="use-the-dynamic-dependency-api.html">Use the dynamic dependency API to reference MSIX packages at run time</a>.</li>
+</ul>
+<h2 id="servicing-model-for-framework-packages">Servicing model for framework packages</h2>
+<p>The dynamic dependencies feature preserves the integrity of the servicing pipeline for the framework package that is being referenced and used dynamically at run time.</p>
+<p>MSIX framework packages support servicing in a side-by-side model, meaning each version is installed in its own separate versioned folder. This allows applications in use to be able to stay up and running even when a newer app installs a newer version of the framework package. The OS has uninstall logic for when to delete older versions of a given framework package, based on the presence of <em>install-time references</em> and <em>run-time references</em> for the package.</p>
+<ul>
+<li>When an app is installed, it can create an <em>install-time reference</em> to a framework package. This reference informs the OS that the app has a dependency upon the specified framework package so that the OS won't uninstall the framework package while your app is installed.</li>
+<li>When an app needs to use APIs or content in a framework package, it can add a <em>run-time reference</em> to the framework package. This reference informs the OS that the framework package is in active use and to handle any version updates in a side-by-side manner. If a new version of the framework package is installed, but a running app has an older version in use, the OS cannot remove the older version until all run-time references to the older version are removed.</li>
+</ul>
+<p>For example, given this scenario:</p>
+<ul>
+<li><strong>App A</strong> is running and using version 1.0.0.0 of a given framework package.</li>
+<li><strong>App B</strong> is installed and has a dependency upon version 1.0.0.1 of the same framework package.</li>
+</ul>
+<p>In this scenario, both versions of the framework package will be installed and in use by <strong>App A</strong> and <strong>App B</strong>. However, when <strong>App A</strong> is closed by the user and then restarted, it will pick up the newer version 1.0.0.1 of the framework package. At this point, the run-time reference requirement is no longer valid for version 1.0.0.0 of the framework package, and the OS can safely remove the 1.0.0.0 version. Later, when <strong>App A</strong> and <strong>App B</strong> are uninstalled by the user, then the install-time reference requirement is no longer valid and it is safe for the OS to remove the framework package entirely.</p>
+<p>For packaged apps that use the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency">PackageDependency</a> element to specify static references to framework packages, the install-time references for framework packages are tracked by the OS when the app is installed or uninstalled. For run-time references that are managed by using the dynamic dependencies feature, the OS knows when a packaged app is running and will avoid removing its in-use framework packages when a newer one is available.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../../../windows-app-sdk/use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a></li>
+<li><a href="use-the-dynamic-dependency-api.html">Use the dynamic dependency API to reference MSIX packages at run time</a></li>
+<li><a href="../../../windows-app-sdk/deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="../../../windows-app-sdk/deployment-architecture.html">Runtime architecture for the Windows App SDK</a></li>
+<li><a href="../../../windows-app-sdk/tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/framework-packages/framework-packages-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

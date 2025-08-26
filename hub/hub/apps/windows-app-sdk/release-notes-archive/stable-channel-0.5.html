@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Stable channel release notes for the Windows App SDK 0.5 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Stable channel release notes for the Windows App SDK 0.5 ">
+    
+    <meta name="description" content="Provides information about the stable release channel for the Windows App SDK 0.5.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="stable-channel-release-notes-for-the-windows-app-sdk-05">Stable channel release notes for the Windows App SDK 0.5</h1>
+
+<p>The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="downloads-for-the-windows-app-sdk">Downloads for the Windows App SDK</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.</p>
+</div>
+<h2 id="version-05">Version 0.5</h2>
+<p>The latest available release of the 0.5.x lineage of the stable channel of the Windows App SDK is version <a href="https://github.com/microsoft/WindowsAppSDK/discussions/1214">0.5.9</a>.</p>
+<h3 id="new-features-and-updates">New features and updates</h3>
+<p>This release supports all <a href="../release-channels.html#features-available-by-release-channel">stable channel features</a>.</p>
+<h3 id="known-issues-and-limitations">Known issues and limitations</h3>
+<p>This release has the following limitations and known issues:</p>
+<ul>
+<li><strong>Desktop apps (C# or C++ desktop)</strong>: This release is supported for use only in desktop apps (C++ or C#) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the <a href="../experimental-channel.html">experimental release channel</a>.</li>
+<li><strong>.NET apps must target build 18362 or later</strong>: Your TFM must be set to <code>net6.0-windows10.0.18362</code> or later, and your packaging project's <code>&lt;TargetPlatformVersion&gt;</code> must be set to 18362 or later. For more info, see the <a href="https://github.com/microsoft/WindowsAppSDK/issues/921">known issue on GitHub</a>.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're working on a UWP app, then refer to <a href="../migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/stable-channel-0.5.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

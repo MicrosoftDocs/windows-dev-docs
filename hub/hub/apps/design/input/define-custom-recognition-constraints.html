@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Define custom recognition constraints </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Define custom recognition constraints ">
+    
+    <meta name="description" content="Learn how to define and use custom constraints for speech recognition.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="define-custom-recognition-constraints">Define custom recognition constraints</h1>
+
+<p>Learn how to define and use custom constraints for speech recognition.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint"><strong>SpeechRecognitionTopicConstraint</strong></a>, <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint"><strong>SpeechRecognitionListConstraint</strong></a>, <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint"><strong>SpeechRecognitionGrammarFileConstraint</strong></a></p>
+</blockquote>
+<p>Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See <a href="speech-recognition.html">Speech recognition</a>.</p>
+<h2 id="add-constraints">Add constraints</h2>
+<p>Use the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints"><strong>SpeechRecognizer.Constraints</strong></a> property to add constraints to a speech recognizer.</p>
+<p>Here, we cover the three kinds of speech recognition constraints used from within an app. (For Cortana voice command constraints, see <a href="cortana-launch-a-foreground-app-with-voice-commands.html">Activate a foreground app with voice commands through Cortana</a>.)</p>
+<ul>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint"><strong>SpeechRecognitionTopicConstraint</strong></a>—A constraint based on a predefined grammar (dictation or web search).</li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint"><strong>SpeechRecognitionListConstraint</strong></a>—A constraint based on a list of words or phrases.</li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint"><strong>SpeechRecognitionGrammarFileConstraint</strong></a>—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.</li>
+</ul>
+<p>Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:</p>
+<ul>
+<li>A single-topic constraint (dictation or web search)</li>
+<li>For Windows 10 Fall Creators Update (10.0.16299.15) and newer, a single topic constraint can be combined with a list constraint</li>
+<li>A combination of list constraints and/or grammar-file constraints.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Call the <strong><a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.compileconstraintsasync">SpeechRecognizer.CompileConstraintsAsync</a></strong> method to compile the constraints before starting the recognition process.</p>
+</div>
+<h2 id="specify-a-web-search-grammar-speechrecognitiontopicconstraint">Specify a web-search grammar (SpeechRecognitionTopicConstraint)</h2>
+<p>Topic constraints (dictation or web-search grammar) must be added to the constraints collection of a speech recognizer.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can use a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint">SpeechRecognitionListConstraint</a> in conjunction with a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint">SpeechRecognitionTopicConstraint</a> to increase dictation accuracy by providing a set of domain-specific keywords that you think are likely to be used during dictation.</p>
+</div>
+<p>Here, we add a web-search grammar to the constraints collection.</p>
+<pre><code class="lang-CSharp">private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
+{
+    // Create an instance of SpeechRecognizer.
+    var speechRecognizer = new Windows.Media.SpeechRecognition.SpeechRecognizer();
+
+    // Listen for audio input issues.
+    speechRecognizer.RecognitionQualityDegrading += speechRecognizer_RecognitionQualityDegrading;
+
+    // Add a web search grammar to the recognizer.
+    var webSearchGrammar = new Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint(Windows.Media.SpeechRecognition.SpeechRecognitionScenario.WebSearch, &quot;webSearch&quot;);
+
+
+    speechRecognizer.UIOptions.AudiblePrompt = &quot;Say what you want to search for...&quot;;
+    speechRecognizer.UIOptions.ExampleText = @&quot;Ex. 'weather for London'&quot;;
+    speechRecognizer.Constraints.Add(webSearchGrammar);
+
+    // Compile the constraint.
+    await speechRecognizer.CompileConstraintsAsync();
+
+    // Start recognition.
+    Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeWithUIAsync();
+    //await speechRecognizer.RecognizeWithUIAsync();
+
+    // Do something with the recognition result.
+    var messageDialog = new Windows.UI.Popups.MessageDialog(speechRecognitionResult.Text, &quot;Text spoken&quot;);
+    await messageDialog.ShowAsync();
+}
+</code></pre>
+<h2 id="specify-a-programmatic-list-constraint-speechrecognitionlistconstraint">Specify a programmatic list constraint (SpeechRecognitionListConstraint)</h2>
+<p>List constraints must be added to the constraints collection of a speech recognizer.</p>
+<p>Keep the following points in mind:</p>
+<ul>
+<li>You can add multiple list constraints to a constraints collection.</li>
+<li>You can use any collection that implements <strong>IIterable&lt;String&gt;</strong> for the string values.</li>
+</ul>
+<p>Here, we programmatically specify an array of words as a list constraint and add it to the constraints collection of a speech recognizer.</p>
+<pre><code class="lang-CSharp">private async void YesOrNo_Click(object sender, RoutedEventArgs e)
+{
+    // Create an instance of SpeechRecognizer.
+    var speechRecognizer = new Windows.Media.SpeechRecognition.SpeechRecognizer();
+
+    // You could create this array dynamically.
+    string[] responses = { &quot;Yes&quot;, &quot;No&quot; };
+
+
+    // Add a list constraint to the recognizer.
+    var listConstraint = new Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint(responses, &quot;yesOrNo&quot;);
+
+    speechRecognizer.UIOptions.ExampleText = @&quot;Ex. 'yes', 'no'&quot;;
+    speechRecognizer.Constraints.Add(listConstraint);
+
+    // Compile the constraint.
+    await speechRecognizer.CompileConstraintsAsync();
+
+    // Start recognition.
+    Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeWithUIAsync();
+
+    // Do something with the recognition result.
+    var messageDialog = new Windows.UI.Popups.MessageDialog(speechRecognitionResult.Text, &quot;Text spoken&quot;);
+    await messageDialog.ShowAsync();
+}
+</code></pre>
+<h2 id="specify-an-srgs-grammar-constraint-speechrecognitiongrammarfileconstraint">Specify an SRGS grammar constraint (SpeechRecognitionGrammarFileConstraint)</h2>
+<p>SRGS grammar files must be added to the constraints collection of a speech recognizer.</p>
+<p>The SRGS Version 1.0 is the industry-standard markup language for creating XML-format grammars for speech recognition. Although Universal Windows apps provide alternatives to using SRGS for creating speech-recognition grammars, you might find that using SRGS to create grammars produces the best results, particularly for more involved speech recognition scenarios.</p>
+<p>SRGS grammars provide a full set of features to help you architect complex voice interaction for your apps. For example, with SRGS grammars you can:</p>
+<ul>
+<li>Specify the order in which words and phrases must be spoken to be recognized.</li>
+<li>Combine words from multiple lists and phrases to be recognized.</li>
+<li>Link to other grammars.</li>
+<li>Assign a weight to an alternative word or phrase to increase or decrease the likelihood that it will be used to match speech input.</li>
+<li>Include optional words or phrases.</li>
+<li>Use special rules that help filter out unspecified or unanticipated input, such as random speech that doesn't match the grammar, or background noise.</li>
+<li>Use semantics to define what speech recognition means to your app.</li>
+<li>Specify pronunciations, either inline in a grammar or via a link to a lexicon.</li>
+</ul>
+<p>For more info about SRGS elements and attributes, see the <a href="/previous-versions/office/developer/speech-technologies/hh361653(v=office.14)">SRGS Grammar XML Reference</a> . To get started creating an SRGS grammar, see <a href="/previous-versions/office/developer/speech-technologies/hh361658(v=office.14)">How to Create a Basic XML Grammar</a>.</p>
+<p>Keep the following points in mind:</p>
+<ul>
+<li>You can add multiple grammar-file constraints to a constraints collection.</li>
+<li>Use the .grxml file extension for XML-based grammar documents that conform to SRGS rules.</li>
+</ul>
+<p>This example uses an SRGS grammar defined in a file named srgs.grxml (described later). In the file properties, the <strong>Package Action</strong> is set to <strong>Content</strong> with <strong>Copy to Output Directory</strong> set to <strong>Copy always</strong>:</p>
+<pre><code class="lang-CSharp">private async void Colors_Click(object sender, RoutedEventArgs e)
+{
+    // Create an instance of SpeechRecognizer.
+    var speechRecognizer = new Windows.Media.SpeechRecognition.SpeechRecognizer();
+
+    // Add a grammar file constraint to the recognizer.
+    var storageFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri(&quot;ms-appx:///Colors.grxml&quot;));
+    var grammarFileConstraint = new Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint(storageFile, &quot;colors&quot;);
+
+    speechRecognizer.UIOptions.ExampleText = @&quot;Ex. 'blue background', 'green text'&quot;;
+    speechRecognizer.Constraints.Add(grammarFileConstraint);
+
+    // Compile the constraint.
+    await speechRecognizer.CompileConstraintsAsync();
+
+    // Start recognition.
+    Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeWithUIAsync();
+
+    // Do something with the recognition result.
+    var messageDialog = new Windows.UI.Popups.MessageDialog(speechRecognitionResult.Text, &quot;Text spoken&quot;);
+    await messageDialog.ShowAsync();
+}
+</code></pre>
+<p>This SRGS file (srgs.grxml) includes semantic interpretation tags. These tags provide a mechanism for returning grammar match data to your app. Grammars must conform to the World Wide Web Consortium (W3C) <a href="https://www.w3.org/TR/semantic-interpretation/">Semantic Interpretation for Speech Recognition (SISR) 1.0</a> specification.</p>
+<p>Here, we listen for variants of &quot;yes&quot; and &quot;no&quot;.</p>
+<pre><code class="lang-CSharp">&lt;grammar xml:lang=&quot;en-US&quot; 
+         root=&quot;yesOrNo&quot;
+         version=&quot;1.0&quot; 
+         tag-format=&quot;semantics/1.0&quot;
+         xmlns=&quot;http://www.w3.org/2001/06/grammar&quot;&gt;
+
+    &lt;!-- The following rules recognize variants of yes and no. --&gt;
+      &lt;rule id=&quot;yesOrNo&quot;&gt;
+         &lt;one-of&gt;
+            &lt;item&gt;
+              &lt;one-of&gt;
+                 &lt;item&gt;yes&lt;/item&gt;
+                 &lt;item&gt;yeah&lt;/item&gt;
+                 &lt;item&gt;yep&lt;/item&gt;
+                 &lt;item&gt;yup&lt;/item&gt;
+                 &lt;item&gt;un huh&lt;/item&gt;
+                 &lt;item&gt;yay yus&lt;/item&gt;
+              &lt;/one-of&gt;
+              &lt;tag&gt;out=&quot;yes&quot;;&lt;/tag&gt;
+            &lt;/item&gt;
+            &lt;item&gt;
+              &lt;one-of&gt;
+                 &lt;item&gt;no&lt;/item&gt;
+                 &lt;item&gt;nope&lt;/item&gt;
+                 &lt;item&gt;nah&lt;/item&gt;
+                 &lt;item&gt;uh uh&lt;/item&gt;
+               &lt;/one-of&gt;
+               &lt;tag&gt;out=&quot;no&quot;;&lt;/tag&gt;
+            &lt;/item&gt;
+         &lt;/one-of&gt;
+      &lt;/rule&gt;
+&lt;/grammar&gt;
+</code></pre>
+<h2 id="manage-constraints">Manage constraints</h2>
+<p>After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the <a href="/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled"><strong>IsEnabled</strong></a> property of a constraint to <strong>true</strong> or <strong>false</strong>. The default setting is <strong>true</strong>.</p>
+<p>It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the <a href="/uwp/api/windows.media.speechrecognition.ispeechrecognitionconstraint.isenabled"><strong>IsEnabled</strong></a> property, as required.</p>
+<p>Restricting the number of constraints serves to limit the amount of data that the speech recognizer needs to search and match against the speech input. This can improve both the performance and the accuracy of speech recognition.</p>
+<p>Decide which constraints are enabled based on the phrases that your app can expect in the context of the current recognition operation. For example, if the current app context is to display a color, you probably don't need to enable a constraint that recognizes the names of animals.</p>
+<p>To prompt the user for what can be spoken, use the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.audibleprompt"><strong>SpeechRecognizerUIOptions.AudiblePrompt</strong></a> and <a href="/uwp/api/windows.media.speechrecognition.speechrecognizeruioptions.exampletext"><strong>SpeechRecognizerUIOptions.ExampleText</strong></a> properties, which are set by means of the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions"><strong>SpeechRecognizer.UIOptions</strong></a> property. Preparing users for what they can say during the recognition operation increases the likelihood that they will speak a phrase that can be matched to an active constraint.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="speech-interactions.html">Speech interactions</a></li>
+</ul>
+<h3 id="samples">Samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis">Speech recognition and speech synthesis sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/define-custom-recognition-constraints.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

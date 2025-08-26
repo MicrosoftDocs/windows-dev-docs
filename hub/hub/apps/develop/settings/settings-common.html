@@ -1,0 +1,3532 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Reference for Windows 11 and Windows 10 settings </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Reference for Windows 11 and Windows 10 settings ">
+    
+    <meta name="description" content="This page lists the settings that are supported by both Windows 10 and Windows 11.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="reference-for-windows-11-and-windows-10-settings">Reference for Windows 11 and Windows 10 settings</h1>
+
+<p>The information provided on this page includes details for accessing the status of Windows Backup and Restore settings that are supported for both Windows 10 and Windows 11. This public documentation ensures effective data portability by providing third-party developers with a streamlined process to access the data. Settings that are supported on Windows 11 only are documented in <a href="settings-windows-11.html">Reference for Windows 11 settings</a>.</p>
+<p>Settings status is accessed in one of two ways:</p>
+<ol>
+<li>Via the Windows registry: For settings below that include registry details, please use that information to access the settings.</li>
+<li>Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see <a href="readclouddatasettings-exe.html">Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)</a>.</li>
+</ol>
+<h2 id="app-compatibility">App compatibility</h2>
+<p>The app compatibility setting is a JSON file that describes compatibility information for apps installed on the device. The path to this JSON is:</p>
+<p><code>C:\Windows\appcompat\Backup\[user SID].json</code></p>
+<p>The format of the backup JSON file. Install, Update, and Uninstall nodes contain arrays of applications, which contain arrays of files. The following code segment describes the format of the file and provides descriptions for each field.</p>
+<pre><code class="lang-json">{
+  &quot;Install&quot;: [
+    {
+      &quot;path&quot;: App's uninstall registry path,
+      &quot;programId&quot;: The unique identifier of the installed Win32 application,
+      &quot;compatFlags&quot;: Applicable backup/restore compatibility flags OR'ed together. For the list of supported values, see the table below,
+      &quot;restoreAction&quot;: Actions to be taken on app restore,
+      &quot;files&quot;: [
+        {
+          &quot;name&quot;: File name,
+          &quot;path&quot;: File path,
+          &quot;osComponent&quot;: Boolean stating if the file is an OS file,
+          &quot;size&quot;: The file size as a 32-bit value,
+          &quot;magic&quot;: The PE header's magic number,
+          &quot;peHeaderHash&quot;: Hash of the file's PE header,
+          &quot;sizeOfImage&quot;: PE header's SizeOfImage value,
+          &quot;peChecksum&quot;: PE header's CheckSum value,
+          &quot;linkDate&quot;: PE header's TimeDateStamp value,
+          &quot;linkerVersion&quot;: PE header's MarjorImageVersion and MinorImageVersion,
+          &quot;binFileVersion&quot;: File version obtained from GetFileVersionInfo,
+          &quot;binProductVersion&quot;: Product version obtained from GetFileVersionInfo,
+          &quot;binaryType&quot;: Type of binary (e.g. PE64_AMD64),
+          &quot;created&quot;: File creation time obtained from file system,
+          &quot;modified&quot;: File modification time obtained from file system,
+          &quot;lastAccessed&quot;: File access time obtained from file system,
+          &quot;verLanguage&quot;: Language obtained from GetFileVersionInfo,
+          &quot;id&quot;: Unique identifier obtained from hashing file contents,
+          &quot;switchBackContext&quot;: Value for OS runtime compatibility fixes,
+          &quot;sigDisplayName&quot;: Display name obtained from the file signature,
+          &quot;sigPublisherName&quot;: Publisher name obtained from the file signature,
+          &quot;sigMoreInfoURL&quot;: URL obtained from the file signature,
+          &quot;fileVersion&quot;: File version obtained from GetFileVersionInfo,
+          &quot;companyName&quot;: Company name obtained from GetFileVersionInfo,
+          &quot;fileDescription&quot;: File description obtained from GetFileVersionInfo,
+          &quot;internalName&quot;: Internal name obtained from GetFileVersionInfo,
+          &quot;legalCopyright&quot;: Copyright information obtained from GetFileVersionInfo,
+          &quot;originalFileName&quot;: Original filename obtained from GetFileVersionInfo,
+          &quot;productName&quot;: Product name obtained from GetFileVersionInfo,
+          &quot;productVersion&quot;: Product version obtained from GetFileVersionInfo,
+          &quot;peImageType&quot;: Image type obtained from PE header,
+          &quot;peSubsystem&quot;: Subsystem obtained from PE header,
+          &quot;runLevel&quot;: Executable's runlevel obtained from app manifest,
+          &quot;uiAccess&quot;: UI access obtained from app manifest,
+          &quot;crcChecksum&quot;: File's CRC checksum,
+          &quot;clrVersion&quot;: CLR version obtained from app manifest,
+          &quot;boeProgramId&quot;: Unique ID describing the application,
+          &quot;boeProgramName&quot;: Same as &quot;productName&quot;, if it exists. Otherwise same as &quot;name&quot;,
+          &quot;boeProgramPublisher&quot;: Same as &quot;companyName&quot;, if it exists. Otherwise same as &quot;fileDescription&quot;, if it exists,
+          &quot;boeProgramVersion&quot;: Same as &quot;productVersion&quot;, if it exists. Otherwise same as &quot;fileVersion&quot;, if it exists. Otherwise same as &quot;binProductVersion&quot;, if it exists. Otherwise same as &quot;binFileVersion&quot;, if it exists,
+          &quot;boeProgramLanguage&quot;: Same as &quot;verLanguage&quot;, if it exists,
+          &quot;fileSize&quot;: File's size as a 64-bit number,
+          &quot;peCharacteristics&quot;: Image characteristics obtained from PE header,
+          &quot;sha256&quot;: SHA256 hash of file,
+        }
+      ]
+    },
+  ],
+  &quot;Update&quot;: [
+    { }
+  ],
+  &quot;Uninstalled&quot;: [
+    { }
+  ]
+}
+
+</code></pre>
+<p>The value of the <em>compatFlags</em> field of the backup JSON file is a combination of the following values, computed with an OR operation.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x00000000</td>
+<td>App is compatible.</td>
+</tr>
+<tr>
+<td>0x00000001</td>
+<td>App is incompatible with this OS.</td>
+</tr>
+<tr>
+<td>0x00000002</td>
+<td>App is developed for specific OEM.</td>
+</tr>
+<tr>
+<td>0x00000004</td>
+<td>App is a redistributable package.</td>
+</tr>
+<tr>
+<td>0x00000008</td>
+<td>Plugin or extension that requires the main app.</td>
+</tr>
+<tr>
+<td>0x00000010</td>
+<td>Middleware.</td>
+</tr>
+<tr>
+<td>0x00000020</td>
+<td>App was acquired from third party such as a game store.</td>
+</tr>
+<tr>
+<td>0x00000040</td>
+<td>App is incompatible with HVCI.</td>
+</tr>
+<tr>
+<td>0x00000080</td>
+<td>App is incompatible with Kernet CET.</td>
+</tr>
+<tr>
+<td>0x00000100</td>
+<td>App depends on a kernel mode driver.</td>
+</tr>
+<tr>
+<td>0x00000200</td>
+<td>App is not compatible with Android.</td>
+</tr>
+<tr>
+<td>0x00000400</td>
+<td>App will not work if S mode is enabled.</td>
+</tr>
+<tr>
+<td>0x00000800</td>
+<td>App is only available in a certain market.</td>
+</tr>
+<tr>
+<td>0x00001000</td>
+<td>App does not support this architecture.</td>
+</tr>
+<tr>
+<td>0x00002000</td>
+<td>App is targeted for other device families.</td>
+</tr>
+<tr>
+<td>0x00004000</td>
+<td>Generic hardware incompatibility.</td>
+</tr>
+<tr>
+<td>0x00008000</td>
+<td>App is incompatible up to certain version.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="applist-backup-data">AppList Backup Data</h2>
+<h3 id="type-windowsdataappsappmetadata-structure">Type: Windows.Data.Apps.AppMetaData structure</h3>
+<h4 id="appmetadata-values">AppMetaData values</h4>
+<p>Unless otherwise specified, the Values are found in the <a href="/uwp/schemas/appxpackage/appx-package-manifest">AppXManifest</a> for MSIX packages, and <a href="/windows/win32/msi/uninstall-registry-key">Uninstall registries</a> for other formats.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appId</td>
+<td>wstring</td>
+<td>PackageFamilyName (packaged) or ProductCode (unpackaged).</td>
+</tr>
+<tr>
+<td>installSource</td>
+<td>wstring</td>
+<td>Description of type of installer for the app. See <em>installSource</em> for supported values.</td>
+</tr>
+<tr>
+<td>lightIconInfo</td>
+<td><strong>IconInfo</strong></td>
+<td>Information about the light icon.</td>
+</tr>
+<tr>
+<td>darkIconInfo</td>
+<td><strong>IconInfo</strong></td>
+<td>Information about the dark icon.</td>
+</tr>
+<tr>
+<td>appName</td>
+<td>wstring</td>
+<td>App display name.</td>
+</tr>
+<tr>
+<td>publisher</td>
+<td>wstring</td>
+<td>Publishers name of the app from Add Remove Programs.</td>
+</tr>
+<tr>
+<td>lastLaunchTime</td>
+<td>uint64</td>
+<td>This is a calculated value that represents the last time the app was launched.</td>
+</tr>
+<tr>
+<td>appVersion</td>
+<td>wstring</td>
+<td>Version of the app from  Add Remove Programs.</td>
+</tr>
+<tr>
+<td>appLanguage</td>
+<td>wstring</td>
+<td>Language list in  Add Remove Programs.</td>
+</tr>
+<tr>
+<td>appArch</td>
+<td>wstring</td>
+<td>Architecture specified in  Add Remove Programs.</td>
+</tr>
+<tr>
+<td>reinstallId</td>
+<td>wstring</td>
+<td>Reinstall ID specified in  Add Remove Programs.</td>
+</tr>
+<tr>
+<td>productUrl</td>
+<td>wstring</td>
+<td>Product URL Specified in  Add Remove Programs.</td>
+</tr>
+<tr>
+<td>isPinned</td>
+<td>bool</td>
+<td>Boolean indicating if this app was pinned to the start menu.</td>
+</tr>
+<tr>
+<td>wingetID</td>
+<td>wstring</td>
+<td>Identifier to indicate if this app can be installed through <a href="https://github.com/microsoft/winget-cli">winget</a>, and the winget ID.</td>
+</tr>
+<tr>
+<td>wingetSource</td>
+<td>wstring</td>
+<td>Specifies where the app was sourced from through the <a href="https://github.com/microsoft/winget-cli">Winget APIs</a>. See <em>wingetSource</em> for supported values.</td>
+</tr>
+</tbody>
+</table>
+<p>Supported values for the <em>installSource</em> field.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;Store MSIX&quot;</td>
+<td>An MSIX from the Microsoft Store.</td>
+</tr>
+<tr>
+<td>&quot;Sideloaded MSIX&quot;</td>
+<td>A sideloaded MSIX.</td>
+</tr>
+<tr>
+<td>&quot;Edge PWA MSIX&quot;</td>
+<td>A PWA MSIX.</td>
+</tr>
+<tr>
+<td>&quot;Unknown MSIX&quot;</td>
+<td>Not one of the other MSIX values.</td>
+</tr>
+<tr>
+<td>&quot;Store Win32&quot;</td>
+<td>A non-UWP app from the Microsoft Store.</td>
+</tr>
+<tr>
+<td>&quot;Android&quot;</td>
+<td>An Android app.</td>
+</tr>
+<tr>
+<td>&quot;External MSI&quot;</td>
+<td>An external MSI.</td>
+</tr>
+</tbody>
+</table>
+<p>Supported values for the <em>wingetSource</em> field.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;External&quot;</td>
+<td>Installed from the web, but winget has an ID a match in the winget catalog.</td>
+</tr>
+<tr>
+<td>&quot;Winget&quot;</td>
+<td>Installed from the winget catalog.</td>
+</tr>
+<tr>
+<td>&quot;Spark&quot;</td>
+<td>Microsoft Store non-UWP app.</td>
+</tr>
+<tr>
+<td>&quot;MSStore&quot;</td>
+<td>Microsoft Store MSIX app.</td>
+</tr>
+<tr>
+<td>&quot;NoReliableInfo&quot;</td>
+<td>No data provided for source.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataappsiconinfo-structure">Type: Windows.Data.Apps.IconInfo structure</h3>
+<h4 id="iconinfo-values">IconInfo values</h4>
+<p>The paths to the icons used to generate the IconInfo, can be found in the <a href="/uwp/schemas/appxpackage/appx-package-manifest">AppXManifest</a> for MSIX packages, and <a href="/windows/win32/msi/uninstall-registry-key">Uninstall registries</a> for other formats.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>appIconAssetId</td>
+<td>wstring</td>
+<td>The ID representing an icon from the cloud. The appIconAssetId represents the icon stored in the cloud which was generated from the app installer either through add remove programs metadata or AppxManifest files.</td>
+</tr>
+<tr>
+<td>isPlated</td>
+<td>bool</td>
+<td>Plated or not.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataappsshortcutinfo-structure">Type: Windows.Data.Apps.ShortcutInfo structure</h3>
+<h4 id="shortcutinfo-values">ShortcutInfo values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>targetPath</td>
+<td>wstring</td>
+<td>Link to the executable that launching the tile will shell execute.</td>
+</tr>
+<tr>
+<td>shortcutArgs</td>
+<td>wstring</td>
+<td>Arguments provided on launch.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataappsappleveltileinfo-structure">Type: Windows.Data.Apps.AppLevelTileInfo structure</h3>
+<h4 id="appleveltileinfo-values">AppLevelTileInfo values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tileId</td>
+<td>wstring</td>
+<td>UnifiedTileIdentifier for tile</td>
+</tr>
+<tr>
+<td>lightIconInfo</td>
+<td><strong>IconInfo</strong></td>
+<td>UnifiedTileIdentifier for light tile</td>
+</tr>
+<tr>
+<td>darkIconInfo</td>
+<td><strong>IconInfo</strong></td>
+<td>UnifiedTileIdentifier for dark tile</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>wstring</td>
+<td>String displayed on tile</td>
+</tr>
+<tr>
+<td>sortName</td>
+<td>wstring</td>
+<td>String value used for sorting in search</td>
+</tr>
+<tr>
+<td>packageId</td>
+<td>wstring</td>
+<td>PackageFamilyName (packaged), ProductCode (unpackaged), empty for unmapped products (appId is specified in <strong>AppMetaData</strong>)</td>
+</tr>
+<tr>
+<td>shortcut</td>
+<td><strong>ShortcutInfo</strong></td>
+<td>Shortcut information.</td>
+</tr>
+<tr>
+<td>suiteName</td>
+<td>wstring</td>
+<td>String name for a collection of apps.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataappsfileinfo-structure">Type: Windows.Data.Apps.FileInfo structure</h3>
+<h4 id="fileinfo-values">FileInfo values</h4>
+<p>FileInfo values are populated from the <em>App Compatibility</em> JSON above. All FileInfo values are provided as WSTRINGs, though some of the values in the JSON are different.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>osComponent</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>size</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>magic</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. For information on the PE header, see <a href="/windows/win32/debug/pe-format">PE Format</a>.</td>
+</tr>
+<tr>
+<td>peHeaderHash</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>sizeOfImage</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>peChecksum</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>linkDate</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>linkerVersion</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>binFileVersion</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>binProductVersion</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>binaryType</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>created</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>modified</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>lastAccessed</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>verLanguage</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>switchBackContext</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>sigDisplayName</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>sigPublisherName</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>sigMoreInfoURL</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>fileVersion</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>companyName</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>fileDescription</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>internalName</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>legalCopyright</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>originalFileName</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>productName</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>productVersion</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>peImageType</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>peSubsystem</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>runLevel</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>uiAccess</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>crcChecksum</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>clrVersion</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>boeProgramId</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>boeProgramName</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>boeProgramPublisher</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>boeProgramVersion</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>boeProgramLanguage</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>fileSize</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>peCharacteristics</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>sha256</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON. Optional.</td>
+</tr>
+<tr>
+<td>aumid</td>
+<td>wstring</td>
+<td>Application user model ID. Optional. For more information, see <a href="/windows/configuration/store/find-aumid?tabs=ps">Find the Application User Model ID of an installed app</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataappsappcompatinfo-structure">Type: Windows.Data.Apps.AppCompatInfo structure</h3>
+<h4 id="appcompatinfo-values">AppCompatInfo values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON.</td>
+</tr>
+<tr>
+<td>path</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON.</td>
+</tr>
+<tr>
+<td>appId</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON.</td>
+</tr>
+<tr>
+<td>programId</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON.</td>
+</tr>
+<tr>
+<td>compatFlags</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON.</td>
+</tr>
+<tr>
+<td>restoreActions</td>
+<td>wstring</td>
+<td>Read from App compatibility JSON</td>
+</tr>
+<tr>
+<td>files</td>
+<td><strong>vector &lt;FileInfo&gt;</strong></td>
+<td>Read from App compatibility JSON.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataappsdevicemetadata-structure">Type: Windows.Data.Apps.DeviceMetadata structure</h3>
+<h4 id="devicemetadata-values">DeviceMetadata values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userIntent</td>
+<td>uint32</td>
+<td>This is a bit array of values specifying user intent during Windows setup. See <em>userIntent</em> values. This data is read from HKCU\Software\Microsoft\Windows\CurrentVersion\CloudExperienceHost\Intent</td>
+</tr>
+<tr>
+<td>predictedUserIntent</td>
+<td>uint32</td>
+<td>Windows sets flag to indicate that the user had one or more apps that are a signal of a developer.</td>
+</tr>
+<tr>
+<td>devModeEnabled</td>
+<td>bool</td>
+<td>Whether the user has specified Developer Mode from Windows Settings. This data is read from from HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock</td>
+</tr>
+</tbody>
+</table>
+<p>Supported <em>userIntent</em> values.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0b00000001</td>
+<td>None</td>
+</tr>
+<tr>
+<td>0b00000010</td>
+<td>Gaming</td>
+</tr>
+<tr>
+<td>0b00000100</td>
+<td>Family</td>
+</tr>
+<tr>
+<td>0b00001000</td>
+<td>Creativity</td>
+</tr>
+<tr>
+<td>0b00010000</td>
+<td>Schoolwork</td>
+</tr>
+<tr>
+<td>0b00100000</td>
+<td>Entertainment</td>
+</tr>
+<tr>
+<td>0b01000000</td>
+<td>Business</td>
+</tr>
+<tr>
+<td>0b10000000</td>
+<td>Development</td>
+</tr>
+</tbody>
+</table>
+<h2 id="autoplay">Autoplay</h2>
+<p>This setting helps to set defaults for removable drives and memory cards</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexplorerautoplayhandlers">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\AutoplayHandlers</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DisableAutoplay</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Toggle the use of autoplay for all media and devices.</td>
+</tr>
+<tr>
+<td>UserChosenExecuteHandlers\CameraAlternate\ShowPicturesOnArrival</td>
+<td>REG_SZ</td>
+<td>A string.</td>
+<td>User selected default autoplay behavior for removable drive. See table below for supported values.</td>
+</tr>
+<tr>
+<td>UserChosenExecuteHandlers\ StorageOnArrival</td>
+<td>REG_SZ</td>
+<td>A string.</td>
+<td>User selected default autoplay behavior for memory card. See table below for supported values.</td>
+</tr>
+<tr>
+<td>EventHandlersDefaultSelection\CameraAlternate\ShowPicturesOnArrival</td>
+<td>REG_SZ</td>
+<td>A string.</td>
+<td>System default autoplay behavior for removable drive. See table below for supported values.</td>
+</tr>
+<tr>
+<td>EventHandlersDefaultSelection\StorageOnArrival</td>
+<td>REG_SZ</td>
+<td>A string.</td>
+<td>System default autoplay behavior for memory card. See table below for supported values.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-data-values-for-showpicturesonarrival">Supported data values for ShowPicturesOnArrival</h4>
+<table>
+<thead>
+<tr>
+<th>Data value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dsd9eksajf9re3669zh5z2jykhws2jy42gypaqjh1qe66nyek1hg!content!import</td>
+<td>Import Photos and Videos (Photos)</td>
+</tr>
+<tr>
+<td>MSPlayMediaOnArrival</td>
+<td>Play media on arrival.</td>
+</tr>
+<tr>
+<td>MSOpenFolder</td>
+<td>Open folder.</td>
+</tr>
+<tr>
+<td>MSPromptEachTime</td>
+<td>Prompt each time.</td>
+</tr>
+<tr>
+<td>OneDriveAutoPlay</td>
+<td>Import Photos and Videos (OneDrive).</td>
+</tr>
+<tr>
+<td>MSTAKENOACTION</td>
+<td>Take no action.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="supported-data-values-for-storageonarrival">Supported data values for StorageOnArrival</h4>
+<table>
+<thead>
+<tr>
+<th>Data value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSTAKENOACTION</td>
+<td>Take no action.</td>
+</tr>
+<tr>
+<td>MSOpenFolder</td>
+<td>Open folder.</td>
+</tr>
+<tr>
+<td>MSStorageSense</td>
+<td>Configure Storage Settings (Settings).</td>
+</tr>
+<tr>
+<td>MSPromptEachTime</td>
+<td>Prompt each time.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="background">Background</h2>
+<p>Setting for managing and personalizing the desktop background.</p>
+<h3 id="type-windowsdatabackgroundwallpaperposition-enumeration">Type: Windows.Data.Background.WallpaperPosition enumeration</h3>
+<h4 id="wallpaperposition-values">WallpaperPosition values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fill</td>
+<td>0</td>
+<td>Fill.</td>
+</tr>
+<tr>
+<td>Fit</td>
+<td>1</td>
+<td>Fit.</td>
+</tr>
+<tr>
+<td>Stretch</td>
+<td>2</td>
+<td>Stretch.</td>
+</tr>
+<tr>
+<td>Tile</td>
+<td>3</td>
+<td>Tile.</td>
+</tr>
+<tr>
+<td>Center</td>
+<td>4</td>
+<td>Center.</td>
+</tr>
+<tr>
+<td>Span</td>
+<td>5</td>
+<td>Span</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatabackgroundwallpaperkind-enumeration">Type: Windows.Data.Background.WallpaperKind enumeration</h3>
+<h4 id="wallpaperkind-values">WallpaperKind values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SolidColor</td>
+<td>0</td>
+<td>Solid color.</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>1</td>
+<td>Image.</td>
+</tr>
+<tr>
+<td>Slideshow</td>
+<td>2</td>
+<td>Slideshow.</td>
+</tr>
+<tr>
+<td>Spotlight</td>
+<td>3</td>
+<td>Spotlight.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatabackgrounddesktopwallpaper-structure">Type: Windows.Data.Background.DesktopWallpaper structure</h3>
+<p>The scope of this type is per device.</p>
+<h4 id="desktopwallpaper-properties">DesktopWallpaper Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kind</td>
+<td><strong>WallpaperKind</strong></td>
+<td>Specifies whether current background is set as Wallpaper or Solid Color or Slideshow or Spotlight.</td>
+</tr>
+<tr>
+<td>position</td>
+<td><strong>WallpaperPosition</strong></td>
+<td>Specifies how wallpaper or slideshow images are positioned on background.</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Windows.Data.Common.Color</td>
+<td>Specifies the solid color value if background is selected as Solid Color</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>wstring</td>
+<td>The unique ID for the wallpaper or slideshow uploaded during backup.</td>
+</tr>
+<tr>
+<td>contentUri</td>
+<td>wstring</td>
+<td>The url for the wallpaper or slideshow uploaded during backup.</td>
+</tr>
+<tr>
+<td>intervalInSeconds</td>
+<td>uint64</td>
+<td>The interval between images of slideshow if background is selected as slideshow.</td>
+</tr>
+<tr>
+<td>shuffle</td>
+<td>bool</td>
+<td>Signifies whether slideshow images are shuffled if background is selected as slideshow</td>
+</tr>
+<tr>
+<td>syncRootRelativePath</td>
+<td>wstring</td>
+<td>Signifies path to slideshow folder if background is selected as slideshow.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="calling">Calling</h2>
+<p>The settings below are for a deprecated Windows calling experience and are no longer read by the operating system, however the settings data may be present on user devices or in the cloud.</p>
+<h3 id="type-windowsdatacallingsettings-structure">Type: Windows.data.calling.Settings structure</h3>
+<h4 id="settings-properties">Settings properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>perKeySettings</td>
+<td>map&lt;wstring, KeyPathSettings&gt;</td>
+<td>A map of per-key settings</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatacallingkeypathsettings-structure">Type: Windows.data.calling.KeyPathSettings structure</h3>
+<h4 id="keypathsettings-properties">KeyPathSettings properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>values</td>
+<td>map&lt;wstring, wstring&gt;</td>
+<td>A map of key/path settings</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatacallingcallhistoryitem-structure">Type: Windows.data.calling.callhistoryItem structure</h3>
+<h4 id="callhistoryitem-properties">callhistoryItem properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uniqueId</td>
+<td>String</td>
+<td>Unique identifier for the record.</td>
+</tr>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>Phone number of the caller.</td>
+</tr>
+<tr>
+<td>calltype</td>
+<td>Enum CallType</td>
+<td>Possible values: Outgoing, IncomingAnswered, IncomingMissed, IncomingRinging, OutgoingMissed, OutgoingRinging.</td>
+</tr>
+<tr>
+<td>voicemailCall</td>
+<td>Bool</td>
+<td>Indicates whether the call was a voice mail.</td>
+</tr>
+<tr>
+<td>videocall</td>
+<td>Bool</td>
+<td>Indicates whether the call was a video call.</td>
+</tr>
+<tr>
+<td>Seen</td>
+<td>Bool</td>
+<td>Indicates whether the call history was seen by the user.</td>
+</tr>
+<tr>
+<td>callerIdBlocked</td>
+<td>Bool</td>
+<td>Indicates whether the call was blocked.</td>
+</tr>
+<tr>
+<td>emergencycall</td>
+<td>Bool</td>
+<td>Indicates whether call was an emergency call.</td>
+</tr>
+<tr>
+<td>linenumber</td>
+<td>String</td>
+<td>The number of the phone line that received the call.</td>
+</tr>
+<tr>
+<td>lineName</td>
+<td>String</td>
+<td>The phone line's name.</td>
+</tr>
+<tr>
+<td>callerLocation</td>
+<td>String</td>
+<td>Caller location.</td>
+</tr>
+<tr>
+<td>callerCategory</td>
+<td>String</td>
+<td>Caller category.</td>
+</tr>
+<tr>
+<td>callerCategoryDescription</td>
+<td>String</td>
+<td>Caller category description.</td>
+</tr>
+<tr>
+<td>Calltimestamp</td>
+<td>Unit64</td>
+<td>unix time stamp.</td>
+</tr>
+<tr>
+<td>Callarrivaltime</td>
+<td>Unit64</td>
+<td>Unix time the call arrived on the device.</td>
+</tr>
+<tr>
+<td>callEndTime</td>
+<td>Unit64</td>
+<td>Unix time stamp when the call was ended.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatacallingcallhistory-structure">Type: Windows.Data.calling.callhistory structure</h3>
+<h4 id="callhistory-properties">callhistory Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>historyItems</td>
+<td>Map&lt;string, CallHistoryItem&gt;</td>
+<td>A collection of call history items where the keys are each history item's UniqueId.</td>
+</tr>
+<tr>
+<td>highestSequenceNumber</td>
+<td>Unit32</td>
+<td>Highest sequence number issued, used for internal business logic.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatacallingcallfavorites-structure">Type: Windows.data.calling.callfavorites structure</h3>
+<h4 id="callfavorites-properties">callfavorites Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>favoriteItems</td>
+<td>vector&lt;CallFavoriteItem&gt;</td>
+<td>A collection of calling favorites.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatacallingcallfavoriteitem-structure">Type: Windows.data.calling.CallFavoriteItem structure</h3>
+<h4 id="callfavoriteitem-properties">CallFavoriteItem Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phoneNumber</td>
+<td>String</td>
+<td>A collection of calling favorites.</td>
+</tr>
+<tr>
+<td>displayName</td>
+<td>String</td>
+<td>Display name of the favorite.</td>
+</tr>
+<tr>
+<td>lineNumber</td>
+<td>String</td>
+<td>Line number the favorite is associated with.</td>
+</tr>
+<tr>
+<td>phoneNumberName</td>
+<td>Uint32</td>
+<td>Phone number name.</td>
+</tr>
+<tr>
+<td>remoteIdHash</td>
+<td>String</td>
+<td>Remote ID hash.</td>
+</tr>
+<tr>
+<td>propHash</td>
+<td>String</td>
+<td>Property hash.</td>
+</tr>
+<tr>
+<td>isVideoCall</td>
+<td>Bool</td>
+<td>Indicates whether the item is a video call.</td>
+</tr>
+<tr>
+<td>isPublicSwitchTelephoneNetwork</td>
+<td>Bool</td>
+<td>Indicates whether the item is a telephone call.</td>
+</tr>
+<tr>
+<td>applicationId</td>
+<td>String</td>
+<td>Application ID.</td>
+</tr>
+<tr>
+<td>callbackToken</td>
+<td>String</td>
+<td>Callback token.</td>
+</tr>
+<tr>
+<td>UniqueId</td>
+<td>Unit64</td>
+<td>A unique identifier for the item.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contrast-themes">Contrast themes</h2>
+<p>Settings related to high-contrast themes.</p>
+<h3 id="type-windowsdatacontrastthemescurrentthemetype-enumeration">Type: Windows.Data.ContrastThemes.CurrentThemeType enumeration</h3>
+<h4 id="currentthemetype-values">CurrentThemeType values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contrast_Inbox</td>
+<td>0</td>
+<td>In-box high contrast theme.</td>
+</tr>
+<tr>
+<td>Contrast_Custom</td>
+<td>1</td>
+<td>Customized high contrast theme.</td>
+</tr>
+<tr>
+<td>Backup_disabled</td>
+<td>2</td>
+<td>Backup disabled.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatacontrastthemessynchedtheme-structure">Type: Windows.Data.ContrastThemes.SynchedTheme structure</h3>
+<h4 id="synchedtheme-properties">SynchedTheme properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><strong>CurrentThemeType</strong></td>
+<td>Specifies whether current theme is personalized theme or inbox high contrast theme or customized high contrast theme.</td>
+</tr>
+<tr>
+<td>currentThemePath</td>
+<td>wstring</td>
+<td>The complete path to the currently applied theme file.</td>
+</tr>
+<tr>
+<td>contrastThemePath</td>
+<td>wstring</td>
+<td>The complete path to the last applied high contrast theme file.This can be same as of <em>currentThemePath</em> if current theme is high contrast.</td>
+</tr>
+<tr>
+<td>baseContrastThemeName</td>
+<td>wstring</td>
+<td>Specifies the base in-box high contrast theme is applied. Any customization may have been applied on top of these themes. Supported values are &quot;High Contrast #1&quot;, &quot; or &quot;High Contrast #2&quot;, &quot;High Contrast Black&quot;, or &quot;High Contrast White&quot;</td>
+</tr>
+<tr>
+<td>customThemeName</td>
+<td>wstring</td>
+<td>The user-defined name for a customized contrast theme.</td>
+</tr>
+<tr>
+<td>rgbBackground</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Theme background color.</td>
+</tr>
+<tr>
+<td>rgbText</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Theme text color.</td>
+</tr>
+<tr>
+<td>rgbHyperlink</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Theme hyperlink color.</td>
+</tr>
+<tr>
+<td>rgbInactiveText</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Theme inactive text color.</td>
+</tr>
+<tr>
+<td>rgbSelectedText1</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Signifies color value of Text of highlighted text.</td>
+</tr>
+<tr>
+<td>rgbSelectedText2</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Signifies color value of Text of highlight.</td>
+</tr>
+<tr>
+<td>rgbButtonText1</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Signifies color value of Text of button text.</td>
+</tr>
+<tr>
+<td>rgbButtonText2</td>
+<td><strong>Windows.Data.Common.Color</strong></td>
+<td>Signifies color value of Face of button.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatacommoncolor-structure">Type: Windows.Data.Common.Color structure</h3>
+<h4 id="color-values">Color values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>red</td>
+<td>uint8</td>
+<td>Red channel value of an RGBA color.</td>
+</tr>
+<tr>
+<td>green</td>
+<td>uint8</td>
+<td>Green channel value of an RGBA color.</td>
+</tr>
+<tr>
+<td>blue</td>
+<td>uint8</td>
+<td>Blue channel value of an RGBA color.</td>
+</tr>
+<tr>
+<td>alpha</td>
+<td>uint8</td>
+<td>Alpha channel value of an RGBA color.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="date-and-time">Date and Time</h2>
+<p>Settings related to date and time.</p>
+<h3 id="registry-values-under-hklmsystemcurrentcontrolsetservicestzautoupdate">Registry values under HKLM\SYSTEM\CurrentControlSet\Services\tzautoupdate</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>REG_DWORD</td>
+<td>3/4</td>
+<td>3: Set timezone toggle value on. 4: Set Timezone toggle value off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registry-values-under-hklmsystemcurrentcontrolsetcontroltimezoneinformation">Registry values under HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>timeZone</td>
+<td>REG_SZ</td>
+<td>System timezone as string.</td>
+<td>The currently set time zone for the system.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="do-not-disturb">Do not disturb</h2>
+<p>Set &quot;do not disturb&quot; status manually or automatically, so that notifications will be sent directly to the notification center.</p>
+<h3 id="type-windowsdatadonotdisturbchangereason-enumeration">Type: Windows.Data.DoNotDisturb.ChangeReason enumeration</h3>
+<h4 id="changereason-values">ChangeReason values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default</td>
+<td>0</td>
+<td>Default setting.</td>
+</tr>
+<tr>
+<td>User</td>
+<td>1</td>
+<td>User setting.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-boolwithmetadata-structure">Type: BoolWithMetadata structure</h3>
+<h4 id="boolwithmetadata-properties">BoolWithMetadata properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>bool</td>
+<td>The boolean value.</td>
+</tr>
+<tr>
+<td>changeReason</td>
+<td><strong>ChangeReason</strong></td>
+<td>The reason a user changed their profile.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatadonotdisturbquiethoursprofile-structure">Type: Windows.Data.DoNotDisturb.QuietHoursProfile structure</h3>
+<p>This setting is multi-instance. The following is an example command line for retrieving this type:</p>
+<p><code>readCloudDataSettings.exe enum -type:windows.data.donotdisturb.QuietHoursProfile</code></p>
+<p>For more information on retrieving multi-instance settings, see <a href="readclouddatasettings-exe.html">Cloud Data Store Settings Reader Tool</a>.</p>
+<h4 id="quiethoursprofile-properties">QuietHoursProfile Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isInitialized</td>
+<td>bool</td>
+<td>CDS data initialize status.</td>
+</tr>
+<tr>
+<td>settings</td>
+<td>map&lt;uint64, bool&gt;</td>
+<td>Map of the boolean state of the settings. Specifies when a given settings checkbox is checked or unchecked.</td>
+</tr>
+<tr>
+<td>allowedContacts</td>
+<td>set&lt;wstring&gt;</td>
+<td>The set of allowed contacts as a list.</td>
+</tr>
+<tr>
+<td>allowedApps</td>
+<td>set&lt;wstring&gt;</td>
+<td>The list of app names to set notifications on.</td>
+</tr>
+<tr>
+<td>defaultAllowedAppsRemoved</td>
+<td>set&lt;wstring&gt;</td>
+<td>The list of names of the default app names removed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatadonotdisturbquiethourssettings-structure">Type: Windows.Data.DoNotDisturb.QuietHoursSettings structure</h3>
+<h4 id="quiethourssettings-properties">QuietHoursSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isInitialized</td>
+<td>bool</td>
+<td>CDS data initialize status. .</td>
+</tr>
+<tr>
+<td>selectedProfile</td>
+<td>wstring</td>
+<td>The string value of the user profile. &quot;Unrestricted&quot; or &quot;Priority Only&quot;</td>
+</tr>
+<tr>
+<td>shouldShowSummaryToast</td>
+<td>BoolWithMetadata</td>
+<td>Sets whether the summary toast should be shown and the associated reason.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatadonotdisturbquietmoment-structure">Type: Windows.Data.DoNotDisturb.QuietMoment structure</h3>
+<p>This setting is multi-instance. The following is an example command line for retrieving this type:</p>
+<p><code>readCloudDataSettings.exe enum -type:windows.data.donotdisturb.quietmoment</code></p>
+<p>For more information on retrieving multi-instance settings, see <a href="readclouddatasettings-exe.html">Cloud Data Store Settings Reader Tool</a>.</p>
+<h4 id="quietmoment-properties">QuietMoment Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isInitialized</td>
+<td>bool</td>
+<td>CDS data initialize status. Default value is false.</td>
+</tr>
+<tr>
+<td>isEnabled</td>
+<td>bool</td>
+<td>Settings enabled or disabled.</td>
+</tr>
+<tr>
+<td>assignedProfile</td>
+<td>wstring</td>
+<td>The value of the user profile set by automatic rules. &quot;Unrestricted&quot;, &quot;Priority Only&quot;, or &quot;Alarms Only&quot;</td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>TimeSpan</td>
+<td>When automatic rules should start.</td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>TimeSpan</td>
+<td>When automatic rules should end.</td>
+</tr>
+<tr>
+<td>repeatType</td>
+<td>uint32</td>
+<td>How frequently the rules should apply. &quot;Daily&quot;, &quot;Weekend&quot;, or &quot;Weekdays&quot;</td>
+</tr>
+<tr>
+<td>shouldShowActiveToast</td>
+<td>BoolWithMetadata</td>
+<td>Sets whether the active toast should be shown and the associated reason.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="file-explorer-classic">File Explorer Classic</h2>
+<p>Settings related to the classic Windows File Explorer.</p>
+<h3 id="type-windowsdatafileexplorerclassicshellstatesetting-structure">Type: Windows.Data.FileExplorerClassic.ShellStateSetting structure</h3>
+<h4 id="shellstatesetting-properties">ShellStateSetting Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bmigratedFromSSF</td>
+<td>bool</td>
+<td>Indicates whether the shell state is migrated from legacy setting framework to current solution.</td>
+</tr>
+<tr>
+<td>bshowAllObjects</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show all objects.</td>
+</tr>
+<tr>
+<td>bshowExtensions</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show all extensions.</td>
+</tr>
+<tr>
+<td>bshowCompColor</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show all colors.</td>
+</tr>
+<tr>
+<td>bdoubleClickInWebView</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show all objects.</td>
+</tr>
+<tr>
+<td>bdontPrettyPath</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show pretty path</td>
+</tr>
+<tr>
+<td>showInfoTip</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show info tip.</td>
+</tr>
+<tr>
+<td>noConfirmRecycle</td>
+<td>bool</td>
+<td>Indicates whether Shell state should should confirm recycle option.</td>
+</tr>
+<tr>
+<td>showSuperHidden</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show super hidden.</td>
+</tr>
+<tr>
+<td>sepProcess</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show the separation process.</td>
+</tr>
+<tr>
+<td>iconsOnly</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show icons only.</td>
+</tr>
+<tr>
+<td>showTypeOverlay</td>
+<td>bool</td>
+<td>Indicates whether Shell state should show type overlay.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassiccabinetstatesettings-structure">Type: Windows.Data.FileExplorerClassic.CabinetStateSettings structure</h3>
+<h4 id="cabinetstatesettings-properties">CabinetStateSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migratedFromSSF</td>
+<td>bool</td>
+<td>Indicates whether the cabinet state is migrated from legacy setting framework to current solution.</td>
+</tr>
+<tr>
+<td>fullPathTitle</td>
+<td>bool</td>
+<td>Indicates whether the cabinet state setting should show full path title.</td>
+</tr>
+<tr>
+<td>saveLocalView</td>
+<td>bool</td>
+<td>Indicates whether the cabinet state setting should save local view.</td>
+</tr>
+<tr>
+<td>newWindowMode</td>
+<td>bool</td>
+<td>Indicates whether the cabinet state setting should open in new window mode.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassicadvancedsettings-structure">Type: Windows.Data.FileExplorerClassic.AdvancedSettings structure</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migratedFromSSF</td>
+<td>bool</td>
+<td>Indicates whether advanced settings are migrated from legacy setting framework to current solution.</td>
+</tr>
+<tr>
+<td>alwaysShowMenus</td>
+<td>bool</td>
+<td>Indicates whether advanced settings should always show menu.</td>
+</tr>
+<tr>
+<td>folderContentsInfoTip</td>
+<td>bool</td>
+<td>Indicates whether advanced settings should show folder contents info tip.</td>
+</tr>
+<tr>
+<td>hideDrivesWithNoMedia</td>
+<td>bool</td>
+<td>Indicates whether advanced settings should hide the drives with no media present.</td>
+</tr>
+<tr>
+<td>navPaneExpandToCurrentFolder</td>
+<td>bool</td>
+<td>Indicates whether advanced settings should expand the navigation pane to current folder.</td>
+</tr>
+<tr>
+<td>navPaneShowAllFolders</td>
+<td>bool</td>
+<td>Indicates whether advanced settings should expand the navigation panel to show all folders.</td>
+</tr>
+<tr>
+<td>navPaneShowFavorites</td>
+<td>bool</td>
+<td>Indicates whether advanced settings should expand the navigation panel to show all favorites.</td>
+</tr>
+<tr>
+<td>persistBrowsers</td>
+<td>bool</td>
+<td>Indicates advanced settings for file explorer should persist browsers.</td>
+</tr>
+<tr>
+<td>sharingWizardOn</td>
+<td>bool</td>
+<td>Indicates whether sharing wizard is on for advanced settings.</td>
+</tr>
+<tr>
+<td>showDriveLetters</td>
+<td>bool</td>
+<td>Indicates whether drives letters are shown for advanced settings.</td>
+</tr>
+<tr>
+<td>showPreviewHandlers</td>
+<td>bool</td>
+<td>Indicates whether to show preview handlers.</td>
+</tr>
+<tr>
+<td>typeAhead</td>
+<td>bool</td>
+<td>Indicates whether to show type ahead.</td>
+</tr>
+<tr>
+<td>showStatusBar</td>
+<td>bool</td>
+<td>Indicates whether the file explorer should show status bar.</td>
+</tr>
+<tr>
+<td>showLibraries</td>
+<td>bool</td>
+<td>Indicates whether the file explorer advanced settings should show libraries.</td>
+</tr>
+<tr>
+<td>showCompColor</td>
+<td>bool</td>
+<td>Indicates whether to show comp color for advanced settings.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassicexplorersettings-structure">Type: Windows.Data.FileExplorerClassic.ExplorerSettings structure</h3>
+<h4 id="explorersettings-properties">ExplorerSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migratedFromSSF</td>
+<td>bool</td>
+<td>Indicates whether the explorer settings are migrated from legacy setting framework to current solution.</td>
+</tr>
+<tr>
+<td>underlineIconsAlways</td>
+<td>bool</td>
+<td>Indicates whether Explorer settings should always underline icons.</td>
+</tr>
+<tr>
+<td>underlineIconsNever</td>
+<td>bool</td>
+<td>Indicates whether Explorer settings should never underline icons.</td>
+</tr>
+<tr>
+<td>underlineIconsAsBrowser</td>
+<td>bool</td>
+<td>Indicates whether Explorer settings should underline icons as browser.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassicsearchsettings-structure">Type: Windows.Data.FileExplorerClassic.SearchSettings structure</h3>
+<h4 id="searchsettings-properties">SearchSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migratedFromSSF</td>
+<td>bool</td>
+<td>Indicates whether the search settings are migrated from legacy setting framework to current solution.</td>
+</tr>
+<tr>
+<td>searchOnly</td>
+<td>bool</td>
+<td>Indicates whether search setting show search only.</td>
+</tr>
+<tr>
+<td>wholeFileSystem</td>
+<td>bool</td>
+<td>Indicates whether search setting show the whole file system.</td>
+</tr>
+<tr>
+<td>systemFolders</td>
+<td>bool</td>
+<td>Indicates whether search setting show system folders.</td>
+</tr>
+<tr>
+<td>archivedFiles</td>
+<td>bool</td>
+<td>Indicates whether search setting show archived files.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-type-windowsdatafileexplorerclassicregistrysettings-structure">Type: Type: Windows.Data.FileExplorerClassic.RegistrySettings structure</h3>
+<p>These are blobs that are in the registry. There are three things that use registry stream settings:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migratedFromSSF</td>
+<td>bool</td>
+<td>Indicates whether the registry settings are migrated from legacy setting framework to current solution.</td>
+</tr>
+<tr>
+<td>RibbonQat</td>
+<td>blob</td>
+<td>A single blob.</td>
+</tr>
+<tr>
+<td>detailsPreviewPaneSettings</td>
+<td>unit32</td>
+<td>Details about preview pane settings.</td>
+</tr>
+<tr>
+<td>readingPaneSettings</td>
+<td>unit32</td>
+<td>Indicates reading pane settings.</td>
+</tr>
+<tr>
+<td>navigationPaneVisible</td>
+<td>bool</td>
+<td>Indicates whether navigation pane is visible or not.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="registrysettingsproperties">RegistrySettingsProperties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>migratedFromSSF</td>
+<td>bool</td>
+<td>Indicates whether registry settings are migrated from legacy setting framework to current solution.</td>
+</tr>
+<tr>
+<td>ribbonQat</td>
+<td>blob</td>
+<td>A single blob.</td>
+</tr>
+<tr>
+<td>detailsPreviewPaneSettings</td>
+<td>unit32</td>
+<td>Details about preview pane settings.</td>
+</tr>
+<tr>
+<td>readingPaneSettings</td>
+<td>unit32</td>
+<td>Indicates reading pane settings.</td>
+</tr>
+<tr>
+<td>navigationPaneVisible</td>
+<td>bool</td>
+<td>Indicates whether navigation pane is visible or not.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassicfolderoptiongeneralsettings-structure">Type: Windows.Data.FileExplorerClassic.FolderOptionGeneralSettings structure</h3>
+<p>These are settings found in File Explorer-&gt;Folder options(...)-&gt;General tab</p>
+<ul>
+<li>File explorer can be opened to either Home or This PC</li>
+<li>File explorer can be opened to One Drive folder as well if user has signed in to One Drive (This option is available only if user has signed in)</li>
+</ul>
+<h4 id="folderoptiongeneralsettings-properties">FolderOptionGeneralSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>defaultOpenLocation</td>
+<td>unit8</td>
+<td>Indicates whether file explorer can be opened to either home or this PC. Default is home (0).</td>
+</tr>
+<tr>
+<td>browseFoldersInNewWindow</td>
+<td>bool</td>
+<td>Indicates whether to browse folder in new window.</td>
+</tr>
+<tr>
+<td>useDoubleClickToOpen</td>
+<td>bool</td>
+<td>Indicates whether to use double click to open.</td>
+</tr>
+<tr>
+<td>showRecentlyUsedFiles</td>
+<td>bool</td>
+<td>Indicates whether to show recently used files.</td>
+</tr>
+<tr>
+<td>showFrequentlyUsedFolders</td>
+<td>bool</td>
+<td>Indicates whether to show frequently used folders.</td>
+</tr>
+<tr>
+<td>showFilesFromOffice</td>
+<td>bool</td>
+<td>Indicates whether to show files from MS office.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassicfolderoptionsadvancedsettings-structure">Type: Windows.Data.FileExplorerClassic.FolderOptionsAdvancedSettings structure</h3>
+<p>These are settings found in File Explorer-&gt;Folder options(...)-&gt;View tab-&gt;Advanced settings</p>
+<h4 id="folderoptionsadvancedsettings-properties">FolderOptionsAdvancedSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alwaysShowIconsNeverThumbnails</td>
+<td>bool</td>
+<td>This is used to show icons only.</td>
+</tr>
+<tr>
+<td>compactView</td>
+<td>bool</td>
+<td>Decrease space between items.</td>
+</tr>
+<tr>
+<td>displayFileIconOnThumbnails</td>
+<td>bool</td>
+<td>Indicates whether to display file icon on thumbnails.</td>
+</tr>
+<tr>
+<td>displayFileSizeInfoInFolderTips</td>
+<td>bool</td>
+<td>Indicates whether to display file size information in folder tips.</td>
+</tr>
+<tr>
+<td>displayFullFilePath</td>
+<td>bool</td>
+<td>Show folder contents info tip.</td>
+</tr>
+<tr>
+<td>showSysHiddenFiles</td>
+<td>bool</td>
+<td>Show/hide hidden files and folders.</td>
+</tr>
+<tr>
+<td>hideEmptyDrives</td>
+<td>bool</td>
+<td>Hide drives with no media.</td>
+</tr>
+<tr>
+<td>showExtensions</td>
+<td>bool</td>
+<td>Show/hide extensions of known file types.</td>
+</tr>
+<tr>
+<td>hideFolderMergeConflicts</td>
+<td>bool</td>
+<td>Indicates whether to show/hide folder merge conflicts.</td>
+</tr>
+<tr>
+<td>showSuperHiddenOSProtectedFiles</td>
+<td>bool</td>
+<td>Show/hide OS protected files.</td>
+</tr>
+<tr>
+<td>showDriveLetters</td>
+<td>bool</td>
+<td>Show/hide drive letters.</td>
+</tr>
+<tr>
+<td>colorEncryptedCompressedFiles</td>
+<td>bool</td>
+<td>Show encrypted and compressed files in color.</td>
+</tr>
+<tr>
+<td>showPopupDescription</td>
+<td>bool</td>
+<td>Indicates pop up descriptions.</td>
+</tr>
+<tr>
+<td>showSyncProviderNotification</td>
+<td>bool</td>
+<td>Indicates notification provider sync notification.</td>
+</tr>
+<tr>
+<td>useCheckboxesForSelection</td>
+<td>bool</td>
+<td>Used to show check boxes for selection.</td>
+</tr>
+<tr>
+<td>useSharingWizard</td>
+<td>bool</td>
+<td>Sharing wizard on/off.</td>
+</tr>
+<tr>
+<td>navPaneAlwaysShowAvailablityStatus</td>
+<td>bool</td>
+<td>Show Navigation pane all cloud states.</td>
+</tr>
+<tr>
+<td>navPaneShowLibraries</td>
+<td>bool</td>
+<td>Show navigation pane libraries.</td>
+</tr>
+<tr>
+<td>navPaneShowNetwork</td>
+<td>bool</td>
+<td>Show pane navigation network.</td>
+</tr>
+<tr>
+<td>navPaneShowThisPC</td>
+<td>bool</td>
+<td>This is used to show navigation pane to show current folder.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassicrecyclebinsettings-structure">Type: Windows.Data.FileExplorerClassic.RecycleBinSettings structure</h3>
+<p>These are settings found in Recycle bin-&gt; right click Properties</p>
+<h4 id="recyclebinsettings-properties">RecycleBinSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>displayDeleteConfirmationDialog</td>
+<td>bool</td>
+<td>Indicates whether to show delete confirmation dialog</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatafileexplorerclassicdesktopiconsettings-structure">Type: Windows.Data.FileExplorerClassic.DesktopIconSettings structure</h3>
+<p>These are settings related to desktop icons.</p>
+<h4 id="desktopiconsettings-properties">DesktopIconSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>viewAutoArrangeIcons</td>
+<td>bool</td>
+<td>Indicates values for AutoArrangement of icons.</td>
+</tr>
+<tr>
+<td>viewAlignIconsToGrid</td>
+<td>bool</td>
+<td>Indicates values for snapping to grid.</td>
+</tr>
+<tr>
+<td>viewShowDesktopIcons</td>
+<td>bool</td>
+<td>Indicates values to view desktop icons.</td>
+</tr>
+<tr>
+<td>sortColPropertyKeyFmtid</td>
+<td>wstring</td>
+<td>L&quot;B725F130-47EF-101A-A5F1-02608C9EEBAC&quot;.</td>
+</tr>
+<tr>
+<td>sortColPropertyKeyPid</td>
+<td>Unit32</td>
+<td>10.</td>
+</tr>
+<tr>
+<td>sortColDirection</td>
+<td>bool</td>
+<td>1=Ascending -1=Descending Default value is Ascending (true).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="input-method-editors-ime">Input Method Editors (IME)</h2>
+<p>History files are used to optimize the Japanese IME user experience across devices.</p>
+<h3 id="type-windowsdatainputhistoryfiles-structure">Type: Windows.Data.Input.HistoryFiles structure</h3>
+<p>This type is multi-instance and must be retrieved using the following collection collection names:</p>
+<ul>
+<li>&quot;historyfiles&quot;</li>
+</ul>
+<p>The following is an example command line for retrieving this type:</p>
+<p><code>readCloudDataSettings.exe enum -type:Windows.Data.Input.HistoryFiles -collection:historyfiles</code></p>
+<p>For more information on retrieving multi-instance settings, see <a href="readclouddatasettings-exe.html">Cloud Data Store Settings Reader Tool</a>.</p>
+<h4 id="historyfiles-properties">HistoryFiles Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InputDataFiles</td>
+<td>Map&lt;string,FilePathInfo&gt;</td>
+<td>A map of input history FilePathInfo structs where the key represents a relative folder path.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatainputfilepathinfo-structure">Type: Windows.Data.Input.FilePathInfo structure</h3>
+<h4 id="filepathinfo-properties">FilePathInfo Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filePath</td>
+<td>Map&lt;string,fileData&gt;</td>
+<td>A map of FileData structs where the key is the file name.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatainputfiledata-structure">Type: Windows.Data.Input.FileData structure</h3>
+<h4 id="filedata-properties">FileData Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>filePath</td>
+<td>blob</td>
+<td>Raw input data, byte array serialized as a collection of integers.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="internet-explorer">Internet Explorer</h2>
+<p>Although Internet explorer has reached end of life, some settings stored by the browser may remain in the cloud or on Windows through settings backup.</p>
+<p>The <strong>SettingUnit</strong> structure used with the following settings has the following definition:</p>
+<pre><code class="lang-cpp">struct SettingUnit 
+{
+    String settingType
+    String settingUnitID
+    FILETIME timeStamp
+    blob settingData
+}
+</code></pre>
+<h3 id="type-windowsdatainternetexplorerfavorites-structure">Type: Windows.Data.InternetExplorer.Favorites structure</h3>
+<h4 id="favorites-properties">Favorites Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>favoriteSettings</td>
+<td>vector&lt;<strong>SettingUnit</strong>&gt;</td>
+<td><strong>SettingUnit</strong> structures related to Internet Explorer favorites.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatainternetexplorertypedurls-structure">Type: Windows.Data.InternetExplorer.TypedURLS structure</h3>
+<h4 id="typedurls-properties">TypedURLS Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typedURLSettings</td>
+<td>vector&lt;<strong>SettingUnit</strong>&gt;</td>
+<td><strong>SettingUnit</strong> structures related to Internet Explorer  TypedURLS.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatainternetexplorerbrowserhistory-structure">Type: Windows.Data.InternetExplorer.BrowserHistory structure</h3>
+<h4 id="browserhistory-properties">BrowserHistory Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BrowserHistory</td>
+<td>vector&lt;<strong>SettingUnit</strong>&gt;</td>
+<td><strong>SettingUnit</strong> structures related to Internet Explorer browser history.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatainternetexplorerautocomplete-structure">Type: Windows.Data.InternetExplorer.AutoComplete structure</h3>
+<h4 id="autocomplete-properties">AutoComplete Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoCompleteSetting</td>
+<td>vector&lt;<strong>SettingUnit</strong>&gt;</td>
+<td><strong>SettingUnit</strong> structures related to Internet Explorer autocomplete.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatainternetexplorertabroaming-structure">Type: Windows.Data.InternetExplorer.TabRoaming structure</h3>
+<h4 id="tabroaming-properties">TabRoaming Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TabRoamingSetting</td>
+<td>vector&lt;<strong>SettingUnit</strong>&gt;</td>
+<td><strong>SettingUnit</strong> structures related to Internet Explorer tab roaming settings.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lock-screen">Lock screen</h2>
+<p>Setting for managing and personalizing the lock screen.</p>
+<h3 id="type-windowsdatalockscreensettingslockscreenkind-enumeration">Type: Windows.Data.LockScreenSettings.LockScreenKind enumeration</h3>
+<h4 id="lockscreenkind-values">LockScreenKind values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Picture</td>
+<td>0</td>
+<td>Picture.</td>
+</tr>
+<tr>
+<td>Slideshow</td>
+<td>1</td>
+<td>Slideshow</td>
+</tr>
+<tr>
+<td>Spotlight</td>
+<td>2</td>
+<td>Spotlight</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatalockscreensettings-structure">Type: Windows.Data.LockScreenSettings structure</h3>
+<p>The scope of this type is per device.</p>
+<h4 id="lockscreensettings-properties">LockScreenSettings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>kind</td>
+<td><strong>LockScreenKind</strong></td>
+<td>Specifies whether current Lockscreen is set as Wallpaper or Slideshow or Spotlight</td>
+</tr>
+<tr>
+<td>pictureOnSignInScreen</td>
+<td>bool</td>
+<td>Specifies whether show the lock screen background picture on the sign-in screen is enabled.</td>
+</tr>
+<tr>
+<td>funItems</td>
+<td>bool</td>
+<td>Specifies whether &quot;Get fun facts, tips, tricks, and more on your lock screen&quot; is enabled.</td>
+</tr>
+<tr>
+<td>itemId</td>
+<td>wstring</td>
+<td>The unique ID for the lockscreen wallpaper uploaded to during backup.</td>
+</tr>
+<tr>
+<td>contentUri</td>
+<td>wstring</td>
+<td>The url for the lockscreen wallpaper uploaded to during backup</td>
+</tr>
+<tr>
+<td>lockScreenStatus</td>
+<td>wstring</td>
+<td>Not used.</td>
+</tr>
+<tr>
+<td>slideShowAutoLock</td>
+<td></td>
+<td>Not used.</td>
+</tr>
+<tr>
+<td>slideShowEnabledOnBattery</td>
+<td></td>
+<td>Not used.</td>
+</tr>
+<tr>
+<td>slideshowOptimizePhotoSelection</td>
+<td></td>
+<td>Not used.</td>
+</tr>
+<tr>
+<td>slideShowIncludeCameraRoll</td>
+<td></td>
+<td>Not used.</td>
+</tr>
+<tr>
+<td>slideShowDuration</td>
+<td></td>
+<td>Not used.</td>
+</tr>
+<tr>
+<td>syncRootRelativePaths</td>
+<td></td>
+<td>Not used.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lunar-calendar">Lunar calendar</h2>
+<p>Settings related to the lunar Calendar in the task bar.</p>
+<h3 id="type-windowsdatalunarcalendar-structure">Type: Windows.Data.LunarCalendar structure</h3>
+<h4 id="lunarcalendar-properties">LunarCalendar Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>languageType</td>
+<td><strong>LunarCalendarLanguageType</strong></td>
+<td>A member of the <strong>LunarCalendarLanguageType</strong> enumeration. The default value is <strong>Default</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatalunarcalendarperdevice-structure">Type: Windows.Data.LunarCalendarPerDevice structure</h3>
+<p>This type inherits from <strong>LunarCalendar</strong>. The scope of this type is per device.</p>
+<h3 id="type-windowsdatalunarcalendarlanguagetype-enumeration">Type: Windows.Data.LunarCalendarLanguageType enumeration</h3>
+<h3 id="lunarcalendarlanguagetype-values">LunarCalendarLanguageType Values</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default</td>
+<td>0</td>
+<td>The default lunar calendar configuration.</td>
+</tr>
+<tr>
+<td>None</td>
+<td>1</td>
+<td>No lunar calendar.</td>
+</tr>
+<tr>
+<td>SimplifiedChinese</td>
+<td>2</td>
+<td>The Simplified Chinese lunar calendar.</td>
+</tr>
+<tr>
+<td>TraditionalChinese</td>
+<td>3</td>
+<td>The Traditional Chinese calendar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiple-displays">Multiple displays</h2>
+<p>Settings related to multiple displays.</p>
+<h3 id="type-windowsdatasettingsdisplaysettingsmultipledisplays-structure">Type: Windows.Data.Settings.DisplaySettings.MultipleDisplays structure</h3>
+<p>The scope of this type is per device.</p>
+<h4 id="multipledisplays-properties">MultipleDisplays Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rememberWindowLocationsPerMonitorConnection</td>
+<td>nullable&lt;bool&gt;</td>
+<td>Enables remember window locations per monitor connection</td>
+</tr>
+<tr>
+<td>minimizeWindowsOnMonitorDisconnect</td>
+<td>nullable&lt;bool&gt;</td>
+<td>Enables minimize windows on monitor disconnect.</td>
+</tr>
+<tr>
+<td>easeCursorMovementBetweenDisplays</td>
+<td>nullable&lt;bool&gt;</td>
+<td>Enables minimize windows on monitor disconnect.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nightlight">Nightlight</h2>
+<p>Settings related to changing screen lighting or set brightness for certain hours.</p>
+<h3 id="type-windowsdatabluelightreductionscheduletime-structure">Type: Windows.Data.BlueLightReduction.ScheduleTime structure</h3>
+<p>The scope of this type is per device.</p>
+<h4 id="scheduletime-properties">ScheduleTime Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hour</td>
+<td>int8</td>
+<td>Hours.</td>
+</tr>
+<tr>
+<td>minute</td>
+<td>int8</td>
+<td>Minutes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatabluelightreductionsettings-structure">Type: Windows.Data.BlueLightReduction.Settings structure</h3>
+<h4 id="bluelightreductionsettings-properties">BlueLightReduction.Settings Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>automaticOnSchedule</td>
+<td>bool</td>
+<td>Specifies whether blue light reduction is automatically turned on or off based on a schedule.</td>
+</tr>
+<tr>
+<td>automaticOnSunset</td>
+<td>bool</td>
+<td>Specifies if blue light reduction schedule is automatically set based on sunrise and sunset.</td>
+</tr>
+<tr>
+<td>manualScheduleBlueLightReductionOnTime</td>
+<td><strong>ScheduleTime</strong></td>
+<td>The start time of blue light reduction for a user manually setting their schedule.</td>
+</tr>
+<tr>
+<td>manualScheduleBlueLightReductionOffTime</td>
+<td><strong>ScheduleTime</strong></td>
+<td>The end time of blue light reduction for a user manually setting their schedule.</td>
+</tr>
+<tr>
+<td>targetColorTemperature</td>
+<td><strong>int16</strong></td>
+<td>The target color temperature (in Kelvin) for blue light reduction.</td>
+</tr>
+<tr>
+<td>sunsetTime</td>
+<td><strong>ScheduleTime</strong></td>
+<td>The scheduled sunset time for blue light reduction.</td>
+</tr>
+<tr>
+<td>sunriseTime</td>
+<td><strong>ScheduleTime</strong></td>
+<td>he scheduled sunrise time for blue light reduction.</td>
+</tr>
+<tr>
+<td>previewColorTemperatureChanges</td>
+<td>bool</td>
+<td>Specifies whether blue light reduction color temperature changes should be previewed.</td>
+</tr>
+<tr>
+<td>darkMode</td>
+<td>bool</td>
+<td>Specifies whether app mode should change when blue light reduction is turned on or off</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatabluelightreductionactivestate-enumeration">Type: Windows.Data.BlueLightReduction.ActiveState enumeration</h3>
+<h4 id="activestate-values">ActiveState values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BlueLightReductionOn</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>BlueLightReductionOff</td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatabluelightreductionchangesource-enumeration">Type: Windows.Data.BlueLightReduction.ChangeSource enumeration</h3>
+<h4 id="changesource-values">ChangeSource values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Schedule</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>User</td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatabluelightreductionbluelightreductionstate-structure">Type: Windows.Data.BlueLightReduction.BlueLightReductionState structure</h3>
+<h4 id="bluelightreductionstate-properties">BlueLightReductionState Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>state</td>
+<td><strong>ActiveState</strong></td>
+<td>The current state of blue light reduction.</td>
+</tr>
+<tr>
+<td>source</td>
+<td><strong>ChangeSource</strong></td>
+<td>Where the change came from, user change or scheduled change.</td>
+</tr>
+<tr>
+<td>timestampUTC</td>
+<td>int64</td>
+<td>The time the change in active state was applied.</td>
+</tr>
+<tr>
+<td>isSupported</td>
+<td>bool</td>
+<td>Whether or not current configuration supports blue light reduction.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="nlmsignature">NlmSignature</h2>
+<p>Settings related to Nlm signatures. Each network is uniquely identified with a network signature based on the uniquely identifiable properties of that network.</p>
+<h3 id="type-windowsdatanlmnlmsignature-structure">Type: Windows.Data.Nlm.NlmSignature structure</h3>
+<p>This type is multi-instance and must be retrieved using the following collection names:</p>
+<ul>
+<li>&quot;wificloudstore3&quot;</li>
+<li>&quot;wifi3_wpa3&quot;</li>
+<li>&quot;wifi3_owe&quot;</li>
+</ul>
+<p>The following is an example command line for retrieving this type:</p>
+<p><code>readCloudDataSettings.exe enum -type:windows.data.nlm.nlmsignature -collection:wificloudstore3</code></p>
+<p>For more information on retrieving multi-instance settings, see <a href="readclouddatasettings-exe.html">Cloud Data Store Settings Reader Tool</a>.</p>
+<h4 id="nlmsignature-properties">NlmSignature Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category</td>
+<td>uint64</td>
+<td>Category of signature.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pen-and-windows-ink">Pen and Windows Ink</h2>
+<p>Settings related to pen and Windows Ink.</p>
+<h3 id="type-windowsdatainputdevicespenperdevice-structure">Type: Windows.Data.Input.Devices.PenPerDevice structure</h3>
+<h4 id="penperdevice-properties">PenPerDevice Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>singleClickOverride</td>
+<td>uint64</td>
+<td>Any integer value 0 - 13. Value corresponds to options available for Single Click setting dropdown.</td>
+</tr>
+<tr>
+<td>singleClickPenWorkspaceVerb</td>
+<td>uint64</td>
+<td>Any integer value 0-3. Value corresponds to options available for Single Click setting dropdown.</td>
+</tr>
+<tr>
+<td>doubleClickOverride</td>
+<td>uint64</td>
+<td>Any integer value 0 - 13. Value corresponds to options available for Double Click setting dropdown.</td>
+</tr>
+<tr>
+<td>doubleClickPenWorkspaceVerb</td>
+<td>uint64</td>
+<td>Any integer value 0-3. Value corresponds to options available for Double Click setting dropdown.</td>
+</tr>
+<tr>
+<td>longPressOverride</td>
+<td>uint64</td>
+<td>Any integer value 0 - 13. Value corresponds to options available for long press setting dropdown.</td>
+</tr>
+<tr>
+<td>longPressPenWorkspaceVerb</td>
+<td>uint64</td>
+<td>Any integer value 0-3. Value corresponds to options available for Long Press setting dropdown.</td>
+</tr>
+<tr>
+<td>penWorkspaceAppLaunchOnPenDetachEnabled</td>
+<td>bool</td>
+<td>Specifies whether the pen menu is shown after pen is removed from storage.</td>
+</tr>
+<tr>
+<td>penEnablePenButtonOverride</td>
+<td>bool</td>
+<td>Specifies whether apps are allowed to override the shortcut button behavior.</td>
+</tr>
+<tr>
+<td>singleClickCustomAppPath</td>
+<td>wstring</td>
+<td>Specifies the path to the app opened on single-click.</td>
+</tr>
+<tr>
+<td>doubleClickCustomAppPath</td>
+<td>wstring</td>
+<td>Specifies the path to the app opened on double-click.</td>
+</tr>
+<tr>
+<td>longPressCustomAppPath</td>
+<td>wstring</td>
+<td>Specifies the path to the app opened on long-press.</td>
+</tr>
+<tr>
+<td>singleClickCustomAppID</td>
+<td>wstring</td>
+<td>Specifies the app ID app opened on single-click.</td>
+</tr>
+<tr>
+<td>doubleClickCustomAppID</td>
+<td>wstring</td>
+<td>Specifies the app ID app opened on double-click.</td>
+</tr>
+<tr>
+<td>longPressCustomAppID</td>
+<td>wstring</td>
+<td>Specifies the app ID app opened on long-press.</td>
+</tr>
+</tbody>
+</table>
+<p>Supported  override and verb values:</p>
+<table>
+<thead>
+<tr>
+<th>Dropdown Option Selected</th>
+<th>Override</th>
+<th>PenWorkspaceVerb</th>
+<th>Override (Win10)</th>
+<th>PenWorkspaceVerb (Win10)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nothing</td>
+<td>1</td>
+<td>0/1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Screen Snipping</td>
+<td>8</td>
+<td>0/1</td>
+<td>8</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Pen Menu</td>
+<td>5</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Whiteboard</td>
+<td>9</td>
+<td>0</td>
+<td>5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>One Note</td>
+<td>6</td>
+<td>0/1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>One Note Quick Notes</td>
+<td>13</td>
+<td>0/1</td>
+<td>NA</td>
+<td>NA</td>
+</tr>
+<tr>
+<td>Sticky Notes</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Snip &amp; Sketch</td>
+<td>NA</td>
+<td>NA</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Open Program</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Open App</td>
+<td>2</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---colors">Personalization - colors</h2>
+<p>Settings related to system colors.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionthemespersonalize">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AppsUseLightTheme</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Signifies light/dark color mode for an app.</td>
+</tr>
+<tr>
+<td>SystemUsesLightTheme</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Signifies light/dark color mode for Windows.</td>
+</tr>
+<tr>
+<td>EnableTransparency</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Signifies the transparency effect on windows and surfaces.</td>
+</tr>
+<tr>
+<td>ColorPrevalance</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Signifies the toggle state for &quot;Show Accent Color on Start and Taskbar&quot;.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registry-values-under-hkcucontrol-paneldesktop">Registry values under HKCU\Control Panel\Desktop</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoColorization</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>signifies auto-apply accent color based on background or manually.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowsdwm">Registry values under HKCU\Software\Microsoft\Windows\DWM</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ColorPrevalence</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Signifies toggle state for &quot;show Accent color in title bar and windows borders&quot;.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---start---folders">Personalization - Start - Folders</h2>
+<p>Specifies the folders that are shown at the bottom of the Start menu.</p>
+<h3 id="registry-values-under-hkey_current_usersoftwaremicrosoftwindowscurrentversionstart">Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VisiblePlaces</td>
+<td>REG_BINARY</td>
+<td>A vector of GUIDs.</td>
+<td>A list of GUIDs indicating the folders that are shown at the bottom of Start.</td>
+</tr>
+</tbody>
+</table>
+<p>The folder GUIDs that are supported for <em>Start_Layout</em> are:</p>
+<ul>
+<li>Documents: {2D34D5CE-FA5A-4543-82F2-22E6EAF7773C}</li>
+<li>Downloads: {E367B32F-89DE-4355-BFCE-61F37B18A937}</li>
+<li>Music: {B00B0620-7F51-4C32-AA1E-34CC547F7315}</li>
+<li>Pictures: {383F07A0-E80A-4C80-B05A-86DB845DBC4D}</li>
+<li>Videos: {42B3A5C5-7D86-42F4-80A4-93FACA7A88B5}</li>
+<li>Network: {FE758144-080D-42AE-8BDA-34ED97B66394}</li>
+<li>UserProfile: {74BDB04A-F94A-4F68-8BD6-4398071DA8BC}</li>
+<li>Explorer: {148A24BC-D60C-4289-A080-6ED9BBA24882}</li>
+<li>Settings: {52730886-51AA-4243-9F7B-2776584659D4}</li>
+</ul>
+<h2 id="personalization---start---layout">Personalization - Start - Layout</h2>
+<p>Specifies the start layout.</p>
+<h3 id="registry-values-for-layout-under-hkey_current_usersoftwaremicrosoftwindowscurrentversionstart">Registry values for layout under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Config</td>
+<td>REG_BINARY</td>
+<td>A JSON file.</td>
+<td>The contents of the Pinned Layout in JSON.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---start---show-recent-apps">Personalization - Start - Show recent apps</h2>
+<p>Specifies whether apps that were recently installed in Start in various surfaces are shown on Start.</p>
+<h3 id="registry-values-for-recent-apps-under-hkey_current_usersoftwaremicrosoftwindowscurrentversionstart">Registry values for recent apps under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ShowRecentList</td>
+<td>REG_BOOL</td>
+<td>0 or 1</td>
+<td>Specifies whether apps that were recently installed in Start in various surfaces are shown on Start.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---start---show-recommended-apps">Personalization - Start - Show recommended apps</h2>
+<p>Specifies whether recommended files in Start, recent files in File Explorer, and items in Jump Lists are shown.</p>
+<h3 id="registry-values-under-hkey_current_usersoftwaremicrosoftwindowscurrentversionexploreradvanced">Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start_TrackDocs</td>
+<td>REG_BOOL</td>
+<td>0 or 1</td>
+<td>Specifies whether recommended files in Start, recent files in File Explorer, and items in Jump Lists are shown.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---badges">Personalization - Taskbar - Badges</h2>
+<p>This setting enables badges for apps on the taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedtaskbarbadges">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarBadges</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_Taskbar_Badging</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables badges for apps on the taskbar.</td>
+</tr>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Badging</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables badges for apps on the taskbar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---combine-buttons-mult-monitor">Personalization - Taskbar - Combine buttons, mult-monitor</h2>
+<p>This setting enables combining buttons and hiding labels on the taskbar on multiple monitors.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedmmtaskbarglomlevel">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\MMTaskbarGlomLevel</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_GroupingMode</td>
+<td>REG_SZ</td>
+<td>0, 1, or 2</td>
+<td>0: Always, 1: When taskbar is full, 2: Never.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---multi-monitor">Personalization - Taskbar - Multi-monitor</h2>
+<p>Enables showing the taskbar on multiple displays.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedmmtaskbarenabled">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\MMTaskbarEnabled</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_Taskbar_MultiMon</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables showing the taskbar on multiple displays.</td>
+</tr>
+<tr>
+<td>SystemSettings_DesktopTaskbar_MultiMon</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables showing the taskbar on multiple displays.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---multi-monitor-taskbar-mode">Personalization - Taskbar - Multi-monitor taskbar mode</h2>
+<p>Specifies the behavior of the taskbar when displayed on multiple monitors.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedmmtaskbarmode">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\MMTaskbarMode</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_Taskbar_MultiMonTaskbarMode</td>
+<td>REG_SZ</td>
+<td>0, 1, or 2</td>
+<td>0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on.</td>
+</tr>
+<tr>
+<td>SystemSettings_DesktopTaskbar_MultiMonTaskbarMode</td>
+<td>REG_SZ</td>
+<td>0  1</td>
+<td>0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---pinned-apps-from-other-devices">Personalization - Taskbar - Pinned apps from other devices</h2>
+<p>Specifies the set of apps pinned to the taskbar from another device.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexplorertaskbandfavoritesmigration">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Taskband\FavoritesMigration</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FavoritesMigration</td>
+<td>REG_BLOB</td>
+<td>A binary blob.</td>
+<td>This is an opaque binary blob copied from the following location on the backed up.</td>
+</tr>
+<tr>
+<td>Favorites</td>
+<td>REG_SZ</td>
+<td>0  1</td>
+<td>The format of this key is undocumented.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="secondary-accounts">Secondary accounts</h2>
+<p>Provides information about Microsoft accounts (MSA) and work or school accounts added to the device to sign in to apps or online services, in addition to the account used to log on to the device. On Windows 11, backup and restore of this setting is supported. On Windows 10, backup is supported but restore is not.</p>
+<h3 id="type-windowsdataaccountaccounttype-enumeration">Type: Windows.Data.Account.AccountType enumeration</h3>
+<h4 id="accounttype-values">AccountType values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MSA</td>
+<td>0</td>
+<td>Microsoft account.</td>
+</tr>
+<tr>
+<td>AAD</td>
+<td>1</td>
+<td>Azure Active Directory account,</td>
+</tr>
+<tr>
+<td>Others</td>
+<td>2</td>
+<td>Oher account.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataaccountaccountinfo-structure">Type: Windows.Data.Account.AccountInfo structure</h3>
+<h4 id="accountinfo-properties">AccountInfo Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accountName</td>
+<td>wstring</td>
+<td>The user name of the account such as &quot;<a href="mailto:example@outlook.com">example@outlook.com</a>&quot;.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td>wstring</td>
+<td>The unique identifier of the account.</td>
+</tr>
+<tr>
+<td>accountType</td>
+<td><strong>AccountType</strong></td>
+<td>The type of the account.</td>
+</tr>
+<tr>
+<td>country</td>
+<td>wstring</td>
+<td>The code of the country or region in which a MSA is registered.</td>
+</tr>
+<tr>
+<td>safeCustomerId</td>
+<td>wstring</td>
+<td>An alternative identifier for an MSA.</td>
+</tr>
+<tr>
+<td>ageGroup</td>
+<td>wstring</td>
+<td>Age group of an MSA, based on the registered birth date of the MSA user. Current values are 0 = unknown, 1 = child, 2 = teen, 3 = adult.</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>wstring</td>
+<td>Represents the &quot;Sign in options&quot; setting state.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdataaccountsecondaryaccounts-structure">Type: Windows.Data.Account.SecondaryAccounts structure</h3>
+<h4 id="secondaryaccounts-properties">SecondaryAccounts Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accountDetails</td>
+<td>vector&lt;AccountInfo&gt;</td>
+<td>A vector of <strong>AccountInfo</strong> objects representing secondary accounts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="spelling-dictionary">Spelling dictionary</h2>
+<p>The user's custom spelling dictionary is stored in a file in the following file path:</p>
+<p><code>%userprofile%\AppData\Roaming\Microsoft\Spelling\neutral\default.dic</code></p>
+<h2 id="usb">USB</h2>
+<p>This setting controls toggles such as connection notifications, battery saver and other notifications related to charging of PC.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftshellusb">Registry values under HKCU\Software\Microsoft\Shell\USB</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NotifyOnUsbErrors</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Enables notifications for USB errors.</td>
+</tr>
+<tr>
+<td>NotifyOnWeakCharger</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Enables notifications for weak charger detected.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-backup---remember-my-preferences">Windows Backup - Remember my preferences</h2>
+<p>Helps user to synchronize the settings and Data on multiple machines.</p>
+<h3 id="type-windowsdatawindowsbackuppreferencecloudstorepolicyenum-enumeration">Type: Windows.Data.WindowsBackup.Preference.CloudStorePolicyEnum enumeration</h3>
+<h4 id="cloudstorepolicyenum-values">CloudStorePolicyEnum values</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SyncEnabled</td>
+<td>0</td>
+<td>Sync enabled.</td>
+</tr>
+<tr>
+<td>SyncDisabledByUser</td>
+<td>1</td>
+<td>Sync disabled by user.</td>
+</tr>
+<tr>
+<td>SyncDisabledByGroupPolicy</td>
+<td>2</td>
+<td>Sync disabled by group policy.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="toggles-properties">Toggles properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>toggleState</td>
+<td>map&lt;wstring, <strong>CloudStorePolicyEnum</strong>&gt;</td>
+<td>The user preference in terms of mapping of sync policy and CloudStorePolicy option. Allowed values for sync policy names are listed below.</td>
+</tr>
+</tbody>
+</table>
+<p>Valid sync policy names:</p>
+<ul>
+<li>Microsoft</li>
+<li>MicrosoftDevice</li>
+<li>MicrosoftUserProfile</li>
+<li>Microsoft.Accessibility</li>
+<li>MicrosoftDevice.Accessibility</li>
+<li>MicrosoftUserProfile.Accessibility</li>
+<li>Microsoft.Credentials</li>
+<li>MicrosoftDevice.Credentials</li>
+<li>MicrosoftUserProfile.Credentials</li>
+<li>Microsoft.Personalization</li>
+<li>MicrosoftDevice.Personalization</li>
+<li>MicrosoftUserProfile.Personalization</li>
+<li>Microsoft.Language</li>
+<li>MicrosoftDevice.Language</li>
+<li>MicrosoftUserProfile.Language</li>
+<li>Microsoft.Default</li>
+<li>MicrosoftDevice.Default</li>
+<li>MicrosoftUserProfile.Default</li>
+<li>Microsoft.Ink</li>
+<li>MicrosoftDevice.Ink</li>
+<li>MicrosoftUserProfile.Ink</li>
+</ul>
+<h2 id="windows-update">Windows Update</h2>
+<p>Settings related to Windows Update.</p>
+<h3 id="registry-values-under-hkey_local_machinesoftwaremicrosoftwindowsupdateuxsettings">Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IsContinuousInnovationOptedIn</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Enables devices to get the latest updates as soon as they're released.</td>
+</tr>
+<tr>
+<td>AllowMUUpdateService</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Allows users to get other Microsoft products alongside with Windows Updates.</td>
+</tr>
+<tr>
+<td>IsExpedited</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>User selects this to invoke device restart 15 min after all updates finished installing.</td>
+</tr>
+<tr>
+<td>RestartNotificationsAllowed2</td>
+<td>REG_DWORD</td>
+<td>0/1</td>
+<td>Users decides if they want to be notified about the updates pending restart.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/settings/settings-common.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

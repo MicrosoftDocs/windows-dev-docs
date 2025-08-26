@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create icons using Visual Studio&#39;s asset generation tool </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create icons using Visual Studio&#39;s asset generation tool ">
+    
+    <meta name="description" content="Use the Visual Studio asset generation tool to create a variety of icon files from just one image.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-icons-using-visual-studios-asset-generation-tool">Create icons using Visual Studio's asset generation tool</h1>
+
+<p>While handcrafting each icon file will create the best, most consistent user experience, teams running short on resources can take advantage of Visual Studio's Manifest Designer. This tool can create an entire set of app icons and tile images from a single image. This is useful to create an initial set of icons, but will not achieve the same result as handcrafting each icon file, as Visual Studio will have to scale your image to create the required image sizes.</p>
+<h2 id="launching-the-manifest-designer">Launching the Manifest Designer</h2>
+<section class="row">
+<div class="column">
+<ol>
+<li>Use Visual Studio to open a WinUI or UWP project.</li>
+<li>In the <strong>Solution Explorer</strong>, double-click the Package.appxmanifest file.</li>
+</ol>
+</div>
+<div class="column">
+<p><span class="mx-imgBorder">
+<img src="images/package-appmanifest.png" alt="A diagram that shows a view of solution explorer highlighting the Package.appxmanifest file.">
+</span>
+</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<ol start="3">
+<li>Visual Studio displays the Manifest Designer.</li>
+</ol>
+</div>
+<div class="column">
+<p><span class="mx-imgBorder">
+<a href="images/manifest-properties.png#lightbox" data-linktype="relative-path">
+<img src="images/manifest-properties.png" alt="A diagram that shows a view of the properties panel for a Package.appxmanifest file.">
+</a>
+</span>
+</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<ol start="4">
+<li>Click the <strong>Visual Assets</strong> tab.</li>
+</ol>
+</div>
+<div class="column">
+<p><span class="mx-imgBorder">
+<a href="images/visual-assets-panel.png#lightbox" data-linktype="relative-path">
+<img src="images/visual-assets-panel.png" alt="A diagram that shows a view of the visual assets panel.">
+</a>
+</span>
+</p>
+</div>
+</section>
+<h2 id="generating-icons-with-the-manifest-designer">Generating icons with the Manifest Designer</h2>
+<ol>
+<li><p>Click the <code>...</code> next to the Source field and select the image you want to use. For best results, use a vector-based image, Adobe Illustrator file, or PDF. If you're using a bitmap image, make sure it's at least 400 by 400 pixels so that you get sharp results.</p>
+</li>
+<li><p>In the Display Settings section, configure these options:</p>
+<ul>
+<li><strong>Short name</strong>: Specify a short name for your app.</li>
+<li><strong>Show name</strong>: Indicate whether you want to display the short name on medium, wide, or large tiles.</li>
+<li><strong>Tile background</strong>: Specify the hex value or a color name for the tile background color. For example, #464646. The default value is transparent. <strong>NOTE:</strong> This setting will be ignored on versions of Windows that support theme-aware Live Tiles.</li>
+<li><strong>Splash screen background</strong> (Optional): Specify the hex value or color name for the splash screen background.</li>
+</ul>
+</li>
+<li><p>Click <strong>Generate</strong>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Visual Studio's Manifest Designer doesn't generate a badge logo by default. That's because your badge logo is unique and probably shouldn't match your other app icons. For more info, see <a href="/windows/uwp/design/shell/tiles-and-notifications/badges">Badge notifications for Windows apps</a>.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/iconography/visual-studio-asset-generation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

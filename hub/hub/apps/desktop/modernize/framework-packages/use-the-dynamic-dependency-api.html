@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use the dynamic dependency API to reference MSIX packages at run time </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use the dynamic dependency API to reference MSIX packages at run time ">
+    
+    <meta name="description" content="Describes how to use the *dynamic dependency API* to dynamically take a dependency on different MSIX packages (other than the Windows App SDK framework package) in an unpackaged app at run time.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-the-dynamic-dependency-api-to-reference-msix-packages-at-run-time">Use the dynamic dependency API to reference MSIX packages at run time</h1>
+
+<h2 id="the-two-implementations">The two implementations</h2>
+<p>There are two implementations of the <em>dynamic dependency API</em> that you can choose from, depending on your target platform and scenario:</p>
+<ul>
+<li><strong>The Windows App SDK's dynamic dependency API</strong>. The Windows App SDK provides C and C++ functions (in <a href="/windows/windows-app-sdk/api/win32/msixdynamicdependency">msixdynamicdependency.h</a>), and Windows Runtime (WinRT) types (in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency"><strong>Microsoft.Windows.ApplicationModel.DynamicDependency</strong></a> namespace) that implement the dynamic dependency API. You can use this implementation of the API on any version of Windows that supports the <a href="/windows/apps/windows-app-sdk/">Windows App SDK</a>.</li>
+<li><strong>Windows 11's dynamic dependency API</strong>. Windows 11 also provides C and C++ functions that implement the dynamic dependency API (in <a href="/windows/win32/api/appmodel">appmodel.h</a>). This implementation of the API can be used only by apps that target Windows 11, version 22H2 (10.0; Build 22621), and later.</li>
+</ul>
+<p>Also see <a href="#differences-between-the-two-implementations">Differences between the two implementations</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>As you'll see in this topic, the Windows App SDK (C/C++) APIs have the same names as the Windows 11 (C/C++) APIs with an additional <strong>Mdd</strong> prefix. <strong>Mdd</strong> stands for <em>Microsoft Dynamic Dependencies</em>.</p>
+</div>
+<p>And there are different kinds of MSIX packages, including <em>framework</em>, <em>resource</em>, <em>optional</em>, and <em>main</em> packages. The dynamic dependency API enables unpackaged apps to reference and to use <em>framework</em> packages such as <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> and the DirectX Runtime. For more info about framework package dependencies, see <a href="framework-packages-overview.html">MSIX framework packages and dynamic dependencies</a>.</p>
+<p>Specifically, the dynamic dependency API provides ways to manage the <em>install-time references</em> and <em>run-time references</em> for MSIX packages. For more info, see <a href="framework-packages-overview.html#servicing-model-for-framework-packages">Servicing model for framework packages</a>.</p>
+<h2 id="use-the-dynamic-dependency-api">Use the dynamic dependency API</h2>
+<p>To use the dynamic dependency API in your unpackaged app to take a dependency on an MSIX package, follow this general pattern in your code:</p>
+<h3 id="1-create-an-install-time-reference">1. Create an install-time reference</h3>
+<p>In your app's installer, or during the first run of your app, call one of the following functions or methods to specify a set of criteria for the MSIX package that you want to use. This informs the operating system (OS) that your app has a dependency on an MSIX package that meets the specified criteria. If one or more MSIX packages are installed that meet the criteria, then Windows ensures that at least one of them remains installed until the install-time reference is deleted.</p>
+<ul>
+<li>Windows 11 (C/C++): <a href="/windows/win32/api/appmodel/nf-appmodel-trycreatepackagedependency">TryCreatePackageDependency</a></li>
+<li>Windows App SDK (C/C++): <a href="/windows/windows-app-sdk/api/win32/msixdynamicdependency/nf-msixdynamicdependency-mddtrycreatepackagedependency">MddTryCreatePackageDependency</a></li>
+<li>Windows App SDK (WinRT): <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency.packagedependency.create">PackageDependency.Create</a></li>
+</ul>
+<p>The criteria you specify include the package family name, minimum version, and architectures; but you can't indicate a specific MSIX package. When you add a run-time reference to the MSIX package, the API chooses the highest version that satisfies the specified criteria.</p>
+<p>You must also specify a <em>lifetime artifact</em>, which can be the current process, a file, or a Windows Registry key that indicates to the system that the app is still available. If the specified artifact no longer exists, then the OS can assume that the dependency is no longer needed, and it can uninstall the MSIX package if no other apps have declared a dependency on it. That feature is useful for scenarios where an app neglects to remove the install-time pin when it is uninstalled.</p>
+<p>This API returns a dependency ID that must be used in other calls to create run-time references, and to delete the install-time reference.</p>
+<h3 id="2-add-a-run-time-reference">2. Add a run-time reference</h3>
+<p>When your app needs to use the MSIX package, call one of the following functions or methods to request access to the specified MSIX package, and add a run-time reference for it. Calling this API informs the OS that the MSIX package is in active use, and to handle any version updates in a side-by-side manner (effectively delay-uninstalling or otherwise servicing the older version until after the app is done using it). If successful, the app might activate classes and use content from the MSIX package.</p>
+<ul>
+<li>Windows 11 (C/C++): <a href="/windows/win32/api/appmodel/nf-appmodel-addpackagedependency">AddPackageDependency</a></li>
+<li>Windows App SDK (C/C++): <a href="/windows/windows-app-sdk/api/win32/msixdynamicdependency/nf-msixdynamicdependency-mddaddpackagedependency">MddAddPackageDependency</a></li>
+<li>Windows App SDK (WinRT): <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency.packagedependency.add">PackageDependency.Add</a></li>
+</ul>
+<p>When you call this API, you must pass in the dependency ID that was returned when you created the install-time reference, and the desired rank to use for the MSIX package in the process's package graph. This API returns the full name of the MSIX package that was referenced, and a handle that is used to keep track of the active-use dependency. If there are multiple MSIX packages installed that meet the criteria that you specified when you created the install-time reference, then the API chooses the highest version that satisfies the criteria.</p>
+<h3 id="3-remove-the-run-time-reference">3. Remove the run-time reference</h3>
+<p>When your app is done using the MSIX package, call one of the following functions or methods to remove the run-time reference. Typically, your app will call this API during shutdown. This API informs the OS that it is safe to remove any unnecessary versions of the MSIX package.</p>
+<ul>
+<li>Windows 11 (C/C++): <a href="/windows/win32/api/appmodel/nf-appmodel-removepackagedependency">RemovePackageDependency</a></li>
+<li>Windows App SDK (C/C++): <a href="/windows/windows-app-sdk/api/win32/msixdynamicdependency/nf-msixdynamicdependency-mddremovepackagedependency">MddRemovePackageDependency</a></li>
+<li>Windows App SDK (WinRT): <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency.packagedependencycontext.remove">PackageDependencyContext.Remove</a></li>
+</ul>
+<p>When you call this API, you must pass in the handle that was returned when you added the run-time reference.</p>
+<h3 id="4-delete-the-install-time-reference">4. Delete the install-time reference</h3>
+<p>When your app is uninstalled, call one of the following functions or methods to delete the install-time reference. This API informs the OS that it is safe to remove the MSIX package if no other apps have a dependency on it.</p>
+<ul>
+<li>Windows 11 (C/C++): <a href="/windows/win32/api/appmodel/nf-appmodel-deletepackagedependency">DeletePackageDependency</a></li>
+<li>Windows App SDK (C/C++): <a href="/windows/windows-app-sdk/api/win32/msixdynamicdependency/nf-msixdynamicdependency-mdddeletepackagedependency">MddDeletePackageDependency</a></li>
+<li>Windows App SDK (WinRT): <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency.packagedependency.delete">PackageDependency.Delete</a></li>
+</ul>
+<p>When you call this API, you must pass in the dependency ID that was returned when you created the install-time reference.</p>
+<h2 id="differences-between-the-two-implementations">Differences between the two implementations</h2>
+<h3 id="the-need-for-a-lifetime-manager-windows-app-sdk-limitation">The need for a lifetime manager (Windows App SDK limitation)</h3>
+<p>When you use the Windows App SDK's dynamic dependency API to take a dependency on an MSIX package, the API requires help via another installed package and running process to inform Windows that the MSIX package is in use, and to block servicing the framework while it is being used. That component is called a <em>lifetime manager</em>.</p>
+<p>For its framework package, the Windows App SDK provides a lifetime manager component called the <a href="../../../windows-app-sdk/deployment-architecture.html">Dynamic Dependency Lifetime Manager (DDLM)</a>. However, no other framework packages currently provide a similar lifetime manager component from Microsoft.</p>
+<p>Windows 11's dynamic dependency API doesn't have this limitation.</p>
+<h3 id="reference-and-use-a-main-package-windows-app-sdk-limitation">Reference and use a main package (Windows App SDK limitation)</h3>
+<p>A dynamic dependency can always target a <em>framework</em> package. But only Windows 11's dynamic dependency API can reference and use <em>main</em> packages as well.</p>
+<p>The main package must have correctly configured its app package manifest source file (the <code>Package.appxmanifest</code> file in Visual Studio). Specifically, the main package (the target, not the caller) needs to set <code>&lt;uap15:DependencyTarget&gt;true&lt;/&gt;</code> (see <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap15-dependencytarget">uap15:DependencyTarget</a>). So the purpose of <code>&lt;uap15::DependencyTarget&gt;</code> is to enable a dynamic dependency to target a <em>main</em> package. In other words, the main package has to opt in to allow itself to be used as a dynamic dependency (whereas framework packages always implicitly allow that).</p>
+<h3 id="reference-the-windows-app-sdk-framework-package-windows-app-sdk-limitation">Reference the Windows App SDK framework package (Windows App SDK limitation)</h3>
+<p>In an unpackaged app, you can't use the Windows App SDK's dynamic dependency API to reference the <a href="../../../windows-app-sdk/deployment-architecture.html#framework-package">Windows App SDK framework package</a> (like you <em>can</em> reference other MSIX packages with it). Instead, you need to use the <a href="/windows/windows-app-sdk/api/win32/_bootstrap/">bootstrapper API</a> provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that's designed to take dependencies on the Windows App SDK framework package. For more info, see <a href="../../../windows-app-sdk/use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>.</p>
+<p>Windows 11's dynamic dependency API doesn't have this limitation.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="framework-packages-overview.html">MSIX framework packages and dynamic dependencies</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md">Dynamic dependencies specification</a></li>
+<li><a href="../../../windows-app-sdk/deployment-architecture.html">Runtime architecture for the Windows App SDK</a></li>
+<li><a href="../../../windows-app-sdk/use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Preview release channel for the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Preview release channel for the Windows App SDK ">
+    
+    <meta name="description" content="Provides info about the preview release channel for the Windows App SDK.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="latest-preview-channel-release-notes-for-the-windows-app-sdk">Latest preview channel release notes for the Windows App SDK</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The preview channel is <strong>not supported</strong> for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The preview channel includes releases of the Windows App SDK with <a href="release-channels.html#features-available-by-release-channel">preview channel features</a> in late stages of development. Preview releases do not include experimental features and APIs but may still be subject to breaking changes before the next stable release.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on preview releases, see <a href="preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<h2 id="version-18-preview-18-preview">Version 1.8 Preview (1.8-preview)</h2>
+<p>This is the latest release of the preview channel for version 1.8.</p>
+<p>In an existing Windows App SDK 1.7 (from the stable channel) app, you can update your Nuget package to 1.8.0-preview (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="downloads.html">Downloads for the Windows App SDK</a>.</p>
+<h3 id="new-features">New features</h3>
+<h4 id="prompt-size-limit-reporting">Prompt Size Limit Reporting</h4>
+<p>Allows applications to determine if an input exceeds the allowable size for a Text Summarizer call. If the input is too large, the API returns an index indicating the current limit, enabling developers to adjust the input accordingly. This limit is based on token count rather than byte or character length, and it can vary over time due to multiple factors. Therefore, applications should treat the limit as dynamic and subject to change.</p>
+<h4 id="text-rewriter-tone">Text Rewriter Tone</h4>
+<p>Enables text rewriting with specific tones. The Casual option rephrases content to sound more informal and conversational, using natural, spontaneous phrasing while preserving meaning and format. The Formal option transforms text into a polished, professional version, maintaining the original structure and details with precise language suitable for formal context. The General option retains the original tone and intent, ensuring the meaning remains unchanged.</p>
+<h4 id="conversation-summary-options">Conversation Summary Options</h4>
+<p>Enables developers to specify the desired output language for conversation summarization. This allows applications to generate summaries in a targeted language, enhancing localization, and user experience.</p>
+<h4 id="other-notable-changes">Other notable changes</h4>
+<ul>
+<li>Prior to WinAppSDK 1.8, packaged apps running in the AppContainer did not require the packageManagement capability, due to a DeploymentManager auto-initialization issue.  That issue has now been resolved, and in turn, the packageManagement capability is now required for AppContainer-based apps.</li>
+</ul>
+<h3 id="new-apis">New APIs</h3>
+<p>This release includes the following new APIs compared to the stable 1.7 release:</p>
+<pre><code>Microsoft.Windows.AI.Foundation
+ 
+    AIFoundationContract
+    EmbeddingVector
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Imaging
+ 
+    ImageObjectRemover
+    ImageObjectRemoverContract
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Text
+ 
+    ConversationItem
+    ConversationSummaryOptions
+    InputKind
+    LanguageModel
+        CreateContext
+        CreateContext
+        CreateContext
+        GenerateEmbeddingVectors
+        GenerateEmbeddingVectors
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GetUsablePromptLength
+        GetUsablePromptLength
+        GetVectorSpaceId
+
+    LanguageModelEmbeddingVectorResult
+    TextRewriter
+        RewriteAsync
+ 
+    TextRewriteTone
+    TextSummarizer
+        IsPromptLargerThanContext
+        IsPromptLargerThanContext
+        SummarizeConversationAsync
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+ 
+    Task
+        Run
+</code></pre>
+<pre><code>Microsoft.Windows.Storage.Pickers
+ 
+    FileOpenPicker
+    FileSavePicker
+    FolderPicker
+    PickerLocationId
+    PickerViewMode
+    PickFileResult
+    PickFolderResult
+    StoragePickersContract
+</code></pre>
+<pre><code>Microsoft.Windows.Widgets.Feeds.Providers
+ 
+    FeedManager
+        TryRemoveAnnouncementById
+ 
+    IFeedManager3
+</code></pre>
+<h3 id="new-apis-compared-to-18-exp4">New APIs compared to 1.8-exp4</h3>
+<pre><code>Microsoft.Windows.AI.Text
+ 
+    TextSummarizer
+        IsPromptLargerThanContext
+</code></pre>
+<pre><code>Microsoft.Windows.Storage.Pickers
+ 
+    FileSavePicker
+        SuggestedFolder
+ 
+    StoragePickersContract
+</code></pre>
+<h3 id="known-issues">Known Issues</h3>
+<ul>
+<li>Standalone use of component packages (such as Microsoft.WindowsAppSDK.WinUI) will require an app-level package reference to the latest Microsoft.Windows.SDK.BuildTools.MSIX, to address an issue with some wapproj-based solutions breaking due to a &quot;WinAppSdkExpandPriContent&quot; task not found error.  Referencing the full top-level Microsoft.WindowsAppSDK package (the common scenario) does not require this.</li>
+</ul>
+<h2 id="archive-of-preview-channel-release-notes">Archive of preview channel release notes</h2>
+<details>
+<summary>Expand for links to archived preview channel release notes</summary>
+<ul>
+<li><a href="release-notes-archive/preview-channel-1-7.html">Preview channel release notes for the Windows App SDK 1.7</a></li>
+<li><a href="release-notes-archive/preview-channel-1.6.html">Preview channel release notes for the Windows App SDK 1.6</a></li>
+<li><a href="release-notes-archive/preview-channel-1.5.html">Preview channel release notes for the Windows App SDK 1.5</a></li>
+<li><a href="release-notes-archive/preview-channel-1.4.html">Preview channel release notes for the Windows App SDK 1.4</a></li>
+<li><a href="release-notes-archive/preview-channel-1.3.html">Preview channel release notes for the Windows App SDK 1.3</a></li>
+<li><a href="release-notes-archive/preview-channel-1.2.html">Preview channel release notes for the Windows App SDK 1.2</a></li>
+<li><a href="release-notes-archive/preview-channel-1.1.html">Preview channel release notes for the Windows App SDK 1.1</a></li>
+<li><a href="release-notes-archive/preview-channel-1.0.html">Preview channel release notes for the Windows App SDK 1.0</a></li>
+</ul>
+</details>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="stable-channel.html">Stable channel</a></li>
+<li><a href="experimental-channel.html">Experimental channel</a></li>
+<li><a href="set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../package-and-deploy/index.html#use-the-windows-app-sdk">Deploy apps that use the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/preview-channel.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Badge notifications for Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Badge notifications for Windows apps ">
+    
+    <meta name="description" content="Learn how to use badge notification to conveys summary or status information specific to your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="badge-notifications-for-windows-apps">Badge notifications for Windows apps</h1>
+
+<p>A notification badge conveys summary or status information specific to your app. They can be numeric (1-99) or one of a set of system-provided glyphs. Examples of information best conveyed through a badge include network connection status in an online game, user status in a messaging app, number of unread mails in a mail app, and number of new posts in a social media app.</p>
+<p>Notification badges appear on your app's taskbar icon and in the lower-right corner of its start tile, regardless of whether the app is running. Badges can be displayed on all tile sizes.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot provide your own badge image; only system-provided badge images can be used.</p>
+</div>
+<h2 id="numeric-badges">Numeric badges</h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Badge</th>
+<th>XML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A number from 1 to 99. A value of 0 is equivalent to the glyph value &quot;none&quot; and will clear the badge.</td>
+<td><img src="images/badges/badge-numeric.png" alt="A numeric badge less than 100."></td>
+<td><code>&lt;badge value=&quot;1&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>Any number greater than 99.</td>
+<td><img src="images/badges/badge-numeric-greater.png" alt="A numeric badge greater than 99."></td>
+<td><code>&lt;badge value=&quot;100&quot;/&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="glyph-badges">Glyph badges</h2>
+<p>Instead of a number, a badge can display one of a non-extensible set of status glyphs.</p>
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Glyph</th>
+<th>XML</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>(No badge shown.)</td>
+<td><code>&lt;badge value=&quot;none&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>activity</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-activity.png" alt="A glyph badge denoting the 'activity' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;activity&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>alarm</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-alarm.png" alt="A glyph badge denoting the 'alarm' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;alarm&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>alert</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-alert.png" alt="A glyph badge denoting the 'alert' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;alert&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>attention</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-attention.png" alt="A glyph badge denoting the 'attention' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;attention&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>available</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-available.png" alt="A glyph badge denoting the 'available' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;available&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>away</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-away.png" alt="A glyph badge denoting the 'away' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;away&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>busy</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-busy.png" alt="A glyph badge denoting the 'busy' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;busy&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>error</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-error.png" alt="A glyph badge denoting the 'error' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;error&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>newMessage</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-newMessage.png" alt="A glyph badge denoting the 'newMessage' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;newMessage&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>paused</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-paused.png" alt="A glyph badge denoting the 'paused' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;paused&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>playing</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-playing.png" alt="A glyph badge denoting the 'playing' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;playing&quot;/&gt;</code></td>
+</tr>
+<tr>
+<td>unavailable</td>
+<td><span class="mx-imgBorder">
+<img src="images/badges/badge-unavailable.png" alt="A glyph badge denoting the 'unavailable' status.">
+</span>
+</td>
+<td><code>&lt;badge value=&quot;unavailable&quot;/&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-a-badge">Create a badge</h2>
+<p>These examples show you how to create a badge update.</p>
+<h3 id="create-a-numeric-badge">Create a numeric badge</h3>
+<pre><code class="lang-csharp">private void setBadgeNumber(int num)
+{
+
+    // Get the blank badge XML payload for a badge number
+    XmlDocument badgeXml = 
+        BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeNumber);
+
+    // Set the value of the badge in the XML to our number
+    XmlElement badgeElement = badgeXml.SelectSingleNode(&quot;/badge&quot;) as XmlElement;
+    badgeElement.SetAttribute(&quot;value&quot;, num.ToString());
+
+    // Create the badge notification
+    BadgeNotification badge = new BadgeNotification(badgeXml);
+
+    // Create the badge updater for the application
+    BadgeUpdater badgeUpdater = 
+        BadgeUpdateManager.CreateBadgeUpdaterForApplication();
+
+    // And update the badge
+    badgeUpdater.Update(badge);
+
+}
+</code></pre>
+<h3 id="create-a-glyph-badge">Create a glyph badge</h3>
+<pre><code class="lang-csharp">private void updateBadgeGlyph()
+{
+    string badgeGlyphValue = &quot;alert&quot;;
+
+    // Get the blank badge XML payload for a badge glyph
+    XmlDocument badgeXml = 
+        BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeGlyph);
+
+    // Set the value of the badge in the XML to our glyph value
+    Windows.Data.Xml.Dom.XmlElement badgeElement = 
+        badgeXml.SelectSingleNode(&quot;/badge&quot;) as Windows.Data.Xml.Dom.XmlElement;
+    badgeElement.SetAttribute(&quot;value&quot;, badgeGlyphValue);
+
+    // Create the badge notification
+    BadgeNotification badge = new BadgeNotification(badgeXml);
+
+    // Create the badge updater for the application
+    BadgeUpdater badgeUpdater = 
+        BadgeUpdateManager.CreateBadgeUpdaterForApplication();
+
+    // And update the badge
+    badgeUpdater.Update(badge);
+
+}
+</code></pre>
+<h3 id="clear-a-badge">Clear a badge</h3>
+<pre><code class="lang-csharp">private void clearBadge()
+{
+    BadgeUpdateManager.CreateBadgeUpdaterForApplication().Clear();
+}
+</code></pre>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications">Notifications sample</a><br> Shows how to create live tiles, send badge updates, and display toast notifications.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="app-notifications/adaptive-interactive-toasts.html">Adaptive and interactive toast notifications</a></li>
+<li><a href="/windows/uwp/launch-resume/creating-tiles">Create tiles</a></li>
+<li><a href="/windows/uwp/launch-resume/create-adaptive-tiles">Create adaptive tiles</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/badges.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

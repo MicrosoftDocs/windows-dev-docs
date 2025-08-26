@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Preview release channel for the Windows App SDK 1.7 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Preview release channel for the Windows App SDK 1.7 ">
+    
+    <meta name="description" content="Provides info about the preview release channel for the Windows App SDK 1.7.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="latest-preview-channel-release-notes-for-the-windows-app-sdk-17">Latest preview channel release notes for the Windows App SDK 1.7</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The preview channel is <strong>not supported</strong> for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The preview channel includes releases of the Windows App SDK with <a href="../release-channels.html#features-available-by-release-channel">preview channel features</a> in late stages of development. Preview releases do not include experimental features and APIs but may still be subject to breaking changes before the next stable release.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on preview releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<h2 id="version-17-preview-1-17-preview1">Version 1.7 Preview 1 (1.7-preview1)</h2>
+<p>This is the latest release of the preview channel for version 1.7.</p>
+<p>In an existing Windows App SDK 1.6 (from the stable channel) app, you can update your Nuget package to 1.7.0-preview1 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Downloads for the Windows App SDK</a>.</p>
+<h3 id="new-features">New features</h3>
+<h4 id="new-badge-notifications-feature">New Badge Notifications Feature</h4>
+<p>New badge notification support allows showing a number or glyph badge on your app in the taskbar. For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/4926">#4926</a>.</p>
+<h4 id="new-cameracaptureui-api">New CameraCaptureUI API</h4>
+<p>A new CameraCaptureUI API makes it easier to capture photos and videos in your Windows App SDK app. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/4721">#4721</a>.</p>
+<h4 id="new-authentication-api">New Authentication API</h4>
+<p>A new <code>OAuth2Manager</code> API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/4772">#4772</a>.</p>
+<h4 id="new-background-task-support">New Background Task support</h4>
+<p>A new <code>BackgroundTaskBuilder</code> API enables registering background tasks for Windows App SDK apps. For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/4831">#4831</a>.</p>
+<h4 id="new-titlebar-control">New TitleBar control</h4>
+<p>A new <code>TitleBar</code> control makes it much easier to create a great, customizable titlebar for your app. Configure properties such as the titlebar icon, Title, and Subtitle, include an integrated back button, or even add a custom control like a search box! The control includes robust titlebar capabilities like empty-space draggable regions, theme responsiveness, caption buttons, and built-in accessibility support so you can focus on your personalized design and still get the same reliable titlebar as the default experience. For more info, see GitHub <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10056">#10056</a>.</p>
+<h4 id="support-for-mathml">Support for MathML</h4>
+<p><code>RichEditBox</code> now supports MathML, via <code>RichEditTextDocument.SetMathMode</code> and <code>RichEditTextDocument.SetMathML</code>. For more info, see GitHub <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/4196">#4196</a>.</p>
+<h4 id="other-notable-changes">Other notable changes</h4>
+<ul>
+<li>New <code>RuntimeCompatibilityOptions</code> support will allow more control over how servicing changes affect apps. For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/4966">#4966</a>.</li>
+<li>A new <code>ReleaseInfo</code> API provides easy access to the version of the Windows App SDK Runtime in use. For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/2893">#2893</a>.</li>
+<li>Note: Windows Copilot Runtime APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!</li>
+<li>Note: New APIs for windowing on <code>AppWindow</code> are not included in this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!</li>
+</ul>
+<h3 id="new-apis">New APIs</h3>
+<p>This release includes the following new APIs compared to the stable 1.6 release:</p>
+<pre><code>Microsoft.Security.Authentication.OAuth
+ 
+    AuthFailure
+    AuthRequestParams
+    AuthRequestResult
+    AuthResponse
+    ClientAuthentication
+    CodeChallengeMethodKind
+    OAuth2Manager
+    OAuthContract
+    TokenFailure
+    TokenFailureKind
+    TokenRequestParams
+    TokenRequestResult
+    TokenResponse
+</code></pre>
+<pre><code>Microsoft.UI.Text
+ 
+    RichEditTextDocument
+        GetMathML
+        GetMathMode
+        SetMathML
+        SetMathMode
+ 
+    TextApiContract
+</code></pre>
+<pre><code>Microsoft.UI.Xaml
+ 
+    XamlIsland
+    XamlRoot
+        ContentIsland
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls
+ 
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background
+ 
+    BackgroundTaskBuilder
+    BackgroundTaskContract
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+ 
+    Task
+    UniversalBackgroundTaskContract
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+ 
+    ReleaseInfo
+    RuntimeCompatibilityChange
+    RuntimeCompatibilityContract
+    RuntimeCompatibilityOptions
+    RuntimeInfo
+    VersionInfoContract
+    WindowsAppRuntimeVersion
+</code></pre>
+<pre><code>Microsoft.Windows.BadgeNotifications
+ 
+    BadgeNotificationGlyph
+    BadgeNotificationManager
+    BadgeNotificationsContract
+</code></pre>
+<pre><code>Microsoft.Windows.Media.Capture
+ 
+    CameraCaptureUI
+    CameraCaptureUIContract
+    CameraCaptureUIMaxPhotoResolution
+    CameraCaptureUIMaxVideoResolution
+    CameraCaptureUIMode
+    CameraCaptureUIPhotoCaptureSettings
+    CameraCaptureUIPhotoFormat
+    CameraCaptureUIVideoCaptureSettings
+    CameraCaptureUIVideoFormat
+</code></pre>
+<h3 id="bug-fixes">Bug fixes</h3>
+<p>This release includes the following bug fixes:</p>
+<ul>
+<li>Changed <code>SplitButton</code> so touch input now matches the behavior of mouse input. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/178">#178</a>.</li>
+<li>Changed cascading menus so sub menus now open immediately if clicked. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/939">#939</a>.</li>
+<li>Fixed an issue where opening a <code>ComboBox</code> which is in a flyout closes all flyouts. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/1467">#1467</a>.</li>
+<li>Fixed an issue where <code>SwipeControl</code> would randomly crash in a <code>ListView</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/2527">#2527</a>.</li>
+<li>Fixed an issue where drag-and-drop only a <code>ListViewItem</code> would leave it in the wrong visual state. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/3458">#3458</a>.</li>
+<li>Fixed an issue in <code>StackLayout</code> so that it respects the ItemsRepeater.HorizontalAlignment and ItemsRepeater.VerticalAlignment properties (when StackLayout.Orientation is Vertical and Horizontal respectively). The old layout behaved as if the ItemsRepeater alignment was Stretch. With the fix, the layout results in items aligned to the right when the Right alignment is used, for example. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/3842">#3842</a>.</li>
+<li>Fixed an issue where deleting items in the <code>ItemsRepeater</code>'s source would not generate items which moved up into view. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6661">#6661</a>.</li>
+<li>Fixed an issue where the right Alt key would not show keytips for Access Keys. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8447">#8447</a>. <strong>Note:</strong> This may result in key events for the right Alt key no longer being delivered to handles in the app or controls.</li>
+<li>Fixed a crash where <code>UniformGridLayout</code> would sometimes pick a wrong layout anchor and cause infinite layout passes when scrolling backwards. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9199">#9199</a>.</li>
+<li>Fixed an issue where setting <code>NavigationFailedEventArgs.Handled</code> to True would still throw an exception. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9632">#9632</a>.</li>
+<li>Fixed an issue where <code>TabView</code> would not apply any specified <code>CornerRadius</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9846">#9846</a>.</li>
+<li>Fixed a potential layout cycle crash in <code>StackLayout</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9852">#9852</a>.</li>
+<li>Fixed a potential crash in <code>ItemsView</code> when removing items. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9868">#9868</a>.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Stable channel</a></li>
+<li><a href="../experimental-channel.html">Experimental channel</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deploy apps that use the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1-7.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

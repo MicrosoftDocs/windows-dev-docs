@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Power management with the app lifecycle API (Windows App SDK) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Power management with the app lifecycle API (Windows App SDK) ">
+    
+    <meta name="description" content="Describes how to use power management and notification features with the app lifecycle API (Windows App SDK).">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="power-management-with-the-app-lifecycle-api">Power management with the app lifecycle API</h1>
+
+<p>The app lifecycle API in the Windows App SDK provides a set of power management APIs in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power">Microsoft.Windows.System.Power</a> namespace. These APIs provide visibility into how an app affects the device's power state, and they enable the app to make intelligent decisions about resource usage. For example, an app might use this API to postpone resource-intensive background tasks while the device is running on battery power.</p>
+<p>The power management APIs use a callback-based model similar to the existing <a href="/windows/win32/api/powersetting/nf-powersetting-powersettingregisternotification">PowerSettingRegisterNotification</a> function. Using a callback model extends the reach of the API to all apps, including background apps, headless apps, and others.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use the app lifecycle API in the Windows App SDK:</p>
+<ol>
+<li>Download and install the latest release of the Windows App SDK. For more information, see <a href="../../get-started/start-here.html">Get started with WinUI</a>.</li>
+<li>Follow the instructions to <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a> or to <a href="../use-windows-app-sdk-in-existing-project.html">use the Windows App SDK in an existing project</a>.</li>
+</ol>
+<h2 id="subscribe-and-respond-to-events">Subscribe and respond to events</h2>
+<p>The following example demonstrates how to subscribe and respond to <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager">PowerManager</a> events. This code subscribes to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager.batterystatuschanged">BatteryStatusChanged</a> event during startup. The app then responds to changes by checking the current power level and adjusting its resource usage appropriately. For example, if the battery discharges at a low power state, the app might defer any non-critical background work.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++/WinRT</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_csharp" role="tab" aria-controls="tabpanel_1_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp">
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Apps can register and unregister for these events at any time, but most apps will want to set callbacks in <code>WinMain</code> that persist as long as the app continues to run.</p>
+</div>
+<pre><code class="lang-cpp">BOOL bWorkInProgress;
+winrt::event_token batteryToken;
+winrt::event_token powerToken;
+winrt::event_token powerSourceToken;
+winrt::event_token chargeToken;
+winrt::event_token dischargeToken;
+
+void RegisterPowerManagerCallbacks()
+{
+    batteryToken = PowerManager::BatteryStatusChanged([&amp;](
+        const auto&amp;, winrt::Windows::Foundation::IInspectable obj) { OnBatteryStatusChanged(); });
+    powerToken = PowerManager::PowerSupplyStatusChanged([&amp;](
+        const auto&amp;, winrt::Windows::Foundation::IInspectable obj) { OnPowerSupplyStatusChanged(); });
+    powerSourceToken = PowerManager::PowerSourceKindChanged([&amp;](
+        const auto&amp;, winrt::Windows::Foundation::IInspectable obj) { OnPowerSourceKindChanged(); });
+    chargeToken = PowerManager::RemainingChargePercentChanged([&amp;](
+        const auto&amp;, winrt::Windows::Foundation::IInspectable obj) { OnRemainingChargePercentChanged(); });
+    dischargeToken = PowerManager::RemainingDischargeTimeChanged([&amp;](
+        const auto&amp;, winrt::Windows::Foundation::IInspectable obj) { OnRemainingDischargeTimeChanged(); });
+
+    if (batteryToken &amp;&amp; powerToken &amp;&amp; powerSourceToken &amp;&amp; chargeToken &amp;&amp; dischargeToken)
+    {
+        OutputMessage(L&quot;Successfully registered for state notifications&quot;);
+    }
+    else
+    {
+        OutputMessage(L&quot;Failed to register for state notifications&quot;);
+    }
+}
+
+void OnBatteryStatusChanged()
+{
+    const size_t statusSize = 16;
+    WCHAR szStatus[statusSize];
+    wmemset(&amp;(szStatus[0]), 0, statusSize);
+
+    BatteryStatus batteryStatus = PowerManager::BatteryStatus();
+    int remainingCharge = PowerManager::RemainingChargePercent();
+    switch (batteryStatus)
+    {
+    case BatteryStatus::Charging:
+        wcscpy_s(szStatus, L&quot;Charging&quot;);
+        break;
+    case BatteryStatus::Discharging:
+        wcscpy_s(szStatus, L&quot;Discharging&quot;);
+        break;
+    case BatteryStatus::Idle:
+        wcscpy_s(szStatus, L&quot;Idle&quot;);
+        break;
+    case BatteryStatus::NotPresent:
+        wcscpy_s(szStatus, L&quot;NotPresent&quot;);
+        break;
+    }
+
+    OutputFormattedMessage(
+        L&quot;Battery status changed: %s, %d%% remaining&quot;, 
+        szStatus, remainingCharge);
+    DetermineWorkloads();
+}
+
+void OnPowerSupplyStatusChanged()
+{
+//...etc
+}
+</code></pre>
+</section>
+<section id="tabpanel_1_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Apps can register and unregister for these events at any time, but most apps will want to set callbacks that persist as long as the app continues to run.</p>
+</div>
+<pre><code class="lang-csharp">private bool bWorkInProgress;
+private EventRegistrationToken batteryToken;
+private EventRegistrationToken powerToken;
+private EventRegistrationToken powerSourceToken;
+private EventRegistrationToken chargeToken;
+private EventRegistrationToken dischargeToken;
+
+private void RegisterPowerManagerCallbacks()
+{
+    batteryToken = PowerManager.BatteryStatusChanged += (s, e) =&gt; OnBatteryStatusChanged();
+    powerToken = PowerManager.PowerSupplyStatusChanged += (s, e) =&gt; OnPowerSupplyStatusChanged();
+    powerSourceToken = PowerManager.PowerSourceKindChanged += (s, e) =&gt; OnPowerSourceKindChanged();
+    chargeToken = PowerManager.RemainingChargePercentChanged += (s, e) =&gt; OnRemainingChargePercentChanged();
+    dischargeToken = PowerManager.RemainingDischargeTimeChanged += (s, e) =&gt; OnRemainingDischargeTimeChanged();
+
+    if (batteryToken != null &amp;&amp; powerToken != null &amp;&amp; powerSourceToken != null &amp;&amp; chargeToken != null &amp;&amp; dischargeToken != null)
+    {
+        OutputMessage(&quot;Successfully registered for state notifications&quot;);
+    }
+    else
+    {
+        OutputMessage(&quot;Failed to register for state notifications&quot;);
+    }
+}
+
+private void OnBatteryStatusChanged()
+{
+    BatteryStatus batteryStatus = PowerManager.BatteryStatus;
+    int remainingCharge = PowerManager.RemainingChargePercent;
+    string status = batteryStatus switch
+    {
+        BatteryStatus.Charging =&gt; &quot;Charging&quot;,
+        BatteryStatus.Discharging =&gt; &quot;Discharging&quot;,
+        BatteryStatus.Idle =&gt; &quot;Idle&quot;,
+        BatteryStatus.NotPresent =&gt; &quot;NotPresent&quot;,
+        _ =&gt; &quot;Unknown&quot;
+    };
+
+    OutputFormattedMessage($&quot;Battery status changed: {status}, {remainingCharge}% remaining&quot;);
+    DetermineWorkloads();
+}
+
+private void OnPowerSupplyStatusChanged()
+{
+    //...etc
+}
+</code></pre>
+</section>
+</div>
+<h2 id="configure-app-logic-based-on-multiple-status-values">Configure app logic based on multiple status values</h2>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager">PowerManager</a> events are relatively low-level, and in some scenarios, a single event handler being called might not provide enough information for the app to decide how to behave. In this example, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager.powersupplystatuschanged">PowerSupplyStatusChanged</a> event could be called when the device is disconnected from power. In that case, the app must check the current battery status before deciding how to proceed.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cpp" role="tab" aria-controls="tabpanel_2_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++/WinRT</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_csharp" role="tab" aria-controls="tabpanel_2_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_2_cpp" role="tabpanel" data-tab="cpp">
+
+<pre><code class="lang-cpp">void DetermineWorkloads()
+{
+    BatteryStatus batteryStatus = PowerManager::BatteryStatus();
+    int remainingCharge = PowerManager::RemainingChargePercent();
+    PowerSupplyStatus powerStatus = PowerManager::PowerSupplyStatus();
+    PowerSourceKind powerSource = PowerManager::PowerSourceKind();
+
+    if ((powerSource == PowerSourceKind::DC 
+        &amp;&amp; batteryStatus == BatteryStatus::Discharging 
+        &amp;&amp; remainingCharge &lt; 25)
+        || (powerSource == PowerSourceKind::AC
+        &amp;&amp; powerStatus == PowerSupplyStatus::Inadequate))
+    {
+        // The device is not in a good battery/power state, 
+        // so we should pause any non-critical work.
+        PauseNonCriticalWork();
+    }
+    else if ((batteryStatus != BatteryStatus::Discharging &amp;&amp; remainingCharge &gt; 75)
+        &amp;&amp; powerStatus != PowerSupplyStatus::Inadequate)
+    {
+        // The device is in good battery/power state,
+        // so let's kick of some high-power work.
+        StartPowerIntensiveWork();
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_2_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">private void DetermineWorkloads()
+{
+    BatteryStatus batteryStatus = PowerManager.BatteryStatus();
+    int remainingCharge = PowerManager.RemainingChargePercent();
+    PowerSupplyStatus powerStatus = PowerManager.PowerSupplyStatus();
+    PowerSourceKind powerSource = PowerManager.PowerSourceKind();
+
+    if ((powerSource == PowerSourceKind.DC 
+        &amp;&amp; batteryStatus == BatteryStatus.Discharging 
+        &amp;&amp; remainingCharge &lt; 25)
+        || (powerSource == PowerSourceKind.AC
+        &amp;&amp; powerStatus == PowerSupplyStatus.Inadequate))
+    {
+        // The device is not in a good battery/power state, 
+        // so we should pause any non-critical work.
+        PauseNonCriticalWork();
+    }
+    else if ((batteryStatus != BatteryStatus.Discharging &amp;&amp; remainingCharge &gt; 75)
+        &amp;&amp; powerStatus != PowerSupplyStatus.Inadequate)
+    {
+        // The device is in good battery/power state,
+        // so let's kick of some high-power work.
+        StartPowerIntensiveWork();
+    }
+}
+</code></pre>
+</section>
+</div>
+<h2 id="check-screen-status">Check screen status</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager">PowerManager</a> class offers information about other device states relevant to an app's power usage. For example, apps can disable graphics processing when the device's display is turned off.</p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_cpp" role="tab" aria-controls="tabpanel_3_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++/WinRT</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_csharp" role="tab" aria-controls="tabpanel_3_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_3_cpp" role="tabpanel" data-tab="cpp">
+
+<pre><code class="lang-cpp">void OnDisplayStatusChanged()
+{
+    const size_t statusSize = 16;
+    WCHAR szStatus[statusSize];
+    wmemset(&amp;(szStatus[0]), 0, statusSize);
+
+    DisplayStatus displayStatus = PowerManager::DisplayStatus();
+    switch (displayStatus)
+    {
+    case DisplayStatus::Dimmed:
+        wcscpy_s(szStatus, L&quot;Dimmed&quot;);
+        break;
+    case DisplayStatus::Off:
+        wcscpy_s(szStatus, L&quot;Off&quot;);
+        break;
+    case DisplayStatus::On:
+        wcscpy_s(szStatus, L&quot;On&quot;);
+        break;
+    }
+
+    OutputFormattedMessage(
+        L&quot;Display status changed: %s&quot;, szStatus);
+    if (displayStatus == DisplayStatus::Off)
+    {
+        // The screen is off, let's stop rendering foreground graphics,
+        // and instead kick off some background work now.
+        StopUpdatingGraphics();
+        StartDoingBackgroundWork();
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_3_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">private void OnDisplayStatusChanged()
+{
+    DisplayStatus displayStatus = PowerManager.DisplayStatus;
+    string status = displayStatus switch
+    {
+        DisplayStatus.Dimmed =&gt; &quot;Dimmed&quot;,
+        DisplayStatus.Off =&gt; &quot;Off&quot;,
+        DisplayStatus.On =&gt; &quot;On&quot;,
+        _ =&gt; &quot;Unknown&quot;
+    };
+
+    OutputFormattedMessage($&quot;Display status changed: {status}&quot;);
+    if (displayStatus == DisplayStatus.Off)
+    {
+        // The screen is off, let's stop rendering foreground graphics,
+        // and instead kick off some background work now.
+        StopUpdatingGraphics();
+        StartDoingBackgroundWork();
+    }
+}
+</code></pre>
+</section>
+</div>
+<h2 id="unsubscribe-from-events">Unsubscribe from events</h2>
+<p>Apps can register and deregister for notifications during their lifecycle. Use your language's preferred event registration management system if your app doesn't need to receive power status notifications during its entire lifecycle.</p>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_cpp" role="tab" aria-controls="tabpanel_4_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++/WinRT</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_csharp" role="tab" aria-controls="tabpanel_4_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_4_cpp" role="tabpanel" data-tab="cpp">
+
+<pre><code class="lang-cpp">void UnregisterPowerManagerCallbacks()
+{
+    OutputMessage(L&quot;Unregistering state notifications&quot;);
+    PowerManager::BatteryStatusChanged(batteryToken);
+    PowerManager::PowerSupplyStatusChanged(powerToken);
+    PowerManager::PowerSourceKindChanged(powerSourceToken);
+    PowerManager::RemainingChargePercentChanged(chargeToken);
+    PowerManager::RemainingDischargeTimeChanged(dischargeToken);
+}
+</code></pre>
+</section>
+<section id="tabpanel_4_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">private void UnregisterPowerManagerCallbacks()
+{
+    OutputMessage(&quot;Unregistering state notifications&quot;);
+    PowerManager.BatteryStatusChanged -= batteryToken;
+    PowerManager.PowerSupplyStatusChanged -= powerToken;
+    PowerManager.PowerSourceKindChanged -= powerSourceToken;
+    PowerManager.RemainingChargePercentChanged -= chargeToken;
+    PowerManager.RemainingDischargeTimeChanged -= dischargeToken;
+}
+</code></pre>
+</section>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/uwp/api/Windows.System.Power.PowerManager">Windows.System.Power.PowerManager</a></li>
+<li><a href="/windows/win32/api/powersetting/nf-powersetting-powersettingregisternotification">PowerSettingRegisterNotification</a></li>
+<li><a href="/windows/win32/api/powersetting/nf-powersetting-powersettingunregisternotification">PowerSettingUnregisterNotification</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/applifecycle/applifecycle-power.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

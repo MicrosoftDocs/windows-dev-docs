@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Integrate with the widget picker </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Integrate with the widget picker ">
+    
+    <meta name="description" content="Learn about the design elements required for integrating into the widget picker on the Widgets Board.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="integrate-with-the-widget-picker">Integrate with the widget picker</h1>
+
+<p>In the current release, the only Widgets host is the Widgets Board built into Windows 11. The Widgets Board displays widgets and manages their layout on the board. It also provides a widget picker that allows the user to select which available widgets are visible on the board. This article describes the assets required for a widget to successfully integrate into the widget picker.</p>
+<h2 id="widget-screenshot-image">Widget screenshot image</h2>
+<p>Each widget must provide a screenshot image that is displayed as a preview in the widget picker when the widget has focus. The screenshot is specified by the widget provider in the package manifest for the app. For technical information on how to specify an image file to use for the widget screenshot, see <a href="../../develop/widgets/implement-widget-provider-win32.html">Implement a widget provider in a win32 app</a> and <a href="../../develop/widgets/widget-provider-manifest.html">Widget provider package manifest XML format</a>.</p>
+<p>The following screenshot illustrates the placement of the screenshot image within the widget picker.</p>
+<p><img src="images/widgets-picker-screenshot.png" alt="Screenshot of the Widgets Board. The widget picker is active and a widget screenshot image is being displayed."></p>
+<h2 id="screenshot-image-requirements">Screenshot image requirements</h2>
+<p>In order to provide a consistent user experience, widget screenshots for the widget picker must follow the following guidelines.</p>
+<ul>
+<li>The screenshot should display the medium size version of your widget.</li>
+<li>The image should be 300 pixels wide and 304 pixels tall.</li>
+<li>The image should have transparent, rounded corners.</li>
+</ul>
+<p>The widget provider manifest includes three different <strong>Screenshot</strong> elements that you can set. The top-level screenshot is required and will be used as the default by the widget picker. The <strong>LightMode</strong> and <strong>DarkMode</strong> sections of the manifest are optional and allow you to specify separate screenshots for your widget in light and dark modes. If you supply one or both of these optional screenshots, the widget picker will use the one that matches the device's current theme. If you do not supply an image specifically for the current theme, the widget picker will use the default, top-level screenshot instead.</p>
+<p>You may provide widget screenshots for multiple locales. The locale for each screenshot is specified with the path to the asset relative to your app package.</p>
+<ul>
+<li>Create a directory in your packaging project for the image assets. For example: &quot;Assets&quot;.</li>
+<li>The language-neutral or fallback assets can be placed directly in this folder. For example: &quot;Assets/Screenshot.png&quot;</li>
+<li>Language-specific assets can be placed in subdirectories named after the locale to which they apply. For example:
+<ul>
+<li>&quot;English (United States)&quot; assets should be placed in a subdirectory named &quot;en-us&quot;: &quot;Assets/en-us/Screenshot.png&quot;</li>
+<li>&quot;French (France)&quot; assets should be placed in a subdirectory named &quot;fr-fr&quot;: &quot;Assets/fr-fr/Screenshot.png&quot;</li>
+</ul>
+</li>
+<li>Reference these images in the appxmanifest using the ms-appx: URI scheme. For example: Screenshot=&quot;ms-appx:Assets\Screenshot.png&quot;</li>
+<li>If you don't include an image for a specific locale, then the fallback image in the root directory will be used.</li>
+</ul>
+<p>The resource loader will automatically choose the language-appropriate asset to display. For more information, see: <a href="/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast#refer-to-an-image-file-from-your-app-package-manifest">Load images and assets tailored for scale, theme, high contrast, and others</a>.</p>
+<p>The following is an example of a widget screenshot image.</p>
+<p><img src="images/widgets-example-screenshot.png" alt="An example of a widget screenshot image."></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/widgets/widgets-picker-integration.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

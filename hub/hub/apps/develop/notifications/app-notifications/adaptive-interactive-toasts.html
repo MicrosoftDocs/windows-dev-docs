@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>App notification content </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="App notification content ">
+    
+    <meta name="description" content="This article describes the UI elements that can be used in an app notification and provides code examples for generating the XML format for an app notification.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="app-notification-content">App notification content</h1>
+
+<p>App notifications are flexible notifications with text, images, and buttons/inputs. This article describes the UI elements that can be used in an app notification and provides code examples for generating the XML format for an app notification.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<h2 id="getting-started">Getting started</h2>
+<p>App notifications are defined with an XML payload that is defined by the <a href="/uwp/schemas/tiles/toastschema/schema-root">App notification schema</a>. Currently, there are three ways of generating the XML payload for an app notification. The code examples in this article demonstrate all three methods:</p>
+<ul>
+<li>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder">Microsoft.Windows.AppNotifications.Builder</a> APIs - Introduced in Windows App SDK 1.2, this namespace provides APIs that allow you to easily build the XML payload for a notification programmatically without having to worry about the specifics of the XML format. Code examples using these APIs are in the tabs labeled &quot;Windows App SDK&quot;.</li>
+<li>The <code>Microsoft.Toolkit.Uwp.Notifications</code> builder syntax - These APIs are part of the UWP Community Toolkit and provides support for UWP apps.  Although these APIs can also be used for Windows App SDK apps, and continue to be supported, we recommend that new implementations use the <strong>Microsoft.Windows.AppNotifications.Builder</strong> APIs. To use Community Toolkit APIs, add the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">UWP Community Toolkit Notifications nuget package</a> to your project. The C# samples provided in this article use version 7.0.0 of the NuGet package. Code examples using these APIs are in the tabs labeled &quot;Windows Community Toolkit&quot;.</li>
+<li>Raw XML - If you prefer, you can create your own custom code to generate XML strings in the required format. The raw XML examples are in the tabs labeled &quot;XML&quot;.</li>
+</ul>
+<p><strong>Install Notifications Visualizer.</strong> This free Windows app helps you design interactive app notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See <a href="../notifications-visualizer.html">Notifications Visualizer</a> for more information, or <a href="https://apps.microsoft.com/detail/9nblggh5xsl1">download Notifications Visualizer from the Store</a>.</p>
+<p>This article only covers creating the app notification content. For information on sending a notification after you have generated the XML payload, see <a href="send-local-toast.html">Send a local app notification</a>.</p>
+<h2 id="app-notification-structure">App notification structure</h2>
+<p>Some important, high-level components of an app notification XML payload include:</p>
+<ul>
+<li><strong>toast</strong>: The <strong>launch</strong> attribute of this element defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see <a href="send-local-toast.html">Send a local app notification</a>.</li>
+<li><strong>visual</strong>: This element represents visual portion of the toast, including the generic binding that contains text and images.</li>
+<li><strong>actions</strong>: This element represents interactive portion of the toast, including inputs and actions.</li>
+<li><strong>audio</strong>: This element specifies the audio played when the toast is shown to the user.</li>
+</ul>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_appsdk" role="tab" aria-controls="tabpanel_1_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_toolkit" role="tab" aria-controls="tabpanel_1_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_xml" role="tab" aria-controls="tabpanel_1_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_1_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddArgument(&quot;conversationId&quot;, &quot;9813&quot;)
+
+    .AddText(&quot;Some text&quot;)
+
+    .AddButton(new AppNotificationButton(&quot;Archive&quot;)
+        .AddArgument(&quot;action&quot;, &quot;archive&quot;))
+
+    .SetAudioUri(new Uri(&quot;ms-appx:///Sound.mp3&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_1_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddArgument(&quot;conversationId&quot;, 9813)
+
+    .AddText(&quot;Some text&quot;)
+
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Archive&quot;)
+        .AddArgument(&quot;action&quot;, &quot;archive&quot;))
+
+    .AddAudio(new Uri(&quot;ms-appx:///Audio/NotificationSound.mp3&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_1_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast launch='conversationId=9813'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Some text&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;audio src='ms-appx:///Audio/NotificationSound.mp3'/&gt;
+    &lt;actions&gt;
+        &lt;action content='Archive' arguments='action=archive'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p>Here is a visual representation of the app notification's content:</p>
+<p><img src="images/toast-content-structure.png" alt="An screenshot of an app notification with labels for the attribution area at the top showing the app icon and and app name Notifications Visualizer. The middle part of the toast is labeled as the visual area, which includes three lines of text. The bottom section of the toast is labeled as the action area and contains two buttons labeled Accept and Decline. "></p>
+<h2 id="attribution-area">Attribution area</h2>
+<p>The attribution area is at the top of the app notification. Starting with Windows 11, your app's name and icon are displayed in this area. The attribution area also includes a close button that allows the user to quickly dismiss the notification and an ellipses menu that allows the user to quickly disable notifications for your app or go to the Windows Settings page for your app's notifications. The attribution area is configured by the shell and can't be overridden in the toast XML payload, although your app can add items to the attribution area context menu. For more information see <a href="#context-menu-actions">Context menu actions</a>.</p>
+<h2 id="visual">Visual</h2>
+<p>Each app notification must specify a <strong>visual</strong> element, where you must provide a generic toast binding and which can contain text and images. These elements will be rendered on various Windows devices, including desktop, phones, tablets, and Xbox.</p>
+<p>For all attributes supported in the <strong>visual</strong> section and its child elements, see <a href="toast-schema.html#toastvisual">App notification schema</a>.</p>
+<h2 id="text-elements">Text elements</h2>
+<p>Each app notification must have at least one text element, and can contain two additional text elements, all of type <a href="toast-schema.html#adaptivetext"><strong>AdaptiveText</strong></a>.</p>
+<p><img src="images/toast-content-text-elements.png" alt="A screenshot of an app notification with three lines of text. The top line of text is bold."></p>
+<p>Since the Windows 10 Anniversary Update, you can control how many lines of text are displayed by using the <strong>HintMaxLines</strong> property on the text. The default (and maximum) is up to 2 lines of text for the title, and up to 4 lines (combined) for the two additional description elements (the second and third <strong>AdaptiveText</strong>).</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_appsdk" role="tab" aria-controls="tabpanel_2_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_toolkit" role="tab" aria-controls="tabpanel_2_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_xml" role="tab" aria-controls="tabpanel_2_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_2_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddArgument(&quot;conversationId&quot;, 9813)
+    .AddText(&quot;Adaptive Tiles Meeting&quot;, new AppNotificationTextProperties().SetMaxLines(1))
+    .AddText(&quot;Conf Room 2001 / Building 135&quot;)
+    .AddText(&quot;10:00 AM - 10:30 AM&quot;);
+</code></pre>
+</section>
+<section id="tabpanel_2_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddArgument(&quot;meetingId&quot;, 9813)
+    .AddText(&quot;Adaptive Tiles Meeting&quot;, hintMaxLines: 1)
+    .AddText(&quot;Conf Room 2001 / Building 135&quot;)
+    .AddText(&quot;10:00 AM - 10:30 AM&quot;);
+</code></pre>
+</section>
+<section id="tabpanel_2_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast launch='meetingId=9813'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text hint-maxLines='1'&gt;Adaptive Tiles Meeting&lt;/text&gt;
+            &lt;text&gt;Conf Room 2001 / Building 135&lt;/text&gt;
+            &lt;text&gt;10:00 AM - 10:30 AM&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="inline-image">Inline image</h2>
+<p>By default, images are displayed inline, after any text elements, filling the full width of the visual area.</p>
+<p><img src="images/toast-content-inline-image.png" alt="A screenshot of an app notification showing the default image placement, inline, filling the full width of the visual area."></p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_appsdk" role="tab" aria-controls="tabpanel_3_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_toolkit" role="tab" aria-controls="tabpanel_3_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_xml" role="tab" aria-controls="tabpanel_3_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_3_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Featured image of the day.&quot;)
+    .SetInlineImage(new Uri(&quot;ms-appx:///Images/InlineImage.png&quot;));
+
+AppNotificationManager.Default.Show(builder.BuildNotification());
+</code></pre>
+</section>
+<section id="tabpanel_3_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Featured image of the day.&quot;)
+    .AddInlineImage(new Uri(&quot;ms-appx:///Images/InlineImage.png&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_3_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Featured image of the day.&lt;/text&gt;
+            &lt;image src='ms-appx:///Images/InlineImage.png'/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="app-logo-override">App logo override</h2>
+<p>Specifying a <strong>placement</strong> value of &quot;appLogoOverride&quot; will cause the image to be displayed in a square on the left side of the visual area. The name of this property reflects the behavior in previous versions of Windows, where the image would replace the default app logo image. In Windows 11, the app logo is displayed in the attribution area, so it is not overridden by the <strong>appLogoOverride</strong> image placement.</p>
+<p>Image dimensions are 48x48 pixels at 100% scaling. We generally recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%.</p>
+<p><img src="images/toast-content-applogooverride.png" alt="A screenshot of an app notification showing the app logo override image placement in a square on the left side of the visual area of the notification."></p>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_appsdk" role="tab" aria-controls="tabpanel_4_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_toolkit" role="tab" aria-controls="tabpanel_4_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_xml" role="tab" aria-controls="tabpanel_4_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_4_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Featured image of the day.&quot;)
+    .SetAppLogoOverride(new Uri(&quot;ms-appx:///Images/AppLogo.png&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_4_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Featured image of the day.&quot;)
+    .AddAppLogoOverride(new Uri(&quot;ms-appx:///Images/AppLogo.png&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_4_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Featured image of the day.&lt;/text&gt;
+            &lt;image placement='appLogoOverride' src='ms-appx:///Images/AppLogo.png'/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="hint-crop">Hint crop</h2>
+<p>Microsoft style guidelines recommend representing profile pictures with a circular image to provide a consistent representation of people across apps and the shell. Set the <strong>HintCrop</strong> property to <strong>Circle</strong> to render the image with a circular crop.</p>
+<p><img src="images/toast-content-hint-crop.png" alt="A screenshot of an app notification showing the app logo override image placement cropped into a circle on the left side of the visual area of the toast."></p>
+<div class="tabGroup" id="tabgroup_5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_5_appsdk" role="tab" aria-controls="tabpanel_5_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_5_toolkit" role="tab" aria-controls="tabpanel_5_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_5_xml" role="tab" aria-controls="tabpanel_5_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_5_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Matt sent you a friend request&quot;)
+    .AddText(&quot;Hey, wanna dress up as wizards and ride around on hoverboards?&quot;)
+    .SetAppLogoOverride(new Uri(&quot;ms-appx:///Images/Profile.png&quot;), AppNotificationImageCrop.Circle);
+</code></pre>
+</section>
+<section id="tabpanel_5_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Matt sent you a friend request&quot;)
+    .AddText(&quot;Hey, wanna dress up as wizards and ride around on hoverboards?&quot;)
+    .AddAppLogoOverride(new Uri(&quot;ms-appx:///Images/Profile.png&quot;), ToastGenericAppLogoCrop.Circle);
+</code></pre>
+</section>
+<section id="tabpanel_5_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Matt sent you a friend request&lt;/text&gt;
+            &lt;text&gt;Hey, wanna dress up as wizards and ride around on hoverboards?&lt;/text&gt;
+            &lt;image placement='appLogoOverride' src='ms-appx:///Images/Profile.png' hint-crop='circle'/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="hero-image">Hero image</h2>
+<p><strong>New in Anniversary Update</strong>: App notifications can display a hero image, which is a featured <a href="toast-schema.html#toastgenericheroimage"><strong>ToastGenericHeroImage</strong></a> displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.</p>
+<p><img src="images/toast-content-hero-image.png" alt="A screenshot of an app notification showing the hero image placement, above the attribution area."></p>
+<div class="tabGroup" id="tabgroup_6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_6_appsdk" role="tab" aria-controls="tabpanel_6_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_6_toolkit" role="tab" aria-controls="tabpanel_6_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_6_xml" role="tab" aria-controls="tabpanel_6_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_6_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Marry Anne&quot;)
+    .AddText(&quot;Check out where we camped last night!&quot;)
+    .SetHeroImage(new Uri(&quot;ms-appx:///Images/HeroImage.png&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_6_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    .AddText(&quot;Marry Anne&quot;)
+    .AddText(&quot;Check out where we camped last night!&quot;)
+    .AddHeroImage(new Uri(&quot;ms-appx:///Images/HeroImage.png&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_6_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Mary Anne&lt;/text&gt;
+            &lt;text&gt;Check out where we camped last night!&lt;/text&gt;
+            &lt;image placement='hero' src='ms-appx:///Images/HeroImage.png'/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="image-size-restrictions">Image size restrictions</h2>
+<p>The images you use in your toast notification can be sourced from...</p>
+<ul>
+<li>http://</li>
+<li>ms-appx:///</li>
+<li>ms-appdata:///</li>
+</ul>
+<p>For http and https remote web images, there are limits on the file size of each individual image. In the Fall Creators Update (16299), we increased the limit to be 3 MB on normal connections and 1 MB on metered connections. Before that, images were always limited to 200 KB.</p>
+<table>
+<thead>
+<tr>
+<th>Normal connection</th>
+<th>Metered connection</th>
+<th>Before Fall Creators Update</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3 MB</td>
+<td>1 MB</td>
+<td>200 KB</td>
+</tr>
+</tbody>
+</table>
+<p>If an image exceeds the file size, or fails to download, or times out, the image will be dropped and the rest of the notification will be displayed.</p>
+<h2 id="attribution-text">Attribution text</h2>
+<p><strong>New in Anniversary Update</strong>: If you need to reference the source of your content, you can use attribution text. This text is always displayed below any text elements, but above inline images. The text uses a slightly smaller size than standard text elements to help to distinguish from regular text elements.</p>
+<p>On older versions of Windows that don't support attribution text, the text will simply be displayed as another text element (assuming you don't already have the maximum of three text elements).</p>
+<p><img src="images/toast-content-attribution-text.png" alt="A screenshot of a toast notification showing the attribution text &quot;via SMS&quot; below the other lines of text in the visual area of the toast."></p>
+<div class="tabGroup" id="tabgroup_7">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_7_appsdk" role="tab" aria-controls="tabpanel_7_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_7_toolkit" role="tab" aria-controls="tabpanel_7_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_7_xml" role="tab" aria-controls="tabpanel_7_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_7_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Marry Anne&quot;)
+    .AddText(&quot;Check out where we camped last night!&quot;)
+    .SetAttributionText(&quot;via SMS&quot;);
+    .SetHeroImage(new Uri(&quot;ms-appx:///Images/HeroImage.png&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_7_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    .AddText(&quot;Marry Anne&quot;)
+    .AddText(&quot;Check out where we camped last night!&quot;)
+    .AddAttributionText(&quot;Via SMS&quot;);
+    .AddHeroImage(new Uri(&quot;ms-appx:///Images/HeroImage.png&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_7_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;  
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;image src=&quot;ms-appx:///Images/HeroImage.png&quot;/&gt;
+      &lt;text&gt;Mary Anne&lt;/text&gt;
+      &lt;text&gt;Check out where we camped last night!&lt;/text&gt;
+      &lt;text placement=&quot;attribution&quot;&gt;Via SMS&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="custom-timestamp">Custom timestamp</h2>
+<p><strong>New in Creators Update</strong>: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Notification Center.</p>
+<p><img src="images/toast-content-custom-timestamp.png" alt="Screenshot of a notification in the Notifications Center with a custom timestamp"></p>
+<p>To learn more about using a custom timestamp, please see <a href="custom-timestamps-on-toasts.html">custom timestamps on toasts</a>.</p>
+<div class="tabGroup" id="tabgroup_8">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_8_appsdk" role="tab" aria-controls="tabpanel_8_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_8_toolkit" role="tab" aria-controls="tabpanel_8_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_8_xml" role="tab" aria-controls="tabpanel_8_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_8_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Matt sent you a friend request&quot;)
+    .AddText(&quot;Hey, wanna dress up as wizards and ride around on hoverboards?&quot;)
+    .SetTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
+</code></pre>
+</section>
+<section id="tabpanel_8_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Matt sent you a friend request&quot;)
+    .AddText(&quot;Hey, wanna dress up as wizards and ride around on hoverboards?&quot;)
+    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
+</code></pre>
+</section>
+<section id="tabpanel_8_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast displayTimestamp='2017-04-15T12:45:00-07:00'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Matt sent you a friend request&lt;/text&gt;
+            &lt;text&gt;Hey, wanna dress up as wizards and ride around on hoverboards?&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="progress-bar">Progress bar</h2>
+<p><strong>New in Creators Update</strong>: You can provide a progress bar on your app notification to keep the user informed of the progress of operations such as downloads.</p>
+<p><img src="images/toast-content-progress-bar.png" alt="A screenshot of a toast notification showing a progress bar."></p>
+<p>To learn more about using a progress bar, please see <a href="toast-progress-bar.html">Toast progress bar</a>.</p>
+<h2 id="headers">Headers</h2>
+<p><strong>New in Creators Update</strong>: You can group notifications under headers within Notification Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.</p>
+<p><img src="images/toast-content-headers.png" alt="A screenshot of a action center showing multiple notifications for the application Notifications Viewer organized under a header labeled &quot;Camping!&quot;."></p>
+<p>To learn more about using headers, please see <a href="toast-headers.html">Toast headers</a>.</p>
+<h2 id="adaptive-content">Adaptive content</h2>
+<p><strong>New in Anniversary Update</strong>: In addition to the content specified above, you can also display additional adaptive content that is visible when the toast is expanded.</p>
+<p>This additional content is specified using Adaptive, which you can learn more about by reading the <a href="/windows/uwp/launch-resume/create-adaptive-tiles">Adaptive Tiles documentation</a>.</p>
+<p>Note that any adaptive content must be contained within an <a href="toast-schema.html#adaptivegroup"><strong>AdaptiveGroup</strong></a>. Otherwise it will not be rendered using adaptive.</p>
+<h3 id="columns-and-text-elements">Columns and text elements</h3>
+<p>Here's an example where columns and some advanced adaptive text elements are used. Since the text elements are within an <strong>AdaptiveGroup</strong>, they support all the rich adaptive styling properties.</p>
+<p><img src="images/toast-content-columns.png" alt="A screenshot of a toast notification showing groups of text elements aligned to the left and right of the visual area of the toast."></p>
+<div class="tabGroup" id="tabgroup_9">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_9_appsdk" role="tab" aria-controls="tabpanel_9_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_9_toolkit" role="tab" aria-controls="tabpanel_9_toolkit" data-tab="toolkit" tabindex="-1">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_9_xml" role="tab" aria-controls="tabpanel_9_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_9_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support adaptive text elements.
+</code></pre>
+</section>
+<section id="tabpanel_9_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    ...
+    
+    .AddVisualChild(new AdaptiveGroup()
+    {
+        Children =
+        {
+            new AdaptiveSubgroup()
+            {
+                Children =
+                {
+                    new AdaptiveText()
+                    {
+                        Text = &quot;52 attendees&quot;,
+                        HintStyle = AdaptiveTextStyle.Base
+                    },
+                    new AdaptiveText()
+                    {
+                        Text = &quot;23 minute drive&quot;,
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle
+                    }
+                }
+            },
+            new AdaptiveSubgroup()
+            {
+                Children =
+                {
+                    new AdaptiveText()
+                    {
+                        Text = &quot;1 Microsoft Way&quot;,
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                        HintAlign = AdaptiveTextAlign.Right
+                    },
+                    new AdaptiveText()
+                    {
+                        Text = &quot;Bellevue, WA 98008&quot;,
+                        HintStyle = AdaptiveTextStyle.CaptionSubtle,
+                        HintAlign = AdaptiveTextAlign.Right
+                    }
+                }
+            }
+        }
+    });
+</code></pre>
+</section>
+<section id="tabpanel_9_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast launch=&quot;app-defined-string&quot;&gt;
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;text&gt;Reminder: Windows Launch Party&lt;/text&gt;
+      &lt;text&gt;4:00 PM, 10/21/2021&lt;/text&gt;
+      &lt;group&gt;
+        &lt;subgroup&gt;
+          &lt;text hint-style=&quot;base&quot;&gt;52 attendees&lt;/text&gt;
+          &lt;text hint-style=&quot;captionSubtle&quot;&gt;23 minute drive&lt;/text&gt;
+        &lt;/subgroup&gt;
+        &lt;subgroup&gt;
+          &lt;text hint-style=&quot;captionSubtle&quot; hint-align=&quot;right&quot;&gt;1 Microsoft Way&lt;/text&gt;
+          &lt;text hint-style=&quot;captionSubtle&quot; hint-align=&quot;right&quot;&gt;Bellevue, WA 98008&lt;/text&gt;
+        &lt;/subgroup&gt;
+      &lt;/group&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="buttons">Buttons</h2>
+<p>Buttons make your toast interactive, letting the user take quick actions on your app notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app. Buttons appear in the expanded portion of your notification.</p>
+<p>To learn more about implementing buttons end-to-end, see <a href="send-local-toast.html">Send local toast</a>.</p>
+<p>Buttons can activate an app in the following ways:</p>
+<ul>
+<li>The app is activated in the foreground, with an argument that can be used to navigate to a specific page/context.</li>
+<li>Another app is activated via protocol launch.</li>
+<li>Background activation is supported explicitly for UWP apps. For Windows App SDK apps, the app is always launched in the foreground. The app can call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> to detect if the activation was launched by a notification and determine from the passed arguments whether to fully launch the foreground app or just handle the notification and exit.</li>
+<li>System actions, such as snoozing or dismissing the notification, are supported both for UWP apps and for Windows App SDK. The <strong>AppNotificationBuilder</strong> APIs don't support this scenario but Windows App SDK apps can implement this scenario using the <strong>Microsoft.Windows.AppNotifications.Builder</strong> APIs or raw XML.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only have up to 5 buttons (including context menu items which we discuss later).</p>
+</div>
+<p><img src="images/toast-content-buttons.png" alt="A screenshot of a toast notification showing a line of text followed a row with two buttons defined by action elements&quot;."></p>
+<div class="tabGroup" id="tabgroup_10">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_10_appsdk" role="tab" aria-controls="tabpanel_10_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_10_toolkit" role="tab" aria-controls="tabpanel_10_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_10_xml" role="tab" aria-controls="tabpanel_10_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_10_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    var builder = new AppNotificationBuilder()
+        .AddText(&quot;New product in stock!&quot;)
+        .AddButton(new AppNotificationButton(&quot;See more details&quot;)
+            .AddArgument(&quot;action&quot;, &quot;viewDetails&quot;))
+            .AddArgument(&quot;contentId&quot;, &quot;351&quot;)
+        .AddButton(new AppNotificationButton(&quot;Remind me later&quot;)
+            .AddArgument(&quot;action&quot;, &quot;remindLater&quot;))
+            .AddArgument(&quot;contentId&quot;, &quot;351&quot;);
+</code></pre>
+</section>
+<section id="tabpanel_10_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;New product in stock!&quot;)
+    .AddButton(new ToastButton()
+        .SetContent(&quot;See more details&quot;)
+        .AddArgument(&quot;action&quot;, &quot;viewDetails&quot;))
+
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Remind me later&quot;)
+        .AddArgument(&quot;action&quot;, &quot;remindLater&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_10_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;New product in stock!&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+      &lt;actions&gt;
+          &lt;action content='See more details' arguments='action=viewDetails;contentId=351'/&gt;
+          &lt;action content='Remind me later' arguments='action=remindLater;contentId=351'/&gt;
+      &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="buttons-with-icons">Buttons with icons</h3>
+<p>You can add icons to your buttons. These icons are white transparent 16x16 pixel images at 100% scaling, and should have no padding included in the image itself. If you choose to provide icons on a toast notification, you must provide icons for ALL of your buttons in the notification, as it transforms the style of your buttons into icon buttons.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For accessibility, be sure to include a contrast-white version of the icon (a black icon for white backgrounds), so that when the user turns on High Contrast White mode, your icon is visible. For more information, see <a href="/windows/uwp/launch-resume/tile-toast-language-scale-contrast">Tile and toast notification support for language, scale, and high contrast</a>.</p>
+</div>
+<p><img src="images/toast-content-button-icons.png" alt="Screenshot of an app notification that uses buttons with icons."></p>
+<div class="tabGroup" id="tabgroup_11">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_11_appsdk" role="tab" aria-controls="tabpanel_11_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_11_toolkit" role="tab" aria-controls="tabpanel_11_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_11_xml" role="tab" aria-controls="tabpanel_11_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_11_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    var builder = new AppNotificationBuilder()
+        .AddText(&quot;Return books to the library.&quot;)
+        .AddButton(new AppNotificationButton(&quot;Accept&quot;)
+            .AddArgument(&quot;action&quot;, &quot;accept&quot;)
+            .SetIcon(new Uri(&quot;ms-appx:///Images/Accept.png&quot;)))
+        .AddButton(new AppNotificationButton(&quot;Snooze&quot;)
+            .AddArgument(&quot;action&quot;, &quot;snooze&quot;)
+            .SetIcon(new Uri(&quot;ms-appx:///Images/Snooze.png&quot;)))
+        .AddButton(new AppNotificationButton(&quot;Dismiss&quot;)
+            .AddArgument(&quot;action&quot;, &quot;dismiss&quot;)
+            .SetIcon(new Uri(&quot;ms-appx:///Images/Dismiss.png&quot;)));
+</code></pre>
+</section>
+<section id="tabpanel_11_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;New product in stock!&quot;)
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Accept&quot;)
+        .AddArgument(&quot;action&quot;, &quot;accept&quot;)
+        .SetImageUri(new Uri(&quot;ms-appx:///Images/Accept.png&quot;)))
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Snooze&quot;)
+        .AddArgument(&quot;action&quot;, &quot;snooze&quot;)
+        .SetImageUri(new Uri(&quot;ms-appx:///Images/Snooze.png&quot;)))
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Dismiss&quot;)
+        .AddArgument(&quot;action&quot;, &quot;dismiss&quot;)
+        .SetImageUri(new Uri(&quot;ms-appx:///Images/Dismiss.png&quot;)));
+</code></pre>
+</section>
+<section id="tabpanel_11_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Return books to the library.&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;actions&gt;
+        &lt;action content='Accept' arguments='action=accept' imageUri='ms-appx:///Assets/Accept.png'/&gt;
+        &lt;action content='Snooze' arguments='action=snooze' imageUri='ms-appx:///Assets/Snooze.png'/&gt;
+        &lt;action content='Dismiss' arguments='action=dismiss' imageUri='ms-appx:///Assets/Dismiss.png'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p><strong>New in Windows 11 Update</strong>: You can add tooltips to your icons with the <strong>HintToolTip</strong> property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.</p>
+<div class="tabGroup" id="tabgroup_12">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_12_appsdk" role="tab" aria-controls="tabpanel_12_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_12_toolkit" role="tab" aria-controls="tabpanel_12_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_12_xml" role="tab" aria-controls="tabpanel_12_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_12_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var button = new AppNotificationButton(&quot;Reply&quot;)
+    .AddArgument(&quot;action&quot;, &quot;reply&quot;);
+
+if (AppNotificationButton.IsToolTipSupported())
+{
+    button.ToolTip = &quot;Click to reply.&quot;;
+}
+
+var builder = new AppNotificationBuilder()
+    .AddText(&quot;Notification text.&quot;)
+    .AddButton(button); 
+</code></pre>
+</section>
+<section id="tabpanel_12_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">// The Community Toolkit builder syntax does not currently support icon tooltips. 
+</code></pre>
+</section>
+<section id="tabpanel_12_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Notification text.&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;actions&gt;
+        &lt;action content='Reply' arguments='action=reply' hint-toolTip='Click to reply'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="buttons-with-colors">Buttons with colors</h3>
+<p><strong>New in Windows 11 Update</strong>: You can add red or green colors to your buttons by adding the <strong>useButtonStyle</strong> attribute to the <strong>toast</strong> XML element and the <strong>hint-buttonStyle</strong> attribute to the action XML element as seen below.</p>
+<p><img src="images/toast-content-button-colors.png" alt="A screenshot of a notification with three buttons, the two left buttons are green with icons for starting a video call or starting an audio call. The third button is red and has an icon for rejecting the call."></p>
+<div class="tabGroup" id="tabgroup_13">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_13_appsdk" role="tab" aria-controls="tabpanel_13_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_13_toolkit" role="tab" aria-controls="tabpanel_13_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_13_xml" role="tab" aria-controls="tabpanel_13_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_13_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .SetScenario(AppNotificationScenario.IncomingCall)
+    .AddText(&quot;Andrew Bares&quot;, new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+      .AddText(&quot;Incoming Call - Mobile&quot;, new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+      .SetInlineImage(new Uri(&quot;ms-appx:///Images/Profile.png&quot;),
+        AppNotificationImageCrop.Circle)
+    .AddButton(new AppNotificationButton()
+        .SetToolTip(&quot;Answer Video Call&quot;)
+        .SetButtonStyle(AppNotificationButtonStyle.Success)
+        .SetIcon(new Uri(&quot;ms-appx:///Images/Video.png&quot;))
+        .AddArgument(&quot;videoId&quot;, &quot;123&quot;))
+    .AddButton(new AppNotificationButton()
+        .SetToolTip(&quot;Answer Phone Call&quot;)
+        .SetButtonStyle(AppNotificationButtonStyle.Success)
+        .SetIcon(new Uri(&quot;ms-appx:///Images/Call.png&quot;))
+        .AddArgument(&quot;callId&quot;, &quot;123&quot;))
+    .AddButton(new AppNotificationButton()
+        .SetToolTip(&quot;Hang Up&quot;)
+        .SetButtonStyle(AppNotificationButtonStyle.Critical)
+        .SetIcon(new Uri(&quot;ms-appx:///Images/HangUp.png&quot;))
+        .AddArgument(&quot;hangUpId&quot;, &quot;123&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_13_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">// The WIndows Community Toolkit builder syntax does not currently support red and green button colors.
+</code></pre>
+</section>
+<section id="tabpanel_13_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast scenario='incomingCall' useButtonStyle='true'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text hint-callScenarioCenterAlign='true'&gt;Andrew Bares&lt;/text&gt;
+            &lt;text hint-callScenarioCenterAlign='true'&gt;Incoming Call - Mobile&lt;/text&gt;
+            &lt;image src='ms-appx:///Images/InlineImage.png' hint-crop='circle'/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;actions&gt;
+        &lt;action 
+            content='' 
+            arguments='videoId=123' 
+            imageUri='ms-appx:///Images/Video.png' 
+            hint-buttonStyle='Success' 
+            hint-toolTip='Answer Video Call'/&gt;
+        &lt;action 
+            content='' 
+            arguments='callId=123' 
+            imageUri='ms-appx:///Images/Call.png' 
+            hint-buttonStyle='Success' 
+            hint-toolTip='Answer Phone Call'/&gt;
+        &lt;action 
+            content='' 
+            arguments='hangUpId=123' 
+            imageUri='ms-appx:///Images/HangUp.png' 
+            hint-buttonStyle='Critical' 
+            hint-toolTip='Hang Up'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="context-menu-actions">Context menu actions</h2>
+<p><strong>New in Anniversary Update</strong>: You can add additional context menu actions to the existing context menu that appears when the user right clicks your toast notification or selects the context menu icon.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On older devices, these additional context menu actions will simply appear as normal buttons on your notification.</p>
+</div>
+<p>The additional context menu actions you add (such as &quot;Mute group chat for 1 hour&quot;) appear above the two default system entries.</p>
+<p><img src="images/toast-content-context-menu.png" alt="Toast with context menu"></p>
+<div class="tabGroup" id="tabgroup_14">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_14_appsdk" role="tab" aria-controls="tabpanel_14_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_14_toolkit" role="tab" aria-controls="tabpanel_14_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_14_xml" role="tab" aria-controls="tabpanel_14_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_14_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Camping this weekend?&quot;)
+    .SetAppLogoOverride(new Uri(&quot;ms-appx:///images/Reply.png&quot;), AppNotificationImageCrop.Circle)
+    .AddButton(new AppNotificationButton(&quot;Mute group chat for 1 hour&quot;)
+        .AddArgument(&quot;action&quot;, &quot;mute&quot;)
+        .SetContextMenuPlacement());
+</code></pre>
+</section>
+<section id="tabpanel_14_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<p>The Windows Community Toolkit builder syntax doesn't currently support context menu actions, so we recommend using initializer syntax.</p>
+<pre><code class="lang-csharp">ToastContent content = new ToastContent()
+{
+    ...
+ 
+    Actions = new ToastActionsCustom()
+    {
+        ContextMenuItems =
+        {
+            new ToastContextMenuItem(&quot;Mute group chat for 1 hour&quot;, &quot;action=muteId&quot;)
+        }
+    }
+};
+</code></pre>
+</section>
+<section id="tabpanel_14_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Camping this weekend?&lt;/text&gt;
+            &lt;image placement='appLogoOverride' src='ms-appx:///images/Reply.png' hint-crop='circle'/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;actions&gt;
+        &lt;action content='Mute group chat for 1 hour' arguments='action=mute' placement='contextMenu'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Additional context menu items contribute to the total limit of 5 buttons on a toast.</p>
+</div>
+<p>Activation of additional context menu items is handled identical to toast buttons.</p>
+<h2 id="inputs">Inputs</h2>
+<p>Inputs are specified within the <strong>Actions</strong> region of the app notification, meaning they are only visible when the notification is expanded.</p>
+<h3 id="quick-reply-text-box">Quick reply text box</h3>
+<p>To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.</p>
+<p><img src="images/toast-content-text-box.png" alt="A screenshot of a toast notification with a profile picture and some lines of text. A text box for typing directly into the toast is included as well as a button to send the reply."></p>
+<div class="tabGroup" id="tabgroup_15">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_15_appsdk" role="tab" aria-controls="tabpanel_15_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_15_toolkit" role="tab" aria-controls="tabpanel_15_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_15_xml" role="tab" aria-controls="tabpanel_15_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_15_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddTextBox(&quot;textBox&quot;, &quot;Type a reply&quot;, &quot;Reply&quot;)
+    .AddButton(AppNotificationButton(&quot;Send&quot;)
+        .AddArguments(&quot;action&quot;, &quot;Send&quot;)
+        .SetInputId(&quot;textBox&quot;))
+    .BuildNotification();
+</code></pre>
+</section>
+<section id="tabpanel_15_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddInputTextBox(&quot;tbReply&quot;, &quot;Type a reply&quot;)
+        .AddButton(new ToastButton()
+        .SetContent(&quot;Reply&quot;)
+        .SetTextBoxId(&quot;tbReply&quot;) // To place button next to text box, reference text box's id
+        .SetImageUri(new Uri(&quot;Assets/Reply.png&quot;, UriKind.Relative))
+        .AddArgument(&quot;action&quot;, &quot;reply&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_15_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast launch=&quot;app-defined-string&quot;&gt;
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;image placement=&quot;appLogoOverride&quot; hint-crop=&quot;circle&quot; src=&quot;https://picsum.photos/48?image=883&quot;/&gt;
+      &lt;text&gt;Andrew Bares&lt;/text&gt;
+      &lt;text&gt;Shall we meet up at 8?&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+  &lt;actions&gt;
+    &lt;input id=&quot;textBox&quot; type=&quot;text&quot; placeHolderContent=&quot;Type a reply&quot;/&gt;
+    &lt;action
+      content=&quot;Send&quot;
+      arguments=&quot;action=reply&amp;amp;convId=9318&quot;
+      hint-inputId=&quot;textBox&quot;
+      imageUri=&quot;Assets/Reply.png&quot;/&gt;
+  &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="inputs-with-buttons-bar">Inputs with buttons bar</h3>
+<p>You also can have one (or many) inputs with normal buttons displayed below the inputs.</p>
+<p><img src="images/toast-content-input-with-buttons.png" alt="A screenshot of an app notification showing a line of text, a text box, and a row with two buttons labeled &quot;Reply&quot; and &quot;Video call&quot;."></p>
+<div class="tabGroup" id="tabgroup_16">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_16_appsdk" role="tab" aria-controls="tabpanel_16_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_16_toolkit" role="tab" aria-controls="tabpanel_16_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_16_xml" role="tab" aria-controls="tabpanel_16_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_16_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support quick reply text boxes.
+</code></pre>
+</section>
+<section id="tabpanel_16_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    ...
+    
+    .AddInputTextBox(&quot;tbReply&quot;, &quot;Type a reply&quot;)
+
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Reply&quot;)
+        .AddArgument(&quot;action&quot;, &quot;reply&quot;))
+
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Video call&quot;)
+        .AddArgument(&quot;action&quot;, &quot;videoCall&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_16_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast launch=&quot;app-defined-string&quot;&gt;
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;image placement=&quot;appLogoOverride&quot; hint-crop=&quot;circle&quot; src=&quot;https://picsum.photos/48?image=883&quot;/&gt;
+      &lt;text&gt;Andrew Bares&lt;/text&gt;
+      &lt;text&gt;Shall we meet up at 8?&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+  &lt;actions&gt;
+    &lt;input id=&quot;textBox&quot; type=&quot;text&quot; placeHolderContent=&quot;Type a reply&quot;/&gt;
+    &lt;action
+      content=&quot;Reply&quot;
+      arguments=&quot;action=reply&amp;amp;threadId=9218&quot;/&gt;
+    &lt;action
+      content=&quot;Video call&quot;
+      arguments=&quot;action=videocall&amp;amp;threadId=9218&quot;
+      activationType=&quot;foreground&quot;/&gt;
+  &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="selection-input">Selection input</h3>
+<p>In addition to text boxes, you can also use a selection menu.</p>
+<p><img src="images/toast-content-selection-input.png" alt="A screenshot of an app notification showing a line of text, a selection input with &quot;Lunch&quot; as the selected item, and a row with two buttons labeled &quot;Reserve&quot; and &quot;Call restaurant&quot;."></p>
+<div class="tabGroup" id="tabgroup_17">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_17_appsdk" role="tab" aria-controls="tabpanel_17_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_17_toolkit" role="tab" aria-controls="tabpanel_17_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_17_xml" role="tab" aria-controls="tabpanel_17_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_17_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;4th coffee?&quot;)
+    .AddText(&quot;When do you plan to come in tomorrow?&quot;)
+    .AddComboBox(new AppNotificationComboBox(&quot;time&quot;)
+        .SetTitle(&quot;Select an item:&quot;)
+        .AddItem(&quot;breakfast&quot;, &quot;Breakfast&quot;)
+        .AddItem(&quot;lunch&quot;, &quot;Lunch&quot;)
+        .AddItem(&quot;dinner&quot;, &quot;Dinner&quot;)
+        .SetSelectedItem(&quot;lunch&quot;))
+    .AddButton(new AppNotificationButton(&quot;Reply&quot;)
+        .AddArgument(&quot;action&quot;, &quot;reply&quot;)
+        .AddArgument(&quot;threadId&quot;, &quot;9218&quot;)
+        .SetContextMenuPlacement())
+    .AddButton(new AppNotificationButton(&quot;Call restaurant&quot;)
+        .AddArgument(&quot;action&quot;, &quot;videocall&quot;)
+        .AddArgument(&quot;threadId&quot;, &quot;9218&quot;)
+        .SetContextMenuPlacement());
+</code></pre>
+</section>
+<section id="tabpanel_17_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;4th coffee?&quot;)
+    .AddText(&quot;When do you plan to come in tomorrow?&quot;)
+    .AddToastInput(new ToastSelectionBox(&quot;time&quot;)
+    {
+        DefaultSelectionBoxItemId = &quot;lunch&quot;,
+        Items =
+            {
+                new ToastSelectionBoxItem(&quot;breakfast&quot;, &quot;Breakfast&quot;),
+                new ToastSelectionBoxItem(&quot;lunch&quot;, &quot;Lunch&quot;),
+                new ToastSelectionBoxItem(&quot;dinner&quot;, &quot;Dinner&quot;)
+            }
+    })
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Reply&quot;)
+        .AddArgument(&quot;action&quot;, &quot;reply&quot;)
+        .AddArgument(&quot;threadId&quot;, &quot;9218&quot;))
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Call restaurant&quot;)
+        .AddArgument(&quot;action&quot;, &quot;videoCall&quot;)
+        .AddArgument(&quot;threadId&quot;, &quot;9218&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_17_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;4th coffee?&lt;/text&gt;
+            &lt;text&gt;When do you plan to come in tomorrow?&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;actions&gt;
+        &lt;input id='time' type='selection' title='Select an item:' defaultInput='lunch'&gt;
+            &lt;selection id='breakfast' content='Breakfast'/&gt;&lt;selection id='dinner' content='Dinner'/&gt;
+            &lt;selection id='lunch' content='Lunch'/&gt;
+        &lt;/input&gt;
+        &lt;action content='Reply' arguments='action=reply;threadId=9218' placement='contextMenu'/&gt;
+        &lt;action content='Call Restaurant' arguments='action=videocall;threadId=9218' placement='contextMenu'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="snoozedismiss">Snooze/dismiss</h3>
+<p>Using a selection menu and two buttons, we can create a reminder notification that utilizes the system snooze and dismiss actions. Make sure to set the scenario to &quot;Reminder&quot; for the notification to behave like a reminder.</p>
+<p><img src="images/toast-content-snooze-dismiss.png" alt="A screenshot of an app notification with lines of text describing the time and location of a meeting. A selection box has &quot;15 minutes&quot; selected and there are buttons labeled Snooze and Dismiss."></p>
+<p>We link the Snooze button to the selection menu input using the <strong>SelectionBoxId</strong> property on the toast button.</p>
+<p>The <strong>Microsoft.Windows.AppNotifications.Builder</strong> syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the <code>Microsoft.Toolkit.Uwp.Notifications</code> APIs or raw XML.</p>
+<div class="tabGroup" id="tabgroup_18">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_18_appsdk" role="tab" aria-controls="tabpanel_18_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_18_toolkit" role="tab" aria-controls="tabpanel_18_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_18_xml" role="tab" aria-controls="tabpanel_18_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_18_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">// The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. 
+// But this scenario is supported for Windows App SDK apps, and you can build notifications for this 
+// scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
+</code></pre>
+</section>
+<section id="tabpanel_18_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.Reminder)
+    
+    ...
+    
+    .AddToastInput(new ToastSelectionBox(&quot;snoozeTime&quot;)
+    {
+        DefaultSelectionBoxItemId = &quot;15&quot;,
+        Items =
+        {
+            new ToastSelectionBoxItem(&quot;5&quot;, &quot;5 minutes&quot;),
+            new ToastSelectionBoxItem(&quot;15&quot;, &quot;15 minutes&quot;),
+            new ToastSelectionBoxItem(&quot;60&quot;, &quot;1 hour&quot;),
+            new ToastSelectionBoxItem(&quot;240&quot;, &quot;4 hours&quot;),
+            new ToastSelectionBoxItem(&quot;1440&quot;, &quot;1 day&quot;)
+        }
+    })
+
+    .AddButton(new ToastButtonSnooze() { SelectionBoxId = &quot;snoozeTime&quot; })
+    .AddButton(new ToastButtonDismiss());
+</code></pre>
+</section>
+<section id="tabpanel_18_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;text hint-maxLines=&quot;1&quot;&gt;Adaptive Tiles Meeting&lt;/text&gt;
+      &lt;text&gt;Conf Room 2001 / Building 135&lt;/text&gt;
+      &lt;text&gt;10:00 AM - 10:30 AM&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+  &lt;actions&gt;
+    &lt;input id=&quot;snoozeTime&quot; type=&quot;selection&quot; defaultInput=&quot;15&quot;&gt;
+      &lt;selection id=&quot;1&quot; content=&quot;1 minute&quot;/&gt;
+      &lt;selection id=&quot;15&quot; content=&quot;15 minutes&quot;/&gt;
+      &lt;selection id=&quot;60&quot; content=&quot;1 hour&quot;/&gt;
+      &lt;selection id=&quot;240&quot; content=&quot;4 hours&quot;/&gt;
+      &lt;selection id=&quot;1440&quot; content=&quot;1 day&quot;/&gt;
+    &lt;/input&gt;
+    &lt;action activationType=&quot;system&quot; arguments=&quot;snooze&quot; hint-inputId=&quot;snoozeTime&quot; content=&quot;&quot; /&gt;
+    &lt;action activationType=&quot;system&quot; arguments=&quot;dismiss&quot; content=&quot;&quot;/&gt;
+  &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p>To use the system snooze and dismiss actions:</p>
+<ul>
+<li>Specify a <strong>ToastButtonSnooze</strong> or <strong>ToastButtonDismiss</strong></li>
+<li>Optionally specify a custom content string:</li>
+<li>If you don't provide a string, we'll automatically use localized strings for &quot;Snooze&quot; and &quot;Dismiss&quot;.</li>
+<li>Optionally specify the <strong>SelectionBoxId</strong>:</li>
+<li>If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.</li>
+<li>If you want to provide snooze interval selections:
+-   Specify <strong>SelectionBoxId</strong> in the snooze action
+-   Match the id of the input with the <strong>SelectionBoxId</strong> of the snooze action
+-   Specify <strong>ToastSelectionBoxItem</strong>'s value to be a nonNegativeInteger which represents snooze interval in minutes.</li>
+</ul>
+<h2 id="audio">Audio</h2>
+<p>Custom audio has always been supported on Mobile, and is supported in Desktop Version 1511 (build 10586) or later. Custom audio can be referenced via the following paths:</p>
+<ul>
+<li>ms-appx:///</li>
+<li>ms-appdata:///</li>
+</ul>
+<div class="tabGroup" id="tabgroup_19">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_19_appsdk" role="tab" aria-controls="tabpanel_19_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_19_toolkit" role="tab" aria-controls="tabpanel_19_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_19_xml" role="tab" aria-controls="tabpanel_19_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_19_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Notification text.&quot;)
+    .SetAudioUri(new Uri(&quot;ms-appx:///Audio/NotificationSound.mp3&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_19_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Notification text&quot;)
+    .AddAudio(new Uri(&quot;ms-appx:///Audio/NotificationSound.mp3&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_19_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Notification text.&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;audio src='ms-appx:///Audio/NotificationSound.mp3'/&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p>Alternatively, you can pick from the <a href="/uwp/schemas/tiles/toastschema/element-audio#attributes-and-elements">list of ms-winsoundevents</a>, which have always been supported on both platforms.</p>
+<div class="tabGroup" id="tabgroup_20">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_20_appsdk" role="tab" aria-controls="tabpanel_20_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_20_toolkit" role="tab" aria-controls="tabpanel_20_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_20_xml" role="tab" aria-controls="tabpanel_20_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_20_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Notification text.&quot;)
+    .SetAudioEvent(AppNotificationSoundEvent.Alarm, AppNotificationAudioLooping.Loop);
+</code></pre>
+</section>
+<section id="tabpanel_20_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Notification text&quot;)
+    .AddAudio(new Uri(&quot;ms-winsoundevent:Notification.Looping.Alarm&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_20_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Notification text.&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;audio src='ms-winsoundevent:Notification.Looping.Alarm' loop='true'/&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p>See the <a href="/uwp/schemas/tiles/toastschema/element-audio">audio schema page</a> for information on audio in app notifications. To learn how to send an app notification that uses custom audio, see <a href="custom-audio-on-toasts.html">custom audio on toasts</a>.</p>
+<h2 id="scenarios">Scenarios</h2>
+<p>To create important notifications, alarms, reminders, and incoming call notifications, you simply use a normal app notification with a <strong>Scenario</strong> value assigned to it. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible <strong>Scenario</strong> values:</p>
+<ul>
+<li><strong>Reminder</strong></li>
+<li><strong>Alarm</strong></li>
+<li><strong>IncomingCall</strong></li>
+<li><strong>Urgent</strong></li>
+</ul>
+<h3 id="reminders">Reminders</h3>
+<p>In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the app notification will also show pre-expanded. A reminder sound will be played. You must provide at least one button on your app notification. Otherwise, the notification will be treated as a normal notification.</p>
+<div class="tabGroup" id="tabgroup_21">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_21_appsdk" role="tab" aria-controls="tabpanel_21_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_21_toolkit" role="tab" aria-controls="tabpanel_21_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_21_xml" role="tab" aria-controls="tabpanel_21_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_21_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Notification text.&quot;)
+    .SetScenario(AppNotificationScenario.Reminder);
+</code></pre>
+</section>
+<section id="tabpanel_21_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Notification text.&quot;)
+    .SetToastScenario(ToastScenario.Reminder)
+</code></pre>
+</section>
+<section id="tabpanel_21_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast scenario='reminder'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Notification text.&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="alarms">Alarms</h3>
+<p>Alarms behave the same as reminders, except alarms will additionally loop audio with a default alarm sound. You must provide at least one button on your app notification. Otherwise, the notification will be treated as a normal notification.</p>
+<div class="tabGroup" id="tabgroup_22">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_22_appsdk" role="tab" aria-controls="tabpanel_22_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_22_toolkit" role="tab" aria-controls="tabpanel_22_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_22_xml" role="tab" aria-controls="tabpanel_22_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_22_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Notification text.&quot;)
+    .SetScenario(AppNotificationScenario.Alarm)
+    .AddButton(new AppNotificationButton(&quot;Dismiss&quot;)
+        .AddArgument(&quot;action&quot;, &quot;dismiss&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_22_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Notification text&quot;)
+    .SetToastScenario(ToastScenario.Alarm)
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Dismiss&quot;)
+        .AddArgument(&quot;action&quot;, &quot;dismiss&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_22_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast scenario='alarm'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Notification text.&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;actions&gt;
+        &lt;action content='Dismiss' arguments='action=dismiss'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="incoming-calls">Incoming calls</h3>
+<p>Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.</p>
+<p><img src="images/toast-content-incoming-call.png" alt="Incoming call toast notification"></p>
+<div class="tabGroup" id="tabgroup_23">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_23_appsdk" role="tab" aria-controls="tabpanel_23_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_23_toolkit" role="tab" aria-controls="tabpanel_23_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_23_xml" role="tab" aria-controls="tabpanel_23_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_23_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .SetScenario(AppNotificationScenario.IncomingCall)
+    .AddText(&quot;Andrew Bares&quot;, new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+    .AddText(&quot;incoming call - mobile&quot;, new AppNotificationTextProperties()
+        .SetIncomingCallAlignment())
+      .SetInlineImage(new Uri(&quot;ms-appx:///images/profile.png&quot;),
+        AppNotificationImageCrop.Circle)
+    .AddButton(new AppNotificationButton(&quot;Text reply&quot;)
+        .SetToolTip(&quot;Text reply&quot;)
+        .SetIcon(new Uri(&quot;ms-appx:///images/reply.png&quot;))
+        .AddArgument(&quot;textId&quot;, &quot;123&quot;))
+    .AddButton(new AppNotificationButton(&quot;Reminder&quot;)
+        .SetToolTip(&quot;Reminder&quot;)
+        .SetIcon(new Uri(&quot;ms-appx:///images/reminder.png&quot;))
+        .AddArgument(&quot;reminderId&quot;, &quot;123&quot;))
+    .AddButton(new AppNotificationButton(&quot;Ignore&quot;)
+        .SetToolTip(&quot;Ignore&quot;)
+        .SetIcon(new Uri(&quot;ms-appx:///images/ignore.png&quot;))
+        .AddArgument(&quot;ignoreId&quot;, &quot;123&quot;))
+    .AddButton(new AppNotificationButton(&quot;Answer&quot;)
+        .SetToolTip(&quot;Answer&quot;)
+        .SetIcon(new Uri(&quot;ms-appx:///images/answer.png&quot;))
+        .AddArgument(&quot;answerId&quot;, &quot;123&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_23_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .SetToastScenario(ToastScenario.IncomingCall)
+    .AddText(&quot;Andrew Bares&quot;)
+    .AddText(&quot;incoming call - mobile&quot;)
+    .AddInlineImage(new Uri(&quot;ms-appx:///images/profile.png&quot;), 
+        &quot;Andrew Bares&quot;,
+        null,
+        AdaptiveImageCrop.Circle)
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Text reply&quot;)
+        .SetImageUri(new Uri(&quot;ms-appx:///images/reply.png&quot;))
+        .AddArgument(&quot;textId&quot;, &quot;123&quot;))
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Reminder&quot;)
+        .SetImageUri(new Uri(&quot;ms-appx:///images/reminder.png&quot;))
+        .AddArgument(&quot;reminderId&quot;, &quot;123&quot;))
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Ignore&quot;)
+        .SetImageUri(new Uri(&quot;ms-appx:///images/ignore.png&quot;))
+        .AddArgument(&quot;ignoreId&quot;, &quot;123&quot;))
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Answer&quot;)
+        .SetImageUri(new Uri(&quot;ms-appx:///images/answer.png&quot;))
+        .AddArgument(&quot;answerId&quot;, &quot;123&quot;));
+</code></pre>
+</section>
+<section id="tabpanel_23_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast scenario='incomingCall'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text hint-callScenarioCenterAlign='true'&gt;Andrew Bares&lt;/text&gt;
+            &lt;text hint-callScenarioCenterAlign='true'&gt;incoming call - mobile&lt;/text&gt;
+            &lt;image src='ms-appx:///images/profile.png' hint-crop='circle'/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+    &lt;actions&gt;
+        &lt;action 
+            content='Text reply' 
+            arguments='textId=123' 
+            imageUri='ms-appx:///images/reply.png' 
+            hint-toolTip='Text reply'/&gt;
+        &lt;action 
+                content='Reminder' 
+                arguments='reminderId=123' 
+                imageUri='ms-appx:///images/reminder.png' 
+                hint-toolTip='Reminder'/&gt;
+        &lt;action 
+                content='Ignore' 
+                arguments='ignoreId=123' 
+                imageUri='ms-appx:///images/ignore.png' 
+                hint-toolTip='Ignore'/&gt;
+        &lt;action 
+            content='Answer' 
+            arguments='answerId=123' 
+            imageUri='ms-appx:///images/answer.png' 
+            hint-toolTip='Answer'/&gt;
+    &lt;/actions&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="important-notifications">Important Notifications</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires</strong>: You must be running Windows Insider Preview Build 22546 or later to use important notifications.</p>
+</div>
+<p>Important notifications allow users to have more control over what 1st party and 3rd party apps can send them high-priority app notifications (urgent/important) that can break through Focus Assist (Do not Disturb). This can be modified in the notifications settings.</p>
+<p><img src="images/toast-content-urgent.png" alt="A screenshot of an urgent app notification that has an exclamation point in the attribution area next to the app name. The image also shows the system-initiated app notification that provides buttons for the user to allow or disallow urgent notifications from the app."></p>
+<div class="tabGroup" id="tabgroup_24">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_24_appsdk" role="tab" aria-controls="tabpanel_24_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_24_toolkit" role="tab" aria-controls="tabpanel_24_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_24_xml" role="tab" aria-controls="tabpanel_24_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_24_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Adaptive Tiles Meeting&quot;, 
+        new AppNotificationTextProperties()
+            .SetMaxLines(1))
+    .AddText(&quot;Conf Room 2001 / Building 135&quot;)
+    .AddText(&quot;10:00 AM - 10:30 AM&quot;);
+
+if (AppNotificationBuilder.IsUrgentScenarioSupported())
+{
+    builder.SetScenario(AppNotificationScenario.Urgent);
+}
+</code></pre>
+</section>
+<section id="tabpanel_24_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">// The builder syntax does not support important notifications yet.
+</code></pre>
+</section>
+<section id="tabpanel_24_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast scenario='urgent'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text hint-maxLines='1'&gt;Adaptive Tiles Meeting&lt;/text&gt;
+            &lt;text&gt;Conf Room 2001 / Building 135&lt;/text&gt;
+            &lt;text&gt;10:00 AM - 10:30 AM&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="localization-and-accessibility">Localization and accessibility</h2>
+<p>Your tiles and app notifications can load strings and images tailored for display language, display scale factor, high contrast, and other runtime contexts. For more info, see <a href="/windows/uwp/launch-resume/tile-toast-language-scale-contrast">Tile and toast notification support for language, scale, and high contrast</a>.</p>
+<h2 id="handling-activation">Handling activation</h2>
+<p>To learn how to handle app activations (the user clicking your toast or buttons on the toast), see <a href="send-local-toast.html">Send local toast</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="send-local-toast.html">Send a local toast and handle activation</a></li>
+<li><a href="https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications">Notifications library on GitHub (part of the UWP Community Toolkit)</a></li>
+<li><a href="/windows/uwp/launch-resume/tile-toast-language-scale-contrast">Tile and toast notification support for language, scale, and high contrast</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/adaptive-interactive-toasts.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

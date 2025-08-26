@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Install Vue.js directly on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Install Vue.js directly on Windows ">
+    
+    <meta name="description" content="A guide to help you get started using the Vue.js web frameworks directly on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="install-vuejs-directly-on-windows">Install Vue.js directly on Windows</h1>
+
+<p>A guide to help you set up a Vue.js development environment on Windows. Learn more on the <a href="vue-overview.html">Vue.js overview</a> page.</p>
+<p>Vue can be installed directly on Windows or on the Windows Subsystem for Linux (WSL). We generally recommend that you <a href="vue-on-wsl.html">install Vue on WSL</a> if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. You may also want to consider <a href="https://vitejs.dev/guide/why.html">Vite</a> as an alternative to Vue.js.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="nodejs-on-windows.html">Install Node.js on Windows</a>: This includes a version manager, package manager, and Visual Studio Code. The Node Package Manager (npm) is used to install Vue.js.</li>
+</ul>
+<h2 id="install-vuejs">Install Vue.js</h2>
+<p>To install Vue.js:</p>
+<ol>
+<li><p>Open a command line (ie. Windows Command Prompt or PowerShell).</p>
+</li>
+<li><p>Create a new project folder: <code>mkdir VueProjects</code> and enter that directory: <code>cd VueProjects</code>.</p>
+</li>
+<li><p>Install Vue.js using Node Package Manager (npm):</p>
+</li>
+</ol>
+<pre><code class="lang-powershell">npm install vue
+</code></pre>
+<p>Check the version number you have installed by using the command: <code>vue --version</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To install Vue.js using a CDN, rather than NPM, see the <a href="https://vuejs.org/v2/guide/installation.html#CDN">Vue.js install docs</a>. See the Vue docs for an <a href="https://vuejs.org/v2/guide/installation.html#Explanation-of-Different-Builds">Explanation of different Vue builds</a>.</p>
+</div>
+<h2 id="install-vue-cli">Install Vue CLI</h2>
+<p>Vue CLI is a toolkit for working with Vue in your terminal / command line. It enables you to quickly scaffold a new project (vue create), prototype new ideas (vue serve), or manage projects using a graphical user interface (vue ui). Vue CLI is a globally installed npm package that handles some of the build complexities (like using Babel or Webpack) for you. <em>If you are not building a new single-page app, you may not need or want Vue CLI.</em></p>
+<p>To install Vue CLI, use npm. You must use the <code>-g</code> flag to globally install in order to upgrade (<code>vue upgrade --next</code>):</p>
+<pre><code class="lang-PowerShell">npm install -g @vue/cli
+</code></pre>
+<p>To learn more about additional plugins that can be added (such as linting or Apollo for integrating GraphQL), visit <a href="https://cli.vuejs.org/guide/#cli-plugins">Vue CLI plugins</a> in the Vue CLI docs.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://vuejs.org/">Vue docs</a></li>
+<li><a href="vue-overview.html">Vue.js overview</a></li>
+<li><a href="vue-on-wsl.html">Install Vue.js on WSL</a></li>
+<li><a href="nuxtjs-on-wsl.html">Install Nuxt.js</a></li>
+<li><a href="/training/paths/vue-first-steps/">Take your first steps with Vue.js</a> learning path</li>
+<li>Try a <a href="https://code.visualstudio.com/docs/nodejs/vuejs-tutorial">Vue tutorial with VS Code</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/vue-on-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tab View </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tab View ">
+    
+    <meta name="description" content="TabView is a flexible way to organize multiple documents in dynamic tabs">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tab-view">Tab view</h1>
+
+<p>The TabView control is a way to display a set of tabs and their respective content. TabView controls are useful for displaying several pages (or documents) of content while letting a user rearrange, close, or open new tabs.</p>
+<p><span class="mx-imgBorder">
+<img src="images/tabview/tab-introduction.png" alt="Example of a TabView">
+</span>
+</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>In general, tabbed UIs come in one of two distinct styles that differ in function and appearance:</p>
+<ul>
+<li><strong>Static tabs</strong> are the sort of tabs often found in settings windows. They contain a set number of pages in a fixed order that usually contain predefined content.</li>
+<li><strong>Document tabs</strong> are the sort of tabs found in a browser, such as Microsoft Edge. Users can create, remove, and rearrange tabs; move tabs between windows; and change the content of tabs.</li>
+</ul>
+<p>By default, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> is configured to provide document tabs. We recommend TabView when users will be able to:</p>
+<ul>
+<li>Dynamically open, close, or rearrange tabs.</li>
+<li>Open documents or web pages directly into tabs.</li>
+<li>Drag and drop tabs between windows.</li>
+</ul>
+<p>The TabView API does allow configuring the control for static tabs. However, to follow Windows design guidance, and if there are more than a few static navigation items, consider using a <a href="navigationview.html">NavigationView</a> control.</p>
+<h2 id="anatomy">Anatomy</h2>
+<p>Tabbed UI is created with a TabView control and one or more TabViewItem controls. The TabView hosts instances of TabViewItem, which represents a single tab and it's content.</p>
+<h3 id="tabview-parts">TabView parts</h3>
+<p>This image shows the parts of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> control. The <em>tab strip</em> has a header and footer, but unlike a document, the tab strip's header and footer are on the far left and far right of the strip, respectively.</p>
+<p><span class="mx-imgBorder">
+<img src="images/tabview/tab-view-anatomy.png" alt="This image shows the parts of the tab view control. The tab strip contains four tabs and has a header and footer, which are on the far left and far right of the strip, respectively.">
+</span>
+</p>
+<h3 id="tabviewitem-parts">TabViewItem parts</h3>
+<p>This image shows the parts of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem">TabViewItem</a> control. Although the content is displayed inside of the TabView control, the content is actually a part of the TabViewItem.</p>
+<p><span class="mx-imgBorder">
+<img src="images/tabview/tab-control-anatomy.png" alt="This image shows the parts of the tab view item control. An individual tab is selected, which has an icon and label, with a content area below the tab.">
+</span>
+</p>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="tab-selection">Tab selection</h3>
+<p>Most users have experience using document tabs simply by using a web browser. When they use document tabs in your app, their experience informs their expectations for how your tabs should behave.</p>
+<p>No matter how the user interacts with a set of document tabs, there should always be an active tab. If the user closes the selected tab or breaks the selected tab out into another window, another tab should become the active tab. <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> attempts to do this automatically selecting the next tab. If you have a good reason that your app should allow a TabView with an unselected tab, the TabView's content area will simply be blank.</p>
+<h3 id="keyboard-navigation">Keyboard navigation</h3>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> supports many common keyboard navigation scenarios by default. This section explains the built-in functionality, and provides recommendations on additional functionality that might be helpful for some apps.</p>
+<h4 id="tab-and-cursor-key-behavior">Tab and cursor key behavior</h4>
+<p>When focus moves into the <em>TabStrip</em> area, the selected <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem">TabViewItem</a> gains focus. The user can then use the Left and Right arrow keys to move focus (not selection) to other tabs in the tab strip. Arrow focus is trapped inside the tab strip and the add tab (+) button, if one is present. To move focus out of the tab strip area, the user can press the <kbd>Tab</kbd> key, which will move focus to the next focusable element.</p>
+<p><em><strong>Move focus via Tab</strong></em></p>
+<p><span class="mx-imgBorder">
+<img src="images/tabview/tab-keyboard-behavior-1.png" alt="Move focus via tab">
+</span>
+</p>
+<p><em><strong>Arrow keys do not cycle focus</strong></em></p>
+<p><span class="mx-imgBorder">
+<img src="images/tabview/tab-keyboard-behavior-3.png" alt="Arrow keys do not cycle focus">
+</span>
+</p>
+<h4 id="selecting-a-tab">Selecting a tab</h4>
+<p>When a TabViewItem has focus, press <kbd>Space</kbd> or <kbd>Enter</kbd> to select that TabViewItem.</p>
+<p><em><strong>Use arrow keys to move focus, then press <kbd>Space</kbd> to select tab.</strong></em></p>
+<p><span class="mx-imgBorder">
+<img src="images/tabview/tab-keyboard-behavior-2.png" alt="Space to select tab">
+</span>
+</p>
+<h4 id="shortcuts-for-selecting-adjacent-tabs">Shortcuts for selecting adjacent tabs</h4>
+<p>Press <kbd>Ctrl+Tab</kbd> to select the next <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem">TabViewItem</a>. Press <kbd>Ctrl+Shift+Tab</kbd> to select the previous TabViewItem. For these purposes, the tab list is &quot;looped,&quot; so selecting the next tab while the last tab is selected will cause the first tab to become selected.</p>
+<h4 id="closing-a-tab">Closing a tab</h4>
+<p>Press <kbd>Ctrl + F4</kbd> to raise  the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabcloserequested">TabCloseRequested</a> event. Handle the event and close the tab if appropriate.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For more information, see <a href="#keyboard-guidance-for-developers">Keyboard guidance for developers</a> later in this article.</p>
+</div>
+<h2 id="create-a-tab-view">Create a tab view</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem">TabViewItem class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/TabView">Open the WinUI 3 Gallery app and see the TabView in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>The examples in this section show a variety of ways to configure a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> control.</p>
+<h3 id="tab-view-items">Tab view items</h3>
+<p>Each tab in a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> is represented by a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem">TabViewItem</a> control, which includes both the tab that's shown in the tab strip and the content shown below the tab strip.</p>
+<h4 id="configure-a-tab">Configure a tab</h4>
+<p>For each TabViewItem, you can set a header and an icon, and specify whether the user can close the tab.</p>
+<ul>
+<li>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.header">Header</a> property is typically set to a string value that provides a descriptive label for the tab. However, the <code>Header</code> property can be any object. You can also use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.headertemplate">HeaderTemplate</a> property to specify a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> that defines how bound header data should be displayed.</li>
+<li>Set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.iconsource">IconSource</a> property to specify an icon for the tab.</li>
+<li>By default, the tab shows a <em>close button</em> (X). You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.isclosable">IsClosable</a> property to <code>false</code> to hide the close button and ensure that a user can't close the tab. (If you close tabs in your app code outside of a <em>close requested</em> event, you should first check that <code>IsClosable</code> is <code>true</code>.)</li>
+</ul>
+<p>For the TabView, you can configure several options that apply to all tabs.</p>
+<ul>
+<li>By default, the close button is always shown for closable tabs. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.closebuttonoverlaymode">CloseButtonOverlayMode</a> property to <code>OnPointerOver</code> to change this behavior. In this case, the selected tab always shows the close button if it is closable, but unselected tabs show the close button only when the tab is closable and the user has their pointer over it.</li>
+<li>You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabwidthmode">TabWidthMode</a> property to change how tabs are sized. (The <code>Width</code> property is ignored on <code>TabViewItem</code>.) These are the options in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewwidthmode">TabViewWidthMode</a> enumeration:
+<ul>
+<li><code>Equal</code> - Each tab has the same width. This is the default.</li>
+<li><code>SizeToContent</code> - Each tab adjusts its width to the content within the tab.</li>
+<li><code>Compact</code> - Unselected tabs collapse to show only their icon. The selected tab adjusts to display the content within the tab.</li>
+</ul>
+</li>
+</ul>
+<h4 id="content">Content</h4>
+<p>The elements displayed in the selected tab are added to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem">TabViewItem</a>. TabViewItem is a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol">ContentControl</a>, so you can add any type of object as content. You can also apply a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.contenttemplate">ContentTemplate</a> property. See the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol">ContentControl</a> class for more information.</p>
+<p>The examples in this article show a simple case of adding text directly to the <code>Content</code> element in XAML. However, real UI is typically more complex. A common way to add complex UI as the content of a tab is to encapsulate it in a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.usercontrol">UserControl</a> or a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a>, and add that as the content of the TabViewItem. This example assumes your app has a XAML UserControl called <code>PictureSettingsControl</code>.</p>
+<pre><code class="lang-xaml">&lt;TabViewItem&gt;
+    &lt;TabViewItem.Content&gt;
+        &lt;local:PictureSettingsControl/&gt;
+    &lt;/TabViewItem.Content&gt;
+&lt;/TabViewItem&gt;
+</code></pre>
+<h3 id="static-tabs">Static tabs</h3>
+<p>This example shows a simple <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> with two <em>static tabs</em>. Both tab items are added in XAML as content of the TabView.</p>
+<p>To make a TabView static, use these settings:</p>
+<ul>
+<li>Set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.isaddtabbuttonvisible">IsAddTabButtonVisible</a> property to <code>false</code> to hide the <em>add tab</em> button and prevent the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.addtabbuttonclick">AddTabButtonClick</a> event from being raised.</li>
+<li>Set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.canreordertabs">CanReorderTabs</a> property to <code>false</code> to prevent the user from dragging tabs into a different order.</li>
+<li>On each <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem">TabViewItem</a>, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.isclosable">IsClosable</a> property to false to hide the <em>tab close</em> button prevent the user from raising the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabcloserequested">TabCloseRequested</a> event.</li>
+</ul>
+<pre><code class="lang-xaml">&lt;TabView VerticalAlignment=&quot;Stretch&quot;
+         IsAddTabButtonVisible=&quot;False&quot;
+         CanReorderTabs=&quot;False&quot;&gt;
+    &lt;TabViewItem Header=&quot;Picture&quot; IsClosable=&quot;False&quot;&gt;
+        &lt;TabViewItem.IconSource&gt;
+            &lt;SymbolIconSource Symbol=&quot;Pictures&quot;/&gt;
+        &lt;/TabViewItem.IconSource&gt;
+        &lt;TabViewItem.Content&gt;
+            &lt;StackPanel Padding=&quot;12&quot;&gt;
+                &lt;TextBlock Text=&quot;Picture settings&quot; 
+                    Style=&quot;{ThemeResource TitleTextBlockStyle}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/TabViewItem.Content&gt;
+    &lt;/TabViewItem&gt;
+    &lt;TabViewItem Header=&quot;Sound&quot; IsClosable=&quot;False&quot;&gt;
+        &lt;TabViewItem.IconSource&gt;
+            &lt;SymbolIconSource Symbol=&quot;Audio&quot;/&gt;
+        &lt;/TabViewItem.IconSource&gt;
+        &lt;TabViewItem.Content&gt;
+            &lt;StackPanel Padding=&quot;12&quot;&gt;
+                &lt;TextBlock Text=&quot;Sound settings&quot; 
+                    Style=&quot;{ThemeResource TitleTextBlockStyle}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/TabViewItem.Content&gt;
+    &lt;/TabViewItem&gt;
+&lt;/TabView&gt;
+</code></pre>
+<h3 id="document-tabs">Document tabs</h3>
+<p>By default, the TabView is configured for <em>document tabs</em>. The user can add new tabs, rearrange tabs, and close tabs. In this configuration, you need to handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.addtabbuttonclick">AddTabButtonClick</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabcloserequested">TabCloseRequested</a> events to enable the functionality.</p>
+<p>When tabs are added to a TabView, there might eventually be too many tabs to display in your tab strip. In this case, scroll bumpers will appear that let the user scroll the tab strip left and right to access hidden tabs.</p>
+<p>This example creates a simple <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> along with event handlers to support opening and closing tabs. The <code>TabView_AddTabButtonClick</code> event handler shows how to add a TabViewItem in code.</p>
+<pre><code class="lang-xaml">&lt;TabView VerticalAlignment=&quot;Stretch&quot;
+         AddTabButtonClick=&quot;TabView_AddTabButtonClick&quot;
+         TabCloseRequested=&quot;TabView_TabCloseRequested&quot;&gt;
+    &lt;TabViewItem Header=&quot;Home&quot; IsClosable=&quot;False&quot;&gt;
+        &lt;TabViewItem.IconSource&gt;
+            &lt;SymbolIconSource Symbol=&quot;Home&quot; /&gt;
+        &lt;/TabViewItem.IconSource&gt;
+        &lt;TabViewItem.Content&gt;
+            &lt;StackPanel Padding=&quot;12&quot;&gt;
+                &lt;TextBlock Text=&quot;TabView content&quot; 
+                           Style=&quot;{ThemeResource TitleTextBlockStyle}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/TabViewItem.Content&gt;
+    &lt;/TabViewItem&gt;
+&lt;/TabView&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Add a new tab to the TabView.
+private void TabView_AddTabButtonClick(TabView sender, object args)
+{
+    var newTab = new TabViewItem();
+    newTab.Header = $&quot;New Document {sender.TabItems.Count}&quot;;
+    newTab.IconSource = new SymbolIconSource() { Symbol = Symbol.Document };
+    newTab.Content = new TextBlock() { Text = $&quot;Content for new tab {sender.TabItems.Count}.&quot;,
+                                       Padding = new Thickness(12) };
+    sender.TabItems.Add(newTab);
+    sender.SelectedItem = newTab;
+}
+
+// Remove the requested tab from the TabView.
+private void TabView_TabCloseRequested(TabView sender, 
+                                       TabViewTabCloseRequestedEventArgs args)
+{
+    sender.TabItems.Remove(args.Tab);
+}
+</code></pre>
+<h4 id="close-the-window-when-the-last-tab-is-closed">Close the window when the last tab is closed</h4>
+<p>If all tabs in your app are closeable and your app window should close when the last tab is closed, you should also close the window in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabcloserequested">TabCloseRequested</a> event handler.</p>
+<p>First, in the <code>App.xaml.cs</code> file, add a <code>public static</code> property that will let you access the <code>Window</code> instance from the <code>Page</code> that hosts the TabView. (See <a href="../../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.html#change-windowsuixamlwindowcurrent-to-appwindow">User interface migration</a>.)</p>
+<pre><code class="lang-csharp">public partial class App : Application
+{
+    // ... code removed.
+
+    // Add this.
+    public static Window Window { get { return m_window; } }
+    // Update this to make it static.
+    private static Window m_window;
+}
+</code></pre>
+<p>Then, modify the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabcloserequested">TabCloseRequested</a> event handler to call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.close">Window.Close</a> if all tabs have been removed from the TabView.</p>
+<pre><code class="lang-csharp">// Remove the requested tab from the TabView.
+// If all tabs have been removed, close the Window.
+private void TabView_TabCloseRequested(TabView sender, 
+                                       TabViewTabCloseRequestedEventArgs args)
+{
+    sender.TabItems.Remove(args.Tab);
+
+    if (sender.TabItems.Count == 0)
+    {
+        App.Window.Close();
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This example works for an app with a single window (<code>MainWindow</code>). If your app has multiple windows, or you have enabled tab tear-out, you need to track the windows and then find the correct one to close. See the next section for an example of this.</p>
+</div>
+<h2 id="tab-tear-out">Tab tear-out</h2>
+<p><em>Tab tear-out</em> describes what happens when a user drags a tab out of the TabView's tab strip and moves it to another TabView control, typically in a new window.</p>
+<p>Starting in Windows App SDK 1.6, TabView has a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.cantearouttabs">CanTearOutTabs</a> property that you can set to provide an enhanced experience for dragging tabs out to a new window. When a user drags a tab out of the tab strip with this option is enabled, a new window is immediately created during the drag, allowing the user to drag it to the edge of the screen to maximize or <a href="https://www.microsoft.com/windows/tips/snap">snap the window</a> in one smooth motion. This implementation also doesn't use drag-and-drop APIs, so it isn't impacted by any limitations in those APIs.</p>
+<p>When you set the CanTearOutTabs property to <code>true</code>, it causes the <em>tab tear-out</em> events to be raised instead of <em>drag-and-drop</em> events. To implement tab tear-out, you must handle these events:</p>
+<ul>
+<li><p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabtearoutwindowrequested">TabTearOutWindowRequested</a></p>
+<p>This event occurs when a tab is first dragged out of the tab strip. Handle it to create a new Window and TabView that the tab will be moved to.</p>
+</li>
+<li><p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabtearoutrequested">TabTearOutRequested</a></p>
+<p>This event occurs after a new Window has been provided. Handle it to move the torn-out tab from the originating TabView to a TabView in the new window.</p>
+</li>
+<li><p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.externaltornouttabsdropping">ExternalTornOutTabsDropping</a></p>
+<p>This event occurs when a torn-out tab is dragged over an existing TabView. Handle it in the TabView that is receiving the torn-out tab to indicate whether or not the tab should be accepted.</p>
+</li>
+<li><p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.externaltornouttabsdropped">ExternalTornOutTabsDropped</a></p>
+<p>This event occurs when a torn-out tab is dragged over an existing TabView and the <code>ExternalTornOutTabsDropping</code> event has indicated that the drop is allowed. Handle it in the TabView that is receiving the torn-out tab to remove the tab from the originating TabView and insert it into the receiving TabView at the specified index.</p>
+</li>
+</ul>
+<p>These events are not raised when tab tear-out is enabled: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabdragstarting">TabDragStarting</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabstripdragover">TabStripDragOver</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabstripdrop">TabStripDrop</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabdragcompleted">TabDragCompleted</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabdroppedoutside">TabDroppedOutside</a>.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Tab tear-out is supported in processes running elevated as Administrator.</p>
+</div>
+<p>The following examples show how to implement the event handlers to support tab tear-out.</p>
+<h3 id="set-up-the-tabview">Set up the TabView</h3>
+<p>This XAML sets the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.cantearouttabs">CanTearOutTabs</a> property to <code>true</code> and sets up the tab tear-out event handlers.</p>
+<pre><code class="lang-xaml">&lt;TabView x:Name=&quot;tabView&quot;
+     CanTearOutTabs=&quot;True&quot;
+     TabTearOutWindowRequested=&quot;TabView_TabTearOutWindowRequested&quot;
+     TabTearOutRequested=&quot;TabView_TabTearOutRequested&quot;
+     ExternalTornOutTabsDropping=&quot;TabView_ExternalTornOutTabsDropping&quot;
+     ExternalTornOutTabsDropped=&quot;TabView_ExternalTornOutTabsDropped&quot;&gt;
+    &lt;!-- TabView content --&gt;
+&lt;/TabView&gt;
+</code></pre>
+<h3 id="create-and-track-a-new-window">Create and track a new window</h3>
+<p>Tab tear-out requires that you create and manage new windows in your app.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The WinUI Gallery app includes a <code>WindowHelper</code> class that makes it easier to manage windows in your app. You can copy it from GitHub in the WinUI Gallery repo: <a href="https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Helper/WindowHelper.cs">WindowHelper.cs</a>. We recommend this helper class to implement tab tear-out. See the <a href="https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/TabViewPages/TabViewWindowingSamplePage.xaml.cs">TabViewWindowingSamplePage</a> on GitHub to see how it's used.</p>
+<p>In this article, helper methods are copied from <code>WindowHelper.cs</code>, but are modified and shown inline for readability.</p>
+</div>
+<p>Here, a list for tracking all active windows is created in <code>App.xaml.cs</code>. The <code>OnLaunched</code> method is updated to track the window after it's created. (This is not needed if you use the <code>WindowHelper</code> class.)</p>
+<pre><code class="lang-csharp">static public List&lt;Window&gt; ActiveWindows = new List&lt;Window&gt;();
+
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    m_window = new MainWindow();
+    // Track this window.
+    ActiveWindows.Add(m_window);
+    m_window.Activate();
+}
+</code></pre>
+<p>When tab tear-out begins, a new window is requested. Here, the variable <code>tabTearOutWindow</code> provides access to the new window after it's created. The <code>CreateWindow</code> and <code>TrackWindow</code> helper methods create a new window and add it to the active window tracking list.</p>
+<p>After you create the new window, you need to create a new Page and set it as the content of the window. The new <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a> must contain a TabView control that you will move the torn-out tab into in the <code>TabTearOutRequested</code> event handler.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In this example, we create a new <code>MainPage</code> class, since it contains only an empty TabView (no tabs are added directly in XAML). If <code>MainPage</code> includes other UI elements that should not appear in the torn-out window, you can create a separate page that includes only elements you require (including at least a TabView), and create an instance of that page.</p>
+</div>
+<p>Finally, assign the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.id">AppWindow.Id</a> of the new window to the <code>args.</code><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewtabtearoutwindowrequestedeventargs.newwindowid">NewWindowId</a> property. This will be used in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewtabtearoutrequestedeventargs.newwindowid">TabViewTabTearOutRequestedEventArgs.NewWindowId</a> property so you can access the window from that event handler.</p>
+<pre><code class="lang-csharp">private Window? tabTearOutWindow = null;
+
+private void TabView_TabTearOutWindowRequested(TabView sender, TabViewTabTearOutWindowRequestedEventArgs args)
+{
+    tabTearOutWindow = CreateWindow();
+    tabTearOutWindow.Content = new MainPage();
+    // Optional window setup, such as setting the icon or
+    // extending content into the title bar happens here.
+    args.NewWindowId = tabTearOutWindow.AppWindow.Id;
+}
+
+private Window CreateWindow()
+{
+    Window newWindow = new Window
+    {
+        SystemBackdrop = new MicaBackdrop()
+    };
+    newWindow.Title = &quot;Torn Out Window&quot;;
+    TrackWindow(newWindow);
+    return newWindow;
+}
+
+private void TrackWindow(Window window)
+{
+    window.Closed += (sender, args) =&gt; {
+        App.ActiveWindows.Remove(window);
+    };
+    App.ActiveWindows.Add(window);
+}
+</code></pre>
+<h4 id="close-a-window-when-the-last-tab-is-closed">Close a window when the last tab is closed</h4>
+<p>As mentioned earlier, you, might want to close the window when the last tab in a TabView is closed. If your app has multiple windows, you need to find the correct window to close in your list of tracked windows. This example shows how to do that.</p>
+<pre><code class="lang-csharp">// Remove the requested tab from the TabView.
+// If all tabs have been removed, close the Window.
+private void TabView_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEventArgs args)
+{
+    sender.TabItems.Remove(args.Tab);
+
+    if (sender.TabItems.Count == 0)
+    {
+        GetWindowForElement(this)?.Close();
+    }
+}
+
+public Window? GetWindowForElement(UIElement element)
+{
+    if (element.XamlRoot != null)
+    {
+        foreach (Window window in App.ActiveWindows)
+        {
+            if (element.XamlRoot == window.Content.XamlRoot)
+            {
+                return window;
+            }
+        }
+    }
+    return null;
+}
+</code></pre>
+<h3 id="move-the-tab-to-the-new-window">Move the tab to the new window</h3>
+<p>After the new window has been provided, you need to remove the torn-out tab from the <code>sender</code> TabView and add it to the TabView in the new window. In this example, the <code>public AddTabToTabs</code> helper method let's you access the TabView in the new <code>MainPage</code> instance from the original page instance in order to add the torn-out tab to it.</p>
+<pre><code class="lang-csharp">private void TabView_TabTearOutRequested(TabView sender, TabViewTabTearOutRequestedEventArgs args)
+{
+    if (tabTearOutWindow?.Content is MainPage newPage
+        &amp;&amp; args.Tabs.FirstOrDefault() is TabViewItem tab)
+    {
+        sender.TabItems.Remove(tab);
+        newPage.AddTabToTabs(tab);
+    }
+}
+
+// This method provides access to the TabView from
+// another page instance so you can add the torn-out tab.
+public void AddTabToTabs(TabViewItem tab)
+{
+    tabView.TabItems.Add(tab);
+}
+</code></pre>
+<h3 id="drag-a-torn-out-tab-onto-another-tabview">Drag a torn-out tab onto another TabView</h3>
+<p>When a tab has been torn-out and placed into a new window, as shown in the previous steps, one of two things can happen:</p>
+<ul>
+<li>The user can drop the tab and it remains in the new window. The tear-out process ends here and no more events are raised.</li>
+<li>The user can continue to drag the torn-out tab back onto an existing TabView control. In this case, the process continues and several more events are raised to let you remove the tab from the original TabView and insert the external tab into an existing TabView.</li>
+</ul>
+<p>When the tab is dragged over the existing TabView, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.externaltornouttabsdropping">ExternalTornOutTabsDropping</a> event it raised. In the event handler, you can determine whether inserting the tab into this TabView is allowed. In most cases, you only need to set the <code>args.</code><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewexternaltornouttabsdroppingeventargs.allowdrop">AllowDrop</a> property to <code>true</code>. However, if you need to perform any checks before setting that property, you can do that here. If <code>AllowDrop</code> is set to <code>false</code>, the tab drag action continues and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.externaltornouttabsdropped">ExternalTornOutTabsDropped</a> event is not raised.</p>
+<pre><code class="lang-csharp">private void TabView_ExternalTornOutTabsDropping(TabView sender, 
+                        TabViewExternalTornOutTabsDroppingEventArgs args)
+{
+    args.AllowDrop = true;
+}
+</code></pre>
+<p>If <code>AllowDrop</code> is set to <code>true</code> in the <code>ExternalTornOutTabsDropping</code> event handler, the <code>ExternalTornOutTabsDropped</code> event is immediately raised.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <em><code>Dropped</code></em> in the event name does not directly correspond to the idea of a <em>drop</em> action in the drag-and-drop APIs. Here, the user does not need to release the tab to perform a <em>drop</em> action. The event is raised while the tab is held over the tab strip, and the code is executed to <em>drop</em> the tab into the TabView.</p>
+</div>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.externaltornouttabsdropped">ExternalTornOutTabsDropped</a> event handler follows the same pattern as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabtearoutrequested">TabTearOutRequested</a> event, but inverted; you need to remove the tab from the originating TabView and insert it into the <code>sender</code> TabView.</p>
+<p>The <code>sender</code> TabView is the control that the tab is being inserted into, so we use the <code>GetParentTabView</code> helper method to find the originating tab. It starts with the torn-out TabViewItem and uses <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.visualtreehelper">VisualTreeHelper</a> to walk up the visual tree and find the TabView the item belongs to. After the TabView is found, the TabViewItem is removed from it's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitems">TabItems</a> collection and inserted into the <code>sender</code> TabView's <code>TabItems</code> collection at the index specified by <code>args.</code><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewexternaltornouttabsdroppedeventargs.dropindex">DropIndex</a>.</p>
+<pre><code class="lang-csharp">private void TabView_ExternalTornOutTabsDropped(TabView sender, 
+                             TabViewExternalTornOutTabsDroppedEventArgs args)
+{
+    if (args.Tabs.FirstOrDefault() is TabViewItem tab)
+    {
+        GetParentTabView(tab)?.TabItems.Remove(tab);
+        sender.TabItems.Insert(args.DropIndex, tab);
+    }
+}
+
+// Starting with the TabViewItem, walk up the
+// visual tree until you get to the TabView.
+private TabView? GetParentTabView(TabViewItem tab)
+{
+    DependencyObject current = tab;
+    while (current != null)
+    {
+        if (current is TabView tabView)
+        {
+            return tabView;
+        }
+        current = VisualTreeHelper.GetParent(current);
+    }
+    return null;
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you're using the <a href="/dotnet/communitytoolkit/windows/">Windows Community Toolkit</a>, you can use the <code>FindAscendant</code> helper method in the toolkit's <a href="/dotnet/communitytoolkit/windows/extensions/dependencyobjectextensions">DependencyObjectExtensions</a> instead of <code>GetParentTabView</code>.</p>
+</div>
+<h2 id="display-tabview-tabs-in-a-windows-title-bar">Display TabView tabs in a window's title bar</h2>
+<p>Instead of having tabs occupy their own row below a Window's title bar, you can merge the two into the same area. This saves vertical space for your content, and gives your app a modern feel.</p>
+<p>Because a user can drag a window by its title bar to reposition the Window, it is important that the title bar is not completely filled with tabs. Therefore, when displaying tabs in a title bar, you must specify a portion of the title bar to be reserved as a draggable area. If you do not specify a draggable region, the entire title bar will be draggable, which prevents your tabs from receiving input events. If your TabView will display in a window's title bar, you should always include a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabstripfooter">TabStripFooter</a> in your <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> and mark it as a draggable region.</p>
+<p>For more information, see <a href="../../develop/title-bar.html">Title bar customization</a></p>
+<p><span class="mx-imgBorder">
+<img src="images/tabview/tab-extend-to-title.png" alt="Tabs in title bar">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;TabView VerticalAlignment=&quot;Stretch&quot;&gt;
+    &lt;TabViewItem Header=&quot;Home&quot; IsClosable=&quot;False&quot;&gt;
+        &lt;TabViewItem.IconSource&gt;
+            &lt;SymbolIconSource Symbol=&quot;Home&quot; /&gt;
+        &lt;/TabViewItem.IconSource&gt;
+    &lt;/TabViewItem&gt;
+
+    &lt;TabView.TabStripFooter&gt;
+        &lt;Grid x:Name=&quot;CustomDragRegion&quot; Background=&quot;Transparent&quot; /&gt;
+    &lt;/TabView.TabStripFooter&gt;
+&lt;/TabView&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void MainPage_Loaded(object sender, RoutedEventArgs e)
+{
+    App.Window.ExtendsContentIntoTitleBar = true;
+    App.Window.SetTitleBar(CustomDragRegion);
+    CustomDragRegion.MinWidth = 188;
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>How you get a reference to the window may vary depending on how you track windows in your app. For more information, see <a href="#close-the-window-when-the-last-tab-is-closed">Close the window when the last tab is closed</a> and <a href="#create-and-track-a-new-window">Create and track a new window</a> in this article.</p>
+</div>
+<h2 id="keyboard-guidance-for-developers">Keyboard guidance for developers</h2>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For more information about built-in keyboard support, see <a href="#keyboard-navigation">Keyboard navigation</a> earlier in this article.</p>
+</div>
+<p>Some applications may require more advanced keyboard control. Consider implementing the following shortcuts if they are appropriate for your app.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you are adding a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a> to an existing app, you may have already created keyboard shortcuts that map to the key combinations of the recommended TabView keyboard shortcuts. In this case, you will have to consider whether to keep your existing shortcuts or offer an intuitive tab experience for the user.</p>
+</div>
+<ul>
+<li><kbd>Ctrl + T</kbd> should open a new tab. Generally this tab is populated with a predefined document, or is created empty with a simple way to choose its content. If the user must choose content for a new tab, consider giving input focus to the content selection control.</li>
+<li><kbd>Ctrl + W</kbd> should close the selected tab. Remember, TabView will select the next tab automatically.</li>
+<li><kbd>Ctrl + Shift + T</kbd> should open recently closed tabs (or more accurately, open new tabs with the same content as recently closed tabs). Start with the most recently closed tab, and move backwards in time for each subsequent time the shortcut is invoked. Note that this will require maintaining a list of recently closed tabs.</li>
+<li><kbd>Ctrl + 1</kbd> should select the first tab in the tab list. Likewise, Ctrl + 2 should select the second tab, Ctrl + 3 should select the third, and so on through Ctrl + 8.</li>
+<li><kbd>Ctrl + 9</kbd> should select the last tab in the tab list, regardless of how many tabs are in the list.</li>
+<li>If tabs offer more than just the close command (such as duplicating or pinning a tab), use a context menu to show all available actions that can be performed on a tab.</li>
+</ul>
+<h3 id="implement-browser-style-keyboarding-behavior">Implement browser-style keyboarding behavior</h3>
+<p>This example implements a number of the above recommendations on a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview">TabView</a>. Specifically, This example implements <kbd>Ctrl + T</kbd>, <kbd>Ctrl + W</kbd>, <kbd>Ctrl + 1-8</kbd>, and <kbd>Ctrl + 9</kbd>.</p>
+<pre><code class="lang-xaml">&lt;TabView&gt;
+    &lt;!-- ... some tabs ... --&gt;
+    &lt;TabView.KeyboardAccelerators&gt;
+        &lt;KeyboardAccelerator Key=&quot;T&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NewTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;W&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;CloseSelectedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number1&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number2&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number3&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number4&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number5&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number6&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number7&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number8&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+        &lt;KeyboardAccelerator Key=&quot;Number9&quot; Modifiers=&quot;Control&quot;
+                             Invoked=&quot;NavigateToNumberedTabKeyboardAccelerator_Invoked&quot; /&gt;
+    &lt;/TabView.KeyboardAccelerators&gt;
+&lt;/TabView&gt;
+
+</code></pre>
+<pre><code class="lang-csharp">private void NewTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender,
+                                      KeyboardAcceleratorInvokedEventArgs args)
+{
+    // Create new tab.
+    TabView senderTabView = (TabView)args.Element;
+    if (senderTabView is not null)
+    {
+        // (Click handler defined in previous example.)
+        TabView_AddTabButtonClick(senderTabView, new EventArgs());
+    }
+    args.Handled = true;
+}
+
+private void CloseSelectedTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender,
+                                                KeyboardAcceleratorInvokedEventArgs args)
+{
+    TabView tabView = (TabView)args.Element;
+    TabViewItem tab = (TabViewItem)tabView.SelectedItem;
+    if (tab is not null)
+    {
+        CloseSelectedTab(tabView, tab);
+    }
+    args.Handled = true;
+}
+
+private void TabView_TabCloseRequested(TabView sender, TabViewTabCloseRequestedEventArgs args)
+{
+    CloseSelectedTab(sender, args.Tab);
+}
+
+private void CloseSelectedTab(TabView tabView, TabViewItem tab)
+{
+    // Only remove the selected tab if it can be closed.
+    if (tab.IsClosable == true)
+    {
+        tabView.TabItems.Remove(tab);
+    }
+}
+
+
+private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerator sender,
+                                                     KeyboardAcceleratorInvokedEventArgs args)
+{
+    TabView tabView = (TabView)args.Element;
+    int tabToSelect = 0;
+
+    switch (sender.Key)
+    {
+        case Windows.System.VirtualKey.Number1:
+            tabToSelect = 0;
+            break;
+        case Windows.System.VirtualKey.Number2:
+            tabToSelect = 1;
+            break;
+        case Windows.System.VirtualKey.Number3:
+            tabToSelect = 2;
+            break;
+        case Windows.System.VirtualKey.Number4:
+            tabToSelect = 3;
+            break;
+        case Windows.System.VirtualKey.Number5:
+            tabToSelect = 4;
+            break;
+        case Windows.System.VirtualKey.Number6:
+            tabToSelect = 5;
+            break;
+        case Windows.System.VirtualKey.Number7:
+            tabToSelect = 6;
+            break;
+        case Windows.System.VirtualKey.Number8:
+            tabToSelect = 7;
+            break;
+        case Windows.System.VirtualKey.Number9:
+            // Select the last tab
+            tabToSelect = tabView.TabItems.Count - 1;
+            break;
+    }
+
+    // Only select the tab if it is in the list.
+    if (tabToSelect &lt; tabView.TabItems.Count)
+    {
+        tabView.SelectedIndex = tabToSelect;
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The TabView control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in the <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace.</p>
+<p>Tab tear-out APIs are not included in the WinUI 2 version of TabView.</p>
+<div class="checklist">
+<ul>
+<li><strong>WinUI 2 Apis:</strong> <a href="/uwp/api/microsoft.ui.xaml.controls.tabview">TabView class</a>, <a href="/uwp/api/microsoft.ui.xaml.controls.tabviewitem">TabViewItem class</a></li>
+<li><a href="winui2gallery:/item/TabView">Open the WinUI 2 Gallery app and see the TabView in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles, templates, and features for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:TabView /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="list-details.html">List/Details</a></li>
+<li><a href="navigationview.html">NavigationView</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/tab-view.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

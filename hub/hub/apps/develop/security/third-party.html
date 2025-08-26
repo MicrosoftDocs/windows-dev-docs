@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Plugin passkey manager support </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Plugin passkey manager support ">
+    
+    <meta name="description" content="This topic describes the plugin API support for passkey providers on Windows.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="plugin-passkey-manager-support">Plugin passkey manager support</h1>
+
+<p>This topic describes the plugin credential manager API plugin support for passkey providers on Windows. It showcases a demo app named Contoso Passkey Manager.</p>
+<h2 id="contoso-passkey-manager">Contoso Passkey Manager</h2>
+<p>Windows 11 supports a plugin model for passkeys. Contoso Passkey Manager is a demo app that demonstrates this passkey provider support.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Contoso Passkey Manager is designed for passkey creation and usage testing only. Don't use the app for production passkeys.</p>
+</div>
+<h3 id="step-1-installation">Step 1: Installation</h3>
+<ol>
+<li>Set up your development environment for WinUI 3 development (see <a href="/windows/apps/windows-app-sdk/set-up-your-development-environment">Install tools for the Windows App SDK</a>).</li>
+<li>Clone the Windows-classic-samples GitHub repo for the <a href="https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/PasskeyManager">Contoso Passkey Manager sample</a> app.</li>
+<li>In Visual Studio, open the Contoso Passkey Manager solution that you just cloned, carefully follow the instructions at the link above, build the sample, and then run it to confirm installation.</li>
+</ol>
+<h3 id="step-2-setup">Step 2: Setup</h3>
+<ol>
+<li>Go to <strong>Settings</strong> &gt; <strong>Accounts</strong> &gt; <strong>Passkeys</strong>, and then <strong>Advanced options</strong>.</li>
+<li>Switch the toggle to <strong>On</strong> for Contoso Passkey Manager.</li>
+<li>Complete the Windows Hello user verification, and now you can save passkeys to the Contoso Passkey Manager.</li>
+</ol>
+<p><img src="images/enabling-contoso-passkey-manager.png" alt="A screenshot of Windows Hello user verification completed successfully when enabling Contoso Passkey Manager in Settings"></p>
+<h3 id="step-3-passkey-creation">Step 3: Passkey creation</h3>
+<ol>
+<li>Navigate to a website such as <a href="https://webauthn.io/">webauthn.io</a>.</li>
+<li>Create a test user name, and click <strong>Register</strong>.</li>
+<li>You will be prompted, on saving your passkey, with the Contoso Passkey Manager. Click <strong>Continue</strong>.</li>
+</ol>
+<p><img src="images/saving-a-passkey-to-contoso-passkey-manager.png" alt="A screenshot of creating a passkey for webuthn.io with Contoso Passkey Manager"></p>
+<ol start="4">
+<li>The Contoso Passkey Manager app will open. Click <strong>Create</strong> to create the credential in Contoso Passkey Manager.</li>
+<li>Complete user verification with Windows Hello, and the passkey is created.</li>
+<li>You can see your saved passkeys by opening the Contoso Passkey Manager.</li>
+<li>If you want to test different experiences, then you can toggle <strong>Simulate Vault Unlock</strong> to test a vault unlock user experience when saving a passkey. The <strong>Minimize UI</strong> toggle simplifies the step that opens the passkey manager, and the experience flow will instead just be with user verification on Windows Hello.</li>
+</ol>
+<p><img src="images/contoso-passkey-manager-passkey-created.png" alt="A screenshot of Contoso Passkey Manager with a passkey saved in the app"></p>
+<h3 id="step-4-passkey-authentication">Step 4: Passkey authentication</h3>
+<ol>
+<li>Input your username, and click <strong>Authenticate</strong>.</li>
+<li>Select to sign in with the passkey saved to the Contoso Passkey Manager.</li>
+</ol>
+<p><img src="images/authentication-contoso-passkey-manager.png" alt="A screenshot of authentication with a Contoso Passkey Manager passkey"></p>
+<ol start="3">
+<li>Complete user verification with Windows Hello to authenticate.</li>
+<li>You've successfully logged in.</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>To integrate with the plugin capability, go to <a href="https://github.com/microsoft/webauthn">webauthn</a> to find the header files.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/win32/api/webauthn/nf-webauthn-webauthngetplatformcredentiallist">WebAuthNGetPlatformCredentialList</a></li>
+<li><a href="/windows/win32/api/webauthn/">webauthn.h header</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/third-party.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

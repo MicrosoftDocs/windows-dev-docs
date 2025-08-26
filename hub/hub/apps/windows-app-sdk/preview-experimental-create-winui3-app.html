@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create a new project that uses the Preview and Experimental channel of the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create a new project that uses the Preview and Experimental channel of the Windows App SDK ">
+    
+    <meta name="description" content="This guide shows you how to use the Preview and Experimental channel of Windows App SDK to create a .NET and C++ apps with WinUI 3 UI.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-a-winui-3-app-using-preview-and-experimental-channels-of-the-windows-app-sdk">Create a WinUI 3 app using Preview and Experimental channels of the Windows App SDK</h1>
+<!--todo: add to FAQ - "can we create a winui3 app without creating a win app sdk app?" - no, you build Windows desktop apps using the Win App SDK library. -->
+
+<p>The <a href="index.html">Windows App SDK</a> includes WinUI 3 project templates that enable you to create desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI 3. For a complete list of the project templates, see <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>.</p>
+<p><strong>Using the Windows App SDK Stable version</strong>: To build a WinUI 3 app using the stable version of the Windows App SDK, see <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use the WinUI 3 project templates described in this article, configure your development computer and install the Windows App SDK extension for Visual Studio. For details, see <a href="preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Certain fundamental WinRT types including <a href="/uwp/api/Windows.UI.Core.CoreWindow">CoreWindow</a>, <a href="/uwp/api/Windows.UI.ViewManagement.ApplicationView">ApplicationView</a>, <a href="/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView">CoreApplicationView</a> <a href="/uwp/api/Windows.UI.Core.CoreDispatcher">CoreDispatcher</a>, and their dependencies are not available in desktop apps. These types were designed specifically for UI scenarios in UWP apps, and they do not behave properly in desktop apps due to threading models and other platform differences. For more information including recommended alternative APIs, see <a href="../desktop/modernize/desktop-to-uwp-supported-api.html">Windows Runtime APIs not supported in desktop apps</a>.</p>
+</div>
+<h2 id="instructions-for-winui-3-packaged-desktop-apps">Instructions for WinUI 3 packaged desktop apps</h2>
+<p>To create a WinUI 3 application with MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_csharp" role="tab" aria-controls="tabpanel_1_csharp" data-tab="csharp" tabindex="0" aria-selected="true">C# with 1.0 Preview 3</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_csharp-earlier" role="tab" aria-controls="tabpanel_1_csharp-earlier" data-tab="csharp-earlier" tabindex="-1">C# with earlier releases</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="-1">C++ with 1.0 Preview 3</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cpp-earlier" role="tab" aria-controls="tabpanel_1_cpp-earlier" data-tab="cpp-earlier" tabindex="-1">C++ with earlier releases</a>
+</li>
+</ul>
+<section id="tabpanel_1_csharp" role="tabpanel" data-tab="csharp">
+
+<p>To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:</p>
+<ol>
+<li><p>In Visual Studio, select <strong>File</strong> -&gt; <strong>New</strong> -&gt; <strong>Project</strong>.</p>
+</li>
+<li><p>In the project drop-down filters, select <strong>C#</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>, respectively.</p>
+</li>
+<li><p>Select one of the following project types and click <strong>Next</strong>.</p>
+<ul>
+<li><p><strong>Blank App, Packaged (WinUI 3 in Desktop)</strong>: Creates a desktop C# .NET app with a WinUI-based user interface. The generated project is configured with the package manifest and other support needed to build the app into an <a href="/windows/msix/overview">MSIX package</a> without the use of a separate packaging project. For more information about this project type, see <a href="single-project-msix.html">Package your app using single-project MSIX</a>.</p>
+</li>
+<li><p><strong>Blank App, Packaged with WAP (WinUI 3 in Desktop)</strong>: Creates a desktop C# .NET app with a WinUI-based user interface. The generated solution includes a separate <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>.</p>
+</li>
+</ul>
+<p><img src="../winui/winui3/images/WinUI3-csharp-newproject-1.0-later.png" alt="Screenshot of Create a new project wizard with the Blank App Packaged (Win UI in Desktop) option highlighted."></p>
+</li>
+<li><p>Enter a project name, choose any other options as desired, and click <strong>Create</strong>.</p>
+</li>
+<li><p>In the following dialog box, set the <strong>Target version</strong> to Windows 10, version 2004 (build 19041) and <strong>Minimum version</strong> to Windows 10, version 1809 (build 17763) and then click <strong>OK</strong>.</p>
+<p><img src="../winui/winui3/images/WinUI3-minversion.png" alt="Target and Min Version"></p>
+</li>
+<li><p>At this point, Visual Studio generates one or more projects:</p>
+<ul>
+<li><p><strong><em>Project name</em> (Desktop)</strong>: This project contains your app's code. The <strong>App.xaml</strong> file and <strong>App.xaml.cs</strong> code-behind file define an <code>Application</code> class that represents your app instance. The <strong>MainWindow.xaml</strong> file and <strong>MainWindow.xaml.cs</strong> code-behind file define a <code>MainWindow</code> class that represents the main window displayed by your app. These classes derive from types in the <strong>Microsoft.UI.Xaml</strong> namespace provided by WinUI.</p>
+<p>If you used the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template, this project also includes the package manifest for building the app into an <a href="/windows/msix/overview">MSIX package</a>.</p>
+<p><img src="../winui/winui3/images/WinUI-csharp-appproject-1.0-later.png" alt="Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file for single project M S I X."></p>
+</li>
+<li><p><strong><em>Project name</em> (Package)</strong>: This project is generated only if you use the <strong>Blank App, Packaged with WAP (WinUI 3 in Desktop)</strong> project template. This project is a <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>. This project contains the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">package manifest</a> for your app, and it is the startup project for your solution by default.</p>
+<p><img src="../winui/winui3/images/WinUI-csharp-packageproject.png" alt="Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file."></p>
+</li>
+</ul>
+</li>
+<li><p>Enable deployment for your project in <strong>Configuration Manager</strong>. If you do not follow these steps to enable deployment, you will encounter the following error when you try to run or debug your project on your development computer: &quot;The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager&quot;.</p>
+<ol>
+<li><p>Select <strong>Build</strong> -&gt; <strong>Configuration Manager</strong>.</p>
+</li>
+<li><p>In <strong>Configuration Manager</strong>, click the <strong>Deploy</strong> check box for every combination of configuration and platform (for example, <strong>Debug</strong> and <strong>x86</strong>, <strong>Debug</strong> and <strong>arm64</strong>, <strong>Release</strong> and <strong>x64</strong>, and more).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Be sure to use the <strong>Active solution configuration</strong> and <strong>Active solution platform</strong> drop-downs at the top instead of the <strong>Configuration</strong> and <strong>Platform</strong> drop-downs in the same row as the <strong>Deploy</strong> check box.</p>
+</div>
+<p><img src="images/single-project-configmanager.png" alt="Enabling Deploy in Configuration Manager"></p>
+</li>
+</ol>
+</li>
+<li><p>To add a new item to your app project, right-click the <strong><em>Project name</em> (Desktop)</strong> project node in <strong>Solution Explorer</strong> and select <strong>Add</strong> -&gt; <strong>New Item</strong>. In the <strong>Add New Item</strong> dialog box, select the <strong>WinUI</strong> tab, choose the item you want to add, and then click <strong>Add</strong>. For more details about the available items, see <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>.</p>
+<p><img src="../winui/winui3/images/winui3-addnewitem.png" alt="Screenshot of the Add New Item dialog box with the Installed &gt; Visual C sharp Items &gt; Win U I selected and the Blank Page option highlighted."></p>
+</li>
+<li><p>Build and run your solution on your development computer to confirm that the app runs without errors.</p>
+</li>
+</ol>
+<h3 id="localize-your-winui-desktop-app">Localize your WinUI desktop app</h3>
+<p>To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see <a href="/windows/uwp/app-resources/">App resources and the Resource Management System</a>) and declare each supported language in the <strong>package.appxmanifest</strong> file of your project. When you build the project, the specified languages are added to the generated app manifest (<strong>AppxManifest.xml</strong>) and the corresponding resources are used.</p>
+<ol>
+<li><p>Open the .wapproj's <code>package.appxmanifest</code> in a text editor and locate the following section:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;x-generate&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+<li><p>Replace the <code>&lt;Resource Language=&quot;x-generate&quot;&gt;</code> with <code>&lt;Resource /&gt;</code> elements for each of your supported languages. For example, the following markup specifies that &quot;en-US&quot; and &quot;es-ES&quot; localized resources are available:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;en-US&quot;/&gt;
+    &lt;Resource Language=&quot;es-ES&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_csharp-earlier" role="tabpanel" data-tab="csharp-earlier" aria-hidden="true" hidden="hidden">
+
+<p>To create a WinUI 3 desktop app with C# and .NET using Windows App SDK 1.0 Experimental or earlier releases:</p>
+<ol>
+<li><p>In Visual Studio, select <strong>File</strong> -&gt; <strong>New</strong> -&gt; <strong>Project</strong>.</p>
+</li>
+<li><p>In the project drop-down filters, select <strong>C#</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>, respectively.</p>
+</li>
+<li><p>Select <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> and click <strong>Next</strong>. Enter a project name, choose any other options as desired, and click <strong>Create</strong>.</p>
+</li>
+<li><p>In the following dialog box, set the <strong>Target version</strong> to Windows 10, version 2004 (build 19041) and <strong>Minimum version</strong> to Windows 10, version 1809 (build 17763) and then click <strong>OK</strong>.</p>
+<p><img src="../winui/winui3/images/WinUI3-minversion.png" alt="Target and Min Version"></p>
+</li>
+<li><p>At this point, Visual Studio generates two projects:</p>
+<ul>
+<li><p><strong><em>Project name</em> (Desktop)</strong>: This project contains your app's code. The <strong>App.xaml</strong> file and <strong>App.xaml.cs</strong> code-behind file define an <code>Application</code> class that represents your app instance. The <strong>MainWindow.xaml</strong> file and <strong>MainWindow.xaml.cs</strong> code-behind file define a <code>MainWindow</code> class that represents the main window displayed by your app. These classes derive from types in the <strong>Microsoft.UI.Xaml</strong> namespace provided by WinUI.</p>
+<p><img src="../winui/winui3/images/WinUI-csharp-appproject.png" alt="Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L dot C S file."></p>
+</li>
+<li><p><strong><em>Project name</em> (Package)</strong>: This is a <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>. This project contains the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">package manifest</a> for your app, and it is the startup project for your solution by default.</p>
+<p><img src="../winui/winui3/images/WinUI-csharp-packageproject.png" alt="Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file."></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your packaged app without requiring a separate packaging project. For more information, see <a href="single-project-msix.html">Package your app using single-project MSIX</a>.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p>To add a new item to your app project, right-click the <strong><em>Project name</em> (Desktop)</strong> project node in <strong>Solution Explorer</strong> and select <strong>Add</strong> -&gt; <strong>New Item</strong>. In the <strong>Add New Item</strong> dialog box, select the <strong>WinUI</strong> tab, choose the item you want to add, and then click <strong>Add</strong>. For more details about the available items, see <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>.</p>
+<p><img src="../winui/winui3/images/winui3-addnewitem.png" alt="Screenshot of the Add New Item dialog box with the Installed &gt; Visual C sharp Items &gt; Win U I selected and the Blank Page option highlighted."></p>
+</li>
+<li><p>Build and run your solution to confirm that the app runs without errors.</p>
+</li>
+</ol>
+<h4 id="localize-your-winui-desktop-c-app">Localize your WinUI desktop C# app</h4>
+<p>To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see <a href="/windows/uwp/app-resources/">App resources and the Resource Management System</a>) and declare each supported language in the <strong>package.appxmanifest</strong> file of your project. When you build the project, the specified languages are added to the generated app manifest (<strong>AppxManifest.xml</strong>) and the corresponding resources are used.</p>
+<ol>
+<li><p>Open the .wapproj's <code>package.appxmanifest</code> in a text editor and locate the following section:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;x-generate&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+<li><p>Replace the <code>&lt;Resource Language=&quot;x-generate&quot;&gt;</code> with <code>&lt;Resource /&gt;</code> elements for each of your supported languages. For example, the following markup specifies that &quot;en-US&quot; and &quot;es-ES&quot; localized resources are available:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;en-US&quot;/&gt;
+    &lt;Resource Language=&quot;es-ES&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<p>To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 2:</p>
+<ol>
+<li><p>In Visual Studio, select <strong>File</strong> -&gt; <strong>New</strong> -&gt; <strong>Project</strong>.</p>
+</li>
+<li><p>In the project drop-down filters, select <strong>C++</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>.</p>
+</li>
+<li><p>Select one of the following project types and click <strong>Next</strong>.</p>
+<ul>
+<li><p><strong>Blank App, Packaged (WinUI 3 in Desktop)</strong>: Creates a desktop C++ app with a WinUI-based user interface. The generated project is configured with the package manifest and other support needed to build the app into an <a href="/windows/msix/overview">MSIX package</a> without the use of a separate packaging project. For more information about this project type, see <a href="single-project-msix.html">Package your app using single-project MSIX</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This project type only supports a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, you must use the <strong>Blank App, Packaged with WAP (WinUI 3 in Desktop)</strong> project template or add a Windows Application Packaging Project to your solution.</p>
+</div>
+</li>
+<li><p><strong>Blank App, Packaged with WAP (WinUI 3 in Desktop)</strong>: Creates a desktop C++ app with a WinUI-based user interface. The generated solution includes a separate <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>.</p>
+</li>
+</ul>
+<p><img src="../winui/winui3/images/WinUI3-cpp-newproject-1.0-later.png" alt="Another screenshot of Create a new project wizard with the Blank App Packaged (Win U I in Desktop) option highlighted."></p>
+</li>
+<li><p>Enter a project name, choose any other options as desired, and click <strong>Create</strong>.</p>
+</li>
+<li><p>In the following dialog box, set the <strong>Target version</strong> to Windows 10, version 2004 (build 19041) and <strong>Minimum version</strong> to Windows 10, version 1809 (build 17763) and then click <strong>OK</strong>.</p>
+<p><img src="../winui/winui3/images/WinUI3-minversion.png" alt="Target and Min Version"></p>
+</li>
+<li><p>At this point, Visual Studio generates one or more projects:</p>
+<ul>
+<li><p><strong><em>Project name</em> (Desktop)</strong>: This project contains your app's code. The <strong>App.xaml</strong> and various <strong>App</strong> code files define an <code>Application</code> class that represents your app instance, and the <strong>MainWindow.xaml</strong> and various <strong>MainWindow</strong> code files define a <code>MainWindow</code> class that represents the main window displayed by your app. These classes derive from types in the <strong>Microsoft.UI.Xaml</strong> namespace provided by WinUI.</p>
+<p>If you used the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template, this project also includes the package manifest for building the app into an <a href="/windows/msix/overview">MSIX package</a>.</p>
+<p><img src="../winui/winui3/images/WinUI-cpp-appproject-1.0-later.png" alt="Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L file for single project M S I X."></p>
+</li>
+<li><p><strong><em>Project name</em> (Package)</strong>: This project is generated only if you use the <strong>Blank App, Packaged with WAP (WinUI 3 in Desktop)</strong> project template. This project is a <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>. This project contains the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">package manifest</a> for your app, and it is the startup project for your solution by default.</p>
+<p><img src="../winui/winui3/images/WinUI-cpp-packageproject.png" alt="Another screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file."></p>
+</li>
+</ul>
+</li>
+<li><p>To add a new item to your app project, right-click the <strong><em>Project name</em> (Desktop)</strong> project node in <strong>Solution Explorer</strong> and select <strong>Add</strong> -&gt; <strong>New Item</strong>. In the <strong>Add New Item</strong> dialog box, select the <strong>WinUI</strong> tab, choose the item you want to add, and then click <strong>Add</strong>. For more details about the available items, see <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>.</p>
+<p><img src="../winui/winui3/images/winui3-addnewitem-cpp.png" alt="New Item"></p>
+</li>
+<li><p>Build and run your solution on your development computer to confirm that the app runs without errors.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On Visual Studio 2022 version 17.0 releases up to Preview 4, you will encounter the error &quot;There were deployment errors&quot; the first time you try to run your solution. To resolve this issue, run or deploy your solution a second time. This issue will be fixed in Visual Studio 2022 version 17.0 Preview 5.</p>
+</div>
+</li>
+</ol>
+<h4 id="localize-your-winui-desktop-c-app-1">Localize your WinUI desktop C++ app</h4>
+<p>To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see <a href="/windows/uwp/app-resources/">App resources and the Resource Management System</a>) and declare each supported language in the <strong>package.appxmanifest</strong> file of your project. When you build the project, the specified languages are added to the generated app manifest (<strong>AppxManifest.xml</strong>) and the corresponding resources are used.</p>
+<ol>
+<li><p>Open the .wapproj's <strong>package.appxmanifest</strong> in a text editor and locate the following section:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;x-generate&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+<li><p>Replace the <code>&lt;Resource Language=&quot;x-generate&quot;&gt;</code> with <code>&lt;Resource /&gt;</code> elements for each of your supported languages. For example, the following markup specifies that &quot;en-US&quot; and &quot;es-ES&quot; localized resources are available:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;en-US&quot;/&gt;
+    &lt;Resource Language=&quot;es-ES&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_cpp-earlier" role="tabpanel" data-tab="cpp-earlier" aria-hidden="true" hidden="hidden">
+
+<p>To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Experimental and earlier releases:</p>
+<ol>
+<li><p>In Visual Studio, select <strong>File</strong> -&gt; <strong>New</strong> -&gt; <strong>Project</strong>.</p>
+</li>
+<li><p>In the project drop-down filters, select <strong>C++</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>.</p>
+</li>
+<li><p>Select <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> and click <strong>Next</strong>. Enter a project name, choose any other options as desired, and click <strong>Create</strong>.</p>
+</li>
+<li><p>In the following dialog box, set the <strong>Target version</strong> to Windows 10, version 2004 (build 19041) and <strong>Minimum version</strong> to Windows 10, version 1809 (build 17763) and then click <strong>OK</strong>.</p>
+<p><img src="../winui/winui3/images/WinUI3-minversion.png" alt="Target and Min Version"></p>
+</li>
+<li><p>At this point, Visual Studio generates two projects:</p>
+<ul>
+<li><p><strong><em>Project name</em> (Desktop)</strong>: This project contains your app's code. The <strong>App.xaml</strong> and various <strong>App</strong> code files define an <code>Application</code> class that represents your app instance, and the <strong>MainWindow.xaml</strong> and various <strong>MainWindow</strong> code files define a <code>MainWindow</code> class that represents the main window displayed by your app. These classes derive from types in the <strong>Microsoft.UI.Xaml</strong> namespace provided by WinUI.</p>
+<p><img src="../winui/winui3/images/WinUI-cpp-appproject.png" alt="Screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Main Windows X A M L file."></p>
+</li>
+<li><p><strong><em>Project name</em> (Package)</strong>: This is a <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>. This provides a modern deployment experience, the ability to integrate with Windows 10 and later features via package extensions, and much more. This project contains the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">package manifest</a> for your app, and it is the startup project for your solution by default.</p>
+<p><img src="../winui/winui3/images/WinUI-cpp-packageproject.png" alt="Another screenshot of Visual Studio showing the Solution Explorer pane and the contents of the Package app x manifest file."></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Optionally, you can install the single-project MSIX packaging tools extension for Visual Studio and combine the packaging project settings into your application project. This extension enables you to develop and build your packaged app without requiring a separate packaging project. For more information, see <a href="single-project-msix.html">Package your app using single-project MSIX</a>.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p>To add a new item to your app project, right-click the <strong><em>Project name</em> (Desktop)</strong> project node in <strong>Solution Explorer</strong> and select <strong>Add</strong> -&gt; <strong>New Item</strong>. In the <strong>Add New Item</strong> dialog box, select the <strong>WinUI</strong> tab, choose the item you want to add, and then click <strong>Add</strong>. For more details about the available items, see <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>.</p>
+<p><img src="../winui/winui3/images/winui3-addnewitem-cpp.png" alt="New Item"></p>
+</li>
+<li><p>Build and run your solution to confirm that the app runs without errors.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only the packaged project will launch, so make sure that one is set as the Startup Project.</p>
+</div>
+</li>
+</ol>
+<h4 id="localize-your-winui-desktop-c-app-2">Localize your WinUI desktop C++ app</h4>
+<p>To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see <a href="/windows/uwp/app-resources/">App resources and the Resource Management System</a>) and declare each supported language in the <strong>package.appxmanifest</strong> file of your project. When you build the project, the specified languages are added to the generated app manifest (<strong>AppxManifest.xml</strong>) and the corresponding resources are used.</p>
+<ol>
+<li><p>Open the .wapproj's <strong>package.appxmanifest</strong> in a text editor and locate the following section:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;x-generate&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+<li><p>Replace the <code>&lt;Resource Language=&quot;x-generate&quot;&gt;</code> with <code>&lt;Resource /&gt;</code> elements for each of your supported languages. For example, the following markup specifies that &quot;en-US&quot; and &quot;es-ES&quot; localized resources are available:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;en-US&quot;/&gt;
+    &lt;Resource Language=&quot;es-ES&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+</ol>
+</section>
+</div>
+<h2 id="instructions-for-winui-3-unpackaged-desktop-apps">Instructions for WinUI 3 unpackaged desktop apps</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>WinUI 3 support for unpackaged apps is currently in <strong>preview</strong>, and is not production-ready. You must download the <a href="preview-channel.html">Windows App SDK Preview Extension for Visual Studio</a> to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the <strong>known issues</strong>, see <a href="preview-channel.html">Windows App SDK 1.0 Preview 3 release notes</a>.</p>
+</div>
+<p>To create a WinUI 3 application without MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_csharp-unpackaged" role="tab" aria-controls="tabpanel_2_csharp-unpackaged" data-tab="csharp-unpackaged" tabindex="0" aria-selected="true">C# with 1.0 Preview 3</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cpp-unpackaged" role="tab" aria-controls="tabpanel_2_cpp-unpackaged" data-tab="cpp-unpackaged" tabindex="-1">C++ with 1.0 Preview 3</a>
+</li>
+</ul>
+<section id="tabpanel_2_csharp-unpackaged" role="tabpanel" data-tab="csharp-unpackaged">
+
+<p>To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:</p>
+<ol>
+<li><p>Install the <a href="single-project-msix.html#install-the-single-project-msix-packaging-tools">Single-project MSIX Packaging Tools</a>.</p>
+</li>
+<li><p>Install the <a href="https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp">Visual Studio 2022 C# extension</a>.</p>
+</li>
+<li><p>Install the <a href="downloads.html">Windows App SDK runtime and MSIX packages</a>. These are required to run and deploy your app.</p>
+</li>
+<li><p>Create a new app using the <a href="#instructions-for-winui-3-packaged-desktop-apps">&quot;Blank App, Packaged (WinUI 3 in Desktop)&quot;</a> project template. Starting with a packaged app is required to use XAML diagnostics.</p>
+</li>
+<li><p>Add the following property to your project file—either your <code>.csproj</code> (C#) or <code>.vcxproj</code> (C++) file:</p>
+<pre><code class="lang-xml">&lt;Project ...&gt;
+  ...
+  &lt;PropertyGroup&gt;
+    ...
+    &lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;
+  &lt;/PropertyGroup&gt; 
+  ...
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>Delete package.appxmanifest from project.</p>
+<p>Otherwise, you will see this error: <strong>Improper project configuration: WindowsPackageType is set to None, but AppxManifest is specified</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may need to close the Visual Studio solution to manually delete this file from the filesystem.
+<span class="mx-imgBorder">
+<img src="../winui/winui3/images/winui-csharp-unpackaged-appxmanifest.png" alt="Visual Studio - Solution explorer open with appxmanifest file highlighted">
+</span>
+</p>
+</div>
+</li>
+<li><p>To debug in Visual Studio, change the debug properties from 'MsixPackage' to 'Project'.
+Otherwise, you'll see an error: &quot;The project doesn't know how to run the profile …&quot;</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This isn't necessary if you execute the application (<code>.exe</code>) from the command line or Windows File explorer.</p>
+</div>
+<ul>
+<li><p>In <strong>Visual Studio 2022</strong>: Open the launchSettings.json and change the profile with 'MsixPackage' to 'Project'.</p>
+<pre><code class="lang-json">{
+    &quot;profiles&quot;: {
+        &quot;Preview3&quot;: {
+            &quot;commandName&quot;: &quot;Project&quot;
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>In <strong>Visual Studio 2022</strong>: You can use the Visual Studio UI to change the launch settings:</p>
+<p>Open the Debug Properties and change the launch profile to 'Project'</p>
+<p><span class="mx-imgBorder">
+<img src="../winui/winui3/images/winui-csharp-vs-debug.png" alt="Visual Studio - Start drop down with C# application debug properties highlighted">
+</span>
+</p>
+<p><span class="mx-imgBorder">
+<img src="../winui/winui3/images/winui-csharp-vs-debugging-page.png" alt="Visual Studio - C# Application property page with debugger to launch property of Local Windows Debugger highlighted">
+</span>
+</p>
+</li>
+</ul>
+</li>
+<li><p>If you haven't already done so, <strong>install the Windows App SDK runtime and MSIX packages, which are required to run and deploy your app.</strong></p>
+<div class="button">
+<p><a href="https://aka.ms/windowsappsdk/1.0-preview3/msix-installer">Download latest installer &amp; MSIX packages</a></p>
+</div>
+</li>
+<li><p>Build and run. For additional deployment information, see the Windows App SDK tutorial for deploying packaged with external location and unpackaged apps (<a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>). That tutorial will guide you through using the bootstrapper API (see <a href="use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>) to initialize the Windows App SDK runtime so your app can use Windows App SDK and WinUI 3 APIs.</p>
+</li>
+</ol>
+</section>
+<section id="tabpanel_2_cpp-unpackaged" role="tabpanel" data-tab="cpp-unpackaged" aria-hidden="true" hidden="hidden">
+
+<p>To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 3:</p>
+<ol>
+<li><p>Install the <a href="single-project-msix.html#install-the-single-project-msix-packaging-tools">Single-project MSIX Packaging Tools</a>.</p>
+</li>
+<li><p>Install the <a href="https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp">Visual Studio 2022 C++ extension</a>.</p>
+</li>
+<li><p>Install the <a href="downloads.html">Windows App SDK runtime and MSIX packages</a>. These are required to run and deploy your app.</p>
+</li>
+<li><p>Create a new app using the <a href="#instructions-for-winui-3-packaged-desktop-apps">&quot;Blank App, Packaged (WinUI 3 in Desktop)&quot;</a> project template. Starting with a packaged app is required to use XAML diagnostics.</p>
+</li>
+<li><p>Install the <a href="/cpp/windows/latest-supported-vc-redist">Microsoft Visual C++ Redistributable (VCRedist)</a> for the appropriate architecture</p>
+<ul>
+<li>The latest version of the redistributable is compatible with the latest Visual Studio GA release, as well as all versions of Visual Studio used to build Windows App SDK binaries.</li>
+<li>Insider builds of Visual Studio may have installed a later version of VCRedist, and running the public version will then fail with this error, which can be ignored:
+<strong>Error 0x80070666: Cannot install a product when a newer version is installed.</strong></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you do not have the VCRedist installed on a target device, then dynamic links to c:\windows\system32\vcruntime140.dll will fail, which can manifest to end users in many ways.</p>
+</div>
+</li>
+<li><p><a href="#instructions-for-winui-3-packaged-desktop-apps">Create a new app</a> using the &quot;Blank App, Packaged (WinUI 3 in Desktop)&quot; project template. Starting with a packaged app is required to use XAML diagnostics.</p>
+</li>
+<li><p>Add this property to the project file:</p>
+<pre><code class="lang-xml">&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;
+</code></pre>
+</li>
+<li><p>Change these two project properties to false:</p>
+<pre><code class="lang-xml"> &lt;AppxPackage&gt;false&lt;/AppxPackage&gt;
+ &lt;AppContainerApplication&gt;false&lt;/AppContainerApplication&gt;
+</code></pre>
+</li>
+<li><p>Delete package.appxmanifest from the project.</p>
+<ul>
+<li>Otherwise, you will see this error: <strong>Improper project configuration: WindowsPackageType is set to None, but AppxPackage is set to true.</strong></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may need to close the Visual Studio solution to manually delete this file from the file system.</p>
+</div>
+</li>
+<li><p>To debug in Visual Studio, change the debug properties from 'MsixPackage' to 'Project'.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This isn't necessary if you open the application with the executable (.exe).</p>
+</div>
+<ul>
+<li><p>In <strong>Visual Studio 2022</strong>: Open the Debug properties and change the Debugger to launch to 'Local Windows Debugger'</p>
+<p><span class="mx-imgBorder">
+<img src="../winui/winui3/images/winui-cpp-vs-debug.png" alt="Visual Studio - Start drop down with C++ application debug properties highlighted">
+</span>
+</p>
+<p><span class="mx-imgBorder">
+<img src="../winui/winui3/images/winui-cpp-vs-debugging-page.png" alt="Visual Studio - C++ application property page with debugger to launch property of Local Windows Debugger highlighted">
+</span>
+</p>
+</li>
+</ul>
+</li>
+<li><p>If you haven't already done so, <strong>install the Windows App SDK runtime and MSIX packages, which are required to run and deploy your app.</strong></p>
+<div class="button">
+<p><a href="https://aka.ms/windowsappsdk/1.0-preview3/msix-installer">Download latest installer &amp; MSIX packages</a></p>
+</div>
+</li>
+<li>
+<ol start="8">
+<li>Build and run. For additional deployment information, see the Windows App SDK tutorial for deploying packaged with external location and unpackaged apps (<a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>). That tutorial will guide you through using the bootstrapper API (see <a href="use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>) to initialize the Windows App SDK runtime so your app can use Windows App SDK and WinUI 3 APIs.</li>
+</ol>
+</li>
+</ol>
+</section>
+</div>
+<h2 id="asta-to-sta-threading-model">ASTA to STA threading model</h2>
+<p>If you're migrating code from an existing UWP app to a new WinUI 3 project that uses the Windows App SDK, be aware that the new project uses the <a href="/windows/win32/com/single-threaded-apartments">single-threaded apartment (STA)</a> threading model instead of the <a href="https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901">Application STA (ASTA)</a> threading model used by UWP apps. If your code assumes the non re-entrant behavior of the ASTA threading model, your code may not behave as expected.</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="index.html">Windows App SDK</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/preview-experimental-create-winui3-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

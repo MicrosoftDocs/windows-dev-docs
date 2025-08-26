@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Keyboard interactions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Keyboard interactions ">
+    
+    <meta name="description" content="Learn how to design and optimize your Windows apps so they provide the best experience possible for both keyboard power users and those with disabilities and other accessibility requirements.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="keyboard-interactions">Keyboard interactions</h1>
+
+<p><img src="images/keyboard/keyboard-hero.jpg" alt="keyboard hero image"></p>
+<p>Learn how to design and optimize your Windows apps so they provide the best experiences for both keyboard power users and those with disabilities and other accessibility requirements.</p>
+<p>Across devices, keyboard input is an important part of the overall Windows app interaction experience. A well-designed keyboard experience lets users efficiently navigate the UI of your app and access its full functionality without ever lifting their hands from the keyboard.</p>
+<p><img src="images/keyboard/keyboard-gamepad.jpg" alt="keyboard and gamepad image"></p>
+<p><em><strong>Common interaction patterns are shared between keyboard and gamepad</strong></em></p>
+<p>In this topic, we focus specifically on Windows app design for keyboard input on PCs. However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using <a href="#software-keyboard">software keyboards</a> such as the touch keyboard and the On-Screen Keyboard (OSK), and for handling other input device types, such as a game pad or remote control.</p>
+<p>Many of the guidelines and recommendations discussed here, including <a href="#focus-visuals">focus visuals</a>, <a href="#access-keys">access keys</a>, and <a href="#navigation">UI navigation</a>, are also applicable to these other scenarios.</p>
+<p><strong>NOTE</strong>  While both hardware and software keyboards are used for text input, the focus of this topic is navigation and interaction.</p>
+<h2 id="built-in-support">Built-in support</h2>
+<p>Along with the mouse, the keyboard is the most widely used peripheral on PCs and, as such, is a fundamental part of the PC experience. PC users expect a comprehensive and consistent experience from both the system and individual apps in response to keyboard input.</p>
+<p>All UWP controls include built-in support for rich keyboard experiences and user interactions, while the platform itself provides an extensive foundation for creating keyboard experiences that you feel are best suited to both your custom controls and apps.</p>
+<p><img src="images/keyboard/keyboard-phone.jpg" alt="keyboard with phone image"></p>
+<p><em><strong>UWP supports keyboard with any device</strong></em></p>
+<h2 id="basic-experiences">Basic experiences</h2>
+<p><img src="images/keyboard/focus-based-devices.jpg" alt="Focus based devices"></p>
+<p>As mentioned previously, input devices such as a game pad and remote control, and accessibility tools such as Narrator, share much of the keyboard input experience for navigation and commanding. This common experience across input types and tools minimizes additional work from you and contributes to the &quot;build once, run anywhere&quot; goal of the Universal Windows Platform.</p>
+<p>Where necessary, we'll identify key differences you should be aware of and describe any mitigations you should consider.</p>
+<p>Here are the devices and tools discussed in this topic:</p>
+<table>
+<thead>
+<tr>
+<th>Device/tool</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Keyboard (hardware and software)</td>
+<td>In addition to the standard hardware keyboard, Windows applications support two software keyboards: the <a href="#software-keyboard">touch (or software) keyboard</a> and the <a href="#on-screen-keyboard">On-Screen Keyboard</a>.</td>
+</tr>
+<tr>
+<td>Game pad and remote control</td>
+<td>A game pad and remote control are fundamental input devices in the <a href="../devices/designing-for-tv.html">10-foot experience</a>. For specific details on Windows support for game pad and remote control, see <a href="gamepad-and-remote-interactions.html">Game pad and remote control interactions</a>.</td>
+</tr>
+<tr>
+<td>Screen readers (Narrator)</td>
+<td>Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see <a href="https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator">Getting started with Narrator</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="custom-experiences-and-efficient-keyboarding">Custom experiences and efficient keyboarding</h2>
+<p>As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you prioritize the following.</p>
+<ul>
+<li>Support keyboard navigation and interaction
+<ul>
+<li>Ensure actionable items are identified as tab stops (and non-actionable items are not), and navigation order is logical and predictable (see <a href="#tab-stops">Tab stops</a>)</li>
+<li>Set initial focus on the most logical element (see <a href="#initial-focus">Initial focus</a>)</li>
+<li>Provide arrow key navigation for &quot;inner navigations&quot; (see <a href="#navigation">Navigation</a>)</li>
+</ul>
+</li>
+<li>Support keyboard shortcuts
+<ul>
+<li>Provide accelerator keys for quick actions (see <a href="#accelerators">Accelerators</a>)</li>
+<li>Provide access keys to navigate your application's UI (see <a href="access-keys.html">Access keys</a>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="focus-visuals">Focus visuals</h3>
+<p>The UWP supports a single focus visual design that works well for all input types and experiences.
+<img src="images/keyboard/focus-visual.png" alt="Focus visual"></p>
+<p>A focus visual:</p>
+<ul>
+<li>Is shown when a UI element receives focus from a keyboard and/or gamepad/remote control</li>
+<li>Is rendered as a highlighted border around the UI element to indicate an action can be taken</li>
+<li>Helps a user navigate an app UI without getting lost</li>
+<li>Can be customized for your app (See <a href="guidelines-for-visualfeedback.html#high-visibility-focus-visuals">High visibility focus  visuals</a>)</li>
+</ul>
+<p><strong>NOTE</strong> The UWP focus visual is not the same as the Narrator focus rectangle.</p>
+<h3 id="tab-stops">Tab stops</h3>
+<p>To use a control (including navigation elements) with the keyboard, the control must have focus. One way for a control to receive keyboard focus is to make it accessible through tab navigation by identifying it as a tab stop in your application's tab order.</p>
+<p>For a control to be included in the tab order, the <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled">IsEnabled</a> property must be set to <strong>true</strong> and the <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop">IsTabStop</a> property must be set to <strong>true</strong>.</p>
+<p>To specifically exclude a control from the tab order, set the <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop">IsTabStop</a> property to <strong>false</strong>.</p>
+<p>By default, tab order reflects the order in which UI elements are created. For example, if a <code>StackPanel</code> contains a <code>Button</code>, a <code>Checkbox</code>, and a <code>TextBox</code>, tab order is <code>Button</code>, <code>Checkbox</code>, and <code>TextBox</code>.</p>
+<p>You can override the default tab order by setting the <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> property.</p>
+<h4 id="tab-order-should-be-logical-and-predictable">Tab order should be logical and predictable</h4>
+<p>A well-designed keyboard navigation model, using a logical and predictable tab order, makes your app more intuitive and helps users explore, discover, and access functionality more efficiently and effectively.</p>
+<p>All interactive controls should have tab stops (unless they are in a <a href="#control-group">group</a>), while non-interactive controls, such as labels, should not.</p>
+<p>Avoid a custom tab order that makes the focus jump around in your application. For example, a list of controls in a form should have a tab order that flows from top to bottom and left to right (depending on locale).</p>
+<p>See <a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a> for more details about customizing tab stops.</p>
+<h4 id="try-to-coordinate-tab-order-and-visual-order">Try to coordinate tab order and visual order</h4>
+<p>Coordinating tab order and visual order (also referred to as reading order or display order) helps reduce confusion for users as they navigate through your application's UI.</p>
+<p>Try to rank and present the most important commands, controls, and content first in both the tab order and the visual order. However, the actual display position can depend on the parent layout container and certain properties of the child elements that influence the layout. Specifically, layouts that use a grid metaphor or a table metaphor can have a visual order quite different from the tab order.</p>
+<p><strong>NOTE</strong> Visual order is also dependent on locale and language.</p>
+<h3 id="initial-focus">Initial focus</h3>
+<p>Initial focus specifies the UI element that receives focus when an application or a page is first launched or activated. When using a keyboard, it is from this element that a user starts interacting with your application's UI.</p>
+<p>For UWP apps, initial focus is set to the element with the highest <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> that can receive focus. Child elements of container controls are ignored. In a tie, the first element in the visual tree receives focus.</p>
+<h4 id="set-initial-focus-on-the-most-logical-element">Set initial focus on the most logical element</h4>
+<p>Set initial focus on the UI element for the first, or primary, action that users are most likely to take when launching your app or navigating to a page. Some examples include:</p>
+<ul>
+<li>A photo app where focus is set to the first item in a gallery</li>
+<li>A music app where focus is set to the play button</li>
+</ul>
+<h4 id="dont-set-initial-focus-on-an-element-that-exposes-a-potentially-negative-or-even-disastrous-outcome">Don't set initial focus on an element that exposes a potentially negative, or even disastrous, outcome</h4>
+<p>This level of functionality should be a user's choice. Setting initial focus to an element with a significant outcome might result in unintended data loss or system access. For example, don't set focus to the delete button when navigating to an e-mail.</p>
+<p>See <a href="focus-navigation.html">Focus navigation</a> for more details about overriding tab order.</p>
+<h3 id="navigation">Navigation</h3>
+<p>Keyboard navigation is typically supported through the Tab keys and the Arrow keys.</p>
+<p><img src="images/keyboard/tab-and-arrow.png" alt="tab and arrow keys"></p>
+<p>By default, UWP controls follow these basic keyboard behaviors:</p>
+<ul>
+<li><strong>Tab keys</strong> navigate between actionable/active controls in tab order.</li>
+<li><strong>Shift + Tab</strong> navigate controls in reverse tab order. If user has navigated inside the control using arrow key, focus is set to the last known value inside the control.</li>
+<li><strong>Arrow keys</strong> expose control-specific &quot;inner navigation&quot; When user enters &quot;inner navigation,&quot;&quot; arrow keys do not navigate out of a control. Some examples include:
+<ul>
+<li>Up/Down arrow key moves focus inside <code>ListView</code> and <code>MenuFlyout</code></li>
+<li>Modify currently selected values for <code>Slider</code> and <code>RatingsControl</code></li>
+<li>Move caret inside <code>TextBox</code></li>
+<li>Expand/collapse items inside <code>TreeView</code></li>
+</ul>
+</li>
+</ul>
+<p>Use these default behaviors to optimize your application's keyboard navigation.</p>
+<h4 id="use-inner-navigation-with-sets-of-related-controls">Use &quot;inner navigation&quot; with sets of related controls</h4>
+<p>Providing arrow key navigation into a set of related controls reinforces their relationship within the overall organization of your application's UI.</p>
+<p>For example, the <code>ContentDialog</code> control shown here provides inner navigation by default for a horizontal row of buttons (for custom controls, see the <a href="#control-group">Control Group</a> section).</p>
+<p><img src="images/keyboard/dialog.png" alt="dialog example"></p>
+<p><em><strong>Interaction with a collection of related buttons is made easier with arrow key navigation</strong></em></p>
+<p>If items are displayed in a single column, Up/Down arrow key navigates items. If items are displayed in a single row, Right/Left arrow key navigates items. If items are multiple columns, all 4 arrow keys navigate.</p>
+<h4 id="define-a-single-tab-stop-for-a-collection-of-related-controls">Define a single tab stop for a collection of related controls</h4>
+<p>By defining a single tab stop for a collection of related, or complementary, controls, you can minimize the number of overall tab stops in your app.</p>
+<p>For example, the following images show two stacked <code>ListView</code> controls. The image on the left shows arrow key navigation used with a tab stop to navigate between <code>ListView</code> controls, while the image on the right shows how navigation between child elements could be made easier and more efficient by eliminating the need for to traverse parent controls with a tab key.</p>
+<table>
+  <td><img src="images/keyboard/arrow-and-tab.png" alt="arrow and tab"></td>
+  <td><img src="images/keyboard/arrow-only.png" alt="arrow only"></td>
+</table>
+<p><em><strong>Interaction with two stacked ListView controls can be made easier and more efficient by eliminating the tab stop and navigating with just arrow keys.</strong></em></p>
+<p>Visit <a href="#control-group">Control Group</a> section to learn how to apply the optimization examples to your application UI.</p>
+<h3 id="interaction-and-commanding">Interaction and commanding</h3>
+<p>Once a control has focus, a user can interact with it and invoke any associated functionality using specific keyboard input.</p>
+<h4 id="text-entry">Text entry</h4>
+<p>For those controls specifically designed for text input such as <code>TextBox</code> and <code>RichEditBox</code>, all keyboard input is used for entering or navigating text, which takes priority over other keyboard commands. For example, the drop down menu for an <code>AutoSuggestBox</code> control does not recognize the <strong>Space</strong> key as a selection command.</p>
+<p><img src="images/keyboard/text-entry.png" alt="text entry"></p>
+<h4 id="space-key">Space key</h4>
+<p>When not in text entry mode, the <strong>Space</strong> key invokes the action or command associated with the focused control (just like a tap with touch or a click with a mouse).</p>
+<p><img src="images/keyboard/space-key.png" alt="space key"></p>
+<h4 id="enter-key">Enter key</h4>
+<p>The <strong>Enter</strong> key can perform a variety of common user interactions, depending on the control with focus:</p>
+<ul>
+<li>Activates command controls such as a <code>Button</code> or <code>Hyperlink</code>. To avoid end user confusion, the <strong>Enter</strong> key also activates controls that look like command controls such as <code>ToggleButton</code> or <code>AppBarToggleButton</code>.</li>
+<li>Displays the picker UI for controls such as <code>ComboBox</code> and <code>DatePicker</code>. The <strong>Enter</strong> key also commits and closes the picker UI.</li>
+<li>Activates list controls such as <code>ListView</code>, <code>GridView</code>, and <code>ComboBox</code>.
+<ul>
+<li>The <strong>Enter</strong> key performs the selection action as the <strong>Space</strong> key for list and grid items, unless there is an additional action associated with these items (opening a new window).</li>
+<li>If an additional action is associated with the control, the <strong>Enter</strong> key performs the additional action and the <strong>Space</strong> key performs the selection action.</li>
+</ul>
+</li>
+</ul>
+<p><strong>NOTE</strong> The <strong>Enter</strong> key and <strong>Space</strong> key do not always perform the same action, but often do.</p>
+<p><img src="images/keyboard/enter-key.png" alt="enter key"></p>
+<h4 id="esc-key">Esc key</h4>
+<p>The Esc key lets a user cancel transient UI (along with any ongoing actions in that UI).</p>
+<p>Examples of this experience include:</p>
+<ul>
+<li>User opens a <code>ComboBox</code> with a selected value and uses the arrow keys to move the focus selection to a new value. Pressing the Esc key closes the <code>ComboBox</code> and resets the selected value back to the original value.</li>
+<li>User invokes a permanent delete action for an email and is prompted with a <code>ContentDialog</code> to confirm the action. The user decides this is not the intended action and presses the <strong>Esc</strong> key to close the dialog. As the <strong>Esc</strong> key is associated with the <strong>Cancel</strong> button, the dialog is closed and the action is canceled. The <strong>Esc</strong> key only affects transient UI, it does not close, or back navigate through, app UI.</li>
+</ul>
+<p><img src="images/keyboard/esc-key.png" alt="Esc key"></p>
+<h4 id="home-and-end-keys">Home and End keys</h4>
+<p>The <strong>Home</strong> and <strong>End</strong> keys let a user scroll to the beginning or end of a UI region.</p>
+<p>Examples of this experience include:</p>
+<ul>
+<li>For <code>ListView</code> and <code>GridView</code> controls, the <strong>Home</strong> key moves focus to the first element and scrolls it into view, whereas the <strong>End</strong> key moves focus to the last element and scrolls it into view.</li>
+<li>For a <code>ScrollView</code> control, the <strong>Home</strong> key scrolls to the top of the region, whereas the <strong>End</strong> key scrolls to the bottom of the region (focus is not changed).</li>
+</ul>
+<p><img src="images/keyboard/home-and-end.png" alt="home and end keys"></p>
+<h4 id="page-up-and-page-down-keys">Page up and Page down keys</h4>
+<p>The <strong>Page</strong> keys let a user scroll a UI region in discrete increments.</p>
+<p>For example, for <code>ListView</code> and <code>GridView</code> controls, the <strong>Page up</strong> key scrolls the region up by a &quot;page&quot; (typically the viewport height) and moves focus to the top of the region. Alternately, the <strong>Page down</strong> key scrolls the region down by a page and moves focus to the bottom of the region.</p>
+<p><img src="images/keyboard/page-up-and-down.png" alt="page up and down keys"></p>
+<h4 id="f6-key">F6 key</h4>
+<p>The <strong>F6</strong> key lets a user cycle between panes or important sections of your app or UI. <strong>Shift-F6</strong> typically cycles backwards (see <a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a>).</p>
+<p>These are often related to <a href="../accessibility/landmarks-and-headings.html">landmarks and headings</a>, but do not need to correspond directly.</p>
+<p>For example:</p>
+<ul>
+<li>In Edge, pressing F6 will cycle between the tab bar, the address bar/app bar, and the page content.</li>
+<li>In File Explorer, pressing F6 will cycle between the sections of the app.</li>
+<li>On the desktop, pressing F6 will cycle between parts of the taskbar and the desktop.</li>
+</ul>
+<p><img src="images/keyboard/f6.png" alt="f6 key"></p>
+<h3 id="keyboard-shortcuts">Keyboard shortcuts</h3>
+<p>In addition to implementing keyboard navigation and activation, it is also good practice to implement keyboard shortcuts such as <a href="keyboard-accelerators.html">keyboard accelerators</a> and <a href="access-keys.html">access keys</a> for important or frequently used functionality.</p>
+<p>Keyboard shortcuts can make your app easier to use by providing both enhanced support for accessibility and improved efficiency for keyboard users.</p>
+<p>A shortcut is a keyboard combination that enhances productivity by providing an efficient way for the user to access app functionality. There are two kinds of shortcut:</p>
+<ul>
+<li><a href="#accelerators">Accelerators</a> are shortcuts that invoke an app command. Your app may or may not provide specific UI that corresponds to the command. Accelerators typically consist of the Ctrl key plus a letter key.</li>
+<li><a href="#access-keys">Access keys</a> are shortcuts that set focus to specific UI in your application. Access keys typically consist of the Alt key plus a letter key.</li>
+</ul>
+<p>Providing consistent keyboard shortcuts that support similar tasks across applications makes them much more useful and powerful and helps users remember them.</p>
+<h4 id="accelerators">Accelerators</h4>
+<p>Accelerators help users perform common actions in an application much more quickly and efficiently.</p>
+<p>Examples of Accelerators:</p>
+<ul>
+<li>Pressing Ctrl + N key anywhere in the <strong>Mail</strong> app launches a new mail item.</li>
+<li>Pressing Ctrl + E key anywhere in Microsoft Edge (and many Microsoft Store applications) launches search.</li>
+</ul>
+<p>Accelerators have the following characteristics:</p>
+<ul>
+<li>They primarily use Ctrl and Function key sequences (Windows system shortcut keys also use Alt + non-alphanumeric keys and the Windows logo key).</li>
+<li>They are assigned only to the most commonly used commands.</li>
+<li>They are intended to be memorized, and are documented only in menus, tooltips, and Help.</li>
+<li>They have effect throughout the entire application, when supported.</li>
+<li>They should be assigned consistently as they are memorized and not directly documented.</li>
+</ul>
+<h4 id="access-keys">Access keys</h4>
+<p>See <a href="access-keys.html">Access keys</a> page for more in-depth information for supporting access keys with UWP.</p>
+<p>Access keys help users with motor function disabilities an ability to press one key at a time to action on a specific item in the UI. Moreover, access keys can be used to communicate additional shortcut keys to help advanced users perform actions quickly.</p>
+<p>Access keys have the following characteristics:</p>
+<ul>
+<li>They use the Alt key plus an alphanumeric key.</li>
+<li>They are primarily for accessibility.</li>
+<li>They are documented directly in the UI, adjacent to the control, through <a href="access-keys.html">Key Tips</a>.</li>
+<li>They have effect only in the current window, and navigate to the corresponding menu item or control.</li>
+<li>Access keys should be assigned consistently to commonly used commands (especially commit buttons), whenever possible.</li>
+<li>They are localized.</li>
+</ul>
+<h4 id="common-keyboard-shortcuts">Common keyboard shortcuts</h4>
+<p>The following table is a small sample of frequently used keyboard shortcuts.</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Key command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Select all</td>
+<td>Ctrl+A</td>
+</tr>
+<tr>
+<td>Continuously select</td>
+<td>Shift+Arrow key</td>
+</tr>
+<tr>
+<td>Save</td>
+<td>Ctrl+S</td>
+</tr>
+<tr>
+<td>Find</td>
+<td>Ctrl+F</td>
+</tr>
+<tr>
+<td>Print</td>
+<td>Ctrl+P</td>
+</tr>
+<tr>
+<td>Copy</td>
+<td>Ctrl+C</td>
+</tr>
+<tr>
+<td>Cut</td>
+<td>Ctrl+X</td>
+</tr>
+<tr>
+<td>Paste</td>
+<td>Ctrl+V</td>
+</tr>
+<tr>
+<td>Undo</td>
+<td>Ctrl+Z</td>
+</tr>
+<tr>
+<td>Next tab</td>
+<td>Ctrl+Tab</td>
+</tr>
+<tr>
+<td>Close tab</td>
+<td>Ctrl+F4 or Ctrl+W</td>
+</tr>
+<tr>
+<td>Semantic zoom</td>
+<td>Ctrl++ or Ctrl+-</td>
+</tr>
+</tbody>
+</table>
+<p>For a comprehensive list of Windows system shortcuts, see <a href="https://support.microsoft.com/help/12445/windows-keyboard-shortcuts">keyboard shortcuts for Windows</a>. For common application shortcuts, see <a href="https://support.microsoft.com/help/13805/windows-keyboard-shortcuts-in-apps">keyboard shortcuts for Microsoft applications</a>.</p>
+<h2 id="advanced-experiences">Advanced experiences</h2>
+<p>In this section, we discuss some of the more complex keyboard interaction experiences supported by UWP apps, along with some of the behaviors you should be aware of when your app is used on different devices and with different tools.</p>
+<h3 id="control-group">Control group</h3>
+<p>You can group a set of related, or complementary, controls in a &quot;control
+group&quot; (or directional area), which enables &quot;inner navigation&quot; using the
+arrow keys. The control group can be a single tab stop, or you can
+specify multiple tab stops within the control group.</p>
+<h4 id="arrow-key-navigation">Arrow key navigation</h4>
+<p>Users expect support for arrow key navigation when there is a group of similar, related controls in a UI region:</p>
+<ul>
+<li><code>AppBarButtons</code> in a <code>CommandBar</code></li>
+<li><code>ListItems</code> or <code>GridItems</code> inside <code>ListView</code> or <code>GridView</code></li>
+<li><code>Buttons</code> inside <code>ContentDialog</code></li>
+</ul>
+<p>UWP controls support arrow key navigation by default. For custom layouts and control groups, use <code>XYFocusKeyboardNavigation=&quot;Enabled&quot;</code> to provide similar behavior.</p>
+<p>Consider adding support for arrow key navigation when using the following controls:</p>
+<table>
+  <tr>
+    <td>
+      <p><img src="images/keyboard/dialog.png" alt="Dialog buttons"></p>
+      <p><sup>Dialog buttons</sup></p>
+      <p><img src="images/keyboard/radiobutton.png" alt="Radio buttons"></p>
+      <p><sup>RadioButtons</sup></p>     
+    </td>
+    <td>
+      <p><img src="images/keyboard/appbar.png" alt="AppBar buttons"></p>
+      <p><sup>AppBarButtons</sup></p>
+      <p><img src="images/keyboard/list-and-grid-items.png" alt="List and Grid items"></p>
+      <p><sup>ListItems and GridItems</sup></p>
+    </td>    
+  </tr>
+</table>
+<h4 id="tab-stops-1">Tab stops</h4>
+<p>Depending on your application's functionality and layout, the best navigation option for a control group might be a single tab stop with arrow navigation to child elements, multiple tab stops, or some combination.</p>
+<h5 id="use-multiple-tab-stops-and-arrow-keys-for-buttons">Use multiple tab stops and arrow keys for buttons</h5>
+<p>Accessibility users rely on well-established keyboard navigation rules, which do not typically use arrow keys to navigate a collection of buttons. However, users without visual impairments might feel that the behavior is natural.</p>
+<p>An example of default UWP behavior in this case is the <code>ContentDialog</code>. While arrow keys can be used to navigate between buttons, each button is also a tab stop.</p>
+<h5 id="assign-single-tab-stop-to-familiar-ui-patterns">Assign single tab stop to familiar UI patterns</h5>
+<p>In cases where your layout follows a well-known UI pattern for control groups, assigning a single tab stop to the group can improve navigation efficiency for users.</p>
+<p>Examples include:</p>
+<ul>
+<li><code>RadioButtons</code></li>
+<li>Multiple <code>ListViews</code> that look like and behave like a single <code>ListView</code></li>
+<li>Any UI made to look and behave like grid of tiles (such as the Start menu tiles)</li>
+</ul>
+<h4 id="specifying-control-group-behavior">Specifying control group behavior</h4>
+<p>Use the following APIs to support custom control group behavior (all are discussed in more detail later in this topic):</p>
+<ul>
+<li><a href="focus-navigation.html#2d-directional-navigation-for-keyboard">XYFocusKeyboardNavigation</a> enables arrow key navigation between controls</li>
+<li><a href="focus-navigation.html#tab-navigation">TabFocusNavigation</a> indicates whether there are multiple tab stops or single tab stop</li>
+<li><a href="focus-navigation-programmatic.html#find-the-first-and-last-focusable-element">FindFirstFocusableElement and FindLastFocusableElement</a> sets focus on the first item with <strong>Home</strong> key and the last item with <strong>End</strong> key</li>
+</ul>
+<p>The following image shows an intuitive keyboard navigation behavior for a control group of associated radio buttons. In this case, we recommend a single tab stop for the control group, inner navigation between the radio buttons using the arrow keys, <strong>Home</strong> key bound to the first radio button, and <strong>End</strong> key bound to the last radio button.</p>
+<p><img src="images/keyboard/putting-it-all-together.png" alt="putting it all together"></p>
+<h3 id="keyboard-and-narrator">Keyboard and Narrator</h3>
+<p>Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported). However, Narrator functionality goes beyond the keyboard interactions supported by UWP apps and extra care is required when designing your UWP app for Narrator. (The <a href="https://support.microsoft.com/help/22808/windows-10-narrator-basics">Narrator basics page</a> guides you through the Narrator user experience.)</p>
+<p>Some of the differences between UWP keyboard behaviors and those supported by Narrator include:</p>
+<ul>
+<li>Extra key combinations for navigation to UI elements that are not exposed through standard keyboard navigation, such as Caps lock + arrow keys to read control labels.</li>
+<li>Navigation to disabled items. By default, disabled items are not exposed through standard keyboard navigation.</li>
+<li>Control &quot;views&quot; for quicker navigation based on UI granularity. Users can navigate to items, characters, word, lines, paragraphs, links, headings, tables, landmarks, and suggestions. Standard keyboard navigation exposes these objects as a flat list, which might make navigation cumbersome unless you provide shortcut keys.</li>
+</ul>
+<h4 id="case-study--autosuggestbox-control">Case Study – AutoSuggestBox control</h4>
+<p>The search button for the <code>AutoSuggestBox</code> is not accessible to standard keyboard navigation using tab and arrow keys because the user can press the <strong>Enter</strong> key to submit the search query. However, it is accessible through Narrator when the user presses Caps Lock + an arrow key.</p>
+<p><img src="images/keyboard/auto-suggest-keyboard.png" alt="autosuggest keyboard focus"></p>
+<p><em>With keyboard, users press the</em> <em><strong>Enter</strong></em> <em>key to submit search query</em></p>
+<table>
+  <tr>
+    <td>
+      <p><img src="images/keyboard/auto-suggest-narrator-1.png" alt="autosuggest narrator focus"></p>
+      <p><em>With Narrator, users press the <strong>Enter</strong> key to submit search query</em></p>
+    </td>
+    <td>
+      <p><img src="images/keyboard/auto-suggest-narrator-2.png" alt="autosuggest narrator focus on search"></p>
+      <p><em>With Narrator, users are also able to access the search button using the <strong>Caps Lock + Right arrow key</strong>, then pressing <strong>Space</strong> key</em></p>
+    </td>
+  </tr>
+</table>
+<h3 id="keyboard-game-pad-and-remote-control">Keyboard, game pad, and remote control</h3>
+<p>Game pads and remote controls support many UWP keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, game pad and remote control lack many keyboard optimizations (remote control is even more limited than game pad).</p>
+<p>See <a href="gamepad-and-remote-interactions.html">Game pad and remote control interactions</a> for more detail on UWP support for game pad and remote control input.</p>
+<p>The following shows some key mappings between keyboard, game pad, and remote control.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Keyboard</strong></th>
+<th><strong>Game pad</strong></th>
+<th><strong>Remote control</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Space</td>
+<td>A button</td>
+<td>Select button</td>
+</tr>
+<tr>
+<td>Enter</td>
+<td>A button</td>
+<td>Select button</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>B button</td>
+<td>Back button</td>
+</tr>
+<tr>
+<td>Home/End</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Page Up/Down</td>
+<td>Trigger button for vertical scroll, Bumper button for horizontal scroll</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>Some key differences you should be aware of when designing your UWP app for use with game pad and remote control usage include:</p>
+<ul>
+<li><p>Text entry requires the user to press A to activate a text control.</p>
+</li>
+<li><p>Focus navigation is not limited to control groups, users can navigate freely to any focusable UI element in the app.</p>
+<p><strong>NOTE</strong> Focus can move to any focusable UI element in the key press direction unless it is in an overlay UI or <a href="gamepad-and-remote-interactions.html#focus-engagement">focus engagement</a> is specified, which prevents focus from entering/exiting a region until engaged/disengaged with the A button. For more info, see the <a href="#directional-navigation">directional navigation</a> section.</p>
+</li>
+<li><p>D-pad and left stick buttons are used to move focus between controls and for inner navigation.</p>
+<p><strong>NOTE</strong> Gamepad and remote control only navigate to items that are in the same visual order as the directional key pressed. Navigation is disabled in that direction when there is no subsequent element that can receive focus. Depending on the situation, keyboard users do not always have that constraint. See the <a href="#built-in-keyboard-optimization">Built in keyboard optimization</a> section for more info.</p>
+</li>
+</ul>
+<h4 id="directional-navigation">Directional navigation</h4>
+<p>Directional navigation is managed by a UWP <a href="/uwp/api/Windows.UI.Xaml.Input.FocusManager">Focus Manager</a> helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.</p>
+<p>Unlike the keyboard, when an app opts out of <a href="gamepad-and-remote-interactions.html#mouse-mode">Mouse Mode</a>, directional navigation is applied across the entire application for gamepad and remote control. See <a href="gamepad-and-remote-interactions.html">Gamepad and remote control interactions</a> for more detail on directional navigation optimization.</p>
+<p><strong>NOTE</strong> Navigation using the keyboard Tab key is not considered directional navigation. For more info, see the <a href="#tab-stops">Tab stops</a> section.</p>
+<table>
+  <tr>
+    <td>
+      <p><img src="images/keyboard/directional-navigation.png" alt="directional navigation"></p>
+      <p><em><strong>Directional navigation supported</strong><br>Using directional keys (keyboard arrows, gamepad and remote control D-pad), user can navigate between different controls.</em></p>
+    </td>
+    <td>
+      <p><img src="images/keyboard/no-directional-navigation.png" alt="no directional navigation"></p>
+      <p><em><strong>Directional navigation not supported</strong> <br>User cannot navigate between different controls using directional keys. Other methods of navigating between controls (tab key) are not impacted.</em></p>
+    </td>
+  </tr>
+</table>
+<h3 id="built-in-keyboard-optimization">Built in keyboard optimization</h3>
+<p>Depending on the layout and controls used, UWP apps can be optimized specifically for keyboard input.</p>
+<p>The following example shows a group of list items, grid items, and menu items that have been assigned to a single tab stop (see the <a href="#tab-stops">Tab stops</a> section). When the group has focus, inner navigation is performed with the directional arrow keys in the corresponding visual order (see <a href="#navigation">Navigation</a> section).</p>
+<p><img src="images/keyboard/single-column-arrow.png" alt="single column arrow key navigation"></p>
+<p><em><strong>Single Column Arrow Key Navigation</strong></em></p>
+<p><img src="images/keyboard/single-row-arrow.png" alt="single row arrow key navigation"></p>
+<p><em><strong>Single Row Arrow Key Navigation</strong></em></p>
+<p><img src="images/keyboard/multiple-column-and-row-navigation.png" alt="multiple column and row arrow key navigation"></p>
+<p><em><strong>Multiple Column/Row Arrow Key Navigation</strong></em></p>
+<h4 id="wrapping-homogeneous-list-and-grid-view-items">Wrapping homogeneous List and Grid View Items</h4>
+<p>Directional navigation is not always the most efficient way to navigate multiple rows and columns of List and GridView items.</p>
+<p><strong>NOTE</strong> Menu items are typically single column lists, but special focus rules might apply in some cases (see <a href="#popup-ui">Popup UI</a>).</p>
+<p>List and Grid objects can be created with multiple rows and columns. These are typically in row-major (where items fill entire row first before filling in the next row) or column-major (where items fill entire column first before filling in the next column) order. Row or column major order depends on scroll direction and you should ensure that item
+order does not conflict with this direction.</p>
+<p>In row-major order (where items fill in left to right, top to bottom), when the focus is on the last item in a row and the Right arrow key is pressed, focus is moved to the first item in the next row. This same behavior occurs in reverse: When focus is set to the first item in a row and the Left arrow key is pressed, focus is moved to the last item in
+the previous row.</p>
+<p>In column-major order (where items fill in top to bottom, left to right), when the focus is on the last item in a column and user presses the Down arrow key, focus is moved to the first item in the next column. This same behavior occurs in reverse: When focus is set to the first item in a column and the Up arrow key is pressed, focus is moved to the
+last item in the previous column.</p>
+<table>
+  <tr>
+    <td>
+      <p><img src="images/keyboard/row-major-keyboard.png" alt="row major keyboard navigation"></p>
+      <p><em>Row major keyboard navigation</em></p>
+    </td>
+    <td>
+      <p><img src="images/keyboard/column-major-keyboard.png" alt="column major keyboard navigation"></p>
+      <p><em>Column major keyboard navigation</em></p>
+    </td>
+  </tr>
+</table>
+<h4 id="popup-ui">Popup UI</h4>
+<p>As mentioned, you should try to ensure directional navigation corresponds to the visual order of the controls in your application's UI.</p>
+<p>Some controls (such as the context menu, CommandBar overflow menu, and AutoSuggest menu) display a menu popup in a location and direction (downwards by default) relative to the primary control and available screen space. Note that the opening direction can be affected by a variety of factors at run time.</p>
+<table>
+  <td><img src="images/keyboard/command-bar-open-down.png" alt="command bar opens down with down arrow key"></td>
+  <td><img src="images/keyboard/command-bar-open-up.png" alt="command bar opens up with down arrow key"></td>
+</table>
+<p>For these controls, when the menu is first opened (and no item has been selected by the user), the Down arrow key always sets focus to the first item while the Up arrow key always sets focus to the last item on the menu.</p>
+<p>If the last item has focus and the Down arrow key is pressed, focus moves to the first item on the menu. Similarly, if the first item has focus and the Up arrow key is pressed, focus moves to the last item on the menu. This behavior is referred to as <em>cycling</em> and is useful for navigating popup menus that can open in unpredictable directions.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Cycling should be avoided in non-popup UIs where users might come to feel trapped in an endless loop.</p>
+</div>
+<p>We recommend that you emulate these same behaviors in your custom controls. Code sample on how to implement this behavior can be found in <a href="focus-navigation-programmatic.html#find-the-first-and-last-focusable-element">Programmatic focus navigation</a> documentation.</p>
+<h2 id="test-your-app">Test your app</h2>
+<p>Test your app with all supported input devices to ensure UI elements can be navigated to in a coherent and intuitive way and that no unexpected elements interfere with the desired tab order.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="keyboard-events.html">Keyboard events</a></li>
+<li><a href="identify-input-devices.html">Identify input devices</a></li>
+<li><a href="respond-to-the-presence-of-the-touch-keyboard.html">Respond to the presence of the touch keyboard</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+<li><a href="../controls/navigationview.html#hierarchical-navigation">NavigationView control keyboarding specifics</a></li>
+<li><a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a></li>
+</ul>
+<h2 id="appendix">Appendix</h2>
+<h3 id="software-keyboard">Software keyboard</h3>
+<p>A software keyboard is displayed on screen and used instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device. On gaming devices, individual keys need to be selected by moving focus visual or using shortcut keys on a game pad or remote control.</p>
+<h4 id="touch-keyboard">Touch keyboard</h4>
+<p><img src="images/keyboard/default.png" alt="Windows 11 touch keyboard"></p>
+<p><em><strong>Windows 11 Touch Keyboard</strong></em></p>
+<p>Depending on the device, the touch keyboard appears when a text field or other editable text control gets focus, or when the user manually enables it through the <strong>Notification Center</strong>:</p>
+<p><img src="images/keyboard/touch-keyboard-notificationcenter.png" alt="Screenshot of the touch keyboard icon in the notification center."></p>
+<p>If your app sets focus programmatically to a text input control, the touch keyboard is not invoked. This eliminates unexpected behaviors not instigated directly by the user. However, the keyboard does automatically hide when focus is moved programmatically to a non-text input control.</p>
+<p>The touch keyboard typically remains visible while the user navigates between controls in a form. This behavior can vary based on the other control types within the form.</p>
+<p>The following is a list of non-edit controls that can receive focus during a text entry session using the touch keyboard without dismissing the keyboard. Rather than needlessly churn the UI and potentially disorient the user, the touch keyboard remains in view because the user is likely to go back and forth between these controls and text entry with the touch keyboard.</p>
+<ul>
+<li>Check box</li>
+<li>Combo box</li>
+<li>Radio button</li>
+<li>Scroll bar</li>
+<li>Tree</li>
+<li>Tree item</li>
+<li>Menu</li>
+<li>Menu bar</li>
+<li>Menu item</li>
+<li>Toolbar</li>
+<li>List</li>
+<li>List item</li>
+</ul>
+<p>Here are examples of different modes for the touch keyboard. The first image is the default layout, the second is the expanded layout (which might not be available in all languages).</p>
+<p><img src="images/keyboard/default.png" alt="Screenshot of the touch keyboard in default layout mode."></p>
+<p><em><strong>The touch keyboard in default layout mode</strong></em></p>
+<p><img src="images/keyboard/extendedview.png" alt="Screenshot of the touch keyboard in expanded layout mode."></p>
+<p><em><strong>The touch keyboard in expanded layout mode</strong></em></p>
+<p>Successful keyboard interactions enable users to accomplish basic app scenarios using only the keyboard; that is, users can reach all interactive elements and activate default functionality. A number of factors can affect the degree of success, including keyboard navigation, access keys for accessibility, and accelerator (or shortcut) keys for advanced users.</p>
+<h4 id="on-screen-keyboard">On-Screen Keyboard</h4>
+<p>Like the touch keyboard, the On-Screen Keyboard (OSK) is a visual, software keyboard used instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The OSK is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The OSK emulates most, if not all, the functionality of a hardware keyboard.</p>
+<p>The OSK can be turned on from the Keyboard page in Settings &gt; Ease of access.</p>
+<p><strong>NOTE</strong> The OSK has priority over the touch keyboard, which won't be shown if the OSK is present.</p>
+<p><img src="images/keyboard/osk.png" alt="Screenshot of the On-Screen Keyboard."></p>
+<p><em><strong>On-Screen Keyboard</strong></em></p>
+<p><img src="images/keyboard/xbox-onscreen-keyboard.png" alt="Screenshot of the Xbox One On-Screen Keyboard."></p>
+<p><em><strong>Xbox One On-Screen Keyboard</strong></em></p>
+<p>For more details, see <a href="https://support.microsoft.com/help/10762/windows-use-on-screen-keyboard">Use the On-Screen Keyboard to type</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/keyboard-interactions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

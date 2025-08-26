@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>The winget source command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="The winget source command ">
+    
+    <meta name="description" content="Use the winget source command and subcommands to list and manage the repositories Windows Package Manager accesses.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="the-winget-source-command">The winget source command</h1>
+
+<p>The <a href="index.html">WinGet</a> <strong>source</strong> command allows you to manage sources for Windows Package Manager. With the <strong>source</strong> command, you can <strong>add</strong>, <strong>list</strong>, <strong>update</strong>, <strong>remove</strong>, <strong>reset</strong>, or <strong>export</strong> repositories.</p>
+<p>A source repository provides the data for you to discover and install applications. Only use secure, trusted source locations.</p>
+<p>Windows Package Manager specifies the following two default repositories, which you can list by using <code>winget source list</code>.</p>
+<ul>
+<li><strong>msstore</strong> - The Microsoft Store catalog.</li>
+<li><strong>winget</strong> -  The Windows Package Manager app repository.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<pre><code class="lang-cmd">winget source &lt;subcommand&gt; &lt;options&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<a href="images/source.png#lightbox" data-linktype="relative-path">
+<img src="images/source.png" alt="Screenshot listing winget source command help options.">
+</a>
+</span>
+</p>
+<h2 id="sub-commands">Sub-Commands</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Sub-Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>add</strong></td>
+<td>Adds a new source.</td>
+</tr>
+<tr>
+<td><strong>list</strong></td>
+<td>Lists current sources.</td>
+</tr>
+<tr>
+<td><strong>update</strong></td>
+<td>Updates current sources.</td>
+</tr>
+<tr>
+<td><strong>remove</strong></td>
+<td>Removes current sources.</td>
+</tr>
+<tr>
+<td><strong>reset</strong></td>
+<td>Resets default sources <strong>winget</strong> and <strong>msstore</strong>.</td>
+</tr>
+<tr>
+<td><strong>export</strong></td>
+<td>Exports current sources.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="options">Options</h2>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-?,--help</strong></td>
+<td>Shows help about the selected command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="add">add</h3>
+<p>The <strong>add</strong> subcommand adds a new source. This subcommand requires the <strong>--name</strong> and <strong>--arg</strong> options. Because the command changes user access, using <strong>add</strong> requires administrator privileges.</p>
+<p>Usage:</p>
+<pre><code class="lang-cmd">winget source add [-n] &lt;name&gt; [-a] &lt;arg&gt; [[-t] &lt;type&gt;] [&lt;options&gt;]
+</code></pre>
+<h4 id="arguments">Arguments</h4>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n, --name</strong></td>
+<td>The name to identify the source by.</td>
+</tr>
+<tr>
+<td><strong>-a, --arg</strong></td>
+<td>The URL or UNC of the source.</td>
+</tr>
+<tr>
+<td><strong>-t, --type</strong></td>
+<td>The type of source.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options-1">Options</h4>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--trust-level</strong></td>
+<td>Trust level of the source (none or trusted).</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>--explicit</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<p>For example,  <code>winget source add --name Contoso https://www.contoso.com/cache</code> adds the Contoso repository at URL <code>https://www.contoso.com/cache</code>.</p>
+<h4 id="optional-type-parameter">Optional type parameter</h4>
+<p>The <strong>add</strong> subcommand supports the optional <strong>type</strong> parameter, which tells the client what type of repository it is connecting to. The following types are supported.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Microsoft.PreIndexed.Package</strong></td>
+<td>The default source type.</td>
+</tr>
+<tr>
+<td><strong>Microsoft.Rest</strong></td>
+<td>A Microsoft REST API source.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="list">list</h3>
+<p>The <strong>list</strong> subcommand enumerates the currently enabled sources, or provides details on a specific source.</p>
+<p>Usage:</p>
+<pre><code class="lang-cmd">winget source list [[-n] &lt;name&gt;] [&lt;options&gt;]
+</code></pre>
+<h4 id="aliases">Aliases</h4>
+<p>The following aliases are available for this subcommand:</p>
+<ul>
+<li>ls</li>
+</ul>
+<h4 id="arguments-1">Arguments</h4>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n, --name</strong></td>
+<td>The name to identify the source by.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options-2">Options</h4>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="list-all">list all</h4>
+<p>The <strong>list</strong> subcommand by itself, <code>winget source list</code>, provides the complete list of supported sources:</p>
+<pre><code class="lang-output">Name   Arg
+-----------------------------------------
+winget https://winget.azureedge.net/cache
+</code></pre>
+<h4 id="list-source-details">list source details</h4>
+<p>To get complete details about a source, pass in the name of the source. For example:</p>
+<pre><code class="lang-cmd">winget source list --name Contoso
+</code></pre>
+<p>Returns the following output:</p>
+<pre><code class="lang-output">Name   : Contoso
+Type   : Microsoft.PreIndexed.Package
+Arg    : https://pkgmgr-int.azureedge.net/cache
+Data   : AppInstallerSQLiteIndex-int_g4ype1skzj3jy
+Updated: 2020-4-14 17:45:32.000
+</code></pre>
+<ul>
+<li><code>Name</code> is the name of the source.</li>
+<li><code>Type</code> is the type of repo.</li>
+<li><code>Arg</code> is the URL or path the source uses.</li>
+<li><code>Data</code> is the optional package name, if appropriate.</li>
+<li><code>Updated</code> is the last date and time the source was updated.</li>
+</ul>
+<h3 id="update">update</h3>
+<p>The <strong>update</strong> subcommand forces an update to an individual source, or to all sources.</p>
+<p>Usage:</p>
+<pre><code class="lang-cmd">winget source update [[-n] &lt;name&gt;] [&lt;options&gt;]
+</code></pre>
+<h4 id="aliases-1">Aliases</h4>
+<p>The following aliases are available for this subcommand:</p>
+<ul>
+<li>refresh</li>
+</ul>
+<h4 id="arguments-2">Arguments</h4>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n, --name</strong></td>
+<td>The name to identify the source by.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options-3">Options</h4>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="update-all">update all</h4>
+<p>The <strong>update</strong> subcommand by itself, <code>winget source update</code>, requests updates to all repos.</p>
+<h4 id="update-source">update source</h4>
+<p>The <strong>update</strong> subcommand with the <strong>--name</strong> option directs an update to the named source. For example: <code>winget source update --name Contoso</code> forces an update to the Contoso repository.</p>
+<h3 id="remove">remove</h3>
+<p>The <strong>remove</strong> subcommand removes a source. This subcommand requires the <strong>--name</strong> option to identify the source. Because the command changes user access, using <strong>remove</strong> requires administrator privileges.</p>
+<p>Usage:</p>
+<pre><code class="lang-cmd">winget source remove [-n] &lt;name&gt; [&lt;options&gt;]
+</code></pre>
+<h4 id="aliases-2">Aliases</h4>
+<p>The following aliases are available for this subcommand:</p>
+<ul>
+<li>rm</li>
+</ul>
+<h4 id="arguments-3">Arguments</h4>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n, --name</strong></td>
+<td>The name to identify the source by.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options-4">Options</h4>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples">Examples</h4>
+<pre><code class="lang-cmd">winget source remove --name Contoso
+</code></pre>
+<p>This command removes the Contoso repository.</p>
+<h3 id="reset">reset</h3>
+<p>The <strong>reset</strong> subcommand resets the client back to its original configuration, and removes all sources except the default. Only use this subcommand in rare cases. Because the command changes user access, using <strong>reset</strong> requires administrator privileges.</p>
+<p>Because the <strong>reset</strong> command removes all sources, you must force the action by using the <strong>--force</strong> option.</p>
+<p>Usage:</p>
+<pre><code class="lang-cmd">winget source reset [[-n] &lt;name&gt;] [&lt;options&gt;]
+</code></pre>
+<h4 id="arguments-4">Arguments</h4>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n, --name</strong></td>
+<td>The name to identify the source by.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options-5">Options</h4>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--force</strong></td>
+<td>Forces the reset of the sources.</td>
+</tr>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="export">export</h3>
+<p>The <strong>export</strong> sub-command exports the specific details for a source to JSON output. This is useful for configuring Group Policy for source management.</p>
+<p>Usage:</p>
+<pre><code class="lang-cmd">winget source export [[-n] &lt;name&gt;] [&lt;options&gt;]
+</code></pre>
+<h4 id="arguments-5">Arguments</h4>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-n, --name</strong></td>
+<td>The name to identify the source by.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="options-6">Options</h4>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples-1">Examples</h4>
+<pre><code class="lang-cmd">winget source export winget
+</code></pre>
+<p>Returns the following output:</p>
+<pre><code class="lang-output">{&quot;Arg&quot;:&quot;https://cdn.winget.microsoft.com/cache&quot;,&quot;Data&quot;:&quot;Microsoft.Winget.Source_8wekyb3d8bbwe&quot;,&quot;Explicit&quot;:false,&quot;Identifier&quot;:&quot;Microsoft.Winget.Source_8wekyb3d8bbwe&quot;,&quot;Name&quot;:&quot;winget&quot;,&quot;TrustLevel&quot;:[&quot;Trusted&quot;,&quot;StoreOrigin&quot;],&quot;Type&quot;:&quot;Microsoft.PreIndexed.Package&quot;}
+</code></pre>
+<h2 id="source-agreement">Source agreement</h2>
+<p>An individual <strong>source</strong> might request that the user agree to the terms presented before adding or using the repository. If a user doesn't accept or acknowledge the agreement, they won't be able to access the source.</p>
+<p>You can use the <strong>--accept-source-agreements</strong> option to accept the source license agreement and avoid the prompt.</p>
+<p><span class="mx-imgBorder">
+<a href="images/source-license.png#lightbox" data-linktype="relative-path">
+<img src="images/source-license.png" alt="Screenshot showing the winget source command with flag to accept agreements.">
+</a>
+</span>
+</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/source.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

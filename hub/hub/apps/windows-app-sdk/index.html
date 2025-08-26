@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build desktop Windows apps with the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build desktop Windows apps with the Windows App SDK ">
+    
+    <meta name="description" content="Learn about the Windows App SDK, benefits it provides to developers, what is ready for developers now, and how to give feedback.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-sdk">Windows App SDK</h1>
+
+<p>The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.</p>
+<p>The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements those existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see <a href="#benefits-of-the-windows-app-sdk-for-windows-developers">Benefits of the Windows App SDK</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're working on a UWP app, then refer to <a href="migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+<h2 id="get-started-with-the-windows-app-sdk">Get started with the Windows App SDK</h2>
+<p>The Windows App SDK provides extensions for Visual Studio 2022 that include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.</p>
+<p>To learn about configuring Visual Studio for creating new Windows App SDK projects, including the required workloads and components, see <a href="../get-started/start-here.html">Getting Started with WinUI</a>.</p>
+<p>If you've already installed the required developer tools, then you're ready to <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>. You can also <a href="use-windows-app-sdk-in-existing-project.html">use the Windows App SDK in an existing project</a>.</p>
+<p>For guidance on specific Windows App SDK versions, see <a href="release-channels.html">Release channels</a> and <a href="downloads.html">Downloads</a>.</p>
+<h3 id="windows-app-sdk-features">Windows App SDK features</h3>
+<p>The following table highlights the development features that are provided by the current releases of the Windows App SDK. For more details about the release channels of the Windows App SDK that include each of these features, see <a href="release-channels.html#features-available-by-release-channel">Features available by release channel</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../winui/index.html">WinUI 3</a></td>
+<td>The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.</td>
+</tr>
+<tr>
+<td><a href="dwritecore.html">Render text with DWriteCore</a></td>
+<td>Render text using a device-independent text layout system, high quality sub-pixel Microsoft ClearType text rendering, hardware-accelerated text, multi-format text, wide language support, and much more.</td>
+</tr>
+<tr>
+<td><a href="mrtcore/mrtcore-overview.html">Manage resources with MRT Core</a></td>
+<td>Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic.</td>
+</tr>
+<tr>
+<td><a href="applifecycle/applifecycle-instancing.html">App lifecycle: App instancing</a></td>
+<td>Control whether multiple instances of your app's process can run at the same time.</td>
+</tr>
+<tr>
+<td><a href="applifecycle/applifecycle-rich-activation.html">App lifecycle: Rich activation</a></td>
+<td>Process information about different kinds activations for your app.</td>
+</tr>
+<tr>
+<td><a href="applifecycle/applifecycle-power.html">App lifecycle: Power management</a></td>
+<td>Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage.</td>
+</tr>
+<tr>
+<td><a href="windowing/windowing-overview.md">Manage app windows</a></td>
+<td>Create and manage the windows associated with your app.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/notifications/push-notifications/index.md">Push notifications</a></td>
+<td>Send raw notifications and app notifications to your app from the cloud using Azure App Registration identities.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md">App notifications</a></td>
+<td>Send app notifications to your app locally.</td>
+</tr>
+<tr>
+<td><a href="deployment-architecture.html">Deployment</a></td>
+<td>Deploy Windows App SDK runtime with your unpackaged and packaged app</td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-app-sdk-release-channels">Windows App SDK release channels</h3>
+<p>The following table provides an overview of the different release channels.</p>
+<table>
+<thead>
+<tr>
+<th>Release channel</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="stable-channel.html">Stable</a></td>
+<td>This channel is supported for use by apps in production environments. It only includes stable APIs. By default, the Windows App SDK docs focus on the Stable channel.</td>
+</tr>
+<tr>
+<td><a href="preview-channel.html">Preview</a></td>
+<td>This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. For documentation on using the Preview release, see <a href="preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</td>
+</tr>
+<tr>
+<td><a href="experimental-channel.html">Experimental</a></td>
+<td>This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. For documentation on using the Experimental release, see <a href="preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>For more details about the release channels of the Windows App SDK, see <a href="release-channels.html">Windows App SDK release channels</a>.</p>
+<h2 id="benefits-of-the-windows-app-sdk-for-windows-developers">Benefits of the Windows App SDK for Windows developers</h2>
+<p>The Windows App SDK provides a broad set of Windows APIs with implementations that are decoupled from the OS and released to developers via NuGet packages. The Windows App SDK is not meant to replace the Windows SDK. The Windows SDK will continue to work as is, and there are many core components of Windows that will continue to evolve via APIs that are delivered via OS and Windows SDK releases. Developers are encouraged to adopt the Windows App SDK at their own pace.</p>
+<h3 id="unified-api-surface-across-desktop-app-platforms">Unified API surface across desktop app platforms</h3>
+<p>Developers who want to create desktop Windows apps must choose between several app platforms and frameworks. Although each platform provides many features and APIs that can be used by apps that are built using other platforms, some features and APIs can only be used by specific platforms. The Windows App SDK unifies access to Windows APIs for desktop Windows 11 and Windows 10 apps. No matter which app model you choose, you will have access to the same set of Windows APIs that are available in the Windows App SDK.</p>
+<p>Over time, we plan to make further investments in the Windows App SDK that remove more distinctions between the different app models. For example, your app might use the WinUI Desktop model, it might use the XAML Islands model, it might use WPF, or it could be a non-XAML app that uses Composition Islands or other aspects of the Windows App SDK. In any of these cases, we aim to make access to the Windows APIs in the Windows App SDK the same easy experience. The Windows App SDK will include both WinRT APIs and native C APIs.</p>
+<h3 id="consistent-experience-across-windows-versions">Consistent experience across Windows versions</h3>
+<p>As the Windows APIs continue to evolve with new OS versions, developers must use techniques such as <a href="/windows/uwp/debug-test-perf/version-adaptive-code">version adaptive code</a> to account for all the differences in versions to reach their application audience. This can add complexity to the code and the development experience.</p>
+<p>Windows App SDK APIs will work on Windows 11 and downlevel to Windows 10, version 1809. This means that as long as your customers are on Windows 10, version 1809, or any later version of Windows, you can use new Windows App SDK APIs and features as soon as they are released, and without having to write version adaptive code.</p>
+<h3 id="faster-release-cadence">Faster release cadence</h3>
+<p>New Windows APIs and features are usually shipped within major Windows OS updates that release about once a year (often less frequently). Windows App SDK ships new releases about once every six months. This release cadence ensures that you continuously have access to the latest innovations in the Windows development platform.</p>
+<h2 id="give-feedback-and-contribute">Give feedback and contribute</h2>
+<p>We are building the Windows App SDK as an open source project. We have a lot more information on our <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/docs/README.md">Github page</a> about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/docs/contributor-guide.md">contributor guide</a> to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="release-channels.html">Release channels and release notes</a></li>
+<li><a href="set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../package-and-deploy/index.html#use-the-windows-app-sdk">Deploy apps that use the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

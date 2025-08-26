@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>list Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="list Command ">
+    
+    <meta name="description" content="Displays the list of listed apps and if an update is available.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="list-command-winget">list command (winget)</h1>
+
+<p>The <strong>list</strong> command of <a href="index.html">WinGet</a> displays a list of the applications currently installed on your computer. The list command will show apps that were installed through the Windows Package Manager as well as apps that were installed by other means.</p>
+<p>The <strong>list</strong> command will also display if an update is available for an app, and you can use the <a href="upgrade.html"><strong>upgrade</strong></a> command to update the app.</p>
+<p>The <strong>list</strong> command also supports filters which can be used to limit your list query.</p>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>ls</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p><code>winget list [[-q] &lt;query&gt;] [&lt;options&gt;]</code></p>
+<p><span class="mx-imgBorder">
+<a href="images/list.png#lightbox" data-linktype="relative-path">
+<img src="images/list.png" alt="Screenshot listing winget list command options.">
+</a>
+</span>
+</p>
+<p>To list all apps with available updates, use the command: <code>winget list --upgrade-available</code> (without any arguments).</p>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-q,--query</strong></td>
+<td>The query used to search for an app.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the installed package you are searching for.</p>
+</div>
+<h2 id="options">Options</h2>
+<p>The options allow you to customize the list experience to meet your needs.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--id</strong></td>
+<td>Limits the list to the ID of the application.</td>
+</tr>
+<tr>
+<td><strong>--name</strong></td>
+<td>Limits the list to the name of the application.</td>
+</tr>
+<tr>
+<td><strong>--moniker</strong></td>
+<td>Limits the list to the moniker listed for the application.</td>
+</tr>
+<tr>
+<td><strong>-s, --source</strong></td>
+<td>Restricts the list to the source name provided. Must be followed by the source name.</td>
+</tr>
+<tr>
+<td><strong>--tag</strong></td>
+<td>Filters results by tags.</td>
+</tr>
+<tr>
+<td><strong>--cmd, --command</strong></td>
+<td>Filters results by command specified by the application.</td>
+</tr>
+<tr>
+<td><strong>-n, --count</strong></td>
+<td>Limits the number of apps displayed in one query.</td>
+</tr>
+<tr>
+<td><strong>-e, --exact</strong></td>
+<td>Uses the exact string in the list query, including checking for case-sensitivity. It will not use the default behavior of a substring.</td>
+</tr>
+<tr>
+<td><strong>--scope</strong></td>
+<td>Select installed package scope filter (user or machine).</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--authentication-mode</strong></td>
+<td>Specify authentication window preference (silent, silentPreferred or interactive).</td>
+</tr>
+<tr>
+<td><strong>--authentication-account</strong></td>
+<td>Specify the account to be used for authentication.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>--upgrade-available</strong></td>
+<td>Lists only packages which have an upgrade available.</td>
+</tr>
+<tr>
+<td><strong>-u, --unknown, --include-unknown</strong></td>
+<td>Lists packages even if their current version cannot be determined.</td>
+</tr>
+<tr>
+<td><strong>--pinned, --include-pinned</strong></td>
+<td>Lists packages even if they have a pin that prevents upgrades by WinGet.</td>
+</tr>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-queries">Example queries</h3>
+<p>The following example lists installed applications with a given substring in their name.</p>
+<p><span class="mx-imgBorder">
+<a href="images/list-name.png#lightbox" data-linktype="relative-path">
+<img src="images/list-name.png" alt="Screenshot of using the winget --list git command to all installed applications with the name git.">
+</a>
+</span>
+</p>
+<p>The following example lists all application by ID from a specific source.</p>
+<p><span class="mx-imgBorder">
+<a href="images/list-id-source.png#lightbox" data-linktype="relative-path">
+<img src="images/list-id-source.png" alt="Screenshot listing winget list --id Git.Git to show all installed applications coming from that source.">
+</a>
+</span>
+</p>
+<p>The following example limits the output of <strong>list</strong> to 9 apps.</p>
+<p><span class="mx-imgBorder">
+<a href="images/list-count.png#lightbox" data-linktype="relative-path">
+<img src="images/list-count.png" alt="Screenshot listing winget list --count 9 to limit the number of installed apps listed to only 9.">
+</a>
+</span>
+</p>
+<h2 id="list-with-update">List with update</h2>
+<p>As stated above, the <strong>list</strong> command allows you to see what apps you have installed that have upgrades available.</p>
+<p>In the image below, you will notice applications with an upgrade available.</p>
+<p><span class="mx-imgBorder">
+<a href="images/list-update.png#lightbox" data-linktype="relative-path">
+<img src="images/list-update.png" alt="Screenshot listing winget list --upgrade-available to show installed apps with an available upgrade.">
+</a>
+</span>
+</p>
+<p>The <strong>list</strong> command will show not only the update version available, but the source that the update is available from.</p>
+<p>If there are no updates available, <strong>list</strong> will only show you the currently installed version and the update column will not be displayed.</p>
+<ul>
+<li><a href="index.html">Use the winget tool to list and manage applications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/list.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

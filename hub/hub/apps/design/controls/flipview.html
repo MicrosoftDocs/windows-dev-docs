@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Guidelines for flip view controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Guidelines for flip view controls ">
+    
+    <meta name="description" content="Displays images in a collection, such as photos in an album or items in a product details page, one image at a time.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="flip-view">Flip view</h1>
+
+<p>Use a flip view for browsing images or other items in a collection, such as photos in an album or items in a product details page, one item at a time. For touch devices, swiping across an item moves through the collection. For a mouse, navigation buttons appear on mouse hover. For a keyboard, arrow keys move through the collection.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Flip view is best for perusing images in small to medium collections (up to 25 or so items). Examples of such collections include items in a product details page or photos in a photo album. Although we don't recommend flip view for most large collections, the control is common for viewing individual images in a photo album.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Flip views work best for collections of up to 25 or so items.</li>
+<li>Avoid using a flip view control for larger collections, as the repetitive motion of flipping through each item can be tedious. An exception would be for photo albums, which often have hundreds or thousands of images. Photo albums almost always switch to a flip view once a photo has been selected in the grid view layout. For other large collections, consider a <a href="lists.html">List view or grid view</a>.</li>
+</ul>
+<h2 id="globalization-and-localization-checklist">Globalization and localization checklist</h2>
+<ul>
+<li><strong>Bi-directional considerations</strong>: Use standard mirroring for RTL languages. The back and forward controls should be based on the language's direction, so for RTL languages, the right button should navigate backwards and the left button should navigate forward.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>Horizontal browsing, starting at the left-most item and flipping right, is the typical layout for a flip view. This layout works well in either portrait or landscape orientation on all devices:</p>
+<p><img src="images/controls-flipview-horizonal.jpg" alt="Example of horizontal flip view layout"></p>
+<p>A flip view can also be browsed vertically:</p>
+<p><img src="images/controls-flipview-vertical.jpg" alt="Example of vertical flip view"></p>
+<h2 id="create-a-flip-view">Create a flip view</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview">FlipView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/FlipView">Open the WinUI 3 Gallery app and see the FlipView in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>FlipView is an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol">ItemsControl</a>, so it can contain a collection of items of any type. To populate the view, add items to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items"><strong>Items</strong></a> collection, or set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource"><strong>ItemsSource</strong></a> property to a data source.</p>
+<p>By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. To specify exactly how items in the flip view are displayed, you create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate"><strong>DataTemplate</strong></a> to define the layout of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. You assign the DataTemplate to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate"><strong>ItemTemplate</strong></a> property of the FlipView.</p>
+<h3 id="add-items-to-the-items-collection">Add items to the Items collection</h3>
+<p>You can add items to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items"><strong>Items</strong></a> collection using XAML or code. You typically add items this way if you have a small number of items that don't change and are easily defined in XAML, or if you generate the items in code at run time. Here's a flip view with items defined inline.</p>
+<pre><code class="lang-xaml">&lt;FlipView x:Name=&quot;flipView1&quot;&gt;
+    &lt;Image Source=&quot;Assets/Logo.png&quot; /&gt;
+    &lt;Image Source=&quot;Assets/SplashScreen.png&quot; /&gt;
+    &lt;Image Source=&quot;Assets/SmallLogo.png&quot; /&gt;
+&lt;/FlipView&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Create a new flip view, add content, 
+// and add a SelectionChanged event handler.
+FlipView flipView1 = new FlipView();
+flipView1.Items.Add(&quot;Item 1&quot;);
+flipView1.Items.Add(&quot;Item 2&quot;);
+
+// Add the flip view to a parent container in the visual tree.
+stackPanel1.Children.Add(flipView1);
+</code></pre>
+<p>When you add items to a flip view they are automatically placed in a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.FlipViewItem"><strong>FlipViewItem</strong></a> container. To change how an item is displayed you can apply a style to the item container by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle"><strong>ItemContainerStyle</strong></a> property.</p>
+<p>When you define the items in XAML, they are automatically added to the Items collection.</p>
+<h3 id="set-the-items-source">Set the items source</h3>
+<p>You typically use a flip view to display data from a source such as a database or the Internet. To populate a flip view from a data source, you set its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource"><strong>ItemsSource</strong></a> property to a collection of data items.</p>
+<p>Here, the flip view's ItemsSource is set in code directly to an instance of a collection.</p>
+<pre><code class="lang-csharp">// Data source.
+List&lt;String&gt; itemsList = new List&lt;string&gt;();
+itemsList.Add(&quot;Item 1&quot;);
+itemsList.Add(&quot;Item 2&quot;);
+
+// Create a new flip view, add content, 
+// and add a SelectionChanged event handler.
+FlipView flipView1 = new FlipView();
+flipView1.ItemsSource = itemsList;
+flipView1.SelectionChanged += FlipView_SelectionChanged;
+
+// Add the flip view to a parent container in the visual tree.
+stackPanel1.Children.Add(flipView1);
+</code></pre>
+<p>You can also bind the ItemsSource property to a collection in XAML. For more info, see <a href="/windows/uwp/data-binding/data-binding-quickstart">Data binding with XAML</a>.</p>
+<p>Here, the ItemsSource is bound to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Data.CollectionViewSource"><strong>CollectionViewSource</strong></a> named <code>itemsViewSource</code>.</p>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;!-- Collection of items displayed by this page --&gt;
+    &lt;CollectionViewSource x:Name=&quot;itemsViewSource&quot; Source=&quot;{Binding Items}&quot;/&gt;
+&lt;/Page.Resources&gt;
+
+...
+
+&lt;FlipView x:Name=&quot;itemFlipView&quot; 
+          ItemsSource=&quot;{Binding Source={StaticResource itemsViewSource}}&quot;/&gt;
+</code></pre>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>You can populate a flip view either by adding items to its Items collection, or by setting its ItemsSource property, but you can't use both ways at the same time. If you set the ItemsSource property and you add an item in XAML, the added item is ignored. If you set the ItemsSource property and you add an item to the Items collection in code, an exception is thrown.</p>
+</div>
+<h3 id="specify-the-look-of-the-items">Specify the look of the items</h3>
+<p>By default, a data item is displayed in the flip view as the string representation of the data object it's bound to. You typically want to show a more rich presentation of your data. To specify exactly how items in the flip view are displayed, you create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate"><strong>DataTemplate</strong></a>. The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have content defined inline. The DataTemplate is assigned to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate"><strong>ItemTemplate</strong></a> property of the FlipView control.</p>
+<p>In this example, the ItemTemplate of a FlipView is defined inline. An overlay is added to the image to display the image name.</p>
+<pre><code class="lang-XAML">&lt;FlipView MaxWidth=&quot;400&quot; Height=&quot;180&quot; BorderBrush=&quot;Black&quot; BorderThickness=&quot;1&quot;
+          ItemsSource=&quot;{x:Bind Items, Mode=OneWay}&quot;&gt;
+    &lt;FlipView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;data:ControlInfoDataItem&quot;&gt;
+            &lt;Grid&gt;
+                &lt;Grid.RowDefinitions&gt;
+                    &lt;RowDefinition Height=&quot;*&quot; /&gt;
+                    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+                &lt;/Grid.RowDefinitions&gt;
+                &lt;Image Width=&quot;36&quot; Source=&quot;{x:Bind ImagePath}&quot; Stretch=&quot;Uniform&quot;
+                       VerticalAlignment=&quot;Center&quot; /&gt;
+                &lt;Border Background=&quot;#A5FFFFFF&quot; Height=&quot;60&quot; Grid.Row=&quot;1&quot;&gt;
+                    &lt;TextBlock x:Name=&quot;Control2Text&quot; Text=&quot;{x:Bind Title}&quot; Foreground=&quot;Black&quot;
+                               Padding=&quot;12,12&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot;
+                               HorizontalAlignment=&quot;Center&quot; /&gt;
+                &lt;/Border&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/FlipView.ItemTemplate&gt;
+&lt;/FlipView&gt;
+</code></pre>
+<p>Here's what the layout defined by the data template looks like.</p>
+<p><img src="images/flip-view-template.png" alt="Example of a flip view with a data template"></p>
+<h3 id="set-the-orientation-of-the-flip-view">Set the orientation of the flip view</h3>
+<p>By default, the flip view flips horizontally. To make the it flip vertically, use a stack panel with a vertical orientation as the flip view's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel"><strong>ItemsPanel</strong></a>.</p>
+<p>This example shows how to use a stack panel with a vertical orientation as the ItemsPanel of a FlipView.</p>
+<pre><code class="lang-XAML">&lt;FlipView x:Name=&quot;flipViewVertical&quot; Width=&quot;480&quot; Height=&quot;270&quot; 
+          BorderBrush=&quot;Black&quot; BorderThickness=&quot;1&quot;&gt;
+    
+    &lt;!-- Use a vertical stack panel for vertical flipping. --&gt;
+    &lt;FlipView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;VirtualizingStackPanel Orientation=&quot;Vertical&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/FlipView.ItemsPanel&gt;
+    
+    &lt;FlipView.ItemTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;Grid&gt;
+                &lt;Image Width=&quot;480&quot; Height=&quot;270&quot; Stretch=&quot;UniformToFill&quot;
+                       Source=&quot;{Binding Image}&quot;/&gt;
+                &lt;Border Background=&quot;#A5000000&quot; Height=&quot;80&quot; VerticalAlignment=&quot;Bottom&quot;&gt;
+                    &lt;TextBlock Text=&quot;{Binding Name}&quot; 
+                               FontFamily=&quot;Segoe UI&quot; FontSize=&quot;26.667&quot; 
+                               Foreground=&quot;#CCFFFFFF&quot; Padding=&quot;15,20&quot;/&gt;
+                &lt;/Border&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/FlipView.ItemTemplate&gt;
+&lt;/FlipView&gt;
+</code></pre>
+<p>Here's what the flip view looks like with a vertical orientation.</p>
+<p><img src="images/controls-flipview-vertical.jpg" alt="Example of flip view in vertical orientation."></p>
+<h2 id="adding-a-context-indicator">Adding a context indicator</h2>
+<p>Use a context indicator (such as a <a href="pipspager.html">PipsPager</a> or film strip) with a flip view to help provide users with a point of reference within the content.</p>
+<p>The following image shows a PipsPager used with a small photo gallery (we recommend centering the PipsPager below the gallery).</p>
+<p><span class="mx-imgBorder">
+<img src="images/pipspager-flipview-example.png" alt="A PipsPager with five horizontal dots underneath a FlipView photo album. The third dot is selected, which indicates the third page of content.">
+</span>
+</p>
+<p>This code snippet shows how to bind a PipsPager with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview">FlipView</a>.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+  &lt;FlipView x:Name=&quot;Gallery&quot; MaxWidth=&quot;400&quot; Height=&quot;270&quot; ItemsSource=&quot;{x:Bind Pictures}&quot;&gt;
+      &lt;FlipView.ItemTemplate&gt;
+          &lt;DataTemplate x:DataType=&quot;x:String&quot;&gt;
+              &lt;Image Source=&quot;{x:Bind Mode=OneWay}&quot;/&gt;
+          &lt;/DataTemplate&gt;
+      &lt;/FlipView.ItemTemplate&gt;
+  &lt;/FlipView&gt;
+
+  &lt;!-- The SelectedPageIndex is bound to the FlipView to keep the two in sync --&gt;
+  &lt;PipsPager x:Name=&quot;FlipViewPipsPager&quot;
+      HorizontalAlignment=&quot;Center&quot;
+      Margin=&quot;0, 10, 0, 0&quot;
+      NumberOfPages=&quot;{x:Bind Pictures.Count}&quot;
+      SelectedPageIndex=&quot;{x:Bind Path=Gallery.SelectedIndex, Mode=TwoWay}&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>For larger collections (10 or more items), we highly recommend using a contextual indicator such as a film strip of thumbnails. Unlike a PipsPager that uses simple dots or glyphs, each thumbnail in the film strip shows a smaller, selectable version of the corresponding image.</p>
+<p><span class="mx-imgBorder">
+<img src="images/controls-context-indicator.jpg" alt="A film strip of thumbnails underneath a FlipView photo album.">
+</span>
+</p>
+<p>For a full example showing how to add a context indicator to a FlipView, see <a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20FlipView%20control%20sample%20(Windows%208)">XAML FlipView sample</a>.</p>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.flipview">FlipView class</a>, <a href="/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource">ItemsSource property</a>, <a href="/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate property</a></li>
+<li><a href="winui2gallery:/item/FlipView">Open the WinUI 2 Gallery app and see the FlipView in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="lists.html">Guidelines for lists</a></li>
+<li><a href="pipspager.html">PipsPager</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.FlipView"><strong>FlipView class</strong></a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/flipview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Page transitions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Page transitions ">
+    
+    <meta name="description" content="Learn how to use Universal Windows Platform (UWP) page transitions to give users feedback about the relationship between pages in your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="page-transitions">Page transitions</h1>
+
+<p>Page transitions navigate users between pages in an app, providing feedback as the relationship between pages. Page transitions help users understand if they are at the top of a navigation hierarchy, moving between sibling pages, or navigating deeper into the page hierarchy.</p>
+<p>Two different animations are provided for navigation between pages in an app, <em>Page refresh</em> and <em>Drill</em>, and are represented by subclasses of <a href="/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo"><strong>NavigationTransitionInfo</strong></a>.</p>
+<h2 id="examples">Examples</h2>
+<table>
+<th align="left">WinUI 2 Gallery</th><th>
+</th><tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="WinUI Gallery" width="168"></td>
+<td>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/PageTransition">open the app and see Page Transitions in action</a>.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+<h2 id="page-refresh">Page refresh</h2>
+<p>Page refresh is a combination of a slide up animation and a fade in animation for the incoming content. Use page refresh when the user is taken to the top of a navigational stack, such as navigating between tabs or left-nav items.</p>
+<p>The desired feeling is that the user has started over.</p>
+<p><img src="images/page-refresh.gif" alt="page refresh animation"></p>
+<p>The page refresh animation is represented by the <a href="/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo"><strong>EntranceNavigationTransitionInfoClass</strong></a>.</p>
+<pre><code class="lang-csharp">// Explicitly play the page refresh animation
+myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
+
+</code></pre>
+<p><strong>Note</strong>: A <a href="/uwp/api/windows.ui.xaml.controls.frame"><strong>Frame</strong></a> automatically uses <a href="/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition"><strong>NavigationThemeTransition</strong></a> to animate navigation between two pages. By default, the animation is page refresh.</p>
+<h2 id="drill">Drill</h2>
+<p>Use drill when users navigate deeper into an app, such as displaying more information after selecting an item.</p>
+<p>The desired feeling is that the user has gone deeper into the app.</p>
+<p><img src="images/drill.gif" alt="drill animation"></p>
+<p>The drill animation is represented by the <a href="/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo"><strong>DrillInNavigationTransitionInfo</strong></a> class.</p>
+<pre><code class="lang-csharp">// Play the drill in animation
+myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
+</code></pre>
+<h2 id="horizontal-slide">Horizontal slide</h2>
+<p>Use horizontal slide to show that sibling pages appear next to each other. The <a href="../controls/navigationview.html">NavigationView</a> control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizontal slide with SlideNavigationTransitionInfo.</p>
+<p>The desired feeling is that the user is navigating between pages that are next to each other.</p>
+<pre><code class="lang-csharp">// Navigate to the right, ie. from LeftPage to RightPage
+myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromRight } );
+
+// Navigate to the left, ie. from RightPage to LeftPage
+myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft } );
+</code></pre>
+<h2 id="suppress">Suppress</h2>
+<p>To avoid playing any animation during navigation, use <a href="/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo"><strong>SuppressNavigationTransitionInfo</strong></a> in the place of other <strong>NavigationTransitionInfo</strong> subtypes.</p>
+<pre><code class="lang-csharp">// Suppress the default animation
+myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
+</code></pre>
+<p>Suppressing the animation is useful if you are building your own transition using <a href="connected-animation.html">Connected Animations</a> or implicit show/hide animations.</p>
+<h2 id="backwards-navigation">Backwards navigation</h2>
+<p>You can use <code>Frame.GoBack(NavigationTransitionInfo)</code> to play a specific transition when navigating backwards.</p>
+<p>This can be useful when you modify navigation behavior dynamically based on screen size; for example, in a responsive list/detail scenario.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../basics/navigate-between-two-pages.html">Navigate between two pages</a></li>
+<li><a href="index.md">Motion in UWP apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/motion/page-transitions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

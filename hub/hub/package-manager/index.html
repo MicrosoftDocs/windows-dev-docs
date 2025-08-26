@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Package Manager </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Package Manager ">
+    
+    <meta name="description" content="Windows Package Manager is a comprehensive package manager solution that consists of a command line tool and set of services for installing applications on Windows.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-package-manager">Windows Package Manager</h1>
+
+<p>Windows Package Manager is a comprehensive <a href="#understanding-package-managers">package manager solution</a> that includes:</p>
+<ul>
+<li><a href="winget/index.html">WinGet</a>: The command line tool and client interface for the Windows Package Manager service. You can view the packages available using the command <a href="winget/list.html"><code>winget list</code></a>, find more winget commands: <a href="winget/index.html">Use the WinGet tool to install and manage applications</a>.</li>
+<li><a href="package/index.html">Submit packages to Windows Package Manager</a>: The packaging services for hosting and installing applications on Windows devices.</li>
+<li><a href="configuration/index.html">WinGet Configuration files</a>: Create a set of instructions for Windows Package Manager to consolidate the steps for manually setting up a device and onboarding to a new project to a single command that is reliable and repeatable. WinGet Configuration files utilize PowerShell Desired State Configuration (DSC) in combination with YAML formatted instructions and WinGet packages to handle your machine set up.</li>
+</ul>
+<p>Windows Package Manager is a helpful tool for:</p>
+<ul>
+<li><a href="#windows-package-manager-for-developers">Developers</a> who want to manage their software applications using the command line.</li>
+<li><a href="#windows-package-manager-for-isv-software-distribution">Independent Software Vendors (ISVs)</a> who want to distribute software.</li>
+<li><a href="#windows-package-manager-for-enterprise-security">Enterprise organizations</a> who want to automate device set up and maintain a secure work environment.</li>
+</ul>
+<h2 id="understanding-package-managers">Understanding package managers</h2>
+<p>A package manager is a system or set of tools used to automate installing, upgrading, configuring and using software. Most package managers are designed for discovering and installing developer tools.</p>
+<p>Ideally, developers use a package manager to specify the prerequisites for the tools they need to develop solutions for a given project. The package manager then follows the declarative instructions to install and configure the tools. The package manager reduces the time spent getting an environment ready, and it helps ensure the same versions of packages are installed on their machine.</p>
+<p>Third party package managers can leverage the <a href="package/repository.html">Microsoft Community Package Manifest Repository</a> to increase the size of their software catalog.</p>
+<h2 id="windows-package-manager-for-developers">Windows Package Manager for developers</h2>
+<p>Developers use the <strong>winget</strong> command line tool to discover, install, upgrade, remove and configure a curated set of applications. After it is installed, developers can access <strong>winget</strong> via the Windows Terminal, PowerShell, or the Command Prompt.</p>
+<p>For more information, see <a href="winget/index.html">Use the winget tool to install and manage applications</a>.</p>
+<p>For a video demo of winget, see <a href="/shows/open-at-microsoft/intro-to-windows-package-manager">Intro to Windows Package Manager</a>.</p>
+<p>Find the <a href="https://devblogs.microsoft.com/commandline/author/denelon/">latest Windows Package Manager announcements and version updates</a> in the <a href="https://devblogs.microsoft.com/commandline/">Windows Command Line Blog</a>.</p>
+<h2 id="windows-package-manager-for-isv-software-distribution">Windows Package Manager for ISV software distribution</h2>
+<p>Independent Software Vendors (ISVs) can use Windows Package Manager as a distribution channel for software packages containing their tools and applications. To submit software packages (containing .msix, .msi, or .exe installers) to Windows Package Manager, we provide the open source <strong>Microsoft Community Package Manifest Repository</strong> on GitHub where ISVs can upload <a href="package/manifest.html">package manifests</a> to have their software packages considered for inclusion with Windows Package Manager. Manifests are automatically validated and may also be reviewed manually.</p>
+<p>For more information, see <a href="package/repository.html">Submit packages to Windows Package Manager</a>.</p>
+<h2 id="windows-package-manager-for-enterprise-security">Windows Package Manager for Enterprise Security</h2>
+<p>The WinGet client can be used in the command line to install and manage applications across multiple machines. Those responsible for setting up enterprise work environments, such as IT Administrators or Security Analysts,  with the goal of maintaining a consistent level of security settings across everyone’s work machine may also be using <a href="/mem/intune/">Microsoft Intune</a> to manage security using “Group Policy” settings.</p>
+<p>To maintain ongoing security updates, the WinGet client is released using the Microsoft Store and installs applications from the Microsoft Store using the <a href="winget/source.html">“msstore” source</a> and applying  “certificate pinning” to ensure that the connection is secure and established with the proper endpoint.</p>
+<p>The Group Policy applied by your enterprise organization may be using SSL inspection via a firewall between the WinGet client and the Microsoft Store source that causes a connection error to appear in the WinGet client.</p>
+<p>For this reason, the Windows Package Manager desktop installer supports a policy setting called: “BypassCertificatePinningForMicrosoftStore”.  This policy controls whether the Windows Package Manager will validate the Microsoft Store certificate hash matches to a known Microsoft Store certificate when initiating a connection to the Microsoft Store Source. The options for this policy include:</p>
+<ul>
+<li><strong>Not configured (default)</strong>: If you do not configure this policy, the Windows Package Manager administrator settings will be adhered to. We recommend leaving this policy in the not configured default unless you have a specific need to change it.</li>
+<li><strong>Enable</strong>: If you enable this policy, the Windows Package Manager will bypass the Microsoft Store certificate validation.</li>
+<li><strong>Disable</strong>: If you disable this policy, the Windows Package Manager will validate the Microsoft Store certificate used is valid and belongs to the Microsoft Store before communicating with the Microsoft Store source.</li>
+</ul>
+<p>“Certificate Pinning” ensures that the package manager connection to the Microsoft Store is secure, helping to avoid risks associated with attacks such as Man-in-the-Middle (MITM) attacks involving a third party inserting themselves between a client (user) and server (application) to secretly intercept communication flows to steal sensitive data such as login credentials, etc. Disabling “Certificate Pinning” (enabling the bypass) can expose your organization to risk in this area and should be avoided.</p>
+<p>To learn more about setting up Group Policy for your enterprise organization, see the <a href="/mem/intune/">Microsoft Intune documentation</a>.</p>
+<h2 id="additional-group-policy-settings-for-windows-package-manager">Additional Group Policy settings for Windows Package Manager</h2>
+<p>Windows Package Manager provides additional configuration options through Group Policy, allowing IT administrators to manage and control functionality across multiple devices. These settings are particularly beneficial for enterprise environments where compliance and consistency are critical.</p>
+<p>Beginning in Windows 11, additional Group Policy templates for Windows Package Manager are included with each release. These templates are divided into several subcategories, enabling IT administrators to configure key aspects of the tool's behavior, such as:</p>
+<ul>
+<li><strong>Source Control</strong>: Specify which sources are allowed or blocked.</li>
+<li><strong>Local Development</strong>: Control whether users are allowed to enable experimental features or local manifest installations.</li>
+<li><strong>Execution Policies</strong>: Set policies for the command line interface and proxy options.</li>
+</ul>
+<p>To download the Group Policy templates:</p>
+<ol>
+<li>Visit <a href="https://github.com/microsoft/winget-cli/releases">Windows Package Manage GitHub releases</a>.</li>
+<li>Locate the release version you wish to use.</li>
+<li>Download the <code>DesktopAppInstallerPolicies.zip</code> file included in the release assets.</li>
+</ol>
+<p>The ZIP file contains the necessary <code>.admx</code> and <code>.adml</code> files for deploying the policies. Once you've downloaded the <code>DesktopAppInstallerPolicies.zip</code> file:</p>
+<ol>
+<li>Extract the contents of the ZIP file on your local machine.</li>
+<li>Copy the <code>.admx</code> file to the <code>C:\Windows\PolicyDefinitions</code> folder on the target device.</li>
+<li>Copy the corresponding language-specific <code>.adml</code> file to the appropriate subdirectory, such as <code>C:\Windows\PolicyDefinitions\en-US</code>.</li>
+<li>Open the Group Policy Management Console (GPMC) to configure the policies.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When working on a Windows Domain Controller, you can store the Group Policy templates in the Central Store. For detailed instructions, see <a href="/troubleshoot/windows-client/group-policy/create-and-manage-central-store">How to create and manage the Central Store for Group Policy Administrative Templates in Windows</a>.</p>
+</div>
+<p>New Group Policy settings may be introduced with each release of Windows Package Manager. To ensure your environment is always up to date:</p>
+<ul>
+<li>Regularly check for updates on the <a href="https://github.com/microsoft/winget-cli/releases">Windows Package Manager GitHub repository</a> page.</li>
+<li>Review the release notes for changes or additions to the policy templates.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

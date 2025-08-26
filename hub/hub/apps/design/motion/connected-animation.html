@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Connected animation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Connected animation ">
+    
+    <meta name="description" content="Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="connected-animation-for-windows-apps">Connected animation for Windows apps</h1>
+
+<p>Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views. This helps the user maintain their context and provides continuity between the views.</p>
+<p>In a connected animation, an element appears to &quot;continue&quot; between two views during a change in UI content, flying across the screen from its location in the source view to its destination in the new view. This emphasizes the common content between the views and creates a beautiful and dynamic effect as part of a transition.</p>
+<blockquote>
+<p><strong>Important APIs</strong>:  <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimation">ConnectedAnimation class</a>, <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice">ConnectedAnimationService class</a></p>
+</blockquote>
+<h2 id="examples">Examples</h2>
+<table>
+<th align="left">WinUI 2 Gallery</th><th>
+</th><tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="WinUI Gallery" width="168"></td>
+<td>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/ConnectedAnimation">open the app and see Connected Animation in action</a>.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+<p>In this short video, an app uses a connected animation to animate an item image as it &quot;continues&quot; to become part of the header of the next page. The effect helps maintain user context across the transition.</p>
+<p><img src="images/connected-animations/example.gif" alt="Connected Animation"></p>
+<h2 id="connected-animation-and-the-fluent-design-system">Connected animation and the Fluent Design System</h2>
+<p>The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. To learn more, see the <a href="../index.html">Fluent Design overview</a>.</p>
+<h2 id="why-connected-animation">Why connected animation?</h2>
+<p>When navigating between pages, it’s important for the user to understand what new content is being presented after the navigation and how it relates to their intent when navigating. Connected animations provide a powerful visual metaphor that emphasizes the relationship between two views by drawing the user’s focus to the content shared between them. Additionally, connected animations add visual interest and polish to page navigation that can help differentiate the motion design of your app.</p>
+<h2 id="when-to-use-connected-animation">When to use connected animation</h2>
+<p>Connected animations are generally used when changing pages, though they can be applied to any experience where you are changing content in a UI and want the user to maintain context. You should consider using a connected animation instead of a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition">drill in navigation transition</a> whenever there is an image or other piece of UI shared between the source and destination views.</p>
+<h2 id="configure-connected-animation">Configure connected animation</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This feature requires that your app's Target version be Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK 17763</a>) or later. The Configuration property is not available in earlier SDKs. You can target a Minimum version lower than SDK 17763 using adaptive code or conditional XAML. For more info, see <a href="/windows/uwp/debug-test-perf/version-adaptive-apps">Version adaptive apps</a>.</p>
+</div>
+<p>Starting in Windows 10, version 1809, connected animations further embody Fluent design by providing animation configurations tailored specifically for forward and backwards page navigation.</p>
+<p>You specify an animation configuration by setting the Configuration property on the ConnectedAnimation. (We’ll show examples of this in the next section.)</p>
+<p>This table describes the available configurations. For more information about the motion principles applied in these animations, see <a href="index.md">Directionality and gravity</a>.</p>
+<table>
+<thead>
+<tr>
+<th><a href="/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration">GravityConnectedAnimationConfiguration</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>This is the default configuration, and is recommended for forward navigation.</td>
+</tr>
+<tr>
+<td>As the user navigates forward in the app (A to B), the connected element appears to physically “pull off the page”. In doing so, the element appears to move forward in z-space and drops a bit as an effect of gravity taking hold. To overcome the effects of gravity, the element gains velocity and accelerates into its final position. The result is a “scale and dip” animation.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><a href="/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration">DirectConnectedAnimationConfiguration</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>As the user navigates backwards in the app (B to A), the animation is more direct. The connected element linearly translates from B to A using a decelerate cubic Bezier easing function. The backwards visual affordance returns the user to their previous state as fast as possible while still maintaining the context of the navigation flow.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><a href="/uwp/api/windows.ui.xaml.media.animation.basicconnectedanimationconfiguration">BasicConnectedAnimationConfiguration</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>This is the default (and only) animation used in versions prior to Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK 17763</a>).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connectedanimationservice-configuration">ConnectedAnimationService configuration</h3>
+<p>The <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice">ConnectedAnimationService</a> class has two properties that apply to the individual animations rather than the overall service.</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaultduration">DefaultDuration</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.defaulteasingfunction">DefaultEasingFunction</a></li>
+</ul>
+<p>To achieve the various effects, some configurations ignore these properties on ConnectedAnimationService and use their own values instead, as described in this table.</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Respects DefaultDuration?</th>
+<th>Respects DefaultEasingFunction?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gravity</td>
+<td>Yes</td>
+<td>Yes* <br> *<em>The basic translation from A to B uses this easing function, but the &quot;gravity dip&quot; has its own easing function.</em></td>
+</tr>
+<tr>
+<td>Direct</td>
+<td>No <br> <em>Animates over 150ms.</em></td>
+<td>No <br> <em>Uses the Decelerate easing function.</em></td>
+</tr>
+<tr>
+<td>Basic</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="how-to-implement-connected-animation">How to implement connected animation</h2>
+<p>Setting up a connected animation involves two steps:</p>
+<ol>
+<li><em>Prepare</em> an animation object on the source page, which indicates to the system that the source element will participate in the connected animation.</li>
+<li><em>Start</em> the animation on the destination page, passing a reference to the destination element.</li>
+</ol>
+<p>When navigating from the source page, call <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getforcurrentview">ConnectedAnimationService.GetForCurrentView</a> to get an instance of ConnectedAnimationService. To prepare an animation, call <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.preparetoanimate">PrepareToAnimate</a> on this instance, and pass in a unique key and the UI element you want to use in the transition. The unique key lets you retrieve the animation later on the destination page.</p>
+<pre><code class="lang-csharp">ConnectedAnimationService.GetForCurrentView()
+    .PrepareToAnimate(&quot;forwardAnimation&quot;, SourceImage);
+</code></pre>
+<p>When the navigation occurs, start the animation in the destination page. To start the animation, call <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart">ConnectedAnimation.TryStart</a>. You can retrieve the right animation instance by calling <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice.getanimation">ConnectedAnimationService.GetAnimation</a> with the unique key you provided when creating the animation.</p>
+<pre><code class="lang-csharp">ConnectedAnimation animation =
+    ConnectedAnimationService.GetForCurrentView().GetAnimation(&quot;forwardAnimation&quot;);
+if (animation != null)
+{
+    animation.TryStart(DestinationImage);
+}
+</code></pre>
+<h3 id="forward-navigation">Forward navigation</h3>
+<p>This example shows how to use ConnectedAnimationService to create a transition for forward navigation between two pages (Page_A to Page_B).</p>
+<p>The recommended animation configuration for forward navigation is <a href="/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration">GravityConnectedAnimationConfiguration</a>. This is the default, so you don't need to set the <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimation.configuration">Configuration</a> property unless you want to specify a different configuration.</p>
+<p>Set up the animation in the source page.</p>
+<pre><code class="lang-xaml">&lt;!-- Page_A.xaml --&gt;
+
+&lt;Image x:Name=&quot;SourceImage&quot;
+       HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot;
+       Width=&quot;200&quot; Height=&quot;200&quot;
+       Stretch=&quot;Fill&quot;
+       Source=&quot;Assets/StoreLogo.png&quot;
+       PointerPressed=&quot;SourceImage_PointerPressed&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Page_A.xaml.cs
+
+private void SourceImage_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    // Navigate to detail page.
+    // Suppress the default animation to avoid conflict with the connected animation.
+    Frame.Navigate(typeof(Page_B), null, new SuppressNavigationTransitionInfo());
+}
+
+protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+{
+    ConnectedAnimationService.GetForCurrentView()
+        .PrepareToAnimate(&quot;forwardAnimation&quot;, SourceImage);
+    // You don't need to explicitly set the Configuration property because
+    // the recommended Gravity configuration is default.
+    // For custom animation, use:
+    // animation.Configuration = new BasicConnectedAnimationConfiguration();
+}
+</code></pre>
+<p>Start the animation in the destination page.</p>
+<pre><code class="lang-xaml">&lt;!-- Page_B.xaml --&gt;
+
+&lt;Image x:Name=&quot;DestinationImage&quot;
+       Width=&quot;400&quot; Height=&quot;400&quot;
+       Stretch=&quot;Fill&quot;
+       Source=&quot;Assets/StoreLogo.png&quot; /&gt;
+</code></pre>
+<pre><code class="lang-csharp">// Page_B.xaml.cs
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    base.OnNavigatedTo(e);
+
+    ConnectedAnimation animation =
+        ConnectedAnimationService.GetForCurrentView().GetAnimation(&quot;forwardAnimation&quot;);
+    if (animation != null)
+    {
+        animation.TryStart(DestinationImage);
+    }
+}
+</code></pre>
+<h3 id="back-navigation">Back navigation</h3>
+<p>For back navigation (Page_B to Page_A), you follow the same steps, but the source and destination pages are reversed.</p>
+<p>When the user navigates back, they expect the app to be returned to the previous state as soon as possible. Therefore, the recommended configuration is <a href="/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration">DirectConnectedAnimationConfiguration</a>. This animation is quicker, more direct, and uses the decelerate easing.</p>
+<p>Set up the animation in the source page.</p>
+<pre><code class="lang-csharp">// Page_B.xaml.cs
+
+protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+{
+    if (e.NavigationMode == NavigationMode.Back)
+    {
+        ConnectedAnimation animation = 
+            ConnectedAnimationService.GetForCurrentView().PrepareToAnimate(&quot;backAnimation&quot;, DestinationImage);
+
+        // Use the recommended configuration for back animation.
+        animation.Configuration = new DirectConnectedAnimationConfiguration();
+    }
+}
+</code></pre>
+<p>Start the animation in the destination page.</p>
+<pre><code class="lang-csharp">// Page_A.xaml.cs
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    base.OnNavigatedTo(e);
+
+    ConnectedAnimation animation =
+        ConnectedAnimationService.GetForCurrentView().GetAnimation(&quot;backAnimation&quot;);
+    if (animation != null)
+    {
+        animation.TryStart(SourceImage);
+    }
+}
+</code></pre>
+<p>Between the time that the animation is set up and when it's started, the source element appears frozen above other UI in the app. This lets you perform any other transition animations simultaneously. For this reason, you shouldn't wait more than ~250 milliseconds in between the two steps because the presence of the source element may become distracting. If you prepare an animation and do not start it within three seconds, the system will dispose of the animation and any subsequent calls to <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimation.trystart">TryStart</a> will fail.</p>
+<h2 id="connected-animation-in-list-and-grid-experiences">Connected animation in list and grid experiences</h2>
+<p>Often, you will want to create a connected animation from or to a list or grid control. You can use the two methods on <a href="/uwp/api/windows.ui.xaml.controls.listview">ListView</a> and <a href="/uwp/api/windows.ui.xaml.controls.gridview">GridView</a>, <a href="/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation">PrepareConnectedAnimation</a> and <a href="/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync">TryStartConnectedAnimationAsync</a>, to simplify this process.</p>
+<p>For example, say you have a <strong>ListView</strong> that contains an element with the name &quot;PortraitEllipse&quot; in its data template.</p>
+<pre><code class="lang-xaml">&lt;ListView x:Name=&quot;ContactsListView&quot; Loaded=&quot;ContactsListView_Loaded&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;vm:ContactsItem&quot;&gt;
+            &lt;Grid&gt;
+                …
+                &lt;Ellipse x:Name=&quot;PortraitEllipse&quot; … /&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p>To prepare a connected animation with the ellipse corresponding to a given list item, call the <a href="/uwp/api/windows.ui.xaml.controls.listviewbase.prepareconnectedanimation">PrepareConnectedAnimation</a> method with a unique key, the item, and the name &quot;PortraitEllipse&quot;.</p>
+<pre><code class="lang-csharp">void PrepareAnimationWithItem(ContactsItem item)
+{
+     ContactsListView.PrepareConnectedAnimation(&quot;portrait&quot;, item, &quot;PortraitEllipse&quot;);
+}
+</code></pre>
+<p>To start an animation with this element as the destination, such as when navigating back from a detail view, use <a href="/uwp/api/windows.ui.xaml.controls.listviewbase.trystartconnectedanimationasync">TryStartConnectedAnimationAsync</a>. If you have just loaded the data source for the ListView, TryStartConnectedAnimationAsync will wait to start the animation until the corresponding item container has been created.</p>
+<pre><code class="lang-csharp">private async void ContactsListView_Loaded(object sender, RoutedEventArgs e)
+{
+    ContactsItem item = GetPersistedItem(); // Get persisted item
+    if (item != null)
+    {
+        ContactsListView.ScrollIntoView(item);
+        ConnectedAnimation animation =
+            ConnectedAnimationService.GetForCurrentView().GetAnimation(&quot;portrait&quot;);
+        if (animation != null)
+        {
+            await ContactsListView.TryStartConnectedAnimationAsync(
+                animation, item, &quot;PortraitEllipse&quot;);
+        }
+    }
+}
+</code></pre>
+<h2 id="coordinated-animation">Coordinated animation</h2>
+<p><img src="images/connected-animations/coordinated_example.gif" alt="Coordinated Animation"></p>
+<p>A <em>coordinated animation</em> is a special type of entrance animation where an element appears along with the connected animation target, animating in tandem with the connected animation element as it moves across the screen. Coordinated animations can add more visual interest to a transition and further draw the user’s attention to the context that is shared between the source and destination views. In these images, the caption UI for the item is animating using a coordinated animation.</p>
+<p>When a coordinated animation uses the gravity configuration, gravity is applied to both the connected animation element and the coordinated elements. The coordinated elements will &quot;swoop&quot; alongside the connected element so the elements stay truly coordinated.</p>
+<p>Use the two-parameter overload of <strong>TryStart</strong> to add coordinated elements to a connected animation. This example demonstrates a coordinated animation of a Grid layout named &quot;DescriptionRoot&quot; that enters in tandem with a connected animation element named &quot;CoverImage&quot;.</p>
+<pre><code class="lang-xaml">&lt;!-- DestinationPage.xaml --&gt;
+&lt;Grid&gt;
+    &lt;Image x:Name=&quot;CoverImage&quot; /&gt;
+    &lt;Grid x:Name=&quot;DescriptionRoot&quot; /&gt;
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">// DestinationPage.xaml.cs
+void OnNavigatedTo(NavigationEventArgs e)
+{
+    var animationService = ConnectedAnimationService.GetForCurrentView();
+    var animation = animationService.GetAnimation(&quot;coverImage&quot;);
+
+    if (animation != null)
+    {
+        // Don’t need to capture the return value as we are not scheduling any subsequent
+        // animations
+        animation.TryStart(CoverImage, new UIElement[] { DescriptionRoot });
+     }
+}
+</code></pre>
+<h2 id="dos-and-donts">Do’s and don’ts</h2>
+<ul>
+<li>Use a connected animation in page transitions where an element is shared between the source and destination pages.</li>
+<li>Use <a href="/uwp/api/windows.ui.xaml.media.animation.gravityconnectedanimationconfiguration">GravityConnectedAnimationConfiguration</a> for forward navigation.</li>
+<li>Use <a href="/uwp/api/windows.ui.xaml.media.animation.directconnectedanimationconfiguration">DirectConnectedAnimationConfiguration</a> for back navigation.</li>
+<li>Don't wait on network requests or other long-running asynchronous operations in between preparing and starting a connected animation. You may need to pre-load the necessary information to run the transition ahead of time, or use a low-resolution placeholder image while a high-resolution image loads in the destination view.</li>
+<li>Use <a href="/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo">SuppressNavigationTransitionInfo</a> to prevent a transition animation in a <strong>Frame</strong> if you are using <strong>ConnectedAnimationService</strong>, since connected animations aren't meant to be used simultaneously with the default navigation transitions. See <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition">NavigationThemeTransition</a> for more info on how to use navigation transitions.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<p><a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimation">ConnectedAnimation</a></p>
+<p><a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice">ConnectedAnimationService</a></p>
+<p><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.NavigationThemeTransition">NavigationThemeTransition</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/motion/connected-animation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

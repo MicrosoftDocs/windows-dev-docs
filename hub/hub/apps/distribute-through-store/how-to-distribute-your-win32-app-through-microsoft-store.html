@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to distribute your Win32 application through Microsoft Store. </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to distribute your Win32 application through Microsoft Store. ">
+    
+    <meta name="description" content="This section will guide you on how to distribute your Win32 application through Microsoft Store.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-distribute-your-win32-application-through-microsoft-store">How to distribute your Win32 application through Microsoft Store</h1>
+
+<p>This article guides you on a smooth onboarding process, various distribution options, recommended best practices, and scenarios to consider when distributing your app via the Store, to ensure a better customer experience.</p>
+<h2 id="distribution-options--select-the-one-that-works-best-for-you">Distribution options – Select the one that works best for you!</h2>
+<p>When you are distributing your Win32 app — which may be built using a variety of frameworks and technologies such as Windows App SDK, WPF, WinForms, Electron, QT, and others — through the Microsoft Store, there are two main options you can choose:</p>
+<ul>
+<li><strong>Package your application as MSIX to leverage all Store features:</strong> Streamline the user experience in discovery, acquisition, and installation by packaging your Win32 app as an MSIX using Desktop Bridge.</li>
+<li><strong>List your existing EXE or MSI from your website:</strong> List your Win32 app in its original form in the Microsoft Store.</li>
+</ul>
+<p>Refer to the table below for a comprehensive comparison of these two methods.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Packaged (MSIX)</th>
+<th>Unpackaged (Win32)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hosting</td>
+<td>Complimentary, provided by Microsoft.</td>
+<td>Publishers are responsible for hosting and associated costs.</td>
+</tr>
+<tr>
+<td>Commerce Platform (payment, in-apps, subscriptions, licensing)</td>
+<td>Use Microsoft Store commerce platform or your own or 3P commerce platform.</td>
+<td>Use your own or 3P commerce platform.</td>
+</tr>
+<tr>
+<td>Code signing</td>
+<td>Complimentary, provided by Microsoft.</td>
+<td>Publishers must sign with a certificate issued by a Certificate Authority (CA) that is part of the <a href="/security/trusted-root/participants-list">Microsoft Trusted Root Program</a> and cover associated costs.</td>
+</tr>
+<tr>
+<td>Auto-Updates</td>
+<td>The OS will automatically check updates every 24 hours.</td>
+<td>The application is responsible for managing its own auto-updates.</td>
+</tr>
+<tr>
+<td>S-Mode Support</td>
+<td>Supported.</td>
+<td>Not Supported.</td>
+</tr>
+<tr>
+<td>Publish as Private Application</td>
+<td>Available.</td>
+<td>Not Available.</td>
+</tr>
+<tr>
+<td>Package Flighting</td>
+<td>Available.</td>
+<td>Not Available.</td>
+</tr>
+<tr>
+<td>Advanced Integration with Windows (e.g., Share dialog, Launch from the Store, ...)</td>
+<td>Yes.</td>
+<td>No.</td>
+</tr>
+<tr>
+<td>Windows 11 backup and restore feature</td>
+<td>Can be automatically installed when users are restoring or migrating a device.</td>
+<td>Start Menu icons will be restored but will point to the Microsoft Store product page.</td>
+</tr>
+</tbody>
+</table>
+<p>Let's explore each of these options in more detail in the following sections.</p>
+<h3 id="option-1---package-your-win32-app-as-msix">Option 1 - Package your Win32 app as MSIX</h3>
+<p>Package your application into an MSIX is very simple, you can either use:</p>
+<ul>
+<li>Visual Studio by adding the project Windows Application Packaging to your solution. See <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a>.</li>
+<li>Use installer solutions from one of our partners. See <a href="/windows/msix/desktop/desktop-to-uwp-third-party-installer">Package a desktop app using third-party installers</a>.</li>
+<li>Microsoft MSIX Packaging Tool to create the MSIX from an existing installer. See <a href="/windows/msix/packaging-tool/create-app-package">Create an MSIX package from any desktop installer (MSI, EXE, ClickOnce, or App-V)</a>.</li>
+</ul>
+<p>You can verify the compliance of your MSIX with the Microsoft Store by utilizing the <a href="/windows/uwp/debug-test-perf/windows-app-certification-kit">Windows App Certification Kit instructions</a>.</p>
+<p>If your application was previously distributed on the web or if you intend to distribute it on the web as well, you can discover recommendations on how to migrate users from the web application to the Store version here.</p>
+<h3 id="option-2---bring-your-unmodified-installer-as-is">Option 2 - Bring your unmodified installer as-is</h3>
+<p>Microsoft Store has allowed unpackaged applications since June 2021. To publish your application on the Store, you only need to share a link to your installer through the Partner Center and provide some additional information. Once your installer has been tested by our certification team and the submission is published, users will be able to locate your application in the Store and proceed with the installation.</p>
+<p>For your installer to be accepted, it must adhere to the following recommendations:</p>
+<ul>
+<li>Must be a .msi or a .exe installer.</li>
+<li>Must be offline</li>
+<li>The binary hosted by the shared URL should remain unchanged.</li>
+<li>Your installer should only install the product intended by the user.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

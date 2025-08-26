@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Localize your WinUI 3 app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Localize your WinUI 3 app ">
+    
+    <meta name="description" content="This guide shows you how to localize your WinUI 3 application">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="localize-your-winui-3-app">Localize your WinUI 3 app</h1>
+
+<p>For more info about the value proposition of localizing your app, see <a href="../../design/globalizing/globalizing-portal.html">Globalization and localization</a>.</p>
+<p>To support multiple languages in a WinUI desktop app, and ensure proper localization of your packaged project, add the appropriate resources to the project (see <a href="/windows/uwp/app-resources/">App resources and the Resource Management System</a>) and declare each supported language in the <strong>package.appxmanifest</strong> file of your project. When you build the project, the specified languages are added to the generated app manifest (<strong>AppxManifest.xml</strong>) and the corresponding resources are used.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>As an unpackaged WinUI 3 app (see <a href="create-your-first-winui3-app.html">Create your first WinUI 3 project</a>) doesn't contain a <code>package.appxmanifest</code> file, no further action is needed after <a href="/windows/uwp/app-resources/localize-strings-ui-manifest#localize-the-string-resources">adding the appropriate resources</a> to the project.</p>
+</div>
+<ol>
+<li><p>Open the .wapproj's <code>package.appxmanifest</code> in a text editor and locate the following section:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;x-generate&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+<li><p>Replace the <code>&lt;Resource Language=&quot;x-generate&quot;&gt;</code> with <code>&lt;Resource /&gt;</code> elements for each of your supported languages. For example, the following markup specifies that &quot;en-US&quot; and &quot;es-ES&quot; localized resources are available:</p>
+<pre><code class="lang-xml">&lt;Resources&gt;
+    &lt;Resource Language=&quot;en-US&quot;/&gt;
+    &lt;Resource Language=&quot;es-ES&quot;/&gt;
+&lt;/Resources&gt;
+</code></pre>
+</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/localize-winui3-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Gradual package rollout </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Gradual package rollout ">
+    
+    <meta name="description" content="When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of customers who have your package installed on Windows 10 or Windows 11 (including Xbox).">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gradual-package-rollout">Gradual package rollout</h1>
+
+<p>When you publish an update to a submission, you can choose to gradually roll out the updated packages to a percentage of customers who have your package installed on Windows 10 or Windows 11 (including Xbox). This allows you to monitor analytic data for the specific packages to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Your rollout selections apply to all of your packages, but will only apply to your customers running OS versions that support package flights (Windows.Desktop build 10586 or later and Xbox). When using gradual package rollout, customers on earlier OS versions will not get packages from the latest submission until you finalize the package rollout as described below.</p>
+</div>
+<p>Note that all of your customers will see the Store listing details that you entered with your latest submission. The rollout settings only apply to the packages that customers install, for updates to existing customers.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Package rollout distributes packages to a random selection of customers who have your package installed
+in the percentages that you specify. To distribute specific packages to selected customers that you specify, you can use package flights. You can also combine rollout with your package flights if you want to gradually distribute an update to one of your flight groups.</p>
+</div>
+<h2 id="setting-the-rollout-percentage">Setting the rollout percentage</h2>
+<p>You can select to roll out your update on the <strong>Packages</strong> page of an updated submission. To do so, check the box that says <strong>Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)</strong>. Then enter the percentage of customers who should get the update when the submission is first published. For example, you might enter 5 if you want to start by rolling the update out to only a small percentage of your app’s existing customers who have already installed this app.</p>
+<p>Click <strong>Update</strong> to save your selections. After your app completes the certification process, the packages will be distributed to existing customers according to the percentage that you specified for updates.</p>
+<h2 id="adjusting-the-rollout-after-the-submission-is-published">Adjusting the rollout after the submission is published</h2>
+<p>To adjust the rollout after the submission has been published, go to your app’s Overview page. You can drag the selector to change the percentage of customers getting the packages from your newest submission. Click <strong>Update</strong> to save your selections. The packages will then start to be distributed to existing customers who have your package installed according to the percentage that you specified for updates.</p>
+<h2 id="completing-the-rollout">Completing the rollout</h2>
+<p>Before you can create a new submission, you'll need to complete the package rollout. You can <strong>finalize</strong> the rollout and distribute the latest packages to all of your customers, or <strong>halt</strong> the rollout to stop distributing the latest packages.</p>
+<p>If you have confidence in the update and would like to make it available to all of your customers, click <strong>Finalize package rollout</strong> to distribute the newest packages to all of your customers.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Changing the rollout percentage to 100% does not ensure that all of your customers will get the packages from the latest submissions, because some customers may be on OS versions that don’t support rollout. You must finalize the rollout in order to stop distributing the older packages and update all existing customers to the newer ones.</p>
+</div>
+<p>If you find that there are problems with the update and you don’t want to distribute it any further, you can click <strong>Halt package rollout</strong> to stop distributing packages from the latest submission. Once you halt a package rollout, those packages will no longer be distributed to any customers; only the packages from the previous submission will be used for any new or updating customers. However, any customers who already had the newer packages will keep those packages; they won’t be rolled back to the previous version. To provide an update to these customers, you’ll need to create a new submission with the packages you’d like them to get. Note that if you use a gradual rollout in your next submission, customers who had the package you halted will be offered the new update in the same order they were offered the halted package. The new rollout will be between your last finalized submission and your newest submission; once you halt a package rollout, those packages will no longer be distributed to any customers.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/gradual-package-rollout.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

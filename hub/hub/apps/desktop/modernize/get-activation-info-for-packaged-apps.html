@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Get activation info for packaged apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Get activation info for packaged apps ">
+    
+    <meta name="description" content="Learn how to get certain kinds of activation info for packaged .NET and C++ desktop (Win32) apps">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-activation-info-for-packaged-apps">Get activation info for packaged apps</h1>
+
+<p>Starting in Windows 10, version 1809, packaged desktop apps can call the <a href="/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> method to retrieve certain kinds of app activation info during startup. For example, you can call this method to get info related to app activation from opening a file, clicking an interactive toast, or using a protocol. Starting in Windows 10, version 2004, this feature is also supported in packaged apps with external location (see <a href="grant-identity-to-nonpackaged-apps.html">Grant package identity by packaging with external location</a>).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In addition to retrieving certain types of activation info by using the <a href="/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> method as described in this article, you can also retrieve activation info for background tasks by defining a COM class. For more info, see <a href="/windows/uwp/launch-resume/create-and-register-a-winmain-background-task">Create and register a winmain COM background task</a>.</p>
+</div>
+<h2 id="code-example">Code example</h2>
+<p>The following code example demonstrates how to call the <a href="/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> method from the <strong>Main</strong> function in a Windows Forms app. For each activation type your app supports, cast the <code>args</code> return value to the corresponding event args type. In this code example, the <code>Handlexxx</code> methods are assumed to be dedicated activation handler code that you have defined elsewhere.</p>
+<pre><code class="lang-csharp">static void Main()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+
+    var args = AppInstance.GetActivatedEventArgs();
+    switch (args.Kind)
+    {
+        case ActivationKind.Launch:
+            HandleLaunch(args as LaunchActivatedEventArgs);
+            break;
+        case ActivationKind.ToastNotification:
+            HandleToastNotification(args as ToastNotificationActivatedEventArgs);
+            break;
+        case ActivationKind.VoiceCommand:
+            HandleVoiceCommand(args as VoiceCommandActivatedEventArgs);
+            break;
+        case ActivationKind.File:
+            HandleFile(args as FileActivatedEventArgs);
+            break;
+        case ActivationKind.Protocol:
+            HandleProtocol(args as ProtocolActivatedEventArgs);
+            break;
+        case ActivationKind.StartupTask:
+            HandleStartupTask(args as StartupTaskActivatedEventArgs);
+            break;
+        default:
+            HandleLaunch(null);
+            break;
+    }
+</code></pre>
+<h2 id="supported-activation-types">Supported activation types</h2>
+<p>You can use the <a href="/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> method to retrieve activation info from the supported set of event args objects listed in the following table. Some of these activation types require the use of a package extension in the package manifest.</p>
+<p><a href="/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs">ShareTargetActivatedEventArgs</a> activation info is supported only on Windows 10, version 2004, and later. All other activation info types are supported on Windows 10, version 1809, and later.</p>
+<table>
+<thead>
+<tr>
+<th>Event args type</th>
+<th>Package extension</th>
+<th>Related docs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs">ShareTargetActivatedEventArgs</a></td>
+<td><a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget">uap:ShareTarget</a></td>
+<td><a href="desktop-to-uwp-extend.html#making-your-desktop-application-a-share-target">Making your desktop application a share target</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs">ProtocolActivatedEventArgs</a></td>
+<td><a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol">uap:Protocol</a></td>
+<td><a href="desktop-to-uwp-extensions.html#start-your-application-by-using-a-protocol">Start your application by using a protocol</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.activation.toastnotificationactivatedeventargs">ToastNotificationActivatedEventArgs</a></td>
+<td>desktop:ToastNotificationActivation</td>
+<td><a href="/windows/uwp/design/shell/tiles-and-notifications/toast-desktop-apps">Toast notifications from desktop apps</a>.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs">StartupTaskActivatedEventArgs</a></td>
+<td>desktop:StartupTask</td>
+<td><a href="desktop-to-uwp-extensions.html#start-an-executable-file-when-users-log-into-windows">Start an executable file when users log into Windows</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.activation.fileactivatedeventargs">FileActivatedEventArgs</a></td>
+<td><a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">uap:FileTypeAssociation</a></td>
+<td><a href="desktop-to-uwp-extensions.html#associate-your-packaged-application-with-a-set-of-file-types">Associate your packaged application with a set of file types</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.activation.voicecommandactivatedeventargs">VoiceCommandActivatedEventArgs</a></td>
+<td>None</td>
+<td><a href="../../design/input/cortana-launch-a-foreground-app-with-voice-commands.html">Activate a foreground app with voice commands through Cortana</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs">LaunchActivatedEventArgs</a></td>
+<td>None</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/get-activation-info-for-packaged-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

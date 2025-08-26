@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>InfoBar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="InfoBar ">
+    
+    <meta name="description" content="An InfoBar is an inline notification for essential app-wide messages.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="infobar">InfoBar</h1>
+
+<p>The InfoBar control is for displaying app-wide status messages to users that are highly visible yet non-intrusive. There are built-in Severity levels to easily indicate the type of message shown as well as the option to include your own call to action or hyperlink button. Since the InfoBar is inline with other UI content the option is there for the control to always be visible or dismissed by the user.</p>
+<p><img src="images/infobar-default-title-message.png" alt="A sample of an InfoBar in the default state with a close button and a message"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use an InfoBar control when a user should be informed of, acknowledge, or take action on a changed application state. By default the notification will remain in the content area until closed by the user but will not necessarily break user flow.</p>
+<p>An InfoBar will take up space in your layout and behave like any other child elements. It will not cover up other content or float on top of it.</p>
+<p>Do not use an InfoBar control to confirm or respond directly to a user action that doesn't change the state of the app, for time-sensitive alerts, or for non-essential messages.</p>
+<h3 id="remarks">Remarks</h3>
+<p>Use an InfoBar that is closed by the user or when the status is resolved for scenarios that <strong>directly</strong> impact app perception or experience.</p>
+<p>Here are some examples:</p>
+<ul>
+<li>Internet connectivity lost</li>
+<li>Error while saving a document when triggered automatically, not related to specific user action</li>
+<li>No microphone plugged in when attempting to record</li>
+<li>The subscription to the application is expired</li>
+</ul>
+<p>Use an InfoBar that is closed by the user for scenarios that <strong>indirectly</strong> impact app perception or experience</p>
+<p>Here are some examples:</p>
+<ul>
+<li>A call has begun recording</li>
+<li>Update applied with link to 'Release Notes'</li>
+<li>The terms of service have been updated and require acknowledgement</li>
+<li>An app-wide backup has successfully, asynchronously completed</li>
+<li>The subscription to the application is close to expiring</li>
+</ul>
+<h3 id="when-should-a-different-control-be-used">When should a different control be used?</h3>
+<p>There are some scenarios where a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog">ContentDialog</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout">Flyout</a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TeachingTip">TeachingTip</a> may be more appropriate to use.</p>
+<ul>
+<li>For scenarios where a persistent notification is not needed, e.g. displaying information in context of a specific UI element, a <a href="dialogs-and-flyouts/flyouts.html">Flyout</a>
+is a better option.</li>
+<li>For scenarios where the application is confirming a user action, showing information the user <em><strong>must</strong></em> read, use a <a href="dialogs-and-flyouts/dialogs.html">ContentDialog</a>.
+<ul>
+<li>Additionally, if a status change to the app is so severe that it needs to block all further ability for the user to interact with the app, use a ContentDialog.</li>
+</ul>
+</li>
+<li>For scenarios where a notification is a transient teaching moment, a <a href="dialogs-and-flyouts/teaching-tip.html">TeachingTip</a>
+is a better option.</li>
+</ul>
+<p>For more info about choosing the right notification control, see the <a href="dialogs-and-flyouts/index.html">Dialogs and Flyouts</a>
+article.</p>
+<h2 id="recommendations">Recommendations</h2>
+<h3 id="enter-and-exit-usability">Enter and Exit Usability</h3>
+<h4 id="flashing-content">Flashing content</h4>
+<p>The InfoBar should not appear and disappear from view rapidly to prevent flashing on the screen. Avoid flashing visuals for people with photosensitivities and to improve the usability of your application.</p>
+<p>For InfoBars that automatically enter and exit the view via an app status condition, we recommend you include logic in your application to prevent content from appearing or disappearing rapidly or multiple times in a row. However, in general, this control should be used for long-lived status messages.</p>
+<h4 id="updating-the-infobar">Updating the InfoBar</h4>
+<p>Once the control is open, any changes made to the various properties like updating the message or Severity will not raise a notification event. If you would like to inform users that use screen readers of the InfoBar's updated content we recommend you close and re-open the control to trigger the event.</p>
+<h4 id="inline-messages-offsetting-content">Inline messages offsetting content</h4>
+<p>For InfoBars that are inline with other UI content, keep in mind how the rest of the page will responsively react to the addition of the element.</p>
+<p>InfoBars with a substantial height could dramatically alter the layout of the other elements on the page. If the InfoBar appears or disappears rapidly, especially in succession, the user may be confused with the changing visual state.</p>
+<h3 id="color-and-icon">Color and Icon</h3>
+<p>When customizing the color and icon outside of the preset Severity levels, keep in mind user expectations for the connotations from the set of standard icons and colors.</p>
+<p>Additionally, the preset Severity colors have already been designed for theme changes, high-contrast mode, color confusion accessibility, and contrast with foreground colors. We recommend to use these colors when possible and to include custom logic in your application to adapt to the various color states and accessibility features.</p>
+<p>Please view the UX guidance for <a href="/windows/win32/uxguide/vis-std-icons">Standard Icons</a> and <a href="/windows/win32/uxguide/vis-color">Color</a> to ensure your message is communicated clearly and accessible to users.</p>
+<h4 id="severity">Severity</h4>
+<p>Avoid setting the Severity property for a notification that does not match the information communicated in the Title, Message, or custom content.</p>
+<p>The accompanying information should aim to communicate the following to use that Severity.</p>
+<ul>
+<li>Error: An error or problem that has occurred.</li>
+<li>Warning: A condition that might cause a problem in the future.</li>
+<li>Success: A long-running and/or background task has completed.</li>
+<li>Default: General information that requires the user's attention.</li>
+</ul>
+<p>Icons and color should not be the only UI components signifying meaning for your notification. Text in the notification's Title and/or Message should be included to display information.</p>
+<h3 id="message">Message</h3>
+<p>Text in your notification will not be a constant length in all languages. For the Title and Message property this may impact whether your notification will expand to a second line. We recommend you avoid positioning based on message length or other UI elements set to a specific language.</p>
+<p>The notification will follow standard mirroring behavior when localized to/from languages that are right to left (RTL) or left to right (LTR). The icon will only mirror if there is directionality.</p>
+<p>Please view the guidance for <a href="../globalizing/adjust-layout-and-fonts--and-support-rtl.html">Adjust layout and fonts, and support RTL</a> for more information about text localization in your notification.</p>
+<h3 id="create-an-infobar">Create an InfoBar</h3>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar">InfoBar class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/InfoBar">Open the WinUI 3 Gallery app and see the InfoBar in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>The XAML below describes an inline InfoBar with the default styling for an informational notification. An info bar can be placed like any other element and will follow base layout behavior. For example, in a vertical StackPanel, the InfoBar will horizontally expand to fill the available width.</p>
+<p>By default, the InfoBar will not be visible. Set the IsOpen property to true in the XAML or code behind to display the InfoBar.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;UpdateAvailableNotification&quot;
+    Title=&quot;Update available.&quot;
+    Message=&quot;Restart the application to apply the latest update.&quot;&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<pre><code class="lang-csharp">public MainPage()
+{
+    this.InitializeComponent();
+
+    if(IsUpdateAvailable())
+    {
+        UpdateAvailableNotification.IsOpen = true;
+    }
+}
+</code></pre>
+<p><img src="images/infobar-default-title-message.png" alt="A sample of an InfoBar in the default state with a close button and a message"></p>
+<h3 id="using-pre-defined-severity-levels">Using pre-defined severity levels</h3>
+<p>The type of the info bar can be set via the Severity property to automatically set a consistent status color, icon, and assistive technology settings dependent on the criticality of the notification. If no Severity is set, the default informational styling is applied.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;SubscriptionExpiringNotification&quot;
+    Severity=&quot;Warning&quot;
+    Title=&quot;Your subscription is expiring in 3 days.&quot;
+    Message=&quot;Renew your subscription to keep all functionality&quot; /&gt;
+</code></pre>
+<p><img src="images/infobar-warning-title-message.png" alt="A sample of an InfoBar in a Warning state with a close button and a message"></p>
+<h3 id="programmatic-close-in-infobar">Programmatic close in InfoBar</h3>
+<p>An InfoBar can be closed by the user via the close button or programmatically. If the notification is required to be in view until the status is resolved and you would like to remove the ability for the user to close the info bar, you can set the IsClosable property to false.</p>
+<p>The default value of this property is true, in which case the close button is present and takes the form of an 'X'.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;NoInternetNotification&quot;
+    Severity=&quot;Error&quot;
+    Title=&quot;No Internet&quot;
+    Message=&quot;Reconnect to continue working.&quot;
+    IsClosable=&quot;False&quot; /&gt;
+</code></pre>
+<p><img src="images/infobar-error-no-close.png" alt="A sample of an InfoBar in an Error state with no close button"></p>
+<h3 id="customization-background-color-and-icon">Customization: Background color and icon</h3>
+<p>Outside of the pre-defined severity levels, the Background and IconSource properties can be set to customize the icon and background color. The InfoBar will retain the assistive technology settings of the severity defined, or default if none was defined.</p>
+<p>A custom background color can be set via the standard Background property and will override the color set by Severity. Please keep in mind content readability and accessibility when setting your own color.</p>
+<p>A custom icon can be set via the IconSource property. By default, an icon will be visible (assuming the control isn't collapsed). This icon can be removed by setting the IsIconVisible property to false. For custom icons, the recommended icon size is 20px.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;CallRecordingNotification&quot;
+    Title=&quot;Recording started&quot;
+    Message=&quot;Your call has begun recording.&quot;
+    Background=&quot;{StaticResource LavenderBackgroundBrush}&quot;&gt;
+    &lt;InfoBar.IconSource&gt;
+        &lt;SymbolIconSource Symbol=&quot;Phone&quot; /&gt;
+    &lt;/InfoBar.IconSource&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<p><img src="images/infobar-custom-icon-color.png" alt="A sample of an InfoBar in the default state with a custom background color, custom icon, and close button"></p>
+<h3 id="add-an-action-button">Add an action button</h3>
+<p>An additional action button can be added by defining your own button that inherits <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ButtonBase">ButtonBase</a> and setting it in the ActionButton property. Custom styling will be applied to action buttons of type <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button">Button</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton">HyperlinkButton</a> for consistency and accessibility. Aside from the ActionButton property, additional action buttons can be added via custom content and will appear below the message.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;NoInternetNotification&quot;
+    Severity=&quot;Error&quot;
+    Title=&quot;No Internet&quot;
+    Message=&quot;Reconnect to continue working.&quot;&gt;
+    &lt;InfoBar.ActionButton&gt;
+        &lt;Button Content=&quot;Network Settings&quot; Click=&quot;InternetInfoBarButton_Click&quot; /&gt;
+    &lt;/InfoBar.ActionButton&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<p><img src="images/infobar-error-action-button.png" alt="A sample of an InfoBar in the Error state with a single line message and an action button"></p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;TermsAndConditionsUpdatedNotification&quot;
+    Title=&quot;Terms and Conditions Updated&quot;
+    Message=&quot;Dismissal of this message implies agreement to the updated Terms and Conditions. Please view the changes on our website.&quot;&gt;
+    &lt;InfoBar.ActionButton&gt;
+        &lt;HyperlinkButton Content=&quot;Terms and Conditions Sep 2020&quot;
+            NavigateUri=&quot;https://www.example.com&quot;
+            Click=&quot;UpdateInfoBarHyperlinkButton_Click&quot; /&gt;
+    &lt;/InfoBar.ActionButton&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<p><img src="images/infobar-default-hyperlink.png" alt="A sample of an InfoBar with a message expanding multiple lines and a hyperlink"></p>
+<h3 id="right-aligned-action-button">Right-aligned action button</h3>
+<p>By default, the action button is left-aligned in the available space directly to the right of the Message. Optionally, you can set HorizontalAlignment to &quot;right&quot; in your button to align this button to be directly to the left of the close button in the single line, horizontal, layout.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;RightAlignedButtonNotification&quot;
+    Title=&quot;Title&quot;
+    Message=&quot;Essential app message&quot;&gt;
+    &lt;InfoBar.ActionButton&gt;
+        &lt;Button Content=&quot;Hello&quot; HorizontalAlignment=&quot;Right&quot;/&gt;
+    &lt;/InfoBar.ActionButton&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<p><img src="images/infobar-right-button.png" alt="A sample of an InfoBar with a right-aligned action button"></p>
+<h3 id="content-wrapping">Content wrapping</h3>
+<p>If the InfoBar content, excluding custom content, is unable to fit on a single horizontal line they will be laid out vertically. The Title, Message, and ActionButton — if present — will each appear on separate lines.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;BackupCompleteNotification&quot;
+    Severity=&quot;Success&quot;
+    Title=&quot;Backup complete: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&quot;
+    Message=&quot;All documents were uploaded successfully. Ultrices sagittis orci a scelerisque. Aliquet risus feugiat in ante metus dictum at tempor commodo. Auctor augue mauris augue neque gravida.&quot;&gt;
+    &lt;InfoBar.ActionButton&gt;
+        &lt;Button Content=&quot;Action&quot;
+            Click=&quot;BackupInfoBarButton_Click&quot; /&gt;
+    &lt;/InfoBar.ActionButton&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<p><img src="images/infobar-success-content-wrapping.png" alt="A sample of an InfoBar in the Success state multiline title and message InfoBar"></p>
+<h3 id="custom-content">Custom content</h3>
+<p>XAML content can be added to an InfoBar using the Content property. It will appear in its own line below the rest of the control content. The InfoBar will expand to fit the content defined.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;BackupInProgressNotification&quot;
+    Title=&quot;Backup in progress&quot;
+    Message=&quot;Your documents are being saved to the cloud&quot;
+    IsClosable=&quot;False&quot;&gt;
+    &lt;InfoBar.Content&gt;
+        &lt;ProgressBar IsIndeterminate=&quot;True&quot; Margin=&quot;0,0,0,6&quot; MaxWidth=&quot;200&quot;/&gt;
+    &lt;/InfoBar.Content&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<p><img src="images/infobar-default-custom-content.gif" alt="A sample of an InfoBar in its default state with an indeterminate progress bar"></p>
+<h3 id="lightweight-styling">Lightweight styling</h3>
+<p>You can modify the default Style and ControlTemplate to give the control a unique appearance.
+See the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar#control-style-and-template">Control Style and Template</a> section of the InfoBar API docs for a list of the available theme resources.</p>
+<p>For more info, see the <a href="../../develop/platform/xaml/xaml-styles.html#lightweight-styling">Light-weight styling section</a>
+of the <a href="../../develop/platform/xaml/xaml-styles.html">Styling controls</a>
+article.</p>
+<p>For example, the following causes the background color for all informational InfoBars on a page to be blue:</p>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;x:SolidColorBrush x:Key=&quot;InfoBarInformationalSeverityBackgroundBrush&quot; Color=&quot;LightBlue&quot;&gt;&lt;/x:SolidColorBrush&gt;
+&lt;/Page.Resources&gt;
+</code></pre>
+<h3 id="canceling-close">Canceling close</h3>
+<p>The Closing event can be used to cancel and/or defer the close of an InfoBar. This can be used to keep the InfoBar open or allow time for a custom action to occur. When the closing of an InfoBar is canceled, IsOpen will go back to true. A programmatic close can also be canceled.</p>
+<pre><code class="lang-xaml">&lt;InfoBar x:Name=&quot;UpdateAvailable&quot;
+    Title=&quot;Update Available&quot;
+    Message=&quot;Please close this tip to apply required security updates to this application&quot;
+    Closing=&quot;InfoBar_Closing&quot;&gt;
+&lt;/InfoBar&gt;
+</code></pre>
+<pre><code class="lang-csharp">public void InfoBar_Closing(InfoBar sender, InfoBarClosingEventArgs args)
+{
+    if (args.Reason == InfoBarCloseReason.CloseButton) 
+    {
+        if (!ApplyUpdates()) 
+        {
+            // could not apply updates - do not close
+            args.Cancel = true;
+        }
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The InfoBar for UWP apps requires WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in the <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.infobar">InfoBar class</a></li>
+<li><a href="winui2gallery:/item/InfoBar">Open the WinUI 2 Gallery app and see InfoBar in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:InfoBar /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="dialogs-and-flyouts/index.html">Dialogs and flyouts</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/infobar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

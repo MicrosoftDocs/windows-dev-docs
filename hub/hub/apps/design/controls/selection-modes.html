@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Selection mode </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Selection mode ">
+    
+    <meta name="description" content="Selection mode lets users select and take action on a single item or multiple items.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="selection-mode-overview">Selection mode overview</h1>
+
+<p>Selection mode lets users select and take action on a single item or on multiple items. It can be invoked through a context menu, by using CTRL+click or SHIFT+click on an item, or by rolling-over a target on an item in a gallery view. When selection mode is active, check boxes appear next to each list item, and actions can appear at the top or the bottom of the screen.</p>
+<h2 id="different-selection-modes">Different selection modes</h2>
+<p>There are three selection modes:</p>
+<ul>
+<li>Single: The user can select only one item at a time.</li>
+<li>Multiple: The user can select multiple items without using a modifier.</li>
+<li>Extended: The user can select multiple items with a modifier, such as holding down the SHIFT key.</li>
+</ul>
+<h2 id="selection-mode-examples">Selection mode examples</h2>
+<h3 id="here-is-a-listview-with-single-selection-mode-enabled">Here is a ListView with single selection mode enabled.</h3>
+<p><img src="images/listview-selection-single.png" alt="List view with single selection mode"></p>
+<p>The item Art Venere is selected, and the item Mitsue Tollner is currently being hovered over.</p>
+<h3 id="here-is-a-listview-with-multiple-selection-mode-enabled">Here is a ListView with multiple selection mode enabled:</h3>
+<p><img src="images/listview-selection-multiple.png" alt="List view with multiple selection mode"></p>
+<p>There are three items selected, and the item Donette Foller is being hovered over.</p>
+<h3 id="here-is-a-gridview-with-single-selection-mode-enabled">Here is a GridView with single selection mode enabled:</h3>
+<p><img src="images/gridview-selection-single.png" alt="Grid view with single selection mode"></p>
+<p>Item 7 is selected, and Item 3 is currently being hovered over.</p>
+<h3 id="here-is-a-gridview-with-multiple-selection-mode-enabled">Here is a GridView with multiple selection mode enabled:</h3>
+<p><img src="images/gridview-selection-multiple.png" alt="Grid view with multiple selection mode"></p>
+<p>Items 2, 4, and 5 are selected, and Item 7 is currently being hovered over.</p>
+<h2 id="behavior-and-interaction">Behavior and interaction</h2>
+<p>Tapping anywhere on an item selects it. Tapping on the command bar action affects all selected items. If no item is selected, command bar actions should be inactive, except for &quot;Select All&quot;.</p>
+<p>Selection mode doesn't have a light dismiss model; tapping outside of the frame in which selection mode is active won't cancel the mode. This is to prevent accidental deactivation of the mode. Clicking the back button dismisses the multi-select mode.</p>
+<p>Show a visual confirmation when an action is selected. Consider displaying a confirmation dialog for certain actions, especially destructive actions such as delete.</p>
+<p>Selection mode is confined to the page in which it is active, and can't affect any items outside of that page.</p>
+<p>The entry point to selection mode should be juxtaposed against the content it affects.</p>
+<p>For command bar recommendations, see <a href="command-bar.html">guidelines for command bars</a>.</p>
+<p>To learn more about selection modes and handling selection events for certain controls, visit the guidance page for that control.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/selection-modes.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Develop Windows desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Develop Windows desktop apps ">
+    
+    <meta name="description" content="This section of the documentation provides information about APIs and features you can use while developing a Windows desktop apps.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="develop-windows-desktop-apps">Develop Windows desktop apps</h1>
+
+<p>This section of the documentation provides information about APIs and features you can use while developing Windows desktop apps. Some of these features are available by using APIs in the <a href="../windows-app-sdk/index.html">Windows App SDK</a>. Other features are available by using APIs in the Windows OS (via the <a href="https://developer.microsoft.com/windows/downloads/windows-sdk">Windows SDK</a>) and .NET, and don't require use of the Windows App SDK.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're working on a UWP app, then refer to <a href="../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+<h2 id="windows-app-sdk-features">Windows App SDK features</h2>
+<p>The following table highlights the development features that are provided by the current releases of the Windows App SDK. For more details about the release channels of the Windows App SDK that include each of these features, see <a href="../windows-app-sdk/release-channels.html#features-available-by-release-channel">Features available by release channel</a>.</p>
+<div class="button">
+<p><a href="../windows-app-sdk/index.html">Learn about the Windows App SDK</a></p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../winui/index.html">WinUI 3</a></td>
+<td>The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/dwritecore.html">Render text with DWriteCore</a></td>
+<td>Render text using a device-independent text layout system, high quality sub-pixel Microsoft ClearType text rendering, hardware-accelerated text, multi-format text, wide language support, and much more.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/mrtcore/mrtcore-overview.html">Manage resources with MRT Core</a></td>
+<td>Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle-instancing.html">App lifecycle: App instancing</a></td>
+<td>Control whether multiple instances of your app's process can run at the same time.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle-rich-activation.html">App lifecycle: Rich activation</a></td>
+<td>Process information about different kinds activations for your app.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle-power.html">App lifecycle: Power management</a></td>
+<td>Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage.</td>
+</tr>
+<tr>
+<td><a href="ui-input/manage-app-windows.html">Manage app windows</a></td>
+<td>Create and manage the windows associated with your app.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/notifications/push-notifications/index.md">Push notifications</a></td>
+<td>Send raw notifications and app notifications to your app from the cloud using Azure App Registration identities.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/notifications/app-notifications/index.md">App notifications</a></td>
+<td>Deliver messages to your user with app notifications.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/deployment-architecture.html">Deployment</a></td>
+<td>Deploy the Windows App SDK runtime with your unpackaged and packaged app</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-app-development-features-organized-by-scenario">Windows app development features organized by scenario</h2>
+<p>The following articles provide information to help you get started using features of the full Windows app development platform for common app scenarios, including features provided by the Windows App SDK, the Windows SDK, and the .NET SDK.</p>
+<ul>
+<li><a href="../desktop/modernize/index.html">Modernize your existing desktop apps</a></li>
+<li><a href="user-interface.html">User interface and input</a></li>
+<li><a href="app-lifecycle-and-system-services.html">App lifecycle and system services</a></li>
+<li><a href="launch/index.html">Launching Windows apps and managing background tasks</a></li>
+<li><a href="communication.html">Communication</a></li>
+<li><a href="accessibility.html">Accessibility</a></li>
+<li><a href="audio-video-camera.html">Audio, video, and camera</a></li>
+<li><a href="graphics.html">Graphics</a></li>
+<li><a href="data-and-files.html">Data and files</a></li>
+<li><a href="/windows/ai/">Windows AI and machine learning</a></li>
+<li><a href="windows-integration/index.html">Integrate with Windows</a></li>
+<li><a href="devices-and-sensors.html">Devices and sensors</a></li>
+<li><a href="security/index.html">Security and identity</a></li>
+<li><a href="../package-and-deploy/index.html">Deployment overview</a></li>
+</ul>
+<p>For information about setting up your development environment and getting started creating a new app, see:</p>
+<ul>
+<li><a href="../get-started/start-here.html">Get started with WinUI</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../windows-app-sdk/index.html">Windows App SDK</a></li>
+<li><a href="../winui/index.html">WinUI</a></li>
+<li><a href="../package-and-deploy/index.html">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

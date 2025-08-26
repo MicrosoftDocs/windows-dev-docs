@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to target multiple platforms with your WinUI 3 app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to target multiple platforms with your WinUI 3 app ">
+    
+    <meta name="description" content="Reach more users with a single WinUI 3 / .NET codebase using Uno Platform.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-target-multiple-platforms-with-your-winui-3-app">How to target multiple platforms with your WinUI 3 app</h1>
+
+<p>Once you've <a href="hello-world-winui3.html">created</a> a starter Hello World WinUI 3 app, you might be wondering how to reach more users with a single codebase. This how-to will use <a href="https://platform.uno/">Uno Platform</a> to expand the reach of your existing application enabling reuse of the business logic and UI layer across native mobile, web, and desktop.</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/uno-hello-world.png" alt="The 'Hello world' app running in the browser.">
+</span>
+</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="https://visualstudio.microsoft.com/#vs-section">Visual Studio 2022 17.4 or later</a></li>
+<li>Set up your development computer (see <a href="../get-started/start-here.html">Get started with WinUI</a>)</li>
+<li>ASP.NET and web development workload (for WebAssembly development)
+<span class="mx-imgBorder">
+<img src="../images/uno/uno-vs-install-web.png" alt="Web development workload in VS">
+</span>
+</li>
+<li>.NET Multi-platform App UI development installed (for iOS, Android, Mac Catalyst development).
+<span class="mx-imgBorder">
+<img src="../images/uno/uno-vs-install-dotnet-mobile.png" alt="dotnet mobile workload in VS">
+</span>
+</li>
+<li>.NET desktop development installed (for Gtk, Wpf, and Linux Framebuffer development)
+<span class="mx-imgBorder">
+<img src="../images/uno/uno-vs-install-dotnet.png" alt=".net desktop workload in VS">
+</span>
+</li>
+</ul>
+<h2 id="finalize-your-environment">Finalize your environment</h2>
+<ol>
+<li><p>Open a command-line prompt, Windows Terminal if you have it installed, or else Command Prompt or Windows Powershell from the Start Menu.</p>
+</li>
+<li><p>Install or update the <code>uno-check</code> tool:</p>
+<ul>
+<li><p>Use the following command:</p>
+<pre><code class="lang-dotnetcli">dotnet tool install -g uno.check
+</code></pre>
+</li>
+<li><p>To update the tool, if you already have previously installed an older version:</p>
+<pre><code class="lang-dotnetcli">dotnet tool update -g uno.check
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Run the tool with the following command:</p>
+<pre><code>uno-check
+</code></pre>
+</li>
+<li><p>Follow the instructions indicated by the tool. Because it needs to modify your system, you may be prompted for elevated permissions.</p>
+</li>
+</ol>
+<h2 id="install-the-uno-platform-solution-templates">Install the Uno Platform solution templates</h2>
+<p>Launch Visual Studio, then click <code>Continue without code</code>. Click <code>Extensions</code> -&gt; <code>Manage Extensions</code> from the Menu Bar.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/uno/uno-manage-extensions.png" alt="Visual Studio Menu bar item that reads manage extensions">
+</span>
+</p>
+<p>In the Extension Manager expand the <strong>Online</strong> node and search for <code>Uno</code>, install the <code>Uno Platform</code> extension, or download it from the <a href="https://marketplace.visualstudio.com/items?itemName=unoplatform.uno-platform-addin-2022">Visual Studio Marketplace</a>, then restart Visual Studio.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/uno/uno-extensions.png" alt="Manage Extensions window in Visual Studio with Uno Platform extension as a search result">
+</span>
+</p>
+<h2 id="create-an-application">Create an application</h2>
+<p>Now that we are ready to create a multi-platform application, the approach we'll take is to create a new Uno Platform application. We will copy XAML code from the previous tutorial's Hello World WinUI 3 project into our multi-platform project. This is possible because Uno Platform lets you reuse your existing codebase. For features dependent on OS APIs provided by each platform, you can easily make them work over time. This approach is especially useful if you have an existing application that you want to port to other platforms.</p>
+<p>Soon enough, you will be able to reap the benefits of this approach, as you can target more platforms with a familiar XAML flavor and the codebase you already have.</p>
+<p>Open Visual Studio and create a new project via <code>File</code> &gt; <code>New</code> &gt; <code>Project</code>:</p>
+<p><span class="mx-imgBorder">
+<img src="../images/uno/uno-create-project.png" alt="Create a new project">
+</span>
+</p>
+<p>Search for Uno and select the Uno Platform App project template:</p>
+<p><span class="mx-imgBorder">
+<img src="../images/uno/uno-new-project.png" alt="Uno platform app">
+</span>
+</p>
+<p>Specify a project name, solution name, and directory. In this example, our Hello World MultiPlatform project belongs to a Hello World MultiPlatform solution, which will live in C:\Projects:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/configure-project.png" alt="Specify project details">
+</span>
+</p>
+<p>Create a new C# solution using the <strong>Uno Platform App</strong> type from Visual Studio's <strong>Start Page</strong>. To avoid conflicting with the code from the previous tutorial, we'll give this solution a different name, &quot;Hello World Uno&quot;.</p>
+<p>Now you'll choose a base template to take your Hello World application multi-platform. The Uno Platform App template comes with two preset options that allow you to quickly get started with either a Blank solution or the Default configuration which includes references to the Uno.Material and Uno.Toolkit libraries. The Default configuration also includes Uno.Extensions which is used for dependency injection, configuration, navigation, and logging, and it uses MVUX in place of MVVM, making it a great starting point for rapidly building real-world applications.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/uno/uno-vsix-new-project-options.png" alt="Uno solution template for project startup type">
+</span>
+</p>
+<p>To keep things simple, select the <strong>Blank</strong> preset. Then, click the <strong>Create</strong> button. Wait for the projects to be created and their dependencies to be restored.</p>
+<p>A banner at the top of the editor may ask to reload projects, click <strong>Reload projects</strong>:
+<span class="mx-imgBorder">
+<img src="../images/uno/uno-project-reload.png" alt="Visual Studio banner offering to reload your projects to complete changes">
+</span>
+</p>
+<h2 id="building-your-app">Building your app</h2>
+<p>Now that you've generated the functional starting point of your multi-platform WinUI application, you can copy markup into it from the Hello World WinUI 3 project outlined in the <a href="hello-world-winui3.html">previous</a> tutorial.</p>
+<p>You should see the following default file structure in your Solution Explorer:</p>
+<p><span class="mx-imgBorder">
+<img src="images/hello-world/uno-file-structure.png" alt="Default file structure">
+</span>
+</p>
+<p>Make sure Visual Studio has your WinUI 3 project open, then copy the child XAML elements from <code>MainWindow.xaml</code> in the WinUI 3 project to your <code>MainPage.xaml</code> file in the Uno Platform project. The <code>MainPage</code> view XAML should look like this:</p>
+<pre><code class="lang-xml">&lt;Page x:Class=&quot;HelloWorld.MainPage&quot;
+   xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+   xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+   xmlns:local=&quot;using:HelloWorld&quot;
+   xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+   xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+   mc:Ignorable=&quot;d&quot;
+   Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+
+      &lt;!-- Below is the code you copied from MainWindow: --&gt;
+      &lt;StackPanel Orientation=&quot;Horizontal&quot;
+                  HorizontalAlignment=&quot;Center&quot;
+                  VerticalAlignment=&quot;Center&quot;&gt;
+          &lt;TextBlock x:Name=&quot;myText&quot; 
+                     Text=&quot;Hello world!&quot;
+                     Foreground=&quot;Red&quot;/&gt;
+      &lt;/StackPanel&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Launch the HelloWorld.Windows target. Observe that this WinUI app is identical to the previous tutorial.</p>
+<p>You can now build and run your app on any of the supported platforms. To do so, you can use the debug toolbar drop-down to select a target platform to deploy:</p>
+<ul>
+<li><p>To run the <strong>WebAssembly</strong> (Wasm) head:</p>
+<ul>
+<li>Right-click on the <code>HelloWorld.Wasm</code> project, select <strong>Set as startup project</strong></li>
+<li>Press the <code>HelloWorld.Wasm</code> button to deploy the app</li>
+<li>If desired, you can use the <code>HelloWorld.Server</code> project as an alternative</li>
+</ul>
+</li>
+<li><p>To debug for <strong>iOS</strong>:</p>
+<ul>
+<li><p>Right-click on the <code>HelloWorld.Mobile</code> project, select <strong>Set as startup project</strong></p>
+</li>
+<li><p>In the debug toolbar drop-down, select an active iOS device or the simulator. You'll need to be paired with a Mac for this to work.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/uno/uno-mobile-debug.png" alt="Visual Studio dropdown to select a target framework to deploy">
+</span>
+</p>
+</li>
+</ul>
+</li>
+<li><p>To debug for <strong>Mac Catalyst</strong>:</p>
+<ul>
+<li>Right-click on the <code>HelloWorld.Mobile</code> project, select <strong>Set as startup project</strong></li>
+<li>In the debug toolbar drop-down, select a remote macOS device. You'll need to be paired with one for this to work.</li>
+</ul>
+</li>
+<li><p>To debug the <strong>Android</strong> platform:</p>
+<ul>
+<li>Right-click on the <code>HelloWorld.Mobile</code> project, select <strong>Set as startup project</strong></li>
+<li>In the debug toolbar drop-down, select either an active Android device or the emulator
+<ul>
+<li>Select an active device in the &quot;Device&quot; sub-menu</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>To debug on <strong>Linux</strong> with <strong>Skia GTK</strong>:</p>
+<ul>
+<li>Right-click on the <code>HelloWorld.Skia.Gtk</code> project, and select <strong>Set as startup project</strong></li>
+<li>Press the <code>HelloWorld.Skia.Gtk</code> button to deploy the app</li>
+</ul>
+</li>
+</ul>
+<p>Now you're ready to start building your multi-platform application!</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="https://platform.uno/docs/articles/intro.html">Uno Platform documentation</a></li>
+<li><a href="https://platform.uno/docs/articles/external/uno.extensions/doc/ExtensionsOverview.html#learn-about-unoextensions-features">Uno Extensions features</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/how-tos/uno-multiplatform.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

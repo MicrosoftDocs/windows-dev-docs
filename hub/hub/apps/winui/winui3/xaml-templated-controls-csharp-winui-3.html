@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build XAML controls with C# </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build XAML controls with C# ">
+    
+    <meta name="description" content="This article walks you through creating a XAML templated control for WinUI 3 with C#.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-xaml-controls-with-c">Build XAML controls with C#</h1>
+
+<p>This article walks you through creating a templated XAML control for WinUI 3 with C#. Templated controls inherit from <strong>Microsoft.UI.Xaml.Controls.Control</strong> and have visual structure and visual behavior that can be customized using XAML control templates.</p>
+<p>To create standalone WinUI 3 components in C# for consumption from both C# and C++/WinRT apps, see the article <a href="../../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.html">Walkthrough: Create a C# component with WinUI 3 controls, and consume it from a C++ Windows App SDK application</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li>Set up your development environment—see <a href="../../windows-app-sdk/set-up-your-development-environment.html">Install tools for the Windows App SDK</a>.</li>
+<li>Follow the instructions on how to <a href="create-your-first-winui3-app.html">Create your first WinUI 3 project</a>.</li>
+</ol>
+<h2 id="create-a-blank-app-bglabelcontrolapp">Create a Blank App (BgLabelControlApp)</h2>
+<p>Begin by creating a new project in Microsoft Visual Studio. In the <strong>Create a new project</strong> dialog, select the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template, making sure to select the C# language version. Set the project name to &quot;BgLabelControlApp&quot; so that the file names align with the code in the examples below.</p>
+<p><img src="images/new-project-packaged-winui3-desktop.png" alt="Blank App Project Template"></p>
+<h2 id="add-a-templated-control-to-your-app">Add a templated control to your app</h2>
+<p>To add a templated control, click the <strong>Project</strong> menu in the toolbar or right-click your project in <strong>Solution Explorer</strong> and select  <strong>Add New Item</strong> . Under <strong>Visual C#-&gt;WinUI</strong> select the <strong>Custom Control (WinUI 3)</strong> template. Name the new control &quot;BgLabelControl&quot; and click <em>Add</em>.</p>
+<h2 id="update-the-custom-control-c-file">Update the custom control C# file</h2>
+<p>In the C# file, BgLabelControl.cs, note that the constructor defines the <strong>DefaultStyleKey</strong> property for our control. This key identifies the default template that will be used if the consumer of the control doesn't explicitly specify a template. The key value is the <em>type</em> of our control. We will see this key in use later when we implement our generic template file.</p>
+<pre><code class="lang-csharp">public BgLabelControl()
+{
+    this.DefaultStyleKey = typeof(BgLabelControl);
+}
+</code></pre>
+<p>Our templated control will have a text label that can be set programmatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a <a href="/uwp/api/Windows.UI.Xaml.DependencyProperty">DependencyPropety</a>. To do this, first we declare a string property and call it <strong>Label</strong>. Instead of using a backing variable, we set and get the value of our dependency property by calling <a href="/uwp/api/windows.ui.xaml.dependencyobject.getvalue">GetValue</a> and <a href="/uwp/api/windows.ui.xaml.dependencyobject.setvalue">SetValue</a>. These methods are provided by the <a href="/uwp/api/windows.ui.xaml.dependencyobject">DependencyObject</a>, which <strong>Microsoft.UI.Xaml.Controls.Control</strong> inherits.</p>
+<pre><code class="lang-csharp">public string Label
+{
+    get =&gt; (string)GetValue(LabelProperty);
+    set =&gt; SetValue(LabelProperty, value);
+}
+</code></pre>
+<p>Next, declare the dependency property and register it with the system by calling <a href="/uwp/api/windows.ui.xaml.dependencyproperty.register">DependencyProperty.Register</a>. This method specifies the name and type of our <strong>Label</strong> property, the type of the owner of the property, our <strong>BgLabelControl</strong> class, and the default value for the property.</p>
+<pre><code class="lang-csharp">DependencyProperty LabelProperty = DependencyProperty.Register(
+    nameof(Label), 
+    typeof(string),
+    typeof(BgLabelControl), 
+    new PropertyMetadata(default(string), new PropertyChangedCallback(OnLabelChanged)));
+</code></pre>
+<p>These two steps are all that's required to implement a dependency property, but for this example, we'll add an optional handler for the <strong>OnLabelChanged</strong> event. This event is raised by the system whenever the property value is updated. In this case we check to see if the new label text is an empty string or not and update a class variable accordingly.</p>
+<pre><code class="lang-csharp">public bool HasLabelValue { get; set; }
+
+private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+{
+    BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
+    String s = e.NewValue as String; //null checks omitted
+    if (s == String.Empty)
+    {
+        labelControl.HasLabelValue = false;
+    }
+    else
+    {
+        labelControl.HasLabelValue = true;
+    }
+}
+</code></pre>
+<p>For more information on how dependency properties work, see <a href="/windows/uwp/xaml-platform/dependency-properties-overview">Dependency properties overview</a>.</p>
+<h2 id="define-the-default-style-for-bglabelcontrol">Define the default style for BgLabelControl</h2>
+<p>A templated control must provide a default style template that is used if the user of the control doesn't explicitly set a style. In this step, we will modify the generic template file for our control.</p>
+<p>The generic template file is generated when you add the <strong>Custom Control (WinUI)</strong> to your app. The file is named &quot;Generic.xaml&quot; and is generated in the <strong>Themes</strong> folder in solution explorer. The folder and file names are required in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.</p>
+<pre><code class="lang-xaml">&lt;!-- \Themes\Generic.xaml --&gt;
+&lt;ResourceDictionary
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:BgLabelControlApp&quot;&gt;
+
+    &lt;Style TargetType=&quot;local:BgLabelControl&quot; &gt;
+        &lt;Setter Property=&quot;Template&quot;&gt;
+            &lt;Setter.Value&gt;
+                &lt;ControlTemplate TargetType=&quot;local:BgLabelControl&quot;&gt;
+                    &lt;Grid Width=&quot;100&quot; Height=&quot;100&quot; Background=&quot;{TemplateBinding Background}&quot;&gt;
+                        &lt;TextBlock HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot; Text=&quot;{TemplateBinding Label}&quot;/&gt;
+                    &lt;/Grid&gt;
+                &lt;/ControlTemplate&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+    &lt;/Style&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>In this example you can see that the <strong>TargetType</strong> attribute of the <strong>Style</strong> element is set to our <strong>BgLabelControl</strong> type within the <strong>BgLabelControlApp</strong> namespace. This type is the same value as we specified above for the <strong>DefaultStyleKey</strong> property in the control's constructor which identifies this as the default style for the control.</p>
+<p>The <strong>Text</strong> property of the <strong>TextBlock</strong> in the control template is bound to our control's <strong>Label</strong> dependency property. The property is bound using the <a href="/windows/uwp/xaml-platform/templatebinding-markup-extension">TemplateBinding</a> markup extension. This example also binds the <strong>Grid</strong> background to the <strong>Background</strong> dependency property which is inherited from the <strong>Control</strong> class.</p>
+<h2 id="add-an-instance-of-bglabelcontrol-to-the-main-ui-page">Add an instance of BgLabelControl to the main UI page</h2>
+<p>Open <code>MainWindow.xaml</code>, which contains the XAML markup for our main UI page. Immediately after the <strong>Button</strong> element (inside the <strong>StackPanel</strong>), add the following markup.</p>
+<pre><code class="lang-xaml">&lt;local:BgLabelControl Background=&quot;Red&quot; Label=&quot;Hello, World!&quot;/&gt;
+</code></pre>
+<p>Build and run the app and you will see the templated control, with the background color and label we specified.</p>
+<p><img src="images/winui-templated-control-result.png" alt="Templated control result"></p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../windows-app-sdk/index.html">Windows App SDK</a></li>
+<li><a href="../../windows-app-sdk/stable-channel.html">Stable release channel for the Windows App SDK</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/xaml-templated-controls-csharp-winui-3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

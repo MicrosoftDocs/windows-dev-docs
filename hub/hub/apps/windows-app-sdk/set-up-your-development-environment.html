@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Install tools for the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Install tools for the Windows App SDK ">
+    
+    <meta name="description" content="Configure your development computer with the tools required to build Windows apps with the Windows App SDK] and WinUI 3.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="install-tools-for-the-windows-app-sdk">Install tools for the Windows App SDK</h1>
+
+<p>Configure your development computer with the tools required to build Windows apps using the <a href="index.html">Windows App SDK</a> (stable release channel) and <a href="/windows/apps/winui/winui3/">WinUI</a>.</p>
+<p>Before installing any tools, see <a href="system-requirements.html">System requirements for Windows app development</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This article applies only to the <a href="release-channels.html">stable release channel</a> of the Windows App SDK. For other release channels, see <a href="./preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</p>
+</div>
+<h2 id="install-tools-with-winget">Install tools with winget</h2>
+<p><strong>[Visual Studio 2022 and later]</strong> Install the required tools and workloads using the console and one of the following commands. These commands will open Visual Studio Installer with any missing workloads selected, for which you can select <strong>Modify</strong> to install the required workloads.</p>
+<h3 id="for-c-developers">For C# developers</h3>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cs-vs-community" role="tab" aria-controls="tabpanel_1_cs-vs-community" data-tab="cs-vs-community" tabindex="0" aria-selected="true">Visual Studio Community</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cs-vs-enterprise" role="tab" aria-controls="tabpanel_1_cs-vs-enterprise" data-tab="cs-vs-enterprise" tabindex="-1">Visual Studio Enterprise</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cs-vs-professional" role="tab" aria-controls="tabpanel_1_cs-vs-professional" data-tab="cs-vs-professional" tabindex="-1">Visual Studio Professional</a>
+</li>
+</ul>
+<section id="tabpanel_1_cs-vs-community" role="tabpanel" data-tab="cs-vs-community">
+
+<pre><code class="lang-console">winget install &quot;Visual Studio Community 2022&quot;  --override &quot;--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs&quot; -s msstore
+</code></pre>
+</section>
+<section id="tabpanel_1_cs-vs-enterprise" role="tabpanel" data-tab="cs-vs-enterprise" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-console">winget install &quot;Visual Studio Enterprise 2022&quot;  --override &quot;--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs&quot;
+</code></pre>
+</section>
+<section id="tabpanel_1_cs-vs-professional" role="tabpanel" data-tab="cs-vs-professional" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-console">winget install &quot;Visual Studio Professional 2022&quot;  --override &quot;--add Microsoft.VisualStudio.Workload.ManagedDesktop Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cs&quot;
+</code></pre>
+</section>
+</div>
+<h3 id="for-c-developers-1">For C++ developers</h3>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cpp-vs-community" role="tab" aria-controls="tabpanel_2_cpp-vs-community" data-tab="cpp-vs-community" tabindex="0" aria-selected="true">Visual Studio Community</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cpp-vs-enterprise" role="tab" aria-controls="tabpanel_2_cpp-vs-enterprise" data-tab="cpp-vs-enterprise" tabindex="-1">Visual Studio Enterprise</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cpp-vs-professional" role="tab" aria-controls="tabpanel_2_cpp-vs-professional" data-tab="cpp-vs-professional" tabindex="-1">Visual Studio Professional</a>
+</li>
+</ul>
+<section id="tabpanel_2_cpp-vs-community" role="tabpanel" data-tab="cpp-vs-community">
+
+<pre><code class="lang-console">winget install &quot;Visual Studio Community 2022&quot;  --override &quot;--add Microsoft.VisualStudio.Workload.NativeDesktop  Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cpp&quot;  -s msstore
+</code></pre>
+</section>
+<section id="tabpanel_2_cpp-vs-enterprise" role="tabpanel" data-tab="cpp-vs-enterprise" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-console">winget install &quot;Visual Studio Enterprise 2022&quot;  --override &quot;--add Microsoft.VisualStudio.Workload.NativeDesktop  Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cpp&quot;  
+</code></pre>
+</section>
+<section id="tabpanel_2_cpp-vs-professional" role="tabpanel" data-tab="cpp-vs-professional" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-console">winget install &quot;Visual Studio Professional 2022&quot;  --override &quot;--add  Microsoft.VisualStudio.Workload.NativeDesktop  Microsoft.VisualStudio.ComponentGroup.WindowsAppSDK.Cpp&quot; 
+</code></pre>
+</section>
+</div>
+<h2 id="install-tools-manually">Install tools manually</h2>
+<p>The following sections describe how to install the required tools and workloads manually.</p>
+<h2 id="install-visual-studio">Install Visual Studio</h2>
+<p>Use the following link to install Visual Studio 2022. You can choose between the free Visual Studio Community Edition, Visual Studio Professional, or Visual Studio Enterprise. Before installing either, see <a href="system-requirements.html">System requirements for Windows app development</a>.</p>
+<div class="button">
+<p><a href="/visualstudio/releases/2022/release-notes">Download Visual Studio 2022</a></p>
+</div>
+<h3 id="required-workloads-and-components">Required workloads and components</h3>
+<p>During Visual Studio installation, you have the option to install workloads and components (you can also open the Visual Studio Installer and select <strong>Modify</strong> to add workloads and components after installation). We recommend installing the following:</p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_vs-2022-17-10" role="tab" aria-controls="tabpanel_3_vs-2022-17-10" data-tab="vs-2022-17-10" tabindex="0" aria-selected="true">Visual Studio 2022 version 17.10 and later</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_vs-2022-17-1-a" role="tab" aria-controls="tabpanel_3_vs-2022-17-1-a" data-tab="vs-2022-17-1-a" tabindex="-1">Visual Studio 2022 version 17.1 and 17.9</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_vs-other" role="tab" aria-controls="tabpanel_3_vs-other" data-tab="vs-other" tabindex="-1">Other Visual Studio versions</a>
+</li>
+</ul>
+<section id="tabpanel_3_vs-2022-17-10" role="tabpanel" data-tab="vs-2022-17-10">
+
+<p>From within the Visual Studio Installer app:</p>
+<ul>
+<li><p>On the <strong>Workloads</strong> tab:</p>
+<ul>
+<li>For C# app development using the Windows App SDK, select <strong>WinUI application development</strong>.</li>
+<li>For C++ app development using the Windows App SDK, select <strong>WinUI application development</strong>
+<ul>
+<li>Then in the <strong>Installation details</strong> pane of the installation dialog box, under the <strong>WinUI application development</strong> node, select <strong>C++ WinUI app development tools</strong>. (This will also select any additional required components.)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><em>In Visual Studio 17.10 - 17.12, this workload is called <strong>Windows application development</strong>.</em></p>
+</div>
+</section>
+<section id="tabpanel_3_vs-2022-17-1-a" role="tabpanel" data-tab="vs-2022-17-1-a" aria-hidden="true" hidden="hidden">
+
+<p>From within the Visual Studio Installer app:</p>
+<ul>
+<li><p>On the <strong>Workloads</strong> tab:</p>
+<ul>
+<li>For C# app development using the Windows App SDK, select <strong>.NET Desktop Development</strong>.
+<ul>
+<li>Then in the <strong>Installation details</strong> pane of the installation dialog box, select <strong>Windows App SDK C# Templates</strong> (at the bottom of the list).</li>
+</ul>
+</li>
+<li>For C++ app development using the Windows App SDK, select <strong>Desktop development with C++</strong>
+<ul>
+<li>Then in the <strong>Installation details</strong> pane of the installation dialog box, select <strong>Windows App SDK C++ Templates</strong> (at the bottom of the list).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>On the <strong>Individual components</strong> tab, in the <strong>SDKs, libraries, and frameworks</strong> section, make sure <strong>Windows 10 SDK (10.0.19041.0)</strong> is selected.</p>
+</li>
+</ul>
+</section>
+<section id="tabpanel_3_vs-other" role="tabpanel" data-tab="vs-other" aria-hidden="true" hidden="hidden">
+
+<p>From within the Visual Studio Installer app:</p>
+<ul>
+<li><p>On the <strong>Workloads</strong> tab:</p>
+<ul>
+<li>For C# app development using the Windows App SDK, select <strong>.NET Desktop Development</strong>.</li>
+<li>For C++ app development using the Windows App SDK, select <strong>Desktop development with C++</strong>.</li>
+</ul>
+</li>
+<li><p>On the <strong>Individual components</strong> tab, in the <strong>SDKs, libraries, and frameworks</strong> section, make sure <strong>Windows 10 SDK (10.0.19041.0)</strong> is selected.</p>
+</li>
+</ul>
+</section>
+</div>
+<h2 id="visual-studio-project-and-item-templates">Visual Studio project and item templates</h2>
+<p>The <a href="index.html">Windows App SDK</a> includes Visual Studio project and item templates for creating and developing apps that use the WinUI 3 library to implement the user interface.</p>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_vs-2022-17-1-b" role="tab" aria-controls="tabpanel_4_vs-2022-17-1-b" data-tab="vs-2022-17-1-b" tabindex="0" aria-selected="true">Visual Studio 2022 version 17.1 and later</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_vs-2022-17-0" role="tab" aria-controls="tabpanel_4_vs-2022-17-0" data-tab="vs-2022-17-0" tabindex="-1">Visual Studio 2022 version 17.0</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_vs-2019" role="tab" aria-controls="tabpanel_4_vs-2019" data-tab="vs-2019" tabindex="-1">Visual Studio 2019</a>
+</li>
+</ul>
+<section id="tabpanel_4_vs-2022-17-1-b" role="tabpanel" data-tab="vs-2022-17-1-b">
+
+<p>If you followed the instructions in <a href="#required-workloads-and-components">Required workloads and components</a> above, the templates should already be installed.</p>
+<p>Select <strong>C#</strong> or <strong>C++</strong> as the language, <strong>Windows</strong> as the platform, and <strong>WinUI</strong> as the Project type to create a new Windows App SDK project.</p>
+<p>Optionally, install <a href="https://marketplace.visualstudio.com/items?itemName=TemplateStudio.TemplateStudioForWinUICs">Template Studio for WinUI (C#)</a> to accelerate the creation of new .NET WinUI apps using a wizard-based UI. Select from a variety of project types and features to generate a project template customized for you.</p>
+</section>
+<section id="tabpanel_4_vs-2022-17-0" role="tabpanel" data-tab="vs-2022-17-0" aria-hidden="true" hidden="hidden">
+
+<p>The templates are available by installing a Visual Studio extension (VSIX).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have a Windows App SDK Visual Studio extension (VSIX) already installed, then uninstall it before installing a new version. For directions, see <a href="/visualstudio/ide/finding-and-using-visual-studio-extensions">Manage extensions for Visual Studio</a>.</p>
+</div>
+<p>Download the extension directly, and install it:</p>
+<div class="button">
+<p><a href="https://aka.ms/windowsappsdk/stable-vsix-2022-cs">Download latest C# stable release</a></p>
+</div>
+<div class="button">
+<p><a href="https://aka.ms/windowsappsdk/stable-vsix-2022-cpp">Download latest C++ stable release</a></p>
+</div>
+</section>
+<section id="tabpanel_4_vs-2019" role="tabpanel" data-tab="vs-2019" aria-hidden="true" hidden="hidden">
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Visual Studio 2019 does not support the Windows App SDK.</p>
+</div>
+</section>
+</div>
+
+<p>For more versions of the Windows App SDK, see <a href="downloads.html">Downloads for the Windows App SDK</a>.</p>
+<h2 id="hybrid-cc-runtime-library-linkage">Hybrid C/C++ runtime library linkage</h2>
+<p>In releases 1.0.3 and 1.1 Preview 2 and later, the Windows App SDK uses Hybrid C/C++ runtime library linkage (hybrid CRT linkage). This is a CRT linkage technique that simplifies deployment. Whether you're a C++ application developer or a C++ library developer, here are some resources for learning about hybrid CRT linkage:</p>
+<ul>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md">Hybrid CRT linkage coding guidelines</a> on GitHub.</li>
+<li>The hybrid CRT linkage segment of the <a href="https://www.youtube.com/watch?v=bNHGU6xmUzE&amp;t=977s">WinUI community call</a> from April 20, 2022.</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>To create your first WinUI 3 app that uses the Windows App SDK, see <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>.</p>
+<p>Also see <a href="use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Windows App SDK</a></li>
+<li><a href="release-channels.html">Windows App SDK release channels</a></li>
+<li><a href="./preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a></li>
+<li><a href="system-requirements.html">System requirements for Windows app development</a></li>
+<li><a href="support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="downloads.html">Downloads for the Windows App SDK</a></li>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/set-up-your-development-environment.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

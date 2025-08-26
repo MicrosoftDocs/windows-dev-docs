@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tutorial--Create a .NET MAUI app integrating with the Microsoft Graph SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tutorial--Create a .NET MAUI app integrating with the Microsoft Graph SDK ">
+    
+    <meta name="description" content="Get hands-on with .NET MAUI by building a cross-platform app on Windows that leverages the Microsoft Graph SDK to display user data.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-create-a-net-maui-app-using-the-microsoft-graph-sdk">Tutorial: Create a .NET MAUI app using the Microsoft Graph SDK</h1>
+
+<p>Get hands-on with .NET MAUI by building a cross-platform app on Windows that leverages the <a href="/graph/sdks/sdks-overview">Microsoft Graph SDK</a> to display user data.</p>
+<p>In this tutorial, you learn how to:</p>
+<div class="checklist">
+<ul>
+<li>Set up your environment for .NET MAUI development and create a .NET MAUI project</li>
+<li>Register your client app in Azure</li>
+<li>Integrate with <a href="/graph/identity-network-access-overview">Azure Identity</a> and the Microsoft Graph SDK</li>
+<li>Update the user interface to display user information from <a href="/graph/">Microsoft Graph</a></li>
+</ul>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>An Azure account with an active subscription. <a href="https://azure.microsoft.com/free/">Create an account for free</a>.</li>
+<li>The .NET MAUI <a href="/dotnet/maui/get-started/installation">installation requirements</a>.</li>
+<li>If you are new to .NET MAUI on Windows, you should start with the <a href="/windows/apps/windows-dotnet-maui/walkthrough-first-app">Build your first .NET MAUI app for Windows</a> tutorial.</li>
+</ul>
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
+<p>If you haven't already set up your environment for .NET MAUI development, please follow the steps to <a href="index.html#get-started-with-net-maui-on-windows">Get started with .NET MAUI on Windows</a>.</p>
+<h2 id="creating-the-net-maui-project">Creating the .NET MAUI project</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are already familiar with setting up a .NET MAUI project, you can skip to the <a href="#register-your-client-in-azure">Register your client in Azure</a> section.</p>
+</div>
+<p>Launch Visual Studio, and in the start window click <strong>Create a new project</strong> to create a new project:</p>
+<p><img src="images/maui-graph-new-project.png" alt="Create a new project."></p>
+<p>In the <strong>Create a new project</strong> window, select <strong>MAUI</strong> in the All project types drop-down, select the <strong>.NET MAUI App</strong> template, and click the <strong>Next</strong> button:</p>
+<p><img src="images/maui-graph-select-project.png" alt=".NET MAUI App template."></p>
+<p>In the <strong>Configure your new project</strong> window, give your project a name, choose a location for it, and click the <strong>Next</strong> button:</p>
+<p><img src="images/maui-graph-name-project.png" alt="Name the new project."></p>
+<p>In the <strong>Additional information</strong> window, click the <strong>Create</strong> button:</p>
+<p><img src="images/maui-graph-select-dotnet-version.png" alt="Create new project."></p>
+<p>Wait for the project to be created, and for its dependencies to be restored:</p>
+<p><img src="images/maui-graph-project-loaded.png" alt="Project is created."></p>
+<p>In the Visual Studio toolbar, press the <strong>Windows Machine</strong> button to build and run the app. Click the <strong>Click me</strong> button and verify that the button content updates with the number of clicks.</p>
+<p>Now that you have verified that the .NET MAUI app on Windows is working as expected, we can integrate the Graph SDK. In the next section, you'll add the packages necessary to authenticate and make calls to Microsoft Graph.</p>
+<h2 id="register-your-client-in-azure">Register your client in Azure</h2>
+<p>An <strong>app registration</strong> in Azure with the <strong>User.Read</strong> scope granted to the app is required to read user data from Microsoft Graph. To register your application, follow these steps:</p>
+<p>Sign in to the <a href="https://portal.azure.com/">Azure portal</a>.</p>
+<p>If you have access to multiple tenants, use the <strong>Directories + subscriptions</strong> filter  in the top menu to switch to the tenant in which you want to register the application.</p>
+<p>Search for and select <strong>Azure Active Directory</strong>.</p>
+<p>Under <strong>Manage</strong>, select <strong>App registrations &gt; New registration</strong>.</p>
+<p>Enter a <strong>Name</strong> for your application, for example <code>Win-App-calling-MsGraph</code>. Users of your app might see this name, and you can change it later.</p>
+<p>In the Supported account types section, select Accounts in any organizational directory and personal Microsoft accounts (for example, Skype, Xbox, Outlook.com).</p>
+<p>Select Register to create the application.</p>
+<p>Copy and save the of the <strong>Application (client) ID</strong> and the <strong>Directory (tenant) ID</strong> values for later use. We will store those values in the GraphService class in the next section.</p>
+<p>Under <strong>Manage</strong>, select <strong>Authentication</strong>.</p>
+<p>Select <strong>Add a platform &gt; Mobile and desktop applications</strong>.</p>
+<p>In the <strong>Redirect URIs</strong> section, select <code>https://login.microsoftonline.com/common/oauth2/nativeclient</code> and in <strong>Custom redirect URIs</strong> add <code>http://localhost</code>.</p>
+<p>Select <strong>Configure</strong>.</p>
+<p>Under <strong>Manage</strong>, select <strong>API permissions</strong>.</p>
+<p>If the Microsoft Graph <strong>User.Read</strong> permission is not present under <strong>Configured permissions</strong>, select <strong>Add permission</strong>. In the <strong>Request API permissions</strong> screen, select <strong>Microsoft Graph &gt; Application permissions</strong> and search for <strong>User.Read</strong>. Expand <strong>User</strong>, select <strong>User.Read</strong>, and click <strong>Add permissions</strong>.</p>
+<h2 id="integrate-the-graph-sdk-and-azure-identity">Integrate the Graph SDK and Azure Identity</h2>
+<p>Now that you have your .NET MAUI app running on Windows and have configured the app registration in Azure, let's add a couple of NuGet packages to the project to integrate with Azure Identity and Microsoft Graph.</p>
+<p>Right-click the project in <strong>Solution Explorer</strong> and select <strong>Manage NuGet Packages...</strong> from the context menu.</p>
+<p>In the <strong>NuGet Package Manager</strong> window, select the <strong>Browse</strong> tab and search for <strong>Azure.Identity</strong>:</p>
+<p><img src="images/maui-graph-identity-package.png" alt="Azure.Identity package."></p>
+<p>Add the latest stable version of the <strong>Azure.Identity</strong> package to the project by clicking <strong>Install</strong>.</p>
+<p>Next, search for <strong>Microsoft.Graph</strong>:</p>
+<p><img src="images/maui-graph-graphapi-package.png" alt="Microsoft.Graph package."></p>
+<p>Add the latest stable version of the <strong>Microsoft.Graph</strong> package to the project by clicking <strong>Install</strong>.</p>
+<p>Close the <strong>NuGet Package Manager</strong> window after the new package has finished installing.</p>
+<p>Right-click the project again and select <strong>Add | Class</strong> from the context menu.</p>
+<p>In the <strong>Add New Item</strong> window that appears, name the class <code>GraphService</code> and click <strong>Add</strong>:</p>
+<p><img src="images/maui-graph-add-service-class.png" alt="Add GraphService class."></p>
+<p>Add four private members to the <code>GraphService</code> class, substituting your own <em>client ID</em> and <em>tenant ID</em> values for the placeholder text:</p>
+<pre><code class="lang-csharp">private readonly string[] _scopes = new[] { &quot;User.Read&quot; };
+private const string TenantId = &quot;&lt;add your tenant id here&gt;&quot;;
+private const string ClientId = &quot;&lt;add your client id here&gt;&quot;;
+private GraphServiceClient _client;
+</code></pre>
+<p>Add an <code>Initialize()</code> method to <code>GraphService</code>, which will be called from the constructor. The initialization code will authenticate using the <code>InteractiveBrowserCredential</code> class. Upon successful authentication, the auth token will be provided to the <code>GraphServiceClient</code> by the credential class along with the requested scopes (<code>User.Read</code>).</p>
+<pre><code class="lang-csharp">public GraphService()
+{
+    Initialize();
+}
+
+private void Initialize()
+{
+    // assume Windows for this sample
+    if (OperatingSystem.IsWindows())
+    {
+        var options = new InteractiveBrowserCredentialOptions
+        {
+            TenantId = TenantId,
+            ClientId = ClientId,
+            AuthorityHost = AzureAuthorityHosts.AzurePublicCloud,
+            RedirectUri = new Uri(&quot;http://localhost&quot;),
+        };
+
+        InteractiveBrowserCredential interactiveCredential = new(options);
+        _client = new GraphServiceClient(interactiveCredential, _scopes);
+    }
+    else 
+    {
+        // TODO: Add iOS/Android support
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The 'Initialize()' method currently only supports Windows. Authenticating on iOS and Android requires a different NuGet package (Microsoft.Identity.Client) and some additional steps. To read more about mobile authentication, see <a href="/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/authentication">Configure a native client application</a>.</p>
+</div>
+<p>Add a public async method named <code>GetMyDetailsAsync()</code> to return the <code>User</code> object for the authenticated user:</p>
+<pre><code class="lang-csharp">public async Task&lt;User&gt; GetMyDetailsAsync()
+{
+    try
+    {
+        return await _client.Me.GetAsync();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($&quot;Error loading user details: {ex}&quot;);
+        return null;
+    }
+}
+</code></pre>
+<p>Two <code>using</code> statements will be needed to compile the new code added to <code>GraphService</code>:</p>
+<pre><code class="lang-csharp">using Azure.Identity;
+using Microsoft.Graph;
+using Microsoft.Graph.Models;
+</code></pre>
+<p>In <strong>MainPage.xaml</strong>, add an <code>x:Name</code> to the <strong>Hello, World!</strong> label:</p>
+<pre><code class="lang-xaml">&lt;Label
+    x:Name=&quot;HelloLabel&quot;
+    Text=&quot;Hello, World!&quot;
+    SemanticProperties.HeadingLevel=&quot;Level1&quot;
+    FontSize=&quot;32&quot;
+    HorizontalOptions=&quot;Center&quot; /&gt;
+</code></pre>
+<p>Add a new button to the page after the existing <code>CounterBtn</code> to get the user information from Graph:</p>
+<pre><code class="lang-xaml">&lt;Button
+    x:Name=&quot;GetUserInfoBtn&quot;
+    Text=&quot;Load User Info&quot;
+    SemanticProperties.Hint=&quot;Loads user information from Microsoft Graph&quot;
+    Clicked=&quot;GetUserInfoBtn_Clicked&quot;
+    HorizontalOptions=&quot;Center&quot; /&gt;
+</code></pre>
+<p>In <strong>MainPage.xaml.cs</strong>, add private variables to for <code>GraphService</code> and <code>User</code>:</p>
+<pre><code class="lang-csharp">private GraphService graphService;
+private User user;
+</code></pre>
+<p>Add an event handler for the <code>Clicked</code> event that you added to the <code>GetUserInfoButton</code> on <strong>MainPage.xaml</strong>. The event handler will create an instance of <code>GraphService</code> if it is null and make the call to fetch the user data. The <code>HelloLabel</code>'s text will be updated to say hello to the user, displaying the <code>DisplayName</code> property from Microsoft Graph:</p>
+<pre><code class="lang-csharp">private async void GetUserInfoBtn_Clicked(object sender, EventArgs e)
+{
+    if (graphService == null)
+    {
+        graphService = new GraphService();
+    }
+    user = await graphService.GetMyDetailsAsync();
+    HelloLabel.Text = $&quot;Hello, {user.DisplayName}!&quot;;
+}
+</code></pre>
+<p>Run the app and click the <strong>Load User Info</strong> button:</p>
+<p><img src="images/maui-graph-launch-app.png" alt="Launch the app."></p>
+<p>When the <strong>Sign in to your account</strong> window appears, select an existing account or click <strong>Use another account</strong>:</p>
+<p><img src="images/maui-graph-select-login-account.png" alt="Select an account."></p>
+<p>If you selected a different account, enter the email address and password for the account and sign in.</p>
+<p>After the authentication completes, you will see your user's <strong>DisplayName</strong> in on the app:</p>
+<p><img src="images/maui-graph-user-info-loaded.png" alt="User info has loaded in label."></p>
+<h2 id="update-the-user-interface-to-display-user-information">Update the user interface to display user information</h2>
+<p>Now that the <code>GraphService</code> is returning user information, let's update the user interface to display some additional user profile information.</p>
+<p>In MainPage.xaml, start by updating the contents of the <code>VerticalStackLayout</code>, removing the existing welcome label and <code>Image</code> control and adding four new labels to display the user information. Each label that will be updated is named, and we've provided some placeholder text until the data is loaded from the Graph query. The contents of the <code>VerticalStackLayout</code> should now look like this:</p>
+<pre><code class="lang-xaml">&lt;VerticalStackLayout
+    Spacing=&quot;25&quot;
+    Padding=&quot;30,0&quot;
+    VerticalOptions=&quot;Center&quot;&gt;
+
+    &lt;Label
+        x:Name=&quot;HelloLabel&quot;
+        Text=&quot;Hello, World!&quot;
+        SemanticProperties.Description=&quot;Displays a welcome message for the user&quot;
+        SemanticProperties.HeadingLevel=&quot;Level1&quot;
+        FontSize=&quot;32&quot;
+        HorizontalOptions=&quot;Center&quot; /&gt;
+
+    &lt;Button
+        x:Name=&quot;CounterBtn&quot;
+        Text=&quot;Click me&quot;
+        SemanticProperties.Hint=&quot;Counts the number of times you click&quot;
+        Clicked=&quot;CounterBtn_Clicked&quot;
+        HorizontalOptions=&quot;Center&quot; /&gt;
+
+    &lt;Button
+        Text=&quot;Load User Info&quot;
+        SemanticProperties.Hint=&quot;Loads user information from Microsoft Graph&quot;
+        Clicked=&quot;GetUserInfoBtn_Clicked&quot;
+        HorizontalOptions=&quot;Center&quot; /&gt;
+
+    &lt;Label
+        x:Name=&quot;DisplayNameLabel&quot;
+        Text=&quot;Display name&quot;
+        SemanticProperties.Description=&quot;Displays the user's display name from Microsoft Graph.&quot;
+        SemanticProperties.HeadingLevel=&quot;Level2&quot;
+        FontSize=&quot;18&quot;
+        HorizontalOptions=&quot;Center&quot; /&gt;
+
+    &lt;Label
+        x:Name=&quot;UserFirstNameLabel&quot;
+        Text=&quot;First name&quot;
+        SemanticProperties.Description=&quot;Displays the user's first name info from Microsoft Graph&quot;
+        SemanticProperties.HeadingLevel=&quot;Level2&quot;
+        FontSize=&quot;18&quot;
+        HorizontalOptions=&quot;Center&quot; /&gt;
+
+    &lt;Label
+        x:Name=&quot;UserLastNameLabel&quot;
+        Text=&quot;Last name&quot;
+        SemanticProperties.Description=&quot;Displays the user's last name from Microsoft Graph&quot;
+        SemanticProperties.HeadingLevel=&quot;Level2&quot;
+        FontSize=&quot;18&quot;
+        HorizontalOptions=&quot;Center&quot; /&gt;
+
+    &lt;Label
+        x:Name=&quot;UserPrincipalNameLabel&quot;
+        Text=&quot;User Principal Name&quot;
+        SemanticProperties.Description=&quot;Displays the user principal name from Microsoft Graph&quot;
+        SemanticProperties.HeadingLevel=&quot;Level2&quot;
+        FontSize=&quot;18&quot;
+        HorizontalOptions=&quot;Center&quot; /&gt;
+
+&lt;/VerticalStackLayout&gt;
+</code></pre>
+<p>Finally, in MainPage.xaml.cs, update the UI elements with the values of the new properties in the <code>GetUserInfoBtn_Clicked</code> event handler using the properties of the Graph User object:</p>
+<pre><code class="lang-csharp">private async void GetUserInfoBtn_Clicked(object sender, EventArgs e)
+{
+    if (graphService == null)
+    {
+        graphService = new GraphService();
+    }
+    user = await graphService.GetMyDetailsAsync();
+    HelloLabel.Text = $&quot;Hello, {user.DisplayName}!&quot;;
+
+    DisplayNameLabel.Text = user.DisplayName;
+    UserFirstNameLabel.Text = user.GivenName;
+    UserLastNameLabel.Text = user.Surname;
+    UserPrincipalNameLabel.Text = user.UserPrincipalName;
+}
+</code></pre>
+<p>Run the app again and click the <strong>Load User Info</strong> button. You should see your user information displayed in the app after authenticating:</p>
+<p><img src="images/maui-graph-additional-user-info-loaded.png" alt="Additional user info has been loaded in labels."></p>
+<p>To learn how to install and get started with the Microsoft Graph SDK in your .NET MAUI apps, see <a href="/graph/sdks/sdk-installation#install-the-microsoft-graph-net-sdk">Install the Microsoft Graph .NET SDK</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Advance to the next article to learn how to...</p>
+<div class="nextstepaction">
+<p><a href="tutorial-maui-ai.md">Create a recommendation app with .NET MAUI and ChatGPT</a></p>
+</div>
+<h2 id="see-also">See also</h2>
+<p><a href="/dotnet/maui/get-started/resources">Resources for learning .NET MAUI</a></p>
+<p><a href="/graph/sdks/sdks-overview">Microsoft Graph SDK overview</a></p>
+<p><a href="/azure/developer/mobile-apps/azure-mobile-apps/quickstarts/maui/authentication">Configure a native client application</a></p>
+<p><a href="/graph/identity-network-access-overview">Overview of Microsoft Entra identity and network access APIs in Microsoft Graph</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-dotnet-maui/tutorial-graph-api.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

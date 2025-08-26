@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys File Explorer Add-ons Utility for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys File Explorer Add-ons Utility for Windows ">
+    
+    <meta name="description" content="PowerToys File Explorer add-ons enable preview pane and thumbnail renderers for SVG, PDF, Markdown, and source code files in Windows. Download and configure these utilities to enhance your file browsing experience.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="file-explorer-add-ons-utility">File Explorer add-ons utility</h1>
+
+<p>PowerToys File Explorer add-ons enhance Windows File Explorer with preview pane and thumbnail support for multiple file types including SVG, PDF, Markdown, and source code files. These utilities allow you to preview file contents directly in File Explorer without opening separate applications.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Enabling the preview handlers will override other preview handlers already installed - there have been reports of incompatibility between Outlook and the PDF Preview Handler.</p>
+</div>
+<h2 id="preview-pane-previewers">Preview Pane previewers</h2>
+<p>Preview Pane is an existing feature in Windows File Explorer which allows you to see a preview of the file's contents in the view's reading pane. PowerToys adds multiple extensions: Markdown, SVG, PDF, G-code and QOI. In addition to those, PowerToys also adds support for source code files for more than 150 file extensions.</p>
+<p>Preview Pane supports:</p>
+<ul>
+<li>SVG images (.svg)</li>
+<li>Markdown files (.md)</li>
+<li>Source code files (.cs, .cpp, .rs, …)</li>
+<li>PDF files (.pdf)</li>
+<li>G-code files (.gcode)</li>
+<li>QOI images (.qoi)</li>
+</ul>
+<h3 id="settings-for-source-code-files-previewer">Settings for Source code files previewer</h3>
+<p>Expand the <strong>Source code files (Monaco)</strong> section to change the following settings.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Wrap text</td>
+<td style="text-align: left;">Enable or disable word wrapping.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Try to format the source for preview</td>
+<td style="text-align: left;">Enable or disable formatting of the source code for json and xml files.<br>The original file stays unchanged.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maximum file size to preview</td>
+<td style="text-align: left;">Maximum file size in kilobytes to preview.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="enabling-preview-pane-support">Enabling Preview Pane support</h3>
+<p>To enable preview support, set the extension to <strong>On</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-settings-fileexplorer.png" alt="Screenshot of PowerToys settings page showing File Explorer add-ons toggle enabled.">
+</span>
+</p>
+<p>If the preview pane does not appear to work after setting the extension to <strong>On</strong>, there is an advanced setting in Windows that may be blocking the preview handler. Go to <strong>Options</strong> in Windows File Explorer and under the <strong>View</strong> tab, you will see a list of <strong>Advanced settings</strong>. Ensure that <strong>Show preview handlers in preview pane</strong> is selected in order for the preview pane to display.</p>
+<h3 id="enabling-the-explorer-pane-in-windows-11">Enabling the Explorer pane in Windows 11</h3>
+<p>Open Windows File Explorer, go to <strong>View</strong> in the Explorer ribbon and select <strong>Preview pane</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-fileexplorer-win11.gif" alt="Screenshot of Windows 11 File Explorer showing PowerToys preview pane functionality.">
+</span>
+</p>
+<h3 id="enabling-the-explorer-pane-in-windows-10">Enabling the Explorer pane in Windows 10</h3>
+<p>Open Windows File Explorer, go to <strong>View</strong> in the Explorer ribbon and select <strong>Preview Pane</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-fileexplorer.gif" alt="Screenshot of Windows 10 File Explorer showing PowerToys preview pane functionality.">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It isn't possible to change the background color of the preview pane, so if you're working with transparent images with white shapes, you may not be able to see them in the preview.</p>
+</div>
+<h2 id="thumbnail-previews">Thumbnail previews</h2>
+<p>To enable thumbnail preview support, set the extension to <strong>On</strong>.</p>
+<p>Thumbnail preview supports:</p>
+<ul>
+<li>SVG images (.svg)</li>
+<li>PDF files (.pdf)</li>
+<li>G-code files (.gcode)</li>
+<li>STL files (.stl)</li>
+<li>QOI images (.qoi)</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A reboot may be required after enabling the thumbnail previewer for the settings to take effect. Thumbnails might not appear on paths managed by cloud storage solutions like OneDrive, since these solutions may get their thumbnails from the cloud instead of generating them locally.</p>
+</div>
+<h3 id="settings-for-stereolithography-stl-files">Settings for Stereolithography (.stl) files</h3>
+<p>Expand the <strong>Stereolithography</strong> section to change the background color.</p>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/file-explorer.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Customize the print preview UI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Customize the print preview UI ">
+    
+    <meta name="description" content="This topic describes how to customize the print options and settings in the print preview UI.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="customize-the-print-preview-ui">Customize the print preview UI</h1>
+
+<p>This topic describes how to customize the print options and settings in the print preview UI. For more info about printing, see <a href="print-from-your-app.html">Print from your app</a>.</p>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/uwp/api/windows.graphics.printing">Windows.Graphics.Printing namespace</a>, <a href="/uwp/api/windows.graphics.printing.printtask">PrintTask</a>, <a href="/uwp/api/Windows.Graphics.Printing.StandardPrintTaskOptions">StandardPrintTaskOptions class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing">Microsoft.UI.Xaml.Printing namespace</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing.PrintDocument">PrintDocument class</a></li>
+</ul>
+</div>
+<h2 id="customize-print-options">Customize print options</h2>
+<p>By default, the print preview UI shows the <a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.colormode"><strong>ColorMode</strong></a>, <a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.copies"><strong>Copies</strong></a>, and <a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.orientation"><strong>Orientation</strong></a> print options. In addition to those, there are several other common printer options that you can add to the print preview UI:</p>
+<ul>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.binding"><strong>Binding</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.bordering"><strong>Bordering</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.collation"><strong>Collation</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.custompageranges"><strong>CustomPageRanges</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.duplex"><strong>Duplex</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.holepunch"><strong>HolePunch</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.inputbin"><strong>InputBin</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediasize"><strong>MediaSize</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediatype"><strong>MediaType</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.nup"><strong>NUp</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.printquality"><strong>PrintQuality</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.staple"><strong>Staple</strong></a></li>
+</ul>
+<p>These options are defined in the <a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions">StandardPrintTaskOptions</a> class. You can add to or remove options from the list of options displayed in the print preview UI. You can also change the order in which they appear, and set the default settings that are shown to the user.</p>
+<p>However, the modifications that you make in this way affect only the print preview UI. The user can always access all of the options that the printer supports by tapping <strong>More settings</strong> in the print preview UI.</p>
+<h3 id="define-the-options-to-display">Define the options to display</h3>
+<p>When you register your app for printing (see <a href="print-from-your-app.html">Print from your app</a>), part of that registration includes defining the <a href="/uwp/api/windows.graphics.printing.printmanager.printtaskrequested">PrintTaskRequested</a> event handler. The code to customize the options displayed in the print preview UI is added to the PrintTaskRequested event handler.</p>
+<p>After you create the <a href="/uwp/api/windows.graphics.printing.printtask">PrintTask</a> in the <a href="/uwp/api/windows.graphics.printing.printmanager.printtaskrequested">PrintTaskRequested</a> event handler , you can get the <a href="/uwp/api/windows.graphics.printing.printtaskoptions.displayedoptions">DisplayedOptions</a> list, which contains the option items shown in the print preview UI. You can modify this list by inserting, appending, removing, or re-ordering options.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although your app can specify any print options to be displayed, only those that are supported by the selected printer are shown in the print preview UI. The print UI won't show options that the selected printer doesn't support.</p>
+</div>
+<pre><code class="lang-csharp">private void PrintTask_Requested(PrintManager sender, PrintTaskRequestedEventArgs args)
+{
+    // Create the PrintTask.
+    // Defines the title and delegate for PrintTaskSourceRequested.
+    PrintTask printTask = args.Request.CreatePrintTask(&quot;WinUI 3 Printing example&quot;, PrintTaskSourceRequested);
+
+    // Handle PrintTask.Completed to catch failed print jobs.
+    printTask.Completed += PrintTask_Completed;
+
+    DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =&gt;
+    {
+        InvokePrintingButton.IsEnabled = false;
+    });
+
+    // Customize options displayed in print preview UI.
+    // Get the list of displayed options.
+    IList&lt;string&gt; displayedOptions = printTask.Options.DisplayedOptions;
+
+    // Choose the printer options to be shown.
+    // The order in which the options are appended determines
+    // the order in which they appear in the UI.
+    displayedOptions.Clear();
+    displayedOptions.Add(StandardPrintTaskOptions.Copies);
+    displayedOptions.Add(StandardPrintTaskOptions.Orientation);
+    displayedOptions.Add(StandardPrintTaskOptions.MediaSize);
+    displayedOptions.Add(StandardPrintTaskOptions.Collation);
+    displayedOptions.Add(StandardPrintTaskOptions.Duplex);
+
+    // Preset the default value of the print media size option.
+    printTask.Options.MediaSize = PrintMediaSize.NorthAmericaLegal;
+}
+</code></pre>
+<h3 id="specify-default-options">Specify default options</h3>
+<p>You can also set the default values of the options in the print preview UI. The following line of code, from the last example, sets the default value of the <a href="/uwp/api/windows.graphics.printing.printtaskoptions.mediasize">MediaSize</a> option.</p>
+<pre><code class="lang-csharp">// Preset the default value of the print media size option.
+printTask.Options.MediaSize = PrintMediaSize.NorthAmericaLegal;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you set the values in the DisplayedOptions list, you use the name you get from <a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions">StandardPrintTaskOptions</a> (for example, <a href="/uwp/api/windows.graphics.printing.standardprinttaskoptions.mediasize">StandardPrintTaskOptions.MediaSize</a>).</p>
+<p>When you set the default value of an option, you use <a href="/uwp/api/windows.graphics.printing.printtaskoptions">PrintTaskOptions</a> (for example, <a href="/uwp/api/windows.graphics.printing.printtaskoptions.mediasize">PrintTaskOptions.MediaSize</a>).</p>
+</div>
+<h2 id="add-custom-print-options">Add custom print options</h2>
+<p>Here, we demonstrate how to create a new custom print option, define a list of values that the option supports, and then add the option to the print preview. In this example, the custom print option lets the user specify whether to print only the text on the page, only the image, or both the text and image. The options are presented in a drop-down list.</p>
+<p>In order to ensure a good user experience, the system requires that the app handle the <a href="/uwp/api/windows.graphics.printing.printmanager.printtaskrequested">PrintTaskRequested</a> event within the time specified by <a href="/uwp/api/windows.graphics.printing.printtasksourcerequestedargs.deadline">PrintTaskRequestedEventArgs.Request.Deadline</a>. Therefore, we use the PrintTaskRequested handler only to create the print task. The print settings customization can be done when the print document source is requested. Here, we use a <a href="/dotnet/csharp/language-reference/operators/lambda-expressions">lambda expression</a> to define the PrintTaskSourceRequestedHandler inline, which provides easier access to the PrintTask.</p>
+<p>First, get a <a href="/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails">PrintTaskOptionDetails</a> object and its list of <a href="/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails.displayedoptions">DisplayedOptions</a>. You use this to add the new print option to the print preview UI.</p>
+<p>Next, to present the custom print options in a drop-down list, call <a href="/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails.createitemlistoption">PrintTaskOptionDetails.CreateItemListOption</a> to create a <a href="/uwp/api/windows.graphics.printing.optiondetails.printcustomitemlistoptiondetails">PrintCustomItemListOptionDetails</a> object. Create the new print option and initialize the list of option values. Finally, add the new option to the <a href="/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails.displayedoptions">DisplayedOptions</a> list and assign a handler for the <a href="/uwp/api/windows.graphics.printing.optiondetails.printtaskoptiondetails.optionchanged">OptionChanged</a> event. Because you are just adding a new print option at the end of the list of default options, you don't need to clear the DisplayedOptions list; just add the new option.</p>
+<pre><code class="lang-csharp">private void PrintTask_Requested(PrintManager sender, PrintTaskRequestedEventArgs args)
+{
+    // Create the PrintTask.
+    PrintTask printTask = null;
+    printTask = args.Request.CreatePrintTask(&quot;WinUI 3 Printing example&quot;, sourceRequestedArgs =&gt;
+    {
+        PrintTaskSourceRequestedDeferral deferral = 
+            sourceRequestedArgs.GetDeferral();
+        PrintTaskOptionDetails printDetailedOptions = 
+            PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);
+        IList&lt;string&gt; displayedOptions = printDetailedOptions.DisplayedOptions;
+
+        // Create a new list option.
+        PrintCustomItemListOptionDetails pageFormat =
+            printDetailedOptions.CreateItemListOption(&quot;PageContent&quot;, &quot;Page content&quot;);
+        pageFormat.AddItem(&quot;PicturesText&quot;, &quot;Pictures and text&quot;);
+        pageFormat.AddItem(&quot;PicturesOnly&quot;, &quot;Pictures only&quot;);
+        pageFormat.AddItem(&quot;TextOnly&quot;, &quot;Text only&quot;);
+
+        // Add the custom option to the option list
+        displayedOptions.Add(&quot;PageContent&quot;);
+
+        printDetailedOptions.OptionChanged += PrintDetailedOptions_OptionChanged;
+        sourceRequestedArgs.SetSource(printDocumentSource);
+
+        deferral.Complete();
+    });
+
+    // Handle PrintTask.Completed to catch failed print jobs.
+    printTask.Completed += PrintTask_Completed;
+
+    DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =&gt;
+    {
+        InvokePrintingButton.IsEnabled = false;
+    });
+}
+</code></pre>
+<p>The options appear in the print preview UI in the same order they are appended, with the first option shown at the top of the window. In this example, the custom option is appended last so that it appears at the bottom of the list of options. However, you could put it anywhere in the list; custom print options don't need to be added last.</p>
+<p>When the user changes the selected option in your custom option, use the selected option to update the print preview image. After the print preview layout in updated, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing.printdocument.invalidatepreview">InvalidatePreview</a> method to redraw the image in the print preview UI, as shown here.</p>
+<pre><code class="lang-csharp">void PrintDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, 
+                                        PrintTaskOptionChangedEventArgs args)
+{
+    string optionId = args.OptionId as string;
+    if (string.IsNullOrEmpty(optionId))
+    {
+        return;
+    }
+
+    if (optionId == &quot;PageContent&quot;)
+    {
+        PrintCustomItemListOptionDetails pageContentOption =
+            (PrintCustomItemListOptionDetails)sender.Options[&quot;PageContent&quot;];
+        string pageContentValue = pageContentOption.Value.ToString();
+
+        if (pageContentValue == &quot;PicturesOnly&quot;)
+        {
+            pageLayoutOption = PageLayoutOption.Images;
+        }
+        else if (pageContentValue == &quot;TextOnly&quot;)
+        {
+            pageLayoutOption = PageLayoutOption.Text;
+        }
+        else
+        {
+            pageLayoutOption = PageLayoutOption.TextAndImages;
+        }
+
+        DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =&gt;
+        {
+            printDocument.InvalidatePreview();
+        });
+    }
+}
+</code></pre>
+<p>To support use of the custom options in your page, add an enum for the available options and a page-level variable to hold the selected option.</p>
+<pre><code class="lang-csharp">internal enum PageLayoutOption : int
+{
+    Text = 1,
+    Images = 2,
+    TextAndImages = 3
+}
+
+PageLayoutOption pageLayoutOption = PageLayoutOption.TextAndImages;
+</code></pre>
+<p>Then, use the selected option in your Paginate handler where you add the content for the print preview.</p>
+<pre><code class="lang-csharp">private void PrintDocument_Paginate(object sender, PaginateEventArgs e)
+{
+    // Clear the cache of preview pages.
+    printPreviewPages.Clear();
+
+    // Get the PrintTaskOptions.
+    PrintTaskOptions printingOptions = ((PrintTaskOptions)e.PrintTaskOptions);
+    // Get the page description to determine the size of the print page.
+    PrintPageDescription pageDescription = printingOptions.GetPageDescription(0);
+
+    // Create the print layout.
+    StackPanel printLayout = new StackPanel();
+    printLayout.Width = pageDescription.PageSize.Width;
+    printLayout.Height = pageDescription.PageSize.Height;
+    printLayout.BorderBrush = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.DimGray);
+    printLayout.BorderThickness = new Thickness(48);
+
+    // Use the custom print layout options to determine
+    // which elements to add to the print page. 
+    if (pageLayoutOption == PageLayoutOption.Images ||
+        pageLayoutOption == PageLayoutOption.TextAndImages)
+    {
+        Image printImage = new Image();
+        printImage.Source = printContent.Source;
+
+        printImage.Width = pageDescription.PageSize.Width / 2;
+        printImage.Height = pageDescription.PageSize.Height / 2;
+        printLayout.Children.Add(printImage);
+    }
+
+    if (pageLayoutOption == PageLayoutOption.Text ||
+        pageLayoutOption == PageLayoutOption.TextAndImages)
+    {
+        TextBlock imageDescriptionText = new TextBlock();
+        imageDescriptionText.Text = imageDescription.Text;
+        imageDescriptionText.FontSize = 24;
+        imageDescriptionText.HorizontalAlignment = HorizontalAlignment.Center;
+        imageDescriptionText.Width = pageDescription.PageSize.Width / 2;
+        imageDescriptionText.TextWrapping = TextWrapping.WrapWholeWords;
+
+        printLayout.Children.Add(imageDescriptionText);
+    }
+
+    // Add the print layout to the list of preview pages.
+    printPreviewPages.Add(printLayout);
+
+    // Report the number of preview pages created.
+    PrintDocument printDocument = (PrintDocument)sender;
+    printDocument.SetPreviewPageCount(printPreviewPages.Count,
+                                          PreviewPageCountType.Intermediate);
+}
+
+</code></pre>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="printing-and-scanning.html">Printing and scanning</a></li>
+<li><a href="print-from-your-app.html">Print from your app</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/devices-sensors/customize-the-print-preview-ui.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

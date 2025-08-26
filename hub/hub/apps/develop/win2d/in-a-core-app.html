@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Win2D in a Core App project </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Win2D in a Core App project ">
+    
+    <meta name="description" content="You can use Win2D in a project that doesn&#39;t use XAML.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="win2d-in-a-core-app-project">Win2D in a Core App project</h1>
+
+<p>The <a href="hellowin2dworld.html">Win2D quickstart</a> and <a href="quick-start.html">Build a simple Win2D app</a> topics both show Win2D being used in projects that use the XAML user-interface (UI) framework. But you can <em>also</em> use Win2D in a project that doesn't use XAML at all.</p>
+<p>This topic shows you how, in a UWP Core App project, you can use a <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm">CanvasSwapChain</a> to display Win2D content. And you can run the resulting app on both Windows and Xbox. This type of app is also referred to as a <em>CoreApplication app</em>, or a <em>UWP DirectX app</em>.</p>
+<blockquote>
+<p><strong>Platform APIs:</strong> <a href="/uwp/api/windows.applicationmodel.core.iframeworkviewsource">IFrameworkViewSource</a>, <a href="/uwp/api/windows.applicationmodel.core.iframeworkview">IFrameworkView</a>, <a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a>, <a href="/uwp/api/windows.applicationmodel.core.coreapplication">CoreApplication</a>, <a href="/uwp/api/windows.applicationmodel.core.coreapplicationview">CoreApplicationView</a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm">CanvasSwapChain</a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasDrawingSession.htm">CanvasDrawingSession</a></p>
+</blockquote>
+<h2 id="create-and-configure-a-new-project">Create and configure a new project</h2>
+<p>We'll be creating a XAML project just to get started. But we'll be removing all of the XAML from it as we proceed.</p>
+<ol>
+<li><p>In Visual Studio, create a new project from the <strong>Blank App (Universal Windows)</strong> project template. For language, choose: <em>C#</em>; platform: <em>Windows</em>; project type: <em>UWP</em>.</p>
+</li>
+<li><p>Then, to set up the project to use Win2D, see <a href="index.html#reference-the-win2d-nuget-package">Reference the Win2D NuGet package</a>.</p>
+</li>
+</ol>
+<h2 id="modify-the-project-files">Modify the project files</h2>
+<ol>
+<li><p>Since we won't be using XAML, go ahead and delete the following files from the project: <code>App.xaml</code>, <code>App.xaml.cs</code>, <code>MainPage.xaml</code>, and <code>MainPage.xaml.cs</code>.</p>
+</li>
+<li><p>And then add to the project a new <em>Class</em>; name the file <code>Program.cs</code>.</p>
+</li>
+</ol>
+<h2 id="add-code-to-programcs">Add code to Program.cs</h2>
+<ol>
+<li>Replace the entire contents of <code>Program.cs</code> with the following code listing:</li>
+</ol>
+<pre><code class="lang-csharp">// Program.cs
+using Microsoft.Graphics.Canvas;
+using Windows.ApplicationModel.Core;
+using Windows.Graphics.Display;
+using Windows.UI;
+using Windows.UI.Core;
+
+public sealed class App : IFrameworkViewSource, IFrameworkView
+{
+    private CoreApplicationView view;
+    private CoreWindow window;
+    private CanvasSwapChain swapChain;
+
+    public IFrameworkView CreateView()
+    {
+        return this;
+    }
+
+    public void Initialize(CoreApplicationView applicationView)
+    {
+        this.view = applicationView;
+    }
+
+    public void SetWindow(CoreWindow window)
+    {
+        this.view.TitleBar.ExtendViewIntoTitleBar = true;
+        this.window = window;
+    }
+
+    public void Load(string entryPoint)
+    {
+    }
+
+    public void Run()
+    {
+        this.swapChain = CanvasSwapChain.CreateForCoreWindow(
+            resourceCreator: CanvasDevice.GetSharedDevice(),
+            coreWindow: this.window,
+            dpi: DisplayInformation.GetForCurrentView().LogicalDpi);
+
+        this.swapChain.ResizeBuffers((float)this.window.Bounds.Width, (float)this.window.Bounds.Height);
+
+        using (CanvasDrawingSession session = this.swapChain.CreateDrawingSession(Colors.Black))
+        {
+            session.DrawEllipse(155, 115, 80, 30, Colors.Cyan, 3);
+            session.DrawText(&quot;Hello, Win2D World!&quot;, 100, 100, Colors.Yellow);
+        }
+
+        this.swapChain.Present();
+
+        this.window.Activate();
+        this.window.Dispatcher.ProcessEvents(CoreProcessEventsOption.ProcessUntilQuit);
+    }
+
+    public void Uninitialize()
+    {
+    }
+}
+
+public static class Program
+{
+    public static void Main()
+    {
+        CoreApplication.Run(new App());
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This example includes a separate <strong>Program</strong> class containing the <strong>Main</strong> entry point for the program, which then starts the actual <strong>CoreApplication</strong> app. But it's not necessary to place the entry point in a separate class; you could instead just move the <strong>Main</strong> method inside of the <strong>App</strong> class if you prefer structuring code that way. If you're using C# 10 or above, then the <code>CoreApplication.Run(new App());</code> expression statement could also be in a top-level statement.</p>
+</div>
+<h2 id="finishing-up">Finishing up</h2>
+<p>Now you can go ahead and build and run the app, and see the following output:</p>
+<p><img src="images/in-a-core-app.png" alt="Win2D content rendered in a Core App"></p>
+<p>In terms of the app model, the code in the previous section has an <strong>App</strong> class that implements the <a href="/uwp/api/windows.applicationmodel.core.iframeworkviewsource">IFrameworkViewSource</a> and <a href="/uwp/api/windows.applicationmodel.core.iframeworkview">IFrameworkView</a> interfaces, which are necessary for a Core App. And the <strong>Main</strong> function entry point calls <a href="/uwp/api/windows.applicationmodel.core.coreapplication.run"><strong>CoreApplication.Run</strong></a> to run an instance of that <strong>App</strong> class.</p>
+<p>In terms of the graphics, the code creates a <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm">CanvasSwapChain</a> for the main <a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a>, and draws content into it.</p>
+<p>You can extend the sample app above in any way that you like. For example, this could be a good starting point for a simple 2D game.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="index.html">Overview of Win2D</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/in-a-core-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Quick Accent Utility for Windows PowerToys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Quick Accent Utility for Windows PowerToys ">
+    
+    <meta name="description" content="Learn how to use Quick Accent utility in PowerToys to type accented characters on Windows when your keyboard lacks accent support. Configure settings and activation methods.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="quick-accent-utility">Quick Accent utility</h1>
+
+<p><span class="mx-imgBorder">
+<img src="../images/pt-quick-accent.gif" alt="An animated GIF of Quick Accent utility overlay showing accented character options in PowerToys.">
+</span>
+</p>
+<p>Quick Accent utility provides an alternative way to type accented characters in Windows PowerToys. This tool helps users whose keyboards don't support specific accents with quick key combinations, making it easier to type international characters. The utility is based on <a href="https://github.com/damienleroy/PowerAccent">Damien Leroy's PowerAccent</a>.</p>
+<p>In order to use the Quick Accent utility, open PowerToys Settings, select the <strong>Quick Accent</strong> page, and turn on the <strong>Enable</strong> toggle.</p>
+<h2 id="how-to-activate">How to activate</h2>
+<p>Activate by holding the key for the character you want to add an accent to, then (while held down) press the activation key (Space key or Left / Right arrow keys). If you continue to hold, an overlay to choose the accented character will appear.</p>
+<p>For example: If you want &quot;à&quot;, press and hold <kbd>A</kbd> and press <kbd>Space</kbd>.</p>
+<p>With the dialog enabled, keep pressing your activation key.</p>
+<h2 id="character-sets">Character sets</h2>
+<p>You can limit the available characters by selecting character sets from the settings menu. Available character sets are:</p>
+<ul>
+<li>Catalan</li>
+<li>Currency</li>
+<li>Croatian</li>
+<li>Czech</li>
+<li>Danish</li>
+<li>Gaeilge</li>
+<li>Gàidhlig</li>
+<li>Dutch</li>
+<li>Greek</li>
+<li>Estonian</li>
+<li>Finnish</li>
+<li>French</li>
+<li>German</li>
+<li>Hebrew</li>
+<li>Hungarian</li>
+<li>Icelandic</li>
+<li>Italian</li>
+<li>Kurdish</li>
+<li>Lithuanian</li>
+<li>Macedonian</li>
+<li>Māori</li>
+<li>Norwegian</li>
+<li>Pinyin</li>
+<li>Polish</li>
+<li>Portuguese</li>
+<li>Romanian</li>
+<li>Slovak</li>
+<li>Slovenian</li>
+<li>Spanish</li>
+<li>Serbian</li>
+<li>Serbian Cyrillic</li>
+<li>Swedish</li>
+<li>Turkish</li>
+<li>Vietnamese</li>
+<li>Welsh</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<p>From the Settings menu, the following options can be configured:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation key</td>
+<td style="text-align: left;">Choose <strong>Left/Right Arrow</strong>, <strong>Space</strong> or <strong>Left, Right or Space</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Character set</td>
+<td style="text-align: left;">Show only characters that are in the chosen sets.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Toolbar location</td>
+<td style="text-align: left;">Position of the toolbar.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show the Unicode code and name of the currently selected character</td>
+<td style="text-align: left;">Shows the Unicode code (in hexadecimal) and name of the currently selected character under the selector.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sort characters by usage frequency</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Start selection from the left</td>
+<td style="text-align: left;">Starts the selection from the leftmost character for all activation keys (including Left/Right arrow).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Input delay</td>
+<td style="text-align: left;">The delay in milliseconds before the dialog appears.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Excluded apps</td>
+<td style="text-align: left;">Add an application's name, or part of the name, one per line (e.g. adding <code>Notepad</code> will match both <code>Notepad.exe</code> and <code>Notepad++.exe</code>; to match only <code>Notepad.exe</code> add the <code>.exe</code> extension).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/quick-accent.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

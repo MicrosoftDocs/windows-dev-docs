@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>User interface and input </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="User interface and input ">
+    
+    <meta name="description" content="This article provides an index of development features that are related to creating user interfaces for Windows apps.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="user-interface-and-input">User interface and input</h1>
+
+<p>This article provides an overview of the Windows UI frameworks that are currently maintained by Microsoft and compares their capabilities.</p>
+<p>Microsoft produces both UI frameworks and app platforms. App platforms typically include a UI framework, while UI frameworks are either standalone (not shipped with an app platform) or can be used with multiple app platforms (see <a href="/windows/apps/desktop/#choose-your-app-typechoose-your-app-type">Choose your app platform</a>).</p>
+<p>The frameworks discussed here include WinUI for both Windows App SDK (WinUI 3) and UWP (WinUI 2), Windows Presentation Foundation (WPF), and Windows Forms (WinForms).</p>
+<h2 id="user-interface-fundamentals">User interface fundamentals</h2>
+<p>When building a modern Windows app, you have a selection of UI frameworks to choose from. UI frameworks provide your app with built in controls, styles, animations, input handling, and more.</p>
+<p>There are five main components that go into creating a user interface for your Windows app. These components are usually built into each UI framework.</p>
+<ul>
+<li><p><a href="../design/controls/index.html">Controls</a> and <a href="../design/style/index.md">styles</a></p>
+<ul>
+<li><p>A control is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface.</p>
+<p>Here's an example of a Button control that's available in UWP, WinUI 2, and WinUI 3. When you place this control into your app, it automatically receives the default design that the UI framework provides.</p>
+<p><img src="images/button.png" alt="WinUI button"></p>
+</li>
+<li><p>Styles consist of colors, typography, icons, Fluent materials, and more that can be used throughout your app's design to create a truly unique experience.</p>
+<p>Here's an example of a style component called <a href="../design/style/acrylic.html">Acrylic</a>, available in WinUI 2 and WinUI 3. Acrylic is a brush that you can use on surfaces within your app or as the background of your app. It provides a translucent texture.</p>
+<p><img src="images/Acrylic_LightTheme_Base.png" alt="Acrylic material"></p>
+</li>
+</ul>
+</li>
+<li><p><a href="../design/input/index.html">Input and interaction</a></p>
+<p>End users may interact with your app and provide input to your app (such as selection or typing) through different methods. Some examples of input are:</p>
+<ul>
+<li>Mouse</li>
+<li>Touch</li>
+<li>Gamepad</li>
+<li>Pen</li>
+<li>Keyboard</li>
+<li>Surface Dial</li>
+<li>Touchpad</li>
+<li>Speech</li>
+</ul>
+</li>
+<li><p><a href="../design/devices/index.html">Device support</a></p>
+<p>End users access Windows apps on a variety of devices, and UI frameworks may only support certain ones. Some common devices for Windows apps to run on are:</p>
+<ul>
+<li>PCs (often referred to as &quot;desktop&quot;, but includes laptops as well)</li>
+<li>Tablets</li>
+<li>HoloLens</li>
+<li>Xbox</li>
+<li>Surface Hub</li>
+</ul>
+</li>
+<li><p><a href="../design/motion/index.md">Motion and animation</a></p>
+<p>Built-in animations can really give your app a polished look and feel, and provide consistency with first-party apps throughout Windows.</p>
+<p>An example of a built-in animation in UWP, WinUI 2, and WinUI 3 is the animation that occurs when the end user switches between light and dark mode. When the end user switches modes for their entire PC, the app's UI will automatically update as well with a transition animation.</p>
+</li>
+<li><p><a href="../design/usability/index.html">Usability and accessibility</a></p>
+<p>In order to ensure your app is delightful to use for every single user, you must take accessibility into account.</p>
+<p>UI frameworks provide built-in accessibility to controls and styles with purposeful keyboard behavior, screenreader support and more. Many also provide APIs for accessible actions in custom controls, like interacting with screenreaders.</p>
+</li>
+</ul>
+<h2 id="ui-frameworks">UI frameworks</h2>
+<p>Each UI framework released by Microsoft has unique capabilities, follows different design languages, and provides different experiences to the end user. This section will compare all the main UI frameworks that you'll be choosing from when you begin to build your app.</p>
+<p>The table below shows a brief summary of a few main capabilities between these UI frameworks. For more details on each framework, navigate through the tabs further below.</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Windows App SDK (WinUI 3)</th>
+<th>WinUI 2 for UWP</th>
+<th>WPF</th>
+<th>WinForms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Languages supported</td>
+<td>C#/.NET 6 and later, C++/WinRT</td>
+<td>C#/.NET Native, C++/WinRT, C++/CX, VB</td>
+<td>C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB</td>
+<td>C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB</td>
+</tr>
+<tr>
+<td>Devices supported</td>
+<td>PCs (incl. laptops and tablets), support for all Windows 10 devices coming soon</td>
+<td>All Windows 10 devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more)</td>
+<td>Desktop PCs and laptops</td>
+<td>Desktop PCs and laptops</td>
+</tr>
+<tr>
+<td>Inputs supported</td>
+<td>All Windows 10 inputs supported</td>
+<td>All Windows 10 inputs supported</td>
+<td>Mouse and keyboard</td>
+<td>Mouse and keyboard</td>
+</tr>
+<tr>
+<td>Windows OS version supported</td>
+<td>Windows 10 version 1809 or later</td>
+<td>Windows 10 version 1703 or later</td>
+<td>Windows XP or later</td>
+<td>Windows XP or later</td>
+</tr>
+<tr>
+<td>WebView support</td>
+<td>Chromium-based WebView2</td>
+<td>Non-chromium WebView</td>
+<td>WebView2 support coming soon</td>
+<td>WebView2 support coming soon</td>
+</tr>
+<tr>
+<td>Open Source</td>
+<td>Coming soon</td>
+<td>Yes</td>
+<td>Yes (.NET 6 and later only)</td>
+<td>Yes (.NET 6 and later only)</td>
+</tr>
+</tbody>
+</table>
+<p>For more information about each of these UI frameworks, see the information on the following tabs.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_winui-3" role="tab" aria-controls="tabpanel_1_winui-3" data-tab="winui-3" tabindex="0" aria-selected="true">Windows App SDK (WinUI 3)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_winui-2" role="tab" aria-controls="tabpanel_1_winui-2" data-tab="winui-2" tabindex="-1">WinUI 2 for UWP</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_wpf" role="tab" aria-controls="tabpanel_1_wpf" data-tab="wpf" tabindex="-1">WPF</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_winforms" role="tab" aria-controls="tabpanel_1_winforms" data-tab="winforms" tabindex="-1">Windows Forms</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_other" role="tab" aria-controls="tabpanel_1_other" data-tab="other" tabindex="-1">Other</a>
+</li>
+</ul>
+<section id="tabpanel_1_winui-3" role="tabpanel" data-tab="winui-3">
+<h3 id="windows-app-sdk-winui-3-1">Windows App SDK (WinUI 3)</h3>
+<p>For most new Windows apps, we recommend WinUI with the Windows App SDK (WinUI 3) to build your user interface. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.</p>
+<p>WinUI 3 is completely decoupled from the Windows OS and ships as a part of the Windows App SDK, which is a set of tools and components that represent the next evolution in the Windows app development platform.</p>
+<p>WinUI 3 is the latest generation of WinUI. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see <a href="../winui/index.html">Comparison of WinUI 2 and WinUI 3</a>).</p>
+<h4 id="key-app-scenarios-enabled-by-winui-3">Key app scenarios enabled by WinUI 3</h4>
+<ul>
+<li>Modern Windows apps that need to run on a variety of modern devices, with a range of modern inputs</li>
+<li>Desktop/Win32 apps that are written in C++</li>
+<li>Graphics-heavy apps or games that want to take advantage of DirectX and Win2D</li>
+<li>Apps with a lot of integrated web content that need high-performance</li>
+<li>Apps that seek to provide experiences that &quot;fit right in&quot; on the Windows OS and with other first party Windows apps</li>
+</ul>
+<h4 id="helpful-documentation-for-winui-3">Helpful documentation for WinUI 3</h4>
+<ul>
+<li>Overview: <a href="../winui/winui3/index.html">WinUI 3</a></li>
+<li>Get started: <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li>Writing XAML: <a href="/windows/uwp/xaml-platform">XAML Platform</a></li>
+<li>API Reference: <a href="/windows/winui/api">WinUI API Reference</a></li>
+<li>Controls: <a href="../design/controls/index.html">Controls overview</a></li>
+<li>Input: <a href="../design/input/index.html">Input and interactions</a></li>
+<li>Motion: <a href="../design/motion/index.md">Motion for Windows apps</a></li>
+<li>Accessibility: <a href="../design/usability/index.html">Usability for Windows apps</a></li>
+<li>Samples: <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">WinUI 3 Gallery app</a></li>
+</ul>
+</section>
+<section id="tabpanel_1_winui-2" role="tabpanel" data-tab="winui-2" aria-hidden="true" hidden="hidden">
+<h3 id="winui-2-for-uwp-1">WinUI 2 for UWP</h3>
+<p>For most UWP apps, we recommend using WinUI 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.</p>
+<p>WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see <a href="../winui/index.html">Comparison of WinUI 2 and WinUI 3</a>).</p>
+<h4 id="key-app-scenarios-enabled-by-winui-2">Key app scenarios enabled by WinUI 2</h4>
+<ul>
+<li>UWP apps that are looking to work downlevel to all versions of Windows 10 and Windows 11</li>
+<li>Graphic-heavy apps or games that want to take advantage of DirectX and Win2D</li>
+<li>UWP apps that need to run on a variety of modern devices, with a range of modern inputs</li>
+<li>Apps that seek to provide experiences that &quot;fit right in&quot; on the Windows OS and with other first party Windows apps</li>
+</ul>
+<h4 id="helpful-documentation-for-winui-2">Helpful documentation for WinUI 2</h4>
+<ul>
+<li>Overview: <a href="/windows/uwp/get-started/winui2/">WinUI 2</a></li>
+<li>Get started: <a href="/windows/uwp/get-started/winui2/getting-started">Get started with WinUI 2 for UWP</a></li>
+<li>Writing XAML: <a href="/windows/uwp/xaml-platform">XAML Platform</a></li>
+<li>API Reference: <a href="/windows/winui/api">WinUI API Reference</a></li>
+<li>Controls: <a href="../design/controls/index.html">Controls overview</a></li>
+<li>Input: <a href="../design/input/index.html">Input and interactions</a></li>
+<li>Motion: <a href="../design/motion/index.md">Motion for Windows apps</a></li>
+<li>Accessibility: <a href="../design/usability/index.html">Usability for Windows apps</a></li>
+<li>Samples: <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">WinUI 2 Gallery app</a></li>
+</ul>
+</section>
+<section id="tabpanel_1_wpf" role="tabpanel" data-tab="wpf" aria-hidden="true" hidden="hidden">
+<h3 id="wpf-1">WPF</h3>
+<p>The Windows Presentation Framework (WPF) is an app model for building desktop apps with .NET 6 (and later) or .NET framework. It's an <a href="https://github.com/dotnet/wpf">open source platform</a> that is maintained by both the Windows and .NET teams.</p>
+<p>The UI framework that ships within WPF provides controls, styles, and capabilities that are supported downlevel through Windows XP.</p>
+<h4 id="key-app-scenarios-enabled-by-wpf">Key app scenarios enabled by WPF</h4>
+<ul>
+<li>Apps that need to run downlevel to versions of Windows preceding Windows 10</li>
+<li>Apps that solely run on PCs, and don't require a variety of inputs such as touch</li>
+<li>Apps that are in need of more complex, built in controls: WPF has the largest set of built-in controls available for Windows development</li>
+</ul>
+<h4 id="helpful-documentation-for-wpf">Helpful documentation for WPF</h4>
+<ul>
+<li>Overview: <a href="/dotnet/desktop/wpf/overview">Desktop Guide (WPF .NET)</a></li>
+<li>Get started: <a href="/dotnet/desktop/wpf/get-started/create-app-visual-studio">Tutorial: Create a new WPF app</a></li>
+<li>Writing XAML: <a href="/dotnet/desktop/wpf/xaml">XAML Overview (WPF .NET)</a></li>
+<li>API Reference: <a href="/dotnet/api">.NET API Reference</a></li>
+<li>Controls: <a href="/dotnet/framework/wpf/controls/">Controls (WPF)</a></li>
+<li>Input: <a href="/dotnet/framework/wpf/advanced/input-wpf">Input (WPF)</a></li>
+<li>Motion: <a href="/dotnet/desktop/wpf/graphics-multimedia/animation-overview">Animation overview</a></li>
+<li>Accessibility: <a href="/dotnet/framework/ui-automation/accessibility-best-practices">Accessibility best practices</a></li>
+<li>Samples: <a href="https://github.com/microsoft/WPF-Samples">WPF Samples GitHub repo</a></li>
+</ul>
+</section>
+<section id="tabpanel_1_winforms" role="tabpanel" data-tab="winforms" aria-hidden="true" hidden="hidden">
+<h3 id="windows-forms-1">Windows Forms</h3>
+<p>Windows Forms provides a unique built-in Visual Studio Designer for building desktop .NET apps. With the Designer, you build your user interface by dragging and dropping the built-in controls directly onto your app's UI.</p>
+<p>Windows Forms is an <a href="https://github.com/dotnet/winforms">open source project</a>.</p>
+<p>Note that Windows Forms does not have animations built in, unlike the other UI frameworks mentioned in this article. It also does not support XAML markup - you must use either the Designer or code to create your app's UI.</p>
+<h4 id="key-app-scenarios-enabled-by-windows-forms">Key app scenarios enabled by Windows Forms</h4>
+<ul>
+<li>Developers or designers who want to build apps without knowing or writing XAML</li>
+<li>Apps that need to run downlevel to versions of Windows preceding Windows 10</li>
+<li>Apps that solely run on PCs, and don't require a variety of inputs such as touch</li>
+<li>Apps that aren't seeking to create custom controls or highly custom UI</li>
+</ul>
+<h4 id="helpful-documentation-for-windows-forms">Helpful documentation for Windows Forms</h4>
+<ul>
+<li>Overview: <a href="/dotnet/desktop/winforms/overview/">Desktop Guide (Windows Forms .NET)</a></li>
+<li>Get started: <a href="/dotnet/desktop/winforms/get-started/create-app-visual-studio">Tutorial: Create a new WinForms app (Windows Forms .NET)</a></li>
+<li>API Reference: <a href="/dotnet/api">.NET API Reference</a></li>
+<li>Controls: <a href="/dotnet/desktop/winforms/controls/overview">Overview of using controls (Windows Forms .NET)</a></li>
+<li>Input: <a href="/dotnet/framework/winforms/user-input-in-windows-forms">User input (Windows Forms)</a></li>
+<li>Accessibility: <a href="/dotnet/desktop/winforms/advanced/windows-forms-accessibility">Windows Forms Accessibility</a></li>
+<li>Samples: <a href="https://github.com/dotnet/samples/tree/main/windowsforms">Winforms Samples GitHub repo</a></li>
+</ul>
+</section>
+<section id="tabpanel_1_other" role="tabpanel" data-tab="other" aria-hidden="true" hidden="hidden">
+<h3 id="other-1">Other</h3>
+<p>There are a few UI frameworks that haven't been discussed in this article, including Win32/ComCtl32 and MFC. While these UI frameworks are still available for use, they are not regularly maintained and don't meet the same accessibility and design standards that Windows provides today. It's recommended that you use a more modern framework when creating new Windows apps.</p>
+<p>If you'd like to learn about modernizing an app that's using an older UI framework, see <a href="../desktop/modernize/index.html">Modernize your desktop apps</a>.</p>
+<p>For more information on these UI frameworks, see the following documentation:</p>
+<ul>
+<li><a href="/cpp/mfc/mfc-desktop-applications?view=msvc-160&amp;preserve-view=true">MFC Overview</a></li>
+<li><a href="/windows/win32/appuistart/getting-started-developing-user-interfaces-portal">Win32/ComCtl32</a></li>
+</ul>
+</section>
+</div>
+<!--
+## User interface fundamentals
+
+For information about the fundamentals of building user interfaces for Windows apps, see the following articles.
+
+* WinRT APIs: [Layout](/windows/uwp/design/layout/), [Style](/windows/uwp/design/style/), [Motion](/windows/uwp/design/motion/), [Visual layer](/windows/uwp/composition/visual-layer), [XAML platform](/windows/uwp/xaml-platform/)
+* Win32 APIs: [Desktop user interface](/windows/win32/windows-application-ui-development), [Desktop environment and shell](/windows/win32/user-interface), [UWP Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md), [Windows and messages](/windows/win32/winmsg/windowing), [Menus and other resources](/windows/win32/menurc/resources), [High DPI](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows)
+* .NET APIs: [Windows in WPF](/dotnet/framework/wpf/app-development/windows-in-wpf-applications), [Create a Windows Form](/dotnet/framework/winforms/creating-a-new-windows-form), [Navigation overview](/dotnet/framework/wpf/app-development/navigation-overview), [XAML in WPF](/dotnet/framework/wpf/advanced/xaml-in-wpf), [Visual layer programming](/dotnet/framework/wpf/graphics-multimedia/visual-layer-programming)
+
+## Controls
+
+For information about using controls in Windows apps, see the following articles.
+
+* WinRT APIs: [Controls](/windows/uwp/design/controls-and-patterns/), [Intro to controls and patterns](/windows/uwp/design/controls-and-patterns/controls-and-events-intro), [Forms](/windows/uwp/design/controls-and-patterns/forms)
+* Win32 APIs: [Windows controls](/windows/win32/controls/window-controls), [UWP controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md)
+* .NET APIs: [Controls (WPF)](/dotnet/framework/wpf/controls/), [Controls (Windows Forms)](/dotnet/framework/winforms/controls/)
+
+## Input
+
+For information about handing user input in Windows apps, see the following articles.
+
+* WinRT APIs: [Input](/windows/uwp/design/input/)
+* Win32 APIs: [Windows and messages](/windows/win32/winmsg/windowing), [User interaction](/windows/win32/user-interaction)
+* .NET APIs: [Input (WPF)](/dotnet/framework/wpf/advanced/input-wpf), [User input (Windows Forms)](/dotnet/framework/winforms/user-input-in-windows-forms)
+-->
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/user-interface.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

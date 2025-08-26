@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Keyboard events </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Keyboard events ">
+    
+    <meta name="description" content="Respond to keystroke actions from hardware or software keyboards in your apps using both keyboard and class event handlers.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="keyboard-events">Keyboard events</h1>
+
+<h2 id="keyboard-events-and-focus">Keyboard events and focus</h2>
+<p>The following keyboard events can occur for both hardware and touch keyboards.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a></td>
+<td>Occurs when a key is pressed.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a></td>
+<td>Occurs when a key is released.</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Some XAML controls handle input events internally. In these cases, it might appear that an input event doesn't occur because your event listener doesn't invoke the associated handler. Typically, this subset of keys is processed by the class handler to provide built in support of basic keyboard accessibility. For example, the <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a> class overrides the <a href="/uwp/api/windows.ui.xaml.controls.control.onkeydown"><strong>OnKeyDown</strong></a> events for both the Space key and the Enter key (as well as <a href="/uwp/api/windows.ui.xaml.controls.control.onpointerpressed"><strong>OnPointerPressed</strong></a>) and routes them to the <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click"><strong>Click</strong></a> event of the control. When a key press is handled by the control class, the <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> events are not raised.<br>
+This provides a built-in keyboard equivalent for invoking the button, similar to tapping it with a finger or clicking it with a mouse. Keys other than Space or Enter still fire <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> events. For more info about how class-based handling of events works (specifically, the &quot;Input event handlers in controls&quot; section), see <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a>.</p>
+</div>
+<p>Controls in your UI generate keyboard events only when they have input focus. An individual control gains focus when the user clicks or taps directly on that control in the layout, or uses the Tab key to step into a tab sequence within the content area.</p>
+<p>You can also call a control's <a href="/uwp/api/windows.ui.xaml.controls.control.focus"><strong>Focus</strong></a> method to force focus. This is necessary when you implement shortcut keys, because keyboard focus is not set by default when your UI loads. For more info, see the <strong>Shortcut keys example</strong> later in this topic.</p>
+<p>For a control to receive input focus, it must be enabled, visible, and have <a href="/uwp/api/windows.ui.xaml.controls.control.istabstop"><strong>IsTabStop</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.ishittestvisible"><strong>HitTestVisible</strong></a> property values of <strong>true</strong>. This is the default state for most controls. When a control has input focus, it can raise and respond to keyboard input events as described later in this topic. You can also respond to a control that is receiving or losing focus by handling the <a href="/uwp/api/windows.ui.xaml.uielement.gotfocus"><strong>GotFocus</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.lostfocus"><strong>LostFocus</strong></a> events.</p>
+<p>By default, the tab sequence of controls is the order in which they appear in the Extensible Application Markup Language (XAML). However, you can modify this order by using the <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> property. For more info, see <a href="/previous-versions/windows/apps/hh868161(v=win.10)">Implementing keyboard accessibility</a>.</p>
+<h2 id="keyboard-event-handlers">Keyboard event handlers</h2>
+<p>An input event handler implements a delegate that provides the following information:</p>
+<ul>
+<li>The sender of the event. The sender reports the object where the event handler is attached.</li>
+<li>Event data. For keyboard events, that data will be an instance of <a href="/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs"><strong>KeyRoutedEventArgs</strong></a>. The delegate for handlers is <a href="/uwp/api/windows.ui.xaml.input.keyeventhandler"><strong>KeyEventHandler</strong></a>. The most relevant properties of <strong>KeyRoutedEventArgs</strong> for most handler scenarios are <a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key"><strong>Key</strong></a> and possibly <a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus"><strong>KeyStatus</strong></a>.</li>
+<li><a href="/uwp/api/windows.ui.xaml.routedeventargs.originalsource"><strong>OriginalSource</strong></a>. Because the keyboard events are routed events, the event data provides <strong>OriginalSource</strong>. If you deliberately allow events to bubble up through an object tree, <strong>OriginalSource</strong> is sometimes the object of concern rather than sender. However, that depends on your design. For more information about how you might use <strong>OriginalSource</strong> rather than sender, see the &quot;Keyboard Routed Events&quot; section of this topic, or <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a>.</li>
+</ul>
+<h3 id="attaching-a-keyboard-event-handler">Attaching a keyboard event handler</h3>
+<p>You can attach keyboard event-handler functions for any object that includes the event as a member. This includes any <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> derived class. The following XAML example shows how to attach handlers for the <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> event for a <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a>.</p>
+<pre><code class="lang-xaml">&lt;Grid KeyUp=&quot;Grid_KeyUp&quot;&gt;
+  ...
+&lt;/Grid&gt;
+</code></pre>
+<p>You can also attach an event handler in code. For more info, see <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a>.</p>
+<h3 id="defining-a-keyboard-event-handler">Defining a keyboard event handler</h3>
+<p>The following example shows the incomplete event handler definition for the <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> event handler that was attached in the preceding example.</p>
+<pre><code class="lang-csharp">void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
+{
+    //handling code here
+}
+</code></pre>
+<pre><code class="lang-vb">Private Sub Grid_KeyUp(ByVal sender As Object, ByVal e As KeyRoutedEventArgs)
+    ' handling code here
+End Sub
+</code></pre>
+<pre><code class="lang-c++">void MyProject::MainPage::Grid_KeyUp(
+  Platform::Object^ sender,
+  Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
+  {
+      //handling code here
+  }
+</code></pre>
+<h3 id="using-keyroutedeventargs">Using KeyRoutedEventArgs</h3>
+<p>All keyboard events use <a href="/uwp/api/Windows.UI.Xaml.Input.KeyRoutedEventArgs"><strong>KeyRoutedEventArgs</strong></a> for event data, and <strong>KeyRoutedEventArgs</strong> contains the following properties:</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key"><strong>Key</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.keystatus"><strong>KeyStatus</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled"><strong>Handled</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.routedeventargs.originalsource"><strong>OriginalSource</strong></a> (inherited from <a href="/uwp/api/Windows.UI.Xaml.RoutedEventArgs"><strong>RoutedEventArgs</strong></a>)</li>
+</ul>
+<h3 id="virtual-keys">Virtual keys</h3>
+<p>The <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> event is raised if a key is pressed. Likewise, <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> is raised if a key is released. Usually, you listen to the events to process a specific key value. To determine which key is pressed or released, check the <a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.key"><strong>Key</strong></a> value in the event data. <strong>Key</strong> returns a <a href="/uwp/api/Windows.System.VirtualKey"><strong>VirtualKey</strong></a> value. The <strong>VirtualKey</strong> enumeration includes all the supported keys.</p>
+<h3 id="modifier-keys">Modifier keys</h3>
+<p>Modifier keys are keys such as Ctrl or Shift that users typically press in combination with other keys. Your app can use these combinations as custom keyboard shortcuts to invoke app commands.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For built-in keyboard shortcuts, see <a href="access-keys.html">Access keys</a> and <a href="keyboard-accelerators.html">Keyboard accelerators</a>.</p>
+</div>
+<p>You can detect shortcut key combinations in the <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> event handlers. When a keyboard event occurs for a non-modifier key, you can then check whether a modifier key is in the pressed state.</p>
+<p>Alternatively, the <a href="/uwp/api/windows.ui.core.corewindow.getkeystate"><strong>GetKeyState()</strong></a> function of the <a href="/uwp/api/windows.ui.core.corewindow"><strong>CoreWindow</strong></a> (obtained through <a href="/uwp/api/windows.ui.core.corewindow.getforcurrentthread"><strong>CoreWindow.GetForCurrentThread()</strong></a>) can also be used to check modifier state when a non-modifier key is pressed.</p>
+<p>The following examples implement this second method while also including stub code for the first implementation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Alt key is represented by the <strong>VirtualKey.Menu</strong> value.</p>
+</div>
+<h3 id="shortcut-keys-example">Shortcut keys example</h3>
+<p>The following example demonstrates how to implement a set of custom shortcut keys. In this example, users can control media playback using Play, Pause, and Stop buttons or Ctrl+P, Ctrl+A, and Ctrl+S keyboard shortcuts. The button XAML shows the shortcuts by using tooltips and <a href="/uwp/api/Windows.UI.Xaml.Automation.AutomationProperties"><strong>AutomationProperties</strong></a> properties in the button labels. This self-documentation is important to increase the usability and accessibility of your app. For more info, see <a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a>.</p>
+<p>Note also that the page sets input focus to itself when it is loaded. Without this step, no control has initial input focus, and the app does not raise input events until the user sets the input focus manually (for example, by tabbing to or clicking a control).</p>
+<pre><code class="lang-xaml">&lt;Grid KeyDown=&quot;Grid_KeyDown&quot;&gt;
+
+  &lt;Grid.RowDefinitions&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+  &lt;/Grid.RowDefinitions&gt;
+
+  &lt;MediaElement x:Name=&quot;DemoMovie&quot; Source=&quot;xbox.wmv&quot;
+    Width=&quot;500&quot; Height=&quot;500&quot; Margin=&quot;20&quot; HorizontalAlignment=&quot;Center&quot; /&gt;
+
+  &lt;StackPanel Grid.Row=&quot;1&quot; Margin=&quot;10&quot;
+    Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+
+    &lt;Button x:Name=&quot;PlayButton&quot; Click=&quot;MediaButton_Click&quot;
+      ToolTipService.ToolTip=&quot;Shortcut key: Ctrl+P&quot;
+      AutomationProperties.AcceleratorKey=&quot;Control P&quot;&gt;
+      &lt;TextBlock&gt;Play&lt;/TextBlock&gt;
+    &lt;/Button&gt;
+
+    &lt;Button x:Name=&quot;PauseButton&quot; Click=&quot;MediaButton_Click&quot;
+      ToolTipService.ToolTip=&quot;Shortcut key: Ctrl+A&quot;
+      AutomationProperties.AcceleratorKey=&quot;Control A&quot;&gt;
+      &lt;TextBlock&gt;Pause&lt;/TextBlock&gt;
+    &lt;/Button&gt;
+
+    &lt;Button x:Name=&quot;StopButton&quot; Click=&quot;MediaButton_Click&quot;
+      ToolTipService.ToolTip=&quot;Shortcut key: Ctrl+S&quot;
+      AutomationProperties.AcceleratorKey=&quot;Control S&quot;&gt;
+      &lt;TextBlock&gt;Stop&lt;/TextBlock&gt;
+    &lt;/Button&gt;
+
+  &lt;/StackPanel&gt;
+
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-c++">//showing implementations but not header definitions
+void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
+{
+    (void) e;    // Unused parameter
+    this-&gt;Loaded+=ref new RoutedEventHandler(this,&amp;amp;MainPage::ProgrammaticFocus);
+}
+void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) 
+{
+    this-&gt;Focus(Windows::UI::Xaml::FocusState::Programmatic);
+}
+
+void KeyboardSupport::MainPage::MediaButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    FrameworkElement^ fe = safe_cast&lt;FrameworkElement^&gt;(sender);
+    if (fe-&gt;Name == &quot;PlayButton&quot;) {DemoMovie-&gt;Play();}
+    if (fe-&gt;Name == &quot;PauseButton&quot;) {DemoMovie-&gt;Pause();}
+    if (fe-&gt;Name == &quot;StopButton&quot;) {DemoMovie-&gt;Stop();}
+}
+
+
+bool KeyboardSupport::MainPage::IsCtrlKeyPressed()
+{
+    auto ctrlState = CoreWindow::GetForCurrentThread()-&gt;GetKeyState(VirtualKey::Control);
+    return (ctrlState &amp; CoreVirtualKeyStates::Down) == CoreVirtualKeyStates::Down;
+}
+
+void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
+{
+    if (e-&gt;Key == VirtualKey::Control) isCtrlKeyPressed = true;
+}
+
+
+void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
+{
+    if (IsCtrlKeyPressed()) 
+    {
+        if (e-&gt;Key==VirtualKey::P) { DemoMovie-&gt;Play(); }
+        if (e-&gt;Key==VirtualKey::A) { DemoMovie-&gt;Pause(); }
+        if (e-&gt;Key==VirtualKey::S) { DemoMovie-&gt;Stop(); }
+    }
+}
+</code></pre>
+<pre><code class="lang-csharp">protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    // Set the input focus to ensure that keyboard events are raised.
+    this.Loaded += delegate { this.Focus(FocusState.Programmatic); };
+}
+
+private void MediaButton_Click(object sender, RoutedEventArgs e)
+{
+    switch ((sender as Button).Name)
+    {
+        case &quot;PlayButton&quot;: DemoMovie.Play(); break;
+        case &quot;PauseButton&quot;: DemoMovie.Pause(); break;
+        case &quot;StopButton&quot;: DemoMovie.Stop(); break;
+    }
+}
+
+private static bool IsCtrlKeyPressed()
+{
+    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
+    return (ctrlState &amp; CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
+}
+
+private void Grid_KeyDown(object sender, KeyRoutedEventArgs e)
+{
+    if (IsCtrlKeyPressed())
+    {
+        switch (e.Key)
+        {
+            case VirtualKey.P: DemoMovie.Play(); break;
+            case VirtualKey.A: DemoMovie.Pause(); break;
+            case VirtualKey.S: DemoMovie.Stop(); break;
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-VisualBasic">Private isCtrlKeyPressed As Boolean
+Protected Overrides Sub OnNavigatedTo(e As Navigation.NavigationEventArgs)
+
+End Sub
+
+Private Function IsCtrlKeyPressed As Boolean
+    Dim ctrlState As CoreVirtualKeyStates = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
+    Return (ctrlState &amp; CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
+End Function
+
+Private Sub Grid_KeyDown(sender As Object, e As KeyRoutedEventArgs)
+    If IsCtrlKeyPressed() Then
+        Select Case e.Key
+            Case Windows.System.VirtualKey.P
+                DemoMovie.Play()
+            Case Windows.System.VirtualKey.A
+                DemoMovie.Pause()
+            Case Windows.System.VirtualKey.S
+                DemoMovie.Stop()
+        End Select
+    End If
+End Sub
+
+Private Sub MediaButton_Click(sender As Object, e As RoutedEventArgs)
+    Dim fe As FrameworkElement = CType(sender, FrameworkElement)
+    Select Case fe.Name
+        Case &quot;PlayButton&quot;
+            DemoMovie.Play()
+        Case &quot;PauseButton&quot;
+            DemoMovie.Pause()
+        Case &quot;StopButton&quot;
+            DemoMovie.Stop()
+    End Select
+End Sub
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Setting <a href="/dotnet/api/system.windows.automation.automationproperties.acceleratorkey"><strong>AutomationProperties.AcceleratorKey</strong></a> or <a href="/dotnet/api/system.windows.automation.automationproperties.accesskey"><strong>AutomationProperties.AccessKey</strong></a> in XAML provides string information, which documents the shortcut key for invoking that particular action. The information is captured by Microsoft UI Automation clients such as Narrator, and is typically provided directly to the user.</p>
+<p>Setting <strong>AutomationProperties.AcceleratorKey</strong> or <strong>AutomationProperties.AccessKey</strong> does not have any action on its own. You will still need to attach handlers for <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> or <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> events in order to actually implement the keyboard shortcut behavior in your app. Also, the underline text decoration for an access key is not provided automatically. You must explicitly underline the text for the specific key in your mnemonic as inline <a href="/uwp/api/Windows.UI.Xaml.Documents.Underline"><strong>Underline</strong></a> formatting if you wish to show underlined text in the UI.</p>
+</div>
+<p></p>
+<h2 id="keyboard-routed-events">Keyboard routed events</h2>
+<p>Certain events are routed events, including <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a>. Routed events use the bubbling routing strategy. The bubbling routing strategy means that an event originates from a child object and is then routed up to successive parent objects in the object tree. This presents another opportunity to handle the same event and interact with the same event data.</p>
+<p>Consider the following XAML example, which handles <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> events for a <a href="/uwp/api/Windows.UI.Xaml.Controls.Canvas"><strong>Canvas</strong></a> and two <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a> objects. In this case, if you release a key while focus is held by either <strong>Button</strong> object, it raises the <strong>KeyUp</strong> event. The event is then bubbled up to the parent <strong>Canvas</strong>.</p>
+<pre><code class="lang-xaml">&lt;StackPanel KeyUp=&quot;StackPanel_KeyUp&quot;&gt;
+  &lt;Button Name=&quot;ButtonA&quot; Content=&quot;Button A&quot;/&gt;
+  &lt;Button Name=&quot;ButtonB&quot; Content=&quot;Button B&quot;/&gt;
+  &lt;TextBlock Name=&quot;statusTextBlock&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>The following example shows how to implement the <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> event handler for the corresponding XAML content in the preceding example.</p>
+<pre><code class="lang-csharp">void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
+{
+    statusTextBlock.Text = String.Format(
+        &quot;The key {0} was pressed while focus was on {1}&quot;,
+        e.Key.ToString(), (e.OriginalSource as FrameworkElement).Name);
+}
+</code></pre>
+<p>Notice the use of the <a href="/uwp/api/windows.ui.xaml.routedeventargs.originalsource"><strong>OriginalSource</strong></a> property in the preceding handler. Here, <strong>OriginalSource</strong> reports the object that raised the event. The object could not be the <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel"><strong>StackPanel</strong></a> because the <strong>StackPanel</strong> is not a control and cannot have focus. Only one of the two buttons within the <strong>StackPanel</strong> could possibly have raised the event, but which one? You use <strong>OriginalSource</strong> to distinguish the actual event source object, if you are handling the event on a parent object.</p>
+<h3 id="the-handled-property-in-event-data">The Handled property in event data</h3>
+<p>Depending on your event handling strategy, you might want only one event handler to react to a bubbling event. For instance, if you have a specific <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> handler attached to one of the <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a> controls, it would have the first opportunity to handle that event. In this case, you might not want the parent panel to also handle the event. For this scenario, you can use the <a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled"><strong>Handled</strong></a> property in the event data.</p>
+<p>The purpose of the <a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled"><strong>Handled</strong></a> property in a routed event data class is to report that another handler you registered earlier on the event route has already acted. This influences the behavior of the routed event system. When you set <strong>Handled</strong> to <strong>true</strong> in an event handler, that event stops routing and is not sent to successive parent elements.</p>
+<h3 id="addhandler-and-already-handled-keyboard-events">AddHandler and already-handled keyboard events</h3>
+<p>You can use a special technique for attaching handlers that can act on events that you already marked as handled. This technique uses the <a href="/uwp/api/windows.ui.xaml.uielement.addhandler"><strong>AddHandler</strong></a> method to register a handler, rather than using XAML attributes or language-specific syntax for adding handlers, such as += in C#.</p>
+<p>A general limitation of this technique is that the <strong>AddHandler</strong> API takes a parameter of type <a href="/uwp/api/Windows.UI.Xaml.RoutedEvent"><strong>RoutedEvent</strong></a> identifying the routed event in question. Not all routed events provide a <strong>RoutedEvent</strong> identifier, and this consideration thus affects which routed events can still be handled in the <a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled"><strong>Handled</strong></a> case. The <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> events have routed event identifiers (<a href="/uwp/api/windows.ui.xaml.uielement.keydownevent"><strong>KeyDownEvent</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keyupevent"><strong>KeyUpEvent</strong></a>) on <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a>. However, other events such as <a href="/uwp/api/windows.ui.xaml.controls.textbox.textchanged"><strong>TextBox.TextChanged</strong></a> do not have routed event identifiers and thus cannot be used with the <strong>AddHandler</strong> technique.</p>
+<h3 id="overriding-keyboard-events-and-behavior">Overriding keyboard events and behavior</h3>
+<p>You can override key events for specific controls (such as <a href="/uwp/api/Windows.UI.Xaml.Controls.GridView"><strong>GridView</strong></a>) to provide consistent focus navigation for various input devices, including keyboard and gamepad.</p>
+<p>In the following example, we subclass the control and override the KeyDown behavior to move focus to the GridView content when any arrow key is pressed.</p>
+<pre><code class="lang-csharp">  public class CustomGridView : GridView
+  {
+    protected override void OnKeyDown(KeyRoutedEventArgs e)
+    {
+      // Override arrow key behaviors.
+      if (e.Key != Windows.System.VirtualKey.Left &amp;&amp; e.Key !=
+        Windows.System.VirtualKey.Right &amp;&amp; e.Key !=
+          Windows.System.VirtualKey.Down &amp;&amp; e.Key !=
+            Windows.System.VirtualKey.Up)
+              base.OnKeyDown(e);
+      else
+        FocusManager.TryMoveFocus(FocusNavigationDirection.Down);
+    }
+  }
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If using a GridView for layout only, consider using other controls such as <a href="/uwp/api/Windows.UI.Xaml.Controls.ItemsControl"><strong>ItemsControl</strong></a> with <a href="/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid"><strong>ItemsWrapGrid</strong></a>.</p>
+</div>
+<h2 id="commanding">Commanding</h2>
+<p>A small number of UI elements provide built-in support for commanding. Commanding uses input-related routed events in its underlying implementation. It enables processing of related UI input, such as a certain pointer action or a specific accelerator key, by invoking a single command handler.</p>
+<p>If commanding is available for a UI element, consider using its commanding APIs instead of any discrete input events. For more info, see <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command"><strong>ButtonBase.Command</strong></a>.</p>
+<p>You can also implement <a href="/uwp/api/Windows.UI.Xaml.Input.ICommand"><strong>ICommand</strong></a> to encapsulate command functionality that you invoke from ordinary event handlers. This enables you to use commanding even when there is no <strong>Command</strong> property available.</p>
+<h2 id="text-input-and-controls">Text input and controls</h2>
+<p>Certain controls react to keyboard events with their own handling. For instance, <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a> is a control that is designed to capture and then visually represent text that was entered by using the keyboard. It uses <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> in its own logic to capture keystrokes, then also raises its own <a href="/uwp/api/windows.ui.xaml.controls.textbox.textchanged"><strong>TextChanged</strong></a> event if the text actually changed.</p>
+<p>You can still generally add handlers for <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> to a <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a>, or any related control that is intended to process text input. However, as part of its intended design, a control might not respond to all key values that are directed to it through key events. Behavior is specific to each control.</p>
+<p>As an example, <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.ButtonBase"><strong>ButtonBase</strong></a> (the base class for <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a>) processes <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> so that it can check for the Spacebar or Enter key. <strong>ButtonBase</strong> considers <strong>KeyUp</strong> equivalent to a mouse left button down for purposes of raising a <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click"><strong>Click</strong></a> event. This processing of the event is accomplished when <strong>ButtonBase</strong> overrides the virtual method <a href="/uwp/api/windows.ui.xaml.controls.control.onkeyup"><strong>OnKeyUp</strong></a>. In its implementation, it sets <a href="/uwp/api/windows.ui.xaml.input.keyroutedeventargs.handled"><strong>Handled</strong></a> to <strong>true</strong>. The result is that any parent of a button that is listening for a key event, in the case of a Spacebar, would not receive the already-handled event for its own handlers.</p>
+<p>Another example is <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a>. Some keys, such as the arrow keys, are not considered text by <strong>TextBox</strong> and are instead considered specific to the control UI behavior. The <strong>TextBox</strong> marks these event cases as handled.</p>
+<p>Custom controls can implement their own similar override behavior for key events by overriding <a href="/uwp/api/windows.ui.xaml.controls.control.onkeydown"><strong>OnKeyDown</strong></a> / <a href="/uwp/api/windows.ui.xaml.controls.control.onkeyup"><strong>OnKeyUp</strong></a>. If your custom control processes specific accelerator keys, or has control or focus behavior that is similar to the scenario described for <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a>, you should place this logic in your own <strong>OnKeyDown</strong> / <strong>OnKeyUp</strong> overrides.</p>
+<h2 id="the-touch-keyboard">The touch keyboard</h2>
+<p>Text input controls provide automatic support for the touch keyboard. When the user sets the input focus to a text control by using touch input, the touch keyboard appears automatically. When the input focus is not on a text control, the touch keyboard is hidden.</p>
+<p>When the touch keyboard appears, it automatically repositions your UI to ensure that the focused element remains visible. This can cause other important areas of your UI to move off screen. However, you can disable the default behavior and make your own UI adjustments when the touch keyboard appears. For more info, see the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard">Touch keyboard sample</a>.</p>
+<p>If you create a custom control that requires text input, but does not derive from a standard text input control, you can add touch keyboard support by implementing the correct UI Automation control patterns. For more info, see the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard">Touch keyboard sample</a>.</p>
+<p>Key presses on the touch keyboard raise <a href="/uwp/api/windows.ui.xaml.uielement.keydown"><strong>KeyDown</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.keyup"><strong>KeyUp</strong></a> events just like key presses on hardware keyboards. However, the touch keyboard will not raise input events for Ctrl+A, Ctrl+Z, Ctrl+X, Ctrl+C, and Ctrl+V, which are reserved for text manipulation in the input control.</p>
+<p>You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint at the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type. For example, if a text box is used only to enter a 4-digit PIN, set the <a href="/uwp/api/windows.ui.xaml.controls.textbox.inputscope"><strong>InputScope</strong></a> property to <a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue"><strong>Number</strong></a>. This tells the system to show the numeric keypad layout, which makes it easier for the user to enter the PIN. For more detail, see <a href="use-input-scope-to-change-the-touch-keyboard.html">Use input scope to change the touch keyboard</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<h3 id="developers">Developers</h3>
+<ul>
+<li><a href="keyboard-interactions.html">Keyboard interactions</a></li>
+<li><a href="identify-input-devices.html">Identify input devices</a></li>
+<li><a href="respond-to-the-presence-of-the-touch-keyboard.html">Respond to the presence of the touch keyboard</a></li>
+</ul>
+<h3 id="designers">Designers</h3>
+<ul>
+<li><a href="keyboard-interactions.html">Keyboard design guidelines</a></li>
+</ul>
+<h3 id="samples">Samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard">Touch keyboard sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+</ul>
+<h3 id="archive-samples">Archive Samples</h3>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample">Input sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Touch%20keyboard%20sample%20(Windows%208)">Input: Touch keyboard sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Responding%20to%20the%20appearance%20of%20the%20on-screen%20keyboard%20sample">Responding to the appearance of the on-screen keyboard sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BVB%5D-Windows%208%20app%20samples/VB/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208)">XAML text editing sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/keyboard-events.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

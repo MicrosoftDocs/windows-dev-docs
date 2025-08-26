@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Camera </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Camera ">
+    
+    <meta name="description" content="This article lists the camera features that are available for WinUI 3 apps and links to the how-to articles that show how to use them.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="camera">Camera</h1>
+
+<p>This section provides guidance for creating WinUI 3 apps that use the camera or microphone to capture photos, video, or audio.</p>
+<h2 id="basic-mediacapture-tasks">Basic MediaCapture tasks</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="cameracaptureui.html">Capture photos and video in a desktop app with the Windows built-in camera UI</a></td>
+<td>Describes how to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture">CameraCaptureUI</a> class to capture photos or videos by using the camera UI built into Windows. This feature allows your app to get a user-captured photo or video with just a few lines of code.</td>
+</tr>
+<tr>
+<td><a href="camera-quickstart-winui3.html">Show the camera preview in a WinUI 3 app</a></td>
+<td>Shows how to quickly display the camera preview stream within a XAML page in a WinUI 3 app.</td>
+</tr>
+<tr>
+<td><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></td>
+<td>Shows the simplest way to capture photos and video using the <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> class. The <strong>MediaCapture</strong> class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advanced-mediacapture-tasks">Advanced MediaCapture tasks</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="camera-profiles.html">Discover and select camera capabilities with camera profiles</a></td>
+<td>Learn how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR.</td>
+</tr>
+<tr>
+<td><a href="set-media-encoding-properties.html">Set format, resolution, and frame rate for MediaCapture</a></td>
+<td>Learn how to use the <a href="/uwp/api/Windows.Media.MediaProperties.IMediaEncodingProperties"><strong>IMediaEncodingProperties</strong></a> interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media.</td>
+</tr>
+<tr>
+<td><a href="hdr-low-light-photo-capture.html">HDR and low-light photo capture</a></td>
+<td>Learn how to use the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> class to capture High Dynamic Range (HDR) and low-light photos.</td>
+</tr>
+<tr>
+<td><a href="capture-device-controls-for-photo-and-video-capture.html">Manual camera controls for photo and video capture</a></td>
+<td>Learn how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.</td>
+</tr>
+<tr>
+<td><a href="capture-device-controls-for-video-capture.html">Manual camera controls for video capture</a></td>
+<td>Learn how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority.</td>
+</tr>
+<tr>
+<td><a href="effects-for-video-capture.html">Video stabilization effect for video capture</a></td>
+<td>Learn how to use the video stabilization effect.</td>
+</tr>
+<tr>
+<td><a href="scene-analysis-for-media-capture.html">Scene analysis for MediaCapture</a></td>
+<td>Shows you how to use the <a href="/uwp/api/Windows.Media.Core.SceneAnalysisEffect"><strong>SceneAnalysisEffect</strong></a> and the <a href="/uwp/api/Windows.Media.Core.FaceDetectionEffect"><strong>FaceDetectionEffect</strong></a> to analyze the content of the media capture preview stream.</td>
+</tr>
+<tr>
+<td><a href="variable-photo-sequence.html">Capture a photo sequence with VariablePhotoSequence</a></td>
+<td>Learn how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.</td>
+</tr>
+<tr>
+<td><a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a></td>
+<td>Learn how to use a <a href="/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader"><strong>MediaFrameReader</strong></a> with <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames. This feature is designed to be used by apps that perform real-time processing of media frames, such as augmented reality and depth-aware camera apps.</td>
+</tr>
+<tr>
+<td><a href="process-media-frames-with-mediaframereader.html">Process audio frames with MediaFrameReader</a></td>
+<td>Learn how to use a <a href="/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader"><strong>MediaFrameReader</strong></a> with <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> to get audio data from a media frame source.</td>
+</tr>
+<tr>
+<td><a href="detect-audio-level-changes.html">Detect and respond to audio level changes by the system</a></td>
+<td>Learn how to detect and respond to audio level changes by the system.</td>
+</tr>
+<tr>
+<td><a href="launch-camera-settings.html">Launch the camera settings page</a></td>
+<td>Learn how to launch the Windows Settings app directly to the camera settings page.</td>
+</tr>
+<tr>
+<td><a href="camera-privacy-setting.html">Handle the Windows camera privacy setting</a></td>
+<td>Learn how apps should handle the Windows camera privacy setting.</td>
+</tr>
+<tr>
+<td><a href="connect-to-remote-cameras.html">Connect to remote cameras</a></td>
+<td>Learn how to connect to remote cameras and get a <strong>MediaFrameSourceGroup</strong> to retrieve frames from each camera.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="winui-3-samples-for-camera">WinUI 3 samples for camera</h2>
+<ul>
+<li><a href="https://github.com/microsoft/Windows-Camera/tree/master/Samples/MediaCaptureWinUI3">MediaCapture WinUI 3 sample on github</a>.</li>
+</ul>
+<h2 id="uwp-app-samples-for-camera">UWP app samples for camera</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFaceDetection">Camera face detection sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraGetPreviewFrame">Camera preview frame sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture">Camera HDR sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraManualControls">Camera manual controls sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraProfile">Camera profile sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraResolution">Camera resolution sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit">Camera starter kit</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraVideoStabilization">Camera video stabilization sample</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../audio-video-camera.html">Audio, video, and camera</a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/camera.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

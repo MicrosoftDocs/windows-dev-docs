@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Cross Device Resume (XDR) Using Continuity SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Cross Device Resume (XDR) Using Continuity SDK ">
+    
+    <meta name="description" content="Guidelines for first &amp; third party developers to integrate with Windows XDR experiences using the Continuity SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cross-device-resume-xdr-using-continuity-sdk-android-and-windows-applications">Cross Device Resume (XDR) using Continuity SDK (Android and Windows Applications)</h1>
+
+<p>This article provides comprehensive guidelines for first-party and third-party developers on how to integrate features using the Continuity SDK in your applications. The Continuity SDK enables seamless cross-device experiences, allowing users to resume activities across different platforms, including Android and Windows.</p>
+<p>By following this guidance, you can create a smooth and integrated user experience across multiple devices by leveraging the XDR using Continuity SDK.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Onboarding to Resume in Windows</strong></p>
+<p>Resume is a Limited Access Feature (LAF). To gain access to this API, you'll need to get approval from Microsoft to interoperate with the &quot;Link to Windows&quot; package on Android mobile devices.</p>
+<p>To request access, email <a href="mailto:wincrossdeviceapi@microsoft.com">wincrossdeviceapi@microsoft.com</a> with the information listed below:</p>
+<ul>
+<li>A description of your user experience</li>
+<li>A screenshot of your application where a user natively accesses web or documents</li>
+<li>The <strong>PackageId</strong> of your application</li>
+<li>The Google Play store URL for your application</li>
+</ul>
+<p>If the request is approved, you will receive instructions on how to unlock the feature. Approvals will be based on your communication, provided that your scenario meets the outlined <a href="/windows/cross-device/phonelink/#scenario-requirements">Scenario Requirements</a>.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>For Android applications, ensure the following requirements are met before integrating the Continuity SDK:</p>
+<ul>
+<li>Minimum SDK Version: 24</li>
+<li>Kotlin Version: 1.9.x</li>
+<li>Link to Windows (LTW): 1.241101.XX</li>
+</ul>
+<p>For Windows applications, ensure the following requirements are met:</p>
+<ul>
+<li>Minimum Windows Version: Windows 11</li>
+<li>Development Environment: Visual Studio 2019 or later</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>iOS applications are not supported for integration with the Continuity SDK at this time.</p>
+</div>
+<h2 id="configure-your-development-environment">Configure your development environment</h2>
+<p>The following sections provide step-by-step instructions for setting up the development environment for both Android and Windows applications.</p>
+<h3 id="android-setup">Android setup</h3>
+<p>To set up the development environment for Android, follow these steps:</p>
+<ol>
+<li><p>To set up the bundle, download and use the .aar file via libraries provided in the following releases: <a href="https://github.com/microsoft/Windows-Cross-Device/releases">Windows Cross-Device SDK releases</a>.</p>
+</li>
+<li><p>Add the meta tags in the AndroidManifest.xml file of your Android application. The following snippet demonstrates how to add the required meta tags:</p>
+<pre><code class="lang-xml">&lt;meta-data 
+    android:name=&quot;com.microsoft.crossdevice.resumeActivityProvider&quot; 
+    android:value=&quot;true&quot; /&gt; 
+
+&lt;meta-data 
+    android:name=&quot;com.microsoft.crossdevice.trigger.PartnerApp&quot; 
+    android:value=&quot;4&quot; /&gt; 
+</code></pre>
+</li>
+</ol>
+<h2 id="api-integration-steps">API integration steps</h2>
+<p>After the manifest declarations, app developers can easily send their app context by following a simple code example.</p>
+<p>The App must:</p>
+<ol>
+<li>Initialize/DeInitialize the Continuity SDK:
+<ol>
+<li>The app should determine the appropriate time to call the Initialize and DeInitialize functions.</li>
+<li>After calling the Initialize function, a callback that implements IAppContextEventHandler should be triggered.</li>
+</ol>
+</li>
+<li>Send/Delete <strong>AppContext</strong>:
+<ol>
+<li>After initializing the SDK, if <strong>onContextRequestReceived</strong> is called, it indicates the connection is established. The app can then send (including create and update) <strong>AppContext</strong> to LTW or delete <strong>AppContext</strong> from LTW.</li>
+<li>After <strong>onSyncServiceDisconnected</strong> or deinitializing the SDK, the app should not send an <strong>AppContext</strong>.</li>
+</ol>
+</li>
+</ol>
+<p>Below is a code example. For all the required and optional fields in <strong>AppContext</strong>, please refer to the <a href="#appcontext">AppContext description</a>.</p>
+<p>The following Android code snippet demonstrates how to make API requests using the Continuity SDK:</p>
+<pre><code class="lang-kotlin">class MainActivity : ComponentActivity() { 
+
+    // Required code for Continuity SDK integration 
+    private val appContextResponse = object : IAppContextResponse { 
+        override fun onContextResponseSuccess(response: AppContext) { 
+            Log.d(&quot;MainActivity&quot;, &quot;onContextResponseSuccess&quot;) 
+        } 
+
+        override fun onContextResponseError(response: AppContext, throwable: Throwable) { 
+            Log.d(&quot;MainActivity&quot;, &quot;onContextResponseError&quot;) 
+        } 
+    } 
+
+    private lateinit var appContextEventHandler: IAppContextEventHandler 
+
+    private val appContext: AppContext = AppContext() 
+
+    override fun onCreate(savedInstanceState: Bundle?) { 
+        super.onCreate(savedInstanceState) 
+        var ready = false 
+    // Existing code...
+
+        // Required code for Continuity SDK integration 
+        appContextEventHandler = object : IAppContextEventHandler { 
+            override fun onContextRequestReceived(contextRequestInfo: ContextRequestInfo) { 
+                Log.d(&quot;MainActivity&quot;, &quot;onContextRequestReceived&quot;) 
+                ready = true 
+    
+                sendResume() 
+            } 
+
+            override fun onSyncServiceDisconnected() { 
+                Log.d(&quot;MainActivity&quot;, &quot;onSyncServiceDisconnected&quot;) 
+            } 
+
+            override fun onInvalidContextRequestReceived(throwable: Throwable) { 
+                Log.d(&quot;MainActivity&quot;, &quot;onInvalidContextRequestReceived&quot;) 
+                ready = false 
+                deleteResume() 
+            } 
+        } 
+
+        // Required code for Continuity SDK integration 
+        AppContextManager.initialize(this.applicationContext, appContextEventHandler) 
+    } 
+
+    // Required code for Continuity SDK integration 
+    private fun sendResume() { 
+        appContext.setContextId(&quot;13f53be4-d0d1-448a-8c78-af28820af119&quot;) 
+        appContext.setAppId(this.packageName) 
+        appContext.type = ProtocolConstants.TYPE_RESUME_ACTIVITY 
+    
+        // Set context fields. Refer to the AppContext section for detailed field descriptions.
+        AppContextManager.sendAppContext(this.applicationContext, appContext, appContextResponse) 
+    } 
+
+    // Required code for Continuity SDK integration 
+    private fun deleteResume() { 
+        AppContextManager.deleteAppContext(this.applicationContext, &quot;13f53be4-d0d1-448a-8c78-af28820af119&quot;, appContextResponse) 
+    } 
+
+    // Existing code 
+}
+</code></pre>
+<h2 id="integration-validation-steps">Integration validation steps</h2>
+<p>To validate the integration of the Continuity SDK in your application, follow these steps:</p>
+<h3 id="preparation">Preparation</h3>
+<p>The following steps are required to prepare for the integration validation:</p>
+<ol>
+<li><p>Ensure private LTW is installed.</p>
+</li>
+<li><p>Connect LTW to your PC:</p>
+<p>Refer to <a href="https://support.microsoft.com/topic/phone-link-requirements-and-setup-cd2a1ee7-75a7-66a6-9d4e-bf22e735f9e3#bkmk_cdeh_learn_more">How to manage your mobile device on your PC</a> for instructions.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If after scanning the QR code you aren't redirected to LTW, please open LTW first and scan the QR code within the app.</p>
+</div>
+</li>
+<li><p>Verify that the partner app has integrated the Continuity SDK.</p>
+</li>
+</ol>
+<h3 id="validation">Validation</h3>
+<p>Next, follow these steps to validate the integration:</p>
+<ol>
+<li>Launch the app and initialize the SDK. Confirm that <strong>onContextRequestReceived</strong> is called.</li>
+<li>After <strong>onContextRequestReceived</strong> has been called, the app can send the <strong>AppContext</strong> to LTW. If <strong>onContextResponseSuccess</strong> is called after sending <strong>AppContext</strong>, the SDK integration is successful.</li>
+</ol>
+<h2 id="appcontext">AppContext</h2>
+<p>XDR defines <strong>AppContext</strong> as metadata through which XDR can understand which app to resume, along with the context with which the application must be resumed. Apps can use activities to enable users to get back to what they were doing in their app, across multiple devices. Activities created by any mobile app appear on users' Windows device(s) so long as those devices have been Cross Device Experience Host (CDEH) provisioned.</p>
+<p>Every application is different, and it's up to Windows to understand the target application for resume and up to specific applications on Windows to understand the context. XDR is proposing a generic schema which can cater to requirements for all first party as well as third party app resume scenarios.</p>
+<h3 id="contextid">contextId</h3>
+<ul>
+<li>Required: Yes</li>
+<li>Description: This is a unique identifier used to distinguish one <strong>AppContext</strong> from another. It ensures that each <strong>AppContext</strong> is uniquely identifiable.</li>
+<li>Usage: Make sure to generate a unique contextId for each <strong>AppContext</strong> to avoid conflicts.</li>
+</ul>
+<h3 id="type">type</h3>
+<ul>
+<li>Required: Yes</li>
+<li>Description: This is a binary flag that indicates the type of <strong>AppContext</strong> being sent to Link to Windows (LTW). The value should be consistent with the requestedContextType.</li>
+<li>Usage: Set this flag according to the type of context you are sending. For example, <code>ProtocolConstants.TYPE_RESUME_ACTIVITY</code>.</li>
+</ul>
+<h3 id="createtime">createTime</h3>
+<ul>
+<li>Required: Yes</li>
+<li>Description: This timestamp represents the creation time of the <strong>AppContext</strong>.</li>
+<li>Usage: Record the exact time when the <strong>AppContext</strong> is created.</li>
+</ul>
+<h3 id="intenturi">intentUri</h3>
+<ul>
+<li>Required: No, if <strong>weblink</strong> is provided</li>
+<li>Description: This URI indicates which app can continue the <strong>AppContext</strong> handed over from the originating device.</li>
+<li>Usage: Provide this if you want to specify a particular app to handle the context.</li>
+</ul>
+<h3 id="weblink">weblink</h3>
+<ul>
+<li>Required: No, if <strong>intentUri</strong> is provided</li>
+<li>Description: This URI is used to launch the web endpoint of the application if they choose not to use store apps. This parameter is used only when <strong>intentUri</strong> is not provided. If both are provided, <strong>intentUri</strong> will be used to resume the application on Windows.</li>
+<li>Usage: Only to be use if application wants to resume on web endpoints and not the store applications.</li>
+</ul>
+<h3 id="appid">appId</h3>
+<ul>
+<li>Required: Yes</li>
+<li>Description: This is the package name of the application the context is for.</li>
+<li>Usage: Set this to the package name of your application.</li>
+</ul>
+<h3 id="title">title</h3>
+<ul>
+<li>Required: Yes</li>
+<li>Description: This is the title of the <strong>AppContext</strong>, such as a document name or web page title.</li>
+<li>Usage: Provide a meaningful title that represents the <strong>AppContext</strong>.</li>
+</ul>
+<h3 id="preview">preview</h3>
+<ul>
+<li>Required: No</li>
+<li>Description: These are bytes of the preview image that can represent the <strong>AppContext</strong>.</li>
+<li>Usage: Provide a preview image if available to give users a visual representation of the <strong>AppContext</strong>.</li>
+</ul>
+<h3 id="lifetime">LifeTime</h3>
+<ul>
+<li>Required: No</li>
+<li>Description: This is the lifetime of the <code>AppContext</code> in milliseconds. It is only used for ongoing scenarios. If not set, the default value is 5 minutes.</li>
+<li>Usage: Set this to define how long the <code>AppContext</code> should be valid. You can set a value up to a maximum of 5 minutes. Any greater value will automatically be shortened to 5 minutes.</li>
+</ul>
+<h2 id="intent-uris">Intent URIs</h2>
+<p>URIs allow you to launch another app to perform a specific task, enabling helpful app-to-app scenarios. For more infomation about launching apps using URIs, see <a href="/windows/apps/develop/launch/launch-default-app">Launch the default Windows app for a URI</a> and <a href="https://developer.android.com/training/app-links/deep-linking">Create Deep Links to App Content | Android Developers</a>.</p>
+<h2 id="handling-api-responses-in-windows">Handling API responses in Windows</h2>
+<p>This section describes how to handle the API responses in Windows applications. The Continuity SDK provides a way to handle the API responses for Win32, UWP, and Windows App SDK apps.</p>
+<h3 id="win32-app-example">Win32 app example</h3>
+<p>For Win32 apps to handle protocol URI launch, the following steps are required:</p>
+<ol>
+<li><p>First, an entry needs to be made to the registry as follows:</p>
+<pre><code>[HKEY_CLASSES_ROOT\partnerapp] 
+@=&quot;URL:PartnerApp Protocol&quot; 
+&quot;URL Protocol&quot;=&quot;&quot; 
+
+[HKEY_CLASSES_ROOT\partnerapp\shell\open\command] 
+@=&quot;\&quot;C:\\path\\to\\PartnerAppExecutable.exe\&quot; \&quot;%1\&quot;&quot; 
+</code></pre>
+</li>
+<li><p>The launch must be handled in the main function of the Win32 app:</p>
+<pre><code class="lang-cpp">#include &lt;windows.h&gt; 
+#include &lt;shellapi.h&gt; 
+#include &lt;string&gt; 
+#include &lt;iostream&gt; 
+
+int CALLBACK wWinMain(HINSTANCE, HINSTANCE, PWSTR lpCmdLine, int) 
+{ 
+    // Check if there's an argument passed via lpCmdLine 
+    std::wstring cmdLine(lpCmdLine); 
+    std::wstring arguments; 
+
+    if (!cmdLine.empty()) 
+    { 
+        // Check if the command-line argument starts with &quot;partnerapp://&quot;, indicating a URI launch 
+        if (cmdLine.find(L&quot;partnerapp://&quot;) == 0) 
+        { 
+            // This is a URI protocol launch 
+            // Process the URI as needed 
+            // Example: Extract action and parameters from the URI 
+            arguments = cmdLine;  // or further parse as required 
+        } 
+        else 
+        {
+            // Launched by command line or activation APIs 
+        } 
+    } 
+    else 
+    { 
+        // Handle cases where no arguments were passed 
+    } 
+
+    return 0; 
+} 
+</code></pre>
+</li>
+</ol>
+<h3 id="uwp-apps">UWP Apps</h3>
+<p>For UWP apps, the protocol URI can be registered in the project's app manifest. The following steps demonstrate how to handle protocol activation in a UWP app.</p>
+<ol>
+<li><p>First, the protocol URI is registered in the <code>Package.appxmanifest</code> file as follows:</p>
+<pre><code class="lang-xml">&lt;Applications&gt; 
+        &lt;Application Id= ... &gt; 
+            &lt;Extensions&gt; 
+                &lt;uap:Extension Category=&quot;windows.protocol&quot;&gt; 
+                  &lt;uap:Protocol Name=&quot;alsdk&quot;&gt; 
+                    &lt;uap:Logo&gt;images\icon.png&lt;/uap:Logo&gt; 
+                    &lt;uap:DisplayName&gt;SDK Sample URI Scheme&lt;/uap:DisplayName&gt; 
+                  &lt;/uap:Protocol&gt; 
+                &lt;/uap:Extension&gt; 
+          &lt;/Extensions&gt; 
+          ... 
+        &lt;/Application&gt; 
+   &lt;Applications&gt; 
+</code></pre>
+</li>
+<li><p>Next, in the <code>App.xaml.cs</code> file, override the <code>OnActivated</code> method as follows:</p>
+<pre><code class="lang-csharp">public partial class App 
+{ 
+   protected override void OnActivated(IActivatedEventArgs args) 
+  { 
+      if (args.Kind == ActivationKind.Protocol) 
+      { 
+         ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs; 
+         // TODO: Handle URI activation 
+         // The received URI is eventArgs.Uri.AbsoluteUri 
+      } 
+   } 
+} 
+</code></pre>
+</li>
+</ol>
+<p>For more information on handling URI launch in UWP apps, see step 3 in <a href="/windows/apps/develop/launch/handle-uri-activation#step-3-handle-the-activated-event">Handle URI activation</a>.</p>
+<h3 id="winui-3-example">WinUI 3 example</h3>
+<p>The following code snippet demonstrates how to handle protocol activation in a C++ WinUI app with Windows App SDK:</p>
+<pre><code class="lang-cpp">void App::OnActivated(winrt::Windows::ApplicationModel::Activation::IActivatedEventArgs const&amp; args) 
+{ 
+     if (args.Kind() == winrt::Windows::ApplicationModel::Activation::ActivationKind::Protocol) 
+     { 
+         auto protocolArgs = args.as&lt;winrt::Windows::ApplicationModel::Activation::ProtocolActivatedEventArgs&gt;(); 
+         auto uri = protocolArgs.Uri(); 
+         std::wstring uriString = uri.AbsoluteUri().c_str(); 
+         //Process the URI as per argument scheme 
+     } 
+} 
+</code></pre>
+<h2 id="weblink-1">Weblink</h2>
+<p>Using a weblink will launch the web endpoint of the application. App developers need to ensure that the weblink provided from their Android application is valid because XDR will use default browser of the system to redirect to the weblink provided.</p>
+<h2 id="handling-arguments-obtained-from-cross-device-resume">Handling arguments obtained from Cross Device Resume</h2>
+<p>It is the responsibility of each app to deserialize and decrypt the argument received and process the information accordingly to transfer the ongoing context from phone to PC. For example, if a call needs to be transferred, the app must be able to communicate that context from phone and the desktop app must understand that context appropriately and continue loading.</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/windows/apps/develop/launch/handle-uri-activation">Handle URI activation</a></li>
+<li><a href="index.html">Integrate with Windows</a></li>
+<li><a href="cross-device-people-api.html">Cross Device People API</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/windows-integration/cross-device-resume.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

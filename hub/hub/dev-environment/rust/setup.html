@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Set up your dev environment on Windows for Rust </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Set up your dev environment on Windows for Rust ">
+    
+    <meta name="description" content="Setting up your dev environment for beginners interested in developing on Windows with Rust.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="set-up-your-dev-environment-on-windows-for-rust">Set up your dev environment on Windows for Rust</h1>
+
+<p>In the <a href="overview.html">Overview of developing on Windows with Rust</a> topic, we introduced Rust and talked about what it is and what some of its main moving parts are. In this topic, we'll set up our development environment.</p>
+<p>We recommend that you do your Rust development on Windows. However, if you plan to locally compile and test on Linux, then developing with Rust on the <a href="/windows/wsl/about">Windows Subsystem for Linux (WSL)</a> is also an option.</p>
+<h2 id="install-visual-studio-recommended-or-the-microsoft-c-build-tools">Install Visual Studio (recommended) or the Microsoft C++ Build Tools</h2>
+<p>On Windows, Rust requires certain C++ build tools.</p>
+<p>You can either download the <a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools</a>, or (recommended) you might prefer just to install <a href="https://visualstudio.microsoft.com/downloads/">Microsoft Visual Studio</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Use of the Microsoft C++ Build Tools, or Visual Studio Build Tools, requires a valid Visual Studio license (either Community, Pro, or Enterprise).</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We'll be using Visual Studio Code as our integrated development environment (IDE) for Rust, and not Visual Studio. But you can still install Visual Studio without expense. A Community edition is available—it's free for students, open-source contributors, and individuals.</p>
+</div>
+<p>While installing Visual Studio, there are several Windows workloads that we recommend you select—<strong>.NET desktop development</strong>, <strong>Desktop development with C++</strong>, and <strong>Universal Windows Platform development</strong>. You might not think that you'll need all three, but it's likely enough that some dependency will arise where they're required that we feel it's just simpler to select all three.</p>
+<p>New Rust projects default to using Git. So also add the individual component <strong>Git for Windows</strong> to the mix (use the search box to search for it by name).</p>
+<p><img src="../../images/rust-vs-workloads.png" alt=".NET desktop development, Desktop development with C++, and Universal Windows Platform development"></p>
+<h2 id="install-rust">Install Rust</h2>
+<p>Next, <a href="https://www.rust-lang.org/tools/install">install Rust from the Rust website</a>. The website detects that you're running Windows, and it offers you 64- and 32-bit installers of the <code>rustup</code> tool for Windows, as well as instructions on installing Rust to the <a href="/windows/wsl/about">Windows Subsystem for Linux (WSL)</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Rust works very well on Windows; so there's no need for you to go the WSL route (unless you plan to locally compile and test on Linux). Since you have Windows, we recommend that you just run the <code>rustup</code> installer for 64-bit Windows. Also install the Microsoft C and C++ (MSVC) toolchain by running <code>rustup default stable-msvc</code>. You'll then be all set to write apps <em>for</em> Windows using Rust.</p>
+</div>
+<p>When the Rust installer is finished, you'll be ready to program with Rust. You won't have a convenient IDE yet (we'll cover that in the next section—<a href="#install-visual-studio-code">Install Visual Studio Code</a>). And you're not yet set up to call Windows APIs. But you could launch a command prompt (<code>cmd.exe</code>), and perhaps issue the command <code>cargo --version</code>. If you see a version number printed, then that confirms that Rust installed correctly.</p>
+<p>If you're curious about the use of the <code>cargo</code> keyword above, <em>Cargo</em> is the name of the tool in the Rust development environment that manages and builds your projects (more properly, <em>packages</em>) and their dependencies.</p>
+<p>And if you really do want to dive in to some programming at this point (even without the convenience of an IDE), then you could read the <a href="https://doc.rust-lang.org/book/ch01-02-hello-world.html">Hello, World!</a> chapter of The Rust Programming Language book on the Rust website.</p>
+<h2 id="install-visual-studio-code">Install Visual Studio Code</h2>
+<p>By using Visual Studio Code (VS Code) as your text editor/integrated development environment (IDE), you can take advantage of language services such as code completion, syntax highlighting, formatting, and debugging.</p>
+<p>VS Code also contains a <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">built-in terminal</a> that enables you to issue command-line arguments (to issue commands to Cargo, for example).</p>
+<ol>
+<li><p>First, download and install <a href="https://code.visualstudio.com">Visual Studio Code for Windows</a>.</p>
+</li>
+<li><p>After you've installed VS Code, install the <strong>rust-analyzer</strong> <em>extension</em>. You can either install the <a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer">rust-analyzer extension from the Visual Studio Marketplace</a>, or you can open VS Code, and search for <strong>rust-analyzer</strong> in the extensions menu (Ctrl+Shift+X).</p>
+</li>
+<li><p>For debugging support, install the <strong>CodeLLDB</strong> extension. You can either install the <a href="https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb">CodeLLDB extension from the Visual Studio Marketplace</a>, or you can open VS Code, and search for <strong>CodeLLDB</strong> in the extensions menu (Ctrl+Shift+X).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>An alternative to the <strong>CodeLLDB</strong> extension for debugging support is the Microsoft <strong>C/C++</strong> extension. The <strong>C/C++</strong> extension doesn't integrate as well with the IDE as <strong>CodeLLDB</strong> does. But the <strong>C/C++</strong> extension provides superior debugging information. So you might want to have that standing by in case you need it.</p>
+<p>You can either install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++ extension from the Visual Studio Marketplace</a>, or you can open VS Code, and search for <strong>C/C++</strong> in the extensions menu (Ctrl+Shift+X).</p>
+</div>
+</li>
+<li><p>If you want to open the terminal in VS Code, select <strong>View</strong> &gt; <strong>Terminal</strong>, or alternatively use the shortcut <strong>Ctrl+`</strong> (using the backtick character). The default terminal is PowerShell.</p>
+</li>
+</ol>
+<h2 id="hello-world-tutorial-rust-with-vs-code">Hello, world! tutorial (Rust with VS Code)</h2>
+<p>Let's take Rust for a spin with a simple &quot;Hello, world!&quot; app.</p>
+<ol>
+<li><p>First, launch a command prompt (<code>cmd.exe</code>), and <code>cd</code> to a folder where you want to keep your Rust projects.</p>
+</li>
+<li><p>Then ask Cargo to create a new Rust project for you with the following command.</p>
+<pre><code class="lang-console">cargo new first_rust_project
+</code></pre>
+<p>The argument you pass to the <code>cargo new</code> command is the name of the project that you want Cargo to create. Here, the project name is <em>first_rust_project</em>. The recommendation is that you name your Rust projects using snake case (where words are lower-case, with each space replaced by an underscore).</p>
+<p>Cargo creates a project for you with the name that you supply. And in fact Cargo's new projects contain the source code for a very simple app that outputs a <em>Hello, world!</em> message, as we'll see. In addition to creating the <em>first_rust_project</em> project, Cargo has created a folder named <em>first_rust_project</em>, and has put the project's source code files in there.</p>
+</li>
+<li><p>So now <code>cd</code> into that folder, and then launch VS Code from within the context of that folder.</p>
+<pre><code class="lang-console">cd first_rust_project
+code .
+</code></pre>
+</li>
+<li><p>In VS Code's Explorer, open the <code>src</code> &gt; <code>main.rs</code> file, which is the Rust source code file that contains your app's entry point (a function named <strong>main</strong>). Here's what it looks like.</p>
+<pre><code class="lang-rust">// main.rs
+fn main() {
+  println!(&quot;Hello, world!&quot;);
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you open the first <code>.rs</code> file in VS Code, you'll get a notification saying that some Rust components aren't installed, and asking whether you want to install them. Click <strong>Yes</strong>, and VS Code will install the Rust language server.</p>
+</div>
+<p>You can tell from glancing at the code in <code>main.rs</code> that <strong>main</strong> is a function definition, and that it prints the string &quot;Hello, world!&quot;. For more details about the syntax, see <a href="https://doc.rust-lang.org/book/ch01-02-hello-world.html#anatomy-of-a-rust-program">Anatomy of a Rust Program</a> on the Rust website.</p>
+</li>
+<li><p>Now let's try running the app under the debugger. Put a breakpoint on line 2, and click <strong>Run</strong> &gt; <strong>Start Debugging</strong> (or press <strong>F5</strong>). There are also <strong>Debug</strong> and <strong>Run</strong> commands embedded inside the text editor.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you run an app under the <strong>CodeLLDB</strong> extension and debugger for the first time, you'll see a dialog box saying &quot;Cannot start debugging because no launch configuration has been provided&quot;. Click <strong>OK</strong> to see a second dialog box saying &quot;Cargo.toml has been detected in this workspace. Would you like to generate launch configurations for its targets?&quot;. Click <strong>Yes</strong>. Then close the launch.json file and begin debugging again.</p>
+</div>
+</li>
+<li><p>As you can see, the debugger breaks at line 2. Press <strong>F5</strong> to continue, and the app runs to completion. In the <strong>Terminal</strong> pane, you'll see the expected output &quot;Hello, world!&quot;.</p>
+</li>
+</ol>
+<h2 id="rust-for-windows">Rust for Windows</h2>
+<p>Not only can you use Rust <em>on</em> Windows, you can also write apps <em>for</em> Windows using Rust. Via the <em>windows</em> crate, you can call any Windows API past, present, and future. There are more details about that, and code examples, in the <a href="rust-for-windows.html">Rust for Windows, and the windows crate</a> topic.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="rust-for-windows.html">Rust for Windows, and the windows crate</a></li>
+<li><a href="/windows/wsl/about">Windows Subsystem for Linux (WSL)</a></li>
+<li><a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">Microsoft C++ Build Tools</a></li>
+<li><a href="https://visualstudio.microsoft.com/downloads/">Microsoft Visual Studio</a></li>
+<li><a href="https://code.visualstudio.com">Visual Studio Code for Windows</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer">rust-analyzer extension</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb">CodeLLDB extension</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">C/C++ extension</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/rust/setup.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

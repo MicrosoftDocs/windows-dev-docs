@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tutorial: Modernize a WPF app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tutorial: Modernize a WPF app ">
+    
+    <meta name="description" content="This tutorial demonstrates how to add UWP XAML user interfaces, create MSIX packages, and incorporate other modern components into your WPF app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-modernize-a-wpf-app">Tutorial: Modernize a WPF app</h1>
+
+<p>There are many ways to <a href="index.html">modernize</a> existing desktop apps by integrating the latest Windows features into the existing source code instead of rewriting the apps from scratch. In this tutorial we'll explore several ways to modernize an existing WPF line-of-business app by using these features:</p>
+<ul>
+<li>.NET Core 3</li>
+<li>UWP XAML controls with XAML Islands</li>
+<li>Adaptive Cards and Windows notifications</li>
+<li>MSIX deployment</li>
+</ul>
+<p>This tutorial requires the following development skills:</p>
+<ul>
+<li>Experience in developing Windows desktop apps with WPF.</li>
+<li>Basic knowledge of C# and XAML.</li>
+<li>Basic knowledge of UWP.</li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>This tutorial provides the code for a simple WPF line-of-business app named Contoso Expenses. In the fictional scenario of the tutorial, Contoso Expenses is an internal app used by managers of Contoso Corporation to keep track of the expenses submitted by their reports. The managers are now equipped with touch-enabled devices, and they would like to use the Contoso Expenses app without a mouse or keyboard. Unfortunately, the current version of the app isn't touch friendly.</p>
+<p>Contoso wants to modernize this app with new Windows features to enable employees to create expenses reports more efficiently. Many of the features could be easily implemented by building a new UWP app. However, the existing app is complex and is the result of many years of development by different teams. As such, rewriting it from scratch with a new technology isn't an option. The team is looking for the best approach to add new features into the existing codebase.</p>
+<p>At the beginning of the tutorial, Contoso Expenses targets the .NET Framework 4.7.2 and uses the following 3rd party libraries:</p>
+<ul>
+<li>MVVM Light, a basic implementation for the MVVM pattern.</li>
+<li>Unity, a dependency injection container.</li>
+<li>LiteDb, an embedded NoSQL solution to store the data.</li>
+<li>Bogus, a tool to generate fake data.</li>
+</ul>
+<p>In the tutorial, you'll enhance Contoso Expenses with new Windows features:</p>
+<ul>
+<li>Migrate an existing WPF app to .NET Core 3.0. This will open up new and important scenarios in the future.</li>
+<li>Use XAML Islands to host the <strong>InkCanvas</strong> and <strong>MapControl</strong> wrapped controls provided by the Windows Community Toolkit.</li>
+<li>Use XAML Islands to host any standard UWP XAML control (in this case, a <strong>CalendarView</strong>).</li>
+<li>Integrate Adaptive Cards and Windows notifications into the app.</li>
+<li>Package the app with MSIX and set up a CI/CD pipeline on Azure DevOps so that you can automatically deliver new versions of the app to testers and users as soon as it is available.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To perform this tutorial, your development computer must have these prerequisites installed:</p>
+<ul>
+<li>Windows 10, version 1903 (build 18362) or a later version.</li>
+<li><a href="https://www.visualstudio.com">Visual Studio 2019</a>.</li>
+<li><a href="https://dotnet.microsoft.com/download/dotnet-core/3.0">.NET Core 3 SDK</a> (install the latest version).</li>
+</ul>
+<p>Make sure you install the following workloads and optional features with Visual Studio 2019:</p>
+<ul>
+<li>.NET Desktop development</li>
+<li>Universal Windows Platform development</li>
+<li>Windows SDK (10.0.18362.0 or later)</li>
+</ul>
+<h2 id="get-the-contoso-expenses-sample-app">Get the Contoso Expenses sample app</h2>
+<p>Before you begin the tutorial, download the source code for the Contoso Expenses app and make sure you can build the code in Visual Studio.</p>
+<ol>
+<li>Download the app source code from the <strong>Releases</strong> tab of the <a href="https://github.com/Microsoft/AppConsult-WinAppsModernizationWorkshop">AppConsult WinAppsModernization workshop repository</a>. The direct link is <a href="https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases">https://github.com/microsoft/AppConsult-WinAppsModernizationWorkshop/releases</a>.</li>
+<li>Open the zip file and extract all the content to the root of your <strong>C:\</strong> drive. It will create a folder named <strong>C:\WinAppsModernizationWorkshop</strong>.</li>
+<li>Open Visual Studio 2019 and double click on the <strong>C:\WinAppsModernizationWorkshop\Lab\Exercise1\01-Start\ContosoExpenses\ContosoExpenses.sln</strong> file to open the solution.</li>
+<li>Verify that you can build, run, and debug the Contoso Expenses WPF project by pressing the <strong>Start</strong> button or CTRL + F5.</li>
+</ol>
+<h2 id="get-started">Get started</h2>
+<p>After you have the source code for the Contoso Expenses sample app and you can confirm that you can build it in Visual Studio, you're ready to start the tutorial:</p>
+<ul>
+<li><a href="modernize-wpf-tutorial-1.html">Part 1: Migrate the Contoso Expenses app to .NET Core 3</a></li>
+<li><a href="modernize-wpf-tutorial-2.html">Part 2: Add a UWP InkCanvas control using XAML Islands</a></li>
+<li><a href="modernize-wpf-tutorial-3.html">Part 3: Add a UWP CalendarView control using XAML Islands</a></li>
+<li><a href="modernize-wpf-tutorial-4.html">Part 4: Add Windows 10 user activities and notifications</a></li>
+<li><a href="modernize-wpf-tutorial-5.html">Part 5: Package and deploy with MSIX</a></li>
+</ul>
+<h2 id="important-concepts">Important concepts</h2>
+<p>The following sections provide background for some of the key concepts discussed in this tutorial. If you're already familiar with these concepts, you can skip this section.</p>
+<h3 id="universal-windows-platform-uwp">Universal Windows Platform (UWP)</h3>
+<p>In Windows 8, Microsoft introduced a new API set as part of the Windows Runtime (WinRT). Unlike the .NET Framework, WinRT is a native layer of APIs which are exposed directly to apps. WinRT also introduced language projections, which are layers added on top of the runtime to allow developers to interact with it using languages such as C# and JavaScript in addition to C++. Projections enable developers to build apps on top of WinRT that leverage the same C# and XAML knowledge they acquired in building apps with the .NET Framework.</p>
+<p>In Windows 10, Microsoft introduced the <a href="/windows/uwp/get-started/universal-application-platform-guide">Universal Windows Platform (UWP)</a>, which is built on top of WinRT. The most important feature of UWP is that it offers a common set of APIs across every device platform: no matter if the app is running on a desktop, on an Xbox One or on a HoloLens, you're able to use the same APIs.</p>
+<p>Going forward, most new Windows features are exposed via WinRT APIs, including features such as Timeline, Project Rome, and Windows Hello.</p>
+<h3 id="msix-packaging">MSIX packaging</h3>
+<p><a href="/windows/msix/">MSIX</a> is the modern packaging model for Windows apps. MSIX supports UWP apps as well as desktop apps building using technologies such as Win32, WPF, Windows Forms, Java, Electron, and more. When you package a desktop app in an MSIX package, you can publish your app to the Microsoft Store. Your desktop app also get package identity when it is installed, which enables your desktop app to use a broader set of WinRT APIs.</p>
+<p>For more information, see these articles:</p>
+<ul>
+<li><a href="/windows/uwp/porting/desktop-to-uwp-root">Package desktop applications</a></li>
+<li><a href="/windows/uwp/porting/desktop-to-uwp-behind-the-scenes">Behind the scenes of your packaged desktop application</a></li>
+</ul>
+<h3 id="xaml-islands">XAML Islands</h3>
+<p>Starting in Windows 10, version 1903, you can host UWP controls in non-UWP desktop apps using a feature called <em>XAML Islands</em>. This feature enables you to enhance the look, feel, and functionality of your existing desktop apps with the latest Windows UI features that are only available via UWP controls. This means that you can use UWP features such as Windows Ink and controls that support the Fluent Design System in your existing WPF, Windows Forms, and C++ Win32 apps.</p>
+<p>For more information, see <a href="/windows/uwp/xaml-platform/xaml-host-controls">UWP controls in desktop applications (XAML Islands)</a>. This tutorial guides you through the process of using two different types of XAML Island controls:</p>
+<ul>
+<li><p>The <a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas">InkCanvas</a> and <a href="/windows/communitytoolkit/controls/wpf-winforms/mapcontrol">MapControl</a> in the Windows Community Toolkit. These WPF controls wrap the interface and functionality of the corresponding UWP controls and can be used like any other WPF control in the Visual Studio designer.</p>
+</li>
+<li><p>The UWP <a href="/windows/uwp/design/controls-and-patterns/calendar-view">Calendar view</a> control. This is a standard UWP control that you will host by using the <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> control in the Windows Community Toolkit.</p>
+</li>
+</ul>
+<h3 id="net-core-3">.NET Core 3</h3>
+<p><a href="/dotnet/core/">.NET Core</a> is an open-source framework that implements a cross-platform, lightweight and easily extensible version of the full .NET Framework. Compared to the full .NET Framework, .NET Core startup time is much faster and many of the APIs have been optimized.</p>
+<p>Through its first several releases, the focus of .NET Core was for supporting web or back-end apps. With .NET Core, you can easily build scalable web apps or APIs that can be hosted on Windows, Linux, or in micro-service architectures like Docker containers.</p>
+<p>.NET Core 3 is latest release of .NET Core. The highlight of this release is support for Windows desktop apps, including Windows Forms and WPF apps. You can run new and existing Windows desktop apps on .NET Core 3 and enjoy all the benefits that .NET Core has to offer. UWP controls that are hosted in <a href="xaml-islands/xaml-islands.html">XAML Islands</a> can also be used in Windows Forms and WPF apps that target .NET Core 3.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>WPF and Windows Forms are not becoming cross-platform, and you cannot run a WPF or Windows Forms on Linux and MacOS. The UI components of WPF and Windows Forms still have a dependency on the Windows rendering system.</p>
+</div>
+<p>For more information, see <a href="/dotnet/core/whats-new/dotnet-core-3-0">What's new in .NET Core 3.0</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/modernize-wpf-tutorial.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

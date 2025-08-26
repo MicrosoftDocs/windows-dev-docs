@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using ms-windows-store URIs in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using ms-windows-store URIs in Windows apps ">
+    
+    <meta name="description" content="Launch the Microsoft Store app directly to a landing page or your product&#39;s page.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-ms-windows-store-uris">Using ms-windows-store URIs</h1>
+
+<p>This topic describes the <strong>ms-windows-store:</strong> URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the store by using the <a href="/uwp/api/windows.system.launcher.launchuriasync">LaunchUriAsync</a> method on Windows.</p>
+<p>For example, you can open the Store to the Games page using the following code:</p>
+<pre><code class="lang-csharp">bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri(&quot;ms-windows-store://navigatetopage/?Id=Gaming&quot;));
+</code></pre>
+<h2 id="opening-the-store-to-specific-sections">Opening the Store to specific sections</h2>
+<p>You can launch the Store App to a specific page or section using the following options:</p>
+<table>
+<thead>
+<tr>
+<th>URI Scheme</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ms-windows-store://home</td>
+<td>Launches the home page of the Store.</td>
+<td></td>
+</tr>
+<tr>
+<td>ms-windows-store://navigatetopage/?Id=[vertical]</td>
+<td>Launches a top-level vertical page of the store</td>
+<td>Verticals include: <code>Home</code>, <code>Gaming</code>, <code>Entertainment</code>, <code>Productivity</code>, and <code>LOB</code>, but note that available verticals can vary by region.</td>
+</tr>
+<tr>
+<td>ms-windows-store://downloadsandupdates</td>
+<td>Launches the Updates and downloads page.</td>
+<td></td>
+</tr>
+<tr>
+<td>ms-windows-store://mylibrary</td>
+<td>Launches the Library page of the Store.</td>
+<td></td>
+</tr>
+<tr>
+<td>ms-windows-store://settings</td>
+<td>Launches the Store settings page.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="opening-to-a-specific-product">Opening to a specific product</h2>
+<p>You can launch the Store directly to the product detail page (PDP) for a specific product by using the Product ID for an App. While the Store app on Windows 10 and Windows 11 still supports Package Family Name (PFN) and App IDs, these are deprecated and may not be supported in the future. These values can be found in Partner Center on the App identity page in the Product management section for each app.</p>
+<p>Starting with the October 2021 update to the Store app, there are two modes available for displaying the PDP. By default the Store app is opened to the product detail page. You can also launch the store into with a popup experience that displays a smaller PDP dialog with that only displays the essential details for your app and a single action button for users. For the popup experience, you can optionally specify the location of a window that the dialog should be centered above.</p>
+<table>
+<thead>
+<tr>
+<th>URI Scheme</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL</td>
+<td>Launches the full product details page (PDP) for a product</td>
+<td>This is the recommended way to link to a specific product.</td>
+</tr>
+<tr>
+<td>ms-windows-store://pdp/?PFN=Microsoft.Office.OneNote_8wekyb3d8bbwe</td>
+<td>Launches the full product details page (PDP) for a product</td>
+<td>Using the package family name is deprecated.</td>
+</tr>
+<tr>
+<td>ms-windows-store://pdp/?AppId=00001111-aaaa-2222-bbbb-3333cccc4444</td>
+<td>Launches the full product details page (PDP) for a product</td>
+<td>Using the App ID is deprecated.</td>
+</tr>
+<tr>
+<td>ms-windows-store://pdp/?ProductId=9WZDNCRFHVJL&amp;mode=mini</td>
+<td>Launches the popup Store dialog experience</td>
+<td>The popup experience only supports Product ID</td>
+</tr>
+</tbody>
+</table>
+<h2 id="launching-the-rating-and-review-experience-for-a-product">Launching the rating and review experience for a product</h2>
+<p>To enable users to review your app, you can link to that PDP and launch directly into the rating and review dialog. Store ID is the recommended method to launch the Store app to a specific product detail page.</p>
+<table>
+<thead>
+<tr>
+<th>URI Scheme</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ms-windows-store://review/?ProductId=9WZDNCRFHVJL</td>
+<td>Launches the write a review experience for a product.</td>
+<td>Using StoreId is recommended</td>
+</tr>
+<tr>
+<td>ms-windows-store://review/?PFN=Microsoft.Office.OneNote_8wekyb3d8bbwe</td>
+<td>Launches the write a review experience for a product.</td>
+<td>Using product family name is deprecated.</td>
+</tr>
+<tr>
+<td>ms-windows-store://review/?AppId=11112222-bbbb-3333-cccc-4444dddd5555</td>
+<td>Launches the write a review experience for a product.</td>
+<td>Using productid is deprecated</td>
+</tr>
+</tbody>
+</table>
+<h2 id="searching-the-store">Searching the Store</h2>
+<p>You can launch the Store app directly into search results with several supported methods for searching store content.</p>
+<table>
+<thead>
+<tr>
+<th>URI Scheme</th>
+<th>Description</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ms-windows-store://assoc/?Tags=Photos_Rich_Media_Edit, Camera_Capture_App</td>
+<td>Launches a search for products associated with one or more tags.</td>
+<td>Tags must be separated by commas.</td>
+</tr>
+<tr>
+<td>ms-windows-store://search/?query=OneNote</td>
+<td>Launches a search for the specified query.</td>
+<td>Spaces in the query are allowed.</td>
+</tr>
+<tr>
+<td>ms-windows-store://browse/?type=Apps&amp;cat=Health+%26+fitness</td>
+<td>Launches a search for products in a category.</td>
+<td></td>
+</tr>
+<tr>
+<td>ms-windows-store://publisher/?name=Microsoft Corporation</td>
+<td>Launches a search for products from the specified publisher.</td>
+<td>Spaces in the name are allowed.</td>
+</tr>
+<tr>
+<td>ms-windows-store://assoc/?FileExt=pdf</td>
+<td>Launches a search for products associated with a file extension.</td>
+<td></td>
+</tr>
+<tr>
+<td>ms-windows-store://assoc/?Protocol=ms-word</td>
+<td>Launches a search for products associated with a protocol.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-content">Related content</h2>
+<p><a href="index.html">Launching, resuming, and background tasks</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/launch-store-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

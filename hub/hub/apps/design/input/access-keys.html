@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Access keys design guidelines </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Access keys design guidelines ">
+    
+    <meta name="description" content="Learn how to improve both the usability and the accessibility of your Windows app by providing an intuitive way for users to quickly navigate and interact with an app&#39;s visible UI through a keyboard instead of a pointer device (such as touch or mouse).">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="access-keys">Access keys</h1>
+
+<p>Access keys are keyboard shortcuts that improve the usability and the accessibility of your Windows applications by providing an intuitive way for users to quickly navigate and interact with an app's visible UI through a keyboard instead of a pointer device (such as touch or mouse).</p>
+<p>The Windows app provides built-in support across platform controls for both keyboard-based access keys and associated UI feedback through visual cues called keytips.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A keyboard is indispensable for users with certain disabilities (see <a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a>), and is also an important tool for users who prefer it as a more efficient way to interact with an app.</p>
+</div>
+<p>See the <a href="keyboard-accelerators.html">Accelerator keys</a> topic for details on invoking common actions in a Windows application with keyboard shortcuts.</p>
+<p>To create your own custom keyboard shortcuts, see the <a href="keyboard-events.html">Keyboard events</a> topic.</p>
+<h2 id="overview">Overview</h2>
+<p>An access key is a combination of the Alt key and one or more alphanumeric keys—sometimes called a <em>mnemonic</em>—typically pressed sequentially, rather than simultaneously.</p>
+<p>Keytips are badges displayed next to controls that support access keys when the user presses the Alt key. Each keytip contains the alphanumeric keys that activate the associated control.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Keyboard shortcuts are automatically supported for access keys with a single alphanumeric character. For example, simultaneously pressing Alt+F in Word opens the File menu without displaying keytips.</p>
+</div>
+<p>Pressing the Alt key initializes access key functionality and displays all currently available key combinations in keytips. Subsequent keystrokes are handled by the access key framework, which rejects invalid keys until either a valid access key is pressed, or the Enter, Esc, Tab, or Arrow keys are pressed to deactivate access keys and return keystroke handling to the app.</p>
+<p>Microsoft Office apps provide extensive support for access keys. The following image shows the Home tab of Word with access keys activated (note the support for both numbers and multiple keystrokes).</p>
+<p><img src="images/accesskeys/keytip-badges-word.png" alt="Keytip badges for access keys in Microsoft Word"></p>
+<p><em>KeyTip badges for access keys in Microsoft Word</em></p>
+<p>To add an access key to a control, use the <strong>AccessKey property</strong>. The value of this property specifies the access key sequence, the shortcut (if a single alphanumeric), and the keytip.</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;Accept&quot; AccessKey=&quot;A&quot; Click=&quot;AcceptButtonClick&quot; /&gt;
+</code></pre>
+<h2 id="when-to-use-access-keys">When to use access keys</h2>
+<p>We recommend that you specify access keys wherever appropriate in your UI, and support access keys in all custom controls.</p>
+<ol>
+<li><p><strong>Access keys make your app more accessible</strong> for users with motor disabilities, including those users who can press only one key at a time or have difficulty using a mouse.</p>
+<p>A well-designed keyboard UI is an important aspect of software accessibility. It enables users with vision impairments or who have certain motor disabilities to navigate an app and interact with its features. Such users might not be able to operate a mouse and instead rely on various assistive technologies such as keyboard enhancement tools, on-screen keyboards, screen enlargers, screen readers, and voice input utilities. For these users, comprehensive command coverage is crucial.</p>
+</li>
+<li><p><strong>Access keys make your app more usable</strong> for power users who prefer
+to interact through the keyboard.</p>
+<p>Experienced users often have a strong preference for using the keyboard because keyboard-based commands can be entered more quickly and don't require them to remove their hands from the keyboard. For these users, efficiency and consistency are crucial; comprehensiveness is important only for the most frequently used commands.</p>
+</li>
+</ol>
+<h2 id="set-access-key-scope">Set access key scope</h2>
+<p>When there are many elements on the screen that support access keys, we recommend scoping the access keys to reduce <strong>cognitive load</strong>. This minimizes the number of access keys on the screen, which makes them easier to locate, and improves efficiency and productivity.</p>
+<p>For example, Microsoft Word provides two access key scopes: a primary scope for the Ribbon tabs and a secondary scope for commands on the selected tab.</p>
+<p>The following images demonstrate the two access key scopes in Word. The first shows the primary access keys that let a user select a tab and other top level commands, and the second shows the secondary access keys for the Home tab.</p>
+<p><img src="images/accesskeys/primary-access-keys-word.png" alt="Primary access keys in Microsoft Word">
+<em>Primary access keys in Microsoft Word</em></p>
+<p><img src="images/accesskeys/secondary-access-keys-word.png" alt="Secondary access keys in Microsoft Word">
+<em>Secondary access keys in Microsoft Word</em></p>
+<p>Access keys can be duplicated for elements in different scopes. In the preceding example, &quot;2&quot; is the access key for Undo in the primary scope, and also &quot;Italics&quot; in the secondary scope.</p>
+<p>Here, we show how to define an access key scope.</p>
+<pre><code class="lang-xaml">&lt;CommandBar x:Name=&quot;MainCommandBar&quot; AccessKey=&quot;M&quot; &gt;
+    &lt;AppBarButton AccessKey=&quot;G&quot; Icon=&quot;Globe&quot; Label=&quot;Go&quot;/&gt;
+    &lt;AppBarButton AccessKey=&quot;S&quot; Icon=&quot;Stop&quot; Label=&quot;Stop&quot;/&gt;
+    &lt;AppBarSeparator/&gt;
+    &lt;AppBarButton AccessKey=&quot;R&quot; Icon=&quot;Refresh&quot; Label=&quot;Refresh&quot; IsAccessKeyScope=&quot;True&quot;&gt;
+        &lt;AppBarButton.Flyout&gt;
+            &lt;MenuFlyout&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;A&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh A&quot; /&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;B&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh B&quot; /&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;C&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh C&quot; /&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;D&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh D&quot; /&gt;
+            &lt;/MenuFlyout&gt;
+        &lt;/AppBarButton.Flyout&gt;
+    &lt;/AppBarButton&gt;
+    &lt;AppBarButton AccessKey=&quot;B&quot; Icon=&quot;Back&quot; Label=&quot;Back&quot;/&gt;
+    &lt;AppBarButton AccessKey=&quot;F&quot; Icon=&quot;Forward&quot; Label=&quot;Forward&quot;/&gt;
+    &lt;AppBarSeparator/&gt;
+    &lt;AppBarToggleButton AccessKey=&quot;T&quot; Icon=&quot;Favorite&quot; Label=&quot;Favorite&quot;/&gt;
+    &lt;CommandBar.SecondaryCommands&gt;
+        &lt;AppBarToggleButton Icon=&quot;Like&quot; AccessKey=&quot;L&quot; Label=&quot;Like&quot;/&gt;
+        &lt;AppBarButton Icon=&quot;Setting&quot; AccessKey=&quot;S&quot; Label=&quot;Settings&quot; /&gt;
+    &lt;/CommandBar.SecondaryCommands&gt;
+&lt;/CommandBar&gt;
+</code></pre>
+<p><img src="images/accesskeys/primary-access-keys-commandbar.png" alt="Primary access keys for CommandBar"></p>
+<p><em>CommandBar primary scope and supported access keys</em></p>
+<p><img src="images/accesskeys/secondary-access-keys-commandbar.png" alt="Secondary access keys for CommandBar"></p>
+<p><em>CommandBar secondary scope and supported access keys</em></p>
+<h3 id="windows-10-creators-update-and-older">Windows 10 Creators Update and older</h3>
+<p>Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn't support built-in access key scopes.</p>
+<p>The following example shows how to support CommandBar SecondaryCommands with access keys, which are available once a parent command is invoked (similar to the Ribbon in Word).</p>
+<pre><code class="lang-xaml">&lt;local:CommandBarHack x:Name=&quot;MainCommandBar&quot; AccessKey=&quot;M&quot; &gt;
+    &lt;AppBarButton AccessKey=&quot;G&quot; Icon=&quot;Globe&quot; Label=&quot;Go&quot;/&gt;
+    &lt;AppBarButton AccessKey=&quot;S&quot; Icon=&quot;Stop&quot; Label=&quot;Stop&quot;/&gt;
+    &lt;AppBarSeparator/&gt;
+    &lt;AppBarButton AccessKey=&quot;R&quot; Icon=&quot;Refresh&quot; Label=&quot;Refresh&quot; IsAccessKeyScope=&quot;True&quot;&gt;
+        &lt;AppBarButton.Flyout&gt;
+            &lt;MenuFlyout&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;A&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh A&quot; /&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;B&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh B&quot; /&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;C&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh C&quot; /&gt;
+                &lt;MenuFlyoutItem AccessKey=&quot;D&quot; Icon=&quot;Globe&quot; Text=&quot;Refresh D&quot; /&gt;
+            &lt;/MenuFlyout&gt;
+        &lt;/AppBarButton.Flyout&gt;
+    &lt;/AppBarButton&gt;
+    &lt;AppBarButton AccessKey=&quot;B&quot; Icon=&quot;Back&quot; Label=&quot;Back&quot;/&gt;
+    &lt;AppBarButton AccessKey=&quot;F&quot; Icon=&quot;Forward&quot; Label=&quot;Forward&quot;/&gt;
+    &lt;AppBarSeparator/&gt;
+    &lt;AppBarToggleButton AccessKey=&quot;T&quot; Icon=&quot;Favorite&quot; Label=&quot;Favorite&quot;/&gt;
+    &lt;CommandBar.SecondaryCommands&gt;
+        &lt;AppBarToggleButton Icon=&quot;Like&quot; AccessKey=&quot;L&quot; Label=&quot;Like&quot;/&gt;
+        &lt;AppBarButton Icon=&quot;Setting&quot; AccessKey=&quot;S&quot; Label=&quot;Settings&quot; /&gt;
+    &lt;/CommandBar.SecondaryCommands&gt;
+&lt;/local:CommandBarHack&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class CommandBarHack : CommandBar
+{
+    CommandBarOverflowPresenter secondaryItemsControl;
+    Popup overflowPopup;
+
+    public CommandBarHack()
+    {
+        this.ExitDisplayModeOnAccessKeyInvoked = false;
+        AccessKeyInvoked += OnAccessKeyInvoked;
+    }
+
+    protected override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+
+        Button moreButton = GetTemplateChild(&quot;MoreButton&quot;) as Button;
+        moreButton.SetValue(Control.IsTemplateKeyTipTargetProperty, true);
+        moreButton.IsAccessKeyScope = true;
+
+        // SecondaryItemsControl changes
+        secondaryItemsControl = GetTemplateChild(&quot;SecondaryItemsControl&quot;) as CommandBarOverflowPresenter;
+        secondaryItemsControl.AccessKeyScopeOwner = moreButton;
+
+        overflowPopup = GetTemplateChild(&quot;OverflowPopup&quot;) as Popup;
+    }
+
+    private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
+    {
+        if (overflowPopup != null)
+        {
+            overflowPopup.Opened += SecondaryMenuOpened;
+        }
+    }
+
+    private void SecondaryMenuOpened(object sender, object e)
+    {
+        //This is not necessary given we are automatically pushing the scope.
+        var item = secondaryItemsControl.Items.First();
+        if (item != null &amp;&amp; item is Control)
+        {
+            (item as Control).Focus(FocusState.Keyboard);
+        }
+        overflowPopup.Opened -= SecondaryMenuOpened;
+    }
+}
+</code></pre>
+<h2 id="avoid-access-key-collisions">Avoid access key collisions</h2>
+<p>Access key collisions occur when two or more elements in the same scope have duplicate access keys, or start with the same alphanumeric characters.</p>
+<p>The system resolves duplicate access keys by processing the access key of the first element added to the visual tree, ignoring all others.</p>
+<p>When multiple access keys start with the same character (for example, &quot;A&quot;, &quot;A1&quot;, and &quot;AB&quot;), the system processes the single character access key and ignores all others.</p>
+<p>Avoid collisions by using unique access keys or by scoping commands.</p>
+<h2 id="choose-access-keys">Choose access keys</h2>
+<p>Consider the following when choosing access keys:</p>
+<ul>
+<li>Use a single character to minimize keystrokes and support accelerator keys by default (Alt+AccessKey)</li>
+<li>Avoid using more than two characters</li>
+<li>Avoid access keys collisions</li>
+<li>Avoid characters that are difficult to differentiate from other characters, such as the letter &quot;I&quot; and the number &quot;1&quot; or the letter &quot;O&quot; and the number &quot;0&quot;</li>
+<li>Use well-known precedents from other popular apps such as Word (&quot;F&quot; for &quot;File&quot;, &quot;H&quot; for &quot;Home&quot;, and so on)</li>
+<li>Use the first character of the command name, or a character with a close association to the command that helps with recall
+<ul>
+<li>If the first letter is already assigned, use a letter that is as close as possible to the first letter of the command name (&quot;N&quot; for Insert)</li>
+<li>Use a distinctive consonant from the command name (&quot;W&quot; for View)</li>
+<li>Use a vowel from the command name.</li>
+</ul>
+</li>
+</ul>
+<h2 id="localize-access-keys">Localize access keys</h2>
+<p>If your app is going to be localized in multiple languages, you should also <strong>consider localizing the access keys</strong>. For example, for &quot;H&quot; for &quot;Home&quot; in en-US and &quot;I&quot; for &quot;Incio&quot; in es-ES.</p>
+<p>Use the x:Uid extension in markup to apply localized resources as shown here:</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;Home&quot; AccessKey=&quot;H&quot; x:Uid=&quot;HomeButton&quot; /&gt;
+</code></pre>
+<p>Resources for each language are added to corresponding String folders in the project:</p>
+<p><img src="images/accesskeys/resource-string-folders.png" alt="English and Spanish resource string folders"></p>
+<p><em>English and Spanish resource string folders</em></p>
+<p>Localized access keys are specified in your projects resources.resw file:</p>
+<p><img src="images/accesskeys/resource-resw-file.png" alt="Specify the AccessKey property specified in the resources.resw file"></p>
+<p><em>Specify the AccessKey property specified in the resources.resw file</em></p>
+<p>For more info, see <a href="/previous-versions/windows/apps/hh965329(v=win.10)">Translating UI resources </a></p>
+<h2 id="keytip-positioning">Keytip positioning</h2>
+<p>Keytips are displayed as floating badges relative to their corresponding UI element, taking into account the presence of other UI elements, other keytips, and the screen edge.</p>
+<p>Typically, the default keytip location is sufficient and provides built-in support for adaptive UI.</p>
+<p><img src="images/accesskeys/auto-keytip-position.png" alt="Example of automatic keytip placement"></p>
+<p><em>Example of automatic keytip placement</em></p>
+<p>However, should you need more control over keytip positioning, we recommend the following:</p>
+<ol>
+<li><p><strong>Obvious association principle</strong>: The user can associate the control with the keytip easily.</p>
+<p>a.  The keytip should be <strong>close</strong> to the element who have the access key (the owner).<br>
+b.  The keytip should <strong>avoid covering enabled elements</strong> that have access keys.<br>
+c.  If a keytip can't be placed close to its owner, it should overlap the owner.</p>
+</li>
+<li><p><strong>Discoverability</strong>: The user can discover the control with the keytip quickly.</p>
+<p>a.  The keytip never <strong>overlaps</strong> other keytips.</p>
+</li>
+<li><p><strong>Easy scanning:</strong> The user can skim the keytips easily.</p>
+<p>a.  keytips should be <strong>aligned</strong> with each other and with the UI Element.
+b.  keytips should be <strong>grouped</strong> as much as possible.</p>
+</li>
+</ol>
+<h3 id="relative-position">Relative position</h3>
+<p>Use the <strong>KeyTipPlacementMode</strong> property to customize the placement of the keytip on a per element or per group basis.</p>
+<p>The placement modes are: Top, Bottom, Right, Left, Hidden, Center, and Auto.</p>
+<p><img src="images/accesskeys/keytip-postion-modes.png" alt="Screenshot showing the relative positions of the keytip placement modes"></p>
+<p><em>keytip placement modes</em></p>
+<p>The center line of the control is used to calculate the vertical and horizontal alignment of the keytip.</p>
+<p>They following example shows how to set the keytip placement of a group of controls using the KeyTipPlacementMode property of a StackPanel container.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; KeyTipPlacementMode=&quot;Top&quot;&gt;
+  &lt;Button Content=&quot;File&quot; AccessKey=&quot;F&quot; /&gt;
+  &lt;Button Content=&quot;Home&quot; AccessKey=&quot;H&quot; /&gt;
+  &lt;Button Content=&quot;Insert&quot; AccessKey=&quot;N&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<h3 id="offsets">Offsets</h3>
+<p>Use the KeyTipHorizontalOffset and KeyTipVerticalOffset properties of an element for even more granular control of the keytip location.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Offsets cannot be set when KeyTipPlacementMode is set to Auto.</p>
+</div>
+<p>The KeyTipHorizontalOffset property indicates how far to move the keytip left or right.</p>
+<p><img src="images/accesskeys/keytip-offsets.png" alt="Screenshot of vertical and horizontal keytip offsets for a button"></p>
+<p><em>Set vertical and horizontal keytip offsets for a button</em></p>
+<pre><code class="lang-xaml">&lt;Button
+  Content=&quot;File&quot;
+  AccessKey=&quot;F&quot;
+  KeyTipPlacementMode=&quot;Bottom&quot;
+  KeyTipHorizontalOffset=&quot;20&quot;
+  KeyTipVerticalOffset=&quot;-8&quot; /&gt;
+</code></pre>
+<h3 id="screen-edge-alignment-screen-edge-alignment-listparagraph">Screen edge alignment {#screen-edge-alignment .ListParagraph}</h3>
+<p>The location of a keytip is automatically adjusted based on the screen edge to ensure the keytip is fully visible. When this occurs, the distance between the control and keytip alignment point might differ from the values specified for the horizontal and vertical offsets .</p>
+<p><img src="images/accesskeys/keytips-screen-edge.png" alt="Screenshot of keytip screen edge alignment"></p>
+<p><em>keytips are automatically positioned based on the screen edge</em></p>
+<h2 id="keytip-style">Keytip style</h2>
+<p>We recommend using the built-in keytip support for platform themes, including high contrast.</p>
+<p>If you need to specify your own keytip styles, use application resources such as KeyTipFontSize (font size), KeyTipFontFamily (font family), KeyTipBackground (background), KeyTipForeground (foreground), KeyTipPadding (padding), KeyTipBorderBrush(Border color), and KeyTipBorderThemeThickness (border thickness).</p>
+<p><img src="images/accesskeys/keytip-customization.png" alt="Screenshot of keytip customization options, including font, order, and color"></p>
+<p><em>keytip customization options</em></p>
+<p>This example demonstrates how to change these application resources:</p>
+<pre><code class="lang-xaml">&lt;Application.Resources&gt;
+ &lt;SolidColorBrush Color=&quot;DarkGray&quot; x:Key=&quot;MyBackgroundColor&quot; /&gt;
+ &lt;SolidColorBrush Color=&quot;White&quot; x:Key=&quot;MyForegroundColor&quot; /&gt;
+ &lt;SolidColorBrush Color=&quot;Black&quot; x:Key=&quot;MyBorderColor&quot; /&gt;
+ &lt;StaticResource x:Key=&quot;KeyTipBackground&quot; ResourceKey=&quot;MyBackgroundColor&quot; /&gt;
+ &lt;StaticResource x:Key=&quot;KeyTipForeground&quot; ResourceKey=&quot;MyForegroundColor&quot; /&gt;
+ &lt;StaticResource x:Key=&quot;KeyTipBorderBrush&quot; ResourceKey=&quot;MyBorderColor&quot;/&gt;
+ &lt;FontFamily x:Key=&quot;KeyTipFontFamily&quot;&gt;Consolas&lt;/FontFamily&gt;
+ &lt;x:Double x:Key=&quot;KeyTipContentThemeFontSize&quot;&gt;18&lt;/x:Double&gt;
+ &lt;Thickness x:Key=&quot;KeyTipBorderThemeThickness&quot;&gt;2&lt;/Thickness&gt;
+ &lt;Thickness x:Key=&quot;KeyTipThemePadding&quot;&gt;4,4,4,4&lt;/Thickness&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<h2 id="access-keys-and-narrator">Access keys and Narrator</h2>
+<p>The XAML framework exposes Automation Properties that enable UI Automation clients to discover information about elements in the user interface.</p>
+<p>If you specify the AccessKey property on a UIElement or TextElement control, you can use the <a href="/dotnet/api/system.windows.automation.automationproperties.accesskey">AutomationProperties.AccessKey</a> property to get this value. Accessibility clients, such as Narrator, read the value of this property each time an element gets focus.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="keyboard-interactions.html">Keyboard interactions</a></li>
+<li><a href="keyboard-accelerators.html">Keyboard accelerators</a></li>
+</ul>
+<p><strong>Samples</strong></p>
+<ul>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI Gallery</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/access-keys.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

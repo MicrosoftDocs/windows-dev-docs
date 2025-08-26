@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Launch the Windows Settings app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Launch the Windows Settings app ">
+    
+    <meta name="description" content="Learn how to launch the Windows Settings app from your own Windows apps using the ms-settings URI scheme.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="launch-the-windows-settings-app">Launch the Windows Settings app</h1>
+
+<p>Learn how to launch the Windows Settings app. This topic describes the <code>ms-settings:</code> URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.</p>
+<p>Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more information, see <a href="../security/index.html">Security and identity</a>.</p>
+<h2 id="important-apis">Important APIs</h2>
+<p>The following Windows Runtime (WinRT) APIs are used in this topic:</p>
+<ul>
+<li><a href="/uwp/api/windows.system.launcher.launchuriasync">LaunchUriAsync</a></li>
+<li><a href="/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname">PreferredApplicationPackageFamilyName</a></li>
+<li><a href="/uwp/api/windows.system.launcheroptions.desiredremainingview">DesiredRemainingView</a></li>
+</ul>
+<p>Note that the WinRT APIs used in this topic can be used in both UWP apps, WinUI apps, and other desktop apps. To read more about enabling your desktop app to work with WinRT APIs, see <a href="/windows/apps/desktop/modernize/desktop-to-uwp-enhance">Call Windows Runtime APIs in desktop apps</a>.</p>
+<h2 id="how-to-launch-the-settings-app">How to launch the Settings app</h2>
+<p>To launch the <strong>Settings</strong> app, use the <code>ms-settings:</code> URI scheme as shown in the following examples.</p>
+<h3 id="xaml-hyperlink-control">XAML hyperlink control</h3>
+<p>In this example, a Hyperlink XAML control is used to launch the privacy settings page for the microphone using the <code>ms-settings:privacy-microphone</code> URI.</p>
+<pre><code class="lang-xml">&lt;!--Set Visibility to Visible when access to the microphone is denied --&gt;
+&lt;TextBlock x:Name=&quot;LocationDisabledMessage&quot; FontStyle=&quot;Italic&quot;
+                 Visibility=&quot;Collapsed&quot; Margin=&quot;0,15,0,0&quot; TextWrapping=&quot;Wrap&quot; &gt;
+          &lt;Run Text=&quot;This app is not able to access the microphone. Go to &quot; /&gt;
+              &lt;Hyperlink NavigateUri=&quot;ms-settings:privacy-microphone&quot;&gt;
+                  &lt;Run Text=&quot;Settings&quot; /&gt;
+              &lt;/Hyperlink&gt;
+          &lt;Run Text=&quot; to check the microphone privacy settings.&quot;/&gt;
+&lt;/TextBlock&gt;
+</code></pre>
+<h3 id="calling-launchuriasync">Calling LaunchUriAsync</h3>
+<p>Alternatively, your app can call the <a href="/uwp/api/windows.system.launcher.launchuriasync">LaunchUriAsync</a> method to launch the <strong>Settings</strong> app. This example shows how to launch to the privacy settings page for the camera using the <code>ms-settings:privacy-webcam</code> URI.</p>
+<pre><code class="lang-cs">bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri(&quot;ms-settings:privacy-webcam&quot;));
+</code></pre>
+<pre><code class="lang-cppwinrt">bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L&quot;ms-settings:privacy-webcam&quot;));
+</code></pre>
+<p>The code above launches the privacy settings page for the camera:</p>
+<p><span class="mx-imgBorder">
+<img src="images/privacyawarenesssettingsapp.png" alt="A screenshot of the Windows camera privacy settings.">
+</span>
+</p>
+<p>For more info about launching URIs, see <a href="launch-default-app.html">Launch the default app for a URI</a>.</p>
+<h2 id="ms-settings-uri-scheme-reference">ms-settings: URI scheme reference</h2>
+<p>The following sections describe different categories of ms-settings URIs used to open various pages of the Settings app:</p>
+<ul>
+<li><a href="#accounts">Accounts</a></li>
+<li><a href="#apps">Apps</a></li>
+<li><a href="#control-center">Control Center</a></li>
+<li><a href="#cortana">Cortana</a></li>
+<li><a href="#devices">Devices</a></li>
+<li><a href="#ease-of-access">Ease of access</a></li>
+<li><a href="#extras">Extras</a></li>
+<li><a href="#family-group">Family Group</a></li>
+<li><a href="#gaming">Gaming</a></li>
+<li><a href="#mixed-reality">Mixed reality</a></li>
+<li><a href="#network-and-internet">Network and internet</a></li>
+<li><a href="#personalization">Personalization</a></li>
+<li><a href="#phone">Phone</a></li>
+<li><a href="#privacy">Privacy</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#sound">Sound</a></li>
+<li><a href="#surface-hub">Surface Hub</a></li>
+<li><a href="#system">System</a></li>
+<li><a href="#time-and-language">Time and language</a></li>
+<li><a href="#update-and-security">Update and security</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The availability of some settings pages varies by Windows version and SKU. For some settings, the URI column also captures some usage information and any additional requirements that must be met for a page to be available.</p>
+</div>
+<h3 id="accounts">Accounts</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access work or school</td>
+<td>ms-settings:workplace</td>
+</tr>
+<tr>
+<td>Email &amp; app accounts</td>
+<td>ms-settings:emailandaccounts</td>
+</tr>
+<tr>
+<td>Family &amp; other people</td>
+<td>ms-settings:otherusers</td>
+</tr>
+<tr>
+<td>Provisioning</td>
+<td>ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package)<br>ms-settings:workplace-provisioning (only available if enterprise has deployed a provisioning package)</td>
+</tr>
+<tr>
+<td>Repair token</td>
+<td>ms-settings:workplace-repairtoken</td>
+</tr>
+<tr>
+<td>Set up a kiosk</td>
+<td>ms-settings:assignedaccess</td>
+</tr>
+<tr>
+<td>Sign-in options</td>
+<td>ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock</td>
+</tr>
+<tr>
+<td>Sync your settings</td>
+<td>ms-settings:sync<br>ms-settings:backup (<strong>Backup page deprecated in Windows 11</strong>)</td>
+</tr>
+<tr>
+<td>Windows Anywhere</td>
+<td>ms-settings:windowsanywhere (device must be Windows Anywhere-capable)</td>
+</tr>
+<tr>
+<td>Windows Hello setup</td>
+<td>ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment</td>
+</tr>
+<tr>
+<td>Your info</td>
+<td>ms-settings:yourinfo</td>
+</tr>
+</tbody>
+</table>
+<h3 id="apps">Apps</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apps &amp; Features</td>
+<td>ms-settings:appsfeatures</td>
+</tr>
+<tr>
+<td>App features</td>
+<td>ms-settings:appsfeatures-app (Reset, manage add-on &amp; downloadable content, etc. for the app) <br><br> To access this page with a URI, use the ms-settings:appsfeatures-app URI and pass an optional parameter of the <em>package family name</em> of the app.<br><br>Example: <code>ms-settings:appsfeatures-app?&lt;PFN&gt;</code></td>
+</tr>
+<tr>
+<td>Apps for websites</td>
+<td>ms-settings:appsforwebsites</td>
+</tr>
+<tr>
+<td>Default apps</td>
+<td>ms-settings:defaultapps (<strong>Behavior introduced in Windows 11, version 21H2 (with 2023-04 Cumulative Update) or 22H2 (with 2023-04 Cumulative Update), or later.</strong>)<br>Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br><br>- registeredAppMachine=&lt;Uri-escaped per machine installed name of app&gt;<br>- registeredAppUser=&lt;Uri-escaped per user installed name of app&gt;<br>- registeredAUMID=&lt;Uri-escaped Application User Model ID&gt;<br><br>For more information, see <a href="launch-default-apps-settings.html">Launch the Default Apps settings page</a>.</td>
+</tr>
+<tr>
+<td>Default browser settings</td>
+<td>ms-settings:defaultbrowsersettings (<strong>Deprecated in Windows 11</strong>)</td>
+</tr>
+<tr>
+<td>Manage optional features</td>
+<td>ms-settings:optionalfeatures</td>
+</tr>
+<tr>
+<td>Offline Maps</td>
+<td>ms-settings:maps<br>ms-settings:maps-downloadmaps (Download maps)</td>
+</tr>
+<tr>
+<td>Startup apps</td>
+<td>ms-settings:startupapps</td>
+</tr>
+<tr>
+<td>Video playback</td>
+<td>ms-settings:videoplayback</td>
+</tr>
+</tbody>
+</table>
+<h3 id="control-center">Control Center</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control center</td>
+<td>ms-settings:controlcenter</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cortana">Cortana</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cortana across my devices</td>
+<td>ms-settings:cortana-notifications</td>
+</tr>
+<tr>
+<td>More details</td>
+<td>ms-settings:cortana-moredetails</td>
+</tr>
+<tr>
+<td>Permissions &amp; History</td>
+<td>ms-settings:cortana-permissions</td>
+</tr>
+<tr>
+<td>Searching Windows</td>
+<td>ms-settings:cortana-windowssearch</td>
+</tr>
+<tr>
+<td>Talk to Cortana</td>
+<td>ms-settings:cortana-language<br>ms-settings:cortana<br>ms-settings:cortana-talktocortana</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Cortana voice assistance in Windows as a standalone app was retired in the spring of 2023. For more information, see <a href="https://support.microsoft.com/topic/end-of-support-for-cortana-d025b39f-ee5b-4836-a954-0ab646ee1efa">End of support for Cortana</a>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case.</p>
+</div>
+<h3 id="devices">Devices</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AutoPlay</td>
+<td>ms-settings:autoplay</td>
+</tr>
+<tr>
+<td>Bluetooth</td>
+<td>ms-settings:bluetooth</td>
+</tr>
+<tr>
+<td>Connected Devices</td>
+<td>ms-settings:connecteddevices</td>
+</tr>
+<tr>
+<td>Default camera</td>
+<td>ms-settings:camera (<strong>Behavior deprecated in Windows 10, version 1809 and later</strong>)</td>
+</tr>
+<tr>
+<td>Camera settings</td>
+<td>ms-settings:camera (<strong>Behavior introduced in Windows 11, build 22000 and later</strong>) Append the query string parameter <code>cameraId</code> set to the Uri-escaped symbolic link name of a camera device to directly launch the settings for that camera. For more information, see <a href="/windows/apps/develop/camera/launch-camera-settings">Launch the camera settings page</a>.</td>
+</tr>
+<tr>
+<td>Mouse &amp; touchpad</td>
+<td>ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad)</td>
+</tr>
+<tr>
+<td>Pen &amp; Windows Ink</td>
+<td>ms-settings:pen</td>
+</tr>
+<tr>
+<td>Printers &amp; scanners</td>
+<td>ms-settings:printers</td>
+</tr>
+<tr>
+<td>Touch</td>
+<td>ms-settings:devices-touch</td>
+</tr>
+<tr>
+<td>Touchpad</td>
+<td>ms-settings:devices-touchpad (only available if touchpad hardware is present)</td>
+</tr>
+<tr>
+<td>Text Suggestions</td>
+<td>ms-settings:devicestyping-hwkbtextsuggestions</td>
+</tr>
+<tr>
+<td>Typing</td>
+<td>ms-settings:typing</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>ms-settings:usb</td>
+</tr>
+<tr>
+<td>Wheel</td>
+<td>ms-settings:wheel (only available if a <strong>Surface Dial</strong> device is paired)</td>
+</tr>
+<tr>
+<td>Your phone</td>
+<td>ms-settings:mobile-devices</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ease-of-access">Ease of access</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Audio</td>
+<td>ms-settings:easeofaccess-audio</td>
+</tr>
+<tr>
+<td>Closed captions</td>
+<td>ms-settings:easeofaccess-closedcaptioning</td>
+</tr>
+<tr>
+<td>Color filters</td>
+<td>ms-settings:easeofaccess-colorfilter <br> ms-settings:easeofaccess-colorfilter-adaptivecolorlink <br> ms-settings:easeofaccess-colorfilter-bluelightlink</td>
+</tr>
+<tr>
+<td>Display</td>
+<td>ms-settings:easeofaccess-display</td>
+</tr>
+<tr>
+<td>Eye control</td>
+<td>ms-settings:easeofaccess-eyecontrol</td>
+</tr>
+<tr>
+<td>Hearing devices</td>
+<td>ms-settings:easeofaccess-hearingaids (<strong>Added in Windows 11, Version 24H2</strong>)</td>
+</tr>
+<tr>
+<td>High contrast</td>
+<td>ms-settings:easeofaccess-highcontrast</td>
+</tr>
+<tr>
+<td>Keyboard</td>
+<td>ms-settings:easeofaccess-keyboard</td>
+</tr>
+<tr>
+<td>Magnifier</td>
+<td>ms-settings:easeofaccess-magnifier</td>
+</tr>
+<tr>
+<td>Mouse</td>
+<td>ms-settings:easeofaccess-mouse</td>
+</tr>
+<tr>
+<td>Mouse pointer &amp; touch</td>
+<td>ms-settings:easeofaccess-mousepointer</td>
+</tr>
+<tr>
+<td>Narrator</td>
+<td>ms-settings:easeofaccess-narrator <br> ms-settings:easeofaccess-narrator-isautostartenabled</td>
+</tr>
+<tr>
+<td>Speech</td>
+<td>ms-settings:easeofaccess-speechrecognition</td>
+</tr>
+<tr>
+<td>Text cursor</td>
+<td>ms-settings:easeofaccess-cursor</td>
+</tr>
+<tr>
+<td>Visual Effects</td>
+<td>ms-settings:easeofaccess-visualeffects</td>
+</tr>
+</tbody>
+</table>
+<h3 id="extras">Extras</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Extras</td>
+<td>ms-settings:extras (only available if &quot;settings apps&quot; have been installed, for example, by a 3rd party)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="family-group">Family Group</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Family Group</td>
+<td>ms-settings:family-group</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gaming">Gaming</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Game bar</td>
+<td>ms-settings:gaming-gamebar</td>
+</tr>
+<tr>
+<td>Game DVR</td>
+<td>ms-settings:gaming-gamedvr</td>
+</tr>
+<tr>
+<td>Game Mode</td>
+<td>ms-settings:gaming-gamemode</td>
+</tr>
+<tr>
+<td>Playing a game full screen</td>
+<td>ms-settings:quietmomentsgame</td>
+</tr>
+<tr>
+<td>TruePlay</td>
+<td>ms-settings:gaming-trueplay (<strong>As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows</strong>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mixed-reality">Mixed reality</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These settings are only available if the <a href="https://apps.microsoft.com/detail/9ng1h8b3zc7m">Mixed Reality Portal</a> app is installed.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Windows Mixed Reality devices are not supported with Windows 11, version 24H2 and newer.</p>
+<p>Windows Mixed Reality support is limited to Windows 10, version 20H2 through Windows 11, version 23H2.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Audio and speech</td>
+<td>ms-settings:holographic-audio</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>ms-settings:privacy-holographic-environment</td>
+</tr>
+<tr>
+<td>Headset display</td>
+<td>ms-settings:holographic-headset</td>
+</tr>
+<tr>
+<td>Uninstall</td>
+<td>ms-settings:holographic-management</td>
+</tr>
+<tr>
+<td>Startup and desktop</td>
+<td>ms-settings:holographic-startupandesktop</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-and-internet">Network and internet</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network &amp; internet</td>
+<td>ms-settings:network-status</td>
+</tr>
+<tr>
+<td>Advanced settings</td>
+<td>ms-settings:network-advancedsettings</td>
+</tr>
+<tr>
+<td>Airplane mode</td>
+<td>ms-settings:network-airplanemode<br>ms-settings:proximity</td>
+</tr>
+<tr>
+<td>Cellular &amp; SIM</td>
+<td>ms-settings:network-cellular</td>
+</tr>
+<tr>
+<td>Dial-up</td>
+<td>ms-settings:network-dialup</td>
+</tr>
+<tr>
+<td>DirectAccess</td>
+<td>ms-settings:network-directaccess (only available if DirectAccess is enabled)</td>
+</tr>
+<tr>
+<td>Ethernet</td>
+<td>ms-settings:network-ethernet</td>
+</tr>
+<tr>
+<td>Manage known networks</td>
+<td>ms-settings:network-wifisettings</td>
+</tr>
+<tr>
+<td>Mobile hotspot</td>
+<td>ms-settings:network-mobilehotspot</td>
+</tr>
+<tr>
+<td>Proxy</td>
+<td>ms-settings:network-proxy</td>
+</tr>
+<tr>
+<td>VPN</td>
+<td>ms-settings:network-vpn</td>
+</tr>
+<tr>
+<td>Wi-Fi</td>
+<td>ms-settings:network-wifi (only available if the device has a wifi adapter)</td>
+</tr>
+<tr>
+<td>Wi-Fi provisioning</td>
+<td>ms-settings:wifi-provisioning</td>
+</tr>
+</tbody>
+</table>
+<h3 id="personalization">Personalization</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Background</td>
+<td>ms-settings:personalization-background</td>
+</tr>
+<tr>
+<td>Choose which folders appear on Start</td>
+<td>ms-settings:personalization-start-places</td>
+</tr>
+<tr>
+<td>Colors</td>
+<td>ms-settings:personalization-colors<br>ms-settings:colors</td>
+</tr>
+<tr>
+<td>Customize Copilot key on keyboard</td>
+<td>ms-settings:personalization-textinput-copilot-hardwarekey</td>
+</tr>
+<tr>
+<td>Dynamic Lighting</td>
+<td>ms-settings:personalization-lighting</td>
+</tr>
+<tr>
+<td>Fonts</td>
+<td>ms-settings:fonts</td>
+</tr>
+<tr>
+<td>Glance</td>
+<td>ms-settings:personalization-glance (<strong>Deprecated in Windows 10, version 1809 and later</strong>)</td>
+</tr>
+<tr>
+<td>Lock screen</td>
+<td>ms-settings:lockscreen</td>
+</tr>
+<tr>
+<td>Navigation bar</td>
+<td>ms-settings:personalization-navbar (<strong>Deprecated in Windows 10, version 1809 and later</strong>)</td>
+</tr>
+<tr>
+<td>Personalization (category)</td>
+<td>ms-settings:personalization</td>
+</tr>
+<tr>
+<td>Start</td>
+<td>ms-settings:personalization-start</td>
+</tr>
+<tr>
+<td>Taskbar</td>
+<td>ms-settings:taskbar</td>
+</tr>
+<tr>
+<td>Text input</td>
+<td>ms-settings:personalization-textinput</td>
+</tr>
+<tr>
+<td>Touch Keyboard</td>
+<td>ms-settings:personalization-touchkeyboard</td>
+</tr>
+<tr>
+<td>Themes</td>
+<td>ms-settings:themes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="phone">Phone</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your phone</td>
+<td>ms-settings:mobile-devices<br>ms-settings:mobile-devices-addphone<br>ms-settings:mobile-devices-addphone-direct (Opens <strong>Your Phone</strong> app)</td>
+</tr>
+<tr>
+<td>Device Usage</td>
+<td>ms-settings:deviceusage</td>
+</tr>
+</tbody>
+</table>
+<h3 id="privacy">Privacy</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accessory apps</td>
+<td>ms-settings:privacy-accessoryapps (<strong>Deprecated in Windows 10, version 1809 and later</strong>)</td>
+</tr>
+<tr>
+<td>Account info</td>
+<td>ms-settings:privacy-accountinfo</td>
+</tr>
+<tr>
+<td>Activity history</td>
+<td>ms-settings:privacy-activityhistory</td>
+</tr>
+<tr>
+<td>Advertising ID</td>
+<td>ms-settings:privacy-advertisingid (<strong>Deprecated in Windows 10, version 1809 and later</strong>)</td>
+</tr>
+<tr>
+<td>App diagnostics</td>
+<td>ms-settings:privacy-appdiagnostics</td>
+</tr>
+<tr>
+<td>Automatic file downloads</td>
+<td>ms-settings:privacy-automaticfiledownloads</td>
+</tr>
+<tr>
+<td>Background Apps</td>
+<td>ms-settings:privacy-backgroundapps (<strong>Deprecated in Windows 11, 21H2 and later</strong>) <br><br> <strong>Note:</strong> In Windows 11, the background app permissions are accessed individually. To view the permissions, go to <strong>Apps-&gt;Installed apps</strong> and then select <strong>&quot;...&quot;</strong> on a modern app and choose <strong>Advanced options</strong>. The advanced page is present for modern apps, and the <strong>Background apps permissions</strong> section will be present unless a group policy has been set or the user’s global toggle value (the deprecated setting from Windows 10) is set. To access this page with a URI, use the <code>ms-settings:appsfeatures-app</code> URI and pass an optional parameter of the <em>package family name</em> of the app.</td>
+</tr>
+<tr>
+<td>Background Spatial Perception</td>
+<td>ms-settings:privacy-backgroundspatialperception</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>ms-settings:privacy-calendar</td>
+</tr>
+<tr>
+<td>Call history</td>
+<td>ms-settings:privacy-callhistory</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>ms-settings:privacy-webcam</td>
+</tr>
+<tr>
+<td>Contacts</td>
+<td>ms-settings:privacy-contacts</td>
+</tr>
+<tr>
+<td>Documents</td>
+<td>ms-settings:privacy-documents</td>
+</tr>
+<tr>
+<td>Downloads folder</td>
+<td>ms-settings:privacy-downloadsfolder</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>ms-settings:privacy-email</td>
+</tr>
+<tr>
+<td>Eye tracker</td>
+<td>ms-settings:privacy-eyetracker (requires eyetracker hardware)</td>
+</tr>
+<tr>
+<td>Feedback &amp; diagnostics</td>
+<td>ms-settings:privacy-feedback</td>
+</tr>
+<tr>
+<td>File system</td>
+<td>ms-settings:privacy-broadfilesystemaccess</td>
+</tr>
+<tr>
+<td>General</td>
+<td>ms-settings:privacy or ms-settings:privacy-general</td>
+</tr>
+<tr>
+<td>Graphics</td>
+<td>ms-settings:privacy-graphicscaptureprogrammatic <br> ms-settings:privacy-graphicscapturewithoutborder</td>
+</tr>
+<tr>
+<td>Inking &amp; typing</td>
+<td>ms-settings:privacy-speechtyping</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>ms-settings:privacy-location</td>
+</tr>
+<tr>
+<td>Messaging</td>
+<td>ms-settings:privacy-messaging</td>
+</tr>
+<tr>
+<td>Microphone</td>
+<td>ms-settings:privacy-microphone</td>
+</tr>
+<tr>
+<td>Motion</td>
+<td>ms-settings:privacy-motion</td>
+</tr>
+<tr>
+<td>Music Library</td>
+<td>ms-settings:privacy-musiclibrary</td>
+</tr>
+<tr>
+<td>Notifications</td>
+<td>ms-settings:privacy-notifications</td>
+</tr>
+<tr>
+<td>Other devices</td>
+<td>ms-settings:privacy-customdevices</td>
+</tr>
+<tr>
+<td>Phone calls</td>
+<td>ms-settings:privacy-phonecalls</td>
+</tr>
+<tr>
+<td>Pictures</td>
+<td>ms-settings:privacy-pictures</td>
+</tr>
+<tr>
+<td>Radios</td>
+<td>ms-settings:privacy-radios</td>
+</tr>
+<tr>
+<td>Speech</td>
+<td>ms-settings:privacy-speech</td>
+</tr>
+<tr>
+<td>Tasks</td>
+<td>ms-settings:privacy-tasks</td>
+</tr>
+<tr>
+<td>Videos</td>
+<td>ms-settings:privacy-videos</td>
+</tr>
+<tr>
+<td>Voice activation</td>
+<td>ms-settings:privacy-voiceactivation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="search">Search</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Search</td>
+<td>ms-settings:search</td>
+</tr>
+<tr>
+<td>Search more details</td>
+<td>ms-settings:search-moredetails</td>
+</tr>
+<tr>
+<td>Search Permissions</td>
+<td>ms-settings:search-permissions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sound">Sound</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Volume mixer</td>
+<td>ms-settings:apps-volume</td>
+</tr>
+<tr>
+<td>Sound</td>
+<td>ms-settings:sound</td>
+</tr>
+<tr>
+<td>Sound devices</td>
+<td>ms-settings:sound-devices</td>
+</tr>
+<tr>
+<td>Default microphone</td>
+<td>ms-settings:sound-defaultinputproperties</td>
+</tr>
+<tr>
+<td>Default audio output</td>
+<td>ms-settings:sound-defaultoutputproperties</td>
+</tr>
+<tr>
+<td>Audio device properties<br>(specific device)</td>
+<td>ms-settings:sound-properties?endpointId={0.0.0.00000000}.{aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}<br><br><strong>Note:</strong> User of URI must know the <code>endpointId</code> string to use.</td>
+</tr>
+<tr>
+<td>Audio device properties<br>(specific device)</td>
+<td>ms-settings:sound-properties?interfaceId=\\?\SWD#MMDEVAPI#{3.0.0.00000003}.{bbbbbbbb-1111-2222-3333-cccccccccccc}#{cccccccc-2222-3333-4444-dddddddddddd}<br><br><strong>Note:</strong> User of URI must know the <code>interfaceId</code> string to use and the string must be escaped correctly before sending.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="surface-hub">Surface Hub</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accounts</td>
+<td>ms-settings:surfacehub-accounts</td>
+</tr>
+<tr>
+<td>Session cleanup</td>
+<td>ms-settings:surfacehub-sessioncleanup</td>
+</tr>
+<tr>
+<td>Team Conferencing</td>
+<td>ms-settings:surfacehub-calling</td>
+</tr>
+<tr>
+<td>Team device management</td>
+<td>ms-settings:surfacehub-devicemanagement</td>
+</tr>
+<tr>
+<td>Welcome screen</td>
+<td>ms-settings:surfacehub-welcome</td>
+</tr>
+</tbody>
+</table>
+<h3 id="system">System</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>About</td>
+<td>ms-settings:about</td>
+</tr>
+<tr>
+<td>Advanced display settings</td>
+<td>ms-settings:display-advanced (only available on devices that support advanced display options)</td>
+</tr>
+<tr>
+<td>Battery Saver</td>
+<td>ms-settings:batterysaver (only available on devices that have a battery, such as a tablet)</td>
+</tr>
+<tr>
+<td>Battery Saver settings</td>
+<td>ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet)</td>
+</tr>
+<tr>
+<td>Battery use</td>
+<td>ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet)</td>
+</tr>
+<tr>
+<td>Clipboard</td>
+<td>ms-settings:clipboard</td>
+</tr>
+<tr>
+<td>Default Save Locations</td>
+<td>ms-settings:savelocations</td>
+</tr>
+<tr>
+<td>Display</td>
+<td>ms-settings:display<br>ms-settings:screenrotation</td>
+</tr>
+<tr>
+<td>Duplicating my display</td>
+<td>ms-settings:quietmomentspresentation</td>
+</tr>
+<tr>
+<td>During these hours</td>
+<td>ms-settings:quietmomentsscheduled</td>
+</tr>
+<tr>
+<td>Encryption</td>
+<td>ms-settings:deviceencryption</td>
+</tr>
+<tr>
+<td>Energy recommendations</td>
+<td>ms-settings:energyrecommendations <strong>(Available in February Moment update for Windows 11, Version 22H2, Build 22624 or later)</strong></td>
+</tr>
+<tr>
+<td>Focus assist</td>
+<td>ms-settings:quiethours</td>
+</tr>
+<tr>
+<td>Graphics Settings</td>
+<td>ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options)</td>
+</tr>
+<tr>
+<td>Graphics Default Settings</td>
+<td>ms-settings:display-advancedgraphics-default</td>
+</tr>
+<tr>
+<td>Multitasking</td>
+<td>ms-settings:multitasking <br>ms-settings:multitasking-sgupdate</td>
+</tr>
+<tr>
+<td>Night light settings</td>
+<td>ms-settings:nightlight</td>
+</tr>
+<tr>
+<td>Projecting to this PC</td>
+<td>ms-settings:project</td>
+</tr>
+<tr>
+<td>Shared experiences</td>
+<td>ms-settings:crossdevice</td>
+</tr>
+<tr>
+<td>Tablet mode</td>
+<td>ms-settings:tabletmode (<strong>Removed in Windows 11</strong>)</td>
+</tr>
+<tr>
+<td>Taskbar</td>
+<td>ms-settings:taskbar</td>
+</tr>
+<tr>
+<td>Notifications &amp; actions</td>
+<td>ms-settings:notifications</td>
+</tr>
+<tr>
+<td>Remote Desktop</td>
+<td>ms-settings:remotedesktop</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>ms-settings:phone (<strong>Deprecated in Windows 10, version 1809 and later</strong>)</td>
+</tr>
+<tr>
+<td>Power &amp; sleep</td>
+<td>ms-settings:powersleep</td>
+</tr>
+<tr>
+<td>Presence sensing</td>
+<td>ms-settings:presence (<strong>Added in May Moment update for Windows 11, Version 22H2, Build 22624</strong>)</td>
+</tr>
+<tr>
+<td>Storage</td>
+<td>ms-settings:storagesense</td>
+</tr>
+<tr>
+<td>Storage Sense</td>
+<td>ms-settings:storagepolicies</td>
+</tr>
+<tr>
+<td>Storage recommendations</td>
+<td>ms-settings:storagerecommendations</td>
+</tr>
+<tr>
+<td>Disks &amp; volumes</td>
+<td>ms-settings:disksandvolumes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="time-and-language">Time and language</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Date &amp; time</td>
+<td>ms-settings:dateandtime</td>
+</tr>
+<tr>
+<td>Japan IME settings</td>
+<td>ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed)</td>
+</tr>
+<tr>
+<td>Region</td>
+<td>ms-settings:regionformatting</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>ms-settings:keyboard<br>ms-settings:keyboard-advanced<br>ms-settings:regionlanguage<br>ms-settings:regionlanguage-bpmfime<br>ms-settings:regionlanguage-cangjieime<br>ms-settings:regionlanguage-chsime-wubi-udp<br>ms-settings:regionlanguage-quickime <br> ms-settings:regionlanguage-korime</td>
+</tr>
+<tr>
+<td>Pinyin IME settings</td>
+<td>ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed)<br>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br>ms-settings:regionlanguage-chsime-pinyin-udp</td>
+</tr>
+<tr>
+<td>Speech</td>
+<td>ms-settings:speech</td>
+</tr>
+<tr>
+<td>Wubi IME settings</td>
+<td>ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="update-and-security">Update and security</h3>
+<table>
+<thead>
+<tr>
+<th>Settings page</th>
+<th>URI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activation</td>
+<td>ms-settings:activation</td>
+</tr>
+<tr>
+<td>Backup</td>
+<td>ms-settings:backup (page removed in Windows 11; opens Sync)</td>
+</tr>
+<tr>
+<td>Delivery Optimization</td>
+<td>ms-settings:delivery-optimization <br> ms-settings:delivery-optimization-activity <br> ms-settings:delivery-optimization-advanced</td>
+</tr>
+<tr>
+<td>Find My Device</td>
+<td>ms-settings:findmydevice</td>
+</tr>
+<tr>
+<td>For developers</td>
+<td>ms-settings:developers</td>
+</tr>
+<tr>
+<td>Recovery</td>
+<td>ms-settings:recovery</td>
+</tr>
+<tr>
+<td>Launch Security Key Enrollment</td>
+<td>ms-settings:signinoptions-launchsecuritykeyenrollment</td>
+</tr>
+<tr>
+<td>Troubleshoot</td>
+<td>ms-settings:troubleshoot</td>
+</tr>
+<tr>
+<td>Windows Security</td>
+<td>ms-settings:windowsdefender</td>
+</tr>
+<tr>
+<td>Windows Insider Program</td>
+<td>ms-settings:windowsinsider (only present if user is enrolled in WIP)<br>ms-settings:windowsinsider-optin</td>
+</tr>
+<tr>
+<td>Windows Update</td>
+<td>ms-settings:windowsupdate<br>ms-settings:windowsupdate-action</td>
+</tr>
+<tr>
+<td>Windows Update-Active hours</td>
+<td>ms-settings:windowsupdate-activehours</td>
+</tr>
+<tr>
+<td>Windows Update-Advanced options</td>
+<td>ms-settings:windowsupdate-options</td>
+</tr>
+<tr>
+<td>Windows Update-Optional updates</td>
+<td>ms-settings:windowsupdate-optionalupdates</td>
+</tr>
+<tr>
+<td>Windows Update-Restart options</td>
+<td>ms-settings:windowsupdate-restartoptions</td>
+</tr>
+<tr>
+<td>Windows Update-Seeker on demand</td>
+<td>ms-settings:windowsupdate-seekerondemand</td>
+</tr>
+<tr>
+<td>Windows Update-View update history</td>
+<td>ms-settings:windowsupdate-history</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-content">Related content</h2>
+<p><a href="launch-default-app.html">Launch the default app for a URI</a></p>
+<p><a href="index.html">Launching, resuming, and background tasks</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/launch-settings-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

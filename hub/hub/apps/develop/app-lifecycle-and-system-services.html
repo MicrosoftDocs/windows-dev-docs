@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>App lifecycle, background tasks, and system services in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="App lifecycle, background tasks, and system services in Windows apps ">
+    
+    <meta name="description" content="This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and system-level services.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="app-lifecycle-background-tasks-and-system-services">App lifecycle, background tasks, and system services</h1>
+
+<p>This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and using system-level services provided by the Windows OS.</p>
+<h2 id="windows-app-sdk-features">Windows App SDK features</h2>
+<p>The <a href="../windows-app-sdk/index.html">Windows App SDK</a> provides the following features related to app lifecycle and system services for Windows 10 and later OS releases.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're working on a UWP app, then refer to <a href="../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle.html">App lifecycle</a></td>
+<td>Get an overview of managing the lifecycle of your app.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle-instancing.html">App instancing</a></td>
+<td>Control whether multiple instances of your app's process can run at the same time.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/background-tasks.html">Background tasks</a></td>
+<td>Background tasks are app components that run in the background without a user interface. They can perform actions such as downloading files, syncing data, sending notifications, or updating tiles.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle-rich-activation.html">Rich activation</a></td>
+<td>Receive information about different kinds activations for your app.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle-power.html">Power management</a></td>
+<td>Get visibility into how your app affects the device's power state, and enable your app to make intelligent decisions about resource usage.</td>
+</tr>
+<tr>
+<td><a href="../windows-app-sdk/applifecycle/applifecycle-restart.html">Restart</a></td>
+<td>Programmatically restart your application and set restart options after app termination.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-os-features">Windows OS features</h2>
+<p>Windows 10 and later OS releases provide a wide variety of APIs related to app lifecycle and system services for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the <a href="https://developer.microsoft.com/windows/downloads/windows-sdk">Windows SDK</a>.</p>
+<h3 id="winrt-apis">WinRT APIs</h3>
+<p>The following articles provide information about features available via WinRT APIs provided by the Windows SDK.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/uwp/launch-resume/app-services">Use app services and extensions</a></td>
+<td>Learn how to integrate app services into your Windows app to allow the sharing of data and functionality across apps.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/launch-resume/support-your-app-with-background-tasks">Support your app with background tasks</a></td>
+<td>Learn how make lightweight code run in the background in response to triggers.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/launch-resume/launch-app-from-file">Launch an app through file activation</a></td>
+<td>Learn how to set up your app to launch when a file of a certain type is opened.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/launch-resume/launch-app-with-uri">Launch an app with a URI</a></td>
+<td>Learn how to use a Uniform Resource Identifier (URI) to launch one app from another app, enabling helpful app-to-app scenarios.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/threading-async/">Threading and async programming</a></td>
+<td>Learn how to use the thread pool to accomplish work asynchronously in parallel threads.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="win32-c-and-com-apis">Win32 (C++ and COM) APIs</h3>
+<p>The following articles provide information about features available via Win32 (C++ and COM) APIs provided by the Windows SDK.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/desktop/system-services">System services</a></td>
+<td>Learn about system services available to apps, including COM, Windows messaging, service applications, and much more.</td>
+</tr>
+<tr>
+<td><a href="/windows/desktop/memory/memory-management">Memory management</a></td>
+<td>Learn how to use virtual memory, memory mapped files, copy-on-write memory, large memory support, and other memory related features in your app.</td>
+</tr>
+<tr>
+<td><a href="/windows/desktop/procthread/processes-and-threads">Processes and threads</a></td>
+<td>Learn how to control processes, threads, jobs, and other units of code execution in your app.</td>
+</tr>
+<tr>
+<td><a href="/windows/desktop/sysinfo/windows-system-information">Windows system information</a></td>
+<td>Learn how to access system information including the registry, handles and objects, and more.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="net-features">.NET features</h2>
+<p>The .NET SDK also provides APIs related to system services for WPF and Windows Forms apps.</p>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/dotnet/framework/wpf/advanced/threading-model">Threading model (WPF)</a></td>
+<td>Learn about the threading model of WPF apps.</td>
+</tr>
+<tr>
+<td><a href="/dotnet/framework/winforms/advanced/system-information-and-windows-forms">System information</a></td>
+<td>Learn how to access system information in Windows Forms apps.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/app-lifecycle-and-system-services.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

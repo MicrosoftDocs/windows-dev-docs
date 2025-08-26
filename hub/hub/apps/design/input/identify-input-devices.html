@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Identify input devices </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Identify input devices ">
+    
+    <meta name="description" content="Identify the input devices connected to a Windows app device and identify their capabilities and attributes.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="identify-input-devices">Identify input devices</h1>
+
+<p>Identify the input devices connected to a Windows app device and identify their capabilities and attributes.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.Devices.Input"><strong>Windows.Devices.Input</strong></a>, <a href="/uwp/api/Windows.UI.Core"><strong>Windows.UI.Input</strong></a>, <a href="/uwp/api/Windows.UI.Input"><strong>Windows.UI.Xaml.Input</strong></a></p>
+</blockquote>
+<h2 id="retrieve-mouse-properties">Retrieve mouse properties</h2>
+<p>The <a href="/uwp/api/Windows.Devices.Input"><strong>Windows.Devices.Input</strong></a> namespace contains the <a href="/uwp/api/Windows.Devices.Input.MouseCapabilities"><strong>MouseCapabilities</strong></a> class used to retrieve the properties exposed by one or more connected mice. Just create a new <strong>MouseCapabilities</strong> object and get the properties you're interested in.</p>
+<p><strong>Note</strong>  The values returned by the properties discussed here are based on all detected mice: Boolean properties return non-zero if at least one mouse supports a specific capability, and numeric properties return the maximum value exposed by any one mouse.</p>
+<p></p>
+<p>The following code uses a series of <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> elements to display the individual mouse properties and values.</p>
+<pre><code class="lang-CSharp">private void GetMouseProperties()
+{
+    MouseCapabilities mouseCapabilities = new Windows.Devices.Input.MouseCapabilities();
+    MousePresent.Text = mouseCapabilities.MousePresent != 0 ? &quot;Yes&quot; : &quot;No&quot;;
+    VertWheel.Text = mouseCapabilities.VerticalWheelPresent != 0 ? &quot;Yes&quot; : &quot;No&quot;;
+    HorzWheel.Text = mouseCapabilities.HorizontalWheelPresent != 0 ? &quot;Yes&quot; : &quot;No&quot;;
+    SwappedButtons.Text = mouseCapabilities.SwapButtons != 0 ? &quot;Yes&quot; : &quot;No&quot;;
+    NumButtons.Text = mouseCapabilities.NumberOfButtons.ToString();
+}
+</code></pre>
+<h2 id="retrieve-keyboard-properties">Retrieve keyboard properties</h2>
+<p>The <a href="/uwp/api/Windows.Devices.Input"><strong>Windows.Devices.Input</strong></a> namespace contains the <a href="/uwp/api/Windows.Devices.Input.KeyboardCapabilities"><strong>KeyboardCapabilities</strong></a> class used to retrieve whether a keyboard is connected. Just create a new <strong>KeyboardCapabilities</strong> object and get the <a href="/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent"><strong>KeyboardPresent</strong></a> property.</p>
+<p>The following code uses a <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> element to display the keyboard property and value.</p>
+<pre><code class="lang-CSharp">private void GetKeyboardProperties()
+{
+    KeyboardCapabilities keyboardCapabilities = new Windows.Devices.Input.KeyboardCapabilities();
+    KeyboardPresent.Text = keyboardCapabilities.KeyboardPresent != 0 ? &quot;Yes&quot; : &quot;No&quot;;
+}
+</code></pre>
+<h2 id="retrieve-touch-properties">Retrieve touch properties</h2>
+<p>The <a href="/uwp/api/Windows.Devices.Input"><strong>Windows.Devices.Input</strong></a> namespace contains the <a href="/uwp/api/Windows.Devices.Input.TouchCapabilities"><strong>TouchCapabilities</strong></a> class used to retrieve whether any touch digitizers are connected. Just create a new <strong>TouchCapabilities</strong> object and get the properties you're interested in.</p>
+<p><strong>Note</strong>  The values returned by the properties discussed here are based on all detected touch digitizers: Boolean properties return non-zero if at least one digitizer supports a specific capability, and numeric properties return the maximum value exposed by any one digitizer.</p>
+<p></p>
+<p>The following code uses a series of <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> elements to display the touch properties and values.</p>
+<pre><code class="lang-CSharp">private void GetTouchProperties()
+{
+    TouchCapabilities touchCapabilities = new Windows.Devices.Input.TouchCapabilities();
+    TouchPresent.Text = touchCapabilities.TouchPresent != 0 ? &quot;Yes&quot; : &quot;No&quot;;
+    Contacts.Text = touchCapabilities.Contacts.ToString();
+}
+</code></pre>
+<h2 id="retrieve-pointer-properties">Retrieve pointer properties</h2>
+<p>The <a href="/uwp/api/Windows.Devices.Input"><strong>Windows.Devices.Input</strong></a> namespace contains the <a href="/uwp/api/Windows.Devices.Input.PointerDevice"><strong>PointerDevice</strong></a> class used to retrieve whether any detected devices support pointer input (touch, touchpad, mouse, or pen). Just create a new <strong>PointerDevice</strong> object and get the properties you're interested in.</p>
+<p><strong>Note</strong>  The values returned by the properties discussed here are based on all detected pointer devices: Boolean properties return non-zero if at least one device supports a specific capability, and numeric properties return the maximum value exposed by any one pointer device.</p>
+<p>The following code uses a table to display the properties and values for each pointer device.</p>
+<pre><code class="lang-CSharp">private void GetPointerDevices()
+{
+    IReadOnlyList&lt;PointerDevice&gt; pointerDevices = Windows.Devices.Input.PointerDevice.GetPointerDevices();
+    int gridRow = 0;
+    int gridColumn = 0;
+
+    for (int i = 0; i &lt; pointerDevices.Count; i++)
+    {
+        // Pointer device type.
+        TextBlock textBlock1 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock1);
+        textBlock1.Text = (i + 1).ToString() + &quot; Pointer Device Type:&quot;;
+        Grid.SetRow(textBlock1, gridRow);
+        Grid.SetColumn(textBlock1, gridColumn);
+
+        TextBlock textBlock2 = new TextBlock();
+        textBlock2.Text = pointerDevices[i].PointerDeviceType.ToString();
+        Grid_PointerProps.Children.Add(textBlock2);
+        Grid.SetRow(textBlock2, gridRow++);
+        Grid.SetColumn(textBlock2, gridColumn + 1);
+
+        // Is external?
+        TextBlock textBlock3 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock3);
+        textBlock3.Text = (i + 1).ToString() + &quot; Is External?&quot;;
+        Grid.SetRow(textBlock3, gridRow);
+        Grid.SetColumn(textBlock3, gridColumn);
+
+        TextBlock textBlock4 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock4);
+        textBlock4.Text = pointerDevices[i].IsIntegrated.ToString();
+        Grid.SetRow(textBlock4, gridRow++);
+        Grid.SetColumn(textBlock4, gridColumn + 1);
+
+        // Maximum contacts.
+        TextBlock textBlock5 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock5);
+        textBlock5.Text = (i + 1).ToString() + &quot; Max Contacts:&quot;;
+        Grid.SetRow(textBlock5, gridRow);
+        Grid.SetColumn(textBlock5, gridColumn);
+
+        TextBlock textBlock6 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock6);
+        textBlock6.Text = pointerDevices[i].MaxContacts.ToString();
+        Grid.SetRow(textBlock6, gridRow++);
+        Grid.SetColumn(textBlock6, gridColumn + 1);
+
+        // Physical device rectangle.
+        TextBlock textBlock7 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock7);
+        textBlock7.Text = (i + 1).ToString() + &quot; Physical Device Rect:&quot;;
+        Grid.SetRow(textBlock7, gridRow);
+        Grid.SetColumn(textBlock7, gridColumn);
+
+        TextBlock textBlock8 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock8);
+        textBlock8.Text = pointerDevices[i].PhysicalDeviceRect.X.ToString() + &quot;,&quot; +
+            pointerDevices[i].PhysicalDeviceRect.Y.ToString() + &quot;,&quot; +
+            pointerDevices[i].PhysicalDeviceRect.Width.ToString() + &quot;,&quot; +
+            pointerDevices[i].PhysicalDeviceRect.Height.ToString();
+        Grid.SetRow(textBlock8, gridRow++);
+        Grid.SetColumn(textBlock8, gridColumn + 1);
+
+        // Screen rectangle.
+        TextBlock textBlock9 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock9);
+        textBlock9.Text = (i + 1).ToString() + &quot; Screen Rect:&quot;;
+        Grid.SetRow(textBlock9, gridRow);
+        Grid.SetColumn(textBlock9, gridColumn);
+
+        TextBlock textBlock10 = new TextBlock();
+        Grid_PointerProps.Children.Add(textBlock10);
+        textBlock10.Text = pointerDevices[i].ScreenRect.X.ToString() + &quot;,&quot; +
+            pointerDevices[i].ScreenRect.Y.ToString() + &quot;,&quot; +
+            pointerDevices[i].ScreenRect.Width.ToString() + &quot;,&quot; +
+            pointerDevices[i].ScreenRect.Height.ToString();
+        Grid.SetRow(textBlock10, gridRow++);
+        Grid.SetColumn(textBlock10, gridColumn + 1);
+
+        gridColumn += 2;
+        gridRow = 0;
+    }
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<h3 id="samples">Samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode">User interaction mode sample</a></li>
+</ul>
+<h3 id="archive-samples">Archive samples</h3>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/identify-input-devices.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

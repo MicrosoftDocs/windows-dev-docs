@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Advanced scenarios for XAML Islands in C++ desktop (Win32) apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Advanced scenarios for XAML Islands in C++ desktop (Win32) apps ">
+    
+    <meta name="description" content="This article discusses advanced XAML Island hosting scenarios for C++ desktop (Win32) apps.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="advanced-scenarios-for-xaml-islands-in-c-desktop-win32-apps">Advanced scenarios for XAML Islands in C++ desktop (Win32) apps</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This topic uses or mentions types from the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32">CommunityToolkit/Microsoft.Toolkit.Win32</a> GitHub repo. For important info about XAML Islands support, please see the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice">XAML Islands Notice</a> in that repo.</p>
+</div>
+<p>The <a href="host-standard-control-with-xaml-islands-cpp.html">host a standard UWP control</a> and <a href="host-custom-control-with-xaml-islands-cpp.html">host a custom UWP control</a> articles provide instructions and examples for hosting XAML Islands in a C++ desktop (Win32) app. However, the code examples in these articles do not handle many advanced scenarios that desktop applications may need to handle to provide a smooth user experience. This article provides guidance for some of these scenarios and pointers to related code samples.</p>
+<h2 id="keyboard-input">Keyboard input</h2>
+<p>To properly handle keyboard input for each XAML Island, your application must pass all Windows messages to the UWP XAML framework so that certain messages can be processed correctly. To do this, in some place in your application that can access the message loop, cast the <strong>DesktopWindowXamlSource</strong> object for each XAML Island to an <strong>IDesktopWindowXamlSourceNative2</strong> COM interface. Then, call the <strong>PreTranslateMessage</strong> method of this interface and pass in the current message.</p>
+<ul>
+<li><p><strong>C++ desktop (Win32):</strong>: The app can call <strong>PreTranslateMessage</strong> directly in its main message loop. For an example, see the <a href="https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp#L16">XamlBridge.cpp</a> file.</p>
+</li>
+<li><p><strong>WPF:</strong> The app can call <strong>PreTranslateMessage</strong> from the event handler for the <a href="/dotnet/api/system.windows.interop.componentdispatcher.threadfiltermessage">ComponentDispatcher.ThreadFilterMessage</a> event. For an example, see the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs#L177">WindowsXamlHostBase.Focus.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+<li><p><strong>Windows Forms:</strong> The app can call <strong>PreTranslateMessage</strong> from an override for the <a href="/dotnet/api/system.windows.forms.control.preprocessmessage">Control.PreprocessMessage</a> method. For an example, see the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs#L100">WindowsXamlHostBase.KeyboardFocus.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+</ul>
+<h2 id="keyboard-focus-navigation">Keyboard focus navigation</h2>
+<p>When the user navigates through the UI elements in your application using the keyboard (for example, by pressing <strong>Tab</strong> or direction/arrow key), you'll need to programmatically move focus into and out of the <strong>DesktopWindowXamlSource</strong> object. When the user's keyboard navigation reaches the <strong>DesktopWindowXamlSource</strong>, move focus into the first <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a> object in the navigation order for your UI, continue to move focus to the following <strong>Windows.UI.Xaml.UIElement</strong> objects as the user cycles through the elements, and then move focus back out of the <strong>DesktopWindowXamlSource</strong> and into the parent UI element.</p>
+<p>The UWP XAML hosting API provides several types and members to help you accomplish these tasks.</p>
+<ul>
+<li><p>When the keyboard navigation enters your <strong>DesktopWindowXamlSource</strong>, the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.gotfocus">GotFocus</a> event is raised. Handle this event and programmatically move focus to the first hosted <strong>Windows.UI.Xaml.UIElement</strong> by using the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.navigatefocus">NavigateFocus</a> method.</p>
+</li>
+<li><p>When the user is on the last focusable element in your <strong>DesktopWindowXamlSource</strong> and presses the <strong>Tab</strong> key or an arrow key, the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.takefocusrequested">TakeFocusRequested</a> event is raised. Handle this event and programmatically move focus to the next focusable element in the host application. For example, in a WPF application where the <strong>DesktopWindowXamlSource</strong> is hosted in a <a href="/dotnet/api/system.windows.interop.hwndhost">System.Windows.Interop.HwndHost</a>, you can use the <a href="/dotnet/api/system.windows.frameworkelement.movefocus">MoveFocus</a> method to transfer focus to the next focusable element in the host application.</p>
+</li>
+</ul>
+<p>For examples that demonstrate how to do this in the context of a working sample application, see the following code files:</p>
+<ul>
+<li><p><strong>C++ desktop (Win32)</strong>: See the <a href="https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/XamlBridge.cpp">XamlBridge.cpp</a> file.</p>
+</li>
+<li><p><strong>WPF:</strong> See the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Focus.cs">WindowsXamlHostBase.Focus.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+<li><p><strong>Windows Forms:</strong> See the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.KeyboardFocus.cs">WindowsXamlHostBase.KeyboardFocus.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+</ul>
+<h2 id="handle-layout-changes">Handle layout changes</h2>
+<p>When the user changes the size of the parent UI element, you'll need to handle any necessary layout changes to make sure your UWP controls display as you expect. Here are some important scenarios to consider.</p>
+<ul>
+<li><p>In a C++ desktop application, when your application handles the WM_SIZE message it can reposition the hosted XAML Island by using the <a href="/windows/desktop/api/winuser/nf-winuser-setwindowpos">SetWindowPos</a> function. For an example, see the <a href="https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Samples/Win32/SampleCppApp/SampleApp.cpp#L170">SampleApp.cpp</a> code file.</p>
+</li>
+<li><p>When the parent UI element needs to get the size of the rectangular area needed to fit the <strong>Windows.UI.Xaml.UIElement</strong> that you are hosting on the <strong>DesktopWindowXamlSource</strong>, call the <a href="/uwp/api/windows.ui.xaml.uielement.measure">Measure</a> method of the <strong>Windows.UI.Xaml.UIElement</strong>. For example:</p>
+<ul>
+<li><p>In a WPF application you might do this from the <a href="/dotnet/api/system.windows.frameworkelement.measureoverride">MeasureOverride</a> method of the <a href="/dotnet/api/system.windows.interop.hwndhost">HwndHost</a> that hosts the <strong>DesktopWindowXamlSource</strong>. For an example, see the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs">WindowsXamlHostBase.Layout.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+<li><p>In a Windows Forms application you might do this from the <a href="/dotnet/api/system.windows.forms.control.getpreferredsize">GetPreferredSize</a> method of the <a href="/dotnet/api/system.windows.forms.control">Control</a> that hosts the <strong>DesktopWindowXamlSource</strong>. For an example, see the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs">WindowsXamlHostBase.Layout.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+</ul>
+</li>
+<li><p>When the size of the parent UI element changes, call the <a href="/uwp/api/windows.ui.xaml.uielement.arrange">Arrange</a> method of the root <strong>Windows.UI.Xaml.UIElement</strong> that you are hosting on the <strong>DesktopWindowXamlSource</strong>. For example:</p>
+<ul>
+<li><p>In a WPF application you might do this from the <a href="/dotnet/api/system.windows.frameworkelement.arrangeoverride">ArrangeOverride</a> method of the <a href="/dotnet/api/system.windows.interop.hwndhost">HwndHost</a> object that hosts the <strong>DesktopWindowXamlSource</strong>. For an example, see the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.Layout.cs">WindowsXamlHost.Layout.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+<li><p>In a Windows Forms application you might do this from the handler for the <a href="/dotnet/api/system.windows.forms.control.sizechanged">SizeChanged</a> event of the <a href="/dotnet/api/system.windows.forms.control">Control</a> that hosts the <strong>DesktopWindowXamlSource</strong>. For an example, see the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.Layout.cs">WindowsXamlHost.Layout.cs</a> file in the Windows Community Toolkit.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="handle-dpi-changes">Handle DPI changes</h2>
+<p>The UWP XAML framework handles DPI changes for hosted UWP controls automatically (for example, when the user drags the window between monitors with different screen DPI). For the best experience, we recommend that your Windows Forms, WPF, or C++ desktop application is configured to be per-monitor DPI aware.</p>
+<p>To configure your application to be per-monitor DPI aware, add a <a href="/windows/desktop/SbsCs/application-manifests">side-by-side assembly manifest</a> to your project and set the <strong>&lt;dpiAwareness&gt;</strong> element to <strong>PerMonitorV2</strong>. For more information about this value, see the description for <a href="/windows/desktop/hidpi/dpi-awareness-context">DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2</a>.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;?&gt;
+&lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;
+    &lt;application xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;
+        &lt;windowsSettings&gt;
+            &lt;dpiAwareness xmlns=&quot;http://schemas.microsoft.com/SMI/2016/WindowsSettings&quot;&gt;PerMonitorV2&lt;/dpiAwareness&gt;
+        &lt;/windowsSettings&gt;
+    &lt;/application&gt;
+&lt;/assembly&gt;
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="xaml-islands.html">Host UWP XAML controls in desktop apps (XAML Islands)</a></li>
+<li><a href="using-the-xaml-hosting-api.html">Using the UWP XAML hosting API in a C++ desktop app</a></li>
+<li><a href="host-standard-control-with-xaml-islands-cpp.html">Host a standard UWP control in a C++ desktop app</a></li>
+<li><a href="host-custom-control-with-xaml-islands-cpp.html">Host a custom UWP control in a C++ desktop app</a></li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands code samples</a></li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp">C++ desktop XAML Islands sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

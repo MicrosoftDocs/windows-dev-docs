@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Publish Windows apps and games to Microsoft Store </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Publish Windows apps and games to Microsoft Store ">
+    
+    <meta name="description" content="Learn how to publish your Windows apps and games to the Microsoft Store.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-publish-your-first-app-in-the-microsoft-store">Get started: Publish your first app in the Microsoft Store</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>Distributing apps via Microsoft Store is a good choice for developers of any app type and size. The Microsoft Store is a centralized hub for Windows users to discover and install a wide range of apps, providing developers access to a vast audience of over a billion users across Windows 10 and Windows 11. Microsoft Store also offers you various ways to make money from your apps, and lets you choose your own commerce platform and revenue sharing model. Microsoft Store also supports a wide range of app types and technologies, and allows you to bring your traditional desktop apps to the Store without changing your code or installer.</p>
+<p>For the full benefits of publishing your app into the Microsoft Store, please visit <a href="https://go.microsoft.com/fwlink/?linkid=2278501">benefits of distributing your apps via Microsoft Store.</a></p>
+<h2 id="prerequisite">Prerequisite</h2>
+<p>A Windows app developer account in Partner Center is needed before you start the app submission process. There are 2 types of developer accounts available in Partner Center: <strong>Individual and Company</strong>.</p>
+<p>To understand how to open developer account, you can watch the following video:</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_individual" role="tab" aria-controls="tabpanel_1_individual" data-tab="individual" tabindex="0" aria-selected="true">Open individual developer account</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_company" role="tab" aria-controls="tabpanel_1_company" data-tab="company" tabindex="-1">Open company developer account</a>
+</li>
+</ul>
+<section id="tabpanel_1_individual" role="tabpanel" data-tab="individual">
+
+<p>Who should select an individual account:</p>
+<ul>
+<li><strong>Independent developers</strong> whose distribution of apps through the Store is <strong>not in relation to their business, trade, or profession</strong></li>
+<li><strong>Small scale creators</strong> producing content for non-commercial purposes</li>
+<li>Individuals creating digital content as a <strong>hobbyist, amateur, school, or personal project</strong>
+<br></li>
+</ul>
+<p>The individual account costs approximately <strong>$19 USD</strong>. It is a one-time registration fee. (The fees varies depending on your <a href="partner-center/account-types-locations-and-fees.html#developer-account-and-app-submission-markets">country or region</a>)</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=663fa063-4205-4b88-a473-4a2782d49197" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more details, refer <a href="partner-center/open-a-developer-account.html">steps to create individual developer account</a>.</p>
+</section>
+<section id="tabpanel_1_company" role="tabpanel" data-tab="company" aria-hidden="true" hidden="hidden">
+
+<p>Who should select a company account:</p>
+<ul>
+<li><strong>Independent developers and freelancers</strong> whose distribution of apps through the Store is <strong>in relation to their business, trade, or profession</strong></li>
+<li><strong>Businesses and Organizations</strong> such as corporations, LLCs, partnerships, non-profits, or government organizations</li>
+<li><strong>Teams or Groups</strong> within a company or organization
+<br></li>
+</ul>
+<p>The company account costs approximately <strong>$99 USD</strong>. It is a one-time registration fee. (The fees varies depending on your <a href="partner-center/account-types-locations-and-fees.html#developer-account-and-app-submission-markets">country or region</a>)</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=2125b1c6-20d4-47da-ba76-d1ff17b89cc2" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more details, refer <a href="/windows/apps/publish/partner-center/open-a-developer-account?tabs=company">steps to create company developer account</a>.</p>
+</section>
+</div>
+<h2 id="get-started-with-app-submission">Get started with app submission</h2>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_msix-pwa-getting-started" role="tab" aria-controls="tabpanel_2_msix-pwa-getting-started" data-tab="msix-pwa-getting-started" tabindex="0" aria-selected="true">MSIX or PWA</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_msi-exe-getting-started" role="tab" aria-controls="tabpanel_2_msi-exe-getting-started" data-tab="msi-exe-getting-started" tabindex="-1">MSI or EXE</a>
+</li>
+</ul>
+<section id="tabpanel_2_msix-pwa-getting-started" role="tabpanel" data-tab="msix-pwa-getting-started">
+
+<p><strong>We recommend packaging your app (which is built with any app framework - UWP, Win32, PWA, WinApp SDK etc.), as <a href="/windows/msix/overview">MSIX</a></strong>. By packaging your app as MSIX, you can take advantages of many features like a complimentary binary hosting (provided by Microsoft), complementary code signing (provided by Microsoft), Microsoft Store commerce platform, package flighting, advanced integration with Windows (to use features like share dialog, launch from Store etc), Windows 11 backup and restore etc.</p>
+<p>For packaging your Win32 app as MSIX, follow these <a href="https://aka.ms/packagewin32asmsix">steps</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you distribute your application as a web download (EXE /MSI) and you are planning to distribute it as a packaged application (MSIX) in the Store, you might want to prevent users from installing both versions or migrate users from the unpackaged web version to the Store version. Learn more about <a href="../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.html">transitioning users from web unpackaged to Store packaged app</a>.</p>
+</div>
+<h2 id="choice-of-commerce-platform">Choice of commerce platform</h2>
+<p>Microsoft Store offers developers a flexible and transparent revenue sharing model (including in-app purchases, subscriptions, ads, and tips) that lets you choose your own commerce platform and keep 100% of the revenue for non-gaming apps, or use <a href="/windows/uwp/monetize/in-app-purchases-and-trials">Microsoft’s commerce platform</a> and pay a competitive fee of 12% for games and 15% for apps. This means that you can maximize your profit and control your business model, while benefiting from the convenience and security of Microsoft’s commerce platform.</p>
+<h2 id="app-submission-msixpwa">App submission [MSIX/PWA]</h2>
+<p>To understand the submission process of MSIX apps, you can watch the following video.</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=4f68f734-a116-4cae-a0a3-89a415087e61" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more details, refer to the steps below.</p>
+<h4 id="reserve-your-apps-name-msixpwa">Reserve your app's name [MSIX/PWA]</h4>
+<p>All apps on the Microsoft Store must have a unique name. To secure a name for your app, the first step is to reserve it, which you can do up to three months before publishing, even if development has not started.</p>
+<p>Steps to Reserve Your App's Name:</p>
+<ol>
+<li><p>Navigate to the <a href="https://aka.ms/submitwindowsapp">Partner Center apps and games page.</a></p>
+</li>
+<li><p>Click <strong>New product</strong>.</p>
+</li>
+<li><p>Click on <strong>MSIX</strong> or <strong>PWA</strong> app. If you want to submit an MSIX or PWA game, click on <strong>Game</strong>.</p>
+</li>
+<li><p>Enter the name you would like to use and click <strong>Check availability</strong>. If the name is available, you will see a green check mark. If the name is already in use, you will see a message indicating so.</p>
+</li>
+<li><p>Once you have selected an available name that you would like to reserve, click <strong>Reserve product name.</strong></p>
+</li>
+</ol>
+<p>For more information, please visit <a href="publish-your-app/msix/reserve-your-apps-name.html">Reserve your app's name - Windows apps | Microsoft Learn.</a></p>
+<h4 id="create-your-app-submission-msixpwa">Create your app submission [MSIX/PWA]</h4>
+<ol>
+<li><p>After reserving an app name, you will be redirected to Application overview page. Click on <strong>Start Submission</strong>. A product submission in draft status will appear. This draft includes all the submission steps that need to be completed.</p>
+</li>
+<li><p>For submitting a PWA, <a href="publish-your-app/pwa/turn-your-website-pwa.html">learn how to convert your website into a PWA.</a></p>
+</li>
+<li><p>Complete each tab of the submission draft:</p>
+<ul>
+<li><p><strong>Pricing and Availability</strong>: Provide the price of your app, where it will be available to customers and decide whether you'll offer a free trial by setting pricing and availability for your app. <a href="publish-your-app/msix/price-and-availability.html">Set app pricing and availability - Windows apps | Microsoft Learn</a></p>
+</li>
+<li><p><strong>Properties</strong>: Define your app’s category, secondary category, sub-category and provide system requirements for your app, by entering your app properties. <a href="publish-your-app/msix/enter-app-properties.html">Enter app properties - Windows apps | Microsoft Learn</a></p>
+</li>
+<li><p><strong>Age Ratings</strong>: For your app to receive the appropriate age and content ratings administered by the IARC rating system, answer age rating questionnaire and generate the age rating. <a href="publish-your-app/msix/age-ratings.html">Age ratings for MSIX apps - Windows apps | Microsoft Learn</a></p>
+</li>
+<li><p><strong>Packages</strong>: Upload the app packages for your app which will be downloaded by the Store user. <a href="publish-your-app/msix/upload-app-packages.html">Upload app packages - Windows apps | Microsoft Learn</a></p>
+</li>
+<li><p><strong>Store Listings</strong>: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. <a href="publish-your-app/msix/add-and-edit-store-listing-info.html">Create app store listings - Windows apps | Microsoft Learn</a></p>
+</li>
+<li><p><strong>Submission options (optional)</strong>: Enter notes for certification or decide when your app should publish to the Store using submission options. <a href="publish-your-app/msix/manage-submission-options.html">Manage submission options - Windows apps | Microsoft Learn</a></p>
+</li>
+</ul>
+</li>
+<li><p>After you complete a section, click on <strong>Save</strong>. Once all sections are complete and you are ready to submit, click on <strong>Submit for certification</strong>.</p>
+</li>
+</ol>
+<p>If your draft is missing any necessary information, it will be marked as <strong>Incomplete.</strong></p>
+<p>For more information, please visit <a href="publish-your-app/msix/add-and-edit-store-listing-info.html">Create an app submission - Windows apps | Microsoft Learn.</a></p>
+<h2 id="app-certification-process-msixpwa">App certification process [MSIX/PWA]</h2>
+<p>When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step. This process can take up to three business days. During certification, we will perform security tests, technical compliance tests and also a content compliance check on you app submission. You will be notified if your submission fails any of these tests.</p>
+<p>After your submission passes certification, on an average, customers will be able to see the app’s listing within 15 minutes depending on their location. You will be notified when your submission is published to the Store, and the app's status in the dashboard change to 'In Microsoft Store'.</p>
+<p>To understand the certification process of MSIX apps, you can watch the following video.</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=4f55d620-642f-4653-8fb4-1d2e49e3dff4" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more information, please visit <a href="publish-your-app/msix/app-certification-process.html">The app certification process - Windows apps | Microsoft Learn.</a></p>
+<h2 id="post-certification-msixpwa">Post-certification [MSIX/PWA]</h2>
+<h4 id="analyze-performance-for-msix-apps-and-games">Analyze performance for MSIX apps and games</h4>
+<p>View detailed analytics for your apps and games in Partner Center. Statistics and charts let you know how your apps are performing in the Store; from how many customers you have reached to how they are using your app and what they have to say about it. You can also find metrics on app install, app health, app usage, and more. You can view analytic reports right in Partner Center or download the reports you need to analyze your data offline. We also provide several ways for you to access your analytics data outside of Partner Center.</p>
+<p>To understand how to analyze your MSIX app's performance, you can watch the following video.</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=fa8f1e24-e923-4ec1-b4b4-83956ef3ed51" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more details, you can refer to the following reports.</p>
+<h4 id="reports-available-for-your-apps">Reports available for your apps</h4>
+<p>There are different reports available for your apps, check the descriptions to find the metrics you are looking for.</p>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/partner-center/apps-and-msix-games-acquisitions-report?tabs=msix">Acquisitions report</a></td>
+<td>See how many people have seen and installed your app in Store. You can also review data for different acquisition channels, markets, and platform details in this report.</td>
+</tr>
+<tr>
+<td><a href="/partner-center/add-on-acquisitions-report">Add-on acquisition report</a></td>
+<td>See how many add-ons you have sold, along with demographic and platform details.</td>
+</tr>
+<tr>
+<td><a href="/partner-center/usage-report">Usage report</a></td>
+<td>See how customers on Windows 10 or Windows 11 (including Xbox) are using your app, including data about custom events that you have defined.</td>
+</tr>
+<tr>
+<td><a href="/partner-center/health-report">Health report</a></td>
+<td>Get data related to the performance and quality of your app, including crashes and unresponsive events.</td>
+</tr>
+<tr>
+<td><a href="/partner-center/reviews-report">Reviews report</a></td>
+<td>See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.</td>
+</tr>
+<tr>
+<td><a href="/partner-center/insights-report">Insights report</a></td>
+<td>See meaningful insights about your app like significant (changes increases or decreases that we detected over the last 30 days in your acquisitions and health data).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="leverage-developer-tools-msixpwa">Leverage developer tools [MSIX/PWA]</h2>
+<p>The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to run product page experiments, distribute your app using the web installer or CLI, beta test new features using package flighting, and connect with your customers through promotions and engagement tools. These resources are designed to support your app’s success at every stage.</p>
+<p>To learn how to run product page experiments, you can watch the following video:</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=b2c661f6-cd9a-49d6-a195-9bf627b599a8" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For guidance on beta testing using package flighting, see the video below:</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=1df7ae2b-c586-4e83-bf93-5459bdb85066" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>To understand how to use the Store web installer to distribute your app on web, check out the following video:</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more information, please visit <a href="product-page-experiments.html">Leverage Developer Tools</a> section.</p>
+<h2 id="appendix-msixpwa">Appendix [MSIX/PWA]</h2>
+<h3 id="useful-links">Useful links</h3>
+<ul>
+<li><a href="msstore-dev-cli/overview.html">Microsoft Store Developer CLI documentation</a></li>
+<li><a href="faq/get-started-with-the-microsoft-store.html">Frequently Asked Questions</a></li>
+<li><a href="store-policies-and-code-of-conduct.html">Store Policies and Code of Conduct</a></li>
+</ul>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<ul>
+<li><a href="publish-your-app/msix/resolve-submission-errors.html">Resolve submission errors</a></li>
+<li><a href="publish-your-app/msix/resolve-submission-errors.html#avoid-common-certification-failures">Avoid common certification failures</a></li>
+</ul>
+<h3 id="full-app-submission-documentation">Full app submission documentation</h3>
+<ul>
+<li>If you are seeking more detailed documentation, click <a href="publish-your-app/msix/reserve-your-apps-name.html">here</a>.</li>
+</ul>
+<h3 id="contact-information-for-support">Contact information for support</h3>
+<ul>
+<li>If you need further assistance, a support ticket can be raised from <a href="https://aka.ms/windowsdevelopersupport">here.</a></li>
+</ul>
+</section>
+<section id="tabpanel_2_msi-exe-getting-started" role="tabpanel" data-tab="msi-exe-getting-started" aria-hidden="true" hidden="hidden">
+
+<p>Microsoft Store has allowed unpackaged applications since June 2021. To publish your application on the Store, you only need to share a link to your installer through the Partner Center and provide some additional information. Once your installer has been tested by our certification team and the submission is published, users will be able to locate your application in the Store and proceed with the installation.</p>
+<p>For your installer to be accepted, it must adhere to the following recommendations:</p>
+<ul>
+<li>Must be a .msi or a .exe installer.</li>
+<li>Must be offline</li>
+<li>The binary hosted by the shared URL should remain unchanged.</li>
+<li>Your installer should only install the product intended by the user.</li>
+</ul>
+<h2 id="app-submission-msiexe">App submission [MSI/EXE]</h2>
+<p>To understand the submission process of MSI/EXE (which is to be submitted in its original unpackaged form), you can watch the following video.</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=b643ac0c-d3a3-4bd0-b946-89489fc38a8a" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more details, refer to the steps below.</p>
+<h4 id="reserve-your-apps-name-msiexe">Reserve your app's name [MSI/EXE]</h4>
+<p>All apps on the Microsoft Store must have a unique name. To secure a name for your app, the first step is to reserve it, which you can do up to three months before publishing, even if development has not started.</p>
+<p>Steps to Reserve Your App's Name:</p>
+<ol>
+<li><p>Navigate to the <a href="https://aka.ms/submitwindowsapp">Partner Center apps and games page</a>.</p>
+</li>
+<li><p>Click <strong>New product.</strong></p>
+</li>
+<li><p>Click on <strong>EXE</strong> or <strong>MSI</strong> app.</p>
+</li>
+<li><p>Enter the name you would like to use and click <strong>Check availability.</strong> If the name is available, you will see a green check mark. If the name is already in use, you will see a message indicating so.</p>
+</li>
+<li><p>Once you have selected an available name that you would like to reserve, click <strong>Reserve product name.</strong></p>
+</li>
+</ol>
+<p>For more information, please visit <a href="publish-your-app/msi/reserve-your-apps-name.html">Reserve your app's name - Windows apps | Microsoft Learn.</a></p>
+<h4 id="create-your-app-submission-msiexe">Create your app submission [MSI/EXE]</h4>
+<p>Once you reserve your app name, you'll be automatically directed to the availability section of the submission process. This section acts as a draft for your store submission.</p>
+<ol>
+<li><p>Complete each tab of the submission draft:</p>
+<ul>
+<li><p><strong>Availability</strong>: Provide the price of your app, where it will be available to customers and decide whether you'll offer a free trial by setting pricing and availability for your app. <a href="publish-your-app/msi/price-and-availability.html">Set app pricing and availability - Windows apps | Microsoft Learn.</a></p>
+</li>
+<li><p><strong>Properties</strong>: Define your app’s category, secondary category, sub-category and provide system requirements for your app, by entering your app properties. <a href="publish-your-app/msi/enter-app-properties.html">Enter app properties - Windows apps | Microsoft Learn.</a></p>
+</li>
+<li><p><strong>Age Ratings</strong>: For your app to receive the appropriate age and content ratings administered by the IARC rating system, answer age rating questionnaire and generate the age rating. <a href="publish-your-app/msi/age-ratings.html">Age ratings for MSI and EXE apps - Windows apps | Microsoft Learn.</a></p>
+</li>
+<li><p><strong>Packages</strong>: Upload the app packages for your app which will be downloaded by the Store user. <a href="publish-your-app/msi/upload-app-packages.html">Upload app packages - Windows apps | Microsoft Learn.</a></p>
+</li>
+<li><p><strong>Store Listings</strong>: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. <a href="publish-your-app/msi/add-and-edit-store-listing-info.html">Create app store listings - Windows apps | Microsoft Learn.</a></p>
+</li>
+</ul>
+</li>
+<li><p>After you complete a section, click on <strong>Save</strong>. Once all sections are complete and you are ready to submit, click on <strong>Submit</strong>.</p>
+</li>
+</ol>
+<p>For more information, please visit <a href="publish-your-app/msi/create-app-submission.html">Create an app submission - Windows apps | Microsoft Learn.</a></p>
+<h2 id="app-certification-process-msiexe">App certification process [MSI/EXE]</h2>
+<p>When you finish creating your app's submission and submit it to the Microsoft Store, the submission enters the certification step. This process can take up to three business days.During certification, we will perform security and content compliance tests on your app submission. We will also follow any instructions that you had mentioned in 'Notes for certification'. You will be notified if your submission fails any of these tests.</p>
+<p>After your submission passes certification, on an average, customers will be able to see the app’s listing within 15 minutes depending on their location. When your submission is published to the Store, you will be notified and the app's status in the dashboard will change to 'In Microsoft Store'.</p>
+<p>To understand the certification process of MSI/EXE apps, you can watch the following video.</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=740d085c-02f4-4eed-b81f-af155007dc81" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more information, please visit <a href="publish-your-app/msi/app-certification-process.html">The app certification process - Windows apps | Microsoft Learn.</a></p>
+<h2 id="post-certification-msiexe">Post-certification [MSI/EXE]</h2>
+<h4 id="analyze-performance-for-msi-or-exe-apps">Analyze performance for MSI or EXE apps</h4>
+<p>In Partner Center, you have access to detailed analytics for your MSI or EXE application. Utilize statistics and charts to monitor the performance of your applications including insights into customer reach and feedback. You can also explore metrics related to app discoverability, health, usage, and other relevant data.</p>
+<p>You can view analytic reports right in Partner Center or download the reports you need, to analyze your data offline. When viewing your analytic reports, you will see an arrow icon within each chart for which you can download data. Click the arrow to generate a downloadable .tsv file, which you can open in Microsoft Excel or another program that supports tab-separated values (TSV) files.</p>
+<p>To understand how to analyze your MSI/EXE app's performance, you can watch the following video.</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=736b044d-dd75-452f-b24b-7b9a5dee0ccb" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more details, you can refer to the following reports.</p>
+<h4 id="reports-available-for-your-apps-1">Reports available for your apps</h4>
+<p>There are different reports available for your apps, check the descriptions to find the metrics you are looking for.</p>
+<table>
+<thead>
+<tr>
+<th>Report</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="analyze-msi-exe/analyze-app-performance.html#overview-report">Overview Report</a></td>
+<td>Shows information across a cross section of metrics such as Usage, Health and Ratings and reviews.</td>
+</tr>
+<tr>
+<td><a href="analyze-msi-exe/analyze-app-performance.html#installs-report">Installs Report</a></td>
+<td>Shows how many people have seen your app in Store and installed it. You can also review data for different acquisition channels, markets, and platform details in this report.</td>
+</tr>
+<tr>
+<td><a href="analyze-msi-exe/analyze-app-performance.html#usage-report">Usage report</a></td>
+<td>Shows details about how your customers are using your app over the selected period of time.</td>
+</tr>
+<tr>
+<td><a href="analyze-msi-exe/analyze-app-performance.html#health-report">Health report</a></td>
+<td>Shows data related to the performance and quality of your app, including crashes and unresponsive events.</td>
+</tr>
+<tr>
+<td><a href="analyze-msi-exe/ratings-reviews-performance.html">Ratings &amp; Reviews report</a></td>
+<td>See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="leverage-developer-tools">Leverage developer tools</h2>
+<p>The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to distribute your app using the web installer, update your app through submission API and connect with your customers through engagement tools. These resources are designed to support your app’s success at every stage.</p>
+<p>To understand how to use the Store web installer, check out the following video:</p>
+<br>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>For more information, please visit <a href="../distribute-through-store/how-to-use-store-web-installer-for-distribution.html">Leverage Developer Tools</a> section.</p>
+<h2 id="appendix-msiexe">Appendix [MSI/EXE]</h2>
+<h3 id="useful-links-1">Useful links</h3>
+<ul>
+<li><a href="faq/get-started-with-the-microsoft-store.html">Frequently Asked Questions</a></li>
+<li><a href="store-policies-and-code-of-conduct.html">Store Policies and Code of Conduct</a></li>
+</ul>
+<h3 id="full-app-submission-documentation-1">Full app submission documentation</h3>
+<ul>
+<li>If you are seeking more detailed documentation, click <a href="publish-your-app/msi/reserve-your-apps-name.html">here</a>.</li>
+</ul>
+<h3 id="contact-information-for-support-1">Contact information for support</h3>
+<ul>
+<li>If you need further assistance, a support ticket can be raised from <a href="https://aka.ms/windowsdevelopersupport">here.</a></li>
+</ul>
+</section>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

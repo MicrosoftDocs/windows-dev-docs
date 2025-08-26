@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Application lifecycle functionality migration </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Application lifecycle functionality migration ">
+    
+    <meta name="description" content="This topic contains migration guidance in the application lifecycle area.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="application-lifecycle-functionality-migration">Application lifecycle functionality migration</h1>
+
+<p>This topic contains migration guidance in the application lifecycle area.</p>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance"><strong>AppInstance</strong></a> class</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched"><strong>Application.OnLaunched</strong></a> method</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs"><strong>AppInstance.GetActivatedEventArgs</strong></a> method</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind"><strong>ExtendedActivationKind</strong></a> enum</li>
+</ul>
+<h2 id="summary-of-api-andor-feature-differences">Summary of API and/or feature differences</h2>
+<p>Universal Windows Platform (UWP) apps are single-instanced by default; Windows App SDK (WinUI 3) apps are multi-instanced by default.</p>
+<p>A UWP app has <strong>App</strong> methods such as <strong>OnFileActivated</strong>, <strong>OnSearchActivated</strong>, <strong>OnActivated</strong>, and <strong>OnBackgroundActivated</strong> that implicitly tell you how the app was activated; In a Windows App SDK app, in <strong>App.OnLaunched</strong> (or in any method), call (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs"><strong>AppInstance.GetActivatedEventArgs</strong></a>) to retrieve the activated event args, and check them to determine how the app was activated.</p>
+<p>Also see the <em>Background tasks</em> row in the table in the <a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported">What's supported when migrating from UWP to WinUI 3</a> topic.</p>
+<h2 id="single-instanced-apps">Single-instanced apps</h2>
+<p>Universal Windows Platform (UWP) apps are single-instanced by default (you can opt in to support multiple instances—see <a href="/windows/uwp/launch-resume/multi-instance-uwp">Create a multi-instance UWP app</a>).</p>
+<p>So the way a single-instanced UWP app behaves is that the second (and subsequent) time you launch, your current instance is activated. Let's say for example that in your UWP app you've implemented the file type association feature. If from File Explorer you open a file (of the type for which the app has registered a file type association)—and your app is already running—then that already-running instance is activated.</p>
+<p>Windows App SDK (WinUI 3) apps, on the other hand, are multi-instanced by default. So, by default, the second (and subsequent) time you launch a Windows App SDK (WinUI 3) app, a new instance of the app is launched. If for example a Windows App SDK (WinUI 3) app implements file type association, and from File Explorer you open a file (of the right type) while that app is already running, then by default a new instance of the app is launched.</p>
+<p>If you want your Windows App SDK (WinUI 3) app to be single-instanced like your UWP app is, then you can override the default behavior described above. You'll use <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.findorregisterforkey"><strong>AppInstance.FindOrRegisterForKey</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.iscurrent"><strong>AppInstance.IsCurrent</strong></a> to determine whether the current instance is the main instance. If it isn't, then you'll call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync"><strong>AppInstance.RedirectActivationToAsync</strong></a> to redirect activation to the already-running main instance, and then exit from the current instance (without creating nor activating its main window).</p>
+<p>For more info, see <a href="../../applifecycle/applifecycle-instancing.html">App instancing with the app lifecycle API</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The code shown below works as expected provided that you target the <em>x64</em> architecture. That applies to both C# and C++/WinRT.</p>
+</div>
+<h3 id="single-instancing-in-main-or-wwinmain">Single-instancing in Main or wWinMain</h3>
+<p>It's best to check for the need to redirect activation as early as possible in your app's execution. For that reason, we recommend that you perform your single-instancing logic in your app's <strong>Main</strong> (or <strong>wWinMain</strong> for C++/WinRT) function. This section shows you how.</p>
+<p>Ordinarily, your app's <strong>Main</strong> function is auto-generated by the build system, and placed into a hidden file. So the first step is to configure your project not to auto-generate that function. To do that, you define the symbol <em>DISABLE_XAML_GENERATED_MAIN</em> in project <strong>Properties</strong>.</p>
+<h4 id="instructions-for-c">Instructions for C#</h4>
+<p>Go to <strong>Properties</strong> &gt; (select <strong>All Configurations</strong> and <strong>All Platforms</strong>) &gt; <strong>Build</strong> &gt; <strong>Conditional compilation symbols</strong>, and paste in the symbol <em>DISABLE_XAML_GENERATED_MAIN</em>.</p>
+<p>Because we've just prevented the project from auto-generating a <strong>Main</strong> function, the project won't build at the moment. So the second and last step is to implement our own version of that function in a source code file.</p>
+<p>Add a new project item of type <strong>Class</strong> to the project, and name it <em>Program.cs</em>. Inside <code>Program.cs</code>, replace the code <code>class Program {}</code> with your own implementation. For an example of the code to use, see <code>Program.cs</code> in the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing/cs/cs-winui-packaged/CsWinUiDesktopInstancing/CsWinUiDesktopInstancing/Program.cs">AppLifecycle sample</a>.</p>
+<h4 id="instructions-for-cwinrt">Instructions for C++/WinRT</h4>
+<p>Go to <strong>Properties</strong> &gt; (select <strong>All Configurations</strong> and <strong>All Platforms</strong>) &gt; <strong>Configuration Properties</strong> &gt; <strong>C/C++</strong> &gt; <strong>Preprocessor</strong> &gt; <strong>Preprocessor Definitions</strong>, <strong>Edit</strong> the value, and add the symbol <em>DISABLE_XAML_GENERATED_MAIN</em>.</p>
+<p>Because we've just prevented the project from auto-generating a <strong>wWinMain</strong> function, the project won't build at the moment. So the second and last step is to implement our own version of that function in a source code file.</p>
+<p>Add a reference to the <a href="https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/">Microsoft.Windows.ImplementationLibrary</a> NuGet package, and update your project's <code>pch.h</code> and <code>App.xaml.cpp</code> source code files. For an example of the code to use, see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing/cpp/cpp-winui-packaged/CppWinUiDesktopInstancing/CppWinUiDesktopInstancing/App.xaml.cpp">AppLifecycle sample</a>. Be sure to change the namespace in <code>winrt::CppWinUiDesktopInstancing::implementation::App</code> to suit your particular project).</p>
+<p>To resolve &quot;error C2872: 'Microsoft': ambiguous symbol&quot;, change <code>using namespace Microsoft::UI::Xaml;</code> to <code>using namespace winrt::Microsoft::UI::Xaml;</code>. And make any additional similar changes to <code>using</code> directives.</p>
+<h3 id="single-instancing-in-applicationonlaunched">Single-instancing in Application.OnLaunched</h3>
+<p>An alternative to using <strong>Main</strong> or <strong>wWinMain</strong> is to perform your single-instancing logic in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched"><strong>Application.OnLaunched</strong></a> method of your <strong>App</strong> class.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Doing this work in <strong>Application.OnLaunched</strong> can simplify your app. However, a lot depends on what else your app is doing. If you're going to end up redirecting, and then terminating the current instance, then you'll want to avoid doing any throwaway work (or even work that needs explicitly undoing). In cases like that, <strong>Application.OnLaunched</strong> might be too late, and you might prefer to do the work in your app's <strong>Main</strong> or <strong>wWinMain</strong> function.</p>
+</div>
+<pre><code class="lang-csharp">// App.xaml.cs in a Windows App SDK (WinUI 3) app
+...
+protected override async void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    // If this is the first instance launched, then register it as the &quot;main&quot; instance.
+    // If this isn't the first instance launched, then &quot;main&quot; will already be registered,
+    // so retrieve it.
+    var mainInstance = Microsoft.Windows.AppLifecycle.AppInstance.FindOrRegisterForKey(&quot;main&quot;);
+
+    // If the instance that's executing the OnLaunched handler right now
+    // isn't the &quot;main&quot; instance.
+    if (!mainInstance.IsCurrent)
+    {
+        // Redirect the activation (and args) to the &quot;main&quot; instance, and exit.
+        var activatedEventArgs =
+            Microsoft.Windows.AppLifecycle.AppInstance.GetCurrent().GetActivatedEventArgs();
+        await mainInstance.RedirectActivationToAsync(activatedEventArgs);
+        System.Diagnostics.Process.GetCurrentProcess().Kill();
+        return;
+    }
+
+    m_window = new MainWindow();
+    m_window.Activate();
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h in a Windows App SDK (WinUI 3) app
+...
+#include &lt;winrt/Microsoft.Windows.AppLifecycle.h&gt;
+...
+
+// App.xaml.h
+...
+struct App : AppT&lt;App&gt;
+{
+    ...
+    winrt::fire_and_forget OnLaunched(Microsoft::UI::Xaml::LaunchActivatedEventArgs const&amp;);
+    ...
+}
+
+// App.xaml.cpp
+...
+using namespace winrt;
+using namespace Microsoft::Windows::AppLifecycle;
+...
+winrt::fire_and_forget App::OnLaunched(LaunchActivatedEventArgs const&amp;)
+{
+    // If this is the first instance launched, then register it as the &quot;main&quot; instance.
+    // If this isn't the first instance launched, then &quot;main&quot; will already be registered,
+    // so retrieve it.
+    auto mainInstance{ AppInstance::FindOrRegisterForKey(L&quot;main&quot;) };
+
+    // If the instance that's executing the OnLaunched handler right now
+    // isn't the &quot;main&quot; instance.
+    if (!mainInstance.IsCurrent())
+    {
+        // Redirect the activation (and args) to the &quot;main&quot; instance, and exit.
+        auto activatedEventArgs{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+        co_await mainInstance.RedirectActivationToAsync(activatedEventArgs);
+        ::ExitProcess(0);
+        co_return;
+    }
+
+    window = make&lt;MainWindow&gt;();
+    window.Activate();
+}
+</code></pre>
+<p>Alternatively, you can call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getinstances"><strong>AppInstance.GetInstances</strong></a> to retrieve a collection of running <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance"><strong>AppInstance</strong></a> objects. If the number of elements in that collection is greater than 1, then your main instance is already running, and you should redirect to that.</p>
+<h2 id="file-type-association">File type association</h2>
+<p>In a Windows App SDK project, to specify the extension point for a file type association, you make the same settings in your <code>Package.appxmanifest</code> file as you would for a UWP project. Here are those settings.</p>
+<p>Open <code>Package.appxmanifest</code>. In <strong>Declarations</strong>, choose <strong>File Type Associations</strong>, and click <strong>Add</strong>. Set the following properties.</p>
+<p><strong>Display name</strong>: MyFile
+<strong>Name</strong>: myfile
+<strong>File type</strong>: .myf</p>
+<p>To register the file type association, build the app, launch it, and close it.</p>
+<p>The difference comes in the imperative code. In a UWP app, you implement <strong>App::OnFileActivated</strong> in order to handle file activation. But in a Windows App SDK app, you write code in <strong>App::OnLaunched</strong> to check the extended activation kind (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind"><strong>ExtendedActivationKind</strong></a>) of the activated event args (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs"><strong>AppInstance.GetActivatedEventArgs</strong></a>), and see whether the activation is a file activation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Don't use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.launchactivatedeventargs"><strong>Microsoft.UI.Xaml.LaunchActivatedEventArgs</strong></a> object passed to <strong>App::OnLaunched</strong> to determine the activation kind, because it reports &quot;Launch&quot; unconditionally.</p>
+</div>
+<p>If your app has navigation, then you'll already have navigation code in <strong>App::OnLaunched</strong>, and you might want to re-use that logic. For more info, see <a href="winui3.html#do-i-need-to-implement-page-navigation">Do I need to implement page navigation?</a>.</p>
+<pre><code class="lang-csharp">// App.xaml.cs in a Windows App SDK app
+...
+using Microsoft.Windows.AppLifecycle;
+...
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    var activatedEventArgs = Microsoft.Windows.AppLifecycle.AppInstance.GetCurrent().GetActivatedEventArgs();
+    if (activatedEventArgs.Kind == Microsoft.Windows.AppLifecycle.ExtendedActivationKind.File)
+    {
+        ...
+    }
+    ...
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h in a Windows App SDK app
+...
+#include &lt;winrt/Microsoft.Windows.AppLifecycle.h&gt;
+
+// App.xaml.cpp
+...
+using namespace Microsoft::Windows::AppLifecycle;
+...
+void App::OnLaunched(LaunchActivatedEventArgs const&amp;)
+{
+    auto activatedEventArgs{ AppInstance::GetCurrent().GetActivatedEventArgs() };
+    if (activatedEventArgs.Kind() == ExtendedActivationKind::File)
+    {
+        ...
+    }
+    ...
+}
+</code></pre>
+<h2 id="onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</h2>
+<p>In a UWP app, to override the various means by which your app can be activated, you can override corresponding methods on your <strong>App</strong> class, such as <strong>OnFileActivated</strong>, <strong>OnSearchActivated</strong>, or the more general <strong>OnActivated</strong>.</p>
+<p>In a Windows App SDK app, in <strong>App.OnLaunched</strong> (or in fact at any time) you can call (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs"><strong>AppInstance.GetActivatedEventArgs</strong></a>) to retrieve the activated event args, and check them to determine how the app was activated.</p>
+<p>See the <a href="#file-type-association">File type association</a> section above for more details and a code example. You can apply the same technique for any activation kind specified by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind"><strong>ExtendedActivationKind</strong></a> enum.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../../support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="../../applifecycle/applifecycle-instancing.html">App instancing with the app lifecycle API</a></li>
+<li><a href="winui3.html#do-i-need-to-implement-page-navigation">Do I need to implement page navigation?</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

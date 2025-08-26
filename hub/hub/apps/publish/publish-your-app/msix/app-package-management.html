@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Guidance for app package management for MSIX app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Guidance for app package management for MSIX app ">
+    
+    <meta name="description" content="Learn how your MSIX app&#39;s packages are made available to your customers, and how to manage specific package scenarios.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="guidance-for-app-package-management-for-msix-app">Guidance for app package management for MSIX app</h1>
+
+<p>Learn how your app's packages are made available to your customers, and how to manage specific package scenarios.</p>
+<h2 id="os-versions-and-package-distribution">OS versions and package distribution</h2>
+<p>Different operating systems can run different types of packages. If more than one of your packages can run on a customer's device, the Microsoft Store will provide the best available match.</p>
+<p>Generally speaking, later OS versions can run packages that target previous OS versions for the same device family. Windows 11 devices can run all previous supported OS versions (per device family).</p>
+<h2 id="removing-an-app-from-the-store">Removing an app from the Store</h2>
+<p>At times, you may want to stop offering an app to customers, effectively &quot;unpublishing&quot; it. To do so, navigate to the <strong>Store presence</strong> card on the <strong>App overview</strong> page. You will see that your product is currently available in the Microsoft Store. Click on <strong>Modify availability</strong>, select <strong>Make product unavailable</strong> and click on <strong>Apply</strong>. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a <a href="../../generate-promotional-codes.html">promotional code</a> and are using a Windows 10 or Windows 11 device).</p>
+<p><span class="mx-imgBorder">
+<a href="images/new-overview-make-product-unavailable.png#lightbox" data-linktype="relative-path">
+<img src="images/new-overview-make-product-unavailable.png" alt="A screenshot of the new msix overview page showing how to make product unavailable in Store">
+</a>
+</span>
+</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This option will override any <a href="visibility-options.html#discoverability">visibility</a> settings that you have selected in your submissions.</p>
+</div>
+<p>This option has the same effect as if you created a submission and chose <strong>Make this product available but not discoverable in the Store</strong> with the <strong>Stop acquisition</strong> option. However, it does not require you to create a new submission.</p>
+<p>Note that any customers who already have the app will still be able to use it and can download it again (and could even get updates if you submit new packages later).</p>
+<p>After making the app unavailable, you'll still see it in Partner Center. If you decide to offer the app to customers again, you can click <strong>Make product available</strong> from the banner on the <strong>App overview</strong> page or you can navigate to <strong>Store presence</strong> card on <strong>App overview</strong> page and <strong>Modify availability</strong> for your product. After you confirm, the app will be available to new customers (unless restricted by the settings in your last submission) within a few hours.</p>
+<p><span class="mx-imgBorder">
+<a href="images/new-overview-make-product-available.png#lightbox" data-linktype="relative-path">
+<img src="images/new-overview-make-product-available.png" alt="A screenshot of the new msix overview page showing how to make product available in Store">
+</a>
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to keep your app available, but don't want to continuing offering it to new customers on a particular OS version, you can create a new submission and remove all packages for the OS version on which you want to prevent new acquisitions.</p>
+</div>
+<h2 id="removing-packages-for-a-previously-supported-device-family">Removing packages for a previously-supported device family</h2>
+<p>If you remove all packages for a certain device family (see <a href="/uwp/extension-sdks/device-families-overview">Programming with extension SDKs</a>) that your app previously supported, you'll be prompted to confirm that this is your intention before you can save your changes on the <strong>Packages</strong> page.</p>
+<p>When you publish a submission that removes all of the packages that could run on a device family that your app previously supported, new customers will not be able to acquire the app on that device family. You can always publish another update later to provide packages for that device family again.</p>
+<p>Be aware that even if you remove all of the packages that support a certain device family, any existing customers who have already installed the app on that type of device can still use it, and they will get any updates you provide later.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msix/app-package-management.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

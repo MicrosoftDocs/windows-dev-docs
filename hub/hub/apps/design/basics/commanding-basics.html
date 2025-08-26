@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Commanding basics </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Commanding basics ">
+    
+    <meta name="description" content="In a Windows app, command elements are the interactive UI elements that enable the user to perform actions, such as sending an email, deleting an item, or submitting a form.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="commanding-basics">Commanding basics</h1>
+
+<p>In a Windows app, <em>command elements</em> are interactive UI elements that let users perform actions such as sending an email, deleting an item, or submitting a form. <em>Command interfaces</em> are composed of common command elements, the command surfaces that host them, the interactions they support, and the experiences they provide.</p>
+<h2 id="provide-the-best-command-experience">Provide the best command experience</h2>
+<p>The most important aspect of a command interface is what you're trying to let a user accomplish. As you plan the functionality of your app, consider the steps required to accomplish those tasks and the user experiences you want to enable. Once you've completed an initial draft of these experiences, then you can make decisions on the tools and interactions to implement them.</p>
+<p>Here are some common command experiences:</p>
+<ul>
+<li>Sending or submitting information</li>
+<li>Selecting settings and choices</li>
+<li>Searching and filtering content</li>
+<li>Opening, saving, and deleting files</li>
+<li>Editing or creating content</li>
+</ul>
+<p>Be creative with the design of your command experiences. Choose which input devices your app supports, and how your app responds to each device. By supporting the broadest range of capabilities and preferences you make your app as usable, portable, and accessible as possible (see <a href="../controls/commanding.html">Commanding design for Windows apps</a> for more detail).</p>
+<!--
+When designing a command interface, the most important decision is choosing what a user can do. To plan the right type of interactions, focus on your app - consider the user experiences you want to enable, and what steps users will need to take. Once you decide what you want users to accomplish, then you can provide them the tools to do so.
+-->
+<h2 id="choose-the-right-command-elements">Choose the right command elements</h2>
+<p>Using the right elements in a command interface can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. A comprehensive set of command elements are available in the Windows app. Here's a list of some of the most common UWP command elements.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-button.svg" alt="button image"></p>
+</div>
+<div class="column span2">
+<p><strong>Buttons</strong></p>
+<p><a href="../controls/buttons.html">Buttons</a> trigger an immediate action. Examples include sending an email, submitting form data, or confirming an action in a dialog.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-list.svg" alt="list image"></p>
+</div>
+<div class="column span2">
+<p><strong>Lists</strong></p>
+<p><a href="../controls/lists.html">Lists</a> present items in an interactive list or a grid. Usually used for many options or display items. Examples include drop-down list, list box, list view and grid view.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-selection.svg" alt="selection control image"></p>
+</div>
+<div class="column span2">
+<p><strong>Selection controls</strong></p>
+<p>Lets users choose from a few options, such as when completing a survey or configuring app settings. Examples include <a href="../controls/checkbox.html">CheckBox</a>, <a href="../controls/radio-button.html">RadioButton</a>, and <a href="../controls/toggles.html">Toggle switch</a>.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-calendar.svg" alt="Calendar  image"></p>
+</div>
+<div class="column span2">
+<p><strong>Calendar, date and time pickers</strong></p>
+<p><a href="../controls/date-and-time.html">Calendar, date and time pickers</a> enable users to view and modify date and time info, such as when creating an event or setting an alarm. Examples include calendar date picker, calendar view, date picker, time picker.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-autosuggest.svg" alt="Predictive text entry image"></p>
+</div>
+<div class="column span2">
+<p><strong>Predictive text entry</strong></p>
+<p>Provides suggestions as users type, such as when entering data or performing queries. Examples include <a href="../controls/auto-suggest-box.html">AutoSuggestBox</a>.</p>
+</div>
+</section>
+<p>For a complete list, see <a href="../controls/index.html">Controls and UI elements</a></p>
+<h2 id="place-commands-on-the-right-surface">Place commands on the right surface</h2>
+<p>You can place command elements on a number of surfaces in your app, including the app canvas or special command containers, such as a command bar, command bar flyout, menu bar, or dialog.</p>
+<p>Always try to let users manipulate content directly rather than through commands that act on the content, such as dragging and dropping to rearrange list items rather than up and down command buttons.</p>
+<p>However, this might not be possible with certain input devices, or when accommodating specific user abilities and preferences. In these cases, provide as many commanding affordances as possible, and place these command elements on a command surface in your app.</p>
+<p>Here's a list of some of the most common command surfaces.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-canvas.svg" alt="app canvas image"></p>
+</div>
+<div class="column span2">
+<p><strong>App canvas (content area)</strong></p>
+<p>If a command is constantly needed for users to complete core scenarios, put it on the canvas. Because you can put commands near (or on) the objects they affect, putting commands on the canvas makes them easy and obvious to use. However, choose the commands you put on the canvas carefully. Too many commands on the app canvas take up valuable screen space and can overwhelm the user. If the command won't be frequently used, consider putting it in another command surface.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-commandbar.svg" alt="commandbar image"></p>
+</div>
+<div class="column span2">
+<p><strong>Command bars and menu bars</strong></p>
+<p><a href="../controls/command-bar.html">Command bars</a> help organize commands and make them easy to access. Command bars can be placed at the top of the screen, at the bottom of the screen, or at both the top and bottom of the screen (a <a href="../controls/menus.html#create-a-menu-bar">MenuBar</a> can also be used when the functionality in your app is too complex for a command bar).</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-contextmenu.svg" alt="context menu image"></p>
+</div>
+<div class="column span2">
+<p><strong>Menus and context menus</strong></p>
+<p>Menus and context menus save space by organizing commands and hiding them until the user needs them. Users typically access a menu or context menu by clicking a button or right-clicking a control.</p>
+<p>The <a href="../controls/command-bar-flyout.html">CommandBarFlyout</a> is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.</p>
+<p>UWP also provides a set of traditional menus and context menus; for more info, see <a href="../controls/menus-and-context-menus.html">Menus and context menus</a>.</p>
+</div>
+</section>
+<h2 id="provide-command-feedback">Provide command feedback</h2>
+<p>Command feedback communicates to users that an interaction or command was detected, how the command was interpreted and handled, and whether the command was successful or not. This helps users understand what they've done, and what they can do next. Ideally, feedback should be integrated naturally in your UI, so users don't have to be interrupted, or take additional action unless absolutely necessary.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Provide feedback only when necessary and only if it's not available elsewhere. Keep your application UI clean and uncluttered unless you are adding value.</p>
+</div>
+<p>Here are some ways to provide feedback in your app.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-commandbar2.svg" alt="commandbar content area image"></p>
+</div>
+<div class="column span2">
+<p><strong>Command bar</strong></p>
+<p>The content area of the <a href="../controls/command-bar.html">CommandBar</a> is an intuitive place to communicate status to users if they'd like to see feedback.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-flyout.svg" alt="Flyout image"></p>
+</div>
+<div class="column span2">
+<p><strong>Flyouts</strong></p>
+<p><a href="../controls/dialogs-and-flyouts/index.html">Flyouts</a> are lightweight contextual popups that can be dismissed by tapping or clicking somewhere outside the flyout.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/thumbnail-dialog.svg" alt="Dialog image"></p>
+</div>
+<div class="column span2">
+<p><strong>Dialog controls</strong></p>
+<p><a href="../controls/dialogs-and-flyouts/index.html">Dialog controls</a> are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user. Dialogs can be disruptive and should only be used in certain situations. For more info, see the <a href="#when-to-confirm-or-undo-actions">When to confirm or undo actions</a> section.</p>
+</div>
+</section>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Be careful of how much your app uses confirmation dialogs; they can be very helpful when the user makes a mistake, but they are a hindrance whenever the user is trying to perform an action intentionally.</p>
+</div>
+<h3 id="when-to-confirm-or-undo-actions">When to confirm or undo actions</h3>
+<p>No matter how well-designed your application's UI is, all users perform an action they wish they hadn't. Your app can help in these situations by requiring confirmation of an action, or by providing a way to undo recent actions.</p>
+<p>For actions that can't be undone and have major consequences, we recommend using a confirmation dialog. Examples of such actions include:</p>
+<ul>
+<li>Overwriting a file</li>
+<li>Not saving a file before closing</li>
+<li>Confirming permanent deletion of a file or data</li>
+<li>Making a purchase (unless the user opts out of requiring a confirmation)</li>
+<li>Submitting a form, such as signing up for something</li>
+</ul>
+<p>For actions that can be undone, offering a simple undo command is usually enough. Examples of such actions include:</p>
+<ul>
+<li>Deleting a file</li>
+<li>Deleting an email (not permanently)</li>
+<li>Modifying content or editing text</li>
+<li>Renaming a file</li>
+</ul>
+<h2 id="optimize-for-specific-input-types">Optimize for specific input types</h2>
+<p>See the <a href="../input/index.html">Interaction primer</a> for more detail on optimizing user experiences around a specific input type or device.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/basics/commanding-basics.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

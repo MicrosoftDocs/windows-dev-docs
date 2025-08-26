@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Sliders </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Sliders ">
+    
+    <meta name="description" content="Learn how to implement a WinUI slider control that lets the user select from a range of values by moving a thumb control along a track.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sliders">Sliders</h1>
+
+<p>A slider is a control that lets the user select from a range of values by moving a thumb control along a track.</p>
+<p><img src="images/controls/slider.png" alt="A slider control"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).</p>
+<p>A slider is a good choice when you know that users think of the value as a relative quantity, not a numeric value. For example, users think about setting their audio volume to low or medium—not about setting the value to 2 or 5.</p>
+<p>Don't use a slider for binary settings. Use a <a href="toggles.html">toggle switch</a> instead.</p>
+<p>Here are some additional factors to consider when deciding whether to use a slider:</p>
+<ul>
+<li><strong>Does the setting seem like a relative quantity?</strong> If not, use <a href="radio-button.html">radio buttons</a> or a <a href="lists.html">list box</a>.</li>
+<li><strong>Is the setting an exact, known numeric value?</strong> If so, use a numeric <a href="text-box.html">text box</a>.</li>
+<li><strong>Would a user benefit from instant feedback on the effect of setting changes?</strong> If so, use a slider. For example, users can choose a color more easily by immediately seeing the effect of changes to hue, saturation, or luminosity values.</li>
+<li><strong>Does the setting have a range of four or more values?</strong> If not, use <a href="radio-button.html">radio buttons</a>.</li>
+<li><strong>Can the user change the value?</strong> Sliders are for user interaction. If a user can't ever change the value, use read-only text instead.</li>
+</ul>
+<p>If you are deciding between a slider and a numeric text box, use a numeric text box if:</p>
+<ul>
+<li>Screen space is tight.</li>
+<li>The user is likely to prefer using the keyboard.</li>
+</ul>
+<p>Use a slider if:</p>
+<ul>
+<li>Users will benefit from instant feedback.</li>
+</ul>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Size the control so that users can easily set the value they want. For settings with discrete values, make sure the user can easily select any value using the mouse. Make sure the endpoints of the slider always fit within the bounds of a view.</li>
+<li>Give immediate feedback while or after a user makes a selection (when practical). For example, the Windows volume control beeps to indicate the selected audio volume.</li>
+<li>Use labels to show the range of values. Exception: If the slider is vertically oriented and the top label is Maximum, High, More, or equivalent, you can omit the other labels because the meaning is clear.</li>
+<li>Disable all associated labels or feedback visuals when you disable the slider.</li>
+<li>Consider the direction of text when setting the flow direction and/or orientation of your slider. Script flows from left to right in some languages, and from right to left in others.</li>
+<li>Don't use a slider as a progress indicator.</li>
+<li>Don't change the size of the slider thumb from the default size.</li>
+<li>Don't create a continuous slider if the range of values is large and users will most likely select one of several representative values from the range. Instead, use those values as the only steps allowed. For example if time value might be up to 1 month but users only need to pick from 1 minute, 1 hour, 1 day or 1 month, then create a slider with only 4 step points.</li>
+</ul>
+<h2 id="additional-usage-guidance">Additional usage guidance</h2>
+<h3 id="choosing-the-right-layout-horizontal-or-vertical">Choosing the right layout: horizontal or vertical</h3>
+<p>You can orient your slider horizontally or vertically. Use these guidelines to determine which layout to use.</p>
+<ul>
+<li>Use a natural orientation. For example, if the slider represents a real-world value that is normally shown vertically (such as temperature), use a vertical orientation.</li>
+<li>If the control is used to seek within media, like in a video app, use a horizontal orientation.</li>
+<li>When using a slider in page that can be panned in one direction (horizontally or vertically), use a different orientation for the slider than the panning direction. Otherwise, users might swipe the slider and change its value accidentally when they try to pan the page.</li>
+<li>If you're still not sure which orientation to use, use the one that best fits your page layout.</li>
+</ul>
+<h3 id="range-direction">Range direction</h3>
+<p>The range direction is the direction you move the slider when you slide it from its current value to its max value.</p>
+<ul>
+<li>For vertical slider, put the largest value at the top of the slider, regardless of reading direction. For example, for a volume slider, always put the maximum volume setting at the top of the slider. For other types of values (such as days of the week), follow the reading direction of the page.</li>
+<li>For horizontal styles, put the lower value on the left side of the slider for left-to-right page layout, and on the right for right-to-left page layout.</li>
+<li>The one exception to the previous guideline is for media seek bars: always put the lower value on the left side of the slider.</li>
+</ul>
+<h3 id="steps-and-tick-marks">Steps and tick marks</h3>
+<ul>
+<li>Use step points if you don't want the slider to allow arbitrary values between min and max. For example, if you use a slider to specify the number of movie tickets to buy, don't allow floating point values. Give it a step value of 1.</li>
+<li>If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.</li>
+<li>Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.</li>
+<li>Show tick marks when users need to know the approximate value of the setting.</li>
+<li>Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value tooltip to see the exact value.</li>
+<li>Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.</li>
+</ul>
+<h3 id="labels">Labels</h3>
+<ul>
+<li><p><strong>Slider labels</strong></p>
+<p>The slider label indicates what the slider is used for.</p>
+<ul>
+<li>Use a label with no ending punctuation (this is the convention for all control labels).</li>
+<li>Position labels above the slider when the slider is in a form that places most of its labels above their controls.</li>
+<li>Position labels to the sides when the slider is in a form that places most of its labels to the side of their controls.</li>
+<li>Avoid placing labels below the slider because the user's finger might occlude the label when the user touches the slider.</li>
+</ul>
+</li>
+<li><p><strong>Range labels</strong></p>
+<p>The range, or fill, labels describe the slider's minimum and maximum values.</p>
+<ul>
+<li>Label the two ends of the slider range, unless a vertical orientation makes this unnecessary.</li>
+<li>Use only one word, if possible, for each label.</li>
+<li>Don't use ending punctuation.</li>
+<li>Make sure these labels are descriptive and parallel. Examples: Maximum/Minimum, More/Less, Low/High, Soft/Loud.</li>
+</ul>
+</li>
+<li><p><strong>Value labels</strong></p>
+<p>A value label displays the current value of the slider.</p>
+<ul>
+<li>If you need a value label, display it below the slider.</li>
+<li>Center the text relative to the control and include the units (such as pixels).</li>
+<li>Since the slider's thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.</li>
+</ul>
+</li>
+</ul>
+<h3 id="appearance-and-interaction">Appearance and interaction</h3>
+<p>A slider is composed of a track and a thumb. The track is a bar (which can optionally show various styles of tick marks) representing the range of values that can be input. The thumb is a selector, which the user can position by either tapping the track or by scrubbing back and forth on it.</p>
+<p>A slider has a large touch target. To maintain touch accessibility, a slider should be positioned far enough away from the edge of the display.</p>
+<p>When you're designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.</p>
+<h2 id="examples">Examples</h2>
+<p>A slider with tick marks at 10 point intervals from 0 to 100.</p>
+<p><img src="images/slider-ticks.png" alt="A slider with tick marks"></p>
+<h2 id="create-a-slider">Create a slider</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider">Slider class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.value">Value property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged">ValueChanged event</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/Slider">Open the WinUI 3 Gallery app and see the Slider in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Here's how to create a slider in XAML.</p>
+<pre><code class="lang-xaml">&lt;Slider x:Name=&quot;volumeSlider&quot; Header=&quot;Volume&quot; Width=&quot;200&quot;
+        ValueChanged=&quot;Slider_ValueChanged&quot;/&gt;
+</code></pre>
+<p>Here's how to create a slider in code.</p>
+<pre><code class="lang-csharp">Slider volumeSlider = new Slider();
+volumeSlider.Header = &quot;Volume&quot;;
+volumeSlider.Width = 200;
+volumeSlider.ValueChanged += Slider_ValueChanged;
+
+// Add the slider to a parent container in the visual tree.
+stackPanel1.Children.Add(volumeSlider);
+</code></pre>
+<p>You get and set the value of the slider from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.value">Value</a> property. To respond to value changes, you can use data binding to bind to the Value property, or handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged">ValueChanged</a> event.</p>
+<pre><code class="lang-csharp">private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+{
+    Slider slider = sender as Slider;
+    if (slider != null)
+    {
+        media.Volume = slider.Value;
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.slider">Slider class</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.value">Value property</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged">ValueChanged event</a></li>
+<li><a href="winui2gallery:/item/Slider">Open the WinUI 2 Gallery app and see the Slider in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="toggles.html">Toggle switches</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Slider">Slider class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/slider.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

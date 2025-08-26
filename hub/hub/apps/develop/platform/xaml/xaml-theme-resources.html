@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>XAML theme resources </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="XAML theme resources ">
+    
+    <meta name="description" content="Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="xaml-theme-resources">XAML theme resources</h1>
+
+<p>Theme resources in XAML are a set of resources that apply different values depending on which system theme is active. There are 3 themes that the XAML framework supports: &quot;Light&quot;, &quot;Dark&quot;, and &quot;HighContrast&quot;.</p>
+<p><strong>Prerequisites</strong>: This topic assumes that you have read <a href="xaml-resource-dictionary.html">ResourceDictionary and XAML resource references</a>.</p>
+<h2 id="theme-resources-v-static-resources">Theme resources v. static resources</h2>
+<p>There are two XAML markup extensions that can reference a XAML resource from an existing XAML resource dictionary: <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">{StaticResource} markup extension</a> and <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a>.</p>
+<p>Evaluation of a <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> occurs when the app loads and subsequently each time the theme changes at runtime. This is typically the result of the user changing their device settings or from a programmatic change within the app that alters its current theme.</p>
+<p>In contrast, a <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">{StaticResource} markup extension</a> is evaluated only when the XAML is first loaded by the app. It does not update. It's similar to a find and replace in your XAML with the actual runtime value at app launch.</p>
+<h2 id="theme-resources-in-the-resource-dictionary-structure">Theme resources in the resource dictionary structure</h2>
+<p>Each theme resource is part of the XAML file themeresources.xaml. For design purposes, themeresources.xaml is available in the \(Program Files)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\&lt;SDK version&gt;\Generic folder from a Windows Software Development Kit (SDK) installation. The resource dictionaries in themeresources.xaml are also reproduced in generic.xaml in the same directory.</p>
+<p>The Windows Runtime doesn't use these physical files for runtime lookup. That's why they are specifically in a DesignTime folder, and they aren't copied into apps by default. Instead, these resource dictionaries exist in memory as part of the Windows Runtime itself, and your app's XAML resource references to theme resources (or system resources) resolve there at runtime.</p>
+<h2 id="guidelines-for-custom-theme-resources">Guidelines for custom theme resources</h2>
+<p>Follow these guidelines when you define and consume your own custom theme resources:</p>
+<ul>
+<li><p>Specify theme dictionaries for both &quot;Light&quot; and &quot;Dark&quot; in addition to your &quot;HighContrast&quot; dictionary. Although you can create a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> with &quot;Default&quot; as the key, it's preferred to be explicit and instead use &quot;Light&quot;, &quot;Dark&quot;, and &quot;HighContrast&quot;.</p>
+</li>
+<li><p>Use the <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> in: Styles, Setters, Control templates, Property setters, and Animations.</p>
+</li>
+<li><p>Don't use the <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> in your resource definitions inside your <a href="/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries">ThemeDictionaries</a>. Use <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">{StaticResource} markup extension</a> instead.</p>
+<p>EXCEPTION: You can use the <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> to reference resources that are agnostic to the app theme in your <a href="/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries">ThemeDictionaries</a>. Examples of these resources are accent color resources like <code>SystemAccentColor</code>, or system color resources, which are typically prefixed with &quot;SystemColor&quot; like <code>SystemColorButtonFaceColor</code>.</p>
+</li>
+</ul>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>If you don't follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the <a href="#troubleshooting-theme-resources">Troubleshooting theme resources</a> section.</p>
+</div>
+<h2 id="the-xaml-color-ramp-and-theme-dependent-brushes">The XAML color ramp and theme-dependent brushes</h2>
+<p>The combined set of colors for &quot;Light&quot;, &quot;Dark&quot;, and &quot;HighContrast&quot; themes make up the <em>Windows color ramp</em> in XAML. Whether you want to modify the system themes, or apply a theme to your own XAML elements, it's important to understand how the color resources are structured.</p>
+<p>For additional information about how to apply color in your Windows app, please see <a href="../../../design/signature-experiences/color.html">Color in Windows apps</a>.</p>
+<h3 id="light-and-dark-theme-colors">Light and Dark theme colors</h3>
+<p>The XAML framework provides a set of named <a href="/uwp/api/Windows.UI.Color">Color</a> resources with values that are tailored for the &quot;Light&quot; and &quot;Dark&quot; themes. For WinUI 2, the theme resources are defined in the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/winui2/main/dev/CommonStyles/Common_themeresources_any.xaml">Common theme resources Xaml file</a>. The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.</p>
+<div class="TIP">
+<h5>Tip</h5>
+</div>
+<div class="nextstepaction">
+<p>For a visual overview of these colors, see the WinUI 3 Gallery app: <a href="winui3gallery://item/Colors">Colors</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h3 id="windows-system-contrast-theme-colors">Windows system contrast theme colors</h3>
+<p>In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Windows apps. However, many of the XAML <a href="/uwp/api/Windows.UI.Xaml.Media.Brush">Brush</a> resources consume these colors when the system is operating (and the app is running) using the &quot;HighContrast&quot; theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: <code>SystemColor[name]Color</code>.</p>
+<p>For more information about supporting contrast themes, see <a href="../../../design/accessibility/high-contrast-themes.html">Contrast themes</a>.</p>
+<h3 id="system-accent-color">System accent color</h3>
+<p>In addition to the system contrast theme colors, the system accent color is provided as a special color resource using the key <code>SystemAccentColor</code>. At runtime, this resource gets the color that the user has specified as the accent color in the Windows personalization settings.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While it's possible to override the system color resources, it's a best practice to respect the user's color choices, especially for contrast theme settings.</p>
+</div>
+<h3 id="theme-dependent-brushes">Theme-dependent brushes</h3>
+<p>The color resources shown in the preceding sections are used to set the <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color">Color</a> property of <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush">SolidColorBrush</a> resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements.</p>
+<p>Let's look at how the color value for this brush is determined at run-time. In the &quot;Light&quot; and &quot;Dark&quot; resource dictionaries, this brush is defined like this:</p>
+<p><code>&lt;SolidColorBrush x:Key=&quot;TextFillColorPrimaryBrush&quot; Color=&quot;{StaticResource TextFillColorPrimary}&quot;/&gt;</code></p>
+<p>In the &quot;HighContrast&quot; resource dictionary, this brush is defined like this:</p>
+<p><code>&lt;SolidColorBrush x:Key=&quot;TextFillColorPrimaryBrush&quot; Color=&quot;{ThemeResource SystemColorWindowTextColor}&quot;/&gt;</code></p>
+<p>When this brush is applied to a XAML element, its color is determined at run-time by the current theme, as shown in this table.</p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Color resource</th>
+<th>Runtime value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Light</td>
+<td>TextFillColorPrimary</td>
+<td>#E4000000</td>
+</tr>
+<tr>
+<td>Dark</td>
+<td>TextFillColorPrimary</td>
+<td>#FFFFFFFF</td>
+</tr>
+<tr>
+<td>HighContrast</td>
+<td>SystemColorWindowTextColor</td>
+<td>The color specified in settings for Text.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-xaml-type-ramp">The XAML type ramp</h2>
+<p>The themeresources.xaml file defines several resources that define a <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> that you can apply to text containers in your UI, specifically for either <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> or <a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock">RichTextBlock</a>. These are not the default implicit styles. They are provided to make it easier for you to create XAML UI definitions that match the <em>Windows type ramp</em> documented in <a href="../../../design/signature-experiences/typography.html">Guidelines for fonts</a>.</p>
+<p>These styles are for text attributes that you want applied to the whole text container. If you want styles applied just to sections of the text, set attributes on the text elements within the container, such as on a <a href="/uwp/api/Windows.UI.Xaml.Documents.Run">Run</a> in <a href="/uwp/api/windows.ui.xaml.controls.textblock.inlines">TextBlock.Inlines</a> or on a <a href="/uwp/api/Windows.UI.Xaml.Documents.Paragraph">Paragraph</a> in <a href="/uwp/api/windows.ui.xaml.controls.richtextblock.blocks">RichTextBlock.Blocks</a>.</p>
+<p>The styles look like this when applied to a <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a>:</p>
+<p><img src="images/text-block-type-ramp.svg" alt="text block styles"></p>
+<table>
+<thead>
+<tr>
+<th>Style</th>
+<th>Weight</th>
+<th>Size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Caption</td>
+<td>Regular</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Body</td>
+<td>Regular</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Body Strong</td>
+<td>Semibold</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Body Large</td>
+<td>Regular</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Subtitle</td>
+<td>Semibold</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Semibold</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Title Large</td>
+<td>Semibold</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Display</td>
+<td>Semibold</td>
+<td>68</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-XAML">&lt;TextBlock Text=&quot;Caption&quot; Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;/&gt;
+&lt;TextBlock Text=&quot;Body&quot; Style=&quot;{StaticResource BodyTextBlockStyle}&quot;/&gt;
+&lt;TextBlock Text=&quot;Body Strong&quot; Style=&quot;{StaticResource BodyStrongTextBlockStyle}&quot;/&gt;
+&lt;TextBlock Text=&quot;Body Large&quot; Style=&quot;{StaticResource BodyLargeTextBlockStyle}&quot;/&gt;
+&lt;TextBlock Text=&quot;Subtitle&quot; Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot;/&gt;
+&lt;TextBlock Text=&quot;Title&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot;/&gt;
+&lt;TextBlock Text=&quot;Title Large&quot; Style=&quot;{StaticResource TitleLargeTextBlockStyle}&quot;/&gt;
+&lt;TextBlock Text=&quot;Display&quot; Style=&quot;{StaticResource DisplayTextBlockStyle}&quot;/&gt;
+</code></pre>
+<p>For guidance on how to use the Windows type ramp in your app, see <a href="../../../design/signature-experiences/typography.html">Typography in Windows apps</a>.</p>
+<p>For details of the XAML styles, see WinUI on GitHub:</p>
+<ul>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L21">Caption TextBlockStyle</a></li>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L27">Body TextBlockStyle</a></li>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L33">Body Strong TextBlockStyle</a></li>
+</ul>
+ <!--- [Body Large TextBlockStyle]()-->
+<ul>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L37">Subtitle TextBlockStyle</a></li>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L42">Title TextBlockStyle</a></li>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L47">Title Large TextBlockStyle</a></li>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L52">Display TextBlockStyle</a></li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+</div>
+<div class="nextstepaction">
+<p>For a visual overview of these styles, see the WinUI 3 Gallery app: <a href="winui3gallery://item/Typography">Typography</a></p>
+</div>
+<h3 id="baserichtextblockstyle">BaseRichTextBlockStyle</h3>
+<p><strong>TargetType</strong>: <a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock">RichTextBlock</a></p>
+<p>Supplies the common properties for all the other <a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock">RichTextBlock</a> container styles.</p>
+<pre><code class="lang-XAML">&lt;!-- Usage --&gt;
+&lt;RichTextBlock Style=&quot;{StaticResource BaseRichTextBlockStyle}&quot;&gt;
+    &lt;Paragraph&gt;Rich text.&lt;/Paragraph&gt;
+&lt;/RichTextBlock&gt;
+
+&lt;!-- Style definition --&gt;
+&lt;Style x:Key=&quot;BaseRichTextBlockStyle&quot; TargetType=&quot;RichTextBlock&quot;&gt;
+    &lt;Setter Property=&quot;FontFamily&quot; Value=&quot;Segoe UI&quot;/&gt;
+    &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;SemiBold&quot;/&gt;
+    &lt;Setter Property=&quot;FontSize&quot; Value=&quot;14&quot;/&gt;
+    &lt;Setter Property=&quot;TextTrimming&quot; Value=&quot;None&quot;/&gt;
+    &lt;Setter Property=&quot;TextWrapping&quot; Value=&quot;Wrap&quot;/&gt;
+    &lt;Setter Property=&quot;LineStackingStrategy&quot; Value=&quot;MaxHeight&quot;/&gt;
+    &lt;Setter Property=&quot;TextLineBounds&quot; Value=&quot;Full&quot;/&gt;
+    &lt;Setter Property=&quot;OpticalMarginAlignment&quot; Value=&quot;TrimSideBearings&quot;/&gt;
+&lt;/Style&gt;
+</code></pre>
+<h3 id="bodyrichtextblockstyle">BodyRichTextBlockStyle</h3>
+<pre><code class="lang-XAML">&lt;!-- Usage --&gt;
+&lt;RichTextBlock Style=&quot;{StaticResource BodyRichTextBlockStyle}&quot;&gt;
+    &lt;Paragraph&gt;Rich text.&lt;/Paragraph&gt;
+&lt;/RichTextBlock&gt;
+
+&lt;!-- Style definition --&gt;
+&lt;Style x:Key=&quot;BodyRichTextBlockStyle&quot; TargetType=&quot;RichTextBlock&quot; BasedOn=&quot;{StaticResource BaseRichTextBlockStyle}&quot;&gt;
+    &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Normal&quot;/&gt;
+&lt;/Style&gt;
+</code></pre>
+<p><strong>Note</strong>:  The <a href="/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock">RichTextBlock</a> styles don't have all the text ramp styles that <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> does, mainly because the block-based document object model for <strong>RichTextBlock</strong> makes it easier to set attributes on the individual text elements. Also, setting <a href="/uwp/api/windows.ui.xaml.controls.textblock.text">TextBlock.Text</a> using the XAML content property introduces a situation where there is no text element to style and thus you'd have to style the container. That isn't an issue for <strong>RichTextBlock</strong> because its text content always has to be in specific text elements like <a href="/uwp/api/Windows.UI.Xaml.Documents.Paragraph">Paragraph</a>, which is where you might apply XAML styles for page header, page subheader and similar text ramp definitions.</p>
+<h2 id="miscellaneous-named-styles">Miscellaneous Named styles</h2>
+<p>There's an additional set of keyed <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> definitions you can apply to style a <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a> differently than its default implicit style.</p>
+<h3 id="navigationbackbuttonnormalstyle">NavigationBackButtonNormalStyle</h3>
+<p><strong>TargetType</strong>: <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a></p>
+<p>This <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> provides a complete template for a <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a> that can be the navigation back button for a navigation app. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height">Height</a>, <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width">Width</a>, <a href="/uwp/api/windows.ui.xaml.controls.control.fontsize">FontSize</a>, and other properties on your <strong>Button</strong> or create a derived style using <a href="/uwp/api/windows.ui.xaml.style.basedon">BasedOn</a>.</p>
+<p>Here's a <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a> with the <strong>NavigationBackButtonNormalStyle</strong> resource applied to it.</p>
+<pre><code class="lang-XAML">&lt;Button Style=&quot;{StaticResource NavigationBackButtonNormalStyle}&quot; /&gt;
+</code></pre>
+<p>It looks like this:</p>
+<p><img src="images/styles-back-button-normal.png" alt="A button styled as a back button"></p>
+<h3 id="navigationbackbuttonsmallstyle">NavigationBackButtonSmallStyle</h3>
+<p><strong>TargetType</strong>: <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a></p>
+<p>This <a href="/uwp/api/Windows.UI.Xaml.Style">Style</a> provides a complete template for a <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a> that can be the navigation back button for a navigation app. It's similar to <strong>NavigationBackButtonNormalStyle</strong>, but its dimensions are 30 x 30 pixels.</p>
+<p>Here's a <a href="/uwp/api/Windows.UI.Xaml.Controls.Button">Button</a> with the <strong>NavigationBackButtonSmallStyle</strong> resource applied to it.</p>
+<pre><code class="lang-XAML">&lt;Button Style=&quot;{StaticResource NavigationBackButtonSmallStyle}&quot; /&gt;
+</code></pre>
+<h2 id="troubleshooting-theme-resources">Troubleshooting theme resources</h2>
+<p>If you don't follow the <a href="#guidelines-for-custom-theme-resources">guidelines for using theme resources</a>, you might see unexpected behavior related to themes in your app.</p>
+<p>For example, when you open a light-themed flyout, parts of your dark-themed app also change as if they were in the light theme. Or if you navigate to a light-themed page and then navigate back, the original dark-themed page (or parts of it) now looks as though it is in the light theme.</p>
+<p>Typically, these types of issues occur when you provide a &quot;Default&quot; theme and a &quot;HighContrast&quot; theme to support high-contrast scenarios, and then use both &quot;Light&quot; and &quot;Dark&quot; themes in different parts of your app.</p>
+<p>For example, consider this theme dictionary definition:</p>
+<pre><code class="lang-XAML">&lt;!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. --&gt;
+&lt;ResourceDictionary&gt;
+  &lt;ResourceDictionary.ThemeDictionaries&gt;
+    &lt;ResourceDictionary x:Key=&quot;Default&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{ThemeResource ControlFillColorDefault}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+    &lt;ResourceDictionary x:Key=&quot;HighContrast&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{ThemeResource SystemColorButtonFaceColor}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+  &lt;/ResourceDictionary.ThemeDictionaries&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>Intuitively, this looks correct. You want to change the color pointed to by <code>myBrush</code> when in high-contrast, but when not in high-contrast, you rely on the <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> to make sure that <code>myBrush</code> points to the right color for your theme. If your app never has <a href="/uwp/api/windows.ui.xaml.frameworkelement.requestedtheme">FrameworkElement.RequestedTheme</a> set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.</p>
+<p>The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.</p>
+<p>To fix this, replace the &quot;Default&quot; dictionary with separate theme dictionaries for both &quot;Light&quot; and &quot;Dark&quot; themes in addition to &quot;HighContrast&quot;:</p>
+<pre><code class="lang-XAML">&lt;!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. --&gt;
+&lt;ResourceDictionary&gt;
+  &lt;ResourceDictionary.ThemeDictionaries&gt;
+    &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{ThemeResource ControlFillColorDefault}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+    &lt;ResourceDictionary x:Key=&quot;Dark&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{ThemeResource ControlFillColorDefault}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+    &lt;ResourceDictionary x:Key=&quot;HighContrast&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{ThemeResource SystemColorButtonFaceColor}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+  &lt;/ResourceDictionary.ThemeDictionaries&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>However, problems still occur if any of these resources are referenced in inherited properties like <a href="/uwp/api/windows.ui.xaml.controls.control.foreground">Foreground</a>. Your custom control template might specify the foreground color of an element using the <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a>, but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn't yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.</p>
+<p>As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.</p>
+<p>At this point, the framework appears to have polluted your theme dictionary because it now has a resource from one dictionary that has its color set from another dictionary.</p>
+<p>To fix this problem, use the <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">{StaticResource} markup extension</a> instead of <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a>. With the guidelines applied, the theme dictionaries look like this:</p>
+<pre><code class="lang-XAML">&lt;ResourceDictionary&gt;
+  &lt;ResourceDictionary.ThemeDictionaries&gt;
+    &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{StaticResource ControlFillColorDefault}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+    &lt;ResourceDictionary x:Key=&quot;Dark&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{StaticResource ControlFillColorDefault}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+    &lt;ResourceDictionary x:Key=&quot;HighContrast&quot;&gt;
+      &lt;SolidColorBrush x:Key=&quot;myBrush&quot; Color=&quot;{ThemeResource SystemColorButtonFaceColor}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+  &lt;/ResourceDictionary.ThemeDictionaries&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>Notice that the <a href="/windows/uwp/xaml-platform/themeresource-markup-extension">{ThemeResource} markup extension</a> is still used in the &quot;HighContrast&quot; dictionary instead of <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">{StaticResource} markup extension</a>. This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the &quot;HighContrast&quot; theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with 'SystemColor' in the name). The system enables the user to set the specific colors that should be used for their contrast theme settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they've changed at the system level. This is why the {ThemeResource} markup extension is used here.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/xaml/xaml-theme-resources.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

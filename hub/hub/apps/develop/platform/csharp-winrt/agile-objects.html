@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Agile objects with C#/WinRT </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Agile objects with C#/WinRT ">
+    
+    <meta name="description" content="An agile object is one that can be accessed from any thread. C#/WinRT provides support for agile references if you need to marshal a non-agile object across apartments in a safe way.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="agile-objects-in-cwinrt">Agile objects in C#/WinRT</h1>
+
+<p>Most Windows Runtime classes are <em>agile</em>, meaning they can be accessed from any threads across different apartments. C#/WinRT types that you author are agile by default, and it is not possible to opt out of this behavior for those types.</p>
+<p>However, projected C#/WinRT types (which includes Windows Runtime types that are provided by the Windows SDK and the WinUI library) may or may not be agile. For example, many types that represent UI objects are not agile. When you consume non-agile types, you need to take into consideration their threading model and marshaling behavior. C#/WinRT provides support for agile references if you need to marshal a non-agile object across apartments in a safe way.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows Runtime is based on COM. In COM terms, an agile class is registered with <code>ThreadingModel</code> = <em>Both</em>. For more info about COM threading models, and apartments, see <a href="/previous-versions/ms809971(v=msdn.10)">Understanding and Using COM Threading Models</a>.</p>
+</div>
+<h2 id="check-for-agile-support">Check for agile support</h2>
+<p>To check whether a Windows Runtime object is agile, use the following code to determine whether the object supports the <a href="/windows/desktop/api/objidl/nn-objidl-iagileobject">IAgileObject</a> interface.</p>
+<pre><code class="lang-csharp">var queryAgileObject = testObject.As&lt;IAgileObject&gt;();
+
+if (queryAgileObject != null) {
+    // testObject is agile.
+}
+</code></pre>
+<h2 id="create-an-agile-reference">Create an agile reference</h2>
+<p>To create an agile reference for a non-agile object, you can use the <code>AsAgile</code> extension method. <code>AsAgile</code> is a generic extension method that can be applied to any projected C#/WinRT type. If the type is not a projected type, an exception is thrown. Here is an example using a <a href="/uwp/api/Windows.UI.Popups.PopupMenu">PopupMenu</a> object, which is a non-agile type from the Windows SDK.</p>
+<pre><code class="lang-csharp">var nonAgileObj = new Windows.UI.Popups.PopupMenu();
+AgileReference&lt;Windows.UI.Popups.PopupMenu&gt; agileReference = nonAgileObj.AsAgile();
+</code></pre>
+<p>You can now pass <code>agileReference</code> to a thread in a different apartment, and use it there.</p>
+<pre><code class="lang-csharp">await Task.Run(() =&gt; {
+        Windows.UI.Popups.PopupMenu nonAgileObjAgain = agileReference.Get()
+    });
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/csharp-winrt/agile-objects.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

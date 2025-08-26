@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Host WinRT XAML controls in desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Host WinRT XAML controls in desktop apps ">
+    
+    <meta name="description" content="This guide helps you to create Fluent-based UWP UIs directly in your WPF and Windows Forms applications">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="host-winrt-xaml-controls-in-desktop-apps-xaml-islands">Host WinRT XAML controls in desktop apps (XAML Islands)</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This topic uses or mentions types from the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32">CommunityToolkit/Microsoft.Toolkit.Win32</a> GitHub repo. For important info about XAML Islands support, please see the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice">XAML Islands Notice</a> in that repo.</p>
+</div>
+<p>Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UWP desktop applications using a feature called <em>XAML Islands</em>. This feature enables you to enhance the look, feel, and functionality of your existing WPF, Windows Forms, and C++ desktop (Win32) applications with the latest Windows UI features that are only available via WinRT XAML controls. This means that you can use UWP features such as <a href="/windows/uwp/design/input/pen-and-stylus-interactions">Windows Ink</a> and controls that support the <a href="/windows/uwp/design/fluent-design-system/index">Fluent Design System</a> in your existing WPF, Windows Forms, and C++ desktop applications.</p>
+<p>You can host any WinRT XAML control that derives from <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a>, including:</p>
+<ul>
+<li>Most first-party WinRT XAML control provided by the Windows SDK or the WinUI 2 library (see <a href="#limitations-and-workarounds">exceptions</a>).</li>
+<li>Any custom WinRT XAML control (for example, a user control that consists of several WinRT XAML controls that work together). You must have the source code for the custom control so you can compile it with your application.</li>
+</ul>
+<p>Fundamentally, XAML Islands are created by using the <em>WinRT XAML hosting API</em>. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the <a href="/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a> that use the WinRT XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.</p>
+<p>The way you use XAML Islands depends on your application type and the types of WinRT XAML controls you want to host.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have feedback about XAML Islands, create a new issue in the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues">Microsoft.Toolkit.Win32 repo</a> and leave your comments there.</p>
+</div>
+<h2 id="requirements">Requirements</h2>
+<p>XAML Islands have these run time requirements:</p>
+<ul>
+<li>Windows 10, version 1903, or a later release.</li>
+<li>If your application is not packaged in an <a href="/windows/msix">MSIX package</a> for deployment, the computer must have the <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">Visual C++ Runtime</a> installed.</li>
+</ul>
+<h2 id="wpf-and-windows-forms-applications">WPF and Windows Forms applications</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET, or in apps that any version of the .NET Framework.</p>
+</div>
+<p>We recommend that WPF and Windows Forms applications use the XAML Island .NET controls that are available in the Windows Community Toolkit. These controls provide an object model that mimics (or provides access to) the properties, methods, and events of the corresponding WinRT XAML controls. They also handle behavior such as keyboard navigation and layout changes.</p>
+<p>There are two sets of XAML Island controls for WPF and Windows Forms applications: <em>wrapped controls</em> and <em>host controls</em>.</p>
+<h3 id="wrapped-controls">Wrapped controls</h3>
+<p>WPF and Windows Forms applications can use a selection of XAML Island controls that wrap the interface and functionality of a specific WinRT XAML control. You can add these controls directly to the design surface of your WPF or Windows Forms project and then use them like any other WPF or Windows Forms control in the designer.</p>
+<p>The following wrapped WinRT XAML controls are currently available in the Windows Community Toolkit.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Minimum supported OS</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas">InkCanvas</a><br><a href="/windows/communitytoolkit/controls/wpf-winforms/inktoolbar">InkToolbar</a></td>
+<td>Windows 10, version 1903</td>
+<td>Provide a surface and related toolbars for Windows Ink-based user interaction in your Windows Forms or WPF desktop application.</td>
+</tr>
+<tr>
+<td><a href="/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement">MediaPlayerElement</a></td>
+<td>Windows 10, version 1903</td>
+<td>Embeds a view that streams and renders media content such as video in your Windows Forms or WPF desktop application.</td>
+</tr>
+<tr>
+<td><a href="/windows/communitytoolkit/controls/wpf-winforms/mapcontrol">MapControl</a></td>
+<td>Windows 10, version 1903</td>
+<td>Enables you to display a symbolic or photorealistic map in your Windows Forms or WPF desktop application.</td>
+</tr>
+</tbody>
+</table>
+<p>For a walkthrough that demonstrates how to use the wrapped WinRT XAML controls, see <a href="host-standard-control-with-xaml-islands.html">Use XAML Islands to host a UWP XAML control in a C# WPF app</a>.</p>
+<h3 id="host-controls">Host controls</h3>
+<p>For custom controls and other scenarios beyond those covered by the available wrapped controls, WPF and Windows Forms applications can also use the <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> control that is available in the Windows Community Toolkit.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Minimum supported OS</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a></td>
+<td>Windows 10, version 1903</td>
+<td>Can host any WinRT XAML control that derives from <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a>, including any first-party WinRT XAML control provided by the Windows SDK as well as custom controls.</td>
+</tr>
+</tbody>
+</table>
+<p>For walkthroughs that demonstrate how to use the <strong>WindowsXamlHost</strong> control, see <a href="host-standard-control-with-xaml-islands.html">Use XAML Islands to host a UWP XAML control in a C# WPF app</a> and <a href="host-custom-control-with-xaml-islands.html">Host a custom WinRT XAML control in a WPF app using XAML Islands</a>.</p>
+<p><span id="requirements"></span></p>
+<h3 id="configure-your-project-to-use-the-xaml-island-net-controls">Configure your project to use the XAML Island .NET controls</h3>
+<p>The XAML Island .NET controls require Windows 10, version 1903, or a later version. To use these controls, install one of the NuGet packages listed below. These packages provide everything you need to use the XAML Island wrapped controls and host controls, and they include other related NuGet packages that are also required.</p>
+<table>
+<thead>
+<tr>
+<th>Type of control</th>
+<th>NuGet package</th>
+<th>Related articles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#wrapped-controls">Wrapped controls</a></td>
+<td>Version 6.0.0 or later of these packages: <ul><li>WPF: <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls">Microsoft.Toolkit.Wpf.UI.Controls</a></li><li>Windows Forms: <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls">Microsoft.Toolkit.Forms.UI.Controls</a></li></ul></td>
+<td><a href="host-standard-control-with-xaml-islands.html">Use XAML Islands to host a UWP XAML control in a C# WPF app</a></td>
+</tr>
+<tr>
+<td><a href="#host-controls">Host control</a></td>
+<td>Version 6.0.0 or later of these packages: <ul><li>WPF: <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost">Microsoft.Toolkit.Wpf.UI.XamlHost</a></li><li>Windows Forms: <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost">Microsoft.Toolkit.Forms.UI.XamlHost</a></li></ul></td>
+<td><a href="host-standard-control-with-xaml-islands.html">Use XAML Islands to host a UWP XAML control in a C# WPF app</a><br><a href="host-custom-control-with-xaml-islands.html">Host a custom WinRT XAML control in a WPF app</a></td>
+</tr>
+</tbody>
+</table>
+<p>Be aware of the following details:</p>
+<ul>
+<li><p>The host control packages are also included in the wrapped control packages. You can install the wrapped control packages if you want to use both sets of controls.</p>
+</li>
+<li><p>If you're hosting a custom WinRT XAML control, you'll also need to perform some additional steps to reference the custom control. For more info, see <a href="host-custom-control-with-xaml-islands.html">Host a custom WinRT XAML control in a WPF app using XAML Islands</a>.</p>
+</li>
+</ul>
+<h3 id="web-view-controls">Web view controls</h3>
+<p>The Windows Community Toolkit also provides the following .NET controls for hosting web content in WPF and Windows Forms applications. These controls are often used in similar desktop app modernization scenarios as the XAML Island controls, and they are maintained in the same <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32">Microsoft.Toolkit.Win32 repo</a> as the XAML Island controls.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Minimum supported OS</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/communitytoolkit/controls/wpf-winforms/webview">WebView</a></td>
+<td>Windows 10, version 1803</td>
+<td>Uses the Microsoft Edge rendering engine to show web content.</td>
+</tr>
+<tr>
+<td><a href="/windows/communitytoolkit/controls/wpf-winforms/webviewcompatible">WebViewCompatible</a></td>
+<td>Windows 7</td>
+<td>Provides a version of <strong>WebView</strong> that is compatible with more OS versions. This control uses the Microsoft Edge rendering engine to show web content on Windows 10 version 1803 and later, and the Internet Explorer rendering engine to show web content on earlier versions of Windows 10, Windows 8.x, and Windows 7.</td>
+</tr>
+</tbody>
+</table>
+<p>To use these controls, install one of these NuGet packages:</p>
+<ul>
+<li>WPF: <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls.WebView">Microsoft.Toolkit.Wpf.UI.Controls.WebView</a></li>
+<li>Windows Forms: <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls.WebView">Microsoft.Toolkit.Forms.UI.Controls.WebView</a></li>
+</ul>
+<h2 id="c-desktop-win32-applications">C++ desktop (Win32) applications</h2>
+<p>The XAML Island .NET controls are not supported in C++ desktop applications. These applications must instead use the <em>WinRT XAML hosting API</em> provided by the Windows 10 SDK (version 1903 and later).</p>
+<p>The WinRT XAML hosting API consists of several Windows Runtime classes and COM interfaces that your C++ desktop application can use to host any WinRT XAML control that derives from <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a>. You can host WinRT XAML controls in any UI element in your application that has an associated window handle (HWND). For more information about this API, see the following articles.</p>
+<ul>
+<li><a href="using-the-xaml-hosting-api.html">Using the WinRT XAML hosting API in a C++ desktop app</a></li>
+<li><a href="host-standard-control-with-xaml-islands-cpp.html">Host a standard WinRT XAML control in a C++ desktop app</a></li>
+<li><a href="host-custom-control-with-xaml-islands-cpp.html">Host a custom WinRT XAML control in a C++ desktop app</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The wrapped controls and host controls in the Windows Community Toolkit use the WinRT XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the WinRT XAML hosting API directly, including keyboard navigation and layout changes. For WPF and Windows Forms applications, we strongly recommend that you use these controls instead of the WinRT XAML hosting API directly because they abstract away many of the implementation details of using the API.</p>
+</div>
+<h2 id="architecture-of-xaml-islands">Architecture of XAML Islands</h2>
+<p>Here's a quick look at how the different types of XAML Island controls are organized architecturally on top of the WinRT XAML hosting API.</p>
+<p><img src="../images/xaml-islands/host-controls.png" alt="Host control Architecture"></p>
+<p>The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via NuGet packages in the Windows Community Toolkit.</p>
+<h2 id="limitations-and-workarounds">Limitations and workarounds</h2>
+<p>The following sections discuss limitations and workarounds for certain UWP development scenarios in desktop apps that use XAML Islands.</p>
+<h3 id="supported-only-with-workarounds">Supported only with workarounds</h3>
+<p>✔️ Hosting controls from the <a href="../../../winui/index.html">WinUI 2 Library</a> in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an <a href="/windows/msix">MSIX package</a> for deployment, you can host WinUI controls from prerelease or release versions of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NuGet package, or if you use the <a href="../framework-packages/framework-packages-overview.html">Dynamic Dependencies API</a>. Support for hosting controls from the <a href="../../../winui/winui3/index.html">WinUI 3.0 Library</a> is coming in a later release.</p>
+<p>✔️ To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the <a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a>, <a href="/uwp/api/windows.ui.viewmanagement.applicationview">ApplicationView</a>, and <a href="/uwp/api/windows.ui.xaml.window">Window</a> classes. Instead, use the <a href="/uwp/api/windows.ui.xaml.xamlroot">XamlRoot</a> class. For more information, see <a href="#window-host-context-for-xaml-islands">this section</a>.</p>
+<p>✔️ To support the <a href="/windows/uwp/app-to-app/share-data">Share contract</a> from a WPF, Windows Forms, or C++ desktop (Win32) app, your app must use the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop">IDataTransferManagerInterop</a> interface to get the <a href="/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager">DataTransferManager</a> object to initiate the share operation for a specific window. For a sample that demonstrates how to use this interface in a WPF app, see the <a href="https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource">ShareSource sample</a>.</p>
+<p>✔️ Using <code>x:Bind</code> with hosted controls in XAML Islands is not supported. You'll have to declare the data model in a .NET Standard library.</p>
+<h3 id="not-supported">Not supported</h3>
+<p>🚫 Using XAML Islands in WPF and Windows Forms apps that target the .NET Framework. XAML Islands are supported only in apps that target .NET Core 3.x.</p>
+<p>🚫 UWP XAML content in XAML Islands doesn't respond to Windows theme changes from dark to light or vice versa at run time. Content does respond to high contrast changes at run time.</p>
+<p>🚫 Adding a <a href="/uwp/api/Windows.UI.Xaml.Controls.WebView">Windows.UI.Xaml.WebView</a> control. For WPF and WinForms apps, see <a href="#web-view-controls">these alternatives</a>.</p>
+<p>🚫 The <a href="/uwp/api/Windows.Media.Playback.MediaPlayer">MediaPlayer</a> control and <a href="/windows/communitytoolkit/controls/wpf-winforms/mediaplayerelement">MediaPlayerElement</a> host control are not supported in full screen mode.</p>
+<p>🚫 Text input with the handwriting view. For more information about this feature, see <a href="/windows/uwp/design/controls-and-patterns/text-handwriting-view">this article</a>.</p>
+<p>🚫 Text controls that use <code>@Places</code> and <code>@People</code> content links. For more information about this feature, see <a href="/windows/uwp/design/controls-and-patterns/content-links">this article</a>.</p>
+<p>🚫 XAML Islands do not support hosting a <a href="/uwp/api/Windows.UI.Xaml.Controls.ContentDialog">ContentDialog</a> that contains a control that accepts text input, such as a <a href="/uwp/api/windows.ui.xaml.controls.textbox">TextBox</a>, <a href="/uwp/api/windows.ui.xaml.controls.richeditbox">RichEditBox</a>, or <a href="/uwp/api/windows.ui.xaml.controls.autosuggestbox">AutoSuggestBox</a>. If you do this, the input control will not properly respond to key presses. To achieve similar functionality using a XAML Island, we recommend that you host a <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup">Popup</a> that contains the input control.</p>
+<p>🚫 XAML Islands do not currently support displaying SVG files in a hosted <a href="/uwp/api/Windows.UI.Xaml.Controls.Image">Windows.UI.Xaml.Controls.Image</a> control or by using an <a href="/uwp/api/windows.ui.xaml.media.imaging.svgimagesource">Windows.UI.Xaml.Media.Imaging.SvgImageSource</a> object. As a workaround, convert the image files you want to display to raster-based formats such as JPG or PNG.</p>
+<h3 id="window-host-context-for-xaml-islands">Window host context for XAML Islands</h3>
+<p>When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the <a href="/uwp/api/windows.ui.xaml.xamlroot">XamlRoot</a> class. The <a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a>, <a href="/uwp/api/windows.ui.viewmanagement.applicationview">ApplicationView</a>, and <a href="/uwp/api/windows.ui.xaml.window">Window</a> classes won't provide the correct information for XAML Islands. <a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a> and <a href="/uwp/api/windows.ui.xaml.window">Window</a> objects do exist on the thread and are accessible to your app, but they won't return meaningful bounds or visibility (they are always invisible and have a size of 1x1). For more information, see <a href="/windows/uwp/design/layout/show-multiple-views#windowing-hosts">Windowing hosts</a>.</p>
+<p>For example, to get the bounding rectangle of the window that contains a WinRT XAML control that is hosted in a XAML Island, use the <a href="/uwp/api/windows.ui.xaml.xamlroot.size">XamlRoot.Size</a> property of the control. Because every WinRT XAML control that can be hosted in a XAML Island derives from <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a>, you can use the <a href="/uwp/api/windows.ui.xaml.uielement.xamlroot">XamlRoot</a> property of the control to access the <strong>XamlRoot</strong> object.</p>
+<pre><code class="lang-csharp">Size windowSize = myUWPControl.XamlRoot.Size;
+</code></pre>
+<p>Do not use the <a href="/uwp/api/windows.ui.core.corewindow.bounds">CoreWindows.Bounds</a> property to get the bounding rectangle.</p>
+<pre><code class="lang-csharp">// This will return incorrect information for a WinRT XAML control that is hosted in a XAML Island.
+Rect windowSize = CoreWindow.GetForCurrentThread().Bounds;
+</code></pre>
+<p>For a table of common windowing-related APIs that you should avoid in the context of XAML Islands and the recommended <a href="/uwp/api/windows.ui.xaml.xamlroot">XamlRoot</a> replacements, see the table in <a href="/windows/uwp/design/layout/show-multiple-views#make-code-portable-across-windowing-hosts">this section</a>.</p>
+<p>For a sample that demonstrates how to use this interface in a WPF app, see the <a href="https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource">ShareSource</a> sample.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<p>For more background information and tutorials about using XAML Islands, see the following articles and resources:</p>
+<ul>
+<li><a href="../modernize-wpf-tutorial.html">Modernize a WPF app tutorial</a>: This tutorial provides step-by-step instructions for using the wrapped controls and host controls in the Windows Community Toolkit to add WinRT XAML controls to an existing WPF line-of-business application. This tutorial includes the complete code for the WPF application as well as detailed instructions for each step in the process.</li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands code samples</a>: This repo contains Windows Forms, WPF, and C++ desktop (Win32) samples that demonstrate how to use XAML Islands.</li>
+<li><a href="https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap">XAML Islands v1 - Updates and Roadmap</a>: This blog post discusses many common questions about XAML Islands and provides a detailed development roadmap.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/xaml-islands/xaml-islands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

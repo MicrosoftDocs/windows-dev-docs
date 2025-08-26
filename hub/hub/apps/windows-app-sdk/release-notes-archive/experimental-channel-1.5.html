@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Experimental channel release notes for the Windows App SDK 1.5 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Experimental channel release notes for the Windows App SDK 1.5 ">
+    
+    <meta name="description" content="Learn about the experimental channel release notes for the Windows App SDK 1.5">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="experimental-channel-release-notes-for-the-windows-app-sdk-15">Experimental channel release notes for the Windows App SDK 1.5</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The experimental channel is <strong>not supported</strong> for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The experimental channel provides releases of the Windows App SDK that include <a href="../release-channels.html#features-available-by-release-channel">experimental channel features</a> that are in early stages of development. APIs for experimental features have the <a href="/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute">Experimental</a> attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel might have breaking changes in future releases, but experimental APIs are especially subject to change. Experimental features may be removed from the next release, or may never be released.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on experimental releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest experimental channel release:</strong></p>
+<ul>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="version-15-experimental-150-experimental2">Version 1.5 Experimental (1.5.0-experimental2)</h2>
+<p>This is the latest release of the experimental channel.
+To download, retarget your WinAppSDK NuGet version to <code>1.5.240124002-experimental2</code>.</p>
+<h3 id="bug-fixes">Bug fixes</h3>
+<p>This release includes the following bug fixes:</p>
+<ul>
+<li>Fixed an issue causing apps to crash on startup when using a custom <code>NavigationViewItem</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8814">#8814</a>.</li>
+<li>Fixed a <code>NavigationView</code> issue where the ellipsis button would incorrectly generate an error. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8380">#8380</a>.</li>
+<li>Fixed an issue where a <code>SystemBackdrop</code> would not render properly in a multi-window app. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8423">#8423</a>.</li>
+<li>Fixed a duplication issue when inserting into the beginning of an <code>ObservableCollection</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8370">#8370</a>.</li>
+</ul>
+<h3 id="new-apis-for-15-experimental2">New APIs for 1.5-experimental2</h3>
+<p>1.5-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.</p>
+<pre><code class="lang-C#">Microsoft.Graphics.DirectX
+ 
+    DirectXPixelFormat
+        A4B4G4R4
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+ 
+    DebugSettings
+        LayoutCycleDebugBreakLevel
+        LayoutCycleTracingLevel
+ 
+    LayoutCycleDebugBreakLevel
+    LayoutCycleTracingLevel
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Automation.Peers
+ 
+    SelectorBarItemAutomationPeer
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls
+ 
+    MapControl
+    MapControlMapServiceErrorOccurredEventArgs
+    MapElement
+    MapElementClickEventArgs
+    MapElementsLayer
+    MapIcon
+    MapLayer
+    SelectorBar
+    SelectorBarItem
+    SelectorBarSelectionChangedEventArgs
+    WebView2
+        EnsureCoreWebView2Async
+        EnsureCoreWebView2Async
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Management.Deployment
+ 
+    EnsureReadyOptions
+    PackageDeploymentManager
+        AddPackageSetAsync
+        DeprovisionPackageAsync
+        DeprovisionPackageByUriAsync
+        DeprovisionPackageSetAsync
+        EnsurePackageReadyAsync
+        EnsurePackageReadyByUriAsync
+        EnsurePackageSetReadyAsync
+        IsPackageReady
+        IsPackageReadyByUri
+        IsPackageRegistrationPending
+        IsPackageRegistrationPendingForUser
+        ProvisionPackageAsync
+        ProvisionPackageByUriAsync
+        ProvisionPackageSetAsync
+        RegisterPackageAsync
+        RegisterPackageByUriAsync
+        RegisterPackageSetAsync
+        RemovePackageByUriAsync
+        RepairPackageAsync
+        RepairPackageByUriAsync
+        RepairPackageSetAsync
+        ResetPackageAsync
+        ResetPackageByUriAsync
+        ResetPackageSetAsync
+        StagePackageAsync
+        StagePackageByUriAsync
+        StagePackageSetAsync
+ 
+    PackageDeploymentProgress
+    PackageDeploymentResult
+        Error
+        ErrorText
+ 
+    PackageSet
+        Items
+        PackageUri
+ 
+    PackageVolume
+        FindPackageVolumeByName
+        FindPackageVolumeByPath
+        FindPackageVolumes
+        IsRepairNeeded
+        Repair
+ 
+    ProvisionPackageOptions
+    RegisterPackageOptions
+        DependencyPackageFamilyNames
+ 
+    RemovePackageOptions
+        FailIfNotFound
+</code></pre>
+<h3 id="additional-15-experimental2-apis">Additional 1.5-experimental2 APIs</h3>
+<p>This release includes the following new and modified experimental APIs:</p>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+ 
+    Application
+        DispatcherShutdownMode
+ 
+    DispatcherShutdownMode
+    XamlIsland
+        SystemBackdrop
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Hosting
+ 
+    WindowsXamlManager
+        IsXamlRunningOnCurrentThread
+        XamlShutdownCompletedOnThread
+ 
+    XamlShutdownCompletedOnThreadEventArgs
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.System.Workloads
+ 
+    IWorkloadHandler
+    Workload
+    WorkloadManager
+    WorkloadProgress
+    WorkloadProgressStatus
+    WorkloadResult
+    WorkloadsContract
+    WorkloadStatus
+</code></pre>
+<h2 id="version-15-experimental-150-experimental1">Version 1.5 Experimental (1.5.0-experimental1)</h2>
+<p>This is the latest release of the experimental channel.
+To download, retarget your WinAppSDK NuGet version to <code>1.5.231202003-experimental1</code>.</p>
+<h3 id="new-apis-for-15-experimental1">New APIs for 1.5-experimental1</h3>
+<p>1.5-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.</p>
+<pre><code class="lang-C#">Microsoft.Windows.Widgets.Feeds.Providers
+    CustomQueryParametersRequestedArgs
+    CustomQueryParametersUpdateOptions
+    FeedDisabledArgs
+    FeedEnabledArgs
+    FeedManager
+    FeedProviderDisabledArgs
+    FeedProviderEnabledArgs
+    FeedProviderInfo
+    IFeedManager
+    IFeedProvider
+</code></pre>
+<h3 id="additional-15-experimental1-apis">Additional 1.5-experimental1 APIs</h3>
+<p>This release includes the following new and modified experimental APIs:</p>
+<pre><code class="lang-C#">Microsoft.UI.Content
+ 
+    ContentIsland
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        IsRemoteEndpointConnected
+ 
+    ContentIslandEnvironment
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        ThemeChanged
+ 
+    ContentSiteEnvironment
+        CurrentOrientation
+        DisplayScale
+        NativeOrientation
+        NotifyThemeChanged
+ 
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+ 
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentSiteBridgeEndpointConnectionPrivate
+    ProcessStarter
+    SystemVisualSiteBridge
+        IsClosed
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Input
+ 
+    FocusNavigationReason
+    FocusNavigationRequest
+    FocusNavigationRequestEventArgs
+    FocusNavigationResult
+    InputFocusController
+        DepartFocus
+        NavigateFocusRequested
+ 
+    InputFocusNavigationHost
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+ 
+    DebugSettings
+        LayoutCycleDebugBreaks
+        LayoutCycleTracing
+ 
+    LayoutCycleDebugBreakLevel
+    LayoutCycleTracingLevel
+    XamlIsland
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls
+ 
+    SelectionModel
+        SelectAllFlat
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Core.Direct
+ 
+    XamlPropertyIndex
+        FlyoutBase_SystemBackdrop
+        Popup_SystemBackdrop
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Management.Deployment
+ 
+    AddPackageOptions
+    AddPackageSetOptions
+    DeploymentPriority
+    DeploymentProcessingModel
+    EnsureIsReadyOptions
+    FindPackageSetOptions
+    PackageDeploymentContract
+    PackageDeploymentManager
+    PackageDeploymentProgress
+    PackageDeploymentProgressStatus
+    PackageDeploymentResult
+    PackageDeploymentStatus
+    PackageRuntimeManager
+    PackageSet
+    PackageSetItem
+    PackageSetItemRuntimeDisposition
+    PackageSetManager
+    PackageSetRuntimeDisposition
+    PackageVolume
+    PackageVolumeManager
+    PackageVolumeStatus
+    RegisterPackageOptions
+    RemovePackageOptions
+    StagePackageOptions
+    StubPackageOption
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Stable channel</a></li>
+<li><a href="../preview-channel.html">Preview channel</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deploy apps that use the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.5.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

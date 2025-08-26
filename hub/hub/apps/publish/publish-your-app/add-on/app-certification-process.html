@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>The app certification process for add-on </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="The app certification process for add-on ">
+    
+    <meta name="description" content="When you finish creating your app add-on&#39;s submission and click Submit to the Store, the submission enters the certification step.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="the-app-certification-process-for-add-on">The app certification process for add-on</h1>
+
+<p>When you finish creating your app's submission and click <strong>Submit to the Store</strong>, the submission enters the certification step. This process is usually completed within a few hours, though in some cases it may take up to three business days. After your submission passes certification, it can take up to 24 hours for customers to see the app’s listing for a new submission, or for an updated submission with packages changes. If you update only changes Store listing details, the publishing process will be completed in less than an hour. You'll be notified when your submission is published, and the app's status in the dashboard will be <strong>In the Store</strong>.</p>
+<h2 id="preprocessing">Preprocessing</h2>
+<p>After you successfully upload the app's packages and submit the app for certification, the packages are queued for testing. We'll display a message if we detect any errors during preprocessing. For more info on possible errors, see <a href="resolve-submission-errors.html">Resolve submission errors</a>.</p>
+<h2 id="certification">Certification</h2>
+<p>During this phase, several tests are conducted:</p>
+<ul>
+<li><strong>Security tests:</strong> This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.</li>
+<li><strong>Technical compliance tests:</strong> Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to <a href="/windows/uwp/debug-test-perf/windows-app-certification-kit">test your app with the Windows App Certification Kit</a> before you submit it to the Store.)</li>
+<li><strong>Content compliance:</strong> The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the <a href="manage-submission-options.html#notes-for-certification">Notes for certification</a> page.</li>
+</ul>
+<p>After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which <a href="../../store-policies.html">policy</a> was not met. Once you fix the problem, you can create a new submission for your app and start the certification process again.</p>
+<h2 id="release">Release</h2>
+<p>When your app passes certification, it's ready to move to the <strong>Publishing</strong> process.</p>
+<ul>
+<li>If you've indicated that your submission should be published as soon as possible (the default option), the publishing process will begin right away.</li>
+<li>If this is the first time you've published the app, and you specified a <strong>Release date</strong> in the <a href="configure-release-schedule.html#configure-precise-release-scheduling">Schedule</a> section, the app will become available according to your <strong>Release date</strong> selections.</li>
+<li>If you've used <a href="manage-submission-options.html#publishing-hold-options">Publishing hold options</a> to specify that it should not be released until a certain date, we'll wait until that date to begin the publishing process, unless you select <strong>Change release date</strong>.</li>
+<li>If you've used <a href="manage-submission-options.html#publishing-hold-options">Publishing hold options</a> to specify that you want to publish the submission manually, we won't start the publishing process until you select <strong>Publish now</strong> (or select <strong>Change release date</strong> and pick a specific date).</li>
+</ul>
+<h2 id="publishing">Publishing</h2>
+<p>Your app's packages are digitally signed to protect them against tampering after they have been released. Once this phase has begun, you can no longer cancel your submission or change its release date.</p>
+<p>For new apps and updates that include changes to the app's packages, the publishing process will be completed within 24 hours. For updates that only change options such as Store listing details, but don't change the app's packages, the publishing process will take less than one hour.</p>
+<p>While your app is in the publishing phase, the <strong>Show details</strong> link in the Status column for your app’s submission lets you know when your new packages and Store listing details are available to customers on each of your supported OS versions. Steps that have not yet completed will show <strong>Pending</strong>. Your app will remain in the publishing phase until the process has completed, meaning that the new packages and/or listing details are available to all of your app’s potential customers.</p>
+<h2 id="in-the-store">In the Store</h2>
+<p>After successfully completing the steps above, the submission's status will change from <strong>Publishing</strong> to <strong>In the Store</strong>. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another <a href="visibility-options.html#discoverability">Discoverability</a> option).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the <a href="../../store-policies.html">Microsoft Store Policies</a>. If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/add-on/app-certification-process.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

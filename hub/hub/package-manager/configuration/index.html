@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>WinGet Configuration </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="WinGet Configuration ">
+    
+    <meta name="description" content="WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="winget-configuration">WinGet Configuration</h1>
+
+<p>Using a WinGet Configuration file, you can consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable. To achieve this, WinGet utilizes:</p>
+<ul>
+<li>A YAML-formatted WinGet Configuration file that lists all of the software versions, packages, tools, dependencies, and settings required to set up the desired state of the development environment on your Windows machine.</li>
+<li><a href="/powershell/dsc/overview">PowerShell Desired State Configuration (DSC)</a> to automate the configuration of your Windows operating system.</li>
+<li>The Windows Package Manager <a href="../winget/configure.html"><code>winget configure</code> command</a> to initiate the configuration process.</li>
+</ul>
+<h2 id="benefits-for-machine-setup-and-project-onboarding">Benefits for machine setup and project onboarding</h2>
+<p>The benefits of using a WinGet Configuration file include:</p>
+<ul>
+<li><strong>Unattended setup</strong>: Enter the <code>winget configure</code> command and let Windows Package Manager and PowerShell DSC automate the installation and set up of all the requirements needed to get the desired development environment configured on your Windows machine.</li>
+<li><strong>Reliable and repeatable</strong>: Remove the worry over finding the right versions of software, packages, tools, frameworks, and configuring the correct machine settings for your development environment when onboarding to a new team or project because they are pre-defined in the WinGet Configuration file using a YAML format (with a JSON schema).</li>
+<li><strong>Supports Open Source collaboration</strong>: WinGet Configuration files can be hosted in a GitHub repository where issues or contributions can be filed or can be kept private in a secure storage location (like OneDrive) and shared via private email or other secured channels.</li>
+</ul>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>WinGet Configuration files and any associated PowerShell DSC Resources should be checked to ensure that they are trustworthy before applying them.</p>
+</div>
+<h2 id="use-a-winget-configuration-file-to-configure-your-machine">Use a WinGet Configuration file to configure your machine</h2>
+<p>To set up your machine using a WinGet Configuration file, download the configuration file and double-click to invoke the configuration. Alternatively, use <a href="../winget/configure.html">winget configure</a> in the command line. To use the <code>winget configure</code> command, you must be running WinGet version <a href="https://github.com/microsoft/winget-cli/releases">v1.6.2631 or later</a>.</p>
+<h2 id="winget-configuration-faqs">WinGet Configuration FAQs</h2>
+<p>Find answers to some of the most frequently asked questions about WinGet Configuration.</p>
+<h3 id="how-do-winget-configuration-files-work">How do WinGet Configuration files work?</h3>
+<p>WinGet Configuration files are written in YAML and define what is installed on the device to make up your development environment, as well as the configuration state for your machine and installed applications.</p>
+<p>Rather than an imperative sequence of steps to be followed, a WinGet Configuration file is declarative, defining the desired machine configuration state result. By using Windows Package Manager and PowerShell DSC Resources, the declarative WinGet Configuration file can install, configure, and apply settings to your environment resulting in a ready-to-code state.</p>
+<p>WinGet will parse the configuration file to ensure it's valid, then download all associated PowerShell modules (containing the DSC resources) required to achieve your desired state. Once these resources have been download and you've <a href="check.html">checked the trustworthiness of the WinGet Configuration file</a>, agreeing that you've verified the safety of the file, WinGet will begin testing all required <a href="create.html#assertions-section">assertions</a> and applying the desired state.</p>
+<p>The sequence in which the WinGet Configuration file resources are ordered is inconsequential. Some install and configuration processes may even run in parallel. The assertions directly correspond with the <code>dependsOn</code> field defined in each <a href="create.html#resources-section">Resource</a>. If the resource includes a dependency on an assertion, the assertion will be checked first. If the assertion fails, the dependent resource will also fail. However, the configuration file will continue to run, accomplishing as many tasks as possible, even if some of the assertions or resource dependencies fail, bringing your machine as far along in the set up process as possible before completing. Once the configuration has completed, it is your responsibility to check for any failures.</p>
+<p>For example, after running the WinGet Configuration file, you may see a result like:</p>
+<pre><code class="lang-powershell">Assert:: OsVersion
+The configuration unit could not be found.
+Apply :: DeveloperMode
+  This configuration unity was not run because an assert failed or was false.
+Apply :: WinGetPackage [vsPackage]
+  This configuration unity was not run because an assert failed or was false.
+</code></pre>
+<p>In this example, the assertion checking for the required version of the Operating System failed, so the DeveloperMode and WinGetPackage resources that included a dependency on that assertion for the operating system version also failed. However, any other installation and configuration tasks listed in the configuration file would continue to move forward.</p>
+<p>A benefit to the declarative (non-sequential) nature of WinGet configuration files is that the position of new resources being added to the file does not matter. This is especially helpful for long configuration files as you can just add additional resources to the bottom of the file. As long as you have properly defined the assertions and dependencies, you do not need to be concerned with the sequence, or which set up steps occur first, second, etc.</p>
+<p><img src="../../images/winget-configuration-results.png" alt="Screenshot of a PowerShell terminal running a WinGet Configuration file with the OSVersion assertion and dependent resources failing."></p>
+<h3 id="how-do-i-use-a-winget-configuration-file">How do I use a WinGet Configuration file?</h3>
+<p>To run a WinGet Configuration file, you can simply double-click to run the file in file explorer. Alternatively, you can use the <a href="../winget/configure.html"><code>winget configure</code> command</a>.</p>
+<h3 id="how-do-i-author-a-winget-configuration">How do I author a WinGet Configuration?</h3>
+<p>To create a WinGet Configuration file, follow the guidance in the <a href="create.html">How to author a WinGet Configuration file</a> doc.</p>
+<h3 id="how-can-i-assure-that-a-winget-configuration-file-is-trustworthy">How can I assure that a WinGet Configuration file is trustworthy?</h3>
+<p>We recommend ALWAYS validating the integrity of a WinGet Configuration file before running it by reviewing it's contents and testing the configuration in an isolated environment. See <a href="check.html">How to check the trustworthiness of a WinGet Configuration file</a>.</p>
+<h3 id="where-can-i-find-sample-winget-configuration-files">Where can I find sample WinGet Configuration files?</h3>
+<p>You can find sample WinGet Configuration files in the WinGet DSC repository: <a href="https://aka.ms/dsc.yaml">https://aka.ms/dsc.yaml</a>.</p>
+<h3 id="where-can-i-find-examples-of-powershell-modules-containing-dsc-resources">Where can I find examples of PowerShell modules containing DSC resources?</h3>
+<p>The <a href="https://www.powershellgallery.com/packages">PowerShell Gallery</a> hosts hundreds of PowerShell Modules containing Desired State Configuration (DSC) resources. You can filter search results by applying the “DSC Resource” filter under “Categories”.</p>
+<p><img src="../../images/winget-config-powershellgallery-dsc-examples.png" alt="Desired State Configuration PowerShell module search results from the PowerShell Gallery"></p>
+<h3 id="can-i-set-up-a-policy-to-block-the-use-of-winget-configuration-files-in-my-organization">Can I set up a policy to block the use of WinGet Configuration files in my organization?</h3>
+<p>Yes. <a href="/microsoft-365/compliance/device-onboarding-gp">Group Policy Objects</a> <strong>EnableWindowsPackageManagerConfiguration</strong> and <strong>EnableWindowsPackageManagerConfigurationExplanation</strong> can be utilized for disabling WinGet Configuration feature in your organization.</p>
+<h2 id="troubleshooting-winget-configurations">Troubleshooting WinGet Configurations</h2>
+<p>The most common reason for a WinGet Configuration to fail is due to a PowerShell DSC resource requiring administrative access to apply the desired state. Not all DSC resources surface explicit reasons for failure.</p>
+<p>More common troubleshooting issues will be added soon. In the meantime, check the related issues filed in the <a href="https://github.com/microsoft/winget-cli/issues?q=is%3Aissue+is%3Aopen+label%3Acommand-configure">WinGet CLI repo on GitHub</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/configuration/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

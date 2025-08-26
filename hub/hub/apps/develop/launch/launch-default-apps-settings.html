@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Launch the Default Apps settings page </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Launch the Default Apps settings page ">
+    
+    <meta name="description" content="Learn how to launch the Windows Settings app to display the Default Apps settings page from your app using the ms-settings URI scheme.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="launch-the-default-apps-settings-page">Launch the Default Apps settings page</h1>
+
+<p>Learn how to launch the Windows Settings app to display the Default Apps settings page from your app using the ms-settings URI scheme.</p>
+<p>Windows defines a set of URIs that allow apps to launch the Windows Settings app and display a particular settings page. This article explains how to launch the Windows Settings app directly to the Default Apps settings page and, optionally, navigate directly to the settings for a specified default application. For more information, see <a href="launch-settings-app.html">Launch the Windows Settings app</a>.</p>
+<h2 id="the-default-apps-settings-url">The Default Apps settings URL</h2>
+<p><code>ms-settings:defaultapps</code> launches the Windows Settings app and navigates to the Default Apps settings page. Starting with Windows 11, version 21H2 (with 2023-04 Cumulative Update), 22H2 (with 2023-04 Cumulative Update), and 23H2 or later, you can append an additional query string parameter in escaped URI format to launch directly to the settings page for a specific application.</p>
+<p>There are three query string parameters. The query string parameter to be used depends on how the application was installed.</p>
+<table>
+<thead>
+<tr>
+<th>Query string parameter</th>
+<th>Value to pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>registeredAppUser</td>
+<td>Named value from HKEY_CURRENT_USER\Software\RegisteredApplications<br><br>Use when the app was installed per user, and the registration for the app was written to HKEY_CURRENT_USER\Software\RegisteredApplications.</td>
+</tr>
+<tr>
+<td>registeredAppMachine</td>
+<td>Named value from HKEY_LOCAL_MACHINE\Software\RegisteredApplications<br><br>Use when the app was installed per machine, and the registration for the app was written to HKEY_LOCAL_MACHINE\Software\RegisteredApplications.</td>
+</tr>
+<tr>
+<td>registeredAUMID</td>
+<td>Application User Model ID <br><br>Use when the app was registered with Package Manager using a manifest declaring that the app handles File Types (<a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">uap:FileTypeAssociation</a>) or URI schemes (<a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol">uap:Protocol</a>).</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To get the registeredAUMID query string parameter to work after an OS upgrade, an app may need to increment its TargetDeviceFamily...MaxVersionTested value in its manifest. This will ensure that the app is reindexed for the user, which in turn will update the appropriate definitions used to process the deep link via protocol activation. MaxVersionTested should be updated to <code>10.0.22000.1817</code> for Windows 11, version 21H2 or <code>10.0.22621.1555</code> for Windows 11, version 22H2.</p>
+</div>
+<p>In the following example, <code>LaunchUriAsync</code> is called to launch the Windows Settings app. The <code>ms-settings:defaultapps</code> Uri specifies that the Default Apps settings page should be shown. Next, the app that should be launched is determined. As an example, “Microsoft Edge” was registered by the app in HKEY_LOCAL_MACHINE\Software\RegisteredApplications. Since it is a per machine installed app, <code>registeredAppMachine</code> is the query string parameter that should be used. The optional query string parameter <code>registeredAppMachine</code> is set to the registered name, escaped with a call to <code>Url.EscapeDataString</code>, to specify that the page for <strong>Microsoft Edge</strong> should be shown.</p>
+<pre><code class="lang-csharp">private async void LaunchSettingsPage_Click(object sender, RoutedEventArgs e)
+{
+    bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri(&quot;ms-settings:defaultapps?registeredAppMachine=&quot; + Uri.EscapeDataString(&quot;Microsoft Edge&quot;)));
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">bool result = co_await Windows::System::Launcher::LaunchUriAsync(Windows::Foundation::Uri(L&quot;ms-settings:defaultapps?registeredAppMachine=&quot; + Uri::EscapeDataString(L&quot;Microsoft Edge&quot;)));
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<p><a href="launch-settings-app.html">Launch the Windows Settings app</a></p>
+<p><a href="launch-default-app.html">Launch the default app for a URI</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/launch-default-apps-settings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

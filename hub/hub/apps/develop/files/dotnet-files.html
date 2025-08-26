@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Access files and folders with Windows App SDK and .NET </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Access files and folders with Windows App SDK and .NET ">
+    
+    <meta name="description" content="Packaged Windows App SDK apps can leverage .NET APIs for reading and writing files, working with folders, and reading drive and volume information.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="access-files-and-folders-with-windows-app-sdk-and-net">Access files and folders with Windows App SDK and .NET</h1>
+
+<p>Packaged Windows App SDK apps can leverage <a href="/dotnet/">.NET APIs</a> for reading and writing files, working with folders, and reading drive and volume information. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the .NET <a href="/dotnet/api/system.io">System.IO</a> APIs to read and write files, manage drives and folders, and work with memory streams to encode or decode string data.</p>
+<h2 id="read-and-write-files-with-net-apis">Read and write files with .NET APIs</h2>
+<p>In the following example, <code>ReadWriteFiles</code> creates a new file, writes a set of integers to the file, and then reads the integers back from the file. The example uses the <a href="/dotnet/api/system.io.filestream">FileStream</a> class to create a new file and to open the file for reading or writing. The example uses the <a href="/dotnet/api/system.io.binarywriter">BinaryWriter</a> class to write the integers to the file and the <a href="/dotnet/api/system.io.binaryreader">BinaryReader</a> class to read the integers from the file.</p>
+<pre><code class="lang-csharp">using System.IO;
+...
+ReadWriteFiles(&quot;test.bin&quot;);
+...
+private void ReadWriteFiles(string fileName)
+{
+    if (File.Exists(fileName))
+    {
+        Console.WriteLine($&quot;{fileName} already exists!&quot;);
+        return;
+    }
+
+    using (FileStream fs = new(fileName, FileMode.CreateNew))
+    {
+        using BinaryWriter writer = new(fs);
+        for (int i = 0; i &lt; 11; i++)
+        {
+            writer.Write(i);
+        }
+    }
+
+    using (FileStream fs = new(fileName, FileMode.Open, FileAccess.Read))
+    {
+        using BinaryReader reader = new(fs);
+        for (int i = 0; i &lt; 11; i++)
+        {
+            Console.WriteLine(reader.ReadInt32());
+        }
+    }
+}
+</code></pre>
+<h2 id="manage-drives-and-folders-in-net">Manage drives and folders in .NET</h2>
+<p>The following example shows how to use the <a href="/dotnet/api/system.io.directoryinfo">DirectoryInfo</a> and <a href="/dotnet/api/system.io.directory">Directory</a> classes to create, delete, and manage folders. The example uses the <code>DirectoryInfo</code> class to create a new directory, create a subdirectory, and delete the directory. The <code>DirectoryInfo</code> class provides methods for creating, moving, and enumerating through directories and subdirectories. The <code>Directory</code> class provides <em>static</em> methods for creating, moving, and enumerating through directories and subdirectories.</p>
+<pre><code class="lang-csharp">using System.IO;
+...
+private void FolderTest()
+{
+    FolderManagement(@&quot;c:\MyDir&quot;, &quot;Projects&quot;);
+}
+private void FolderManagement(string path, string subfolderName)
+{
+    DirectoryInfo di = new(path);
+    try
+    {
+        // Create directory if it doesn't exist
+        if (di.Exists)
+        {
+            Console.WriteLine(&quot;Path already exists.&quot;);
+        }
+        else
+        {
+            di.Create();
+            Console.WriteLine(&quot;The directory was created successfully.&quot;);
+        }
+
+        // Create subdirectory if it doesn't exist
+        string subfolderPath = Path.Combine(path, subfolderName);
+        if (Directory.Exists(subfolderPath))
+        {
+            Console.WriteLine(&quot;Subfolder path already exists.&quot;);
+        }
+        else
+        {
+            di.CreateSubdirectory(subfolderName);
+            Console.WriteLine(&quot;The subdirectory was created successfully.&quot;);
+        }
+
+        // Delete directory
+        di.Delete(true);
+        Console.WriteLine(&quot;The directory was deleted successfully.&quot;);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine(&quot;The process failed: {0}&quot;, ex.ToString());
+    }
+}
+</code></pre>
+<p>This example using the static <a href="/dotnet/api/system.io.driveinfo.getdrives">GetDrives</a> method to retrieve information about all drives on the system. The <a href="/dotnet/api/system.io.driveinfo">DriveInfo</a> class provides information about a drive, such as the drive type, label, file system, and available free space.</p>
+<pre><code class="lang-csharp">using System.IO;
+...
+private void DriveManagement()
+{
+    DriveInfo[] drives = DriveInfo.GetDrives();
+
+    foreach (DriveInfo d in drives)
+    {
+        Console.WriteLine($&quot;Drive name: {d.Name}&quot;);
+        Console.WriteLine($&quot;  Drive type: {d.DriveType}&quot;);
+        if (d.IsReady)
+        {
+            Console.WriteLine($&quot;  Volume label: {d.VolumeLabel}&quot;);
+            Console.WriteLine($&quot;  File system type: {d.DriveFormat}&quot;);
+            Console.WriteLine($&quot;  Space available to user: {d.AvailableFreeSpace, 15} bytes&quot;);
+            Console.WriteLine($&quot;  Total available space: {d.TotalFreeSpace, 15} bytes&quot;);
+            Console.WriteLine($&quot;  Total size of drive: {d.TotalSize, 15} bytes &quot;);
+        }
+    }
+}
+</code></pre>
+<h2 id="encode-and-decode-strings-with-memorystream">Encode and decode strings with MemoryStream</h2>
+<p>This example shows how to use the <a href="/dotnet/api/system.io.memorystream">MemoryStream</a> class to encode and decode string data. It first creates a <code>MemoryStream</code> to asynchronously write a string to a memory stream and then read the string from the memory stream. The <a href="/dotnet/api/system.text.encoding">Encoding</a> class is used to convert the string to a byte array and then write the byte array to the memory stream. A <a href="/dotnet/api/system.io.streamreader">StreamReader</a> is then used to asynchronously read the byte array from the memory stream and then convert the byte array back to a string by calling <a href="/dotnet/api/system.io.streamreader.readtoendasync">ReadToEndAsync</a>.</p>
+<pre><code class="lang-csharp">using System.IO;
+using System.Text;
+...
+private async Task EncodeDecodeStringAsync(string inputData)
+{
+    using MemoryStream stream = new();
+    var inputBytes = Encoding.UTF8.GetBytes(inputData);
+    await stream.WriteAsync(inputBytes, 0, inputBytes.Length);
+    stream.Seek(0, SeekOrigin.Begin);
+
+    using StreamReader reader = new(stream);
+    string text = await reader.ReadToEndAsync();
+    Console.WriteLine(text);
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For information about converting between .NET streams and WinRT streams, see <a href="/dotnet/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams">How to: Convert between .NET and Windows Runtime streams</a>.</p>
+</div>
+<h2 id="see-also">See also</h2>
+<p><a href="winrt-files.html">Access files and folders with Windows App SDK and WinRT APIs</a></p>
+<p><a href="index.html">Files, folders, and libraries with Windows App SDK</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/files/dotnet-files.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Run Quick Launcher for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Run Quick Launcher for Windows ">
+    
+    <meta name="description" content="PowerToys Run is a quick launcher for Windows power users with search, calculator, and productivity features. Learn how to install and use this free utility.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="powertoys-run-utility">PowerToys Run utility</h1>
+
+<p>PowerToys Run is a quick launcher for Windows power users that provides instant access to applications, files, calculator functions, and system commands without sacrificing performance. This free, open-source utility is modular and supports additional plugins to enhance your productivity workflow.</p>
+<p>To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! <em>(Note that the keyboard shortcut can be changed in the settings window.)</em></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>For this utility to work, PowerToys must be running in the background and Run must be enabled.</p>
+</div>
+<p><img src="../images/pt-powerrun-demo.gif" alt="An animated GIF of a PowerToys Run demo opening apps"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>PowerToys Run is getting an upgrade to v2! Check out the <a href="command-palette/overview.html">Command Palette</a>, PowerToys Run's evolution.</p>
+</div>
+<h2 id="features">Features</h2>
+<p>PowerToys Run features include:</p>
+<ul>
+<li>Search for applications, folders or files</li>
+<li>Search for running processes (previously known as <a href="https://github.com/betsegaw/windowwalker/">Window Walker</a>)</li>
+<li>Clickable buttons with keyboard shortcuts (such as <em>Open as administrator</em> or <em>Open containing folder</em>)</li>
+<li>Invoke Shell Plugin using <code>&gt;</code> (for example, <code>&gt; Shell:startup</code> will open the Windows startup folder)</li>
+<li>Do a simple calculation using calculator</li>
+<li>Execute system commands</li>
+<li>Get time and date information</li>
+<li>Convert units</li>
+<li>Calculate hashes</li>
+<li>Generate GUIDs</li>
+<li>Open web pages or start a web search</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<p>The following general options are available on the PowerToys Run settings page.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">Define the keyboard shortcut to show/hide PowerToys Run.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Use centralized keyboard hook</td>
+<td style="text-align: left;">Try this setting if there are issues with the shortcut (PowerToys Run might not get focus when triggered from an elevated window).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ignore shortcuts in full-screen mode</td>
+<td style="text-align: left;">When in full-screen (F11), PowerToys Run won't be engaged with the shortcut.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Input smoothing</td>
+<td style="text-align: left;">Add a delay to wait for more input before executing a search.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Immediate plugins</td>
+<td style="text-align: left;">How many milliseconds a plugin that makes the UI wait should wait before showing results.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Background execution plugins</td>
+<td style="text-align: left;">How many milliseconds a plugin that executes in the background should wait before showing results.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Number of results shown before scrolling</td>
+<td style="text-align: left;">The maximum number of results shown without scrolling.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clear the previous query on opening</td>
+<td style="text-align: left;">When opened, previous searches will not be highlighted.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Results order tuning</td>
+<td style="text-align: left;">Fine tunes the ordering of the displayed results.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Selected item weight</td>
+<td style="text-align: left;">Use a higher number to get selected results to rise faster (Default: 5, 0 to disable).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wait for slower plugin results before selecting top item in results</td>
+<td style="text-align: left;">Selecting this can help preselect the top, more relevant result, but at the risk of jumpiness.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tab through context buttons</td>
+<td style="text-align: left;">When enabled, you can tab through the context buttons before tabbing to the next result.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Use Pinyin</td>
+<td style="text-align: left;">Use Pinyin on the search query. <em>This feature is experimental and may not work for every plugin.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Generate thumbnails from files</td>
+<td style="text-align: left;">Thumbnails will be generated for files in the results list (this may affect speed and stability).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Preferred monitor position</td>
+<td style="text-align: left;">If multiple displays are in use, PowerToys Run can be opened on:<br>• Primary display<br>• Display with mouse cursor<br>• Display with focused window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Theme</td>
+<td style="text-align: left;">Change the theme used by PowerToys Run.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Plugin hints</td>
+<td style="text-align: left;">Choose which plugin keywords to show when the search box is empty.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Text size (pt)</td>
+<td style="text-align: left;">Change the text size used by PowerToys Run for result titles and the search query.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plugin-manager">Plugin manager</h3>
+<p>PowerToys Run uses a plugin system to provide different types of results. The settings page includes a plugin manager that allows you to enable/disable the available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results and set additional plugin options where available.</p>
+<p><img src="../images/pt-run-plugin-manager.png" alt="PowerToys Run Plugin Manager"></p>
+<h4 id="direct-activation-commands">Direct activation commands</h4>
+<p>The plugins can be activated with a direct activation command so that PowerToys Run will only use the targeted plugin. The following table shows the direct activation commands assigned by default.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can change commands to fit your needs in the <a href="#plugin-manager">plugin manager</a>.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Some characters and phrases may conflict with global queries of other plugins if you use them as activation commands. For example, using <code>(</code> breaks global calculation queries starting with an opening parenthesis.</p>
+<p>Currently known conflicting character sequences:</p>
+<ul>
+<li>Characters used in paths like <code>\</code>, <code>\\</code>, <code>/</code>, <code>~</code>, <code>%</code>.</li>
+<li>Characters used in mathematical operations like <code>.</code>, <code>,</code>, <code>+</code>, <code>-</code>, <code>(</code>.</li>
+<li>Names of <a href="#calculator-plugin">mathematical operations</a>.</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Plug-in</th>
+<th style="text-align: left;">Direct activation command</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="#calculator-plugin">Calculator</a></td>
+<td style="text-align: left;"><code>=</code></td>
+<td style="text-align: left;"><code>= 2+2</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#history-plugin">History</a></td>
+<td style="text-align: left;"><code>!!</code></td>
+<td style="text-align: left;"><code>!! car</code> to find any results that have been selected in the past, from any enabled plugin, that matches 'car'.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#windows-search-plugin">Windows search</a></td>
+<td style="text-align: left;"><code>?</code></td>
+<td style="text-align: left;"><code>? road</code> to find 'roadmap.txt'</td>
+</tr>
+<tr>
+<td style="text-align: left;">OneNote</td>
+<td style="text-align: left;"><code>o:</code></td>
+<td style="text-align: left;"><code>o: powertoys</code> to search your local OneNote notebooks for pages containing &quot;powertoys&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;">PowerToys</td>
+<td style="text-align: left;"><code>@</code></td>
+<td style="text-align: left;"><code>@ color picker</code> to search for and launch Color Picker</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#program-plugin">Program command</a></td>
+<td style="text-align: left;"><code>.</code></td>
+<td style="text-align: left;"><code>. code</code> to get Visual Studio Code. (See <a href="#program-parameters">Program parameters</a> for options on adding parameters to a program's startup.)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Registry command</td>
+<td style="text-align: left;"><code>:</code></td>
+<td style="text-align: left;"><code>: hkcu</code> to search for the 'HKEY_CURRENT_USER' registry key.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#service-plugin">Service command</a></td>
+<td style="text-align: left;"><code>!</code></td>
+<td style="text-align: left;"><code>! alg</code> to search for the 'Application Layer Gateway' service to be started or stopped<br><code>!startup:auto</code> to search all services that start automatically<br><code>!status:running</code> to show all running services</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shell command</td>
+<td style="text-align: left;"><code>&gt;</code></td>
+<td style="text-align: left;"><code>&gt; ping localhost</code> to do a ping query.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#time-and-date-plugin">Time and date</a></td>
+<td style="text-align: left;"><code>)</code></td>
+<td style="text-align: left;"><code>) time and date</code> shows the current time and date in different formats.<br><code>) calendar week::04/01/2022</code> shows the calendar week for the date '04/01/2022'.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#unit-converter-plugin">Unit converter</a></td>
+<td style="text-align: left;"><code>%%</code></td>
+<td style="text-align: left;"><code>%% 10 ft to m</code> to calculate the number of meters in 10 feet. Note that you can use <code>to</code> and <code>in</code> interchangeably in your commands with this converter.</td>
+</tr>
+<tr>
+<td style="text-align: left;">URI-handler</td>
+<td style="text-align: left;"><code>//</code></td>
+<td style="text-align: left;"><code>//</code> to open your default browser.<br><code>// learn.microsoft.com</code> to have your default browser go to Microsoft Learn.<br><code>mailto:</code> and <code>ms-settings:</code> links are supported.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#value-generator-plugin">Value Generator</a></td>
+<td style="text-align: left;"><code>#</code></td>
+<td style="text-align: left;"><code># guid3 ns:URL www.microsoft.com</code> to generate the GUIDv3 for the URL namespace using the URL namespace. <br><code># sha1 abc</code> to calculate the SHA1 hash for the string 'abc'. <br><code># base64 abc</code> to encode the string 'abc' to base64.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Visual Studio Code Workspaces</td>
+<td style="text-align: left;"><code>{</code></td>
+<td style="text-align: left;"><code>{ powertoys</code> to search for previously opened workspaces, remote machines and containers that contain 'powertoys' in their paths.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Web search</td>
+<td style="text-align: left;"><code>??</code></td>
+<td style="text-align: left;"><code>??</code> to open your default browser's search page.<br><code>?? What is the answer to life</code> to search with your default browser's search engine.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#windows-settings-plugin">Windows settings</a></td>
+<td style="text-align: left;"><code>$</code></td>
+<td style="text-align: left;"><code>$ Add/Remove Programs</code> to open the Windows settings page for managing installed apps.<br><code>$ Device:</code> to list all settings with 'device' in their area/category name.<br><code>$ control&gt;system&gt;admin</code> shows all settings of the path 'Control Panel &gt; System and Security &gt; Administrative Tools'.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Windows Terminal profiles</td>
+<td style="text-align: left;"><code>_</code></td>
+<td style="text-align: left;"><code>_ powershell</code> to list all profiles that contains 'powershell' in their name.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#window-walker-plugin">Window Walker</a></td>
+<td style="text-align: left;"><code>&lt;</code></td>
+<td style="text-align: left;"><code>&lt; outlook</code> to find all open windows that contain 'outlook' in their name or the name of their process.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-powertoys-run">Using PowerToys Run</h2>
+<h3 id="general-keyboard-shortcuts">General keyboard shortcuts</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Shortcut</th>
+<th style="text-align: left;">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><kbd>Alt</kbd>+<kbd>Space</kbd> (default)</td>
+<td style="text-align: left;">Show or hide PowerToys Run</td>
+</tr>
+<tr>
+<td style="text-align: left;"><kbd>Esc</kbd></td>
+<td style="text-align: left;">Hide PowerToys Run</td>
+</tr>
+<tr>
+<td style="text-align: left;"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd></td>
+<td style="text-align: left;">Open the selected application as administrator (only applicable to applications)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd></td>
+<td style="text-align: left;">Open the selected application as different user (only applicable to applications)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>E</kbd></td>
+<td style="text-align: left;">Open containing folder in File Explorer (only applicable to applications and files)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><kbd>Ctrl</kbd>+<kbd>C</kbd></td>
+<td style="text-align: left;">Copy path location (only applicable to folders and files)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><kbd>Tab</kbd></td>
+<td style="text-align: left;">Navigate through the search results and context menu buttons</td>
+</tr>
+</tbody>
+</table>
+<h3 id="system-commands">System commands</h3>
+<p>The Windows System Commands plugin provides a set of system level actions that can be executed.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If your system language is supported by PowerToys, the system commands will be localized. If you prefer English commands, clear the <strong>Use localized system commands instead of English ones</strong> checkbox in the <a href="#plugin-manager">plugin manager</a>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Action</th>
+<th style="text-align: left;">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Shutdown</code></td>
+<td style="text-align: left;">Shuts down the computer</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Restart</code></td>
+<td style="text-align: left;">Restarts the computer</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Sign Out</code></td>
+<td style="text-align: left;">Signs current user out</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Lock</code></td>
+<td style="text-align: left;">Locks the computer</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Sleep</code></td>
+<td style="text-align: left;">Puts the computer to sleep</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Hibernate</code></td>
+<td style="text-align: left;">Hibernates the computer</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Recycle Bin</code></td>
+<td style="text-align: left;"><strong>Result:</strong> Opens the recycle bin<br><strong>Context menu:</strong> Empties the Recycle Bin</td>
+<td style="text-align: left;">The query <code>Empty Recycle Bin</code> shows the result too.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>UEFI Firmware Settings</code></td>
+<td style="text-align: left;">Reboots the computer into UEFI Firmware Settings</td>
+<td style="text-align: left;">Only available on systems with UEFI firmware. Requires administrative permissions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IP address</code> *</td>
+<td style="text-align: left;">Shows the IP addresses from the network connections of your computer.</td>
+<td style="text-align: left;">The search query has to start with the word <code>IP</code> or the word <code>address</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>MAC address</code> *</td>
+<td style="text-align: left;">Shows the mac addresses from the network adapters in your computer.</td>
+<td style="text-align: left;">The search query has to start with the word <code>MAC</code> or the word <code>address</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><em>*) This command may take some time to provide the results.</em></p>
+<h3 id="program-plugin">Program plugin</h3>
+<p>The <strong>Program</strong> plugin can open software applications (such as Win32 or packaged programs). The plugin scans common install locations, like the Start menu and desktops that you have access to, looking for executable files (.exe) or shortcut files (such as .lnk or .url).
+On occasion, a program may not be found by the program plugin scan, and you may want to manually create a shortcut in the directory containing the program you want to access.</p>
+<h4 id="program-parameters">Program parameters</h4>
+<p>The Program plugin allows program arguments to be added when opening an application. The program arguments must follow the expected format as defined by the program's command line interface.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To input valid search queries, the first element after the program name has to be one of the following possibilities:</p>
+<ul>
+<li>The characters sequence <code>--</code>.</li>
+<li>A parameter that starts with <code>-</code>.</li>
+<li>A parameter that starts with <code>--</code>.</li>
+<li>A parameter that starts with <code>/</code>.</li>
+</ul>
+</div>
+<p>For example, when opening Visual Studio Code, specify the folder to be opened with:</p>
+<p><code>Visual Studio Code -- C:\myFolder</code></p>
+<p>Visual Studio Code also supports a set of <a href="https://code.visualstudio.com/docs/editor/command-line">command line parameters</a>, which can be used with their corresponding arguments in PowerToys Run to, for instance, view the difference between files:</p>
+<p><code>Visual Studio Code -d C:\foo.txt C:\bar.txt</code></p>
+<p>If the program plugin's option <strong>Include in global result</strong> is not selected, include the activation phrase, <code>.</code> by default, to invoke the plugin's behavior:</p>
+<p><code>.Visual Studio Code -- C:\myFolder</code></p>
+<h3 id="calculator-plugin">Calculator plugin</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Please be aware of the different decimal and thousand delimiters supported by different locals.
+The Calculator plugin respects the number format settings of your system. If you prefer the English (United States) number format, change the behavior for the query input and the result output in the <a href="#plugin-manager">plugin manager</a>.
+If your system's number format uses the same character for the list separator and either the decimal or group separator, you have to include a space between the numbers and list separator(s) on operations with multiple arguments. The input has to look like this: <code>min(7,8 , 9 , 4,3)</code> or <code>min(123,456,789 , 4,321)</code>.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The Calculator plugin can handle some implied multiplications like <code>2(3+4)</code> and <code>(1+2)(3+4)</code> by inserting the multiplication operator where appropriate.</p>
+</div>
+<p>The Calculator plugin supports the following operations:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Operator Syntax</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Addition</td>
+<td style="text-align: left;">a + b</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Subtraction</td>
+<td style="text-align: left;">a - b</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Multiplication</td>
+<td style="text-align: left;">a * b</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Division</td>
+<td style="text-align: left;">a / b</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Modulo/Remainder</td>
+<td style="text-align: left;">a % b</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Exponentiation</td>
+<td style="text-align: left;">a ^ b</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ceiling function</td>
+<td style="text-align: left;">ceil( x.y )</td>
+<td style="text-align: left;">Rounds a number up to the next larger integer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Floor function</td>
+<td style="text-align: left;">floor( x.y )</td>
+<td style="text-align: left;">Rounds a number down to the next smaller integer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rounding</td>
+<td style="text-align: left;">round( x.abcd )</td>
+<td style="text-align: left;">Rounds to the nearest integer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exponential function</td>
+<td style="text-align: left;">exp( x )</td>
+<td style="text-align: left;">Returns e raised to the specified power.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maximum</td>
+<td style="text-align: left;">max( x, y, z )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Minimum</td>
+<td style="text-align: left;">min( x, y, z )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Absolute</td>
+<td style="text-align: left;">abs( -x )</td>
+<td style="text-align: left;">Absolute value of a number.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Logarithm base 10</td>
+<td style="text-align: left;">log( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Logarithm base e</td>
+<td style="text-align: left;">ln( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Square root</td>
+<td style="text-align: left;">sqrt( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Power of x</td>
+<td style="text-align: left;">pow( x, y )</td>
+<td style="text-align: left;">Calculate a number (x) raised to the power of some other number (y).</td>
+</tr>
+<tr>
+<td style="text-align: left;">Factorial</td>
+<td style="text-align: left;">x!</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Sign</td>
+<td style="text-align: left;">sign( -x )</td>
+<td style="text-align: left;">A number that indicates the sign of value:<br>• <code>-1</code> if number is less than zero.<br>• <code>0</code> if number is zero.<br>• <code>1</code> if number is greater than zero.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Random fractional number</td>
+<td style="text-align: left;">rand()</td>
+<td style="text-align: left;">Returns a fractional number between 0 and 1.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Random integer number</td>
+<td style="text-align: left;">randi( x )</td>
+<td style="text-align: left;">Returns an integer number between 0 and <code>x</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pi</td>
+<td style="text-align: left;">pi</td>
+<td style="text-align: left;">Returns the number pi.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sine</td>
+<td style="text-align: left;">sin( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cosine</td>
+<td style="text-align: left;">cos( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Tangent</td>
+<td style="text-align: left;">tan( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Arc Sine</td>
+<td style="text-align: left;">arcsin( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Arc Cosine</td>
+<td style="text-align: left;">arccos( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Arc Tangent</td>
+<td style="text-align: left;">arctan( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hyperbolic Sine</td>
+<td style="text-align: left;">sinh( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hyperbolic Cosine</td>
+<td style="text-align: left;">cosh( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hyperbolic Tangent</td>
+<td style="text-align: left;">tanh( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hyperbolic Arc Sine</td>
+<td style="text-align: left;">arsinh( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hyperbolic Arc Cosine</td>
+<td style="text-align: left;">arcosh( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Hyperbolic Arc Tangent</td>
+<td style="text-align: left;">artanh( x )</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="history-plugin">History plugin</h3>
+<p>The History plugin allows quick access to previously selected results from other plugins. You can access and remove them using the direct activation command. To remove them from history, select the <strong>Remove this from history</strong> context menu item.</p>
+<h4 id="history-plugin-examples">History plugin examples</h4>
+<ul>
+<li>If you paste in a URL like <code>https://github.com/microsoft/PowerToys/pull/123333</code>, then you can later quickly access this with just <code>!! 123333</code> or even <code>!! 333</code>. This works just as well for file paths, registry paths, and other things where later you can only remember part of the path. Any place you navigate to using PowerToys Run can be quickly found in the history.</li>
+<li>If you recently did some math like <code>= 1245+6789</code>, and you need to recall it, it will be in the history. You can find it with <code>!! 678</code> or even <code>!! 8034</code>.</li>
+<li>If you can't remember what you searched for to find that app/folder/setting, you can just view them all with just <code>!!</code>.</li>
+</ul>
+<h3 id="time-and-date-plugin">Time and date plugin</h3>
+<p>The Time and date plugin provides the current time and date or a custom one in different formats. You can enter the format or a custom time/date or both when searching.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The Time and Date plugin respects the date and time format settings of your system. Please be aware of the different notations in different locals.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>For global queries the first word of the query has to be a complete match.</p>
+</div>
+<p>Examples:</p>
+<ul>
+<li><code>time</code> or <code>) time</code> to show the time.</li>
+<li><code>) 3/27/2022</code> to show all available formats for a date value.</li>
+<li><code>) calendar week::3/27/2022</code> to show the calendar week for a date value.</li>
+<li><code>) unix epoch::3/27/2022 10:30:45 AM</code> to convert the given time and date value into a Unix epoch timestamp.</li>
+</ul>
+<h4 id="custom-formats">Custom formats</h4>
+<p>The plugin includes a setting where custom formats can be defined. Custom formats are entered in a multiline text box which accepts one format per line.</p>
+<p><strong>Please use the following syntax:</strong></p>
+<ul>
+<li><code>&lt;Format name&gt;=&lt;Format pattern&gt;</code> for using the local time.</li>
+<li><code>&lt;Format name&gt;=UTC:&lt;Format pattern&gt;</code> for using the Universal Time Convention (UTC).</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li><code>Format name</code>: Every charter except the equal sign is supported.</li>
+<li><code>Format pattern</code>: You can escape the pattern and the backslash itself as text by using a backslash as prefix.</li>
+</ul>
+</div>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><code>MyFormat=dd-MMMM-yyyy</code></li>
+<li><code>MySecondFormat=dddd (Da\y nu\mber: DOW)</code></li>
+<li><code>MyUtcFormat=UTC:hh:mm:ss</code></li>
+</ul>
+<p><strong>Supported format pattern:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Format pattern</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Standard pattern like <code>hh:mm:ss</code>.</td>
+<td style="text-align: left;">Please see this <a href="/dotnet/standard/base-types/custom-date-and-time-format-strings">page</a> for more information.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DOW</code></td>
+<td style="text-align: left;">Number of the day in the week.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>DIM</code></td>
+<td style="text-align: left;">Days in the month.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>WOM</code></td>
+<td style="text-align: left;">Number of week in the month.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>WOY</code></td>
+<td style="text-align: left;">Number of the week in the year.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>EAB</code></td>
+<td style="text-align: left;">Era abbreviation.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>WFT</code></td>
+<td style="text-align: left;">Windows file time as number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>UXT</code></td>
+<td style="text-align: left;">Unix time stamp as number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>UMS</code></td>
+<td style="text-align: left;">Unix time stamp in milliseconds  as number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>OAD</code></td>
+<td style="text-align: left;">OLE Automation date as number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>EXC</code></td>
+<td style="text-align: left;">Excel's 1900 based date value as number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>EXF</code></td>
+<td style="text-align: left;">Excel's 1904 based date value as number.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unit-converter-plugin">Unit converter plugin</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The Unit Converter plugin respects the number format settings of your system. Please be aware of the different decimal characters and thousands delimiters in different locals. The names and abbreviations of the units aren't localized yet.</p>
+</div>
+<p>The Unit Converter plugin supports the following unit types:</p>
+<ul>
+<li>Acceleration</li>
+<li>Angle</li>
+<li>Area</li>
+<li>Duration</li>
+<li>Energy</li>
+<li>Information technology</li>
+<li>Length</li>
+<li>Mass</li>
+<li>Power</li>
+<li>Pressure</li>
+<li>Speed</li>
+<li>Temperature</li>
+<li>Volume</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use the <code>sq</code> prefix for square units, such as <code>sqm</code> instead of <code>m²</code>.</p>
+</div>
+<h3 id="value-generator-plugin">Value Generator plugin</h3>
+<p>The Value Generator plugin can generate GUIDs/UUIDs, calculate hashes, and encode/decode strings to base64.</p>
+<h4 id="uuids">UUIDs</h4>
+<p>The following GUID versions are supported:</p>
+<ul>
+<li>v1 - Time based</li>
+<li>v3 - Namespace and name based, using MD5</li>
+<li>v4 - Random value</li>
+<li>v5 - Namespace and name based, using SHA1</li>
+<li>v7 - Time-ordered random value</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For versions 3 and 5 there are some predefined namespaces: DNS, URL, OID and X500. You can use the following predefined namespaces:</p>
+<ul>
+<li><code>ns:DNS</code></li>
+<li><code>ns:URL</code></li>
+<li><code>ns:OID</code></li>
+<li><code>ns:X500</code></li>
+</ul>
+</div>
+<p>Examples:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code># guid</code> <br><code># uuid</code> <br><code># uuidv4</code></td>
+<td style="text-align: left;">Generate a random GUID.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code># guidv1</code> <br><code># uuidv1</code></td>
+<td style="text-align: left;">Generate a version 1 GUID.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code># guidv3 ns:DNS www.microsoft.com</code> <br><code># uuidv3 ns:DNS www.microsoft.com</code></td>
+<td style="text-align: left;">Generate the GUID version 3 for <code>www.microsoft.com</code> using the DNS namespace. <br> The namespace parameter can be any valid GUID, and the name parameter can be any string.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code># uuid7</code> <br> <code># guidv7</code></td>
+<td style="text-align: left;">Generate a random version 7 GUID with the first 48-bit corresponding to the current timestamp, providing a well-defined order of subsequently generated values.</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <code>guid</code> and <code>uuid</code> keywords are interchangeable and the <code>v</code> is optional. I.e. <code>guid5</code> and <code>guidv5</code> are the same.</p>
+</div>
+<h4 id="hashing">Hashing</h4>
+<p>The following hashing algorithms are supported:</p>
+<ul>
+<li>MD5</li>
+<li>SHA1</li>
+<li>SHA256</li>
+<li>SHA384</li>
+<li>SHA512</li>
+</ul>
+<p>Usage:</p>
+<ul>
+<li><code># md5 abc</code></li>
+</ul>
+<h4 id="base64">Base64</h4>
+<p>Usage for encoding a string:</p>
+<ul>
+<li><code># base64 abc</code></li>
+</ul>
+<p>Usage for decoding a string:</p>
+<ul>
+<li><code># base64d SGVsbG8gV29ybGQ=</code></li>
+</ul>
+<h4 id="url">URL</h4>
+<p>Usage for encoding an URL:</p>
+<ul>
+<li><code># url https://bing.com/?q=My Test query</code></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The entire URL including the <code>/</code> and the protocol identifier gets encoded. If you only like to encode the query part of the URL, you should only enter this part.</p>
+</div>
+<p>Usage for decoding an URL:</p>
+<ul>
+<li><code># urld https://bing.com/?q=My+Test+query</code></li>
+</ul>
+<h4 id="escaped-data-string">Escaped data string</h4>
+<p>Usage for escaping a data string:</p>
+<ul>
+<li><code># esc:data C:\Program Files\PowerToys\PowerToys.exe</code></li>
+</ul>
+<p>Usage for unescaping a data string:</p>
+<ul>
+<li><code># uesc:data C%3A%5CProgram%20Files%5CPowerToys%5CPowerToys.exe</code></li>
+</ul>
+<h4 id="escaped-hex-character">Escaped hex character</h4>
+<p>Usage for escaping a single character:</p>
+<ul>
+<li><code># esc:hex z</code></li>
+</ul>
+<p>Usage for decoding an URL:</p>
+<ul>
+<li><code># uesc:hex %7A</code></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only the first hexadecimal character of your input is converted. The rest of the input is ignored.</p>
+</div>
+<h3 id="folder-plugin">Folder plugin</h3>
+<p>With the folder plugin, you can navigate through your directories.</p>
+<h4 id="search-filter">Search filter</h4>
+<p>In the Folder plugin, you can filter the results by using some special characters.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Character sequence</th>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>&gt;</code></td>
+<td style="text-align: left;">Search inside the folder</td>
+<td style="text-align: left;"><code>C:\Users\tom\Documents\&gt;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>*</code></td>
+<td style="text-align: left;">Search files by mask</td>
+<td style="text-align: left;"><code>C:\Users\tom\Documents\*.doc</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&gt;*</code></td>
+<td style="text-align: left;">Search files inside the folder by mask</td>
+<td style="text-align: left;"><code>C:\Users\tom\Documents\&gt;*.doc</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="windows-settings-plugin">Windows Settings plugin</h3>
+<p>The Windows Settings plugin allows you to search in Windows settings. You can search by their name or by their location.</p>
+<p>To search by location you can use the following syntax:</p>
+<ul>
+<li><code>$ device:</code> to list all settings with 'device' in the area name.</li>
+<li><code>$ control&gt;system&gt;admin</code> to show all settings of the path Control Panel &gt; System and Security &gt; Administrative Tools.</li>
+</ul>
+<h3 id="service-plugin">Service plugin</h3>
+<p>The Service plugin lets you search, start, stop and restart Windows services directly from the PowerToys Run search screen.</p>
+<p>To search for Windows services, <a href="#plugin-manager">enable the plugin</a>, open PowerToys Run and enter the name of the service. Additionally, you can use the following syntax:</p>
+<ul>
+<li><code>!startup:automatic</code> to list all services with start type 'automatic'.</li>
+<li><code>!status:running</code> to list all currently running services.</li>
+</ul>
+<h3 id="window-walker-plugin">Window Walker plugin</h3>
+<p>With the Window Walker plugin, you can switch to other windows, close them, or kill the window process.</p>
+<p>You can enter the <strong>Direct activation command</strong> <code>&lt;</code> to search for open windows. The plugin will search for the window title and the name of the process that owns the window.</p>
+<h4 id="kill-a-window-process">Kill a window process</h4>
+<p>With the Window Walker plugin, you can kill the process of a window if it stops responding.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There are some limitations for the &quot;kill process&quot; feature:</p>
+<ul>
+<li>Killing the Explorer process is only allowed if each folder window is running in its own process.</li>
+<li>You can only kill elevated processes if you have admin permissions (UAC).</li>
+<li>Windows UWP apps don't know their process until they are searched in non-minimized state.</li>
+</ul>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you kill the process of a UWP app window, you kill all instances of the app. All windows are assigned to the same process.</p>
+</div>
+<h5 id="file-explorer-setting">File Explorer setting</h5>
+<p>If the File Explorer settings in Windows are not configured to open each window in a separate process, you'll see the following message when searching for open Explorer windows:</p>
+<p><img src="../images/pt-run-explorer-info.png" alt="Explorer Process Info in PowerToys Run"></p>
+<p>You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. On the <strong>Folder options</strong> window, select <strong>Launch folder windows in a separate process</strong>.</p>
+<p><img src="../images/pt-run-folder-options.png" alt="Folder Options Window"></p>
+<h3 id="windows-search-plugin">Windows Search plugin</h3>
+<p>With the Windows Search plugin, you can search for files and folders that are indexed by the <strong>Windows Search Index</strong> service.</p>
+<h4 id="windows-search-settings">Windows Search settings</h4>
+<p>If the indexing settings for Windows Search aren't set to cover all drives, you'll see the following warning when using the Windows Search plugin:</p>
+<p><img src="../images/pt-run-indexer-warning.png" alt="PowerToys Run Indexer Warning"></p>
+<p>You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows settings page <strong>Searching Windows</strong> will open.</p>
+<p><img src="../images/pt-run-indexing.png" alt="Indexing Settings"></p>
+<p>On the <strong>Searching Windows</strong> page, you can:</p>
+<ul>
+<li>Select <strong>Enhanced</strong> mode to enable indexing across all of the drives on your Windows machine.</li>
+<li>Specify folder paths to exclude.</li>
+<li>Select <strong>Advanced Search Indexer Settings</strong> to set advanced index settings, add or remove search locations, index encrypted files, etc.</li>
+</ul>
+<p><img src="../images/pt-run-indexing-advanced.png" alt="Advanced Indexing Settings"></p>
+<h2 id="known-issues">Known issues</h2>
+<p>For a list of all known issues and suggestions, see the <a href="https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-PowerToys+Run%22">PowerToys product repository issues on GitHub</a>.</p>
+<h2 id="attribution">Attribution</h2>
+<ul>
+<li><a href="https://github.com/Wox-launcher/Wox/">Wox</a></li>
+<li><a href="https://github.com/betsegaw/windowwalker">Beta Tadele's Window Walker</a></li>
+</ul>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/run.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

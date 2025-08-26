@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Feed providers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Feed providers ">
+    
+    <meta name="description" content="Introduction to the feed providers feature in the Windows App SDK, a new integration point for third-party applications.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="feed-providers">Feed providers</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</strong></p>
+</div>
+<p>The feed providers feature in the Windows App SDK is a new integration point for third-party applications. It enables these applications to register their content feeds to be directly available within the Windows Widgets Board, enhancing the user experience by providing quick access to a variety of content directly from the desktop.</p>
+<p>This article introduces the concept of feed providers and provides a high-level explanation the feature.</p>
+<p>For detailed guidance on how to implement a feed provider, see these articles below:</p>
+<ul>
+<li><p><a href="/windows/apps/develop/feeds/implement-feed-provider-cs">Implement a feed provider in a C# Windows App</a></p>
+</li>
+<li><p><a href="/windows/apps/develop/feeds/implement-feed-provider-win32">Implement a feed provider in a win32 app (C++/WinRT)</a></p>
+</li>
+<li><p><a href="/windows/apps/develop/feeds/feed-provider-manifest">Feed provider package manifest XML format</a></p>
+</li>
+</ul>
+<p>Feeds in the Widgets Board helps users stay on top of what matters, enabling them to easily discover useful information and empowering them to act on it. Feed providers enable users to see content from multiple apps and services at the same time. Users can access content from various apps directly on their Widgets Board without the need to open individual apps, ensuring they have the latest information at their fingertips. Users also have the control to enable or disable feeds from the Widgets Board settings, tailoring the content to their preferences.</p>
+<p><img src="media/feed-providers/hidedashboard-screenshot.png" alt="hidedashboard-screenshot"></p>
+<h2 id="getting-started-with-feed-providers">Getting started with feed providers</h2>
+<p>The following lists the high-level steps for developing a feed provider:</p>
+<ol>
+<li><strong>Register feeds</strong> - Register your app's feeds in the app manifest. Once registered and detected, these feeds become directly available in the Widgets Board.</li>
+<li><strong>Implement feed experience</strong> - Develop the feed experience as a web component that will be rendered within an i-frame on the Widgets Board. Feeds will appear as pivots above the <strong>Feeds</strong> section of the Widgets Board.</li>
+<li><strong>Provide personalization controls (optional)</strong> - Each feed provider can define a personalization control dialog that allows users to customize their feed experience according to their preferences.</li>
+</ol>
+<h2 id="limitations-and-considerations">Limitations and considerations</h2>
+<ul>
+<li>The feed providers feature is in preview.</li>
+<li>This feature is available only to users in the European Economic Area (EEA). In the EEA, installed apps that implement a feed provider can provide content feed in the Widgets Board.</li>
+<li>The feature requires using the latest Windows App SDK for app development.</li>
+<li>Specific technical and design guidelines must be adhered to for proper feed integration.</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>For detailed guidance on how to implement a feed provider, see these articles below:</p>
+<ul>
+<li><p><a href="/windows/apps/develop/feeds/implement-feed-provider-cs">Implement a feed provider in a C# Windows App</a></p>
+</li>
+<li><p><a href="/windows/apps/develop/feeds/implement-feed-provider-win32">Implement a feed provider in a win32 app (C++/WinRT)</a></p>
+</li>
+<li><p><a href="/windows/apps/develop/feeds/feed-provider-manifest">Feed provider package manifest XML format</a></p>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/feeds/feed-providers.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

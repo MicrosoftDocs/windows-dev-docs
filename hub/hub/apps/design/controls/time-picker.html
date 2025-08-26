@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Time picker </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Time picker ">
+    
+    <meta name="description" content="The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="time-picker">Time picker</h1>
+
+<p>The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.</p>
+<p><img src="images/time-picker-closed.png" alt="Example of time picker"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a time picker to let a user pick a single time value.</p>
+<p>For more info about choosing the right control, see the <a href="date-and-time.html">Date and time controls</a> article.</p>
+<h2 id="examples">Examples</h2>
+<p>The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.</p>
+<p><img src="images/controls-timepicker-expand.gif" alt="Example of the time picker expanding"></p>
+<h2 id="create-a-time-picker">Create a time picker</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TimePicker">TimePicker class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime">SelectedTime property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/TimePicker">Open the WinUI 3 Gallery app and see the TimePicker in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example shows how to create a simple time picker with a header.</p>
+<pre><code class="lang-xaml">&lt;TimePicker x:Name=&quot;arrivalTimePicker&quot; Header=&quot;Arrival time&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">TimePicker arrivalTimePicker = new TimePicker();
+arrivalTimePicker.Header = &quot;Arrival time&quot;;
+</code></pre>
+<p>The resulting time picker looks like this:</p>
+<p><img src="images/time-picker-closed.png" alt="Example of time picker"></p>
+<h3 id="formatting-the-time-picker">Formatting the time picker</h3>
+<p>By default, the time picker shows a 12-hour clock with an AM/PM selector. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.clockidentifier">ClockIdentifier</a> property to &quot;24HourClock&quot; to show a 24-hour clock instead.</p>
+<pre><code class="lang-xaml">&lt;TimePicker Header=&quot;24HourClock&quot; SelectedTime=&quot;18:21&quot; ClockIdentifier=&quot;24HourClock&quot;/&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="images/date-time/time-picker-clocks.png" alt="A time picker 24 hour clock.">
+</span>
+</p>
+<p>You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.minuteincrement">MinuteIncrement</a> property to indicate the time increments shown in the minute picker. For example, 15 specifies that the <code>TimePicker</code> minute control displays only the choices 00, 15, 30, 45.</p>
+<pre><code class="lang-xaml">&lt;TimePicker MinuteIncrement=&quot;15&quot;/&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="images/date-time/time-picker-minute-increment.png" alt="A time picker showing 15 minute increments.">
+</span>
+</p>
+<h3 id="time-values">Time values</h3>
+<p>The time picker control has both <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.time">Time</a>/<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.timechanged">TimeChanged</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime">SelectedTime</a>/<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtimechanged">SelectedTimeChanged</a> APIs. The difference between these is that <code>Time</code> is not nullable, while <code>SelectedTime</code> is nullable.</p>
+<p>The value of <code>SelectedTime</code> is used to populate the time picker and is <code>null</code> by default. If <code>SelectedTime</code> is <code>null</code>, the <code>Time</code> property is set to a <a href="/dotnet/api/system.timespan?view=dotnet-uwp-10.0&amp;preserve-view=true">TimeSpan</a> of 0; otherwise, the <code>Time</code> value is synchronized with the <code>SelectedTime</code> value. When <code>SelectedTime</code> is <code>null</code>, the picker is 'unset' and shows the field names instead of a time.</p>
+<p><span class="mx-imgBorder">
+<img src="images/date-time/time-picker-no-selected-time.png" alt="A time picker with no time selected.">
+</span>
+</p>
+<h4 id="initializing-a-time-value">Initializing a time value</h4>
+<p>In code, you can initialize the time properties to a value of type <code>TimeSpan</code>:</p>
+<pre><code class="lang-csharp">TimePicker timePicker = new TimePicker
+{
+    SelectedTime = new TimeSpan(14, 15, 00) // Seconds are ignored.
+};
+</code></pre>
+<p>You can set the time value as an attribute in XAML. This is probably easiest if you're already declaring the <code>TimePicker</code> object in XAML and aren't using bindings for the time value. Use a string in the form <em>Hh:Mm</em> where <em>Hh</em> is hours and can be between 0 and 23 and <em>Mm</em> is minutes and can be between 0 and 59.</p>
+<pre><code class="lang-xaml">&lt;TimePicker SelectedTime=&quot;14:15&quot;/&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For important info about date and time values, see <a href="date-and-time.html#datetime-and-calendar-values">DateTime and Calendar values</a> in the <em>Date and time controls</em> article.</p>
+</div>
+<h3 id="using-the-time-values">Using the time values</h3>
+<p>To use the time value in your app, you typically use a data binding to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtime">SelectedTime</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.time">Time</a> property, use the time properties directly in your code, or handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.selectedtimechanged">SelectedTimeChanged</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.timepicker.timechanged">TimeChanged</a> event.</p>
+<blockquote>
+<p>For an example of using a <code>DatePicker</code> and <code>TimePicker</code> together to update a single <code>DateTime</code> value, see <a href="date-and-time.html#use-a-date-picker-and-time-picker-together">Calendar, date, and time controls - Use a date picker and time picker together</a>.</p>
+</blockquote>
+<p>Here, the <code>SelectedTime</code> property is used to compare the selected time to the current time.</p>
+<p>Notice that because the <code>SelectedTime</code> property is nullable, you have to explicitly cast it to <code>DateTime</code>, like this: <code>DateTime myTime = (DateTime)(DateTime.Today + checkTimePicker.SelectedTime);</code>. The <code>Time</code> property, however, could be used without a cast, like this: <code>DateTime myTime = DateTime.Today + checkTimePicker.Time;</code>.</p>
+<p><span class="mx-imgBorder">
+<img src="images/date-time/time-picker-check.png" alt="A time picker, button, and text label.">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;TimePicker x:Name=&quot;checkTimePicker&quot;/&gt;
+    &lt;Button Content=&quot;Check time&quot; Click=&quot;{x:Bind CheckTime}&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;resultText&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void CheckTime()
+{
+    // Using the Time property.
+    // DateTime myTime = DateTime.Today + checkTimePicker.Time;
+    // Using the SelectedTime property (nullable requires cast to DateTime).
+    DateTime myTime = (DateTime)(DateTime.Today + checkTimePicker.SelectedTime);
+    if (DateTime.Now &gt;= myTime)
+    {
+        resultText.Text = &quot;Your selected time has already past.&quot;;
+    }
+    else
+    {
+        string hrs = (myTime - DateTime.Now).Hours.ToString();
+        string mins = (myTime - DateTime.Now).Minutes.ToString();
+        resultText.Text = string.Format(&quot;Your selected time is {0} hours, {1} minutes from now.&quot;, hrs, mins);
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.TimePicker">TimePicker class</a>, <a href="/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime">SelectedTime property</a></li>
+<li><a href="winui2gallery:/item/TimePicker">Open the WinUI 2 Gallery app and see the TimePicker in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="date-and-time.html">Date and time controls</a></li>
+<li><a href="calendar-date-picker.html">Calendar date picker</a></li>
+<li><a href="calendar-view.html">Calendar view</a></li>
+<li><a href="date-picker.html">Date picker</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/time-picker.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

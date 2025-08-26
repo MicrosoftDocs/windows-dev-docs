@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use patterns to format dates and times </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use patterns to format dates and times ">
+    
+    <meta name="description" content="Use the Windows.Globalization.DateTimeFormatting API with custom templates and patterns to display dates and times in exactly the format you wish.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-templates-and-patterns-to-format-dates-and-times">Use templates and patterns to format dates and times</h1>
+
+<p>Use classes in the <a href="/uwp/api/windows.globalization.datetimeformatting?branch=live"><strong>Windows.Globalization.DateTimeFormatting</strong></a> namespace with custom templates and patterns to display dates and times in exactly the format you wish.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The <a href="/uwp/api/windows.globalization.datetimeformatting?branch=live"><strong>DateTimeFormatter</strong></a> class provides various ways to properly format dates and times for languages and regions around the world. You can use standard formats for year, month, day, and so on. Or you can pass a format template to the <em>formatTemplate</em> argument of the <strong>DateTimeFormatter</strong> constructor, such as &quot;longdate&quot; or &quot;month day&quot;.</p>
+<p>But when you want even more control over the order and format of the components of the <a href="/uwp/api/windows.foundation.datetime?branch=live"><strong>DateTime</strong></a> object you wish to display, you can pass a format pattern to the <em>formatTemplate</em> argument of the constructor. A format pattern uses a special syntax, which allows you to obtain individual components of a <strong>DateTime</strong> object—just the month name, or just the year value, for example—in order to display them in whatever custom format you choose. Furthermore, the pattern can be localized to adapt to other languages and regions.</p>
+<p><strong>Note</strong>  This is only an overview of format patterns. For a more complete discussion of format templates and format patterns see the Remarks section of the <a href="/uwp/api/windows.globalization.datetimeformatting?branch=live"><strong>DateTimeFormatter</strong></a> class.</p>
+<h2 id="the-difference-between-format-templates-and-format-patterns">The difference between format templates and format patterns</h2>
+<p>A format template is a culture-agnostic format string. So, if you construct a <strong>DateTimeFormatter</strong> using a format template, then the formatter displays your format components in the right order for the current language. Conversely, a format pattern is culture-specific. If you construct a <strong>DateTimeFormatter</strong> using a format pattern, then the formatter will use the pattern exactly as given. Consequently, a pattern isn't necessarily valid across cultures.</p>
+<p>Let's illustrate this distinction with an example. We'll pass a simple format template (not a pattern) to the <strong>DateTimeFormatter</strong> constructor. This is the format template &quot;month day&quot;.</p>
+<pre><code class="lang-csharp">var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;month day&quot;);
+</code></pre>
+<p>This creates a formatter based on the language and region value of the current context. The order of the components in a format template doesn't matter; the formatter displays them in the right order for the current language. So, it displays &quot;January 1&quot; for English (United States), &quot;1 janvier&quot; for French (France), and &quot;1月1日&quot; for Japanese.</p>
+<p>On the other hand, a format pattern is culture-specific. Let's access the format pattern for our format template.</p>
+<pre><code class="lang-csharp">IReadOnlyList&lt;string&gt; monthDayPatterns = dateFormatter.Patterns;
+</code></pre>
+<p>This yields different results depending on the runtime language and region. Different regions might use different components, in different orders, with or without additional characters and spacing.</p>
+<pre><code class="lang-syntax">En-US: &quot;{month.full} {day.integer}&quot;
+Fr-FR: &quot;{day.integer} {month.full}&quot;
+Ja-JP: &quot;{month.integer}月{day.integer}日&quot;
+</code></pre>
+<p>In the example above, we inputted a culture-agnostic format string, and we got back a culture-specific format string (which was a function of the language and region that happened to be in effect when we called <code>dateFormatter.Patterns</code>). It follows therefore that if you construct a <strong>DateTimeFormatter</strong> from a culture-specific format pattern, then it will only be valid for specific languages/regions.</p>
+<pre><code class="lang-csharp">var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;{month.full} {day.integer}&quot;);
+</code></pre>
+<p>The formatter above returns culture-specific values for the individual components inside the brackets {}. But the order of components in a format pattern is invariant. You get precisely what you ask for, which may or may not be culturally appropriate. This formatter is valid for English (United States), but not for French (France) nor for Japanese.</p>
+<pre><code class="lang-syntax">En-US: January 1
+Fr-FR: janvier 1 (inappropriate for France; non-standard order)
+Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
+</code></pre>
+<p>Furthermore, a pattern that's correct today might not be correct in the future. Countries or regions might change their calendar systems, which alters a format template. Windows updates the output of formatters based on format templates to accommodate such changes. Therefore, you should only use the pattern syntax under one or more of these conditions.</p>
+<ul>
+<li>You are not dependent on a particular output for a format.</li>
+<li>You do not need the format to follow some culture-specific standard.</li>
+<li>You specifically intend the pattern to be invariant across cultures.</li>
+<li>You intend to localize the actual format pattern string itself.</li>
+</ul>
+<p>Here's a summary of the distinction between format templates and format patterns.</p>
+<p><strong>Format templates, such as &quot;month day&quot;</strong></p>
+<ul>
+<li>Abstracted representation of a <a href="/uwp/api/windows.foundation.datetime?branch=live">DateTime</a> format that includes values for the month, day, etc., in any order.</li>
+<li>Guaranteed to return a valid standard format across all language-region values supported by Windows.</li>
+<li>Guaranteed to give you a culturally-appropriate formatted string for the given language-region.</li>
+<li>Not all combinations of components are valid. For example, &quot;dayofweek day&quot; is not valid.</li>
+</ul>
+<p><strong>Format patterns, such as &quot;{month.full} {day.integer}&quot;</strong></p>
+<ul>
+<li>Explicitly ordered string that expresses the full month name, followed by a space, followed by the day integer, in that order, or whatever specific format pattern you specify.</li>
+<li>May not correspond to a valid standard format for any language-region pair.</li>
+<li>Not guaranteed to be culturally appropriate.</li>
+<li>Any combination of components may be specified, in any order.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>Suppose you wish to display the current month and day together with the current time, in a specific format. For example, you would like US English users to see something like this:</p>
+<pre><code class="lang-syntax">June 25 | 1:38 PM
+</code></pre>
+<p>The date part corresponds to the &quot;month day&quot; format template, and the time part corresponds to the &quot;hour minute&quot; format template. So, you can construct formatters for the relevant date and time format templates, and then concatenate their output together using a localizable format string.</p>
+<pre><code class="lang-csharp">var dateToFormat = System.DateTime.Now;
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+
+var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;month day&quot;);
+var timeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;hour minute&quot;);
+
+var date = dateFormatter.Format(dateToFormat);
+var time = timeFormatter.Format(dateToFormat);
+
+string output = string.Format(resourceLoader.GetString(&quot;CustomDateTimeFormatString&quot;), date, time);
+</code></pre>
+<p><code>CustomDateTimeFormatString</code> is a resource identifier referring to a localizable resource in a Resources File (.resw). For a default language of English (United States), this would be set to a value of &quot;{0} | {1}&quot; along with a comment indicating that &quot;{0}&quot; is the date and &quot;{1}&quot; is the time. That way, translators can adjust the format items as needed. For example, they can change the order of the items if it seems more natural in some language or region to have the time precede the date. Or, they can replace &quot;|&quot; with some other separator character.</p>
+<p>Another way to implement this example is to query the two formatters for their format patterns, concatenate those together, and then construct a third formatter from the resultant format pattern.</p>
+<pre><code class="lang-csharp">var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+
+var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;month day&quot;);
+var timeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;hour minute&quot;);
+
+string dateFormatterPattern = dateFormatter.Patterns[0];
+string timeFormatterPattern = timeFormatter.Patterns[0];
+
+string pattern = string.Format(resourceLoader.GetString(&quot;CustomDateTimeFormatString&quot;), dateFormatterPattern, timeFormatterPattern);
+
+var patternFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(pattern);
+
+string output = patternFormatter.Format(System.DateTime.Now);
+</code></pre>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/uwp/api/windows.globalization.datetimeformatting?branch=live">Windows.Globalization.DateTimeFormatting</a></li>
+<li><a href="/uwp/api/windows.globalization.datetimeformatting?branch=live">DateTimeFormatter</a></li>
+<li><a href="/uwp/api/windows.foundation.datetime?branch=live">DateTime</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208)">Date and time formatting sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/use-patterns-to-format-dates-and-times.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

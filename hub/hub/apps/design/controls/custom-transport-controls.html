@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create custom media transport controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create custom media transport controls ">
+    
+    <meta name="description" content="The media player has customizable XAML transport controls to manage control of audio and video content.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-custom-transport-controls">Create custom transport controls</h1>
+
+<p>MediaPlayerElement has customizable XAML transport controls to manage control of audio and video content within a Windows app. Here, we demonstrate how to customize the MediaTransportControls template. We'll show you how to work with the overflow menu, add a custom button and modify the slider.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a>, <a href="/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled">MediaPlayerElement.AreTransportControlsEnabled</a>, <a href="/uwp/api/Windows.Media.SystemMediaTransportControls">MediaTransportControls</a></p>
+</blockquote>
+<p>Before starting, you should be familiar with the MediaPlayerElement and the MediaTransportControls classes. For more info, see the MediaPlayerElement control guide.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The examples in this topic are based on the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls">Media Transport Controls sample</a>. You can download the sample to view and run the completed code.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>MediaPlayerElement</strong> is only available in Windows 10, version 1607 and later. If you are developing an app for an earlier version of Windows 10 you will need to use <a href="/uwp/api/Windows.UI.Xaml.Controls.MediaElement"><strong>MediaElement</strong></a> instead. All of the examples on this page work with <strong>MediaElement</strong> as well.</p>
+</div>
+<h2 id="when-should-you-customize-the-template">When should you customize the template?</h2>
+<p><strong>MediaPlayerElement</strong> has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They're provided by the <a href="/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls"><strong>MediaTransportControls</strong></a> class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the <a href="/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact"><strong>IsCompact</strong></a> property to specify whether the controls are shown in one row or two.</p>
+<p>However, there may be scenarios where you need to further customize the look of the control or change its behavior. Here are some examples:</p>
+<ul>
+<li>Change the icons, slider behavior, and colors.</li>
+<li>Move less commonly used command buttons into an overflow menu.</li>
+<li>Change the order in which commands drop out when the control is resized.</li>
+<li>Provide a command button that's not in the default set.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The buttons visible on screen will drop out of the built-in transport controls in a predefined order if there is not enough room on screen. To change this ordering or put commands that don't fit into an overflow menu, you will need to customize the controls.</p>
+</div>
+<p>You can customize the appearance of the control by modifying the default template. To modify the control's behavior or add new commands, you can create a custom control that's derived from MediaTransportControls.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Customizable control templates are a powerful feature of the XAML platform, but there are also consequences that you should take into consideration. When you customize a template, it becomes a static part of your app and therefore will not receive any platform updates that are made to the template by Microsoft. If template updates are made by Microsoft, you should take the new template and re-modify it in order to get the benefits of the updated template.</p>
+</div>
+<h2 id="template-structure">Template structure</h2>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate"><strong>ControlTemplate</strong></a> is part of the default style. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.</p>
+<ul>
+<li>The first section of the template contains the <a href="/uwp/api/Windows.UI.Xaml.Style"><strong>Style</strong></a> definitions for the various components of the MediaTransportControls.</li>
+<li>The second section defines the various visual states that are used by the MediaTransportControls.</li>
+<li>The third section contains the <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> that holds that various MediaTransportControls elements together and defines how the components are laid out.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For more info about modifying templates, see <a href="../../develop/platform/xaml/xaml-control-templates.html">Control templates</a>. You can use a text editor or similar editors in your IDE to open the XAML files in (<em>Program Files</em>)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\(<em>SDK version</em>)\Generic. The default style and template for each control is defined in the <strong>generic.xaml</strong> file. You can find the MediaTransportControls template in generic.xaml by searching for &quot;MediaTransportControls&quot;.</p>
+</div>
+<p>In the following sections, you learn how to customize several of the main elements of the transport controls:</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.Slider"><strong>Slider</strong></a>: allows a user to scrub through their media and also displays progress</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.CommandBar"><strong>CommandBar</strong></a>: contains all of the buttons.
+For more info, see the Anatomy section of the MediaTransportControls reference topic.</li>
+</ul>
+<h2 id="customize-the-transport-controls">Customize the transport controls</h2>
+<p>If you want to modify only the appearance of the MediaTransportControls, you can create a copy of the default control style and template, and modify that. However, if you also want to add to or modify the functionality of the control, you need to create a new class that derives from MediaTransportControls.</p>
+<h3 id="re-template-the-control">Re-template the control</h3>
+<p><strong>To customize the MediaTransportControls default style and template</strong></p>
+<ol>
+<li>Copy the default style from MediaTransportControls styles and templates into a ResourceDictionary in your project.</li>
+<li>Give the Style an x:Key value to identify it, like this.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;Style TargetType=&quot;MediaTransportControls&quot; x:Key=&quot;myTransportControlsStyle&quot;&gt;
+    &lt;!-- Style content ... --&gt;
+&lt;/Style&gt;
+</code></pre>
+<ol start="3">
+<li>Add a MediaPlayerElement with MediaTransportControls to your UI.</li>
+<li>Set the Style property of the MediaTransportControls element to your custom Style resource, as shown here.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;MediaPlayerElement AreTransportControlsEnabled=&quot;True&quot;&gt;
+    &lt;MediaPlayerElement.TransportControls&gt;
+        &lt;MediaTransportControls Style=&quot;{StaticResource myTransportControlsStyle}&quot;/&gt;
+    &lt;/MediaPlayerElement.TransportControls&gt;
+&lt;/MediaPlayerElement&gt;
+</code></pre>
+<p>For more info about modifying styles and templates, see <a href="../../develop/platform/xaml/xaml-styles.html">Styling controls</a> and <a href="../../develop/platform/xaml/xaml-control-templates.html">Control templates</a>.</p>
+<h3 id="create-a-derived-control">Create a derived control</h3>
+<p>To add to or modify the functionality of the transport controls, you must create a new class that's derived from MediaTransportControls. A derived class called <code>CustomMediaTransportControls</code> is shown in the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls">Media Transport Controls sample</a> and the remaining examples on this page.</p>
+<p><strong>To create a new class derived from MediaTransportControls</strong></p>
+<ol>
+<li>Add a new class file to your project.
+<ul>
+<li>In Visual Studio, select Project &gt; Add Class. The Add New Item dialog opens.</li>
+<li>In the Add New Item dialog, enter a name for the class file, then click Add. (In the Media Transport Controls sample, the class is named <code>CustomMediaTransportControls</code>.)</li>
+</ul>
+</li>
+<li>Modify the class code to derive from the MediaTransportControls class.</li>
+</ol>
+<pre><code class="lang-csharp">public sealed class CustomMediaTransportControls : MediaTransportControls
+{
+}
+</code></pre>
+<ol start="3">
+<li>Copy the default style for <a href="/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls"><strong>MediaTransportControls</strong></a> into a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary">ResourceDictionary</a> in your project. This is the style and template you modify.
+(In the Media Transport Controls sample, a new folder called &quot;Themes&quot; is created, and a ResourceDictionary file called generic.xaml is added to it.)</li>
+<li>Change the <a href="/uwp/api/windows.ui.xaml.style.targettype"><strong>TargetType</strong></a> of the style to the new custom control type. (In the sample, the TargetType is changed to <code>local:CustomMediaTransportControls</code>.)</li>
+</ol>
+<pre><code class="lang-xaml">xmlns:local=&quot;using:CustomMediaTransportControls&quot;&gt;
+...
+&lt;Style TargetType=&quot;local:CustomMediaTransportControls&quot;&gt;
+</code></pre>
+<ol start="5">
+<li>Set the <a href="/uwp/api/windows.ui.xaml.controls.control.defaultstylekey"><strong>DefaultStyleKey</strong></a> of your custom class. This tells your custom class to use a Style with a TargetType of <code>local:CustomMediaTransportControls</code>.</li>
+</ol>
+<pre><code class="lang-csharp">public sealed class CustomMediaTransportControls : MediaTransportControls
+{
+    public CustomMediaTransportControls()
+    {
+        this.DefaultStyleKey = typeof(CustomMediaTransportControls);
+    }
+}
+</code></pre>
+<ol start="6">
+<li>Add a <a href="/uwp/api/windows.ui.xaml.controls.mediaplayerelement"><strong>MediaPlayerElement</strong></a> to your XAML markup and add the custom transport controls to it. One thing to note is that the APIs to hide, show, disable, and enable the default buttons still work with a customized template.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;MediaPlayerElement Name=&quot;MediaPlayerElement1&quot; AreTransportControlsEnabled=&quot;True&quot; Source=&quot;video.mp4&quot;&gt;
+    &lt;MediaPlayerElement.TransportControls&gt;
+        &lt;local:CustomMediaTransportControls x:Name=&quot;customMTC&quot;
+                                            IsFastForwardButtonVisible=&quot;True&quot;
+                                            IsFastForwardEnabled=&quot;True&quot;
+                                            IsFastRewindButtonVisible=&quot;True&quot;
+                                            IsFastRewindEnabled=&quot;True&quot;
+                                            IsPlaybackRateButtonVisible=&quot;True&quot;
+                                            IsPlaybackRateEnabled=&quot;True&quot;
+                                            IsCompact=&quot;False&quot;&gt;
+        &lt;/local:CustomMediaTransportControls&gt;
+    &lt;/MediaPlayerElement.TransportControls&gt;
+&lt;/MediaPlayerElement&gt;
+</code></pre>
+<p>You can now modify the control style and template to update the look of your custom control, and the control code to update its behavior.</p>
+<h3 id="working-with-the-overflow-menu">Working with the overflow menu</h3>
+<p>You can move MediaTransportControls command buttons into an overflow menu, so that less commonly used commands are hidden until the user needs them.</p>
+<p>In the MediaTransportControls template, the command buttons are contained in a <a href="/uwp/api/Windows.UI.Xaml.Controls.CommandBar"><strong>CommandBar</strong></a> element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable the button, hide the button or there is not enough room). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the <a href="command-bar.html">App bars and command bars</a> article.</p>
+<p>To move an element from the command bar primary commands to the overflow menu, you need to edit the XAML control template.</p>
+<p><strong>To move a command to the overflow menu:</strong></p>
+<ol>
+<li>In the control template, find the CommandBar element named <code>MediaControlsCommandBar</code>.</li>
+<li>Add a <a href="/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands"><strong>SecondaryCommands</strong></a> section to the XAML for the CommandBar. Put it after the closing tag for the <a href="/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands"><strong>PrimaryCommands</strong></a>.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;CommandBar x:Name=&quot;MediaControlsCommandBar&quot; ... &gt;  
+  &lt;CommandBar.PrimaryCommands&gt;
+...
+    &lt;AppBarButton x:Name='PlaybackRateButton'
+                    Style='{StaticResource AppBarButtonStyle}'
+                    MediaTransportControlsHelper.DropoutOrder='4'
+                    Visibility='Collapsed'&gt;
+      &lt;AppBarButton.Icon&gt;
+        &lt;FontIcon Glyph=&quot;&amp;#xEC57;&quot;/&gt;
+      &lt;/AppBarButton.Icon&gt;
+    &lt;/AppBarButton&gt;
+...
+  &lt;/CommandBar.PrimaryCommands&gt;
+&lt;!-- Add secondary commands (overflow menu) here --&gt;
+  &lt;CommandBar.SecondaryCommands&gt;
+    ...
+  &lt;/CommandBar.SecondaryCommands&gt;
+&lt;/CommandBar&gt;
+</code></pre>
+<ol start="3">
+<li><p>To populate the menu with commands, cut and paste the XAML for the desired <a href="/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><strong>AppBarButton</strong></a> objects from the PrimaryCommands to the SecondaryCommands. In this example, we move the <code>PlaybackRateButton</code> to the overflow menu.</p>
+</li>
+<li><p>Add a label to the button and remove the styling information, as shown here.
+Because the overflow menu is comprised of text buttons, you must add a text label to the button and also remove the style that sets the height and width of the button. Otherwise, it won't appear correctly in the overflow menu.</p>
+</li>
+</ol>
+<pre><code class="lang-xaml">&lt;CommandBar.SecondaryCommands&gt;
+    &lt;AppBarButton x:Name='PlaybackRateButton'
+                  Label='Playback Rate'&gt;
+    &lt;/AppBarButton&gt;
+&lt;/CommandBar.SecondaryCommands&gt;
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must still make the button visible and enable it in order to use it in the overflow menu. In this example, the PlaybackRateButton element isn't visible in the overflow menu unless the IsPlaybackRateButtonVisible property is true. It's not enabled unless the IsPlaybackRateEnabled property is true. Setting these properties is shown in the previous section.</p>
+</div>
+<h3 id="adding-a-custom-button">Adding a custom button</h3>
+<p>One reason you might want to customize MediaTransportControls is to add a custom command to the control. Whether you add it as a primary command or a secondary command, the procedure for creating the command button and modifying its behavior is the same. In the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls">Media Transport Controls sample</a>, a &quot;rating&quot; button is added to the primary commands.</p>
+<p><strong>To add a custom command button</strong></p>
+<ol>
+<li>Create an AppBarButton object and add it to the CommandBar in the control template.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;AppBarButton x:Name=&quot;LikeButton&quot;
+              Icon=&quot;Like&quot;
+              Style=&quot;{StaticResource AppBarButtonStyle}&quot;
+              MediaTransportControlsHelper.DropoutOrder=&quot;3&quot;
+              VerticalAlignment=&quot;Center&quot; /&gt;
+</code></pre>
+<p>You must add it to the CommandBar in the appropriate location. (For more information, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.</p>
+<p>You can also customize the icon for the button. For more information, see the <a href="/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> reference.</p>
+<ol start="2">
+<li>In the <a href="/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate"><strong>OnApplyTemplate</strong></a> override, get the button from the template and register a handler for its <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click"><strong>Click</strong></a> event. This code goes in the <code>CustomMediaTransportControls</code> class.</li>
+</ol>
+<pre><code class="lang-csharp">public sealed class CustomMediaTransportControls :  MediaTransportControls
+{
+    // ...
+
+    protected override void OnApplyTemplate()
+    {
+        // Find the custom button and create an event handler for its Click event.
+        var likeButton = GetTemplateChild(&quot;LikeButton&quot;) as Button;
+        likeButton.Click += LikeButton_Click;
+        base.OnApplyTemplate();
+    }
+
+    //...
+}
+</code></pre>
+<ol start="3">
+<li>Add code to the Click event handler to perform the action that occurs when the button is clicked.
+Here's the complete code for the class.</li>
+</ol>
+<pre><code class="lang-csharp">public sealed class CustomMediaTransportControls : MediaTransportControls
+{
+    public event EventHandler&lt; EventArgs&gt; Liked;
+
+    public CustomMediaTransportControls()
+    {
+        this.DefaultStyleKey = typeof(CustomMediaTransportControls);
+    }
+
+    protected override void OnApplyTemplate()
+    {
+        // Find the custom button and create an event handler for its Click event.
+        var likeButton = GetTemplateChild(&quot;LikeButton&quot;) as Button;
+        likeButton.Click += LikeButton_Click;
+        base.OnApplyTemplate();
+    }
+
+    private void LikeButton_Click(object sender, RoutedEventArgs e)
+    {
+        // Raise an event on the custom control when 'like' is clicked.
+        var handler = Liked;
+        if (handler != null)
+        {
+            handler(this, EventArgs.Empty);
+        }
+    }
+}
+</code></pre>
+<h3 id="modifying-the-slider">Modifying the slider</h3>
+<p>The &quot;seek&quot; control of the MediaTransportControls is provided by a <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider"><strong>Slider</strong></a> element. One way you can customize it is to change the granularity of the seek behavior.</p>
+<p>The default seek slider is divided into 100 parts, so the seek behavior is limited to that many sections. You can change the granularity of the seek slider by getting the Slider from the XAML visual tree in your <a href="/uwp/api/windows.media.playback.mediaplayer.mediaopened"><strong>MediaOpened</strong></a> event handler on <a href="/uwp/api/windows.ui.xaml.controls.mediaplayerelement"><strong>MediaPlayerElement.MediaPlayer</strong></a>. This example shows how to use <a href="/uwp/api/Windows.UI.Xaml.Media.VisualTreeHelper"><strong>VisualTreeHelper</strong></a> to get a reference to the Slider, then change the default step frequency of the slider from 1% to 0.1% (1000 steps) if the media is longer than 120 minutes. The MediaPlayerElement is named <code>MediaPlayerElement1</code>.</p>
+<pre><code class="lang-csharp">protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+  MediaPlayerElement1.MediaPlayer.MediaOpened += MediaPlayerElement_MediaPlayer_MediaOpened;
+  base.OnNavigatedTo(e);
+}
+
+private void MediaPlayerElement_MediaPlayer_MediaOpened(object sender, RoutedEventArgs e)
+{
+  FrameworkElement transportControlsTemplateRoot = (FrameworkElement)VisualTreeHelper.GetChild(MediaPlayerElement1.TransportControls, 0);
+  Slider sliderControl = (Slider)transportControlsTemplateRoot.FindName(&quot;ProgressSlider&quot;);
+  if (sliderControl != null &amp;&amp; MediaPlayerElement1.NaturalDuration.TimeSpan.TotalMinutes &gt; 120)
+  {
+    // Default is 1%. Change to 0.1% for more granular seeking.
+    sliderControl.StepFrequency = 0.1;
+  }
+}
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="media-playback.html">Media playback</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/custom-transport-controls.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

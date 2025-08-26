@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>An overview of Package Identity in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="An overview of Package Identity in Windows apps ">
+    
+    <meta name="description" content="An overview of Windows package identity and how it uniquely identifies a package.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="an-overview-of-package-identity-in-windows-apps">An overview of Package Identity in Windows apps</h1>
+
+<p><strong>Package identity</strong> is a unique identifier across space and time. Just as your DNA uniquely identifies you, package identity uniquely identifies a package.</p>
+<p>A package has an associated set of bits (files etc). No two packages have the same identity, and any changes to the bits associated with a package requires a different identity.</p>
+<h2 id="what-is-package-identity">What is package identity?</h2>
+<p>A <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity">package identity</a> is a logical construct, uniquely identifying a package. The identity has 5 parts:</p>
+<ul>
+<li><strong>Name:</strong> This is a name chosen by the app developer. The Microsoft Store enforces uniqueness of all app names across all app developers within the Store, but names are not guaranteed to be unique in the general ecosystem.</li>
+<li><strong>Version:</strong> Version number of the package. The app developer can choose arbitrary version numbers but must ensure version numbers increase with updates.</li>
+<li><strong>Architecture:</strong> The processor architecture being targeted by the package. The same app can be built targeting different processor architectures, with each build residing in its own package.</li>
+<li><strong>ResourceId:</strong> A string chosen by the app developer to uniquely identify resource packages, for example different languages or different display scales. Resource packages are typically architecture-neutral. For bundles, the <strong>ResourceId</strong> is always <code>~</code>.</li>
+<li><strong>Publisher:</strong> The app developer's subject name as identified by their signing certificate. This is theoretically unique for each app developer, because reputable certification authorities use unique real-world names and identities to populate the certificate's subject name field.</li>
+</ul>
+<p>This construct is sometimes referred to as the <em>5-part tuple</em>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="/windows/msix/package/unsigned-package">Unsigned packages</a> (1) still require a <strong>Publisher</strong>, (2) the <strong>Publisher</strong> must contain the Unsigned marker (OID.2.25.311729368913984317654407730594956997722=1), (3) the Unsigned marker <em>must</em> be the last field in the <strong>Publisher</strong> string, and (4) there is no certificate or signing for an Unsigned package.</p>
+</div>
+<h3 id="package-identity-fields-limits">Package identity fields limits</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data type</th>
+<th>Limits</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Package String</td>
+<td>Min: 3<br>Max: 50</td>
+<td>Allowed values per Validate API (see <a href="#what-is-a-package-string">Package String</a>)</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>DotQuad</td>
+<td>Min: 0.0.0.0<br>Max: 65535.65535.65535.65535</td>
+<td>String form uses base-10 dotted notation, &quot;Major.Minor.Build.Revision&quot;</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>Enumeration</td>
+<td>Min: N/A<br>Max: N/A</td>
+<td>Allowed values are &quot;neutral&quot;, &quot;x86&quot;, &quot;x64&quot;, &quot;arm&quot;, &quot;arm64&quot;, &quot;x86a64&quot;</td>
+</tr>
+<tr>
+<td>ResourceId</td>
+<td>Package String</td>
+<td>Min: 0<br>Max: 30</td>
+<td>Allowed values per Validate API (see <a href="#what-is-a-package-string">Package String</a>)</td>
+</tr>
+<tr>
+<td>Publisher</td>
+<td>String</td>
+<td>Min: 1<br>Max: 8192</td>
+<td>Allowed values per X.509</td>
+</tr>
+<tr>
+<td>PublisherId</td>
+<td>String</td>
+<td>Min: 13<br>Max: 13</td>
+<td><a href="http://en.wikipedia.org/wiki/Base32#Crockford.27s_Base32">Base32 encoded, Crockford variant</a>, i.e. [a-hjkmnp-tv-z0-9]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-is-a-package-string">What is a ‘Package String’?</h3>
+<p>A <strong>package string</strong> is a string that allows the following characters:</p>
+<ul>
+<li>Allowed Input Characters (ASCII subset)
+<ul>
+<li>Uppercase letters (U+0041 thru U+005A)</li>
+<li>Lowercase letters (U+0061 thru U+007A)</li>
+<li>Numbers (U+0030 thru U+0039)</li>
+<li>Dot (U+002E)</li>
+<li>Dash (U+002D)</li>
+</ul>
+</li>
+</ul>
+<p>The following values are prohibited from being used as package strings:</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Prohibited values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cannot equal</td>
+<td>&quot;.&quot;, &quot;..&quot;, &quot;con&quot;, &quot;prn&quot;, &quot;aux&quot;, &quot;nul&quot;, &quot;com1&quot;, &quot;com2&quot;, &quot;com3&quot;, &quot;com4&quot;, &quot;com5&quot;, &quot;com6&quot;, &quot;com7&quot;, &quot;com8&quot;, &quot;com9&quot;, &quot;lpt1&quot;, &quot;lpt2&quot;, &quot;lpt3&quot;, &quot;lpt4&quot;, &quot;lpt5&quot;, &quot;lpt6&quot;, &quot;lpt7&quot;, &quot;lpt8&quot;, &quot;lpt9&quot;</td>
+</tr>
+<tr>
+<td>Cannot begin with</td>
+<td>&quot;con.&quot;, &quot;prn.&quot;, &quot;aux.&quot;, &quot;nul.&quot;, &quot;com1.&quot;, &quot;com2.&quot;, &quot;com3.&quot;, &quot;com4.&quot;, &quot;com5.&quot;, &quot;com6.&quot;, &quot;com7.&quot;, &quot;com8.&quot;, &quot;com9.&quot;, &quot;lpt1.&quot;, &quot;lpt2.&quot;, &quot;lpt3.&quot;, &quot;lpt4.&quot;, &quot;lpt5.&quot;, &quot;lpt6.&quot;, &quot;lpt7.&quot;, &quot;lpt8.&quot;, &quot;lpt9.&quot;, &quot;xn--&quot;</td>
+</tr>
+<tr>
+<td>Cannot end with</td>
+<td>&quot;.&quot;</td>
+</tr>
+<tr>
+<td>Cannot contain</td>
+<td>&quot;.xn--&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>package string</strong> must be compared using an ordinal case-insensitive string comparison APIs (e.g. _wcsicmp).</p>
+<p>Package Identity’s <code>name</code> and <code>resourceid</code> fields are package strings.</p>
+<h3 id="packageid-object">PackageId object</h3>
+<p>A <a href="/uwp/api/windows.applicationmodel.packageid">PackageId</a> is an object containing the 5-part tuple as individual fields (<code>Name</code>, <code>Version</code>, <code>Architecture</code>, <code>ResourceId</code>, <code>Publisher</code>).</p>
+<h3 id="package-full-name">Package Full Name</h3>
+<p>A <strong>Package Full Name</strong> is an opaque string derived from all 5 part of a package's identity (name, version, architecture, resourceid, publisher)</p>
+<p><code>&lt;Name&gt;_&lt;Version&gt;_&lt;Architecture&gt;_&lt;ResourceId&gt;_&lt;PublisherId&gt;</code></p>
+<p>For example, one package full name for the Windows Photos app is &quot;Microsoft.Windows.Photos_2020.20090.1002.0_x64__8wekyb3d8bbwe&quot;, where &quot;Microsoft.Windows.Photos&quot; is the name, &quot;2020.20090.1002.0&quot; is the version number, &quot;x64&quot; is the target processor architecture, the resource ID is empty (no content between the last two underscores), and &quot;8wekyb3d8bbwe&quot; is the publisher ID for Microsoft.</p>
+<p>The <strong>Package Full Name</strong> uniquely identifies an <strong>MSIX</strong> package or bundle. It is an error to have two packages or bundles with different contents but with the same Package Full Name.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>MSIX</strong> is the new name for the previous term <strong>APPX</strong>. For more information, see <a href="/windows/msix/overview">What is MSIX?</a></p>
+</div>
+<h3 id="package-family-name">Package Family Name</h3>
+<p>A <strong>Package Family Name</strong> is an opaque string derived from only two parts of a package identity - <em>name</em> and <em>publisher</em>:</p>
+<p><code>&lt;Name&gt;_&lt;PublisherId&gt;</code></p>
+<p>For example, the Package Family Name of the Windows Photos app is &quot;Microsoft.Windows.Photos_8wekyb3d8bbwe&quot;, where &quot;Microsoft.Windows.Photos&quot; is the name and &quot;8wekyb3d8bbwe&quot; is the publisher ID for Microsoft.</p>
+<p>Package Family Name is often referred to as a 'version-less Package Full Name'.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This isn't strictly true, as Package Family Name also lacks architecture and Resource ID.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Data and security are typically scoped to a package family. For example, it would be a poor experience if you configured the Notepad app installed from a Notepad version 1.0.0.0 package to enable Wordwrap. Then Notepad was subsequently updated to 1.0.0.1 and your configuration data wasn't carried over to the newer version of the package.</p>
+</div>
+<h3 id="publisher-id">Publisher Id</h3>
+<p>A Package Family Name is a string with the format:</p>
+<p><code>&lt;name&gt;_&lt;publisherid&gt;</code></p>
+<p>where Publisher Id has some very specific properties:</p>
+<ul>
+<li>Derived from Publisher</li>
+<li>MinLength = MaxLength = 13 chars [fixed-size]</li>
+<li>Allowed Characters (as regex) = a-hj-km-np-tv-z0-9
+<ul>
+<li>Base-32, Crockford Variant, i.e. alphanumeric (A-Z0-9) except no I (eye), L (ell), O (oh) or U (you)</li>
+</ul>
+</li>
+<li>Ordinal case-insensitive for comparisons --- ABCDEFABCDEFG == abcdefabcdefg</li>
+</ul>
+<p>So you’ll never see % : \ / &quot; ? or other characters in a Publisher Id.</p>
+<p>See <a href="/windows/win32/api/appmodel/nf-appmodel-packagefamilynamefromid">PackageFamilyNameFromId</a> and <a href="/windows/win32/api/appmodel/nf-appmodel-packagenameandpublisheridfromfamilyname">PackageNameAndPublisherIdFromFamilyName</a> for more details.</p>
+<p>Publisher Id is often referred to as PublisherId.</p>
+<h4 id="why-does-publisher-id-exist">Why does Publisher Id exist?</h4>
+<p>Publisher Id exists because Publisher needs to match your cert’s X.509 name/signer, thus:</p>
+<ul>
+<li>It can be very big (length &lt;= 8192 chars)</li>
+<li>It can include characters that are awkward or restricted (backslash, etc.)</li>
+</ul>
+<p>These issues can make some X.509 strings awkward or impossible to use in the filesystem, registry, URLs, and other contexts.</p>
+<h4 id="how-do-i-create-a-publisherid">How do I create a PublisherId?</h4>
+<p>Use <a href="/windows/win32/api/appmodel/nf-appmodel-packagenameandpublisheridfromfamilyname">PackageNameAndPublisherIdFromFamilyName</a> to extract the <code>PublisherId</code> from a <code>PackageFamilyName</code>.</p>
+<p>Use <a href="/windows/win32/api/appmodel/nf-appmodel-packageidfromfullname">PackageIdFromFullName</a> to extract the <code>PublisherId</code> from a <code>PackageFullName</code>.</p>
+<p>It's rare to need to create a <code>PublisherId</code> from <code>Publisher</code>, but it can be done with the use of available APIs:</p>
+<pre><code class="lang-cpp">#include &lt;appmodel.h&gt;
+
+HRESULT PublisherIdFromPublisher(
+    _In_ PCWSTR publisher,
+    _Out_writes_(PACKAGE_PUBLISHERID_MAX_LENGTH + 1) PWSTR publisherId)
+{
+    PCWSTR name{ L&quot;xyz&quot; };
+    const size_t nameLength{ ARRAYSIZE(L&quot;xyz&quot;) - 1 };
+    const size_t offsetToPublisherId{ name + 1 }; // xyz_...publisherid...
+    PACKAGE_ID id{};
+    id.name = name;
+    id.publisher = publisher;
+ 
+    WCHAR familyName[PACKAGE_PUBLISHERID_MAX_LENGTH + 1]{};
+    UINT32 n{ ARRAYSIZE(familyName) };
+    RETURN_IF_WIN32_ERROR(PackageFamilyNameFromId(&amp;id, &amp;n, familyName);
+    RETURN_IF_FAILED(StringCchCopyW(publisherId, PACKAGE_PUBLISHERID_MAX_LENGTH + 1, familyName + offsetToPublisherId));
+    return S_OK;
+}
+</code></pre>
+<p>The following is a classic Windows C implementation of the same operation:</p>
+<pre><code class="lang-c">#include &lt;appmodel.h&gt;
+
+HRESULT PublisherIdFromPublisher(
+    _In_ PCWSTR publisher,
+    _Out_writes_(PACKAGE_PUBLISHERID_MAX_LENGTH + 1) PWSTR publisherId)
+{
+    const WCHAR c_name[]{ L&quot;xyz&quot; };
+    const UINT32 c_nameLength{ ARRAYSIZE(c_nameForPublisherToPublisherId) - 1 };
+
+    PACKAGE_ID id{};
+    id.name = c_name;
+    id.publisher = publisher;
+    WCHAR familyName[PACKAGE_PUBLISHERID_MAX_LENGTH + 1]{};
+    UINT32 n{ ARRAYSIZE(familyName) };
+    RETURN_IF_WIN32_ERROR(PackageFamilyNameFromId(&amp;id, &amp;n, familyName));
+    RETURN_IF_FAILED(StringCchCopyW(publisherId, PACKAGE_PUBLISHERID_MAX_LENGTH + 1,  familyName + c_nameLength + 1);
+    return S_OK;
+}
+</code></pre>
+<p>This creates the PublisherId by converting a Package Id to a Package Family Name with the resulting format <code>xyz_&lt;publisherid&gt;</code>. This recipe is stable and reliable.</p>
+<p>This only requires you compile with appmodel.h from the SDK and link with kernel32.lib (or kernelbase.lib, onecore.lib, or api-ms-win-appmodel-runtime-l1.lib if using APIsets).</p>
+<h3 id="understanding-processor-architecture-in-package-identity">Understanding processor architecture in package identity</h3>
+<p>A common misunderstanding is that <code>Architecture=x64</code> means the package can only contain x64 code. This is not true. It means that the package works on systems supporting x64 code, and can be used by x64 apps. You could make a package containing only PDF files but declare it with <code>&lt;Identity Architecture=x64...&gt;</code> because it is only intended to be installed on x64-compatible systems (e.g. x64 packages can only be installed on x64 and (as of Windows 11) Arm64 systems, because x86, Arm, and Windows 10 Arm64 systems don't support x64).</p>
+<p>Even more misunderstood, <code>Architecture=neutral</code> does <em>not</em> mean the package contains no executable code. It means the package works on all architectures. For example, you could make a package containing an AES encryption API written in JavaScript, Python, C#, etc. but the performance is not acceptable on Arm64 systems. So, you include an optimized Arm64 binary and implement the API to handle it:</p>
+<pre><code class="lang-cpp">void Encrypt(...)
+{
+    HANDLE h{};
+    if (GetCpu() == arm64)
+    {
+        h = LoadLibrary(GetCurrentPackagePath() + &quot;\bin\encrypt-arm64.dll&quot;)
+        p = GetProcAddress(h, &quot;Encrypt&quot;)
+        return (*p)(...)
+    }
+    else
+    {
+        // ...call other implementation...
+    }
+}
+</code></pre>
+<p>Or you can make a neutral package with multiple variants:</p>
+<pre><code class="lang-YAML">\
+    bin\
+        encrypt-x86.dll
+        encrypt-x64.dll
+        encrypt-arm.dll
+        encrypt-arm64.dll
+</code></pre>
+<p>Developers can then <code>LoadLibrary(&quot;bin\encrypt-&quot; + cpu + &quot;.dll&quot;)</code> to get the appropriate binary for their process at runtime.</p>
+<p>Typically, neutral packages have no per-architecture content, but they can. There are limits to what one can do (e.g. you could make a Notepad package containing notepad.exe compiled for x86 + x64 + arm + arm64 but <strong>appxmanifest.xml</strong> can only declare <code>&lt;Application Executable=...&gt;</code> pointing to one of them). Given that there are bundles that let you install only the needed bits, this is a very uncommon thing to do. It's not illegal, just advanced and exotic.</p>
+<p>Also, <code>Architecture=x86</code> (or x64|arm|arm64) doesn't mean the package only contains executable code for the specified architecture. It's just the overwhelmingly common case.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When discussing &quot;code&quot; or &quot;executable code&quot; in this context, we are referring to portable executable (PE) files.</p>
+</div>
+<h3 id="is-package-identity-case-sensitive">Is package identity case sensitive?</h3>
+<p>Mostly, no, but <code>Publisher</code> is case-sensitive.</p>
+<p>The remaining fields (<code>Name</code>, <code>ResourceId</code>, <code>PublisherId</code>, <code>PackageFullName</code> and <code>PackageFamilyName</code>) are not. These fields will preserve case but compare case-insensitively.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity">Package identity</a></p>
+<p><a href="/windows/win32/api/appmodel/nf-appmodel-packagefamilynamefromid">PackageFamilyNameFromId</a></p>
+<p><a href="/windows/win32/api/appmodel/nf-appmodel-packagenameandpublisheridfromfamilyname">PackageNameAndPublisherIdFromFamilyName</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/package-identity-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

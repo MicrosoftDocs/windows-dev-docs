@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Basic photo, video, and audio capture with MediaCapture </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Basic photo, video, and audio capture with MediaCapture ">
+    
+    <meta name="description" content="Learn how to capture photos and video using the MediaCapture class.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="basic-photo-video-and-audio-capture-with-mediacapture-in-a-winui-3-app">Basic photo, video, and audio capture with MediaCapture in a WinUI 3 app</h1>
+
+<p>This article shows the simplest way to capture photos and video using the <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> class. The <strong>MediaCapture</strong> class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. To learn about more of the features that  <strong>MediaCapture</strong> provides, see <a href="camera.html"><strong>Camera</strong></a>.</p>
+<h2 id="initialize-the-mediacapture-object">Initialize the MediaCapture object</h2>
+<p>All of the capture methods described in this article require the first step of initializing the <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> object. This includes instantiating the object, selecting a capture device, setting initialization parameters, and then calling <a href="/uwp/api/windows.media.capture.mediacapture.initializeasync"><strong>InitializeAsync</strong></a>. Typically camera apps will display the camera preview while capturing photos or video in their UI using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a>. For a walkthrough of initializing <strong>MediaCapture</strong> and showing the preview in a XAML UI, see <a href="camera-quickstart-winui3.html">Show the camera preview in a WinUI 3 app</a>. The code examples in this article will assume that an initialized instance of <strong>MediaCapture</strong> has already been created.</p>
+<h2 id="capture-a-photo-to-a-softwarebitmap">Capture a photo to a SoftwareBitmap</h2>
+<p>The <a href="/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap"><strong>SoftwareBitmap</strong></a> class provides a common representation of images across multiple features. If you want to capture a photo and then immediately use the captured image in your app, such as displaying it in XAML, instead of capturing to a file, then you should capture to a <strong>SoftwareBitmap</strong>. You still have the option of saving the image to disk later.</p>
+<p>Capture a photo to a <strong>SoftwareBitmap</strong> using the <a href="/uwp/api/Windows.Media.Capture.LowLagPhotoCapture"><strong>LowLagPhotoCapture</strong></a> class. Get an instance of this class by calling <a href="/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync"><strong>PrepareLowLagPhotoCaptureAsync</strong></a>, passing in an <a href="/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties"><strong>ImageEncodingProperties</strong></a> object specifying the image format you want. <a href="/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed"><strong>CreateUncompressed</strong></a> creates an uncompressed encoding with the specified pixel format. Initiate photo capture by calling <a href="/uwp/api/windows.media.capture.lowlagphotocapture.captureasync"><strong>CaptureAsync</strong></a>, which returns a <a href="/uwp/api/Windows.Media.Capture.CapturedPhoto"><strong>CapturedPhoto</strong></a> object. Get a <strong>SoftwareBitmap</strong> by accessing the <a href="/uwp/api/windows.media.capture.capturedphoto.frame"><strong>Frame</strong></a> property and then the <a href="/uwp/api/windows.media.capture.capturedframe.softwarebitmap"><strong>SoftwareBitmap</strong></a> property.</p>
+<p>You can capture multiple photos by repeatedly calling <strong>CaptureAsync</strong>. When you are done capturing, call <a href="/uwp/api/windows.media.capture.advancedphotocapture.finishasync"><strong>FinishAsync</strong></a> to shut down the <strong>LowLagPhotoCapture</strong> session and free up the associated resources. After calling <strong>FinishAsync</strong>, to begin capturing photos again you will need to call <a href="/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync"><strong>PrepareLowLagPhotoCaptureAsync</strong></a> again to reinitialize the capture session before calling <a href="/uwp/api/windows.media.capture.lowlagphotocapture.captureasync"><strong>CaptureAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="capture-a-photo-to-a-memory-stream">Capture a photo to a memory stream</h2>
+<p>You can use <strong>MediaCapture</strong> to capture a photo to an in-memory stream, which you can then use to transcode the photo from the stream to a file on disk.</p>
+<p>Create an <a href="/uwp/api/Windows.Storage.Streams.InMemoryRandomAccessStream"><strong>InMemoryRandomAccessStream</strong></a> and then call <a href="/uwp/api/windows.media.capture.mediacapture.capturephototostreamasync"><strong>CapturePhotoToStreamAsync</strong></a> to capture a photo to the stream, passing in the stream and an <a href="/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties"><strong>ImageEncodingProperties</strong></a> object specifying the image format that should be used. You can create custom encoding properties by initializing the object yourself, but the class provides static methods, like <a href="/uwp/api/windows.media.mediaproperties.imageencodingproperties.createjpeg"><strong>ImageEncodingProperties.CreateJpeg</strong></a> for common encoding formats.</p>
+<p>Create a <a href="/uwp/api/Windows.Graphics.Imaging.BitmapDecoder"><strong>BitmapDecoder</strong></a> to decode the image from the in memory stream. Create a <a href="/uwp/api/Windows.Graphics.Imaging.BitmapEncoder"><strong>BitmapEncoder</strong></a> to encode the image to file by calling <a href="/uwp/api/windows.graphics.imaging.bitmapencoder.createfortranscodingasync"><strong>CreateForTranscodingAsync</strong></a>.</p>
+<p>You can optionally create a <a href="/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet"><strong>BitmapPropertySet</strong></a> object and then call <a href="/uwp/api/windows.graphics.imaging.bitmapproperties.setpropertiesasync"><strong>SetPropertiesAsync</strong></a> on the image encoder to include metadata about the photo in the image file. For more information about encoding properties, see <a href="/windows/uwp/audio-video-camera/image-metadata"><strong>Image metadata</strong></a>.</p>
+<p>Finally, call <a href="/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync"><strong>FlushAsync</strong></a> on the encoder object to transcode the photo from the in-memory stream to the file.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="capture-a-video">Capture a video</h2>
+<p>Quickly add video capture to your app by using the <a href="/uwp/api/Windows.Media.Capture.LowLagMediaRecording"><strong>LowLagMediaRecording</strong></a> class.</p>
+<p>First, the <strong>LowLagMediaRecording</strong> needs to persist while video is being captured, so declare a class variable to for the object.</p>
+<div class="lang-csharp">
+</div>
+<p>Call <a href="/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync"><strong>PrepareLowLagRecordToStorageFileAsync</strong></a> to initialize the media recording, passing in the storage file and a <a href="/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile"><strong>MediaEncodingProfile</strong></a> object specifying the encoding for the video. The class provides static methods, like <a href="/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4"><strong>CreateMp4</strong></a>, for creating common video encoding profiles. Call <a href="/uwp/api/windows.media.capture.lowlagmediarecording.startasync"><strong>StartAsync</strong></a> to begin capturing video.</p>
+<div class="lang-csharp">
+</div>
+<p>To stop recording video, call <a href="/uwp/api/windows.media.capture.lowlagmediarecording.stopasync"><strong>StopAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>You can continue to call <strong>StartAsync</strong> and <strong>StopAsync</strong> to capture additional videos. When you are done capturing videos, call <a href="/uwp/api/windows.media.capture.lowlagmediarecording.finishasync"><strong>FinishAsync</strong></a> to dispose of the capture session and clean up associated resources. After this call, you must call <strong>PrepareLowLagRecordToStorageFileAsync</strong> again to reinitialize the capture session before calling <strong>StartAsync</strong>.</p>
+<div class="lang-csharp">
+</div>
+<p>When capturing video, you should register a handler for the <a href="/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded"><strong>RecordLimitationExceeded</strong></a> event of the <strong>MediaCapture</strong> object, which will be raised by the operating system if you surpass the limit for a single recording, currently three hours. In the handler for the event, you should finalize your recording by calling <a href="/uwp/api/windows.media.capture.lowlagmediarecording.stopasync"><strong>StopAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<p>You can pause a video recording and then resume recording without creating a separate output file by calling <a href="/uwp/api/windows.media.capture.lowlagmediarecording.pauseasync"><strong>PauseAsync</strong></a> and then calling <a href="/uwp/api/windows.media.capture.lowlagmediarecording.resumeasync"><strong>ResumeAsync</strong></a>.</p>
+<div class="lang-csharp">
+</div>
+<div class="lang-csharp">
+</div>
+<p>Calling <a href="/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync"><strong>PauseWithResultAsync</strong></a> returns a <a href="/uwp/api/Windows.Media.Capture.MediaCapturePauseResult"><strong>MediaCapturePauseResult</strong></a> object. The <a href="/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe"><strong>LastFrame</strong></a> property is a <a href="/uwp/api/Windows.Media.VideoFrame"><strong>VideoFrame</strong></a> object representing the last frame. To display the frame in XAML, get the <strong>SoftwareBitmap</strong> representation of the video frame. Currently, only images in BGRA8 format with premultiplied or empty alpha channel are supported, so call <a href="/uwp/api/windows.graphics.imaging.softwarebitmap.convert"><strong>Convert</strong></a> if necessary to get the correct format.  <strong>PauseWithResultAsync</strong> also returns the duration of the video that was recorded in the preceding segment in case you need to track how much total time has been recorded.</p>
+<p>You can also get a result frame when you stop the video by calling <a href="/uwp/api/windows.media.capture.lowlagmediarecording.stopwithresultasync"><strong>StopWithResultAsync</strong></a>.</p>
+<h3 id="play-and-edit-captured-video-files">Play and edit captured video files</h3>
+<p>Once you have captured a video to a file, you may want to load the file and play it back within your app's UI. You can do this using the <strong><a href="/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement">MediaPlayerElement</a></strong> XAML control and an associated <strong><a href="/uwp/api/windows.media.playback.mediaplayer">MediaPlayer</a></strong>. For information on playing media in a XAML page, see <a href="/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer">Play audio and video with MediaPlayer</a>.</p>
+<p>[TBD - Is the MediaComposition framework supported / recommended for WinUI?]</p>
+<p>You can also create a <strong><a href="/uwp/api/windows.media.editing.mediaclip">MediaClip</a></strong> object from a video file by calling <strong><a href="/uwp/api/windows.media.editing.mediaclip.createfromfileasync">CreateFromFileAsync</a></strong>.  A <strong><a href="/uwp/api/windows.media.editing.mediacomposition">MediaComposition</a></strong> provides basic video editing functionality like arranging the sequence of <strong>MediaClip</strong> objects, trimming video length, creating layers, adding background music, and applying video effects. For more information on working with media compositions, see <a href="/windows/uwp/audio-video-camera/media-compositions-and-editing">Media compositions and editing</a>.</p>
+<h2 id="capture-audio">Capture audio</h2>
+<p>You can quickly add audio capture to your app by using the same technique shown above for capturing video. Call <a href="/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync"><strong>PrepareLowLagRecordToStorageFileAsync</strong></a> to initialize the capture session, passing in the file and a <a href="/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile"><strong>MediaEncodingProfile</strong></a> which is generated in this example by the <a href="/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3"><strong>CreateMp3</strong></a> static method. To begin recording, call <a href="/uwp/api/windows.media.capture.lowlagmediarecording.startasync"><strong>StartAsync</strong></a>.</p>
+<p>[TBD - This code is throwing 'The request is invalid in the current state.']</p>
+<div class="lang-csharp">
+</div>
+<p>Call <a href="/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync"><strong>StopAsync</strong></a> to stop the audio recording.</p>
+<div class="lang-csharp">
+</div>
+<p>You can call <strong>StartAsync</strong> and <strong>StopAsync</strong> multiple times to record several audio files. When you are done capturing audio, call <a href="/uwp/api/windows.media.capture.lowlagmediarecording.finishasync"><strong>FinishAsync</strong></a> to dispose of the capture session and clean up associated resources. After this call, you must call <strong>PrepareLowLagRecordToStorageFileAsync</strong> again to reinitialize the capture session before calling <strong>StartAsync</strong>.</p>
+<p>For information about detecting when the system changes the audio level of the audio capture stream, see <a href="detect-audio-level-changes.html">Detect and respond to audio level changes by the system</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/basic-photo-capture.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Reference for Windows 11 settings </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Reference for Windows 11 settings ">
+    
+    <meta name="description" content="This article provides reference information for accessing settings values on devices running Windows 11.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="reference-for-windows-11-settings">Reference for Windows 11 settings</h1>
+
+<p>The information provided on this page includes details for accessing the status of Windows Backup and Restore settings that are supported in Windows 11. This public documentation ensures effective data portability by providing third-party developers with a streamlined process to access the data. Settings that are supported on both Windows 10 and Windows 11 are documented in <a href="settings-common.html">Reference for common Windows settings</a>.</p>
+<p>Settings status is accessed in one of two ways:</p>
+<ol>
+<li>Via the Windows registry: For settings below that include registry details, please use that information to access the settings.</li>
+<li>Via the Cloud Data Store Reader tool. These settings must be extracted from a data store to be readable. If the setting below does not list registry details, then the settings must be extracted using the Cloud Data Store Reader tool. For information on how to use this tool, see <a href="readclouddatasettings-exe.html">Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)</a>.</li>
+</ol>
+<h2 id="cellular">Cellular</h2>
+<p>User preferences that customize the Windows behavior when a cellular connection is available.</p>
+<h3 id="registry-values-under-hkey_local_machinesoftwaremicrosoftwcmsvccellularfailover">Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\CellularFailover</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AllowFailover</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Use cellular whenever Wi-Fi is poor.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registry-values-under-hkey_local_machinesoftwaremicrosoftwcmsvcsubscriptionmanagericcidimsi">Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\SubscriptionManager\&lt;ICCID&gt;\&lt;IMSI&gt;</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UserCost</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Maps the metered/unmetered state to each IMSI. 0: Unmetered. 1: Metered.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registry-values-under-hkey_local_machinesoftwaremicrosoftwwansvcdisallowautoconnectbyclient">Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WwanSvc\DisallowAutoConnectByClient</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;interface GUID&gt;</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Let Windows keep the device connected to cellular.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registry-values-under-hkey_local_machinesoftwaremicrosoftwwansvcroamingpolicyforphoneinterface-guid">Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WwanSvc\RoamingPolicyForPhone\&lt;interface GUID&gt;</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InternetAlwaysOn</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Roaming or no roaming. When entering a roaming area, your data connection will be turned off if roaming is not allowed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gaming-game-bar-game-mode-gaming-shortcuts">Gaming: Game Bar, Game Mode, Gaming Shortcuts</h2>
+<p>This setting controls settings related to gaming and controls such as Game bar and gaming shortcuts.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversiongamedvr">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\GameDVR</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VKMSaveHistoricalVideo</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles save historical video enabled.</td>
+</tr>
+<tr>
+<td>VKMTakeScreenshot</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles take screenshot enabled.</td>
+</tr>
+<tr>
+<td>VKTakeScreenshot</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for save historical screenshot.</td>
+</tr>
+<tr>
+<td>VKSaveHistoricalVideo</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for take screenshot.</td>
+</tr>
+<tr>
+<td>VKMToggleBroadcast</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles broadcast enabled.</td>
+</tr>
+<tr>
+<td>VKToggleBroadcast</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for take broadcast.</td>
+</tr>
+<tr>
+<td>VKMToggleCameraCapture</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles camera capture enabled.</td>
+</tr>
+<tr>
+<td>VKToggleCameraCapture</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for camera capture.</td>
+</tr>
+<tr>
+<td>VKMToggleGameBar</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles game bar enabled.</td>
+</tr>
+<tr>
+<td>VKToggleGameBar</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for game bar.</td>
+</tr>
+<tr>
+<td>VKMToggleMicrophoneCapture</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles microphone capture enabled.</td>
+</tr>
+<tr>
+<td>VKToggleMicrophoneCapture</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for microphone capture.</td>
+</tr>
+<tr>
+<td>VKMToggleRecording</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles recording enabled.</td>
+</tr>
+<tr>
+<td>VKToggleRecording</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for recording.</td>
+</tr>
+<tr>
+<td>VKMToggleRecordingIndicator</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Toggles recording indicator enabled.</td>
+</tr>
+<tr>
+<td>VKToggleRecordingIndicator</td>
+<td>REG_DWORD</td>
+<td>ASCII Value for keys</td>
+<td>Key binding for recording indicator.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftgamebar">Registry values under HKCU\Software\Microsoft\GameBar</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UseNexusForGameBarEnabled</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Key associated with toggle Gaming -&gt; Game Bar -&gt; &quot;Allow your controller to open Game Bar&quot;</td>
+</tr>
+<tr>
+<td>AutoGameModeEnabled</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Key associated with toggle Gaming -&gt; Game Mode -&gt; Game Mode.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---start---layout---pins-and-recommendations">Personalization - Start - Layout - Pins and recommendations</h2>
+<p>Specifies the start layout type.</p>
+<h3 id="registry-values-under-hkey_current_usersoftwaremicrosoftwindowscurrentversionexploreradvanced">Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start_Layout</td>
+<td>REG_DWORD</td>
+<td>0 [Default], 1 [More Pins], 2 [More Recommendations]</td>
+<td>The start layout.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---start---show-all-pins-by-default">Personalization - Start - Show all pins by default</h2>
+<p>Specifies whether all pins show by default in Start.</p>
+<h3 id="registry-values-under-hkey_current_usersoftwaremicrosoftwindowscurrentversionstart">Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Start</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ShowAllPinsList</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Specifies if showing all pins by default</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---start---recommendations">Personalization - Start - Recommendations</h2>
+<p>Specifies whether recommendations for tips, shortcuts, new apps and more are shown.</p>
+<h3 id="registry-values-under-hkey_current_usersoftwaremicrosoftwindowscurrentversionexploreradvanced-1">Registry values under HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start_IrisRecommendations</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Specifies whether recommendations are enabled.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---alignment">Personalization - Taskbar - Alignment</h2>
+<p>This setting sets the alignment of the taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedtaskbaral">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarAl</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Al</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Specifies the taskbar alignment. 0 is left aligned. 1 is center aligned.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---autohide">Personalization - Taskbar - Autohide</h2>
+<p>This setting sets the auto-hide behavior of the taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexplorerstuckrects3">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3\</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Autohide</td>
+<td>REG_BINARY</td>
+<td>A binary blob.</td>
+<td>This is an opaque binary blob copied from the following location on the backed up.</td>
+</tr>
+<tr>
+<td>SystemSettings_Taskbar_Autohide</td>
+<td>REG_BINARY</td>
+<td>A binary blob.</td>
+<td>This is an opaque binary blob copied from the following location on the backed up.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---combine-buttons">Personalization - Taskbar - Combine buttons</h2>
+<p>This setting enables combining buttons and hiding labels on the taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedtaskbarglomlevel">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarGlomLevel</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_GroupingMode</td>
+<td>REG_SZ</td>
+<td>0, 1, or 2</td>
+<td>0: Always, 1: When taskbar is full, 2: Never.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---flashing">Personalization - Taskbar - Flashing</h2>
+<p>This setting enables flashing for taskbar apps.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedtaskbarflashing">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarFlashing</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Flashing</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables flashing for taskbar apps.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---share-window">Personalization - Taskbar - Share window</h2>
+<p>This setting enables sharing any window from taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedtaskbarsn">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarSn</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Sn</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables sharing any window from taskbar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---show-desktop">Personalization - Taskbar - Show desktop</h2>
+<p>This setting enables showing the desktop by clicking the far corner of the taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedtaskbarsd">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarSd</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Sd</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables showing the desktop by clicking the far corner of the taskbar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---show-recent-searches">Personalization - Taskbar - Show recent searches</h2>
+<p>This setting enables showing recent searches when hovering on the search icon in taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionfeedsdsbopenonhover">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Feeds\DSB\OpenOnHover</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Sh</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Enables showing recent searches when hovering on the search icon in taskbar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---task-view">Personalization - Taskbar - Task view</h2>
+<p>This setting shows or hides the Task View button on the taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedshowtaskviewbutton">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowTaskViewButton</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_TaskView</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Specifies whether the task view button is shown on the taskbar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---taskbar---widgets-button">Personalization - Taskbar - Widgets button</h2>
+<p>This setting shows or hides the Widgets button on the taskbar.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftwindowscurrentversionexploreradvancedtaskbarda">Registry values under HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\TaskbarDa</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SystemSettings_DesktopTaskbar_Da</td>
+<td>REG_SZ</td>
+<td>0 or 1</td>
+<td>Specifies whether the Widgets button is shown on the taskbar.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="personalization---themes">Personalization - Themes</h2>
+<p>This setting is used to set a personalized theme.</p>
+<h3 id="type-windowsdatapersonalizationthemescurrentthemetype-enumeration">Type: Windows.Data.PersonalizationThemes.CurrentThemeType enumeration</h3>
+<h3 id="currentthemetype-values">CurrentThemeType Values</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InboxTheme</td>
+<td>0</td>
+<td>In-box theme.</td>
+</tr>
+<tr>
+<td>ContrastTheme</td>
+<td>1</td>
+<td>Contrast theme.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="type-windowsdatapersonalizationthemescurrentthemetype-structure">Type: Windows.Data.PersonalizationThemes.CurrentThemeType structure</h3>
+<h4 id="currentthemetype-properties">CurrentThemeType Properties</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><strong>CurrentThemeType</strong></td>
+<td>The current theme type.</td>
+</tr>
+<tr>
+<td>basePersonalizationThemeName</td>
+<td>wstring</td>
+<td>The name of the current inbox theme applied in the system. The user may have done customization on top of this inbox theme.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="text-input">Text Input</h2>
+<p>This setting helps to chose a theme for touch keyboard, voice typing, emoji and more, and input method editors.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosofttablettip17">Registry values under HKCU\Software\Microsoft\TabletTip\1.7</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IsKeyBackgroundEnabled</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Indicates if key background is enabled.</td>
+</tr>
+<tr>
+<td>KeyLabelSize</td>
+<td>REG_DWORD</td>
+<td>Min value: 0, Max value: 2</td>
+<td>Key label size.</td>
+</tr>
+<tr>
+<td>UserKeyboardScalingFactor</td>
+<td>REG_DWORD</td>
+<td>Min value: 1, Max value: 1000</td>
+<td>User keyboard scaling factor.</td>
+</tr>
+<tr>
+<td>SelectedThemeIndex</td>
+<td>REG_DWORD</td>
+<td>Min value: 0, Max value: 15</td>
+<td>Selected theme index.</td>
+</tr>
+<tr>
+<td>SelectedThemeName</td>
+<td>REG_SZ</td>
+<td>One of the following values: &quot;LightTheme&quot;, &quot;DarkTheme&quot;, &quot;ColorPopTheme&quot;, &quot;BlackWhiteTheme&quot;, &quot;PoppyRedTheme&quot;, &quot;IceBlueTheme&quot;, &quot;PlatinumTheme&quot;, &quot;TangerineTidesTheme&quot;, &quot;LilacRiverTheme&quot;, &quot;SilkyDawnTheme&quot;, &quot;IndigoBreezeTheme&quot;, &quot;PinkBlueTheme&quot;, &quot;GreenPurpleTheme&quot;, &quot;PinkOrangeTheme&quot;, &quot;CustomTheme&quot;</td>
+<td>Selected theme name.</td>
+</tr>
+<tr>
+<td>ThemeDataVersion</td>
+<td>REG_DWORD</td>
+<td>2</td>
+<td>Theme data version.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="typing">Typing</h2>
+<p>This setting contains toggles and other settings related to touch keyboard, text suggestions and preferences.</p>
+<h3 id="registry-values-under-hkcusoftwaremicrosoftinputsettings">Registry values under HKCU\Software\Microsoft\input\Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EnableAutoShiftEngage</td>
+<td>REG_DWORD</td>
+<td>1 or 0</td>
+<td>Enables auto shift engage.</td>
+</tr>
+<tr>
+<td>EnableDoubleTapSpace</td>
+<td>REG_DWORD</td>
+<td>1 or 0</td>
+<td>Enables double-tap space.</td>
+</tr>
+<tr>
+<td>EnableAutocorrection</td>
+<td>REG_DWORD</td>
+<td>1 or 0</td>
+<td>Enables auto-correction.</td>
+</tr>
+<tr>
+<td>IsVoiceTypingKeyEnabled</td>
+<td>REG_DWORD</td>
+<td>1 or 0</td>
+<td>Indicates if voice typing key is enabled.</td>
+</tr>
+<tr>
+<td>MultilingualEnabled</td>
+<td>REG_DWORD</td>
+<td>1 or 0</td>
+<td>Indicates in multilingual is enabled.</td>
+</tr>
+<tr>
+<td>EnableHwkbTextPrediction</td>
+<td>REG_DWORD</td>
+<td>An integer.</td>
+<td>ASCII Value for keys.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vpn">VPN</h2>
+<p>VPN settings that apply to all VPN connections configured in the Settings app.</p>
+<h3 id="registry-values-under-hkey_local_machinesystemcurrentcontrolsetservicesrasmanparametersconfigvpncostednetworksettings">Registry values under HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\Parameters\Config\VpnCostedNetworkSettings</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NoCostedNetwork</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Block VPN over metered networks.</td>
+</tr>
+<tr>
+<td>NoRoamingNetwork</td>
+<td>REG_DWORD</td>
+<td>0 or 1</td>
+<td>Block VPN while roaming.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wi-fi">Wi-Fi</h2>
+<p>Global random hardware addresses preference.</p>
+<h3 id="registry-values-under-hkey_local_machinesoftwaremicrosoftwlansvcinterfacesinterface-guid">Registry values under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WlanSvc\Interfaces\&lt;Interface GUID&gt;</h3>
+<table>
+<thead>
+<tr>
+<th>Registry value</th>
+<th>Type</th>
+<th>Data</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RandomMacState</td>
+<td>REG_BINARY</td>
+<td>00 00 00 00 or 01 00 00 00</td>
+<td>Whether to use random hardware addresses for newly configured Wi-Fi networks.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/settings/settings-windows-11.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

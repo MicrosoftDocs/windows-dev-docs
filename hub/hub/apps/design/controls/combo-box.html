@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Combo box and list box </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Combo box and list box ">
+    
+    <meta name="description" content="Learn how to use list boxes and combo boxes, also called drop-down lists, to present lists of items that users can select from.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="combo-box-and-list-box">Combo box and list box</h1>
+
+<p>Use a combo box (also known as a drop-down list) to present a list of items that a user can select from. A combo box starts in a compact state and expands to show a list of selectable items. A list box is similar to a combo box, but is not collapsible/does not have a compact state. You can learn more about list boxes at the end of this article.</p>
+<p>When the combo box is closed, it either displays the current selection or is empty if there is no selected item. When the user expands the combo box, it displays the list of selectable items.</p>
+<p><img src="images/combo-box-no-selection.png" alt="An image of a drop-down list in its compact state."></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<ul>
+<li>Use a drop-down list to let users select a single value from a set of items that can be adequately represented with single lines of text.</li>
+<li>Use a list or grid view instead of a combo box to display items that contain multiple lines of text or images.</li>
+<li>When there are fewer than five items, consider using <a href="radio-button.html">radio buttons</a> (if only one item can be selected) or <a href="checkbox.html">check boxes</a> (if multiple items can be selected).</li>
+<li>Use a combo box when the selection items are of secondary importance in the flow of your app. If the default option is recommended for most users in most situations, showing all the items by using a list view might draw more attention to the options than necessary. You can save space and minimize distraction by using a combo box.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p>A combo box in its compact state can show a header.</p>
+<p><img src="images/combo-box-no-selection.png" alt="Screenshot showing a drop-down list in its compact state."></p>
+<p>Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.</p>
+<p><img src="images/combo-box-list-item-state.png" alt="Example of a drop-down list with long text string"></p>
+<p>If the collection in a combo box is long enough, a scroll bar will appear to accommodate it. Group items logically in the list.</p>
+<p><img src="images/combo-box-scroll.png" alt="Example of a scroll bar in a drop-down list"></p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Limit the text content of combo box items to a single line.</li>
+<li>Sort items in a combo box in the most logical order. Group together related options and place the most common options at the top. Sort names in alphabetical order, numbers in numerical order, and dates in chronological order.</li>
+</ul>
+<h2 id="list-boxes">List boxes</h2>
+<p>A list box allows the user to choose either a single item or multiple items from a collection. List boxes are similar to drop-down lists, except that list boxes are always open—there is no compact (non-expanded) state for a list box. Items in the list can be scrolled if there isn't space to show everything.</p>
+<h3 id="is-a-list-box-the-right-control">Is a list box the right control?</h3>
+<ul>
+<li>A list box can be useful when items in the list are important enough to prominently display, and when there's enough screen real estate, to show the full list.</li>
+<li>A list box should draw the user's attention to the full set of alternatives in an important choice. By contrast, a drop-down list initially draws the user's attention to the selected item.</li>
+<li>Avoid using a list box if:
+<ul>
+<li>There is a very small number of items for the list. A single-select list box that always has the same 2 options might be better presented as <a href="radio-button.html">radio buttons</a>. Also consider using radio buttons when there are 3 or 4 static items in the list.</li>
+<li>The list box is single-select and it always has the same 2 options where one can be implied as not the other, such as &quot;on&quot; and &quot;off.&quot; Use a single check box or a toggle switch.</li>
+<li>There is a very large number of items. A better choice for long lists are grid view and list view. For very long lists of grouped data, semantic zoom is preferred.</li>
+<li>The items are contiguous numerical values. If that's the case, consider using a <a href="slider.html">slider</a>.</li>
+<li>The selection items are of secondary importance in the flow of your app or the default option is recommended for most users in most situations. Use a drop-down list instead.</li>
+</ul>
+</li>
+</ul>
+<h3 id="recommendations-for-list-boxes">Recommendations for list boxes</h3>
+<ul>
+<li>The ideal range of items in a list box is 3 to 9.</li>
+<li>A list box works well when its items can dynamically vary.</li>
+<li>If possible, set the size of a list box so that its list of items don't need to be panned or scrolled.</li>
+<li>Verify that the purpose of the list box, and which items are currently selected, is clear.</li>
+<li>Reserve visual effects and animations for touch feedback, and for the selected state of items.</li>
+<li>Limit the list box item's text content to a single line. If the items are visuals, you can customize the size. If an item contains multiple lines of text or images, instead use a grid view or list view.</li>
+<li>Use the default font unless your brand guidelines indicate to use another.</li>
+<li>Don't use a list box to perform commands or to dynamically show or hide other controls.</li>
+</ul>
+<h2 id="create-a-combo-box">Create a combo box</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox">ComboBox class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.iseditable">IsEditable property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox">Text property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox">TextSubmitted event</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListBox">ListBox class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/ComboBox">Open the WinUI 3 Gallery app and see the ComboBox in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>You populate the combo box by adding objects directly to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items">Items</a> collection or by binding the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> property to a data source. Items added to the ComboBox are wrapped in <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxitem">ComboBoxItem</a> containers.</p>
+<p>Here's a simple combo box with items added in XAML.</p>
+<pre><code class="lang-xaml">&lt;ComboBox Header=&quot;Colors&quot; PlaceholderText=&quot;Pick a color&quot; Width=&quot;200&quot;&gt;
+    &lt;x:String&gt;Blue&lt;/x:String&gt;
+    &lt;x:String&gt;Green&lt;/x:String&gt;
+    &lt;x:String&gt;Red&lt;/x:String&gt;
+    &lt;x:String&gt;Yellow&lt;/x:String&gt;
+&lt;/ComboBox&gt;
+</code></pre>
+<p>The following example demonstrates binding a combo box to a collection of FontFamily objects.</p>
+<pre><code class="lang-xaml">&lt;ComboBox x:Name=&quot;FontsCombo&quot; Header=&quot;Fonts&quot; Height=&quot;44&quot; Width=&quot;296&quot;
+          ItemsSource=&quot;{x:Bind fonts}&quot; DisplayMemberPath=&quot;Source&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">ObservableCollection&lt;FontFamily&gt; fonts = new ObservableCollection&lt;FontFamily&gt;()
+{
+    fonts.Add(new FontFamily(&quot;Arial&quot;));
+    fonts.Add(new FontFamily(&quot;Courier New&quot;));
+    fonts.Add(new FontFamily(&quot;Times New Roman&quot;));
+};
+</code></pre>
+<h3 id="item-selection">Item selection</h3>
+<p>Like ListView and GridView, ComboBox is derived from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector">Selector</a>, so you can get the user's selection in the same standard way.</p>
+<p>You can get or set the combo box's selected item by using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem">SelectedItem</a> property, and get or set the index of the selected item by using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedindex">SelectedIndex</a> property.</p>
+<p>To get the value of a particular property on the selected data item, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedvalue">SelectedValue</a> property. In this case, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedvaluepath">SelectedValuePath</a> to specify which property on the selected item to get the value from.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you set SelectedItem or SelectedIndex to indicate the default selection, an exception occurs if the property is set before the combo box Items collection is populated. Unless you define your Items in XAML, it's best to handle the combo box Loaded event, and set SelectedItem or SelectedIndex in the Loaded event handler.</p>
+</div>
+<p>You can bind to these properties in XAML, or handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged">SelectionChanged</a> event to respond to selection changes.</p>
+<p>In the event handler code, you can get the selected item from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.addeditems">SelectionChangedEventArgs.AddedItems</a> property. You can get the previously selected item (if any) from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectionchangedeventargs.removeditems">SelectionChangedEventArgs.RemovedItems</a> property. The AddedItems and RemovedItems collections each contain only 1 item because combo box does not support multiple selection.</p>
+<p>This example shows how to handle the SelectionChanged event, and also how to bind to the selected item.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;ComboBox x:Name=&quot;colorComboBox&quot; Width=&quot;200&quot;
+              Header=&quot;Colors&quot; PlaceholderText=&quot;Pick a color&quot;
+              SelectionChanged=&quot;ColorComboBox_SelectionChanged&quot;&gt;
+        &lt;x:String&gt;Blue&lt;/x:String&gt;
+        &lt;x:String&gt;Green&lt;/x:String&gt;
+        &lt;x:String&gt;Red&lt;/x:String&gt;
+        &lt;x:String&gt;Yellow&lt;/x:String&gt;
+    &lt;/ComboBox&gt;
+
+    &lt;Rectangle x:Name=&quot;colorRectangle&quot; Height=&quot;30&quot; Width=&quot;100&quot;
+               Margin=&quot;0,8,0,0&quot; HorizontalAlignment=&quot;Left&quot;/&gt;
+
+    &lt;TextBlock Text=&quot;{x:Bind colorComboBox.SelectedIndex, Mode=OneWay}&quot;/&gt;
+    &lt;TextBlock Text=&quot;{x:Bind colorComboBox.SelectedItem, Mode=OneWay}&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    string colorName = e.AddedItems[0].ToString();
+    Color color;
+    switch (colorName)
+    {
+        case &quot;Yellow&quot;:
+            color = Colors.Yellow;
+            break;
+        case &quot;Green&quot;:
+            color = Colors.Green;
+            break;
+        case &quot;Blue&quot;:
+            color = Colors.Blue;
+            break;
+        case &quot;Red&quot;:
+            color = Colors.Red;
+            break;
+    }
+    colorRectangle.Fill = new SolidColorBrush(color);
+}
+</code></pre>
+<h4 id="selectionchanged-and-keyboard-navigation">SelectionChanged and keyboard navigation</h4>
+<p>By default, the SelectionChanged event occurs when a user clicks, taps, or presses Enter on an item in the list to commit their selection, and the combo box closes. Selection doesn't change when the user navigates the open combo box list with the keyboard arrow keys.</p>
+<p>To make a combo box that &quot;live updates&quot; while the user is navigating the open list with the arrow keys (like a Font selection drop-down), set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.selectionchangedtrigger">SelectionChangedTrigger</a> to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxselectionchangedtrigger">Always</a>. This causes the SelectionChanged event to occur when focus changes to another item in the open list.</p>
+<h4 id="selected-item-behavior-change">Selected item behavior change</h4>
+<p>In Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK 17763</a>) or later, the behavior of selected items is updated to support editable combo boxes.</p>
+<p>Prior to SDK 17763, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) was required to be in the combo box's Items collection. Using the previous example, setting <code>colorComboBox.SelectedItem = &quot;Pink&quot;</code> results in:</p>
+<ul>
+<li>SelectedItem = null</li>
+<li>SelectedValue = null</li>
+<li>SelectedIndex = -1</li>
+</ul>
+<p>In SDK 17763 and later, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) is not required to be in the combo box's Items collection. Using the previous example, setting <code>colorComboBox.SelectedItem = &quot;Pink&quot;</code> results in:</p>
+<ul>
+<li>SelectedItem = Pink</li>
+<li>SelectedValue = Pink</li>
+<li>SelectedIndex = -1</li>
+</ul>
+<h3 id="text-search">Text Search</h3>
+<p>Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the &quot;w&quot; key to bring &quot;Washington&quot; into view for quick selection. The text search is not case-sensitive.</p>
+<p>You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.istextsearchenabled">IsTextSearchEnabled</a> property to <strong>false</strong> to disable this functionality.</p>
+<h2 id="make-a-combo-box-editable">Make a combo box editable</h2>
+<p>By default, a combo box lets the user select from a pre-defined list of options. However, there are cases where the list contains only a subset of valid values, and the user should be able to enter other values that aren't listed. To support this, you can make the combo box editable.</p>
+<p>To make a combo box editable, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.iseditable">IsEditable</a> property to <strong>true</strong>. Then, handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox">TextSubmitted</a> event to work with the value entered by the user.</p>
+<p>By default, the SelectedItem value is updated when the user commits custom text. You can override this behavior by setting <strong>Handled</strong> to <strong>true</strong> in the TextSubmitted event args. When the event is marked as handled, the combo box will take no further action after the event and will stay in the editing state. SelectedItem will not be updated.</p>
+<p>This example shows a simple editable combo box. The list contains simple strings, and any value entered by the user is used as entered.</p>
+<p>A &quot;recently used names&quot; chooser lets the user enter custom strings. The 'RecentlyUsedNames' list contains some values that the user can choose from, but the user can also add a new, custom value. The 'CurrentName' property represents the currently entered name.</p>
+<pre><code class="lang-xaml">&lt;ComboBox IsEditable=&quot;true&quot;
+          ItemsSource=&quot;{x:Bind RecentlyUsedNames}&quot;
+          SelectedItem=&quot;{x:Bind CurrentName, Mode=TwoWay}&quot;/&gt;
+</code></pre>
+<h3 id="text-submitted">Text submitted</h3>
+<p>You can handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox">TextSubmitted</a> event to work with the value entered by the user. In the event handler, you will typically validate that the value entered by the user is valid, then use the value in your app. Depending on the situation, you might also add the value to the combo box's list of options for future use.</p>
+<p>The TextSubmitted event occurs when these conditions are met:</p>
+<ul>
+<li>The IsEditable property is <strong>true</strong></li>
+<li>The user enters text that does not match an existing entry in the combo box list</li>
+<li>The user presses Enter, or moves focus from the combo box.</li>
+</ul>
+<p>The TextSubmitted event does not occur if the user enters text and then navigates up or down through the list.</p>
+<h3 id="sample---validate-input-and-use-locally">Sample - Validate input and use locally</h3>
+<p>In this example, a font size chooser contains a set of values corresponding to the font size ramp, but the user may enter font sizes that are not in the list.</p>
+<p>When the user adds a value that's not in the list, the font size updates, but the value is not added to the list of font sizes.</p>
+<p>If the newly entered value is not valid, you use the SelectedValue to revert the Text property to the last known good value.</p>
+<pre><code class="lang-xaml">&lt;ComboBox x:Name=&quot;fontSizeComboBox&quot;
+          IsEditable=&quot;true&quot;
+          ItemsSource=&quot;{x:Bind ListOfFontSizes}&quot;
+          TextSubmitted=&quot;FontSizeComboBox_TextSubmitted&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
+{
+    if (byte.TryParse(e.Text, out double newValue))
+    {
+        // Update the app's font size.
+        _fontSize = newValue;
+    }
+    else
+    {
+        // If the item is invalid, reject it and revert the text.
+        // Mark the event as handled so the framework doesn't update the selected item.
+        sender.Text = sender.SelectedValue.ToString();
+        e.Handled = true;
+    }
+}
+</code></pre>
+<h3 id="sample---validate-input-and-add-to-list">Sample - Validate input and add to list</h3>
+<p>Here, a &quot;favorite color chooser&quot; contains the most common favorite colors (Red, Blue, Green, Orange), but the user may enter a favorite color that's not in the list. When the user adds a valid color (like Pink), the newly entered color is added to the list and set as the active &quot;favorite color&quot;.</p>
+<pre><code class="lang-xaml">&lt;ComboBox x:Name=&quot;favoriteColorComboBox&quot;
+          IsEditable=&quot;true&quot;
+          ItemsSource=&quot;{x:Bind ListOfColors}&quot;
+          TextSubmitted=&quot;FavoriteColorComboBox_TextSubmitted&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
+{
+    if (IsValid(e.Text))
+    {
+        FavoriteColor newColor = new FavoriteColor()
+        {
+            ColorName = e.Text,
+            Color = ColorFromStringConverter(e.Text)
+        }
+        ListOfColors.Add(newColor);
+    }
+    else
+    {
+        // If the item is invalid, reject it but do not revert the text.
+        // Mark the event as handled so the framework doesn't update the selected item.
+        e.Handled = true;
+    }
+}
+
+bool IsValid(string Text)
+{
+    // Validate that the string is: not empty; a color.
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.ComboBox">ComboBox class</a>, <a href="/uwp/api/windows.ui.xaml.controls.combobox.iseditable">IsEditable property</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ComboBox">Text property</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ComboBox">TextSubmitted event</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListBox">ListBox class</a></li>
+<li><a href="winui2gallery:/item/ComboBox">Open the WinUI 2 Gallery app and see the ComboBox in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="/uwp/api/windows.ui.xaml.controls.combobox.iseditable">IsEditable</a> property requires Windows 10, version 1809 (<a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">SDK 17763</a>) or later.</p>
+</div>
+<p><a href="/windows/uwp/get-started/winui2/">WinUI 2.2</a> or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="text-controls.html">Text controls</a></li>
+<li><a href="text-controls.html#guidelines-for-spell-checking">Guidelines for spell checking</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox">TextBox class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox">PasswordBox class</a></li>
+<li><a href="/dotnet/api/system.string.length">String.Length property</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/combo-box.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

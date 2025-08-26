@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to request, create, and save a notification channel </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to request, create, and save a notification channel ">
+    
+    <meta name="description" content="How to request, create, and save a notification channel">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-request-create-and-save-a-notification-channel">How to request, create, and save a notification channel</h1>
+
+<p>You can open a channel Uniform Resource Identifier (URI) over which your app can receive push notifications. You can then send the channel to your server which uses it to send push notifications, and close it when you no longer need it. A channel is a unique address that represents a single user on a single device, for a specific app or secondary tile.</p>
+<p>You should request a new channel each time that your app is launched, and update the cloud server when the URI changes. For more details, see Remarks.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Notification channels automatically expire after 30 days.</p>
+</div>
+<h2 id="what-you-need-to-know">What you need to know</h2>
+<h3 id="technologies">Technologies</h3>
+<ul>
+<li>Windows Runtime</li>
+</ul>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>Familiarity with push notification and Windows Push Notification Services (WNS) concepts, requirements, and operation. These are discussed in the <a href="wns-overview.html">Windows Push Notification Services (WNS) overview</a>.</li>
+</ul>
+<h2 id="instructions">Instructions</h2>
+<h3 id="step-1-add-namespace-declarations">Step 1: Add namespace declarations</h3>
+<p>Windows.UI.Notifications includes the toast APIs.</p>
+<pre><code class="lang-csharp">using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+using Windows.Networking.PushNotifications;
+</code></pre>
+<h3 id="step-2-request-a-channel-uri">Step 2: Request a channel URI</h3>
+<p>This example requests a channel URI. The request is made to the Notification Client Platform, which in turn requests the channel URI from WNS. When the request is complete, the returned value is a <a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel"><strong>PushNotificationChannel</strong></a> object that contains the URI.</p>
+<pre><code class="lang-csharp">PushNotificationChannel channel = null;
+
+try
+{
+    channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+}
+
+catch (Exception ex)
+{ 
+    // Could not create a channel. 
+}
+</code></pre>
+<h3 id="step-3-send-the-channel-uri-to-your-server">Step 3: Send the channel URI to your server</h3>
+<p>The channel URI is packaged in an HTTP POST request and sent to the server.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You should send this information to your server in a secure manner. You should require the app to authenticate itself with the server when it transmits the channel URI. Encrypt the information and use a secure protocol such as HTTPS.</p>
+</div>
+<pre><code class="lang-csharp">String serverUrl = &quot;http://www.contoso.com&quot;;
+
+// Create the web request.
+HttpWebRequest webRequest = (HttpWebRequest)HttpWebRequest.Create(serverUrl);
+webRequest.Method = &quot;POST&quot;;
+webRequest.ContentType = &quot;application/x-www-form-urlencoded&quot;;
+byte[] channelUriInBytes = System.Text.Encoding.UTF8.GetBytes(&quot;ChannelUri=&quot; + channel.Uri);
+
+// Write the channel URI to the request stream.
+Stream requestStream = await webRequest.GetRequestStreamAsync();
+requestStream.Write(channelUriInBytes, 0, channelUriInBytes.Length);
+
+try
+{
+    // Get the response from the server.
+    WebResponse response = await webRequest.GetResponseAsync();
+    StreamReader requestReader = new StreamReader(response.GetResponseStream());
+    String webResponse = requestReader.ReadToEnd();
+}
+
+catch (Exception ex)
+{
+    // Could not send channel URI to server.
+}
+</code></pre>
+<h2 id="remarks">Remarks</h2>
+<h3 id="requesting-channels">Requesting channels</h3>
+<p>You should request a new channel each time your app is invoked, by using the following logic:</p>
+<ol>
+<li>Request a channel.</li>
+<li>Compare the new channel with your previous channel. If the channel is the same, you don't need to take any further action. Note that this requires your app to store the channel locally each time the app successfully sends it to your service, so that you have the channel to compare against later.</li>
+<li>If the channel has changed, send the new channel to your web service. Include error handling logic that always sends a new channel in the following cases:
+<ul>
+<li>Your app has never sent a channel to the web service before.</li>
+<li>Your app's last attempt to send the channel to the web service was not successful.</li>
+</ul>
+</li>
+</ol>
+<p>Different calls to the <a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_"><strong>CreatePushNotificationChannelForApplicationAsync</strong></a> method do not always return a different channel. If the channel has not changed since the last call, your app should conserve effort and Internet traffic by not resending that same channel to your service. An app can have multiple valid channel URIs at the same time. Because each unique channel remains valid until it expires, there is no harm in requesting a new channel because it does not affect the expiration time of any previous channels.</p>
+<p>By requesting a new channel each time your app is invoked, you maximize your chances of always having access to a valid channel. This is particularly important if it is vital to your tile or toast scenario that content always be live. If you are concerned that a user might not run your app more than once every 30 days, you can implement a background task to execute your channel request code on a regular basis.</p>
+<h3 id="handling-errors-in-channel-requests">Handling errors in channel requests</h3>
+<p>The call to the <a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_"><strong>CreatePushNotificationChannelForApplicationAsync</strong></a> method can fail if the Internet is not available. To handle this, add retry logic to the code shown in step 2. We recommend three attempts with a 10-second delay between each unsuccessful attempt. If all three attempts fail, your app should wait until the next time the user launches it to try again.</p>
+<h3 id="closing-channels">Closing channels</h3>
+<p>Your app can immediately stop the delivery of notifications on all channels by calling the <a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel#Windows_Networking_PushNotifications_PushNotificationChannel_Close"><strong>PushNotificationChannel.Close</strong></a> method. While it will not be common for your app to do so, there might be certain scenarios in which you want to stop all notification delivery to your app. For instance, if your app has the concept of user accounts and a user logs out of that app, it is reasonable to expect that the tile no longer shows that user's personal information. To successfully clear the tile of content and stop the delivery of notifications, you should do the following:</p>
+<ol>
+<li>Stop all tile updates by calling the <a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel#Windows_Networking_PushNotifications_PushNotificationChannel_Close"><strong>PushNotificationChannel.Close</strong></a> method on any of your notification channels that are delivering tile, toast, badge or raw notifications to a user. Calling the <strong>Close</strong> method ensures that no further notifications for that user can be delivered to the client.</li>
+<li>Clear the contents of the tile by calling the <a href="/uwp/api/Windows.UI.Notifications.TileUpdater#Windows_UI_Notifications_TileUpdater_Clear"><strong>TileUpdater.Clear</strong></a> method to remove the previous user's data from the tile.</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/push-notifications/request-create-save-notification-channel.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

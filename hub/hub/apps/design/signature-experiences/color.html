@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Color in Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Color in Windows ">
+    
+    <meta name="description" content="Learn how to use color effectively in your Windows app">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="color-in-windows">Color in Windows</h1>
+
+<p>Windows employs color to help users focus on their tasks by indicating a visual hierarchy and structure between user interface elements. Color is context appropriate and used to provide a calming foundation, subtly enhancing user interactions and emphasizing significant items only when necessary.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This article describes how the <a href="https://fluent2.microsoft.design/">Fluent Design language</a> is applied to Windows apps. For more information, see <a href="https://fluent2.microsoft.design/color"><strong>Fluent Design - Color</strong></a>.</p>
+</div>
+<h2 id="color-modes">Color modes</h2>
+<p><img src="images/color_hero_1880.png" alt="Color hero image"></p>
+<p>Windows supports two color modes, or themes: light and dark. Each mode consists of a set of neutral color values that are automatically adjusted to ensure optimal contrast.</p>
+<p>In both light and dark color modes, darker colors indicate background surfaces of less importance. Important surfaces are highlighted with lighter and brighter colors. See <a href="layering.html">layering &amp; elevation</a> for more information.</p>
+<h2 id="accent-color">Accent color</h2>
+<section class="row">
+<div class="column">
+<p><img src="images/color_light_controls_940.png" alt="Assorted controls in light mode"></p>
+</div>
+<div class="column">
+<p><img src="images/color_dark_controls_940.png" alt="Assorted controls in dark mode"></p>
+</div>
+</section>
+<p>Accent color is used to emphasize important elements in the user interface and to indicate the state of an interactive object or control. Accent color values are generated automatically and optimized for contrast in both light and dark modes. Accent colors are used sparingly to highlight important elements and convey information about an interactive element's state.</p>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/Color">Open the WinUI 3 Gallery app and see Color principles in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="color-in-windows-apps">Color in Windows apps</h2>
+<p><img src="../style/images/header-color.svg" alt="hero image"></p>
+<p>Color provides an intuitive way of communicating information to users in your app: it can be used to indicate interactivity, give feedback to user actions, and give your interface a sense of visual continuity.</p>
+<p>In Windows apps, colors are primarily determined by accent color and theme. In this article, we'll discuss how you can use color in your app, and how to use accent color and theme resources to make your Windows app usable in any theme context.</p>
+<h2 id="color-principles">Color principles</h2>
+<section class="row">
+<div class="column">
+<p><strong>Use color meaningfully.</strong>
+When color is used sparingly to highlight important elements, it can help create a user interface that is fluid and intuitive.</p>
+</div>
+<div class="column">
+<p><strong>Use color to indicate interactivity.</strong>
+It's a good idea to choose one color to indicate elements of your application that are interactive. For example, many web pages use blue text to denote a hyperlink.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><strong>Color is personal.</strong>
+In Windows, users can choose an accent color and a light or dark theme, which are reflected throughout their experience. You can choose how to incorporate the user's accent color and theme into your application, personalizing their experience.</p>
+</div>
+<div class="column">
+<p><strong>Color is cultural.</strong>
+Consider how the colors you use will be interpreted by people from different cultures. For example, in some cultures the color blue is associated with virtue and protection, while in others it represents mourning.</p>
+</div>
+</section>
+<h2 id="themes">Themes</h2>
+<p>Windows apps can use a light or dark application theme. The theme affects the colors of the app's background, text, icons, and <a href="../controls/index.html">common controls</a>.</p>
+<h3 id="light-theme">Light theme</h3>
+<p><img src="../style/images/color/light-theme.svg" alt="light theme"></p>
+<h3 id="dark-theme">Dark theme</h3>
+<p><img src="../style/images/color/dark-theme.svg" alt="dark theme"></p>
+<p>By default, your Windows app's theme is the user’s theme preference from Windows Settings or the device's default theme. However, you can set the theme specifically for your Windows app.</p>
+<h3 id="changing-the-theme">Changing the theme</h3>
+<p>You can change themes by changing the <strong>RequestedTheme</strong> property in your <code>App.xaml</code> file.</p>
+<pre><code class="lang-XAML">&lt;Application
+    x:Class=&quot;App9.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:App9&quot;
+    RequestedTheme=&quot;Dark&quot;&gt;
+&lt;/Application&gt;
+</code></pre>
+<p>Removing the <strong>RequestedTheme</strong> property means that your application will use the user’s system settings.</p>
+<p>Users can also select the <a href="../accessibility/high-contrast-themes.html">high contrast theme</a>, which uses a small palette of contrasting colors that makes the interface easier to see. In that case, the system will override your RequestedTheme.</p>
+<h3 id="testing-themes">Testing themes</h3>
+<p>If you don't request a theme for your app, make sure to test your app in both light and dark themes to ensure that your app will be legible in all conditions.</p>
+<h2 id="theme-brushes">Theme brushes</h2>
+<p>Common controls automatically use <a href="../../develop/platform/xaml/xaml-theme-resources.html#the-xaml-color-ramp-and-theme-dependent-brushes">theme brushes</a> to adjust contrast for light and dark themes.</p>
+<p>For example, here's an illustration of how the <a href="../controls/auto-suggest-box.html">AutoSuggestBox</a> uses theme brushes:</p>
+<p><img src="../style/images/color/theme-brushes.svg" alt="theme brushes control example"></p>
+<h3 id="using-theme-brushes">Using theme brushes</h3>
+<section class="row">
+<div class="column">
+<p>When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.</p>
+<p>For example, these <a href="../controls/item-templates-listview.html">item templates for ListView</a> demonstrate how to use theme brushes in a custom template.</p>
+</div>
+<div class="column">
+<p><img src="../style/images/color/list-view.svg" alt="double line list item with icon example"></p>
+</div>
+</section>
+<pre><code class="lang-xaml">&lt;ListView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;DoubleLineDataTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Height=&quot;64&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;Ellipse Height=&quot;48&quot; Width=&quot;48&quot; VerticalAlignment=&quot;Center&quot;&gt;
+                    &lt;Ellipse.Fill&gt;
+                        &lt;ImageBrush ImageSource=&quot;Placeholder.png&quot;/&gt;
+                    &lt;/Ellipse.Fill&gt;
+                &lt;/Ellipse&gt;
+                &lt;StackPanel Orientation=&quot;Vertical&quot; VerticalAlignment=&quot;Center&quot; Margin=&quot;12,0,0,0&quot;&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot; Style=&quot;{ThemeResource BodyStrongTextBlockStyle}&quot; Foreground=&quot;{ThemeResource TextFillColorPrimaryBrush}&quot; /&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind ArtistName}&quot; Style=&quot;{ThemeResource BodyTextBlockStyle}&quot; Foreground=&quot;{ThemeResource TextFillColorTertiaryBrush}&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<p>For more information about how to use theme brushes in your app, see <a href="../../develop/platform/xaml/xaml-theme-resources.html">Theme Resources</a>.</p>
+<h2 id="accent-colors">Accent colors</h2>
+<p>Common controls use an accent color to convey state information. By default, the accent color is the <code>SystemAccentColor</code> that users select in their Settings. However, you can also customize your app's accent color to reflect your brand.</p>
+<p><img src="../style/images/color/windows-controls.svg" alt="windows controls"></p>
+<section class="row">
+<div class="column">
+<p><img src="../style/images/color/user-accent.svg" alt="user-selected accent header">
+<img src="../style/images/color/user-selected-accent.svg" alt="user-selected accent color"></p>
+</div>
+<div class="column">
+<p><img src="../style/images/color/custom-accent.svg" alt="custom accent header">
+<img src="../style/images/color/brand-color.svg" alt="custom brand accent color"></p>
+</div>
+</section>
+<h3 id="overriding-the-accent-color">Overriding the accent color</h3>
+<p>To change your app's accent color, place the following code in <code>app.xaml</code>.</p>
+<pre><code class="lang-xaml">&lt;Application.Resources&gt;
+    &lt;ResourceDictionary&gt;
+        &lt;Color x:Key=&quot;SystemAccentColor&quot;&gt;#107C10&lt;/Color&gt;
+    &lt;/ResourceDictionary&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<h3 id="choosing-an-accent-color">Choosing an accent color</h3>
+<p>If you select a custom accent color for your app, please make sure that text and backgrounds that use the accent color have sufficient contrast for optimal readability. To test contrast, you can use the color picker tool in Windows Settings, or you can use these <a href="https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources">online contrast tools</a>.</p>
+<p><img src="../style/images/color/color-picker.svg" alt="Windows Settings custom accent color picker"></p>
+<h2 id="accent-color-palette">Accent color palette</h2>
+<p>An accent color algorithm in the Windows shell generates light and dark shades of the accent color.</p>
+<p><img src="../style/images/color/accent-color-palette.svg" alt="accent color palette"></p>
+<p>These shades can be accessed as <a href="../../develop/platform/xaml/xaml-theme-resources.html">theme resources</a>:</p>
+<ul>
+<li><code>SystemAccentColorLight3</code></li>
+<li><code>SystemAccentColorLight2</code></li>
+<li><code>SystemAccentColorLight1</code></li>
+<li><code>SystemAccentColorDark1</code></li>
+<li><code>SystemAccentColorDark2</code></li>
+<li><code>SystemAccentColorDark3</code></li>
+</ul>
+<!-- check this is true -->
+<p>You can also access the accent color palette programmatically with the <a href="/uwp/api/windows.ui.viewmanagement.uisettings.getcolorvalue"><strong>UISettings.GetColorValue</strong></a> method and <a href="/uwp/api/windows.ui.viewmanagement.uicolortype"><strong>UIColorType</strong></a> enum.</p>
+<p>You can use the accent color palette for color theming in your app. Below is an example of how you can use the accent color palette on a button.</p>
+<p><img src="../style/images/color/color-theme-button.svg" alt="Accent color palette applied to a button"></p>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;ResourceDictionary&gt;
+        &lt;ResourceDictionary.ThemeDictionaries&gt;
+            &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackground&quot; Color=&quot;{ThemeResource SystemAccentColor}&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackgroundPointerOver&quot; Color=&quot;{ThemeResource SystemAccentColorLight1}&quot;/&gt;
+                &lt;SolidColorBrush x:Key=&quot;ButtonBackgroundPressed&quot; Color=&quot;{ThemeResource SystemAccentColorDark1}&quot;/&gt;
+            &lt;/ResourceDictionary&gt;
+        &lt;/ResourceDictionary.ThemeDictionaries&gt;
+    &lt;/ResourceDictionary&gt;
+&lt;/Page.Resources&gt;
+
+&lt;Button Content=&quot;Button&quot;&gt;&lt;/Button&gt;
+</code></pre>
+<p>When using colored text on a colored background, make sure there is enough contrast between text and background. By default, hyperlink or hypertext will use the accent color. If you apply variations of the accent color to the background, you should use a variation of the original accent color to optimize the contrast of colored text on a colored background.</p>
+<p>The chart below illustrates an example of the various light/dark shades of accent color, and how colored type can be applied on a colored surface.</p>
+<p><img src="../style/images/color/color-on-color.png" alt="Screenshot of the Color on Color chart that shows a color gradient from light blue on the top changing to a dark blue on the bottom."></p>
+<p>For more information about styling controls, see <a href="../../develop/platform/xaml/xaml-styles.html">XAML styles</a>.</p>
+<h2 id="color-api">Color API</h2>
+<p>There are several APIs that can be used to add color to your application. First, the <a href="/uwp/api/windows.ui.colors"><strong>Colors</strong></a> class, which implements a large list of predefined colors. These can be accessed automatically with XAML properties. In the example below, we create a button and set the background and foreground color properties to members of the <strong>Colors</strong> class.</p>
+<pre><code class="lang-xaml">&lt;Button Background=&quot;MediumSlateBlue&quot; Foreground=&quot;White&quot;&gt;Button text&lt;/Button&gt;
+</code></pre>
+<p>You can create your own colors from RGB or hex values using the <a href="/uwp/api/windows.ui.color"><strong>Color</strong></a> struct in XAML.</p>
+<pre><code class="lang-xaml">&lt;Color x:Key=&quot;LightBlue&quot;&gt;#FF36C0FF&lt;/Color&gt;
+</code></pre>
+<p>You can also create the same color in code by using the <strong>FromArgb</strong> method.</p>
+<pre><code class="lang-csharp">Color LightBlue = Color.FromArgb(255,54,192,255);
+</code></pre>
+<pre><code class="lang-cppwinrt">Windows::UI::Color LightBlue = Windows::UI::ColorHelper::FromArgb(255,54,192,255);
+</code></pre>
+<p>The letters &quot;Argb&quot; stands for Alpha (opacity), Red, Green, and Blue, which are the four components of a color. Each argument can range from 0 to 255. You can choose to omit the first value, which will give you a default opacity of 255, or 100% opaque.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you're using C++, you must create colors by using the <a href="/uwp/api/windows.ui.colorhelper"><strong>ColorHelper</strong></a> class.</p>
+</div>
+<p>The most common use for a <strong>Color</strong> is as an argument for a <a href="/uwp/api/windows.ui.xaml.media.solidcolorbrush"><strong>SolidColorBrush</strong></a>, which can be used to paint UI elements a single solid color. These brushes are generally defined in a <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary"><strong>ResourceDictionary</strong></a>, so they can be reused for multiple elements.</p>
+<pre><code class="lang-xaml">&lt;ResourceDictionary&gt;
+    &lt;SolidColorBrush x:Key=&quot;ButtonBackgroundBrush&quot; Color=&quot;#FFFF4F67&quot;/&gt;
+    &lt;SolidColorBrush x:Key=&quot;ButtonForegroundBrush&quot; Color=&quot;White&quot;/&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>For more information on how to use brushes, see <a href="../../develop/platform/xaml/brushes.html">XAML brushes</a>.</p>
+<h2 id="usability">Usability</h2>
+<section class="row">
+<div class="column">
+<p><img src="../style/images/color/illo-contrast.svg" alt="Contrast illustration"></p>
+</div>
+<div class="column span2">
+<p><strong>Contrast</strong></p>
+<p>Make sure that elements and images have sufficient contrast to differentiate between them, regardless of the accent color or theme.</p>
+<p>When considering what colors to use in your application, accessibility should be a primary concern. Use the guidance below to make sure your application is accessible to as many users as possible.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="../style/images/color/illo-lighting.svg" alt="Lighting illustration"></p>
+</div>
+<div class="column span2">
+<p><strong>Lighting</strong></p>
+<p>Be aware that variation in ambient lighting can affect the usability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="../style/images/color/illo-colorblindness.svg" alt="Colorblindness illustration"></p>
+</div>
+<div class="column span2">
+<p><strong>Colorblindness</strong></p>
+<p>Be aware of how colorblindness could affect the usability of your application. For example, a user with red-green colorblindness will have difficulty distinguishing red and green elements from each other. About <strong>8 percent of men</strong> and <strong>0.5 percent of women</strong> are red-green colorblind, so avoid using these color combinations as the sole differentiator between application elements.</p>
+</div>
+</section>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="../../develop/platform/xaml/xaml-styles.html">XAML Styles</a></li>
+<li><a href="../../develop/platform/xaml/xaml-theme-resources.html">XAML Theme Resources</a></li>
+<li><a href="winui3gallery://item/Colors">WinUI 3 Gallery - Colors</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/signature-experiences/color.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

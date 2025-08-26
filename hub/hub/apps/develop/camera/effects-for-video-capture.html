@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Effects for video capture </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Effects for video capture ">
+    
+    <meta name="description" content="Learn how to apply effects to the camera preview and recording video streams and shows you how to use the video stabilization effect.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="effects-for-video-capture">Effects for video capture</h1>
+
+<p>This topic shows you how to apply effects to the camera preview and recording video streams and shows you how to use the video stabilization effect.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article builds on concepts and code discussed in <a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a>, which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of <strong>MediaCapture</strong> that has been properly initialized.</p>
+</div>
+<h2 id="adding-and-removing-effects-from-the-camera-video-stream">Adding and removing effects from the camera video stream</h2>
+<p>To capture or preview video from the device's camera, use the <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> class as described in <a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a>. After you have initialized the <strong>MediaCapture</strong> object, you can add one or more video effects to the preview or capture stream by calling <a href="/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync"><strong>AddVideoEffectAsync</strong></a>, passing in an <a href="/uwp/api/Windows.Media.Effects.IVideoEffectDefinition"><strong>IVideoEffectDefinition</strong></a> object representing the effect to be added, and a member of the <a href="/uwp/api/Windows.Media.Capture.MediaStreamType"><strong>MediaStreamType</strong></a> enumeration indicating whether the effect should be added to the camera's preview stream or the record stream.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On some devices, the preview stream and the capture stream are the same, which means that if you specify <strong>MediaStreamType.VideoPreview</strong> or <strong>MediaStreamType.VideoRecord</strong> when you call <strong>AddVideoEffectAsync</strong>, the effect will be applied to both preview and record streams. You can determine whether the preview and record streams are the same on the current device by checking the <a href="/uwp/api/windows.media.capture.mediacapturesettings.videodevicecharacteristic"><strong>VideoDeviceCharacteristic</strong></a> property of the <a href="/uwp/api/windows.media.capture.mediacapture.mediacapturesettings"><strong>MediaCaptureSettings</strong></a> for the <strong>MediaCapture</strong> object. If the value of this property is <strong>VideoDeviceCharacteristic.AllStreamsIdentical</strong> or <strong>VideoDeviceCharacteristic.PreviewRecordStreamsIdentical</strong>, then the streams are the same and any effect you apply to one will affect the other.</p>
+</div>
+<p>The following example adds an effect to both the camera preview and record streams. This example illustrates checking to see if the record and preview streams are the same.</p>
+<div class="lang-csharp">
+</div>
+<p>Note that <strong>AddVideoEffectAsync</strong> returns an object that implements <a href="/uwp/api/Windows.Media.IMediaExtension"><strong>IMediaExtension</strong></a> that represents the added video effect. Some effects allow you to change the effect settings by passing a <a href="/uwp/api/Windows.Foundation.Collections.PropertySet"><strong>PropertySet</strong></a> into the <a href="/uwp/api/windows.media.imediaextension.setproperties"><strong>SetProperties</strong></a> method.</p>
+<p>Starting with Windows 10, version 1607, you can also use the object returned by <strong>AddVideoEffectAsync</strong> to remove the effect from the video pipeline by passing it into <a href="/uwp/api/windows.media.capture.mediacapture.removeeffectasync"><strong>RemoveEffectAsync</strong></a>. <strong>RemoveEffectAsync</strong> automatically determines whether the effect object parameter was added to the preview or record stream, so you don't need to specify the stream type when making the call.</p>
+<div class="lang-csharp">
+</div>
+<p>You can also remove all effects from the preview or capture stream by calling <a href="/uwp/api/windows.media.capture.mediacapture.cleareffectsasync"><strong>ClearEffectsAsync</strong></a> and specifying the stream for which all effects should be removed.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="video-stabilization-effect">Video stabilization effect</h2>
+<p>The video stabilization effect manipulates the frames of a video stream to minimize shaking caused by holding the capture device in your hand. Because this technique causes the pixels to be shifted right, left, up, and down, and because the effect can't know what the content just outside the video frame is, the stabilized video is cropped slightly from the original video. A utility function is provided to allow you to adjust your video encoding settings to optimally manage the cropping performed by the effect.</p>
+<p>On devices that support it, Optical Image Stabilization (OIS) stabilizes video by mechanically manipulating the capture device and, therefore, does not need to crop the edges of the video frames. For more information, see <a href="capture-device-controls-for-video-capture.html">Capture device controls for video capture</a>.</p>
+<h3 id="set-up-your-app-to-use-video-stabilization">Set up your app to use video stabilization</h3>
+<p>Declare a member variable to store the <a href="/uwp/api/Windows.Media.Core.VideoStabilizationEffect"><strong>VideoStabilizationEffect</strong></a> object. As part of the effect implementation, you will modify the encoding properties that you use to encode the captured video. Declare two variables to store a backup copy of the initial input and output encoding properties so that you can restore them later when the effect is disabled. Finally, declare a member variable of type <a href="/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile"><strong>MediaEncodingProfile</strong></a> because this object will be accessed from multiple locations within your code.</p>
+<div class="lang-csharp">
+</div>
+<p>For this scenario, you should assign the media encoding profile object to a member variable so that you can access it later.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="initialize-the-video-stabilization-effect">Initialize the video stabilization effect</h3>
+<p>After your <strong>MediaCapture</strong> object has been initialized, create a new instance of the <a href="/uwp/api/Windows.Media.Core.VideoStabilizationEffectDefinition"><strong>VideoStabilizationEffectDefinition</strong></a> object. Call <a href="/uwp/api/windows.media.capture.mediacapture.addvideoeffectasync"><strong>MediaCapture.AddVideoEffectAsync</strong></a> to add the effect to the video pipeline and retrieve an instance of the <a href="/uwp/api/Windows.Media.Core.VideoStabilizationEffect"><strong>VideoStabilizationEffect</strong></a> class. Specify <a href="/uwp/api/Windows.Media.Capture.MediaStreamType"><strong>MediaStreamType.VideoRecord</strong></a> to indicate that the effect should be applied to the video record stream.</p>
+<p>Register an event handler for the <a href="/uwp/api/windows.media.core.videostabilizationeffect.enabledchanged"><strong>EnabledChanged</strong></a> event and call the helper method <strong>SetUpVideoStabilizationRecommendationAsync</strong>, both of which are discussed later in this article. Finally, set the <a href="/uwp/api/windows.media.core.videostabilizationeffect.enabled"><strong>Enabled</strong></a> property of the effect to true to enable the effect.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="use-recommended-encoding-properties">Use recommended encoding properties</h3>
+<p>As discussed earlier in this article, the technique that the video stabilization effect uses necessarily causes the stabilized video to be cropped slightly from the source video. Define the following helper function in your code in order to adjust the video encoding properties to optimally handle this limitation of the effect. This step is not required in order to use the video stabilization effect, but if you don't perform this step, the resulting video will be upscaled slightly and therefore have slightly lower visual fidelity.</p>
+<p>Call <a href="/uwp/api/windows.media.core.videostabilizationeffect.getrecommendedstreamconfiguration"><strong>GetRecommendedStreamConfiguration</strong></a> on your video stabilization effect instance, passing in the <a href="/uwp/api/Windows.Media.Devices.VideoDeviceController"><strong>VideoDeviceController</strong></a> object, which informs the effect about your current input stream encoding properties, and your <strong>MediaEncodingProfile</strong> which lets the effect know your current output encoding properties. This method returns a <a href="/uwp/api/Windows.Media.Capture.VideoStreamConfiguration"><strong>VideoStreamConfiguration</strong></a> object containing new recommended input and output stream encoding properties.</p>
+<p>The recommended input encoding properties are, if it is supported by the device, a higher resolution that the initial settings you provided so that there is minimal loss in resolution after the effect's cropping is applied.</p>
+<p>Call <a href="/uwp/api/windows.media.devices.videodevicecontroller.setmediastreampropertiesasync"><strong>VideoDeviceController.SetMediaStreamPropertiesAsync</strong></a> to set the new encoding properties. Before setting the new properties, use the member variable to store the initial encoding properties so that you can change the settings back when you disable the effect.</p>
+<p>If the video stabilization effect must crop the output video, the recommended output encoding properties will be the size of the cropped video. This means that the output resolution will match the cropped video size. If you do not use the recommended output properties, the video will be scaled up to match the initial output size, which will result in a loss of visual fidelity.</p>
+<p>Set the <a href="/uwp/api/windows.media.mediaproperties.mediaencodingprofile.video"><strong>Video</strong></a> property of the <strong>MediaEncodingProfile</strong> object. Before setting the new properties, use the member variable to store the initial encoding properties so that you can change the settings back when you disable the effect.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="handle-the-video-stabilization-effect-being-disabled">Handle the video stabilization effect being disabled</h3>
+<p>The system may automatically disable the video stabilization effect if the pixel throughput is too high for the effect to handle or if it detects that the effect is running slowly. If this occurs, the EnabledChanged event is raised. The <strong>VideoStabilizationEffect</strong> instance in the <em>sender</em> parameter indicates the new state of the effect, enabled or disabled. The <a href="/uwp/api/Windows.Media.Core.VideoStabilizationEffectEnabledChangedEventArgs"><strong>VideoStabilizationEffectEnabledChangedEventArgs</strong></a> has a <a href="/uwp/api/Windows.Media.Core.VideoStabilizationEffectEnabledChangedReason"><strong>VideoStabilizationEffectEnabledChangedReason</strong></a> value indicating why the effect was enabled or disabled. Note that this event is also raised if you programmatically enable or disable the effect, in which case the reason will be <strong>Programmatic</strong>.</p>
+<p>Typically, you would use this event to adjust your app's UI to indicate the current status of video stabilization.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="clean-up-the-video-stabilization-effect">Clean up the video stabilization effect</h3>
+<p>To clean up the video stabilization effect, call <a href="/uwp/api/windows.media.capture.mediacapture.removeeffectasync"><strong>RemoveEffectAsync</strong></a> to remove the effect from the video pipeline. If the member variables containing the initial encoding properties are not null, use them to restore the encoding properties. Finally, remove the <strong>EnabledChanged</strong> event handler and set the effect to null.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="camera.html">Camera</a></li>
+<li><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/effects-for-video-capture.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

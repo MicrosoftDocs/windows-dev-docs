@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Set up continuous integration for your WinUI 3 app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Set up continuous integration for your WinUI 3 app ">
+    
+    <meta name="description" content="How to automate WinUI 3 builds with continuous integration to produce sideload and/or Store packages.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="set-up-continuous-integration-for-your-winui-3-app">Set up continuous integration for your WinUI 3 app</h1>
+
+<p>You can use GitHub Actions to set up continuous integration builds for WinUI 3 projects. In this article, we'll look at different ways to do this. We'll also show you how to perform these tasks by using the command line so that you can integrate with any other build system.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Start with a single-project MSIX WinUI 3 app or migrate your project to <a href="../windows-app-sdk/single-project-msix.html">use single-project MSIX</a>.</li>
+<li><a href="https://github.com/join">Sign up for GitHub</a> and <a href="https://github.com/new">create a repository</a> if you haven't done so already.</li>
+</ul>
+<div class="zone has-pivot" data-pivot="winui3-packaged-csharp">
+<h2 id="step-1-set-up-your-certificate">Step 1: Set up your certificate</h2>
+<p>MSIX apps must be signed in order to be installed. If you already have a certificate, you can skip this step. You can easily create a test certificate by opening your app in Visual Studio, right clicking your WinUI 3 project, and selecting <strong>Package and Publish</strong> -&gt; <strong>Create App Packages</strong>.</p>
+<p>Then select <strong>Next</strong> to move to the <strong>Select signing method</strong> page, and click the <strong>Create...</strong> button to create a new certificate. Choose the publisher name and <strong>leave the password field blank</strong>, and create the certificate.</p>
+<p>Then, close/cancel out of the dialogs and notice that a new <strong>.pfx</strong> file has been created in your project. This is the certificate you can sign your MSIX with!</p>
+<h2 id="step-2-add-your-certificate-to-the-actions-secrets">Step 2: Add your certificate to the Actions secrets</h2>
+<p>You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, GitHub supports <a href="https://docs.github.com/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets">secrets</a>.</p>
+<p>To upload a certificate for your automated build:</p>
+<ol>
+<li><strong>Encode your certificate as a Base 64 string</strong>: Open PowerShell to the directory that contains your certificate, and execute the following command, replacing the pfx file name with your certificate's file name.</li>
+</ol>
+<pre><code class="lang-powershell">$pfx_cert = Get-Content 'App1_TemporaryKey.pfx' -AsByteStream
+
+[System.Convert]::ToBase64String($pfx_cert) | Out-File 'App1_TemporaryKey_Base64.txt'
+</code></pre>
+<ol start="2">
+<li>In your GitHub repository, go to the <strong>Settings</strong> page and click <strong>Secrets</strong> on the left.</li>
+<li>Click <strong>New repository secret</strong>, name it <code>BASE64_ENCODED_PFX</code>, and copy/paste the text from the text file in the PowerShell output into the secret value.</li>
+</ol>
+<h2 id="step-3-set-up-your-workflow">Step 3: Set up your workflow</h2>
+<p>Next, in your repository, go to the Actions tab and create a new workflow. Chose the <strong>set up a workflow yourself</strong> option instead of one of the workflow templates.</p>
+<p>Copy/paste the following into your workflow file, and then update...</p>
+<ol>
+<li><strong>Solution_Name</strong> to the name of your solution</li>
+<li><strong>dotnet-version</strong> to either 5.0 or 6.0 depending on your project</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace <code>env.Solution_Name</code> with <code>github.workspace</code> (the GitHub actions Workspace folder).</p>
+</div>
+<pre><code class="lang-yml"># This workflow will build, sign, and package a WinUI 3 MSIX desktop application
+# built on .NET.
+
+name: WinUI 3 MSIX app
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Release]
+        platform: [x64, x86]
+
+    runs-on: windows-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    env:
+      Solution_Name: your-solution-name                         # Replace with your solution name, i.e. App1.sln.
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    # Restore the application to populate the obj folder with RuntimeIdentifiers
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    # Decode the base 64 encoded pfx and save the Signing_Certificate
+    - name: Decode the pfx
+      run: |
+        $pfx_cert_byte = [System.Convert]::FromBase64String(&quot;${{ secrets.BASE64_ENCODED_PFX }}&quot;)
+        $certificatePath = &quot;GitHubActionsWorkflow.pfx&quot;
+        [IO.File]::WriteAllBytes(&quot;$certificatePath&quot;, $pfx_cert_byte)
+
+    # Create the app package by building and packaging the project
+    - name: Create the app package
+      run: msbuild $env:Solution_Name /p:Configuration=$env:Configuration /p:Platform=$env:Platform /p:UapAppxPackageBuildMode=$env:Appx_Package_Build_Mode /p:AppxBundle=$env:Appx_Bundle /p:PackageCertificateKeyFile=GitHubActionsWorkflow.pfx /p:AppxPackageDir=&quot;$env:Appx_Package_Dir&quot; /p:GenerateAppxPackageOnBuild=true
+      env:
+        Appx_Bundle: Never
+        Appx_Package_Build_Mode: SideloadOnly
+        Appx_Package_Dir: Packages\
+        Configuration: ${{ matrix.configuration }}
+        Platform: ${{ matrix.platform }}
+
+    # Remove the pfx
+    - name: Remove the pfx
+      run: Remove-Item -path GitHubActionsWorkflow.pfx
+
+    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
+    - name: Upload MSIX package
+      uses: actions/upload-artifact@v2
+      with:
+        name: MSIX Package
+        path: ${{ env.Solution_Name }}\\Packages
+
+</code></pre>
+<h2 id="step-4-commit-the-workflow-and-watch-it-run">Step 4: Commit the workflow and watch it run!</h2>
+<p>Commit the workflow file to your main branch, and then go to the Actions tab on your GitHub repository and watch your workflow run! It should successfully run and produce artifacts that contain your built MSIX app.</p>
+<h2 id="building-from-command-line">Building from command line</h2>
+<p>If you want to build your solution by using the command line, or by using any other CI system, run MSBuild with these arguments. The <code>GenerateAppxPackageOnBuild</code> property causes the MSIX package to be generated.</p>
+<pre><code class="lang-powershell">/p:AppxPackageDir=&quot;Packages&quot;
+/p:UapAppxPackageBuildMode=SideloadOnly
+/p:AppxBundle=Never
+/p:GenerateAppxPackageOnBuild=true
+</code></pre>
+</div>
+<div class="zone has-pivot" data-pivot="winui3-unpackaged-csharp">
+<h2 id="step-1-set-up-your-workflow">Step 1: Set up your workflow</h2>
+<p>In your GitHub repository, go to the Actions tab and create a new workflow. Chose the <strong>set up a workflow yourself</strong> option instead of one of the workflow templates.</p>
+<p>Copy/paste the following into your workflow file, and then update...</p>
+<ol>
+<li><strong>Solution_Name</strong> to the name of your solution</li>
+<li><strong>dotnet-version</strong> to either 5.0 or 6.0 depending on your project</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace <code>env.Solution_Name</code> with <code>github.workspace</code> (the GitHub actions Workspace folder).</p>
+</div>
+<pre><code class="lang-yml"># This workflow will build and publish a WinUI 3 unpackaged desktop application
+# built on .NET.
+
+name: WinUI 3 unpackaged app
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    strategy:
+      matrix:
+        configuration: [Release]
+        platform: [x64, x86]
+
+    runs-on: windows-latest  # For a list of available runner types, refer to
+                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+
+    env:
+      Solution_Name: your-solution-name                         # Replace with your solution name, i.e. App1.sln.
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    # Install the .NET Core workload
+    - name: Install .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+
+    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    # Restore the application to populate the obj folder with RuntimeIdentifiers
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ matrix.configuration }}
+
+    # Create the app by building and publishing the project
+    - name: Create the app
+      run: msbuild $env:Solution_Name /t:Publish /p:Configuration=$env:Configuration /p:Platform=$env:Platform
+      env:
+        Configuration: ${{ matrix.configuration }}
+        Platform: ${{ matrix.platform }}
+
+    # Upload the app
+    - name: Upload app
+      uses: actions/upload-artifact@v2
+      with:
+        name: Upload app
+        path: ${{ env.Solution_Name }}\\bin
+</code></pre>
+<h2 id="step-2-commit-the-workflow-and-watch-it-run">Step 2: Commit the workflow and watch it run!</h2>
+<p>Commit the workflow file to your main branch, and then go to the Actions tab on your GitHub repository and watch your workflow run! It should successfully run and produce artifacts that contain your built app.</p>
+<h2 id="building-from-command-line-1">Building from command line</h2>
+<p>If you want to build your solution by using the command line, or by using any other CI system, run MSBuild with the <code>/t:Publish</code> argument.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/package-and-deploy/ci-for-winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

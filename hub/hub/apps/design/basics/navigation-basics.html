@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Navigation basics for Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Navigation basics for Windows apps ">
+    
+    <meta name="description" content="Navigation in Windows apps is based on a flexible model of navigation structures, navigation elements, and system-level features.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="navigation-design-basics-for-windows-apps">Navigation design basics for Windows apps</h1>
+
+<p><img src="images/nav/navigation-basics-header.jpg" alt="Navigation basics header"></p>
+<p>If you think of an app as a collection of pages, <em>navigation</em> describes the act of moving between pages and within a page. It's the starting point of the user experience, and it's how users find the content and features they're interested in. It's very important, and it can be difficult to get right.</p>
+<p>You have a huge number of choices to make for navigation. You could:</p>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/nav-1.svg" alt="navigation example 1">
+Require users to go through a series of pages in order.</p>
+</div>
+<div class="column">
+<p><img src="images/nav/nav-2.svg" alt="navigation example 2">
+Provide a menu that allows users to jump directly to any page.</p>
+</div>
+<div class="column">
+<p><img src="images/nav/nav-3.svg" alt="navigation example 3">
+Place everything on a single page and provide filtering mechanisms for viewing content.</p>
+</div>
+</section>
+<p>While there's no single navigation design that works for every app, there are principles and guidelines to help you decide the right design for your app.</p>
+<h2 id="principles-of-good-navigation">Principles of good navigation</h2>
+<p>Let's start with the basic principles of good navigation design:</p>
+<ul>
+<li><strong>Consistency:</strong> Meet user expectations.</li>
+<li><strong>Simplicity:</strong> Don't do more than you need to.</li>
+<li><strong>Clarity:</strong> Provide clear paths and options.</li>
+</ul>
+<h3 id="consistency">Consistency</h3>
+<p>Navigation should be consistent with user expectations. Using <a href="#use-the-right-controls">standard controls</a> that users are familiar with and following standard conventions for icons, location, and styling will make navigation predictable and intuitive for users.</p>
+<p><img src="images/nav/page-components.svg" alt="page components image"></p>
+<blockquote>
+<p><em>Users expect to find certain UI elements in standard locations.</em></p>
+</blockquote>
+<h3 id="simplicity">Simplicity</h3>
+<p>Fewer navigation items simplify decision making for users. Providing easy access to important destinations and hiding less important items will help users get where they want, faster.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/do.svg" alt="First screenshot of a green bar that has a green check mark and the word Do in it."></p>
+<p><img src="images/nav/navview-good.svg" alt="navview good"></p>
+<p>Present navigation items in a familiar navigation menu.</p>
+</div>
+<div class="column">
+<p><img src="images/nav/dont.svg" alt="don't example"></p>
+<p><img src="images/nav/navview-bad.svg" alt="navview bad"></p>
+<p>Don't overwhelm users with many navigation options.</p>
+</div>
+</section>
+<h3 id="clarity">Clarity</h3>
+<p>Clear paths allow for logical navigation for users. Making navigation options obvious and clarifying relationships between pages should prevent users from getting lost.</p>
+<p><img src="images/nav/clarity-image.svg" alt="Screenshot of a mock-up of an application showing clear paths fo navigation for a user."></p>
+<blockquote>
+<p><em>Destinations are clearly labeled so users know where they are.</em></p>
+</blockquote>
+<h2 id="general-recommendations">General recommendations</h2>
+<p>Now, let's take our design principles--consistency, simplicity, and clarity--and use them to come up with some general recommendations.</p>
+<ul>
+<li>Think about your users. Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.</li>
+<li>Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a <a href="../controls/breadcrumbbar.html">breadcrumb bar</a> that shows the user where they are and let's them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.</li>
+<li>Avoid &quot;pogo-sticking.&quot; Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.</li>
+</ul>
+<h2 id="use-the-right-structure">Use the right structure</h2>
+<p>Now that you're familiar with general navigation principles, how should you structure your app? There are two general structures: flat and hierarchal.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/flat-lateral-structure.svg" alt="Pages arranged in a flat structure"></p>
+</div>
+<div class="column span2">
+<h3 id="flatlateral">Flat/lateral</h3>
+<p>In a flat/lateral structure, pages exist side-by-side. You can go from one page to another in any order.</p>
+<p>We recommend using a flat structure when:</p>
+<ul>
+<li>The pages can be viewed in any order.</li>
+<li>The pages are clearly distinct from each other and don't have an obvious parent/child relationship.</li>
+<li>There are less than 8 pages in the group. <br>
+(When there are more pages, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups.)</li>
+</ul>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/hierarchical-structure.svg" alt="Pages arranged in a hierarchy"></p>
+</div>
+<div class="column span2">
+<h3 id="hierarchical">Hierarchical</h3>
+<p>In a hierarchical structure, pages are organized into a tree-like structure. Each child page has one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.</p>
+<p>Hierarchical structures are good for organizing complex content that spans lots of pages. The downside is some navigation overhead: the deeper the structure, the more clicks it takes to get from page to page.</p>
+<p>We recommend a hierarchical structure when:</p>
+<ul>
+<li>Pages should be traversed in a specific order.</li>
+<li>There is a clear parent-child relationship between pages.</li>
+<li>There are more than 7 pages in the group.</li>
+</ul>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/combining-structures.svg" alt="an app with a hybrid structure"></p>
+</div>
+<div class="column span2">
+<h3 id="combining-structures">Combining structures</h3>
+<p>You don't have to choose one structure or the other; many well-designed apps use both. An app can use flat structures for top-level pages that can be viewed in any order, and hierarchical structures for pages that have more complex relationships.</p>
+<p>If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the adjacent illustration, which shows a navigation structure that has two levels:</p>
+<ul>
+<li>At level 1, the peer-to-peer navigation element should provide access to pages A, B, and C.</li>
+<li>At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.</li>
+</ul>
+</div>
+</section>
+<h2 id="use-the-right-controls">Use the right controls</h2>
+<p>Once you've decided on a page structure, you need to decide how users navigate through those pages. XAML provides a variety of navigation controls to help ensure a consistent, reliable navigation experience in your app.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/thumbnail-frame.svg" alt="Frame image"></p>
+</div>
+<div class="column span2">
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame"><strong>Frame</strong></a></p>
+<p>With few exceptions, any app that has multiple pages uses a frame. Typically, an app has a main page that contains the frame and a primary navigation element, such as a navigation view control. When the user selects a page, the frame loads and displays it.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/thumbnail-tabs-pivot.svg" alt="tabs and pivot image"></p>
+</div>
+<div class="column span2">
+<p><a href="../controls/navigationview.html"><strong>Top navigation</strong></a></p>
+<p>Displays a horizontal list of links to pages at the same level. The <a href="../controls/navigationview.html">NavigationView</a> control implements the top navigation pattern.</p>
+<p>Use top navigation when:</p>
+<ul>
+<li>You want to show all navigation options on the screen.</li>
+<li>You desire more space for your app's content.</li>
+<li>Icons cannot clearly describe your navigation categories.</li>
+</ul>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/thumbnail-tabs-pivot.svg" alt="tabs and pivot image"></p>
+</div>
+<div class="column span2">
+<p><a href="../controls/tab-view.html"><strong>Tabs</strong></a></p>
+<p>Displays a horizontal set of tabs and their respective content. The <a href="../controls/tab-view.html">TabView</a> control is useful for displaying several pages (or documents) while giving the user the capability to rearrange, open, or close tabs.</p>
+<p>Use tabs when:</p>
+<ul>
+<li>You want users to be able to dynamically open, close, or rearrange tabs.</li>
+<li>You expect that there might be a large number of tabs open at once.</li>
+<li>You expect users to be able to easily move tabs between windows in your application that use tabs, similar to web browsers like Microsoft Edge.</li>
+</ul>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/thumbnail-tabs-pivot.svg" alt="tabs and pivot image"></p>
+</div>
+<div class="column span2">
+<p><a href="../controls/breadcrumbbar.html"><strong>Breadcrumb</strong></a></p>
+<p>Displays a horizontal list of links to pages at each of the higher levels. The <a href="../controls/breadcrumbbar.html">BreadcrumbBar</a> control implements the top navigation pattern.</p>
+<p>Use a breadcrumb when:</p>
+<ul>
+<li>You want to show the path to the current location</li>
+<li>You have many levels of navigation</li>
+<li>You expect users to be able to return to any previous level</li>
+</ul>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/thumbnail-navview.svg" alt="navview image"></p>
+</div>
+<div class="column span2">
+<p><a href="../controls/navigationview.html"><strong>Left navigation</strong></a></p>
+<p>Displays a vertical list of links to top-level pages. Use when:</p>
+<ul>
+<li>The pages exist at the top level.</li>
+<li>There are many navigation items (more than 5)</li>
+<li>You don't expect users to switch between pages frequently.</li>
+</ul>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/thumbnail-list-detail.svg" alt="List details image"></p>
+</div>
+<div class="column span2">
+<p><a href="../controls/list-details.html"><strong>List/details</strong></a></p>
+<p>Displays a list of items. Selecting an item displays its corresponding page in the details section. Use when:</p>
+<ul>
+<li>You expect users to switch between child items frequently.</li>
+<li>You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.</li>
+</ul>
+<p>List/details is well suited for email inboxes, contact lists, and data entry.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/nav/thumbnail-hyperlinks-buttons.svg" alt="Hyperlinks and buttons image"></p>
+</div>
+<div class="column span2">
+<p><a href="../controls/hyperlinks.html"><strong>Hyperlinks</strong></a></p>
+<p>Embedded navigation elements can appear in a page's content. Unlike other navigation elements, which should be consistent across the pages, content-embedded navigation elements are unique from page to page.</p>
+</div>
+</section>
+<h2 id="guidelines-for-custom-back-navigation-behavior">Guidelines for custom back navigation behavior</h2>
+<p>If you choose to provide your own back stack navigation, the experience should be consistent with other apps. We recommend that you follow the following patterns for navigation actions:</p>
+<div class="mx-responsive-img">
+<table>
+<thead>
+<tr class="header">
+<th align="left">Navigation action</th>
+<th align="left">Add to navigation history?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Page to page, different peer groups</strong></td>
+<td><strong>Yes</strong>
+<p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two and the back to group one."></p>
+<p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
+<p><img src="images/back-nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Diagram of navigation across peer groups showing the user navigating from group one to group two then on to group three and back to group two."></p></td>
+</tr>
+<tr class="even">
+<td><strong>Page to page, same peer group, no on-screen navigation element</strong>
+<p>The user navigates from one page to another with the same peer group. There is no on-screen navigation element (such as <a href="/windows/apps/design/controls/navigationview">NavigationView</a>) that provides direct navigation to both pages.</p></td>
+<td><strong>Yes</strong>
+<p>In the following illustration, the user navigates between two pages in the same peer group, and the navigation should be added to the navigation history.</p>
+<p><img src="images/back-nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group"></p></td>
+</tr>
+<tr class="odd">
+<td><strong>Page to page, same peer group, with an on-screen navigation element</strong>
+<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element, such as <a href="/windows/apps/design/controls/navigationview">NavigationView</a>.</p></td>
+<td><strong>It depends</strong>
+<p>Yes, add to the navigation history, with two notable exceptions. If you expect users of your app to switch between pages in the peer group frequently, or if you wish to preserve the navigational hierarchy, then do not add to the navigation history. In this case, when the user presses back, go back to the last page before the user navigated to the current peer group. </p>
+<p><img src="images/back-nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present"></p></td>
+</tr>
+<tr class="even">
+<td><strong>Show a transient UI</strong>
+<p>The app displays a pop-up or child window, such as a dialog, splash screen, or on-screen keyboard, or the app enters a special mode, such as multiple selection mode.</p></td>
+<td><strong>No</strong>
+<p>When the user presses the back button, dismiss the transient UI (hide the on-screen keyboard, cancel the dialog, etc) and return to the page that spawned the transient UI.</p>
+<p><img src="images/back-nav/back-transui.png" alt="Showing a transient UI"></p></td>
+</tr>
+<tr class="odd">
+<td><strong>Enumerate items</strong>
+<p>The app displays content for an on-screen item, such as the details for the selected item in list/details list.</p></td>
+<td><strong>No</strong>
+<p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
+<p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="next-add-navigation-code-to-your-app">Next: Add navigation code to your app</h2>
+<p>The next article, <a href="navigate-between-two-pages.html">Implement basic navigation</a>, shows the code required to use a <code>Frame</code> control to enable basic navigation between two pages in your app.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/basics/navigation-basics.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

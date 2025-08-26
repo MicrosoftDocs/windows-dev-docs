@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Widget providers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Widget providers ">
+    
+    <meta name="description" content="Learn how to implement a Windows widget service provider to support your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="widget-providers">Widget providers</h1>
+
+<p>Windows widgets are small UI containers that display text and graphics supplied by a Windows app or Progressive Web App (PWA). The Adaptive Cards format used by Windows widgets enables dynamic binding of the data that populates the widget UI. To update your widget, your app or service will implement a widget service provider that responds to requests from the Widgets host and returns JSON strings specifying both the visual template and the associated data for your widget.</p>
+<p>For an overview of the Windows widgets experience and design guidance for creating your own widgets, see <a href="../../design/widgets/index.html">Windows widgets</a>.</p>
+<p>Currently you can implement a widget provider using a packaged Win32 desktop app or a Progressive Web App (PWA). For more information see:</p>
+<ul>
+<li><a href="implement-widget-provider-cs.html">Implement a widget provider in a win32 app (C#)</a></li>
+<li><a href="implement-widget-provider-win32.html">Implement a widget provider in a win32 app (C++/WinRT)</a></li>
+<li><a href="/microsoft-edge/progressive-web-apps-chromium/how-to/widgets">Build PWA-driven widgets</a></li>
+</ul>
+<p>For API reference documentation for implementing widget providers, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers">Microsoft.Windows.Widgets.Providers</a> namespace.</p>
+<p>For a walkthrough of the basics of creating a widget and implementing a widget provider, watch the <em>Tabs vs Spaces</em> episode &quot;Create Widgets for Windows 11&quot;.</p>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=create-widgets-for-windows-11" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="mailto:widgetssupport@microsoft.com">Report an issue via email</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/issues/new/choose">Open an issue in the Windows App SDK github repo</a></li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../../design/widgets/index.html">Windows widgets</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/widgets/widget-providers.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

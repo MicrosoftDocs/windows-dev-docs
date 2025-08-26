@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>export Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="export Command ">
+    
+    <meta name="description" content="exports the list of installed applications.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="export-command-winget">export command (winget)</h1>
+
+<p>The <strong>export</strong> command of the <a href="index.html">winget</a> tool exports a JSON file of apps to a specified file. The <strong>export</strong> command uses JSON as the format. You can find the <a href="https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages">schema for the JSON file</a> used by winget in the <a href="https://github.com/microsoft/winget-cli">Windows Package Manager Client repo on GitHub</a>.</p>
+<p>The <strong>export</strong> combined with the <a href="import.html"><strong>import</strong></a> command allows you to batch install applications on your PC.</p>
+<p>The <strong>export</strong> command is often used to create a file that you can share with other developers, or for use when restoring your build environment.</p>
+<h2 id="usage">Usage</h2>
+<p><code>winget export [-o] &lt;output&gt; [&lt;options&gt;]</code></p>
+<p><img src="images/export-help.png" alt="Image of the export command usage"></p>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-o,--output</strong></td>
+<td>Path to the JSON file to be created.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="options">Options</h2>
+<p>The options allow you to customize the export experience to meet your needs.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-s, --source</strong></td>
+<td>[Optional] Specifies a source to export files from. Use this option when you only want files from a specific source.</td>
+</tr>
+<tr>
+<td><strong>--include-versions</strong></td>
+<td>[Optional] Includes the version of the app currently installed. Use this option if you want a specific version. By default, unless specified, <a href="import.html"><strong>import</strong></a> will use latest.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>-?,--help</strong></td>
+<td>Shows help about the selected command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="json-schema">JSON schema</h2>
+<p>The driving force behind the <strong>export</strong> command is the JSON file. You can find the <a href="https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages">schema for the JSON file</a> in the <a href="https://github.com/microsoft/winget-cli">Windows Package Manager Client repo on GitHub</a>.</p>
+<p>The JSON file includes the following hierarchy.</p>
+<table>
+<thead>
+<tr>
+<th>Entry</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sources</strong></td>
+<td>The sources application manifests come from.</td>
+</tr>
+<tr>
+<td><strong>Packages</strong></td>
+<td>The collection of packages to install.</td>
+</tr>
+<tr>
+<td><strong>PackageIdentifier</strong></td>
+<td>The Windows Package Manager package identifier used to specify the package.</td>
+</tr>
+<tr>
+<td><strong>Version</strong></td>
+<td>[Optional] The specific version of the package to install.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="exporting-files">Exporting files</h2>
+<p>When the Windows Package Manager exports the JSON file, it attempts to export all the applications installed on the PC. If the <strong>winget export</strong> command is not able to match an application to an application from an available <strong>source</strong>, the export command will show a warning.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Matching an application depends on metadata in the manifest from a configured source, and metadata in <strong>Add / Remove Programs</strong> in Windows based on the package installer.</p>
+</div>
+<p><img src="images/export-command.png" alt="Image of export command warnings"></p>
+<p>After the export is complete, you can edit the resulting JSON file in your favorite editor. You can remove apps you do not wish to import in the future.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/export.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

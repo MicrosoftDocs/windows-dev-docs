@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use input scope to change the touch keyboard </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use input scope to change the touch keyboard ">
+    
+    <meta name="description" content="To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-input-scope-to-change-the-touch-keyboard">Use input scope to change the touch keyboard</h1>
+
+<p>To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.</p>
+<h3 id="important-apis">Important APIs</h3>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.controls.textbox.inputscope">InputScope</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue">InputScopeNameValue</a></li>
+</ul>
+<p>The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a <strong><a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox">TextBox</a></strong> or <strong><a href="/uwp/api/Windows.UI.Xaml.Controls.RichEditBox">RichEditBox</a></strong>. You can make it much faster and easier for users to enter data in your app by setting the <em>input scope</em> of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.</p>
+<p>For example, if a text box is used only to enter a 4-digit PIN, set the <a href="/uwp/api/windows.ui.xaml.controls.textbox.inputscope"><strong>InputScope</strong></a> property to <strong>Number</strong>. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<ul>
+<li>This info applies only to the SIP. It does not apply to hardware keyboards or the On-Screen Keyboard available in the Windows Ease of Access options.</li>
+<li>The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.</li>
+</ul>
+</div>
+<h2 id="changing-the-input-scope-of-a-text-control">Changing the input scope of a text control</h2>
+<p>The input scopes that are available to your app are members of the <strong><a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue">InputScopeNameValue</a></strong> enumeration. You can set the <strong>InputScope</strong> property of a <strong><a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox">TextBox</a></strong> or <strong><a href="/uwp/api/Windows.UI.Xaml.Controls.RichEditBox">RichEditBox</a></strong> to one of these values.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <strong><a href="/uwp/api/windows.ui.xaml.controls.passwordbox.inputscope">InputScope</a></strong> property on <strong><a href="/uwp/api/Windows.UI.Xaml.Controls.PasswordBox">PasswordBox</a></strong> supports only the <strong>Password</strong> and <strong>NumericPin</strong> values. Any other value is ignored.</p>
+</div>
+<p>Here, you change the input scope of several text boxes to match the expected data for each text box.</p>
+<p><strong>To change the input scope in XAML</strong></p>
+<ol>
+<li><p>In the XAML file for your page, locate the tag for the text control that you want to change.</p>
+</li>
+<li><p>Add the <a href="/uwp/api/windows.ui.xaml.controls.textbox.inputscope"><strong>InputScope</strong></a> attribute to the tag and specify the <a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue"><strong>InputScopeNameValue</strong></a> value that matches the expected input.</p>
+<p>Here are some text boxes that might appear on a common customer-contact form. With the <a href="/uwp/api/windows.ui.xaml.controls.textbox.inputscope"><strong>InputScope</strong></a> set, a touch keyboard with a suitable layout for the data shows for each text box.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Width=&quot;300&quot;&gt;
+    &lt;TextBox Header=&quot;Name&quot; InputScope=&quot;Default&quot;/&gt;
+    &lt;TextBox Header=&quot;Email Address&quot; InputScope=&quot;EmailSmtpAddress&quot;/&gt;
+    &lt;TextBox Header=&quot;Telephone Number&quot; InputScope=&quot;TelephoneNumber&quot;/&gt;
+    &lt;TextBox Header=&quot;Web site&quot; InputScope=&quot;Url&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+</li>
+</ol>
+<p><strong>To change the input scope in code</strong></p>
+<ol>
+<li><p>In the XAML file for your page, locate the tag for the text control that you want to change. If it's not set, set the <a href="/windows/uwp/xaml-platform/x-name-attribute">x:Name attribute</a> so you can reference the control in your code.</p>
+<pre><code class="lang-csharp">&lt;TextBox Header=&quot;Telephone Number&quot; x:Name=&quot;phoneNumberTextBox&quot;/&gt;
+</code></pre>
+</li>
+<li><p>Instantiate a new <a href="/uwp/api/Windows.UI.Xaml.Input.InputScope"><strong>InputScope</strong></a> object.</p>
+<pre><code class="lang-csharp">InputScope scope = new InputScope();
+</code></pre>
+</li>
+<li><p>Instantiate a new <a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeName"><strong>InputScopeName</strong></a> object.</p>
+<pre><code class="lang-csharp">InputScopeName scopeName = new InputScopeName();
+</code></pre>
+</li>
+<li><p>Set the <a href="/uwp/api/windows.ui.xaml.input.inputscopename.namevalue"><strong>NameValue</strong></a> property of the <a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeName"><strong>InputScopeName</strong></a> object to a value of the <a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeNameValue"><strong>InputScopeNameValue</strong></a> enumeration.</p>
+<pre><code class="lang-csharp">scopeName.NameValue = InputScopeNameValue.TelephoneNumber;
+</code></pre>
+</li>
+<li><p>Add the <a href="/uwp/api/Windows.UI.Xaml.Input.InputScopeName"><strong>InputScopeName</strong></a> object to the <a href="/uwp/api/windows.ui.xaml.input.inputscope.names"><strong>Names</strong></a> collection of the <a href="/uwp/api/Windows.UI.Xaml.Input.InputScope"><strong>InputScope</strong></a> object.</p>
+<pre><code class="lang-csharp">scope.Names.Add(scopeName);
+</code></pre>
+</li>
+<li><p>Set the <a href="/uwp/api/Windows.UI.Xaml.Input.InputScope"><strong>InputScope</strong></a> object as the value of the text control's <a href="/uwp/api/windows.ui.xaml.controls.textbox.inputscope"><strong>InputScope</strong></a> property.</p>
+<pre><code class="lang-csharp">phoneNumberTextBox.InputScope = scope;
+</code></pre>
+</li>
+</ol>
+<p>Here's the code all together.</p>
+<pre><code class="lang-CSharp">InputScope scope = new InputScope();
+InputScopeName scopeName = new InputScopeName();
+scopeName.NameValue = InputScopeNameValue.TelephoneNumber;
+scope.Names.Add(scopeName);
+phoneNumberTextBox.InputScope = scope;
+</code></pre>
+<p>The same steps can be condensed into this shorthand code.</p>
+<pre><code class="lang-CSharp">phoneNumberTextBox.InputScope = new InputScope() 
+{
+    Names = {new InputScopeName(InputScopeNameValue.TelephoneNumber)}
+};
+</code></pre>
+<h2 id="text-prediction-spell-checking-and-auto-correction">Text prediction, spell checking, and auto-correction</h2>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.RichEditBox"><strong>RichEditBox</strong></a> controls have several properties that influence the behavior of the SIP. To provide the best experience for your users, it's important to understand how these properties affect text input using touch.</p>
+<ul>
+<li><p><a href="/uwp/api/windows.ui.xaml.controls.textbox.isspellcheckenabled"><strong>IsSpellCheckEnabled</strong></a>—When spell check is enabled for a text control, the control interacts with the system's spell-check engine to mark words that are not recognized. You can tap a word to see a list of suggested corrections. Spell checking is enabled by default.</p>
+<p>For the <strong>Default</strong> input scope, this property also enables automatic capitalization of the first word in a sentence and auto-correction of words as you type. These auto-correction features might be disabled in other input scopes. For more info, see the tables later in this topic.</p>
+</li>
+<li><p><a href="/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled"><strong>IsTextPredictionEnabled</strong></a>—When text prediction is enabled for a text control, the system shows a list of words that you might be beginning to type. You can select from the list so you don't have to type the whole word. Text prediction is enabled by default.</p>
+<p>Text prediction might be disabled if the input scope is other than <strong>Default</strong>, even if the <a href="/uwp/api/windows.ui.xaml.controls.textbox.istextpredictionenabled"><strong>IsTextPredictionEnabled</strong></a> property is <strong>true</strong>. For more info, see the tables later in this topic.</p>
+</li>
+<li><p><a href="/uwp/api/windows.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus"><strong>PreventKeyboardDisplayOnProgrammaticFocus</strong></a>—When this property is <strong>true</strong>, it prevents the system from showing the SIP when focus is programmatically set on a text control. Instead, the keyboard is shown only when the user interacts with the control.</p>
+</li>
+</ul>
+<h2 id="touch-keyboard-index-for-windows">Touch keyboard index for Windows</h2>
+<p>These tables show the Windows Soft Input Panel (SIP) layouts for common input scope values. The effect of the input scope on the features enabled by the <strong>IsSpellCheckEnabled</strong> and <strong>IsTextPredictionEnabled</strong> properties is listed for each input scope. This is not a comprehensive list of available input scopes.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can toggle most touch keyboards between an alphabetic layout and a numbers-and-symbols layout by pressing the <strong>&amp;123</strong> key to change to the numbers-and-symbols layout, and press the <strong>abcd</strong> key to change to the alphabetic layout.</p>
+</div>
+<h3 id="default">Default</h3>
+<p><code>&lt;TextBox InputScope=&quot;Default&quot;/&gt;</code></p>
+<p>The default Windows touch keyboard.</p>
+<p><img src="images/input-scopes/default.png" alt="Default Windows touch keyboard"></p>
+<ul>
+<li>Spell check: enabled if <strong>IsSpellCheckEnabled</strong> = <strong>true</strong>, disabled if <strong>IsSpellCheckEnabled</strong> = <strong>false</strong></li>
+<li>Auto-correction: enabled if <strong>IsSpellCheckEnabled</strong> = <strong>true</strong>, disabled if <strong>IsSpellCheckEnabled</strong> = <strong>false</strong></li>
+<li>Automatic capitalization: enabled if <strong>IsSpellCheckEnabled</strong> = <strong>true</strong>, disabled if <strong>IsSpellCheckEnabled</strong> = <strong>false</strong></li>
+<li>Text prediction: enabled if <strong>IsTextPredictionEnabled</strong> = <strong>true</strong>, disabled if <strong>IsTextPredictionEnabled</strong> = <strong>false</strong></li>
+</ul>
+<h3 id="currencyamountandsymbol">CurrencyAmountAndSymbol</h3>
+<p><code>&lt;TextBox InputScope=&quot;CurrencyAmountAndSymbol&quot;/&gt;</code></p>
+<p>The default numbers and symbols keyboard layout.</p>
+<p><img src="images/input-scopes/currencyamountandsymbol.png" alt="Windows touch keyboard for currency"></p>
+<ul>
+<li>Includes page left/right keys to show more symbols</li>
+<li>Spell check: on by default, can be disabled</li>
+<li>Auto-correction: on by default, can be disabled</li>
+<li>Automatic capitalization: always disabled</li>
+<li>Text prediction: on by default, can be disabled</li>
+</ul>
+<h3 id="url">Url</h3>
+<p><code>&lt;TextBox InputScope=&quot;Url&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/url.png" alt="Windows touch keyboard for URLs"></p>
+<ul>
+<li>Includes the <strong>.com</strong> and <img src="images/input-scopes/kbdgokey.png" alt="go key"> (Go) keys. Press and hold the <strong>.com</strong> key to display additional options (<strong>.org</strong>, <strong>.net</strong>, and region-specific suffixes)</li>
+<li>Includes the <strong>:</strong>, <strong>-</strong>, and <strong>/</strong> keys</li>
+<li>Spell check: off by default, can be enabled</li>
+<li>Auto-correction: off by default, can be enabled</li>
+<li>Automatic capitalization: off by default, can be enabled</li>
+<li>Text prediction: off by default, can be enabled</li>
+</ul>
+<h3 id="emailsmtpaddress">EmailSmtpAddress</h3>
+<p><code>&lt;TextBox InputScope=&quot;EmailSmtpAddress&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/emailsmtpaddress.png" alt="Windows touch keyboard for email addresses"></p>
+<ul>
+<li>Includes the <strong>@</strong> and <strong>.com</strong> keys. Press and hold the <strong>.com</strong> key to display additional options (<strong>.org</strong>, <strong>.net</strong>, and region-specific suffixes)</li>
+<li>Includes the <strong>_</strong> and <strong>-</strong> keys</li>
+<li>Spell check: off by default, can be enabled</li>
+<li>Auto-correction: off by default, can be enabled</li>
+<li>Automatic capitalization: off by default, can be enabled</li>
+<li>Text prediction: off by default, can be enabled</li>
+</ul>
+<h3 id="number">Number</h3>
+<p><code>&lt;TextBox InputScope=&quot;Number&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/number.png" alt="Windows touch keyboard for numbers"></p>
+<ul>
+<li>Spell check: on by default, can be disabled</li>
+<li>Auto-correction: on by default, can be disabled</li>
+<li>Automatic capitalization: always disabled</li>
+<li>Text prediction: on by default, can be disabled</li>
+</ul>
+<h3 id="telephonenumber">TelephoneNumber</h3>
+<p><code>&lt;TextBox InputScope=&quot;TelephoneNumber&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/telephonenumber.png" alt="Windows touch keyboard for telephone numbers"></p>
+<ul>
+<li>Spell check: on by default, can be disabled</li>
+<li>Auto-correction: on by default, can be disabled</li>
+<li>Automatic capitalization: always disabled</li>
+<li>Text prediction: on by default, can be disabled</li>
+</ul>
+<h3 id="search">Search</h3>
+<p><code>&lt;TextBox InputScope=&quot;Search&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/search.png" alt="Windows touch keyboard for search"></p>
+<ul>
+<li>Includes the <strong>Search</strong> key instead of the <strong>Enter</strong> key</li>
+<li>Spell check: on by default, can be disabled</li>
+<li>Auto-correction: on by default, can be disabled</li>
+<li>Auto-capitalization: always disabled</li>
+<li>Text prediction: on by default, can be disabled</li>
+</ul>
+<h3 id="searchincremental">SearchIncremental</h3>
+<p><code>&lt;TextBox InputScope=&quot;SearchIncremental&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/searchincremental.png" alt="Windows touch keyboard for incremental search"></p>
+<ul>
+<li>Same layout as <strong>Default</strong></li>
+<li>Spell check: off by default, can be enabled</li>
+<li>Auto-correction: always disabled</li>
+<li>Automatic capitalization: always disabled</li>
+<li>Text prediction: always disabled</li>
+</ul>
+<h3 id="formula">Formula</h3>
+<p><code>&lt;TextBox InputScope=&quot;Formula&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/formula.png" alt="Windows touch keyboard for formula"></p>
+<ul>
+<li>Includes the <strong>=</strong> key</li>
+<li>Also includes the <strong>%</strong>, <strong>$</strong>, and <strong>+</strong> keys</li>
+<li>Spell check: on by default, can be disabled</li>
+<li>Auto-correction: on by default, can be disabled</li>
+<li>Automatic capitalization: always disabled</li>
+<li>Text prediction: on by default, can be disabled</li>
+</ul>
+<h3 id="chat">Chat</h3>
+<p><code>&lt;TextBox InputScope=&quot;Chat&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/default.png" alt="Default Windows touch keyboard"></p>
+<ul>
+<li>Same layout as <strong>Default</strong></li>
+<li>Spell check: on by default, can be disabled</li>
+<li>Auto-correction: on by default, can be disabled</li>
+<li>Automatic capitalization: on by default, can be disabled</li>
+<li>Text prediction: on by default, can be disabled</li>
+</ul>
+<h3 id="nameorphonenumber">NameOrPhoneNumber</h3>
+<p><code>&lt;TextBox InputScope=&quot;NameOrPhoneNumber&quot;/&gt;</code></p>
+<p><img src="images/input-scopes/default.png" alt="Default Windows touch keyboard"></p>
+<ul>
+<li>Same layout as <strong>Default</strong></li>
+<li>Spell check: off by default, can be enabled</li>
+<li>Auto-correction: off by default, can be enabled</li>
+<li>Automatic capitalization: off by default, can be enabled (first letter of each word is capitalized)</li>
+<li>Text prediction: off by default, can be enabled</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/use-input-scope-to-change-the-touch-keyboard.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

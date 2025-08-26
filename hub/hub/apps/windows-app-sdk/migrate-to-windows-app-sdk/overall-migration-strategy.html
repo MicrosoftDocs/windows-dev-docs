@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Overall migration strategy </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Overall migration strategy ">
+    
+    <meta name="description" content="Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="overall-migration-strategy">Overall migration strategy</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>The Windows App SDK provides a broad set of Windows APIs—with implementations that are decoupled from the OS, and released to developers via <a href="https://www.nuget.org/">NuGet</a> packages. As a developer with a Universal Windows Platform (UWP) application, you can make great use of your existing skill set, and your source code, by moving your app to the Windows App SDK.</p>
+<p>With the Windows App SDK you can incorporate the latest runtime, language, and platform features into your app. Since each application is different, and so are your requirements and preferences, there are many different ways to approach the process of migrating your app's source code. But the high-level approach, and code changes needed for various feature areas, are similar. So in this topic we'll review strategies on how you can approach migrating your app, as well as more info (and limitations) about certain feature areas. So also see <a href="what-is-supported.html">What's supported when porting from UWP to WinUI 3</a>.</p>
+<p>Most <a href="/uwp/api/">Windows Runtime (WinRT)</a> APIs can be used by Windows App SDK apps. But there are some that aren't supported in desktop apps, or have restrictions.</p>
+<ul>
+<li>APIs that have dependencies on UI features that were designed for use only in UWP apps.</li>
+<li>APIs that require package identity. These APIs are supported only in desktop apps that are packaged using MSIX.</li>
+</ul>
+<p>For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in <a href="../../winui/index.html">WinUI</a>, or via WinRT COM interfaces that are available in the Windows App SDK.</p>
+<p>For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various <strong>HWND</strong>-based APIs and interoperation patterns, such as <a href="/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize"><strong>IInitializeWithWindow::Initialize</strong></a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Also see <a href="../../desktop/modernize/desktop-to-uwp-supported-api.html">Windows Runtime APIs not supported in desktop apps</a>. Windows App SDK apps are <em>one</em> kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.</p>
+</div>
+<p>We'd love to hear your feedback about this migration guide, and about your own migration experience. Use the <strong>Feedback</strong> section right at the foot of this page like this:</p>
+<ul>
+<li>For questions and feedback about the Windows App SDK, or just to start a discussion, use the <strong>This product</strong> button. You can also start a discussion on the <a href="https://github.com/microsoft/WindowsAppSDK/discussions">Discussions tab</a> of the <strong>WindowsAppSDK</strong> GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.</li>
+<li>For feedback about missing or incorrect information in this migration guide, use the <strong>This page</strong> button.</li>
+</ul>
+<h2 id="why-migrate-to-the-windows-app-sdk">Why migrate to the Windows App SDK?</h2>
+<p>The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern <a href="../../winui/index.html">Windows UI 3 Library (WinUI 3)</a>, which is developed and designed to delight your users.</p>
+<p>In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)—also known as the Windows 10 October 2018 Update.</p>
+<p>The value proposition of moving the Windows App SDK is manifold. Here are some considerations:</p>
+<ul>
+<li>Latest user interface (UI) platform and controls such as <a href="../../winui/index.html">WinUI</a> 3 and <a href="/microsoft-edge/webview2/">WebView2</a>.</li>
+<li>A single API surface across desktop app platforms.</li>
+<li>More frequent release cadence that releases separately from Windows.</li>
+<li>A consistent experience across Windows versions.</li>
+<li>.NET compatibility.</li>
+<li>Backward-compatible down to Windows 10, version 1809.</li>
+<li>Improved runtime environment. See <a href="/windows/msix/msix-container">MSIX container</a>.</li>
+</ul>
+<p>For more info, see <a href="../index.html">Windows App SDK</a>.</p>
+<h2 id="overview-of-the-migration-process">Overview of the migration process</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can think of the UWP version of the app that you want to migrate as the <em>source</em> solution/project (it's the <em>source</em> of the migration process). The Windows App SDK version is the <em>target</em> solution (it's the <em>target</em> of the migration process).</p>
+</div>
+<h2 id="install-the-windows-app-sdk-vsix">Install the Windows App SDK VSIX</h2>
+<p>Download the Windows App SDK Visual Studio extension (VSIX) installer from <a href="../stable-channel.html">Stable release channel for the Windows App SDK</a>, and run to install it.</p>
+<h2 id="create-a-new-project">Create a new project</h2>
+<p>In Visual Studio, <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>. For example, use the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template. You can find that project template in the <strong>Create a new project</strong> dialog by choosing language: <em>C#</em> or <em>C++</em>; platform: <em>Windows App SDK</em>; project type: <em>WinUI</em> or <em>Desktop</em>.</p>
+<p>You'll see two projects in <strong>Solution Explorer</strong>—one is qualified as <strong>(Desktop)</strong>, and the other as <strong>(Package)</strong>.</p>
+<h2 id="migrate-code-with-the-least-dependencies-first">Migrate code with the least dependencies first</h2>
+<p>To illustrate this recommendation, let's take the <a href="case-study-1.html">PhotoLab case study</a> as an example. For the PhotoLab sample app, one perhaps obvious approach might be to begin by migrating <strong>MainPage</strong>—since that's such an important and prominent piece of the app. But if we were to do that, then we'd soon realize that <strong>MainPage</strong> has a dependency on the <strong>DetailPage</strong> view; and then that <strong>DetailPage</strong> has a dependency on the <strong>Photo</strong> model. If we were to follow that path, then we might be constantly interrupting ourselves (switching over to work on each newly discovered dependency). Certainly we wouldn't expect to get a clean <em>build</em> until we'd chased down every dependency, and essentially ported the whole project in one giant leap.</p>
+<p>If on the other hand we were to begin with the piece of the project that doesn't depend on anything else, and work outward from there (from least- to most-dependent piece), then we'd be able to focus on each piece one at a time. And we'd also be able to achieve a clean build after migrating each piece, and in that way confirm that the migration process is staying on track.</p>
+<p>So when you're migrating your own apps, we recommend that you migrate code with the least dependencies first.</p>
+<h2 id="copy-files-or-copy-file-contents">Copy files, or copy file contents?</h2>
+<p>When you migrate, you will of course be copying over asset <em>files</em> (and not asset file <em>contents</em>). But what about source code files? As an example let's again take the <strong>MainPage</strong> class from the <a href="case-study-1.html">PhotoLab case study</a> and the <a href="case-study-2.html">Photo Editor case study</a>.</p>
+<p><strong>C#</strong>. In the C# version (PhotoLab), <strong>MainPage</strong> is made up of the source code files <code>MainPage.xaml</code> and <code>MainPage.xaml.cs</code>.</p>
+<p><strong>C++/WinRT</strong>. In the C++/WinRT version (Photo Editor), <strong>MainPage</strong> is made up of the source code files <code>MainPage.xaml</code>, <code>MainPage.idl</code>, <code>MainPage.h</code>, and <code>MainPage.cpp</code>.</p>
+<p>So you have the choice between these two options:</p>
+<ul>
+<li>(Recommended) you can copy over <em>the files themselves</em> (using <strong>File Explorer</strong>), and then add the copies to the target project. Exceptions to this recommendation are files such as <code>App.xaml</code> and <code>App.xaml.cs</code>, since those files already exist in the target project, and they contain source code that's specific to the Windows App SDK. For those you'll need to <em>merge</em> the source code that's already there with source code from the source project.</li>
+<li>Or you can use Visual Studio to create new <strong>Page</strong> files (such as <code>MainPage.xaml</code> and <code>MainPage.xaml.cs</code>) in the target project, and then copy the <em>contents</em> of those source code files over from the source project to the target project. For a C++/WinRT project, this option involves a lot more steps.</li>
+</ul>
+<p>Also see the section <a href="guides/windowing.html#mainpage-and-mainwindow">MainPage and MainWindow</a>.</p>
+<h2 id="folder-and-file-name-differences-cwinrt">Folder and file name differences (C++/WinRT)</h2>
+<p>In a C++/WinRT UWP project, code-behind files for XAML views are named of the form <code>MainPage.h</code> and <code>MainPage.cpp</code>. But in a C++/WinRT Windows App SDK, you'll need to rename those to <code>MainPage.xaml.h</code> and <code>MainPage.xaml.cpp</code>.</p>
+<p>In a C++/WinRT UWP project, when migrating a hypothetical XAML view (in the sense of models, views, and viewmodels) named <strong>MyPage</strong>, in <code>MyPage.xaml.cpp</code> you'll need to add <code>#include &quot;MyPage.g.cpp&quot;</code> immediately after <code>#include &quot;DetailPage.xaml.h&quot;</code>. And for a hypothetical model named <strong>MyModel</strong>, in <code>MyModel.cpp</code> add <code>#include &quot;MyModel.g.cpp&quot;</code> immediately after #include &quot;MyModel.h&quot;. For an example, see <a href="case-study-2.html#migrate-detailpage-source-code">Migrate DetailPage source code</a>.</p>
+<h2 id="if-you-change-the-name-of-your-migrated-project">If you change the name of your migrated project</h2>
+<p>While migrating, you might choose to give your target project a different name from that of the source project. If you do, then that will affect the default namespace within the source project. As you copy source code over from the source project to the target project, you might need to change namespace names that are mentioned in the source code.</p>
+<p>Changing project name (and consequently default namespace name) is something that we do, for example, in the case study <a href="case-study-1.html">A Windows App SDK migration of the UWP PhotoLab sample app (C#)</a>. In that case study, instead of copying over file <em>contents</em> from the source to the target project, we copy entire files using File Explorer. The source project/namespace name is <em>PhotoLab</em>, and the target project/namespace name is <em>PhotoLabWinUI3</em>. So we need to search for <em>PhotoLab</em> in the contents of any source code files we copied over, and change that to <em>PhotoLabWinUI3</em></p>
+<p>In that particular case study, we made those changes in <code>App.xaml</code>, <code>App.xaml.cs</code>, <code>MainPage.xaml</code>, <code>MainPage.xaml.cs</code>, <code>DetailPage.xaml</code>, <code>DetailPage.xaml.cs</code>, <code>ImageFileInfo.cs</code>, and <code>LoadedImageBrush.cs</code>.</p>
+<h2 id="install-the-same-nuget-packages-that-were-installed-in-the-source-project">Install the same NuGet packages that were installed in the source project</h2>
+<p>One task during the migration process is to identify any NuGet packages that the source project has dependencies on. And then install those same NuGet packages in the target project.</p>
+<p>For example, in the case study <a href="case-study-1.html">A Windows App SDK migration of the UWP PhotoLab sample app (C#)</a>, the source project contains references to the <strong>Microsoft.Graphics.Win2D</strong> NuGet package. So in that case study we add a references to the same NuGet package to the target project.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="/uwp/api/">Windows Runtime (WinRT)</a> APIs</li>
+<li><a href="../../winui/index.html">WinUI</a></li>
+<li><a href="../stable-channel.html">Stable release channel for the Windows App SDK</a></li>
+<li><a href="case-study-1.html">PhotoLab case study</a></li>
+<li><a href="case-study-2.html">Photo Editor case study</a></li>
+<li><a href="../../desktop/modernize/desktop-to-uwp-supported-api.html">Windows Runtime APIs not supported in desktop apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

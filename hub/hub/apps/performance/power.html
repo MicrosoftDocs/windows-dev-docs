@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Power consumption improvements and Windows Application Performance </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Power consumption improvements and Windows Application Performance ">
+    
+    <meta name="description" content="Improve power consumption and battery life by minimizing the use of system resources and not waking the CPU when your Windows app is in the background.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="improve-power-consumption-and-battery-life-by-minimizing-background-work">Improve power consumption and battery life by minimizing background work</h1>
+
+<p>This guide will demonstrate how to improve the way that your Windows application consumes power, offering principles to help you improve overall device performance and battery life.</p>
+<p>The most basic principles for improving power consumption are to ensure that while your app is in the background, it does not:</p>
+<ul>
+<li>use system resources,</li>
+<li>wake the CPU through timers,</li>
+<li>wake the CPU by waiting for vsync events.</li>
+</ul>
+<p>Being &quot;in the background&quot; means that your app is not visible, nor audible, to the user. There should be few, if any, reasons to wake the CPU or utilize system resources while in the background. Checking whether your app is triggering these events and addressing the cause can significantly improve your app's power consumption, battery life, and <a href="index.html#performance-and-sustainability">reduce the carbon emissions that will result from customers using your app</a>.</p>
+<p>To check that the CPU is not waking up to do unnecessary work while your app is not in use, you can capture and analyze a trace using <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer (WPA)</a>. We will walk through the steps explaining how to do so below.</p>
+<h2 id="capture-a-trace-and-check-for-unnecessary-work">Capture a trace and check for unnecessary work</h2>
+<p>It is important to set up the correct conditions when running your app before capturing a trace to analyze whether unnecessary work is being performed that can drain power. You also may want to run multiple traces in order to test your app under a variety of conditions.</p>
+<h3 id="setup">Setup</h3>
+<ol>
+<li><p>Get your test device to idle by opening Task Manager and ensuring that CPU utilization is less than 5%. Doing so will minimize measurement interference and provide reasonable size traces.</p>
+</li>
+<li><p>Launch your app and navigate to a view that's expected to be commonly used.</p>
+</li>
+<li><p>Minimize your app. *You may want to repeat the following steps while your app window is fully occluded (blocked from view) behind other windows and when your app is in the foreground, after a period of no interaction by the user, to ensure unnecessary work is not being initiated by the app.</p>
+</li>
+</ol>
+<h3 id="measure-and-evaluate-cpu-use-while-in-the-background">Measure and evaluate CPU use while in the background</h3>
+<ol>
+<li><p>Open a <a href="/windows/terminal/">command line</a> (PowerShell or Command Prompt) in <a href="/windows/terminal/faq#how-do-i-run-a-shell-in-windows-terminal-in-administrator-mode">administrator mode</a>. (If not run in admin mode, you may receive error code: 0xc5585011, &quot;Failed to enable the policy to profile system performance.&quot;)</p>
+</li>
+<li><p>Enter the command: <code>wpr -start power -filemode</code></p>
+</li>
+<li><p>Leave device idle for 5 minutes.</p>
+</li>
+<li><p>Enter the command: <code>wpr -stop idletrace.etl</code></p>
+</li>
+<li><p>To open the trace using <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer (WPA)</a>, enter the command: <code>wpa.exe idletrace.etl</code></p>
+</li>
+<li><p>Open the <strong>Computation</strong> &gt; <strong><a href="/windows-hardware/test/wpt/cpu-analysis#cpu-usage-precise-graph">CPU Usage (Precise)</a></strong> graph.</p>
+<ul>
+<li><p>Navigate to your process (or if you have a multi-process model all processes related to your app) and evaluate the <a href="/windows/win32/etw/cswitch">Cswitch</a> count, &quot;Utilization by CPU&quot;. Ideally these are as close to 0 as possible while the app is in background. Looking at the stacks is a great way to find where resources are being used and how to improve it.</p>
+</li>
+<li><p>Look for excessive wakes by adding a &quot;New Thread Stack&quot; to see which stack the thread woke on.</p>
+</li>
+</ul>
+<p><img src="images/cpu-usage-precise.png" alt="WPA graph showing CPU process, count, and percent of usage"></p>
+</li>
+<li><p>Open the <strong>Computation</strong> &gt; <strong><a href="/windows-hardware/test/wpt/cpu-analysis#cpu-usage-sampled-graph">CPU Usage (Sampled)</a></strong> graph. Track down CPU usage issues by evaluating where in-code time is being spent executing.</p>
+</li>
+</ol>
+<h3 id="measure-and-evaluate-vsync-waiting-while-in-the-background">Measure and evaluate vsync waiting while in the background</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Focus on basic CPU usage in the previous section before investigating this more advanced scenario.</p>
+</div>
+<ol>
+<li><p>Open a <a href="/windows/terminal/">command line</a> (PowerShell or Command Prompt) in administrator mode.</p>
+</li>
+<li><p>Enter the command: <code>wpr -start gpu -filemode</code></p>
+</li>
+<li><p>Leave the device idle for 5 minutes.</p>
+</li>
+<li><p>Enter the command: <code>wpr -stop gputrace.etl</code></p>
+</li>
+<li><p>To open the trace using <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer (WPA)</a>, enter the command: <code>wpa.exe gputrace.etl</code></p>
+</li>
+<li><p>Open the <strong>System Activity</strong> &gt; <strong>Generic events</strong> graph.</p>
+<ul>
+<li>Filter to &quot;Microsoft-Windows-Dxgkrnl&quot; events.</li>
+<li>Drag the <strong>Process</strong> column over to be the 2nd column.</li>
+<li>Check if you are calling into WaitForVsync. For example, through APIs like <a href="/windows/win32/api/dxgi/nf-dxgi-idxgioutput-waitforvblank">IDXGIOutput::WaitForVBlank (dxgi.h)</a> through the <code>WaitForVerticalBlankEventInternal</code> event.</li>
+</ul>
+<p><img src="images/system-activity-generic-events.png" alt="WPA graph showing MS Edge webview2 event"></p>
+</li>
+</ol>
+<p>To learn more, see the article <a href="/windows-hardware/design/device-experiences/using-windows-performance-analyzer-to-analyze-modern-standby-issues">Using Windows Performance Analyzer to analyze Modern Standby issues</a>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><p><a href="/windows-hardware/test/wpt/wpa-step-by-step-guide">Windows Performance Analyzer step-by-step guide</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/windows-performance-analyzer-common-scenarios">Windows Performance Analyzer common scenarios</a></p>
+</li>
+<li><p><a href="/windows-hardware/design/device-experiences/using-windows-performance-analyzer-to-analyze-modern-standby-issues">Using Windows Performance Analyzer to analyze Modern Standby issues</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/cpu-analysis">CPU Analysis</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/event-tracing-for-windows">Event Tracing for Windows</a></p>
+</li>
+<li><p><a href="/answers/questions/812324/i-don39t-have-sampled-cpu-usage-data-in-my-profile.html">Q&amp;A forum</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/list-of-wpa-graphs">List of Windows Performance Toolkit (WPA) Graphs</a></p>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/performance/power.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

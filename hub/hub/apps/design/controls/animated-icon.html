@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>AnimatedIcon </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="AnimatedIcon ">
+    
+    <meta name="description" content="An AnimatedIcon is a control which plays animated images in response to user interaction and visual state changes.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="animatedicon">AnimatedIcon</h1>
+
+<p>An AnimatedIcon control plays animated images in response to user interaction and visual state changes.</p>
+<p>Animated icons can draw attention to a UI component, such as the next button in a tutorial, or simply reflect the action associated with the icon in an entertaining and interesting way.</p>
+<p>Custom animations can be created with <a href="https://www.adobe.com/products/aftereffects.html">Adobe AfterEffects</a> and rendered with the <a href="/windows/communitytoolkit/animations/lottie">Lottie-Windows</a> library to use as an animated icon in your WinUI application. For more detail, see <a href="#use-lottie-to-create-animated-content-for-an-animatedicon">Use Lottie to create animated content for an AnimatedIcon</a> later in this article.</p>
+<p>The following example shows a basic animated search icon that was created in Adobe AfterEffects and rendered through Lottie.</p>
+<p><span class="mx-imgBorder">
+<img src="images/animated-search.gif" alt="An animated search icon">
+</span>
+</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use the AnimatedIcon control when a control's icon needs to animate in response to user interaction with the control, such as when a user hovers over a button or clicks it.</p>
+<p>Do not use an AnimatedIcon if the animation is not triggered by a visual state transition, and plays in a loop, plays one time only, or can be paused. Use AnimatedVisualPlayer instead.</p>
+<p>Do not use AnimatedIcon for anything other than an icon, or where the control does not support an IconElement or IconElementSource property. Use AnimatedVisualPlayer instead.</p>
+<p>When an animated icon is not required, use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon">FontIcon</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon">SymbolIcon</a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon">BitmapIcon</a> instead.</p>
+<h3 id="differences-between-animatedicon-and-animatedvisualplayer">Differences between AnimatedIcon and AnimatedVisualPlayer</h3>
+<p>AnimatedIcon is an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement">IconElement</a>, which can be used anywhere an element or IconElement is required (such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem.icon">NavigationViewItem.Icon</a>), and is controlled through a State property.</p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AnimatedVisualPlayer">AnimatedVisualPlayer</a> is a more general animation player, that is controlled through methods such as Play and Pause, and can be used anywhere in an application.</p>
+<h2 id="use-lottie-to-create-animated-content-for-an-animatedicon">Use Lottie to create animated content for an AnimatedIcon</h2>
+<p>Defining an animation for an AnimatedIcon begins the same as the process to define an animation for an AnimatedVisualPlayer. You must create, or obtain, the Lottie file for the icon you want to add and run that file through <a href="/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen">LottieGen</a>. LottieGen generates code for a C++/WinRT class that you can then instantiate and use with an AnimatedIcon.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox">AutoSuggestBox</a> control uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedvisuals.animatedfindvisualsource">AnimatedVisuals.AnimatedFindVisualSource</a> class, which was generated using the LottieGen tool.</p>
+</div>
+<p>You can also define markers in the animation definition to indicate playback time positions. You can then set the AnimatedIcon state to these markers. For example, if you have a playback position in the Lottie file marked &quot;PointerOver&quot;, you can set the AnimatedIcon state to &quot;PointerOver&quot; and move the animation to that playback position.</p>
+<p>Defining a color property in your Lottie animation named &quot;Foreground&quot; lets you to set the color using the AnimatedIcon.Foreground property.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Please view the UX guidance for <a href="/windows/uwp/design/style/icons">Icons for Windows Apps</a> to ensure your icons match the design principles.</li>
+<li>Limit the number of animated icons on a single screen or view. Only animate icons to draw the user's attention to where they need to take action or when they are performing an action.</li>
+</ul>
+<h2 id="create-an-animated-icon">Create an animated icon</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon">AnimatedIcon class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/AnimatedIcon">Open the WinUI 3 Gallery app to see AnimatedIcon in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h3 id="add-an-animatedicon-to-a-button">Add an AnimatedIcon to a Button</h3>
+<p>The following example demonstrates a back button that displays an animated back icon on a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered">PointerEntered</a> event.</p>
+<ul>
+<li>The <code>AnimatedBackVisualSource</code> is a class created with the <a href="https://github.com/windows-toolkit/Lottie-Windows/tree/master/LottieGen">LottieGen</a> command line tool.</li>
+<li>The FallbackIconSource is used when animations can't be played, such as on older versions of Windows that don't support Lottie animations.</li>
+<li>If the user turns animations off in their system settings, AnimatedIcon displays the final frame of the state transition the controls was in.</li>
+</ul>
+<pre><code class="lang-xaml">&lt;Button PointerEntered=&quot;Button_PointerEntered&quot; PointerExited=&quot;Button_PointerExited&quot;&gt;
+    &lt;AnimatedIcon x:Name='BackAnimatedIcon'&gt;
+        &lt;AnimatedIcon.Source&gt;
+            &lt;animatedvisuals:AnimatedBackVisualSource/&gt;
+        &lt;/AnimatedIcon.Source&gt;
+        &lt;AnimatedIcon.FallbackIconSource&gt;
+            &lt;SymbolIconSource Symbol='Back'/&gt;
+        &lt;/AnimatedIcon.FallbackIconSource&gt;
+    &lt;/AnimatedIcon&gt;
+&lt;/Button&gt;
+</code></pre>
+<pre><code class="lang-cs">private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
+{
+    AnimatedIcon.SetState(this.BackAnimatedIcon, &quot;PointerOver&quot;);
+}
+
+private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
+{
+    AnimatedIcon.SetState(this.BackAnimatedIcon, &quot;Normal&quot;);
+}
+</code></pre>
+<h3 id="add-an-animatedicon-to-navigationviewitem">Add an AnimatedIcon to NavigationViewItem</h3>
+<p>The NavigationViewItem control automatically sets common states on an AnimatedIcon based on the state of the control, if those markers are defined in the Lottie animation.</p>
+<p>For example, the following example shows how to set a custom animation (<code>GameSettingsIcon</code>) that was generated by the LottieGen tool:</p>
+<pre><code class="lang-xaml">&lt;NavigationView.MenuItems&gt;
+    &lt;NavigationViewItem Content = &quot;Game Settings&quot;&gt;
+        &lt;NavigationViewItem.Icon&gt;
+            &lt;AnimatedIcon x:Name='GameSettingsIcon'&gt;
+                &lt;AnimatedIcon.Source&gt;
+                    &lt;animatedvisuals:AnimatedSettingsVisualSource/&gt;
+                &lt;/AnimatedIcon.Source&gt;
+                &lt;AnimatedIcon.FallbackIconSource&gt;
+                    &lt;FontIconSource FontFamily=&quot;Segoe MDL2 Assets&quot; Glyph=&quot;&amp;#xE713;&quot;/&gt;
+                &lt;/AnimatedIcon.FallbackIconSource&gt;
+            &lt;/AnimatedIcon&gt;
+        &lt;/NavigationViewItem.Icon&gt;
+    &lt;/NavigationViewItem&gt;
+&lt;/NavigationView.MenuItems&gt;
+</code></pre>
+<p><img src="images/animated-settings.gif" alt="Animated Settings Gear"></p>
+<p>The NavigationViewItem automatically sets the following states on the AnimatedIcon:</p>
+<ul>
+<li>Normal</li>
+<li>PointerOver</li>
+<li>Pressed</li>
+<li>Selected</li>
+<li>PressedSelected</li>
+<li>PointerOverSelected</li>
+</ul>
+<p>If <code>GameSettingsIcon</code> has a marker defined for &quot;NormalToPointerOver&quot;, the icon will be animated until the pointer moves over the NavigationViewItem. See the following section for more information on creating markers.</p>
+<h2 id="define-animatedicon-markers">Define AnimatedIcon markers</h2>
+<p>To create the custom <code>GameSettingsIcon</code> in the previous example, run a Lottie JSON file (with markers) through the Windows <a href="/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen">LottieGen</a> tool to generate the animation code as a C# class.</p>
+<p>Once you run your Lottie file through LottieGen you can add the CodeGen output class to your project. See the <a href="/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen">LottieGen</a> tutorial for more information.</p>
+<p>Setting the AnimatedIcon state to a new value also sets a playback position in the Lottie animation for the transition from the old state to the new state. These playback positions are also identified with markers in the Lottie file. Specific markers for the start of the transition or the end of the transition can also be defined.</p>
+<p>For example, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox">AutoSuggestBox</a> control uses an AnimatedIcon that animates with the following states:</p>
+<ul>
+<li>Normal</li>
+<li>PointerOver</li>
+<li>Pressed</li>
+</ul>
+<p>You can define markers in your Lottie file with those state names. You can also define markers as follows:</p>
+<ul>
+<li>Insert &quot;To&quot; between state names. For example, if you define a &quot;NormalToPointerOver&quot; marker, changing the AnimatedIcon state from &quot;Normal&quot; to &quot;PointerOver&quot; will cause it to move to this marker's playback position.</li>
+<li>Append &quot;_Start&quot; or &quot;_End&quot; to a marker name. For example defining markers &quot;NormalToPointerOver_Start&quot; and &quot;NormalToPointerOver_End&quot; and changing the AnimatedIcon state from &quot;Normal&quot; to &quot;PointerOver&quot; will cause it to jump to the _Start marker's playback position and then animate to the _End playback position.</li>
+</ul>
+<p>The exact algorithm used to map AnimatedIcon State changes to marker playback positions:</p>
+<ul>
+<li>Check the provided file's markers for the markers &quot;[PreviousState]To[NewState]_Start&quot; and &quot;[PreviousState]To[NewState]_End&quot;. If both are found play the animation from &quot;[PreviousState]To[NewState]_Start&quot; to &quot;[PreviousState]To[NewState]_End&quot;.</li>
+<li>If &quot;[PreviousState]To[NewState]_Start&quot; is not found but &quot;[PreviousState]To[NewState]_End&quot; is found, then hard cut to the &quot;[PreviousState]To[NewState]_End&quot; playback position.</li>
+<li>If &quot;[PreviousState]To[NewState]_End&quot; is not found but &quot;[PreviousState]To[NewState]_Start&quot; is found, then hard cut to the &quot;[PreviousState]To[NewState]_Start&quot; playback position.</li>
+<li>Check if the provided IAnimatedVisualSource2's markers for the marker &quot;[PreviousState]To[NewState]&quot;. If it is found then hard cut to the &quot;[PreviousState]To[NewState]&quot; playback position.</li>
+<li>Check if the provided IAnimatedVisualSource2's markers for the marker &quot;[NewState]&quot;. If it is found, then hard cut to the &quot;[NewState]&quot; playback position.</li>
+<li>Check if the provided IAnimatedVisualSource2's markers has any marker which ends with &quot;To[NewState]_End&quot;. If any marker is found which has that ending,  hard cut to the first marker found with the appropriate ending's playback position.</li>
+<li>Check if &quot;[NewState]&quot; parses to a float. If it does, animated from the current position to the parsed float.</li>
+<li>Hard cut to playback position 0.0.</li>
+</ul>
+<p>The following example shows the marker format in a Lottie JSON file. See the AnimatedIcon guidance for more detail.</p>
+<pre><code class="lang-json">&quot;markers&quot;:[{&quot;tm&quot;:0,&quot;cm&quot;:&quot;NormalToPointerOver_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:9,&quot;cm&quot;:&quot;NormalToPointerOver_End&quot;,&quot;dr&quot;:0},
+
+{&quot;tm&quot;:10,&quot;cm&quot;:&quot;NormalToPressed_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:19,&quot;cm&quot;:&quot;NormalToPressed_End&quot;,&quot;dr&quot;:0},
+
+{&quot;tm&quot;:20,&quot;cm&quot;:&quot;PointerOverToNormal_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:29,&quot;cm&quot;:&quot;PointerOverToNormal_End&quot;,&quot;dr&quot;:0},
+
+{&quot;tm&quot;:30,&quot;cm&quot;:&quot;PointerOverToPressed_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:39,&quot;cm&quot;:&quot;PointerOverToPressed_End&quot;,&quot;dr&quot;:0},
+
+{&quot;tm&quot;:40,&quot;cm&quot;:&quot;PressedToNormal_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:49,&quot;cm&quot;:&quot;PressedToNormal_End&quot;,&quot;dr&quot;:0},
+
+{&quot;tm&quot;:50,&quot;cm&quot;:&quot;PressedToPointerOver_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:69,&quot;cm&quot;:&quot;PressedToPointerOver_End&quot;,&quot;dr&quot;:0},
+
+{&quot;tm&quot;:90,&quot;cm&quot;:&quot;PressedToNormal_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:99,&quot;cm&quot;:&quot;PressedToNormal_End&quot;,&quot;dr&quot;:0},
+
+{&quot;tm&quot;:100,&quot;cm&quot;:&quot;PressedToPointerOver_Start&quot;,&quot;dr&quot;:0},{&quot;tm&quot;:101,&quot;cm&quot;:&quot;PressedToPointerOver_End&quot;,&quot;dr&quot;:0}]
+</code></pre>
+<h3 id="adding-a-standalone-animatedicon">Adding a Standalone AnimatedIcon</h3>
+<p>The following example is a button that the user clicks to Accept a prompt.</p>
+<p>The <code>MyAcceptAnimation</code> class is created with the <a href="/windows/communitytoolkit/animations/lottie-scenarios/getting_started_codegen">LottieGen</a> tool.</p>
+<p>The FallbackIconSource will be used rather than the animation when animations can't be played, such as on older versions of Windows that don't support Lottie animations.</p>
+<p>If the end user turns off animations in their system settings, AnimatedIcon will display the final frame of the state transition the controls was in.</p>
+<pre><code class="lang-xml">&lt;Button PointerEntered=&quot;HandlePointerEntered&quot; PointerExited=&quot;HandlePointerExited&quot;&gt;
+    &lt;AnimatedIcon x:Name='AnimatedIcon1'&gt;
+        &lt;local:MyAcceptAnimation/&gt;
+        &lt;AnimatedIcon.FallbackIconSource&gt;
+            &lt;SymbolIconSource Symbol='Accept'/&gt;
+        &lt;/AnimatedIcon.FallbackIconSource&gt;
+    &lt;/AnimatedIcon&gt;
+&lt;/Button&gt;
+</code></pre>
+<pre><code class="lang-cs">private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
+{
+    AnimatedIcon.SetState(this.AnimatedIcon1, &quot;PointerOver&quot;);
+}
+
+private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
+{
+    AnimatedIcon.SetState(this.StackPaAnimatedIcon1nel1, &quot;Normal&quot;);
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The AnimatedIcon for UWP apps requires WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in the <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.animatedicon">AnimatedIcon class</a></li>
+<li><a href="winui2gallery:/item/AnimatedIcon">Open the WinUI 2 Gallery app and see the AnimatedIcon in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:AnimatedIcon /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../style/icons.html">Icons in Windows apps</a></li>
+<li><a href="../motion/index.md">Motion for Windows apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/animated-icon.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

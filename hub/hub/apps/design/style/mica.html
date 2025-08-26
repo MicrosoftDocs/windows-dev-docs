@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Mica material </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Mica material ">
+    
+    <meta name="description" content="Learn to use Mica and Mica Alt, opaque, dynamic materials that incorporate theme and desktop wallpaper to delight users and create visual hierarchy.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mica-material">Mica material</h1>
+
+<p><em>Mica</em> is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization. Mica is available for UWP apps that use WinUI 2 and apps that use Windows App SDK 1.1 or later, while running on Windows 11 version 22000 or later.</p>
+<p><img src="images/materials/mica-header.png" alt="hero image"></p>
+<section class="row">
+<div class="column">
+<p>Mica in light theme<br>
+<img src="images/materials/mica-light-theme.png" alt="Mica in light theme"></p>
+</div>
+<div class="column">
+<p>Mica in dark theme<br>
+<img src="images/materials/mica-dark-theme.png" alt="Mica in dark theme"></p>
+</div>
+</section>
+<p><em>Mica Alt</em> is a variant of Mica, with stronger tinting of the user's desktop background color. You can apply Mica Alt to your app's backdrop to provide a deeper visual hierarchy than Mica, especially when creating an app with a tabbed title bar. Mica Alt is available for apps that use Windows App SDK 1.1 or later, while running on Windows 11 version 22000 or later.</p>
+<p>These images show the difference between Mica and Mica Alt in a title bar with tabs. The first image uses Mica and the second image uses Mica Alt.</p>
+<p><span class="mx-imgBorder">
+<img src="images/mica-tabs.png" alt="Screenshot of Mica in a title bar with tabs.">
+</span>
+</p>
+<p><span class="mx-imgBorder">
+<img src="images/mica-alt-tabs.png" alt="Screenshot of Mica Alt in a title bar with tabs.">
+</span>
+</p>
+<h2 id="when-to-use-mica-or-mica-alt">When to use Mica or Mica Alt</h2>
+<p>Mica and Mica Alt are materials that appear on the backdrop of your application — behind all other content. Each material is opaque and incorporates the user's theme and desktop wallpaper to create its highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.</p>
+<p>We recommend that you apply Mica or Mica Alt as the base layer of your app, and prioritize visibility in the title bar area. For more specific layering guidance see <a href="../signature-experiences/layering.html">Layering and Elevation</a> and the <a href="#app-layering-with-mica">App layering with Mica</a> section of this article.</p>
+<h2 id="usability-and-adaptability">Usability and adaptability</h2>
+<p>The Mica materials automatically adapt their appearance for a wide variety of devices and contexts. They are designed for performance as they capture the background wallpaper only once to create their visualizations.</p>
+<p>In High Contrast mode, users continue to see the familiar background color of their choosing in place of Mica or Mica Alt. In addition, the Mica materials will appear as a solid fallback color (<code>SolidBackgroundFillColorBase</code> for Mica, <code>SolidBackgroundFillColorBaseAlt</code> for Mica Alt) when:</p>
+<ul>
+<li>The user turns off transparency in Settings &gt; Personalization &gt; Color.</li>
+<li>Battery Saver mode is activated.</li>
+<li>The app runs on low-end hardware.</li>
+<li>An app window on desktop deactivates.</li>
+<li>The Windows app is running on Xbox or HoloLens.</li>
+<li>The Windows version is below 22000.</li>
+</ul>
+<h2 id="app-layering-with-mica">App layering with Mica</h2>
+<section class="row">
+<div class="column">
+<p>Standard pattern content layer<br>
+<img src="images/materials/mica-l-content.png" alt="Standard content layer"></p>
+</div>
+<div class="column">
+<p>Card pattern content layer<br>
+<img src="images/materials/mica-card-content.png" alt="Card pattern content layer"></p>
+</div>
+</section>
+<p>Mica is ideal as a foundation layer in your app's hierarchy due to its inactive and active states and subtle personalization. To follow the two-layer <a href="../signature-experiences/layering.html">Layering and Elevation</a> system, we encourage you to apply Mica as the base layer of your app and add an additional content layer that sits on top of the base layer. The content layer should pick up the material behind it, Mica, using the <code>LayerFillColorDefaultBrush</code>, a low-opacity solid color, as its background. Our recommended content layer patterns are:</p>
+<ul>
+<li><strong>Standard pattern</strong>: A contiguous background for large areas that need a distinct hierarchical differentiation from the base layer. The <code>LayerFillColorDefaultBrush</code> should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).</li>
+<li><strong>Card pattern</strong>: Segmented cards for apps that are designed with multiple sectioned and discontinuous UI components. For the definition of the card UI using the <code>LayerFillColorDefaultBrush</code>, see <a href="../signature-experiences/layering.html">Layering and Elevation</a> guidance.</li>
+</ul>
+<p>To give your app's window a seamless look, Mica should be visible in the title bar if you choose to apply the material to your app. You can show Mica in the title bar by extending your app into the non-client area and creating a transparent custom title bar. For more info, see <a href="../basics/titlebar-design.html">Title bar</a>.</p>
+<p>The following examples showcase common implementations of the layering strategy with <a href="../controls/navigationview.html">NavigationView</a> where Mica is visible in the title bar area.</p>
+<ul>
+<li>Standard pattern in Left NavigationView.</li>
+<li>Standard pattern in Top NavigationView.</li>
+<li>Card pattern in Left NavigationView.</li>
+</ul>
+<h3 id="standard-pattern-in-left-navigationview">Standard pattern in Left NavigationView</h3>
+<p>By default, NavigationView in Left mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.</p>
+<p><img src="images/materials/mica-light-theme.png" alt="Nav View in standard pattern with custom title bar in Left mode"></p>
+<h3 id="standard-pattern-in-top-navigationview">Standard pattern in Top NavigationView</h3>
+<p>By default, NavigationView in Top mode includes the content layer in its content area. This example extends Mica into the title bar area and creates a custom title bar.</p>
+<p><img src="images/materials/mica-top.png" alt="NavigationView in standard pattern with custom title bar in Top mode"></p>
+<h3 id="card-pattern-in-left-navigationview">Card pattern in Left NavigationView</h3>
+<p>To follow the card pattern using a NavigationView you will need to remove the default content layer by overriding the background and border theme resources. Then, you can create the cards in the content area of the control. This example creates several cards, extends Mica into the title bar area, and creates a custom title bar. For more information on card UI, see <a href="../signature-experiences/layering.html">Layering and Elevation</a> guidance.</p>
+<p><img src="images/materials/mica-left-card.png" alt="NavigationView in standard pattern with custom title bar in Left mode"></p>
+<h2 id="app-layering-with-mica-alt">App layering with Mica Alt</h2>
+<p>Mica Alt is an alternative to Mica as a foundation layer in your app's hierarchy with the same features like inactive and active states and subtle personalization. We encourage you to apply Mica Alt as the base layer of your app when you need contrast between title bar elements and the commanding areas of your app (e.g. navigation, menus).</p>
+<p>A common scenario for using Mica Alt is when you are creating an application with a tabbed title bar. To follow the <a href="../signature-experiences/layering.html">Layering and Elevation</a> guidance we encourage you to apply Mica Alt as the base layer of your app, add a commanding layer that sits on top of the base layer, and finally add an additional content layer that sits on top of the commanding layer. The commanding layer should pick up the material behind it, Mica Alt, using the <code>LayerOnMicaBaseAltFillColorDefaultBrush</code>, a low-opacity solid color, as its background. The content layer should pick up the layers below it, using the <code>LayerFillColorDefaultBrush</code>, another low-opacity solid color. The layer system is as follows:</p>
+<ul>
+<li><strong>Mica Alt</strong>: The base layer.</li>
+<li><strong>Commanding layer</strong>: Requires distinct hierarchical differentiation from the base layer. The <code>LayerOnMicaBaseAltFillColorDefaultBrush</code> should be applied to the commanding areas of your WinUI app surfaces (e.g. MenuBar, navigation structure, etc.)</li>
+<li><strong>Content layer</strong>: A contiguous background for large areas that need a distinct hierarchical differentiation from the commanding layer. The <code>LayerFillColorDefaultBrush</code> should be applied to the container backgrounds of your WinUI app surfaces (e.g. Grids, StackPanels, Frames, etc.).</li>
+</ul>
+<p>To give your app's window a seamless look, Mica Alt should be visible in the title bar if you choose to apply the material to your app. You can show Mica Alt in the title bar by extending your app into the non-client area and creating a transparent custom title bar.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li><strong>Do</strong> set the background to <em>transparent</em> for all layers where you want to see Mica so the Mica shows through.</li>
+<li><strong>Don't</strong> apply backdrop material more than once in an application.</li>
+<li><strong>Don't</strong> apply backdrop material to a UI element. The backdrop material will not appear on the element itself. It will only appear if all layers between the UI element and the window are set to transparent.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/SystemBackdrops">Open the WinUI 3 Gallery app and see Mica in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="how-to-use-mica">How to use Mica</h2>
+<p>You can use Mica in UWP apps that use WinUI 2, or in apps that use Windows App SDK 1.1 or later. You can use Mica Alt in apps that use Windows App SDK 1.1 or later.</p>
+<h3 id="use-mica-with-the-windows-app-sdk">Use Mica with the Windows App SDK</h3>
+<p>To use Mica in a WinUI 3 XAML app, see <a href="../../windows-app-sdk/system-backdrop-controller.html">Apply Mica or Acrylic materials in desktop apps for Windows 11</a>.</p>
+<p>To use Mica in a Win32 app, see <a href="../../desktop/modernize/ui/apply-mica-win32.html">Apply Mica in Win32 desktop apps for Windows 11</a>.</p>
+<h3 id="use-mica-with-winui-2-for-uwp">Use Mica with WinUI 2 for UWP</h3>
+<p>To use Mica in a UWP app with WinUI 2, see <a href="/windows/uwp/ui-input/mica-uwp">Apply Mica with WinUI 2 for UWP</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../signature-experiences/materials.html">Materials</a></li>
+<li><a href="../signature-experiences/layering.html">Layering and Elevation</a></li>
+<li><a href="../../windows-app-sdk/system-backdrop-controller.html">Apply Mica or Acrylic materials in desktop apps for Windows 11</a></li>
+<li><a href="../../desktop/modernize/ui/apply-mica-win32.html">Apply Mica in Win32 desktop apps for Windows 11</a></li>
+<li><a href="../controls/navigationview.html">NavigationView</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/mica.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<svg width="612" height="400" viewBox="0 0 612 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="thumbnail-hyperlinks-buttons" clip-path="url(#clip0)">
+<rect width="612" height="400" fill="#243A5E"/>
+<g id="Rectangle">
+<rect width="482" height="281" transform="translate(67 59)" fill="white"/>
+</g>
+<g id="Rectangle 3.12">
+<rect width="80" height="16" transform="translate(87 79)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle 3.13">
+<rect width="442" height="16" transform="translate(87 115)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle 3.15">
+<rect width="442" height="16" transform="translate(87 177)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle 3.16">
+<rect width="442" height="16" transform="translate(87 208)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle 3.17">
+<rect width="279" height="16" transform="translate(87 238)" fill="#C8C8C8"/>
+</g>
+<g id="Background">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 0L 116 0L 116 37L 0 37L 0 0Z" transform="translate(413 282)" fill="#50E6FF"/>
+</g>
+<g id="Frame" clip-path="url(#clip1)">
+<rect width="57.1429" height="8" fill="#F4F4F4" transform="translate(442 297)"/>
+</g>
+<g id="Group">
+<g id="Rectangle 3.14">
+<rect width="442" height="16" transform="translate(87 146)" fill="#C8C8C8"/>
+</g>
+<g id="Rectangle 3.19">
+<rect width="94" height="16" transform="translate(154 146)" fill="#50E6FF"/>
+</g>
+<g id="Line">
+<line y1="-2" x2="95" y2="-2" stroke-width="4" transform="translate(154 171)" stroke="#50E6FF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+
+<clipPath id="clip0">
+<rect width="612" height="400" fill="white"/>
+</clipPath>
+<clipPath id="clip1">
+<rect width="57.1429" height="8" fill="white" transform="translate(442 297)"/>
+</clipPath>
+
+</defs>
+</svg>
+

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Store and retrieve Windows Ink stroke data </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Store and retrieve Windows Ink stroke data ">
+    
+    <meta name="description" content="Windows apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="store-and-retrieve-windows-ink-stroke-data">Store and retrieve Windows Ink stroke data</h1>
+
+<p>Windows apps that support Windows Ink can serialize and deserialize ink strokes to an Ink Serialized Format (ISF) file. The ISF file is a GIF image with additional metadata for all ink stroke properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.</p>
+<p>The Ink Serialized Format (ISF) Specification can be downloaded from the <a href="https://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/InkSerializedFormat(ISF)Specification.pdf">Microsoft Download Center</a>.</p>
+</div>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a>, <a href="/uwp/api/Windows.UI.Input.Inking"><strong>Windows.UI.Input.Inking</strong></a></p>
+</blockquote>
+<h2 id="save-ink-strokes-to-a-file">Save ink strokes to a file</h2>
+<p>Here, we demonstrate how to save ink strokes drawn on an <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a> control.</p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip">Save and load ink strokes from an Ink Serialized Format (ISF) file</a></strong></p>
+<ol>
+<li><p>First, we set up the UI.</p>
+<p>The UI includes &quot;Save&quot;, &quot;Load&quot;, and &quot;Clear&quot; buttons, and the <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a>.</p>
+</li>
+</ol>
+<pre><code class="lang-XAML">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;StackPanel x:Name=&quot;HeaderPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;0&quot;&gt;
+            &lt;TextBlock x:Name=&quot;Header&quot; 
+                       Text=&quot;Basic ink store sample&quot; 
+                       Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot; 
+                       Margin=&quot;10,0,0,0&quot; /&gt;
+            &lt;Button x:Name=&quot;btnSave&quot; 
+                    Content=&quot;Save&quot; 
+                    Margin=&quot;50,0,10,0&quot;/&gt;
+            &lt;Button x:Name=&quot;btnLoad&quot; 
+                    Content=&quot;Load&quot; 
+                    Margin=&quot;50,0,10,0&quot;/&gt;
+            &lt;Button x:Name=&quot;btnClear&quot; 
+                    Content=&quot;Clear&quot; 
+                    Margin=&quot;50,0,10,0&quot;/&gt;
+        &lt;/StackPanel&gt;
+        &lt;Grid Grid.Row=&quot;1&quot;&gt;
+            &lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+</code></pre>
+<ol start="2">
+<li><p>We then set some basic ink input behaviors.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter"><strong>InkPresenter</strong></a> is configured to interpret input data from both pen and mouse as ink strokes (<a href="/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes"><strong>InputDeviceTypes</strong></a>), and listeners for the click events on the buttons are declared.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Set supported inking device types.
+        inkCanvas.InkPresenter.InputDeviceTypes =
+            Windows.UI.Core.CoreInputDeviceTypes.Mouse |
+            Windows.UI.Core.CoreInputDeviceTypes.Pen;
+
+        // Listen for button click to initiate save.
+        btnSave.Click += btnSave_Click;
+        // Listen for button click to initiate load.
+        btnLoad.Click += btnLoad_Click;
+        // Listen for button click to clear ink canvas.
+        btnClear.Click += btnClear_Click;
+    }
+</code></pre>
+<ol start="3">
+<li><p>Finally, we save the ink in the click event handler of the <strong>Save</strong> button.</p>
+<p>A <a href="/uwp/api/Windows.Storage.Pickers.FileSavePicker"><strong>FileSavePicker</strong></a> lets the user select both the file and the location where the ink data is saved.</p>
+<p>Once a file is selected, we open an <a href="/uwp/api/Windows.Storage.Streams.IRandomAccessStream"><strong>IRandomAccessStream</strong></a> stream set to <a href="/uwp/api/Windows.Storage.FileAccessMode"><strong>ReadWrite</strong></a>.</p>
+<p>We then call <a href="/uwp/api/windows.ui.input.inking.iinkstrokecontainer.saveasync"><strong>SaveAsync</strong></a> to serialize the ink strokes managed by the <a href="/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer"><strong>InkStrokeContainer</strong></a> to the stream.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">// Save ink data to a file.
+    private async void btnSave_Click(object sender, RoutedEventArgs e)
+    {
+        // Get all strokes on the InkCanvas.
+        IReadOnlyList&lt;InkStroke&gt; currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+
+        // Strokes present on ink canvas.
+        if (currentStrokes.Count &gt; 0)
+        {
+            // Let users choose their ink file using a file picker.
+            // Initialize the picker.
+            Windows.Storage.Pickers.FileSavePicker savePicker = 
+                new Windows.Storage.Pickers.FileSavePicker();
+            savePicker.SuggestedStartLocation = 
+                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            savePicker.FileTypeChoices.Add(
+                &quot;GIF with embedded ISF&quot;, 
+                new List&lt;string&gt;() { &quot;.gif&quot; });
+            savePicker.DefaultFileExtension = &quot;.gif&quot;;
+            savePicker.SuggestedFileName = &quot;InkSample&quot;;
+
+            // Show the file picker.
+            Windows.Storage.StorageFile file = 
+                await savePicker.PickSaveFileAsync();
+            // When chosen, picker returns a reference to the selected file.
+            if (file != null)
+            {
+                // Prevent updates to the file until updates are 
+                // finalized with call to CompleteUpdatesAsync.
+                Windows.Storage.CachedFileManager.DeferUpdates(file);
+                // Open a file stream for writing.
+                IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
+                // Write the ink strokes to the output stream.
+                using (IOutputStream outputStream = stream.GetOutputStreamAt(0))
+                {
+                    await inkCanvas.InkPresenter.StrokeContainer.SaveAsync(outputStream);
+                    await outputStream.FlushAsync();
+                }
+                stream.Dispose();
+
+                // Finalize write so other apps can update file.
+                Windows.Storage.Provider.FileUpdateStatus status =
+                    await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
+
+                if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
+                {
+                    // File saved.
+                }
+                else
+                {
+                    // File couldn't be saved.
+                }
+            }
+            // User selects Cancel and picker returns null.
+            else
+            {
+                // Operation cancelled.
+            }
+        }
+    }
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>GIF is the only file format supported for saving ink data. However, the <a href="/uwp/api/windows.ui.input.inking.inkmanager.loadasync"><strong>LoadAsync</strong></a> method (demonstrated in the next section) does support additional formats for backward compatibility.</p>
+</div>
+<h2 id="load-ink-strokes-from-a-file">Load ink strokes from a file</h2>
+<p>Here, we demonstrate how to load ink strokes from a file and render them on an <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a> control.</p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip">Save and load ink strokes from an Ink Serialized Format (ISF) file</a></strong></p>
+<ol>
+<li><p>First, we set up the UI.</p>
+<p>The UI includes &quot;Save&quot;, &quot;Load&quot;, and &quot;Clear&quot; buttons, and the <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a>.</p>
+</li>
+</ol>
+<pre><code class="lang-XAML">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;StackPanel x:Name=&quot;HeaderPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;0&quot;&gt;
+            &lt;TextBlock x:Name=&quot;Header&quot; 
+                       Text=&quot;Basic ink store sample&quot; 
+                       Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot; 
+                       Margin=&quot;10,0,0,0&quot; /&gt;
+            &lt;Button x:Name=&quot;btnSave&quot; 
+                    Content=&quot;Save&quot; 
+                    Margin=&quot;50,0,10,0&quot;/&gt;
+            &lt;Button x:Name=&quot;btnLoad&quot; 
+                    Content=&quot;Load&quot; 
+                    Margin=&quot;50,0,10,0&quot;/&gt;
+            &lt;Button x:Name=&quot;btnClear&quot; 
+                    Content=&quot;Clear&quot; 
+                    Margin=&quot;50,0,10,0&quot;/&gt;
+        &lt;/StackPanel&gt;
+        &lt;Grid Grid.Row=&quot;1&quot;&gt;
+            &lt;InkCanvas x:Name=&quot;inkCanvas&quot; /&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+</code></pre>
+<ol start="2">
+<li><p>We then set some basic ink input behaviors.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter"><strong>InkPresenter</strong></a> is configured to interpret input data from both pen and mouse as ink strokes (<a href="/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes"><strong>InputDeviceTypes</strong></a>), and listeners for the click events on the buttons are declared.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Set supported inking device types.
+        inkCanvas.InkPresenter.InputDeviceTypes =
+            Windows.UI.Core.CoreInputDeviceTypes.Mouse |
+            Windows.UI.Core.CoreInputDeviceTypes.Pen;
+
+        // Listen for button click to initiate save.
+        btnSave.Click += btnSave_Click;
+        // Listen for button click to initiate load.
+        btnLoad.Click += btnLoad_Click;
+        // Listen for button click to clear ink canvas.
+        btnClear.Click += btnClear_Click;
+    }
+</code></pre>
+<ol start="3">
+<li><p>Finally, we load the ink in the click event handler of the <strong>Load</strong> button.</p>
+<p>A <a href="/uwp/api/Windows.Storage.Pickers.FileOpenPicker"><strong>FileOpenPicker</strong></a> lets the user select both the file and the location from where to retrieve the saved ink data.</p>
+<p>Once a file is selected, we open an <a href="/uwp/api/Windows.Storage.Streams.IRandomAccessStream"><strong>IRandomAccessStream</strong></a> stream set to <a href="/uwp/api/Windows.Storage.FileAccessMode"><strong>Read</strong></a>.</p>
+<p>We then call <a href="/uwp/api/windows.ui.input.inking.inkmanager.loadasync"><strong>LoadAsync</strong></a> to read, de-serialize, and load the saved ink strokes into the <a href="/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer"><strong>InkStrokeContainer</strong></a>. Loading the strokes into the <strong>InkStrokeContainer</strong> causes the <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter"><strong>InkPresenter</strong></a> to immediately render them to the <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>All existing strokes in the InkStrokeContainer are cleared before new strokes are loaded.</p>
+</div>
+</li>
+</ol>
+<pre><code class="lang-csharp">// Load ink data from a file.
+private async void btnLoad_Click(object sender, RoutedEventArgs e)
+{
+    // Let users choose their ink file using a file picker.
+    // Initialize the picker.
+    Windows.Storage.Pickers.FileOpenPicker openPicker =
+        new Windows.Storage.Pickers.FileOpenPicker();
+    openPicker.SuggestedStartLocation =
+        Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+    openPicker.FileTypeFilter.Add(&quot;.gif&quot;);
+    // Show the file picker.
+    Windows.Storage.StorageFile file = await openPicker.PickSingleFileAsync();
+    // User selects a file and picker returns a reference to the selected file.
+    if (file != null)
+    {
+        // Open a file stream for reading.
+        IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+        // Read from file.
+        using (var inputStream = stream.GetInputStreamAt(0))
+        {
+            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(inputStream);
+        }
+        stream.Dispose();
+    }
+    // User selects Cancel and picker returns null.
+    else
+    {
+        // Operation cancelled.
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>GIF is the only file format supported for saving ink data. However, the <a href="/uwp/api/windows.ui.input.inking.inkmanager.loadasync"><strong>LoadAsync</strong></a> method does support the following formats for backward compatibility.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InkSerializedFormat</td>
+<td>Specifies ink that is persisted using ISF. This is the most compact persistent representation of ink. It can be embedded within a binary document format or placed directly on the Clipboard.</td>
+</tr>
+<tr>
+<td>Base64InkSerializedFormat</td>
+<td>Specifies ink that is persisted by encoding the ISF as a base64 stream. This format is provided so ink can be encoded directly in an XML or HTML file.</td>
+</tr>
+<tr>
+<td>Gif</td>
+<td>Specifies ink that is persisted by using a GIF file that contains ISF as metadata embedded within the file. This enables ink to be viewed in applications that are not ink-enabled and maintain its full ink fidelity when it returns to an ink-enabled application. This format is ideal when transporting ink content within an HTML file and for making it usable by ink and non-ink applications.</td>
+</tr>
+<tr>
+<td>Base64Gif</td>
+<td>Specifies ink that is persisted by using a base64-encoded fortified GIF. This format is provided when ink is to be encoded directly in an XML or HTML file for later conversion into an image. A possible use of this is in an XML format generated to contain all ink information and used to generate HTML through Extensible Stylesheet Language Transformations (XSLT).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="copy-and-paste-ink-strokes-with-the-clipboard">Copy and paste ink strokes with the clipboard</h2>
+<p>Here, we demonstrate how to use the clipboard to transfer ink strokes between apps.</p>
+<p>To support clipboard functionality, the built-in <a href="/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer"><strong>InkStrokeContainer</strong></a> cut and copy commands require one or more ink strokes be selected.</p>
+<p>For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in <a href="pen-and-stylus-interactions.html">Pen and stylus interactions</a>.</p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip">Save and load ink strokes from the clipboard</a></strong></p>
+<ol>
+<li><p>First, we set up the UI.</p>
+<p>The UI includes &quot;Cut&quot;, &quot;Copy&quot;, &quot;Paste&quot;, and &quot;Clear&quot; buttons, along with the <a href="/uwp/api/Windows.UI.Xaml.Controls.InkCanvas"><strong>InkCanvas</strong></a> and a selection canvas.</p>
+</li>
+</ol>
+<pre><code class="lang-XAML">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;StackPanel x:Name=&quot;HeaderPanel&quot; Orientation=&quot;Horizontal&quot; Grid.Row=&quot;0&quot;&gt;
+            &lt;TextBlock x:Name=&quot;tbHeader&quot; 
+                       Text=&quot;Basic ink store sample&quot; 
+                       Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot; 
+                       Margin=&quot;10,0,0,0&quot; /&gt;
+            &lt;Button x:Name=&quot;btnCut&quot; 
+                    Content=&quot;Cut&quot; 
+                    Margin=&quot;20,0,10,0&quot;/&gt;
+            &lt;Button x:Name=&quot;btnCopy&quot; 
+                    Content=&quot;Copy&quot; 
+                    Margin=&quot;20,0,10,0&quot;/&gt;
+            &lt;Button x:Name=&quot;btnPaste&quot; 
+                    Content=&quot;Paste&quot; 
+                    Margin=&quot;20,0,10,0&quot;/&gt;
+            &lt;Button x:Name=&quot;btnClear&quot; 
+                    Content=&quot;Clear&quot; 
+                    Margin=&quot;20,0,10,0&quot;/&gt;
+        &lt;/StackPanel&gt;
+        &lt;Grid x:Name=&quot;gridCanvas&quot; Grid.Row=&quot;1&quot;&gt;
+            &lt;!-- Canvas for displaying selection UI. --&gt;
+            &lt;Canvas x:Name=&quot;selectionCanvas&quot;/&gt;
+            &lt;!-- Inking area --&gt;
+            &lt;InkCanvas x:Name=&quot;inkCanvas&quot;/&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+</code></pre>
+<ol start="2">
+<li><p>We then set some basic ink input behaviors.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter"><strong>InkPresenter</strong></a> is configured to interpret input data from both pen and mouse as ink strokes (<a href="/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes"><strong>InputDeviceTypes</strong></a>). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.</p>
+<p>For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in <a href="pen-and-stylus-interactions.html">Pen and stylus interactions</a>.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Set supported inking device types.
+        inkCanvas.InkPresenter.InputDeviceTypes =
+            Windows.UI.Core.CoreInputDeviceTypes.Mouse |
+            Windows.UI.Core.CoreInputDeviceTypes.Pen;
+
+        // Listen for button click to cut ink strokes.
+        btnCut.Click += btnCut_Click;
+        // Listen for button click to copy ink strokes.
+        btnCopy.Click += btnCopy_Click;
+        // Listen for button click to paste ink strokes.
+        btnPaste.Click += btnPaste_Click;
+        // Listen for button click to clear ink canvas.
+        btnClear.Click += btnClear_Click;
+
+        // By default, the InkPresenter processes input modified by 
+        // a secondary affordance (pen barrel button, right mouse 
+        // button, or similar) as ink.
+        // To pass through modified input to the app for custom processing 
+        // on the app UI thread instead of the background ink thread, set 
+        // InputProcessingConfiguration.RightDragAction to LeaveUnprocessed.
+        inkCanvas.InkPresenter.InputProcessingConfiguration.RightDragAction =
+            InkInputRightDragAction.LeaveUnprocessed;
+
+        // Listen for unprocessed pointer events from modified input.
+        // The input is used to provide selection functionality.
+        inkCanvas.InkPresenter.UnprocessedInput.PointerPressed +=
+            UnprocessedInput_PointerPressed;
+        inkCanvas.InkPresenter.UnprocessedInput.PointerMoved +=
+            UnprocessedInput_PointerMoved;
+        inkCanvas.InkPresenter.UnprocessedInput.PointerReleased +=
+            UnprocessedInput_PointerReleased;
+
+        // Listen for new ink or erase strokes to clean up selection UI.
+        inkCanvas.InkPresenter.StrokeInput.StrokeStarted +=
+            StrokeInput_StrokeStarted;
+        inkCanvas.InkPresenter.StrokesErased +=
+            InkPresenter_StrokesErased;
+    }
+</code></pre>
+<ol start="3">
+<li><p>Finally, after adding stroke selection support, we implement clipboard functionality in the click event handlers of the <strong>Cut</strong>, <strong>Copy</strong>, and <strong>Paste</strong> buttons.</p>
+<p>For cut, we first call <a href="/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard"><strong>CopySelectedToClipboard</strong></a> on the <a href="/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer"><strong>InkStrokeContainer</strong></a> of the <a href="/uwp/api/Windows.UI.Input.Inking.InkPresenter"><strong>InkPresenter</strong></a>.</p>
+<p>We then call <a href="/uwp/api/windows.ui.input.inking.inkstrokecontainer.deleteselected"><strong>DeleteSelected</strong></a> to remove the strokes from the ink canvas.</p>
+<p>Finally, we delete all selection strokes from the selection canvas.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">private void btnCut_Click(object sender, RoutedEventArgs e)
+    {
+        inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+        inkCanvas.InkPresenter.StrokeContainer.DeleteSelected();
+        ClearSelection();
+    }
+</code></pre>
+<pre><code class="lang-csharp">// Clean up selection UI.
+    private void ClearSelection()
+    {
+        var strokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
+        foreach (var stroke in strokes)
+        {
+            stroke.Selected = false;
+        }
+        ClearDrawnBoundingRect();
+    }
+
+    private void ClearDrawnBoundingRect()
+    {
+        if (selectionCanvas.Children.Any())
+        {
+            selectionCanvas.Children.Clear();
+            boundingRect = Rect.Empty;
+        }
+    }
+</code></pre>
+<p>For copy, we simply call <a href="/uwp/api/windows.ui.input.inking.inkstrokecontainer.copyselectedtoclipboard"><strong>CopySelectedToClipboard</strong></a> on the <a href="/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer"><strong>InkStrokeContainer</strong></a> of the <a href="/uwp/api/Windows.UI.Input.Inking.InkPresenter"><strong>InkPresenter</strong></a>.</p>
+<pre><code class="lang-csharp">private void btnCopy_Click(object sender, RoutedEventArgs e)
+    {
+        inkCanvas.InkPresenter.StrokeContainer.CopySelectedToClipboard();
+    }
+</code></pre>
+<p>For paste, we call <a href="/uwp/api/windows.ui.input.inking.inkstrokecontainer.canpastefromclipboard"><strong>CanPasteFromClipboard</strong></a> to ensure that the content on the clipboard can be pasted to the ink canvas.</p>
+<p>If so, we call <a href="/uwp/api/windows.ui.input.inking.inkstrokecontainer.pastefromclipboard"><strong>PasteFromClipboard</strong></a> to insert the clipboard ink strokes into the <a href="/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer"><strong>InkStrokeContainer</strong></a> of the <a href="/uwp/api/Windows.UI.Input.Inking.InkPresenter"><strong>InkPresenter</strong></a>, which then renders the strokes to the ink canvas.</p>
+<pre><code class="lang-csharp">private void btnPaste_Click(object sender, RoutedEventArgs e)
+    {
+        if (inkCanvas.InkPresenter.StrokeContainer.CanPasteFromClipboard())
+        {
+            inkCanvas.InkPresenter.StrokeContainer.PasteFromClipboard(
+                new Point(0, 0));
+        }
+        else
+        {
+            // Cannot paste from clipboard.
+        }
+    }
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="pen-and-stylus-interactions.html">Pen and stylus interactions</a></li>
+</ul>
+<p><strong>Topic samples</strong></p>
+<ul>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip">Save and load ink strokes from an Ink Serialized Format (ISF) file</a></li>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip">Save and load ink strokes from the clipboard</a></li>
+</ul>
+<p><strong>Other samples</strong></p>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk">Simple ink sample (C#/C++)</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk">Complex ink sample (C++)</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BJavaScript%5D-Windows%208%20app%20samples/JavaScript/Windows%208%20app%20samples/Input%20Ink%20sample%20(Windows%208)">Ink sample (JavaScript)</a></li>
+<li><a href="https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-Ink">Get Started Tutorial: Support ink in your Windows app</a></li>
+<li><a href="https://github.com/Microsoft/Windows-appsample-coloringbook">Coloring book sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-appsample-familynotes">Family notes sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/save-and-load-ink.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

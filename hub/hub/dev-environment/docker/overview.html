@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Get started with Docker for remote development with containers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Get started with Docker for remote development with containers ">
+    
+    <meta name="description" content="A complete guide to get started with Docker Desktop on Windows or WSL. Including support offered by Microsoft and variety of Azure services.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="overview-of-docker-remote-development-on-windows">Overview of Docker remote development on Windows</h1>
+
+<p>Using containers for remote development and deploying applications with the Docker platform is a very popular solution with many benefits. Learn more about the variety of support offered by Microsoft tools and services, including Windows Subsystem for Linux (WSL), Visual Studio, Visual Studio Code, .NET, and a broad variety of Azure services.</p>
+<h2 id="docker-on-windows">Docker on Windows</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://docs.docker.com/docker-for-windows/install/"><img src="../../images/docker-docs-icon.png" alt="Docker Docs Icon"></a><br>
+<strong><a href="https://docs.docker.com/docker-for-windows/install/">Install Docker Desktop for Windows</a></strong><br>
+Find installation steps, system requirements, what's included in the installer, how to uninstall, differences between stable and edge versions, and how to switch between Windows and Linux containers.</p>
+</div>
+<div class="column">
+<p><a href="https://docs.docker.com/get-started/"><img src="../../images/docker-running-screenshot.png" alt="Docker running screenshot"></a><br>
+<strong><a href="https://docs.docker.com/get-started/">Get started with Docker</a></strong><br>
+Docker orientation and setup docs with step-by-step instructions on how to get started, including a video walk-through.</p>
+</div>
+<div class="column">
+<p><a href="/training/modules/intro-to-docker-containers/"><img src="../../images/docker-learn-course.png" alt="Microsoft Learn Docker course screenshot"></a><br>
+<strong><a href="/training/modules/intro-to-docker-containers/">MS Learn course: Introduction to Docker containers</a></strong><br>
+Microsoft Learn offers a free intro course on Docker containers, in addition to a <a href="/training/browse/?terms=docker">variety of courses</a> on get started with Docker and connecting with Azure services.</p>
+</div>
+<div class="column">
+<p><a href="/windows/wsl/tutorials/wsl-containers"><img src="../../images/docker-wsl2.png" alt="Docker Desktop WSL2 menu screenshot"></a><br>
+<strong><a href="/windows/wsl/tutorials/wsl-containers">Get started with Docker remote containers on WSL 2</a></strong><br>
+Learn how to set up Docker Desktop for Windows to use with a Linux command line (Ubuntu, Debian, SUSE, etc) using WSL 2 (Windows Subsystem for Linux, version 2).</p>
+</div>
+</section>
+<h2 id="vs-code-and-docker">VS Code and Docker</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://code.visualstudio.com/docs/remote/create-dev-container"><img src="../../images/vscode-remote-containers.png" alt="VS Code remote container graphic"></a><br>
+<strong><a href="https://code.visualstudio.com/docs/remote/containers-tutorial">Create a Docker container with VS Code</a></strong><br>
+Set up a full-featured dev environment inside of a container with the <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers">Remote - Containers extension</a> and find tutorials to set up a <a href="https://code.visualstudio.com/docs/containers/quickstart-node">NodeJS container</a>, a <a href="https://code.visualstudio.com/docs/containers/quickstart-python">Python container</a>, or a <a href="https://code.visualstudio.com/docs/containers/quickstart-aspnet-core">ASP.NET Core container</a>.</p>
+</div>
+<div class="column">
+<p><a href="https://code.visualstudio.com/docs/remote/attach-container"><img src="../../images/vscode-attach-docker.png" alt="VSCode attach Docker screenshot"></a><br>
+<strong><a href="https://code.visualstudio.com/docs/remote/attach-container">Attach VS Code to a Docker container</a></strong><br>
+Learn how to attach Visual Studio Code to a Docker container that is already running or to a <a href="https://code.visualstudio.com/docs/remote/attach-container#_attach-to-a-container-in-a-kubernetes-cluster">container in a Kubernetes cluster</a>.</p>
+</div>
+<div class="column">
+<p><a href="https://code.visualstudio.com/docs/remote/containers-advanced"><img src="../../images/vscode-advanced-docker.png" alt="VSCode container menu screenshot"></a><br>
+<strong><a href="https://code.visualstudio.com/docs/remote/containers-advanced">Advanced Container Configuration</a></strong><br>
+Learn about advanced setup scenarios for using Docker containers with Visual Studio Code or read this article on how to <a href="https://code.visualstudio.com/blogs/2019/10/31/inspecting-containers">Inspect Containers</a> for debugging with VS Code.</p>
+</div>
+<div class="column">
+<p><a href="https://code.visualstudio.com/blogs/2020/07/01/containers-wsl"><img src="../../images/vscode-docker-wsl.png" alt="VSCode Docker Desktop with WSL screenshot"></a><br>
+<strong><a href="https://code.visualstudio.com/blogs/2020/07/01/containers-wsl">Using Remote Containers in WSL 2</a></strong><br>
+Read about using Docker containers with WSL 2 (Windows Subsystem for Linux, version 2) and how to set everything up with VS Code. You can also read about <a href="https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2#_how-it-works">how it works</a>.</p>
+</div>
+</section>
+<h2 id="visual-studio-and-docker">Visual Studio and Docker</h2>
+<section class="row">
+<div class="column">
+<p><a href="/visualstudio/containers/overview#docker-support-in-visual-studio-1"><img src="../../images/visualstudio.png" alt="Visual Studio icon"></a><br>
+<strong><a href="/visualstudio/containers/overview#docker-support-in-visual-studio-1">Docker support in Visual Studio</a></strong><br>
+Learn about the Docker support available for ASP.NET projects, ASP.NET Core projects, and .NET Core and .NET Framework console projects in Visual Studio, in addition to support for container orchestration.</p>
+</div>
+<div class="column">
+<p><a href="/visualstudio/containers/container-tools"><img src="../../images/visualstudio-docker-menu.png" alt="Visual Studio Docker menu"></a><br>
+<strong><a href="/visualstudio/containers/container-tools">Quickstart: Docker in Visual Studio</a></strong><br>
+Learn how to build, debug, and run containerized .NET, ASP.NET, and ASP.NET Core apps and publish them to Azure Container Registry (ACR), Docker Hub, Azure App Service, or your own container registry with Visual Studio.</p>
+</div>
+<div class="column">
+<p><a href="/visualstudio/containers/tutorial-multicontainer"><img src="../../images/visualstudio-tutorial.png" alt="VS tutorial screenshot"></a><br>
+<strong><a href="/visualstudio/containers/tutorial-multicontainer">Tutorial: Create a multi-container app with Docker Compose</a></strong><br>
+Learn how to manage more than one container and communicate between them when using Container Tools in Visual Studio. You can also find links to tutorials like how to <a href="/visualstudio/containers/container-tools-react">Use Docker with a React Single-page App</a>.</p>
+</div>
+<div class="column">
+<p><a href="/visualstudio/containers"><img src="../../images/visualstudio-container-links.png" alt="VS Container links"></a><br>
+<strong><a href="/visualstudio/containers">Container Tools in Visual Studio</a></strong><br>
+Find topics covering how to run build tools in a container, <a href="/visualstudio/containers/edit-and-refresh">debugging Docker apps</a>, troubleshoot development tools, deploy Docker containers, and bridge Kubernetes with Visual Studio.</p>
+</div>
+</section>
+<p><img src="../../images/taxonomy-of-docker-terms-and-concepts.png" alt="Basic Docker taxonomy infographic for containers, images, and registries"></p>
+<h2 id="net-and-docker">.NET and Docker</h2>
+<section class="row">
+<div class="column">
+<p><a href="/dotnet/architecture/microservices/"><img src="../../images/dotnet-microservice-guide.png" alt=".NET microservice guide cover"></a><br>
+<strong><a href="/dotnet/architecture/microservices/">.NET Guide: Microservice apps and containers</a></strong><br>
+Intro guide to microservices-based apps managed with containers.</p>
+</div>
+<div class="column">
+<p><a href="/dotnet/architecture/microservices/container-docker-introduction/docker-defined"><img src="../../images/dotnet-docker-infographic.png" alt="Docker Infographic"></a><br>
+<strong><a href="/dotnet/architecture/microservices/container-docker-introduction/docker-defined">What is Docker?</a></strong><br>
+Basic explanation of Docker containers, including <a href="/dotnet/architecture/microservices/container-docker-introduction/docker-defined#comparing-docker-containers-with-virtual-machines">Comparing Docker containers with Virtual machines</a> and a basic <a href="/dotnet/architecture/microservices/container-docker-introduction/docker-containers-images-registries">taxonomy of Docker terms and concepts</a> explaining the difference between containers, images, and registries.</p>
+</div>
+<div class="column">
+<p><a href="/dotnet/core/docker/build-container?tabs=windows"><img src="../../images/taxonomy-of-docker-terms-and-concepts.png" alt="Docker Taxonomy infographic"></a><br>
+<strong><a href="/dotnet/core/docker/build-container?tabs=windows">Tutorial: Containerize a .NET app</a></strong><br>
+Learn how to containerize a .NET application with Docker, including creation of a Dockerfile, essential commands, and cleaning up resources.</p>
+</div>
+<div class="column">
+<p><a href="/dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow"><img src="../../images/dotnet-docker-workflow.png" alt="Inner-loop dev workflow with Docker infographic"></a><br>
+<strong><a href="/dotnet/architecture/microservices/docker-application-development-process/docker-app-development-workflow">Development workflow for Docker apps</a></strong><br>
+Describes the inner-loop development workflow for Docker container-based applications.</p>
+</div>
+</section>
+<h2 id="azure-container-services">Azure Container Services</h2>
+<section class="row">
+<div class="column">
+<p><a href="/azure/container-instances/"><img src="../../images/azure-container-instances.png" alt="Azure container instances screenshot"></a><br>
+<strong><a href="/azure/container-instances/">Azure Container Instances</a></strong><br>
+Learn how to run Docker containers on-demand in a managed, serverless Azure environment, includes ways to deploy with Docker CLI, ARM, Azure Portal, create multi-container groups, share data between containers, connect to a virtual network, and more.</p>
+</div>
+<div class="column">
+<p><a href="/azure/container-registry"><img src="../../images/azure-container-registry-icon.png" alt="Azure Container Registry screenshot"></a><br>
+<strong><a href="/azure/container-registry">Azure Container Registry</a></strong><br>
+Learn how to build, store, and manage container images and artifacts in a private registry for all types of container deployments. Create Azure container registries for your existing container development and deployment pipelines, set up automation tasks, and learn how to manage your registries, including geo-replication and best practices.</p>
+</div>
+<div class="column">
+<p><a href="/azure/service-fabric"><img src="../../images/azure-service-fabric.png" alt="Azure Service Fabric screenshot"></a><br>
+<strong><a href="/azure/service-fabric">Azure Service Fabric</a></strong><br>
+Learn about Azure Service Fabric, a distributed systems platform for packaging, deploying, and managing scalable and reliable microservices and containers.</p>
+</div>
+<div class="column">
+<p><a href="/azure/app-service"><img src="../../images/azure-app-service.png" alt="Azure App Service screenshot"></a><br>
+<strong><a href="/azure/app-service">Azure App Service</a></strong><br>
+Learn how to build and host web apps, mobile back ends, and RESTful APIs in the programming language of your choice without managing infrastructure. Try the <a href="/training/modules/deploy-run-container-app-service">Azure App Service</a> Learn module to deploy a web app based on a Docker image and configure continuous deployment.</p>
+</div>
+</section>
+<p>Learn about more <a href="https://azure.microsoft.com/overview/containers/">Azure services that support containers</a>.</p>
+<h2 id="docker-containers-explainer-video">Docker Containers Explainer Video</h2>
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/0oEsMwSxBsk?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="kubernetes-and-container-orchestration-explainer-video">Kubernetes and Container Orchestration Explainer Video</h2>
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/3RTvoI-A7UQ?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="containers-on-windows">Containers on Windows</h2>
+<section class="row">
+<div class="column">
+<p><a href="/virtualization/windowscontainers"><img src="../../images/windows-server-containers.png" alt="Windows server containers icon"></a><br>
+<strong><a href="/virtualization/windowscontainers">Containers on Windows docs</a></strong><br>
+Package apps with their dependencies and leverage operating system-level virtualization for fast, fully isolated environments on a single system. Learn <a href="/virtualization/windowscontainers/about">about Windows containers</a>, including quick starts, deployment guides, and samples.</p>
+</div>
+<div class="column">
+<p><a href="/virtualization/windowscontainers/about/faq"><img src="../../images/faq.png" alt="FAQ icon"></a><br>
+<strong><a href="/virtualization/windowscontainers/about/faq">FAQs about Windows containers</a></strong><br>
+Find frequently asked questions about containers. Also see this explanation in StackOverflow on &quot;<a href="https://stackoverflow.com/questions/38464724/whats-the-difference-between-docker-for-windows-and-docker-on-windows/40320748">What's the difference between Docker for Windows and Docker on Windows?</a>&quot;</p>
+</div>
+<div class="column">
+<p><a href="/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client"><img src="../../images/windows-container.png" alt="windows container icon"></a><br>
+<strong><a href="/virtualization/windowscontainers/quick-start/set-up-environment?tabs=Windows-10-Client">Set up your environment</a></strong><br>
+Learn how to set up Windows 11, Windows 10, or Windows Server to create, run, and deploy containers, including prerequisites, installing Docker, and working with <a href="/virtualization/windowscontainers/manage-containers/container-base-images">Windows Container Base Images</a>.</p>
+</div>
+<div class="column">
+<p><a href="/azure/aks/windows-container-cli"><img src="../../images/kubernettes.png" alt="AKS icon"></a><br>
+<strong><a href="/azure/aks/windows-container-cli">Create a Windows Server container on an Azure Kubernetes Service (AKS)</a></strong><br>
+Learn how to deploy an ASP.NET sample app in a Windows Server container to an AKS cluster using the Azure CLI.</p>
+</div>
+</section>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/docker/overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using a SystemBackdropController with WinUI 3 XAML </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using a SystemBackdropController with WinUI 3 XAML ">
+    
+    <meta name="description" content="Sample code for applying Mica in a WinUI 3 application.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="apply-mica-or-acrylic-materials-in-desktop-apps-for-windows-11">Apply Mica or Acrylic materials in desktop apps for Windows 11</h1>
+
+<p><a href="../design/signature-experiences/materials.html">Materials in Windows 11</a> are visual effects applied to UX surfaces that resemble real life artifacts. Occluding materials, like Mica and Acrylic, are used as base layers beneath interactive UI controls.</p>
+<p><a href="../design/style/mica.html">Mica</a> is an opaque material that incorporates the user's theme and desktop wallpaper to create a highly personalized appearance. Mica is designed for performance as it only captures the background wallpaper once to create its visualization, so we recommend it for the foundation layer of your app, especially in the title bar area.</p>
+<p><a href="../design/style/acrylic.html">Acrylic</a> is a semi-transparent material that replicates the effect of frosted glass. It's used only for transient, light-dismiss surfaces such as flyouts and context menus.</p>
+<p>This article describes how to apply Mica or Acrylic as the base layer of your Windows App SDK/WinUI 3 XAML app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>To use an in-app AcrylicBrush, see <a href="../design/style/acrylic.html">Acrylic material</a>.</li>
+<li>To use backdrop materials in a Win32 app, see <a href="../desktop/modernize/ui/apply-mica-win32.html">Apply Mica in Win32 desktop apps for Windows 11</a>.</li>
+<li>To use backdrop materials in a UWP/WinUI 2 app, see <a href="/windows/uwp/ui-input/mica-uwp">Apply Mica with WinUI 2 for UWP</a> or <a href="../design/style/acrylic.html">Acrylic material</a>.</li>
+</ul>
+</div>
+<h2 id="how-to-use-a-backdrop-material">How to use a backdrop material</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop">Window.SystemBackdrop property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop">MicaBackdrop class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop">DesktopAcrylicBackdrop class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration">SystemBackdropConfiguration class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/SystemBackdrops">Open the WinUI 3 Gallery app and see the System Backdrops in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>To apply Mica or Acrylic material to your app, you set the <code>SystemBackdrop</code> property to a XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop">SystemBackdrop</a> (typically, one of the built-in backdrops, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop">MicaBackdrop</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop">DesktopAcrylicBackdrop</a>).</p>
+<p>These elements have a <code>SystemBackdrop</code> property:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.commandbarflyoutcommandbar.systembackdrop">CommandBarFlyoutCommandBar.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.content.contentisland.systembackdrop">ContentIsland.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.desktopwindowxamlsource.systembackdrop">DesktopWindowXamlSource.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.systembackdrop">FlyoutBase.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutpresenter.systembackdrop">MenuFlyoutPresenter.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup.systembackdrop">Popup.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop">Window.SystemBackdrop</a></li>
+</ul>
+<p>These examples show how to set the system backdrop in XAML and in code.</p>
+<h3 id="mica">Mica</h3>
+<p>Mica is typically used as the backdrop for an app Window.</p>
+<pre><code class="lang-xaml">&lt;Window
+    ... &gt;
+
+    &lt;Window.SystemBackdrop&gt;
+        &lt;MicaBackdrop Kind=&quot;BaseAlt&quot;/&gt;
+    &lt;/Window.SystemBackdrop&gt;
+
+&lt;/Window&gt;
+</code></pre>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+
+    SystemBackdrop = new MicaBackdrop() 
+                        { Kind = MicaKind.BaseAlt };
+}
+</code></pre>
+<h3 id="acrylic">Acrylic</h3>
+<p>Acrylic is typically used as the backdrop for transient UI, like a flyout.</p>
+<pre><code class="lang-xaml">&lt;Flyout
+    ... &gt;
+
+    &lt;Flyout.SystemBackdrop&gt;
+        &lt;DesktopAcrylicBackdrop/&gt;
+    &lt;/Flyout.SystemBackdrop&gt;
+&lt;/Flyout&gt;
+</code></pre>
+<pre><code class="lang-csharp">Flyout flyout = new Flyout()
+{
+    SystemBackdrop = new DesktopAcrylicBackdrop()
+};
+</code></pre>
+<h2 id="how-to-use-a-system-backdrop-controller">How to use a system backdrop controller</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Starting with Windows App SDK 1.3, you can apply material by setting the <code>Window.SystemBackdrop</code> property to a XAML <code>SystemBackdrop</code> as described in the previous section. This is the recommended way to apply a material.</p>
+<p>The remainder of this article shows how to use the Composition <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller">MicaController</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller">DesktopAcrylicController</a> APIs.</p>
+</div>
+<p>To use a backdrop material in your app, you can use one of the controllers that implements the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.isystembackdropcontroller">ISystemBackdropController</a> interface (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller">MicaController</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller">DesktopAcrylicController</a>). These classes manage both the rendering of the system backdrop material as well as the handling of system policy for the material.</p>
+<p>To use Mica as your backdrop material, create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller">MicaController</a> object. To use Acrylic, create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller">DesktopAcrylicController</a> object. The set up and supporting code is the same for each type of system backdrop material.</p>
+<p>This code shows how to create a <code>MicaController</code>.</p>
+<pre><code class="lang-csharp">MicaController m_backdropController;
+
+bool TrySetSystemBackdrop()
+{
+    if (MicaController.IsSupported())
+    {
+        ...
+        m_backdropController = new MicaController();
+        ...
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// namespace MUCSB = Microsoft::UI::Composition::SystemBackdrops;
+
+winrt::MUCSB::MicaController m_backdropController{ nullptr };
+
+void SetBackground()
+{
+    if (winrt::MUCSB::MicaController::IsSupported())
+    {
+        ...
+        m_backdropController = winrt::MUCSB::MicaController();
+        ...
+    }
+}
+</code></pre>
+<p>To use the Mica Alt variant of Mica, create a <code>MicaController</code> object and set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.kind">Kind</a> property to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micakind">MicaKind.BaseAlt</a>.</p>
+<pre><code class="lang-csharp">MicaController m_backdropController;
+
+bool TrySetSystemBackdrop()
+{
+    if (MicaController.IsSupported())
+    {
+        ...
+        m_backdropController = new MicaController()
+        {
+            Kind = MicaKind.BaseAlt
+        };
+        ...
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// namespace MUCSB = Microsoft::UI::Composition::SystemBackdrops;
+
+winrt::MUCSB::MicaController m_backdropController{ nullptr };
+
+void SetBackground()
+{
+    if (winrt::MUCSB::MicaController::IsSupported())
+    {
+        ...
+        m_backdropController = winrt::MUCSB::MicaController();
+        m_backdropController.Kind(winrt::MUCSB::MicaKind::BaseAlt);
+        ...
+    }
+}
+</code></pre>
+<p>This code shows how to create a <code>DesktopAcrylicController</code>.</p>
+<pre><code class="lang-csharp">DesktopAcrylicController m_backdropController;
+
+bool TrySetSystemBackdrop()
+{
+    if (DesktopAcrylicController.IsSupported())
+    {
+        ...
+        m_backdropController = new DesktopAcrylicController();
+        ...
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// namespace MUCSB = Microsoft::UI::Composition::SystemBackdrops;
+
+winrt::MUCSB::DesktopAcrylicController m_backdropController{ nullptr };
+
+void SetBackground()
+{
+    if (winrt::MUCSB::DesktopAcrylicController::IsSupported())
+    {
+        ...
+        m_backdropController = winrt::MUCSB::DesktopAcrylicController();
+        ...
+    }
+}
+</code></pre>
+<p>The controller reacts to the system Light and Dark themes by default. To override this behavior, you can set the following properties on the controller:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.fallbackcolor">FallbackColor</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.luminosityopacity">LuminosityOpacity</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintcolor">TintColor</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity">TintOpacity</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>After customizing any of the controller’s four properties, it no longer applies default Light or Dark values when the associated <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration.theme">SystemBackdropConfiguration.Theme</a> changes. You need to manually update those properties to match the new theme.</p>
+</div>
+<p>In order to use the backdrop material in your app, the following items are required:</p>
+<ul>
+<li><p><strong>System support</strong></p>
+<p>The system where the app runs must support the backdrop material. Call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.issupported">MicaController.IsSupported</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller.issupported">DesktopAcrylicController.IsSupported</a> method to ensure the backdrop material is supported at runtime.</p>
+</li>
+<li><p><strong>A valid target</strong></p>
+<p>You must provide a target that implements the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.icompositionsupportssystembackdrop">ICompositionSupportsSystemBackdrop</a> interface. In a XAML app, the XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> implements this interface and is used as the backdrop target.</p>
+</li>
+<li><p><strong>A SystemBackdropConfiguration object</strong></p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration">SystemBackdropConfiguration</a> provides the system backdrop controller with app-specific policy information to properly configure the system backdrop material.</p>
+</li>
+<li><p><strong>A DispatcherQueue object</strong>.</p>
+<p>You need an available <a href="/uwp/api/windows.system.dispatcherqueue">Windows.System.DispatcherQueue</a> on the main XAML thread. See the <code>WindowsSystemDispatcherQueueHelper</code> class in the example code, or in the <a href="https://github.com/microsoft/WinUI-Gallery/blob/8cb9da922c48c5ea2e3190c579ebb77c75a2ca20/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs#L11">WinUI 3 Gallery sample</a>.</p>
+</li>
+</ul>
+<h2 id="example-use-mica-in-a-windows-appsdkwinui-3-app">Example: Use Mica in a Windows AppSDK/WinUI 3 app</h2>
+<p>This example shows how to set up the Mica backdrop material in a XAML app.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Also, see these example projects on GitHub:</p>
+<p><strong>C#</strong>: <a href="https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs">SampleSystemBackdropsWindow in the WinUI3 Gallery</a>.</p>
+<p><strong>C++/WinRT</strong>: <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32">Windows App SDK Mica sample</a>.</p>
+</div>
+<pre><code class="lang-csharp">using Microsoft.UI.Composition.SystemBackdrops;
+using Microsoft.UI.Xaml;
+using System.Runtime.InteropServices; // For DllImport
+using WinRT; // required to support Window.As&lt;ICompositionSupportsSystemBackdrop&gt;()
+
+public sealed partial class MainWindow : Window
+{
+    WindowsSystemDispatcherQueueHelper m_wsdqHelper; // See below for implementation.
+    MicaController m_backdropController;
+    SystemBackdropConfiguration m_configurationSource;
+
+    public MainWindow()
+    {
+        this.InitializeComponent();
+
+        TrySetSystemBackdrop();
+    }
+
+    bool TrySetSystemBackdrop()
+    {
+        if (Microsoft.UI.Composition.SystemBackdrops.MicaController.IsSupported())
+        {
+            m_wsdqHelper = new WindowsSystemDispatcherQueueHelper();
+            m_wsdqHelper.EnsureWindowsSystemDispatcherQueueController();
+
+            // Create the policy object.
+            m_configurationSource = new SystemBackdropConfiguration();
+            this.Activated += Window_Activated;
+            this.Closed += Window_Closed;
+            ((FrameworkElement)this.Content).ActualThemeChanged += Window_ThemeChanged;
+
+            // Initial configuration state.
+            m_configurationSource.IsInputActive = true;
+            SetConfigurationSourceTheme();
+
+            m_backdropController = new Microsoft.UI.Composition.SystemBackdrops.MicaController();
+
+            // Enable the system backdrop.
+            // Note: Be sure to have &quot;using WinRT;&quot; to support the Window.As&lt;...&gt;() call.
+            m_backdropController.AddSystemBackdropTarget(this.As&lt;Microsoft.UI.Composition.ICompositionSupportsSystemBackdrop&gt;());
+            m_backdropController.SetSystemBackdropConfiguration(m_configurationSource);
+            return true; // succeeded
+        }
+
+        return false; // Mica is not supported on this system
+    }
+
+    private void Window_Activated(object sender, WindowActivatedEventArgs args)
+        {
+            m_configurationSource.IsInputActive = args.WindowActivationState != WindowActivationState.Deactivated;
+        }
+
+    private void Window_Closed(object sender, WindowEventArgs args)
+        {
+            // Make sure any Mica/Acrylic controller is disposed
+            // so it doesn't try to use this closed window.
+            if (m_backdropController != null)
+            {
+                m_backdropController.Dispose();
+                m_backdropController = null;
+            }
+            this.Activated -= Window_Activated;
+            m_configurationSource = null;
+        }
+
+    private void Window_ThemeChanged(FrameworkElement sender, object args)
+        {
+            if (m_configurationSource != null)
+            {
+                SetConfigurationSourceTheme();
+            }
+        }
+
+    private void SetConfigurationSourceTheme()
+        {
+            switch (((FrameworkElement)this.Content).ActualTheme)
+            {
+                case ElementTheme.Dark: m_configurationSource.Theme = Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme.Dark; break;
+                case ElementTheme.Light: m_configurationSource.Theme = Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme.Light; break;
+                case ElementTheme.Default: m_configurationSource.Theme = Microsoft.UI.Composition.SystemBackdrops.SystemBackdropTheme.Default; break;
+            }
+        }
+}
+
+class WindowsSystemDispatcherQueueHelper
+{
+    [StructLayout(LayoutKind.Sequential)]
+    struct DispatcherQueueOptions
+    {
+        internal int dwSize;
+        internal int threadType;
+        internal int apartmentType;
+    }
+
+    [DllImport(&quot;CoreMessaging.dll&quot;)]
+    private static extern int CreateDispatcherQueueController([In] DispatcherQueueOptions options, [In, Out, MarshalAs(UnmanagedType.IUnknown)] ref object dispatcherQueueController);
+
+    object m_dispatcherQueueController = null;
+    public void EnsureWindowsSystemDispatcherQueueController()
+    {
+        if (Windows.System.DispatcherQueue.GetForCurrentThread() != null)
+        {
+            // one already exists, so we'll just use it.
+            return;
+        }
+
+        if (m_dispatcherQueueController == null)
+        {
+            DispatcherQueueOptions options;
+            options.dwSize = Marshal.SizeOf(typeof(DispatcherQueueOptions));
+            options.threadType = 2;    // DQTYPE_THREAD_CURRENT
+            options.apartmentType = 2; // DQTAT_COM_STA
+
+            CreateDispatcherQueueController(options, ref m_dispatcherQueueController);
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h
+...
+#include &lt;winrt/Microsoft.UI.Composition.SystemBackdrops.h&gt;
+#include &lt;winrt/Windows.System.h&gt;
+#include &lt;dispatcherqueue.h&gt;
+
+// MainWindow.xaml.h
+...
+namespace winrt
+{
+    namespace MUC = Microsoft::UI::Composition;
+    namespace MUCSB = Microsoft::UI::Composition::SystemBackdrops;
+    namespace MUX = Microsoft::UI::Xaml;
+    namespace WS = Windows::System;
+}
+...
+struct MainWindow : MainWindowT&lt;MainWindow&gt;
+{
+    winrt::MUCSB::SystemBackdropConfiguration m_configuration{ nullptr };
+    winrt::MUCSB::MicaController m_backdropController{ nullptr };
+    winrt::MUX::Window::Activated_revoker m_activatedRevoker;
+    winrt::MUX::Window::Closed_revoker m_closedRevoker;
+    winrt::MUX::FrameworkElement::ActualThemeChanged_revoker m_themeChangedRevoker;
+    winrt::MUX::FrameworkElement m_rootElement{ nullptr };
+    winrt::WS::DispatcherQueueController m_dispatcherQueueController{ nullptr };
+
+    MainWindow::MainWindow()
+    {
+        InitializeComponent();
+
+        SetBackground();
+
+        m_closedRevoker = this-&gt;Closed(winrt::auto_revoke, [&amp;](auto&amp;&amp;, auto&amp;&amp;)
+        {
+            if (nullptr != m_backdropController)
+            {
+                m_backdropController.Close();
+                m_backdropController = nullptr;
+            }
+
+            if (nullptr != m_dispatcherQueueController)
+            {
+                m_dispatcherQueueController.ShutdownQueueAsync();
+                m_dispatcherQueueController = nullptr;
+            }
+        });
+    }
+
+    void SetBackground()
+    {
+        if (winrt::MUCSB::MicaController::IsSupported())
+        {
+            // We ensure that there is a Windows.System.DispatcherQueue on the current thread.
+            // Always check if one already exists before attempting to create a new one.
+            if (nullptr == winrt::WS::DispatcherQueue::GetForCurrentThread() &amp;&amp;
+                nullptr == m_dispatcherQueueController)
+            {
+                m_dispatcherQueueController = CreateSystemDispatcherQueueController();
+            }
+
+            // Setup the SystemBackdropConfiguration object.
+            SetupSystemBackdropConfiguration();
+
+            // Setup Mica on the current Window.
+            m_backdropController = winrt::MUCSB::MicaController();
+            m_backdropController.SetSystemBackdropConfiguration(m_configuration);
+            m_backdropController.AddSystemBackdropTarget(
+                this-&gt;m_inner.as&lt;winrt::MUC::ICompositionSupportsSystemBackdrop&gt;());
+        }
+        else
+        {
+            // The backdrop material is not supported.
+        }
+    }
+
+    winrt::WS::DispatcherQueueController CreateSystemDispatcherQueueController()
+    {
+        DispatcherQueueOptions options
+        {
+            sizeof(DispatcherQueueOptions),
+            DQTYPE_THREAD_CURRENT,
+            DQTAT_COM_NONE
+        };
+
+        ::ABI::Windows::System::IDispatcherQueueController* ptr{ nullptr };
+        winrt::check_hresult(CreateDispatcherQueueController(options, &amp;ptr));
+        return { ptr, take_ownership_from_abi };
+    }
+
+    void SetupSystemBackdropConfiguration()
+    {
+        m_configuration = winrt::MUCSB::SystemBackdropConfiguration();
+
+        // Activation state.
+        m_activatedRevoker = this-&gt;Activated(winrt::auto_revoke,
+            [&amp;](auto&amp;&amp;, MUX::WindowActivatedEventArgs const&amp; args)
+            {
+                m_configuration.IsInputActive(
+                    winrt::MUX::WindowActivationState::Deactivated != args.WindowActivationState());
+            });
+
+        // Initial state.
+        m_configuration.IsInputActive(true);
+
+        // Application theme.
+        m_rootElement = this-&gt;Content().try_as&lt;winrt::MUX::FrameworkElement&gt;();
+        if (nullptr != m_rootElement)
+        {
+            m_themeChangedRevoker = m_rootElement.ActualThemeChanged(winrt::auto_revoke,
+                [&amp;](auto&amp;&amp;, auto&amp;&amp;)
+                {
+                    m_configuration.Theme(
+                        ConvertToSystemBackdropTheme(m_rootElement.ActualTheme()));
+                });
+
+            // Initial state.
+            m_configuration.Theme(
+                ConvertToSystemBackdropTheme(m_rootElement.ActualTheme()));
+        }
+    }
+
+    winrt::MUCSB::SystemBackdropTheme ConvertToSystemBackdropTheme(
+        winrt::MUX::ElementTheme const&amp; theme)
+    {
+        switch (theme)
+        {
+        case winrt::MUX::ElementTheme::Dark:
+            return winrt::MUCSB::SystemBackdropTheme::Dark;
+        case winrt::MUX::ElementTheme::Light:
+            return winrt::MUCSB::SystemBackdropTheme::Light;
+        default:
+            return winrt::MUCSB::SystemBackdropTheme::Default;
+        }
+    }
+    ...
+};
+...
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../design/signature-experiences/materials.html">Materials in Windows 11</a></li>
+<li><a href="../design/style/mica.html">Mica</a></li>
+<li><a href="../design/style/acrylic.html">Acrylic</a></li>
+<li><a href="../desktop/modernize/ui/apply-mica-win32.html">Apply Mica in Win32 desktop apps for Windows 11</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/system-backdrop-controller.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Localize strings in your UI and app package manifest </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Localize strings in your UI and app package manifest ">
+    
+    <meta name="description" content="If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="localize-strings-in-your-ui-and-the-app-package-manifest">Localize strings in your UI and the app package manifest</h1>
+
+<p>For more info about the value proposition of localizing your Windows App SDK app, see <a href="/windows/apps/design/globalizing/globalizing-portal">Globalization and localization</a>.</p>
+<p>If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.</p>
+<p>Hardcoded string literals can appear in imperative code or in XAML markup, for example as the <strong>Text</strong> property of a <strong>TextBlock</strong>. They can also appear in your app package manifest source file (the <code>Package.appxmanifest</code> file), for example as the value for Display name on the Application tab of the Visual Studio Manifest Designer. Move these strings into a Resources File (.resw), and replace the hardcoded string literals in your app and in your manifest with references to resource identifiers.</p>
+<p>Unlike image resources, where only one image resource is contained in an image resource file, <em>multiple</em> string resources are contained in a string resource file. A string resource file is a Resources File (.resw), and you typically create this kind of resource file in a \Strings folder in your project. For background on how to use qualifiers in the names of your Resources Files (.resw), see <a href="tailor-resources-lang-scale-contrast.html">Tailor your resources for language, scale, and other qualifiers</a>.</p>
+<h2 id="store-strings-in-a-resources-file">Store strings in a resources file</h2>
+<ol>
+<li><p>Set your app's default language.</p>
+<ol>
+<li>With your solution open in Visual Studio, open <code>Package.appxmanifest</code>.</li>
+<li>On the Application tab, confirm that the Default language is set appropriately (for example, &quot;en&quot; or &quot;en-US&quot;). The remaining steps will assume that you have set the default language to &quot;en-US&quot;.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>At a minimum, you need to provide string resources localized for this default language. Those are the resources that will be loaded if no better match can be found for the user's preferred language or display language settings.</p>
+</div>
+</li>
+<li><p>Create a Resources File (.resw) for the default language.</p>
+<ol>
+<li>Under your project node, create a new folder and name it <code>Strings</code>.</li>
+<li>Under <code>Strings</code>, create a new sub-folder and name it <code>en-US</code>.</li>
+<li>Under <code>en-US</code>, create a new Resources File (.resw) (under the <strong>WinUI</strong> file types in the <strong>Add New Item</strong> dialog) and confirm that it is named <code>Resources.resw</code>.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have .NET Resources Files (.resx) that you want to port, see <a href="/windows/uwp/porting/wpsl-to-uwp-porting-xaml-and-ui#localization-and-globalization">Porting XAML and UI</a>.</p>
+</div>
+</li>
+<li><p>Open <code>Resources.resw</code> and add these string resources.</p>
+<p><code>Strings/en-US/Resources.resw</code></p>
+<p><img src="images/addresource-en-us.png" alt="Screenshot of the Add Resource table of the Strings &gt; E N U S &gt; Resources.resw file."></p>
+<p>In this example, &quot;Greeting&quot; is a string resource identifier that you can refer to from your markup, as we'll show. For the identifier &quot;Greeting&quot;, a string is provided for a Text property, and a string is provided for a Width property. &quot;Greeting.Text&quot; is an example of a property identifier because it corresponds to a property of a UI element. You could also, for example, add &quot;Greeting.Foreground&quot; in the Name column, and set its Value to &quot;Red&quot;. The &quot;Farewell&quot; identifier is a simple string resource identifier; it has no sub-properties and it can be loaded from imperative code, as we'll show. The Comment column is a good place to provide any special instructions to translators.</p>
+<p>In this example, since we have a simple string resource identifier entry named &quot;Farewell&quot;, we cannot <em>also</em> have property identifiers based on that same identifier. So, adding &quot;Farewell.Text&quot; would cause a Duplicate Entry error when building <code>Resources.resw</code>.</p>
+<p>Resource identifiers are case insensitive, and must be unique per resource file. Be sure to use meaningful resource identifiers to provide additional context for translators. And don't change the resource identifiers after the string resources are sent for translation. Localization teams use the resource identifier to track additions, deletions, and updates in the resources. Changes in resource identifiers—which is also known as &quot;resource identifiers shift&quot;—require strings to be retranslated, because it will appear as though strings were deleted and others added.</p>
+</li>
+</ol>
+<h2 id="refer-to-a-string-resource-identifier-from-xaml">Refer to a string resource identifier from XAML</h2>
+<p>You use an <a href="/windows/uwp/xaml-platform/x-uid-directive">x:Uid directive</a> to associate a control or other element in your markup with a string resource identifier.</p>
+<pre><code class="lang-xaml">&lt;TextBlock x:Uid=&quot;Greeting&quot;/&gt;
+</code></pre>
+<p>At run-time, <code>\Strings\en-US\Resources.resw</code> is loaded (since right now that's the only Resources File in the project). The <strong>x:Uid</strong> directive on the <strong>TextBlock</strong> causes a lookup to take place, to find property identifiers inside <code>Resources.resw</code> that contain the string resource identifier &quot;Greeting&quot;. The &quot;Greeting.Text&quot; and &quot;Greeting.Width&quot; property identifiers are found and their values are applied to the <strong>TextBlock</strong>, overriding any values set locally in the markup. The &quot;Greeting.Foreground&quot; value would be applied, too, if you'd added that. But only property identifiers are used to set properties on XAML markup elements, so setting <strong>x:Uid</strong> to &quot;Farewell&quot; on this TextBlock would have no effect. <code>Resources.resw</code> <em>does</em> contain the string resource identifier &quot;Farewell&quot;, but it contains no property identifiers for it.</p>
+<p>When assigning a string resource identifier to a XAML element, be certain that <em>all</em> the property identifiers for that identifier are appropriate for the XAML element. For example, if you set <code>x:Uid=&quot;Greeting&quot;</code> on a <strong>TextBlock</strong> then &quot;Greeting.Text&quot; will resolve because the <strong>TextBlock</strong> type has a Text property. But if you set <code>x:Uid=&quot;Greeting&quot;</code> on a <strong>Button</strong> then &quot;Greeting.Text&quot; will cause a run-time error because the <strong>Button</strong> type does not have a Text property. One solution for that case is to author a property identifier named &quot;ButtonGreeting.Content&quot;, and set <code>x:Uid=&quot;ButtonGreeting&quot;</code> on the <strong>Button</strong>.</p>
+<p>Instead of setting <strong>Width</strong> from a Resources File, you'll probably want to allow controls to dynamically size to content.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For <a href="/windows/uwp/xaml-platform/attached-properties-overview">attached properties</a>, you need a special syntax in the <strong>Name</strong> column of a .resw file. For example, to set a value for the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty">AutomationProperties.Name</a> attached property for the &quot;Greeting&quot; identifier, this is what you would enter in the <strong>Name</strong> column.</p>
+</div>
+<pre><code class="lang-xml">Greeting.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name
+</code></pre>
+<h2 id="refer-to-a-string-resource-identifier-from-code">Refer to a string resource identifier from code</h2>
+<p>You can explicitly load a string resource based on a simple string resource identifier.</p>
+<pre><code class="lang-csharp">var resourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader();
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString(&quot;Farewell&quot;);
+</code></pre>
+<p>You can use this same code from within a Class Library project. At runtime, the resources of the app that's hosting the library are loaded. We recommend that a library loads resources from the app that hosts it, since the app is likely to have a greater degree of localization. If a library does need to provide resources then it should give its hosting app the option to replace those resources as an input.</p>
+<p>If a resource name is segmented (it contains &quot;.&quot; characters), then replace dots with forward slash (&quot;/&quot;) characters in the resource name. Property identifiers, for example, contain dots; so you'd need to do this substitution in order to load one of those from code.</p>
+<pre><code class="lang-csharp">this.myXAMLTextBlockElement.Text = resourceLoader.GetString(&quot;Fare/Well&quot;); // &lt;data name=&quot;Fare.Well&quot; ...&gt; ...
+</code></pre>
+<p>If in doubt, you can use <a href="/windows/uwp/app-resources/makepri-exe-command-options">MakePri.exe</a> to dump your app's PRI file. Each resource's <code>uri</code> is shown in the dumped file.</p>
+<pre><code class="lang-xml">&lt;ResourceMapSubtree name=&quot;Fare&quot;&gt;&lt;NamedResource name=&quot;Well&quot; uri=&quot;ms-resource://&lt;GUID&gt;/Resources/Fare/Well&quot;&gt;...
+</code></pre>
+<h2 id="refer-to-a-string-resource-identifier-from-your-app-package-manifest">Refer to a string resource identifier from your app package manifest</h2>
+<ol>
+<li><p>Open your app package manifest source file (the <code>Package.appxmanifest</code> file), in which by default your app's <code>Display name</code> is expressed as a string literal.</p>
+<p><img src="images/display-name-before.png" alt="Screenshot of the Package.appxmanifest file showing the Application tab with the Display name set to Adventure Works Cycles."></p>
+</li>
+<li><p>To make a localizable version of this string, open <code>Resources.resw</code> and add a new string resource with the name &quot;AppDisplayName&quot; and the value &quot;Adventure Works Cycles&quot;.</p>
+</li>
+<li><p>Replace the Display name string literal with a reference to the string resource identifier that you just created (&quot;AppDisplayName&quot;). You use the <code>ms-resource</code> URI (Uniform Resource Identifier) scheme to do this.</p>
+<p><img src="images/display-name-after.png" alt="Screenshot of the Package.appxmanifest file showing the Application tab with the Display name set to M S resource App Display Name."></p>
+</li>
+<li><p>Repeat this process for each string in your manifest that you want to localize. For example, your app's Short name (which you can configure to appear on your app's tile on Start). For a list of all items in the app package manifest that you can localize, see <a href="/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10">Localizable manifest items</a>.</p>
+</li>
+</ol>
+<h2 id="localize-the-string-resources">Localize the string resources</h2>
+<ol>
+<li><p>Make a copy of your Resources File (.resw) for another language.</p>
+<ol>
+<li>Under &quot;Strings&quot;, create a new sub-folder and name it &quot;de-DE&quot; for Deutsch (Deutschland).</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For the folder name, you can use any <a href="https://tools.ietf.org/html/bcp47">BCP-47 language tag</a>. See <a href="tailor-resources-lang-scale-contrast.html">Tailor your resources for language, scale, and other qualifiers</a> for details on the language qualifier and a list of common language tags.
+2. Make a copy of <code>Strings/en-US/Resources.resw</code> in the <code>Strings/de-DE</code> folder.</p>
+</div>
+</li>
+<li><p>Translate the strings.</p>
+<ol>
+<li>Open <code>Strings/de-DE/Resources.resw</code> and translate the values in the Value column. You don't need to translate the comments.</li>
+</ol>
+<p><code>Strings/de-DE/Resources.resw</code></p>
+<p><img src="images/addresource-de-de.png" alt="add resource, german"></p>
+</li>
+</ol>
+<p>If you like, you can repeat steps 1 and 2 for a further language.</p>
+<p><code>Strings/fr-FR/Resources.resw</code></p>
+<p><img src="images/addresource-fr-fr.png" alt="add resource, french"></p>
+<h2 id="test-your-app">Test your app</h2>
+<p>Test the app for your default display language. You can then change the display language in <strong>Settings</strong> &gt; <strong>Time &amp; Language</strong> &gt; <strong>Region &amp; language</strong> &gt; <strong>Languages</strong> and re-test your app. Look at strings in your UI and also in the shell (for example, your title bar—which is your Display name—and the Short name on your tiles).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If a folder name can be found that matches the display language setting, then the Resources File inside that folder is loaded. Otherwise, fallback takes place, ending with the resources for your app's default language.</p>
+</div>
+<h2 id="factoring-strings-into-multiple-resources-files">Factoring strings into multiple Resources Files</h2>
+<p>You can keep all of your strings in a single Resources File (resw), or you can factor them across multiple Resources Files. For example, you might want to keep your error messages in one Resources File, your app package manifest strings in another, and your UI strings in a third. This is what your folder structure would look like in that case.</p>
+<p><img src="images/manifest-resources.png" alt="Screenshot of the Solution panel showing the Adventure Works Cycles &gt; Strings folder with German, U S English, and French locale folders and files."></p>
+<p>To scope a string resource identifier reference to a particular file, you just add <code>/&lt;resources-file-name&gt;/</code> before the identifier. The markup example below assumes that <code>ErrorMessages.resw</code> contains a resource whose name is &quot;PasswordTooWeak.Text&quot; and whose value describes the error.</p>
+<pre><code class="lang-xaml">&lt;TextBlock x:Uid=&quot;/ErrorMessages/PasswordTooWeak&quot;/&gt;
+</code></pre>
+<p>You only need to add <code>/&lt;resources-file-name&gt;/</code> before the string resource identifier for Resources Files <em>other than</em> <code>Resources.resw</code>. That's because &quot;Resources.resw&quot; is the default file name, so that's what's assumed if you omit a file name (as we did in the earlier examples in this topic).</p>
+<p>The code example below assumes that <code>ErrorMessages.resw</code> contains a resource whose name is &quot;MismatchedPasswords&quot; and whose value describes the error.</p>
+<pre><code class="lang-csharp">var resourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader(&quot;ErrorMessages&quot;);
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString(&quot;MismatchedPasswords&quot;);
+</code></pre>
+<p>If you were to move your &quot;AppDisplayName&quot; resource out of <code>Resources.resw</code> and into <code>ManifestResources.resw</code>, then in your app package manifest you would change <code>ms-resource:AppDisplayName</code> to <code>ms-resource:/ManifestResources/AppDisplayName</code>.</p>
+<p>If a resource file name is segmented (it contains &quot;.&quot; characters), then leave the dots in the name when you reference it. <strong>Don't</strong> replace dots with forward slash (&quot;/&quot;) characters, like you would for a resource name.</p>
+<pre><code class="lang-csharp">var resourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader(&quot;Err.Msgs&quot;);
+</code></pre>
+<p>If in doubt, you can use <a href="/windows/uwp/app-resources/makepri-exe-command-options">MakePri.exe</a> to dump your app's PRI file. Each resource's <code>uri</code> is shown in the dumped file.</p>
+<pre><code class="lang-xml">&lt;ResourceMapSubtree name=&quot;Err.Msgs&quot;&gt;&lt;NamedResource name=&quot;MismatchedPasswords&quot; uri=&quot;ms-resource://&lt;GUID&gt;/Err.Msgs/MismatchedPasswords&quot;&gt;...
+</code></pre>
+<h2 id="load-a-string-for-a-specific-language-or-other-context">Load a string for a specific language or other context</h2>
+<p>The default <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext">ResourceContext</a> (obtained when creating a <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourceloader">ResourceLoader</a>) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Resources Files (.resw) are matched—based on the qualifiers in their names—against the qualifier values in that runtime context.</p>
+<p>But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching Resources File to load. For example, you might want your users to be able to select an alternative language for tooltips or error messages.</p>
+<p>You can do that by constructing a new <strong>ResourceContext</strong>, overriding its values, and then using that context object in your string lookups.</p>
+<pre><code class="lang-csharp">var resourceManager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
+var resourceContext = resourceManager.CreateResourceContext();
+resourceContext.QualifierValues[&quot;Language&quot;] = &quot;de-DE&quot;;
+var resourceMap = resourceManager.MainResourceMap.GetSubtree(&quot;Resources&quot;);
+this.myXAMLTextBlockElement.Text = resourceMap.GetValue(&quot;Farewell&quot;, resourceContext).ValueAsString;
+</code></pre>
+<p>Using <strong>QualifierValues</strong> as in the code example above works for any qualifier. For the special case of Language, you can alternatively do this instead.</p>
+<pre><code class="lang-csharp">resourceContext.Languages = new string[] { &quot;de-DE&quot; };
+</code></pre>
+<h2 id="load-strings-from-a-class-library">Load strings from a Class Library</h2>
+<p>The string resources of a referenced Class Library are typically added into a subfolder of the package in which they're included during the build process. The resource identifier of such a string usually takes the form <em>LibraryName/ResourcesFileName/ResourceIdentifier</em>.</p>
+<p>A library can get a <strong>ResourceLoader</strong> for its own resources. For example, the following code illustrates how either a library or an app that references it can get a <strong>ResourceLoader</strong> for the library's string resources.</p>
+<pre><code class="lang-csharp">var resourceLoader = new Microsoft.Windows.ApplicationModel.Resources.ResourceLoader(&quot;ContosoControl/Resources&quot;);
+this.myXAMLTextBlockElement.Text = resourceLoader.GetString(&quot;exampleResourceName&quot;);
+</code></pre>
+<p>If in doubt about the path, you can specify <a href="/windows/uwp/app-resources/makepri-exe-command-options">MakePri.exe command line options</a> to dump your component or library's PRI file. Each resource's <code>uri</code> is shown in the dumped file.</p>
+<pre><code class="lang-xml">&lt;NamedResource name=&quot;exampleResourceName&quot; uri=&quot;ms-resource://Contoso.Control/Contoso.Control/ReswFileName/exampleResourceName&quot;&gt;...
+</code></pre>
+<h2 id="loading-strings-from-other-packages">Loading strings from other packages</h2>
+<p>The resources for an app package are managed and accessed through the package's own top-level <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap">ResourceMap</a> that's accessible from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager">ResourceManager</a>. Within each package, various components can have their own <strong>ResourceMap</strong> subtrees, which you can access via <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getsubtree">ResourceMap.GetSubtree</a>.</p>
+<p>A framework package can access its own resources with an absolute resource identifier URI. Also see <a href="/windows/uwp/app-resources/uri-schemes">URI schemes</a> in the UWP documentation for more information.</p>
+<h2 id="loading-strings-in-unpackaged-applications">Loading strings in unpackaged applications</h2>
+<p>As of Windows Version 1903 (May 2019 Update), unpackaged applications can also leverage the Resource Management System.</p>
+<p>Just create your Windows App SDK user controls/libraries and <a href="#store-strings-in-a-resources-file">store any strings in a resources file</a>. You can then <a href="#refer-to-a-string-resource-identifier-from-xaml">refer to a string resource identifier from XAML</a>, <a href="#refer-to-a-string-resource-identifier-from-code">refer to a string resource identifier from code</a>, or <a href="#load-strings-from-a-class-library">load strings from a Class Library</a>.</p>
+<p>To use resources in unpackaged applications, you should do a few things:</p>
+<ol>
+<li>Use the overloaded constructor of <strong>ResourceManager</strong> to pass file name of your app's .pri file when resolving resources from code as there is no default view in unpackaged scenarios.</li>
+<li>Use <a href="/windows/uwp/app-resources/compile-resources-manually-with-makepri">MakePri.exe</a> to manually generate your app's resources.pri file.
+<ul>
+<li>Run <code>makepri new /pr &lt;PROJECTROOT&gt; /cf &lt;PRICONFIG&gt; /of resources.pri</code></li>
+<li>The &lt;PRICONFIG&gt; must omit the &quot;&lt;packaging&gt;&quot; section so that all resources are bundled in a single resources.pri file. If using the default <a href="/windows/uwp/app-resources/makepri-exe-configuration">MakePri.exe configuration file</a> created by <a href="/windows/uwp/app-resources/makepri-exe-command-options">createconfig</a>, you need to delete the &quot;&lt;packaging&gt;&quot; section manually after it is created.</li>
+<li>The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default <a href="/windows/uwp/app-resources/makepri-exe-configuration">MakePri.exe configuration file</a> created by <a href="/windows/uwp/app-resources/makepri-exe-command-options">createconfig</a> includes all indexers.</li>
+<li>If you don't use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from project references, NuGet references, and so on, that are located within the project root.
+<div class="NOTE">
+<h5>Note</h5>
+<p>By omitting <code>/IndexName</code>, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to <em>Application</em>, which the runtime understands for unpackaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer <em>Application</em> as the root namespace for unpackaged apps (or you can specify <em>Application</em> explicitly as in ms-resource://Application/).</p>
+</div>
+</li>
+</ul>
+</li>
+<li>Copy the PRI file to the build output directory of the .exe</li>
+<li>Run the .exe
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Resource Management System uses the system display language rather than the user preferred language list when resolving resources based on language in unpackaged apps. The user preferred language list is only used for Windows App SDK packaged apps.</p>
+</div>
+</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must manually rebuild PRI files whenever resources are modified. We recommend using a post-build script that handles the <a href="/windows/uwp/app-resources/compile-resources-manually-with-makepri">MakePri.exe</a> command and copies the resources.pri output to the .exe directory.</p>
+</div>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourceloader">ApplicationModel.Resources.ResourceLoader</a></li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement">MRT Core sample</a></li>
+<li><a href="/previous-versions/windows/apps/hh965323(v=win.10)">How to load string resources</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/mrtcore/localize-strings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

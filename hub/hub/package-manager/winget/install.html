@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>install Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="install Command ">
+    
+    <meta name="description" content="Installs the specified application.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="install-command-winget">install command (winget)</h1>
+
+<p>The <strong>install</strong> command of <a href="index.html">WinGet</a> installs the specified application. Use the <a href="search.html"><strong>search</strong></a> command to identify the application you want to install. Use the <a href="show.html"><strong>show</strong></a> command to view details about the application and the installer selected by WinGet for your system.</p>
+<p>The <strong>install</strong> command requires that you specify the exact string to install. If there is any ambiguity, you will be prompted to further filter the <strong>install</strong> command to  an exact application.</p>
+<h2 id="usage">Usage</h2>
+<p><code>winget install [[-q] &lt;query&gt; ...] [&lt;options&gt;]</code></p>
+<p><span class="mx-imgBorder">
+<a href="images/install.png#lightbox" data-linktype="relative-path">
+<img src="images/install.png" alt="Screenshot listing winget import command help options.">
+</a>
+</span>
+</p>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>add</li>
+</ul>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-q,--query</strong></td>
+<td>The query used to search for an app.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to uniquely identify the package you wish to install.</p>
+</div>
+<h2 id="options">Options</h2>
+<p>The options allow you to customize the install experience to meet your needs.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-m, --manifest</strong></td>
+<td>Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a <a href="#local-install">local YAML file</a>.</td>
+</tr>
+<tr>
+<td><strong>--id</strong></td>
+<td>Limits the install to the ID of the application.</td>
+</tr>
+<tr>
+<td><strong>--name</strong></td>
+<td>Limits the search to the name of the application.</td>
+</tr>
+<tr>
+<td><strong>--moniker</strong></td>
+<td>Limits the search to the moniker listed for the application.</td>
+</tr>
+<tr>
+<td><strong>-v, --version</strong></td>
+<td>Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application.</td>
+</tr>
+<tr>
+<td><strong>-s, --source</strong></td>
+<td>Restricts the search to the source name provided. Must be followed by the source name.</td>
+</tr>
+<tr>
+<td><strong>--scope</strong></td>
+<td>Allows you to specify if the installer should target user or machine scope. See <a href="troubleshooting.html#scope-for-specific-user-vs-machine-wide">known issues relating to package installation scope</a>.</td>
+</tr>
+<tr>
+<td><strong>-a, --architecture</strong></td>
+<td>Select the architecture to install.</td>
+</tr>
+<tr>
+<td><strong>--installer-type</strong></td>
+<td>Select the installer type to install. See <a href="index.html#supported-installer-formats">supported installer types for WinGet client</a>.</td>
+</tr>
+<tr>
+<td><strong>-e, --exact</strong></td>
+<td>Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.</td>
+</tr>
+<tr>
+<td><strong>-i, --interactive</strong></td>
+<td>Runs the installer in interactive mode. The default experience shows installer progress.</td>
+</tr>
+<tr>
+<td><strong>-h, --silent</strong></td>
+<td>Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress.</td>
+</tr>
+<tr>
+<td><strong>--locale</strong></td>
+<td>Specifies which locale to use (BCP47 format).</td>
+</tr>
+<tr>
+<td><strong>-o, --log</strong></td>
+<td>Directs the logging to a log file. You must provide a path to a file that you have the write rights to.</td>
+</tr>
+<tr>
+<td><strong>--custom</strong></td>
+<td>Arguments to be passed on to the installer in addition to the defaults.</td>
+</tr>
+<tr>
+<td><strong>--override</strong></td>
+<td>A string that will be passed directly to the installer.</td>
+</tr>
+<tr>
+<td><strong>-l, --location</strong></td>
+<td>Location to install to (if supported).</td>
+</tr>
+<tr>
+<td><strong>--ignore-security-hash</strong></td>
+<td>Ignore the installer hash check failure. Not recommended.</td>
+</tr>
+<tr>
+<td><strong>--allow-reboot</strong></td>
+<td>Allows a reboot if applicable.</td>
+</tr>
+<tr>
+<td><strong>--skip-dependencies</strong></td>
+<td>Skips processing package dependencies and Windows features.</td>
+</tr>
+<tr>
+<td><strong>--ignore-local-archive-malware-scan</strong></td>
+<td>Ignore the malware scan performed as part of installing an archive type package from local manifest.</td>
+</tr>
+<tr>
+<td><strong>--dependency-source</strong></td>
+<td>Find package dependencies using the specified source.</td>
+</tr>
+<tr>
+<td><strong>--accept-package-agreements</strong></td>
+<td>Used to accept the license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>--no-upgrade</strong></td>
+<td>Skips upgrade if an installed version already exists.</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--authentication-mode</strong></td>
+<td>Specify authentication window preference (silent, silentPreferred or interactive).</td>
+</tr>
+<tr>
+<td><strong>--authentication-account</strong></td>
+<td>Specify the account to be used for authentication.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>-r, --rename</strong></td>
+<td>The value to rename the executable file (portable).</td>
+</tr>
+<tr>
+<td><strong>--uninstall-previous</strong></td>
+<td>Uninstall the previous version of the package during upgrade.</td>
+</tr>
+<tr>
+<td><strong>--force</strong></td>
+<td>Direct run the command and continue with non security related issues.</td>
+</tr>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Get additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-queries">Example queries</h3>
+<p>The following example installs a specific version of an application.</p>
+<pre><code class="lang-CMD">winget install powertoys --version 0.91.1
+</code></pre>
+<p>The following example installs an application from its ID.</p>
+<pre><code class="lang-CMD">winget install --id Microsoft.PowerToys
+</code></pre>
+<p>The following example installs an application by version and ID.</p>
+<pre><code class="lang-CMD">winget install --id Microsoft.PowerToys --version 0.91.1
+</code></pre>
+<h2 id="multiple-selections">Multiple selections</h2>
+<p>If the query provided to <strong>WinGet</strong> does not result in a single application, then <strong>WinGet</strong> will display the results of the search. This will provide you with the additional data necessary to refine the search for a correct install.</p>
+<p>The best way to limit the selection to one file is to use the <strong>id</strong> of the application combined with the <strong>exact</strong> query option.  For example:</p>
+<pre><code class="lang-CMD">winget install --id Git.Git -e
+</code></pre>
+<p>If multiple sources are configured, it is possible to have duplicate entries. Specifying a source is required to further disambiguate.</p>
+<pre><code class="lang-CMD">winget install --id Git.Git -e --source winget
+</code></pre>
+<p>The <strong>msstore</strong> source uses unique identifiers as the &quot;Id&quot; for packages. These do not require the <strong>exact</strong> query option. For example:</p>
+<pre><code class="lang-CMD">winget install XP9KHM4BK9FZ7Q -s msstore
+</code></pre>
+<p>You may also use the install command to install multiple packages. For example:</p>
+<pre><code class="lang-CMD">winget install Microsoft.Edit Microsoft.NuGet
+</code></pre>
+<h2 id="local-install">Local install</h2>
+<p>The <strong>manifest</strong> option enables you to install an application by passing in a YAML file directly to the client. If the manifest is a multi-file manifest, the directory containing the files must be used. The <strong>manifest</strong> option has the following usage.</p>
+<p>Usage: <code>winget install --manifest \&lt;path&gt;</code></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-m, --manifest</strong></td>
+<td>The path to the manifests of the application to install.</td>
+</tr>
+</tbody>
+</table>
+<p>Installing packages from local manifest files may have risks. As an extra measure of precaution this feature needs to be enabled by an administrator. To enable this feature run <code>winget settings --enable LocalManifestFiles</code>. To disable this feature run <code>winget settings --disable LocalManifestFiles</code>.</p>
+<h3 id="log-files">Log files</h3>
+<p>The log files for WinGet unless redirected, will be located in the following folder:
+<code>\%LOCALAPPDATA%\\Packages\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\\LocalState\\DiagOutputDir\\*.log</code></p>
+<h2 id="license-agreements">License Agreements</h2>
+<p>Some applications when installed will require the user to agree to the license or other agreements before installing.  When this occurs, the Windows Package Manager will prompt the user to agree to the agreements.  If the user does not agree, the application will not install.</p>
+<p><span class="mx-imgBorder">
+<a href="images/agreements.png#lightbox" data-linktype="relative-path">
+<img src="images/agreements.png" alt="Screenshot of user agreement prompt in winget.">
+</a>
+</span>
+</p>
+<p>From the command line, you can auto accept the agreements by passing the following option <strong>--accept-package-agreements</strong> on the command line. This can be beneficial when scripting the Windows Package Manager.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/install.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

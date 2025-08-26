@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows developer glossary </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows developer glossary ">
+    
+    <meta name="description" content="A glossary of terms related to Windows application development.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-developer-glossary">Windows developer glossary</h1>
+
+<p>The following glossary of terms is meant to promote a common vocabulary among Windows developers.</p>
+<h4 id="app-lifecycle-management-alm">App lifecycle management (ALM)</h4>
+<p>Describes the management of your application's execution state: not running, running in background, running in foreground, suspended, and so on. See <a href="/windows/uwp/launch-resume/app-lifecycle">Windows 10 universal Windows platform (UWP) app lifecycle</a>.</p>
+<h4 id="application-model">Application model</h4>
+<p>Often referred to as &quot;app model&quot;. The combination of deployment, isolation, lifecycle, and presentation components that are unique to a given application development technology. For example: Windows App SDK / WinUI 3 apps run on the Win32 app model, while UWP / WinUI 2 run on the UWP app model.</p>
+<h4 id="application-packaging">Application packaging</h4>
+<p>Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the <a href="/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location">Windows developer FAQ</a>).</p>
+<h4 id="bootstrapper">Bootstrapper</h4>
+<p>A redistributable component providing an API to find and load the Windows App SDK framework package for the calling process. In a packaged with external location or unpackaged app, you can opt to load the Windows App SDK framework package explicitly by calling Bootstrapper APIs such as <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize">MddBootstrapInitialize</a>. Also see <a href="../windows-app-sdk/use-windows-app-sdk-run-time.html">Reference the Windows App SDK framework package at run time</a>.</p>
+<h4 id="cwinrt">C++/WinRT</h4>
+<p>C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to modern Windows APIs. <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>.</p>
+<h4 id="dynamic-dependencies">Dynamic Dependencies</h4>
+<p><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md">Dynamic Dependencies</a> makes framework packages accessible to all kinds of apps: packaged and unpackaged.</p>
+<h4 id="fluent-design">Fluent Design</h4>
+<p><a href="https://aka.ms/fluent">Fluent Design</a> is a design system that lets you create reusable cross-platform user experiences. Fluent 2 is the latest design system for Windows and is used by WinUI.</p>
+<h4 id="github-copilot">GitHub Copilot</h4>
+<p>An AI pair programmer that helps you write code faster and with less work in Visual Studio or Visual Studio Code (VS Code). See <a href="/visualstudio/ide/ai-assisted-development-visual-studio">AI-assisted development in Visual Studio</a> for more information.</p>
+<h4 id="hot-reload">Hot Reload</h4>
+<p>An app development feature that allows you to update your application's code and observe your changes while your application runs, eliminating the need to stop, rebuild, and re-run your apps while developing. See <a href="/visualstudio/debugger/hot-reload">Write and debug running code with Hot Reload</a>.</p>
+<h4 id="hybrid-app">Hybrid app</h4>
+<p>An app that uses multiple technologies. For example, a .NET MAUI app that uses Blazor to render web content in a WebView2 control. See <a href="/aspnet/core/blazor/hybrid/">ASP.NET Core Blazor Hybrid</a> for more information.</p>
+<h4 id="hybrid-crt-linkage">Hybrid CRT linkage</h4>
+<p>A C/C++ runtime library linkage technique that simplifies deployment. Also referred to simply as <em>Hybrid CRT</em>. See <a href="../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Hybrid C/C++ runtime library linkage (hybrid CRT linkage)</a>.</p>
+<h4 id="managed-apps">Managed apps</h4>
+<p>&quot;Managed&quot; refers to the &quot;managed runtime&quot; of .NET, which provides managed services such as garbage collection and security assurances. If you're building an app with .NET, you're building a managed app.</p>
+<h4 id="microsoft-foundation-classes-mfc">Microsoft Foundation Classes (MFC)</h4>
+<p>You can use Microsoft Foundation Classes (MFC) to create complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces. See: <a href="/cpp/mfc/mfc-desktop-applications">MFC desktop applications</a>.</p>
+<h4 id="msix-microsoft-installer-package-format">MSIX (Microsoft Installer package format)</h4>
+<p>MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is a <em>packaged</em> app. A packaged app can check for updates, and can control when updates are applied. <a href="/windows/msix/overview">What is MSIX?</a>.</p>
+<h4 id="native-apps">Native apps</h4>
+<p>Traditionally, &quot;native&quot; refers to applications built without using the .NET runtime. In this case, &quot;native&quot; is synonymous with &quot;unmanaged&quot;, and can be used to describe apps that manage their own memory and security concerns. Alternatively, some developers use &quot;native&quot; to indicate that an application has been built to run specifically on Windows, calling Windows APIs directly.</p>
+<h4 id="net-maui">.NET MAUI</h4>
+<p>.NET Multi-platform App UI. A cross-platform framework for creating native mobile and desktop apps with C# and XAML. An evolution of <code>Xamarin.Forms</code> extended from mobile to desktop scenarios, with UI controls rebuilt from the ground up for performance and extensibility. <a href="/dotnet/maui/what-is-maui">What is .NET MAUI?</a>.</p>
+<h4 id="packaged-app">Packaged app</h4>
+<p>For definitions of apps that are packaged, unpackaged, and packaged with external location, see <a href="../package-and-deploy/index.html">Deployment overview</a>. That topic also explains the advantages and disadvantages of each option.</p>
+<h4 id="packaged-app-with-external-location">Packaged app with external location</h4>
+<p>For definitions of apps that are packaged, unpackaged, and packaged with external location, see <a href="../package-and-deploy/index.html">Deployment overview</a>. That topic also explains the advantages and disadvantages of each option.</p>
+<h4 id="progressive-web-app-pwa">Progressive web app (PWA)</h4>
+<p>An application that you build by using web technologies, and that can be installed and can run on all devices, from one codebase. See <a href="/microsoft-edge/progressive-web-apps-chromium/">Overview of Progressive Web Apps (PWAs)</a> for more information about building PWAs.</p>
+<h4 id="project-reunion">Project Reunion</h4>
+<p>The codename for the Windows App SDK. No longer in use.</p>
+<h4 id="react-native">React Native</h4>
+<p><a href="https://reactnative.dev/">React Native</a> is a development platform from Meta which allows developers to build fully native cross-platform apps using JavaScript, TypeScript, and React.</p>
+<h4 id="react-native-for-desktop">React Native for Desktop</h4>
+<p><a href="https://aka.ms/reactnative">React Native for Desktop</a> brings React Native support to the Windows 10 and Windows 11 SDKs, enabling developers to use JavaScript to build native Windows apps for all devices supported by Windows 10 and Windows 11. This includes PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc. The term React Native for Desktop encompasses both React Native for Windows and React Native for macOS.</p>
+<h4 id="responsible-ai-rai">Responsible AI (RAI)</h4>
+<p>A set of recommended responsible development practices to use as you create applications and features. See <a href="/windows/ai/rai/">Developing Responsible Generative AI Applications and Features on Windows</a> to learn more about the RAI principles and how they apply to Windows development.</p>
+<h4 id="universal-windows-platform-uwp">Universal Windows Platform (UWP)</h4>
+<p>An application development platform and application model that uses Windows Runtime (WinRT) APIs to deliver packaged apps. UWP apps run in a sandboxed environment, and they inherit the security of the UWP platform. <a href="/windows/uwp/">Learn more about UWP</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="/windows/apps/get-started/">preferred approach for writing Windows apps</a> is to use the Windows App SDK and <a href="/windows/apps/get-started/start-here">WinUI</a>. Another option is <a href="/dotnet/desktop/wpf/getting-started">WPF</a>.</p>
+</div>
+<h4 id="unmanaged-app">Unmanaged app</h4>
+<p>Apps that aren't managed by the .NET runtime. If you're handling your own memory management, you're building an unmanaged app.</p>
+<h4 id="unpackaged-app">Unpackaged app</h4>
+<p>For definitions of apps that are packaged, unpackaged, and packaged with external location, see <a href="../package-and-deploy/index.html">Deployment overview</a>. That topic also explains the advantages and disadvantages of each option.</p>
+<h4 id="visual-studio-extension-vsix">Visual Studio extension (VSIX)</h4>
+<p>Lets you create, package, and deploy Visual Studio extensions. <a href="/visualstudio/extensibility/getting-started-with-the-vsix-project-template">Get started with the VSIX Project template</a>.</p>
+<h4 id="webview2">WebView2</h4>
+<p>A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI 3, Win32 C++, WPF, and WinForms, and it offers a developer preview for WinUI 2 / UWP support. See <a href="/microsoft-edge/webview2/">Introduction to Microsoft Edge WebView2</a>.</p>
+<h4 id="windows-api">Windows API</h4>
+<p>Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of WinAppSDK and WinUI 3.</p>
+<h4 id="windows-app-sdk">Windows App SDK</h4>
+<p>A set of new developer components and tools that represent the next evolution in the Windows app development platform. The successor to UWP / WinUI 2 for desktop application development. It lifts libraries from the OS into a standalone SDK that you can use to build backwards-compatible desktop apps. See <a href="index.html">Overview of app development options</a>.</p>
+<h4 id="windows-forms">Windows Forms</h4>
+<p>Also known as WinForms. A UI framework for building Windows desktop applications. It is a .NET wrapper over Windows user interface libraries, such as User32 and GDI+. It's a battle-tested way to create desktop applications using a visual designer within Visual Studio. See <a href="/dotnet/desktop/winforms/overview/">Desktop Guide (Windows Forms .NET)</a>.</p>
+<h4 id="windows-presentation-foundation-wpf">Windows Presentation Foundation (WPF)</h4>
+<p>A UI framework for building Windows desktop applications. WPF applications are based on a vector graphics architecture. This enables applications to look great on high DPI monitors, as they can be infinitely scaled. See <a href="/visualstudio/designers/getting-started-with-wpf">What is Windows Presentation Foundation (WPF)?</a>.</p>
+<h4 id="windows-sdk">Windows SDK</h4>
+<p>The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. The Windows SDK is not the same as the <a href="#windows-app-sdk">Windows App SDK</a>.</p>
+<h4 id="winui">WinUI</h4>
+<p>WinUI is the modern native user interface (UX) framework for both Windows desktop and UWP applications. <a href="../winui/index.html">WinUI</a>.</p>
+<h4 id="winui-2">WinUI 2</h4>
+<p>WinUI 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>.</p>
+<h4 id="winui-3">WinUI 3</h4>
+<p>The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses <a href="https://aka.ms/fluent">Fluent Design</a> to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. Note that WinUI 3 apps are commonly referred to as &quot;WinUI apps&quot;. See <a href="../winui/winui3/index.html">WinUI 3</a>.</p>
+<h4 id="xaml-islands">XAML Islands</h4>
+<p>XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. <a href="../desktop/modernize/xaml-islands/xaml-islands.html">Host WinRT XAML controls in desktop apps (XAML Islands)</a>.</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="windows-developer-faq.yml">Windows developer FAQ</a></li>
+<li><a href="index.html">Overview of app development options</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/get-started/windows-developer-glossary.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

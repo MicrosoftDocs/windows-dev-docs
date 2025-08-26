@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Arm64X PE Files </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Arm64X PE Files ">
+    
+    <meta name="description" content="Arm64X are a type of PE file in the Windows 11 SDK used for x64 compatibility on Arm64. Arm64X may be a good solution for developers of middleware or plugins, where code could get loaded into x64 or Arm64 processes.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="arm64x-pe-files">Arm64X PE files</h1>
+
+<p>Arm64X is a new type of binary that can contain both the classic Arm64 code and <a href="arm64ec.html">Arm64EC code</a> together. This makes Arm64x compatible for both the classic Arm64 and Arm64EC processes on a Windows on Arm device and a particularly good fit for middleware or plugins that may be used by both ABIs.</p>
+<p>Introduced in the Windows 11 SDK, the Arm64X binary is a type of Portable Executable (PE) file that works with both Windows 11 on Arm and Windows 10 on Arm. To build Arm64X binaries, see <a href="arm64x-build.html">Build Arm64X Binaries</a>.</p>
+<h2 id="how-do-arm64x-binaries-work">How do Arm64X binaries work?</h2>
+<p>Fundamentally, an Arm64X binary contains all of the content that would be in separate x64/Arm64EC and Arm64 binaries, but merged into one more efficient file on disk. The built Arm64X binary has two sets of code, entry points, etc., while eliminating redundant parts to save space on disk.</p>
+<p>When an Arm64X binary is loaded by an application, the operating system applies transformations to expose the correct sections depending on the architecture of the process it is being loaded into. You can think of an Arm64X binary like old 3D images, with both a red and blue image that can be viewed through the red or blue lenses on a pair of 3D glasses. An x64 app will see the DLL as though it is an x64 DLL, while an Arm64 app will see the same DLL as an Arm64 DLL.</p>
+<p><img src="../arm-docs/images/arm-transformation-graphic.png" alt="Arm64X transformation graphic showing 3D glasses with red and blue lenses"></p>
+<p>The transparent operating system transformations allow both x64 and Arm64 applications to load the same Arm64X binary without ever knowing that it also contains code corresponding to the other architecture. For that reason, Arm64X binaries are nicknamed 'chameleon' as they take on the 'color' of their surroundings.</p>
+<p>By default, Arm64X binaries appear to be Arm64 binaries. This allows a system running Windows 10 on Arm, which does not know the Arm64X format or how to apply transformations, to load the Arm64X binary into an Arm64 process successfully.</p>
+<h2 id="how-does-the-operating-system-use-arm64x-binaries">How does the operating system use Arm64X binaries?</h2>
+<p>Windows 11 on Arm introduced the ability to run x64 applications on Arm64. However, unlike <a href="apps-on-arm-x86-emulation.html">x86 emulation</a>, which includes a <code>SysWoW64</code> folder, there is no separate folder of pure x64 operating system binaries. With Windows 11 on Arm, both x64 applications and Arm64 applications are able to load binaries and call APIs using the binaries in <code>System32</code>. This flexibility is possible because any binaries in <code>System32</code> that an app may need to load have been recompiled as Arm64X binaries.</p>
+<p>Both x64 and Arm64 applications can load and interact with the binaries in <code>System32</code>, without need for a separate copy of all system binaries like <code>SysWoW64</code> for x86.</p>
+<p><img src="images/arm64-x64-compatible-binaries.png" alt="x64 and Arm64 compatible binaries in System32 folders"></p>
+<h2 id="arm64x-for-use-with-middleware-or-plugins">Arm64X for use with middleware or plugins</h2>
+<p>The core function of an Arm64X binary is to enable one file on disk to support both x64/Arm64EC and Arm64 processes. Most app developers will be focused on building their application as either Arm64EC or Arm64, not both, in which case Arm64X likely won't be necessary.</p>
+<p>Arm64X should be considered by developers of <strong>middleware</strong> or <strong>plugins</strong>, however, because such code has the potential to be loaded into x64 or Arm64 processes.</p>
+<p>You can support both x64 and Arm64 processes without using Arm64X, but you may find that it is easier to allow the operating system to handle loading the correct architecture of binary into a given 64-bit process.</p>
+<p><img src="images/arm-binary-approaches.png" alt="Three approaches for supporting apps separate binaries, Arm64x binary, Arm64X pure forwarder combining x64/Arm64EC with Arm64 binaries"></p>
+<p>Three conceptual ways to support both architectures on Windows 11 on Arm include:</p>
+<ul>
+<li><p><strong>Separate binaries</strong>: Since standard practices today use separate binaries when supporting multiple architectures, you may find that building and shipping separate x64 and Arm64 binaries works better for your solution. You can use your existing mechanisms to ensure that the correct binary is loaded into the associated architecture process.</p>
+</li>
+<li><p><strong>Arm64X binary</strong>: You can build an Arm64X binary that contains all of the x64/Arm64EC and Arm64 code in one binary.</p>
+</li>
+<li><p><strong>Arm64X pure forwarder</strong>: If you need flexibility of Arm64X but want to avoid putting all of your app code into an Arm64X binary, you can choose to use the pure forwarder approach, where a small Arm64X binary with no code is used to redirect the loader to the correct architecture of DLL.</p>
+</li>
+</ul>
+<h2 id="example-situations-that-would-require-arm64x">Example situations that would require Arm64X</h2>
+<p>There are some situations that will require using an Arm64X binary to support both x64 and Arm64 apps.  Those include:</p>
+<ul>
+<li>A 64-bit COM server that may be called by both x64 or Arm64 apps</li>
+<li>A plugin that may be loaded into either an x64 or Arm64 app</li>
+<li>A single binary that gets injected into an x64 or Arm64 process</li>
+</ul>
+<p>In each of these cases, you can use an Arm64X binary or an Arm64X pure forwarder to enable one binary to support both architectures.</p>
+<p>For details on building Arm64X binaries, see <a href="arm64x-build.html">Build Arm64X binaries</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/arm64x-pe.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

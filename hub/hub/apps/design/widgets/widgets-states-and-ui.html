@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Widget states and built-in UI components </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Widget states and built-in UI components ">
+    
+    <meta name="description" content="Learn about the different states of a widget and the UI components that are built into the Windows widgets experience.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="widget-states-and-built-in-ui-components">Widget states and built-in UI components</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</strong></p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see <a href="https://insider.windows.com/en-us/preview-windows">Windows 10 Insider Preview</a>.</p>
+</div>
+<h2 id="widget-states">Widget states</h2>
+<p>When a widget is displayed on the Widgets Board, there are several different states that it can be in, depending on the current state of the widgets board and your app, such as when the widget is loading, when the widget is in an error state, or when the user has customized the widgets layout. Some states are designed and implemented by your app while others are built into the Widgets host. This section shows and describes each widget state. Keep in mind that widgets support both light and dark themes, so the built-in states and the states you customize may both look different depending on the current theme.</p>
+<h3 id="default-state">Default state</h3>
+<p><img src="images/widgets-default-state.png" alt="A screenshot of a widget in the default state"></p>
+<p>The default state is what the widget looks like when it is running normally. This is the primary user experience for your widget. You design the layout for your widget's default state. Although the UI of your widget's default state may change in response to user configuration, your widget's default state should be fully implemented and should not be empty before user configuration. If your widget requires the user to sign-in, you may want to implement a signed-out state, described below. For design guidance for creating the default state for your widget, see <a href="widgets-design-fundamentals.html">Widget design fundamentals</a>.</p>
+<p><strong>DO</strong></p>
+<ul>
+<li>When in the default, active state a widget should feel personal and connected to user.</li>
+<li>Widgets should show engaging content that brings the user value in the current moment.</li>
+<li>Give the user the ability to start interacting with widget right away.</li>
+<li>Provide a UI that reflects the UI of your app, while staying within the design constraints for widgets, in order to maximize consistency and to lessen the learning curve.</li>
+<li>Consider using the user’s location to pre-populate the data for content like sports and suggested calendars to add instead of generic data.</li>
+<li>Allow ample breathing space between elements.</li>
+</ul>
+<p><strong>DON’T</strong></p>
+<ul>
+<li>Use your widget for generic commercial offers. The content should reflect the user's desires and intent.</li>
+<li>Avoid busy, complex layouts.</li>
+</ul>
+<p>Aim for comfortable information density and healthy negative space within each widget size to help with the glance and go model. If you have a lot of information to include, consider the next size up to show more content. Also consider how difficult/easy the content will be for a user to glance and consume.</p>
+<p>Consider adding moments of surprise + delight to your widgets to elevate the experience. For example, for the Family or Calendar widgets you could highlight a child’s birthday via different visual treatments.</p>
+<p>This is the state with the most design flexibility. Use the guidelines in this articles as well as <a href="index.html#widget-principles">Widget principles</a>, <a href="widgets-design-fundamentals.html">Widget design fundamentals</a>, and <a href="widgets-interaction-design.html">Widget interaction design guidance</a> to design how you want to layout your content.</p>
+<h3 id="signed-out-state-for-widgets-that-require-authentication">Signed-out state (for widgets that require authentication)</h3>
+<p><img src="images/widgets-signed-out-state.png" alt="A screenshot of a widget in the signed-out state"></p>
+<p>Some widget scenarios may require that the user must sign in or perform other actions to be able to see personalized widget content. When the user is not signed in, you should consider presenting non-personalized content.</p>
+<h3 id="error-state---system-provided">Error state - system provided</h3>
+<p><img src="images/widgets-error-state.png" alt="A screenshot of a widget in the error state"></p>
+<p>If for some reason, the Widgets Board can't retrieve the layout or data for a widget, it will display an error state. Windows will show the widget header with an error message and a reload button. This message will look the same for every widget.</p>
+<p>If there is cached content available to be displayed, the widget header will show when data was last refreshed in the following format:</p>
+<ol>
+<li>The number of minutes if less than an hour</li>
+<li>Rounding to the nearest hour if over an hour</li>
+</ol>
+<p>Long widget partner names will get truncated while showing a cached message at 15 characters max.</p>
+<h3 id="customization-state">Customization state</h3>
+<p>Starting with Windows App SDK 1.4, widgets can provide a customization template that provides controls for the user to customize the widget's appearance or the data displayed by the widget. The customization UI is defined in a JSON template.</p>
+<h2 id="built-in-widget-ui-components">Built-in widget UI components</h2>
+<p>Some UI elements of a widget are built into the widgets experience and, while these elements are not customizable by widget providers, it's important to be aware of what these elements are and how they behave.</p>
+<h3 id="context-menu-system-provided">Context menu (system provided)</h3>
+<p><img src="images/widgets-context-menu.png" alt="Context menu"></p>
+<p>The context menu is displayed when the user clicks on the three-dot icon on the top right. This menu allows users to select their preferred widget size and access the widget's configuration state. Partners will use the same template widget register “powered by ___”.</p>
+<h3 id="attribution-area">Attribution area</h3>
+<p><img src="images/widgets-attribution.png" alt="A screenshot of a widget with a red box and label calling out the attribution area at the top of the widget containing the widget name and icon."></p>
+<p>The attribution area is rendered by the widgets board based on the widget name and icon provided during widget registration. For more information on registering widgets, see <a href="../../develop/widgets/widget-provider-manifest.html">Widget provider package manifest XML format</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/widgets/widgets-states-and-ui.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

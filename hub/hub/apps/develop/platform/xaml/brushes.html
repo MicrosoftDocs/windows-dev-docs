@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use brushes </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use brushes ">
+    
+    <meta name="description" content="Brush objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-brushes-to-paint-backgrounds-foregrounds-and-outlines">Using brushes to paint backgrounds, foregrounds, and outlines</h1>
+
+<p>Use <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a> objects to paint the interiors and outlines of XAML shapes, text, and controls, making them visible in your application UI.</p>
+<blockquote>
+<p><strong>Important APIs</strong>:  <a href="/uwp/api/Windows.UI.Xaml.Media.Brush">Brush class</a></p>
+</blockquote>
+<h2 id="introduction-to-brushes">Introduction to brushes</h2>
+<p>To paint a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Shape"><strong>Shape</strong></a>, text, or parts of a <a href="/uwp/api/Windows.UI.Xaml.Controls.Control"><strong>Control</strong></a> that is displayed on the app canvas, set the <a href="/uwp/api/windows.ui.xaml.shapes.shape.fill"><strong>Fill</strong></a> property of the <strong>Shape</strong> or the <a href="/uwp/api/windows.ui.xaml.controls.control.background"><strong>Background</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.control.foreground"><strong>Foreground</strong></a> properties of a <strong>Control</strong> to a <strong>Brush</strong> value.</p>
+<p>The different types of brushes are:</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.media.acrylicbrush"><strong>AcrylicBrush</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush"><strong>LinearGradientBrush</strong></a></li>
+<li><a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush"><strong>RadialGradientBrush</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush"><strong>WebViewBrush</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase"><strong>XamlCompositionBrushBase</strong></a></li>
+</ul>
+<h2 id="solid-color-brushes">Solid color brushes</h2>
+<p>A <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a> paints an area with a single <a href="/uwp/api/Windows.UI.Color"><strong>Color</strong></a>, such as red or blue. This is the most basic brush. In XAML, there are three ways to define a <strong>SolidColorBrush</strong> and the color it specifies: predefined color names, hexadecimal color values, or the property element syntax.</p>
+<h3 id="predefined-color-names">Predefined color names</h3>
+<p>You can use a predefined color name, such as <a href="/uwp/api/windows.ui.colors.yellow"><strong>Yellow</strong></a> or <a href="/uwp/api/windows.ui.colors.magenta"><strong>Magenta</strong></a>. There are 256 available named colors. The XAML parser converts the color name to a <a href="/uwp/api/Windows.UI.Color"><strong>Color</strong></a> structure with the correct color channels. The 256 named colors are based on the <em>X11</em> color names from the Cascading Style Sheets, Level 3 (CSS3) specification, so you may already be familiar with this list of named colors if you have previous experience with web development or design.</p>
+<p>Here's an example that sets the <a href="/uwp/api/windows.ui.xaml.shapes.shape.fill"><strong>Fill</strong></a> property of a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> to the predefined color <a href="/uwp/api/windows.ui.colors.red"><strong>Red</strong></a>.</p>
+<pre><code class="lang-xaml">&lt;Rectangle Width=&quot;100&quot; Height=&quot;100&quot; Fill=&quot;Red&quot; /&gt;
+</code></pre>
+<p><img src="images/brushes-solidcolorbrush.jpg" alt="A rendered SolidColorBrush"></p>
+<p><em>SolidColorBrush applied to a Rectangle</em></p>
+<p>If you are defining a <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a> using code rather than XAML, each named color is available as a static property value of the <a href="/uwp/api/windows.ui.colors"><strong>Colors</strong></a> class. For example, to declare a <a href="/uwp/api/windows.ui.xaml.media.solidcolorbrush.color"><strong>Color</strong></a> value of a <strong>SolidColorBrush</strong> to represent the named color &quot;Orchid&quot;, set the <strong>Color</strong> value to the static value <a href="/uwp/api/windows.ui.colors.orchid"><strong>Colors.Orchid</strong></a>.</p>
+<h3 id="hexadecimal-color-values">Hexadecimal color values</h3>
+<p>You can use a hexadecimal format string to declare precise 24-bit color values with 8-bit alpha channel for a <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a>. Two characters in the range 0 to F define each component value, and the component value order of the hexadecimal string is: alpha channel (opacity), red channel, green channel, and blue channel (<strong>ARGB</strong>). For example, the hexadecimal value &quot;#FFFF0000&quot; defines fully opaque red (alpha=&quot;FF&quot;, red=&quot;FF&quot;, green=&quot;00&quot;, and blue=&quot;00&quot;).</p>
+<p>This XAML example sets the <a href="/uwp/api/windows.ui.xaml.shapes.shape.fill"><strong>Fill</strong></a> property of a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> to the hexadecimal value &quot;#FFFF0000&quot;, and gives an identical result to using the named color <a href="/uwp/api/windows.ui.colors.red"><strong>Colors.Red</strong></a>.</p>
+<pre><code class="lang-xml">&lt;StackPanel&gt;
+  &lt;Rectangle Width=&quot;100&quot; Height=&quot;100&quot; Fill=&quot;#FFFF0000&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<h3 id="property-element-syntax">Property element syntax</h3>
+<p>You can use property element syntax to define a <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a>. This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the <a href="/uwp/api/windows.ui.xaml.media.brush.opacity"><strong>Opacity</strong></a>. For more info on XAML syntax, including property element syntax, see the <a href="/windows/uwp/xaml-platform/xaml-overview">XAML overview</a> and <a href="/windows/uwp/xaml-platform/xaml-syntax-guide">XAML syntax guide</a>.</p>
+<p>In the previous examples, the brush being created is created implicitly and automatically, as part of a deliberate XAML language shorthand that helps keep UI definitions simple for the most common cases. The next example creates a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> and explicitly creates the <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a> as an element value for a <a href="/uwp/api/windows.ui.xaml.shapes.shape.fill"><strong>Rectangle.Fill</strong></a> property. The <a href="/uwp/api/windows.ui.xaml.media.solidcolorbrush.color"><strong>Color</strong></a> of the <strong>SolidColorBrush</strong> is set to <a href="/uwp/api/windows.ui.colors.blue"><strong>Blue</strong></a> and the <a href="/uwp/api/windows.ui.xaml.media.brush.opacity"><strong>Opacity</strong></a> is set to 0.5.</p>
+<pre><code class="lang-xml">&lt;Rectangle Width=&quot;200&quot; Height=&quot;150&quot;&gt;
+    &lt;Rectangle.Fill&gt;
+        &lt;SolidColorBrush Color=&quot;Blue&quot; Opacity=&quot;0.5&quot; /&gt;
+    &lt;/Rectangle.Fill&gt;
+&lt;/Rectangle&gt;
+</code></pre>
+<h2 id="linear-gradient-brushes">Linear gradient brushes</h2>
+<p>A <a href="/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush"><strong>LinearGradientBrush</strong></a> paints an area with a gradient that's defined along a line. This line is called the <em>gradient axis</em>. You specify the gradient's colors and their locations along the gradient axis using <a href="/uwp/api/Windows.UI.Xaml.Media.GradientStop"><strong>GradientStop</strong></a> objects. By default, the gradient axis runs from the upper left corner to the lower right corner of the area that the brush paints, resulting in a diagonal shading.</p>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Media.GradientStop"><strong>GradientStop</strong></a> is the basic building block of a gradient brush. A gradient stop specifies what the <a href="/uwp/api/windows.ui.xaml.media.gradientstop.color"><strong>Color</strong></a> of the brush is at an <a href="/uwp/api/windows.ui.xaml.media.gradientstop.offset"><strong>Offset</strong></a> along the gradient axis, when the brush is applied to the area being painted.</p>
+<p>The gradient stop's <a href="/uwp/api/windows.ui.xaml.media.gradientstop.color"><strong>Color</strong></a> property specifies the color of the gradient stop. You can set the color by using a predefined color name or by specifying the hexadecimal <strong>ARGB</strong> values.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.media.gradientstop.offset"><strong>Offset</strong></a> property of a <a href="/uwp/api/Windows.UI.Xaml.Media.GradientStop"><strong>GradientStop</strong></a> specifies the position of each <strong>GradientStop</strong> along the gradient axis. The <strong>Offset</strong> is a <strong>double</strong> that ranges from 0 to 1. An <strong>Offset</strong> of 0 places the <strong>GradientStop</strong> at the start of the gradient axis, in other words near its <a href="/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint"><strong>StartPoint</strong></a>. An <strong>Offset</strong> of 1 places the <strong>GradientStop</strong> at the <a href="/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint"><strong>EndPoint</strong></a>. At a minimum, a useful <a href="/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush"><strong>LinearGradientBrush</strong></a> should have two <strong>GradientStop</strong> values, where each <strong>GradientStop</strong> should specify a different <a href="/uwp/api/windows.ui.xaml.media.gradientstop.color"><strong>Color</strong></a> and have a different <strong>Offset</strong> between 0 and 1.</p>
+<p>This example creates a linear gradient with four colors and uses it to paint a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a>.</p>
+<pre><code class="lang-xml">&lt;!-- This rectangle is painted with a diagonal linear gradient. --&gt;
+&lt;Rectangle Width=&quot;200&quot; Height=&quot;100&quot;&gt;
+    &lt;Rectangle.Fill&gt;
+        &lt;LinearGradientBrush StartPoint=&quot;0,0&quot; EndPoint=&quot;1,1&quot;&gt;
+            &lt;GradientStop Color=&quot;Yellow&quot; Offset=&quot;0.0&quot; x:Name=&quot;GradientStop1&quot;/&gt;
+            &lt;GradientStop Color=&quot;Red&quot; Offset=&quot;0.25&quot; x:Name=&quot;GradientStop2&quot;/&gt;
+            &lt;GradientStop Color=&quot;Blue&quot; Offset=&quot;0.75&quot; x:Name=&quot;GradientStop3&quot;/&gt;
+            &lt;GradientStop Color=&quot;LimeGreen&quot; Offset=&quot;1.0&quot; x:Name=&quot;GradientStop4&quot;/&gt;
+        &lt;/LinearGradientBrush&gt;
+    &lt;/Rectangle.Fill&gt;
+&lt;/Rectangle&gt;
+</code></pre>
+<p>The color of each point between gradient stops is linearly interpolated as a combination of the color specified by the two bounding gradient stops. The following image highlights the gradient stops in the previous example. The circles mark the position of the gradient stops, and the dashed line shows the gradient axis.</p>
+<p><img src="images/linear-gradients-stops.png" alt="Diagram depicting Gradient Stops 1 through 4 starting in the upper-left corner of the diagram and sloping down and to the right until it reaches the lower-right corner of the diagram."></p>
+<p><em>Combination of colors specified by the two bounding gradient stops</em></p>
+<p>You can change the line at which the gradient stops are positioned by setting the <a href="/uwp/api/windows.ui.xaml.media.lineargradientbrush.startpoint"><strong>StartPoint</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.lineargradientbrush.endpoint"><strong>EndPoint</strong></a> properties to be different values than the <code>(0,0)</code> and <code>(1,1)</code> starting defaults. By changing the <strong>StartPoint</strong> and <strong>EndPoint</strong> coordinate values, you can create horizontal or vertical gradients, reverse the gradient direction, or condense the gradient spread to apply to a smaller range than the full painted area. To condense the gradient, you set values of <strong>StartPoint</strong> and/or <strong>EndPoint</strong> to be something that is between the values 0 and 1. For example, if you want a horizontal gradient where the fade all happens on the left half of the brush and the right side is solid to your last <a href="/uwp/api/Windows.UI.Xaml.Media.GradientStop"><strong>GradientStop</strong></a> color, you specify a <strong>StartPoint</strong> of <code>(0,0)</code> and an <strong>EndPoint</strong> of <code>(0.5,0)</code>.</p>
+<h3 id="use-tools-to-make-gradients">Use tools to make gradients</h3>
+<p>Now that you know how linear gradients work, you can use Visual Studio or Blend to make creating these gradients easier. To create a gradient, select the object you want to apply a gradient to on the design surface or in XAML view. Expand <strong>Brush</strong> and select the <strong>Linear Gradient</strong> tab.</p>
+<p><img src="images/tool-gradient-brush-1.png" alt="Create linear gradient in Visual Studio"></p>
+<p><em>Creating a linear gradient in Visual Studio</em></p>
+<p>Now you can change the colors of the gradient stops and slide their positions using the bar on the bottom. You can also add new gradient stops by clicking on the bar and remove them by dragging the stops off of the bar (see next screenshot).</p>
+<p><img src="images/tool-gradient-brush-2.png" alt="Bar at bottom of properties window that controls gradient stops"></p>
+<p><em>Gradient setting slider</em></p>
+<h2 id="radial-gradient-brushes">Radial gradient brushes</h2>
+<p>A <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush"><strong>RadialGradientBrush</strong></a> is drawn within an ellipse that is defined by the <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.center"><strong>Center</strong></a>, <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusx"><strong>RadiusX</strong></a>, and <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusy"><strong>RadiusY</strong></a> properties. Colors for the gradient start at the center of the ellipse and end at the radius.</p>
+<p>The colors for the radial gradient are defined by color stops added to the <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientstops"><strong>GradientStops</strong></a> collection property. Each gradient stop specifies a color and an offset along the gradient.</p>
+<p>The gradient origin defaults to center and can be offset using the <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientorigin"><strong>GradientOrigin</strong></a> property.</p>
+<p><a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.mappingmode">MappingMode</a> defines whether <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.center"><strong>Center</strong></a>, <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusx"><strong>RadiusX</strong></a>, <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusy"><strong>RadiusY</strong></a>, and <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientorigin"><strong>GradientOrigin</strong></a> represent relative or absolute coordinates.</p>
+<p>When <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.mappingmode"><strong>MappingMode</strong></a> is set to <code>RelativeToBoundingBox</code>, the X and Y values of the three properties are treated as relative to the element bounds, where <code>(0,0)</code> represents the top left and <code>(1,1)</code> represents the bottom right of the element bounds for the <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.center"><strong>Center</strong></a>, <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusx"><strong>RadiusX</strong></a>, and <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.radiusy"><strong>RadiusY</strong></a> properties and <code>(0,0)</code> represents the center for the <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.gradientorigin"><strong>GradientOrigin</strong></a> property.</p>
+<p>When <a href="/uwp/api/microsoft.ui.xaml.media.radialgradientbrush.mappingmode"><strong>MappingMode</strong></a> is set to <code>Absolute</code>, the X and Y values of the three properties are treated as absolute coordinates within the element bounds.</p>
+<p>This example creates a linear gradient with four colors and uses it to paint a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a>.</p>
+<pre><code class="lang-xml">&lt;!-- This rectangle is painted with a radial gradient. --&gt;
+&lt;Rectangle Width=&quot;200&quot; Height=&quot;200&quot;&gt;
+    &lt;Rectangle.Fill&gt;
+        &lt;media:RadialGradientBrush&gt;
+            &lt;GradientStop Color=&quot;Blue&quot; Offset=&quot;0.0&quot; /&gt;
+            &lt;GradientStop Color=&quot;Yellow&quot; Offset=&quot;0.2&quot; /&gt;
+            &lt;GradientStop Color=&quot;LimeGreen&quot; Offset=&quot;0.4&quot; /&gt;
+            &lt;GradientStop Color=&quot;LightBlue&quot; Offset=&quot;0.6&quot; /&gt;
+            &lt;GradientStop Color=&quot;Blue&quot; Offset=&quot;0.8&quot; /&gt;
+            &lt;GradientStop Color=&quot;LightGray&quot; Offset=&quot;1&quot; /&gt;
+        &lt;/media:RadialGradientBrush&gt;
+    &lt;/Rectangle.Fill&gt;
+&lt;/Rectangle&gt;
+</code></pre>
+<p>The color of each point between gradient stops is radially interpolated as a combination of the color specified by the two bounding gradient stops. The following image highlights the gradient stops in the previous example.</p>
+<p><img src="images/radial-gradient.png" alt="Screenshot of a radial gradient."></p>
+<p><em>Gradient stops</em></p>
+<h2 id="image-brushes">Image brushes</h2>
+<p>An <a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a> paints an area with an image, with the image to paint coming from an image file source. You set the <a href="/uwp/api/Windows.UI.Xaml.Media.ImageSource"><strong>ImageSource</strong></a> property with the path of the image to load. Typically, the image source comes from a <strong>Content</strong> item that is part of your app's resources.</p>
+<p>By default, an <a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a> stretches its image to completely fill the painted area, possibly distorting the image if the painted area has a different aspect ratio than the image. You can change this behavior by changing the <a href="/uwp/api/windows.ui.xaml.media.tilebrush.stretch"><strong>Stretch</strong></a> property from its default value of <strong>Fill</strong> and setting it as <strong>None</strong>, <strong>Uniform</strong>, or <strong>UniformToFill</strong>.</p>
+<p>The next example creates an <a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a> and sets the <a href="/uwp/api/Windows.UI.Xaml.Media.ImageSource"><strong>ImageSource</strong></a> to an image named licorice.jpg, which you must include as a resource in the app. The <strong>ImageBrush</strong> then paints the area defined by an <a href="/uwp/api/Windows.UI.Xaml.Shapes.Ellipse"><strong>Ellipse</strong></a> shape.</p>
+<pre><code class="lang-xml">&lt;Ellipse Height=&quot;200&quot; Width=&quot;300&quot;&gt;
+   &lt;Ellipse.Fill&gt;
+     &lt;ImageBrush ImageSource=&quot;licorice.jpg&quot; /&gt;
+   &lt;/Ellipse.Fill&gt;
+&lt;/Ellipse&gt;
+</code></pre>
+<p><img src="images/brushes-imagebrush.jpg" alt="A rendered ImageBrush."></p>
+<p><em>A rendered ImageBrush</em></p>
+<p><a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.Image"><strong>Image</strong></a> both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see <a href="../../../design/controls/images-imagebrushes.html">Image and ImageBrush</a>.</p>
+<h2 id="brushes-and-text">Brushes and text</h2>
+<p>You can also use brushes to apply rendering characteristics to text elements. For example, the <a href="/uwp/api/windows.ui.xaml.controls.textblock.foreground"><strong>Foreground</strong></a> property of <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> takes a <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a>. You can apply any of the brushes described here to text. However, be careful with brushes applied to text, as any background might make the text can be unreadable if you use brushes that bleed into the background. Use <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a> for readability of text elements in most cases, unless you want the text element to be mostly decorative.</p>
+<p>Even when you use a solid color, make sure that the text color you choose has enough contrast against the background color of the text's layout container. The level of contrast between text foreground and text container background is an accessibility consideration.</p>
+<h2 id="webviewbrush">WebViewBrush</h2>
+<p>A <a href="/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush"><strong>WebViewBrush</strong></a> is a special type of brush that can access the content normally viewed in a <a href="/uwp/api/Windows.UI.Xaml.Controls.WebView"><strong>WebView</strong></a> control. Instead of rendering the content in the rectangular <strong>WebView</strong> control area, <strong>WebViewBrush</strong> paints that content onto another element that has a <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a>-type property for a render surface. <strong>WebViewBrush</strong> isn't appropriate for every brush scenario, but is useful for transitions of a <strong>WebView</strong>. For more info, see <a href="/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush"><strong>WebViewBrush</strong></a>.</p>
+<h2 id="xamlcompositionbrushbase">XamlCompositionBrushBase</h2>
+<p><a href="/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase"><strong>XamlCompositionBrushBase</strong></a> is a base class used to create custom brushes that use <a href="/uwp/api/Windows.UI.Composition.CompositionBrush"><strong>CompositionBrush</strong></a> to paint XAML UI elements.</p>
+<p>This enables &quot;drop down&quot; interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the <a href="/windows/uwp/composition/visual-layer"><strong>Visual Layer overview</strong></a>.</p>
+<p>To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.</p>
+<p>For example, this can be used to apply <a href="/windows/uwp/composition/composition-effects"><strong>effects</strong></a> to XAML UIElements using a <a href="/uwp/api/Windows.UI.Composition.CompositionEffectBrush"><strong>CompositionEffectBrush</strong></a>, such as a <strong>GaussianBlurEffect</strong> or a <a href="/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect"><strong>SceneLightingEffect</strong></a> that controls the reflective properties of a XAML UIElement when being lit by a <a href="/uwp/api/windows.ui.xaml.media.xamllight"><strong>XamlLight</strong></a>.</p>
+<p>For code examples, see <a href="/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase"><strong>XamlCompositionBrushBase</strong></a>.</p>
+<h2 id="brushes-as-xaml-resources">Brushes as XAML resources</h2>
+<p>You can declare any brush to be a keyed XAML resource in a XAML resource dictionary. This makes it easy to replicate the same brush values as applied to multiple elements in a UI. The brush values are then shared and applied to any case where you reference the brush resource as a <a href="/windows/uwp/xaml-platform/staticresource-markup-extension">{StaticResource}</a> usage in your XAML. This includes cases where you have a XAML control template that references the shared brush, and the control template is itself a keyed XAML resource.</p>
+<h2 id="brushes-in-code">Brushes in code</h2>
+<p>It's much more typical to specify brushes using XAML than it is to use code to define brushes. This is because brushes are usually defined as XAML resources, and because brush values are often the output of design tools or otherwise as part of a XAML UI definition. Still, for the occasional case where you might want to define a brush using code, all the <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a> types are available for code instantiation.</p>
+<p>To create a <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a> in code, use the constructor that takes a <a href="/uwp/api/Windows.UI.Color"><strong>Color</strong></a> parameter. Pass a value that is a static property of the <a href="/uwp/api/windows.ui.colors"><strong>Colors</strong></a> class, like this:</p>
+<pre><code class="lang-cs">SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
+</code></pre>
+<pre><code class="lang-vb">Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
+</code></pre>
+<pre><code class="lang-cppwinrt">Windows::UI::Xaml::Media::SolidColorBrush blueBrush{ Windows::UI::Colors::Blue() };
+</code></pre>
+<pre><code class="lang-cpp">blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
+</code></pre>
+<p>For <a href="/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush"><strong>WebViewBrush</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a>, use the default constructor and then call other APIs before you attempt to use that brush for a UI property.</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.media.imagebrush.imagesourceproperty"><strong>ImageSource</strong></a> requires a <a href="/uwp/api/Windows.UI.Xaml.Media.Imaging.BitmapImage"><strong>BitmapImage</strong></a> (not a URI) when you define an <a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a> using code. If your source is a stream , use the <a href="/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync"><strong>SetSourceAsync</strong></a> method to initialize the value. If your source is a URI, which includes content in your app that uses the <strong>ms-appx</strong> or <strong>ms-resource</strong> schemes, use the <a href="/uwp/api/windows.ui.xaml.media.imaging.bitmapimage"><strong>BitmapImage</strong></a> constructor that takes a URI. You might also consider handling the <a href="/uwp/api/windows.ui.xaml.media.imagebrush.imageopened"><strong>ImageOpened</strong></a> event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available.</li>
+<li>For <a href="/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush"><strong>WebViewBrush</strong></a> you might need to call <a href="/uwp/api/windows.ui.xaml.controls.webviewbrush.redraw"><strong>Redraw</strong></a> if you've recently reset the <a href="/uwp/api/windows.ui.xaml.controls.webviewbrush.sourcename"><strong>SourceName</strong></a> property or if the content of the <a href="/uwp/api/Windows.UI.Xaml.Controls.WebView"><strong>WebView</strong></a> is also being changed with code.</li>
+</ul>
+<p>For code examples, see <a href="/uwp/api/Windows.UI.Xaml.Controls.WebViewBrush"><strong>WebViewBrush</strong></a>,  <a href="/uwp/api/Windows.UI.Xaml.Media.ImageBrush"><strong>ImageBrush</strong></a>, and <a href="/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase"><strong>XamlCompositionBrushBase</strong></a>.</p>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/xaml/brushes.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

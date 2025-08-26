@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Reference for passkeys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Reference for passkeys ">
+    
+    <meta name="description" content="This topic offers some reference info, demos, and examples for passkeys on Windows.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="reference-for-passkeys-on-windows">Reference for passkeys on Windows</h1>
+
+<p>This topic offers some reference info, demos, and examples for passkeys on Windows.</p>
+<h2 id="overview">Overview</h2>
+<p>Passkeys can be used in all supported versions of Windows clients. As of the September 2023 moment, for Windows 11, version 22H2 with <a href="https://support.microsoft.com/topic/september-26-2023-kb5030310-os-build-22621-2361-preview-363ac1ae-6ea8-41b3-b3cc-22a2a5682faf">KB5030310</a> or later, native support for passkey management is available (see <a href="/windows/security/identity-protection/passkeys/">Support for passkeys in Windows</a>). Windows native credential UX is displayed when a user saves or signs in with a passkey (even from the browser). Users can perform passkey management from Windows settings or Edge. Cross-device authentication through the browser, leveraging chromium-based credential UI, is still available.</p>
+<h2 id="cross-device-authentication">Cross-Device authentication</h2>
+<p>Starting in Windows 11, version 23H2, <a href="https://passkeys.dev/docs/reference/terms/#cross-device-authentication-cda">FIDO Cross-Device Authentication</a> (CDA) is supported globally at the operating system (OS) level, and is available for all apps and browsers. Persistent linking is available between Android devices (authenticator) and Windows 11, version 23H2, and later. iOS and iPadOS don't support persistent linking.</p>
+<h2 id="user-verification-behavior">User-verification behavior</h2>
+<p>When a user tries to interact with a passkey on Windows 11, an available screen unlock method is used for user verification via Windows Hello. Setting up facial recognition or fingerprint recognition are optional.</p>
+<p>Where those biometrics are not configured or available, both passkey creation and authentication fall back to requesting the Windows Hello PIN.</p>
+<h2 id="demos-and-examples">Demos and examples</h2>
+<p>See <a href="https://passkeys.dev/docs/reference/windows/">Windows Reference on passkeys.dev</a> and <a href="https://passkeys.dev/docs/tools-libraries/test-sites/#demo-sites">Demo Sites</a>.</p>
+<h2 id="further-info">Further info</h2>
+<ul>
+<li><a href="intro.html">Intro to passkeys</a></li>
+<li><a href="https://passkeys.dev/">Passkeys.dev</a></li>
+<li><a href="https://fidoalliance.org/implement-passkeys-overview/">Get Started on Your Passwordless Journey</a> on the FIDO Alliance website</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/reference.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to streamline your WinUI 3 development workflow with GitHub Copilot Chat </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to streamline your WinUI 3 development workflow with GitHub Copilot Chat ">
+    
+    <meta name="description" content="Get started with GitHub Copilot Chat by learning how to streamline your WinUI 3 / Windows App SDK development workflow with context-aware prompts.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="streamline-your-winui-3--windows-app-sdk-development-workflow-with-github-copilot-chat">Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat</h1>
+
+<p>This how-to is targeted at desktop application developers who want to streamline their WinUI 3 / Windows App SDK application development workflow with Github Copilot Chat in Visual Studio.</p>
+<p>We'll start by using GitHub Copilot Chat to build a &quot;Hello world&quot; app with a single prompt, and then we'll demonstrate how GitHub Copilot Chat can be used to add a chat interface that displays responses from a mocked server-side component.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Visual Studio 2022 <a href="/visualstudio/releases/2022/release-history">version 17.8</a> or later</li>
+<li>An active <a href="https://docs.github.com/en/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot">subscription</a> to <a href="https://docs.github.com/copilot/overview-of-github-copilot/about-github-copilot-for-individuals">GitHub Copilot for Individuals</a> or <a href="https://docs.github.com/copilot/overview-of-github-copilot/about-github-copilot-for-business">GitHub Copilot for Business</a> associated with the GitHub account that you sign in to Visual Studio with.</li>
+<li><a href="/visualstudio/ide/visual-studio-github-copilot-chat"><strong>GitHub Copilot Chat</strong></a> in Visual Studio.
+<ul>
+<li>If you're using Visual Studio version 17.10 or later, GitHub Copilot Chat is included in the built-in, unified GitHub Copilot extension available as a recommended component in the Visual Studio Installer. It is installed by default with all workloads, unless you choose to exclude it during installation.</li>
+</ul>
+</li>
+<li>Familiarity with C#, WinUI 3, and Windows App SDK.</li>
+</ul>
+<h2 id="prompting-techniques">Prompting techniques</h2>
+<p>The goal of this how-to is to equip you with <strong>vocabulary</strong> and <strong>prompting techniques</strong> that yield the results you're looking for with minimal effort. There are two primary techniques: prompting through the <strong>chat window</strong> and prompting through <strong>inline chat</strong>.</p>
+<h3 id="prompting-through-the-copilot-chat-window">Prompting through the Copilot Chat window</h3>
+<p>In Visual Studio, select <strong>View &gt; GitHub Copilot Chat</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/0-view-github-copilot-chat.png" alt="A screenshot of GitHub Copilot Chat being selected from Visual Studio's View menu.">
+</span>
+</p>
+<p>This opens the <strong>GitHub Copilot Chat pane</strong> on right side of the Visual Studio window, depending on your configuration. You can use this chat window to ask Copilot for help with your code. This technique is useful when you're working across multiple files and don't mind explicitly specifying the files that need to change, and it's the technique we'll focus on in this how-to.</p>
+<h3 id="prompting-through-inline-copilot-chat">Prompting through inline Copilot Chat</h3>
+<p>From any file's editor window, right click and select Ask Copilot to bring up the inline chat view of Copilot Chat in the editor itself.</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/1-right-click.png" alt="Screenshot of displaying inline Copilot Chat via right-click">
+</span>
+</p>
+<p>This will reveal an inline chat window where you can prompt Copilot to assist you with the file you're currently working on. Use this when you're working within the context of a single file.</p>
+<h2 id="create-a-new-winui-3-project">Create a new WinUI 3 project</h2>
+<p>Type the following into the Copilot Chat window:</p>
+<pre><code>Get me started with a blank WinUI 3 / WinAppSDK project
+</code></pre>
+<p>You should see instructions appear:</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/2-get-me-started-winui3.png" alt="Screenshot of response to 'Get me started with a blank WinUI 3 / WinAppSDK project'">
+</span>
+</p>
+<p>This highlights a limitation that you should be aware of: at the time of this writing, the Chat extension can't create a new project or file structure for you, but it <em>can</em> provide you with step-by-step instructions. Follow the instructions to create a new project.</p>
+<h2 id="display-a-hello-world-message">Display a &quot;Hello, world!&quot; message</h2>
+<p>Once your new project is created, type the following into the Copilot Chat window:</p>
+<pre><code>Update my app to display a &quot;Hello, world!&quot; message
+</code></pre>
+<p>Copilot's response will likely indicate that it is unaware of your development context:</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/3-update-my-app-nocontext.png" alt="Screenshot of response to 'Update my app to display...'">
+</span>
+</p>
+<p>Without explicitly specifying context, the Copilot Chat window is effectively a convenient interface that lets you prompt the underlying LLM (Large Language Model) <em>without including any additional context</em> by default.</p>
+<p>To address this, you can use <strong>slash commands</strong> and <strong>hash references</strong> to explicitly provide Copilot with relevant context. See <a href="/visualstudio/ide/copilot-chat-context">Get better answers by setting the context for GitHub Copilot Chat in Visual Studio</a> for details.</p>
+<p>Type the following into the Chat window:</p>
+<pre><code>Update #MainWindow.xaml and #MainWindow.xaml.cs to display &quot;Hello, world!&quot; when the app starts. Directly modify the existing files. Do not explain yourself. Do not generate new files.
+</code></pre>
+<p>You should see Copilot generate the necessary code within code blocks labeled <code>MainWindow.xaml</code> and <code>MainWindow.xaml.cs</code>. These code blocks should each display two options: <code>Insert in new file</code> and <code>Preview</code>. Click <code>Preview</code> <strong>while your cursor is active in the target file</strong> to stage and accept the changes:</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/4-preview-codebehind.png" alt="Screenshot of the Preview button when working with the code-behind file">
+</span>
+</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/5-preview-markup.png" alt="Screenshot of the Preview button when working with the markup file">
+</span>
+</p>
+<p>This highlights an important consideration: <strong>You must know the files that need to change</strong>, in order to instruct Copilot to modify them. We'll use this pattern throughout the rest of our development workflow.</p>
+<p>This suggests that <strong>keeping your project structure simple and well-organized can help you work more efficiently with Copilot</strong>.</p>
+<p>If you aren't sure what files need to change, you can ask Copilot Chat by using the <code>#Solution</code> hash reference:</p>
+<pre><code>What files should I change in my #Solution in order to achieve &lt;desired outcome&gt;?
+</code></pre>
+<h2 id="remove-the-button">Remove the button</h2>
+<p>Type the following into the Chat window:</p>
+<pre><code>Update #MainWindow.xaml and #MainWindow.xaml.cs to display ONLY &quot;Hello, world!&quot; when the app starts, removing extraneous buttons and their code-behind functionality as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files.
+</code></pre>
+<p>Accept the suggested changes. You should see the button removed from the UI and the corresponding code removed from the code-behind file. Run the application to verify that only the &quot;Hello, world!&quot; message is displayed:</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/6-results-hello-world.png" alt="Screenshot of the hello world results">
+</span>
+</p>
+<h2 id="build-the-chat-interface">Build the chat interface</h2>
+<p>Next, we'll build a simple chat interface that lets you enter text and generate mocked responses. Type the following into the Chat window:</p>
+<pre><code>Update #MainWindow.xaml and #MainWindow.xaml.cs to build a chat interface with the following layout and functionality, step by step:
+
+ 1. A **horizontally centered input** at the bottom of the window
+ 2. A **vertically scrolling list of messages and responses** directly above the input
+ 3. A **ProgressBar** to indicate when the app is waiting for a response, directly above the input, below the list of messages and responses
+ 4. The latest message should be visible at the bottom of the list, with older messages above it, eventually becoming hidden as the list grows
+ 5. When I click the Send button, display the input text in a TextBlock, and update the ProgressBar to indicate that the app is waiting for a response. Mock the code that generates a response with a delay of 2 seconds, and then display a response that echoes the input text above the input.
+ 6. Ensure that **TextBlock** text wraps to the next line when it reaches the edge of the window.
+
+Remove extraneous code as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files. Ensure that every single numbered requirement is accounted for in the end result. Ensure that both the markup and code-behind files are updated to produce a fully functional chat interface that builds and meets the above-stated requirements. Take your time. Reveal only two code blocks representing the end result, one for each file.
+</code></pre>
+<p>This is an example of <strong>one-shot prompting</strong>, where you're providing all requirements in a single prompt. This can be useful when you have a clear idea of what you want to build and you want to see Copilot generate the code to meet those requirements, but it also increases the likelihood that Copilot will generate code that doesn't quite satisfy your requirements.</p>
+<p>This highlights an important consideration: If you provide Copilot with <strong>precise requirements</strong>, it can generate the necessary code to meet those requirements. This can be a powerful way to leverage Copilot within your development workflow, but it requires you to construct your prompt using technical vocabulary that precisely defines the requirements of the feature you're building.</p>
+<p>At the time of this writing, the above input generated the below output:</p>
+<pre><code class="lang-csharp">using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+
+namespace ImageGenerator
+{
+    public sealed partial class MainWindow : Window
+    {
+        public ObservableCollection&lt;string&gt; Messages { get; } = new ObservableCollection&lt;string&gt;();
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+            MessageTextBox.KeyDown += (sender, e) =&gt;
+            {
+                if (e.Key == Windows.System.VirtualKey.Enter &amp;&amp; !string.IsNullOrWhiteSpace(MessageTextBox.Text))
+                {
+                    SendButton_Click(sender, e);
+                }
+            };
+        }
+
+        private async void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            Messages.Add(MessageTextBox.Text);
+            ProgressBar.Visibility = Visibility.Visible;
+            MessageTextBox.Text = string.Empty;
+
+            await Task.Delay(2000);
+            Messages.Add($&quot;Echo: {Messages[^1]}&quot;);
+            ProgressBar.Visibility = Visibility.Collapsed;
+            ScrollToBottom(); // Scroll to the end after adding a message
+        }
+
+        private void ScrollToBottom()
+        {
+            var scrollViewer = MessagesScrollViewer;
+            if (scrollViewer != null)
+            {
+                scrollViewer.ChangeView(0.0f, scrollViewer.ExtentHeight, 1.0f); // Scroll to the bottom
+            }
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-xml">&lt;Window
+    x:Class=&quot;ImageGenerator.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;!-- Message viewer area --&gt;
+        &lt;ScrollViewer Grid.Row=&quot;0&quot; VerticalScrollBarVisibility=&quot;Auto&quot; x:Name=&quot;MessagesScrollViewer&quot;&gt;
+            &lt;StackPanel VerticalAlignment=&quot;Bottom&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+                &lt;ItemsControl ItemsSource=&quot;{x:Bind Messages, Mode=OneWay}&quot;&gt;
+                    &lt;ItemsControl.ItemTemplate&gt;
+                        &lt;DataTemplate&gt;
+                            &lt;TextBlock Text=&quot;{Binding}&quot; TextWrapping=&quot;Wrap&quot; HorizontalAlignment=&quot;Center&quot; Margin=&quot;0,2&quot; /&gt;
+                        &lt;/DataTemplate&gt;
+                    &lt;/ItemsControl.ItemTemplate&gt;
+                &lt;/ItemsControl&gt;
+            &lt;/StackPanel&gt;
+        &lt;/ScrollViewer&gt;
+
+        &lt;!-- Input area --&gt;
+        &lt;StackPanel Grid.Row=&quot;1&quot; VerticalAlignment=&quot;Bottom&quot; HorizontalAlignment=&quot;Stretch&quot;&gt;
+            &lt;ProgressBar x:Name=&quot;ProgressBar&quot; Height=&quot;5&quot; HorizontalAlignment=&quot;Stretch&quot; Visibility=&quot;Collapsed&quot; Margin=&quot;0,5,0,0&quot; /&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+                &lt;TextBox x:Name=&quot;MessageTextBox&quot; MinWidth=&quot;200&quot; Margin=&quot;5&quot; AcceptsReturn=&quot;False&quot; /&gt;
+                &lt;Button x:Name=&quot;SendButton&quot; Content=&quot;Send&quot; Click=&quot;SendButton_Click&quot; /&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<p>Which yielded the following UI:</p>
+<p><span class="mx-imgBorder">
+<img src="images/copilot-chat/7-working-example.png" alt="Screenshot of the working example's UI">
+</span>
+</p>
+<h2 id="fix-and-iterate-upon-the-generated-code">Fix and iterate upon the generated code</h2>
+<p>If the output that you receive from Copilot doesn't satisfy the stated requirements, one option is to reiterate your original instructions with more precise instructions, and instruct Copilot to &quot;Continue updating&quot; the code to meet the unmet requirements:</p>
+<pre><code>Continue updating #MainWindow.xaml and #MainWindow.xaml.cs to build a chat interface with the following layout and functionality, step by step:
+
+ 1. A **horizontally centered input** at the bottom of the window // done
+ 2. A **vertically scrolling list of messages and responses** directly above the input // partially done - the list is displayed, but it doesn't scroll
+ 3. A **ProgressBar** to indicate when the app is waiting for a response, directly above the input, below the list of messages and responses // done
+ 4. The latest message should be visible at the bottom of the list, with older messages above it, eventually becoming hidden as the list grows
+ 5. When I click the Send button, display the input text in a TextBlock, and update the ProgressBar to indicate that the app is waiting for a response. Mock the code that generates a response with a delay of 2 seconds, and then display a response that echoes the input text above the input.
+ 6. Ensure that **TextBlock** text wraps to the next line when it reaches the edge of the window.
+
+Remove extraneous code as-needed. Directly modify the existing files. Do not explain yourself. Do not generate new files. Ensure that every single numbered requirement is accounted for in the end result. Ensure that both the markup and code-behind files are updated to produce a fully functional chat interface that builds and meets the above-stated requirements. Take your time. Reveal only two code blocks representing the end result, one for each file.
+</code></pre>
+<p>Alternatively, you can use <strong>multi-shot prompting</strong> to break your problem down into smaller requirements, and then work on one at a time, incrementally building towards your desired outcome. This approach can be useful when you're not sure how to articulate your requirements with a high degree of technical precision, or when Copilot is struggling to generate the code you want.</p>
+<h2 id="recap">Recap</h2>
+<p>In this how-to, we:</p>
+<ul>
+<li>Demonstrated how to streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio</li>
+<li>Prompted Copilot to generate code that meets your requirements</li>
+<li>Highlighted the importance of providing Copilot with precise requirements to generate the code you want</li>
+<li>Identified a variety of prompting techniques and use-cases for each</li>
+</ul>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="../get-started/samples.html">Sample applications for Windows development</a></li>
+<li><a href="../get-started/windows-developer-faq.yml">Windows developer FAQ</a></li>
+<li><a href="../get-started/best-practices.html">Windows development best practices</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/how-tos/copilot-chat-winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Modernize your desktop app using the Visual layer </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Modernize your desktop app using the Visual layer ">
+    
+    <meta name="description" content="Use the Visual layer to enhance the UI of your .NET or Win32 desktop app.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-the-visual-layer-in-desktop-apps">Using the Visual layer in desktop apps</h1>
+
+<p>You can now use Windows Runtime APIs in non-UWP desktop applications to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 applications, and take advantage of the latest Windows UI features that are only available via UWP.</p>
+<p>For many scenarios, you can use <a href="../xaml-islands/xaml-islands.html">XAML islands</a> to add modern XAML controls to your app. However, when you need to create custom experiences that go beyond the built-in controls, you can access the Visual layer APIs.</p>
+<p>The Visual layer provides a high performance, retained-mode API for graphics, effects, and animations. It's the foundation for UI across Windows devices. UWP XAML controls are built on the Visual layer, and it enables many aspects of the <a href="/windows/uwp/design/fluent-design-system/index">Fluent Design System</a>, such as Light, Depth, Motion, Material, and Scale.</p>
+<p><img src="../images/visual-layer-interop/pull-to-animate.gif" alt="Short video showing a user interface created with the visual layer."></p>
+<blockquote>
+<p><em>User interface created with the visual layer</em></p>
+</blockquote>
+<h2 id="create-a-visually-engaging-user-interface-in-any-windows-app">Create a visually engaging user interface in any Windows app</h2>
+<p>The Visual layer lets you create engaging experiences by using lightweight compositing of custom drawn content (visuals) and applying powerful animations, effects, and manipulations on those objects in your application. The Visual layer doesn't replace any existing UI framework; instead, it's a valuable supplement to those frameworks.</p>
+<p>You can use the Visual layer to give your application a unique look and feel, and establish an identity that sets it apart from other applications. It also enables Fluent Design principles, which are designed to make your applications easier to use, drawing more engagement from users. For example, you can use it to create visual cues and animated screen transitions that show relationships among items on the screen.</p>
+<h2 id="visual-layer-features">Visual layer features</h2>
+<h3 id="brushes">Brushes</h3>
+<p><a href="/windows/uwp/composition/composition-brushes">Composition brushes</a> let you paint UI objects with solid colors, gradients, images, videos, complex effects, and more.</p>
+<p><img src="../images/visual-layer-interop/egg.gif" alt="An egg created with Material Creator"></p>
+<blockquote>
+<p><em>An egg created with the <a href="https://github.com/Microsoft/WindowsCompositionSamples/tree/master/Demos/MaterialCreator">Material Creator demo app</a>.</em></p>
+</blockquote>
+<h3 id="effects">Effects</h3>
+<p><a href="/windows/uwp/composition/composition-effects">Composition effects</a> include light, shadow, and a list of filter effects. They can be animated, customized, and chained, then applied directly to visuals. The SceneLightingEffect can be combined with composition lighting to create atmosphere, depth and materials.</p>
+<p><img src="../images/visual-layer-interop/light-interop.gif" alt="Lights and material"></p>
+<blockquote>
+<p><em>Lights and material demonstrated in the <a href="https://github.com/Microsoft/WindowsCompositionSamples/tree/master/SampleGallery">Windows UI Composition sample gallery</a>.</em></p>
+</blockquote>
+<h3 id="animations">Animations</h3>
+<p><a href="/windows/uwp/composition/composition-animation">Composition animations</a> run directly in the compositor process, independent of the UI thread. This ensures smoothness and scale, so you can run large numbers of concurrent, explicit animations. In addition to familiar KeyFrame animations to drive property changes over time, you can use expressions to set up mathematical relationships between different properties, including user input. Input driven animations let you create UI that dynamically and fluidly responds to user input, which can result in higher user engagement.</p>
+<p><img src="../images/visual-layer-interop/swipe-scroller.gif" alt="Short video of another user interface created with the visual layer."></p>
+<blockquote>
+<p><em>Motion demonstrated in the <a href="https://github.com/Microsoft/WindowsCompositionSamples/tree/master/SampleGallery">Windows UI Composition sample gallery</a>.</em></p>
+</blockquote>
+<h2 id="keep-your-existing-codebase-and-adopt-incrementally">Keep your existing codebase and adopt incrementally</h2>
+<p>The code in your existing applications represents a significant investment that you don't want to lose. You can migrate <em>islands</em> of content to use the Visual layer and keep the rest of the UI in its existing framework. This means you can make significant updates and enhancements to your application UI without needing to make extensive changes to your existing code base.</p>
+<h2 id="samples-and-tutorials">Samples and tutorials</h2>
+<p>Learn how to use the Visual layer in your applications by experimenting with our samples. These samples and tutorials help you get started using the Visual layer and show you how features work.</p>
+<h3 id="win32">Win32</h3>
+<ul>
+<li><a href="using-the-visual-layer-with-win32.html">Using the Visual layer with Win32</a> tutorial
+<ul>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition">Hello Composition sample</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloVectors">Hello Vectors sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/VirtualSurfaces">Virtual Surfaces sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/ScreenCaptureforHWND">Screen Capture sample</a></li>
+</ul>
+<h3 id="windows-forms">Windows Forms</h3>
+<ul>
+<li><a href="using-the-visual-layer-with-windows-forms.html">Using the Visual layer with Windows Forms</a> tutorial
+<ul>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/HelloComposition">Hello Composition sample</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WinForms/VisualLayerIntegration">Visual Layer Integration sample</a></li>
+</ul>
+<h3 id="wpf">WPF</h3>
+<ul>
+<li><a href="using-the-visual-layer-with-wpf.html">Using the Visual layer with WPF</a> tutorial
+<ul>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/HelloComposition">Hello Composition sample</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/VisualLayerIntegration">Visual Layer Integration sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/dotnet/WPF/ScreenCapture">Screen Capture sample</a></li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<p>While many Visual Layer features work the same when hosted in a desktop application as they do in a UWP app, some features do have limitations. Here are some of the limitations to be aware of:</p>
+<ul>
+<li>Effect chains rely on <a href="https://microsoft.github.io/Win2D/html/Introduction.htm">Win2D</a> for the effect descriptions. The <a href="https://www.nuget.org/packages/Win2D.uwp">Win2D NuGet package</a> is not supported in desktop applications, so you would need to recompile it from the <a href="https://github.com/Microsoft/Win2D">source code</a>.</li>
+<li>To do hit testing, you need to do bounds calculations by walking the visual tree yourself. This is the same as the Visual Layer in UWP, except in this case there's no XAML element you can easily bind to for hit testing.</li>
+<li>The Visual Layer does not have a primitive for rendering text.</li>
+<li>When two different UI technologies are used together, such as WPF and the Visual Layer, they are each responsible for drawing their own pixels on the screen, and they can't share pixels. As a result, Visual Layer content is always rendered on top of other UI content. (This is known as the <em>airspace</em> issue.) You might need to do extra coding and testing to ensure your Visual layer content resizes with the host UI and doesn't occlude other content.</li>
+<li>Content hosted in a desktop application doesn't automatically resize or scale for DPI. Extra steps might required to ensure your content handles DPI changes. (See the platform specific tutorials for more info.)</li>
+</ul>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="/windows/uwp/composition/visual-layer">Visual layer</a></li>
+<li><a href="/windows/uwp/composition/composition-visual-tree">Composition visual</a></li>
+<li><a href="/windows/uwp/composition/composition-brushes">Composition brushes</a></li>
+<li><a href="/windows/uwp/composition/composition-effects">Composition effects</a></li>
+<li><a href="/windows/uwp/composition/composition-animation">Composition animations</a></li>
+</ul>
+<p>API reference</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Composition">Windows.UI.Composition</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/ui/visual-layer-in-desktop-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

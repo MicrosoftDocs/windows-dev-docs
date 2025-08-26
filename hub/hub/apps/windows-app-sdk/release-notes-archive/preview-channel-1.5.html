@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Preview release channel for the Windows App SDK 1.5 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Preview release channel for the Windows App SDK 1.5 ">
+    
+    <meta name="description" content="Provides info about the preview release channel for the Windows App SDK 1.5.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="preview-channel-release-notes-for-the-windows-app-sdk-15">Preview channel release notes for the Windows App SDK 1.5</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The preview channel is <strong>not supported</strong> for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The preview channel includes releases of the Windows App SDK with <a href="../release-channels.html#features-available-by-release-channel">preview channel features</a> in late stages of development. Preview releases do not include experimental features and APIs but may still be subject to breaking changes before the next stable release.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on preview releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest preview channel release:</strong></p>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="version-15-preview-1-150-preview1">Version 1.5 Preview 1 (1.5.0-preview1)</h2>
+<p>This is the latest release of the preview channel for version 1.5.</p>
+<p>In an existing Windows App SDK 1.4 (from the stable channel) app, you can update your Nuget package to 1.5.0-preview1 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Downloads for the Windows App SDK</a>.</p>
+<h3 id="xaml-islands-runtime-and-shutdown-updates">XAML Islands runtime and shutdown updates</h3>
+<ul>
+<li>There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for Xaml Islands-based apps when the last Xaml Window on any thread is closed.
+<ul>
+<li>In WinAppSDK 1.4, the Xaml runtime always exits the thread's event loop when the last Xaml window on a thread is closed.</li>
+<li>In WinAppSDK 1.5:
+<ul>
+<li>If your app is a WinUI Desktop app, the default behavior is still the same as in WinAppSDK 1.4.</li>
+<li>If you're using Xaml for the DesktopWindowXamlSource (&quot;Xaml Islands&quot;) API, the default behavior is now that Xaml does not automatically exit the thread's event loop.</li>
+<li>In both modes, you can change this behavior by setting the <code>Application.DispatcherShutdownMode</code> property.</li>
+</ul>
+</li>
+<li>For more information, see the documentation for the <code>Application.DispatcherShutdownMode</code> property when available.</li>
+</ul>
+</li>
+<li>There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for Xaml Islands-based apps in the lifetime of the Xaml runtime:
+<ul>
+<li>In WinAppSDK 1.4, the Xaml runtime shuts down on a thread if either all <code>WindowsXamlManager</code> and <code>DesktopWindowXamlSource</code> objects on a given thread are closed or shut down, or the <code>DispatcherQueue</code> running on that thread is shut down (the Xaml runtime shuts down during the <code>DispatcherQueue.FrameworkShutdownStarting</code> stage).</li>
+<li>In WinAppSDK 1.5, the Xaml runtime shuts down on a thread only when the DispatcherQueue running on that thread is shut down (the Xaml runtime shuts   down during the <code>DispatcherQueue.FrameworkShutdownStarting</code> stage).</li>
+<li>For more information, see the documentation for the <code>WindowsXamlManager</code> class when available.</li>
+</ul>
+</li>
+</ul>
+<h3 id="winui-maps-control">WinUI Maps control</h3>
+<p>The initial release of the WinUI <code>Maps</code> control is now available! This control is powered by WebView2 and Azure Maps, providing the following features:</p>
+<ul>
+<li>Panning and zooming with either the map buttons or touch.</li>
+<li>Changing the style of the map to satellite, terrain, or street view.</li>
+<li>Programmatically adding interactable pins with developer-customizable icons to the map.</li>
+<li>Developer customization for where the map is centered on initial load.</li>
+<li>Control for developers over hiding or showing the buttons for panning, zooming, and map styles.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use the <code>Maps</code> control, you'll need an Azure Maps key. To create the key, see the <a href="/azure/azure-maps/quick-demo-map-app#get-the-subscription-key-for-your-account">Azure Maps documentation page for creating a web app</a>.</p>
+</div>
+<p>The <code>Maps</code> control is entirely new and we welcome your feedback to evaluate its future direction!</p>
+<h3 id="other-new-features-from-across-the-winappsdk">Other new features from across the WinAppSDK</h3>
+<ul>
+<li>Added support for the PublishSingleFile deployment model. For more info about PublishSingleFile, see the <a href="/dotnet/core/deploying/single-file/overview">Single-file deployment documentation</a>.</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>Fixed an issue from the 1.5-experimental2 release where the projection DLL was not generated. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/4152">#4152</a>.</li>
+<li>Fixed an issue where the ellipsis button on the text formatting popup of the <code>RichEditBox</code> was not displaying the list of actions properly. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9140">#9140</a>.</li>
+<li>Fixed an issue where <code>ListView</code> didn't handle keyboard accelerators properly. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8063">#8063</a>.</li>
+<li>Fixed an access violation issue with using <code>AccessKey</code> to close a window. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8648">#8648</a>.</li>
+<li>Fixed an issue affecting text alignment in a <code>MenuFlyoutItem</code> within a <code>MenuBar</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8755">#8755</a>.</li>
+<li>Fixed an issue where highlighted text would not remain highlighted upon right-click. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/1801">#1801</a>.</li>
+<li>Fixed an issue causing inactive windows to crash the app when closed. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8913">#8913</a>.</li>
+<li>Fixed an issue that could hang applications when scrolling with the middle mouse button and left-clicking immediately afterwards. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9233">#9233</a>.</li>
+</ul>
+<h3 id="new-apis-in-150-preview1">New APIs in 1.5.0-preview1</h3>
+<p>Version 1.5-preview1 includes the following new APIs compared to the stable 1.4 release:</p>
+<pre><code class="lang-C#">Microsoft.Graphics.DirectX
+ 
+    DirectXPixelFormat
+        A4B4G4R4
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Input
+ 
+    FocusNavigationReason
+    FocusNavigationRequest
+    FocusNavigationRequestEventArgs
+    FocusNavigationResult
+    InputFocusController
+        DepartFocus
+        NavigateFocusRequested
+ 
+    InputFocusNavigationHost
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+ 
+    Application
+        DispatcherShutdownMode
+
+    DebugSettings
+        LayoutCycleDebugBreakLevel
+        LayoutCycleTracingLevel
+
+    DispatcherShutdownMode
+    LayoutCycleDebugBreakLevel
+    LayoutCycleTracingLevel
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls
+ 
+    MapControl
+    MapControlMapServiceErrorOccurredEventArgs
+    MapElement
+    MapElementClickEventArgs
+    MapElementsLayer
+    MapIcon
+    MapLayer
+    SelectorBar
+    SelectorBarItem
+    SelectorBarSelectionChangedEventArgs
+    WebView2
+        EnsureCoreWebView2Async
+        EnsureCoreWebView2Async
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Hosting
+ 
+    WindowsXamlManager
+        GetForCurrentThread
+        XamlShutdownCompletedOnThread
+ 
+    XamlShutdownCompletedOnThreadEventArgs
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Web.WebView2.Core
+ 
+    CoreWebView2
+        FrameId
+
+    CoreWebView2AcceleratorKeyPressedEventArgs
+        IsBrowserAcceleratorKeyEnabled
+
+    CoreWebView2BrowserExtension
+    CoreWebView2BrowsingDataKinds
+        ServiceWorkers
+
+    CoreWebView2CustomSchemeRegistration
+        CoreWebView2CustomSchemeRegistration (String)
+        AllowedOrigins
+        SchemeName
+
+    CoreWebView2Environment
+        GetProcessExtendedInfosAsync
+
+    CoreWebView2EnvironmentOptions
+        AreBrowserExtensionsEnabled
+        CustomSchemeRegistrations
+
+    CoreWebView2Frame
+        FrameId
+
+    CoreWebView2FrameInfo
+        FrameId
+        FrameKind
+        ParentFrameInfo
+
+    CoreWebView2FrameKind
+    CoreWebView2MouseEventKind
+        NonClientRightButtonDown
+        NonClientRightButtonUp
+
+    CoreWebView2NavigationKind
+    CoreWebView2NavigationStartingEventArgs
+        NavigationKind
+
+    CoreWebView2NewWindowRequestedEventArgs
+        OriginalSourceFrameInfo
+
+    CoreWebView2ProcessExtendedInfo
+    CoreWebView2Profile
+        AddBrowserExtensionAsync
+        Delete
+        Deleted
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Management.Deployment
+ 
+    AddPackageOptions
+    EnsureReadyOptions
+    PackageDeploymentContract
+    PackageDeploymentManager
+    PackageDeploymentProgress
+    PackageDeploymentProgressStatus
+    PackageDeploymentResult
+    PackageDeploymentStatus
+    PackageRuntimeManager
+    PackageSet
+    PackageSetItem
+    PackageSetItemRuntimeDisposition
+    PackageSetRuntimeDisposition
+    PackageVolume
+    ProvisionPackageOptions
+    RegisterPackageOptions
+    RemovePackageOptions
+    StagePackageOptions
+    StubPackageOption
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Widgets.Feeds.Providers
+ 
+    CustomQueryParametersRequestedArgs
+    CustomQueryParametersUpdateOptions
+    FeedDisabledArgs
+    FeedEnabledArgs
+    FeedManager
+    FeedProviderDisabledArgs
+    FeedProviderEnabledArgs
+    FeedProviderInfo
+    IFeedManager
+    IFeedProvider
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.5.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

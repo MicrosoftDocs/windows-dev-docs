@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Gamepad and remote control interactions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Gamepad and remote control interactions ">
+    
+    <meta name="description" content="View guidance, recommendations, and suggestions for how to optimize your app for input from the Xbox gamepad and remote control.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gamepad-and-remote-control-interactions">Gamepad and remote control interactions</h1>
+
+<p><img src="images/keyboard/keyboard-gamepad.jpg" alt="keyboard and gamepad image"></p>
+<p><em><strong>Many interaction experiences are shared between gamepad, remote control, and keyboard</strong></em></p>
+<p>Build interaction experiences in your Windows applications that ensure your app is usable and accessible through both the traditional input types of PCs, laptops, and tablets (mouse, keyboard, touch, and so on), as well as the input types typical of the TV and Xbox <em>10-foot</em> experience, such as the gamepad and remote control.</p>
+<p>See <a href="../devices/designing-for-tv.html">Designing for Xbox and TV</a> for general design guidance on Windows applications in the <em>10-foot</em> experience.</p>
+<h2 id="overview">Overview</h2>
+<p>In this topic, we discuss what you should consider in your interaction design (or what you don't, if the platform looks after it for you), and provide guidance, recommendations, and suggestions for building Windows applications that are enjoyable to use regardless of device, input type, or user abilities and preferences.</p>
+<p>Bottom line, your application should be as intuitive and easy to use in the <em>2-foot</em> environment as it is in the <em>10-foot</em> environment (and vice versa). Support the user's preferred devices, make the UI focus clear and unmistakable, arrange content so navigation is consistent and predictable, and give users the shortest path possible to what they want to do.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Most of the code snippets in this topic are in XAML/C#; however, the principles and concepts apply to all Windows apps. If you're developing an HTML/JavaScript Windows app for Xbox, check out the excellent <a href="https://github.com/Microsoft/TVHelpers/wiki">TVHelpers</a> library on GitHub.</p>
+</div>
+<h2 id="optimize-for-both-2-foot-and-10-foot-experiences">Optimize for both 2-foot and 10-foot experiences</h2>
+<p>At a minimum, we recommend that you test your applications to ensure they work well in both 2-foot and 10-foot scenarios, and that all functionality is discoverable and accessible to the Xbox <a href="#gamepad-and-remote-control">gamepad and remote-control</a>.</p>
+<p>Here are some other ways you can optimize your app for use in both 2-foot and 10-foot experiences and with all input devices (each links to the appropriate section in this topic).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because Xbox gamepads and remote controls support many Windows keyboard behaviors and experiences, these recommendations are appropriate for both input types. See <a href="keyboard-interactions.html">Keyboard interactions</a> for more detailed keyboard info.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#xy-focus-navigation-and-interaction">XY focus navigation and interaction</a></td>
+<td><strong>XY focus navigation</strong> enables the user to navigate around your app's UI. However, this limits the user to navigating up, down, left, and right. Recommendations for dealing with this and other considerations are outlined in this section.</td>
+</tr>
+<tr>
+<td><a href="#mouse-mode">Mouse mode</a></td>
+<td>XY focus navigation isn't practical, or even possible, for some types of applications, such as maps or drawing and painting apps. In these cases, <strong>mouse mode</strong> lets users navigate freely with a gamepad or remote control, just like a mouse on a PC.</td>
+</tr>
+<tr>
+<td><a href="#focus-visual">Focus visual</a></td>
+<td>The focus visual is a border that highlights the currently focused UI element. This helps the user quickly identify the UI they are navigating through or interacting with.</td>
+</tr>
+<tr>
+<td><a href="#focus-engagement">Focus engagement</a></td>
+<td>Focus engagement requires the user to press the <strong>A/Select</strong> button on a gamepad or remote control when a UI element has focus in order to interact with it.</td>
+</tr>
+<tr>
+<td><a href="#hardware-buttons">Hardware buttons</a></td>
+<td>The gamepad and remote control provide very different buttons and configurations.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gamepad-and-remote-control">Gamepad and remote control</h2>
+<p>Just like keyboard and mouse are for PC, and touch is for phone and tablet, gamepad and remote control are the main input devices for the 10-foot experience.
+This section introduces what the hardware buttons are and what they do.
+In <a href="#xy-focus-navigation-and-interaction">XY focus navigation and interaction</a> and <a href="#mouse-mode">Mouse mode</a>, you will learn how to optimize your app when using these input devices.</p>
+<p>The quality of gamepad and remote behavior that you get out-of-the-box depends on how well keyboard is supported in your app. A good way to ensure that your app will work well with gamepad/remote is to make sure that it works well with keyboard on PC, and then test with gamepad/remote to find weak spots in your UI.</p>
+<h3 id="hardware-buttons">Hardware buttons</h3>
+<p>Throughout this document, buttons will be referred to by the names given in the following diagram.</p>
+<p><img src="images/designing-for-tv/hardware-buttons-gamepad-remote.png" alt="Gamepad and remote buttons diagram"></p>
+<p>As you can see from the diagram, there are some buttons that are supported on gamepad that are not supported on remote control, and vice versa. While you can use buttons that are only supported on one input device to make navigating the UI faster, be aware that using them for critical interactions may create a situation where the user is unable to interact with certain parts of the UI.</p>
+<p>The following table lists all of the hardware buttons supported by Windows apps, and which input device supports them.</p>
+<table>
+<thead>
+<tr>
+<th>Button</th>
+<th>Gamepad</th>
+<th>Remote control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A/Select button</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>B/Back button</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Directional pad (D-pad)</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Menu button</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>View button</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>X and Y buttons</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Left stick</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Right stick</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Left and right triggers</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Left and right bumpers</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>OneGuide button</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Volume button</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Channel button</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Media control buttons</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Mute button</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="built-in-button-support">Built-in button support</h3>
+<p>UWP automatically maps existing keyboard input behavior to gamepad and remote control input. The following table lists these built-in mappings.</p>
+<table>
+<thead>
+<tr>
+<th>Keyboard</th>
+<th>Gamepad/remote</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arrow keys</td>
+<td>D-pad (also left stick on gamepad)</td>
+</tr>
+<tr>
+<td>Spacebar</td>
+<td>A/Select button</td>
+</tr>
+<tr>
+<td>Enter</td>
+<td>A/Select button</td>
+</tr>
+<tr>
+<td>Escape</td>
+<td>B/Back button*</td>
+</tr>
+</tbody>
+</table>
+<p>*When neither the <a href="/uwp/api/windows.ui.xaml.uielement.keydown">KeyDown</a> nor <a href="/uwp/api/windows.ui.xaml.uielement.keyup">KeyUp</a> events for the B button are handled by the app, the <a href="/uwp/api/windows.ui.core.systemnavigationmanager.backrequested">SystemNavigationManager.BackRequested</a> event will be fired, which should result in back navigation within the app. However, you have to implement this yourself, as in the following code snippet:</p>
+<pre><code class="lang-csharp">// This code goes in the MainPage class
+
+public MainPage()
+{
+    this.InitializeComponent();
+
+    // Handling Page Back navigation behaviors
+    SystemNavigationManager.GetForCurrentView().BackRequested +=
+        SystemNavigationManager_BackRequested;
+}
+
+private void SystemNavigationManager_BackRequested(
+    object sender,
+    BackRequestedEventArgs e)
+{
+    if (!e.Handled)
+    {
+        e.Handled = this.BackRequested();
+    }
+}
+
+public Frame AppFrame { get { return this.Frame; } }
+
+private bool BackRequested()
+{
+    // Get a hold of the current frame so that we can inspect the app back stack
+    if (this.AppFrame == null)
+        return false;
+
+    // Check to see if this is the top-most page on the app back stack
+    if (this.AppFrame.CanGoBack)
+    {
+        // If not, set the event to handled and go back to the previous page in the
+        // app.
+        this.AppFrame.GoBack();
+        return true;
+    }
+    return false;
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the B button is used to go back, then don't show a back button in the UI. If you're using a <a href="../controls/navigationview.html">Navigation view</a>, the back button will be hidden automatically. For more information about backwards navigation, see <a href="../basics/navigation-history-and-backwards-navigation.html">Navigation history and backwards navigation for Windows apps</a>.</p>
+</div>
+<p>Windows apps on Xbox One also support pressing the <strong>Menu</strong> button to open context menus. For more information, see <a href="#commandbar-and-contextflyout">CommandBar and ContextFlyout</a>.</p>
+<h3 id="accelerator-support">Accelerator support</h3>
+<p>Accelerator buttons are buttons that can be used to speed up navigation through a UI. However, these buttons may be unique to a certain input device, so keep in mind that not all users will be able to use these functions. In fact, gamepad is currently the only input device that supports accelerator functions for Windows apps on Xbox One.</p>
+<p>The following table lists the accelerator support built into the UWP, as well as that which you can implement on your own. Utilize these behaviors in your custom UI to provide a consistent and friendly user experience.</p>
+<table>
+<thead>
+<tr>
+<th>Interaction</th>
+<th>Keyboard/Mouse</th>
+<th>Gamepad</th>
+<th>Built-in for:</th>
+<th>Recommended for:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Page up/down</td>
+<td>Page up/down</td>
+<td>Left/right triggers</td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarView">CalendarView</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListBox">ListBox</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListViewBase">ListViewBase</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListView">ListView</a>, <code>ScrollViewer</code>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector">Selector</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector">LoopingSelector</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ComboBox">ComboBox</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.FlipView">FlipView</a></td>
+<td>Views that support vertical scrolling</td>
+</tr>
+<tr>
+<td>Page left/right</td>
+<td>None</td>
+<td>Left/right bumpers</td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Controls.ListBox">ListBox</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListViewBase">ListViewBase</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListView">ListView</a>, <code>ScrollViewer</code>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.Selector">Selector</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.LoopingSelector">LoopingSelector</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.FlipView">FlipView</a></td>
+<td>Views that support horizontal scrolling</td>
+</tr>
+<tr>
+<td>Zoom in/out</td>
+<td>Ctrl +/-</td>
+<td>Left/right triggers</td>
+<td>None</td>
+<td><code>ScrollViewer</code>, views that support zooming in and out</td>
+</tr>
+<tr>
+<td>Open/close nav pane</td>
+<td>None</td>
+<td>View</td>
+<td>None</td>
+<td>Navigation panes</td>
+</tr>
+<tr>
+<td>Search</td>
+<td>None</td>
+<td>Y button</td>
+<td>None</td>
+<td>Shortcut to the main search function in the app</td>
+</tr>
+<tr>
+<td><a href="#commandbar-and-contextflyout">Open context menu</a></td>
+<td>Right-click</td>
+<td>Menu button</td>
+<td><a href="/uwp/api/Windows.UI.Xaml.UIElement.ContextFlyout">ContextFlyout</a></td>
+<td>Context menus</td>
+</tr>
+</tbody>
+</table>
+<h2 id="xy-focus-navigation-and-interaction">XY focus navigation and interaction</h2>
+<p>If your app supports proper focus navigation for keyboard, this will translate well to gamepad and remote control.
+Navigation with the arrow keys is mapped to the <strong>D-pad</strong> (as well as the <strong>left stick</strong> on gamepad), and interaction with UI elements is mapped to the <strong>Enter/Select</strong> key
+(see <a href="#gamepad-and-remote-control">Gamepad and remote control</a>).</p>
+<p>Many events and properties are used by both keyboard and gamepad—they both fire <code>KeyDown</code> and <code>KeyUp</code> events, and they both will only navigate to controls that have the properties <code>IsTabStop=&quot;True&quot;</code> and <code>Visibility=&quot;Visible&quot;</code>. For keyboard design guidance, see <a href="keyboard-interactions.html">Keyboard interactions</a>.</p>
+<p>If keyboard support is implemented properly, your app will work reasonably well; however, there may be some extra work required to support every scenario. Think about your app's specific needs to provide the best user experience possible.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Mouse mode is enabled by default for Windows apps running on Xbox One. To disable mouse mode and enable XY focus navigation, set <code>Application.RequiresPointerMode=WhenRequested</code>.</p>
+</div>
+<h3 id="debugging-focus-issues">Debugging focus issues</h3>
+<p>The <a href="/uwp/api/windows.ui.xaml.input.focusmanager.getfocusedelement">FocusManager.GetFocusedElement</a> method will tell you which element currently has focus. This is useful for situations where the location of the focus visual may not be obvious. You can log this information to the Visual Studio output window like so:</p>
+<pre><code class="lang-csharp">page.GotFocus += (object sender, RoutedEventArgs e) =&gt;
+{
+    FrameworkElement focus = FocusManager.GetFocusedElement() as FrameworkElement;
+    if (focus != null)
+    {
+        Debug.WriteLine(&quot;got focus: &quot; + focus.Name + &quot; (&quot; +
+            focus.GetType().ToString() + &quot;)&quot;);
+    }
+};
+</code></pre>
+<p>There are three common reasons why XY navigation might not work the way you expect:</p>
+<ul>
+<li>The <a href="/uwp/api/windows.ui.xaml.controls.control.istabstop">IsTabStop</a> or <a href="/uwp/api/windows.ui.xaml.uielement.visibility">Visibility</a> property is set wrong.</li>
+<li>The control getting focus is actually bigger than you think—XY navigation looks at the total size of the control (<a href="/uwp/api/windows.ui.xaml.frameworkelement.actualwidth">ActualWidth</a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.actualheight">ActualHeight</a>), not just the portion of the control that renders something interesting.</li>
+<li>One focusable control is on top of another—XY navigation doesn't support controls that are overlapped.</li>
+</ul>
+<p>If XY navigation is still not working the way you expect after fixing these issues, you can manually point to the element that you want to get focus using the method described in <a href="#overriding-the-default-navigation">Overriding the default navigation</a>.</p>
+<p>If XY navigation is working as intended but no focus visual is displayed, one of the following issues may be the cause:</p>
+<ul>
+<li>You re-templated the control and didn't include a focus visual. Set <code>UseSystemFocusVisuals=&quot;True&quot;</code> or add a focus visual manually.</li>
+<li>You moved the focus by calling <code>Focus(FocusState.Pointer)</code>. The <a href="/uwp/api/Windows.UI.Xaml.FocusState">FocusState</a> parameter controls what happens to the focus visual. Generally you should set this to <code>FocusState.Programmatic</code>, which keeps the focus visual visible if it was visible before, and hidden if it was hidden before.</li>
+</ul>
+<p>The rest of this section goes into detail about common design challenges when using XY navigation, and offers several ways to solve them.</p>
+<h3 id="inaccessible-ui">Inaccessible UI</h3>
+<p>Because XY focus navigation limits the user to moving up, down, left, and right, you may end up with scenarios where parts of the UI are inaccessible.
+The following diagram illustrates an example of the kind of UI layout that XY focus navigation doesn't support.
+Note that the element in the middle is not accessible by using gamepad/remote because the vertical and horizontal navigation will be prioritized and the middle element will never be high enough priority to get focus.</p>
+<p><img src="images/designing-for-tv/2d-navigation-best-practices-ui-layout-to-avoid.png" alt="Elements in four corners with inaccessible element in middle"></p>
+<p>If for some reason rearranging the UI is not possible, use one of the techniques discussed in the next section to override the default focus behavior.</p>
+<h3 id="overriding-the-default-navigation">Overriding the default navigation</h3>
+<p>While the Universal Windows Platform tries to ensure that D-pad/left stick navigation makes sense to the user, it cannot guarantee behavior that is optimized for your app's intentions.
+The best way to ensure that navigation is optimized for your app is to test it with a gamepad and confirm that every UI element can be accessed by the user in a manner that makes sense for your app's scenarios. In case your app's scenarios call for a behavior not achieved through the XY focus navigation provided, consider following the recommendations in the following sections and/or overriding the behavior to place the focus on a logical item.</p>
+<p>The following code snippet shows how you might override the XY focus navigation behavior:</p>
+<pre><code class="lang-xml">&lt;StackPanel&gt;
+    &lt;Button x:Name=&quot;MyBtnLeft&quot;
+            Content=&quot;Search&quot; /&gt;
+    &lt;Button x:Name=&quot;MyBtnRight&quot;
+            Content=&quot;Delete&quot;/&gt;
+    &lt;Button x:Name=&quot;MyBtnTop&quot;
+            Content=&quot;Update&quot; /&gt;
+    &lt;Button x:Name=&quot;MyBtnDown&quot;
+            Content=&quot;Undo&quot; /&gt;
+    &lt;Button Content=&quot;Home&quot;  
+            XYFocusLeft=&quot;{x:Bind MyBtnLeft}&quot;
+            XYFocusRight=&quot;{x:Bind MyBtnRight}&quot;
+            XYFocusDown=&quot;{x:Bind MyBtnDown}&quot;
+            XYFocusUp=&quot;{x:Bind MyBtnTop}&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>In this case, when focus is on the <code>Home</code> button and the user navigates to the left, focus will move to the <code>MyBtnLeft</code> button; if the user navigates to the right, focus will move to the <code>MyBtnRight</code> button; and so on.</p>
+<p>To prevent the focus from moving from a control in a certain direction, use the <code>XYFocus*</code> property to point it at the same control:</p>
+<pre><code class="lang-xml">&lt;Button Name=&quot;HomeButton&quot;  
+        Content=&quot;Home&quot;  
+        XYFocusLeft =&quot;{x:Bind HomeButton}&quot; /&gt;
+</code></pre>
+<p>Using these <code>XYFocus</code> properties, a control parent can also force the navigation of its children when the next focus candidate is out of its visual tree, unless the child who has the focus uses the same <code>XYFocus</code> property.</p>
+<pre><code class="lang-xml">&lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;300,300&quot;&gt;
+    &lt;UserControl XYFocusRight=&quot;{x:Bind ButtonThree}&quot;&gt;
+        &lt;StackPanel&gt;
+            &lt;Button Content=&quot;One&quot;/&gt;
+            &lt;Button Content=&quot;Two&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/UserControl&gt;
+    &lt;StackPanel&gt;
+        &lt;Button x:Name=&quot;ButtonThree&quot; Content=&quot;Three&quot;/&gt;
+        &lt;Button Content=&quot;Four&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>In the sample above, if the focus is on <code>Button</code> Two and the user navigates to the right, the best focus candidate is <code>Button</code> Four; however, the focus is moved to <code>Button</code> Three because the parent <code>UserControl</code> forces it to navigate there when it is out of its visual tree.</p>
+<h3 id="path-of-least-clicks">Path of least clicks</h3>
+<p>Try to allow the user to perform the most common tasks in the least number of clicks. In the following example, the <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> is placed between the <strong>Play</strong> button (which initially gets focus) and a commonly used element, so that an unnecessary element is placed in between priority tasks.</p>
+<p><img src="images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks.png" alt="Navigation best practices provide path with least clicks"></p>
+<p>In the following example, the <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock">TextBlock</a> is placed above the <strong>Play</strong> button instead.
+Simply rearranging the UI so that unnecessary elements are not placed in between priority tasks will greatly improve your app's usability.</p>
+<p><img src="images/designing-for-tv/2d-navigation-best-practices-provide-path-with-least-clicks-2.png" alt="TextBlock moved above Play button so that it is no longer between priority tasks"></p>
+<h3 id="commandbar-and-contextflyout">CommandBar and ContextFlyout</h3>
+<p>When using a <a href="/uwp/api/Windows.UI.Xaml.Controls.CommandBar">CommandBar</a>, keep in mind the issue of scrolling through a list as mentioned in <a href="#problem-ui-elements-located-after-long-scrolling-list-grid">Problem: UI elements located after long scrolling list/grid</a>. The following image shows a UI layout with the <code>CommandBar</code> on the bottom of a list/grid. The user would need to scroll all the way down through the list/grid to reach the <code>CommandBar</code>.</p>
+<p><img src="images/designing-for-tv/2d-navigation-best-practices-commandbar-and-contextflyout.png" alt="CommandBar at bottom of list/grid"></p>
+<p>What if you put the <code>CommandBar</code> <em>above</em> the list/grid? While a user who scrolled down the list/grid would have to scroll back up to reach the <code>CommandBar</code>, it is slightly less navigation than the previous configuration. Note that this is assuming that your app's initial focus is placed next to or above the <code>CommandBar</code>; this approach won't work as well if the initial focus is below the list/grid. If these <code>CommandBar</code> items are global action items that don't have to be accessed very often (such as a <strong>Sync</strong> button), it may be acceptable to have them above the list/grid.</p>
+<p>While you can't stack a <code>CommandBar</code>'s items vertically, placing them against the scroll direction (for example, to the left or right of a vertically scrolling list, or the top or bottom of a horizontally scrolling list) is another option you may want to consider if it works well for your UI layout.</p>
+<p>If your app has a <code>CommandBar</code> whose items need to be readily accessible by users, you may want to consider placing these items inside a <a href="/uwp/api/windows.ui.xaml.uielement.contextflyout">ContextFlyout</a> and removing them from the <code>CommandBar</code>. <code>ContextFlyout</code> is a property of <a href="/uwp/api/Windows.UI.Xaml.UIElement">UIElement</a> and is the <a href="../controls/dialogs-and-flyouts/index.html">context menu</a> associated with that element. On PC, when you right-click on an element with a <code>ContextFlyout</code>, that context menu will pop up. On Xbox One, this will happen when you press the <strong>Menu</strong> button while the focus is on such an element.</p>
+<h3 id="ui-layout-challenges">UI layout challenges</h3>
+<p>Some UI layouts are more challenging due to the nature of XY focus navigation, and should be evaluated on a case-by-case basis. While there is no single &quot;right&quot; way, and which solution you choose is up to your app's specific needs, there are some techniques that you can employ to make a great TV experience.</p>
+<p>To understand this better, let's look at an imaginary app that illustrates some of these issues and techniques to overcome them.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This fake app is meant to illustrate UI problems and potential solutions to them, and is not intended to show the best user experience for your particular app.</p>
+</div>
+<p>The following is an imaginary real estate app which shows a list of houses available for sale, a map, a description of a property, and other information. This app poses three challenges that you can overcome by using the following techniques:</p>
+<ul>
+<li><a href="#ui-rearrange">UI rearrange</a></li>
+<li><a href="#engagement">Focus engagement</a></li>
+<li><a href="#mouse-mode">Mouse mode</a></li>
+</ul>
+<p><img src="images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app.png" alt="Fake real estate app"></p>
+<h4 id="problem-ui-elements-located-after-long-scrolling-listgrid-">Problem: UI elements located after long scrolling list/grid <a name="problem-ui-elements-located-after-long-scrolling-list-grid"></a></h4>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.ListView">ListView</a> of properties shown in the following image is a very long scrolling list. If <a href="#focus-engagement">engagement</a> is <em>not</em> required on the <code>ListView</code>, when the user navigates to the list, focus will be placed on the first item in the list. For the user to reach the <strong>Previous</strong> or <strong>Next</strong> button, they must go through all the items in the list. In cases like this where requiring the user to traverse the entire list is painful—that is, when the list is not short enough for this experience to be acceptable—you may want to consider other options.</p>
+<p><img src="images/designing-for-tv/2d-focus-navigation-and-interaction-real-estate-app-list.png" alt="Real estate app: list with 50 items takes 51 clicks to reach buttons below"></p>
+<h4 id="solutions">Solutions</h4>
+<p><strong>UI rearrange <a name="ui-rearrange"></a></strong></p>
+<p>Unless your initial focus is placed at the bottom of the page, UI elements placed above a long scrolling list are typically more easily accessible than if placed below.
+If this new layout works for other devices, changing the layout for all device families instead of doing special UI changes just for Xbox One might be a less costly approach.
+Additionally, placing UI elements against the scrolling direction (that is, horizontally to a vertically scrolling list, or vertically to a horizontally scrolling list) will make for even better accessibility.</p>
+<p><img src="images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png" alt="Real estate app: place buttons above long scrolling list"></p>
+<p><strong>Focus engagement <a name="engagement"></a></strong></p>
+<p>When engagement is <em>required</em>, the entire <code>ListView</code> becomes a single focus target. The user will be able to bypass the contents of the list to get to the next focusable element. Read more about what controls support engagement and how to use them in <a href="#focus-engagement">Focus engagement</a>.</p>
+<p><img src="images/designing-for-tv/2d-focus-navigation-and-interaction-engagement.png" alt="Real estate app: set engagement to required so that it only takes 1 click to reach Previous/Next buttons"></p>
+<h4 id="problem-scrollviewer-without-any-focusable-elements">Problem: ScrollViewer without any focusable elements</h4>
+<p>Because XY focus navigation relies on navigating to one focusable UI element at a time,
+a <a href="/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer">ScrollViewer</a> that doesn't contain any focusable elements (such as one with only text, as in this example) may cause a scenario where the user isn't able to view all of the content in the <code>ScrollViewer</code>.
+For solutions to this and other related scenarios, see <a href="#focus-engagement">Focus engagement</a>.</p>
+<p><img src="images/designing-for-tv/2d-focus-navigation-and-interaction-scrollviewer.png" alt="Real estate app: ScrollViewer with only text"></p>
+<h4 id="problem-free-scrolling-ui">Problem: Free-scrolling UI</h4>
+<p>When your app requires a freely scrolling UI, such as a drawing surface or, in this example, a map, XY focus navigation simply doesn't work.
+In such cases, you can turn on <a href="#mouse-mode">mouse mode</a> to allow the user to navigate freely inside a UI element.</p>
+<p><img src="images/designing-for-tv/map-mouse-mode.png" alt="Map UI element using mouse mode"></p>
+<h2 id="mouse-mode">Mouse mode</h2>
+<p>As described in <a href="#xy-focus-navigation-and-interaction">XY focus navigation and interaction</a>, on Xbox One the focus is moved by using an XY navigation system, allowing the user to shift the focus from control to control by moving up, down, left, and right.
+However, some controls, such as <a href="/uwp/api/Windows.UI.Xaml.Controls.WebView">WebView</a> and
+<a href="/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl">MapControl</a>,
+require a mouse-like interaction where users can freely move the pointer inside the boundaries of the control.
+There are also some apps where it makes sense for the user to be able to move the pointer across the entire page, having an experience with gamepad/remote similar to what users can find on a PC with a mouse.</p>
+<p>For these scenarios, you should request a pointer (mouse mode) for the entire page, or on a control inside a page.
+For example, your app could have a page that has a <code>WebView</code> control that uses mouse mode only while inside the control, and XY focus navigation everywhere else.
+To request a pointer, you can specify whether you want it <strong>when a control or page is engaged</strong> or <strong>when a page has focus</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Requesting a pointer when a control gets focus is not supported.</p>
+</div>
+<p>For both XAML and hosted web apps running on Xbox One, mouse mode is turned on by default for the entire app. It is highly recommended that you turn this off and optimize your app for XY navigation. To do this, set the <code>Application.RequiresPointerMode</code> property to <code>WhenRequested</code> so that you only enable mouse mode when a control or page calls for it.</p>
+<p>To do this in a XAML app, use the following code in your <code>App</code> class:</p>
+<pre><code class="lang-csharp">public App()
+{
+    this.InitializeComponent();
+    this.RequiresPointerMode =
+        Windows.UI.Xaml.ApplicationRequiresPointerMode.WhenRequested;
+    this.Suspending += OnSuspending;
+}
+</code></pre>
+<p>For more information, including sample code for HTML/JavaScript, see <a href="/windows/uwp/xbox-apps/how-to-disable-mouse-mode">How to disable mouse mode</a>.</p>
+<p>The following diagram shows the button mappings for gamepad/remote in mouse mode.</p>
+<p><img src="images/designing-for-tv/10ft_infographics_mouse-mode.png" alt="Button mappings for gamepad/remote in mouse mode"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Mouse mode is only supported on Xbox One with gamepad/remote. On other device families and input types it is silently ignored.</p>
+</div>
+<p>Use the <a href="/uwp/api/windows.ui.xaml.controls.requirespointer">RequiresPointer</a> property on a control or page to activate mouse mode on it. This property has three possible values: <code>Never</code> (the default value), <code>WhenEngaged</code>, and <code>WhenFocused</code>.</p>
+<h3 id="activating-mouse-mode-on-a-control">Activating mouse mode on a control</h3>
+<p>When the user engages a control with <code>RequiresPointer=&quot;WhenEngaged&quot;</code>, mouse mode is activated on the control until the user disengages it. The following code snippet demonstrates a simple <code>MapControl</code> that activates mouse mode when engaged:</p>
+<pre><code class="lang-xml">&lt;Page&gt;
+    &lt;Grid&gt;
+        &lt;MapControl IsEngagementRequired=&quot;true&quot;
+                    RequiresPointer=&quot;WhenEngaged&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If a control activates mouse mode when engaged, it must also require engagement with <code>IsEngagementRequired=&quot;true&quot;</code>; otherwise, mouse mode will never be activated.</p>
+</div>
+<p>When a control is in mouse mode, its nested controls will be in mouse mode as well. The requested mode of its children will be ignored—it's impossible for a parent to be in mouse mode but a child not to be.</p>
+<p>Additionally, the requested mode of a control is only inspected when it gets focus, so the mode won't change dynamically while it has focus.</p>
+<h3 id="activating-mouse-mode-on-a-page">Activating mouse mode on a page</h3>
+<p>When a page has the property <code>RequiresPointer=&quot;WhenFocused&quot;</code>, mouse mode will be activated for the whole page when it gets focus. The following code snippet demonstrates giving a page this property:</p>
+<pre><code class="lang-xml">&lt;Page RequiresPointer=&quot;WhenFocused&quot;&gt;
+    ...
+&lt;/Page&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>WhenFocused</code> value is only supported on <a href="/uwp/api/Windows.UI.Xaml.Controls.Page">Page</a> objects. If you try to set this value on a control, an exception will be thrown.</p>
+</div>
+<h3 id="disabling-mouse-mode-for-full-screen-content">Disabling mouse mode for full screen content</h3>
+<p>Usually when displaying video or other types of content in full screen, you will want to hide the cursor because it can distract the user. This scenario occurs when the rest of the app uses mouse mode, but you want to turn it off when showing full screen content. To accomplish this, put the full screen content on its own <code>Page</code>, and follow the steps below.</p>
+<ol>
+<li>In the <code>App</code> object, set <code>RequiresPointerMode=&quot;WhenRequested&quot;</code>.</li>
+<li>In every <code>Page</code> object <em>except</em> for the full screen <code>Page</code>, set <code>RequiresPointer=&quot;WhenFocused&quot;</code>.</li>
+<li>For the full screen <code>Page</code>, set <code>RequiresPointer=&quot;Never&quot;</code>.</li>
+</ol>
+<p>This way, the cursor will never appear when showing full screen content.</p>
+<h2 id="focus-visual">Focus visual</h2>
+<p>The focus visual is the border around the UI element that currently has focus. This helps orient the user so that they can easily navigate your UI without getting lost.</p>
+<p>With a visual update and numerous customization options added to focus visual, developers can trust that a single focus visual will work well on PCs and Xbox One, as well as on any other Windows devices that support keyboard and/or gamepad/remote.</p>
+<p>While the same focus visual can be used across different platforms, the context in which the user encounters it is slightly different for the 10-foot experience. You should assume that the user is not paying full attention to the entire TV screen, and therefore it is important that the currently focused element is clearly visible to the user at all times to avoid the frustration of searching for the visual.</p>
+<p>It is also important to keep in mind that the focus visual is displayed by default when using a gamepad or remote control, but <em>not</em> a keyboard. Thus, even if you don't implement it, it will appear when you run your app on Xbox One.</p>
+<h3 id="initial-focus-visual-placement">Initial focus visual placement</h3>
+<p>When launching an app or navigating to a page, place the focus on a UI element that makes sense as the first element on which the user would take action. For example, a photo app may place focus on the first item in the gallery, and a music app navigated to a detailed view of a song might place focus on the play button for ease of playing music.</p>
+<p>Try to put initial focus in the top left region of your app (or top right for a right-to-left flow). Most users tend to focus on that corner first because that's where app content flow generally begins.</p>
+<h3 id="making-focus-clearly-visible">Making focus clearly visible</h3>
+<p>One focus visual should always be visible on the screen so that the user can pick up where they left off without searching for the focus. Similarly, there should be a focusable item onscreen at all times—for example, don't use pop-ups with only text and no focusable elements.</p>
+<p>An exception to this rule would be for full-screen experiences, such as watching videos or viewing images, in which cases it would not be appropriate to show the focus visual.</p>
+<h3 id="reveal-focus">Reveal focus</h3>
+<p>Reveal focus is a lighting effect that animates the border of focusable elements, such as a button, when the user moves gamepad or keyboard focus to them. By animating the glow around the border of the focused elements, Reveal focus gives users a better understanding of where focus is and where focus is going.</p>
+<p>Reveal focus is off by default. For 10 foot experiences you should opt-in to reveal focus by setting the <a href="/uwp/api/windows.ui.xaml.application.FocusVisualKind">Application.FocusVisualKind property</a> in your app constructor.</p>
+<pre><code class="lang-csharp">    if(AnalyticsInfo.VersionInfo.DeviceFamily == &quot;Windows.Xbox&quot;)
+    {
+        this.FocusVisualKind = FocusVisualKind.Reveal;
+    }
+</code></pre>
+<p>For more information see the guidance for <a href="/windows/uwp/ui-input/reveal-focus">Reveal focus</a>.</p>
+<h3 id="customizing-the-focus-visual">Customizing the focus visual</h3>
+<p>If you'd like to customize the focus visual, you can do so by modifying the properties related to the focus visual for each control. There are several such properties that you can take advantage of to personalize your app.</p>
+<p>You can even opt out of the system-provided focus visuals by drawing your own using visual states. To learn more, see <a href="/uwp/api/Windows.UI.Xaml.VisualState">VisualState</a>.</p>
+<h3 id="light-dismiss-overlay">Light dismiss overlay</h3>
+<p>To call the user's attention to the UI elements that the user is currently manipulating with the game controller or remote control, UWP automatically adds a &quot;smoke&quot; layer that covers areas outside of the popup UI when the app is running on Xbox One. This requires no extra work, but is something to keep in mind when designing your UI. You can set the <code>LightDismissOverlayMode</code> property on any <code>FlyoutBase</code> to enable or disable the smoke layer; it defaults to <code>Auto</code>, meaning that it is enabled on Xbox and disabled elsewhere. For more information, see <a href="../controls/menus.html">Modal vs light dismiss</a>.</p>
+<h2 id="focus-engagement">Focus engagement</h2>
+<p>Focus engagement is intended to make it easier to use a gamepad or remote to interact with an app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Setting focus engagement does not impact keyboard or other input devices.</p>
+</div>
+<p>When the property <code>IsFocusEngagementEnabled</code> on a <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement">FrameworkElement</a> object is set to <code>True</code>, it marks the control as requiring focus engagement. This means that the user must press the <strong>A/Select</strong> button to &quot;engage&quot; the control and interact with it. When they are finished, they can press the <strong>B/Back</strong> button to disengage the control and navigate out of it.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>IsFocusEngagementEnabled</code> is a new API and not yet documented.</p>
+</div>
+<h3 id="focus-trapping">Focus trapping</h3>
+<p>Focus trapping is what happens when a user attempts to navigate an app's UI but becomes &quot;trapped&quot; within a control, making it difficult or even impossible to move outside of that control.</p>
+<p>The following example shows UI that creates focus trapping.</p>
+<p><img src="images/designing-for-tv/focus-engagement-focus-trapping.png" alt="Buttons to the left and right of a horizontal slider"></p>
+<p>If the user wants to navigate from the left button to the right button, it would be logical to assume that all they'd have to do is press right on the D-pad/left stick twice.
+However, if the <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider">Slider</a> doesn't require engagement, the following behavior would occur: when the user presses right the first time, focus would shift to the <code>Slider</code>, and when they press right again, the <code>Slider</code>'s handle would move to the right. The user would keep moving the handle to the right and wouldn't be able to get to the button.</p>
+<p>There are several approaches to getting around this issue. One is to design a different layout, similar to the real estate app example in <a href="#xy-focus-navigation-and-interaction">XY focus navigation and interaction</a> where we relocated the <strong>Previous</strong> and <strong>Next</strong> buttons above the <code>ListView</code>. Stacking the controls vertically instead of horizontally as in the following image would solve the problem.</p>
+<p><img src="images/designing-for-tv/focus-engagement-focus-trapping-2.png" alt="Buttons above and below a horizontal slider"></p>
+<p>Now the user can navigate to each of the controls by pressing up and down on the D-pad/left stick, and when the <code>Slider</code> has focus, they can press left and right to move the <code>Slider</code> handle, as expected.</p>
+<p>Another approach to solving this problem is to require engagement on the <code>Slider</code>. If you set <code>IsFocusEngagementEnabled=&quot;True&quot;</code>, this will result in the following behavior.</p>
+<p><img src="images/designing-for-tv/focus-engagement-slider.png" alt="Requiring focus engagement on slider so user can navigate to button on the right"></p>
+<p>When the <code>Slider</code> requires focus engagement, the user can get to the button on the right simply by pressing right on the D-pad/left stick twice. This solution is great because it requires no UI adjustment and produces the expected behavior.</p>
+<h3 id="items-controls">Items controls</h3>
+<p>Aside from the <a href="/uwp/api/Windows.UI.Xaml.Controls.Slider">Slider</a> control, there are other controls which you may want to require engagement, such as:</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.ListBox">ListBox</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.ListView">ListView</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.GridView">GridView</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.FlipView">FlipView</a></li>
+</ul>
+<p>Unlike the <code>Slider</code> control, these controls don't trap focus within themselves; however, they can cause usability issues when they contain large amounts of data. The following is an example of a <code>ListView</code> that contains a large amount of data.</p>
+<p><img src="images/designing-for-tv/focus-engagement-list-and-grid-controls.png" alt="ListView with large amount of data and buttons above and below"></p>
+<p>Similar to the <code>Slider</code> example, let's try to navigate from the button at the top to the button at the bottom with a gamepad/remote.
+Starting with focus on the top button, pressing down on the D-pad/stick will place the focus on the first item in the <code>ListView</code> (&quot;Item 1&quot;).
+When the user presses down again, the next item in the list gets focus, not the button on the bottom.
+To get to the button, the user must navigate through every item in the <code>ListView</code> first.
+If the <code>ListView</code> contains a large amount of data, this could be inconvenient and not an optimal user experience.</p>
+<p>To solve this problem, set the property <code>IsFocusEngagementEnabled=&quot;True&quot;</code> on the <code>ListView</code> to require engagement on it.
+This will allow the user to quickly skip over the <code>ListView</code> by simply pressing down. However,
+they will not be able to scroll through the list or choose an item from it unless they engage it by pressing the <strong>A/Select</strong> button when it has focus, and then pressing the <strong>B/Back</strong> button to disengage.</p>
+<p><img src="images/designing-for-tv/focus-engagement-list-and-grid-controls-2.png" alt="ListView with engagement required"></p>
+<h4 id="scrollviewer">ScrollViewer</h4>
+<p>Slightly different from these controls is the <a href="/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer">ScrollViewer</a>,
+which has its own quirks to consider. If you have a <code>ScrollViewer</code> with focusable content, by default navigating to the <code>ScrollViewer</code> will allow you to move through its focusable elements. Like in a <code>ListView</code>, you must scroll through each item to navigate outside of the <code>ScrollViewer</code>.</p>
+<p>If the <code>ScrollViewer</code> has <em>no</em> focusable content—for example, if it only contains text—you can set <code>IsFocusEngagementEnabled=&quot;True&quot;</code> so the user can engage the <code>ScrollViewer</code> by using the <strong>A/Select</strong> button. After they have engaged, they can scroll through the text by using the <strong>D-pad/left stick</strong>, and then press the <strong>B/Back</strong> button to disengage when they're finished.</p>
+<p>Another approach would be to set <code>IsTabStop=&quot;True&quot;</code> on the <code>ScrollViewer</code> so that the user doesn't have to engage the control—they can simply place
+focus on it and then scroll by using the <strong>D-pad/left stick</strong> when there are no focusable elements within the <code>ScrollViewer</code>.</p>
+<h3 id="focus-engagement-defaults">Focus engagement defaults</h3>
+<p>Some controls cause focus trapping commonly enough to warrant their default settings to require focus engagement, while others have focus engagement turned off by default but can benefit from turning it on. The following table lists these controls and their default focus engagement behaviors.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Focus engagement default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CalendarDatePicker</td>
+<td>On</td>
+</tr>
+<tr>
+<td>FlipView</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>GridView</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>ListBox</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>ListView</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>ScrollViewer</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>SemanticZoom</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>Slider</td>
+<td>On</td>
+</tr>
+</tbody>
+</table>
+<p>All other Windows controls will result in no behavioral or visual changes when <code>IsFocusEngagementEnabled=&quot;True&quot;</code>.</p>
+<h2 id="summary">Summary</h2>
+<p>You can build Windows applications that are optimized for a specific device or experience, but the Universal Windows Platform also enables you to build apps that can be used successfully across devices, in both 2-foot and 10-foot experiences, and regardless of input device or user ability. Using the recommendations in this article can ensure that your app is as good as it can be on both the TV and a PC.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../devices/designing-for-tv.html">Designing for Xbox and TV</a></li>
+<li><a href="index.html">Device primer for Windows apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/gamepad-and-remote-interactions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

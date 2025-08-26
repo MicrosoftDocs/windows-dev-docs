@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Stable channel release notes for the Windows App SDK 1.4 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Stable channel release notes for the Windows App SDK 1.4 ">
+    
+    <meta name="description" content="Provides information about the stable release channel for the Windows App SDK 1.4.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="stable-channel-release-notes-for-the-windows-app-sdk-14">Stable channel release notes for the Windows App SDK 1.4</h1>
+
+<p>The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="downloads-for-the-windows-app-sdk">Downloads for the Windows App SDK</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.</p>
+</div>
+<h3 id="version-147-14240802001">Version 1.4.7 (1.4.240802001)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.</p>
+<ul>
+<li>Fixed an issue where <code>ItemsRepeater</code> would not generate enough items if it was in a <code>ShouldConstrainToRootBounds=&quot;false&quot;</code> popup which was taller or wider than the main window.</li>
+<li>Fixed a potential crash on shutdown if an <code>AnnotatedScrollBar</code> label update was pending.</li>
+</ul>
+<h3 id="version-146-14240512000">Version 1.4.6 (1.4.240512000)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.</p>
+<ul>
+<li>Fixed a potential crash when processing input.</li>
+<li>Fixed an issue where a drag-and-drop operation that started from another app might not allow the correct Copy/Move/Link drop operations.</li>
+<li>Fixed WinUI source server information for debugging to properly point to the microsoft-ui-xaml GitHub repo.</li>
+<li>Fixed an issue with the fix for GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8857">#8857</a> to properly merge a library's <code>resources.pri</code> into the app's <code>resources.pri</code>.</li>
+</ul>
+<h3 id="version-145-14240211001">Version 1.4.5 (1.4.240211001)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.</p>
+<ul>
+<li>Fixed an issue that could hang applications when clicking a mouse button while scrolling with the mouse wheel. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9233">#9233</a>.</li>
+<li>Fixed an issue with duplicate assets when referencing a chain of NuGet packages. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8857">#8857</a>.</li>
+<li>Fixed several <code>BreadcrumbBar</code> issues including a memory leak, a crash when the ellipsis menu is empty, and the ellipsis menu being incorrectly constrained within the window.</li>
+<li>Fixed a potential crash on shutdown when releasing graphics resources.</li>
+</ul>
+<h3 id="version-144-14231219000">Version 1.4.4 (1.4.231219000)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.</p>
+<ul>
+<li>Fixed a WinUI 3 diagnostics security issue.</li>
+<li>Fixed an input issue where the password box didn't show the on-screen keyboard when activated via touch. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8946">#8946</a>.</li>
+<li>Fixed an issue that caused the <code>Microsoft.UI.Xaml.Controls.dll</code> file size to grow unexpectedly.</li>
+<li>Fixed a <code>CommandBarFlyout</code> issue that could cause crashes when setting focus.</li>
+<li>Updated Windows App SDK support for .NET 8 RID-specific asset handling.</li>
+<li>Fixed an issue causing some swapchains to be positioned or stretched incorrectly.</li>
+</ul>
+<h3 id="version-143-14231115000">Version 1.4.3 (1.4.231115000)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.</p>
+<ul>
+<li>Fixed an issue where a menu could appear without a background for a short period of time.</li>
+<li>Fixed a crash that may occur in specific multi-monitor scenarios.</li>
+<li>Fixed an issue where a context menu could appear off-screen.</li>
+<li>Fixed an issue with Window styles and maximizing behavior. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8996">#8996</a>.</li>
+<li>Fixed an issue with Islands where focus could be unexpectedly grabbed from another control.</li>
+<li>Fixed an issue with tab order on <code>NavigationView</code>.</li>
+<li>Fixed a rendering issue where a white bar might be visible at the top of the titlebar. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8947">#8947</a>.</li>
+<li>Various performance fixes.</li>
+</ul>
+<h3 id="version-142-14231008000">Version 1.4.2 (1.4.231008000)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.</p>
+<ul>
+<li>Fixed a crashing issue in explorer.exe caused by excessive memory and object allocation.</li>
+<li>Fixed a titlebar interaction issue that prevented the back button from working properly.</li>
+<li>Fixed an issue that caused a warning to be generated for a source file being included multiple times.</li>
+<li>Fixed an issue impacting context menu performance.</li>
+<li>Fixed a .lnk shortcut issue that made the target .exe always point to the same location for packages in the WindowsApps folder.</li>
+<li>Fixed a DWriteCore issue affecting proper rendering of Indic text in certain fonts.</li>
+<li>Fixed an issue in a List View that prevented proper keyboard navigation to and from nested selected items with <em>Tab/Shift + Tab</em>.</li>
+<li>Fixed an issue that broke scrolling ComboBox items by touch after expanding the ComboBox a second time. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8831">#8831</a>.</li>
+<li>Fixed an issue where WinAppSDK packages did not include WinUI's localized resources for some languages.</li>
+<li>Fixed an inconsistency between how File Explorer and XAML display a user's preferred language.</li>
+<li>Fixed a craftsmanship issue in File Explorer causing a thin line to show under the active tab.</li>
+<li>Fixed an issue where some framework-provided keyboard accelerators were not properly localized. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/2023">#2023</a>.</li>
+<li>Fixed an issue with RepeatButton controls that were repeatedly scrolling when tapped.</li>
+<li>Fixed the WinAppSDK installer .exe to have proper resource version info.</li>
+</ul>
+<h3 id="version-141-14230913002">Version 1.4.1 (1.4.230913002)</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.4 release.</p>
+<ul>
+<li>Fixed performance issues to improve the time to first frame.</li>
+<li>Fixed an issue where menus didn't respect <code>RequestedTheme</code>. For example, it was possible for this issue to lead to white text on a white background. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8756">#8756</a>.</li>
+<li>Fixed an issue that caused acrylic backgrounds to sometimes become fully transparent in some menus.</li>
+<li>Fixed an issue where XAML sometimes caused Windows to unnecessarily repaint the desktop wallpaper.</li>
+<li>Fixed support for <code>TabNavigation = Local</code> and <code>TabNavigation = Cycle</code> for <code>ListView</code> and <code>GridView</code>, which now enables navigating between headers and items with TAB in addition to arrow keys.</li>
+<li>Fixed some noisy exceptions when dismissing a tooltip. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8699">#8699</a>.</li>
+</ul>
+<h3 id="new-and-updated-features-and-known-issues-for-version-14">New and updated features and known issues for version 1.4</h3>
+<p>The following sections describe new and updated features and known issues for version 1.4.</p>
+<p>In an existing Windows App SDK 1.3 app, you can update your Nuget package to 1.4.230822000 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Latest Windows App SDK downloads</a>.</p>
+<h3 id="custom-titlebar--appwindow-titlebar-merger">Custom titlebar + AppWindow titlebar merger</h3>
+<p>The WinUI 3 custom titlebar uses the AppWindow titlebar implementation, along with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputnonclientpointersource">NonClientInputPointerSource</a> APIs, under the hood in the Windows App SDK 1.4. As a result, both titlebar implementations now behave the same way with the same features and limitations. This is fully backwards compatible in all supported cases - any app with a custom-defined titlebar will behave as before. But, it's now easier for WinUI 3 developers who might be new to custom titlebars to understand and use them by taking advantage of these new features:</p>
+<ul>
+<li>A better default scenario where the developer doesn't define a titlebar element specifically (replacing the fallback titlebar from WinUI 2)</li>
+<li>Distinct drag regions in the titlebar, enabling you to create multiple drag regions and place clickable controls on any part of the non-client area (titlebar area)</li>
+<li>App-wide draggable regions that can be put anywhere in the app or make the whole app draggable</li>
+<li>Better theming support that replaces resource-based theming
+<ul>
+<li>Since drag regions are transparent, they follow the app theme every time</li>
+</ul>
+</li>
+<li>More customization: hide the min, max, and close buttons; place system icons in the titlebar; or have different regions act as caption buttons that receive NCHITTEST responses</li>
+<li>More developer freedom that enables you to mix and match with AppWindow titlebar APIs, such as using higher-level WinUI 3 APIs for most scenarios but with AppWindow APIs mixed in for lower-level control</li>
+</ul>
+<h3 id="widgets-updates">Widgets updates</h3>
+<p>Three new interfaces have been added for Widget Providers to implement: <code>IWidgetProvider2</code>, <code>IWidgetProviderAnalytics</code>, and <code>IWidgetProviderErrors</code>. <code>IWidgetProvider2</code> allows providers to respond to the <em>Customize</em> action invoked by the user, which is identical to what is available for 1st party Widgets. The <code>IWidgetProviderAnalytics</code> and <code>IWidgetProviderErrors</code> interfaces are used by providers to gather telemetry for their widgets; analytics and failure events about widgets are communicated to the respective widget providers. The <code>WidgetCustomizationRequestedArgs</code>, <code>WidgetAnalyticsInfoReportedArgs</code>, and <code>WidgetErrorInfoReportedArgs</code> classes are used to communicate relevant information to support new functionalities.</p>
+<h3 id="xaml-islands-no-longer-experimental">XAML Islands no longer experimental</h3>
+<p>XAML Islands and the underlying ContentIslands platform are no longer experimental.</p>
+<ul>
+<li>Currently XAML Islands are only tested for use in C++ apps. This release does not include any convenient wrapper elements for use in WPF or WinForms.</li>
+<li><code>DesktopWindowXamlSource</code> and related types have been added in the Microsoft.UI.Xaml.Hosting namespace for XAML Islands. <code>XamlRoot.ContentIslandEnvironment</code> was added to help access the underlying Island information for an element.</li>
+<li>Many new types have been introduced in the Microsoft.UI.Content namespace and the Microsoft.UI.Input namespace as the underlying support for XAML Islands or for using this ContentIslands functionality without XAML.</li>
+<li>A new <code>DragDropManager</code> (plus related types) has been added in the Microsoft.UI.Input.DragDrop namespace for Island scenarios.</li>
+</ul>
+<h3 id="itemsview">ItemsView</h3>
+<p>We're introducing a new list control called the <code>ItemsView</code> and a corresponding concrete <code>ItemContainer</code> class. <code>ItemContainer</code> is a lightweight container with built-in selection states and visuals, which can easily wrap desired content and be used with <code>ItemsView</code> for a collection control scenario.</p>
+<ul>
+<li>The new <code>ItemsView</code> control displays a data collection. <code>ItemsView</code> is similar to the <code>ListView</code> and <code>GridView</code> controls, but is built using the <code>ItemsRepeater</code>, <code>ScrollView</code>, <code>ItemContainer</code> and <code>ItemCollectionTransitionProvider</code> components. It offers the unique ability to plug in custom <code>Layout</code> or <code>ItemCollectionTransitionProvider</code> implementations. Another key advantage is the ability to switch the layout on the fly while preserving items selection. The inner <code>ScrollView</code> control also offers features unavailable in <code>ListView</code>/<code>GridView</code>'s <code>ScrollViewer</code> control such as the ability to control the animation during programmatic scrolls.
+<ul>
+<li>A new <code>ItemTransitionProvider</code> property on <code>ItemsRepeater</code> (and the new <code>ItemsView</code> control) lets you specify an <code>ItemCollectionTransitionProvider</code> object to control transition animations on that control. A <code>CreateDefaultItemTransitionProvider</code> method has also been added to <code>Layout</code>, which enables a layout object to provide a fallback transition to accompany it if you do not provide one explicitly on the <code>ItemsView</code> control.</li>
+<li>A new <code>IndexBasedLayoutOrientation</code> property on <code>Layout</code> where the layout orientation, if any, of items is based on their index in the source collection. The default value is <code>IndexBasedLayoutOrientation.None</code>. Custom layouts set this property by calling the new (protected) <code>SetIndexBasedLayoutOrientation</code> method.</li>
+<li>A new <code>VisibleRect</code> property on <code>VirtualizingLayoutContext</code> gets the visible viewport rectangle within the <code>FrameworkElement</code> associated with the <code>Layout</code>. The protected virtual <code>VirtualizingLayoutContext.VisibleRectCore</code> method can be overridden to provide the value that will be returned from the <code>VisibleRect</code> property.</li>
+</ul>
+</li>
+<li>The new <code>LinedFlowLayout</code> class is typically used to lay out the items of the <code>ItemsView</code> collection control. It is particularly useful for displaying collection of pictures. It does so by laying them out from left to right, and top to bottom, in lines of equal height. The pictures fill a horizontal line and then wrap to a next line. Pictures may be cropped at the left and right edges to fit into a line. They may also be expanded horizontally and cropped at the top and bottom edges to fill a line when the stretching mode is employed.</li>
+</ul>
+<h3 id="new-features-from-across-the-winappsdk">New features from across the WinAppSDK</h3>
+<ul>
+<li>A new <code>ThemeSettings</code> class that allows Win32 WinRT apps to detect when the system's High Contrast setting has changed, similar to UWP's <a href="/uwp/api/windows.ui.viewmanagement.accessibilitysettings">AccessibilitySettings</a> class. See the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/themes/ThemeSettings.md">ThemeSettings API spec</a> on GitHub for more information.</li>
+<li><code>AccessKeyManager.EnterDisplayMode</code> is a new method to display access keys for the current focused element of a provided root. Access keys are in &quot;display mode&quot; when showing a key tip to invoke a command, such as pressing the Alt key in Paint to show what keys correspond to what controls. This method allows for programmatically entering display mode.</li>
+<li><code>Application.ResourceManagerRequested</code> provides a mechanism to provide a different <code>IResourceManager</code> to resolve resource URIs for scenarios when the default <code>ResourceManager</code> won't work. For more information, see the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/custom-iresourcemanager-spec.md">Application.ResourceManagerRequested API spec</a> on GitHub.</li>
+<li>The version of the WebView2 SDK was updated from 1661.34 to <a href="/microsoft-edge/webview2/release-notes?tabs=winrtcsharp#10182332">1823.32</a>.</li>
+<li><code>Popup/FlyoutBase.IsConstrainedToRootBounds = false</code> is now supported, allowing a popup/flyout to extend outside the bounds of the parent window. A <code>SystemBackdrop</code> property has been added to these types to support having acrylic in these unconstrained popups. Menus by default use this to have acrylic.</li>
+<li><code>Closed</code>, <code>FrameworkClosed</code>, and <code>IsClosed</code> have been added to <code>DesktopAcrylicController</code> and <code>MicaController</code> to improve handling during object/thread shutdown.</li>
+<li><code>DesktopAcrylicController.Kind</code> can now be set to choose between some standard acrylic appearances.</li>
+<li><code>DispatcherQueue</code> has some new events and helpers to facilitate better organized shutdown and for apps using Islands to easily run a standard supported event loop.</li>
+<li><code>InputNonClientPointerSource</code> in the Microsoft.UI.Input namespace can be used for custom titlebar scenarios to define non-client area regions. Code can register for corresponding events like hover and click events on these regions.</li>
+<li><code>AppWindow</code> has some new helpers to get and associate with a <code>DispatcherQueue</code>.</li>
+<li>The new <code>TreeView.SelectionChanged</code> event allows developers to respond when the user or code-behind changes the set of selected nodes in the <code>TreeView</code> control.</li>
+<li>The new <code>ScrollView</code> control provides a new alternative to <code>ScrollViewer</code>. This new control is highly aligned in behavior and API with the existing <code>ScrollViewer</code> control, but is based on <code>InteractionTracker</code>, has new features such as animation-driven view changes, and is also designed to ensure full functionality of <code>ItemsRepeater</code>. See <a href="https://github.com/Microsoft/microsoft-ui-xaml/issues/108">A more flexible ScrollViewer · Issue #108 · microsoft/microsoft-ui-xaml (github.com)</a> for more details. Various new types, including <code>ScrollPresenter</code>, are part of the overall <code>ScrollView</code> model.</li>
+<li>The new <code>AnnotatedScrollBar</code> control extends a regular scrollbar's functionality by providing an easy way to navigate through a large collection of items. This is achieved through a clickable rail with labels that act as markers. It also allows for a more granular understanding of the scrollable content by displaying a tooltip when hovering over the clickable rail.</li>
+</ul>
+<h3 id="known-issues">Known issues</h3>
+<ul>
+<li>When using <code>ExtendsContentIntoTitleBar = true</code>, clicks at the top-left corner of the window by default always show the system window menu (Minimize/Close/etc.) rather than letting the pointer input through to the content of the window. This, for example, means that a Back button in that area of the titlebar will not work. A workaround for this issue is to set <code>AppWindow.TitleBar.IconShowOptions = Microsoft.UI.Windowing.IconShowOptions.HideIconAndSystemMenu</code> on the Window's AppWindow.</li>
+<li>There are some new continuable exceptions when hiding <code>ShouldConstrainToRootBounds=&quot;False&quot;</code> popups/flyouts. That includes hiding tooltips, as reported here: <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8699">Dismissing a tooltip throws 4 native exceptions · Issue #8699 · microsoft/microsoft-ui-xaml (github.com)</a></li>
+<li>In 1.4, the min/max/close caption buttons for <code>ExtendsContentIntoTitleBar = true</code> are now drawn by AppWindow rather than XAML. This is by design, but it can impact apps that were overriding XAML's internal styles to hide or do extra customization of these buttons, such as in this report: <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8705">Cannot hide caption button on titlebar · Issue #8705 · microsoft/microsoft-ui-xaml (github.com)</a></li>
+<li>There was a breaking change in .NET 8 to how it handles the runtime identifier graph:  <a href="https://github.com/dotnet/docs/issues/36527">[Breaking change]: Projects targeting .NET 8 and higher will by default use a smaller, portable RID graph. · Issue #36527 · dotnet/docs (github.com)</a>. Because of this issue and because .NET 8 has not officially released yet, the Windows App SDK 1.4 does not officially support .NET 8. However, if you would still like to target the pre-release version of .NET 8 with this version of the App SDK, we recommend the following steps:
+<ul>
+<li><a href="/dotnet/core/compatibility/deployment/8.0/rid-asset-list#recommended-action">Setting UseRidGraph to true</a> is recommended. You'll also need to update the <code>&lt;RuntimeIdentifiers&gt;</code> property in the <code>.csproj</code> file to <code>&lt;RuntimeIdentifiers&gt;win-x86;win-x64;win-arm64&lt;/RuntimeIdentifiers&gt;</code>, as well as update each <code>Propeties\*pubxml</code> file to switch from <code>win10</code> to <code>win</code> in the <code>&lt;RuntimeIdentifier&gt;</code> property (for example, <code>&lt;RuntimeIdentifier&gt;win-x86&lt;/RuntimeIdentifier&gt;</code>).</li>
+</ul>
+</li>
+<li>With Windows App SDK 1.4, the target <code>GenerateDeploymentManagerCS</code> in <code>Microsoft.WindowsAppSDK.DeploymentManager.CS.targets</code> was renamed to <code>GenerateBootstrapCS</code>.</li>
+<li><code>MenuFlyout</code> background doesn't use the application's requested theme:
+<ul>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8678">MenuFlyoutItem text doesn't sync with system theme. · Issue #8678 · microsoft/microsoft-ui-xaml (github.com)</a></li>
+<li><a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8756">1.4 preview: Flyout backdrop theme is derived from system theme and not from its associated element · Issue #8756 · microsoft/microsoft-ui-xaml (github.com)</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>Fixed an issue where calling the  <code>Microsoft.Windows.AppLifecycle.AppInstance.Restart(&quot;&quot;)</code> API caused unpackaged apps to crash. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/2792">#2792</a>.</li>
+<li>Fixed an installer crashing issue that was introduced in 1.4-experimental1. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/3760">#3760</a>.</li>
+<li>Fixed an issue where text strikethrough was not removed properly in a TextBlock. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/1093">#1093</a>.</li>
+<li>Fixed an issue causing incorrect Shift + Tab  navigation in a Panel with <em>TabFocusNavigation</em> set to &quot;Once.&quot; For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/1363">#1363</a>.</li>
+<li>Fixed an issue in C++/WinRT that prevented <code>{x:Bind}</code> from working properly with a property of a named XAML control. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/2721">#2721</a>.</li>
+<li>Fixed a runtime AccessViolation issue in WinUI Desktop apps caused by setting <code>DebugSettings.EnableFrameRateCounter = true</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/2835">#2835</a>.</li>
+<li>Fixed an issue where <code>XamlTypeInfo.g.cpp</code> did not include needed headers. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/4907">#4907</a>.</li>
+<li>Fixed a crashing issue caused by simultaneous multi-touch and mouse input. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7622">#7622</a>.</li>
+<li>Fixed an issue that prevented an active WinUI 3 app window from scrolling when the system setting to disable scrolling of inactive windows on mouse over was in effect. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8764">#8764</a>.</li>
+<li>Fixed a crash when trying to subclass <code>MediaPlayerElement</code>.</li>
+<li>Fixed some crash and memory leak issues in <code>TreeView</code>.</li>
+<li>Fixed an app hang issue that could happen when using keyboard to navigate in <code>RadioButtons</code>.</li>
+<li>Fixed a crash when using the keyboard to navigate in a <code>PipsPager</code>.</li>
+<li>Fixed WebView2 content to scale with the &quot;Text size&quot; Accessibility setting in the Settings app.</li>
+<li>Fixed a crash that could occur when animations were running when the display turned off.</li>
+<li>Fixed a performance issue introduced in 1.3 that added a ~10% overhead to first layout/render.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.4.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

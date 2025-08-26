@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Preview release channel for the Windows App SDK 1.6 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Preview release channel for the Windows App SDK 1.6 ">
+    
+    <meta name="description" content="Provides info about the preview release channel for the Windows App SDK 1.6.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="preview-channel-release-notes-for-the-windows-app-sdk-16">Preview channel release notes for the Windows App SDK 1.6</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The preview channel is <strong>not supported</strong> for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The preview channel includes releases of the Windows App SDK with <a href="../release-channels.html#features-available-by-release-channel">preview channel features</a> in late stages of development. Preview releases do not include experimental features and APIs but may still be subject to breaking changes before the next stable release.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on preview releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<h2 id="version-16-preview-2-160-preview2">Version 1.6 Preview 2 (1.6.0-preview2)</h2>
+<p>This is the latest release of the preview channel for version 1.6.</p>
+<p>In an existing Windows App SDK 1.5 (from the stable channel) app, you can update your Nuget package to 1.6.0-preview2 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Downloads for the Windows App SDK</a>.</p>
+<h3 id="new-features">New features</h3>
+<h4 id="required-c-project-changes-for-16-preview2">Required C# project changes for 1.6-preview2</h4>
+<p>The C# project guidance from <a href="#required-c-project-changes-for-16-preview1">1.6-preview1</a> is also required for this release.</p>
+<h4 id="native-aot-support">Native AOT support</h4>
+<p>1.6-preview2 includes significant changes to update to the released <a href="https://www.nuget.org/packages/Microsoft.Windows.CsWinRT">Microsoft.Windows.CsWinRT</a> version 2.1.1 and make building more reliable for native Ahead-Of-Time compilation.</p>
+<h4 id="updated-edge-webview2-sdk-integration">Updated Edge WebView2 SDK Integration</h4>
+<p>This release now references the released 1.0.2651.64 version of the <code>Microsoft.Web.WebView2</code> package, which should fix issues hit with the prerelease version referenced in 1.6-preview1. As noted in 1.6-preview1, apps are now able to choose a newer version of the <code>Microsoft.Web.WebView2</code> package if desired.</p>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<p>1.6-preview2 contains the following new fixes since 1.6-preview1's release:</p>
+<ul>
+<li>Fixed a crash when setting <code>InfoBar.IsOpen</code> in .xaml. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8391">#8391</a>.</li>
+<li>Fixed an issue where HTML elements would lose pointer capture when the mouse moved outside of the <code>WebView2</code> bounds. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8677">#8677</a>.</li>
+<li>Fixed an issue where drag and drop into a flyout with <code>ShouldConstrainToRootBounds=false</code> did not work. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9276">#9276</a>.</li>
+<li>Fixed an issue where <code>ms-appx://</code> references did not work when <code>PublishSingleFile</code> is enabled. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9468">#9468</a>.</li>
+<li>Fixed an issue where debugger symbols weren't working correctly for some binaries. For more info, see GitHub issue <a href="https://github.com/microsoft/windowsappsdk/issues/4633">#4633</a>.</li>
+<li>Fixed a build break when using <code>/permissive-</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/windowsappsdk/issues/4643">#4643</a>.</li>
+<li>Fixed a couple of API breaking changes in 1.6-preview1 caused by renamed parameters. For more info, see GitHub issue <a href="https://github.com/microsoft/windowsappsdk/issues/4645">#4645</a>.</li>
+<li>Fixed type conflict build breaks hit by some projects in 1.6-preview1, particularly with <code>Windows.UI.Text</code> types. For more info, see GitHub issue <a href="https://github.com/microsoft/windowsappsdk/issues/4646">#4646</a>.</li>
+<li>Fixed an issue with resource lookups by control libraries in 1.6-preview1. For more info, see GitHub issue <a href="https://github.com/microsoft/windowsappsdk/issues/4649">#4649</a>.</li>
+<li>Fixed a potential crash when subclassing <code>NavigationView</code>.</li>
+<li>Fixed an issue where table borders in a <code>RichEditBox</code> would not correctly erase when scrolling or reducing the size of the table.</li>
+<li>Fixed an issue where flyouts from <code>MediaTransportControls</code> had a fully transparent background.</li>
+<li>Fixed an issue where dragging into a WebView2 would fail or drop in the wrong location on display scale factors other than 100% or when system text scaling is enabled.</li>
+<li>Fixed an issue where <code>TextBox</code>/<code>RichEditBox</code> would not announce to Accessibility tools when input is blocked due to being at the <code>MaxLength</code> limit.</li>
+</ul>
+<h2 id="version-16-preview-1-160-preview1">Version 1.6 Preview 1 (1.6.0-preview1)</h2>
+<p>This is the latest release of the preview channel for version 1.6.</p>
+<p>In an existing Windows App SDK 1.5 (from the stable channel) app, you can update your Nuget package to 1.6.0-preview1 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Downloads for the Windows App SDK</a>.</p>
+<h3 id="new-features-1">New features</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The new TitleBar control we released in 1.6-experimental1 is not yet available in non-experimental builds of 1.6 to allow more time to evaluate and respond to community feedback. We received a lot of great input here and want to make sure we take the time needed to address it.</p>
+</div>
+<h4 id="required-c-project-changes-for-16-preview1">Required C# project changes for 1.6-preview1</h4>
+<p>In 1.6-preview1, Windows App SDK managed apps require <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref">Microsoft.Windows.SDK.NET.Ref</a> <code>*.*.*.38</code>, which can be specified via <a href="/dotnet/core/compatibility/sdk/5.0/override-windows-sdk-package-version">WindowsSdkPackageVersion</a> in your <code>csproj</code> file. For example:</p>
+<pre><code class="lang-XML">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+   &lt;PropertyGroup&gt;
+       &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+       &lt;TargetFramework&gt;net8.0-windows10.0.22621.0&lt;/TargetFramework&gt;
+       &lt;TargetPlatformMinVersion&gt;10.0.17763.0&lt;/TargetPlatformMinVersion&gt;
+       &lt;WindowsSdkPackageVersion&gt;10.0.22621.38&lt;/WindowsSdkPackageVersion&gt;
+   &lt;PropertyGroup&gt;
+   ...
+</code></pre>
+<p>In addition, Windows App SDK managed apps should update to <a href="https://www.nuget.org/packages/Microsoft.Windows.CsWinRT">Microsoft.Windows.CsWinRT</a> <code>2.1.1</code> (or later).</p>
+<h4 id="native-aot-support-1">Native AOT support</h4>
+<p>The .NET <code>PublishAot</code> project property is now supported for native Ahead-Of-Time compilation. For details on Native AOT, see <a href="/dotnet/core/deploying/native-aot/">Native AOT Deployment</a>. Because AOT builds on Trimming support, much of the Trimming-related guidance previously described in the 1.6-experimental1 release applies as well. See <a href="/windows/apps/windows-app-sdk/experimental-channel#native-aot-support">Native AOT support</a> for more info.</p>
+<p>As noted above, C# projects should have a package reference to <a href="https://www.nuget.org/packages/Microsoft.Windows.CsWinRT">Microsoft.Windows.CsWinRT</a> 2.1.1 (or later).This version includes an AOT-safe <code>ICustomPropertyProvider</code> implementation. Types used with this support should be marked with the <code>WinRT.GeneratedBindableCustomProperty</code> attribute along with being made <code>partial</code>.</p>
+<h4 id="changed-edge-webview2-sdk-integration">Changed Edge WebView2 SDK Integration</h4>
+<p>The Windows App SDK now consumes the Edge WebView2 SDK as a NuGet reference rather than embedding a hardcoded version of the Edge WebView2 SDK. The new model allows apps to choose a newer version of the <code>Microsoft.Web.WebView2</code> package instead of being limited to the version with which the Windows App SDK was built. The new model also allows apps to reference NuGet packages which also reference the Edge WebView2 SDK. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5689">#5689</a>.</p>
+<h4 id="new-package-deployment-apis">New Package Deployment APIs</h4>
+<p>The Package Management API has received several enhancements including Is*ReadyOrNewerAvailable*(), EnsureReadyOptions.RegisterNewerIfAvailable, Is*Provisioned*(), IsPackageRegistrationPending(), and several bug fixes. See <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/packagemanager/PackageManagement.md">PackageManagement.md</a> and <a href="https://github.com/microsoft/WindowsAppSDK/pull/4453">Pull Request #4453</a> for more details.</p>
+<h4 id="improved-tabview-tab-tear-out">Improved TabView tab tear-out</h4>
+<p><code>TabView</code> supports a new <code>CanTearOutTabs</code> mode which provides an enhanced experience for dragging tabs and dragging out to a new window. When this new option is enabled, tab dragging is very much like the tab drag experience in Edge and Chrome where a new window is immediately created during the drag, allowing the user to drag it to the edge of the screen to maximize or snap the window in one smooth motion. This implementation also doesn't use drag-and-drop APIs, so it isn't impacted by any limitations in those APIs. Notably, tab tear-out is supported in processes running elevated as Administrator.</p>
+<h4 id="other-notable-changes">Other notable changes</h4>
+<ul>
+<li>We added a new <code>ColorHelper.ToDisplayName()</code> API, filling that gap from UWP.</li>
+<li>Added a new <code>Microsoft.Windows.Globalization.ApplicationLanguages</code> class, which notably includes a new <code>PrimaryLanguageOverride</code> feature. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/pull/4523">#4523</a>.</li>
+<li>Unsealed <code>ItemsWrapGrid</code>. This should be a backward-compatible change.</li>
+<li><code>PipsPager</code> supports a new mode where it can wrap between the first and list items.</li>
+<li><code>RatingControl</code> is now more customizable, by moving some hard-coded style properties to theme resources. This allows apps to override these values to better customize the appearance of RatingControl.</li>
+</ul>
+<h3 id="known-issues">Known Issues</h3>
+<ul>
+<li>If the debugger is set to break on all C++ exceptions, it will break on a pair of noisy exceptions on start-up in the BCP47 (Windows Globalization) code.</li>
+</ul>
+<h3 id="bug-fixes-1">Bug Fixes</h3>
+<ul>
+<li>Fixed a few issues around handling of custom titlebar scenarios. For more info, see GitHub issues <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7629">#7629</a>, <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9670">#9670</a>, <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9709">#9709</a> and <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8431">#8431</a>.</li>
+<li>Fixed an issue where <code>InfoBadge</code> icon was not visible. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8176">#8176</a>.</li>
+<li>Fixed an issue with icons sometimes showing in the wrong position in <code>CommandBarFlyout</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9409">#9409</a>.</li>
+<li>Fixed an issue with keyboard focus in menus when opening or closing a sub menu. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9519">#9519</a>.</li>
+<li>Fixed an issue with <code>TreeView</code> using the incorrect <code>IsExpanded</code> state when recycling items. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9549">#9549</a>.</li>
+<li>Fixed an issue when using an ElementName binding in an <code>ItemsRepeater.ItemTemplate</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9715">#9715</a>.</li>
+<li>Fixed an issue with the first item in an <code>ItemsRepeater</code> sometimes having an incorrect position. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9743">#9743</a>.</li>
+<li>Fixed an issue with <code>InputNonClientPointerSource</code> sometimes breaking input to the min/max/close buttons. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9749">#9749</a>.</li>
+<li>Fixed a compile error when using Microsoft.UI.Interop.h with clang-cl. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9771">#9771</a>.</li>
+<li>Fixed an issue where the <code>CharacterReceived</code> event was not working in <code>ComboBox</code>/<code>TextBox</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9786">#9786</a>.</li>
+<li>Fixed the issue in the 1.6-experimental builds where pointer input behavior for <code>CanTearOutTabs</code> was incorrect on monitors with scale factor different than 100%. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9791">#9791</a>.</li>
+<li>Fixed the issue in the 1.6-experimental2 build where some language translations had character encoding issues for <code>ColorHelper.ToDisplayName()</code>.</li>
+<li>Fixed an issue from 1.6-experimental1 where <code>NumberBox</code> wasn't using the correct foreground and background colors. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9714">#9714</a>.</li>
+<li>Fixed an issue where duplicate <code>KeyUp</code> events were raised for arrow and tab keys. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9399">#9399</a>.</li>
+<li>Fixed an issue where the <code>PowerManager.SystemSuspendStatusChanged</code> event was unusable to get the <code>SystemSuspendStatus</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/2833">#2833</a>.</li>
+<li>Fixed an issue where initial keyboard focus was not correctly given to a <code>WebView2</code> when that was the only control in the window.</li>
+<li>Fixed an issue when using <code>ExtendsContentIntoTitleBar=true</code> where the Min/Max/Close buttons did not correctly appear in the UI Automation, which prevented Voice Access from showing numbers for those buttons.</li>
+<li>Fixed an issue where an app might crash in a lock check due to unexpected reentrancy.</li>
+<li>Fixed an issue where <code>Hyperlink</code> colors did not correctly update when switching into a high contrast theme.</li>
+<li>Fixed an issue where changing the collection of a <code>ListView</code> in a background window may incorrectly move that window to the foreground and take focus.</li>
+<li>Fixed an issue from 1.6-experimental1 where setting <code>AcrylicBrush.TintLuminosityOpacity</code> in .xaml in a class library project would crash with a type conversion error.</li>
+<li>Fixed an issue where calling <code>ItemsRepeater.StartBringIntoView</code> could sometimes cause items to disappear.</li>
+<li>Fixed an issue where touching and dragging on a <code>Button</code> in a <code>ScrollViewer</code> would leave it in a pressed state.</li>
+<li>Updated IntelliSense, which was missing information for many newer types and members.</li>
+<li>Fixed an issue where clicking in an empty area of a <code>ScrollViewer</code> would always move focus to the first focusable control in the <code>ScrollViewer</code> and scroll that control into view. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/597">#597</a>.</li>
+<li>Fixed an issue where the <code>Window.Activated</code> event sometimes fired multiple times. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7343">#7343</a>.</li>
+<li>Fixed an issue where setting the <code>NavigationViewItem.IsSelected</code> property to <code>true</code> prevented its children from showing when expanded. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7930">#7930</a>.</li>
+<li>Fixed an issue where <code>MediaPlayerElement</code> would not properly display captions with <code>None</code> or <code>DropShadow</code> edge effects. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7981">#7981</a>.</li>
+<li>Fixed an issue where the <code>Flyout.ShowMode</code> property was not used when showing the flyout. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7987">#7987</a>.</li>
+<li>Fixed an issue where <code>NumberBox</code> would sometimes have rounding errors. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8780">#8780</a>.</li>
+<li>Fixed an issue where using a library compiled against an older version of WinAppSDK could hit an error trying to find a type or property.
+For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8810">#8810</a>.</li>
+<li>Fixed an issue where initial keyboard focus was not set when launching a window. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8816">#8816</a>.</li>
+<li>Fixed an issue where <code>FlyoutShowMode.TransientWithDismissOnPointerMoveAway</code> didn't work after the first time it was shown.
+For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8896">#8896</a>.</li>
+<li>Fixed an issue where some controls did not correctly template bind <code>Foreground</code> and <code>Background</code> properties. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/7070">#7070</a>, <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9020">#9020</a>, <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9029">#9029</a>, <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9083">#9083</a> and <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9102">#9102</a>.</li>
+<li>Fixed an issue where <code>ThemeResource</code>s used in <code>VisualStateManager</code> setters wouldn't update on theme change. This commonly affected controls in flyouts. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9198">#9198</a>.</li>
+<li>Fixed an issue where <code>WebView</code> would lose key focus, resulting in extra blur/focus events and other issues.
+For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9288">#9288</a>.</li>
+<li>Fixed an issue where <code>NavigationView</code> could show a binding error in debug output. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9384">#9384</a>.</li>
+<li>Fixed an issue where SVG files defining a negative viewbox no longer rendered. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9415">#9415</a>.</li>
+<li>Fixed an issue where changing <code>ItemsView.Layout</code> orientation caused an item to be removed. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9422">#9422</a>.</li>
+<li>Fixed an issue where scrolling a <code>ScrollView</code> generated a lot of debug output. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9434">#9434</a>.</li>
+<li>Fixed an issue where <code>MapContorl.InteractiveControlsVisible</code> did not work properly. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9486">#9486</a>.</li>
+<li>Fixed an issue where <code>MapControl.MapElementClick</code> event didn't properly fire. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9487">#9487</a>.</li>
+<li>Fixed an issue where x:Bind didn't check for null before using a weak reference, which could result in a crash. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9551">#9551</a>.</li>
+<li>Fixed an issue where changing the <code>TeachingTip.Target</code> property didn't correctly update its position. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9553">#9553</a>.</li>
+<li>Fixed an issue where dropdowns did not respond in WebView2. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9566">#9566</a>.</li>
+<li>Fixed a memory leak when using <code>GeometryGroup</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9578">#9578</a>.</li>
+<li>Fixed an issue where scrolling through a very large number of items from an <code>ItemRepeater</code> in a <code>ScrollView</code> could cause blank render frames. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9643">#9643</a>.</li>
+<li>Fixed an issue where <code>SceneVisual</code> wasn't working.</li>
+</ul>
+<h3 id="new-apis-in-160-preview1">New APIs in 1.6.0-preview1</h3>
+<p>Version 1.6-preview1 includes the following new APIs compared to the stable 1.5 release:</p>
+<pre><code class="lang-C#">Microsoft.UI
+
+    ColorHelper
+        ToDisplayName
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Input
+
+    EnteredMoveSizeEventArgs
+    EnteringMoveSizeEventArgs
+    ExitedMoveSizeEventArgs
+    InputNonClientPointerSource
+        EnteredMoveSize
+        EnteringMoveSize
+        ExitedMoveSize
+        WindowRectChanged
+        WindowRectChanging
+
+    MoveSizeOperation
+    WindowRectChangedEventArgs
+    WindowRectChangingEventArgs
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+
+    XamlRoot
+        CoordinateConverter
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Automation.Peers
+
+    ScrollPresenterAutomationPeer
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls
+
+    PipsPager
+        WrapMode
+        WrapModeProperty
+
+    PipsPagerWrapMode
+    TabView
+        CanTearOutTabs
+        CanTearOutTabsProperty
+        ExternalTornOutTabsDropped
+        ExternalTornOutTabsDropping
+        TabTearOutRequested
+        TabTearOutWindowRequested
+
+    TabViewExternalTornOutTabsDroppedEventArgs
+    TabViewExternalTornOutTabsDroppingEventArgs
+    TabViewTabTearOutRequestedEventArgs
+    TabViewTabTearOutWindowRequestedEventArgs
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Globalization
+
+    ApplicationLanguages
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Management.Deployment
+
+    EnsureReadyOptions
+        RegisterNewerIfAvailable
+
+    PackageDeploymentFeature
+    PackageDeploymentManager
+        IsPackageDeploymentFeatureSupported
+        IsPackageProvisioned
+        IsPackageProvisionedByUri
+        IsPackageReadyOrNewerAvailable
+        IsPackageReadyOrNewerAvailableByUri
+        IsPackageSetProvisioned
+        IsPackageSetReadyOrNewerAvailable
+
+    PackageReadyOrNewerAvailableStatus
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Storage
+
+    ApplicationData
+    ApplicationDataContainer
+    ApplicationDataContract
+    ApplicationDataCreateDisposition
+    ApplicationDataLocality
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Stable channel</a></li>
+<li><a href="../experimental-channel.html">Experimental channel</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deploy apps that use the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.6.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

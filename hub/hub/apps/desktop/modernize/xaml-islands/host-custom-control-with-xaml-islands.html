@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Host a custom WinRT XAML control in a WPF app using XAML Islands </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Host a custom WinRT XAML control in a WPF app using XAML Islands ">
+    
+    <meta name="description" content="This article demonstrates how to host a custom WinRT XAML control in a WPF app by using XAML Islands.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="host-a-custom-winrt-xaml-control-in-a-wpf-app-using-xaml-islands">Host a custom WinRT XAML control in a WPF app using XAML Islands</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This topic uses or mentions types from the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32">CommunityToolkit/Microsoft.Toolkit.Win32</a> GitHub repo. For important info about XAML Islands support, please see the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice">XAML Islands Notice</a> in that repo.</p>
+</div>
+<p>This article demonstrates how to use the <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> control in the Windows Community Toolkit to host a custom WinRT XAML control in a WPF app that targets .NET Core 3.1. The custom control contains several first-party controls from the Windows SDK and binds a property in one of the WinRT XAML controls to a string in the WPF app. This article also demonstrates how to also host a control from the <a href="/uwp/toolkits/winui/">WinUI library</a>.</p>
+<p>Although this article demonstrates how to do this in a WPF app, the process is similar for a Windows Forms app. For an overview about hosting WinRT XAML controls in WPF and Windows Forms apps, see <a href="xaml-islands.html#wpf-and-windows-forms-applications">this article</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET, or in apps that any version of the .NET Framework.</p>
+</div>
+<h2 id="required-components">Required components</h2>
+<p>To host a custom WinRT XAML control in a WPF (or Windows Forms) app, you'll need the following components in your solution. This article provides instructions for creating each of these components.</p>
+<ul>
+<li><p><strong>The project and source code for your app</strong>. Using the <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> control to host custom controls is supported only in apps that target .NET Core 3.x.</p>
+</li>
+<li><p><strong>The custom WinRT XAML control</strong>. You'll need the source code for the custom control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your WPF or Windows Forms project.</p>
+</li>
+<li><p><strong>A UWP app project that defines a root Application class that derives from XamlApplication</strong>. Your WPF or Windows Forms project must have access to an instance of the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</a> class provided by the Windows Community Toolkit so that it can discover and load custom UWP XAML controls. The recommended way to do this is to define this object in a separate UWP app project that is part of the solution for your WPF or Windows Forms app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Your solution can contain only one project that defines a <code>XamlApplication</code> object. All custom WinRT XAML controls in your app share the same <code>XamlApplication</code> object. The project that defines the <code>XamlApplication</code> object must include references to all other WinRT libraries and projects that are used host to controls on the XAML Island.</p>
+</div>
+</li>
+</ul>
+<h2 id="create-a-wpf-project">Create a WPF project</h2>
+<p>Before getting started, follow these instructions to create a WPF project and configure it to host XAML Islands. If you have an existing WPF project, you can adapt these steps and code examples for your project.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have an existing project that targets the .NET Framework, you'll need to migrate your project to .NET Core 3.1. For more information, see <a href="https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/">this blog series</a>.</p>
+</div>
+<ol>
+<li><p>If you haven't done so already, install the latest version of the <a href="https://dotnet.microsoft.com/download/dotnet/current">.NET Core 3.1 SDK</a>.</p>
+</li>
+<li><p>In Visual Studio 2019, create a new <strong>WPF App (.NET Core)</strong> project.</p>
+</li>
+<li><p>Make sure <a href="/nuget/consume-packages/package-references-in-project-files">package references</a> are enabled:</p>
+<ol>
+<li>In Visual Studio, click <strong>Tools -&gt; NuGet Package Manager -&gt; Package Manager Settings</strong>.</li>
+<li>Make sure <strong>PackageReference</strong> is selected for <strong>Default package management format</strong>.</li>
+</ol>
+</li>
+<li><p>Right-click your WPF project in <strong>Solution Explorer</strong> and choose <strong>Manage NuGet Packages</strong>.</p>
+</li>
+<li><p>Select the <strong>Browse</strong> tab, search for the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost">Microsoft.Toolkit.Wpf.UI.XamlHost</a> package and install the latest stable version. This package provides everything you need to use the <strong>WindowsXamlHost</strong> control to host a WinRT XAML control, including other related NuGet packages.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows Forms apps must use the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost">Microsoft.Toolkit.Forms.UI.XamlHost</a> package.</p>
+</div>
+</li>
+<li><p>Configure your solution to target a specific platform such as x86 or x64. Custom WinRT XAML controls are not supported in projects that target <strong>Any CPU</strong>.</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click the solution node and select <strong>Properties</strong> -&gt; <strong>Configuration Properties</strong> -&gt; <strong>Configuration Manager</strong>.</li>
+<li>Under <strong>Active solution platform</strong>, select <strong>New</strong>.</li>
+<li>In the <strong>New Solution Platform</strong> dialog, select <strong>x64</strong> or <strong>x86</strong> and press <strong>OK</strong>.</li>
+<li>Close the open dialog boxes.</li>
+</ol>
+</li>
+</ol>
+<h2 id="define-a-xamlapplication-class-in-a-uwp-app-project">Define a XamlApplication class in a UWP app project</h2>
+<p>Next, add a UWP app project to your solution and revise the default <code>App</code> class in this project to derive from the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication</a> class provided by the Windows Community Toolkit. This class supports the <a href="/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider">IXamlMetadataProvider</a> interface, which enables your app to discover and load metadata for custom UWP XAML controls in assemblies in the current directory of your application at run time. This class also initializes the UWP XAML framework for the current thread.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node and select <strong>Add</strong> -&gt; <strong>New Project</strong>.</p>
+</li>
+<li><p>Add a <strong>Blank App (Universal Windows)</strong> project to your solution. Make sure the target version and minimum version are both set to <strong>Windows 10, version 1903 (Build 18362)</strong> or a later release.</p>
+</li>
+<li><p>In the UWP app project, install the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.XamlApplication">Microsoft.Toolkit.Win32.UI.XamlApplication</a> NuGet package (latest stable version).</p>
+</li>
+<li><p>Open the <strong>App.xaml</strong> file and replace the contents of this file with the following XAML. Replace <code>MyUWPApp</code> with the namespace of your UWP app project.</p>
+<pre><code class="lang-xml">&lt;xaml:XamlApplication
+    x:Class=&quot;MyUWPApp.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:xaml=&quot;using:Microsoft.Toolkit.Win32.UI.XamlHost&quot;
+    xmlns:local=&quot;using:MyUWPApp&quot;&gt;
+&lt;/xaml:XamlApplication&gt;
+</code></pre>
+</li>
+<li><p>Open the <strong>App.xaml.cs</strong> file and replace the contents of this file with the following code. Replace <code>MyUWPApp</code> with the namespace of your UWP app project.</p>
+<pre><code class="lang-csharp">namespace MyUWPApp
+{
+    public sealed partial class App : Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication
+    {
+        public App()
+        {
+            this.Initialize();
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Delete the <strong>MainPage.xaml</strong> file from the UWP app project.</p>
+</li>
+<li><p>Clean the UWP app project and then build it.</p>
+</li>
+</ol>
+<h2 id="add-a-reference-to-the-uwp-project-in-your-wpf-project">Add a reference to the UWP project in your WPF project</h2>
+<ol>
+<li><p>Specify the compatible framework version in the WPF project file.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, double-click the WPF project node to open the project file in the editor.</p>
+</li>
+<li><p>In the first <strong>PropertyGroup</strong> element, add the following child element. Change the <code>19041</code> portion of the value as necessary to match the target and minimum OS build of the UWP project.</p>
+<pre><code class="lang-xml">&lt;AssetTargetFallback&gt;uap10.0.19041&lt;/AssetTargetFallback&gt;
+</code></pre>
+<p>When you're done, the <strong>PropertyGroup</strong> element should look similar to this.</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;netcoreapp3.1&lt;/TargetFramework&gt;
+    &lt;UseWPF&gt;true&lt;/UseWPF&gt;
+    &lt;Platforms&gt;AnyCPU;x64&lt;/Platforms&gt;
+    &lt;AssetTargetFallback&gt;uap10.0.19041&lt;/AssetTargetFallback&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>Dependencies</strong> node under the WPF project and add a reference to your UWP app project.</p>
+</li>
+</ol>
+<h2 id="instantiate-the-xamlapplication-object-in-the-entry-point-of-your-wpf-app">Instantiate the XamlApplication object in the entry point of your WPF app</h2>
+<p>Next, add code to the entry point for your WPF app to create an instance of the <code>App</code> class you just defined in the UWP project (this is the class that now derives from <code>XamlApplication</code>).</p>
+<ol>
+<li><p>In your WPF project, right-click the project node, select <strong>Add</strong> -&gt; <strong>New Item</strong>, and then select <strong>Class</strong>. Name the class <strong>Program</strong> and click <strong>Add</strong>.</p>
+</li>
+<li><p>Replace the generated <code>Program</code> class with the following code and then save the file. Replace <code>MyUWPApp</code> with the namespace of your UWP app project, and replace <code>MyWPFApp</code> with the namespace of your WPF app project.</p>
+<pre><code class="lang-csharp">public class Program
+{
+    [System.STAThreadAttribute()]
+    public static void Main()
+    {
+        using (new MyUWPApp.App())
+        {
+            MyWPFApp.App app = new MyWPFApp.App();
+            app.InitializeComponent();
+            app.Run();
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Right-click the project node and choose <strong>Properties</strong>.</p>
+</li>
+<li><p>On the <strong>Application</strong> tab of the properties, click the <strong>Startup object</strong> drop-down and choose the fully qualified name of the <code>Program</code> class you added in the previous step.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default, WPF projects define a <code>Main</code> entry point function in a generated code file that isn't intended to be modified. This step changes the entry point for your project to the <code>Main</code> method of the new <code>Program</code> class, which enables you to add code that runs as early in the startup process of the app as possible.</p>
+</div>
+</li>
+<li><p>Save your changes to the project properties.</p>
+</li>
+</ol>
+<h2 id="create-a-custom-winrt-xaml-control">Create a custom WinRT XAML control</h2>
+<p>To host a custom WinRT XAML control in your WPF app, you must have the source code for the control so you can compile it with your app. Typically custom controls are defined in a UWP class library project for easy portability.</p>
+<p>In this section, you will define a simple custom control in a new class library project. You can alternatively define the custom control in the UWP app project you created in the previous section. However, these steps do this in a separate class library project for illustrative purposes because this is typically how custom controls are implemented for portability.</p>
+<p>If you already have a custom control, you can use it instead of the control shown here. However, you'll still need to configure the project that contains the control as shown in these steps.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node and select <strong>Add</strong> -&gt; <strong>New Project</strong>.</p>
+</li>
+<li><p>Add a <strong>Class Library (Universal Windows)</strong> project to your solution. Make sure the target version and minimum version are both set to the same target and minimum OS build as the UWP project.</p>
+</li>
+<li><p>Right-click the project file and select <strong>Unload Project</strong>. Right-click the project file again and select <strong>Edit</strong>.</p>
+</li>
+<li><p>Before the closing <code>&lt;/Project&gt;</code> element, add the following XML to disable several properties and then save the project file. These properties must be enabled to host the custom control in a WPF (or Windows Forms) app.</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;EnableTypeInfoReflection&gt;false&lt;/EnableTypeInfoReflection&gt;
+  &lt;EnableXBindDiagnostics&gt;false&lt;/EnableXBindDiagnostics&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+<li><p>Right-click the project file and select <strong>Reload Project</strong>.</p>
+</li>
+<li><p>Delete the default <strong>Class1.cs</strong> file and add a new <strong>User Control</strong> item to the project.</p>
+</li>
+<li><p>In the XAML file for the user control, add the following <code>StackPanel</code> as a child of the default <code>Grid</code>. This example adds a <code>TextBlock</code> control and then binds the <code>Text</code> attribute of that control to the <code>XamlIslandMessage</code> field.</p>
+<pre><code class="lang-xml">&lt;StackPanel Background=&quot;LightCoral&quot;&gt;
+    &lt;TextBlock&gt;This is a simple custom WinRT XAML control&lt;/TextBlock&gt;
+    &lt;Rectangle Fill=&quot;Blue&quot; Height=&quot;100&quot; Width=&quot;100&quot;/&gt;
+    &lt;TextBlock Text=&quot;{x:Bind XamlIslandMessage}&quot; FontSize=&quot;50&quot;&gt;&lt;/TextBlock&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+</li>
+<li><p>In the code-behind file for the user control, add the <code>XamlIslandMessage</code> field to the user control class as shown below.</p>
+<pre><code class="lang-csharp">public sealed partial class MyUserControl : UserControl
+{
+    public string XamlIslandMessage { get; set; }
+
+    public MyUserControl()
+    {
+        this.InitializeComponent();
+    }
+}
+</code></pre>
+</li>
+<li><p>Build the UWP class library project.</p>
+</li>
+<li><p>In your WPF project, right-click the <strong>Dependencies</strong> node and add a reference to the UWP class library project.</p>
+</li>
+<li><p>In the UWP app project you configured earlier, right-click the <strong>References</strong> node and add a reference to the UWP class library project.</p>
+</li>
+<li><p>Rebuild the entire solution and make sure all the projects build successfully.</p>
+</li>
+</ol>
+<h2 id="host-the-custom-winrt-xaml-control-in-your-wpf-app">Host the custom WinRT XAML control in your WPF app</h2>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, expand the WPF project and open the MainWindow.xaml file or some other window in which you want to host the custom control.</p>
+</li>
+<li><p>In the XAML file, add the following namespace declaration to the <code>&lt;Window&gt;</code> element.</p>
+<pre><code class="lang-xml">xmlns:xaml=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost&quot;
+</code></pre>
+</li>
+<li><p>In the same file, add the following control to the <code>&lt;Grid&gt;</code> element. Change the <code>InitialTypeName</code> attribute to the fully qualified name of the user control in your UWP class library project.</p>
+<pre><code class="lang-xml">&lt;xaml:WindowsXamlHost InitialTypeName=&quot;UWPClassLibrary.MyUserControl&quot; ChildChanged=&quot;WindowsXamlHost_ChildChanged&quot; /&gt;
+</code></pre>
+</li>
+<li><p>Open the code-behind file and add the following code to the <code>Window</code> class. This code defines a <code>ChildChanged</code> event handler that assigns the value of the <code>XamlIslandMessage</code> field of the UWP custom control to the value of the <code>WPFMessage</code> field in the WPF app. Change <code>UWPClassLibrary.MyUserControl</code> to the fully qualified name of the user control in your UWP class library project.</p>
+<pre><code class="lang-csharp">private void WindowsXamlHost_ChildChanged(object sender, EventArgs e)
+{
+    // Hook up x:Bind source.
+    global::Microsoft.Toolkit.Wpf.UI.XamlHost.WindowsXamlHost windowsXamlHost =
+        sender as global::Microsoft.Toolkit.Wpf.UI.XamlHost.WindowsXamlHost;
+    global::UWPClassLibrary.MyUserControl userControl =
+        windowsXamlHost.GetUwpInternalObject() as global::UWPClassLibrary.MyUserControl;
+
+    if (userControl != null)
+    {
+        userControl.XamlIslandMessage = this.WPFMessage;
+    }
+}
+
+public string WPFMessage
+{
+    get
+    {
+        return &quot;Binding from WPF to UWP XAML&quot;;
+    }
+}
+</code></pre>
+</li>
+<li><p>Build and run your app and confirm that the UWP user control displays as expected.</p>
+</li>
+</ol>
+<h2 id="add-a-control-from-the-winui-2-library-to-the-custom-control">Add a control from the WinUI 2 library to the custom control</h2>
+<p>Traditionally, WinRT XAML controls have been released as part of the Windows OS and made available to developers through the Windows SDK. The <a href="/uwp/toolkits/winui/">WinUI library</a> is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform.</p>
+<p>This section demonstrates how to add a WinRT XAML control from the WinUI 2 library to your user control.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Currently, XAML Islands only supports hosting controls from the WinUI 2 library. Support for hosting controls from the WinUI 3 library is coming in a later release.</p>
+</div>
+<ol>
+<li><p>In the UWP app project, install the latest release or prerelease version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NuGet package.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your desktop app is packaged in an <a href="/windows/msix">MSIX package</a>, you can use either a prerelease or release version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NugGet package. If your desktop app is not packaged using MSIX, you must install a prerelease version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NuGet package.</p>
+</div>
+</li>
+<li><p>In the App.xaml file in this project, add the following child element to the <code>&lt;xaml:XamlApplication&gt;</code> element.</p>
+<pre><code class="lang-xml">&lt;Application.Resources&gt;
+    &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot; /&gt;
+&lt;/Application.Resources&gt;
+</code></pre>
+<p>After adding this element, the contents of this file should now look similar to this.</p>
+<pre><code class="lang-xml">&lt;xaml:XamlApplication
+    x:Class=&quot;MyUWPApp.App&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:xaml=&quot;using:Microsoft.Toolkit.Win32.UI.XamlHost&quot;
+    xmlns:local=&quot;using:MyUWPApp&quot;&gt;
+    &lt;Application.Resources&gt;
+        &lt;XamlControlsResources xmlns=&quot;using:Microsoft.UI.Xaml.Controls&quot; /&gt;
+    &lt;/Application.Resources&gt;
+&lt;/xaml:XamlApplication&gt;
+</code></pre>
+</li>
+<li><p>In the UWP class library project, install the latest version of the <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml">Microsoft.UI.Xaml</a> NuGet package (the same version that you installed in the UWP app project).</p>
+</li>
+<li><p>In the same project, open the XAML file for the user control and add the following namespace declaration to the <code>&lt;UserControl&gt;</code> element.</p>
+<pre><code class="lang-xml">xmlns:winui=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+</code></pre>
+</li>
+<li><p>In the same file, add a <code>&lt;winui:RatingControl /&gt;</code> element as a child of the <code>&lt;StackPanel&gt;</code>. This element adds an instance of the <a href="/uwp/api/microsoft.ui.xaml.controls.ratingcontrol">RatingControl</a> class from the WinUI library. After adding this element, the <code>&lt;StackPanel&gt;</code> should now look similar to this.</p>
+<pre><code class="lang-xml">&lt;StackPanel Background=&quot;LightCoral&quot;&gt;
+    &lt;TextBlock&gt;This is a simple custom WinRT XAML control&lt;/TextBlock&gt;
+    &lt;Rectangle Fill=&quot;Blue&quot; Height=&quot;100&quot; Width=&quot;100&quot;/&gt;
+    &lt;TextBlock Text=&quot;{x:Bind XamlIslandMessage}&quot; FontSize=&quot;50&quot;&gt;&lt;/TextBlock&gt;
+    &lt;winui:RatingControl /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+</li>
+<li><p>Build and run your app and confirm that the new rating control displays as expected.</p>
+</li>
+</ol>
+<h2 id="package-the-app">Package the app</h2>
+<p>You can optionally package the WPF app in an <a href="/windows/msix">MSIX package</a> for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V, and ClickOnce installation technologies.</p>
+<p>The following instructions show you how to package the all the components in the solution in an MSIX package by using the <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> in Visual Studio 2019. These steps are necessary only if you want to package the WPF app in an MSIX package.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose to not package your application in an <a href="/windows/msix">MSIX package</a> for deployment, then computers that run your app must have the <a href="https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads">Visual C++ Runtime</a> installed.</p>
+</div>
+<ol>
+<li><p>Add a new <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> to your solution. As you create the project, select the same <strong>Target version</strong> and <strong>Minimum version</strong> as you selected for the UWP project.</p>
+</li>
+<li><p>In the packaging project, right-click the <strong>Applications</strong> node and choose <strong>Add reference</strong>. In the list of projects, select the WPF project in your solution and click <strong>OK</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to publish your app in the Microsoft Store, you have to add reference to the UWP project in the packaging project.</p>
+</div>
+</li>
+<li><p>Configure your solution to target a specific platform such as x86 or x64. This is required to build the WPF app into an MSIX package using the Windows Application Packaging Project.</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click the solution node and select <strong>Properties</strong> -&gt; <strong>Configuration Properties</strong> -&gt; <strong>Configuration Manager</strong>.</li>
+<li>Under <strong>Active solution platform</strong>, select <strong>x64</strong> or <strong>x86</strong>.</li>
+<li>In the row for your WPF project, in the <strong>Platform</strong> column select <strong>New</strong>.</li>
+<li>In the <strong>New Solution Platform</strong> dialog, select <strong>x64</strong> or <strong>x86</strong> (the same platform you selected for <strong>Active solution platform</strong>) and click <strong>OK</strong>.</li>
+<li>Close the open dialog boxes.</li>
+</ol>
+</li>
+<li><p>Build and run the packaging project. Confirm that the WPF runs and the UWP custom control displays as expected.</p>
+</li>
+<li><p>For info about distributing/deploying the package, see <a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a>.</p>
+</li>
+</ol>
+<h2 id="resolve-cannot-find-a-resource-error-when-hosting-a-winui-control">Resolve &quot;Cannot find a Resource&quot; error when hosting a WinUI control</h2>
+<p>If you're hosting a custom control that contains a control from the WinUI library, you may encounter a problem where the control cannot be loaded in a packaged app and debugging the code shows the following error.</p>
+<p><img src="../images/xaml-islands/host-custom-control-error.png" alt="Failed to host WinUI library control"></p>
+<p>To resolve this error, copy the <strong>App.xbf</strong> file from the build output folder of the WPF project to the <strong>\AppX\&lt;WPF project&gt;</strong> build output folder of the packaging project.</p>
+<p>For example, if the WPF project is named <strong>WPFXamlIslandsApp</strong> and targets x86 platform, copy <strong>App.xbf</strong> from <strong>\WPFXamlIslandsApp\bin\x86\Release\netcoreapp3.1</strong> to <strong>\WPFXamlIslandsApp.Pack\bin\x86\Release\AppX\WPFXamlIslandsAPP</strong>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="xaml-islands.html">Host UWP XAML controls in desktop apps (XAML Islands)</a></li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands code samples</a></li>
+<li><a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

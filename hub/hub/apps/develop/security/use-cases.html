@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use cases for passkeys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use cases for passkeys ">
+    
+    <meta name="description" content="This topic describes some use cases for passkeys.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-cases-for-passkeys">Use cases for passkeys</h1>
+
+<p>This topic describes some use cases for passkeys.</p>
+<h2 id="use-case-1-bootstrapping">Use case 1: Bootstrapping</h2>
+<p>Bootstrapping an account on the web.</p>
+<h3 id="11-authenticating-the-user">1.1: Authenticating the user</h3>
+<p>This section applies when the relying party (RP) doesn't yet know who is controlling the client device. There's no browser artifact available to the RP (such as a cookie or a credential ID in local storage), although for now we assume that the user has an existing account with the RP.</p>
+<p>To bootstrap an account, serve the user a sign-in page.</p>
+<p>Begin by asking the user for their account identifier; typically a username or email address.</p>
+<p><img src="images/bootstrapping-1.png" alt="Sign in"></p>
+<p>To support the autofill UI for passkeys, make sure to:</p>
+<ol>
+<li>Add the <code>username</code> and <code>webauthn</code> value to any existing autocomplete annotations on the <strong>username</strong> input field.</li>
+</ol>
+<pre><code class="lang-html">&lt;div&gt;
+  &lt;label for=&quot;username&quot;&gt;Username:&lt;/label&gt;
+  &lt;input name=&quot;username&quot; id=&quot;loginform.username&quot;
+         autocomplete=&quot;username webauthn&quot;&gt;
+&lt;/div&gt;
+</code></pre>
+<ol start="2">
+<li>On page load, use an <code>if</code> statement to check to see whether autofill UI (conditional mediation) is available, then call <code>navigator.credentials.get()</code> with <code>mediation: &quot;conditional&quot;</code> and <code>userVerification: &quot;preferred&quot;</code>.</li>
+</ol>
+<pre><code class="lang-javascript">  &lt;script&gt;
+    (async () =&gt; {
+      if (
+      typeof window.PublicKeyCredential !== 'undefined'
+      &amp;&amp; typeof window.PublicKeyCredential.isConditionalMediationAvailable === 'function'
+      ) {
+        const available = await PublicKeyCredential.isConditionalMediationAvailable();
+
+      if (available) {
+          try {
+            // Retrieve authentication options for `navigator.credentials.get()`
+            // from your server.
+            const authOptions = await getAuthenticationOptions();
+      // This call to `navigator.credentials.get()` is &quot;set and forget.&quot;
+      // The Promise will resolve only if the user successfully interacts
+      // with the browser's autofill UI to select a passkey.
+      const webAuthnResponse = await navigator.credentials.get({
+          mediation: &quot;conditional&quot;,
+      publicKey: {
+          ...authOptions,
+          // See note about userVerification below.
+          userVerification: &quot;preferred&quot;,
+              }
+            });
+      // Send the response to your server for verification, and
+      // authenticate the user if the response is valid.
+      await verifyAutoFillResponse(webAuthnResponse);
+          } catch (err) {
+          console.error('Error with conditional UI:', err);
+          }
+        }
+      }
+    })();
+  &lt;/script&gt;
+</code></pre>
+<p>The above will cause the following to happen:</p>
+<ul>
+<li>Retrieve the authentication options from your server. Return at least a random <code>challenge</code> and <code>rpId</code> to be associated with this authentication request.</li>
+<li>When the user interacts with your <strong>username</strong> field, the browser and platform will check whether a passkey exists (in the platform authenticator) that can be used with the relying party.</li>
+<li>If that <em>is</em> the case, then the passkey will be presented to the user as an option to choose (along with other credentials that can be auto-filled, such as usernames stored in the browser's password manager). The browser/platform might render a UI similar to the one shown below. Although, the exact look and feel varies from one platform or form factor to another:</li>
+</ul>
+<p><img src="images/bootstrapping-2.png" alt="Sign in with passkey"></p>
+<ul>
+<li>If the user selects the passkey, then the platform UI will guide the user through an (often biometrics-based) user verification check.</li>
+<li>If the user successfully passes the user verification, then the <code>navigator.credentials.get()</code> call succeeds and returns a WebAuthn response.</li>
+<li>If the user selects a credential other than a passkey, then the browser/platform chooses a different appropriate action (such as auto-filling the username), and the <code>navigator.credentials.get()</code> call doesn't resolve.</li>
+<li>If the user selects the &quot;Passkey from another device&quot; option (the exact text will vary slightly by platform), then the browser/platform will guide the user through using a FIDO2 security key or the Cross-Device Authentication (CDA) flow to use a passkey from their smartphone or tablet to deliver a WebAuthn response to the <code>navigator.credentials.get()</code> call.</li>
+<li>Send the WebAuthn response to your server for verification and additional security checks. If all checks succeed, then begin an authenticated session for this user.</li>
+</ul>
+<p>This is why this is called the <em>conditional UI</em> (or, more commonly, the <em>autofill UI</em>) mode of WebAuthn—the platform authenticator UI that guides the user through the verification, or through using their phone, is shown only if the user has a passkey on this device (or chooses the &quot;another device&quot; option).</p>
+<p>As you can see, in this mode the <code>navigator.credentials.get()</code> call either succeeds, or it doesn't because it never resolves. If it does succeed, then the result of the call will reveal both a user id and a signed WebAuthn assertion, which the relying party (RP) will use to authenticate the user.</p>
+<p>If the call doesn't succeed, then you should perform a <em>legacy</em> user authentication. You'll obtain a username from this first page, and in subsequent pages you then serve appropriate further login challenges (such as passwords, responding to SMS challenges, etc.) to the user. Those might include <em>account recovery</em> steps in case the user has forgotten their password, or is otherwise not able to pass the regular login challenges. Once the user has passed all the login challenges, they're considered authenticated and signed in.</p>
+<p>When the user doesn't already have an account with the relying party (RP), you'll usually give the user the option on the sign-in page to create an account. If the user chooses that option, then you'll collect the necessary information from them to open a new account. If they successfully open a new account, then they're also considered authenticated and signed-in.</p>
+<p>Once the user is signed in, it might be time to set up a new passkey for them. Do that for any of the following cases:</p>
+<ul>
+<li>The user bootstrapped their account on the device by passing non-passkey login challenges (such as using a password).</li>
+<li>The user just created a new account at the relying party (RP), and they're considered signed in because of that.</li>
+<li>The user was using a passkey, but they used a different device from the one they're currently using (by selecting &quot;another device&quot; shown in the example above). This can be confirmed by inspecting the <strong>authenticatorAttachment</strong> attribute in the returned <strong>PublicKeyCredential</strong> object.</li>
+</ul>
+<h3 id="12-cross-device-authentication">1.2: Cross-device authentication</h3>
+<p>If the user used a passkey from another device (such as a phone, tablet, or FIDO2 security key), then the <strong>authenticatorAttachment</strong> property in the authentication response (<strong>getAssertion</strong>) will have the value <code>cross-platform</code>.</p>
+<p>In that scenario, offer the user the choice to create a passkey on their local device. That will result in a more seamless user experience in the future, because the user won't be required to use their other device.</p>
+<p><img src="images/bootstrapping-3.png" alt="Set up a passkey on this device!"></p>
+<h3 id="13-a-note-about-user-verification">1.3: A note about user verification</h3>
+<p>This guidance sets <strong>userVerification</strong> to <code>preferred</code>, meaning that user verification will be attempted when possible.</p>
+<p>Some devices, such as desktop computers and older laptops, might not have biometric sensors. On those devices, if <strong>userVerification</strong> is set to <code>required</code>, then the user might be asked to enter their system login password for each sign in using a passkey. And that can be frustrating for them.</p>
+<p>When <code>preferred</code> is used, some platform authenticators will always require a user verification check when the device has biometric sensors, but might skip user verification on devices without them.</p>
+<p>The user verification result (conveyed in authenticator data flags) will reflect the actual user verification result, and should always be validated against your requirements on the server.</p>
+<h3 id="14-opt-the-user-in-to-passkeys">1.4: Opt the user in to passkeys</h3>
+<p>First, verify that the user is sufficiently strongly authenticated using other login methods, including multi-factor authentication.</p>
+<p>Second, ensure that the user's device and operating system (OS) combo supports passkeys by calling:</p>
+<pre><code class="lang-javascript">PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()
+</code></pre>
+<p>If passkeys are supported, then that will return <code>true</code>. If they aren't supported, then it will return <code>false</code>, and you should abort the passkey enrollment flow.</p>
+<p>Serve an opt-in or &quot;upsell&quot; modal/interstitial or page to the user offering them to create a passkey:</p>
+<p><img src="images/bootstrapping-4.png" alt="Faster, safer sign-in with passkeys!"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>In order to ensure that the user is giving fully informed consent, consider showing (or linking to) longer descriptions explaining that all users who are able to unlock the current device will be able to access the account at the relying party (RP).</p>
+</div>
+<p>If the user consents, then call <code>navigator.credentials.create()</code> with the options shown in the example below:</p>
+<pre><code class="lang-javascript">navigator.credentials.create({
+  publicKey: {
+    rp: {
+      // User-friendly name of your service.
+      name: &quot;Passkeys Developer&quot;,
+      // Relying party (RP) identifier (hostname/FQDN).
+      id: passkeys.contoso&quot;
+    },
+
+    user: {
+      // Persistent, unique identifier for the user account in your backend.
+      id: Uint8Array.from(&quot;0525bc79-5a63-4e47-b7d1-597e25f5caba&quot;, c =&gt; c.charCodeAt(0)),
+      // User-friendly identifier often displayed to the user (for example, email address).
+      name: &quot;amanda@contoso.com&quot;,
+      // Human-readable display name, sometimes displayed by the client.
+      displayName: &quot;Amanda Brady&quot;
+    },
+    // The challenge is a buffer of cryptographically random bytes generated on your backend,
+    // and should be tightly bound to the current user session.
+    challenge: Uint8Array.from(&quot;XZJscsUqtBH7ZB90t2g0EbZTZYlbSRK6lq7zlN2lJKuoYMnp7Qo2OLzD7xawL3s&quot;, c =&gt; c.charCodeAt(0)),
+    pubKeyCredParams: [
+      // An array of objects describing what public key types are acceptable to a server.
+      {
+        &quot;type&quot;: &quot;public-key&quot;,
+        &quot;alg&quot;: -7 // EC P256
+      },
+      {
+        &quot;type&quot;: &quot;public-key&quot;,
+        &quot;alg&quot;: -257 // RSA
+      }
+    ],
+    excludeCredentials: [
+      // Array of credential IDs for existing passkeys tied to the user account.
+      // This avoids creating a new passkey in an authenticator that already has 
+      // a passkey tied to the user account.
+      {
+        // Example only.
+        type: &quot;public-key&quot;,
+        id: new Uint8Array([21, 31, 56, ...]).buffer
+      },
+      {
+        // Example only.
+        type: &quot;public-key&quot;,
+        id: new Uint8Array([21, 31, 56, ...]).buffer
+      }
+    ],
+    authenticatorSelection: {
+      // Tells the authenticator to create a passkey.
+      residentKey: &quot;required&quot;,
+      // Tells the client/authenticator to request user verification where possible;
+      // for example, a biometric or a device PIN.
+      userVerification: &quot;preferred&quot;
+    },
+    &quot;extensions&quot;: {
+      // Returns details about the passkey.
+      &quot;credProps&quot;: true
+    }
+  }
+})
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend that most relying parties (RPs) not specify the attestation conveyance parameter <code>attestation</code> (thus defaulting to none), or instead explicitly use the value <code>indirect</code>. That guarantees the most streamlined user experience (platforms are likely to obtain consent from the user for other types of attestation conveyances, which likely results in a larger fraction of unsuccessful credential creations due to users canceling the creation).</p>
+</div>
+<p>When the WebAuthn call resolves, send the response to your server, and associate the returned public key and credential ID with the previously authenticated user account.</p>
+<h2 id="use-case-2-reauthentication">Use case 2: Reauthentication</h2>
+<p>Using passkeys for a reauthentication might be necessary for any of the following reasons:</p>
+<ul>
+<li>The user signed out, and now wants to sign in again.</li>
+<li>The user session expired due to inactivity, and the user wants to sign in again.</li>
+<li>The user is about to perform a sensitive action, and needs to re-confirm control over the user session.</li>
+</ul>
+<p>To reauthenticate the user in each of these situations, you'll use passkeys that you set up in the previous use case. The WebAuthn API call is the same in all three cases, but the UI treatment that you provide is slightly different. Since the particular account is specified by you, the platform won't prompt the user to select a different account on your service.</p>
+<h3 id="21-sensitive-actions">2.1: Sensitive actions</h3>
+<p>Let's look at the UI for the third reason first—when it's time to reauthenticate for a sensitive action, check whether you have a credential ID for at least one passkey for the user.</p>
+<p>If no such credential ID is available, then serve a traditional login challenge suitable for reauthentication, for example:</p>
+<p><img src="images/reauthentication-1.png" alt="Let's make sure it's you 1"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>We recommend that on this login challenge page, users can't change their account identifier. Also, the login challenge should be something that an unauthorized user of the device can't pass.</p>
+</div>
+<p>If, on the other hand, you <em>do</em> find at least one passkey credential ID for the user, then you can use passkeys for reauthentication:</p>
+<p><img src="images/reauthentication-2.png" alt="Let's make sure it's you 2"></p>
+<p>When the user is ready (in the above example, when they click on the &quot;Go&quot; button), call <code>navigator.credentials.get()</code>, passing in all the user's passkey credential IDs:</p>
+<pre><code class="lang-javascript">navigator.credentials.get({
+  publicKey: {
+    challenge: ...,
+    rpId: ...,
+     allowCredentials: [{
+      type: &quot;public-key&quot;,      
+      id: new UInt8Array([21, 31, 56, ...]).buffer,
+    }, {
+      type: &quot;public-key&quot;,
+      id: new UInt8Array([21, 31, 56, ...]).buffer,
+    }, {
+      ...
+    }],
+    // see note below
+    userVerification: &quot;preferred&quot;, 
+  }
+});
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Be sure to read the guidance around userVerification from the previous use case.</p>
+</div>
+<p>If the user instead clicks on &quot;Try another way&quot;, then you should offer them other sign-in methods (password, etc.) to reauthenticate them (assuming that the user has such other sign-in methods available to them).</p>
+<h3 id="22-expired-sessions-and-logout">2.2: Expired sessions and logout</h3>
+<p>Now we'll examine the case where the reauthentication is triggered because the user logged themselves out, or the relying party (RP) expired the user's session. To facilitate that, the RP would have to keep some form of user session state reminding them of the account that was formerly signed in, even when they consider the user signed-out (that could be achieved using browser artifacts such as cookies or local storage).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A relying party (RP) might choose to treat signing out as a comprehensive action, and thus delete all references to the user's identity. Such an RP should treat a subsequent sign-in like an account bootstrap, and repeat the steps explained previously.</p>
+</div>
+<p>You, as the RP, might then serve a sign-in page like this:</p>
+<p><img src="images/reauthentication-3.png" alt="Welcome back! 1"></p>
+<p>If the user clicks on &quot;Use a different account&quot;, then you should enter an account bootstrap flow—as explained for the previous use case—repeating the steps there, where the platform will let the user select which account they want to use.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In that case, you should also give the user the ability to completely remove the suggested account from being listed on the sign-in page.</p>
+</div>
+<p>But if the user clicks the &quot;Sign In As&quot; button, then check whether you have at least one passkey credential ID associated with the user. If no credential ID is available, then serve a traditional login challenge suitable for reauthentication, for example:</p>
+<p><img src="images/reauthentication-4.png" alt="Welcome back! 2"></p>
+<p>If, on the other hand, you <em>do</em> find at least one passkey credential ID for the user, then you can use passkeys for reauthentication:</p>
+<p><img src="images/reauthentication-5.png" alt="Welcome back! 3"></p>
+<p>When the user is ready (in the above example, when they click on the &quot;Go&quot; button), call <code>navigator.credentials.get()</code>, exactly as already shown (that is, by passing in all the user's passkey credential IDs).</p>
+<p>If the user instead clicks on &quot;Try another way&quot;, then you should offer them other sign-in methods (password, etc.) to reauthenticate them (assuming that the user has such other sign-in methods available to them).</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Next, see <a href="tools-libraries.html">Tools and libraries for passkeys</a>.</p>
+<h2 id="further-info">Further info</h2>
+<ul>
+<li><a href="intro.html">Intro to passkeys</a></li>
+<li><a href="https://passkeys.dev/">Passkeys.dev</a></li>
+<li><a href="https://fidoalliance.org/implement-passkeys-overview/">Get Started on Your Passwordless Journey</a> on the FIDO Alliance website</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/use-cases.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

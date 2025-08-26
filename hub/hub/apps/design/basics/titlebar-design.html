@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows app title bar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows app title bar ">
+    
+    <meta name="description" content="Design the title bar of a desktop app to match the personality of the app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="title-bar-design">Title bar design</h1>
+
+<p>The title bar sits at the top of an app on the <a href="../signature-experiences/layering.html">base layer</a>. Its main purpose is to allow users to be able to identify the app via its title, move the app window, and minimize, maximize, or close the app.</p>
+<p><span class="mx-imgBorder">
+<img src="images/titlebar/titlebar-overview.png" alt="An example of a title bar">
+</span>
+</p>
+<h2 id="standard-design">Standard design</h2>
+<p>This section describes the design recommendations and behaviors of the parts of a standard title bar.</p>
+<h3 id="bar">Bar</h3>
+<p><strong>Design</strong></p>
+<ul>
+<li>The standard title bar has a height of 32px.</li>
+<li>The title bar's default background is <a href="../style/mica.html">Mica</a>, however we recommend that title bars blend with the rest of the window if possible.</li>
+<li>Title bars help users differentiate when a window is active and inactive. All title bar elements should be semi-transparent when the window is inactive.</li>
+<li>The title bar colors should adjust when users switch to <a href="../accessibility/high-contrast-themes.html">high contrast themes</a>, or between <a href="../style/color.md">light and dark modes</a>.
+<ul>
+<li>For high contrast themes, apps should use the <code>SystemColors</code> class for determining proper UI element coloring to facilitate a superior high-contrast experience.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Behavior</strong></p>
+<ul>
+<li>The title bar plays a vital role in repositioning and resizing a window. All empty space in the title bar or space taken up by non-interactive elements like the window title should be draggable.</li>
+<li>A right-click/press-and-hold on any part of the title bar that does not have an interactive element should show the system window menu.</li>
+<li>A double-click/tap should toggle between maximizing the window and restoring the window.</li>
+</ul>
+<h3 id="icon">Icon</h3>
+<p><strong>Design</strong></p>
+<ul>
+<li>The size of the window icon is 16px by 16px.</li>
+<li>Place the icon 16px from the left-most border in LTR, or right-most border in RTL.
+<ul>
+<li>If the back button is present, place the window icon 16px to the right of the back button.</li>
+</ul>
+</li>
+<li>The window icon should be vertically centered in the title bar. For example, When the title bar height is 32px, the top and bottom margins are 8px.</li>
+</ul>
+<p><strong>Behavior</strong></p>
+<ul>
+<li>A single-click/tap on the icon should show system window menu.</li>
+<li>A double-click/tap should close the window.</li>
+</ul>
+<h3 id="title">Title</h3>
+<p><strong>Design</strong></p>
+<ul>
+<li>Place the window title 16px from the window icon or back button.
+<ul>
+<li>If neither an icon nor back button are present, place the window title 16px from the left-most border in LTR, or right-most border in RTL.</li>
+</ul>
+</li>
+<li>The window title should use the Segoe UI Variable (if available) or Segoe UI font.</li>
+<li>The window title should use <em>caption</em> style text (see <a href="../../develop/platform/xaml/xaml-theme-resources.html#the-xaml-type-ramp">XAML type ramp</a>).</li>
+<li>The window title can be truncated, and an ellipsis added if the window width is smaller than the length of the title bar elements. The icon and caption buttons (min, max and close) should always be fully visible.</li>
+</ul>
+<p><strong>Behavior</strong></p>
+<ul>
+<li>A right-click/press-and-hold on the icon should show the system window menu.</li>
+<li>A double-click/tap should toggle between maximizing the window and restoring the window.</li>
+<li>The window title and other textual elements in the title bar should respond to <a href="../input/text-scaling.html">text-scaling</a>. This might require that the title bar grows in height.</li>
+</ul>
+<h3 id="caption-controls-minimize-maximize-restore-close">Caption controls (minimize, maximize, restore, close)</h3>
+<p>If you create your own caption buttons for your app, follow these guidelines to match the system caption buttons.</p>
+<p><strong>Design</strong></p>
+<ul>
+<li>Use these <a href="../style/segoe-fluent-icons-font.html">icons</a> for the buttons:
+<ul>
+<li>Minimize icon: E921 ChromeMinimize</li>
+<li>Maximize icon: E922 ChromeMaximize</li>
+<li>Restore icon: E923 ChromeRestore</li>
+<li>Close icon: E8BB ChromeClose</li>
+</ul>
+</li>
+<li>The icons for the maximize and restore buttons have rounded corners.</li>
+<li>Caption buttons have full bleed backplates.</li>
+<li>Caption buttons respond to <em>rest</em>, <em>on hover</em>, <em>on pressed</em>, <em>active</em>, and <em>inactive</em> states.</li>
+</ul>
+<h2 id="additional-design-patterns">Additional design patterns</h2>
+<h3 id="back-button">Back button</h3>
+<p><strong>Design</strong></p>
+<p>The recommended back button icon is: <a href="../style/segoe-fluent-icons-font.html">E830 ChromeBack</a></p>
+<ul>
+<li>If a back button is present, it should be placed to the left of the app title or icon/title combination (in LTR).</li>
+<li>The back button responds to <em>rest</em>, <em>on hover</em>, <em>on pressed</em>, <em>active</em>, and <em>inactive</em> states.</li>
+<li>The back button should be 16px by 16px and vertically centered in the title bar. The button should have a full bleed backplate.</li>
+<li>The back button should be 16px from the left-most border in LTR, or right-most border in RTL, and 16px from the next element to the left or right of it.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="images/titlebar/back-button.png" alt="An example of a back button in the title bar">
+</span>
+</p>
+<h3 id="search">Search</h3>
+<p><strong>Design</strong></p>
+<p>If global search functionality is present, a searchbox should be added to the title bar, centered to the window. Increase the size of the title bar to 48px when you include a searchbox.</p>
+<p><span class="mx-imgBorder">
+<img src="images/titlebar/search.png" alt="An example of a search box centered in the title bar">
+</span>
+</p>
+<p>The search box needs to be responsive to react to window size changes.</p>
+<h3 id="people">People</h3>
+<p>If account representation is present, the person-picture control should be placed to the left of the caption controls.
+Increase the size of the title bar to 48px when you include a person-picture.</p>
+<p><span class="mx-imgBorder">
+<img src="images/titlebar/people.png" alt="An example of a person picture control in the title bar">
+</span>
+</p>
+<h3 id="tabs">Tabs</h3>
+<p>If you use tabs as the main element of your app, use the title bar space and keep caption controls anchored to the right.</p>
+<p><span class="mx-imgBorder">
+<img src="images/titlebar/tabs.png" alt="An example of a tab view with tabs in the titlebar area">
+</span>
+</p>
+<h3 id="next-steps">Next steps</h3>
+<div class="nextstepaction">
+<p><a href="../../develop/title-bar.html">See the developer guidance for title bar</a></p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/basics/titlebar-design.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

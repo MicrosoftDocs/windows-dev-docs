@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using Win2D without built-in controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using Win2D without built-in controls ">
+    
+    <meta name="description" content="A guide on how to use the lower level APIs of Win2D, without any of its built-in XAML controls.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-win2d-without-built-in-controls">Using Win2D without built-in controls</h1>
+
+<p><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm"><code>CanvasControl</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm"><code>CanvasVirtualControl</code></a> and <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm"><code>CanvasAnimatedControl</code></a> are XAML controls - they extend <code>UserControl</code> and can exist alongside other controls in an app's XAML tree. They are good choice for many WinRT apps that use XAML and produce graphical content using Win2D. While these controls are versatile, they do impose policies pertaining to layout, resource re-creation, and device lost. Apps may want to implement their own XAML controls, or not use XAML at all.</p>
+<p>Win2D is built to support this. This document describes how to use Win2D to draw graphics without use of <code>CanvasControl</code>, <code>CanvasVirtualControl</code> or <code>CanvasAnimatedControl</code>.</p>
+<h2 id="layering">Layering</h2>
+<p>The Win2D XAML controls are built of top of a low level Win2D type. Each control contains an instance of a lower-level type:</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Low-level type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CanvasControl</code></td>
+<td><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm"><code>CanvasImageSource</code></a></td>
+</tr>
+<tr>
+<td><code>CanvasVirtualControl</code></td>
+<td><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm"><code>CanvasVirtualImageSource</code></a></td>
+</tr>
+<tr>
+<td><code>CanvasAnimatedControl</code></td>
+<td><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm"><code>CanvasSwapChainPanel</code></a> and <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm"><code>CanvasSwapChain</code></a></td>
+</tr>
+</tbody>
+</table>
+<p>The controls consume only the public interfaces of these lower-level types. This implementation detail lends some confidence that apps can implement their own XAML controls which are equivalently as powerful as the built-in Win2D controls.</p>
+<h2 id="choosing-a-lower-level-type">Choosing a lower-level type</h2>
+<p>An application is free to bypass the provided Win2D XAML controls and use the lower-level types directly. This section provides some guidance on choosing the appropriate lower-level type.</p>
+<p>If there is existing C++ code that works with <code>IDXGISwapChain</code> then <a href="interop.html">C++ interop</a> can be used to wrap this with a <code>CanvasSwapChain</code>. <code>CanvasSwapChainPanel</code> can be used to display a <code>CanvasSwapChain</code> in a XAML app.</p>
+<p>If the app needs to add graphics to a XAML element which expects an ImageSource, it should use <code>CanvasImageSource</code> or <code>CanvasVirtualImageSource</code>.</p>
+<p>Aside from that, it's worth considering:</p>
+<ul>
+<li>Swap chains are suited for content which will animate very frequently and the animation should be smooth. Direct3D's swap chains are designed for this purpose. The content of a swap chain can be re-drawn with a low latency, as it is not tied to the XAML framework refresh timer.</li>
+<li><code>CanvasSwapChain</code> has heavier resource costs than <code>CanvasImageSource</code>. It is generally not desirable to have more than one or two swap chains onscreen at a time. For example, if an application has a page full of widgets, where each widget is a standalone graphical element, it is more appropriate to make each widget use a <code>CanvasImageSource</code> resource than a <code>CanvasSwapChain</code>.</li>
+<li><code>CanvasImageSource</code> can be manipulated by other XAML UI elements such as transforms or opacity changes, while <code>CanvasSwapChain</code> cannot.</li>
+<li><code>CanvasVirtualImageSource</code> can be used to display images that are much larger than the screen (for example in a <code>ScrollViewer</code>).</li>
+</ul>
+<h2 id="canvasswapchain-and-corewindow">CanvasSwapChain and CoreWindow</h2>
+<p><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm"><code>CanvasSwapChain</code></a> wraps a Direct3D swap chain. <code>CanvasSwapChain</code> is not a XAML type, but the fact that it has a swap chain means it has a built-in mechanism for being displayed. That said, <a href="https://msdn.microsoft.com/library/windows.ui.core.corewindow.aspx"><code>CoreWindow</code></a> apps may use <code>CanvasSwapChain</code> for displaying graphical content.</p>
+<p>To create a <code>CanvasSwapChain</code> for use with a <code>CoreWindow</code>, in C#:</p>
+<pre><code class="lang-csharp">float currentDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
+
+SwapChain = CanvasSwapChain.CreateForCoreWindow(device, window, currentDpi);
+</code></pre>
+<p>To draw content using a <code>CanvasSwapChain</code>, call its <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasSwapChain_CreateDrawingSession.htm"><code>CreateDrawingSession(Color)</code></a> method:</p>
+<pre><code class="lang-csharp">using (CanvasDrawingSession ds = swapChain.CreateDrawingSession(Colors.Black))
+{
+    ds.FillRectangle(100, 200, 3, 5);
+}
+
+swapChain.Present();
+</code></pre>
+<p>The size of the swap chain should match the size of the <code>CoreWindow</code>. If the size of the window changes, call <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasSwapChain_ResizeBuffers_3.htm"><code>ResizeBuffers(Size)</code></a> on the swap chain with the new size. For more information, see the <code>CoreWindow</code> Win2D sample.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>CoreWindow</code> is only supported on UWP. For WinAppSDK apps, use either composition or HWND swapchains.</p>
+</div>
+<h2 id="canvasswapchainpanel">CanvasSwapChainPanel</h2>
+<p><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm"><code>CanvasSwapChainPanel</code></a> is a XAML type, and a relatively thin wrapper around <code>CanvasSwapChain</code>. It is suitable for XAML apps that require swap chain rendering, but do not want to use the policies that exist in <code>CanvasAnimatedControl</code>. To create a swap chain in XAML, use the namespace:</p>
+<pre><code class="lang-XAML">xmlns:canvas=&quot;using:Microsoft.Graphics.Canvas.UI.Xaml&quot;
+</code></pre>
+<p>And declare:</p>
+<pre><code class="lang-XAML">&lt;canvas:CanvasSwapChainPanel x:Name=&quot;canvasSwapChainPanel&quot;/&gt;
+</code></pre>
+<p>A <code>CanvasSwapChainPanel</code> does not have a swap chain automatically assigned to it. As an example, to assign one:</p>
+<pre><code class="lang-csharp">CanvasDevice device = CanvasDevice.GetSharedDevice();
+CanvasSwapChain swapChain = new CanvasSwapChain(device, width, height, 96);
+
+canvasSwapChainPanel.SwapChain = swapChain;
+</code></pre>
+<p>To draw to the swap chain panel, in C#, use its <code>SwapChain</code> property:</p>
+<pre><code class="lang-csharp">using (CanvasDrawingSession ds = canvasSwapChainPanel.SwapChain.CreateDrawingSession(Colors.Black))
+{
+    ds.FillRectangle(200, 300, 5, 6, Colors.Blue);
+}
+
+canvasSwapChainPanel.SwapChain.Present();
+</code></pre>
+<p>The application decides on the frequency of redrawing. In the same manner as using <code>CanvasSwapChain</code> directly, it is up to the app to resize the swap chain when the control is resized. For example, in C#:</p>
+<pre><code class="lang-csharp">canvasSwapChainPanel.SizeChanged += canvasSwapChainPanel_SizeChanged;
+
+void canvasSwapChainPanel_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+{
+    canvasSwapChainPanel.SwapChain.ResizeBuffers(e.NewSize);
+}
+</code></pre>
+<h2 id="image-sources">Image Sources</h2>
+<p><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm"><code>CanvasImageSource</code></a> and <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm"><code>CanvasVirtualImageSource</code></a> provide a way of integrating Win2D graphical content with XAML. They are suitable for content which does not require swap chain rendering.</p>
+<h3 id="canvasimagesource">CanvasImageSource</h3>
+<p><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm"><code>CanvasImageSource</code></a> extends XAML's <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.surfaceimagesource.aspx"><code>SurfaceImageSource</code></a>. Apps can create an instance of <code>CanvasImageSource</code>, and reference it from a XAML type that consumes an <code>ImageSource</code>, such as an <a href="https://msdn.microsoft.com/library/windows/apps/br242752.aspx"><code>Image</code></a> or <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush"><code>ImageBrush</code></a>. For example, in XAML markup:</p>
+<pre><code class="lang-XAML">&lt;Image x:Name=&quot;image&quot;/&gt;
+</code></pre>
+<p>Then, in C#:</p>
+<pre><code class="lang-csharp">CanvasDevice device = CanvasDevice.GetSharedDevice();
+CanvasImageSource imageSource = new CanvasImageSource(device, width, height);
+
+image.Source = imageSource;
+</code></pre>
+<p>Drawing sessions are created directly on the image source object. For example:</p>
+<pre><code class="lang-csharp">using (CanvasDrawingSession ds = imageSource.CreateDrawingSession(Colors.Black))
+{
+    ds.FillRectangle(200, 300, 5, 6, Colors.Blue);
+}
+</code></pre>
+<p>Note that a clear color must be passed to <code>CreateDrawingSession</code>. Whenever a drawing session is created on a <code>CanvasImageSource</code>, the <code>CanvasImageSource</code> is cleared.</p>
+<p>For an example demonstrating how to use <code>CanvasImageSource</code>, see the <code>ImageSourceUpdateRegion</code> Win2D ExampleGallery page.</p>
+<h3 id="canvasvirtualimagesource">CanvasVirtualImageSource</h3>
+<p><a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm"><code>CanvasVirtualImageSource</code></a> wraps XAML's <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.virtualsurfaceimagesource.aspx"><code>VirtualSurfaceImageSource</code></a>.</p>
+<p>The wrapped <code>VirtualSurfaceImageSource</code> can be obtained by the <a href="https://microsoft.github.io/Win2D/WinUI2/html/P_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource_Source.htm"><code>Source</code></a> property. Apart from this difference it can be used in much the same way as <code>CanvasImageSource</code>:</p>
+<pre><code class="lang-XAML">&lt;Image x:Name=&quot;image&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">var virtualImageSource = new CanvasVirtualImageSource(device, width, height);
+
+image.Source = virtualImageSource.Source;
+</code></pre>
+<h2 id="canvasrendertarget">CanvasRenderTarget</h2>
+<p><code>CanvasRenderTarget</code> represents a drawable bitmap, and does not have any built-in association with XAML. It is suitable for XAML or non-XAML apps which need to use an intermediate bitmap- for example, for saving image data to a file, reading back pixel data, or to be used as an intermediate for another operation.</p>
+<p><code>CanvasRenderTarget</code> doesn't have an automatic mechanism to cause it to be displayed. To display the content of a <code>CanvasRenderTarget</code> in your app, draw it in the drawing session created from a displayed control, image source, or swap chain.</p>
+<p>For more information about using <code>CanvasRenderTarget</code>, see <a href="offscreen-drawing.html">Offscreen drawing</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/using-win2d-without-built-in-controls.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

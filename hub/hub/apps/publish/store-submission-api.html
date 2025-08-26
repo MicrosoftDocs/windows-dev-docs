@@ -1,0 +1,3849 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Microsoft Store submission API for MSI or EXE app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Microsoft Store submission API for MSI or EXE app ">
+    
+    <meta name="description" content="Use the Microsoft Store Submission API to automate your store submissions">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="microsoft-store-submission-api-for-msi-or-exe-app">Microsoft Store submission API for MSI or EXE app</h1>
+
+<p>Use the Microsoft Store submission API for MSI or EXE app to programmatically query and create submissions for MSI or EXE apps for your or your organization's Partner Center account. This API is useful if your account manages many apps, and you want to automate and optimize the submission process for these assets. This API uses Microsoft Entra ID to authenticate the calls from your app or service.</p>
+<p>The following steps describe the end-to-end process of using the Microsoft Store submission API:</p>
+<ol>
+<li>Make sure that you have completed all the prerequisites.</li>
+<li>Before you call a method in the Microsoft Store submission API, obtain an Microsoft Entra ID access token. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.</li>
+<li>Call the Microsoft Store submission API for MSI or EXE app.</li>
+</ol>
+<h2 id="step-1-complete-prerequisites-for-using-the-microsoft-store-submission-api">Step 1: Complete prerequisites for using the Microsoft Store submission API</h2>
+<p>Before you start writing code to call the Microsoft Store submission API for MSI or EXE app, make sure that you have completed the following prerequisites.</p>
+<ul>
+<li>You (or your organization) must have an Microsoft Entra ID directory and you must have Global administrator permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Microsoft Entra ID directory. Otherwise, you can <a href="partner-center/manage-azure-ad-applications-in-partner-center.html">create a new Microsoft Entra ID in Partner Center</a> for no additional charge.</li>
+<li>You must associate an Microsoft Entra ID application with your Partner Center account and obtain your tenant ID, client ID and key. You need these values to obtain an Microsoft Entra ID access token, which you will use in calls to the Microsoft Store submission API.</li>
+<li>Prepare your app for use with the Microsoft Store submission API:
+<ul>
+<li>If your app does not yet exist in Partner Center, you must <a href="publish-your-app/msix/reserve-your-apps-name.html">create your app by reserving its name</a> in Partner Center. You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it.</li>
+<li>Before you can create a submission for a given app using this API, you must first <a href="publish-your-app/msix/create-app-submission.html">create one submission for the app</a> in Partner Center, including answering the <a href="publish-your-app/msix/age-ratings.html">age ratings</a> questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API.</li>
+<li>If you are creating or updating an app submission and you need to include new package, <a href="publish-your-app/msi/upload-app-packages.html">prepare the package details</a>.</li>
+<li>If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, <a href="publish-your-app/msi/add-and-edit-store-listing-info.html">prepare the app screenshots and images</a>.</li>
+</ul>
+</li>
+</ul>
+<h3 id="how-to-associate-an-microsoft-entra-id-application-with-your-partner-center-account">How to associate an Microsoft Entra ID application with your Partner Center account</h3>
+<p>Before you can use the Microsoft Store submission API for MSI or EXE app, you must associate an Microsoft Entra ID application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. The Microsoft Entra ID application represents the app or service from which you want to call the Microsoft Store submission API. You need the tenant ID, client ID and key to obtain an Microsoft Entra ID access token that you pass to the API.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Microsoft Entra ID access token.</p>
+</div>
+<ol>
+<li>In Partner Center, <a href="partner-center/associate-azure-ad-with-partner-center.md">associate your organization's Partner Center account with your organization's Microsoft Entra ID directory</a>.</li>
+<li>Next, from the Users page in the Account settings section of Partner Center, <a href="partner-center/manage-azure-ad-applications-in-partner-center.html#add-microsoft-entra-application">add the Microsoft Entra ID application</a> that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. If the application doesn't exist yet in your Microsoft Entra ID directory, you can <a href="partner-center/manage-azure-ad-applications-in-partner-center.html#create-microsoft-entra-application">create a new Microsoft Entra ID application in Partner Center</a>.</li>
+<li>Return to the Users page, click the name of your Microsoft Entra ID application to go to the application settings, and copy down the Tenant ID and Client ID values.</li>
+<li>To add a new key or Client secret, see the following instructions or refer instructions to <a href="/azure/active-directory/develop/quickstart-register-app">register app through Azure Portal</a>:</li>
+</ol>
+<p>To register your app:</p>
+<ol>
+<li><p>Sign in to the <a href="https://portal.azure.com/">Azure portal</a>.</p>
+</li>
+<li><p>If you have access to multiple tenants, use the Directories + subscriptions filter   in the top menu to switch to the tenant in which you want to register the application.</p>
+</li>
+<li><p>Search for and select Microsoft Entra ID Directory.</p>
+</li>
+<li><p>Under Manage, select App registrations &gt; Select your application.</p>
+</li>
+<li><p>Select Certificates &amp; secrets &gt; Client secrets &gt; New client secret.</p>
+</li>
+<li><p>Add a description for your client secret.</p>
+</li>
+<li><p>Select an expiration for the secret or specify a custom lifetime.</p>
+</li>
+<li><p>Client secret lifetime is limited to two years (24 months) or less. You can't specify a custom lifetime longer than 24 months.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Microsoft recommends that you set an expiration value of less than 12 months.</p>
+</div>
+</li>
+<li><p>Select Add.</p>
+</li>
+<li><p>Record the secret's value for use in your client application code. This secret value is never displayed again after you leave this page.</p>
+</li>
+</ol>
+<h2 id="step-2-obtain-an-microsoft-entra-id-access-token">Step 2: Obtain an Microsoft Entra ID access token</h2>
+<p>Before you call any of the methods in the Microsoft Store submission API for MSI or EXE app, you must first obtain an Microsoft Entra ID access token that you pass to the Authorization header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.</p>
+<p>To obtain the access token, follow the instructions in <a href="/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow">Service to Service Calls Using Client Credentials</a> to send an HTTP POST to the <a href="https://login.microsoftonline.com/">https://login.microsoftonline.com/</a>&lt;tenant_id&gt;/oauth2/token endpoint. Here is a sample request.</p>
+<pre><code class="lang-json">POST https://login.microsoftonline.com/&lt;tenant-id&gt;/oauth2/v2.0/token HTTP/1.1
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded; charset=utf-8
+
+grant_type=client_credentials
+&amp;client_id=&lt;your_client_id&gt;
+&amp;client_secret=&lt;your_client_secret&gt;
+&amp;scope=https://api.store.microsoft.com/.default
+</code></pre>
+<p>For the <code>tenant_id</code> value in the POST URI and the <code>client_id</code> and <code>client_secret</code> parameters, specify the tenant ID, client ID and the key for your application that you retrieved from Partner Center in the previous section. For the scope parameter, you must specify <code>https://api.store.microsoft.com/.default</code>.</p>
+<p>After your access token expires, you can refresh it by following the instructions here.</p>
+<p>For examples that demonstrate how to obtain an access token by using C# or Node.js, see the <a href="/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services#code-examples">code examples</a> for Microsoft Store submission API for MSI or EXE app.</p>
+<h2 id="step-3-use-the-microsoft-store-submission-api">Step 3: Use the Microsoft Store submission API</h2>
+<p>After you have an Microsoft Entra ID access token, you can call methods in the Microsoft Store submission API for MSI or EXE app. The API includes many methods that are grouped into scenarios for apps. To create or update submissions, you typically call multiple methods in a specific order. For information about each scenario and the syntax of each method, see the following sections:</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>After you obtain an access token, you have 60 minutes to call methods in the Microsoft Store submission API for MSI or EXE app before the token expires.</p>
+</div>
+<h2 id="base-url">Base URL</h2>
+<p>The base URL for the Microsoft Store Submission API for EXE or MSI app is: <code>https://api.store.microsoft.com</code></p>
+<h2 id="api-contracts">API Contracts</h2>
+<h3 id="get-current-draft-submission-metadata-api">Get Current Draft Submission Metadata API</h3>
+<p>Fetches metadata in each module (listings, properties or availability) under current draft submission.</p>
+<p><strong>Path [All Modules]</strong>: /submission/v1/product/{productId}/metadata?languages={languages}&amp;includelanguagelist={true/false}<br>
+<strong>Path [Single Module]</strong>: /submission/v1/product/{productId}/metadata/{moduleName}?languages={languages}&amp;includelanguagelist={true/false}<br>
+<strong>Method</strong>: GET</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+<tr>
+<td>moduleName</td>
+<td>Partner Center module – listings, properties or availability</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>languages</td>
+<td><em>Optional</em> The listing languages filter as comma separated string [limit of up to 200 Languages].<br><br>If absent, the first 200 available listing languages metadata is retrieved. [ e.g., “en-us, en-gb&quot;].</td>
+</tr>
+<tr>
+<td>includelanguagelist</td>
+<td><em>Optional</em> Boolean – if true, returns the list of added listing languages and their completeness status.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>The Microsoft Entra ID app ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support Team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accessibilitySupport</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>additionalLicenseTerms</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>availability</td>
+<td>Object</td>
+<td>Availability module data</td>
+</tr>
+<tr>
+<td>category</td>
+<td>String</td>
+<td>See list of categories below</td>
+</tr>
+<tr>
+<td>certificationNotes</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>contactInfo</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>copyright</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>dependsOnDriversOrNT</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>developedBy</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>discoverability</td>
+<td>String</td>
+<td>[DISCOVERABLE, DEEPLINK_ONLY]</td>
+</tr>
+<tr>
+<td>enableInFutureMarkets</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>freeTrial</td>
+<td>String</td>
+<td>[NO_FREE_TRIAL, FREE_TRIAL]</td>
+</tr>
+<tr>
+<td>hardwareItemType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>isPrivacyPolicyRequired</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>isRecommended</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>isRequired</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>isSystemFeatureRequired</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td>See list of languages below</td>
+</tr>
+<tr>
+<td>listings</td>
+<td>Array of objects</td>
+<td>Listings module data for each language</td>
+</tr>
+<tr>
+<td>markets</td>
+<td>Array of strings</td>
+<td>See list of markets below</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>minimumHardware</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>minimumRequirement</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>penAndInkSupport</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>pricing</td>
+<td>String</td>
+<td>[FREE, FREEMIUM, SUBSCRIPTION, PAID]</td>
+</tr>
+<tr>
+<td>privacyPolicyUrl</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>productDeclarations</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>productFeatures</td>
+<td>Array of strings</td>
+<td></td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Object</td>
+<td>Properties module data</td>
+</tr>
+<tr>
+<td>recommendedHardware</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>recommendedRequirement</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td>Contains actual response Payload for the Request</td>
+</tr>
+<tr>
+<td>requirements</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>searchTerms</td>
+<td>Array of strings</td>
+<td></td>
+</tr>
+<tr>
+<td>shortDescription</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>subcategory</td>
+<td>String</td>
+<td>See list of sub-categories below</td>
+</tr>
+<tr>
+<td>supportContactInfo</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>systemRequirementDetails</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the Error originated</td>
+</tr>
+<tr>
+<td>website</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>whatsNew</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="update-current-draft-submission-metadata-api">Update Current Draft Submission Metadata API</h3>
+<p>Updates metadata in each Module under draft submission. The API checks</p>
+<ul>
+<li>For Active Submission. If Exists, Fail with Error Message.</li>
+<li>If all modules are in ready status to allow Save Draft operation.</li>
+<li>Each field in the submission is validated as per requirements of the Store</li>
+<li>System Requirement Details validation rules:
+<ul>
+<li>Allowed Values in hardwareItemType = Memory:  300MB, 750MB, 1GB, 2GB, 4GB, 6GB, 8GB, 12GB, 16GB, 20GB</li>
+<li>Allowed Values in hardwareItemType = DirectX:  DX9, DX10, DX11, DX12-FEATURELEVEL11, DX12-FEATURELEVEL12</li>
+<li>Allowed Values in hardwareItemType = Video_Memory:  1GB, 2GB, 4GB, 6GB</li>
+</ul>
+</li>
+</ul>
+<p><strong>Path [Full Module Update]</strong>: /submission/v1/product/{productId}/metadata<br>
+<strong>Method</strong>: PUT</p>
+<p><strong>Path [Module Patch Update]</strong>: /submission/v1/product/{productId}/metadata<br>
+<strong>Method</strong>: PATCH</p>
+<p><strong>API Behavior</strong></p>
+<p>In the case of Full Module Update API – entire Module Data needs to be present in Request for full update of every field. Any field which is not present in Request, its default value is used to overwrite current value for that specific Module. <br>
+In the case of Patch Module Update API – only fields which are to be updated need to be present in Request. These field values from Request will overwrite their existing values, keeping all other fields which are not present in the Request, same as current for that specific Module. <br></p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>The Microsoft Entra ID app ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>availability</td>
+<td>Object</td>
+<td>Object to hold Availability Module metadata</td>
+</tr>
+<tr>
+<td>markets</td>
+<td>Array of strings</td>
+<td><em>Required</em> See list of markets below</td>
+</tr>
+<tr>
+<td>discoverability</td>
+<td>String</td>
+<td><em>Required</em> [DISCOVERABLE, DEEPLINK_ONLY]</td>
+</tr>
+<tr>
+<td>enableInFutureMarkets</td>
+<td>Boolean</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>pricing</td>
+<td>String</td>
+<td><em>Required</em> [FREE, FREEMIUM, SUBSCRIPTION, PAID]</td>
+</tr>
+<tr>
+<td>freeTrial</td>
+<td>String</td>
+<td><em>Required if Pricing is PAID or SUBSCRIPTION</em> [NO_FREE_TRIAL, FREE_TRIAL]</td>
+</tr>
+<tr>
+<td>properties</td>
+<td>Object</td>
+<td>Object to hold Properties Module metadata</td>
+</tr>
+<tr>
+<td>isPrivacyPolicyRequired</td>
+<td>Boolean</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>privacyPolicyUrl</td>
+<td>String</td>
+<td><em>Required if isPrivacyPolicyRequired = true</em> Must be a valid URL</td>
+</tr>
+<tr>
+<td>website</td>
+<td>String</td>
+<td>Must be a valid URL</td>
+</tr>
+<tr>
+<td>supportContactInfo</td>
+<td>String</td>
+<td>Must be a valid URL or Email address</td>
+</tr>
+<tr>
+<td>certificationNotes</td>
+<td>String</td>
+<td><em>Recommended</em> Character limit = 2000</td>
+</tr>
+<tr>
+<td>category</td>
+<td>String</td>
+<td><em>Required</em> See list of categories below</td>
+</tr>
+<tr>
+<td>subcategory</td>
+<td>String</td>
+<td><em>Required</em> See list of sub-categories below</td>
+</tr>
+<tr>
+<td>productDeclarations</td>
+<td>Object</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>isSystemFeatureRequired</td>
+<td>Array of objects</td>
+<td>[Touch, Keyboard, Mouse, Camera, NFC_HCE, NFC_Proximity, Bluetooth_LE, Telephony, Microphone]</td>
+</tr>
+<tr>
+<td>isRequired</td>
+<td>Boolean</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>isRecommended</td>
+<td>Boolean</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>hardwareItemType</td>
+<td>String</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>systemRequirementDetails</td>
+<td>Array of objects</td>
+<td>[Processor, Graphics, Memory, DirectX, Video_Memory]</td>
+</tr>
+<tr>
+<td>minimumRequirement</td>
+<td>String</td>
+<td><em>Required</em> For systemRequirementsText, MaxLength = 200<br><br>Allowed Values in hardwareItemType = Memory: [300MB, 750MB, 1GB, 2GB, 4GB, 6GB, 8GB, 12GB, 16GB, 20GB]<br><br>Allowed Values in hardwareItemType = DirectX: [DX9, DX10, DX11, DX12-FEATURELEVEL11, DX12-FEATURELEVEL12]<br><br>Allowed Values in hardwareItemType = Video_Memory: [1GB, 2GB, 4GB, 6GB]</td>
+</tr>
+<tr>
+<td>recommendedRequirement</td>
+<td>String</td>
+<td><em>Required</em> For systemRequirementsText, MaxLength = 200<br><br>Allowed Values in hardwareItemType = Memory: [300MB, 750MB, 1GB, 2GB, 4GB, 6GB, 8GB, 12GB, 16GB, 20GB]<br><br>Allowed Values in hardwareItemType = DirectX: [DX9, DX10, DX11, DX12-FEATURELEVEL11, DX12-FEATURELEVEL12]<br><br>Allowed Values in hardwareItemType = Video_Memory: [1GB, 2GB, 4GB, 6GB]</td>
+</tr>
+<tr>
+<td>dependsOnDriversOrNT</td>
+<td>Boolean</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>accessibilitySupport</td>
+<td>Boolean</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>penAndInkSupport</td>
+<td>Boolean</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>listings</td>
+<td>Object</td>
+<td>Object to listing module data for a single language</td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td><em>Required</em> See list of languages below</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td><em>Required</em> Character limit = 10000</td>
+</tr>
+<tr>
+<td>whatsNew</td>
+<td>String</td>
+<td>Character limit = 1500</td>
+</tr>
+<tr>
+<td>productFeatures</td>
+<td>Array of String</td>
+<td>200 characters per feature; Up to 20 features</td>
+</tr>
+<tr>
+<td>shortDescription</td>
+<td>String</td>
+<td>Character limit = 1000</td>
+</tr>
+<tr>
+<td>searchTerms</td>
+<td>Array of String</td>
+<td>30 characters per search term; Up to 7 search terms<br><br>21 unique words TOTAL across all search terms</td>
+</tr>
+<tr>
+<td>additionalLicenseTerms</td>
+<td>String</td>
+<td><em>Required</em> Character limit = 10000</td>
+</tr>
+<tr>
+<td>copyright</td>
+<td>String</td>
+<td>Character limit = 200</td>
+</tr>
+<tr>
+<td>developedBy</td>
+<td>String</td>
+<td>Character limit = 255</td>
+</tr>
+<tr>
+<td>requirements</td>
+<td>Array of objects</td>
+<td>200 characters per item; Up to 11 items TOTAL between minimum and recommended]</td>
+</tr>
+<tr>
+<td>minimumHardware</td>
+<td>String</td>
+<td>Character limit = 200</td>
+</tr>
+<tr>
+<td>recommendedHardware</td>
+<td>String</td>
+<td>Character limit = 200</td>
+</tr>
+<tr>
+<td>contactInfo</td>
+<td>String</td>
+<td>Character limit = 200</td>
+</tr>
+<tr>
+<td>listingsToAdd</td>
+<td>Array of strings</td>
+<td>See list of languages below</td>
+</tr>
+<tr>
+<td>listingsToRemove</td>
+<td>Array of strings</td>
+<td>See list of languages below</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Markets</strong></p>
+<details>
+<summary>View table</summary>
+| Market | Abbreviation |
+|--------|--------------|
+| Afghanistan | AF |
+| Albania | AL |
+| Algeria | DZ |
+| American Samoa | AS |
+| Andorra | AD |
+| Angola | AO |
+| Anguilla | AI |
+| Antarctica | AQ |
+| Antigua and Barbuda | AG |
+| Argentina | AR |
+| Armenia | AM |
+| Aruba | AW |
+| Australia | AU |
+| Austria | AT |
+| Azerbaijan | AZ |
+| Bahamas | BS |
+| Bahrain | BH |
+| Bangladesh | BD |
+| Barbados | BB |
+| Belarus | BY |
+| Belgium | BE |
+| Belize | BZ |
+| Benin | BJ |
+| Bermuda | BM |
+| Bhutan | BT |
+| Bolivarian Republic of Venezuela | VE |
+| Bolivia | BO |
+| Bonaire | BQ |
+| Bosnia and Herzegovina | BA |
+| Botswana | BW |
+| Bouvet Island | BV |
+| Brazil | BR |
+| British Indian Ocean Territory | IO |
+| British Virgin Islands | VG |
+| Brunei | BN |
+| Bulgaria | BG |
+| Burkina Faso | BF |
+| Burundi | BI |
+| Cambodia | KH |
+| Cameroon | CM |
+| Canada | CA |
+| Cabo Verde | CV |
+| Cayman Islands | KY |
+| Central African Republic | CF |
+| Chad | TD |
+| Chile | CL |
+| China | CN |
+| Christmas Island | CX |
+| Cocos (Keeling) Islands | CC |
+| Colombia | CO |
+| Comoros | KM |
+| Congo | CG |
+| Congo (DRC) | CD |
+| Cook Islands | CK |
+| Costa Rica | CR |
+| Croatia | HR |
+| Curaçao | CW |
+| Cyprus | CY |
+| Czech Republic | CZ |
+| Côte d'Ivoire | CI |
+| Denmark | DK |
+| Djibouti | DJ |
+| Dominica | DM |
+| Dominican Republic | DO |
+| Ecuador | EC |
+| Egypt | EG |
+| El Salvador | SV |
+| Equatorial Guinea | GQ |
+| Eritrea | ER |
+| Estonia | EE |
+| Ethiopia | ET |
+| Falkland Islands | FK |
+| Faroe Islands | FO |
+| Fiji | FJ |
+| Finland | FI |
+| France | FR |
+| French Guiana | GF |
+| French Polynesia | PF |
+| French Southern and Antarctic Lands | TF |
+| Gabon | GA |
+| Gambia | GM |
+| Georgia | GE |
+| Germany | DE |
+| Ghana | GH |
+| Gibraltar | GI |
+| Greece | GR |
+| Greenland | GL |
+| Grenada | GD |
+| Guadeloupe | GP |
+| Guam | GU |
+| Guatemala | GT |
+| Guernsey | GG |
+| Guinea | GN |
+| Guinea-Bissau | GW |
+| Guyana | GY |
+| Haiti | HT |
+| Heard Island and McDonald Islands | HM |
+| Vatican City | VA |
+| Honduras | HN |
+| Hong Kong SAR | HK |
+| Hungary | HU |
+| Iceland | IS |
+| India | IN |
+| Indonesia | ID |
+| Iraq | IQ |
+| Ireland | IE |
+| Israel | IL |
+| Italy | IT |
+| Jamaica | JM |
+| Japan | JP |
+| Jersey | JE |
+| Jordan | JO |
+| Kazakhstan | KZ |
+| Kenya | KE |
+| Kiribati | KI |
+| Korea | KR |
+| Kuwait | KW |
+| Kyrgyzstan | KG |
+| Laos | LA |
+| Latvia | LV |
+| Lebanon | LB |
+| Lesotho | LS |
+| Liberia | LR |
+| Libya | LY |
+| Liechtenstein | LI |
+| Lithuania | LT |
+| Luxembourg | LU |
+| Macao SAR | MO |
+| North Macedonia | MK |
+| Madagascar | MG |
+| Malawi | MW |
+| Malaysia | MY |
+| Maldives | MV |
+| Mali | ML |
+| Malta | MT |
+| Isle of Man | IM |
+| Marshall Islands | MH |
+| Martinique | MQ |
+| Mauritania | MR |
+| Mauritius | MU |
+| Mayotte | YT |
+| Mexico | MX |
+| Micronesia | FM |
+| Moldova | MD |
+| Monaco | MC |
+| Mongolia | MN |
+| Montenegr  - ME |
+| Montserrat | MS |
+| Morocco | MA |
+| Mozambique | MZ |
+| Myanmar | MM |
+| Namibia | NA |
+| Nauru | NR |
+| Nepal | NP |
+| Netherlands | NL |
+| New Caledonia | NC |
+| New Zealand | NZ |
+| Nicaragua | NI |
+| Niger | NE |
+| Nigeria | NG |
+| Niue | NU |
+| Norfolk Island | NF |
+| Northern Mariana Islands | MP |
+| Norway | NO |
+| Oman | OM |
+| Pakistan | PK |
+| Palau | PW |
+| Palestinian Authority | PS |
+| Panama | PA |
+| Papua New Guinea | PG |
+| Paraguay | PY |
+| Peru | PE |
+| Philippines | PH |
+| Pitcairn Islands | PN |
+| Poland | PL |
+| Portugal | PT |
+| Qatar | QA |
+| Reunion | RE |
+| Romania | RO |
+| Russia | RU |
+| Rwanda | RW |
+| Saint Barthélemy | BL |
+| Saint Helena, Ascension and Tristan da Cunha | SH |
+| Saint Kitts and Nevis | KN |
+| Saint Lucia | LC |
+| Saint Martin (French Part) | MF |
+| Saint Pierre and Miquelon | PM |
+| Saint Vincent and the Grenadines | VC |
+| Samoa | WS |
+| San Marino | SM |
+| Saudi Arabia | SA |
+| Senegal | SN |
+| Serbia | RS |
+| Seychelles | SC |
+| Sierra Leone | SL |
+| Singapore | SG |
+| Sint Maarten (Dutch Part) | SX |
+| Slovakia | SK |
+| Slovenia | SI |
+| Solomon Islands | SB |
+| Somalia | SO |
+| South Africa | ZA |
+| South Georgia and the South Sandwich Islands | GS |
+| Spain | ES |
+| Sri Lanka | LK |
+| Suriname | SR |
+| Svalbard and Jan Mayen | SJ |
+| Swaziland | SZ |
+| Sweden | SE |
+| Switzerland | CH |
+| São Tomé and Príncipe | ST |
+| Taiwan | TW |
+| Tajikistan | TJ |
+| Tanzania | TZ |
+| Thailand | TH |
+| Timor-Leste | TL |
+| Tog  - TG |
+| Tokelau | TK |
+| Tonga | TO |
+| Trinidad and Tobag  - TT |
+| Tunisia | TN |
+| Türkiye | TR |
+| Turkmenistan | TM |
+| Turks and Caicos Islands | TC |
+| Tuvalu | TV |
+| U.S. Minor Outlying Islands | UM |
+| U.S. Virgin Islands | VI |
+| Uganda | UG |
+| Ukraine | UA |
+| United Arab Emirates | AE |
+| United Kingdom | GB |
+| United States | US |
+| Uruguay | UY |
+| Uzbekistan | UZ |
+| Vanuatu | VU |
+| Vietnam | VN |
+| Wallis and Futuna | WF |
+| Yemen | YE |
+| Zambia | ZM |
+| Zimbabwe | ZW |
+| Åland Islands | AX |
+</details>
+<p><strong>Categories and Sub-categories</strong></p>
+<details>
+<summary>View table</summary>
+| Category              | Subcategories |
+|-----------------------|---------------|
+| BooksAndReference     | EReader, Fiction, Nonfiction, Reference |
+| Business              | AccountingAndfinance, Collaboration, CRM, DataAndAnalytics, FileManagement, InventoryAndlogistics, LegalAndHR, ProjectManagement, RemoteDesktop, SalesAndMarketing, TimeAndExpenses |
+| DeveloperTools        | Database, DesignTools, DevelopmentKits, Networking, ReferenceAndTraining, Servers, Utilities, WebHosting
+| Education             | EducationBooksAndReference, EarlyLearning, InstructionalTools, Language, StudyAids |
+| Entertainment         | (None)        |
+| FoodAndDining         | (None)        |
+| GovernmentAndPolitics | (None)        |
+| HealthAndFitness      | (None)        |
+| KidsAndFamily         | KidsAndFamilyBooksAndReference, KidsAndFamilyEntertainment, HobbiesAndToys, SportsAndActivities, KidsAndFamilyTravel |
+| Lifestyle             | Automotive, DYI, HomeAndGarden, Relationships, SpecialInterest, StyleAndFashion |
+| Medical               | (None)        |
+| MultimediaDesign      | IllustrationAndGraphicDesign, MusicProduction, PhotoAndVideoProduction |
+| Music                 | (None)        |
+| NavigationAndMaps     | (None)        |
+| NewsAndWeather        | News, Weather |
+| PersonalFinance       | BankingAndInvestments, BudgetingAndTaxes |
+| Personalization       | RingtonesAndSounds, themes, WallpaperAndLockScreens |
+| PhotoAndVideo         | (None)        |
+| Productivity          | (None)        |
+| Security              | PCProtection, PersonalSecurity |
+| Shopping              | (None)        |
+| Social                | (None)        |
+| Sports                | (None)        |
+| Travel                | CityGuides, Hotels |
+| UtilitiesAndTools     | BackupAndManage, FileManager |
+</details>
+<p><strong>Languages</strong></p>
+<details>
+<summary>View table</summary>
+| Language name | Supported language codes |
+|---------------|--------------------------|
+| Afrikaans | af, af-za |
+| Albanian | sq, sq-al |
+| Amharic | am, am-et |
+| Armenian | hy, hy-am |
+| Assamese | as, as-in |
+| Azerbaijani | az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az |
+| Basque (Basque) | eu, eu-es |
+| Belarusian | be, be-by |
+| Bangla | bn, bn-bd, bn-in |
+| Bosnian | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba |
+| Bulgarian | bg, bg-bg |
+| Catalan | ca, ca-es, ca-es-valencia |
+| Cherokee | chr-cher, chr-cher-us, chr-latn |
+| Chinese (Simplified) | zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg |
+| Chinese (Traditional) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw |
+| Croatian | hr, hr-hr, hr-ba |
+| Czech | cs, cs-cz |
+| Danish | da, da-dk |
+| Dari | prs, prs-af, prs-arab |
+| Dutch | nl, nl-nl, nl-be |
+| English | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw |
+| Estonian | et, et-ee |
+| Filipin  - fil, fil-latn, fil-ph |
+| Finnish | fi, fi-fi |
+| French | fr, fr-be , fr-ca , fr-ch , fr-fr , fr-lu, fr-cd, fr-ci, fr-cm, fr-ht, fr-ma, fr-mc, fr-ml, fr-re, frc-latn, frp-latn |
+| Galician | gl, gl-es |
+| Georgian | ka, ka-ge |
+| German | de, de-at, de-ch, de-de, de-lu, de-li |
+| Greek | el, el-gr |
+| Gujarati | gu, gu-in |
+| Hausa | ha, ha-latn, ha-latn-ng |
+| Hebrew | he, he-il |
+| Hindi | hi, hi-in |
+| Hungarian | hu, hu-hu |
+| Icelandic | is, is-is |
+| Igb  - ig-latn, ig-ng |
+| Indonesian | id, id-id |
+| Inuktitut (Latin) | iu-cans, iu-latn, iu-latn-ca |
+| Irish | ga, ga-ie |
+| isiXhosa | xh, xh-za |
+| isiZulu | zu, zu-za |
+| Italian | it, it-it, it-ch |
+| Japanese | ja , ja-jp |
+| Kannada | kn, kn-in |
+| Kazakh | kk, kk-kz |
+| Khmer | km, km-kh |
+| K'iche' | quc-latn, qut-gt, qut-latn |
+| Kinyarwanda | rw, rw-rw |
+| KiSwahili | sw, sw-ke |
+| Konkani | kok, kok-in |
+| Korean | ko, ko-kr |
+| Kurdish | ku-arab, ku-arab-iq |
+| Kyrgyz | ky-kg, ky-cyrl |
+| Lao | lo, lo-la |
+| Latvian | lv, lv-lv |
+| Lithuanian | lt, lt-lt |
+| Luxembourgish | lb, lb-lu |
+| Macedonian | mk, mk-mk |
+| Malay | ms, ms-bn, ms-my |
+| Malayalam | ml, ml-in |
+| Maltese | mt, mt-mt |
+| Maori | mi, mi-latn, mi-nz |
+| Marathi | mr, mr-in |
+| Mongolian (Cyrillic) | mn-cyrl, mn-mong, mn-mn, mn-phag |
+| Nepali | ne, ne-np |
+| Norwegian | nb, nb-no, nn, nn-no, no, no-no |
+| Odia | or, or-in |
+| Persian | fa, fa-ir |
+| Polish | pl, pl-pl |
+| Portuguese (Brazil) | pt-br |
+| Portuguese (Portugal) | pt, pt-pt |
+| Punjabi | pa, pa-arab, pa-arab-pk, pa-deva, pa-in |
+| Quechua | quz, quz-bo, quz-ec, quz-pe |
+| Romanian | ro, ro-ro |
+| Russian | ru , ru-ru |
+| Scottish Gaelic | gd-gb, gd-latn |
+| Serbian (Latin) | sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs |
+| Serbian (Cyrillic) | sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs |
+| Sesotho sa Leboa | nso, nso-za |
+| Setswana | tn, tn-bw, tn-za |
+| Sindhi | sd-arab, sd-arab-pk, sd-deva |
+| Sinhala | si, si-lk |
+| Slovak | sk, sk-sk |
+| Slovenian | sl, sl-si |
+| Spanish | es, es-cl, es-co, es-es, es-mx, es-ar, es-bo, es-cr, es-do, es-ec, es-gt, es-hn, es-ni, es-pa, es-pe, es-pr, es-py, es-sv, es-us, es-uy, es-ve |
+| Swedish | sv, sv-se, sv-fi |
+| Tajik (Cyrillic) | tg-arab, tg-cyrl, tg-cyrl-tj, tg-latn |
+| Tamil | ta, ta-in |
+| Tatar | tt-arab, tt-cyrl, tt-latn, tt-ru |
+| Telugu | te, te-in |
+| Thai | th, th-th |
+| Tigrinya | ti, ti-et |
+| Turkish | tr, tr-tr |
+| Turkmen | tk-cyrl, tk-latn, tk-tm, tk-latn-tr, tk-cyrl-tr |
+| Ukrainian | uk, uk-ua |
+| Urdu | ur, ur-pk |
+| Uyghur | ug-arab, ug-cn, ug-cyrl, ug-latn |
+| Uzbek (Latin) | uz, uz-cyrl, uz-latn, uz-latn-uz |
+| Vietnamese | vi, vi-vn |
+| Welsh | cy, cy-gb |
+| Wolof | wo, wo-sn |
+| Yoruba | yo-latn, yo-ng |
+</details>
+<p><strong>Sample Request</strong></p>
+<pre><code class="lang-json">{
+    &quot;availability&quot;:{
+        &quot;markets&quot;: [&quot;US&quot;],
+        &quot;discoverability&quot;: &quot;DISCOVERABLE&quot;,
+        &quot;enableInFutureMarkets&quot;: true,
+        &quot;pricing&quot;: &quot;PAID&quot;,
+        &quot;freeTrial&quot;: &quot;NO_FREE_TRIAL&quot;
+    },
+    &quot;properties&quot;:{
+        &quot;isPrivacyPolicyRequired&quot;: true,
+        &quot;privacyPolicyUrl&quot;: &quot;http://contoso.com&quot;,
+        &quot;website&quot;: &quot;http://contoso.com&quot;,
+        &quot;supportContactInfo&quot;: &quot;http://contoso.com&quot;,
+        &quot;certificationNotes&quot;: &quot;Certification Notes&quot;,
+        &quot;category&quot;: &quot;DeveloperTools&quot;,
+        &quot;subcategory&quot;: &quot;Database&quot;,
+        &quot;productDeclarations&quot;: {
+            &quot;dependsOnDriversOrNT&quot;: false,
+            &quot;accessibilitySupport&quot;: false,
+            &quot;penAndInkSupport&quot;: false
+        },
+        &quot;isSystemFeatureRequired&quot;: [
+        {
+            &quot;isRequired&quot;: true,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;Touch&quot;
+            },
+            {
+                &quot;isRequired&quot;: true,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;Keyboard&quot;
+            },
+            {
+                &quot;isRequired&quot;: false,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;Mouse&quot;
+            },
+            {
+                &quot;isRequired&quot;: false,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;Camera&quot;
+            },
+            {
+                &quot;isRequired&quot;: false,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;NFC_HCE&quot;
+            },
+            {
+                &quot;isRequired&quot;: false,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;NFC_Proximity&quot;
+            },
+            {
+                &quot;isRequired&quot;: false,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;Bluetooth_LE&quot;
+            },
+            {
+                &quot;isRequired&quot;: false,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;Telephony&quot;
+            },
+            {
+                &quot;isRequired&quot;: false,
+                &quot;isRecommended&quot;: false,
+                &quot;hardwareItemType&quot;: &quot;Microphone&quot;
+            }
+        ],
+        &quot;systemRequirementDetails&quot;: [
+            {
+                &quot;minimumRequirement&quot;: &quot;1GB&quot;,
+                &quot;recommendedRequirement&quot;: &quot;4GB&quot;,
+                &quot;hardwareItemType&quot;: &quot;Memory&quot;
+            },
+            {
+                &quot;minimumRequirement&quot;: &quot;&quot;,
+                &quot;recommendedRequirement&quot;: &quot;&quot;,
+                &quot;hardwareItemType&quot;: &quot;DirectX&quot;
+            },
+            {
+                &quot;minimumRequirement&quot;: &quot;&quot;,
+                &quot;recommendedRequirement&quot;: &quot;&quot;,
+                &quot;hardwareItemType&quot;: &quot;Video_Memory&quot;
+            },
+            {
+                &quot;minimumRequirement&quot;: &quot;&quot;,
+                &quot;recommendedRequirement&quot;: &quot;&quot;,
+                &quot;hardwareItemType&quot;: &quot;Processor&quot;
+            },
+            {
+                &quot;minimumRequirement&quot;: &quot;&quot;,
+                &quot;recommendedRequirement&quot;: &quot;&quot;,
+                &quot;hardwareItemType&quot;: &quot;Graphics&quot;
+            }
+        ]
+    },
+    &quot;listings&quot;:{
+        &quot;language&quot;: &quot;en-us&quot;,
+        &quot;description&quot;: &quot;Description&quot;,
+        &quot;whatsNew&quot;: &quot;What's New&quot;,
+        &quot;productFeatures&quot;: [&quot;Feature 1&quot;],
+        &quot;shortDescription&quot;: &quot;Short Description&quot;,
+        &quot;searchTerms&quot;: [&quot;Search Ter 1&quot;],
+        &quot;additionalLicenseTerms&quot;: &quot;License Terms&quot;,
+        &quot;copyright&quot;: &quot;Copyright Information&quot;,
+        &quot;developedBy&quot;: &quot;Developer Details&quot;,
+        &quot;sortTitle&quot;: &quot;Product 101&quot;,
+        &quot;requirements&quot;: [
+            {
+                &quot;minimumHardware&quot;: &quot;Pentium4&quot;,
+                &quot;recommendedHardware&quot;: &quot;Corei9&quot;
+            }
+        ],
+        &quot;contactInfo&quot;: &quot;contactus@contoso.com&quot;               
+    },      
+    &quot;listingsToAdd&quot;: [&quot;en-au&quot;],
+    &quot;listingsToRemove&quot;: [&quot;en-gb&quot;]
+}
+</code></pre>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support Team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the Error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td>Contains actual response Payload for the Request</td>
+</tr>
+<tr>
+<td>pollingUrl</td>
+<td>String</td>
+<td>Polling URL to get status of any In-Progress Submission</td>
+</tr>
+<tr>
+<td>ongoingSubmissionId</td>
+<td>String</td>
+<td>Submission Id of any Already In-Progress Submission</td>
+</tr>
+</tbody>
+</table>
+<p>Sample Response</p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;pollingUrl&quot;: &quot;/submission/v1/product/{productId}/submission/{submissionId}/status&quot;,
+        &quot;ongoingSubmissionId&quot;: &quot;&quot;
+    } 
+}
+</code></pre>
+<h3 id="get-current-draft-packages-api">Get Current Draft Packages API</h3>
+<p>Fetches package details under current draft submission.</p>
+<p><strong>Path [All Packages]</strong>: /submission/v1/product/{productId}/packages<br>
+<strong>Method</strong>: GET</p>
+<p><strong>Path [Single Package]</strong>: /submission/v1/product/{productId}/packages/{packageId}<br>
+<strong>Method</strong>: GET</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+<tr>
+<td>packageId</td>
+<td>The unique ID of the package to fetch</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID app ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of errors or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>packages</td>
+<td>Array of objects</td>
+<td>Object to hold package module data</td>
+</tr>
+<tr>
+<td>packageId</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>packageUrl</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>Array of strings</td>
+<td></td>
+</tr>
+<tr>
+<td>architectures</td>
+<td>Array of strings</td>
+<td>[Neutral, X86, X64, Arm, Arm64]</td>
+</tr>
+<tr>
+<td>isSilentInstall</td>
+<td>Boolean</td>
+<td>This should be marked as true if your installer runs in silent mode without requiring switches or else false</td>
+</tr>
+<tr>
+<td>installerParameters</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>genericDocUrl</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>errorDetails</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>errorScenario</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>errorScenarioDetails</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>errorValue</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>errorUrl</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>packageType</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{   
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+    }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;:{
+        &quot;packages&quot;:[{
+            &quot;packageId&quot;: &quot;pack0832&quot;,
+            &quot;packageUrl&quot;: &quot;https://www.contoso.com/downloads/1.1/setup.exe&quot;,
+            &quot;languages&quot;: [&quot;en-us&quot;],
+            &quot;architectures&quot;: [&quot;X86&quot;],
+            &quot;isSilentInstall&quot;: true,
+            &quot;installerParameters&quot;: &quot;/s&quot;,
+            &quot;genericDocUrl&quot;: &quot;https://docs.contoso.com/doclink&quot;,
+            &quot;errorDetails&quot;: [{
+                &quot;errorScenario&quot;: &quot;rebootRequired&quot;,
+                &quot;errorScenarioDetails&quot;: [{
+                    &quot;errorValue&quot;: &quot;ERR001001&quot;,
+                    &quot;errorUrl&quot;: &quot;https://errors.contoso.com/errors/ERR001001&quot;
+                }]
+            }],
+            &quot;packageType&quot;: &quot;exe&quot;,
+        }]
+    }
+}
+</code></pre>
+<h3 id="update-current-draft-packages-api">Update Current Draft Packages API</h3>
+<p>Updates package details under current draft submission.</p>
+<p><strong>Path [Full Module Update]</strong>: /submission/v1/product/{productId}/packages<br>
+<strong>Method</strong>: PUT</p>
+<p><strong>Path [Single Package Patch Update]</strong>: /submission/v1/product/{productId}/packages/{packageId}<br>
+<strong>Method</strong>: PATCH</p>
+<p><strong>API Behavior</strong></p>
+<p>In the case of Full Module Update API – entire packages data needs to be present in request for full update of every field. Any field which is not present in request, its default value is used to overwrite current value for that specific module. This results in overwriting of all existing packages with a new set of packages from request. This will result in regeneration of Package Ids and user should call GET Packages API for latest Package Ids.</p>
+<p>In the case of Single Package Patch Update API – only fields which are to be updated for a given package need to be present in request. These field values from request will overwrite their existing values, keeping all other fields which are not present in the request, same as current for that specific package. Other packages in the set remain as is.</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+<tr>
+<td>packageId</td>
+<td>The unique ID of the package</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID app ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>packages</td>
+<td>Array of Objects</td>
+<td>Object to hold Package Module data [Only Required for Full Module Update]</td>
+</tr>
+<tr>
+<td>packageUrl</td>
+<td>String</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>languages</td>
+<td>Array of strings</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>architectures</td>
+<td>Array of strings</td>
+<td><em>Required</em> Should contain a single architecture - Neutral, X86, X64, Arm, Arm64</td>
+</tr>
+<tr>
+<td>isSilentInstall</td>
+<td>Boolean</td>
+<td><em>Required</em>  This should be marked as true if your installer runs in silent mode without requiring switches or else false</td>
+</tr>
+<tr>
+<td>installerParameters</td>
+<td>String</td>
+<td><em>Required if isSilentInstall is false</em></td>
+</tr>
+<tr>
+<td>genericDocUrl</td>
+<td>String</td>
+<td><em>Required if packageType is exe</em> Link to document containing details of custom error codes for the EXE type installer</td>
+</tr>
+<tr>
+<td>errorDetails</td>
+<td>Array of Objects</td>
+<td>Metadata to hold custom error codes and details for EXE type Installers.</td>
+</tr>
+<tr>
+<td>errorScenario</td>
+<td>String</td>
+<td>Identify the specific error scenario. [installationCancelledByUser, applicationAlreadyExists, installationAlreadyInProgress, diskSpaceIsFull, rebootRequired, networkFailure, packageRejectedDuringInstallation, installationSuccessful, miscellaneous]</td>
+</tr>
+<tr>
+<td>errorScenarioDetails</td>
+<td>Array of Objects</td>
+<td></td>
+</tr>
+<tr>
+<td>errorValue</td>
+<td>String</td>
+<td>Error code which can be present during Installation</td>
+</tr>
+<tr>
+<td>errorUrl</td>
+<td>String</td>
+<td>URL to have details on the error</td>
+</tr>
+<tr>
+<td>packageType</td>
+<td>String</td>
+<td><em>Required</em> [exe, msi]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Request [Full Module Update]</strong></p>
+<pre><code class="lang-json">{
+    &quot;packages&quot;:[{
+        &quot;packageUrl&quot;: &quot;https://www.contoso.com/downloads/1.1/setup.exe&quot;,
+        &quot;languages&quot;: [&quot;en-us&quot;],
+        &quot;architectures&quot;: [&quot;X86&quot;],
+        &quot;isSilentInstall&quot;: true,
+        &quot;installerParameters&quot;: &quot;/s&quot;,
+        &quot;genericDocUrl&quot;: &quot;https://docs.contoso.com/doclink&quot;,
+        &quot;errorDetails&quot;: [{
+            &quot;errorScenario&quot;: &quot;rebootRequired&quot;,
+            &quot;errorScenarioDetails&quot;: [{
+                &quot;errorValue&quot;: &quot;ERR001001&quot;,
+                &quot;errorUrl&quot;: &quot;https://errors.contoso.com/errors/ERR001001&quot;
+            }]
+        }],
+        &quot;packageType&quot;: &quot;exe&quot;,
+    }]
+}
+</code></pre>
+<p><strong>Sample Request [Single Package Patch Update]</strong></p>
+<pre><code class="lang-json">{
+    &quot;packageUrl&quot;: &quot;https://www.contoso.com/downloads/1.1/setup.exe&quot;,
+    &quot;languages&quot;: [&quot;en-us&quot;],
+    &quot;architectures&quot;: [&quot;X86&quot;],
+    &quot;isSilentInstall&quot;: true,
+    &quot;installerParameters&quot;: &quot;/s&quot;,
+    &quot;genericDocUrl&quot;: &quot;https://docs.contoso.com/doclink&quot;,
+    &quot;errorDetails&quot;: [{
+        &quot;errorScenario&quot;: &quot;rebootRequired&quot;,
+        &quot;errorScenarioDetails&quot;: [{
+            &quot;errorValue&quot;: &quot;ERR001001&quot;,
+            &quot;errorUrl&quot;: &quot;https://errors.contoso.com/errors/ERR001001&quot;
+        }]
+    }],
+    &quot;packageType&quot;: &quot;exe&quot;,
+}
+</code></pre>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>[The list of error or warning messages if any]</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The Error Code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The Description of the Error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The Entity from which the Error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>pollingUrl</td>
+<td>String</td>
+<td>[Polling URL to get Submission Status in case of any Already In-Progress Submission]</td>
+</tr>
+<tr>
+<td>ongoingSubmissionId</td>
+<td>String</td>
+<td>[Submission ID of any Already In-Progress Submission]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;pollingUrl&quot;: &quot;/submission/v1/product/{productId}/submission/{submissionId}/status&quot;,
+        &quot;ongoingSubmissionId&quot;: &quot;&quot;
+    } 
+}
+</code></pre>
+<h3 id="commit-packages-api">Commit Packages API</h3>
+<p>Commits the new set of Packages updated using Package Update APIs under current draft submission. This API returns a Polling URL to track the Package Upload.</p>
+<p><strong>Path</strong>: /submission/v1/product/{productId}/packages/commit<br>
+<strong>Method</strong>: POST</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID App ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>[The list of error or warning messages if any]</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>pollingUrl</td>
+<td>String</td>
+<td>[Polling URL to get status of Package Upload or Submission Status in case of any Already In-Progress Submission]</td>
+</tr>
+<tr>
+<td>ongoingSubmissionId</td>
+<td>String</td>
+<td>[Submission Id of any Already In-Progress Submission]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;pollingUrl&quot;: &quot;/submission/v1/product/{productId}/status&quot;,
+        &quot;ongoingSubmissionId&quot;: &quot;&quot;
+    } 
+}
+</code></pre>
+<h3 id="get-current-draft-listing-assets-api">Get Current Draft Listing Assets API</h3>
+<p>Fetches listing asset details under current draft submission.</p>
+<p><strong>Path</strong>: /submission/v1/product/{productId}/listings/assets?languages={languages}<br>
+<strong>Method</strong>: GET</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Query Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>languages</td>
+<td>[Optional] The listing languages filter as comma separated string [limit of up to 200 languages]. If absent, the first 200 available listing language’s assets data are retrieved. (e.g., “en-us, en-gb&quot;)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID App ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>listingAssets</td>
+<td>Array of objects</td>
+<td>Listing asset details for each language</td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>storeLogos</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>screenshots</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>assetUrl</td>
+<td>String</td>
+<td>Must be a valid URL</td>
+</tr>
+<tr>
+<td>imageSize</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>width</td>
+<td>Integer</td>
+<td></td>
+</tr>
+<tr>
+<td>height</td>
+<td>Integer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{   
+&quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;:{
+        &quot;listingAssets&quot;: [{
+            &quot;language&quot;: &quot;en-us&quot;,
+            &quot;storeLogos&quot;: [
+                {
+                    &quot;id&quot;: &quot;1234567890abcdefgh&quot;,
+                    &quot;assetUrl&quot;: &quot;https://contoso.com/blob=1234567890abcdefgh&quot;,
+                    &quot;imageSize&quot;: {
+                        &quot;width&quot;: 2160,
+                        &quot;height&quot;: 2160
+                    }
+                }
+            ],
+            &quot;screenshots&quot;: [
+                {
+                    &quot;id&quot;: &quot;1234567891abcdefgh&quot;,
+                    &quot;assetUrl&quot;: &quot;https://contoso.com/blob=1234567891abcdefgh&quot;,
+                    &quot;imageSize&quot;: {
+                        &quot;width&quot;: 2160,
+                        &quot;height&quot;: 2160
+                    }
+                }
+            ]
+        }]
+    }
+}
+</code></pre>
+<h3 id="create-listing-assets-api">Create Listing Assets API</h3>
+<p>Creates new Listing Asset Upload under current draft submission.</p>
+<h4 id="update-of-listing-assets">Update of Listing assets</h4>
+<p>Microsoft Store Submission API for EXE or MSI app use runtime-generated SAS URLs to Blob Stores for each individual image asset uploads, along with a Commit API call after uploading is successful.
+To have the ability to update listing assets, and in turn, to be able to add/remove locales in listing module, the following approach can be used:</p>
+<ol>
+<li>Use the Create Listing Asset API to send request regarding asset upload along with language, type and count of assets.</li>
+<li>Based on the number of assets requested, Asset IDs are created on demand and would create a short-term SAS URL and send it back in Response Body under type of assets. You can use this URL to upload Image assets of specific type using HTTP Clients [Put Blob (REST API) - Azure Storage | Microsoft Docs].</li>
+<li>After uploading, you can use the Commit Listing Assets API to also send the new Asset ID information received earlier from previous API call. The single API will internally commit the listing assets data after validation.</li>
+<li>This approach will effectively overwrite the entire set of previous Images of the Asset Type under specific Language which is being sent in Request. Hence, previously uploaded Assets will be removed.</li>
+</ol>
+<p><strong>Path</strong>: /submission/v1/product/{productId}/listings/assets/create<br>
+<strong>Method</strong>: POST</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID App ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td>String</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>createAssetRequest</td>
+<td>Object</td>
+<td><em>Required</em></td>
+</tr>
+<tr>
+<td>Screenshot</td>
+<td>Integer</td>
+<td><em>Required if ISV needs to update screenshots or add new listing language</em> [1 - 10]</td>
+</tr>
+<tr>
+<td>Logo</td>
+<td>Integer</td>
+<td><em>Required if ISV needs to update logos or add new listing language</em> [1 or 2]</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>listingAssets</td>
+<td>Object</td>
+<td>Object containing details of StoreLogos and Screenshots to be uploaded</td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>storeLogos</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>screenshots</td>
+<td>Array of objects</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>primaryAssetUploadUrl</td>
+<td>String</td>
+<td>Primary URL to upload listing asset using Azure Blob REST API</td>
+</tr>
+<tr>
+<td>secondaryAssetUploadUrl</td>
+<td>String</td>
+<td>Secondary URL to upload listing asset using Azure Blob REST API</td>
+</tr>
+<tr>
+<td>httpMethod</td>
+<td>HTTP Method</td>
+<td>The HTTP method needed to be used to upload Assets via the Asset Upload URLs – Primary or Secondary</td>
+</tr>
+<tr>
+<td>httpHeaders</td>
+<td>Object</td>
+<td>An object with keys as Required headers to be present in the Upload API call to Asset Upload URLs. If the value is non-empty, the headers need to have specific values. Else, values are calculated during API call.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;listingAssets&quot;: {
+            &quot;language&quot;: &quot;en-us&quot;,
+            &quot;storeLogos&quot;:[{
+                &quot;id&quot;: &quot;1234567890abcdefgh&quot;,
+                &quot;primaryAssetUploadUrl&quot;: &quot;https://contoso.com/upload?blob=1234567890abcdefgh&amp;sig=12345&quot;,
+                &quot;secondaryAssetUploadUrl&quot;: &quot;https://contoso.com/upload?blob=0987654321abcdfger&amp;sig=54326&quot;,
+                &quot;httpMethod&quot;: &quot;PUT&quot;,
+                &quot;httpHeaders&quot;: {&quot;Required Header Name&quot;: &quot;Header Value&quot;}
+            }],
+            &quot;screenshots&quot;:[{
+                &quot;id&quot;: &quot;0987654321abcdfger&quot;,
+                &quot;primaryAssetUploadUrl&quot;: &quot;https://contoso.com/upload?blob=0987654321abcdfger&amp;sig=54321&quot;,
+                &quot;secondaryAssetUploadUrl&quot;: &quot;https://contoso.com/upload?blob=0987654321abcdfger&amp;sig=54322&quot;,
+                &quot;httpMethod&quot;: &quot;PUT&quot;,
+                &quot;httpHeaders&quot;: {&quot;Required Header Name&quot;: &quot;Header Value&quot;}
+
+            }]
+        }
+    } 
+}
+</code></pre>
+<h3 id="commit-listing-assets-api">Commit Listing Assets API</h3>
+<p>Commits the new Listing Asset Uploaded using the details from Create Assets API under current draft submission.</p>
+<p><strong>Path</strong>: /submission/v1/product/{productId}/listings/assets/commit<br>
+<strong>Method</strong>: PUT</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID App ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Request Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>listingAssets</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>language</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>storeLogos</td>
+<td>Array of Object</td>
+<td></td>
+</tr>
+<tr>
+<td>screenshots</td>
+<td>Array of Object</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>Should be either an existing ID which user wants to persist from Get Current Listing Assets API or new ID under which a new Asset was uploaded in Create Listing Assets API.</td>
+</tr>
+<tr>
+<td>assetUrl</td>
+<td>String</td>
+<td>Should be either existing Asset’s URL which user wants to persist from Get Current Listing Assets API or the Upload URL – Primary or Secondary, using which a new Asset was Uploaded in Create Listing Assets API. Must be a valid URL</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Request</strong></p>
+<pre><code class="lang-json">{
+    &quot;listingAssets&quot;: { 
+        &quot;language&quot;: &quot;en-us&quot;,    
+        &quot;storeLogos&quot;: [
+            {
+                &quot;id&quot;: &quot;1234567890abcdefgh&quot;,
+                &quot;assetUrl&quot;: &quot;https://contoso.com/blob=1234567890abcdefgh&quot;,
+            }
+        ],
+        &quot;screenshots&quot;: [
+            {
+                &quot;id&quot;: &quot;1234567891abcdefgh&quot;,
+                &quot;assetUrl&quot;: &quot;https://contoso.com/blob=1234567891abcdefgh&quot;,
+            }
+        ]
+    }
+}
+</code></pre>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>pollingUrl</td>
+<td>String</td>
+<td>Polling URL to get status of any in-progress submission</td>
+</tr>
+<tr>
+<td>ongoingSubmissionId</td>
+<td>String</td>
+<td>Submission ID of any already in-progress submission</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;pollingUrl&quot;: &quot;/submission/v1/product/{productId}/submission/{submissionId}/status&quot;,
+        &quot;ongoingSubmissionId&quot;: &quot;&quot;
+    } 
+}
+</code></pre>
+<h3 id="module-status-polling-api">Module Status Polling API</h3>
+<p>API to check the module readiness before submission can be created. Also validates the package upload status.</p>
+<p><strong>Path</strong>: /submission/v1/product/{productId}/status<br>
+<strong>Method</strong>: GET</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID App ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>isReady</td>
+<td>Boolean</td>
+<td>Indicates if all Modules are in ready state including package upload</td>
+</tr>
+<tr>
+<td>ongoingSubmissionId</td>
+<td>String</td>
+<td>Submission ID of any already in-progress submission</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;isReady&quot;: true,
+        &quot;ongoingSubmissionId&quot;: &quot;&quot;
+    }
+}
+</code></pre>
+<h3 id="create-submission-api">Create Submission API</h3>
+<p>Creates a submission from current draft for MSI or EXE app. The API checks:</p>
+<ul>
+<li>for active submission and fails with error message if an active submission exists.</li>
+<li>if all modules are in ready status to create submission.</li>
+<li>each field in the submission is validated as per requirements of the Store</li>
+</ul>
+<p><strong>Path</strong>:/submission/v1/product/{productId}/submit<br>
+<strong>Method</strong>: POST</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID App ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>pollingUrl</td>
+<td>String</td>
+<td>Polling URL to get status of module readiness including package upload for submission</td>
+</tr>
+<tr>
+<td>submissionId</td>
+<td>String</td>
+<td>The ID for the newly created Submission</td>
+</tr>
+<tr>
+<td>ongoingSubmissionId</td>
+<td>String</td>
+<td>Submission ID of any already in-progress submission</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;submissionId&quot;: &quot;1234567890&quot;, 
+        &quot;pollingUrl&quot;: &quot;/submission/v1/product/{productId}/submission/{submissionId}/status&quot;,
+        &quot;ongoingSubmissionId&quot;: &quot;&quot;
+    }
+}
+</code></pre>
+<h3 id="submission-status-polling-api">Submission Status Polling API</h3>
+<p>API to check the Submission Status.</p>
+<p><strong>Path</strong>: /submission/v1/product/{productId}/submission/{submissionId}/status<br>
+<strong>Method</strong>: GET</p>
+<p><strong>Path Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>productId</td>
+<td>The Partner Center ID of the product</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Required Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer &lt;Token&gt;</code></td>
+<td>Using the Microsoft Entra ID App ID registered with Partner Center account</td>
+</tr>
+<tr>
+<td><code>X-Seller-Account-Id</code></td>
+<td>Seller ID of Partner Center account</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Headers</strong></p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>X-Correlation-ID</code></td>
+<td>The GUID type unique ID for each request. This can be shared with Support team for analyzing any issue.</td>
+</tr>
+<tr>
+<td><code>Retry-After</code></td>
+<td>The time in seconds which client needs to wait before calling the APIs again due to rate limiting.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isSuccess</td>
+<td>Boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array of objects</td>
+<td>The list of error or warning messages if any</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>The error code of the Message</td>
+</tr>
+<tr>
+<td>message</td>
+<td>String</td>
+<td>The description of the error</td>
+</tr>
+<tr>
+<td>target</td>
+<td>String</td>
+<td>The entity from which the error originated</td>
+</tr>
+<tr>
+<td>responseData</td>
+<td>Object</td>
+<td></td>
+</tr>
+<tr>
+<td>publishingStatus</td>
+<td>String</td>
+<td>Publishing Status of Submission - [INPROGRESS, PUBLISHED, FAILED, UNKNOWN]</td>
+</tr>
+<tr>
+<td>hasFailed</td>
+<td>Boolean</td>
+<td>Indicates if Publishing has Failed and won’t be retried</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sample Response</strong></p>
+<pre><code class="lang-json">{
+    &quot;isSuccess&quot;: true,
+    &quot;errors&quot;: [{
+        &quot;code&quot;: &quot;badrequest&quot;,
+        &quot;message&quot;: &quot;Error Message 1&quot;,
+        &quot;target&quot;: &quot;listings&quot;
+        }, {
+        &quot;code&quot;: &quot;warning&quot;,
+        &quot;message&quot;: &quot;Warning Message 1&quot;,
+        &quot;target&quot;: &quot;properties&quot;
+    }],
+    &quot;responseData&quot;: {
+        &quot;publishingStatus&quot;: &quot;INPROGRESS&quot;,
+        &quot;hasFailed&quot;: false
+    }
+}
+</code></pre>
+<h2 id="code-examples">Code examples</h2>
+<p>The following articles provide detailed code examples that demonstrate how to use the Microsoft Store submission API in different programming languages:</p>
+<h3 id="c-sample-microsoft-store-submission-api-for-msi-or-exe-app">C# sample: Microsoft Store Submission API for MSI or EXE app</h3>
+<p>This article provides C# code examples that demonstrate how to use the Microsoft Store submission API for MSI or EXE app. You can review each example to learn more about the task it demonstrates, or you can build all the code examples in this article into a console application.</p>
+<p><strong>Prerequisites</strong>
+These examples use the following library:</p>
+<ul>
+<li>Newtonsoft.Json NuGet package from Newtonsoft.</li>
+</ul>
+<p><strong>Main program</strong>
+The following example implements a command line program that calls the other example methods in this article to demonstrate different ways to use the Microsoft Store submission API. To adapt this program for your own use:</p>
+<ul>
+<li>Assign the SellerId property to the Seller ID of your Partner Center account.</li>
+<li>Assign the ApplicationId property to the ID of the app you want to manage.</li>
+<li>Assign the ClientId and ClientSecret properties to the client ID and key for your app, and replace the tenantid string in the TokenEndpoint URL with the tenant ID for your app. For more information, see How to associate an Microsoft Entra ID application with your Partner Center account</li>
+</ul>
+<pre><code class="lang-csharp">using System;
+using System.Threading.Tasks;
+
+namespace Win32SubmissionApiCSharpSample
+{
+    public class Program
+    {
+        static async Task Main(string[] args)
+        {
+            var config = new ClientConfiguration()
+            {
+                ApplicationId = &quot;...&quot;,
+                ClientId = &quot;...&quot;,
+                ClientSecret = &quot;...&quot;,
+                Scope = &quot;https://api.store.microsoft.com/.default&quot;,
+                ServiceUrl = &quot;https://api.store.microsoft.com&quot;,
+                TokenEndpoint = &quot;...&quot;,
+                SellerId = 0
+            };
+
+            await new AppSubmissionUpdateSample(config).RunAppSubmissionUpdateSample();
+
+        }
+    }
+}
+</code></pre>
+<h3 id="clientconfiguration-helper-class-using-c">ClientConfiguration helper class using C#</h3>
+<p>The sample app uses the ClientConfiguration helper class to pass Microsoft Entra ID Directory data and app data to each of the example methods that use the Microsoft Store submission API.</p>
+<pre><code class="lang-csharp">using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Win32SubmissionApiCSharpSample
+{
+    public class ClientConfiguration
+    {
+        /// &lt;summary&gt;
+        /// Client Id of your Microsoft Entra ID Directory app.
+        /// Example&quot; 00001111-aaaa-2222-bbbb-3333cccc4444
+        /// &lt;/summary&gt;
+        public string ClientId { get; set; }
+
+        /// &lt;summary&gt;
+        /// Client secret of your Microsoft Entra ID Directory app
+        /// &lt;/summary&gt;
+        public string ClientSecret { get; set; }
+
+        /// &lt;summary&gt;
+        /// Service root endpoint.
+        /// Example: &quot;https://api.store.microsoft.com&quot;
+        /// &lt;/summary&gt;
+        public string ServiceUrl { get; set; }
+
+        /// &lt;summary&gt;
+        /// Token endpoint to which the request is to be made. Specific to your Microsoft Entra ID Directory app
+        /// Example: https://login.microsoftonline.com/d454d300-128e-2d81-334a-27d9b2baf002/oauth2/v2.0/token
+        /// &lt;/summary&gt;
+        public string TokenEndpoint { get; set; }
+
+        /// &lt;summary&gt;
+        /// Resource scope. If not provided (set to null), default one is used for the production API
+        /// endpoint (&quot;https://api.store.microsoft.com/.default&quot;)
+        /// &lt;/summary&gt;
+        public string Scope { get; set; }
+
+        /// &lt;summary&gt;
+        /// Partner Center Application ID.
+        /// Example: 3e31a9f9-84e8-4d2d-9eba-487878d02ebf
+        /// &lt;/summary&gt;
+        public string ApplicationId { get; set; }
+
+
+        /// &lt;summary&gt;
+        /// The Partner Center Seller Id
+        /// Example: 123456892
+        /// &lt;/summary&gt;
+        public int SellerId { get; set; }
+    }
+}
+</code></pre>
+<h3 id="create-an-app-submission-using-c">Create an app submission using C#</h3>
+<p>The following example implements a class that uses several methods in the Microsoft Store submission API to update an app submission.</p>
+<pre><code class="lang-csharp">using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Win32SubmissionApiCSharpSample
+{
+    public class AppSubmissionUpdateSample
+    {
+        private ClientConfiguration ClientConfig;
+
+        /// &lt;summary&gt;
+        /// Constructor
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;configuration&quot;&gt;An instance of ClientConfiguration that contains all parameters populated&lt;/param&gt;
+        public AppSubmissionUpdateSample(ClientConfiguration configuration)
+        {
+            this.ClientConfig = configuration;
+        }
+
+        /// &lt;summary&gt;
+        /// Main method to Run the Sample Application
+        /// &lt;/summary&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        /// &lt;exception cref=&quot;InvalidOperationException&quot;&gt;&lt;/exception&gt;
+        public async Task RunAppSubmissionUpdateSample()
+        {
+            // **********************
+            //       SETTINGS
+            // **********************
+            var appId = this.ClientConfig.ApplicationId;
+            var clientId = this.ClientConfig.ClientId;
+            var clientSecret = this.ClientConfig.ClientSecret;
+            var serviceEndpoint = this.ClientConfig.ServiceUrl;
+            var tokenEndpoint = this.ClientConfig.TokenEndpoint;
+            var scope = this.ClientConfig.Scope;
+
+            // Get authorization token.
+            Console.WriteLine(&quot;Getting authorization token&quot;);
+            var accessToken = await SubmissionClient.GetClientCredentialAccessToken(
+                tokenEndpoint,
+                clientId,
+                clientSecret,
+                scope);
+
+            var client = new SubmissionClient(accessToken, serviceEndpoint);
+
+            client.DefaultHeaders = new Dictionary&lt;string, string&gt;()
+            {
+                {&quot;X-Seller-Account-Id&quot;, this.ClientConfig.SellerId.ToString() }
+            };
+
+            Console.WriteLine(&quot;Getting Current Application Draft Status&quot;);
+            
+            dynamic AppDraftStatus = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.ProductDraftStatusPollingUrlTemplate,
+                SubmissionClient.Version, appId), null);
+            
+            Console.WriteLine(AppDraftStatus.ToString());
+
+            Console.WriteLine(&quot;Getting Application Packages &quot;);
+
+            dynamic PackagesResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.PackagesUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            Console.WriteLine(PackagesResponse.ToString());
+
+            Console.WriteLine(&quot;Getting Single Package&quot;);
+
+            dynamic SinglePackageResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.PackageByIdUrlTemplate,
+                SubmissionClient.Version, appId, (string)PackagesResponse.responseData.packages[0].packageId), null);
+
+            Console.WriteLine(SinglePackageResponse.ToString());
+
+            Console.WriteLine(&quot;Updating Entire Package Set&quot;);
+
+            // Update data in Packages list to have final set of updated Packages
+
+            // Example - Updating Installer Parameters
+            PackagesResponse.responseData.packages[0].installerParameters = &quot;/s /r new-args&quot;;
+
+            dynamic PackagesUpdateRequest = new
+            {
+                packages = PackagesResponse.responseData.packages
+            };
+
+            dynamic PackagesUpdateResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Put, string.Format(SubmissionClient.PackagesUrlTemplate,
+                SubmissionClient.Version, appId), PackagesUpdateRequest);
+
+            Console.WriteLine(PackagesUpdateResponse.ToString());
+
+            Console.WriteLine(&quot;Updating Single Package's Download Url&quot;);
+
+            // Update data in the SinglePackage object
+
+            var SinglePackageUpdateRequest = SinglePackageResponse.responseData.packages[0];
+
+            // Example - Updating Installer Parameters
+            SinglePackageUpdateRequest.installerParameters = &quot;/s /r /t new-args&quot;;
+
+            dynamic PackageUpdateResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Patch, string.Format(SubmissionClient.PackageByIdUrlTemplate,
+                SubmissionClient.Version, appId, SinglePackageUpdateRequest.packageId), SinglePackageUpdateRequest);
+
+            Console.WriteLine(&quot;Committing Packages&quot;);
+
+            dynamic PackageCommitResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Post, string.Format(SubmissionClient.PackagesCommitUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            Console.WriteLine(PackageCommitResponse.ToString());
+
+            Console.WriteLine(&quot;Polling Package Upload Status&quot;);
+
+            AppDraftStatus = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.ProductDraftStatusPollingUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            while (!((bool)AppDraftStatus.responseData.isReady))
+            {
+                AppDraftStatus = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.ProductDraftStatusPollingUrlTemplate,
+                    SubmissionClient.Version, appId), null);
+
+                Console.WriteLine(&quot;Waiting for Upload to finish&quot;);
+
+                await Task.Delay(TimeSpan.FromSeconds(2));
+
+                if(AppDraftStatus.errors != null &amp;&amp; AppDraftStatus.errors.Count &gt; 0)
+                {
+                    for(var index = 0; index &lt; AppDraftStatus.errors.Count; index++)
+                    {
+                        if(AppDraftStatus.errors[index].code == &quot;packageuploaderror&quot;)
+                        {
+                            throw new InvalidOperationException(&quot;Package Upload Failed. Please try committing packages again.&quot;);
+                        }
+                    }
+                }
+            }
+
+            Console.WriteLine(&quot;Getting Application Metadata - All Modules&quot;);
+
+            dynamic AppMetadata = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.AppMetadataUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            Console.WriteLine(AppMetadata.ToString());
+
+            Console.WriteLine(&quot;Getting Application Metadata - Listings&quot;);
+
+            dynamic AppListingsMetadata = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.AppListingsFetchMetadataUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            Console.WriteLine(AppListingsMetadata.ToString());
+
+            Console.WriteLine(&quot;Updating Listings Metadata - Description&quot;);
+
+            // Update Required Fields in Listings Metadata Object - Per Language. For eg. AppListingsMetadata.responseData.listings[0]
+
+            // Example - Updating Description
+            AppListingsMetadata.responseData.listings[0].description = &quot;New Description Updated By C# Sample Code&quot;;
+
+            dynamic ListingsUpdateRequest = new
+            {
+                listings = AppListingsMetadata.responseData.listings[0]
+            };
+
+            dynamic UpdateListingsMetadataResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Put, string.Format(SubmissionClient.AppMetadataUrlTemplate,
+                SubmissionClient.Version, appId), ListingsUpdateRequest);
+
+            Console.WriteLine(UpdateListingsMetadataResponse.ToString());
+
+            Console.WriteLine(&quot;Getting All Listings Assets&quot;);
+
+            dynamic ListingAssets = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.ListingAssetsUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            Console.WriteLine(ListingAssets.ToString());
+
+            Console.WriteLine(&quot;Creating Listing Assets for 1 Screenshot&quot;);
+
+            
+            dynamic AssetCreateRequest = new
+            {
+                language = ListingAssets.responseData.listingAssets[0].language,
+                createAssetRequest = new Dictionary&lt;string, int&gt;()
+                {
+                    {&quot;Screenshot&quot;, 1 },
+                    {&quot;Logo&quot;, 0 }
+                }
+            };
+
+            dynamic AssetCreateResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Post, string.Format(SubmissionClient.ListingAssetsCreateUrlTemplate,
+               SubmissionClient.Version, appId), AssetCreateRequest);
+
+            Console.WriteLine(AssetCreateResponse.ToString());
+
+            Console.WriteLine(&quot;Uploading Listing Assets&quot;);
+
+            // Path to PNG File to be Uploaded as Screenshot / Logo
+            var PathToFile = &quot;./Image.png&quot;;
+            var AssetToUpload = File.OpenRead(PathToFile);
+
+            await client.UploadAsset(AssetCreateResponse.responseData.listingAssets.screenshots[0].primaryAssetUploadUrl.Value as string, AssetToUpload);
+
+            Console.WriteLine(&quot;Committing Listing Assets&quot;);
+
+            dynamic AssetCommitRequest = new
+            {
+                listingAssets = new
+                {
+                    language = ListingAssets.responseData.listingAssets[0].language,
+                    storeLogos = ListingAssets.responseData.listingAssets[0].storeLogos,
+                    screenshots = JToken.FromObject(new List&lt;dynamic&gt;() { new
+                {
+                    id = AssetCreateResponse.responseData.listingAssets.screenshots[0].id.Value as string,
+                    assetUrl = AssetCreateResponse.responseData.listingAssets.screenshots[0].primaryAssetUploadUrl.Value as string
+                }
+                }.ToArray())
+                }
+            };
+
+            dynamic AssetCommitResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Put, string.Format(SubmissionClient.ListingAssetsCommitUrlTemplate,
+               SubmissionClient.Version, appId), AssetCommitRequest);
+
+            Console.WriteLine(AssetCommitResponse.ToString());
+
+            Console.WriteLine(&quot;Getting Current Application Draft Status before Submission&quot;);
+
+            AppDraftStatus = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.ProductDraftStatusPollingUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            Console.WriteLine(AppDraftStatus.ToString());
+
+            if (AppDraftStatus == null || !((bool)AppDraftStatus.responseData.isReady))
+            {
+                throw new InvalidOperationException(&quot;Application Current Status is not in Ready Status for All Modules&quot;);
+            }
+
+            Console.WriteLine(&quot;Creating Submission&quot;);
+
+            dynamic SubmissionCreationResponse = await client.Invoke&lt;dynamic&gt;(HttpMethod.Post, string.Format(SubmissionClient.CreateSubmissionUrlTemplate,
+                SubmissionClient.Version, appId), null);
+
+            Console.WriteLine(SubmissionCreationResponse.ToString());
+
+            Console.WriteLine(&quot;Current Submission Status&quot;);
+
+            dynamic SubmissionStatus = await client.Invoke&lt;dynamic&gt;(HttpMethod.Get, string.Format(SubmissionClient.SubmissionStatusPollingUrlTemplate,
+                SubmissionClient.Version, appId, SubmissionCreationResponse.responseData.submissionId.Value as string), null);
+
+            Console.Write(SubmissionStatus.ToString());
+
+            // User can Poll on this API to know if Submission Status is INPROGRESS, PUBLISHED or FAILED.
+            // This Process involves File Scanning, App Certification and Publishing and can take more than a day.
+        }
+    }
+}
+</code></pre>
+<h3 id="ingestionclient-helper-class-using-c">IngestionClient helper class using C#</h3>
+<p>The IngestionClient class provides helper methods that are used by other methods in the sample app to perform the following tasks:</p>
+<ul>
+<li>Obtain an Microsoft Entra ID access token that can be used to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.</li>
+<li>Process the HTTP requests for the Microsoft Store submission API.</li>
+</ul>
+<pre><code class="lang-csharp">using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Win32SubmissionApiCSharpSample
+{
+    /// &lt;summary&gt;
+    /// This class is a proxy that abstracts the functionality of the API service
+    /// &lt;/summary&gt;
+    public class SubmissionClient : IDisposable
+    {
+        public static readonly string Version = &quot;1&quot;;
+        private HttpClient httpClient;
+        private HttpClient imageUploadClient;
+
+        private readonly string accessToken;
+
+        public static readonly string PackagesUrlTemplate = &quot;/submission/v{0}/product/{1}/packages&quot;;
+        public static readonly string PackageByIdUrlTemplate = &quot;/submission/v{0}/product/{1}/packages/{2}&quot;;
+        public static readonly string PackagesCommitUrlTemplate = &quot;/submission/v{0}/product/{1}/packages/commit&quot;;
+        public static readonly string AppMetadataUrlTemplate = &quot;/submission/v{0}/product/{1}/metadata&quot;;
+        public static readonly string AppListingsFetchMetadataUrlTemplate = &quot;/submission/v{0}/product/{1}/metadata/listings&quot;;
+        public static readonly string ListingAssetsUrlTemplate = &quot;/submission/v{0}/product/{1}/listings/assets&quot;;
+        public static readonly string ListingAssetsCreateUrlTemplate = &quot;/submission/v{0}/product/{1}/listings/assets/create&quot;;
+        public static readonly string ListingAssetsCommitUrlTemplate = &quot;/submission/v{0}/product/{1}/listings/assets/commit&quot;;
+        public static readonly string ProductDraftStatusPollingUrlTemplate = &quot;/submission/v{0}/product/{1}/status&quot;;
+        public static readonly string CreateSubmissionUrlTemplate = &quot;/submission/v{0}/product/{1}/submit&quot;;
+        public static readonly string SubmissionStatusPollingUrlTemplate = &quot;/submission/v{0}/product/{1}/submission/{2}/status&quot;;
+
+        public const string JsonContentType = &quot;application/json&quot;;
+        public const string PngContentType = &quot;image/png&quot;;
+        public const string BinaryStreamContentType = &quot;application/octet-stream&quot;;
+
+        /// &lt;summary&gt;
+        /// Initializes a new instance of the &lt;see cref=&quot;SubmissionClient&quot; /&gt; class.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;accessToken&quot;&gt;
+        /// The access token. This is JWT a token obtained from Microsoft Entra ID Directory allowing the caller to invoke the API
+        /// on behalf of a user
+        /// &lt;/param&gt;
+        /// &lt;param name=&quot;serviceUrl&quot;&gt;The service URL.&lt;/param&gt;
+        public SubmissionClient(string accessToken, string serviceUrl)
+        {
+            if (string.IsNullOrEmpty(accessToken))
+            {
+                throw new ArgumentNullException(&quot;accessToken&quot;);
+            }
+
+            if (string.IsNullOrEmpty(serviceUrl))
+            {
+                throw new ArgumentNullException(&quot;serviceUrl&quot;);
+            }
+
+            this.accessToken = accessToken;
+            this.httpClient = new HttpClient
+            {
+                BaseAddress = new Uri(serviceUrl)
+            };
+            this.imageUploadClient = new HttpClient();
+            this.DefaultHeaders = new Dictionary&lt;string, string&gt;();
+        }
+
+        /// &lt;summary&gt;
+        /// Gets or Sets the default headers.
+        /// &lt;/summary&gt;
+        public Dictionary&lt;string, string&gt; DefaultHeaders { get; set; }
+
+        /// &lt;summary&gt;
+        /// Performs application-defined tasks associated with freeing, releasing, or resetting
+        /// unmanaged resources.
+        /// &lt;/summary&gt;
+        public void Dispose()
+        {
+            if (this.httpClient != null)
+            {
+                this.httpClient.Dispose();
+                this.httpClient = null;
+                GC.SuppressFinalize(this);
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Gets the authorization token for the provided client id, client secret, and the scope.
+        /// This token is usually valid for 1 hour, so if your submission takes longer than that to complete,
+        /// make sure to get a new one periodically.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;tokenEndpoint&quot;&gt;Token endpoint to which the request is to be made. Specific to your
+        /// Microsoft Entra ID Directory app. Example: https://login.microsoftonline.com/d454d300-128e-2d81-334a-27d9b2baf002/oauth2/v2.0/token &lt;/param&gt;
+        /// &lt;param name=&quot;clientId&quot;&gt;Client Id of your Microsoft Entra ID Directory app. Example&quot; 00001111-aaaa-2222-bbbb-3333cccc4444&lt;/param&gt;
+        /// &lt;param name=&quot;clientSecret&quot;&gt;Client secret of your Microsoft Entra ID Directory app&lt;/param&gt;
+        /// &lt;param name=&quot;scope&quot;&gt;Scope. If not provided, default one is used for the production API endpoint.&lt;/param&gt;
+        /// &lt;returns&gt;Autorization token. Prepend it with &quot;Bearer: &quot; and pass it in the request header as the
+        /// value for &quot;Authorization: &quot; header.&lt;/returns&gt;
+        public static async Task&lt;string&gt; GetClientCredentialAccessToken(
+            string tokenEndpoint,
+            string clientId,
+            string clientSecret,
+            string scope = null)
+        {
+            if (scope == null)
+            {
+                scope = &quot;https://api.store.microsoft.com/.default&quot;;
+            }
+
+            dynamic result;
+            using (HttpClient client = new HttpClient())
+            {
+                string tokenUrl = tokenEndpoint;
+                using (
+                    HttpRequestMessage request = new HttpRequestMessage(
+                        HttpMethod.Post,
+                        tokenUrl))
+                {
+                    string strContent =
+                        string.Format(
+                            &quot;grant_type=client_credentials&amp;client_id={0}&amp;client_secret={1}&amp;scope={2}&quot;,
+                            clientId,
+                            clientSecret,
+                            scope);
+
+                    request.Content = new StringContent(strContent, Encoding.UTF8,
+                        &quot;application/x-www-form-urlencoded&quot;);
+
+                    using (HttpResponseMessage response = await client.SendAsync(request))
+                    {
+                        string responseContent = await response.Content.ReadAsStringAsync();
+                        result = JsonConvert.DeserializeObject(responseContent);
+                    }
+                }
+            }
+
+            return result.access_token;
+        }
+
+
+        /// &lt;summary&gt;
+        /// Invokes the specified HTTP method.
+        /// &lt;/summary&gt;
+        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;
+        /// &lt;param name=&quot;httpMethod&quot;&gt;The HTTP method.&lt;/param&gt;
+        /// &lt;param name=&quot;relativeUrl&quot;&gt;The relative URL.&lt;/param&gt;
+        /// &lt;param name=&quot;requestContent&quot;&gt;Content of the request.&lt;/param&gt;
+        /// &lt;returns&gt;instance of the type T&lt;/returns&gt;
+        /// &lt;exception cref=&quot;ServiceException&quot;&gt;&lt;/exception&gt;
+        public async Task&lt;T&gt; Invoke&lt;T&gt;(HttpMethod httpMethod,
+            string relativeUrl,
+            object requestContent)
+        {
+            using (var request = new HttpRequestMessage(httpMethod, relativeUrl))
+            {
+                this.SetRequest(request, requestContent);
+
+                using (HttpResponseMessage response = await this.httpClient.SendAsync(request))
+                {
+                    T result;
+                    if (this.TryHandleResponse(response, out result))
+                    {
+                        return result;
+                    }
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var resource = JsonConvert.DeserializeObject&lt;T&gt;(await response.Content.ReadAsStringAsync());
+                        return resource;
+                    }
+
+                    throw new Exception(await response.Content.ReadAsStringAsync());
+                }
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Uploads a given Image Asset file to Asset Storage
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;assetUploadUrl&quot;&gt;Asset Storage Url&lt;/param&gt;
+        /// &lt;param name=&quot;fileStream&quot;&gt;The Stream instance of file to be uploaded&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        /// &lt;exception cref=&quot;Exception&quot;&gt;&lt;/exception&gt;
+        public async Task UploadAsset(string assetUploadUrl, Stream fileStream)
+        {
+            using (var request = new HttpRequestMessage(HttpMethod.Put, assetUploadUrl))
+            {
+                request.Headers.Add(&quot;x-ms-blob-type&quot;, &quot;BlockBlob&quot;);
+                request.Content = new StreamContent(fileStream);
+                request.Content.Headers.ContentType = new MediaTypeHeaderValue(PngContentType);
+                using (HttpResponseMessage response = await this.imageUploadClient.SendAsync(request))
+                {
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return;
+                    }
+                    throw new Exception(await response.Content.ReadAsStringAsync());
+                }
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Sets the request.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;request&quot;&gt;The request.&lt;/param&gt;
+        /// &lt;param name=&quot;requestContent&quot;&gt;Content of the request.&lt;/param&gt;
+        protected virtual void SetRequest(HttpRequestMessage request, object requestContent)
+        {
+            request.Headers.Authorization = new AuthenticationHeaderValue(&quot;Bearer&quot;, this.accessToken);
+
+            foreach (var header in this.DefaultHeaders)
+            {
+                request.Headers.Add(header.Key, header.Value);
+            }
+
+            if (requestContent != null)
+            {
+                request.Content = new StringContent(JsonConvert.SerializeObject(requestContent),
+                        Encoding.UTF8,
+                        JsonContentType);
+                
+            }
+        }
+
+
+        /// &lt;summary&gt;
+        /// Tries the handle response.
+        /// &lt;/summary&gt;
+        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;
+        /// &lt;param name=&quot;response&quot;&gt;The response.&lt;/param&gt;
+        /// &lt;param name=&quot;result&quot;&gt;The result.&lt;/param&gt;
+        /// &lt;returns&gt;true if the response was handled&lt;/returns&gt;
+        protected virtual bool TryHandleResponse&lt;T&gt;(HttpResponseMessage response, out T result)
+        {
+            result = default(T);
+            return false;
+        }
+    }
+}
+</code></pre>
+<h2 id="nodejs-sample-microsoft-store-submission-api-for-msi-or-exe-app">Node.js sample: Microsoft Store Submission API for MSI or EXE app</h2>
+<p>This article provides Node.js code examples that demonstrate how to use the Microsoft Store submission API for MSI or EXE app.
+You can review each example to learn more about the task it demonstrates, or you can build all the code examples in this article into a console application.</p>
+<p><strong>Prerequisites</strong>
+These examples use the following library:</p>
+<ul>
+<li>node-fetch v2 [npm install node-fetch@2]</li>
+</ul>
+<h3 id="create-an-app-submission-using-nodejs">Create an app submission using node.js</h3>
+<p>The following example calls the other example methods in this article to demonstrate different ways to use the Microsoft Store submission API. To adapt this program for your own use:</p>
+<ul>
+<li>Assign the SellerId property to the Seller ID of your Partner Center account.</li>
+<li>Assign the ApplicationId property to the ID of the app you want to manage.</li>
+<li>Assign the ClientId and ClientSecret properties to the client ID and key for your app, and replace the tenantid string in the TokenEndpoint URL with the tenant ID for your app. For more information, see How to associate an Microsoft Entra ID application with your Partner Center account</li>
+</ul>
+<p>The following example implements a class that uses several methods in the Microsoft Store submission API to update an app submission.</p>
+<pre><code class="lang-nodejs">const config = require('./Configuration');
+const submissionClient = require('./SubmissionClient');
+const fs = require('fs');
+
+var client = new submissionClient(config);
+
+/**
+ * Main entry method to Run the Store Submission API Node.js Sample
+ */
+async function RunNodeJsSample(){
+    print('Getting Access Token');
+    await client.getAccessToken();
+    
+    print('Getting Current Application Draft Status');
+    var currentDraftStatus = await client.callStoreAPI(client.productDraftStatusPollingUrlTemplate, 'get');
+    print(currentDraftStatus);
+
+    print('Getting Application Packages');
+    var currentPackages = await client.callStoreAPI(client.packagesUrlTemplate, 'get');
+    print(currentPackages);
+
+    print('Getting Single Package');
+    var packageId = currentPackages.responseData.packages[0].packageId;
+    var packageIdUrl = `${client.packageByIdUrlTemplate}`.replace('{packageId}', packageId);
+    var singlePackage = await client.callStoreAPI(packageIdUrl, 'get');
+    print(singlePackage);
+
+    print('Updating Entire Package Set');
+    // Update data in Packages list to have final set of updated Packages
+    currentPackages.responseData.packages[0].installerParameters = &quot;/s /r new-args&quot;;
+    var packagesUpdateRequest = {
+        'packages': currentPackages.responseData.packages
+    };
+    print(packagesUpdateRequest);
+    var packagesUpdateResponse = await client.callStoreAPI(client.packagesUrlTemplate, 'put', packagesUpdateRequest);
+    print(packagesUpdateResponse);
+
+    print('Updating Single Package\'s Download Url');
+    // Update data in the SinglePackage object
+    singlePackage.responseData.packages[0].installerParameters = &quot;/s /r /t new-args&quot;;
+    var singlePackageUpdateResponse = await client.callStoreAPI(packageIdUrl, 'patch', singlePackage.responseData.packages[0]);
+    print(singlePackageUpdateResponse);
+
+    print('Committing Packages');
+    var commitPackagesResponse = await client.callStoreAPI(client.packagesCommitUrlTemplate, 'post');
+    print(commitPackagesResponse);
+
+    await poll(async ()=&gt;{
+        print('Waiting for Upload to finish');
+        return await client.callStoreAPI(client.productDraftStatusPollingUrlTemplate, 'get');
+    }, 2);
+
+    print('Getting Application Metadata - All Modules');
+    var appMetadata = await client.callStoreAPI(client.appMetadataUrlTemplate, 'get');
+    print(appMetadata);
+
+    print('Getting Application Metadata - Listings');
+    var appListingMetadata = await client.callStoreAPI(client.appListingsFetchMetadataUrlTemplate, 'get');
+    print(appListingMetadata);
+
+    print('Updating Listings Metadata - Description');   
+    // Update Required Fields in Listings Metadata Object - Per Language. For eg. AppListingsMetadata.responseData.listings[0]
+    // Example - Updating Description
+    appListingMetadata.responseData.listings[0].description = 'New Description Updated By Node.js Sample Code';
+    var listingsUpdateRequest = {
+        'listings': appListingMetadata.responseData.listings[0]
+    };
+    var listingsMetadataUpdateResponse = await client.callStoreAPI(client.appMetadataUrlTemplate, 'put', listingsUpdateRequest);
+    print(listingsMetadataUpdateResponse);
+
+    print('Getting All Listings Assets');
+    var listingAssets = await client.callStoreAPI(client.listingAssetsUrlTemplate, 'get');
+    print(listingAssets);
+
+    print('Creating Listing Assets for 1 Screenshot');
+    var listingAssetCreateRequest = {
+        'language': listingAssets.responseData.listingAssets[0].language,
+        'createAssetRequest': {
+            'Screenshot': 1,
+            'Logo': 0
+        }
+    };
+    var listingAssetCreateResponse = await client.callStoreAPI(client.listingAssetsCreateUrlTemplate, 'post', listingAssetCreateRequest);
+    print(listingAssetCreateResponse);
+
+    print('Uploading Listing Assets');
+    const pathToFile = './Image.png';
+    const stats = fs.statSync(pathToFile);
+    const fileSize = stats.size;
+    const fileStream = fs.createReadStream(pathToFile);
+    await client.uploadAssets(listingAssetCreateResponse.responseData.listingAssets.screenshots[0].primaryAssetUploadUrl, fileStream, fileSize);
+
+    print('Committing Listing Assets');
+    var assetCommitRequest = {
+        'listingAssets': {
+            'language': listingAssets.responseData.listingAssets[0].language,
+            'storeLogos': listingAssets.responseData.listingAssets[0].storeLogos,
+            'screenshots': [{
+                'id': listingAssetCreateResponse.responseData.listingAssets.screenshots[0].id,
+                'assetUrl': listingAssetCreateResponse.responseData.listingAssets.screenshots[0].primaryAssetUploadUrl
+            }]
+        }
+    };
+    var assetCommitResponse = await client.callStoreAPI(client.listingAssetsCommitUrlTemplate, 'put', assetCommitRequest);
+    print(assetCommitResponse);
+
+    print('Getting Current Application Draft Status before Submission');
+    currentDraftStatus = await client.callStoreAPI(client.productDraftStatusPollingUrlTemplate, 'get');
+    print(currentDraftStatus);
+    if(!currentDraftStatus.responseData.isReady){
+        throw new Error('Application Current Status is not in Ready Status for All Modules');
+    }
+
+    print('Creating Submission');
+    var submissionCreationResponse = await client.callStoreAPI(client.createSubmissionUrlTemplate, 'post');
+    print(submissionCreationResponse);
+
+    print('Current Submission Status');
+    var submissionStatusUrl = `${client.submissionStatusPollingUrlTemplate}`.replace('{submissionId}', submissionCreationResponse.responseData.submissionId);
+    var submissionStatusResponse = await client.callStoreAPI(submissionStatusUrl, 'get');
+    print(submissionStatusResponse);
+
+    // User can Poll on this API to know if Submission Status is INPROGRESS, PUBLISHED or FAILED.
+    // This Process involves File Scanning, App Certification and Publishing and can take more than a day.
+}
+
+/**
+ * Utility Method to Poll using a given function and time interval in seconds
+ * @param {*} func 
+ * @param {*} intervalInSeconds 
+ * @returns 
+ */
+async function poll(func, intervalInSeconds){
+var result = await func();
+if(result.responseData.isReady){
+    Promise.resolve(true);
+}
+else if(result.errors &amp;&amp; result.errors.length &gt; 0 &amp;&amp; result.errors.find(element =&gt; element.code == 'packageuploaderror') != undefined){
+throw new Error('Package Upload Failed');
+}
+else{
+    await new Promise(resolve =&gt; setTimeout(resolve, intervalInSeconds*1000));
+    return await poll(func, intervalInSeconds); 
+}
+}
+
+/**
+ * Utility function to Print a Json or normal string
+ * @param {*} json 
+ */
+function print(json){
+    if(typeof(json) == 'string'){
+        console.log(json);
+    }
+    else{
+        console.log(JSON.stringify(json));
+    }
+    console.log(&quot;\n&quot;);
+}
+
+/** Run the Node.js Sample Application */
+RunNodeJsSample();
+</code></pre>
+<h3 id="clientconfiguration-helper">ClientConfiguration helper</h3>
+<p>The sample app uses the ClientConfiguration helper class to pass Microsoft Entra ID Directory data and app data to each of the example methods that use the Microsoft Store submission API.</p>
+<pre><code class="lang-nodejs">/** Configuration Object for Store Submission API */
+var config = {
+    version : &quot;1&quot;,
+    applicationId : &quot;...&quot;,
+    clientId : &quot;...&quot;,
+    clientSecret : &quot;...&quot;,
+    serviceEndpoint : &quot;https://api.store.microsoft.com&quot;,
+    tokenEndpoint : &quot;...&quot;,
+    scope : &quot;https://api.store.microsoft.com/.default&quot;,
+    sellerId : &quot;...&quot;,
+    jsonContentType : &quot;application/json&quot;,
+    pngContentType : &quot;image/png&quot;,
+    binaryStreamContentType : &quot;application/octet-stream&quot;
+};
+
+module.exports = config;
+</code></pre>
+<h3 id="ingestionclient-helper-using-nodejs">IngestionClient helper using node.js</h3>
+<p>The IngestionClient class provides helper methods that are used by other methods in the sample app to perform the following tasks:</p>
+<ul>
+<li>Obtain an Microsoft Entra ID access token that can be used to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.</li>
+<li>Process the HTTP requests for the Microsoft Store submission API.</li>
+</ul>
+<pre><code class="lang-nodejs">const fetch = require('node-fetch');
+/**
+ * Submission Client to invoke all available Store Submission API and Asset Upload to Blob Store
+ */
+class SubmissionClient{
+
+    constructor(config){
+        this.configuration = config;
+        this.accessToken = &quot;&quot;;
+        this.packagesUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/packages`;
+        this.packageByIdUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/packages/{packageId}`;
+        this.packagesCommitUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/packages/commit`;
+        this.appMetadataUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/metadata`;
+        this.appListingsFetchMetadataUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/metadata/listings`;
+        this.listingAssetsUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/listings/assets`;
+        this.listingAssetsCreateUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/listings/assets/create`;
+        this.listingAssetsCommitUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/listings/assets/commit`;
+        this.productDraftStatusPollingUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/status`;
+        this.createSubmissionUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/submit`;
+        this.submissionStatusPollingUrlTemplate = `/submission/v${this.configuration.version}/product/${this.configuration.applicationId}/submission/{submissionId}/status`;
+    }
+    
+    async getAccessToken(){
+        var params = new URLSearchParams();
+        params.append('grant_type','client_credentials');
+        params.append('client_id',this.configuration.clientId);
+        params.append('client_secret',this.configuration.clientSecret);
+        params.append('scope',this.configuration.scope);
+        var response = await fetch(this.configuration.tokenEndpoint,{
+            method: &quot;POST&quot;,
+            body: params
+        });    
+        var data = await response.json();
+        this.accessToken = data.access_token;
+    }
+
+    async callStoreAPI(url, method, data){
+        var request = {
+            method: method,
+            headers:{
+                'Authorization': `Bearer ${this.accessToken}`,
+                'Content-Type': this.configuration.jsonContentType,
+                'X-Seller-Account-Id': this.configuration.sellerId
+            },            
+        };
+        if(data){
+            request.body = JSON.stringify(data);
+        }
+        var response = await fetch(`${this.configuration.serviceEndpoint}${url}`,request);
+        var jsonResponse = await response.json();
+        return jsonResponse;
+    }
+
+    async uploadAssets(url, stream, size){
+        var request = {
+            method: 'put',
+            headers:{
+                'Content-Type': this.configuration.pngContentType,
+                'x-ms-blob-type': 'BlockBlob',
+                &quot;Content-length&quot;: size
+            },            
+            body: stream
+        };
+        var response = await fetch(`${url}`,request);
+        if(response.ok){
+            return response;
+        }
+        else{
+            throw new Error('Uploading of assets failed');
+        }
+    }
+}
+module.exports = SubmissionClient;
+</code></pre>
+<h2 id="additional-help">Additional help</h2>
+<p>If you have questions about the Microsoft Store submission API or need assistance managing your submissions with this API, use the following resources:</p>
+<ul>
+<li>Ask your questions on <a href="https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit">our forums</a>.</li>
+<li>Visit our <a href="https://developer.microsoft.com/windows/support">support page</a> and request one of the assisted support options for Partner Center. If you are prompted to choose a problem type and category, choose App submission and certification and Submitting an app, respectively.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/store-submission-api.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

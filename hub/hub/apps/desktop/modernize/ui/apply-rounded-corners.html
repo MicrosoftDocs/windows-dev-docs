@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Apply rounded corners in desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Apply rounded corners in desktop apps ">
+    
+    <meta name="description" content="Apply rounded corners in your desktop application.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="apply-rounded-corners-in-desktop-apps-for-windows-11">Apply rounded corners in desktop apps for Windows 11</h1>
+
+<p>Rounded corners are the most immediately noticeable feature of <a href="../../../design/signature-experiences/geometry.html">Windows 11 Geometry</a>. On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all UWP apps, and most other apps. However, some Win32 apps might not be rounded. This topic describes how to round your Win32 app's main window corners if the system does not round them automatically.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), running on a Windows Virtual Desktop (WVD), or running as a Windows Defender Application Guard (WDAG) window.</p>
+</div>
+<p><span class="mx-imgBorder">
+<img src="../images/apply-design/notepad-rounded.png" alt="A screenshot of the Notepad app on Windows 11 with rounded corners.">
+</span>
+</p>
+<h2 id="why-isnt-my-app-rounded">Why isn't my app rounded?</h2>
+<p>If your app's main window doesn't receive automatic rounding, it's because you've customized your frame in a way that prevents it. Apps fall into three main categories from the perspective of the Desktop Window Manager (DWM):</p>
+<ol>
+<li><p>Apps that are rounded by default.</p>
+<p>This includes apps that want a complete system-provided frame and caption-controls (min/max/close buttons), like Notepad. It also includes apps that provide enough information to the system so it can properly round them, such as setting the WS_THICKFRAME and WS_CAPTION window styles or providing a 1-pixel non-client area border that the system can use to round the corners.</p>
+</li>
+<li><p>Apps that are not rounded by policy, but <em>can</em> be rounded.</p>
+<p>Apps in this category generally want to customize the majority of the window frame but still want the system-drawn border and shadow, such as Microsoft Office. If your app is not rounded by policy, it could be caused by one of the following things:</p>
+<ul>
+<li>Lack of frame styles</li>
+<li>Empty non-client area</li>
+<li>Other customizations, such as extra non-child windows used for custom shadows</li>
+</ul>
+<p>Changing one of these things will break automatic rounding. Although we did try to round as many apps as possible with our system heuristics, there are some combinations of customizations that we can't predict so we provided a manual opt-in API for those cases. If you address these issues in your app or call the opt-in API, described in the following section, then it's possible for the system to round your app's window. Note, however, that the API is a hint to the system and does not guarantee rounding, depending on the customizations.</p>
+</li>
+<li><p>Apps that cannot ever be rounded, even if they call the opt-in API.</p>
+<p>These apps have no frame or borders, and typically have heavily customized UI. If your app does one of the following, it cannot be rounded:</p>
+<ul>
+<li>Per-pixel alpha layering</li>
+<li>Window regions</li>
+</ul>
+<p>For example, an app might use per-pixel alpha layering to draw transparent pixels around its main window to achieve a custom shadow effect, which makes the window no longer a rectangle and therefore the system cannot round it.</p>
+</li>
+</ol>
+<h2 id="how-to-opt-in-to-rounded-corners">How to opt in to rounded corners</h2>
+<p>If your app is not rounded by policy, you can optionally use these APIs to let your app opt-in to rounded corners. You specify the corner rounding option you want for your app by passing a value of the <a href="/windows/win32/api/dwmapi/ne-dwmapi-dwm_window_corner_preference"><strong>DWM_WINDOW_CORNER_PREFERENCE</strong></a> enumeration (shown in the following table) to the <a href="/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute"><strong>DwmSetWindowAttribute</strong></a> function.</p>
+<table>
+<thead>
+<tr>
+<th>Enum value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>DWMWCP_DEFAULT</strong></td>
+<td>Let the system decide whether or not to round window corners.</td>
+</tr>
+<tr>
+<td><strong>DWMWCP_DONOTROUND</strong></td>
+<td>Never round window corners.</td>
+</tr>
+<tr>
+<td><strong>DWMWCP_ROUND</strong></td>
+<td>Round the corners if appropriate.</td>
+</tr>
+<tr>
+<td><strong>DWMWCP_ROUNDSMALL</strong></td>
+<td>Round the corners if appropriate, with a small radius.</td>
+</tr>
+</tbody>
+</table>
+<p>A pointer to the appropriate value from this enum is passed to the third parameter of <strong>DwmSetWindowAttribute</strong>. For the second parameter, which specifies which attribute you are setting, pass the <strong>DWMWA_WINDOW_CORNER_PREFERENCE</strong> value defined in the <a href="/windows/win32/api/dwmapi/ne-dwmapi-dwmwindowattribute"><strong>DWMWINDOWATTRIBUTE</strong></a> enumeration.</p>
+<h3 id="for-c-apps">For C# apps</h3>
+<p><a href="/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute"><strong>DwmSetWindowAttribute</strong></a> is a native Win32 API and is not exposed directly to .NET code. You'll need to use your language's implementation of <a href="/dotnet/standard/native-interop/pinvoke">P/Invoke</a> to declare the function (C# code is given in the example below). All standard WinForms and WPF apps are rounded automatically, but if you customize your window frame or use a third party framework, you might need to opt-in to rounded corners. See the Examples section for further details.</p>
+<h2 id="examples">Examples</h2>
+<p>The following examples show how you can call <a href="/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute"><strong>DwmSetWindowAttribute</strong></a> or <a href="/windows/win32/api/dwmapi/nf-dwmapi-dwmgetwindowattribute"><strong>DwmGetWindowAttribute</strong></a> to control your app's rounding experience if your app is not rounded by policy.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Error handling has been left out of these examples for brevity and clarity.</p>
+</div>
+<h3 id="example-1---rounding-an-apps-main-window-in-c---wpf">Example 1 - Rounding an app's main window in C# - WPF</h3>
+<p>This example shows how to call DwmSetWindowAttribute from C# by using the <strong>[DllImport]</strong> attribute. Note that this definition is specific to rounded corners; the DwmSetWindowAttribute function is designed to take different parameters depending on the flags provided, so this is not a general-purpose signature. The example also includes copies of the relevant enums from the dwmapi.h header file. Because the Win32 API takes a pointer for the third parameter, make sure to use the <em>ref</em> keyword so you can pass the address of a variable when you call the function. You can do this in your MainWindow class in MainWindow.xaml.cs.</p>
+<pre><code class="lang-CSharp">using System.Runtime.InteropServices;
+using System.Windows.Interop;
+
+public partial class MainWindow : Window
+{
+    // The enum flag for DwmSetWindowAttribute's second parameter, which tells the function what attribute to set.
+    // Copied from dwmapi.h
+    public enum DWMWINDOWATTRIBUTE
+    {
+        DWMWA_WINDOW_CORNER_PREFERENCE = 33
+    }
+
+    // The DWM_WINDOW_CORNER_PREFERENCE enum for DwmSetWindowAttribute's third parameter, which tells the function
+    // what value of the enum to set.
+    // Copied from dwmapi.h
+    public enum DWM_WINDOW_CORNER_PREFERENCE
+    {
+        DWMWCP_DEFAULT      = 0,
+        DWMWCP_DONOTROUND   = 1,
+        DWMWCP_ROUND        = 2,
+        DWMWCP_ROUNDSMALL   = 3
+    }
+
+    // Import dwmapi.dll and define DwmSetWindowAttribute in C# corresponding to the native function.
+    [DllImport(&quot;dwmapi.dll&quot;, CharSet = CharSet.Unicode, PreserveSig = false)]
+    internal static extern void DwmSetWindowAttribute(IntPtr hwnd,
+                                                     DWMWINDOWATTRIBUTE attribute,
+                                                     ref DWM_WINDOW_CORNER_PREFERENCE pvAttribute,
+                                                     uint cbAttribute);
+    // ...
+    // Various other definitions
+    // ...
+}
+</code></pre>
+<p>Next, in your MainWindow constructor, after the call to InitializeComponent, create a new instance of the <a href="/dotnet/api/system.windows.interop.windowinterophelper">WindowInteropHelper</a> class to acquire a pointer to the underlying HWND (window handle). Make sure to use the <a href="/dotnet/api/system.windows.interop.windowinterophelper.ensurehandle">EnsureHandle</a> method to force the system to create an HWND for the window before it's shown, because normally the system only does so after exiting the constructor.</p>
+<pre><code class="lang-CSharp">public MainWindow()
+{
+    InitializeComponent();
+
+    IntPtr hWnd = new WindowInteropHelper(GetWindow(this)).EnsureHandle();
+    var attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
+    var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+    DwmSetWindowAttribute(hWnd, attribute, ref preference, sizeof(uint));
+    
+    // ...
+    // Perform any other work necessary
+    // ...
+}
+</code></pre>
+<h3 id="example-2---rounding-an-apps-main-window-in-c---winforms">Example 2 - Rounding an app's main window in C# - WinForms</h3>
+<p>Like with WPF, for a WinForms app you'll first need to import dwmapi.dll and the DwmSetWindowAttribute function signature with P/Invoke. You can do this in your primary Form class.</p>
+<pre><code class="lang-Csharp">using System;
+using System.Runtime.InteropServices;
+
+public partial class Form1 : Form
+{
+    // The enum flag for DwmSetWindowAttribute's second parameter, which tells the function what attribute to set.
+    // Copied from dwmapi.h
+    public enum DWMWINDOWATTRIBUTE
+    {
+        DWMWA_WINDOW_CORNER_PREFERENCE = 33
+    }
+
+    // The DWM_WINDOW_CORNER_PREFERENCE enum for DwmSetWindowAttribute's third parameter, which tells the function
+    // what value of the enum to set.
+    // Copied from dwmapi.h
+    public enum DWM_WINDOW_CORNER_PREFERENCE
+    {
+        DWMWCP_DEFAULT      = 0,
+        DWMWCP_DONOTROUND   = 1,
+        DWMWCP_ROUND        = 2,
+        DWMWCP_ROUNDSMALL   = 3
+    }
+
+    // Import dwmapi.dll and define DwmSetWindowAttribute in C# corresponding to the native function.
+    [DllImport(&quot;dwmapi.dll&quot;, CharSet = CharSet.Unicode, PreserveSig = false)]
+    internal static extern void DwmSetWindowAttribute(IntPtr hwnd,
+                                                     DWMWINDOWATTRIBUTE attribute, 
+                                                     ref DWM_WINDOW_CORNER_PREFERENCE pvAttribute, 
+                                                     uint cbAttribute);
+    
+    // ...
+    // Various other definitions
+    // ...
+}
+</code></pre>
+<p>Calling DwmSetWindowAttribute is also the same as with a WPF app, but you don't have to use a helper class to get the HWND because it's simply a property of the Form. Call it from within your Form constructor, after the call to InitializeComponent.</p>
+<pre><code class="lang-CSharp">public Form1()
+{
+    InitializeComponent();
+
+    var attribute = DWMWINDOWATTRIBUTE.DWMWA_WINDOW_CORNER_PREFERENCE;
+    var preference = DWM_WINDOW_CORNER_PREFERENCE.DWMWCP_ROUND;
+    DwmSetWindowAttribute(this.Handle, attribute, ref preference, sizeof(uint));
+    
+    // ...
+    // Perform any other work necessary
+    // ...
+}
+</code></pre>
+<h3 id="example-3---rounding-an-apps-main-window-in-c">Example 3 - Rounding an app's main window in C++</h3>
+<p>For a native C++ app, you can call DwmSetWindowAttribute in your message processing function after window creation to ask the system to round you.</p>
+<pre><code class="lang-cpp">LRESULT ExampleWndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) 
+{
+    switch (message)
+    {
+    // ...
+    // Handle various window messages...
+    // ...
+
+    case WM_CREATE:
+        // ...
+        // Perform app resource initialization after window creation
+        // ...
+        
+        if(hWnd)
+        {
+            DWM_WINDOW_CORNER_PREFERENCE preference = DWMWCP_ROUND;
+            DwmSetWindowAttribute(hWnd, DWMWA_WINDOW_CORNER_PREFERENCE, &amp;preference, sizeof(preference));
+        }
+        break;
+
+    // ...
+    // Handle various other window messages...
+    // ...
+    }
+
+    return 0;
+}
+</code></pre>
+<h3 id="example-4--rounding-the-corners-of-a-menu-with-a-small-radius---c">Example 4 – Rounding the corners of a menu with a small radius - C++</h3>
+<p>By default, menus are pop-up windows, which do not get rounded. If your app creates a custom menu and you want it to follow the rounding policy of other standard menus, you can call the API to let the system know that this window should be rounded, even though it doesn't appear to match the default rounding policy.</p>
+<pre><code class="lang-cpp">HWND CreateCustomMenu()
+{
+    // Call an app-specific helper to make the window, using traditional APIs.
+    HWND hWnd = CreateMenuWindowHelper();
+
+    if (hWnd)
+    {
+        // Make sure we round the window, using the small radius 
+        // because menus are auxiliary UI.
+        DWM_WINDOW_CORNER_PREFERENCE preference = DWMWCP_ROUNDSMALL;
+        DwmSetWindowAttribute(hWnd, DWMWA_WINDOW_CORNER_PREFERENCE, &amp;preference, sizeof(preference));
+    }
+
+    return hWnd;
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/ui/apply-rounded-corners.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

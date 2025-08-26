@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Preview release channel for the Windows App SDK 1.1 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Preview release channel for the Windows App SDK 1.1 ">
+    
+    <meta name="description" content="Provides info about the preview release channel for the Windows App SDK 1.1.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="preview-channel-release-notes-for-the-windows-app-sdk-11">Preview channel release notes for the Windows App SDK 1.1</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The preview channel is <strong>not supported</strong> for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The preview channel includes releases of the Windows App SDK with <a href="../release-channels.html#features-available-by-release-channel">preview channel features</a> in late stages of development. Preview releases do not include experimental features and APIs but may still be subject to breaking changes before the next stable release.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on preview releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest preview channel release:</strong></p>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="version-11-preview-3-110-preview3">Version 1.1 Preview 3 (1.1.0-preview3)</h2>
+<p>This is the latest release of the preview channel for version 1.1. It supports all preview channel features (see <a href="../release-channels.html#features-available-by-release-channel">Features available by release channel</a>).</p>
+<p>In an existing app using Windows App SDK 1.0, you can update your Nuget package to 1.1.0-preview3 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>). Additionally, see <a href="../downloads.html">Latest Windows App SDK downloads</a> for the updated runtime and MSIX.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit <a href="https://dotnet.microsoft.com/download">.NET Downloads</a> or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: &quot;<em>This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater.</em>&quot;.</p>
+</div>
+<p>In addition to all of the <a href="#version-11-preview-2-110-preview2">Preview 2</a> features, the following sections describe new and updated features, limitations, and known issues for this release.</p>
+<h3 id="winui-3-110-preview3">WinUI 3 (1.1.0-preview3)</h3>
+<p>Mica and Background Acrylic are now available for WinUI 3 applications.</p>
+<p>For more information about these materials, check out <a href="../../design/signature-experiences/materials.html">Materials in Windows 11</a>. Check out our sample code for applying Mica in C++ applications at <a href="../system-backdrop-controller.html">Apply Mica or Acrylic materials in desktop apps for Windows 11</a> and in C# applications <a href="https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops">on GitHub</a> as part of the WinUI Controls Gallery.</p>
+<h3 id="notifications-110-preview3">Notifications (1.1.0-preview3)</h3>
+<p><strong>Fixed issues:</strong></p>
+<ul>
+<li>In 1.1.0-preview1 and 1.1.0-preview2, some unpackaged apps will have seen their app icons incorrectly copied to AppData\LocalMicrosoftWindowsAppSDK. For this release, they will be copied to AppData\Local\Microsoft\WindowsAppSDK instead. To avoid leaking icons, you should manually delete the app icon at the incorrect path after updating to 1.1.0-preview3.</li>
+<li>App icon and app display name retrieval for app notifications via Shortcuts is now supported. This app icon will be prioritized over any icon specified in resource files.</li>
+<li>Support for push notifications for unpackaged apps has been restored (see <strong>Limitations</strong> for noted exception). We've introduced the PushNotificationManager::IsSupported API to check if your app supports push notifications.</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Notifications for an <em>elevated</em> unpackaged app is not supported. PushNotificationManager::IsSupported will not perform a check for elevated mode. However, we are working on supporting this in a future release.</li>
+</ul>
+<h3 id="msix-packaging">MSIX packaging</h3>
+<p>We've enhanced MSIX adding new and extending existing functionality via the extension categories:</p>
+<ul>
+<li>windows.appExecutionAlias</li>
+<li>windows.customDesktopEventLog</li>
+<li>windows.dataShortcuts</li>
+<li>windows.fileTypeAssociation</li>
+<li>windows.fileTypeAssociation.iconHandler</li>
+<li>windows.folder</li>
+<li>windows.shortcut</li>
+</ul>
+<p>These require the Windows App SDK framework package to be installed. See <a href="../downloads.html">Latest Windows App SDK downloads</a> to install the runtime.</p>
+<h3 id="environment-manager-110-preview3">Environment manager (1.1.0-preview3)</h3>
+<p>API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.</p>
+<p>Clarification from 1.1 Preview 1: Automatic removal of any environment variable changes when an app that used environment manager is uninstalled is only available for packaged apps. Additionally, reverting environment variable changes requires installation of the Windows App SDK framework package, see <a href="../downloads.html">Latest Windows App SDK downloads</a> for the runtime.</p>
+<h3 id="other-known-limitations">Other known limitations</h3>
+<p>Regressions from 1.1 Preview 2:</p>
+<ul>
+<li>For .NET apps using MRT Core APIs and WinUI apps that <em>don't</em> deploy with single-project MSIX:
+<ul>
+<li>RESW and image files that were added to the project as Existing Items and  previously automatically included to the PRIResource and Content ItemGroups, respectively, won't be included in those ItemGroups. As a result, these resources won't be indexed during PRI generation, so they won't be available during runtime.
+<ul>
+<li>Workaround: Manually include the resources in the project file and remove them from the None ItemGroup.</li>
+<li>Alternative workaround: When available, upgrade your apps' .NET SDK to 6.0.300. See <a href="/dotnet/core/compatibility/sdk/6.0/vs-msbuild-version">Version requirements for .NET SDK</a> for additional information.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>For .NET apps that <em>don't</em> deploy with single-project MSIX:
+<ul>
+<li>If a file is added to the Content ItemGroup twice or more, then there will be a build error.
+<ul>
+<li>Workaround: Delete the duplicate inclusion/s or set EnableDefaultContentItems to false in the project file.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Both regressions will be restored in the next stable release.</p>
+<h2 id="version-11-preview-2-110-preview2">Version 1.1 Preview 2 (1.1.0-preview2)</h2>
+<p>This is the second release of the preview channel for version 1.1. It supports all preview channel features (see <a href="../release-channels.html#features-available-by-release-channel">Features available by release channel</a>).</p>
+<p>In an existing app using Windows App SDK 1.0, you can update your Nuget package to 1.1.0-preview2 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>). Additionally, see <a href="../downloads.html">Latest Windows App SDK downloads</a> for the updated runtime and MSIX.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit <a href="https://dotnet.microsoft.com/download">.NET Downloads</a> or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: <em>&quot;This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater.&quot;</em>.</p>
+</div>
+<p>In addition to all of the <a href="#version-11-preview-1-110-preview1">Preview 1</a> features, the following sections describe new and updated features, limitations, and known issues for this release.</p>
+<h3 id="notifications-110-preview2">Notifications (1.1.0-preview2)</h3>
+<p><strong>Fixed issues:</strong></p>
+<ul>
+<li>An app without package identity sending notifications will now see its app icon in the notification if the icon is a part of the app's resource. If the app resource has no icon, the Windows default app icon is used.</li>
+<li>A WinUI 3 app that's not running can now be background-activated via a notification.</li>
+</ul>
+<p><strong>Regression from 1.1 Preview 1:</strong> Push notifications support for unpackaged apps. Expected to be restored in the next release.</p>
+<p><strong>Known limitations:</strong></p>
+<ul>
+<li>We've introduced the PushNotificationManager::IsSupported API to check if self-contained apps support push notifications. However, this API is not yet working as intended, so keep an eye out in the next preview release for full support of the IsSupported API.</li>
+<li>Some unpackaged apps will see their app icons incorrectly copied to AppData\LocalMicrosoftWindowsAppSDK. For the next release, they will be copied to AppData\Local\Microsoft\WindowsAppSDK instead. To avoid leaking icons, the developer should manually delete their app icon at the incorrect path after upgrading to the next release.</li>
+<li>App icon and app display name retrieval for notifications via Shortcuts is not supported. But we're working on supporting that in a future release.</li>
+</ul>
+<h3 id="deployment">Deployment</h3>
+<p><strong>New features:</strong></p>
+<ul>
+<li>Packaged apps can now force deploy the Windows App SDK runtime packages using the <strong>DeploymentManager.Initialize</strong> API.</li>
+<li>The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see <a href="../use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a> and <a href="https://github.com/microsoft/WindowsAppSDK/pull/2316">Rich information on Bootstrap initialization failure</a>.</li>
+</ul>
+<p><strong>Known limitations:</strong></p>
+<ul>
+<li>Self-contained deployment is supported only on Windows 10, 1903 and later.</li>
+</ul>
+<h3 id="windowing">Windowing</h3>
+<p>For easier programming access to functionality that's implemented in <code>USER32.dll</code> (see <a href="/windows/win32/api/_winmsg/">Windows and messages</a>), this release surfaces more of that functionality in <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>AppWindow</strong></a> itself.</p>
+<p><strong>New features:</strong></p>
+<ul>
+<li>Apps with existing windows have more control over how a window is shown, by calling <strong>AppWindow.ShowOnceWithRequestedStartupState</strong>—the equivalent of <code>ShowWindow(SW_SHOWDEFAULT)</code>.</li>
+<li>Apps can show, minimize, or restore a window and specify whether the window should be activated or not at the time the call is made.</li>
+<li>Apps can now set a window's client area size in Win32 coordinates.</li>
+<li>We've added APIs to support z-order management of windows.</li>
+<li>Apps drawing custom titlebars with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar"><strong>AppWindowTitleBar.ExtendsContentIntoTitleBar</strong></a> can set a <em>PreferredTitleBarHeight</em> option. You have a choice of a <em>standard height</em> titlebar, or a <em>tall</em> titlebar that provides more room for interactive content. See <a href="../../design/basics/titlebar-design.html">Title bar</a> in the Fluent design guidelines for advice about when to use a tall titlebar.</li>
+</ul>
+<p><strong>Known limitations:</strong></p>
+<ul>
+<li>Tall titlebar support is available only on Windows 11. We are working to bring this downlevel along with other custom titlebar APIs.</li>
+</ul>
+<h3 id="winui-3-110-preview2">WinUI 3 (1.1.0-preview2)</h3>
+<p><strong>Fixed issues:</strong></p>
+<ul>
+<li>Fixed issue causing C# apps with WebView2 to crash on launch when the C/C++ Runtime (CRT) isn't installed by upgrading the WebView2 SDK from 1020.46 to 1185.39.</li>
+<li>Fixed issue causing some rounded corners to show a gradient when they should be a solid color. For more information see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6076">issue 6076</a> &amp; <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6194">issue 6194</a> on GitHub.</li>
+<li>Fixed issue where updated styles were missing from generic.xaml.</li>
+<li>Fixed layout cycle issue causing an app to crash when scrolling to the end of a ListView. For more information see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6218">issue 6218</a> on GitHub.</li>
+</ul>
+<h3 id="performance">Performance</h3>
+<p>C# applications have several performance improvements. For more details, see the <a href="https://github.com/microsoft/CsWinRT/releases/tag/1.6.1.220314.1">C#/WinRT 1.6.1 release notes</a>.</p>
+<h2 id="version-11-preview-1-110-preview1">Version 1.1 Preview 1 (1.1.0-preview1)</h2>
+<p>This is the first release of the preview channel for version 1.1. It supports all preview channel features (see <a href="../release-channels.html#features-available-by-release-channel">Features available by release channel</a>).</p>
+<p>In an existing app using Windows App SDK 1.0, you can update your Nuget package to 1.1.0-preview1 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>). Additionally, see <a href="../downloads.html">Latest Windows App SDK downloads</a> for the updated runtime and MSIX.</p>
+<p>The following sections describe new and updated features, limitations, and known issues for this release.</p>
+<h3 id="winui-3-110-preview1">WinUI 3 (1.1.0-preview1)</h3>
+<p><strong>Known issue</strong>: Users are unable to drop an element when drag-and-drop is enabled.</p>
+<h3 id="elevated-admin-support">Elevated (admin) support</h3>
+<p>Using Windows App SDK 1.1 Preview 1, apps (including WinUI 3) will be able to run with elevated privilege.</p>
+<p><strong>Important limitations:</strong></p>
+<ul>
+<li>Currently available only on Windows 11. But we're evaluating bringing this support downlevel in a later release.</li>
+</ul>
+<p><strong>Known issues:</strong></p>
+<ul>
+<li>WinUI 3 apps crash when dragging an element during a drag-and-drop interaction.</li>
+</ul>
+<h3 id="self-contained-deployment">Self-contained deployment</h3>
+<p>Windows App SDK 1.1 will introduce support for self-contained deployment. Our <a href="../../package-and-deploy/deploy-overview.html">Windows App SDK deployment overview</a> details the differences between framework-dependent and self-contained deployment, and how to get started.</p>
+<p><strong>Known issues:</strong></p>
+<ul>
+<li><p>A C++ app that's packaged needs to add the below to the bottom of its project file to work around a bug in the self-contained <code>.targets</code> file that removes framework references to VCLibs:</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+    &lt;IncludeGetResolvedSDKReferences&gt;true&lt;/IncludeGetResolvedSDKReferences&gt;
+&lt;/PropertyGroup&gt;
+
+&lt;Target Name=&quot;_RemoveFrameworkReferences&quot;
+    BeforeTargets=&quot;_ConvertItems;_CalculateInputsForGenerateCurrentProjectAppxManifest&quot;&gt;
+    &lt;ItemGroup&gt;
+        &lt;FrameworkSdkReference Remove=&quot;@(FrameworkSdkReference)&quot; Condition=&quot;'%(FrameworkSdkReference.SDKName)' == 'Microsoft.WindowsAppRuntime.1.1-preview1'&quot; /&gt;
+    &lt;/ItemGroup&gt;
+&lt;/Target&gt;
+</code></pre>
+</li>
+<li><p>Supported only on Windows 10, 1903 and later.</p>
+</li>
+</ul>
+<h3 id="notifications-110-preview1">Notifications (1.1.0-preview1)</h3>
+<p>Developers of packaged (including packaged with external location) and unpackaged apps can now send Windows notifications.</p>
+<p><strong>New features:</strong></p>
+<ul>
+<li>Support for app notifications for packaged and unpackaged apps. Full details on <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md">GitHub</a>
+<ul>
+<li>Developers can send app notifications, also known as toast notifications, locally or from their own cloud service.</li>
+</ul>
+</li>
+<li>Support for push notification for packaged and unpackaged apps. Full details on <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md">GitHub</a>
+<ul>
+<li>Developers can send raw notifications or app notifications from their own cloud service.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an <strong>IsSupported</strong> API to check for push notifications support.</li>
+<li>Apps that are unpackaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are unpackaged should follow the patterns shown in the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp">ToastNotificationsDemoApp</a> sample.</li>
+<li>Windows App SDK runtime must be installed to support push notifications, see <a href="../downloads.html">Latest Windows App SDK downloads</a> for the installer.</li>
+<li>A WinUI 3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.</li>
+</ul>
+<h3 id="environment-manager-110-preview1">Environment manager (1.1.0-preview1)</h3>
+<p>API set that allows developers to add, remove, and modify environment variables without having to directly use the registry API.</p>
+<p><strong>New features:</strong></p>
+<ul>
+<li>Provides automatic removal of any environment variables changes when an app that used environment manager is uninstalled.</li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul>
+<li>Currently unavailable in C# apps. But we're evaluating bringing this feature to C# apps in a later release.</li>
+</ul>
+<h3 id="other-limitations-and-known-issues">Other limitations and known issues</h3>
+<ul>
+<li>If you're using C# with 1.1.0 Preview 1, then you must use one of the following .NET SDK versions at a minimum: .NET SDK 6.0.201, 6.0.103, 5.0.212, or 5.0.406. To upgrade your .NET SDK, you can update to the latest version of Visual Studio, or visit <a href="https://dotnet.microsoft.com/download">Download .NET</a>.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.1.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

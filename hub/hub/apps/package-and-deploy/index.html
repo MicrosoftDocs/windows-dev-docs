@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Deployment overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Deployment overview ">
+    
+    <meta name="description" content="The topics in this section introduce options and guidance around deploying different types of Windows apps. Your first decision will be whether or not to package your app.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="deployment-overview">Deployment overview</h1>
+
+<p>The topics in this section introduce options and guidance around deploying different types of Windows apps.</p>
+<h2 id="advantages-and-disadvantages-of-packaging-your-app">Advantages and disadvantages of packaging your app</h2>
+<p>Your first decision will be whether or not to package your app.</p>
+<ul>
+<li><strong>Packaged app</strong>. Packaged apps are the only kind that have <em>package identity</em> at runtime. Package identity is needed for many Windows extensibility features—including background tasks, notifications, live tiles, custom context menu extensions, and share targets. That's because the operating system (OS) needs to be able to identify the caller of the corresponding API. See <a href="/windows/apps/desktop/modernize/modernize-packaged-apps">Features that require package identity</a>.
+<ul>
+<li>Commonly, a packaged app's process runs inside a lightweight app container, and is isolated using file system and registry virtualization (see <a href="/windows/win32/secauthz/appcontainer-for-legacy-applications-">AppContainer for legacy apps</a> and <a href="/windows/msix/msix-container">MSIX AppContainer apps</a>). But you can configure a packaged app to <em>not</em> run in an app container.</li>
+<li>A packaged app is packaged by using MSIX technology (see <a href="/windows/msix/overview">What is MSIX?</a>).</li>
+<li><strong>Packaged app with external location</strong>. But because some existing apps aren't yet ready for all of their content to be present inside an MSIX package, there's an option for your app to be <em>packaged with external location</em>. That enables your app to have package identity; thereby being able to use those features that require it. For more info, see <a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps">Grant package identity by packaging with external location</a>.</li>
+<li>A packaged app is <em>installed</em> by using MSIX, also. But if you choose to <em>package with external location</em>, then you can think of that as a &quot;bring-your-own-installer&quot; model. So there <em>will</em> be some installer work for you to do with that option. It's essentially a hybrid option between a packaged and an unpackaged app.</li>
+</ul>
+</li>
+<li><strong>Unpackaged app</strong>. You can opt out of using MSIX altogether by creating an unpackaged app. But be aware that an unpackaged app <em>doesn't</em> have package identity at runtime; so it misses out on certain Windows features (see <a href="/windows/apps/desktop/modernize/modernize-packaged-apps">Features that require package identity</a>).</li>
+</ul>
+<p>Each type of app can be published to the Microsoft Store, and installed that way or via Windows App Installer.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We recommend that you package your app, and configure it to run in an app container. It'll be a seamless, modern, and reliable installation and update experience for your customers; and it'll be secure at runtime.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Packaged (and optionally running in an app container)</th>
+<th>Packaged with external location or unpackaged</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Advantages</strong></td>
+<td>Gives your users an easy way to install, uninstall, and update your app. Uninstall is clean—when your app is uninstalled, the system is restored to the same state it was in before installation—no artifacts are left behind. This kind of app also supports incremental and automatic updates. And the Microsoft Store optimizes for apps of this kind (although they can be used in or out of the Store).<br><br>You get the benefits of having package identity.</td>
+<td>With these options, your app is unrestricted in terms of the kind of app it is, the APIs it can call, and its access to the Registry and file system.<br><br>Packaging with external location means that you get the benefits of having package identity.</td>
+</tr>
+<tr>
+<td><strong>Disadvantages</strong></td>
+<td>Your app is limited in terms of the kind of app it can be, and the agency it can have within the system. For example, an NT Service isn't possible. Inter-process communication (IPC) options are limited; privileged/elevated access is restricted if you're publishing to the Microsoft Store; file/Registry access is virtualized (but also see <a href="/windows/msix/desktop/flexible-virtualization">Flexible virtualization</a>). And in some situations enterprise policies can disable updates by disabling the Microsoft Store.</td>
+<td>With these options, an app that is at risk of causing stale configuration data and software to accumulate after the app has been uninstalled. That can be an issue for the customer and for the system.<br><br>Your app will typically be installed and updated using <code>.exe</code> or <code>.msi</code> files, or via other installation and update solutions; using a custom installer, ClickOnce, or xcopy deployment.<br><br>An unpackaged app lacks the benefits of having package identity.</td>
+</tr>
+</tbody>
+</table>
+<p>For more info about package install location, working directory, and file and registry virtualization, see <a href="/windows/msix/desktop/desktop-to-uwp-behind-the-scenes">Understanding how packaged desktop apps run on Windows</a>.</p>
+<h2 id="use-the-windows-app-sdk">Use the Windows App SDK</h2>
+<p>After deciding whether or not to package your app, you can next decide whether or not to use the <a href="../windows-app-sdk/index.html">Windows App SDK</a> in your app. See <a href="deploy-overview.html">Windows App SDK deployment overview</a>.</p>
+<h2 id="win32-and-net-desktop-apps">Win32 and .NET desktop apps</h2>
+<p>If you build a Win32 desktop app (sometimes called a <em>classic desktop app</em>) or a .NET app—including Windows Presentation Foundation (WPF) and Windows Forms (WinForms)—then you can package and deploy your app using MSIX.</p>
+<ul>
+<li><a href="/windows/msix/packaging-tool/create-an-msix-overview">Create an MSIX package from an existing installer</a></li>
+<li><a href="/windows/msix/desktop/source-code-overview">Build an MSIX package from source code</a></li>
+<li><a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a></li>
+</ul>
+<p>You can also package and deploy these types of apps using other installation technologies.</p>
+<ul>
+<li><a href="/windows/desktop/application-installing-and-servicing">Application installation and servicing</a></li>
+<li><a href="/windows/desktop/msi/windows-installer-portal">Windows Installer</a></li>
+<li><a href="/dotnet/core/deploying/">.NET application publishing overview</a></li>
+<li><a href="/dotnet/framework/deployment/">Deploying the .NET Framework and applications</a></li>
+<li><a href="/dotnet/framework/wpf/app-development/deploying-a-wpf-application-wpf">Deploying a WPF application</a></li>
+<li><a href="/dotnet/framework/winforms/clickonce-deployment-for-windows-forms">ClickOnce Deployment for Windows Forms</a></li>
+</ul>
+<h2 id="uwp-apps">UWP apps</h2>
+<p>UWP apps are packaged and deployed using MSIX.</p>
+<ul>
+<li><a href="/windows/uwp/packaging">Overview of packaging UWP apps</a></li>
+<li><a href="/windows/msix/package/packaging-uwp-apps">Package a UWP app in Visual Studio</a></li>
+<li><a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../get-started/start-here.html">Get started with WinUI</a></li>
+<li><a href="../get-started/index.html">Get started developing apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/package-and-deploy/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

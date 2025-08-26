@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>ChoiceSetSetting Constructors </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="ChoiceSetSetting Constructors ">
+    
+    <meta name="description" content="Initializes a new instance of the ChoiceSetSetting class.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="choicesetsetting-constructors">ChoiceSetSetting Constructors</h1>
+
+<h2 id="choicesetsettingstring-listchoice-constructor">ChoiceSetSetting(String, List&lt;Choice&gt;) Constructor</h2>
+<h3 id="definition">Definition</h3>
+<p>Namespace: <a href="microsoft-commandpalette-extensions-toolkit.html">Microsoft.CommandPalette.Extensions.Toolkit</a></p>
+<p>Initializes a new instance of the <a href="choicesetsetting.html">ChoiceSetSetting</a> class from the base <a href="setting.html">Setting</a> class, setting its <a href="setting.html#properties">Key</a> property to <em>key</em> and its <a href="choicesetsetting.html#properties">Choices</a> set to <em>choices</em>.</p>
+<pre><code class="lang-C#">public ChoiceSetSetting(string key, List&lt;Choice&gt; choices)
+        : base(key, choices.ElementAt(0).Value)
+    {
+        Choices = choices;
+    }
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+<p><em>key</em> <strong>String</strong></p>
+<p>The key for the setting. This is a unique identifier that is used to reference the setting in the application.</p>
+<p><em>choices</em> <strong>List&lt;<a href="choice.html">Choice</a>&gt;</strong></p>
+<p>The list of choices for the setting. Each choice is represented by a <a href="choice.html">Choice</a> object, which contains the display text and value for the choice. The first choice in the list is used as the default value for the setting.</p>
+<h2 id="choicesetsettingstring-string-string-listchoice-constructor">ChoiceSetSetting(String, String, String, List&lt;Choice&gt;) Constructor</h2>
+<h3 id="definition-1">Definition</h3>
+<p>Namespace: <a href="microsoft-commandpalette-extensions-toolkit.html">Microsoft.CommandPalette.Extensions.Toolkit</a></p>
+<p>Initializes a new instance of the <a href="choicesetsetting.html">ChoiceSetSetting</a> class from the base <a href="setting.html">Setting</a> class, setting its <a href="setting.html#properties">Key</a> property to <em>key</em>, its <a href="setting.html#properties">Label</a> to <em>label</em>, its <a href="setting.html#properties">Description</a> to <em>description</em>, and its <a href="choicesetsetting.html#properties">Choices</a> to <em>choices</em>.</p>
+<pre><code class="lang-C#">public ChoiceSetSetting(string key, string label, string description, List&lt;Choice&gt; choices)
+        : base(key, label, description, choices.ElementAt(0).Value)
+    {
+        Choices = choices;
+    }
+</code></pre>
+<h3 id="parameters-1">Parameters</h3>
+<p><em>key</em> <strong>String</strong></p>
+<p>The key for the setting. This is a unique identifier that is used to reference the setting in the application.</p>
+<p><em>label</em> <strong>String</strong></p>
+<p>The label for the setting. This is a user-friendly name that is displayed to the user in the application.</p>
+<p><em>description</em> <strong>String</strong></p>
+<p>The description for the setting. This provides additional information about the setting and its purpose.</p>
+<p><em>choices</em> <strong>List&lt;<a href="choice.html">Choice</a>&gt;</strong></p>
+<p>The list of choices for the setting. Each choice is represented by a <a href="choice.html">Choice</a> object, which contains the display text and value for the choice. The first choice in the list is used as the default value for the setting.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_constructor.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

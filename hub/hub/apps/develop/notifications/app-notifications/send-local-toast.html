@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Send a local app notification from a C# app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Send a local app notification from a C# app ">
+    
+    <meta name="description" content="Learn how to send a local app notification from C# apps and handle the user clicking the notification.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="send-a-local-app-notification-from-a-c-app">Send a local app notification from a C# app</h1>
+
+<p>An app notification is a message that your app can construct and deliver to your user while they are not currently inside your app.</p>
+<img src="../images/toast-notification.png" width="628" alt="Screenshot of an app notification">
+<p>This quickstart walks you through the steps to create, deliver, and display a Windows 10 or Windows 11 app notification using rich content and interactive actions. This quickstart uses local notifications, which are the simplest notification to implement. All types of apps (WPF, UWP, WinForms, console) can send notifications!</p>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're writing a C++ app, please see the <a href="send-local-toast-cpp-uwp.html">C++ UWP</a> or <a href="send-local-toast-desktop-cpp-wrl.html">C++ WRL</a> documentation.</p>
+</div>
+<h2 id="step-1-install-nuget-package">Step 1: Install NuGet package</h2>
+<p>Within your Visual Studio solution, right click your project, click <em>&quot;Manage NuGet Packages...&quot;</em> and search for and install the <code>Microsoft.Toolkit.Uwp.Notifications</code> <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">NuGet package</a> version 7.0 or greater.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>.NET Framework desktop apps that still use packages.config must migrate to PackageReference, otherwise the Windows SDKs won't be referenced correctly. In your project, right-click on &quot;References&quot;, and click &quot;Migrate packages.config to PackageReference&quot;.</p>
+<p>.NET Core 3.0 WPF apps must update to .NET Core 3.1, otherwise the APIs will be absent.</p>
+<p>.NET apps must <a href="/dotnet/standard/frameworks#how-to-specify-a-target-framework">use one of the Windows TFMs</a>, otherwise the app notification sending and management APIs like <code>Show()</code> will be missing. Set your TFM to <code>net6.0-windows10.0.17763.0</code> or later.</p>
+</div>
+
+<p>Our code sample will use this package. This package allows you to create app notifications without using XML, and also allows desktop apps to send app notifications.</p>
+<h2 id="step-2-send-an-app-notification">Step 2: Send an app notification</h2>
+<p>In Windows 10 and Windows 11, your app notification content is described using an adaptive language that allows great flexibility with how your notification looks. For more information, see the <a href="adaptive-interactive-toasts.html">App notification content</a> documentation.</p>
+<p>We'll start with a simple text-based notification. Construct the notification content (using the Notifications library), and show the notification! Note that the namespace is <code>Microsoft.Toolkit.Uwp.Notifications</code>.</p>
+<img alt="Simple text notification" src="../images/send-toast-01.png" width="364">
+
+<pre><code class="lang-csharp">// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater
+new ToastContentBuilder()
+    .AddArgument(&quot;action&quot;, &quot;viewConversation&quot;)
+    .AddArgument(&quot;conversationId&quot;, 9813)
+    .AddText(&quot;Andrew sent you a picture&quot;)
+    .AddText(&quot;Check this out, The Enchantments in Washington!&quot;)
+    .Show(); // Not seeing the Show() method? Make sure you have version 7.0, and if you're using .NET 6 (or later), then your TFM must be net6.0-windows10.0.17763.0 or greater
+</code></pre>
+<p>Try running this code and you should see the notification appear!</p>
+<h2 id="step-3-handle-activation">Step 3: Handle activation</h2>
+<p>After showing a notification, you likely need to handle the user clicking the notification (whether that means bringing up specific content after the user clicks it, opening your app in general, or performing an action when the user clicks the notification).</p>
+<p>The steps for handling activation differ for UWP, and for packaged and unpackaged desktop apps.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_desktop-msix" role="tab" aria-controls="tabpanel_1_desktop-msix" data-tab="desktop-msix" tabindex="0" aria-selected="true">Desktop (MSIX)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_desktop" role="tab" aria-controls="tabpanel_1_desktop" data-tab="desktop" tabindex="-1">Desktop (unpackaged)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_uwp" role="tab" aria-controls="tabpanel_1_uwp" data-tab="uwp" tabindex="-1">UWP</a>
+</li>
+</ul>
+<section id="tabpanel_1_desktop-msix" role="tabpanel" data-tab="desktop-msix">
+
+<p>First, in your <strong>Package.appxmanifest</strong>, add:</p>
+<ol>
+<li>Declaration for <strong>xmlns:com</strong></li>
+<li>Declaration for <strong>xmlns:desktop</strong></li>
+<li>In the <strong>IgnorableNamespaces</strong> attribute, <strong>com</strong> and <strong>desktop</strong></li>
+<li><strong>desktop:Extension</strong> for <strong>windows.toastNotificationActivation</strong> to declare your toast activator CLSID (using a new GUID of your choice).</li>
+<li>MSIX only: <strong>com:Extension</strong> for the COM activator using the GUID from step #4. Be sure to include the <code>Arguments=&quot;-ToastActivated&quot;</code> so that you know your launch was from a notification</li>
+</ol>
+<p><strong>Package.appxmanifest</strong></p>
+<pre><code class="lang-xml">&lt;!--Add these namespaces--&gt;
+&lt;Package
+  ...
+  xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;
+  xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;
+  IgnorableNamespaces=&quot;... com desktop&quot;&gt;
+  ...
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      ...
+      &lt;Extensions&gt;
+
+        &lt;!--Specify which CLSID to activate when toast clicked--&gt;
+        &lt;desktop:Extension Category=&quot;windows.toastNotificationActivation&quot;&gt;
+          &lt;desktop:ToastNotificationActivation ToastActivatorCLSID=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; /&gt; 
+        &lt;/desktop:Extension&gt;
+
+        &lt;!--Register COM CLSID LocalServer32 registry key--&gt;
+        &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+          &lt;com:ComServer&gt;
+            &lt;com:ExeServer Executable=&quot;YourProject\YourProject.exe&quot; Arguments=&quot;-ToastActivated&quot; DisplayName=&quot;Toast activator&quot;&gt;
+              &lt;com:Class Id=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; DisplayName=&quot;Toast activator&quot;/&gt;
+            &lt;/com:ExeServer&gt;
+          &lt;/com:ComServer&gt;
+        &lt;/com:Extension&gt;
+
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+ &lt;/Package&gt;
+</code></pre>
+<p>Then, <strong>in your app's startup code</strong> (App.xaml.cs OnStartup for WPF), subscribe to the OnActivated event.</p>
+<pre><code class="lang-csharp">// Listen to notification activation
+ToastNotificationManagerCompat.OnActivated += toastArgs =&gt;
+{
+    // Obtain the arguments from the notification
+    ToastArguments args = ToastArguments.Parse(toastArgs.Argument);
+
+    // Obtain any user input (text boxes, menu selections) from the notification
+    ValueSet userInput = toastArgs.UserInput;
+
+    // Need to dispatch to UI thread if performing UI operations
+    Application.Current.Dispatcher.Invoke(delegate
+    {
+        // TODO: Show the corresponding content
+        MessageBox.Show(&quot;Toast activated. Args: &quot; + toastArgs.Argument);
+    });
+};
+</code></pre>
+<p>When the user clicks any of your notifications (or a button on the notification), the following will happen...</p>
+<p><strong>If your app is currently running</strong>...</p>
+<ol>
+<li>The <strong>ToastNotificationManagerCompat.OnActivated</strong> event will be invoked on a background thread.</li>
+</ol>
+<p><strong>If your app is currently closed</strong>...</p>
+<ol>
+<li>Your app's EXE will be launched and <code>ToastNotificationManagerCompat.WasCurrentProcessToastActivated()</code> will return true to indicate the process was started due to a modern activation and that the event handler will soon be invoked.</li>
+<li>Then, the
+<strong>ToastNotificationManagerCompat.OnActivated</strong> event will be invoked on a background thread.</li>
+</ol>
+</section>
+<section id="tabpanel_1_desktop" role="tabpanel" data-tab="desktop" aria-hidden="true" hidden="hidden">
+<p>When the user clicks any of your notifications (or a button on the notification), the following will happen...</p>
+<p><strong>If your app is currently running</strong>...</p>
+<ol>
+<li>The <strong>ToastNotificationManagerCompat.OnActivated</strong> event will be invoked on a background thread.</li>
+</ol>
+<p><strong>If your app is currently closed</strong>...</p>
+<ol>
+<li>Your app's EXE will be launched and <code>ToastNotificationManagerCompat.WasCurrentProcessToastActivated()</code> will return true to indicate the process was started due to a modern activation and that the event handler will soon be invoked.</li>
+<li>Then, the
+<strong>ToastNotificationManagerCompat.OnActivated</strong> event will be invoked on a background thread.</li>
+</ol>
+
+<p><strong>In your app's startup code</strong> (App.xaml.cs OnStartup for WPF), subscribe to the OnActivated event.</p>
+<pre><code class="lang-csharp">// Listen to notification activation
+ToastNotificationManagerCompat.OnActivated += toastArgs =&gt;
+{
+    // Obtain the arguments from the notification
+    ToastArguments args = ToastArguments.Parse(toastArgs.Argument);
+
+    // Obtain any user input (text boxes, menu selections) from the notification
+    ValueSet userInput = toastArgs.UserInput;
+
+    // Need to dispatch to UI thread if performing UI operations
+    Application.Current.Dispatcher.Invoke(delegate
+    {
+        // TODO: Show the corresponding content
+        MessageBox.Show(&quot;Toast activated. Args: &quot; + toastArgs.Argument);
+    });
+};
+</code></pre>
+</section>
+<section id="tabpanel_1_uwp" role="tabpanel" data-tab="uwp" aria-hidden="true" hidden="hidden">
+
+<p>When the user clicks your notification (or a button on the notification with foreground activation), your app's <strong>App.xaml.cs</strong> <strong>OnActivated</strong> will be invoked, and the arguments you added will be returned.</p>
+<p><strong>App.xaml.cs</strong></p>
+<pre><code class="lang-csharp">protected override void OnActivated(IActivatedEventArgs e)
+{
+    // Handle notification activation
+    if (e is ToastNotificationActivatedEventArgs toastActivationArgs)
+    {
+        // Obtain the arguments from the notification
+        ToastArguments args = ToastArguments.Parse(toastActivationArgs.Argument);
+
+        // Obtain any user input (text boxes, menu selections) from the notification
+        ValueSet userInput = toastActivationArgs.UserInput;
+ 
+        // TODO: Show the corresponding content
+    }
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must initialize your frame and activate your window just like your <strong>OnLaunched</strong> code. <strong>OnLaunched is NOT called if the user clicks on your app notification</strong>, even if your app was closed and is launching for the first time. We often recommend combining <strong>OnLaunched</strong> and <strong>OnActivated</strong> into your own <code>OnLaunchedOrActivated</code> method since the same initialization needs to occur in both.</p>
+</div>
+</section>
+</div>
+<h2 id="step-4-handle-uninstallation">Step 4: Handle uninstallation</h2>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_desktop-msix" role="tab" aria-controls="tabpanel_2_desktop-msix" data-tab="desktop-msix" tabindex="0" aria-selected="true">Desktop (MSIX)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_desktop" role="tab" aria-controls="tabpanel_2_desktop" data-tab="desktop" tabindex="-1">Desktop (unpackaged)</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_uwp" role="tab" aria-controls="tabpanel_2_uwp" data-tab="uwp" tabindex="-1">UWP</a>
+</li>
+</ul>
+<section id="tabpanel_2_desktop-msix" role="tabpanel" data-tab="desktop-msix">
+
+<p>You don't need to do anything! When MSIX apps are uninstalled, all notifications and any other related resources are automatically cleaned up.</p>
+</section>
+<section id="tabpanel_2_desktop" role="tabpanel" data-tab="desktop" aria-hidden="true" hidden="hidden">
+
+<p>If your app has an uninstaller, in your uninstaller you should call <code>ToastNotificationManagerCompat.Uninstall();</code>. If your app is a &quot;portable app&quot; without an installer, consider calling this method upon app exit unless you have notifications that are meant to persist after your app is closed.</p>
+<p>The uninstall method will clean up any scheduled and current notifications, remove any associated registry values, and remove any associated temporary files that were created by the library.</p>
+</section>
+<section id="tabpanel_2_uwp" role="tabpanel" data-tab="uwp" aria-hidden="true" hidden="hidden">
+
+<p>You don't need to do anything! When UWP apps are uninstalled, all notifications and any other related resources are automatically cleaned up.</p>
+</section>
+</div>
+<h2 id="add-images">Add images</h2>
+<p>You can add rich content to notifications. We'll add an inline image and a profile (app logo override) image.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.</p>
+</div>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged apps don't support http images; you must download the image to your local app data, and reference it locally.</p>
+</div>
+<img alt="Toast with images" src="images/send-toast-02.png" width="364">
+<pre><code class="lang-csharp">// Construct the content and show the toast!
+new ToastContentBuilder()
+    ...
+
+    // Inline image
+    .AddInlineImage(new Uri(&quot;https://picsum.photos/360/202?image=883&quot;))
+
+    // Profile (app logo override) image
+    .AddAppLogoOverride(new Uri(&quot;ms-appdata:///local/Andrew.jpg&quot;), ToastGenericAppLogoCrop.Circle)
+    
+    .Show();
+</code></pre>
+<h2 id="add-buttons-and-inputs">Add buttons and inputs</h2>
+<p>You can add buttons and inputs to make your notifications interactive. Buttons can launch your foreground app, a protocol, or your background task. We'll add a reply text box, a &quot;Like&quot; button, and a &quot;View&quot; button that opens the image.</p>
+<img src="images/toast-notification.png" width="628" alt="Screenshot of an app notification with inputs and buttons">
+<pre><code class="lang-csharp">int conversationId = 384928;
+
+// Construct the content
+new ToastContentBuilder()
+    .AddArgument(&quot;conversationId&quot;, conversationId)
+    ...
+
+    // Text box for replying
+    .AddInputTextBox(&quot;tbReply&quot;, placeHolderContent: &quot;Type a response&quot;)
+
+    // Buttons
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Reply&quot;)
+        .AddArgument(&quot;action&quot;, &quot;reply&quot;)
+        .SetBackgroundActivation())
+
+    .AddButton(new ToastButton()
+        .SetContent(&quot;Like&quot;)
+        .AddArgument(&quot;action&quot;, &quot;like&quot;)
+        .SetBackgroundActivation())
+
+    .AddButton(new ToastButton()
+        .SetContent(&quot;View&quot;)
+        .AddArgument(&quot;action&quot;, &quot;viewImage&quot;)
+        .AddArgument(&quot;imageUrl&quot;, image.ToString()))
+    
+    .Show();
+</code></pre>
+<p>The activation of foreground buttons are handled in the same way as the main notification body (your App.xaml.cs OnActivated will be called).</p>
+<p>Note that arguments added to the top-level app notification (like conversation ID) will also be returned when the buttons are clicked, as long as buttons use the AddArgument API as seen above (if you custom assign arguments on a button, the top-level arguments won't be included).</p>
+<h2 id="handle-background-activation">Handle background activation</h2>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_desktop-msix+desktop" role="tab" aria-controls="tabpanel_3_desktop-msix+desktop" data-tab="desktop-msix+desktop" tabindex="0" aria-selected="true">Desktop</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_uwp" role="tab" aria-controls="tabpanel_3_uwp" data-tab="uwp" tabindex="-1">UWP</a>
+</li>
+</ul>
+<section id="tabpanel_3_desktop-msix+desktop" role="tabpanel" data-tab="desktop-msix+desktop">
+
+<p>For desktop applications, background activations are handled the same as foreground activations (your <strong>OnActivated</strong> event handler will be triggered). You can choose to not show any UI and close your app after handling activation.</p>
+</section>
+<section id="tabpanel_3_uwp" role="tabpanel" data-tab="uwp" aria-hidden="true" hidden="hidden">
+
+<p>When you specify background activation on your app notification (or on a button inside the notification), your background task will be executed instead of activating your foreground app.</p>
+<p>For more information on background tasks, please see <a href="/windows/uwp/launch-resume/support-your-app-with-background-tasks">Support your app with background tasks</a>.</p>
+<p>If you are targeting build 14393 or later, you can use in-process background tasks, which greatly simplify things. Note that in-process background tasks will fail to run on older versions of Windows. We'll use an in-process background task in this code sample.</p>
+<pre><code class="lang-csharp">const string taskName = &quot;ToastBackgroundTask&quot;;
+
+// If background task is already registered, do nothing
+if (BackgroundTaskRegistration.AllTasks.Any(i =&gt; i.Value.Name.Equals(taskName)))
+    return;
+
+// Otherwise request access
+BackgroundAccessStatus status = await BackgroundExecutionManager.RequestAccessAsync();
+
+// Create the background task
+BackgroundTaskBuilder builder = new BackgroundTaskBuilder()
+{
+    Name = taskName
+};
+
+// Assign the toast action trigger
+builder.SetTrigger(new ToastNotificationActionTrigger());
+
+// And register the task
+BackgroundTaskRegistration registration = builder.Register();
+</code></pre>
+<p>Then in your App.xaml.cs, override the OnBackgroundActivated method. You can then retrieve the pre-defined arguments and user input, similar to the foreground activation.</p>
+<p><strong>App.xaml.cs</strong></p>
+<pre><code class="lang-csharp">protected override async void OnBackgroundActivated(BackgroundActivatedEventArgs args)
+{
+    var deferral = args.TaskInstance.GetDeferral();
+ 
+    switch (args.TaskInstance.Task.Name)
+    {
+        case &quot;ToastBackgroundTask&quot;:
+            var details = args.TaskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
+            if (details != null)
+            {
+                ToastArguments arguments = ToastArguments.Parse(details.Argument);
+                var userInput = details.UserInput;
+
+                // Perform tasks
+            }
+            break;
+    }
+ 
+    deferral.Complete();
+}
+</code></pre>
+</section>
+</div>
+<h2 id="set-an-expiration-time">Set an expiration time</h2>
+<p>In Windows 10, all app notifications go in Action Center after they are dismissed or ignored by the user, so users can look at your notification after the popup is gone.</p>
+<p>However, if the message in your notification is only relevant for a period of time, you should set an expiration time on the app notification so the users do not see stale information from your app. For example, if a promotion is only valid for 12 hours, set the expiration time to 12 hours. In the code below, we set the expiration time to be 2 days.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The default and maximum expiration time for local app notifications is 3 days.</p>
+</div>
+<pre><code class="lang-csharp">// Create toast content and show the toast!
+new ToastContentBuilder()
+    .AddText(&quot;Expires in 2 days...&quot;)
+    .Show(toast =&gt;
+    {
+        toast.ExpirationTime = DateTime.Now.AddDays(2);
+    });
+</code></pre>
+<h2 id="provide-a-primary-key-for-your-notification">Provide a primary key for your notification</h2>
+<p>If you want to programmatically remove or replace the notification you send, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to remove or replace the notification.</p>
+<p>To see more details on replacing/removing already delivered app notifications, please see <a href="/previous-versions/windows/apps/dn631260(v=win.10)">Quickstart: Managing toast notifications in action center (XAML)</a>.</p>
+<p>Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like &quot;wallPosts&quot;, &quot;messages&quot;, &quot;friendRequests&quot;, etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the <a href="/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_">RemoveGroup API</a>.</p>
+<pre><code class="lang-csharp">// Create toast content and show the toast!
+new ToastContentBuilder()
+    .AddText(&quot;New post on your wall!&quot;)
+    .Show(toast =&gt;
+    {
+        toast.Tag = &quot;18365&quot;;
+        toast.Group = &quot;wallPosts&quot;;
+    });
+</code></pre>
+<h2 id="clear-your-notifications">Clear your notifications</h2>
+<p>Apps are responsible for removing and clearing their own notifications. When your app is launched, we do NOT automatically clear your notifications.</p>
+<p>Windows will only automatically remove a notification if the user explicitly clicks the notification.</p>
+<p>Here's an example of what a messaging app should do…</p>
+<ol>
+<li>User receives multiple app notifications about new messages in a conversation.</li>
+<li>User taps one of those notifications to open the conversation.</li>
+<li>The app opens the conversation and then clears all notifications for that conversation (by using <a href="/uwp/api/Windows.UI.Notifications.ToastNotificationHistory">RemoveGroup</a> on the app-supplied group for that conversation).</li>
+<li>User's Action Center now properly reflects the notification state, since there are no stale notifications for that conversation left in Action Center.</li>
+</ol>
+<p>To learn about clearing all notifications or removing specific notifications, see <a href="/previous-versions/windows/apps/dn631260(v=win.10)">Quickstart: Managing toast notifications in action center (XAML)</a>.</p>
+<pre><code class="lang-csharp">ToastNotificationManagerCompat.History.Clear();
+</code></pre>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/WindowsNotifications/quickstart-sending-local-toast-win10">Full code sample on GitHub</a></li>
+<li><a href="adaptive-interactive-toasts.html">App notification content documentation</a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.ToastNotification">ToastNotification Class</a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs">ToastNotificationActivatedEventArgs Class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/send-local-toast.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

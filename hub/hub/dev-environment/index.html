@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Setup a development environment on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Setup a development environment on Windows ">
+    
+    <meta name="description" content="A guide to help you setup your development environment on Windows and install your preferred tools and code languages.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="set-up-your-development-environment-on-windows">Set up your development environment on Windows</h1>
+
+<p>Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.</p>
+<h2 id="developer-tools">Developer tools</h2>
+<section class="row">
+<div class="column">
+<p><a href="/windows/terminal/"><img src="../images/terminal.png" alt="Windows Terminal icon"></a><br>
+<strong><a href="/windows/terminal/">Windows Terminal</a></strong><br>
+Customize your terminal environment to work with multiple command line shells.
+<br>
+<a href="https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&amp;activetab=pivot:overviewtab">Install Terminal</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/dev-drive"><img src="../images/dev-drive-icon.png" alt="Dev Drive icon"></a><br>
+<strong><a href="/windows/dev-drive/">Dev Drive</a></strong><br>
+Improve performance by storing project files on a Dev Drive and keep files secure with trust designation, antivirus configuration, and attached filters.
+<br>
+<a href="/windows/dev-drive#how-to-set-up-a-dev-drive">Create a Dev Drive</a></p>
+</div>
+<div class="column">
+<p><a href="../package-manager/index.html"><img src="../images/winget.png" alt="Windows Package Manager icon"></a><br>
+<strong><a href="../package-manager/index.html">Windows Package Manager</a></strong><br>
+Use the winget.exe client, a comprehensive package manager, with your command line to install applications on Windows.<br>
+<a href="../package-manager/winget/index.html#install-winget">Install Windows Package Manager</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/wsl/"><img src="../images/wsl-icon.png" alt="WSL icon"></a><br>
+<strong><a href="/windows/wsl/">Windows Subsystem for Linux</a></strong><br>
+Use your favorite Linux distribution fully integrated with Windows (no more need for dual-boot).<br>
+<a href="/windows/wsl/install">Install WSL</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="../package-manager/configuration/index.html"><img src="../images/winget.png" alt="Windows Package Manager icon"></a><br>
+<strong><a href="../package-manager/configuration/index.html">WinGet Configuration</a></strong><br>
+Consolidate manual machine setup and project onboarding to a single command that is reliable and repeatable.<br>
+<a href="../package-manager/configuration/create.html">Author a configuration file</a></p>
+</div>
+<div class="column">
+<p><a href="../powertoys/index.html"><img src="../images/powertoys.png" alt="PowerToys icon"></a><br>
+<strong><a href="../powertoys/index.html">Microsoft PowerToys</a></strong><br>
+Tune and streamline your Windows experience for greater productivity with this set of power user utilities.<br>
+<a href="../powertoys/install.html">Install PowerToys</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/sudo/"><img src="../images/sudo.png" alt="Sudo for Windows icon"></a><br>
+<strong><a href="/windows/sudo/">Sudo for Windows</a></strong><br>
+Sudo for Windows is a new way for users to run elevated commands directly from an unelevated console session.
+<br>
+<a href="/windows/sudo">Enable and configure Sudo for Windows</a></p>
+</div>
+</section>
+<br>
+<h2 id="ai-for-windows-apps">AI for Windows apps</h2>
+<section class="row">
+<div class="column">
+<p><a href="/windows/ai/"><img src="../images/copilot.png" alt="Copilot in Windows icon"></a><br>
+<strong><a href="/windows/ai">Windows AI Hub</a></strong><br>
+A new era of AI has arrived at Microsoft. See how AI is being integrated in Windows 11.<br>
+<a href="/windows/ai">Visit Windows AI Hub</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/ai/npu-devices"><img src="../images/copilot-pc.png" alt="Copilot+ PC image"></a><br>
+<strong><a href="/windows/ai/npu-devices/">Copilot+ PCs Developer Guide</a></strong><br>
+Copilot+ PCs are a new class of Windows 11 hardware powered by a high-performance Neural Processing Unit (NPU).<br>
+<a href="/windows/ai/npu-devices">Develop for Copilot+ PCs</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/ai/directml/dml"><img src="../images/directml.png" alt="Direct ML icon"></a><br>
+<strong><a href="/windows/ai/directml/dml">DirectML</a></strong><br>
+Pairing DirectML with the ONNX Runtime is often the most straightforward way for many developers to bring hardware-accelerated AI to their users at scale.<br>
+<a href="/windows/ai/directml/dml-get-started">Get Started with DirectML</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/ai/rai"><img src="../images/rai.png" alt="RAI icon"></a><br>
+<strong><a href="/windows/ai/rai">Responsible AI guidance for Windows</a></strong><br>
+Recommended responsible development practices to use as you create apps that utilize AI features on Windows.<br>
+<a href="/windows/ai/rai">Develop Responsibly</a></p>
+</div>
+</section>
+<h2 id="development-paths">Development paths</h2>
+<section class="row">
+<div class="column">
+<p><a href="javascript/index.html"><img src="../images/javascript-logo.png" alt="JavaScrip icon"></a><br>
+<strong><a href="javascript/index.html">Get started with JavaScript</a></strong><br>
+Get started with JavaScript by setting up your development environment on Windows or Windows Subsystem for Linux and install <a href="javascript/nodejs-overview.html">Node.js</a>, <a href="javascript/react-overview.html">React</a>, <a href="javascript/vue-overview.html">Vue</a>, <a href="javascript/nodejs-beginners-tutorial.html">Express</a>, <a href="javascript/gatsby-on-wsl.html">Gatsby</a>, <a href="javascript/nextjs-on-wsl.html">Next.js</a>, or <a href="javascript/nuxtjs-on-wsl.html">Nuxt.js</a>.</p>
+</div>
+<div class="column">
+<p><a href="../python/index.yml"><img src="../images/python-logo.png" alt="Python icon"></a><br>
+<strong><a href="../python/index.yml">Get started with Python</a></strong><br>
+Install Python and get your development environment setup on Windows or Windows Subsystem for Linux.</p>
+</div>
+<div class="column">
+<p><a href="/windows/android"><img src="../images/android-logo.png" alt="Android icon"></a><br>
+<strong><a href="/windows/android">Get started with Android</a></strong><br>
+Install Android Studio, or choose a cross-platform solution like .NET MAUI, React, or creating a PWA, and get your development environment setup on Windows.</p>
+</div>
+<div class="column">
+<p><a href="../apps/index.yml"><img src="../images/windows-logo.png" alt="Windows Desktop icon"></a><br>
+<strong><a href="../apps/index.yml">Get started building Windows apps</a></strong><br>
+Get started building desktop apps for Windows using the Windows App SDK, UWP, Win32, WPF, Windows Forms, or updating and deploying existing desktop apps with MSIX and XAML Islands.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="/cpp/"><img src="../images/c-logo.png" alt="C / C++"></a><br>
+<strong><a href="/cpp/">Get started with C++ and C</a></strong><br>
+Get started with C++, C, and assembly to develop apps, services, and tools.</p>
+</div>
+<div class="column">
+<p><a href="/dotnet/csharp/"><img src="../images/csharp-logo.png" alt="C# icon"></a><br>
+<strong><a href="/dotnet/csharp/">Get started with C#</a></strong><br>
+Get started building apps using C# and .NET.</p>
+</div>
+<div class="column">
+<p><a href="/dotnet/fsharp/"><img src="../images/fsharp-logo.png" alt="F# icon"></a><br>
+<strong><a href="/dotnet/fsharp/">Get started with F#</a></strong><br>
+Get started building apps using F# and .NET.</p>
+</div>
+<div class="column">
+<p><a href="rust/index.yml"><img src="../images/rust-icon.png" alt="Rust icon"></a><br>
+<strong><a href="rust/index.yml">Get started with Rust</a></strong><br>
+Get started programming with Rust—including how to set up Rust for Windows by consuming the <em>windows</em> crate.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="/powershell/"><img src="../images/powershell.png" alt="PowerShell icon"></a><br>
+<strong><a href="/powershell/">Get started with PowerShell</a></strong><br>
+Get started with cross-platform task automation and configuration management using PowerShell, a command-line shell and scripting language.</p>
+</div>
+<div class="column">
+<p><a href="docker/overview.html"><img src="../images/docker-logo.png" alt="Docker Desktop for Windows icon"></a><br>
+<strong><a href="docker/overview.html">Get started with Docker Desktop for Windows</a></strong><br>
+Create remote development containers with support from Visual Studio, VS Code, .NET, Windows Subsystem for Linux, or a variety of Azure services.</p>
+</div>
+<div class="column">
+<p><a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"><img src="../images/blazor-icon.png" alt="Blazor icon"></a><br>
+<strong><a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">Get started with Blazor</a></strong><br>
+Get started with Blazor, a client-side UI framework within ASP.NET Core. Use HTML, CSS, and C# (rather than JavaScript) to create UI components and single page applications for the web.</p>
+</div>
+</section>
+<h2 id="more-for-developers">More for developers</h2>
+<section class="row">
+<div class="column">
+<p><a href="https://code.visualstudio.com/docs"><img src="../images/Vscode.png" alt="VS Code icon"></a><br>
+<strong><a href="https://code.visualstudio.com/docs">VS Code</a></strong><br>
+A lightweight source code editor with built-in support for JavaScript, TypeScript, Node.js, a rich ecosystem of extensions (C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).<br>
+<a href="https://code.visualstudio.com/download">Install VS Code</a></p>
+</div>
+<div class="column">
+<p><a href="/visualstudio/windows/"><img src="../images/visualstudio.png" alt="Visual Studio icon"></a><br>
+<strong><a href="/visualstudio/windows/">Visual Studio</a></strong><br>
+An integrated development environment that you can use to edit, debug, build code, and publish apps, including compilers, intellisense code completion, and many more features.<br>
+<a href="/visualstudio/install/install-visual-studio">Install Visual Studio</a></p>
+</div>
+<div class="column">
+<p><a href="/azure/guides/developer/azure-developer-guide"><img src="../images/Azure.png" alt="Azure icon"></a><br>
+<strong><a href="/azure/guides/developer/azure-developer-guide">Azure</a></strong><br>
+A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
+<a href="https://azure.microsoft.com/free/">Set up an Azure account</a></p>
+</div>
+<div class="column">
+<p><a href="https://dotnet.microsoft.com/"><img src="../images/net.png" alt=".NET icon"></a><br>
+<strong><a href="/dotnet/standard/get-started/">.NET</a></strong><br>
+An open source development platform with tools and libraries for building any type of app, including web, mobile, desktop, gaming, IoT, cloud, and microservices.<br>
+<a href="https://dotnet.microsoft.com/download">Install .NET</a></p>
+</div>
+</section>
+<br>
+<h2 id="run-windows-and-linux">Run Windows and Linux</h2>
+<p>Windows Subsystem for Linux (WSL) allows developers to run a Linux operating system right alongside Windows. Both share the same hard drive (and can access each other’s files), the clipboard supports copy-and-paste between the two naturally, there's no need for dual-booting. WSL enables you to use BASH and will provide the kind of environment most familiar to Mac users.</p>
+<p>Learn more in the <a href="/windows/wsl">WSL docs</a>.</p>
+<div class="embeddedvideo"><iframe src="https://learn.microsoft.com/shows/One-Dev-Minute/What-can-I-do-with-WSL--One-Dev-Question/player?format=ny" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>You can also use Windows Terminal to open all of your favorite command line tools in the same window with multiple tabs, or in multiple panes, whether that's PowerShell, Windows Command Prompt, Ubuntu, Debian, Azure CLI, Oh-my-Zsh, Git Bash, or all of the above.</p>
+<p>Learn more in the <a href="/windows/terminal">Windows Terminal docs</a>.</p>
+<div class="embeddedvideo"><iframe src="https://learn.microsoft.com/shows/One-Dev-Minute/What-are-the-main-features-of-the-new-Terminal--One-Dev-Question/player?format=ny" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="transitioning-between-mac-and-windows">Transitioning between Mac and Windows</h2>
+<p>Check out our <a href="mac-to-windows.html">guide to transitioning between a Mac and Windows</a> (or Windows Subsystem for Linux) development environment. It can help you map the difference between:</p>
+<ul>
+<li><a href="mac-to-windows.html#keyboard-shortcuts">Keyboard shortcuts</a></li>
+<li><a href="mac-to-windows.html#trackpad-shortcuts">Trackpad shortcuts</a></li>
+<li><a href="mac-to-windows.html#command-line-shells-and-terminals">Terminal and shell tools</a></li>
+<li><a href="mac-to-windows.html#apps-and-utilities">Apps and utilities</a></li>
+</ul>
+<h2 id="game-development-documentation">Game development documentation</h2>
+<ul>
+<li><a href="/gaming/">Microsoft's Game Dev documentation</a></li>
+</ul>
+<p><img src="../images/flashy-office3.png" alt="Office image"></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

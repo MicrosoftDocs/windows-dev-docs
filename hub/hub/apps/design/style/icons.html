@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Icons in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Icons in Windows apps ">
+    
+    <meta name="description" content="Learn when and how to create icons within your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="icons-in-windows-apps">Icons in Windows apps</h1>
+
+<p>Icons provide a visual shorthand for an action, concept, or product. By compressing meaning into a symbolic image, icons can cross language barriers and help conserve a valuable resource: screen space. Good icons harmonize with typography and with the rest of the design language. They don't mix metaphors, and they communicate only what's needed, as speedily and simply as possible.</p>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icons-command-bar.png" alt="A command bar flyout with icons for add - plus sign, edit - pencil, share - page and arrow, and settings - gear">
+</span>
+</p>
+<p>Icons can appear within apps and outside them. Inside your app, you use icons to represent an action, such as copying text or going to the settings page.</p>
+<p>This article describes icons within your app UI. To learn about icons that represent your app in Windows (app icons), see <a href="iconography/overview.html">App icons</a>.</p>
+<h2 id="know-when-to-use-icons">Know when to use icons</h2>
+<p>Icons can save space, but when should you use them?</p>
+<p>Use an icon for actions, like cut, copy, paste, and save, or for items on a navigation menu. Use an icon if it's easy for the user to understand what the icon means and it's simple enough to be clear at small sizes.</p>
+<p>Don't use an icon if its meaning isn't clear, or if making it clear requires a complex shape.</p>
+<h2 id="use-the-right-type-of-icon">Use the right type of icon</h2>
+<p>There are many ways to create an icon. You can use a symbol font like the <a href="segoe-fluent-icons-font.html">Segoe Fluent Icons font</a>. You can create your own vector-based image. You can even use a bitmap image, although we don't recommend it. Here's a summary of the ways that you can add an icon to your app.</p>
+<p>To add an icon in your XAML app, you use either an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement">IconElement</a> or an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource">IconSource</a>.</p>
+<p>This table shows the different kinds of icons that are derived from IconElement and IconSource.</p>
+<table>
+<thead>
+<tr>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement">IconElement</a></th>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource">IconSource</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon">AnimatedIcon</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatediconsource">AnimatedIconSource</a></td>
+<td>Represents an icon that displays and controls a visual that can animate in response to user interaction and visual state changes.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon">BitmapIcon</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapiconsource">BitmapIconSource</a></td>
+<td>Represents an icon that uses a bitmap as its content.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon">FontIcon</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticonsource">FontIconSource</a></td>
+<td>Represents an icon that uses a glyph from the specified font.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsourceelement">IconSourceElement</a></td>
+<td>N/A</td>
+<td>Represents an icon that uses an IconSource as its content.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.imageicon">ImageIcon</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.imageiconsource">ImageIconSource</a></td>
+<td>Represents an icon that uses an image as its content.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pathicon">PathIcon</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pathiconsource">PathIconSource</a></td>
+<td>Represents an icon that uses a vector path as its content.</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon">SymbolIcon</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symboliconsource">SymbolIconSource</a></td>
+<td>Represents an icon that uses a glyph from the <code>SymbolThemeFontFamily</code> resource as its content.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iconelement-vs-iconsource">IconElement vs. IconSource</h3>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement">IconElement</a> is a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement">FrameworkElement</a>, so it can be added to the XAML object tree just like any other element of your app's UI. However, it can't be added to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary">ResourceDictionary</a> and reused as a shared resource.</p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource">IconSource</a> is similar to IconElement; however, because it is not a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement">FrameworkElement</a>, it can't be used as a standalone element in your UI, but it can be shared as a resource. <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsourceelement">IconSourceElement</a> is a special icon element that wraps an IconSource so you can use it anywhere you need an IconElement. An example of these features is shown in the next section.</p>
+<h4 id="iconelement-examples">IconElement examples</h4>
+<p>You can use an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement">IconElement</a>-derived class as a standalone UI component.</p>
+<p>This example shows how to set an icon glyph as the content of a Button. Set the button's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontfamily">FontFamily</a> to <code>SymbolThemeFontFamily</code> and its content property to the Unicode value of the glyph that you want to use.</p>
+<pre><code class="lang-xaml">&lt;Button FontFamily=&quot;{ThemeResource SymbolThemeFontFamily}&quot;
+        Content=&quot;&amp;#xE768;&quot;/&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-play-button.png" alt="A button with the play icon, an outline of a triangle pointing to the right">
+</span>
+</p>
+<p>You can also explicitly add one of the icon element objects listed previously, like SymbolIcon. This gives you more types of icons to choose from. It also lets you combine icons and other types of content, such as text, if you want.</p>
+<pre><code class="lang-xaml">&lt;Button&gt;
+    &lt;StackPanel&gt;
+        &lt;SymbolIcon Symbol=&quot;Play&quot;/&gt;
+        &lt;TextBlock Text=&quot;Play&quot; HorizontalAlignment=&quot;Center&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Button&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-play-button-text.png" alt="A button with the play icon, an outline of a triangle pointing to the right, with the text play below it">
+</span>
+</p>
+<p>This example shows how you can define a FontIconSource in a ResourceDictionary, and then use an IconSourceElement to reuse the resource in different places of your app.</p>
+<pre><code class="lang-xaml">&lt;!--App.xaml--&gt;
+&lt;Application
+   ...&gt;
+    &lt;Application.Resources&gt;
+        &lt;ResourceDictionary&gt;
+            ...
+            &lt;!-- Other app resources here --&gt;
+
+            &lt;FontIconSource x:Key=&quot;CertIconSource&quot; Glyph=&quot;&amp;#xEB95;&quot;/&gt;
+
+        &lt;/ResourceDictionary&gt;
+    &lt;/Application.Resources&gt;
+&lt;/Application&gt;
+</code></pre>
+<pre><code class="lang-xaml">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;IconSourceElement IconSource=&quot;{StaticResource CertIconSource}&quot;/&gt;
+    &lt;TextBlock Text=&quot;Certificate is expired&quot; Margin=&quot;4,0,0,0&quot;/&gt;
+&lt;/StackPanel&gt;
+
+&lt;Button&gt;
+    &lt;StackPanel&gt;
+        &lt;IconSourceElement IconSource=&quot;{StaticResource CertIconSource}&quot;/&gt;
+        &lt;TextBlock Text=&quot;View certificate&quot; HorizontalAlignment=&quot;Center&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Button&gt;
+
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-shared-resource.png" alt="A certificate icon with the text certificate is expired, and a button with the certificate icon and the text view certificate">
+</span>
+</p>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/IconElement">Open the WinUI 3 Gallery app to see IconElement in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h3 id="icon-properties">Icon properties</h3>
+<p>You often place icons in your UI by assigning one to an <em><code>icon</code></em> property of another XAML element. <em><code>Icon</code></em> properties that include <em><code>Source</code></em> in the name take an IconSource; otherwise, the property takes an IconElement.</p>
+<p>This list shows some common elements that have an <em><code>icon</code></em> property.</p>
+<table>
+<thead>
+<tr>
+<th>Commands/Actions</th>
+<th>Navigation</th>
+<th>Status/Other</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.icon">AppBarButton.Icon</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton.icon">AppBarToggleButton.Icon</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.queryicon">AutoSuggestBox.QueryIcon</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem.icon">MenuFlyoutItem.Icon</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutsubitem.icon">MenuFlyoutSubItem.Icon</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem.iconsource">SwipeItem.IconSource</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand.iconsource">XamlUICommand.IconSource</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem.icon">NavigationViewItem.Icon</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem.icon">SelectorBarItem.Icon</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.iconsource">TabViewItem.IconSource</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon.fallbackiconsource">AnimatedIcon.FallbackIconSource</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatediconsource.fallbackiconsource">AnimatedIconSource.FallbackIconSource</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsourceelement.iconsource">IconSourceElement.IconSource</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource">InfoBadge.IconSource</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar.iconsource">InfoBar.IconSource</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.iconsource">TeachingTip.IconSource</a></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can view these controls in the WinUI 3 Gallery app to see examples of how icons are used with them.</p>
+</div>
+<p>The remaining examples on this page show how to assign an icon to the <em><code>icon</code></em> property of a control.</p>
+<h2 id="fonticon-and-symbolicon">FontIcon and SymbolIcon</h2>
+<p>The most common way to add icons to your app is to use the system icons provided by the icon fonts in Windows. Windows 11 introduces a new system icon font, <a href="segoe-fluent-icons-font.html">Segoe Fluent Icons</a>, which provides more than 1,000 icons designed for the Fluent Design language. It might not be intuitive to get an icon from a font, but Windows font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Default font family</strong></p>
+<p>Rather than specifying a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon.fontfamily">FontFamily</a> directly, FontIcon and SymbolIcon use the font family defined by the <code>SymbolThemeFontFamily</code> XAML theme resource. By default, this resource uses the Segoe Fluent Icon font family. If your app is run on Windows 10, version 20H2 or earlier, the Segoe Fluent Icon font family is not available and the <code>SymbolThemeFontFamily</code> resource falls back to the <a href="segoe-ui-symbol-font.html">Segoe MDL2 Assets</a> font family instead.</p>
+</div>
+<h3 id="symbol-enumeration">Symbol enumeration</h3>
+<p>Many common glyphs from the <code>SymbolThemeFontFamily</code> are included in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbol">Symbol</a> enumeration. If the glyph you need is available as a Symbol, you can use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon">SymbolIcon</a> anywhere you would use a FontIcon with the default font family.</p>
+<p>You also use Symbol names to set an <em><code>icon</code></em> property in XAML using <a href="/windows/uwp/xaml-platform/xaml-syntax-guide#setting-a-property-by-using-attribute-syntax">attribute syntax</a>, like this</p>
+<pre><code class="lang-xaml">&lt;AppBarButton Icon=&quot;Send&quot; Label=&quot;Send&quot;/&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-send.png" alt="A button with the send icon, an outline of an arrow head pointing to the right">
+</span>
+</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can only use Symbol names to set an <em><code>icon</code></em> property using the shortened <a href="/windows/uwp/xaml-platform/xaml-syntax-guide#setting-a-property-by-using-attribute-syntax">attribute syntax</a>. All other icon types must be set using the longer <a href="/windows/uwp/xaml-platform/xaml-syntax-guide#setting-a-property-by-using-property-element-syntax">property element syntax</a>, as shown in other examples on this page.</p>
+</div>
+<h3 id="font-icons">Font icons</h3>
+<p>Only a small subset of Segoe Fluent Icon glyphs are available in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbol">Symbol</a> enumeration. To use any of the other available glyphs, use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon">FontIcon</a>. This example shows how to create an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton</a> with the <code>SendFill</code> icon.</p>
+<pre><code class="lang-xaml">&lt;AppBarButton Label=&quot;Send&quot;&gt;
+    &lt;AppBarButton.Icon&gt;
+        &lt;FontIcon Glyph=&quot;&amp;#xE725;&quot;/&gt;
+    &lt;/AppBarButton.Icon&gt;
+&lt;/AppBarButton&gt;
+
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-send-fill.png" alt="A button with the send fill icon, a filled in arrow head pointing to the right">
+</span>
+</p>
+<p>If you don't specify a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon.fontfamily">FontFamily</a>, or you specify a FontFamily that is not available on the system at runtime, the FontIcon falls back to the default font family defined by the <code>SymbolThemeFontFamily</code> theme resource.</p>
+<p>You can also specify an icon using a Glyph value from any available font. This example shows how to use a Glyph from the Segoe UI Emoji font.</p>
+<pre><code class="lang-xaml">&lt;AppBarToggleButton Label=&quot;FontIcon&quot;&gt;
+    &lt;AppBarToggleButton.Icon&gt;
+        &lt;FontIcon FontFamily=&quot;Segoe UI Emoji&quot; Glyph=&quot;&amp;#x25B6;&quot;/&gt;
+    &lt;/AppBarToggleButton.Icon&gt;
+&lt;/AppBarToggleButton&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-play-emoji-font.png" alt="A button with the play icon from the Segoe UI Emoji font, a white arrow head pointing to the right on a blue background">
+</span>
+</p>
+<p>For more information and examples, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon">FontIcon</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon">SymbolIcon</a> class documentation.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Use the Iconography page in the WinUI 3 Gallery app to view, search, and copy code for all the icons available in Segoe Fluent Icons.</p>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/Iconography">Open the WinUI 3 Gallery app to the Iconography page</a></p>
+</div>
+<h2 id="animatedicon">AnimatedIcon</h2>
+<p>Motion is an important part of the Fluent Design language. Animated icons draw attention to specific entry points, provide feedback from state to state, and add delight to an interaction.</p>
+<p>You can use animated icons to implement lightweight, vector-based icons with motion using <a href="/windows/communitytoolkit/animations/lottie">Lottie</a> animations.</p>
+<p>For more information and examples, see <a href="../controls/animated-icon.html">Animated icons</a> and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon">AnimatedIcon</a> class documentation.</p>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/AnimatedIcon">Open the WinUI 3 Gallery app to see AnimatedIcon in action</a></p>
+</div>
+<h2 id="pathicon">PathIcon</h2>
+<p>You can use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pathicon">PathIcon</a> to create custom icons that use vector-based shapes, so they always look sharp. However, creating a shape using a XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.geometry">Geometry</a> is complicated because you have to individually specify each point and curve.</p>
+<p>This example shows two different ways to define the Geometry used in a PathIcon.</p>
+<pre><code class="lang-xaml">&lt;AppBarButton Label=&quot;PathIcon&quot;&gt;
+    &lt;AppBarButton.Icon&gt;
+        &lt;PathIcon Data=&quot;F1 M 16,12 20,2L 20,16 1,16&quot;/&gt;
+    &lt;/AppBarButton.Icon&gt;
+&lt;/AppBarButton&gt;
+
+&lt;AppBarButton Label=&quot;Circles&quot;&gt;
+    &lt;AppBarButton.Icon&gt;
+        &lt;PathIcon&gt;
+            &lt;PathIcon.Data&gt;
+                &lt;GeometryGroup&gt;
+                    &lt;EllipseGeometry RadiusX=&quot;15&quot; RadiusY=&quot;15&quot; Center=&quot;90,90&quot; /&gt;
+                    &lt;EllipseGeometry RadiusX=&quot;50&quot; RadiusY=&quot;50&quot; Center=&quot;90,90&quot; /&gt;
+                    &lt;EllipseGeometry RadiusX=&quot;70&quot; RadiusY=&quot;70&quot; Center=&quot;90,90&quot; /&gt;
+                    &lt;EllipseGeometry RadiusX=&quot;100&quot; RadiusY=&quot;100&quot; Center=&quot;90,90&quot; /&gt;
+                    &lt;EllipseGeometry RadiusX=&quot;120&quot; RadiusY=&quot;120&quot; Center=&quot;90,90&quot; /&gt;
+                &lt;/GeometryGroup&gt;      
+            &lt;/PathIcon.Data&gt;
+        &lt;/PathIcon&gt;
+    &lt;/AppBarButton.Icon&gt;
+&lt;/AppBarButton&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-abstract-path.png" alt="A button with a custom path icon">
+</span>
+<span class="mx-imgBorder">
+<img src="iconography/images/icon-circles-path.png" alt="A button with a custom path icon, two circles around a center point">
+</span>
+</p>
+<p>To learn more about using <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.geometry">Geometry</a> classes to create custom shapes, see the class documentation and <a href="/windows/uwp/xaml-platform/move-draw-commands-syntax">Move and draw commands for geometries</a>. Also see the <a href="/dotnet/desktop/wpf/graphics-multimedia/geometry-overview">WPF Geometry documentation</a>. The WinUI Geometry class doesn't have all the same features as the WPF class, but creating shapes is the same for both.</p>
+<p>For more information and examples, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pathicon">PathIcon</a> class documentation.</p>
+<h2 id="bitmapicon-and-imageicon">BitmapIcon and ImageIcon</h2>
+<p>You can use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon">BitmapIcon</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.imageicon">ImageIcon</a> to create an icon from an image file (such as PNG, GIF, or JPEG), although we don't recommend it if another option is available. Bitmap images are created at a specific size, so they have to be scaled up or down depending on how large you want the icon to be and the resolution of the screen. When the image is scaled down (shrunk), it can appear blurry. When it's scaled up, it can appear blocky and pixelated.</p>
+<h3 id="bitmapicon">BitmapIcon</h3>
+<p>By default, a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon">BitmapIcon</a> strips out all color information from the image and renders all non-transparent pixels in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement.foreground">Foreground</a> color. To create a monochrome icon, use a solid image on a transparent background in PNG format. Other image formats will load apparently without error but result in a solid block of the Foreground color.</p>
+<pre><code class="lang-xaml">&lt;AppBarButton Label=&quot;ImageIcon&quot;&gt;
+    &lt;AppBarButton.Icon&gt;
+        &lt;ImageIcon Source=&quot;ms-appx:///Assets/slices3.png&quot;/&gt;
+    &lt;/AppBarButton.Icon&gt;
+&lt;/AppBarButton&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-slices-bitmap.png" alt="A button with a bitmap icon, pie shaped slices in black and white">
+</span>
+</p>
+<p>You can override the default behavior by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon.showasmonochrome">ShowAsMonochrome</a> property to <code>false</code>. In this case, the BitmapIcon behaves the same as an ImageIcon for supported bitmap file types (SVG files are not supported).</p>
+<pre><code class="lang-xaml">&lt;BitmapIcon UriSource=&quot;ms-appx:///Assets/slices3.jpg&quot; 
+            ShowAsMonochrome=&quot;False&quot;/&gt;
+</code></pre>
+<p>For more information and examples, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon">BitmapIcon</a> class documentation.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Usage of BitmapIcon is similar to usage of BitmapImage; see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage">BitmapImage</a> class for more information that's applicable to BitmapIcon, like setting the UriSource property in code.</p>
+</div>
+<h3 id="imageicon">ImageIcon</h3>
+<p>An <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.imageicon">ImageIcon</a> shows the image provided by one of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagesource">ImageSource</a>-derived classes. The most common is <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource">BitmapSource</a>, but as mentioned previously, we don't recommend bitmap images for icons due to potential scaling issues.</p>
+<p>Scalable Vector Graphics (SVG) resources are ideal for icons, because they always look sharp at any size or resolution. You can use an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.svgimagesource">SVGImageSource</a> with an ImageIcon, which supports secure static mode from the SVG specification but does not support animations or interactions.
+For more information, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.svgimagesource">SVGImageSource</a> and <a href="/windows/desktop/Direct2D/svg-support">SVG support</a>.</p>
+<p>An ImageIcon ignores the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement.foreground">Foreground</a> property, so it always shows the image in its original color. Because Foreground color is ignored, the icon doesn't respond to visual state changes when used in a button or other similar control.</p>
+<pre><code class="lang-xaml">&lt;AppBarButton Label=&quot;ImageIcon&quot;&gt;
+    &lt;AppBarButton.Icon&gt;
+        &lt;ImageIcon Source=&quot;ms-appx:///Assets/slices3.svg&quot;/&gt;
+    &lt;/AppBarButton.Icon&gt;
+&lt;/AppBarButton&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="iconography/images/icon-slices-image-svg.png" alt="A button with an image icon, pie shaped slices in different colors">
+</span>
+</p>
+<p>For more information and examples, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.imageicon">ImageIcon</a> class documentation.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Usage of ImageIcon is similar to the Image control; see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image">Image</a> class for more information that's applicable to ImageIcon. One notable difference is that with ImageIcon, only the first frame of a multi-frame image (like an animated GIF) is used. To use animated icons, see <a href="../controls/animated-icon.html">AnimatedIcon</a>.</p>
+</div>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../signature-experiences/iconography.html">Iconography in Windows</a></li>
+<li><a href="iconography/overview.html">App icons</a></li>
+<li><a href="../controls/animated-icon.html">AnimatedIcon</a></li>
+<li><a href="../controls/command-bar.html">Command bar</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/icons.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

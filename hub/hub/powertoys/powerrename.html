@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerRename Utility for Windows - Bulk File Renaming Tool </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerRename Utility for Windows - Bulk File Renaming Tool ">
+    
+    <meta name="description" content="PowerRename is a Windows utility that enables bulk file renaming with regex support. Rename multiple files at once, preview changes, and undo operations easily.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="powerrename-utility-for-windows">PowerRename utility for Windows</h1>
+
+<p>PowerRename is a Windows bulk renaming tool that enables you to quickly rename multiple files at once. This PowerToys utility helps you:</p>
+<ul>
+<li>Modify the file names of a large number of files, without giving all of the files the same name.</li>
+<li>Perform a search and replace on a targeted section of file names.</li>
+<li>Perform a regular expression rename on multiple files.</li>
+<li>Check the expected rename results in a preview window before finalizing a bulk rename.</li>
+<li>Undo a rename operation after it is completed.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use AI assistance to <a href="#ask-copilot-for-help-with-regular-expressions">create regular expressions to use in PowerRename with Copilot</a>.</p>
+</div>
+<h2 id="demo">Demo</h2>
+<p>In this demo, all instances of the file name &quot;foo&quot; are replaced with &quot;foobar&quot;. Since all the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's &quot;Undo Rename&quot; (Ctrl+Z) command makes it possible to undo the last change.</p>
+<p><img src="../images/powerrename-demo.gif" alt="PowerRename Demo"></p>
+<h2 id="powerrename-window">PowerRename window</h2>
+<p>After selecting files in Windows File Explorer, right-click and select <strong>Rename with PowerRename</strong> (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.</p>
+<p><img src="../images/powerrename-menu.png" alt="PowerRename Menu screenshot"></p>
+<h3 id="search-for">Search for</h3>
+<p>Enter text or a <a href="https://wikipedia.org/wiki/Regular_expression">regular expression</a> to find the files in your selection that contain the criteria matching your entry. You'll see the matching items in the <em>Preview</em> pane.</p>
+<h3 id="replace-with">Replace with</h3>
+<p>Enter text to replace the <em>Search for</em> value entered previously. You can see the original file name and renamed file name in the <em>Preview</em> pane.</p>
+<h3 id="use-regular-expressions">Use regular expressions</h3>
+<p>If selected, the Search value will be interpreted as a <a href="https://wikipedia.org/wiki/Regular_expression">regular expression</a> (regex). The Replace value can also contain regex variables (see <a href="#regular-expressions">examples below</a>). If cleared, the Search value will be interpreted as plain text to be replaced with the text in the Replace field.</p>
+<p>For more information regarding the <strong>Use Boost library</strong> option in the settings menu for extended regex functionalities, see the <a href="#regular-expressions">regular expressions section</a>.</p>
+<h3 id="match-all-occurrences">Match all occurrences</h3>
+<p>If selected, all matches of the text in the <em>Search</em> field will be replaced with the Replace text. Otherwise, only the first instance of the <em>Search for</em> text in the file name will be replaced.</p>
+<p>For example, given the file name: <code>powertoys-powerrename.txt</code>:</p>
+<ul>
+<li>Search for: <code>power</code></li>
+<li>Rename with: <code>super</code></li>
+</ul>
+<p>The value of the renamed file would result in:</p>
+<ul>
+<li>Match all occurrences cleared: <code>supertoys-powerrename.txt</code></li>
+<li>Match all occurrences selected: <code>supertoys-superrename.txt</code></li>
+</ul>
+<h3 id="case-sensitive">Case sensitive</h3>
+<p>If selected, the text specified in the <em>Search</em> field will only match text in the items if the text is the same case. Case matching will be insensitive by default.</p>
+<h3 id="apply-to-filename-only">Apply to: Filename only</h3>
+<p>Only the file name is modified by the operation. For example: <code>txt.txt</code> → <code>NewName.txt</code>.</p>
+<h3 id="apply-to-extension-only">Apply to: Extension only</h3>
+<p>Only the file extension is modified by the operation. For example: <code>txt.txt</code> → <code>txt.NewExtension</code>.</p>
+<h3 id="include-files">Include files</h3>
+<p>Clearing causes files to not be included in the operation.</p>
+<h3 id="include-folders">Include folders</h3>
+<p>Clearing causes folders to not be included in the operation.</p>
+<h3 id="include-subfolders">Include subfolders</h3>
+<p>Clearing causes files within folders to not be included in the operation. By default, all subfolder items are included.</p>
+<h3 id="text-formatting">Text formatting</h3>
+<p>Choose between four options to either convert items to be all lowercase, all uppercase, title case (first character of sentence is capitalized), or capitalize every word.</p>
+<h3 id="enumerate-items">Enumerate items</h3>
+<p>If selected, you can use the following patterns as part of the <em>Replace with</em> text:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable pattern</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>${}</code></td>
+<td style="text-align: left;">A simple counter that will start from zero for the first renamed file.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>${increment=X}</code></td>
+<td style="text-align: left;">A counter with a customized incrementer value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>${padding=X}</code></td>
+<td style="text-align: left;">A counter with a specified number of leading zeroes for the number.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>${start=X}</code></td>
+<td style="text-align: left;">A counter with a customized initial value.</td>
+</tr>
+</tbody>
+</table>
+<p>You can also use multiple counters in the same replace string and combine customizations.</p>
+<p>For example, given a <em>Search</em> text <code>a</code> and a set of files:</p>
+<ul>
+<li>a.jpg</li>
+<li>ab.jpg</li>
+<li>abc.jpg</li>
+</ul>
+<p>A <em>Replace with</em> text <code>Image_${padding=4;increment=2;start=10}_</code> would produce the following:</p>
+<ul>
+<li>Image_0010_.jpg</li>
+<li>Image_0012_b.jpg</li>
+<li>Image_0014_bc.jpg</li>
+</ul>
+<h3 id="random-string-values">Random string values</h3>
+<p>If selected, you can use the following patterns as part of the <em>Replace with</em> text:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable pattern</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>${rstringalnum=X}</code></td>
+<td style="text-align: left;">Random string with uppercase letters, lowercase letters and 0-9 digits, customized length.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>${rstringalpha=X}</code></td>
+<td style="text-align: left;">Random string with uppercase letters and lowercase letters, customized length.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>${rstringdigit=X}</code></td>
+<td style="text-align: left;">Random string with 0-9 digits, customized length.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>${ruuidv4}</code></td>
+<td style="text-align: left;">Random UUID according to v4 specification.</td>
+</tr>
+</tbody>
+</table>
+<p>By default, random string values created are mixed case. You can adjust the generating behavior with the general <a href="#text-formatting">text formatting options that PowerRename provides</a>.</p>
+<p>If you wish to create UUID values with braces, you can add <code>{</code> and <code>}</code> to the <em>Replace with</em> input in combination with the ruuidv4 pattern accordingly: <code>{${ruuidv4}}</code>.</p>
+<h2 id="replace-using-file-creation-date-and-time">Replace using file creation date and time</h2>
+<p>The creation date and time attributes of a file can be used in the <em>Replace with</em> text by entering a variable pattern according to the table below. Selecting the tooltip in the <em>Replace with</em> field allows you to view and select from the supported patterns.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable pattern</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$YYYY</code></td>
+<td style="text-align: left;">Year, represented by a full four or five digits, depending on the calendar used.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$YY</code></td>
+<td style="text-align: left;">Year, represented only by the last two digits. A leading zero is added for single-digit years.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$Y</code></td>
+<td style="text-align: left;">Year, represented only by the last digit.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MMMM</code></td>
+<td style="text-align: left;">Name of the month.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MMM</code></td>
+<td style="text-align: left;">Abbreviated name of the month.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MM</code></td>
+<td style="text-align: left;">Month, as digits with leading zeros for single-digit months.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$M</code></td>
+<td style="text-align: left;">Month, as digits without leading zeros for single-digit months.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DDDD</code></td>
+<td style="text-align: left;">Name of the day of the week.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DDD</code></td>
+<td style="text-align: left;">Abbreviated name of the day of the week.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DD</code></td>
+<td style="text-align: left;">Day of the month, as digits with leading zeros for single-digit days.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$D</code></td>
+<td style="text-align: left;">Day of the month, as digits without leading zeros for single-digit days.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$hh</code></td>
+<td style="text-align: left;">Hours, with leading zeros for single-digit hours.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$h</code></td>
+<td style="text-align: left;">Hours, without leading zeros for single-digit hours.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$mm</code></td>
+<td style="text-align: left;">Minutes, with leading zeros for single-digit minutes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$m</code></td>
+<td style="text-align: left;">Minutes, without leading zeros for single-digit minutes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ss</code></td>
+<td style="text-align: left;">Seconds, with leading zeros for single-digit seconds.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$s</code></td>
+<td style="text-align: left;">Seconds, without leading zeros for single-digit seconds.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$fff</code></td>
+<td style="text-align: left;">Milliseconds, represented by full three digits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ff</code></td>
+<td style="text-align: left;">Milliseconds, represented only by the first two digits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$f</code></td>
+<td style="text-align: left;">Milliseconds, represented only by the first digit.</td>
+</tr>
+</tbody>
+</table>
+<p>For example, given the file names:</p>
+<ul>
+<li><code>powertoys.png</code>, created on 11/02/2020 <em>(november second)</em></li>
+<li><code>powertoys-menu.png</code>, created on 11/03/2020 <em>(november third)</em></li>
+</ul>
+<p>Enter the criteria to rename the items:</p>
+<ul>
+<li>Search for: <code>powertoys</code></li>
+<li>Rename with: <code>$MMM-$DD-$YY-powertoys</code></li>
+</ul>
+<p>The value of the renamed file would result in:</p>
+<ul>
+<li><code>Nov-02-20-powertoys.png</code></li>
+<li><code>Nov-03-20-powertoys-menu.png</code></li>
+</ul>
+<h2 id="regular-expressions">Regular expressions</h2>
+<p>For most use cases, a simple search and replace is sufficient. However, there may be occasions in which complicated renaming tasks require more control. <a href="https://wikipedia.org/wiki/Regular_expression">Regular Expressions</a> can help in this scenario.</p>
+<p>Regular Expressions define a search pattern for text. They can be used to search, edit, and manipulate text. For a given string, the pattern defined by the regular expression may match once, several times, or not at all. PowerRename uses the <a href="https://wikipedia.org/wiki/ECMAScript">ECMAScript</a> grammar, which is common amongst modern programming languages.</p>
+<p>To enable regular expressions, select <strong>Use Regular Expressions</strong>. Note that you'll likely want to select <strong>Match all occurrences</strong> while using regular expressions.</p>
+<p>To use the <a href="https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html">Boost library</a> instead of the standard library, select the <strong>Use Boost library</strong> option in the PowerToys settings. It enables extended features, like <a href="https://www.boost.org/doc/libs/1_74_0/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html#boost_regex.syntax.perl_syntax.lookbehind">lookbehind</a>, which are not supported by the standard library.</p>
+<h3 id="examples-of-regular-expressions">Examples of regular expressions</h3>
+<p>Simple matching examples.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Search for</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>^</code></td>
+<td style="text-align: left;">Match the beginning of the filename (zero size)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$</code></td>
+<td style="text-align: left;">Match the end of the filename (zero size)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.*</code></td>
+<td style="text-align: left;">Match all the text in the name</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>^foo</code></td>
+<td style="text-align: left;">Match text that begins with &quot;foo&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>bar$</code></td>
+<td style="text-align: left;">Match text that ends with &quot;bar&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>^foo.*bar$</code></td>
+<td style="text-align: left;">Match text that begins with &quot;foo&quot; and ends with &quot;bar&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>.+?(?=bar)</code></td>
+<td style="text-align: left;">Match everything up to &quot;bar&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>foo[\s\S]*bar</code></td>
+<td style="text-align: left;">Match everything between and including &quot;foo&quot; and &quot;bar&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>Matching and variable examples. Capturing groups are defined in parentheses <code>()</code>. To refer to them, use <code>$</code> followed by a number: <code>$1</code> will refer to the first group, <code>$2</code> to the second etc. When using the variables, &quot;Match all occurrences&quot; must be selected.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Search for</th>
+<th style="text-align: left;">Replace with</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>(.*).png</code></td>
+<td style="text-align: left;"><code>foo_$1.png</code></td>
+<td style="text-align: left;">Prepends &quot;foo_&quot; to the existing file name for PNG files</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>(.*).png</code></td>
+<td style="text-align: left;"><code>$1_foo.png</code></td>
+<td style="text-align: left;">Appends &quot;_foo&quot; to the existing file name for PNG files</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>(.*)</code></td>
+<td style="text-align: left;"><code>$1.txt</code></td>
+<td style="text-align: left;">Appends &quot;.txt&quot; extension to existing file</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>(^\w+\.$)\|(^\w+$)</code></td>
+<td style="text-align: left;"><code>$2.txt</code></td>
+<td style="text-align: left;">Appends &quot;.txt&quot; extension to existing file name only if it does not have an extension</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>(\d\d)-(\d\d)-(\d\d\d\d)</code> or <code>(\d{2})-(\d{2})-(\d{4})</code></td>
+<td style="text-align: left;"><code>$3-$2-$1</code></td>
+<td style="text-align: left;">Move parts in the filename: &quot;29-03-2020&quot; becomes &quot;2020-03-29&quot;</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>^(.{n})(.*)</code> or <code>(.*)(.{n})$</code></td>
+<td style="text-align: left;"><code>$1foo$2</code></td>
+<td style="text-align: left;">Insert &quot;foo&quot; <em>n</em> characters from the beginning or the end, respectively</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>^.{n}</code> or <code>.{n}$</code></td>
+<td style="text-align: left;">nothing</td>
+<td style="text-align: left;">Trim <em>n</em> characters from the beginning or the end, respectively</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ask-copilot-for-help-with-regular-expressions">Ask Copilot for help with regular expressions</h3>
+<p>You can get AI assistance from <a href="https://copilot.microsoft.com/">Copilot</a> to generate simple or complex regular expressions. You can customize the prompt to generate a string per your requirements.</p>
+<p>The following text shows an example prompt for Copilot:</p>
+<pre><code class="lang-copilot-prompt">Generate a regular expression to match a string that starts with &quot;foo&quot; and ends with &quot;bar&quot; and has at least six letters and two numeric characters in between them.
+</code></pre>
+<p>Copilot is powered by AI, so surprises and mistakes are possible. For more information, see <a href="https://www.microsoft.com/microsoft-copilot/learn/">Copilot FAQs</a>.</p>
+<h3 id="additional-resources-for-learning-regular-expressions">Additional resources for learning regular expressions</h3>
+<p>There are some useful examples/cheatsheets available to help you:</p>
+<p><a href="https://www.regular-expressions.info/tutorial.html">Regular Expression Tutorial</a></p>
+<p><a href="https://o7planning.org/12219/javascript-regular-expression">JavaScript Regular Expressions Tutorial with Examples</a></p>
+<h2 id="file-list-filters">File list filters</h2>
+<p>Filters can be used in PowerRename to narrow the results of the rename. Use the <em>Preview</em> pane to check expected results.</p>
+<ul>
+<li><p><strong>Original</strong>, the first column in the <em>Preview</em> pane switches between:</p>
+<ul>
+<li>Selected: The file is selected to be renamed</li>
+<li>Cleared: The file isn't selected to be renamed (even though it fits the value entered in the search criteria)</li>
+</ul>
+</li>
+<li><p><strong>Renamed</strong>, the second column in the <em>Preview</em> pane can be toggled:</p>
+<ul>
+<li>The default preview will show all selected files, with only files matching the <em>Search for</em> criteria displaying the updated rename value.</li>
+<li>Selecting the <em>Renamed</em> header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.</li>
+</ul>
+</li>
+</ul>
+<p><img src="../images/powerrename-demo2.gif" alt="PowerToys PowerRename Filter demo"></p>
+<h2 id="settings">Settings</h2>
+<p>Additional options can be configured in the settings, as described below:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Show PowerRename in</td>
+<td style="text-align: left;">PowerRename appears as one of the default options or only in the extended context menu.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hide icon in context menu</td>
+<td style="text-align: left;">Hides the PowerRename icon in the context menu.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Enable auto-complete for the search and replace fields</td>
+<td style="text-align: left;">Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Maximum number of items</td>
+<td style="text-align: left;">The largest number of search and replace suggestions to display.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show recently used strings</td>
+<td style="text-align: left;">When opening PowerRename, populate the search and replace fields with the last values used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Use Boost library</td>
+<td style="text-align: left;">Enable extended regex functionality. See <a href="#regular-expressions">Regular Expressions</a> for more details.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/powerrename.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

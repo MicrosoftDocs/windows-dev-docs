@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Custom audio on app notifications </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Custom audio on app notifications ">
+    
+    <meta name="description" content="Learn how to use custom audio on your app notifications to let your app express your brand&#39;s unique sound effects.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="custom-audio-on-app-notifications">Custom audio on app notifications</h1>
+
+<p>App notifications can use custom audio, which lets your app express your brand's unique sound effects. For example, a messaging app can use their own messaging sound on their app notifications, so that the user can instantly know that they received a notification from the app, rather than hearing the generic notification sound.</p>
+<h2 id="install-uwp-community-toolkit-nuget-package">Install UWP Community Toolkit NuGet package</h2>
+<p>In order to create notifications via code, we strongly recommend using the UWP Community Toolkit Notifications library, which provides an object model for the notification XML content. You could manually construct the notification XML, but that is error-prone and messy. The Notifications library inside UWP Community Toolkit is built and maintained by the team that owns notifications at Microsoft.</p>
+<p>Install <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">Microsoft.Toolkit.Uwp.Notifications</a> from NuGet.</p>
+<h2 id="add-namespace-declarations">Add namespace declarations</h2>
+<pre><code class="lang-csharp">using Microsoft.Toolkit.Uwp.Notifications;
+</code></pre>
+<h2 id="add-the-custom-audio">Add the custom audio</h2>
+<p>Windows Mobile has always supported custom audio in Toast notifications. However, Desktop only added support for custom audio in Version 1511 (build 10586). If you send a Toast that contains custom audio to a Desktop device before Version 1511, the toast will be silent. Therefore, for Desktop pre-Version 1511, you should NOT include the custom audio in your Toast notification, so that the notification will at least use the default notification sound.</p>
+<p><strong>Known Issue</strong>: If you're using Desktop Version 1511, the custom toast audio will only work if your app is installed via the Store. That means you cannot locally test your custom audio on Desktop before submitting to the Store - but the audio will work fine once installed from the Store. We fixed this in the Anniversary Update, so that custom audio from your locally deployed app will work correctly.</p>
+<pre><code class="lang-csharp">var contentBuilder = new ToastContentBuilder()
+    .AddText(&quot;New message&quot;);
+
+    
+bool supportsCustomAudio = true;
+ 
+// If we're running on Desktop before Version 1511, do NOT include custom audio
+// since it was not supported until Version 1511, and would result in a silent toast.
+if (AnalyticsInfo.VersionInfo.DeviceFamily.Equals(&quot;Windows.Desktop&quot;)
+    &amp;&amp; !ApiInformation.IsApiContractPresent(&quot;Windows.Foundation.UniversalApiContract&quot;, 2))
+{
+    supportsCustomAudio = false;
+}
+ 
+if (supportsCustomAudio)
+{
+    contentBuilder.AddAudio(new Uri(&quot;ms-appx:///Assets/Audio/CustomToastAudio.m4a&quot;));
+}
+
+// Send the toast
+contentBuilder.Show();
+</code></pre>
+<p>Supported audio file types include:</p>
+<ul>
+<li>.aac</li>
+<li>.flac</li>
+<li>.m4a</li>
+<li>.mp3</li>
+<li>.wav</li>
+<li>.wma</li>
+</ul>
+<p>Supported audio file sources:</p>
+<ul>
+<li>ms-appx:///</li>
+<li>ms-resource</li>
+</ul>
+<p><strong>Not</strong> supported audio file sources:</p>
+<ul>
+<li>ms-appdata</li>
+<li>http://, https://</li>
+<li>C:/, F:/, etc.</li>
+</ul>
+<h2 id="send-the-notification">Send the notification</h2>
+<p>Sending a notification with audio is the same as sending a regular notification (just call the Show method). See <a href="send-local-toast.html">Send local toast</a> to learn more.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio">Full code sample on GitHub</a></li>
+<li><a href="send-local-toast.html">Send a local toast</a></li>
+<li><a href="adaptive-interactive-toasts.html">Toast content documentation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/custom-audio-on-toasts.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

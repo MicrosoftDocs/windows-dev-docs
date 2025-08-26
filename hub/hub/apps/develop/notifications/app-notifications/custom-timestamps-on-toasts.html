@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Custom timestamps on app notifications </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Custom timestamps on app notifications ">
+    
+    <meta name="description" content="Learn how to override the default timestamp on an app notification with a custom timestamp that indicates when the message/information/content was generated.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="custom-timestamps-on-app-notifications">Custom timestamps on app notifications</h1>
+
+<p>By default, the timestamp on app notifications, which is visible within Notification Center, is set to the time that the notification was sent. You can optionally override the timestamp with your own custom date and time, so that the timestamp represents the time the message/information/content was actually created, rather than the time that the notification was sent. This also ensures that your notifications appear in the correct order within Notification Center, which is sorted by time. We recommend that most apps specify a custom timestamp.</p>
+<p>This feature is available in Windows Build 15063 and later.</p>
+<p><span class="mx-imgBorder">
+<img src="images/toast-content-custom-timestamp.png" alt="App notification with custom timestamp">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<p>To use a custom timestamp, simply assign the <strong>displayTimestamp</strong> property on the <strong>toast</strong> element of your app notification XML payload. Starting with Windows App SDK 1.2, you can add a custom timestamp to an app notification with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder">Microsoft.Windows.AppNotifications.Builder</a>. For UWP apps, you can use version 1.4.0 or later of the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">UWP Community Toolkit Notifications NuGet library</a>. YOu an also specify the timestamp using raw xml.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_appsdk" role="tab" aria-controls="tabpanel_1_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_toolkit" role="tab" aria-controls="tabpanel_1_toolkit" data-tab="toolkit" tabindex="-1">Community Toolkit</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_xml" role="tab" aria-controls="tabpanel_1_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_1_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-csharp">var builder = new AppNotificationBuilder()
+    .AddText(&quot;Matt sent you a friend request&quot;)
+    .AddText(&quot;Hey, wanna dress up as wizards and ride around on hoverboards?&quot;)
+    .SetTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
+</code></pre>
+</section>
+<section id="tabpanel_1_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">var builder = new ToastContentBuilder()
+    .AddText(&quot;Matt sent you a friend request&quot;)
+    .AddText(&quot;Hey, wanna dress up as wizards and ride around on hoverboards?&quot;)
+    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
+</code></pre>
+</section>
+<section id="tabpanel_1_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast displayTimestamp='2017-04-15T12:45:00-07:00'&gt;
+    &lt;visual&gt;
+        &lt;binding template='ToastGeneric'&gt;
+            &lt;text&gt;Matt sent you a friend request&lt;/text&gt;
+            &lt;text&gt;Hey, wanna dress up as wizards and ride around on hoverboards?&lt;/text&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p>If you are using XML, the date must be formatted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only use at most 3 decimal places on the seconds (although realistically there's no value in providing anything that granular). If you provide more, the payload will be invalid and you will receive the &quot;New notification&quot; notification.</p>
+</div>
+<h2 id="usage-guidance">Usage guidance</h2>
+<p>In general, we recommend that most apps specify a custom timestamp. This ensures that the notification's timestamp accurately represents when the message/information/content was generated, regardless of network delays, airplane mode, or the fixed interval of periodic background tasks.</p>
+<p>For example, a news app might run a background task every 15 minutes that checks for new articles and displays notifications. Before custom timestamps, the timestamp corresponded to when the app notification was generated (therefore always in 15 minute intervals). However, now the app can set the timestamp to the time the article was actually published. Similarly, email apps and social network apps can benefit from this feature if a similar pattern of periodic pulling is used for their notifications.</p>
+<p>Additionally, providing a custom timestamp ensures that the timestamp is correct even if the user was disconnected from the internet. For example, when the user turns their computer on and your background task runs, you can finally ensure that the timestamp on your notifications represents the time that the messages were sent, rather than the time the user turned on their computer.</p>
+<h2 id="default-timestamp">Default timestamp</h2>
+<p>If you don't provide a custom timestamp, we use the time that your notification was sent.</p>
+<p>If you sent a push notification through WNS, we use the time when the notification was received by WNS server (so any latency on delivering the notification to the device won't impact the timestamp).</p>
+<p>If you sent a local notification, we use the time when the notification platform received the notification (which should be immediately).</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="send-local-toast.html">Send a local toast</a></li>
+<li><a href="adaptive-interactive-toasts.html">App notification content documentation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/custom-timestamps-on-toasts.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

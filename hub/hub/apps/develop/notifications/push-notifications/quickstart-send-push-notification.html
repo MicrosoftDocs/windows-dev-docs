@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Quickstart: Sending a push notification (XAML) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Quickstart: Sending a push notification (XAML) ">
+    
+    <meta name="description" content="how to send push notifications using WNS">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="quickstart-sending-a-push-notification-xaml">Quickstart: Sending a push notification (XAML)</h1>
+
+<p>Your cloud server can send a push notification to your app through the Windows Push Notification Services (WNS). This procedure applies to tile, toast, badge, and raw push notifications.</p>
+<p><strong>Objective:</strong> To create and send a tile, toast, badge, or raw push notification.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To understand this topic or to use the code it provides, you will need:</p>
+<ul>
+<li>A familiarity with HTTP communications.</li>
+<li>An authenticated cloud server. For more information, see <a href="/previous-versions/windows/apps/hh868206(v=win.10)">How to authenticate with the Windows Push Notification Service (WNS)</a>.</li>
+<li>A registered channel over which your cloud server can communicate with your app. For more information, see <a href="/previous-versions/windows/apps/hh868221(v=win.10)">How to request, create, and save a notification channel</a>.</li>
+<li>An existing tile for your app, defined in your app's manifest, to receive the notification (unless you're sending a raw notification). For more information, see <a href="/previous-versions/windows/apps/hh868247(v=win.10)">Quickstart: Creating a default tile using the Microsoft Visual Studio manifest editor</a>.</li>
+<li>A familiarity with XML and its manipulation through Document Object Model (DOM) APIs.</li>
+<li>In the case of raw notifications, your app must be configured to receive raw notifications. For more information, see <a href="/previous-versions/windows/apps/jj709907(v=win.10)">Quickstart: Intercepting push notifications for running apps</a> and <a href="/previous-versions/windows/apps/jj709906(v=win.10)">Quickstart: Creating and registering a raw notification background task</a>.</li>
+</ul>
+<h2 id="instructions">Instructions</h2>
+<h3 id="1-include-the-necessary-namespace-references">1. Include the necessary namespace references</h3>
+<p>The examples given in this topic can be used as-is, but require that your code include these namespace references:</p>
+<pre><code class="lang-csharp">using System.Net;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
+using System.Web;
+using System.Text;
+</code></pre>
+<h3 id="2-create-an-http-post-request">2. Create an HTTP POST request</h3>
+<p>The <code>uri</code> parameter is the channel Uniform Resource Identifier (URI) requested by the app and passed to the cloud server. For more information, see <a href="/previous-versions/windows/apps/hh868221(v=win.10)">How to request, create, and save a notification channel</a>.</p>
+<pre><code class="lang-csharp">HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+request.Method = &quot;POST&quot;;
+</code></pre>
+<h3 id="3-add-the-required-headers">3. Add the required headers</h3>
+<p>There are four required headers that must be included in all push notifications: <a href="/previous-versions/windows/apps/hh868245(v=win.10)">X-WNS-Type</a>, Content-Type, Content-Length, and <a href="/previous-versions/windows/apps/hh868245(v=win.10)">Authorization</a>.</p>
+<ul>
+<li>The <a href="/previous-versions/windows/apps/hh868245(v=win.10)">X-WNS-Type</a> header specifies whether this is a tile, toast, badge, or raw notification.</li>
+<li>The Content-Type is set depending on the value of the <a href="/previous-versions/windows/apps/hh868245(v=win.10)">X-WNS-Type</a>.</li>
+<li>The Content-Length gives the size of the included notification payload.</li>
+<li>The <a href="/previous-versions/windows/apps/hh868245(v=win.10)">Authorization</a> header specifies the authentication credential that allows you to send a push notification to this user over this channel.</li>
+</ul>
+<p>The <em>accessToken</em> parameter of the <a href="/previous-versions/windows/apps/hh868245(v=win.10)">Authorization</a> header specifies the access token, stored on the server, that was received from WNS when the cloud server requested authentication. Without the access token, your notification will be rejected.</p>
+<p>For a complete list of possible headers, see <a href="/previous-versions/windows/apps/hh868245(v=win.10)">Push notification service request and response headers</a>.</p>
+<pre><code class="lang-csharp">request.Headers.Add(&quot;X-WNS-Type&quot;, notificationType);
+request.ContentType = contentType;
+request.Headers.Add(&quot;Authorization&quot;, String.Format(&quot;Bearer {0}&quot;, accessToken.AccessToken));
+</code></pre>
+<h3 id="4-add-the-prepared-content">4. Add the prepared content</h3>
+<p>As far as the HTTP request is concerned, the XML content of the notification is a data blob in the request body. For instance, no verification is made that the XML matches the X-WNS-Type specification. The content is specified as an XML payload and here is added to the request as a stream of bytes.</p>
+<pre><code class="lang-csharp">byte[] contentInBytes = Encoding.UTF8.GetBytes(xml);
+                        
+using (Stream requestStream = request.GetRequestStream())
+    requestStream.Write(contentInBytes, 0, contentInBytes.Length);
+</code></pre>
+<h3 id="5-listen-for-a-response-from-wns-that-acknowledges-receipt-of-the-notification">5. Listen for a response from WNS that acknowledges receipt of the notification</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You will never receive a delivery confirmation for a notification, just an acknowledgment that it was received by WNS.</p>
+</div>
+<pre><code class="lang-csharp">using (HttpWebResponse webResponse = (HttpWebResponse)request.GetResponse())
+    return webResponse.StatusCode.ToString();
+</code></pre>
+<h3 id="6-handle-wns-response-codes">6. Handle WNS response codes</h3>
+<p>There are many response codes that your app service can receive when it sends a notification. Some of these response codes are more common than others and can be easily dealt with in a catch block.</p>
+<pre><code class="lang-csharp">catch (WebException webException)
+{
+    HttpStatusCode status = ((HttpWebResponse)webException.Response).StatusCode;
+</code></pre>
+<p><strong>HttpStatusCode.Unauthorized</strong>: The access token you presented has expired. Get a new one and then try sending your notification again. Because your cached access token expires after 24 hours, you can expect to get this response from WNS at least once a day. We recommend that you implement a maximum retry policy.</p>
+<pre><code class="lang-csharp">    if (status == HttpStatusCode.Unauthorized)
+    {
+        GetAccessToken(secret, sid);
+        return PostToWns(uri, xml, secret, sid, notificationType, contentType);
+    }
+</code></pre>
+<p><strong>HttpStatusCode.Gone / HttpStatusCode.NotFound</strong>: The channel URI is no longer valid. Remove this channel from your database to prevent further attempts to send notification to it. The next time this user launches your app, request a new WNS channel. Your app should detect that its channel has changed, which should trigger the app to send the new channel URI to your app server. For more information, see <a href="/previous-versions/windows/apps/hh868221(v=win.10)">How to request, create, and save a notification channel</a>.</p>
+<pre><code class="lang-csharp">    else if (status == HttpStatusCode.Gone || status == HttpStatusCode.NotFound)
+    {
+        return &quot;&quot;;
+    }
+</code></pre>
+<p><strong>HttpStatusCode.NotAcceptable</strong>: This channel is being throttled by WNS. Implement a retry strategy that exponentially reduces the amount of notifications being sent in order to prevent being throttled again. Also, rethink scenarios that are causing your notifications to be throttled. You will provide a richer user experience by limiting the notifications you send to those that add true value.</p>
+<pre><code class="lang-csharp">    else if (status == HttpStatusCode.NotAcceptable)
+    {
+        return &quot;&quot;;
+    }
+</code></pre>
+<p><strong>Other response codes</strong>: WNS responded with a less common response code. Log this code to assist in debugging. See <a href="/previous-versions/windows/apps/hh868245(v=win.10)">Push notification service request and response headers</a> for a full list of WNS response codes.</p>
+<pre><code class="lang-csharp">    else
+    {
+        string[] debugOutput = {
+                                   status.ToString(),
+                                   webException.Response.Headers[&quot;X-WNS-Debug-Trace&quot;],
+                                   webException.Response.Headers[&quot;X-WNS-Error-Description&quot;],
+                                   webException.Response.Headers[&quot;X-WNS-Msg-ID&quot;],
+                                   webException.Response.Headers[&quot;X-WNS-Status&quot;]
+                               };
+        return string.Join(&quot; | &quot;, debugOutput);            
+    }
+</code></pre>
+<h3 id="7-encapsulate-the-code-into-a-single-function">7. Encapsulate the code into a single function</h3>
+<p>The following example packages the code given in the preceding steps into a single function. This function composes the HTTP POST request that contains a notification to be sent to WNS. By changing the value of the <em>type</em> parameter and adjusting additional headers, this code can be used for toast, tile, badge, or raw push notifications. You can use this function as part of your cloud server code.</p>
+<p>Note that the error handling in this function includes the situation where the access token has expired. In this case, it calls another cloud server function that re-authenticates with WNS to obtain a new access token. It then makes a new call to the original function.</p>
+<pre><code class="lang-csharp">// Post to WNS
+public string PostToWns(string secret, string sid, string uri, string xml, string notificationType, string contentType)
+{
+    try
+    {
+        // You should cache this access token.
+        var accessToken = GetAccessToken(secret, sid);
+
+        byte[] contentInBytes = Encoding.UTF8.GetBytes(xml);
+
+        HttpWebRequest request = HttpWebRequest.Create(uri) as HttpWebRequest;
+        request.Method = &quot;POST&quot;;
+        request.Headers.Add(&quot;X-WNS-Type&quot;, notificationType);
+        request.ContentType = contentType;
+        request.Headers.Add(&quot;Authorization&quot;, String.Format(&quot;Bearer {0}&quot;, accessToken.AccessToken));
+
+        using (Stream requestStream = request.GetRequestStream())
+            requestStream.Write(contentInBytes, 0, contentInBytes.Length);
+
+        using (HttpWebResponse webResponse = (HttpWebResponse)request.GetResponse())
+            return webResponse.StatusCode.ToString();
+    }
+    
+    catch (WebException webException)
+    {
+        HttpStatusCode status = ((HttpWebResponse)webException.Response).StatusCode;
+
+        if (status == HttpStatusCode.Unauthorized)
+        {
+            // The access token you presented has expired. Get a new one and then try sending
+            // your notification again.
+              
+            // Because your cached access token expires after 24 hours, you can expect to get 
+            // this response from WNS at least once a day.
+
+            GetAccessToken(secret, sid);
+
+            // We recommend that you implement a maximum retry policy.
+            return PostToWns(uri, xml, secret, sid, notificationType, contentType);
+        }
+        else if (status == HttpStatusCode.Gone || status == HttpStatusCode.NotFound)
+        {
+            // The channel URI is no longer valid.
+
+            // Remove this channel from your database to prevent further attempts
+            // to send notifications to it.
+
+            // The next time that this user launches your app, request a new WNS channel.
+            // Your app should detect that its channel has changed, which should trigger
+            // the app to send the new channel URI to your app server.
+
+            return &quot;&quot;;
+        }
+        else if (status == HttpStatusCode.NotAcceptable)
+        {
+            // This channel is being throttled by WNS.
+
+            // Implement a retry strategy that exponentially reduces the amount of
+            // notifications being sent in order to prevent being throttled again.
+
+            // Also, consider the scenarios that are causing your notifications to be throttled. 
+            // You will provide a richer user experience by limiting the notifications you send 
+            // to those that add true value.
+
+            return &quot;&quot;;
+        }
+        else
+        {
+            // WNS responded with a less common error. Log this error to assist in debugging.
+
+            // You can see a full list of WNS response codes here:
+            // https://msdn.microsoft.com/library/windows/apps/hh868245.aspx#wnsresponsecodes
+
+            string[] debugOutput = {
+                                       status.ToString(),
+                                       webException.Response.Headers[&quot;X-WNS-Debug-Trace&quot;],
+                                       webException.Response.Headers[&quot;X-WNS-Error-Description&quot;],
+                                       webException.Response.Headers[&quot;X-WNS-Msg-ID&quot;],
+                                       webException.Response.Headers[&quot;X-WNS-Status&quot;]
+                                   };
+            return string.Join(&quot; | &quot;, debugOutput);            
+        }
+    }
+
+    catch (Exception ex)
+    {
+        return &quot;EXCEPTION: &quot; + ex.Message;
+    }
+}
+
+// Authorization
+[DataContract]
+public class OAuthToken
+{
+    [DataMember(Name = &quot;access_token&quot;)]
+    public string AccessToken { get; set; }
+    [DataMember(Name = &quot;token_type&quot;)]
+    public string TokenType { get; set; }
+}
+
+private OAuthToken GetOAuthTokenFromJson(string jsonString)
+{
+    using (var ms = new MemoryStream(Encoding.Unicode.GetBytes(jsonString)))
+    {
+        var ser = new DataContractJsonSerializer(typeof(OAuthToken));
+        var oAuthToken = (OAuthToken)ser.ReadObject(ms);
+        return oAuthToken;
+    }
+}
+
+protected OAuthToken GetAccessToken(string secret, string sid)
+{
+    var urlEncodedSecret = HttpUtility.UrlEncode(secret);
+    var urlEncodedSid = HttpUtility.UrlEncode(sid);
+
+    var body = String.Format(&quot;grant_type=client_credentials&amp;client_id={0}&amp;client_secret={1}&amp;scope=notify.windows.com&quot;, 
+                             urlEncodedSid, 
+                             urlEncodedSecret);
+
+    string response;
+    using (var client = new WebClient())
+    {
+        client.Headers.Add(&quot;Content-Type&quot;, &quot;application/x-www-form-urlencoded&quot;);
+        response = client.UploadString(&quot;https://login.live.com/accesstoken.srf&quot;, body);
+    }
+    return GetOAuthTokenFromJson(response);
+}
+</code></pre>
+<p>The following shows example content for an HTTP POST request for a toast push notification.</p>
+<pre><code class="lang-csharp">POST https://db3.notify.windows.com/?token=AgUAAADCQmTg7OMlCg%2fK0K8rBPcBqHuy%2b1rTSNPMuIzF6BtvpRdT7DM4j%2fs%2bNNm8z5l1QKZMtyjByKW5uXqb9V7hIAeA3i8FoKR%2f49ZnGgyUkAhzix%2fuSuasL3jalk7562F4Bpw%3d HTTP/1.1
+Authorization: Bearer EgAaAQMAAAAEgAAACoAAPzCGedIbQb9vRfPF2Lxy3K//QZB79mLTgK
+X-WNS-RequestForStatus: true
+X-WNS-Type: wns/toast
+Content-Type: text/xml
+Host: db3.notify.windows.com
+Content-Length: 196
+
+&lt;toast launch=&quot;&quot;&gt;
+  &lt;visual lang=&quot;en-US&quot;&gt;
+    &lt;binding template=&quot;ToastImageAndText01&quot;&gt;
+      &lt;image id=&quot;1&quot; src=&quot;World&quot; /&gt;
+      &lt;text id=&quot;1&quot;&gt;Hello&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+<p>The following shows an example HTTP response, sent to the cloud server by WNS in response to the HTTP POST request.</p>
+<pre><code class="lang-csharp">HTTP/1.1 200 OK
+Content-Length: 0
+X-WNS-DEVICECONNECTIONSTATUS: connected
+X-WNS-STATUS: received
+X-WNS-MSG-ID: 3CE38FF109E03A74
+X-WNS-DEBUG-TRACE: DB3WNS4011534
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>In this Quickstart, you composed an HTTP POST request to send to WNS. WNS, in turn, delivers the notification to your app. By this point, you have registered your app, authenticated your cloud server with WNS, created XML content to define your notification, and sent that notification from your server to your app.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/previous-versions/windows/apps/hh868221(v=win.10)">How to request, create, and save a notification channel</a></li>
+<li><a href="/previous-versions/windows/apps/hh868245(v=win.10)">Push notification service request and response headers</a></li>
+<li><a href="/previous-versions/windows/apps/hh913756(v=win.10)">Windows Push Notification Services (WNS) overview</a></li>
+<li><a href="/azure/">Get started with Mobile Services</a></li>
+<li><a href="/samples/browse/">Push and periodic notifications sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/push-notifications/quickstart-send-push-notification.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

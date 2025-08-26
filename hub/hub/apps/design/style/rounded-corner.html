@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Corner radius </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Corner radius ">
+    
+    <meta name="description" content="Learn about rounded corners principles, design approaches, and customization options.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="corner-radius">Corner radius</h1>
+
+<p>Starting with version 2.2 of <a href="/windows/uwp/get-started/winui2/">WinUI</a>, the default style for many controls has been updated to use rounded corners. These new styles are intended to evoke warmth and trust, and make the UI easier for users to visually process.</p>
+<p>Here are two Button controls, the first without rounded corners and the second using a rounded corner style.</p>
+<p><img src="images/rounded-corner/my-button.png" alt="Buttons without and with rounded corners"></p>
+<p>WinUI provides you with the updated styles for both WinUI and platform controls. See <a href="#customization-options">Customization options</a>, for details on how to customize rounded corners.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Some controls are available both in the platform (<a href="/uwp/api/windows.ui.xaml.controls">Windows.UI.Xaml.Controls</a>) and in WinUI (<a href="/uwp/api/microsoft.ui.xaml.controls?view=winui-2.2&amp;preserve-view=true">Microsoft.UI.Xaml.Controls</a>); for example, <strong>TreeView</strong> or <strong>ColorPicker</strong>. When you use WinUI in your app, you should use the WinUI version of the control. Corner rounding might be applied inconsistently in the platform version when used with WinUI.</p>
+</div>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.xaml.controls.control.cornerradius">Control.CornerRadius property</a></p>
+</blockquote>
+<h2 id="default-control-designs">Default control designs</h2>
+<p>There are three areas of the controls where the rounded corner styles are used: rectangular elements, flyout elements, and bar elements.</p>
+<h3 id="corners-of-rectangle-ui-elements">Corners of rectangle UI elements</h3>
+<ul>
+<li>These UI elements include basic controls like buttons that users see on screen at all times.</li>
+<li>The default radius value we use for these UI elements is <strong>4px</strong>.</li>
+</ul>
+<p><img src="images/rounded-corner/button.png" alt="Button with rounded corners highlighted"></p>
+<p><strong>Controls</strong></p>
+<ul>
+<li>AutoSuggestBox</li>
+<li>Buttons
+<ul>
+<li>ContentDialog buttons</li>
+</ul>
+</li>
+<li>CalendarDatePicker</li>
+<li>CheckBox
+<ul>
+<li>TreeView, GridView, and ListView multi-select check boxes</li>
+</ul>
+</li>
+<li>Color picker</li>
+<li>CommandBar</li>
+<li>ComboBox</li>
+<li>DatePicker</li>
+<li>DropDownButton</li>
+<li>Expander</li>
+<li>FlipView</li>
+<li>GridView and ListView
+<ul>
+<li>AutoSuggestBox, ComboBox, DatePicker, MenuBar, NavigationView, TimePicker, TreeView list</li>
+</ul>
+</li>
+<li>InfoBar</li>
+<li>Inking controls</li>
+<li>Media playback</li>
+<li>MenuBar</li>
+<li>NumberBox</li>
+<li>PasswordBox</li>
+<li>RichEditBox</li>
+<li>SplitButton</li>
+<li>TextBox</li>
+<li>TimePicker</li>
+<li>ToggleButton</li>
+<li>ToggleSplitButton</li>
+</ul>
+<h3 id="corners-of-flyout-and-overlay-ui-elements">Corners of flyout and overlay UI elements</h3>
+<ul>
+<li>These can be transient UI elements that appear on screen temporarily, like MenuFlyout, or elements that overlay other UI, like TabView tabs.</li>
+<li>The default radius value we use for these UI elements is <strong>8px</strong>.</li>
+</ul>
+<p><img src="images/rounded-corner/flyout.png" alt="Flyout example"></p>
+<p><strong>Controls</strong></p>
+<ul>
+<li>CommandBarFlyout</li>
+<li>ContentDialog</li>
+<li>Flyout</li>
+<li>MenuFlyout</li>
+<li>TabView tabs</li>
+<li>TeachingTip</li>
+<li>ToolTip (uses <strong>4px</strong> radius due to small size)</li>
+<li>Flyout part (when open)
+<ul>
+<li>AutoSuggestBox</li>
+<li>CalendarDatePicker</li>
+<li>ComboBox</li>
+<li>DatePicker</li>
+<li>DropDownButton</li>
+<li>Inking control</li>
+<li>MenuBar</li>
+<li>NumberBox</li>
+<li>SplitButton</li>
+<li>TimePicker</li>
+<li>ToggleSplitButton</li>
+</ul>
+</li>
+</ul>
+<h3 id="bar-elements">Bar elements</h3>
+<ul>
+<li>These UI elements are shaped like bars or lines; for example, ProgressBar.</li>
+<li>The default radius values we use here are <strong>4px</strong>.</li>
+</ul>
+<p><img src="images/rounded-corner/bars.png" alt="Progress bar example"></p>
+<p><strong>Controls</strong></p>
+<ul>
+<li>NavigationView selection indicator</li>
+<li>ProgressBar</li>
+<li>ScrollBar</li>
+<li>Slider
+<ul>
+<li>ColorPicker color slider</li>
+<li>MediaTransportControls seek bar slider</li>
+</ul>
+</li>
+</ul>
+<h2 id="customization-options">Customization options</h2>
+<p>The default corner radii values that we provide are not set in stone and there are a few ways you can easily modify the amount of rounding on the corners. This can be done through two global resources, or through the <a href="/uwp/api/windows.ui.xaml.controls.control.cornerradius">CornerRadius</a> property directly on the control, depending on the level of customization granularity you want.</p>
+<h3 id="when-not-to-round">When not to round</h3>
+<p>There are instances where the corner of a control should not be rounded, and we don't round these by default.</p>
+<ul>
+<li>When multiple UI elements that are housed inside a container touch each other, such as the two parts of a SplitButton. There should be no space when they contact.</li>
+</ul>
+<p><img src="images/rounded-corner/split-button-2.png" alt="SplitButton"></p>
+<ul>
+<li>When a flyout UI element is connected to a UI that invokes the flyout on one side.</li>
+</ul>
+<p><img src="images/rounded-corner/autosuggest.png" alt="Screenshot of an AutoSuggest flyout where some corners aren't rounded."></p>
+<h3 id="page-or-app-wide-cornerradius-changes">Page or app-wide CornerRadius changes</h3>
+<p>There are 2 app resources that control the corner radii of all the controls:</p>
+<ul>
+<li><code>ControlCornerRadius</code> - default is 4px.</li>
+<li><code>OverlayCornerRadius</code> - default is 8px.</li>
+</ul>
+<p>If you override the value of these resources at any scope, it will affect all controls within that scope accordingly.</p>
+<p>This means if you want to change the roundness of all controls where roundness could be applied, you can define both resources at the app level with the new CornerRadius values like this:</p>
+<pre><code class="lang-xaml">&lt;Application
+    xmlns=”http://schemas.microsoft.com/winfx/2006/xamlpresentation”
+    xmlns:x=”http://schemas.micosoft.com/winfx/2006/xaml”
+    xmlns:control=”using:Microsoft.UI.Xaml.Controls”&gt;
+    &lt;Application.Resources&gt;
+      &lt;controls:XamlControlsResources&gt;
+        &lt;controls:XamlControlsResources.MergedDictionaries&gt;
+          &lt;ResourceDictionary&gt;
+            &lt;CornerRadius x:Key=&quot;OverlayCornerRadius&quot;&gt;0&lt;/CornerRadius&gt;
+            &lt;CornerRadius x:Key=&quot;ControlCornerRadius&quot;&gt;0&lt;/CornerRadius&gt;
+          &lt;/ResourceDictionary&gt;
+        &lt;/controls:XamlControlsResources.MergedDictionaries&gt;
+      &lt;/controls:XamlControlsResources&gt;
+    &lt;/Application.Resources&gt;
+&lt;/Application&gt;
+
+
+</code></pre>
+<p>Alternatively, if you want to change all controls' roundness within a particular scope, like at a page or container level, you can follow a similar pattern:</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.Resources&gt;
+        &lt;CornerRadius x:Key=&quot;ControlCornerRadius&quot;&gt;8&lt;/CornerRadius&gt;
+    &lt;/Grid.Resources&gt;
+    &lt;Button Content=&quot;Button&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>OverlayCornerRadius</code> resource must be defined at the app level in order to take effect.</p>
+<p>This is because popup and flyouts are not in to the page’s visual tree, they are added to the Popup Root. The resource resolution system does not properly traverse the Popup Root visual tree into the Page’s visual tree.</p>
+</div>
+<h3 id="per-control-cornerradius-changes">Per-control CornerRadius changes</h3>
+<p>You can modify the <a href="/uwp/api/windows.ui.xaml.controls.control.cornerradius">CornerRadius</a> property on controls directly if you want to change the roundness of only a select number of controls.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Default</th>
+<th style="text-align: left;">Property modified</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><img src="images/rounded-corner/default-checkbox.png" alt="DefaultCheckBox"></td>
+<td style="text-align: left;"><img src="images/rounded-corner/custom-checkbox.png" alt="CustomCheckBox"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;CheckBox Content=&quot;Checkbox&quot;/&gt;</code></td>
+<td style="text-align: left;"><code>&lt;CheckBox Content=&quot;Checkbox&quot; CornerRadius=&quot;5&quot;/&gt; </code></td>
+</tr>
+</tbody>
+</table>
+<p>Not all controls' corners will respond to their <code>CornerRadius</code> property being modified. To ensure that the control whose corners you wish to round will indeed respond to their <code>CornerRadius</code> property the way you expect, first check that the <code>ControlCornerRadius</code> or <code>OverlayCornerRadius</code> global resources affect the control in question. If they do not, check that the control you wish to round has corners at all. Many of our controls do not render actual edges and therefore cannot make proper use of the <code>CornerRadius</code> property.</p>
+<h3 id="basing-custom-styles-on-winui">Basing custom styles on WinUI</h3>
+<p>You can base your custom styles on the WinUI rounded corner styles by specifying the correct <code>BasedOn</code> attribute in your style. For example to create a custom button style based on WinUI button style, do the following:</p>
+<pre><code class="lang-xaml">&lt;Style x:Key=&quot;MyCustomButtonStyle&quot; BasedOn=&quot;{StaticResource DefaultButtonStyle}&quot;&gt;
+   ...
+&lt;/Style&gt;
+</code></pre>
+<p>In general, WinUI control styles follow a consistent naming convention: &quot;DefaultXYZStyle&quot; where &quot;XYZ&quot; is the name of the control. For full reference, you can browse the XAML files in the WinUI repository.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/rounded-corner.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

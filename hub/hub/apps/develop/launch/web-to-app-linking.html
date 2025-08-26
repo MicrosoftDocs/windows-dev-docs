@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Enable apps for websites using app URI handlers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Enable apps for websites using app URI handlers ">
+    
+    <meta name="description" content="Drive user engagement with your app by supporting the Apps for Websites feature.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="enable-apps-for-websites-using-app-uri-handlers">Enable apps for websites using app URI handlers</h1>
+
+<p>Apps for Websites associates your app with a website so that when someone opens a link to your website, your app is launched instead of opening the browser. If your app is not installed, your website opens in the browser as usual. Users can trust this experience because only verified content owners can register for a link. Users will be able to check all of their registered web-to-app links by going to Settings &gt; Apps &gt; Apps for websites.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Starting with the Windows 10 Creators update and in all Windows 11 versions, supported links clicked in Microsoft Edge Legacy will launch the corresponding app. Supported links clicked in supported browsers (for example, Microsoft Edge Chromium, Firefox, Internet Explorer, etc.), will keep you in the browsing experience.</p>
+</div>
+<p>To enable web-to-app linking you will need to:</p>
+<ul>
+<li>Identify the URIs your app will handle in the manifest file</li>
+<li>A JSON file that defines the association between your app and your website. with the app Package Family Name at the same host root as the app manifest declaration.</li>
+<li>Handle the activation in the app.</li>
+</ul>
+<h2 id="register-to-handle-http-and-https-links-in-the-app-manifest">Register to handle http and https links in the app manifest</h2>
+<p>Your app needs to identify the URIs for the websites it will handle. To do so, add the <strong>Windows.appUriHandler</strong> extension registration to your app’s manifest file <strong>Package.appxmanifest</strong>.</p>
+<p>For example, if your website’s address is “msn.com” you would make the following entry in your app’s manifest:</p>
+<pre><code class="lang-xml">&lt;Applications&gt;
+  &lt;Application ... &gt;
+      ...
+      &lt;Extensions&gt;
+         &lt;uap3:Extension Category=&quot;windows.appUriHandler&quot;&gt;
+          &lt;uap3:AppUriHandler&gt;
+            &lt;uap3:Host Name=&quot;msn.com&quot; /&gt;
+          &lt;/uap3:AppUriHandler&gt;
+        &lt;/uap3:Extension&gt;
+      &lt;/Extensions&gt;
+  &lt;/Application&gt;
+&lt;/Applications&gt;
+</code></pre>
+<p>The declaration above registers your app to handle links from the specified host. If your website has multiple addresses (for example: m.example.com, www.example.com, and example.com) then add a separate <code>&lt;uap3:Host Name=... /&gt;</code> entry inside of the <code>&lt;uap3:AppUriHandler&gt;</code> for each address.</p>
+<h2 id="associate-your-app-and-website-with-a-json-file">Associate your app and website with a JSON file</h2>
+<p>To ensure that only your app can open content on your website, include your app's package family name in a JSON file located in the web server root, or at the well-known directory on the domain. This signifies that your website gives consent for the listed apps to open content on your site. You can find the package family name in the Packages section in the app manifest designer.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The JSON file should not have a .json file suffix.</p>
+</div>
+<p>Create a JSON file (without the .json file extension) named <strong>windows-app-web-link</strong> and provide your app’s package family name. For example:</p>
+<pre><code class="lang-JSON">[{
+  &quot;packageFamilyName&quot; : &quot;Your app's package family name, e.g MyApp_9jmtgj1pbbz6e&quot;,
+  &quot;paths&quot; : [ &quot;*&quot; ],
+  &quot;excludePaths&quot; : [ &quot;/news/*&quot;, &quot;/blog/*&quot; ]
+ }]
+</code></pre>
+<p>Windows will make an https connection to your website and will look for the corresponding JSON file on your web server.</p>
+<h3 id="subdomain-support">Subdomain support</h3>
+<p>If your app manifest includes both a main domain (for example, <code>example.com</code>) and wildcard subdomains (for example, <code>*.example.com</code>), you need to add the <code>allowSubdomains</code> field to your JSON file to enable subdomain linking. Without this field, links to subdomains will open in the browser instead of your app.</p>
+<pre><code class="lang-JSON">[{
+  &quot;packageFamilyName&quot; : &quot;Your app's package family name, e.g MyApp_9jmtgj1pbbz6e&quot;,
+  &quot;paths&quot; : [ &quot;*&quot; ],
+  &quot;excludePaths&quot; : [ &quot;/news/*&quot;, &quot;/blog/*&quot; ],
+  &quot;allowSubdomains&quot; : true
+ }]
+</code></pre>
+<p>When <code>allowSubdomains</code> is set to <code>true</code>, links to subdomains like <code>subdomain.example.com/path</code> will correctly open in your app instead of the browser.</p>
+<h3 id="wildcards">Wildcards</h3>
+<p>The JSON file example above demonstrates the use of wildcards. Wildcards allow you to support a wide variety of links with fewer lines of code. Web-to-app linking supports two types of wildcards in the JSON file:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Wildcard</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>*</strong></td>
+<td>Represents any substring</td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>Represents a single character</td>
+</tr>
+</tbody>
+</table>
+<p>For example, given <code>&quot;excludePaths&quot; : [ &quot;/news/*&quot;, &quot;/blog/*&quot; ]</code> in the example above, your app will support all paths that start with your website’s address (for example, msn.com), <strong>except</strong> those under <code>/news/</code> and <code>/blog/</code>. <strong>msn.com/weather.html</strong> will be supported, but not <strong>msn.com/news/topnews.html</strong>.</p>
+<h3 id="multiple-apps">Multiple apps</h3>
+<p>If you have two apps that you would like to link to your website, list both of the application package family names in your <strong>windows-app-web-link</strong> JSON file. Both apps can be supported. The user will be presented with a choice of which is the default link if both are installed. If they want to change the default link later, they can change it in <strong>Settings &gt; Apps for Websites</strong>. Developers can also change the JSON file at any time and see the change as early as the same day but no later than eight days after the update.</p>
+<pre><code class="lang-JSON">[{
+  &quot;packageFamilyName&quot;: &quot;Your apps's package family name, e.g MyApp_9jmtgj1pbbz6e&quot;,
+  &quot;paths&quot;: [ &quot;*&quot; ],
+  &quot;excludePaths&quot; : [ &quot;/news/*&quot;, &quot;/blog/*&quot; ]
+ },
+ {
+  &quot;packageFamilyName&quot;: &quot;Your second app's package family name, for example, MyApp2_8jmtgj2pbbz6e&quot;,
+  &quot;paths&quot;: [ &quot;/example/*&quot;, &quot;/links/*&quot; ]
+ }]
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your apps need to support subdomains, add <code>&quot;allowSubdomains&quot;: true</code> to each app entry in the JSON file.</p>
+</div>
+<p>To provide the best experience for your users, use exclude paths to make sure that online-only content is excluded from the supported paths in your JSON file.</p>
+<p>Exclude paths are checked first and if there is a match the corresponding page will be opened with the browser instead of the designated app. In the example above, ‘/news/*’ includes any pages under that path while ‘/news*’ (no forward slash trails 'news') includes any paths under ‘news*’ such as ‘newslocal/’, ‘newsinternational/’, and so on.</p>
+<h2 id="handle-links-on-activation-to-link-to-content">Handle links on Activation to link to content</h2>
+<p>Navigate to <strong>App.xaml.cs</strong> in your app’s Visual Studio solution and in <strong>OnActivated()</strong> add handling for linked content. In the following example, the page that is opened in the app depends on the URI path:</p>
+<pre><code class="lang-CS">protected override void OnActivated(IActivatedEventArgs e)
+{
+    Frame rootFrame = Window.Current.Content as Frame;
+    if (rootFrame == null)
+    {
+        ...
+    }
+
+    // Check ActivationKind, Parse URI, and Navigate user to content
+    Type deepLinkPageType = typeof(MainPage);
+    if (e.Kind == ActivationKind.Protocol)
+    {
+        var protocolArgs = (ProtocolActivatedEventArgs)e;        
+        switch (protocolArgs.Uri.AbsolutePath)
+        {
+            case &quot;/&quot;:
+                break;
+            case &quot;/index.html&quot;:
+                break;
+            case &quot;/sports.html&quot;:
+                deepLinkPageType = typeof(SportsPage);
+                break;
+            case &quot;/technology.html&quot;:
+                deepLinkPageType = typeof(TechnologyPage);
+                break;
+            case &quot;/business.html&quot;:
+                deepLinkPageType = typeof(BusinessPage);
+                break;
+            case &quot;/science.html&quot;:
+                deepLinkPageType = typeof(SciencePage);
+                break;
+        }
+    }
+
+    if (rootFrame.Content == null)
+    {
+        // Default navigation
+        rootFrame.Navigate(deepLinkPageType, e);
+    }
+
+    // Ensure the current window is active
+    Window.Current.Activate();
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Make sure to replace the final <code>if (rootFrame.Content == null)</code> logic with <code>rootFrame.Navigate(deepLinkPageType, e);</code> as shown in the example above.</p>
+</div>
+<h2 id="test-in-a-local-validation-tool">Test in a local validation tool</h2>
+<p>You can test the configuration of your app and website by running the App host registration verifier tool which is available in:</p>
+<p>%windir%\system32\<strong>AppHostRegistrationVerifier.exe</strong></p>
+<p>Test the configuration of your app and website by running this tool with the following parameters:</p>
+<p><strong>AppHostRegistrationVerifier.exe</strong> <em>hostname packagefamilyname filepath</em></p>
+<ul>
+<li>Hostname: Your website (for example, microsoft.com)</li>
+<li>Package Family Name (PFN): Your app’s PFN</li>
+<li>File path: The JSON file for local validation (for example, C:\SomeFolder\windows-app-web-link)</li>
+</ul>
+<p>If the tool does not return anything, validation will work on that file when uploaded. If there is an error code, it will not work.</p>
+<p>You can enable the following registry key to force path matching for side-loaded apps as part of local validation:</p>
+<p><code>HKCU\Software\Classes\LocalSettings\Software\Microsoft\Windows\CurrentVersion\ AppModel\SystemAppData\YourApp\AppUriHandlers</code></p>
+<p>Keyname: <code>ForceValidation</code>
+Value: <code>1</code></p>
+<h2 id="test-it-web-validation">Test it: Web validation</h2>
+<p>Close your application to verify that the app is activated when you click a link. Then, copy the address of one of the supported paths in your website. For example, if your website’s address is “msn.com”, and one of the support paths is “path1”, you would use <code>http://msn.com/path1</code></p>
+<p>Verify that your app is closed. Press <strong>Windows Key + R</strong> to open the <strong>Run</strong> dialog box and paste the link in the window. Your app should launch instead of the web browser.</p>
+<p>Additionally, you can test your app by launching it from another app using the <a href="/uwp/api/windows.system.launcher.launchuriasync">LaunchUriAsync</a> API. You can use this API to test on phones as well.</p>
+<p>If you would like to follow the protocol activation logic, set a breakpoint in the <strong>OnActivated</strong> event handler.</p>
+<h2 id="appurihandlers-tips">AppUriHandlers tips</h2>
+<p>These tips will help you get the most out of the AppUriHandlers feature:</p>
+<ul>
+<li>Make sure to only specify links that your app can handle.</li>
+<li>List all of the hosts that you will support.  Note that www.example.com and example.com are different hosts.</li>
+<li>Users can choose which app they prefer to handle websites in Settings.</li>
+<li>Your JSON file must be uploaded to an https server.</li>
+<li>If you need to change the paths that you wish to support, you can republish your JSON file without republishing your app. Users will see the changes in 1-8 days.</li>
+<li>All sideloaded apps with AppUriHandlers will have validated links for the host on install. You do not need to have a JSON file uploaded to test the feature.</li>
+<li>This feature works whenever your app is a UWP app launched with  <a href="/uwp/api/windows.system.launcher.launchuriasync">LaunchUriAsync</a> or a Windows desktop app launched with  <a href="/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa">ShellExecuteEx</a>. If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.</li>
+</ul>
+<h2 id="related-content">Related content</h2>
+<p><a href="https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts">Web-to-App example project</a></p>
+<p><a href="/uwp/schemas/appxpackage/appxmanifestschema/element-protocol">windows.protocol registration</a></p>
+<p><a href="handle-uri-activation.html">Handle URI Activation</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/web-to-app-linking.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

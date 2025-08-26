@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>upgrade Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="upgrade Command ">
+    
+    <meta name="description" content="upgrades the specified application.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="upgrade-command-winget">upgrade command (winget)</h1>
+
+<p>The <strong>upgrade</strong> command of <a href="index.html">WinGet</a> tool upgrades the specified application. Optionally, you may use the <a href=".%5Clist.md"><strong>list</strong></a> command to identify the application you want to upgrade.</p>
+<p>The <strong>upgrade</strong> command requires that you specify the exact string to upgrade. If there is any ambiguity, you will be prompted to further filter the <strong>upgrade</strong> command to  an exact application.</p>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>update</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p><code>winget upgrade [[-q] &lt;query&gt; ...] [&lt;options&gt;]</code></p>
+<p><img src="images%5Cupgrade.png" alt="Image of upgrade command arguments">
+<span class="mx-imgBorder">
+<a href="images/upgrade.png#lightbox" data-linktype="relative-path">
+<img src="images/upgrade.png" alt="Screenshot of entering the winget upgrade command in a command line of Windows Terminal.">
+</a>
+</span>
+</p>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-q,--query</strong></td>
+<td>The query used to search for an app.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are upgrading.</p>
+</div>
+<h2 id="options">Options</h2>
+<p>The options allow you to customize the upgrade experience to meet your needs.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-m, --manifest</strong></td>
+<td>Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the upgrade experience from a <a href="install.html#local-install">local YAML file</a>.</td>
+</tr>
+<tr>
+<td><strong>--id</strong></td>
+<td>Limits the upgrade to the ID of the application.</td>
+</tr>
+<tr>
+<td><strong>--name</strong></td>
+<td>Limits the search to the name of the application.</td>
+</tr>
+<tr>
+<td><strong>--moniker</strong></td>
+<td>Limits the search to the moniker listed for the application.</td>
+</tr>
+<tr>
+<td><strong>-v, --version</strong></td>
+<td>Enables you to specify an exact version to upgrade. If not specified, latest will upgrade the highest versioned application.</td>
+</tr>
+<tr>
+<td><strong>-s, --source</strong></td>
+<td>Restricts the search to the source name provided. Must be followed by the source name.</td>
+</tr>
+<tr>
+<td><strong>-e, --exact</strong></td>
+<td>Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.</td>
+</tr>
+<tr>
+<td><strong>-i, --interactive</strong></td>
+<td>Runs the installer in interactive mode. The default experience shows installer progress.</td>
+</tr>
+<tr>
+<td><strong>-h, --silent</strong></td>
+<td>Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress.</td>
+</tr>
+<tr>
+<td><strong>--purge</strong></td>
+<td>Deletes all files and directories in the package directory (portable)</td>
+</tr>
+<tr>
+<td><strong>-o, --log</strong></td>
+<td>Directs the logging to a log file. You must provide a path to a file that you have the write rights to.</td>
+</tr>
+<tr>
+<td><strong>--custom</strong></td>
+<td>Arguments to be passed on to the installer in addition to the defaults.</td>
+</tr>
+<tr>
+<td><strong>--override</strong></td>
+<td>A string that will be passed directly to the installer.</td>
+</tr>
+<tr>
+<td><strong>-l, --location</strong></td>
+<td>Location to upgrade to (if supported).</td>
+</tr>
+<tr>
+<td><strong>--scope</strong></td>
+<td>Select installed package scope filter (user or machine).</td>
+</tr>
+<tr>
+<td><strong>a, --architecture</strong></td>
+<td>Select the architecture to install.</td>
+</tr>
+<tr>
+<td><strong>--installer-type</strong></td>
+<td>Select the installer type to upgrade. See <a href="index.html#supported-installer-formats">supported installer types for WinGet client</a>.</td>
+</tr>
+<tr>
+<td><strong>--locale</strong></td>
+<td>Specifies which locale to use (BCP47 format).</td>
+</tr>
+<tr>
+<td><strong>--ignore-security-hash</strong></td>
+<td>Ignore the installer hash check failure. Not recommended.</td>
+</tr>
+<tr>
+<td><strong>--allow-reboot</strong></td>
+<td>Allows a reboot if applicable.</td>
+</tr>
+<tr>
+<td><strong>--skip-dependencies</strong></td>
+<td>Skips processing package dependencies and Windows features.</td>
+</tr>
+<tr>
+<td><strong>--ignore-local-archive-malware-scan</strong></td>
+<td>Ignore the malware scan performed as part of installing an archive type package from local manifest.</td>
+</tr>
+<tr>
+<td><strong>--accept-package-agreements</strong></td>
+<td>Used to accept the license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--authentication-mode</strong></td>
+<td>Specify authentication window preference (silent, silentPreferred or interactive).</td>
+</tr>
+<tr>
+<td><strong>--authentication-account</strong></td>
+<td>Specify the account to be used for authentication.</td>
+</tr>
+<tr>
+<td><strong>-r, --recurse, --all</strong></td>
+<td>Upgrade all installed packages to the latest version if available.</td>
+</tr>
+<tr>
+<td><strong>-u, --unknown, --include-unknown</strong></td>
+<td>Upgrade packages even if their current version cannot be determined.</td>
+</tr>
+<tr>
+<td><strong>--pinned,--include-pinned</strong></td>
+<td>Upgrade packages even if they have a non-blocking pin.</td>
+</tr>
+<tr>
+<td><strong>--uninstall-previous</strong></td>
+<td>Uninstall the previous version of the package during upgrade. Behavior will depend on the individual package. Some installers are designed to install new versions side-by-side. Some installers include a manifest that specifies “uninstallPrevious” so earlier versions are uninstalled without needing to use this command flag. In this case, using the <code>winget upgrade --uninstall-previous</code> command will tell WinGet to uninstall the previous version regardless of what is in the package manifest. If the package manifest does not include “uninstallPrevious” and the --uninstall-previous flag is not used, then the default behavior for the installer will apply.</td>
+</tr>
+<tr>
+<td><strong>--force</strong></td>
+<td>Direct run the command and continue with non security related issues.</td>
+</tr>
+<tr>
+<td><strong>-?,--help</strong></td>
+<td>Shows help about the selected command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-queries">Example queries</h3>
+<p>The following example lists applications with an upgrade available.</p>
+<pre><code class="lang-CMD">winget upgrade
+</code></pre>
+<p>The following example upgrades a specific version of an application.</p>
+<pre><code class="lang-CMD">winget upgrade powertoys --version 0.15.2
+</code></pre>
+<p>The following example upgrades an application from its ID.</p>
+<pre><code class="lang-CMD">winget upgrade --id Microsoft.PowerToys
+</code></pre>
+<p>The following example shows upgrading all applications.</p>
+<pre><code class="lang-CMD">winget upgrade --all
+</code></pre>
+<p>The following example will upgrade multiple applications.</p>
+<pre><code class="lang-CMD">winget upgrade Microsoft.Edit Microsoft.NuGet
+</code></pre>
+<h2 id="using-upgrade">Using <strong>upgrade</strong></h2>
+<p>To identify which apps are in need of an update, simply use <strong>upgrade</strong> without any arguments to show all available upgrades.</p>
+<h2 id="upgrade---all"><strong>upgrade</strong> --all</h2>
+<p><strong>upgrade --all</strong> will identify all the applications with upgrades available. When you run <strong>winget upgrade --all</strong> the Windows Package Manager will look for all applications that have updates available and attempt to install the updates.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible unless the <strong>-u, --unknown, --include-unknown</strong> option is specified</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some applications may have been pinned using WinGet and will not be upgraded if the <strong>--all</strong> option is specified unless the <strong>--include-pinned</strong> option is specified. In this case, only applications non-blocking pins will be upgraded.</p>
+</div>
+<h2 id="upgrade---uninstall-previous"><strong>upgrade</strong> --uninstall-previous</h2>
+<p><strong>upgrade --uninstall-previous</strong> will uninstall the previous version prior to installing the newer version of the package. When using <code>--uninstall-previous</code>, the behavior will depend on the individual package. Some installers are designed to install new versions side-by-side while other installers include a manifest that specifies <code>uninstallPrevious</code> as their default upgrade behavior (so earlier versions are uninstalled without needing to use the command flag).</p>
+<p>If the package manifest does not include <code>uninstallPrevious</code> as the upgrade behavior and the <code>--uninstall-previous</code> flag is not used with the upgrade command, then the default behavior for the installer will apply.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/upgrade.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use the Multilingual App Toolkit </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use the Multilingual App Toolkit ">
+    
+    <meta name="description" content="The Multilingual App Toolkit (MAT) integrates with Microsoft Visual Studio 2019 to provide Windows apps with translation support, translation file management, and editor tools.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-the-multilingual-app-toolkit">Use the Multilingual App Toolkit</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We are announcing the deprecation of the Multilingual App Toolkit (MAT). This toolkit will reach end-of-support on October 15, 2025, and will no longer be updated after this date. For more information, see <a href="mat-announcements.html">Announcements</a>.</p>
+</div>
+<p>The Multilingual App Toolkit (MAT) integrates with Microsoft Visual Studio to provide Windows apps with translation support, translation file management, and editor tools. Here are some of the value propositions of the toolkit.</p>
+<ul>
+<li>Helps you manage resource changes and translation status during development.</li>
+<li>Provides a UI for choosing languages based on configured translation providers.</li>
+<li>Supports the localization industry-standard XLIFF file format.</li>
+<li>Provides a pseudo-language engine to help identify translation issues during development.</li>
+<li>Connects with the Microsoft Translator for quick translation suggestions.</li>
+</ul>
+<h2 id="how-to-use-the-toolkit">How to use the toolkit</h2>
+<h3 id="step-1-design-your-app-for-globalization-and-localization">Step 1. Design your app for globalization and localization</h3>
+<p>Before you can use the MAT effectively, your app needs to be localizable. Specifically, your project should contain one or more Resources Files (.resw) containing your app's strings in the default language. For details, see <a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a>. Once you've done that, the toolkit makes adding additional languages quick and easy.</p>
+<p>For the value proposition of globalization and localization—as well as definitions of the terms <strong>globalization</strong>, <strong>localizability</strong>, and <strong>localization</strong>—see <a href="globalizing-portal.html">Globalization and localization</a>.</p>
+<p>Also see <a href="guidelines-and-checklist-for-globalizing-your-app.html">Guidelines for globalization</a> and <a href="prepare-your-app-for-localization.html">Make your app localizable</a>.</p>
+<h3 id="step-2-download-and-install-the-multilingual-app-toolkit">Step 2. Download and install the Multilingual App Toolkit</h3>
+<p>There are two parts to the Multilingual App Toolkit (MAT), each with its own installer.</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308">Multilingual App Toolkit Extension for Visual Studio 2017-2019</a>. This contains the MAT extension for Visual Studio 2019, in the form of a .vsix installer.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022">Multilingual App Toolkit 4.1 Extension for Visual Studio 2022 and later</a>. This contains the MAT 4.1 extension for Visual Studio 2022, in the form of a .vsix installer.</li>
+<li><a href="multilingual-app-toolkit-editor-downloads.html">Multilingual app toolkit Editor</a>. This contains the MAT standalone Multilingual Editor tool, in the form of an .msi installer. It also includes the MAT extension for Visual Studio 2015 and for Visual Studio 2013.</li>
+</ul>
+<p>If you use Visual Studio 2017 or later, then download and run both installers, one after the other. If you use Visual Studio 2015 or Visual Studio 2013, then download and run the .msi installer.</p>
+<h3 id="step-3-enable-the-multilingual-app-toolkit-for-your-project">Step 3. Enable the Multilingual App Toolkit for your project</h3>
+<p>The MAT must be enabled for your project before you can begin to localize the app. Here's how to enable the toolkit.</p>
+<ul>
+<li>Open the project solution in Visual Studio.</li>
+<li>Select the desired project in Solution Explorer.</li>
+<li>On the <strong>Tools</strong> menu, select <strong>Multilingual App Toolkit</strong> &gt; <strong>Enable selection</strong>.</li>
+</ul>
+<p>In the Output window (showing output from Multilingual App Toolkit), watch for the message <code>Project '&lt;project-name&gt;' was enabled. The project's source culture is '&lt;language-tag&gt;' &lt;language-name&gt;</code>. If this message appears, then the MAT is ready to use.</p>
+<h3 id="step-4-add-languages-to-your-project">Step 4. Add languages to your project</h3>
+<p>Follow these steps to add languages to your project.</p>
+<ol>
+<li>Right-click the project node in Solution Explorer.</li>
+<li>Click <strong>Multilingual App Toolkit</strong> &gt; <strong>Add translation languages...</strong>.</li>
+<li>In the Translation Languages dialog, select the language(s) you want to support, and click OK.</li>
+</ol>
+<p>The toolkit does these things in response.</p>
+<ul>
+<li>For each language you added, a new folder is created named for the <a href="https://tools.ietf.org/html/bcp47">BCP-47 language tag</a> of the language. Inside that folder, new Resources File(s) (.resw) are created to match the one(s) that contain the default language strings.</li>
+<li>If this is the first time you've added a language, a new folder named <code>MultilingualResources</code> is added to the project. Inside that folder, an .xlf file is added for each language. The .xlf files contain a translation unit for each string in each Resources File (.resw) in your project.</li>
+<li>The Output window confirms the addition of the language(s) that you added.</li>
+</ul>
+<p>Whenever you add/remove a default language Resources File (.resw), or you add/remove a string inside a default language Resources File (.resw), rebuild the project to re-synchronize the .xlf files. This ensures that the .xlf files contain the union of the strings in the default language.</p>
+<p>Installed Translation Providers—such as the <a href="/globalization/reference/microsoft-language-resources">Microsoft language resources</a> and <a href="https://www.microsofttranslator.com/">Microsoft Translator</a>—can be used to translate your app's resources. When a provider supports a specific language, the provider's icon is displayed next to the language name in the Translation Languages dialog.</p>
+<p>In the Translation Languages dialog, any existing .xlf-based languages that are discovered by the toolkit have their selection box pre-checked to indicate that the language is already included the project.</p>
+<p>Once a language is added to the project, it cannot be removed by un-checking the box in the Translation Languages dialog. To remove a language, right-click on the language-specific .xlf file and select <strong>Delete</strong>. If you confirm, then this will also delete the corresponding Resources File (.resw).</p>
+<h3 id="step-5-test-your-app-using-pseudo-language">Step 5. Test your app using pseudo language</h3>
+<p>Pseudo language is an artificial modification of the software product intended to simulate real language localization, but remaining readable to native speakers. Pseudo translation replaces characters and expands the resource string length to detect potential localizability issues or bugs early in the project cycle and before localization starts in earnest.</p>
+<p>Follow these steps to pseudo-localize and test your project.</p>
+<ol>
+<li>Use the Translation Languages dialog to add Pseudo Language (Pseudo) [qps-ploc] to your project.</li>
+<li>Right-click the <code>&lt;project-name&gt;.qps-ploc.xlf</code> file in Solution Explorer and click <strong>Multilingual App Toolkit</strong> &gt; <strong>Generate machine translations</strong>.</li>
+<li>In <strong>Settings</strong> &gt; <strong>Time &amp; Language</strong> &gt; <strong>Region &amp; language</strong> &gt; <strong>Languages</strong>, click <strong>Add a language</strong>.</li>
+<li>In the search box, type <code>qps-ploc</code>.</li>
+<li>Click <code>English (qps-ploc)</code> to add it.</li>
+<li>From the language list, select <code>English (qps-ploc)</code> and click <strong>Set as default</strong>.</li>
+<li>Test your pseudo-localized app. For example, look for UI layout issues where not all of a string is displayed (the string is truncated), or strings that are not translated (but instead hard-coded).</li>
+</ol>
+<p>In addition to character replacement and expansion, the pseudo engine provides a unique tracking identifier for each resource. This tracker is prepended to the start of every string and enclosed within brackets <code>[xxxxx]</code>. You can use these trackers during visual UI inspection testing. They can help track down specific resources in the product, especially if multiple resources have similar or duplicate text.</p>
+<p>In this &quot;Hello, World!&quot; text example, the pseudo translation expands to take about 30 percent more screen space, and then applies the resource tracker.</p>
+<p><code>&quot;Hello World&quot; -&gt; &quot;Ĥèĺļõ Ŵòŗłđ&quot; -&gt; &quot;[!!_Ĥèĺļõ Ŵòŗłđ_!!]&quot; -&gt; &quot;[hJ8s1][!!_Ĥèĺļõ Ŵòŗłđ_!!]&quot;</code></p>
+<h3 id="step-6-translate-your-app-into-selected-languages">Step 6. Translate your app into selected languages</h3>
+<p>The Multilingual App Toolkit is integrated into the build process. During a build, updated strings are automatically added to each language .xlf file.
+After you've tested your app by using Pseudo language, there are three options to translate your app into other languages for release.</p>
+<h4 id="option-1-translate-the-strings-yourself">Option 1. Translate the strings yourself</h4>
+<p>You can use the Multilingual Editor to translate strings individually. As already mentioned, this is included in <a href="https://developer.microsoft.com/windows/develop/multilingual-app-toolkit">The .msi installer</a>.</p>
+<ul>
+<li>Right-click the .xlf file that you want to translate.</li>
+<li>Click <strong>Open With...</strong> and select Multilingual Editor. You can optionally click <strong>Set as Default</strong>.</li>
+<li>For each string, <strong>Source</strong> shows the original string in the default language. In <strong>Translation</strong>, type the string translated into the appropriate language for the .xlf file that you're editing.</li>
+<li>When you're done, save and close the file.</li>
+</ul>
+<p>Rebuild your project to cause the translated strings to be copied into the Resources File (.resw) that corresponds to the .xlf file you were just editing.</p>
+<p>You can also launch the Multilingual Editor like this. Go to Start, show all apps, open the Multilingual App Toolkit folder, and click Multilingual Editor to launch it.</p>
+<h4 id="option-2-send-the-xlf-files-to-a-third-party-for-translation">Option 2. Send the .xlf files to a third party for translation</h4>
+<p>To outsource the translation and editing work to localizers, select the desired .xlf files in Solution Explorer, right-click them, and click <strong>Multilingual App Toolkit</strong> &gt; <strong>Export translations...</strong>.</p>
+<p>Select <strong>Output: Mail recipient</strong> in the Export string resources dialog, and click OK, and your files will be zipped and attached to a new email. Select <strong>Output: File folder location</strong>, browser for a folder and click OK, optionally choose for the files to be zipped, click OK again, and your files will be (zipped and) saved at the location you chose, inside a new folder named for your project.</p>
+<p>After your localizers complete the translation work and send you the translated .xlf files, you can import them into your project. Select the desired .xlf files in Solution Explorer, right-click them, and click <strong>Multilingual App Toolkit</strong> &gt; <strong>Import/recycle translations...</strong>. Click <strong>Add</strong>, navigate to the .xlf or .zip files, and click <strong>Import</strong>.</p>
+<p><strong>Note</strong> The import process performs basic validation before importing. This ensures that the target culture information in the files being imported matches that in the existing .xlf files.</p>
+<p>Rebuild your project to cause the translated strings to be copied into the Resources File(s) (.resw) that corresponds to the .xlf file(s) you just imported.</p>
+<p>These third party providers offer localization services, and may be able to assist you.</p>
+<ul>
+<li><a href="https://www.strakertranslations.com/">Elanex</a></li>
+<li><a href="https://www.keywordsstudios.com/">Keywords Studios</a></li>
+<li><a href="https://www.lionbridge.com">Lionbridge</a></li>
+<li><a href="https://www.rws.com/what-we-do/rws-moravia/">Moravia</a></li>
+<li><a href="https://www.rws.com/">SDL</a></li>
+<li><a href="https://www.welocalize.com/">Welocalize</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The list above is provided for informational purposes only and is not an endorsement. Microsoft does not make any representation or warranty regarding these vendors or their services, and under no circumstances will Microsoft have any liability for your use of such vendors or services. Any questions, complaints, or claims regarding such vendors or their services must be directed to the appropriate vendor.</p>
+</div>
+<h4 id="option-3-use-the-integrated-translation-services">Option 3. Use the integrated translation services</h4>
+<p>Translation services are integrated into the Visual Studio IDE as well as into the Multilingual Editor. This provides easy access to translation services while developing your product as well as localizing your resources. For this service, you'll need an Azure account subscription, as described in <a href="/azure/cognitive-services/translator/quickstart-translator">Microsoft Translator Moves to the Azure portal</a>.</p>
+<p>To access the translation services inside Visual Studio, select and right-click one or more .xlf files in Solution Explorer and click <strong>Generate machine translations</strong>.</p>
+<p>The Multilingual Editor provides the same translation support, as well as adding interactive translation suggestions, which enable you to select the translation that best fits your resource strings. After the translation suggestion is provided, you can fine-tune the string for your translation style.</p>
+<p>Two providers are shipped with the Multilingual App Toolkit.</p>
+<ul>
+<li>The <a href="/globalization/reference/microsoft-language-resources">Microsoft language resources</a> provider enables translation-recycling and terminology-matching support based on translations of the user interface text for Microsoft products and services.</li>
+<li>The <a href="https://www.microsofttranslator.com/">Microsoft Translator</a> provider enables on-demand machine translation services.</li>
+</ul>
+<p>You and your translator(s) can manage the status of translations in the Multilingual Editor to review uncertain translations later. You can set the status of each string in the <strong>Properties</strong> tab. Status values are: <strong>New</strong>, <strong>Needs review</strong>, <strong>Translated</strong>, <strong>Final</strong>, and <strong>Signed off</strong>. The indicator at the left of the row shows the status. When all rows show green in the Multilingual Editor, then your translation work is done.</p>
+<p>Rebuild your project to cause the translated strings to be copied into the Resources File(s) (.resw) that corresponds to the .xlf file(s) you just edited.</p>
+<h3 id="step-7-upload-your-app-to-the-microsoft-store">Step 7. Upload your app to the Microsoft Store</h3>
+<p>Before you start the Microsoft Store Certification process, you must exclude the <code>&lt;project-name&gt;.qps-ploc.xlf</code> file from your project. Pseudo language is used to detect potential localizability issues or bugs, but it is not a valid Microsoft Store language. If it is not removed then your app will fail during the Microsoft Store Certification process.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a></li>
+<li><a href="globalizing-portal.html">Globalization and localization</a></li>
+<li><a href="guidelines-and-checklist-for-globalizing-your-app.html">Guidelines for globalization</a></li>
+<li><a href="prepare-your-app-for-localization.html">Make your app localizable</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47">BCP-47 language tag</a></li>
+</ul>
+<h2 id="telemetry">Telemetry</h2>
+<p>The Multilingual App Toolkit Visual Studio (MAT VS) extension collects anonymous usage data and sends it to Microsoft servers to help improve our products and services. Telemetry is off by default and can be enabled or disabled at any time. For more details, see <a href="mat-faq-troubleshooting.yml">Multilingual App Toolkit FAQ &amp; troubleshooting</a>.</p>
+<h2 id="downloads">Downloads</h2>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=MultilingualAppToolkit.MultilingualAppToolkit-18308">Multilingual App Toolkit Visual Studio 2017-2019</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=dts-publisher.mat2022">Multilingual App Toolkit Visual Studio 2022+</a></li>
+<li><a href="multilingual-app-toolkit-editor-downloads.html">Multilingual app toolkit Editor</a></li>
+</ul>
+<h2 id="translation-services">Translation services</h2>
+<ul>
+<li><a href="/globalization/reference/microsoft-language-resources">Microsoft language resources</a></li>
+<li><a href="https://www.microsofttranslator.com/">Microsoft Translator</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/use-mat.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

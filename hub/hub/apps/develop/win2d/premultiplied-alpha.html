@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Premultiplied alpha </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Premultiplied alpha ">
+    
+    <meta name="description" content="An explanation of the different ways alpha values can be represented in pixel colors.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="premultiplied-alpha">Premultiplied alpha</h1>
+
+<p>In computer graphics there are two different ways to represent the opacity of a color value. Win2D uses both methods. This article explains the difference, and which is used where.</p>
+<h2 id="straight-alpha">Straight alpha</h2>
+<p>When using straight, also known as linear, alpha:</p>
+<ul>
+<li>RGB values specify the color of the thing being drawn</li>
+<li>The alpha value specifies how solid it is</li>
+</ul>
+<p>In this world, RGB and alpha are independent. You can change one without affecting the other. To make an object fade out, you would gradually reduce its alpha value while leaving RGB unchanged.</p>
+<p>To perform a source-over blend between two colors that use straight alpha format:</p>
+<pre><code>result = (source.RGB * source.A) + (dest.RGB * (1 - source.A))
+</code></pre>
+<h2 id="premultiplied-alpha-1">Premultiplied alpha</h2>
+<p>When using premultiplied alpha:</p>
+<ul>
+<li>RGB specifies how much color the thing being drawn contributes to the output</li>
+<li>The alpha value specifies how much it obscures whatever is behind it</li>
+</ul>
+<p>In this world, RGB and alpha are linked. To make an object transparent you must reduce both its RGB (to contribute less color) and also its alpha (to obscure less of whatever is behind it). Fully transparent objects no longer have any color at all, so there is only one value that represents 100% transparency: RGB and alpha all zero.</p>
+<p>To perform a source-over blend between two colors that use premultiplied alpha format:</p>
+<pre><code>result = source.RGB + (dest.RGB * (1 - source.A))
+</code></pre>
+<p>Premultiplied alpha is used in graphics rendering because it gives better results than straight alpha when filtering images or composing different layers. For more information see these blog posts:</p>
+<ul>
+<li><a href="https://shawnhargreaves.com/blog/premultiplied-alpha.html">Premultiplied alpha</a></li>
+<li><a href="https://shawnhargreaves.com/blog/premultiplied-alpha-and-image-composition.html">Premultiplied alpha and image composition</a></li>
+</ul>
+<h2 id="alpha-in-win2d">Alpha in Win2D</h2>
+<p>Win2D uses straight alpha in its API surface, but premultiplied alpha for internal rendering operations.</p>
+<p><code>Windows.UI.Color</code> values use straight alpha. Whenever you pass a color to a <code>Draw*</code> or <code>Fill*</code> method, set the color of a brush, or clear to a color value, this color is specified using straight alpha.</p>
+<p>The pixel values stored in a bitmap or rendertarget, and the drawing or blending operations that operate on these surfaces, use premultiplied alpha. When bitmaps are loaded from a file their contents are automatically converted into premultiplied format. When you call a Win2D drawing method, its color parameter is converted from straight to premultiplied before the actual drawing takes place.</p>
+<p>Win2D image effects use a mixture of straight and premultiplied alpha. Some effects operate on one format, some on the other, and some provide a property to choose. The documentation for each effect type describes which alpha mode it uses. Effect input data is always assumed to be premultiplied, so when an effect needs to work with straight alpha it will first apply an unpremultiply transform, compute the effect, and then re-premultiply the output.</p>
+<p>The bitmap APIs <code>GetPixelBytes</code>, <code>SetPixelBytes</code>, <code>GetPixelColors</code>, and <code>SetPixelColors</code>, do <strong>not</strong> perform any alpha format conversions. They just directly transfer bit values to or from the underlying GPU texture. This allows you to observe what alpha format Win2D is using internally:</p>
+<ul>
+<li>Create a drawing session on a rendertarget</li>
+<li>Call <code>drawingSession.Clear(Colors.Tranparent)</code></li>
+<li><code>Colors.Tranparent</code> is defined as R = 255, G = 255, B = 255, A = 0</li>
+<li>Win2D will convert this value to premultiplied format, yielding R = 0, G = 0, B = 0, A = 0</li>
+<li>Use <code>GetPixelColors</code> to read back the contents of the rendertarget</li>
+<li>Observe that it contains premultiplied format RGB = 0, not RGB = 255 like the original straight alpha <code>Colors.Tranparent</code> value</li>
+</ul>
+<h2 id="converting-between-alpha-formats">Converting between alpha formats</h2>
+<p>To convert a straight alpha color value to premultiplied format, multiply its R, G, and B values by A. To convert premultiplied to straight, divide R, G, and B by A.</p>
+<p>Note that color information is often represented as byte values ranging from 0 to 255 (for example the <code>Windows.UI.Color</code> structure consists of 4 bytes). This representation is scaled up by a factor of 255, so a byte value of 255 actually means 1, while 128 is half intensity. That scaling factor must be taken into account during format conversions, so to convert a <code>Windows.UI.Color</code> from straight to premultiplied:</p>
+<pre><code class="lang-csharp">premultiplied.R = (byte)(straight.R * straight.A / 255);
+premultiplied.G = (byte)(straight.G * straight.A / 255);
+premultiplied.B = (byte)(straight.B * straight.A / 255);
+premultiplied.A = straight.A;
+</code></pre>
+<p>If you have image data that is using the wrong alpha format, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_PremultiplyEffect.htm"><code>PremultiplyEffect</code></a> or <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_UnPremultiplyEffect.htm"><code>UnPremultiplyEffect</code></a> can be used to convert it.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/premultiplied-alpha.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

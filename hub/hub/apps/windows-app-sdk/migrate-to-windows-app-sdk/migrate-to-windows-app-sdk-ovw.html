@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Migrate from UWP to the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Migrate from UWP to the Windows App SDK ">
+    
+    <meta name="description" content="A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="migrate-from-uwp-to-the-windows-app-sdk">Migrate from UWP to the Windows App SDK</h1>
+
+<p>To migrate your app from the <a href="/windows/uwp/">Universal Windows Platform</a> (UWP) to the Windows App SDK, your UI code likely needs just a few namespace changes, while much of your platform code can stay the same. You'll need to adjust some code due to differences between UWP apps and desktop apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Your existing UWP app will continue to function as expected. However, to take advantage of modern features in <a href="../../winui/winui3/index.html">WinUI 3</a> and the <a href="/windows/apps/windows-app-sdk">Windows App SDK</a> we recommend migrating your app.</p>
+</div>
+<p>Below are the steps, at a high level, for migrating manually. But see the following section for info about using the <a href="#migrating-by-using-the-net-upgrade-assistant-tool">.NET Upgrade Assistant tool</a>).</p>
+<ol>
+<li>Create a new WinUI 3 packaged desktop project (see <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>). That could go into your project's existing solution.</li>
+<li>Copy your XAML/UI code. In many cases you can simply change namespaces (for example, <strong>Windows.UI.*</strong> to <strong>Microsoft.UI.*</strong>).</li>
+<li>Copy your app logic code. Some APIs need tweaks, such as <strong>Popup</strong>, <strong>Picker</strong>s, and <strong>SecondaryTile</strong>s.</li>
+</ol>
+<p>For full details, see the topics in the table below. They describe and demonstrate how to manually migrate your Universal Windows Platform (UWP) application to the Windows App SDK.</p>
+<p>Take particular note of <a href="what-is-supported.html">What's supported when migrating from UWP to WinUI 3</a>, which describes any functionality that's not yet supported in WinUI 3 and the Windows App SDK. If your app needs any of those features/libraries, then you might want to consider postponing migration.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your UWP app's source code is written in C++/CX, then also see <a href="/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx">Move to C++/WinRT from C++/CX</a>.</p>
+</div>
+<h2 id="migrating-by-using-the-net-upgrade-assistant-tool">Migrating by using the .NET Upgrade Assistant tool</h2>
+<p>As a further step in assisting you to migrate your UWP apps to the Windows App SDK and WinUI 3, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. For more info, see the topic <a href="upgrade-assistant.html">Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant</a>.</p>
+<h2 id="containerization-benefits">Containerization benefits</h2>
+<p>When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation—a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, see <a href="/windows/win32/secauthz/app-isolation-overview">Win32 app isolation overview</a>.</p>
+<h2 id="topics-in-this-section">Topics in this section</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="overall-migration-strategy.html">Overall migration strategy</a></td>
+<td>Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating.</td>
+</tr>
+<tr>
+<td><a href="feature-mapping-table.html">Mapping UWP features to the Windows App SDK</a></td>
+<td>This topic compares major feature areas in the different forms in which they appear in UWP and in the Windows App SDK.</td>
+</tr>
+<tr>
+<td><a href="what-is-supported.html">What's supported</a></td>
+<td>Learn what features are currently available in WinUI 3 Desktop to evaluate whether you should attempt migrating your UWP app today.</td>
+</tr>
+<tr>
+<td><a href="api-mapping-table.html">Mapping UWP APIs and libraries to Windows App SDK</a></td>
+<td>This topic provides a mapping of UWP APIs and libraries to their Windows App SDK equivalents.</td>
+</tr>
+<tr>
+<td><a href="guides/feature-area-guides-ovw.html">Feature area guides</a></td>
+<td>A collection of migration guidance topics, each focusing on a specific feature area.</td>
+</tr>
+<tr>
+<td><a href="case-study-1.html">Case study 1—PhotoLab (C#)</a></td>
+<td>This topic is a case study of taking the C# <a href="/samples/microsoft/windows-appsample-photo-lab/photolab-sample/">UWP PhotoLab sample app</a>, and migrating it to the Windows App SDK.</td>
+</tr>
+<tr>
+<td><a href="case-study-2.html">Case study 2—Photo Editor (C++/WinRT)</a></td>
+<td>This topic is a case study of taking the C++/WinRT <a href="/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/">UWP Photo Editor sample app</a>, and migrating it to the Windows App SDK.</td>
+</tr>
+<tr>
+<td><a href="misc-info.html">Additional migration guidance</a></td>
+<td>This topic contains additional migration guidance not categorized into a feature area in the <a href="guides/feature-area-guides-ovw.html">feature area guides</a>.</td>
+</tr>
+<tr>
+<td><a href="upgrade-assistant.html">Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant</a></td>
+<td>The <a href="/dotnet/core/porting/upgrade-assistant-overview">.NET Upgrade Assistant</a> is a command-line tool that can assist with migrating a C# UWP app to a <a href="../../winui/index.html">WinUI 3</a> app that uses the Windows App SDK.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

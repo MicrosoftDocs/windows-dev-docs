@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Activate a foreground app with voice commands through Cortana - Cortana UWP design and development </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Activate a foreground app with voice commands through Cortana - Cortana UWP design and development ">
+    
+    <meta name="description" content="Use voice commands to activate your app to the foreground and execute an action or command within the app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="activate-a-foreground-app-with-voice-commands-through-cortana">Activate a foreground app with voice commands through Cortana</h1>
+
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename &quot;20H1&quot;).</p>
+</div>
+<p>In addition to using voice commands within <strong>Cortana</strong> to access system features, you can also extend <strong>Cortana</strong> with features and functionality from your app. Using voice commands, your app can be activated to the foreground and an action or command executed within the app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Important APIs</strong></p>
+<ul>
+<li><a href="/uwp/api/Windows.ApplicationModel.VoiceCommands"><strong>Windows.ApplicationModel.VoiceCommands</strong></a></li>
+<li><a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD elements and attributes v1.2</strong></a></li>
+</ul>
+</div>
+<p>When an app handles a voice command in the foreground, it takes focus and Cortana is dismissed. If you prefer, you can activate your app and execute a command as a background task. In this case, Cortana retains focus and your app returns all feedback and results through the <strong>Cortana</strong> canvas and the <strong>Cortana</strong> voice.</p>
+<p>Voice commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands (such as listing upcoming trips) can be handled in <strong>Cortana</strong> through a background app.</p>
+<p>If you want to activate an app in the background using voice commands, see <a href="cortana-launch-a-background-app-with-voice-commands.html">Activate a background app in Cortana using voice commands</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A voice command is a single utterance with a specific intent, defined in a Voice Command Definition (VCD) file, directed at an installed app via <strong>Cortana</strong>.</p>
+<p>A VCD file defines one or more voice commands, each with a unique intent.</p>
+<p>Voice command definitions can vary in complexity. They can support anything from a single, constrained utterance to a collection of more flexible, natural language utterances, all denoting the same intent.</p>
+</div>
+<p>To demonstrate foreground app features, we'll use a trip planning and management app named <strong>Adventure Works</strong> from the <a href="https://go.microsoft.com/fwlink/p/?LinkID=619899">Cortana voice command sample</a>.</p>
+<p>To create a new <strong>Adventure Works</strong> trip without <strong>Cortana</strong>, a user would launch the app and navigate to the <strong>New trip</strong> page. To view an existing trip, a user would launch the app, navigate to the <strong>Upcoming trips</strong> page, and select the trip.</p>
+<p>Using voice commands through <strong>Cortana</strong>, the user can instead just say, &quot;Adventure Works add a trip&quot; or &quot;Add a trip on Adventure Works&quot; to launch the app and navigate to the <strong>New trip</strong> page. In turn, saying &quot;Adventure Works, show my trip to London&quot; will launch the app and navigate to the <strong>Trip</strong> detail page, shown here.</p>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/cortana-foreground-with-adventureworks.png" alt="Screenshot of Cortana launching foreground app">
+</span>
+</p>
+<p>These are the basic steps to add voice-command functionality and integrate Cortana with your app using speech or keyboard input:</p>
+<ol>
+<li>Create a VCD file. This is an XML document that defines all the spoken commands that the user can say to initiate actions or invoke commands when activating your app. See <a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD elements and attributes v1.2</strong></a>.</li>
+<li>Register the command sets in the VCD file when the app is launched.</li>
+<li>Handle the activation-by-voice-command, navigation within the app, and execution of the command.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>Prerequisites</strong></p>
+<p>If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.</p>
+<ul>
+<li><a href="/windows/uwp/get-started/your-first-app">Create your first app</a></li>
+<li>Learn about events with <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a></li>
+</ul>
+<p><strong>User experience guidelines</strong></p>
+<p>See <a href="cortana-design-guidelines.html">Cortana design guidelines</a>  for info about how to integrate your app with <strong>Cortana</strong> and <a href="speech-interactions.html">Speech interactions</a> for helpful tips on designing a useful and engaging speech-enabled app.</p>
+</div>
+<h2 id="create-a-new-solution-with-project-in-visual-studio">Create a new solution with project in Visual Studio</h2>
+<ol>
+<li><p>Launch Microsoft Visual Studio 2015.</p>
+<p>The Visual Studio 2015 Start page appears.</p>
+</li>
+<li><p>On the <strong>File</strong> menu, select <strong>New</strong> &gt; <strong>Project</strong>.</p>
+<p>The <strong>New Project</strong> dialog appears. The left pane of the dialog lets you select the type of templates to display.</p>
+</li>
+<li><p>In the left pane, expand <strong>Installed &gt; Templates &gt; Visual C# &gt; Windows</strong>, then pick the <strong>Universal</strong> template group. The dialog's center pane displays a list of project templates for Universal Windows Platform (UWP) apps.</p>
+</li>
+<li><p>In the center pane, select the <strong>Blank App (Universal Windows)</strong> template.</p>
+<p>The <strong>Blank App</strong> template creates a minimal UWP app that compiles and runs, but contains no user-interface controls or data. You add controls to the app over the course of this tutorial.</p>
+</li>
+<li><p>In the <strong>Name</strong> text box, type your project name. For this example, we use &quot;AdventureWorks&quot;.</p>
+</li>
+<li><p>Click <strong>OK</strong> to create the project.</p>
+<p>Microsoft Visual Studio creates your project and displays it in the <strong>Solution Explorer</strong>.</p>
+</li>
+</ol>
+<h2 id="add-image-assets-to-project-and-specify-them-in-the-app-manifest">Add image assets to project and specify them in the app manifest</h2>
+<p>UWP apps can automatically select the most appropriate images based on specific settings and device capabilities (high contrast, effective pixels, locale, and so on). All you need to do is provide the images and ensure you use the appropriate naming convention and folder organization within the app project for the different resource versions. If you don't provide the recommended resource versions, accessibility, localization, and image quality can suffer, depending on the user's preferences, abilities, device type, and location.</p>
+<p>For more detail on image resources for high contrast and scale factors, see <a href="/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast">Guidelines for tile and icon assets</a>.</p>
+<p>You name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.</p>
+<p>The standard naming convention is <code>foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext</code>. For example, <code>images/logo.scale-100_contrast-white.png</code>, which can be referred to in code using just the root folder and the filename: <code>images/logo.png</code>. See <a href="/previous-versions/windows/apps/hh965324(v=win.10)">How to name resources using qualifiers</a>.</p>
+<p>We recommend that you mark the default language on string resource files (such as <code>en-US\resources.resw</code>) and the default scale factor on images (such as <code>logo.scale-100.png</code>), even if you do not currently plan to provide localized or multiple resolution resources. However, at a minimum, we recommend that you provide assets for 100, 200, and 400 scale factors.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The app icon used in the title area of the <strong>Cortana</strong> canvas is the Square44x44Logo icon specified in the &quot;Package.appxmanifest&quot; file.</p>
+</div>
+<h2 id="create-a-vcd-file">Create a VCD file</h2>
+<ol>
+<li>In Visual Studio, right-click your primary project name, select <strong>Add &gt; New Item</strong>. Add an <strong>XML File</strong>.</li>
+<li>Type a name for the <a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD</strong></a> file (for this example, &quot;AdventureWorksCommands.xml&quot;), and click Add.</li>
+<li>In <strong>Solution Explorer</strong>, select the <a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD</strong></a> file.</li>
+<li>In the <strong>Properties</strong> window, set <strong>Build action</strong> to <strong>Content</strong>, and then set <strong>Copy to output directory</strong> to <strong>Copy if newer</strong>.</li>
+</ol>
+<h2 id="edit-the-vcd-file">Edit the VCD file</h2>
+<p>Add a <strong>VoiceCommands</strong> element with an <strong>xmlns</strong> attribute pointing to <code>https://schemas.microsoft.com/voicecommands/1.2</code>.</p>
+<ol>
+<li><p>For each language supported by your app, create a <a href="/previous-versions/windows/dn722331(v=win.10)"><strong>CommandSet</strong></a> element that contains the voice commands supported by your app.</p>
+<p>You can declare multiple <a href="/previous-versions/windows/dn722331(v=win.10)"><strong>CommandSet</strong></a> elements, each with a different <a href="/previous-versions/windows/dn722331(v=win.10)"><strong>xml:lang</strong></a> attribute so your app to be used in different markets. For example, an app for the United States might have a <a href="/previous-versions/windows/dn722331(v=win.10)"><strong>CommandSet</strong></a> for English and a <a href="/previous-versions/windows/dn722331(v=win.10)"><strong>CommandSet</strong></a> for Spanish.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>To activate an app and initiate an action using a voice command, the app must register a VCD file that contains a <a href="/previous-versions/windows/dn722331(v=win.10)"><strong>CommandSet</strong></a> with a language that matches the speech language selected by the user for their device. The speech language is located in <strong>Settings &gt; System &gt; Speech &gt; Speech Language</strong>.</p>
+</div>
+</li>
+<li><p>Add a <strong>Command</strong> element for each command you want to support. Each <strong>Command</strong> declared in a <a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD</strong></a> file must include the following information:</p>
+<ul>
+<li>An <strong>AppName</strong> attribute that your application uses to identify the voice command at runtime.</li>
+<li>An <strong>Example</strong> element that contains a phrase describing how a user can invoke the command. <strong>Cortana</strong> shows this example when the user says &quot;What can I say?&quot;, &quot;Help&quot;, or they tap <strong>See more</strong>.</li>
+<li>A <strong>ListenFor</strong> element that contains the words or phrases that your app recognizes as a command. Each <strong>ListenFor</strong> element can contain references to one or more <strong>PhraseList</strong> elements that contain specific words relevant to the command.</li>
+</ul>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>ListenFor</strong> elements cannot be programmatically modified. However, <strong>PhraseList</strong> elements associated with <strong>ListenFor</strong> elements can be programmatically modified. Applications should modify the content of the <strong>PhraseList</strong> at runtime based on the data set generated as the user uses the app. See <a href="cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.html">Dynamically modify Cortana VCD phrase lists</a>.</p>
+</div>
+<p>A <strong>Feedback</strong> element that contains the text for <strong>Cortana</strong> to display and speak as the application is launched.</p>
+<p>A <strong>Navigate</strong> element indicates that the voice command activates the app to the foreground. In this example, the <code>showTripToDestination</code> command is a foreground task.</p>
+<p>A <strong>VoiceCommandService</strong> element indicates that the voice command activates the app in the background. The value of the <strong>Target</strong> attribute of this element should match the value of the <strong>Name</strong> attribute of the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-appservice"><strong>uap:AppService</strong></a> element in the package.appxmanifest file. In this example, the <code>whenIsTripToDestination</code> and <code>cancelTripToDestination</code> commands are background tasks that specify the name of the app service as &quot;AdventureWorksVoiceCommandService&quot;.</p>
+<p>For more detail, see the <a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD elements and attributes v1.2</strong></a> reference.</p>
+<p>Here's a portion of the <a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2"><strong>VCD</strong></a> file that defines the en-us voice commands for the <strong>Adventure Works</strong> app.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;VoiceCommands xmlns=&quot;https://schemas.microsoft.com/voicecommands/1.2&quot;&gt;
+  &lt;CommandSet xml:lang=&quot;en-us&quot; Name=&quot;AdventureWorksCommandSet_en-us&quot;&gt;
+    &lt;AppName&gt; Adventure Works &lt;/AppName&gt;
+    &lt;Example&gt; Show trip to London &lt;/Example&gt;
+
+    &lt;Command Name=&quot;showTripToDestination&quot;&gt;
+      &lt;Example&gt; Show trip to London &lt;/Example&gt;
+      &lt;ListenFor RequireAppName=&quot;BeforeOrAfterPhrase&quot;&gt; show [my] trip to {destination} &lt;/ListenFor&gt;
+      &lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt; show [my] {builtin:AppName} trip to {destination} &lt;/ListenFor&gt;
+      &lt;Feedback&gt; Showing trip to {destination} &lt;/Feedback&gt;
+      &lt;Navigate /&gt;
+    &lt;/Command&gt;
+
+    &lt;Command Name=&quot;whenIsTripToDestination&quot;&gt;
+      &lt;Example&gt; When is my trip to Las Vegas?&lt;/Example&gt;
+      &lt;ListenFor RequireAppName=&quot;BeforeOrAfterPhrase&quot;&gt; when is [my] trip to {destination}&lt;/ListenFor&gt;
+      &lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt; when is [my] {builtin:AppName} trip to {destination} &lt;/ListenFor&gt;
+      &lt;Feedback&gt; Looking for trip to {destination}&lt;/Feedback&gt;
+      &lt;VoiceCommandService Target=&quot;AdventureWorksVoiceCommandService&quot;/&gt;
+    &lt;/Command&gt;
+    
+    &lt;Command Name=&quot;cancelTripToDestination&quot;&gt;
+      &lt;Example&gt; Cancel my trip to Las Vegas &lt;/Example&gt;
+      &lt;ListenFor RequireAppName=&quot;BeforeOrAfterPhrase&quot;&gt; cancel [my] trip to {destination}&lt;/ListenFor&gt;
+      &lt;ListenFor RequireAppName=&quot;ExplicitlySpecified&quot;&gt; cancel [my] {builtin:AppName} trip to {destination} &lt;/ListenFor&gt;
+      &lt;Feedback&gt; Cancelling trip to {destination}&lt;/Feedback&gt;
+      &lt;VoiceCommandService Target=&quot;AdventureWorksVoiceCommandService&quot;/&gt;
+    &lt;/Command&gt;
+
+    &lt;PhraseList Label=&quot;destination&quot;&gt;
+      &lt;Item&gt;London&lt;/Item&gt;
+      &lt;Item&gt;Las Vegas&lt;/Item&gt;
+      &lt;Item&gt;Melbourne&lt;/Item&gt;
+      &lt;Item&gt;Yosemite National Park&lt;/Item&gt;
+    &lt;/PhraseList&gt;
+  &lt;/CommandSet&gt;
+</code></pre>
+<h2 id="install-the-vcd-commands">Install the VCD commands</h2>
+<p>Your app must run once to install the VCD.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Voice command data is not preserved across app installations. To ensure the voice command data for your app remains intact, consider initializing your VCD file each time your app is launched or activated, or maintain a setting that indicates if the VCD is currently installed.</p>
+</div>
+<p>In the &quot;app.xaml.cs&quot; file:</p>
+<ol>
+<li><p>Add the following using directive:</p>
+<pre><code class="lang-csharp">using Windows.Storage;
+</code></pre>
+</li>
+<li><p>Mark the &quot;OnLaunched&quot; method with the async modifier.</p>
+<pre><code class="lang-csharp">protected async override void OnLaunched(LaunchActivatedEventArgs e)
+</code></pre>
+</li>
+<li><p>Call <a href="/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager"><strong>InstallCommandDefinitionsFromStorageFileAsync</strong></a> in the <a href="/uwp/api/Windows.UI.Xaml.Application"><strong>OnLaunched</strong></a> handler to register the voice commands that the system should recognize.</p>
+</li>
+</ol>
+<p>In the Adventure Works sample, we first define a <a href="/uwp/api/Windows.Storage.StorageFile"><strong>StorageFile</strong></a> object.</p>
+<p>We then call <a href="/uwp/api/Windows.Storage.StorageFolder"><strong>GetFileAsync</strong></a> to initialize it with our &quot;AdventureWorksCommands.xml&quot; file.</p>
+<p>This <a href="/uwp/api/Windows.Storage.StorageFile"><strong>StorageFile</strong></a> object is then passed to <a href="/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager"><strong>InstallCommandDefinitionsFromStorageFileAsync</strong></a>.</p>
+<pre><code class="lang-csharp">try
+{
+  // Install the main VCD. 
+  StorageFile vcdStorageFile = 
+  await Package.Current.InstalledLocation.GetFileAsync(
+  @&quot;AdventureWorksCommands.xml&quot;);
+
+  await Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
+InstallCommandDefinitionsFromStorageFileAsync(vcdStorageFile);
+
+  // Update phrase list.
+  ViewModel.ViewModelLocator locator = App.Current.Resources[&quot;ViewModelLocator&quot;] as ViewModel.ViewModelLocator;
+  if(locator != null)
+  {
+     await locator.TripViewModel.UpdateDestinationPhraseList();
+  }
+}
+catch (Exception ex)
+{
+  System.Diagnostics.Debug.WriteLine(&quot;Installing Voice Commands Failed: &quot; + ex.ToString());
+}
+</code></pre>
+<h2 id="handle-activation-and-execute-voice-commands">Handle activation and execute voice commands</h2>
+<p>Specify how your app responds to subsequent voice command activations (after it has been launched at least once and the voice command sets have been installed).</p>
+<ol>
+<li><p>Confirm that your app was activated by a voice command.</p>
+<p>Override the <a href="/uwp/api/Windows.UI.Xaml.Application"><strong>Application.OnActivated</strong></a> event and check whether <a href="/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs"><strong>IActivatedEventArgs</strong></a>.<a href="/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs"><strong>Kind</strong></a> is <a href="/uwp/api/Windows.ApplicationModel.Activation.ActivationKind"><strong>VoiceCommand</strong></a>.</p>
+</li>
+<li><p>Determine the name of the command and what was spoken.</p>
+<p>Get a reference to a <a href="/uwp/api/Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs"><strong>VoiceCommandActivatedEventArgs</strong></a> object from the <a href="/uwp/api/Windows.ApplicationModel.Activation.IActivatedEventArgs"><strong>IActivatedEventArgs</strong></a> and query the <a href="/uwp/api/Windows.ApplicationModel.Activation.VoiceCommandActivatedEventArgs"><strong>Result</strong></a> property for a <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult"><strong>SpeechRecognitionResult</strong></a> object.</p>
+<p>To determine what the user said, check the value of <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult"><strong>Text</strong></a> or the semantic properties of the recognized phrase in the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation"><strong>SpeechRecognitionSemanticInterpretation</strong></a> dictionary.</p>
+</li>
+<li><p>Take the appropriate action in your app, such as navigating to the desired page.</p>
+</li>
+</ol>
+<p>For this example, we refer back to the VCD in Step 3: Edit the VCD file.</p>
+<p>Once we get the speech-recognition result for the voice command, we get the command name from the first value in the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult"><strong>RulePath</strong></a> array. As the VCD file defined more than one possible voice command, we need to compare the value against the command names in the VCD and take the appropriate action.</p>
+<p>The most common action an application can take is to navigate to a page with content relevant to the context of the voice command. For this example, we navigate to a <strong>TripPage</strong> page and pass in the value of the voice command, how the command was input, and the recognized &quot;destination&quot; phrase (if applicable). Alternatively, the app could send a navigation parameter to the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult"><strong>SpeechRecognitionResult</strong></a> when navigating to the page.</p>
+<p>You can find out whether the voice command that launched your app was actually spoken, or whether it was typed in as text, from the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation"><strong>SpeechRecognitionSemanticInterpretation.Properties</strong></a> dictionary using the <strong>commandMode</strong> key. The value of that key will be either &quot;voice&quot; or &quot;text&quot;. If the value of the key is &quot;voice&quot;, consider using speech synthesis (<a href="/uwp/api/Windows.Media.SpeechSynthesis"><strong>Windows.Media.SpeechSynthesis</strong></a>) in your app to provide the user with spoken feedback.</p>
+<p>Use the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation"><strong>SpeechRecognitionSemanticInterpretation.Properties</strong></a> to find out the content spoken in the <strong>PhraseList</strong> or <strong>PhraseTopic</strong> constraints of a <strong>ListenFor</strong> element. The dictionary key is the value of the <strong>Label</strong> attribute of the <strong>PhraseList</strong> or <strong>PhraseTopic</strong> element. Here, we show how to access the value of <strong>{destination}</strong> phrase.</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Entry point for an application activated by some means other than normal launching. 
+/// This includes voice commands, URI, share target from another app, and so on. 
+/// 
+/// NOTE:
+/// A previous version of the VCD file might remain in place 
+/// if you modify it and update the app through the store. 
+/// Activations might include commands from older versions of your VCD. 
+/// Try to handle these commands gracefully.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;args&quot;&gt;Details about the activation method.&lt;/param&gt;
+protected override void OnActivated(IActivatedEventArgs args)
+{
+    base.OnActivated(args);
+
+    Type navigationToPageType;
+    ViewModel.TripVoiceCommand? navigationCommand = null;
+
+    // Voice command activation.
+    if (args.Kind == ActivationKind.VoiceCommand)
+    {
+        // Event args can represent many different activation types. 
+        // Cast it so we can get the parameters we care about out.
+        var commandArgs = args as VoiceCommandActivatedEventArgs;
+
+        Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
+
+        // Get the name of the voice command and the text spoken. 
+        // See VoiceCommands.xml for supported voice commands.
+        string voiceCommandName = speechRecognitionResult.RulePath[0];
+        string textSpoken = speechRecognitionResult.Text;
+
+        // commandMode indicates whether the command was entered using speech or text.
+        // Apps should respect text mode by providing silent (text) feedback.
+        string commandMode = this.SemanticInterpretation(&quot;commandMode&quot;, speechRecognitionResult);
+        
+        switch (voiceCommandName)
+        {
+            case &quot;showTripToDestination&quot;:
+                // Access the value of {destination} in the voice command.
+                string destination = this.SemanticInterpretation(&quot;destination&quot;, speechRecognitionResult);
+
+                // Create a navigation command object to pass to the page. 
+                navigationCommand = new ViewModel.TripVoiceCommand(
+                    voiceCommandName,
+                    commandMode,
+                    textSpoken,
+                    destination);
+
+                // Set the page to navigate to for this voice command.
+                navigationToPageType = typeof(View.TripDetails);
+                break;
+            default:
+                // If we can't determine what page to launch, go to the default entry point.
+                navigationToPageType = typeof(View.TripListView);
+                break;
+        }
+    }
+    // Protocol activation occurs when a card is clicked within Cortana (using a background task).
+    else if (args.Kind == ActivationKind.Protocol)
+    {
+        // Extract the launch context. In this case, we're just using the destination from the phrase set (passed
+        // along in the background task inside Cortana), which makes no attempt to be unique. A unique id or 
+        // identifier is ideal for more complex scenarios. We let the destination page check if the 
+        // destination trip still exists, and navigate back to the trip list if it doesn't.
+        var commandArgs = args as ProtocolActivatedEventArgs;
+        Windows.Foundation.WwwFormUrlDecoder decoder = new Windows.Foundation.WwwFormUrlDecoder(commandArgs.Uri.Query);
+        var destination = decoder.GetFirstValueByName(&quot;LaunchContext&quot;);
+
+        navigationCommand = new ViewModel.TripVoiceCommand(
+                                &quot;protocolLaunch&quot;,
+                                &quot;text&quot;,
+                                &quot;destination&quot;,
+                                destination);
+
+        navigationToPageType = typeof(View.TripDetails);
+    }
+    else
+    {
+        // If we were launched via any other mechanism, fall back to the main page view.
+        // Otherwise, we'll hang at a splash screen.
+        navigationToPageType = typeof(View.TripListView);
+    }
+
+    // Repeat the same basic initialization as OnLaunched() above, taking into account whether
+    // or not the app is already active.
+    Frame rootFrame = Window.Current.Content as Frame;
+
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active.
+    if (rootFrame == null)
+    {
+        // Create a frame to act as the navigation context and navigate to the first page.
+        rootFrame = new Frame();
+        App.NavigationService = new NavigationService(rootFrame);
+
+        rootFrame.NavigationFailed += OnNavigationFailed;
+
+        // Place the frame in the current window.
+        Window.Current.Content = rootFrame;
+    }
+
+    // Since we're expecting to always show a details page, navigate even if 
+    // a content frame is in place (unlike OnLaunched).
+    // Navigate to either the main trip list page, or if a valid voice command
+    // was provided, to the details page for that trip.
+    rootFrame.Navigate(navigationToPageType, navigationCommand);
+
+    // Ensure the current window is active
+    Window.Current.Activate();
+}
+
+/// &lt;summary&gt;
+/// Returns the semantic interpretation of a speech result. 
+/// Returns null if there is no interpretation for that key.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;interpretationKey&quot;&gt;The interpretation key.&lt;/param&gt;
+/// &lt;param name=&quot;speechRecognitionResult&quot;&gt;The speech recognition result to get the semantic interpretation from.&lt;/param&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+private string SemanticInterpretation(string interpretationKey, SpeechRecognitionResult speechRecognitionResult)
+{
+  return speechRecognitionResult.SemanticInterpretation.Properties[interpretationKey].FirstOrDefault();
+}
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="cortana-interactions.html">Cortana interactions in Windows apps</a></li>
+<li><a href="cortana-launch-a-background-app-with-voice-commands.html">Activate a background app in Cortana using voice commands</a></li>
+<li><a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2">VCD elements and attributes v1.2</a></li>
+<li><a href="cortana-design-guidelines.html">Cortana design guidelines</a></li>
+<li><a href="https://go.microsoft.com/fwlink/p/?LinkID=619899">Cortana voice command sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/cortana-launch-a-foreground-app-with-voice-commands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

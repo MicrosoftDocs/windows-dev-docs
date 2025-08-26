@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manage app windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manage app windows ">
+    
+    <meta name="description" content="Use AppWindow APIs in the Windows App SDK">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manage-app-windows">Manage app windows</h1>
+
+<p>The Windows App SDK provides the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">Microsoft.UI.Windowing.AppWindow</a> class, which represents a high-level abstraction of the HWND. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows without the need to access the HWND directly.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article demonstrates how to use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> APIs in your app. As a prerequisite, we recommend that you read and understand the AppWindow information in <a href="windowing-overview.html">Windowing overview for WinUI and Windows App SDK</a>, which is applicable whether you use WinUI or another UI framework.</p>
+</div>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter">OverlappedPresenter class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/AppWindow">Open the WinUI 3 Gallery app and see AppWindow in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>You can use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> APIs with any UI framework that the Windows App SDK supports - WinUI 3, WPF, WinForms, or Win32. AppWindow APIs work alongside the framework-specific windowing APIs:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">XAML Window</a></li>
+<li><a href="/dotnet/api/system.windows.window">WPF Window</a></li>
+<li><a href="/dotnet/api/system.windows.forms.form">Windows Forms Form</a></li>
+<li><a href="/windows/win32/winmsg/windows">Win32 windowing APIs</a>, <a href="/cpp/mfc/windows">MFC Windows</a></li>
+</ul>
+<p>You typically use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> APIs to:</p>
+<ul>
+<li><p>Manage the size and position of your app's window.</p>
+</li>
+<li><p>Manage the window title, icon and title bar color; or create a fully custom title bar with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar</a> APIs.</p>
+<p>See <a href="../title-bar.html">Title bar customization</a> for more info and examples.</p>
+</li>
+<li><p>Manage the appearance and behavior of the window with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter">AppWindowPresenter</a>-derived APIs.</p>
+</li>
+</ul>
+<h2 id="respond-to-appwindow-changes">Respond to AppWindow changes</h2>
+<p>You respond to changes to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> by handling the single <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed">Changed</a> event, then checking the event args (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs">AppWindowChangedEventArgs</a>) to determine what kind of change happened. If the change that you're interested in happened, you can respond to it. Potential changes include position, size, presenter, visibility, and z-order.</p>
+<p>Here's an example of an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed">AppWindow.Changed</a> event handler.</p>
+<pre><code class="lang-csharp">private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
+{
+    // ConfigText and SizeText are TextBox controls defined in XAML for the page.
+    if (args.DidPresenterChange == true)
+    {
+        ConfigText.Text = sender.Presenter.Kind.ToString();
+    }
+
+    if (args.DidSizeChange == true)
+    {
+        SizeText.Text = sender.Size.Width.ToString() + &quot;, &quot; + sender.Size.Height.ToString();
+    }
+}
+
+</code></pre>
+<h2 id="window-size-and-placement">Window size and placement</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> class has several properties and methods you can use to manage the size and placement of the window.</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read-only properties</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.position">Position</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size">Size</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.clientsize">ClientSize</a></td>
+</tr>
+<tr>
+<td>Events</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed">Changed</a> (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didpositionchange#microsoft-ui-windowing-appwindowchangedeventargs-didpositionchange">DidPositionChange</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange#microsoft-ui-windowing-appwindowchangedeventargs-didsizechange">DidSizeChange</a>)</td>
+</tr>
+<tr>
+<td>Size and position methods</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.move">Move</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize">Resize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resizeclient">ResizeClient</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveandresize">MoveAndResize</a></td>
+</tr>
+<tr>
+<td>Z-order methods</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderatbottom">MoveInZOrderAtBottom</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderattop">MoveInZOrderAtTop</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderbelow">MoveInZOrderBelow</a></td>
+</tr>
+</tbody>
+</table>
+<p>Call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize"><strong>Resize</strong></a> to specify a new window size.</p>
+<p>In this example, the code is in <code>MainWindow.xaml.cs</code>, so you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow">Window.AppWindow</a> property to get the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> instance.</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    InitializeComponent();
+    AppWindow.Resize(new Windows.Graphics.SizeInt32(1200, 800));
+}
+</code></pre>
+<p>Call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.move"><strong>Move</strong></a> method to change the position of a window.</p>
+<p>This example moves the window to be centered on the screen when the user clicks a button.</p>
+<p>This occurs in the code file for a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a> class, so you don't automatically have access to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> objects. You have a few options for getting the AppWindow.</p>
+<ul>
+<li>If you keep a reference to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> as described in <a href="/windows/apps/develop/ui-input/windowing-overview#track-the-current-window">Track the current window</a> or <a href="/windows/apps/develop/ui-input/multiple-windows#track-instances-of-window">Track instances of Window</a>, you can get the Window, then get <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow">Window.AppWindow</a> property.</li>
+<li>Or, you can call the static <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid">AppWindow.GetFromWindowId</a> method to get the AppWindow instance, as shown here. (See <a href="/windows/apps/develop/ui-input/retrieve-hwnd#determining-the-window-thats-hosting-a-visual-element">Determining the window that's hosting a visual element</a>.)</li>
+</ul>
+<pre><code class="lang-csharp">private void MoveWindowButton_Click(object sender, RoutedEventArgs e)
+{
+    AppWindow appWindow = AppWindow.GetFromWindowId(XamlRoot.ContentIslandEnvironment.AppWindowId);
+    RectInt32? area = DisplayArea.GetFromWindowId(appWindow.Id, DisplayAreaFallback.Nearest)?.WorkArea;
+    if (area == null) return;
+    appWindow.Move(new PointInt32((area.Value.Width - appWindow.Size.Width) / 2, (area.Value.Height - appWindow.Size.Height) / 2));
+}
+</code></pre>
+<h2 id="the-appwindowpresenter-class-and-subclasses">The AppWindowPresenter class, and subclasses</h2>
+<p>Each <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> has an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter">AppWindowPresenter</a> (presenter) applied to it. A presenter is created by the system and applied to an AppWindow at creation time. Each sub-class of AppWindowPresenter provides a pre-defined configuration appropriate for the purpose of the window. These <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter">AppWindowPresenter</a>-derived presenters are provided, and they're available on all of the supported OS versions.</p>
+<ul>
+<li><p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter"><strong>CompactOverlayPresenter</strong></a></p>
+<p>Configures an <em>always-on-top</em> window of a fixed size, with a 16:9 aspect ratio to allow for <em>picture-in-picture</em>-like experiences. By default, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter.initialsize">InitialSize</a> is <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaysize">CompactOverlaySize.Small</a>, but you can change it to <code>Medium</code> or <code>Large</code>. You can also call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize">AppWindow.Resize</a> to override the 16:9 aspect ratio and make the window any desired size.</p>
+</li>
+<li><p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.fullscreenpresenter"><strong>FullScreenPresenter</strong></a></p>
+<p>Configures a window to provide a full-screen experience suitable for watching video. The window does not have a border or title bar, and hides the system task bar.</p>
+</li>
+<li><p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter"><strong>OverlappedPresenter</strong></a></p>
+<p>The standard window configuration, which, by default, provides a border with resize handles and a title bar with minimize/maximize/restore buttons.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>As a new concept to the Win32 application model, a presenter is similar to (but not the same as) a combination of window state and <a href="/windows/win32/winmsg/window-styles">styles</a>. Some presenters also have behaviors defined in them that can't be inspected from classic window state and style properties (such as an auto-hiding title bar).</p>
+</div>
+<h3 id="the-default-presenter">The default presenter</h3>
+<p>The default presenter applied when an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> is created is an instance of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter">OverlappedPresenter</a> with default property settings. There's no need to keep a reference to it in order to go back to the default presenter for a window after having applied another presenter. That's because the system keeps the same instance of this presenter around for the lifetime of the AppWindow for which it was created; and you can re-apply it by calling the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter">AppWindow.SetPresenter</a> method with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind">AppWindowPresenterKind.Default</a> as a parameter.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Calling <code>SetPresenter(AppWindowPresenterKind.Default)</code> always re-applies the default presenter instance that is created with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a>. If you create and apply another presenter, and want to re-apply it later, you need to keep a reference to your presenter.</p>
+</div>
+<p>You can also get a reference to the default presenter instance and modify it. If you've applied a new presenter, first ensure that the default presenter is applied, as shown here:</p>
+<pre><code class="lang-csharp">appWindow.SetPresenter(AppWindowPresenterKind.Default);
+OverlappedPresenter defaultPresenter = (OverlappedPresenter)appWindow.Presenter;
+defaultPresenter.IsMaximizable = false;
+defaultPresenter.IsMinimizable = false;
+</code></pre>
+<h3 id="modify-an-overlappedpresenter">Modify an OverlappedPresenter</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter">OverlappedPresenter</a> is a flexible presenter that you can configure in a variety of ways.</p>
+<p>The <code>Create</code>* methods let you create an overlapped presenter with default property settings, or one with property settings pre-configured for a particular use.</p>
+<p>This table shows how configuration properties are set when you create an OverlappedPresenter object from each method.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.create"><strong>Create</strong></a></th>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.createforcontextmenu"><strong>CreateForContextMenu</strong></a></th>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.createfordialog"><strong>CreateForDialog</strong></a></th>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.createfortoolwindow"><strong>CreateForToolWindow</strong></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.hasborder">HasBorder</a></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.hastitlebar">HasTitleBar</a></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.isalwaysontop">IsAlwaysOnTop</a></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.ismaximizable">IsMaximizable</a></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.isminimizable">IsMinimizable</a></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.ismodal">IsModal</a></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.isresizable">IsResizable</a></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>The applied presenter is a live object. A change to any property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.presenter">AppWindow.Presenter</a> object takes effect immediately. There are no events to notify you of these changes, but you can check the properties for current values at any time.</p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.hasborder"><strong>HasBorder</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.hastitlebar"><strong>HasTitleBar</strong></a> properties are read-only. You can set these values by calling the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.setborderandtitlebar"><strong>SetBorderAndTitleBar</strong></a> method (<code>SetBorderAndTitleBar(bool hasBorder, bool hasTitleBar)</code>). An <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter">OverlappedPresenter</a> cannot have a title bar without a border. That is, if the <code>hasTitleBar</code> parameter is <code>true</code>, then the <code>hasBorder</code> parameter must also be <code>true</code>. Otherwise, an exception is thrown with this message:</p>
+<pre><code class="lang-text">The parameter is incorrect.
+Invalid combination: Border=false, TitleBar=true.
+</code></pre>
+<p>Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.ismaximizable"><strong>IsMaximizable</strong></a> to <code>false</code> to hide the maximize button in the toolbar. We recommend you do this if you set the <code>PreferredMaximumHeight</code> or <code>PreferredMaximumWidth</code> properties, as these properties constrain the window size even in the maximized state. This does not affect calls to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.maximize">Maximize</a> method.</p>
+<p>Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.isminimizable"><strong>IsMinimizable</strong></a> to <code>false</code> to hide the minimize button in the toolbar. This does not affect calls to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.minimize">Minimize</a> method.</p>
+<p>Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.isresizable"><strong>IsResizable</strong></a> to <code>false</code> to hide the resizing controls and prevent the user from resizing the window. This does not affect calls to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize">AppWindow.Resize</a> method.</p>
+<p>Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.isalwaysontop"><strong>IsAlwaysOnTop</strong></a> to <code>true</code> to keep this window on top of other windows. If you call any of the <code>AppWindow.MoveInZOrder*</code> methods, they still take effect to change the z-order of the window even if this property is <code>true</code>.</p>
+<p>Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.preferredmaximumheight"><strong>PreferredMaximumHeight</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.preferredmaximumwidth"><strong>PreferredMaximumWidth</strong></a> to constrain the maximum size that the user can stretch the window to. We recommend that you set <code>IsMaximizable</code> to <code>false</code> if you set the maximum size properties, as these properties constrain the window size even in the maximized state. These properties also affect calls to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize">AppWindow.Resize</a>; the window will not be resized larger than the specified maximum height and width.</p>
+<p>Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.preferredminimumheight"><strong>PreferredMinimumHeight</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.preferredminimumwidth"><strong>PreferredMinimumWidth</strong></a> to set the minimum size that the user can shrink the window to. These properties also affect calls to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize">AppWindow.Resize</a>; the window will not be resized smaller than the specified minimum height and width.</p>
+<h4 id="modal-windows">Modal windows</h4>
+<p>You can set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter.ismodal"><strong>IsModal</strong></a> to <code>true</code> to create a <em>modal window</em>. A modal window is a separate window that blocks interaction with its <em>owner window</em> until it is closed. However, to create a modal window, you must also set the owner window; otherwise, an exception is thrown with this message:</p>
+<pre><code class="lang-text">The parameter is incorrect.
+
+The window should have an owner when IsModal=true.
+</code></pre>
+<p>To set the owner window in a WinUI app requires Win32 interop. For more information and example code, see the AppWindow page in the WinUI Gallery sample app.</p>
+<ul>
+<li><a href="winui3gallery://item/AppWindow">Launch the WinUI Gallery app</a></li>
+<li><a href="https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/SamplePages/ModalWindow.xaml.cs">Open ModalWindow.xaml.cs on GitHub</a></li>
+</ul>
+<h3 id="apply-a-presenter">Apply a presenter</h3>
+<p>A presenter can be applied to only a single window at a time. Trying to apply the same presenter to a second window throws an exception. That means that if you have multiple windows, and you want to switch each one into a specific presentation mode, then you need to create multiple presenters of the same kind, and then apply each to its own window.</p>
+<p>When a new presenter is applied (the AppWindow.Presenter property changes), your app is notified by an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed">AppWindow.Changed</a> event on the affected AppWindow, with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didpresenterchange">AppWindowChangedEventArgs.DidPresenterChange</a> property set to <code>true</code>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you apply a modified presenter, and allow changing between presenters, be sure to keep a reference to your modified presenter so that it can be re-applied to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a>.</p>
+</div>
+<p>This example shows how to do the following:</p>
+<ul>
+<li>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.presenter">AppWindow.Presenter</a> property to get the current presenter.</li>
+<li>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter.kind">AppWindowPresenter.Kind</a> property to check what kind of configuration is currently applied.</li>
+<li>Call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter">AppWindow.SetPresenter</a> to change the current configuration.</li>
+</ul>
+<p>Here, a presenter is created, modified, and applied in the constructor for the window.</p>
+<pre><code class="lang-csharp">OverlappedPresenter presenter = OverlappedPresenter.Create();
+presenter.PreferredMinimumWidth = 420;
+presenter.PreferredMinimumHeight = 550;
+AppWindow.SetPresenter(presenter);
+</code></pre>
+<p>In the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a> that is the window content, you can get a reference to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> and the applied presenter.</p>
+<pre><code class="lang-csharp">AppWindow appWindow;
+OverlappedPresenter modifiedPresenter;
+
+private void AppWindowPage_Loaded(object sender, RoutedEventArgs e)
+{
+    appWindow = AppWindow.GetFromWindowId(XamlRoot.ContentIslandEnvironment.AppWindowId);
+    modifiedPresenter = (OverlappedPresenter)appWindow.Presenter;
+
+    appWindow.Changed += AppWindow_Changed;
+}
+
+private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
+{
+    if (args.DidPresenterChange)
+    {
+        // ConfigText is a TextBox control defined in XAML for the page.
+        ConfigText.Text = appWindow.Presenter.Kind.ToString();
+    }
+}
+
+private void CompactOverlayButton_Click(object sender, RoutedEventArgs e)
+{
+    if (appWindow.Presenter.Kind != AppWindowPresenterKind.CompactOverlay)
+    {
+        appWindow.SetPresenter(CompactOverlayPresenter.Create());
+        fullScreenButton.IsChecked = false;
+    }
+    else
+    {
+        appWindow.SetPresenter(modifiedPresenter);
+    }
+}
+
+private void FullScreenButton_Click(object sender, RoutedEventArgs e)
+{
+    if (appWindow.Presenter.Kind != AppWindowPresenterKind.FullScreen)
+    {
+        appWindow.SetPresenter(FullScreenPresenter.Create());
+        compactOverlayButton.IsChecked = false;
+    }
+    else
+    {
+        appWindow.SetPresenter(modifiedPresenter);
+    }
+}
+</code></pre>
+<h2 id="ui-framework-and-hwnd-interop">UI framework and HWND interop</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> class is available for <em>any</em> top-level HWND in your app. That means that when you're working with a desktop UI framework (including WinUI 3), you can continue to use that framework's entry point for creating a window, and attaching its content. And once you've created a window with that UI framework, you can use the windowing interop functions (see below) provided in the Windows App SDK to access the corresponding AppWindow and its methods, properties, and events.</p>
+<p>Some of the benefits of using <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> (even when working with a UI framework) are:</p>
+<ul>
+<li>Easy title bar customization; which by default maintains the Windows 11 UI (rounded corners, snap group flyout).</li>
+<li>System-provided full-screen and compact overlay (picture-in-picture) experiences.</li>
+<li>Windows Runtime (WinRT) API surface for some of the core Win32 windowing concepts.</li>
+</ul>
+<h2 id="get-the-appwindow-for-versions-of-windows-app-sdk-prior-to-13-or-other-desktop-app-frameworks">Get the AppWindow for versions of Windows App SDK prior to 1.3 (or other desktop app frameworks)</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow">Window.AppWindow</a> property is available in Windows App SDK version 1.3 and later. For earlier versions, you can use the functionally equivalent code example in this section.</p>
+<p><strong>C#.</strong> .NET wrappers for the windowing interop functions are implemented as methods of the <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.html">Microsoft.UI.Win32Interop</a> class. Also see <a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>.</p>
+<p><strong>C++.</strong> The interop functions are defined in the <a href="/windows/windows-app-sdk/api/win32/winrt-microsoft.ui.interop/">winrt/Microsoft.ui.interop.h</a> header file.</p>
+<p>The code example section below shows actual source code; but here's the recipe for retrieving an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> object given an existing window:</p>
+<ol>
+<li>Retrieve the HWND for your existing window object (for your UI framework), if you don't already have it.</li>
+<li>Pass that HWND to the <a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow">GetWindowIdFromWindow</a> interop function to retrieve a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid">WindowId</a>.</li>
+<li>Pass that WindowId to the static <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid">AppWindow.GetFromWindowId</a> method to retrieve the AppWindow.</li>
+</ol>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+private void myButton_Click(object sender, RoutedEventArgs e)
+{
+    // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
+    var hWnd =
+        WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+    // Retrieve the WindowId that corresponds to hWnd.
+    Microsoft.UI.WindowId windowId =
+        Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
+
+    // Lastly, retrieve the AppWindow for the current (XAML) WinUI 3 window.
+    Microsoft.UI.Windowing.AppWindow appWindow =
+        Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
+
+    if (appWindow != null)
+    {
+        // You now have an AppWindow object, and you can call its methods to manipulate the window.
+        // As an example, let's change the title text of the window.
+        appWindow.Title = &quot;Title text updated via AppWindow!&quot;;
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h
+#include &quot;microsoft.ui.xaml.window.h&quot; // For the IWindowNative interface.
+#include &lt;winrt/Microsoft.UI.Interop.h&gt; // For the WindowId struct and the GetWindowIdFromWindow function.
+#include &lt;winrt/Microsoft.UI.Windowing.h&gt; // For the AppWindow class.
+
+// mainwindow.xaml.cpp
+void MainWindow::myButton_Click(IInspectable const&amp;, RoutedEventArgs const&amp;)
+{
+    // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
+    auto windowNative{ this-&gt;m_inner.as&lt;::IWindowNative&gt;() };
+    HWND hWnd{ 0 };
+    windowNative-&gt;get_WindowHandle(&amp;hWnd);
+
+    // Retrieve the WindowId that corresponds to hWnd.
+    Microsoft::UI::WindowId windowId = 
+        Microsoft::UI::GetWindowIdFromWindow(hWnd);
+
+    // Lastly, retrieve the AppWindow for the current (XAML) WinUI 3 window.
+    Microsoft::UI::Windowing::AppWindow appWindow = 
+        Microsoft::UI::Windowing::AppWindow::GetFromWindowId(windowId);
+
+    if (appWindow)
+    {
+        // You now have an AppWindow object, and you can call its methods to manipulate the window.
+        // As an example, let's change the title text of the window.
+        appWindow.Title(L&quot;Title text updated via AppWindow!&quot;);
+    }
+}
+</code></pre>
+<p>For more examples of how to work with AppWindow, see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">Windowing gallery sample</a>.</p>
+<h2 id="limitations">Limitations</h2>
+<p>The Windows App SDK doesn't currently provide methods for attaching UI framework content to an AppWindow.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="windowing-overview.html">Windowing overview</a></li>
+<li><a href="../title-bar.html">Title bar customization</a></li>
+<li><a href="../../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.html">Windowing functionality migration</a></li>
+<li><a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a></li>
+<li><a href="retrieve-hwnd.html">Retrieve a window handle (HWND)</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">Windowing gallery sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/ui-input/manage-app-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

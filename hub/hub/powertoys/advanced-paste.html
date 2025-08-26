@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Advanced Paste Tool for Clipboard Management in PowerToys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Advanced Paste Tool for Clipboard Management in PowerToys ">
+    
+    <meta name="description" content="Learn how to use PowerToys Advanced Paste to transform clipboard content into any format - plain text, JSON, Markdown, or files. Includes opt-in AI-powered features and local OCR capabilities.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="advanced-paste-tool-for-clipboard-management">Advanced Paste tool for clipboard management</h1>
+
+<p>PowerToys <strong>Advanced Paste</strong> is a powerful clipboard management tool that transforms your clipboard content into any format you need. This tool enables you to paste content as plain text, markdown, JSON, or various file formats (.txt, .html, .png) using either the interface or keyboard shortcuts. Advanced Paste can extract text from images using local OCR technology and transcode audio/video files to .mp3 or .mp4 formats. All processing happens locally on your machine, with an optional AI-powered feature that requires an OpenAI API key.</p>
+<h2 id="get-started-with-advanced-paste">Get started with Advanced Paste</h2>
+<p>Get familiar with the features and capabilities of Advanced Paste.</p>
+<h3 id="enable-advanced-paste">Enable Advanced Paste</h3>
+<p>To start using Advanced Paste, enable it in the PowerToys Settings.</p>
+<h3 id="activate-the-advanced-paste-window">Activate the Advanced Paste window</h3>
+<p>Open the <strong>Advanced Paste</strong> window with the activation shortcut (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>). See the <a href="#settings">Settings</a> section for more information on customizing the activation shortcut and additional shortcut actions.</p>
+<h2 id="settings">Settings</h2>
+<p>From the Settings menu, the following options can be configured:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enable Paste with AI</td>
+<td style="text-align: left;">Enables the AI-powered paste feature. An OpenAI API key is required (requires an account on <a href="https://platform.openai.com/docs/overview">platform.openai.com</a>). See <a href="#paste-text-with-ai">Paste text with AI</a> for more information.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Enable advanced AI</td>
+<td style="text-align: left;">Enables the Advanced AI feature which allows <a href="/semantic-kernel/overview/">Semantic Kernel</a> to be used to define a chain of actions to be performed when using &quot;Paste with AI&quot;. See <a href="#paste-with-advanced-ai">Paste with Advanced AI</a> for more information.<br><br>This setting is off and disabled when Enable Paste with AI is disabled. When enabling Enable Paste with AI, Enable advanced AI is also enabled by default, allowing users immediate access to the feature.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clipboard history</td>
+<td style="text-align: left;">Enable to automatically save clipboard history.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Automatically close the Advanced Paste window after it loses focus</td>
+<td style="text-align: left;">Determines whether the Advanced Paste window will close after focus is lost from the window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Custom format preview</td>
+<td style="text-align: left;">Enable to preview the output of the custom format before pasting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Actions (Create and manage Advanced Paste custom actions)</td>
+<td style="text-align: left;">When using Paste with AI, save the prompts you frequently use and give them descriptive names, so you can easily select them from the Advanced Paste window without having to type them out. You can also assign each action a keyboard command, so you can execute them without opening the Advanced Paste window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Open Advanced Paste window shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to open the <strong>Advanced Paste</strong> window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Paste as plain text directly shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to paste as plain text without opening the <strong>Advanced Paste</strong> window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Paste as Markdown directly shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to paste as Markdown without opening the <strong>Advanced Paste</strong> window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Paste as JSON directly shortcut</td>
+<td style="text-align: left;">The customizable keyboard command to paste as JSON without opening the <strong>Advanced Paste</strong> window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Additional actions | Image to Text</td>
+<td style="text-align: left;">Turn on/off the Image to text paste action and configure the customizable keyboard command.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Additional actions | Paste as file</td>
+<td style="text-align: left;">Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Additional actions | Transcode audio / video</td>
+<td style="text-align: left;">Turn on/off both the Transcode audio and video paste actions. The transcode settings are all enabled by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Additional actions | Transcode to .mp3</td>
+<td style="text-align: left;">Turn on/off the Transcode to .mp3 paste action and configure the customizable keyboard command to transcode audio or video on the clipboard without opening the <strong>Advanced Paste</strong> window.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Additional actions | Transcode to .mp4 (H.264/AAC)</td>
+<td style="text-align: left;">Turn on/off the Transcode to .mp4 (H.264/AAC) paste action and configure the customizable keyboard command to transcode video on the clipboard without opening the <strong>Advanced Paste</strong> window.</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>It's possible to set <kbd>Ctrl</kbd>+<kbd>V</kbd> as an activation shortcut. This is not recommended, as overriding this shortcut may have unintended consequences.</p>
+</div>
+<h2 id="advanced-text-paste">Advanced text paste</h2>
+<p>Advanced Paste includes several text-based paste options. These options are available in the <strong>Advanced Paste</strong> window, which can be opened using the activation shortcut. You can also use the customizable keyboard commands to directly invoke a paste action with quick keys.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-advanced-paste.png" alt="Advanced Paste screenshot">
+</span>
+</p>
+<h3 id="paste-as-plain-text">Paste as Plain Text</h3>
+<p><strong>Paste as Plain Text</strong> enables you to paste text stored in your clipboard, excluding any text-formatting, using a quick key shortcut. Any formatting included with the clipboard text will be replaced with an unformatted version of the text.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-paste-as-plain-text.png" alt="Paste as Plain Text screenshot">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Paste as Plain Text is a feature that runs locally and doesn't use AI.</p>
+</div>
+<h3 id="paste-as-json">Paste as JSON</h3>
+<p><strong>Paste as JSON</strong> enables you to paste text stored in your clipboard, updating any text-formatting to JSON, using a quick key shortcut. Any formatting included with the clipboard text will be replaced with a JSON formatted version of the text.</p>
+<p>Sample input:</p>
+<pre><code class="lang-xml">&lt;note&gt;
+    &lt;to&gt;Mr. Smith&lt;/to&gt;
+    &lt;from&gt;Ms. Nguyen&lt;/from&gt;
+    &lt;body&gt;Do you like PowerToys?&lt;/body&gt;
+&lt;/note&gt;
+</code></pre>
+<p>JSON output:</p>
+<pre><code class="lang-json">{
+    &quot;note&quot;: {
+        &quot;to&quot;: &quot;Mr. Smith&quot;,
+        &quot;from&quot;: &quot;Ms. Nguyen&quot;,
+        &quot;body&quot;: &quot;Do you like PowerToys?&quot;
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Paste as JSON is a feature that runs locally and doesn't use AI.</p>
+</div>
+<h3 id="paste-as-markdown">Paste as Markdown</h3>
+<p><strong>Paste as Markdown</strong> enables you to paste text stored in your clipboard, updating any text-formatting to markdown, using a quick key shortcut. Any formatting included with the clipboard text will be replaced with a markdown formatted version of the text.</p>
+<p>Sample input:</p>
+<pre><code class="lang-html">&lt;b&gt;Paste&lt;/b&gt; &lt;i&gt;as&lt;/i&gt; &lt;a href=&quot;https://en.wikipedia.org/wiki/Markdown&quot;&gt;Markdown&lt;/a&gt;
+</code></pre>
+<p>Markdown output:</p>
+<pre><code class="lang-md">**Paste** *as* [Markdown](https://en.wikipedia.org/wiki/Markdown)
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Paste as Markdown is a feature that runs locally and doesn't use AI.</p>
+</div>
+<h3 id="paste-as-txt-file">Paste as .txt file</h3>
+<p><strong>Paste as .txt file</strong> enables you to paste text stored in your clipboard as a .txt file with an auto-generated file name. You can optionally set a quick key shortcut in settings.</p>
+<p>Sample input:</p>
+<pre><code class="lang-text">Hello World!
+</code></pre>
+<p>If pasting files is accepted within the application that you are using (e.g. File Explorer), then the paste as .txt file action will take the input text and paste a .txt file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Paste as .txt file is a feature that runs locally and doesn't use AI.</p>
+</div>
+<h3 id="paste-as-html-file">Paste as .html file</h3>
+<p><strong>Paste as .html file</strong> enables you to paste html data stored in your clipboard as a .html file with an auto-generated file name. This is especially useful for saving a part of a webpage from a browser - including links, formatted text and images. You can optionally set a quick key shortcut in settings.</p>
+<p>If pasting files is accepted within the application that you are using (e.g. File Explorer), then the paste as .html file action will take the input data and paste a .html file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Paste as .html file is a feature that runs locally and doesn't use AI.</p>
+</div>
+<h3 id="paste-text-with-ai">Paste text with AI</h3>
+<p>When you paste text with AI, the text is analyzed and formatted based on the context of the text and the prompt provided to the OpenAI call. This feature requires that an OpenAI API key be provided in the PowerToys settings, and that you have available credits in your account.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use this feature and see an error <code>API key quota exceeded</code>, that means you do not have credits in your OpenAI account and would need to purchase them.</p>
+</div>
+<p>Some examples of how this feature can be used include:</p>
+<ul>
+<li><strong>Summarize text</strong>: Take long text from the clipboard and ask the AI to summarize it.</li>
+<li><strong>Translate text</strong>: Take the text from the clipboard in one language and ask the AI to translate it to another language.</li>
+<li><strong>Generate code</strong>: Take a description of a function from the clipboard and ask the AI to generate the code for it.</li>
+<li><strong>Transform text</strong>: Take text from the clipboard and ask the AI to rewrite it in a specific style, such as a professional email or a casual message.</li>
+<li><strong>Stylize text</strong>: Take text from the clipboard and ask the AI to rewrite it in the style of a well-known author, book, or speaker.</li>
+</ul>
+<p>You could ask the AI to paste the text as if it were written by Mark Twain or Shakespeare, for example, or to summarize a long case study. The possibilities are endless.</p>
+<p>Sample input:</p>
+<blockquote>
+<p>The new Advanced Paste feature in PowerToys is now available. You can use it to save time and improve your writing.</p>
+</blockquote>
+<p>AI output when prompting to &quot;Format the text as if it were written by Mark Twain&quot;:</p>
+<blockquote>
+<p>Say, have you heard the news? The newfangled Advanced Paste feature in PowerToys is finally here! It's a nifty tool that's sure to save you time and spruce up your writing. If you're in the market for a bit of writing wizardry, this here Advanced Paste just might be the ticket for ya.</p>
+</blockquote>
+<div class="NOTE">
+<h5>Note</h5>
+<p>As with any AI tool, the quality of the output is dependent on the quality of the input. The more context you provide, the better the AI will be able to understand and respond to your request. Be sure to carefully review the output before using it. Please see OpenAI's <a href="https://openai.com/policies/privacy-policy/">privacy</a> and <a href="https://openai.com/policies/terms-of-use/">terms</a> pages for more info on AI usage in this feature.</p>
+</div>
+<h3 id="paste-with-advanced-ai">Paste with Advanced AI</h3>
+<p>This feature uses <a href="/semantic-kernel/overview/">Semantic Kernel</a> to allow you to define a chain of actions to be performed when using &quot;Paste with AI&quot;. Using this feature you can:</p>
+<ul>
+<li>Work with non-text input such as images.</li>
+<li>Produce non-text output like files.</li>
+<li>Chain multiple actions together and execute them in sequence. For example, Image to text --&gt; Text to JSON text --&gt; JSON text to .txt file.</li>
+<li>Produce meaningful AI-generated error messages.</li>
+</ul>
+<p>For these example commands, assume there is an image in the clipboard that contains some text that you would like to save to a text file in another language. You can phrase multiple steps explicitly:</p>
+<pre><code>Convert this image to text using OCR, translate the text to French, and then save the text as a .txt file.
+</code></pre>
+<p>Or you can phrase the steps to be more implicit:</p>
+<pre><code>Translate to French and save as a .txt file.
+</code></pre>
+<h2 id="advanced-image-paste">Advanced image paste</h2>
+<p>Advanced Paste includes several image-based paste options. These options are available in the <strong>Advanced Paste</strong> window, which can be opened using the activation shortcut. You can optionally set a quick key shortcut in settings.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-advanced-paste-img.png" alt="Advanced Paste image screenshot">
+</span>
+</p>
+<h3 id="paste-image-to-text">Paste Image to text</h3>
+<p><strong>Paste image to text</strong> enables you to extract the text from an image in your clipboard and quickly paste the extracted text, using a quick key shortcut.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Paste as Image to text is a feature that runs locally using local OCR.</p>
+</div>
+<h3 id="paste-as-png-file">Paste as .png file</h3>
+<p><strong>Paste as .png file</strong> enables you to quickly paste an image format, like a bitmap, to a .png file. You can optionally create a quick key shortcut to invoke this paste action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Paste as .png file is a feature that runs locally and doesn't use AI.</p>
+</div>
+<h2 id="transcode-to-audio--video">Transcode to audio / video</h2>
+<p>Two paste options that work with media files are available in the <strong>Advanced Paste</strong> window. These options are available in the <strong>Advanced Paste</strong> window, which can be opened using the activation shortcut. You can also use the customizable keyboard commands to directly invoke a paste action with quick keys. To the extent possible, quality settings (e.g. video dimensions, audio bitrate) from the source file are maintained, as is any container metadata (e.g. title, album).</p>
+<p>Paste actions are also cancellable via a cancel (<strong>X</strong>) button:</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-advanced-paste-cancel.png" alt="A screenshot of the PowerToys Advanced Paste window processing a transcode operation with an available cancel button.">
+</span>
+</p>
+<p>This is useful for media transcoding but also for other potentially long-running actions such as the Paste with AI operations.</p>
+<p>Paste actions for transcoding display their fractional progress via a progress-ring - this may be useful for other paste actions in future, but is for now only used by media transcoding.</p>
+<p>The <a href="/uwp/api/windows.media.transcoding">Windows.Media.Transcoding</a> APIs are used in transcoding the audio and video files. The list of supported codecs can be found <a href="/windows/uwp/audio-video-camera/supported-codecs">here</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Transcode to audio / video features run locally and don't use AI.</p>
+</div>
+<h3 id="transcode-to-mp3">Transcode to .mp3</h3>
+<p>The Transcode to .mp3 feature works with both audio and video files. It extracts the audio channel from the media on the clipboard and saves it as an .mp3 file.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-advanced-paste-transcode.png" alt="A screenshot of the PowerToys Advanced Paste window with the Transcode to .mp3 and Transcode to .mp4 (H.264/AAC) options enabled.">
+</span>
+</p>
+<p>This feature could be used to extract audio from combined audio/video files to save disk space and to work with audio-only apps and devices.</p>
+<h3 id="transcode-to-mp4-h264aac">Transcode to .mp4 (H.264/AAC)</h3>
+<p>The Transcode to .mp4 (H.264/AAC) feature transcodes video files to use the H.264 video codec and AAC audio codec (if audio is present) and saves the streams to an .mp4 file. This feature is useful for transcoding existing video files to a more widely supported format.</p>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/advanced-paste.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

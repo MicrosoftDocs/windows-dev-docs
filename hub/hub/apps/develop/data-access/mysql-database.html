@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use a MySQL database in a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use a MySQL database in a Windows app ">
+    
+    <meta name="description" content="Learn how to connect to a MySQL database from your Windows app, and test your connection using sample code.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-a-mysql-database-in-a-windows-app">Use a MySQL database in a Windows app</h1>
+
+<p>This article contains the steps required to enable working with a MySQL database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use AI assistance to <a href="#building-a-connection-string-with-github-copilot">create a MySQL connection string with GitHub Copilot</a>.</p>
+</div>
+<h2 id="set-up-your-solution">Set up your solution</h2>
+<p>This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to a MySQL database. Follow these steps to install the package and try out the example code to read data from an existing MySQL database.</p>
+<ol>
+<li>Open the <strong>Package Manager Console</strong> (View -&gt; Other Windows -&gt; Package Manager Console).</li>
+<li>Use the command <code>Install-Package MySql.Data</code> to install the NuGet package for the MySQL core class library.</li>
+</ol>
+<p>This will allow you to programmatically access MySQL databases.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="https://dev.mysql.com/downloads/connector/net/">MySQL Connector/NET</a> version 6.4.4 or later is required to use the <code>MySql.Data</code> package with Windows authentication.</p>
+</div>
+<h2 id="test-your-connection-using-sample-code">Test your connection using sample code</h2>
+<p>The following is an example of connecting to and reading from a remote MySQL database. Note that the server address and database name will need to be customized.</p>
+<pre><code class="lang-csharp">const string M_str_sqlcon = &quot;Server=myServerAddress;Database=myDataBase;IntegratedSecurity=yes;Uid=auth_windows;&quot;;
+using (var mySqlCn = new MySqlConnection(M_str_sqlcon))
+{
+    using (var mySqlCmd = new MySqlCommand(&quot;select * from table1&quot;, mySqlCn))
+    {
+        mySqlCn.Open();
+        using (MySqlDataReader mySqlReader = mySqlCmd.ExecuteReader(CommandBehavior.CloseConnection))
+        {
+            while (mySqlReader.Read())
+            {
+                Debug.WriteLine($&quot;{mySqlReader.GetString(0)}:{mySqlReader.GetString(1)}&quot;);
+            }
+        }
+    }
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>In production applications, connection information should be stored securely in app configuration (see <a href="/visualstudio/azure/vs-azure-tools-connected-services-app-configuration"><strong>Adding Azure App Configuration by using Visual Studio Connected Services</strong></a>). Connection strings and other secrets should not be hard-coded.</p>
+</div>
+<h2 id="building-a-connection-string-with-github-copilot">Building a connection string with GitHub Copilot</h2>
+<p>You can use GitHub Copilot to build the connection string for your MySQL database. You can customize the prompt to create a connection string per your requirements.</p>
+<p>The following text shows an example prompt for Copilot Chat that generates a connection string similar to the one shown in the previous code snippet:</p>
+<pre><code class="lang-copilot-prompt">Show me how to create a MySQL connection string to a server named myServerAddress and a database called myDatabase. Use Windows authentication.
+</code></pre>
+<p>GitHub Copilot is powered by AI, so surprises and mistakes are possible. For more information, see <a href="https://aka.ms/copilot-general-use-faqs">Copilot FAQs</a>.</p>
+<p>Learn more about <a href="/visualstudio/ide/visual-studio-github-copilot-install-and-states">GitHub Copilot in Visual Studio</a> and <a href="https://code.visualstudio.com/docs/copilot/overview">GitHub Copilot in VS Code</a>.</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="sql-server-database.html">Use a SQL Server database in a Windows app</a></li>
+<li><a href="index.html">Data access in Windows apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-access/mysql-database.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

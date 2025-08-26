@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Item templates for list view </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Item templates for list view ">
+    
+    <meta name="description" content="Get item templates that you can use with a ListView control to display single, double, triple, and tabular list items.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="item-templates-for-list-view">Item templates for list view</h1>
+
+<p>This section contains item templates that you can use with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView"><strong>ListView</strong></a> control. Use these templates to get the look of common app types.</p>
+<p>To demonstrate data binding, these templates bind <strong>ListViewItems</strong> to the example Recording class from the <a href="/windows/uwp/data-binding/data-binding-quickstart">data binding overview</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Currently, when a <strong>DataTemplate</strong> contains multiple controls (for example, more than a single <strong>TextBlock</strong>), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties"><strong>AutomationProperties.Name</strong></a> on the root element of the <strong>DataTemplate</strong>. For more on accessibility, see <a href="../accessibility/accessibility-overview.html">Accessibility overview</a>.</p>
+</div>
+<h2 id="single-line-list-item">Single line list item</h2>
+<p>Use this template to display a list of items with an image and a single line of text.</p>
+<p><img src="images/listitems/singlelineexample.png" alt="single line list item example">
+<img src="images/listitems/singlelineicon.png" alt="single line list item"></p>
+<pre><code class="lang-xaml">&lt;ListView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;SingleLineDataTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Height=&quot;44&quot; Padding=&quot;12&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;Image Source=&quot;Placeholder.png&quot; Height=&quot;16&quot; Width=&quot;16&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot; VerticalAlignment=&quot;Center&quot; Style=&quot;{ThemeResource BaseTextBlockStyle}&quot; Foreground=&quot;{ThemeResource SystemControlPageTextBaseHighBrush}&quot; Margin=&quot;12,0,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h2 id="double-line-list-item">Double line list item</h2>
+<p>Use this template to display a list of items with an image and two lines of text.</p>
+<p><img src="images/listitems/doublelineexample.png" alt="double line list item with icon example">
+<img src="images/listitems/doublelineicon.png" alt="double line list item with icon"></p>
+<pre><code class="lang-xaml">&lt;ListView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;DoubleLineDataTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Height=&quot;64&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;Ellipse Height=&quot;48&quot; Width=&quot;48&quot; VerticalAlignment=&quot;Center&quot;&gt;
+                    &lt;Ellipse.Fill&gt;
+                        &lt;ImageBrush ImageSource=&quot;Placeholder.png&quot;/&gt;
+                    &lt;/Ellipse.Fill&gt;
+                &lt;/Ellipse&gt;
+                &lt;StackPanel Orientation=&quot;Vertical&quot; VerticalAlignment=&quot;Center&quot; Margin=&quot;12,0,0,0&quot;&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot;  Style=&quot;{ThemeResource BaseTextBlockStyle}&quot; Foreground=&quot;{ThemeResource SystemControlPageTextBaseHighBrush}&quot; /&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind ArtistName}&quot; Style=&quot;{ThemeResource BodyTextBlockStyle}&quot; Foreground=&quot;{ThemeResource SystemControlPageTextBaseMediumBrush}&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h2 id="triple-line-list-item">Triple line list item</h2>
+<p>Use this template to display a list of items with three lines of text.</p>
+<p><img src="images/listitems/triplelineexample.png" alt="triple line list item example">
+<img src="images/listitems/tripleline.png" alt="triple line list item"></p>
+<pre><code class="lang-xaml">&lt;ListView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;TripleLineDataTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Height=&quot;84&quot; Padding=&quot;20&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot;  Style=&quot;{ThemeResource BaseTextBlockStyle}&quot; Margin=&quot;0,4,0,0&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind ArtistName}&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot; Opacity=&quot;.8&quot; Margin=&quot;0,4,0,0&quot;/&gt;
+                &lt;TextBlock Text=&quot;{x:Bind ReleaseDateTime}&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot; Opacity=&quot;.6&quot; Margin=&quot;0,4,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h2 id="table-list-item">Table list item</h2>
+<p>Use this template to display a list of items with text in defined columns.</p>
+<p><img src="images/listitems/tablelist.png" alt="table list item example"></p>
+<pre><code class="lang-xaml">&lt;ListView  ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;ListView.HeaderTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;Grid Padding=&quot;12&quot; Background=&quot;{ThemeResource SystemBaseLowColor}&quot;&gt;
+                &lt;Grid.ColumnDefinitions&gt;
+                    &lt;ColumnDefinition Width=&quot;408&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;360&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;360&quot;/&gt;
+                &lt;/Grid.ColumnDefinitions&gt;
+                &lt;TextBlock Text=&quot;Composition&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock Grid.Column=&quot;1&quot; Text=&quot;Artist&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot;/&gt;
+                &lt;TextBlock Grid.Column=&quot;2&quot; Text=&quot;Release Date&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot;/&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.HeaderTemplate&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;TableDataTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;Grid Height=&quot;48&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;Grid.ColumnDefinitions&gt;
+                    &lt;ColumnDefinition Width=&quot;48&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;360&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;360&quot;/&gt;
+                    &lt;ColumnDefinition Width=&quot;360&quot;/&gt;
+                &lt;/Grid.ColumnDefinitions&gt;
+                &lt;Ellipse Height=&quot;32&quot; Width=&quot;32&quot; VerticalAlignment=&quot;Center&quot;&gt;
+                    &lt;Ellipse.Fill&gt;
+                        &lt;ImageBrush ImageSource=&quot;Placeholder.png&quot;/&gt;
+                    &lt;/Ellipse.Fill&gt;
+                &lt;/Ellipse&gt;
+                &lt;TextBlock Grid.Column=&quot;1&quot; VerticalAlignment=&quot;Center&quot; Style=&quot;{ThemeResource BaseTextBlockStyle}&quot; Text=&quot;{x:Bind CompositionName}&quot; /&gt;
+                &lt;TextBlock Grid.Column=&quot;2&quot; VerticalAlignment=&quot;Center&quot; Text=&quot;{x:Bind ArtistName}&quot;/&gt;
+                &lt;TextBlock Grid.Column=&quot;3&quot; VerticalAlignment=&quot;Center&quot; Text=&quot;{x:Bind ReleaseDateTime}&quot;/&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView class</a></li>
+<li><a href="/windows/uwp/data-binding/data-binding-quickstart">Data binding overview</a></li>
+<li><a href="../accessibility/accessibility-overview.html">Accessibility overview</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView">ListView and GridView sample</a></li>
+<li><a href="/windows/uwp/files/thumbnails">Thumbnail images</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/item-templates-listview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

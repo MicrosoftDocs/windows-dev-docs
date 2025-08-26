@@ -1,0 +1,587 @@
+{
+  "source_base_path": "/home/runner/work/windows-dev-docs/windows-dev-docs/landing/arm-docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "add-arm-support.md",
+      "output": {
+        ".html": {
+          "relative_path": "add-arm-support.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "apps-on-arm-program-compat-troubleshooter.md",
+      "output": {
+        ".html": {
+          "relative_path": "apps-on-arm-program-compat-troubleshooter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "apps-on-arm-troubleshooting-arm32.md",
+      "output": {
+        ".html": {
+          "relative_path": "apps-on-arm-troubleshooting-arm32.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "apps-on-arm-troubleshooting-x86.md",
+      "output": {
+        ".html": {
+          "relative_path": "apps-on-arm-troubleshooting-x86.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "apps-on-arm-x86-emulation.md",
+      "output": {
+        ".html": {
+          "relative_path": "apps-on-arm-x86-emulation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "arm32-to-arm64.md",
+      "output": {
+        ".html": {
+          "relative_path": "arm32-to-arm64.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "arm64ec-abi.md",
+      "output": {
+        ".html": {
+          "relative_path": "arm64ec-abi.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "arm64ec-build.md",
+      "output": {
+        ".html": {
+          "relative_path": "arm64ec-build.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "arm64ec.md",
+      "output": {
+        ".html": {
+          "relative_path": "arm64ec.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "arm64x-build.md",
+      "output": {
+        ".html": {
+          "relative_path": "arm64x-build.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "arm64x-pe.md",
+      "output": {
+        ".html": {
+          "relative_path": "arm64x-pe.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "breadcrumb/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "breadcrumb/toc.html"
+        },
+        ".json": {
+          "relative_path": "breadcrumb/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "create-arm-vm.md",
+      "output": {
+        ".html": {
+          "relative_path": "create-arm-vm.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "dev-kit/history.md",
+      "output": {
+        ".html": {
+          "relative_path": "dev-kit/history.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "dev-kit/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "dev-kit/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Arm64Scaled.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Arm64Scaled.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Capture.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Capture.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Capture2.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Capture2.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Capture3.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Capture3.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Capture4.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Capture4.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Capture5.PNG",
+      "output": {
+        "resource": {
+          "relative_path": "images/Capture5.PNG"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/app-types.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/app-types.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm-binary-approaches.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm-binary-approaches.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm-tools.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm-tools.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm-transformation-graphic.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm-transformation-graphic.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm64-x64-compatible-binaries.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm64-x64-compatible-binaries.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm64ec-incremental-update.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm64ec-incremental-update.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm64ec-task-manager.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm64ec-task-manager.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm64ec-vs-installer.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm64ec-vs-installer.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm64ec-vs-new-platform.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm64ec-vs-new-platform.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm64ec.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm64ec.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/arm64x-build.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/arm64x-build.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/buildVideoStillScaled.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/buildVideoStillScaled.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/administrator-account.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/administrator-account.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/inbound-port-rules.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/inbound-port-rules.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/instance-details-crop.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/instance-details-crop.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/instance-details-image-crop.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/instance-details-image-crop.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/instance-details-image.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/instance-details-image.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/instance-details-size-crop.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/instance-details-size-crop.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/instance-details-size.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/instance-details-size.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/instance-details.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/instance-details.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/next-steps.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/next-steps.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/portal-quick-start-9.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/portal-quick-start-9.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/remote-desktop.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/remote-desktop.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/review-create.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/review-create.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/select-a-vm-size.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/select-a-vm-size.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/select-an-image-search.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/select-an-image-search.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/select-an-image-select-crop.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/select-an-image-select-crop.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/select-an-image-select.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/select-an-image-select.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/create-arm-vm/validation.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/create-arm-vm/validation.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/project-volterra-device2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/project-volterra-device2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/project-volterra.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/project-volterra.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/qualcomm-devkit.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/qualcomm-devkit.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/windowsdevkit2023-side.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/windowsdevkit2023-side.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "iso.md",
+      "output": {
+        ".html": {
+          "relative_path": "iso.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Discover and select camera capabilities with camera profiles </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Discover and select camera capabilities with camera profiles ">
+    
+    <meta name="description" content="Learn how to use camera profiles to support specific resolutions, frame rates, simultaneous access to multiple cameras, and and HDR in a WinUI 3 app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="discover-and-select-camera-capabilities-with-camera-profiles-in-a-winui-3-app">Discover and select camera capabilities with camera profiles in a WinUI 3 app</h1>
+
+<p>This article shows how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR.</p>
+<h2 id="about-camera-profiles">About camera profiles</h2>
+<p>Cameras on different devices support different capabilities including the set of supported capture resolutions, frame rate for video captures, and whether HDR or variable frame rate captures are supported. A set of supported capabilities is defined in a <a href="/uwp/api/Windows.Media.Capture.MediaCaptureVideoProfileMediaDescription"><strong>MediaCaptureVideoProfileMediaDescription</strong></a> object. A camera profile, represented by a <a href="/uwp/api/Windows.Media.Capture.MediaCaptureVideoProfile"><strong>MediaCaptureVideoProfile</strong></a> object, has three collections of media descriptions; one for photo capture, one for video capture, and another for video preview.</p>
+<p>Before initializing your <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a> object, you can query the capture devices on the current device to see what profiles are supported. When you select a supported profile, you know that the capture device supports all of the capabilities in the profile's media descriptions. This eliminates the need for a trial and error approach to determining which combinations of capabilities are supported on a particular device.</p>
+<h2 id="find-a-camera-that-supports-camera-profiles">Find a camera that supports camera profiles</h2>
+<p>To use camera profiles, you must first check for a camera device that supports the use of camera profiles. The example below shows how to use the <a href="/uwp/api/windows.devices.enumeration.deviceinformation.findallasync"><strong>DeviceInformation.FindAllAsync</strong></a> method to retrieve a list of all available video capture devices on either the front or back panel of the current device. It loops through all of the devices in the list, calling the static method, <a href="/uwp/api/windows.media.capture.mediacapture.isvideoprofilesupported"><strong>IsVideoProfileSupported</strong></a>, for each device to see if it supports video profiles.</p>
+<p>If a device that supports camera profiles is found on the specified panel, the <a href="/uwp/api/windows.devices.enumeration.deviceinformation.id"><strong>Id</strong></a> value, containing the device's ID string, is returned.</p>
+<div class="lang-xaml">
+</div>
+<p>If the device ID returned from the <strong>GetVideoProfileSupportedDeviceIdAsync</strong> helper method is null or an empty string, there is no device on the specified panel that supports camera profiles. In this case, you should initialize your media capture device without using profiles.</p>
+<div class="lang-xaml">
+</div>
+<h2 id="select-a-profile-based-on-supported-resolution-and-frame-rate">Select a profile based on supported resolution and frame rate</h2>
+<p>To select a profile with particular capabilities, such as with the ability to achieve a particular resolution and frame rate, use the method shown previously in this article to get the ID of a capture device that supports using camera profiles.</p>
+<p>Create a new <a href="/uwp/api/Windows.Media.Capture.MediaCaptureInitializationSettings"><strong>MediaCaptureInitializationSettings</strong></a> object, passing in the selected device ID. Call the static method <a href="/uwp/api/windows.media.capture.mediacapture.findallvideoprofiles"><strong>MediaCapture.FindAllVideoProfiles</strong></a> to get a list of all camera profiles supported by the device.</p>
+<p>This example selects a profile that contains a <a href="/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription"><strong>SupportedRecordMediaDescription</strong></a> object where the <a href="/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.width"><strong>Width</strong></a>, <a href="/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.height"><strong>Height</strong></a>, and <a href="/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.framerate"><strong>FrameRate</strong></a> properties match the requested values. If a match is found, <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings.videoprofile"><strong>VideoProfile</strong></a> and <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings.recordmediadescription"><strong>RecordMediaDescription</strong></a> of the <strong>MediaCaptureInitializationSettings</strong> are set to the values returned from the query. If no match is found, the default profile is used.</p>
+<div class="lang-xaml">
+</div>
+<p>After you populate the <strong>MediaCaptureInitializationSettings</strong> with your desired camera profile, you simply call <a href="/uwp/api/windows.media.capture.mediacapture.initializeasync"><strong>InitializeAsync</strong></a> on your media capture object to configure it to the desired profile.</p>
+<div class="lang-xaml">
+</div>
+<h2 id="select-devices-with-knownvideoprofile">Select devices with KnownVideoProfile</h2>
+<p>You can use the <a href="/uwp/api/windows.media.capture.frames.mediaframesourcegroup"><strong>MediaFrameSourceGroup</strong></a> class to get camera profiles with specific capabilities before initializing the <strong>MediaCapture</strong> object. Frame source groups allow device manufacturers to represent groups of sensors or capture capabilities as a single virtual device. This enables computational photography scenarios such as using depth and color cameras together, but can also be used to select camera profiles for simple capture scenarios. For more information on using <strong>MediaFrameSourceGroup</strong>, see <a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a>.</p>
+<p>The example below shows how to use <strong>MediaFrameSourceGroup</strong> to find a camera profile that supports that supports the desired scenario. Call <a href="/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync"><strong>MediaFrameSourceGroup.FindAllAsync</strong></a> to get a list of all media frame source groups available on the current device. Loop through each source group and call <a href="/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles"><strong>MediaCapture.FindKnownVideoProfiles</strong></a> to get a list of all of the video profiles for the current source group that support the specified <a href="/uwp/api/windows.media.capture.knownvideoprofile">KnownCameraProfile</a>, in this example the value <strong>KnownVideoProfile.HighQualityPhoto</strong> is used. Other values include support for HDR and variable photo sequences, for example. If a profile that meets the requested criteria is found, create a new <strong>MediaCaptureInitializationSettings</strong> object and set the <strong>VideoProfile</strong> to the select profile and the <strong>VideoDeviceId</strong> to the <strong>Id</strong> property of the current media frame source group. Use this <strong>MediaCaptureInitializationSettings</strong> object to initialize the <strong>MediaCapture</strong> object.</p>
+<div class="lang-xaml">
+</div>
+<h2 id="determine-if-a-device-supports-simultaneous-photo-and-video-capture">Determine if a device supports simultaneous photo and video capture</h2>
+<p>Many devices support capturing photos and video simultaneously. To determine if a capture device supports this, call <a href="/uwp/api/windows.media.capture.mediacapture.findallvideoprofiles"><strong>MediaCapture.FindAllVideoProfiles</strong></a> to get all of the camera profiles supported by the device. Use a link query to find a profile that has at least one entry for both <a href="/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedphotomediadescription"><strong>SupportedPhotoMediaDescription</strong></a> and <a href="/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription"><strong>SupportedRecordMediaDescription</strong></a> which means that the profile supports simultaneous capture.</p>
+<div class="lang-xaml">
+</div>
+<p>You can refine this query to look for profiles that support specific resolutions or other capabilities in addition to simultaneous video record. You can also use the <a href="/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles"><strong>MediaCapture.FindKnownVideoProfiles</strong></a> and specify the <a href="/uwp/api/Windows.Media.Capture.KnownVideoProfile"><strong>BalancedVideoAndPhoto</strong></a> value to retrieve profiles that support simultaneous capture, but querying all profiles will provide more complete results.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="camera.html">Camera</a></li>
+<li><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/camera-profiles.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

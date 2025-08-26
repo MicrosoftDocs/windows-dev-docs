@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>A Windows App SDK migration of the UWP PhotoLab sample app (C#) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="A Windows App SDK migration of the UWP PhotoLab sample app (C#) ">
+    
+    <meta name="description" content="A case study of taking the C# [UWP PhotoLab sample app](/samples/microsoft/windows-appsample-photo-lab/photolab-sample/), and migrating it to the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="a-windows-app-sdk-migration-of-the-uwp-photolab-sample-app-c">A Windows App SDK migration of the UWP PhotoLab sample app (C#)</h1>
+
+<p>This topic is a case study of taking the C# <a href="/samples/microsoft/windows-appsample-photo-lab/photolab-sample/">UWP PhotoLab sample app</a>, and migrating it to the Windows App SDK.</p>
+<p>Begin by <a href="https://github.com/microsoft/windows-appsample-photo-lab/tree/master/">cloning the UWP sample app's repo</a>, and opening the solution in <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see <a href="overall-migration-strategy.html">Overall migration strategy</a>. It's particularly important to see <a href="what-is-supported.html">What's supported when porting from UWP to WinUI 3</a> so that you can ensure that all the features you need for your app are supported before you attempt migration.</p>
+</div>
+<h2 id="install-tools-for-the-windows-app-sdk">Install tools for the Windows App SDK</h2>
+<p>To set up your development computer, see <a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You'll find release notes topics along with the <a href="../release-channels.html">Windows App SDK release channels</a> topic. There are release notes for each channel. Be sure to check any <em>limitations and known issues</em> in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.</p>
+</div>
+<h2 id="create-a-new-project">Create a new project</h2>
+<p>In Visual Studio, create a new C# project from the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template. Name the project <em>PhotoLabWinUI</em>, uncheck <strong>Place solution and project in the same directory</strong>. You can target the most recent release (not preview) of the client operating system.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We'll be referring to the UWP version of the sample project (the one that you cloned from its <a href="https://github.com/microsoft/windows-appsample-photo-lab/tree/master/">repo</a>) as the <em>source</em> solution/project. We'll be referring to the Windows App SDK version as the <em>target</em> solution/project.</p>
+</div>
+<h2 id="the-order-in-which-well-migrate-the-code">The order in which we'll migrate the code</h2>
+<p><strong>MainPage</strong> is an important and prominent piece of the app. But if we were to begin by migrating that, then we'd soon realize that <strong>MainPage</strong> has a dependency on the <strong>DetailPage</strong> view; and then that <strong>DetailPage</strong> has a dependency on the <strong>ImageFileInfo</strong> model. So for this walkthrough we'll take this approach.</p>
+<ul>
+<li>We'll begin by copying over the asset files.</li>
+<li>Then we'll migrate the <strong>ImageFileInfo</strong> model.</li>
+<li>Next we'll migrate the <strong>App</strong> class (since that needs changes making to it that <strong>DetailPage</strong>, <strong>MainPage</strong>, and <strong>LoadedImageBrush</strong> will depend on).</li>
+<li>Then we'll migrate the <strong>LoadedImageBrush</strong> class.</li>
+<li>Then we'll begin migrating the views, starting with <strong>DetailPage</strong> first.</li>
+<li>And we'll finish up by migrating the <strong>MainPage</strong> view.</li>
+</ul>
+<h2 id="copy-asset-files">Copy asset files</h2>
+<ol>
+<li><p>In your target project in Visual Studio, in <strong>Solution Explorer</strong>, right-click the <strong>Assets</strong> folder, and add a new folder named <code>Samples</code>.</p>
+</li>
+<li><p>In your clone of the source project, in <strong>File Explorer</strong>, locate the folder <strong>Windows-appsample-photo-lab</strong> &gt; <strong>PhotoLab</strong> &gt; <strong>Assets</strong>. You'll find seven asset files in that folder, together with a subfolder named <strong>Samples</strong> containing sample images. Select those seven asset files, and the <strong>Samples</strong> subfolder, and copy them to the clipboard.</p>
+</li>
+<li><p>Also in <strong>File Explorer</strong>, now locate the corresponding folder in the target project that you created. The path to that folder is <strong>PhotoLabWinUI</strong> &gt; <strong>PhotoLabWinUI</strong> &gt; <strong>Assets</strong>. Paste into that folder the asset files and the subfolder that you just copied, and accept the prompt to replace any files that already exist in the destination.</p>
+</li>
+<li><p>In your target project in Visual Studio, in <strong>Solution Explorer</strong>, with the <strong>Assets</strong> folder expanded, you'll see in the <strong>Samples</strong> folder the contents of the <strong>Samples</strong> subfolder (which you just pasted). You can hover the mouse pointer over the asset files. A thumbnail preview will appear for each, confirming that you've replaced/added the asset files correctly.</p>
+</li>
+</ol>
+<h2 id="migrate-the-imagefileinfo-model">Migrate the ImageFileInfo model</h2>
+<p><strong>ImageFileInfo</strong> is a <em>model</em> (in the sense of models, views, and viewmodels) that represents an image file, such as a photo.</p>
+<h3 id="copy-imagefileinfo-source-code-files">Copy ImageFileInfo source code files</h3>
+<ol>
+<li><p>In your clone of the source project, in <strong>File Explorer</strong>, locate the folder <strong>Windows-appsample-photo-lab</strong> &gt; <strong>PhotoLab</strong>. In that folder you'll find the source code file <code>ImageFileInfo.cs</code>; that file contains the implementation of <strong>ImageFileInfo</strong>. Select that file, and copy it to the clipboard.</p>
+</li>
+<li><p>In Visual Studio, right-click the target project node, and click <strong>Open Folder in File Explorer</strong>. This opens the target project folder in <strong>File Explorer</strong>. Paste into that folder the file that you just copied.</p>
+</li>
+</ol>
+<h3 id="migrate-imagefileinfo-source-code">Migrate ImageFileInfo source code</h3>
+<ol>
+<li>Make the following find/replacements (match case and whole word) in the <code>ImageFileInfo.cs</code> file that you just pasted.</li>
+</ol>
+<ul>
+<li><code>namespace PhotoLab</code> =&gt; <code>namespace PhotoLabWinUI</code></li>
+<li><code>Windows.UI.Xaml</code> =&gt; <code>Microsoft.UI.Xaml</code></li>
+</ul>
+<p><strong>Windows.UI.Xaml</strong> is the namespace for UWP XAML; <strong>Microsoft.UI.Xaml</strong> is the namespace for WinUI XAML.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <a href="api-mapping-table.html">Mapping UWP APIs to the Windows App SDK</a> topic provides a mapping of UWP APIs to their Windows App SDK equivalents. The change we made above is an example of a namespace name change necessary during the migration process.</p>
+</div>
+<ol start="2">
+<li>Now confirm that you can build the target solution (but don't run yet).</li>
+</ol>
+<h2 id="migrate-the-app-class">Migrate the <strong>App</strong> class</h2>
+<ol>
+<li>From the source project, in the <code>&lt;Application.Resources&gt;</code> element in <code>App.xaml</code>, find the following four lines. Copy them, and paste them into the target project.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;SolidColorBrush x:Key=&quot;RatingControlSelectedForeground&quot; Color=&quot;White&quot;/&gt;
+&lt;!--  Window width adaptive breakpoints.  --&gt;
+&lt;x:Double x:Key=&quot;MinWindowBreakpoint&quot;&gt;0&lt;/x:Double&gt;
+&lt;x:Double x:Key=&quot;MediumWindowBreakpoint&quot;&gt;641&lt;/x:Double&gt;
+&lt;x:Double x:Key=&quot;LargeWindowBreakpoint&quot;&gt;1008&lt;/x:Double&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because the target project will use different (and simpler) navigation from the source project, there's no need to copy over any further code from the source project's <code>App.xaml.cs</code>.</p>
+</div>
+<ol start="2">
+<li>In the target project, <strong>App</strong> stores the main window object in its private field <em>m_window</em>. Later in the migration process (when we migrate the source project's use of <strong>Window.Current</strong>), it'll be convenient if that private field is instead a public static property. So replace the <em>m_window</em> field with a <em>Window</em> property, and change references to <em>m_window</em>, as shown below.</li>
+</ol>
+<pre><code class="lang-csharp">// App.xaml.cs
+public partial class App : Application
+{
+    ...
+    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+    {
+        Window = new MainWindow();
+        Window.Activate();
+    }
+
+    public static MainWindow Window { get; private set; }
+}
+</code></pre>
+<ol start="3">
+<li>Later in the migration process (when we migrate the code that displays a <a href="/uwp/api/windows.storage.pickers.filesavepicker"><strong>FileSavePicker</strong></a>), it'll be convenient if <strong>App</strong> exposes the main window's <em>handle</em> (<strong>HWND</strong>). So add a <em>WindowHandle</em> property, and initialize it in the <strong>OnLaunched</strong> method, as shown below.</li>
+</ol>
+<pre><code class="lang-csharp">// App.xaml.cs
+public partial class App : Application
+{
+    ...
+    protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+    {
+        Window = new MainWindow();
+        Window.Activate();
+        WindowHandle = WinRT.Interop.WindowNative.GetWindowHandle(Window);
+    }
+
+    public static IntPtr WindowHandle { get; private set; }
+}
+</code></pre>
+<h2 id="migrate-the-loadedimagebrush-model">Migrate the LoadedImageBrush model</h2>
+<p><strong>LoadedImageBrush</strong> is a specialization of <a href="/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase"><strong>XamlCompositionBrushBase</strong></a>. The <em>PhotoLab</em> sample app uses the <strong>LoadedImageBrush</strong> class to apply effects to photos.</p>
+<h3 id="reference-the-win2d-nuget-package">Reference the Win2D NuGet package</h3>
+<p>To support code in <strong>LoadedImageBrush</strong>, the source project has a dependency on <a href="https://microsoft.github.io/Win2D/WinUI3/html/Introduction.htm">Win2D</a>. So we'll also need a dependency on Win2D in our target project.</p>
+<p>In the target solution in Visual Studio, click <strong>Tools</strong> &gt; <strong>NuGet Package Manager</strong> &gt; <strong>Manage NuGet Packages for Solution...</strong> &gt; <strong>Browse</strong>, and type or paste <em>Microsoft.Graphics.Win2D</em>. Select the correct item in search results, check the <em>PhotoLabWinUI</em> project, and click <strong>Install</strong> to install the package into that project.</p>
+<h3 id="copy-loadedimagebrush-source-code-files">Copy LoadedImageBrush source code files</h3>
+<p>Copy <code>LoadedImageBrush.cs</code> from the source project to the target project in the same way that you copied <code>ImageFileInfo.cs</code>.</p>
+<h3 id="migrate-loadedimagebrush-source-code">Migrate LoadedImageBrush source code</h3>
+<ol>
+<li>Make the following find/replacements (match case and whole word) in the <code>LoadedImageBrush.cs</code> file that you just pasted.</li>
+</ol>
+<ul>
+<li><code>namespace PhotoLab</code> =&gt; <code>namespace PhotoLabWinUI</code></li>
+<li><code>Windows.UI.Composition</code> =&gt; <code>Microsoft.UI.Composition</code></li>
+<li><code>Windows.UI.Xaml</code> =&gt; <code>Microsoft.UI.Xaml</code></li>
+<li><code>Window.Current.Compositor</code> =&gt; <code>App.Window.Compositor</code> (see <a href="guides/winui3.html#change-windowsuixamlwindowcurrent-to-appwindow">Change Windows.UI.Xaml.Window.Current to App.Window</a>)</li>
+</ul>
+<ol start="2">
+<li>Confirm that you can build the target solution (but don't run yet).</li>
+</ol>
+<h2 id="migrate-the-detailpage-view">Migrate the DetailPage view</h2>
+<p><strong>DetailPage</strong> is the class that represents the photo editor page, where Win2D effects are toggled, set, and chained together. You get to the photo editor page by selecting a photo thumbnail on <strong>MainPage</strong>. <strong>DetailPage</strong> is a <em>model</em> (in the sense of models, views, and viewmodels).</p>
+<h3 id="copy-detailpage-source-code-files">Copy DetailPage source code files</h3>
+<p>Copy <code>DetailPage.xaml</code> and <code>DetailPage.xaml.cs</code> from the source project to the target project in the same way that you copied files in previous steps.</p>
+<h3 id="migrate-detailpage-source-code">Migrate DetailPage source code</h3>
+<ol>
+<li>Make the following find/replacements (match case and whole word) in the <code>DetailPage.xaml</code> file that you just pasted.</li>
+</ol>
+<ul>
+<li><code>PhotoLab</code> =&gt; <code>PhotoLabWinUI</code></li>
+</ul>
+<ol start="2">
+<li>Make the following find/replacements (match case and whole word) in the <code>DetailPage.xaml.cs</code> file that you just pasted.</li>
+</ol>
+<ul>
+<li><code>namespace PhotoLab</code> =&gt; <code>namespace PhotoLabWinUI</code></li>
+<li><code>Windows.UI.Colors</code> =&gt; <code>Microsoft.UI.Colors</code></li>
+<li><code>Windows.UI.Xaml</code> =&gt; <code>Microsoft.UI.Xaml</code></li>
+</ul>
+<ol start="3">
+<li>For the next step, we'll make the change that's explained in <a href="guides/winui3.html#contentdialog-and-popup">ContentDialog, and Popup</a>. So, still in <code>DetailPage.xaml.cs</code>, in the <strong>ShowSaveDialog</strong> method, immediately <em>before</em> the line <code>ContentDialogResult result = await saveDialog.ShowAsync();</code>, add this code.</li>
+</ol>
+<pre><code class="lang-cppwinrt">if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(&quot;Windows.Foundation.UniversalApiContract&quot;, 8))
+{
+    saveDialog.XamlRoot = this.Content.XamlRoot;
+}
+</code></pre>
+<ol start="4">
+<li>Still in <code>DetailPage.xaml.cs</code>, in the <strong>OnNavigatedTo</strong> method, delete the following two lines of code. Just those two lines; later in this case study, we'll reintroduce the back button functionality that we just removed.</li>
+</ol>
+<pre><code class="lang-csharp">...
+SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+    AppViewBackButtonVisibility.Visible;
+...
+SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility = 
+    AppViewBackButtonVisibility.Collapsed;
+...
+</code></pre>
+<ol start="5">
+<li>For this step, we'll make the change that's explained in <a href="guides/winui3.html#messagedialog-and-pickers">MessageDialog, and Pickers</a>. Still in <code>DetailPage.xaml.cs</code>, in the <strong>ExportImage</strong> method, immediately <em>before</em> the line <code>var outputFile = await fileSavePicker.PickSaveFileAsync();</code>, add this line of code.</li>
+</ol>
+<pre><code class="lang-csharp">WinRT.Interop.InitializeWithWindow.Initialize(fileSavePicker, App.WindowHandle);
+</code></pre>
+<p><strong>MainPage</strong> has dependencies on <strong>DetailPage</strong>, which is why we migrated <strong>DetailPage</strong> first. But <strong>DetailPage</strong> has dependencies on <strong>MainPage</strong>, too, so we won't be able to build yet.</p>
+<h2 id="migrate-the-mainpage-view">Migrate the MainPage view</h2>
+<p>The main page of the app represents the view that you see first when you run the app. It's the page that loads the photos from the <strong>Samples</strong> folder that's built into the sample app, and displays a tiled thumbnail view.</p>
+<h3 id="copy-mainpage-source-code-files">Copy MainPage source code files</h3>
+<p>Copy <code>MainPage.xaml</code> and <code>MainPage.xaml.cs</code> from the source project to the target project in the same way that you copied files in previous steps.</p>
+<h3 id="migrate-mainpage-source-code">Migrate MainPage source code</h3>
+<ol>
+<li>Make the following find/replacements (match case and whole word) in the <code>MainPage.xaml</code> file that you just pasted.</li>
+</ol>
+<ul>
+<li><code>PhotoLab</code> =&gt; <code>PhotoLabWinUI</code></li>
+</ul>
+<ol start="2">
+<li><p>Still in <code>MainPage.xaml</code>, find the markup <code>animations:ReorderGridAnimation.Duration=&quot;400&quot;</code>, and delete that.</p>
+</li>
+<li><p>Make the following find/replacements (match case and whole word) in the <code>MainPage.xaml.cs</code> file that you just pasted.</p>
+</li>
+</ol>
+<ul>
+<li><code>namespace PhotoLab</code> =&gt; <code>namespace PhotoLabWinUI</code></li>
+<li><code>Windows.UI.Xaml</code> =&gt; <code>Microsoft.UI.Xaml</code></li>
+</ul>
+<ol start="4">
+<li>For this step, we'll make the change that's explained in <a href="guides/winui3.html#contentdialog-and-popup">ContentDialog, and Popup</a>. So, still in <code>MainPage.xaml.cs</code>, in the <strong>GetItemsAsync</strong> method, immediately <em>before</em> the line <code>ContentDialogResult resultNotUsed = await unsupportedFilesDialog.ShowAsync();</code>, add this code.</li>
+</ol>
+<pre><code class="lang-cppwinrt">if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(&quot;Windows.Foundation.UniversalApiContract&quot;, 8))
+{
+    unsupportedFilesDialog.XamlRoot = this.Content.XamlRoot;
+}
+</code></pre>
+<ol start="5">
+<li>Still in <code>MainPage.xaml.cs</code>, in the <strong>OnNavigatedTo</strong> method, delete the following line of code.</li>
+</ol>
+<pre><code class="lang-csharp">SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+    AppViewBackButtonVisibility.Collapsed;
+</code></pre>
+<p>Later in this case study, we'll reintroduce the back button functionality that we just removed.</p>
+<ol start="6">
+<li>Confirm that you can build the target solution (but don't run yet).</li>
+</ol>
+<h2 id="navigate-to-mainpage">Navigate to MainPage</h2>
+<p>The <em>PhotoLab</em> sample app uses navigation logic to navigate initially to <strong>MainPage</strong> (and then between <strong>MainPage</strong> and <strong>DetailPage</strong>). For more info about Windows App SDK apps that need navigation (and those that don't), see <a href="guides/winui3.html#do-i-need-to-implement-page-navigation">Do I need to implement page navigation?</a>.</p>
+<p>So the changes we'll make next support that navigation.</p>
+<ol>
+<li>In <code>MainWindow.xaml</code>, delete the <code>&lt;StackPanel&gt;</code> element, and replace it with just a named <code>&lt;Frame&gt;</code> element. The result looks like this:</li>
+</ol>
+<pre><code class="lang-xaml">&lt;Window ...&gt;
+    &lt;Frame x:Name=&quot;rootFrame&quot;/&gt;
+&lt;/Window&gt;
+</code></pre>
+<ol start="2">
+<li><p>In <code>MainWindow.xaml.cs</code>, delete the <strong>myButton_Click</strong> method.</p>
+</li>
+<li><p>Still in <code>MainWindow.xaml.cs</code>, add the following line of code to the constructor.</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">public sealed partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        this.InitializeComponent();
+        rootFrame.Navigate(typeof(MainPage));
+    }
+}
+</code></pre>
+<ol start="4">
+<li>Confirm that you can build the target solution (but don't run yet).</li>
+</ol>
+<h2 id="restoring-back-button-functionality">Restoring back button functionality</h2>
+<ol>
+<li>In <code>DetailPage.xaml</code>, the root element is a <strong>RelativePanel</strong>. Add the following markup inside that <strong>RelativePanel</strong>, immediately after the <strong>StackPanel</strong> element.</li>
+</ol>
+<pre><code class="lang-xaml">&lt;AppBarButton x:Name=&quot;BackButton&quot; Click=&quot;BackButton_Click&quot; Margin=&quot;0,0,12,0&quot;&gt;
+    &lt;SymbolIcon Symbol=&quot;Back&quot;/&gt;
+&lt;/AppBarButton&gt;
+</code></pre>
+<ol start="2">
+<li>In <code>DetailPage.xaml.cs</code>, add the following two lines of code to the <strong>OnNavigatedTo</strong> method, in the place indicated.</li>
+</ol>
+<pre><code class="lang-csharp">if (this.Frame.CanGoBack)
+{
+    BackButton.Visibility = Microsoft.UI.Xaml.Visibility.Visible;
+}
+else
+{
+    BackButton.Visibility = Microsoft.UI.Xaml.Visibility.Collapsed;
+}
+</code></pre>
+<ol start="3">
+<li>Still in <code>DetailPage.xaml.cs</code>, add the following event handler.</li>
+</ol>
+<pre><code class="lang-csharp">private void BackButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+{
+    Frame.GoBack();
+}
+</code></pre>
+<h2 id="test-the-migrated-app">Test the migrated app</h2>
+<p>Now build the project, and run the app to test it. Select an image, set a zoom level, choose effects, and configure them.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

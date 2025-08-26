@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Cross Device People API </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Cross Device People API ">
+    
+    <meta name="description" content="Learn how third party apps can integrate with Windows People experiences with APIs to store all their contacts.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cross-device-people-api">Cross Device People API</h1>
+
+<p>Windows is an ideal platform for third party apps to integrate their top people contacts. This integration enables users to interact with the personas for various people experiences. Windows now provides third party WinUI 3, UWP, and other apps with <a href="/windows/apps/desktop/modernize/package-identity-overview">package identity</a> with APIs to store all their contacts.</p>
+<p>Once your apps store their contacts in Windows, users will be able to see these contact suggestions on the <strong>Share</strong> panel in Windows to seamlessly share with their top contacts. See <a href="https://support.microsoft.com/windows/how-to-share-files-in-file-explorer-on-windows-dcf7d3dc-40f7-111a-0c9e-a8981c4bbc32">How to share files in File Explorer on Windows</a> for more information about the <strong>Share</strong> panel.</p>
+<h2 id="creating-a-userdataaccount-for-people-contract">Creating a UserDataAccount for People Contract</h2>
+<p>Start by creating a user data account. Third party apps are required to create a <a href="/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccount">UserDataAccount</a> with <code>UserDisplayName</code> as <code>&quot;com.microsoft.peoplecontract&quot;</code>.</p>
+<pre><code class="lang-csharp">UserDataAccountStore udas =
+    await UserDataAccountManager.RequestStoreAsync(UserDataAccountStoreAccessType.AppAccountsReadWrite);
+UserDataAccount uda = await udas.CreateAccountAsync(&quot;com.microsoft.peoplecontract&quot;);
+</code></pre>
+<p>Next, add <code>&quot;com.microsoft.windows.system&quot;</code> to the list of <a href="/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccount.explictreadaccesspackagefamilynames">ExplictReadAccessPackageFamilyNames</a> for the account. This will provide restricted access of third party contacts to Windows experiences.</p>
+<pre><code class="lang-csharp">uda.ExplictReadAccessPackageFamilyNames.Add(&quot;com.microsoft.windows.system&quot;);
+await uda.SaveAsync();
+</code></pre>
+<h2 id="storing-contacts">Storing contacts</h2>
+<p>The first step in storing contacts is to create a contact list. To do this, third party apps must create the new contact list for a <code>UserDataAccount</code> in the Windows <a href="/uwp/api/windows.applicationmodel.contacts.contactstore">ContactStore</a>. Apps can choose to keep the default <code>OtherAppReadAccess</code> access type for the contact list, while setting it to <code>None</code> will prevent other apps from having any access to these contacts. See the <a href="/uwp/api/windows.applicationmodel.contacts.contactlistotherappreadaccess">ContactListOtherAppReadAccess</a> enum for the full list of available access types.</p>
+<pre><code class="lang-csharp">ContactStore store = await ContactManager.RequestStoreAsync(ContactStoreAccessType.AppContactsReadWrite);
+this.contactList = await store.CreateContactListAsync(contactListsName, uda.Id);
+contactList.OtherAppReadAccess = ContactListOtherAppReadAccess.None;
+await contactList.SaveAsync();
+</code></pre>
+<p>While storing a contact, third party apps must include all relevant information required for Windows experiences to power a <a href="/uwp/api/windows.applicationmodel.contacts.contact">Contact</a>.</p>
+<p>The following fields are required when storing a contact:</p>
+<ul>
+<li><code>FirstName</code></li>
+<li><code>RemoteId</code></li>
+<li><code>DisplayPicture</code></li>
+</ul>
+<p>The following fields are optional:</p>
+<ul>
+<li><code>LastName</code></li>
+<li><code>Phones</code></li>
+<li><code>Emails</code></li>
+</ul>
+<p>This code snippet demonstrates how to store a contact:</p>
+<pre><code class="lang-csharp">foreach (var appContact in AppContacts)
+{
+  var cont = new Contact
+  {
+    FirstName = appContact.FirstName,
+    LastName = appContact.LastName,
+    RemoteId = appContact.Id,
+    SourceDisplayPicture = RandomAccessStreamReference.CreateFromUri(new Uri(appContact.ProfilePicPath)),
+    Phones = { new ContactPhone { Number = appContact.Phone } }
+  };
+
+  await this.contactList.SaveContactAsync(cont);
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>DisplayName</code> for the <a href="/uwp/api/windows.applicationmodel.contacts.contact">Contact</a> is constructed using <code>FirstName</code> and <code>LastName</code>. If the last name is not provided, <code>DisplayName</code> will be identical to the string provided for the first name.</p>
+</div>
+<h2 id="storing-ranks-for-contacts">Storing ranks for contacts</h2>
+<p>You can create an annotation list for the <code>UserDataAccount</code> to store ranks for your contacts. Apps can store ranks for their top contacts by adding annotations to the contacts. These annotations are stored as part of an annotation list in the contact store.</p>
+<pre><code class="lang-csharp">ContactAnnotationStore annotationStore = await
+    ContactManager.RequestAnnotationStoreAsync(ContactAnnotationStoreAccessType.AppAnnotationsReadWrite);
+this.contactAnnotationList = await annotationStore.CreateAnnotationListAsync(uda.Id);
+</code></pre>
+<p>You can store ranks for your top contacts by using the annotations on contacts. Ranks are stored as part of <a href="/uwp/api/windows.applicationmodel.contacts.contact.providerproperties">ProviderProperties</a> on a contact annotation. Along with rank, apps must set the <a href="/uwp/api/windows.applicationmodel.contacts.contactannotation.supportedoperations">SupportedOperations</a> on a contact annotation as <code>Share</code>.</p>
+<pre><code class="lang-csharp">foreach (var appContact in topAppContacts)
+{
+  Contact contact = await list.GetContactFromRemoteIdAsync(topAppContact.RemoteID);
+  var annotation = new ContactAnnotation
+  {
+    ContactId = contact.Id,
+    SupportedOperations = ContactAnnotationOperations.Share
+  };
+  annotation.ProviderProperties.Add(&quot;Rank&quot;, rank);
+  await annotationsLst.TrySaveAnnotationAsync(annotation);
+}
+</code></pre>
+<h2 id="updating-contact-ranks">Updating contact ranks</h2>
+<p>It's at the discretion of apps when to update the ranks of the contacts stored in Windows. Windows recommends that ranked lists be updated regularly to provide the best user experience. Whenever you need to update a ranked list, you'll need to follow several steps.</p>
+<ol>
+<li><p>Delete the <a href="/uwp/api/windows.applicationmodel.contacts.contactannotationlist">ContactAnnotationList</a>.</p>
+<p>Once the app has an updated list of top contacts, the annotation list can be deleted and a new annotation list with updated annotations for their top contacts can be created.</p>
+<pre><code class="lang-csharp">await this.contactAnnotationList.DeleteAsync();
+</code></pre>
+</li>
+<li><p>Create a new <code>ContactAnnotationList</code>. Follow the steps in the <a href="#storing-ranks-for-contacts">Storing ranks for contacts</a> section to create a new annotation list and store ranks for your top contacts.</p>
+</li>
+</ol>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccount">UserDataAccount</a></li>
+<li><a href="/uwp/api/windows.applicationmodel.contacts.contactstore">ContactStore</a></li>
+<li><a href="/uwp/api/windows.applicationmodel.contacts">Windows.ApplicationModel.Contacts Namespace</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/windows-integration/cross-device-people-api.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Layering and elevation in Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Layering and elevation in Windows ">
+    
+    <meta name="description" content="How surfaces are arranged to create depth and hierarchy in Windows">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="elevation-in-windows">Elevation in Windows</h1>
+
+<p>Windows 11 uses layering and elevation as its foundation for app hierarchy. Hierarchy communicates important information about how to navigate within an app while keeping the user's attention focused on the most important content. Layering and elevation are powerful visual cues that modernize experiences and help them feel coherent within Windows.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>This article describes how the <a href="https://fluent2.microsoft.design/">Fluent Design language</a> is applied to Windows apps. For more information, see <a href="https://fluent2.microsoft.design/elevation"><strong>Fluent Design - Elevation</strong></a>.</p>
+</div>
+<h2 id="elevation">Elevation</h2>
+<p><img src="images/layering_elevation_hero_1880.png" alt="A variety of overlapping UI elements, each at a different elevation"></p>
+<p>Elevation is the depth component of the spatial relationship one surface has to another with respect to their position on the desktop. When two or more objects occupy the same location on the screen, only the object with the highest elevation will be rendered at that location.</p>
+<p>Shadows and contour (outlines) are used on controls and surfaces to subtly communicate an object's elevation, and to help draw focus where needed within an experience. Windows 11 uses the following values to express elevation with shadow and contour.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_window_940.png" alt="An application window"></p>
+</div>
+<div class="column span">
+<p><strong>Window</strong><br>Elevation value: 128<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_dialog_940.png" alt="A modal dialog box"></p>
+</div>
+<div class="column">
+<p><strong>Dialog</strong><br>Elevation value: 128<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_flyout_940.png" alt="A flyout menu"></p>
+</div>
+<div class="column">
+<p><strong>Flyout</strong><br>Elevation value: 32<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_tooltip_940.png" alt="A tooltip for a combo box"></p>
+</div>
+<div class="column">
+<p><strong>Tooltip</strong><br>Elevation value: 16<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_card_940.png" alt="A UI surface that contains several content areas"></p>
+</div>
+<div class="column">
+<p><strong>Card</strong><br>Elevation value: 8<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_control_940.png" alt="A combo box"></p>
+</div>
+<div class="column">
+<p><strong>Control</strong><br>Elevation value: 2<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_layer_940.png" alt="An empty UI surface"></p>
+</div>
+<div class="column">
+<p><strong>Layer</strong><br>Elevation value: 1<br>Stroke width: 1</p>
+</div>
+</section>
+<p>Controls in Windows 11 vary their elevation and contour to indicate state. The intensity of the rendered shadow changes depending on the theme at parity of value.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_control_rest_940.png" alt="A button in the default state"></p>
+</div>
+<div class="column">
+<p><strong>Rest</strong><br>Elevation value: 2<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_control_hover_940.png" alt="A button in the hover state"></p>
+</div>
+<div class="column">
+<p><strong>Hover</strong><br>Elevation value: 2<br>Stroke width: 1</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_elevation_control_pressed_940.png" alt="A button in the pressed state"></p>
+</div>
+<div class="column">
+<p><strong>Pressed</strong><br>Elevation value: 1<br>Stroke width: 1</p>
+</div>
+</section>
+<h2 id="layering">Layering</h2>
+<section class="row">
+<div class="column">
+<p><img src="images/layering_LayeringMain1.svg" alt="An application window with a single content area"></p>
+</div>
+<div class="column">
+<p><img src="images/layering_LayeringMain2.svg" alt="An application window with multiple content areas"></p>
+</div>
+</section>
+<p>Layering is the concept of overlapping one surface with another, creating two or more visually distinguished areas within the same application.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Layering in Windows is tightly coupled with the use of materials. Please reference the <a href="materials.html">materials section</a> for specific guidance on how those are applied.</p>
+</div>
+<p>Windows 11 uses a two-layer system for applications. These two layers create hierarchy and provide clarity, keeping users focused on what's most important.</p>
+<ul>
+<li>The <strong>base</strong> layer is an app's foundation. It is the bottommost layer of every app, and contains controls related to app menus, commands, and navigation.</li>
+<li>The <strong>content</strong> layer focuses the user on the app's central experience. The content layer may be on contiguous element, or separated into cards that segment content.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/signature-experiences/layering.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Text scaling </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Text scaling ">
+    
+    <meta name="description" content="Build Windows apps and custom/templated controls that support platform text scaling.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="text-scaling">Text scaling</h1>
+
+<p><img src="images/coretext/text-scaling-news-hero-small.png" alt="Hero image showing an example of text scaling from 100% to 225%."><br>
+<em>Example of text scaling in Windows 11 (100% to 225%)</em></p>
+<h2 id="overview">Overview</h2>
+<p>Reading text on a computer screen (from mobile device to laptop to desktop monitor to the giant screen of a Surface Hub) can be challenging for many people. Conversely, some users find the font sizes used in apps and web sites to be larger than necessary.</p>
+<p>To ensure text is as legible as possible for the broadest range of users, Windows provides the ability for users to change relative font size across both the OS and individual applications. Instead of using a magnifier app (which typically just enlarges everything within an area of the screen and introduces its own usability issues), changing display resolution, or relying on DPI scaling (which resizes everything based on display and typical viewing distance), a user can quickly access a setting to resize just text, ranging from 100% (the default size) up to 225%.</p>
+<h2 id="support">Support</h2>
+<p>Universal Windows applications (both standard and PWA), support text scaling by default.</p>
+<p>If your Windows application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.</p>
+<p>DirectWrite, GDI, and XAML SwapChainPanels do not natively support text scaling, while Win32 support is limited to menus, icons, and toolbars.</p>
+<!-- If you want to support text scaling in your application with these frameworks, you’ll need to support the text scaling change event outlined below and provide alternative sizes for your UI and content.   -->
+<h2 id="user-experience">User experience</h2>
+<p>Users can adjust text scale with the Make text bigger slider on the Settings -&gt; Ease of Access -&gt; Vision/Display screen.</p>
+<p><img src="images/coretext/text-scaling-settings-100-small.png" alt="Screenshot of the Ease of Access Vision/Display settings page showing the Make text bigger slider."><br>
+<em>Text scale setting from Settings -&gt; Ease of Access -&gt; Vision/Display screen</em></p>
+<h2 id="ux-guidance">UX guidance</h2>
+<p>As text is resized, controls and containers must also resize and reflow to accommodate the text and its new layout. As mentioned previously, depending on the app, framework, and platform, much of this work is done for you. The following UX guidance covers those cases where it's not.</p>
+<h3 id="use-the-platform-controls">Use the platform controls</h3>
+<p>Did we say this already? It's worth repeating: When possible, always use the built-in controls provided with the various Windows app frameworks to get the most comprehensive user experience possible for the least amount of effort.</p>
+<p>For example, all UWP text controls support the full text scaling experience without any customization or templating.</p>
+<p>Here's a snippet from a basic UWP app that includes a couple of standard text controls:</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;TextBlock Grid.Row=&quot;0&quot; 
+                Style=&quot;{ThemeResource TitleTextBlockStyle}&quot;
+                Text=&quot;Text scaling test&quot; 
+                HorizontalTextAlignment=&quot;Center&quot; /&gt;
+    &lt;Grid Grid.Row=&quot;1&quot;&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+            &lt;ColumnDefinition Width=&quot;*&quot;/&gt;
+            &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+        &lt;Image Grid.Column=&quot;0&quot; 
+                Source=&quot;Assets/StoreLogo.png&quot; 
+                Width=&quot;450&quot; Height=&quot;450&quot;/&gt;
+        &lt;StackPanel Grid.Column=&quot;1&quot; 
+                    HorizontalAlignment=&quot;Center&quot;&gt;
+            &lt;TextBlock TextWrapping=&quot;WrapWholeWords&quot;&gt;
+                The quick brown fox jumped over the lazy dog.
+            &lt;/TextBlock&gt;
+            &lt;TextBox PlaceholderText=&quot;Type something here&quot; /&gt;
+        &lt;/StackPanel&gt;
+        &lt;Image Grid.Column=&quot;2&quot; 
+                Source=&quot;Assets/StoreLogo.png&quot; 
+                Width=&quot;450&quot; Height=&quot;450&quot;/&gt;
+    &lt;/Grid&gt;
+    &lt;TextBlock Grid.Row=&quot;2&quot; 
+                Style=&quot;{ThemeResource TitleTextBlockStyle}&quot;
+                Text=&quot;Text scaling test footer&quot; 
+                HorizontalTextAlignment=&quot;Center&quot; /&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p><img src="images/coretext/text-scaling.gif" alt="Animation of text scaling 100% to 225%."><br>
+<em>Animated text scaling</em></p>
+<h3 id="use-auto-sizing">Use auto-sizing</h3>
+<p>Don't specify absolute sizes for your controls. Whenever possible, let the platform resize your controls automatically based on user and device settings.</p>
+<p>In this snippet from the previous example, we use the <code>Auto</code> and <code>*</code> width values for a set of grid columns and let the platform adjust the app layout based on the size of the elements contained within the grid.</p>
+<pre><code class="lang-xaml">&lt;Grid.ColumnDefinitions&gt;
+    &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+    &lt;ColumnDefinition Width=&quot;*&quot;/&gt;
+    &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+&lt;/Grid.ColumnDefinitions&gt;
+</code></pre>
+<h3 id="use-text-wrapping">Use text wrapping</h3>
+<p>To ensure the layout of your app is as flexible and adaptable as possible, enable text wrapping in any control that contains text (many controls do not support text wrapping by default).</p>
+<p>If you don't specify text wrapping, the platform uses other methods to adjust the layout, including clipping (see previous example).</p>
+<p>Here, we use the <code>AcceptsReturn</code> and <code>TextWrapping</code> TextBox properties to ensure our layout is as flexible as possible.</p>
+<pre><code class="lang-xaml">&lt;TextBox PlaceholderText=&quot;Type something here&quot; 
+          AcceptsReturn=&quot;True&quot; TextWrapping=&quot;Wrap&quot; /&gt;
+</code></pre>
+<p><img src="images/coretext/text-scaling-textwrap.gif" alt="Animation of text scaling 100% to 225% with text wrapping."><br>
+<em>Animated text scaling with text wrapping</em></p>
+<h3 id="specify-text-trimming-behavior">Specify text trimming behavior</h3>
+<p>If text wrapping is not the preferred behavior, most text controls let you either clip your text or specify ellipses for the text trimming behavior. Clipping is preferred to ellipses as ellipses take up space themselves.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you need to clip your text, clip the end of the string, not the beginning.</p>
+</div>
+<p>In this example, we show how to clip text in a TextBlock using the <a href="/uwp/api/windows.ui.xaml.controls.textblock.texttrimming">TextTrimming</a> property.</p>
+<pre><code class="lang-xaml">&lt;TextBlock TextTrimming=&quot;Clip&quot;&gt;
+    The quick brown fox jumped over the lazy dog.
+&lt;/TextBlock&gt;
+</code></pre>
+<p><img src="images/coretext/text-scaling-clipping-small.png" alt="Screenshot of text scaling 100% to 225% with text clipping."><br>
+<em>Text scaling with text clipping</em></p>
+<h3 id="use-a-tooltip">Use a tooltip</h3>
+<p>If you clip text, use a <a href="../controls/tooltips.html">tooltip</a> to provide the full text to your users.</p>
+<p>Here, we add a tooltip to a TextBlock that doesn't support text wrapping:</p>
+<pre><code class="lang-xaml">&lt;TextBlock TextTrimming=&quot;Clip&quot;&gt;
+    &lt;ToolTipService.ToolTip&gt;
+        &lt;ToolTip Content=&quot;The quick brown fox jumped over the lazy dog.&quot;/&gt;
+    &lt;/ToolTipService.ToolTip&gt;
+    The quick brown fox jumped over the lazy dog.
+&lt;/TextBlock&gt;
+</code></pre>
+<h3 id="dont-scale-font-based-icons-or-symbols">Don’t scale font-based icons or symbols</h3>
+<p>When using font-based icons for emphasis or decoration, disable scaling on these characters.</p>
+<p>Set the <a href="/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled">IsTextScaleFactorEnabled</a> property to <code>false</code> for most XAML controls.</p>
+<h3 id="support-text-scaling-natively">Support text scaling natively</h3>
+<p>Handle the <a href="/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged">TextScaleFactorChanged</a> UISettings system event in your custom framework and controls. This event is raised each time the user sets the text scaling factor on their system.</p>
+<h2 id="summary">Summary</h2>
+<p>This topic provides an overview of text scaling support in Windows and includes UX and developer guidance on how to customize the user experience.</p>
+<h2 id="related-articles">Related articles</h2>
+<h3 id="api-reference">API reference</h3>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled">IsTextScaleFactorEnabled</a></li>
+<li><a href="/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged">TextScaleFactorChanged</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/text-scaling.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

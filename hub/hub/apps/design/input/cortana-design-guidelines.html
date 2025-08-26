@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Cortana design guidelines - Cortana UWP design and development </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Cortana design guidelines - Cortana UWP design and development ">
+    
+    <meta name="description" content="These guidelines and recommendations describe how your app can use Cortana to interact with the user.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cortana-design-guidelines">Cortana design guidelines</h1>
+
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This feature is no longer supported as of the Windows 10 May 2020 Update (version 2004, codename &quot;20H1&quot;).</p>
+</div>
+<p>These guidelines and recommendations describe how your app can best use <strong>Cortana</strong> to interact with the user, help them accomplish a task, and communicate clearly how it's all happening.</p>
+<p><strong>Cortana</strong> enables applications running in the background to prompt the user for confirmation or disambiguation, and in return provide the user with feedback on the status of the voice command. The process is lightweight, quick, and doesn't force the user to leave the <strong>Cortana</strong> experience or switch context to the application.</p>
+<p>While the user should feel that <strong>Cortana</strong> is helping to make the process as light and easy as possible, you probably want <strong>Cortana</strong> to also be explicit that it's your app accomplishing the task.</p>
+<p>We use a trip planning and management app named <strong>Adventure Works</strong> integrated into the <strong>Cortana</strong> UI, shown here, to demonstrate many of the concepts and features we discuss. For more info, see the <a href="https://go.microsoft.com/fwlink/p/?LinkID=619899">Cortana voice command sample</a>.</p>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/cortana-overview.png" alt="Screenshot of the Cortana canvas">
+</span>
+</p>
+<h2 id="conversational-writing">Conversational writing</h2>
+<p>Successful <strong>Cortana</strong> interactions require you to follow some fundamental principles when crafting text-to-speech (TTS) and GUI strings.</p>
+<table>
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Principle</th>
+<th align="left">Bad example</th>
+<th align="left">Good example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p></p>
+<dl>
+<dt>Efficient</dt>
+<dd><p>Use as few words as possible and put the most important information up front.</p>
+</dd>
+</dl></td>
+<td align="left"><p>Sure can do, what movie would you like to search for today? We have a large collection.</p></td>
+<td align="left"><p>Sure, what movie are you looking for?</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p></p>
+<dl>
+<dt>Relevant</dt>
+<dd><p>Provide information pertinent only to the task, content, and context.</p>
+</dd>
+</dl></td>
+<td align="left"><p>I've added this to your playlist. Just so you know, your battery is getting low.</p></td>
+<td align="left"><p>I've added this to your playlist.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p></p>
+<dl>
+<dt>Clear</dt>
+<dd><p>Avoid ambiguity. Use everyday language instead of technical jargon.</p>
+</dd>
+</dl></td>
+<td align="left"><p>No results for query &quot;Trips to Las Vegas&quot;.</p></td>
+<td align="left"><p>I couldn't find any trips to Las Vegas.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p></p>
+<dl>
+<dt>Trustworthy </dt>
+<dd><p>Be as accurate as possible. Be transparent about what's going on in the background—if a task hasn't finished yet, don't say that it has. Respect privacy—don't read private information out loud.</p>
+</dd>
+</dl></td>
+<td align="left"><p>I couldn't find that movie, it must not have been released yet.</p></td>
+<td align="left"><p>I couldn't find that movie in our catalogue.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Write how people speak. Don't emphasize grammatical accuracy over sounding natural. For example, ear-friendly verbal shortcuts like &quot;wanna&quot; or &quot;gotta&quot; are fine for TTS read out.</p>
+<p>Use the implied first-person tense where possible and natural. For example, &quot;Looking for your next Adventure Works trip&quot; implies that someone is doing the looking, but does not use the word &quot;I&quot; to specify.</p>
+<p>Use some variation to help make your app sound more natural. Provide different versions of your TTS and GUI strings to effectively say the same thing. For example, &quot;What movie do you wanna see?&quot; could have alternatives like &quot;What movie would you like to watch?&quot;. People don't say the same thing the exact same way every time. Just make sure to keep your TTS and GUI versions in sync.</p>
+<p>Use phrases like &quot;OK&quot; and &quot;Alright&quot; in your responses judiciously. While they can provide acknowledgment and a sense of progress, they can also get repetitive if used too often and without variation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Use acknowledgment phrases in TTS only. Due to the limited space on the <strong>Cortana</strong> canvas, don't repeat them in the corresponding GUI strings.</p>
+</div>
+<p>Use contractions in your responses for more natural interactions and additional space saving on the <strong>Cortana</strong> canvas. For example,&quot; I can't find that movie&quot; instead of &quot;I was unable to find that movie&quot;. Write for the ear, not the eye.</p>
+<p>Use language that the system understands. Users tend to repeat the terms they are presented with. Know what you display.</p>
+<p>Use some variation in your responses by rotating, or randomly selecting, from a collection of alternative responses. For example, &quot;What movie do you wanna see?&quot; and &quot;What film would you like to watch?&quot;. This makes your app sound more natural and unique.</p>
+<h2 id="localization">Localization</h2>
+<p>To initiate an action using a voice command, your app must register voice commands in the language the user has selected on their device (Settings &gt; System &gt; Speech &gt; Speech Language).</p>
+<p>You should localize the voice commands your app responds to and all TTS and GUI strings.</p>
+<p>You should avoid lengthy GUI strings. The <strong>Cortana</strong> canvas provides three lines for responses and will truncate strings longer than that.</p>
+<p>For more info, see the <a href="../globalizing/guidelines-and-checklist-for-globalizing-your-app.html">Globalization and localization section</a>.</p>
+<h2 id="image-resources-and-scaling">Image resources and scaling</h2>
+<p>Universal Windows Platform (UWP) apps can automatically select the most appropriate app logo image based on specific settings and device capabilities (high contrast, effective pixels, locale, and so on). All you need to do is provide the images and ensure you use the appropriate naming convention and folder organization within the app project for the different resource versions. If you don't provide the recommended resource versions, accessibility, localization, and image quality can suffer, depending on the user's preferences, abilities, device type, and location.</p>
+<p>For more detail on image resources for high contrast and scale factors, see <a href="/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast">Guidelines for tile and icon assets</a>.</p>
+<p>You name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.</p>
+<p>The standard naming convention is &quot;foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext&quot;. For example: images/logo.scale-100_contrast-white.png is simply referred to in code using the root folder and the filename: images/logo.png. See <a href="../globalizing/manage-language-and-region.html">Manage language and region</a> and <a href="/previous-versions/windows/apps/hh965324(v=win.10)">How to name resources using qualifiers</a>.</p>
+<p>We recommend that you mark the default language on string resource files (such as &quot;en-US\resources.resw&quot;) and the default scale factor on images (such as &quot;logo.scale-100.png&quot;), even if you do not currently plan to provide localized or multiple resolution resources. However, at a minimum, we recommend that you provide assets for 100, 200, and 400 scale factors.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The app icon used in the title area of the Cortana canvas is the Square44x44Logo icon specified in the &quot;Package.appxmanifest&quot; file.</p>
+</div>
+<p>You can also specify an icon for each result tile for a user query. Valid image sizes for results icons are:</p>
+<ul>
+<li>68w x 68h</li>
+<li>68w x 92h</li>
+<li>280w x 140h</li>
+</ul>
+<h2 id="result-tile-templates">Result tile templates</h2>
+<p>A set of templates are provided for the result tiles displayed on the Cortana canvas. Use these templates to specify the tile title and whether the tile includes text and a result icon image. Each tile can include up to three lines of text and one image, depending on the template specified.</p>
+<p>Here are the supported templates (with examples):</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title only</td>
+<td><span class="mx-imgBorder">
+<img src="images/cortana/voicecommandcontenttiletype-titleonly-small.png" alt="Screenshot of the Cortana canvas showing Title only">
+</span>
+</td>
+</tr>
+<tr>
+<td>Title with text</td>
+<td><span class="mx-imgBorder">
+<img src="images/cortana/voicecommandcontenttiletype-titlewithtext-small.png" alt="Screenshot of the Cortana canvas showing Title with text">
+</span>
+</td>
+</tr>
+<tr>
+<td>Title with 68x68 icon</td>
+<td>no image</td>
+</tr>
+<tr>
+<td>Title with 68x68 icon and text</td>
+<td><span class="mx-imgBorder">
+<img src="images/cortana/voicecommandcontenttiletype-titlewith68x68iconandtext-small.png" alt="Screenshot of the Cortana canvas showing Title with 68x68 icon and text">
+</span>
+</td>
+</tr>
+<tr>
+<td>Title with 68x92 icon</td>
+<td>no image</td>
+</tr>
+<tr>
+<td>Title with 68x92 icon and text</td>
+<td><span class="mx-imgBorder">
+<img src="images/cortana/voicecommandcontenttiletype-titlewith68x92iconandtext-small.png" alt="Screenshot of the Cortana canvas showing Title with 68x92 icon and text">
+</span>
+</td>
+</tr>
+<tr>
+<td>Title with 280x140 icon</td>
+<td>no image</td>
+</tr>
+<tr>
+<td>Title with 280x140 icon and text</td>
+<td><span class="mx-imgBorder">
+<img src="images/cortana/voicecommandcontenttiletype-titlewith280x140iconandtext-small.png" alt="Screenshot of the Cortana canvas showing Title with 280x140 icon and text">
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="/uwp/api/Windows.ApplicationModel.VoiceCommands.VoiceCommandContentTileType">VoiceCommandContentTileType</a> for more info on Cortana templates.</p>
+<h2 id="example">Example</h2>
+<p>This example demonstrates an end-to-end task flow for a background app in <strong>Cortana</strong>. We're using the <strong>Adventure Works</strong> app to cancel a trip to Las Vegas. This example uses the &quot;Title with 68x68 icon and text&quot; template.</p>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/e2e-canceltrip.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow">
+</span>
+</p>
+<p>Here are the steps outlined in this image:</p>
+<ol>
+<li>The user taps the microphone to initiate <strong>Cortana</strong>.</li>
+<li>The user says &quot;Cancel my Adventure Works trip to Vegas&quot; to launch the <strong>Adventure Works</strong> app in the background. The app uses both <strong>Cortana</strong> speech and canvas to interact with the user.</li>
+<li><strong>Cortana</strong> transitions to a handoff screen that gives the user acknowledgment feedback (&quot;I'll get Adventure Works on that.&quot;), a status bar, and a cancel button.</li>
+<li>In this case, the user has multiple trips that match the query, so the app provides a disambiguation screen that lists all the matching results and asks, &quot;Which one do you wanna cancel?&quot;</li>
+<li>The user specifies the &quot;Vegas Tech Conference&quot; item.</li>
+<li>As the cancellation cannot be undone, the app provides a confirmation screen that asks the user to confirm their intent.</li>
+<li>The user says &quot;Yes&quot;.</li>
+<li>The app then provides a completion screen that shows the result of the operation.</li>
+</ol>
+<p>We explore these steps in more detail here.</p>
+<h3 id="handoff">Handoff</h3>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/cortana-backgroundapp-result.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks upcoming trip with no handoff">
+</span>
+<em>AdventureWorks &quot;Upcoming trip&quot; with no handoff screen</em></p>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/cortana-backgroundapp-progress-result.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks upcoming trip with handoff">
+</span>
+<em>AdventureWorks &quot;Upcoming trip&quot; with handoff screen</em></p>
+<p>Tasks that take less than 500ms for your app to respond, and require no additional information from the user, can be completed without further participation from <strong>Cortana</strong>, other than displaying the completion screen.</p>
+<p>If your application requires more than 500ms to respond, <strong>Cortana</strong> provides a handoff screen. The app icon and name are displayed, and you must provide both GUI and TTS handoff strings to indicate that the voice command was correctly understood. The handoff screen will be shown for up to 5 seconds; if your app doesn't respond within this time, <strong>Cortana</strong> presents a generic error screen.</p>
+<h3 id="gui-and-tts-guidelines-for-handoff-screens">GUI and TTS guidelines for handoff screens</h3>
+<p>Clearly indicate that the task is in progress.</p>
+<p>Use present tense.</p>
+<p>Use an action verb that confirms what task is initiating and reference the specific entity.</p>
+<p>Use a generic verb that doesn't commit to the requested, incomplete action. For example, &quot;Looking for your trip&quot; instead of &quot;Canceling your trip&quot;. In this case, if no results are returned the user doesn't hear something like &quot;Cancelling your trip to Las Vegas… I couldn't find a trip to Las Vegas&quot;.</p>
+<p>Be clear that the task hasn't already taken place if the app still needs to resolve the entity requested. For example, notice how we say &quot;Looking for your trip&quot; instead of &quot;Cancelling your trip&quot; because zero or more trips can be matched, and we don't know the result yet.</p>
+<p>The GUI and TTS strings can be the same, but don't need to be. Try to keep the GUI string short to avoid truncation and duplication of other visual assets.</p>
+<table>
+<thead>
+<tr>
+<th>TTS</th>
+<th>GUI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Looking for your next Adventure Works trip.</td>
+<td>Looking for your next trip…</td>
+</tr>
+<tr>
+<td>Searching for your Adventure Works trip to Falls City.</td>
+<td>Searching for trip to Falls City...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="progress">Progress</h3>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/e2e-canceltrip-progress.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip progress">
+</span>
+<em>AdventureWorks &quot;Cancel trip&quot; progress</em></p>
+<p>When a task takes a while between steps, your app needs to step in and update the user on what's happening on a progress screen. The app icon is displayed, and you must provide both GUI and TTS progress strings to indicate that the task is underway.</p>
+<p>You should provide a link to your app with launch parameters to start the app in the appropriate state. This lets the user view or complete the task themselves. <strong>Cortana</strong> provides the link text (such as, &quot;Go to Adventure Works&quot;).</p>
+<p>Progress screens will show for 5 seconds each, after which they must be followed by another screen or the task will time out.</p>
+<p>These screens can follow a progress screen:</p>
+<ul>
+<li>Progress</li>
+<li>Confirmation (explicit, described later)</li>
+<li>Disambiguation</li>
+<li>Completion</li>
+</ul>
+<h3 id="gui-and-tts-guidelines-for-progress-screens">GUI and TTS guidelines for progress screens</h3>
+<p>Use present tense.</p>
+<p>Use an action verb that confirms the task is underway.</p>
+<p><strong>GUI</strong>: If the entity is shown, use a reference to it (&quot;Cancelling this trip…&quot;); if no entity is shown, explicitly call out the entity (&quot;Cancelling 'Vegas Tech Conference'&quot;).</p>
+<p><strong>TTS</strong>: You should only include a TTS string on the first progress screen. If further progress screens are required, send an empty string, {}, as your TTS string, and provide a GUI string only.</p>
+<table>
+<thead>
+<tr>
+<th>Conditions</th>
+<th>TTS</th>
+<th>GUI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENTITY READ ON PRIOR TURN / ENTITY SHOWN ON DISPLAY</td>
+<td>Cancelling this trip…</td>
+<td>Cancelling this trip…</td>
+</tr>
+<tr>
+<td>ENTITY NOT READ ON PRIOR TURN / ENTITY SHOWN ON DISPLAY</td>
+<td>Cancelling your trip to Vegas…</td>
+<td>Cancelling this trip…</td>
+</tr>
+<tr>
+<td>ENTITY NOT READ ON PRIOR TURN / ENTITY NOT SHOWN</td>
+<td>Cancelling your trip to Vegas…</td>
+<td>Cancelling your trip to Vegas…</td>
+</tr>
+</tbody>
+</table>
+<h3 id="confirmation">Confirmation</h3>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/e2e-canceltrip-confirmation.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip confirmation">
+</span>
+<em>AdventureWorks &quot;Cancel trip&quot; confirmation</em></p>
+<p>Some tasks can be implicitly confirmed by the nature of the user's command; others are potentially more sensitive and require explicit confirmation. Here are some guidelines for when to use explicit vs. implicit confirmation.</p>
+<p>Both GUI and TTS strings on the confirmation screen are specified by your app, and the app icon, if provided, is shown instead of the <strong>Cortana</strong> avatar.</p>
+<p>After the customer responds to the confirmation, your application must provide the next screen within 500 ms to avoid going to a progress screen.</p>
+<p>Use explicit when...</p>
+<ul>
+<li>Content is leaving the user (such as, a text message, email, or social post)</li>
+<li>An action can't be undone (such as, making a purchase or deleting something)</li>
+<li>The result could be embarrassing (such as, calling the wrong person)</li>
+<li>More complex recognition is required (such as, open-ended transcription)</li>
+</ul>
+<p>Use implicit when...</p>
+<ul>
+<li>Content is saved for the user only (such as, a note-to-self)</li>
+<li>There's an easy way to back out (such as, turning an alarm on or off)</li>
+<li>The task needs to be quick (such as, quickly capturing an idea before forgetting)</li>
+<li>Accuracy is high (such as, a simple menu)</li>
+</ul>
+<h3 id="gui-and-tts-guidelines-for-confirmation-screens">GUI and TTS guidelines for confirmation screens</h3>
+<p>Use present tense.</p>
+<p>Ask the user an unambiguous question that can be answered with &quot;Yes&quot; or &quot;No&quot;. The question should explicitly confirm what the user is trying to do and there should be no other obvious options.</p>
+<p>Provide a variation of the question for a re-prompt, in case the voice command is not understood the first time.</p>
+<p><strong>GUI</strong>: If the entity is shown, use a reference to it. If no entity is shown, explicitly call out the entity.</p>
+<p><strong>TTS</strong>: For clarity, always reference the specific item or entity, unless it was read out by the system on the previous turn.</p>
+<table>
+<thead>
+<tr>
+<th>Conditions</th>
+<th>TTS</th>
+<th>GUI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENTITY NOT READ ON PRIOR TURN / ENTITY SHOWN ON DISPLAY</td>
+<td>Do you wanna cancel Vegas Tech Conference?</td>
+<td>Cancel this trip?</td>
+</tr>
+<tr>
+<td>ENTITY NOT READ ON PRIOR TURN / ENTITY NOT SHOWN</td>
+<td>Do you wanna cancel Vegas Tech Conference?</td>
+<td>Cancel Vegas Tech Conference?</td>
+</tr>
+<tr>
+<td>ENTITY READ ON PRIOR TURN / ENTITY NOT SHOWN</td>
+<td>Do you wanna cancel this trip?</td>
+<td>Cancel this trip?</td>
+</tr>
+<tr>
+<td>REPROMPT WITH ENTITY SHOWN</td>
+<td>Did you wanna cancel this trip?</td>
+<td>Did you want to cancel this trip?</td>
+</tr>
+<tr>
+<td>REPROMPT WITH ENTITY NOT SHOWN</td>
+<td>Did you wanna cancel this trip?</td>
+<td>Did you want to cancel Vegas Tech Conference?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="disambiguation">Disambiguation</h3>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/cortana-disambiguation-screen.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip disambiguation">
+</span>
+<em>AdventureWorks &quot;Cancel trip&quot; disambiguation</em></p>
+<p>Some tasks might require the user to select from a list of entities to complete the task.</p>
+<p>Both GUI and TTS strings on the disambiguation screen are specified by your app, and the app icon, if provided, is shown instead of the <strong>Cortana</strong> avatar.</p>
+<p>After the customer responds to the disambiguation question, your application must provide the next screen within 500 ms to avoid going to a progress screen.</p>
+<h3 id="gui-and-tts-guidelines-for-disambiguation-screens">GUI and TTS guidelines for disambiguation screens</h3>
+<p>Use present tense.</p>
+<p>Ask the user an unambiguous question that can be answered with the title or text line of any entity displayed.</p>
+<p>Up to 10 entities can be displayed.</p>
+<p>Each entity should have a unique title.</p>
+<p>Provide a variation of the question for a re-prompt, in case the voice command is not understood the first time.</p>
+<p><strong>TTS</strong>: For clarity, always reference the specific item or entity, unless it was spoken on the previous turn.</p>
+<p><strong>TTS</strong>: Don't read out the entity list, unless there are three or fewer and they are short.</p>
+<table>
+<thead>
+<tr>
+<th>Conditions</th>
+<th>TTS</th>
+<th>GUI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PROMPT - 3 OR FEWER ITEMS</td>
+<td>Which Vegas trip do you wanna cancel? Vegas Tech Conference or Party in Vegas?</td>
+<td>Which one do you want to cancel?</td>
+</tr>
+<tr>
+<td>PROMPT - MORE THAN 3 ITEMS</td>
+<td>Which Vegas trip do you wanna cancel?</td>
+<td>Which one do you want to cancel?</td>
+</tr>
+<tr>
+<td>REPROMPT</td>
+<td>Which Vegas trip did you wanna cancel?</td>
+<td>Which one do you want to cancel?</td>
+</tr>
+</tbody>
+</table>
+<h3 id="completion">Completion</h3>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/e2e-canceltrip-completion.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip completion">
+</span>
+<em>AdventureWorks &quot;Cancel trip&quot; completion</em></p>
+<p>On successful task completion, your app should inform the user that the requested task was completed successfully.</p>
+<p>Both GUI and TTS strings on the completion screen are specified by your app, and the app icon, if provided, is shown instead of the <strong>Cortana</strong> avatar.</p>
+<p>You should provide a link to your app with launch parameters to start the app in the appropriate state. This lets the user view or complete the task themselves. <strong>Cortana</strong> provides the link text (such as, &quot;Go to Adventure Works&quot;).</p>
+<h3 id="gui-and-tts-guidelines-for-completion-screens">GUI and TTS guidelines for completion screens</h3>
+<p>Use past tense.</p>
+<p>Use an action verb to explicitly state that the task has completed.</p>
+<p>If the entity is shown, or it has been referenced on prior turn, only reference it.</p>
+<table>
+<thead>
+<tr>
+<th>Conditions</th>
+<th>TTS</th>
+<th>GUI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ENTITY SHOWN / ENTITY READ ON PRIOR TURN</td>
+<td>I've cancelled this trip.</td>
+<td>Cancelled this trip.</td>
+</tr>
+<tr>
+<td>ENTITY NOT SHOWN / ENTITY NOT READ ON PRIOR TURN</td>
+<td>I've cancelled your Vegas Tech Conference trip.</td>
+<td>Cancelled &quot;Vegas Tech Conference.&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error">Error</h3>
+<p><span class="mx-imgBorder">
+<img src="images/cortana/e2e-canceltrip-error.png" alt="Screenshot of the Cortana canvas for end to end Cortana background app flow using AdventureWorks cancel trip error">
+</span>
+<em>AdventureWorks &quot;Cancel trip&quot; error</em></p>
+<p>When one of the following errors occur, <strong>Cortana</strong> displays the same generic error message.</p>
+<ul>
+<li>The app service terminates unexpectedly.</li>
+<li><strong>Cortana</strong> fails to communicate with the app service.</li>
+<li>The app fails to provide a screen after <strong>Cortana</strong> shows a handoff screen or a progress screen for 5 seconds.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="cortana-interactions.html">Cortana interactions in Windows apps</a></li>
+<li><a href="/uwp/schemas/voicecommands/voice-command-elements-and-attributes-1-2">VCD elements and attributes v1.2</a></li>
+<li><a href="https://go.microsoft.com/fwlink/p/?LinkID=619899">Cortana voice command sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/cortana-design-guidelines.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

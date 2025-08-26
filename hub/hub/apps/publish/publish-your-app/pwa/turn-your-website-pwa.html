@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Turn your website into a high quality PWA </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Turn your website into a high quality PWA ">
+    
+    <meta name="description" content="Use PWA Builder to create a high quality PWA from your existing website">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="turn-your-website-into-a-high-quality-pwa">Turn your website into a high quality PWA</h1>
+
+<p>Turning your website into a fully functional high quality PWA (Progressive Web Application) can be done in a lunch break! In this article well take you through the end-to-end process.</p>
+<h2 id="step-1-create-a-report-card-in-pwa-builder">Step 1: Create a report card in PWA Builder</h2>
+<p>First, you'll want to check if your website has the features and metadata that great PWAs need.</p>
+<ol>
+<li>Navigate to <a href="https://www.pwabuilder.com/">PWA Builder</a></li>
+<li>Enter the URL of the website you'd like to convert to a PWA and click <strong>Start</strong></li>
+<li>PWA builder will display a PWA Report Card that indicates the features and app capabilities your website has and does not have.</li>
+</ol>
+<h2 id="step-2-review-your-pwa-report-card">Step 2: Review your PWA Report Card</h2>
+<p><img src="../../images/pwa-report-card.png" alt="An example PWA Report Card"></p>
+<p>Your PWA Report Card shows your website’s validation results and overall score. It also provides a summary of action items you need to address before you can package your app.</p>
+<h3 id="manifest">Manifest</h3>
+<p>PWA evaluates your website's <a href="https://www.w3.org/TR/appmanifest/">Web Application Manifest</a> if one is available, and identifies fields or values that are required, recommended, and optional. You can improve the PWA by adding missing values, either by editing and re-publishing your manifest file, or by using the online manifest editor.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Changes made in the online manifest editor will not be published to your website. The changes you make will only be used by PWA Builder when creating your PWA.</p>
+</div>
+<p><strong>Required</strong> values must be present, otherwise PWA builder won't be able to create your PWA. Required fields include simply having a manifest, icons, name, short name, and a start_url.</p>
+<p><strong>Recommended</strong> fields aren't required, but are important for your PWA's user experience. It is strongly recommended you provide all recommended values, though PWA Builder can create a PWA without them. Recommended values include display mode, splash screen background color, description, orientation, screenshots, high resolution icon, maskable icon, categories, and shortcuts.</p>
+<p><strong>Optional</strong> fields are not required, but can be specified if appropriate. Optional fields include an age rating and related applications.</p>
+<h3 id="service-worker">Service Worker</h3>
+<p><img src="../../images/pwa-builder-service-workers.png" alt="Some of the prebuilt service workers offered by PWA Builder"></p>
+<p>Service workers are a specific type of web worker that serve as a proxy between your application and the network. All requests that go to or from your PWA will pass through the service worker first. This allows your service worker to handle requests in situations where the network may be unavailable. To use a prebuilt service worker:</p>
+<ol>
+<li>Navigate to the <strong>Service Worker</strong> section.</li>
+<li>Click on <strong>Generate Service Worker</strong> and choose the service worker you'd like to use.</li>
+<li>Download the prebuilt service worker package by clicking on <strong>Download Service Worker</strong>.</li>
+</ol>
+<h3 id="security">Security</h3>
+<p>All PWAs built with PWA Builder require three security protocols.</p>
+<ol>
+<li><p>Your site must use HTTPS.</p>
+</li>
+<li><p>Your site must have a corresponding HTTPS certificate.</p>
+<p>If your website does not have a HTTPS certificate present you can publish to Azure to get built-in HTTPS support. Alternatively there are free third-party tools such as <a href="https://letsencrypt.org/">Letsencrypt</a> that will allow you to obtain a HTTPS certificate for free.</p>
+</li>
+<li><p>Your site must not contain mixed content. Mixed content is when a page served over HTTPS contains resources loaded over HTTP. Mixed content compromises the security of HTTPS and your PWA.</p>
+</li>
+</ol>
+<h2 id="step-3-collect-important-information-from-partner-center">Step 3: Collect important information from Partner Center</h2>
+<p>You'll need several pieces of information from your Partner Center account to create your PWA. If you do not have an MSA, <a href="/partner-center/mpn-create-a-partner-center-account">click here for instructions on how to get started</a>. You will also need to enroll in the Windows Developer Program.</p>
+<p><img src="../../images/application-overview.png" alt="Image of the application overview page"></p>
+<p>If you have not already done so, you'll need to <a href="reserve-your-apps-name.html">create your PWA app by reserving a new name</a>. Once you've reserved your name, click the <strong>Start your submission</strong> button to create a new app submission.</p>
+<p><img src="../../images/product-identity.png" alt="Image of the product identity page"></p>
+<p>Next, click on the <strong>Product Management</strong> tab and select <strong>Product Identity</strong>. The product identity page will list your product's package ID, your publisher ID, and your publisher display name. Save these values and return to PWA Builder.</p>
+<h2 id="step-4-generate-your-pwa-on-pwa-builder">Step 4: Generate your PWA on PWA Builder</h2>
+<p><img src="../../images/pwa-builder-generate.png" alt="An image of the generate button on PWA Builder"></p>
+<p>You now have everything you need to create your PWA on PWA Builder. Return to the PWA Builder site and click <strong>Generate</strong>.</p>
+<p><img src="../../images/pwa-builder-pc-info.png" alt="PWA Builder prompting the user for information from Partner Center"></p>
+<p>PWA Builder will prompt you for the information you obtained from Partner Center in step 3. Fill in the values and click <strong>Generate</strong>.</p>
+<p><img src="../../images/pwa-files.png" alt="PWA files in file explorer"></p>
+<p>Once PWA Builder has created your PWA, your browser will automatically download it. Your PWA is packaged in a .zip file that contains six files.</p>
+<p>The <strong>msix</strong> file is your PWA's main app package. This file will install your PWA on the user's machine.</p>
+<p>The <strong>appx</strong> file is a classic app package. It is used to install your PWA on older versions of Windows. See <a href="https://github.com/pwa-builder/pwabuilder-windows-chromium-docs/blob/master/classic-package.md">Classic app packages</a> for more information.</p>
+<h2 id="step-5-submit-your-app-packages-to-the-microsoft-store">Step 5: Submit your app packages to the Microsoft Store</h2>
+<p>These packages can be submitted to the Microsoft Store in the same way as any other app packaged as an MSIX file. For further instructions on submitting your PWA packages to the store, see <a href="create-app-submission.html">App submissions</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/pwa/turn-your-website-pwa.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

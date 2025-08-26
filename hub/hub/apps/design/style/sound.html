@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Sound </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Sound ">
+    
+    <meta name="description" content="Sound helps complete an application&#39;s user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sound">Sound</h1>
+
+<p><img src="images/header-sound.svg" alt="hero image"></p>
+<p>There are many ways to use sound to enhance your app. You can use to sound to supplement other UI elements, enabling users to recognize events audibly. Sound can be an effective user interface element for people with visual disabilities. You can use sound to create an atmosphere that immerses the user; for example, you might play a whimsical soundtrack in the background of puzzle game, or use ominous sound effects for a horror/survival game.</p>
+<h2 id="examples">Examples</h2>
+<table>
+<th align="left">WinUI 2 Gallery</th><th>
+</th><tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></td>
+<td>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Sound">open the app and see Sound in action</a>.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+<h2 id="sound-global-api">Sound Global API</h2>
+<p>UWP provides an easily accessible sound system that allows you to simply &quot;flip a switch&quot; and get an immersive audio experience across your entire app.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.elementsoundplayer"><strong>ElementSoundPlayer</strong></a> is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.</p>
+<pre><code class="lang-C#">ElementSoundPlayer.State = ElementSoundPlayerState.On;
+</code></pre>
+<p>The <strong>ElementSoundPlayer</strong> has three different states: <strong>On</strong> <strong>Off</strong> and <strong>Auto</strong>.</p>
+<p>If set to <strong>Off</strong>, no matter where your app is run, sound will never play. If set to <strong>On</strong> sounds for your app will play on every platform.</p>
+<p>Enabling ElementSoundPlayer will automatically enable spatial audio (3D sound) as well. To disable 3D sound (while still keeping the sound on), disable the <strong>SpatialAudioMode</strong> of the ElementSoundPlayer:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.SpatialAudioMode = ElementSpatialAudioMode.Off
+</code></pre>
+<p>The <strong>SpatialAudioMode</strong> property can takes these values:</p>
+<ul>
+<li><strong>Auto</strong>: Spatial audio will turn on when sound is on.</li>
+<li><strong>Off</strong>: Spatial audio is always off, even if sound is on.</li>
+<li><strong>On</strong>: Spatial audio will always play.</li>
+</ul>
+<p>To learn more about spatial audio and how XAML handles it see <a href="/windows/uwp/audio-video-camera/audio-graphs#spatial-audio">AudioGraph - Spatial Audio</a>.</p>
+<h3 id="sound-for-tv-and-xbox">Sound for TV and Xbox</h3>
+<p>Sound is a key part of the 10-foot experience, and by default, the <strong>ElementSoundPlayer</strong>'s state is <strong>Auto</strong>, meaning that you will only get sound when your app is running on Xbox.
+Please see <a href="../devices/designing-for-tv.html">Designing for Xbox and TV</a> for more details.</p>
+<h2 id="sound-volume-override">Sound Volume Override</h2>
+<p>All sounds within the app can be dimmed with the <strong>Volume</strong> control. However, sounds within the app cannot get <em>louder than the system volume</em>.</p>
+<p>To set the app volume level, call:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Volume = 0.5;
+</code></pre>
+<p>Where maximum volume (relative to system volume) is 1.0, and minimum is 0.0 (essentially silent).</p>
+<h2 id="control-level-state">Control Level State</h2>
+<p>If a control's default sound is not desired, it can be disabled. This is done through the <strong>ElementSoundMode</strong> on the control.</p>
+<p>The <strong>ElementSoundMode</strong> has two states: <strong>Off</strong> and <strong>Default</strong>. When not set, it is <strong>Default</strong>. If set to <strong>Off</strong>, every sound that control plays will be muted <em>except for focus</em>.</p>
+<pre><code class="lang-XAML">&lt;Button Name=&quot;ButtonName&quot; Content=&quot;More Info&quot; ElementSoundMode=&quot;Off&quot;/&gt;
+</code></pre>
+<pre><code class="lang-C#">ButtonName.ElementSoundState = ElementSoundMode.Off;
+</code></pre>
+<h2 id="is-this-the-right-sound">Is This The Right Sound?</h2>
+<p>When creating a custom control, or changing an existing control's sound, it is important to understand the usages of all the sounds the system provides.</p>
+<p>Each sound relates to a certain basic user interaction, and although sounds can be customized to play on any interaction, this section serves to illustrate the scenarios where sounds should be used to maintain a consistent experience across all UWP apps.</p>
+<h3 id="invoking-an-element">Invoking an Element</h3>
+<p>The most common control-triggered sound in our system today is the <strong>Invoke</strong> sound. This sound plays when a user invokes a control through a tap/click/enter/space or press of the 'A' button on a gamepad.</p>
+<p>Typically, this sound is only played when a user explicitly targets a simple control or control part through an <a href="../input/index.html">input device</a>.</p>
+<p>To play this sound from any control event, simply call the Play method from <strong>ElementSoundPlayer</strong> and pass in <strong>ElementSound.Invoke</strong>:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Play(ElementSoundKind.Invoke);
+</code></pre>
+<h3 id="showing--hiding-content">Showing &amp; Hiding Content</h3>
+<p>There are many flyouts, dialogs and dismissible UIs in XAML, and any action that triggers one of these overlays should call a <strong>Show</strong> or <strong>Hide</strong> sound.</p>
+<p>When an overlay content window is brought into view, the <strong>Show</strong> sound should be called:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Play(ElementSoundKind.Show);
+</code></pre>
+<p>Conversely when an overlay content window is closed (or is light dismissed), the <strong>Hide</strong> sound should be called:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Play(ElementSoundKind.Hide);
+</code></pre>
+<h3 id="navigation-within-a-page">Navigation Within a Page</h3>
+<p>When navigating between panels or views within an app's page (see <a href="../controls/navigationview.html">NavigationView</a>), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.</p>
+<p>The audio experience around this navigation concept is encompassed by the <strong>MovePrevious</strong> and <strong>MoveNext</strong> sounds.</p>
+<p>When moving to a view/panel that is considered the <em>next item</em> in a list, call:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Play(ElementSoundKind.MoveNext);
+</code></pre>
+<p>And when moving to a previous view/panel in a list considered the <em>previous item</em>, call:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Play(ElementSoundKind.MovePrevious);
+</code></pre>
+<h3 id="back-navigation">Back Navigation</h3>
+<p>When navigating from the current page to the previous page within an app the <strong>GoBack</strong> sound should be called:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Play(ElementSoundKind.GoBack);
+</code></pre>
+<h3 id="focusing-on-an-element">Focusing on an Element</h3>
+<p>The <strong>Focus</strong> sound is the only implicit sound in our system. Meaning a user isn't directly interacting with anything, but is still hearing a sound.</p>
+<p>Focusing happens when a user navigates through an app, this can be with the gamepad/keyboard/remote or kinect. Typically the <strong>Focus</strong> sound <em>does not play on PointerEntered or mouse hover events</em>.</p>
+<p>To set up a control to play the <strong>Focus</strong> sound when your control receives focus, call:</p>
+<pre><code class="lang-C#">ElementSoundPlayer.Play(ElementSoundKind.Focus);
+</code></pre>
+<h3 id="cycling-focus-sounds">Cycling Focus Sounds</h3>
+<p>As an added feature to calling <strong>ElementSound.Focus</strong>, the sound system will, by default, cycle through 4 different sounds on each navigation trigger. Meaning that no two exact focus sounds will play right after the other.</p>
+<p>The purpose behind this cycling feature is to keep the focus sounds from becoming monotonous and from being noticeable by the user; focus sounds will be played most often and therefore should be the most subtle.</p>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI 2 Gallery sample</a> - See all the XAML controls in an interactive format.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../devices/designing-for-tv.html">Designing for Xbox and TV</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.elementsoundplayer">ElementSoundPlayer class documentation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/sound.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

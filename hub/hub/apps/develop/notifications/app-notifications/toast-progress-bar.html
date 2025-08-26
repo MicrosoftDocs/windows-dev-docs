@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Toast progress bar and data binding </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Toast progress bar and data binding ">
+    
+    <meta name="description" content="Use a progress bar inside your toast notification to convey the status of long-running operations to the user.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="toast-progress-bar-and-data-binding">Toast progress bar and data binding</h1>
+
+<p>Using a progress bar inside your toast notification allows you to convey the status of long-running operations to the user, like downloads, video rendering, exercise goals, and more.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires Creators Update and 1.4.0 of Notifications library</strong>: You must target SDK 15063 and be running build 15063 or later to use progress bars on toasts. You must use version 1.4.0 or later of the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">UWP Community Toolkit Notifications NuGet library</a> to construct the progress bar in your toast's content.</p>
+</div>
+<p>A progress bar inside a toast can either be &quot;indeterminate&quot; (no specific value, animated dots indicate an operation is occurring) or &quot;determinate&quot; (a specific percent of the bar is filled, like 60%).</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.notifications.notificationdata">NotificationData class</a>, <a href="/uwp/api/Windows.UI.Notifications.ToastNotifier.Update">ToastNotifier.Update method</a>, <a href="/uwp/api/Windows.UI.Notifications.ToastNotification">ToastNotification class</a></p>
+</blockquote>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only Desktop supports progress bars in toast notifications. On other devices, the progress bar will be dropped from your notification.</p>
+</div>
+<p>The picture below shows a determinate progress bar with all of its corresponding properties labeled.</p>
+<img alt="Toast with progress bar properties labeled" src="images/toast-progressbar-annotated.png" width="626">
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title</strong></td>
+<td>string or <a href="toast-schema.html#bindablestring">BindableString</a></td>
+<td>false</td>
+<td>Gets or sets an optional title string. Supports data binding.</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td>double or <a href="toast-schema.html#adaptiveprogressbarvalue">AdaptiveProgressBarValue</a> or <a href="toast-schema.html#bindableprogressbarvalue">BindableProgressBarValue</a></td>
+<td>false</td>
+<td>Gets or sets the value of the progress bar. Supports data binding. Defaults to 0. Can either be a double between 0.0 and 1.0, <code>AdaptiveProgressBarValue.Indeterminate</code>, or <code>new BindableProgressBarValue(&quot;myProgressValue&quot;)</code>.</td>
+</tr>
+<tr>
+<td><strong>ValueStringOverride</strong></td>
+<td>string or <a href="toast-schema.html#bindablestring">BindableString</a></td>
+<td>false</td>
+<td>Gets or sets an optional string to be displayed instead of the default percentage string. If this isn't provided, something like &quot;70%&quot; will be displayed.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>string or <a href="toast-schema.html#bindablestring">BindableString</a></td>
+<td>true</td>
+<td>Gets or sets a status string (required), which is displayed underneath the progress bar on the left. This string should reflect the status of the operation, like &quot;Downloading...&quot; or &quot;Installing...&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>Here's how you would generate the notification seen above...</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_builder-syntax" role="tab" aria-controls="tabpanel_1_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_xml" role="tab" aria-controls="tabpanel_1_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_1_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    .AddText(&quot;Downloading your weekly playlist...&quot;)
+    .AddVisualChild(new AdaptiveProgressBar()
+    {
+        Title = &quot;Weekly playlist&quot;,
+        Value = 0.6,
+        ValueStringOverride = &quot;15/26 songs&quot;,
+        Status = &quot;Downloading...&quot;
+    });
+</code></pre>
+</section>
+<section id="tabpanel_1_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+    &lt;visual&gt;
+        &lt;binding template=&quot;ToastGeneric&quot;&gt;
+            &lt;text&gt;Downloading your weekly playlist...&lt;/text&gt;
+            &lt;progress
+                title=&quot;Weekly playlist&quot;
+                value=&quot;0.6&quot;
+                valueStringOverride=&quot;15/26 songs&quot;
+                status=&quot;Downloading...&quot;/&gt;
+        &lt;/binding&gt;
+    &lt;/visual&gt;
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p>However, you'll need to dynamically update the values of the progress bar for it to actually be &quot;live&quot;. This can be done by using data binding to update the toast.</p>
+<h2 id="using-data-binding-to-update-a-toast">Using data binding to update a toast</h2>
+<p>Using data binding involves the following steps...</p>
+<ol>
+<li>Construct toast content that utilizes data bound fields</li>
+<li>Assign a <strong>Tag</strong> (and optionally a <strong>Group</strong>) to your <strong>ToastNotification</strong></li>
+<li>Define your initial <strong>Data</strong> values on your <strong>ToastNotification</strong></li>
+<li>Send the toast</li>
+<li>Utilize <strong>Tag</strong> and <strong>Group</strong> to update the <strong>Data</strong> values with new values</li>
+</ol>
+<p>The following code snippet shows steps 1-4. The next snippet will show how to update the toast <strong>Data</strong> values.</p>
+<pre><code class="lang-csharp">using Windows.UI.Notifications;
+using Microsoft.Toolkit.Uwp.Notifications;
+ 
+public void SendUpdatableToastWithProgress()
+{
+    // Define a tag (and optionally a group) to uniquely identify the notification, in order update the notification data later;
+    string tag = &quot;weekly-playlist&quot;;
+    string group = &quot;downloads&quot;;
+ 
+    // Construct the toast content with data bound fields
+    var content = new ToastContentBuilder()
+        .AddText(&quot;Downloading your weekly playlist...&quot;)
+        .AddVisualChild(new AdaptiveProgressBar()
+        {
+            Title = &quot;Weekly playlist&quot;,
+            Value = new BindableProgressBarValue(&quot;progressValue&quot;),
+            ValueStringOverride = new BindableString(&quot;progressValueString&quot;),
+            Status = new BindableString(&quot;progressStatus&quot;)
+        })
+        .GetToastContent();
+ 
+    // Generate the toast notification
+    var toast = new ToastNotification(content.GetXml());
+ 
+    // Assign the tag and group
+    toast.Tag = tag;
+    toast.Group = group;
+ 
+    // Assign initial NotificationData values
+    // Values must be of type string
+    toast.Data = new NotificationData();
+    toast.Data.Values[&quot;progressValue&quot;] = &quot;0.6&quot;;
+    toast.Data.Values[&quot;progressValueString&quot;] = &quot;15/26 songs&quot;;
+    toast.Data.Values[&quot;progressStatus&quot;] = &quot;Downloading...&quot;;
+ 
+    // Provide sequence number to prevent out-of-order updates, or assign 0 to indicate &quot;always update&quot;
+    toast.Data.SequenceNumber = 1;
+ 
+    // Show the toast notification to the user
+    ToastNotificationManager.CreateToastNotifier().Show(toast);
+}
+</code></pre>
+<p>Then, when you want to change your <strong>Data</strong> values, use the <a href="/uwp/api/Windows.UI.Notifications.ToastNotifier.Update"><strong>Update</strong></a> method to provide the new data without re-constructing the entire toast payload.</p>
+<pre><code class="lang-csharp">using Windows.UI.Notifications;
+ 
+public void UpdateProgress()
+{
+    // Construct a NotificationData object;
+    string tag = &quot;weekly-playlist&quot;;
+    string group = &quot;downloads&quot;;
+ 
+    // Create NotificationData and make sure the sequence number is incremented
+    // since last update, or assign 0 for updating regardless of order
+    var data = new NotificationData
+    {
+        SequenceNumber = 2
+    };
+
+    // Assign new values
+    // Note that you only need to assign values that changed. In this example
+    // we don't assign progressStatus since we don't need to change it
+    data.Values[&quot;progressValue&quot;] = &quot;0.7&quot;;
+    data.Values[&quot;progressValueString&quot;] = &quot;18/26 songs&quot;;
+
+    // Update the existing notification's data by using tag/group
+    ToastNotificationManager.CreateToastNotifier().Update(data, tag, group);
+}
+</code></pre>
+<p>Using the <strong>Update</strong> method rather than replacing the entire toast also ensures that the toast notification stays in the same position in Action Center and doesn't move up or down. It would be quite confusing to the user if the toast kept jumping to the top of Action Center every few seconds while the progress bar filled!</p>
+<p>The <strong>Update</strong> method returns an enum, <a href="/uwp/api/windows.ui.notifications.notificationupdateresult"><strong>NotificationUpdateResult</strong></a>, which lets you know whether the update succeeded or whether the notification couldn't be found (which means the user has likely dismissed your notification and you should stop sending updates to it). We do not recommend popping another toast until your progress operation has been completed (like when the download completes).</p>
+<h2 id="elements-that-support-data-binding">Elements that support data binding</h2>
+<p>The following elements in toast notifications support data binding</p>
+<ul>
+<li>All properties on <strong>AdaptiveProgress</strong></li>
+<li>The <strong>Text</strong> property on the top-level <strong>AdaptiveText</strong> elements</li>
+</ul>
+<h2 id="update-or-replace-a-notification">Update or replace a notification</h2>
+<p>Since Windows 10, you could always <strong>replace</strong> a notification by sending a new toast with the same <strong>Tag</strong> and <strong>Group</strong>. So what's the difference between <strong>replacing</strong> the toast and <strong>updating</strong> the toast's data?</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Replacing</th>
+<th>Updating</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Position in Action Center</strong></td>
+<td>Moves the notification to the top of Action Center.</td>
+<td>Leaves the notification in place within Action Center.</td>
+</tr>
+<tr>
+<td><strong>Modifying content</strong></td>
+<td>Can completely change all content/layout of the toast</td>
+<td>Can only change properties that support data binding (progress bar and top-level text)</td>
+</tr>
+<tr>
+<td><strong>Reappearing as popup</strong></td>
+<td>Can reappear as a toast popup if you leave <strong>SuppressPopup</strong> set to <code>false</code> (or set to true to silently send it to Action Center)</td>
+<td>Won't reappear as a popup; the toast's data is silently updated within Action Center</td>
+</tr>
+<tr>
+<td><strong>User dismissed</strong></td>
+<td>Regardless of whether user dismissed your previous notification, your replacement toast will always be sent</td>
+<td>If the user dismissed your toast, the toast update will fail</td>
+</tr>
+</tbody>
+</table>
+<p>In general, <strong>updating is useful for...</strong></p>
+<ul>
+<li>Information that frequently changes in a short period of time and doesn't require being brought to the front of the user's attention</li>
+<li>Subtle changes to your toast content, like changing 50% to 65%</li>
+</ul>
+<p>Often times, after your sequence of updates have completed (like the file has been downloaded), we recommend replacing for the final step, because...</p>
+<ul>
+<li>Your final notification likely has drastic layout changes, like removal of the progress bar, addition of new buttons, etc</li>
+<li>The user might have dismissed your pending progress notification since they don't care about watching it download, but still want to be notified with a popup toast when the operation is completed</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://github.com/WindowsNotifications/quickstart-toast-progress-bar">Full code sample on GitHub</a></li>
+<li><a href="adaptive-interactive-toasts.html">Toast content documentation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/toast-progress-bar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

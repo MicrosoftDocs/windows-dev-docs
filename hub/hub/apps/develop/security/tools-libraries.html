@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tools and libraries for passkeys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tools and libraries for passkeys ">
+    
+    <meta name="description" content="This topic contains info about tools and libraries to help you implement passkeys.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tools-and-libraries-for-passkeys">Tools and libraries for passkeys</h1>
+
+<p>This topic contains info about tools and libraries to help you implement passkeys.</p>
+<h2 id="libraries">Libraries</h2>
+<h3 id="selection-criteria">Selection criteria</h3>
+<p>If you wish to own passwordless authentication internally, or you're looking to implement a turnkey solution for passkeys, then you'll likely be looking for libraries or vendors. When selecting a library to implement passkeys, what should you as a developer at a relying party (RP) keep an eye on?</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A small set of these criteria are not specific to passkeys, but are useful to keep in mind when selecting an open-source solution.</p>
+</div>
+<h3 id="webauthn-versions-and-capabilities">WebAuthn versions and capabilities</h3>
+<ul>
+<li><strong>Version</strong>. Check which version of the spec the library supports (Level 2, Level 3, and so on).</li>
+<li><strong>Features and capabilities</strong>. Check whether the library includes key features and capabilities for your use case.
+<ul>
+<li>Does the library help with generating registration and authentication options? Does it help with verification of the registration and authentication response? From a relying party (RP) perspective, those are the key steps of your implementation. So make sure that the library you select provides useful functions for those steps.</li>
+<li>If you're considering using attestation features:
+<ul>
+<li>Does the library help leverage FIDO MDS in some way?</li>
+<li>Can the library verify all attestation statement formats?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="verification-steps">Verification steps</h3>
+<p>Check whether the library follows the necessary verification steps:</p>
+<ul>
+<li>During registration.</li>
+<li>During authentication.</li>
+</ul>
+<h3 id="user-interface-ui-and-user-experience-ux">User interface (UI) and user experience (UX)</h3>
+<p>If you're looking for a library that offers UI elements:</p>
+<ul>
+<li><strong>Visual consistency</strong>. Check that the solution uses standardized icons.</li>
+<li><strong>Clear language</strong>. Instructions using plain language are critical for broader user understanding. Prioritize solutions aligned with the FIDO UX guidelines.</li>
+</ul>
+<h3 id="developer-experience">Developer experience</h3>
+<ul>
+<li><strong>Full-stack coverage</strong>. A library that offers tightly-integrated frontend and backend components (for example, SimpleWebAuthn) can streamline your integration.</li>
+<li><strong>Developer documentation</strong>. In order to ease the integration process, check that the library has a maintained documentation website .</li>
+</ul>
+<h3 id="developer-involvement-and-maintenance">Developer involvement and maintenance</h3>
+<ul>
+<li><strong>Open-source maintenance</strong>. For open-source options, investigate their community activity. A few active issues, or many issues with up-to-date labels (assuming that those require manual assignment), and comments by contributors, are all signals of an active community.</li>
+<li><strong>Patience</strong>. Standards can be slow-moving. So a WebAuthn/passkey library can go a long time between updates if there aren't any real issues with it. But that doesn't mean the library is unmaintained.</li>
+</ul>
+<h3 id="licensing">Licensing</h3>
+<p>Review the solution's licensing model (for example, MIT, Apache, commercial) in the context of your project.</p>
+<h3 id="updated-for-passkeys">Updated for passkeys</h3>
+<ul>
+<li><strong>Rust</strong>. <a href="https://docs.rs/webauthn-rs/latest/webauthn_rs/">Webauthn-rs - Webauthn for Rust Server Applications</a> (William Brown).</li>
+<li><strong>TypeScript</strong>. <a href="https://simplewebauthn.dev/">SimpleWebAuthn</a> (Matthew Miller).</li>
+<li><strong>Java</strong>. <a href="https://github.com/Yubico/java-webauthn-server">java-webauthn-server</a> (Yubico).</li>
+</ul>
+<h3 id="other-fido2webauthn-libraries">Other FIDO2/WebAuthn libraries</h3>
+<p>The <a href="https://github.com/yackermann/awesome-webauthn">WebAuthn Awesome</a> GitHub repo is also regularly updated with libraries from the community.</p>
+<ul>
+<li><strong>.NET</strong>. <a href="https://fido2-net-lib.passwordless.dev/">FIDO2 .NET Library</a> (Anders Åberg, Alex Seigler).</li>
+<li><strong>Go</strong>. <a href="https://github.com/go-webauthn/webauthn">WebAuthn Library</a>.</li>
+<li><strong>Java</strong>. <a href="https://github.com/webauthn4j/webauthn4j">WebAuthn4J</a> (Yoshikazu Nojima).</li>
+<li><strong>Python</strong>. <a href="https://github.com/duo-labs/py_webauthn">py_webauthn</a> (Duo Labs).</li>
+<li><strong>Ruby</strong>. <a href="https://github.com/cedarcode/webauthn-ruby">webauthn-ruby</a> (Cedarcode), <a href="https://github.com/ruby-passkeys/devise-passkeys">Devise::Passkeys</a> (Ruby Passkeys, wrapper around webauthn-ruby), and <a href="https://github.com/ruby-passkeys/warden-webauthn">Warden::WebAuthn</a> (Ruby Passkeys, wrapper around webauthn-ruby).</li>
+</ul>
+<h2 id="test-sites-and-tools">Test sites and tools</h2>
+<p>In addition to the resources listed in the sections below, the <a href="https://github.com/yackermann/awesome-webauthn">WebAuthn Awesome</a> GitHub repo is also regularly updated with tools and demos from the community.</p>
+<h3 id="basic-fido2webauthn-tools">Basic FIDO2/WebAuthn tools</h3>
+<ul>
+<li><a href="https://webauthn.io/">WebAuthn.io</a>.</li>
+<li><a href="https://demo.yubico.com/webauthn-technical/registration">yubico</a> demo site.</li>
+<li><a href="https://webauthn.me/">webauthn</a>.</li>
+</ul>
+<h3 id="advanced-fido2webauthn-tools">Advanced FIDO2/WebAuthn tools</h3>
+<ul>
+<li><a href="https://webauthn.lubu.ch/_test/client.html">lbuchs/WebAuthn</a>.</li>
+<li><a href="https://debugger.simplewebauthn.dev/?">WebAuthn Debugger</a>.</li>
+<li><a href="https://demo.yubico.com/webauthn-developers">WebAuthn Developer Tool</a>.</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>Next, see <a href="reference.html">Reference for passkeys</a>.</p>
+<h2 id="further-info">Further info</h2>
+<ul>
+<li><a href="intro.html">Intro to passkeys</a></li>
+<li><a href="https://passkeys.dev/">Passkeys.dev</a></li>
+<li><a href="https://fidoalliance.org/implement-passkeys-overview/">Get Started on Your Passwordless Journey</a> on the FIDO Alliance website</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/tools-libraries.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows apps--packaging, deployment, and process </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows apps--packaging, deployment, and process ">
+    
+    <meta name="description" content="This topic discusses your options around app packaging, deploy/distribute/install, and your app&#39;s run-time process.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-apps-packaging-deployment-and-process">Windows apps: packaging, deployment, and process</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</strong></p>
+</div>
+<p>This topic discusses your options concerning:</p>
+<ul>
+<li>Whether or not your app will be packaged.</li>
+<li>How you'll deploy/distribute your app, and how it'll be installed.</li>
+<li>Your app's run-time process—how isolated it'll be; and what APIs will be available to it.</li>
+</ul>
+<p>You can make those decisions for both new and existing apps. But if you're still in the planning stage for a new app, then before you start to think about the considerations above, first decide what development platform and user interface (UI) framework you'll use for your app. And for that decision, see <a href="/windows/apps/get-started/">An overview of Windows development options</a>.</p>
+<h2 id="packaged-or-unpackaged">Packaged or unpackaged</h2>
+<p>The decision to make your app either packaged or unpackaged is first determined by a concept known as <em>package identity</em>, which we'll describe in this section. If you don't need that, then the decision comes down to the desired installer experience for yourself and for your users. Let's drill into the details of those things.</p>
+<p>Many Windows extensibility features—including background tasks, notifications, live tiles, custom context menu extensions, and share targets—can be used by an app only if that app has package identity at runtime. That's because the operating system (OS) needs to be able to identify the caller of the corresponding API. See <a href="/windows/apps/desktop/modernize/modernize-packaged-apps">Features that require package identity</a>.</p>
+<ul>
+<li>If you need to use any of those features, then your app needs package identity. And therefore it <em>needs</em> to be a packaged app (packaged apps are the only kind that have package identity). A packaged app is packaged by using MSIX technology (see <a href="/windows/msix/overview">What is MSIX?</a>).
+<ul>
+<li>For a new app, the packaging process is straightfoward (and at the end of this section there's info about how to do it).</li>
+<li>For some existing apps, you can follow the same packaging process as for a new app. But because some existing apps aren't yet ready for all of their content to be present inside an MSIX package, there's an option for your app to be <em>packaged with external location</em>. That enables your app to have package identity; thereby being able to use those features that require it. For more info, see <a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps">Grant package identity by packaging with external location</a>.</li>
+</ul>
+</li>
+<li>Even if you <em>don't</em> need to use any of those features, then creating a packaged app is still a good idea. It gives your users the easiest way to install, uninstall, and update your app. For more info, see <a href="#deploymentdistributioninstallation">Deployment/distribution/installation</a> in this topic.</li>
+<li>But creating an unpackaged app is an option.</li>
+</ul>
+<p>The takeaway is that packaged apps are the only kind that have package identity (and they have the best install experience). An unpackaged app doesn't have package identity; so it can't use the APIs/features mentioned above.</p>
+<p>For more details about packaged versus unpackaged, see <a href="/windows/apps/package-and-deploy/">Deployment overview</a>; in particular, the <strong>Advantages and disadvantages of packaging your app</strong> section in that topic. That topic also mentions the <em>packaged with external location</em> option.</p>
+<p>For info about how to configure your app as packaged or unpackaged:</p>
+<ul>
+<li><strong>WinUI 3 apps (Windows App SDK)</strong>. See the <code>AppxPackage</code> Visual Studio project property in <a href="/windows/apps/package-and-deploy/project-properties">Project properties</a>; and see <a href="/windows/apps/winui/winui3/create-your-first-winui3-app">Create your first WinUI 3 (Windows App SDK) project</a>.</li>
+<li><strong>Desktop apps</strong>. See <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop app for MSIX packaging</a>.</li>
+<li><strong>Universal Windows Platform (UWP) apps</strong>. UWP apps are already configured as packaged; and that configuration can't be changed.</li>
+</ul>
+<p>Also see the <a href="#windows-package-manager-and-the-winget-client">Windows Package Manager and the WinGet client</a> section in this topic.</p>
+<h2 id="deploymentdistributioninstallation">Deployment/distribution/installation</h2>
+<ul>
+<li>A packaged app is packaged by using MSIX technology.
+<ul>
+<li>A packaged app is <em>installed</em> by using MSIX, also. But if you choose to <em>package with external location</em>, then you can think of that as a &quot;bring-your-own-installer&quot; model. So there <em>will</em> be some installer work for you to do with that option. For more info, see <a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps">Grant package identity by packaging with external location</a>.</li>
+</ul>
+</li>
+<li>An unpackaged app doesn't involve MSIX at all.</li>
+</ul>
+<p>So, why does it matter whether or not your app is packaged?</p>
+<ul>
+<li>Well, MSIX gives your users an easy way to install, uninstall, and update your app. Uninstall is clean—when your app is uninstalled, the system is restored to the same state it was in before installation; no artifacts are left behind.</li>
+<li>This kind of app also supports incremental and automatic updates.</li>
+<li>The Microsoft Store optimizes for apps of this kind (although they can be used in or out of the Store).</li>
+<li>It's an easy path for use via MSIX app attach (for Azure Virtual Desktop virtual machines). For more info, see <a href="/azure/virtual-desktop/what-is-app-attach">What is MSIX app attach?</a>.</li>
+<li>A signed package benefits from strong anti-tampering. This benefit is even greater than for an unpackaged app installed under <strong>Program Files</strong>.</li>
+</ul>
+<p>Also see the <a href="#windows-package-manager-and-the-winget-client">Windows Package Manager and the WinGet client</a> section in this topic.</p>
+<h2 id="appcontainer-or-medium-il">AppContainer or Medium IL</h2>
+<p>The option to run your app in an AppContainer, or not, is a question of security. An AppContainer app's process and its child processes run inside a lightweight app container where they can access only the resources that are specifically granted to them. And they're isolated using file system and registry virtualization. As a result, apps implemented in an AppContainer can't be hacked to allow malicious actions outside of the limited assigned resources.</p>
+<p>Packaged or unpackaged apps can be configured to run in an AppContainer. But the process is more straightforward for packaged apps. If an app isn't an AppContainer app, then it's a <em>Medium IL</em> app.</p>
+<p>For more info, see <a href="/windows/win32/secauthz/appcontainer-for-legacy-applications-">AppContainer for legacy apps</a> and <a href="/windows/msix/msix-container">MSIX AppContainer apps</a>.</p>
+<p>For info about how to configure your app to run in an AppContainer or Medium IL:</p>
+<ul>
+<li><strong>WinUI 3 apps (Windows App SDK)</strong>. See the <code>uap10:TrustLevel</code> app package manifest attribute in <a href="/windows/msix/msix-container#configure-a-winui-3-project-for-appcontainer">Configure a WinUI 3 project for AppContainer</a>.</li>
+<li><strong>Desktop apps</strong>. See the <code>TrustLevel</code> Visual Studio project property in <a href="/windows/msix/msix-container">MSIX AppContainer apps</a> (in the section that's appropriate for your kind of app).</li>
+<li><strong>Universal Windows Platform (UWP) apps</strong>. UWP apps are already configured to run in an AppContainer; and that configuration can't be changed.</li>
+</ul>
+<p>Remember that unpackaged apps don't have an app package manifest. So for unpackaged apps, you declare your AppContainer-or-Medium-IL decision in your project file instead of in an app package manifest.</p>
+<h3 id="win32-app-isolation">Win32 app isolation</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The feature described in this section is available in pre-release versions of the <a href="https://www.microsoft.com/software-download/windowsinsiderpreviewSDK">Windows Insider Preview</a>.</p>
+</div>
+<p>Win32 app isolation is an upcoming security feature in Windows which, in the event of an app being compromised, helps contain the damage, and safeguard user privacy choices. This feature is built on the foundation of AppContainers and components that virtualize resources and provide brokered access to other resources. For documentation and tools to help you isolate your apps, see <a href="https://github.com/microsoft/win32-app-isolation">Welcome to the Win32 app isolation repo</a>.</p>
+<h2 id="app-capabilities">App capabilities</h2>
+<p>App capabilities (for example, internetClient, location, microphone, and bluetooth) are relevant mostly to <em>packaged apps that run in an AppContainer</em>. So that includes <em>all</em> Universal Windows Platform (UWP) apps, and <em>some</em> desktop apps.</p>
+<p>But there are some scenarios where even a Medium IL app (that is, <em>not</em> an AppContainer app) should declare a capability. One example is the <em>runFullTrust</em> restricted capability.</p>
+<p>For more details about app capabilities, what kinds of apps they apply to, and how to configure them, see <a href="/windows/uwp/packaging/app-capability-declarations">App capability declarations</a>. You configure capabilities in your app package manifest; and that's why they apply only to packaged apps.</p>
+<h2 id="kinds-of-apps">Kinds of apps</h2>
+<p>Desktop apps and Universal Windows Platform (UWP) apps are the two main kinds of apps—although, there are several kinds of apps in the <em>desktop apps</em> family. Choosing a user interface (UI) framework—WinForms, WPF, Win32, Direct 2D/3D, UWP, or WinUI 3—is one option that's to some degree independent of the configurations described in this topic.</p>
+<p>But let's take a look at how those app kinds can differ from one another in terms of packaging, deployment, and process.</p>
+<p>First off, all UWP apps are packaged, and run in an AppContainer. But for desktop apps, things are more flexible. You can choose to package your desktop app, or not. And, independently of that decision, you can choose to configure your desktop app as either an AppContainer or a Medium IL app.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Packaged</th>
+<th>Unpackaged</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AppContainer</strong></td>
+<td>Desktop apps<br>UWP apps</td>
+<td>Desktop apps</td>
+</tr>
+<tr>
+<td><strong>Medium IL</strong></td>
+<td>Desktop apps</td>
+<td>Desktop apps</td>
+</tr>
+</tbody>
+</table>
+<p>For packaged apps, to configure the kind of app you want, you use the <code>uap10:RuntimeBehavior</code> attribute in your app package manifest (see <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-application">Application (Windows 10)</a>).</p>
+<ul>
+<li><strong>Desktop apps</strong> are Windows <code>.exe</code>s, typically with a <strong>main</strong> or <strong>WinMain</strong> entry-point function. To configure your app as a desktop app, set <code>uap10:RuntimeBehavior</code> to either &quot;packagedClassicApp&quot; or &quot;win32App&quot;.
+<ul>
+<li>The value &quot;packagedClassicApp&quot; indicates either a WinUI 3 app (Windows App SDK) or a Desktop Bridge app (Centennial). The difference is that a Centennial app runs in an AppContainer.</li>
+<li>And &quot;win32App&quot; indicates any other kind of Win32 app (including an app packaged with external location).</li>
+</ul>
+</li>
+<li>Lastly, setting <code>uap10:RuntimeBehavior</code> to  &quot;windowsApp&quot; gives you a UWP app.</li>
+</ul>
+<p>For all of the options for the kinds of apps you can develop, see <a href="/windows/apps/get-started/dev-options">Windows app development: options and features</a>.</p>
+<h2 id="windows-app-sdkframework-dependent-or-self-contained">Windows App SDK—framework-dependent or self-contained</h2>
+<p>If you're developing or maintaining an app that makes use of the <a href="/windows/apps/windows-app-sdk/">Windows App SDK</a>, then you have a further decision to make. Because there are the following two ways in which you can deploy the Windows App SDK that your app depends on:</p>
+<ul>
+<li>Framework-dependent (the default). Your app needs the Windows App SDK runtime and/or Framework package to be present on the target machine.</li>
+<li>Self-contained. Your app carries with it its Windows App SDK dependencies.</li>
+</ul>
+<p>For more info, see <a href="/windows/apps/package-and-deploy/deploy-overview">Windows App SDK deployment overview</a>.</p>
+<h2 id="windows-package-manager-and-the-winget-client">Windows Package Manager and the WinGet client</h2>
+<p>A package manager can help your users to install/upgrade/configure your software by automating the workflow. Package managers can help install any software, but they tend to be used mostly to install developer tools. So if you're building a developer tool, then you might be particuarly interested in this option. But here's how it works:</p>
+<ul>
+<li>You, as the software developer, define to the package manager (in the form of declarative instructions) all of the pieces necessary for a successful install of your product.</li>
+<li>And then when a user installs your software, the package manager follows your declarative instructions to automate the install-and-configure workflow.</li>
+</ul>
+<p>The result is a reduction in time spent getting a user's environment ready, and better compatibility between the components installed. And you can use Windows Package Manager to distribute your packaged or unpackaged apps in formats such as <code>.msix</code>, <code>.msi</code>, and <code>.exe</code>.</p>
+<p>For more info, see <a href="/windows/package-manager/">Windows Package Manager</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/get-started/intro-pack-dep-proc.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Microsoft Store Developer CLI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Microsoft Store Developer CLI ">
+    
+    <meta name="description" content="The Microsoft Store Command Line Interface is a cross-platform CLI that helps developers access the Microsoft Store APIs, for both managed, as well as unmanaged applications.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="microsoft-store-developer-cli">Microsoft Store Developer CLI</h1>
+
+<p>The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, Linux) CLI that helps developers publish their applications to the Microsoft Store. It allows developers to locally configure their applications projects to publish to the Microsoft Store, as well as actually publish their applications' packages to the Microsoft Store, automatically calling the right <a href="/partner-center/develop/partner-center-rest-api-reference">Partner Center APIs</a> to upload its packages.</p>
+<p>To understand how to use the Store Developer CLI, check out the following video:</p>
+<p>[!VIDEO https://learn-video.azurefd.net/vod/player?id=cbc4aad9-e79b-4ff6-a30b-c2399c2624a3]</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To use the Microsoft Store Developer CLI, you'll need to:</p>
+<ul>
+<li><a href="/windows/apps/publish/partner-center/partner-center-developer-account">Register as a Windows app developer in Partner Center</a></li>
+<li>Have a tenant associated with your Partner Center account. You can achieve that by either <a href="/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account">associating an existing Microsoft Entra ID in Partner Center</a> or by <a href="/windows/apps/publish/partner-center/create-new-azure-ad-tenant">creating a new Microsoft Entra ID in Partner Center</a>.</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p>The Microsoft Store Developer CLI supports Windows 10+, Linux, and macOS:</p>
+<p><a href="commands.html#installation">Install the Microsoft Store Developer CLI (preview) now!</a></p>
+<h2 id="getting-started">Getting Started</h2>
+<p>After installing the Microsoft Store Developer CLI, you have to configure your environment to be able to run commands. You can do this by simply running the CLI for the first time. The CLI will guide you through the configuration process:</p>
+<pre><code class="lang-console">msstore
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When signing in, don't use your MSA! The <strong>Microsoft Store Developer CLI</strong> requires you to use your <strong>Microsoft Entra ID credentials</strong>. You can find more information about this in our <a href="#prerequisites">prerequisites</a> section.</p>
+</div>
+<p>Running in CI environments is also supported, and the Microsoft Store Developer CLI (preview) can be used in your CI/CD pipelines to, for example, automatically publish your applications to the Microsoft Store. More instructions on how to do this can be found <a href="commands.html#cicd-environments">here</a>.</p>
+<h2 id="commands">Commands</h2>
+<p>These are the Microsoft Store Developer CLI available commands:</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="commands.html#info-command">info</a></td>
+<td>Print existing configuration.</td>
+</tr>
+<tr>
+<td><a href="commands.html#reconfigure-command">reconfigure</a></td>
+<td>Re-configure the Microsoft Store Developer CLI.</td>
+</tr>
+<tr>
+<td><a href="commands.html#settings-command">settings</a></td>
+<td>Change settings of the Microsoft Store Developer CLI.</td>
+</tr>
+<tr>
+<td><a href="commands.html#apps-command">apps</a></td>
+<td>Application related commands, such as listing the applications in your account and retrieving the application's details.</td>
+</tr>
+<tr>
+<td><a href="commands.html#submission-command">submission</a></td>
+<td>Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish', 'delete'.</td>
+</tr>
+<tr>
+<td><a href="commands.html#init-command">init</a></td>
+<td>Helps you setup your application to publish to the Microsoft Store.</td>
+</tr>
+<tr>
+<td><a href="commands.html#package-command">package</a></td>
+<td>Helps you package your Microsoft Store Application as an MSIX.</td>
+</tr>
+<tr>
+<td><a href="commands.html#publish-command">publish</a></td>
+<td>Publishes your application to the Microsoft Store.</td>
+</tr>
+</tbody>
+</table>
+<p>For more info, see: <a href="commands.html">Commands</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/msstore-dev-cli/overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

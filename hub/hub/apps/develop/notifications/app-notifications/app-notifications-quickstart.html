@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Quickstart App notifications in the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Quickstart App notifications in the Windows App SDK ">
+    
+    <meta name="description" content="Send app notifications using the Windows App SDK">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="quickstart-app-notifications-in-the-windows-app-sdk">Quickstart: App notifications in the Windows App SDK</h1>
+
+<p><img src="images/shell-1x.png" alt="A screen capture showing an app notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, &quot;Going&quot;. There are two buttons labeled &quot;RSVP&quot; and &quot;Dismiss&quot;"></p>
+<p>In this quickstart, you will create a desktop Windows application that sends and receives local app notifications, also known as toast notifications, using the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Notifications for an elevated (admin) app is currently not supported.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="../../../get-started/start-here.html">Get started with WinUI</a></li>
+<li>Either <a href="../../../winui/winui3/create-your-first-winui3-app.html">Create a new project that uses the Windows App SDK</a> OR <a href="../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+</ul>
+<h2 id="sample-app">Sample app</h2>
+<p>This quickstart covers code from the notifications sample apps found on <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/">GitHub</a>.</p>
+<div class="button">
+<p><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/">Sample App Code</a></p>
+</div>
+<h2 id="api-reference">API reference</h2>
+<p>For API reference documentation for app notifications, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications">Microsoft.Windows.AppNotifications Namespace</a>.</p>
+<h2 id="step-1-add-namespace-declarations">Step 1: Add namespace declarations</h2>
+<p>Add the namespace for Windows App SDK app notifications <code>Microsoft.Windows.AppNotifications</code>.</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.AppNotifications;
+</code></pre>
+<h2 id="step-2-update-your-apps-manifest">Step 2: Update your app's manifest</h2>
+<p>If your app is unpackaged (that is, it lacks package identity at runtime), then skip to <strong>Step 3: Register to handle an app notification</strong>.</p>
+<p>If your app is packaged (including packaged with external location):</p>
+<ol>
+<li>Open your <strong>Package.appxmanifest</strong>.</li>
+<li>Add <code>xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;</code> and <code>xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;</code> namespaces to <code>&lt;Package&gt;</code></li>
+<li>Add <code>&lt;desktop:Extension&gt;</code> for <code>windows.toastNotificationActivation</code> to declare your COM activator <strong><a href="/uwp/schemas/appxpackage/uapmanifestschema/element-com-exeserver-class">CLSID</a></strong>. You can obtain a CLSID by navigating to <strong>Create GUID</strong> under <strong>Tools</strong> in Visual Studio.</li>
+<li>Add <code>&lt;com:Extension&gt;</code> for the COM activator using the same CLSID.
+<ol>
+<li>Specify your .exe file in the <code>Executable</code> attribute. The .exe file must be the same process calling <code>Register()</code> when registering your app for notifications, which is described more in <strong>Step 3</strong>. In the example below, we use <code>Executable=&quot;SampleApp\SampleApp.exe&quot;</code>.</li>
+<li>Specify <code>Arguments=&quot;----AppNotificationActivated:&quot;</code> to ensure that Windows App SDK can process your notification's payload as an AppNotification kind.</li>
+<li>Specify a <code>DisplayName</code>.</li>
+</ol>
+</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Warning: If you define a <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol">Windows.Protocol</a> app extensibility type in your appx manifest with <code>&lt;uap:Protocol&gt;</code>, then clicking on notifications will launch new processes of the same app, even if your app is already running.</p>
+</div>
+<pre><code class="lang-xaml">&lt;!--Packaged apps only--&gt;
+&lt;!--package.appxmanifest--&gt;
+
+&lt;Package
+  xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;
+  xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;
+  ...
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      ...
+      &lt;Extensions&gt;
+
+        &lt;!--Specify which CLSID to activate when notification is clicked--&gt;   
+        &lt;desktop:Extension Category=&quot;windows.toastNotificationActivation&quot;&gt;
+          &lt;desktop:ToastNotificationActivation ToastActivatorCLSID=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; /&gt;
+        &lt;/desktop:Extension&gt;
+
+        &lt;!--Register COM CLSID--&gt;    
+        &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+          &lt;com:ComServer&gt;
+            &lt;com:ExeServer Executable=&quot;SampleApp\SampleApp.exe&quot; DisplayName=&quot;SampleApp&quot; Arguments=&quot;----AppNotificationActivated:&quot;&gt;
+              &lt;com:Class Id=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; /&gt;
+            &lt;/com:ExeServer&gt;
+          &lt;/com:ComServer&gt;
+        &lt;/com:Extension&gt;
+    
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+ &lt;/Package&gt;
+</code></pre>
+<h2 id="step-3-register-to-handle-an-app-notification">Step 3: Register to handle an app notification</h2>
+<p>Register your app to handle notifications, then unregister when your app terminates.</p>
+<p>In your <code>App.xaml</code> file, register for <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked">AppNotificationManager::Default().NotificationInvoked</a>, then call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register">AppNotificationManager::Default().Register</a>. The order of these calls matters.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must call <strong>AppNotificationManager::Default().Register</strong> before calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetCurrent.GetActivatedEventArgs</a>.</p>
+</div>
+<p>When your app is terminating, call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.unregister">AppNotificationManager::Default().Unregister()</a> to free up the COM server and allow for subsequent invokes to launch a new process.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cs" role="tab" aria-controls="tabpanel_1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">// App.xaml.cs
+namespace CsUnpackagedAppNotifications
+{
+
+    public partial class App : Application
+    {
+        private Window mainWindow;
+        private NotificationManager notificationManager;
+        
+        public App()
+        {
+            this.InitializeComponent();
+            notificationManager = new NotificationManager();
+            AppDomain.CurrentDomain.ProcessExit += new EventHandler(OnProcessExit);
+        }
+
+        protected override void OnLaunched(LaunchActivatedEventArgs args)
+        {
+            mainWindow = new MainWindow();
+
+            notificationManager.Init();
+            
+            // Complete in Step 5
+            
+            mainWindow.Activate();
+        }
+
+        void OnProcessExit(object sender, EventArgs e)
+        {
+            notificationManager.Unregister();
+        }
+    }
+}
+
+
+// NotificationManager.cs
+namespace CsUnpackagedAppNotifications
+{
+    internal class NotificationManager
+    {
+        private bool m_isRegistered;
+
+        private Dictionary&lt;int, Action&lt;AppNotificationActivatedEventArgs&gt;&gt; c_map;
+
+        public NotificationManager()
+        {
+            m_isRegistered = false;
+
+            // When adding new a scenario, be sure to add its notification handler here.
+            c_map = new Dictionary&lt;int, Action&lt;AppNotificationActivatedEventArgs&gt;&gt;();
+            c_map.Add(ToastWithAvatar.ScenarioId, ToastWithAvatar.NotificationReceived);
+            c_map.Add(ToastWithTextBox.ScenarioId, ToastWithTextBox.NotificationReceived);
+        }
+
+        ~NotificationManager()
+        {
+            Unregister();
+        }
+
+        public void Init()
+        {
+            // To ensure all Notification handling happens in this process instance, register for
+            // NotificationInvoked before calling Register(). Without this a new process will
+            // be launched to handle the notification.
+            AppNotificationManager notificationManager = AppNotificationManager.Default;
+
+            notificationManager.NotificationInvoked += OnNotificationInvoked;
+
+            notificationManager.Register();
+            m_isRegistered = true;
+        }
+
+        public void Unregister()
+        {
+            if (m_isRegistered)
+            {
+                AppNotificationManager.Default.Unregister();
+                m_isRegistered = false;
+            }
+        }
+
+        public void ProcessLaunchActivationArgs(AppNotificationActivatedEventArgs notificationActivatedEventArgs)
+        {
+            // Complete in Step 5
+        }
+
+    }
+}       
+</code></pre>
+</section>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// App.xaml.cpp
+
+// NotificationManager is responsible for registering and unregistering the Sample for App Notifications as well as
+// dispatching actioned notifications to the appropriate scenario.
+// Registration will happen when Init() is called and Unregistration will happen when this
+// instance variable goes out of scope, i.e.: when the App is terminated.
+static NotificationManager g_notificationManager;
+
+namespace winrt::CppUnpackagedAppNotifications::implementation
+{
+    App::App()
+    {
+        InitializeComponent();
+    }
+
+    std::wstring App::GetFullPathToExe()
+    {
+        TCHAR buffer[MAX_PATH] = { 0 };
+        GetModuleFileName(NULL, buffer, MAX_PATH);
+        std::wstring::size_type pos = std::wstring(buffer).find_last_of(L&quot;\\/&quot;);
+        return std::wstring(buffer).substr(0, pos);
+    }
+
+    std::wstring App::GetFullPathToAsset(std::wstring const&amp; assetName)
+    {
+        return GetFullPathToExe() + L&quot;\\Assets\\&quot; + assetName;
+    }
+
+    void App::OnLaunched(winrt::Microsoft::UI::Xaml::LaunchActivatedEventArgs const&amp; /*args*/)
+    {
+        window = make&lt;MainWindow&gt;();
+
+        g_notificationManager.Init();
+
+        // Complete in Step 5
+        
+        window.Activate();
+    }
+}
+
+// NotificationManager.cpp
+static const std::map&lt;unsigned, std::function&lt;void (winrt::AppNotificationActivatedEventArgs const&amp;)&gt;&gt; c_map
+{
+    // When adding new a scenario, be sure to add its notification handler here.
+    { ToastWithAvatar::ScenarioId, ToastWithAvatar::NotificationReceived },
+    { ToastWithTextBox::ScenarioId, ToastWithTextBox::NotificationReceived }
+};
+
+NotificationManager::NotificationManager():m_isRegistered(false){}
+
+NotificationManager::~NotificationManager()
+{
+    if (m_isRegistered)
+    {
+        winrt::AppNotificationManager::Default().Unregister();
+    }
+}
+
+void NotificationManager::Init()
+{
+    auto notificationManager{ winrt::AppNotificationManager::Default() };
+
+    // Always setup the notification hanlder before registering your App, otherwise notifications may get lost.
+    const auto token{ notificationManager.NotificationInvoked([&amp;](const auto&amp;, winrt::AppNotificationActivatedEventArgs  const&amp; notificationActivatedEventArgs)
+        {
+            NotifyUser::NotificationReceived();
+
+            if (!DispatchNotification(notificationActivatedEventArgs))
+            {
+                NotifyUser::UnrecognizedToastOriginator();
+            }
+        }) };
+
+    winrt::AppNotificationManager::Default().Register();
+    m_isRegistered = true;
+}
+
+void NotificationManager::ProcessLaunchActivationArgs(winrt::AppNotificationActivatedEventArgs const&amp; notificationActivatedEventArgs)
+{
+    // Complete in Step 5
+}
+</code></pre>
+</section>
+</div>
+<h2 id="step-4-display-an-app-notification">Step 4: Display an app notification</h2>
+<p><img src="images/app-notification-with-button.png" alt="App notification with button"></p>
+<p>You <strong>MUST</strong> complete <strong>Step 3: Register to handle an app notification</strong> before proceeding.</p>
+<p>Now you will display a simple app notification with an <code>appLogoOverride</code> image and a button.</p>
+<p>Construct your app notification using the <strong>AppNotificationBuilder</strong> class and then call <code>Show</code>. For more information on how to construct your app notification using XML, please refer to the examples at <a href="adaptive-interactive-toasts.html">Toast content</a> and the <a href="/uwp/schemas/tiles/toastschema/schema-root">Notifications XML schema</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your app is packaged (including packaged with external location), then your app's icon in the notification's upper left corner is sourced from the <code>package.manifest</code>. If your app is unpackaged, then the icon is sourced by first looking into the shortcut, then looking at the resource file in the app process. If all attempts fail, then the Windows default app icon is used. The supported icon file types are <code>.jpg</code>, <code>.png</code>, <code>.bmp</code>, and <code>.ico</code>.</p>
+</div>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cs" role="tab" aria-controls="tabpanel_2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cpp" role="tab" aria-controls="tabpanel_2_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_2_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">// ToastWithAvatar.cs
+class ToastWithAvatar
+{
+    public const int ScenarioId = 1;
+    public const string ScenarioName = &quot;Local Toast with Avatar Image&quot;;
+
+    public static bool SendToast()
+    {
+        var appNotification = new AppNotificationBuilder()
+            .AddArgument(&quot;action&quot;, &quot;ToastClick&quot;)
+            .AddArgument(Common.scenarioTag, ScenarioId.ToString())
+            .SetAppLogoOverride(new System.Uri(&quot;file://&quot; + App.GetFullPathToAsset(&quot;Square150x150Logo.png&quot;)), AppNotificationImageCrop.Circle)
+            .AddText(ScenarioName)
+            .AddText(&quot;This is an example message using XML&quot;)
+            .AddButton(new AppNotificationButton(&quot;Open App&quot;)
+                .AddArgument(&quot;action&quot;, &quot;OpenApp&quot;)
+                .AddArgument(Common.scenarioTag, ScenarioId.ToString()))
+            .BuildNotification();
+
+        AppNotificationManager.Default.Show(appNotification);
+
+        return appNotification.Id != 0; // return true (indicating success) if the toast was sent (if it has an Id)
+    }
+
+    public static void NotificationReceived(AppNotificationActivatedEventArgs notificationActivatedEventArgs)
+    {
+        // Complete in Step 5   
+    }
+}
+
+// Call SendToast() to send a notification. 
+</code></pre>
+</section>
+<section id="tabpanel_2_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">// ToastWithAvatar.cpp
+
+bool ToastWithAvatar::SendToast()
+{
+    auto appNotification{ winrt::AppNotificationBuilder()
+        .AddArgument(L&quot;action&quot;, L&quot;ToastClick&quot;)
+        .AddArgument(Common::scenarioTag, std::to_wstring(ToastWithAvatar::ScenarioId))
+        .SetAppLogoOverride(winrt::Windows::Foundation::Uri(L&quot;file://&quot; + winrt::App::GetFullPathToAsset(L&quot;Square150x150Logo.png&quot;)), winrt::AppNotificationImageCrop::Circle)
+        .AddText(ScenarioName)
+        .AddText(L&quot;This is an example message using XML&quot;)
+        .AddButton(winrt::AppNotificationButton(L&quot;Open App&quot;)
+            .AddArgument(L&quot;action&quot;, L&quot;OpenApp&quot;)
+            .AddArgument(Common::scenarioTag, std::to_wstring(ToastWithAvatar::ScenarioId)))
+        .BuildNotification() };
+
+    winrt::AppNotificationManager::Default().Show(appNotification);
+
+    return appNotification.Id() != 0; // return true (indicating success) if the toast was sent (if it has an Id)
+}
+
+void ToastWithAvatar::NotificationReceived(winrt::Microsoft::Windows::AppNotifications::AppNotificationActivatedEventArgs const&amp; notificationActivatedEventArgs)
+{
+    // Complete in Step 5 
+}
+
+// Call SendToast() to send a notification. 
+</code></pre>
+</section>
+</div>
+<h2 id="step-5-process-a-user-selecting-a-notification">Step 5: Process a user selecting a notification</h2>
+<p>Users can select your notification's body or button. Your app needs to process the invocation in response to a user interacting with your notification.</p>
+<p>There are 2 common ways to process this:</p>
+<ol>
+<li>You choose to have your app launch in a specific UI context OR</li>
+<li>You choose to have your app evaluate an action-specific behavior (like a button press in the notification body) without rendering any UI. Also known as a background action.</li>
+</ol>
+<p>The code example below, which is not from the sample app, illustrates both ways of processing a user-generated action. Add a <code>launch</code> value (corresponds to user clicking the notification body), an <code>input</code> element (quick reply text box), and a button with an <code>arguments</code> value (corresponds to user clicking the button) to your notification's XML payload. In your <code>ProcessLaunchActivationArgs</code>, case on each argument.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Setting <code>activationType=&quot;background&quot;</code> in the notification XML payload is ignored for desktop apps. You must instead process the activation arguments and decide whether to display a window or not, as stated in this step.</p>
+</div>
+<p><img src="images/app-notification-with-reply.png" alt="App notification with reply"></p>
+<pre><code class="lang-cpp">// Example of how to process a user either selecting the notification body or inputting a quick reply in the text box. 
+
+// Notification XML payload
+//&lt;toast launch=&quot;action=openThread&amp;amp;threadId=92187&quot;&gt;
+//  &lt;visual&gt;
+//      &lt;binding template=&quot;ToastGeneric&quot;&gt;
+//          &lt;image placement=&quot;appLogoOverride&quot; hint-crop=&quot;circle&quot; src=&quot;C:\&lt;fullpath&gt;\Logo.png&quot;/&gt;
+//          &lt;text&gt;Local Toast with Avatar and Text box&lt;/text&gt;
+//          &lt;text&gt;This is an example message using&lt;/text&gt;
+//      &lt;/binding&gt;
+//  &lt;/visual&gt;
+//  &lt;actions&gt;
+//      &lt;input id=&quot;replyBox&quot; type=&quot;text&quot; placeHolderContent=&quot;Reply&quot; /&gt;
+//      &lt;action
+//          content=&quot;Send&quot;
+//          hint-inputId=&quot;replyBox&quot;
+//          arguments=&quot;action=reply&amp;amp;threadId=92187&quot; /&gt;
+//  &lt;/actions&gt;
+//&lt;/toast&gt;
+
+void ProcessLaunchActivationArgs(const winrt::AppNotificationActivatedEventArgs&amp; notificationActivatedEventArgs)
+{
+    // If the user clicks on the notification body, your app needs to launch the chat thread window
+    if (std::wstring(notificationActivatedEventArgs.Argument().c_str()).find(L&quot;openThread&quot;) != std::wstring::npos)
+    {
+        GenerateChatThreadWindow();
+    }
+    else // If the user responds to a message by clicking a button in the notification, your app needs to reply back to the other user with no window launched
+    if (std::wstring(notificationActivatedEventArgs.Argument().c_str()).find(L&quot;reply&quot;) != std::wstring::npos)
+    {
+        auto input = notificationActivatedEventArgs.UserInput();
+        auto replyBoxText = input.Lookup(L&quot;replyBox&quot;);
+
+        // Process the reply text
+        SendReplyToUser(replyBoxText);
+    }
+}
+</code></pre>
+<p><strong>Follow the below guidelines</strong>:</p>
+<ol>
+<li>If a notification is selected by the user and your app is not running, it is expected that your app is launched and the user can see the foreground window in the notification's context.</li>
+<li>If a notification is selected by the user and your app is minimized, it is expected that your app is brought to the foreground and a new window is rendered in the notification's context.</li>
+<li>If a notification background action is invoked by the user (e.g. the user responds to a notification by typing in the notification text box and hitting reply), your app processes the payload without rendering a foreground window.</li>
+</ol>
+<p>See the sample app code found on <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/">GitHub</a> for a more detailed example.</p>
+<h2 id="step-6-remove-notifications">Step 6: Remove notifications</h2>
+<p>Remove notifications when they are no longer relevant to the user.</p>
+<p>In this example, the user has seen all messages from a group chat in your app, so you clear all notifications from the group chat. Then, the user mutes a friend, so you clear all notifications from the friend. You first added the <strong>Group</strong> and <strong>Tag</strong> properties to the notifications before displaying in order to identify them now.</p>
+<pre><code class="lang-cpp">
+void SendNotification(winrt::hstring const&amp; payload, winrt::hstring const&amp; friendId, winrt::hstring const&amp; groupChatId)
+{
+    winrt::AppNotification notification(payload);
+
+    // Setting Group Id here allows clearing notifications from a specific chat group later
+    notification.Group(groupChatId);
+
+    // Setting Tag Id here allows clearing notifications from a specific friend later
+    notification.Tag(friendId);
+
+    winrt::AppNotificationManager::Default().Show(notification);
+}
+
+winrt::Windows::Foundation::IAsyncAction RemoveAllNotificationsFromGroupChat(const std::wstring groupChatId)
+{
+    winrt::AppNotificationManager manager = winrt::AppNotificationManager::Default();
+    co_await manager.RemoveByGroupAsync(groupChatId);    
+}
+
+winrt::Windows::Foundation::IAsyncAction RemoveAllNotificationsFromFriend(const std::wstring friendId)
+{
+    winrt::AppNotificationManager manager = winrt::AppNotificationManager::Default();
+    co_await manager.RemoveByTagAsync(friendId);    
+}
+</code></pre>
+<h2 id="additional-features">Additional features</h2>
+<h3 id="send-a-cloud-sourced-app-notification">Send a cloud-sourced app notification</h3>
+<p>To send an app notification from the cloud, follow <strong>Send a cloud-sourced app notification</strong> at <a href="../../../windows-app-sdk/notifications/push-notifications/push-quickstart.md">Quickstart: Push notifications in the Windows App SDK</a>.</p>
+<h3 id="set-an-expiration-time">Set an expiration time</h3>
+<p>Set an expiration time on your app notification using the <code>Expiration</code> property if the message in your notification is only relevant for a certain period of time. For example, if you send a calendar event reminder, set the expiration time to the end of the calendar event.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The default and maximum expiration time is 3 days.</p>
+</div>
+<pre><code class="lang-csharp">class ToastWithAvatar
+{
+    public static bool SendToast()
+    {
+
+        var appNotification = new AppNotificationBuilder()
+            .SetAppLogoOverride(new System.Uri(&quot;ms-appx:///images/logo.png&quot;), AppNotificationImageCrop.Circle)
+            .AddText(&quot;Example expiring notification&quot;)
+            .AddText(&quot;This is an example message&quot;)
+            .BuildNotification();
+
+
+        appNotification.Expiration = DateTime.Now.AddDays(1);
+        AppNotificationManager.Default.Show(appNotification);
+
+        return appNotification.Id != 0; // return true (indicating success) if the toast was sent (if it has an Id)
+    }
+}
+</code></pre>
+<h3 id="ensure-notifications-expire-on-reboot">Ensure notifications expire on reboot</h3>
+<p>Set the <code>ExpiresOnReboot</code> property to <strong>True</strong> if you'd like notifications to delete on reboot.</p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_cs" role="tab" aria-controls="tabpanel_3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_cpp" role="tab" aria-controls="tabpanel_3_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_3_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">class ToastWithAvatar
+{
+    public static bool SendToast()
+    {
+
+        var appNotification = new AppNotificationBuilder()
+            .SetAppLogoOverride(new System.Uri(&quot;ms-appx:///images/logo.png&quot;), AppNotificationImageCrop.Circle)
+            .AddText(&quot;Example ExpiresOnReboot notification&quot;)
+            .AddText(&quot;This is an example message&quot;)
+            .BuildNotification();
+
+
+            appNotification.ExpiresOnReboot = true;
+            AppNotificationManager.Default.Show(appNotification);
+
+            return appNotification.Id != 0; // return true (indicating success) if the toast was sent (if it has an Id)
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_3_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">
+bool SendToast()
+{
+
+    auto appNotification{ winrt::AppNotificationBuilder()
+                .SetAppLogoOverride(winrt::Windows::Foundation::Uri(L&quot;ms-appx:///images/logo.png&quot;), winrt::AppNotificationImageCrop::Circle)
+                .AddText(L&quot;Example ExpiresOnReboot notification&quot;)
+                .AddText(L&quot;This is an example message&quot;)
+                .BuildNotification() };
+
+    appNotification.ExpiresOnReboot();
+    winrt::AppNotificationManager::Default().Show(appNotification);
+
+    return appNotification.Id() != 0; // return true (indicating success) if the toast was sent (if it has an Id)
+}
+</code></pre>
+</section>
+</div>
+<h3 id="send-and-update-a-progress-bar-notification">Send and update a progress bar notification</h3>
+<p>You can display progress bar related updates in a notification:</p>
+<p><img src="images%5Cprogress-bar-annotated.png" alt="Notification with progress bar"></p>
+<p>Use the <code>AppNotificationProgressData</code> construct to update the progress bar notification.</p>
+<pre><code class="lang-cpp">const winrt::hstring c_tag = L&quot;weekly-playlist&quot;;
+const winrt::hstring c_group = L&quot;downloads&quot;;
+
+// Send first Notification Progress Update
+void SendUpdatableNotificationWithProgress()
+{
+    auto notification{ winrt::AppNotificationBuilder()
+            .AddText(L&quot;Downloading this week's new music...&quot;)
+            .AddProgressBar(winrt::AppNotificationProgressBar()
+                .BindTitle()
+                .BindValue()
+                .BindValueStringOverride()
+                .BindStatus())
+            .BuildNotification() }
+
+    notification.Tag(c_tag);
+    notification.Group(c_group);
+
+    // Assign initial values for first notification progress UI
+    winrt::AppNotificationProgressData data(1); // Sequence number
+    data.Title(L&quot;Weekly playlist&quot;); // Binds to {progressTitle} in xml payload
+    data.Value(0.6); // Binds to {progressValue} in xml payload
+    data.ValueStringOverride(L&quot;15/26 songs&quot;); // Binds to {progressValueString} in xml payload
+    data.Status(L&quot;Downloading...&quot;); // Binds to {progressStatus} in xml payload
+
+    notification.Progress(data);
+    winrt::AppNotificationManager::Default().Show(notification);
+}
+
+// Send subsequent progress updates
+winrt::Windows::Foundation::IAsyncAction UpdateProgressAsync()
+{
+    // Assign new values
+    winrt::AppNotificationProgressData data(2 /* Sequence number */ );
+    data.Title(L&quot;Weekly playlist&quot;); // Binds to {progressTitle} in xml payload
+    data.Value(0.7); // Binds to {progressValue} in xml payload
+    data.ValueStringOverride(L&quot;18/26 songs&quot;); // Binds to {progressValueString} in xml payload
+    data.Status(L&quot;Downloading...&quot;); // Binds to {progressStatus} in xml payload
+
+    auto result = co_await winrt::AppNotificationManager::Default().UpdateAsync(data, c_tag, c_group);
+    if (result == winrt::AppNotificationProgressResult::AppNotificationNotFound)
+    {
+        // Progress Update failed since the previous notification update was dismissed by the user! So account for this in your logic by stopping updates or starting a new Progress Update flow.
+    }
+}
+</code></pre>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md#api-details">Microsoft.Windows.AppNotifications API details</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/">Notifications code sample on GitHub</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md">App notifications spec on GitHub</a></li>
+<li><a href="adaptive-interactive-toasts.html">Toast content</a></li>
+<li><a href="/uwp/schemas/tiles/toastschema/schema-root">Notifications XML schema</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/app-notifications-quickstart.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

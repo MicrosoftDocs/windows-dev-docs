@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>BoxPanel, an example custom panel (Windows apps) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="BoxPanel, an example custom panel (Windows apps) ">
+    
+    <meta name="description" content="Learn to write code for a custom Panel class, implementing ArrangeOverride and MeasureOverride methods, and using the Children property.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="boxpanel-an-example-custom-panel">BoxPanel, an example custom panel</h1>
+
+<p>Learn to write code for a custom <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> class, implementing <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> methods, and using the <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> property.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a>, <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a>,<a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a></p>
+</blockquote>
+<p>The example code shows a custom panel implementation, but we don't devote a lot of time explaining the layout concepts that influence how you can customize a panel for different layout scenarios. If you want more info about these layout concepts and how they might apply to your particular layout scenario, see <a href="custom-panels-overview.html">XAML custom panels overview</a>.</p>
+<p>A <em>panel</em> is an object that provides a layout behavior for child elements it contains, when the XAML layout system runs and your app UI is rendered. You can define custom panels for XAML layout by deriving a custom class from the <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a> class. You provide behavior for your panel by overriding the <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> and <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> methods, supplying logic that measures and arranges the child elements. This example derives from <strong>Panel</strong>. When you start from <strong>Panel</strong>, <strong>ArrangeOverride</strong> and <strong>MeasureOverride</strong> methods don't have a starting behavior. Your code is providing the gateway by which child elements become known to the XAML layout system and get rendered in the UI. So, it's really important that your code accounts for all child elements and follows the patterns the layout system expects.</p>
+<h2 id="your-layout-scenario">Your layout scenario</h2>
+<p>When you define a custom panel, you're defining a layout scenario.</p>
+<p>A layout scenario is expressed through:</p>
+<ul>
+<li>What the panel will do when it has child elements</li>
+<li>When the panel has constraints on its own space</li>
+<li>How the logic of the panel determines all the measurements, placement, positions, and sizings that eventually result in a rendered UI layout of children</li>
+</ul>
+<p>With that in mind, the <code>BoxPanel</code> shown here is for a particular scenario. In the interest of keeping the code foremost in this example, we won't explain the scenario in detail yet, and instead concentrate on the steps needed and the coding patterns. If you want to know more about the scenario first, skip ahead to <a href="#the-scenario-for-boxpanel">&quot;The scenario for <code>BoxPanel</code>&quot;</a>, and then come back to the code.</p>
+<h2 id="start-by-deriving-from-panel">Start by deriving from <strong>Panel</strong></h2>
+<p>Start by deriving a custom class from <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a>. Probably the easiest way to do this is to define a separate code file for this class, using the <strong>Add</strong> | <strong>New Item</strong> | <strong>Class</strong> context menu options for a project from the <strong>Solution Explorer</strong> in Microsoft Visual Studio. Name the class (and file) <code>BoxPanel</code>.</p>
+<p>The template file for a class doesn't start with many <strong>using</strong> statements because it's not specifically for Windows apps. So first, add <strong>using</strong> statements. The template file also starts with a few <strong>using</strong> statements that you probably don't need, and can be deleted. Here's a suggested list of <strong>using</strong> statements that can resolve types you'll need for typical custom panel code:</p>
+<pre><code class="lang-CSharp">using System;
+using System.Collections.Generic; // if you need to cast IEnumerable for iteration, or define your own collection properties
+using Windows.Foundation; // Point, Size, and Rect
+using Windows.UI.Xaml; // DependencyObject, UIElement, and FrameworkElement
+using Windows.UI.Xaml.Controls; // Panel
+using Windows.UI.Xaml.Media; // if you need Brushes or other utilities
+</code></pre>
+<p>Now that you can resolve <a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a>, make it the base class of <code>BoxPanel</code>. Also, make <code>BoxPanel</code> public:</p>
+<pre><code class="lang-CSharp">public class BoxPanel : Panel
+{
+}
+</code></pre>
+<p>At the class level, define some <strong>int</strong> and <strong>double</strong> values that will be shared by several of your logic functions, but which won't need to be exposed as public API. In the example, these are named: <code>maxrc</code>, <code>rowcount</code>, <code>colcount</code>, <code>cellwidth</code>, <code>cellheight</code>, <code>maxcellheight</code>, <code>aspectratio</code>.</p>
+<p>After you've done this, the complete code file looks like this (removing comments on <strong>using</strong>, now that you know why we have them):</p>
+<pre><code class="lang-CSharp">using System;
+using System.Collections.Generic;
+using Windows.Foundation;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
+
+public class BoxPanel : Panel 
+{
+    int maxrc, rowcount, colcount;
+    double cellwidth, cellheight, maxcellheight, aspectratio;
+}
+</code></pre>
+<p>From here on out, we'll be showing you one member definition at a time, be that a method override or something supporting such as a dependency property. You can add these to the skeleton above in any order.</p>
+<h2 id="measureoverride"><strong>MeasureOverride</strong></h2>
+<pre><code class="lang-CSharp">protected override Size MeasureOverride(Size availableSize)
+{
+    // Determine the square that can contain this number of items.
+    maxrc = (int)Math.Ceiling(Math.Sqrt(Children.Count));
+    // Get an aspect ratio from availableSize, decides whether to trim row or column.
+    aspectratio = availableSize.Width / availableSize.Height;
+
+    // Now trim this square down to a rect, many times an entire row or column can be omitted.
+    if (aspectratio &gt; 1)
+    {
+        rowcount = maxrc;
+        colcount = (maxrc &gt; 2 &amp;&amp; Children.Count &lt;= maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+    } 
+    else 
+    {
+        rowcount = (maxrc &gt; 2 &amp;&amp; Children.Count &lt;= maxrc * (maxrc - 1)) ? maxrc - 1 : maxrc;
+        colcount = maxrc;
+    }
+
+    // Now that we have a column count, divide available horizontal, that's our cell width.
+    cellwidth = (int)Math.Floor(availableSize.Width / colcount);
+    // Next get a cell height, same logic of dividing available vertical by rowcount.
+    cellheight = Double.IsInfinity(availableSize.Height) ? Double.PositiveInfinity : availableSize.Height / rowcount;
+           
+    foreach (UIElement child in Children)
+    {
+        child.Measure(new Size(cellwidth, cellheight));
+        maxcellheight = (child.DesiredSize.Height &gt; maxcellheight) ? child.DesiredSize.Height : maxcellheight;
+    }
+    return LimitUnboundedSize(availableSize);
+}
+</code></pre>
+<p>The necessary pattern of a <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a> implementation is the loop through each element in <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Panel.Children</strong></a>. Always call the <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> method on each of these elements. <strong>Measure</strong> has a parameter of type <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a>. What you're passing here is the size that your panel is committing to have available for that particular child element. So, before you can do the loop and start calling <strong>Measure</strong>, you need to know how much space each cell can devote. From the <strong>MeasureOverride</strong> method itself, you have the <em>availableSize</em> value. That is the size that the panel's parent used when it called <strong>Measure</strong>, which was the trigger for this <strong>MeasureOverride</strong> being called in the first place. So a typical logic is to devise a scheme whereby each child element divides the space of the panel's overall <em>availableSize</em>. You then pass each division of size to <strong>Measure</strong> of each child element.</p>
+<p>How <code>BoxPanel</code> divides size is fairly simple: it divides its space into a number of boxes that's largely controlled by the number of items. Boxes are sized based on row and column count and the available size. Sometimes one row or column from a square isn't needed, so it's dropped and the panel becomes a rectangle rather than square in terms of its row : column ratio. For more info about how this logic was arrived at, skip ahead to <a href="#the-scenario-for-boxpanel">&quot;The scenario for BoxPanel&quot;</a>.</p>
+<p>So what does the measure pass do? It sets a value for the read-only <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> property on each element where <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> was called. Having a <strong>DesiredSize</strong> value is possibly important once you get to the arrange pass, because the <strong>DesiredSize</strong> communicates what the size can or should be when arranging and in the final rendering. Even if you don't use <strong>DesiredSize</strong> in your own logic, the system still needs it.</p>
+<p>It's possible for this panel to be used when the height component of <em>availableSize</em> is unbounded. If that's true, the panel doesn't have a known height to divide. In this case, the logic for the measure pass informs each child that it doesn't have a bounded height, yet. It does so by passing a <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> to the <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> call for children where <a href="/uwp/api/windows.foundation.size.height"><strong>Size.Height</strong></a> is infinite. That's legal. When <strong>Measure</strong> is called, the logic is that the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> is set as the minimum of these: what was passed to <strong>Measure</strong>, or that element's natural size from factors such as explicitly-set <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The internal logic of <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel"><strong>StackPanel</strong></a> also has this behavior: <strong>StackPanel</strong> passes an infinite dimension value to <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> on children, indicating that there is no constraint on children in the orientation dimension. <strong>StackPanel</strong> typically sizes itself dynamically, to accommodate all children in a stack that grows in that dimension.</p>
+</div>
+<p>However, the panel itself can't return a <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> with an infinite value from <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a>; that throws an exception during layout. So, part of the logic is to find out the maximum height that any child requests, and use that height as the cell height in case that isn't coming from the panel's own size constraints already. Here's the helper function <code>LimitUnboundedSize</code> that was referenced in previous code, which then takes that maximum cell height and uses it to give the panel a finite height to return, as well as assuring that <code>cellheight</code> is a finite number before the arrange pass is initiated:</p>
+<pre><code class="lang-CSharp">// This method limits the panel height when no limit is imposed by the panel's parent.
+// That can happen to height if the panel is close to the root of main app window.
+// In this case, base the height of a cell on the max height from desired size
+// and base the height of the panel on that number times the #rows.
+Size LimitUnboundedSize(Size input)
+{
+    if (Double.IsInfinity(input.Height))
+    {
+        input.Height = maxcellheight * colcount;
+        cellheight = maxcellheight;
+    }
+    return input;
+}
+</code></pre>
+<h2 id="arrangeoverride"><strong>ArrangeOverride</strong></h2>
+<pre><code class="lang-CSharp">protected override Size ArrangeOverride(Size finalSize)
+{
+     int count = 1;
+     double x, y;
+     foreach (UIElement child in Children)
+     {
+          x = (count - 1) % colcount * cellwidth;
+          y = ((int)(count - 1) / colcount) * cellheight;
+          Point anchorPoint = new Point(x, y);
+          child.Arrange(new Rect(anchorPoint, child.DesiredSize));
+          count++;
+     }
+     return finalSize;
+}
+</code></pre>
+<p>The necessary pattern of an <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> implementation is the loop through each element in <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Panel.Children</strong></a>. Always call the <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a> method on each of these elements.</p>
+<p>Note how there aren't as many calculations as in <a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>MeasureOverride</strong></a>; that's typical. The size of children is already known from the panel's own <strong>MeasureOverride</strong> logic, or from the <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> value of each child set during the measure pass. However, we still need to decide the location within the panel where each child will appear. In a typical panel, each child should render at a different position. A panel that creates overlapping elements isn't desirable for typical scenarios (although it's not out of the question to create panels that have purposeful overlaps, if that's really your intended scenario).</p>
+<p>This panel arranges by the concept of rows and columns. The number of rows and columns was already calculated (it was necessary for measurement). So now the shape of the rows and columns plus the known sizes of each cell contribute to the logic of defining a rendering position (the <code>anchorPoint</code>) for each element that this panel contains. That <a href="/uwp/api/Windows.Foundation.Point"><strong>Point</strong></a>, along with the <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> already known from measure, are used as the two components that construct a <a href="/uwp/api/Windows.Foundation.Rect"><strong>Rect</strong></a>. <strong>Rect</strong> is the input type for <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a>.</p>
+<p>Panels sometimes need to clip their content. If they do, the clipped size is the size that's present in <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a>, because the <a href="/uwp/api/windows.ui.xaml.uielement.measure"><strong>Measure</strong></a> logic sets it as the minimum of what was passed to <strong>Measure</strong>, or other natural size factors. So you don't typically need to specifically check for clipping during <a href="/uwp/api/windows.ui.xaml.uielement.arrange"><strong>Arrange</strong></a>; the clipping just happens based on passing the <strong>DesiredSize</strong> through to each <strong>Arrange</strong> call.</p>
+<p>You don't always need a count while going through the loop if all the info you need for defining the rendering position is known by other means. For example, in <a href="/uwp/api/Windows.UI.Xaml.Controls.Canvas"><strong>Canvas</strong></a> layout logic, the position in the <a href="/uwp/api/windows.ui.xaml.controls.panel.children"><strong>Children</strong></a> collection doesn't matter. All the info needed to position each element in a <strong>Canvas</strong> is known by reading <a href="/dotnet/api/system.windows.controls.canvas.left"><strong>Canvas.Left</strong></a> and <a href="/dotnet/api/system.windows.controls.canvas.top"><strong>Canvas.Top</strong></a> values of children as part of the arrange logic. The <code>BoxPanel</code> logic happens to need a count to compare to the <em>colcount</em> so it's known when to begin a new row and offset the <em>y</em> value.</p>
+<p>It's typical that the input <em>finalSize</em> and the <a href="/uwp/api/Windows.Foundation.Size"><strong>Size</strong></a> you return from a <a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>ArrangeOverride</strong></a> implementation are the same. For more info about why, see &quot;<strong>ArrangeOverride</strong>&quot; section of <a href="custom-panels-overview.html">XAML custom panels overview</a>.</p>
+<h2 id="a-refinement-controlling-the-row-vs-column-count">A refinement: controlling the row vs. column count</h2>
+<p>You could compile and use this panel just as it is now. However, we'll add one more refinement. In the code just shown, the logic puts the extra row or column on the side that's longest in aspect ratio. But for greater control over the shapes of cells, it might be desirable to choose a 4x3 set of cells instead of 3x4 even if the panel's own aspect ratio is &quot;portrait.&quot; So we'll add an optional dependency property that the panel consumer can set to control that behavior. Here's the dependency property definition, which is very basic:</p>
+<pre><code class="lang-CSharp">// Property
+public Orientation Orientation
+{
+    get { return (Orientation)GetValue(OrientationProperty); }
+    set { SetValue(OrientationProperty, value); }
+}
+
+// Dependency Property Registration
+public static readonly DependencyProperty OrientationProperty =
+        DependencyProperty.Register(nameof(Orientation), typeof(Orientation), typeof(BoxPanel), new PropertyMetadata(null, OnOrientationChanged));
+
+// Changed callback so we invalidate our layout when the property changes.
+private static void OnOrientationChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs args)
+{
+    if (dependencyObject is BoxPanel panel)
+    {
+        panel.InvalidateMeasure();
+    }
+}
+</code></pre>
+<p>And below is how using <code>Orientation</code> impacts the measure logic in <code>MeasureOverride</code>. Really all it's doing is changing how <code>rowcount</code> and <code>colcount</code> are derived from <code>maxrc</code> and the true aspect ratio, and there are corresponding size differences for each cell because of that. When <code>Orientation</code> is <strong>Vertical</strong> (default), it inverts the value of the true aspect ratio before using it for row and column counts for our &quot;portrait&quot; rectangle layout.</p>
+<pre><code class="lang-CSharp">// Get an aspect ratio from availableSize, decides whether to trim row or column.
+aspectratio = availableSize.Width / availableSize.Height;
+
+// Transpose aspect ratio based on Orientation property.
+if (Orientation == Orientation.Vertical) { aspectratio = 1 / aspectratio; }
+</code></pre>
+<h2 id="the-scenario-for-boxpanel">The scenario for BoxPanel</h2>
+<p>The particular scenario for <code>BoxPanel</code> is that it's a panel where one of the main determinants of how to divide space is by knowing the number of child items, and dividing the known available space for the panel. Panels are innately rectangle shapes. Many panels operate by dividing that rectangle space into further rectangles; that's what <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> does for its cells. In <strong>Grid</strong>'s case, the size of the cells is set by <a href="/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition"><strong>ColumnDefinition</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.RowDefinition"><strong>RowDefinition</strong></a> values, and elements declare the exact cell they go into with <a href="/dotnet/api/system.windows.controls.grid.row"><strong>Grid.Row</strong></a> and <a href="/dotnet/api/system.windows.controls.grid.column"><strong>Grid.Column</strong></a> attached properties. Getting good layout from a <strong>Grid</strong> usually requires knowing the number of child elements beforehand, so that there are enough cells and each child element sets its attached properties to fit into its own cell.</p>
+<p>But what if the number of children is dynamic? That's certainly possible; your app code can add items to collections, in response to any dynamic run-time condition you consider to be important enough to be worth updating your UI. If you're using data binding to backing collections/business objects, getting such updates and updating the UI is handled automatically, so that's often the preferred technique (see <a href="/windows/uwp/data-binding/data-binding-in-depth">Data binding in depth</a>).</p>
+<p>But not all app scenarios lend themselves to data binding. Sometimes, you need to create new UI elements at runtime and make them visible. <code>BoxPanel</code> is for this scenario. A changing number of child items is no problem for <code>BoxPanel</code> because it's using the child count in calculations, and adjusts both the existing and new child elements into a new layout so they all fit.</p>
+<p>An advanced scenario for extending <code>BoxPanel</code> further (not shown here) could both accommodate dynamic children and use a child's <a href="/uwp/api/windows.ui.xaml.uielement.desiredsize"><strong>DesiredSize</strong></a> as a stronger factor for the sizing of individual cells. This scenario might use varying row or column sizes or non-grid shapes so that there's less &quot;wasted&quot; space. This requires a strategy for how multiple rectangles of various sizes and aspect ratios can all fit into a containing rectangle both for aesthetics and smallest size. <code>BoxPanel</code> doesn't do that; it's using a simpler technique for dividing space. <code>BoxPanel</code>'s technique is to determine the least square number that's greater than the child count. For example, 9 items would fit in a 3x3 square. 10 items require a 4x4 square. However, you can often fit items while still removing one row or column of the starting square, to save space. In the count=10 example, that fits in a 4x3 or 3x4 rectangle.</p>
+<p>You might wonder why the panel wouldn't instead choose 5x2 for 10 items, because that fits the item number neatly. However, in practice, panels are sized as rectangles that seldom have a strongly oriented aspect ratio. The least-squares technique is a way to bias the sizing logic to work well with typical layout shapes and not encourage sizing where the cell shapes get odd aspect ratios.</p>
+<h2 id="related-topics">Related topics</h2>
+<p><strong>Reference</strong></p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride"><strong>FrameworkElement.ArrangeOverride</strong></a></li>
+<li><a href="/uwp/api/windows.ui.xaml.frameworkelement.measureoverride"><strong>FrameworkElement.MeasureOverride</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Controls.Panel"><strong>Panel</strong></a></li>
+</ul>
+<p><strong>Concepts</strong></p>
+<ul>
+<li><a href="alignment-margin-padding.html">Alignment, margin, and padding</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/layout/boxpanel-example-custom-panel.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Implement passkeys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Implement passkeys ">
+    
+    <meta name="description" content="This topic describes how to implement passkey sign-ins across online, enterprise, and government applications, and for payments.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="implement-passkeys">Implement passkeys</h1>
+
+<p>Also see <a href="intro.html">Intro to passkeys</a></p>
+<p>This topic describes how to implement passkey sign-ins across online, enterprise, and government applications, and for payments. You can implement passkeys (instead of passwords) to provide your websites and apps with user-friendly and cryptographically secure sign-ins—all courtesy of the public <a href="https://www.w3.org/TR/webauthn-2/">WebAuthn API</a>.</p>
+<p>Consumer service providers, enterprises, and governments around the world are moving from forms authentication (such as passwords and SMS OTPs) to passkey-based sign-ins. Every organization has its own varying use cases and business requirements.</p>
+<h2 id="how-passkeys-work">How passkeys work</h2>
+<p>Passkeys use standard public key cryptography techniques. When a user registers with an online service, the user's client device creates a new cryptographic key pair that is bound to the web service domain. The device retains the private key, and registers the public key with the online service. These cryptographic key pairs, called passkeys, are unique and bound to the online service domain.</p>
+<p>The way authentication works is that the user's device must prove possession of the private key by presenting a challenge for sign-in to be completed. This occurs after the user approves the sign-in locally on their device, via quick and easy entry of a biometric (such as a thumbprint), or local PIN, or touch of a FIDO security key. Sign-in is completed via a challenge-response from the user's device and the online service. The service doesn't see or ever store the private key.</p>
+<p>To enroll a passkey with an online service:</p>
+<ul>
+<li>The user is prompted to create a passkey.</li>
+<li>The user verifies the passkey creation via a local authentication method (for example, biometrics).</li>
+<li>The user's device creates a new public/private key pair (a passkey) that's unique for the local device, the online service, and the user's account.</li>
+<li>The public key (and <em>only</em> that) is sent to the online service, and is associated with the user's account.</li>
+</ul>
+<p>To subsequently sign in by using a passkey:</p>
+<ul>
+<li>The user is prompted to sign in by using a passkey.</li>
+<li>The user verifies the sign-in-with-passkey via a local authentication method (for example, biometrics).</li>
+<li>The device uses the user's account identifier (provided by the service) to select the correct key, and sign the service's challenge.</li>
+<li>The client device sends the signed challenge back to the service, which verifies it with the stored public key, and signs the user in.</li>
+</ul>
+<h2 id="implement-passkeys-for-consumers-enterprise-government-or-payments">Implement passkeys for consumers, enterprise, government, or payments</h2>
+<p>This section is for you if you're considering implementing passkeys.</p>
+<p>If you're new to FIDO, then we recommend that you first review the <a href="https://fidoalliance.org/specifications/">User Authentication Specifications Overview</a>. Then, you can access the latest versions of the FIDO Alliance user authentication specifications at <a href="https://fidoalliance.org/specifications/download/">Download Authentication Specifications</a>.</p>
+<p>The <a href="https://fidoalliance.org/fido-certified-showcase/">FIDO Certified Showcase</a> highlights FIDO Alliance members and their FIDO Certified solutions. It's a great resource if you're looking to deploy FIDO.</p>
+<p>The FIDO Enterprise Deployment Working Group (EDWG) has developed a series of white papers that provide guidance for leaders and practitioners considering passkeys—scaling from SMBs to large enterprises. To understand the key decision points, see <a href="https://fidoalliance.org/passkey-use-case/enterprise/">Enterprise</a>.</p>
+<p>If your field is along the lines of citizen services or government employee applications, then see <a href="https://fidoalliance.org/passkey-use-case/government/">Government</a>.</p>
+<p>For more info about payment scenarios that are ideal for passkeys, see <a href="https://fidoalliance.org/passkey-use-case/payments/">Payments</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Next, see <a href="design.html">Design guidelines for passkeys</a>.</p>
+<h2 id="further-info">Further info</h2>
+<ul>
+<li><a href="intro.html">Intro to passkeys</a></li>
+<li><a href="/windows/security/identity-protection/hello-for-business/webauthn-apis">WebAuthn APIs for passwordless authentication on Windows</a></li>
+<li><a href="https://passkeys.dev/">Passkeys.dev</a></li>
+<li><a href="https://fidoalliance.org/implement-passkeys-overview/">Get Started on Your Passwordless Journey</a> on the FIDO Alliance website</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/implement.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

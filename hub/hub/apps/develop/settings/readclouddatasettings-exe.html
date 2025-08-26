@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe) ">
+    
+    <meta name="description" content="This article describes the Cloud Data Store Settings Reader Tool, readCloudDataSettings.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cloud-data-store-settings-reader-tool-readclouddatasettingsexe">Cloud Data Store Settings Reader tool (readCloudDataSettings.exe)</h1>
+
+<p>This article describes the Cloud Data Store Settings Reader Tool, readCloudDataSettings.exe, that can be used to fetch data stored within the Windows Cloud Data Store component on the local device. For settings documented in <a href="settings-windows-11.html">Reference for Windows 11 settings</a> or <a href="settings-common.html">Reference for Windows 11 and Windows 10 settings</a>, if the setting lists a type name rather than a registry key, then you must use this tool to retrieve the data.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="single-instance-items">Single instance items</h3>
+<p><code>readCloudDataSettings.exe get -type:&lt;type name&gt; [-account:&lt;secondary account id&gt;]</code></p>
+<h3 id="multi-instance-items">Multi-instance items</h3>
+<p><code>readCloudDataSettings.exe enum -type:&lt;type name&gt; [-collection:&lt;collection name&gt;] [-account:&lt;secondary account id&gt;]</code></p>
+<h3 id="command-line-parameter-descriptions">Command line parameter descriptions</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;type name&gt;</code></td>
+<td>The name of a Cloud Data Store type whose data is to be retrieved (e.g., &quot;windows.data.platform.diagnostics.diagnosticdata&quot;)</td>
+</tr>
+<tr>
+<td><code>&lt;collection name&gt;</code></td>
+<td>The optional name of a collection for a Cloud Data Store multi-instance type. This must be specified if the multi-instance type has a named collection and must not be specified if either the collection has no name or the type is single-instance. Cloud Data Store does has no support for enumerating either the data or names of all collections of a type.</td>
+</tr>
+<tr>
+<td><code>&lt;secondary account id&gt;</code></td>
+<td>The optional id (in the form of user@domain) of a secondary account associated with the current user whose data is to be fetched.  This must be a secondary account associated with the currently logged in Windows user; it does not provide access to data for other Windows users that might be sharing the device.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="errors">Errors</h2>
+<p>If the data does not exist or an error occurs, the output will report a pair of square brackets with nothing between; example:</p>
+<pre><code class="lang-powershell">[ 
+] 
+</code></pre>
+<h2 id="examples">Examples</h2>
+<h3 id="single-instance-type">Single-instance type</h3>
+<p>Command line:</p>
+<pre><code class="lang-powershell">C:\Windows\System32&gt;readCloudDataSettings.exe get -type:windows.data.settings.settingsusagehistory
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-powershell">/type: windows.data.settings.settingsusagehistory
+
+[
+{&quot;Data&quot;:{&quot;pageUsages&quot;:{&quot;\&quot;SettingsPageAppsNotifications\&quot;&quot;:{&quot;Data&quot;:{&quot;frequency&quot;:1,&quot;lastUsedTime&quot;:1.3353819570909629E+17,&quot;lastUsedSettingId&quot;:&quot;SystemSettings_Notifications_QuietHours_MuteNotification_Enabled&quot;}},&quot;\&quot;SettingsPageOtherUsers\&quot;&quot;:{&quot;Data&quot;:{&quot;frequency&quot;:1,&quot;lastUsedTime&quot;:1.3353709031552022E+17,&quot;lastUsedSettingId&quot;:&quot;SystemSettings.UserAccountsHandlers.RemoveOtherUserSetting&quot;}}}}}
+]
+</code></pre>
+<h3 id="single-instance-type-alternate-account">Single-instance type, alternate account</h3>
+<p>Command line:</p>
+<pre><code class="lang-powershell">C:\Windows\System32&gt;readCloudDataSettings.exe get -type:windows.data.settings.settingsusagehistory -account:otheruser@contoso.com
+
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-powershell">/type: windows.data.settings.settingsusagehistory
+
+[
+{&quot;Data&quot;:{&quot;pageUsages&quot;:{&quot;\&quot;SettingsPageAppsNotifications\&quot;&quot;:{&quot;Data&quot;:{&quot;frequency&quot;:1,&quot;lastUsedTime&quot;:1.3353819570909629E+17,&quot;lastUsedSettingId&quot;:&quot;SystemSettings_Notifications_QuietHours_MuteNotification_Enabled&quot;}},&quot;\&quot;SettingsPageOtherUsers\&quot;&quot;:{&quot;Data&quot;:{&quot;frequency&quot;:1,&quot;lastUsedTime&quot;:1.3353709031552022E+17,&quot;lastUsedSettingId&quot;:&quot;SystemSettings.UserAccountsHandlers.RemoveOtherUserSetting&quot;}}}}}
+] 
+</code></pre>
+<h3 id="multi-instance-type-with-collection-name">Multi-instance type with collection name</h3>
+<p>Command line:</p>
+<pre><code class="lang-powershell">readclouddatasettings.exe enum -type:windows.data.wifi.wifiprofile -collection:wificloudstore3
+ 
+</code></pre>
+<p>Output:</p>
+<pre><code class="lang-powershell">/type: windows.data.wifi.wifiprofile
+/collection: wificloudstore3
+ 
+[
+    {&quot;Data&quot;:{&quot;profileXml&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\r\n&lt;WLANProfile xmlns=\&quot;http://www.microsoft.com/networking/WLAN/profile/v1\&quot;&gt;\r\n\t&lt;name&gt;MySpectrumWiFi98-5G&lt;/name&gt;\r\n\t&lt;SSIDConfig&gt;\r\n\t\t&lt;SSID&gt;\r\n\t\t\t&lt;hex&gt;4D79537065637472756D5769466939382D3547&lt;/hex&gt;\r\n\t\t\t&lt;name&gt;MySpectrumWiFi98-5G&lt;/name&gt;\r\n\t\t&lt;/SSID&gt;\r\n\t&lt;/SSIDConfig&gt;\r\n\t&lt;connectionType&gt;ESS&lt;/connectionType&gt;\r\n\t&lt;connectionMode&gt;auto&lt;/connectionMode&gt;\r\n\t&lt;MSM&gt;\r\n\t\t&lt;security&gt;\r\n\t\t\t&lt;authEncryption&gt;\r\n\t\t\t\t&lt;authentication&gt;WPA2PSK&lt;/authentication&gt;\r\n\t\t\t\t&lt;encryption&gt;AES&lt;/encryption&gt;\r\n\t\t\t\t&lt;useOneX&gt;false&lt;/useOneX&gt;\r\n\t\t\t&lt;/authEncryption&gt;\r\n\t\t\t&lt;sharedKey&gt;\r\n\t\t\t\t&lt;keyType&gt;passPhrase&lt;/keyType&gt;\r\n\t\t\t\t&lt;protected&gt;false&lt;/protected&gt;\r\n\t\t\t\t&lt;keyMaterial&gt;ancientzebra274&lt;/keyMaterial&gt;\r\n\t\t\t&lt;/sharedKey&gt;\r\n\t\t&lt;/security&gt;\r\n\t&lt;/MSM&gt;\r\n\t&lt;MacRandomization xmlns=\&quot;http://www.microsoft.com/networking/WLAN/profile/v3\&quot;&gt;\r\n\t\t&lt;enableRandomization&gt;false&lt;/enableRandomization&gt;\r\n\t\t&lt;randomizationSeed&gt;1865639973&lt;/randomizationSeed&gt;\r\n\t&lt;/MacRandomization&gt;\r\n&lt;/WLANProfile&gt;\r\n&quot;,&quot;lastModifiedTime&quot;:1.3354054522984058E+17}},
+    {&quot;Data&quot;:{&quot;profileXml&quot;:&quot;&lt;?xml version=\&quot;1.0\&quot;?&gt;\r\n&lt;WLANProfile xmlns=\&quot;http://www.microsoft.com/networking/WLAN/profile/v1\&quot;&gt;\r\n\t&lt;name&gt;KIA Service Color&lt;/name&gt;\r\n\t&lt;SSIDConfig&gt;\r\n\t\t&lt;SSID&gt;\r\n\t\t\t&lt;hex&gt;4B4941205365727669636520436F6C6F72&lt;/hex&gt;\r\n\t\t\t&lt;name&gt;KIA Service Color&lt;/name&gt;\r\n\t\t&lt;/SSID&gt;\r\n\t&lt;/SSIDConfig&gt;\r\n\t&lt;connectionType&gt;ESS&lt;/connectionType&gt;\r\n\t&lt;connectionMode&gt;manual&lt;/connectionMode&gt;\r\n\t&lt;MSM&gt;\r\n\t\t&lt;security&gt;\r\n\t\t\t&lt;authEncryption&gt;\r\n\t\t\t\t&lt;authentication&gt;WPA2PSK&lt;/authentication&gt;\r\n\t\t\t\t&lt;encryption&gt;AES&lt;/encryption&gt;\r\n\t\t\t\t&lt;useOneX&gt;false&lt;/useOneX&gt;\r\n\t\t\t&lt;/authEncryption&gt;\r\n\t\t\t&lt;sharedKey&gt;\r\n\t\t\t\t&lt;keyType&gt;passPhrase&lt;/keyType&gt;\r\n\t\t\t\t&lt;protected&gt;false&lt;/protected&gt;\r\n\t\t\t\t&lt;keyMaterial&gt;4258270521&lt;/keyMaterial&gt;\r\n\t\t\t&lt;/sharedKey&gt;\r\n\t\t&lt;/security&gt;\r\n\t&lt;/MSM&gt;\r\n\t&lt;MacRandomization xmlns=\&quot;http://www.microsoft.com/networking/WLAN/profile/v3\&quot;&gt;\r\n\t\t&lt;enableRandomization&gt;false&lt;/enableRandomization&gt;\r\n\t\t&lt;randomizationSeed&gt;4088426234&lt;/randomizationSeed&gt;\r\n\t&lt;/MacRandomization&gt;\r\n&lt;/WLANProfile&gt;\r\n&quot;,&quot;lastModifiedTime&quot;:1.3354054522999686E+17}}
+]
+</code></pre>
+<h2 id="note-on-serialization">Note on serialization</h2>
+<p>For interoperability settings data structures are serialized to JSON when exported from Windows. In some cases, this can result in unintuitive results. See the examples below.</p>
+<h3 id="basic-data-types">Basic data types</h3>
+<p>Basic data types (integer, floating point, string, etc) have no special representation beyond normal JSON encoding.</p>
+<h3 id="structures">Structures</h3>
+<p>All structures (including top level structures) are wrapped in a JSON element called &quot;Data&quot;. This includes nested structures (including when structures are used in vectors, maps, and nullables)</p>
+<h4 id="example">Example</h4>
+<p>This structure definition:</p>
+<pre><code class="lang-csharp">struct MyInnerDataType
+{
+    0: int32 data;
+}
+
+struct MyDataType
+{
+    0: MyInnerDataType innerData;
+    1: int64 id;
+}
+</code></pre>
+<p>Becomes the following JSON:</p>
+<pre><code class="lang-json">{
+    &quot;Data&quot;:
+    {
+        &quot;innerData&quot;:
+        {
+            &quot;Data&quot;:
+            {
+                &quot;data&quot;: 1
+            }
+        },
+        &quot;id&quot;: 2
+    }
+}
+</code></pre>
+<h3 id="vectors--lists">Vectors / Lists</h3>
+<p>Vectors and lists are translated into standard JSON arrays (with the caveat from above that a list of structures has each element wrapped in a JSON element named &quot;Data&quot;).</p>
+<h4 id="example-1">Example</h4>
+<p>This structure definition:</p>
+<pre><code class="lang-csharp">struct MyInnerDataType
+{
+    0: int32 data;
+}
+
+struct MyDataType
+{
+    0: vector&lt;MyInnerDataType&gt; dataList;
+    1: vector&lt;int32&gt; idList;
+}
+</code></pre>
+<p>Becomes the following JSON:</p>
+<pre><code class="lang-json">{
+    &quot;Data&quot;:
+    {
+        &quot;dataList&quot;:
+        [
+            {
+                &quot;Data&quot;:
+                {
+                    &quot;data&quot;: 1
+                }
+            },
+            {
+                &quot;Data&quot;:
+                {
+                    &quot;data&quot;: 2
+                }
+            },
+        ],
+        &quot;idList&quot;: [ 1, 2 ]
+    }
+}
+</code></pre>
+<h3 id="blob">Blob</h3>
+<p>Blobs are translated into arrays of integers</p>
+<h4 id="example-2">Example</h4>
+<p>This structure definition:</p>
+<pre><code class="lang-C#">Struct mySetting
+{
+0: blob settingData;
+}
+</code></pre>
+<p>Becomes the following JSON:</p>
+<pre><code class="lang-json">{
+    &quot;Data&quot;:
+    {
+        &quot;settingData&quot;:[-103,84,-51,60,-88,-121,16,75,-94,21,96,-120,-120,-35,59,85,4,0,0,0,0,1,0,0,36,0,0,0,73,0,110,0,116,0,101,0,114,0,110,0,101,0,116,0,32,0,69,0,120,0,112,0,108,0,111,0,114,0,101,0,114,0,0,0,1,0,0,0,2,0,0,0,7,0,0,0,7,0,0,0,58,0,0,0,104,0,116,0,116,0,112,0,115,0,58,0,47,0,47,0,103,0,108,0,111,0,98,0,97,0,108,0,46,0,115,0,116,0,115,0,46,0,109,0,115,0,102,0,116,0,46,0,110,0,101,0,116,0,47,0,0,0,2,0,0,0,2,0,0,0,7,0,0,0,7,0,0,0,34,0,0,0,109,0,105,0,99,0,114,0,105,0,100,0,101,0,114,0,64,0,103,0,109,0,101,0,46,0,103,0,98,0,108,0,0,0,3,0,0,0,0,0,0,0,7,0,0,0,7,0,0,0,34,0,0,0,110,0,97,0,109,0,105,0,56,0,48,0,114,0,117,0,108,0,101,0,115,0,58,0,68,0,103,0,109,0,101,0,0,0,1,0,0,0,100,0,0,0,0,0,0,0,8,0,0,0,8,0,0,0,16,0,0,0,-43,-74,60,78,86,37,-40,76,-92,-115,-57,85,-57,55,-53,-90,5,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,1,0,0,0,7,0,0,0,0,0,0,0,2,0,0,0,7,0,0,0,0,0,0,0,3,0,0,0,7,0,0,0,0,0,0,0,4,0,0,0,6,0,0,0,-58,-104,104,-79,72,-95,103,73,-111,113,100,-41,85,-38,-123,32]
+    }
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/settings/readclouddatasettings-exe.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

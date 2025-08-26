@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Show the camera preview in a WinUI 3 app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Show the camera preview in a WinUI 3 app ">
+    
+    <meta name="description" content="Learn how to show the camera preview in a WinUI 3 app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="show-the-camera-preview-in-a-winui-3-app">Show the camera preview in a WinUI 3 app</h1>
+
+<p>In this quickstart, you will learn how to create a basic WinUI 3 camera app that displays the camera preview. In a WinUI 3 app, you use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> control in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace to render the camera preview and the WinRT class <a href="/uwp/api/windows.media.capture.mediacapture">MediaCapture</a> to access the device's camera preview stream. <strong>MediaCapture</strong> provides APIs for performing a wide range of camera-related tasks such as such as capturing photos and videos and configuring the camera's device driver. See the other articles in this section for details about other <strong>MediaCapture</strong> features.</p>
+<p>The code in this walkthrough is adapted from the <a href="https://github.com/microsoft/Windows-Camera/tree/master/Samples/MediaCaptureWinUI3">MediaCapture WinUI 3 sample on github</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For the UWP version of this article, see <a href="/windows/uwp/audio-video-camera/simple-camera-preview-access">Display the camera preview</a> in the UWP documentation.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Your device must have developer mode enabled. For more information see <a href="/windows/apps/get-started/enable-your-device-for-development">Enable your device for development</a>.</li>
+<li>Visual Studio 2022 or later with the <strong>WinUI application development</strong> workload.</li>
+</ul>
+<h2 id="create-a-new-winui-3-app">Create a new WinUI 3 app</h2>
+<p>In Visual Studio, create a new project. In the <strong>Create a new project</strong> dialog, set the language filter to &quot;C#&quot; and the platform filter to &quot;Windows&quot;, then select the &quot;Blank App, Packaged (WinUI 3 in desktop)&quot; project template.</p>
+<h2 id="create-the-ui">Create the UI</h2>
+<p>The simple UI for this example includes a <strong>MediaPlayerElement</strong> control for displaying the camera preview, a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox">ComboBox</a> that allows you to select from the device's cameras, and buttons for initializing the <strong>MediaCapture</strong> class, starting and stopping the camera preview, and resetting the sample. We also include a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock">TextBlock</a> for displaying status messages.</p>
+<p>In your project's MainWindow.xml file, replace the default <strong>StackPanel</strong> control with the following XAML.</p>
+<div class="lang-xaml">
+</div>
+<h2 id="update-the-mainwindow-class-definition">Update the MainWindow class definition</h2>
+<p>The rest of the code in this article will be added to the <strong>MainWindow</strong> class definition in your project's MainWindow.xaml.cs file. First, add a few class variables that will persist throughout the lifetime of the window. These variables include:</p>
+<ul>
+<li>A <a href="/uwp/api/windows.devices.enumeration.deviceinformationcollection">DeviceInformationCollection</a> that will store a <a href="/uwp/api/windows.devices.enumeration.deviceinformation">DeviceInformation</a> object for each available camera. The <strong>DeviceInformation</strong> object conveys information such as the unique identifier and the friendly name for the camera.</li>
+<li>A <strong>MediaCapture</strong> object that handles interactions with the selected camera's driver and allows you to retrieve the camera's video stream.</li>
+<li>A <a href="/uwp/api/windows.media.capture.frames.mediaframesource">MediaFrameSource</a> object that represents a source of media frames, such as a video stream.</li>
+<li>A boolean to track when the camera preview is running. Some camera settings can't be changed while the preview is running, so it's a good practice to track the state of the camera preview.</li>
+</ul>
+<div class="lang-csharp">
+</div>
+<h2 id="populate-the-list-of-available-cameras">Populate the list of available cameras</h2>
+<p>Next we'll create a helper method to detect the cameras that are present on the current device and populate the <strong>ComboBox</strong> in the UI with the camera names, allowing the user to select a camera to preview.The <a href="/uwp/api/windows.devices.enumeration.deviceinformation.findallasync">DeviceInformation.FindAllAsync</a> allows you to query for many different kinds of devices. We use <a href="/uwp/api/windows.media.devices.mediadevice.getvideocaptureselector">MediaDevice.GetVideoCaptureSelector</a> to retrieve the identifier that specifies that we only want to retrieve video capture devices.</p>
+<div class="lang-csharp">
+</div>
+<p>Add a call to this helper method to the <strong>MainWindow</strong> class constructor so that the <strong>ComboBox</strong> gets populated when the window loads.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="initialize-the-mediacapture-object">Initialize the MediaCapture object</h2>
+<p>Initialize the <strong>MediaCapture</strong> object by calling <a href="/uwp/api/windows.media.capture.mediacapture.initializeasync">InitializeAsync</a>, passing in a <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings">MediaCaptureInitializationSettings</a> object containing the requested initialization parameters. There are a lot of optional initialization parameters that enable different scenarios. See the API reference page for the complete list. In this simple example we specify a few basic settings, including:</p>
+<ul>
+<li>The <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings.videodeviceid">VideoDeviceId</a> property specifies the unique identifier of the camera that the <strong>MediaCapture</strong> will attach to. We get the device ID from the <strong>DeviceInformationCollection</strong>, using the selected index of the <strong>ComboBox</strong>.</li>
+<li>The <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings.sharingmode">SharingMode</a> property specifies whether the app is requesting shared, read-only access to the camera, which allows you to view and capture from the video stream, or exclusive control of the camera, which allows you to change the camera configuration. Multiple apps can read from a camera simultaneously, but only one app at a time can have exclusive control.</li>
+<li>The <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings.streamingcapturemode">StreamingCaptureMode</a> property specifies whether we want to capture video, audio, or audio and video.</li>
+<li>The <a href="/uwp/api/windows.media.capture.mediacaptureinitializationsettings.memorypreference">MediaCaptureMemoryPreference</a> allows us to request to specifically use CPU memory for video frames. The value <strong>Auto</strong> lets the system use GPU memory if it's available.</li>
+</ul>
+<p>Before initializing the <strong>MediaCapture</strong> object we call <a href="/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.checkaccess">AppCapability.CheckAccess</a> method to determine if the user has denied our app access to the camera in Windows Settings.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows allows users to grant or deny access to the device's camera in the Windows Settings app, under <strong>Privacy &amp; Security -&gt; Camera</strong>. When initializing the capture device, apps should check whether they have access to the camera and handle the case where access is denied by the user. For more information, see <a href="/windows/uwp/audio-video-camera/camera-privacy-setting">Handle the Windows camera privacy setting</a>.</p>
+</div>
+<p>The <strong>InitializeAsync</strong> call is made from inside a <strong>try</strong> block so that we can recover if initialization fails. Apps should handle initialization failure gracefully. In this simple example, we'll just display an error message on failure.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="initialize-the-camera-preview">Initialize the camera preview</h2>
+<p>When the user clicks the start preview button, we will attempt to create a <strong>MediaFrameSource</strong> for a video stream from the camera device with which the <strong>MediaCapture</strong> object was initialized. The available frame sources are exposed by the <a href="/uwp/api/windows.media.capture.mediacapture.framesources">MediaCapture.FrameSources</a> property.</p>
+<p>To find a frame source that is color video data, as opposed to a depth camera for example, we look for a frame source that has a <a href="/uwp/api/windows.media.capture.frames.mediaframesourceinfo.sourcekind">SourceKind</a> of <a href="/uwp/api/windows.media.capture.frames.mediaframesourcekind">Color</a>. Some camera drivers provide a dedicated preview stream that is separate from the record stream. To get the preview video stream, we try to select a frame source that has a <a href="/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype">MediaStreamType</a> of <a href="/uwp/api/windows.media.capture.mediastreamtype">VideoPreview</a>. If no preview streams are found, we can get the record video stream by selecting a <strong>MediaStreamType</strong> of <strong>VideoRecord</strong>. If neither of these frame sources are available, then this capture device can't be used for video preview.</p>
+<p>Once we have selected a frame source, we create a new <a href="/uwp/api/windows.media.playback.mediaplayer">MediaPlayer</a> object that will be rendered by the <strong>MediaPlayerElement</strong> in our UI. We set the <a href="/uwp/api/windows.media.playback.mediaplayer.source">Source</a> property of the <strong>MediaPlayer</strong> to a new <a href="/uwp/api/windows.media.core.mediasource">MediaSource</a> object we create from our selected <strong>MediaFrameSource</strong>.</p>
+<p>Call <a href="/uwp/api/windows.media.playback.mediaplayer.play">Play</a> on the <strong>MediaPlayer</strong> object to begin rendering the video stream.</p>
+<div class="lang-csharp">
+</div>
+<p>Implement a handler for the <a href="/uwp/api/windows.media.playback.mediaplayer.mediafailed">MediaFailed</a> event so that you can handle errors rendering the preview.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="stop-the-camera-preview">Stop the camera preview</h2>
+<p>To stop the camera preview, call <a href="/uwp/api/windows.media.playback.mediaplayer.pause">Pause</a> on the <strong>MediaPlayer</strong> object.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="reset-the-app">Reset the app</h2>
+<p>To make it easier to test out the sample app, add a method to reset the state of the app. Camera apps should always dispose of the camera and associated resources when the camera is no longer needed.</p>
+<div class="lang-csharp">
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/camera-quickstart-winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

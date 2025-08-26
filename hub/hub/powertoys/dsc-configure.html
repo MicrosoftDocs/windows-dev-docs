@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys DSC Configure module guide </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys DSC Configure module guide ">
+    
+    <meta name="description" content="Learn how to configure PowerToys utilities using the Desired State Configuration (DSC) Configure module with WinGet configuration files. Complete reference for all available settings and properties.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="desired-state-configuration-in-powertoys">Desired State Configuration in PowerToys</h1>
+
+<p>Since version 0.80, the PowerToys installer has been released on GitHub with <code>Microsoft.PowerToys.Configure</code> <a href="/powershell/dsc/overview">DSC resource</a> that allows you to configure PowerToys using a <a href="/windows/package-manager/configuration/create">Winget configuration file</a>.</p>
+<h2 id="installation">Installation</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+<li>PSDesiredStateConfiguration 2.0.7 or later: Refer to the <a href="/powershell/dsc/overview">PowerShell DSC documentation</a> for installation instructions.</li>
+<li>PowerShell 7.2 or higher.</li>
+<li>WinGet <a href="https://github.com/microsoft/winget-cli/releases">version v1.6.2631 or later</a>.</li>
+</ul>
+<h3 id="download">Download</h3>
+<p>Microsoft.PowerToys.Configure is <a href="install.html">installed with PowerToys</a>. Depending on the installer type, it's installed as follows:</p>
+<ul>
+<li>For the per-user install scope, the module is located in <code>%USERPROFILE%\Documents\PowerShell\Modules\Microsoft.PowerToys.Configure</code>.</li>
+<li>For the machine-wide install scope, it's found in <code>%ProgramFiles%\WindowsPowerShell\Modules\Microsoft.PowerToys.Configure</code>.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>You can invoke the resource directly using the following Powershell syntax:</p>
+<pre><code class="lang-ps">Invoke-DscResource -Name PowerToysConfigure -Method Set -ModuleName Microsoft.PowerToys.Configure -Property @{ Awake = @{ Enabled = $false; Mode = &quot;TIMED&quot;; IntervalMinutes = &quot;10&quot; } }
+</code></pre>
+<p>However, creating a <em>configuration.dsc.yaml</em> file that contains the required settings in a simpler format is more convenient. Here's an example:</p>
+<pre><code class="lang-yaml">properties:
+  resources:
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: installPowerToys
+      directives:
+        description: Install PowerToys
+        allowPrerelease: true
+      settings:
+        id: Microsoft.PowerToys
+        source: winget
+
+    - resource: Microsoft.PowerToys.Configure/PowerToysConfigure
+      dependsOn:
+        - installPowerToys
+      directives:
+        description: Configure PowerToys
+      settings:
+        ShortcutGuide:
+          Enabled: false
+          OverlayOpacity: 50
+        FancyZones:
+          Enabled: true
+          FancyzonesEditorHotkey: &quot;Shift+Ctrl+Alt+F&quot;
+        FileLocksmith:
+          Enabled: false
+  configurationVersion: 0.2.0
+</code></pre>
+<p>Use the following command to apply the configuration from the file:</p>
+<pre><code class="lang-ps">winget configure .\configuration.dsc.yaml
+</code></pre>
+<p>This command installs the latest version of PowerToys and uses the PowerToysConfigure resource to apply settings for multiple PowerToys modules. More examples can be found <a href="https://github.com/microsoft/PowerToys/tree/main/src/dsc/Microsoft.PowerToys.Configure/examples">in the PowerToys repo</a>.</p>
+<h2 id="available-configuration-settings-by-module">Available configuration settings by module</h2>
+<h3 id="alwaysontop">AlwaysOnTop</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Customize the shortcut to pin or unpin an app window.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FrameEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show a border around the pinned window.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FrameThickness</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Border thickness in pixels.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FrameColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Specify a color in a <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FrameOpacity</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Border opacity in percentage.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FrameAccentColor</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use a custom FrameColor value.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SoundEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Play a sound when pinning a window.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DoNotActivateOnGameMode</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Disable activation shortcut when Game Mode is on.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExcludedApps</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">'\r'-separated list of executable names to exclude from pinning on top.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">RoundCornersEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Enable round corners.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="awake">Awake</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">KeepDisplayOn</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">This setting is only available when keeping the PC awake.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mode</td>
+<td style="text-align: left;">AwakeMode</td>
+<td style="text-align: left;">Possible values: PASSIVE, INDEFINITE, TIMED, EXPIRABLE.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">IntervalHours</td>
+<td style="text-align: left;">UInt32</td>
+<td style="text-align: left;">When using TIMED mode, specifies the number of hours.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">IntervalMinutes</td>
+<td style="text-align: left;">UInt32</td>
+<td style="text-align: left;">When using TIMED mode, specifies the number of minutes.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExpirationDateTime</td>
+<td style="text-align: left;">DateTimeOffset</td>
+<td style="text-align: left;">When using EXPIRABLE mode, specifies the date and time in a format parsable with <code>DateTimeOffset.TryParse</code>.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="colorpicker">ColorPicker</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to activate this module.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CopiedColorRepresentation</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">The default color representation to be used. Example :&quot;HEX&quot;.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationAction</td>
+<td style="text-align: left;">ColorPickerActivationAction</td>
+<td style="text-align: left;">Possible values: OpenEditor, OpenColorPickerAndThenEditor, OpenOnlyColorPicker.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">VisibleColorFormats</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ Not available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowColorName</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">This will show the name of the color when picking a color.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Configuring custom color formats through DSC is not yet supported.</p>
+</div>
+<h3 id="cropandlock">CropAndLock</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ReparentHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Shortcut to crop an application's window into a cropped window.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ThumbnailHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Shortcut to crop and create a thumbnail of another window.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="environmentvariables">EnvironmentVariables</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">LaunchAdministrator</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Needs to be launched as administrator in order to make changes to the system environment variables.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fancyzones">FancyZones</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesShiftDrag</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Hold Shift key to activate zones while dragging a window.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesMouseSwitch</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use a non-primary mouse button to toggle zone activation.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesMouseMiddleClickSpanningMultipleZones</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use middle-click mouse button to toggle multiple zones spanning.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesOverrideSnapHotkeys</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">This overrides the Windows Snap shortcut (Win + arrow) to move windows between zones.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesMoveWindowsAcrossMonitors</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Move windows between zones across all monitors.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesMoveWindowsBasedOnPosition</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Move windows based on relative position or zone index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesOverlappingZonesAlgorithm</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">When multiple zones overlap algorithm index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesDisplayOrWorkAreaChangeMoveWindows</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Keep windows in their zones when the screen resolution or work area changes.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesZoneSetChangeMoveWindows</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">During zone layout changes, windows assigned to a zone will match new size/positions.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesAppLastZoneMoveWindows</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Move newly created windows to their last known zone.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesOpenWindowOnActiveMonitor</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Move newly created windows to the current active monitor (Experimental).</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesRestoreSize</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Restore the original size of windows when unsnapping.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesQuickLayoutSwitch</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Enable quick layout switch.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesFlashZonesOnQuickSwitch</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Flash zones when switching layout.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">UseCursorposEditorStartupscreen</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Open editor on the display where the mouse point is.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesShowOnAllMonitors</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show zones on all monitors while dragging a window.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesSpanZonesAcrossMonitors</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Allow zones to span across monitors.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesMakeDraggedWindowTransparent</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Make dragged window transparent.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesAllowChildWindowSnap</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Allow child windows snapping.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesDisableRoundCornersOnSnap</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Disable round corners when window is snapped.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesZoneHighlightColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If not using FancyzonesSystemTheme, highlight color to use in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesHighlightOpacity</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Zone opacity in percentage.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesEditorHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Customize the shortcut to activate this module.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesWindowSwitching</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Switch between windows in the current zone.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesNextTabHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Next window shortcut.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesPrevTabHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Previous window shortcut.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesExcludedApps</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">'\r'-separated list of executable names to exclude from snapping.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesBorderColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If not using FancyzonesSystemTheme, border color to use in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesInActiveColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If not using FancyzonesSystemTheme, inactive color to use in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesNumberColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">If not using FancyzonesSystemTheme, number color to use in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesSystemTheme</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use system theme for zone appearance.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyzonesShowZoneNumber</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show zone number.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Configuring layouts through DSC is not yet supported.</p>
+</div>
+<h3 id="filelocksmith">FileLocksmith</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExtendedContextMenuOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show File Locksmith in extended context menu only or in default context menu as well.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="findmymouse">FindMyMouse</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationMethod</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Activation method index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Custom activation shortcut when using Custom for ActivationMethod.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DoNotActivateOnGameMode</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Disable activation shortcut when Game Mode is on.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">BackgroundColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Background color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SpotlightColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Spotlight color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">OverlayOpacity</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Overlay opacity in percentage.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SpotlightRadius</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Spotlight radius in px.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">AnimationDurationMs</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Animation duration in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SpotlightInitialZoom</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Spotlight zoom factor at animation start.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExcludedApps</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">'\r'-separated list of executable names to prevent module activation.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShakingMinimumDistance</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">When using shake mouse ActivationMethod, the minimum distance for mouse shaking activation, for adjusting sensitivity.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShakingIntervalMs</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">When using shake mouse ActivationMethod, the span of time during which we track mouse movement to detect shaking, for adjusting sensitivity.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShakingFactor</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">When using shake mouse ActivationMethod, Shake factor in percentage.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hosts">Hosts</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">LaunchAdministrator</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Needs to be opened as administrator in order to make changes to the system environment variables.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowStartupWarning</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show a warning at startup.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">LoopbackDuplicates</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Consider loopback addresses as duplicates.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">AdditionalLinesPosition</td>
+<td style="text-align: left;">HostsAdditionalLinesPosition</td>
+<td style="text-align: left;">Possible values: Top, Bottom.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Encoding</td>
+<td style="text-align: left;">HostsEncoding</td>
+<td style="text-align: left;">Possible values: Utf8, Utf8Bom.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="imageresizer">ImageResizer</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerSelectedSizeIndex</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Default size preset index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerShrinkOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Make pictures smaller but not larger.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerReplace</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Overwrite files.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerIgnoreOrientation</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Ignore the orientation of pictures.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerJpegQualityLevel</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">JPEG quality level in percentage.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerPngInterlaceOption</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">PNG interlacing option index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerTiffCompressOption</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Tiff compression index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerFileName</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">This format is used as the filename for resized images.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerSizes</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ Not available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerKeepDateModified</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Remove metadata that doesn't affect rendering.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerFallbackEncoder</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Fallback encoder to use.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ImageresizerCustomSize</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ Not available</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Configuring custom sizes through DSC is not yet supported.</p>
+</div>
+<h3 id="keyboardmanager">KeyboardManager</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActiveConfiguration</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ Not available</td>
+</tr>
+<tr>
+<td style="text-align: left;">KeyboardConfigurations</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">❌ Not available</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Configuring remappings through DSC is not yet supported.</p>
+</div>
+<h3 id="measuretool">MeasureTool</h3>
+<p>Measure Tool is the internal name for Screen Ruler.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to bring up the command bar.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ContinuousCapture</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Capture screen continuously during measuring.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DrawFeetOnCross</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Adds feet to the end of cross lines.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">PerColorChannelEdgeDetection</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Enable a different edge detection algorithm.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">PixelTolerance</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Pixel Tolerance for edge detection.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MeasureCrossColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Line color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DefaultMeasureStyle</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Default measure style index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mousehighlighter">MouseHighlighter</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to turn on or off this mode.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">LeftButtonClickColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Primary button highlight color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">RightButtonClickColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Secondary button highlight color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">AlwaysColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Always highlight color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">HighlightRadius</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Highlight radius in pixels.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">HighlightFadeDelayMs</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Fade delay in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">HighlightFadeDurationMs</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Fade duration in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">AutoActivate</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Automatically activate on utility startup.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mousejump">MouseJump</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to turn on or off this mode.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ThumbnailSize</td>
+<td style="text-align: left;">MouseJumpThumbnailSize</td>
+<td style="text-align: left;">Thumbnail size.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mousepointercrosshairs">MousePointerCrosshairs</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to show/hide the crosshairs.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Crosshairs color in <code>#FFFFFFFF</code>.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsOpacity</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Crosshairs opacity in percentage.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsRadius</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Crosshairs center radius in pixels.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsThickness</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Crosshairs thickness in pixels.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsBorderColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Crosshairs border color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsBorderSize</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Crosshairs border size in pixels.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsAutoHide</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Automatically hide crosshairs when the mouse pointer is hidden.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsIsFixedLengthEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Fix crosshairs length.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CrosshairsFixedLength</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Crosshairs fixed length in pixels.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">AutoActivate</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Automatically activate on utility startup.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mousewithoutborders">MouseWithoutBorders</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowOriginalUI</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show the original Mouse Without Borders UI.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">WrapMouse</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Move control back to the first machine when mouse moves past the last one.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShareClipboard</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If share clipboard stops working, Ctrl+Alt+Del then Esc may solve the problem.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">TransferFile</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If a file (&lt;100MB) is copied, it will be transferred to the remote machine clipboard.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">HideMouseAtScreenEdge</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Hide mouse at the screen edge.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DrawMouseCursor</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Mouse cursor may not be visible in Windows 10 and later versions of Windows when there is no physical mouse attached.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ValidateRemoteMachineIP</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Reverse DNS lookup to validate machine IP Address.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SameSubnetOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Only connect to machines in the same intranet NNN.NNN.<em>.</em> (only works when both machines have IPv4 enabled).</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">BlockScreenSaverOnOtherMachines</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Block screen saver on other machines.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MoveMouseRelatively</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use this option when remote machine's monitor settings are different, or remote machine has multiple monitors.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">BlockMouseAtScreenCorners</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Block mouse at screen corners to avoid accident machine-switch at screen corners.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowClipboardAndNetworkStatusMessages</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show clipboard and network status messages.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EasyMouse</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Easy Mouse mode index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">HotKeySwitchMachine</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Shortcut to switch between machines index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ToggleEasyMouseShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Shortcut to toggle Easy Mouse.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">LockMachineShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Shortcut to lock all machines.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ReconnectShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Shortcut to try reconnecting.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Switch2AllPCShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Shortcut to switch to multiple machine mode.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Name2IP</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">IP address mapping.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pasteplain">PastePlain</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to activate this module.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="peek">Peek</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to activate this module.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">AlwaysRunNotElevated</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Always run not elevated, even when PowerToys is elevated.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CloseAfterLosingFocus</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Automatically close the Peek window after it loses focus.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="poweraccent">PowerAccent</h3>
+<p>PowerAccent is the internal name for Quick Accent.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationKey</td>
+<td style="text-align: left;">PowerAccentActivationKey</td>
+<td style="text-align: left;">Possible values: LeftRightArrow, Space, Both.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DoNotActivateOnGameMode</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Disable activation shortcut when Game Mode is on.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ToolbarPosition</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Toolbar position index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">InputTime</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Input time delay in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SelectedLang</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">A character set to use.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExcludedApps</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">'\r'-separated list of executable names to prevent module activation if they're in a foreground.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowUnicodeDescription</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show the Unicode code and name of the currently selected character.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SortByUsageFrequency</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Sort characters by usage frequency.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">StartSelectionFromTheLeft</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Start selection from the left.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="powerlauncher">PowerLauncher</h3>
+<p>PowerLaucher is the internal name for PowerToys Run.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpenPowerLauncher</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to activate the module.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">IgnoreHotkeysInFullscreen</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Ignore shortcuts in fullscreen mode.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ClearInputOnLaunch</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Clear the previous query on open.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">TabSelectsContextButtons</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Tab through context buttons.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Theme</td>
+<td style="text-align: left;">Theme</td>
+<td style="text-align: left;">Possible values: System, Light, Dark, HighContrastOne, HighContrastTwo, HighContrastBlack, HighContrastWhite.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">TitleFontSize</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Text size in points.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Position</td>
+<td style="text-align: left;">StartupPosition</td>
+<td style="text-align: left;">Possible values: Cursor, PrimaryMonitor, Focus.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">UseCentralizedKeyboardHook</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use centralized keyboard hook.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearchQueryResultsWithDelay</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Input Smoothing.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearchInputDelay</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Immediate plugins delay in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearchInputDelayFast</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Background execution plugins delay in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearchClickedItemWeight</td>
+<td style="text-align: left;">Int32</td>
+<td style="text-align: left;">Selected item weight.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearchQueryTuningEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Results order tuning.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearchWaitForSlowResults</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Wait for slower plugin results before selecting top item in results.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaximumNumberOfResults</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Number of results shown before having to scroll.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">UsePinyin</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use Pinyin.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">GenerateThumbnailsFromFiles</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Thumbnail generation for files is turned on.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Plugins</td>
+<td style="text-align: left;">explained in the next subsection</td>
+<td style="text-align: left;">Thumbnail generation for files is turned on.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h4 id="powertoys-run-plugin-configuration">PowerToys Run plugin configuration</h4>
+<p>PowerToys Run plugins can be configured in the Plugins property. <a href="https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.winget">A sample</a> can be found in the PowerToys repository.</p>
+<p>These are the available properties to configure each plugin:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name of the plugin we want to configure</td>
+</tr>
+<tr>
+<td style="text-align: left;">Disabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The plugin should be disabled</td>
+</tr>
+<tr>
+<td style="text-align: left;">IsGlobal</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The results for this plugin are shown in the global results</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActionKeyword</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Configure the action keyword of the plugin</td>
+</tr>
+<tr>
+<td style="text-align: left;">WeightBoost</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">The weight modifier to help in ordering the results for this plugin</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Configuring additional properties of plugins through DSC is not yet supported.</p>
+</div>
+<h3 id="powerocr">PowerOcr</h3>
+<p>PowerOcr is the internal name for Text Extractor.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ActivationShortcut</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to activate this module.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">PreferredLanguage</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Should match the full name of one of the languages installed in the system. Example: &quot;English (United States)&quot;.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="powerpreview">PowerPreview</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">EnableSvgPreview</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Scalable Vector Graphics Preview Handler Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SvgBackgroundColorMode</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Color mode index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SvgBackgroundSolidColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">When using Solid color SvgBackgroundColorMode, specifies the color in <code>#FFFFFFFF</code> format.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SvgBackgroundCheckeredShade</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">When using Checkered pattern SvgBackgroundColorMode, specifies the shade index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableSvgThumbnail</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Scalable Vector Graphics Thumbnail Generator Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableMdPreview</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Markdown Preview Handler Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableMonacoPreview</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Source code files Preview Handler Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableMonacoPreviewWordWrap</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Wrap text.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MonacoPreviewTryFormat</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Try to format the source for preview.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MonacoPreviewMaxFileSize</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Maximum file size to preview in KB.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnablePdfPreview</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Portable Document Format Preview Handler Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnablePdfThumbnail</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Portable Document Format Thumbnail Generator Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableGcodePreview</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Geometric Code Preview Handler Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableGcodeThumbnail</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Geometric Code Thumbnail Generator Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableStlThumbnail</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Stereolithography Thumbnail Generator Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">StlThumbnailColor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Thumbnail color in <code>#FFFFFFFF</code> format .</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableQoiPreview</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Quite OK Image Preview Handler Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableQoiThumbnail</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Quite OK Image Thumbnail Generator Enabled state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="powerrename">PowerRename</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MRUEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Enable auto-complete for the search &amp; replace fields.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxMRUSize</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Maximum number of recently used items to remember.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ExtendedContextMenuOnly</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show PowerRename in extended context menu only or in default context menu as well.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">UseBoostLib</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Use Boost Library.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registrypreview">RegistryPreview</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DefaultRegApp</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Make Registry Preview default app for opening .reg files.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shortcutguide">ShortcutGuide</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">OpenShortcutGuide</td>
+<td style="text-align: left;">HotkeySettings</td>
+<td style="text-align: left;">Customize the shortcut to activate this module.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">OverlayOpacity</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Background opacity in percentage.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">UseLegacyPressWinKeyBehavior</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If ShortcutGuide should be activated by pressing the Windows key.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">PressTimeForGlobalWindowsShortcuts</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Press duration before showing global Windows shortcuts in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">PressTimeForTaskbarIconShortcuts</td>
+<td style="text-align: left;">Int</td>
+<td style="text-align: left;">Press duration before showing taskbar icon shortcuts in milliseconds.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Theme</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Theme index.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">DisabledApps</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Turns off Shortcut Guide when these applications have focus.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="videoconference">VideoConference</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Enabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">The enabled state for this utility.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MuteCameraAndMicrophoneHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Shortcut for muting the camera and microphone.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MuteMicrophoneHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Shortcut for muting the microphone.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">PushToTalkMicrophoneHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Shortcut for push to talk.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">PushToReverseEnabled</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If enabled, allows both push to talk and push to mute, depending on microphone state.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">MuteCameraHotkey</td>
+<td style="text-align: left;">KeyboardKeys</td>
+<td style="text-align: left;">Shortcut for muting the camera.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SelectedCamera</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Device name.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">SelectedMicrophone</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Device name or [All].</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ToolbarPosition</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Toolbar position option: &quot;Top center&quot;, &quot;Bottom center&quot;, &quot;Top right corner&quot;, &quot;Top left corner&quot;, &quot;Bottom right corner&quot;, &quot;Bottom left corner&quot;.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ToolbarMonitor</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Toolbar monitor option: &quot;Main monitor&quot;, &quot;All monitors&quot;.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">CameraOverlayImagePath</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Path to the image used for the camera overlay.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ToolbarHide</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">When to hide the toolbar: &quot;Never&quot;, &quot;When both camera and microphone are unmuted&quot;, &quot;When both camera and microphone are muted&quot;, &quot;After timeout&quot;.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">StartupAction</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Startup action: &quot;Nothing&quot;, &quot;Unmute&quot;, &quot;Mute&quot;.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h3 id="generalsettings">GeneralSettings</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Available</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Startup</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">PowerToys is automatically enabled at startup.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableWarningsElevatedApps</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show a warning for functionality issues when running alongside elevated applications.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Theme</td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">What theme to use for the Settings application: &quot;system&quot;, &quot;dark&quot;, &quot;light&quot;.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowNewUpdatesToastNotification</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Show a toast notification when a new PowerToys update is available.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">AutoDownloadUpdates</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">If new updates of PowerToys should be automatically downloaded in the background.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowWhatsNewAfterUpdates</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">After updating PowerToys, open the &quot;What's new&quot; screen.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+<tr>
+<td style="text-align: left;">EnableExperimentation</td>
+<td style="text-align: left;">Boolean</td>
+<td style="text-align: left;">Opt-in into experimental features.</td>
+<td style="text-align: left;">✅ Available</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contributing">Contributing</h2>
+<p>Refer to the <a href="https://github.com/microsoft/PowerToys/blob/main/doc/devdocs/core/settings/dsc-configure.md">relevant devdocs</a> section in the developer documentation to start working on the DSC module.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/dsc-configure.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Stable channel release notes for the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Stable channel release notes for the Windows App SDK ">
+    
+    <meta name="description" content="Provides information about the stable release channel for the Windows App SDK.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="latest-stable-channel-release-notes-for-the-windows-app-sdk">Latest stable channel release notes for the Windows App SDK</h1>
+
+<p>The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+</ul>
+<h2 id="downloads-for-the-windows-app-sdk">Downloads for the Windows App SDK</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.</p>
+</div>
+<h2 id="version-17">Version 1.7</h2>
+<p>In an existing Windows App SDK app, you can update your Nuget package to 1.7.250513003 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="downloads.html">Downloads for the Windows App SDK</a>.</p>
+<h3 id="version-173-17250606001">Version 1.7.3 (1.7.250606001)</h3>
+<p>This is the latest service release for Version 1.7 of the Windows App SDK.</p>
+<h4 id="windows-ai-apis">Windows AI APIs</h4>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See <a href="/windows/ai/npu-devices">Copilot+ PCs Developer Guide</a> to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.</p>
+</div>
+<p>The Windows App SDK now includes a suite of artificial intelligence (AI) APIs that can be used with a local language model to perform a variety of tasks on Copilot+ PCs. Your apps can now intelligently respond to prompts, recognize text within images, describe the content of images, remove objects from images, and more.</p>
+<p>For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the <a href="/windows/ai/rai">Developing Responsible Generative AI Applications and Features on Windows</a> guidance.</p>
+<h4 id="new-rank-property-for-widgets">New Rank property for Widgets</h4>
+<p>Added a new <code>Rank</code> property to Widgets. Rank may be used by the platform's recommendation engine to sort Widgets from a same application package identity. Should multiple widgets from the same provider be recommended for a UI surface, the Rank property will determine the order in which they appear. The Rank property does not change how a Widget is placed compared to other provider's Widgets, nor does it affect the chance a Widget will be recommended.</p>
+<h4 id="bug-fixes">Bug Fixes</h4>
+<ul>
+<li>Added the following sentence to section 1a of the .nupkg license: When building Generative AI applications follow the guidelines in <a href="/windows/ai/rai">Developing Responsible Generative AI Applications and Features on Windows</a>.</li>
+<li>Fixed a potential crash in ApplicationDataProvider::GetStateFolderUris caused by reentrancy. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10513">#10513</a>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: ApplicationDataProvider_ReentrancyProtection)</li>
+<li>Fixed a potential crash in WindowChrome::SetTitleBar when closing a window. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9203">#9203</a>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: WindowChrome_SetTitleBarCrash)</li>
+<li>Fixed a potential crash in PointerInputObserverWinRT::FlushCoalescedInput_Callback when there is reentrancy while processing input. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: InputPointerSource_FlushReentrancyCrash)</li>
+</ul>
+<h4 id="new-apis-for-173">New APIs for 1.7.3</h4>
+<p>This release includes the following new APIs compared to the previous 1.7 release:</p>
+<pre><code>Microsoft.Windows.Widgets.Providers
+
+    WidgetInfo
+        Rank
+
+    WidgetUpdateRequestOptions
+        Rank
+</code></pre>
+<h3 id="version-172-17250513003">Version 1.7.2 (1.7.250513003)</h3>
+<details>
+<summary>Expand to see details for the Windows App SDK 1.7.2 (1.7.250513003) release</summary>
+<h4 id="windows-ai-apis-1">Windows AI APIs</h4>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See <a href="/windows/ai/npu-devices">Copilot+ PCs Developer Guide</a> to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.</p>
+</div>
+<p>The Windows App SDK now includes a suite of artificial intelligence (AI) APIs that can be used with a local language model to perform a variety of tasks on Copilot+ PCs. Your apps can now intelligently respond to prompts, recognize text within images, describe the content of images, remove objects from images, and more.</p>
+<p>For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the <a href="/windows/ai/rai">Developing Responsible Generative AI Applications and Features on Windows</a> guidance.</p>
+<h5 id="phi-silica-text-intelligence">Phi Silica Text Intelligence</h5>
+<p>With <a href="/windows/ai/apis/phi-silica"><strong>Phi Silica</strong></a>, Microsoft's most powerful NPU-tuned local language model, you can specify it to perform common tasks like summarizing a piece of text, rewriting a piece of text for clarity, and converting text to a table format. Phi Silica is optimized for efficiency and performance on Windows Copilot+ PCs devices while still offering many of the capabilities found in Large Language Models (LLMs).</p>
+<p>See <a href="/windows/ai/apis/phi-silica">Get started with Phi Silica in the Windows App SDK</a> and <a href="/windows/ai/apis/phi-silica-api-ref">API ref for Phi Silica in the Windows App SDK</a> for more information.</p>
+<h5 id="image-description">Image Description</h5>
+<p>The Image Description APIs enable the generation of textual descriptions of images. The length and type of these descriptions can be configured to meet accessibility requirements, ranging from short captions to long descriptions.</p>
+<p>For additional details, see <a href="/windows/ai/apis/imaging#what-can-i-do-with-image-description">What can I do with Image Description?</a> and <a href="/windows/ai/apis/imaging-api-ref">API ref for AI imaging features in the Windows App SDK</a>.</p>
+<h5 id="text-recognition">Text Recognition</h5>
+<p>Text recognition, also known as optical character recognition (OCR), detects and extracts text within images, converting it into machine-readable character streams. These APIs identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. Benefiting from NPU-assisted acceleration, the Windows AI AI-assisted APIs perform faster and more accurately than the legacy <a href="/uwp/api/windows.media.ocr.ocrengine">Windows.Media.Ocr.OcrEngine</a> APIs.</p>
+<p>For additional details, see <a href="/windows/ai/apis/text-recognition">Get Started with Text Recognition (OCR) in the Windows App SDK</a> and <a href="/windows/ai/apis/text-recognition-api-ref">API ref for AI-backed Text Recognition (OCR) in the Windows App SDK</a>.</p>
+<h5 id="image-super-resolution">Image Super Resolution</h5>
+<p>The 'ImageScaler' APIs can increase the sharpness and clarity of an image and upscale the image by up to 8x its original resolution.</p>
+<p>For additional details, see <a href="/windows/ai/apis/imaging#what-can-i-do-with-image-super-resolution">What can I do with Image Super Resolution?</a> and <a href="/windows/ai/apis/imaging-api-ref">API ref for AI imaging features in the Windows App SDK</a>.</p>
+<h5 id="image-segmentation">Image Segmentation</h5>
+<p>The Image Segmentation APIs allow for the identification of specific objects within an image. By inputting an image and a &quot;hints&quot; object, the model returns a mask of the identified object.</p>
+<p>For additional details, see <a href="/windows/ai/apis/imaging#what-can-i-do-with-image-segmentation">What can I do with Image Segmentation?</a> and <a href="/windows/ai/apis/imaging-api-ref">API ref for AI imaging features in the Windows App SDK</a>.</p>
+<h4 id="applicationdatamachinepath-folder-creation-support">ApplicationData.MachinePath folder creation support</h4>
+<p>ApplicationData.MachineFolder is now easier to use on Windows &gt;=10.0.26100.0 (Ge). Windows will <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#343-machine-path-creationdeletion">create the Machine folder</a> when a <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md#342-manifested-opt-in">package manifesting opt-in support</a> is added to a system if WinAppSDK 1.7.2 is present on the system. For more details see the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/applicationdata/ApplicationData.md">ApplicationData spec</a>.</p>
+<h4 id="bug-fixes-1">Bug Fixes</h4>
+<ul>
+<li>Fixed PackageDeploymentManager telemetry to properly capture completion status. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/pull/5296">#5296</a>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: N/A)</li>
+<li>Fixed a crash when using pen input on an x86 app. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: InputStateManager_PenInputCrashX86)</li>
+<li>Fixed a potential crash if the window is already destroyed when WinUI is attempting to initialize for scrolling. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: ActivateDirectManipulationManager_CheckCanInit)</li>
+<li>Fixed the WINDOWSAPPSDK_RELEASE_PATCH define and Microsoft::WindowsAppSDK::Release::Patch values in WindowsAppSDK-VersionInfo.h to not always be 0. The define is now the yymmdd date of the build, and the Patch value is the mmdd date. This change provides better runtime information on the version being used without changing any variable sizes or the version scheme. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: N/A, header change)</li>
+<li>Fixed a potential issue in the Bootstrapper if it is used to load a 1.6 or earlier version of WinAppSDK. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/pull/5349">#5349</a>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: N/A)</li>
+<li>Fixed an issue where using MSBuild to build a single-project app could incorrectly fail with a build error if it didn't have a correct launchSettings.json. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: N/A, build .targets change)</li>
+<li>Improved the performance of rendering the first frame on application launch. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: DwmCoreI_OptimizeFirstFrameLatency)</li>
+</ul>
+<h4 id="new-apis-for-172">New APIs for 1.7.2</h4>
+<p>This release includes the following new APIs compared to the previous 1.7 release:</p>
+<pre><code>Microsoft.Graphics.Imaging
+
+    ImageBuffer
+    ImageBufferContract
+    ImageBufferPixelFormat
+</code></pre>
+<pre><code>Microsoft.Windows.AI
+
+    AIFeatureReadyContract
+    AIFeatureReadyResult
+    AIFeatureReadyResultState
+    AIFeatureReadyState
+</code></pre>
+<pre><code>Microsoft.Windows.AI.ContentSafety
+
+    ContentFilterOptions
+    ContentSafetyContract
+    ImageContentFilterSeverity
+    SeverityLevel
+    TextContentFilterSeverity
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Imaging
+
+    ImageDescriptionContract
+    ImageDescriptionGenerator
+    ImageDescriptionKind
+    ImageDescriptionResult
+    ImageDescriptionResultStatus
+    ImageObjectExtractor
+    ImageObjectExtractorContract
+    ImageObjectExtractorHint
+    ImageScaler
+    ImageScalerContract
+    RecognizedLine
+    RecognizedLineStyle
+    RecognizedText
+    RecognizedTextBoundingBox
+    RecognizedWord
+    TextRecognitionContract
+    TextRecognizer
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Text
+
+    LanguageModel
+    LanguageModelContext
+    LanguageModelContract
+    LanguageModelOptions
+    LanguageModelResponseResult
+    LanguageModelResponseStatus
+    TextIntelligenceContract
+    TextRewriter
+    TextSummarizer
+    TextToTableConverter
+    TextToTableResponseResult
+    TextToTableRow
+</code></pre>
+<pre><code>Microsoft.Windows.Workloads
+
+    WorkloadPriority
+    WorkloadsContract
+</code></pre>
+</details>
+<h3 id="version-171-17250401001">Version 1.7.1 (1.7.250401001)</h3>
+<details>
+<summary>Expand to see details for the Windows App SDK 1.7.1 (1.7.250401001) release</summary>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.7 release.</p>
+<ul>
+<li>Improved the telemetry for failure scenarios in WindowsAppRuntimeInstall-&lt;arch&gt;.exe. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/pull/5289">#5289</a>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: N/A, installer change)</li>
+<li>Fixed an issue where pointer input would stop working when using arrow keys at the same time. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10126">#10126</a>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixStuckPointerInputQueue)</li>
+<li>Fixed an issue where apps in remote desktop stop responding to pointer input. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10009">#10009</a>. (This is the same fix as the pointer input plus arrow keys fix, due to remote desktop automatically sending some key input during the switch away and back.)  (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixStuckPointerInputQueue)</li>
+<li>Fixed a potential crash trying to restore focus if a window activation event is delivered for a window which is closing. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixWindowCloseFocusCrash)</li>
+<li>Fixed a performance regression introduced in WinAppSDK 1.6 due to WinUI binaries missing some linker optimizations. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: N/A, changed linker options)</li>
+<li>Fixed a potential crash if ProgressBar::SetProgressBarIndicatorWidth is called on a ProgressBar which is not in the tree. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixSetProgressBarIndicatorWidthCrash)</li>
+<li>Fixed a potential crash caused by CPopup::EnsureBridgeClosed sometimes triggering reentrancy. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixPopupClosingReentrancyCrash)</li>
+<li>Fixed a potential crash when closing a popup due to CUIElement::FlushPendingKeepVisibleOperations using a null children collection. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixPopupUnloadingCrash)</li>
+<li>Fixed PackageDeploymentManager.EnsurePackage*Ready to ensure version supersedence. For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/pull/5191">#5191</a>.  (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: EnsurePackageReadyVersionSupercedence)</li>
+<li>Fixed a potential crash caused by WebView2::UpdateCoreWebViewVisibility sometimes triggering reentrancy. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10305">#10305</a>. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixWebViewVisibilityReentrancyCrash)</li>
+<li>Fixed an issue where app UI sometimes permanently freezes and can stop rendering due to the DispatcherQueue getting stuck. (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges">RuntimeCompatibilityChange</a>: FixRandomUIFreezeInDispatcher)</li>
+</ul>
+</details>
+<h3 id="version-170-17250310001">Version 1.7.0 (1.7.250310001)</h3>
+<details>
+<summary>Expand to see details for the Windows App SDK 1.7.0 (1.7.250310001) release</summary>
+<p>The following sections describe new and updated features and known issues for version 1.7.</p>
+<h4 id="new-badge-notifications-feature">New Badge Notifications Feature</h4>
+<p>The notification badge conveys a summary or status information specific to an app. This can be numeric (1-99) or a glyph from one of the system-provided glyphs. This new functionality provides an easy way for apps to show status, such as number of unread mails in a mail app or number of new posts in a social media app.</p>
+<p>For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/4926">#4926</a>.</p>
+<h4 id="new-cameracaptureui-api">New CameraCaptureUI API</h4>
+<p>Developers have encountered challenges in the desktop environments due to WinRT CameraCaptureUI being dependent on CoreWindows, and lack of InitializeWithWindow support. The team has released this new <code>Microsoft.Windows.Media.Capture.CameraCaptureUI</code> API to WinAppSDK to provide a streamlined solution with feature parity, now supporting WindowID in the constructor for enhanced desktop compatibility.</p>
+<p>For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/4721">#4721</a>.</p>
+<h4 id="new-authentication-api">New Authentication API</h4>
+<p>A new <code>OAuth2Manager</code> API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. This new Authentication Manager is different from the public WebAuthentication Broker API, as it better aligns with OAuth best practices.</p>
+<p>For more info, see GitHub issue <a href="https://github.com/microsoft/WindowsAppSDK/issues/4772">#4772</a>.</p>
+<h4 id="new-background-task-support">New Background Task support</h4>
+<p>Background tasks are app components that run in the background without a user interface, performing actions like download files, syncing data, sending notifications or updating files. The new <code>BackgroundTaskBuilder</code> API provides WinAppSDK dependent apps the ability to directly register the full trust COM components with background tasks, removing the need to implement a workaround.</p>
+<p>For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/4831">#4831</a>.</p>
+<h4 id="new-titlebar-control">New TitleBar control</h4>
+<p>A new <code>TitleBar</code> control makes it much easier to create a great, customizable titlebar for your app. Configure properties such as the titlebar icon, Title, and Subtitle, include an integrated back button, or even add a custom control like a search box! The control includes robust titlebar capabilities like empty-space draggable regions, theme responsiveness, caption buttons, and built-in accessibility support so you can focus on your personalized design and still get the same reliable titlebar as the default experience.</p>
+<p>For more info, see GitHub <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10056">#10056</a>.</p>
+<h4 id="support-for-mathml">Support for MathML</h4>
+<p><code>RichEditBox</code> now supports MathML, via <code>RichEditTextDocument.SetMathMode</code> and <code>RichEditTextDocument.SetMathML</code>.</p>
+<p>For more info, see GitHub <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/4196">#4196</a>.</p>
+<h4 id="enhanced-runtime">Enhanced Runtime</h4>
+<ul>
+<li>Windows App SDK's <a href="/windows/apps/desktop/modernize/framework-packages/use-the-dynamic-dependency-api">Dynamic Dependencies APIs</a> delegate all calls to Windows 11's implementation when running on &gt;= Windows 11 24H2 (10.0.26100.0) providing improved performance and robustness. This holds true for all C/C++ (Mdd*()) and WinRT (namespace Microsoft.Windows.ApplicationModel.DynamicDependency) APIs.
+<ul>
+<li>Packaged processes calling Windows App SDK's Dynamic Dependencies APIs is now supported on &gt;= Windows 11 24H2 (10.0.26100.0). This is still unsupported on older systems (WinAppSDK's implementation doesn't support packaged apps).</li>
+<li>This has no impact to the developer experience. Callers can continue using the <a href="/windows/windows-app-sdk/api/win32/_bootstrap/">Bootstrapper API</a> to add the WinAppSDK framework package to the calling process' package graph.</li>
+<li>For more info, see GitHub PR <a href="https://github.com/microsoft/WindowsAppSDK/pull/4949">#4949</a>.</li>
+</ul>
+</li>
+<li>Undocked Registration-free WinRT (URFW) is not enabled on &gt;= Windows 11 24H2 (10.0.26100.0). The OS' implementation handles all <a href="https://blogs.windows.com/windowsdeveloper/2019/04/30/enhancing-non-packaged-desktop-apps-using-windows-runtime-components/">Registration-free WinRT</a> activity on these systems providing improved performance and robustness. For more info, see GitHub PR <a href="https://github.com/microsoft/WindowsAppSDK/pull/4949">#4949</a>.</li>
+<li>Detours is not used on &gt;= Windows 11 24H2 (10.0.26100.0). Detours was only used by Windows App SDK's implementations of Dynamic Dependencies and Registration-free WinRT, but as those features are now handled by the OS' implementations there's no need for them to initialize or otherwise wire up Detours. This provides a small performance gain when loading Microsoft.WindowsAppRuntime.dll. For more info, see GitHub PR <a href="https://github.com/microsoft/WindowsAppSDK/pull/4949">#4949</a>.</li>
+</ul>
+<h3 id="new-appwindow-apis">New AppWindow APIs</h3>
+<p>New <code>AppWindow</code> APIs make it easier to control your app windows to create a great experience. New capabilities include using <code>SetTaskBarIcon</code> and <code>SetTitleBarIcon</code> to independently set the taskbar and titlebar icons, using <code>AppWindowTitleBar.PreferredTheme</code> to set the light/dark theme of the titlebar, and using new properties like <code>OverlappedPresenter.PreferredMinimumWidth</code> and <code>OverlappedPresenter.PreferredMaximumHeight</code> to set a minimum or maximum width or height for the window.</p>
+<h3 id="new-island-apis">New Island APIs</h3>
+<p>The updates in the Microsoft.UI.Content namespace introduce several significant enhancements and new features aimed at improving the functionality and interoperability of the ContentIsland APIs. These changes are designed to support new hosting scenarios, enhance rendering capabilities, and ensure better synchronization of input and accessibility states. Key updates include:</p>
+<ol>
+<li>New primitives for hosting ContentIslands:
+<ul>
+<li><code>DesktopPopupSiteBridge</code>: Enables hosting a <code>ContentIsland</code> in the environment of a Win32 window with WS_POPUP style, facilitating scenarios where applications use popup windows for dialog boxes and message boxes.</li>
+<li><code>ChildSiteLink</code>: Allows a parent <code>ContentIsland</code> to host a nested child <code>ContentIsland</code>, providing a seamless partitioning of the rendering surface without user experience seams.</li>
+<li><code>DesktopAttachedSiteBridge</code>: Attaches to an existing Win32 window instead of creating a new one, designed to host a <code>ContentIsland</code> with Windows.UI.Composition.Visuals at the root of the Win32 window hierarchy, ensuring full control over Win32-based input processing and accessibility.</li>
+</ul>
+</li>
+<li>Enhanced rendering and input synchronization:
+<ul>
+<li>The <code>LocalToParentTransformMatrix</code> and <code>ActualSize</code> properties of a <code>ChildSiteLink</code> are updated relative to the parent <code>ContentIsland</code> before rendering, avoiding latency and ensuring synchronized input and accessibility states.</li>
+</ul>
+</li>
+<li>ContentIslands with Windows.UI.Composition.Visuals:
+<ul>
+<li><code>ContentIsland</code> can use Windows.UI.Composition.Visuals for rendering and Win32 window APIs for input processing, enabling interoperability with applications that use legacy UX frameworks. This allows for a gradual adoption of newer UX frameworks layered on top of the Windows App SDK Scene Graph, such as WinUI and React Native for Windows on Fabric.
+These updates collectively enhance the flexibility, performance, and interoperability of the ContentIsland APIs, enabling developers to create more sophisticated and responsive applications.</li>
+</ul>
+</li>
+</ol>
+<p>Additionally, the updates in the Microsoft.UI.Xaml namespace introduce a new <code>XamlIsland</code> API, which allows for the hosting of Xaml content within a SiteBridge or a <code>ChildSiteLink</code>. The <code>XamlIsland</code> offers greater flexibility compared to the <code>DesktopWindowXamlSource</code> API. While <code>DesktopWindowXamlSource</code> requires hosting within an existing Win32 window, the <code>XamlIsland</code> exposes a <code>ContentIsland</code>, enabling more options for hosting Xaml content.</p>
+<h4 id="other-notable-changes">Other notable changes</h4>
+<ul>
+<li>New <code>RuntimeCompatibilityOptions</code> support will allow more control over how servicing changes affect apps. For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/4966">#4966</a>.</li>
+<li>A new <code>ReleaseInfo</code> API provides easy access to the version of the Windows App SDK Runtime in use. For more info, see GitHub <a href="https://github.com/microsoft/WindowsAppSDK/issues/2893">#2893</a>.</li>
+<li>Note: Windows AI APIs are not included this release. To experiment with these APIs, please continue to use the 1.7-experimental3 release and share your feedback!</li>
+</ul>
+<h4 id="new-apis-for-170">New APIs for 1.7.0</h4>
+<p>This release includes the following new APIs compared to the stable 1.6 release:</p>
+<pre><code>Microsoft.Security.Authentication.OAuth
+
+    AuthFailure
+    AuthRequestParams
+    AuthRequestResult
+    AuthResponse
+    ClientAuthentication
+    CodeChallengeMethodKind
+    OAuth2Manager
+    TokenFailure
+    TokenFailureKind
+    TokenRequestParams
+    TokenRequestResult
+    TokenResponse
+</code></pre>
+<pre><code>Microsoft.UI.Content
+
+    ChildSiteLink
+    ContentAutomationOptions
+    ContentEnvironmentStateChangedEventArgs
+        DidDisplayScaleChange
+
+    ContentIsland
+        AutomationOption
+        Children
+        CreateForSystemVisual
+        FindAllForSystemCompositor
+        FragmentRootAutomationProvider
+        GetBySystemVisual
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        NextSiblingAutomationProvider
+        ParentAutomationProvider
+        Popups
+        PreviousSiblingAutomationProvider
+        ProcessesKeyboardInput
+        ProcessesPointerInput
+
+    ContentIslandEnvironment
+        DisplayScale
+
+    ContentIslandStateChangedEventArgs
+        DidLocalToClientTransformMatrixChange
+        DidLocalToParentTransformMatrixChange
+
+    ContentSite
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        ProcessesKeyboardInput
+        ProcessesPointerInput
+
+    ContentSiteAutomationProviderRequestedEventArgs
+    ContentSiteEnvironment
+        DisplayScale
+
+    ContentSiteEnvironmentView
+        DisplayScale
+
+    ContentSiteView
+        AutomationOption
+        LocalToClientTransformMatrix
+        LocalToParentTransformMatrix
+        ProcessesKeyboardInput
+        ProcessesPointerInput
+
+    DesktopAttachedSiteBridge
+    DesktopChildSiteBridge
+        CreateWithDispatcherQueue
+
+    DesktopPopupSiteBridge
+    IContentSiteAutomation
+    IContentSiteInput
+    IContentSiteLink
+</code></pre>
+<pre><code>Microsoft.UI.Input
+
+    InputFocusNavigationHost
+        GetForSiteLink
+</code></pre>
+<pre><code>Microsoft.UI.Text
+
+    RichEditTextDocument
+        GetMathML
+        GetMathMode
+        SetMathML
+        SetMathMode
+</code></pre>
+<pre><code>Microsoft.UI.Windowing
+
+    AppWindow
+        SetTaskbarIcon
+        SetTaskbarIcon
+        SetTitleBarIcon
+        SetTitleBarIcon
+
+    AppWindowTitleBar
+        PreferredTheme
+
+    OverlappedPresenter
+        PreferredMaximumHeight
+        PreferredMaximumWidth
+        PreferredMinimumHeight
+        PreferredMinimumWidth
+
+    TitleBarTheme
+</code></pre>
+<pre><code>Microsoft.UI.Xaml
+
+    XamlIsland
+    XamlRoot
+        ContentIsland
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls
+
+    TitleBar
+    TitleBarAutomationPeer
+    TitleBarTemplateSettings
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background
+
+    BackgroundTaskBuilder
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+
+    Task
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    ReleaseInfo
+    RuntimeCompatibilityChange
+    RuntimeCompatibilityOptions
+    RuntimeInfo
+    WindowsAppRuntimeVersion
+</code></pre>
+<pre><code>Microsoft.Windows.BadgeNotifications
+
+    BadgeNotificationGlyph
+    BadgeNotificationManager
+</code></pre>
+<pre><code>Microsoft.Windows.Media.Capture
+
+    CameraCaptureUI
+    CameraCaptureUIMaxPhotoResolution
+    CameraCaptureUIMaxVideoResolution
+    CameraCaptureUIMode
+    CameraCaptureUIPhotoCaptureSettings
+    CameraCaptureUIPhotoFormat
+    CameraCaptureUIVideoCaptureSettings
+    CameraCaptureUIVideoFormat
+</code></pre>
+<h3 id="bug-fixes-2">Bug fixes</h3>
+<p>This release includes the following bug fixes:</p>
+<ul>
+<li>Changed <code>SplitButton</code> so touch input now matches the behavior of mouse input. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/178">#178</a>.</li>
+<li>Changed cascading menus so sub menus now open immediately if clicked. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/939">#939</a>.</li>
+<li>Fixed an issue where opening a <code>ComboBox</code> which is in a flyout closes all flyouts. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/1467">#1467</a>.</li>
+<li>Fixed an issue where <code>SwipeControl</code> would randomly crash in a <code>ListView</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/2527">#2527</a>.</li>
+<li>Fixed an issue where drag-and-drop only a <code>ListViewItem</code> would leave it in the wrong visual state. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/3458">#3458</a>.</li>
+<li>Fixed an issue in <code>StackLayout</code> so that it respects the ItemsRepeater.HorizontalAlignment and ItemsRepeater.VerticalAlignment properties (when StackLayout.Orientation is Vertical and Horizontal respectively). The old layout behaved as if the ItemsRepeater alignment was Stretch. With the fix, the layout results in items aligned to the right when the Right alignment is used, for example. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/3842">#3842</a>.</li>
+<li>Fixed a potential crash when using a resource which contains an <code>x:Bind</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5786">#5786</a>.</li>
+<li>Fixed an issue where deleting items in the <code>ItemsRepeater</code>'s source would not generate items which moved up into view. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6661">#6661</a>.</li>
+<li>Fixed an issue where the right Alt key would not show keytips for Access Keys. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8447">#8447</a>. <strong>Note:</strong> This may result in key events for the right Alt key no longer being delivered to handles in the app or controls.</li>
+<li>Fixed an issue where using a ResourceDictionary containing only a single resource would fail to find that resource and likely cause a crash. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8832">#8832</a>.</li>
+<li>Fixed a crash where <code>UniformGridLayout</code> would sometimes pick a wrong layout anchor and cause infinite layout passes when scrolling backwards. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9199">#9199</a>.</li>
+<li>Fixed an issue where setting <code>NavigationFailedEventArgs.Handled</code> to True would still throw an exception. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9632">#9632</a>.</li>
+<li>Fixed an issue where <code>TabView</code> would not apply any specified <code>CornerRadius</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9846">#9846</a>.</li>
+<li>Fixed a potential layout cycle crash in <code>StackLayout</code>. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9852">#9852</a>.</li>
+<li>Fixed a potential crash in <code>ItemsView</code> when removing items. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/9868">#9868</a>.</li>
+<li>Fixed an issue in 1.7-preview1 where popups no longer correctly moved with their parent window. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10386">#10386</a>.</li>
+<li>Based on feedback from 1.7-preview1, renamed some properties on the new <code>TitleBar</code> control.</li>
+</ul>
+</details>
+<h2 id="archive-of-stable-channel-release-notes">Archive of stable channel release notes</h2>
+<details>
+<summary>Expand for links to archived experimental channel release notes</summary>
+<ul>
+<li><a href="release-notes-archive/stable-channel-1.6.html">Stable channel release notes for the Windows App SDK 1.6</a></li>
+<li><a href="release-notes-archive/stable-channel-1.5.html">Stable channel release notes for the Windows App SDK 1.5</a></li>
+<li><a href="release-notes-archive/stable-channel-1.4.html">Stable channel release notes for the Windows App SDK 1.4</a></li>
+<li><a href="release-notes-archive/stable-channel-1.3.html">Stable channel release notes for the Windows App SDK 1.3</a></li>
+<li><a href="release-notes-archive/stable-channel-1.2.html">Stable channel release notes for the Windows App SDK 1.2</a></li>
+<li><a href="release-notes-archive/stable-channel-1.1.html">Stable channel release notes for the Windows App SDK 1.1</a></li>
+<li><a href="release-notes-archive/stable-channel-1.0.html">Stable channel release notes for the Windows App SDK 1.0</a></li>
+<li><a href="release-notes-archive/stable-channel-0.8.html">Stable channel release notes for the Windows App SDK 0.8</a></li>
+<li><a href="release-notes-archive/stable-channel-0.5.html">Stable channel release notes for the Windows App SDK 0.5</a></li>
+</ul>
+</details>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="preview-channel.html">Preview channel</a></li>
+<li><a href="experimental-channel.html">Experimental channel</a></li>
+<li><a href="set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../package-and-deploy/index.html#use-the-windows-app-sdk">Deploy apps that use the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/stable-channel.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

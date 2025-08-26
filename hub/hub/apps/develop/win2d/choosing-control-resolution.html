@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Choosing control resolution </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Choosing control resolution ">
+    
+    <meta name="description" content="An explanation of how to configure the resolution used by Win2D&#39;s XAML controls.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="choosing-control-resolution">Choosing control resolution</h1>
+
+<p>This article explains how to configure the resolution used by Win2D's XAML controls. It explains how to:</p>
+<ul>
+<li>Make Win2D controls run at a fixed resolution.</li>
+<li>Adjust control DPI to improve performance by rendering fewer pixels.</li>
+</ul>
+<h2 id="resolution-and-control-sizing">Resolution and control sizing</h2>
+<p>&quot;Resolution&quot;, as used in this document, is another word for the size of a bitmap. It consists of a width, and height.</p>
+<p>The objects that Win2D's XAML controls draw to have a resolution. They also have a DPI. An object's DPI is a measurement of how dense the pixels of that object are, when drawn. DPI behaves like a scale factor- a high DPI increases the number of pixels that comprise the drawn object. On the other hand, lowering the DPI of an object means that it will span fewer pixels. For more information about Win2D's handling of DPI in general, see <a href="dpi-and-dips.html">this page</a>.</p>
+<p>DPI-independent size is sometimes called &quot;logical size&quot;. And a DPI-dependent size, in pixels, is called &quot;physical size&quot;.</p>
+<p>In terms of resolution and sizing, a control's default behavior when it's loaded is:</p>
+<ul>
+<li>The control's logical size is determined by its layout, as determined by where it falls in the XAML tree.</li>
+<li>A DPI is queried from the environment. The control's DPI is set to that.</li>
+<li>The amount of physical pixels that comprise the control's drawable area is determined by the control's size, scaled by its DPI.
+<ul>
+<li>On high DPI, the physical size will be greater (more pixels) compared to the logical size.</li>
+<li>On low DPI, the physical size will be smaller (fewer pixels) compared to the logical size.</li>
+<li>On default DPI, the physical size and logical size of the drawable area are the same.</li>
+</ul>
+</li>
+<li>The control's drawing resource (<code>CanvasImageSource</code> for <code>CanvasControl</code>, <code>CanvasVirtualImageSource</code> for <code>CanvasVirtualControl</code> and <code>CanvasSwapChain</code> for <code>CanvasAnimatedControl</code>) is set to match the size and DPI of the control.</li>
+</ul>
+<p>Most Win2D operations are in dips (DPI-independent units), and Win2D's XAML controls' drawing resources are automatically sized to take DPI into account. This means applications can often ignore DPI. Sizes and co-ordinates are always DPI-independent unless specified otherwise. An application can hard-code various sizes and co-ordinates at which things are drawn into the controls, and that content gets scaled when the app is run in environments with different DPIs.</p>
+<p>But for some applications, the default behavior isn't sufficient. This article outlines a couple scenarios where the default is not sufficient, and what apps can do to fix it.</p>
+<h2 id="scenario-the-controls-contents-must-be-a-fixed-lower-than-normal-resolution">Scenario: the control's contents must be a fixed, lower-than-normal resolution</h2>
+<p>This scenario may arise, for instance, on a 2D sprite game that should always render at a fixed 640x480 resolution, regardless of what actual display hardware it is run on.</p>
+<p>Solving this doesn't strictly require writing any new Win2D code at all.</p>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.Viewbox"><code>Viewbox</code></a> XAML object lets you constrain the sizes of its child visual elements, automatically adding scaling, with letterboxing or pillarboxing to preserve aspect ratios as necessary.</p>
+<p>Simply ensure your <code>CanvasControl</code>, <code>CanvasVirtualControl</code> or <code>CanvasAnimatedControl</code> is a child element of a <code>ViewBox</code>, and restrict the size of that control.</p>
+<p>For example, to constrain the size of the control to 320 pixels wide, and 224 pixels high, regardless of DPI, then instead of:</p>
+<pre><code class="lang-XAML">&lt;canvas:CanvasAnimatedControl/&gt;
+</code></pre>
+<p>Use:</p>
+<pre><code class="lang-XAML">&lt;Viewbox&gt;
+    &lt;canvas:CanvasAnimatedControl  Width=&quot;320&quot; Height=&quot;224&quot;/&gt;
+&lt;/Viewbox&gt;
+</code></pre>
+<p>If your app should not preserve the aspect ratio by adding letterboxing/pillarboxing, then add the <code>Stretch</code> attribute:</p>
+<pre><code class="lang-XAML">&lt;Viewbox Stretch=&quot;Fill&quot;&gt;
+    &lt;canvas:CanvasAnimatedControl Width=&quot;320&quot; Height=&quot;224&quot;/&gt;
+&lt;/Viewbox&gt;
+</code></pre>
+<p>Note that the scaling performed by the <code>Viewbox</code> element does not guarantee any control over the interpolation mode. The filtering method may look like <code>CanvasInterpolationMode.Linear</code>, or something similar. If your app needs a particular interpolation mode, then don't use <code>ViewBox</code> with a fixed-size control. Instead, draw to an intermediate, fixed-size <code>CanvasRenderTarget</code>, and use the desired interpolation mode to draw the scaled intermediate to the target.</p>
+<h2 id="scenario-the-app-cannot-perform-well-at-high-resolutions">Scenario: the app cannot perform well at high resolutions</h2>
+<p>Some devices have very high-resolution displays, but their graphics processing unit is not powerful enough to animate that many pixels smoothly. Developers may not be readily aware of how their apps perform on these devices without testing them.</p>
+<p>One option is to use the <code>DpiScale</code> property of the control to reduce the control's DPI.</p>
+<p>For example, to fix the control at half-resolution, use:</p>
+<pre><code class="lang-XAML">&lt;canvas:CanvasAnimatedControl DpiScale=&quot;0.5&quot; /&gt;
+</code></pre>
+<p>The actual DPI scale factor depends upon the needs of your app. One option is to compute a scale factor that will fix the app's DPI at 96, and no higher.</p>
+<p>For example:</p>
+<pre><code class="lang-csharp">float dpiLimit = 96.0f;
+
+if(control.Dpi &gt; dpiLimit)
+{
+    control.DpiScale = dpiLimit / control.Dpi;
+}
+</code></pre>
+<p>To ensure this setting works across DPI changes, the application should subscribe to <a href="https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.dpichanged"><code>DisplayInformation.DpiChanged</code></a> and use this logic in the handler to set the DPI scale against the new DPI.</p>
+<p>This saves the app some perf overhead, exploiting the fact that users may not be able to easily perceive the reduced resolution on a high-DPI display.</p>
+<p>The scaling performed in having a lower-than-native resolution control resource cannot guarantee control over the interpolation mode, similar to <code>ViewBox</code> mentioned above. If your app needs a particular interpolation mode, use an intermediate instead.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/choosing-control-resolution.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

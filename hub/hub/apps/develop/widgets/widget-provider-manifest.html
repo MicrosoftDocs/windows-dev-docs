@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Widget provider package manifest XML format </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Widget provider package manifest XML format ">
+    
+    <meta name="description" content="Describes the package manifest XML format for Windows widget providers.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="widget-provider-package-manifest-xml-format">Widget provider package manifest XML format</h1>
+
+<p>In order to be displayed in the widgets host, apps that support Windows widgets must register their widget provider with the system. For Win32 apps, only packaged apps are currently supported and widget providers specify their registration information in the app package manifest file. This article documents the XML format for widget registration. See the <a href="#example">Example</a> section for a code listing of an example package manifest for a Win32 widget provider.</p>
+<h2 id="app-extension">App extension</h2>
+<p>The app package manifest file supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">Package manifest schema reference</a>.  Widget providers declare their registration information within the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual">uap3:AppExtension</a>. The <strong>Name</strong> attribute of the extension must be set to &quot;com.microsoft.windows.widgets&quot;.</p>
+<p>Widget providers should include the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual">uap3:Properties</a> as the child of <strong>uap3:AppExtension</strong>. The package manifest schema does not enforce the structure of the <strong>uap3:Properties</strong> element other than requiring well-formed XML. The rest of this article describes the XML format that the Widget host expects in order to successfully register a widget provider.</p>
+<pre><code class="lang-xml">&lt;uap3:Extension Category=&quot;windows.appExtension&quot;&gt;
+  &lt;uap3:AppExtension Name=&quot;com.microsoft.windows.widgets&quot; DisplayName=&quot;WidgetTestApp&quot; Id=&quot;ContosoWidgetApp&quot; PublicFolder=&quot;Public&quot;&gt;
+    &lt;uap3:Properties&gt;
+    &lt;!-- Widget provider registration content goes here --&gt;
+    &lt;/uap3:Properties&gt;
+  &lt;/uap3:AppExtension&gt;
+&lt;/uap3:Extension&gt;
+</code></pre>
+<h2 id="element-hierarchy">Element hierarchy</h2>
+<p>WidgetProvider</p>
+<p>  ProviderIcons</p>
+<p>    Icon</p>
+<p>  Activation</p>
+<p>    CreateInstance</p>
+<p>    ActivateApplication</p>
+<p>  Definitions</p>
+<p>    Definition</p>
+<p>      Capabilities</p>
+<p>        Capability</p>
+<p>          Size</p>
+<p>      ThemeResources</p>
+<p>        Icons</p>
+<p>          Icon</p>
+<p>        Screenshots</p>
+<p>          Screenshot</p>
+<p>        DarkMode</p>
+<p>          Icons</p>
+<p>            Icon</p>
+<p>          Screenshots</p>
+<p>            Screenshot</p>
+<p>        LightMode</p>
+<p>          Icons</p>
+<p>            Icon</p>
+<p>          Screenshots</p>
+<p>            Screenshot</p>
+<h2 id="widgetprovider">WidgetProvider</h2>
+<p>The root element of the widget provider registration information.</p>
+<p><img src="images/widget-picker.png" alt="A screenshot of the Add Widget dialog in the Widgets board. It shows two columns of entries, each with an icon and an app name, with a plus sign indicating that a widget can be added"></p>
+<h2 id="widgetprovidericons">WidgetProviderIcons</h2>
+<p>Specifies icons representing the widget provider app.</p>
+<h2 id="activation">Activation</h2>
+<p>Specifies activation information for the widget provider. If both <strong>CreateInstance</strong> and <strong>ActivateApplication</strong> are specified in the manifest, <strong>CreateInstance</strong> takes precedence.</p>
+<h2 id="createinstance">CreateInstance</h2>
+<p><strong>CreateInstance</strong> should be specified for Win32-based widget providers that implement the <strong>IWidgetProvider</strong> interface. The system will activate the interface with a call to <a href="/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance">CoCreateInstance</a>. The <strong>ClassId</strong> attribute specifies the <a href="/windows/win32/com/com-class-objects-and-clsids">CLSID</a> for the CreateInstance server that implements the <strong>IWidgetProvider</strong> interface.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ClassId</strong></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The CLSID for the CreateInstance server that implements the widget provider.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="activateapplication">ActivateApplication</h2>
+<p>When <strong>ActivateApplication</strong> is specified, the widget provider is activated via the command line, with the arguments provided as <a href="https://datatracker.ietf.org/doc/html/rfc4648#section-5">base64url encoded</a> JSON strings. It is recommended that widget providers use the <strong>CreateInstance</strong> activation type. For information on the <strong>ActivateApplication</strong> command line format, see <a href="widget-provider-activateapplication-protocol.html">Widget provider ActivateApplication protocol</a>.</p>
+<h2 id="definitions">Definitions</h2>
+<p>The container element for one or more widget registrations.</p>
+<h2 id="definition">Definition</h2>
+<p>Represents the registration for a single widget.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>An ID that identifies the widget. This value is also displayed in the navigation bar of the widget picker. Widget provider implementations use this string to determine or specify which of the app's widgets is being referenced for each operation. This string must be unique for all widgets defined within the app manifest file.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>DisplayName</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The name of the widget that is displayed on the widgets host.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>Short description of the widget.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>AllowMultiple</strong></td>
+<td>boolean</td>
+<td>No</td>
+<td>Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true.</td>
+<td>true</td>
+</tr>
+<tr>
+<td><strong>IsCustomizable</strong></td>
+<td>boolean</td>
+<td>No</td>
+<td>Introduced in Windows App SDK 1.4. Set to true if your app supports widget customization. This causes the <strong>Customize widget</strong> button to be displayed in the widget's ellipsis menu.</td>
+<td>false</td>
+</tr>
+<tr>
+<td><strong>AdditionalInfoUri</strong></td>
+<td>string</td>
+<td>No</td>
+<td>A URI that can be associated with the widget to be used when the user clicks on the title bar of the widget frame or when clicking the <strong>Powered by</strong> element of its context menu.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>ExcludedRegions</strong></td>
+<td>string</td>
+<td>No</td>
+<td>A list of regions where the widget should not be available. Widgets can specify <strong>ExcludedRegions</strong> or <strong>ExclusiveRegions</strong> but must not specify both in a single widget definition. The value of the attribute is a comma separated list of two character region codes.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>ExclusiveRegions</strong></td>
+<td>string</td>
+<td>No</td>
+<td>A list of the only regions where the widget should be available. Widgets can specify <strong>ExcludedRegions</strong> or <strong>ExclusiveRegions</strong> but must not specify both in single widget definition. The value of the attribute is a comma separated list of two character region codes.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>WebRequestFilter</strong></td>
+<td>string</td>
+<td>No</td>
+<td>Specifies the filter that specifies the resource request URLs for which the request will be intercepted and redirected to the widget provider's implementation of <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetresourceprovider.onresourcerequested">IWidgetResourceProvider.OnResourceRequested</a>. The filter pattern is expressed using the format described in <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns">Match Patterns</a>. The filter string in the registration must use <a href="https://en.wikipedia.org/wiki/Punycode">Punycode</a> where necessary. The filter string must match the origin of the widget registration, which is specified in the <em>webUrl</em> field of the adaptive card content.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="capabilities">Capabilities</h2>
+<p>Optional. Specifies capabilities for a single widget. If no capabilities are declared, one capability specifying a &quot;large&quot; size is added by default.</p>
+<h2 id="capability">Capability</h2>
+<p>Specifies a capability for a widget.</p>
+<h2 id="size">Size</h2>
+<p>Specifies supported sizes for the associated widget.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>Specifies a supported size for a widget. The value must be one of the following: &quot;small&quot;, &quot;medium&quot;, &quot;large&quot;</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="themeresources">ThemeResources</h2>
+<p>Specifies theme resources for a widget.</p>
+<h2 id="icons">Icons</h2>
+<p>A container element for one or more <strong>Icon</strong> elements.</p>
+<h2 id="icon">Icon</h2>
+<p>Required. Specifies an icon that is displayed in the attribution area of the widget.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The package-relative path to an icon image file.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="screenshots">Screenshots</h2>
+<p>Required. Specifies one or more screenshots of the widget.</p>
+<h2 id="screenshot">Screenshot</h2>
+<p>Required. Specifies a screenshot for a widget. This screenshot is shown in the widgets host in the <strong>Add Widgets dialog</strong> when the user is selecting widgets to add to the widgets host. If you provide a screenshot for the optional <strong>DarkMode</strong> or <strong>LightMode</strong> elements listed below, then the widgets host will use the screenshot that matches the current device theme. If you don't provide a screenshot for the current device theme, the image provided in this <strong>Screenshot</strong> element will be used. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see <a href="../../design/widgets/widgets-picker-integration.html">Integrate with the widget picker</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The widget screenshots are not displayed on the widgets board's add widgets dialog in the current preview release..</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Path</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The package-relative path to a screenshot image file.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>DisplayAltText</strong></td>
+<td>string</td>
+<td>No</td>
+<td>The alt-text for the image, for accessibility.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="darkmode">DarkMode</h2>
+<p>Optional. Specifies theme resources for when dark mode is active on the device. If you specify one or more screenshot images in the optional <strong>DarkMode</strong> element, the widgets host will select these screenshots when the device is in dark mode. If you don't provide a dark mode image, the widgets host will use the required, top-level <strong>Screenshot</strong> element described above. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see <a href="../../design/widgets/widgets-picker-integration.html">Integrate with the widget picker</a>.</p>
+<h2 id="lightmode">LightMode</h2>
+<p>Optional. Specifies theme resources for when light mode is active on the device. If you provide one or more screenshot images in the optional <strong>LightMode</strong> element, the widgets host will select these screenshots when the device is in light mode. If you don't provide a light mode image, the widgets host will use the required, top-level <strong>Screenshot</strong> element described above. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see <a href="../../design/widgets/widgets-picker-integration.html">Integrate with the widget picker</a>.</p>
+<h2 id="example">Example</h2>
+<p>The following code example illustrates the usage of the widget package manifest XML format.</p>
+<pre><code class="lang-xml">&lt;uap3:Extension Category=&quot;windows.appExtension&quot;&gt;
+  &lt;uap3:AppExtension Name=&quot;com.microsoft.windows.widgets&quot; DisplayName=&quot;Widget Test App&quot; Id=&quot;ContosoWidgetApp&quot; PublicFolder=&quot;Public&quot;&gt;
+    &lt;uap3:Properties&gt;
+      &lt;WidgetProvider&gt;
+        &lt;ProviderIcons&gt;
+            &lt;Icon Path=&quot;Images\StoreIcon.png&quot; /&gt;
+        &lt;/ProviderIcons&gt;
+        &lt;Activation&gt;
+          &lt;!-- App exports COM interface which implements IWidgetProvider --&gt;
+          &lt;CreateInstance ClassId=&quot;XXXXXXXX-XXXX-XXXX-XXXX-D3397A3FF15C&quot; /&gt;
+        &lt;/Activation&gt;
+        &lt;Definitions&gt;
+          &lt;Definition
+            Id=&quot;Weather_Widget&quot;
+            DisplayName=&quot;Microsoft Weather Widget&quot;
+            Description=&quot;Weather Widget Description&quot;
+            AdditionalInfoUri=&quot;https://contoso.com/widgets/Weather&quot;
+            ExclusiveRegions=&quot;US,UK&quot;
+            AllowMultiple=&quot;true&quot;&gt;
+            &lt;Capabilities&gt;
+              &lt;Capability&gt;
+                 &lt;Size Name=&quot;small&quot; /&gt;
+              &lt;/Capability&gt;
+              &lt;Capability&gt;
+                 &lt;Size Name=&quot;medium&quot; /&gt;
+              &lt;/Capability&gt;
+              &lt;Capability&gt;
+                 &lt;Size Name=&quot;large&quot; /&gt;
+              &lt;/Capability&gt;
+            &lt;/Capabilities&gt;
+
+            &lt;ThemeResources&gt;
+              &lt;Icons&gt;
+                &lt;Icon Path=&quot;Assets\icon.png&quot; /&gt;
+                &lt;Icon Path=&quot;Assets\icon.gif&quot; /&gt;
+              &lt;/Icons&gt;
+              &lt;Screenshots&gt;
+                &lt;Screenshot Path=&quot;Assets\background.png&quot; DisplayAltText =&quot;For accessibility&quot;/&gt;
+              &lt;/Screenshots&gt;
+
+              &lt;!-- DarkMode and LightMode are optional --&gt;
+              &lt;DarkMode&gt;
+                &lt;Icons&gt;
+                  &lt;Icon Path=&quot;Assets\dark.png&quot; /&gt;
+                &lt;/Icons&gt;
+                &lt;Screenshots&gt;
+                  &lt;Screenshot Path=&quot;Assets\darkBackground.png&quot; DisplayAltText =&quot;For accessibility&quot;/&gt;
+                &lt;/Screenshots&gt;
+              &lt;/DarkMode&gt;
+
+              &lt;LightMode&gt;
+                &lt;Icons&gt;
+                  &lt;Icon Path=&quot;Assets\light.png&quot; /&gt;
+                &lt;/Icons&gt;
+                &lt;Screenshots&gt;
+                  &lt;Screenshot Path=&quot;Assets\lightBackground.png&quot;/&gt;
+                &lt;/Screenshots&gt;
+              &lt;/LightMode&gt;
+            &lt;/ThemeResources&gt;
+          &lt;/Definition&gt;
+        &lt;/Definitions&gt;
+      &lt;/WidgetProvider&gt;
+    &lt;/uap3:Properties&gt;
+  &lt;/uap3:AppExtension&gt;
+&lt;/uap3:Extension&gt;
+
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/widgets/widget-provider-manifest.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

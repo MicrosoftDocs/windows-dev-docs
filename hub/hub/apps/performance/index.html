@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows app performance and fundamentals overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows app performance and fundamentals overview ">
+    
+    <meta name="description" content="Learn about ways to optimize the performance of your Windows apps.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-performance-and-fundamentals-overview">Windows app performance and fundamentals overview</h1>
+
+<p>Improving the performance and fundamentals of your application gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Your app will consume less power, improving battery life and reducing carbon emissions. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.</p>
+<p>This page provides an overview of the technologies and development tools for measuring, understanding, and refining the performance of your Windows application. If you are writing a UWP application, be sure to also consult the <a href="/windows/uwp/debug-test-perf/performance-and-xaml-ui">UWP Performance</a> documentation.</p>
+<h2 id="what-is-application-performance-and-why-is-it-important">What is application performance and why is it important?</h2>
+<p>Performance in the context of an application usually revolves around <em>cost</em>. How long is it going to take to complete a particular task? How much of the system's resources will be used?</p>
+<p>The answers to these questions play a fundamental role in the quality of a user's experience with an application (you can likely recall times where as a user, you have felt frustrated at an application for its poor performance!). As a developer, by keeping performance in mind, you will ensure that users of your applications don't experience that same frustration.</p>
+<p>To learn more about the importance of performance and suggestions on how to get started, see this <a href="introduction.html">introduction to the world of performance</a>.</p>
+<h2 id="what-tools-can-i-use-to-measure-application-performance">What tools can I use to measure application performance?</h2>
+<p>There are a variety of different options available for measuring the performance of your Windows application.</p>
+<p>If you are not sure what tools to choose, check out the article: <a href="choose-between-tools.html">Choosing between Visual Studio Performance Profiler and Windows Performance Toolkit</a>.</p>
+<h3 id="visual-studio-icon-visual-studio-performance-profiler"><img src="images/vs.png" alt="Visual Studio Icon"> Visual Studio Performance Profiler</h3>
+<p>Visual Studio offers tooling to help you monitor your application and give you insights within your source. Visit the resources below to learn about how you can use these tools to optimize your code right from your development environment.</p>
+<ul>
+<li><p><a href="/visualstudio/profiling/">Measure app performance in Visual Studio</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/visualstudio/case-study-using-visual-studio-profiler-to-reduce-memory-allocations-in-the-windows-terminal-console-host-startup-path/">Case Study: Using Visual Studio Profiler to reduce memory allocations in the Windows Terminal console host startup path</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/visualstudio/case-study-double-performance-in-under-30-minutes/">Case Study: Double Performance in under 30 minutes</a></p>
+</li>
+</ul>
+<h3 id="windows-performance-analyzer-icon-windows-performance-toolkit"><img src="images/wpa.png" alt="Windows Performance Analyzer Icon"> Windows Performance Toolkit</h3>
+<p><a href="/windows-hardware/test/wpt/windows-performance-recorder">Windows Performance Recorder</a> and <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer</a> enable detailed monitoring and analysis of your application and the entire system using <a href="/windows-hardware/test/wpt/event-tracing-for-windows">Event Tracing for Windows (ETW)</a>. See the links below on how to get started.</p>
+<ul>
+<li><p><a href="/windows-hardware/test/wpt/">Getting Started with the Windows Performance Toolkit</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/performance-diagnostics/wpr-intro/">Windows Performance Recorder Intro</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/performance-diagnostics/wpa-intro/">Windows Performance Analyzer Intro</a></p>
+</li>
+</ul>
+<h3 id="perfview-icon-perfview"><img src="images/dotnet-logo.png" alt="PerfView Icon"> PerfView</h3>
+<p>PerfView is an open source monitoring and analysis tool created by the .NET team for investigating .NET performance issues. Because of its ability to decode .NET symbols and managed memory, it is an ideal choice for managed applications.</p>
+<ul>
+<li><p><a href="https://github.com/Microsoft/perfview">PerfView GitHub Repository</a></p>
+</li>
+<li><p>PerfView Tutorial Series</p>
+</li>
+</ul>
+<h3 id="sizebench-icon-sizebench"><img src="images/sizebench.png" alt="SizeBench Icon"> SizeBench</h3>
+<p>SizeBench is a utility that helps you investigate and reduce the size of your compiled native code binaries (DLLs, EXEs, and other PE files).</p>
+<ul>
+<li><p><a href="https://devblogs.microsoft.com/performance-diagnostics/sizebench-a-new-tool-for-analyzing-windows-binary-size/">SizeBench: A new tool for analyzing Windows binary size</a>.</p>
+</li>
+<li><p><a href="https://aka.ms/SizeBench">Microsoft Store Download Link</a></p>
+</li>
+</ul>
+<h2 id="additional-resources">Additional Resources</h2>
+<h3 id="blogs-and-news">Blogs and news</h3>
+<p>Go behind the scenes with developer blogs, written by our performance experts to empower building the best version of your app.</p>
+<ul>
+<li><p><a href="https://devblogs.microsoft.com/dotnet/category/performance/">.NET Performance Blog</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/visualstudio/tag/performance-profiler/">Visual Studio Performance Blogs</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/performance-diagnostics/">Windows Performance and Diagnostics Blog</a></p>
+</li>
+</ul>
+<h3 id="community-and-support">Community and support</h3>
+<ul>
+<li>Performance problems in your compile-debug-test loop? Report them in the <a href="https://github.com/microsoft/Windows-Dev-Performance">Windows Dev Performance repo</a> on GitHub.</li>
+</ul>
+<h3 id="performance-and-sustainability">Performance and Sustainability</h3>
+<p>Performance engineering intersects directly with the sustainable software movement. Most electrical grids burn fossil fuels to generate electricity. As your application runs on a PC, it consumes incremental power that may be small for a single user but adds up as your user base grows.</p>
+<p>Interested in learning how performance engineering intersects with sustainability? Check out the <a href="https://principles.green/">Principles of Green Software Engineering</a> and Microsoft's <a href="https://devblogs.microsoft.com/sustainable-software/">Sustainable Software blog</a>.</p>
+<ul>
+<li><p><a href="https://devblogs.microsoft.com/sustainable-software/measuring-your-application-power-and-carbon-impact-part-1/">Measuring Your Application Power and Carbon Impact</a></p>
+</li>
+<li><p><a href="/training/modules/sustainable-software-engineering-overview">Principles of Sustainable Software Engineering</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/sustainable-software/role-of-performance-engineering-techniques-in-designing-carbon-efficient-applications/">Role of Performance Engineering in Designing Carbon Efficient Applications</a></p>
+</li>
+<li><p><a href="https://devblogs.microsoft.com/sustainable-software/green-energy-efficient-progressive-web-apps/">Green Energy Efficient Progressive Web Apps</a>.</p>
+</li>
+</ul>
+<h3 id="our-content-road-map">Our content road map</h3>
+<p>Performance can be a tricky part of your development process without the right guidance. Ensuring that the right documentation is available for app developers is key to creating faster apps. The road map below details the next pages to be added to this doc set, and in the order that they will be published. If you see something you like or something that's missing, let us know on GitHub via the Feedback links at the bottom of this page! Our goal is to curate a well-rounded and educational doc set for app performance that meets your needs, so we'd love to hear from you. Please feel welcome to submit feedback for this page below with your recommendations for what you would like to see covered in regard to Windows application performance.</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Introduction to performance areas</td>
+<td>Descriptions of what performance means in the context of CPU, memory, GPU, etc.</td>
+</tr>
+<tr>
+<td>Identifying what to measure</td>
+<td>Depending on your workload, environment, and other factors, certain areas of performance may be more of a focus than others. Learn what to measure and when with this doc</td>
+</tr>
+<tr>
+<td>Performance Testing Cycle</td>
+<td>Step with us through the performance testing lifecycle which includes setting up your test environment, analyzing your results and making product improvements</td>
+</tr>
+<tr>
+<td>Understanding the different performance tools</td>
+<td>This doc will introduce more performance tooling and go over the use cases and best practices for using them</td>
+</tr>
+<tr>
+<td>Case Studies</td>
+<td>A series of end-to-end scenarios and their journeys through the performance testing cycle</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/performance/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

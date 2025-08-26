@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Get user input with forms </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Get user input with forms ">
+    
+    <meta name="description" content="Learn how to use Adaptive Cards forms in your Command Palette extension.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-user-input-with-forms">Get user input with forms</h1>
+
+<p><strong>Previous</strong>: <a href="using-markdown-content.html">Display markdown content</a></p>
+<p>Now that we know how to present basic markdown content, let's try displaying something more meaningful by leveraging the power of <strong><a href="https://adaptivecards.io/">Adaptive Cards</a></strong>. This is useful for creating forms, or for displaying more complex content.</p>
+<h2 id="working-with-forms">Working with forms</h2>
+<p>You can create a card in the Command Palette with the <code>IFormContent</code> interface (see <a href="microsoft-commandpalette-extensions-toolkit/formcontent.html">FormContent</a> for the toolkit implementation). This allows you to provide the Adaptive Card JSON, and the Command Palette will render it for you. When the user submits the form, Command Palette will call the <code>SubmitForm</code> method on your form, with the JSON payload and inputs from the form.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Adaptive card payloads can be created using the <a href="https://adaptivecards.io/designer/">Adaptive Card Designer</a>. You can design your card there, and then copy the JSON payload into your extension.</p>
+</div>
+<ol>
+<li>In the <code>Pages</code> directory, add a new class</li>
+<li>Name the class <code>FormPage</code></li>
+<li>Update the <code>FormPage</code> class:</li>
+</ol>
+<pre><code class="lang-csharp">internal sealed partial class FormPage : ContentPage
+{
+    private readonly SampleContentForm sampleForm = new();
+
+    public override IContent[] GetContent() =&gt; [sampleForm];
+
+    public FormPage()
+    {
+        Name = &quot;Open&quot;;
+        Title = &quot;Sample Content&quot;;
+        Icon = new IconInfo(&quot;\uECA5&quot;); // Tiles
+    }
+}
+</code></pre>
+<p>The FormPage is a content page that displays a form (<code>SampleContentForm</code>) to the user. It creates an instance of <code>SampleContentForm</code>, which is a form (defined later) that describes the UI and logic for a user input form.</p>
+<ol>
+<li>At the bottom of file (under the <code>FormPage</code> class) add:</li>
+</ol>
+<pre><code class="lang-csharp">internal sealed partial class SampleContentForm : FormContent
+{
+    public SampleContentForm()
+    {
+        TemplateJson = $$&quot;&quot;&quot;
+{
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;,
+    &quot;type&quot;: &quot;AdaptiveCard&quot;,
+    &quot;version&quot;: &quot;1.6&quot;,
+    &quot;body&quot;: [
+        {
+            &quot;type&quot;: &quot;TextBlock&quot;,
+            &quot;size&quot;: &quot;medium&quot;,
+            &quot;weight&quot;: &quot;bolder&quot;,
+            &quot;text&quot;: &quot; Sample&quot;,
+            &quot;horizontalAlignment&quot;: &quot;center&quot;,
+            &quot;wrap&quot;: true,
+            &quot;style&quot;: &quot;heading&quot;
+        },
+        {
+            &quot;type&quot;: &quot;Input.Text&quot;,
+            &quot;label&quot;: &quot;Name&quot;,
+            &quot;style&quot;: &quot;text&quot;,
+            &quot;id&quot;: &quot;SimpleVal&quot;,
+            &quot;isRequired&quot;: true,
+            &quot;errorMessage&quot;: &quot;Name is required&quot;,
+            &quot;placeholder&quot;: &quot;Enter your name&quot;
+        }
+    ],
+    &quot;actions&quot;: [
+        {
+            &quot;type&quot;: &quot;Action.Submit&quot;,
+            &quot;title&quot;: &quot;Submit&quot;,
+            &quot;data&quot;: {
+                &quot;id&quot;: &quot;1234567890&quot;
+            }
+        }
+    ]
+}
+&quot;&quot;&quot;;
+
+    }
+
+    public override CommandResult SubmitForm(string payload)
+    {
+        var formInput = JsonNode.Parse(payload)?.AsObject();
+        Debug.WriteLine($&quot;Form submitted with formInput: {formInput}&quot;);
+        if (formInput == null)
+        {
+            return CommandResult.GoHome();
+        }
+        ConfirmationArgs confirmArgs = new()
+        {
+            PrimaryCommand = new AnonymousCommand(
+                () =&gt;
+                {
+                    string? name = formInput[&quot;Name&quot;]?.ToString();
+                    ToastStatusMessage t = new($&quot;Hi {name}&quot; ?? &quot;No name entered&quot;);
+                    t.Show();
+                })
+            {
+                Name = &quot;Confirm&quot;,
+                 Result = CommandResult.KeepOpen(),
+            },
+            Title = &quot;You can set a title for the dialog&quot;,
+            Description = &quot;Are you really sure you want to do the thing?&quot;,
+        };
+        return CommandResult.Confirm(confirmArgs);
+    }
+}
+</code></pre>
+<p>The <code>SampleContentForm</code> contains the form and form submission logic. The <code>TemplateJson</code> contains the form structure and actions. This example only contains one text input which has the id of &quot;Name&quot; and has one action of submitting the form. The <code>SubmitForm</code> handles parsing the payload; if its invalid will return the command to home and otherwise will display a confirmation dialog and a toast notification.</p>
+<ol>
+<li>Open <code>&lt;ExtensionName&gt;CommandsProvider.cs</code></li>
+<li>Replace the <code>MarkdownPage</code> for  <code>FormPage</code>:</li>
+</ol>
+<pre><code class="lang-diff">public &lt;ExtensionName&gt;CommandsProvider()
+{
+    DisplayName = &quot;My sample extension&quot;;
+    Icon = IconHelpers.FromRelativePath(&quot;Assets\\StoreLogo.png&quot;);
+    _commands = [
++       new CommandItem(new FormPage()) { Title = DisplayName },
+    ];
+}
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p><img src="../../images/command-palette/form-simple.png" alt="Screenshot of extension using ContentPage for simple form"></p>
+<p>Adaptive Cards can do more complex forms, including using another json object to dynamically create custom forms. You'll first set up your form with the <a href="https://adaptivecards.io/designer/">Adaptive Card Designer</a> and then update your command.</p>
+<ol>
+<li>Open <a href="https://adaptivecards.io/designer/">https://adaptivecards.io/designer/</a></li>
+<li>In the <code>CARD PAYLOAD EDITOR</code> replace the json with:</li>
+</ol>
+<pre><code class="lang-json">{
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;,
+    &quot;type&quot;: &quot;AdaptiveCard&quot;,
+    &quot;version&quot;: &quot;1.6&quot;,
+    &quot;body&quot;: [
+        {
+            &quot;type&quot;: &quot;TextBlock&quot;,
+            &quot;size&quot;: &quot;medium&quot;,
+            &quot;weight&quot;: &quot;bolder&quot;,
+            &quot;text&quot;: &quot; ${ParticipantInfoForm.title}&quot;,
+            &quot;horizontalAlignment&quot;: &quot;center&quot;,
+            &quot;wrap&quot;: true,
+            &quot;style&quot;: &quot;heading&quot;
+        },
+        {
+            &quot;type&quot;: &quot;Input.Text&quot;,
+            &quot;label&quot;: &quot;Name&quot;,
+            &quot;style&quot;: &quot;text&quot;,
+            &quot;id&quot;: &quot;Name&quot;,
+            &quot;isRequired&quot;: true,
+            &quot;errorMessage&quot;: &quot;Name is required&quot;,
+            &quot;placeholder&quot;: &quot;Enter your name&quot;
+        },
+        {
+            &quot;type&quot;: &quot;TextBlock&quot;,
+            &quot;size&quot;: &quot;medium&quot;,
+            &quot;weight&quot;: &quot;bolder&quot;,
+            &quot;text&quot;: &quot;${Survey.title} &quot;,
+            &quot;horizontalAlignment&quot;: &quot;center&quot;,
+            &quot;wrap&quot;: true,
+            &quot;style&quot;: &quot;heading&quot;
+        },
+        {
+            &quot;type&quot;: &quot;Input.Toggle&quot;,
+            &quot;label&quot;: &quot;Please accept the terms and conditions:&quot;,
+            &quot;title&quot;: &quot;${Survey.questions[0].question}&quot;,
+            &quot;valueOn&quot;: &quot;true&quot;,
+            &quot;valueOff&quot;: &quot;false&quot;,
+            &quot;id&quot;: &quot;AcceptsTerms&quot;,
+            &quot;isRequired&quot;: true,
+            &quot;errorMessage&quot;: &quot;Accepting the terms and conditions is required&quot;
+        },
+        {
+            &quot;type&quot;: &quot;Input.Toggle&quot;,
+            &quot;label&quot;: &quot;How do you feel about red cars?&quot;,
+            &quot;title&quot;: &quot;${Survey.questions[1].question}&quot;,
+            &quot;valueOn&quot;: &quot;RedCars&quot;,
+            &quot;valueOff&quot;: &quot;NotRedCars&quot;,
+            &quot;id&quot;: &quot;ColorPreference&quot;
+        }
+    ],
+    &quot;actions&quot;: [
+        {
+            &quot;type&quot;: &quot;Action.Submit&quot;,
+            &quot;title&quot;: &quot;Submit&quot;,
+            &quot;data&quot;: {
+                &quot;id&quot;: &quot;1234567890&quot;
+            }
+        }
+    ]
+}
+</code></pre>
+<ol>
+<li>In the <code>SAMPLE DATA EDITOR</code> replace the json with:</li>
+</ol>
+<pre><code class="lang-json">{
+    &quot;ParticipantInfoForm&quot;: {
+        &quot;title&quot;: &quot;Input.Text elements&quot;
+    },
+    &quot;Survey&quot;: {
+        &quot;title&quot;: &quot;Input Toggle&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;I accept the terms and conditions (True/False)&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Red cars are better than other cars&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<p>The Designer tool should look something like this:</p>
+<p><img src="../../images/command-palette/form-toggle.png" alt="Screenshot of adaptive cards for form with toggles"></p>
+<p>To add this content to your extension:</p>
+<ol>
+<li>Update <code>TemplateJson</code> with <code>CARD PAYLOAD EDITOR</code> content</li>
+<li>Under <code>TemplateJson</code>, add:</li>
+</ol>
+<pre><code class="lang-csharp">        DataJson = $$&quot;&quot;&quot;
+{
+    &quot;ParticipantInfoForm&quot;: {
+        &quot;title&quot;: &quot;Input.Text elements&quot;
+    },
+    &quot;Survey&quot;: {
+        &quot;title&quot;: &quot;Input Toggle&quot;,
+        &quot;questions&quot;: [
+            {
+                &quot;question&quot;: &quot;I accept the terms and conditions (True/False)&quot;
+            },
+            {
+                &quot;question&quot;: &quot;Red cars are better than other cars&quot;
+            }
+        ]
+    }
+}
+&quot;&quot;&quot;;
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p><img src="../../images/command-palette/form-toggle-command-palette.png" alt="Screenshot of extension using ContentPage for form with toggles"></p>
+<p><code>TemplateJson</code> and <code>DataJson</code> work together to create dynamic, data-driven forms. <code>TemplateJson</code> can act as fhe Form Blueprint and <code>DataJson</code> as the Dynamic Content Source.</p>
+<h2 id="full-sample">Full Sample</h2>
+<p>For a full example of using Forms and Content pages, head on over to <a href="https://github.com/microsoft/PowerToys/blob/main/src/modules/cmdpal/ext/SamplePagesExtension/Pages/SampleContentPage.cs"><code>SamplePagesExtension/Pages/SampleContentPage.cs</code></a>.</p>
+<h2 id="key-items">Key Items</h2>
+<ul>
+<li><p>Define your form layout using the <code>TemplateJson</code> property of your <code>FormContent</code>. This is the JSON payload from the CARD PAYLOAD EDITOR in the <a href="https://adaptivecards.io/designer/">https://adaptivecards.io/designer/</a>. It describes the structure and UI of your form.</p>
+</li>
+<li><p>Optionally bind dynamic data using the <code>DataJson</code> property. This is the JSON from the SAMPLE DATA EDITOR in the Adaptive Card Designer. It allows you to inject dynamic values into your card using ${...} placeholders, making your forms easier to localize and maintain.</p>
+</li>
+<li><p>Handle form submissions by implementing the <code>SubmitForm</code> method. This method is called when the user submits the form. You’ll receive the form’s payload as a JSON string, which you can parse and use to trigger actions, show confirmation dialogs, or return navigation results.</p>
+</li>
+</ul>
+<pre><code class="lang-csharp">public override CommandResult SubmitForm(string payload)
+{
+    var formInput = JsonNode.Parse(payload)?.AsObject();
+    if (formInput == null)
+    {
+        return CommandResult.GoHome();
+    }
+
+    // retrieve the value of the input field with the id &quot;name&quot;
+    var name = formInput[&quot;name&quot;]?.AsString();
+        
+    // do something with the data
+
+    // and eventually
+    return CommandResult.GoBack();
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can mix and match different <code>IContent</code> types in your extension. For example, you might use a <code>MarkdownContent</code> block to display a post, followed by a <code>FormContent</code> block to collect a reply.</p>
+</div>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+<li><a href="extensibility-overview.html">Extensibility overview</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/using-form-pages.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

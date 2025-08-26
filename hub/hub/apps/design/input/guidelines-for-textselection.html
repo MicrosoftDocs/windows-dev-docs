@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Selecting text and images </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Selecting text and images ">
+    
+    <meta name="description" content="This topic describes the new Windows UI for selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these new selection and manipulation mechanisms in your Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="selecting-text-and-images">Selecting text and images</h1>
+
+<p>This article describes selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these mechanisms in your apps.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Xaml.Input"><strong>Windows.UI.Xaml.Input</strong></a>, <a href="/uwp/api/Windows.UI.Input"><strong>Windows.UI.Input</strong></a></p>
+</blockquote>
+<h2 id="dos-and-donts">Dos and don'ts</h2>
+<ul>
+<li><p>Use font glyphs when implementing your own gripper UI. The gripper is a combination of two Segoe UI fonts that are available system-wide. Using font resources simplifies rendering issues at different dpi and works well with the various UI scaling plateaus. When implementing your own grippers, they should share the following UI traits:</p>
+<ul>
+<li>Circular shape</li>
+<li>Visible against any background</li>
+<li>Consistent size</li>
+</ul>
+</li>
+<li><p>Provide a margin around the selectable content to accommodate the gripper UI. If your app enables text selection in a region that doesn't pan/scroll, allow a 1/2 gripper margin on the left and right sides of the text area and 1 gripper height on the top and bottom sides of the text area (as shown in the following images). This ensures that the entire gripper UI is exposed to the user and minimizes unintended interactions with other edge-based UI.</p>
+<p><img src="images/textselection-gripper-margins.png" alt="text selection gripper margins"></p>
+</li>
+<li><p>Hide grippers UI during interaction. Eliminates occlusion by the grippers during the interaction. This is useful when a gripper isn't completely obscured by the finger or there are multiple text selection grippers. This eliminates visual artifacts when displaying child windows.</p>
+</li>
+<li><p>Don't allow selection of UI elements such as controls, labels, images, proprietary content, and so on. Typically, Windows applications allow selection only within specific controls. Controls such as buttons, labels, and logos are not selectable. Assess whether selection is an issue for your app and, if so, identify the areas of the UI where selection should be prohibited.</p>
+</li>
+</ul>
+<h2 id="additional-usage-guidance">Additional usage guidance</h2>
+<p>Text selection and manipulation is particularly susceptible to user experience challenges introduced by touch interactions. Mouse, pen/stylus, and keyboard input are highly granular: a mouse click or pen/stylus contact is typically mapped to a single pixel, and a key is pressed or not pressed. Touch input is not granular; it's difficult to map the entire surface of a fingertip to a specific x-y location on the screen to place a text caret accurately.</p>
+<p><strong>Considerations and recommendations</strong></p>
+<p>Use the built-in controls exposed through the language frameworks in Windows to build apps that provide the full platform user interaction experience, including selection and manipulation behaviors. You'll find the interaction functionality of the built-in controls sufficient for the majority of Windows apps.</p>
+<p>When using standard Windows text controls, the selection behaviors and visuals described in this topic cannot be customized.</p>
+<p><strong>Text selection</strong></p>
+<p>If your app requires a custom UI that supports text selection, we recommend that you follow the Windows selection behaviors described here.</p>
+<p><strong>Editable and non-editable content</strong></p>
+<p>With touch, selection interactions are performed primarily through gestures such as a tap to set an insertion cursor or select a word, and a slide to modify a selection. As with other Windows touch interactions, timed interactions are limited to the press and hold gesture to display informational UI. For more information, see <a href="guidelines-for-visualfeedback.html">Guidelines for visual feedback</a>.</p>
+<p>Windows recognizes two possible states for selection interactions, editable and non-editable, and adjusts selection UI, feedback, and functionality accordingly.</p>
+<p><strong>Editable content</strong></p>
+<p>Tapping within the left half of a word places the cursor to the immediate left of the word, while tapping within the right half places the cursor to the immediate right of the word.</p>
+<p>The following image demonstrates how to place an initial insertion cursor with gripper by tapping near the beginning or ending of a word.</p>
+<p><img src="images/textselection-place-caret.png" alt="tap (or press and hold) left side of a word to place a caret and gripper at the beginning of that word. tap (or press and hold) the right side of a word to place a caret and gripper at the end of that word."></p>
+<p>The following image demonstrates how to adjust a selection by dragging the gripper.</p>
+<p><img src="images/adjust-selection.png" alt="drag the gripper in either direction to adjust selection (the first gripper remains anchored and a second gripper is displayed). drag either gripper to make subsequent adjustments."></p>
+<p>The following images demonstrate how to invoke the context menu by tapping within the selection or on a gripper (press and hold can also be used).</p>
+<p><img src="images/textselection-show-context.png" alt="tap (or press and hold) within the selection or on a gripper to invoke the context menu."></p>
+<p><strong>Note</strong>  These interactions vary somewhat in the case of a misspelled word. Tapping a word that is marked as misspelled will both highlight the entire word and invoke the suggested spelling context menu.</p>
+<p></p>
+<p><strong>Non-editable content</strong></p>
+<p>The following image demonstrates how to select a word by tapping within the word (no spaces are included in the initial selection).</p>
+<p><img src="images/select-word.png" alt="tap within a word to select it (no spaces are included in the initial selection)."></p>
+<p>Follow the same procedures as for editable text to adjust the selection and display the context menu.</p>
+<p><strong>Object manipulation</strong></p>
+<p>Wherever possible, use the same (or similar) gripper resources as text selection when implementing custom object manipulation in a Windows app. This helps provide a consistent interaction experience across the platform.</p>
+<p>For example, grippers can also be used in image processing apps that support resizing and cropping or media player apps that provide adjustable progress bars, as shown in the following images.</p>
+<p><img src="images/gripper-mediaplayer.png" alt="media player with progress gripper"></p>
+<p><em>Media player with adjustable progress bar.</em></p>
+<p><img src="images/gripper-imagemanip.png" alt="image with crop grippers"></p>
+<p><em>Image editor with cropping grippers.</em></p>
+<h2 id="related-articles">Related articles</h2>
+<h3 id="for-developers">For developers</h3>
+<ul>
+<li><a href="../layout/index.html">Custom user interactions</a></li>
+</ul>
+<h3 id="samples">Samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode">User interaction mode sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+</ul>
+<h3 id="archive-samples">Archive samples</h3>
+<ul>
+<li><p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample">Input: XAML user input events sample</a></p>
+</li>
+<li><p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></p>
+</li>
+<li><p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample">Input: Touch hit testing sample</a></p>
+</li>
+<li><p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample">XAML scrolling, panning, and zooming sample</a></p>
+</li>
+<li><p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample">Input: Simplified ink sample</a></p>
+</li>
+<li><p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer">Input: Manipulations and gestures sample</a></p>
+</li>
+<li><p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208)">DirectX touch input sample</a></p>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/guidelines-for-textselection.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

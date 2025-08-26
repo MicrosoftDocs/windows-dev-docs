@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Focus navigation without a mouse </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Focus navigation without a mouse ">
+    
+    <meta name="description" content="Learn how to use focus navigation to provide comprehensive and consistent interaction experiences in your Windows apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="focus-navigation-for-keyboard-gamepad-remote-control-and-accessibility-tools">Focus navigation for keyboard, gamepad, remote control, and accessibility tools</h1>
+
+<p><img src="images/dpad-remote/dpad-remote-keyboard.png" alt="Keyboard, remote, and D-pad"></p>
+<p>Use focus navigation to provide comprehensive and consistent interaction experiences in your Windows apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.</p>
+<h2 id="overview">Overview</h2>
+<p>Focus navigation refers to the underlying mechanism that enables users to navigate and interact with the UI of a Windows application using a keyboard, gamepad, or remote control.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Input devices are typically classified as pointing devices, such as touch, touchpad, pen, and mouse, and non-pointing devices, such as keyboard, gamepad, and remote control.</p>
+</div>
+<p>This topic describes how to optimize a Windows application and build custom interaction experiences for users that rely on non-pointing input types.</p>
+<p>Even though we focus on keyboard input for custom controls in Windows apps on PCs, a well-designed keyboard experience is also important for software keyboards such as the touch keyboard and the On-Screen Keyboard (OSK), supporting accessibility tools such as Windows Narrator, and supporting the 10-foot experience.</p>
+<p>See <a href="handle-pointer-input.html">Handle pointer input</a> for guidance on building custom experiences in Windows applications for pointing devices.</p>
+<p>For more general information on building apps and experiences for keyboard, see <a href="keyboard-interactions.html">Keyboard Interaction</a>.</p>
+<h2 id="general-guidance">General guidance</h2>
+<p>Only those UI elements that require user interaction should support focus navigation, elements that don’t require an action, such as static images, do not need keyboard focus. Screen readers and similar accessibility tools still announce these static elements, even when they are not included in focus navigation.</p>
+<p>It is important to remember that unlike navigating with a pointer device such as a mouse or touch, focus navigation is linear. When implementing focus navigation, consider how a user will interact with your application and what the logical navigation should be. In most cases, we recommend custom focus navigation behavior follows the preferred reading pattern of the user's culture.</p>
+<p>Some other focus navigation considerations include:</p>
+<ul>
+<li>Are controls grouped logically?</li>
+<li>Are there groups of controls with greater importance?
+<ul>
+<li>If yes, do those groups contain sub-groups?</li>
+</ul>
+</li>
+<li>Does the layout require custom directional navigation (arrow keys) and tab order?</li>
+</ul>
+<p>The <a href="https://www.microsoft.com/download/details.aspx?id=19262">Engineering Software for Accessibility</a> eBook has an excellent chapter on <em>Designing the Logical Hierarchy</em>.</p>
+<h2 id="2d-directional-navigation-for-keyboard">2D directional navigation for keyboard</h2>
+<p>The 2D inner navigation region of a control, or control group, is referred to as its &quot;directional area&quot;. When focus shifts to this object, the keyboard arrow keys (left, right, up, and down) can be used to navigate between child elements within the directional area.</p>
+<p><img src="images/keyboard/directional-area-small.png" alt="directional area">
+<em>2D Inner navigation region, or directional area, of a control group</em></p>
+<p>You can use the <a href="/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation">XYFocusKeyboardNavigation</a> property (which has possible values of <a href="/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode">Auto</a>, <a href="/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode">Enabled</a>, or <a href="/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode">Disabled</a>) to manage 2D inner navigation with the keyboard arrow keys.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Tab order is not affected by this property. To avoid a confusing navigation experience, we recommend that child elements of a directional area <em>not</em> be explicitly specified in the tab navigation order of your application. See the <a href="/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation">UIElement.TabFocusNavigation</a> and <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> properties for more detail on tabbing behavior for an element.</p>
+</div>
+<h3 id="auto-default-behavior"><a href="/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode">Auto</a> (default behavior)</h3>
+<p>When set to Auto, directional navigation behavior is determined by the element’s ancestry, or inheritance hierarchy. If all ancestors are in default mode (set to <strong>Auto</strong>), directional navigation with the keyboard is <em>not</em> supported.</p>
+<h3 id="disabled"><a href="/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode">Disabled</a></h3>
+<p>Set <strong>XYFocusKeyboardNavigation</strong> to <strong>Disabled</strong> to block directional navigation to the control and its child elements.</p>
+<p><img src="images/keyboard/xyfocuskeyboardnav-disabled.gif" alt="XYFocusKeyboardNavigation disabled behavior">
+<em>XYFocusKeyboardNavigation disabled behavior</em></p>
+<p>In this example, the primary <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel">StackPanel</a> (ContainerPrimary) has <strong>XYFocusKeyboardNavigation</strong> set to <strong>Enabled</strong>. All child elements inherit this setting, and can be navigated to with the arrow keys. However, the B3 and B4 elements are in a secondary <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel">StackPanel</a> (ContainerSecondary) with <strong>XYFocusKeyboardNavigation</strong> set to <strong>Disabled</strong>, which overrides the primary container and disables arrow key navigation to itself and between its child elements.</p>
+<pre><code class="lang-XAML">&lt;Grid 
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; 
+    TabFocusNavigation=&quot;Cycle&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;40&quot;/&gt;
+        &lt;RowDefinition Height=&quot;75&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;TextBlock Name=&quot;KeyPressed&quot;
+                Grid.Row=&quot;0&quot; 
+                FontWeight=&quot;ExtraBold&quot; 
+                HorizontalTextAlignment=&quot;Center&quot;
+                TextWrapping=&quot;Wrap&quot; 
+                Padding=&quot;10&quot; /&gt;
+    &lt;StackPanel Name=&quot;ContainerPrimary&quot; 
+                XYFocusKeyboardNavigation=&quot;Enabled&quot; 
+                KeyDown=&quot;ContainerPrimary_KeyDown&quot; 
+                Orientation=&quot;Horizontal&quot; 
+                BorderBrush=&quot;Green&quot; 
+                BorderThickness=&quot;2&quot; 
+                Grid.Row=&quot;1&quot; 
+                Padding=&quot;10&quot; 
+                MaxWidth=&quot;200&quot;&gt;
+        &lt;Button Name=&quot;B1&quot; 
+                Content=&quot;B1&quot; 
+                GettingFocus=&quot;Btn_GettingFocus&quot; /&gt;
+        &lt;Button Name=&quot;B2&quot; 
+                Content=&quot;B2&quot; 
+                GettingFocus=&quot;Btn_GettingFocus&quot; /&gt;
+        &lt;StackPanel Name=&quot;ContainerSecondary&quot; 
+                    XYFocusKeyboardNavigation=&quot;Disabled&quot; 
+                    Orientation=&quot;Horizontal&quot; 
+                    BorderBrush=&quot;Red&quot; 
+                    BorderThickness=&quot;2&quot;&gt;
+            &lt;Button Name=&quot;B3&quot; 
+                    Content=&quot;B3&quot; 
+                    GettingFocus=&quot;Btn_GettingFocus&quot; /&gt;
+            &lt;Button Name=&quot;B4&quot; 
+                    Content=&quot;B4&quot; 
+                    GettingFocus=&quot;Btn_GettingFocus&quot; /&gt;
+        &lt;/StackPanel&gt;
+    &lt;/StackPanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h3 id="enabled"><a href="/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode">Enabled</a></h3>
+<p>Set <strong>XYFocusKeyboardNavigation</strong> to <strong>Enabled</strong> to support 2D directional navigation to a control and each of its <a href="/uwp/api/Windows.UI.Xaml.UIElement">UIElement</a> child objects.</p>
+<p>When set, navigation with the arrow keys is restricted to elements within the directional area. Tab navigation is not affected, as all controls remain accessible through their tab order hierarchy.</p>
+<p><img src="images/keyboard/xyfocuskeyboardnav-enabled.gif" alt="XYFocusKeyboardNavigation enabled behavior">
+<em>XYFocusKeyboardNavigation enabled behavior</em></p>
+<p>In this example, the primary <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel">StackPanel</a> (ContainerPrimary) has <strong>XYFocusKeyboardNavigation</strong> set to <strong>Enabled</strong>. All child elements inherit this setting, and can be navigated to with the arrow keys. The B3 and B4 elements are in a secondary <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel">StackPanel</a> (ContainerSecondary) where <strong>XYFocusKeyboardNavigation</strong> is not set, which then inherits the primary container setting. The B5 element is not within a declared directional area, and does not support arrow key navigation but does support standard tab navigation behavior.</p>
+<pre><code class="lang-xaml">&lt;Grid
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;
+    TabFocusNavigation=&quot;Cycle&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;40&quot;/&gt;
+        &lt;RowDefinition Height=&quot;100&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;TextBlock Name=&quot;KeyPressed&quot;
+               Grid.Row=&quot;0&quot;
+               FontWeight=&quot;ExtraBold&quot;
+               HorizontalTextAlignment=&quot;Center&quot;
+               TextWrapping=&quot;Wrap&quot;
+               Padding=&quot;10&quot; /&gt;
+    &lt;StackPanel Grid.Row=&quot;1&quot;
+                Orientation=&quot;Horizontal&quot;
+                HorizontalAlignment=&quot;Center&quot;&gt;
+        &lt;StackPanel Name=&quot;ContainerPrimary&quot;
+                    XYFocusKeyboardNavigation=&quot;Enabled&quot;
+                    KeyDown=&quot;ContainerPrimary_KeyDown&quot;
+                    Orientation=&quot;Horizontal&quot;
+                    BorderBrush=&quot;Green&quot;
+                    BorderThickness=&quot;2&quot;
+                    Padding=&quot;5&quot; Margin=&quot;5&quot;&gt;
+            &lt;Button Name=&quot;B1&quot;
+                    Content=&quot;B1&quot;
+                    GettingFocus=&quot;Btn_GettingFocus&quot; Margin=&quot;5&quot; /&gt;
+            &lt;Button Name=&quot;B2&quot;
+                    Content=&quot;B2&quot;
+                    GettingFocus=&quot;Btn_GettingFocus&quot; /&gt;
+            &lt;StackPanel Name=&quot;ContainerSecondary&quot;
+                        Orientation=&quot;Horizontal&quot;
+                        BorderBrush=&quot;Red&quot;
+                        BorderThickness=&quot;2&quot;
+                        Margin=&quot;5&quot;&gt;
+                &lt;Button Name=&quot;B3&quot;
+                        Content=&quot;B3&quot;
+                        GettingFocus=&quot;Btn_GettingFocus&quot;
+                        Margin=&quot;5&quot; /&gt;
+                &lt;Button Name=&quot;B4&quot;
+                        Content=&quot;B4&quot;
+                        GettingFocus=&quot;Btn_GettingFocus&quot;
+                        Margin=&quot;5&quot; /&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+        &lt;Button Name=&quot;B5&quot;
+                Content=&quot;B5&quot;
+                GettingFocus=&quot;Btn_GettingFocus&quot;
+                Margin=&quot;5&quot; /&gt;
+    &lt;/StackPanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>You can have multiple levels of nested directional areas. If all parent elements have XYFocusKeyboardNavigation set to Enabled, inner navigation region boundaries are ignored.</p>
+<p>Here's an example of two nested directional areas within an element that does not explicitly support 2D directional navigation. In this case, directional navigation is not supported between the two nested areas.</p>
+<p><img src="images/keyboard/xyfocuskeyboardnav-enabled-nested1.gif" alt="XYFocusKeyboardNavigation enabled and nested behavior">
+<em>XYFocusKeyboardNavigation enabled and nested behavior</em></p>
+<p>Here’s a more complex example of three nested directional areas where:</p>
+<ul>
+<li>When B1 has focus, only B5 can be navigated to (and vice versa) because there is a directional area boundary where XYFocusKeyboardNavigation set to Disabled, making B2, B3, and B4 unreachable with the arrow keys</li>
+<li>When B2 has focus, only B3 can be navigated to (and vice versa) because the directional area boundary prevents arrow key navigation to B1, B4, and B5</li>
+<li>When B4 has focus, the Tab key must be used to navigate between controls</li>
+</ul>
+<p><img src="images/keyboard/xyfocuskeyboardnav-enabled-nested2.gif" alt="XYFocusKeyboardNavigation enabled and complex nested behavior"></p>
+<p><em>XYFocusKeyboardNavigation enabled and complex nested behavior</em></p>
+<h2 id="tab-navigation">Tab navigation</h2>
+<p>While the arrow keys can be used for 2D directional navigation witin a control, or control group, the Tab key can be used to navigate between all controls in a Windows application.</p>
+<p>All interactive controls support Tab key navigation by default (<a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled">IsEnabled</a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop">IsTabStop</a> property are <strong>true</strong>), with the logical tab order derived from the control layout in your application. However, the default order does not necessarily correspond to the visual order. The actual display position might depend on the parent layout container and certain properties that you can set on the child elements to influence the layout.</p>
+<p>Avoid a custom tab order that makes the focus jump around in your application. For example, a list of controls in a form should have a tab order that flows from top to bottom and left to right (depending on locale).</p>
+<p>In this section we describe how this tab order can be fully customized to suit your app.</p>
+<h3 id="set-the-tab-navigation-behavior">Set the tab navigation behavior</h3>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation">TabFocusNavigation</a>
+property of <a href="/uwp/api/Windows.UI.Xaml.UIElement">UIElement</a> specifies the tab navigation behavior for its entire object tree (or directional area).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Use this property instead of the <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation">Control.TabNavigation</a> property for objects that do not use a <a href="/uwp/api/windows.ui.xaml.controls.controltemplate">ControlTemplate</a> to define their appearance.</p>
+</div>
+<p>As we mentioned in the previous section, to avoid a confusing navigation experience, we recommend that child elements of a directional area <em>not</em> be explicitly specified in the tab navigation order of your application. See the <a href="/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation">UIElement.TabFocusNavigation</a> and the <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> properties for more detail on tabbing behavior for an element.</p>
+<blockquote>
+<p>For versions older than Windows 10 Creators Update (build 10.0.15063), tab settings were limited to <a href="/uwp/api/windows.ui.xaml.controls.controltemplate">ControlTemplate</a> objects. For more info, see <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation">Control.TabNavigation</a>.</p>
+</blockquote>
+<p><a href="/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation">TabFocusNavigation</a>
+has a value of type <a href="/uwp/api/windows.ui.xaml.input.keyboardnavigationmode">KeyboardNavigationMode</a> with the following possible values (note that these examples are not custom control groups and do not require inner navigation with the arrow keys):</p>
+<ul>
+<li><p><strong>Local</strong> (default)	
+Tab indexes are recognized on the local subtree inside the container. For this example, the tab order is B1, B2, B3, B4, B5, B6, B7, B1.</p>
+<p><img src="images/keyboard/tabnav-local.gif" alt="&quot;Local&quot; tab navigation behavior"></p>
+<p><em>&quot;Local&quot; tab navigation behavior</em></p>
+</li>
+<li><p><strong>Once</strong>	
+The container and all child elements receive focus once. For this example, the tab order is B1, B2, B7, B1 (inner navigation with arrow key is also demonstrated).</p>
+<p><img src="images/keyboard/tabnav-once.gif" alt="&quot;Once&quot; tab navigation behavior"></p>
+<p><em>&quot;Once&quot; tab navigation behavior</em></p>
+</li>
+<li><p><strong>Cycle</strong>	<br>
+Focus cycles back to the initial focusable element inside a container. For this example, the tab order is B1, B2, B3, B4, B5, B6, B2...</p>
+<p><img src="images/keyboard/tabnav-cycle.gif" alt="&quot;Cycle&quot; tab navigation behavior"></p>
+<p><em>&quot;Cycle&quot; tab navigation behavior</em></p>
+</li>
+</ul>
+<p>Here's the code for the preceding examples (with TabFocusNavigation =&quot;Cycle&quot;).</p>
+<pre><code class="lang-XAML">&lt;Grid 
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot; 
+    TabFocusNavigation=&quot;Cycle&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;40&quot;/&gt;
+        &lt;RowDefinition Height=&quot;300&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;TextBlock Name=&quot;KeyPressed&quot;
+               Grid.Row=&quot;0&quot; 
+               FontWeight=&quot;ExtraBold&quot; 
+               HorizontalTextAlignment=&quot;Center&quot;
+               TextWrapping=&quot;Wrap&quot; 
+               Padding=&quot;10&quot; /&gt;
+    &lt;StackPanel Name=&quot;ContainerPrimary&quot;
+                KeyDown=&quot;Container_KeyDown&quot; 
+                Orientation=&quot;Horizontal&quot; 
+                HorizontalAlignment=&quot;Center&quot;
+                BorderBrush=&quot;Green&quot; 
+                BorderThickness=&quot;2&quot; 
+                Grid.Row=&quot;1&quot; 
+                Padding=&quot;10&quot; 
+                MaxWidth=&quot;200&quot;&gt;
+        &lt;Button Name=&quot;B1&quot; 
+                Content=&quot;B1&quot; 
+                GettingFocus=&quot;Btn_GettingFocus&quot; 
+                Margin=&quot;5&quot;/&gt;
+        &lt;StackPanel Name=&quot;ContainerSecondary&quot; 
+                    KeyDown=&quot;Container_KeyDown&quot;
+                    XYFocusKeyboardNavigation=&quot;Enabled&quot; 
+                    TabFocusNavigation =&quot;Cycle&quot;
+                    Orientation=&quot;Vertical&quot; 
+                    VerticalAlignment=&quot;Center&quot;
+                    BorderBrush=&quot;Red&quot; 
+                    BorderThickness=&quot;2&quot;
+                    Padding=&quot;5&quot; Margin=&quot;5&quot;&gt;
+            &lt;Button Name=&quot;B2&quot; 
+                    Content=&quot;B2&quot; 
+                    GettingFocus=&quot;Btn_GettingFocus&quot; 
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B3&quot; 
+                    Content=&quot;B3&quot; 
+                    GettingFocus=&quot;Btn_GettingFocus&quot; 
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B4&quot; 
+                    Content=&quot;B4&quot; 
+                    GettingFocus=&quot;Btn_GettingFocus&quot; 
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B5&quot; 
+                    Content=&quot;B5&quot; 
+                    GettingFocus=&quot;Btn_GettingFocus&quot; 
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B6&quot; 
+                    Content=&quot;B6&quot; 
+                    GettingFocus=&quot;Btn_GettingFocus&quot; 
+                    Margin=&quot;5&quot;/&gt;
+        &lt;/StackPanel&gt;
+        &lt;Button Name=&quot;B7&quot; 
+                Content=&quot;B7&quot; 
+                GettingFocus=&quot;Btn_GettingFocus&quot; 
+                Margin=&quot;5&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h3 id="tabindex"><a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a></h3>
+<p>Use <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> to specify the order in which elements receive focus when the user navigates through controls using the Tab key. A control with a lower tab index receives focus before a control with a higher index.</p>
+<p>When a control has no <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> specified, it is assigned a higher index value than the current highest index value (and the lowest priority) of all interactive controls in the visual tree, based on scope.</p>
+<p>All child elements of a control are considered a scope, and if one of these elements also has child elements, they are considered another scope. Any ambiguity is resolved by choosing the first element on the visual tree of the scope.</p>
+<p>To exclude a control from the tab order, set the <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop">IsTabStop</a> property to <strong>false</strong>.</p>
+<p>Override the default tab order by setting the <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> property.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> works the same way with both <a href="/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation">UIElement.TabFocusNavigation</a> and <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation">Control.TabNavigation</a>.</p>
+</div>
+<p>Here, we show how focus navigation can be affected by the <a href="/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex">TabIndex</a> property on specific elements.</p>
+<p><img src="images/keyboard/tabnav-tabindex.gif" alt="&quot;Local&quot; tab navigation with TabIndex behavior"></p>
+<p><em>&quot;Local&quot; tab navigation with TabIndex behavior</em></p>
+<p>In the preceding example, there are two scopes:</p>
+<ul>
+<li>B1, directional area (B2 - B6), and B7</li>
+<li>directional area (B2 - B6)</li>
+</ul>
+<p>When B3 (in the directional area) gets focus, the scope changes and tab navigation transfers to the directional area where the best candidate for subsequent focus is identified. In this case, B2 followed by B4, B5, and B6. Scope then changes again, and focus moves to B1.</p>
+<p>Here's the code for this example.</p>
+<pre><code class="lang-xaml">&lt;Grid
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;
+    TabFocusNavigation=&quot;Cycle&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;40&quot;/&gt;
+        &lt;RowDefinition Height=&quot;300&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;TextBlock Name=&quot;KeyPressed&quot;
+               Grid.Row=&quot;0&quot;
+               FontWeight=&quot;ExtraBold&quot;
+               HorizontalTextAlignment=&quot;Center&quot;
+               TextWrapping=&quot;Wrap&quot;
+               Padding=&quot;10&quot; /&gt;
+    &lt;StackPanel Name=&quot;ContainerPrimary&quot;
+                KeyDown=&quot;Container_KeyDown&quot;
+                Orientation=&quot;Horizontal&quot;
+                HorizontalAlignment=&quot;Center&quot;
+                BorderBrush=&quot;Green&quot;
+                BorderThickness=&quot;2&quot;
+                Grid.Row=&quot;1&quot;
+                Padding=&quot;10&quot;
+                MaxWidth=&quot;200&quot;&gt;
+        &lt;Button Name=&quot;B1&quot;
+                Content=&quot;B1&quot;
+                TabIndex=&quot;1&quot;
+                ToolTipService.ToolTip=&quot;TabIndex = 1&quot;
+                GettingFocus=&quot;Btn_GettingFocus&quot;
+                Margin=&quot;5&quot;/&gt;
+        &lt;StackPanel Name=&quot;ContainerSecondary&quot;
+                    KeyDown=&quot;Container_KeyDown&quot;
+                    TabFocusNavigation =&quot;Local&quot;
+                    Orientation=&quot;Vertical&quot;
+                    VerticalAlignment=&quot;Center&quot;
+                    BorderBrush=&quot;Red&quot;
+                    BorderThickness=&quot;2&quot;
+                    Padding=&quot;5&quot; Margin=&quot;5&quot;&gt;
+            &lt;Button Name=&quot;B2&quot;
+                    Content=&quot;B2&quot;
+                    GettingFocus=&quot;Btn_GettingFocus&quot;
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B3&quot;
+                    Content=&quot;B3&quot;
+                    TabIndex=&quot;3&quot;
+                    ToolTipService.ToolTip=&quot;TabIndex = 3&quot;
+                    GettingFocus=&quot;Btn_GettingFocus&quot;
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B4&quot;
+                    Content=&quot;B4&quot;
+                    GettingFocus=&quot;Btn_GettingFocus&quot;
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B5&quot;
+                    Content=&quot;B5&quot;
+                    GettingFocus=&quot;Btn_GettingFocus&quot;
+                    Margin=&quot;5&quot;/&gt;
+            &lt;Button Name=&quot;B6&quot;
+                    Content=&quot;B6&quot;
+                    GettingFocus=&quot;Btn_GettingFocus&quot;
+                    Margin=&quot;5&quot;/&gt;
+        &lt;/StackPanel&gt;
+        &lt;Button Name=&quot;B7&quot;
+                Content=&quot;B7&quot;
+                TabIndex=&quot;2&quot;
+                ToolTipService.ToolTip=&quot;TabIndex = 2&quot;
+                GettingFocus=&quot;Btn_GettingFocus&quot;
+                Margin=&quot;5&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="2d-directional-navigation-for-keyboard-gamepad-and-remote-control">2D directional navigation for keyboard, gamepad, and remote control</h2>
+<p>Non-pointer input types such as keyboard, gamepad, remote control, and accessibility tools like Windows Narrator, share a common, underlying mechanism for navigating and interacting with the UI of your Windows application.</p>
+<p>In this section, we cover how to specify a preferred navigation strategy and fine tune focus navigation within your application through a set of navigation strategy properties that support all focus-based, non-pointer input types.</p>
+<p>For more general information on building apps and experiences for Xbox/TV, see <a href="keyboard-interactions.html">Keyboard Interaction</a>, <a href="../devices/designing-for-tv.html">Designing for Xbox and TV</a>, and <a href="gamepad-and-remote-interactions.html">Gamepad and remote control interactions</a>.</p>
+<h3 id="navigation-strategies">Navigation Strategies</h3>
+<blockquote>
+<p>Navigation strategies are applicable to keyboard, gamepad, remote control, and various accessibility tools.</p>
+</blockquote>
+<p>The following navigation strategy properties let you influence which control receives focus based on the arrow key, directional pad (D-pad) button, or similar pressed.</p>
+<ul>
+<li>XYFocusUpNavigationStrategy</li>
+<li>XYFocusDownNavigationStrategy</li>
+<li>XYFocusLeftNavigationStrategy</li>
+<li>XYFocusRightNavigationStrategy</li>
+</ul>
+<p>These properties have possible values of <a href="/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy">Auto</a> (default), <a href="/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy">NavigationDirectionDistance</a>, <a href="/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy">Projection</a>, or <a href="/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy">RectilinearDistance </a>.</p>
+<p>If set to <strong>Auto</strong>, the behavior of the element is based on the ancestors of the element. If all elements are set to <strong>Auto</strong>, <strong>Projection</strong> is used.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Other factors, such as the previously focused element or proximity to the axis of the navigation direction, can influence the result.</p>
+</div>
+<h3 id="projection">Projection</h3>
+<p>The Projection strategy moves focus to the first element encountered when the edge of the currently focused element is <em>projected</em> in the direction of navigation.</p>
+<p>In this example, each focus navigation direction is set to Projection. Notice how focus moves down from B1 to B4, bypassing B3. This is because, B3 is not in the projection zone. Also notice how a focus candidate is not identified when moving left from B1. This is because the position of B2 relative to B1 eliminates B3 as a candidate. If B3 was in the same row as B2, it would be a viable candidate for left navigation. B2 is a viable candidate due to its unobstructed proximity to the axis of navigation direction.</p>
+<p><img src="images/keyboard/xyfocusnavigationstrategy-projection.gif" alt="Projection navigation strategy"></p>
+<p><em>Projection navigation strategy</em></p>
+<h3 id="navigationdirectiondistance">NavigationDirectionDistance</h3>
+<p>The NavigationDirectionDistance strategy moves focus to the element closest to the axis of the navigation direction.</p>
+<p>The edge of the bounding rect corresponding to the navigation direction is <em>extended</em> and <em>projected</em> to identify candidate targets. The first element encountered is identified as the target. In the case of multiple candidates, the closest element is identified as the target. If there are still multiple candidates, the topmost/leftmost element is identified as the candidate.</p>
+<p><img src="images/keyboard/xyfocusnavigationstrategy-navigationdirectiondistance.gif" alt="NavigationDirectionDistance navigation strategy"></p>
+<p><em>NavigationDirectionDistance navigation strategy</em></p>
+<h3 id="rectilineardistance">RectilinearDistance</h3>
+<p>The RectilinearDistance strategy moves focus to the closest element based on 2D rectilinear distance (<a href="https://en.wikipedia.org/wiki/Taxicab_geometry">Taxicab geometry</a>).</p>
+<p>The sum of the primary distance and the secondary distance to each potential candidate is used to identify the best candidtate. In a tie, the first element to the left is selected if the requested direction is up or down, and the first element to the top is selected if the requested direction is left or right.</p>
+<p><img src="images/keyboard/xyfocusnavigationstrategy-rectilineardistance.gif" alt="RectilinearDistance navigation strategy"></p>
+<p><em>RectilinearDistance navigation strategy</em></p>
+<p>This image shows how, when B1 has focus and down is the requested direction, B3 is the RectilinearDistance focus candidate. This is based on the following calcualations for this example:</p>
+<ul>
+<li>Distance (B1, B3, Down) is 10 + 0 = 10</li>
+<li>Distance (B1, B2, Down) is 0 + 40 = 30</li>
+<li>Distance (B1, D, Down) is 30 + 0 = 30</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="focus-navigation-programmatic.html">Programmatic focus navigation</a></li>
+<li><a href="keyboard-interactions.html">Keyboard interactions</a></li>
+<li><a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/focus-navigation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

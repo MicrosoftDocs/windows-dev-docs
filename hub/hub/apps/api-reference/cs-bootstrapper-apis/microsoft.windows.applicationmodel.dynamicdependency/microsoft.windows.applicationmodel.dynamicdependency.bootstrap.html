@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Bootstrap class </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Bootstrap class ">
+    
+    <meta name="description" content="The **Bootstrap** class contains static helper methods that conveniently wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="bootstrap-class">Bootstrap class</h1>
+
+<p>The <strong>Bootstrap</strong> class contains static helper methods that conveniently wrap calls to the <a href="/windows/windows-app-sdk/api/win32/_bootstrap/">Bootstrapper API</a>.</p>
+<h2 id="definition">Definition</h2>
+<p>Namespace: <a href="microsoft.windows.applicationmodel.dynamicdependency.html">Microsoft.Windows.ApplicationModel.DynamicDependency</a></p>
+<p>Assembly: Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</p>
+<pre><code class="lang-csharp">public class Bootstrap
+</code></pre>
+<h2 id="methods">Methods</h2>
+<ul>
+<li><a href="#initialize-methods">Initialize methods</a></li>
+<li><a href="#shutdown-method">Shutdown()</a></li>
+<li><a href="#tryinitialize-methods">TryInitialize methods</a></li>
+</ul>
+<h2 id="initialize-methods">Initialize methods</h2>
+<p>Initializes the calling process to use Windows App SDK's framework package. Finds a Windows App SDK framework package meeting the criteria provided in the arguments, and makes it available for use by the current process. If multiple packages meet the criteria, then the best candidate is selected.</p>
+<pre><code class="lang-csharp">public static void Initialize(uint majorMinorVersion);
+public static void Initialize(uint majorMinorVersion, string versionTag);
+public static void Initialize(uint majorMinorVersion, string versionTag, PackageVersion minVersion);
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+<p><code>majorMinorVersion</code> <a href="/dotnet/api/system.uint32">uint</a></p>
+<p>The major and minor version of the Windows App SDK framework package to load. The version is encoded as <code>0xMMMMNNNN</code>, where <code>M</code> = Major and <code>N</code> = Minor (for example, version 1.2 should be encoded as <code>0x00010002</code>).</p>
+<p><code>versionTag</code> <a href="/dotnet/api/system.string">string</a></p>
+<p>The version tag of the Windows App SDK framework package to load (if any). For example, <code>&quot;prerelease&quot;</code>. Defaults to <code>null</code>.</p>
+<p><code>minVersion</code> <a href="microsoft.windows.applicationmodel.dynamicdependency.packageversion.html">PackageVersion</a></p>
+<p>The minimum version of the Windows App SDK framework package to use. Defaults to a new default instance of <strong>PackageVersion</strong>.</p>
+<h2 id="shutdown-method">Shutdown method</h2>
+<p>Removes the changes made to the current process by <a href="#initialize-methods">Initialize</a> or <a href="#tryinitialize-methods">TryInitialize</a>. After <strong>Shutdown</strong> is called, your app can no longer call Windows App SDK APIs, including the <a href="/windows/windows-app-sdk/api/win32/_dynamicdependency/">Dynamic dependency API</a>.</p>
+<pre><code class="lang-csharp">public static void Shutdown();
+</code></pre>
+<h2 id="tryinitialize-methods">TryInitialize methods</h2>
+<p>Initializes the calling process to use Windows App SDK's framework package. Failure returns false with the failure <strong>HRESULT</strong> in the <em>hresult</em> parameter. Finds a Windows App SDK framework package meeting the criteria provided in the arguments, and makes it available for use by the current process. If multiple packages meet the criteria, then the best candidate is selected.</p>
+<pre><code class="lang-csharp">public static bool TryInitialize(uint majorMinorVersion, out int hresult);
+public static bool TryInitialize(uint majorMinorVersion, string versionTag, out int hresult);
+public static bool TryInitialize(uint majorMinorVersion, string versionTag, PackageVersion minVersion, out int hresult);
+</code></pre>
+<h3 id="parameters-1">Parameters</h3>
+<p><code>majorMinorVersion</code> <a href="/dotnet/api/system.uint32">uint</a></p>
+<p>The major and minor version of the Windows App SDK framework package to load. The version is encoded as <code>0xMMMMNNNN</code>, where <code>M</code> = Major and <code>N</code> = Minor (for example, version 1.2 should be encoded as <code>0x00010002</code>).</p>
+<p><code>hresult</code> <a href="/dotnet/api/system.uint32">uint</a></p>
+<p>The failure <strong>HRESULT</strong>, if the initialization failed.</p>
+<p><code>versionTag</code> <a href="/dotnet/api/system.string">string</a></p>
+<p>The version tag of the Windows App SDK framework package to load (if any). For example, <code>&quot;prerelease&quot;</code>. Defaults to <code>null</code>.</p>
+<p><code>minVersion</code> <a href="microsoft.windows.applicationmodel.dynamicdependency.packageversion.html">PackageVersion</a></p>
+<p>The minimum version of the Windows App SDK framework package to use. Defaults to a new default instance of <strong>PackageVersion</strong>.</p>
+<h2 id="applies-to">Applies to</h2>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Introduced in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Windows App SDK</strong></td>
+<td>Windows App SDK 1.0</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="microsoft.windows.applicationmodel.dynamicdependency.html">Microsoft.Windows.ApplicationModel.DynamicDependency namespace</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windowing overview for WinUI and Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windowing overview for WinUI and Windows App SDK ">
+    
+    <meta name="description" content="Overview of windowing APIs in the Windows App SDK">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windowing-overview-for-winui-and-windows-app-sdk">Windowing overview for WinUI and Windows App SDK</h1>
+
+<p>Windowing functionality in a WinUI app is provided by a combination of the XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> class and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> class, both of which are based on the <a href="/windows/win32/winmsg/about-windows">Win32 HWND model</a>.</p>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery://category/MultipleWindows">Open the WinUI 3 Gallery app and see Windowing samples in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p><strong>XAML Window</strong></p>
+<p>In your app, the window object is an instance of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Microsoft.UI.Xaml.Window</a> class (or a derived class) that represents the window in your program code. You create it directly with a call to the constructor. The XAML Window is where you attach your app content and manage the lifecycle of your app's windows.</p>
+<p><strong>HWND</strong></p>
+<p>The <em>application window</em> is created by the Windows operating system and is represented by a Win32 window object. It's a system-managed container in which your content is hosted, and represents the entity that users interact with when they resize and move your app on-screen. (See <a href="/windows/win32/winmsg/about-windows">About Windows</a> in the Win32 documentation for more info.)</p>
+<p>After Windows creates the application window, the creation function returns a  <em>window handle</em> (<code>HWND</code>) that uniquely identifies the window. A window handle has the HWND data type, although it's surfaced in C# as an <a href="/dotnet/api/system.intptr">IntPtr</a>. It's an opaque handle to an internal Windows data structure that corresponds to a window that's drawn by the OS and consumes system resources when present.</p>
+<p>The HWND is created after the XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> object, typically when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activate">Window.Activate</a> method is called.</p>
+<p><strong>AppWindow</strong></p>
+<p>The Windows App SDK provides additional windowing functionality through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">Microsoft.UI.Windowing.AppWindow</a> class. AppWindow represents a high-level abstraction of the HWND. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows without the need to  access the HWND directly.</p>
+<p>The lifetime of an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> object and an HWND is the same—the AppWindow is available immediately after the window has been created; and it's destroyed when the window is closed.</p>
+<p><strong>Windowing API diagram</strong></p>
+<p>This diagram shows the relationship between the classes and APIs that you use to manage windows in your app, and which classes are responsible for each part of window management. In some cases, like <code>ExtendsContentIntoTitleBar</code>, the API is a member of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> to make it available to other UI frameworks, but is also exposed on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> class for convenience. The diagram is not comprehensive, but shows the most commonly used APIs.</p>
+<p><span class="mx-imgBorder">
+<a href="images/winui-windowing-diagram.png#lightbox" data-linktype="relative-path">
+<img src="images/winui-windowing-diagram.png" alt="win u i windowing diagram">
+</a>
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI 3. For frameworks other than WinUI 3, the functionality shown in the <em>XAML Window</em> box of the diagram would be replaced by the appropriate framework-specific windowing APIs:</p>
+<ul>
+<li><a href="/dotnet/api/system.windows.window">WPF Window</a></li>
+<li><a href="/dotnet/api/system.windows.forms.form">Windows Forms Form</a></li>
+<li><a href="/windows/win32/winmsg/windows">Win32 windowing APIs</a>, <a href="/cpp/mfc/windows">MFC Windows</a></li>
+</ul>
+</div>
+<h2 id="windowappwindow-api-comparison">Window/AppWindow API comparison</h2>
+<p>If you use WinUI 3 XAML as your app's UI framework, both the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> APIs are available to you. Starting in Windows App SDK 1.4, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow">Window.AppWindow</a> property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the additional window management APIs.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're not using WinUI 3 1.3 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see <a href="manage-app-windows.html#ui-framework-and-hwnd-interop">Manage app windows - UI framework and HWND interop</a> and the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">Windowing gallery sample</a>.</p>
+</div>
+<h3 id="lifetime-management">Lifetime management</h3>
+<table>
+<thead>
+<tr>
+<th>XAML Window</th>
+<th>AppWindow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.-ctor">Constructor</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create">Create</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid">GetFromWindowId</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activate">Activate</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.show">Show</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.hide">Hide</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.close">Close</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.closed">Closed</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroy">Destroy</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroying">Destroying</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.closing">Closing</a></td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.id">Id</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.ownerwindowid">OwnerWindowId</a></td>
+</tr>
+</tbody>
+</table>
+<p>When you create a new WinUI project in Visual Studio, the project template provides a <code>MainWindow</code> class for you, which is a sub-class of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a>. If your app only needs one window, this is all you need. To learn how to create and manage additional windows, and why you might want to, see <a href="multiple-windows.html">Show multiple windows for your app</a>.</p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> class has APIs to create and destroy a new window; however, for a WinUI app, you won't do this in practice because there is no API to attach content to the window you create. Instead, you get an instance of AppWindow that's created by the system and associated with the XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> and HWND. In WinUI 1.4 and later, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow">Window.AppWindow</a> property to get the instance of AppWindow. In other cases, you can use the static <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid">AppWindow.GetFromWindowId</a> method to get the AppWindow instance. See <a href="manage-app-windows.html">Manage app windows</a> for more info.</p>
+<h3 id="content">Content</h3>
+<table>
+<thead>
+<tr>
+<th>XAML Window</th>
+<th>AppWindow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.content">Content</a></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.content">Window.Content</a> property is where you attach your app content to the window that displays it. You can do this in XAML or in code.</p>
+<h3 id="title-icon-and-title-bar">Title, icon, and title bar</h3>
+<table>
+<thead>
+<tr>
+<th>XAML Window</th>
+<th>AppWindow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.title">Title</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title">Title</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar">SetTitleBar</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.titlebar">TitleBar</a></td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon">SetIcon</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.settaskbaricon">SetTaskbarIcon</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.settitlebaricon">SetTitleBarIcon</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar">ExtendsContentIntoTitleBar</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar">AppWindow.TitleBar.ExtendsContentIntoTitleBar</a></td>
+</tr>
+</tbody>
+</table>
+<p>You can modify your app's title bar to varying degrees; setting the title and icon, changing the colors, or completely replacing the title bar with custom app content.</p>
+<p>For information about using title bar APIs, including code examples, see <a href="/windows/apps/develop/title-bar">Title bar customization</a>.</p>
+<h3 id="size-and-position">Size and position</h3>
+<table>
+<thead>
+<tr>
+<th>XAML Window</th>
+<th>AppWindow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.bounds">Bounds</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.position">Position</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size">Size</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.clientsize">ClientSize</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged">SizeChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed">Changed</a> (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didpositionchange#microsoft-ui-windowing-appwindowchangedeventargs-didpositionchange">DidPositionChange</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange#microsoft-ui-windowing-appwindowchangedeventargs-didsizechange">DidSizeChange</a>)</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.move">Move</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize">Resize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resizeclient">ResizeClient</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveandresize">MoveAndResize</a></td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderatbottom">MoveInZOrderAtBottom</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderattop">MoveInZOrderAtTop</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderbelow">MoveInZOrderBelow</a></td>
+</tr>
+</tbody>
+</table>
+<p>You use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.bounds">Window.Bounds</a> property and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged">SizeChanged</a> event for managing things in your app UI, like moving elements around when the window size changes. XAML uses <em><a href="/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor">effective pixels</a></em> (epx), not actual physical pixels. Effective pixels are a virtual unit of measurement, and they're used to express layout dimensions and spacing, independent of screen density.</p>
+<p>AppWindow, on the other hand, uses the <a href="/windows/win32/gdi/window-coordinate-system">Window Coordinate System</a>, where the basic unit of measurement is physical <em>device pixels</em>. You use the the AppWindow APIs for windowing actions, like resizing the window or moving it in relation to something else on the screen.</p>
+<p>In some cases you might need to use measurements from one class in the other class, in which case you'll need to convert between effective pixels and device pixels. For example, if you set drag regions in a custom title bar, you'll need to convert measurements. For an example of how to use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale">XamlRoot.RasterizationScale</a> to convert measurements, see the <a href="/windows/apps/develop/title-bar#interactive-content">interactive content</a> section of the <em>Title bar customization</em> article.</p>
+<h3 id="appearance-and-behavior">Appearance and behavior</h3>
+<table>
+<thead>
+<tr>
+<th>XAML Window</th>
+<th>AppWindow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop">SystemBackdrop</a></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.presenter">Presenter</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter">SetPresenter</a></td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.isshowninswitchers">IsShownInSwitchers</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.visible">Visible</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.visibilitychanged">VisibilityChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.isvisible">IsVisible</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed">Changed</a> (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didvisibilitychange#microsoft-ui-windowing-appwindowchangedeventargs-didvisibilitychange">DidVisibilityChange</a>)</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue">DispatcherQueue</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.dispatcherqueue">DispatcherQueue</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.associatewithdispatcherqueue">AssociateWithDispatcherQueue</a></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.compositor">Compositor</a></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>XAML Window APIs are generally responsible for the appearance of your app content, like the background. For more info about <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop">SystemBackdrop</a>, see <a href="/windows/apps/windows-app-sdk/system-backdrop-controller">Apply Mica or Acrylic materials</a>.</p>
+<p>AppWindow APIs are responsible for the <em>non-client</em> portion of the window and your app's interaction with the Windows OS.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The XAML Window class has several properties that were carried over from the UWP <a href="/uwp/api/windows.ui.xaml.window">Windows.UI.Xaml.Window</a> class, but are not supported in WinUI apps. These properties always have a <code>null</code> value and are not used in WinUI apps: <code>CoreWindow</code>, <code>Current</code>, and <code>Dispatcher</code>.</p>
+</div>
+<h2 id="track-the-current-window">Track the current window</h2>
+<p>Even though the <code>Current</code> property is not supported in WinUI apps, you still might need to access the Window APIs from other places in your app. For example, you might need to get the Window bounds or handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged">Window.SizeChanged</a> event from code for a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a>. In this case, you can provide access to the Window in a similar way to the <code>Current</code> property by using a public static property on your <code>App</code> class.</p>
+<p>To do so, modify the Window declaration in the App class as shown here.</p>
+<pre><code class="lang-csharp">// App.xaml.cs in a WinUI app
+public partial class App : Application
+{
+    ...
+    public static Window Window { get { return m_window; } }
+    private static Window m_window;
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// App.xaml.h in a WinUI app
+...
+struct App : AppT&lt;App&gt;
+{
+    ...
+    static winrt::Microsoft::UI::Xaml::Window Window(){ return window; };
+
+private:
+    static winrt::Microsoft::UI::Xaml::Window window;
+};
+...
+
+// App.xaml.cpp
+...
+winrt::Microsoft::UI::Xaml::Window App::window{ nullptr };
+...
+</code></pre>
+<p>Then, to access the Window from other places in your app, use <code>App.Window</code>, like this:</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a WinUI app
+var width = App.Window.Bounds.Width;
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a WinUI app
+#include &lt;App.xaml.h&gt;
+auto width{ App::Window().Bounds().Width };
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Using a static <code>Window</code> property in your <code>App</code> class is useful if your app only uses a single window. If your app uses multiple windows, you should use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid">WindowId</a> to track the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> instances instead, to ensure that you are accessing the correct instance of Window. See <a href="multiple-windows.html">Show multiple windows for your app</a> for more info and examples.</p>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="manage-app-windows.html">Manage app windows</a></li>
+<li><a href="../../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.html">Windowing functionality migration</a></li>
+<li><a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a></li>
+<li><a href="retrieve-hwnd.html">Retrieve a window handle (HWND)</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">Windowing gallery sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/ui-input/windowing-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Directionality and gravity - animation in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Directionality and gravity - animation in Windows apps ">
+    
+    <meta name="description" content="Learn about using direction of movement, direction of navigation, and gravity in animated scenes by viewing examples.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="directionality-and-gravity">Directionality and gravity</h1>
+
+<p>Directional signals help to solidify the mental model of the journey a user takes across experiences. It is important that the direction of any motion support both the continuity of the space as well as the integrity of the objects in the space.</p>
+<p>​Directional movement is subject to forces like gravity. Applying forces to movement reinforces the natural feel of the motion.​</p>
+<h2 id="direction-of-movement">Direction of movement​</h2>
+<section class="row">
+<div class="column">
+<p>Direction of movement corresponds to physical motion. Just like in nature, objects can move in any world axis - X,Y,Z. This is how we think of the movement of objects on the screen.
+When you move objects, avoid unnatural collisions. ​Keep in mind where objects come from and go to, and always support higher level constructs that may be used in the scene, such as scroll direction or layout hierarchy.​</p>
+</div>
+<div class="column">
+<p><img src="images/direction.gif" alt="Short video showing a circle and then the addition of an X axis, a Y axis, and a Z axis."></p>
+</div>
+</section>
+<h2 id="direction-of-navigation">Direction of navigation​</h2>
+<p>The direction of navigation between scenes in your app is conceptual. Users navigate forward and back. Scenes move in and out of view. These concepts combine with physical movement to guide the user.</p>
+<p>When navigation causes an object to travel from the previous scene to the new scene, the object makes a simple A-to-B move on the screen. To ensure that the movement feels more physical, the standard easing is added, as well as the feeling of gravity.</p>
+<p>For back navigation, the move is reversed (B-to-A). When the user navigates back, they have an expectation to be returned to the previous state as soon as possible. The timing is quicker, more direct, and uses the decelerate easing.</p>
+<p>Here, these principles are applied as the selected item stays on screen during forward and back navigation.</p>
+<p><img src="images/continuous3.gif" alt="UI example of continuous motion"></p>
+<p>When navigation causes items on the screen to be replaced, its important to show where the exiting scene went to, and where the new scene is coming from.</p>
+<p>This has several benefits:
+​</p>
+<ul>
+<li>It solidifies the user's mental model of the space.</li>
+<li>The duration of the exiting scene provides more time to prepare content to be animated in for the incoming scene.​</li>
+<li>It improves the perceived performance of the app.​</li>
+</ul>
+<p>There are 4 discreet directions of navigation to consider​.</p>
+<section class="row">
+<div class="column">
+<p><strong>Forward-In</strong>
+Celebrate content entering the scene in a manner that does not collide with outgoing content. Content decelerates into the scene.</p>
+</div>
+<div class="column">
+<p><img src="images/forward-in.gif" alt="direction forward in"></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><strong>Forward-Out</strong>
+Content exits quickly. Objects accelerate off screen.</p>
+</div>
+<div class="column">
+<p><img src="images/forward-out.gif" alt="direction forward out"></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><strong>Backward-In</strong>
+Same as Forward-In, but reversed.</p>
+</div>
+<div class="column">
+<p><img src="images/backward-in.gif" alt="Short video showing a circle entering from the right of the frame and stopping in the middle of the frame."></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><strong>Backward-Out</strong>
+Same as Forward-Out, but reversed.</p>
+</div>
+<div class="column">
+<p><img src="images/backward-out.gif" alt="direction backward out"></p>
+</div>
+</section>
+<h2 id="gravity">Gravity</h2>
+<p>Gravity makes your experiences feel more natural. Objects that move on the Z-axis and are not anchored to the scene by an onscreen affordance have the potential to be affected by gravity.​ As an object breaks free of the scene and before it reaches escape velocity, gravity pulls down on the object, creating a more natural curve of the object trajectory as it moves.</p>
+<p>Gravity typically manifests when an object must jump from one scene to another.​ Because of this, connected animation uses the concept of gravity.</p>
+<p>Here, an element in the top row of the grid is affected by gravity, causing it to drop slightly as it leaves its place and moves to the front.</p>
+<p><img src="images/continuity-photos.gif" alt="Short video showing a rectangle element leaving the top row of a grid, dropping lightly, and then zooming to the front of the window."></p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../signature-experiences/motion.html">Motion overview</a></li>
+<li><a href="timing-and-easing.html">Timing and easing</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/motion/directionality-and-gravity.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

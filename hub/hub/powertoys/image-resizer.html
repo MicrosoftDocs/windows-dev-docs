@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Image Resizer utility for Windows - PowerToys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Image Resizer utility for Windows - PowerToys ">
+    
+    <meta name="description" content="Resize images in bulk with PowerToys Image Resizer utility. Learn how to quickly resize multiple images using this Windows shell extension with drag-and-drop support.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="image-resizer-utility">Image Resizer utility</h1>
+
+<p>Image Resizer is a Windows shell extension for bulk image-resizing that helps you quickly resize multiple images at once. After installing PowerToys, you can right-click on one or more selected image files in File Explorer and select <strong>Resize with ImageResizer</strong> from the menu to streamline your image processing workflow.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-resize-images.gif" alt="An animated GIF demo of PowerToys Image Resizer utility showing bulk image resizing process in Windows File Explorer.">
+</span>
+</p>
+<p>Image Resizer allows you to resize images by dragging and dropping your selected files with the right mouse button. This allows resized pictures to quickly be saved in a folder.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-resize-drag-drop.gif" alt="An animated GIF demo of PowerToys Image Resizer drag and drop functionality for bulk image resizing.">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If <strong>Ignore the orientation of pictures</strong> is selected, the width and height of the specified size <em>may</em> be swapped to match the orientation (portrait/landscape) of the current image. In other words: If selected, the <strong>smallest</strong> number (in width/height) in the settings will be applied to the <strong>smallest</strong> dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.</p>
+</div>
+<h2 id="settings">Settings</h2>
+<p>On the <strong>Image Resizer</strong> page, configure the following settings.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-imageresize-settings.png" alt="A screenshot of PowerToys Image Resizer settings page showing size presets and configuration options.">
+</span>
+</p>
+<h3 id="sizes">Sizes</h3>
+<p>Add new preset sizes. Each size can be configured as Fill, Fit, or Stretch. The dimension to be used for resizing can be centimeters, inches, percent, or pixels.</p>
+<h4 id="fill-versus-fit-versus-stretch">Fill versus Fit versus Stretch</h4>
+<ul>
+<li><strong>Fill</strong>: Fills the entire specified size with the image. Scales the image proportionally. Crops the image as needed.</li>
+<li><strong>Fit</strong>: Fits the entire image into the specified size. Scales the image proportionally. Doesn't crop the image.</li>
+<li><strong>Stretch</strong>: Fills the entire specified size with the image. Stretches the image disproportionally as needed. Doesn't crop the image.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can leave the width or height empty. The dimension will be calculated to a value proportional to the original image aspect ratio.</p>
+</div>
+<h3 id="fallback-encoding">Fallback encoding</h3>
+<p>The fallback encoder is used when the file can't be saved in its original format. For example, the Windows Meta File (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image can't be saved in its original format. Specify the format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. <strong>This isn't a file type conversion tool. It only works as a fallback for unsupported file formats.</strong></p>
+<h3 id="file">File</h3>
+<p>The file name of the resized image can use the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>%1</code></td>
+<td style="text-align: left;">Original filename</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%2</code></td>
+<td style="text-align: left;">Size name (as configured in the PowerToys Image Resizer settings)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%3</code></td>
+<td style="text-align: left;">Selected width</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%4</code></td>
+<td style="text-align: left;">Selected height</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%5</code></td>
+<td style="text-align: left;">Actual height</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>%6</code></td>
+<td style="text-align: left;">Actual width</td>
+</tr>
+</tbody>
+</table>
+<p>Example: setting the filename format to <code>%1 (%2)</code> on the file <code>example.png</code> and selecting the <code>Small</code> file size setting, would result in the file name <code>example (Small).png</code>. Setting the format to <code>%1_%4</code> on the file <code>example.jpg</code> and selecting the size setting <code>Medium 1366 × 768px</code> would result in the file name <code>example_768.jpg</code>.</p>
+<p>You can specify a directory in the filename format to group resized images into sub-directories. Example: a value of <code>%2\%1</code> would save the resized image(s) to <code>Small\example.jpg</code></p>
+<p><a href="/windows/win32/fileio/naming-a-file#file-and-directory-names">Characters that are illegal in file names</a> will be replaced by an underscore <code>_</code>.</p>
+<p>You can choose to retain the original <em>last modified</em> date on the resized image or reset it at the time of the resizing action.</p>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/image-resizer.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

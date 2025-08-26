@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Test on an Android device or emulator </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Test on an Android device or emulator ">
+    
+    <meta name="description" content="Test your app on an Android device or emulator from Windows and enable virtualization with hyper-v and Windows Hypervisor Platform (WHPX).">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="test-on-an-android-device-or-emulator">Test on an Android device or emulator</h1>
+
+<p>There are several ways to test and debug your Android application using a real device or emulator on your Windows machine. We have outlined a few recommendations in this guide.</p>
+<h2 id="run-on-a-real-android-device">Run on a real Android device</h2>
+<p>To run your app on a real Android device, you will first need to enable your Android device for development. Developer options on Android have been hidden by default since version 4.2 and enabling them can vary based on the Android version.</p>
+<h3 id="enable-your-device-for-development">Enable your device for development</h3>
+<p>For a device running a recent version of Android 9.0+:</p>
+<ol>
+<li>Connect your device to your Windows development machine with a USB cable. You may receive a notification to install a USB driver.</li>
+<li>Open the <strong>Settings</strong> screen on your Android device.</li>
+<li>Select <strong>About phone</strong>.</li>
+<li>Scroll to the bottom and tap <strong>Build number</strong> seven times, until <strong>You are now a developer!</strong> is visible.</li>
+<li>Return to the previous screen, select <strong>System</strong>.</li>
+<li>Select <strong>Advanced</strong>, scroll to the bottom, and tap <strong>Developer options</strong>.</li>
+<li>In the <strong>Developer options</strong> window, scroll down to find and enable <strong>USB debugging</strong>.</li>
+</ol>
+<h3 id="run-your-app-on-the-device">Run your app on the device</h3>
+<ol>
+<li><p>In the Android Studio toolbar, select your app from the <strong>run configurations</strong> drop-down menu.</p>
+<p><img src="../images/android-run-config-menu.png" alt="Android Studio Run Configuration menu"></p>
+</li>
+<li><p>From the <strong>target device</strong> drop-down menu, select the device that you want to run your app on.</p>
+<p><img src="../images/android-target-device-menu.png" alt="Android Studio Target Device menu"></p>
+</li>
+<li><p>Select Run ▷. This will launch the app on your connected device.</p>
+</li>
+</ol>
+<h2 id="run-your-app-on-a-virtual-android-device-using-an-emulator">Run your app on a virtual Android device using an emulator</h2>
+<p>The first thing to know about running an Android emulator on your Windows machine is that regardless of your IDE (Android Studio, Visual Studio, etc), emulator performance is vastly improved by enabling virtualization support.</p>
+<h3 id="enable-virtualization-support">Enable virtualization support</h3>
+<p>Before creating a virtual device with the Android emulator, it is recommended that you enable virtualization by turning on the Hyper-V and Windows Hypervisor Platform (WHPX) features. This will allow your computer's processor to significantly improve the execution speed of the emulator.</p>
+<blockquote>
+<p>To run Hyper-V and Windows Hypervisor Platform, your computer must:</p>
+<ul>
+<li>Have 4GB of memory available</li>
+<li>Have a 64-bit Intel processor or AMD Ryzen CPU with Second Level Address Translation (SLAT)</li>
+<li>Be running Windows 10 build 1803+ (<a href="ms-settings:about">Check your build #</a>)</li>
+<li>Have updated graphics drivers (Device Manager &gt; Display adapters &gt; Update driver)</li>
+</ul>
+<p>If your machine doesn't fit this criteria, you may be able to run <a href="https://github.com/intel/haxm/wiki/Installation-Instructions-on-Windows">Intel HAXM</a> or <a href="https://github.com/google/android-emulator-hypervisor-driver-for-amd-processors">AMD Hypervisor</a>. For more info, see the <a href="https://developer.android.com/studio/run/emulator">Android Studio Emulator documentation</a>.</p>
+</blockquote>
+<ol>
+<li><p>Verify that your computer hardware and software is compatible with Hyper-V by opening a command prompt and entering the command: <code>systeminfo</code></p>
+<p><img src="../images/systeminfo.png" alt="Hyper-V requirements from systeminfo in command prompt"></p>
+</li>
+<li><p>In the Windows search box (lower left), enter &quot;windows features&quot;. Select <strong>Turn Windows features on or off</strong> from the search results.</p>
+</li>
+<li><p>Once the <strong>Windows Features</strong> list appears, scroll to find <strong>Hyper-V</strong> (includes both Management Tools and Platform) and <strong>Windows Hypervisor Platform</strong>, ensure that the box is checked to enable both, then select <strong>OK</strong>.</p>
+</li>
+<li><p>Restart your computer when prompted.</p>
+</li>
+</ol>
+<h3 id="emulator-for-native-development-with-android-studio">Emulator for native development with Android Studio</h3>
+<p>When building and testing a native Android app, we recommend <a href="native-android.html">using Android Studio</a>. Once your app is ready for testing, you can build and run your app by:</p>
+<ol>
+<li><p>In the Android Studio toolbar, select your app from the <strong>run configurations</strong> drop-down menu.</p>
+<p><img src="../images/android-run-config-menu.png" alt="Android Studio Run Configuration menu"></p>
+</li>
+<li><p>From the <strong>target device</strong> drop-down menu, select the device that you want to run your app on.</p>
+<p><img src="../images/android-target-device-menu.png" alt="Android Studio Target Device menu"></p>
+</li>
+<li><p>Select Run ▷. This will launch the <a href="https://developer.android.com/studio/run/emulator">Android Emulator</a>.</p>
+</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Once your app is installed on the emulator device, you can use <code>Apply Changes</code> to deploy certain code and resource changes without building a new APK. See the <a href="https://developer.android.com/studio/run#apply-changes">Android developer guide</a> for more information.</p>
+</div>
+<h3 id="emulator-for-cross-platform-development-with-visual-studio">Emulator for cross-platform development with Visual Studio</h3>
+<p>There are many <a href="https://www.androidauthority.com/best-android-emulators-for-pc-655308/">Android emulator options</a> available for Windows PCs. We recommend using the Google <a href="https://developer.android.com/studio/run/emulator">Android emulator</a>, as it offers access to the latest Android OS images and Google Play services.</p>
+<h3 id="android-emulator-with-visual-studio">Android emulator with Visual Studio</h3>
+<p>Learn more about using the latest version of <a href="https://visualstudio.microsoft.com/vs/android/">Visual Studio for Android Development</a>. Open the <a href="https://visualstudio.microsoft.com/downloads/">latest version of Visual Studio</a>, create a new C++ Android project, set the platform configuration, run the project, and the default Android Emulator will appear. It is recommended to use the <a href="/dotnet/maui/">.NET Multi-platform App UI (MAUI)</a> development workload. You may need to use the Visual Studio Installer to <a href="/visualstudio/install/modify-visual-studio#modify-workloads">Modify your workloads</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/android/emulator.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

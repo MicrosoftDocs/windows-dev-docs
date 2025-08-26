@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Choose visibility options for PWA </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Choose visibility options for PWA ">
+    
+    <meta name="description" content="Set restrictions on how your PWA app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="choose-visibility-options">Choose visibility options</h1>
+
+<p>The <strong>Visibility</strong> section of the <a href="price-and-availability.html">Pricing and availability page</a> allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.</p>
+<p>There are two separate sections within the Visibility section: <strong>Audience</strong> and <strong>Discoverability</strong>.</p>
+<p><span class="mx-imgBorder">
+<a href="../msix/images/msix-visibility-options.png#lightbox" data-linktype="relative-path">
+<img src="../msix/images/msix-visibility-options.png" alt="A screenshot of the Pricing and availability section showing visibility options available for an app.">
+</a>
+</span>
+</p>
+<h2 id="audience">Audience</h2>
+<p>The Audience section lets you specify whether you want to restrict the visibility of your submission to a specific audience that you define.</p>
+<h3 id="public-audience">Public audience</h3>
+<p>By default, your app’s Store listing will be visible to a <strong>Public audience</strong>. This is appropriate for most submissions, unless you want to limit who can see your app’s listing to specific people. You can also use the options in the <a href="#discoverability">Discoverability</a> section to restrict discoverability if you’d like.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you submit a product with this option set to <strong>Public audience</strong>, you can't choose <strong>Private audience</strong> in a later submission.</p>
+</div>
+<h3 id="private-audience">Private audience</h3>
+<p>If you want your app’s listing to be visible only to selected people that you specify, choose <strong>Private audience</strong>. With this option, the app will not be discoverable or available to anyone other than people in the group(s) you specify. This option is often used for <a href="../../beta-testing-and-targeted-distribution.html">beta testing</a>, as it lets you distribute your app to testers without anyone else being able to get the app, or even see its Store listing (even if they were able to type in its Store listing URL).</p>
+<p>When you choose <strong>Private audience</strong>, you’ll need to specify at least one group of people who should get your app. You can choose from an existing <a href="../../create-customer-groups.html#known-user-groups">known user group</a>, or you can select <strong>Create a new group</strong> to define a new group. You’ll need to enter the email addresses associated with the Microsoft account of each person you’d like to include in the group. For more info, see <a href="../../create-customer-groups.html#known-user-groups">Create known user groups</a>.</p>
+<p>After your submission is published, the people in the group you specify will be able to view the app’s listing and download the app, as long as they are signed in with the Microsoft account associated with the email address that you entered and are running Windows 10, version 1607 or later (including Xbox One). However, people who aren’t in your private audience won’t be able to view the app’s listing or download the app, regardless of what OS version they’re running. You can publish updated submissions to the private audience, which will be distributed to members of those audience in the same way as a regular app update (but still won’t be available to anyone who’s not in of your private audience, unless you change your audience selection).</p>
+<p>If you plan to make the app available to a public audience at a certain date and time, you can select the box labeled <strong>Make this product public on</strong> when creating your submission. Enter the date and time (in UTC) when you’d like the product to become available to the public. Keep in mind the following:</p>
+<ul>
+<li>The date and time that you select will apply to all markets. If you want to customize the release schedule for different markets, don’t use this box. Instead, create a new submission that changes your setting to <strong>Public audience</strong>, then use the <a href="schedule-pricing-changes.html#configure-precise-release-scheduling">Schedule</a> options to specify your release timing.</li>
+<li>After the date and time that you select, all future submissions will use <strong>Public audience</strong>.</li>
+</ul>
+<p>If you don’t specify a date and time to make your app available to a public audience, you can always do so later by creating a new submission and changing your audience setting from <strong>Private audience</strong> to <strong>Public audience</strong>. When you do so, keep in mind that your app may go through an additional certification process, so be prepared to address any new certification issues that may arise.</p>
+<p>Here are some important things to keep in mind when choosing to distribute your app to a private audience:</p>
+<ul>
+<li>People in your private audience will be able to get the app by using a specific link to your app’s Store listing that requires them to sign in with their Microsoft account in order to view it. This link is provided when you select <strong>Private audience</strong>. You can also find it on your <a href="../../view-app-identity-details.html">App identity</a> page under <strong>URL if your app is only visible to certain people (requires authentication)</strong>. Be sure to give your testers this link, not the regular URL to your Store listing.</li>
+<li>Unless you choose an option in <strong>Discoverability</strong> that prevents it, people in your private audience will be able to find your app by searching within the Microsoft Store app. However, the web listing will not be discoverable via search, even to people in that audience.</li>
+<li>You won’t be able to <a href="configure-release-schedule.html">configure release dates in the Schedule section</a> of the <strong>Pricing and availability page</strong>, since your app won’t be released to customers outside of your private audience.</li>
+<li>Other selections you make will apply to people in this audience. For example, if you choose a price other than <strong>Free</strong>, people in your private audience will have to pay that price in order to acquire the app.</li>
+<li>If you want to distribute different packages to different people in your private audience, after your initial submission you can use <a href="../../package-flights.html">package flights</a> to distribute different package updates to subsets of your private audience. You can create additional known user groups to define who should get a specific package flight.</li>
+<li>You can edit the membership of the known user group(s) in your private audience. However, keep in mind that if you remove someone who was in the group and previously downloaded your app, they will still be able to use the app, but they won’t get any updates that you provide (unless you choose <strong>Public audience</strong> at a later date).</li>
+<li>Your app won't be available through the Microsoft Store for Business and/or Microsoft Store for Education, regardless of your organizational licensing settings, even to people in your private audience.</li>
+<li>While the Store will ensure that your app is only visible and available to people signed in with a Microsoft account that you’ve added to your private audience, we can’t prevent those people from sharing info or screenshots outside of your private audience. When confidentiality is critical, be sure that your private audience only includes people whom you trust not to share details about your app with others.</li>
+<li>Make sure to let your testers know how to give you their feedback. You probably won’t want them to leave feedback in Feedback Hub, because any other customer could see that feedback. Consider including a link for them to send email or provide feedback in some other way.</li>
+<li>Any reviews written by people in your private audience will be available for you to view. However, these reviews won’t be published in your app’s Store listing, even after your submission is moved to <strong>Public audience</strong>. You can read reviews written by your private audience by viewing the <a href="../../reviews-report.md">Reviews report</a>, but you can't download this data or use the <a href="/windows/uwp/monetize/access-analytics-data-using-windows-store-services">Microsoft Store analytics API</a> to programmatically access these reviews.</li>
+<li>When you move an app from <strong>Private audience</strong> to <strong>Public audience</strong>, the <strong>Release date</strong> shown on the Store listing will be the date it was first published to the public audience.</li>
+</ul>
+<h2 id="discoverability">Discoverability</h2>
+<p>The selections in the <strong>Discoverability</strong> section indicate how customers can discover and acquire your app.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you select <strong>Private audience</strong>, your <strong>Discoverability</strong> selections only apply to people in your private audience. Customers who are not in the groups you specified won’t be able to get the app or even see its listing.</p>
+</div>
+<h3 id="make-this-product-available-and-discoverable-in-the-store">Make this product available and discoverable in the Store</h3>
+<p>This is the default option. Leave this option selected if you want your app to be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists.</p>
+<h3 id="make-this-product-available-but-not-discoverable-in-the-store">Make this product available but not discoverable in the Store</h3>
+<p>When you select this option, your app can’t be found in the Store by customers searching or browsing; the only way to get to your app’s listing is by a direct link.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you don’t want the listing to be viewable to the public, even with a direct link, choose <strong>Private audience</strong> in the <strong>Audience</strong> section, as described above.
+You must also choose one of the following options to specify how your app can be acquired:</p>
+</div>
+<ul>
+<li><strong>Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.</strong> Any customer who gets to your app's listing via a direct link can download it on devices running Windows 10, Windows 11.</li>
+<li><strong>Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 11 or Windows 10 device.</strong> Even if a customer has a direct link, they can't download the app unless they have a <a href="../../generate-promotional-codes.html">promotional code</a> and are using a Windows 11 or Windows 10 device. If a customer has a promotional code, they can use it to get your app for free (on Windows 11 and Windows 10 only), even though you aren't offering it to any other customers. Aside from using a promotional code, there is no way for anyone to get your app.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you want to stop offering an app to any new customers, you can select <strong>Make app unavailable</strong> from its overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a <a href="../../generate-promotional-codes.html">promotional code</a> and are on a Windows 10 or Windows 11 device). This action will override the <strong>Visibility</strong> selections in your submission. To make the app available to new customers again (per your <strong>Visibility</strong> selections), you can click <strong>Make app available</strong> from the overview page at any time. For more info, see <a href="app-package-management.html#removing-an-app-from-the-store">Removing an app from the Store</a>.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/pwa/visibility-options.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

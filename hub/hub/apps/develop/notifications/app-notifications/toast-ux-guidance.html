@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Notifications design basics </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Notifications design basics ">
+    
+    <meta name="description" content="This article provides design guidance to consider as you plan and implement the toast notification experience for your app.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="notifications-design-basics">Notifications design basics</h1>
+
+<p>Drive user engagement with your app by providing personalized, actionable, and useful app notifications (also called <em>toast</em> notifications). App notifications are the Windows notifications that appear in the lower right of the user’s screen and the Notification Center (called Action Center in Windows 10). This article provides design guidance to consider as you plan and implement the app notification experience for your app.</p>
+<p><img src="images/shell-1x.png" alt="A screen capture showing an app notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, &quot;Going&quot;. There are two buttons labeled &quot;RSVP&quot; and &quot;Dismiss&quot;"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<h2 id="notifications-should-be-informative-and-valuable">Notifications should be informative and valuable</h2>
+<p>Design your notifications to have clear intent so the user can quickly understand the purpose of the notification and stay in their flow. Consider the user scenarios your app notifications are enabling and add elements to your notification that are appropriate for each scenario. Notifications should allow the user to save time, but shouldn't distract or create more work.</p>
+<h3 id="choose-the-right-notification-ui-elements">Choose the right notification UI elements</h3>
+<p>Consider which UI elements offer the most value to your user scenario. Is the purpose of the notification to allow the user to accomplish a task, or is it simply to get new information? The following section shows some example elements that you can use in your app notifications.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/buttons-thumbnail.png" alt="A cropped desktop screenshot showing a notification with button elements."></p>
+</div>
+<div class="column span2">
+<p><strong>Buttons</strong></p>
+<p>Buttons trigger an immediate action. By adding buttons, the user can complete a task within the notification.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/inline-image-thumbnail.png" alt="A cropped desktop screenshot showing a notification with an inline image."></p>
+</div>
+<div class="column span2">
+<p><strong>Images</strong></p>
+<p>Images can either be <a href="adaptive-interactive-toasts.html?tabs=builder-syntax#app-logo-override">app logo override</a>, <a href="adaptive-interactive-toasts.html?tabs=builder-syntax#inline-image">inline</a>, or <a href="adaptive-interactive-toasts.html?tabs=builder-syntax#hero-image">hero</a>. By adding images, the user can parse your content more quickly. Examples include adding an app logo override image depicting the sender’s profile image to a chat or email notification.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/inline-reply-thumbnail.png" alt="A cropped desktop screenshot showing a notification with a quick reply box."></p>
+</div>
+<div class="column span2">
+<p><strong>Quick replies</strong></p>
+<p>Quick reply boxes enable users to respond to messages without opening the app. Examples include adding quick reply boxes to a chat notification.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/context-menu-thumbnail.png" alt="A cropped desktop screenshot showing a notification with a context menu."></p>
+</div>
+<div class="column span2">
+<p><strong>Context menu buttons</strong></p>
+<p>Context menu buttons give users more options on right-click on the notification or upon selection of the context menu icon. An example scenario is adding an option to mute a group chat for an hour.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/progress-bar-thumbnail.png" alt="A cropped desktop screenshot showing a notification with a progress bar."></p>
+</div>
+<div class="column span2">
+<p><strong>Progress bars</strong></p>
+<p>Progress bars communicate status of long-running operations. By adding a progress bar, the user doesn’t have to check back in your app for updates. Examples include communicating a file download or game update with a progress bar notification.</p>
+</div>
+</section>
+<p>To see all of the UI elements that can be used in a notification, see <a href="adaptive-interactive-toasts.html">App notification content</a>.</p>
+<h2 id="notifications-should-not-be-noisy">Notifications should not be noisy</h2>
+<p>Users can easily be overloaded with too much information and get frustrated if they are being interrupted while they are trying to focus. Too many interruptions leads to users turning off this critical communication channel for your app.</p>
+<ul>
+<li>One method of not interrupting the user but still communicating valuable information is by suppressing the notification, meaning the notification is automatically placed directly into the Notification Center without an alert.</li>
+<li>On Windows 11, Focus Sessions allow users to suppress extraneous notifications. You can use the <a href="/uwp/api/windows.ui.shell.focussessionmanager">FocusSessionManager</a> API to detect if the user is in a Focus Session and adjust your app’s notification behavior accordingly.</li>
+</ul>
+<h2 id="respond-to-the-users-intent">Respond to the user’s intent</h2>
+<p>Just like the design of your notification UI, the behavior when the user clicks on the notification or on UI elements within the notification should be deliberate and consistent, and should engage the user in a clear task or scenario.</p>
+<ul>
+<li>If the user clicks on your notification to launch it, your app should launch in the notification’s context.</li>
+<li>If the user clicks on a button in your notification, your app should launch in the context that is appropriate for the button’s action
+<ul>
+<li>However, if the action is intended to be a background task, such as quick reply, your app should not launch.</li>
+</ul>
+</li>
+</ul>
+<h2 id="provide-a-consistent-notification-center-experience">Provide a consistent Notification Center experience</h2>
+<section class="row">
+<div class="column">
+<p><img src="images/notification-center-thumbnail.png" alt="A cropped desktop screenshot showing Notification Center with several notifications."></p>
+</div>
+<div class="column span2">
+<p>The Notification Center allows the user to view and respond to notifications after they have been displayed, or in the case of silent notifications, after they have been received but not displayed. It's important to keep Notification Center tidy by clearing out old notifications. You should also be sure to provide a consistent experience when removing notifications so the user feels confident they aren't missing information. Following standard conventions for notification removal makes the notification experience predictable and intuitive for users.</p>
+<p>The following are some example scenarios that illustrate strategies for clearing out old notifications from Notification Center:</p>
+<ul>
+<li>The user receives 10 new emails, and thus 10 new notifications. The user goes to the email app and views 10 emails, without interacting with the 10 notifications. After the user views the 10 emails, the email app removes the 10 notifications from the Notification Center. This also applies if the user has viewed the 10 emails elsewhere, such as their phone or website.</li>
+<li>The user receives 10 new chat messages from one user, and thus 10 new notifications. The user selects one of these chat notifications, which launches the chat. After the user views the chat, the app removes the 9 remaining notifications from the Notification Center.</li>
+</ul>
+</div>
+</section>
+<h2 id="related-articles">Related articles</h2>
+<p><a href="send-local-toast.html">Developer guidance for notifications</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/toast-ux-guidance.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

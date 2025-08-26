@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>CommandContextItem Constructors </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="CommandContextItem Constructors ">
+    
+    <meta name="description" content="Initializes a new instance of the CommandContextItem class.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="commandcontextitem-constructors">CommandContextItem Constructors</h1>
+
+<h2 id="commandcontextitemicommand-constructor">CommandContextItem(<a href="../microsoft-commandpalette-extensions/icommand.html">ICommand</a>) Constructor</h2>
+<h3 id="definition">Definition</h3>
+<p>Namespace: <a href="microsoft-commandpalette-extensions-toolkit.html">Microsoft.CommandPalette.Extensions.Toolkit</a></p>
+<p>Initializes a new instance of the <a href="commandcontextitem.html">CommandContextItem</a> class from the base <a href="commanditem.html">CommandItem</a> class, setting its <a href="commanditem.html#properties">Command</a> property to <em>command</em>.</p>
+<pre><code class="lang-C#">public CommandContextItem(ICommand command)
+        : base(command)
+    {
+    }
+</code></pre>
+<h3 id="parameters">Parameters</h3>
+<p><em>command</em> <a href="../microsoft-commandpalette-extensions/icommand.html">ICommand</a></p>
+<p>The command to be associated with the command item. This parameter is required and cannot be null.</p>
+<h2 id="commandcontextitemstring-string-string-action-icommandresult-constructor">CommandContextItem(String, String, String, Action, <a href="../microsoft-commandpalette-extensions/icommandresult.html">ICommandResult</a>) Constructor</h2>
+<h3 id="definition-1">Definition</h3>
+<p>Namespace: <a href="microsoft-commandpalette-extensions-toolkit.html">Microsoft.CommandPalette.Extensions.Toolkit</a></p>
+<p>Initializes a new instance of the <a href="commandcontextitem.html">CommandContextItem</a> class from the base <a href="commanditem.html">CommandItem</a> class, setting its <a href="commanditem.html#properties">Title</a> property to <em>title</em>, its <a href="commanditem.html#properties">Subtitle</a> to <em>subtitle</em>, and creates a new <a href="anonymouscommand.html">AnonymousCommand</a> object with a <em>name</em>, <em>action</em>, and <em>result</em>.</p>
+<pre><code class="lang-C#">public CommandContextItem(
+        string title,
+        string subtitle = &quot;&quot;,
+        string name = &quot;&quot;,
+        Action? action = null,
+        ICommandResult? result = null)
+    {
+        var c = new AnonymousCommand(action);
+        if (!string.IsNullOrEmpty(name))
+        {
+            c.Name = name;
+        }
+
+        if (result != null)
+        {
+            c.Result = result;
+        }
+
+        Command = c;
+
+        Title = title;
+        Subtitle = subtitle;
+    }
+</code></pre>
+<h3 id="parameters-1">Parameters</h3>
+<p><em>title</em> <strong>String</strong></p>
+<p>The title of the command item.</p>
+<p><em>subtitle</em> <strong>String</strong></p>
+<p>The subtitle of the command item.</p>
+<p><em>name</em> <strong>String</strong></p>
+<p>The name of the command item.</p>
+<p><em>action</em> <strong>Action</strong></p>
+<p>The action to be performed when the command item is executed.</p>
+<p><em>result</em> <a href="../microsoft-commandpalette-extensions/icommandresult.html">ICommandResult</a></p>
+<p>The result of the command item execution. This parameter is optional and can be <code>null</code>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandcontextitem_constructor.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

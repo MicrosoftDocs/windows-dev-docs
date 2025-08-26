@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using the Visual Layer with Win32 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using the Visual Layer with Win32 ">
+    
+    <meta name="description" content="Learn how to use the Universal Windows Platform (UWP) Windows Runtime Composition APIs, also known as the Visual layer, to enhance the UI of a Win32 C++ app.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-the-visual-layer-with-win32">Using the Visual Layer with Win32</h1>
+
+<p>You can use Windows Runtime Composition APIs (also called the <a href="/windows/uwp/composition/visual-layer">Visual layer</a>) in your Win32 apps to create modern experiences that light up for Windows users.</p>
+<p>The complete code for this tutorial is available on GitHub: <a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition">Win32 HelloComposition sample</a>.</p>
+<p>Universal Windows Applications that need precise control over their UI composition have access to the <a href="/uwp/api/windows.ui.composition">Windows.UI.Composition</a> namespace to exert fine grained control over how their UI is composed and rendered. This composition API is not limited to UWP apps, however. Win32 desktop applications can take advantage of the modern composition systems in UWP and Windows.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The UWP hosting API has these prerequisites.</p>
+<ul>
+<li>We assume that you have some familiarity with app development using Win32 and UWP. For more info, see:
+<ul>
+<li><a href="/windows/desktop/learnwin32/learn-to-program-for-windows">Get Started with Win32 and C++</a></li>
+<li><a href="/windows/uwp/get-started/">Get started with Windows apps</a></li>
+<li><a href="/windows/uwp/porting/desktop-to-uwp-enhance">Enhance your desktop application for Windows</a></li>
+</ul>
+</li>
+<li>Windows 10 version 1803 or later</li>
+<li>Windows 10 SDK 17134 or later</li>
+</ul>
+<h2 id="how-to-use-composition-apis-from-a-win32-desktop-application">How to use Composition APIs from a Win32 desktop application</h2>
+<p>In this tutorial, you create a simple Win32 C++ app and add UWP Composition elements to it. The focus is on correctly configuring the project, creating the interop code, and drawing something simple using Windows Composition APIs. The finished app looks like this.</p>
+<p><img src="../images/visual-layer-interop/win32-comp-interop-app-ui.png" alt="The running app UI"></p>
+<h2 id="create-a-c-win32-project-in-visual-studio">Create a C++ Win32 project in Visual Studio</h2>
+<p>The first step is to create the Win32 app project in Visual Studio.</p>
+<p>To create a new Win32 Application project in C++ named <em>HelloComposition</em>:</p>
+<ol>
+<li><p>Open Visual Studio and select <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong>.</p>
+<p>The <strong>New Project</strong> dialog opens.</p>
+</li>
+<li><p>Under the <strong>Installed</strong> category, expand the <strong>Visual C++</strong> node, and then select <strong>Windows Desktop</strong>.</p>
+</li>
+<li><p>Select the <strong>Windows Desktop Application</strong> template.</p>
+</li>
+<li><p>Enter the name <em>HelloComposition</em>, then click <strong>OK</strong>.</p>
+<p>Visual Studio creates the project and opens the editor for the main app file.</p>
+</li>
+</ol>
+<h2 id="configure-the-project-to-use-windows-runtime-apis">Configure the project to use Windows Runtime APIs</h2>
+<p>To use Windows Runtime (WinRT) APIs in your Win32 app, we use C++/WinRT. You need to configure your Visual Studio project to add C++/WinRT support.</p>
+<p>(For details, see <a href="/windows/uwp/cpp-and-winrt-apis/get-started#modify-a-windows-desktop-application-project-to-add-cwinrt-support">Get started with C++/WinRT - Modify a Windows Desktop application project to add C++/WinRT support</a>).</p>
+<ol>
+<li><p>From the <strong>Project</strong> menu, open the project properties (<em>HelloComposition Properties</em>) and ensure the following settings are set to the specified values:</p>
+<ul>
+<li>For <strong>Configuration</strong>, select <em>All Configurations</em>. For <strong>Platform</strong>, select <em>All Platforms</em>.</li>
+<li><strong>Configuration Properties</strong> &gt; <strong>General</strong> &gt; <strong>Windows SDK Version</strong> = <em>10.0.17763.0</em> or greater</li>
+</ul>
+<p><img src="../images/visual-layer-interop/sdk-version.png" alt="Set SDK version"></p>
+<ul>
+<li><strong>C/C++</strong> &gt; <strong>Language</strong> &gt; <strong>C++ Language Standard</strong> = <em>ISO C++ 17 Standard (/stf:c++17)</em></li>
+</ul>
+<p><img src="../images/visual-layer-interop/language-standard.png" alt="Set language standard"></p>
+<ul>
+<li><strong>Linker</strong> &gt; <strong>Input</strong> &gt; <strong>Additional Dependencies</strong> must include &quot;<em>windowsapp.lib</em>&quot;. If it's not included in the list, add it.</li>
+</ul>
+<p><img src="../images/visual-layer-interop/linker-dependencies.png" alt="Add linker dependency"></p>
+</li>
+<li><p>Update the precompiled header</p>
+<ul>
+<li><p>Rename <code>stdafx.h</code> and <code>stdafx.cpp</code> to <code>pch.h</code> and <code>pch.cpp</code>, respectively.</p>
+</li>
+<li><p>Set project property <strong>C/C++</strong> &gt; <strong>Precompiled Headers</strong> &gt; <strong>Precompiled Header File</strong> to <em>pch.h</em>.</p>
+</li>
+<li><p>Find and replace <code>#include &quot;stdafx.h&quot;</code> with <code>#include &quot;pch.h&quot;</code> in all files.</p>
+<p>(<strong>Edit</strong> &gt; <strong>Find and Replace</strong> &gt; <strong>Find in Files</strong>)</p>
+<p><img src="../images/visual-layer-interop/replace-stdafx.png" alt="Find and replace stdafx.h"></p>
+</li>
+<li><p>In <code>pch.h</code>, include <code>winrt/base.h</code> and <code>unknwn.h</code>.</p>
+<pre><code class="lang-cppwinrt">// reference additional headers your program requires here
+#include &lt;unknwn.h&gt;
+#include &lt;winrt/base.h&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<p>It's a good idea to build the project at this point to make sure there are no errors before going on.</p>
+<h2 id="create-a-class-to-host-composition-elements">Create a class to host composition elements</h2>
+<p>To host content you create with the visual layer, create a class (<em>CompositionHost</em>) to manage interop and create composition elements. This is where you do most of the configuration for hosting Composition APIs, including:</p>
+<ul>
+<li>getting a <a href="/uwp/api/windows.ui.composition.compositor">Compositor</a>, which creates and manages objects in the <a href="/uwp/api/windows.ui.composition">Windows.UI.Composition</a> namespace.</li>
+<li>creating a <a href="/uwp/api/windows.system.dispatcherqueuecontroller">DispatcherQueueController</a>/<a href="/uwp/api/windows.system.dispatcherqueue">DispatcherQueue</a> to manage tasks for the WinRT APIs.</li>
+<li>creating a <a href="/uwp/api/windows.ui.composition.desktop.desktopwindowtarget">DesktopWindowTarget</a> and Composition container to display the composition objects.</li>
+</ul>
+<p>We make this class a singleton to avoid threading issues. For example, you can only create one dispatcher queue per thread, so instantiating a second instance of CompositionHost on the same thread would cause an error.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you need to, check the complete code at the end of the tutorial to make sure all the code is in the right places as you work through the tutorial.</p>
+</div>
+<ol>
+<li><p>Add a new class file to your project.</p>
+<ul>
+<li>In <strong>Solution Explorer</strong>, right click the <em>HelloComposition</em> project.</li>
+<li>In the context menu, select <strong>Add</strong> &gt; <strong>Class...</strong>.</li>
+<li>In the <strong>Add Class</strong> dialog, name the class <em>CompositionHost.cs</em>, then click <strong>Add</strong>.</li>
+</ul>
+</li>
+<li><p>Include headers and <em>usings</em> required for composition interop.</p>
+<ul>
+<li>In CompositionHost.h, add these <em>includes</em> at the top of the file.</li>
+</ul>
+<pre><code class="lang-cppwinrt">#pragma once
+#include &lt;winrt/Windows.UI.Composition.Desktop.h&gt;
+#include &lt;windows.ui.composition.interop.h&gt;
+#include &lt;DispatcherQueue.h&gt;
+</code></pre>
+<ul>
+<li>In CompositionHost.cpp, add these <em>usings</em> at the top of the file, after any <em>includes</em>.</li>
+</ul>
+<pre><code class="lang-cppwinrt">using namespace winrt;
+using namespace Windows::System;
+using namespace Windows::UI;
+using namespace Windows::UI::Composition;
+using namespace Windows::UI::Composition::Desktop;
+using namespace Windows::Foundation::Numerics;
+</code></pre>
+</li>
+<li><p>Edit the class to use the singleton pattern.</p>
+<ul>
+<li>In CompositionHost.h, make the constructor private.</li>
+<li>Declare a public static <em>GetInstance</em> method.</li>
+</ul>
+<pre><code class="lang-cppwinrt">class CompositionHost
+{
+public:
+    ~CompositionHost();
+    static CompositionHost* GetInstance();
+
+private:
+    CompositionHost();
+};
+</code></pre>
+<ul>
+<li>In CompositionHost.cpp, add the definition of the <em>GetInstance</em> method.</li>
+</ul>
+<pre><code class="lang-cppwinrt">CompositionHost* CompositionHost::GetInstance()
+{
+    static CompositionHost instance;
+    return &amp;instance;
+}
+</code></pre>
+</li>
+<li><p>In CompositionHost.h, declare private member variables for the Compositor, DispatcherQueueController, and DesktopWindowTarget.</p>
+<pre><code class="lang-cppwinrt">winrt::Windows::UI::Composition::Compositor m_compositor{ nullptr };
+winrt::Windows::System::DispatcherQueueController m_dispatcherQueueController{ nullptr };
+winrt::Windows::UI::Composition::Desktop::DesktopWindowTarget m_target{ nullptr };
+</code></pre>
+</li>
+<li><p>Add a public method to initialize the composition interop objects.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In <em>Initialize</em>, you call the <em>EnsureDispatcherQueue</em>, <em>CreateDesktopWindowTarget</em>, and <em>CreateCompositionRoot</em> methods. You create these methods in the next steps.</p>
+</div>
+<ul>
+<li>In CompositionHost.h, declare a public method named <em>Initialize</em> that takes an HWND as an argument.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void Initialize(HWND hwnd);
+</code></pre>
+<ul>
+<li>In CompositionHost.cpp, add the definition of the <em>Initialize</em> method.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void CompositionHost::Initialize(HWND hwnd)
+{
+    EnsureDispatcherQueue();
+    if (m_dispatcherQueueController) m_compositor = Compositor();
+
+    CreateDesktopWindowTarget(hwnd);
+    CreateCompositionRoot();
+}
+</code></pre>
+</li>
+<li><p>Create a dispatcher queue on the thread that will be using Windows Composition.</p>
+<p>A Compositor must be created on a thread that has a dispatcher queue, so this method is called first during initialization.</p>
+<ul>
+<li>In CompositionHost.h, declare a private method named <em>EnsureDispatcherQueue</em>.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void EnsureDispatcherQueue();
+</code></pre>
+<ul>
+<li>In CompositionHost.cpp, add the definition of the <em>EnsureDispatcherQueue</em> method.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void CompositionHost::EnsureDispatcherQueue()
+{
+    namespace abi = ABI::Windows::System;
+
+    if (m_dispatcherQueueController == nullptr)
+    {
+        DispatcherQueueOptions options
+        {
+            sizeof(DispatcherQueueOptions), /* dwSize */
+            DQTYPE_THREAD_CURRENT,          /* threadType */
+            DQTAT_COM_ASTA                  /* apartmentType */
+        };
+
+        Windows::System::DispatcherQueueController controller{ nullptr };
+        check_hresult(CreateDispatcherQueueController(options, reinterpret_cast&lt;abi::IDispatcherQueueController**&gt;(put_abi(controller))));
+        m_dispatcherQueueController = controller;
+    }
+}
+</code></pre>
+</li>
+<li><p>Register your app's window as a composition target.</p>
+<ul>
+<li>In CompositionHost.h, declare a private method named <em>CreateDesktopWindowTarget</em> that takes an HWND as an argument.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void CreateDesktopWindowTarget(HWND window);
+</code></pre>
+<ul>
+<li>In CompositionHost.cpp, add the definition of the <em>CreateDesktopWindowTarget</em> method.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void CompositionHost::CreateDesktopWindowTarget(HWND window)
+{
+    namespace abi = ABI::Windows::UI::Composition::Desktop;
+
+    auto interop = m_compositor.as&lt;abi::ICompositorDesktopInterop&gt;();
+    DesktopWindowTarget target{ nullptr };
+    check_hresult(interop-&gt;CreateDesktopWindowTarget(window, false, reinterpret_cast&lt;abi::IDesktopWindowTarget**&gt;(put_abi(target))));
+    m_target = target;
+}
+</code></pre>
+</li>
+<li><p>Create a root visual container to hold visual objects.</p>
+<ul>
+<li>In CompositionHost.h, declare a private method named <em>CreateCompositionRoot</em>.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void CreateCompositionRoot();
+</code></pre>
+<ul>
+<li>In CompositionHost.cpp, add the definition of the <em>CreateCompositionRoot</em> method.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void CompositionHost::CreateCompositionRoot()
+{
+    auto root = m_compositor.CreateContainerVisual();
+    root.RelativeSizeAdjustment({ 1.0f, 1.0f });
+    root.Offset({ 124, 12, 0 });
+    m_target.Root(root);
+}
+</code></pre>
+</li>
+</ol>
+<p>Build the project now to make sure there are no errors.</p>
+<p>These methods set up the components needed for interop between the UWP visual layer and Win32 APIs. Now you can add content to your app.</p>
+<h3 id="add-composition-elements">Add composition elements</h3>
+<p>With the infrastructure in place, you can now generate the Composition content you want to show.</p>
+<p>For this example, you add code that creates a randomly-colored square <a href="/uwp/api/windows.ui.composition.spritevisual">SpriteVisual</a> with an animation that causes it to drop after a short delay.</p>
+<ol>
+<li><p>Add a composition element.</p>
+<ul>
+<li>In CompositionHost.h, declare a public method named <em>AddElement</em> that takes 3 <strong>float</strong> values as arguments.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void AddElement(float size, float x, float y);
+</code></pre>
+<ul>
+<li>In CompositionHost.cpp, add the definition of the <em>AddElement</em> method.</li>
+</ul>
+<pre><code class="lang-cppwinrt">void CompositionHost::AddElement(float size, float x, float y)
+{
+    if (m_target.Root())
+    {
+        auto visuals = m_target.Root().as&lt;ContainerVisual&gt;().Children();
+        auto visual = m_compositor.CreateSpriteVisual();
+
+        auto element = m_compositor.CreateSpriteVisual();
+        uint8_t r = (double)(double)(rand() % 255);;
+        uint8_t g = (double)(double)(rand() % 255);;
+        uint8_t b = (double)(double)(rand() % 255);;
+
+        element.Brush(m_compositor.CreateColorBrush({ 255, r, g, b }));
+        element.Size({ size, size });
+        element.Offset({ x, y, 0.0f, });
+
+        auto animation = m_compositor.CreateVector3KeyFrameAnimation();
+        auto bottom = (float)600 - element.Size().y;
+        animation.InsertKeyFrame(1, { element.Offset().x, bottom, 0 });
+
+        using timeSpan = std::chrono::duration&lt;int, std::ratio&lt;1, 1&gt;&gt;;
+
+        std::chrono::seconds duration(2);
+        std::chrono::seconds delay(3);
+
+        animation.Duration(timeSpan(duration));
+        animation.DelayTime(timeSpan(delay));
+        element.StartAnimation(L&quot;Offset&quot;, animation);
+        visuals.InsertAtTop(element);
+
+        visuals.InsertAtTop(visual);
+    }
+}
+</code></pre>
+</li>
+</ol>
+<h2 id="create-and-show-the-window">Create and show the window</h2>
+<p>Now, you can add a button and the UWP composition content to your Win32 UI.</p>
+<ol>
+<li><p>In HelloComposition.cpp, at the top of the file, include <em>CompositionHost.h</em>, define BTN_ADD, and get an instance of CompositionHost.</p>
+<pre><code class="lang-cppwinrt">#include &quot;CompositionHost.h&quot;
+
+// #define MAX_LOADSTRING 100 // This is already in the file.
+#define BTN_ADD 1000
+
+CompositionHost* compHost = CompositionHost::GetInstance();
+</code></pre>
+</li>
+<li><p>In the <code>InitInstance</code> method, change the size of the window that's created. (In this line, change <code>CW_USEDEFAULT, 0</code> to <code>900, 672</code>.)</p>
+<pre><code class="lang-cppwinrt">HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+    CW_USEDEFAULT, 0, 900, 672, nullptr, nullptr, hInstance, nullptr);
+</code></pre>
+</li>
+<li><p>In the WndProc function, add <code>case WM_CREATE</code> to the <em>message</em> switch block. In this case, you initialize the CompositionHost and create the button.</p>
+<pre><code class="lang-cppwinrt">case WM_CREATE:
+{
+    compHost-&gt;Initialize(hWnd);
+    srand(time(nullptr));
+
+    CreateWindow(TEXT(&quot;button&quot;), TEXT(&quot;Add element&quot;),
+        WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+        12, 12, 100, 50,
+        hWnd, (HMENU)BTN_ADD, nullptr, nullptr);
+}
+break;
+</code></pre>
+</li>
+<li><p>Also in the WndProc function, handle the button click to add a composition element to the UI.</p>
+<p>Add <code>case BTN_ADD</code> to the <em>wmId</em> switch block inside the WM_COMMAND block.</p>
+<pre><code class="lang-cppwinrt">case BTN_ADD: // addButton click
+{
+    double size = (double)(rand() % 150 + 50);
+    double x = (double)(rand() % 600);
+    double y = (double)(rand() % 200);
+    compHost-&gt;AddElement(size, x, y);
+    break;
+}
+</code></pre>
+</li>
+</ol>
+<p>You can now build and run your app. If you need to, check the complete code at the end of the tutorial to make sure all the code is in the right places.</p>
+<p>When you run the app and click the button, you should see animated squares added to the UI.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows.UI.Composition-Win32-Samples/tree/master/cpp/HelloComposition">Win32 HelloComposition sample (GitHub)</a></li>
+<li><a href="/windows/desktop/learnwin32/learn-to-program-for-windows">Get Started with Win32 and C++</a></li>
+<li><a href="/windows/uwp/get-started/">Get started with Windows apps</a> (UWP)</li>
+<li><a href="/windows/uwp/porting/desktop-to-uwp-enhance">Enhance your desktop application for Windows</a> (UWP)</li>
+<li><a href="/uwp/api/windows.ui.composition">Windows.UI.Composition namespace</a> (UWP)</li>
+</ul>
+<h2 id="complete-code">Complete code</h2>
+<p>Here's the complete code for the CompositionHost class and the InitInstance method.</p>
+<h3 id="compositionhosth">CompositionHost.h</h3>
+<pre><code class="lang-cppwinrt">#pragma once
+#include &lt;winrt/Windows.UI.Composition.Desktop.h&gt;
+#include &lt;windows.ui.composition.interop.h&gt;
+#include &lt;DispatcherQueue.h&gt;
+
+class CompositionHost
+{
+public:
+    ~CompositionHost();
+    static CompositionHost* GetInstance();
+
+    void Initialize(HWND hwnd);
+    void AddElement(float size, float x, float y);
+
+private:
+    CompositionHost();
+
+    void CreateDesktopWindowTarget(HWND window);
+    void EnsureDispatcherQueue();
+    void CreateCompositionRoot();
+
+    winrt::Windows::UI::Composition::Compositor m_compositor{ nullptr };
+    winrt::Windows::UI::Composition::Desktop::DesktopWindowTarget m_target{ nullptr };
+    winrt::Windows::System::DispatcherQueueController m_dispatcherQueueController{ nullptr };
+};
+</code></pre>
+<h3 id="compositionhostcpp">CompositionHost.cpp</h3>
+<pre><code class="lang-cppwinrt">#include &quot;pch.h&quot;
+#include &quot;CompositionHost.h&quot;
+
+using namespace winrt;
+using namespace Windows::System;
+using namespace Windows::UI;
+using namespace Windows::UI::Composition;
+using namespace Windows::UI::Composition::Desktop;
+using namespace Windows::Foundation::Numerics;
+
+CompositionHost::CompositionHost()
+{
+}
+
+CompositionHost* CompositionHost::GetInstance()
+{
+    static CompositionHost instance;
+    return &amp;instance;
+}
+
+CompositionHost::~CompositionHost()
+{
+}
+
+void CompositionHost::Initialize(HWND hwnd)
+{
+    EnsureDispatcherQueue();
+    if (m_dispatcherQueueController) m_compositor = Compositor();
+
+    if (m_compositor)
+    {
+        CreateDesktopWindowTarget(hwnd);
+        CreateCompositionRoot();
+    }
+}
+
+void CompositionHost::EnsureDispatcherQueue()
+{
+    namespace abi = ABI::Windows::System;
+
+    if (m_dispatcherQueueController == nullptr)
+    {
+        DispatcherQueueOptions options
+        {
+            sizeof(DispatcherQueueOptions), /* dwSize */
+            DQTYPE_THREAD_CURRENT,          /* threadType */
+            DQTAT_COM_ASTA                  /* apartmentType */
+        };
+
+        Windows::System::DispatcherQueueController controller{ nullptr };
+        check_hresult(CreateDispatcherQueueController(options, reinterpret_cast&lt;abi::IDispatcherQueueController**&gt;(put_abi(controller))));
+        m_dispatcherQueueController = controller;
+    }
+}
+
+void CompositionHost::CreateDesktopWindowTarget(HWND window)
+{
+    namespace abi = ABI::Windows::UI::Composition::Desktop;
+
+    auto interop = m_compositor.as&lt;abi::ICompositorDesktopInterop&gt;();
+    DesktopWindowTarget target{ nullptr };
+    check_hresult(interop-&gt;CreateDesktopWindowTarget(window, false, reinterpret_cast&lt;abi::IDesktopWindowTarget**&gt;(put_abi(target))));
+    m_target = target;
+}
+
+void CompositionHost::CreateCompositionRoot()
+{
+    auto root = m_compositor.CreateContainerVisual();
+    root.RelativeSizeAdjustment({ 1.0f, 1.0f });
+    root.Offset({ 124, 12, 0 });
+    m_target.Root(root);
+}
+
+void CompositionHost::AddElement(float size, float x, float y)
+{
+    if (m_target.Root())
+    {
+        auto visuals = m_target.Root().as&lt;ContainerVisual&gt;().Children();
+        auto visual = m_compositor.CreateSpriteVisual();
+
+        auto element = m_compositor.CreateSpriteVisual();
+        uint8_t r = (double)(double)(rand() % 255);;
+        uint8_t g = (double)(double)(rand() % 255);;
+        uint8_t b = (double)(double)(rand() % 255);;
+
+        element.Brush(m_compositor.CreateColorBrush({ 255, r, g, b }));
+        element.Size({ size, size });
+        element.Offset({ x, y, 0.0f, });
+
+        auto animation = m_compositor.CreateVector3KeyFrameAnimation();
+        auto bottom = (float)600 - element.Size().y;
+        animation.InsertKeyFrame(1, { element.Offset().x, bottom, 0 });
+
+        using timeSpan = std::chrono::duration&lt;int, std::ratio&lt;1, 1&gt;&gt;;
+
+        std::chrono::seconds duration(2);
+        std::chrono::seconds delay(3);
+
+        animation.Duration(timeSpan(duration));
+        animation.DelayTime(timeSpan(delay));
+        element.StartAnimation(L&quot;Offset&quot;, animation);
+        visuals.InsertAtTop(element);
+
+        visuals.InsertAtTop(visual);
+    }
+}
+</code></pre>
+<h3 id="hellocompositioncpp-partial">HelloComposition.cpp (Partial)</h3>
+<pre><code class="lang-cppwinrt">#include &quot;pch.h&quot;
+#include &quot;HelloComposition.h&quot;
+#include &quot;CompositionHost.h&quot;
+
+#define MAX_LOADSTRING 100
+#define BTN_ADD 1000
+
+CompositionHost* compHost = CompositionHost::GetInstance();
+
+// Global Variables:
+
+// ...
+// ... code not shown ...
+// ...
+
+BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+{
+   hInst = hInstance; // Store instance handle in our global variable
+
+   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+      CW_USEDEFAULT, 0, 900, 672, nullptr, nullptr, hInstance, nullptr);
+
+// ...
+// ... code not shown ...
+// ...
+}
+
+// ...
+
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+    switch (message)
+    {
+// Add this...
+    case WM_CREATE:
+    {
+        compHost-&gt;Initialize(hWnd);
+        srand(time(nullptr));
+
+        CreateWindow(TEXT(&quot;button&quot;), TEXT(&quot;Add element&quot;),
+            WS_VISIBLE | WS_CHILD | BS_PUSHBUTTON,
+            12, 12, 100, 50,
+            hWnd, (HMENU)BTN_ADD, nullptr, nullptr);
+    }
+    break;
+// ...
+    case WM_COMMAND:
+    {
+        int wmId = LOWORD(wParam);
+        // Parse the menu selections:
+        switch (wmId)
+        {
+        case IDM_ABOUT:
+            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+            break;
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
+            break;
+// Add this...
+        case BTN_ADD: // addButton click
+        {
+            double size = (double)(rand() % 150 + 50);
+            double x = (double)(rand() % 600);
+            double y = (double)(rand() % 200);
+            compHost-&gt;AddElement(size, x, y);
+            break;
+        }
+// ...
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        }
+    }
+    break;
+    case WM_PAINT:
+    {
+        PAINTSTRUCT ps;
+        HDC hdc = BeginPaint(hWnd, &amp;ps);
+        // TODO: Add any drawing code that uses hdc here...
+        EndPaint(hWnd, &amp;ps);
+    }
+    break;
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        break;
+    default:
+        return DefWindowProc(hWnd, message, wParam, lParam);
+    }
+    return 0;
+}
+
+// ...
+// ... code not shown ...
+// ...
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/ui/using-the-visual-layer-with-win32.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

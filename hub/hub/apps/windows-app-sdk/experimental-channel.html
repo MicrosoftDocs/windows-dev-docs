@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Latest experimental channel release notes for the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Latest experimental channel release notes for the Windows App SDK ">
+    
+    <meta name="description" content="Learn about the latest experimental releases of the Windows App SDK.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="latest-experimental-channel-release-notes-for-the-windows-app-sdk">Latest experimental channel release notes for the Windows App SDK</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The experimental channel is <strong>not supported</strong> for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The experimental channel includes releases of the Windows App SDK with <a href="release-channels.html#features-available-by-release-channel">experimental channel features</a> in early stages of development. APIs for experimental features have the <a href="/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute">Experimental</a> attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel are subject to extensive revisions and breaking changes. Experimental features and APIs may be removed from subsequent releases at any time.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on experimental releases, see <a href="preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<h2 id="version-18-experimental-180-experimental4">Version 1.8 Experimental (1.8.0-Experimental4)</h2>
+<h3 id="use-on-device-ai-with-windows-ai-apis">Use on-device AI with Windows AI APIs</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See <a href="/windows/ai/npu-devices">Copilot+ PCs Developer Guide</a> to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.</p>
+</div>
+<p>The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.</p>
+<p>For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the <a href="/windows/ai/rai">Developing Responsible Generative AI Applications and Features on Windows</a> guidance.</p>
+<h3 id="microsoft-windows-ml">Microsoft Windows ML</h3>
+<p><a href="/windows/ai/new-windows-ml/overview">Windows ML</a> bringing hardware-accelerated machine learning capabilities to Windows applications. The Microsoft.WindowsAppSDK.ML package provides a Windows-optimized version of ONNX Runtime with simplified APIs for managing execution providers.</p>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li>Hardware Abstraction: Automatically discovers and manages execution providers compatible with your hardware.</li>
+<li>Simplified EP Management: Handles acquisition, installation, and registration of execution providers on the local device your app runs on.</li>
+<li>Seamless ONNX Runtime Integration: Works directly with ONNX Runtime APIs for model inference.</li>
+<li>Multi-Language Support: Available for C++, C#, Python, and other languages.</li>
+</ul>
+<h3 id="windowsappsdkpackages-renamed">WindowsAppSDK.Packages renamed</h3>
+<p>The NuGet Component Package <code>Microsoft.WindowsAppSDK.Packages</code> was renamed to <code>Microsoft.WindowsAppSDK.Runtime</code>. This change better reflects that package's purpose and clarifies its role within the SDK - specifically, that it encapsulates the runtime component.</p>
+<h3 id="prompt-size-limit-reporting">Prompt Size Limit Reporting</h3>
+<p>Allows applications to determine if an input exceeds the allowable size for a Text Summarizer call. If the input is too large, the API returns an index indicating the current limit, enabling developers to adjust the input accordingly. This limit is based on token count rather than byte or character length, and it can vary over time due to multiple factors. Therefore, applications should treat the limit as dynamic and subject to change.</p>
+<h3 id="text-rewriter-tone">Text Rewriter Tone</h3>
+<p>Enables text rewriting with specific tones. The Casual option rephrases content to sound more informal and conversational, using natural, spontaneous phrasing while preserving meaning and format. The Formal option transforms text into a polished, professional version, maintaining the original structure and details with precise language suitable for formal context. The General option retains the original tone and intent, ensuring the meaning remains unchanged.</p>
+<h3 id="conversation-summary-options">Conversation Summary Options</h3>
+<p>Enables developers to specify the desired output language for conversation summarization. This allows applications to generate summaries in a targeted language, enhancing localization, and user experience.</p>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li><p>Removed duplicate .winmd files for AI components. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/5439">Windows App SDK GitHub Issue #5439</a></p>
+</li>
+<li><p>Addressed a potential crash in <code>ApplicationDataProvider::GetStateFolderUris</code> caused by reentrancy. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/10513">Windows App SDK GitHub Issue #10513</a></p>
+</li>
+<li><p>Addressed a UI bug where the <code>TitleBar</code> displayed incorrect spacing when a short title was used. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/10492">Windows App SDK GitHub Issue #10492</a></p>
+</li>
+<li><p>Addressed a UI bug where the <code>CalendarDatePicker</code> control displayed incorrect icon margins when a long header was set. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/10469">Windows App SDK GitHub Issue #10469</a></p>
+</li>
+<li><p>Resolved an issue related to versioning mismatches between WIndowsAppSDK and Windows SDK NuGet packages, which can cause new projects to fail to build out of the box. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/10467">Windows App SDK GitHub Issue #10467</a></p>
+</li>
+<li><p>Addressed a regression where the mouse wheel input was ignored if the &quot;Scroll inactive windows when hovering over them&quot; setting was disabled, making windows appear perpetually inactive. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/10091">Windows App SDK GitHub Issue #10091</a></p>
+</li>
+<li><p>Addressed a deployment bug where failing to set <code>$(WindowsPackageType)=MSIX</code> in the project file prevents the Deployment Manager from being added, causing apps to require admin privileges unexpectedly. For more information see <a href="https://github.com/microsoft/WindowsAppSDK/issues/8182">Windows App SDK GitHub Issue #8182</a></p>
+</li>
+</ul>
+<h3 id="new-apis-for-18-experimental4">New APIs for 1.8-experimental4</h3>
+<p>This release includes the following new and modified experimental APIs:</p>
+<pre><code>Microsoft.UI.Composition
+ 
+    CompositionNotificationDeferral
+    CompositionProjectedShadow
+        MaxOpacity
+        MinOpacity
+        OpacityFalloff
+ 
+    CompositionProjectedShadowCaster
+        AncestorClip
+        Mask
+ 
+    CompositionProjectedShadowDrawOrder
+    CompositionProjectedShadowReceiver
+        DrawOrder
+        Mask
+</code></pre>
+<pre><code>Microsoft.UI.Composition.Experimental
+ 
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+</code></pre>
+<pre><code>Microsoft.UI.Content
+ 
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        Disconnected
+        IsRemoteEndpointConnected
+        Root
+ 
+    ContentIslandEnvironment
+        CurrentOrientation
+        NativeOrientation
+        ThemeChanged
+ 
+    ContentSite
+        TryGetAutomationProvider
+ 
+    ContentSiteEnvironment
+        CurrentOrientation
+        NativeOrientation
+        NotifyThemeChanged
+ 
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+ 
+    DesktopPopupSiteBridge
+        AnchoringBehavior
+        AnchoringPixelAlignment
+ 
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+ 
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentNodeOwner
+    IContentSiteBridgeEndpointConnectionPrivate
+    PopupAnchoringOptions
+    PopupWindowSiteBridge
+    ProcessStarter
+    SystemVisualSiteBridge
+</code></pre>
+<pre><code>Microsoft.UI.Designer
+ 
+    DesignerOutputHost
+</code></pre>
+<pre><code>Microsoft.UI.Input
+ 
+    InputKeyboardSource
+        GetForWindowId
+ 
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+ 
+    InputLightDismissEventArgs
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+ 
+    InputPopupController
+    LightDismissReason
+    PopupPointerMode
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+</code></pre>
+<pre><code>Microsoft.UI.Input.Experimental
+ 
+    ExpInputSite
+    ExpPointerPoint
+</code></pre>
+<pre><code>Microsoft.UI.Windowing
+ 
+    AppWindow
+        GetCurrentPlacement
+        PersistedStateId
+        PlacementRestorationBehavior
+        SaveCurrentPlacement
+        SaveCurrentPlacementForAllPersistedStateIds
+        SetCurrentPlacement
+ 
+    AppWindowPlacementDetails
+    DisplayArea
+        GetMetricsFromWindowId
+ 
+    PlacementInfo
+    PlacementRestorationBehavior
+</code></pre>
+<pre><code>Microsoft.UI.Xaml
+ 
+    XamlIsland
+        ShouldConstrainPopupsToWorkArea
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Automation.Peers
+ 
+    AutomationEvents
+        Notification
+ 
+    InkCanvasAutomationPeer
+    PagerControlAutomationPeer
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls
+ 
+    ContentDialogPlacement
+        UnconstrainedPopup
+ 
+    DoInkPresenterWork
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    InfoBar
+        Opened
+ 
+    InfoBarOpenedEventArgs
+    InkCanvas
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+ 
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+ 
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+ 
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingScrollStartingEventArgs
+    ScrollingZoomStartingEventArgs
+    ScrollView
+        ScrollStarting
+        ZoomStarting
+ 
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+ 
+    StackLayoutState
+    TeachingTip
+        Opened
+ 
+    TeachingTipOpenedEventArgs
+    UniformGridLayoutState
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls.Primitives
+ 
+    ScrollPresenter
+        ScrollStarting
+        ZoomStarting
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Foundation
+ 
+    AIFoundationContract
+    EmbeddingVector
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Imaging
+ 
+    ImageObjectRemover
+    ImageObjectRemoverContract
+</code></pre>
+<pre><code>Microsoft.Windows.AI.MachineLearning
+ 
+    ExecutionProvider
+    ExecutionProviderCatalog
+    ExecutionProviderReadyResult
+    ExecutionProviderReadyResultState
+    ExecutionProviderReadyState
+    MachineLearningContract
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Text
+ 
+    ConversationItem
+    ConversationSummaryOptions
+    InputKind
+    LanguageModel
+        CreateContext
+        CreateContext
+        CreateContext
+        GenerateEmbeddingVectors
+        GenerateEmbeddingVectors
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GetUsablePromptLength
+        GetUsablePromptLength
+        GetVectorSpaceId
+ 
+    LanguageModelEmbeddingVectorResult
+    TextRewriter
+        RewriteAsync
+ 
+    TextRewriteTone
+    TextSummarizer
+        IsPromptLargerThanContext
+        SummarizeConversationAsync
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+ 
+    Task
+        Run
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+ 
+    DeploymentManager
+        Repair
+ 
+    DeploymentStatus
+        PackageRepairFailed
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications
+ 
+    AppNotification
+        ConferencingConfig
+ 
+    AppNotificationConferencingConfig
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications.Builder
+ 
+    AppNotificationBuilder
+        AddCameraPreview
+ 
+    AppNotificationButton
+        SetSettingStyle
+ 
+    AppNotificationButtonSettingStyle
+</code></pre>
+<pre><code>Microsoft.Windows.SemanticSearch
+ 
+    EmbeddingVector
+    SemanticSearchContract
+</code></pre>
+<pre><code>Microsoft.Windows.Storage
+ 
+    ApplicationData
+        GetForUnpackaged
+</code></pre>
+<pre><code>Microsoft.Windows.Storage.Pickers
+ 
+    FileOpenPicker
+    FileSavePicker
+    FolderPicker
+    PickerLocationId
+    PickerViewMode
+    PickFileResult
+    PickFolderResult
+</code></pre>
+<pre><code>Microsoft.Windows.Vision
+ 
+    ScreenRegionBoundingBox
+    ScreenRegionDetectionContract
+    ScreenRegionLabel
+</code></pre>
+<pre><code>Microsoft.Windows.Widgets.Feeds.Providers
+ 
+    FeedManager
+        TryRemoveAnnouncementById
+ 
+    IFeedManager3
+</code></pre>
+<h3 id="known-issues">Known Issues</h3>
+<ul>
+<li><p>When upgrading from version 1.8.250610002-experimental3 (or later) of the Microsoft.WindowsAppSDK NuGet package in a C++ project, you may see a compatibility error, such as with Microsoft.WindowsAppSDK.DWrite. This stems from a limitation in packages.config. To resolve it, remove all existing WindowsAppSDK references and re-add the updated Microsoft.WindowsAppSDK package.</p>
+</li>
+<li><p>Windows ML requires framework-dependent deployment; self-containment deployment is not supported. Apps using Windows ML must reference the Microsoft.WindowsAppSDK package, which includes transitive dependencies on the Microsoft.WindowsAppSDK.ML and Microsoft.WindowsAppSDK.Runtime components, both of which are required.</p>
+</li>
+<li><p>Windows ML is supported only on Windows 11 version 24H2 or newer (Build 26100+), and only on x64 and ARM64 architectures. x86 is not supported.</p>
+</li>
+<li><p>The StoragePickers APIs (FileOpenPicker, FileSavePicker, FolderPicker) only work in self-contained deployments due to a localization bug. Non-self-contained apps will crash at runtime when invoking these pickers. As a workaround, copy Microsoft.WindowsAppRuntime.pri to your project folder and configure it to copy to the output directory using:</p>
+</li>
+</ul>
+<pre><code>&lt;ItemGroup&gt;
+   &lt;None Update=&quot;Microsoft.WindowsAppRuntime.pri&quot;&gt;
+      &lt;CopyToOutputDirectory&gt;PreserveNewest&lt;/CopyToOutputDirectory&gt;
+   &lt;/None&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<h2 id="version-18-experimental-180-experimental3">Version 1.8 Experimental (1.8.0-experimental3)</h2>
+<details>
+<summary>Expand to see details for the Windows App SDK 1.8 Experimental (1.8.0-experimental3) release</summary>
+<h3 id="use-on-device-ai-with-windows-ai-apis-1">Use on-device AI with Windows AI APIs</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See <a href="/windows/ai/npu-devices">Copilot+ PCs Developer Guide</a> to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.</p>
+</div>
+<p>The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.</p>
+<p>For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the <a href="/windows/ai/rai">Developing Responsible Generative AI Applications and Features on Windows</a> guidance.</p>
+<h3 id="new-apis-for-18-experimental3">New APIs for 1.8-experimental3</h3>
+<p>This release includes the following new and modified experimental APIs:</p>
+<pre><code>Microsoft.UI.Composition
+
+    CompositionNotificationDeferral
+    CompositionProjectedShadow
+        MaxOpacity
+        MinOpacity
+        OpacityFalloff
+
+    CompositionProjectedShadowCaster
+        AncestorClip
+        Mask
+
+    CompositionProjectedShadowDrawOrder
+    CompositionProjectedShadowReceiver
+        DrawOrder
+        Mask
+</code></pre>
+<pre><code>Microsoft.UI.Composition.Experimental
+
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+</code></pre>
+<pre><code>Microsoft.UI.Content
+
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        Disconnected
+        IsRemoteEndpointConnected
+        Root
+
+    ContentIslandEnvironment
+        CurrentOrientation
+        NativeOrientation
+        ThemeChanged
+
+    ContentSite
+        TryGetAutomationProvider
+
+    ContentSiteEnvironment
+        CurrentOrientation
+        NativeOrientation
+        NotifyThemeChanged
+
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentNodeOwner
+    IContentSiteBridgeEndpointConnectionPrivate
+    PopupWindowSiteBridge
+    ProcessStarter
+    SystemVisualSiteBridge
+</code></pre>
+<pre><code>Microsoft.UI.Designer
+
+    DesignerOutputHost
+</code></pre>
+<pre><code>Microsoft.UI.Input
+
+    InputKeyboardSource
+        GetForWindowId
+
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+
+    InputLightDismissEventArgs
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+
+    InputPopupController
+    LightDismissReason
+    PopupPointerMode
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+</code></pre>
+<pre><code>Microsoft.UI.Input.Experimental
+
+    ExpInputSite
+    ExpPointerPoint
+</code></pre>
+<pre><code>Microsoft.UI.Windowing
+
+    AppWindow
+        GetCurrentPlacement
+        PersistedStateId
+        PlacementRestorationBehavior
+        SaveCurrentPlacement
+        SaveCurrentPlacementForAllPersistedStateIds
+        SetCurrentPlacement
+
+    AppWindowPlacementDetails
+    DisplayArea
+        GetMetricsFromWindowId
+
+    PlacementInfo
+    PlacementRestorationBehavior
+</code></pre>
+<pre><code>Microsoft.UI.Xaml
+
+    XamlIsland
+        ShouldConstrainPopupsToWorkArea
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Automation.Peers
+
+    AutomationEvents
+        Notification
+
+    InkCanvasAutomationPeer
+    PagerControlAutomationPeer
+
+Microsoft.UI.Xaml.Controls
+
+    ContentDialogPlacement
+        UnconstrainedPopup
+
+    DoInkPresenterWork
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    InfoBar
+        Opened
+
+    InfoBarOpenedEventArgs
+    InkCanvas
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingScrollStartingEventArgs
+    ScrollingZoomStartingEventArgs
+    ScrollView
+        ScrollStarting
+        ZoomStarting
+
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    StackLayoutState
+    TeachingTip
+        Opened
+
+    TeachingTipOpenedEventArgs
+    UniformGridLayoutState
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls.Primitives
+
+    ScrollPresenter
+        ScrollStarting
+        ZoomStarting
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Foundation
+
+    AIFoundationContract
+    EmbeddingVector
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Imaging
+
+    ImageObjectRemover
+    ImageObjectRemoverContract
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Text
+
+    ConversationItem
+    ConversationSummaryOptions
+    InputKind
+    LanguageModel
+        CreateContext
+        CreateContext
+        CreateContext
+        GenerateEmbeddingVectors
+        GenerateEmbeddingVectors
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GetUsablePromptLength
+        GetUsablePromptLength
+        GetVectorSpaceId
+
+    LanguageModelEmbeddingVectorResult
+    TextSummarizer
+        SummarizeConversationAsync
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+
+    Task
+        Run
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    DeploymentManager
+        Repair
+
+    DeploymentStatus
+        PackageRepairFailed
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications
+
+    AppNotification
+        ConferencingConfig
+
+    AppNotificationConferencingConfig
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications.Builder
+
+    AppNotificationBuilder
+        AddCameraPreview
+
+    AppNotificationButton
+        SetSettingStyle
+
+    AppNotificationButtonSettingStyle
+</code></pre>
+<pre><code>Microsoft.Windows.SemanticSearch
+
+    EmbeddingVector
+    SemanticSearchContract
+</code></pre>
+<pre><code>Microsoft.Windows.Storage
+
+    ApplicationData
+        GetForUnpackaged
+</code></pre>
+<pre><code>Microsoft.Windows.Storage.Pickers
+
+    FileOpenPicker
+    FileSavePicker
+    FolderPicker
+    PickerLocationId
+    PickerViewMode
+    PickFileResult
+    PickFolderResult
+</code></pre>
+<pre><code>Microsoft.Windows.Vision
+
+    ScreenRegionBoundingBox
+    ScreenRegionDetectionContract
+    ScreenRegionLabel
+</code></pre>
+<pre><code>Microsoft.Windows.Widgets.Feeds.Providers
+
+    FeedManager
+        TryRemoveAnnouncementById
+
+    IFeedManager3
+</code></pre>
+</details>
+<h2 id="version-18-experimental-180-experimental2">Version 1.8 Experimental (1.8.0-experimental2)</h2>
+<details>
+<summary>Expand to see details for the Windows App SDK 1.8 Experimental (1.8.0-experimental2) release</summary>
+<h3 id="use-on-device-ai-with-windows-ai-apis-2">Use on-device AI with Windows AI APIs</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See <a href="/windows/ai/npu-devices">Copilot+ PCs Developer Guide</a> to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.</p>
+</div>
+<p>The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.</p>
+<p>For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the <a href="/windows/ai/rai">Developing Responsible Generative AI Applications and Features on Windows</a> guidance.</p>
+<h4 id="decimal-datatype">Decimal DataType</h4>
+<p>The new <code>Decimal</code> support offers a high-precision base-10 numeric data type that is invaluable for financial and scientific calculations, avoiding imprecision and rounding errors inherent to floating-point data types. It is structured as a 96-bit (12-byte) unsigned integer, scaled by a variable power of 10, allowing for precise representation of decimal values. This enables decimal support for programming languages lacking decimal data types and provides interoperability with languages that do support decimal (e.g. C#, Python).</p>
+<h4 id="nuget-metapackage">NuGet Metapackage</h4>
+<p>The Windows App SDK NuGet package has been converted to a NuGet metapackage. Each component contributing to the Windows App SDK is now a component NuGet package and is listed as a dependency by the metapackage. This allows developers to choose either the metapackage or select specific component packages for their applications. The use of individual component packages enables developers to include only the APIs and functionalities that are necessary for their apps. The default experience behaves as if <code>WindowsAppSDKSelfContained</code> had been set as True, but the <code>Microsoft.WindowsAppSDK.Packages</code> package can be referenced to use framework package deployment.</p>
+<h4 id="microsoftwindowssdkbuildtoolsmsix-refactor">Microsoft.Windows.SDK.BuildTools.MSIX Refactor</h4>
+<p>The MSIX publishing support has been factored into a standalone nuget package, which can be independently maintained and consumed by Windows App SDK and other projects.  In addition, several feature gaps with Single-Project solutions have been addressed including generation of MSIX bundles and MSIX upload packages.</p>
+<h4 id="windows-ai-apis">Windows AI APIs</h4>
+<h5 id="low-rank-adaptation-lora-for-phi-silica">Low-Rank Adaptation (LoRA) for Phi Silica</h5>
+<p>Low-Rank Adaption (LoRA) for Phi Silica allows developers to fine-tune the on-device language model (Phi Silica) using their own custom data. This adapter enables output to align for specific scenarios like finance, medical, and education. See <a href="/windows/ai/apis/phi-silica-lora">Phi Silica LoRA</a> for details.</p>
+<h5 id="text-intelligence---conversation-summary">Text Intelligence - Conversation Summary</h5>
+<p>Phi Silica now has a Summarize Conversation feature that allows you to summarize what people have said over an email, chat, or thread. See <a href="/windows/ai/apis/phi-silica">Phi Silica</a> for more details.</p>
+<h3 id="new-apis-for-18-experimental2">New APIs for 1.8-experimental2</h3>
+<p>This release includes the following new and modified experimental APIs:</p>
+<pre><code>Microsoft.UI.Composition
+
+    CompositionNotificationDeferral
+    CompositionProjectedShadow
+        MaxOpacity
+        MinOpacity
+        OpacityFalloff
+
+    CompositionProjectedShadowCaster
+        AncestorClip
+        Mask
+
+    CompositionProjectedShadowDrawOrder
+    CompositionProjectedShadowReceiver
+        DrawOrder
+        Mask
+</code></pre>
+<pre><code>Microsoft.UI.Composition.Experimental
+
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+</code></pre>
+<pre><code>Microsoft.UI.Content
+
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        Disconnected
+        IsRemoteEndpointConnected
+        Root
+
+    ContentIslandEnvironment
+        CurrentOrientation
+        NativeOrientation
+        ThemeChanged
+
+    ContentSite
+        SetContentNodeParent
+        TryGetAutomationProvider
+
+    ContentSiteEnvironment
+        CurrentOrientation
+        NativeOrientation
+        NotifyThemeChanged
+
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentNodeOwner
+    IContentSiteBridgeEndpointConnectionPrivate
+    PopupWindowSiteBridge
+    ProcessStarter
+    SystemVisualSiteBridge
+</code></pre>
+<pre><code>Microsoft.UI.Input
+
+    InputKeyboardSource
+        GetForWindowId
+
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+</code></pre>
+<pre><code>Microsoft.UI.Windowing
+
+    AppWindow
+        GetCurrentPlacement
+        PersistedStateId
+        PlacementRestorationBehavior
+        SaveCurrentPlacement
+        SaveCurrentPlacementForAllPersistedStateIds
+        SetCurrentPlacement
+
+    AppWindowPlacementDetails
+    DisplayArea
+        GetMetricsFromWindowId
+
+    PlacementInfo
+    PlacementRestorationBehavior
+</code></pre>
+<pre><code>Microsoft.UI.Xaml
+
+    XamlIsland
+        ShouldConstrainPopupsToWorkArea
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Automation.Peers
+
+    AutomationEvents
+        Notification
+
+    InkCanvasAutomationPeer
+    PagerControlAutomationPeer
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls
+
+    ContentDialogPlacement
+        UnconstrainedPopup
+
+    DoInkPresenterWork
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    InkCanvas
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingScrollStartingEventArgs
+    ScrollingZoomStartingEventArgs
+    ScrollView
+        ScrollStarting
+        ZoomStarting
+
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    StackLayoutState
+    TeachingTip
+        Opened
+
+    TeachingTipOpenedEventArgs
+    UniformGridLayoutState
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls.Primitives
+
+    ScrollPresenter
+        ScrollStarting
+        ZoomStarting
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Foundation
+
+    AIFoundationContract
+    EmbeddingVector
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Imaging
+
+    ImageObjectRemover
+    ImageObjectRemoverContract
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Text
+
+    ConversationItem
+    ConversationSummaryOptions
+    InputKind
+    LanguageModel
+        CreateContext
+        CreateContext
+        CreateContext
+        GenerateEmbeddingVectors
+        GenerateEmbeddingVectors
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GetUsablePromptLength
+        GetUsablePromptLength
+        GetVectorSpaceId
+
+    LanguageModelEmbeddingVectorResult
+    TextSummarizer
+        SummarizeConversationAsync
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Text.Experimental (C#-only, see Known Issues)
+ 
+    LowRankAdaptation
+    LanguageModelOptionsExperimental
+    LanguageModelExperimental
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.Background.UniversalBGTask
+
+    Task
+        Run
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    DeploymentManager
+        Repair
+
+    DeploymentStatus
+        PackageRepairFailed
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications
+
+    AppNotification
+        ConferencingConfig
+
+    AppNotificationConferencingConfig
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications.Builder
+
+    AppNotificationBuilder
+        AddCameraPreview
+
+    AppNotificationButton
+        SetSettingStyle
+
+    AppNotificationButtonSettingStyle
+</code></pre>
+<pre><code>Microsoft.Windows.Storage
+
+    ApplicationData
+        GetForUnpackaged
+</code></pre>
+<pre><code>Microsoft.Windows.Storage.Pickers
+
+    FileOpenPicker
+    FileSavePicker
+    FolderPicker
+    PickerLocationId
+    PickerViewMode
+    PickFileResult
+    PickFolderResult
+</code></pre>
+<pre><code>Microsoft.Windows.Vision
+
+    ScreenRegionBoundingBox
+    ScreenRegionDetectionContract
+    ScreenRegionLabel
+</code></pre>
+<pre><code>Microsoft.Windows.Widgets.Feeds.Providers
+
+    FeedManager
+        TryRemoveAnnouncementById
+
+    IFeedManager3
+</code></pre>
+<pre><code>Microsoft.Windows.Widgets.Providers
+
+    WidgetInfo
+        Rank
+
+    WidgetUpdateRequestOptions
+        Rank
+</code></pre>
+<h3 id="known-issues-1">Known Issues</h3>
+<ul>
+<li>The Microsoft.Windows.AI.Text.Experimental API projections for C++ are missing in this release. The projections are available for use from C#.</li>
+<li>If you're using the Microsoft.WindowsAppSDK.WinUI component package in its default self-contained mode, make sure to set the WebView2EnableCsWinRTProjection property to true when utilizing WebView2 APIs. This helps prevent version conflicts and avoids related warnings.</li>
+<li>When using the WindowsAppSDK component packages, you may notice a warning <code>NU1603</code> indicating the specified version of a dependent component package was not found, but another was resolved instead.  This is expected with the experimental2 build and NuGet will correctly resolve a newer version of the package which will allow your project to build.  If you treat warnings as errors, you can temporarily treat this specific warning as not an error by specifying the property <code>&lt;WarningsNotAsErrors&gt;NU1603&lt;/WarningsNotAsErrors&gt;</code>.</li>
+</ul>
+</details>
+<h2 id="version-18-experimental-180-experimental1">Version 1.8 Experimental (1.8.0-experimental1)</h2>
+<details>
+<summary>Expand to see details for the Windows App SDK 1.8 Experimental (1.8.0-experimental1) release</summary>
+<h3 id="use-on-device-ai-with-windows-ai-apis-3">Use on-device AI with Windows AI APIs</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See <a href="/windows/ai/npu-devices">Copilot+ PCs Developer Guide</a> to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.</p>
+</div>
+<p>The Windows AI APIs offers several AI-powered features and APIs for you to easily, efficiently, and responsibly use on-device AI models in your Windows apps. In this release we are making available several scenario-focused APIs for you to leverage powerful capabilities without the need to find, run, or optimize your own Machine Learning (ML) models.</p>
+<p>Learn more about responsible development practices used during Windows AI API development that you can also apply as you create AI-assisted features in the <a href="/windows/ai/rai">Developing Responsible Generative AI Applications and Features on Windows</a> guidance.</p>
+<p>This is the latest release of the experimental channel.</p>
+<p>To download, retarget your WinAppSDK NuGet version to <code>1.8.250515001-experimental1</code>.</p>
+<h4 id="object-erase">Object Erase</h4>
+<p>The <code>ImageObjectRemover</code> can be used to remove objects from images. The model takes both an image and a greyscale mask indicating the object to be removed, erases the masked area from the image, and replaces the erased area with the image background.</p>
+<h3 id="new-apis-for-18-experimental1">New APIs for 1.8-experimental1</h3>
+<p>This release includes the following new and modified experimental APIs:</p>
+<pre><code>Microsoft.Graphics.Imaging
+
+    ImageBuffer
+    ImageBufferContract
+    ImageObjectExtractor
+    ImageObjectExtractorContract
+    ImageObjectExtractorHint
+    ImageObjectRemover
+    ImageObjectRemoverContract
+    ImageScaler
+    ImageScalerContract
+    PixelFormat
+</code></pre>
+<pre><code>Microsoft.UI.Composition
+
+    CompositionNotificationDeferral
+    CompositionProjectedShadow
+        MaxOpacity
+        MinOpacity
+        OpacityFalloff
+
+    CompositionProjectedShadowCaster
+        AncestorClip
+        Mask
+
+    CompositionProjectedShadowDrawOrder
+    CompositionProjectedShadowReceiver
+        DrawOrder
+        Mask
+</code></pre>
+<pre><code>Microsoft.UI.Composition.Experimental
+
+    ExpCompositionVisualSurface
+    ExpExpressionNotificationProperty
+    IExpCompositionPropertyChanged
+    IExpCompositionPropertyChangedListener
+    IExpCompositor
+    IExpVisual
+</code></pre>
+<pre><code>Microsoft.UI.Content
+
+    ContentAppWindowBridge
+    ContentDisplayOrientations
+    ContentExternalBackdropLink
+    ContentExternalOutputLink
+    ContentIsland
+        Connected
+        ConnectionInfo
+        ConnectRemoteEndpoint
+        Disconnected
+        IsRemoteEndpointConnected
+        Root
+
+    ContentIslandEnvironment
+        CurrentOrientation
+        NativeOrientation
+        ThemeChanged
+
+    ContentSite
+        SetContentNodeParent
+        TryGetAutomationProvider
+
+    ContentSiteEnvironment
+        CurrentOrientation
+        NativeOrientation
+        NotifyThemeChanged
+
+    CoreWindowSiteBridge
+    CoreWindowTopLevelWindowBridge
+    DesktopChildSiteBridge
+        AcceptRemoteEndpoint
+        ConnectionInfo
+        IsRemoteEndpointConnected
+        RemoteEndpointConnecting
+        RemoteEndpointDisconnected
+        RemoteEndpointRequestedStateChanged
+
+    DesktopSiteBridge
+        TryCreatePopupSiteBridge
+
+    EndpointConnectionEventArgs
+    EndpointRequestedStateChangedEventArgs
+    IContentIslandEndpointConnectionPrivate
+    IContentNodeOwner
+    IContentSiteBridgeEndpointConnectionPrivate
+    PopupWindowSiteBridge
+    ProcessStarter
+    SystemVisualSiteBridge
+</code></pre>
+<pre><code>Microsoft.UI.Input
+
+    InputKeyboardSource
+        GetForWindowId
+
+    InputLayoutPolicy
+    InputLightDismissAction
+        GetForIsland
+
+    InputPointerActivationBehavior
+    InputPointerSource
+        ActivationBehavior
+        DirectManipulationHitTest
+        GetForVisual
+        GetForWindowId
+        RemoveForVisual
+        TouchHitTesting
+        TrySetDeviceKinds
+
+    ProximityEvaluation
+    TouchHitTestingEventArgs
+</code></pre>
+<pre><code>Microsoft.UI.Input.Experimental
+
+    ExpInputSite
+    ExpPointerPoint
+</code></pre>
+<pre><code>Microsoft.UI.Windowing
+
+    AppWindow
+        GetCurrentPlacement
+        PersistedStateId
+        PlacementRestorationBehavior
+        SaveCurrentPlacement
+        SaveCurrentPlacementForAllPersistedStateIds
+        SetCurrentPlacement
+
+    AppWindowPlacementDetails
+    DisplayArea
+        GetMetricsFromWindowId
+
+    PlacementInfo
+    PlacementRestorationBehavior
+</code></pre>
+<pre><code>Microsoft.UI.Xaml
+
+    XamlIsland
+        ShouldConstrainPopupsToWorkArea
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Automation.Peers
+
+    AutomationEvents
+        Notification
+
+    InkCanvasAutomationPeer
+    PagerControlAutomationPeer
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls
+
+    ContentDialogPlacement
+        UnconstrainedPopup
+
+    DoInkPresenterWork
+    ElementFactory
+    FlowLayout
+    FlowLayoutAnchorInfo
+    FlowLayoutLineAlignment
+    FlowLayoutState
+    IApplicationViewSpanningRects
+    IndexPath
+    InkCanvas
+    ISelfPlayingAnimatedVisual
+    ItemContainer
+        CanUserInvoke
+        CanUserInvokeProperty
+        CanUserSelect
+        CanUserSelectProperty
+        ItemInvoked
+        MultiSelectMode
+        MultiSelectModeProperty
+
+    ItemContainerInteractionTrigger
+    ItemContainerInvokedEventArgs
+    ItemContainerMultiSelectMode
+    ItemContainerUserInvokeMode
+    ItemContainerUserSelectMode
+    LayoutPanel
+    NumberBox
+        InputScope
+        InputScopeProperty
+        TextAlignment
+        TextAlignmentProperty
+
+    PagerControl
+    PagerControlButtonVisibility
+    PagerControlDisplayMode
+    PagerControlSelectedIndexChangedEventArgs
+    PagerControlTemplateSettings
+    ProgressRing
+        DeterminateSource
+        DeterminateSourceProperty
+        IndeterminateSource
+        IndeterminateSourceProperty
+
+    RecyclePool
+    RecyclingElementFactory
+    ScrollingScrollStartingEventArgs
+    ScrollingZoomStartingEventArgs
+    ScrollView
+        ScrollStarting
+        ZoomStarting
+
+    SelectionModel
+    SelectionModelChildrenRequestedEventArgs
+    SelectionModelSelectionChangedEventArgs
+    SelectTemplateEventArgs
+    StackLayout
+        IsVirtualizationEnabled
+        IsVirtualizationEnabledProperty
+
+    StackLayoutState
+    UniformGridLayoutState
+</code></pre>
+<pre><code>Microsoft.UI.Xaml.Controls.Primitives
+
+    ScrollPresenter
+        ScrollStarting
+        ZoomStarting
+</code></pre>
+<pre><code>Microsoft.Windows.AI
+
+    AIFeatureReadyContract
+    AIFeatureReadyResult
+    AIFeatureReadyResultState
+    AIFeatureReadyState
+</code></pre>
+<pre><code>Microsoft.Windows.AI.ContentModeration
+
+    ContentFilterOptions
+    ContentModerationContract
+    ImageContentFilterSeverity
+    SeverityLevel
+    TextContentFilterSeverity
+</code></pre>
+<pre><code>Microsoft.Windows.AI.Generative
+
+    ImageDescriptionContract
+    ImageDescriptionGenerator
+    ImageDescriptionKind
+    ImageDescriptionResult
+    ImageDescriptionResultStatus
+    LanguageModel
+    LanguageModelContext
+    LanguageModelContract
+    LanguageModelEmbeddingVectorResult
+    LanguageModelOptions
+    LanguageModelResponseResult
+    LanguageModelResponseStatus
+</code></pre>
+<pre><code>Microsoft.Windows.ApplicationModel.WindowsAppRuntime
+
+    DeploymentManager
+        Repair
+
+    DeploymentStatus
+        PackageRepairFailed
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications
+
+    AppNotification
+        ConferencingConfig
+
+    AppNotificationConferencingConfig
+</code></pre>
+<pre><code>Microsoft.Windows.AppNotifications.Builder
+
+    AppNotificationBuilder
+        AddCameraPreview
+
+    AppNotificationButton
+        SetSettingStyle
+
+    AppNotificationButtonSettingStyle
+</code></pre>
+<pre><code>Microsoft.Windows.SemanticSearch
+
+    EmbeddingVector
+    SemanticSearchContract
+</code></pre>
+<pre><code>Microsoft.Windows.Storage
+
+    ApplicationData
+        GetForUnpackaged
+</code></pre>
+<pre><code>Microsoft.Windows.Storage.Pickers
+
+    FileOpenPicker
+    FileSavePicker
+    FolderPicker
+    PickerLocationId
+    PickerViewMode
+    PickFileResult
+    PickFolderResult
+</code></pre>
+<pre><code>Microsoft.Windows.Vision
+
+    BoundingBox
+    DetectedLineStyle
+    OrientationDetectionOptions
+    RecognizedLine
+    RecognizedLineStyle
+    RecognizedText
+    RecognizedWord
+    TextRecognitionContract
+    TextRecognizer
+    TextRecognizerOptions
+</code></pre>
+<pre><code>Microsoft.Windows.Widgets.Feeds.Providers
+
+    FeedManager
+        TryRemoveAnnouncementById
+
+    IFeedManager3
+</code></pre>
+<pre><code>Microsoft.Windows.Workloads
+
+    WorkloadPriority
+    WorkloadsContract
+</code></pre>
+<h3 id="bug-fixes-1">Bug fixes</h3>
+<p>This release includes the following bug fixes:</p>
+<ul>
+<li>Fixed an issue where mouse wheel input is ignored if the &quot;Scroll inactive windows when hovering over them&quot; option in Windows Settings is disabled. For more info, see GitHub issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/10091">#10091</a>.</li>
+</ul>
+</details>
+<h2 id="archive-of-experimental-channel-release-notes">Archive of experimental channel release notes</h2>
+<details>
+<summary>Expand for links to archived experimental channel release notes</summary>
+<ul>
+<li><a href="release-notes-archive/experimental-channel-1.7.html">Experimental channel release notes for the Windows App SDK 1.7</a></li>
+<li><a href="release-notes-archive/experimental-channel-1.6.html">Experimental channel release notes for the Windows App SDK 1.6</a></li>
+<li><a href="release-notes-archive/experimental-channel-1.5.html">Experimental channel release notes for the Windows App SDK 1.5</a></li>
+<li><a href="release-notes-archive/experimental-channel-1.4.html">Experimental channel release notes for the Windows App SDK 1.4</a></li>
+<li><a href="release-notes-archive/experimental-channel-1.3.html">Experimental channel release notes for the Windows App SDK 1.3</a></li>
+<li><a href="release-notes-archive/experimental-channel-1.2.html">Experimental channel release notes for the Windows App SDK 1.2</a></li>
+<li><a href="release-notes-archive/experimental-channel-1.0.html">Experimental channel release notes for the Windows App SDK 1.0</a></li>
+<li><a href="release-notes-archive/experimental-channel-0.8.html">Experimental channel release notes for the Windows App SDK 0.8</a></li>
+</ul>
+</details>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="stable-channel.html">Stable channel</a></li>
+<li><a href="preview-channel.html">Preview channel</a></li>
+<li><a href="set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../package-and-deploy/index.html#use-the-windows-app-sdk">Deploy apps that use the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/experimental-channel.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

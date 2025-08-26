@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows App SDK deployment guide for self-contained apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows App SDK deployment guide for self-contained apps ">
+    
+    <meta name="description" content="A Windows App SDK project is framework-dependent by default. To switch to self-contained deployment, follow the steps in this article (the terms *framework-dependent* and *self-contained* are described in [Windows App SDK deployment overview](../deploy-overview.md)).">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-sdk-deployment-guide-for-self-contained-apps">Windows App SDK deployment guide for self-contained apps</h1>
+
+<p>A Windows App SDK project is framework-dependent by default. To switch to self-contained deployment, follow the steps below (the terms <em>framework-dependent</em> and <em>self-contained</em> are described in <a href="../deploy-overview.html">Windows App SDK deployment overview</a>).</p>
+<ul>
+<li>In Visual Studio, right-click the app project node, and click <strong>Edit Project File</strong> to open the app project file for editing. For a C++ project, first click <strong>Unload Project</strong>.</li>
+<li>In the app project file, inside the main <code>PropertyGroup</code>, add <code>&lt;WindowsAppSDKSelfContained&gt;true&lt;/WindowsAppSDKSelfContained&gt;</code> as shown in the screenshot below.</li>
+</ul>
+<p><img src="../../images/winappsdk-self-contained.png" alt="Screenshot showing the WindowsAppSDKSelfContained property set in a project file."></p>
+<ul>
+<li>Save and close the project file.</li>
+<li>Click <strong>Reload Project</strong>.</li>
+<li>If you're using a <strong>Windows Application Packaging Project</strong> (rather than the single-project MSIX that you get with <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong>), then make all of the above changes in the project file for the packaging project as well.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Library projects should not be changed. Self-contained deployment should only be configured in app projects (and, where applicable, in a <strong>Windows Application Packaging Project</strong>).</p>
+</div>
+<p>For sample apps, see <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment">Windows App SDK self-contained deployment samples</a>.</p>
+<p>Having set the <code>WindowsAppSDKSelfContained</code> property to <code>true</code> in your project file, the contents of the Windows App SDK Framework package will be extracted to your build output, and deployed as part of your application.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>.NET apps need to be <a href="/dotnet/core/deploying/#publish-self-contained">published as self-contained</a> as well to be fully self-contained. See <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/f1a30c2524c785739fee842d02a1ea15c1362f8f/Samples/SelfContainedDeployment/cs-winui-unpackaged/SelfContainedDeployment.csproj#L12">this sample</a> for how to configure .NET self-contained with publish profiles. <code>dotnet publish</code> is not yet supported with Windows App SDK 1.1.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>C++ apps need to use the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md#what-is-the-hybrid-crt">hybrid CRT</a> as well to be fully self-contained. Importing <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/HybridCRT.props">HybridCRT.props</a> from <a href="/visualstudio/msbuild/customize-your-build#directorybuildprops-and-directorybuildtargets">Directory.Build.props</a> is the recommended way to configure it for all projects in a solution (see an example in <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/43404afcc4e72294b3e2706d2eff12418dbb815a/Samples/SelfContainedDeployment/cpp-winui-unpackaged/Directory.Build.props#L3">Directory.Build.props</a>). A packaged app must also set <code>&lt;UseCrtSDKReferenceStaticWarning&gt;false&lt;/UseCrtSDKReferenceStaticWarning&gt;</code> in their project file. See the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment/">Self-contained deployment</a> sample app for how to use the hybrid CRT.</p>
+</div>
+<p>If your app is packaged (for more info, see <a href="../index.html">Deployment overview</a>), then the Windows App SDK dependencies will be included as content inside the MSIX package. Deploying the app still requires registering the MSIX package like any other packaged app.</p>
+<p>If your app is packaged with external location or unpackaged, then the Windows App SDK dependencies are copied next to the <code>.exe</code> in your build output. You can xcopy-deploy the resulting files, or include them in a custom installer.</p>
+<h2 id="dependencies-on-additional-msix-packages">Dependencies on additional MSIX packages</h2>
+<p>A small number of APIs in the Windows App SDK rely on additional MSIX packages that represent critical operating system (OS) functionality.</p>
+<ul>
+<li>For example (as of the Windows App SDK 1.1), push notifications APIs (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager">PushNotificationManager</a>) and app notifications APIs (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager">AppNotificationManager</a>) have a dependency on the <em>Singleton</em> package (see <a href="../../windows-app-sdk/deployment-architecture.html">Deployment architecture for the Windows App SDK</a>).</li>
+</ul>
+<p>That means that if you want to use those APIs in a self-contained app, then you have the following options:</p>
+<ol>
+<li>You could make your functionality optional, and light it up <em>only if and when possible</em>. Calling the APIs' <strong>IsSupported</strong> method (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported">PushNotificationManager.IsSupported</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.issupported">AppNotificationManager.IsSupported</a>) will let you check dynamically at runtime whether or not the APIs are available to the calling app on the system it's running on.
+<ul>
+<li>This enables safe, conditional, optional use of the APIs without compromising the simplicity of your self-contained deployment.</li>
+<li>Only if the OS services are installed outside of your app deployment will your app light up the appropriate functionality. But in fact there are <em>some</em> cases where the APIs will work even without the Singleton package being present; so calling <strong>IsSupported</strong> to check is often a good idea.</li>
+</ul>
+</li>
+<li>Deploy the required MSIX packages as part of your app installation.
+<ul>
+<li>This allows you to depend on the API in all scenarios. But requiring MSIX package deployment of dependencies as part of your app deployment can compromise the simplicity of self-contained deployment.</li>
+</ul>
+</li>
+<li>Don't use the API.
+<ul>
+<li>Consider alternative APIs that provide similar functionality without additional deployment requirements.</li>
+</ul>
+</li>
+</ol>
+<h2 id="opting-out-of-or-into-automatic-undockedregfreewinrt-support">Opting out of (or into) automatic UndockedRegFreeWinRT support</h2>
+<p>The project property <strong>WindowsAppSdkUndockedRegFreeWinRTInitialize</strong> was introduced in version 1.2 of the Windows App SDK (from the stable channel). If that property is set to <em>true</em> then it ensures that the Windows App SDK's implementation of undocked registration-free Windows Runtime (<em>UndockedRegFreeWinRT</em>) is enabled automatically at app startup. That support is needed by unpackaged self-contained apps.</p>
+<p><strong>WindowsAppSdkUndockedRegFreeWinRTInitialize</strong> defaults to <em>true</em> if <strong>WindowsAppSDKSelfContained</strong> is <em>true</em> and <strong>WindowsPackageType</strong> is <em>None</em> and (as of version 1.2 of the Windows App SDK) <strong>OutputType</strong> project property is set to <em>Exe</em> or <em>WinExe</em> (that is, the project produces an executable). That last condition is to prevent adding automatic UndockedRegFreeWinRT support into class library DLLs and other non-executables by default. If you <em>do</em> need automatic UndockedRegFreeWinRT support in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize UndockedRegFreeWinRT), then you can explicitly enable it in your project with <code>&lt;WindowsAppSdkUndockedRegFreeWinRTInitialize&gt;true&lt;/WindowsAppSdkUndockedRegFreeWinRTInitialize&gt;</code>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../deploy-overview.html">Windows App SDK deployment overview</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment">Windows App SDK self-contained deployment samples</a></li>
+<li><a href="../index.html">Deployment overview</a></li>
+<li><a href="../../windows-app-sdk/deployment-architecture.html">Deployment architecture for the Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

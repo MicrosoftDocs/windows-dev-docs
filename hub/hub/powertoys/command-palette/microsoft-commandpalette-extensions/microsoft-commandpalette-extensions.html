@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Microsoft.CommandPalette.Extensions Namespace </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Microsoft.CommandPalette.Extensions Namespace ">
+    
+    <meta name="description" content="The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="microsoftcommandpaletteextensions-namespace">Microsoft.CommandPalette.Extensions Namespace</h1>
+
+<p>Contains the interfaces to create extensions for the Command Palette.</p>
+<p>These are the raw WinRT interfaces that Command Palette uses to communicate with your extension. These can be implemented however you'd like, in any language that supports implementing WinRT interfaces. For simplicity, there's a reference C# implementation of these interfaces in the <a href="../microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.html"><code>Microsoft.CommandPalette.Extensions.Toolkit</code></a> namespace.</p>
+<h2 id="structs">Structs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Struct</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="color.html">Color</a></td>
+<td style="text-align: left;">Represents a color value.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="keychord.html">KeyChord</a></td>
+<td style="text-align: left;">Represents a key chord, which is a combination of keys that can be pressed together.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="optionalcolor.html">OptionalColor</a></td>
+<td style="text-align: left;">Represents a color that can be either specified or not specified.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="interfaces">Interfaces</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Interface</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="icommand.html">ICommand</a></td>
+<td style="text-align: left;">Action a user can take within the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icommandcontextitem.html">ICommandContextItem</a></td>
+<td style="text-align: left;">Represents a context menu item for a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icommanditem.html">ICommandItem</a></td>
+<td style="text-align: left;">Represents an item that can be used in a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icommandprovider.html">ICommandProvider</a></td>
+<td style="text-align: left;">Represents a provider that can be used to create commands.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icommandresult.html">ICommandResult</a></td>
+<td style="text-align: left;">Represents the result of a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icommandresultargs.html">ICommandResultArgs</a></td>
+<td style="text-align: left;">Represents the arguments for a command result.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icommandsettings.html">ICommandSettings</a></td>
+<td style="text-align: left;">Represents the settings for a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iconfirmationargs.html">IConfirmationArgs</a></td>
+<td style="text-align: left;">Represents the arguments for a confirmation dialog.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icontent.html">IContent</a></td>
+<td style="text-align: left;">Represents the content of a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icontentpage.html">IContentPage</a></td>
+<td style="text-align: left;">Represents a page that can be used in a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="icontextitem.html">IContextItem</a></td>
+<td style="text-align: left;">Represents a context menu item.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idetails.html">IDetails</a></td>
+<td style="text-align: left;">Represents the details of a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idetailscommand.html">IDetailsCommand</a></td>
+<td style="text-align: left;">Represents a command that contains details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idetailsdata.html">IDetailsData</a></td>
+<td style="text-align: left;">Represents the data that can be used in the details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idetailselement.html">IDetailsElement</a></td>
+<td style="text-align: left;">Represents an element that can be used in the details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idetailslink.html">IDetailsLink</a></td>
+<td style="text-align: left;">Represents a link that can be used in the details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idetailsseparator.html">IDetailsSeparator</a></td>
+<td style="text-align: left;">Represents a separator that can be used in the details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idetailstags.html">IDetailsTags</a></td>
+<td style="text-align: left;">Represents the tags that can be used in the details.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="idynamiclistpage.html">IDynamicListPage</a></td>
+<td style="text-align: left;">Represents a dynamic list page that can be used in a command.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iextension.html">IExtension</a></td>
+<td style="text-align: left;">Represents an extension that can be used in the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iextensionhost.html">IExtensionHost</a></td>
+<td style="text-align: left;">Represents the host for an extension.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ifallbackcommanditem.html">IFallbackCommandItem</a></td>
+<td style="text-align: left;">Represents a fallback command item that can be used in the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ifallbackhandler.html">IFallbackHandler</a></td>
+<td style="text-align: left;">Represents a handler that can be used for fallback commands.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ifilter.html">IFilter</a></td>
+<td style="text-align: left;">Represents a filter that can be used in the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ifilters.html">IFilters</a></td>
+<td style="text-align: left;">Represents a collection of filters that can be used in the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ifilteritem.html">IFilterItem</a></td>
+<td style="text-align: left;">Represents an item that can be used in a filter.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iform.html">IForm</a></td>
+<td style="text-align: left;">Represents a form that can be used in the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iformcontent.html">IFormContent</a></td>
+<td style="text-align: left;">Represents the content of a form.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iformpage.html">IFormPage</a></td>
+<td style="text-align: left;">Represents a page that can be used in a form.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="igotopageargs.html">IGoToPageArgs</a></td>
+<td style="text-align: left;">Represents the arguments for navigating to a page.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="igridproperties.html">IGridProperties</a></td>
+<td style="text-align: left;">Represents the properties of a grid.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iicondata.html">IIconData</a></td>
+<td style="text-align: left;">Represents the data for an icon.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iiconinfo.html">IIconInfo</a></td>
+<td style="text-align: left;">Represents the information for an icon.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iinvokablecommand.html">IInvokableCommand</a></td>
+<td style="text-align: left;">Represents a command that can be invoked.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iitemschangedeventargs.html">IItemsChangedEventArgs</a></td>
+<td style="text-align: left;">Represents the arguments for an items changed event.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ilistitem.html">IListItem</a></td>
+<td style="text-align: left;">Represents an item that can be used in a list.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ilistpage.html">IListPage</a></td>
+<td style="text-align: left;">Represents a page that can be used in a list.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ilogmessage.html">ILogMessage</a></td>
+<td style="text-align: left;">Represents a log message.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="imarkdowncontent.html">IMarkdownContent</a></td>
+<td style="text-align: left;">Represents the content of a markdown page.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="imarkdownpage.html">IMarkdownPage</a></td>
+<td style="text-align: left;">Represents a page that can be displayed as markdown.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="inotifyitemschanged.html">INotifyItemsChanged</a></td>
+<td style="text-align: left;">Represents an interface for notifying when items have changed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="inotifypropchanged.html">INotifyPropChanged</a></td>
+<td style="text-align: left;">Represents an interface for notifying when a property has changed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ipage.html">IPage</a></td>
+<td style="text-align: left;">Represents a page that can be used in the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iprogressstate.html">IProgressState</a></td>
+<td style="text-align: left;">Represents the state of a progress indicator.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ipropchangedeventargs.html">IPropChangedEventArgs</a></td>
+<td style="text-align: left;">Represents the arguments for a property changed event.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iseparatorcontextitem.html">ISeparatorContextItem</a></td>
+<td style="text-align: left;">Represents a separator as a context menu item.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="iseparatorfilteritem.html">ISeparatorFilterItem</a></td>
+<td style="text-align: left;">Represents a separator as a filter item.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="istatusmessage.html">IStatusMessage</a></td>
+<td style="text-align: left;">Represents a status message.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="itag.html">ITag</a></td>
+<td style="text-align: left;">Represents a tag that can be used in the Command Palette.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="itoastargs.html">IToastArgs</a></td>
+<td style="text-align: left;">Represents the arguments for a toast notification.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="itreecontent.html">ITreeContent</a></td>
+<td style="text-align: left;">Represents the content of a tree.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enums">Enums</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Enum</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="commandresultkind.html">CommandResultKind</a></td>
+<td style="text-align: left;">Specifies what kind of command it is.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="messagestate.html">MessageState</a></td>
+<td style="text-align: left;">Specifies the state of a message.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="navigationmode.html">NavigationMode</a></td>
+<td style="text-align: left;">Specifies which navigation direction to take.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="providertype.html">ProviderType</a></td>
+<td style="text-align: left;">Specifies the type of provider. Currently <strong>Command</strong> is the only type.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

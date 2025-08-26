@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Push Notification Services (WNS) overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Push Notification Services (WNS) overview ">
+    
+    <meta name="description" content="The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-push-notification-services-wns-overview">Windows Push Notification Services (WNS) overview</h1>
+
+<p>The Windows Push Notification Services (WNS) enable third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>The following diagram shows the complete data flow for sending a push notification. It involves these steps:</p>
+<ol>
+<li>Your app requests a push notification channel from WNS.</li>
+<li>Windows asks WNS to create a notification channel. This channel is returned to the calling device in the form of a Uniform Resource Identifier (URI).</li>
+<li>The notification channel URI is returned by WNS to your app.</li>
+<li>Your app sends the URI to your own cloud service. You then store the URI on your own cloud service so that you can access the URI when you send notifications. The URI is an interface between your own app and your own service; it's your responsibility to implement this interface with safe and secure web standards.</li>
+<li>When your cloud service has an update to send, it notifies WNS using the channel URI. This is done by issuing an HTTP POST request, including the notification payload, over Secure Sockets Layer (SSL). This step requires authentication.</li>
+<li>WNS receives the request and routes the notification to the appropriate device.</li>
+</ol>
+<p><img src="images/wns-diagram-01.jpg" alt="wns data flow diagram for push notification"></p>
+<h2 id="registering-your-app-and-receiving-the-credentials-for-your-cloud-service">Registering your app and receiving the credentials for your cloud service</h2>
+<p>Before you can send notifications using WNS, your app must be registered with the Store Dashboard, as described <a href="/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification">here</a>.</p>
+<h2 id="requesting-a-notification-channel">Requesting a notification channel</h2>
+<p>When an app that is capable of receiving push notifications runs, it must first request a notification channel through the <a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_"><strong>CreatePushNotificationChannelForApplicationAsync</strong></a>. For a full discussion and example code, see <a href="/previous-versions/windows/apps/hh465412(v=win.10)">How to request, create, and save a notification channel</a>. This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.</p>
+<p>After the app has successfully created a channel URI, it sends it to its cloud service, together with any app-specific metadata that should be associated with this URI.</p>
+<h3 id="important-notes">Important notes</h3>
+<ul>
+<li>We do not guarantee that the notification channel URI for an app will always remain the same. We advise that the app requests a new channel every time it runs and updates its service when the URI changes. The developer should never modify the channel URI and should consider it as a black-box string. At this time, channel URIs expire after 30 days. If your Windows 10 app will periodically renew its channel in the background then you can download the <a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)">Push and periodic notifications sample</a> for Windows 8.1 and re-use its source code and/or the pattern it demonstrates.</li>
+<li>The interface between the cloud service and the client app is implemented by you, the developer. We recommend that the app go through an authentication process with its own service and transmit data over a secure protocol such as HTTPS.</li>
+<li>It is important that the cloud service always ensures that the channel URI uses the domain &quot;notify.windows.com&quot;. The service should never push notifications to a channel on any other domain. If the callback for your app is ever compromised, a malicious attacker could submit a channel URI to spoof WNS. Without inspecting the domain, your cloud service could potentially disclose information to this attacker unknowingly. The subdomain of the channel URI is subject to change and should not be considered when validating the channel URI.</li>
+<li>If your cloud service attempts to deliver a notification to an expired channel, WNS will return <a href="/previous-versions/windows/apps/hh465435(v=win.10)">response code 410</a>. In response to that code, your service should no longer attempt to send notifications to that URI.</li>
+</ul>
+<h2 id="authenticating-your-cloud-service">Authenticating your cloud service</h2>
+<p>To send a notification, the cloud service must be authenticated through WNS. The first step in this process occurs when you register your app with the Microsoft Store Dashboard. During the registration process, your app is given a Package security identifier (SID) and a secret key. This information is used by your cloud service to authenticate with WNS.</p>
+<p>The WNS authentication scheme is implemented using the client credentials profile from the <a href="https://tools.ietf.org/html/draft-ietf-oauth-v2-23">OAuth 2.0</a> protocol. The cloud service authenticates with WNS by providing its credentials (Package SID and secret key). In return, it receives an access token. This access token allows a cloud service to send a notification. The token is required with every notification request sent to the WNS.</p>
+<p>At a high level, the information chain is as follows:</p>
+<ol>
+<li>The cloud service sends its credentials to WNS over HTTPS following the OAuth 2.0 protocol. This authenticates the service with WNS.</li>
+<li>WNS returns an access token if the authentication was successful. This access token is used in all subsequent notification requests until it expires.</li>
+</ol>
+<p><img src="images/wns-diagram-02.jpg" alt="wns diagram for cloud service authentication"></p>
+<p>In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the &quot;application/x-www-for-urlencoded&quot; format. Supply your Package SID in the &quot;client_id&quot; field and your secret key in the &quot;client_secret&quot; field as shown in the following example. For syntax details, see the <a href="/previous-versions/windows/apps/hh465435(v=win.10)">access token request</a> reference.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This is just an example, not cut-and-paste code that you can successfully use in your own code.</p>
+</div>
+<pre><code class="lang-http"> POST /accesstoken.srf HTTP/1.1
+ Content-Type: application/x-www-form-urlencoded
+ Host: https://login.live.com
+ Content-Length: 211
+ 
+ grant_type=client_credentials&amp;client_id=ms-app%3a%2f%2fS-1-15-2-2972962901-2322836549-3722629029-1345238579-3987825745-2155616079-650196962&amp;client_secret=Vex8L9WOFZuj95euaLrvSH7XyoDhLJc7&amp;scope=notify.windows.com
+</code></pre>
+<p>The WNS authenticates the cloud service and, if successful, sends a response of &quot;200 OK&quot;. The access token is returned in the parameters included in the body of the HTTP response, using the &quot;application/json&quot; media type. After your service has received the access token, you are ready to send notifications.</p>
+<p>The following example shows a successful authentication response, including the access token. For syntax details, see <a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification service request and response headers</a>.</p>
+<pre><code class="lang-http"> HTTP/1.1 200 OK   
+ Cache-Control: no-store
+ Content-Length: 422
+ Content-Type: application/json
+ 
+ {
+     &quot;access_token&quot;:&quot;EgAcAQMAAAAALYAAY/c+Huwi3Fv4Ck10UrKNmtxRO6Njk2MgA=&quot;, 
+     &quot;token_type&quot;:&quot;bearer&quot;
+ }
+</code></pre>
+<h3 id="important-notes-1">Important notes</h3>
+<ul>
+<li>The OAuth 2.0 protocol supported in this procedure follows draft version V16.</li>
+<li>The OAuth Request for Comments (RFC) uses the term &quot;client&quot; to refer to the cloud service.</li>
+<li>There might be changes to this procedure when the OAuth draft is finalized.</li>
+<li>The access token can be reused for multiple notification requests. This allows the cloud service to authenticate just once to send many notifications. However, when the access token expires, the cloud service must authenticate again to receive a new access token.</li>
+</ul>
+<h2 id="sending-a-notification">Sending a notification</h2>
+<p>Using the channel URI, the cloud service can send a notification whenever it has an update for the user.</p>
+<p>The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommended that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see <a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification response codes</a>.</p>
+<ol>
+<li><p>The cloud service makes an HTTP POST to the channel URI. This request must be made over SSL and contains the necessary headers and the notification payload. The authorization header must include the acquired access token for authorization.</p>
+<p>An example request is shown here. For syntax details, see <a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification response codes</a>.</p>
+<p>For details on composing the notification payload, see <a href="/previous-versions/windows/apps/hh868252(v=win.10)">Quickstart: Sending a push notification</a>. The payload of a tile, toast, or badge push notification is supplied as XML content that adheres to their respective defined <a href="/windows/uwp/launch-resume/adaptive-tiles-schema">Adaptive tiles schema</a> or <a href="/uwp/schemas/tiles/tiles-xml-schema-portal">Legacy tiles schema</a>. The payload of a raw notification does not have a specified structure. It is strictly app-defined.</p>
+<pre><code class="lang-http"> POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
+ Content-Type: text/xml
+ X-WNS-Type: wns/tile
+ Authorization: Bearer EgAcAQMAAAAALYAAY/c+Huwi3Fv4Ck10UrKNmtxRO6Njk2MgA=
+ Host: cloud.notify.windows.com
+ Content-Length: 24
+
+ &lt;body&gt;
+ ....
+</code></pre>
+</li>
+<li><p>WNS responds to indicate that the notification has been received and will be delivered at the next available opportunity. However, WNS does not provide end-to-end confirmation that your notification has been received by the device or application.</p>
+</li>
+</ol>
+<p>This diagram illustrates the data flow:</p>
+<p><img src="images/wns-diagram-03.jpg" alt="wns diagram for sending a notification"></p>
+<h3 id="important-notes-2">Important notes</h3>
+<ul>
+<li>WNS does not guarantee the reliability or latency of a notification.</li>
+<li>Notifications should never include confidential, sensitive, or personal data.</li>
+<li>To send a notification, the cloud service must first authenticate with WNS and receive an access token.</li>
+<li>An access token only allows a cloud service to send notifications to the single app for which the token was created. One access token cannot be used to send notifications across multiple apps. Therefore, if your cloud service supports multiple apps, it must provide the correct access token for the app when pushing a notification to each channel URI.</li>
+<li>When the device is offline, by default WNS will store one of each notification type (tile, badge, toast) for each channel URI and no raw notifications.</li>
+<li>In scenarios where the notification content is personalized to the user, WNS recommends that the cloud service immediately send those updates when those are received. Examples of this scenario include social media feed updates, instant communication invitations, new message notifications, or alerts. As an alternative, you can have scenarios in which the same generic update is frequently delivered to a large subset of your users; for example, weather, stock, and news updates. WNS guidelines specify that the frequency of these updates should be at most one every 30 minutes. The end user or WNS may determine more frequent routine updates to be abusive.</li>
+<li>Windows Notification Platform maintains a periodic data connection with WNS to keep the socket alive and healthy. If there are no applications requesting or using notification channels then the socket will not be created.</li>
+</ul>
+<h2 id="expiration-of-tile-and-badge-notifications">Expiration of tile and badge notifications</h2>
+<p>By default, tile and badge notifications expire three days after being downloaded. When a notification expires, the content is removed from the tile or queue and is no longer shown to the user. It's a best practice to set an expiration (using a time that makes sense for your app) on all tile and badge notifications so that your tile's content doesn't persist longer than it is relevant. An explicit expiration time is essential for content with a defined lifespan. This also assures the removal of stale content if your cloud service stops sending notifications, or if the user disconnects from the network for an extended period.</p>
+<p>Your cloud service can set an expiration for each notification by setting the X-WNS-TTL HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see <a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification service request and response headers</a>.</p>
+<p>For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your sending interval (such as one hour after receipt if you are sending notifications every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.</p>
+<h2 id="push-notifications-and-battery-saver">Push notifications and battery saver</h2>
+<p>Battery saver extends battery life by limiting background activity on the device. Windows 10 lets the user set battery saver to turn on automatically when the battery drops below a specified threshold. When battery saver is on, the receipt of push notifications is disabled to save energy. But there are a couple exceptions to this. The following Windows 10 battery saver settings (found in the <strong>Settings</strong> app) allow your app to receive push notifications even when battery saver is on.</p>
+<ul>
+<li><strong>Allow push notifications from any app while in battery saver</strong>: This setting lets all apps receive push notifications while battery saver is on. Note that this setting applies only to Windows 10 for desktop editions (Home, Pro, Enterprise, and Education).</li>
+<li><strong>Always allowed</strong>: This setting lets specific apps run in the background while battery saver is on - including receiving push notifications. This list is maintained manually by the user.</li>
+</ul>
+<p>There is no way to check the state of these two settings, but you can check the state of battery saver. In Windows 10, use the <a href="/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus"><strong>EnergySaverStatus</strong></a> property to check battery saver state. Your app can also use the <a href="/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged"><strong>EnergySaverStatusChanged</strong></a> event to listen for changes to battery saver.</p>
+<p>If your app depends heavily on push notifications, we recommend notifying users that they may not receive notifications while battery saver is on and to make it easy for them to adjust <strong>battery saver settings</strong>. Using the battery saver settings URI scheme in Windows 10, <code>ms-settings:batterysaver-settings</code>, you can provide a convenient link to the Settings app.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. For example, the <code>dontAskMeAgainBox</code> checkbox in the following example persists the user's preference in <a href="/uwp/api/Windows.Storage.ApplicationData.LocalSettings"><strong>LocalSettings</strong></a>.</p>
+</div>
+<p>Here's an example of how to check whether battery saver is turned on in Windows 10. This example notifies the user and launches the Settings app to <strong>battery saver settings</strong>. The <code>dontAskAgainSetting</code> lets the user suppress the message if they don't want to be notified again.</p>
+<pre><code class="lang-csharp">using System;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
+using Windows.System;
+using Windows.System.Power;
+...
+...
+async public void CheckForEnergySaving()
+{
+   //Get reminder preference from LocalSettings
+   bool dontAskAgain;
+   var localSettings = Windows.Storage.ApplicationData.Current.LocalSettings;
+   object dontAskSetting = localSettings.Values[&quot;dontAskAgainSetting&quot;];
+   if (dontAskSetting == null)
+   {  // Setting does not exist
+      dontAskAgain = false;
+   }
+   else
+   {  // Retrieve setting value
+      dontAskAgain = Convert.ToBoolean(dontAskSetting);
+   }
+   
+   // Check if battery saver is on and that it's okay to raise dialog
+   if ((PowerManager.EnergySaverStatus == EnergySaverStatus.On)
+         &amp;&amp; (dontAskAgain == false))
+   {
+      // Check dialog results
+      ContentDialogResult dialogResult = await saveEnergyDialog.ShowAsync();
+      if (dialogResult == ContentDialogResult.Primary)
+      {
+         // Launch battery saver settings (settings are available only when a battery is present)
+         await Launcher.LaunchUriAsync(new Uri(&quot;ms-settings:batterysaver-settings&quot;));
+      }
+
+      // Save reminder preference
+      if (dontAskAgainBox.IsChecked == true)
+      {  // Don't raise dialog again
+         localSettings.Values[&quot;dontAskAgainSetting&quot;] = &quot;true&quot;;
+      }
+   }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">#include &lt;winrt/Windows.Foundation.h&gt;
+#include &lt;winrt/Windows.Storage.h&gt;
+#include &lt;winrt/Windows.System.h&gt;
+#include &lt;winrt/Windows.System.Power.h&gt;
+#include &lt;winrt/Windows.UI.Xaml.h&gt;
+#include &lt;winrt/Windows.UI.Xaml.Controls.h&gt;
+#include &lt;winrt/Windows.UI.Xaml.Navigation.h&gt;
+using namespace winrt;
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::Storage;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::System::Power;
+using namespace winrt::Windows::UI::Xaml;
+using namespace winrt::Windows::UI::Xaml::Controls;
+using namespace winrt::Windows::UI::Xaml::Navigation;
+...
+winrt::fire_and_forget CheckForEnergySaving()
+{
+    // Get reminder preference from LocalSettings.
+    bool dontAskAgain{ false };
+    auto localSettings = ApplicationData::Current().LocalSettings();
+    IInspectable dontAskSetting = localSettings.Values().Lookup(L&quot;dontAskAgainSetting&quot;);
+    if (!dontAskSetting)
+    {
+        // Setting doesn't exist.
+        dontAskAgain = false;
+    }
+    else
+    {
+        // Retrieve setting value
+        dontAskAgain = winrt::unbox_value&lt;bool&gt;(dontAskSetting);
+    }
+
+    // Check whether battery saver is on, and whether it's okay to raise dialog.
+    if ((PowerManager::EnergySaverStatus() == EnergySaverStatus::On) &amp;&amp; (!dontAskAgain))
+    {
+        // Check dialog results.
+        ContentDialogResult dialogResult = co_await saveEnergyDialog().ShowAsync();
+        if (dialogResult == ContentDialogResult::Primary)
+        {
+            // Launch battery saver settings
+            // (settings are available only when a battery is present).
+            co_await Launcher::LaunchUriAsync(Uri(L&quot;ms-settings:batterysaver-settings&quot;));
+        }
+
+        // Save reminder preference.
+        if (dontAskAgainBox().IsChecked())
+        {
+            // Don't raise the dialog again.
+            localSettings.Values().Insert(L&quot;dontAskAgainSetting&quot;, winrt::box_value(true));
+        }
+    }
+}
+</code></pre>
+<p>This is the XAML for the <a href="/uwp/api/Windows.UI.Xaml.Controls.ContentDialog"><strong>ContentDialog</strong></a> featured in this example.</p>
+<pre><code class="lang-xaml">&lt;ContentDialog x:Name=&quot;saveEnergyDialog&quot;
+               PrimaryButtonText=&quot;Open battery saver settings&quot;
+               SecondaryButtonText=&quot;Ignore&quot;
+               Title=&quot;Battery saver is on.&quot;&gt; 
+   &lt;StackPanel&gt;
+      &lt;TextBlock TextWrapping=&quot;WrapWholeWords&quot;&gt;
+         &lt;LineBreak/&gt;&lt;Run&gt;Battery saver is on and you may 
+          not receive push notifications.&lt;/Run&gt;&lt;LineBreak/&gt;
+         &lt;LineBreak/&gt;&lt;Run&gt;You can choose to allow this app to work normally
+         while in battery saver, including receiving push notifications.&lt;/Run&gt;
+         &lt;LineBreak/&gt;
+      &lt;/TextBlock&gt;
+      &lt;CheckBox x:Name=&quot;dontAskAgainBox&quot; Content=&quot;OK, got it.&quot;/&gt;
+   &lt;/StackPanel&gt;
+&lt;/ContentDialog&gt;
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/uwp/launch-resume/sending-a-local-tile-notification">Send a local tile notification</a></li>
+<li><a href="/previous-versions/windows/apps/hh868252(v=win.10)">Quickstart: Sending a push notification</a></li>
+<li><a href="/previous-versions/windows/apps/hh465450(v=win.10)">How to update a badge through push notifications</a></li>
+<li><a href="/previous-versions/windows/apps/hh465412(v=win.10)">How to request, create, and save a notification channel</a></li>
+<li><a href="/previous-versions/windows/apps/jj709907(v=win.10)">How to intercept notifications for running applications</a></li>
+<li><a href="/previous-versions/windows/apps/hh465407(v=win.10)">How to authenticate with the Windows Push Notification Service (WNS)</a></li>
+<li><a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification service request and response headers</a></li>
+<li><a href="">Guidelines and checklist for push notifications</a></li>
+<li><a href="/previous-versions/windows/apps/hh761488(v=win.10)">Raw notifications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/push-notifications/wns-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

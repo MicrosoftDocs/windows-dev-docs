@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Developer Mode features and debugging </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Developer Mode features and debugging ">
+    
+    <meta name="description" content="Learn about Developer Mode features and installation errors in Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="developer-mode-features-and-debugging">Developer Mode features and debugging</h1>
+
+<p>If you're only interested in the basics of installing Developer Mode on your app, follow the instructions outlined in <a href="enable-your-device-for-development.html">enable your device for development</a> to get started. This article covers advanced features of Developer Mode, Developer Mode in previous versions of Windows 10, and debugging failures related to Developer Mode installations.</p>
+<h2 id="additional-developer-mode-features">Additional Developer Mode features</h2>
+<p>For each device family, additional developer features may be available. These features are only available when Developer Mode is enabled on the device (and may vary depending on the version of your OS).</p>
+<p>This image shows developer features for Windows:</p>
+<p><img src="images/windows-developer-settings.jpg" alt="Windows developer settings"></p>
+<h3 id="device-portal">Device Portal</h3>
+<p>To learn more about Device Portal, see <a href="/windows/uwp/debug-test-perf/device-portal">Windows Device Portal overview</a>.</p>
+<p>For device-specific setup instructions, see:</p>
+<ul>
+<li><a href="/windows/uwp/debug-test-perf/device-portal-desktop">Device Portal for desktop</a></li>
+<li><a href="/windows/mixed-reality/develop/advanced-concepts/using-the-windows-device-portal">Device Portal for HoloLens</a></li>
+<li><a href="/windows/iot-core/manage-your-device/deviceportal">Device Portal for IoT</a></li>
+<li><a href="/windows/uwp/debug-test-perf/device-portal-mobile">Device Portal for Mobile</a></li>
+<li><a href="/windows/uwp/xbox-apps/device-portal-xbox">Device Portal for Xbox</a></li>
+</ul>
+<p>If you encounter problems enabling Developer Mode or Device Portal, visit <a href="#failure-to-install-developer-mode-package">Failure to install the Developer Mode package</a> to learn which WSUS KBs to allow in order to unblock the Developer Mode package, or use the Feedback Hub app to report issues as described in the troubleshooting section below.</p>
+<h3 id="ssh">SSH</h3>
+<p>SSH services are enabled when you enable Device Discovery on your device. This is used when your device is a remote deployment target for MSIX packaged applications. The names of the services are <em>SSH Server Broker</em> and <em>SSH Server Proxy</em>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This is not Microsoft's OpenSSH implementation, which you can find on <a href="https://github.com/PowerShell/Win32-OpenSSH">GitHub</a>.</p>
+</div>
+<p>In order to take advantage of the SSH services, you can enable Device Discovery to allow pin pairing. If you intend to run another SSH service, you can set this up on a different port or turn off the Developer Mode SSH services. To turn off the SSH services, turn off Device Discovery.</p>
+<p>SSH login is done via the <em>DevToolsUser</em> account, which accepts a password for authentication. This password is the PIN displayed on the device after pressing the Device Discovery <strong>Pair</strong> button, and it's only valid while the PIN is displayed. A SFTP subsystem is also enabled for manual management of the <code>DevelopmentFiles</code> folder where loose file deployments are installed from Visual Studio.</p>
+<h4 id="caveats-for-ssh-usage">Caveats for SSH usage</h4>
+<p>The existing SSH server used in Windows is not yet protocol compliant. Using an SFTP or SSH client may require special configuration. In particular, the SFTP subsystem runs at version 3 or less, so any connecting client should be configured to expect an old server. The SSH server on older devices uses <code>ssh-dss</code> for public key authentication (which OpenSSH has deprecated). To connect to such devices, the SSH client must be manually configured to accept <code>ssh-dss</code>.</p>
+<h3 id="device-discovery">Device Discovery</h3>
+<p>When you enable Device Discovery, you're allowing your device to be visible to other devices on the network through mDNS. This feature also allows you to get the SSH PIN for pairing to the device by pressing the <strong>Pair</strong> button exposed immediately after Device Discovery is enabled. This PIN prompt must be displayed on the screen in order to complete your first Visual Studio deployment targeting the device.</p>
+<p><img src="images/pair-device-with-device-discovery.png" alt="Pair your device with Device Discovery"></p>
+<p>You should enable Device Discovery only if you intend to make the device a deployment target. For example, if you use Device Portal to deploy an app to a phone for testing, you need to enable Device Discovery on the phone, but not on your development PC.</p>
+<h3 id="optimizations-for-windows-explorer-remote-desktop-and-powershell-desktop-only">Optimizations for Windows Explorer, Remote Desktop, and PowerShell (desktop only)</h3>
+<p>On the desktop device family, the <strong>For developers</strong> settings page has shortcuts to settings you can use to optimize your PC for development tasks. The sliders let you enable or disable settings easily from this single location.</p>
+<p><img src="images/for-developers-shortcuts.jpg" alt="Shortcuts for developers"></p>
+<h2 id="notes">Notes</h2>
+<p>In early versions of Windows 10 Mobile, a <strong>Crash Dumps</strong> option was present in the <strong>Developer Settings</strong> menu. This has been moved to <a href="/windows/uwp/debug-test-perf/device-portal">Device Portal</a> so that it can be used remotely rather than exclusively on USB.</p>
+<p>There are several tools you can use to deploy an app from a Windows 10 PC to a Windows 10 device. Both devices must be connected to the same subnet of the network (by a wired or wireless connection) or they must be connected by USB. Both of these options only install the app package (<code>.appx</code> or <code>.appxbundle</code>). They don't install certificates.</p>
+<ul>
+<li>Use the Windows Application Deployment (<code>WinAppDeployCmd</code>) tool. Learn more about the <a href="/windows/uwp/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool">WinAppDeployCmd tool</a>.</li>
+<li>You can use <a href="/windows/uwp/debug-test-perf/device-portal">Device Portal</a> to deploy from your browser to a mobile device running Windows 10, Version 1511 or later. Use the <a href="/windows/uwp/debug-test-perf/device-portal#apps-manager">Apps</a> page in Device Portal to upload an app package (<code>.appx</code>) and install it on the device.</li>
+</ul>
+<h2 id="failure-to-install-developer-mode-package">Failure to install Developer Mode package</h2>
+<p>Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for remote deployment to this PC (using Device Portal from a browser or Device Discovery to enable SSH), but not for local development. Even if you encounter these issues, you can still deploy your app locally using Visual Studio (or from this device to another device).</p>
+<p>If Developer Mode doesn't install correctly, we encourage you to file a feedback request using the Feedback Hub app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<ol>
+<li>Install the <a href="https://apps.microsoft.com/store/detail/feedback-hub/9NBLGGH4R32N?hl=en-us&amp;gl=us">Feedback Hub app</a> (if you don't already have it) and open it.</li>
+<li>Click <strong>Add new feedback</strong>.</li>
+<li>Choose the <strong>Developer Platform</strong> category and the <strong>Developer Mode</strong> subcategory.</li>
+<li>Fill out the fields (you may optionally attach a screenshot) and click <strong>Submit</strong>.</li>
+</ol>
+<p>Submitting feedback will help Microsoft resolve the issue you encountered.</p>
+</div>
+<h3 id="failed-to-locate-the-package">Failed to locate the package</h3>
+<blockquote>
+<p>Developer Mode package couldn’t be located in Windows Update. Error Code 0x80004005. Learn more.</p>
+</blockquote>
+<p>This error may occur due to a network connectivity problem, Enterprise settings, or the package may be missing.</p>
+<p>To fix this issue:</p>
+<ol>
+<li><p>Ensure that your computer is connected to the internet.</p>
+</li>
+<li><p>If you're on a domain-joined computer, speak to your network administrator. The Developer Mode package (like all Features on Demand) is blocked by default in WSUS 2.1. In order to unblock the Developer Mode package in the current and previous releases, the following KBs should be allowed in WSUS:</p>
+<ul>
+<li>4016509</li>
+<li>3180030</li>
+<li>3197985</li>
+</ul>
+</li>
+<li><p>Check for Windows updates in <strong>Settings → Updates and Security → Windows Updates</strong>.</p>
+</li>
+<li><p>Verify that the Windows Developer Mode package is present in <strong>Settings → System → Apps &amp; Features → Manage optional features → Add a feature</strong>. If it's missing, Windows can't find the correct package for your computer.</p>
+</li>
+<li><p>After performing the above steps, <em>disable</em> and then <em>re-enable</em> Developer Mode to verify the fix.</p>
+</li>
+</ol>
+<h3 id="failed-to-install-the-package">Failed to install the package</h3>
+<blockquote>
+<p>Developer Mode package failed to install. Error code 0x80004005. Learn more.</p>
+</blockquote>
+<p>This error may occur due to incompatibilities between your build of Windows and the Developer Mode package.</p>
+<p>To fix this issue:</p>
+<ol>
+<li>Check for Windows updates in the <strong>Settings → Updates and Security → Windows Updates</strong>.</li>
+<li>Restart your computer to ensure all updates are applied.</li>
+</ol>
+<h2 id="use-group-policies-or-registry-keys-to-enable-a-device">Use group policies or registry keys to enable a device</h2>
+<p>For most developers, you'll want to use the settings app to enable your device for debugging. In certain scenarios (such as automated tests) you can use other ways to enable your Windows desktop device for development.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.</p>
+</div>
+<p>You can use <code>gpedit.msc</code> to set the group policies to enable your device, unless you have <em>Windows 10 Home</em> or <em>Windows 11 Home</em>. If you do, you'll need to use regedit or PowerShell commands to set the registry keys directly to enable your device.</p>
+<h3 id="use-gpedit-to-enable-your-device">Use gpedit to enable your device</h3>
+<ol>
+<li><p>Run <code>gpedit.msc</code>.</p>
+</li>
+<li><p>Go to <strong>Local Computer Policy → Computer Configuration → Administrative Templates → Windows Components → App Package Deployment</strong>.</p>
+</li>
+<li><p>Edit the following policies to enable sideloading:</p>
+<ul>
+<li>Allow all trusted apps to install.</li>
+</ul>
+<p>OR</p>
+<p>Edit the following policies to enable both sideloading and Developer Mode:</p>
+<ul>
+<li>Allow all trusted apps to install.</li>
+<li>Allows development of UWP apps and installation from an <em>Integrated Development Environment (IDE)</em>.</li>
+<li>Reboot your machine.</li>
+</ul>
+</li>
+</ol>
+<h3 id="use-regedit-to-enable-your-device">Use regedit to enable your device</h3>
+<ol>
+<li><p>Run <code>regedit</code>.</p>
+</li>
+<li><p>To enable sideloading, set the value of this <code>DWORD</code> to <code>1</code>:</p>
+<p><code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowAllTrustedApps</code></p>
+<p>OR</p>
+<p>To enable developer mode, set the values of this <code>DWORD</code> to <code>1</code>:</p>
+<p><code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowDevelopmentWithoutDevLicense</code></p>
+</li>
+</ol>
+<h3 id="use-powershell-to-enable-your-device">Use PowerShell to enable your device</h3>
+<ol>
+<li><p>Run PowerShell with administrator privileges.</p>
+</li>
+<li><p>To enable sideloading, run this command:</p>
+<pre><code class="lang-powershell">PS C:\WINDOWS\system32&gt; reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock&quot; /t REG_DWORD /f /v &quot;AllowAllTrustedApps&quot; /d &quot;1&quot;
+</code></pre>
+<p>OR</p>
+<p>To enable developer mode, run this command:</p>
+<pre><code class="lang-powershell">PS C:\WINDOWS\system32&gt; reg add &quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock&quot; /t REG_DWORD /f /v &quot;AllowDevelopmentWithoutDevLicense&quot; /d &quot;1&quot;
+</code></pre>
+</li>
+</ol>
+<h2 id="upgrade-your-device-from-windows-81-to-windows-10-or-11">Upgrade your device from Windows 8.1 to Windows 10 or 11</h2>
+<p>When you create or sideload apps on your Windows 8.1 device, you have to install a developer license. If you upgrade your device from Windows 8.1 to Windows 10 or 11, this information remains. Run the following command to remove this information from your upgraded Windows device.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This step is not required if you upgrade directly from Windows 8.1 to Windows 10, Version 1511 or later.</p>
+</div>
+<h3 id="to-unregister-a-developer-license">To unregister a developer license</h3>
+<ol>
+<li><p>Run PowerShell with administrator privileges.</p>
+</li>
+<li><p>Run this command:</p>
+<pre><code class="lang-powershell">unregister-windowsdeveloperlicense
+</code></pre>
+</li>
+</ol>
+<p>After you unregister your license, you'll need to enable your device for development (as described in <a href="enable-your-device-for-development.html">this topic</a>) so that you can continue to develop on this device. If you don't, you may get an error when you debug your app (or if you try to create a package for it). Here's an example of this error:</p>
+<blockquote>
+<p>Error : DEP0700 : Registration of the app failed.</p>
+</blockquote>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/get-started/developer-mode-features-and-debugging.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

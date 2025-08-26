@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create a widget template with the Adaptive Cards Designer </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create a widget template with the Adaptive Cards Designer ">
+    
+    <meta name="description" content="This article walks you through the creation of a widget template using the Adaptive Cards Designer.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-a-widget-template-with-the-adaptive-cards-designer">Create a widget template with the Adaptive Cards Designer</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</strong></p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see <a href="https://insider.windows.com/en-us/preview-windows">Windows 10 Insider Preview</a>.</p>
+</div>
+<p>The UI and interaction for Windows Widgets are implemented using <a href="https://adaptivecards.io/">Adaptive Cards</a>. Each widget provides a visual template and, optionally, a data template which are defined using JSON documents that conform to the Adaptive Cards schema. This article walks you through the steps to create a simple widget template.</p>
+<h2 id="a-counting-widget">A counting widget</h2>
+<p>The example in this article is a simple counting widget that displays an integer value and allows the user to increment the value by clicking on a button in the widget's UI. This example template uses data binding to automatically update the UI based on the data context.</p>
+<p>Apps need to implement a widget provider to generate and update the widget template and/or data and pass them to the widget host. The article <a href="../../develop/widgets/implement-widget-provider-win32.html">Implement a widget provider in a win32 app</a> provides step-by-step guidance for implementing the widget provider for the counting widget that we will generate in the steps below.</p>
+<h2 id="the-adaptive-cards-designer">The Adaptive Cards Designer</h2>
+<p>The <a href="https://www.adaptivecards.io/designer/">Adaptive Cards Designer</a> is an online interactive tool that makes it easy to generate JSON templates for Adaptive Cards. Using the designer, you can see the rendered visuals and the data binding behavior in real-time as you build your widget template. Follow the link to open the designer, which will be used for all of the steps in this walkthrough.</p>
+<h2 id="create-an-empty-template-from-a-preset">Create an empty template from a preset</h2>
+<p>At the top of the page, from the <strong>Select host app</strong> dropdown, choose Widgets Board. This will set the container size for the Adaptive Card to have a size that is supported for widgets. Note that widgets support small, medium, and large sizes. The size of the default template preset is the correct size for a small widget. Don't worry if the content overflows the borders because we will be replacing it with content designed to fit inside the widget.</p>
+<p>There are three text editors at the bottom of the page. The one labeled <strong>Card Payload Editor</strong> contains the JSON definition of your widget's UI. The editor labeled <strong>Sample Data Editor</strong> contains JSON that defines an optional data context for your widget. The data context is bound dynamically to the Adaptive Card when the widget is rendered. For more information about data binding in Adaptive Cards, see <a href="/adaptive-cards/templating/language">Adaptive Cards Template Language</a>.</p>
+<p>The third text editor is labeled <strong>Sample Host Data Editor</strong>. Note that this editor may collapse below the page's other two editors. If so, click the + to expand the editor. Widget host apps can specify host properties that you can use in your widget template to dynamically display different content based on the current property values. The Widgets Board supports the following host properties.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>host.widgetSize</td>
+<td>&quot;small&quot;, &quot;medium&quot;, or &quot;large&quot;</td>
+<td>The size of the pinned widget.</td>
+</tr>
+<tr>
+<td>host.hostTheme</td>
+<td>&quot;light&quot; or &quot;dark&quot;</td>
+<td>The current theme of the device on which the Widgets Board is displayed.</td>
+</tr>
+<tr>
+<td>host.isSettingsPayload</td>
+<td>true or false</td>
+<td>When this value is true, the user has clicked on the <strong>Customize widget</strong> button in the widget context menu. You can use this property value to display customization settings UI elements. This is an alternative method to using <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2.oncustomizationrequested">IWidgetProvider2.OnCustomizationRequested</a> to alter the JSON payload in the widget provider app. For more information, see <a href="/windows/apps/develop/widgets/implement-widget-provider-cs#implementing-widget-customization">Implementing widget customization</a>.</td>
+</tr>
+<tr>
+<td>host.isHeaderSupported</td>
+<td>true or false</td>
+<td>When this value is true, header customization is supported. For more information, see <a href="/windows/apps/develop/widgets/widget-header-customization">isHeaderSupported</a>.</td>
+</tr>
+<tr>
+<td>host.isHeader</td>
+<td>true or false</td>
+<td>When this value is true, the host is requesting a payload specifically for rendering of the widget header.</td>
+</tr>
+<tr>
+<td>host.isWebSupported</td>
+<td>true or false</td>
+<td>When this value is false, the host does not currently support loading a widget's web content. When this occurs, web widgets will display the fallback JSON payload supplied by the widget provider, but this value can be use to further customize the content. For more information, see <a href="/windows/apps/develop/widgets/web-widget-providers">Web widget providers</a></td>
+</tr>
+<tr>
+<td>host.isUserContextAuthenticated</td>
+<td>true or false</td>
+<td>When this value is false, the only action that is supported is <a href="https://adaptivecards.io/explorer/Action.OpenUrl.html">Action.OpenUrl</a>. The value of <em>isUserContextAuthenticated</em> can be used to adjust widget content appropriately, given the interactivity limitations.</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Container size</strong> and <strong>Theme</strong> dropdowns next to the <strong>Select host app</strong> dropdown at the top of the page allow you to set these properties without manually editing the sample host JSON in the editor.</p>
+<h2 id="create-a-new-card">Create a new card</h2>
+<p>In the upper left corner of the page, click <strong>New card</strong>. In the <em>Create</em> dialog, select <strong>Blank Card</strong>. You should now see an empty Adaptive Card. You will also notice that the JSON document in the sample data editor is empty.</p>
+<p>The counting widget that we will create is very simple, only consisting of 4 <a href="https://adaptivecards.io/explorer/TextBlock.html">TextBlock</a> elements and one action of type <a href="https://adaptivecards.io/explorer/Action.Execute.html">Action.Execute</a>, that defines the widget's button.</p>
+<h2 id="add-textblock-elements">Add TextBlock elements</h2>
+<p>Add four <strong>TextBlock</strong> elements by dragging them from the <strong>Card elements</strong> pane on the left of the page onto the blank adaptive card in the preview pane. At this point, the widget preview should look like the following image. The content again overflows outside of the widget borders, but this will be fixed in the following steps.</p>
+<p><span class="mx-imgBorder">
+<img src="images/widgets-designer-walkthrough-1.png" alt="An adaptive card in progress. It shows a widget with four lines containing the text New TextBlock. The four lines of text overflow the bottom border of the widget.">
+</span>
+</p>
+<h2 id="implementing-conditional-layout">Implementing conditional layout</h2>
+<p>The <strong>Card Payload Editor</strong> has been updated to reflect the <strong>TextBlock</strong> elements that we added. Replace the JSON string for the <strong>body</strong> object with the following:</p>
+<pre><code class="lang-json">&quot;body&quot;: [
+    {
+        &quot;type&quot;: &quot;TextBlock&quot;,
+        &quot;text&quot;: &quot;You have clicked the button ${count} times&quot;
+    },
+    {
+        &quot;type&quot;: &quot;TextBlock&quot;,
+        &quot;text&quot;: &quot;Rendering only if medium&quot;,
+        &quot;$when&quot;: &quot;${$host.widgetSize==\&quot;medium\&quot;}&quot;
+    },
+    {
+        &quot;type&quot;: &quot;TextBlock&quot;,
+        &quot;text&quot;: &quot;Rendering only if small&quot;,
+        &quot;$when&quot;: &quot;${$host.widgetSize==\&quot;small\&quot;}&quot;
+    },
+    {
+        &quot;type&quot;: &quot;TextBlock&quot;,
+        &quot;text&quot;: &quot;Rendering only if large&quot;,
+        &quot;$when&quot;: &quot;${$host.widgetSize==\&quot;large\&quot;}&quot;
+    }
+]
+</code></pre>
+<p>In the Adaptive Cards Template Language, the <code>$when</code> property specifies that the containing element is displayed when the associated value evaluates to true. If the value evaluates to false, the containing element is not displayed. In the <strong>body</strong> element in our example, one of the three <strong>TextBlock</strong> elements will be shown, and the other two hidden, depending on the value of the <code>$host.widgetSize</code> property.  For more information about the conditionals supported in Adaptive Cards, see <a href="/adaptive-cards/templating/language#conditional-layout-with-when">Conditional layout with $when</a>.</p>
+<p>Now the preview should look like the following image:</p>
+<p><span class="mx-imgBorder">
+<img src="images/widgets-designer-walkthrough-2.png" alt="An adaptive card in progress. It shows a widget with four lines containing the text specified in the JSON payload shown in the previous step. Instead of conditionally hiding elements, all of the elements are visible and overflow the bottom border of the image.">
+</span>
+</p>
+<p>Note that the conditional statements aren't being reflected in the preview. This is because the designer isn't simulating the behavior of the widget host. Click the <strong>Preview mode</strong> button at the top of the page to start the simulation. The widget preview now looks like the following image:</p>
+<p><span class="mx-imgBorder">
+<img src="images/widgets-designer-walkthrough-3.png" alt="An adaptive card in progress. It shows a widget with two lines containing the text specified in the JSON payload. Only the TextBlock for the small size is rendered.">
+</span>
+</p>
+<p>From the <strong>Container size</strong> dropdown, select &quot;Medium&quot; and note that the preview switches to only show the <strong>TextBlock</strong> for the medium size. The container in the preview also changes size, demonstrating how you can use the preview to make sure that your UI fits within the widget container for each supported size.</p>
+<h2 id="bind-to-the-data-context">Bind to the data context</h2>
+<p>Our example widget will use a custom state property named &quot;count&quot;. You can see in the current template that the value for the first <strong>TextBlock</strong> includes the variable reference <code>$count</code>. When the widget is running in the Widgets Board, the widget provider is responsible for assembling the data payload and passing it to the widget host. At design time, you can use the <strong>Sample Data Editor</strong> to prototype your data payload and see how different values impact the display of your widget. Replace the empty data payload with the following JSON.</p>
+<pre><code class="lang-json">{&quot;count&quot;: &quot;2&quot;}
+</code></pre>
+<p>Note that the preview now inserts the value specified for the <em>count</em> property into the text for the first <strong>TextBlock</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="images/widgets-designer-walkthrough-4.png" alt="An adaptive card in progress. The first line of text now includes the value 2 from the data payload.">
+</span>
+</p>
+<h2 id="add-a-button">Add a button</h2>
+<p>The next step is to add a button to our widget. In the widget host, when the user clicks the button, the host will make a request to the widget provider. For this example, the widget provider will increment the count value and return an updated data payload. Because this operation requires a widget provider, you won't be able to view this behavior in the Adaptive Cards Designer, but you can still use the designer to adjust the layout of your button within your UI.</p>
+<p>With Adaptive Cards, interactive elements are defined with <strong>action</strong> elements. Add the following block of JSON directly after the <strong>body</strong> element in the card payload editor. Be sure to add a comma after the closing bracket (]) of the body element or the designer will report a formatting error.</p>
+<pre><code class="lang-json">,
+&quot;actions&quot;: [                                                      
+    {                                                               
+        &quot;type&quot;: &quot;Action.Execute&quot;,                               
+        &quot;title&quot;: &quot;Increment&quot;,                                   
+        &quot;verb&quot;: &quot;inc&quot;                                           
+    }                                                               
+]
+</code></pre>
+<p>In this JSON string, <em>type</em> property specifies the type of action that is being represented. Widgets only support the &quot;Action.Execute&quot; action type. The <em>title</em> contains the text that is displayed on the button for the action. The <em>verb</em> property is an app-defined string that the widget host will send to the widget provider to communicate the intent associated with the action. A widget can have multiple actions, and the widget provider code will check the value of the verb in the request to determine what action to take.</p>
+<p><span class="mx-imgBorder">
+<img src="images/widgets-designer-walkthrough-5.png" alt="The final adaptive card. A blue button with the text Increment is displayed after the two text lines.">
+</span>
+</p>
+<h2 id="the-complete-widget-template">The complete widget template</h2>
+<p>The following code listing shows the final version of the JSON payload.</p>
+<pre><code class="lang-json">{
+    &quot;type&quot;: &quot;AdaptiveCard&quot;,
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;,
+    &quot;version&quot;: &quot;1.6&quot;,
+    &quot;body&quot;: [
+    {
+      &quot;type&quot;: &quot;TextBlock&quot;,
+      &quot;text&quot;: &quot;You have clicked the button ${count} times&quot;
+    },
+    {
+      &quot;type&quot;: &quot;TextBlock&quot;,
+       &quot;text&quot;: &quot;Rendering Only if Small&quot;,
+      &quot;$when&quot;: &quot;${$host.widgetSize==\&quot;small\&quot;}&quot;
+    },
+    {
+      &quot;type&quot;: &quot;TextBlock&quot;,
+      &quot;text&quot;: &quot;Rendering Only if Medium&quot;,
+      &quot;$when&quot;: &quot;${$host.widgetSize==\&quot;medium\&quot;}&quot;
+    },
+    {
+      &quot;type&quot;: &quot;TextBlock&quot;,
+      &quot;text&quot;: &quot;Rendering Only if Large&quot;,
+      &quot;$when&quot;: &quot;${$host.widgetSize==\&quot;large\&quot;}&quot;
+    }
+    ],
+   &quot;actions&quot;: [
+    {
+      &quot;type&quot;: &quot;Action.Execute&quot;,
+      &quot;title&quot;: &quot;Increment&quot;,
+      &quot;verb&quot;: &quot;inc&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="settings-payload-example">Settings payload example</h2>
+<p>The following code listing shows a simple example of a JSON payload that uses the <strong>host.isSettingsPayload</strong> property to display different
+content when the user has clicked the <strong>Customize widget</strong> button.</p>
+<pre><code class="lang-json">{
+    &quot;type&quot;: &quot;AdaptiveCard&quot;,
+    &quot;body&quot;: [
+    {
+        &quot;type&quot;: &quot;Container&quot;,
+        &quot;items&quot;:[
+            {
+                &quot;type&quot;: &quot;TextBlock&quot;,
+                &quot;text&quot;: &quot;Content payload&quot;,
+                &quot;$when&quot;: &quot;${!$host.isSettingsPayload}&quot;
+            }
+        ]
+    },
+    {
+        &quot;type&quot;: &quot;Container&quot;,
+        &quot;items&quot;:[
+            {
+                &quot;type&quot;: &quot;TextBlock&quot;,
+                &quot;text&quot;: &quot;Settings payload&quot;,
+                &quot;$when&quot;: &quot;${$host.isSettingsPayload}&quot;
+            }
+        ]
+    }
+],
+&quot;actions&quot;: [
+    {
+    &quot;type&quot;: &quot;Action.Submit&quot;,
+    &quot;title&quot;: &quot;Increment&quot;,
+    &quot;verb&quot;: &quot;inc&quot;,
+    &quot;$when&quot;: &quot;${!$host.isSettingsPayload}&quot;
+    },
+    {
+    &quot;type&quot;: &quot;Action.Submit&quot;,
+    &quot;title&quot;: &quot;Update Setting&quot;,
+    &quot;verb&quot;: &quot;setting&quot;,
+    &quot;$when&quot;: &quot;${$host.isSettingsPayload}&quot;
+    }
+],
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;,
+    &quot;version&quot;: &quot;1.6&quot;
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/widgets/widgets-create-a-template.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

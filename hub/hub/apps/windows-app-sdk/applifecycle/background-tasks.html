@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using background tasks in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using background tasks in Windows apps ">
+    
+    <meta name="description" content="Get an overview of using background tasks and learn how to create a new background task in an app with the BackgroundTaskBuilder in Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-background-tasks-in-windows-apps">Using background tasks in Windows apps</h1>
+
+<p>This article provides an overview of using background tasks and describes how to create a new background task in a WinUI 3 app. For information about migrating your UWP apps with background tasks to WinUI, see the Windows App SDK <a href="../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.html">Background task migration strategy</a>.</p>
+<h2 id="backgroundtaskbuilder-in-the-windows-app-sdk">BackgroundTaskBuilder in the Windows App SDK</h2>
+<p>Background tasks are app components that run in the background without a user interface. They can perform actions such as downloading files, syncing data, sending notifications, or updating tiles. They can be triggered by various events, such as time, system changes, user actions, or push notifications. These tasks can get executed when corresponding trigger occurs even when the app is not in running state.</p>
+<p>The Windows Runtime (WinRT) <a href="/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder">BackgroundTaskBuilder</a> was designed for UWP applications, and many of the background task triggers are not supported for full trust COM Components. They are supported only when registered with WinRT components that are launched with a <code>backgroundtaskhost</code> process. Due to this, Windows App SDK desktop applications can't directly register the full trust COM components to be launched with background task triggers. They require a workaround of including the WinRT components in the project. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder">BackgroundTaskBuilder</a> in Windows App SDK API avoids this workaround so WinUI 3 and other desktop applications that use Windows App SDK can register the full trust COM components directly with background tasks.</p>
+<h2 id="register-a-background-task">Register a background task</h2>
+<p>The following example registers a background task for a full trust COM component using the Windows App SDK <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder">BackgroundTaskBuilder</a>. See the <a href="../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.html">Background task migration strategy</a> guide for more information.</p>
+<p>The C++ code to create and register a background task is as follows:</p>
+<pre><code class="lang-cpp">//Using the Windows App SDK API for BackgroundTaskBuilder
+winrt::Microsoft::Windows::ApplicationModel::Background::BackgroundTaskBuilder builder;
+SystemTrigger trigger = SystemTrigger(SystemTriggerType::TimeZoneChange, false);
+auto backgroundTrigger = trigger.as&lt;IBackgroundTrigger&gt;();
+builder.SetTrigger(backgroundTrigger);
+builder.AddCondition(SystemCondition(SystemConditionType::InternetAvailable));
+builder.SetTaskEntryPointClsid(classGuid);
+builder.Register(); 
+</code></pre>
+<p>To create and register the background task in C#, the code is as follows:</p>
+<pre><code class="lang-csharp">//Using the Windows App SDK API for BackgroundTaskBuilder
+var builder = new Microsoft.Windows.ApplicationModel.Background.BackgroundTaskBuilder();
+var trigger = new SystemTrigger(SystemTriggerType.TimeZoneChange, false);
+var backgroundTrigger = trigger as IBackgroundTrigger;
+builder.SetTrigger(backgroundTrigger);
+builder.AddCondition(new SystemCondition(SystemConditionType.InternetAvailable));
+builder.SetTaskEntryPointClsid(classGuid);
+builder.Register();
+</code></pre>
+<p>The corresponding package manifest entry for the background task is as follows:</p>
+<pre><code class="lang-xml">&lt;Extension Category=&quot;windows.backgroundTasks&quot; EntryPoint=&quot;Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.Task&quot;&gt;
+    &lt;BackgroundTasks&gt;
+        &lt;Task Type=&quot;general&quot;/&gt;
+    &lt;/BackgroundTasks&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>A full WinUI 3 background task registration sample can be found on <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/BackgroundTask">GitHub</a>.</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/windows/uwp/launch-resume/guidelines-for-background-tasks">Guidelines for background tasks in UWP apps</a></li>
+<li><a href="../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.html">Background task migration strategy</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/applifecycle/background-tasks.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

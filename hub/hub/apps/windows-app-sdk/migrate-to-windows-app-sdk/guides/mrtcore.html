@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>MRT to MRT Core migration </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="MRT to MRT Core migration ">
+    
+    <meta name="description" content="This topic contains guidance for migrating from UWP&#39;s [Resource Management System](/windows/uwp/app-resources/resource-management-system) (also known as MRT) to the Windows App SDK&#39;s MRT Core.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mrt-to-mrt-core-migration">MRT to MRT Core migration</h1>
+
+<p>This topic contains guidance for migrating from UWP's <a href="/windows/uwp/app-resources/resource-management-system">Resource Management System</a> (also known as MRT) to the Windows App SDK's MRT Core.</p>
+<p>MRT Core is a streamlined version of MRT. For more info, see <a href="../../mrtcore/mrtcore-overview.html">Manage resources with MRT Core</a>.</p>
+<h2 id="summary-of-api-andor-feature-differences">Summary of API and/or feature differences</h2>
+<p>For ease of migration, MRT Core APIs are very similar to MRT APIs. For API reference documentation, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources">Microsoft.Windows.ApplicationModel.Resources namespace</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Not all of the MRT APIs exist in MRT Core. But all of the APIs necessary for the basic functionality of MRT are included.</p>
+</div>
+<h2 id="change-namespace">Change namespace</h2>
+<p>In UWP, the MRT APIs are in the <a href="/uwp/api/windows.applicationmodel.resources.core"><strong>Windows.ApplicationModel.Resources.Core</strong></a> namespace. In the Windows App SDK, the MRT Core APIs are in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources"><strong>Microsoft.Windows.ApplicationModel.Resources</strong></a> namespace. So you'll need to change that namespace name in your source code (add <code>Microsoft.</code> at the start, and remove the <code>.Core</code> at the end).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In Windows App SDK 1.0 Preview 1 and later releases, MRT Core APIs are in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources"><strong>Microsoft.Windows.ApplicationModel.Resources</strong></a> namespace. In releases earlier than that, they are in the <strong>Microsoft.ApplicationModel.Resources</strong> namespace.</p>
+</div>
+<h2 id="resourcemanager-class">ResourceManager class</h2>
+<p>This section applies if you're using the <a href="/uwp/api/windows.applicationmodel.resources.core.resourcemanager.current"><strong>Windows.ApplicationModel.Resources.Core.ResourceManager.Current</strong></a> property in your UWP app.</p>
+<pre><code class="lang-csharp">// In a UWP app
+using Windows.ApplicationModel.Resources.Core;
+...
+var currentResourceManager = ResourceManager.Current;
+</code></pre>
+<pre><code class="lang-cppwinrt">// In a UWP app
+#include &lt;winrt/Windows.ApplicationModel.Resources.Core.h&gt;
+using namespace winrt::Windows::ApplicationModel::Resources::Core;
+...
+auto currentResourceManager{ ResourceManager::Current() };
+</code></pre>
+<p>Instead, in your Windows App SDK app, create a new <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager"><strong>Microsoft.Windows.ApplicationModel.Resources.ResourceManager</strong></a>.</p>
+<pre><code class="lang-csharp">// In a Windows App SDK app
+using Microsoft.Windows.ApplicationModel.Resources;
+...
+var currentResourceManager = new ResourceManager();
+</code></pre>
+<pre><code class="lang-cppwinrt">// In a Windows App SDK app
+#include &lt;winrt/Microsoft.Windows.ApplicationModel.Resources.h&gt;
+using namespace winrt::Microsoft::Windows::ApplicationModel::Resources;
+...
+ResourceManager currentResourceManager;
+</code></pre>
+<h2 id="resourcecontextgetforcurrentview-and-resourcecontextgetforviewindependentuse">ResourceContext.GetForCurrentView, and ResourceContext.GetForViewIndependentUse</h2>
+<p>UWP's MRT <a href="/uwp/api/windows.applicationmodel.resources.core.resourcecontext"><strong>ResourceContext</strong></a> class distinguishes between a <strong>ResourceContext</strong> for the current view, and one for view-independent use.</p>
+<p>For the Windows App SDK's MRT Core <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext"><strong>ResourceContext</strong></a> class, your app needs to determine the correct context (resource qualifier values), and the concepts of current view and view-independent use no longer apply.</p>
+<ul>
+<li>So if you're using the <strong>ResourceContext.GetForCurrentView</strong> API or the <strong>ResourceContext.GetForViewIndependentUse</strong> API, then use <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager.createresourcecontext"><strong>ResourceManager.CreateResourceContext</strong></a> instead.</li>
+</ul>
+<h2 id="resource-qualifier-values">Resource qualifier values</h2>
+<p>In UWP's MRT, the resource context qualifier values are determined for the app. While in MRT Core, only the language value is populated. Your app needs to determine other values for itself. Here's an example, where it's assumed your XAML view contains an element named <em>layoutRoot</em>.</p>
+<pre><code class="lang-csharp">// In a Windows App SDK app
+using Microsoft.Windows.ApplicationModel.Resources;
+...
+var currentResourceManager = new ResourceManager();
+var resourceContext = currentResourceManager.CreateResourceContext();
+int scaleFactor = Convert.ToInt32(layoutRoot.XamlRoot.RasterizationScale * 100);
+resourceContext.QualifierValues[KnownResourceQualifierName.Scale] = scaleFactor.ToString();
+string s = resourceContext.QualifierValues[KnownResourceQualifierName.Scale];
+</code></pre>
+<pre><code class="lang-cppwinrt">// In a Windows App SDK app
+#include &lt;winrt/Microsoft.Windows.ApplicationModel.Resources.h&gt;
+using namespace winrt::Microsoft::Windows::ApplicationModel::Resources;
+...
+ResourceManager currentResourceManager;
+auto resourceContext{ currentResourceManager.CreateResourceContext() };
+auto scaleFactor{ layoutRoot().XamlRoot().RasterizationScale() * 100 };
+resourceContext.QualifierValues().Insert(L&quot;Scale&quot;, std::to_wstring((int)scaleFactor));
+auto s{ resourceContext.QualifierValues().Lookup(L&quot;Scale&quot;) };
+</code></pre>
+<h2 id="resource-qualifier-value-change">Resource qualifier value change</h2>
+<p>UWP's MRT provides the <a href="/uwp/api/windows.applicationmodel.resources.core.resourcequalifierobservablemap.mapchanged"><strong>ResourceQualifierObservableMap.MapChanged</strong></a> event. And this section applies if your UWP app is handling that event in order to listen to qualifier value changes.</p>
+<p>MRT Core doesn't provide any notification mechanics around environment changes. So your Windows App SDK app needs to detect such changes on its own if you wish to update resources based on environment changes.</p>
+<h2 id="an-mrt-core-sample-app">An MRT Core sample app</h2>
+<p>Also see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement">Load resources using MRT Core</a> sample app project, which demonstrates how to use the MRT Core API surface.</p>
+<h2 id="related-topics">Related Topics</h2>
+<ul>
+<li><a href="../../support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="../../mrtcore/mrtcore-overview.html">Manage resources with MRT Core</a></li>
+<li><a href="https://github.com/MicrosoftDocs/windows-uwp/tree/docs/hub/apps/windows-app-sdk/mrtcore/images">MRT Core images</a></li>
+<li><a href="/windows/uwp/app-resources/resource-management-system">Resource Management System</a></li>
+<li><a href="../../index.html">Windows App SDK</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

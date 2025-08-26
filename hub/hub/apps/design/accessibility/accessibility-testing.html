@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Accessibility testing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Accessibility testing ">
+    
+    <meta name="description" content="Testing procedures to follow to ensure that your Windows app is accessible.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="accessibility-testing">Accessibility testing</h1>
+
+<p>This topic describes various tools and procedures to help you verify the accessibility implementation of your Windows and web applications.</p>
+<h2 id="successful-user-experiences">Successful user experiences</h2>
+<p>Programmatic access and keyboard access are critical requirements for supporting accessibility in your application. Testing the accessibility of your Windows applications, assistive technology (AT) tools, and UI frameworks is crucial to ensure a successful user experience for people with various disabilities and limitations (including vision, learning, dexterity/mobility, and language/communication disabilities), or those who simply prefer using a keyboard.</p>
+<p>Without adequate support for accessible technology (AT) such as screen-readers and on-screen keyboards, users with vision, learning, dexterity/mobility, and language/communication disabilities or limitations (and users who just prefer using the keyboard) could find it difficult, if not impossible, to use your application.</p>
+<h2 id="accessibility-testing-tools">Accessibility testing tools</h2>
+<h3 id="accessibility-insights">Accessibility Insights</h3>
+<p><a href="https://accessibilityinsights.io/">Accessibility Insights</a> helps developers find and fix accessibility issues in both websites and Windows applications.</p>
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/Xlvl91Q3c_8?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<ul>
+<li><a href="https://accessibilityinsights.io/docs/windows/overview">Accessibility Insights for Windows</a> helps developers find and fix accessibility issues in Windows apps. The tool supports three primary scenarios:
+<ul>
+<li><strong>Live Inspect</strong> lets developers verify that an element in an app has the right UI Automation properties simply by hovering over the element or setting keyboard focus on it.</li>
+<li><strong>FastPass</strong> - a lightweight, two-step process that helps developers identify common, high-impact accessibility issues in less than five minutes.</li>
+<li><strong>Troubleshooting</strong> allows you to diagnose and fix specific accessibility issues.</li>
+</ul>
+</li>
+<li><a href="https://accessibilityinsights.io/docs/web/overview">Accessibility Insights for Web</a> is an extension for Chrome and <a href="https://www.microsoftedgeinsider.com">Microsoft Edge Insider</a> that helps developers find and fix accessibility issues in web apps and sites. It supports two primary scenarios:
+<ul>
+<li><strong>FastPass</strong> - a lightweight, two-step process that helps developers identify common, high-impact accessibility issues in less than five minutes.</li>
+<li><strong>Assessment</strong> - lets anyone verify that a web site is 100% compliant with accessibility standards and guidelines. <a href="https://accessibilityinsights.io/">Accessibility Insights</a> also lets you review UI Automation elements, properties, control patterns, and events (similar to the <a href="/windows/desktop/winauto/inspect-objects">Inspect</a> and <a href="/windows/desktop/winauto/accessible-event-watcher">AccEvent</a> legacy tools described in the following section).</li>
+</ul>
+</li>
+</ul>
+<h3 id="legacy-testing-tools">Legacy testing tools</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The tools described here are still available in the Windows SDK, but we strongly recommend transitioning to <a href="https://accessibilityinsights.io/">Accessibility Insights</a>.</p>
+</div>
+<p>The Windows Software Development Kit (SDK) includes several accessibility testing tools, including <a href="/windows/desktop/WinAuto/accscope"><strong>AccScope</strong></a>, <a href="/windows/desktop/WinAuto/inspect-objects"><strong>Inspect</strong></a> and <a href="/windows/desktop/WinAuto/ui-accessibility-checker"><strong>UI Accessibility Checker</strong></a>, among others.</p>
+<p>You can launch the following accessibility testing tools either from a Microsoft Visual Studio command prompt or by navigating to the <em>bin</em> folder of wherever the Windows SDK is installed on your development machine.</p>
+<h3 id="accscope"><strong>AccScope</strong></h3>
+<p>The <a href="/windows/desktop/WinAuto/accscope"><strong>AccScope</strong></a> Enables visual evaluation of an application's accessibility during the early design and development phases. AccScope is specifically intended for testing Narrator accessibility scenarios and uses the UI Automation information provided by an app to show where accessibility can be improved.</p>
+<h3 id="inspect"><strong>Inspect</strong></h3>
+<p><a href="/windows/desktop/WinAuto/inspect-objects"><strong>Inspect</strong></a> enables you to select any UI element and view its accessibility data. You can view Microsoft UI Automation properties and control patterns and test the navigational structure of the automation elements in the UI Automation tree. It is especially useful for ensuring properties and control patterns are set correctly when extending a common control or creating a custom control.</p>
+<p>Use <strong>Inspect</strong> as you develop the UI to verify how accessibility attributes are exposed in UI Automation. In some cases the attributes come from the UI Automation support that is already implemented for default XAML controls. In other cases the attributes come from specific values that you have set in your XAML markup, as <a href="/uwp/api/windows.ui.xaml.automation.automationproperties"><strong>AutomationProperties</strong></a> attached properties.</p>
+<p>The following image shows the <a href="/windows/desktop/WinAuto/inspect-objects"><strong>Inspect</strong></a> tool querying the UI Automation properties of the <strong>Edit</strong> menu element in Notepad.</p>
+<p><img src="images/inspect.png" alt="Screen shot of the Inspect tool."></p>
+<h3 id="ui-accessibility-checker">UI Accessibility Checker</h3>
+<p><strong>UI Accessibility Checker (AccChecker)</strong> helps you discover potential accessibility issues at run time. AccChecker includes verification checks for UI Automation, Microsoft Active Accessibility, and Accessible Rich Internet Applications (ARIA). It can provide a static check for errors such as missing names, tree issues and more. It helps verify programmatic access and includes advanced features for automating accessibility testing. You can run <strong>AccChecker</strong> in UI or command line mode. To run the UI mode tool, open the <em>AccChecker</em> folder in the Windows SDK <em>bin</em> folder, run acccheckui.exe, and click the <strong>Help</strong> menu.</p>
+<h3 id="ui-automation-verify">UI Automation Verify</h3>
+<p><strong>UI Automation Verify (UIA Verify)</strong> is a framework for manual and automated testing of the UI Automation implementation in a control or application (results can be logged). <strong>UIA Verify</strong> can integrate into the test code and conduct regular, automated testing or spot checks of UI Automation scenarios and is useful for verifying that changes to applications with established features do not have new issues or regressions. <strong>UIA Verify</strong> can be found in the <em>UIAVerify</em> subfolder of the Windows SDK <em>bin</em> folder.</p>
+<h3 id="accessible-event-watcher">Accessible Event Watcher</h3>
+<p><a href="/windows/desktop/WinAuto/accessible-event-watcher"><strong>Accessible Event Watcher (AccEvent)</strong></a> tests whether an app's UI elements fire proper UI Automation and Microsoft Active Accessibility events when UI changes occur. Changes in the UI can occur when the focus changes, or when a UI element is invoked, selected, or has a state or property change. AccEvent is typically used to debug issues and to validate that custom and extended controls are working correctly.</p>
+<h2 id="accessibility-testing-procedures">Accessibility testing procedures</h2>
+<h3 id="test-keyboard-accessibility">Test keyboard accessibility</h3>
+<p>The best way to test your keyboard accessibility is to unplug your mouse or use the On-Screen Keyboard if you are using a tablet device. Test keyboard accessibility navigation by using the <em>Tab</em> key. You should be able to cycle through all interactive UI elements by using <em>Tab</em> key. For composite UI elements, verify that you can navigate among the parts of elements by using the arrow keys. For example, you should be able to navigate lists of items using keyboard keys. Finally, make sure that you can invoke all interactive UI elements with the keyboard once those elements have focus, typically by using the Enter or Spacebar key.</p>
+<h3 id="verify-the-contrast-ratio-of-visible-text">Verify the contrast ratio of visible text</h3>
+<p>Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn’t convey any information and can be rearranged without changing the meaning. See <a href="accessible-text-requirements.html">Accessible text requirements</a> for more information on contrast ratio and exceptions. See <a href="https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources">Techniques for WCAG 2.0 G18 (Resources section)</a> for tools that can test contrast ratios.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a UWP app. You may need to enter foreground and background color values manually in the tool, make screen captures of app UI and then run the contrast ratio tool over the screen capture image, or run the tool while opening source bitmap files in an image editing program rather than while that image is loaded by the app.</p>
+</div>
+<h3 id="verify-your-app-in-high-contrast">Verify your app in high contrast</h3>
+<p>Use your app while a high-contrast theme is active to verify that all the UI elements display correctly. All text should be readable, and all images should be clear. Adjust the XAML theme-dictionary resources or control templates to correct any theme issues that come from controls. In cases where prominent high-contrast issues are not coming from themes or controls (such as from image files), provide separate versions to use when a high-contrast theme is active.</p>
+<h3 id="verify-your-app-with-display-settings">Verify your app with display settings</h3>
+<p>Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from <strong>Ease of Access</strong> as well as display properties.) If you find any issues, follow the <a href="https://developer.microsoft.com/windows/apps/design">Guidelines for layout scaling</a> and provide additional resources for different scaling factors.</p>
+<h3 id="verify-main-app-scenarios-by-using-narrator">Verify main app scenarios by using Narrator</h3>
+<p>Use Narrator to test the screen reading experience for your app.</p>
+<p><strong>Use these steps to test your app using Narrator with a mouse and keyboard:</strong></p>
+<ol>
+<li>Start Narrator by pressing <em>Windows logo key + Ctrl + Enter</em>. In versions prior to Windows 10 version 1607, use <em>Windows logo key + Enter</em> to start Narrator.</li>
+<li>Navigate your app with the keyboard by using the <em>Tab</em> key, the arrow keys, and the <em>Caps Lock + arrow keys</em>.</li>
+<li>As you navigate your app, listen as Narrator reads the elements of your UI and verify the following:
+<ul>
+<li>For each control, ensure that Narrator reads all visible content. Also ensure that Narrator reads each control's name, any applicable state (checked, selected, and so on), and the control type (button, check box, list item, and so on).</li>
+<li>If the element is interactive, verify that you can use Narrator to invoke its action by pressing <em>Caps Lock + Enter</em>.</li>
+<li>For each table, ensure that Narrator correctly reads the table name, the table description (if available), and the row and column headings.</li>
+</ul>
+</li>
+<li>Press <em>Caps Lock + Shift + Enter</em> to search your app and verify that all of your controls appear in the search list, and that the control names are localized and readable.</li>
+<li>Turn off your monitor and try to accomplish main app scenarios by using only the keyboard and Narrator. To get the full list of Narrator commands and shortcuts, press <em>Caps Lock + F1</em>.</li>
+</ol>
+<p>Starting with Windows 10 version 1607, we introduced a new developer mode in Narrator. Turn on developer mode when Narrator is already running by pressing <em>Control + Caps Lock + F12</em>. When developer mode is enabled, the screen will be masked and will highlight only the accessible objects and the associated text that is exposed programmatically to Narrator. This gives a you a good visual representation of the information that is exposed to Narrator.</p>
+<p><strong>Use these steps to test your app using Narrator's touch mode:</strong></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Narrator automatically enters touch mode on devices that support 4+ contacts. Narrator doesn't support multi-monitor scenarios or multi-touch digitizers on the primary screen.</p>
+</div>
+<ol>
+<li><p>Get familiar with the UI and explore the layout.</p>
+<ul>
+<li><strong>Navigate through the UI by using single-finger swipe gestures.</strong> Use left or right swipes to move between items, and up or down swipes to change the category of items being navigated. Categories include all items, links, tables, headers, and so on. Navigating with single-finger swipe gestures is similar to navigating with <em>Caps Lock + Arrow</em>.</li>
+<li><strong>Use tab gestures to navigate through focusable elements.</strong> A three-finger swipe to the right or left is the same as navigating with <em>Tab</em> and <em>Shift + Tab</em> on a keyboard.</li>
+<li><strong>Spatially investigate the UI with a single finger.</strong> Drag a single finger up and down, or left and right, to have Narrator read the items under your finger. You can use the mouse as an alternative because it uses the same hit-testing logic as dragging a single finger.</li>
+<li><strong>Read the entire window and all its contents with a three finger swipe up</strong>. This is equivalent to using <em>Caps Lock + W</em>.</li>
+</ul>
+<p>If there is important UI that you cannot reach, you may have an accessibility issue.</p>
+</li>
+<li><p>Interact with a control to test its primary and secondary actions, and its scrolling behavior.</p>
+<p>Primary actions include things like activating a button, placing a text caret, and setting focus to the control. Secondary actions include actions such as selecting a list item or expanding a button that offers multiple options.</p>
+<ul>
+<li>To test a primary action: Double tap, or press with one finger and tap with another.</li>
+<li>To test a secondary action: Triple tap, or press with one finger and double tap with another.</li>
+<li>To test scrolling behavior: Use two-finger swipes to scroll in the desired direction.</li>
+</ul>
+<p>Some controls provide additional actions. To display the full list, enter a single four-finger tap.</p>
+<p>If a control responds to the mouse or keyboard but does not respond to a primary or secondary touch interaction, the control might need to implement additional <a href="/windows/desktop/WinAuto/entry-uiauto-win32">UI Automation</a> control patterns.</p>
+</li>
+</ol>
+<p>You should also consider using the <a href="/windows/desktop/WinAuto/accscope"><strong>AccScope</strong></a> tool to test Narrator accessibility scenarios with your app. The <a href="/windows/desktop/WinAuto/accscope"><strong>AccScope tool topic</strong></a> describes how to configure <strong>AccScope</strong> to test Narrator scenarios.</p>
+<h3 id="examine-the-ui-automation-representation-for-your-app">Examine the UI Automation representation for your app</h3>
+<p>Several of the UI Automation testing tools mentioned previously provide a way to view your app in a way that deliberately does not consider what the app looks like, and instead represents the app as a structure of UI Automation elements. This is how UI Automation clients, mainly assistive technologies, will be interacting with your app in accessibility scenarios.</p>
+<p>The <a href="/windows/desktop/WinAuto/accscope"><strong>AccScope</strong></a> tool provides a particularly interesting view of your app because you can see the UI Automation elements either as a visual representation or as a list. If you use the visualization, you can drill down into the parts in a way that you'll be able to correlate with the visual appearance of your app's UI. You can even test the accessibility of your earliest UI prototypes before you've assigned all the logic to the UI, making sure that both the visual interaction and accessibility-scenario navigation for your app is in balance.</p>
+<p>One aspect that you can test is whether there are elements appearing in the UI Automation element view that you don't want to appear there. If you find elements you want to omit from the view, or conversely if there are elements missing, you can use the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty"><strong>AutomationProperties.AccessibilityView</strong></a> XAML attached property to adjust how XAML controls appear in accessibility views. After you've looked at the basic accessibility views, this is also a good opportunity to recheck your tab sequences or spatial navigation as enabled by arrow keys to make sure users can reach each of the parts that are interactive and exposed in the control view.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="accessibility.html">Accessibility</a></li>
+<li><a href="practices-to-avoid.html">Practices to avoid</a></li>
+<li><a href="/windows/desktop/WinAuto/entry-uiauto-win32">UI Automation</a></li>
+<li><a href="https://www.microsoft.com/accessibility/">Accessibility in Windows</a></li>
+<li><a href="https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator">Get started with Narrator</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/accessibility-testing.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Item templates for grid view </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Item templates for grid view ">
+    
+    <meta name="description" content="Get item templates that you can use with a GridView control to display image galleries, images and text, and images with text overlays.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="item-templates-for-grid-view">Item templates for grid view</h1>
+
+<p>This section contains item templates that you can use with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView"><strong>GridView</strong></a> control. Use these templates to get the look of common app types.</p>
+<p>To demonstrate data binding, these templates bind <strong>GridViewItems</strong> to the example Recording class from the <a href="/windows/uwp/data-binding/data-binding-quickstart">data binding overview</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Currently, when a <strong>DataTemplate</strong> contains multiple controls (for example, more than a single <strong>TextBlock</strong>), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties"><strong>AutomationProperties.Name</strong></a> on the root element of the <strong>DataTemplate</strong>. For more on accessibility, see <a href="../accessibility/accessibility-overview.html">Accessibility overview</a>.</p>
+</div>
+<h2 id="icon-and-text">Icon and text</h2>
+<p>Use these templates to display a collection of apps in a grid with an icon and text.</p>
+<p><img src="images/listitems/icontext.png" alt="small icon and text gridview example"></p>
+<pre><code class="lang-xaml">&lt;GridView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;GridView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;IconTextTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Width=&quot;264&quot; Height=&quot;48&quot; Padding=&quot;12&quot; Orientation=&quot;Horizontal&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;SymbolIcon Symbol=&quot;Audio&quot; VerticalAlignment=&quot;Top&quot;/&gt;
+                &lt;TextBlock Margin=&quot;12,0,0,0&quot; Width=&quot;204&quot; Text=&quot;{x:Bind CompositionName}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/GridView.ItemTemplate&gt;
+    &lt;GridView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid MaximumRowsOrColumns=&quot;4&quot; Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/GridView.ItemsPanel&gt;
+&lt;/GridView&gt;
+</code></pre>
+<p><img src="images/listitems/icontext2.png" alt="icon and double line text gridview example"></p>
+<pre><code class="lang-xaml">&lt;GridView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;GridView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;IconTextTemplate2&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Width=&quot;264&quot; Height=&quot;120&quot; Padding=&quot;12&quot; Orientation=&quot;Horizontal&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;FontIcon Margin=&quot;0,6,0,0&quot; FontSize=&quot;48&quot; FontFamily=&quot;Segoe MDL2 Assets&quot; FontWeight=&quot;Bold&quot; Glyph=&quot;&amp;#xE8D6;&quot; VerticalAlignment=&quot;Top&quot;/&gt;
+                &lt;StackPanel Margin=&quot;16,1,0,0&quot;&gt;
+                    &lt;TextBlock Width=&quot;176&quot; Margin=&quot;0,0,0,2&quot; TextWrapping=&quot;WrapWholeWords&quot; TextTrimming=&quot;Clip&quot; Text=&quot;{x:Bind CompositionName}&quot;/&gt;
+                    &lt;TextBlock Width=&quot;176&quot; Height=&quot;48&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot; Foreground=&quot;{ThemeResource SystemControlPageTextBaseMediumBrush}&quot; TextWrapping=&quot;WrapWholeWords&quot; TextTrimming=&quot;Clip&quot; Text=&quot;{x:Bind ArtistName}&quot; /&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/GridView.ItemTemplate&gt;
+    &lt;GridView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid MaximumRowsOrColumns=&quot;4&quot; Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; Margin=&quot;40,0&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/GridView.ItemsPanel&gt;
+&lt;/GridView&gt;
+</code></pre>
+<h2 id="image-gallery">Image gallery</h2>
+<p>Use this template to display a collection of images in a grid with multi-select mode.</p>
+<p><img src="images/listitems/gridviewitems.png" alt="gridview items layout"></p>
+<pre><code class="lang-xaml">&lt;GridView SelectionMode=&quot;Multiple&quot;&gt;
+    &lt;GridView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;ImageGalleryDataTemplate&quot;&gt;
+            &lt;Image Source=&quot;Placeholder.png&quot; Height=&quot;180&quot; Width=&quot;180&quot; Stretch=&quot;UniformToFill&quot;/&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/GridView.ItemTemplate&gt;
+    &lt;GridView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid MaximumRowsOrColumns=&quot;3&quot; Orientation=&quot;Horizontal&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/GridView.ItemsPanel&gt;
+&lt;/GridView&gt;
+</code></pre>
+<h2 id="image-and-text">Image and text</h2>
+<p>Use these templates to display a media collection with text underneath.</p>
+<p><img src="images/listitems/imageandtext.png" alt="square image and text gridview example"></p>
+<pre><code class="lang-xaml">&lt;GridView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;GridView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;ImageTextDataTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Height=&quot;280&quot; Width=&quot;180&quot; Margin=&quot;12&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;Image Source=&quot;Placeholder.png&quot; Height=&quot;180&quot; Width=&quot;180&quot; Stretch=&quot;UniformToFill&quot;/&gt;
+                &lt;StackPanel Margin=&quot;0,12&quot;&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot;/&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind ArtistName}&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot; Foreground=&quot;{ThemeResource SystemControlPageTextBaseMediumBrush}&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/GridView.ItemTemplate&gt;
+    &lt;GridView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid MaximumRowsOrColumns=&quot;10&quot; Orientation=&quot;Horizontal&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/GridView.ItemsPanel&gt;
+&lt;/GridView&gt;
+</code></pre>
+<p><img src="images/listitems/imageandtext2.png" alt="rectangle image and text gridview example"></p>
+<pre><code class="lang-xaml">&lt;GridView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;GridView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;ImageTextDataTemplate2&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;StackPanel Height=&quot;280&quot; Width=&quot;320&quot; Margin=&quot;12&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;Image Source=&quot;Placeholder.png&quot; Height=&quot;180&quot; Width=&quot;320&quot; Stretch=&quot;UniformToFill&quot;/&gt;
+                &lt;StackPanel Margin=&quot;0,12&quot;&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot;/&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind ArtistName}&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot; Foreground=&quot;{ThemeResource SystemControlPageTextBaseMediumBrush}&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/GridView.ItemTemplate&gt;
+    &lt;GridView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid MaximumRowsOrColumns=&quot;4&quot; Orientation=&quot;Horizontal&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/GridView.ItemsPanel&gt;
+&lt;/GridView&gt;
+</code></pre>
+<h2 id="image-with-text-overlay">Image with text overlay</h2>
+<p>Use this template to display a media collection with text overlay.</p>
+<p><img src="images/listitems/imageoverlay.png" alt="Image and text overlay gridview example"></p>
+<pre><code class="lang-xaml">&lt;GridView ItemsSource=&quot;{x:Bind ViewModel.Recordings}&quot;&gt;
+    &lt;GridView.ItemTemplate&gt;
+        &lt;DataTemplate x:Name=&quot;ImageOverlayDataTemplate&quot; x:DataType=&quot;local:Recording&quot;&gt;
+            &lt;Grid Height=&quot;180&quot; Width=&quot;320&quot; AutomationProperties.Name=&quot;{x:Bind CompositionName}&quot;&gt;
+                &lt;Image Source=&quot;Placeholder.png&quot; Stretch=&quot;UniformToFill&quot;/&gt;
+                &lt;StackPanel Orientation=&quot;Vertical&quot; Height=&quot;60&quot; VerticalAlignment=&quot;Bottom&quot; Background=&quot;{ThemeResource SystemBaseLowColor}&quot; Padding=&quot;12&quot;&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind CompositionName}&quot;/&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind ArtistName}&quot; Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot; Foreground=&quot;{ThemeResource SystemControlPageTextBaseMediumBrush}&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/Grid&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/GridView.ItemTemplate&gt;
+    &lt;GridView.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;ItemsWrapGrid MaximumRowsOrColumns=&quot;4&quot; Orientation=&quot;Horizontal&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/GridView.ItemsPanel&gt;
+&lt;/GridView&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView">GridView class</a></li>
+<li><a href="/windows/uwp/data-binding/data-binding-quickstart">Data binding overview</a></li>
+<li><a href="../accessibility/accessibility-overview.html">Accessibility overview</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView">ListView and GridView sample</a></li>
+<li><a href="/windows/uwp/files/thumbnails">Thumbnail images</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/item-templates-gridview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

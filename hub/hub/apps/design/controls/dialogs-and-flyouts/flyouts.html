@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Flyout controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Flyout controls ">
+    
+    <meta name="description" content="Flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="flyouts">Flyouts</h1>
+
+<p>A flyout is a light dismiss container that can show arbitrary UI as its content. Flyouts can contain other flyouts or context menus to create a nested experience.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<ul>
+<li>Don't use a flyout instead of <a href="../tooltips.html">tooltip</a> or <a href="../menus.html">context menu</a>. Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.</li>
+</ul>
+<p>For recommendations on when to use a flyout vs. when to use a dialog (a similar control), see <a href="index.html">Dialogs and flyouts</a>.</p>
+<h2 id="create-a-flyout">Create a flyout</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout">Flyout class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout">Button.Flyout property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/Flyout">Open the WinUI 3 Gallery app and see the Flyout in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Flyouts are attached to specific controls. You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.Placement">Placement</a> property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutPlacementMode">Full placement mode</a>, the app stretches the flyout and centers it inside the app window. Some controls, such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button">Button</a>, provide a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout">Flyout</a> property that you can use to associate a flyout or <a href="../menus.html">context menu</a>.</p>
+<p>This example creates a simple flyout that displays some text when the button is pressed.</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;Click me&quot;&gt;
+  &lt;Button.Flyout&gt;
+     &lt;Flyout&gt;
+        &lt;TextBlock Text=&quot;This is a flyout!&quot;/&gt;
+     &lt;/Flyout&gt;
+  &lt;/Button.Flyout&gt;
+&lt;/Button&gt;
+</code></pre>
+<p>If the control doesn't have a flyout property, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.AttachedFlyoutProperty">FlyoutBase.AttachedFlyout</a> attached property instead. When you do this, you also need to call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase#Windows_UI_Xaml_Controls_Primitives_FlyoutBase_ShowAttachedFlyout_Windows_UI_Xaml_FrameworkElement_">FlyoutBase.ShowAttachedFlyout</a> method to show the flyout.</p>
+<p>This example adds a simple flyout to an image. When the user taps the image, the app shows the flyout.</p>
+<pre><code class="lang-xaml">&lt;Image Source=&quot;Assets/cliff.jpg&quot; Width=&quot;50&quot; Height=&quot;50&quot;
+  Margin=&quot;10&quot; Tapped=&quot;Image_Tapped&quot;&gt;
+  &lt;FlyoutBase.AttachedFlyout&gt;
+    &lt;Flyout&gt;
+      &lt;TextBlock Text=&quot;This is some text in a flyout.&quot;  /&gt;
+    &lt;/Flyout&gt;
+  &lt;/FlyoutBase.AttachedFlyout&gt;
+&lt;/Image&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+{
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+}
+</code></pre>
+<p>The previous examples defined their flyouts inline. You can also define a flyout as a static resource and then use it with multiple elements. This example creates a more complicated flyout that displays a larger version of an image when its thumbnail is tapped.</p>
+<pre><code class="lang-xaml">&lt;!-- Declare the shared flyout as a resource. --&gt;
+&lt;Page.Resources&gt;
+    &lt;Flyout x:Key=&quot;ImagePreviewFlyout&quot; Placement=&quot;Right&quot;&gt;
+        &lt;!-- The flyout's DataContext must be the Image Source
+             of the image the flyout is attached to. --&gt;
+        &lt;Image Source=&quot;{Binding Path=Source}&quot;
+            MaxHeight=&quot;400&quot; MaxWidth=&quot;400&quot; Stretch=&quot;Uniform&quot;/&gt;
+    &lt;/Flyout&gt;
+&lt;/Page.Resources&gt;
+</code></pre>
+<pre><code class="lang-xaml">&lt;!-- Assign the flyout to each element that shares it. --&gt;
+&lt;StackPanel&gt;
+    &lt;Image Source=&quot;Assets/cliff.jpg&quot; Width=&quot;50&quot; Height=&quot;50&quot;
+           Margin=&quot;10&quot; Tapped=&quot;Image_Tapped&quot;
+           FlyoutBase.AttachedFlyout=&quot;{StaticResource ImagePreviewFlyout}&quot;
+           DataContext=&quot;{Binding RelativeSource={RelativeSource Mode=Self}}&quot;/&gt;
+    &lt;Image Source=&quot;Assets/grapes.jpg&quot; Width=&quot;50&quot; Height=&quot;50&quot;
+           Margin=&quot;10&quot; Tapped=&quot;Image_Tapped&quot;
+           FlyoutBase.AttachedFlyout=&quot;{StaticResource ImagePreviewFlyout}&quot;
+           DataContext=&quot;{Binding RelativeSource={RelativeSource Mode=Self}}&quot;/&gt;
+    &lt;Image Source=&quot;Assets/rainier.jpg&quot; Width=&quot;50&quot; Height=&quot;50&quot;
+           Margin=&quot;10&quot; Tapped=&quot;Image_Tapped&quot;
+           FlyoutBase.AttachedFlyout=&quot;{StaticResource ImagePreviewFlyout}&quot;
+           DataContext=&quot;{Binding RelativeSource={RelativeSource Mode=Self}}&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+{
+    FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+}
+</code></pre>
+<h2 id="style-a-flyout">Style a flyout</h2>
+<p>To style a Flyout, modify its <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout.FlyoutPresenterStyle">FlyoutPresenterStyle</a>. This example shows a paragraph of wrapping text and makes the text block accessible to a screen reader.</p>
+<p><img src="../images/flyout-wrapping-text.png" alt="Accessible flyout with wrapping text"></p>
+<pre><code class="lang-xaml">&lt;Flyout&gt;
+  &lt;Flyout.FlyoutPresenterStyle&gt;
+    &lt;Style TargetType=&quot;FlyoutPresenter&quot;&gt;
+      &lt;Setter Property=&quot;ScrollViewer.HorizontalScrollMode&quot;
+          Value=&quot;Disabled&quot;/&gt;
+      &lt;Setter Property=&quot;ScrollViewer.HorizontalScrollBarVisibility&quot; Value=&quot;Disabled&quot;/&gt;
+      &lt;Setter Property=&quot;IsTabStop&quot; Value=&quot;True&quot;/&gt;
+      &lt;Setter Property=&quot;TabNavigation&quot; Value=&quot;Cycle&quot;/&gt;
+    &lt;/Style&gt;
+  &lt;/Flyout.FlyoutPresenterStyle&gt;
+  &lt;TextBlock Style=&quot;{StaticResource BodyTextBlockStyle}&quot; Text=&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.&quot;/&gt;
+&lt;/Flyout&gt;
+</code></pre>
+<h2 id="styling-flyouts-for-10-foot-experiences">Styling flyouts for 10-foot experiences</h2>
+<p>Light dismiss controls like flyout trap keyboard and gamepad focus inside their transient UI until dismissed. To provide a visual cue for this behavior, light dismiss controls on Xbox draw an overlay that dims the contrast and visibility of out of scope UI. This behavior can be modified with the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.LightDismissOverlayMode"><code>LightDismissOverlayMode</code></a> property. By default, flyouts will draw the light dismiss overlay on Xbox but not other device families, but apps can choose to force the overlay to be always <strong>On</strong> or always <strong>Off</strong>.</p>
+<p><img src="../images/flyout-smoke.png" alt="Flyout with dimming overlay"></p>
+<pre><code class="lang-xaml">&lt;MenuFlyout LightDismissOverlayMode=&quot;On&quot;&gt;
+</code></pre>
+<h2 id="light-dismiss-behavior">Light dismiss behavior</h2>
+<p>Flyouts can be closed with a quick light dismiss action, including</p>
+<ul>
+<li>Tap outside the flyout</li>
+<li>Press the Escape keyboard key</li>
+<li>Press the hardware or software system Back button</li>
+<li>Press the gamepad B button</li>
+</ul>
+<p>When dismissing with a tap, this gesture is typically absorbed and not passed on to the UI underneath. For example, if there's a button visible behind an open flyout, the user's first tap dismisses the flyout but does not activate this button. Pressing the button requires a second tap.</p>
+<p>You can change this behavior by designating the button as an input pass-through element for the flyout. The flyout will close as a result of the light dismiss actions described above and will also pass the tap event to its designated <code>OverlayInputPassThroughElement</code>. Consider adopting this behavior to speed up user interactions on functionally similar items. If your app has a favorites collection and each item in the collection includes an attached flyout, it's reasonable to expect that users may want to interact with multiple flyouts in rapid succession.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Be careful not to designate an overlay input pass-through element which results in a destructive action. Users have become habituated to discreet light dismiss actions which do not activate primary UI. Close, Delete, or similarly destructive buttons should not activate on light dismiss to avoid unexpected and disruptive behavior.</p>
+</div>
+<p>In the following example, all three buttons inside FavoritesBar will be activated on the first tap.</p>
+<pre><code class="lang-xaml">&lt;Page&gt;
+    &lt;Page.Resources&gt;
+        &lt;Flyout x:Name=&quot;TravelFlyout&quot; x:Key=&quot;TravelFlyout&quot;
+                OverlayInputPassThroughElement=&quot;{x:Bind FavoritesBar}&quot;&gt;
+            &lt;StackPanel&gt;
+                &lt;HyperlinkButton Content=&quot;Washington Trails Association&quot;/&gt;
+                &lt;HyperlinkButton Content=&quot;Washington Cascades - Go Northwest! A Travel Guide&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/Flyout&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;StackPanel x:Name=&quot;FavoritesBar&quot; Orientation=&quot;Horizontal&quot;&gt;
+            &lt;HyperlinkButton x:Name=&quot;PageLinkBtn&quot;&gt;Bing&lt;/HyperlinkButton&gt;
+            &lt;Button x:Name=&quot;Folder1&quot; Content=&quot;Travel&quot; Flyout=&quot;{StaticResource TravelFlyout}&quot;/&gt;
+            &lt;Button x:Name=&quot;Folder2&quot; Content=&quot;Entertainment&quot; Click=&quot;Folder2_Click&quot;/&gt;
+        &lt;/StackPanel&gt;
+        &lt;ScrollViewer Grid.Row=&quot;1&quot;&gt;
+            &lt;WebView x:Name=&quot;WebContent&quot;/&gt;
+        &lt;/ScrollViewer&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Folder2_Click(object sender, RoutedEventArgs e)
+{
+     Flyout flyout = new Flyout();
+     flyout.OverlayInputPassThroughElement = FavoritesBar;
+     ...
+     flyout.ShowAt(sender as FrameworkElement);
+{
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.Flyout">Flyout class</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Button.Flyout">Button.Flyout property</a></li>
+<li><a href="winui2gallery:/item/Flyout">Open the WinUI 2 Gallery app and see the Flyout in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../tooltips.html">Tooltips</a></li>
+<li><a href="../menus.html">Menus and context menu</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout">Flyout class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog">ContentDialog class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/dialogs-and-flyouts/flyouts.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

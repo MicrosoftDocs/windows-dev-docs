@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices. </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Publish your packaged desktop application to the Microsoft Store or sideload it onto one or more devices. ">
+    
+    <meta name="description" content="Learn how to use Desktop Bridge to distribute a packaged desktop application to the Microsoft Store or sideload it onto one or more devices.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="distribute-your-packaged-desktop-app">Distribute your packaged desktop app</h1>
+
+<p>If you decide to package your desktop app in an MSIX package (see <a href="/windows/msix/desktop/source-code-overview">Building an MSIX package from your code</a>), you can publish your packaged application to the Microsoft Store or sideload it on to one or more devices.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Do you have a plan for how you might transition users to your packaged application? Before you distribute your app, see the <a href="#transition-users">Transition users to your packaged app</a> section of this guide to get some ideas.</p>
+</div>
+<h2 id="distribute-your-application-by-publishing-it-to-the-microsoft-store">Distribute your application by publishing it to the Microsoft Store</h2>
+<p>The <a href="https://www.microsoft.com/store/apps">Microsoft Store</a> is a convenient way for customers to get your app.</p>
+<p>Publish your application to the Microsoft Store to reach the broadest audience. Also, organizational customers can acquire your application to distribute internally to their organizations through the <a href="https://businessstore.microsoft.com/store">Microsoft Store for Business</a>.</p>
+<p>If you plan to publish to the Microsoft Store, you'll be asked a few extra questions as part of the submission process. That's because your package manifest declares a restricted capability named <strong>runFullTrust</strong>, and we need to approve your application's use of that capability. You can read more about this requirement here: <a href="/windows/uwp/packaging/app-capability-declarations#restricted-capabilities">Restricted capabilities</a>.</p>
+<p>You don't have to sign your application before you submit it to the Store.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you plan to publish your application to the Microsoft Store, make sure that your application operates correctly on devices that run Windows 10 S or Windows 11 S. This is a Store requirement. See <a href="/windows/msix/desktop/desktop-to-uwp-test-windows-s">Test your Windows app for Windows 10 S or Windows 11 S</a>.</p>
+</div>
+<p><a id="side-load"></a></p>
+<h2 id="distribute-your-application-without-placing-it-onto-the-microsoft-store">Distribute your application without placing it onto the Microsoft Store</h2>
+<p>If you'd rather distribute your application without using the Store, you can manually distribute apps to one or more devices.</p>
+<p>This might make sense if you want greater control over the distribution experience or you don't want to get involved with the Microsoft Store certification process.</p>
+<p>To distribute your application to other devices without placing it in the Store, you have to obtain a certificate, sign your application by using that certificate, and then sideload your application onto those devices.</p>
+<p>You can <a href="/windows/msix/package/create-certificate-package-signing">create a certificate</a> or obtain one from a popular vendor such as <a href="https://www.verisign.com/">Verisign</a>.</p>
+<p>If you plan to distribute your application onto devices that run Windows 10 S or Windows 11 S, your application has to be signed by the Microsoft Store so you'll have to go through the Store submission process before you can distribute your application onto those devices.</p>
+<p>If you create a certificate, you have to install it into the <strong>Trusted Root</strong> or <strong>Trusted People</strong> certificate store on each device that runs your app. If you get a certificate from a popular vendor, you won't have to install anything onto other systems besides your app.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Make sure that the publisher name on your certificate matches the publisher name of your app.</p>
+</div>
+<p>To sign your application by using a certificate, see <a href="/windows/msix/package/sign-app-package-using-signtool">Sign an application package using SignTool</a>.</p>
+<p>To sideload your application onto other devices, see <a href="/windows/application-management/sideload-apps-in-windows-10">Sideload LOB apps in Windows</a>.</p>
+<p><a id="transition-users"></a></p>
+<h2 id="transition-users-to-your-packaged-app">Transition users to your packaged app</h2>
+<p>Before you distribute your app, consider adding a few extensions to your package manifest to help users get into the habit of using your packaged app. Here's a few things you can do.</p>
+<ul>
+<li>Point existing Start tiles and taskbar buttons to your packaged app.</li>
+<li>Associate your packaged application with a set of file types.</li>
+<li>Make your packaged application open certain types of files by default.</li>
+</ul>
+<p>For the complete list of extensions and the guidance for how to use them, see <a href="desktop-to-uwp-extensions.html#transition-users-to-your-app">Transition users to your app</a>.</p>
+<p>Also, consider adding code to your packaged application that accomplishes these tasks:</p>
+<ul>
+<li>Migrates user data associated with your desktop application to the appropriate folder locations of your packaged app.</li>
+<li>Gives users the option to uninstall the desktop version of your app.</li>
+</ul>
+<p>Let's talk about each one of these tasks. We'll start with user data migration.</p>
+<h3 id="migrate-user-data">Migrate user data</h3>
+<p>If you're going to add code that migrates user data, it's best to run that code only when the application is first started. Before you migrate the users data, display a dialog box to the user that explains what is happening, why it is recommended, and what's going to happen to their existing data.</p>
+<p>Here's an example of how you could do this in a .NET-based packaged app.</p>
+<pre><code class="lang-csharp">private void MigrateUserData()
+{
+    String sourceDir = Environment.GetFolderPath
+        (Environment.SpecialFolder.ApplicationData) + &quot;\\AppName&quot;;
+
+    if (sourceDir != null)
+    {
+        DialogResult migrateResult = MessageBox.Show
+            (&quot;Would you like to migrate your data from the previous version of this app?&quot;,
+             &quot;Data Migration&quot;, MessageBoxButtons.YesNo);
+
+        if (migrateResult.Equals(DialogResult.Yes))
+        {
+            String destinationDir =
+                Windows.Storage.ApplicationData.Current.LocalFolder.Path + &quot;\\AppName&quot;;
+
+            Process process = new Process();
+            process.StartInfo.FileName = &quot;robocopy.exe&quot;;
+            process.StartInfo.Arguments = &quot;%LOCALAPPDATA%\\AppName &quot; + destinationDir + &quot; /move&quot;;
+            process.StartInfo.CreateNoWindow = true;
+            process.Start();
+            process.WaitForExit();
+
+            if (process.ExitCode &gt; 1)
+            {
+                //Migration was unsuccessful -- you can choose to block/retry/other action
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="uninstall-the-desktop-version-of-your-app">Uninstall the desktop version of your app</h3>
+<p>It is better not to uninstall the users desktop application without first asking them for permission. Display a dialog box that asks the user for that permission. Users might decide not to uninstall the desktop version of your app. If that happens, you'll have to decide whether you want to block usage of the desktop application or support the side-by-side use of both apps.</p>
+<p>Here's an example of how you could do this in a .NET-based packaged app.</p>
+<p>To view the complete context of this snippet, see the <strong>MainWindow.cs</strong> file of this sample <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition">WPF picture viewer with transition/migration/uninstallation</a>.</p>
+<pre><code class="lang-csharp">private void RemoveDesktopApp()
+{
+    //Typically, you can find your uninstall string at this location.
+    String uninstallString = (String)Microsoft.Win32.Registry.GetValue
+        (@&quot;HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion&quot; +
+         @&quot;\Uninstall\{7AD02FB8-B85E-44BC-8998-F4803BA5A0E3}\&quot;, &quot;UninstallString&quot;, null);
+
+    //Detect if the previous version of the Desktop application is installed.
+    if (uninstallString != null)
+    {
+        DialogResult uninstallResult = MessageBox.Show
+            (&quot;To have the best experience, consider uninstalling the &quot;
+              + &quot; previous version of this app. Would you like to do that now?&quot;,
+              &quot;Uninstall the previous version&quot;, MessageBoxButtons.YesNo);
+
+        if (uninstallResult.Equals(DialogResult.Yes))
+        {
+                    string[] uninstallArgs = uninstallString.Split(' ');
+
+            Process process = new Process();
+            process.StartInfo.FileName = uninstallArgs[0];
+            process.StartInfo.Arguments = uninstallArgs[1];
+            process.StartInfo.CreateNoWindow = true;
+
+            process.Start();
+            process.WaitForExit();
+
+            if (process.ExitCode != 0)
+            {
+                //Uninstallation was unsuccessful - You can choose to block the application here.
+            }
+        }
+    }
+
+}
+</code></pre>
+<h2 id="next-steps">Next steps</h2>
+<p>Have questions? Ask us on our <a href="https://aka.ms/msixcommunity">Tech Community</a>.</p>
+<p>If you encounter issues publishing your application to the Store, this <a href="/archive/blogs/appconsult/preparing-a-desktop-bridge-application-for-the-store-submission">blog post</a> contains some useful tips.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/desktop-to-uwp-distribute.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

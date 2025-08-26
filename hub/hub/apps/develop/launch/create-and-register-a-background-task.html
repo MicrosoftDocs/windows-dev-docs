@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Working with background tasks in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Working with background tasks in Windows apps ">
+    
+    <meta name="description" content="Learn how to create and register a background task in your app with the Windows Runtime (WinRT) BackgroundTaskBuilder class.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="working-with-background-tasks-in-windows-apps">Working with background tasks in Windows apps</h1>
+
+<p>Learn how to create and register a background task in your app with the Windows Runtime (WinRT) <a href="/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder">BackgroundTaskBuilder</a> class.</p>
+<h2 id="register-a-background-task">Register a background task</h2>
+<p>See the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask/cs/BackgroundTask">BackgroundTask sample</a> for a complete example of registering a background task in a Universal Windows Platform (UWP) app.</p>
+<p>The following example shows the registration of a Win32 COM task that runs on a recurring 15 minute timer.</p>
+<p>To register a background task, you must first create a new instance of the <a href="/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder">BackgroundTaskBuilder</a> class. The <code>BackgroundTaskBuilder</code> class is used to create and register background tasks in your app. The following code example demonstrates how to create a new instance of the <code>BackgroundTaskBuilder</code> class:</p>
+<pre><code class="lang-csharp">using System;
+using Windows.ApplicationModel.Background;
+
+public IBackgroundTaskRegistration RegisterBackgroundTaskWithSystem(IBackgroundTrigger trigger, Guid entryPointClsid, string taskName)
+{
+    BackgroundTaskBuilder builder = new BackgroundTaskBuilder();
+
+    builder.SetTrigger(trigger);
+    builder.SetTaskEntryPointClsid(entryPointClsid);
+
+    BackgroundTaskRegistration registration;
+    if (builder.Validate())
+    {
+        registration = builder.Register(taskName);
+    }
+    else
+    {
+        registration = null;
+    }
+
+    return registration;
+}
+
+RegisterBackgroundTaskWithSystem(new TimeTrigger(15, false), typeof(TimeTriggeredTask).GUID, typeof(TimeTriggeredTask).Name);
+</code></pre>
+<p>The <code>RegisterBackgroundTaskWithSystem</code> method takes three parameters:</p>
+<ul>
+<li><code>trigger</code>: The trigger that will start the background task.</li>
+<li><code>entryPointClsid</code>: The class ID of the background task entry point.</li>
+<li><code>taskName</code>: The name of the background task.</li>
+</ul>
+<p>The <code>RegisterBackgroundTaskWithSystem</code> method creates a new instance of the <code>BackgroundTaskBuilder</code> class and sets the trigger and entry point class ID for the background task. The method then registers the background task with the system.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This class is not agile, which means that you need to consider its threading model and marshaling behavior. For more info, see <a href="/cpp/cppcx/threading-and-marshaling-c-cx">Threading and Marshaling (C++/CX)</a> and <a href="/windows/uwp/threading-async/using-windows-runtime-objects-in-a-multithreaded-environment">Using Windows Runtime objects in a multithreaded environment (.NET)</a>.</p>
+</div>
+<h2 id="handle-modern-standby-in-a-background-task">Handle modern standby in a background task</h2>
+<p>The <strong>BackgroundTaskBuilder</strong> and related APIs already allow packaged desktop applications to run background tasks. The API now extends these APIs to enable these appls to execute code in modern standby. The update also adds properties that can be queried by an app to determine if the system will throttle background tasks for the application in modern standby to conserve battery life. This enables scenarios like apps receiving VoIP calls or other push notifications from modern standby.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>&quot;Packaged desktop applications&quot; in this section refers to Win32 applications that have package identity (i.e., are Desktop Bridge or Sparse Signed Packaged applications) and have a main (or wmain) function as their entry point.</p>
+</div>
+<p>The following example shows how an app developer can use the <strong>BackgroundTaskBuilder</strong> API to register at most one task with the specified task name. The sample also shows how to check and opt in the task registration to run in modern standby for the application's most critical tasks.</p>
+<pre><code class="lang-csharp">// The following namespace is required for BackgroundTaskBuilder APIs. 
+using Windows.ApplicationModel.Background; 
+
+// The following namespace is required for API version checks. 
+using Windows.Foundation.Metadata; 
+
+// The following namespace is used for showing Toast Notifications. This 
+// namespace requires the Microsoft.Toolkit.Uwp.Notifications NuGet package 
+// version 7.0 or greater. 
+using Microsoft.Toolkit.Uwp.Notifications; 
+
+// Incoming calls are considered to be critical tasks to the operation of the app. 
+const string IncomingCallTaskName = &quot;IncomingCallTask&quot;; 
+const string NotificationTaskName = &quot;NotificationTask&quot;; 
+const string PrefetchTaskName = &quot;PrefetchTask&quot;; 
+
+public static bool IsAllowedInBackground(BackgroundAccessStatus status) { 
+    return ((status != BackgroundAccessStatus.Denied) &amp;&amp; 
+            (status != BackgroundAccessStatus.DeniedBySystemPolicy) &amp;&amp; 
+            (status != BackgroundAccessStatus.DeniedByUser) &amp;&amp; 
+            (status != BackgroundAccessStatus.Unspecified)); 
+} 
+
+public async void RegisterTask(IBackgroundTrigger trigger, 
+                               Guid entryPointClsid, 
+                               string taskName, 
+                               bool isRunInStandbyRequested) 
+{ 
+    var taskBuilder = new BackgroundTaskBuilder(); 
+    taskBuilder.SetTrigger(trigger); 
+    taskBuilder.SetTaskEntryPointClsid(entryPointClsid); 
+
+    // Only the most critical background work should be allowed to proceed in 
+    // modern standby. Additionally, some platforms may not support modern 
+    // or running background tasks in modern standby at all. Only attempt to 
+    // request modern standby execution if both are true. Requesting network 
+    // is necessary when running in modern standby to handle push notifications. 
+    if (IsRunInStandbyRequested &amp;&amp; taskBuilder.IsRunningTaskInStandbySupported) 
+    { 
+        var accessStatus = BackgroundExecutionManager.GetAccessStatusForModernStandby(); 
+        if (!IsAllowedInBackground(accessStatus) 
+        { 
+            await BackgroundExecutionManager.RequestAccessKindForModernStandby( 
+                    BackgroundAccessRequestKind.AllowedSubjectToSystemPolicy, 
+                    &quot;This app wants to receive incoming notifications while your device is asleep&quot;); 
+        } 
+
+        accessStatus = BackgroundExecutionManager.GetAccessStatusForModernStandby(); 
+
+        if (IsAllowedInBackground(accessStatus) 
+        { 
+            taskBuilder.IsRunningTaskInStandbyRequested = true; 
+            taskBuilder.IsNetworkRequested = true; 
+        } 
+    } 
+
+    // Check that the registration is valid before attempting to register. 
+    if (taskBuilder.IsRegistrationValid) 
+    { 
+        // If a task with the specified name already exists, it is unregistered 
+        // before a new one is registered. Note this API may still fail from 
+        // catastrophic failure (e.g., memory allocation failure). 
+        taskBuilder.Register(taskName); 
+    } 
+
+    return; 
+} 
+
+RegisterTask(new PushNotificationTrigger(), &quot;{INSERT-YOUR-GUID-HERE}&quot;, IncomingCallTaskName, true); 
+</code></pre>
+<h2 id="check-if-background-tasks-have-exceeded-their-budget-in-modern-standby">Check if background tasks have exceeded their budget in modern standby</h2>
+<p>The following sample code shows how an app developer may use the <strong>BackgroundWorkCost.WasApplicationThrottledInStandby</strong> and <strong>BackgroundWorkCost.ApplicationEnergyUseLevel</strong> to monitor and react to having their background tasks exhaust its app budget. The app developer may react by reducing lower priority work being done in modern standby. Note this relies on the code from the previous sample.</p>
+<pre><code class="lang-csharp">public async void ReduceBackgroundCost() 
+{ 
+    BackgroundTaskRegistration callTask; 
+    BackgroundTaskRegistration notificationTask; 
+    BackgroundTaskRegistration prefetchTask; 
+
+    // Nothing to do if the app was not or will not be throttled. 
+    if (!BackgroundWorkCost.WasApplicationThrottledInStandby &amp;&amp; 
+        (BackgroundWorkCost.ApplicationEnergyUseLevel != StandbyEnergyUseLevel.OverBudget)) 
+    { 
+        return; 
+    } 
+
+    foreach (var task in BackgroundTaskRegistration.AllTasks) 
+    { 
+        switch (task.Value.Name) { 
+        case IncomingCallTaskName: 
+            callTask = task.Value; 
+            break; 
+
+        case NotificationTaskName: 
+            notificationTask = task.Value; 
+            break; 
+
+        case PrefetchTaskName: 
+            prefetchTask = task.Value; 
+            break; 
+
+        default: 
+        } 
+    } 
+
+    if (callTask.WasTaskThrottledInStandby) 
+    { 
+        // Unset the throttle flag after acknowledging it so the app can 
+        // react to the same task being throttled again in the future. 
+        task.Value.WasTaskThrottledInStandby = false; 
+
+        // Notify the user that the notification was missed. 
+        new ToastContentBuilder() 
+            .AddText(&quot;You missed a call&quot;) 
+            .AddText(task.Value.Name) 
+            .Show(); 
+
+        // Because the incoming calls were not activated, demote less notifications 
+        // tasks so the calls can be delivered promptly in the future. 
+        RegisterTask(notificationTask.Value.Trigger, 
+                     typeof(TimeTriggeredTask).GUID, 
+                     notificationTask.Value.Name, 
+                     false); 
+    } 
+
+    // Note that if incoming call tasks were throttled in some previous modern 
+    // standby session, the application energy use was over budget for some period. 
+    // Demote unimportant tasks like prefetch work to avoid calls and notifications 
+    // from being throttled.
+    if (callTask.WasTaskThrottledInStandby) ||
+        (BackgroundWorkCost.ApplicationEnergyUseLevel == StandbyEnergyUseLevel.OverBudget))
+    {
+        RegisterTask(prefetchTask.Value.Trigger,
+                     typeof(TimeTriggeredTask).GUID,
+                     prefetchTask.Value.Name,
+                     false);
+    }
+
+    return;
+}
+</code></pre>
+<h2 id="monitor-background-task-energy-use-trends">Monitor background task energy use trends</h2>
+<p>The following is an incremental end to end update to the following C++WinRT/C# sample code on <a href="https://github.com/microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTaskWinMainComSample">GitHub</a>.</p>
+<p>The example shows how you can use the <strong>BackgroundWorkCost.ApplicationEnergyUseTrend</strong> to monitor how your background tasks trend towards exhausting their budget. You can also stop the most expensive background tasks from running in modern standby and prevent background tasks from running in modern standby if their app is using its budget too quickly. This sample relies on code from previous samples.</p>
+<pre><code class="lang-csharp">public async void ReduceBackgroundCostPreemptively() 
+{ 
+    BackgroundTaskRegistration mostExpensiveTask = null; 
+
+    // We can't do anything preemptively since the trend isn't known. 
+    if (!BackgroundWorkCost.IsApplicationEnergyUseTrendKnown) 
+    { 
+        return; 
+    } 
+
+    // The app is not trending towards being over budget, so this method can 
+    // return early. 
+    if ((BackgroundWorkCost.ApplicationEnergyUseTrend != EnergyUseTrend.OverBudget) &amp;&amp; 
+        (BackgroundWorkCost.ApplicationEnergyUseTrend != EnergyUseTrend.OverHalf)) 
+    { 
+        return; 
+    } 
+
+    // The application is going exceeding its budget very quickly. Demote the 
+    // most expensive task that is not the call task before call tasks start being 
+    // throttled. 
+    if (BackgroundWorkCost.ApplicationEnergyUseTrend == EnergyUseTrend.OverBudget) 
+    { 
+        foreach (var task in BackgroundTaskRegistration.AllTasks) 
+        { 
+            if ((task.Value.Name != IncomingCallTaskName) &amp;&amp; 
+                ((mostExpensiveTask == null) || 
+                 (mostExpensiveTask.ApplicationEnergyUseTrendContributionPercentage &lt; 
+                  task.Value.ApplicationEnergyUseTrendContributionPercentage))) 
+            { 
+                mostExpensiveTask = task.Value; 
+            } 
+        } 
+    } 
+
+    if (mostExpensiveTask != null) 
+    { 
+        RegisterTask(mostExpensiveTask.Trigger, 
+                     typeof(TimeTriggeredTask).GUID, 
+                     mostExpensiveTask.Name, 
+                     false); 
+    } 
+
+    // The application is trending toward eventually exceeding its budget. Demote the 
+    // least important prefetch task before calls and notifications are throttled. 
+    foreach (var task in BackgroundTaskRegistration.AllTasks) 
+    { 
+        if (task.Value.Name == PrefetchTaskName) { 
+            RegisterTask(task.Value.Trigger, 
+                         typeof(TimeTriggeredTask).GUID, 
+                         task.Value.Name, 
+                         false); 
+        } 
+    } 
+
+    return; 
+} 
+</code></pre>
+<h2 id="background-tasks-and-network-connectivity">Background tasks and network connectivity</h2>
+<p>If your background task requires network connectivity, be aware of the following considerations.</p>
+<h3 id="network-related-triggers">Network related triggers</h3>
+<ul>
+<li>Use a <a href="/uwp/api/windows.applicationmodel.background.socketactivitytrigger">SocketActivityTrigger</a> to activate the background task when a packet is received and you need to perform a short-lived task. After performing the task, the background task should terminate to save power.</li>
+<li>Use a <a href="/uwp/api/windows.networking.sockets.controlchanneltrigger">ControlChannelTrigger</a> to activate the background task when a packet is received and you need to perform a long-lived task.</li>
+</ul>
+<h3 id="network-related-conditions-and-flags">Network related conditions and flags</h3>
+<ul>
+<li>Add the InternetAvailable condition (<a href="/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.addcondition">BackgroundTaskBuilder.AddCondition</a>) to your background task to delay triggering the background task until the network stack is running. This condition saves power because the background task won't execute until network access is available. This condition does not provide real-time activation.</li>
+<li>Regardless of the trigger you use, set <a href="/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder.isnetworkrequested">IsNetworkRequested</a> on your background task to ensure that the network stays up while the background task runs. This tells the background task infrastructure to keep the network up while the task is executing, even if the device has entered Connected Standby mode. If your background task does not use <strong>IsNetworkRequested</strong>, then your background task will not be able to access the network when in Connected Standby mode.</li>
+</ul>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder">BackgroundTaskBuilder class</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask/cs/BackgroundTask">BackgroundTask sample</a></li>
+<li><a href="index.html">Launching Windows apps and managing background tasks</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/create-and-register-a-background-task.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

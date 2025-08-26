@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Program Compatibility Troubleshooter on Arm </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Program Compatibility Troubleshooter on Arm ">
+    
+    <meta name="description" content="Guidance for adjusting compatibility settings if your app isn&#39;t working correctly on Arm">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="program-compatibility-troubleshooter-on-arm">Program Compatibility Troubleshooter on Arm</h1>
+
+<p>PCs powered by Arm provide great application compatibility and allow you to run your existing unmodified x86 win32 applications. Arm apps run natively without any emulation, while x86 and x64 apps run under emulation on Arm devices.</p>
+<p>However, sometimes the emulation performs optimizations that don't result in the best user experience. You can use the <strong>Program Compatibility Troubleshooter</strong> to toggle emulation settings for your x86 or x64 app, reducing the default optimizations and potentially increasing compatibility.</p>
+<h2 id="start-the-program-compatibility-troubleshooter">Start the Program Compatibility Troubleshooter</h2>
+<p>You start the <a href="https://support.microsoft.com/help/15078/windows-make-older-programs-compatible">Program Compatibility Troubleshooter</a> manually in the same way on any Windows PC: right-click an executable (.exe) file and select <strong>Troubleshoot compatibility</strong>. You will then have the option to <em>Try recommended settings</em> to test run the program using recommended compatibility settings or <em>Troubleshoot program</em> to choose compatibility settings based on specific problems that you've noticed.</p>
+<p><img src="images/Capture4.png" alt="Screenshot of the Troubleshoot compatibility options."></p>
+<p>If you select <strong>Troubleshoot program</strong>, you will have the option to select:</p>
+<ul>
+<li>The program worked in earlier versions of Windows but won't install or run now</li>
+<li>The program opens but doesn't display correctly</li>
+<li>The program requires additional permissions</li>
+<li>I don't see my problem listed</li>
+</ul>
+<p><img src="images/Capture5.png" alt="Screenshot of the What problems do you notice options."></p>
+<p>All options enable the settings that are applicable and applied on Windows Desktop PCs. In addition, the first, second, and fourth options apply the <code>Disable application cache</code> and <code>Disable hybrid execution mode</code> emulation settings. (See the emulation settings table below for descriptions.)</p>
+<h2 id="toggling-emulation-settings">Toggling emulation settings</h2>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Changing emulation settings may result in your application unexpectedly crashing or not launching at all.</p>
+</div>
+<p>You can toggle emulation settings by right-clicking the executable and selecting <strong>Properties</strong>.</p>
+<p>On ARM, a section titled <strong>Windows 10 on ARM</strong> or <strong>Windows 11 on ARM</strong> will be available in the <strong>Compatibility</strong> tab. Select <strong>Change emulation settings</strong> to launch an Emulations Properties window.</p>
+<p><img src="images/Capture.png" alt="Change emulation settings screenshot"></p>
+<p>This Emulations Properties window provides two ways to modify emulation settings. You may select a pre-defined group of emulation settings or select the <strong>Use advanced settings</strong> option to enable choosing individual settings.</p>
+<p>The following emulation settings reduce performance optimizations in favor of quality and can be used to experiment with testing your x86 or x64 app's compatibility when running in Windows on Arm.</p>
+<p><img src="images/Capture2.png" alt="Change emulation settings screenshot2"></p>
+<p>Select <strong>Use advanced settings</strong> to choose individual settings as described in this table.</p>
+<table>
+<thead>
+<tr>
+<th>Emulation setting</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disable application cache</td>
+<td>The operating system will cache compiled blocks of code to reduce emulation overhead on subsequent executions. This setting requires the emulator to recompile all app code at runtime.</td>
+</tr>
+<tr>
+<td>Disable hybrid execution mode</td>
+<td>Compiled Hybrid Portable Executable (CHPE), binaries are x86 compatible binaries that include native Arm64 code to improve performance, but that may not be compatible with some apps. This setting forces use of x86-only binaries.</td>
+</tr>
+<tr>
+<td>Additional lightweight emulation protections</td>
+<td>A catch-all update affecting things like volatile metadata which can impact performance when running an x86 or x64 app in emulation.</td>
+</tr>
+<tr>
+<td>Strict self-modifying code support</td>
+<td>Enable this to ensure that any self-modifying code is correctly supported in emulation. The most common self-modifying code scenarios are covered by the default emulator behavior. Enabling this option significantly reduces performance of self-modifying  code during execution.</td>
+</tr>
+<tr>
+<td>Disable RWX page performance optimization</td>
+<td>This optimization improves the performance of code on readable, writable, and executable (RWX) pages, but may be incompatible with some apps.</td>
+</tr>
+<tr>
+<td>Disable JIT optimization (x64 apps only)</td>
+<td>This is no longer used and will be removed in future versions of the Troubleshooter.</td>
+</tr>
+<tr>
+<td>Disable floating point optimization (x64 apps only)</td>
+<td>Check to emulate x87 floating point at a full 80-bit precision, but at  a performance cost. x87 is a floating-point coprocessor used in some older x86 processors to perform floating-point arithmetic using an 80-bit floating point format with higher precision than the 32-bit or 64-bit format.</td>
+</tr>
+</tbody>
+</table>
+<p>You can also change how the application uses multiple CPU cores, selecting between Fast, Strict multi-core operation, Very strict, or Force single-core operation. Test your apps emulation when running Windows on Arm with these settings if you notice compatibility issues.</p>
+<p><img src="images/Capture3.png" alt="Multi-core settings screenshot"></p>
+<p>These settings change the number of memory barriers used to synchronize memory accesses between cores in apps during emulation. <strong>Fast</strong> is the default mode, but the <strong>strict</strong> and <strong>very strict</strong> options will increase the number of barriers. This slows down the app, but reduces the risk of app errors. The <strong>single-core</strong> option removes all barriers but forces all app threads to run on a single core.</p>
+<p>If changing a specific setting resolves your issue, please email *woafeedback@microsoft.com* with details, so that we may incorporate your feedback.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/apps-on-arm-program-compat-troubleshooter.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

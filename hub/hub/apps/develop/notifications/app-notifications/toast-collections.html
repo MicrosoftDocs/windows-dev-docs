@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Toast Collections </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Toast Collections ">
+    
+    <meta name="description" content="Learn how to organize toast notifications for your app by creating, updating, or removing notification collections in Action Center.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="grouping-toast-notifications-with-collections">Grouping toast notifications with collections</h1>
+
+<p>Use collections to organize your app's toasts in Action Center. Collections help users locate information within Action Center more easily and allow for developers to better manage their notifications.  The APIs below allow for removing, creating, and updating notification collections.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires Creators Update</strong>: You must target SDK 15063 and be running build 15063 or later to use toast collections. Related APIs include <a href="/uwp/api/windows.ui.notifications.toastcollection">Windows.UI.Notifications.ToastCollection</a>, and <a href="/uwp/api/windows.ui.notifications.toastcollectionmanager">Windows.UI.Notifications.ToastCollectionManager</a></p>
+</div>
+<p>You can see the example below with a messaging app that separates the notifications based on the chat group; each title (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Team Chat) is a separate collection.  Notice how the notifications are distinctly grouped as if they were from a separate app, even though they are all notifications from the same app.  If you are looking for a more subtle way to organize your notifications, see <a href="toast-headers.html">toast headers</a>.<br>
+<img src="images/toast-collection-example.png" alt="Collection Example with two different Groups of Notifications"></p>
+<h2 id="creating-collections">Creating collections</h2>
+<p>When creating each collection, you are required to provide a display name and an icon, which are displayed inside Action Center as part of the collection's title, as shown in the image above. Collections also require a launch argument to help the app navigate to the right location within the app when the collection’s title is clicked on by the user.</p>
+<h3 id="create-a-collection">Create a collection</h3>
+<pre><code class="lang-csharp">// Create a toast collection
+public async void CreateToastCollection()
+{
+	string displayName = &quot;Work Email&quot;; 
+	string launchArg = &quot;NavigateToWorkEmailInbox&quot;; 
+	Uri icon = new Windows.Foundation.Uri(&quot;ms-appx:///Assets/workEmail.png&quot;);
+
+	// Constructor
+	ToastCollection workEmailToastCollection = new ToastCollection(
+		&quot;MyToastCollection&quot;, 
+		displayName,
+ 		launchArg, 
+		icon);
+
+	// Calls the platform to create the collection
+	await ToastNotificationManager.GetDefault().GetToastCollectionManager().SaveToastCollectionAsync(workEmailToastCollection);  								
+}
+</code></pre>
+<h2 id="sending-notifications-to-a-collection">Sending notifications to a collection</h2>
+<p>We will cover sending notifications from three different toast pipelines: local, scheduled, and push.  For each of these examples we will be creating a sample toast to send with the code immediately below, then we will focus on how to add the toast to a collection via each pipeline.</p>
+<p>Construct the toast content:</p>
+<pre><code class="lang-csharp">// Construct the content
+var content = new ToastContentBuilder()
+	.AddText(&quot;Adam sent a message to the group&quot;)
+	.GetToastContent();
+</code></pre>
+<h3 id="send-a-toast-to-a-collection">Send a toast to a collection</h3>
+<pre><code class="lang-csharp">// Create the toast
+ToastNotification toast = new ToastNotification(content.GetXml());
+
+// Get the collection notifier
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync(&quot;MyToastCollection&quot;);
+
+// And show the toast
+notifier.Show(toast);
+</code></pre>
+<h3 id="add-a-scheduled-toast-to-a-collection">Add a scheduled toast to a collection</h3>
+<pre><code class="lang-csharp">// Create scheduled toast from XML above
+ScheduledToastNotification scheduledToast = new ScheduledToastNotification(content.GetXml(), DateTimeOffset.Now.AddSeconds(10));
+
+// Get notifier
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync(&quot;MyToastCollection&quot;);
+    
+// Add to schedule
+notifier.AddToSchedule(scheduledToast);
+</code></pre>
+<h3 id="send-a-push-toast-to-a-collection">Send a push toast to a collection</h3>
+<p>For push toasts, you need to add the X-WNS-CollectionId header to the POST message.</p>
+<pre><code class="lang-csharp">// Add header to HTTP request
+request.Headers.Add(&quot;X-WNS-CollectionId&quot;, collectionId); 
+
+</code></pre>
+<h2 id="managing-collections">Managing collections</h2>
+<h4 id="create-the-toast-collection-manager">Create the toast collection manager</h4>
+<p>For the rest of the code snippets in this 'Managing Collections' section we will be using the collectionManager below.</p>
+<pre><code class="lang-csharp">ToastCollectionManger collectionManager = ToastNotificationManager.GetDefault().GetToastCollectionManager();
+</code></pre>
+<h4 id="get-all-collections">Get all collections</h4>
+<pre><code class="lang-csharp">IReadOnlyList&lt;ToastCollection&gt; collections = await collectionManager.FindAllToastCollectionsAsync();
+</code></pre>
+<h4 id="get-the-number-of-collections-created">Get the number of collections created</h4>
+<pre><code class="lang-csharp">int toastCollectionCount = (await collectionManager.FindAllToastCollectionsAsync()).Count;
+</code></pre>
+<h4 id="remove-a-collection">Remove a collection</h4>
+<pre><code class="lang-csharp">await collectionManager.RemoveToastCollectionAsync(&quot;MyToastCollection&quot;);
+</code></pre>
+<h4 id="update-a-collection">Update a collection</h4>
+<p>You can update collections by creating a new collection with the same ID and saving the new instance of the collection.</p>
+<pre><code class="lang-csharp">string displayName = &quot;Updated Display Name&quot;; 
+string launchArg = &quot;UpdatedLaunchArgs&quot;; 
+Uri icon = new Windows.Foundation.Uri(&quot;ms-appx:///Assets/updatedPicture.png&quot;);
+
+// Construct a new toast collection with the same collection id
+ToastCollection updatedToastCollection = new ToastCollection(
+	&quot;MyToastCollection&quot;, 
+	displayName,
+	launchArg, 
+	icon);
+
+// Calls the platform to update the collection by saving the new instance
+await collectionManager.SaveToastCollectionAsync(updatedToastCollection);  								
+</code></pre>
+<h2 id="managing-toasts-within-a-collection">Managing toasts within a collection</h2>
+<h4 id="group-and-tag-properties">Group and tag properties</h4>
+<p>The group and tag properties together uniquely identify a notification within a collection.  Group (and Tag) serves as a composite primary key (more than one identifier) to identify your notification. For example, if you want to remove or replace a notification, you have to be able to specify <em>what notification</em> you want to remove/replace; you do that by specifying the Tag and Group. An example is a messaging app.  The developer could use the conversation ID as the Group, and the message ID as the Tag.</p>
+<h4 id="remove-a-toast-from-a-collection">Remove a toast from a collection</h4>
+<p>You can remove individual toasts using the tag and group IDs, or clear all toasts in a collection.</p>
+<pre><code class="lang-csharp">// Get the history
+var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(&quot;MyToastCollection&quot;);
+
+// Remove toast
+collectionHistory.Remove(tag, group); 
+</code></pre>
+<h4 id="clear-all-toasts-within-a-collection">Clear all toasts within a collection</h4>
+<pre><code class="lang-csharp">// Get the history
+var collectionHistory = await ToastNotificationManager.GetDefault().GetHistoryForToastCollectionAsync(&quot;MyToastCollection&quot;);
+
+// Remove toast
+collectionHistory.Clear();
+</code></pre>
+<h2 id="collections-in-notifications-visualizer">Collections in Notifications Visualizer</h2>
+<p>You can use the <a href="../notifications-visualizer.html">Notifications Visualizer</a> tool to help design your collections. Follow the steps below:</p>
+<ul>
+<li>Click on the gear icon in the bottom right corner.</li>
+<li>Select 'Toast collections'.</li>
+<li>Above the preview of the toast, there is a 'Toast Collection' dropdown menu. Select manage collections.</li>
+<li>Click 'Add collection', fill out the details for the collection, and save.</li>
+<li>You can add more collections, or click off of the manage collections box to return to the main screen.</li>
+<li>Select the collection you want to add the toast to from the 'Toast Collection' dropdown menu.</li>
+<li>When you fire the toast, it will be added to the appropriate collection in Action Center.</li>
+</ul>
+<h2 id="other-details">Other details</h2>
+<p>The toast collections that you create will also be reflected in the user's notification settings.  Users can toggle the settings for each individual collection to turn these subgroups on or off.  If notifications are turned off at the top level for the app, then all collections notifications will be turned off as well.  In addition, each collection will by default show 3 notifications in Action Center, and the user can expand it to show up to 20 notifications.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="adaptive-interactive-toasts.html">Toast content</a></li>
+<li><a href="toast-headers.html">Toast headers</a></li>
+<li><a href="https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications">Notifications library on GitHub (part of the Windows Community Toolkit)</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/toast-collections.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

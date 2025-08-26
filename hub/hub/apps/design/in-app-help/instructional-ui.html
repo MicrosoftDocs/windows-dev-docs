@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Guidelines for designing instructional UI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Guidelines for designing instructional UI ">
+    
+    <meta name="description" content="Design an instructional user interface (UI) that teaches users how to work with your Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="instructional-ui-guidelines">Instructional UI guidelines</h1>
+
+<p>In some circumstances it can be helpful to teach the user about functions in your app that might not be obvious to them, such as specific touch interactions. In these cases, you need to present instructions to the user through the user interface (UI), so that they can use those features they might have missed.</p>
+<h2 id="when-to-use-instructional-ui">When to use instructional UI</h2>
+<p>Instructional UI has to be used carefully. When overused, it can be easily ignored or annoy the user, causing it to be ineffective.</p>
+<p>Instructional UI should be used to help the user discover important and non-obvious features of your app, such as touch gestures or settings they may be interested in. It can also be used to inform users about new features or changes in your app that they might have otherwise overlooked.</p>
+<p>Unless your app is dependent on touch gestures, instructional UI should not be used to teach users the fundamental features of your app.</p>
+<h2 id="principles-of-writing-instructional-ui">Principles of writing instructional UI</h2>
+<p>Good instructional UI is relevant and educational to the user, and enhances the user experience. It should be:</p>
+<ul>
+<li><strong>Simple:</strong> Users don't want their experience to be interrupted with complicated information</li>
+<li><strong>Memorable:</strong> Users don't want to see the same instructions every time they attempt a task, so instructions need to be something they'll remember.</li>
+<li><strong>Immediately relevant:</strong> If the instructional UI doesn't teach a user about something that they immediately want to do, they won't have a reason to pay attention to it.</li>
+</ul>
+<p>Avoid overusing instructional UI, and be sure to choose the right topics. Do not teach:</p>
+<ul>
+<li><strong>Fundamental features:</strong> If a user needs instructions to use your app, consider making the app design more intuitive.</li>
+<li><strong>Obvious features:</strong> If a user can figure out a feature on their own without instruction, then the instructional UI will just get in the way.</li>
+<li><strong>Complex features:</strong> Instructional UI needs to be concise, and users interested in complex features are usually willing to seek out instructions and don't need to be given them.</li>
+</ul>
+<p>Avoid inconveniencing the user with your instructional UI. Do not:</p>
+<ul>
+<li><strong>Obscure important information:</strong> Instructional UI should never get in the way of other features of your app.</li>
+<li><strong>Force users to participate:</strong> Users should be able to ignore instructional UI and still progress through the app.</li>
+<li><strong>Displaying repeat information:</strong> Don't harass the user with instructional UI, even if they ignore it the first time. Adding a setting to display instructional UI again is a better solution.</li>
+</ul>
+<h2 id="examples-of-instructional-ui">Examples of instructional UI</h2>
+<p>Here are a few instances in which instructional UI can help your users learn:</p>
+<ul>
+<li><p><strong>Helping users discover touch interactions.</strong> The following screen shot shows instructional UI teaching a player how to use touch gestures in the game, Cut the Rope.</p>
+<p><img src="images/in-game-controls-3.png" alt="screen shot from game showing instructional ui message, &quot;slide acress to cut the rope&quot;"></p>
+</li>
+<li><p><strong>Making a great first impression.</strong> When Movie Moments launches for the first time, instructional UI prompts the user to begin creating movies without obstructing their experience.</p>
+<p><img src="images/instructional-ui-movie.png" alt="launch screen for movie moments app"></p>
+</li>
+<li><p><strong>Guiding users to take the next step in a complicated task.</strong> In the Windows Mail app, a hint at the bottom of the Inbox directs users to <strong>Settings</strong> to access older messages.</p>
+<p><img src="images/instructional-ui-mail-inbox.png" alt="cropped screen shot of windows mail app showing instructional ui message"></p>
+<p>When the user clicks the message, the app's <strong>Settings</strong> flyout appears on the right side of the screen, allowing the user to complete the task. These screen shots show the Mail app before and after a user clicks the instructional UI message.</p>
+<table>
+<thead>
+<tr>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/instructional-ui-mail.png" alt="screen shot of windows mail app"></td>
+<td><img src="images/instructional-ui-mail-flyout.png" alt="screen shot of windows mail app with an extended settings flyout"></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="guidelines-for-app-help.html">Guidelines for app help</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/in-app-help/instructional-ui.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

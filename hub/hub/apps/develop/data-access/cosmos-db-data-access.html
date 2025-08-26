@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use a Cosmos DB database from a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use a Cosmos DB database from a Windows app ">
+    
+    <meta name="description" content="Learn how to connect your Windows app to a Cosmos DB database and test the connection programmatically.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-a-cosmos-db-database-from-a-windows-app">Use a Cosmos DB database from a Windows app</h1>
+
+<p>This article contains the steps required to enable working with a Cosmos DB database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.</p>
+<h2 id="set-up-your-solution">Set up your solution</h2>
+<p>This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to a Cosmos DB database. Follow these steps to install the package and try out example code for some basic tasks.</p>
+<ol>
+<li>Open the <strong>Package Manager Console</strong> (View -&gt; Other Windows -&gt; Package Manager Console). Use the command <code>Install-Package Microsoft.Azure.Cosmos</code> to install the NuGet package for the <strong>Azure Cosmos DB for NoSQL client library for .NET</strong>. This will allow you to programmatically access Cosmos DB databases.</li>
+<li>Build your project and make sure that the build was successful with no errors.</li>
+</ol>
+<p>Next, you'll need to create a Cosmos DB instance in Azure. You can do this by following the steps in <a href="/azure/cosmos-db/create-cosmosdb-resources-portal">Create a NoSQL database account in Azure Cosmos DB</a>.</p>
+<h2 id="work-with-cosmos-db-using-sample-code">Work with Cosmos DB using sample code</h2>
+<p>The following sample code gets a container from a Cosmos DB instance in Azure, then adds a new item to that container. Then it uses Cosmos DB's NoSQL query API to retrieve the item from the container and output the response status. Note that the endpoint, auth key, and database name will need to be customized based on the Cosmos DB instance you created in the previous section.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For a complete example, including information about required Cosmos DB setup and configuration, see <a href="/azure/cosmos-db/nosql/tutorial-dotnet-console-app">Develop a .NET console application with Azure Cosmos DB for NoSQL</a>.</p>
+</div>
+<pre><code class="lang-csharp">using Microsoft.Azure.Cosmos;
+
+...
+
+public async Task CosmosSample(string endpoint, string authKey)
+{
+    // CONNECT
+    var client = new CosmosClient(
+        accountEndpoint: endpoint,
+        authKeyOrResourceToken: authKey
+    );
+    Database database = client.GetDatabase(&quot;sample_customers&quot;);
+    ContainerProperties properties = new(
+        id: &quot;customers&quot;,
+        partitionKeyPath: &quot;/location&quot;
+    );
+    Container container = await database.CreateContainerIfNotExistsAsync(properties);
+
+    // WRITE DATA
+    string customerId = &quot;1234&quot;;
+    string state = &quot;WA&quot;;
+    var customer = new
+    {
+        id = customerId,
+        name = &quot;John Doe&quot;,
+        location = state
+    };
+    var createResponse = await container.CreateItemAsync(customer);
+    Console.WriteLine($&quot;[Status code: {createResponse.StatusCode}]\t{customerId}&quot;);
+
+    // READ DATA
+    string sql = &quot;SELECT * FROM customers c WHERE c.id = @id&quot;;
+    var query = new QueryDefinition(
+        query: sql
+    ).WithParameter(&quot;@id&quot;, customerId);
+    using var feed = container.GetItemQueryIterator&lt;dynamic&gt;(queryDefinition: query);
+    var queryResponse = await feed.ReadNextAsync();
+    Console.WriteLine($&quot;[Status code: {queryResponse.StatusCode}]\t{customerId}&quot;);
+}
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/azure/cosmos-db/nosql/quickstart-dotnet">Azure Cosmos DB for NoSQL client library for .NET</a></li>
+<li><a href="mysql-database.html">Use a MySQL database in a Windows app</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-access/cosmos-db-data-access.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

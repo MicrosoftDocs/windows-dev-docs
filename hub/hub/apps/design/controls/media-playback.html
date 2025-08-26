@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Media players </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Media players ">
+    
+    <meta name="description" content="Media playback involves the viewing and listening of video and audio through inline or dedicated full-screen experiences.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="media-players">Media players</h1>
+
+<p>Media playback involves the viewing and listening of video and audio through inline (embedded in a page or with a group of other controls) or dedicated full-screen experiences.</p>
+<p>Users expect a basic control set, such as play/pause, skip back, skip forward, which you can modify as required (including the media player's buttons, the background of the control bar, and control arrangement or layout).</p>
+<p><img src="images/controls/mtc_double_video_inprod.png" alt="A screenshot of a media player element with transport controls playing a video of a ladybug"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a media player when you want to play audio or video in your app. To display a collection of images, use a <a href="flipview.html">flip view</a>.</p>
+<h2 id="recommendations">Recommendations</h2>
+<p>The media player supports both light and dark themes, but dark theme provides a better experience for most entertainment scenarios. The dark background provides better contrast, in particular for low-light conditions, and limits the control bar from interfering in the viewing experience.</p>
+<p>When playing video content, encourage a dedicated viewing experience by promoting full-screen mode over inline mode. The full-screen viewing experience is optimal, and options are restricted in the inline mode.</p>
+<p>If you have the screen real estate, go with the double-row layout. It provides more space for controls than the compact single-row layout and can be easier to navigate using a variety of inputs.</p>
+<p>The default controls have been optimized for media playback, however you have the ability to add custom options you need to the media player in order to provide the best experience for your app. Visit <a href="custom-transport-controls.html">Create custom transport controls</a> to learn more about adding custom controls.</p>
+<h2 id="create-a-media-player">Create a media player</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols">MediaTransportControls class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/MediaPlayerElement">Open the WinUI 3 Gallery app and see the MediaPlayerElement in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Add media to your app by creating a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> object in XAML and set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> to a <a href="/uwp/api/windows.media.core.mediasource">MediaSource</a> that points to an audio or video file.</p>
+<p>This XAML creates a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> and sets its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> property to the URI of a video file that's local to the app. The <code>MediaPlayerElement</code> begins playing when the page loads. To suppress media from starting right away, you can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.autoplay">AutoPlay</a> property to <code>false</code>.</p>
+<pre><code class="lang-xaml">&lt;MediaPlayerElement x:Name=&quot;mediaPlayerElement&quot;
+                    Source=&quot;ms-appx:///Videos/video1.mp4&quot;
+                    Width=&quot;400&quot; AutoPlay=&quot;True&quot;/&gt;
+</code></pre>
+<p>This XAML creates a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> with the built in transport controls enabled and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.autoplay">AutoPlay</a> property set to <code>false.</code></p>
+<pre><code class="lang-xaml">&lt;MediaPlayerElement x:Name=&quot;mediaPlayerElement&quot;
+                    Source=&quot;ms-appx:///Videos/video1.mp4&quot;
+                    Width=&quot;400&quot;
+                    AutoPlay=&quot;False&quot;
+                    AreTransportControlsEnabled=&quot;True&quot;/&gt;
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Setting <code>MediaPlayerElement.Source</code> to a relative URI (ms-appx/ms-resource) only works in an app packaged with a Windows Application Packaging Project. If your app does not use a Windows Application Packaging Project, the recommended workaround is to convert the relative <code>ms-appx:///</code> URI to a fully resolved <code>file:///</code> URI. Also see the <a href="#set-the-media-source">Set the media source</a> and <a href="#open-local-media-files">Open local media files</a> sections later in this article.</p>
+</div>
+<h3 id="media-transport-controls">Media transport controls</h3>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, closed captions, and audio track selection. To enable these controls, set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled">AreTransportControlsEnabled</a> to <code>true</code>. To disable them, set <code>AreTransportControlsEnabled</code> to <code>false</code>. The transport controls are represented by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols">MediaTransportControls</a> class. You can use the transport controls as-is, or customize them in various ways. For more info, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols">MediaTransportControls</a> class reference and <a href="custom-transport-controls.html">Create custom transport controls</a>.</p>
+<p>The transport controls support single- and double-row layouts. The first example here is a single-row layout, with the play/pause button located to the left of the media timeline. This layout is best reserved for inline media playback and compact screens.</p>
+<p><img src="images/controls/mtc_single_inprod_02.png" alt="Example of MTC controls, single row"></p>
+<p>The double-row controls layout (below) is recommended for most usage scenarios, especially on larger screens. This layout provides more space for controls and makes the timeline easier for the user to operate.</p>
+<p><img src="images/controls/mtc_double_inprod.png" alt="Example of MTC controls, double row"></p>
+<p><strong>System media transport controls</strong></p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> is automatically integrated with the system media transport controls. The system media transport controls are the controls that pop up when hardware media keys are pressed, such as the media buttons on keyboards. For more info, see <a href="/uwp/api/Windows.Media.SystemMediaTransportControls">SystemMediaTransportControls</a>.</p>
+<h3 id="set-the-media-source">Set the media source</h3>
+<p>To play files on the network or files embedded with the app, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> property to a <a href="/uwp/api/windows.media.core.mediasource">MediaSource</a> with the path of the file.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To open files from the internet, you need to declare the <strong>Internet (Client)</strong> capability in your app's manifest (Package.appxmanifest). For more info about declaring capabilities, see <a href="/windows/uwp/packaging/app-capability-declarations">App capability declarations</a>.</p>
+</div>
+<p>This code attempts to set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> defined in XAML to the path of a file entered into a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox">TextBox</a>.</p>
+<pre><code class="lang-xaml">&lt;TextBox x:Name=&quot;txtFilePath&quot; Width=&quot;400&quot;
+         FontSize=&quot;20&quot;
+         KeyUp=&quot;TxtFilePath_KeyUp&quot;
+         Header=&quot;File path&quot;
+         PlaceholderText=&quot;Enter file path&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void TxtFilePath_KeyUp(object sender, KeyRoutedEventArgs e)
+{
+    if (e.Key == Windows.System.VirtualKey.Enter)
+    {
+        TextBox tbPath = sender as TextBox;
+
+        if (tbPath != null)
+        {
+            LoadMediaFromString(tbPath.Text);
+        }
+    }
+}
+
+private void LoadMediaFromString(string path)
+{
+    try
+    {
+        Uri pathUri = new Uri(path);
+        mediaPlayerElement.Source = MediaSource.CreateFromUri(pathUri);
+    }
+    catch (Exception ex)
+    {
+        if (ex is FormatException)
+        {
+            // handle exception.
+            // For example: Log error or notify user problem with file
+        }
+    }
+}
+</code></pre>
+<p>To set the media source to a media file embedded in the app, initialize a <a href="/uwp/api/windows.foundation.uri">Uri</a> with the path prefixed with <code>ms-appx:///</code>, create a <a href="/uwp/api/windows.media.core.mediasource">MediaSource</a> with the Uri and then set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> to the Uri. For example, for a file called <strong>video1.mp4</strong> that is in a <strong>Videos</strong> subfolder, the path would look like: <code>ms-appx:///Videos/video1.mp4</code></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Setting <code>MediaPlayerElement.Source</code> to a relative URI (ms-appx/ms-resource) only works in an app packaged with a Windows Application Packaging Project.</p>
+</div>
+<p>This code sets the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> defined previously in XAML to <code>ms-appx:///Videos/video1.mp4</code>.</p>
+<pre><code class="lang-csharp">private void LoadEmbeddedAppFile()
+{
+    try
+    {
+        Uri pathUri = new Uri(&quot;ms-appx:///Videos/video1.mp4&quot;);
+        mediaPlayerElement.Source = MediaSource.CreateFromUri(pathUri);
+    }
+    catch (Exception ex)
+    {
+        if (ex is FormatException)
+        {
+            // handle exception.
+            // For example: Log error or notify user problem with file
+        }
+    }
+}
+</code></pre>
+<h3 id="open-local-media-files">Open local media files</h3>
+<p>To open files on the local system or from OneDrive, you can use the <a href="/uwp/api/windows.storage.pickers.fileopenpicker">FileOpenPicker</a> to get the file and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> to set the media source, or you can programmatically access the user media folders.</p>
+<p>If your app needs access without user interaction to the <strong>Music</strong> or <strong>Video</strong> folders, for example, if you are enumerating all the music or video files in the user's collection and displaying them in your app, then you need to declare the <strong>Music Library</strong> and <strong>Video Library</strong> capabilities. For more info, see <a href="/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries">Files and folders in the Music, Pictures, and Videos libraries</a>.</p>
+<p>The <a href="/uwp/api/windows.storage.pickers.fileopenpicker">FileOpenPicker</a> does not require special capabilities to access files on the local file system, such as the user's <strong>Music</strong> or <strong>Video</strong> folders, since the user has complete control over which file is being accessed. From a security and privacy standpoint, it is best to minimize the number of capabilities your app uses.</p>
+<p><strong>To open local media using FileOpenPicker</strong></p>
+<ol>
+<li><p>Call <a href="/uwp/api/windows.storage.pickers.fileopenpicker">FileOpenPicker</a> to let the user pick a media file.</p>
+<p>Use the <a href="/uwp/api/windows.storage.pickers.fileopenpicker">FileOpenPicker</a> class to select a media file. Set the <a href="/uwp/api/windows.storage.pickers.fileopenpicker.filetypefilter">FileTypeFilter</a> to specify which file types the <code>FileOpenPicker</code> displays. Call <a href="/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync">PickSingleFileAsync</a> to launch the file picker and get the file.</p>
+</li>
+<li><p>Use a <a href="/uwp/api/windows.media.core.mediasource">MediaSource</a> to set the chosen media file as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">MediaPlayerElement.Source</a>.</p>
+<p>To use the <a href="/uwp/api/windows.storage.storagefile">StorageFile</a> returned from the <a href="/uwp/api/windows.storage.pickers.fileopenpicker">FileOpenPicker</a>, you need to call the <a href="/uwp/api/windows.media.core.mediasource.createfromstoragefile">CreateFromStorageFile</a> method on <a href="/uwp/api/windows.media.core.mediasource">MediaSource</a> and set it as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a>. Then call <a href="/uwp/api/windows.media.playback.mediaplayer.play">Play</a> on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.mediaplayer">MediaPlayerElement.MediaPlayer</a> to start the media.</p>
+</li>
+</ol>
+<p>This example shows how to use the <a href="/uwp/api/windows.storage.pickers.fileopenpicker">FileOpenPicker</a> to choose a file and set the file as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> of a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a>.</p>
+<pre><code class="lang-xaml">&lt;MediaPlayerElement x:Name=&quot;mediaPlayerElement&quot;/&gt;
+...
+&lt;Button Content=&quot;Choose file&quot; Click=&quot;Button_Click&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private async void Button_Click(object sender, RoutedEventArgs e)
+{
+    await SetLocalMedia();
+}
+
+async private System.Threading.Tasks.Task SetLocalMedia()
+{
+    var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+    WinRT.Interop.InitializeWithWindow.Initialize(openPicker, WinRT.Interop.WindowNative.GetWindowHandle(this));
+
+    openPicker.FileTypeFilter.Add(&quot;.wmv&quot;);
+    openPicker.FileTypeFilter.Add(&quot;.mp4&quot;);
+    openPicker.FileTypeFilter.Add(&quot;.wma&quot;);
+    openPicker.FileTypeFilter.Add(&quot;.mp3&quot;);
+
+    var file = await openPicker.PickSingleFileAsync();
+
+    // mediaPlayerElement is a MediaPlayerElement control defined in XAML
+    if (file != null)
+    {
+        mediaPlayerElement.Source = MediaSource.CreateFromStorageFile(file);
+
+        mediaPlayerElement.MediaPlayer.Play();
+    }
+}
+</code></pre>
+<h3 id="set-the-poster-source">Set the poster source</h3>
+<p>You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.postersource">PosterSource</a> property to provide your <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> with a visual representation before the media is loaded. A <code>PosterSource</code> is an image, such as a screen shot, movie poster, or album art, that is displayed in place of the media. The <code>PosterSource</code> is displayed in the following situations:</p>
+<ul>
+<li>When a valid source is not set. For example, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> is not set, <code>Source</code> was set to <code>null</code>, or the source is invalid (as is the case when a <a href="/uwp/api/windows.media.playback.mediaplayer.mediafailed">MediaFailed</a> event occurs).</li>
+<li>While media is loading. For example, a valid source is set, but the <a href="/uwp/api/windows.media.playback.mediaplayer.mediaopened">MediaOpened</a> event has not occurred yet.</li>
+<li>When media is streaming to another device.</li>
+<li>When the media is audio only.</li>
+</ul>
+<p>Here's a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> with its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">Source</a> set to an album track, and it's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.postersource">PosterSource</a> set to an image of the album cover.</p>
+<pre><code class="lang-xaml">&lt;MediaPlayerElement Source=&quot;ms-appx:///Media/Track1.mp4&quot; PosterSource=&quot;ms-appx:///Media/AlbumCover.png&quot;/&gt;
+</code></pre>
+<h3 id="keep-the-devices-screen-active">Keep the device's screen active</h3>
+<p>Typically, a device dims the display (and eventually turns it off) to save battery life when the user is away, but video apps need to keep the screen on so the user can see the video. To prevent the display from being deactivated when user action is no longer detected, such as when an app is playing video, you can call <a href="/uwp/api/windows.system.display.displayrequest.requestactive">DisplayRequest.RequestActive</a>. The <a href="/uwp/api/windows.system.display.displayrequest">DisplayRequest</a> class lets you tell Windows to keep the display turned on so the user can see the video.</p>
+<p>To conserve power and battery life, you should call <a href="/uwp/api/windows.system.display.displayrequest.requestrelease">DisplayRequest.RequestRelease</a> to release the display request when it is no longer required. Windows automatically deactivates your app's active display requests when your app moves off screen, and re-activates them when your app comes back to the foreground.</p>
+<p>Here are some situations when you should release the display request:</p>
+<ul>
+<li>Video playback is paused, for example, by user action, buffering, or adjustment due to limited bandwidth.</li>
+<li>Playback stops. For example, the video is done playing or the presentation is over.</li>
+<li>A playback error has occurred. For example, network connectivity issues or a corrupted file.</li>
+</ul>
+<p><strong>To keep the screen active</strong></p>
+<ol>
+<li><p>Create a global <a href="/uwp/api/windows.system.display.displayrequest">DisplayRequest</a> variable. Initialize it to <code>null</code>.</p>
+<pre><code class="lang-csharp">private DisplayRequest appDisplayRequest = null;
+</code></pre>
+</li>
+<li><p>Call <a href="/uwp/api/windows.system.display.displayrequest.requestactive">RequestActive</a> to notify Windows that the app requires the display to remain on.</p>
+</li>
+<li><p>Call <a href="/uwp/api/windows.system.display.displayrequest.requestrelease">RequestRelease</a> to release the display request whenever video playback is stopped, paused, or interrupted by a playback error. When your app no longer has any active display requests, Windows saves battery life by dimming the display (and eventually turning it off) when the device is not being used.</p>
+</li>
+</ol>
+<p>Each <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.mediaplayer">MediaPlayerElement.MediaPlayer</a> has a <a href="/uwp/api/windows.media.playback.mediaplayer.playbacksession">PlaybackSession</a> of type <a href="/uwp/api/windows.media.playback.mediaplaybacksession">MediaPlaybackSession</a> that controls various aspects of media playback such as <a href="/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate">PlaybackRate</a>, <a href="/uwp/api/windows.media.playback.mediaplaybacksession.playbackstate">PlaybackState</a> and <a href="/uwp/api/windows.media.playback.mediaplaybacksession.position">Position</a>. Here, you use the <a href="/uwp/api/windows.media.playback.mediaplaybacksession.playbackstatechanged">PlaybackStateChanged</a> event on  <a href="/uwp/api/windows.media.playback.mediaplayer.playbacksession">MediaPlayer.PlaybackSession</a> to detect situations when you should release the display request. Then, use the <a href="/uwp/api/windows.media.playback.mediaplaybacksession.naturalvideoheight">NaturalVideoHeight</a> property to determine whether an audio or video file is playing, and keep the screen active only if video is playing.</p>
+<pre><code class="lang-xaml">&lt;MediaPlayerElement x:Name=&quot;mediaPlayerElement&quot; Source=&quot;ms-appx:///Videos/video1.mp4&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">public sealed partial class MainWindow : Window
+{
+    public DisplayRequest appDisplayRequest = null;
+    // using Microsoft.UI.Dispatching;
+    private DispatcherQueue dispatcherQueue = DispatcherQueue.GetForCurrentThread();
+
+    public MainWindow()
+    {
+        this.InitializeComponent();
+        mediaPlayerElement.MediaPlayer.PlaybackSession.PlaybackStateChanged += 
+            PlaybackSession_PlaybackStateChanged;
+    }
+
+    private void PlaybackSession_PlaybackStateChanged(MediaPlaybackSession sender, object args)
+    {
+        MediaPlaybackSession playbackSession = sender as MediaPlaybackSession;
+        if (playbackSession != null &amp;&amp; playbackSession.NaturalVideoHeight != 0)
+        {
+            if (playbackSession.PlaybackState == MediaPlaybackState.Playing)
+            {
+                if (appDisplayRequest is null)
+                {
+                    dispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =&gt;
+                    {
+                        appDisplayRequest = new DisplayRequest();
+                        appDisplayRequest.RequestActive();
+                    });
+                }
+            }
+            else // PlaybackState is Buffering, None, Opening, or Paused.
+            {
+                if (appDisplayRequest is not null)
+                {
+                    appDisplayRequest.RequestRelease();
+                    appDisplayRequest = null;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="control-the-media-player-programmatically">Control the media player programmatically</h3>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> provides numerous properties, methods, and events for controlling audio and video playback through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.mediaplayer">MediaPlayerElement.MediaPlayer</a> property. For a full listing of properties, methods, and events, see the <a href="/uwp/api/windows.media.playback.mediaplayer">MediaPlayer</a> reference page.</p>
+<h3 id="advanced-media-playback-scenarios">Advanced media playback scenarios</h3>
+<p>For more complex media playback scenarios like playing a playlist, switching between audio languages, or creating custom metadata tracks, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source">MediaPlayerElement.Source</a> to a <a href="/uwp/api/windows.media.playback.mediaplaybackitem">MediaPlaybackItem</a> or a <a href="/uwp/api/windows.media.playback.mediaplaybacklist">MediaPlaybackList</a>. See the <a href="/windows/uwp/audio-video-camera/media-playback-with-mediasource">Media playback</a> page for more information on how to enable various advanced media functionality.</p>
+<h3 id="resize-and-stretch-video">Resize and stretch video</h3>
+<p>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.stretch">Stretch</a> property to change how the video content and/or the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.postersource">PosterSource</a> fills the container it's in. This resizes and stretches the video depending on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.stretch">Stretch</a> value. The <code>Stretch</code> states are similar to picture size settings on many TV sets. You can hook this up to a button and allow the user to choose which setting they prefer.</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.stretch">None</a> displays the native resolution of the content in its original size.This can result in some of the video being cropped or black bars at the edges of the video.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.stretch">Uniform</a> fills up as much of the space as possible while preserving the aspect ratio and the video content. This can result in horizontal or vertical black bars at the edges of the video. This is similar to wide-screen modes.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.stretch">UniformToFill</a> fills up the entire space while preserving the aspect ratio. This can result in some of the video being cropped. This is similar to full-screen modes.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.stretch">Fill</a> fills up the entire space, but does not preserve the aspect ratio. None of video is cropped, but stretching may occur. This is similar to stretch modes.</li>
+</ul>
+<p><img src="images/image-stretch.jpg" alt="Stretch enumeration values"></p>
+<p>Here, an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton</a> is used to cycle through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.stretch">Stretch</a> options. A <code>switch</code> statement checks the current state of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.stretch">Stretch</a> property and sets it to the next value in the <code>Stretch</code> enumeration. This lets the user cycle through the different stretch states.</p>
+<pre><code class="lang-xaml">&lt;AppBarButton Icon=&quot;Trim&quot;
+              Label=&quot;Resize Video&quot;
+              Click=&quot;PictureSize_Click&quot; /&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void PictureSize_Click(object sender, RoutedEventArgs e)
+{
+    switch (mediaPlayerElement.Stretch)
+    {
+        case Stretch.Fill:
+            mediaPlayerElement.Stretch = Stretch.None;
+            break;
+        case Stretch.None:
+            mediaPlayerElement.Stretch = Stretch.Uniform;
+            break;
+        case Stretch.Uniform:
+            mediaPlayerElement.Stretch = Stretch.UniformToFill;
+            break;
+        case Stretch.UniformToFill:
+            mediaPlayerElement.Stretch = Stretch.Fill;
+            break;
+        default:
+            break;
+    }
+}
+</code></pre>
+<h3 id="enable-low-latency-playback">Enable low-latency playback</h3>
+<p>Set the <a href="/uwp/api/windows.media.playback.mediaplayer.realtimeplayback">RealTimePlayback</a> property to <code>true</code> on a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.mediaplayer">MediaPlayerElement.MediaPlayer</a> to enable the media player element to reduce the initial latency for playback. This is critical for two-way communications apps, and can be applicable to some gaming scenarios. Be aware that this mode is more resource intensive and less power-efficient.</p>
+<p>This example creates a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a> and sets <a href="/uwp/api/windows.media.playback.mediaplayer.realtimeplayback">RealTimePlayback</a> to <code>true</code>.</p>
+<pre><code class="lang-csharp">MediaPlayerElement mediaPlayerElement = new MediaPlayerElement();
+mediaPlayerElement.MediaPlayer.RealTimePlayback = true;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.mediaplayerelement">MediaPlayerElement class</a>, <a href="/uwp/api/windows.ui.xaml.controls.mediatransportcontrols">MediaTransportControls class</a></li>
+<li><a href="winui2gallery:/item/MediaPlayerElement">Open the WinUI 2 Gallery app and see the MediaPlayerElement in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p>If you are designing for the 10-foot experience, go with the double-row layout. It provides more space for controls than the compact single-row layout and it is easier to navigate using a gamepad for 10-foot. See the <a href="../devices/designing-for-tv.html">Designing for Xbox and TV</a> article for more information about optimizing your application for the 10-foot experience.</p>
+<p><code>MediaPlayerElement</code> is only available in Windows 10, version 1607 and later. If you are developing an app for an earlier version of Windows 10, you need to use the <a href="/uwp/api/Windows.UI.Xaml.Controls.MediaElement">MediaElement</a> control instead. All recommendations made here apply to <code>MediaElement</code> as well.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/commanding-basics.html">Command design basics for Windows apps</a></li>
+<li><a href="../basics/content-basics.html">Content design basics for Windows apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/media-playback.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

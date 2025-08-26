@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Enhance UI with the Visual layer (Windows App SDK/WinUI 3) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Enhance UI with the Visual layer (Windows App SDK/WinUI 3) ">
+    
+    <meta name="description" content="The Windows App SDK implementation of the UWP Visual layer.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="enhance-ui-with-the-visual-layer-windows-app-sdkwinui-3">Enhance UI with the Visual layer (Windows App SDK/WinUI 3)</h1>
+
+<p>The Visual layer in the <a href="index.html">Windows App SDK/WinUI 3</a> provides a high performance, retained-mode API for graphics, effects, animations, and input. It's the foundation for all UI across Windows devices.</p>
+<p>The types in <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition">Microsoft.UI.Composition</a> form the Windows App SDK/WinUI 3 implementation of the Visual layer. It's very similar to the <a href="/windows/uwp/composition/visual-layer">UWP Visual layer</a>, which is implemented in the <strong>Windows.UI.Composition</strong> namespace. The differences between the two and the missing functionality from the Windows App SDK/WinUI 3 Visual layer are detailed below.</p>
+<h2 id="differences-from-uwp">Differences from UWP</h2>
+<p>The most obvious difference between <strong>Microsoft.UI.Composition</strong> and the UWP Visual layer is the namespace. <strong>Microsoft.UI.Composition</strong> provides access to functionality that's nearly identical to that of the UWP Visual layer, in the most commonly used scenarios. But there are exceptions, and differences.</p>
+<p>The Windows App SDK/WinUI 3 uses <strong>Microsoft.UI.Composition</strong> to describe a tree of individual Visuals. Those Visuals are then composited to create the complete rendering of the window. It's very similar to how <strong>Windows.UI.Composition</strong> works (for UWP apps). But one big difference is that the <strong>Microsoft.UI.Composition</strong> compositor runs entirely within a Windows App SDK app; and it has access only to pixels that it drew. That means that any <em>external</em> content (content that wasn't drawn by the compositor) is unknown to the compositor. Which creates certain limitations.</p>
+<p>An example of external content is the (<strong>Microsoft.UI.Xaml.Controls</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a>. The Windows media stack provides to XAML an opaque media swap chain handle. XAML gives that handle to the compositor, which in turn hands it off to Windows (via <strong>Windows.UI.Composition</strong>) to display. More specifically, since the compositor can't see any of the pixels in the media swap chain, it can't composite that as part of the overall rendering for the window. Instead, it gives the media swap chain to Windows to render it below the compositor's rendering, with a hole cut out of the compositor's rendering in order to allow the media swap chain below it to be visible. Here's a visualization of this setup.</p>
+<p><a href="images/external-content.png#lightbox"><img src="images/external-content.png" alt="Diagram of rendering external content"> </a></p>
+<p>In general, the approach allows external content (such as swap chains) to be part of the overall rendering for the window; and it still allows other content drawn by the compositor to overlap on top of the external content—for example, XAML's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols">MediaTransportControls</a> rendering on top of the media. But it doesn't allow more advanced effect interactions with this external content. That applies to all approaches that one could use to plug a swap chain into a view: either via XAML (for example, via <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel">SwapChainPanel</a>), or via Composition (for example, using <a href="/windows/win32/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositorinterop-createcompositionsurfaceforswapchain">ICompositorInterop::CreateCompositionSurfaceForSwapChain</a>).</p>
+<p>In the Windows App SDK/WinUI 3, the following APIs all create external content.</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel">SwapChainPanel</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2">WebView2</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop">MicaBackdrop</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop">DesktopAcrylicBackdrop</a>, as well as the underlying <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller">MicaController</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller">DesktopAcrylicController</a> that they use.</li>
+</ul>
+<p>The model, described above, of handling external content creates these limitations:</p>
+<ul>
+<li>It's not possible to have compositor content behind external content (that is, behind/below the external layer(s) in the diagram above). So, for example, it's not possible to give a <strong>WebView2</strong> a transparent background in order to be able to see XAML buttons or images behind it. The only things that can be behind external content are <em>other</em> external content and the window background. Because of that, we discourage/disable transparency for external content.</li>
+<li>It's not possible to have compositor content sample from external content. For example, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush">AcrylicBrush</a> isn't able to sample and blur any pixels from a <strong>MediaPlayerElement</strong>. <strong>AcrylicBrush</strong> will sample from the compositor's image, which is transparent black for external content areas. So that transparent black will be what <strong>AcrylicBrush</strong> blurs. Similarly, <strong>AcrylicBrush</strong> in front of a <strong>MicaBackdrop</strong> or <strong>DesktopAcrylicBackdrop</strong> can't see any colors that those backdrops will draw; and instead, the brush will blur the transparent black.</li>
+<li>Another scenario is known as <em>destination invert</em>, which is used for the caret of text box controls to invert the pixels that the text insertion caret is in front of. That invert similarly samples from the compositor surface, and it will be impacted if the text box doesn't have an opaque background that's drawn by the compositor.</li>
+<li>Because the WinUI 3 <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel">SwapChainPanel</a> creates external content, it doesn't support transparency. Nor does it support applying <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush">AcrylicBrush</a> and other effects that use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionbackdropbrush">CompositionBackdropBrush</a> in front of it. <strong>AcrylicBrush</strong> and these other <strong>CompositionBackdropBrush</strong>-based effects are not able to sample from a <strong>SwapChainPanel</strong>.</li>
+<li>In desktop apps (a WinUI 3 app is a desktop app), <strong>Window.Current</strong> is <code>null</code>. So you can't retrieve an instance of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositor">Compositor</a> from <code>Window.Current.Compositor</code>. In XAML apps (both WinUI 3 and UWP), we recommend that you call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.getelementvisual">ElementCompositionPreview.GetElementVisual(UIElement)</a> to get a Composition <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.visual">Visual</a>, and retrieve the <code>Compositor</code> from the visual's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionobject.compositor">Compositor</a> property. In cases where you don't have access to a <strong>UIElement</strong> (for example, if you create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionbrush">CompositionBrush</a> in a class library), you can call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.compositiontarget.getcompositorforcurrentthread">CompositionTarget.GetCompositorForCurrentThread</a>.</li>
+</ul>
+<p>For more details about the Visual layer, see the <a href="/windows/uwp/composition/visual-layer">Visual layer overview</a> in the UWP documentation. In most cases, the documentation and samples are also applicable to <strong>Microsoft.UI.Composition</strong>.</p>
+<h2 id="prerequisites-to-using-microsoftuicomposition">Prerequisites to using Microsoft.UI.Composition</h2>
+<p>To use <strong>Microsoft.UI.Composition</strong> APIs in the Windows App SDK/WinUI 3:</p>
+<ol>
+<li>Download and install the latest release of the Windows App SDK. For more information, see <a href="../get-started/start-here.html">Start developing Windows apps</a>.</li>
+<li>Create a new project as described in Start developing Windows apps, or follow the instructions to <a href="use-windows-app-sdk-in-existing-project.html">use the Windows App SDK in an existing project</a>.</li>
+</ol>
+<p>To learn more about the availability of <strong>Microsoft.UI.Composition</strong> in the Windows App SDK/WinUI 3, see <a href="release-channels.html">release channels</a>.</p>
+<h2 id="windows-composition-samples-gallery">Windows Composition Samples Gallery</h2>
+<p>We've updated the Windows Composition Samples Gallery to now take a dependency on the Windows App SDK Composition APIs. Visit <a href="https://github.com/microsoft/WindowsCompositionSamples">WindowsCompositionSamples</a> to see the Microsoft.UI.Composition APIs in action.</p>
+<p><img src="https://media.giphy.com/media/Hx2beMDfEA7QqWPvD4/giphy.gif" alt="app gif"></p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/uwp/composition/visual-layer">UWP Visual layer overview</a></li>
+<li><a href="../desktop/modernize/ui/visual-layer-in-desktop-apps.html">Using the Visual layer in desktop apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/composition.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

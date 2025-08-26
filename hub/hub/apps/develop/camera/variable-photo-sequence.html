@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Variable photo sequence </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Variable photo sequence ">
+    
+    <meta name="description" content="Learn how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="variable-photo-sequence">Variable photo sequence</h1>
+
+<p>This article shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings. This feature enables scenarios like creating High Dynamic Range (HDR) images.</p>
+<p>If you want to capture HDR images but don't want to implement your own processing algorithm, you can use the <a href="/uwp/api/Windows.Media.Capture.AdvancedPhotoCapture"><strong>AdvancedPhotoCapture</strong></a> API to use the HDR capabilities built-in to Windows. For more information, see <a href="hdr-low-light-photo-capture.html">High dynamic range (HDR) and low-light photo capture</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article builds on concepts and code discussed in <a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a>, which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.</p>
+</div>
+<h2 id="set-up-your-app-to-use-variable-photo-sequence-capture">Set up your app to use variable photo sequence capture</h2>
+<p>Declare a member variable to store the <a href="/uwp/api/Windows.Media.Capture.Core.VariablePhotoSequenceCapture"><strong>VariablePhotoSequenceCapture</strong></a> object, which is used to initiate the photo sequence capture. Declare an array of <a href="/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap"><strong>SoftwareBitmap</strong></a> objects to store each captured image in the sequence. Also, declare an array to store the <a href="/uwp/api/Windows.Media.Capture.CapturedFrameControlValues"><strong>CapturedFrameControlValues</strong></a> object for each frame. This can be used by your image processing algorithm to determine what settings were used to capture each frame. Finally, declare an index that will be used to track which image in the sequence is currently being captured.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="prepare-the-variable-photo-sequence-capture">Prepare the variable photo sequence capture</h2>
+<p>After you have initialized your <a href="/uwp/api/Windows.Media.Capture.MediaCapture"><strong>MediaCapture</strong></a>, make sure that variable photo sequences are supported on the current device by getting an instance of the <a href="/uwp/api/Windows.Media.Devices.Core.VariablePhotoSequenceController"><strong>VariablePhotoSequenceController</strong></a> from the media capture's <a href="/uwp/api/Windows.Media.Devices.VideoDeviceController"><strong>VideoDeviceController</strong></a> and checking the <a href="/uwp/api/windows.media.devices.core.variablephotosequencecontroller.supported"><strong>Supported</strong></a> property.</p>
+<div class="lang-csharp">
+</div>
+<p>Get a <a href="/uwp/api/Windows.Media.Devices.Core.FrameControlCapabilities"><strong>FrameControlCapabilities</strong></a> object from the variable photo sequence controller. This object has a property for every setting that can be configured per frame of a photo sequence. These include:</p>
+<ul>
+<li><a href="/uwp/api/windows.media.devices.core.framecontrolcapabilities.exposure"><strong>Exposure</strong></a></li>
+<li><a href="/uwp/api/windows.media.devices.core.framecontrolcapabilities.exposurecompensation"><strong>ExposureCompensation</strong></a></li>
+<li><a href="/uwp/api/windows.media.devices.core.framecontrolcapabilities.flash"><strong>Flash</strong></a></li>
+<li><a href="/uwp/api/windows.media.devices.core.framecontrolcapabilities.focus"><strong>Focus</strong></a></li>
+<li><a href="/uwp/api/windows.media.devices.core.framecontrolcapabilities.isospeed"><strong>IsoSpeed</strong></a></li>
+<li><a href="/uwp/api/windows.media.devices.core.framecontrolcapabilities.photoconfirmationsupported"><strong>PhotoConfirmation</strong></a></li>
+</ul>
+<p>This example will set a different exposure compensation value for each frame. To verify that exposure compensation is supported for photo sequences on the current device, check the <a href="/uwp/api/windows.media.devices.exposurecompensationcontrol.supported"><strong>Supported</strong></a> property of the <a href="/uwp/api/Windows.Media.Devices.Core.FrameExposureCompensationCapabilities"><strong>FrameExposureCompensationCapabilities</strong></a> object accessed through the <strong>ExposureCompensation</strong> property.</p>
+<div class="lang-csharp">
+</div>
+<p>Create a new <a href="/uwp/api/Windows.Media.Devices.Core.FrameController"><strong>FrameController</strong></a> object for each frame you want to capture. This example captures three frames. Set the values for the controls you want to vary for each frame. Then, clear the <a href="/uwp/api/windows.media.devices.core.variablephotosequencecontroller.desiredframecontrollers"><strong>DesiredFrameControllers</strong></a> collection of the <strong>VariablePhotoSequenceController</strong> and add each frame controller to the collection.</p>
+<div class="lang-csharp">
+</div>
+<p>Create an <a href="/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties"><strong>ImageEncodingProperties</strong></a> object to set the encoding you want to use for the captured images. Call the static method <a href="/uwp/api/windows.media.capture.mediacapture.preparevariablephotosequencecaptureasync"><strong>MediaCapture.PrepareVariablePhotoSequenceCaptureAsync</strong></a>, passing in the encoding properties. This method returns a <a href="/uwp/api/Windows.Media.Capture.Core.VariablePhotoSequenceCapture"><strong>VariablePhotoSequenceCapture</strong></a> object. Finally, register event handlers for the <a href="/uwp/api/windows.media.capture.core.variablephotosequencecapture.photocaptured"><strong>PhotoCaptured</strong></a> and <a href="/uwp/api/windows.media.capture.core.variablephotosequencecapture.stopped"><strong>Stopped</strong></a> events.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="start-the-variable-photo-sequence-capture">Start the variable photo sequence capture</h2>
+<p>To start the capture of the variable photo sequence, call <a href="/uwp/api/windows.media.capture.core.variablephotosequencecapture.startasync"><strong>VariablePhotoSequenceCapture.StartAsync</strong></a>. Be sure to initialize the arrays for storing the captured images and frame control values and set the current index to 0. Set your app's recording state variable and update your UI to disable starting another capture while this capture is in progress.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="receive-the-captured-frames">Receive the captured frames</h2>
+<p>The <a href="/uwp/api/windows.media.capture.core.variablephotosequencecapture.photocaptured"><strong>PhotoCaptured</strong></a> event is raised for each captured frame. Save the frame control values and captured image for the frame and then increment the current frame index. This example shows how to get a <a href="/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap"><strong>SoftwareBitmap</strong></a> representation of each frame. For more information on using <strong>SoftwareBitmap</strong>, see <a href="/windows/uwp/audio-video-camera/imaging">Imaging</a>.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="handle-the-completion-of-the-variable-photo-sequence-capture">Handle the completion of the variable photo sequence capture</h2>
+<p>The <a href="/uwp/api/windows.media.capture.core.variablephotosequencecapture.stopped"><strong>Stopped</strong></a> event is raised when all of the frames in the sequence have been captured. Update the recording state of your app and update your UI to allow the user to initiate new captures. At this point, you can pass the captured images and frame control values to your image processing code.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="update-frame-controllers">Update frame controllers</h2>
+<p>If you want to perform another variable photo sequence capture with different per frame settings, you don't need to completely reinitialize the <strong>VariablePhotoSequenceCapture</strong>. You can either clear the <a href="/uwp/api/windows.media.devices.core.variablephotosequencecontroller.desiredframecontrollers"><strong>DesiredFrameControllers</strong></a> collection and add new frame controllers or you can modify the existing frame controller values. The following example checks the <a href="/uwp/api/Windows.Media.Devices.Core.FrameFlashCapabilities"><strong>FrameFlashCapabilities</strong></a> object to verify that the current device supports flash and flash power for variable photo sequence frames. If so, each frame is updated to enable the flash at 100% power. The exposure compensation values that were previously set for each frame are still active.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="clean-up-the-variable-photo-sequence-capture">Clean up the variable photo sequence capture</h2>
+<p>When you are done capturing variable photo sequences or your app is suspending, clean up the variable photo sequence object by calling <a href="/uwp/api/windows.media.capture.core.variablephotosequencecapture.finishasync"><strong>FinishAsync</strong></a>. Unregister the object's event handlers and set it to null.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="camera.html">Camera</a></li>
+<li><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/variable-photo-sequence.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

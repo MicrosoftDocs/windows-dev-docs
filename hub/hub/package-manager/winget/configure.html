@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>configure Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="configure Command ">
+    
+    <meta name="description" content="Uses a winget configuration file to begin setting up your Windows machine to a desired development environment state.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="configure-command-winget">configure command (winget)</h1>
+
+<p>The <strong>configure</strong> command of the <a href="index.html">winget</a> tool uses a <a href="../configuration/index.html">WinGet Configuration file</a> to begin setting up your Windows machine to a desired development environment state.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Do not run a WinGet Configuration file without first reviewing the contents of the file and verifying the credibility of the related resources. See <a href="../configuration/check.html">How to check the trustworthiness of a WinGet Configuration file</a>.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Windows 10 version 1809 (build 17763) or later, or Windows 11.</li>
+<li>WinGet version <a href="https://github.com/microsoft/winget-cli/releases">v1.6.2631 or later</a>.</li>
+</ul>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>configuration</li>
+<li>dsc</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p><code>winget configure -f &lt;C:/Users/&lt;username&gt;/winget-configs/config-file-name.dsc.winget&gt;</code></p>
+<p>Once you have identified the WinGet configuration file that you are interested in using, confirmed the safety and trustworthiness of that file, and downloaded the file to your local machine, you can use the <code>winget configure</code> command to initiate the set up of your configuration.</p>
+<p><span class="mx-imgBorder">
+<a href="images/configure.png#lightbox" data-linktype="relative-path">
+<img src="images/configure.png" alt="Screenshot listing winget configure command options.">
+</a>
+</span>
+</p>
+<h2 id="arguments-and-options">Arguments and options</h2>
+<p>The following arguments are available:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-f,--file</td>
+<td>The path to the winget configuration file.</td>
+</tr>
+<tr>
+<td>--module-path</td>
+<td>Specifies the location on the local computer to store modules. Default %LOCALAPPDATA%\Microsoft\WinGet\Configuration\Modules.</td>
+</tr>
+<tr>
+<td>--processor-path</td>
+<td>Specifies the path to the configuration processor.</td>
+</tr>
+<tr>
+<td>-h,--history</td>
+<td>Select items from history.</td>
+</tr>
+<tr>
+<td>--accept-configuration-agreements</td>
+<td>Accepts the configuration warning, preventing an interactive prompt.</td>
+</tr>
+<tr>
+<td>--suppress-initial-details</td>
+<td>Suppress showing initial configuration details when possible.</td>
+</tr>
+<tr>
+<td>--enable</td>
+<td>Enable configuration components. Requires store access.</td>
+</tr>
+<tr>
+<td>--disable</td>
+<td>Disable configuration components. Requires store access.</td>
+</tr>
+<tr>
+<td>-?,--help</td>
+<td>Shows help about the selected command.</td>
+</tr>
+<tr>
+<td>--wait</td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td>--logs,--open-logs</td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td>--verbose,--verbose-logs</td>
+<td>Enables verbose logging for winget.</td>
+</tr>
+<tr>
+<td>--nowarn,--ignore-warnings</td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td>--disable-interactivity</td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td>--proxy</td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td>--no-proxy</td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configure-subcommands">configure subcommands</h2>
+<p>The <code>winget configure</code> command includes a number of subcommands, including:</p>
+<ul>
+<li><strong><code>winget configure show</code></strong>: Displays the details of a configuration file. Usage: <code>winget configure show -f &lt;file&gt;</code>. Running the command: <code>winget configuration show configuration.dsc.yaml</code> will display the details of the configuration in the current working directory.</li>
+<li><strong><code>winget configure list</code></strong>: Shows the high level details for configurations that have been applied to the system. This data can then be used with other <code>configure</code> commands to get more details. Usage: <code>winget configure list [&lt;options&gt;]</code></li>
+<li><strong><code>winget configure test</code></strong>: Checks the system against the desired state, displaying whether the current system state conforms with the desired state defined in the associated configuration file. Usage: <code>winget configure test -f &lt;file&gt;</code>.</li>
+<li><strong><code>winget configure validate</code></strong>: Validates a configuration file. Usage: <code>winget configure validate [-f] &lt;file&gt; [&lt;options&gt;]</code>.</li>
+<li><strong><code>winget configure export</code></strong>: Exports configuration resources to a configuration file. When used with <code>--all</code>, exports all package configurations. When used with <code>--packageId</code>, exports a WinGetPackage resource of the given package identifier. When used with <code>--module</code> and <code>--resource</code>, exports the settings of the specified resource. If the output configuration file already exists, appends the exported configuration resources. Usage: <code>winget configure export -o &lt;output file&gt; [&lt;options&gt;]</code></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../configuration/index.html">WinGet Configuration overview</a></li>
+<li><a href="../configuration/create.html">How to author a WinGet Configuration file</a></li>
+<li><a href="../configuration/check.html">How to check the trustworthiness of a WinGet Configuration file</a></li>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+<li><a href="../package/index.html">Submit packages to Windows Package Manager</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/configure.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

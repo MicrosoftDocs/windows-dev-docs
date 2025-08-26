@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Files, folders, and libraries with Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Files, folders, and libraries with Windows App SDK ">
+    
+    <meta name="description" content="Learn about reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library with Windows App SDK apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="files-folders-and-libraries-with-windows-app-sdk">Files, folders, and libraries with Windows App SDK</h1>
+
+<p>Packaged Windows App SDK apps can leverage the powerful APIs provided by the <a href="/uwp/api/Windows.Storage">Windows.Storage</a>, <a href="/uwp/api/Windows.Storage.Streams">Windows.Storage.Streams</a>, and <a href="/uwp/api/Windows.Storage.Pickers">Windows.Storage.Pickers</a> namespaces to efficiently read and write various data formats in files, as well as manage files and folders. This section covers essential topics such as reading and writing app settings, file and folder pickers, and accessing special sand-boxed locations like the Video/Music library. Learn how to optimize your app's file management capabilities with the Windows App SDK.</p>
+<p>Windows 10 and later OS releases provide a wide variety of APIs related to files, folders, libraries, and settings for apps. These features are available via a combination of WinRT and .NET APIs provided by the <a href="https://developer.microsoft.com/windows/downloads/windows-sdk">Windows SDK</a> and <a href="https://dotnet.microsoft.com/en-us/download">.NET SDK</a>.</p>
+<h2 id="read-and-write-data-with-winrt-storage-apis">Read and write data with WinRT storage APIs</h2>
+<p>Packaged apps have access to all the WinRT storage APIs available to UWP apps. Whether you're migrating an existing UWP app or creating a new app, you can use these APIs to read and write data. For examples of using the storage APIs in a WinUI app, see <a href="winrt-files.html">Access files and folders with Windows App SDK and WinRT APIs</a>.</p>
+<h2 id="read-and-write-data-with-net-file-apis">Read and write data with .NET file APIs</h2>
+<p>In addition to the WinRT APIs, packaged apps can use the .NET APIs in the <a href="/dotnet/api/system.io">System.IO</a> namespace to read and write data. When a new WinUI 3 project is created, its <code>Package.appxmanifest</code> file contains the following setting:</p>
+<pre><code class="lang-xml">&lt;Capabilities&gt;
+  &lt;rescap:Capability Name=&quot;runFullTrust&quot; /&gt;
+&lt;/Capabilities&gt;
+</code></pre>
+<p>Declaring this restricted capability provides full access to the file system, registry, and other restricted capabilities. For more info, see <a href="/windows/uwp/packaging/app-capability-declarations#restricted-capability-declarations">Restricted capability declarations</a>. In other words, the app has the same access to the file system as any other .NET desktop app when using the .NET file APIs.</p>
+<p>For examples of using the .NET APIs in a WinUI app, see <a href="dotnet-files.html">Access files and folders with Windows App SDK and .NET APIs</a>.</p>
+<h2 id="additional-resources-for-working-with-files-and-folders">Additional resources for working with files and folders</h2>
+<p>If you're developing packaged WinUI apps, the WinRT storage APIs can be a powerful tool for reading and writing data. The following UWP topics provide a wealth of information for developers looking to leverage these APIs in their apps.</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-listing-files-and-folders">Enumerate and query files and folders</a></td>
+<td>Access files and folders in either a folder, library, device, or network   location. You can also query the files and folders in a location by constructing file and folder queries.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-reading-and-writing-files">Create, write, and read a file</a></td>
+<td>Read and write a file using a <a href="/uwp/api/Windows.Storage.StorageFile">StorageFile</a> object.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/best-practices-for-writing-to-files">Best practices for writing to files</a></td>
+<td>Learn best practices for using various file writing methods of the <a href="/uwp/api/windows.storage.fileio">FileIO</a> and <a href="/uwp/api/windows.storage.pathio">PathIO</a> classes.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-getting-file-properties">Get file properties</a></td>
+<td>Get properties—top-level, basic, and extended—for a file represented by a   <a href="/uwp/api/Windows.Storage.StorageFile">StorageFile</a> object.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-using-file-and-folder-pickers">Open files and folders with a picker</a></td>
+<td>Access files and folders by letting the user interact with a picker. You can use the   <a href="/uwp/api/Windows.Storage.Pickers.FolderPicker">FolderPicker</a> to gain access to a folder.<br><br><strong>NOTE:</strong> In a desktop app (which includes WinUI 3 apps), you can use file and folder pickers from <a href="/uwp/api/windows.storage.pickers">Windows.Storage.Pickers</a>. However, if the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see <a href="/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation">FileSavePicker</a>.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-save-a-file-with-a-picker">Save a file with a picker</a></td>
+<td>Use <a href="/uwp/api/Windows.Storage.Pickers.FileSavePicker">FileSavePicker</a> to let users specify the name and location where they want your app to save a file.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-accessing-homegroup-content">Accessing HomeGroup content</a></td>
+<td>Access content stored in the user's HomeGroup folder, including pictures, music, and videos.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-determining-availability-of-microsoft-onedrive-files">Determining availability of Microsoft OneDrive files</a></td>
+<td>Determine if a Microsoft OneDrive file is available using the <a href="/uwp/api/windows.storage.storagefile.isavailable">StorageFile.IsAvailable</a> property.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries">Files and folders in the Music, Pictures, and Videos libraries</a></td>
+<td>Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/how-to-track-recently-used-files-and-folders">Track recently used files and folders</a></td>
+<td>Track files that your user accesses frequently by adding them to your app's most recently used list (MRU). The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached. All apps have their own MRU.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/change-tracking-filesystem">Track file system changes in the background</a></td>
+<td>Track changes to the file system, even when the app isn't running.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/access-the-sd-card">Access the SD card</a></td>
+<td>You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/files/fast-file-properties">Fast access to file properties</a></td>
+<td>Efficiently gather a list of files and their properties from a library to use via the Windows Runtime APIs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<p><a href="winrt-files.html">Access files and folders with Windows App SDK and WinRT APIs</a></p>
+<p><a href="dotnet-files.html">Access files and folders with Windows App SDK and .NET APIs</a></p>
+<p><a href="/dotnet/api/system.io">System.IO</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/files/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

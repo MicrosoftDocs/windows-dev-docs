@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Push notifications functionality migration </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Push notifications functionality migration ">
+    
+    <meta name="description" content="This topic contains migration guidance in the push notifications feature area.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="push-notifications-functionality-migration">Push notifications functionality migration</h1>
+
+<p>This topic contains migration guidance in the push notifications feature area.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Only raw push notifications and app push notifications are currently supported. Badge push notifications and tile push notifications are not supported.</p>
+</div>
+<h2 id="summary-of-api-andor-feature-differences">Summary of API and/or feature differences</h2>
+<p>Push notifications can be broken down into these four separate stages.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>UWP</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity</td>
+<td>Partner Center (MSA)</td>
+<td>Azure App Registration (AAD)</td>
+</tr>
+<tr>
+<td>Channel request</td>
+<td>Asynchronous</td>
+<td>Asynchronous<br>Azure App Registration Id<br>Retry logic built in (up to 5 retries)</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>In-process, PushTrigger*, COM activation*</td>
+<td>In-process, COM activation, ShellExecute</td>
+</tr>
+<tr>
+<td>Sending push notifications</td>
+<td>Uses login.live.com endpoint to receive an access token</td>
+<td>Uses the <code>https://login.microsoftonline.com/{tenantID}/oauth2/token</code> endpoint for token request</td>
+</tr>
+</tbody>
+</table>
+<p>* Supported for Windows 10, version 2004 (10.0; Build 19041), and later.</p>
+<h2 id="identity-setup">Identity setup</h2>
+<p>In the Windows App SDK, the push notifications feature uses identity from Azure App Registration (AAD), which removes the requirement of having a Package Family Name (PFN) from Partner Center in order to use push notifications.</p>
+<ul>
+<li>For a <strong>UWP app</strong>, you sign up and register the application in <a href="/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#create-an-app-in-windows-store">Windows Store Partner Center</a>.</li>
+<li>For a <strong>Windows App SDK app</strong>, you create an Azure account, and create an <a href="../../notifications/push-notifications/push-quickstart.md#configure-your-apps-identity-in-azure-active-directory-aad">Azure App Registration (AAD)</a>.</li>
+</ul>
+<h3 id="channel-requests">Channel requests</h3>
+<p>Channel request are handled asynchronously, and require the Azure AppID GUID and Azure tenantID (you receive the Azure AppID and tenant ID from an AAD app registration). You use the Azure AppID for your identity in place of the Package Family Name (PFN) that a UWP app uses. In case the request runs into a retryable error, the notification platform will attempt multiple retries.</p>
+<p>A Windows App SDK app can check the status of a channel request.</p>
+<h3 id="activation">Activation</h3>
+<p>See the Windows App SDK registration and activation steps at <a href="../../notifications/push-notifications/push-quickstart.md#configure-your-app-to-receive-push-notifications">Configure your app to receive push notifications</a>.</p>
+<h2 id="sending-push-notifications">Sending push notifications</h2>
+<p>A Windows App SDK app must request the access token from the AAD endpoint, rather than from the MSA endpoint.</p>
+<h3 id="access-token-request">Access Token Request</h3>
+<p>For <strong>a UWP app</strong>:</p>
+<pre><code class="lang-http">POST /accesstoken.srf HTTP/1.1
+Host: login.live.com
+Content-Type: application/x-www-form-urlencoded
+Cookie: MSCC=73.140.231.96-US
+Content-Length: 112
+
+grant_type=client_credentials&amp;client_id=&lt;AppID_Here&gt;&amp;client_secret=&lt;Client_Secret_Here&gt;&amp;scope=notify.windows.com
+</code></pre>
+<p>For a <strong>Windows App SDK app</strong> (AAD access token request):</p>
+<pre><code class="lang-http">POST /{tenantID}/oauth2/v2.0/token Http/1.1
+Host: login.microsoftonline.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 160
+
+grant_type=client_credentials&amp;client_id=&lt;Azure_App_Registration_AppId_Here&gt;&amp;client_secret=&lt;Azure_App_Registration_Secret_Here&gt;&amp;resource=https://wns.windows.com/
+</code></pre>
+<h3 id="http-post-to-wns">HTTP Post to WNS</h3>
+<p>When it comes to sending a HTTP POST request to WNS, there are no changes from UWP. The access token is still passed in the authorization header.</p>
+<pre><code class="lang-http">POST /?token=[ChannelURI] HTTP/1.1
+Host: dm3p.notify.windows.com
+Content-Type: application/octet-stream
+X-WNS-Type: wns/raw
+Authorization: Bearer [your access token]
+Content-Length: 46
+
+{ Sync: &quot;Hello from the Contoso App Service&quot; }
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

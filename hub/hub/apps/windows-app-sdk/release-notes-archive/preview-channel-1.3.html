@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Preview release channel for the Windows App SDK 1.3 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Preview release channel for the Windows App SDK 1.3 ">
+    
+    <meta name="description" content="Provides info about the preview release channel for the Windows App SDK 1.3.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="preview-channel-release-notes-for-the-windows-app-sdk-13">Preview channel release notes for the Windows App SDK 1.3</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The preview channel is <strong>not supported</strong> for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The preview channel includes releases of the Windows App SDK with <a href="../release-channels.html#features-available-by-release-channel">preview channel features</a> in late stages of development. Preview releases do not include experimental features and APIs but may still be subject to breaking changes before the next stable release.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on preview releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest preview channel release:</strong></p>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="version-13-preview-1-130-preview1">Version 1.3 Preview 1 (1.3.0-preview1)</h2>
+<p>This is the latest release of the preview channel for version 1.3. This release includes previews for new features across WinAppSDK and several performance, security, accessibility and reliability bug fixes.</p>
+<p>In an existing Windows App SDK 1.2 (from the stable channel) app, you can update your Nuget package to 1.3.0-preview1 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Latest Windows App SDK downloads</a>.</p>
+<h3 id="xaml-backdrop-apis">XAML Backdrop APIs</h3>
+<p>With properties built in to the XAML Window, Mica &amp; Background Acrylic backdrops are now easier to use in your WinUI 3 app.</p>
+<p>See the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/xaml-backdrop-api.md?plain=1#L39">Xaml Backdrop API spec</a> on GitHub for more information about the <strong>Window.SystemBackdrop</strong> property.</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+
+    this.SystemBackdrop = new MicaBackdrop();
+}
+</code></pre>
+<h3 id="windowappwindow">Window.AppWindow</h3>
+<p>Replacing several lines of boilerplate code, you're now able to use AppWindow APIs directly from a <strong>Window</strong> through <code>Window.AppWindow</code>. See the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/appwindow-spec.md">Window.AppWindow API spec</a> on GitHub for additional background and usage information.</p>
+<h3 id="new-features-from-across-winappsdk">New features from across WinAppSDK</h3>
+<ul>
+<li><code>ApplicationModel.DynamicDependency</code>: <code>PackageDependency.PackageGraphRevisionId</code> that replaces the deprecated MddGetGenerationId.</li>
+<li>Environment Manager: <code>EnvironmentManager.AreChangesTracked</code> to inform you whether changes to the environment manager are able to be tracked in your application. See the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppLifecycle/EnvironmentVariables/AppLifecycle%20-%20Environment%20Variables%20(EV).md">Environment Manager API spec</a> on GitHub for more information.</li>
+<li>MRT Core: A new event, <code>Application.ResourceManagerInitializing</code> allows your app to provide its own implementation of the <code>IResourceManager</code> interface, and gives you access to the ResourceManager that WinUI uses to resolve resource URIs. See the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/custom-iresourcemanager-spec.md">IResourceManager API spec</a> on GitHub for more information.</li>
+<li>With the latest experimental VSIX, you're now able to convert your app between unpackaged and packaged through the Visual Studio menu instead of in your project file.</li>
+<li>A new event, <code>DebugSettings.XamlResourceReferenceFailed</code> is now raised when a referenced Static/ThemeResource lookup can't be resolved. This event gives access to a trace that details where the framework searched for that key in order to better enable you to debug Static &amp; ThemeResource lookup failures. For more information, see the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/xaml-resource-references-tracing-spec.md">API spec</a> and issues <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/4972">4972</a>, <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/2350">2350</a>, and <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6073">6073</a> on GitHub.</li>
+<li>Deployment: To manage and repair the Windows App Runtime, <code>DeploymentRepairOptions</code> is now available as part of the <code>DeploymentManager</code>. For more information, see the Repair section of the <a href="https://github.com/microsoft/WindowsAppSDK/blob/user/sachinta/DeploymentRepairAPISpec/specs/Deployment/DeploymentAPI.md#repair">Deployment API Spec</a> on GitHub.</li>
+</ul>
+<h3 id="known-issues">Known issues</h3>
+<ul>
+<li>The Pivot control causes a runtime crash with a XAML parsing error. See issue <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/8160">#8160</a> on GitHub for more info.</li>
+<li>When the DatePicker or TimePicker flyout is opened, the app crashes.</li>
+<li>The <code>WindowsAppRuntime.ReleaseInfo</code> and <code>WindowsAppRuntime.RuntimeInfo</code> APIs introduced in 1.3 releases are not yet supported as they contain a critical bug.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

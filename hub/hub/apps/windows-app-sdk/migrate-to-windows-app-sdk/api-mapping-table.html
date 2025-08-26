@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Mapping UWP APIs to the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Mapping UWP APIs to the Windows App SDK ">
+    
+    <meta name="description" content="This topic provides a mapping of UWP APIs and libraries to their Windows App SDK equivalents.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mapping-uwp-apis-and-libraries-to-the-windows-app-sdk">Mapping UWP APIs and libraries to the Windows App SDK</h1>
+
+<p>This topic provides a mapping of UWP APIs to their Windows App SDK equivalents. In some cases the mapping isn't one-to-one; either platform might have more or less functionality than the other for a namespace or class.</p>
+<p>There are differences in the names of namespaces and classes (including UI controls) between the two platforms. In many cases, it's as easy as changing a namespace name and then your code will compile. Sometimes, a class or API name has changed as well as the namespace name. Other times, the mapping takes a bit more work, and in rare cases requires a change in approach.</p>
+<p><strong>How to use the table</strong>. First, search for the name of the class member you're using. Members are listed whenever the mapping is more complicated than a simple class name or namespace name change. If your member isn't listed, then search for the name of the class you're using. Classes are listed whenever the mapping is more complicated than simply changing the namespace name (for specific guidance, see the <a href="guides/feature-area-guides-ovw.html">Feature area guides</a>). If your class isn't listed, then the mapping is just a namespace change. So, find your class's namespace name and then you'll find the equivalent Windows App SDK namespace name. Your class will be in that namespace. If your namespace isn't listed, then its name hasn't changed.</p>
+<table>
+<thead>
+<tr>
+<th>UWP</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Activation</strong>) <a href="/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs"><strong>LaunchActivatedEventArgs</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Xaml</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.launchactivatedeventargs"><strong>LaunchActivatedEventArgs</strong></a> class; for example, in <strong>App.OnLaunched</strong>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Background</strong>) <a href="/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder"><strong>BackgroundTaskBuilder</strong></a> class</td>
+<td>(<strong>Microsoft.Windows.ApplicationModel.Background</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder"><strong>BackgroundTaskBuilder</strong></a> class. See <a href="../applifecycle/background-tasks.html">Using background tasks in Windows apps</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Core</strong>) <a href="/uwp/api/windows.applicationmodel.core.coreapplication.createnewview"><strong>CoreApplication.CreateNewView</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create"><strong>AppWindow.Create</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Core</strong>) <a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar"><strong>CoreApplicationViewTitleBar</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a> class</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Core</strong>) <a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar"><strong>CoreApplicationViewTitleBar.ExtendViewIntoTitleBar</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar"><strong>AppWindowTitleBar.ExtendsContentIntoTitleBar</strong></a> property. The platform continues to draw the <strong>Minimize</strong>/<strong>Maximize</strong>/<strong>Close</strong> buttons for you, and reports the occlusion information.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Core</strong>) <a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.height"><strong>CoreApplicationViewTitleBar.Height</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height"><strong>AppWindowTitleBar.Height</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Core</strong>) <a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.systemoverlayleftinset"><strong>CoreApplicationViewTitleBar.SystemOverlayLeftInset</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.leftinset"><strong>AppWindowTitleBar.LeftInset</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Core</strong>) <a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.systemoverlayrightinset"><strong>CoreApplicationViewTitleBar.SystemOverlayRightInset</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.rightinset"><strong>AppWindowTitleBar.RightInset</strong></a> property</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.resources.core"><strong>Windows.ApplicationModel.Resources.Core</strong></a> namespace</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources"><strong>Microsoft.Windows.ApplicationModel.Resources</strong></a>. See <a href="guides/mrtcore.html">MRT to MRT Core migration</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Resources.Core</strong>) <a href="/uwp/api/windows.applicationmodel.resources.core.resourcecontext.getforcurrentview"><strong>ResourceContext.GetForCurrentView</strong></a> method</td>
+<td>(<strong>Microsoft.Windows.ApplicationModel.Resources</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager.createresourcecontext"><strong>ResourceManager.CreateResourceContext</strong></a> method. See <a href="guides/mrtcore.html#resourcecontextgetforcurrentview-and-resourcecontextgetforviewindependentuse">ResourceContext.GetForCurrentView, and ResourceContext.GetForViewIndependentUse</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Resources.Core</strong>) <a href="/uwp/api/windows.applicationmodel.resources.core.resourcecontext.getforviewindependentuse"><strong>ResourceContext.GetForViewIndependentUse</strong></a> method</td>
+<td>(<strong>Microsoft.Windows.ApplicationModel.Resources</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager.createresourcecontext"><strong>ResourceManager.CreateResourceContext</strong></a> method. See <a href="guides/mrtcore.html#resourcecontextgetforcurrentview-and-resourcecontextgetforviewindependentuse">ResourceContext.GetForCurrentView, and ResourceContext.GetForViewIndependentUse</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Resources.Core</strong>) <a href="/uwp/api/windows.applicationmodel.resources.core.resourcemanager.current"><strong>ResourceManager.Current</strong></a> property</td>
+<td>Create a new (<strong>Microsoft.Windows.ApplicationModel.Resources</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager"><strong>ResourceManager</strong></a> object. See <a href="guides/mrtcore.html#resourcemanager-class">ResourceManager class</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.ApplicationModel.Resources.Core</strong>) <a href="/uwp/api/windows.applicationmodel.resources.core.resourcequalifierobservablemap.mapchanged"><strong>ResourceQualifierObservableMap.MapChanged</strong></a> event</td>
+<td>Detect environment changes for yourself. See <a href="guides/mrtcore.html#resource-qualifier-value-change">Resource qualifier value change</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.Graphics.Printing</strong>) <a href="/uwp/api/windows.graphics.printing.printmanager"><strong>PrintManager</strong></a> class</td>
+<td>Not supported in Windows App SDK 1.0.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.Media.Capture</strong>) <a href="/uwp/api/windows.media.capture.cameracaptureui"><strong>CameraCaptureUI</strong></a> class</td>
+<td>(<strong>Microsoft.Windows.Media.Capture</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui"><strong>CameraCaptureUI</strong></a> class</td>
+</tr>
+<tr>
+<td>(<strong>Windows.Security.Authentication.Web</strong>) <a href="/uwp/api/windows.security.authentication.web.webauthenticationbroker"><strong>WebAuthenticationBroker</strong></a> class</td>
+<td>(<strong>Microsoft.Security.Authentication.OAuth</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager">OAuth2Manager</a> class (supported in Windows App SDK 1.7 and later). See <a href="/windows/apps/develop/security/oauth2">Implement OAuth functionality in Windows apps</a> for more information on using <strong>OAuth2Manager</strong> and related APIs for performing OAuth 2.0 authentication. See <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager">GitHub</a> for a full sample application.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.Storage.Pickers</strong>) <a href="/uwp/api/windows.storage.pickers.fileopenpicker"><strong>FileOpenPicker</strong></a>, <a href="/uwp/api/windows.storage.pickers.filesavepicker"><strong>FileSavePicker</strong></a>, and <a href="/uwp/api/windows.storage.pickers.folderpicker"><strong>FolderPicker</strong></a> classes</td>
+<td>Supported, but you must use the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow"><strong>IInitializeWithWindow</strong></a> interface. See <a href="guides/winui3.html#messagedialog-and-pickers">MessageDialog, and Pickers</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.System.Display</strong>) <a href="/uwp/api/windows.system.display.displayrequest"><strong>DisplayRequest</strong></a> class</td>
+<td>Not supported in Windows App SDK 1.0.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.composition"><strong>Windows.UI.Composition</strong></a> namespace</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition"><strong>Microsoft.UI.Composition</strong></a> namespace</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/Windows.UI.Core.CoreDispatcher"><strong>CoreDispatcher</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Dispatching</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue"><strong>DispatcherQueue</strong></a> class. See <a href="guides/threading.html#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue">Change CoreDispatcher to DispatcherQueue</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/Windows.UI.Core.CoreDispatcher.RunAsync"><strong>CoreDispatcher.RunAsync</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Dispatching</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue"><strong>DispatcherQueue.TryEnqueue</strong></a> method. See <a href="guides/threading.html#change-coredispatcherrunasync-to-dispatcherqueuetryenqueue">Change RunAsync to TryEnqueue</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/windows.ui.core.corewindow"><strong>CoreWindow</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>AppWindow</strong></a> class. See <a href="guides/windowing.html">Windowing functionality migration</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/windows.ui.core.corewindow.bounds"><strong>CoreWindow.Bounds</strong></a> property (commonly appears in C# as <code>CoreWindow.GetForCurrentThread.Bounds</code>)</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size"><strong>AppWindow.Size</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/windows.ui.core.corewindow.getforcurrentthread"><strong>CoreWindow.GetForCurrentThread</strong></a> method</td>
+<td>No direct 1:1 mapping to a Windows App SDK API. When using XAML, you can get <strong>Window.AppWindow</strong> to get the <strong>AppWindow</strong> associated with a XAML <strong>Window</strong>, but an app needs to cache the <strong>Window</strong> or <strong>AppWindow</strong> if it wants to access it from somewhere that doesn't otherwise have access. We recommend caching and exposing the <strong>Window</strong> on the <strong>App</strong> object.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/windows.ui.core.corewindow.activate"><strong>CoreWindow.Activate</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.show"><strong>AppWindow.Show</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/windows.ui.core.corewindow.dispatcher"><strong>CoreWindow.Dispatcher</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Xaml</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue"><strong>Window.DispatcherQueue</strong></a> property. See <a href="guides/windowing.html#change-corewindowdispatcher-to-windowdispatcherqueue">Change CoreWindow.Dispatcher to Window.DispatcherQueue</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow.SizeChanged</strong></a> event</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange"><strong>AppWindowChangedEventArgs.DidSizeChange</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/Windows.UI.Core.SystemNavigationManager"><strong>SystemNavigationManager</strong></a> class (global back button)</td>
+<td>Not supported. Implement a back button within your own UI. See <a href="case-study-1.html">A Windows App SDK migration of the UWP PhotoLab sample app (C#)</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Core</strong>) <a href="/uwp/api/windows.ui.core.windowsizechangedeventargs"><strong>WindowSizeChangedEventArgs</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Xaml</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.windowsizechangedeventargs"><strong>WindowSizeChangedEventArgs</strong></a> class; for example, in a handler for (<strong>Microsoft.UI.Xaml</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged"><strong>Window.SizeChanged</strong></a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Popups</strong>) <a href="/uwp/api/Windows.Storage.Pickers.FileOpenPicker"><strong>MessageDialog</strong></a> class</td>
+<td>Supported, but you must use the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow"><strong>IInitializeWithWindow</strong></a> interface. See <a href="guides/winui3.html#messagedialog-and-pickers">MessageDialog, and Pickers</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Text.Core</strong>) <a href="/uwp/api/windows.ui.text.core.coretextservicesmanager"><strong>CoreTextServicesManager</strong></a> class</td>
+<td>Supported only on Windows 11.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged"><strong>AccessibilitySettings.HighContrastChanged</strong></a> event</td>
+<td>(<strong>Microsoft.UI.System</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.system.themesettings.changed"><strong>ThemeSettings.Changed</strong></a> event</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>ApplicationView</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>AppWindow</strong></a> class</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationview.title"><strong>ApplicationView.Title</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title"><strong>AppWindow.Title</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryconsolidateasync"><strong>ApplicationView.TryConsolidateAsync</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroy"><strong>AppWindow.Destroy</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryenterfullscreenmode"><strong>ApplicationView.TryEnterFullScreenMode</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_"><strong>AppWindow.SetPresenter</strong></a> method with <strong>AppWindowPresenterKind.FullScreen</strong></td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryenterviewmodeasync"><strong>ApplicationView.TryEnterViewModeAsync</strong></a> method with <strong>ApplicationViewMode.CompactOverlay</strong></td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_"><strong>AppWindow.SetPresenter</strong></a> method with <strong>AppWindowPresenterKind.CompactOverlay</strong></td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryresizeview"><strong>ApplicationView.TryResizeView</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize"><strong>AppWindow.Resize</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationviewmode"><strong>ApplicationViewMode.CompactOverlay</strong></a> field</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind"><strong>AppWindowPresenterKind.CompactOverlay</strong></a> field</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar"><strong>ApplicationViewTitleBar</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a> class</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <a href="/uwp/api/windows.ui.viewmanagement.applicationviewwindowingmode"><strong>ApplicationViewWindowingMode.FullScreen</strong></a> field</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind"><strong>AppWindowPresenterKind.FullScreen</strong></a> field</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow"><strong>AppWindow</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>AppWindow</strong></a> class</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.changed"><strong>AppWindow.Changed</strong></a> event</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed"><strong>Microsoft.UI.Windowing.AppWindow.Changed</strong></a> event</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.closeasync"><strong>AppWindow.CloseAsync</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroy"><strong>AppWindow.Destroy</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.getplacement"><strong>AppWindow.GetPlacement</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.position"><strong>AppWindow.Position</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview"><strong>Appwindow.RequestMoveXxx</strong></a> methods</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.move"><strong>AppWindow.Move</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.requestsize"><strong>AppWindow.RequestSize</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize"><strong>AppWindow.Resize</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.title"><strong>AppWindow.Title</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title"><strong>AppWindow.Title</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync"><strong>AppWindow.TryCreateAsync</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create"><strong>AppWindow.Create</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync"><strong>AppWindow.TryShowAsync</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.show"><strong>AppWindow.Show</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowchangedeventargs.didsizechange"><strong>AppWindowChangedEventArgs.DidSizeChange</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange"><strong>AppWindowChangedEventArgs.DidSizeChange</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowplacement.size"><strong>AppWindowPlacement.Size</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size"><strong>AppWindow.Size</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind"><strong>AppWindowPresentationKind.CompactOverlay</strong></a> field</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind"><strong>AppWindowPresenterKind.CompactOverlay</strong></a> field</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind"><strong>AppWindowPresentationKind.FullScreen</strong></a> field</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind"><strong>AppWindowPresenterKind.FullScreen</strong></a> field</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation#Windows_UI_WindowManagement_AppWindowPresenter_RequestPresentation_Windows_UI_WindowManagement_AppWindowPresentationKind_"><strong>AppWindowPresenter.RequestPresentation</strong></a> method</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_"><strong>AppWindow.SetPresenter</strong></a> method</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a> class</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.getpreferredvisibility"><strong>AppWindowTitleBar.GetPreferredVisibility</strong></a></td>
+<td>No direct 1:1 mapping to a Windows App SDK API</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.gettitlebarocclusions"><strong>AppWindowTitleBar.GetTitleBarOcclusions</strong></a></td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.leftinset"><strong>AppWindowTitleBar.LeftInset</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.rightinset"><strong>RightInset</strong></a>, coupled with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height"><strong>Height</strong></a>, provide the same information.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.setpreferredvisibility"><strong>AppWindowTitleBar.SetPreferredVisibility</strong></a></td>
+<td>No direct 1:1 mapping to a Windows App SDK API</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebarocclusion"><strong>AppWindowTitleBarOcclusion</strong></a> property</td>
+<td>(<strong>Microsoft.UI.Windowing</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.leftinset"><strong>AppWindowTitleBar.LeftInset</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.rightinset"><strong>RightInset</strong></a>, coupled with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height"><strong>Height</strong></a>, provide the same information.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.WindowManagement</strong>) <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebarvisibility"><strong>AppWindowTitleBarVisibility</strong></a></td>
+<td>No direct 1:1 mapping to a Windows App SDK API</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml"><strong>Windows.UI.Xaml</strong></a> namespace</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml"><strong>Microsoft.UI.Xaml</strong></a> namespace</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.onactivated"><strong>Application.OnActivated</strong></a> method (commonly appears in C# as <code>App.OnActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.onbackgroundactivated"><strong>Application.OnBackgroundActivated</strong></a> method (commonly appears in C# as <code>App.OnBackgroundActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.oncachedfileupdateractivated"><strong>Application.OnCachedFileUpdaterActivated</strong></a> method (commonly appears in C# as <code>App.OnCachedFileUpdaterActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.onfileactivated"><strong>Application.OnFileActivated</strong></a> method (commonly appears in C# as <code>App.OnFileActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#file-type-association">File type association</a> and <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.onfileopenpickeractivated"><strong>Application.OnFileOpenPickerActivated</strong></a> method (commonly appears in C# as <code>App.OnFileOpenPickerActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.onfilesavepickeractivated"><strong>Application.OnFileSavePickerActivated</strong></a> method (commonly appears in C# as <code>App.OnFileSavePickerActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.onsearchactivated"><strong>Application.OnSearchActivated</strong></a> method (commonly appears in C# as <code>App.OnSearchActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.application.onsharetargetactivated"><strong>Application.OnShareTargetActivated</strong></a> method (commonly appears in C# as <code>App.OnShareTargetActivated</code>)</td>
+<td>See <a href="guides/applifecycle.html#onactivated-onbackgroundactivated-and-other-activation-handling-methods">OnActivated, OnBackgroundActivated, and other activation-handling methods</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.window.current"><strong>Window.Current</strong></a> property</td>
+<td>Deprecated, and returns <code>null</code>. For an alternative, see <a href="guides/winui3.html#change-windowsuixamlwindowcurrent-to-appwindow">Change Window.Current to App.Window</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml</strong>) <a href="/uwp/api/windows.ui.xaml.window.dispatcher"><strong>Window.Dispatcher</strong></a> property (commonly written in C# as <code>Window.Current.Dispatcher</code>)</td>
+<td>(<strong>Microsoft.UI.Xaml</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue"><strong>Window.DispatcherQueue</strong></a> property</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml.Controls</strong>) <a href="/uwp/api/windows.ui.xaml.controls.contentdialog"><strong>ContentDialog</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Xaml.Controls</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog"><strong>ContentDialog</strong></a> is supported, but you must set its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands">XamlRoot</a> property. See <a href="guides/winui3.html#contentdialog-and-popup">ContentDialog, and Popup</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml.Controls</strong>) <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas"><strong>InkCanvas</strong></a> class</td>
+<td>Not supported in Windows App SDK 1.0.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml.Controls</strong>) <a href="/uwp/api/windows.ui.xaml.controls.mediaelement"><strong>MediaElement</strong></a> class</td>
+<td>Not supported in Windows App SDK 1.0.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml.Controls.Maps</strong>) <a href="/uwp/api/windows.ui.xaml.controls.maps.mapcontrol"><strong>MapControl</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Xaml.Controls</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol"><strong>MapControl</strong></a> class</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml.Controls.Primitives</strong>) <a href="/uwp/api/windows.ui.xaml.controls.primitives.popup"><strong>Popup</strong></a> class</td>
+<td>(<strong>Microsoft.UI.Xaml.Controls.Primitives</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup"><strong>Popup</strong></a> is supported, but you must set its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands">XamlRoot</a> property. See <a href="guides/winui3.html#contentdialog-and-popup">ContentDialog, and Popup</a>.</td>
+</tr>
+<tr>
+<td>(<strong>Windows.UI.Xaml.Media</strong>) <a href="/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource"><strong>AcrylicBrush.BackgroundSource</strong></a> property</td>
+<td>In the Windows App SDK, the (<strong>Microsoft.UI.Xaml.Media</strong>) <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush"><strong>AcrylicBrush</strong></a> always samples from the app content. See <a href="guides/winui3.html#acrylicbrushbackgroundsource-property">AcrylicBrush.BackgroundSource property</a>.</td>
+</tr>
+<tr>
+<td><strong>C++/WinRT</strong>. <code>co_await winrt.resume_foreground(this-&gt;Dispatcher());</code></td>
+<td>See <a href="guides/threading.html#migrate-winrtresume_foreground-cwinrt">Migrate winrt.resume_foreground</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="third-party-libraries">Third-party libraries</h2>
+<p>This section documents various libraries that were supported in UWP, and need to be changed when using WinUI 3.</p>
+<table>
+<thead>
+<tr>
+<th>UWP</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OneDrive SDK</td>
+<td>Microsoft Graph SDK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

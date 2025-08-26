@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Programmatic focus navigation with keyboard, gamepad, and accessibility tools </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Programmatic focus navigation with keyboard, gamepad, and accessibility tools ">
+    
+    <meta name="description" content="Learn how to programmatically manage focus navigation with keyboard, gamepad, and accessibility tools in a Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="programmatic-focus-navigation">Programmatic focus navigation</h1>
+
+<p><img src="images/dpad-remote/dpad-remote-keyboard.png" alt="Keyboard, remote, and D-pad"></p>
+<p>To move focus programmatically in your Windows application, you can use either the <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_">FocusManager.TryMoveFocus</a> method or the <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_">FindNextElement</a> method.</p>
+<p><a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_">TryMoveFocus</a> attempts to change focus from the element with focus to the next focusable element in the specified direction, while <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_">FindNextElement</a> retrieves the element (as a <a href="/uwp/api/windows.ui.xaml.dependencyobject">DependencyObject</a>) that will receive focus based on the specified navigation direction (directional navigation only, cannot be used to emulate tab navigation).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend using the <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_">FindNextElement</a> method instead of <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextFocusableElement_Windows_UI_Xaml_Input_FocusNavigationDirection_">FindNextFocusableElement</a> because FindNextFocusableElement retrieves a UIElement, which returns null if the next focusable element is not a UIElement (such as a Hyperlink object).</p>
+</div>
+<h2 id="find-a-focus-candidate-within-a-scope">Find a focus candidate within a scope</h2>
+<p>You can customize the focus navigation behavior for both <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_">TryMoveFocus</a> and <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_">FindNextElement</a>, including searching for the next focus candidate within a specific UI tree or excluding specific elements from consideration.</p>
+<p>This example uses a TicTacToe game to demonstrate the <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_">TryMoveFocus</a> and <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindNextElement_Windows_UI_Xaml_Input_FocusNavigationDirection_">FindNextElement</a> methods.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Orientation=&quot;Horizontal&quot;
+                VerticalAlignment=&quot;Center&quot;
+                HorizontalAlignment=&quot;Center&quot; &gt;
+    &lt;Button Content=&quot;Start Game&quot; /&gt;
+    &lt;Button Content=&quot;Undo Movement&quot; /&gt;
+    &lt;Grid x:Name=&quot;TicTacToeGrid&quot; KeyDown=&quot;OnKeyDown&quot;&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition Width=&quot;50&quot; /&gt;
+            &lt;ColumnDefinition Width=&quot;50&quot; /&gt;
+            &lt;ColumnDefinition Width=&quot;50&quot; /&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;50&quot; /&gt;
+            &lt;RowDefinition Height=&quot;50&quot; /&gt;
+            &lt;RowDefinition Height=&quot;50&quot; /&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;0&quot; Grid.Row=&quot;0&quot; 
+            x:Name=&quot;Cell00&quot; /&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;1&quot; Grid.Row=&quot;0&quot; 
+            x:Name=&quot;Cell10&quot;/&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;2&quot; Grid.Row=&quot;0&quot; 
+            x:Name=&quot;Cell20&quot;/&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;0&quot; Grid.Row=&quot;1&quot; 
+            x:Name=&quot;Cell01&quot;/&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;1&quot; Grid.Row=&quot;1&quot; 
+            x:Name=&quot;Cell11&quot;/&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;2&quot; Grid.Row=&quot;1&quot; 
+            x:Name=&quot;Cell21&quot;/&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;0&quot; Grid.Row=&quot;2&quot; 
+            x:Name=&quot;Cell02&quot;/&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;1&quot; Grid.Row=&quot;2&quot; 
+            x:Name=&quot;Cell22&quot;/&gt;
+        &lt;myControls:TicTacToeCell 
+            Grid.Column=&quot;2&quot; Grid.Row=&quot;2&quot; 
+            x:Name=&quot;Cell32&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void OnKeyDown(object sender, KeyRoutedEventArgs e)
+{
+    DependencyObject candidate = null;
+
+    var options = new FindNextElementOptions ()
+    {
+        SearchRoot = TicTacToeGrid,
+        XYFocusNavigationStrategyOverride = XYFocusNavigationStrategyOverride.Projection
+    };
+
+    switch (e.Key)
+    {
+        case Windows.System.VirtualKey.Up:
+            candidate = 
+                FocusManager.FindNextElement(
+                    FocusNavigationDirection.Up, options);
+            break;
+        case Windows.System.VirtualKey.Down:
+            candidate = 
+                FocusManager.FindNextElement(
+                    FocusNavigationDirection.Down, options);
+            break;
+        case Windows.System.VirtualKey.Left:
+            candidate = FocusManager.FindNextElement(
+                FocusNavigationDirection.Left, options);
+            break;
+        case Windows.System.VirtualKey.Right:
+            candidate = 
+                FocusManager.FindNextElement(
+                    FocusNavigationDirection.Right, options);
+            break;
+    }
+    // Also consider whether candidate is a Hyperlink, WebView, or TextBlock.
+    if (candidate != null &amp;&amp; candidate is Control)
+    {
+        (candidate as Control).Focus(FocusState.Keyboard);
+    }
+}
+</code></pre>
+<p>Use <a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions">FindNextElementOptions</a> to further customize how focus candidates are identified. This object provides the following properties:</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot">SearchRoot</a> - Scope the search for focus navigation candidates to the children of this DependencyObject. Null indicates to start the search from the root of the visual tree.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If one or more transforms are applied to the descendants of <strong>SearchRoot</strong> that place them outside of the directional area, these elements are still considered candidates.</p>
+</div>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect">ExclusionRect</a> - Focus navigation candidates are identified using a &quot;fictitious&quot; bounding rectangle where all overlapping objects are excluded from navigation focus. This rectangle is used only for calculations and is never added to the visual tree.</li>
+<li><a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect">HintRect</a> - Focus navigation candidates are identified using a &quot;fictitious&quot; bounding rectangle that identifies the elements most likely to receive focus. This rectangle is used only for calculations and is never added to the visual tree.</li>
+<li><a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_XYFocusNavigationStrategyOverride">XYFocusNavigationStrategyOverride</a> - The focus navigation strategy used to identify the best candidate element to receive focus.</li>
+</ul>
+<p>The following image illustrates some of these concepts.</p>
+<p>When element B has focus, FindNextElement identifies I as the focus candidate when navigating to the right. The reasons for this are:</p>
+<ul>
+<li>Because of the <a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_HintRect">HintRect</a> on A, the starting reference is A, not B</li>
+<li>C is not a candidate because MyPanel has been specified as the <a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_SearchRoot">SearchRoot</a></li>
+<li>F is not a candidate because the <a href="/uwp/api/windows.ui.xaml.input.findnextelementoptions#Windows_UI_Xaml_Input_FindNextElementOptions_ExclusionRect">ExclusionRect</a> overlaps it</li>
+</ul>
+<p><img src="images/keyboard/navigation-hints.png" alt="Custom focus navigation behavior using navigation hints"></p>
+<p><em>Custom focus navigation behavior using navigation hints</em></p>
+<h2 id="navigation-focus-events">Navigation focus events</h2>
+<h3 id="nofocuscandidatefound-event">NoFocusCandidateFound event</h3>
+<p>The <a href="/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_NoFocusCandidateFound">UIElement.NoFocusCandidateFound</a> event is fired when the tab or arrow keys are pressed and there is no focus candidate in the specified direction. This event is not fired for <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_">TryMoveFocus</a>.</p>
+<p>Because this is a routed event, it bubbles from the focused element up through successive parent objects to the root of the object tree. This lets you handle the event wherever appropriate.</p>
+<p><a name="split-view-code-sample"></a></p>
+<p>Here, we show how a Grid opens a <a href="/uwp/api/windows.ui.xaml.controls.splitview">SplitView</a> when the user attempts to move focus to the left of the left-most focusable control (see <a href="../devices/designing-for-tv.html#navigation-pane">Designing for Xbox and TV</a>).</p>
+<pre><code class="lang-xaml">&lt;Grid NoFocusCandidateFound=&quot;OnNoFocusCandidateFound&quot;&gt;
+...
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void OnNoFocusCandidateFound (
+    UIElement sender, NoFocusCandidateFoundEventArgs args)
+{
+    if(args.NavigationDirection == FocusNavigationDirection.Left)
+    {
+        if(args.InputDevice == FocusInputDeviceKind.Keyboard ||
+        args.InputDevice == FocusInputDeviceKind.GameController )
+            {
+                OpenSplitPaneView();
+            }
+        args.Handled = true;
+    }
+}
+</code></pre>
+<h3 id="gotfocus-and-lostfocus-events">GotFocus and LostFocus events</h3>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus">UIElement.GotFocus</a>
+and <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus">UIElement.LostFocus</a> events are fired when an element gets focus or loses focus, respectively. This event is not fired for <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_">TryMoveFocus</a>.</p>
+<p>Because these are routed events, they bubble from the focused element up through successive parent objects to the root of the object tree. This lets you handle the event wherever appropriate.</p>
+<h3 id="gettingfocus-and-losingfocus-events">GettingFocus and LosingFocus events</h3>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus">UIElement.GettingFocus</a> and <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus">UIElement.LosingFocus</a> events fire before the respective <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus">UIElement.GotFocus</a>
+and <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus">UIElement.LostFocus</a> events.</p>
+<p>Because these are routed events, they bubble from the focused element up through successive parent objects to the root of the object tree. As this happens before a focus change takes place, you can redirect or cancel the focus change.</p>
+<p><a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus">GettingFocus</a> and <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus">LosingFocus</a> are synchronous events so focus won’t be
+moved while these events are bubbling. However, <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus">GotFocus</a>
+and <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus">LostFocus</a> are asynchronous events, which means there is no guarantee that focus won’t
+move again before the handler is executed.</p>
+<p>If focus moves through a call to <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_">Control.Focus</a>, <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus">GettingFocus</a> is raised during the call, while <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus">GotFocus</a> is raised after the call.</p>
+<p>The focus navigation target can be changed during the <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus">GettingFocus</a> and <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus">LosingFocus</a> events (before focus moves) through the <a href="/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_NewFocusedElement">GettingFocusEventArgs.NewFocusedElement</a> property. Even if the target is changed, the event still bubbles and the target can be changed again.</p>
+<p>To avoid reentrancy issues, an exception is thrown if you try to move focus (using <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_TryMoveFocus_Windows_UI_Xaml_Input_FocusNavigationDirection_">TryMoveFocus</a> or <a href="/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_Focus_Windows_UI_Xaml_FocusState_">Control.Focus</a>) while these events are bubbling.</p>
+<p>These events are fired regardless of the reason for the focus moving (including tab navigation, directional navigation, and programmatic navigation).</p>
+<p>Here is the order of execution for the focus events:</p>
+<ol>
+<li><a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus">LosingFocus</a>
+If focus is reset back to the losing focus element or <a href="/uwp/api/windows.ui.xaml.input.losingfocuseventargs#Windows_UI_Xaml_Input_LosingFocusEventArgs_TryCancel">TryCancel</a> is successful, no further events are fired.</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus">GettingFocus</a>
+If focus is reset back to the losing focus element or <a href="/uwp/api/windows.ui.xaml.input.gettingfocuseventargs#Windows_UI_Xaml_Input_GettingFocusEventArgs_TryCancel">TryCancel</a> is successful, no further events are fired.</li>
+<li><a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LostFocus">LostFocus</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GotFocus">GotFocus</a></li>
+</ol>
+<p>The following image shows how, when moving to the right from A, the XYFocus chooses B4 as a candidate. B4 then fires the GettingFocus event where the ListView has the opportunity to reassign focus to B3.</p>
+<p><img src="images/keyboard/focus-events.png" alt="Changing focus navigation target on GettingFocus event"></p>
+<p><em>Changing focus navigation target on GettingFocus event</em></p>
+<p>Here, we show how to handle the <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_GettingFocus">GettingFocus</a> event and redirect focus.</p>
+<pre><code class="lang-XAML">&lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+    &lt;Button Content=&quot;A&quot; /&gt;
+    &lt;ListView x:Name=&quot;MyListView&quot; SelectedIndex=&quot;2&quot; GettingFocus=&quot;OnGettingFocus&quot;&gt;
+        &lt;ListViewItem&gt;LV1&lt;/ListViewItem&gt;
+        &lt;ListViewItem&gt;LV2&lt;/ListViewItem&gt;
+        &lt;ListViewItem&gt;LV3&lt;/ListViewItem&gt;
+        &lt;ListViewItem&gt;LV4&lt;/ListViewItem&gt;
+        &lt;ListViewItem&gt;LV5&lt;/ListViewItem&gt;
+    &lt;/ListView&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void OnGettingFocus(UIElement sender, GettingFocusEventArgs args)
+{
+    //Redirect the focus only when the focus comes from outside of the ListView.
+    // move the focus to the selected item
+    if (MyListView.SelectedIndex != -1 &amp;&amp; 
+        IsNotAChildOf(MyListView, args.OldFocusedElement))
+    {
+        var selectedContainer = 
+            MyListView.ContainerFromItem(MyListView.SelectedItem);
+        if (args.FocusState == 
+            FocusState.Keyboard &amp;&amp; 
+            args.NewFocusedElement != selectedContainer)
+        {
+            args.TryRedirect(
+                MyListView.ContainerFromItem(MyListView.SelectedItem));
+            args.Handled = true;
+        }
+    }
+}
+</code></pre>
+<p>Here, we show how to handle the <a href="/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_LosingFocus">LosingFocus</a> event for a <a href="/uwp/api/windows.ui.xaml.controls.commandbar">CommandBar</a> and set focus when the menu is closed.</p>
+<pre><code class="lang-XAML">&lt;CommandBar x:Name=&quot;MyCommandBar&quot; LosingFocus=&quot;OnLosingFocus&quot;&gt;
+     &lt;AppBarButton Icon=&quot;Back&quot; Label=&quot;Back&quot; /&gt;
+     &lt;AppBarButton Icon=&quot;Stop&quot; Label=&quot;Stop&quot; /&gt;
+     &lt;AppBarButton Icon=&quot;Play&quot; Label=&quot;Play&quot; /&gt;
+     &lt;AppBarButton Icon=&quot;Forward&quot; Label=&quot;Forward&quot; /&gt;
+
+     &lt;CommandBar.SecondaryCommands&gt;
+         &lt;AppBarButton Icon=&quot;Like&quot; Label=&quot;Like&quot; /&gt;
+         &lt;AppBarButton Icon=&quot;Share&quot; Label=&quot;Share&quot; /&gt;
+     &lt;/CommandBar.SecondaryCommands&gt;
+ &lt;/CommandBar&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
+{
+    if (MyCommandBar.IsOpen == true &amp;&amp; 
+        IsNotAChildOf(MyCommandBar, args.NewFocusedElement))
+    {
+        if (args.TryCancel())
+        {
+            args.Handled = true;
+        }
+    }
+}
+</code></pre>
+<h2 id="find-the-first-and-last-focusable-element">Find the first and last focusable element</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindFirstFocusableElement_Windows_UI_Xaml_DependencyObject_">FocusManager.FindFirstFocusableElement</a> and <a href="/uwp/api/windows.ui.xaml.input.focusmanager#Windows_UI_Xaml_Input_FocusManager_FindLastFocusableElement_Windows_UI_Xaml_DependencyObject_">FocusManager.FindLastFocusableElement</a> methods move focus to the first or last focusable element within the scope of an object (the element tree of a <a href="/uwp/api/windows.ui.xaml.uielement">UIElement</a> or the text tree of a <a href="/uwp/api/windows.ui.xaml.documents.textelement">TextElement</a>). The scope is specified in the call (if the argument is null, the scope is the current window).</p>
+<p>If no focus candidates can be identified in the scope, null is returned.</p>
+<p>Here, we show how to specify that the buttons of a CommandBar have a wrap-around directional behavior (see <a href="keyboard-interactions.html#popup-ui">Keyboard Interactions</a>).</p>
+<pre><code class="lang-XAML">&lt;CommandBar x:Name=&quot;MyCommandBar&quot; LosingFocus=&quot;OnLosingFocus&quot;&gt;
+    &lt;AppBarButton Icon=&quot;Back&quot; Label=&quot;Back&quot; /&gt;
+    &lt;AppBarButton Icon=&quot;Stop&quot; Label=&quot;Stop&quot; /&gt;
+    &lt;AppBarButton Icon=&quot;Play&quot; Label=&quot;Play&quot; /&gt;
+    &lt;AppBarButton Icon=&quot;Forward&quot; Label=&quot;Forward&quot; /&gt;
+
+    &lt;CommandBar.SecondaryCommands&gt;
+        &lt;AppBarButton Icon=&quot;Like&quot; Label=&quot;Like&quot; /&gt;
+        &lt;AppBarButton Icon=&quot;ReShare&quot; Label=&quot;Share&quot; /&gt;
+    &lt;/CommandBar.SecondaryCommands&gt;
+&lt;/CommandBar&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
+{
+    if (IsNotAChildOf(MyCommandBar, args.NewFocussedElement))
+    {
+        DependencyObject candidate = null;
+        if (args.Direction == FocusNavigationDirection.Left)
+        {
+            candidate = FocusManager.FindLastFocusableElement(MyCommandBar);
+        }
+        else if (args.Direction == FocusNavigationDirection.Right)
+        {
+            candidate = FocusManager.FindFirstFocusableElement(MyCommandBar);
+        }
+        if (candidate != null)
+        {
+            args.NewFocusedElement = candidate;
+            args.Handled = true;
+        }
+    }
+}
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="focus-navigation.html">Focus navigation for keyboard, gamepad, remote control, and accessibility tools</a></li>
+<li><a href="keyboard-interactions.html">Keyboard interactions</a></li>
+<li><a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/focus-navigation-programmatic.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

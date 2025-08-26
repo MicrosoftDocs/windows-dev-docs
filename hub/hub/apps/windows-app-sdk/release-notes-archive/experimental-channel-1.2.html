@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Experimental channel release notes for the Windows App SDK 1.2 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Experimental channel release notes for the Windows App SDK 1.2 ">
+    
+    <meta name="description" content="Learn about the experimental channel release notes for the Windows App SDK 1.2">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="experimental-channel-release-notes-for-the-windows-app-sdk-12">Experimental channel release notes for the Windows App SDK 1.2</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The experimental channel is <strong>not supported</strong> for use in production environments, and apps that use the experimental releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The experimental channel provides releases of the Windows App SDK that include <a href="../release-channels.html#features-available-by-release-channel">experimental channel features</a> that are in early stages of development. APIs for experimental features have the <a href="/uwp/api/Windows.Foundation.Metadata.ExperimentalAttribute">Experimental</a> attribute. If you call an experimental API in your code, you will receive a build-time warning. All APIs in the experimental channel might have breaking changes in future releases, but experimental APIs are especially subject to change. Experimental features may be removed from the next release, or may never be released.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on experimental releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest experimental channel release:</strong></p>
+<ul>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="version-12-experimental-120-experimental2">Version 1.2 Experimental (1.2.0-experimental2)</h2>
+<p>This is the latest release of the experimental channel. It supports all <a href="../release-channels.html#features-available-by-release-channel">experimental channel features</a> and features from <a href="preview-channel-1.2.html#version-12-preview-1-120-preview1">Version 1.2 Preview 1 (1.2.0-preview1)</a>.</p>
+<p>To download, retarget your WinAppSDK NuGet version to <code>1.2.220909.2-experimental2</code>.</p>
+<h3 id="fixed-issue">Fixed issue</h3>
+<p>In upcoming Windows Insider Preview builds, applications using Windows App SDK would fail to launch.</p>
+<h2 id="version-12-experimental-120-experimental1">Version 1.2 Experimental (1.2.0-experimental1)</h2>
+<p>This is the latest release of the experimental channel. It supports all <a href="../release-channels.html#features-available-by-release-channel">experimental channel features</a>.</p>
+<p>To download, retarget your WinAppSDK NuGet version to <code>1.2.220727.1-experimental1</code>.</p>
+<h3 id="input--composition">Input &amp; Composition</h3>
+<p>First introduced in Windows App SDK 0.8, there are several experimental classes in the
+<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.experimental">Microsoft.UI.Input.Experimental</a> &amp; <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.experimental">Microsoft.UI.Composition.Experimental</a> namespaces.</p>
+<p>New to this release:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputpointersource">InputPointerSource</a> has a new static factory, GetforWindowId.</li>
+</ul>
+<h3 id="content">Content</h3>
+<p>New to this release, the experimental classes in the Microsoft.UI.Content namespace provide the building blocks of interactive content. These are low level primitives that can be assembled into content to provide the interactive experience for an end user. The content defines the structure for: rendering output with animations, processing input on different targets, providing accessibility representation, and handling host state changes.</p>
+<p>Notable APIs:</p>
+<ul>
+<li><code>ContentIsland</code> - brings together Output, Input, and Accessibility and provides the abstraction for interactive content. A custom visual tree can be constructed and made interactive with these APIs.</li>
+<li><code>DesktopChildSiteBridge</code> - enables a <code>ContentIsland</code> to be connected into an HWND-based hierarchy.</li>
+</ul>
+<p>Check out the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Islands">sample on GitHub</a> for more information.</p>
+<h3 id="dispatching">Dispatching</h3>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue">DispatcherQueue</a> now dispatches as reentrant. Previously, no more than a single <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuehandler">DispatcherQueueHandler</a> callback could be active on a single thread at a time. Now, if a handler starts a nested message pump, additional callbacks dispatch as reentrant. This matches Win32 behavior around window messages and nested message pumps.</p>
+<h3 id="notifications">Notifications</h3>
+<p>Registering app display name and icon for app notification is now supported. Check out the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppNotifications/AppNotifications-spec.md">spec on GitHub</a> for additional information.</p>
+<h3 id="winui-3">WinUI 3</h3>
+<ul>
+<li>Controls and styles are up to date with the <a href="/windows/uwp/get-started/winui2/release-notes/winui-2.8">WinUI 2.8</a> release.</li>
+<li>UWP is no longer supported in the experimental releases.</li>
+</ul>
+<h3 id="other-limitations-and-known-issues">Other limitations and known issues</h3>
+<ul>
+<li>Apps need to be rebuilt after updating to Windows App SDK 1.2-experimental1 due to a breaking change introduced in the ABI.</li>
+<li>Apps that reference a package that depends on WebView2 (like Microsoft.Identity.Client) fail to build. This is caused by conflicting binaries at build time. See <a href="https://github.com/microsoft/WindowsAppSDK/issues/2492">issue 2492</a> on GitHub for more information.</li>
+<li>Using <code>dotnet build</code> with a WinAppSDK C# class library project may see a build error &quot;Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded&quot;. To resolve this issue set <code>&lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;</code> in your project file.</li>
+<li>The default WinAppSDK templates note that the MaxVersionTested=&quot;10.0.19041.0&quot; when it should be &quot;10.0.22000.0&quot;. For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to &quot;10.0.22000.0&quot; in your project file.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.2.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

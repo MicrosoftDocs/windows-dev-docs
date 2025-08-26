@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>XAML property animations </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="XAML property animations ">
+    
+    <meta name="description" content="Learn how to animate properties on a XAML UIElement directly by using Universal Windows Platform (UWP) composition animations.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="animating-xaml-elements-with-composition-animations">Animating XAML elements with composition animations</h1>
+
+<p>This article introduces new properties that let you animate a XAML UIElement with the performance of composition animations and the ease of setting XAML properties.</p>
+<p>Prior to Windows 10, version 1809, you had 2 choices to build animations in your UWP apps:</p>
+<ul>
+<li>use XAML constructs like <a href="storyboarded-animations.html">Storyboarded animations</a>, or the <em>*ThemeTransition</em> and <em>*ThemeAnimation</em> classes in the <a href="/uwp/api/windows.ui.xaml.media.animation">Windows.UI.Xaml.Media.Animation</a> namespace.</li>
+<li>use composition animations as described in <a href="/windows/uwp/composition/using-the-visual-layer-with-xaml">Using the Visual Layer with XAML</a>.</li>
+</ul>
+<p>Using the visual layer provides better performance than using the XAML constructs. But using <a href="/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview">ElementCompositionPreview</a> to get the element's underlying composition <a href="/uwp/api/windows.ui.composition.visual">Visual</a> object, and then animating the Visual with composition animations, is more complex to use.</p>
+<p>Starting in Windows 10, version 1809, you can animate properties on a UIElement directly using composition animations without the requirement to get the underlying composition Visual.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use these properties on UIElement, your UWP project target version must be 1809 or later. For more info about configuring your project version, see <a href="/windows/uwp/debug-test-perf/version-adaptive-apps">Version adaptive apps</a>.</p>
+</div>
+<h2 id="examples">Examples</h2>
+<table>
+<th align="left">WinUI 2 Gallery</th><th>
+</th><tr>
+<td><img src="images/xaml-controls-gallery-app-icon.png" alt="WinUI Gallery" width="168"></td>
+<td>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/XamlCompInterop">open the app and see Animation interop in action</a>.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+<h2 id="new-rendering-properties-replace-old-rendering-properties">New rendering properties replace old rendering properties</h2>
+<p>This table shows the properties you can use to modify the rendering of a UIElement, that can also be animated with a <a href="/uwp/api/windows.ui.composition.compositionanimation">CompositionAnimation</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.opacity">Opacity</a></td>
+<td>Double</td>
+<td>The degree of the object's opacity</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.translation">Translation</a></td>
+<td>Vector3</td>
+<td>Shift the X/Y/Z position of the element</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.transformmatrix">TransformMatrix</a></td>
+<td>Matrix4x4</td>
+<td>The transform matrix to apply to the element</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.scale">Scale</a></td>
+<td>Vector3</td>
+<td>Scale the element, centered on the CenterPoint</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.rotation">Rotation</a></td>
+<td>Float</td>
+<td>Rotate the element around the RotationAxis and CenterPoint</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.rotationaxis">RotationAxis</a></td>
+<td>Vector3</td>
+<td>The axis of rotation</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.centerpoint">CenterPoint</a></td>
+<td>Vector3</td>
+<td>The center point of scale and rotation</td>
+</tr>
+</tbody>
+</table>
+<p>The TransformMatrix property value is combined with the Scale, Rotation, and Translation properties in the following order:  TransformMatrix, Scale, Rotation, Translation.</p>
+<p>These properties don't affect the element's layout, so modifying these properties does not cause a new <a href="/uwp/api/windows.ui.xaml.uielement.measure">Measure</a>/<a href="/uwp/api/windows.ui.xaml.uielement.arrange">Arrange</a> pass.</p>
+<p>These properties have the same purpose and behavior as the like-named properties on the composition <a href="/uwp/api/windows.ui.composition.visual">Visual</a> class (except for Translation, which isn't on Visual).</p>
+<h3 id="example-setting-the-scale-property">Example: Setting the Scale property</h3>
+<p>This example shows how to set the Scale property on a Button.</p>
+<pre><code class="lang-xaml">&lt;Button Scale=&quot;2,2,1&quot; Content=&quot;I am a large button&quot; /&gt;
+</code></pre>
+<pre><code class="lang-csharp">var button = new Button();
+button.Content = &quot;I am a large button&quot;;
+button.Scale = new Vector3(2.0f,2.0f,1.0f);
+</code></pre>
+<h3 id="mutual-exclusivity-between-new-and-old-properties">Mutual exclusivity between new and old properties</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Opacity</strong> property does not enforce the mutual exclusivity described in this section. You use the same Opacity property whether you use XAML or composition animations.</p>
+</div>
+<p>The properties that can be animated with a CompositionAnimation are replacements for several existing UIElement properties:</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.rendertransform">RenderTransform</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.rendertransformorigin">RenderTransformOrigin</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.projection">Projection</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.uielement.transform3d">Transform3D</a></li>
+</ul>
+<p>When you set (or animate) any of the new properties, you cannot use the old properties. Conversely, if you set (or animate) any of the old properties, you cannot use the new properties.</p>
+<p>You also cannot use the new properties if you use ElementCompositionPreview to get and manage the Visual yourself using these methods:</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual">ElementCompositionPreview.GetElementVisual</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setistranslationenabled">ElementCompositionPreview.SetIsTranslationEnabled</a></li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Attempting to mix the use of the two sets of properties will cause the API call to fail and produce an error message.</p>
+</div>
+<p>It’s possible to switch from one set of properties by clearing them, though for simplicity it's not recommended. If the property is backed by a DependencyProperty (for example, UIElement.Projection is backed by UIElement.ProjectionProperty), then call ClearValue to restore it to its &quot;unused&quot; state. Otherwise (for example, the Scale property), set the property to its default value.</p>
+<h2 id="animating-uielement-properties-with-compositionanimation">Animating UIElement properties with CompositionAnimation</h2>
+<p>You can animate the rendering properties listed in the table with a CompositionAnimation. These properties can also be referenced by an <a href="/uwp/api/windows.ui.composition.expressionanimation">ExpressionAnimation</a>.</p>
+<p>Use the <a href="/uwp/api/windows.ui.xaml.uielement.startanimation">StartAnimation</a> and <a href="/uwp/api/windows.ui.xaml.uielement.stopanimation">StopAnimation</a> methods on UIElement to animate the UIElement properties.</p>
+<h3 id="example-animating-the-scale-property-with-a-vector3keyframeanimation">Example: Animating the Scale property with a Vector3KeyFrameAnimation</h3>
+<p>This example shows how to animate the scale of a Button.</p>
+<pre><code class="lang-csharp">var compositor = Window.Current.Compositor;
+var animation = compositor.CreateVector3KeyFrameAnimation();
+
+animation.InsertKeyFrame(1.0f, new Vector3(2.0f,2.0f,1.0f));
+animation.Duration = TimeSpan.FromSeconds(1);
+animation.Target = &quot;Scale&quot;;
+
+button.StartAnimation(animation);
+</code></pre>
+<h3 id="example-animating-the-scale-property-with-an-expressionanimation">Example: Animating the Scale property with an ExpressionAnimation</h3>
+<p>A page has two buttons. The second button animates to be twice as large (via scale) as the first button.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;sourceButton&quot; Content=&quot;Source&quot;/&gt;
+&lt;Button x:Name=&quot;destinationButton&quot; Content=&quot;Destination&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">var compositor = Window.Current.Compositor;
+var animation = compositor.CreateExpressionAnimation(&quot;sourceButton.Scale*2&quot;);
+animation.SetExpressionReferenceParameter(&quot;sourceButton&quot;, sourceButton);
+animation.Target = &quot;Scale&quot;;
+destinationButton.StartAnimation(animation);
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="storyboarded-animations.html">Storyboarded animations</a></li>
+<li><a href="/windows/uwp/composition/using-the-visual-layer-with-xaml">Using the Visual Layer with XAML</a></li>
+<li><a href="../../develop/platform/xaml/transforms.html">Transforms overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/motion/xaml-property-animations.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

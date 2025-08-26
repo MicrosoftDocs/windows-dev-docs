@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use targeted offers to maximize engagement and conversions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use targeted offers to maximize engagement and conversions ">
+    
+    <meta name="description" content="Target specific segments of your customers with personalized content to increase engagement, retention, and monetization.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-targeted-offers-to-maximize-engagement-and-conversions">Use targeted offers to maximize engagement and conversions</h1>
+
+<p>Target specific segments of your customers with attractive, personalized content to increase engagement, retention, and monetization.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Targeted offers can only be used with UWP apps that include add-ons.</p>
+</div>
+<h2 id="targeted-offer-overview">Targeted offer overview</h2>
+<p>At a high level, you need to do three things to use targeted offers:</p>
+<ol>
+<li><strong>Create the offer in <a href="https://partner.microsoft.com/dashboard">Partner Center</a>.</strong> Navigate to the <strong>Engage &gt; Targeted offers</strong> page to create offers. More info about this process is described below.</li>
+<li><strong>Implement the in-app offer experience.</strong> Use the <em>Microsoft Store targeted offers API</em> in your app's code to retrieve the available offers for a given user. You'll also need to create the in-app experience for the targeted offer. For more info, see <a href="/windows/uwp/monetize/manage-targeted-offers-using-windows-store-services">Manage targeted offers using Store services</a>.</li>
+<li><strong>Submit your app to the Store.</strong> Your app must be published with the in-app offer experience in place in order for the offer(s) be made available to customers.</li>
+</ol>
+<p>After you complete these steps, customers using your app will see the offers that are available to them at that time, based in their membership in the segment(s) associated with your offers. Please note that while we’ll make every effort to show all available offers to your customers, there may occasionally be issues that impact offer availability.</p>
+<h2 id="to-create-and-send-a-targeted-offer">To create and send a targeted offer</h2>
+<ol>
+<li><p>In <a href="https://partner.microsoft.com/dashboard">Partner Center</a>, expand <strong>Engage</strong> in the left navigation menu, then select <strong>Targeted offers</strong>.</p>
+</li>
+<li><p>On the <strong>Targeted offers</strong> page, review the available offers. Select <strong>Create new offer</strong> for any offer you wish to implement.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The available offers you will see may vary over time and based on account criteria.</p>
+</div>
+</li>
+<li><p>In the new row that appears below the available offers, choose the product (app) in which the offer will be available. Then, select the add-on that you want to associate with the offer.</p>
+</li>
+<li><p>Repeat steps 2 and 3 if you'd like to create additional offers. You can implement the same offer type more than once for the same app, as long as you select different add-ons for each offer. Additionally, you can associate the same add-on with more than one offer type.</p>
+</li>
+<li><p>When you are finished creating offers, click <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>After you've implemented your offers, you can return to the <strong>Targeted offers</strong> page in Partner Center to view the total conversions for each offer.</p>
+<p>If you decide not to use an offer (or if you no longer want to keep using it, click <strong>Delete.</strong></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Be sure you have published the code to retrieve the available offers for a given user, and to create the in-app experience. For more info, see <a href="/windows/uwp/monetize/manage-targeted-offers-using-windows-store-services">Manage targeted offers using Store services</a>.</p>
+<p>When considering the content of your targeted offers, keep in mind that, as with all app content, the content in your offers must comply with the Store <a href="/windows/apps/publish/store-policies-and-code-of-conduct">Content Policies</a>.</p>
+<p>Also be aware that if a customer who uses your app (and is signed in with their Microsoft account at the time the segment membership is determined) gives their device to someone else to use, the other person may see offers that were targeted at the original customer.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/use-targeted-offers-to-maximize-engagement-and-conversions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

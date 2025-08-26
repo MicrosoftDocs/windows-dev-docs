@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Distribute LOB apps to enterprises </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Distribute LOB apps to enterprises ">
+    
+    <meta name="description" content="You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store , without making the apps broadly available in the Store.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="distribute-lob-apps-to-enterprises">Distribute LOB apps to enterprises</h1>
+
+<p>You have several options for distributing line of business (LOB) apps to your organization’s users using <a href="/windows/msix/">MSIX packages</a> without making the apps broadly available to the public. You can use device management tools, configure an App Installer-based deployment, sideload the apps directly, or publish the apps to the Microsoft Store.</p>
+<h2 id="microsoft-endpoint-configuration-manager-and-microsoft-intune">Microsoft Endpoint Configuration Manager and Microsoft Intune</h2>
+<p>If your organization uses Microsoft Endpoint Configuration Manager or Microsoft Intune to manage devices, you can deploy LOB apps using these tools. For more information, see these articles:</p>
+<ul>
+<li><a href="/configmgr/apps/understand/introduction-to-application-management">Introduction to application management in Configuration Manager</a></li>
+<li><a href="/intune/apps/app-lifecycle">Overview of the app lifecycle in Microsoft Intune</a></li>
+</ul>
+<h2 id="app-installer">App Installer</h2>
+<p>App Installer enables Windows 10 or Windows 11 apps to be installed by double-clicking an MSIX app package directly, or by double-clicking an .appinstaller file that installs the app package from a web server. This means that users don't need to use PowerShell or other developer tools to install LOB apps. App Installer can also install app packages that include optional packages and related sets.</p>
+<p>App Installer can be downloaded for offline use in the enterprise from Microsoft Store for Business <a href="https://businessstore.microsoft.com/store/details/app-installer/9NBLGGH4NNS1">web portal</a>. For more information about App Installer, see <a href="/windows/msix/app-installer/app-installer-root">Install Windows 10 or Windows 11 apps with App Installer</a>.</p>
+<h2 id="sideloading">Sideloading</h2>
+<p>Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install MSIX app packages directly. Starting in Windows 10 version 2004, sideloading is enabled by default and users can install apps by double-clicking signed MSIX app packages. On Windows 10 version 1909 and earlier, sideloading requires some additional configuration and the use of a PowerShell script. For more info, see <a href="/windows/application-management/sideload-apps-in-windows-10">Sideload LOB apps in Windows 10 or Windows 11</a>.</p>
+<h3 id="set-up-the-enterprise-association">Set up the enterprise association</h3>
+<p>The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account. For more info, see <a href="/microsoft-store/working-with-line-of-business-apps">Working with line-of-business apps</a>.</p>
+</div>
+<p>When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the <strong>Enterprise associations</strong> section of your <strong>Account settings</strong> (as long as you are signed in with the Microsoft account that was used to open the developer account).</p>
+<p>To confirm the association, click <strong>Accept</strong>. Your account will then be able to publish apps for that enterprise’s exclusive use.</p>
+<h3 id="submit-lob-apps">Submit LOB apps</h3>
+<p>Once you’re ready to publish an app for an enterprise’s exclusive use, the process is similar to the app submission process. The app goes through the same <a href="publish-your-app/msix/app-certification-process.html">certification process</a>, and must comply with all <a href="store-policies.html">Microsoft Store Policies</a>. There are just a few parts of the process that are different.</p>
+<h4 id="visibility">Visibility</h4>
+<p>After you've set up an enterprise association, every time you submit an app you’ll see a drop-down box in the <strong>Visibility</strong> section of the submission’s <strong>Pricing and availability</strong> page. By default, this is set to <strong>Retail distribution</strong>. To make the app exclusive to an enterprise, you’ll need to choose <strong>Line-of-business (LOB) distribution</strong>.</p>
+<p>Once <strong>Line-of-business (LOB) distribution</strong> is selected, the usual <strong>Visibility</strong> options will be replaced with a list of the enterprises to which you can publish exclusive apps. No one outside of the enterprise(s) you select will be able to view or download the app.</p>
+<p>You must select at least one enterprise in order to publish an app as line-of-business.</p>
+<p><span id="organizational"></span></p>
+<h4 id="organizational-licensing">Organizational licensing</h4>
+<p>By default, the box for <strong>Store-managed (online) volume licensing</strong> is checked when you submit an app. When publishing LOB apps, this box must remain checked so that the enterprise can acquire your app in volume. This will not make the app available to anyone outside of the enterprise(s) that you selected in the <strong>Distribution and visibility</strong> section.</p>
+<p>If you’d like to make the app available to the enterprise via disconnected (offline) licensing, you can check the <strong>Disconnected (offline) licensing</strong> box as well.</p>
+<p>For more info, see <a href="#organizational-licensing-options">Organizational licensing options</a>.</p>
+<h4 id="age-ratings">Age ratings</h4>
+<p>For LOB apps, the <a href="publish-your-app/msix/age-ratings.html">age ratings</a> step of the submission process works the same as for retail apps, but you also have an additional option that allows you to indicate the Store age rating of your app manually rather than completing the questionnaire or importing an existing IARC rating ID. This manual rating can only be used with LOB distribution, so if you ever change the <strong>Visibility</strong> setting of the app to <strong>Retail distribution</strong>, you'll need to take the age ratings questionnaire before you can publish the submission.</p>
+<h3 id="enterprise-deployment-of-lob-apps">Enterprise deployment of LOB apps</h3>
+<p>After you click <strong>Submit to the Store</strong>, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store portal. The enterprise can then deploy the app to its users.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In order to get your LOB app, the organization must be located in a <a href="/windows/whats-new/windows-store-for-business-overview#supported-markets">supported market</a>, and you must not have <a href="publish-your-app/msix/market-selection.html">excluded that market</a> when submitting your app.</p>
+</div>
+<p>For more info, see <a href="/microsoft-store/working-with-line-of-business-apps">Working with line-of-business apps</a> and <a href="/microsoft-store/distribute-apps-from-your-private-store">Distribute apps using your private store</a>.</p>
+<h3 id="update-lob-apps">Update LOB apps</h3>
+<p>To publish updates to an app that you’ve already published as LOB, simply create a new submission. You can upload new packages or make any other changes, then click <strong>Submit to the Store</strong> to make the updated version available. Be sure to keep the enterprise selections in <strong>Visibility</strong> the same, unless you intentionally want to make changes such as selecting an additional enterprise to acquire the app, or removing one of the enterprises to which you’d previously distributed it.</p>
+<p>If you want to stop offering an app that you’ve previously published as line-of-business, and prevent any new acquisitions, you’ll need to create a new submission. First, you’ll need to change your <strong>Visibility</strong> selection from <strong>Line-of-business (LOB) distribution</strong> to <strong>Retail distribution</strong>. Then, in the <a href="publish-your-app/msix/visibility-options.html#discoverability">Discoverability</a> section, choose <strong>Make this product available but not discoverable in the Store</strong> with the <strong>Stop acquisition</strong> option.</p>
+<p>After the submission goes through the certification process, the app will no longer be available for new acquisitions (although anyone who already has it will continue to be able to use it).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When changing an app to <strong>Retail distribution</strong>, you'll need to complete the <a href="publish-your-app/msix/age-ratings.html">age ratings questionnaire</a> if you haven't done so already, even if the app will not be available for new acquisitions.</p>
+</div>
+<h2 id="organizational-licensing-options">Organizational licensing options</h2>
+<p>You can indicate whether and how your app can be offered for volume purchases through Microsoft Store in the <strong>Organizational licensing</strong> section of the <a href="publish-your-app/msix/price-and-availability.html#organizational-licensing">Pricing and availability</a> page of an app submission.</p>
+<p>Through these settings, you can opt to allow your app to be made available to organizations who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows 10 device types, including PCs, tablets and phones.</p>
+<p>You will also need to allow organizational licensing for any <a href="distribute-lob-apps-to-enterprises.html">line-of-business (LOB) apps</a> that you publish directly to enterprises.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the <a href="publish-your-app/msix/app-certification-process.html">certification process</a>.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Submissions that use the <a href="/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services">Microsoft Store submission API</a> won't be made available to Microsoft Store. To make your app available for volume purchases by organizations, you must create and submit your submissions in Partner Center.</p>
+</div>
+<h3 id="allowing-your-app-to-be-offered-to-organizations">Allowing your app to be offered to organizations</h3>
+<p>By default, the box labeled <strong>Make my app available to organizations with Store-managed (online) licensing and distribution</strong> is checked. This means that you wish your app to be available for inclusion in catalogs of apps that will be made available to organizations for volume acquisition, with app licenses managed through the Store's online licensing system.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This does not guarantee that your app will be made available to all organizations.</p>
+</div>
+<p>If you prefer not to allow us to offer your app to organizations for volume acquisition, uncheck this box. Note that this change will only take place after the app completes the certification process. If any organizations had previously acquired licenses to your app, those licenses will still be valid, and the people who have the app already can continue to use it.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To publish line-of-business (LOB) apps exclusively to a specific organization, you can set up an enterprise association and allow the organization to add the apps directly their private store. For more info, see <a href="distribute-lob-apps-to-enterprises.html">Distribute LOB apps to enterprises</a>.</p>
+</div>
+<h3 id="allowing-disconnected-offline-licensing">Allowing disconnected (offline) licensing</h3>
+<p>Many organizations need apps enabled for offline licensing. For example, some organizations need to deploy apps to devices which rarely or never connect to the internet. If you want to allow your app to be made available to these customers, check the box labeled <strong>Allow organization-managed (offline) licensing and distribution for organizations</strong>.</p>
+<p>Note that this box is <strong>unchecked</strong> by default. You must check the box to allow us to make your app available to verified organizations who will install it using organization-managed (offline) licensing. Organizations must go through additional validation in order to install paid apps to their end users in this way.</p>
+<p>Offline licensing allows organizations to acquire your app on a volume basis, and then install the app without requiring each device to contact the Store's licensing system. The organization is able to download your app's package along with a license which lets them install it to devices (via their own management tools or by preloading apps on OS images) without notifying the Store when a particular license has been used. Enabling this scenario greatly increases deployment flexibility, and it may substantially increase the attractiveness of your app with these customers.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Offline licensing is not supported for .xap packages.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/distribute-lob-apps-to-enterprises.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Color Picker Utility in PowerToys for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Color Picker Utility in PowerToys for Windows ">
+    
+    <meta name="description" content="Use Color Picker in PowerToys to pick colors from any Windows screen and copy them to clipboard in multiple formats. Start designing faster today.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="color-picker-utility">Color Picker utility</h1>
+
+<p>Color Picker is a PowerToys utility for Windows that lets you pick colors from any screen and copy them to the clipboard in configurable formats. This tool helps designers and developers quickly capture exact colors for their projects.</p>
+<p><img src="../images/pt-colorpicker-hex-editor.png" alt="A screenshot of the Color Picker utility."></p>
+<h2 id="get-started-with-color-picker">Get started with Color Picker</h2>
+<p>Getting started with Color Picker is easy. You can activate it using a keyboard shortcut, select a color from your screen, and copy it to the clipboard in the format of your choice.</p>
+<h3 id="enable-color-picker">Enable Color Picker</h3>
+<p>You can enable the Color Picker in PowerToys Settings.</p>
+<h3 id="activate-color-picker">Activate Color Picker</h3>
+<p>Choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing <strong>Activation Behavior</strong>:</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-colorpicker-activation.gif" alt="Screenshot of Color Picker activation behaviors showing different options for when the utility is activated.">
+</span>
+</p>
+<ul>
+<li><strong>Open editor</strong> opens an editor that lets you choose a color from the colors history, fine-tune a selected color, or pick a new color.</li>
+<li><strong>Pick a color first</strong> activates Color Picker. You can then take action on the selected color using the options described in the <strong>Pick colors from your screen</strong> section below.</li>
+</ul>
+<h3 id="pick-colors-from-your-screen">Pick colors from your screen</h3>
+<p>After activating Color Picker, select a color on your screen to pick that color. If you want to see the area under your cursor in more detail, scroll up to zoom in. You can assign different actions to each of the mouse buttons in Color Picker's settings. The default actions for each button are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mouse button</th>
+<th style="text-align: left;">Default action</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Left click</strong></td>
+<td style="text-align: left;">Pick a color and open editor</td>
+<td style="text-align: left;">Copies the selected color to the clipboard, saves it to the color history, and opens the editor.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Scroll wheel click</strong></td>
+<td style="text-align: left;">Pick a color and close</td>
+<td style="text-align: left;">Copies the selected color to the clipboard, saves it to the color history, and exits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Right click</strong></td>
+<td style="text-align: left;">Close</td>
+<td style="text-align: left;">Closes the Color Picker without copying the color.</td>
+</tr>
+</tbody>
+</table>
+<p>Color Picker copies the selected color to the clipboard in the <strong>Default color format</strong> you've chosen in Color Picker's settings (default: HEX).</p>
+<p><img src="../images/pt-colorpicker.gif" alt="Selecting a Color"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To select the color of the non-hover state of an element:</p>
+<ol>
+<li>Move the mouse pointer close, but not over the element.</li>
+<li>Zoom in by scrolling the mouse wheel up. Image will be frozen.</li>
+<li>In the enlarged area, you can pick the color of the element.</li>
+</ol>
+</div>
+<h2 id="use-the-color-picker-editor">Use the Color Picker editor</h2>
+<p>The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. You can choose which color formats are visible in the editor in <strong>Color formats</strong> in PowerToys Settings.</p>
+<p>The colored bar at the top of the Color Picker editor lets you:</p>
+<ul>
+<li>Fine tune your chosen color</li>
+<li>Pick a similar color</li>
+</ul>
+<p>To fine tune your chosen color, select the central color in the color bar. The fine-tuning control lets you change the color's <strong>HSV</strong>, <strong>RGB</strong>, and <strong>HEX</strong> values. <strong>Select</strong> adds the new color to the colors history.</p>
+<p>To choose a similar color, select one of the segments on the top and bottom edges of the color bar. Selecting one of these similar colors adds it to the history.</p>
+<p><img src="../images/pt-colorpicker-editor.gif" alt="Color Picker Editor window"></p>
+<p>To remove a color from the history, right-click a color and select <strong>Remove</strong>.</p>
+<p>To export the colors history, right-click a color and select <strong>Export</strong>. You can group the values by colors or formats.</p>
+<h2 id="settings">Settings</h2>
+<p>Color Picker has the following settings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Activation shortcut</strong></td>
+<td style="text-align: left;">The shortcut that activates Color Picker.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Activation behavior</strong></td>
+<td style="text-align: left;">Select what happens when you activate Color Picker. Read more about this setting in <a href="#activate-color-picker">Activate Color Picker</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mouse actions</strong></td>
+<td style="text-align: left;">Select what happens when you click each of the mouse buttons while Color Picker is active. The default actions for each button are:<br><br><strong>Left click</strong>: Pick a color and open editor<br><strong>Scroll wheel click</strong>: Pick a color and close<br><strong>Right click</strong>: Close</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Default color format</strong></td>
+<td style="text-align: left;">The color format that Color Picker uses when copying colors to the clipboard.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Show color name</strong></td>
+<td style="text-align: left;">Displays a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Color formats</strong></td>
+<td style="text-align: left;">Enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about color formats in <a href="#manage-color-formats">Manage color formats</a>.</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../images/pt-colorpicker-settings.png" alt="Color Picker Settings screenshot"></p>
+<h3 id="manage-color-formats">Manage color formats</h3>
+<p>You can add, edit, delete, disable, and change the order of color formats in <strong>Color formats</strong>.</p>
+<p>To change the order in which color formats appear in the Color Picker editor, select the <strong>more</strong> button (•••) next to a color format and select <strong>Move up</strong> or <strong>Move down</strong>.</p>
+<p>To disable a color format, turn off the toggle next to that color format. Color Picker doesn't show disabled color formats in the editor.</p>
+<p>To delete a color format, select the <strong>more</strong> button (•••) next to a color format and select <strong>Delete</strong>.</p>
+<p>To add a new color format, select <strong>Add custom color format</strong>. Enter the color format's <strong>Name</strong> and <strong>Format</strong>. The syntax for color formats is described in the dialog.</p>
+<p>To edit a color format, select it from the list. Edit the color format's <strong>Name</strong> and <strong>Format</strong> in the <strong>Edit custom color format</strong> dialog. The syntax for color formats is described in the dialog.</p>
+<p>Define color formats with these parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%Re</td>
+<td>red</td>
+</tr>
+<tr>
+<td>%Gr</td>
+<td>green</td>
+</tr>
+<tr>
+<td>%Bl</td>
+<td>blue</td>
+</tr>
+<tr>
+<td>%Al</td>
+<td>alpha</td>
+</tr>
+<tr>
+<td>%Cy</td>
+<td>cyan</td>
+</tr>
+<tr>
+<td>%Ma</td>
+<td>magenta</td>
+</tr>
+<tr>
+<td>%Ye</td>
+<td>yellow</td>
+</tr>
+<tr>
+<td>%Bk</td>
+<td>Black key</td>
+</tr>
+<tr>
+<td>%Hu</td>
+<td>hue</td>
+</tr>
+<tr>
+<td>%Si</td>
+<td>saturation (HSI)</td>
+</tr>
+<tr>
+<td>%Sl</td>
+<td>saturation (HSL)</td>
+</tr>
+<tr>
+<td>%Sb</td>
+<td>saturation (HSB)</td>
+</tr>
+<tr>
+<td>%Br</td>
+<td>brightness</td>
+</tr>
+<tr>
+<td>%In</td>
+<td>intensity</td>
+</tr>
+<tr>
+<td>%Hn</td>
+<td>hue (natural)</td>
+</tr>
+<tr>
+<td>%Ll</td>
+<td>lightness (natural)</td>
+</tr>
+<tr>
+<td>%Lc</td>
+<td>lightness (CIE)</td>
+</tr>
+<tr>
+<td>%Va</td>
+<td>value</td>
+</tr>
+<tr>
+<td>%Wh</td>
+<td>whiteness</td>
+</tr>
+<tr>
+<td>%Bn</td>
+<td>blackness</td>
+</tr>
+<tr>
+<td>%Ca</td>
+<td>chromaticity A</td>
+</tr>
+<tr>
+<td>%Cb</td>
+<td>chromaticity B</td>
+</tr>
+<tr>
+<td>%Xv</td>
+<td>X value</td>
+</tr>
+<tr>
+<td>%Yv</td>
+<td>Y value</td>
+</tr>
+<tr>
+<td>%Zv</td>
+<td>Z value</td>
+</tr>
+<tr>
+<td>%Dv</td>
+<td>decimal value</td>
+</tr>
+<tr>
+<td>%Na</td>
+<td>color name</td>
+</tr>
+</tbody>
+</table>
+<p>Format the red, green, blue, and alpha values to the following formats:</p>
+<table>
+<thead>
+<tr>
+<th>Formatter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b</td>
+<td>byte value (default)</td>
+</tr>
+<tr>
+<td>h</td>
+<td>hex lowercase one digit</td>
+</tr>
+<tr>
+<td>H</td>
+<td>hex uppercase one digit</td>
+</tr>
+<tr>
+<td>x</td>
+<td>hex lowercase two digits</td>
+</tr>
+<tr>
+<td>X</td>
+<td>hex uppercase two digits</td>
+</tr>
+<tr>
+<td>f</td>
+<td>float with leading zero</td>
+</tr>
+<tr>
+<td>F</td>
+<td>float without leading zero</td>
+</tr>
+</tbody>
+</table>
+<p>For example, <code>%ReX</code> means the red value in hex uppercase two-digit format.</p>
+<p>Color formats can contain any words or characters you prefer. For example, the default color format that's displayed upon color format creation is: <code>_'new Color (R = %Re, G = %Gr, B = %Bl)'_</code>.</p>
+<h2 id="limitations">Limitations</h2>
+<p>The Color Picker utility has the following limitations:</p>
+<ul>
+<li>Color Picker can't display on top of the Start menu or Action Center, but you can still pick a color.</li>
+<li>If you started the currently focused application with an administrator elevation (<strong>Run as administrator</strong>), the Color Picker activation shortcut won't work unless you also started PowerToys with administrator elevation.</li>
+<li>Wide Color Gamut (WCG) and High Dynamic Range (HDR) color formats aren't currently supported.</li>
+</ul>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/color-picker.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

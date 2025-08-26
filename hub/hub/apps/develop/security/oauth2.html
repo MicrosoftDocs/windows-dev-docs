@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Implement OAuth 2.0 functionality in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Implement OAuth 2.0 functionality in Windows apps ">
+    
+    <meta name="description" content="Learn how to implement OAuth 2.0 functionality in Windows apps using the Windows App SDK&#39;s OAuth2Manager.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="implement-oauth-20-functionality-in-windows-apps">Implement OAuth 2.0 functionality in Windows apps</h1>
+
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager">OAuth2Manager</a> in Windows App SDK enables desktop applications such as WinUI 3 to seamlessly perform OAuth 2.0 authorization on Windows. <strong>OAuth2Manager</strong> API intentionally doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. It's recommended to use the authorization code grant type using Proof Key for Code Exchange (PKCE). For more information, see the <a href="https://tools.ietf.org/html/rfc7636">PKCE RFC</a>.</p>
+<h2 id="oauth-background">OAuth background</h2>
+<p>The Windows Runtime (WinRT) <a href="/uwp/api/windows.security.authentication.web.webauthenticationbroker">WebAuthenticationBroker</a>, primarily designed for UWP apps, presents several challenges when used in desktop apps. Key issues include the dependency on <a href="/uwp/api/windows.ui.viewmanagement.applicationview">ApplicationView</a>, which isn't compatible with desktop app frameworks. As a result, developers are forced to resort to workarounds involving interop interfaces and additional code to implement OAuth 2.0 functionality into WinUI 3 and other desktop apps.</p>
+<h2 id="oauth2manager-api-in-windows-app-sdk">OAuth2Manager API in Windows App SDK</h2>
+<p>The <strong>OAuth2Manager</strong> API for Windows App SDK aims to provide a streamlined solution that meets the expectations of developers. It offers seamless OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. The new API eliminates the need for cumbersome workarounds and simplifies the process of incorporating OAuth 2.0 functionality into desktop apps.</p>
+<p>The <strong>OAuth2Manager</strong> is different than the <strong>WebAuthenticationBroker</strong> in WinRT. It follows OAuth 2.0 best practices more closely - e.g. using the user's default browser. The best practices for the API are taken from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework <a href="https://tools.ietf.org/html/rfc6749">RFC 6749</a>, PKCE <a href="https://tools.ietf.org/html/rfc7636">RFC 7636</a>, and OAuth 2.0 for Native Apps <a href="https://tools.ietf.org/html/rfc8252">RFC 8252</a>.</p>
+<h2 id="perform-oauth-20-examples">Perform OAuth 2.0 examples</h2>
+<p>A full WinUI 3 sample app is available on <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager">GitHub</a>. The following sections provide code snippets for the most common OAuth 2.0 flows using the <strong>OAuth2Manager</strong> API.</p>
+<h3 id="authorization-code-request">Authorization code request</h3>
+<p>The following example demonstrates how to perform an authorization code request using the <strong>OAuth2Manager</strong> in Windows App SDK:</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_csharp" role="tab" aria-controls="tabpanel_1_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp">
+
+<pre><code class="lang-cpp">// Get the WindowId for the application window
+Microsoft::UI::WindowId parentWindowId = this-&gt;AppWindow().Id();
+
+AuthRequestParams authRequestParams = AuthRequestParams::CreateForAuthorizationCodeRequest(L&quot;my_client_id&quot;,
+   Uri(L&quot;my-app:/oauth-callback/&quot;));
+authRequestParams.Scope(L&quot;user:email user:birthday&quot;);
+
+AuthRequestResult authRequestResult = co_await OAuth2Manager::RequestAuthWithParamsAsync(parentWindowId, 
+   Uri(L&quot;https://my.server.com/oauth/authorize&quot;), authRequestParams);
+if (AuthResponse authResponse = authRequestResult.Response())
+{
+   //To obtain the authorization code
+   //authResponse.Code();
+
+   //To obtain the access token
+   DoTokenExchange(authResponse);
+}
+else
+{
+   AuthFailure authFailure = authRequestResult.Failure();
+   NotifyFailure(authFailure.Error(), authFailure.ErrorDescription());
+}
+</code></pre>
+</section>
+<section id="tabpanel_1_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">// Get the WindowId for the application window
+Microsoft.UI.WindowId parentWindowId = this.AppWindow.Id;
+
+AuthRequestParams authRequestParams = AuthRequestParams.CreateForAuthorizationCodeRequest(&quot;my_client_id&quot;,
+   new Uri(&quot;my-app:/oauth-callback/&quot;));
+authRequestParams.Scope = &quot;user:email user:birthday&quot;;
+
+AuthRequestResult authRequestResult = await OAuth2Manager.RequestAuthWithParamsAsync(parentWindowId, 
+   new Uri(&quot;https://my.server.com/oauth/authorize&quot;), authRequestParams);
+
+if (AuthResponse authResponse == authRequestResult.Response)
+{
+   //To obtain the authorization code
+   //authResponse.Code;
+
+   //To obtain the access token
+   DoTokenExchange(authResponse);
+}
+else
+{
+   AuthFailure authFailure = authRequestResult.Failure;
+   NotifyFailure(authFailure.Error, authFailure.ErrorDescription);
+}
+</code></pre>
+</section>
+</div>
+<h3 id="exchange-authorization-code-for-access-token">Exchange authorization code for access token</h3>
+<p>The following example demonstrates how to exchange an authorization code for an access token using the <strong>OAuth2Manager</strong>:</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cpp" role="tab" aria-controls="tabpanel_2_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_csharp" role="tab" aria-controls="tabpanel_2_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_2_cpp" role="tabpanel" data-tab="cpp">
+
+<pre><code class="lang-cpp">AuthResponse authResponse = authRequestResult.Response();
+TokenRequestParams tokenRequestParams = TokenRequestParams::CreateForAuthorizationCodeRequest(authResponse);
+ClientAuthentication clientAuth = ClientAuthentication::CreateForBasicAuthorization(L&quot;my_client_id&quot;,
+    L&quot;my_client_secret&quot;);
+
+TokenRequestResult tokenRequestResult = co_await OAuth2Manager::RequestTokenAsync(
+    Uri(L&quot;https://my.server.com/oauth/token&quot;), tokenRequestParams, clientAuth);
+if (TokenResponse tokenResponse = tokenRequestResult.Response())
+{
+    String accessToken = tokenResponse.AccessToken();
+    String tokenType = tokenResponse.TokenType();
+
+    // RefreshToken string null/empty when not present
+    if (String refreshToken = tokenResponse.RefreshToken(); !refreshToken.empty())
+    {
+        // ExpiresIn is zero when not present
+        DateTime expires = winrt::clock::now();
+        if (String expiresIn = tokenResponse.ExpiresIn(); std::stoi(expiresIn) != 0)
+        {
+            expires += std::chrono::seconds(static_cast&lt;int64_t&gt;(std::stoi(expiresIn)));
+        }
+        else
+        {
+            // Assume a duration of one hour
+            expires += std::chrono::hours(1);
+        }
+
+        //Schedule a refresh of the access token
+        myAppState.ScheduleRefreshAt(expires, refreshToken);
+    }
+
+    // Use the access token for resources
+    DoRequestWithToken(accessToken, tokenType);
+}
+else
+{
+    TokenFailure tokenFailure = tokenRequestResult.Failure();
+    NotifyFailure(tokenFailure.Error(), tokenFailure.ErrorDescription());
+}
+</code></pre>
+</section>
+<section id="tabpanel_2_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">AuthResponse authResponse = authRequestResult.Response;
+TokenRequestParams tokenRequestParams = TokenRequestParams.CreateForAuthorizationCodeRequest(authResponse);
+ClientAuthentication clientAuth = ClientAuthentication.CreateForBasicAuthorization(&quot;my_client_id&quot;,
+    &quot;my_client_secret&quot;);
+
+TokenRequestResult tokenRequestResult = await OAuth2Manager.RequestTokenAsync(
+    new Uri(&quot;https://my.server.com/oauth/token&quot;), tokenRequestParams, clientAuth);
+
+if (TokenResponse tokenResponse == tokenRequestResult.Response)
+{
+    string accessToken = tokenResponse.AccessToken;
+    string tokenType = tokenResponse.TokenType;
+
+    // RefreshToken string null/empty when not present
+    if (!string.IsNullOrEmpty(tokenResponse.RefreshToken))
+    {
+        // ExpiresIn is zero when not present
+        DateTime expires = DateTime.Now;
+        if (tokenResponse.ExpiresIn != 0)
+        {
+            expires += TimeSpan.FromSeconds(tokenResponse.ExpiresIn);
+        }
+        else
+        {
+            // Assume a duration of one hour
+            expires += TimeSpan.FromHours(1);
+        }
+
+        //Schedule a refresh of the access token
+        myAppState.ScheduleRefreshAt(expires, tokenResponse.RefreshToken);
+    }
+
+    // Use the access token for resources
+    DoRequestWithToken(accessToken, tokenType);
+}
+else
+{
+    TokenFailure tokenFailure = tokenRequestResult.Failure;
+    NotifyFailure(tokenFailure.Error, tokenFailure.ErrorDescription);
+}
+</code></pre>
+</section>
+</div>
+<h3 id="refresh-an-access-token">Refresh an access token</h3>
+<p>The following example shows how to refresh an access token using the <strong>OAuth2Manager</strong>'s <a href="/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager.requesttokenasync">RefreshTokenAsync</a> method:</p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_cpp" role="tab" aria-controls="tabpanel_3_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_csharp" role="tab" aria-controls="tabpanel_3_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_3_cpp" role="tabpanel" data-tab="cpp">
+
+<pre><code class="lang-cpp">TokenRequestParams tokenRequestParams = TokenRequestParams::CreateForRefreshToken(refreshToken);
+ClientAuthentication clientAuth = ClientAuthentication::CreateForBasicAuthorization(L&quot;my_client_id&quot;,
+    L&quot;my_client_secret&quot;);
+TokenRequestResult tokenRequestResult = co_await OAuth2Manager::RequestTokenAsync(
+    Uri(L&quot;https://my.server.com/oauth/token&quot;), tokenRequestParams, clientAuth));
+if (TokenResponse tokenResponse = tokenRequestResult.Response())
+{
+    UpdateToken(tokenResponse.AccessToken(), tokenResponse.TokenType(), tokenResponse.ExpiresIn());
+
+    //Store new refresh token if present
+    if (String refreshToken = tokenResponse.RefreshToken(); !refreshToken.empty())
+    {
+        // ExpiresIn is zero when not present
+        DateTime expires = winrt::clock::now();
+        if (String expiresInStr = tokenResponse.ExpiresIn(); !expiresInStr.empty())
+        {
+            int expiresIn = std::stoi(expiresInStr);
+            if (expiresIn != 0)
+            {
+                expires += std::chrono::seconds(static_cast&lt;int64_t&gt;(expiresIn));
+            }
+        }
+        else
+        {
+            // Assume a duration of one hour
+            expires += std::chrono::hours(1);
+        }
+
+        //Schedule a refresh of the access token
+        myAppState.ScheduleRefreshAt(expires, refreshToken);
+    }
+}
+else
+{
+    TokenFailure tokenFailure = tokenRequestResult.Failure();
+    NotifyFailure(tokenFailure.Error(), tokenFailure.ErrorDescription());
+}
+</code></pre>
+</section>
+<section id="tabpanel_3_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">TokenRequestParams tokenRequestParams = TokenRequestParams.CreateForRefreshToken(refreshToken);
+ClientAuthentication clientAuth = ClientAuthentication.CreateForBasicAuthorization(&quot;my_client_id&quot;,
+    &quot;my_client_secret&quot;);
+TokenRequestResult tokenRequestResult = await OAuth2Manager.RequestTokenAsync(
+    new Uri(&quot;https://my.server.com/oauth/token&quot;), tokenRequestParams, clientAuth);
+if (TokenResponse tokenResponse == tokenRequestResult.Response)
+{
+    UpdateToken(tokenResponse.AccessToken, tokenResponse.TokenType, tokenResponse.ExpiresIn);
+
+    //Store new refresh token if present
+    if (!string.IsNullOrEmpty(tokenResponse.RefreshToken))
+    {
+        // ExpiresIn is zero when not present
+        DateTime expires = DateTime.Now;
+        if (tokenResponse.ExpiresIn != 0)
+        {
+            expires += TimeSpan.FromSeconds(tokenResponse.ExpiresIn);
+        }
+        else
+        {
+            // Assume a duration of one hour
+            expires += TimeSpan.FromHours(1);
+        }
+
+        //Schedule a refresh of the access token
+        myAppState.ScheduleRefreshAt(expires, tokenResponse.RefreshToken);
+    }
+}
+else
+{
+    TokenFailure tokenFailure = tokenRequestResult.Failure;
+    NotifyFailure(tokenFailure.Error, tokenFailure.ErrorDescription);
+}
+</code></pre>
+</section>
+</div>
+<h3 id="complete-an-authorization-request">Complete an authorization request</h3>
+<p>Finally, to complete an authorization request from a protocol activation, your app should handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.activated">AppInstance.Activated</a> event. This is required when having custom redirect logic. A full example is available on <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager">GitHub</a>.</p>
+<p>Use the following code:</p>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_cpp" role="tab" aria-controls="tabpanel_4_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_csharp" role="tab" aria-controls="tabpanel_4_csharp" data-tab="csharp" tabindex="-1">C#</a>
+</li>
+</ul>
+<section id="tabpanel_4_cpp" role="tabpanel" data-tab="cpp">
+
+<pre><code class="lang-cpp">void App::OnActivated(const IActivatedEventArgs&amp; args)
+{
+    if (args.Kind() == ActivationKind::Protocol)
+    {
+        auto protocolArgs = args.as&lt;ProtocolActivatedEventArgs&gt;();
+        if (OAuth2Manager::CompleteAuthRequest(protocolArgs.Uri()))
+        {
+            TerminateCurrentProcess();
+        }
+
+        DisplayUnhandledMessageToUser();
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_4_csharp" role="tabpanel" data-tab="csharp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-csharp">protected override void OnActivated(IActivatedEventArgs args)
+{
+    if (args.Kind == ActivationKind.Protocol)
+    {
+        ProtocolActivatedEventArgs protocolArgs = args as ProtocolActivatedEventArgs;
+        if (OAuth2Manager.CompleteAuthRequest(protocolArgs.Uri))
+        {
+            TerminateCurrentProcess();
+        }
+
+        DisplayUnhandledMessageToUser();
+    }
+}
+</code></pre>
+</section>
+</div>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/uwp/api/windows.security.authentication.web.webauthenticationbroker">WebAuthenticationBroker</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager">OAuth2Manager</a></li>
+<li><a href="https://tools.ietf.org/html/rfc7636">PKCE RFC 7636</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/oauth2.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

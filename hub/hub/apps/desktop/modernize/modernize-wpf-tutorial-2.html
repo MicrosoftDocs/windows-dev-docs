@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Add a UWP InkCanvas control using XAML Islands </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Add a UWP InkCanvas control using XAML Islands ">
+    
+    <meta name="description" content="This tutorial demonstrates how to add support for digital signatures to the Contoso Expenses app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="part-2-add-a-uwp-inkcanvas-control-using-xaml-islands">Part 2: Add a UWP InkCanvas control using XAML Islands</h1>
+
+<p>This is the second part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see <a href="modernize-wpf-tutorial.html">Tutorial: Modernize a WPF app</a>. This article assumes you have already completed <a href="modernize-wpf-tutorial-1.html">part 1</a>.</p>
+<p>In the fictional scenario of this tutorial, the Contoso development team wants to add support for digital signatures to the Contoso Expenses app. The UWP <strong>InkCanvas</strong> control is a great option for this scenario, because it supports digital ink and AI-powered features like the capability to recognize text and shapes. To do this, you will use the <a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas">InkCanvas</a> wrapped UWP control available in the Windows Community Toolkit. This control wraps the interface and functionality of the UWP <strong>InkCanvas</strong> control for use in a WPF app. For more details about wrapped UWP controls, see <a href="xaml-islands/xaml-islands.html">Host UWP XAML controls in desktop apps (XAML Islands)</a>.</p>
+<h2 id="configure-the-project-to-use-xaml-islands">Configure the project to use XAML Islands</h2>
+<p>Before you can add an <strong>InkCanvas</strong> control to the Contoso Expenses app, you first need to configure the project to support UWP XAML Islands.</p>
+<ol>
+<li><p>In Visual Studio 2019, right-click on the <strong>ContosoExpenses.Core</strong> project in <strong>Solution Explorer</strong> and choose <strong>Manage NuGet Packages</strong>.</p>
+<p><img src="images/wpf-modernize-tutorial/ManageNuGetPackages.png" alt="Manage NuGet Packages menu in Visual Studio"></p>
+</li>
+<li><p>In the <strong>NuGet Package Manager</strong> window, click <strong>Browse</strong>. Search for the <code>Microsoft.Toolkit.Wpf.UI.Controls</code> package and install version 6.0.0 or a later version.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This package contains all the necessary infrastructure for hosting UWP XAML Islands in a WPF app, including the <strong>InkCanvas</strong> wrapped UWP control. A similar package named <code>Microsoft.Toolkit.Forms.UI.Controls</code> is available for Windows Forms apps.</p>
+</div>
+</li>
+<li><p>Right-click <strong>ContosoExpenses.Core</strong> project in <strong>Solution Explorer</strong> and choose <strong>Add -&gt; New item</strong>.</p>
+</li>
+<li><p>Select <strong>Application Manifest File</strong>, name it <strong>app.manifest</strong>, and click <strong>Add</strong>. For more information about application manifests, see <a href="/windows/desktop/SbsCs/application-manifests">this article</a>.</p>
+</li>
+<li><p>In the manifest file, uncomment the following <code>&lt;supportedOS&gt;</code> element for Windows 10.</p>
+<pre><code class="lang-xml">&lt;!-- Windows 10 --&gt;
+&lt;supportedOS Id=&quot;{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}&quot; /&gt;
+</code></pre>
+</li>
+<li><p>In the manifest file, locate the following commented <code>&lt;application&gt;</code> element.</p>
+<pre><code class="lang-xml">&lt;!--
+&lt;application xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;
+  &lt;windowsSettings&gt;
+    &lt;dpiAware xmlns=&quot;http://schemas.microsoft.com/SMI/2005/WindowsSettings&quot;&gt;true&lt;/dpiAware&gt;
+  &lt;/windowsSettings&gt;
+&lt;/application&gt;
+--&gt;
+</code></pre>
+</li>
+<li><p>Delete this section and replace it with the following XML. This configures the app to be DPI aware and better handle different scaling factors supported by Windows 10.</p>
+<pre><code class="lang-xml">&lt;application xmlns=&quot;urn:schemas-microsoft-com:asm.v3&quot;&gt;
+  &lt;windowsSettings&gt;
+      &lt;dpiAware xmlns=&quot;http://schemas.microsoft.com/SMI/2005/WindowsSettings&quot;&gt;true/PM&lt;/dpiAware&gt;
+      &lt;dpiAwareness xmlns=&quot;http://schemas.microsoft.com/SMI/2016/WindowsSettings&quot;&gt;PerMonitorV2, PerMonitor&lt;/dpiAwareness&gt;
+  &lt;/windowsSettings&gt;
+&lt;/application&gt;
+</code></pre>
+</li>
+<li><p>Save and close the <code>app.manifest</code> file.</p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>ContosoExpenses.Core</strong> project and choose <strong>Properties</strong>.</p>
+</li>
+<li><p>In the <strong>Resources</strong> section of the <strong>Application</strong> tab, make sure the <strong>Manifest</strong> dropdown is set to <strong>app.manifest</strong>.</p>
+<p><img src="images/wpf-modernize-tutorial/NetCoreAppManifest.png" alt=".NET Core app manifest"></p>
+</li>
+<li><p>Save the changes to the project properties.</p>
+</li>
+</ol>
+<h2 id="add-an-inkcanvas-control-to-the-app">Add an InkCanvas control to the app</h2>
+<p>Now that you have configured your project to use UWP XAML Islands, you are now ready to add an <a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas">InkCanvas</a> wrapped UWP control to the app.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, expand the <strong>Views</strong> folder of the <strong>ContosoExpenses.Core</strong> project and double-click the <strong>ExpenseDetail.xaml</strong> file.</p>
+</li>
+<li><p>In the <strong>Window</strong> element near the top of the XAML file, add the following attribute. This references the XAML namespace for the <a href="/windows/communitytoolkit/controls/wpf-winforms/inkcanvas">InkCanvas</a> wrapped UWP control.</p>
+<pre><code class="lang-xml">xmlns:toolkit=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls&quot;
+</code></pre>
+<p>After adding this attribute, the <strong>Window</strong> element should now look like this.</p>
+<pre><code class="lang-xml">&lt;Window x:Class=&quot;ContosoExpenses.Views.ExpenseDetail&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:toolkit=&quot;clr-namespace:Microsoft.Toolkit.Wpf.UI.Controls;assembly=Microsoft.Toolkit.Wpf.UI.Controls&quot;
+        xmlns:converters=&quot;clr-namespace:ContosoExpenses.Converters&quot;
+        DataContext=&quot;{Binding Source={StaticResource ViewModelLocator}, Path=ExpensesDetailViewModel}&quot;
+        xmlns:local=&quot;clr-namespace:ContosoExpenses&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;Expense Detail&quot; Height=&quot;500&quot; Width=&quot;800&quot;
+        Background=&quot;{StaticResource HorizontalBackground}&quot;&gt;
+</code></pre>
+</li>
+<li><p>In the <strong>ExpenseDetail.xaml</strong> file, locate the closing <code>&lt;/Grid&gt;</code> tag that immediately precedes the <code>&lt;!-- Chart --&gt;</code> comment. Add the following XAML just before the closing <code>&lt;/Grid&gt;</code> tag. This XAML adds an <strong>InkCanvas</strong> control (prefixed by the <strong>toolkit</strong> keyword you defined earlier as a namespace) and a simple <strong>TextBlock</strong> that acts as a header for the control.</p>
+<pre><code class="lang-xml">&lt;TextBlock Text=&quot;Signature:&quot; FontSize=&quot;16&quot; FontWeight=&quot;Bold&quot; Grid.Row=&quot;5&quot; /&gt;
+
+&lt;toolkit:InkCanvas x:Name=&quot;Signature&quot; Grid.Row=&quot;6&quot; /&gt;
+</code></pre>
+</li>
+<li><p>Save the <strong>ExpenseDetail.xaml</strong> file.</p>
+</li>
+<li><p>Press F5 to run the app in the debugger.</p>
+</li>
+<li><p>Choose an employee from the list and then choose one of the available expenses. Notice that the expense detail page contains space for the <strong>InkCanvas</strong> control.</p>
+<p><img src="images/wpf-modernize-tutorial/InkCanvasPenOnly.png" alt="Ink Canvas pen only"></p>
+<p>If you have a device which supports a digital pen, like a Surface, and you're running this lab on a physical machine, go on and try to use it. You will see the digital ink appearing on the screen. However, if you don't have a pen capable device and you try to sign with your mouse, nothing will happen. This is happening because the <strong>InkCanvas</strong> control is enabled only for digital pens by default. However, we can change this behavior.</p>
+</li>
+<li><p>Close the app and double-click the <strong>ExpenseDetail.xaml.cs</strong> file under the <strong>Views</strong> folder of the <strong>ContosoExpenses.Core</strong> project.</p>
+</li>
+<li><p>Add the following namespace declaration at the top of the class:</p>
+<pre><code class="lang-csharp">using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
+</code></pre>
+</li>
+<li><p>Locate the <code>ExpenseDetail()</code> constructor.</p>
+</li>
+<li><p>Add the following line of code after the <code>InitializeComponent()</code> method and save the code file.</p>
+<pre><code class="lang-csharp">Signature.InkPresenter.InputDeviceTypes = CoreInputDeviceTypes.Mouse | CoreInputDeviceTypes.Pen;
+</code></pre>
+<p>You can use the <strong>InkPresenter</strong> object to customize the default inking experience. This code uses the <strong>InputDeviceTypes</strong> property to enable mouse as well as pen input.</p>
+</li>
+<li><p>Press F5 again to rebuild and run the app in the debugger. Choose an employee from the list and then choose one of the available expenses.</p>
+</li>
+<li><p>Try now to draw something in the signature space with the mouse. This time, you'll see the ink appearing on the screen.</p>
+<p><img src="images/wpf-modernize-tutorial/Signature.png" alt="Screenshot of the Expense Detail showing the signature space."></p>
+</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>At this point in the tutorial, you have successfully added a UWP <strong>InkCanvas</strong> control to the Contoso Expenses app. You are now ready for <a href="modernize-wpf-tutorial-3.html">Part 3: Add a UWP CalendarView control using XAML Islands</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/modernize-wpf-tutorial-2.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

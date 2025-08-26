@@ -1,0 +1,57 @@
+<svg width="612" height="400" viewBox="0 0 612 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="thumbnail-list" clip-path="url(#clip0)">
+<rect width="612" height="400" fill="#243A5E"/>
+<g id="Rectangle" filter="url(#filter0_d)">
+<rect width="480" height="276" transform="translate(66 67)" fill="white" fill-opacity="0.9"/>
+<rect width="480" height="276" transform="translate(66 67)" fill="url(#paint0_linear)" style="mix-blend-mode:overlay"/>
+</g>
+<g id="Rectangle 2.1">
+<rect width="292" height="16" transform="translate(96 162)" fill="#50E6FF"/>
+</g>
+<g id="Rectangle 2.5">
+<rect width="292" height="16" transform="translate(96 93)" fill="#50E6FF"/>
+</g>
+<g id="Line">
+<line y1="-1" x2="480" y2="-1" stroke-width="2" transform="translate(66 136)" stroke="#C8C8C8"/>
+</g>
+<g id="Line_2">
+<line y1="-1" x2="480" y2="-1" stroke-width="2" transform="translate(66 205)" stroke="#C8C8C8"/>
+</g>
+<g id="Line_3">
+<line y1="-1" x2="480" y2="-1" stroke-width="2" transform="translate(66 274)" stroke="#C8C8C8"/>
+</g>
+<g id="Rectangle 2.2">
+<rect width="292" height="16" transform="translate(96 230)" fill="#50E6FF"/>
+</g>
+<g id="Rectangle 2.4">
+<rect width="292" height="16" transform="translate(96 301)" fill="#50E6FF"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" x="56" y="67" width="500" height="296" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dy="10"/>
+<feGaussianBlur stdDeviation="5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-70.9091 258 -448.696 -103.623 464.348 51.8116)">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.165746" stop-color="white"/>
+<stop offset="0.441989" stop-color="white" stop-opacity="0.38"/>
+<stop offset="0.679558" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+
+<clipPath id="clip0">
+<rect width="612" height="400" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

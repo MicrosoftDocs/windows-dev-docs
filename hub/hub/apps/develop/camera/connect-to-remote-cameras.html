@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Connect to remote cameras </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Connect to remote cameras ">
+    
+    <meta name="description" content="Learn how to connect to remote cameras and get a MediaFrameSourceGroup to retrieve frames from each camera.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="connect-to-remote-cameras">Connect to remote cameras</h1>
+
+<p>This article shows you how to connect to one or more remote cameras and get a <a href="/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup"><strong>MediaFrameSourceGroup</strong></a> object that allows you to read frames from each camera. For more information on reading frames from a media source, see <a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a>. For more information on pairing with devices, see <a href="/windows/uwp/devices-sensors/pair-devices">Pair devices</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The features discussed in this article are available starting with Windows 10, version 1903.</p>
+</div>
+<h2 id="create-a-devicewatcher-class-to-watch-for-available-remote-cameras">Create a DeviceWatcher class to watch for available remote cameras</h2>
+<p>The <a href="/uwp/api/windows.devices.enumeration.devicewatcher"><strong>DeviceWatcher</strong></a> class monitors the devices available to your app and notifies your app when devices are added or removed. Get an instance of <strong>DeviceWatcher</strong> by calling <a href="/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher#Windows_Devices_Enumeration_DeviceInformation_CreateWatcher_System_String_"><strong>DeviceInformation.CreateWatcher</strong></a>, passing in an Advanced Query Syntax (AQS) string that identifies the type of devices you want to monitor. The AQS string specifying network camera devices is the following:</p>
+<pre><code class="lang-syntax">@&quot;System.Devices.InterfaceClassGuid:=&quot;&quot;{B8238652-B500-41EB-B4F3-4234F7F5AE99}&quot;&quot; AND System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True&quot;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The helper method <a href="/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector"><strong>MediaFrameSourceGroup.GetDeviceSelector</strong></a> returns an AQS string that will monitor locally-connected and remote network cameras. To monitor only network cameras, you should use the AQS string shown above.</p>
+</div>
+<p>When you start the returned <strong>DeviceWatcher</strong> by calling the <a href="/uwp/api/windows.devices.enumeration.devicewatcher.start"><strong>Start</strong></a> method, it will raise the <a href="/uwp/api/windows.devices.enumeration.devicewatcher.added"><strong>Added</strong></a> event for every network camera that is currently available. Until you stop the watcher by calling <a href="/uwp/api/windows.devices.enumeration.devicewatcher.stop"><strong>Stop</strong></a>, the <strong>Added</strong> event will be raised when new network camera devices become available and the <a href="/uwp/api/windows.devices.enumeration.devicewatcher.removed"><strong>Removed</strong></a> event will be raised when a camera device becomes unavailable.</p>
+<p>The event args passed into the <strong>Added</strong> and <strong>Removed</strong> event handlers are a <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation"><strong>DeviceInformation</strong></a> or a <a href="/uwp/api/windows.devices.enumeration.deviceinformationupdate"><strong>DeviceInformationUpdate</strong></a> object, respectively. Each of these objects has an <strong>Id</strong> property that is the identifier for the network camera for which the event was fired. Pass this ID into the <a href="/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync"><strong>MediaFrameSourceGroup.FromIdAsync</strong></a> method to get a <a href="/uwp/api/windows.media.capture.frames.mediaframesourcegroup.fromidasync"><strong>MediaFrameSourceGroup</strong></a> object that you can use to retrieve frames from the camera.</p>
+<h2 id="remote-camera-pairing-helper-class">Remote camera pairing helper class</h2>
+<p>The following example shows a helper class that uses a <strong>DeviceWatcher</strong> to create and update an <strong>ObservableCollection</strong> of <strong>MediaFrameSourceGroup</strong> objects to support data binding to the list of cameras. Typical apps would wrap the <strong>MediaFrameSourceGroup</strong> in a custom model class. Note that the helper class maintains a reference to the app's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue"><strong>DispatcherQueue</strong></a> and updates the collection of cameras on the UI thread.</p>
+<p>Also, this example handles the <a href="/uwp/api/windows.devices.enumeration.devicewatcher.updated"><strong>DeviceWatcher.Updated</strong></a> event in addition to the <strong>Added</strong> and <strong>Removed</strong> events. In the <strong>Updated</strong> handler, the associated remote camera device is removed from and then added back to the collection.</p>
+<div class="lang-csharp">
+</div>
+<div class="lang-cppwinrt">
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="camera.html">Camera</a></li>
+<li><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames">Camera frames sample</a></li>
+<li><a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/connect-to-remote-cameras.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

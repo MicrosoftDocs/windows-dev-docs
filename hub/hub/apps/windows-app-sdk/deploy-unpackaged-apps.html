@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged ">
+    
+    <meta name="description" content="This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-sdk-deployment-guide-for-framework-dependent-apps-packaged-with-external-location-or-unpackaged">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</h1>
+
+<p>This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.</p>
+<ul>
+<li>Such apps are desktop apps (not UWP apps).</li>
+<li>They can be written in a .NET language such as C#, or in C++.</li>
+<li>For their user-interface, they can use WinUI 3, or WPF, or WinForms, or another UI framework.</li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>Developers of packaged with external location and unpackaged apps are responsible for deploying required Windows App SDK runtime packages to their end users. This can be done either by running the installer or by installing the MSIX packages directly. These options are described in more detail in the <a href="#deploy-windows-app-sdk-runtime">Deploy Windows App SDK runtime</a> section below.</p>
+<p>Packaged with external location and unpackaged apps also have extra runtime requirements. You must initialize access to the Windows App SDK runtime using the Bootstrapper API. In addition, the Dynamic Dependencies API can be used if your app makes use of other framework packages aside from the Windows App SDK. These requirements are described in more detail in the <a href="#runtime-requirements-for-apps-packaged-with-external-location-or-unpackaged">Runtime requirements for apps packaged with external location or unpackaged</a> section below.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="downloads.html">Download the latest installer &amp; MSIX packages</a>.</li>
+<li>For apps that are packaged with external location or unpackaged, the Visual C++ Redistributable is a requirement. For more info, see <a href="/cpp/windows/latest-supported-vc-redist">Microsoft Visual C++ Redistributable latest supported downloads</a>.</li>
+<li><strong>C#</strong>. .NET 6 or later is required. For more info, see <a href="https://dotnet.microsoft.com/download/dotnet/">.NET Downloads</a>.</li>
+</ul>
+<h3 id="additional-prerequisites">Additional prerequisites</h3>
+<ul>
+<li><a href="experimental-channel.html">Experimental</a> and <a href="preview-channel.html">preview</a> versions of the Windows App SDK require that sideloading is enabled to install the runtime.
+<ul>
+<li><p>Sideloading is automatically enabled on Windows 10 version 2004 and later.</p>
+</li>
+<li><p>If your development computer or the deployment computer is running <strong>Windows 11</strong>, confirm whether sideloading is enabled:</p>
+<ul>
+<li><strong>Settings</strong> &gt; <strong>Privacy &amp; security</strong> &gt; <strong>For developers</strong>. Make sure the <strong>Developer mode</strong> setting is turned on.</li>
+</ul>
+</li>
+<li><p>If your development computer or the deployment computer is running <strong>Windows 10 version 1909 or an earlier version</strong>, confirm whether sideloading is enabled:</p>
+<ul>
+<li><strong>Settings</strong> &gt; <strong>Update &amp; Security</strong> &gt; <strong>For developers</strong> &gt; <strong>Use developer features</strong>. Confirm that <strong>Sideload apps</strong> or <strong>Developer mode</strong> is selected.</li>
+</ul>
+</li>
+<li><p>The <strong>Developer mode</strong> setting includes sideloading as well as other features.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the computer is managed in an enterprise environment, there might be a policy preventing these settings from being changed. In that case if you get an error when you or your app tries to install the Windows App SDK runtime, contact your IT Professional to enable sideloading or <strong>Developer mode</strong>.</p>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="deploy-windows-app-sdk-runtime">Deploy Windows App SDK runtime</h2>
+<p>Packaged with external location and unpackaged apps have two options to deploy the Windows App SDK runtime:</p>
+<ul>
+<li><strong><a href="#option-1-use-the-installer">Option 1: Use the Installer</a></strong>: The silent installer distributes all Windows App SDK MSIX packages. A separate installer is available for each of the <code>X64</code>,<code>X86</code> and <code>Arm64</code> architectures.</li>
+<li><strong><a href="#option-2-deploy-windows-app-sdk-runtime-packages-directly">Option 2: Install the packages directly</a></strong>: You can have your existing setup or MSI tool carry and install the MSIX packages for the Windows App SDK.</li>
+</ul>
+<h3 id="option-1-use-the-installer">Option 1: Use the Installer</h3>
+<p>You can deploy all Windows App SDK runtime packages by running the installer. The installer is available at <a href="downloads.html">Downloads for the Windows App SDK</a>. When running the installer (.exe), you should see an output similar to the following:</p>
+<pre><code class="lang-console">Deploying package: Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x64__8wekyb3d8bbwe
+Package deployment result : 0x0
+
+Deploying package: Microsoft.WindowsAppRuntime.1.0_0.318.928.0_x86__8wekyb3d8bbwe
+Package deployment result : 0x0
+
+Deploying package: MicrosoftCorporationII.WindowsAppRuntime.Main.1.0_0.318.928.0_x64__8wekyb3d8bbwe
+Package deployment result : 0x0
+Provisioning result : 0x0
+
+Deploying package: Microsoft.WindowsAppRuntime.Singleton_0.318.928.0_x64__8wekyb3d8bbwe
+Package deployment result : 0x0
+Provisioning result : 0x0
+
+Deploying package: Microsoft.WinAppRuntime.DDLM.0.318.928.0-x6_0.318.928.0_x64__8wekyb3d8bbwe
+Package deployment result : 0x0
+Provisioning result : 0x0
+
+Deploying package: Microsoft.WinAppRuntime.DDLM.0.318.928.0-x8_0.318.928.0_x86__8wekyb3d8bbwe
+Package deployment result : 0x0
+Provisioning result : 0x0
+
+All install operations successful.
+</code></pre>
+<p>You can run the installer with no user interaction and suppress all text output with the <code>--quiet</code> option:</p>
+<pre><code class="lang-console">WindowsAppRuntimeInstall.exe --quiet
+</code></pre>
+<p>You can also choose to force update the MSIX packages and shutdown any currently running Windows App SDK processes using the <code>--force</code> option. This feature is introduced in 1.1.</p>
+<pre><code class="lang-console">WindowsAppRuntimeInstall.exe --force
+</code></pre>
+<p>To see all installer command line options, run <code>WindowsAppRuntimeInstall --h</code>.</p>
+<p>After the installation is complete, you can run your packaged with external location or unpackaged app. For an example of how to build and run a packaged with external location or unpackaged app that uses the Windows App SDK, see <a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>.</p>
+<h4 id="chain-the-windows-app-sdk-installer-to-your-apps-setup">Chain the Windows App SDK installer to your app's setup</h4>
+<p>If you have a custom setup program for your app, you can chain the Windows App SDK setup process in your app's setup process. The Windows App SDK installer currently does not provide a default UI so you will need to chain by using your setup's custom UI.</p>
+<p>You can silently launch and track the Windows App SDK setup while showing your own view of the setup progress by using <a href="/windows/win32/shell/launch">ShellExecute</a>. The Windows App SDK installer silently unpacks the Windows App MSIX bundle and calls the <a href="/uwp/api/windows.management.deployment.packagemanager.addpackageasync">PackageManager.AddPackageAsync</a> method to complete the installation. This is very similar to other runtime installers you may have used, like .NET, Visual C++, or DirectX.</p>
+<p>For a code example that demonstrates how to run the Windows App SDK installer from your setup program, see the <strong>RunInstaller</strong> function in the <a href="https://aka.ms/testruninstaller">installer functional tests</a>.</p>
+<h4 id="installer-sample">Installer sample</h4>
+<p>See the sample below to see how to launch the installer from a Win32 setup program without popping up a console window during setup:</p>
+<div class="button">
+<p><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Installer">Explore Installer sample</a></p>
+</div>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<p><strong>Return codes</strong></p>
+<p>The following table lists the most common return codes for the Windows App SDK .exe installer. The return codes are the same for all versions of the installer.</p>
+<table>
+<thead>
+<tr>
+<th>Return code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x0</td>
+<td>Package installation or provisioning was completed successfully.</td>
+</tr>
+<tr>
+<td>0x80073d06</td>
+<td>One or more packages failed to install.</td>
+</tr>
+<tr>
+<td>0x80070005</td>
+<td>System-wide install or provisioning was not possible because the app is not running elevated or the user doing the installation doesn't have admin privileges.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Installation errors</strong></p>
+<p>If the Windows App SDK installer returns an error during installation, it will return an error code that describes the problem.</p>
+<ul>
+<li>See the list of <a href="/windows/win32/appxpkg/troubleshooting#common-error-codes">common error codes</a>.</li>
+<li>If the error code doesn't provide enough information, you can find more diagnostic information in the <a href="/windows/win32/appxpkg/troubleshooting#get-diagnostic-information">detailed event logs</a>.</li>
+<li>Please <a href="https://github.com/microsoft/WindowsAppSDK/issues">file an issue</a> with the error code and event logs so the issue can be investigated.</li>
+</ul>
+<h3 id="option-2-deploy-windows-app-sdk-runtime-packages-directly">Option 2: Deploy Windows App SDK runtime packages directly</h3>
+<p>As an alternative to using the Windows App SDK installer for deployment to end users, you can manually deploy the MSIX packages through your app's program or MSI. This option can be best for developers who want more control.</p>
+<p>For an example that demonstrates how your setup program can install the MSIX packages, see <a href="https://aka.ms/testinstallpackages">install.cpp</a> in the Windows App SDK installer code.</p>
+<p>To check whether the Windows App SDK is installed already (and, if so, what version), you can check for specific package families by calling <a href="/uwp/api/windows.management.deployment.packagemanager.findpackagesforuserwithpackagetypes#windows-management-deployment-packagemanager-findpackagesforuserwithpackagetypes(system-string-system-string-system-string-windows-management-deployment-packagetypes)">PackageManager.FindPackagesForUserWithPackageTypes</a>.</p>
+<p>From a <em>mediumIL</em> (full trust) unpackaged process (see <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-application">Application element</a>), you can use the following code to check for a package registered to the current user:</p>
+<pre><code class="lang-csharp">using Windows.Management.Deployment;
+
+public class WindowsAppSDKRuntime
+{
+    public static IsPackageRegisteredForCurrentUser(
+        string packageFamilyName,
+        PackageVersion minVersion,
+        Windows.System.ProcessorArchitecture architecture,
+        PackageTypes packageType)
+    {
+        ulong minPackageVersion = ToVersion(minVersion);
+
+        foreach (var p : PackageManager.FindPackagesForUserWithPackageTypes(
+            string.Empty, packageFamilyName, packageType)
+        {
+            // Is the package architecture compatible?
+            if (p.Id.Architecture != architecture)
+            {
+                continue;
+            }
+
+            // Is the package version sufficient for our needs?
+            ulong packageVersion = ToVersion(p.Id.Version);
+            if (packageVersion &lt; minPackageVersion)
+            {
+                continue;
+            }
+
+            // Success.
+            return true;
+        }
+
+        // No qualifying package found.
+        return false;
+    }
+
+    private static ulong ToVersion(PackageVersion packageVersion)
+    {
+        return ((ulong)packageVersion.Major &lt;&lt; 48) |
+               ((ulong)packageVersion.Minor &lt;&lt; 32) |
+               ((ulong)packageVersion.Build &lt;&lt; 16) |
+               ((ulong)packageVersion.Revision);
+    }
+}
+</code></pre>
+<p>For the scenario above, calling <strong>FindPackagesForUserWithPackageTypes</strong> is preferable to calling <strong>FindPackagesForUser</strong>. That's because you can narrow the search to (for this example), just <em>framework</em> or main <em>packages</em>. And that avoids matching other types of packages (such as <em>resource</em>, <em>optional</em>, or <em>bundle</em>) which aren't of interest for this example.</p>
+<p>To use the current/calling user context, set the <em>userSecurityId</em> parameter is to an empty string.</p>
+<p>And now some info to help you decide <em>how</em> to call the function in the code example above. A properly installed runtime is composed of multiple packages that depend on the system's CPU architecture:</p>
+<ul>
+<li>On an x86 machine: Fwk=[x86], Main=[x86], Singleton=[x86], DDLM=[x86].</li>
+<li>On an x64 machine: Fwk=[x86, x64], Main=[x64], Singleton=[x64], DDLM=[x86, x64].</li>
+<li>On an arm64 machine: Fwk=[x86, x64, arm64], Main=[arm64], Singleton=[arm64], DDLM=[x86, x64, arm64].</li>
+</ul>
+<p>For the <em>Main</em> and <em>Singleton</em> packages, their architecture should match the system's CPU architecture; for example, x64 packages on an x64 system. For the <em>Framework</em> package, an x64 system can run both x64 and x86 apps; similarly an arm64 system can run arm64, x64, and x86 apps. A <em>DDLM</em> package check is similar to a <em>Framework</em> check, except that <code>PackageType=main</code>, and the <em>packagefamilyname</em> differs, and more than one (different) <em>packagefamilyname</em> could be applicable, due to <em>DDLM</em>'s unique naming scheme. For more info, see the  <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/Deployment/MSIXPackages.md">MSIX packages</a> spec. So the checks are more like this:</p>
+<pre><code class="lang-csharp">public static bool IsRuntimeRegisteredForCurrentUser(PackageVersion minVersion)
+{
+    ProcessorArchitecture systemArchitecture = DetectSystemArchitecture();
+
+    return IsFrameworkRegistered(systemArchitecture, minVersion) &amp;&amp;
+           IsMainRegistered(systemArchitecture, minVersion) &amp;&amp;
+           IsSingletonRegistered(systemArchitecture, minVersion) &amp;&amp;
+           IsDDLMRegistered(systemArchitecture, minVersion);
+}
+
+private static ProcecssorArchitecture DetectSystemArchitecture()
+{
+    // ...see the call to IsWow64Process2(), and how the result is used...
+    // ...as per `IsPackageApplicable()` in
+    // [install.cpp](https://github.com/microsoft/WindowsAppSDK/blob/main/installer/dev/install.cpp)
+    // line 99-116...
+    // ...WARNING: Use IsWow64Process2 to detect the system architecture....
+    // ...         Other similar APIs exist, but don't give reliably accurate results...
+}
+
+private static bool IsFrameworkRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    // Check x86.
+    if (!IsPackageRegisteredForCurrentUser(
+        global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,
+        minVersion, ProcessorArchitecture.X86,
+        PackageTypes.Framework))
+    {
+        return false;
+    }
+
+    // Check x64 (if necessary).
+    if ((systemArchitecture == ProcessorArchitecture.X64) || 
+        (systemArchitecture == ProcessorArchitcture.Arm64))
+    {
+        if (!IsPackageRegisteredForCurrentUser(
+            global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,
+            minVersion, ProcessorArchitecture.X64,
+            PackageTypes.Framework))
+        {
+            return false;
+        }
+    }
+
+    // Check arm64 (if necessary).
+    if (systemArchitecture == ProcessorArchitcture.Arm64)
+    {
+        if (!IsPackageRegisteredForCurrentUser(
+            global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,
+            minVersion, ProcessorArchitecture.Arm64,
+            PackageTypes.Framework))
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+private static bool IsMainRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    return IsPackageRegisteredForCurrentUser(
+        global::Microsoft.WindowsAppSDK.Runtime.Packages.Main.PackageFamilyName,
+        minVersion,
+        systemArchitecture,
+        PackageTypes.Main);
+}
+
+private static bool IsSingletonRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    return IsPackageRegisteredForCurrentUser(
+        global::Microsoft.WindowsAppSDK.Runtime.Packages.Singleton.PackageFamilyName,
+        minVersion,
+        systemArchitecture,
+        PackageTypes.Main);
+}
+
+private static bool IsDDLMRegistered(ProcessorArchitecture systemArchitecture,
+    PackageVersion minVersion)
+{
+    // ...similar to IsFrameworkRegistered, but the packageFamilyName is more complicated...
+    // ...and no predefined constant is currently available...
+    // ...for more details, see
+    // https://github.com/microsoft/WindowsAppSDK/blob/main/specs/Deployment/MSIXPackages.md.
+}
+</code></pre>
+<p>The info and code above covers the basic detection scenario. To detect whether the runtime is provisioned for all users, or to do the above from an App Container, and/or do it from a packaged <code>mediumIL</code> process, additional logic is needed.</p>
+<h2 id="deployment-scenarios">Deployment scenarios</h2>
+<ul>
+<li><p><strong>Installing the Windows App SDK Runtime system-wide</strong>: System-wide install alters the machine for all users, including new users that are added in the future. If the app is running elevated and the user doing the installation has admin privileges, then the installer will register the MSIX packages system-wide by calling the <a href="/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync">ProvisionPackageForAllUsersAsync</a>. If system-wide registration is not successful, the installation will be performed for the current user doing the installation only. In a managed Enterprise environment, the IT admin should be able to provision for everyone as usual.</p>
+</li>
+<li><p><strong>Architectures redistributed by the Windows App SDK installer</strong>: The Windows App SDK installer is available in the <code>x86</code>, <code>x64</code>, and <code>Arm64</code> architectures. Each version of the installer includes the MSIX packages for just the specific architecture it's named for. For example, if you run the <code>x86</code> <code>WindowsAppRuntimeInstall.exe</code> on an x64 or and Arm64 device, then that <code>x86</code> installer will deploy onto that device only the packages for the x86 architecture.</p>
+</li>
+<li><p><strong>All Windows App SDK MSIX packages are already installed on the computer</strong>: MSIX packages are installed to a system-wide location with only one copy on disk. If an app attempts installation of the Windows App SDK when all the MSIX package dependencies are already installed on the machine, then the installation is not performed.</p>
+</li>
+<li><p><strong>One or more of the Windows App SDK MSIX packages are not installed on the computer</strong>: When deploying the Windows App SDK, always attempt to install all the MSIX packages (framework, main, singleton, DDLM) to ensure that all dependencies are installed and you avoid disruption to the end-user experience.</p>
+</li>
+</ul>
+<h2 id="runtime-requirements-for-apps-packaged-with-external-location-or-unpackaged">Runtime requirements for apps packaged with external location or unpackaged</h2>
+<p>Apps that are packaged with external location or unpackaged have extra runtime requirements to use the Windows App SDK runtime. This involves referencing and initializing the Windows App SDK Framework package at runtime. In addition, the Dynamic Dependencies API can be used to reference other framework packages outside of the Windows App SDK.</p>
+<h3 id="use-the-windows-app-sdk-runtime">Use the Windows App SDK runtime</h3>
+<p>Packaged with external location and unpackaged apps must call the Bootstrapper API to use the Windows App SDK at run time. This is required before the app can use Windows App SDK features such as WinUI, App Lifecycle, MRT Core, and DWriteCore. A bootstrapper component enables packaged with external location and unpackaged apps to perform these important tasks:</p>
+<ul>
+<li>Find and load the Windows App SDK framework package to the app's package graph.</li>
+<li>Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package. The purpose of the DDLM is to prevent servicing of the Windows App SDK framework package while it is in use by a packaged with external location or unpackaged app.</li>
+</ul>
+<p>The simplest way to load the Windows App SDK runtime for packaged with external location and unpackaged apps is by setting the <code>&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;</code> property in your project file (.csproj or .vcxproj). You may also call the bootstrapper API directly in your app's startup code for more control over the initialization. For more details, see <a href="use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a> and <a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>.</p>
+<p>Dynamic Dependencies support allows packaged with external location and unpackaged apps to keep their existing deployment mechanism, such as MSI or any installer, and be able to leverage the Windows App SDK in their application. Dynamic dependencies can be used by packaged, packaged with external location, and unpackaged apps; although it is primarily intended to be used by packaged with external location and unpackaged apps.</p>
+<p>There is one DDLM for each version and architecture of the Windows App SDK framework package. This means on an <code>x64</code> computer, you may have both an <code>x86</code> and an <code>x64</code> version of the DDLM to support apps of both architectures.</p>
+<h3 id="reference-other-framework-packages-using-dynamic-dependencies-api">Reference other framework packages using Dynamic Dependencies API</h3>
+<p>If you want to use features in other framework packages outside of the Windows App SDK (e.g., DirectX), packaged with external location and unpackaged apps can call the Dynamic Dependencies API. In addition to the bootstrapper component, the Windows App SDK also provides a broader set of C/C++ functions and WinRT classes that implement the <em>dynamic dependency API</em>. This API is designed to be used to reference any framework package dynamically at run time.</p>
+<p>For more information, see <a href="../desktop/modernize/framework-packages/index.html">Use MSIX framework packages dynamically from your desktop app</a> and the <a href="/samples/microsoft/windowsappsdk-samples/dynamicdependencies/">Dynamic Dependencies sample</a></p>
+<h2 id="deploy-winmd-files-to-the-target-machine">Deploy .winmd files to the target machine</h2>
+<p>Along with your app, we recommend that you go ahead and deploy Windows Metadata (<code>.winmd</code>) files. Metadata can be used by various APIs and behaviors at runtime, and its absence can limit or break functionality. For example, metadata can be used to marshal objects across apartments boundaries; and the need to marshal can be a function of machine performance. Since there's no deterministic way to know whether you need metadata, you should deploy <code>.winmd</code>s unless you're extremely concerned about size.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="deployment-architecture.html">Deployment architecture for the Windows App SDK</a></li>
+</ul>
+<ul>
+<li><a href="deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a></li>
+<li><a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a></li>
+<li><a href="check-windows-app-sdk-versions.html">Check for installed versions of the Windows App SDK runtime</a></li>
+<li><a href="remove-windows-app-sdk-versions.html">Remove outdated Windows App SDK runtime versions from your development computer</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/deploy-unpackaged-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

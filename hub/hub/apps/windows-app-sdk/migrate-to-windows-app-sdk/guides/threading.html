@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Threading functionality migration </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Threading functionality migration ">
+    
+    <meta name="description" content="This topic describes how to migrate the threading code in a Universal Windows Platform (UWP) application to the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="threading-functionality-migration">Threading functionality migration</h1>
+
+<p>This topic describes how to migrate the threading code in a Universal Windows Platform (UWP) application to the Windows App SDK.</p>
+<h2 id="summary-of-api-andor-feature-differences">Summary of API and/or feature differences</h2>
+<p>UWP's threading model is a variation of the single-threaded apartment (STA) model called Application STA (ASTA), which blocks reentrancy and helps avoid various reentrancy bugs and deadlocks. An ASTA thread is also known as a UI thread.</p>
+<p>The Windows App SDK uses a standard STA threading model, which doesn't provide the same reentrancy safeguards.</p>
+<p>The <strong>CoreDispatcher</strong> type migrates to <strong>DispatcherQueue</strong>. And the <strong>CoreDispatcher.RunAsync</strong> method migrates to <strong>DispatcherQueue.TryEnqueue</strong>.</p>
+<p><strong>C++/WinRT</strong>. If you're using <strong>winrt::resume_foreground</strong> with <strong>CoreDispatcher</strong>, then migrate that to use <strong>DispatcherQueue</strong> instead.</p>
+<h2 id="asta-to-sta-threading-model">ASTA to STA threading model</h2>
+<p>For more detail on the ASTA threading model, see the blog post <a href="https://devblogs.microsoft.com/oldnewthing/20210224-00/?p=104901">What is so special about the Application STA?</a>.</p>
+<p>As the Windows App SDK's STA threading model doesn't have the same assurances around preventing reentrancy issues, if your UWP app assumes the non re-entrant behavior of the ASTA threading model, then your code might not behave as expected.</p>
+<p>One thing to watch out for is reentrancy into XAML controls (see the example in <a href="../case-study-2.html">A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)</a>). And for some crashes, such as access violations, the direct crash callstack is usually the right stack to use. But if it's a <em>stowed exception</em> crash—which has exception code: 0xc000027b—then more work is required to get the right callstack.</p>
+<h3 id="stowed-exceptions">Stowed exceptions</h3>
+<p>Stowed exception crashes save away a possible error, and that gets used later if no part of the code handles the exception. XAML sometimes decides the error is fatal immediately, in which case the direct crash stack might be good. But more frequently the stack has unwound before it was determined to be fatal. For more details about stowed exceptions, see the Inside Show episode <a href="/shows/inside/c000027b">Stowed Exception C000027B</a>.</p>
+<p>For stowed exception crashes (to see a nested message pump, or to see the XAML control's specific exception being thrown), you can get more info on the crash by loading a crash dump in the Windows Debugger (WinDbg) (see <a href="/windows-hardware/drivers/debugger/debugger-download-tools">Download debugging tools for Windows</a>), and then using <code>!pde.dse</code> to dump the stowed exceptions.</p>
+<p>The PDE debugger extension (for the <code>!pde.dse</code> command) is available by downloading the <a href="https://onedrive.live.com/?authkey=%21AJeSzeiu8SQ7T4w&amp;id=DAE128BD454CF957%217152&amp;cid=DAE128BD454CF957">PDE*.zip</a> file from OneDrive. Put the appropriate x64 or x86 <code>.dll</code> from that zip file into the <code>winext</code> directory of your WinDbg install, and then <code>!pde.dse</code> will work on stowed exception crash dumps.</p>
+<p>Frequently there'll be multiple stowed exceptions, with some at the end that were handled/ignored. Most commonly, the first stowed exception is the interesting one. In some cases, the first stowed exception might be a re-throw of the second, so if the second stowed exception shows deeper into the same stack as the first, then the second exception might be the origination of the error. The error code shown with each stowed exception is also valuable, since that provides the <strong>HRESULT</strong> associated with that exception.</p>
+<h2 id="change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue">Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue</h2>
+<p>This section applies if you're using the <a href="/uwp/api/Windows.UI.Core.CoreDispatcher"><strong>Windows.UI.Core.CoreDispatcher</strong></a> class in your UWP app. That includes the use of any methods or properties that take or return a <strong>CoreDispatcher</strong>, such as the <a href="/uwp/api/windows.ui.xaml.dependencyobject.dispatcher"><strong>DependencyObject.Dispatcher</strong></a> and <a href="/uwp/api/windows.ui.core.corewindow.dispatcher"><strong>CoreWindow.Dispatcher</strong></a> properties. For example, you'll be calling <strong>DependencyObject.Dispatcher</strong> when you retrieve the <strong>CoreDispatcher</strong> belonging to a <a href="/uwp/api/windows.ui.xaml.controls.page"><strong>Windows.UI.Xaml.Controls.Page</strong></a>.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a UWP app
+if (this.Dispatcher.HasThreadAccess)
+{
+    ...
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a UWP app
+if (this-&gt;Dispatcher().HasThreadAccess())
+{
+    ...
+}
+</code></pre>
+<p>Instead, in your Windows App SDK app, you'll need to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue"><strong>Microsoft.UI.Dispatching.DispatcherQueue</strong></a> class. And the corresponding methods or properties that take or return a <strong>DispatcherQueue</strong>, such as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcherqueue"><strong>DependencyObject.DispatcherQueue</strong></a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue"><strong>Microsoft.UI.Xaml.Window.DispatcherQueue</strong></a> properties. For example, you'll be calling <strong>DependencyObject.DispatcherQueue</strong> when you retrieve the <strong>DispatcherQueue</strong> belonging to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page"><strong>Microsoft.UI.Xaml.Controls.Page</strong></a> (most XAML objects are <strong>DependencyObject</strong>s).</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a Windows App SDK app
+if (this.DispatcherQueue.HasThreadAccess)
+{
+    ...
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a Windows App SDK app
+#include &lt;winrt/Microsoft.UI.Dispatching.h&gt;
+...
+if (this-&gt;DispatcherQueue().HasThreadAccess())
+{
+    ...
+}
+</code></pre>
+<h2 id="change-coredispatcherrunasync-to-dispatcherqueuetryenqueue">Change CoreDispatcher.RunAsync to DispatcherQueue.TryEnqueue</h2>
+<p>This section applies if you're using the <a href="/uwp/api/windows.ui.core.coredispatcher.runasync"><strong>Windows.UI.Core.CoreDispatcher.RunAsync</strong></a> method to schedule a task to run on the main UI thread (or on the thread associated with a particular <a href="/uwp/api/Windows.UI.Core.CoreDispatcher"><strong>Windows.UI.Core.CoreDispatcher</strong></a>).</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a UWP app
+public void NotifyUser(string strMessage)
+{
+    if (this.Dispatcher.HasThreadAccess)
+    {
+        StatusBlock.Text = strMessage;
+    }
+    else
+    {
+        var task = this.Dispatcher.RunAsync(
+            Windows.UI.Core.CoreDispatcherPriority.Normal,
+            () =&gt; StatusBlock.Text = strMessage);
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.cpp in a UWP app
+void MainPage::NotifyUser(std::wstring strMessage)
+{
+    if (this-&gt;Dispatcher().HasThreadAccess())
+    {
+        StatusBlock().Text(strMessage);
+    }
+    else
+    {
+        auto task = this-&gt;Dispatcher().RunAsync(
+            Windows::UI::Core::CoreDispatcherPriority::Normal,
+            [strMessage, this]()
+            {
+                StatusBlock().Text(strMessage);
+            });
+    }
+}
+</code></pre>
+<p>In your Windows App SDK app, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue">Microsoft.UI.Dispatching.DispatcherQueue.TryEnqueue</a>) method instead. It adds to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue"><strong>Microsoft.UI.Dispatching.DispatcherQueue</strong></a> a task that will be executed on the thread associated with the <strong>DispatcherQueue</strong>.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs in a Windows App SDK app
+public void NotifyUser(string strMessage)
+{
+    if (this.DispatcherQueue.HasThreadAccess)
+    {
+        StatusBlock.Text = strMessage;
+    }
+    else
+    {
+        bool isQueued = this.DispatcherQueue.TryEnqueue(
+        Microsoft.UI.Dispatching.DispatcherQueuePriority.Normal,
+        () =&gt; StatusBlock.Text = strMessage);
+    }
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a Windows App SDK app
+#include &lt;winrt/Microsoft.UI.Dispatching.h&gt;
+...
+void MainPage::NotifyUser(std::wstring strMessage)
+{
+    if (this-&gt;DispatcherQueue().HasThreadAccess())
+    {
+        StatusBlock().Text(strMessage);
+    }
+    else
+    {
+        bool isQueued = this-&gt;DispatcherQueue().TryEnqueue(
+            Microsoft::UI::Dispatching::DispatcherQueuePriority::Normal,
+            [strMessage, this]()
+            {
+                StatusBlock().Text(strMessage);
+            });
+    }
+}
+</code></pre>
+<h2 id="migrate-winrtresume_foreground-cwinrt">Migrate winrt::resume_foreground (C++/WinRT)</h2>
+<p>This section applies if you use the <a href="/uwp/cpp-ref-for-winrt/resume-foreground"><strong>winrt::resume_foreground</strong></a> function in a coroutine in your C++/WinRT UWP app.</p>
+<p>In UWP, the use case for <a href="/uwp/cpp-ref-for-winrt/resume-foreground"><strong>winrt::resume_foreground</strong></a> is to switch execution to a foreground thread (that foreground thread is often the one that's associated with a <a href="/uwp/api/Windows.UI.Core.CoreDispatcher"><strong>Windows.UI.Core.CoreDispatcher</strong></a>). Here's an example of that.</p>
+<pre><code>// MainPage.cpp in a UWP app
+winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&amp;, RoutedEventArgs const&amp;)
+{
+    ...
+    co_await winrt::resume_foreground(this-&gt;Dispatcher());
+    ...
+}
+</code></pre>
+<p>In your Windows App SDK app:</p>
+<ul>
+<li>Instead of <strong>winrt::resume_foreground</strong>, you'll need to use <strong>wil::resume_foreground</strong> (from the <a href="https://github.com/Microsoft/wil">Windows Implementation Libraries (WIL)</a>).</li>
+<li>And instead of <strong>CoreDispatcher</strong>, you'll need to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue"><strong>Microsoft.UI.Dispatching.DispatcherQueue</strong></a> class, as described in <a href="#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue">Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue</a>.</li>
+</ul>
+<p>So first add a reference to the <a href="https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/">Microsoft.Windows.ImplementationLibrary</a> NuGet package.</p>
+<p>Then add the following include to <code>pch.h</code> in the target project.</p>
+<pre><code class="lang-cppwinrt">#include &lt;wil/cppwinrt_helpers.h&gt;
+</code></pre>
+<p>And then follow the pattern shown below.</p>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp in a Windows App SDK app
+...
+winrt::fire_and_forget MainPage::ClickHandler(IInspectable const&amp;, RoutedEventArgs const&amp;)
+{
+    ...
+    co_await wil::resume_foreground(this-&gt;DispatcherQueue());
+    ...
+}
+</code></pre>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

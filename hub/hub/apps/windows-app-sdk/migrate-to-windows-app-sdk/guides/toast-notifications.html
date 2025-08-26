@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>App notifications from UWP to WinUI 3 migration </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="App notifications from UWP to WinUI 3 migration ">
+    
+    <meta name="description" content="This topic contains migration guidance in the app notifications feature area.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="app-notifications-from-uwp-to-winui-3-migration">App notifications from UWP to WinUI 3 migration</h1>
+
+<p>The only difference when migrating app notification code from UWP to WinUI 3 is in handling the activation of notifications. Sending and managing app notifications remains exactly the same.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</strong></p>
+</div>
+<h2 id="activation-differences">Activation differences</h2>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_appsdk" role="tab" aria-controls="tabpanel_1_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_toolkit" role="tab" aria-controls="tabpanel_1_toolkit" data-tab="toolkit" tabindex="-1">Windows Community Toolkit</a>
+</li>
+</ul>
+<section id="tabpanel_1_appsdk" role="tabpanel" data-tab="appsdk">
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>UWP</th>
+<th>WinUI 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foreground activation entry point</td>
+<td><code>OnActivated</code> method inside <code>App.xaml.cs</code> is called</td>
+<td><code>OnLaunched</code> method inside <code>App.xaml.cs</code> is called.</td>
+</tr>
+<tr>
+<td>Background activation entry point</td>
+<td>Handled separately as a background task</td>
+<td>Same as foreground activation. <code>OnLaunched</code> method inside <code>App.xaml.cs</code> is called. Use <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">GetActivatedEventArgs</a> to determine if the app should fully launch or just handle task and quit.</td>
+</tr>
+<tr>
+<td>Window activation</td>
+<td>Your window is automatically brought to foreground when foreground activation occurs</td>
+<td>You must bring your window to the foreground if desired</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_1_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>UWP</th>
+<th>WinUI 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Foreground activation entry point</td>
+<td><code>OnActivated</code> method inside <code>App.xaml.cs</code> is called</td>
+<td>Subscribe to <code>ToastNotificationManagerCompat.OnActivated</code> event (or COM class for C++)</td>
+</tr>
+<tr>
+<td>Background activation entry point</td>
+<td>Handled separately as a background task</td>
+<td>Arrives through same <code>ToastNotificationManagerCompat.OnActivated</code> event (or COM class for C++)</td>
+</tr>
+<tr>
+<td>Window activation</td>
+<td>Your window is automatically brought to foreground when foreground activation occurs</td>
+<td>You must bring your window to the foreground if desired</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+<h2 id="migration-for-c-apps">Migration for C# apps</h2>
+<h3 id="step-1-install-nuget-library">Step 1: Install NuGet library</h3>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_appsdk" role="tab" aria-controls="tabpanel_2_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_toolkit" role="tab" aria-controls="tabpanel_2_toolkit" data-tab="toolkit" tabindex="-1">Windows Community Toolkit</a>
+</li>
+</ul>
+<section id="tabpanel_2_appsdk" role="tabpanel" data-tab="appsdk">
+
+<p>For a WinUI 3 app, you handle activation for notifications by using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager">AppNotificationManager</a> class. This class is provided by the Microsoft.WindowsAppSDK Nuget package, which is included by default in the WinUI 3 Visual Studio project templates.</p>
+</section>
+<section id="tabpanel_2_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+<p>Within your Visual Studio solution, right click your project, click <em>&quot;Manage NuGet Packages...&quot;</em> and search for and install the <code>Microsoft.Toolkit.Uwp.Notifications</code> <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">NuGet package</a> version 7.0 or greater.</p>
+
+<p>This package adds the <code>ToastNotificationManagerCompat</code> API.</p>
+</section>
+</div>
+<h3 id="step-2-update-your-manifest">Step 2: Update your manifest</h3>
+<p>In your <strong>Package.appxmanifest</strong>, add:</p>
+<ol>
+<li>Declaration for <strong>xmlns:com</strong></li>
+<li>Declaration for <strong>xmlns:desktop</strong></li>
+<li>In the <strong>IgnorableNamespaces</strong> attribute, <strong>com</strong> and <strong>desktop</strong></li>
+<li><strong>desktop:Extension</strong> for <strong>windows.toastNotificationActivation</strong> to declare your toast activator CLSID (using a new GUID of your choice).</li>
+<li>MSIX only: <strong>com:Extension</strong> for the COM activator using the GUID from step #4. Be sure to include the <code>Arguments=&quot;----AppNotificationActivated:&quot;</code> so that you know your launch was from a notification</li>
+</ol>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_appsdk" role="tab" aria-controls="tabpanel_3_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_toolkit" role="tab" aria-controls="tabpanel_3_toolkit" data-tab="toolkit" tabindex="-1">Windows Community Toolkit</a>
+</li>
+</ul>
+<section id="tabpanel_3_appsdk" role="tabpanel" data-tab="appsdk">
+
+<pre><code class="lang-xml">&lt;!--Add these namespaces--&gt;
+&lt;Package
+  ...
+  xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;
+  xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;
+  IgnorableNamespaces=&quot;... com desktop&quot;&gt;
+  ...
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      ...
+      &lt;Extensions&gt;
+
+        &lt;!--Specify which CLSID to activate when app notification clicked--&gt;
+        &lt;desktop:Extension Category=&quot;windows.toastNotificationActivation&quot;&gt;
+          &lt;desktop:ToastNotificationActivation ToastActivatorCLSID=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; /&gt; 
+        &lt;/desktop:Extension&gt;
+
+        &lt;!--Register COM CLSID LocalServer32 registry key--&gt;
+        &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+          &lt;com:ComServer&gt;
+            &lt;com:ExeServer Executable=&quot;YourProject.exe&quot; Arguments=&quot;----AppNotificationActivated:&quot; DisplayName=&quot;App notification activator&quot;&gt;
+              &lt;com:Class Id=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; DisplayName=&quot;App notification activator&quot;/&gt;
+            &lt;/com:ExeServer&gt;
+          &lt;/com:ComServer&gt;
+        &lt;/com:Extension&gt;
+
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+ &lt;/Package&gt;
+</code></pre>
+</section>
+<section id="tabpanel_3_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;!--Add these namespaces--&gt;
+&lt;Package
+  ...
+  xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;
+  xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;
+  IgnorableNamespaces=&quot;... com desktop&quot;&gt;
+  ...
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      ...
+      &lt;Extensions&gt;
+
+        &lt;!--Specify which CLSID to activate when toast clicked--&gt;
+        &lt;desktop:Extension Category=&quot;windows.toastNotificationActivation&quot;&gt;
+          &lt;desktop:ToastNotificationActivation ToastActivatorCLSID=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; /&gt; 
+        &lt;/desktop:Extension&gt;
+
+        &lt;!--Register COM CLSID LocalServer32 registry key--&gt;
+        &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+          &lt;com:ComServer&gt;
+            &lt;com:ExeServer Executable=&quot;YourProject.exe&quot; Arguments=&quot;-ToastActivated&quot; DisplayName=&quot;Toast activator&quot;&gt;
+              &lt;com:Class Id=&quot;replaced-with-your-guid-C173E6ADF0C3&quot; DisplayName=&quot;Toast activator&quot;/&gt;
+            &lt;/com:ExeServer&gt;
+          &lt;/com:ComServer&gt;
+        &lt;/com:Extension&gt;
+
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+ &lt;/Package&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="step-3-handle-activation">Step 3: Handle activation</h3>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_appsdk" role="tab" aria-controls="tabpanel_4_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_toolkit" role="tab" aria-controls="tabpanel_4_toolkit" data-tab="toolkit" tabindex="-1">Windows Community Toolkit</a>
+</li>
+</ul>
+<section id="tabpanel_4_appsdk" role="tabpanel" data-tab="appsdk">
+
+<p><strong>In your app's startup code</strong> (typically App.xaml.cs), update your code using the following steps:</p>
+<ol>
+<li>In <strong>OnLaunched</strong>, get the default instance of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager">AppNotificationManager</a> class.</li>
+<li>Register for the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked">AppNotificationManager.NotificationInvoked</a> event.</li>
+<li>Call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register">Microsoft.Windows.AppNotifications.AppNotificationManager.Register</a> to register your app to receive notification events. It is important that your call this method after registering the <strong>NotificationInvoked</strong> handler.</li>
+<li>Refactor your window launch/activation code into a dedicated <code>LaunchAndBringToForegroundIfNeeded</code> helper method, so you can call it from multiple places.</li>
+<li>Create a <code>HandleNotification</code> helper method, so that it can be called from multiple places.</li>
+<li>Call <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> and check the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments.kind">AppActivationArguments.Kind</a> property of the returned object for the value <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.extendedactivationkind">ExtendedActivationKind.AppNotification</a>.</li>
+<li>If the activation kind is not <strong>AppNotification</strong> call the <strong>LaunchAndBringToForegroundIfNeeded</strong> helper method.</li>
+<li>If the activation kind is <strong>AppNotification</strong> cast the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments.data">AppActivationArguments.Data</a> property to an <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationactivatedeventargs">AppNotificationActivatedEventArgs</a> and pass it to the <code>HandleNotification</code> helper method.</li>
+<li>In your <strong>ApplicationManager.NotificationInvoked</strong> handler, call the <code>HandleNotification</code> helper method.</li>
+<li>Within your <code>HandleNotification</code> helper method, be sure to dispatch to the App or Window dispatcher before executing any UI-related code like showing a window or updating UI</li>
+<li><strong>Migrate</strong> your old UWP <code>OnActivated</code> code that handled app notification activation to your new <code>HandleNotification</code> helper method.</li>
+</ol>
+<h4 id="migrated-appxamlcs">Migrated App.xaml.cs</h4>
+<pre><code class="lang-cs">
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    m_window = new MainWindow();
+
+    // To ensure all Notification handling happens in this process instance, register for
+    // NotificationInvoked before calling Register(). Without this a new process will
+    // be launched to handle the notification.
+    AppNotificationManager notificationManager = AppNotificationManager.Default;
+    notificationManager.NotificationInvoked += NotificationManager_NotificationInvoked;
+    notificationManager.Register();
+
+    var activatedArgs = Microsoft.Windows.AppLifecycle.AppInstance.GetCurrent().GetActivatedEventArgs();
+    var activationKind = activatedArgs.Kind;
+    if (activationKind != ExtendedActivationKind.AppNotification)
+    {
+        LaunchAndBringToForegroundIfNeeded();
+    } else
+    {
+        HandleNotification((AppNotificationActivatedEventArgs)activatedArgs.Data);
+    }
+
+}
+
+private void LaunchAndBringToForegroundIfNeeded()
+{
+    if (m_window == null)
+    {
+        m_window = new MainWindow();
+        m_window.Activate();
+
+        // Additionally we show using our helper, since if activated via a app notification, it doesn't
+        // activate the window correctly.
+        WindowHelper.ShowWindow(m_window);
+    }
+    else
+    {
+        WindowHelper.ShowWindow(m_window);
+    }
+}
+
+private void NotificationManager_NotificationInvoked(AppNotificationManager sender, AppNotificationActivatedEventArgs args)
+{
+    HandleNotification(args);
+}
+
+private void HandleNotification(AppNotificationActivatedEventArgs args)
+{
+  // Use the dispatcher from the window if present, otherwise the app dispatcher.
+  var dispatcherQueue = m_window?.DispatcherQueue ?? DispatcherQueue.GetForCurrentThread();
+
+
+  dispatcherQueue.TryEnqueue(async delegate
+  {
+      if (args.Argument.Contains(&quot;action&quot;))
+      {
+          switch (args.Arguments[&quot;action&quot;])
+          {
+              // Send a background message.
+              case &quot;sendMessage&quot;:
+                  string message = args.UserInput[&quot;textBox&quot;].ToString();
+                  // TODO: Send it.
+    
+                  // If the UI app isn't open.
+                  if (m_window == null)
+                  {
+                      // Close since we're done.
+                      Process.GetCurrentProcess().Kill();
+                  }
+    
+                  break;
+    
+              // View a message.
+              case &quot;viewMessage&quot;:
+    
+                  // Launch/bring window to foreground.
+                  LaunchAndBringToForegroundIfNeeded();
+    
+                  // TODO: Open the message.
+                  break;
+          }
+      }
+      else
+      {
+          Debug.Print(&quot;Notification args is null&quot;);
+      }
+  });
+}
+
+private static class WindowHelper
+{
+    [DllImport(&quot;user32.dll&quot;)]
+    private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+    [DllImport(&quot;user32.dll&quot;)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+    public static void ShowWindow(Window window)
+    {
+        // Bring the window to the foreground... first get the window handle...
+        var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+
+        // Restore window if minimized... requires DLL import above
+        ShowWindow(hwnd, 0x00000009);
+
+        // And call SetForegroundWindow... requires DLL import above
+        SetForegroundWindow(hwnd);
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_4_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<p><strong>In your app's startup code</strong> (typically App.xaml.cs), , update your code using the following steps:</p>
+<ol>
+<li>Define and grab the app-level <code>DispatcherQueue</code></li>
+<li>Register for the <code>ToastNotificationManagerCompat.OnActivated</code> event</li>
+<li>Refactor your window launch/activation code into a dedicated <code>LaunchAndBringToForegroundIfNeeded</code> method, so you can call it from multiple places</li>
+<li>Avoid launching your window if <code>ToastNotificationManagerCompat.WasCurrentProcessToastActivated()</code> returns true (when that method is true, your <code>OnActivated</code> event will be called next and you can choose to show a window within the event callback).</li>
+<li>Within your <code>ToastNotificationManagerCompat.OnActivated</code>, be sure to dispatch to the App or Window dispatcher before executing any UI-related code like showing a window or updating UI</li>
+<li><strong>Migrate</strong> your old UWP <code>OnActivated</code> code that handled toast activation to your new <code>ToastNotificationManagerCompat.OnActivated</code> event handler, and migrate any background task toast activation code to your new <code>ToastNotificationManagerCompat.OnActivated</code> event handler.</li>
+</ol>
+<h4 id="migrated-appxamlcs-1">Migrated App.xaml.cs</h4>
+<pre><code class="lang-cs">public static DispatcherQueue DispatcherQueue { get; private set; }
+
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    // Get the app-level dispatcher.
+    DispatcherQueue = global::Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+
+    // Register for toast activation. Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater.
+    ToastNotificationManagerCompat.OnActivated += ToastNotificationManagerCompat_OnActivated;
+
+    // If we weren't launched by an app, launch our window like normal.
+    // Otherwise if launched by a toast, our OnActivated callback will be triggered.
+    if (!ToastNotificationManagerCompat.WasCurrentProcessToastActivated())
+    {
+        LaunchAndBringToForegroundIfNeeded();
+    }
+}
+
+private void LaunchAndBringToForegroundIfNeeded()
+{
+    if (m_window == null)
+    {
+        m_window = new MainWindow();
+        m_window.Activate();
+
+        // Additionally we show using our helper, since if activated via a toast, it doesn't
+        // activate the window correctly.
+        WindowHelper.ShowWindow(m_window);
+    }
+    else
+    {
+        WindowHelper.ShowWindow(m_window);
+    }
+}
+
+private void ToastNotificationManagerCompat_OnActivated(ToastNotificationActivatedEventArgsCompat e)
+{
+    // Use the dispatcher from the window if present, otherwise the app dispatcher.
+    var dispatcherQueue = m_window?.DispatcherQueue ?? App.DispatcherQueue;
+
+    dispatcherQueue.TryEnqueue(delegate
+    {
+        var args = ToastArguments.Parse(e.Argument);
+
+        switch (args[&quot;action&quot;])
+        {
+            // Send a background message.
+            case &quot;sendMessage&quot;:
+                string message = e.UserInput[&quot;textBox&quot;].ToString();
+                // TODO: Send it.
+
+                // If the UI app isn't open.
+                if (m_window == null)
+                {
+                    // Close since we're done.
+                    Process.GetCurrentProcess().Kill();
+                }
+
+                break;
+
+            // View a message.
+            case &quot;viewMessage&quot;:
+
+                // Launch/bring window to foreground.
+                LaunchAndBringToForegroundIfNeeded();
+
+                // TODO: Open the message.
+                break;
+        }
+    });
+}
+
+private static class WindowHelper
+{
+    [DllImport(&quot;user32.dll&quot;)]
+    private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+    [DllImport(&quot;user32.dll&quot;)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+    public static void ShowWindow(Window window)
+    {
+        // Bring the window to the foreground... first get the window handle...
+        var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+
+        // Restore window if minimized... requires DLL import above
+        ShowWindow(hwnd, 0x00000009);
+
+        // And call SetForegroundWindow... requires DLL import above
+        SetForegroundWindow(hwnd);
+    }
+}
+</code></pre>
+</section>
+</div>
+<h3 id="building-app-notification-content">Building app notification content</h3>
+<div class="tabGroup" id="tabgroup_5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_5_appsdk" role="tab" aria-controls="tabpanel_5_appsdk" data-tab="appsdk" tabindex="0" aria-selected="true">Windows App SDK</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_5_toolkit" role="tab" aria-controls="tabpanel_5_toolkit" data-tab="toolkit" tabindex="-1">Windows Community Toolkit</a>
+</li>
+</ul>
+<section id="tabpanel_5_appsdk" role="tabpanel" data-tab="appsdk">
+
+<p>With Windows App SDK, you can still create app notification content using raw xml, but you can also create app notification content using the new <strong>AppNotificationsBuilder</strong> API which replaces the <strong>ToastContentBuilder</strong> class provided by the Windows Community Toolkit. Send the app notification by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show">AppNotificationManager.Show</a>.  Mixing Windows Community Toolkit and App SDK APIs is not recommended.</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
+
+...
+
+var builder = new AppNotificationBuilder()
+    .AddText(&quot;Send a message.&quot;)
+    .AddTextBox(&quot;textBox&quot;)
+    .AddButton(new AppNotificationButton(&quot;Send&quot;)
+        .AddArgument(&quot;action&quot;, &quot;sendMessage&quot;));
+
+var notificationManager = AppNotificationManager.Default;
+notificationManager.Show(builder.BuildNotification());
+</code></pre>
+</section>
+<section id="tabpanel_5_toolkit" role="tabpanel" data-tab="toolkit" aria-hidden="true" hidden="hidden">
+
+<p>You can continue to use the <strong>ToastContentBuilder</strong> class provided by the Windows Community Toolkit both to create app notification content and to send notifications in a WinUI 3 app.</p>
+<pre><code class="lang-csharp">using Microsoft.Toolkit.Uwp.Notifications;
+
+...
+
+new ToastContentBuilder()
+  .AddText(&quot;Send a message.&quot;)
+  .AddInputTextBox(&quot;textBox&quot;)
+  .AddButton(new ToastButton()
+      .SetContent(&quot;Send&quot;)
+      .AddArgument(&quot;action&quot;, &quot;sendMessage&quot;)) 
+  .Show(); 
+</code></pre>
+</section>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../../support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="../../../develop/notifications/app-notifications/send-local-toast.html">Send a local toast notification from C# apps</a></li>
+<li><a href="../../../develop/notifications/app-notifications/send-local-toast-desktop-cpp-wrl.html">Send a local toast notification from Win32 C++ WRL apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/toast-notifications.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

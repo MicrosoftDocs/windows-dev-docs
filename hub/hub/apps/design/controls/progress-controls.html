@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Guidelines for progress controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Guidelines for progress controls ">
+    
+    <meta name="description" content="A progress control provides feedback to the user that a long-running operation is underway.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="progress-controls">Progress controls</h1>
+
+<p>A progress control provides feedback to the user that a long-running operation is underway. It can mean that the user cannot interact with the app when the progress indicator is visible, and can also indicate how long the wait time might be, depending on the indicator used.</p>
+<h2 id="types-of-progress">Types of progress</h2>
+<p>There are two controls to show the user that an operation is underway – either through a ProgressBar or through a ProgressRing. Both ProgressBar and ProgressRing have two states that communicate if the user can interact with the application or not.</p>
+<ul>
+<li>The <em>determinate</em> state for both ProgressBar and ProgressRing shows the percentage completed of a task. This should be used during an operation whose duration is known, but its progress should not block the user's interaction with the app.</li>
+<li>The <em>indeterminate</em> state for ProgressBar shows that an operation is underway, does not block user interaction with the app, and its completion time is unknown.</li>
+<li>The <em>indeterminate</em> state for ProgressRing shows that an operation is underway, blocks user interaction with the app, and its completion time is unknown.</li>
+</ul>
+<p>Additionally, a progress control is read only and not interactive. Meaning that the user cannot invoke or use these controls directly.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Display</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Indeterminate ProgressBar</td>
+<td><img src="images/progressbar-indeterminate.gif" alt="ProgressBar indeterminate"></td>
+</tr>
+<tr>
+<td>Determinate ProgressBar</td>
+<td><img src="images/progressbar-determinate.png" alt="ProgressBar determinate"></td>
+</tr>
+<tr>
+<td>Indeterminate ProgressRing</td>
+<td><img src="images/progressring-indeterminate.gif" alt="Indeterminate ProgressRing state"></td>
+</tr>
+<tr>
+<td>Determinate ProgressRing</td>
+<td><img src="images/progress-ring.jpg" alt="Determinate ProgressRing state"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>It's not always obvious what control or what state (determinate vs indeterminate) to use when trying to show something is happening. Sometimes a task is obvious enough that it doesn't require a progress control at all – and sometimes even if a progress control is used, a line of text is still necessary in order to explain to the user what operation is underway.</p>
+<h3 id="progressbar">ProgressBar</h3>
+<ul>
+<li><p><strong>Does the control have a defined duration or predictable end?</strong></p>
+<p>Use a determinate ProgressBar then, and update the percentage or value accordingly.</p>
+</li>
+<li><p><strong>Can the user continue without having to monitor the operation's progress?</strong></p>
+<p>When a ProgressBar is in use, interaction is non-modal, typically meaning that the user is not blocked by that operation's completion, and can continue to use the app in other ways until that aspect has completed.</p>
+</li>
+<li><p><strong>Keywords</strong></p>
+<p>If your operation falls around these keywords, or if you're showing text that alongside the progress operation that matches these keywords; consider using a ProgressBar:</p>
+<ul>
+<li><em>Loading...</em></li>
+<li><em>Retrieving</em></li>
+<li><em>Working...</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="progressring">ProgressRing</h3>
+<ul>
+<li><p><strong>Will the operation cause the user to wait to continue?</strong></p>
+<p>If an operation requires all (or a large portion of) interaction with the app to wait until it has been completed, then the indeterminate ProgressRing is the better choice.</p>
+<ul>
+<li><strong>Does the control have a defined duration or predictable end?</strong></li>
+</ul>
+<p>Use a determinate ProgressRing if you want the visual to be a ring instead of a bar, and update the percentage or value accordingly.</p>
+</li>
+<li><p><strong>Is the app waiting for the user to complete a task?</strong></p>
+<p>If so, use an indeterminate ProgressRing, as they're meant to indicate an unknown wait time for the user.</p>
+</li>
+<li><p><strong>Keywords</strong></p>
+<p>If your operation falls around these keywords, or if you're showing text alongside the progress operation that matches these keywords; consider using a ProgressRing:</p>
+<ul>
+<li><em>Refreshing</em></li>
+<li><em>Signing in...</em></li>
+<li><em>Connecting...</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="no-progress-indication-necessary">No progress indication necessary</h3>
+<ul>
+<li><p><strong>Does the user need to know that something is happening?</strong></p>
+<p>For example, if the app is downloading something in the background and the user didn't initiate the download, the user doesn't necessarily need to know about it.</p>
+</li>
+<li><p><strong>Is the operation a background activity that doesn't block user activity and is of minimal (but still some) interest to the user?</strong></p>
+<p>Use text when your app is performing tasks that don't have to be visible all the time, but you still need to show the status.</p>
+</li>
+<li><p><strong>Does the user only care about the completion of the operation?</strong></p>
+<p>Sometimes it's best to show a notice only when the operation is completed, or give a visual that the operation has been completed immediately, and run the finishing touches in the background.</p>
+</li>
+</ul>
+<h2 id="progress-controls-best-practices">Progress controls best practices</h2>
+<p>Sometimes it's best to see some visual representations of when and where to use these different progress controls:</p>
+<h3 id="progressbar---determinate">ProgressBar - Determinate</h3>
+<p><img src="images/progress-bar-determinate-example.png" alt="ProgressBar determinate example"></p>
+<p>The first example is the determinate ProgressBar. When the duration of the operation is known, when installing, downloading, setting up, etc; a determinate ProgressBar is best.</p>
+<h3 id="progressbar---indeterminate">ProgressBar - Indeterminate</h3>
+<p><img src="images/progress-bar-indeterminate-example.png" alt="ProgressBar indeterminate example"></p>
+<p>When it is not known how long the operation will take, use an indeterminate ProgressBar. Indeterminate ProgressBars are also good when filling a virtualized list, and creating a smooth visual transition between an indeterminate to determinate ProgressBar.</p>
+<ul>
+<li><p><strong>Is the operation in a virtualized collection?</strong></p>
+<p>If so, do not put a progress indicator on each list item as they appear. Instead, use a ProgressBar and place it at the top of the collection of items being loaded in, to show that the items are being fetched.</p>
+</li>
+</ul>
+<h3 id="progressring---indeterminate">ProgressRing - Indeterminate</h3>
+<p><img src="images/progress-ring-indeterminate-example.gif" alt="ProgressRing indeterminate example"></p>
+<p>The indeterminate ProgressRing is used when any further user interaction with the app is halted, or the app is waiting for the user's input to continue. The &quot;signing in…&quot; example above is a perfect scenario for the ProgressRing, the user cannot continue using the app until the sign is has completed.</p>
+<h3 id="progressring---determinate">ProgressRing - Determinate</h3>
+<p><img src="images/progress-ring-determinate-example.png" alt="ProgressRing determinate example"></p>
+<p>When the duration of the operation is known and the ring visual is desired, when installing, downloading, setting up, etc; a determinate ProgressRing is best.</p>
+<h2 id="create-a-progress-control">Create a progress control</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressBar">ProgressBar class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressbar.isindeterminate">IsIndeterminate property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressRing">ProgressRing class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressring.isactive">IsActive property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p>Open the WinUI 3 Gallery app and see the <a href="winui3gallery:/item/ProgressBar">ProgressBar</a> or <a href="winui3gallery:/item/ProgressRing">ProgressRing</a>.</p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Both progress controls are rather simple; but some visual features of the controls are not obvious to customize.</p>
+<h3 id="sizing-the-progressring">Sizing the ProgressRing</h3>
+<p>The ProgressRing can be sized as large as you want, but can only be as small as 20x20epx. In order to resize a ProgressRing, you must set its height and width. If only height or width are set, the control will assume minimum sizing (20x20epx) – conversely if the height and width are set to two different sizes, the smaller of the sizes will be assumed.
+To ensure your ProgressRing is correct for your needs, set both the height and the width to the same value:</p>
+<pre><code class="lang-xaml">&lt;ProgressRing Height=&quot;100&quot; Width=&quot;100&quot;/&gt;
+</code></pre>
+<p>To make your ProgressRing visible, and animate, you must set the IsActive property to true:</p>
+<pre><code class="lang-xaml">&lt;ProgressRing IsActive=&quot;True&quot; Height=&quot;100&quot; Width=&quot;100&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">progressRing.IsActive = true;
+</code></pre>
+<h3 id="coloring-the-progress-controls">Coloring the progress controls</h3>
+<p>By default, the main coloring of the progress controls is set to the accent color of the system. To override this brush simply change the foreground property on either control.</p>
+<pre><code class="lang-xaml">&lt;ProgressRing IsActive=&quot;True&quot; Height=&quot;100&quot; Width=&quot;100&quot; Foreground=&quot;Blue&quot;/&gt;
+&lt;ProgressBar Width=&quot;100&quot; Foreground=&quot;Green&quot;/&gt;
+</code></pre>
+<p>Changing the foreground color for the ProgressRing will change the fill color of the ring. The foreground property for the ProgressBar will change the fill color of the bar – to alter the unfilled portion of the bar, simply override the background property.</p>
+<h3 id="showing-a-wait-cursor">Showing a wait cursor</h3>
+<p>Sometimes it's best to just show a brief wait cursor, when the app or operation needs time to think, and you need to indicate to the user that the app or area where the wait cursor is visible should not be interacted with until the wait cursor has disappeared.</p>
+<pre><code class="lang-csharp">Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The progress controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in both the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.ProgressBar">ProgressBar class</a>, <a href="/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate">IsIndeterminate property</a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ProgressRing">ProgressRing class</a>, <a href="/uwp/api/windows.ui.xaml.controls.progressring.isactive">IsActive property</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar">ProgressBar class</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.progressbar.isindeterminate">IsIndeterminate property</a>, <a href="/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing">ProgressRing class</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.progressring.isactive">IsActive property</a></li>
+<li>Open the WinUI 2 Gallery app and see the <a href="winui2gallery:/item/ProgressBar">ProgressBar</a> or <a href="winui2gallery:/item/ProgressRing">ProgressRing</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles, templates, and features for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:ProgressBar /&gt;
+&lt;muxc:ProgressRing /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressBar">ProgressBar class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressRing">ProgressRing class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/progress-controls.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

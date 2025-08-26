@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Visual feedback </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Visual feedback ">
+    
+    <meta name="description" content="Use visual feedback to show users when their interactions with a Windows app are detected, interpreted, and handled.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="guidelines-for-visual-feedback">Guidelines for visual feedback</h1>
+
+<p>Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.</p>
+<blockquote>
+<p><strong>Important APIs</strong>:  <a href="/uwp/api/Windows.Devices.Input"><strong>Windows.Devices.Input</strong></a>, <a href="/uwp/api/Windows.UI.Input"><strong>Windows.UI.Input</strong></a>, <a href="/uwp/api/Windows.UI.Core"><strong>Windows.UI.Core</strong></a></p>
+</blockquote>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Try to limit modifications of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application.
+<ul>
+<li>See <a href="../../develop/platform/xaml/xaml-styles.html">XAML styles</a> for more info on customizing the properties of a control, including visual state properties.</li>
+<li>See the <a href="/uwp/api/windows.ui.xaml.controls.usercontrol">UserControl Class</a> for details on making changes to a control template</li>
+<li>Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl">Custom Edit Control sample</a>.</li>
+</ul>
+</li>
+<li>Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see <a href="/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback"><strong>ShowGestureFeedback</strong></a>.</li>
+<li>Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.</li>
+<li>Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.</li>
+</ul>
+<h2 id="additional-usage-guidance">Additional usage guidance</h2>
+<p>Contact visualizations are especially critical for touch interactions that require accuracy and precision. For example, your app should clearly indicate the location of a tap to let a user know if they missed their target, how much they missed it by, and what adjustments they must make.</p>
+<p>Using the default XAML platform controls available ensures that your app works correctly on all devices and in all input situations. If your app features custom interactions that require customized feedback, you should ensure the feedback is appropriate, spans input devices, and doesn't distract a user from their task. This can be a particular issue in game or drawing apps, where the visual feedback might conflict with or obscure critical UI.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We don't recommend changing the interaction behavior of the built-in gestures.</p>
+</div>
+<p><strong>Feedback Across Devices</strong></p>
+<p>Visual feedback is generally dependent on the input device (touch, touchpad, mouse, pen/stylus, keyboard, and so on). For example, the built-in feedback for a mouse usually involves moving and changing the cursor, while touch and pen require contact visualizations, and keyboard input and navigation uses focus rectangles and highlighting.</p>
+<p>Use <a href="/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback"><strong>ShowGestureFeedback</strong></a> to set feedback behavior for the platform gestures.</p>
+<p>If customizing feedback UI, ensure you provide feedback that supports, and is suitable for, all input modes.</p>
+<p>Here are some examples of built-in contact visualizations in Windows.</p>
+<table>
+<thead>
+<tr>
+<th><img src="images/touch-feedback.png" alt="Touch Feedback"></th>
+<th><img src="images/mouse-feedback.png" alt="Mouse Feedback"></th>
+<th><img src="images/pen-feedback.png" alt="Pen Feedback"></th>
+<th><img src="images/keyboard-feedback.png" alt="Keyboard Feedback"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Touch visualization</td>
+<td>Mouse/touchpad visualization</td>
+<td>Pen visualization</td>
+<td>Keyboard visualization</td>
+</tr>
+</tbody>
+</table>
+<h2 id="high-visibility-focus-visuals">High Visibility Focus Visuals</h2>
+<p>All Windows apps sport a more defined focus visual around interactable controls within the application. These new focus visuals are fully customizable as well as disableable when needed.</p>
+<p>For the <strong>10-foot experience</strong> typical of Xbox and TV usage, Windows supports <strong>Reveal focus</strong>, a lighting effect that animates the border of focusable elements, such as a button, when they get focus through gamepad or keyboard input.</p>
+<h2 id="color-branding--customizing">Color Branding &amp; Customizing</h2>
+<h3 id="border-properties">Border Properties</h3>
+<p>There are two parts to the high visibility focus visuals: the primary border and the secondary border. The primary border is <strong>2px</strong> thick, and runs around the <em>outside</em> of the secondary border. The secondary border is <strong>1px</strong> thick and runs around the <em>inside</em> of the primary border.
+<img src="images/focus-rect-redlines.png" alt="High visibility focus visual redlines"></p>
+<p>To change the thickness of either border type (primary or secondary) use the <strong>FocusVisualPrimaryThickness</strong> or <strong>FocusVisualSecondaryThickness</strong>, respectively:</p>
+<pre><code class="lang-XAML">&lt;Slider Width=&quot;200&quot; FocusVisualPrimaryThickness=&quot;5&quot; FocusVisualSecondaryThickness=&quot;2&quot;/&gt;
+</code></pre>
+<p><img src="images/focus-margin.png" alt="High visibility focus visual margin thicknesses"></p>
+<p>The margin is a property of type <a href="/dotnet/api/system.windows.thickness"><strong>Thickness</strong></a>, and therefore the margin can be customized to appear only on certain sides of the control. See below:
+<img src="images/focus-thickness-side.png" alt="High visibility focus visual margin thickness bottom only"></p>
+<p>The margin is the space between the control's visual bounds and the start of the focus visuals <em>secondary border</em>. The default margin is <strong>1px</strong> away from the control bounds. You can edit this margin on a per-control basis, by changing the <strong>FocusVisualMargin</strong> property:</p>
+<pre><code class="lang-XAML">&lt;Slider Width=&quot;200&quot; FocusVisualMargin=&quot;-5&quot;/&gt;
+</code></pre>
+<p><img src="images/focus-plus-minus-margin.png" alt="High visibility focus visual margin differences"></p>
+<p><em>A negative margin will push the border away from the center of the control, and a positive margin will move the border closer to the center of the control.</em></p>
+<p>To turn off focus visuals on the control entirely, simply disabled <strong>UseSystemFocusVisuals</strong>:</p>
+<pre><code class="lang-XAML">&lt;Slider Width=&quot;200&quot; UseSystemFocusVisuals=&quot;False&quot;/&gt;
+</code></pre>
+<p>The thickness, margin, or whether or not the app-developer wishes to have the focus visuals at all, is determined on a per-control basis.</p>
+<h3 id="color-properties">Color Properties</h3>
+<p>There are only two color properties for the focus visuals: the primary border color, and the secondary border color. These focus visual border colors can be changed per-control on a page level, and globally on an app-wide level:</p>
+<p>To brand focus visuals app-wide, override the system brushes:</p>
+<pre><code class="lang-XAML">&lt;SolidColorBrush x:Key=&quot;SystemControlFocusVisualPrimaryBrush&quot; Color=&quot;DarkRed&quot;/&gt;
+&lt;SolidColorBrush x:Key=&quot;SystemControlFocusVisualSecondaryBrush&quot; Color=&quot;Pink&quot;/&gt;
+</code></pre>
+<p><img src="images/focus-rect-color-changes.png" alt="High visibility focus visual color changes"></p>
+<p>To change the colors on a per-control basis, just edit the focus visual properties on the desired control:</p>
+<pre><code class="lang-XAML">&lt;Slider Width=&quot;200&quot; FocusVisualPrimaryBrush=&quot;DarkRed&quot; FocusVisualSecondaryBrush=&quot;Pink&quot;/&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<h3 id="for-designers">For designers</h3>
+<ul>
+<li><a href="guidelines-for-panning.html">Guidelines for panning</a></li>
+</ul>
+<h3 id="for-developers">For developers</h3>
+<ul>
+<li><a href="../layout/index.html">Custom user interactions</a></li>
+</ul>
+<h3 id="samples">Samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode">User interaction mode sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+</ul>
+<h3 id="archive-samples">Archive samples</h3>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample">Input: XAML user input events sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample">Input: Touch hit testing sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample">XAML scrolling, panning, and zooming sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample">Input: Simplified ink sample</a></li>
+<li><a href="/samples/browse/?redirectedfrom=MSDN-samples">Input: Windows 8 gestures sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer">Input: Manipulations and gestures sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208)">DirectX touch input sample</a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/guidelines-for-visualfeedback.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

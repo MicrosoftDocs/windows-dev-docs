@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Inking Controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Inking Controls ">
+    
+    <meta name="description" content="Learn about the InkCanvas&#160;and&#160;InkToolbar controls that facilitate inking and ink-related features in Windows apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="inking-controls">Inking controls</h1>
+
+<p>There are two different controls that facilitate inking in Windows apps: <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas">InkCanvas</a> and <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar</a>.</p>
+<p>The InkCanvas control renders pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke. This control is a transparent overlay that doesn't include any built-in UI for changing the default ink stroke properties.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>InkCanvas can be configured to support similar functionality for both mouse and touch input.</p>
+</div>
+<p>As the InkCanvas control does not include support for changing the default ink stroke settings, it can be paired with an InkToolbar control. The InkToolbar contains a customizable and extensible collection of buttons that activate ink-related features in an associated InkCanvas.</p>
+<p>By default, the InkToolbar includes buttons for drawing, erasing, highlighting, and displaying a ruler. Depending on the feature, other settings and commands, such as ink color, stroke thickness, erase all ink, are provided in a flyout.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>InkToolbar supports pen and mouse input and can be configured to recognize touch input.</p>
+</div>
+<img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use the InkCanvas when you need to enable basic inking features in your app without providing any ink settings to the user.</p>
+<p>By default, strokes are rendered as ink when using the pen tip (a black ballpoint pen with a thickness of 2 pixels) and as an eraser when using the eraser tip. If an eraser tip is not present, the InkCanvas can be configured to process input from the pen tip as an erase stroke.</p>
+<p>Pair the InkCanvas with an InkToolbar to provide a UI for activating ink features and setting basic ink properties such as stroke size, color, and shape of the pen tip.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For more extensive customization of ink stroke rendering on an InkCanvas, use the underlying <a href="/uwp/api/windows.ui.input.inking.inkpresenter">InkPresenter</a> object.</p>
+</div>
+<h2 id="ink-toolbar-overview">Ink toolbar overview</h2>
+<h3 id="built-in-buttons">Built-in buttons</h3>
+<p>The InkToolbar includes the following built-in buttons:</p>
+<p><strong>Pens</strong></p>
+<ul>
+<li>Ballpoint pen - draws a solid, opaque stroke with a circle pen tip. The stroke size is dependent on the pen pressure detected.</li>
+<li>Pencil - draws a soft-edged, textured, and semi-transparent stroke (useful for layered shading effects) with a circle pen tip. The stroke color (darkness) is dependent on the pen pressure detected.</li>
+<li>Highlighter – draws a semi-transparent stroke with a rectangle pen tip.</li>
+</ul>
+<p>You can customize both the color palette and size attributes (min, max, default) in the flyout for each pen.</p>
+<p><strong>Tool</strong></p>
+<ul>
+<li>Eraser – deletes any ink stroke touched. Note that the entire ink stroke is deleted, not just the portion under the eraser stroke.</li>
+</ul>
+<p><strong>Toggle</strong></p>
+<ul>
+<li>Ruler – shows or hides the ruler. Drawing near the ruler edge causes the ink stroke to snap to the ruler.<br>
+<img src="images/inking-tools-ruler.png" alt="Ruler visual associated with InkToolbar"></li>
+</ul>
+<p>Although this is the default configuration, you have complete control over which built-in buttons are included in the InkToolbar for your app.</p>
+<h3 id="custom-buttons">Custom buttons</h3>
+<p>The InkToolbar consists of two distinct groups of button types:</p>
+<ol>
+<li>A group of &quot;tool&quot; buttons containing the built-in drawing, erasing, and highlighting buttons. Custom pens and tools are added here.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Feature selection is mutually exclusive.</p>
+</div>
+<ol start="2">
+<li>A group of &quot;toggle&quot; buttons containing the built-in ruler button. Custom toggles are added here.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Features are not mutually exclusive and can be used concurrently with other active tools.</p>
+</div>
+<p>Depending on your application and the inking functionality required, you can add any of the following buttons (bound to your custom ink features) to the InkToolbar:</p>
+<ul>
+<li>Custom pen – a pen for which the ink color palette and pen tip properties, such as shape, rotation, and size, are defined by the host app.</li>
+<li>Custom tool – a non-pen tool, defined by the host app.</li>
+<li>Custom toggle – Sets the state of an app-defined feature to on or off. When turned on, the feature works in conjunction with the active tool.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot change the display order of the built-in buttons. The default display order is: Ballpoint pen, pencil, highlighter, eraser, and ruler. Custom pens are appended to the last default pen, custom tool buttons are added between the last pen button and the eraser button and custom toggle buttons are added after the ruler button. (Custom buttons are added in the order they are specified.)</p>
+</div>
+<p>Although the InkToolbar can be a top level item, it is typically exposed through an &quot;Inking&quot; button or command. We recommend using EE56 glyph from the Segoe MLD2 Assets font as a top level icon.</p>
+<h3 id="inktoolbar-interaction">InkToolbar Interaction</h3>
+<p>All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An &quot;extension glyph&quot; is displayed on the button to indicate the existence of the flyout.</p>
+<p><img src="images/ink-tools-glyph.png" alt="InkToolbar glyph"></p>
+<p>The flyout is shown when the button of an active tool is selected again. When the color or size is changed, the flyout is automatically dismissed and inking can be resumed. Custom pens and tools can use the default flyout or specify a custom flyout.</p>
+<p>The eraser also has a flyout that provides the <strong>Erase All Ink</strong> command.</p>
+<p><img src="images/ink-tools-erase-all-ink.png" alt="InkToolbar with eraser flyout invoked"></p>
+<p>For information on customization and extensibility, check out <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk">SimpleInk sample</a>.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>The InkCanvas, and inking in general, is best experienced through an active pen. However, we recommend supporting inking with mouse and touch (including passive pen) input if required by your app.</li>
+<li>Use an InkToolbar control with the InkCanvas to provide basic inking features and settings. Both the InkCanvas and InkToolbar can be programmatically customized.</li>
+<li>The InkToolbar, and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app.</li>
+<li>If supporting inking with touch input, we recommend using the ED5F icon from the Segoe MLD2 Assets font for the toggle button, with a &quot;Touch writing&quot; tooltip.</li>
+<li>If providing stroke selection, we recommend using the EF20 icon from the Segoe MLD2 Assets font for the tool button, with a &quot;Selection tool&quot; tooltip.</li>
+<li>If using more than one InkCanvas, we recommend using a single InkToolbar to control inking across canvases.</li>
+<li>For best performance, we recommend altering the default flyout rather than creating a custom one for both default and custom tools.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<p><strong>Microsoft Edge</strong></p>
+<p>Microsoft Edge uses the InkCanvas and InkToolbar for <strong>Web Notes</strong>.<br>
+<img src="images/ink-tools-edge.png" alt="InkCanvas is used to ink in Microsoft Edge"></p>
+<p><strong>Windows Ink Workspace</strong></p>
+<p>The InkCanvas and InkToolbar are also used for <strong>Snip &amp; Sketch</strong> in the <strong>Windows Ink Workspace</strong>.<br>
+<img src="images/ink-tools-ink-workspace.png" alt="InkToolbar in the Windows Ink Workspace"></p>
+<h2 id="create-an-inkcanvas-and-inktoolbar">Create an InkCanvas and InkToolbar</h2>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.inkcanvas">InkCanvas class</a>, <a href="/uwp/api/windows.ui.xaml.controls.inktoolbar">InkToolbar class</a>, <a href="/uwp/api/windows.ui.input.inking.inkpresenter">InkPresenter class</a>, <a href="/uwp/api/Windows.UI.Input.Inking">Windows.UI.Input.Inking</a></li>
+<li><a href="winui2gallery:/item/InkCanvas">Open the WinUI 2 Gallery app and see the InkingControls in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>Adding an InkCanvas to your app requires just one line of markup:</p>
+<pre><code class="lang-xaml">&lt;InkCanvas x:Name=&quot;myInkCanvas&quot;/&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For detailed InkCanvas customization using InkPresenter, see the <a href="../input/pen-and-stylus-interactions.html">&quot;Pen interactions and Windows Ink in Windows apps&quot;</a> article.</p>
+</div>
+<p>The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:</p>
+<pre><code class="lang-xaml">&lt;InkToolbar TargetInkCanvas=&quot;{x:Bind myInkCanvas}&quot;/&gt;
+</code></pre>
+<p>This displays the following InkToolbar:</p>
+<img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk">SimpleInk sample</a> - Demonstrates 8 scenarios around the customization and extensibility capabilities of the InkCanvas and InkToolbar controls. Each scenario provides basic guidance on common inking situations and control implementations.</li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk">ComplexInk sample</a> - Demonstrates more advanced inking scenarios.</li>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI 2 Gallery sample</a> - See all the XAML controls in an interactive format.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../input/pen-and-stylus-interactions.html">Pen interactions and Windows Ink in Windows apps</a></li>
+<li><a href="../input/convert-ink-to-text.html">Recognize Windows Ink strokes as text and shapes</a></li>
+<li><a href="../input/save-and-load-ink.html">Store and retrieve Windows Ink stroke data</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/inking-controls.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

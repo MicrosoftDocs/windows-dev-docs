@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Design guidelines for passkeys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Design guidelines for passkeys ">
+    
+    <meta name="description" content="There are 14 design patterns for passkeys. You can get started with two essential patterns, and then add optional patterns to your passkeys deployment based on your unique business needs.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="design-guidelines-for-passkeys">Design guidelines for passkeys</h1>
+
+<p>There are 14 design patterns for passkeys. You can get started with two essential patterns, and then add optional patterns to your passkeys deployment based on your unique business needs.</p>
+<h2 id="essential-patterns">Essential patterns</h2>
+<p>The two essential (foundational) patterns are that:</p>
+<ul>
+<li>A user needs first to <em>create</em> a passkey (and view/manage it),</li>
+<li>and then the user can <em>sign in</em> with it.</li>
+</ul>
+<p>Every rollout of passkeys should make use of these patterns.</p>
+<h3 id="pattern-1-create-view-and-manage-passkeys-in-account-settings">Pattern 1: Create, view, and manage passkeys in account settings</h3>
+<ul>
+<li><p>If a passkey doesn't exist for the current user, then display the passkey creation prompt, like this:</p>
+<p><img src="images/Pattern1PromptPasskeyCreation.png" alt="Prompt passkey creation"></p>
+</li>
+</ul>
+<h3 id="pattern-2-sign-in-with-a-passkey">Pattern 2: Sign in with a passkey</h3>
+<ul>
+<li>Enable autofill by adding <code>autocomplete=&quot;webauthn&quot;</code> to your <strong>username</strong> input field.</li>
+<li>Support graceful fallback to other sign-in methods. Allow users to enter some different credential (not a passkey) to sign in or to create an account.</li>
+<li>Research explored users' success and satisfaction with: a dedicated &quot;Sign in with a passkey&quot; link, buttons, and autofill. Testing indicated that autofill ensured the highest success for people to sign in with a passkey.</li>
+</ul>
+<h4 id="step-21-login-page">Step 2.1: Login page</h4>
+<p><img src="images/Pattern2.1SignInFlow.png" alt="Login page"></p>
+<h4 id="step-22-passkey-sign-in-prompt-with-lock-screen">Step 2.2: Passkey sign-in prompt with lock screen</h4>
+<p><img src="images/Pattern2.2HelloFace.png" alt="Passkey sign-in prompt with lock screen"></p>
+<h4 id="step-23-login-success-with-windows-hello">Step 2.3: Login success with Windows Hello</h4>
+<p><img src="images/Pattern2.3HelloLoginSuccess.png" alt="Login success with Windows Hello"></p>
+<h2 id="ui-text-research-and-rollout">UI text, research, and rollout</h2>
+<p>Here are some user-tested button labels and phrases. Copy and edit them to suit your needs.</p>
+<p><strong>With passkeys, you don’t need to remember complex passwords.</strong></p>
+<p><strong>What are passkeys?</strong>
+Passkeys are encrypted digital keys you create using your fingerprint, face, or screen lock.</p>
+<p><strong>Where are passkeys saved?</strong>
+Passkeys are saved in your password manager, so you can sign in on other devices.</p>
+<p>Research indicates that your users will appreciate the option to create a passkey for their account <em>at any point</em> within the account settings workflow. Candidates described an account settings UI as an intuitive and useful place to proactively learn about and update their authentication settings.</p>
+<p>The research also indicates that users seek to understand the nature and value of passkeys. Vague or technical explanations often confuse them and lead them to abandon creating a passkey. Familiar biometric iconography, and brief messaging that compares passkeys to known technologies, is most effective at providing the right level of information. For users who already have a passkey, the passkey card(s) afford them an unmistakable object in the interface that they later visualize and then find in your account settings UI. They use that to get actionable information about the passkey.</p>
+<p>On your homepage, we recommend that you offer one affordance for both sign-in and account creation. Research indicates that the action of creating an account is more discoverable that way, rather than surfacing the account creation option <em>after</em> the user has signed in. Also, some users report that occasionally they're uncertain whether they have an account—so a multipurpose button serves their needs.</p>
+<h3 id="rollout">Rollout</h3>
+<p>Passkeys might require specific hardware or software support on users' devices. Ensure that users are aware of the compatibility requirements for using passkeys, and provide guidance on compatible devices and browsers including Windows and Edge.</p>
+<p>In the context of native mobile apps, signing in with a passkey is different from the biometric sign-in experience that has existed for many years. Signing in with a passkey requires an additional tap.</p>
+<p>As for security, an implementation might gracefully fall back to an email OTP. The graceful fallback option that you choose should match your unique goals for security and business. So plan your UI and UX accordingly.</p>
+<p>For service providers, you might choose a phased rollout where initially users can create passkeys only from their account settings. Then, as you gather data about the passkey sign-in experiences unique to your users' needs, you can increase the number of places where a passkey can be created, including during account creation. And you should develop a communication plan to educate users about the availability of passkeys, and their benefits. To reach users effectively, you might leverage several communication channels (in-app notifications, email, and online help resources) that align with your unique goals.</p>
+<h2 id="optional-patterns">Optional patterns</h2>
+<p>For info about optional patterns, see <a href="https://fidoalliance.org/design-guidelines/patterns/">Optional patterns</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Next, see <a href="use-cases.html">Use cases for passkeys</a>.</p>
+<h2 id="further-info">Further info</h2>
+<ul>
+<li><a href="intro.html">Intro to passkeys</a></li>
+<li><a href="https://passkeys.dev/">Passkeys.dev</a></li>
+<li><a href="https://fidoalliance.org/implement-passkeys-overview/">Get Started on Your Passwordless Journey</a> on the FIDO Alliance website</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/design.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

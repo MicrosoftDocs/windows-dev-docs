@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>IXamlSourceTransparency.IsBackgroundTransparent property </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="IXamlSourceTransparency.IsBackgroundTransparent property ">
+    
+    <meta name="description" content="Gets or sets the background transparency of all DesktopWindowXamlSource objects on the current thread.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ixamlsourcetransparencyisbackgroundtransparent-property">IXamlSourceTransparency.IsBackgroundTransparent property</h1>
+
+<h2 id="definition">Definition</h2>
+<p>Namespace: Windows.UI.Xaml</p>
+<p>Gets or sets a value that specifies whether the background of all DesktopWindowXamlSource objects on the current thread is transparent.</p>
+<pre><code class="lang-csharp">[uuid(06636c29-5a17-458d-8ea2-2422d997a922)]
+interface IXamlSourceTransparency
+{
+    Boolean IsBackgroundTransparent;
+};
+</code></pre>
+<h3 id="property-value">Property Value</h3>
+<p><a href="/dotnet/api/system.boolean">Boolean</a></p>
+<p><code>true</code> if the window background is transparent; otherwise, <code>false</code>.</p>
+<h2 id="windows-requirements">Windows requirements</h2>
+<table><tr><td>Device family</td><td>Windows 10 (introduced in 10.0.17763.0)</td></tr></table>
+<h2 id="examples">Examples</h2>
+<p>This example shows the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> objects being configured to have a transparent background.</p>
+<pre><code class="lang-csharp">// Make all DesktopWindowXamlSource objects on this
+// thread have a transparent background.
+var xamlSourceTransparency = (IXamlSourceTransparency)Window.Current;
+xamlSourceTransparency.IsBackgroundTransparent = true;
+</code></pre>
+<p>With <code>IsBackgroundTransparent</code> set to <code>true</code>, if the following is set as the content of an island, the first column will show the content of the host but the second column will be white.</p>
+<pre><code class="lang-xaml">&lt;Grid ColumnDefinitions=&quot;Auto,*&quot;&gt;
+    &lt;TextBlock&gt;Column 0 text&lt;/TextBlock&gt;
+
+    &lt;Border Grid.Column=&quot;1&quot; Background=&quot;White&quot;&gt;
+        &lt;TextBlock&gt;Column 1 text&lt;/TextBlock&gt;
+    &lt;/Border&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h2 id="remarks">Remarks</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> class is used to host Xaml in another app. For example, you can use this to host some Xaml content in a WPF or WinForms app. See <a href="/windows/apps/desktop/modernize/xaml-islands">Host WinRT XAML controls in desktop apps (XAML Islands)</a> for more info.</p>
+<p>By default, the XAML content has an opaque background, meaning that it's not possible to have any of the host content behind the XAML show through. (In WinUI3, this behavior is changed; the XAML always has a transparent background.)</p>
+<p>Set this property to <code>true</code> to give all <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> objects on the current thread a transparent background.</p>
+<p>This interface is retrieved from a XAML <a href="/uwp/api/windows.ui.xaml.window">Window</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Setting this property to <code>true</code> in a XAML UWP app will cause a XAML <a href="/uwp/api/Windows.UI.Xaml.Window">Window</a> to be transparent as well when it's in full screen mode (when you've called <a href="/uwp/api/Windows.UI.ViewManagement.ApplicationView.TryEnterFullScreenMode">ApplicationView.TryEnterFullScreenMode</a>).</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/api-reference/interface-members/ixamlsourcetransparency-isbackgroundtransparent.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

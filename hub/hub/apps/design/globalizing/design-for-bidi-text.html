@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Design your app for bidirectional text </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Design your app for bidirectional text ">
+    
+    <meta name="description" content="Design your app to provide bidirectional text support (BiDi) so that you can combine script from left-to-right (LTR) and right-to-left (RTL) writing systems, which generally contain different types of alphabets.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="design-your-app-for-bidirectional-text">Design your app for bidirectional text</h1>
+
+<p>Design your app to provide bidirectional text support (BiDi) so that you can combine script from right to left (RTL) and left to right (LTR) writing systems, which generally contain different types of alphabets.</p>
+<p>Right-to-left writing systems, such as those used in the Middle East, Central and South Asia, and in Africa, have unique design requirements. These writing systems require bidirectional text support (BiDi). BiDi support is the ability to input and display text layout in either right to left (RTL) or left to right (LTR) order.</p>
+<p>A total of nine BiDi languages are included with Windows.</p>
+<ul>
+<li>Two fully localized languages. Arabic, and Hebrew.</li>
+<li>Seven Language Interface Packs for emerging markets. Persian, Urdu, Dari, Central Kurdish, Sindhi, Punjabi (Pakistan), and Uyghur.</li>
+</ul>
+<p>This topic contains the Windows BiDi design philosophy, and case studies that show BiDi design considerations.</p>
+<h2 id="bidi-design-elements">Bidi design elements</h2>
+<p>Four elements influence BiDi design decisions in Windows.</p>
+<ul>
+<li><strong>User interface (UI) mirroring</strong>. User interface (UI) flow allows right-to-left content to be presented in its native layout. UI design feels local to BiDi markets.</li>
+<li><strong>Consistency in user experience</strong>. The design feels natural in right-to-left orientation. UI elements share a consistent layout direction and appear as the user expects them.</li>
+<li><strong>Touch optimization</strong>. Similar to touch UI in non-mirrored UI, elements are easy to reach, and they natural to touch interaction.</li>
+<li><strong>Mixed text support</strong>. Text directionality support enables great mixed text presentation (English text on BiDi builds, and vice versa).</li>
+</ul>
+<h2 id="feature-design-overview">Feature design overview</h2>
+<p>Windows supports the four BiDi design elements. Let's look at some of the major relevant features of (prior versions of) Windows, and provide some context around how they affect your app.</p>
+<h3 id="navigate-in-the-direction-that-feels-natural">Navigate in the direction that feels natural</h3>
+<p>Windows adjusts the direction of the typographic grid so that it flows from right to left, meaning that the first tile on the grid is placed at the top right corner, and the last tile at the bottom left. This matches the RTL pattern of printed publications such as books and magazines, where the reading pattern always starts at the top right corner and progresses to the left.</p>
+<p><img src="images/56283_BIDI_01_startscreen_resized.png" alt="BiDi start menu">
+<img src="images/56283_BIDI_02_startscreen_charm_resized.png" alt="BiDi start menu with charms"></p>
+<p>To preserve a consistent UI flow, content on tiles retain a right-to-left layout, meaning that the app name and logo are positioned at the bottom right corner of the tile regardless of the app UI language.</p>
+<h4 id="bidi-tile">BiDi tile</h4>
+<p><img src="images/56284_BIDI_03_tile_callouts_withKey.png" alt="BiDi tile"></p>
+<h4 id="english-tile">English tile</h4>
+<p><img src="images/56284_BIDI_03_tile_callouts_en-us.png" alt="English tile"></p>
+<h3 id="get-tile-notifications-that-read-correctly">Get tile notifications that read correctly</h3>
+<p>Tiles have mixed text support. The notification region has built-in flexibility to adjust the text alignment based on the notification language.  When an app sends Arabic, Hebrew, or other BiDi language notifications, the text is aligned to the right. And when an English (or other LTR) notification arrives, it will align to the left.</p>
+<p><img src="images/56285_BIDI_04_bidirectional_tiles_white.png" alt="Tile notifications"></p>
+<h3 id="a-consistent-easy-to-touch-rtl-user-experience">A consistent, easy-to-touch RTL user experience</h3>
+<p>Every element in the Windows UI fits into the RTL orientation. Charms and flyouts have been positioned on the left edge of the screen so that they don't overlap search results or degrade touch optimization. They can be easily reached with the thumbs.</p>
+<p><img src="images/56286_BIDI_05_search_flyout_resized.png" alt="Screenshot of BiDi showing the search flyout resized">
+<img src="images/56286_BIDI_06_print_flyout_resized.png" alt="Screenshot of BiDi showing the print flyout resized"></p>
+<p><img src="images/56286_BIDI_07_settings_flyout_resized.png" alt="Screenshot of BiDi showing the settings flyout resized">
+<img src="images/56286_BIDI_08_app_bars_resized.png" alt="Screenshot of BiDi showing the app bars resized"></p>
+<h3 id="text-input-in-any-direction">Text input in any direction</h3>
+<p>Windows offers an on-screen touch keyboard that is clean and clutter-free. For BiDi languages, there is a text direction control key so that the text input direction can be switched as needed.</p>
+<p><img src="images/56287_BIDI_09_keyboard_layout_resized.png" alt="Touch keyboard for BiDi language"></p>
+<h3 id="use-any-app-in-any-language">Use any app in any language</h3>
+<p>Install and use your favorite apps in any language. The apps appear and function as they would on non-BiDi versions of Windows. Elements within apps are always placed in a consistent and predictable position.</p>
+<p><img src="images/56288_BIDI_10_english_app_resized.png" alt="English app showing BiDi content"></p>
+<h3 id="display-parentheses-correctly">Display parentheses correctly</h3>
+<p>With the introduction of the BiDi Parenthesis Algorithm (BPA), paired parentheses always display properly regardless of language or text alignment properties.</p>
+<h4 id="incorrect-parentheses">Incorrect parentheses</h4>
+<p><img src="images/56289_BIDI_11_parentheses_resized.png" alt="BiDi app with incorrect parentheses"></p>
+<h4 id="correct-parentheses">Correct parentheses</h4>
+<p><img src="images/56289_BIDI_12_parentheses_fixed_resized.png" alt="BiDi app with correct parentheses"></p>
+<h3 id="typography">Typography</h3>
+<p>Windows uses the Segoe UI font for all BiDi languages. This font is shaped and scaled for the Windows UI.</p>
+<p><img src="images/56290_BIDI_13_start_screen_segoe.png" alt="Screenshot showing the Segoe UI font on the start screen">
+<img src="images/56290_BIDI_13_start_screen_segoe_arabic.png" alt="Screenshot showing the Segoe Arabic font on the start screen"></p>
+<h2 id="case-study-1-a-bidi-music-app">Case study #1: A BiDi music app</h2>
+<h3 id="overview">Overview</h3>
+<p>Multimedia apps make for a very interesting design challenge, because media controls are generally expected to have a left-to-right layout similar to that of non-BiDi languages.</p>
+<p><img src="images/56291_BIDI_1415_music_player_layouts_left-withcallouts.png" alt="Media controls left-to-right"></p>
+<p><img src="images/56291_BIDI_1415_music_player_layouts_right-withcallouts.png" alt="Media controls right-to-left"></p>
+<h3 id="establishing-ui-directionality">Establishing UI directionality</h3>
+<p>Retaining the right-to-left UI flow is important for consistent design for BiDi markets. Adding elements that have left-to-right flow within this context is difficult, because some navigational elements such as the back button may contradict the directional orientation of the back button in the audio controls.</p>
+<p><img src="images/56292_BIDI_16_app_layout_callouts_resized.png" alt="Music app track page"></p>
+<p>This music app retains a right-to-left-oriented grid. This gives the app a very natural feel for users who already navigate in this direction across the Windows UI. The flow is retained by ensuring that the main elements are not just ordered from right to left, but also aligned properly in the section headers to help maintain the UI flow.</p>
+<p><img src="images/56292_BIDI_17_app_layout_callouts_resized.png" alt="Music app album page"></p>
+<h3 id="text-handling">Text handling</h3>
+<p>The artist bio in the screenshot above is left-aligned, while other artist-related text pieces such as album and track names preserve right alignment. The bio field is a fairly large text element, which reads poorly when aligned to the right simply because it's hard to track between the lines while reading a wider text block. In general, any text element with more than two or three lines containing five or more words should be considered for similar alignment exceptions, where the text block alignment is opposite to that of the overall app directional layout.</p>
+<p>Manipulating the alignment across the app can look simple, but it often exposes some of the boundaries and limitations of the rendering engines in terms of neutral character placement across BiDi strings. For example, the following string can display differently based on alignment.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>English String (LTR)</th>
+<th>Hebrew String (RTL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Left-alignment</strong></td>
+<td>Hello, World!</td>
+<td>בוקר טוב!</td>
+</tr>
+<tr>
+<td><strong>Right-alignment</strong></td>
+<td>!Hello, World</td>
+<td>!בוקר טוב</td>
+</tr>
+</tbody>
+</table>
+<p>To ensure that artist information is properly displayed across the music app, the development team separated text layout properties from alignment. In other words, the artist info might be displayed as right-aligned in many of the cases, but the string layout adjustment is set based on customized background processing. The background processing determines the best directional layout setting based on the content of the string.</p>
+<p><img src="images/56292_BIDI_18_app_layout_callouts_resized.png" alt="Music app artist page"></p>
+<p>For example, without custom string layout processing, the artist name &quot;The Contoso Band.&quot; would appear as &quot;.The Contoso Band&quot;.</p>
+<h3 id="specialized-string-direction-preprocessing">Specialized string direction preprocessing</h3>
+<p>When the app contacts the server for media metadata, it preprocesses each string prior to displaying it to the user. During this preprocessing, the app also does a transformation to make the text direction consistent. To do this, it checks whether there are neutral characters on the ends of the string. Also, if the text direction of the string is opposite to the app direction set by the Windows language settings, then it appends (and sometimes prepends) Unicode direction markers. The transformation function looks like this.</p>
+<pre><code class="lang-csharp">string NormalizeTextDirection(string data) 
+{
+    if (data.Length &gt; 0) {
+        var lastCharacterDirection = DetectCharacterDirection(data[data.Length - 1]);
+
+        // If the last character has strong directionality (direction is not null), then the text direction for the string is already consistent.
+        if (!lastCharacterDirection) {
+            // If the last character has no directionality (neutral character, direction is null), then we may need to add a direction marker to
+            // ensure that the last character doesn't inherit directionality from the outside context.
+            var appTextDirection = GetAppTextDirection(); // checks the &lt;html&gt; element's &quot;dir&quot; attribute.
+            var dataTextDirection = DetectStringDirection(data); // Run through the string until a non-neutral character is encountered,
+                                                                 // which determines the text direction.
+
+            if (appTextDirection != dataTextDirection) {
+                // Add a direction marker only if the data text runs opposite to the directionality of the app as a whole,
+                // which would cause the neutral characters at the ends to flip.
+                var directionMarkerCharacter =
+                    dataTextDirection == TextDirections.RightToLeft ?
+                        UnicodeDirectionMarkers.RightToLeftDirectionMarker : // &quot;\u200F&quot;
+                        UnicodeDirectionMarkers.LeftToRightDirectionMarker; // &quot;\u200E&quot;
+
+                data += directionMarkerCharacter;
+
+                // Prepend the direction marker if the data text begins with a neutral character.
+                var firstCharacterDirection = DetectCharacterDirection(data[0]);
+                if (!firstCharacterDirection) {
+                    data = directionMarkerCharacter + data;
+                }
+            }
+        }
+    }
+
+    return data;
+}
+</code></pre>
+<p>The added Unicode characters are zero-width, so they don't impact the spacing of the strings. This code carries a potential performance penalty, since detecting the direction of a string requires running through the string until a non-neutral character is encountered. Each character that's checked for neutrality is first compared against several Unicode ranges as well, so it isn't a trivial check.</p>
+<h2 id="case-study-2-a-bidi-mail-app">Case study #2: A BiDi mail app</h2>
+<h3 id="overview-1">Overview</h3>
+<p>In terms of UI layout requirements, a mail client is fairly simple to design. The Mail app in Windows is mirrored by default. From a text-handling perspective the mail app is required to have more robust text display and composition capabilities in order to accommodate mixed text scenarios.</p>
+<h3 id="establishing-ui-directionality-1">Establishing UI directionality</h3>
+<p>The UI layout for the Mail app is mirrored. The three panes have been reoriented so that the folder pane is positioned on the right edge of the screen, followed by the mail item list pane to the left, and then the email composition pane.</p>
+<p><img src="images/56293_BIDI_19_icon_realignment_cropped_resized.png" alt="Mirrored mail app"></p>
+<p>Additional items have been reoriented to match the overall UI flow, and touch optimization. These include the app bar and the compose, reply, and delete icons.</p>
+<p><img src="images/56294_BIDI_20_email_orientation_email_resized.png" alt="Mirrored mail app with app bar"></p>
+<h3 id="text-handling-1">Text Handling</h3>
+<h4 id="ui">UI</h4>
+<p>Text alignment across the UI is usually right-aligned. This includes the folder pane and items pane. The item pane is limited to two lines of text (Address, and Title). This is important for retaining the right-to-left alignment, without introducing a block of text that would be difficult to read when the content direction is opposite to the UI direction flow.</p>
+<h4 id="text-editing">Text Editing</h4>
+<p>Text editing requires the ability to compose in both right-to-left and left-to-right form. In addition, the composition layout must be preserved by using a format—such as rich text—that has the ability to save directional information.</p>
+<p><img src="images/56294_BIDI_21_email_orientation_LtR_resized.png" alt="Mail app left to right"></p>
+<p><img src="images/56294_BIDI_22_email_orientation_RtL_resized.png" alt="Mail app right to left"></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/design-for-bidi-text.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

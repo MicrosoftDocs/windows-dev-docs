@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Update app architecture from Arm32 to Arm64 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Update app architecture from Arm32 to Arm64 ">
+    
+    <meta name="description" content="Guidance for changing apps with Arm32 architecture, a default for older UWP apps, to the updated Arm64 architecture using Visual Studio so that your app will work on the latest Windows on Arm devices.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="update-app-architecture-from-arm32-to-arm64">Update app architecture from Arm32 to Arm64</h1>
+
+<p>This guide will cover the recommended steps for changing an existing app with support for 32-bit Arm platform architecture over to the more updated 64-bit Arm architecture by adding the necessary configuration using Visual Studio. This update will help your app to run on the latest Windows on Arm devices which use 64-bit Arm (ARM64/AArch64) processors.</p>
+<p>This topic is relevant for UWP apps that do not have an ARM64 target. Older UWP project templates generated an ARM32 (or AArch32) target, but did not include support for ARM64 (AArch64).</p>
+<p>To check the current Solution Platform for your app to see if ARM64 is present, open your app project code in Visual Studio and in the &quot;Solution Platforms&quot; drop-down menu on the Standard toolbar, select <strong>Configuration Manager...</strong> (also available in the Build menu) where you will be able to view the list of Solution Platforms and confirm whether ARM64 is present.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows devices running on an Arm processor <em>(for example, Snapdragon processors from Qualcomm)</em> will no longer support AArch32 (Arm32). This change impacts Universal Windows Platform apps that presently target AArch32 (Arm32). <a href="https://www.microsoft.com/windows/windows-11-specifications#table3">Support for 32-bit Arm versions of applications will be removed in a future release of Windows 11.</a>. System binaries for ARM32 support (present in the <em>sysarm32</em> folder) will also be removed. After this change, for the small number of applications affected, app features might be different and you might notice a difference in performance. Therefore, we recommend updating your targeted platforms to AArch64 (Arm64), which is supported on all Windows on Arm devices, as soon as possible in order to ensure your customers can continue to enjoy the best possible experience. Follow the guidance on this page to update your applications to AArch64 (Arm64).</p>
+</div>
+<h2 id="add-an-arm64-configuration-to-your-project">Add an Arm64 configuration to your project</h2>
+<p>To add an ARM64 solution platform to your existing app project code:</p>
+<ol>
+<li>Open your solution (project code) in Visual Studio (Visual Studio 2017 version 15.9 or newer is required).</li>
+<li>In the &quot;Solution Platforms&quot; drop-down menu on the Standard toolbar (or in the &quot;Build&quot; menu), select <strong>Configuration Manager...</strong></li>
+<li>Open the &quot;Active solution platform&quot; drop-down menu and select <strong>&lt;new...&gt;</strong>.</li>
+<li>In the &quot;Type or select the new platform&quot; drop-down menu, select <strong>ARM64</strong> and ensure that the &quot;Copy settings from&quot; value is set to <strong>ARM</strong> with the &quot;Create new project platforms&quot; checkbox enabled, then select <strong>OK</strong>.</li>
+</ol>
+<h2 id="build-your-arm64-solution">Build your Arm64 Solution</h2>
+<p>Once you have added the Arm64 solution platform to your existing project or solution, if you want to confirm that the Arm64 version of your app builds correctly, close the &quot;Active solution platform&quot; window and change the build setting from <strong>Debug</strong> to <strong>Release</strong>. In the &quot;Build&quot; drop-down menu, select <strong>Rebuild Solution</strong> and wait for the project to rebuild. You should receive a &quot;Rebuild All succeeded&quot; output. If not, see the <a href="#troubleshooting">Troubleshooting</a> section below.</p>
+<p><em>(Optional)</em>: Check that your app binary is now built for Arm64 architecture by opening your project directory in PowerShell (right-click your app project in Visual Studio Solution Explorer and select <strong>Open in Terminal</strong>). Change directories so that your project's new <code>bin\ARM64\Release</code> directory is selected. Enter the command: <code>dumpbin .\&lt;appname&gt;.exe</code> (replacing <code>&lt;appname&gt;</code> with the name of your app). Then enter the command: <code>dumpbin /headers .\&lt;appname&gt;.exe</code>. Scrolling up in your terminal's output results, find the <strong><code>FILE HEADER VALUES</code></strong> section and confirm the first line is <code>AA64 machine (ARM64)</code>.</p>
+<h2 id="publish-your-updated-app-in-the-microsoft-store">Publish your updated app in the Microsoft Store</h2>
+<p>Once you have built an Arm64 version of your app by following the configuration steps above, you can update your existing app package in the Microsoft Store by visiting your <a href="https://partner.microsoft.com/dashboard">Partner Center dashboard</a> and adding the newly built ARM64 binaries to the submission. (It is an option to also remove the previous ARM32 binaries).</p>
+<p>(optionally) removing the previous Arm32 binaries. For more information on options, see <a href="/windows/apps/publish/publish-your-app/overview">Publish your app in the Microsoft Store</a>.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you run into issues while porting your Arm32 app to Arm64, here are a few common solutions.</p>
+<h3 id="a-dependency-not-compiled-for-arm64-is-blocking-you-from-a-successful-build">A dependency not compiled for ARM64 is blocking you from a successful build</h3>
+<p>If you can’t build due to a dependency, whether internal, from a 3rd party, or from an open-source library, you will need to either find a way to update that dependency to support ARM64 architecture or remove it.</p>
+<ul>
+<li><p>For internal dependencies, we recommend rebuilding the dependency for ARM64 support.</p>
+</li>
+<li><p>For 3rd party dependencies, we recommend filing a request for the maintainer to rebuild with ARM64 support.</p>
+</li>
+<li><p>For open source dependencies, we recommend first checking <a href="https://vcpkg.io/en/index.html">vcpkg</a> to see if a newer version of the dependency that includes ARM64 support exists that you can update to. If no update exists, consider contributing the addition of ARM64 support to the package yourself. Many open source maintainers would be thankful for the contribution.</p>
+</li>
+<li><p>The last choice would be to remove and/or replace the dependency on your app project.</p>
+</li>
+</ul>
+<h3 id="need-assistance-leverage-our-app-assure-service">Need assistance? Leverage our App Assure service</h3>
+<p><a href="https://www.microsoft.com/fasttrack/microsoft-365/app-assure">Learn more about App Assure compatibility assistance</a> to help with porting your Windows app or driver to Arm64. To register and connect with App Assure, visit <a href="https://aka.ms/AppAssureRequest">aka.ms/AppAssureRequest</a> or send an email to <a href="mailto:achelp@microsoft.com">achelp@microsoft.com</a> to submit your request for Windows on Arm compatibility support.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/arm32-to-arm64.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

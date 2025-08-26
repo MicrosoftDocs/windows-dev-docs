@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Retrieve a window handle (HWND) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Retrieve a window handle (HWND) ">
+    
+    <meta name="description" content="This topic shows you how, in a desktop app, to retrieve the window handle for a window.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="retrieve-a-window-handle-hwnd">Retrieve a window handle (HWND)</h1>
+
+<p>This topic shows you how, in a desktop app, to retrieve the window handle for a window. The scope covers <a href="../../winui/winui3/index.html">WinUI 3</a>, <a href="/dotnet/desktop/wpf/">Windows Presentation Foundation (WPF)</a>, and <a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a> apps; code examples are presented in C# and <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>.</p>
+<p>The development and UI frameworks listed above are (behind the scenes) built on the <a href="/windows/win32/">Win32 API</a>. In Win32, a <a href="/windows/win32/winmsg/about-windows">window</a> object is identified by a value known as a <a href="/windows/win32/winmsg/about-windows#window-handle">window handle</a>. And the type of a window handle is an <strong><a href="/windows/win32/winprog/windows-data-types">HWND</a></strong> (although it surfaces in C# as an <a href="/dotnet/api/system.intptr"><strong>IntPtr</strong></a>). In any case, you'll hear the term <strong>HWND</strong> used as a shorthand for <em>window handle</em>.</p>
+<p>There are several reasons to retrieve the <strong>HWND</strong> for a window in your WinUI 3, WPF, or WinForms desktop app. One example is to use the <strong>HWND</strong> to interoperate with certain Windows Runtime (WinRT) objects that depend on a <strong>CoreWindow</strong> to display a user-interface (UI). For more info, see <a href="display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<h2 id="winui-3-with-c">WinUI 3 with C#</h2>
+<p>The C# code below shows how to retrieve the window handle (HWND) for a WinUI 3 <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> object. This example calls the <strong>GetWindowHandle</strong> method on the <strong>WinRT.Interop.WindowNative</strong> C# interop class. For more info about the C# interop classes, see <a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>.</p>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+private async void myButton_Click(object sender, RoutedEventArgs e)
+{
+    // Retrieve the window handle (HWND) of the current WinUI 3 window.
+    var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+}
+</code></pre>
+<h2 id="winui-3-with-c-1">WinUI 3 with C++</h2>
+<p>The C++/WinRT code below shows how to retrieve the window handle (HWND) for a WinUI 3 <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> object. This example calls the <a href="/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle"><strong>IWindowNative::get_WindowHandle</strong></a> method.</p>
+<pre><code class="lang-cppwinrt">// pch.h
+...
+#include &lt;microsoft.ui.xaml.window.h&gt;
+
+// MainWindow.xaml.cpp
+void MainWindow::myButton_Click(IInspectable const&amp;, RoutedEventArgs const&amp;)
+{
+    // Retrieve the window handle (HWND) of the current WinUI 3 window.
+    auto windowNative{ this-&gt;m_inner.as&lt;::IWindowNative&gt;() };
+    HWND hWnd{ 0 };
+    windowNative-&gt;get_WindowHandle(&amp;hWnd);
+}
+</code></pre>
+<h2 id="wpf-with-c">WPF with C#</h2>
+<p>The C# code below shows how to retrieve the window handle (HWND) for a WPF window object. This example uses the <a href="/dotnet/api/system.windows.interop.windowinterophelper"><strong>WindowInteropHelper</strong></a> class.</p>
+<pre><code class="lang-csharp">// MainWindow.xaml.cs
+private void Button_Click(object sender, RoutedEventArgs e)
+{
+    var wih = new System.Windows.Interop.WindowInteropHelper(this);
+    var hWnd = wih.Handle;
+}
+</code></pre>
+<h2 id="winforms-with-c">WinForms with C#</h2>
+<p>The C# code below shows how to retrieve the window handle (HWND) for a WinForms form object. This example uses the <a href="/dotnet/api/system.windows.forms.nativewindow.handle"><strong>NativeWindow.Handle</strong></a> property.</p>
+<pre><code class="lang-csharp">// Form1.cs
+private void button1_Click(object sender, EventArgs e)
+{
+    var hWnd = this.Handle;
+}
+</code></pre>
+<h2 id="determining-the-window-thats-hosting-a-visual-element">Determining the window that's hosting a visual element</h2>
+<p>From a visual element, you can access <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot">UIElement.XamlRoot</a>; then <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.contentislandenvironment">XamlRoot.ContentIslandEnvironment</a>; then the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.content.contentislandenvironment.appwindowid">ContentIslandEnvironment.AppWindowId</a> property contains the ID of the top-level Win32 HWND.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a></li>
+<li><a href="../../desktop/modernize/winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a></li>
+<li><a href="../../winui/winui3/index.html">WinUI 3</a></li>
+<li><a href="/dotnet/desktop/wpf/">Windows Presentation Foundation (WPF)</a></li>
+<li><a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a></li>
+<li><a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a></li>
+<li><a href="/windows/win32/">Win32 API</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/ui-input/retrieve-hwnd.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

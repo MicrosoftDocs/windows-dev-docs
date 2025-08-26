@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Implementing custom effects </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Implementing custom effects ">
+    
+    <meta name="description" content="An in-depth guide on implementing custom D2D effects with Win2D.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="implementing-custom-effects">Implementing custom effects</h1>
+
+<p>Win2D provides several APIs to represent objects that can be drawn, which are divided into two categories: images and effects. Images, represented by the <code>ICanvasImage</code> interface, have no inputs and can be directly drawn on a given surface. For example, <code>CanvasBitmap</code>, <code>VirtualizedCanvasBitmap</code> and <code>CanvasRenderTarget</code> are examples of image types. Effects, on the other hand, are represented by the <code>ICanvasEffect</code> interface. They can have inputs as well as additional resources, and can apply arbitrary logic to produce their outputs (as an effect is also an image). Win2D includes effects wrapping most <a href="/windows/win32/direct2d/effects-overview">D2D effects</a>, such as <code>GaussianBlurEffect</code>, <code>TintEffect</code> and <code>LuminanceToAlphaEffect</code>.</p>
+<p>Images and effects can also be chained together, to create arbitrary graphs which can then be displayed in your application (also refer to the D2D docs on <a href="/windows/win32/direct2d/effects-overview">Direct2D effects</a>). Together, they provide an extremely flexible system to author complex graphics in an efficient manner. However, there are cases where the built-in effects are not sufficient, and you might want to build your very own Win2D effect. To support this, Win2D includes a set of powerful interop APIs that allows defining custom images and effects that can seamlessly integrate with Win2D.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you are using C# and want to implement a custom effect or effect graph, it is recommended to use <a href="https://github.com/Sergio0694/ComputeSharp">ComputeSharp</a> rather than trying to implement an effect from scratch. <a href="#custom-effects-in-c-using-computesharp">See the paragraph below</a> for a detailed explanation of how to use this library to implement custom effects that integrate seamlessly with Win2D.</p>
+</div>
+<blockquote>
+<p><strong>Platform APIs:</strong> <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>ICanvasImage</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>CanvasBitmap</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>VirtualizedCanvasBitmap</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>CanvasRenderTarget</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>CanvasEffect</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>GaussianBlurEffect</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>TintEffect</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm"><code>ICanvasLuminanceToAlphaEffectImage</code></a>, <a href="/uwp/api/windows.graphics.effects.igraphicseffectsource"><code>IGraphicsEffectSource</code></a>, <a href="/windows/win32/api/d2d1/nn-d2d1-id2d1image"><code>ID2D21Image</code></a>, <a href="/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1factory1"><code>ID2D1Factory1</code></a>, <a href="/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1effect"><code>ID2D1Effect</code></a></p>
+</blockquote>
+<h2 id="implementing-a-custom-icanvasimage">Implementing a custom <code>ICanvasImage</code></h2>
+<p>The simplest scenario to support is creating a custom <code>ICanvasImage</code>. As we mentioned, this is the WinRT interface defined by Win2D which represents all kinds of images that Win2D can interop with. This interface only exposes two <code>GetBounds</code> methods, and extends <code>IGraphicsEffectSource</code>, which is a marker interface representing &quot;some effect source&quot;.</p>
+<p>As you can see, there are no &quot;functional&quot; APIs exposed by this interface to actually perform any drawing. In order to implement your own <code>ICanvasImage</code> object, you'll need to also implement the <code>ICanvasImageInterop</code> interface, which exposes all the necessary logic for Win2D to draw the image. This is a COM interface defined in the public <code>Microsoft.Graphics.Canvas.native.h</code> header, that ships with Win2D.</p>
+<p>The interface is defined as follows:</p>
+<pre><code class="lang-cpp">[uuid(&quot;E042D1F7-F9AD-4479-A713-67627EA31863&quot;)]
+class ICanvasImageInterop : IUnknown
+{
+    HRESULT GetDevice(
+        ICanvasDevice** device,
+        WIN2D_GET_DEVICE_ASSOCIATION_TYPE* type);
+
+    HRESULT GetD2DImage(
+        ICanvasDevice* device,
+        ID2D1DeviceContext* deviceContext,
+        WIN2D_GET_D2D_IMAGE_FLAGS flags,
+        float targetDpi,
+        float* realizeDpi,
+        ID2D1Image** ppImage);
+}
+</code></pre>
+<p>And it also relies on these two enumeration types, from the same header:</p>
+<pre><code class="lang-cpp">enum WIN2D_GET_DEVICE_ASSOCIATION_TYPE
+{
+    WIN2D_GET_DEVICE_ASSOCIATION_TYPE_UNSPECIFIED,
+    WIN2D_GET_DEVICE_ASSOCIATION_TYPE_REALIZATION_DEVICE,
+    WIN2D_GET_DEVICE_ASSOCIATION_TYPE_CREATION_DEVICE
+}
+
+enum WIN2D_GET_D2D_IMAGE_FLAGS
+{
+    WIN2D_GET_D2D_IMAGE_FLAGS_NONE,
+    WIN2D_GET_D2D_IMAGE_FLAGS_READ_DPI_FROM_DEVICE_CONTEXT,
+    WIN2D_GET_D2D_IMAGE_FLAGS_ALWAYS_INSERT_DPI_COMPENSATION,
+    WIN2D_GET_D2D_IMAGE_FLAGS_NEVER_INSERT_DPI_COMPENSATION,
+    WIN2D_GET_D2D_IMAGE_FLAGS_MINIMAL_REALIZATION,
+    WIN2D_GET_D2D_IMAGE_FLAGS_ALLOW_NULL_EFFECT_INPUTS,
+    WIN2D_GET_D2D_IMAGE_FLAGS_UNREALIZE_ON_FAILURE
+}
+</code></pre>
+<p>The two <code>GetDevice</code> and <code>GetD2DImage</code> methods are all that's needed to implement custom images (or effects), as they provide Win2D with the extensibility points to initialize them on a given device and retrieve the underlying D2D image to draw. Implementing these methods correctly is critical to ensure things will work properly in all supported scenarios.</p>
+<p>Let's go over them to see how each method works.</p>
+<h3 id="implementing-getdevice">Implementing <code>GetDevice</code></h3>
+<p>The <code>GetDevice</code> method is the simplest of the two. What it does is it retrieves the canvas device associated with the effect, so that Win2D can inspect it if necessary (for instance, to ensure it matches the device in use). The <code>type</code> parameter indicates the &quot;association type&quot; for the returned device.</p>
+<p>There are two main possible cases:</p>
+<ul>
+<li>If the image is an effect, it should support being &quot;realized&quot; and &quot;unrealized&quot; on multiple devices. What this means is: a given effect is created in an uninitialized state, then it can be realized when a device is passed while drawing, and after that it can keep being used with that device, or it can be moved to a different device. In that case, the effect will reset its internal state and then realize itself again on the new device. This means that the associated canvas device can change over time, and it can also be <code>null</code>. Because of this, <code>type</code> should be set to <code>WIN2D_GET_DEVICE_ASSOCIATION_TYPE_REALIZATION_DEVICE</code>, and the returned device should be set to the current realization device, if one is available.</li>
+<li>Some images have a single &quot;owning device&quot; which is assigned at creation time and can never change. For instance, this would be the case for an image representing a texture, as that is allocated on a specific device and cannot be moved. When <code>GetDevice</code> is called, it should return the creation device and set <code>type</code> to <code>WIN2D_GET_DEVICE_ASSOCIATION_TYPE_CREATION_DEVICE</code>. Note that when this type is specified, the returned device should not be <code>null</code>.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Win2D can call <code>GetDevice</code> while recursively traversing an effect graph, meaning there might be multiple active calls to <code>GetD2DImage</code> in the stack. Because of this, <code>GetDevice</code> should not take a blocking lock on the current image, as that could potentially deadlock. Rather, it should use a re-entrant lock in a non-blocking manner, and return an error if it cannot be acquired. This ensures that the same thread recursively calling it will successfully acquire it, whereas concurrent threads doing the same will fail gracefully.</p>
+</div>
+<h3 id="implementing-getd2dimage">Implementing <code>GetD2DImage</code></h3>
+<p><code>GetD2DImage</code> is where most of the work takes place. This method is responsible for retrieving the <code>ID2D1Image</code> object that Win2D can draw, optionally realizing the current effect if needed. This also includes recursively traversing and realizing the effect graph for all sources, if any, as well as initializing any state that the image might need (eg. constant buffers and other properties, resource textures, etc.).</p>
+<p>The exact implementation of this method is highly dependent on the image type and it can vary a lot, but generally speaking for an arbitrary effect you can expect the method to perform the following steps:</p>
+<ul>
+<li>Check whether the call was recursive on the same instance, and fail if so. This is needed to detect cycles in an effect graph (eg. effect <code>A</code> has effect <code>B</code> as source, and effect <code>B</code> has effect <code>A</code> as source).</li>
+<li>Acquire a lock on the image instance to protect against concurrent access.</li>
+<li>Handle the target DPIs according to the input flags</li>
+<li>Validate whether the input device matches the one in use, if any. If it does not match and the current effect supports realization, unrealize the effect.</li>
+<li>Realize the effect on the input device. This can include registering the D2D effect on the <code>ID2D1Factory1</code> object retrieved from the input device or device context, if needed. Additionally, all necessary state should be set on the D2D effect instance being created.</li>
+<li>Recursively traverse any sources and bind them to the D2D effect.</li>
+</ul>
+<p>With respect to the input flags, there are several possible cases that custom effects should properly handle, to ensure compatibility with all other Win2D effects. Excluding <code>WIN2D_GET_D2D_IMAGE_FLAGS_NONE</code>, the flags to handle are the following:</p>
+<ul>
+<li><code>WIN2D_GET_D2D_IMAGE_FLAGS_READ_DPI_FROM_DEVICE_CONTEXT</code>: in this case, <code>device</code> is guaranteed to not be <code>null</code>. The effect should check whether the device context target is an <code>ID2D1CommandList</code>, and if so, add the <code>WIN2D_GET_D2D_IMAGE_FLAGS_ALWAYS_INSERT_DPI_COMPENSATION</code> flag. Otherwise, it should set <code>targetDpi</code> (which is also guaranteed to not be <code>null</code>) to the DPIs retrieved from the input context. Then, it should remove <code>WIN2D_GET_D2D_IMAGE_FLAGS_READ_DPI_FROM_DEVICE_CONTEXT</code> from the flags.</li>
+<li><code>WIN2D_GET_D2D_IMAGE_FLAGS_ALWAYS_INSERT_DPI_COMPENSATION</code> and <code>WIN2D_GET_D2D_IMAGE_FLAGS_NEVER_INSERT_DPI_COMPENSATION</code>: used when setting effect sources (see notes below).</li>
+<li><code>WIN2D_GET_D2D_IMAGE_FLAGS_MINIMAL_REALIZATION</code>: if set, skips recursively realizing the sources of the effect, and just returns the realized effect with no other changes.</li>
+<li><code>WIN2D_GET_D2D_IMAGE_FLAGS_ALLOW_NULL_EFFECT_INPUTS</code>: if set, effect sources being realized are allowed to be <code>null</code>, if the user has not set them to an existing source yet.</li>
+<li><code>WIN2D_GET_D2D_IMAGE_FLAGS_UNREALIZE_ON_FAILURE</code>: if set, and an effect source being set is not valid, the effect should unrealize before failing. That is, if the error occurred while resolving the effect sources after realizing the effect, the effect should unrealize itself before returning the error to the caller.</li>
+</ul>
+<p>With respect to the DPI-related flags, these control how effect sources are set. To ensure compatibility with Win2D, effects should automatically add DPI compensation effects to their inputs when needed. They can control whether that is the case like so:</p>
+<ul>
+<li>If <code>WIN2D_GET_D2D_IMAGE_FLAGS_MINIMAL_REALIZATION</code> is set, a DPI compensation effect is needed whenever the <code>inputDpi</code> parameter is not <code>0</code>.</li>
+<li>Otherwise, DPI compensation is needed if <code>inputDpi</code> is not <code>0</code>, <code>WIN2D_GET_D2D_IMAGE_FLAGS_NEVER_INSERT_DPI_COMPENSATION</code> is not set, and either <code>WIN2D_GET_D2D_IMAGE_FLAGS_ALWAYS_INSERT_DPI_COMPENSATION</code> is set, or the input DPI and the target DPI values don't match.</li>
+</ul>
+<p>This logic should be applied whenever a source is being realized and bound to an input of the current effect. Note that if a DPI compensation effect is added, that should be the input set to the underlying D2D image. But, if the user tries to retrieve the WinRT wrapper for that source, the effect should take care to detect whether a DPI effect was used, and return a wrapper for the original source object instead. That is, DPI compensation effects should be transparent to users of the effect.</p>
+<p>After all initialization logic is done, the resulting <code>ID2D1Image</code> (just like with Win2D objects, a D2D effect is also an image) should be ready to be drawn by Win2D on the target context, which is not yet known by the callee at this time.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Correctly implementing this method (and <code>ICanvasImageInterop</code> in general) is <strong>extremely</strong> complicated, and it's only meant to be done by advanced users that absolutely need the extra flexibility. A solid understanding of D2D, Win2D, COM, WinRT and C++ is recommended before attempting to write an <code>ICanvasImageInterop</code> implementation. If your custom Win2D effect also has to wrap a custom D2D effect, you'll need to implement your own <code>ID2D1Effect</code> object as well (refer to the <a href="/windows/win32/direct2d/custom-effects">D2D docs</a> on custom effects for more info on this). These docs are not an exhaustive description of all necessary logic (for instance, they don't cover how effect sources should be marshalled and managed across the D2D/Win2D boundary), so it is recommended to also use the <code>CanvasEffect</code> implementation in Win2D's codebase as a reference point for a custom effect, and modify it as needed.</p>
+</div>
+<h3 id="implementing-getbounds">Implementing <code>GetBounds</code></h3>
+<p>The last missing component to fully implement a custom <code>ICanvasImage</code> effect is to support the two <code>GetBounds</code> overloads. To make this easy, Win2D exposes a C export which can be used to leverage the existing logic for this from Win2D on any custom image. The export is as follows:</p>
+<pre><code class="lang-cpp">HRESULT GetBoundsForICanvasImageInterop(
+    ICanvasResourceCreator* resourceCreator,
+    ICanvasImageInterop* image,
+    Numerics::Matrix3x2 const* transform,
+    Rect* rect);
+</code></pre>
+<p>Custom images can invoke this API and pass themselves as the <code>image</code> parameter, and then simply return the result to their callers. The <code>transform</code> parameter can be <code>null</code>, if no transform is available.</p>
+<h2 id="optimizing-device-context-accesses">Optimizing device context accesses</h2>
+<p>The <code>deviceContext</code> parameter in <code>ICanvasImageInterop::GetD2DImage</code> can sometimes be <code>null</code>, if a context is not immediately available before the invocation. This is done on purpose, so that a context is only created lazily when it's actually needed. That is, if a context is available, Win2D will pass it to the <code>GetD2DImage</code> invocation, otherwise it will let callees retrieve one on their own if necessary.</p>
+<p>Creating a device context is relatively expensive, so to make retrieving one faster Win2D exposes APIs to access its internal device context pool. This allows custom effects to rent and return device contexts associated with a given canvas device in an efficient manner.</p>
+<p>The device context lease APIs are defined as follows:</p>
+<pre><code class="lang-cpp">[uuid(&quot;A0928F38-F7D5-44DD-A5C9-E23D94734BBB&quot;)]
+interface ID2D1DeviceContextLease : IUnknown
+{
+    HRESULT GetD2DDeviceContext(ID2D1DeviceContext** deviceContext);
+}
+
+[uuid(&quot;454A82A1-F024-40DB-BD5B-8F527FD58AD0&quot;)]
+interface ID2D1DeviceContextPool : IUnknown
+{
+    HRESULT GetDeviceContextLease(ID2D1DeviceContextLease** lease);
+}
+</code></pre>
+<p>The <code>ID2D1DeviceContextPool</code> interface is implemented by <code>CanvasDevice</code>, which is the Win2D type implementing the <code>ICanvasDevice</code> interface. To use the pool, use <code>QueryInterface</code> on the device interface to obtain an <code>ID2D1DeviceContextPool</code> reference, and then call <code>ID2D1DeviceContextPool::GetDeviceContextLease</code> to obtain an <code>ID2D1DeviceContextLease</code> object to access the device context. Once that's no longer needed, release the lease. Make sure to not touch the device context after the lease has been released, as it might be used concurrently by other threads.</p>
+<h2 id="enabling-winrt-wrappers-lookup">Enabling WinRT wrappers lookup</h2>
+<p>As seen in the <a href="https://microsoft.github.io/Win2D/WinUI2/html/Interop.htm">Win2D interop docs</a>, the Win2D public header also exposes a <code>GetOrCreate</code> method (accessible from the <code>ICanvasFactoryNative</code> activation factory, or through the <code>GetOrCreate</code> C++/CX helpers defined in the same header). This allows retrieving a WinRT wrapper from a given native resource. For instance, it lets you retrieve or create a <code>CanvasDevice</code> instance from an <code>ID2D1Device1</code> object, a <code>CanvasBitmap</code> from an <code>ID2D1Bitmap</code>, etc.</p>
+<p>This method also works for all built-in Win2D effects: retrieving the native resource for a given effect and then using that to retrieve the corresponding Win2D wrapper will correctly return the owning Win2D effect for it. In order for custom effects to also benefit from the same mapping system, Win2D exposes several APIs in the interop interface for the activation factory for <code>CanvasDevice</code>, which is the <code>ICanvasFactoryNative</code> type, as well as an additional effect factory interface, <code>ICanvasEffectFactoryNative</code>:</p>
+<pre><code class="lang-cpp">[uuid(&quot;29BA1A1F-1CFE-44C3-984D-426D61B51427&quot;)]
+class ICanvasEffectFactoryNative : IUnknown
+{
+    HRESULT CreateWrapper(
+        ICanvasDevice* device,
+        ID2D1Effect* resource,
+        float dpi,
+        IInspectable** wrapper);
+};
+
+[uuid(&quot;695C440D-04B3-4EDD-BFD9-63E51E9F7202&quot;)]
+class ICanvasFactoryNative : IInspectable
+{
+    HRESULT GetOrCreate(
+        ICanvasDevice* device,
+        IUnknown* resource,
+        float dpi,
+        IInspectable** wrapper);
+
+    HRESULT RegisterWrapper(IUnknown* resource, IInspectable* wrapper);
+
+    HRESULT UnregisterWrapper(IUnknown* resource);
+
+    HRESULT RegisterEffectFactory(
+        REFIID effectId,
+        ICanvasEffectFactoryNative* factory);
+
+    HRESULT UnregisterEffectFactory(REFIID effectId);
+};
+</code></pre>
+<p>There are several APIs to consider here, as they're needed to support all the various scenarios where Win2D effects can be used, as well as how developers could do interop with the D2D layer and then try to resolve wrappers for them. Let's go over each of these APIs.</p>
+<p>The <code>RegisterWrapper</code> and <code>UnregisterWrapper</code> methods are meant to be invoked by custom effects to add themselves into the internal Win2D cache:</p>
+<ul>
+<li><code>RegisterWrapper</code>: registers a native resource and its owning WinRT wrapper. The <code>wrapper</code> parameter is required to also implemement <a href="/windows/win32/api/weakreference/nn-weakreference-iweakreferencesource"><code>IWeakReferenceSource</code></a>, so that it can be cached correctly without causing reference cycles which would lead to memory leaks. The method returns <code>S_OK</code> if the native resource could be added to the cache, <code>S_FALSE</code> if there was already a registered wrapper for <code>resource</code>, and an error code if an error occurs.</li>
+<li><code>UnregisterWrapper</code>: unregisters a native resource and its wrapper. Returns <code>S_OK</code> if the resource could be removed, <code>S_FALSE</code> if <code>resource</code> was not already registered, and an erro code if another error occurrs.</li>
+</ul>
+<p>Custom effects should call <code>RegisterWrapper</code> and <code>UnregisterWrapper</code> whenever they are realized and unrealized, ie. when a new native resource is created and associated with them. Custom effects that do not support realization (eg. those having a fixed associated device) can call <code>RegisterWrapper</code> and <code>UnregisterWrapper</code> when they are created and destroyed. Custom effects should make sure to correctly unregister themselves from all possible code paths that would cause the wrapper to become invalid (eg. including when the object is finalized, in case it's implemented in a managed language).</p>
+<p>The <code>RegisterEffectFactory</code> and <code>UnregisterEffectFactory</code> methods are also meant to be used by custom effects, so that they can also register a callback to create a new wrapper in case a developer tries to resolve one for an &quot;orphaned&quot; D2D resource:</p>
+<ul>
+<li><code>RegisterEffectFactory</code>: register a callback that takes in input the same parameters that a developer passed to <code>GetOrCreate</code>, and creates a new inspectable wrapper for the input effect. The effect id is used as key, so that each custom effect can register a factory for it when it's first loaded. Of course, this should only be done once per effect type, and not every time the effect is realized. The <code>device</code>, <code>resource</code> and <code>wrapper</code> parameters are checked by Win2D before invoking any registered callback, so they are guaranteed to not be <code>null</code> when <code>CreateWrapper</code> is invoked. The <code>dpi</code> is considered optional, and can be ignored in case the effect type doesn't have a specific use for it. Note that when a new wrapper is created from a registered factory, that factory should also make sure that the new wrapper is registered in the cache (Win2D will not automatically add wrappers produced by external factories to the cache).</li>
+<li><code>UnregisterEffectFactory</code>: removes a previously register callback. For instance, this could be used if an effect wrapper is implemented in a managed assembly which is being unloaded.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>ICanvasFactoryNative</code> is implemented by the activation factory for <code>CanvasDevice</code>, which you can retrieve by either manually calling <a href="/windows/win32/api/roapi/nf-roapi-rogetactivationfactory"><code>RoGetActivationFactory</code></a>, or using helper APIs from the language extensions you're using (eg. <a href="/uwp/cpp-ref-for-winrt/get-activation-factory"><code>winrt::get_activation_factory</code></a> in C++/WinRT). For more info, see <a href="/uwp/winrt-cref/winrt-type-system">WinRT type system</a> for more information on how this works.</p>
+</div>
+<p>For a practical example of where this mapping comes into play, consider how built-in Win2D effects work. If they are not realized, all state (eg. properties, sources, etc.) is stored in an internal cache in each effect instance. When they are realized, all state is transferred to the native resource (eg. properties are set on the D2D effect, all sources are resolved and mapped to effect inputs, etc.), and as long as the effect is realized it will act as the authority on the state of the wrapper. That is, if the value of any property is fetched from the wrapper, it will retrieve the updated value for it from the native D2D resource associated with it.</p>
+<p>This ensures that if any changes are made directly to the D2D resource, those will be visible on the outer wrapper as well, and the two will never be &quot;out of sync&quot;. When the effect is unrealized, all state is transferred back from the native resource to the wrapper state, before the resource is released. It will be kept and updated there until the next time the effect is realized. Now, consider this sequence of events:</p>
+<ul>
+<li>You have some Win2D effect (either built-in, or custom).</li>
+<li>You get the <code>ID2D1Image</code> from it (which is an <code>ID2D1Effect</code>).</li>
+<li>You create an instance of a custom effect.</li>
+<li>You also get the <code>ID2D1Image</code> from that.</li>
+<li>You manually set this image as input for the previous effect (via <a href="/windows/win32/api/d2d1_1/nf-d2d1_1-id2d1effect-setinput"><code>ID2D1Effect::SetInput</code></a>).</li>
+<li>You then ask that first effect for the WinRT wrapper for that input.</li>
+</ul>
+<p>Since the effect is realized (it was realized when the native resource was requested), it will use the native resource as the source of truth. As such, it will get the <code>ID2D1Image</code> corresponding to the requested source, and try to retrieve the WinRT wrapper for it. If the effect this input was retrieved from has correctly added its own pair of native resource and WinRT wrapper to Win2D's cache, the wrapper will be resolved and returned to callers. If not, that property access will fail, as Win2D can't resolve WinRT wrappers for effects it does not own, as it doesn't know how to instantiate them.</p>
+<p>This is where <code>RegisterWrapper</code> and <code>UnregisterWrapper</code> help, as they allow custom effects to seamlessly participate in Win2D's wrapper resolution logic, so that the correct wrapper can always be retrieved for any effect source, regardless of whether it was set from WinRT APIs, or directly from the underlying D2D layer.</p>
+<p>To explain how the effect factories also come into play, consider this scenario:</p>
+<ul>
+<li>A user creates an instance of a custom wrapper and realizes it</li>
+<li>They then gets a reference to the underlying D2D effect and keeps it.</li>
+<li>Then, the effect is realized on a different device. The effect will unrealize and re-realize, and in doing so it will create a new D2D effect. The previous D2D effect no longer as an associated inspectable wrapper at this point.</li>
+<li>The user then calls <code>GetOrCreate</code> on the first D2D effect.</li>
+</ul>
+<p>Without a callback, Win2D would just fail to resolve a wrapper, as there's no registered wrapper for it. If a factory is registered instead, a new wrapper for that D2D effect can be created and returned, so the scenario just keeps working seamlessly for the user.</p>
+<h2 id="implementing-a-custom-icanvaseffect">Implementing a custom <code>ICanvasEffect</code></h2>
+<p>The Win2D <code>ICanvasEffect</code> interface extends <code>ICanvasImage</code>, so all the previous points apply to custom effects as well. The only difference is the fact that <code>ICanvasEffect</code> also implements additional methods specific to effects, such as invalidating a source rectangle, getting the required rectangles and so on.</p>
+<p>To support this, Win2D exposes C exports that authors of custom effects can use, so that they won't have to reimplement all this extra logic from scratch. This works in the same way as the C export for <code>GetBounds</code>. Here are the available exports for effects:</p>
+<pre><code class="lang-cpp">HRESULT InvalidateSourceRectangleForICanvasImageInterop(
+    ICanvasResourceCreatorWithDpi* resourceCreator,
+    ICanvasImageInterop* image,
+    uint32_t sourceIndex,
+    Rect const* invalidRectangle);
+
+HRESULT GetInvalidRectanglesForICanvasImageInterop(
+    ICanvasResourceCreatorWithDpi* resourceCreator,
+    ICanvasImageInterop* image,
+    uint32_t* valueCount,
+    Rect** valueElements);
+
+HRESULT GetRequiredSourceRectanglesForICanvasImageInterop(
+    ICanvasResourceCreatorWithDpi* resourceCreator,
+    ICanvasImageInterop* image,
+    Rect const* outputRectangle,
+    uint32_t sourceEffectCount,
+    ICanvasEffect* const* sourceEffects,
+    uint32_t sourceIndexCount,
+    uint32_t const* sourceIndices,
+    uint32_t sourceBoundsCount,
+    Rect const* sourceBounds,
+    uint32_t valueCount,
+    Rect* valueElements);
+</code></pre>
+<p>Let's go over how they can be used:</p>
+<ul>
+<li><code>InvalidateSourceRectangleForICanvasImageInterop</code> is meant to support <code>InvalidateSourceRectangle</code>. Simply marshal the input parameters and invoke it directly, and it'll take care of all the necessary work. Note that the <code>image</code> parameter is the current effect instance being implemented.</li>
+<li><code>GetInvalidRectanglesForICanvasImageInterop</code> supports <code>GetInvalidRectangles</code>. This also requires no special consideration, other than needing to dispose the returned COM array once it's no longer needed.</li>
+<li><code>GetRequiredSourceRectanglesForICanvasImageInterop</code> is a shared method that can support both <code>GetRequiredSourceRectangle</code> and <code>GetRequiredSourceRectangles</code>. That is, it takes a pointer to an existing array of values to populate, so callers can either pass a pointer to a single value (which can also be on the stack, to avoid one allocation), or to an array of values. The implementation is the same in both cases, so a single C export is enough to power both of them.</li>
+</ul>
+<h2 id="custom-effects-in-c-using-computesharp">Custom effects in C# using ComputeSharp</h2>
+<p>As we mentioned, if you're using C# and want to implement a custom effect, the recommended approach is to use the <a href="https://github.com/Sergio0694/ComputeSharp">ComputeSharp</a> library. It enables you to both implement custom D2D1 pixel shaders entirely in C#, as well as to easily define custom effects graphs that are compatible with Win2D. The same library is also used in the Microsoft Store to power several graphics components in the application.</p>
+<p>You can add a reference to ComputeSharp in your project through NuGet:</p>
+<ul>
+<li>On UWP, select the <a href="https://www.nuget.org/packages/ComputeSharp.D2D1.Uwp/"><strong>ComputeSharp.D2D1.Uwp</strong></a> package.</li>
+<li>On WinAppSDK, select the <a href="https://www.nuget.org/packages/ComputeSharp.D2D1.WinUI/"><strong>ComputeSharp.D2D1.WinUI</strong></a> package.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Many APIs in ComputeSharp.D2D1.* are identical across the UWP and WinAppSDK targets, the only difference being the namespace (ending in either <code>.Uwp</code> or <code>.WinUI</code>). However, the UWP target is in sustained maintenance and not receiving new features. As such, some code changes might be needed compared to the samples shown here for WinUI. The snippets in this document reflect the API surface as of ComputeSharp.D2D1.WinUI 3.0.0 (the last release for the UWP target is instead 2.1.0).</p>
+</div>
+<p>There are two main components in ComputeSharp to interop with Win2D:</p>
+<ul>
+<li><code>PixelShaderEffect&lt;T&gt;</code>: a Win2D effect that is powered by a D2D1 pixel shader. The shader itself is written in C# using the APIs provided by ComputeSharp. This class also provides properties to set effect sources, constant values, and more.</li>
+<li><code>CanvasEffect</code>: a base class for custom Win2D effects that wraps an arbitrary effect graph. It can be used to &quot;package&quot; complex effects into an easy to use object that can be reused in several parts of an application.</li>
+</ul>
+<p>Here is an example of a custom pixel shader (ported from <a href="https://www.shadertoy.com/view/tlVGDt">this shadertoy shader</a>), used with <code>PixelShaderEffect&lt;T&gt;</code> and then draw onto a Win2D <code>CanvasControl</code> (note that <code>PixelShaderEffect&lt;T&gt;</code> implements <code>ICanvasImage</code>):</p>
+<p><img src="https://user-images.githubusercontent.com/10199417/224403057-162c9bcf-f974-4275-b0ec-eb68ca8879b8.png" alt="a sample pixel shader displaying infinite colored hexagons, being drawn onto a Win2D control, and displayed running in an app window"></p>
+<p>You can see how in just two lines of code you can create an effect and draw it via Win2D. ComputeSharp takes care of all the work necessary to compile the shader, register it, and manage the complex lifetime of a Win2D-compatible effect.</p>
+<p>Next, let's see a step by step guide on how to create a custom Win2D effect that also uses a custom D2D1 pixel shader. We'll go over how to author a shader with ComputeSharp and setup its properties, and then how to create a custom effect graph packaged into a <code>CanvasEffect</code> type that can easily be reused in your application.</p>
+<h3 id="designing-the-effect">Designing the effect</h3>
+<p>For this demo, we want to create a simple frosted glass effect.</p>
+<p>This will include the following components:</p>
+<ul>
+<li>Gaussian blur</li>
+<li>Tint effect</li>
+<li>Noise (which we can procedurally generate with a shader)</li>
+</ul>
+<p>We'll also want to expose properties to control the blur and noise amount. The final effect will contain a &quot;packaged&quot; version of this effect graph and be easy to use by just creating an instance, setting those properties, connecting a source image, and then drawing it. Let's get started!</p>
+<h3 id="creating-a-custom-d2d1-pixel-shader">Creating a custom D2D1 pixel shader</h3>
+<p>For the noise on top of the effect, we can use a simple D2D1 pixel shader. The shader will compute a random value based on its coordinates (which will act as a &quot;seed&quot; for the random number), and then it will use that noise value to compute the RGB amount for that pixel. We can then blend this noise on top of the resulting image.</p>
+<p>To write the shader with ComputeSharp, we just need to define a <code>partial struct</code> type implementing the <code>ID2D1PixelShader</code> interface, and then write our logic in the <code>Execute</code> method. For this noise shader, we can write something like this:</p>
+<pre><code class="lang-csharp">using ComputeSharp;
+using ComputeSharp.D2D1;
+
+[D2DInputCount(0)]
+[D2DRequiresScenePosition]
+[D2DShaderProfile(D2D1ShaderProfile.PixelShader40)]
+[D2DGeneratedPixelShaderDescriptor]
+public readonly partial struct NoiseShader(float amount) : ID2D1PixelShader
+{
+    /// &lt;inheritdoc/&gt;
+    public float4 Execute()
+    {
+        // Get the current pixel coordinate (in pixels)
+        int2 position = (int2)D2D.GetScenePosition().XY;
+
+        // Compute a random value in the [0, 1] range for each target pixel. This line just
+        // calculates a hash from the current position and maps it into the [0, 1] range.
+        // This effectively provides a &quot;random looking&quot; value for each pixel.
+        float hash = Hlsl.Frac(Hlsl.Sin(Hlsl.Dot(position, new float2(41, 289))) * 45758.5453f);
+
+        // Map the random value in the [0, amount] range, to control the strength of the noise
+        float alpha = Hlsl.Lerp(0, amount, hash);
+
+        // Return a white pixel with the random value modulating the opacity
+        return new(1, 1, 1, alpha);
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While the shader is written entirely in C#, basic knowledge of <a href="/windows/win32/direct3dhlsl/dx-graphics-hlsl">HLSL</a> (the programming language for DirectX shaders, which ComputeSharp transpiles C# to) is recommended.</p>
+</div>
+<p>Let's go over this shader in detail:</p>
+<ul>
+<li>The shader has no inputs, it just produces an infinite image with random grayscale noise.</li>
+<li>The shader requires access to the current pixel coordinate.</li>
+<li>The shader is precompiled at build time (using the <code>PixelShader40</code> profile, which is guaranteed to be available on any GPU where the application could be running).</li>
+<li>The <code>[D2DGeneratedPixelShaderDescriptor]</code> attribute is needed to trigger the source generator bundled with ComputeSharp, which will analyze the C# code, transpile it to HLSL, compile the shader to bytecode, etc.</li>
+<li>The shader captures a <code>float amount</code> parameter, via its <a href="/dotnet/csharp/whats-new/tutorials/primary-constructors">primary constructor</a>. The source generator in ComputeSharp will automatically take care of extracting all captured values in a shader and preparing the constant buffer that D2D needs to initialize the shader state.</li>
+</ul>
+<p>And this part is done! This shader will generate our custom noise texture whenever needed. Next, we need to create our packaged effect with the effect graph connecting all our effects together.</p>
+<h3 id="creating-a-custom-effect">Creating a custom effect</h3>
+<p>For our easy to use, packaged effect, we can use the <code>CanvasEffect</code> type from ComputeSharp. This type provides a straightforward way to setup all the necessary logic to create an effect graph and update it via public properties that users of the effect can interact with. There are two main methods we'll need to implement:</p>
+<ul>
+<li><code>BuildEffectGraph</code>: this method is responsible for building the effect graph that we want to draw. That is, it needs to create all effects we need, and register the output node for the graph. For effects that can be updated at a later time, the registration is done with an associated <code>CanvasEffectNode&lt;T&gt;</code> value, which acts as lookup key to retrieve the effects from the graph when needed.</li>
+<li><code>ConfigureEffectGraph</code>: this method refreshes the effect graph by applying the settings that the user has configured. This method is automatically invoked when needed, right before drawing the effect, and only if at least one effect property has been modified since the last time the effect was used.</li>
+</ul>
+<p>Our custom effect can be defined as follows:</p>
+<pre><code class="lang-csharp">using ComputeSharp.D2D1.WinUI;
+using Microsoft.Graphics.Canvas;
+using Microsoft.Graphics.Canvas.Effects;
+
+public sealed class FrostedGlassEffect : CanvasEffect
+{
+    private static readonly CanvasEffectNode&lt;GaussianBlurEffect&gt; BlurNode = new();
+    private static readonly CanvasEffectNode&lt;PixelShaderEffect&lt;NoiseShader&gt;&gt; NoiseNode = new();
+
+    private ICanvasImage? _source;
+    private double _blurAmount;
+    private double _noiseAmount;
+
+    public ICanvasImage? Source
+    {
+        get =&gt; _source;
+        set =&gt; SetAndInvalidateEffectGraph(ref _source, value);
+    }
+
+    public double BlurAmount
+    {
+        get =&gt; _blurAmount;
+        set =&gt; SetAndInvalidateEffectGraph(ref _blurAmount, value);
+    }
+
+    public double NoiseAmount
+    {
+        get =&gt; _noiseAmount;
+        set =&gt; SetAndInvalidateEffectGraph(ref _noiseAmount, value);
+    }
+
+    /// &lt;inheritdoc/&gt;
+    protected override void BuildEffectGraph(CanvasEffectGraph effectGraph)
+    {
+        // Create the effect graph as follows:
+        //
+        // ┌────────┐   ┌──────┐
+        // │ source ├──►│ blur ├─────┐
+        // └────────┘   └──────┘     ▼
+        //                       ┌───────┐   ┌────────┐
+        //                       │ blend ├──►│ output │
+        //                       └───────┘   └────────┘
+        //    ┌───────┐              ▲   
+        //    │ noise ├──────────────┘
+        //    └───────┘
+        //
+        GaussianBlurEffect gaussianBlurEffect = new();
+        BlendEffect blendEffect = new() { Mode = BlendEffectMode.Overlay };
+        PixelShaderEffect&lt;NoiseShader&gt; noiseEffect = new();
+        PremultiplyEffect premultiplyEffect = new();
+
+        // Connect the effect graph
+        premultiplyEffect.Source = noiseEffect;
+        blendEffect.Background = gaussianBlurEffect;
+        blendEffect.Foreground = premultiplyEffect;
+
+        // Register all effects. For those that need to be referenced later (ie. the ones with
+        // properties that can change), we use a node as a key, so we can perform lookup on
+        // them later. For others, we register them anonymously. This allows the effect
+        // to autommatically and correctly handle disposal for all effects in the graph.
+        effectGraph.RegisterNode(BlurNode, gaussianBlurEffect);
+        effectGraph.RegisterNode(NoiseNode, noiseEffect);
+        effectGraph.RegisterNode(premultiplyEffect);
+        effectGraph.RegisterOutputNode(blendEffect);
+    }
+
+    /// &lt;inheritdoc/&gt;
+    protected override void ConfigureEffectGraph(CanvasEffectGraph effectGraph)
+    {
+        // Set the effect source
+        effectGraph.GetNode(BlurNode).Source = Source;
+
+        // Configure the blur amount
+        effectGraph.GetNode(BlurNode).BlurAmount = (float)BlurAmount;
+
+        // Set the constant buffer of the shader
+        effectGraph.GetNode(NoiseNode).ConstantBuffer = new NoiseShader((float)NoiseAmount);
+    }
+}
+</code></pre>
+<p>You can see there are four sections in this class:</p>
+<ul>
+<li>First, we have fields to track all mutable state, such as the effects that can be updated as well as the backing fields for all the effect properties that we want to expose to users of the effect.</li>
+<li>Next, we have properties to configure the effect. The setter of each property uses the <code>SetAndInvalidateEffectGraph</code> method exposed by <code>CanvasEffect</code>, which will automatically invalidate the effect if the value being set is different than the current one. This ensures the effect is only configured again when really necessary.</li>
+<li>Lastly, we have the <code>BuildEffectGraph</code> and <code>ConfigureEffectGraph</code> methods we mentioned above.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>PremultiplyEffect</code> node after the noise effect is very important: this is because Win2D effects assume that the output is premultiplied, whereas pixel shaders generally work with unpremultiplied pixels. As such, remember to manually insert premultiply/unpremultiply nodes before and after custom shaders, to ensure colors are correctly preserved.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This sample effect is using WinUI 3 namespaces, but the same code can be used on UWP as well. In that case, the namespace for ComputeSharp will be <code>ComputeSharp.Uwp</code>, matching the package name.</p>
+</div>
+<h3 id="ready-to-draw">Ready to draw!</h3>
+<p>And with this, our custom frosted glass effect is ready! We can easily draw it as follows:</p>
+<pre><code class="lang-csharp">private void CanvasControl_Draw(CanvasControl sender, CanvasDrawEventArgs args)
+{
+    FrostedGlassEffect effect = new()
+    {
+        Source = _canvasBitmap,
+        BlurAmount = 12,
+        NoiseAmount = 0.1
+    };
+
+    args.DrawingSession.DrawImage(effect);
+}
+</code></pre>
+<p>In this example, we're drawing the effect from the <code>Draw</code> handler of a <code>CanvasControl</code>, using a <code>CanvasBitmap</code> which we previously loaded as source. This is the input image we'll use to test the effect:</p>
+<p><img src="images/win2d_mountains_before.png" alt="a picture of some mountains under a cloudy sky"></p>
+<p>And here is the result:</p>
+<p><img src="images/win2d_mountains_after.png" alt="a blurred version of the picture above"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Credits to <a href="https://unsplash.com/it/foto/OWB4VB7Gx9s">Dominic Lange</a> for the picture.</p>
+</div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>Check out the <a href="https://github.com/microsoft/Win2D">Win2D source code</a> for more information.</li>
+<li>For more information on ComputeSharp, check out the <a href="https://github.com/Sergio0694/ComputeSharp/tree/main/samples">sample apps</a> and the <a href="https://github.com/Sergio0694/ComputeSharp/tree/main/tests">unit tests</a>.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/custom-effects.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

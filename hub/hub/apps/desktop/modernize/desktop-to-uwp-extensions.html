@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Integrate your desktop app with Windows using packaging extensions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Integrate your desktop app with Windows using packaging extensions ">
+    
+    <meta name="description" content="You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="integrate-your-desktop-app-with-windows-by-using-packaging-extensions">Integrate your desktop app with Windows by using packaging extensions</h1>
+
+<p>If your desktop app is packaged (has package identity at runtime), then you can use extensions to integrate your app with Windows by using predefined <a href="/uwp/schemas/appxpackage/uapmanifestschema/extensions">extensions in the package manifest</a>. Also see <a href="modernize-packaged-apps.html">Features that require package identity</a>.</p>
+<p>For example, use an extension to create a firewall exception; make your app the default application for a file type; or point Start tiles to your app. To use an extension, just add some XML to your app's package manifest file. No code is required.</p>
+<p>This topic describes those extensions and the tasks that you can perform by using them.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see <a href="../../winui/winui3/create-your-first-winui3-app.html#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app">Create a new project for a packaged WinUI 3 desktop app</a>) and packaged apps with external location (see <a href="grant-identity-to-nonpackaged-apps.html">Grant package identity by packaging with external location</a>). Also see <a href="modernize-packaged-apps.html">Features that require package identity</a>.</p>
+</div>
+<h2 id="transition-users-to-your-app">Transition users to your app</h2>
+<p>Help users transition to your packaged app.</p>
+<ul>
+<li><a href="#redirect">Redirect your existing desktop app to your packaged app</a></li>
+<li><a href="#point">Point existing Start tiles and taskbar buttons to your packaged app</a></li>
+<li><a href="#make">Make your packaged app open files instead of your desktop app</a></li>
+<li><a href="#associate">Associate your packaged app with a set of file types</a></li>
+<li><a href="#add">Add options to the context menus of files that have a certain file type</a></li>
+<li><a href="#open">Open certain types of files directly by using a URL</a></li>
+</ul>
+<p><a id="redirect"></a></p>
+<h3 id="redirect-your-existing-desktop-app-to-your-packaged-app">Redirect your existing desktop app to your packaged app</h3>
+<p>When users start your existing unpackaged desktop app, you can configure your packaged app to be opened instead.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This feature is supported in Windows Insider Preview Build 21313 and later versions.</p>
+</div>
+<p>To enable this behavior:</p>
+<ol>
+<li>Add registry entries to redirect your unpackaged desktop app executable to your packaged app.</li>
+<li>Register your packaged app to be launched when your unpackaged desktop app executable is launched.</li>
+</ol>
+<h4 id="add-registry-entries-to-redirect-your-unpackaged-desktop-app-executable">Add registry entries to redirect your unpackaged desktop app executable</h4>
+<ol>
+<li>In the registry, create a subkey with the name of your desktop app executable file under the <strong>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options</strong> key.</li>
+<li>Under this subkey, add the following values:
+<ul>
+<li><strong>AppExecutionAliasRedirect</strong> (DWORD): If set to 1, the system will check for an <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias">AppExecutionAlias</a> package extension with the same name as the executable. If the <strong>AppExecutionAlias</strong> extension is enabled, the packaged app will be activated using that value.</li>
+<li><strong>AppExecutionAliasRedirectPackages</strong> (REG_SZ): The system will redirect only to the listed packages. Packages are listed by their package family name, separated by semicolons. If the special value * is used, the system will redirect to an <strong>AppExecutionAlias</strong> from any package.</li>
+</ul>
+</li>
+</ol>
+<p>For example:</p>
+<pre><code class="lang-Ini">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\contosoapp.exe 
+    AppExecutionAliasRedirect = 1
+    AppExecutionAliasRedirectPackages = &quot;Microsoft.WindowsNotepad_8weky8webbe&quot; 
+</code></pre>
+<h4 id="register-your-packaged-app-to-be-launched">Register your packaged app to be launched</h4>
+<p>In your package manifest, add an <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appexecutionalias">AppExecutionAlias</a> extension that registers the name of your unpackaged desktop app executable. For example:</p>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  IgnorableNamespaces=&quot;uap3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap3:Extension Category=&quot;windows.appExecutionAlias&quot; EntryPoint=&quot;Windows.FullTrustApplication&quot;&gt;
+          &lt;uap3:AppExecutionAlias&gt;
+            &lt;desktop:ExecutionAlias Alias=&quot;contosoapp.exe&quot; /&gt;
+          &lt;/uap3:AppExecutionAlias&gt;
+        &lt;/uap3:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<h4 id="disable-the-redirection">Disable the redirection</h4>
+<p>Users can turn off the redirection and launch your unpackaged app executable via these options:</p>
+<ul>
+<li>They can uninstall the packaged version of your app.</li>
+<li>The user can disable the <strong>AppExecutionAlias</strong> entry for your packaged app in the <strong>App execution aliases</strong> page in <strong>Settings</strong>.</li>
+</ul>
+<h4 id="xml-namespaces">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;uap3:Extension
+    Category=&quot;windows.appExecutionAlias&quot;
+    EntryPoint=&quot;Windows.FullTrustApplication&quot;&gt;
+    &lt;uap3:AppExecutionAlias&gt;
+        &lt;desktop:ExecutionAlias Alias=&quot;[AliasName]&quot; /&gt;
+    &lt;/uap3:AppExecutionAlias&gt;
+&lt;/uap3:Extension&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.appExecutionAlias</code>.</td>
+</tr>
+<tr>
+<td>Executable</td>
+<td>The relative path to the executable to start when the alias is invoked.</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>The short name for your app. It must always end with the &quot;.exe&quot; extension.</td>
+</tr>
+</tbody>
+</table>
+<p><a id="point"></a></p>
+<h3 id="point-existing-start-tiles-and-taskbar-buttons-to-your-packaged-app">Point existing Start tiles and taskbar buttons to your packaged app</h3>
+<p>Your users might have pinned your desktop application to the taskbar or the Start menu. You can point those shortcuts to your new packaged app.</p>
+<h4 id="xml-namespace">XML namespace</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3</code></p>
+<h4 id="elements-and-attributes-of-this-extension-1">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.desktopAppMigration&quot;&gt;
+    &lt;DesktopAppMigration&gt;
+        &lt;DesktopApp AumId=&quot;[your_app_aumid]&quot; /&gt;
+        &lt;DesktopApp ShortcutPath=&quot;[path]&quot; /&gt;
+    &lt;/DesktopAppMigration&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-rescap3-desktopappmigration">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.desktopAppMigration</code>.</td>
+</tr>
+<tr>
+<td>AumID</td>
+<td>The Application User Model ID of your packaged app.</td>
+</tr>
+<tr>
+<td>ShortcutPath</td>
+<td>The path to .lnk files that start the desktop version of your app.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:rescap3=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3&quot;
+  IgnorableNamespaces=&quot;rescap3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;rescap3:Extension Category=&quot;windows.desktopAppMigration&quot;&gt;
+          &lt;rescap3:DesktopAppMigration&gt;
+            &lt;rescap3:DesktopApp AumId=&quot;[your_app_aumid]&quot; /&gt;
+            &lt;rescap3:DesktopApp ShortcutPath=&quot;%USERPROFILE%\Desktop\[my_app].lnk&quot; /&gt;
+            &lt;rescap3:DesktopApp ShortcutPath=&quot;%APPDATA%\Microsoft\Windows\Start Menu\Programs\[my_app].lnk&quot; /&gt;
+            &lt;rescap3:DesktopApp ShortcutPath=&quot;%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\[my_app_folder]\[my_app].lnk&quot;/&gt;
+         &lt;/rescap3:DesktopAppMigration&gt;
+        &lt;/rescap3:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<h4 id="related-sample">Related sample</h4>
+<p><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition">WPF picture viewer with transition/migration/uninstallation</a></p>
+<p><a id="make"></a></p>
+<h3 id="make-your-packaged-application-open-files-instead-of-your-desktop-app">Make your packaged application open files instead of your desktop app</h3>
+<p>You can make sure that users open your new packaged application by default for specific types of files instead of opening the desktop version of your app.</p>
+<p>To do that, you'll specify the <a href="/windows/desktop/shell/fa-progids">programmatic identifier (ProgID)</a> of each application from which you want to inherit file associations.</p>
+<h4 id="xml-namespaces-1">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-2">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot;&gt;
+         &lt;MigrationProgIds&gt;
+            &lt;MigrationProgId&gt;&quot;[ProgID]&quot;&lt;/MigrationProgId&gt;
+        &lt;/MigrationProgIds&gt;
+    &lt;/FileTypeAssociation&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>MigrationProgId</td>
+<td>The <a href="/windows/desktop/shell/fa-progids">programmatic identifier (ProgID)</a> that describes the application, component, and version of the desktop application from which you want to inherit file associations.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-1">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  xmlns:rescap3=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3&quot;
+  IgnorableNamespaces=&quot;uap3, rescap3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap3:FileTypeAssociation Name=&quot;myfiletypes&quot;&gt;
+            &lt;rescap3:MigrationProgIds&gt;
+              &lt;rescap3:MigrationProgId&gt;Foo.Bar.1&lt;/rescap3:MigrationProgId&gt;
+              &lt;rescap3:MigrationProgId&gt;Foo.Bar.2&lt;/rescap3:MigrationProgId&gt;
+            &lt;/rescap3:MigrationProgIds&gt;
+          &lt;/uap3:FileTypeAssociation&gt;
+        &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<h4 id="related-sample-1">Related sample</h4>
+<p><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition">WPF picture viewer with transition/migration/uninstallation</a></p>
+<p><a id="associate"></a></p>
+<h3 id="associate-your-packaged-application-with-a-set-of-file-types">Associate your packaged application with a set of file types</h3>
+<p>You can associate your packaged application with file type extensions. If a user right-clicks a file in File Explorer and then selects the <strong>Open with</strong> option, your application appears in the list of suggestions. For more information about using this extension, see <a href="integrate-packaged-app-with-file-explorer.html">Integrate a packaged desktop app with File Explorer</a>.</p>
+<h4 id="xml-namespaces-2">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-3">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot;&gt;
+        &lt;SupportedFileTypes&gt;
+            &lt;FileType&gt;&quot;[file extension]&quot;&lt;/FileType&gt;
+        &lt;/SupportedFileTypes&gt;
+    &lt;/FileTypeAssociation&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>FileType</td>
+<td>The file extension supported by your app.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-2">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  IgnorableNamespaces=&quot;uap, uap3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap3:FileTypeAssociation Name=&quot;mediafiles&quot;&gt;
+            &lt;uap:SupportedFileTypes&gt;
+            &lt;uap:FileType&gt;.avi&lt;/uap:FileType&gt;
+            &lt;/uap:SupportedFileTypes&gt;
+          &lt;/uap3:FileTypeAssociation&gt;
+        &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<h4 id="related-sample-2">Related sample</h4>
+<p><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition">WPF picture viewer with transition/migration/uninstallation</a></p>
+<p><a id="add"></a></p>
+<h3 id="add-options-to-the-context-menus-of-files-that-have-a-certain-file-type">Add options to the context menus of files that have a certain file type</h3>
+<p>This extension enables you to add options to the context menu that displays when users right-click a file in File Explorer.These options give users other ways to interact with your file such as print, edit, or preview the file. For more information about using this extension, see <a href="integrate-packaged-app-with-file-explorer.html">Integrate a packaged desktop app with File Explorer</a>.</p>
+<h4 id="xml-namespaces-3">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/2</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-4">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot;&gt;
+        &lt;SupportedVerbs&gt;
+           &lt;Verb Id=&quot;[ID]&quot; Extended=&quot;[Extended]&quot; Parameters=&quot;[parameters]&quot;&gt;&quot;[verb label]&quot;&lt;/Verb&gt;
+        &lt;/SupportedVerbs&gt;
+    &lt;/FileTypeAssociation&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>Verb</td>
+<td>The name that appears in the File Explorer context menu. This string is localizable that uses <code>ms-resource</code>.</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>The unique Id of the verb. If your application is a UWP app, this is passed to your app as part of its activation event args so it can handle the user’s selection appropriately. If your application is a full-trust packaged app, it receives parameters instead (see the next bullet).</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>The list of argument parameters and values associated with the verb. If your application is a full-trust packaged app, these parameters are passed to the application as event args when the application is activated. You can customize the behavior of your application based on different activation verbs. If a variable can contain a file path, wrap the parameter value in quotes. That will avoid any issues that happen in cases where the path includes spaces. If your application is a UWP app, you can’t pass parameters. The app receives the Id instead (see the previous bullet).</td>
+</tr>
+<tr>
+<td>Extended</td>
+<td>Specifies that the verb appears only if the user shows the context menu by holding the <strong>Shift</strong> key before right-clicking the file. This attribute is optional and defaults to a value of <strong>False</strong> (for example, always show the verb) if not listed. You specify this behavior individually for each verb (except for &quot;Open,&quot; which is always <strong>False</strong>).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-3">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap2=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/2&quot;
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+
+  IgnorableNamespaces=&quot;uap, uap2, uap3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap3:FileTypeAssociation Name=&quot;myfiletypes&quot;&gt;
+            &lt;uap2:SupportedVerbs&gt;
+              &lt;uap3:Verb Id=&quot;Edit&quot; Parameters=&quot;/e &amp;quot;%1&amp;quot;&quot;&gt;Edit&lt;/uap3:Verb&gt;
+              &lt;uap3:Verb Id=&quot;Print&quot; Extended=&quot;true&quot; Parameters=&quot;/p &amp;quot;%1&amp;quot;&quot;&gt;Print&lt;/uap3:Verb&gt;
+            &lt;/uap2:SupportedVerbs&gt;
+          &lt;/uap3:FileTypeAssociation&gt;
+        &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<h4 id="related-sample-3">Related sample</h4>
+<p><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/DesktopAppTransition">WPF picture viewer with transition/migration/uninstallation</a></p>
+<p><a id="open"></a></p>
+<h3 id="open-certain-types-of-files-directly-by-using-a-url">Open certain types of files directly by using a URL</h3>
+<p>You can make sure that users open your new packaged application by default for specific types of files instead of opening the desktop version of your app.</p>
+<h4 id="xml-namespaces-4">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-5">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot; UseUrl=&quot;true&quot; Parameters=&quot;%1&quot;&gt;
+        &lt;SupportedFileTypes&gt;
+            &lt;FileType&gt;&quot;[FileExtension]&quot;&lt;/FileType&gt;
+        &lt;/SupportedFileTypes&gt;
+    &lt;/FileTypeAssociation&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>UseUrl</td>
+<td>Indicates whether to open files directly from a URL target. If you do not set this value, attempts by your application to open a file by using a URL cause the system to first download the file locally.</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Optional parameters.</td>
+</tr>
+<tr>
+<td>FileType</td>
+<td>The relevant file extensions.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-4">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  IgnorableNamespaces=&quot;uap, uap3&quot;&gt;
+  &lt;Applications&gt;
+      &lt;Application&gt;
+        &lt;Extensions&gt;
+          &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+            &lt;uap3:FileTypeAssociation Name=&quot;myfiletypes&quot; UseUrl=&quot;true&quot; Parameters=&quot;%1&quot;&gt;
+              &lt;uap:SupportedFileTypes&gt;
+                &lt;uap:FileType&gt;.txt&lt;/uap:FileType&gt;
+                &lt;uap:FileType&gt;.doc&lt;/uap:FileType&gt;
+              &lt;/uap:SupportedFileTypes&gt;
+            &lt;/uap3:FileTypeAssociation&gt;
+          &lt;/uap:Extension&gt;
+        &lt;/Extensions&gt;
+      &lt;/Application&gt;
+    &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<h2 id="perform-setup-tasks">Perform setup tasks</h2>
+<ul>
+<li><a href="#rules">Create firewall exception for your app</a></li>
+<li><a href="#load-paths">Place your DLL files into any folder of the package</a></li>
+</ul>
+<p><a id="rules"></a></p>
+<h3 id="create-firewall-exception-for-your-app">Create firewall exception for your app</h3>
+<p>If your application requires communication through a port, you can add your application to the list of firewall exceptions.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use the &quot;windows.firewallRules&quot; extension category (see below), your package needs the <strong>Full Trust Permission Level</strong> restricted capability. See <a href="/windows/uwp/packaging/app-capability-declarations#restricted-capability-list">Restricted capability list</a>.</p>
+</div>
+<h4 id="xml-namespace-1">XML namespace</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10/2</code></p>
+<h4 id="elements-and-attributes-of-this-extension-6">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.firewallRules&quot;&gt;
+  &lt;FirewallRules Executable=&quot;[executable file name]&quot;&gt;
+    &lt;Rule
+      Direction=&quot;[Direction]&quot;
+      IPProtocol=&quot;[Protocol]&quot;
+      LocalPortMin=&quot;[LocalPortMin]&quot;
+      LocalPortMax=&quot;LocalPortMax&quot;
+      RemotePortMin=&quot;RemotePortMin&quot;
+      RemotePortMax=&quot;RemotePortMax&quot;
+      Profile=&quot;[Profile]&quot;/&gt;
+  &lt;/FirewallRules&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-firewallrules">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.firewallRules</code></td>
+</tr>
+<tr>
+<td>Executable</td>
+<td>The name of the executable file that you want to add to the list of firewall exceptions</td>
+</tr>
+<tr>
+<td>Direction</td>
+<td>Indicates whether the rule is an inbound or outbound rule</td>
+</tr>
+<tr>
+<td>IPProtocol</td>
+<td>The communication protocol</td>
+</tr>
+<tr>
+<td>LocalPortMin</td>
+<td>The lower port number in a range of local port numbers.</td>
+</tr>
+<tr>
+<td>LocalPortMax</td>
+<td>The highest port number of a range of local port numbers.</td>
+</tr>
+<tr>
+<td>RemotePortMax</td>
+<td>The lower port number in a range of remote port numbers.</td>
+</tr>
+<tr>
+<td>RemotePortMax</td>
+<td>The highest port number of a range of remote port numbers.</td>
+</tr>
+<tr>
+<td>Profile</td>
+<td>The network type</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-5">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:desktop2=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/2&quot;
+  IgnorableNamespaces=&quot;desktop2&quot;&gt;
+  &lt;Extensions&gt;
+    &lt;desktop2:Extension Category=&quot;windows.firewallRules&quot;&gt;
+      &lt;desktop2:FirewallRules Executable=&quot;Contoso.exe&quot;&gt;
+          &lt;desktop2:Rule Direction=&quot;in&quot; IPProtocol=&quot;TCP&quot; Profile=&quot;all&quot;/&gt;
+          &lt;desktop2:Rule Direction=&quot;in&quot; IPProtocol=&quot;UDP&quot; LocalPortMin=&quot;1337&quot; LocalPortMax=&quot;1338&quot; Profile=&quot;domain&quot;/&gt;
+          &lt;desktop2:Rule Direction=&quot;in&quot; IPProtocol=&quot;UDP&quot; LocalPortMin=&quot;1337&quot; LocalPortMax=&quot;1338&quot; Profile=&quot;public&quot;/&gt;
+          &lt;desktop2:Rule Direction=&quot;out&quot; IPProtocol=&quot;UDP&quot; LocalPortMin=&quot;1339&quot; LocalPortMax=&quot;1340&quot; RemotePortMin=&quot;15&quot;
+                         RemotePortMax=&quot;19&quot; Profile=&quot;domainAndPrivate&quot;/&gt;
+          &lt;desktop2:Rule Direction=&quot;out&quot; IPProtocol=&quot;GRE&quot; Profile=&quot;private&quot;/&gt;
+      &lt;/desktop2:FirewallRules&gt;
+  &lt;/desktop2:Extension&gt;
+&lt;/Extensions&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="load-paths"></a></p>
+<h3 id="place-your-dll-files-into-any-folder-of-the-package">Place your DLL files into any folder of the package</h3>
+<p>Use the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride">uap6:LoaderSearchPathOverride</a> extension to declare up to five folder paths in the app package, relative to the app package root path, to be used in the loader search path for the app's processes.</p>
+<p>The <a href="/windows/win32/dlls/dynamic-link-library-search-order">DLL search order</a> for Windows apps includes packages in the package dependency graph if the packages have execution rights. By default, this includes main, optional and framework packages, although this can be overwritten by the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-allowexecution">uap6:AllowExecution</a> element in the package manifest.</p>
+<p>A package that is included in the DLL search order will, by default, include its <em>effective path</em>. For more information about effective paths, see the <a href="/uwp/api/windows.applicationmodel.package.effectivepath">EffectivePath</a> property (WinRT) and the <a href="/windows/win32/api/appmodel/ne-appmodel-packagepathtype">PackagePathType</a> enumeration (Win32).</p>
+<p>If a package specifies <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride">uap6:LoaderSearchPathOverride</a>, then this information is used instead of the package's effective path.</p>
+<p>Each package can contain only one <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap6-loadersearchpathoverride">uap6:LoaderSearchPathOverride</a> extension. That means that you can add one of them to your main package, and then add one to each of your <a href="/windows/msix/package/optional-packages">optional packages, and related sets</a>.</p>
+<h4 id="xml-namespace-2">XML namespace</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/6</code></p>
+<h4 id="elements-and-attributes-of-this-extension-7">Elements and attributes of this extension</h4>
+<p>Declare this extension at the package-level of your app manifest.</p>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.loaderSearchPathOverride&quot;&gt;
+  &lt;LoaderSearchPathOverride&gt;
+    &lt;LoaderSearchPathEntry FolderPath=&quot;[path]&quot;/&gt;
+  &lt;/LoaderSearchPathOverride&gt;
+&lt;/Extension&gt;
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.loaderSearchPathOverride</code>.</td>
+</tr>
+<tr>
+<td>FolderPath</td>
+<td>The path of the folder that contains your DLL files. Specify a path that is relative to the root folder of the package. You can specify up to five paths in one extension. If you want the system to search for files in the root folder of the package, use an empty string for one of these paths. Don't include duplicate paths, and make sure that your paths don't contain leading and trailing slashes or backslashes. <br><br> The system won't search subfolders, so make sure to explicitly list each folder that contains DLL files that you want the system to load.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-6">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/6&quot;
+  IgnorableNamespaces=&quot;uap6&quot;&gt;
+  ...
+    &lt;Extensions&gt;
+      &lt;uap6:Extension Category=&quot;windows.loaderSearchPathOverride&quot;&gt;
+        &lt;uap6:LoaderSearchPathOverride&gt;
+          &lt;uap6:LoaderSearchPathEntry FolderPath=&quot;&quot;/&gt;
+          &lt;uap6:LoaderSearchPathEntry FolderPath=&quot;folder1/subfolder1&quot;/&gt;
+          &lt;uap6:LoaderSearchPathEntry FolderPath=&quot;folder2/subfolder2&quot;/&gt;
+        &lt;/uap6:LoaderSearchPathOverride&gt;
+      &lt;/uap6:Extension&gt;
+    &lt;/Extensions&gt;
+...
+&lt;/Package&gt;
+</code></pre>
+<h2 id="integrate-with-file-explorer">Integrate with File Explorer</h2>
+<p>Help users organize your files and interact with them in familiar ways.</p>
+<ul>
+<li><a href="#define">Define how your application behaves when users select and open multiple files at the same time</a></li>
+<li><a href="#show">Show file contents in a thumbnail image within File Explorer</a></li>
+<li><a href="#preview">Show file contents in a Preview pane of File Explorer</a></li>
+<li><a href="#enable">Enable users to group files by using the Kind column in File Explorer</a></li>
+<li><a href="#make-file-properties">Make file properties available to search, index, property dialogs, and the details pane</a></li>
+<li><a href="#context-menu">Specify a context menu handler for a file type</a></li>
+<li><a href="#cloud-files">Make files from your cloud service appear in File Explorer</a></li>
+</ul>
+<p><a id="define"></a></p>
+<h3 id="define-how-your-application-behaves-when-users-select-and-open-multiple-files-at-the-same-time">Define how your application behaves when users select and open multiple files at the same time</h3>
+<p>Specify how your application behaves when a user opens multiple files simultaneously.</p>
+<h4 id="xml-namespaces-5">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/2</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-8">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot; MultiSelectModel=&quot;[SelectionModel]&quot;&gt;
+        &lt;SupportedVerbs&gt;
+            &lt;Verb Id=&quot;Edit&quot; MultiSelectModel=&quot;[SelectionModel]&quot;&gt;Edit&lt;/Verb&gt;
+        &lt;/SupportedVerbs&gt;
+        &lt;SupportedFileTypes&gt;
+            &lt;FileType&gt;&quot;[FileExtension]&quot;&lt;/FileType&gt;
+        &lt;/SupportedFileTypes&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>MultiSelectModel</td>
+<td>See below</td>
+</tr>
+<tr>
+<td>FileType</td>
+<td>The relevant file extensions.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>MultiSelectModel</strong></p>
+<p>packaged desktop apps have the same three options as regular desktop apps.</p>
+<ul>
+<li><code>Player</code>: Your application is activated one time. All of the selected files are passed to your application as argument parameters.</li>
+<li><code>Single</code>: Your application is activated one time for the first selected file. Other files are ignored.</li>
+<li><code>Document</code>: A new, separate instance of your application is activated for each selected file.</li>
+</ul>
+<p>You can set different preferences for different file types and actions. For example, you may wish to open <em>Documents</em> in <em>Document</em> mode and <em>Images</em> in <em>Player</em> mode.</p>
+<h4 id="example-7">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap2=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/2&quot;
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  IgnorableNamespaces=&quot;uap, uap2, uap3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap3:FileTypeAssociation Name=&quot;myfiletypes&quot; MultiSelectModel=&quot;Document&quot;&gt;
+            &lt;uap2:SupportedVerbs&gt;
+              &lt;uap3:Verb Id=&quot;Edit&quot; MultiSelectModel=&quot;Player&quot;&gt;Edit&lt;/uap3:Verb&gt;
+              &lt;uap3:Verb Id=&quot;Preview&quot; MultiSelectModel=&quot;Document&quot;&gt;Preview&lt;/uap3:Verb&gt;
+            &lt;/uap2:SupportedVerbs&gt;
+            &lt;uap:SupportedFileTypes&gt;
+              &lt;uap:FileType&gt;.txt&lt;/uap:FileType&gt;
+            &lt;/uap:SupportedFileTypes&gt;
+        &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p>If the user opens 15 or fewer files, the default choice for the <strong>MultiSelectModel</strong> attribute is <em>Player</em>. Otherwise, the default is <em>Document</em>. UWP apps are always started as <em>Player</em>.</p>
+<p><a id="show"></a></p>
+<h3 id="show-file-contents-in-a-thumbnail-image-within-file-explorer">Show file contents in a thumbnail image within File Explorer</h3>
+<p>Enable users to view a thumbnail image of the file's contents when the icon of the file appears in the medium, large, or extra large size.</p>
+<h4 id="xml-namespace-3">XML namespace</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/2</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10/2</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-9">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot;&gt;
+        &lt;SupportedFileTypes&gt;
+            &lt;FileType&gt;&quot;[FileExtension]&quot;&lt;/FileType&gt;
+        &lt;/SupportedFileTypes&gt;
+        &lt;ThumbnailHandler
+            Clsid  =&quot;[Clsid  ]&quot; /&gt;
+    &lt;/FileTypeAssociation&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>FileType</td>
+<td>The relevant file extensions.</td>
+</tr>
+<tr>
+<td>Clsid</td>
+<td>The class ID of your app.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-8">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap2=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/2&quot;
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  xmlns:desktop2=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/2&quot;
+  IgnorableNamespaces=&quot;uap, uap2, uap3, desktop2&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap3:FileTypeAssociation Name=&quot;myfiletypes&quot;&gt;
+            &lt;uap:SupportedFileTypes&gt;
+              &lt;uap:FileType&gt;.bar&lt;/uap:FileType&gt;
+            &lt;/uap:SupportedFileTypes&gt;
+            &lt;desktop2:ThumbnailHandler
+              Clsid  =&quot;20000000-0000-0000-0000-000000000001&quot;  /&gt;
+            &lt;/uap3:FileTypeAssociation&gt;
+         &lt;/uap::Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="preview"></a></p>
+<h3 id="show-file-contents-in-the-preview-pane-of-file-explorer">Show file contents in the Preview pane of File Explorer</h3>
+<p>Enable users to preview a file's contents in the Preview pane of File Explorer.</p>
+<h4 id="xml-namespace-4">XML namespace</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/2</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10/2</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-10">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot;&gt;
+        &lt;SupportedFileTypes&gt;
+            &lt;FileType&gt;&quot;[FileExtension]&quot;&lt;/FileType&gt;
+        &lt;/SupportedFileTypes&gt;
+        &lt;DesktopPreviewHandler Clsid  =&quot;[Clsid  ]&quot; /&gt;
+    &lt;/FileTypeAssociation&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>FileType</td>
+<td>The relevant file extensions.</td>
+</tr>
+<tr>
+<td>Clsid</td>
+<td>The class ID of your app.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-9">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap2=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/2&quot;
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  xmlns:desktop2=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/2&quot;
+  IgnorableNamespaces=&quot;uap, uap2, uap3, desktop2&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap3:FileTypeAssociation Name=&quot;myfiletypes&quot;&gt;
+            &lt;uap:SupportedFileTypes&gt;
+              &lt;uap:FileType&gt;.bar&lt;/uap:FileType&gt;
+                &lt;/uap:SupportedFileTypes&gt;
+              &lt;desktop2:DesktopPreviewHandler Clsid =&quot;20000000-0000-0000-0000-000000000001&quot; /&gt;
+           &lt;/uap3:FileTypeAssociation&gt;
+        &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="enable"></a></p>
+<h3 id="enable-users-to-group-files-by-using-the-kind-column-in-file-explorer">Enable users to group files by using the Kind column in File Explorer</h3>
+<p>You can associate one or more predefined values for your file types with the <strong>Kind</strong> field.</p>
+<p>In File Explorer, users can group those files by using that field. System components also use this field for various purposes such as indexing.</p>
+<p>For more information about the <strong>Kind</strong> field and the values that you can use for this field, see <a href="/windows/desktop/properties/building-property-handlers-user-friendly-kind-names">Using Kind Names</a>.</p>
+<h4 id="xml-namespaces-6">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-11">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;FileTypeAssociation Name=&quot;[Name]&quot;&gt;
+        &lt;SupportedFileTypes&gt;
+            &lt;FileType&gt;&quot;[FileExtension]&quot;&lt;/FileType&gt;
+        &lt;/SupportedFileTypes&gt;
+        &lt;KindMap&gt;
+            &lt;Kind value=&quot;[KindValue]&quot;&gt;
+        &lt;/KindMap&gt;
+    &lt;/FileTypeAssociation&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>FileType</td>
+<td>The relevant file extensions.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>A valid <a href="/windows/desktop/properties/building-property-handlers-user-friendly-kind-names">Kind value</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-10">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:rescap=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3&quot;
+  IgnorableNamespaces=&quot;uap, rescap&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+           &lt;uap:FileTypeAssociation Name=&quot;mediafiles&quot;&gt;
+             &lt;uap:SupportedFileTypes&gt;
+               &lt;uap:FileType&gt;.m4a&lt;/uap:FileType&gt;
+               &lt;uap:FileType&gt;.mta&lt;/uap:FileType&gt;
+             &lt;/uap:SupportedFileTypes&gt;
+             &lt;rescap:KindMap&gt;
+               &lt;rescap:Kind value=&quot;Item&quot;&gt;
+               &lt;rescap:Kind value=&quot;Communications&quot;&gt;
+               &lt;rescap:Kind value=&quot;Task&quot;&gt;
+             &lt;/rescap:KindMap&gt;
+          &lt;/uap:FileTypeAssociation&gt;
+      &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="make-file-properties"></a></p>
+<h3 id="make-file-properties-available-to-search-index-property-dialogs-and-the-details-pane">Make file properties available to search, index, property dialogs, and the details pane</h3>
+<h4 id="xml-namespace-5">XML namespace</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10/2</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-12">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+    &lt;uap:FileTypeAssociation Name=&quot;[Name]&quot;&gt;
+        &lt;SupportedFileTypes&gt;
+            &lt;FileType&gt;.bar&lt;/FileType&gt;
+        &lt;/SupportedFileTypes&gt;
+        &lt;DesktopPropertyHandler Clsid =&quot;[Clsid]&quot;/&gt;
+    &lt;/uap:FileTypeAssociation&gt;
+&lt;/uap:Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fileTypeAssociation</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the file type association. You can use this name to organize and group file types. The name must be all lower case characters with no spaces.</td>
+</tr>
+<tr>
+<td>FileType</td>
+<td>The relevant file extensions.</td>
+</tr>
+<tr>
+<td>Clsid</td>
+<td>The class ID of your app.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-11">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  xmlns:desktop2=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/2&quot;
+  IgnorableNamespaces=&quot;uap, uap3, desktop2&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap3:FileTypeAssociation Name=&quot;myfiletypes&quot;&gt;
+            &lt;uap:SupportedFileTypes&gt;
+              &lt;uap:FileType&gt;.bar&lt;/uap:FileType&gt;
+            &lt;/uap:SupportedFileTypes&gt;
+            &lt;desktop2:DesktopPropertyHandler Clsid =&quot;20000000-0000-0000-0000-000000000001&quot;/&gt;
+          &lt;/uap3:FileTypeAssociation&gt;
+        &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="context-menu"></a></p>
+<h3 id="specify-a-context-menu-handler-for-a-file-type">Specify a context menu handler for a file type</h3>
+<p>If your desktop application defines a <a href="/windows/desktop/shell/context-menu-handlers">context menu handler</a>, use this extension to register the menu handler.</p>
+<h4 id="xml-namespaces-7">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/foundation/windows10</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10/4</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-13">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extensions&gt;
+    &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+        &lt;com:ComServer&gt;
+            &lt;com:SurrogateServer AppId=&quot;[AppID]&quot; DisplayName=&quot;[DisplayName]&quot;&gt;
+                &lt;com:Class Id=&quot;[Clsid]&quot; Path=&quot;[Path]&quot; ThreadingModel=&quot;[Model]&quot;/&gt;
+            &lt;/com:SurrogateServer&gt;
+        &lt;/com:ComServer&gt;
+    &lt;/com:Extension&gt;
+    &lt;desktop4:Extension Category=&quot;windows.fileExplorerContextMenus&quot;&gt;
+        &lt;desktop4:FileExplorerContextMenus&gt;
+            &lt;desktop4:ItemType Type=&quot;[Type]&quot;&gt;
+                &lt;desktop4:Verb Id=&quot;[ID]&quot; Clsid=&quot;[Clsid]&quot; /&gt;
+            &lt;/desktop4:ItemType&gt;
+        &lt;/desktop4:FileExplorerContextMenus&gt;
+    &lt;/desktop4:Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+<p>Find the complete schema reference here: <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver">com:ComServer</a> and <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus">desktop4:FileExplorerContextMenus</a>.</p>
+<h4 id="instructions">Instructions</h4>
+<p>To register your context menu handler, follow these instructions.</p>
+<ol>
+<li><p>In your desktop application, implement a <a href="/windows/desktop/shell/context-menu-handlers">context menu handler</a> by implementing the <a href="/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand">IExplorerCommand</a> or <a href="/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate">IExplorerCommandState</a> interface. For a sample, see the <a href="https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb">ExplorerCommandVerb</a> code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of <a href="/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand">IExplorerCommand</a>.</p>
+<pre><code class="lang-cpp">class __declspec(uuid(&quot;00001111-aaaa-2222-bbbb-3333cccc4444&quot;)) CExplorerCommandVerb;
+</code></pre>
+</li>
+<li><p>In your package manifest, specify a <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-com-comserver">com:ComServer</a> application extension that registers a COM surrogate server with the class ID of your context menu handler implementation.</p>
+<pre><code class="lang-xml">&lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+    &lt;com:ComServer&gt;
+        &lt;com:SurrogateServer AppId=&quot;00001111-aaaa-2222-bbbb-3333cccc4444&quot; DisplayName=&quot;ContosoHandler&quot;&gt;
+            &lt;com:Class Id=&quot;00001111-aaaa-2222-bbbb-3333cccc4444&quot; Path=&quot;ExplorerCommandVerb.dll&quot; ThreadingModel=&quot;STA&quot;/&gt;
+        &lt;/com:SurrogateServer&gt;
+    &lt;/com:ComServer&gt;
+&lt;/com:Extension&gt;
+</code></pre>
+</li>
+<li><p>In your package manifest, specify a <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-desktop4-fileexplorercontextmenus">desktop4:FileExplorerContextMenus</a> application extension that registers your context menu handler implementation.</p>
+<pre><code class="lang-xml">&lt;desktop4:Extension Category=&quot;windows.fileExplorerContextMenus&quot;&gt;
+    &lt;desktop4:FileExplorerContextMenus&gt;
+        &lt;desktop4:ItemType Type=&quot;.rar&quot;&gt;
+            &lt;desktop4:Verb Id=&quot;Command1&quot; Clsid=&quot;00001111-aaaa-2222-bbbb-3333cccc4444&quot; /&gt;
+        &lt;/desktop4:ItemType&gt;
+    &lt;/desktop4:FileExplorerContextMenus&gt;
+&lt;/desktop4:Extension&gt;
+</code></pre>
+</li>
+</ol>
+<h4 id="example-12">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10&quot;
+  xmlns:desktop4=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/4&quot;
+  xmlns:com=&quot;http://schemas.microsoft.com/appx/manifest/com/windows10&quot;
+  IgnorableNamespaces=&quot;desktop4&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+          &lt;com:ComServer&gt;
+            &lt;com:SurrogateServer AppId=&quot;00001111-aaaa-2222-bbbb-3333cccc4444&quot; DisplayName=&quot;ContosoHandler&quot;&gt;
+              &lt;com:Class Id=&quot;00001111-aaaa-2222-bbbb-3333cccc4444&quot; Path=&quot;ExplorerCommandVerb.dll&quot; ThreadingModel=&quot;STA&quot;/&gt;
+            &lt;/com:SurrogateServer&gt;
+          &lt;/com:ComServer&gt;
+        &lt;/com:Extension&gt;
+        &lt;desktop4:Extension Category=&quot;windows.fileExplorerContextMenus&quot;&gt;
+          &lt;desktop4:FileExplorerContextMenus&gt;
+            &lt;desktop4:ItemType Type=&quot;.contoso&quot;&gt;
+              &lt;desktop4:Verb Id=&quot;Command1&quot; Clsid=&quot;00001111-aaaa-2222-bbbb-3333cccc4444&quot; /&gt;
+            &lt;/desktop4:ItemType&gt;
+          &lt;/desktop4:FileExplorerContextMenus&gt;
+        &lt;/desktop4:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="cloud-files"></a></p>
+<h3 id="make-files-from-your-cloud-service-appear-in-file-explorer">Make files from your cloud service appear in File Explorer</h3>
+<p>Register the handlers that you implement in your application. You can also add context menu options that appear when you users right-click your cloud-based files in File Explorer.</p>
+<h4 id="xml-namespace-6">XML namespace</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-14">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.cloudfiles&quot; &gt;
+    &lt;CloudFiles IconResource=&quot;[Icon]&quot;&gt;
+        &lt;CustomStateHandler Clsid =&quot;[Clsid]&quot;/&gt;
+        &lt;ThumbnailProviderHandler Clsid =&quot;[Clsid]&quot;/&gt;
+        &lt;ExtendedPropertyhandler Clsid =&quot;[Clsid]&quot;/&gt;
+        &lt;CloudFilesContextMenus&gt;
+            &lt;Verb Id =&quot;Command3&quot; Clsid= &quot;[GUID]&quot;&gt;[Verb Label]&lt;/Verb&gt;
+        &lt;/CloudFilesContextMenus&gt;
+    &lt;/CloudFiles&gt;
+&lt;/Extension&gt;
+
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.cloudfiles</code>.</td>
+</tr>
+<tr>
+<td>iconResource</td>
+<td>The icon that represents your cloud file provider service. This icon appears in the Navigation pane of File Explorer.  Users choose this icon to show files from your cloud service.</td>
+</tr>
+<tr>
+<td>CustomStateHandler Clsid</td>
+<td>The class ID of the application that implements the CustomStateHandler. The system uses this Class ID to request custom states and columns for cloud files.</td>
+</tr>
+<tr>
+<td>ThumbnailProviderHandler Clsid</td>
+<td>The class ID of the application that implements the ThumbnailProviderHandler. The system uses this Class ID to request thumbnail images for cloud files.</td>
+</tr>
+<tr>
+<td>ExtendedPropertyHandler Clsid</td>
+<td>The class ID of the application that implements the ExtendedPropertyHandler.  The system uses this Class ID to request extended properties for a cloud file.</td>
+</tr>
+<tr>
+<td>Verb</td>
+<td>The name that appears in the File Explorer context menu for files provided by your cloud service.</td>
+</tr>
+<tr>
+<td>Id</td>
+<td>The unique ID of the verb.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-13">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+    xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;
+    IgnorableNamespaces=&quot;desktop&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;Extension Category=&quot;windows.cloudfiles&quot; &gt;
+            &lt;CloudFiles IconResource=&quot;images\Wide310x150Logo.png&quot;&gt;
+                &lt;CustomStateHandler Clsid =&quot;20000000-0000-0000-0000-000000000001&quot;/&gt;
+                &lt;ThumbnailProviderHandler Clsid =&quot;20000000-0000-0000-0000-000000000001&quot;/&gt;
+                &lt;ExtendedPropertyhandler Clsid =&quot;20000000-0000-0000-0000-000000000001&quot;/&gt;
+                &lt;desktop:CloudFilesContextMenus&gt;
+                    &lt;desktop:Verb Id =&quot;keep&quot; Clsid=
+                       &quot;20000000-0000-0000-0000-000000000001&quot;&gt;
+                       Always keep on this device&lt;/desktop:Verb&gt;
+                &lt;/desktop:CloudFilesContextMenus&gt;
+            &lt;/CloudFiles&gt;
+          &lt;/Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="start"></a></p>
+<h2 id="start-your-application-in-different-ways">Start your application in different ways</h2>
+<ul>
+<li><a href="#protocol">Start your application by using a protocol</a></li>
+<li><a href="#alias">Start your application by using an alias</a></li>
+<li><a href="#executable">Start an executable file when users log into Windows</a></li>
+<li><a href="#autoplay">Enable users to start your application when they connect a device to their PC</a></li>
+<li><a href="#updates">Restart automatically after receiving an update from the Microsoft Store</a></li>
+</ul>
+<p><a id="protocol"></a></p>
+<h3 id="start-your-application-by-using-a-protocol">Start your application by using a protocol</h3>
+<p>Protocol associations can enable other programs and system components to interoperate with your packaged app. When your packaged application is started by using a protocol, you can specify specific parameters to pass to its activation event arguments so it can behave accordingly. Parameters are supported only for packaged, full-trust apps. UWP apps can't use parameters.</p>
+<h4 id="xml-namespace-7">XML namespace</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></p>
+<h4 id="elements-and-attributes-of-this-extension-15">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension
+    Category=&quot;windows.protocol&quot;&gt;
+  &lt;Protocol
+      Name=&quot;[Protocol name]&quot;
+      Parameters=&quot;[Parameters]&quot; /&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.protocol</code>.</td>
+</tr>
+<tr>
+<td>Name</td>
+<td>The name of the protocol.</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>The list of parameters and values to pass to your application as event arguments when the application is activated. If a variable can contain a file path, wrap the parameter value in quotes. That will avoid any issues that happen in cases where the path includes spaces.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-14">Example</h3>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;
+  IgnorableNamespaces=&quot;uap3, desktop&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap3:Extension
+          Category=&quot;windows.protocol&quot;&gt;
+          &lt;uap3:Protocol
+            Name=&quot;myapp-cmd&quot;
+            Parameters=&quot;/p &amp;quot;%1&amp;quot;&quot; /&gt;
+        &lt;/uap3:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="alias"></a></p>
+<h3 id="start-your-application-by-using-an-alias">Start your application by using an alias</h3>
+<p>Users and other processes can use an alias to start your application without having to specify the full path to your app. You can specify that alias name.</p>
+<h4 id="xml-namespaces-8">XML namespaces</h4>
+<ul>
+<li><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/3</code></li>
+<li><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10</code></li>
+</ul>
+<h4 id="elements-and-attributes-of-this-extension-16">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;uap3:Extension
+    Category=&quot;windows.appExecutionAlias&quot;
+    Executable=&quot;[ExecutableName]&quot;
+    EntryPoint=&quot;Windows.FullTrustApplication&quot;&gt;
+    &lt;uap3:AppExecutionAlias&gt;
+        &lt;desktop:ExecutionAlias Alias=&quot;[AliasName]&quot; /&gt;
+    &lt;/uap3:AppExecutionAlias&gt;
+&lt;/uap3:Extension&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.appExecutionAlias</code>.</td>
+</tr>
+<tr>
+<td>Executable</td>
+<td>The relative path to the executable to start when the alias is invoked.</td>
+</tr>
+<tr>
+<td>Alias</td>
+<td>The short name for your app. It must always end with the &quot;.exe&quot; extension. You can only specify a single app execution alias for each application in the package. If multiple apps register for the same alias, the system will invoke the last one that was registered, so make sure to choose a unique alias other apps are unlikely to override.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-15">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap3=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/3&quot;
+  IgnorableNamespaces=&quot;uap3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+         &lt;uap3:Extension
+                Category=&quot;windows.appExecutionAlias&quot;
+                Executable=&quot;exes\launcher.exe&quot;
+                EntryPoint=&quot;Windows.FullTrustApplication&quot;&gt;
+            &lt;uap3:AppExecutionAlias&gt;
+                &lt;desktop:ExecutionAlias Alias=&quot;Contoso.exe&quot; /&gt;
+            &lt;/uap3:AppExecutionAlias&gt;
+        &lt;/uap3:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation">here</a>.</p>
+<p><a id="executable"></a></p>
+<h3 id="start-an-executable-file-when-users-log-into-windows">Start an executable file when users log into Windows</h3>
+<p>Startup tasks allow your application to run an executable automatically whenever a user logs on.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The user has to start your application at least one time to register this startup task.</p>
+</div>
+<p>Your application can declare multiple startup tasks. Each task starts independently. All startup tasks will appear in Task Manager under the <strong>Startup</strong> tab with the name that you specify in your app's manifest and your app's icon. Task Manager will automatically analyze the startup impact of your tasks.</p>
+<p>Users can manually disable your app's startup task by using Task Manager. If a user disables a task, you can't programmatically re-enable it.</p>
+<h4 id="xml-namespace-8">XML namespace</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10</code></p>
+<h4 id="elements-and-attributes-of-this-extension-17">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension
+    Category=&quot;windows.startupTask&quot;
+    Executable=&quot;[ExecutableName]&quot;
+    EntryPoint=&quot;Windows.FullTrustApplication&quot;&gt;
+  &lt;StartupTask
+      TaskId=&quot;[TaskID]&quot;
+      Enabled=&quot;true&quot;
+      DisplayName=&quot;[DisplayName]&quot; /&gt;
+&lt;/Extension&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.startupTask</code>.</td>
+</tr>
+<tr>
+<td>Executable</td>
+<td>The relative path to the executable file to start.</td>
+</tr>
+<tr>
+<td>TaskId</td>
+<td>A unique identifier for your task. Using this identifier, your application can call the APIs in the <a href="/uwp/api/Windows.ApplicationModel.StartupTask">Windows.ApplicationModel.StartupTask</a> class to programmatically enable or disable a startup task.</td>
+</tr>
+<tr>
+<td>Enabled</td>
+<td>Indicates whether the task first starts enabled or disabled. Enabled tasks will run the next time the user logs on (unless the user disables it).</td>
+</tr>
+<tr>
+<td>DisplayName</td>
+<td>The name of the task that appears in Task Manager. You can localize this string by using <code>ms-resource</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-16">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;
+  IgnorableNamespaces=&quot;desktop&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;desktop:Extension
+          Category=&quot;windows.startupTask&quot;
+          Executable=&quot;bin\MyStartupTask.exe&quot;
+          EntryPoint=&quot;Windows.FullTrustApplication&quot;&gt;
+        &lt;desktop:StartupTask
+          TaskId=&quot;MyStartupTask&quot;
+          Enabled=&quot;true&quot;
+          DisplayName=&quot;My App Service&quot; /&gt;
+        &lt;/desktop:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+ &lt;/Package&gt;
+</code></pre>
+<p><a id="autoplay"></a></p>
+<h3 id="enable-users-to-start-your-application-when-they-connect-a-device-to-their-pc">Enable users to start your application when they connect a device to their PC</h3>
+<p>AutoPlay can present your application as an option when a user connects a device to their PC.</p>
+<h4 id="xml-namespace-9">XML namespace</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10/3</code></p>
+<h4 id="elements-and-attributes-of-this-extension-18">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.autoPlayHandler&quot;&gt;
+  &lt;AutoPlayHandler&gt;
+    &lt;InvokeAction ActionDisplayName=&quot;[action string]&quot; ProviderDisplayName=&quot;[name of your app/service]&quot;&gt;
+      &lt;Content ContentEvent=&quot;[Content event]&quot; Verb=&quot;[any string]&quot; DropTargetHandler=&quot;[Clsid]&quot; /&gt;
+      &lt;Content ContentEvent=&quot;[Content event]&quot; Verb=&quot;[any string]&quot; Parameters=&quot;[Initialization parameter]&quot;/&gt;
+      &lt;Device DeviceEvent=&quot;[Device event]&quot; HWEventHandler=&quot;[Clsid]&quot; InitCmdLine=&quot;[Initialization parameter]&quot;/&gt;
+    &lt;/InvokeAction&gt;
+  &lt;/AutoPlayHandler&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.autoPlayHandler</code>.</td>
+</tr>
+<tr>
+<td>ActionDisplayName</td>
+<td>A string that represents the action that users can take with a device that they connect to a PC (For example: &quot;Import files&quot;, or &quot;Play video&quot;).</td>
+</tr>
+<tr>
+<td>ProviderDisplayName</td>
+<td>A string that represents your application or service (For example: &quot;Contoso video player&quot;).</td>
+</tr>
+<tr>
+<td>ContentEvent</td>
+<td>The name of a content event that causes users to be prompted with your <code>ActionDisplayName</code> and <code>ProviderDisplayName</code>. A content event is raised when a volume device such as a camera memory card, thumb drive, or DVD is inserted into the PC. You can find the full list of those events <a href="/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference">here</a>.</td>
+</tr>
+<tr>
+<td>Verb</td>
+<td>The Verb setting identifies a value that is passed to your application for the selected option. You can specify multiple launch actions for an AutoPlay event and use the Verb setting to determine which option a user has selected for your app. You can tell which option the user selected by checking the verb property of the startup event arguments passed to your app. You can use any value for the Verb setting except, open, which is reserved.</td>
+</tr>
+<tr>
+<td>DropTargetHandler</td>
+<td>The class ID of the application that implements the <a href="/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget">IDropTarget</a> interface. Files from the removable media are passed to the <a href="/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget.drop#Microsoft_VisualStudio_OLE_Interop_IDropTarget_Drop_Microsoft_VisualStudio_OLE_Interop_IDataObject_System_UInt32_Microsoft_VisualStudio_OLE_Interop_POINTL_System_UInt32__">Drop</a> method of your <a href="/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget">IDropTarget</a> implementation.</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>You don't have to implement the <a href="/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget">IDropTarget</a> interface for all content events. For any of the content events, you could provide command line parameters instead of implementing the <a href="/dotnet/api/microsoft.visualstudio.ole.interop.idroptarget">IDropTarget</a> interface. For those events, AutoPlay will start your application by using those command line parameters. You can parse those parameters in your app's initialization code to determine if it was started by AutoPlay and then provide your custom implementation.</td>
+</tr>
+<tr>
+<td>DeviceEvent</td>
+<td>The name of a device event that causes users to be prompted with your <code>ActionDisplayName</code> and <code>ProviderDisplayName</code>. A device event is raised when a device is connected to the PC. Device events begin with the string <code>WPD</code> and you can find them listed <a href="/windows/uwp/launch-resume/auto-launching-with-autoplay#autoplay-event-reference">here</a>.</td>
+</tr>
+<tr>
+<td>HWEventHandler</td>
+<td>The Class ID of the application that implements the <a href="/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler">IHWEventHandler</a> interface.</td>
+</tr>
+<tr>
+<td>InitCmdLine</td>
+<td>The string parameter that you want to pass into the <a href="/windows/desktop/api/shobjidl/nf-shobjidl-ihweventhandler-initialize">Initialize</a> method of the <a href="/windows/desktop/api/shobjidl/nn-shobjidl-ihweventhandler">IHWEventHandler</a> interface.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-17">Example</h3>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:desktop3=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/3&quot;
+  IgnorableNamespaces=&quot;desktop3&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;desktop3:Extension Category=&quot;windows.autoPlayHandler&quot;&gt;
+          &lt;desktop3:AutoPlayHandler&gt;
+            &lt;desktop3:InvokeAction ActionDisplayName=&quot;Import my files&quot; ProviderDisplayName=&quot;ms-resource:AutoPlayDisplayName&quot;&gt;
+              &lt;desktop3:Content ContentEvent=&quot;ShowPicturesOnArrival&quot; Verb=&quot;show&quot; DropTargetHandler=&quot;CD041BAE-0DEA-4472-9B7B-C98043D26EA8&quot;/&gt;
+              &lt;desktop3:Content ContentEvent=&quot;PlayVideoFilesOnArrival&quot; Verb=&quot;play&quot; Parameters=&quot;%1&quot; /&gt;
+              &lt;desktop3:Device DeviceEvent=&quot;WPD\ImageSource&quot; HWEventHandler=&quot;CD041BAE-0DEA-4472-9B7B-C98043D26EA8&quot; InitCmdLine=&quot;/autoplay&quot;/&gt;
+            &lt;/desktop3:InvokeAction&gt;
+          &lt;/desktop3:AutoPlayHandler&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="updates"></a></p>
+<h3 id="restart-automatically-after-receiving-an-update-from-the-microsoft-store">Restart automatically after receiving an update from the Microsoft Store</h3>
+<p>If your application is open when users install an update to it, the application closes.</p>
+<p>If you want that application to restart after the update completes, call the  <a href="/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart">RegisterApplicationRestart</a> function in every process that you want to restart.</p>
+<p>Each active window in your application receives a <a href="/windows/desktop/Shutdown/wm-queryendsession">WM_QUERYENDSESSION</a> message. At this point, your application can call the <a href="/windows/desktop/api/winbase/nf-winbase-registerapplicationrestart">RegisterApplicationRestart</a> function again to update the command line if necessary.</p>
+<p>When each active window in your application receives the <a href="/windows/desktop/Shutdown/wm-endsession">WM_ENDSESSION</a> message, your application should save data and shut down.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Your active windows also receive the <a href="/windows/desktop/winmsg/wm-close">WM_CLOSE</a> message in case the application doesn't handle the <a href="/windows/desktop/Shutdown/wm-endsession">WM_ENDSESSION</a> message.</p>
+</div>
+<p>At this point, your application has 30 seconds to close it's own processes or the platform terminates them forcefully.</p>
+<p>After the update is complete, your application restarts.</p>
+<h2 id="work-with-other-applications">Work with other applications</h2>
+<p>Integrate with other apps, start other processes or share information.</p>
+<ul>
+<li><a href="#printing">Make your application appear as the print target in applications that support printing</a></li>
+<li><a href="#fonts">Share fonts with other Windows applications</a></li>
+<li><a href="#win32-process">Start a Win32 process from a Universal Windows Platform (UWP) app</a></li>
+</ul>
+<p><a id="printing"></a></p>
+<h3 id="make-your-application-appear-as-the-print-target-in-applications-that-support-printing">Make your application appear as the print target in applications that support printing</h3>
+<p>When users want to print data from another application such as Notepad, you can make your application appear as a print target in the app's list of available print targets.</p>
+<p>You'll have to modify your application so that it receives print data in XML Paper Specification (XPS) format.</p>
+<h4 id="xml-namespaces-9">XML namespaces</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10/2</code></p>
+<h4 id="elements-and-attributes-of-this-extension-19">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.appPrinter&quot;&gt;
+    &lt;AppPrinter
+        DisplayName=&quot;[DisplayName]&quot;
+        Parameters=&quot;[Parameters]&quot; /&gt;
+&lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-desktop2-appprinter">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.appPrinter</code>.</td>
+</tr>
+<tr>
+<td>DisplayName</td>
+<td>The name that you want to appear in the list of print targets for an app.</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Any parameters that your application requires to properly handle the request.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-18">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:desktop2=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10/2&quot;
+  IgnorableNamespaces=&quot;desktop2&quot;&gt;
+  &lt;Applications&gt;
+  &lt;Application&gt;
+    &lt;Extensions&gt;
+      &lt;desktop2:Extension Category=&quot;windows.appPrinter&quot;&gt;
+        &lt;desktop2:AppPrinter
+          DisplayName=&quot;Send to Contoso&quot;
+          Parameters=&quot;/insertdoc %1&quot; /&gt;
+      &lt;/desktop2:Extension&gt;
+    &lt;/Extensions&gt;
+  &lt;/Application&gt;
+&lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p>Find a sample that uses this extension <a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/PrintToPDF">Here</a></p>
+<p><a id="fonts"></a></p>
+<h3 id="share-fonts-with-other-windows-applications">Share fonts with other Windows applications</h3>
+<p>Share your custom fonts with other Windows applications.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Before you can submit an app that uses this extension to the Store, you must first obtain approval from the Store team. To obtain approval, go to <a href="https://aka.ms/storesupport">https://aka.ms/storesupport</a>, click <strong>Contact us</strong>, and choose options relevant to submitting apps to the dashboard. This approval process helps to ensure that there are no conflicts between fonts installed by your app and fonts that are installed with the OS. If you do not obtain approval, you will receive an error similar to the following when you submit your app: &quot;Package acceptance validation error: You can't use extension windows.sharedFonts with this account. Contact our support team if you'd like to request permissions to use this extension.&quot;</p>
+</div>
+<h4 id="xml-namespaces-10">XML namespaces</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/uap/windows10/4</code></p>
+<h4 id="elements-and-attributes-of-this-extension-20">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.sharedFonts&quot;&gt;
+    &lt;SharedFonts&gt;
+      &lt;Font File=&quot;[FontFile]&quot; /&gt;
+    &lt;/SharedFonts&gt;
+  &lt;/Extension&gt;
+</code></pre>
+<p>Find the complete schema reference <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.sharedFonts</code>.</td>
+</tr>
+<tr>
+<td>File</td>
+<td>The file that contains the fonts that you want to share.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-19">Example</h4>
+<pre><code class="lang-XML">&lt;Package
+  xmlns:uap4=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/4&quot;
+  IgnorableNamespaces=&quot;uap4&quot;&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+        &lt;uap4:Extension Category=&quot;windows.sharedFonts&quot;&gt;
+          &lt;uap4:SharedFonts&gt;
+            &lt;uap4:Font File=&quot;Fonts\JustRealize.ttf&quot; /&gt;
+            &lt;uap4:Font File=&quot;Fonts\JustRealizeBold.ttf&quot; /&gt;
+          &lt;/uap4:SharedFonts&gt;
+        &lt;/uap4:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p><a id="win32-process"></a></p>
+<h3 id="start-a-win32-process-from-a-universal-windows-platform-uwp-app">Start a Win32 process from a Universal Windows Platform (UWP) app</h3>
+<p>Start a Win32 process that runs in full-trust.</p>
+<h4 id="xml-namespaces-11">XML namespaces</h4>
+<p><code>http://schemas.microsoft.com/appx/manifest/desktop/windows10</code></p>
+<h4 id="elements-and-attributes-of-this-extension-21">Elements and attributes of this extension</h4>
+<pre><code class="lang-XML">&lt;Extension Category=&quot;windows.fullTrustProcess&quot; Executable=&quot;[executable file]&quot;&gt;
+  &lt;FullTrustProcess&gt;
+    &lt;ParameterGroup GroupId=&quot;[GroupID]&quot; Parameters=&quot;[Parameters]&quot;/&gt;
+  &lt;/FullTrustProcess&gt;
+&lt;/Extension&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Category</td>
+<td>Always <code>windows.fullTrustProcess</code>.</td>
+</tr>
+<tr>
+<td>GroupID</td>
+<td>A string that identifies a set of parameters that you want to pass to the executable.</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Parameters that you want to pass to the executable.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-20">Example</h4>
+<pre><code class="lang-XML">&lt;Package xmlns=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10&quot;
+         xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+         xmlns:rescap=
+&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities&quot;
+         xmlns:desktop=&quot;http://schemas.microsoft.com/appx/manifest/desktop/windows10&quot;&gt;
+  ...
+  &lt;Capabilities&gt;
+      &lt;rescap:Capability Name=&quot;runFullTrust&quot;/&gt;
+  &lt;/Capabilities&gt;
+  &lt;Applications&gt;
+    &lt;Application&gt;
+      &lt;Extensions&gt;
+          &lt;desktop:Extension Category=&quot;windows.fullTrustProcess&quot; Executable=&quot;fulltrustprocess.exe&quot;&gt;
+              &lt;desktop:FullTrustProcess&gt;
+                  &lt;desktop:ParameterGroup GroupId=&quot;SyncGroup&quot; Parameters=&quot;/Sync&quot;/&gt;
+                  &lt;desktop:ParameterGroup GroupId=&quot;OtherGroup&quot; Parameters=&quot;/Other&quot;/&gt;
+              &lt;/desktop:FullTrustProcess&gt;
+           &lt;/desktop:Extension&gt;
+      &lt;/Extensions&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p>This extension might be useful if you want to create a Universal Windows Platform User interface that runs on all devices, but you want components of your Win32 application to continue running in full-trust.</p>
+<p>Just create a Windows app package for your Win32 app. Then, add this extension to the package file of your UWP app. This extensions indicates that you want to start an executable file in the Windows app package.  If you want to communicate between your UWP app and your Win32 app, you can set up one or more <a href="/windows/uwp/launch-resume/app-services">app services</a> to do that. You can read more about this scenario <a href="/archive/blogs/appconsult/desktop-bridge-the-migrate-phase-invoking-a-win32-process-from-a-uwp-app">here</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Have questions? Ask us on Stack Overflow. Our team monitors these <a href="https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge">tags</a>. You can also ask us <a href="https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&amp;sort=relevancedesc&amp;searchTerm=%5BDesktop%20Converter%5D">here</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/desktop-to-uwp-extensions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

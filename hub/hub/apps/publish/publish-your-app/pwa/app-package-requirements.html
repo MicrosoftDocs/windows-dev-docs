@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>App package requirements for PWA </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="App package requirements for PWA ">
+    
+    <meta name="description" content="Prepare your PWA app&#39;s packages for submission to the Microsoft Store by following these guidelines. Be aware that the store enforces specific rules related to version numbers, which may vary across different OS versions. Additionally, you can refer to a table of supported languages and their corresponding language codes for app submission.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="app-package-requirements-for-pwa">App package requirements for PWA</h1>
+
+<h2 id="requirements">Requirements</h2>
+<p>Follow these guidelines to prepare your app's packages for submission to the Microsoft Store.</p>
+<h3 id="before-you-build-your-apps-package-for-the-microsoft-store">Before you build your app's package for the Microsoft Store</h3>
+<p>Make sure to <a href="/windows/uwp/debug-test-perf/windows-app-certification-kit">test your app with the Windows App Certification Kit</a>. We also recommend that you test your app on different types of hardware. Note that until we certify your app and make it available from the Microsoft Store, it can only be installed and run on computers that have developer licenses.</p>
+<h3 id="building-the-app-package-using-microsoft-visual-studio">Building the app package using Microsoft Visual Studio</h3>
+<p>If you're using Microsoft Visual Studio as your development environment, you already have built-in tools that make creating an app package a quick and easy process. For more info, see <a href="/windows/uwp/packaging/">Packaging apps</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Be sure that all your filenames use ANSI.</p>
+</div>
+<p>When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically. Without the additional information added to the manifest, you may encounter package upload failures.</p>
+<p>When you build your app's UWP packages, Visual Studio can create an .msix or appx file, or a .msixupload or .appxupload file. For UWP apps, we recommend that you always upload the .msixupload or .appxupload file in the <a href="upload-app-packages.html">Packages</a> page. For more info about packaging UWP apps for the Store, see <a href="/windows/msix/package/packaging-uwp-apps">Package a UWP app with Visual Studio</a>.</p>
+<p>Your app's packages don't have to be signed with a certificate rooted in a trusted certificate authority.</p>
+<h4 id="app-bundles">App bundles</h4>
+<p>For UWP apps, Visual Studio can generate an app bundle (.msixbundle or .appxbundle) to reduce the size of the app that users download. This can be helpful if you've defined language-specific assets, a variety of image-scale assets, or resources that apply to specific versions of Microsoft DirectX.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>One app bundle can contain your packages for all architectures.</p>
+</div>
+<p>With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see <a href="/windows/uwp/packaging/">Packaging apps</a> and <a href="/windows/msix/package/packaging-uwp-apps">Package a UWP app with Visual Studio</a>.</p>
+<h3 id="building-the-app-package-manually">Building the app package manually</h3>
+<p>If you don't use Visual Studio to create your package, you must <a href="/uwp/schemas/appxpackage/how-to-create-a-package-manifest-manually">create your package manifest manually</a>.</p>
+<p>Be sure to review the <a href="/uwp/schemas/appxpackage/appx-package-manifest">App package manifest</a> documentation for complete manifest details and requirements. Your manifest must follow the package manifest schema in order to pass certification.</p>
+<p>Your manifest must include some specific info about your account and your app. You can find this info by looking at <a href="../../view-app-identity-details.html">View app identity details</a> in the <strong>Product management</strong> section of your app's overview page in the dashboard.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Values in the manifest are case-sensitive. Spaces and other punctuation must also match. Enter the values carefully and review them to ensure that they are correct.</p>
+</div>
+<p>App bundles (.msixbundle or .appxbundle) use a different manifest. Review the <a href="/uwp/schemas/bundlemanifestschema/bundle-manifest">Bundle manifest</a> documentation for the details and requirements for app bundle manifests. Note that in a .msixbundle or .appxbundle, the manifest of each included package must use the same elements and attributes, except for the <strong>ProcessorArchitecture</strong> attribute of the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity">Identity</a> element.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Be sure to run the <a href="/windows/uwp/debug-test-perf/windows-app-certification-kit">Windows App Certification Kit</a> before you submit your packages. This can you help determine if your manifest has any problems that might cause certification or submission failures.</p>
+</div>
+<h3 id="package-format-requirements">Package format requirements</h3>
+<p>Your app’s packages must comply with these requirements.</p>
+<table>
+<thead>
+<tr>
+<th>App package property</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Package size</td>
+<td>.msixbundle or .appxbundle: 25 GB maximum per bundle<br>.msix or .appx packages targeting Windows 10 or Windows 11: 25 GB maximum per package</td>
+</tr>
+<tr>
+<td>Block map hashes</td>
+<td>SHA2-256 algorithm</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supported-versions">Supported versions</h3>
+<p>For UWP apps, all packages must target a version of Windows 10 or Windows 11 supported by the Store. The versions your package supports must be indicated in the <strong>MinVersion</strong> and <strong>MaxVersionTested</strong> attributes of the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily">TargetDeviceFamily</a> element of the app manifest.</p>
+<h3 id="storemanifest-xml-file">StoreManifest XML file</h3>
+<p>StoreManifest.xml is an optional configuration file that may be included in app packages. Its purpose is to enable features, such as declaring your app as a Microsoft Store device app or declaring requirements that a package depends on to be applicable to a device, that the package manifest does not cover. If used, StoreManifest.xml is submitted with the app package and must be in the root folder of your app's main project. For more info, see <a href="/uwp/schemas/storemanifest/store-manifest-schema-portal">StoreManifest schema</a>.</p>
+<h2 id="package-version-numbering">Package version numbering</h2>
+<p>Each package you provide must have a version number (provided as a value in the <strong>Version</strong> attribute of the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity">Package/Identity</a> element in the app manifest). The Microsoft Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This topic refers to &quot;packages&quot;, but unless noted, the same rules apply to version numbers for both .msix/.appx and .msixbundle/.appxbundle files.</p>
+</div>
+<h3 id="version-numbering-for-windows10-and-11-packages">Version numbering for Windows 10 and 11 packages</h3>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>For Windows 10 or Windows 11 (UWP) packages, the last (fourth) section of the version number is reserved for Store use and must be left as 0 when you build your package (although the Store may change the value in this section). The other sections must be set to an integer between 0 and 65535 (except for the first section, which cannot be 0).</p>
+</div>
+<p>When choosing a UWP package from your published submission, the Microsoft Store will always use the highest-versioned package that is applicable to the customer’s Windows 10 or Windows 11 device. This gives you greater flexibility and puts you in control over which packages will be provided to customers on specific device types. Importantly, you can submit these packages in any order; you are not limited to providing higher-versioned packages with each subsequent submission.</p>
+<p>You can provide multiple UWP packages with the same version number. However, packages that share a version number cannot also have the same architecture, because the full identity that the Store uses for each of your packages must be unique. For more info, see <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity"><strong>Identity</strong></a>.</p>
+<p>When you provide multiple UWP packages that use the same version number, the architecture (in the order x64, x86, Arm, neutral) will be used to decide which one is of higher rank (when the Store determines which package to provide to a customer's device). When ranking app bundles that use the same version number, the highest architecture rank within the bundle is considered: an app bundle that contains an x64 package will have a higher rank than one that only contains an x86 package.</p>
+<p>This gives you a lot of flexibility to evolve your app over time. You can upload and submit new packages that use lower version numbers to add support for Windows 10 or Windows 11 devices that you did not previously support, you can add higher-versioned packages that have stricter dependencies to take advantage of hardware or OS features, or you can add higher-versioned packages that serve as updates to some or all of your existing customer base.</p>
+<p>The following example illustrates how version numbering can be managed to deliver the intended packages to your customers over multiple submissions.</p>
+<h4 id="example-moving-to-a-single-package-over-multiple-submissions">Example: Moving to a single package over multiple submissions</h4>
+<p>Windows 10 enables you to write a single codebase that runs everywhere. This makes starting a new cross-platform project much easier. However, for a number of reasons, you might not want to merge existing codebases to create a single project right away.</p>
+<p>You can use the package versioning rules to gradually move your customers to a single package for the Universal device family, while shipping a number of interim updates for specific device families (including ones that take advantage of Windows 10 APIs). The example below illustrates how the same rules are consistently applied over a series of submissions for the same app.</p>
+<table>
+<thead>
+<tr>
+<th>Submission</th>
+<th>Contents</th>
+<th>Customer experience</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>- Package version: 1.1.10.0<br> - Device family: Windows.Desktop, minVersion 10.0.10240.0</td>
+<td>- Devices on Windows 10 and 11 Desktop build 10.0.10240.0 and above will get 1.1.10.0<br> - Other device families will not be able to purchase and install the app</td>
+</tr>
+<tr>
+<td>2</td>
+<td>- Package version: 1.1.10.0<br> - Device family: Windows.Desktop, minVersion 10.0.10240.0<br><br> - Package version: 1.0.0.0<br> - Device family: Windows.Universal, minVersion 10.0.10240.0</td>
+<td>- Devices on Windows 10 and 11 Desktop build 10.0.10240.0 and above will get 1.1.10.0<br> - Other (non-desktop) device families when they are introduced will get 1.0.0.0<br> - Desktop devices that already have the app installed will not see any update (because they already have the best available version 1.1.10.0 and are higher than 1.0.0.0)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>- Package version: 1.1.10.0<br> - Device family: Windows.Desktop, minVersion 10.0.10240.0<br><br> - Package version: 1.1.5.0<br> - Device family: Windows.Universal, minVersion 10.0.10250.0<br><br> - Package version: 1.0.0.0<br> - Device family: Windows.Universal, minVersion 10.0.10240.0</td>
+<td>- Devices on Windows 10 and 11 Desktop build 10.0.10240.0 and above will get 1.1.10.0<br> - Other (non-desktop) device families when introduced with build 10.0.10250.0 and above will get 1.1.5.0<br> - Other (non-desktop) device families when introduced with build &gt;=10.0.10240.0 and &lt; 10.010250.0 will get 1.1.0.0<br> - Desktop devices that already have the app installed will not see any update (because they already have the best available version 1.1.10.0 which is higher than both 1.1.5.0 and 1.0.0.0)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>- Package version: 2.0.0.0<br> - Device family: Windows.Universal, minVersion 10.0.10240.0</td>
+<td>- All customers on all device families on Windows 10 and 11 build v10.0.10240.0 and above will get package 2.0.0.0</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In all cases, customer devices will receive the package that has the highest possible version number that they qualify for. For example, in the third submission above, all desktop devices will get v1.1.10.0, even if they have OS version 10.0.10250.0 or later and thus could also accept v1.1.5.0. Since 1.1.10.0 is the highest version number available to them, that is the package they will get.</p>
+</div>
+<h4 id="using-version-numbering-to-roll-back-to-a-previously-shipped-package-for-new-acquisitions">Using version numbering to roll back to a previously-shipped package for new acquisitions</h4>
+<p>If you keep copies of your packages, you'll have the option to roll back your app’s package in the Store to an earlier Windows 10 package if you should discover problems with a release. This is a temporary way to limit the disruption to your customers while you take time to fix the issue.</p>
+<p>To do this, create a new <a href="create-app-submission.html">submission</a>. Remove the problematic package and upload the old package that you want to provide in the Store. Customers who have already received the package you are rolling back will still have the problematic package (since your older package will have an earlier version number). But this will stop anyone else from acquiring the problematic package, while allowing the app to still be available in the Store.</p>
+<p>To fix the issue for the customers who have already received the problematic package, you can submit a new Windows 10 package that has a higher version number than the bad package as soon as you can. After that submission goes through the certification process, all customers will be updated to the new package, since it will have a higher version number.</p>
+<h2 id="supported-languages">Supported languages</h2>
+<p>You can submit apps to the Microsoft Store in over 100 languages.</p>
+<p>To learn more about configuring languages in your apps, see <a href="../../../design/globalizing/globalizing-portal.html">Globalization and localization</a> and <a href="../../../design/globalizing/manage-language-and-region.html">Understand user profile languages and app manifest languages</a>. We also have a <a href="../../../design/globalizing/use-mat.html">Multilingual App Toolkit</a> to help you write apps that support multiple languages.</p>
+<h3 id="list-of-supported-languages">List of supported languages</h3>
+<p>These are the languages that the Microsoft Store supports. Your app must support at least one of these languages.</p>
+<details>
+<summary>View table</summary>
+<p>Language codes that are not included here are not supported by the Store. We recommend that you don't include packages targeting language codes other than those listed below; such packages will not be distributed to customers, and may cause delays or failures in certification.</p>
+<table>
+<thead>
+<tr>
+<th>Language name</th>
+<th>Supported language codes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arabic</td>
+<td>ar, ar-sa, ar-ae, ar-bh, ar-dz, ar-eg, ar-iq, ar-jo, ar-kw, ar-lb, ar-ly, ar-ma, ar-om, ar-qa, ar-sy, ar-tn, ar-ye</td>
+</tr>
+<tr>
+<td>Afrikaans</td>
+<td>af, af-za</td>
+</tr>
+<tr>
+<td>Albanian</td>
+<td>sq, sq-al</td>
+</tr>
+<tr>
+<td>Amharic</td>
+<td>am, am-et</td>
+</tr>
+<tr>
+<td>Armenian</td>
+<td>hy, hy-am</td>
+</tr>
+<tr>
+<td>Assamese</td>
+<td>as, as-in</td>
+</tr>
+<tr>
+<td>Azerbaijani</td>
+<td>az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az</td>
+</tr>
+<tr>
+<td>Basque (Basque)</td>
+<td>eu, eu-es</td>
+</tr>
+<tr>
+<td>Belarusian</td>
+<td>be, be-by</td>
+</tr>
+<tr>
+<td>Bangla</td>
+<td>bn, bn-bd, bn-in</td>
+</tr>
+<tr>
+<td>Bosnian</td>
+<td>bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba</td>
+</tr>
+<tr>
+<td>Bulgarian</td>
+<td>bg, bg-bg</td>
+</tr>
+<tr>
+<td>Catalan</td>
+<td>ca, ca-es, ca-es-valencia</td>
+</tr>
+<tr>
+<td>Cherokee</td>
+<td>chr-cher, chr-cher-us, chr-latn</td>
+</tr>
+<tr>
+<td>Chinese (Simplified)</td>
+<td>zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg</td>
+</tr>
+<tr>
+<td>Chinese (Traditional)</td>
+<td>zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw</td>
+</tr>
+<tr>
+<td>Croatian</td>
+<td>hr, hr-hr, hr-ba</td>
+</tr>
+<tr>
+<td>Czech</td>
+<td>cs, cs-cz</td>
+</tr>
+<tr>
+<td>Danish</td>
+<td>da, da-dk</td>
+</tr>
+<tr>
+<td>Dari</td>
+<td>prs, prs-af, prs-arab</td>
+</tr>
+<tr>
+<td>Dutch</td>
+<td>nl, nl-nl, nl-be</td>
+</tr>
+<tr>
+<td>English</td>
+<td>en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw, en-053, en-021, en-029, en-011, en-018, en-014</td>
+</tr>
+<tr>
+<td>Estonian</td>
+<td>et, et-ee</td>
+</tr>
+<tr>
+<td>Filipino</td>
+<td>fil, fil-latn, fil-ph</td>
+</tr>
+<tr>
+<td>Finnish</td>
+<td>fi, fi-fi</td>
+</tr>
+<tr>
+<td>French</td>
+<td>fr, fr-be , fr-ca , fr-ch , fr-fr , fr-lu, fr-015, fr-cd, fr-ci, fr-cm, fr-ht, fr-ma, fr-mc, fr-ml, fr-re, frc-latn, frp-latn, fr-155, fr-029, fr-021, fr-011</td>
+</tr>
+<tr>
+<td>Galician</td>
+<td>gl, gl-es</td>
+</tr>
+<tr>
+<td>Georgian</td>
+<td>ka, ka-ge</td>
+</tr>
+<tr>
+<td>German</td>
+<td>de, de-at, de-ch, de-de, de-lu, de-li</td>
+</tr>
+<tr>
+<td>Greek</td>
+<td>el, el-gr</td>
+</tr>
+<tr>
+<td>Gujarati</td>
+<td>gu, gu-in</td>
+</tr>
+<tr>
+<td>Hausa</td>
+<td>ha, ha-latn, ha-latn-ng</td>
+</tr>
+<tr>
+<td>Hebrew</td>
+<td>he, he-il</td>
+</tr>
+<tr>
+<td>Hindi</td>
+<td>hi, hi-in</td>
+</tr>
+<tr>
+<td>Hungarian</td>
+<td>hu, hu-hu</td>
+</tr>
+<tr>
+<td>Icelandic</td>
+<td>is, is-is</td>
+</tr>
+<tr>
+<td>Igbo</td>
+<td>ig-latn, ig-ng</td>
+</tr>
+<tr>
+<td>Indonesian</td>
+<td>id, id-id</td>
+</tr>
+<tr>
+<td>Inuktitut (Latin)</td>
+<td>iu-cans, iu-latn, iu-latn-ca</td>
+</tr>
+<tr>
+<td>Irish</td>
+<td>ga, ga-ie</td>
+</tr>
+<tr>
+<td>isiXhosa</td>
+<td>xh, xh-za</td>
+</tr>
+<tr>
+<td>isiZulu</td>
+<td>zu, zu-za</td>
+</tr>
+<tr>
+<td>Italian</td>
+<td>it, it-it, it-ch</td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td>ja , ja-jp</td>
+</tr>
+<tr>
+<td>Kannada</td>
+<td>kn, kn-in</td>
+</tr>
+<tr>
+<td>Kazakh</td>
+<td>kk, kk-kz</td>
+</tr>
+<tr>
+<td>Khmer</td>
+<td>km, km-kh</td>
+</tr>
+<tr>
+<td>K'iche'</td>
+<td>quc-latn, qut-gt, qut-latn</td>
+</tr>
+<tr>
+<td>Kinyarwanda</td>
+<td>rw, rw-rw</td>
+</tr>
+<tr>
+<td>KiSwahili</td>
+<td>sw, sw-ke</td>
+</tr>
+<tr>
+<td>Konkani</td>
+<td>kok, kok-in</td>
+</tr>
+<tr>
+<td>Korean</td>
+<td>ko, ko-kr</td>
+</tr>
+<tr>
+<td>Kurdish</td>
+<td>ku-arab, ku-arab-iq</td>
+</tr>
+<tr>
+<td>Kyrgyz</td>
+<td>ky-kg, ky-cyrl</td>
+</tr>
+<tr>
+<td>Lao</td>
+<td>lo, lo-la</td>
+</tr>
+<tr>
+<td>Latvian</td>
+<td>lv, lv-lv</td>
+</tr>
+<tr>
+<td>Lithuanian</td>
+<td>lt, lt-lt</td>
+</tr>
+<tr>
+<td>Luxembourgish</td>
+<td>lb, lb-lu</td>
+</tr>
+<tr>
+<td>Macedonian</td>
+<td>mk, mk-mk</td>
+</tr>
+<tr>
+<td>Malay</td>
+<td>ms, ms-bn, ms-my</td>
+</tr>
+<tr>
+<td>Malayalam</td>
+<td>ml, ml-in</td>
+</tr>
+<tr>
+<td>Maltese</td>
+<td>mt, mt-mt</td>
+</tr>
+<tr>
+<td>Maori</td>
+<td>mi, mi-latn, mi-nz</td>
+</tr>
+<tr>
+<td>Marathi</td>
+<td>mr, mr-in</td>
+</tr>
+<tr>
+<td>Mongolian (Cyrillic)</td>
+<td>mn-cyrl, mn-mong, mn-mn, mn-phag</td>
+</tr>
+<tr>
+<td>Nepali</td>
+<td>ne, ne-np</td>
+</tr>
+<tr>
+<td>Norwegian</td>
+<td>nb, nb-no, nn, nn-no, no, no-no,</td>
+</tr>
+<tr>
+<td>Odia</td>
+<td>or, or-in</td>
+</tr>
+<tr>
+<td>Persian</td>
+<td>fa, fa-ir</td>
+</tr>
+<tr>
+<td>Polish</td>
+<td>pl, pl-pl</td>
+</tr>
+<tr>
+<td>Portuguese (Brazil)</td>
+<td>pt-br</td>
+</tr>
+<tr>
+<td>Portuguese (Portugal)</td>
+<td>pt, pt-pt</td>
+</tr>
+<tr>
+<td>Punjabi</td>
+<td>pa, pa-arab, pa-arab-pk, pa-deva, pa-in</td>
+</tr>
+<tr>
+<td>Quechua</td>
+<td>quz, quz-bo, quz-ec, quz-pe</td>
+</tr>
+<tr>
+<td>Romanian</td>
+<td>ro, ro-ro</td>
+</tr>
+<tr>
+<td>Russian</td>
+<td>ru , ru-ru</td>
+</tr>
+<tr>
+<td>Scottish Gaelic</td>
+<td>gd-gb, gd-latn</td>
+</tr>
+<tr>
+<td>Serbian (Latin)</td>
+<td>sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs</td>
+</tr>
+<tr>
+<td>Serbian (Cyrillic)</td>
+<td>sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs</td>
+</tr>
+<tr>
+<td>Sesotho sa Leboa</td>
+<td>nso, nso-za</td>
+</tr>
+<tr>
+<td>Setswana</td>
+<td>tn, tn-bw, tn-za</td>
+</tr>
+<tr>
+<td>Sindhi</td>
+<td>sd-arab, sd-arab-pk, sd-deva</td>
+</tr>
+<tr>
+<td>Sinhala</td>
+<td>si, si-lk</td>
+</tr>
+<tr>
+<td>Slovak</td>
+<td>sk, sk-sk</td>
+</tr>
+<tr>
+<td>Slovenian</td>
+<td>sl, sl-si</td>
+</tr>
+<tr>
+<td>Spanish</td>
+<td>es, es-cl, es-co, es-es, es-mx, es-ar, es-bo, es-cr, es-do, es-ec, es-gt, es-hn, es-ni, es-pa, es-pe, es-pr, es-py, es-sv, es-us, es-uy, es-ve, es-019, es-419</td>
+</tr>
+<tr>
+<td>Swedish</td>
+<td>sv, sv-se, sv-fi</td>
+</tr>
+<tr>
+<td>Tajik (Cyrillic)</td>
+<td>tg-arab, tg-cyrl, tg-cyrl-tj, tg-latn</td>
+</tr>
+<tr>
+<td>Tamil</td>
+<td>ta, ta-in</td>
+</tr>
+<tr>
+<td>Tatar</td>
+<td>tt-arab, tt-cyrl, tt-latn, tt-ru</td>
+</tr>
+<tr>
+<td>Telugu</td>
+<td>te, te-in</td>
+</tr>
+<tr>
+<td>Thai</td>
+<td>th, th-th</td>
+</tr>
+<tr>
+<td>Tigrinya</td>
+<td>ti, ti-et</td>
+</tr>
+<tr>
+<td>Turkish</td>
+<td>tr, tr-tr</td>
+</tr>
+<tr>
+<td>Turkmen</td>
+<td>tk-cyrl, tk-latn, tk-tm, tk-latn-tr, tk-cyrl-tr</td>
+</tr>
+<tr>
+<td>Ukrainian</td>
+<td>uk, uk-ua</td>
+</tr>
+<tr>
+<td>Urdu</td>
+<td>ur, ur-pk</td>
+</tr>
+<tr>
+<td>Uyghur</td>
+<td>ug-arab, ug-cn, ug-cyrl, ug-latn</td>
+</tr>
+<tr>
+<td>Uzbek (Latin)</td>
+<td>uz, uz-cyrl, uz-latn, uz-latn-uz</td>
+</tr>
+<tr>
+<td>Vietnamese</td>
+<td>vi, vi-vn</td>
+</tr>
+<tr>
+<td>Welsh</td>
+<td>cy, cy-gb</td>
+</tr>
+<tr>
+<td>Wolof</td>
+<td>wo, wo-sn</td>
+</tr>
+<tr>
+<td>Yoruba</td>
+<td>yo-latn, yo-ng</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/pwa/app-package-requirements.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tutorial: Node.js on Windows for beginners </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tutorial: Node.js on Windows for beginners ">
+    
+    <meta name="description" content="A guide to help beginners get started with Node.js development on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-nodejs-for-beginners">Tutorial: Node.js for Beginners</h1>
+
+<p>If you're brand new to using Node.js, this guide will help you to get started with some basics.</p>
+<ul>
+<li><a href="#try-nodejs-with-visual-studio-code">Try using Node.js in Visual Studio Code</a></li>
+<li><a href="#create-your-first-nodejs-web-app-using-express">Create your first Node.js web app using Express</a></li>
+<li><a href="#try-using-a-nodejs-module">Try using a Node.js module</a></li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Installing on Node.js on <a href="nodejs-on-windows.html">Windows</a> or on <a href="nodejs-on-wsl.html">Windows Subsystem for Linux</a></li>
+</ul>
+<h2 id="try-nodejs-with-visual-studio-code">Try NodeJS with Visual Studio Code</h2>
+<p>If you have not yet installed Visual Studio Code, return to the prerequisite section above and follow the installation steps linked for Windows or WSL.</p>
+<ol>
+<li><p>Open your command line and create a new directory: <code>mkdir HelloNode</code>, then enter the directory: <code>cd HelloNode</code></p>
+</li>
+<li><p>Open the directory in VS Code using the command: <code>code .</code></p>
+</li>
+<li><p>Create a file named &quot;app.js&quot;</p>
+</li>
+<li><p>Add a simple string &quot;Hello World&quot; to a variable named <code>msg</code>, then send the contents of the string to your console by entering this in your &quot;app.js&quot; file:</p>
+<pre><code class="lang-js">var msg = 'Hello World';
+console.log(msg);
+</code></pre>
+</li>
+<li><p>To run your &quot;app.js&quot; file with Node.js. Open your terminal right inside VS Code by selecting <strong>View</strong> &gt; <strong>Terminal</strong> (or select Ctrl+`, using the backtick character). If you need to change the default terminal, select the dropdown menu and choose <strong>Select Default Shell</strong>.</p>
+</li>
+<li><p>In the terminal, enter: <code>node app.js</code>. You should see the output: &quot;Hello World&quot;.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Notice that when you type <code>console</code> in your 'app.js' file, VS Code displays supported options related to the <a href="https://developer.mozilla.org/docs/Web/API/Console"><code>console</code></a> object for you to choose from using IntelliSense. Try experimenting with Intellisense using other <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects">JavaScript objects</a>.</p>
+</div>
+<h2 id="create-your-first-nodejs-web-app-using-express">Create your first NodeJS web app using Express</h2>
+<p>Express is a minimal, flexible, and streamlined Node.js framework that makes it easier to develop a web app that can handle multiple types of requests, like GET, PUT, POST, and DELETE. Express comes with an application generator that will automatically create a file architecture for your app.</p>
+<p>To create a project with Express.js:</p>
+<ol>
+<li><p>Open your command line (Command Prompt, Powershell, or whatever you prefer).</p>
+</li>
+<li><p>Create a new project folder: <code>mkdir ExpressProjects</code> and enter that directory: <code>cd ExpressProjects</code></p>
+</li>
+<li><p>Use Express to create a HelloWorld project template: <code>npx express-generator HelloWorld --view=pug</code></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We are using the <code>npx</code> command here to execute the Express.js Node package without actually installing it (or by temporarily installing it depending on how you want to think of it). If you try to use the <code>express</code> command or check the version of Express installed using: <code>express --version</code>, you will receive a response that Express cannot be found. If you want to globally install Express to use over and over again, use: <code>npm install -g express-generator</code>. You can view a list of the packages that have been installed by npm using <code>npm list</code>. They'll be listed by depth (the number of nested directories deep). Packages that you installed will be at depth 0. That package's dependencies will be at depth 1, further dependencies at depth 2, and so on. To learn more, see <a href="https://stackoverflow.com/questions/50605219/difference-between-npx-and-npm">Difference between npx and npm?</a> on StackOverflow.</p>
+</div>
+</li>
+<li><p>Examine the files and folders that Express included by opening the project in VS Code, with: <code>code .</code></p>
+<p>The files that Express generates will create a web app that uses an architecture that can appear a little overwhelming at first. You'll see in your VS Code <strong>Explorer</strong> window (Ctrl+Shift+E to view) that the following files and folders have been generated:</p>
+<ul>
+<li><code>bin</code>. Contains the executable file that starts your app. It fires up a server (on port 3000 if no alternative is supplied) and sets up basic error handling.</li>
+<li><code>public</code>. Contains all the publicly accessed files, including JavaScript files, CSS stylesheets, font files, images, and any other assets that people need when they connect to your website.</li>
+<li><code>routes</code>. Contains all the route handlers for the application. Two files, <code>index.js</code> and <code>users.js</code>, are automatically generated in this folder to serve as examples of how to separate out your application’s route configuration.</li>
+<li><code>views</code>. Contains the files used by your template engine. Express is configured to look here for a matching view when the render method is called. The default template engine is Jade, but Jade has been deprecated in favor of Pug, so we used the <code>--view</code> flag to change the view (template) engine. You can see the <code>--view</code> flag options, and others, by using <code>express --help</code>.</li>
+<li><code>app.js</code>. The starting point of your app. It loads everything and begins serving user requests. It's basically the glue that holds all the parts together.</li>
+<li><code>package.json</code>. Contains the project description, scripts manager, and app manifest. Its main purpose is to track your app's dependencies and their respective versions.</li>
+</ul>
+</li>
+<li><p>You now need to install the dependencies that Express uses in order to build and run your HelloWorld Express app (the packages used for tasks like running the server, as defined in the <code>package.json</code> file). Inside VS Code, open your terminal by selecting <strong>View</strong> &gt; <strong>Terminal</strong> (or select Ctrl+`, using the backtick character), be sure that you're still in the 'HelloWorld' project directory. Install the Express package dependencies with:</p>
+<pre><code class="lang-bash">npm install
+</code></pre>
+</li>
+<li><p>At this point you have the framework set up for a multiple-page web app that has access to a large variety of APIs and HTTP utility methods and middleware, making it easier to create a robust API. Start the Express app on a virtual server by entering:</p>
+<pre><code class="lang-bash">npx cross-env DEBUG=HelloWorld:* npm start
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <code>DEBUG=myapp:*</code> part of the command above means you are telling Node.js that you want to turn on logging for debugging purposes. Remember to replace 'myapp' with your app name. You can find your app name in the <code>package.json</code> file under the &quot;name&quot; property. Using <code>npx cross-env</code> sets the <code>DEBUG</code> environment variable in any terminal, but you can also set it with your terminal specific way. The <code>npm start</code> command is telling npm to run the scripts in your <code>package.json</code> file.</p>
+</div>
+</li>
+<li><p>You can now view the running app by opening a web browser and going to: <strong>localhost:3000</strong></p>
+<p><img src="../../images/express-app.png" alt="Screenshot of Express app running in a browser"></p>
+</li>
+<li><p>Now that your HelloWorld Express app is running locally in your browser, try making a change by opening the 'views' folder in your project directory and selecting the 'index.pug' file. Once open, change <code>h1= title</code> to <code>h1= &quot;Hello World!&quot;</code> and selecting <strong>Save</strong> (Ctrl+S). View your change by refreshing the <strong>localhost:3000</strong> URL on your web browser.</p>
+</li>
+<li><p>To stop running your Express app, in your terminal, enter: <strong>Ctrl+C</strong></p>
+</li>
+</ol>
+<h2 id="try-using-a-nodejs-module">Try using a Node.js module</h2>
+<p>Node.js has tools to help you develop server-side web apps, some built in and many more available via npm. These modules can help with many tasks:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tool</th>
+<th style="text-align: left;">Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">gm, sharp</td>
+<td style="text-align: left;">Image manipulation, including editing, resizing, compression, and so on, directly in your JavaScript code</td>
+</tr>
+<tr>
+<td style="text-align: left;">PDFKit</td>
+<td style="text-align: left;">PDF generation</td>
+</tr>
+<tr>
+<td style="text-align: left;">validator.js</td>
+<td style="text-align: left;">String validation</td>
+</tr>
+<tr>
+<td style="text-align: left;">imagemin, UglifyJS2</td>
+<td style="text-align: left;">Minification</td>
+</tr>
+<tr>
+<td style="text-align: left;">spritesmith</td>
+<td style="text-align: left;">Sprite sheet generation</td>
+</tr>
+<tr>
+<td style="text-align: left;">winston</td>
+<td style="text-align: left;">Logging</td>
+</tr>
+<tr>
+<td style="text-align: left;">commander.js</td>
+<td style="text-align: left;">Creating command-line applications</td>
+</tr>
+</tbody>
+</table>
+<p>Let's use the built-in OS module to get some information about your computer's operating system:</p>
+<ol>
+<li><p>In your command line, open the Node.js CLI. You'll see the <code>&gt;</code> prompt letting you know you're using Node.js after entering: <code>node</code></p>
+</li>
+<li><p>To identify the operating system you are currently using (which should return a response letting you know that you're on Windows), enter: <code>os.platform()</code></p>
+</li>
+<li><p>To check your CPU's architecture, enter: <code>os.arch()</code></p>
+</li>
+<li><p>To view the CPUs available on your system, enter: <code>os.cpus()</code></p>
+</li>
+<li><p>Leave the Node.js CLI by entering <code>.exit</code> or by selecting Ctrl+C twice.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use the Node.js OS module to do things like check the platform and return a platform-specific variable: Win32/.bat for Windows development, darwin/.sh for Mac/unix, Linux, SunOS, and so on (for example, <code>var isWin = process.platform === &quot;win32&quot;;</code>).</p>
+</div>
+</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/nodejs-beginners-tutorial.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

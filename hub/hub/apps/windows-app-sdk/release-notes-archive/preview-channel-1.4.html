@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Preview release channel for the Windows App SDK 1.4 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Preview release channel for the Windows App SDK 1.4 ">
+    
+    <meta name="description" content="Provides info about the preview release channel for the Windows App SDK 1.4.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="preview-channel-release-notes-for-the-windows-app-sdk-14">Preview channel release notes for the Windows App SDK 1.4</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The preview channel is <strong>not supported</strong> for use in production environments, and apps that use the preview releases cannot be published to the Microsoft Store.</p>
+</div>
+<p>The preview channel includes releases of the Windows App SDK with <a href="../release-channels.html#features-available-by-release-channel">preview channel features</a> in late stages of development. Preview releases do not include experimental features and APIs but may still be subject to breaking changes before the next stable release.</p>
+<p><strong>Important links:</strong></p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+<li>For documentation on preview releases, see <a href="../preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest preview channel release:</strong></p>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="version-14-preview-2-140-preview2">Version 1.4 Preview 2 (1.4.0-preview2)</h2>
+<p>This is the latest release of the preview channel for version 1.4.</p>
+<p>In an existing Windows App SDK 1.3 (from the stable channel) app, you can update your Nuget package to 1.4.0-preview2 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Latest Windows App SDK downloads</a>.</p>
+<h3 id="xaml-islands-no-longer-experimental">XAML Islands no longer experimental</h3>
+<p>XAML Islands and the underlying ContentIslands platform are no longer experimental.</p>
+<ul>
+<li>Currently XAML Islands are only tested for use in C++ apps. This release does not include any convenient wrapper elements for use in WPF or WinForms.</li>
+<li><code>DesktopWindowXamlSource</code> and related types have been added in the Microsoft.UI.Xaml.Hosting namespace for XAML Islands. <code>XamlRoot.ContentIslandEnvironment</code> was added to help access the underlying Island information for an element.</li>
+<li>Many new types have been introduced in the Microsoft.UI.Content namespace and the Microsoft.UI.Input namespace as the underlying support for XAML Islands or for using this ContentIslands functionality without XAML.</li>
+<li>A new <code>DragDropManager</code> (plus related types) has been added in the Microsoft.UI.Input.DragDrop namespace for Island scenarios.</li>
+</ul>
+<h3 id="itemsview-updates">ItemsView updates</h3>
+<p>The new <code>ItemsView</code> class that was introduced in version 1.4-preview1 has been substantially updated with new properties and a new supporting class.</p>
+<ul>
+<li>The new <code>ItemsView</code> control displays a data collection. <code>ItemsView</code> is similar to the <code>ListView</code> and <code>GridView</code> controls, but is built using the <code>ItemsRepeater</code>, <code>ScrollView</code>, <code>ItemContainer</code> and <code>ItemCollectionTransitionProvider</code> components. It offers the unique ability to plug in custom <code>Layout</code> or <code>ItemCollectionTransitionProvider</code> implementations. Another key advantage is the ability to switch the layout on the fly while preserving items selection. The inner <code>ScrollView</code> control also offers features unavailable in <code>ListView</code>/<code>GridView</code>'s <code>ScrollViewer</code> control such as the ability to control the animation during programmatic scrolls.
+<ul>
+<li>A new <code>ItemTransitionProvider</code> property on <code>ItemsRepeater</code> (and the new <code>ItemsView</code> control) lets you specify an <code>ItemCollectionTransitionProvider</code> object to control transition animations on that control. A <code>CreateDefaultItemTransitionProvider</code> method has also been added to <code>Layout</code>, which enables a layout object to provide a fallback transition to accompany it if you do not provide one explicitly on the <code>ItemsView</code> control.</li>
+<li>A new <code>IndexBasedLayoutOrientation</code> property on <code>Layout</code> where the layout orientation, if any, of items is based on their index in the source collection. The default value is <code>IndexBasedLayoutOrientation.None</code>. Custom layouts set this property by calling the new (protected) <code>SetIndexBasedLayoutOrientation</code> method.</li>
+<li>A new <code>VisibleRect</code> property on <code>VirtualizingLayoutContext</code> gets the visible viewport rectangle within the <code>FrameworkElement</code> associated with the <code>Layout</code>. The protected virtual <code>VirtualizingLayoutContext.VisibleRectCore</code> method can be overridden to provide the value that will be returned from the <code>VisibleRect</code> property.</li>
+</ul>
+</li>
+<li>The new <code>LinedFlowLayout</code> class is typically used to lay out the items of the <code>ItemsView</code> collection control. It is particularly useful for displaying collection of pictures. It does so by laying them out from left to right, and top to bottom, in lines of equal height. The pictures fill a horizontal line and then wrap to a next line. Pictures may be cropped at the left and right edges to fit into a line. They may also be expanded horizontally and cropped at the top and bottom edges to fill a line when the stretching mode is employed.</li>
+</ul>
+<h3 id="new-features-and-updates-from-across-the-winappsdk">New features and updates from across the WinAppSDK</h3>
+<ul>
+<li><code>Popup/FlyoutBase.IsConstrainedToRootBounds = false</code> is now supported, allowing a popup/flyout to extend outside the bounds of the parent window. A <code>SystemBackdrop</code> property has been added to these types to support having acrylic in these unconstrained popups. Menus by default use this to have acrylic.</li>
+<li><code>Closed</code>, <code>FrameworkClosed</code>, and <code>IsClosed</code> have been added to <code>DesktopAcrylicController</code> and <code>MicaController</code> to improve handling during object/thread shutdown.</li>
+<li><code>DesktopAcrylicController.Kind</code> can now be set to choose between some standard acrylic appearances.</li>
+<li><code>DispatcherQueue</code> has some new events and helpers to facilitate better organized shutdown and for apps using Islands to easily run a standard supported event loop.</li>
+<li><code>InputNonClientPointerSource</code> in the Microsoft.UI.Input namespace can be used for custom titlebar scenarios to define non-client area regions. Code can register for corresponding events like hover and click events on these regions.</li>
+<li><code>AppWindow</code> has some new helpers to get and associate with a <code>DispatcherQueue</code>.</li>
+<li>The new <code>TreeView.SelectionChanged</code> event allows developers to respond when the user or code-behind changes the set of selected nodes in the <code>TreeView</code> control.</li>
+<li>The new <code>ScrollView</code> control provides a new alternative to <code>ScrollViewer</code>. This new control is highly aligned in behavior and API with the existing <code>ScrollViewer</code> control, but is based on <code>InteractionTracker</code>, has new features such as animation-driven view changes, and is also designed to ensure full functionality of <code>ItemsRepeater</code>. See <a href="https://github.com/Microsoft/microsoft-ui-xaml/issues/108">A more flexible ScrollViewer · Issue #108 · microsoft/microsoft-ui-xaml (github.com)</a> for more details. Various new types, including <code>ScrollPresenter</code>, are part of the overall <code>ScrollView</code> model.</li>
+<li>The new <code>AnnotatedScrollBar</code> control extends a regular scrollbar's functionality by providing an easy way to navigate through a large collection of items. This is achieved through a clickable rail with labels that act as markers. It also allows for a more granular understanding of the scrollable content by displaying a tooltip when hovering over the clickable rail.</li>
+</ul>
+<h3 id="new-apis-in-140-preview2">New APIs in 1.4.0-preview2</h3>
+<p>Version 1.4-preview2 includes the following new APIs compared to the previous 1.4-preview1 release:</p>
+<pre><code class="lang-C#">Microsoft.UI
+ 
+    ClosableNotifierHandler
+    IClosableNotifier
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Composition.SystemBackdrops
+ 
+    DesktopAcrylicController
+        Closed
+        FrameworkClosed
+        IsClosed
+        Kind
+ 
+    DesktopAcrylicKind
+    MicaController
+        Closed
+        FrameworkClosed
+        IsClosed
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Content
+ 
+    ContentCoordinateConverter
+    ContentCoordinateRoundingMode
+    ContentDeferral
+    ContentEnvironmentSettingChangedEventArgs
+    ContentEnvironmentStateChangedEventArgs
+    ContentIsland
+    ContentIslandAutomationProviderRequestedEventArgs
+    ContentIslandEnvironment
+    ContentIslandStateChangedEventArgs
+    ContentLayoutDirection
+    ContentSite
+    ContentSiteEnvironment
+    ContentSiteEnvironmentView
+    ContentSiteRequestedStateChangedEventArgs
+    ContentSiteView
+    ContentSizePolicy
+    DesktopChildSiteBridge
+    DesktopSiteBridge
+    IContentSiteBridge
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Dispatching
+ 
+    DispatcherExitDeferral
+    DispatcherQueue
+        EnqueueEventLoopExit
+        EnsureSystemDispatcherQueue
+        FrameworkShutdownCompleted
+        FrameworkShutdownStarting
+        RunEventLoop
+        RunEventLoop
+ 
+    DispatcherQueueController
+        ShutdownQueue
+ 
+    DispatcherRunOptions
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Input
+ 
+    CharacterReceivedEventArgs
+    ContextMenuKeyEventArgs
+    FocusChangedEventArgs
+    InputActivationListener
+        GetForIsland
+ 
+    InputFocusChangedEventArgs
+    InputFocusController
+    InputKeyboardSource
+        CharacterReceived
+        ContextMenuKey
+        GetCurrentKeyState
+        GetForIsland
+        GetKeyState
+        KeyDown
+        KeyUp
+        SystemKeyDown
+        SystemKeyUp
+ 
+    InputNonClientPointerSource
+    InputPointerSource
+        GetForIsland
+ 
+    InputPreTranslateKeyboardSource
+    KeyEventArgs
+    NonClientCaptionTappedEventArgs
+    NonClientPointerEventArgs
+    NonClientRegionKind
+    NonClientRegionsChangedEventArgs
+    PhysicalKeyStatus
+    VirtualKeyStates
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Input.DragDrop
+ 
+    DragDropManager
+    DragDropModifiers
+    DragInfo
+    DragOperation
+    DragUIContentMode
+    DragUIOverride
+    DropOperationTargetRequestedEventArgs
+    IDropOperationTarget
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Windowing
+ 
+    AppWindow
+        AssociateWithDispatcherQueue
+        Create
+        DispatcherQueue
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+ 
+    XamlRoot
+        ContentIslandEnvironment
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Automation.Peers
+ 
+    ItemsViewAutomationPeer
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls
+ 
+    AnnotatedScrollBar
+    AnnotatedScrollBarDetailLabelRequestedEventArgs
+    AnnotatedScrollBarLabel
+    AnnotatedScrollBarScrollingEventArgs
+    AnnotatedScrollBarScrollingEventKind
+    IndexBasedLayoutOrientation
+    ItemCollectionTransition
+    ItemCollectionTransitionCompletedEventArgs
+    ItemCollectionTransitionOperation
+    ItemCollectionTransitionProgress
+    ItemCollectionTransitionProvider
+    ItemCollectionTransitionTriggers
+    ItemsRepeater
+        ItemTransitionProvider
+        ItemTransitionProviderProperty
+ 
+    ItemsView
+    ItemsViewItemInvokedEventArgs
+    ItemsViewSelectionChangedEventArgs
+    ItemsViewSelectionMode
+    Layout
+        CreateDefaultItemTransitionProvider
+        IndexBasedLayoutOrientation
+        SetIndexBasedLayoutOrientation
+ 
+    LinedFlowLayout
+    LinedFlowLayoutItemCollectionTransitionProvider
+    LinedFlowLayoutItemsInfoRequestedEventArgs
+    LinedFlowLayoutItemsJustification
+    LinedFlowLayoutItemsStretch
+    ScrollingAnchorRequestedEventArgs
+    ScrollingAnimationMode
+    ScrollingBringingIntoViewEventArgs
+    ScrollingChainMode
+    ScrollingContentOrientation
+    ScrollingInputKinds
+    ScrollingInteractionState
+    ScrollingRailMode
+    ScrollingScrollAnimationStartingEventArgs
+    ScrollingScrollBarVisibility
+    ScrollingScrollCompletedEventArgs
+    ScrollingScrollMode
+    ScrollingScrollOptions
+    ScrollingSnapPointsMode
+    ScrollingZoomAnimationStartingEventArgs
+    ScrollingZoomCompletedEventArgs
+    ScrollingZoomMode
+    ScrollingZoomOptions
+    ScrollView
+    TreeView
+        SelectionChanged
+ 
+    TreeViewSelectionChangedEventArgs
+    VirtualizingLayoutContext
+        VisibleRect
+        VisibleRectCore
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls.Primitives
+ 
+    FlyoutBase
+        SystemBackdrop
+        SystemBackdropProperty
+ 
+    IScrollController
+    IScrollControllerPanningInfo
+    Popup
+        SystemBackdrop
+        SystemBackdropProperty
+ 
+    RepeatedScrollSnapPoint
+    RepeatedZoomSnapPoint
+    ScrollControllerAddScrollVelocityRequestedEventArgs
+    ScrollControllerPanRequestedEventArgs
+    ScrollControllerScrollByRequestedEventArgs
+    ScrollControllerScrollToRequestedEventArgs
+    ScrollPresenter
+    ScrollSnapPoint
+    ScrollSnapPointBase
+    ScrollSnapPointsAlignment
+    SnapPointBase
+    ZoomSnapPoint
+    ZoomSnapPointBase
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Hosting
+ 
+    DesktopWindowXamlSource
+    DesktopWindowXamlSourceGotFocusEventArgs
+    DesktopWindowXamlSourceTakeFocusRequestedEventArgs
+    WindowsXamlManager
+    XamlSourceFocusNavigationReason
+    XamlSourceFocusNavigationRequest
+    XamlSourceFocusNavigationResult
+</code></pre>
+<h2 id="version-14-preview-1-140-preview1">Version 1.4 Preview 1 (1.4.0-preview1)</h2>
+<p>This is the latest release of the preview channel for version 1.4.</p>
+<p>In an existing Windows App SDK 1.3 (from the stable channel) app, you can update your Nuget package to 1.4.0-preview1 (see the <strong>Update a package</strong> section in <a href="/nuget/consume-packages/install-use-packages-visual-studio#update-a-package">Install and manage packages in Visual Studio using the NuGet Package Manager</a>).</p>
+<p>For the updated runtime and MSIX, see <a href="../downloads.html">Latest Windows App SDK downloads</a>.</p>
+<h3 id="widgets-updates">Widgets updates</h3>
+<p>Three new interfaces have been added for Widget Providers to implement: <code>IWidgetProvider2</code>, <code>IWidgetProviderAnalytics</code>, and <code>IWidgetProviderErrors</code>. <code>IWidgetProvider2</code> allows providers to respond to the <em>Customize</em> action invoked by the user, which is identical to what is available for 1st party Widgets. The <code>IWidgetProviderAnalytics</code> and <code>IWidgetProviderErrors</code> interfaces are used by providers to gather telemetry for their widgets; analytics and failure events about widgets are communicated to the respective widget providers. The <code>WidgetCustomizationRequestedArgs</code>, <code>WidgetAnalyticsInfoReportedArgs</code>, and <code>WidgetErrorInfoReportedArgs</code> classes are used to communicate relevant information to support new functionalities.</p>
+<h3 id="new-features-from-across-the-winappsdk">New features from across the WinAppSDK</h3>
+<ul>
+<li>A new <code>ThemeSettings</code> class that allows Win32 WinRT apps to detect when the system's High Contrast setting has changed, similar to UWP's <a href="/uwp/api/windows.ui.viewmanagement.accessibilitysettings">AccessibilitySettings</a> class. See the <a href="https://github.com/microsoft/WindowsAppSDK/blob/main/specs/themes/ThemeSettings.md">ThemeSettings API spec</a> on GitHub for more information.</li>
+<li><code>Popup/FlyoutBase.ShouldConstrainToRootBounds</code> is now supported to allow tooltips, menus, and other popups to extend outside the bounds of the main window. Preview 1 does not yet fully support having Acrylic or other SystemBackdrops on a popup/flyout; additional APIs and implementation for this will be included in the next 1.4 release.</li>
+<li><code>AccessKeyManager.EnterDisplayMode</code> is a new method to display access keys for the current focused element of a provided root. Access keys are in &quot;display mode&quot; when showing a key tip to invoke a command, such as pressing the Alt key in Paint to show what keys correspond to what controls. This method allows for programmatically entering display mode.</li>
+<li><code>Application.ResourceManagerRequested</code> provides a mechanism to provide a different <code>IResourceManager</code> to resolve resource URIs for scenarios when the default <code>ResourceManager</code> won't work. For more information, see the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/custom-iresourcemanager-spec.md">Application.ResourceManagerRequested API spec</a> on GitHub.</li>
+<li>We're introducing a new list control called the <code>ItemsView</code> and a corresponding concrete <code>ItemContainer</code> class. <code>ItemContainer</code> is a lightweight container with built-in selection states and visuals, which can easily wrap desired content and be used with <code>ItemsView</code> for a collection control scenario. <code>ItemsView</code> is still marked experimental in Preview 1 but will be included in the next 1.4 release.</li>
+<li>The version of the WebView2 SDK was updated from 1661.34 to <a href="/microsoft-edge/webview2/release-notes?tabs=winrtcsharp#10182332">1823.32</a>.</li>
+</ul>
+<h3 id="new-apis-in-140-preview1">New APIs in 1.4.0-preview1</h3>
+<p>Version 1.4-preview1 includes the following new APIs compared to the stable 1.3 release:</p>
+<pre><code class="lang-C#">Microsoft.UI.System
+ 
+    ThemeSettings
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml
+ 
+    Application
+        ResourceManagerRequested
+ 
+    ResourceManagerRequestedEventArgs
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Automation.Peers
+ 
+    ItemContainerAutomationPeer
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls
+ 
+    ItemContainer
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Controls.Primitives
+ 
+    CommandBarFlyoutCommandBar
+        SystemBackdrop
+        SystemBackdropProperty
+</code></pre>
+<pre><code class="lang-C#">Microsoft.UI.Xaml.Input
+ 
+    AccessKeyManager
+        EnterDisplayMode
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Web.WebView2.Core
+ 
+    CoreWebView2
+        LaunchingExternalUriScheme
+        MemoryUsageTargetLevel
+ 
+    CoreWebView2File
+    CoreWebView2LaunchingExternalUriSchemeEventArgs
+    CoreWebView2MemoryUsageTargetLevel
+    CoreWebView2PermissionKind
+        WindowManagement
+ 
+    CoreWebView2Profile
+        CookieManager
+        IsGeneralAutofillEnabled
+        IsPasswordAutosaveEnabled
+ 
+    CoreWebView2Settings
+        IsReputationCheckingRequired
+ 
+    CoreWebView2WebMessageReceivedEventArgs
+        AdditionalObjects
+</code></pre>
+<pre><code class="lang-C#">Microsoft.Windows.Widgets.Providers
+ 
+    IWidgetProvider2
+    IWidgetProviderAnalytics
+    IWidgetProviderErrors
+    WidgetAnalyticsInfoReportedArgs
+    WidgetCustomizationRequestedArgs
+    WidgetErrorInfoReportedArgs
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.4.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

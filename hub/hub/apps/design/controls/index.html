@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Controls and patterns - Windows app development </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Controls and patterns - Windows app development ">
+    
+    <meta name="description" content="Get design guidance and coding instructions for adding controls to your Windows app. Find  over 45 powerful controls you can use with your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="controls-for-windows-apps">Controls for Windows apps</h1>
+
+<p>In Windows app development, a <em>control</em> is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A <em>pattern</em> is a recipe for combining several controls to make something new.</p>
+<p>We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes.</p>
+<p>The articles in this section provide design guidance and coding instructions for adding controls &amp; patterns to your Windows app.</p>
+<h2 id="general-instructions-and-code-examples">General instructions and code examples</h2>
+<p>The topics highlighted here provide instructions and code examples for adding and styling controls in XAML and C#.</p>
+<section class="row">
+<div class="column">
+<p><a href="controls-and-events-intro.html"><strong>Add controls and handle events</strong></a></p>
+<p>There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</p>
+</div>
+<div class="column">
+<p><a href="../../develop/platform/xaml/xaml-styles.html"><strong>Styling controls</strong></a></p>
+<p>You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
+</div>
+</section>
+<h2 id="get-winui">Get WinUI</h2>
+<section class="row">
+<div class="column">
+<p><img src="images/winui-logo-64x64.png" alt="WinUI logo"></p>
+</div>
+<div class="column span3">
+<p>Some controls are only available in WinUI, a NuGet package that contains new controls and UI features. To get it, see the <a href="/uwp/toolkits/winui/">WinUI overview and installation instructions</a>.</p>
+</div>
+<div class="column">
+</div>
+</section>
+<h2 id="index-of-controls">Index of controls</h2>
+<p>The following table lists the common Windows app controls and patterns along with those that are exclusive to WinUI.</p>
+<section class="row">
+<div class="column span2">
+<p><strong>Common Windows app controls</strong></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+  <strong>WinUI only</strong></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="auto-suggest-box.html">Auto-suggest box</a></p>
+</div>
+<div class="column">
+<p><a href="buttons.html">Button</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="animated-icon.html">Animated icon</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="calendar-date-picker.html">Calendar date picker</a></p>
+</div>
+<div class="column">
+<p><a href="calendar-view.html">Calendar view</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ Animated visual player (see <a href="/windows/communitytoolkit/animations/lottie">Lottie</a>)</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="checkbox.html">Checkbox</a></p>
+</div>
+<div class="column">
+<p><a href="combo-box.html">Combo box</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="breadcrumbbar.html">Breadcrumb bar</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="command-bar.html">Command bar</a></p>
+</div>
+<div class="column">
+<p><a href="contact-card.html">Contact card</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="color-picker.html">Color picker</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="dialogs-and-flyouts/dialogs.html">Content dialog</a></p>
+</div>
+<div class="column">
+<p><a href="content-links.html">Content link</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="command-bar-flyout.html">Command bar flyout</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="menus.html">Context menu</a></p>
+</div>
+<div class="column">
+<p><a href="date-picker.html">Date picker</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="buttons.html#create-a-drop-down-button">Drop down button</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="dialogs-and-flyouts/index.html">Dialogs and flyouts</a></p>
+</div>
+<div class="column">
+<p><a href="flipview.html">Flip view</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="expander.html">Expander</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="dialogs-and-flyouts/flyouts.html">Flyout</a></p>
+</div>
+<div class="column">
+<p><a href="forms.html">Forms</a> (pattern)</p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="infobar.html">Info bar</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="listview-and-gridview.html">Grid view</a></p>
+</div>
+<div class="column">
+<p><a href="hyperlinks.html">Hyperlink</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="menus.html#create-a-menu-bar">Menu bar</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="hyperlinks.html#create-a-hyperlinkbutton">Hyperlink button</a></p>
+</div>
+<div class="column">
+<p><a href="images-imagebrushes.html">Images and image brushes</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="navigationview.html">Navigation view</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="inking-controls.html">Inking controls</a></p>
+</div>
+<div class="column">
+<p><a href="list-details.html">List/details</a> (pattern)</p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="number-box.html">Number box</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="listview-and-gridview.html">List view</a></p>
+</div>
+<div class="column">
+<p><a href="/windows/uwp/maps-and-location/display-maps">Map control</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="..%5Cmotion%5Cparallax.md">Parallax view</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="media-playback.html">Media playback</a></p>
+</div>
+<div class="column">
+<p><a href="menus.html">Menu flyout</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="person-picture.html">Person picture</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="password-box.html">Password box</a></p>
+</div>
+<div class="column">
+<p><a href="buttons.html#create-a-repeat-button">Repeat button</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="pipspager.html">Pips pager</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="rich-edit-box.html">Rich edit box</a></p>
+</div>
+<div class="column">
+<p><a href="rich-text-block.html">Rich text block</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="progress-controls.html">Progress bar</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="scroll-controls.html">Scroll viewer</a></p>
+</div>
+<div class="column">
+<p><a href="semantic-zoom.html">Semantic zoom</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="progress-controls.html">Progress ring</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="shapes.html">Shapes</a></p>
+</div>
+<div class="column">
+<p><a href="slider.html">Slider</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="radio-button.html">Radio button</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="split-view.html">Split view</a></p>
+</div>
+<div class="column">
+<p><a href="text-block.html">Text block</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="rating.html">Rating control</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="text-box.html">Text box</a></p>
+</div>
+<div class="column">
+<p><a href="time-picker.html">Time picker</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="buttons.html#create-a-split-button">Split button</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="toggles.html">Toggle switch</a></p>
+</div>
+<div class="column">
+<p><a href="buttons.html">Toggle button</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="swipe.html">Swipe control</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="buttons.html#create-a-toggle-split-button">Toggle split button</a></p>
+</div>
+<div class="column">
+<p><a href="tooltips.html">Tooltips</a></p>
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="tab-view.html">Tab view</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="web-view.html">Web view</a></p>
+</div>
+<div class="column">
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="dialogs-and-flyouts/teaching-tip.html">Teaching tip</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+</div>
+<div class="column">
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="tree-view.html">Tree view</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+</div>
+<div class="column">
+</div>
+<div class="column">
+<p><img src="images/winui-logo-16x16.png" role="presentation">
+ <a href="two-pane-view.html">Two-pane view</a></p>
+</div>
+</section>
+<h2 id="winui-gallery">WinUI Gallery</h2>
+<p>Get the <em>WinUI Gallery</em> apps from the Microsoft Store to see XAML controls and the <a href="https://developer.microsoft.com/fluentui#/">Fluent Design System</a> in action. The <strong>WinUI 3 Gallery</strong> and <strong>WinUI 2 Gallery</strong> apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality. The apps are an interactive companion to this website. When you have them installed, you can use links on individual control pages to launch the app and see the control in action.</p>
+<div class="checklist">
+<ul>
+<li>Get the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC"><strong>WinUI 3 Gallery</strong></a> and the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT"><strong>WinUI 2 Gallery</strong></a> from the Microsoft Store.</li>
+<li>Get the source code for both from <a href="https://github.com/Microsoft/WinUI-Gallery">GitHub</a> (use the <em>main</em> branch for WinUI 3 and the <em>winui2</em> branch for WinUI 2).</li>
+</ul>
+</div>
+<h2 id="additional-controls">Additional controls</h2>
+<p>Additional controls for Windows development are available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
+<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

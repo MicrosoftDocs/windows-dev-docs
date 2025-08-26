@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Handle file activation in a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Handle file activation in a Windows app ">
+    
+    <meta name="description" content="A Windows app can register to become the default handler for a certain file type.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="handle-file-activation-in-a-windows-app">Handle file activation in a Windows app</h1>
+
+<p>Your app can register to become the default handler for a certain file type. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default file handler. If the user chooses your app as the default handler for a certain file type, your app will be activated when that type of file is launched.</p>
+<p>We recommend that you only register for a file type if you expect to handle all file launches for that type of file. If your app only needs to use the file type internally, then you don't need to register to be the default handler. If you do choose to register for a file type, you must provide the end user with the functionality that is expected when your app is activated for that file type. For example, a picture viewer app may register to display a .jpg file. For more info on file associations, see <a href="../files/index.html">Guidelines for file types and URIs</a>.</p>
+<p>These steps show how to register for a custom file type, .alsdk, and how to activate your app when the user launches an .alsdk file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In Windows, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. See <a href="reserved-uri-scheme-names.html">Reserved URI scheme names and file types</a> for an alphabetic list of Uri schemes that you can't register for your apps because they are either reserved or forbidden.</p>
+</div>
+<h2 id="important-apis">Important APIs</h2>
+<p>The following APIs are used in this topic:</p>
+<ul>
+<li><a href="/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs">Windows.ApplicationModel.Activation.FileActivatedEventArgs</a></li>
+<li><a href="/uwp/api/windows.ui.xaml.application.onfileactivated">Windows.UI.Xaml.Application.OnFileActivated</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a></li>
+</ul>
+<h2 id="step-1-specify-the-extension-point-in-the-package-manifest">Step 1: Specify the extension point in the package manifest</h2>
+<p>The app receives activation events only for the file extensions listed in the package manifest. Here's how you indicate that your app handles the files with the <code>.alsdk</code> extension.</p>
+<ol>
+<li><p>In the <strong>Solution Explorer</strong>, double-click package.appxmanifest to open the manifest designer. Select the <strong>Declarations</strong> tab and in the <strong>Available Declarations</strong> drop-down, select <strong>File Type Associations</strong> and then click <strong>Add</strong>. See <a href="/windows/win32/shell/fa-progids">Programmatic Identifiers</a> for more details of identifiers used by file associations.</p>
+<p>Here is a brief description of each of the fields that you may fill in the manifest designer:</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Display Name</strong></td>
+<td>Specify the display name for a group of file types. The display name is used to identify the file type in the <a href="/windows/win32/shell/default-programs">Set Default Programs</a> on the <strong>Control Panel</strong>.</td>
+</tr>
+<tr>
+<td><strong>Logo</strong></td>
+<td>Specify the logo that is used to identify the file type on the desktop and in the <a href="/windows/win32/shell/default-programs">Set Default Programs</a> on the <strong>Control Panel</strong>. If no Logo is specified, the application’s small logo is used.</td>
+</tr>
+<tr>
+<td><strong>Info Tip</strong></td>
+<td>Specify the <a href="/windows/win32/shell/fa-progids">info tip</a> for a group of file types. This tool tip text appears when the user hovers on the icon for a file of this type.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Choose a name for a group of file types that share the same display name, logo, info tip, and edit flags. Choose a group name that can stay the same across app updates. <strong>Note</strong>  The Name must be in all lower case letters.</td>
+</tr>
+<tr>
+<td><strong>Content Type</strong></td>
+<td>Specify the MIME content type, such as <strong>image/jpeg</strong>, for a particular file type. <strong>Important Note about allowed content types:</strong> Here is an alphabetic list of MIME content types that you cannot enter into the package manifest because they are either reserved or forbidden: <strong>application/force-download</strong>, <strong>application/octet-stream</strong>, <strong>application/unknown</strong>, <strong>application/x-msdownload</strong>.</td>
+</tr>
+<tr>
+<td><strong>File type</strong></td>
+<td>Specify the file type to register for, preceded by a period, for example, “.jpeg”. <strong>Reserved and forbidden file types:</strong> See <a href="reserved-uri-scheme-names.html">Reserved URI scheme names and file types</a> for an alphabetic list of file types for built-in apps that you can't register for your UWP apps because they are either reserved or forbidden.</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>Enter <code>alsdk</code> as the <strong>Name</strong>.</li>
+<li>Enter <code>.alsdk</code> as the <strong>File Type</strong>.</li>
+<li>Enter “images\Icon.png” as the Logo.</li>
+<li>Press Ctrl+S to save the change to package.appxmanifest.</li>
+</ol>
+<p>The steps above add an <a href="/uwp/schemas/appxpackage/appxmanifestschema/element-1-extension">Extension</a> element like this one to the package manifest. The <strong>windows.fileTypeAssociation</strong> category indicates that the app handles files with the <code>.alsdk</code> extension.</p>
+<pre><code class="lang-xml">      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+          &lt;uap:FileTypeAssociation Name=&quot;alsdk&quot;&gt;
+            &lt;uap:Logo&gt;images\icon.png&lt;/uap:Logo&gt;
+            &lt;uap:SupportedFileTypes&gt;
+              &lt;uap:FileType&gt;.alsdk&lt;/uap:FileType&gt;
+            &lt;/uap:SupportedFileTypes&gt;
+          &lt;/uap:FileTypeAssociation&gt;
+        &lt;/uap:Extension&gt;
+      &lt;/Extensions&gt;
+</code></pre>
+<h2 id="step-2-add-the-proper-icons">Step 2: Add the proper icons</h2>
+<p>Apps that become the default for a file type have their icons displayed in various places throughout the system. For example, these icons are shown in:</p>
+<ul>
+<li>Windows Explorer Items View, context menus, and the Ribbon</li>
+<li>Default programs Control Panel</li>
+<li>File picker</li>
+<li>Search results on the Start screen</li>
+</ul>
+<p>Include a 44x44 icon with your project so that your logo can appear in those locations. Match the look of the app tile logo and use your app's background color rather than making the icon transparent. Have the logo extend to the edge without padding it. Test your icons on white backgrounds. See <a href="/windows/apps/design/style/app-icons-and-logos">Guidelines for tile and icon assets</a> for more details about icons.</p>
+<h2 id="step-3-handle-the-activated-event">Step 3: Handle the activated event</h2>
+<p>The <a href="/uwp/api/windows.ui.xaml.application.onfileactivated">OnFileActivated</a> event handler receives all file activation events.</p>
+<pre><code class="lang-csharp">protected override void OnFileActivated(FileActivatedEventArgs args)
+{
+       // TODO: Handle file activation
+       // The number of files received is args.Files.Count
+       // The name of the first file is args.Files[0].Name
+}
+</code></pre>
+<pre><code class="lang-vb">Protected Overrides Sub OnFileActivated(ByVal args As Windows.ApplicationModel.Activation.FileActivatedEventArgs)
+      ' TODO: Handle file activation
+      ' The number of files received is args.Files.Size
+      ' The name of the first file is args.Files(0).Name
+End Sub
+</code></pre>
+<pre><code class="lang-cppwinrt">void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEventArgs const&amp; args)
+{
+    // TODO: Handle file activation.
+    auto numberOfFilesReceived{ args.Files().Size() };
+    auto nameOfTheFirstFile{ args.Files().GetAt(0).Name() };
+}
+</code></pre>
+<pre><code class="lang-cpp">void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEventArgs^ args)
+{
+    // TODO: Handle file activation
+    // The number of files received is args-&gt;Files-&gt;Size
+    // The name of the first file is args-&gt;Files-&gt;GetAt(0)-&gt;Name
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In a WinUI app, in App.OnLaunched (or in fact at any time) you can call (<a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a>) to retrieve the activated event args, and check them to determine how the app was activated. See <a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle">Application lifecycle functionality migration</a> for more information about lifecycle differences between UWP and WinUI apps.</p>
+</div>
+<p>We recommend that you create a new XAML <strong>Frame</strong> for each activation event that opens a new page. That way, the navigation backstack for the new XAML Frame doesn't contain any previous content that the app might have on the current window when suspended. If you decide to use a single XAML <strong>Frame</strong> for Launch and for File Contracts, then you should clear the pages in the <strong>Frame</strong>'s navigation journal before navigating to a new page.</p>
+<p>When your app is launched via File activation, you should consider including UI that allows the user to go back to the top page of the app.</p>
+<h2 id="remarks">Remarks</h2>
+<p>The files that you receive could come from an untrusted source. We recommend that you validate the content of a file before taking action on it.</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching">Association launching sample</a></li>
+<li><a href="launch-the-default-app-for-a-file.html">Launch the default app for a file</a></li>
+<li><a href="handle-uri-activation.html">Handle URI activation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/handle-file-activation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

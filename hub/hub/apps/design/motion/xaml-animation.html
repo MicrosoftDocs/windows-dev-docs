@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Animations overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Animations overview ">
+    
+    <meta name="description" content="Use the animations from the Windows Runtime animation library to integrate the Windows look and feel into your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="animations-in-xaml">Animations in XAML</h1>
+
+<p>Animations can enhance your app by adding movement and interactivity. By using the animations from the Windows Runtime animation library, you can integrate the Windows look and feel into your app. This topic provides a summary of the animations and examples of typical scenarios where each is used.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The Windows Runtime controls for XAML include certain types of animations as built-in behaviors that come from an animation library. By using these controls in your app, you can get the animated look and feel without having to program it yourself.</p>
+</div>
+<p>Animations from the Windows Runtime animation library provide these benefits:</p>
+<ul>
+<li>Motions that align to the <a href="./index.md">Guidelines for animations</a></li>
+<li>Fast, fluid transitions between UI states that inform but do not distract the user</li>
+<li>Visual behavior that indicates transitions within an app to the user</li>
+</ul>
+<p>For example, when the user adds an item to a list, instead of the new item instantly appearing in the list, the new item animates into place. The other items in the list animate to their new positions over a short period of time, making room for the added item. The transition behavior here makes the control interaction more apparent to the user.</p>
+<p>Windows 10, version 1607 introduces a new <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice"><strong>ConnectedAnimationService</strong></a> API for implementing animations where an element appears to animate between views during a navigation. This API has a different usage pattern from the other animation library API's. Usage of <strong>ConnectedAnimationService</strong> is covered in the <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice">reference page</a>.</p>
+<p>The animation library does not provide animations for every possible scenario. There are cases where you might wish to create a custom animation in XAML. For more info, see <a href="storyboarded-animations.html">Storyboarded animations</a>.</p>
+<p>Additionally, for certain advanced scenarios like animating an item based on scroll position of a ScrollViewer, developers may wish to use Visual Layer interoperation to implement custom animations. See <a href="/windows/uwp/composition/visual-layer">Visual Layer</a> for more information.</p>
+<h2 id="types-of-animations">Types of animations</h2>
+<p>The Windows Runtime animation system and the animation library serve the larger goal of enabling controls and other parts of UI to have an animated behavior. There are several distinct types of animations.</p>
+<ul>
+<li><em>Theme transitions</em> are applied automatically when certain conditions change in the UI, involving controls or elements from the predefined Windows Runtime XAML UI types. These are termed <em>theme transitions</em> because the animations support the Windows look and feel, and define what all apps do for particular UI scenarios when they change from one interaction mode to another. The theme transitions are part of the animation library.</li>
+<li><em>Theme animations</em> are animations to one or more properties of predefined Windows Runtime XAML UI types. Theme animations differ from theme transitions because theme animations target one specific element and exist in specific visual states within a control, whereas the theme transitions are assigned to properties of the control that exist outside of the visual states and influence the transitions between those states. Many of the Windows Runtime XAML controls include theme animations within storyboards that are part of their control template, with the animations triggered by visual states. So long as you're not modifying the templates, you'll have those built-in theme animations available for the controls in your UI. However, if you do replace templates, then you'll be removing the built-in control theme animations too. To get them back, you must define a storyboard that includes theme animations within the control's set of visual states. You can also run theme animations from storyboards that aren't within visual states and start them with the <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.begin"><strong>Begin</strong></a> method, but that's less common. Theme animations are part of the animation library.</li>
+<li><em>Visual transitions</em> are applied when a control transitions from one of its defined visual states to another state. These are custom animations that you write, and are typically related to the custom template you write for a control and the visual state definitions within that template. The animation only runs during the time between states, and that's typically a short amount of time, a few seconds at most. For more info, see <a href="/previous-versions/windows/apps/jj819808(v=win.10)">&quot;VisualTransition&quot; section of Storyboarded animations for visual states</a>.</li>
+<li><em>Storyboarded animations</em> animate the value of a Windows Runtime dependency property over time. Storyboards can be defined as part of a visual transition, or triggered at runtime by the application. For more info, see <a href="storyboarded-animations.html">Storyboarded animations</a>. For more info about dependency properties and where they exist, see <a href="/windows/uwp/xaml-platform/dependency-properties-overview">Dependency properties overview</a>.</li>
+<li><em>Connected animations</em> provided by the new <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice"><strong>ConnectedAnimationService</strong></a> API allow developers to easily create an effect where an element appears to animate between views during a navigation. This API is available starting in Windows 10, version 1607. See <a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice"><strong>ConnectedAnimationService</strong></a> for more information.</li>
+</ul>
+<h2 id="animations-available-in-the-library">Animations available in the library</h2>
+<p>The following animations are supplied in the animation library. Click on the name of an animation to learn more about their main usage scenarios, how to define them, and to see an example of the animation.</p>
+<ul>
+<li><a href="#page-transition">Page transition</a>: Animates page transitions in a <a href="/uwp/api/Windows.UI.Xaml.Controls.Frame"><strong>Frame</strong></a>.</li>
+<li><a href="#content-transition-and-entrance-transition">Content and entrance transition</a>: Animates one piece or set of content into or out of view.</li>
+<li><a href="#fade-in-out-and-crossfade">Fade in/out, and crossfade</a>: Shows transient elements or controls, or refreshes a content area.</li>
+<li><a href="#pointer-up-down">Pointer up/down</a>: Gives visual feedback of a tap or click on a tile.</li>
+<li><a href="#reposition">Reposition</a>: Moves an element into a new position.</li>
+<li><a href="#show-hide-popup">Show/hide popup</a>: Displays contextual UI on top of the view.</li>
+<li><a href="#show-hide-edge-ui">Show/hide edge UI</a>: Slides edge-based UI, including large UI such as a panel, into or out of view.</li>
+<li><a href="#list-item-changes">List item changes</a>: Adds or deletes an item from a list, or reordering of the items.</li>
+<li><a href="#drag-drop">Drag/drop</a>: Gives visual feedback during a drag-and-drop operation.</li>
+</ul>
+<h3 id="page-transition">Page transition</h3>
+<p>Use page transitions to animate navigation within an app. Since almost all apps use some kind of navigation, page transition animations are the most common type of theme animation used by apps. See <a href="/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition"><strong>NavigationThemeTransition</strong></a> for more information about the page transition APIs.</p>
+<h3 id="content-transition-and-entrance-transition">Content transition and entrance transition</h3>
+<p>Use content transition animations (<a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ContentThemeTransition"><strong>ContentThemeTransition</strong></a>) to move a piece or a set of content into or out of the current view. For example, the content transition animations show content that was not ready to display when the page was first loaded, or when the content changes on a section of a page.</p>
+<p><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition"><strong>EntranceThemeTransition</strong></a> represents a motion that can apply to content when a page or large section of UI is first loaded. Thus the first appearance of content can offer different feedback than a change to content does. <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition"><strong>EntranceThemeTransition</strong></a> is equivalent to a <a href="/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition"><strong>NavigationThemeTransition</strong></a> with the default parameters, but may be used outside of a <a href="/uwp/api/Windows.UI.Xaml.Controls.Frame"><strong>Frame</strong></a>.</p>
+<p><span id="fade-in-out-and-crossfade"></span></p>
+<h3 id="fade-inout-and-crossfade">Fade in/out, and crossfade</h3>
+<p>Use fade in and fade out animations to show or hide transient UI or controls. In XAML these are represented as <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation"><strong>FadeInThemeAnimation</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a>. One example is in an app bar in which new controls can appear due to user interaction. Another example is a transient scroll bar or panning indicator that is faded out after no user input has been detected for some amount of time. Apps should also use the fade in animation when they transition from a placeholder item to the final item as content loads dynamically.</p>
+<p>Use a crossfade animation to smooth the transition when an item's state is changing; for example, when the app refreshes the current contents of a view. The XAML animation library does not supply a dedicated crossfade animation (no equivalent for <a href="/previous-versions/windows/apps/br212661(v=win.10)"><strong>crossFade</strong></a>), but you can achieve the same result using <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation"><strong>FadeInThemeAnimation</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a> with overlapped timing.</p>
+<p><span id="pointer-up-down"></span></p>
+<h3 id="pointer-updown">Pointer up/down</h3>
+<p>Use the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation"><strong>PointerUpThemeAnimation</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation"><strong>PointerDownThemeAnimation</strong></a> animations to give the user feedback for a successful tap or click on a tile. For example, when a user clicks or taps down on a tile, the pointer down animation is played. Once the click or tap has been released, the pointer up animation is played.</p>
+<h3 id="reposition">Reposition</h3>
+<p>Use the reposition animations (<a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation"><strong>RepositionThemeAnimation</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition"><strong>RepositionThemeTransition</strong></a>) to move an element into a new position. For example, moving the headers in an items control uses the reposition animation.</p>
+<p><span id="show-hide-popup"></span></p>
+<h3 id="showhide-popup">Show/hide popup</h3>
+<p>Use the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation"><strong>PopInThemeAnimation</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation"><strong>PopOutThemeAnimation</strong></a> when you show and hide a <a href="/uwp/api/Windows.UI.Xaml.Controls.Primitives.Popup"><strong>Popup</strong></a> or similar contextual UI on top of the current view. <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition"><strong>PopupThemeTransition</strong></a> is a theme transition that's useful feedback if you want to light dismiss a popup.</p>
+<p><span id="show-hide-edge-ui"></span></p>
+<h3 id="showhide-edge-ui">Show/hide edge UI</h3>
+<p>Use the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition"><strong>EdgeUIThemeTransition</strong></a> animation to slide small, edge-based UI into and out of view. For example, use these animations when you show a custom app bar at the top or bottom of the screen or a UI surface for errors and warnings at the top of the screen.</p>
+<p>Use the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition"><strong>PaneThemeTransition</strong></a> animation to show and hide a pane or panel. This is for large edge-based UI such as a custom keyboard or a task pane.</p>
+<h3 id="list-item-changes">List item changes</h3>
+<p>Use the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition"><strong>AddDeleteThemeTransition</strong></a> animation to add animated behavior when you add or delete an item in an existing list. For add, the transition will first reposition existing items in the list to make space for the new items, and then add the new items. For delete, the transition removes items from a list and, if necessary, repositions the remaining list items once the deleted items have been removed.</p>
+<p>There's also a separate <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ReorderThemeTransition"><strong>ReorderThemeTransition</strong></a> that you apply if an item changes position in a list. This is animated differently than deleting an item and adding it in a new place with the associated delete/add animations.</p>
+<p>Note that these animations are included in the default <a href="/uwp/api/windows.ui.xaml.controls.listview"><strong>ListView</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.gridview"><strong>GridView</strong></a> templates so you do not need to manually add these animations if you are already using these controls.</p>
+<p><span id="drag-drop"></span></p>
+<h3 id="dragdrop">Drag/drop</h3>
+<p>Use the drag animations (<a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation"><strong>DragItemThemeAnimation</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation"><strong>DragOverThemeAnimation</strong></a>) and drop animation (<a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DropTargetItemThemeAnimation"><strong>DropTargetItemThemeAnimation</strong></a>) to give visual feedback when the user drags or drops an item.</p>
+<p>When active, the animations show the user that the list can be rearranged around a dropped item. It is helpful for users to know where the item will be placed in a list if it is dropped at the current location. The animations give visual feedback that an item being dragged can be dropped between two other items in the list and that those items will move out of the way.</p>
+<h2 id="using-animations-with-custom-controls">Using animations with custom controls</h2>
+<p>The following table summarizes our recommendations for which animation you should use when you create a custom version of these Windows Runtime controls:</p>
+<table>
+<thead>
+<tr>
+<th>UI type</th>
+<th>Recommended animation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dialog box</td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation"><strong>FadeInThemeAnimation</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a></td>
+</tr>
+<tr>
+<td>Flyout</td>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation"><strong>PopInThemeAnimation</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation"><strong>PopOutThemeAnimation</strong></a></td>
+</tr>
+<tr>
+<td>Tooltip</td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation"><strong>FadeInThemeAnimation</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a></td>
+</tr>
+<tr>
+<td>Context menu</td>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.popinthemeanimation"><strong>PopInThemeAnimation</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.animation.popoutthemeanimation"><strong>PopOutThemeAnimation</strong></a></td>
+</tr>
+<tr>
+<td>Command bar</td>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.edgeuithemetransition"><strong>EdgeUIThemeTransition</strong></a></td>
+</tr>
+<tr>
+<td>Task pane or edge-based panel</td>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.panethemetransition"><strong>PaneThemeTransition</strong></a></td>
+</tr>
+<tr>
+<td>Contents of any UI container</td>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.contentthemetransition"><strong>ContentThemeTransition</strong></a></td>
+</tr>
+<tr>
+<td>For controls or if no other animation applies</td>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.fadeinthemeanimation"><strong>FadeInThemeAnimation</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h2 id="transition-animation-examples">Transition animation examples</h2>
+<p>Ideally, your app uses animations to enhance the user interface or to make it more attractive without annoying your users. One way you can do this is to apply animated transitions to UI so that when something enters or leaves the screen or otherwise changes, the animation draws the attention of the user to the change. For example, your buttons may rapidly fade in and out of view rather than just appear and disappear. We created a number of APIs that can be used to create recommended or typical animation transitions that are consistent. The example here shows how to apply an animation to a button so that it swiftly slides into view.</p>
+<pre><code class="lang-xml">&lt;Button Content=&quot;Transitioning Button&quot;&gt;
+     &lt;Button.Transitions&gt;
+         &lt;TransitionCollection&gt; 
+             &lt;EntranceThemeTransition/&gt;
+         &lt;/TransitionCollection&gt;
+     &lt;/Button.Transitions&gt;
+ &lt;/Button&gt;
+</code></pre>
+<p>In this code, we add the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition"><strong>EntranceThemeTransition</strong></a> object to the transition collection of the button. Now, when the button is first rendered, it swiftly slides into view rather than just appear. You can set a few properties on the animation object in order to adjust how far it slides and from what direction, but it's really meant to be a simple API for a specific scenario, that is, to make an eye-catching entrance.</p>
+<p>You can also define transition animation themes in the style resources of your app, allowing you to apply the effect uniformly. This example is equivalent to the previous one, only it is applied using a <a href="/uwp/api/Windows.UI.Xaml.Style"><strong>Style</strong></a>:</p>
+<pre><code class="lang-xml">&lt;UserControl.Resources&gt;
+     &lt;Style x:Key=&quot;DefaultButtonStyle&quot; TargetType=&quot;Button&quot;&gt;
+         &lt;Setter Property=&quot;Transitions&quot;&gt;
+             &lt;Setter.Value&gt;
+                 &lt;TransitionCollection&gt;
+                     &lt;EntranceThemeTransition/&gt;
+                 &lt;/TransitionCollection&gt;
+             &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+    &lt;/Style&gt;
+&lt;/UserControl.Resources&gt;
+      
+&lt;StackPanel x:Name=&quot;LayoutRoot&quot;&gt;
+    &lt;Button Style=&quot;{StaticResource DefaultButtonStyle}&quot; Content=&quot;Transitioning Button&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>The previous examples apply a theme transition to an individual control, however, theme transitions are even more interesting when you apply them to a container of objects. When you do this, all the child objects of the container take part in the transition. In the following example, an <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition"><strong>EntranceThemeTransition</strong></a> is applied to a <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> of rectangles.</p>
+<pre><code class="lang-xml">&lt;!-- If you set an EntranceThemeTransition animation on a panel, the
+     children of the panel will automatically offset when they animate
+     into view to create a visually appealing entrance. --&gt;        
+&lt;ItemsControl Grid.Row=&quot;1&quot; x:Name=&quot;rectangleItems&quot;&gt;
+    &lt;ItemsControl.ItemContainerTransitions&gt;
+        &lt;TransitionCollection&gt;
+            &lt;EntranceThemeTransition/&gt;
+        &lt;/TransitionCollection&gt;
+    &lt;/ItemsControl.ItemContainerTransitions&gt;
+    &lt;ItemsControl.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;WrapGrid Height=&quot;400&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/ItemsControl.ItemsPanel&gt;
+            
+    &lt;!-- The sequence children appear depends on their order in 
+         the panel's children, not necessarily on where they render
+         on the screen. Be sure to arrange your child elements in
+         the order you want them to transition into view. --&gt;
+    &lt;ItemsControl.Items&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+    &lt;/ItemsControl.Items&gt;
+&lt;/ItemsControl&gt;
+</code></pre>
+<p>The child rectangles of the <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> transition into view one after the other in a visually pleasing way rather than all at once as would be the case if you applied this animation to the rectangles individually.</p>
+<p>Here's a demonstration of this animation:</p>
+<p><img src="images/animation-child-rectangles.gif" alt="Animation showing child rectangle transitioning into view"></p>
+<p>Child objects of a container can also re-flow when one or more of those children change position. In the following example, we apply a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition"><strong>RepositionThemeTransition</strong></a> to a grid of rectangles. When you remove one of the rectangles, all the other rectangles re-flow into their new position.</p>
+<pre><code class="lang-xml">&lt;Button Content=&quot;Remove Rectangle&quot; Click=&quot;RemoveButton_Click&quot;/&gt;
+        
+&lt;ItemsControl Grid.Row=&quot;1&quot; x:Name=&quot;rectangleItems&quot;&gt;
+    &lt;ItemsControl.ItemContainerTransitions&gt;
+        &lt;TransitionCollection&gt;
+                    
+            &lt;!-- Without this, there would be no animation when items 
+                 are removed. --&gt;
+            &lt;RepositionThemeTransition/&gt;
+        &lt;/TransitionCollection&gt;
+    &lt;/ItemsControl.ItemContainerTransitions&gt;
+    &lt;ItemsControl.ItemsPanel&gt;
+        &lt;ItemsPanelTemplate&gt;
+            &lt;WrapGrid Height=&quot;400&quot;/&gt;
+        &lt;/ItemsPanelTemplate&gt;
+    &lt;/ItemsControl.ItemsPanel&gt;
+            
+    &lt;!-- All these rectangles are just to demonstrate how the items
+         in the grid re-flow into position when one of the child items
+         are removed. --&gt;
+    &lt;ItemsControl.Items&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+        &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;100&quot; Height=&quot;100&quot; Margin=&quot;10&quot;/&gt;
+    &lt;/ItemsControl.Items&gt;
+&lt;/ItemsControl&gt;
+</code></pre>
+<pre><code class="lang-cs">private void RemoveButton_Click(object sender, RoutedEventArgs e)
+{
+    if (rectangleItems.Items.Count &gt; 0)
+    {    
+        rectangleItems.Items.RemoveAt(0);
+    }                         
+}
+</code></pre>
+<pre><code class="lang-cpp">// .h
+private:
+void RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
+
+//.cpp
+void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+    if (rectangleItems-&gt;Items-&gt;Size &gt; 0)
+    {    
+        rectangleItems-&gt;Items-&gt;RemoveAt(0);
+    }
+}
+</code></pre>
+<p>You can apply multiple transition animations to a single object or object container. For example, if you want the list of rectangles to animate into view and also animate when they change position, you can apply the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition"><strong>RepositionThemeTransition</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition"><strong>EntranceThemeTransition</strong></a> like this:</p>
+<pre><code class="lang-xml">...
+&lt;ItemsControl.ItemContainerTransitions&gt;
+    &lt;TransitionCollection&gt;
+        &lt;EntranceThemeTransition/&gt;                    
+        &lt;RepositionThemeTransition/&gt;
+    &lt;/TransitionCollection&gt;
+&lt;/ItemsControl.ItemContainerTransitions&gt;
+...      
+</code></pre>
+<p>There are several transition effects to create animations on your UI elements as they are added, removed, reordered, and so on. The names of these APIs all contain &quot;ThemeTransition&quot;:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition"><strong>NavigationThemeTransition</strong></a></td>
+<td>Provides a Windows personality animation for page navigation in a <a href="/uwp/api/Windows.UI.Xaml.Controls.Frame"><strong>Frame</strong></a>.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition"><strong>AddDeleteThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior for when controls add or delete children or content. Typically the control is an item container.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ContentThemeTransition"><strong>ContentThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior for when the content of a control is changing. You can apply this in addition to <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.AddDeleteThemeTransition"><strong>AddDeleteThemeTransition</strong></a>.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EdgeUIThemeTransition"><strong>EdgeUIThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior for a (small) edge UI transition.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition"><strong>EntranceThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior for when controls first appear.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PaneThemeTransition"><strong>PaneThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior for a panel (large edge UI) UI transition.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PopupThemeTransition"><strong>PopupThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior that applies to pop-in components of controls (for example, tooltip-like UI on an object) as they appear.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ReorderThemeTransition"><strong>ReorderThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior for when list-view controls items change order. Typically this happens as a result of a drag-drop operation. Different controls and themes can have varying characteristics for the animations.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeTransition"><strong>RepositionThemeTransition</strong></a></td>
+<td>Provides the animated transition behavior for when controls change position.</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h2 id="theme-animation-examples">Theme animation examples</h2>
+<p>Transition animations are simple to apply. But you may want to have a bit more control over the timing and order of your animation effects. You can use theme animations to enable more control while still using a consistent theme for how your animation behaves. Theme animations also require less markup than custom animations. Here, we use the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a> to make a rectangle fade out of view.</p>
+<pre><code class="lang-xml">&lt;StackPanel&gt;    
+    &lt;StackPanel.Resources&gt;
+        &lt;Storyboard x:Name=&quot;myStoryboard&quot;&gt;
+            &lt;FadeOutThemeAnimation TargetName=&quot;myRectangle&quot; /&gt;
+        &lt;/Storyboard&gt;
+    &lt;/StackPanel.Resources&gt;
+    &lt;Rectangle PointerPressed=&quot;Rectangle_Tapped&quot; x:Name=&quot;myRectangle&quot;  
+              Fill=&quot;Blue&quot; Width=&quot;200&quot; Height=&quot;300&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-cs">// When the user taps the rectangle, the animation begins.
+private void Rectangle_Tapped(object sender, PointerRoutedEventArgs e)
+{
+    myStoryboard.Begin();
+}
+</code></pre>
+<pre><code class="lang-vb">' When the user taps the rectangle, the animation begins.
+Private Sub Rectangle_Tapped(sender As Object, e As PointerRoutedEventArgs)
+    myStoryboard.Begin()
+End Sub
+</code></pre>
+<pre><code class="lang-cpp">//.h
+void Rectangle_Tapped(Platform::Object^ sender, Windows::UI::Xaml::Input::PointerRoutedEventArgs^ e);
+
+//.cpp
+void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
+{
+    myStoryboard-&gt;Begin();
+}
+</code></pre>
+<p>Unlike transition animations, a theme animation doesn't have a built-in trigger (the transition) that runs it automatically. You must use a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> to contain a theme animation when you define it in XAML. You can also change the default behavior of the animation. For example, you can slow down the fade-out by increasing the <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a> time value on the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a>.</p>
+<p><strong>Note</strong>  For purposes of showing basic animation techniques, we're using app code to start the animation by calling methods of <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a>. You can control how the <strong>Storyboard</strong> animations run using the <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.begin"><strong>Begin</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.stop"><strong>Stop</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.pause"><strong>Pause</strong></a>, and <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.resume"><strong>Resume</strong></a> <strong>Storyboard</strong> methods. However, that's not typically how you include library animations in apps. Rather, you usually integrate the library animations into the XAML styles and templates applied to controls or elements. Learning about templates and visual states is a little more involved. But we do cover how you'd use library animations in visual states as part of the <a href="/previous-versions/windows/apps/jj819808(v=win.10)">Storyboarded animations for visual states</a> topic.</p>
+<p></p>
+<p>You can apply several other theme animations to your UI elements to create animation effects. The names of these API all contain &quot;ThemeAnimation&quot;:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DragItemThemeAnimation"><strong>DragItemThemeAnimation</strong></a></td>
+<td>Represents the preconfigured animation that applies to item elements being dragged.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DragOverThemeAnimation"><strong>DragOverThemeAnimation</strong></a></td>
+<td>Represents the preconfigured animation that applies to the elements underneath an element being dragged.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DropTargetItemThemeAnimation"><strong>DropTargetItemThemeAnimation</strong></a></td>
+<td>The preconfigured animation that applies to potential drop target elements.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeInThemeAnimation"><strong>FadeInThemeAnimation</strong></a></td>
+<td>The preconfigured opacity animation that applies to controls when they first appear.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FadeOutThemeAnimation"><strong>FadeOutThemeAnimation</strong></a></td>
+<td>The preconfigured opacity animation that applies to controls when they are removed from UI or hidden.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PointerDownThemeAnimation"><strong>PointerDownThemeAnimation</strong></a></td>
+<td>The preconfigured animation for user action that taps or clicks an item or element.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PointerUpThemeAnimation"><strong>PointerUpThemeAnimation</strong></a></td>
+<td>The preconfigured animation for user action that runs after a user taps down on an item or element and the action is released.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PopInThemeAnimation"><strong>PopInThemeAnimation</strong></a></td>
+<td>The preconfigured animation that applies to pop-in components of controls as they appear. This animation combines opacity and translation.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PopOutThemeAnimation"><strong>PopOutThemeAnimation</strong></a></td>
+<td>The preconfigured animation that applies to pop-in components of controls as they are closed or removed. This animation combines opacity and translation.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepositionThemeAnimation"><strong>RepositionThemeAnimation</strong></a></td>
+<td>The preconfigured animation for an object as it is repositioned.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.SplitCloseThemeAnimation"><strong>SplitCloseThemeAnimation</strong></a></td>
+<td>The preconfigured animation that conceals a target UI using an animation in the style of a <a href="/uwp/api/windows.ui.xaml.controls.combobox"><strong>ComboBox</strong></a> opening and closing.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.SplitOpenThemeAnimation"><strong>SplitOpenThemeAnimation</strong></a></td>
+<td>The preconfigured animation that reveals a target UI using an animation in the style of a <a href="/uwp/api/windows.ui.xaml.controls.combobox"><strong>ComboBox</strong></a> opening and closing.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.drillinthemeanimation"><strong>DrillInThemeAnimation</strong></a></td>
+<td>Represents a preconfigured animation that runs when a user navigates forward in a logical hierarchy, like from a list page to a detail page.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.drilloutthemeanimation"><strong>DrillOutThemeAnimation</strong></a></td>
+<td>Represents a preconfigured animation that runs when a user navigates backward in a logical hierarchy, like from a detail page to a list page.</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h2 id="create-your-own-animations">Create your own animations</h2>
+<p>When theme animations are not enough for your needs, you can create your own animations. You animate objects by animating one or more of their property values. For example, you can animate the width of a rectangle, the angle of a <a href="/uwp/api/Windows.UI.Xaml.Media.RotateTransform"><strong>RotateTransform</strong></a>, or the color value of a button. We term this type of custom animation a storyboarded animation, to distinguish it from the library animations that the Windows Runtime already provides as a preconfigured animation type. For storyboarded animations, you use an animation that can change values of a particular type (for example <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation"><strong>DoubleAnimation</strong></a> to animate a <strong>Double</strong>) and put that animation within a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> to control it.</p>
+<p>In order to be animated, the property you are animating must be a <em>dependency property</em>. For more info about dependency properties, see <a href="/windows/uwp/xaml-platform/dependency-properties-overview">Dependency properties overview</a>. For more info on creating custom storyboarded animations, including how to target and control them, see <a href="storyboarded-animations.html">Storyboarded animations</a>.</p>
+<p>The biggest area of app UI definition in XAML where you'll define custom storyboarded animations is if you are defining visual states for controls in XAML. You'll be doing this either because you are creating a new control class, or because you are re-templating an existing control that has visual states in its control template. For more info, see <a href="/previous-versions/windows/apps/jj819808(v=win.10)">Storyboarded animations for visual states</a>.</p>
+<p></p>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/motion/xaml-animation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

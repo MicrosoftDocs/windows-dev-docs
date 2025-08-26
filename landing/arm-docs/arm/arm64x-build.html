@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build Arm64X Files </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build Arm64X Files ">
+    
+    <meta name="description" content="Build Arm64X files for situations where one file is loaded into both x64/Arm64EC and Arm64 processes.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-arm64x-binaries">Build Arm64X binaries</h1>
+
+<p>You can build Arm64X binaries, also known as <a href="arm64x-pe.html">Arm64X PE files</a>, to support loading a single binary into both x64/Arm64EC and Arm64 processes.</p>
+<h2 id="building-an-arm64x-binary-from-a-visual-studio-project">Building an Arm64X binary from a Visual Studio project</h2>
+<p>To enable building Arm64X binaries, the property pages of Arm64EC configuration has a new &quot;Build Project as ARM64X&quot; property, known as <code>BuildAsX</code> in the project file.</p>
+<p><img src="images/arm64x-build.png" alt="Property page for an Arm64EC configuration showing the Build Project as ARM64X option"></p>
+<p>When a user builds a project, Visual Studio would normally compile for Arm64EC and then link the outputs into an Arm64EC binary. When <code>BuildAsX</code> is set to <code>true</code>, Visual Studio will instead compile for both Arm64EC <strong>and</strong> Arm64. The Arm64EC link step is then used to link both together into a single Arm64X binary. The output directory for this Arm64X binary will be whatever the output directory is set to under the <a href="arm64ec-build.html">Arm64EC configuration</a>.</p>
+<p>For <code>BuildAsX</code> to work correctly, the user must have an existing Arm64 configuration, in addition to the Arm64EC configuration. The Arm64 and Arm64EC configurations must have the same C runtime and C++ standard library (e.g., both set <a href="/cpp/c-runtime-library/crt-library-features">/MT</a>). To avoid build inefficiencies, such as building full Arm64 projects rather than just compilation, all direct and indirect references of the project should have <code>BuildAsX</code> set to true.</p>
+<p>The build system assumes that the Arm64 and Arm64EC configurations have the same name. If the Arm64 and Arm64EC configurations have different names (such as <code>Debug|ARM64</code> and <code>MyDebug|ARM64EC</code>), you can manually edit the <a href="/cpp/build/reference/vcxproj-file-structure">vcxproj</a> or <code>Directory.Build.props</code> file to add an <code>ARM64ConfigurationNameForX</code> property to the Arm64EC configuration that provides the name of the Arm64 configuration.</p>
+<p>If the desired Arm64X binary is a combination of two separate projects, one as Arm64 and one as Arm64EC, you can manually edit the vxcproj of the Arm64EC project to add an <code>ARM64ProjectForX</code> property and specify the path to the Arm64 project. The two projects must be in the same solution.</p>
+<h2 id="building-an-arm64x-dll-with-cmake">Building an Arm64X DLL with CMake</h2>
+<p>To build your CMake project binaries as Arm64X, you can use any version of <a href="https://cmake.org/documentation/">CMake</a> that supports building as Arm64EC. The process involves initially building the project targeting Arm64 to generate the Arm64 linker inputs. Subsequently, the project should be built again targeting Arm64EC, this time combining the Arm64 and Arm64EC inputs to form Arm64X binaries. The steps below leverage the use of <a href="/cpp/build/cmake-presets-vs">CMakePresets.json</a>.</p>
+<ol>
+<li><p>Ensure you have separate configuration presets targeting Arm64 and Arm64EC. For example:</p>
+<pre><code class="lang-JSON"> {
+   &quot;version&quot;: 3,
+   &quot;configurePresets&quot;: [
+     {
+       &quot;name&quot;: &quot;windows-base&quot;,
+       &quot;hidden&quot;: true,
+       &quot;binaryDir&quot;: &quot;${sourceDir}/out/build/${presetName}&quot;,
+       &quot;installDir&quot;: &quot;${sourceDir}/out/install/${presetName}&quot;,
+       &quot;cacheVariables&quot;: {
+         &quot;CMAKE_C_COMPILER&quot;: &quot;cl.exe&quot;,
+         &quot;CMAKE_CXX_COMPILER&quot;: &quot;cl.exe&quot;
+       },
+ 	  &quot;generator&quot;: &quot;Visual Studio 17 2022&quot;,
+     },
+     {
+       &quot;name&quot;: &quot;arm64-debug&quot;,
+       &quot;displayName&quot;: &quot;arm64 Debug&quot;,
+       &quot;inherits&quot;: &quot;windows-base&quot;,
+       &quot;hidden&quot;: true,
+ 	  &quot;architecture&quot;: {
+ 		 &quot;value&quot;: &quot;arm64&quot;,
+ 		 &quot;strategy&quot;: &quot;set&quot;
+ 	  },
+       &quot;cacheVariables&quot;: {
+         &quot;CMAKE_BUILD_TYPE&quot;: &quot;Debug&quot;
+       }
+     },
+     {
+       &quot;name&quot;: &quot;arm64ec-debug&quot;,
+       &quot;displayName&quot;: &quot;arm64ec Debug&quot;,
+       &quot;inherits&quot;: &quot;windows-base&quot;,
+       &quot;hidden&quot;: true,
+       &quot;architecture&quot;: {
+         &quot;value&quot;: &quot;arm64ec&quot;,
+         &quot;strategy&quot;: &quot;set&quot;
+       },
+       &quot;cacheVariables&quot;: {
+         &quot;CMAKE_BUILD_TYPE&quot;: &quot;Debug&quot;
+       }
+     }
+   ]
+ }
+</code></pre>
+</li>
+<li><p>Add two new configurations that inherit from the Arm64 and Arm64EC presets you have above. Set <code>BUILD_AS_ARM64X</code> to <code>ARM64EC</code> in the config that inherits from Arm64EC and <code>BUILD_AS_ARM64X</code> to <code>ARM64</code> in the other. These variables will be used to signify that the builds from these two presets are a part of Arm64X.</p>
+<pre><code class="lang-JSON">     {
+       &quot;name&quot;: &quot;arm64-debug-x&quot;,
+       &quot;displayName&quot;: &quot;arm64 Debug (arm64x)&quot;,
+       &quot;inherits&quot;: &quot;arm64-debug&quot;,
+       &quot;cacheVariables&quot;: {
+         &quot;BUILD_AS_ARM64X&quot;: &quot;ARM64&quot;
+       }
+       },
+     {
+       &quot;name&quot;: &quot;arm64ec-debug-x&quot;,
+       &quot;displayName&quot;: &quot;arm64ec Debug (arm64x)&quot;,
+       &quot;inherits&quot;: &quot;arm64ec-debug&quot;,
+       &quot;cacheVariables&quot;: {
+         &quot;BUILD_AS_ARM64X&quot;: &quot;ARM64EC&quot;
+       }
+       }
+</code></pre>
+</li>
+<li><p>Add a new .cmake file to your CMake project called <code>arm64x.cmake</code>. Copy the snippet below into the new .cmake file.</p>
+<pre><code class="lang-cmake"> # directory where the link.rsp file generated during arm64 build will be stored
+ set(arm64ReproDir &quot;${CMAKE_CURRENT_SOURCE_DIR}/repros&quot;)
+
+ # This function reads in the content of the rsp file outputted from arm64 build for a target. Then passes the arm64 libs, objs and def file to the linker using /machine:arm64x to combine them with the arm64ec counterparts and create an arm64x binary.
+
+ function(set_arm64_dependencies n)
+ 	set(REPRO_FILE &quot;${arm64ReproDir}/${n}.rsp&quot;)
+ 	file(STRINGS &quot;${REPRO_FILE}&quot; ARM64_OBJS REGEX obj\&quot;$)
+ 	file(STRINGS &quot;${REPRO_FILE}&quot; ARM64_DEF REGEX def\&quot;$)
+ 	file(STRINGS &quot;${REPRO_FILE}&quot; ARM64_LIBS REGEX lib\&quot;$)
+ 	string(REPLACE &quot;\&quot;&quot; &quot;;&quot; ARM64_OBJS &quot;${ARM64_OBJS}&quot;)
+ 	string(REPLACE &quot;\&quot;&quot; &quot;;&quot; ARM64_LIBS &quot;${ARM64_LIBS}&quot;)
+ 	string(REPLACE &quot;\&quot;&quot; &quot;;&quot; ARM64_DEF &quot;${ARM64_DEF}&quot;)
+ 	string(REPLACE &quot;/def:&quot; &quot;/defArm64Native:&quot; ARM64_DEF &quot;${ARM64_DEF}&quot;)
+
+ 	target_sources(${n} PRIVATE ${ARM64_OBJS})
+ 	target_link_options(${n} PRIVATE /machine:arm64x &quot;${ARM64_DEF}&quot; &quot;${ARM64_LIBS}&quot;)
+ endfunction()
+
+ # During the arm64 build, create link.rsp files that containes the absolute path to the inputs passed to the linker (objs, def files, libs).
+
+ if(&quot;${BUILD_AS_ARM64X}&quot; STREQUAL &quot;ARM64&quot;)
+ 	add_custom_target(mkdirs ALL COMMAND cmd /c (if not exist \&quot;${arm64ReproDir}/\&quot; mkdir \&quot;${arm64ReproDir}\&quot; ))
+ 	foreach (n ${ARM64X_TARGETS})
+ 		add_dependencies(${n} mkdirs)
+ 		# tell the linker to produce this special rsp file that has absolute paths to its inputs
+ 		target_link_options(${n} PRIVATE &quot;/LINKREPROFULLPATHRSP:${arm64ReproDir}/${n}.rsp&quot;)
+ 	endforeach()
+
+ # During the ARM64EC build, modify the link step appropriately to produce an arm64x binary
+ elseif(&quot;${BUILD_AS_ARM64X}&quot; STREQUAL &quot;ARM64EC&quot;)
+ 	foreach (n ${ARM64X_TARGETS})
+ 		set_arm64_dependencies(${n})
+ 	endforeach()
+ endif()
+</code></pre>
+</li>
+</ol>
+<p><a href="/cpp/build/reference/link-repro-full-path-rsp">/LINKREPROFULLPATHRSP</a> is only supported if you are building using the MSVC linker from Visual Studio 17.11 or later.</p>
+<p>If you need to use an older linker, copy the below snippet instead. This route uses an older flag <a href="/cpp/build/reference/linkrepro">/LINK_REPRO</a>. Using the /LINK_REPRO route will result in a slower overall build time due to the copying of files and has known issues when using Ninja generator.</p>
+<pre><code class="lang-cmake"># directory where the link_repro directories for each arm64x target will be created during arm64 build.
+set(arm64ReproDir &quot;${CMAKE_CURRENT_SOURCE_DIR}/repros&quot;)
+
+# This function globs the linker input files that was copied into a repro_directory for each target during arm64 build. Then it passes the arm64 libs, objs and def file to the linker using /machine:arm64x to combine them with the arm64ec counterparts and create an arm64x binary.
+
+function(set_arm64_dependencies n)
+	set(ARM64_LIBS)
+	set(ARM64_OBJS)
+	set(ARM64_DEF)
+	set(REPRO_PATH &quot;${arm64ReproDir}/${n}&quot;)
+	if(NOT EXISTS &quot;${REPRO_PATH}&quot;)
+		set(REPRO_PATH &quot;${arm64ReproDir}/${n}_temp&quot;)
+	endif()
+	file(GLOB ARM64_OBJS &quot;${REPRO_PATH}/*.obj&quot;)
+	file(GLOB ARM64_DEF &quot;${REPRO_PATH}/*.def&quot;)
+	file(GLOB ARM64_LIBS &quot;${REPRO_PATH}/*.LIB&quot;)
+
+	if(NOT &quot;${ARM64_DEF}&quot; STREQUAL &quot;&quot;)
+		set(ARM64_DEF &quot;/defArm64Native:${ARM64_DEF}&quot;)
+	endif()
+	target_sources(${n} PRIVATE ${ARM64_OBJS})
+	target_link_options(${n} PRIVATE /machine:arm64x &quot;${ARM64_DEF}&quot; &quot;${ARM64_LIBS}&quot;)
+endfunction()
+
+# During the arm64 build, pass the /link_repro flag to linker so it knows to copy into a directory, all the file inputs needed by the linker for arm64 build (objs, def files, libs).
+# extra logic added to deal with rebuilds and avoiding overwriting directories.
+if(&quot;${BUILD_AS_ARM64X}&quot; STREQUAL &quot;ARM64&quot;)
+	foreach (n ${ARM64X_TARGETS})
+		add_custom_target(mkdirs_${n} ALL COMMAND cmd /c (if exist \&quot;${arm64ReproDir}/${n}_temp/\&quot; rmdir /s /q \&quot;${arm64ReproDir}/${n}_temp\&quot;) &amp;&amp; mkdir \&quot;${arm64ReproDir}/${n}_temp\&quot; )
+		add_dependencies(${n} mkdirs_${n})
+		target_link_options(${n} PRIVATE &quot;/LINKREPRO:${arm64ReproDir}/${n}_temp&quot;)
+		add_custom_target(${n}_checkRepro ALL COMMAND cmd /c if exist \&quot;${n}_temp/*.obj\&quot; if exist \&quot;${n}\&quot; rmdir /s /q \&quot;${n}\&quot; 2&gt;nul &amp;&amp; if not exist \&quot;${n}\&quot; ren \&quot;${n}_temp\&quot; \&quot;${n}\&quot; WORKING_DIRECTORY ${arm64ReproDir})
+		add_dependencies(${n}_checkRepro ${n})
+	endforeach()
+
+# During the ARM64EC build, modify the link step appropriately to produce an arm64x binary
+elseif(&quot;${BUILD_AS_ARM64X}&quot; STREQUAL &quot;ARM64EC&quot;)
+	foreach (n ${ARM64X_TARGETS})
+		set_arm64_dependencies(${n})
+	endforeach()
+endif()
+</code></pre>
+<ol start="4">
+<li><p>In the bottom of the top level <code>CMakeLists.txt</code> file in your project, add the snippet below. Be sure to substitute the contents of the angle brackets with actual values. This will consume the <code>arm64x.cmake</code> file you just created above.</p>
+<pre><code class="lang-cmake"> if(DEFINED BUILD_AS_ARM64X)
+ 	set(ARM64X_TARGETS &lt;Targets you want to Build as ARM64X&gt;)
+ 	include(&quot;&lt;directory location of the arm64x.cmake file&gt;/arm64x.cmake&quot;)
+ endif()
+</code></pre>
+</li>
+<li><p>Build your CMake project using the Arm64X enabled Arm64 preset (arm64-debug-x).</p>
+</li>
+<li><p>Build your CMake project using the Arm64X enabled Arm64EC preset (arm64ec-debug-x). The final dll(s) contained in output directory for this build will be Arm64X binaries.</p>
+</li>
+</ol>
+<h2 id="building-an-arm64x-pure-forwarder-dll">Building an Arm64X pure forwarder DLL</h2>
+<p>An <strong>Arm64X pure forwarder DLL</strong> is a small Arm64X DLL that forwards APIs to separate DLLs depending on their type:</p>
+<ul>
+<li><p>Arm64 APIs are forwarded to an Arm64 DLL.</p>
+</li>
+<li><p>x64 APIs are forwarded to an x64 or Arm64EC DLL.</p>
+</li>
+</ul>
+<p>An Arm64X pure forwarder enables the advantages of using an Arm64X binary even if there are challenges with building a merged Arm64X binary containing all of the Arm64EC and Arm64 code. Learn more about Arm64X pure forwarder DLLs in the <a href="arm64x-pe.html">Arm64X PE files</a> overview page.</p>
+<p>You can build an Arm64X pure forwarder from the Arm64 developer command prompt following the steps below. The resulting Arm64X pure forwarder will route x64 calls to <code>foo_x64.DLL</code> and Arm64 calls to <code>foo_arm64.DLL</code>.</p>
+<ol>
+<li><p>Create empty <code>OBJ</code> files that will later be used by the linker to create the pure forwarder. These are empty as the pure forwarder has no code in it. To do this, create an empty file. For the example below, we named the file <strong>empty.cpp</strong>. Empty <code>OBJ</code> files are then created using <code>cl</code>, with one for Arm64 (<code>empty_arm64.obj</code>) and one for Arm64EC (<code>empty_x64.obj</code>):</p>
+<pre><code class="lang-batch">cl /c /Foempty_arm64.obj empty.cpp
+cl /c /arm64EC /Foempty_x64.obj empty.cpp
+</code></pre>
+<blockquote>
+<p>If the error message &quot;cl : Command line warning D9002 : ignoring unknown option '-arm64EC'&quot; appears, the incorrect compiler is being used. To resolve that please switch to <a href="https://devblogs.microsoft.com/cppblog/arm64ec-support-in-visual-studio/#developer-command-prompt">the Arm64 Developer Command Prompt</a>.</p>
+</blockquote>
+</li>
+<li><p>Create <code>DEF</code> files for both x64 and Arm64. These files enumerate all of the API exports of the DLL and points the loader to the name of the DLL that can fulfill those API calls.</p>
+<p><code>foo_x64.def</code>:</p>
+<pre><code class="lang-cpp">EXPORTS
+    MyAPI1  =  foo_x64.MyAPI1
+    MyAPI2  =  foo_x64.MyAPI2
+</code></pre>
+<p><code>foo_arm64.def</code>:</p>
+<pre><code class="lang-cpp">EXPORTS
+    MyAPI1  =  foo_arm64.MyAPI1
+    MyAPI2  =  foo_arm64.MyAPI2
+</code></pre>
+</li>
+<li><p>You can then use <code>link</code> to create <code>LIB</code> import files for both x64 and Arm64:</p>
+<pre><code class="lang-batch">link /lib /machine:x64 /def:foo_x64.def /out:foo_x64.lib
+link /lib /machine:arm64 /def:foo_arm64.def /out:foo_arm64.lib
+</code></pre>
+</li>
+<li><p>Link the empty <code>OBJ</code> and import <code>LIB</code> files using the flag <code>/MACHINE:ARM64X</code> to produce the Arm6X pure forwarder DLL:</p>
+<pre><code class="lang-cpp">link /dll /noentry /machine:arm64x /defArm64Native:foo_arm64.def /def:foo_x64.def empty_arm64.obj empty_x64.obj /out:foo.dll foo_arm64.lib foo_x64.lib
+</code></pre>
+</li>
+</ol>
+<p>The resulting <code>foo.dll</code> can be loaded into either an Arm64 or an x64/Arm64EC process. When an Arm64 process loads <code>foo.dll</code>, the operating system will immediately load <code>foo_arm64.dll</code> in its place and any API calls will be handled by <code>foo_arm64.dll</code>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/arm64x-build.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

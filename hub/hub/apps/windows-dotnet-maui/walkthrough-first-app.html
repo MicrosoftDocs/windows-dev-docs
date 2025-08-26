@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build your first .NET MAUI app for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build your first .NET MAUI app for Windows ">
+    
+    <meta name="description" content="Get hands-on with .NET MAUI by building your first cross-platform app on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-your-first-net-maui-app-for-windows">Build your first .NET MAUI app for Windows</h1>
+
+<p>Get hands-on with .NET MAUI by building your first cross-platform app on Windows.</p>
+<h2 id="introduction">Introduction</h2>
+<p>In this tutorial, you'll learn how to create and run your first .NET MAUI app for Windows in Visual Studio 2022 (17.3 or later). We will add some <a href="/dotnet/communitytoolkit/mvvm/">MVVM Toolkit</a> features from the <a href="/dotnet/communitytoolkit/introduction">.NET Community Toolkit</a> to improve the design the default project.</p>
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
+<p>If you haven't already set up your environment for .NET MAUI development, please follow the steps to <a href="index.html#get-started-with-net-maui-on-windows">Get started with .NET MAUI on Windows</a>.</p>
+<h2 id="creating-the-net-maui-project">Creating the .NET MAUI project</h2>
+<ol>
+<li><p>Launch Visual Studio, and in the start window click <strong>Create a new project</strong> to create a new project:</p>
+<p><img src="images/hello-maui-new-project.png" alt="Create a new project."></p>
+</li>
+<li><p>In the <strong>Create a new project</strong> window, select <strong>MAUI</strong> in the All project types drop-down, select the <strong>.NET MAUI App</strong> template, and click the <strong>Next</strong> button:</p>
+<p><img src="images/hello-maui-app-template.png" alt=".NET MAUI App template."></p>
+</li>
+<li><p>In the <strong>Configure your new project</strong> window, give your project a name, choose a location for it, and click the <strong>Next</strong> button:</p>
+<p><img src="images/hello-maui-name-project.png" alt="Name the new project."></p>
+</li>
+<li><p>In the <strong>Additional information</strong> window, click the <strong>Create</strong> button:</p>
+<p><img src="images/hello-maui-addl-info-create.png" alt="Create new project."></p>
+</li>
+<li><p>Wait for the project to be created, and for its dependencies to be restored:</p>
+<p><img src="images/hello-maui-project-created.png" alt="Project is created."></p>
+</li>
+<li><p>In the Visual Studio toolbar, press the Windows Machine button to build and run the app.</p>
+</li>
+<li><p>In the running app, press the <strong>Click me</strong> button several times and observe that the count of the number of button clicks is incremented:</p>
+<p><img src="images/hello-maui-first-run-app.png" alt="Run a MAUI app for the first time."></p>
+</li>
+</ol>
+<p>You just ran your first .NET MAUI app on Windows. In the next section, you'll learn how to add data binding and messaging features from the <strong>MVVM Toolkit</strong> to your app.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If your app fails to compile, review <a href="/dotnet/maui/troubleshooting">Troubleshooting known issues</a>, which may have a solution to your problem.</p>
+<h2 id="adding-the-mvvm-toolkit">Adding the MVVM Toolkit</h2>
+<p>Now that you have your first .NET MAUI app running on Windows, let's add some MVVM Toolkit features to the project to improve the app's design.</p>
+<ol>
+<li><p>Right-click the project in <strong>Solution Explorer</strong> and select <strong>Manage NuGet Packages...</strong> from the context menu.</p>
+</li>
+<li><p>In the <strong>NuGet Package Manager</strong> window, select the <strong>Browse</strong> tab and search for <strong>CommunityToolkit.MVVM</strong>:</p>
+<p><img src="images/hello-maui-mvvm-pkg.png" alt="CommunityToolkit.MVVM package."></p>
+</li>
+<li><p>Add the latest stable version of the <strong>CommunityToolkit.MVVM</strong> package (version 8.0.0 or later) to the project by clicking <strong>Install</strong>.</p>
+</li>
+<li><p>Close the <strong>NuGet Package Manager</strong> window after the new package has finished installing.</p>
+</li>
+<li><p>Right-click the project again and select <strong>Add | Class</strong> from the context menu.</p>
+</li>
+<li><p>In the <strong>Add New Item</strong> window that appears, name the class <code>MainViewModel</code> and click <strong>Add</strong>:</p>
+<p><img src="images/hello-maui-add-vm.png" alt="Add MainViewModel class."></p>
+</li>
+<li><p>The <code>MainViewModel</code> class will be the data binding target for the <code>MainPage</code>. Update it to inherit from <code>ObservableObject</code> in the <code>CommunityToolkit.Mvvm.ComponentModel</code> namespace This will also require updating the class to be <code>public</code> and <code>partial</code>.</p>
+</li>
+<li><p>The <code>MainViewModel</code> class will contain the following code. The <code>CountChangedMessage</code> record defines a message that is sent each time the Click me button is clicked, notifying the view of the change. The <a href="/dotnet/communitytoolkit/mvvm/generators/observableproperty">ObservableProperty</a> and <a href="/dotnet/communitytoolkit/mvvm/generators/relaycommand">RelayCommand</a> attributes added to the <code>message</code> and <code>IncrementCounter</code> members are source generators provided by the MVVM Toolkit to create the MVVM boilerplate code for <code>INotifyPropertyChanged</code> and <code>IRelayCommand</code> implementations. The <code>IncrementCounter</code> method's implementation contains the logic from <code>OnCounterClicked</code> in MainPage.xaml.cs, with a change to send a message with the new counter message. We will be removing that code-behind code later.</p>
+<pre><code class="lang-csharp">using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+
+namespace MauiOnWindows
+{
+    public sealed record CountChangedMessage(string Text);
+
+    public partial class MainViewModel : ObservableObject
+    {
+        [ObservableProperty]
+        private string message = &quot;Click me&quot;;
+
+        private int count;
+
+        [RelayCommand]
+        private void IncrementCounter()
+        {
+            count++;
+
+            // Pluralize the message if the count is greater than 1
+            message = count == 1 ? $&quot;Clicked {count} time&quot; : $&quot;Clicked {count} times&quot;;
+
+            WeakReferenceMessenger.Default.Send(new CountChangedMessage(message));
+        }
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You will need to update the namespace in the previous code to match the namespace in your project.</p>
+</div>
+</li>
+<li><p>Open the <strong>MainPage.xaml.cs</strong> file for editing and remove the <code>OnCounterClicked</code> method and the <code>count</code> field.</p>
+</li>
+<li><p>Add the following code to the <code>MainPage</code> constructor after the call to <code>InitializeComponent()</code>. This code will receive the message sent by <code>IncrementCounter()</code> in the <code>MainViewModel</code> and will update the <code>CounterBtn.Text</code> property with the new message and announce the new text with the <code>SemanticScreenReader</code>:</p>
+<pre><code class="lang-csharp">WeakReferenceMessenger.Default.Register&lt;CountChangedMessage&gt;(this, (r, m) =&gt;
+{
+    CounterBtn.Text = m.Text;
+    SemanticScreenReader.Announce(m.Text);
+});
+</code></pre>
+</li>
+<li><p>You will also need to add a <code>using</code> statement to the class:</p>
+<pre><code class="lang-csharp">using CommunityToolkit.Mvvm.Messaging;
+</code></pre>
+</li>
+<li><p>In <code>MainPage.xaml</code>, add a namespace declaration to the <code>ContentPage</code> so the <code>MainViewModel</code> class can be found:</p>
+<pre><code class="lang-xaml">xmlns:local=&quot;clr-namespace:MauiOnWindows&quot;
+</code></pre>
+</li>
+<li><p>Add <code>MainViewModel</code> as the <code>BindingContext</code> for the <code>ContentPage</code>:</p>
+<pre><code class="lang-xaml">&lt;ContentPage.BindingContext&gt;
+    &lt;local:MainViewModel/&gt;
+&lt;/ContentPage.BindingContext&gt;
+</code></pre>
+</li>
+<li><p>Update the <code>Button</code> on <code>MainPage</code> to use a <code>Command</code> instead of handling the <code>Clicked</code> event. The command will bind to the <code>IncrementCounterCommand</code> public property that is generated by the MVVM Toolkit's source generators:</p>
+<pre><code class="lang-xaml">&lt;Button
+    x:Name=&quot;CounterBtn&quot;
+    Text=&quot;Click me&quot;
+    SemanticProperties.Hint=&quot;Counts the number of times you click&quot;
+    Command=&quot;{Binding Path=IncrementCounterCommand}&quot;
+    HorizontalOptions=&quot;Center&quot; /&gt;
+</code></pre>
+</li>
+<li><p>Run the project again and observe that the counter is still incremented when you click the button:</p>
+<p><img src="images/hello-maui-mvvm-clicked-3-times.png" alt="Click me button clicked three times."></p>
+</li>
+<li><p>While the project is running, try updating the &quot;Hello, World!&quot; message in the first Label to read &quot;Hello, Windows!&quot; in <strong>MainPage.xaml</strong>. Save the file and notice that <a href="/dotnet/maui/xaml/hot-reload">XAML Hot Reload</a> updates the UI while the app is still running:</p>
+<p><img src="images/hello-maui-xaml-hot-reload-edited.png" alt="Hello World updated to Hello Windows with XAML Hot Reload."></p>
+</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>Learn to build an app that displays <a href="/graph/">Microsoft Graph</a> data for a user by leveraging the <a href="/graph/sdks/sdks-overview">Graph SDK</a> in a <a href="tutorial-graph-api.html">.NET MAUI for Windows tutorial</a>.</p>
+<h2 id="related-content">Related content</h2>
+<p><a href="/dotnet/maui/get-started/resources">Resources for learning .NET MAUI</a></p>
+<p><a href="tutorial-graph-api.html">Using the Microsoft Graph API with .NET MAUI on Windows</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-dotnet-maui/walkthrough-first-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Install Next.js on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Install Next.js on Windows ">
+    
+    <meta name="description" content="A guide to help you get started using the Next.js web frameworks on Windows Subsystem for Linux.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-with-nextjs-on-windows">Get started with Next.js on Windows</h1>
+
+<p>A guide to help you install the Next.js web framework and get up and running on Windows.</p>
+<p>Next.js is a JavaScript framework tailored for building React-based web applications, offering support for both static and server-side rendered web applications. Built with best practices in mind, Next.js enables you to create &quot;universal&quot; web apps in a consistent manner, requiring minimal configuration. These &quot;universal&quot; server-rendered web apps, also referred to as “isomorphic”, share code between the client and server.
+Next.js enables developers to create fast, scalable, and SEO-friendly web applications with ease.</p>
+<p>To learn more about React and other JavaScript frameworks based on React, see the <a href="react-overview.html">React overview</a> page.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This guide assumes that you've already completed the steps to set up your Node.js development environment, including:</p>
+<ul>
+<li>Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11</li>
+<li><a href="/windows/wsl/install-win10">Install Windows Subsystem for Linux (WSL)</a>, including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: <code>wsl -l -v</code></li>
+<li><a href="nodejs-on-wsl.html">Install Node.js on WSL 2</a>: This includes a version manager, package manager, Visual Studio Code, and the Remote Development extension.</li>
+</ul>
+<p>We recommend using the Windows Subsystem for Linux when working with NodeJS apps for better performance speed, system call compatibility, and for parity when running Linux servers or Docker containers.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Installing a Linux distribution with WSL will create a directory for storing files: <code>\\wsl\Ubuntu-20.04</code> (substitute Ubuntu-20.04 with whatever Linux distribution you're using). To open this directory in Windows File Explorer, open your WSL command line, select your home directory using <code>cd ~</code>, then enter the command <code>explorer.exe .</code> Be careful not to install NodeJS or store files that you will be working with on the mounted C drive (<code>/mnt/c/Users/yourname$</code>). Doing so will significantly slow down your install and build times.</p>
+</div>
+<h2 id="install-nextjs">Install Next.js</h2>
+<p>To install Next.js, which includes installing next, react, and react-dom:</p>
+<ol>
+<li><p>Open a WSL command line (ie. Ubuntu).</p>
+</li>
+<li><p>Create a new project folder: <code>mkdir NextProjects</code> and enter that directory: <code>cd NextProjects</code>.</p>
+</li>
+<li><p>Install Next.js and create a project (replacing 'my-next-app' with whatever you'd like to call your app): <code>npx create-next-app@latest my-next-app</code>.</p>
+</li>
+<li><p>Once the package has been installed, change directories into your new app folder, <code>cd my-next-app</code>, then use <code>code .</code> to open your Next.js project in VS Code. This will allow you to look at the Next.js framework that has been created for your app. Notice that VS Code opened your app in a WSL-Remote environment (as indicated in the green tab on the bottom-left of your VS Code window). This means that while you are using VS Code for editing on the Windows OS, it is still running your app on the Linux OS.</p>
+<p><img src="../../images/wsl-remote-extension.png" alt="WSL-Remote Extension"></p>
+</li>
+<li><p>There are 3 commands you need to know once Next.js is installed:</p>
+<ul>
+<li><code>npm run dev</code> to start Next.js in development mode.</li>
+<li><code>npm run build</code> to build the application for production usage.</li>
+<li><code>npm start</code> to start a Next.js production server.</li>
+</ul>
+<p>Open the WSL terminal integrated in VS Code (<strong>View &gt; Terminal</strong>). Make sure that the terminal path is pointed to your project directory (ie. <code>~/NextProjects/my-next-app$</code>). Then try running a development instance of your new Next.js app using: <code>npm run dev</code></p>
+</li>
+<li><p>The local development server will start and once your project pages are done building, your terminal will display</p>
+<pre><code class="lang-terminal">- Local: http://localhost:3000
+✔ Ready
+</code></pre>
+<p>Select this localhost link to open your new Next.js app in a web browser.</p>
+<p><img src="../../images/next-app.png" alt="Your Next.js app running in localhost:3000"></p>
+</li>
+<li><p>Open the <code>app/page.tsx</code> file in your VS Code editor. Find <code>Get started by editing..</code> and replace everything inside the <code>&lt;p&gt;</code> tag with <code>This is my new Next.js app!the page title</code>. With your web browser still open to localhost:3000, save your change and notice the hot-reloading feature automatically compile and update your change in the browser.</p>
+</li>
+</ol>
+<p>You can use VS Code's debugger with your Next.js app by selecting the F5 key, or by going to <strong>View &gt; Debug</strong> (Ctrl+Shift+D) and <strong>View &gt; Debug Console</strong> (Ctrl+Shift+Y) in the menu bar. If you select the gear icon in the Debug window, a launch configuration (<code>launch.json</code>) file will be created for you to save debugging setup details. To learn more, see <a href="https://code.visualstudio.com/docs/nodejs/nodejs-debugging">VS Code Debugging</a>.</p>
+<p><img src="../../images/vscode-debug-launch-configuration.png" alt="VS Code debug window and launch.json config icon"></p>
+<p>To learn more about Next.js, see the <a href="https://nextjs.org/docs">Next.js docs</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/nextjs-on-wsl.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

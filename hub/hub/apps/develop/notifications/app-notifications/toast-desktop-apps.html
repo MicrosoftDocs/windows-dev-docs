@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Activating toast notifications from desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Activating toast notifications from desktop apps ">
+    
+    <meta name="description" content="Discover the different options desktop apps have for sending toast notifications">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="activating-toast-notifications-from-desktop-apps">Activating toast notifications from desktop apps</h1>
+
+<p>Packaged and unpackaged Win32 apps can send interactive toast notifications just like UWP apps can. That includes packaged apps (see <a href="../../../winui/winui3/create-your-first-winui3-app.html#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app">Create a new project for a packaged WinUI 3 desktop app</a>); packaged apps with external location (see <a href="../../../desktop/modernize/grant-identity-to-nonpackaged-apps.html">Grant package identity by packaging with external location</a>); and unpackaged apps (see <a href="../../../winui/winui3/create-your-first-winui3-app.html#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app">Create a new project for an unpackaged WinUI 3 desktop app</a>).</p>
+<p>However, for an unpackaged Win32 app there are a few special steps. That's due to the different activation schemes, and the lack of package identity at runtime.</p>
+<p>In this topic, we list out the options you have for sending a toast notification on Windows 10. Every option fully supports...</p>
+<ul>
+<li>Persisting in Action Center</li>
+<li>Being activatable from both the popup and inside Action Center</li>
+<li>Being activatable while your EXE isn't running</li>
+</ul>
+<h2 id="all-options">All options</h2>
+<p>The table below illustrates your options for supporting toasts within your desktop app, and the corresponding supported features. You can use the table to select the best option for your scenario.<br><br></p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Visuals</th>
+<th>Actions</th>
+<th>Inputs</th>
+<th>Activates in-process</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#preferred-option---com-activator">COM activator</a></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td><a href="#alternative-option---no-com--stub-clsid">No COM / Stub CLSID</a></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+</tbody>
+</table>
+<h2 id="preferred-option---com-activator">Preferred option - COM activator</h2>
+<p>This is the preferred option that works for desktop apps, and supports all notification features. Don't be afraid of the &quot;COM activator&quot;; we have a library <a href="send-local-toast.html">for C#</a> and <a href="send-local-toast-desktop-cpp-wrl.html">C++ apps</a> that makes this very straightforward, even if you've never written a COM server before.<br><br></p>
+<table>
+<thead>
+<tr>
+<th>Visuals</th>
+<th>Actions</th>
+<th>Inputs</th>
+<th>Activates in-process</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+</tbody>
+</table>
+<p>With the COM activator option, you can use the following notification templates and activation types in your app.<br><br></p>
+<table>
+<thead>
+<tr>
+<th>Template and activation type</th>
+<th>Packaged</th>
+<th>Unpackaged</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ToastGeneric Foreground</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>ToastGeneric Background</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>ToastGeneric Protocol</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>Legacy templates</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you add the COM activator to your existing packaged app, then Foreground/Background and Legacy notification activations will activate your COM activator instead of your command line.</p>
+</div>
+<p>To learn how to use this option, see <a href="send-local-toast.html">Send a local toast notification from desktop C# apps</a> or <a href="send-local-toast-desktop-cpp-wrl.html">Send a local toast notification from Win32 C++ WRL apps</a>.</p>
+<h2 id="alternative-option---no-com--stub-clsid">Alternative option - No COM / Stub CLSID</h2>
+<p>This is an alternative option if you can't implement a COM activator. However, you'll sacrifice a few features, such as input support (text boxes on toasts) and activating in-process.<br><br></p>
+<table>
+<thead>
+<tr>
+<th>Visuals</th>
+<th>Actions</th>
+<th>Inputs</th>
+<th>Activates in-process</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+</tr>
+</tbody>
+</table>
+<p>With this option, if you support desktop, then you're much more limited in the notification templates and activation types that you can use, as seen below.<br><br></p>
+<table>
+<thead>
+<tr>
+<th>Template and activation type</th>
+<th>Packaged</th>
+<th>Unpackaged</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ToastGeneric Foreground</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>ToastGeneric Background</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>ToastGeneric Protocol</td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+</tr>
+<tr>
+<td>Legacy templates</td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+</tbody>
+</table>
+<p>For packaged apps, just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command-line launched with the launch args that you specified in the toast.</p>
+<p>For unpackaged apps, set up the AUMID so that you can send toasts, and then also specify a CLSID on your shortcut. That can be any random GUID. Don't add the COM server/activator. You're adding a &quot;stub&quot; COM CLSID, which will cause Action Center to persist the notification. Note that you can use only protocol activation toasts, because the stub CLSID will break activation of any other toast activations. Therefore, you have to update your app to support protocol activation, and have the toast's protocol activate your own app.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="send-local-toast.html">Send a local toast notification from desktop C# apps</a></li>
+<li><a href="send-local-toast-desktop-cpp-wrl.html">Send a local toast notification from Win32 C++ WRL apps</a></li>
+<li><a href="adaptive-interactive-toasts.html">Toast content documentation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/toast-desktop-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

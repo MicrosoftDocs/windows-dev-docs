@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>What is .NET TraceProcessing - .NET TraceProcessing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="What is .NET TraceProcessing - .NET TraceProcessing ">
+    
+    <meta name="description" content="In this overview, learn what .NET TraceProcessing is.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="process-etw-traces-in-net">Process ETW traces in .NET</h1>
+
+<p><a href="/windows/win32/etw/event-tracing-portal">Event Tracing for Windows (ETW)</a> is a powerful trace collection system built-in to the Windows operating system. Windows has deep integration with ETW, including data on system behavior all the way down to the kernel for events like context switches, memory allocation, process create and exit, and many more. The system-wide data available from ETW makes it a good fit for end-to-end performance analysis or other questions that require looking at the interaction between by many components throughout the system.</p>
+<p>Unlike text logging, ETW provides structured events designed for automated data processing. Microsoft has built powerful tools on top of these structured events, including <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer (WPA)</a>, which provides a graphical interface for visualizing and exploring the trace data captured in a ETW trace file (.etl).</p>
+<p>Inside Microsoft, we heavily use ETW traces to measure the performance of new builds of Windows. Given the volume of data produced the Windows engineering system, automated analysis is essential. For our automated trace analysis, we heavily use C# and .NET, so we created the <a href="https://www.nuget.org/packages/Microsoft.Windows.EventTracing.Processing.All">.NET TraceProcessing API</a> for accessing many kinds of ETW trace data. This technology is also used inside Windows Performance Analyzer to power several of its tables.</p>
+<p>The .NET TraceProcessing NuGet packages allow you to analyze your own applications and systems with the same tools that Microsoft uses to analyze Windows.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>In this overview, you learned what .NET TraceProcessing is.</p>
+<p>The next step is to <a href="quickstart.html">process your first trace</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="tutorial.html">Access trace data</a></li>
+<li><a href="extensibility.html">Extend TraceProcessor</a></li>
+<li><a href="symbols.html">Load symbols</a></li>
+<li><a href="streaming.html">Use streaming</a></li>
+<li><a href="https://github.com/microsoft/eventtracing-processing-samples">Samples</a></li>
+<li><a href="reference.html">API Reference</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/trace-processing/overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

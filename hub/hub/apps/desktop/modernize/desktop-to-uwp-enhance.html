@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Call Windows Runtime APIs in desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Call Windows Runtime APIs in desktop apps ">
+    
+    <meta name="description" content="Enhance your desktop application for Windows users by using Windows Runtime APIs.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="call-windows-runtime-apis-in-desktop-apps">Call Windows Runtime APIs in desktop apps</h1>
+
+<p>This topic describes how to set up your desktop app projects to use Windows Runtime (WinRT) APIs provided by the Windows OS, and to add modern Windows 11 and Windows 10 experiences to your desktop apps.</p>
+<p>Some Windows Runtime (WinRT) APIs are not supported in desktop apps. For more information, see <a href="desktop-to-uwp-supported-api.html">Windows Runtime APIs not supported in desktop apps</a>.</p>
+<h2 id="modify-a-net-project-to-use-windows-runtime-apis">Modify a .NET project to use Windows Runtime APIs</h2>
+<p>There are several options for .NET projects:</p>
+<ul>
+<li>Starting in .NET 6, you can specify the Target Framework Moniker (TFM) in your project file to access WinRT APIs. This option is supported in projects that target Windows 10, version 1809 or later.</li>
+<li>For earlier versions of .NET, you can install the <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts"><code>Microsoft.Windows.SDK.Contracts</code></a> NuGet package to add all necessary references to your project. This option is supported in projects that target Windows 10, version 1803 or later.</li>
+<li>If your project multi-targets .NET 6 (or later) and earlier versions of .NET, then you can configure the project file to use both options.</li>
+</ul>
+<h3 id="net-6-and-later-use-the-target-framework-moniker-option">.NET 6 and later: Use the Target Framework Moniker option</h3>
+<p>This option is supported only in projects that use .NET 6 (or later) and target Windows 10, version 1809 or a later OS release. By specifying a Windows OS version-specific TFM in the project file, a reference is added to the appropriate <a href="https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref">Windows SDK targeting package</a>. For more background info about this scenario, see the blog post <a href="https://blogs.windows.com/windowsdeveloper/2020/09/03/calling-windows-apis-in-net5/">Calling Windows APIs in .NET</a>.</p>
+<ol>
+<li><p>With your project open in Visual Studio, right-click your project in <strong>Solution Explorer</strong> and choose <strong>Edit Project File</strong>. Your project file will look similar to this.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The example below shows an <strong>OutputType</strong> of <em>WinExe</em>, which specifies a Windows GUI executable (and prevents a console window from opening when the app runs). If your app doesn't have a GUI, then your <strong>OutputType</strong> will have a different value. You can call WinRT APIs from Windows GUI apps, console apps, and libraries. Also, your value for <strong>TargetFramework</strong> might not exactly match the example below.</p>
+</div>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net8.0&lt;/TargetFramework&gt;
+  &lt;/PropertyGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>Leaving all other settings as they are, replace the value of the <strong>TargetFramework</strong> element with one of the following strings:</p>
+<ul>
+<li><strong>net8.0-windows10.0.17763.0</strong>: If your app targets Windows 10, version 1809.</li>
+<li><strong>net8.0-windows10.0.18362.0</strong>: If your app targets Windows 10, version 1903.</li>
+<li><strong>net8.0-windows10.0.19041.0</strong>: If your app targets Windows 10, version 2004.</li>
+<li><strong>net8.0-windows10.0.22000.0</strong>: If your app targets initial release of Windows 11.</li>
+<li><strong>net8.0-windows10.0.22621.0</strong>: If your app targets Windows 11, version 22H2.</li>
+<li><strong>net8.0-windows10.0.26100.0</strong>: If your app targets Windows 11, version 24H2.</li>
+</ul>
+<p>For example, the following element is for a project that targets Windows 10, version 2004.</p>
+<pre><code class="lang-xml">&lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+</code></pre>
+<p>In later versions of .NET, you can replace the value with the relevant version, for example <strong>net8.0-windows10.0.19041.0</strong>.</p>
+</li>
+<li><p>Save your changes and close the project file.</p>
+</li>
+</ol>
+<h4 id="winrt-apis-not-supported-in-net-6-or-later">WinRT APIs not supported in .NET 6 or later</h4>
+<p>In .NET 6 and later, there are several Windows Runtime (WinRT) APIs in the <strong>Windows.UI</strong> namespace that aren't supported. For the APIs listed below, equivalent versions of the APIs exist in the WinUI (<strong>Microsoft.UI</strong>) namespace (for example, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.text"><strong>Microsoft.UI.Text</strong></a>). The following WinRT APIs are <em>not</em> supported on .NET 6 and later:</p>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Colors"><strong>Windows.UI.Colors</strong></a> class</li>
+<li><a href="/uwp/api/Windows.UI.ColorHelper"><strong>Windows.UI.ColorHelper</strong></a> class</li>
+<li><a href="/uwp/api/windows.ui.text"><strong>Windows.UI.Text</strong></a> (all classes in this namespace <strong>except</strong> for <strong>Windows.UI.Text.FontStretch</strong>, <strong>Windows.UI.Text.FontStyle</strong>, <strong>Windows.UI.Text.FontWeight</strong>, <strong>Windows.UI.Text.UnderlineType</strong>, and all classes under the <strong>Windows.UI.Text.Core</strong> namespace)</li>
+<li><a href="/uwp/api/windows.ui.xaml"><strong>Windows.UI.Xaml</strong></a> (all classes in this namespace)</li>
+</ul>
+<h4 id="supporting-multiple-windows-os-versions">Supporting multiple Windows OS versions</h4>
+<p>The Windows OS version-specific <strong>TargetFramework</strong> property determines the version of the Windows SDK that your app is compiled with. This property determines the set of accessible APIs at build time, and provides default values for both <strong>TargetPlatformVersion</strong> and <strong>TargetPlatformMinVersion</strong> (if not explicitly set). The <strong>TargetPlatformVersion</strong> property doesn't need to be explicitly defined in the project file, since it's automatically set by the <strong>TargetFramework</strong> OS version.</p>
+<p>The <strong>TargetPlatformMinVersion</strong> can be overridden to be less than the <strong>TargetPlatformVersion</strong> (determined by the version in the <strong>TargetFramework</strong> property). This permits an app to run on earlier OS versions. For example, you can set the following in your project file to support your app downlevel to Windows 10, version 1809.</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+ &lt;PropertyGroup&gt;
+   &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+   &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+   &lt;TargetPlatformMinVersion&gt;10.0.17763.0&lt;/TargetPlatformMinVersion&gt;
+ &lt;/PropertyGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+<p>Note that setting the <strong>TargetPlatformMinVersion</strong> to a version below the <strong>TargetPlatformVersion</strong> creates the potential for calling unavailable APIs. When calling WinRT APIs that are not available on all supported OS versions, we recommend guarding these calls with <strong>ApiInformation</strong> checks. For more information, see <a href="/windows/uwp/debug-test-perf/version-adaptive-apps">Version adaptive apps</a>.</p>
+<h3 id="earlier-versions-of-net-install-the-microsoftwindowssdkcontracts-nuget-package">Earlier versions of .NET: Install the Microsoft.Windows.SDK.Contracts NuGet package</h3>
+<p>Use this option if your app uses .NET Core 3.x or .NET Framework. This option is supported in projects that target Windows 10, version 1803 or later.</p>
+<ol>
+<li><p>Make sure <a href="/nuget/consume-packages/package-references-in-project-files">package references</a> are enabled:</p>
+<ol>
+<li>In Visual Studio, click <strong>Tools -&gt; NuGet Package Manager -&gt; Package Manager Settings</strong>.</li>
+<li>Make sure <strong>PackageReference</strong> is selected for <strong>Default package management format</strong>.</li>
+</ol>
+</li>
+<li><p>With your project open in Visual Studio, right-click your project in <strong>Solution Explorer</strong> and choose <strong>Manage NuGet Packages</strong>.</p>
+</li>
+<li><p>In the <strong>NuGet Package Manager</strong> window, select the <strong>Browse</strong> tab and search for <code>Microsoft.Windows.SDK.Contracts</code>.</p>
+</li>
+<li><p>After the <code>Microsoft.Windows.SDK.Contracts</code> package is found, in the right pane of the <strong>NuGet Package Manager</strong> window select the <strong>Version</strong> of the package you want to install based on the version of Windows 10 you want to target:</p>
+<ul>
+<li><strong>10.0.19041.xxxx</strong>: Choose this for Windows 10, version 2004.</li>
+<li><strong>10.0.18362.xxxx</strong>: Choose this for Windows 10, version 1903.</li>
+<li><strong>10.0.17763.xxxx</strong>: Choose this for Windows 10, version 1809.</li>
+<li><strong>10.0.17134.xxxx</strong>: Choose this for Windows 10, version 1803.</li>
+</ul>
+</li>
+<li><p>Click <strong>Install</strong>.</p>
+</li>
+</ol>
+<h3 id="configure-projects-that-multi-target-different-versions-of-net">Configure projects that multi-target different versions of .NET</h3>
+<p>If your project multi-targets .NET 6 (or later) and earlier versions (including .NET Core 3.x and .NET Framework), then you can configure the project file to use the Target Framework Moniker (TFM) to automatically pull in the WinRT API references for .NET 6 (or later), and use the <code>Microsoft.Windows.SDK.Contracts</code> NuGet package for earlier versions.</p>
+<ol>
+<li><p>With your project open in Visual Studio, right-click your project in <strong>Solution Explorer</strong> and choose <strong>Edit Project File</strong>. The following example demonstrates a project file for an app that uses .NET Core 3.1.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The example below shows an <strong>OutputType</strong> of <em>WinExe</em>, which specifies a Windows GUI executable (and prevents a console window from opening when the app runs). If your app doesn't have a GUI, then your <strong>OutputType</strong> will have a different value. You can call WinRT APIs from Windows GUI apps, console apps, and libraries. Also, your value for <strong>TargetFramework</strong> might not exactly match the example below.</p>
+</div>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk.WindowsDesktop&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;netcoreapp3.1&lt;/TargetFramework&gt;
+    &lt;UseWindowsForms&gt;true&lt;/UseWindowsForms&gt;
+  &lt;/PropertyGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>Replace the <strong>TargetFramework</strong> element in the file with a <strong>TargetFrameworks</strong> element (note the plural). In this element, specify the Target Framework Monikers (TFMs) for all the versions of .NET you want to target, separated by semi-colons.</p>
+<ul>
+<li>For .NET 6 or later, use one of the following Target Framework Monikers (TFMs):
+<ul>
+<li><strong>net6.0-windows10.0.17763.0</strong>: If your app targets Windows 10, version 1809.</li>
+<li><strong>net6.0-windows10.0.18362.0</strong>: If your app targets Windows 10, version 1903.</li>
+<li><strong>net6.0-windows10.0.19041.0</strong>: If your app targets Windows 10, version 2004.</li>
+<li><strong>net6.0-windows10.0.22000.0</strong>: If your app targets initial release of Windows 11.</li>
+<li><strong>net6.0-windows10.0.22621.0</strong>: If your app targets Windows 11, version 22H2.</li>
+<li><strong>net6.0-windows10.0.26100.0</strong>: If your app targets Windows 11, version 24H2.</li>
+</ul>
+</li>
+<li>For .NET Core 3.x, use <strong>netcoreapp3.0</strong> or <strong>netcoreapp3.1</strong>.</li>
+<li>For .NET Framework, use <strong>net46</strong>.</li>
+</ul>
+<p>The following example demonstrates how to multi-target .NET Core 3.1 and .NET 6 (for Windows 10, version 2004).</p>
+<pre><code class="lang-xml">&lt;TargetFrameworks&gt;netcoreapp3.1;net6.0-windows10.0.19041.0&lt;/TargetFrameworks&gt;
+</code></pre>
+</li>
+<li><p>After the <strong>PropertyGroup</strong> element, add a <strong>PackageReference</strong> element that includes a conditional statement that installs the <code>Microsoft.Windows.SDK.Contracts</code> NuGet package for any versions of .NET Core 3.x or .NET Framework that your app targets. The <strong>PackageReference</strong> element must be a child of an <strong>ItemGroup</strong> element. The following example demonstrates how to do this for .NET Core 3.1.</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+  &lt;PackageReference Condition=&quot;'$(TargetFramework)' == 'netcoreapp3.1'&quot;
+                    Include=&quot;Microsoft.Windows.SDK.Contracts&quot;
+                    Version=&quot;10.0.19041.0&quot; /&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<p>When you're done, your project file should look similar to this.</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk.WindowsDesktop&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFrameworks&gt;netcoreapp3.1;net6.0-windows10.0.19041.0&lt;/TargetFrameworks&gt;
+    &lt;UseWPF&gt;true&lt;/UseWPF&gt;
+  &lt;/PropertyGroup&gt;
+  &lt;ItemGroup&gt;
+    &lt;PackageReference Condition=&quot;'$(TargetFramework)' == 'netcoreapp3.1'&quot;
+                     Include=&quot;Microsoft.Windows.SDK.Contracts&quot;
+                     Version=&quot;10.0.19041.0&quot; /&gt;
+  &lt;/ItemGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+</li>
+<li><p>Save your changes and close the project file.</p>
+</li>
+</ol>
+<h2 id="modify-a-c-desktop-win32-project-to-use-windows-runtime-apis">Modify a C++ desktop (Win32) project to use Windows Runtime APIs</h2>
+<p>Use <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a> to consume WinRT APIs. C++/WinRT is an entirely standard modern C++17 language projection for WinRT APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.</p>
+<p>To configure your project for C++/WinRT:</p>
+<ul>
+<li>For new projects, you can install the <a href="https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264">C++/WinRT Visual Studio Extension (VSIX)</a> and use one of the C++/WinRT project templates included in that extension.</li>
+<li>For existing projects, you can install the <a href="https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/">Microsoft.Windows.CppWinRT</a> NuGet package in the project.</li>
+</ul>
+<p>For more details about these options, see <a href="/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package">Visual Studio support for C++/WinRT, and the VSIX</a>.</p>
+<h2 id="add-windows-10-experiences">Add Windows 10 experiences</h2>
+<p>Now you're ready to add modern experiences that light up when users run your application on Windows 10. Use this design flow.</p>
+<p>✅ <strong>First, decide what experiences you want to add</strong></p>
+<p>There's lots to choose from. For example, you can simplify your purchase order flow by using <a href="/windows/uwp/monetize">monetization APIs</a>, or <a href="/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts">direct attention to your application</a> when you have something interesting to share, such as a new picture that another user has posted.</p>
+<p><img src="images/desktop-to-uwp/toast.png" alt="Toast notification"></p>
+<p>Even if users ignore or dismiss your message, they can see it again in the action center, and then click on the message to open your app. This increases engagement with your application and has the added bonus of making your application appear deeply integrated with the operating system. We'll show you the code for that experience a bit later in this article.</p>
+<p>Visit the <a href="/windows/uwp/get-started/">UWP documentation</a> for more ideas.</p>
+<p>✅ <strong>Decide whether to enhance or extend</strong></p>
+<p>You'll often hear us use the terms <em>enhance</em> and <em>extend</em>, so we'll take a moment to explain exactly what each of these terms mean.</p>
+<p>We use the term <em>enhance</em> to describe WinRT APIs that you can call directly from your desktop app whether or not it's a packaged app. When you've chosen a Windows 10 experience, identify the APIs that you need to create it, and then see if that API appears in <a href="desktop-to-uwp-supported-api.html">this list</a>. This is a list of APIs that you can call directly from your desktop app. If your API does not appear in this list, that's because the functionality associated with that API can run only within a UWP process. Often times, these include APIs that render UWP XAML such as a UWP map control or a Windows Hello security prompt.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although APIs that render UWP XAML typically cannot be called directly from your desktop, you might be able to use alternative approaches. If you want to host UWP XAML controls or other custom visual experiences, you can use <a href="xaml-islands/xaml-islands.html">XAML Islands</a> (starting in Windows 10, version 1903) and the <a href="ui/visual-layer-in-desktop-apps.html">Visual layer</a> (starting in Windows 10, version 1803). These features can be used in packaged or unpackaged desktop apps.</p>
+</div>
+<p>If you have chosen to package your desktop app, then another option is to <em>extend</em> the application by adding a UWP project to your solution. The desktop project is still the entry point of your application, but the UWP project gives you access to all of the APIs that do not appear in <a href="desktop-to-uwp-supported-api.html">this list</a>. The desktop app can communicate with the UWP process by using a an app service and we have lots of guidance on how to set that up. If you want to add an experience that requires a UWP project, see <a href="desktop-to-uwp-extend.html">Extend with UWP components</a>.</p>
+<p>✅ <strong>Reference API contracts</strong></p>
+<p>If you can call the API directly from your desktop app, open a browser and search for the reference topic for that API.
+Beneath the summary of the API, you'll find a table that describes the API contract for that API. Here's an example of that table:</p>
+<p><img src="images/desktop-to-uwp/contract-table.png" alt="API contract table"></p>
+<p>If you have a .NET-based desktop app, add a reference to that API contract, and then set the <strong>Copy Local</strong> property of that file to <strong>False</strong>. If you have a C++-based project, add to your <strong>Additional Include Directories</strong>, a path to the folder that contains this contract.</p>
+<p>✅ <strong>Call the APIs to add your experience</strong></p>
+<p>Here's the code that you'd use to show the notification window that we looked at earlier. These APIs appear in this <a href="desktop-to-uwp-supported-api.html">list</a> so you can add this code to your desktop app and run it right now.</p>
+<pre><code class="lang-csharp">using Windows.Foundation;
+using Windows.System;
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+...
+
+private void ShowToast()
+{
+    string title = &quot;featured picture of the day&quot;;
+    string content = &quot;beautiful scenery&quot;;
+    string image = &quot;https://picsum.photos/360/180?image=104&quot;;
+    string logo = &quot;https://picsum.photos/64?image=883&quot;;
+
+    string xmlString =
+    $@&quot;&lt;toast&gt;&lt;visual&gt;
+       &lt;binding template='ToastGeneric'&gt;
+       &lt;text&gt;{title}&lt;/text&gt;
+       &lt;text&gt;{content}&lt;/text&gt;
+       &lt;image src='{image}'/&gt;
+       &lt;image src='{logo}' placement='appLogoOverride' hint-crop='circle'/&gt;
+       &lt;/binding&gt;
+      &lt;/visual&gt;&lt;/toast&gt;&quot;;
+
+    XmlDocument toastXml = new XmlDocument();
+    toastXml.LoadXml(xmlString);
+
+    ToastNotification toast = new ToastNotification(toastXml);
+
+    ToastNotificationManager.CreateToastNotifier().Show(toast);
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">#include &lt;sstream&gt;
+#include &lt;winrt/Windows.Data.Xml.Dom.h&gt;
+#include &lt;winrt/Windows.UI.Notifications.h&gt;
+
+using namespace winrt::Windows::Foundation;
+using namespace winrt::Windows::System;
+using namespace winrt::Windows::UI::Notifications;
+using namespace winrt::Windows::Data::Xml::Dom;
+
+void UWP::ShowToast()
+{
+    std::wstring const title = L&quot;featured picture of the day&quot;;
+    std::wstring const content = L&quot;beautiful scenery&quot;;
+    std::wstring const image = L&quot;https://picsum.photos/360/180?image=104&quot;;
+    std::wstring const logo = L&quot;https://picsum.photos/64?image=883&quot;;
+
+    std::wostringstream xmlString;
+    xmlString &lt;&lt; L&quot;&lt;toast&gt;&lt;visual&gt;&lt;binding template='ToastGeneric'&gt;&quot; &lt;&lt;
+        L&quot;&lt;text&gt;&quot; &lt;&lt; title &lt;&lt; L&quot;&lt;/text&gt;&quot; &lt;&lt;
+        L&quot;&lt;text&gt;&quot; &lt;&lt; content &lt;&lt; L&quot;&lt;/text&gt;&quot; &lt;&lt;
+        L&quot;&lt;image src='&quot; &lt;&lt; image &lt;&lt; L&quot;'/&gt;&quot; &lt;&lt;
+        L&quot;&lt;image src='&quot; &lt;&lt; logo &lt;&lt; L&quot;'&quot; &lt;&lt;
+        L&quot; placement='appLogoOverride' hint-crop='circle'/&gt;&quot; &lt;&lt;
+        L&quot;&lt;/binding&gt;&lt;/visual&gt;&lt;/toast&gt;&quot;;
+
+    XmlDocument toastXml;
+
+    toastXml.LoadXml(xmlString.str().c_str());
+
+    ToastNotificationManager::CreateToastNotifier().Show(ToastNotification(toastXml));
+}
+</code></pre>
+<pre><code class="lang-cppcx">using namespace Windows::Foundation;
+using namespace Windows::System;
+using namespace Windows::UI::Notifications;
+using namespace Windows::Data::Xml::Dom;
+
+void UWP::ShowToast()
+{
+    Platform::String ^title = &quot;featured picture of the day&quot;;
+    Platform::String ^content = &quot;beautiful scenery&quot;;
+    Platform::String ^image = &quot;https://picsum.photos/360/180?image=104&quot;;
+    Platform::String ^logo = &quot;https://picsum.photos/64?image=883&quot;;
+
+    Platform::String ^xmlString =
+        L&quot;&lt;toast&gt;&lt;visual&gt;&lt;binding template='ToastGeneric'&gt;&quot; +
+        L&quot;&lt;text&gt;&quot; + title + &quot;&lt;/text&gt;&quot; +
+        L&quot;&lt;text&gt;&quot;+ content + &quot;&lt;/text&gt;&quot; +
+        L&quot;&lt;image src='&quot; + image + &quot;'/&gt;&quot; +
+        L&quot;&lt;image src='&quot; + logo + &quot;'&quot; +
+        L&quot; placement='appLogoOverride' hint-crop='circle'/&gt;&quot; +
+        L&quot;&lt;/binding&gt;&lt;/visual&gt;&lt;/toast&gt;&quot;;
+
+    XmlDocument ^toastXml = ref new XmlDocument();
+
+    toastXml-&gt;LoadXml(xmlString);
+
+    ToastNotificationManager::CreateToastNotifier()-&gt;Show(ref new ToastNotification(toastXml));
+}
+</code></pre>
+<p>To learn more about notifications, see <a href="/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts">Adaptive and Interactive toast notifications</a>.</p>
+<h2 id="support-windows-xp-windows-vista-and-windows-78-install-bases">Support Windows XP, Windows Vista, and Windows 7/8 install bases</h2>
+<p>You can modernize your application for Windows 10 without having to create a new branch and maintain separate code bases.</p>
+<p>If you want to build separate binaries for Windows 10 users, use conditional compilation. If you'd prefer to build one set of binaries that you deploy to all Windows users, use runtime checks.</p>
+<p>Let's take a quick look at each option.</p>
+<h3 id="conditional-compilation">Conditional compilation</h3>
+<p>You can keep one code base and compile a set of binaries just for Windows 10 users.</p>
+<p>First, add a new build configuration to your project.</p>
+<p><img src="images/desktop-to-uwp/build-config.png" alt="Build Configuration"></p>
+<p>For that build configuration, create a constant that to identify code that calls WinRT APIs.</p>
+<p>For .NET-based projects, the constant is called a <strong>Conditional Compilation Constant</strong>.</p>
+<p><img src="images/desktop-to-uwp/compilation-constants.png" alt="Conditional Compilation constant"></p>
+<p>For C++-based projects, the constant is called a <strong>Preprocessor Definition</strong>.</p>
+<p><img src="images/desktop-to-uwp/pre-processor.png" alt="Preprocessor Definition constant"></p>
+<p>Add that constant before any block of UWP code.</p>
+<pre><code class="lang-csharp">[System.Diagnostics.Conditional(&quot;_UWP&quot;)]
+private void ShowToast()
+{
+ ...
+}
+</code></pre>
+<pre><code class="lang-C++">#if _UWP
+void UWP::ShowToast()
+{
+ ...
+}
+#endif
+</code></pre>
+<p>The compiler builds that code only if that constant is defined in your active build configuration.</p>
+<h3 id="runtime-checks">Runtime checks</h3>
+<p>You can compile one set of binaries for all of your Windows users regardless of which version of Windows they run. Your application calls WinRT APIs only if the user is runs your application as a packaged application on Windows 10.</p>
+<p>The easiest way to add runtime checks to your code is to install this Nuget package: <a href="https://www.nuget.org/packages/DesktopBridge.Helpers/">Desktop Bridge Helpers</a> and then use the <code>IsRunningAsUWP()</code> method to gate off all code that calls WinRT APIs. See this blog post for more details: <a href="/archive/blogs/appconsult/desktop-bridge-identify-the-applications-context">Desktop Bridge - Identify the application's context</a>.</p>
+<h2 id="related-samples">Related Samples</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/HelloWorldSample">Hello World Sample</a></li>
+<li><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/SecondaryTileSample">Secondary Tile</a></li>
+<li><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/StoreSample">Store API Sample</a></li>
+<li><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/WinFormsUpdateTaskSample">WinForms application that implements a UWP UpdateTask</a></li>
+<li><a href="https://github.com/Microsoft/DesktopBridgeToUWP-Samples">Desktop app bridge to UWP Samples</a></li>
+</ul>
+<h2 id="find-answers-to-your-questions">Find answers to your questions</h2>
+<p>Have questions? Ask us on Stack Overflow. Our team monitors these <a href="https://stackoverflow.com/questions/tagged/project-centennial+or+desktop-bridge">tags</a>. You can also ask on our <a href="https://social.msdn.microsoft.com/Forums/en-US/home?filter=alltypes&amp;sort=relevancedesc&amp;searchTerm=%5BDesktop%20Converter%5D">forums</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/desktop-to-uwp-enhance.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

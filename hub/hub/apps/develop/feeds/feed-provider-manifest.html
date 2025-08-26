@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Feed provider package manifest XML format </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Feed provider package manifest XML format ">
+    
+    <meta name="description" content="Describes the package manifest XML format for Windows feed providers.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="feed-provider-package-manifest-xml-format">Feed provider package manifest XML format</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.</strong></p>
+</div>
+<p>In order to be displayed on the Widgets Board, apps that support Windows feeds must register their feed provider with the system. For Win32 apps, only packaged apps are currently supported and feed providers specify their registration information in the app package manifest file. This article documents the XML format for feed registration. See the <a href="#example">Example</a> section for a code listing of an example package manifest for a Win32 feed provider.</p>
+<h2 id="app-extension">App extension</h2>
+<p>The app package manifest file supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">Package manifest schema reference</a>.  Feed providers declare their registration information within the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual">uap3:AppExtension</a>. The <strong>Name</strong> attribute of the extension must be set to &quot;com.microsoft.windows.widgets.feeds&quot;.</p>
+<p>Feed providers should include the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual">uap3:Properties</a> as the child of <strong>uap3:AppExtension</strong>. The package manifest schema does not enforce the structure of the <strong>uap3:Properties</strong> element other than requiring well-formed XML. The rest of this article describes the XML format that the Widgets Board expects in order to successfully register a feed provider.</p>
+<pre><code class="lang-xml">&lt;uap3:Extension Category=&quot;windows.appExtension&quot;&gt;
+  &lt;uap3:AppExtension Name=&quot;com.microsoft.windows.widgets.feeds&quot; DisplayName=&quot;ContosoApp&quot; Id=&quot;ContosoApp&quot; PublicFolder=&quot;Public&quot;&gt;
+    &lt;uap3:Properties&gt;
+      &lt;!-- Feed provider registration content goes here --&gt;
+    &lt;/uap3:Properties&gt;
+  &lt;/uap3:AppExtension&gt;
+&lt;/uap3:Extension&gt;
+</code></pre>
+<h2 id="element-hierarchy">Element hierarchy</h2>
+<p>FeedProvider</p>
+<p>  Activation</p>
+<p>    CreateInstance</p>
+<p>  Definitions</p>
+<p>    Definition</p>
+<h2 id="feedprovider">FeedProvider</h2>
+<p>The root element of the feed provider registration information.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>A short description of the feed provider.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>DisplayName</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The name of the feed provider that is displayed on the Widgets Board.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Icon</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The package-relative path to an icon image file that is displayed in the Widgets Board.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Id</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>An ID that identifies the feed provider. Feed provider implementations use this string to determine or specify which of the app's feed providers is being referenced for each operation. This string must be unique for all feed providers defined within the app manifest file.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="activation">Activation</h2>
+<p>Specifies activation information for the feed provider.</p>
+<h2 id="createinstance">CreateInstance</h2>
+<p><strong>CreateInstance</strong> should be specified for Win32-based feed providers that implement the <strong>IFeedProvider</strong> interface. The system will activate the interface with a call to <a href="/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance">CoCreateInstance</a>. The <strong>ClassId</strong> attribute specifies the <a href="/windows/win32/com/com-class-objects-and-clsids">CLSID</a> for the CreateInstance server that implements the <strong>IFeedProvider</strong> interface.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ClassId</strong></td>
+<td>GUID</td>
+<td>Yes</td>
+<td>The CLSID for the CreateInstance server that implements the feed provider.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="definitions">Definitions</h2>
+<p>The container element for one or more feed registrations.</p>
+<h2 id="definition">Definition</h2>
+<p>Represents the registration for a single feed.</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>An ID that identifies the feed. Feed provider implementations use this string to determine or specify which of the app's feeds is being referenced for each operation. This string must be unique for all feeds defined within the app manifest file.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>DisplayName</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The name of the feed that is displayed on the Widgets Board.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>A short description of the feed.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>ContentUri</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The URI from which feed content is retrieved.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Icon</strong></td>
+<td>string</td>
+<td>Yes</td>
+<td>The package-relative path to an icon image file that is displayed in the Widgets Board.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>WebRequestFilter</strong></td>
+<td>string</td>
+<td>No</td>
+<td>A web request filter string specifying the set of URLs for which the resource requests will be redirected to the feed provider's implementation of <strong>IFeedResourceProvider</strong>. The pattern is expressed using the format described in <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns">Match Patterns</a>. The filter string in the registration must use <a href="https://en.wikipedia.org/wiki/Punycode">Punycode</a> where necessary. All content types will be redirected when matched so the filter should only resolve to content intended to be obtained through the <strong>IFeedResourceProvider</strong> in the application.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>ExcludedRegions</strong></td>
+<td>string</td>
+<td>No</td>
+<td>A list of regions where the feed should not be available. Feeds can specify <strong>ExcludedRegions</strong> or <strong>ExclusiveRegions</strong> but must not specify both in a single feed definition. The value of the attribute is a comma separated list of two character region codes.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>ExclusiveRegions</strong></td>
+<td>string</td>
+<td>No</td>
+<td>A list of the only regions where the feed should be available. Feeds can specify <strong>ExcludedRegions</strong> or <strong>ExclusiveRegions</strong> but must not specify both in single feed definition. The value of the attribute is a comma separated list of two character region codes.</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p>You can use localized resources instead of string literals for the UI-facing attribute values. For more information, see <a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a>.</p>
+<h2 id="example">Example</h2>
+<p>The following code example illustrates the usage of the feed package manifest XML format.</p>
+<pre><code class="lang-xml">&lt;uap3:AppExtension Name=&quot;com.microsoft.windows.widgets.feeds&quot; DisplayName=&quot;ContosoApp&quot; Id=&quot;ContosoApp&quot; PublicFolder=&quot;Public&quot;&gt;
+  &lt;uap3:Properties&gt;
+      &lt;FeedProvider Description=&quot;ms-resource:ProviderDescription&quot; Icon=&quot;ms-appx:Images\ContosoProviderIcon.png&quot;&gt;
+          &lt;Activation&gt;
+              &lt;CreateInstance ClassId=&quot;ECB883FD-3755-4E1C-BECA-D3397A3FF15C&quot; /&gt;
+          &lt;/Activation&gt;
+          &lt;Definitions&gt;
+              &lt;Definition Id=&quot;Contoso_Feed&quot; 
+                  DisplayName=&quot;ms-resource:FeedDisplayName&quot;                  
+                  Description=&quot;ms-resource:FeedDescription&quot;
+                  ContentUri=&quot;https://contoso.com/news&quot;
+                  Icon=&quot;ms-appx:Images\ContosoFeedIcon.png&quot;
+                  WebRequestFilter=&quot;https://contoso.com/*/feed/appResource/*&quot;
+                  ExcludedRegions=&quot;FR,DE,IT&quot;&gt;
+              &lt;/Definition&gt;
+          &lt;/Definitions&gt;
+      &lt;/FeedProvider&gt;
+  &lt;/uap3:Properties&gt;
+&lt;/uap3:AppExtension&gt;
+
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/feeds/feed-provider-manifest.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

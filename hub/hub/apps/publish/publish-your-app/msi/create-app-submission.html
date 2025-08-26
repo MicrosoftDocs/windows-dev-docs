@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create an app submission for your MSI/EXE app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create an app submission for your MSI/EXE app ">
+    
+    <meta name="description" content="Create an app submission for your MSI/EXE app">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="create-an-app-submission-for-your-msiexe-app">Create an app submission for your MSI/EXE app</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the <a href="../../store-submission-api.html">Microsoft Store submission API</a> to automate app submissions.</p>
+</div>
+<p>Once you've <a href="reserve-your-apps-name.html">created your app by reserving a name</a>, you can start working on getting it published by following the checklist below:</p>
+<h2 id="app-submission-checklist">App submission checklist</h2>
+<p>Here are the details that you can provide when creating your app submission, with links to more info.</p>
+<p>Items that you are required to provide or specify are noted below. Some areas are optional, or have default values provided that you can change as desired. You don't have to work on these sections in the order listed here.</p>
+<h3 id="availability-page">Availability page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Markets</strong></td>
+<td><strong>Required</strong></td>
+<td>Default: All possible markets</td>
+</tr>
+<tr>
+<td><strong>Discoverability</strong></td>
+<td><strong>Required</strong></td>
+<td>One of: Available in microsoft store; Available through link.</td>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td><strong>Required</strong></td>
+<td>One of: Free; Paid; Freemium; Subscription.</td>
+</tr>
+<tr>
+<td><strong>Free Trial</strong></td>
+<td><strong>Required</strong></td>
+<td><em>Not</em> required if pricing is set to Free or Freemium.</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Availability</strong> fields, see the <a href="price-and-availability.html">Set pricing and availability</a> section.</p>
+</div>
+<h3 id="properties-page-support-info-section">Properties page, support info section</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Category</strong></td>
+<td><strong>Required</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Subcategory</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Secondary category</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Does this product access...</strong></td>
+<td><strong>Required</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Privacy policy URL</strong></td>
+<td>See notes</td>
+<td>Only required if you answered yes to the previous question</td>
+</tr>
+<tr>
+<td><strong>Website</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Contact details</strong></td>
+<td><strong>Required</strong> for business/company accounts</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Support contact info</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Properties</strong> fields, see the <a href="support-info.html">Support info</a> section.</p>
+</div>
+<h3 id="properties-page-products-declaration-section">Properties page, products declaration section</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>This app depends on non-Microsoft drivers or NT services.</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>This app has been tested to meet accessibility guidelines.</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>This product supports pen and ink input.</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Notes for certification</strong></td>
+<td>Recommended</td>
+<td>Character limit: 2,000</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Properties</strong> fields, see the <a href="product-declarations.html">Product declarations</a> section.</p>
+</div>
+<h3 id="properties-page-system-requirements-section">Properties page, system requirements section</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Touch screen</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Keyboard</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Mouse</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>NFC HCE</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>NFC Proximity</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Bluetooth LE</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Telephony</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Microphone</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>DirectX</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dedicated GPU Memory</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Processor</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Graphics</strong></td>
+<td>Not required</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Properties</strong> fields, see the <a href="system-requirements.html">System requirements</a> section.</p>
+</div>
+<h3 id="age-ratings-page">Age ratings page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>All questions</strong></td>
+<td><strong>Required</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Age ratings</strong> fields, see the <a href="age-ratings.html">Age ratings</a> section.</p>
+</div>
+<h3 id="packages-page">Packages page</h3>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Package URL</strong></td>
+<td><strong>Required</strong></td>
+<td>At least one package URL is required</td>
+</tr>
+<tr>
+<td><strong>Architecture</strong></td>
+<td><strong>Required</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Installer parameters</strong></td>
+<td><strong>Required</strong></td>
+<td>Support for silent install is required. Other parameters are optional</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td><strong>Required</strong></td>
+<td>At least one language is required</td>
+</tr>
+<tr>
+<td><strong>App type</strong></td>
+<td><strong>Requited</strong></td>
+<td>Specify between EXE and MSI</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Packages</strong> fields, see the <a href="upload-app-packages.html">Upload package</a> section.</p>
+</div>
+<h2 id="store-listings-page">Store listings page</h2>
+<p>Each language has a separate store listing page. One listing page is required. It is recommended to provide complete listing page information for each language your app supports.</p>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Description</strong></td>
+<td><strong>Required</strong></td>
+<td>Character limit: 10,000</td>
+</tr>
+<tr>
+<td><strong>Product name</strong></td>
+<td>Not required</td>
+<td>Select on dropdown</td>
+</tr>
+<tr>
+<td><strong>What’s new in this version</strong></td>
+<td>Not required</td>
+<td>Character limit: 1,500</td>
+</tr>
+<tr>
+<td><strong>App features</strong></td>
+<td>Not required</td>
+<td>Character limit: 200 per feature; Feature limit: 20.</td>
+</tr>
+<tr>
+<td><strong>Screenshots</strong></td>
+<td><strong>Required</strong></td>
+<td>Required: 1; Recommended: 4+; Maximum: 10</td>
+</tr>
+<tr>
+<td><strong>Store logos</strong></td>
+<td>Required</td>
+<td>1:1 Box art required, 2:3 Poster art recommended</td>
+</tr>
+<tr>
+<td><strong>Short description</strong></td>
+<td>Not required</td>
+<td>Character limit: 1,000</td>
+</tr>
+<tr>
+<td><strong>Additional system requirements</strong></td>
+<td>Not required</td>
+<td>Character limit: 200 characters per requirement; Requirements limit: 11 for each of minimum and recommended hardware.</td>
+</tr>
+<tr>
+<td><strong>Keywords</strong></td>
+<td>Not required</td>
+<td>Character limit: 40 per term; Term limit: 7; Maximum of 21 unique words total among all terms.</td>
+</tr>
+<tr>
+<td><strong>Copyright and trademark info</strong></td>
+<td>Not required</td>
+<td>Character limit: 200</td>
+</tr>
+<tr>
+<td><strong>Applicable license terms</strong></td>
+<td><strong>Required</strong></td>
+<td>Character limit: 10,000</td>
+</tr>
+<tr>
+<td><strong>Developed by</strong></td>
+<td>Not required</td>
+<td>Character limit: 255</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about the <strong>Store listings</strong> fields, see the <a href="add-and-edit-store-listing-info.html">Store listings</a> section.</p>
+</div>
+<p>Once you have completed all the sections, you can submit your app for certification by clicking on <strong>Publish</strong> button on the Store listing page or by clicking <strong>Submit</strong> button on the Application overview page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must have an active <a href="https://developer.microsoft.com/store/register">developer account</a> in <a href="https://partner.microsoft.com/dashboard">Partner Center</a> in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To refer to common questions, please refer to <a href="../../faq/submit-your-app.html">Frequently Asked Questions</a> section.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msi/create-app-submission.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

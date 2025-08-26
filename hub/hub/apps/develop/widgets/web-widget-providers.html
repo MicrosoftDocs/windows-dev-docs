@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Web widget providers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Web widget providers ">
+    
+    <meta name="description" content="Learn how to implement a widget that displays content from a web source">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="web-widget-providers">Web widget providers</h1>
+
+<p>In the latest release, apps that implement Windows widgets can choose to populate the widget content with HTML served from a remote URL. Previously, the widget content could only be supplied in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Because web widget providers must still provide an Adaptive Card JSON payload, you should follow the steps for implementing a widget provider in <a href="implement-widget-provider-cs.html">Implement a widget provider in a C# Windows App</a> or <a href="implement-widget-provider-win32.html">Implement a widget provider in a win32 app (C++/WinRT)</a>.</p>
+<h2 id="specify-the-content-url">Specify the content URL</h2>
+<p>Widget providers pass a JSON payload to the Widgets Board with a call to <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget">WidgetManager.UpdateWidget</a>. For a web widget, instead of providing a <strong>body</strong> object defining the widget content, you should specify an empty <strong>body</strong> object and instead include a <strong>metadata</strong> object with a <strong>webUrl</strong> field that points to the URL that will supply the HTML content for the widget.</p>
+<pre><code class="lang-json">{ 
+    &quot;type&quot;: &quot;AdaptiveCard&quot;, 
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;, 
+    &quot;version&quot;: &quot;1.6&quot;, 
+    &quot;body&quot;: [], 
+    &quot;metadata&quot;: 
+    { 
+        &quot;webUrl&quot;: &quot;https://www.contoso.com/widgetprovider.html&quot; 
+    } 
+} 
+</code></pre>
+<h2 id="handle-resource-requests">Handle resource requests</h2>
+<p>Widget providers can specify a web request filter string for a widget in the <em>WebRequestFilter</em> attribute of the <strong>Definition</strong> element in the provider's package manifest file. Whenever the widget content requests a resource by URI that matches the filter, the request will be intercepted and redirected to the widget provider's implementation of <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetresourceprovider.onresourcerequested">IWidgetResourceProvider.OnResourceRequested</a>.</p>
+<p>The filter pattern is expressed using the format described in <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns">Match Patterns</a>. The filter string in the registration must use <a href="https://en.wikipedia.org/wiki/Punycode">Punycode</a> where necessary. All content types will be redirected when matched so the filter should only resolve to content intended to be obtained through the <strong>IWidgetResourceProvider</strong> in the application. For more information on the widget provider package manifest format, see <a href="/windows/apps/develop/widgets/widget-provider-manifest">Widget provider package manifest XML format</a>.</p>
+<p>To handle resource requests, widget providers must implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetresourceprovider">IWidgetResourceProvider</a> interface.</p>
+<pre><code class="lang-csharp">internal class WidgetProvider : IWidgetProvider, IWidgetResourceProvider
+</code></pre>
+<p>In the implementation of the <strong>OnResourceRequested</strong> method, widget providers can provide the requested resources by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.response">WidgetResourceRequestedArgs.Response</a> property to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourceresponse">WidgetResourceResponse</a> object containing the requested resource. When obtaining the resource asynchronously, the provider should request a deferral by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.getdeferral">WidgetResourceRequestedArgs.GetDeferral</a> and then complete the deferral when the resource has been set.</p>
+<pre><code class="lang-csharp">async void IWidgetResourceProvider.OnResourceRequested(WidgetResourceRequestedArgs args)
+{
+    var deferral = args.GetDeferral();
+
+    if (args.Request.Uri.Length &gt; 0)
+    {
+        if (args.Request.Uri == &quot;https://contoso.com/logo-image&quot;)
+        {
+            string fullPath = Windows.ApplicationModel.Package.Current.InstalledPath + &quot;/Assets/image.png&quot;;
+            var file = await StorageFile.GetFileFromPathAsync(fullPath);
+            var response = new WidgetResourceResponse(RandomAccessStreamReference.CreateFromFile(file), &quot;OK&quot;, 200);
+            response.Headers.Add(&quot;Content-Type&quot;, &quot;image/png&quot;);
+            args.Response = response;
+        }
+    }
+
+    deferral.Complete();
+}
+</code></pre>
+<p>If the provider does not set a response on the <strong>WidgetResourceRequestedArgs</strong> object passed into the method, the system will retrieve the resource from the web. In this case, the provider can choose to modify the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.headers">Headers</a> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.request">WidgetResourceRequestedArgs.Request</a> object, such as to provide user context or tokens, and the system will use the updated headers when retrieving the resource from the web.</p>
+<h2 id="handle-messages-to-and-from-web-content">Handle messages to and from web content</h2>
+<p>To receive string messages from the widget's content that has been posted using the <a href="/microsoft-edge/webview2/reference/javascript/webview">window.chrome.webview.postMessage</a> JavaScript method, widget providers can implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovidermessage">IWidgetProviderMessage</a> interface and implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovidermessage.onmessagereceived">OnMessageReceived</a> method.</p>
+<pre><code class="lang-csharp">internal class WidgetProvider : IWidgetProvider, IWidgetProviderMessage
+...
+public void OnMessageReceived(WidgetMessageReceivedArgs args)
+{
+    Console.WriteLine($&quot;Message received from widget {args.WidgetContext.Id}: {args.Message}&quot;);
+}
+</code></pre>
+<p>Widget providers can send a message to the web content of the widget by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.sendmessage">WidgetManager.SendMessage</a>. You must provide the ID of the widget to which the message is sent, which is the value specified in the <em>Id</em> attribute of the <strong>Definition</strong> element in the provider's package manifest file. For more information see <a href="/windows/apps/develop/widgets/widget-provider-manifest">Widget provider package manifest XML format</a>. The message string can be simple text or the serialized form of an object interpreted by the web content. For more information, see <a href="/dotnet/api/microsoft.web.webview2.core.corewebview2.postwebmessageasstring">PostWebMessageAsString</a>.</p>
+<pre><code class="lang-csharp">var message = $&quot;{{ \&quot;current_location\&quot;: \&quot;{ location }\&quot; }}&quot;;
+WidgetManager.GetDefault().SendMessageToContent(&quot;Weather_Widget&quot;, message);
+</code></pre>
+<h2 id="limitations-and-requirements">Limitations and requirements</h2>
+<ul>
+<li>This feature is available only to users in the European Economic Area (EEA). In the EEA, installed apps that implement a feed provider can provide content feed in the Widgets Board.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/widgets/web-widget-providers.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

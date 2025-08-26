@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Scan from your app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Scan from your app ">
+    
+    <meta name="description" content="Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="scan-from-your-app">Scan from your app</h1>
+
+<p>This topic describes how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.</p>
+<p><strong>Important APIs</strong></p>
+<ul>
+<li><a href="/uwp/api/Windows.Devices.Scanners"><strong>Windows.Devices.Scanners</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation"><strong>DeviceInformation</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Enumeration.DeviceClass"><strong>DeviceClass</strong></a></li>
+</ul>
+<p>To scan from your app, you must first list the available scanners by declaring a new <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation"><strong>DeviceInformation</strong></a> object and getting the <a href="/uwp/api/Windows.Devices.Enumeration.DeviceClass"><strong>DeviceClass</strong></a> type. Only scanners that are installed locally with WIA drivers are listed and available to your app.</p>
+<p>After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration and must not be equipped with both a flatbed and a feeder scanner. For more info, see <a href="/windows-hardware/drivers/image/auto-configured-scanning">Auto-Configured Scanning</a>.</p>
+<h2 id="enumerate-available-scanners">Enumerate available scanners</h2>
+<p>Windows does not detect scanners automatically. You must perform this step in order for your app to communicate with the scanner. In this example, the scanner device enumeration is done using the <a href="/uwp/api/Windows.Devices.Enumeration"><strong>Windows.Devices.Enumeration</strong></a> namespace.</p>
+<ol>
+<li>First, add these using statements to your class definition file.</li>
+</ol>
+<pre><code class="lang-csharp">    using Windows.Devices.Enumeration;
+    using Windows.Devices.Scanners;
+</code></pre>
+<ol start="2">
+<li>Next, implement a device watcher to start enumerating scanners. For more info, see <a href="/windows/uwp/devices-sensors/enumerate-devices">Enumerate devices</a>.</li>
+</ol>
+<pre><code class="lang-csharp">    void InitDeviceWatcher()
+    {
+       // Create a Device Watcher class for type Image Scanner for enumerating scanners
+       scannerWatcher = DeviceInformation.CreateWatcher(DeviceClass.ImageScanner);
+
+       scannerWatcher.Added += OnScannerAdded;
+       scannerWatcher.Removed += OnScannerRemoved;
+       scannerWatcher.EnumerationCompleted += OnScannerEnumerationComplete;
+    }
+</code></pre>
+<ol start="3">
+<li>Create an event handler for when a scanner is added.</li>
+</ol>
+<pre><code class="lang-csharp">    private async void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
+    {
+       await
+       MainPage.Current.Dispatcher.RunAsync(
+             Windows.UI.Core.CoreDispatcherPriority.Normal,
+             () =&gt;
+             {
+                MainPage.Current.NotifyUser(String.Format(&quot;Scanner with device id {0} has been added&quot;, deviceInfo.Id), NotifyType.StatusMessage);
+
+                // search the device list for a device with a matching device id
+                ScannerDataItem match = FindInList(deviceInfo.Id);
+
+                // If we found a match then mark it as verified and return
+                if (match != null)
+                {
+                   match.Matched = true;
+                   return;
+                }
+
+                // Add the new element to the end of the list of devices
+                AppendToList(deviceInfo);
+             }
+       );
+    }
+</code></pre>
+<h2 id="scan">Scan</h2>
+<ol>
+<li><strong>Get an ImageScanner object</strong></li>
+</ol>
+<p>For each <a href="/uwp/api/Windows.Devices.Scanners.ImageScannerScanSource"><strong>ImageScannerScanSource</strong></a> enumeration type, whether it's <strong>Default</strong>, <strong>AutoConfigured</strong>, <strong>Flatbed</strong>, or <strong>Feeder</strong>, you must first create an <a href="/uwp/api/Windows.Devices.Scanners.ImageScanner"><strong>ImageScanner</strong></a> object by calling the <a href="/uwp/api/windows.devices.scanners.imagescanner.fromidasync"><strong>ImageScanner.FromIdAsync</strong></a> method, like this.</p>
+<pre><code class="lang-csharp">   ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
+</code></pre>
+<ol start="2">
+<li><strong>Just scan</strong></li>
+</ol>
+<p>To scan with the default settings, your app relies on the <a href="/uwp/api/Windows.Devices.Scanners"><strong>Windows.Devices.Scanners</strong></a> namespace to select a scanner and scans from that source. No scan settings are changed. The possible scanners are auto-configure, flatbed, or feeder. This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.</p>
+<p><strong>Note</strong>  If the user places the document to scan in the feeder, the scanner will scan from the flatbed instead. If the user tries to scan from an empty feeder, the scan job won't produce any scanned files.</p>
+<pre><code class="lang-csharp">    var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default,
+        folder).AsTask(cancellationToken.Token, progress);
+</code></pre>
+<ol start="3">
+<li><strong>Scan from Auto-configured, Flatbed, or Feeder source</strong></li>
+</ol>
+<p>Your app can use the device's <a href="/windows-hardware/drivers/image/auto-configured-scanning">Auto-Configured Scanning</a> to scan with the most optimal scan settings. With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned. The device selects the scan settings at run time for each new scan job.</p>
+<p><strong>Note</strong>  Not all scanners support this feature, so the app must check if the scanner supports this feature before using this setting.</p>
+<p>In this example, the app first checks if the scanner is capable of auto-configuration and then scans. To specify either flatbed or feeder scanner, simply replace <strong>AutoConfigured</strong> with <strong>Flatbed</strong> or <strong>Feeder</strong>.</p>
+<pre><code class="lang-csharp">    if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
+    {
+        ...
+        // Scan API call to start scanning with Auto-Configured settings.
+        var result = await myScanner.ScanFilesToFolderAsync(
+            ImageScannerScanSource.AutoConfigured, folder).AsTask(cancellationToken.Token, progress);
+        ...
+    }
+</code></pre>
+<h2 id="preview-the-scan">Preview the scan</h2>
+<p>You can add code to preview the scan before scanning to a folder. In the example below, the app checks if the <strong>Flatbed</strong> scanner supports preview, then previews the scan.</p>
+<pre><code class="lang-csharp">if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
+{
+    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
+                // Scan API call to get preview from the flatbed.
+                var result = await myScanner.ScanPreviewToStreamAsync(
+                    ImageScannerScanSource.Flatbed, stream);
+</code></pre>
+<h2 id="cancel-the-scan">Cancel the scan</h2>
+<p>You can let users cancel the scan job midway through a scan, like this.</p>
+<pre><code class="lang-csharp">void CancelScanning()
+{
+    if (ModelDataContext.ScenarioRunning)
+    {
+        if (cancellationToken != null)
+        {
+            cancellationToken.Cancel();
+        }                
+        DisplayImage.Source = null;
+        ModelDataContext.ScenarioRunning = false;
+        ModelDataContext.ClearFileList();
+    }
+}
+</code></pre>
+<h2 id="scan-with-progress">Scan with progress</h2>
+<ol>
+<li>Create a <strong>System.Threading.CancellationTokenSource</strong> object.</li>
+</ol>
+<pre><code class="lang-csharp">cancellationToken = new CancellationTokenSource();
+</code></pre>
+<ol start="2">
+<li>Set up the progress event handler and get the progress of the scan.</li>
+</ol>
+<pre><code class="lang-csharp">    rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
+    var progress = new Progress&lt;UInt32&gt;(ScanProgress);
+</code></pre>
+<h2 id="scanning-to-the-pictures-library">Scanning to the pictures library</h2>
+<p>Users can scan to any folder dynamically using the <a href="/uwp/api/Windows.Storage.Pickers.FolderPicker"><strong>FolderPicker</strong></a> class, but you must declare the <em>Pictures Library</em> capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see <a href="/windows/uwp/packaging/app-capability-declarations">App capability declarations</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/devices-sensors/scan-from-your-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

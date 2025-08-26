@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Quickstart - Create a Windows on Arm VM in the Azure portal </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Quickstart - Create a Windows on Arm VM in the Azure portal ">
+    
+    <meta name="description" content="In this quickstart, you learn how to use the Azure portal to create a Windows on Arm virtual machine">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="quickstart-create-a-windows-on-arm-virtual-machine-in-the-azure-portal-preview">Quickstart: Create a Windows on Arm virtual machine in the Azure portal (Preview)</h1>
+
+<p>You can create and deploy Windows 11 Arm64 VMs with with Ampere Altra Arm–based processors on Azure.
+While there are many ways to create an Azure virtual machine, the easiest way to get started is using
+the Azure portal. This method provides a browser-based user interface to create VMs and their associated resources.</p>
+<p>This quickstart shows you how to use the Azure portal to deploy a virtual machine (VM) in Azure that runs Windows 11 Professional on Arm-based processors. To see your VM in action, you then connect to the VM using a Remote Desktop client.</p>
+<p>If you don't have an Azure subscription, create a <a href="https://azure.microsoft.com/free/?WT.mc_id=A261C142F">free account</a> before you begin.</p>
+<p>If you are interested in creating a local Windows on Arm VM on either an Arm-based Windows or Apple device, see <a href="/windows/arm/iso#creating-virtual-machines">Windows 11 Arm ISO files: Creating Virtual Machines</a>.</p>
+<h2 id="sign-in-to-azure">Sign in to Azure</h2>
+<p>Sign in to the <a href="https://portal.azure.com">Azure portal</a>.</p>
+<h2 id="create-virtual-machine">Create virtual machine</h2>
+<ol>
+<li><p>Enter <em>virtual machines</em> in the search.</p>
+</li>
+<li><p>Under <strong>Services</strong>, select <strong>Virtual machines</strong>.</p>
+</li>
+<li><p>In the <strong>Virtual machines</strong> page, select <strong>Create</strong> and then <strong>Azure virtual machine</strong>. The <strong>Create a virtual machine</strong> page opens.</p>
+</li>
+<li><p>Under <strong>Instance details</strong>, enter a name for the <strong>Virtual machine name</strong> (for example <em>myVM</em>), <strong>No infrastructure redundancy required</strong> for <strong>Availability options</strong>, and <strong>Standard</strong> for <strong>Security type</strong> as shown here:</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/instance-details.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/instance-details-crop.png" alt="Screenshot of the Instance details section where you provide a name for the virtual machine and select its region, image and size.">
+</a>
+</span>
+</p>
+</li>
+<li><p>Under <strong>Image</strong>, select <strong>See all images</strong>. The <strong>Select an image</strong> page opens.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/instance-details-image.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/instance-details-image-crop.png" alt="Screenshot of the Image Details size section where you select a machine image.">
+</a>
+</span>
+</p>
+</li>
+<li><p>Enter <em>Windows</em> in the <strong>Search the Marketplace</strong> box. Next, in the <strong>Image type</strong> drop-down, select <strong>Arm64</strong>. This will filter the images to only display results for available Windows on Arm64 VMs.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/select-an-image-search.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/select-an-image-search.png" alt="Screenshot of searching for a VM image">
+</a>
+</span>
+</p>
+</li>
+<li><p>In the Windows 11 result card, select <strong>Select</strong> to display available images. Choose your preferred image from among the list.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/select-an-image-select.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/select-an-image-select-crop.png" alt="Screenshot of selecting a particular VM image">
+</a>
+</span>
+</p>
+</li>
+<li><p>Under <strong>Size</strong>, select <strong>See all sizes</strong>. The <strong>Select a VM size</strong> page opens.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/instance-details-size.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/instance-details-size-crop.png" alt="Screenshot of the Image Details size section where you select a machine size.">
+</a>
+</span>
+</p>
+</li>
+<li><p>Expand one of the <strong>VM Size</strong> headers, then choose your desired VM size from the available options. We recommend <strong>D2ps_v5</strong> to get started. Press the <strong>Select</strong> button to return to the <strong>Create a virtual machine</strong> page.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/select-a-vm-size.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/select-a-vm-size.png" alt="Screenshot of the section where you select a VM size">
+</a>
+</span>
+</p>
+</li>
+<li><p>Under <strong>Administrator account</strong>,  provide a username, such as <em>azureuser</em> and a password. The password must be at least 12 characters long and meet the <a href="/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-">defined complexity requirements</a>.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/administrator-account.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/administrator-account.png" alt="Screenshot of the Administrator account section where you provide the administrator username and password">
+</a>
+</span>
+</p>
+</li>
+<li><p>Under <strong>Inbound port rules</strong>, choose <strong>Allow selected ports</strong> and then select <strong>RDP (3389)</strong> from the drop-down.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/inbound-port-rules.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/inbound-port-rules.png" alt="Screenshot of the inbound port rules section where you select what ports inbound connections are allowed on">
+</a>
+</span>
+</p>
+</li>
+<li><p>Review <a href="/azure/virtual-machines/windows/windows-desktop-multitenant-hosting-deployment#subscription-licenses-that-qualify-for-multitenant-hosting-rights">Subscription Licenses that qualify for Multitenant Hosting Rights</a> to ensure you have the necessary Windows license. This is required in order to use Windows 11 images in Azure for any production workload. Click the checkbox under <strong>Licensing</strong> after confirming this.</p>
+</li>
+<li><p>Leave the remaining defaults and then select the <strong>Review + create</strong> button at the bottom of the page.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/review-create.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/review-create.png" alt="Screenshot showing the Review + create button at the bottom of the page.">
+</a>
+</span>
+</p>
+</li>
+<li><p>After validation runs, select the <strong>Create</strong> button at the bottom of the page.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/validation.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/validation.png" alt="Screenshot showing that validation has passed. Select the Create button to create the VM.">
+</a>
+</span>
+</p>
+</li>
+<li><p>After deployment is complete, select <strong>Go to resource</strong>.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/next-steps.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/next-steps.png" alt="Screenshot showing the next step of going to the resource.">
+</a>
+</span>
+</p>
+</li>
+</ol>
+<h2 id="connect-to-virtual-machine">Connect to virtual machine</h2>
+<p>Create a remote desktop connection to the virtual machine. These directions tell you how to connect to your VM from a Windows computer. On a Mac, you need an RDP client such as this <a href="https://apps.apple.com/app/microsoft-remote-desktop/id1295203466?mt=12">Remote Desktop Client</a> from the Mac App Store.</p>
+<ol>
+<li><p>On the overview page for your virtual machine, select <strong>Connect</strong> &gt; <strong>Connect</strong>.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/portal-quick-start-9.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/portal-quick-start-9.png" alt="Screenshot of the virtual machine overview page showing the location of the connect button.">
+</a>
+</span>
+</p>
+</li>
+<li><p>In the <strong>Native RDP</strong> section, click <strong>Download RDP file</strong>.</p>
+<p><span class="mx-imgBorder">
+<a href="images/create-arm-vm/remote-desktop.png#lightbox" data-linktype="relative-path">
+<img src="images/create-arm-vm/remote-desktop.png" alt="Screenshot showing the remote desktop settings and the Download RDP file button.">
+</a>
+</span>
+</p>
+</li>
+<li><p>Open the downloaded RDP file and click <strong>Connect</strong> when prompted.</p>
+</li>
+<li><p>In the <strong>Windows Security</strong> window, select <strong>More choices</strong> and then <strong>Use a different account</strong>. Type the username as <strong>localhost</strong>\<em>username</em>, enter the password you created for the virtual machine, and then click <strong>OK</strong>.</p>
+</li>
+<li><p>You may receive a certificate warning during the sign-in process. Click <strong>Yes</strong> or <strong>Continue</strong> to create the connection.</p>
+</li>
+</ol>
+<h2 id="clean-up-resources">Clean up resources</h2>
+<h3 id="delete-resources">Delete resources</h3>
+<p>When no longer needed, you can delete the resource group, virtual machine, and all related resources.</p>
+<ol>
+<li>On the Overview page for the VM, select the <strong>Resource group</strong> link.</li>
+<li>At the top of the page for the resource group, select <strong>Delete resource group</strong>.</li>
+<li>A page will open warning you that you are about to delete resources. Type the name of the resource group and select <strong>Delete</strong> to finish deleting the resources and the resource group.</li>
+</ol>
+<h3 id="auto-shutdown">Auto-shutdown</h3>
+<p>If the VM is still needed, Azure provides an Auto-shutdown feature for virtual machines to help manage costs and ensure you are not billed for unused resources.</p>
+<ol>
+<li>On the <strong>Operations</strong> section for the VM, select the <strong>Auto-shutdown</strong> option.</li>
+<li>A page will open where you can configure the auto-shutdown time. Select the <strong>On</strong> option to enable and then set a time that works for you.</li>
+<li>Once you have set the time, select <strong>Save</strong>  at the top to enable your Auto-shutdown configuration.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Remember to configure the time zone correctly to match your requirements, as (UTC) Coordinated Universal Time is the default setting in the Time zone dropdown.</p>
+</div>
+<p>For more information see <a href="/azure/virtual-machines/auto-shutdown-vm">Auto-shutdown</a>.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>In this quickstart, you deployed a simple virtual machine, opened a network port for remote desktop traffic, and connected using a Remote Desktop, To learn more about Azure Windows virtual machines, continue on to the detailed tutorials.</p>
+<div class="nextstepaction">
+<p><a href="/azure/virtual-machines/windows/tutorial-manage-vm">Azure Windows virtual machine tutorials</a></p>
+</div>
+<p>The App Assure Arm Advisory Service is available to help if you get stuck. This service is in addition to our existing promise: your apps will run on Windows on Arm, and if you encounter any issues, Microsoft will help you remediate them.</p>
+<div class="nextstepaction">
+<p><a href="https://blogs.windows.com/windowsdeveloper/2023/10/16/windows-launching-arm-advisory-service-for-developers/">Arm Advisory Service</a></p>
+</div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/">Announcing Azure Virtual Machines with Ampere Altra Arm–based processors</a></li>
+<li><a href="/azure/virtual-machines/dpsv5-dpdsv5-series">Dpsv5 and Dpdsv5 virtual machine series</a> documentation</li>
+<li><a href="https://azuremarketplace.microsoft.com/marketplace/apps/microsoftwindowsdesktop.windows11preview-arm64">Microsoft Windows 11 Preview arm64</a> image details on Azure Marketplace</li>
+<li><a href="/windows/release-health/windows11-release-information">Windows 11 release information</a></li>
+<li><a href="/windows/whats-new/windows-licensing">Windows Commercial Licensing overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/create-arm-vm.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

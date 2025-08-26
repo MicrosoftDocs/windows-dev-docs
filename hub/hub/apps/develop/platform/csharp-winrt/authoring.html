@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Author Windows Runtime components with C#/WinRT </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Author Windows Runtime components with C#/WinRT ">
+    
+    <meta name="description" content="Overview of authoring Windows Runtime Components with C#/WinRT">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="author-windows-runtime-components-with-cwinrt">Author Windows Runtime components with C#/WinRT</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Authoring Windows Runtime components with C#/WinRT is supported on .NET 6 and later.</p>
+</div>
+<p>The C#/WinRT NuGet package provides support for authoring your own Windows Runtime types and components in C#, and consuming them from any Windows Runtime-compatible language such as <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a> or <a href="../../../../dev-environment/rust/rust-for-windows.html">Rust</a>. C#/WinRT authoring and hosting support requires .NET 6 and Visual Studio 2022, and it is intended to support desktop application scenarios including the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a>, and <a href="../../../winui/winui3/index.html">WinUI3</a>.</p>
+<p>For a walkthrough showing how to author a Windows Runtime component with .NET 6, and how to consume it from a C++/WinRT console application, see <a href="create-windows-runtime-component-cswinrt.html">Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT</a>.</p>
+<p>For more details, and to search for or file any issues, refer to the <a href="https://github.com/microsoft/CsWinRT">C#/WinRT Github repo</a> and <a href="https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md">Authoring C#/WinRT Components</a>.</p>
+<h2 id="declaring-types-in-windows-runtime-components">Declaring types in Windows Runtime components</h2>
+<p>While authoring your Windows Runtime component, follow the guidelines and type restrictions outlined in the existing UWP documentation about Windows Runtime components (see <a href="/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic">Windows Runtime components with C# and Visual Basic</a>). The component can for the most part be implemented like any other C# library. However, there are restrictions on the public types in the component that will be exposed to the Windows Runtime and declared in the generated <code>.winmd</code> for others to consume.</p>
+<p>Externally, you can expose only Windows Runtime types for parameters and return values. You can use built-in C# types as part of the public surface of the component as long as there is a mapping from the .NET type to WinRT (see <a href="net-mappings-of-winrt-types.html">.NET mappings of WinRT types in C#/WinRT</a>), and they will appear to users of the component as the corresponding Windows Runtime types. Windows Runtime types from other Windows Runtime components and the Windows SDK can also be used as part of the public implementation of the component, such as <code>in</code> parameters, return types, and class inheritance.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There are some Windows Runtime types that are mapped to .NET types (see <a href="net-mappings-of-winrt-types.html">.NET mappings of WinRT types in C#/WinRT</a>). These .NET types can be used in the public interface of your Windows Runtime component, and they will appear to users of the component as the corresponding Windows Runtime types.</p>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md">Authoring C#/WinRT Components</a></li>
+<li><a href="create-windows-runtime-component-cswinrt.html">Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT</a></li>
+<li><a href="authoring-diagnostics.html">Diagnose C#/WinRT component errors</a></li>
+<li><a href="net-mappings-of-winrt-types.html">.NET mappings of WinRT types in C#/WinRT</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/csharp-winrt/authoring.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

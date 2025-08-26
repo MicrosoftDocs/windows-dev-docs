@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Crop And Lock for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Crop And Lock for Windows ">
+    
+    <meta name="description" content="Crop And Lock to crop a current application into a smaller window or just create a thumbnail.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="crop-and-lock">Crop And Lock</h1>
+
+<p><strong>Crop And Lock</strong> is a PowerToys utility that helps you focus on specific parts of your applications by creating smaller, cropped windows. You can create live thumbnails that mirror changes from the original window, or extract portions of applications into standalone windows for better multitasking and screen real estate management.</p>
+<p>This feature is particularly useful when you need to monitor specific areas of applications while working with other programs, or when you want to create custom window layouts that better suit your workflow.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-crop-and-lock.gif" alt="Animation of the PowerToys Crop And Lock utility demonstrating window cropping and thumbnail features.">
+</span>
+</p>
+<h2 id="get-started-with-crop-and-lock">Get started with Crop And Lock</h2>
+<h3 id="how-to-use-the-utility">How to use the utility</h3>
+<p>To start using Crop And Lock, enable it in PowerToys Settings.</p>
+<p>Once enabled, focus a Window and press the &quot;Thumbnail&quot; shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>) or the &quot;Reparent&quot; shortcut (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>) to select an area of the window to crop.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Use <kbd>Esc</kbd> to cancel the crop selection.</p>
+</div>
+<p>After you've selected the area of the window, a new window will appear and behave according to the selected crop mode.</p>
+<p>Select the <strong>Close</strong> button of the cropped window to close it and restore the original window.</p>
+<h2 id="crop-modes">Crop modes</h2>
+<h3 id="thumbnail">Thumbnail</h3>
+<p>Creates a window that shows the selected area of the original window. Any changes to the original window's selected area will be reflected on the thumbnail, but the original application can't be controlled through the thumbnail. This mode has the best compatibility.</p>
+<h3 id="reparent">Reparent</h3>
+<p>Creates a window that replaces the original window, showing only the selected area. The application will now be controlled through the cropped window. Closing the cropped window will restore the original window.</p>
+<p>Not every window will react well to being contained in another application so this mode has many compatibility issues. It's advisable to use the &quot;Thumbnail&quot; mode instead if you find that a window isn't responding well to being cropped with the &quot;Reparent&quot; mode.</p>
+<h2 id="known-issues">Known issues</h2>
+<p>Crop And Lock currently has the following known issues:</p>
+<ul>
+<li>Cropping maximized or full-screen windows in &quot;Reparent&quot; mode might not work. It's recommended to resize the window to fill the screen corners instead.</li>
+<li>Some UWP apps won't react well to being cropped in &quot;Reparent&quot; mode. Windows Calculator is a notable example of this.</li>
+<li>Applications that use sub-windows or tabs can react poorly to being cropped in &quot;Reparent&quot; mode. Notepad and OneNote are notable examples of applications that react poorly.</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<p>The following settings are available for the Crop And Lock utility:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Thumbnail shortcut</strong></td>
+<td style="text-align: left;">The customizable keyboard command to activate the thumbnail mode for cropping and creating a thumbnail view.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reparent shortcut</strong></td>
+<td style="text-align: left;">The customizable keyboard command to activate the reparent mode for cropping and reparenting to a new window.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/crop-and-lock.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

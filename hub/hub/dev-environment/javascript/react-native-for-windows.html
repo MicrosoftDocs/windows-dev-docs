@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>React Native for Desktop desktop app development </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="React Native for Desktop desktop app development ">
+    
+    <meta name="description" content="Install React Native for Desktop and get started with Windows desktop app development using React Native components.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-build-a-desktop-app-with-react-native-for-desktop">Get started build a desktop app with React Native for Desktop</h1>
+
+<p><a href="https://microsoft.github.io/react-native-windows">React Native for Desktop</a> allows you to create a Universal Windows Platform (UWP) app using React.</p>
+<h2 id="overview-of-react-native">Overview of React Native</h2>
+<p>React Native is an <a href="https://github.com/facebook/react-native">open-source</a> mobile application framework created by Facebook. It is used to develop applications for Android, iOS, Web and UWP (Windows) providing native UI controls and full access to the native platform. Working with React Native requires an understanding of JavaScript fundamentals.</p>
+<p>For more general information about React, see the <a href="react-overview.html">React overview</a> page.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The setup requirements for using React Native for Desktop can be found on the <a href="https://microsoft.github.io/react-native-windows/docs/rnw-dependencies">System Requirements</a> page. Ensure Developer Mode is turned ON in Windows Settings App.</p>
+<h2 id="install-react-native-for-desktop">Install React Native for Desktop</h2>
+<p>You can create a Windows desktop app using React Native for Desktop by following these steps.</p>
+<ol>
+<li><p>Open a command line window (terminal) and navigate to the directory where you want to create your Windows desktop app project.</p>
+</li>
+<li><p>You can use this command with the Node Package Executor (NPX) to create a React Native project without the need to install locally or globally install additional tools. The  command will generate a React Native app in the directory specified by <code>&lt;projectName&gt;</code>.</p>
+<pre><code class="lang-powershell">npx react-native init &lt;projectName&gt;
+</code></pre>
+<p>If you want to start a new project with a specific React Native version, you can use the <code>--version</code> argument. For information about versions of React Native, see <a href="https://reactnative.dev/versions">Versions - React Native</a>.</p>
+<pre><code class="lang-powershell">npx react-native@X.XX.X init  &lt;projectName&gt; --version X.XX.X
+</code></pre>
+</li>
+<li><p>Switch to the project directory and run the following command to install the React Native for Desktop packages:</p>
+<pre><code class="lang-powershell">cd projectName
+npx react-native-windows-init --overwrite
+</code></pre>
+</li>
+<li><p>To run the app, first launch your web browser (ie. Microsoft Edge), then execute the following command:</p>
+<pre><code class="lang-powershell">npx react-native run-windows
+</code></pre>
+</li>
+</ol>
+<h2 id="debug-your-react-native-desktop-app-using-visual-studio">Debug your React Native desktop app using Visual Studio</h2>
+<ul>
+<li><p><a href="/visualstudio/install/install-visual-studio">Install Visual Studio 2022</a> with the following options checked:</p>
+<ul>
+<li>Workloads: Universal Windows Platform development &amp; Desktop development with C++.</li>
+<li>Individual Components: Development activities &amp; Node.js development support.</li>
+</ul>
+</li>
+<li><p>Open the solution file in the application folder in Visual Studio (e.g., AwesomeProject/windows/AwesomeProject.sln if you used AwesomeProject as &lt;projectName&gt;).</p>
+</li>
+<li><p>Select the Debug configuration and the x64 platform from the combo box controls to the left of the Run button and underneath the Team and Tools menu item.</p>
+</li>
+<li><p>Run <code>yarn start</code> from your project directory, and wait for the React Native packager to report success.</p>
+</li>
+<li><p>Select <strong>Run</strong> to the right of the platform combo box control in VS, or select the Debug-&gt;Start without Debugging menu item. You now see your new app and Chrome should have loaded http://localhost:8081/debugger-ui/ in a new tab.</p>
+</li>
+<li><p>Select the F12 key or Ctrl+Shift+I to open Developer Tools in your web browser.</p>
+</li>
+</ul>
+<h2 id="debug-your-react-native-desktop-app-using-visual-studio-code">Debug your React Native desktop app using Visual Studio Code</h2>
+<ul>
+<li><p><a href="https://code.visualstudio.com/download">Install Visual Studio Code</a></p>
+</li>
+<li><p>Open your applications folder in VS Code.</p>
+</li>
+<li><p>Install the <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native">React Native Tools plugin for VS Code</a>.</p>
+</li>
+<li><p>Create a new file in the applications root directory, .vscode/launch.json and paste the following configuration:</p>
+<pre><code class="lang-json">{
+    &quot;version&quot;: &quot;0.2.0&quot;,
+    &quot;configurations&quot;: [
+        {
+            &quot;name&quot;: &quot;Debug Windows&quot;,
+            &quot;cwd&quot;: &quot;${workspaceFolder}&quot;,
+            &quot;type&quot;: &quot;reactnative&quot;,
+            &quot;request&quot;: &quot;launch&quot;,
+            &quot;platform&quot;: &quot;windows&quot;
+        }
+    ]
+}
+</code></pre>
+</li>
+<li><p>Press F5 or navigate to the debug menu (alternatively press Ctrl+Shift+D) and in the Debug dropdown select &quot;Debug Windows&quot; and press the green arrow to run the application.</p>
+</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://microsoft.github.io/react-native-windows/docs/getting-started">React Native for Desktop docs</a></li>
+<li><a href="https://reactnative.dev/docs/getting-started">React Native docs</a></li>
+<li><a href="https://reactjs.org/">React docs</a></li>
+<li><a href="nodejs-on-windows.html">Install NodeJS on Windows</a></li>
+<li>Try the <a href="/training/paths/react/">React learning path</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/react-native-for-windows.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

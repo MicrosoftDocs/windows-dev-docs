@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows on Arm documentation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows on Arm documentation ">
+    
+    <meta name="description" content="Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-on-arm">Windows on Arm</h1>
+
+<p>Windows has traditionally run on machines that are powered by x86 / x64 processors, but more recently, also runs on devices powered by Arm processors.</p>
+<p>Arm-powered devices are particularly interesting because the power-frugal nature of the Arm architecture enables these devices to offer longer battery life while delivering great performance. Arm Systems on Chip (SoC) often include other key features such as a powerful CPU, GPU, Wi-Fi &amp; mobile data networks, as well as Neural Processor Units (NPUs) for accelerating AI workloads.</p>
+<h2 id="build-windows-apps-that-run-on-arm">Build Windows apps that run on Arm</h2>
+<p>Windows 10 enables existing unmodified x86 apps to run on Arm devices. Windows 11 adds the ability to run unmodified x64 Windows apps on Arm devices! This ability to run x86 &amp; x64 apps on Arm devices gives end-users confidence that the majority of their existing apps &amp; tools will run well even on new Arm-powered devices.</p>
+<p>For the best performance, responsiveness, and battery life, users will want and need Arm-native Windows apps, which means that developers will need to build or port Arm-native Windows apps.</p>
+<p>Check whether it's supported on Arm: <a href="https://www.worksonwoa.com/en/">Windows on Arm Ready Software</a> - This site is your source for compatibility information for many apps and games on Windows devices that run on Arm architecture and will be updated over time.</p>
+<h3 id="virtual-machines">Virtual Machines</h3>
+<p>You can create and deploy Windows 11 Arm64 VMs with Ampere Altra Arm–based processors on Azure. Learn how in this <a href="create-arm-vm.html">Quickstart article</a>.</p>
+<p>Learn more about using Windows on Arm Virtual Machines:</p>
+<ul>
+<li><a href="faq.yml#windows-on-arm-virtual-machine-faq">Windows on Arm Virtual Machine FAQ</a></li>
+<li><a href="https://azure.microsoft.com/blog/azure-virtual-machines-with-ampere-altra-arm-based-processors-generally-available/">Azure Virtual Machines with Ampere Altra Arm–based processors—generally available</a></li>
+<li><a href="https://learn.arm.com/learning-paths/servers-and-cloud-computing/aks/cluster_deployment/">Deploy an Arm-based Azure Kubernetes Service (AKS) Cluster using Terraform - ARM Developer Hub</a></li>
+<li>Learn more about build and test automation via Continual Integration / Continual Deployment (CI/CD) hosted in the cloud, such as <a href="/azure/architecture/example-scenario/apps/devops-dotnet-webapp">Azure DevOps</a> or <a href="https://resources.github.com/ci-cd/">GitHub</a>.</li>
+</ul>
+<h3 id="arm-developer-devices">Arm developer devices</h3>
+<p>The number of options available to developers who want to build and test Arm-native apps on Windows has been growing.</p>
+<ul>
+<li><p><a href="https://www.microsoft.com/windows/copilot-plus-pcs">Copilot+ PCs</a> offer a Neural Processing Unit (NPU) and the latest in AI features and computing capacity via a variety of device manufacturers. Many of which are powered by the Arm-based Snapdragon® X Series processor, offering 45 trillion operations per second (TOPS) to work with.</p>
+</li>
+<li><p><a href="dev-kit/index.html">Windows Dev Kit 2023</a> (code name “Project Volterra”) is no longer available to purchase new, but remains viable as an Arm-based device built to support Windows development, AI research, and testing for the integration of AI into apps and experiences.</p>
+</li>
+</ul>
+<h2 id="support-for-existing-windows-apps-on-arm">Support for existing Windows apps on Arm</h2>
+<section class="row">
+<div class="column span">
+<p><img src="images/app-types.png" alt="App Types graphic."></p>
+</div>
+<div class="column span2">
+<p>Windows on Arm runs native Arm apps, as well as many unmodified x86 &amp; x64 apps, but for the best performance and battery life, apps should be built to be Arm-native wherever possible. Windows apps can be built using many different tools and technologies, including native C/C++ Win32 apps, classic .NET Framework WinForms/WPF apps, modern .NET or MAUI apps, or even apps built using Java, Python, node, etc.</p>
+</div>
+</section>
+<h2 id="find-tools-for-arm-development">Find tools for Arm development</h2>
+<section class="row">
+<div class="column">
+<p><img src="images/arm-tools.png" alt="Tools graphic"></p>
+</div>
+<div class="column span2">
+<p>Microsoft is continuously delivering Arm-native developer toolset updates to build and port apps that natively target Windows ARM-powered devices just as easily as when targeting x64. Supporting app development for Arm, on Arm.</p>
+<ul>
+<li><strong><a href="/visualstudio/install/visual-studio-on-arm-devices">Arm-native Visual Studio</a></strong> includes <strong>Visual C++</strong>, <strong>.NET &amp; .NET Framework</strong> and <strong>Java</strong> and will enable developers to natively build and debug Arm apps on Arm-based devices. Learn more:  <a href="https://devblogs.microsoft.com/visualstudio/arm64-visual-studio-is-officially-here/">Arm64 Visual Studio is officially here!(Nov 2022)</a>, <a href="https://devblogs.microsoft.com/cppblog/msvc-arm64-optimizations-in-visual-studio-2022-17-7/">MSVC ARM64 Optimizations in Visual Studio 2022 17.7 (Sept 2023)</a>.</li>
+<li><strong><a href="https://code.visualstudio.com/download">Visual Studio Code</a></strong> natively supports Arm and can be installed on Arm devices. The <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools">VS Code C++ extension</a> also offers C++ IntelliSense and build support for developing Windows apps that run natively on Arm64 devices.</li>
+<li><a href="/dotnet/core/whats-new/dotnet-6#arm64-support"><strong>.NET 6+</strong> already supports Arm</a>, both for native Arm execution and x64 emulation. To develop .NET apps that run natively on Arm64 devices, we recommend installing the new Arm native Visual Studio 2022 17.4, and <a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET 8</a> Arm64 SDK. Learn more about .NET 8 support for Arm and the performance improvements for Arm64 on the .NET Blog: <strong><a href="https://devblogs.microsoft.com/dotnet/this-arm64-performance-in-dotnet-8">Arm64 Performance Improvements in .NET 8 (Oct 2023)</a></strong>.</li>
+<li><strong>.NET 6 Arm64 SDK:</strong> By default, if you <code>dotnet run</code> a .NET 6 app with the Arm64 SDK, it will run as Arm64. The <code>dotnet-runtimeinfo</code> tool can be used to discover the environment that .NET is running on. See the <a href="https://devblogs.microsoft.com/dotnet/announcing-net-6/#windows-arm64">.NET 6 blog announcement on Arm64 support</a> to learn more.</li>
+<li><strong><a href="https://developer.arm.com/Tools%20and%20Software/GNU%20Toolchain">VC++ toolchain (Arm Developer)</a></strong> is the GNU toolchain for Arm Architecture releases produced by Arm, enabling partners, developers and the community to use new features from recent Arm Architecture and from open-source projects GCC, Binutils, glibc, Newlib, and GDB.</li>
+<li><strong>Java support for Arm in the OpenJDK</strong>: <a href="https://devblogs.microsoft.com/java/announcing-openjdk-windows-arm/">Announcing OpenJDK for Windows on ARM (June 2020)</a></li>
+<li><strong><a href="https://github.com/features/actions">GitHub Actions</a></strong>: GitHub Actions, GitHub's CI/CD workflow engine is an integral part of many developers’ workflows, they use this to continuously build, test, and deploy apps. GitHub Actions is now available for Windows on Arm in 2 flavors: 1. <strong><a href="https://github.blog/changelog/2022-09-28-github-actions-self-hosted-runners-now-support-windows-arm-hardware/">self-hosted runners</a></strong> that can be hosted on an Arm VM or Arm device, and 2. <strong><a href="https://github.blog/changelog/2023-10-30-accelerate-your-ci-cd-with-arm-based-hosted-runners-in-github-actions/">GitHub hosted runners</a></strong> (currently available in private beta, but general release is coming soon).</li>
+<li><strong><a href="https://www.docker.com/products/docker-desktop/">Docker Desktop</a></strong>: Containers are a pretty popular deployment target for many reasons - a streamlined development workflow, isolation and security, efficient resource utilization, portability, and Reproducibility. Docker desktop is now runs natively on Windows on Arm.</li>
+</ul>
+</div>
+</section>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We use the term <em>Arm</em> as a shorthand for PCs that run the desktop version of Windows on Arm64 (also commonly called <em>AArch64</em>) processors.  We use the term <em>Arm32</em> here as a shorthand for the 32-bit Arm architecture (commonly called <em>Arm</em> in other documentation). PCs powered by Arm provide great application compatibility and allow you to run your existing unmodified x86 win32 applications. Arm apps run natively without any emulation, while x86 and x64 apps run under emulation on Arm devices.</p>
+</div>
+<h2 id="arm64ec---help-for-updating-windows-apps-to-run-on-arm">Arm64EC - Help for updating Windows apps to run on Arm</h2>
+<section class="row">
+<div class="column span">
+<p><img src="images/arm64ec.png" alt="Arm64EC graphic."></p>
+</div>
+<div class="column span2">
+<p>Arm64EC (“Emulation Compatible”) enables you to incrementally build new apps, or port existing apps, to take advantage of native Arm performance where possible, while utilizing existing x64 code &amp; libraries until fully migrated. Learn more:</p>
+<ul>
+<li><a href="arm64ec.html">Using Arm64EC to build apps for Arm devices</a></li>
+<li><a href="arm64ec-abi.html">Understanding Arm64EC ABI and assembly code</a></li>
+</ul>
+</div>
+</section>
+<h2 id="additional-tips-for-developing-windows-apps-that-run-on-arm-devices">Additional tips for developing Windows apps that run on Arm devices</h2>
+<ul>
+<li><p>We recommend using <a href="/windows/msix/overview/">MSIX</a> to package your app for distribution. For more information on how MSIX supports Arm and Arm64, see <a href="/windows/msix/package/device-architecture#arm-and-arm64">App package architectures: Arm and Arm64</a>.</p>
+</li>
+<li><p>Not all Visual Studio projects are configured to launch projects locally when you start debugging (F5) from an Arm device. You may need to configure Visual Studio for remote debugging, even though your app is running locally. For more information, see <a href="/visualstudio/debugger/remote-debugging">remote debugging</a>.</p>
+</li>
+<li><p>To find and install the recommended packages on Visual Studio, visit the <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio downloads page</a>.</p>
+<ul>
+<li>For the <strong>Remote Tools for Visual Studio 2022</strong>, scroll below the <strong>All downloads</strong> section and expand the <strong>Tools for Visual Studio 2022</strong> drop-down menu. <strong>Remote Tools for Visual Studio 2022</strong> will be listed there. Be sure to check the <strong>Arm64</strong> radio button, then <strong>Download</strong>.</li>
+<li>For the <strong>Microsoft Visual C++ Redistributable</strong>, scroll below the <strong>All downloads</strong> section and expand the <strong>Other tools and Frameworks</strong> drop-down menu. <strong>Microsoft Visual C++ Redistributable for Visual Studio 2022</strong> will be listed there. Be sure to check the <strong>Arm64</strong> radio button, then <strong>Download</strong>.</li>
+<li>If you are using an older version of Visual Studio, select the <a href="https://visualstudio.microsoft.com/vs/older-downloads/">Older Downloads</a> link at the bottom of the page to search for the downloads associated with your version of Visual Studio.</li>
+</ul>
+</li>
+<li><p>When a user installs your app on an Arm device from the Microsoft Store, Windows 11 will automatically select the optimal version of your app that is available. If you submit x86, Arm32, and Arm64 versions of your app to the Microsoft Store, the operating system will automatically install the Arm64 version of your app. If you only submit x86 and Arm32 versions of your app, the operating system will install the Arm32 version. If you only submit the x86 version of your app, the operating system will install that version and run it under emulation.</p>
+</li>
+<li><p>When given the choice of app architecture, choose the 32-bit x86 version to run the app's 32-bit version on a Windows on Arm PC. If an app's x64 Win32 version doesn't work, most apps will have an x86 version available.</p>
+</li>
+<li><p>For more information about architectures, see <a href="/windows/msix/package/device-architecture">App package architectures</a>.</p>
+</li>
+</ul>
+<h2 id="app-assure-arm-advisory-service">App Assure Arm Advisory Service</h2>
+<p>While our guidance to <a href="add-arm-support.html">Add Arm support to your Windows app</a> walks through how to create an Arm-optimized version of your app(s). The App Assure Arm Advisory Service is available to help if you get stuck. This service is in addition to our existing promise: your apps will run on Windows on Arm, and if you encounter any issues, Microsoft will help you remediate them. <a href="https://blogs.windows.com/windowsdeveloper/2023/10/16/windows-launching-arm-advisory-service-for-developers/">Learn more</a>.</p>
+<p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR0hAZezl6y5Om22d_0SBAstUOU9OSlBDQ0dBNkUwTU0ySlNZRklSMFJMViQlQCN0PWcu">Sign up for Windows Arm Advisory Service</a>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://youtu.be/BmGiJDeIiY0?t=63">Satya Nadella's Build 2022 keynote announcing &quot;Project Volterra&quot;</a></li>
+<li><a href="apps-on-arm-x86-emulation.html">How x86 emulation works on Arm</a></li>
+<li><a href="apps-on-arm-troubleshooting-x86.html">Troubleshooting x86 desktop apps</a></li>
+<li><a href="apps-on-arm-troubleshooting-arm32.html">Troubleshooting Arm UWP apps</a></li>
+<li><a href="apps-on-arm-program-compat-troubleshooter.html">Program Compatibility Troubleshooter on Arm</a></li>
+<li><a href="/windows-hardware/drivers/develop/building-arm64-drivers">Building Arm64 Drivers with the WDK</a>: Instructions for building an Arm64 driver.</li>
+<li><a href="/windows-hardware/drivers/debugger/debugging-arm64">Debugging x86 apps on Arm</a> | Guidance for debugging x86 apps on Arm.</li>
+<li><a href="https://www.youtube.com/watch?v=OZtVBDeVqCE">Video: Building Arm64 Win32 C++ Apps</a></li>
+<li><a href="/events/build-2018/brk2438">Windows 10 on Arm for developers (Microsoft Build 2018 video presentation)</a></li>
+<li><a href="https://blogs.windows.com/windowsdeveloper/2018/11/15/official-support-for-windows-10-on-arm-development/">Blog: Original announcement of Windows 10 support for Arm development</a></li>
+<li><a href="mailto:woafeedback@microsoft.com">Report a bug</a></li>
+</ul>
+<h2 id="external-resources">External resources</h2>
+<ul>
+<li><a href="https://www.qualcomm.com/developer/windows-on-snapdragon#overview">Developer Resources for Windows on Snapdragon by Qualcomm</a></li>
+<li><a href="https://developer.arm.com/solutions/os/windows-on-arm">Developer.arm.com: Windows on Arm</a></li>
+<li><a href="https://developer.arm.com/documentation/102341/0400/Overview">Developer.arm.com: Port applications to Windows on Arm</a></li>
+<li><a href="https://developer.arm.com/documentation/102767/0100/">Developer.arm.com: Building a Native Windows on Arm App with WinUI 3</a></li>
+<li><a href="https://developer.arm.com/documentation/102528/">Developer.arm.com: Building libraries for Windows on Arm</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

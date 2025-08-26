@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Mapping UWP features to the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Mapping UWP features to the Windows App SDK ">
+    
+    <meta name="description" content="This topic compares major feature areas in the different forms in which they appear in UWP and in the Windows App SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mapping-uwp-features-to-the-windows-app-sdk">Mapping UWP features to the Windows App SDK</h1>
+
+<p>This topic compares major feature areas in the different forms in which they appear in UWP and in the Windows App SDK. The content in this migration guide supports moving from UWP XAML to Windows App SDK XAML—moving to a different UI framework, such as Windows Presentation Foundation (WPF), is outside of the scope of this guidance.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>UWP</th>
+<th>Windows App SDK (packaged apps)</th>
+<th>Migration notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Packaging</td>
+<td>MSIX<br>App has identity</td>
+<td>MSIX<br>App has identity</td>
+<td>UWP apps migrating to the Windows App SDK should stay on MSIX to ensure trusted clean install and uninstall experience, as well as access to all APIs, including those that require identity.</td>
+</tr>
+<tr>
+<td>Container</td>
+<td>App container:<br>- security = LowIL<br>- file system access is brokered<br>- no registry access</td>
+<td>MSIX Container:<br>- security = MediumIL<br>- file system access same as user, AppData writes virtualized<br>- HKCU registry writes virtualized</td>
+<td>Moving to a higher integrity level with the Windows App SDK allows your app to have greater functionality. However, be aware of virtualization if you want to expand the capabilities of your migrated application to write to HKCU or AppData.</td>
+</tr>
+<tr>
+<td>Activation and instancing</td>
+<td>Package identity + CoreApplication activation, single-instanced by default</td>
+<td>Package identity, Main/WinMain + Windows App SDK activation, multi-instanced by default</td>
+<td>Ensure your application can handle multi-instance behavior, or use <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance"><strong>AppInstance</strong></a> to manage your instances.</td>
+</tr>
+<tr>
+<td>Lifecycle-managed</td>
+<td>Suspend/resume</td>
+<td>Power/State notifications</td>
+<td>You can use Power/State change notifications to reduce system load.</td>
+</tr>
+<tr>
+<td>Background tasks</td>
+<td>InProc and OOP background tasks</td>
+<td>Full trust COM background task implementation</td>
+<td>For more info, see <a href="guides/background-task-migration-strategy.html">Background task migration strategy</a>.</td>
+</tr>
+<tr>
+<td>Windowing</td>
+<td>CoreWindow, AppWindow (preview)</td>
+<td>HWND, AppWindow v2</td>
+<td>Windowing behavior has significantly changed in Windows App SDK. See <a href="guides/windowing.html">Windowing functionality migration</a>.</td>
+</tr>
+<tr>
+<td>Messaging</td>
+<td>CoreDispatcher and DispatcherQueue</td>
+<td>DispatcherQueue, WndProc</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue"><strong>DispatcherQueue</strong></a> supports Win32 apps. For additional details on moving from CoreDispatcher to DispatcherQueue see <a href="guides/threading.html">Threading functionality migration</a>.</td>
+</tr>
+<tr>
+<td>UI Platform</td>
+<td>System XAML, WebView, DirectX, and others</td>
+<td>WinUI 3, Webview2, DirectX, and others</td>
+<td>For more info, see <a href="guides/winui3.html">WinUI migration</a>.</td>
+</tr>
+<tr>
+<td>Text-rendering</td>
+<td>DirectWrite</td>
+<td>DWriteCore</td>
+<td>Enables applications to access the latest DWrite features downlevel and receive new DWrite updates separate from the OS release schedule. For more info, see <a href="guides/dwritecore.html">DirectWrite to DWriteCore migration</a>.</td>
+</tr>
+<tr>
+<td>Resources</td>
+<td>MRT</td>
+<td>MRTCore</td>
+<td>For more info, see <a href="guides/mrtcore.html">MRT to MRTCore migration</a>.</td>
+</tr>
+<tr>
+<td>.NET Runtime</td>
+<td>.NET Native / C# 7</td>
+<td>.NET 6+/C# 9</td>
+<td>The Windows App SDK provides access to the modern .NET runtime, and access to new language features. However, .NET <a href="/dotnet/core/deploying/ready-to-run">ReadyToRun compilation</a> is not the same as .NET Native, so you should evaluate performance tradeoffs.</td>
+</tr>
+<tr>
+<td>2D Graphics</td>
+<td>Win2D</td>
+<td>Win2D for WinUI 3</td>
+<td>We're currently working on a version of Win2D that works with the Windows App SDK, in progress. See the <a href="https://microsoft.github.io/Win2D/WinUI3/html/Introduction.htm">documentation</a> for more information.</td>
+</tr>
+<tr>
+<td>Web authentication</td>
+<td>WebAuthenticationBroker</td>
+<td>OAuth2Manager</td>
+<td>The Windows App SDK provides a new API for OAuth 2.0 functionality. See <a href="../../develop/security/oauth2.html">Implement OAuth functionality in Windows apps</a> for more information.</td>
+</tr>
+<tr>
+<td>Windows Runtime components</td>
+<td>Windows Runtime component project templates for UWP</td>
+<td>-  C++: Use the <strong>Windows Runtime Component (WinUI 3)</strong> project template. <br> - C#: Use C#/WinRT to author Windows Runtime Components in a .NET Class Library.</td>
+<td>We're currently working on support to <a href="../../develop/platform/csharp-winrt/authoring.html">Author Windows Runtime Components using C#/WinRT</a> for use in the Windows App SDK and WinUI 3.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

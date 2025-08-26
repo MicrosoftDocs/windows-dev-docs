@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Runtime APIs not supported in desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Runtime APIs not supported in desktop apps ">
+    
+    <meta name="description" content="This article describes WinRT APIs that aren&#39;t supported for use in desktop apps, or that have restrictions.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-runtime-apis-not-supported-in-desktop-apps">Windows Runtime APIs not supported in desktop apps</h1>
+
+<p>Although you can use most Windows Runtime (WinRT) APIs (see <a href="/uwp/api/">Windows UWP namespaces</a>) in your C# or C++ desktop app, there are two main sets of WinRT APIs that aren't supported in desktop apps, or that have restrictions:</p>
+<ul>
+<li>APIs that have dependencies on user interface (UI) features that were designed for use only in a Universal Windows Platform (UWP) app.</li>
+<li>APIs that require package identity (see <a href="modernize-packaged-apps.html">Features that require package identity</a>). Such APIs are supported only in desktop apps that are packaged using <a href="/windows/msix/">MSIX</a>.</li>
+</ul>
+<p>This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in desktop apps. Most of the alternative APIs are available in <a href="../../winui/index.html">WinUI 3</a> or via WinRT COM interfaces that are available in the Windows SDK.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Apps using .NET can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. Those classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see <a href="winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>. Note that those classes require the .NET 6 SDK or later.</p>
+</div>
+<p>This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, please <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=">create an issue</a> in the <a href="https://github.com/microsoft/microsoft-ui-xaml">microsoft-ui-xaml</a> repo with the API name and details about what you're trying to achieve by using it.</p>
+<h2 id="apis-that-have-dependencies-on-uwp-only-ui-features">APIs that have dependencies on UWP-only UI features</h2>
+<p>Some WinRT APIs were designed specifically for UI scenarios in a UWP app. Those APIs do not behave properly in desktop apps due to threading model and other platform differences. Those APIs, and other WinRT APIs that have dependencies on them, aren't supported for use in desktop apps.</p>
+<h3 id="core-unsupported-classes">Core unsupported classes</h3>
+<p>These WinRT classes aren't supported in desktop apps:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Alternative APIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>ApplicationView</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.core.coreapplicationview"><strong>CoreApplicationView</strong></a></td>
+<td>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Window</strong></a> class provided by WinUI 3 instead.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar"><strong>CoreApplicationViewTitleBar</strong></a></td>
+<td>Instead of the <a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar"><strong>ExtendViewIntoTitleBar</strong></a> property, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar"><strong>Window.ExtendsContentIntoTitleBar</strong></a> property provided by WinUI 3.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Core.CoreDispatcher"><strong>CoreDispatcher</strong></a></td>
+<td>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue"><strong>Microsoft.UI.Xaml.Window.DispatcherQueue</strong></a> property provided by WinUI 3 instead.<br><br>Note that the <a href="/uwp/api/Windows.UI.Xaml.Window.Dispatcher"><strong>Windows.UI.Xaml.Window.Dispatcher</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.DependencyObject.Dispatcher"><strong>Windows.UI.Xaml.DependencyObject.Dispatcher</strong></a> properties return <code>null</code> in a desktop app.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a></td>
+<td>Also see the <a href="#classes-that-implement-iinitializewithwindow">Classes that implement IInitializeWithWindow</a> section below.<br><br>Instead of the <a href="/uwp/api/windows.ui.core.corewindow.getkeystate"><strong>GetKeyState</strong></a> method, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread"><strong>InputKeyboardSource.GetKeyStateForCurrentThread</strong></a> method provided by WinUI 3.<br><br>Instead of the <a href="/uwp/api/windows.ui.core.corewindow.pointercursor"><strong>PointerCursor</strong></a> property, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.protectedcursor"><strong>UIElement.ProtectedCursor</strong></a> property provided by WinUI 3. You'll need to have a subclass of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement"><strong>UIElement</strong></a> to access that property.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.useractivities.useractivity"><strong>UserActivity</strong></a></td>
+<td>Use the <a href="/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivitysourcehostinterop"><strong>IUserActivitySourceHostInterop</strong></a> COM interface instead (in <code>useractivityinterop.h</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>For other WinRT APIs that aren't supported in desktop apps, see <a href="#unsupported-members">Unsupported members</a> later in this topic.</p>
+<h3 id="classes-with-an-xxxforcurrentview-method">Classes with an XxxForCurrentView method</h3>
+<p>Many WinRT classes have a static <strong>GetForCurrentView</strong> or <strong>CreateForCurrentView</strong> method, such as <a href="/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView"><strong>UIViewSettings.GetForCurrentView</strong></a>. Those <strong>XxxForCurrentView</strong> methods have an implicit dependency on the <a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>ApplicationView</strong></a> type, which isn't supported in desktop apps. Because <strong>ApplicationView</strong> isn't supported in desktop apps, none of the <strong>XxxForCurrentView</strong> methods are supported either. Some unsupported <strong>XxxForCurrentView</strong> methods not only return <code>null</code>, but also throw exceptions.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="/uwp/api/windows.ui.viewmanagement.core.coreinputview.getforcurrentview"><strong>CoreInputView.GetForCurrentView</strong></a> <em>is</em> supported in desktop apps, and it <em>can</em> be used even without a <a href="/uwp/api/windows.ui.core.corewindow"><strong>CoreWindow</strong></a>. You can use that method to retrieve a <a href="/uwp/api/windows.ui.viewmanagement.core.coreinputview"><strong>CoreInputView</strong></a> object on any thread; and if that thread has a foreground window, then that object will produce events.</p>
+</div>
+<p>The following classes <em>are</em> supported in desktop apps; but to retrieve an instance of one in a desktop app, you use a mechanism that's different from the <strong>GetForCurrentView</strong> or <strong>CreateForCurrentView</strong> methods. For the classes below that have a COM interface listed as the alternative API, C# developers can also consume those WinRT COM interfaces (see <a href="winrt-com-interop-csharp.html">Call interop APIs from a .NET app</a>). The list might not be comprehensive.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Alternative APIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.applicationsettings.accountssettingspane"><strong>AccountsSettingsPane</strong></a></td>
+<td>Use the <a href="/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop"><strong>IAccountsSettingsPaneInterop</strong></a> COM interface instead (in <code>accountssettingspaneinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager"><strong>CoreDragDropManager</strong></a></td>
+<td>Use the <a href="/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop"><strong>IDragDropManagerInterop</strong></a> COM interface instead (in <code>dragdropinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.text.core.coretextservicesmanager"><strong>CoreTextServicesManager</strong></a></td>
+<td>This class is currently supported in desktop apps only in Windows Insider Preview builds.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager"><strong>DataTransferManager</strong></a></td>
+<td>Use the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop"><strong>IDataTransferManagerInterop</strong></a> COM interface instead (in <code>shobjidl_core.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.graphics.display.displayinformation"><strong>DisplayInformation</strong></a></td>
+<td>To retrieve an instance of <strong>DisplayInformation</strong>, use the <a href="/windows/win32/api/windows.graphics.display.interop/nn-windows-graphics-display-interop-idisplayinformationstaticsinterop"><strong>IDisplayInformationStaticsInterop</strong></a> interface.<br><br>Alternatively, instead of the <a href="/uwp/api/windows.graphics.display.displayinformation.logicaldpi"><strong>LogicalDpi</strong></a> property, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale"><strong>XamlRoot.RasterizationScale</strong></a> property, and listen for changes via the <a href="/uwp/api/windows.ui.xaml.xamlroot.changed"><strong>XamlRoot.Changed</strong></a> event (the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale"><strong>XamlRoot.RasterizationScale</strong></a> property is provided in WinUI 3).<br><br>And, instead of the <a href="/uwp/api/windows.graphics.display.displayinformation.rawpixelsperviewpixel"><strong>RawPixelsPerViewPixel</strong></a> property, you have the option to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale"><strong>XamlRoot.RasterizationScale</strong></a> property provided by WinUI 3.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.inputpane"><strong>InputPane</strong></a></td>
+<td>Use the <a href="/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop"><strong>IInputPaneInterop</strong></a> COM interface instead (in <code>inputpaneinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.media.playto.playtomanager.getforcurrentview"><strong>PlayToManager</strong></a></td>
+<td>Use the <a href="/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop"><strong>IPlayToManagerInterop</strong></a> COM interface instead (in <code>playtomanagerinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.graphics.printing3d.print3dmanager"><strong>Print3DManager</strong></a></td>
+<td>Use the <a href="/windows/win32/api/print3dmanagerinterop/nn-print3dmanagerinterop-iprinting3dmanagerinterop"><strong>IPrinting3DManagerInterop</strong></a> COM interface instead (in <code>print3dmanagerinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.graphics.printing.printmanager"><strong>PrintManager</strong></a></td>
+<td>Use the <a href="/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop"><strong>IPrintManagerInterop</strong></a> COM interface instead (in <code>printmanagerinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.input.radialcontroller"><strong>RadialController</strong></a></td>
+<td>Use the <a href="/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop"><strong>IRadialControllerInterop</strong></a> COM interface instead (in <code>radialcontrollerinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.input.radialcontrollerconfiguration"><strong>RadialControllerConfiguration</strong></a></td>
+<td>Use the <a href="/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop"><strong>IRadialControllerConfigurationInterop</strong></a> COM interface instead (in <code>radialcontrollerinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.resources.core.resourcecontext"><strong>ResourceContext</strong></a></td>
+<td>See <a href="../../windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.html">MRT to MRT Core migration</a>.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.resources.resourceloader"><strong>ResourceLoader</strong></a></td>
+<td>See <a href="../../windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.html">MRT to MRT Core migration</a>.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.input.spatial.spatialinteractionmanager"><strong>SpatialInteractionManager</strong></a></td>
+<td>Use the <a href="/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop"><strong>ISpatialInteractionManagerInterop</strong></a> COM interface instead (in <code>spatialinteractionmanagerinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.media.systemmediatransportcontrols"><strong>SystemMediaTransportControls</strong></a></td>
+<td>Use the <a href="/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop"><strong>ISystemMediaTransportControlsInterop</strong></a> COM interface instead (in <code>systemmediatransportcontrolsinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager"><strong>UserActivityRequestManager</strong></a></td>
+<td>Use the <a href="/windows/win32/api/useractivityinterop/nn-useractivityinterop-iuseractivityrequestmanagerinterop"><strong>IUserActivityRequestManagerInterop</strong></a> COM interface instead (in <code>useractivityinterop.h</code>).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.uiviewsettings"><strong>UIViewSettings</strong></a></td>
+<td>Use the <a href="/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop"><strong>IUIViewSettingsInterop</strong></a> COM interface instead (in <code>uiviewsettingsinterop.h</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>The following classes are <em>not</em> supported in desktop apps because the APIs don't provide an alternative to their <strong>GetForCurrentView</strong> or <strong>CreateForCurrentView</strong> method. The list might not be comprehensive.</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Alternative APIs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.media.capture.appcapture"><strong>AppCapture</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.graphics.display.brightnessoverride"><strong>BrightnessOverride</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice"><strong>ConnectedAnimationService</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.core.coreinputview"><strong>CoreInputView</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.core.corewindowresizemanager"><strong>CoreWindowResizeManager</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.graphics.display.displayenhancementoverride"><strong>DisplayEnhancementOverride</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.input.edgegesture"><strong>EdgeGesture</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.devices.input.preview.gazeinputsourcepreview"><strong>GazeInputSourcePreview</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.graphics.display.core.hdmidisplayinformation"><strong>HdmiDisplayInformation</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.preview.holographic.holographickeyboardplacementoverridepreview"><strong>HolographicKeyboardPlacementOverridePreview</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.input.keyboarddeliveryinterceptor"><strong>KeyboardDeliveryInterceptor</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.lockscreen.lockapplicationhost"><strong>LockApplicationHost</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.devices.input.mousedevice"><strong>MouseDevice</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.input.pointervisualizationsettings"><strong>PointerVisualizationSettings</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.security.enterprisedata.protectionpolicymanager"><strong>ProtectionPolicyManager</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.search.searchpane"><strong>SearchPane</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.applicationsettings.settingspane"><strong>SettingsPane</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.core.systemnavigationmanager"><strong>SystemNavigationManager</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.core.preview.systemnavigationmanagerpreview"><strong>SystemNavigationManagerPreview</strong></a></td>
+<td>None</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker"><strong>WebAuthenticationBroker</strong></a></td>
+<td>None. for more details, see the <a href="https://github.com/microsoft/ProjectReunion/issues/398">WebAuthenticationBroker.AuthenticateAsync throws COMException</a> GitHub issue.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="classes-that-implement-iinitializewithwindow">Classes that implement IInitializeWithWindow</h3>
+<p>Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a <a href="/uwp/api/windows.ui.core.corewindow"><strong>CoreWindow</strong></a>; typically, to display a UI. Even though <strong>CoreWindow</strong> isn't supported in desktop apps (see <a href="#core-unsupported-classes">Core unsupported classes</a> above), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.</p>
+<p>For more info (including a list of affected types), and code examples, see <a href="../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<h3 id="unsupported-members">Unsupported members</h3>
+<p>This section lists (or describes, where a comprehensive list isn't possible) specific members of WinRT classes that aren't supported for use in desktop apps. Unless otherwise noted, the rest of the classes apart from these members are supported in desktop apps.</p>
+<h4 id="events">Events</h4>
+<p>The following classes are supported in desktop apps, except for the specified event(s).</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Unsupported events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/Windows.UI.ViewManagement.UISettings"><strong>UISettings</strong></a></td>
+<td><a href="/uwp/api/Windows.UI.ViewManagement.UISettings.ColorValuesChanged"><strong>ColorValuesChanged</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings"><strong>AccessibilitySettings</strong></a></td>
+<td><a href="/uwp/api/Windows.UI.ViewManagement.AccessibilitySettings.HighContrastChanged"><strong>HighContrastChanged</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="methods">Methods</h4>
+<p>The following classes are supported in desktop apps, except for the specified method(s).</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Unsupported methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing"><strong>DeviceInformationPairing</strong></a></td>
+<td><a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformationPairing.PairAsync"><strong>PairAsync</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="methods-that-use-the-request-naming-pattern">Methods that use the Request naming pattern</h4>
+<p>Most methods that follow the <strong>Request</strong> naming pattern—such as <a href="/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.requestaccessasync"><strong>AppCapability.RequestAccessAsync</strong></a> and <a href="/uwp/api/windows.services.store.storecontext.requestpurchaseasync"><strong>StoreContext.RequestPurchaseAsync</strong></a>—aren't supported in desktop apps. Internally, these methods use the <a href="/uwp/api/windows.ui.popups"><strong>Windows.UI.Popups</strong></a> class. That class requires that the thread have a <a href="/uwp/api/Windows.UI.Core.CoreWindow"><strong>CoreWindow</strong></a> object, which isn't supported in desktop apps.</p>
+<p>The full list of methods that follow the <strong>Request</strong> naming pattern is very long, and this article doesn't provide a comprehensive list of those methods.</p>
+<h2 id="apis-that-require-package-identity">APIs that require package identity</h2>
+<p>The following WinRT classes require package identity (see <a href="modernize-packaged-apps.html">Features that require package identity</a>). These APIs are supported only in desktop apps that are packaged (that is, that have package identity at runtime). The list might not be comprehensive.</p>
+<ul>
+<li><a href="/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler"><strong>Windows.ApplicationModel.DataTransfer.DataProviderHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest"><strong>Windows.ApplicationModel.DataTransfer.DataRequest</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequestDeferral"><strong>Windows.ApplicationModel.DataTransfer.DataRequestDeferral</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs"><strong>Windows.ApplicationModel.DataTransfer.DataRequestedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.DataTransfer.DataTransferManager"><strong>Windows.ApplicationModel.DataTransfer.DataTransferManager</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager"><strong>Windows.ApplicationModel.DataTransfer.SharedStorageAccessManager</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs"><strong>Windows.ApplicationModel.DataTransfer.TargetApplicationChosenEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.NamedResource"><strong>Windows.ApplicationModel.Resources.Core.NamedResource</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidate"><strong>Windows.ApplicationModel.Resources.Core.ResourceCandidate</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceCandidateVectorView"><strong>Windows.ApplicationModel.Resources.Core.ResourceCandidateVectorView</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContext"><strong>Windows.ApplicationModel.Resources.Core.ResourceContext</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceContextLanguagesVectorView"><strong>Windows.ApplicationModel.Resources.Core.ResourceContextLanguagesVectorView</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager"><strong>Windows.ApplicationModel.Resources.Core.ResourceManager</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap"><strong>Windows.ApplicationModel.Resources.Core.ResourceMap</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMapIterator"><strong>Windows.ApplicationModel.Resources.Core.ResourceMapIterator</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMapMapView"><strong>Windows.ApplicationModel.Resources.Core.ResourceMapMapView</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMapMapViewIterator"><strong>Windows.ApplicationModel.Resources.Core.ResourceMapMapViewIterator</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceQualifier"><strong>Windows.ApplicationModel.Resources.Core.ResourceQualifier</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceQualifierMapView"><strong>Windows.ApplicationModel.Resources.Core.ResourceQualifierMapView</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceQualifierObservableMap"><strong>Windows.ApplicationModel.Resources.Core.ResourceQualifierObservableMap</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView"><strong>Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView</strong></a></li>
+<li><a href="/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader"><strong>Windows.ApplicationModel.Resources.ResourceLoader</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Pdf.PdfDocument"><strong>Windows.Data.Pdf.PdfDocument</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Pdf.PdfPage"><strong>Windows.Data.Pdf.PdfPage</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Pdf.PdfPageDimensions"><strong>Windows.Data.Pdf.PdfPageDimensions</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Pdf.PdfPageRenderOptions"><strong>Windows.Data.Pdf.PdfPageRenderOptions</strong></a></li>
+<li><a href="/uwp/api/windows.data.text.selectablewordsegmentstokenizinghandler"><strong>Windows.Data.Text.SelectableWordSegmentsTokenizingHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Text.SemanticTextQuery"><strong>Windows.Data.Text.SemanticTextQuery</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Text.TextConversionGenerator"><strong>Windows.Data.Text.TextConversionGenerator</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Text.TextPredictionGenerator"><strong>Windows.Data.Text.TextPredictionGenerator</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Text.TextReverseConversionGenerator"><strong>Windows.Data.Text.TextReverseConversionGenerator</strong></a></li>
+<li><a href="/uwp/api/windows.data.text.wordsegmentstokenizinghandler"><strong>Windows.Data.Text.WordSegmentsTokenizingHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.DtdEntity"><strong>Windows.Data.Xml.Dom.DtdEntity</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.DtdNotation"><strong>Windows.Data.Xml.Dom.DtdNotation</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlAttribute"><strong>Windows.Data.Xml.Dom.XmlAttribute</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlCDataSection"><strong>Windows.Data.Xml.Dom.XmlCDataSection</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlComment"><strong>Windows.Data.Xml.Dom.XmlComment</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlDocument"><strong>Windows.Data.Xml.Dom.XmlDocument</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlDocumentFragment"><strong>Windows.Data.Xml.Dom.XmlDocumentFragment</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlDocumentType"><strong>Windows.Data.Xml.Dom.XmlDocumentType</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlDomImplementation"><strong>Windows.Data.Xml.Dom.XmlDomImplementation</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlElement"><strong>Windows.Data.Xml.Dom.XmlElement</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlEntityReference"><strong>Windows.Data.Xml.Dom.XmlEntityReference</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlLoadSettings"><strong>Windows.Data.Xml.Dom.XmlLoadSettings</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlNamedNodeMap"><strong>Windows.Data.Xml.Dom.XmlNamedNodeMap</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlNodeList"><strong>Windows.Data.Xml.Dom.XmlNodeList</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlProcessingInstruction"><strong>Windows.Data.Xml.Dom.XmlProcessingInstruction</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Dom.XmlText"><strong>Windows.Data.Xml.Dom.XmlText</strong></a></li>
+<li><a href="/uwp/api/Windows.Data.Xml.Xsl.XsltProcessor"><strong>Windows.Data.Xml.Xsl.XsltProcessor</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Input.KeyboardCapabilities"><strong>Windows.Devices.Input.KeyboardCapabilities</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Input.MouseCapabilities"><strong>Windows.Devices.Input.MouseCapabilities</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Input.MouseDevice"><strong>Windows.Devices.Input.MouseDevice</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Input.MouseEventArgs"><strong>Windows.Devices.Input.MouseEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Input.PointerDevice"><strong>Windows.Devices.Input.PointerDevice</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Input.TouchCapabilities"><strong>Windows.Devices.Input.TouchCapabilities</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Lights.Lamp"><strong>Windows.Devices.Lights.Lamp</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Lights.LampAvailabilityChangedEventArgs"><strong>Windows.Devices.Lights.LampAvailabilityChangedEventArgs</strong></a></li>
+<li><a href="/uwp/api/windows.devices.perception.provider.perceptionstartfaceauthenticationhandler"><strong>Windows.Devices.Perception.Provider.PerceptionStartFaceAuthenticationHandler</strong></a></li>
+<li><a href="/uwp/api/windows.devices.perception.provider.perceptionstopfaceauthenticationhandler"><strong>Windows.Devices.Perception.Provider.PerceptionStopFaceAuthenticationHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReader"><strong>Windows.Devices.PointOfService.MagneticStripeReader</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs"><strong>Windows.Devices.PointOfService.MagneticStripeReaderAamvaCardDataReceivedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs"><strong>Windows.Devices.PointOfService.MagneticStripeReaderBankCardDataReceivedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderCapabilities"><strong>Windows.Devices.PointOfService.MagneticStripeReaderCapabilities</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderCardTypes"><strong>Windows.Devices.PointOfService.MagneticStripeReaderCardTypes</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderEncryptionAlgorithms"><strong>Windows.Devices.PointOfService.MagneticStripeReaderEncryptionAlgorithms</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs"><strong>Windows.Devices.PointOfService.MagneticStripeReaderErrorOccurredEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderReport"><strong>Windows.Devices.PointOfService.MagneticStripeReaderReport</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs"><strong>Windows.Devices.PointOfService.MagneticStripeReaderStatusUpdatedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderTrackData"><strong>Windows.Devices.PointOfService.MagneticStripeReaderTrackData</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs"><strong>Windows.Devices.PointOfService.MagneticStripeReaderVendorSpecificCardDataReceivedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Portable.ServiceDevice"><strong>Windows.Devices.Portable.ServiceDevice</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Portable.StorageDevice"><strong>Windows.Devices.Portable.StorageDevice</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Printers.Print3DDevice"><strong>Windows.Devices.Printers.Print3DDevice</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.Printers.PrintSchema"><strong>Windows.Devices.Printers.PrintSchema</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.SmartCards.SmartCard"><strong>Windows.Devices.SmartCards.SmartCard</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.SmartCards.SmartCardConnection"><strong>Windows.Devices.SmartCards.SmartCardConnection</strong></a></li>
+<li><a href="/uwp/api/Windows.Devices.SmartCards.SmartCardReader"><strong>Windows.Devices.SmartCards.SmartCardReader</strong></a></li>
+<li><a href="/uwp/api/windows.foundation.asyncactioncompletedhandler"><strong>Windows.Foundation.AsyncActionCompletedHandler</strong></a></li>
+<li><a href="/uwp/api/windows.foundation.asyncactionprogresshandler-1"><strong>Windows.Foundation.AsyncActionProgressHandler&lt;TProgress&gt;</strong></a></li>
+<li><a href="/uwp/api/windows.foundation.asyncactionwithprogresscompletedhandler-1"><strong>Windows.Foundation.AsyncActionWithProgressCompletedHandler&lt;TProgress&gt;</strong></a></li>
+<li><a href="/uwp/api/windows.foundation.asyncoperationcompletedhandler-1"><strong>Windows.Foundation.AsyncOperationCompletedHandler&lt;TProgress&gt;</strong></a></li>
+<li><a href="/uwp/api/windows.foundation.collections.vectorchangedeventhandler-1"><strong>Windows.Foundation.Collections.VectorChangedEventHandler&lt;T&gt;</strong></a></li>
+<li><a href="/uwp/api/windows.foundation.deferralcompletedhandler"><strong>Windows.Foundation.DeferralCompletedHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.FileLoggingSession"><strong>Windows.Foundation.Diagnostics.FileLoggingSession</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs"><strong>Windows.Foundation.Diagnostics.LogFileGeneratedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.LoggingActivity"><strong>Windows.Foundation.Diagnostics.LoggingActivity</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.LoggingChannel"><strong>Windows.Foundation.Diagnostics.LoggingChannel</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.LoggingChannelOptions"><strong>Windows.Foundation.Diagnostics.LoggingChannelOptions</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.LoggingFields"><strong>Windows.Foundation.Diagnostics.LoggingFields</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.LoggingOptions"><strong>Windows.Foundation.Diagnostics.LoggingOptions</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Diagnostics.LoggingSession"><strong>Windows.Foundation.Diagnostics.LoggingSession</strong></a></li>
+<li><a href="/uwp/api/windows.foundation.eventhandler-1"><strong>Windows.Foundation.EventHandler&lt;T&gt;</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.MemoryBuffer"><strong>Windows.Foundation.MemoryBuffer</strong></a></li>
+<li><a href="/uwp/api/Windows.Globalization.ApplicationLanguages"><strong>Windows.Globalization.ApplicationLanguages</strong></a></li>
+<li><a href="/uwp/api/Windows.Globalization.JapanesePhoneme"><strong>Windows.Globalization.JapanesePhoneme</strong></a></li>
+<li><a href="/uwp/api/Windows.Globalization.JapanesePhoneticAnalyzer"><strong>Windows.Globalization.JapanesePhoneticAnalyzer</strong></a></li>
+<li><a href="/uwp/api/Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter"><strong>Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter</strong></a></li>
+<li><a href="/uwp/api/Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo"><strong>Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapBuffer"><strong>Windows.Graphics.Imaging.BitmapBuffer</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapCodecInformation"><strong>Windows.Graphics.Imaging.BitmapCodecInformation</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapDecoder"><strong>Windows.Graphics.Imaging.BitmapDecoder</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapEncoder"><strong>Windows.Graphics.Imaging.BitmapEncoder</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapFrame"><strong>Windows.Graphics.Imaging.BitmapFrame</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapProperties"><strong>Windows.Graphics.Imaging.BitmapProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapPropertiesView"><strong>Windows.Graphics.Imaging.BitmapPropertiesView</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapPropertySet"><strong>Windows.Graphics.Imaging.BitmapPropertySet</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapTransform"><strong>Windows.Graphics.Imaging.BitmapTransform</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.BitmapTypedValue"><strong>Windows.Graphics.Imaging.BitmapTypedValue</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.ImageStream"><strong>Windows.Graphics.Imaging.ImageStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.PixelDataProvider"><strong>Windows.Graphics.Imaging.PixelDataProvider</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap"><strong>Windows.Graphics.Imaging.SoftwareBitmap</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs"><strong>Windows.Graphics.Printing3D.Print3DTaskRequestedEventArgs</strong></a></li>
+<li><a href="/uwp/api/windows.graphics.printing3d.print3dtasksourcerequestedhandler"><strong>Windows.Graphics.Printing3D.Print3DTaskSourceRequestedHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3D3MFPackage"><strong>Windows.Graphics.Printing3D.Printing3D3MFPackage</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DBaseMaterial"><strong>Windows.Graphics.Printing3D.Printing3DBaseMaterial</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup"><strong>Windows.Graphics.Printing3D.Printing3DBaseMaterialGroup</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DColorMaterial"><strong>Windows.Graphics.Printing3D.Printing3DColorMaterial</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DColorMaterialGroup"><strong>Windows.Graphics.Printing3D.Printing3DColorMaterialGroup</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DComponent"><strong>Windows.Graphics.Printing3D.Printing3DComponent</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DComponentWithMatrix"><strong>Windows.Graphics.Printing3D.Printing3DComponentWithMatrix</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DCompositeMaterial"><strong>Windows.Graphics.Printing3D.Printing3DCompositeMaterial</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup"><strong>Windows.Graphics.Printing3D.Printing3DCompositeMaterialGroup</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DFaceReductionOptions"><strong>Windows.Graphics.Printing3D.Printing3DFaceReductionOptions</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DMaterial"><strong>Windows.Graphics.Printing3D.Printing3DMaterial</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DMesh"><strong>Windows.Graphics.Printing3D.Printing3DMesh</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DMeshVerificationResult"><strong>Windows.Graphics.Printing3D.Printing3DMeshVerificationResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DModel"><strong>Windows.Graphics.Printing3D.Printing3DModel</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DModelTexture"><strong>Windows.Graphics.Printing3D.Printing3DModelTexture</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterial"><strong>Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterial</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup"><strong>Windows.Graphics.Printing3D.Printing3DMultiplePropertyMaterialGroup</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial"><strong>Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup"><strong>Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup</strong></a></li>
+<li><a href="/uwp/api/Windows.Graphics.Printing3D.Printing3DTextureResource"><strong>Windows.Graphics.Printing3D.Printing3DTextureResource</strong></a></li>
+<li><a href="/uwp/api/Windows.Management.Core.ApplicationDataManager"><strong>Windows.Management.Core.ApplicationDataManager</strong></a></li>
+<li><a href="/uwp/api/Windows.Management.Deployment.DeploymentResult"><strong>Windows.Management.Deployment.DeploymentResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Management.Deployment.PackageManager"><strong>Windows.Management.Deployment.PackageManager</strong></a></li>
+<li><a href="/uwp/api/Windows.Management.Deployment.PackageUserInformation"><strong>Windows.Management.Deployment.PackageUserInformation</strong></a></li>
+<li><a href="/uwp/api/Windows.Management.Deployment.PackageVolume"><strong>Windows.Management.Deployment.PackageVolume</strong></a></li>
+<li><a href="/uwp/api/Windows.Management.Workplace.MdmPolicy"><strong>Windows.Management.Workplace.MdmPolicy</strong></a></li>
+<li><a href="/uwp/api/Windows.Management.Workplace.WorkplaceSettings"><strong>Windows.Management.Workplace.WorkplaceSettings</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.AudioBuffer"><strong>Windows.Media.AudioBuffer</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto"><strong>Windows.Media.Capture.AdvancedCapturedPhoto</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.AppCaptureAlternateShortcutKeys"><strong>Windows.Media.Capture.AppCaptureAlternateShortcutKeys</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.AppCaptureManager"><strong>Windows.Media.Capture.AppCaptureManager</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.AppCaptureSettings"><strong>Windows.Media.Capture.AppCaptureSettings</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.CapturedFrame"><strong>Windows.Media.Capture.CapturedFrame</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.MediaCaptureFailedEventArgs"><strong>Windows.Media.Capture.MediaCaptureFailedEventArgs</strong></a></li>
+<li><a href="/uwp/api/windows.media.capture.mediacapturefailedeventhandler"><strong>Windows.Media.Capture.MediaCaptureFailedEventHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.MediaCapturePauseResult"><strong>Windows.Media.Capture.MediaCapturePauseResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.MediaCaptureStopResult"><strong>Windows.Media.Capture.MediaCaptureStopResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs"><strong>Windows.Media.Capture.OptionalReferencePhotoCapturedEventArgs</strong></a></li>
+<li><a href="/uwp/api/windows.media.capture.recordlimitationexceededeventhandler"><strong>Windows.Media.Capture.RecordLimitationExceededEventHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.ClosedCaptioning.ClosedCaptionProperties"><strong>Windows.Media.ClosedCaptioning.ClosedCaptionProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs"><strong>Windows.Media.Devices.DefaultAudioCaptureDeviceChangedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs"><strong>Windows.Media.Devices.DefaultAudioRenderDeviceChangedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Devices.MediaDevice"><strong>Windows.Media.Devices.MediaDevice</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.DialProtocol.DialApp"><strong>Windows.Media.DialProtocol.DialApp</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.DialProtocol.DialAppStateDetails"><strong>Windows.Media.DialProtocol.DialAppStateDetails</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.DialProtocol.DialDevice"><strong>Windows.Media.DialProtocol.DialDevice</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.FaceAnalysis.DetectedFace"><strong>Windows.Media.FaceAnalysis.DetectedFace</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.FaceAnalysis.FaceDetector"><strong>Windows.Media.FaceAnalysis.FaceDetector</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.FaceAnalysis.FaceTracker"><strong>Windows.Media.FaceAnalysis.FaceTracker</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.MediaExtensionManager"><strong>Windows.Media.MediaExtensionManager</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.MediaProperties.H264ProfileIds"><strong>Windows.Media.MediaProperties.H264ProfileIds</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.MediaProperties.MediaEncodingSubtypes"><strong>Windows.Media.MediaProperties.MediaEncodingSubtypes</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.MediaProperties.Mpeg2ProfileIds"><strong>Windows.Media.MediaProperties.Mpeg2ProfileIds</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Ocr.OcrEngine"><strong>Windows.Media.Ocr.OcrEngine</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Ocr.OcrLine"><strong>Windows.Media.Ocr.OcrLine</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Ocr.OcrResult"><strong>Windows.Media.Ocr.OcrResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Ocr.OcrWord"><strong>Windows.Media.Ocr.OcrWord</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Playback.PlaybackMediaMarker"><strong>Windows.Media.Playback.PlaybackMediaMarker</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs"><strong>Windows.Media.Playback.PlaybackMediaMarkerReachedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.Playback.PlaybackMediaMarkerSequence"><strong>Windows.Media.Playback.PlaybackMediaMarkerSequence</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs"><strong>Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs"><strong>Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession"><strong>Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionCompilationResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionHypothesis</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionResult"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionSemanticInterpretation</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint"><strong>Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>Windows.Media.SpeechRecognition.SpeechRecognizer</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs"><strong>Windows.Media.SpeechRecognition.SpeechRecognizerStateChangedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts"><strong>Windows.Media.SpeechRecognition.SpeechRecognizerTimeouts</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions"><strong>Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechSynthesis.SpeechSynthesisStream"><strong>Windows.Media.SpeechSynthesis.SpeechSynthesisStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechSynthesis.SpeechSynthesizer"><strong>Windows.Media.SpeechSynthesis.SpeechSynthesizer</strong></a></li>
+<li><a href="/uwp/api/Windows.Media.SpeechSynthesis.VoiceInformation"><strong>Windows.Media.SpeechSynthesis.VoiceInformation</strong></a></li>
+<li><a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel"><strong>Windows.Networking.PushNotifications.PushNotificationChannel</strong></a></li>
+<li><a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager"><strong>Windows.Networking.PushNotifications.PushNotificationChannelManager</strong></a></li>
+<li><a href="/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs"><strong>Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Networking.PushNotifications.RawNotification"><strong>Windows.Networking.PushNotifications.RawNotification</strong></a></li>
+<li><a href="/uwp/api/Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs"><strong>Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs"><strong>Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs"><strong>Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceLaneInfo"><strong>Windows.Services.Maps.Guidance.GuidanceLaneInfo</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceManeuver"><strong>Windows.Services.Maps.Guidance.GuidanceManeuver</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceMapMatchedCoordinate"><strong>Windows.Services.Maps.Guidance.GuidanceMapMatchedCoordinate</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceNavigator"><strong>Windows.Services.Maps.Guidance.GuidanceNavigator</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs"><strong>Windows.Services.Maps.Guidance.GuidanceReroutedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceRoadSegment"><strong>Windows.Services.Maps.Guidance.GuidanceRoadSegment</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceRoadSignpost"><strong>Windows.Services.Maps.Guidance.GuidanceRoadSignpost</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceRoute"><strong>Windows.Services.Maps.Guidance.GuidanceRoute</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceTelemetryCollector"><strong>Windows.Services.Maps.Guidance.GuidanceTelemetryCollector</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs"><strong>Windows.Services.Maps.Guidance.GuidanceUpdatedEventArgs</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.LocalSearch.LocalCategories"><strong>Windows.Services.Maps.LocalSearch.LocalCategories</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.LocalSearch.LocalLocation"><strong>Windows.Services.Maps.LocalSearch.LocalLocation</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.LocalSearch.LocalLocationFinder"><strong>Windows.Services.Maps.LocalSearch.LocalLocationFinder</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.LocalSearch.LocalLocationFinderResult"><strong>Windows.Services.Maps.LocalSearch.LocalLocationFinderResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem"><strong>Windows.Services.Maps.LocalSearch.LocalLocationHoursOfOperationItem</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo"><strong>Windows.Services.Maps.LocalSearch.LocalLocationRatingInfo</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapAddress"><strong>Windows.Services.Maps.MapAddress</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapLocation"><strong>Windows.Services.Maps.MapLocation</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapLocationFinder"><strong>Windows.Services.Maps.MapLocationFinder</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapLocationFinderResult"><strong>Windows.Services.Maps.MapLocationFinderResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapManager"><strong>Windows.Services.Maps.MapManager</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapRoute"><strong>Windows.Services.Maps.MapRoute</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapRouteDrivingOptions"><strong>Windows.Services.Maps.MapRouteDrivingOptions</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapRouteFinder"><strong>Windows.Services.Maps.MapRouteFinder</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapRouteFinderResult"><strong>Windows.Services.Maps.MapRouteFinderResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapRouteLeg"><strong>Windows.Services.Maps.MapRouteLeg</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapRouteManeuver"><strong>Windows.Services.Maps.MapRouteManeuver</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Maps.MapService"><strong>Windows.Services.Maps.MapService</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreAcquireLicenseResult"><strong>Windows.Services.Store.StoreAcquireLicenseResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreAppLicense"><strong>Windows.Services.Store.StoreAppLicense</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreAvailability"><strong>Windows.Services.Store.StoreAvailability</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreCollectionData"><strong>Windows.Services.Store.StoreCollectionData</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreConsumableResult"><strong>Windows.Services.Store.StoreConsumableResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreContext"><strong>Windows.Services.Store.StoreContext</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreImage"><strong>Windows.Services.Store.StoreImage</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreLicense"><strong>Windows.Services.Store.StoreLicense</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StorePackageLicense"><strong>Windows.Services.Store.StorePackageLicense</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StorePackageUpdate"><strong>Windows.Services.Store.StorePackageUpdate</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StorePackageUpdateResult"><strong>Windows.Services.Store.StorePackageUpdateResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StorePrice"><strong>Windows.Services.Store.StorePrice</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreProduct"><strong>Windows.Services.Store.StoreProduct</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreProductPagedQueryResult"><strong>Windows.Services.Store.StoreProductPagedQueryResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreProductQueryResult"><strong>Windows.Services.Store.StoreProductQueryResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreProductResult"><strong>Windows.Services.Store.StoreProductResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StorePurchaseProperties"><strong>Windows.Services.Store.StorePurchaseProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StorePurchaseResult"><strong>Windows.Services.Store.StorePurchaseResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreRequestHelper"><strong>Windows.Services.Store.StoreRequestHelper</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreSendRequestResult"><strong>Windows.Services.Store.StoreSendRequestResult</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreSku"><strong>Windows.Services.Store.StoreSku</strong></a></li>
+<li><a href="/uwp/api/Windows.Services.Store.StoreVideo"><strong>Windows.Services.Store.StoreVideo</strong></a></li>
+<li><a href="/uwp/api/windows.storage.accesscache.storageapplicationpermissions"><strong>Windows.Storage.AccessCache.StorageApplicationPermissions</strong></a></li>
+<li><a href="/uwp/api/windows.storage.applicationdata"><strong>Windows.Storage.ApplicationData</strong></a></li>
+<li><a href="/uwp/api/windows.storage.applicationdatasetversionhandler"><strong>Windows.Storage.ApplicationDataSetVersionHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.CachedFileManager"><strong>Windows.Storage.CachedFileManager</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.DownloadsFolder"><strong>Windows.Storage.DownloadsFolder</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileIO"><strong>Windows.Storage.FileIO</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileProperties.BasicProperties"><strong>Windows.Storage.FileProperties.BasicProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileProperties.DocumentProperties"><strong>Windows.Storage.FileProperties.DocumentProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileProperties.ImageProperties"><strong>Windows.Storage.FileProperties.ImageProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileProperties.MusicProperties"><strong>Windows.Storage.FileProperties.MusicProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileProperties.StorageItemContentProperties"><strong>Windows.Storage.FileProperties.StorageItemContentProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail"><strong>Windows.Storage.FileProperties.StorageItemThumbnail</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.FileProperties.VideoProperties"><strong>Windows.Storage.FileProperties.VideoProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.KnownFolders"><strong>Windows.Storage.KnownFolders</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.PathIO"><strong>Windows.Storage.PathIO</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.StorageFile"><strong>Windows.Storage.StorageFile</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.StorageFolder"><strong>Windows.Storage.StorageFolder</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.StorageLibrary"><strong>Windows.Storage.StorageLibrary</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.StorageProvider"><strong>Windows.Storage.StorageProvider</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.StorageStreamTransaction"><strong>Windows.Storage.StorageStreamTransaction</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.StreamedFileDataRequest"><strong>Windows.Storage.StreamedFileDataRequest</strong></a></li>
+<li><a href="/uwp/api/windows.storage.streamedfiledatarequestedhandler"><strong>Windows.Storage.StreamedFileDataRequestedHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.Buffer"><strong>Windows.Storage.Streams.Buffer</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.DataReader"><strong>Windows.Storage.Streams.DataReader</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.DataReaderLoadOperation"><strong>Windows.Storage.Streams.DataReaderLoadOperation</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.DataWriter"><strong>Windows.Storage.Streams.DataWriter</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.DataWriterStoreOperation"><strong>Windows.Storage.Streams.DataWriterStoreOperation</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.FileInputStream"><strong>Windows.Storage.Streams.FileInputStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.FileOutputStream"><strong>Windows.Storage.Streams.FileOutputStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.FileRandomAccessStream"><strong>Windows.Storage.Streams.FileRandomAccessStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.InMemoryRandomAccessStream"><strong>Windows.Storage.Streams.InMemoryRandomAccessStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.InputStreamOverStream"><strong>Windows.Storage.Streams.InputStreamOverStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.OutputStreamOverStream"><strong>Windows.Storage.Streams.OutputStreamOverStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.RandomAccessStream"><strong>Windows.Storage.Streams.RandomAccessStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.RandomAccessStreamOverStream"><strong>Windows.Storage.Streams.RandomAccessStreamOverStream</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.Streams.RandomAccessStreamReference"><strong>Windows.Storage.Streams.RandomAccessStreamReference</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemAudioProperties"><strong>Windows.Storage.SystemAudioProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemGPSProperties"><strong>Windows.Storage.SystemGPSProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemImageProperties"><strong>Windows.Storage.SystemImageProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemMediaProperties"><strong>Windows.Storage.SystemMediaProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemMusicProperties"><strong>Windows.Storage.SystemMusicProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemPhotoProperties"><strong>Windows.Storage.SystemPhotoProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemProperties"><strong>Windows.Storage.SystemProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.Storage.SystemVideoProperties"><strong>Windows.Storage.SystemVideoProperties</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Diagnostics.ProcessCpuUsage"><strong>Windows.System.Diagnostics.ProcessCpuUsage</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Diagnostics.ProcessCpuUsageReport"><strong>Windows.System.Diagnostics.ProcessCpuUsageReport</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Diagnostics.ProcessDiagnosticInfo"><strong>Windows.System.Diagnostics.ProcessDiagnosticInfo</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Diagnostics.ProcessDiskUsage"><strong>Windows.System.Diagnostics.ProcessDiskUsage</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Diagnostics.ProcessDiskUsageReport"><strong>Windows.System.Diagnostics.ProcessDiskUsageReport</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Diagnostics.ProcessMemoryUsage"><strong>Windows.System.Diagnostics.ProcessMemoryUsage</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Diagnostics.ProcessMemoryUsageReport"><strong>Windows.System.Diagnostics.ProcessMemoryUsageReport</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Profile.AnalyticsInfo"><strong>Windows.System.Profile.AnalyticsInfo</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Profile.AnalyticsVersionInfo"><strong>Windows.System.Profile.AnalyticsVersionInfo</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Threading.Core.PreallocatedWorkItem"><strong>Windows.System.Threading.Core.PreallocatedWorkItem</strong></a></li>
+<li><a href="/uwp/api/windows.system.threading.core.signalhandler"><strong>Windows.System.Threading.Core.SignalHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Threading.Core.SignalNotifier"><strong>Windows.System.Threading.Core.SignalNotifier</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Threading.ThreadPool"><strong>Windows.System.Threading.ThreadPool</strong></a></li>
+<li><a href="/uwp/api/Windows.System.Threading.ThreadPoolTimer"><strong>Windows.System.Threading.ThreadPoolTimer</strong></a></li>
+<li><a href="/uwp/api/windows.system.threading.timerdestroyedhandler"><strong>Windows.System.Threading.TimerDestroyedHandler</strong></a></li>
+<li><a href="/uwp/api/windows.system.threading.timerelapsedhandler"><strong>Windows.System.Threading.TimerElapsedHandler</strong></a></li>
+<li><a href="/uwp/api/windows.system.threading.workitemhandler"><strong>Windows.System.Threading.WorkItemHandler</strong></a></li>
+<li><a href="/uwp/api/Windows.System.TimeZoneSettings"><strong>Windows.System.TimeZoneSettings</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.BadgeNotification"><strong>Windows.UI.Notifications.BadgeNotification</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.BadgeUpdateManager"><strong>Windows.UI.Notifications.BadgeUpdateManager</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.BadgeUpdater"><strong>Windows.UI.Notifications.BadgeUpdater</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.ScheduledTileNotification"><strong>Windows.UI.Notifications.ScheduledTileNotification</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.ScheduledToastNotification"><strong>Windows.UI.Notifications.ScheduledToastNotification</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.TileNotification"><strong>Windows.UI.Notifications.TileNotification</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.TileUpdateManager"><strong>Windows.UI.Notifications.TileUpdateManager</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.TileUpdater"><strong>Windows.UI.Notifications.TileUpdater</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Notifications.ToastNotificationHistory"><strong>Windows.UI.Notifications.ToastNotificationHistory</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.StartScreen.JumpList"><strong>Windows.UI.StartScreen.JumpList</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.StartScreen.JumpListItem"><strong>Windows.UI.StartScreen.JumpListItem</strong></a></li>
+</ul>
+<p>In addition, when called from a desktop app that doesn't have package identity, the <a href="/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource.CreateFromUriAsync"><strong>AdaptiveMediaSource.CreateFromUriAsync</strong></a> methods don't support the <code>ms-appx</code> and <code>ms-resource</code> URI formats.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/desktop-to-uwp-supported-api.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

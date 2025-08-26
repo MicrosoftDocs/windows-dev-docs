@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Simulate user input through input injection </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Simulate user input through input injection ">
+    
+    <meta name="description" content="Simulate and automate input from devices such as keyboard, mouse, touch, pen, and gamepad in your Windows apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="simulate-user-input-through-input-injection">Simulate user input through input injection</h1>
+
+<p>Simulate and automate user input from devices such as keyboard, mouse, touch, pen, and gamepad in your Windows applications.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.input.preview.injection"><strong>Windows.UI.Input.Preview.Injection</strong></a></p>
+</blockquote>
+<h2 id="overview">Overview</h2>
+<p>Input injection enables your Windows application to simulate input from a variety of input devices and direct that input anywhere, including outside your app's client area (even to apps running with Administrator privileges, such as the Registry Editor).</p>
+<p>Input injection is useful for Windows apps and tools that need to provide functionality that includes accessibility, testing (ad-hoc, automated), and remote access and support features.</p>
+<h2 id="setup">Setup</h2>
+<p>To use the input injection APIs in your Windows app you'll need to add the following to the app manifest:</p>
+<ol>
+<li>Right click the <strong>Package.appxmanifest</strong> file and select <strong>View code</strong>.</li>
+<li>Insert the following into the <code>Package</code> node:
+<ul>
+<li><code>xmlns:rescap=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities&quot;</code></li>
+<li><code>IgnorableNamespaces=&quot;rescap&quot;</code></li>
+</ul>
+</li>
+<li>Insert the following into the <code>Capabilities</code> node:
+<ul>
+<li><code>&lt;rescap:Capability Name=&quot;inputInjectionBrokered&quot; /&gt;</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="duplicate-user-input">Duplicate user input</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><img src="images/injection/touch-input-injection.gif" alt="Touch input injection sample"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><em>Touch input injection sample</em></td>
+</tr>
+</tbody>
+</table>
+<p>In this example, we demonstrate how to use the input injection APIs (<a href="/uwp/api/windows.ui.input.preview.injection">Windows.UI.Input.Preview.Injection</a>) to listen for mouse input events in one region of an app, and simulate corresponding touch input events in another region.</p>
+<p><strong>Download this sample from <a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip">Input injection sample (mouse to touch)</a></strong></p>
+<ol>
+<li><p>First, we set up the UI (MainPage.xaml).</p>
+<p>We have two Grid areas (one for mouse input and one for injected touch input), each with four buttons.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Grid background must be assigned a value (<code>Transparent</code>, in this case), otherwise pointer events are not detected.</p>
+</div>
+<p>When any mouse clicks are detected in the input area, a corresponding touch event is injected into the input injection area. Button clicks from inject input are reported in the title area.</p>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;StackPanel Grid.Row=&quot;0&quot;
+                Margin=&quot;10&quot;&gt;
+        &lt;TextBlock Style=&quot;{ThemeResource TitleTextBlockStyle}&quot; 
+                   Name=&quot;titleText&quot;
+                   Text=&quot;Touch input injection&quot;
+                   HorizontalTextAlignment=&quot;Center&quot; /&gt;
+        &lt;TextBlock Style=&quot;{ThemeResource BodyTextBlockStyle}&quot;
+                   Name=&quot;statusText&quot;
+                   HorizontalTextAlignment=&quot;Center&quot; /&gt;
+    &lt;/StackPanel&gt;
+    &lt;Grid HorizontalAlignment=&quot;Center&quot;
+                    Grid.Row=&quot;1&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition/&gt;
+            &lt;ColumnDefinition/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+        &lt;TextBlock Grid.Column=&quot;0&quot; 
+                   Grid.Row=&quot;0&quot; 
+                   Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot;
+                   Text=&quot;User mouse input area&quot;/&gt;
+        &lt;!-- Background must be set to something, otherwise pointer events are not detected. --&gt;
+        &lt;Grid Name=&quot;ContainerInput&quot; 
+              Grid.Column=&quot;0&quot; 
+              Grid.Row=&quot;1&quot;
+              HorizontalAlignment=&quot;Stretch&quot; 
+              Background=&quot;Transparent&quot; 
+              BorderBrush=&quot;Green&quot; 
+              BorderThickness=&quot;2&quot; 
+              MinHeight=&quot;100&quot; MinWidth=&quot;300&quot; 
+              Margin=&quot;10&quot;&gt;
+            &lt;Grid.ColumnDefinitions&gt;
+                &lt;ColumnDefinition/&gt;
+                &lt;ColumnDefinition/&gt;
+                &lt;ColumnDefinition/&gt;
+                &lt;ColumnDefinition/&gt;
+            &lt;/Grid.ColumnDefinitions&gt;
+            &lt;Button Name=&quot;B1&quot; 
+                    Grid.Column=&quot;0&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot;
+                    Content=&quot;B1&quot; /&gt;
+            &lt;Button Name=&quot;B2&quot; 
+                    Grid.Column=&quot;1&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot;
+                    Content=&quot;B2&quot; /&gt;
+            &lt;Button Name=&quot;B3&quot; 
+                    Grid.Column=&quot;2&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot;
+                    Content=&quot;B3&quot; /&gt;
+            &lt;Button Name=&quot;B4&quot; 
+                    Grid.Column=&quot;3&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot;
+                    Content=&quot;B4&quot; /&gt;
+        &lt;/Grid&gt;
+        &lt;TextBlock Grid.Column=&quot;1&quot; 
+                   Grid.Row=&quot;0&quot;                         
+                   Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot;
+                   Text=&quot;Injected touch input area&quot;/&gt;
+        &lt;Grid Name=&quot;ContainerInject&quot;
+              Grid.Column=&quot;1&quot;  
+              Grid.Row=&quot;1&quot;
+              HorizontalAlignment=&quot;Stretch&quot;
+              BorderBrush=&quot;Red&quot; 
+              BorderThickness=&quot;2&quot; 
+              MinHeight=&quot;100&quot; MinWidth=&quot;300&quot; 
+              Margin=&quot;10&quot;&gt;
+            &lt;Grid.ColumnDefinitions&gt;
+                &lt;ColumnDefinition/&gt;
+                &lt;ColumnDefinition/&gt;
+                &lt;ColumnDefinition/&gt;
+                &lt;ColumnDefinition/&gt;
+            &lt;/Grid.ColumnDefinitions&gt;
+            &lt;Button Name=&quot;B1i&quot; Click=&quot;Button_Click_Injected&quot;
+                    Content=&quot;B1i&quot;
+                    Grid.Column=&quot;0&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot; /&gt;
+            &lt;Button Name=&quot;B2i&quot; Click=&quot;Button_Click_Injected&quot;
+                    Content=&quot;B2i&quot;
+                    Grid.Column=&quot;1&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot; /&gt;
+            &lt;Button Name=&quot;B3i&quot; Click=&quot;Button_Click_Injected&quot;
+                    Content=&quot;B3i&quot;
+                    Grid.Column=&quot;2&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot; /&gt;
+            &lt;Button Name=&quot;B4i&quot; Click=&quot;Button_Click_Injected&quot;
+                    Content=&quot;B4i&quot;
+                    Grid.Column=&quot;3&quot; 
+                    HorizontalAlignment=&quot;Center&quot; 
+                    Width=&quot;50&quot; Height=&quot;50&quot; /&gt;
+        &lt;/Grid&gt;
+    &lt;/Grid&gt;
+&lt;/Grid&gt;
+</code></pre>
+</li>
+<li><p>Next, we initialize our app.</p>
+<p>In this snippet, we declare our global objects and declare listeners for pointer events (<a href="/uwp/api/windows.ui.xaml.uielement.addhandler">AddHandler</a>) within the mouse input area that might be marked as handled in the button click events.</p>
+<p>The <a href="/uwp/api/windows.ui.input.preview.injection.inputinjector">InputInjector</a> object represents the virtual input device for sending the input data.</p>
+<p>In the <code>ContainerInput_PointerPressed</code> handler we call the touch injection function.</p>
+<p>In the <code>ContainerInput_PointerReleased</code> handler, we call UninitializeTouchInjection to shut down the <a href="/uwp/api/windows.ui.input.preview.injection.inputinjector">InputInjector</a> object.</p>
+<pre><code class="lang-csharp">public sealed partial class MainPage : Page
+{
+    /// &lt;summary&gt;
+    /// The virtual input device.
+    /// &lt;/summary&gt;
+    InputInjector _inputInjector;
+
+    /// &lt;summary&gt;
+    /// Initialize the app, set the window size, 
+    /// and add pointer input handlers for the container.
+    /// &lt;/summary&gt;
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        ApplicationView.PreferredLaunchViewSize =
+            new Size(600, 200);
+        ApplicationView.PreferredLaunchWindowingMode =
+            ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+        // Button handles PointerPressed/PointerReleased in 
+        // the Tapped routed event, but we need the container Grid 
+        // to handle them also. Add a handler for both 
+        // PointerPressedEvent and PointerReleasedEvent on the input Grid 
+        // and set handledEventsToo to true.
+        ContainerInput.AddHandler(PointerPressedEvent,
+            new PointerEventHandler(ContainerInput_PointerPressed), true);
+        ContainerInput.AddHandler(PointerReleasedEvent,
+            new PointerEventHandler(ContainerInput_PointerReleased), true);
+    }
+
+    /// &lt;summary&gt;
+    /// PointerReleased handler for all pointer conclusion events.
+    /// PointerPressed and PointerReleased events do not always occur 
+    /// in pairs, so your app should listen for and handle any event that 
+    /// might conclude a pointer down (such as PointerExited, PointerCanceled, 
+    /// and PointerCaptureLost).  
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;sender&quot;&gt;Source of the click event&lt;/param&gt;
+    /// &lt;param name=&quot;e&quot;&gt;Event args for the button click routed event&lt;/param&gt;
+    private void ContainerInput_PointerReleased(
+        object sender, PointerRoutedEventArgs e)
+    {
+        // Prevent most handlers along the event route from handling event again.
+        e.Handled = true;
+
+        // Shut down the virtual input device.
+        _inputInjector.UninitializeTouchInjection();
+    }
+
+    /// &lt;summary&gt;
+    /// PointerPressed handler.
+    /// PointerPressed and PointerReleased events do not always occur 
+    /// in pairs. Your app should listen for and handle any event that 
+    /// might conclude a pointer down (such as PointerExited, 
+    /// PointerCanceled, and PointerCaptureLost).  
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;sender&quot;&gt;Source of the click event&lt;/param&gt;
+    /// &lt;param name=&quot;e&quot;&gt;Event args for the button click routed event&lt;/param&gt;
+    private void ContainerInput_PointerPressed(
+        object sender, PointerRoutedEventArgs e)
+    {
+        // Prevent most handlers along the event route from 
+        // handling the same event again.
+        e.Handled = true;
+
+        InjectTouchForMouse(e.GetCurrentPoint(ContainerInput));
+
+    }
+    ...
+}
+</code></pre>
+</li>
+<li><p>Here's the touch input injection function.</p>
+<p>First, we call <a href="/uwp/api/windows.ui.input.preview.injection.inputinjector.trycreate">TryCreate</a> to instantiate the <a href="/uwp/api/windows.ui.input.preview.injection.inputinjector">InputInjector</a> object.</p>
+<p>Then, we call <a href="/uwp/api/windows.ui.input.preview.injection.inputinjector.initializetouchinjection">InitializeTouchInjection</a> with an <a href="/uwp/api/windows.ui.input.preview.injection.injectedinputvisualizationmode">InjectedInputVisualizationMode</a> of <code>Default</code>.</p>
+<p>After calculating the point of injection, we call <a href="/uwp/api/windows.ui.input.preview.injection.injectedinputtouchinfo">InjectedInputTouchInfo</a> to initialize the list of touch points to inject (for this example, we create one touch point corresponding to the mouse input pointer).</p>
+<p>Finally, we call <a href="/uwp/api/windows.ui.input.preview.injection.inputinjector.injecttouchinput">InjectTouchInput</a> twice, the first for a pointer down and the second for a pointer up.</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Inject touch input on injection target corresponding 
+/// to mouse click on input target.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;pointerPoint&quot;&gt;The mouse click pointer.&lt;/param&gt;
+private void InjectTouchForMouse(PointerPoint pointerPoint)
+{
+    // Create the touch injection object.
+    _inputInjector = InputInjector.TryCreate();
+
+    if (_inputInjector != null)
+    {
+        _inputInjector.InitializeTouchInjection(
+            InjectedInputVisualizationMode.Default);
+
+        // Create a unique pointer ID for the injected touch pointer.
+        // Multiple input pointers would require more robust handling.
+        uint pointerId = pointerPoint.PointerId + 1;
+
+        // Get the bounding rectangle of the app window.
+        Rect appBounds =
+            Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().VisibleBounds;
+
+        // Get the top left screen coordinates of the app window rect.
+        Point appBoundsTopLeft = new Point(appBounds.Left, appBounds.Top);
+
+        // Get a reference to the input injection area.
+        GeneralTransform injectArea =
+            ContainerInject.TransformToVisual(Window.Current.Content);
+
+        // Get the top left screen coordinates of the input injection area.
+        Point injectAreaTopLeft = injectArea.TransformPoint(new Point(0, 0));
+
+        // Get the screen coordinates (relative to the input area) 
+        // of the input pointer.
+        int pointerPointX = (int)pointerPoint.Position.X;
+        int pointerPointY = (int)pointerPoint.Position.Y;
+
+        // Create the point for input injection and calculate its screen location.
+        Point injectionPoint =
+            new Point(
+                appBoundsTopLeft.X + injectAreaTopLeft.X + pointerPointX,
+                appBoundsTopLeft.Y + injectAreaTopLeft.Y + pointerPointY);
+
+        // Create a touch data point for pointer down.
+        // Each element in the touch data list represents a single touch contact. 
+        // For this example, we're mirroring a single mouse pointer.
+        List&lt;InjectedInputTouchInfo&gt; touchData =
+            new List&lt;InjectedInputTouchInfo&gt;
+            {
+                new InjectedInputTouchInfo
+                {
+                    Contact = new InjectedInputRectangle
+                    {
+                        Left = 30, Top = 30, Bottom = 30, Right = 30
+                    },
+                    PointerInfo = new InjectedInputPointerInfo
+                    {
+                        PointerId = pointerId,
+                        PointerOptions =
+                        InjectedInputPointerOptions.PointerDown |
+                        InjectedInputPointerOptions.InContact |
+                        InjectedInputPointerOptions.New,
+                        TimeOffsetInMilliseconds = 0,
+                        PixelLocation = new InjectedInputPoint
+                        {
+                            PositionX = (int)injectionPoint.X ,
+                            PositionY = (int)injectionPoint.Y
+                        }
+                },
+                Pressure = 1.0,
+                TouchParameters =
+                    InjectedInputTouchParameters.Pressure |
+                    InjectedInputTouchParameters.Contact
+            }
+        };
+
+        // Inject the touch input. 
+        _inputInjector.InjectTouchInput(touchData);
+
+        // Create a touch data point for pointer up.
+        touchData = new List&lt;InjectedInputTouchInfo&gt;
+        {
+            new InjectedInputTouchInfo
+            {
+                PointerInfo = new InjectedInputPointerInfo
+                {
+                    PointerId = pointerId,
+                    PointerOptions = InjectedInputPointerOptions.PointerUp
+                }
+            }
+        };
+
+        // Inject the touch input. 
+        _inputInjector.InjectTouchInput(touchData);
+    }
+}
+</code></pre>
+</li>
+<li><p>Finally, we handle any Button <a href="/uwp/api/windows.ui.xaml.controls.primitives.buttonbase">Click</a> routed events in the input injection area and update the UI with the name of the button clicked.</p>
+</li>
+</ol>
+<h2 id="see-also">See also</h2>
+<h3 id="topic-samples">Topic samples</h3>
+<ul>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-input-injection-mouse-to-touch.zip">Input injection sample (mouse to touch)</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/input-injection.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

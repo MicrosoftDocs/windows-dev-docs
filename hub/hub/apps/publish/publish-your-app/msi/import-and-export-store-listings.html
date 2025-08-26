@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Import and export store listings for MSI/EXE app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Import and export store listings for MSI/EXE app ">
+    
+    <meta name="description" content="Import and export store listings for your MSI/EXE app so you can reuse them later">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="import-and-export-store-listings-for-msiexe-app">Import and export store listings for MSI/EXE app</h1>
+
+<p>Instead of entering info for your Store listing directly in Partner Center, you have the option to add or update info by exporting your listings in a .csv file, entering your info and assets, and then importing the updated file. You can use this method to create listings from scratch, or to update listings you’ve already created.</p>
+<p>This option is especially useful if you want to create or update Store listings for your product in multiple languages, since you can copy/paste the same info into multiple fields and easily make any changes that should apply to specific languages.</p>
+<h2 id="export-listing">Export listing</h2>
+<p>On the Store listing page for an app, you can add languages and then click on Export listing to generate a .csv file with the language(s) you selected and the fields for the listing. Alternatively, you can first click on Export listing and then select the languages. Once the listing is exported successfully, download the listing. In the exported listing, you will see Field names, type and the languages you have selected for your listing.</p>
+<p>Here’s an overview of what’s contained in each of the columns in the exported .csv file:</p>
+<ul>
+<li>The Field column contains a name that is associated with every part of a Store listing. These correspond to the same items you can provide when creating Store listings in Partner Center, although some of the names are slightly different. For items where you can enter more than one of the same type of items, you’ll see multiple rows, up to the maximum number that you can provide. For example, for Product features you will see ProductFeatures1, ProductFeatures2, etc., going up to ProductFeatures20 (since you can provide up to 20 app features). Please refer to the table below to find the exact mapping of the Store listing fields with the fields exported in .csv file.</li>
+<li>The Type column provides general guidance about what type of info to provide for that field, such as Text or Relative path.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Field name in Store listing in Partner Center</th>
+<th>Corresponding field name in exported .csv file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Description</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Product name</td>
+<td>ProductName</td>
+</tr>
+<tr>
+<td>What’s new in this version?</td>
+<td>WhatsNew</td>
+</tr>
+<tr>
+<td>Product features</td>
+<td>ProductFeatures1 to ProductFeatures20</td>
+</tr>
+<tr>
+<td>Screenshots</td>
+<td>Screenshots1 to Screenshots10</td>
+</tr>
+<tr>
+<td>Store logos (1:1 box art)</td>
+<td>StoreLogos1</td>
+</tr>
+<tr>
+<td>Store logos (2:3 poster art)</td>
+<td>StoreLogos2</td>
+</tr>
+<tr>
+<td>Short description</td>
+<td>ShortDescription</td>
+</tr>
+<tr>
+<td>Minimum hardware</td>
+<td>RequirementsMinimum1 to RequirementsMinimum11</td>
+</tr>
+<tr>
+<td>Recommended hardware</td>
+<td>RequirementsRecommended1 to RequirementsRecommended11</td>
+</tr>
+<tr>
+<td>Search terms</td>
+<td>SearchTerms1 to SearchTerms7</td>
+</tr>
+<tr>
+<td>Copyright and trademark info</td>
+<td>Copyright</td>
+</tr>
+<tr>
+<td>Applicable license terms</td>
+<td>Applicable license terms</td>
+</tr>
+<tr>
+<td>Developed by</td>
+<td>DevelopedBy</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Do not change any of the field names or delete any of the fields in the exported .csv file. The name of the columns and items under field must remain unchanged for your imported file to be processed.</p>
+</div>
+<h2 id="update-listing-info">Update listing info</h2>
+<p>Once you’ve exported your listings and saved your .csv file, you can edit your listing info directly in the .csv file. For each language added, there is a separate column with the name of the language as the heading. Do not change the name of the language exported in the .csv file. The changes you make in a column will be applied to the listing of that language.</p>
+<p>Most of the Store listing fields are optional. The Description, one Screenshot, Store logo (1:1 box art) and Applicable license terms are required for each listing. For all other fields, you can leave the field empty if you don’t want to include it in your listing.</p>
+<h3 id="required-field-guidelines">Required field guidelines</h3>
+<p>To ensure successful import, the required fields must contain valid content:</p>
+<ul>
+<li><strong>Description</strong>: Must contain text (not empty or whitespace only). Character limit: 10,000 characters. This field tells customers what your app does.</li>
+<li><strong>Applicable license terms</strong>: Must contain text (not empty or whitespace only). Character limit: 10,000 characters. This should specify the license under which your app is distributed (e.g., &quot;Commercial license&quot;, &quot;MIT License&quot;, &quot;Proprietary&quot;, etc.).</li>
+<li><strong>Screenshots1</strong>: Must contain a valid relative path to an image file in your import folder.</li>
+<li><strong>StoreLogos1</strong>: Must contain a valid relative path to a 1:1 aspect ratio image file in your import folder.</li>
+</ul>
+<p><strong>Example of properly filled required fields in CSV:</strong></p>
+<pre><code>Description: &quot;MyApp is a productivity tool that helps you manage your daily tasks efficiently. It features task scheduling, reminders, and team collaboration capabilities.&quot;
+Applicable license terms: &quot;Commercial license. All rights reserved.&quot;
+Screenshots1: &quot;images/screenshot1.png&quot;
+StoreLogos1: &quot;images/logo_1x1.png&quot;
+</code></pre>
+<p>Many of the fields in your exported listings require text entry, such as the ones in the example above, Description and WhatsNew. For these types of fields, simply enter the appropriate text into the field for each language. Be sure to follow the length and other requirements for each field. For more info on these requirements, see <a href="add-and-edit-store-listing-info.html">Create app Store listings</a>.</p>
+<p>Providing info for fields that correspond to assets, such as images, are a bit more complicated. Rather than Text, the Type for these assets is Relative path.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If your assets (screenshot or logo) are in the same folder as the exported .csv file, the relative path will just be the name of the screenshot or logo (for example: logo.png). If you have created a subfolder for images in the main folder which has the .csv file, the relative path will start with the name of the subfolder. (For example, if the name of subfolder is “Images”, the relative path will be Images/logo.png)</p>
+</div>
+<h2 id="import-listing">Import listing</h2>
+<p>Once you have entered all your changes into the .csv file (and included any assets you want to upload), you’ll need to save your file before uploading it.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Make sure your .csv file is saved with UTF-8 encoding. If you're using Microsoft Excel, save as &quot;CSV UTF-8 (Comma delimited) (*.csv)&quot;. Incorrect file encoding can cause import failures even when the content appears correct.</p>
+</div>
+<p>When you’re ready to upload the updated .csv file and import your listing data, select Import listing on your app’s Store listing page. When you are importing the listing for the first time, you will have to upload the listing using a folder which will have the exported .csv file and all the assets. Make sure there is only one .csv file in your folder, along with any assets you’re uploading.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When importing the listing for the first time, you need to upload a folder. This folder should contain the exported .csv file with the listing information and all the assets (screenshots and logo) you mentioned in the .csv file.</p>
+</div>
+<p>If we detect any problems, you’ll see a note indicating that Import has failed. Download the report to check the errors. You’ll need to correct these issues in your .csv file (or replace any invalid assets) and then import your listings again.</p>
+<p>Refer to the table below for the error messages, their meaning, and the recommendation to resolve them.</p>
+<table>
+<thead>
+<tr>
+<th>Error message</th>
+<th>Meaning and recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&quot;The .csv file is empty. Please ensure that the file has the required info.&quot;</td>
+<td>You might have uploaded a blank .csv file. From the Store listing page, export the latest .csv file.</td>
+</tr>
+<tr>
+<td>“The field is either not present or invalid. Please use the correct template by exporting the listing.”</td>
+<td>You might have deleted an existing field or added a new field in the exported .csv file. Export the .csv file from the Store listing page. Do not change any of the fields in the .csv file.</td>
+</tr>
+<tr>
+<td>“The language codes are either invalid or listing is not available for the languages. Please use the most recent template by exporting the listing.”</td>
+<td>You might have edited the language code in the exported .csv file or you might have added a new language code which is not present in the Store listing page. From the Store listing page, select the required languages and then export the listing.</td>
+</tr>
+<tr>
+<td>&quot;Description is missing&quot; or &quot;Description field is required&quot;</td>
+<td>The Description field contains no text or only whitespace. Ensure the Description field contains meaningful text describing your app (up to 10,000 characters). Example: &quot;MyApp is a productivity tool that helps manage daily tasks.&quot;</td>
+</tr>
+<tr>
+<td>&quot;Applicable license terms is missing&quot; or &quot;Applicable license terms field is required&quot;</td>
+<td>The Applicable license terms field contains no text or only whitespace. Ensure this field contains valid license information (up to 10,000 characters). Example: &quot;Commercial license&quot;, &quot;MIT License&quot;, or &quot;Proprietary license&quot;.</td>
+</tr>
+<tr>
+<td>“All the selected languages are not present in the imported .csv file. Please use the most recent template by exporting the listing.”</td>
+<td>You might have removed a language code in the .csv file. Export the .csv file from the Store listing page. Do not change any of the language codes in the .csv file.</td>
+</tr>
+</tbody>
+</table>
+<p>You can continue to make updates to your listings either by importing another updated .csv file, or by making changes directly in Partner Center.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msi/import-and-export-store-listings.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

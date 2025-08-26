@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Always On Top Utility for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Always On Top Utility for Windows ">
+    
+    <meta name="description" content="Learn how to use PowerToys Always On Top utility to pin windows above others in Windows. Keep important windows visible with customizable shortcuts and settings.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="always-on-top-utility">Always On Top utility</h1>
+
+<p>PowerToys Always On Top is a system-wide Windows utility that allows you to pin windows above other windows. This utility helps you keep important windows visible at all times, improving your productivity by ensuring critical information stays accessible while you work with other applications.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/pt-always-on-top.png" alt="Screenshot of PowerToys Always On Top utility showing a pinned window with colored border highlighting.">
+</span>
+</p>
+<h2 id="pin-a-window">Pin a window</h2>
+<p>When you activate Always On Top (default: <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>), the utility pins the active window above all other windows. The pinned window stays on top, even when you select other windows.</p>
+<h2 id="unpin-a-window">Unpin a window</h2>
+<p>To unpin a window pinned by Always On Top, you can either use the activation shortcut again or close the window.</p>
+<h2 id="settings">Settings</h2>
+<p>Always On Top has the following settings:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Activation shortcut</strong></td>
+<td style="text-align: left;">The customizable keyboard command to turn on or off the always-on-top property for that window.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Do not activate when Game Mode is on</strong></td>
+<td style="text-align: left;">Prevents the feature from being activated when actively playing a game on the system.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Show a border around the pinned window</strong></td>
+<td style="text-align: left;">When <strong>On</strong>, this option shows a colored border around the pinned window.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Color mode</strong></td>
+<td style="text-align: left;">Choose either <strong>Windows default</strong> or <strong>Custom color</strong> for the highlight border.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Color</strong></td>
+<td style="text-align: left;">The custom color of the highlight border. <strong>Color</strong> is only available when <strong>Color mode</strong> is set to <strong>Custom color</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Opacity (%)</strong></td>
+<td style="text-align: left;">The opacity of the highlight border.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Thickness (px)</strong></td>
+<td style="text-align: left;">The thickness of the highlight border in pixels.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Enable rounded corners</strong></td>
+<td style="text-align: left;">When selected, the highlight border around the pinned window will have rounded corners.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Play a sound when pinning a window</strong></td>
+<td style="text-align: left;">When selected, this option plays a sound when you activate or deactivate Always On Top.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Excluded apps</strong></td>
+<td style="text-align: left;">Prevents you from pinning an application using Always On Top. Add an application's name to stop it from being pinned. The list will also exclude partial matches. For example, <code>Notepad</code> will prevent both Notepad.exe and Notepad++.exe from being pinned. To only prevent a specific application, add <code>Notepad.exe</code> to the excluded list.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/always-on-top.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

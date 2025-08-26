@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Overview of Win2D </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Overview of Win2D ">
+    
+    <meta name="description" content="Win2D is an easy-to-use Windows Runtime API for immediate-mode 2D graphics rendering with GPU acceleration.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="overview-of-win2d">Overview of Win2D</h1>
+
+<p>Win2D is an easy-to-use Windows Runtime (WinRT) API for immediate-mode 2D graphics rendering with GPU acceleration. It's ideal for creating simple games, displays such as charts, and other simple 2D graphics.</p>
+<p>You can use Win2D in your WinUI 3 (Windows App SDK) apps or Universal Windows Platform (UWP) apps, using either C#, C++, or VB. Win2D utilizes the power of Direct2D, and it integrates seamlessly with XAML on both WinUI 3 (Windows App SDK) and UWP.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Win2D for WinUI 3 (Windows App SDK) is a work-in-progress, and some features aren't supported. This documentation refers to both the WinUI 3 and UWP versions, which mostly share the same API surface and functionality. Whenever there's any relevant differences between the two, we'll call it out in the documentation. But otherwise, the info being presented applies to both platforms in the same way.</p>
+</div>
+<h2 id="get-started">Get started</h2>
+<p>Win2D is available as a NuGet package, or as source code (for the source code, see the <a href="https://github.com/microsoft/Win2D">Win2D</a> repo on GitHub).</p>
+<h3 id="reference-the-win2d-nuget-package">Reference the Win2D NuGet package</h3>
+<p>In a WinUI 3 or UWP project in Visual Studio, click <strong>Tools</strong> &gt; <strong>NuGet Package Manager</strong> &gt; <strong>Manage NuGet Packages for Solution...</strong> &gt; <strong>Browse</strong>. Make sure that <strong>Include prerelease</strong> is unchecked, and type or paste into the search box:</p>
+<ul>
+<li>For a WinUI 3 project, <a href="https://www.nuget.org/packages/Microsoft.Graphics.Win2D/"><em>Microsoft.Graphics.Win2D</em></a>.</li>
+<li>For a UWP project, <a href="https://www.nuget.org/packages/Win2D.uwp/"><em>Win2D.uwp</em></a>.</li>
+</ul>
+<p>Select the correct item in search results, check your project, and click <strong>Install</strong> to install the package into that project. Accept the license agreement.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you see any error messages, then try updating the version of the Windows App SDK NuGet package that you're referencing (if appropriate). Or try going into project properties, and setting <strong>Target OS version</strong> to the latest version.</p>
+</div>
+<h2 id="next-steps">Next steps</h2>
+<p>Next, to learn about creating a simple app, try out the <a href="hellowin2dworld.html">Win2D &quot;Hello, World!&quot; quickstart</a>, or the <a href="quick-start.html">Build a simple Win2D app</a> tutorial. You can also consult the <a href="features.html">features list</a> to discover all the things Win2D can do. To learn more about advanced topics, you can refer to the collection of articles included in the documentation here as well.</p>
+<h2 id="reference">Reference</h2>
+<p>The <a href="https://microsoft.github.io/Win2D/WinUI3/html/APIReference.htm">Win2D APIs</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

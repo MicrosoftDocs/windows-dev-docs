@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>React Native for Android development on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="React Native for Android development on Windows ">
+    
+    <meta name="description" content="Get started developing Android apps using React Native on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-developing-for-android-using-react-native">Get started developing for Android using React Native</h1>
+
+<p>This guide will help you to get started using React Native on Windows to create a cross-platform app that will work on Android devices.</p>
+<h2 id="overview">Overview</h2>
+<p>React Native is an <a href="https://github.com/facebook/react-native">open-source</a> mobile application framework created by Facebook. It is used to develop applications for Android, iOS, Web and UWP (Windows) providing native UI controls and full access to the native platform. Working with React Native requires an understanding of JavaScript fundamentals.</p>
+<h2 id="get-started-with-react-native-by-installing-required-tools">Get started with React Native by installing required tools</h2>
+<ol>
+<li><p><a href="https://code.visualstudio.com">Install Visual Studio Code</a> (or your code editor of choice).</p>
+</li>
+<li><p>Install Android Studio for Windows and set the ANDROID_HOME environment variable. Follow the instructions at <a href="https://reactnative.dev/docs/set-up-your-environment?platform=android">Set Up Your Environment - React Native</a>. Be sure to set the <strong>Development OS</strong> selection to &quot;Windows&quot; and the <strong>Target OS</strong> selection to Android.</p>
+</li>
+<li><p>Set the JAVA_HOME environment variable. The Gradle tool used to build Android apps requires a specific version requirement for the Java SDK. To find the supported version, in Android Studio, go to <strong>Settings-&gt;Build, Execution, Deployment-&gt;Build Tools-&gt;Gradle</strong>. Write down the path selected in the <strong>Gradle JDK</strong> drop-down. Set the JAVA_HOME environment variable to this path using the following steps:</p>
+<ul>
+<li>In the Windows search menu, enter: &quot;Edit the system environment variables&quot;, this will open the <strong>System Properties</strong> window.</li>
+<li>Choose <strong>Environment Variables...</strong> and then choose <strong>New...</strong> under <strong>User variables</strong>.</li>
+<li>Set the Variable name to JAVA_HOME and the value to the path that you retrieved from Android Studio.</li>
+</ul>
+</li>
+<li><p><a href="https://nodejs.org/en/">Install NodeJS for Windows</a> You may want to consider using <a href="https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows">Node Version Manager (nvm) for Windows</a> if you will be working with multiple projects and version of NodeJS. We recommend installing the latest LTS version for new projects.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may also want to consider installing and using the <a href="https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab">Windows Terminal</a> for working with your preferred command-line interface (CLI), as well as, <a href="https://git-scm.com/downloads">Git for version control</a>. The <a href="https://www.oracle.com/java/technologies/javase-downloads.html">Java JDK</a> comes packaged with Android Studio v2.2+, but if you need to update your JDK separately from Android Studio, use the <a href="https://www.oracle.com/java/technologies/javase-jdk14-downloads.html">Windows x64 Installer</a>.</p>
+</div>
+<h2 id="create-a-new-project-with-react-native">Create a new project with React Native</h2>
+<ol>
+<li><p>Use <a href="https://www.npmjs.com/package/npx">npx</a>, the package runner tool that is installed with <strong>npm</strong> to create a new React Native project.  from the Windows Command Prompt, PowerShell, <a href="https://www.microsoft.com/p/windows-terminal-preview/9n0dx20hk701?activetab=pivot:overviewtab">Windows Terminal</a>, or the integrated terminal in VS Code (View &gt; Integrated Terminal).</p>
+<pre><code class="lang-powershell">npx react-native init MyReactNativeApp
+</code></pre>
+<p>If you want to start a new project with a specific React Native version, you can use the <code>--version</code> argument. For information about versions of React Native, see <a href="https://reactnative.dev/versions">Versions - React Native</a>.</p>
+<pre><code class="lang-powershell">npx react-native@X.XX.X init  &lt;projectName&gt; --version X.XX.X
+</code></pre>
+</li>
+<li><p>Open your new &quot;MyReactNativeApp&quot; directory:</p>
+<pre><code class="lang-powershell">cd MyReactNativeApp
+</code></pre>
+</li>
+<li><p>If you want to run your project on a hardware Android device, connect the device to your computer with a USB cable.</p>
+</li>
+<li><p>If you want to run your project on an Android emulator, you shouldn't need to take any action as Android Studio installs with a default emulator installed. If you want to run your app on the emulator for a particular device. Click on the <strong>AVD Manager</strong> button in the toolbar.</p>
+<p><img src="../../images/android-studio-avd-manager.png" alt="Screenshot of the AVD Manager button">.</p>
+</li>
+<li><p>To run your project, enter the following command. This will open a new console window displaying Node Metro Bundler.</p>
+<pre><code class="lang-powershell">npx react-native run-android
+</code></pre>
+<p><img src="../../images/metro-bundler-console.png" alt="Screenshot of Metro Bundler in a console window"></p>
+<p><img src="../../images/react-native-android-emulator.png" alt="Screenshot of the default React Native app running in an Android emulator"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using a new install of Android Studio and haven't yet done any other Android development, you may get errors at the command line when you run the app about accepting licenses for the Android SDK. Such as &quot;Warning: License for package Android SDK Platform 29 not accepted.&quot; To resolve this, you can click the <strong>SDK Manager</strong> button in Android Studio <img src="../../images/android-studio-sdk-manager.png" alt="Screenshot of the SDK Manager button">. Or, you can list and accept the licenses with the following command, making sure to use the path to the SDK location on your machine.</p>
+</div>
+<pre><code class="lang-powershell">C:\Users\[User Name]\AppData\Local\Android\Sdk\tools\bin\sdkmanager --licenses
+</code></pre>
+</li>
+<li><p>To modify the app, open the <code>MyReactNativeApp</code> project directory in the IDE of your choice. We recommend VS Code or Android Studio.</p>
+</li>
+<li><p>The project template created by <code>react-native init</code> uses a main page named <code>App.js</code>. This page is pre-populated with a lot of useful links to information about React Native development. Add some text to the first <strong>Text</strong> element, like the &quot;HELLO WORLD!&quot; string shown below.</p>
+<pre><code class="lang-javascript">&lt;Text style={styles.sectionDescription}&gt;
+  Edit &lt;Text style={styles.highlight}&gt;App.js&lt;/Text&gt; to change this
+  screen and then come back to see your edits. HELLO WORLD!
+&lt;/Text&gt;
+</code></pre>
+</li>
+<li><p>Reload the app to show the changes you made. There are several ways to do this.</p>
+<ul>
+<li>In the Metro Bundler console window, type &quot;r&quot;.</li>
+<li>In the Android device emulator, double tap &quot;r&quot; on your keyboard.</li>
+<li>On a hardware android device, shake the device to bring up the React Native debug menu and select `Reload'.
+<img src="../../images/react-native-debug-menu.png" alt="Screenshot of the React Native debug menu"></li>
+</ul>
+</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/react-native-for-android.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

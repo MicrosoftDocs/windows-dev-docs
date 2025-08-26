@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Intro to passkeys </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Intro to passkeys ">
+    
+    <meta name="description" content="Passkeys are simpler, stronger, passwordless sign-ins.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="intro-to-passkeys">Intro to passkeys</h1>
+
+<p>Learn about simpler, stronger, passwordless sign-ins. Passkeys can use your fingerprint or other biometric to log you into your websites and apps, just like unlocking your device.</p>
+<p>Passkeys—based on Fast IDentity Online (FIDO) standards—are a replacement for passwords. Using a passkey to sign in to websites and apps across your devices is faster, easier, and more secure. Unlike a password, a passkey is always strong and phishing-resistant.</p>
+<p>Some aspects of passkeys:</p>
+<ul>
+<li>Simplify account registration for apps and websites.</li>
+<li>Are easy to use.</li>
+<li>Work across most of your devices.</li>
+<li>And even work on other devices in physical proximity.​</li>
+</ul>
+<h2 id="why-passkeys">Why passkeys?</h2>
+<p>The motivation for using passkeys is, initially, an acknowledgment of the following considerations related to passwords.</p>
+<p>Some aspects of passwords:</p>
+<ul>
+<li>They're knowledge-based.</li>
+<li>Can be difficult to use and to remember.</li>
+<li>Can be easy to phish, harvest, and replay (a very high percentage of organizations experience phishing attacks each year).</li>
+<li>Are a root cause of the vast majority of data breaches.</li>
+</ul>
+<p>And also consider:</p>
+<ul>
+<li>There's a labor cost involved in each password reset.</li>
+<li>Nearly all users have a large number of online accounts.</li>
+<li>Most passwords are reused.</li>
+</ul>
+<p>So passkeys are the answer to those issues. Passkeys address the security problems, and they're suitable for large-scale use by consumers.</p>
+<p>Passkey protocols don't provide information that can be used by different online services to collaborate and track a user across the services. Biometric information, if used, never leaves the user's device. With passkeys, there are no shared secrets.</p>
+<h2 id="passkeys-optimize-access-and-usability-for-authentication">Passkeys optimize access and usability for authentication</h2>
+<p>Your organization can deploy passkeys across a variety of use cases, including users signing in to your Windows apps, and users authenticating themselves to your websites. Passkeys enable users to access their sign-in credentials on many of their devices. Device-bound passkeys are bound to a FIDO security key or platform.</p>
+<h2 id="how-do-users-use-passkeys">How do users use passkeys?</h2>
+<p>A relying party (RP)—such as a website—that wants to use passkeys first sets up a credential with you. So a user can first get a passkey from the website (instead of or in addition to a password), and then subsequently when the user wants to sign in, they can approve the use of their passkey for that site.</p>
+<p>When a user signs in to an app or to a website by using a passkey, they approve the sign-in with the same biometric or PIN that they use to unlock the device (phone, computer, or security key). The app or website can use that mechanism instead of the traditional username and password. For example, if your passkey is stored with Windows Hello, then you can use your face, fingerprint, or PIN that you used with Windows Hello, to approve the use of that passkey.</p>
+<p>The workflow is described in more detail in <a href="implement.html">Implement passkeys</a> and in <a href="design.html">Design guidelines for passkeys</a>.</p>
+<h2 id="the-benefits">The benefits</h2>
+<p>Here's what that means for:</p>
+<ul>
+<li><strong>User experience</strong>. The user experience (UX) will be familiar and consistent across many of your users' devices—a simple verification of their fingerprint or face, or a device PIN. The same simple action that consumers take multiple times each day to unlock their devices.</li>
+<li><strong>Security</strong>. Passkeys are based on FIDO Authentication, which is proven to be resistant to threats of phishing, credential stuffing, and other remote attacks. Also, service providers can offer passkeys without needing passwords as an alternative sign-in or account recovery method.</li>
+</ul>
+<p>Passkeys reduce the risk of phishing, and eliminate credential reuse. They also help to speed up sign-ins, improve service delivery, and lower costs. Faster, more secure, and more successful sign-ins means less breach risk, more transactions, better service delivery, and fewer credential resets and helpdesk calls for account recovery.</p>
+<h2 id="the-fido-passkey-logo">The FIDO passkey logo</h2>
+<p><img src="images/passkey-logo.png" alt="The FIDO passkey logo"></p>
+<p>Look for the FIDO passkey logo on sites that allow you to use passkeys instead of passwords. If you're a service provider interested in using this logo, then visit <a href="https://fidoalliance.org/get-the-passkey-icon/">FIDO Trademark and Service Mark Usage Agreement for Websites</a> to agree to terms, and to download the logo files.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Next, see <a href="implement.html">Implement passkeys</a>.</p>
+<h2 id="further-info">Further info</h2>
+<ul>
+<li><a href="implement.html">Implement passkeys</a></li>
+<li><a href="https://fidoalliance.org/passkeys/">Passkeys</a> on the FIDO Alliance website</li>
+<li><a href="https://fidoalliance.org/design-guidelines/patterns/sign-in-with-a-passkey/">Sign In with a Passkey</a> on the FIDO Alliance website</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/intro.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

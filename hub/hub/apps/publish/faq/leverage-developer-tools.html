@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Leverage Developer Tools - FAQ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Leverage Developer Tools - FAQ ">
+    
+    <meta name="description" content="Learn how to monitor your app’s analytics, performance, and automate submissions using the Microsoft Store Developer CLI.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="leverage-developer-tools">Leverage Developer Tools</h1>
+
+<p>This section answers frequently asked questions about using analytics in Partner Center and leveraging the Microsoft Store Developer CLI for publishing and automation.</p>
+<hr>
+<details>
+<summary><strong>What developer tools can I leverage to grow my app on the Store?</strong></summary>
+<p>Partner Center offers several tools to help your app succeed:</p>
+<ul>
+<li><p>For MSIX apps:</p>
+<ul>
+<li><strong>Package flights:</strong> Test app updates with a select group before wider release.</li>
+<li><strong>Product page experiments (A/B testing):</strong> Optimize your Store listing visuals to improve conversion rates.</li>
+<li><strong>Promotional codes:</strong> Distribute free or discounted copies of your app or add-ons for promotions and marketing.</li>
+<li><strong>Microsoft Store Developer CLI:</strong> Automate app submissions, updates, and metadata management directly from your development workflow or CI/CD pipelines.</li>
+</ul>
+</li>
+<li><p>For MSIX and MSI apps:</p>
+<ul>
+<li><strong>Microsoft Store Web Installer:</strong> Simplify user acquisition by enabling direct web-based installation without manual Store interaction.</li>
+</ul>
+</li>
+</ul>
+<p>These tools collectively help enhance your app’s quality, visibility, and user acquisition strategy.</p>
+</details>
+<hr>
+<details>
+<summary><strong>What is the Microsoft Store Developer CLI and how can it help me?</strong></summary>
+<p>The <strong>Microsoft Store Developer CLI</strong> is a cross-platform command-line tool that allows developers to automate many Partner Center tasks, such as:</p>
+<ul>
+<li>Listing and retrieving app information</li>
+<li>Uploading new packages</li>
+<li>Updating Store metadata</li>
+<li>Submitting and publishing app updates</li>
+</ul>
+<p>This tool is particularly useful for <strong>CI/CD pipelines</strong>, where new builds can be automatically submitted and published. Authentication is done using Entra ID credentials linked to your Partner Center account.</p>
+<p>It offers a flexible alternative to the web UI and supports scripting workflows across Windows, macOS, and Linux. To use it, developers must first configure API access with appropriate permissions. With this tool, teams can significantly streamline and scale their release operations.</p>
+</details>
+<hr>
+<details>
+<summary><strong>Can I automate Store submissions with the CLI?</strong></summary>
+<p>Yes, the CLI supports automation of app submissions. Integrated into build pipelines, it enables automated packaging, submission, and publishing of new app releases without manual intervention. This significantly reduces time and error rates, ideal for teams managing frequent updates or numerous applications.</p>
+</details>
+<hr>
+<details>
+<summary><strong>What are product page experiments?</strong></summary>
+<p><strong>Product page experiments</strong> are A/B tests that allow developers to test variations of their app’s Store listing elements, like icons and screenshots, to determine which perform best. The Microsoft Store splits incoming user traffic between the original page and the new variant. Metrics like impressions, views, installs, and conversion rates are then measured to identify the most effective visuals, helping you optimize your Store listing to boost app engagement and downloads.</p>
+</details>
+<hr>
+<details>
+<summary><strong>How do I set up product page experiments?</strong></summary>
+<p>To set up a product page experiment:</p>
+<ol>
+<li><strong>Start the experiment:</strong> Sign in to Partner Center, go to your app’s Overview, and create a new product page experiment.</li>
+<li><strong>Choose elements to test:</strong> Provide alternative app logos or screenshots for your experiment.</li>
+<li><strong>Submit for approval:</strong> Once approved, the experiment runs (typically up to 90 days), dividing traffic evenly between your original and variant pages.</li>
+<li><strong>Analyze results:</strong> Use Partner Center analytics to compare impressions, page views, install counts, and conversion rates.</li>
+<li><strong>Apply successful changes:</strong> Adopt the most successful visual assets from the experiment to permanently improve your app’s Store listing.</li>
+</ol>
+</details>
+<hr>
+<details>
+<summary><strong>What is package flighting?</strong></summary>
+<p><strong>Package flighting</strong> allows developers to distribute app updates to a specific group of users before releasing the update to everyone. It’s ideal for beta testing or validating updates with early adopters. Flighted packages are delivered to a predefined user group, while all other users continue receiving the current publicly available version. This helps ensure stability and quality before a broad rollout.</p>
+<p>So a <strong>package flight</strong> lets you distribute app updates to a limited group of testers without affecting your broader audience. To create a package flight:</p>
+<ul>
+<li>Go to your app’s <strong>Overview</strong> in Partner Center.</li>
+<li>In the <strong>Package flights</strong> section, click <strong>New package flight</strong>.</li>
+<li>Name your flight and create or choose an existing tester group by adding their Microsoft account emails.</li>
+<li>Add or upload app packages specific to the flight.</li>
+<li>Submit the flight for certification.</li>
+</ul>
+<p>Once certified, only your selected testers receive the update, while other users continue with the publicly available version.</p>
+</details>
+<hr>
+<details>
+<summary><strong>How can I use promo codes to promote my app and what types are available?</strong></summary>
+<p>Promo codes enable you to offer free access to your app or add-ons to selected customers, influencers, reviewers, or beta testers. Generated in Partner Center, promo codes come with unique redeemable URLs. Distributing these codes helps drive awareness, generate user reviews, incentivize engagement, and reward loyal customers.</p>
+<p>Microsoft Store offers two types of promo codes:</p>
+<ul>
+<li><strong>Single-use codes:</strong> One-time codes redeemable by a single user each.</li>
+<li><strong>Multi-use codes:</strong> A single code redeemable by multiple users, up to a set limit.</li>
+</ul>
+<p>These codes help developers tailor promotional campaigns to specific marketing goals or audiences.</p>
+</details>
+<hr>
+<details>
+<summary><strong>What is the Microsoft Store Web Installer and how can implement it?</strong></summary>
+<p>The <strong>Microsoft Store Web Installer</strong> is a small executable (.exe) installer that allows users to install apps directly from the web without opening the Microsoft Store app. When users click an install link on a web page, the installer checks system eligibility and seamlessly downloads and installs the app from the Store backend. This simplifies the installation process for free apps distributed via websites.</p>
+<p>Implement the Web Installer by embedding a Microsoft Store badge with direct installation on your website:</p>
+<ul>
+<li>Use the <a href="https://apps.microsoft.com/badge">Microsoft Store badge generator</a>.</li>
+<li>Choose the &quot;Direct&quot; launch mode to ensure users trigger the Web Installer directly from your website.</li>
+</ul>
+<p>Users clicking your badge will then automatically download and launch your app installer without needing to open the Store app.</p>
+</details>
+<hr>
+<details>
+<summary><strong>What tools does Microsoft offer to engage customers?</strong></summary>
+<p>Microsoft provides several tools to engage customers via Partner Center, including:</p>
+<ul>
+<li><strong>Create customer groups</strong> that include a subset of your app's customers for promotion, testing, and other purposes</li>
+<li><strong>Targeted offers</strong> for personalized promotions</li>
+<li><strong>Respond to reviews</strong> mechanisms for customer relationship management</li>
+</ul>
+<p>These tools allow developers to enhance user engagement, retention, and satisfaction.</p>
+</details>
+<hr>
+<details>
+<summary><strong>Can I respond to customer reviews?</strong></summary>
+<p>Yes. Developers can respond directly to customer reviews through Partner Center. Public responses appear alongside reviews on the Store page. Engaging professionally and constructively with reviews can greatly improve customer relations and foster a positive community around your app.</p>
+</details>
+<hr>
+<details>
+<summary><strong>What can I do through the Microsoft Store submission API?</strong></summary>
+<p>The Microsoft Store submission API enables developers to automate app management tasks, including:</p>
+<ul>
+<li>Creating and submitting new app updates.</li>
+<li>Uploading and managing app packages.</li>
+<li>Updating metadata and Store listings.</li>
+</ul>
+<p>You can integrate this API into your continuous integration or build workflows, automating routine tasks to streamline your publishing process.</p>
+</details>
+<hr>
+<details>
+<summary><strong>How can I make my app easier to promote in the Microsoft Store?</strong></summary>
+<p>To increase your app’s visibility and chances of being featured in the Microsoft Store, follow these guidelines:</p>
+<ul>
+<li><p><strong>Include great screenshots and images:</strong><br>
+High-quality visuals greatly enhance your app’s appeal. Provide attractive and representative screenshots, particularly focusing on the first image. Include sets of screenshots tailored for each device type your app supports. Provide all required images in the <strong>Store logos</strong> and <strong>Additional art assets</strong> sections of your Store listing. Key recommended formats are:</p>
+<ul>
+<li><strong>2:3 Poster art:</strong> 720 x 1080 or 1440 x 2160 pixels</li>
+<li><strong>16:9 Super hero art:</strong> 1920 x 1080 or 3840 x 2160 pixels<br>
+This helps the Store feature your app prominently in different layouts.</li>
+</ul>
+</li>
+<li><p><strong>Build one unified version of your app:</strong><br>
+Instead of separate free and paid versions, create a single app listing with either a free trial or in-app purchases to unlock additional functionality. This unified approach appeals to all potential customers and simplifies promotion and maintenance.</p>
+</li>
+<li><p><strong>List your app in all relevant markets and languages:</strong><br>
+Maximizing your app’s reach by submitting it to every suitable market and providing localized Store listings will broaden your audience. Ensure your app adheres to local guidelines and customs for each market.</p>
+</li>
+<li><p><strong>Enable content filters for 16+ and 18+ apps:</strong><br>
+Apps featuring content appropriate only for users aged 16+ or 18+ must implement content filtering to be eligible for Store promotion. These filters should be enabled by default, password-protected, and accessible directly within the app (not through an external site). This ensures your app remains compliant with Store guidelines, making it promotable to a wider audience.</p>
+</li>
+</ul>
+<p>Following these best practices increases your app’s attractiveness not just for Microsoft Store promotions but also for external reviewers, influencers, and social media channels.</p>
+</details>
+<hr>
+<details>
+<summary><strong>How do I link to my app in the Microsoft Store?</strong></summary>
+<p>You can make your app easily discoverable by providing direct links to your app's listing on the Microsoft Store. Here’s how to get and use these links:</p>
+<ul>
+<li><strong>Getting the direct URL to your Store listing:</strong><br>
+Navigate to your app's <strong>Product Identity</strong> page under the <strong>Product management</strong> section in <a href="https://partner.microsoft.com/">Partner Center</a>. You'll find a URL structured as:  <code>https://apps.microsoft.com/store/detail/&lt;your app's Store ID&gt;</code></li>
+</ul>
+<p>Customers clicking this link are taken to the web-based Store listing, where they can download and install your app via the Microsoft Store.</p>
+<ul>
+<li><strong>Using the Microsoft Store badge:</strong><br>
+You can create a branded Microsoft Store badge that links directly to your app. To generate your custom badge:</li>
+</ul>
+<ol>
+<li>Go to the <a href="https://developer.microsoft.com/store/badges">Microsoft Store badges</a> page.</li>
+<li>Provide your app’s 12-character Store ID (found in your Partner Center under the Product Identity section).</li>
+</ol>
+<p>This badge clearly indicates your app is available on the Microsoft Store and can help increase customer trust and downloads.</p>
+<ul>
+<li><strong>Direct Store App link using URI scheme:</strong><br>
+If you want to directly open the Microsoft Store app (without launching a browser first), use the following URI scheme:
+<code>ms-windows-store://pdp/?ProductId=&lt;your app's Store ID&gt;</code></li>
+</ul>
+<p>This approach is particularly useful when you know your users are already on a Windows device, or when directing users from within a Universal Windows Platform (UWP) app.</p>
+</details>
+<br>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about <strong>Leverage developer tools</strong>, please see the <a href="../store-submission-api.html">Leverage developer tools</a> section.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/faq/leverage-developer-tools.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Project properties </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Project properties ">
+    
+    <meta name="description" content="This topic describes the project properties that you can set in your Visual Studio project file to customize how your app is deployed.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="project-properties">Project properties</h1>
+
+<p>This topic describes the project properties that you can set in your Visual Studio project file to customize how your app is deployed.</p>
+<table>
+<thead>
+<tr>
+<th>Property name and description</th>
+<th>Values</th>
+<th>For more info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AppxPackage</strong>. Specifies whether or not a WinUI 3 app is packaged.</td>
+<td><em>false</em> (for an unpackaged app), or absent (for a packaged app)</td>
+<td><a href="/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app">Create a new project for an unpackaged WinUI 3 desktop app</a></td>
+</tr>
+<tr>
+<td><strong>EnableMsixTooling</strong>. Enables the single-project MSIX feature for a project.</td>
+<td><em>true</em> (to enable), or absent (to disable)</td>
+<td><a href="/windows/apps/windows-app-sdk/single-project-msix">Package your app using single-project MSIX</a></td>
+</tr>
+<tr>
+<td><strong>UseWinUI</strong>. Specifies whether you're using the WinUI 3 user interface framework in your app.</td>
+<td><em>true</em>, or absent (for <em>false</em>)</td>
+<td><a href="/windows/apps/winui/winui3/">WinUI in the Windows App SDK (WinUI 3)</a></td>
+</tr>
+<tr>
+<td><strong>WindowsAppSdkBootstrapInitialize</strong>. Determines whether or not the Windows App SDK leverages module initializers to call the bootstrapper API automatically at app startup.</td>
+<td><em>true</em> (the default for executables), <em>false</em> (the default for non-executables)</td>
+<td><a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time#opting-out-of-or-into-automatic-module-initialization">Opting out of (or into) automatic module initialization</a></td>
+</tr>
+<tr>
+<td><strong>WindowsAppSdkSelfContained</strong>. Determines whether or not an app is deployed <em>self-contained</em>.</td>
+<td><em>true</em>, or absent (for <em>false</em>)</td>
+<td><a href="/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps">Windows App SDK deployment guide for self-contained apps</a></td>
+</tr>
+<tr>
+<td><strong>WindowsAppSdkUndockedRegFreeWinRTInitialize</strong>. Determines whether or not the Windows App SDK's implementation of undocked registration-free Windows Runtime (<em>UndockedRegFreeWinRT</em>) is enabled automatically at app startup.</td>
+<td><em>true</em> (the default for executables), <em>false</em> (the default for non-executables)</td>
+<td><a href="/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps#opting-out-of-or-into-automatic-undockedregfreewinrt-support">Opting out of (or into) automatic UndockedRegFreeWinRT support</a></td>
+</tr>
+<tr>
+<td><strong>WindowsPackageType</strong>. Setting <code>&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;</code> for an unpackaged app causes the <em>auto-initializer</em> to locate and load a version of the Windows App SDK version that's most appropriate for your app.</td>
+<td><em>None</em>, or absent (to disable the auto-initializer)</td>
+<td><a href="/windows/apps/winui/winui3/create-your-first-winui3-app#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app">Create a new project for an unpackaged WinUI 3 desktop app</a><br><br><a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time#behind-the-scenes-and-opting-out-of-automatic-module-initialization">Behind the scenes, and opting out of automatic module initialization</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p>Here's an excerpt from a typical <code>.csproj</code> file for a C# WinUI 3 project showing some of the project properties from the table above in use.</p>
+<pre><code class="lang-xml">...
+&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+    &lt;TargetPlatformMinVersion&gt;10.0.17763.0&lt;/TargetPlatformMinVersion&gt;
+    ...
+    &lt;UseWinUI&gt;true&lt;/UseWinUI&gt;
+    &lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;
+  &lt;/PropertyGroup&gt;
+...
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/package-and-deploy/project-properties.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows App SDK deployment overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows App SDK deployment overview ">
+    
+    <meta name="description" content="There are two ways in which you can deploy the Windows App SDK&amp;mdash;framework-dependent or self-contained.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-sdk-deployment-overview">Windows App SDK deployment overview</h1>
+
+<p>There are two ways in which you can deploy the Windows App SDK:</p>
+<ul>
+<li><strong>Framework-dependent</strong>. Your app depends on the Windows App SDK runtime and/or Framework package being present on the target machine. Framework-dependent deployment is the default deployment mode of the Windows App SDK for its efficient use of machine resources and serviceability.</li>
+<li><strong>Self-contained</strong>. Your app carries the Windows App SDK dependencies with it. Self-contained deployment is a deployment option that was introduced in Windows App SDK 1.1 Preview 1.</li>
+</ul>
+<p>This topic also uses the terms <em>packaged app</em>, <em>packaged app with external location</em>, and <em>unpackaged app</em>. For explanations of those terms, see the <a href="index.html">Deployment overview</a>.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Deploy framework-dependent</th>
+<th>Deploy self-contained</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Advantages</strong></td>
+<td><em>Small deployment</em>. Only your app and its other dependencies are distributed. The Windows App SDK runtime and Framework package are installed automatically by framework-dependent apps that are packaged; or as part of the Windows App SDK runtime installer by framework-dependent apps that are either packaged with external location or unpackaged.<br><br><em>Serviceable</em>. Servicing updates to the Windows App SDK are installed automatically via the Windows App SDK Framework package without any action required of the app.</td>
+<td><em>Control Windows App SDK version</em>. You control which version of the Windows App SDK is deployed with your app. Servicing updates of the Windows App SDK won't impact your app unless you rebuild and redistribute it.<br><br><em>Isolated from other apps</em>. Apps and users can't uninstall your Windows App SDK dependency without uninstalling your entire app.<br><br><em>Xcopy deployment</em>. Since the Windows App SDK dependencies are carried by your app, you can deploy your app by simply xcopy-ing your build output, without any additional installation requirements.</td>
+</tr>
+<tr>
+<td><strong>Disadvantages</strong></td>
+<td><em>Additional installation dependencies</em>. Requires installation of the Windows App SDK runtime and/or Framework package, which can add complexity to app installation.<br><br><em>Shared dependencies</em>. Risk that shared dependencies are uninstalled. Apps or users uninstalling the shared components can impact the user experience of other apps that share the dependency.<br><br><em>Compatibility risk</em>. Risk that servicing updates to the Windows App SDK introduce breaking changes. While servicing updates should provide backward compatibility, it's possible that regressions are introduced.</td>
+<td><em>Larger deployments (unpackaged apps only)</em>. Because your app includes the Windows App SDK, the download size and hard drive space required are greater than would be the case for a framework-dependent version.<br><br><em>Performance (unpackaged apps only)</em>. Slower to load, and uses more memory since code pages aren't shared with other apps.<br><br><em>Not serviceable</em>. The Windows App SDK version distributed with your app can be updated only by releasing a new version of your app. You're responsible for integrating servicing updates of the Windows App SDK into your app.</td>
+</tr>
+</tbody>
+</table>
+<p>Also see <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>, and <a href="../windows-app-sdk/use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a>.</p>
+<h2 id="more-info-about-framework-dependent-deployment">More info about framework-dependent deployment</h2>
+<p>Before configuring your framework-dependent app for deployment, to learn more about the dependencies your app takes when it uses the Windows App SDK, review <a href="../windows-app-sdk/deployment-architecture.html">Deployment architecture for the Windows App SDK</a>.</p>
+<h3 id="packaged-apps">Packaged apps</h3>
+<p>If you've chosen to go with a framework-dependent packaged app (see <a href="index.html">Deployment overview</a>), then here are instructions on how to deploy the Windows App SDK runtime with the app:</p>
+<ul>
+<li><a href="../windows-app-sdk/deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a></li>
+<li><a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a></li>
+</ul>
+<h3 id="packaged-with-external-location-or-unpackaged-apps">Packaged with external location or unpackaged apps</h3>
+<p>If you've chosen to go with a framework-dependent packaged app with external location, or a framework-dependent unpackaged app (see <a href="index.html">Deployment overview</a>), then here are instructions on how to deploy the Windows App SDK runtime with the app:</p>
+<ul>
+<li><a href="../windows-app-sdk/deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="../windows-app-sdk/tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a></li>
+</ul>
+<h2 id="more-info-about-self-contained-deployment">More info about self-contained deployment</h2>
+<p>See <a href="self-contained-deploy/deploy-self-contained-apps.html">Windows App SDK deployment guide for self-contained apps</a>.</p>
+<h2 id="initialize-the-windows-app-sdk">Initialize the Windows App SDK</h2>
+<p>The way that you should initialize the Windows App SDK depends on whether, and how, you package your app; and on the way in which you deploy relative to the Windows App SDK runtime. Use the section below that applies to your app.</p>
+<h3 id="packaged-apps-1">Packaged apps</h3>
+<table>
+<thead>
+<tr>
+<th>How your app deploys</th>
+<th>How to initialize</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Framework-dependent</td>
+<td>See <a href="../windows-app-sdk/deploy-packaged-apps.html#call-the-deployment-api">Call the Deployment API</a>.</td>
+</tr>
+<tr>
+<td>Self-contained</td>
+<td>No initialization necessary.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="unpackaged-apps-and-apps-packaged-with-external-location">Unpackaged apps, and apps packaged with external location</h3>
+<table>
+<thead>
+<tr>
+<th>How your app deploys</th>
+<th>How to initialize</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Framework-dependent</td>
+<td>See <a href="../windows-app-sdk/tutorial-unpackaged-deployment.html">Use the bootstrapper API in an app packaged with external location or unpackaged</a>.</td>
+</tr>
+<tr>
+<td>Self-contained</td>
+<td>See <a href="self-contained-deploy/deploy-self-contained-apps.html#opting-out-of-or-into-automatic-undockedregfreewinrt-support">Opting out of (or into) automatic UndockedRegFreeWinRT support</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Deployment overview</a></li>
+<li><a href="../windows-app-sdk/deployment-architecture.html">Deployment architecture for the Windows App SDK</a></li>
+<li><a href="../windows-app-sdk/deploy-packaged-apps.html">Windows App SDK deployment guide for framework-dependent packaged apps</a></li>
+<li><a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a></li>
+<li><a href="../windows-app-sdk/deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="../windows-app-sdk/tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a></li>
+<li><a href="self-contained-deploy/deploy-self-contained-apps.html">Windows App SDK deployment guide for self-contained apps</a></li>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="../windows-app-sdk/use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/package-and-deploy/deploy-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to use GitHub Copilot to create WinUI 3 apps in Visual Studio </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to use GitHub Copilot to create WinUI 3 apps in Visual Studio ">
+    
+    <meta name="description" content="Get started with WinUI 3 / Windows App SDK by using the GitHub Copilot code completion capabilities in Visual Studio.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-github-copilot-to-create-winui-3--windows-app-sdk-apps-in-visual-studio">Use GitHub Copilot to create WinUI 3 / Windows App SDK apps in Visual Studio</h1>
+
+<p>In this how-to, we'll demonstrate how <a href="https://github.com/features/copilot">GitHub Copilot</a> can be used to build WinUI 3 / Windows App SDK desktop apps in Visual Studio. This guide builds upon <em><a href="/visualstudio/ide/visual-studio-github-copilot-extension">What is GitHub Copilot Completions for Visual Studio?</a></em>, offering tailored tips and best practices for Copilot-assisted WinUI 3 app development.</p>
+<p><span class="mx-imgBorder">
+<img src="images/github-copilot-winui-vs/github-copilot-extension-example.gif" alt="Animated screenshot that shows the code completion capabilities of the GitHub Copilot in Visual Studio.">
+</span>
+</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Visual Studio 2022 (v17.10+) with the <strong>WinUI application development</strong> workload applied (see <a href="../get-started/start-here.html">Get started with WinUI</a> for additional configuration details). GitHub Copilot is included in Visual Studio 2022 v17.10 and later by default.</li>
+<li>An active subscription to <a href="https://github.com/features/copilot/plans">GitHub Copilot</a> associated with the GitHub account that you sign in to Visual Studio with.</li>
+<li>Familiarity with C#, WinUI, and Windows App SDK.</li>
+</ul>
+<h2 id="use-github-copilot">Use GitHub Copilot</h2>
+<h3 id="autocomplete-your-code-snippets">Autocomplete your code snippets</h3>
+<p>GitHub Copilot in Visual Studio provides real-time code suggestions and completions based on the code you write. The most straightforward way to use Copilot is to start typing code in the editor, and Copilot will try to autocomplete your code snippet. You can then accept or dismiss the suggestions:</p>
+<!-- todo: animated gifs as an optimization -->
+<p><span class="mx-imgBorder">
+<img src="images/github-copilot-winui-vs/1-basic-autocomplete.png" alt="Screenshot that shows the code completion capabilities of GitHub Copilot (basic autocomplete).">
+</span>
+</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you don't see the GitHub Copilot suggestions, you can enable different aspects of the feature in Visual Studio's options under <code>Tools</code> -&gt; <code>Options</code> -&gt; <code>GitHub</code> -&gt; <code>Copilot</code>.</p>
+</div>
+<h3 id="ask-copilot-for-suggestions">Ask Copilot for suggestions</h3>
+<p>Right-click in the code editor and select <code>Ask Copilot</code>. A prompt window will open where you can chat inline with Copilot to get a list of suggestions based on the current cursor position and your prompt:</p>
+<p><span class="mx-imgBorder">
+<img src="images/github-copilot-winui-vs/2-generate-multiple-suggestions.png" alt="Screenshot that shows the inline prompting capabilities of GitHub Copilot.">
+</span>
+</p>
+<h3 id="prompt-copilot-with-plain-language-comments">Prompt Copilot with plain-language comments</h3>
+<p>Although Copilot is used primarily for code completion, you can also use natural language comments to guide Copilot in generating specific code snippets. For example, you can use comments to request a specific feature or functionality:</p>
+<p><span class="mx-imgBorder">
+<img src="images/github-copilot-winui-vs/3-prompt-copilot-with-inline-comment.png" alt="Screenshot that shows the code completion capabilities of GitHub Copilot (prompting).">
+</span>
+</p>
+<h3 id="use-temporary-comments-to-add-code-from-other-files-to-copilots-context">Use temporary comments to add code from other files to Copilot's context</h3>
+<p>If you're working on a code-behind file and want Copilot to incorporate context from the associated XAML file, you can use temporary comments to include this additional code within Copilot's context. Here's an example of how you can specify the XAML code first, and then have Copilot generate the corresponding C# code:</p>
+<p><span class="mx-imgBorder">
+<img src="images/github-copilot-winui-vs/4-add-context-temporary-comments.png" alt="Screenshot that shows the code completion capabilities of GitHub Copilot (context expansion).">
+</span>
+</p>
+<h3 id="ask-copilot-to-explain-how-something-works-with-inline-comments">Ask Copilot to explain how something works with inline comments</h3>
+<p>You can use inline comments to ask Copilot to explain how a specific piece of code works. This is similar to using the inline Ask Copilot feature or the Copilot Chat window, except your prompt is typed directly into the code editor:</p>
+<p><span class="mx-imgBorder">
+<img src="images/github-copilot-winui-vs/5-ask-copilot-inline-explanation.png" alt="Screenshot that shows the code completion capabilities of GitHub Copilot (explain).">
+</span>
+</p>
+<h3 id="use-copilot-to-test-code-standards">Use Copilot to test code standards</h3>
+<p>You can use Copilot to generate code that adheres to your project's coding standards, and to test any given snippet's adherence to those standards. Here's an example of how you can use inline comments to specify two conventions, and then have Copilot validate the code snippet against these conventions:</p>
+<p><span class="mx-imgBorder">
+<img src="images/github-copilot-winui-vs/6-enforce-code-standards.png" alt="Screenshot that shows the code completion capabilities of GitHub Copilot (standards).">
+</span>
+</p>
+<h2 id="recap">Recap</h2>
+<p>In this how-to, we demonstrated how to use GitHub Copilot in Visual Studio to assist you with WinUI 3 / Windows App SDK desktop app development. We covered how to:</p>
+<ul>
+<li>Autocomplete your code snippets.</li>
+<li>Generate autocomplete suggestions inline with Ask Copilot.</li>
+<li>Prompt Copilot with plain-language comments.</li>
+<li>Use temporary comments to add code from other files to Copilot's context.</li>
+<li>Ask Copilot to explain how something works with inline comments.</li>
+<li>Use Copilot to test and enforce code standards.</li>
+</ul>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="../get-started/samples.html">Sample applications for Windows development</a></li>
+<li><a href="../get-started/windows-developer-faq.yml">Windows developer FAQ</a></li>
+<li><a href="../get-started/best-practices.html">Windows development best practices</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/how-tos/github-copilot-winui-vs.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

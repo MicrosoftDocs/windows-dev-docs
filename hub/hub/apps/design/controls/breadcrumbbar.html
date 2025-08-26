@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>BreadcrumbBar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="BreadcrumbBar ">
+    
+    <meta name="description" content="The BreadcrumbBar control provides the direct path of pages or folders to the current location. It adapts to a variety of screen sizes.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="breadcrumb-bar">Breadcrumb Bar</h1>
+
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar">BreadcrumbBar</a> provides the direct path of pages or folders to the current location. It is often used for situations where the user's navigation trail (in a file system or menu system) needs to be persistently visible and the user may need to go back to a previous location.</p>
+<p><img src="images/breadcrumbbar-default.gif" alt="Breadcrumb bar with nodes: Home, Documents, Design, Northwind, Images, Folder1, Folder2, Folder3. The app is resized so that the Breadcrumb crumbles and an ellipsis replaces the leftmost nodes. Then, clicking the ellipsis opens a flyout with the crumbled nodes"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>A breadcrumb bar lets a user keep track of their location when navigating through an app or folders, and lets them quickly jump back to a previous location in the path.</p>
+<p>Use a BreadcrumbBar when the path taken to the current position is relevant. This UI is commonly used in folder managers and when a user may navigate many levels deep into an app.</p>
+<h2 id="breadcrumb-bar-ui">Breadcrumb bar UI</h2>
+<p>The breadcrumb bar displays each node in a horizontal line, separated by chevrons.</p>
+<p><span class="mx-imgBorder">
+<img src="images/breadcrumb-bar.png" alt="Breadcrumb bar with nodes: Home, Documents, Design, Northwind, Images, Folder1, Folder2, Folder3.">
+</span>
+</p>
+<p>If the app is resized so that there is not enough space to show all the nodes, the breadcrumbs collapse and an ellipsis replaces the leftmost nodes. Clicking the ellipsis opens a flyout to show the collapsed nodes.</p>
+<p><span class="mx-imgBorder">
+<img src="images/breadcrumb-bar-flyout.png" alt="Breadcrumb bar resized so that an ellipsis replaces the leftmost nodes. The ellipsis opens a flyout with that shows the collapsed nodes">
+</span>
+</p>
+<h3 id="anatomy">Anatomy</h3>
+<p>The image below shows the parts of the <code>BreadcrumbBar</code> control. You can modify the appearance of some parts by using <a href="#lightweight-styling">lightweight styling</a>.</p>
+<p><span class="mx-imgBorder">
+<img src="images/breadcrumb-bar-anatomy.png" alt="An image of a breadcrumb bar with the parts labeled: ellipsis, chevron, breadcrumb bar item, current item, ellipsis flyout, ellipsis drop down item">
+</span>
+</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Use a breadcrumb bar when you have many levels of navigation and expect users to be able to return to any previous level.</li>
+<li>Don't use a breadcrumb bar if you only have 2 possible levels of navigation. Simple <a href="../basics/navigation-history-and-backwards-navigation.html">back navigation</a> is sufficient.</li>
+<li>Show the current location as the last item in the breadcrumb bar. However, you typically don't want to perform any navigation if the user clicks the current item. (If you want to let the user reload the current page or data, consider providing a dedicated 'reload' option.)</li>
+</ul>
+<h2 id="create-a-breadcrumb-bar">Create a breadcrumb bar</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button">BreadcrumbBar class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/BreadcrumbBar">Open the WinUI 3 Gallery app and see the BreadcrumbBar in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example shows how to create a breadcrumb bar with the default styling. You can place the breadcrumb bar anywhere in your app UI. You populate the breadcrumbs by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemssource">ItemsSource</a> property. Here, it's set to an array of strings that are shown in the breadcrumb bar.</p>
+<pre><code class="lang-xaml">&lt;BreadcrumbBar x:Name=&quot;BreadcrumbBar1&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">BreadcrumbBar1.ItemsSource = 
+   new string[] { &quot;Home&quot;, &quot;Documents&quot;, &quot;Design&quot;, &quot;Northwind&quot;, &quot;Images&quot;, &quot;Folder1&quot;, &quot;Folder2&quot;, &quot;Folder3&quot; };
+</code></pre>
+<h3 id="itemssource">ItemsSource</h3>
+<p>The breadcrumb bar does not have an <code>Items</code> property, it only has an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemssource">ItemsSource</a> property. This means you can't populate the breadcrumbs in XAML or by adding them directly to an <code>Items</code> collection in code. Instead, you create a collection and connect the <code>ItemsSource</code> property to it in code or using data binding.</p>
+<p>You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemssource">ItemsSource</a> to a collection of any type of data to suit the needs of your app. The data items in the collection are used both to display the breadcrumb in the bar, and to navigate when an item in the breadcrumb bar is clicked. In the examples on this page, we create a simple <code>struct</code> (named <code>Crumb</code>) that contains a label to display in the breadcrumb bar and a data object that holds information used for navigation.</p>
+<pre><code class="lang-csharp">public readonly struct Crumb
+{
+    public Crumb(String label, object data)
+    {
+        Label = label;
+        Data = data;
+    }
+    public string Label { get; }
+    public object Data { get; }
+    public override string ToString() =&gt; Label;
+}
+</code></pre>
+<h3 id="itemtemplate">ItemTemplate</h3>
+<p>By default, the breadcrumb bar displays the string representation of each item in the collection. If the data items in your collection don't have an appropriate <code>ToString</code> override, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemtemplate">ItemTemplate</a> property to specify a data template that defines how the items are shown in the breadcrumb bar.</p>
+<p>For example, if your breadcrumb collection was a list of <a href="/uwp/api/windows.storage.storagefolder">StorageFolder</a> objects, you could provide a data template and bind to the <a href="/uwp/api/windows.storage.storagefolder.displayname">DisplayName</a> property like this.</p>
+<pre><code class="lang-csharp">ObservableCollection&lt;StorageFolder&gt; Breadcrumbs = 
+    new ObservableCollection&lt;StorageFolder&gt;();
+</code></pre>
+<pre><code class="lang-xaml">&lt;BreadcrumbBar x:Name=&quot;FolderBreadcrumbBar&quot;
+            ItemsSource=&quot;{x:Bind Breadcrumbs}&quot;&gt;
+    &lt;BreadcrumbBar.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;StorageFolder&quot;&gt;
+            &lt;TextBlock Text=&quot;{x:Bind DisplayName}&quot;/&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/BreadcrumbBar.ItemTemplate&gt;
+&lt;/BreadcrumbBar&gt;
+</code></pre>
+<h3 id="itemclicked">ItemClicked</h3>
+<p>Handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar.itemclicked">ItemClicked</a> event to navigate to the item the user has clicked in the breadcrumb bar. The current location is typically shown as the last item in the breadcrumb bar, so you should include a check in your event handler if you don't want to reload the current location.</p>
+<p>This example checks the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbaritemclickedeventargs.index">Index</a> to see whether the clicked <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbaritemclickedeventargs.item">Item</a> is the last item in the collection, which is the current location. If it is, no navigation occurs.</p>
+<pre><code class="lang-csharp">// Breadcrumbs is set as BreadcrumbBar1.ItemsSource.
+List&lt;Crumb&gt; Breadcrumbs = new List&lt;Crumb&gt;();
+
+...
+
+private void BreadcrumbBar1_ItemClicked(muxc.BreadcrumbBar sender, muxc.BreadcrumbBarItemClickedEventArgs args)
+{
+    if (args.Index &lt; Breadcrumbs.Count - 1)
+    {
+        var crumb = (Crumb)args.Item;
+        Frame.Navigate((Type)crumb.Data);
+    }
+}
+</code></pre>
+<h3 id="lightweight-styling">Lightweight styling</h3>
+<p>You can modify the default Style and ControlTemplate to give the control a unique appearance. See the Control Style and Template section of the BreadcrumbBar API docs for a list of the available theme resources. For more info, see the <a href="../../develop/platform/xaml/xaml-styles.html#lightweight-styling">Light-weight styling section</a> of the <a href="../../develop/platform/xaml/xaml-styles.html">Styling controls</a> article.</p>
+<h2 id="code-examples">Code examples</h2>
+<p>This example shows how you could use a breadcrumb bar in a simple file explorer scenario. The list view shows the contents of the selected Pictures or Music library, and lets the user drill down into sub-folders. The breadcrumb bar is placed in the header of the list view, and shows the path to the current folder.</p>
+<p><span class="mx-imgBorder">
+<img src="images/breadcrumb-bar-file-list.png" alt="An image of a file list with a breadcrumb bar showing the path to the current folder">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+   &lt;ListView x:Name=&quot;FolderListView&quot; Margin=&quot;24,0&quot;
+             IsItemClickEnabled=&quot;True&quot; 
+             ItemClick=&quot;FolderListView_ItemClick&quot;&gt;
+      &lt;ListView.Header&gt;
+         &lt;BreadcrumbBar x:Name=&quot;FolderBreadcrumbBar&quot;
+                             ItemsSource=&quot;{x:Bind Breadcrumbs}&quot;
+                             ItemClicked=&quot;FolderBreadcrumbBar_ItemClicked&quot;&gt;
+         &lt;/BreadcrumbBar&gt;
+      &lt;/ListView.Header&gt;
+      &lt;ListView.ItemTemplate&gt;
+         &lt;DataTemplate&gt;
+            &lt;TextBlock Text=&quot;{Binding Name}&quot;/&gt;
+            &lt;/DataTemplate&gt;
+      &lt;/ListView.ItemTemplate&gt;
+   &lt;/ListView&gt;
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">public sealed partial class MainPage : Page
+{
+    List&lt;IStorageItem&gt; Items;
+    ObservableCollection&lt;object&gt; Breadcrumbs = 
+        new ObservableCollection&lt;object&gt;();
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+        InitializeView();
+    }
+
+    private void InitializeView()
+    {
+        // Start with Pictures and Music libraries.
+        Items = new List&lt;IStorageItem&gt;();
+        Items.Add(KnownFolders.PicturesLibrary);
+        Items.Add(KnownFolders.MusicLibrary);
+        FolderListView.ItemsSource = Items;
+
+        Breadcrumbs.Clear();
+        Breadcrumbs.Add(new Crumb(&quot;Home&quot;, null));
+    }
+
+    private async void FolderBreadcrumbBar_ItemClicked(muxc.BreadcrumbBar sender, muxc.BreadcrumbBarItemClickedEventArgs args)
+    {
+        // Don't process last index (current location)
+        if (args.Index &lt; Breadcrumbs.Count - 1)
+        {
+            // Home is special case.
+            if (args.Index == 0)
+            {
+                InitializeView();
+            }
+            // Go back to the clicked item.
+            else
+            {
+                var crumb = (Crumb)args.Item;
+                await GetFolderItems((StorageFolder)crumb.Data);
+
+                // Remove breadcrumbs at the end until 
+                // you get to the one that was clicked.
+                while (Breadcrumbs.Count &gt; args.Index + 1)
+                {
+                    Breadcrumbs.RemoveAt(Breadcrumbs.Count - 1);
+                }
+            }
+        }
+    }
+
+    private async void FolderListView_ItemClick(object sender, ItemClickEventArgs e)
+    {
+        // Ignore if a file is clicked.
+        // If a folder is clicked, drill down into it.
+        if (e.ClickedItem is StorageFolder)
+        {
+            StorageFolder folder = e.ClickedItem as StorageFolder;
+            await GetFolderItems(folder);
+            Breadcrumbs.Add(new Crumb(folder.DisplayName, folder));
+        }
+    }
+
+    private async Task GetFolderItems(StorageFolder folder)
+    {
+        IReadOnlyList&lt;IStorageItem&gt; itemsList = await folder.GetItemsAsync();
+        FolderListView.ItemsSource = itemsList;
+    }
+}
+
+public readonly struct Crumb
+{
+    public Crumb(String label, object data)
+    {
+        Label = label;
+        Data = data;
+    }
+    public string Label { get; }
+    public object Data { get; }
+    public override string ToString() =&gt; Label;
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The BreadcrumbBar for UWP apps requires WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in the <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar">BreadcrumbBar class</a></li>
+<li><a href="winui2gallery:/item/BreadcrumbBar">Open the WinUI 2 Gallery app and see the BreadcrumbBar in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:BreadcrumbBar /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/navigation-basics.html">Navigation design basics</a></li>
+<li><a href="navigationview.html">NavigationView</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar">BreadcrumbBar class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/breadcrumbbar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

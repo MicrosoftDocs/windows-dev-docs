@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>CommandResult Class </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="CommandResult Class ">
+    
+    <meta name="description" content="The CommandResult class indicates what the Command Palette should do after a command is executed. This allows commands to control the flow of the palette.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="commandresult-class">CommandResult Class</h1>
+
+<h2 id="definition">Definition</h2>
+<p>Namespace: <a href="microsoft-commandpalette-extensions-toolkit.html">Microsoft.CommandPalette.Extensions.Toolkit</a></p>
+<p>Indicates what the Command Palette should do after a command is executed. This allows commands to control the flow of the palette.</p>
+<p>Implements <a href="../microsoft-commandpalette-extensions/icommandresult.html">ICommandResult</a></p>
+<p>The <strong>CommandResult</strong> class is used to specify the result of a command execution in the Command Palette. It provides various methods to control the behavior of the Command Palette after a command is executed. This class is useful for managing navigation, displaying messages, and controlling the state of the Command Palette.</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Args</td>
+<td style="text-align: left;"><a href="../microsoft-commandpalette-extensions/icommandresultargs.html">ICommandResultArgs</a></td>
+<td style="text-align: left;">Gets or sets the arguments associated with the command result. This can include additional data needed for the command result.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Kind</td>
+<td style="text-align: left;"><a href="../microsoft-commandpalette-extensions/commandresultkind.html">CommandResultKind</a></td>
+<td style="text-align: left;">Gets or sets the result of the command. Defaults to <a href="../microsoft-commandpalette-extensions/commandresultkind.html#fields">CommandResultKind.Dismiss</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="commandresult_confirm.html">Confirm(ConfirmationArgs)</a></td>
+<td style="text-align: left;">Display a confirmation dialog to the user.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_dismiss.html">Dismiss()</a></td>
+<td style="text-align: left;">Close the Command Palette after the action is executed and dismiss the current state. On the next launch, the Command Palette will start from the main page with a blank query.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_goback.html">GoBack()</a></td>
+<td style="text-align: left;">Navigate to the previous page, and keep it open.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_gohome.html">GoHome()</a></td>
+<td style="text-align: left;">Navigate back to the main page of the Command Palette and keep it open. This clears out the current stack of pages, but keeps the palette open.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_gotopage.html">GoToPage(GoToPageArgs)</a></td>
+<td style="text-align: left;">Navigate to a different page in the palette. The <a href="gotopageargs.html">GoToPageArgs</a> will specify which page to navigate to.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_hide.html">Hide()</a></td>
+<td style="text-align: left;">Creates a new <strong>CommandResult</strong> instance with <strong>Kind</strong> set to <a href="../microsoft-commandpalette-extensions/commandresultkind.html#fields">CommandResultKind.Hide</a> and <strong>Args</strong> set to <code>null</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_keepopen.html">KeepOpen()</a></td>
+<td style="text-align: left;">Do nothing. This leaves the palette in its current state, with the current page stack and query.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_showtoast_string.html">ShowToast(String)</a></td>
+<td style="text-align: left;">Display a transient desktop-level message to the user. Creates a new <strong>CommandResult</strong> with <strong>Args</strong> set to a new <a href="toastargs.html">ToastArgs</a> object with its <a href="toastargs.html#properties">Message</a> set to <strong>String</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="commandresult_showtoast_toastargs.html">ShowToast(ToastArgs)</a></td>
+<td style="text-align: left;">Display a transient desktop-level message to the user. Creates a new <strong>CommandResult</strong> instance with <strong>Args</strong> set to <a href="toastargs.html">ToastArgs</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p>See <a href="../command-results.html">Command Results</a> for an example of how to use this.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

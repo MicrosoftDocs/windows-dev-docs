@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Layout panels for Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Layout panels for Windows apps ">
+    
+    <meta name="description" content="Learn how to use built-in XAML layout panels like RelativePanel, StackPanel, Grid, and Canvas to arrange and group UI elements in your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="layout-panels">Layout panels</h1>
+
+<p>Layout panels are containers that allow you to arrange and group UI elements in your app. The built-in XAML layout panels include <a href="/uwp/api/Windows.UI.Xaml.Controls.RelativePanel"><strong>RelativePanel</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel"><strong>StackPanel</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid"><strong>VariableSizedWrapGrid</strong></a>, and <a href="/uwp/api/Windows.UI.Xaml.Controls.Canvas"><strong>Canvas</strong></a>. Here, we describe each panel and show how to use it to layout XAML UI elements.</p>
+<p>There are several things to consider when choosing a layout panel:</p>
+<ul>
+<li>How the panel positions its child elements.</li>
+<li>How the panel sizes its child elements.</li>
+<li>How overlapping child elements are layered on top of each other (z-order).</li>
+<li>The number and complexity of nested panel elements needed to create your desired layout.</li>
+</ul>
+<h2 id="examples">Examples</h2>
+<table>
+<th align="left">WinUI 2 Gallery</th><th>
+</th><tr>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></td>
+<td>
+    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, see the <a href="winui2gallery:/item/RelativePanel">RelativePanel</a>, <a href="winui2gallery:/item/StackPanel">StackPanel</a>, <a href="winui2gallery:/item/Grid">Grid</a>, <a href="winui2gallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a>, and <a href="winui2gallery:/item/Canvas">Canvas</a> in action.</p>
+    <ul>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
+    </ul>
+</td>
+</tr>
+</table>
+<h2 id="panel-properties">Panel properties</h2>
+<p>Before we discuss individual panels, let's go over some common properties that all panels have.</p>
+<h3 id="panel-attached-properties">Panel attached properties</h3>
+<p>Most XAML layout panels use attached properties to let their child elements inform the parent panel about how they should be positioned in the UI. Attached properties use the syntax <em>AttachedPropertyProvider.PropertyName</em>. If you have panels that are nested inside other panels, attached properties on UI elements that specify layout characteristics to a parent are interpreted by the most immediate parent panel only.</p>
+<p>Here is an example of how you can set the <a href="/dotnet/api/system.windows.controls.canvas.left"><strong>Canvas.Left</strong></a> attached property on a Button control in XAML. This informs the parent Canvas that the Button should be positioned 50 effective pixels from the left edge of the Canvas.</p>
+<pre><code class="lang-xaml">&lt;Canvas&gt;
+  &lt;Button Canvas.Left=&quot;50&quot;&gt;Hello&lt;/Button&gt;
+&lt;/Canvas&gt;
+</code></pre>
+<p>For more info about attached properties, see <a href="/windows/uwp/xaml-platform/attached-properties-overview">Attached properties overview</a>.</p>
+<h3 id="panel-borders">Panel borders</h3>
+<p>The RelativePanel, StackPanel, and Grid panels define border properties that let you draw a border around the panel without wrapping them in an additional Border element. The border properties are <strong>BorderBrush</strong>, <strong>BorderThickness</strong>, <strong>CornerRadius</strong>, and <strong>Padding</strong>.</p>
+<p>Here’s an example of how to set border properties on a Grid.</p>
+<pre><code class="lang-xaml">&lt;Grid BorderBrush=&quot;Blue&quot; BorderThickness=&quot;12&quot; CornerRadius=&quot;12&quot; Padding=&quot;12&quot;&gt;
+    &lt;TextBlock Text=&quot;Hello World!&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p><img src="images/layout-panel-grid-border.png" alt="A Grid with borders"></p>
+<p>Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see <a href="/windows/uwp/debug-test-perf/optimize-your-xaml-layout">Optimize your XAML layout</a>.</p>
+<h2 id="relativepanel">RelativePanel</h2>
+<p><a href="/uwp/api/Windows.UI.Xaml.Controls.RelativePanel"><strong>RelativePanel</strong></a> lets you layout UI elements by specifying where they go in relation to other elements and in relation to the panel. By default, an element is positioned in the upper left corner of the panel. You can use RelativePanel with <a href="/uwp/api/Windows.UI.Xaml.VisualStateManager"><strong>VisualStateManager</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.AdaptiveTrigger"><strong>AdaptiveTrigger</strong></a> to rearrange your UI for different window sizes.</p>
+<p>This table shows the attached properties you can use to align an element in relation to the panel or other elements.</p>
+<table>
+<thead>
+<tr>
+<th>Panel alignment</th>
+<th>Sibling alignment</th>
+<th>Sibling position</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithpanelproperty"><strong>AlignTopWithPanel</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.aligntopwithproperty"><strong>AlignTopWith</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel"><strong>Above</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithpanelproperty"><strong>AlignBottomWithPanel</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignbottomwithproperty"><strong>AlignBottomWith</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.belowproperty"><strong>Below</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel"><strong>AlignLeftWithPanel</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.getalignleftwith"><strong>AlignLeftWith</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.leftofproperty"><strong>LeftOf</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithpanelproperty"><strong>AlignRightWithPanel</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignrightwithproperty"><strong>AlignRightWith</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.setrightof"><strong>RightOf</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanelproperty"><strong>AlignHorizontalCenterWithPanel</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithproperty"><strong>AlignHorizontalCenterWith</strong></a></td>
+<td> </td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanelproperty"><strong>AlignVerticalCenterWithPanel</strong></a></td>
+<td><a href="/uwp/api/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithproperty"><strong>AlignVerticalCenterWith</strong></a></td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p>This XAML shows how to arrange elements in a RelativePanel.</p>
+<pre><code class="lang-xaml">&lt;RelativePanel BorderBrush=&quot;Gray&quot; BorderThickness=&quot;1&quot;&gt;
+    &lt;Rectangle x:Name=&quot;RedRect&quot; Fill=&quot;Red&quot; Height=&quot;44&quot; Width=&quot;44&quot;/&gt;
+    &lt;Rectangle x:Name=&quot;BlueRect&quot; Fill=&quot;Blue&quot;
+               Height=&quot;44&quot; Width=&quot;88&quot;
+               RelativePanel.RightOf=&quot;RedRect&quot; /&gt;
+
+    &lt;Rectangle x:Name=&quot;GreenRect&quot; Fill=&quot;Green&quot; 
+               Height=&quot;44&quot;
+               RelativePanel.Below=&quot;RedRect&quot; 
+               RelativePanel.AlignLeftWith=&quot;RedRect&quot; 
+               RelativePanel.AlignRightWith=&quot;BlueRect&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Orange&quot;
+               RelativePanel.Below=&quot;GreenRect&quot; 
+               RelativePanel.AlignLeftWith=&quot;BlueRect&quot; 
+               RelativePanel.AlignRightWithPanel=&quot;True&quot;
+               RelativePanel.AlignBottomWithPanel=&quot;True&quot;/&gt;
+&lt;/RelativePanel&gt;
+</code></pre>
+<p>The result looks like this.</p>
+<p><img src="images/layout-panel-relative-panel.png" alt="Relative panel"></p>
+<p>Here are a few things to note about the sizing of the rectangles:</p>
+<ul>
+<li>The red rectangle is given an explicit size of 44x44. It's placed in the upper left corner of the panel, which is the default position.</li>
+<li>The green rectangle is given an explicit height of 44. Its left side is aligned with the red rectangle, and its right side is aligned with the blue rectangle, which determines its width.</li>
+<li>The orange rectangle isn't given an explicit size. Its left side is aligned with the blue rectangle. Its right and bottom edges are aligned with the edge of the panel. Its size is determined by these alignments and it will resize as the panel resizes.</li>
+</ul>
+<h2 id="stackpanel">StackPanel</h2>
+<p><a href="/uwp/api/Windows.UI.Xaml.Controls.StackPanel"><strong>StackPanel</strong></a> arranges its child elements into a single line that can be oriented horizontally or vertically. StackPanel is typically used to arrange a small subsection of the UI on a page.</p>
+<p>You can use the <a href="/uwp/api/windows.ui.xaml.controls.stackpanel.orientation"><strong>Orientation</strong></a> property to specify the direction of the child elements. The default orientation is <a href="/uwp/api/Windows.UI.Xaml.Controls.Orientation"><strong>Vertical</strong></a>.</p>
+<p>The following XAML shows how to create a vertical StackPanel of items.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;Rectangle Fill=&quot;Red&quot; Height=&quot;44&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Blue&quot; Height=&quot;44&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Green&quot; Height=&quot;44&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Orange&quot; Height=&quot;44&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>The result looks like this.</p>
+<p><img src="images/layout-panel-stack-panel.png" alt="Stack panel"></p>
+<p>In a StackPanel, if a child element's size is not set explicitly, it stretches to fill the available width (or height if the Orientation is <strong>Horizontal</strong>). In this example, the width of the rectangles is not set. The rectangles expand to fill the entire width of the StackPanel.</p>
+<h2 id="grid">Grid</h2>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> panel supports fluid layouts and allows you to arrange controls in multi-row and multi-column layouts. You specify a Grid's rows and columns by using the <a href="/uwp/api/windows.ui.xaml.controls.grid.rowdefinitions"><strong>RowDefinitions</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.grid.columndefinitions"><strong>ColumnDefinitions</strong></a> properties.</p>
+<p>To position objects in specific cells of the Grid, use the <a href="/dotnet/api/system.windows.controls.grid.column"><strong>Grid.Column</strong></a> and <a href="/dotnet/api/system.windows.controls.grid.row"><strong>Grid.Row</strong></a> attached properties.</p>
+<p>To make content span across multiple rows and columns, use the <a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)"><strong>Grid.RowSpan</strong></a> and <a href="/dotnet/api/system.windows.controls.grid.columnspan"><strong>Grid.ColumnSpan</strong></a> attached properties.</p>
+<p>This XAML example shows how to create a Grid with two rows and two columns.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition/&gt;
+        &lt;RowDefinition Height=&quot;44&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+        &lt;ColumnDefinition/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+    &lt;Rectangle Fill=&quot;Red&quot; Width=&quot;44&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Blue&quot; Grid.Row=&quot;1&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Green&quot; Grid.Column=&quot;1&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Orange&quot; Grid.Row=&quot;1&quot; Grid.Column=&quot;1&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>The result looks like this.</p>
+<p><img src="images/layout-panel-grid.png" alt="Grid"></p>
+<p>In this example, the sizing works like this:</p>
+<ul>
+<li>The second row has an explicit height of 44 effective pixels. By default, the height of the first row fills whatever space is left over.</li>
+<li>The width of the first column is set to <strong>Auto</strong>, so it's as wide as needed for its children. In this case, it's 44 effective pixels wide to accommodate the width of the red rectangle.</li>
+<li>There are no other size constraints on the rectangles, so each one stretches to fill the grid cell it's in.</li>
+</ul>
+<p>You can distribute space within a column or a row by using <strong>Auto</strong> or star sizing. You use auto sizing to let UI elements resize to fit their content or parent container. You can also use auto sizing with the rows and columns of a grid. To use auto sizing, set the Height and/or Width of UI elements to <strong>Auto</strong>.</p>
+<p>You use proportional sizing, also called <em>star sizing</em>, to distribute available space among the rows and columns of a grid by weighted proportions. In XAML, star values are expressed as * (or <em>n</em>* for weighted star sizing). For example, to specify that one column is 5 times wider than the second column in a 2-column layout, use &quot;5*&quot; and &quot;*&quot; for the <a href="/uwp/api/windows.ui.xaml.controls.columndefinition.width"><strong>Width</strong></a> properties in the <a href="/uwp/api/Windows.UI.Xaml.Controls.ColumnDefinition"><strong>ColumnDefinition</strong></a> elements.</p>
+<p>This example combines fixed, auto, and proportional sizing in a <a href="/uwp/api/Windows.UI.Xaml.Controls.Grid"><strong>Grid</strong></a> with 4 columns.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Sizing</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Column_1</td>
+<td><strong>Auto</strong></td>
+<td>The column will size to fit its content.</td>
+</tr>
+<tr>
+<td>Column_2</td>
+<td>*</td>
+<td>After the Auto columns are calculated, the column gets part of the remaining width. Column_2 will be one-half as wide as Column_4.</td>
+</tr>
+<tr>
+<td>Column_3</td>
+<td><strong>44</strong></td>
+<td>The column will be 44 pixels wide.</td>
+</tr>
+<tr>
+<td>Column_4</td>
+<td><strong>2</strong>*</td>
+<td>After the Auto columns are calculated, the column gets part of the remaining width. Column_4 will be twice as wide as Column_2.</td>
+</tr>
+</tbody>
+</table>
+<p>The default column width is &quot;*&quot;, so you don't need to explicitly set this value for the second column.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition Width=&quot;Auto&quot;/&gt;
+        &lt;ColumnDefinition/&gt;
+        &lt;ColumnDefinition Width=&quot;44&quot;/&gt;
+        &lt;ColumnDefinition Width=&quot;2*&quot;/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+    &lt;TextBlock Text=&quot;Column 1 sizes to its content.&quot; FontSize=&quot;24&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>In the Visual Studio XAML designer, the result looks like this.</p>
+<p><img src="images/xaml-layout-grid-in-designer.png" alt="A 4 column grid in the Visual Studio designer"></p>
+<h2 id="variablesizedwrapgrid">VariableSizedWrapGrid</h2>
+<p><a href="/uwp/api/Windows.UI.Xaml.Controls.VariableSizedWrapGrid"><strong>VariableSizedWrapGrid</strong></a> is a Grid-style layout panel where rows or columns automatically wrap to a new row or column when the <a href="/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns"><strong>MaximumRowsOrColumns</strong></a> value is reached.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.orientation"><strong>Orientation</strong></a> property specifies whether the grid adds its items in rows or columns before wrapping. The default orientation is <strong>Vertical</strong>, which means the grid adds items from top to bottom until a column is full, then wraps to a new column. When the value is <strong>Horizontal</strong>, the grid adds items from left to right, then wraps to a new row.</p>
+<p>Cell dimensions are specified by the <a href="/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight"><strong>ItemHeight</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth"><strong>ItemWidth</strong></a>. Each cell is the same size. If ItemHeight or ItemWidth is not specified, then the first cell sizes to fit its content, and every other cell is the size of the first cell.</p>
+<p>You can use the <a href="/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid"><strong>VariableSizedWrapGrid.ColumnSpan</strong></a> and <a href="/uwp/api/windows.ui.xaml.controls.variablesizedwrapgrid.getrowspan"><strong>VariableSizedWrapGrid.RowSpan</strong></a> attached properties to specify how many adjacent cells a child element should fill.</p>
+<p>Here's how to use a VariableSizedWrapGrid in XAML.</p>
+<pre><code class="lang-xaml">&lt;VariableSizedWrapGrid MaximumRowsOrColumns=&quot;3&quot; ItemHeight=&quot;44&quot; ItemWidth=&quot;44&quot;&gt;
+    &lt;Rectangle Fill=&quot;Red&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Blue&quot; 
+               VariableSizedWrapGrid.RowSpan=&quot;2&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Green&quot; 
+               VariableSizedWrapGrid.ColumnSpan=&quot;2&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Orange&quot; 
+               VariableSizedWrapGrid.RowSpan=&quot;2&quot; 
+               VariableSizedWrapGrid.ColumnSpan=&quot;2&quot;/&gt;
+&lt;/VariableSizedWrapGrid&gt;
+</code></pre>
+<p>The result looks like this.</p>
+<p><img src="images/layout-panel-variable-size-wrap-grid.png" alt="Variable size wrap grid"></p>
+<p>In this example, the maximum number of rows in each column is 3. The first column contains only 2 items (the red and blue rectangles) because the blue rectangle spans 2 rows. The green rectangle then wraps to the top of the next column.</p>
+<h2 id="canvas">Canvas</h2>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Controls.Canvas"><strong>Canvas</strong></a> panel positions its child elements using fixed coordinate points and does not support fluid layouts. You specify the points on individual child elements by setting the <a href="/dotnet/api/system.windows.controls.canvas.left"><strong>Canvas.Left</strong></a> and <a href="/dotnet/api/system.windows.controls.canvas.top"><strong>Canvas.Top</strong></a> attached properties on each element. The parent Canvas reads these attached property values from its children during the <a href="/uwp/api/windows.ui.xaml.uielement.arrange">Arrange</a> pass of layout.</p>
+<p>Objects in a Canvas can overlap, where one object is drawn on top of another object. By default, the Canvas renders child objects in the order in which they’re declared, so the last child is rendered on top (each element has a default z-index of 0). This is the same as other built-in panels. However, Canvas also supports the <a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)"><strong>Canvas.ZIndex</strong></a> attached property that you can set on each of the child elements. You can set this property in code to change the draw order of elements during run time. The element with the highest Canvas.ZIndex value draws last and therefore draws over any other elements that share the same space or overlap in any way. Note that alpha value (transparency) is respected, so even if elements overlap, the contents shown in overlap areas might be blended if the top one has a non-maximum alpha value.</p>
+<p>The Canvas does not do any sizing of its children. Each element must specify its size.</p>
+<p>Here's an example of a Canvas in XAML.</p>
+<pre><code class="lang-xaml">&lt;Canvas Width=&quot;120&quot; Height=&quot;120&quot;&gt;
+    &lt;Rectangle Fill=&quot;Red&quot; Height=&quot;44&quot; Width=&quot;44&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Blue&quot; Height=&quot;44&quot; Width=&quot;44&quot; Canvas.Left=&quot;20&quot; Canvas.Top=&quot;20&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Green&quot; Height=&quot;44&quot; Width=&quot;44&quot; Canvas.Left=&quot;40&quot; Canvas.Top=&quot;40&quot;/&gt;
+    &lt;Rectangle Fill=&quot;Orange&quot; Height=&quot;44&quot; Width=&quot;44&quot; Canvas.Left=&quot;60&quot; Canvas.Top=&quot;60&quot;/&gt;
+&lt;/Canvas&gt;
+</code></pre>
+<p>The result looks like this.</p>
+<p><img src="images/layout-panel-canvas.png" alt="Canvas"></p>
+<p>Use the Canvas panel with discretion. While it's convenient to be able to precisely control positions of elements in UI for some scenarios, a fixed positioned layout panel causes that area of your UI to be less adaptive to overall app window size changes. App window resize might come from device orientation changes, split app windows, changing monitors, and a number of other user scenarios.</p>
+<h2 id="panels-for-itemscontrol">Panels for ItemsControl</h2>
+<p>There are several special-purpose panels that can be used only as an <a href="/uwp/api/windows.ui.xaml.controls.itemscontrol.itemspanel"><strong>ItemsPanel</strong></a> to display items in an <a href="/uwp/api/Windows.UI.Xaml.Controls.ItemsControl"><strong>ItemsControl</strong></a>. These are <a href="/uwp/api/Windows.UI.Xaml.Controls.ItemsStackPanel"><strong>ItemsStackPanel</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.ItemsWrapGrid"><strong>ItemsWrapGrid</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Controls.VirtualizingStackPanel"><strong>VirtualizingStackPanel</strong></a>, and <a href="/uwp/api/Windows.UI.Xaml.Controls.WrapGrid"><strong>WrapGrid</strong></a>. You can't use these panels for general UI layout.</p>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI 2 Gallery sample</a> - See all the XAML controls in an interactive format.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/layout/layout-panels.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

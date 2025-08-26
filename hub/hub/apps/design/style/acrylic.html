@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Acrylic material </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Acrylic material ">
+    
+    <meta name="description" content="Learn to use acrylic, a type of brush that creates a translucent texture to add depth and help establish a visual hierarchy.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="acrylic-material">Acrylic material</h1>
+
+<p><img src="images/header-acrylic.svg" alt="hero image"></p>
+<p>Acrylic is a type of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.brush">Brush</a> that creates a translucent texture. You can apply acrylic to app surfaces to add depth and help establish a visual hierarchy.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush">AcrylicBrush class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.background">Background property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop">Window.SystemBackdrop property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop">DesktopAcrylicBackdrop class</a></p>
+</blockquote>
+<section class="row">
+<div class="column">
+<p>Acrylic in light theme
+<img src="images/acrylic-light-theme-base.png" alt="Acrylic in light theme"></p>
+</div>
+<div class="column">
+<p>Acrylic in dark theme
+<img src="images/acrylic-dark-theme-base.png" alt="Acrylic in dark theme"></p>
+</div>
+</section>
+<h2 id="acrylic-and-the-fluent-design-system">Acrylic and the Fluent Design System</h2>
+<p>The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Acrylic is a Fluent Design System component that adds physical texture (material) and depth to your app. To learn more, see <a href="https://fluent2.microsoft.design/material">Fluent Design - Material</a>.</p>
+<h2 id="acrylic-blend-types">Acrylic blend types</h2>
+<p>Acrylic's most noticeable characteristic is its transparency. There are two acrylic blend types that change what's visible through the material:</p>
+<ul>
+<li><strong>Background acrylic</strong> reveals the desktop wallpaper and other windows that are behind the currently active app, adding depth between application windows while celebrating the user's personalization preferences.</li>
+<li><strong>In-app acrylic</strong> adds a sense of depth within the app frame, providing both focus and hierarchy.</li>
+</ul>
+<p><img src="images/background-acrylic-dark-theme.png" alt="Background acrylic"></p>
+<p><img src="images/app-acrylic-dark-theme.png" alt="In-app acrylic"></p>
+<p>Avoid layering multiple acrylic surfaces: multiple layers of background acrylic can create distracting optical illusions.</p>
+<h2 id="when-to-use-acrylic">When to use acrylic</h2>
+<p>Consider the following usage patterns to decide how best to incorporate acrylic into your app.</p>
+<h3 id="transient-surfaces">Transient surfaces</h3>
+<ul>
+<li>Use <strong>background acrylic</strong> for transient UI elements.</li>
+</ul>
+<p>For apps with context menus, flyouts, non-modal popups, or light-dismiss panes, we recommend that you use background acrylic, especially if these surfaces draw outside the frame of the main app window. Using acrylic in transient scenarios helps maintain a visual relationship with the content that triggered the transient UI.</p>
+<p><img src="images/acrylic-transient-context-menu.png" alt="The desktop background showing through an open context menu using background acrylic"></p>
+<p>Many XAML controls draw acrylic by default. <a href="../controls/menus.html">MenuFlyout</a>, <a href="../controls/auto-suggest-box.html">AutoSuggestBox</a>, <a href="../controls/combo-box.html">ComboBox</a>, and similar controls with light-dismiss popups all use acrylic while open.</p>
+<h3 id="supporting-ui-and-vertical-panes">Supporting UI and vertical panes</h3>
+<ul>
+<li>Use <strong>in-app acrylic</strong> for supporting UI, such as on surfaces that may overlap content when scrolled or interacted with.</li>
+</ul>
+<p>If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow in your app. Using <a href="../controls/navigationview.html">NavigationView</a> will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly can result in visual noise.</p>
+<p>For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background instead of acrylic. If your vertical panes open on top of content, like in NavigationView's <strong>Compact</strong> or <strong>Minimal</strong> modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Rendering acrylic surfaces is GPU-intensive, which can increase device power consumption and shorten battery life. Acrylic effects are automatically disabled when a device enters Battery Saver mode. Users can disable acrylic effects for all apps by turning off <em>Transparency effects</em> in Settings &gt; Personalization &gt; Colors.</p>
+</div>
+<h2 id="usability-and-adaptability">Usability and adaptability</h2>
+<p>Acrylic automatically adapts its appearance for a wide variety of devices and contexts.</p>
+<p>In High Contrast mode, users continue to see the familiar background color of their choosing in place of acrylic. In addition, both background acrylic and in-app acrylic appear as a solid color:</p>
+<ul>
+<li>When the user turns off <em>Transparency effects</em> in Settings &gt; Personalization &gt; Colors.</li>
+<li>When Battery Saver mode is activated.</li>
+<li>When the app runs on low-end hardware.</li>
+</ul>
+<p>In addition, only background acrylic will replace its translucency and texture with a solid color:</p>
+<ul>
+<li>When an app window on desktop deactivates.</li>
+<li>When the app is running on Xbox, HoloLens, or in tablet mode.</li>
+</ul>
+<h3 id="legibility-considerations">Legibility considerations</h3>
+<p>It's important to ensure that any text your app presents to users meets contrast ratios (see <a href="../accessibility/accessible-text-requirements.html">Accessible text requirements</a>). We've optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing <a href="../controls/hyperlinks.html">hyperlinks</a> over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.</p>
+<h2 id="apply-acrylic-in-your-app">Apply acrylic in your app</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>How you apply background acrylic differs between WinUI 3 and WinUI 2/UWP.</p>
+<p><strong>WinUI 2/UWP</strong>: The AcrylicBrush class has a <a href="/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush.backgroundsource">BackgroundSource</a> property that specifies whether you want background or in-app acrylic. You use an AcrylicBrush to apply both types of acrylic. See the AcrylicBrush classes for specific information and examples: <a href="/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush">Microsoft.UI.Xaml.Media.AcrylicBrush (WinUI 2)</a>, <a href="/uwp/api/windows.ui.xaml.media.acrylicbrush">Windows.UI.Xaml.Media.AcrylicBrush (UWP)</a>.</p>
+<p><strong>WinUI 3</strong>: The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush">AcrylicBrush</a> class only supports in-app acrylic. You use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop">DesktopAcrylicBackdrop</a> class to apply background acrylic.</p>
+</div>
+<h3 id="background-acrylic">Background acrylic</h3>
+<p>To apply background acrylic in a WinUI 3 app, set the element's <code>SystemBackdrop</code> property to an instance of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop">DesktopAcrylicBackdrop</a>. For more info, see <a href="/windows/apps/windows-app-sdk/system-backdrop-controller">Apply Mica or Acrylic materials in desktop apps for Windows 11</a>.</p>
+<p>These elements have a <code>SystemBackdrop</code> property:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.commandbarflyoutcommandbar.systembackdrop">CommandBarFlyoutCommandBar.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.content.contentisland.systembackdrop">ContentIsland.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.desktopwindowxamlsource.systembackdrop">DesktopWindowXamlSource.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.systembackdrop">FlyoutBase.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutpresenter.systembackdrop">MenuFlyoutPresenter.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup.systembackdrop">Popup.SystemBackdrop</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop">Window.SystemBackdrop</a></li>
+</ul>
+<h3 id="in-app-acrylic">In-app acrylic</h3>
+<p>You can apply in-app acrylic to your app's surfaces using a XAML <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush">AcrylicBrush</a> or predefined <code>AcrylicBrush</code> theme resources.</p>
+<p>WinUI includes a collection of brush theme resources that respect the app's theme and fall back to solid colors as needed. To paint a specific surface, apply one of the theme resources to element backgrounds just as you would apply any other brush resource.</p>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource AcrylicInAppFillColorDefaultBrush}&quot;&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can view these resources in the <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/6aed8d97fdecfe9b19d70c36bd1dacd9c6add7c1/dev/Materials/Acrylic/AcrylicBrush_19h1_themeresources.xaml#L11">AcrylicBrush theme resources file, in the microsoft-ui-xaml GitHub repo</a>.</p>
+<p>For WinUI 2, resources that include <em>Background</em> in their names represent background acrylic, while <em>InApp</em> refers to in-app acrylic.</p>
+<p>WinUI 3 includes the <em>Background</em> resources for compatibility, but they behave the same as <em>InApp</em> resources.</p>
+</div>
+<h4 id="custom-acrylic-brush">Custom acrylic brush</h4>
+<p>You may choose to add a color tint to your app's acrylic to show branding or provide visual balance with other elements on the page. To show color rather than grayscale, you'll need to define your own acrylic brushes using the following properties.</p>
+<ul>
+<li><strong>TintColor</strong>: the color/tint overlay layer.</li>
+<li><strong>TintOpacity</strong>: the opacity of the tint layer.</li>
+<li><strong>TintLuminosityOpacity</strong>: controls the amount of saturation that is allowed through the acrylic surface from the background.</li>
+<li><strong>BackgroundSource</strong>: (WinUI 2/UWP only) the flag to specify whether you want background or in-app acrylic.</li>
+<li><strong>FallbackColor</strong>: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn't in the active desktop window.</li>
+</ul>
+<p><img src="images/custom-acrylic-swatches-light-theme.png" alt="Light theme acrylic swatches"></p>
+<p><img src="images/custom-acrylic-swatches-dark-theme.png" alt="Dark theme acrylic swatches"></p>
+<p><img src="images/luminosity-vs-tint.png" alt="Luminosity opacity compared to tint opacity"></p>
+<p>To add an acrylic brush, define the three resources for dark, light, and high contrast themes. In high contrast, we recommend that you use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.solidcolorbrush">SolidColorBrush</a> with the same <code>x:Key</code> as the dark/light AcrylicBrush.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you don't specify a <code>TintLuminosityOpacity</code> value, the system will automatically adjust its value based on your TintColor and TintOpacity.</p>
+</div>
+<pre><code class="lang-xaml">&lt;ResourceDictionary.ThemeDictionaries&gt;
+    &lt;ResourceDictionary x:Key=&quot;Default&quot;&gt;
+        &lt;AcrylicBrush x:Key=&quot;MyAcrylicBrush&quot;
+            BackgroundSource=&quot;HostBackdrop&quot;
+            TintColor=&quot;#FFFF0000&quot;
+            TintOpacity=&quot;0.8&quot;
+            TintLuminosityOpacity=&quot;0.5&quot;
+            FallbackColor=&quot;#FF7F0000&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+
+    &lt;ResourceDictionary x:Key=&quot;HighContrast&quot;&gt;
+        &lt;SolidColorBrush x:Key=&quot;MyAcrylicBrush&quot;
+            Color=&quot;{ThemeResource SystemColorWindowColor}&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+
+    &lt;ResourceDictionary x:Key=&quot;Light&quot;&gt;
+        &lt;AcrylicBrush x:Key=&quot;MyAcrylicBrush&quot;
+            BackgroundSource=&quot;HostBackdrop&quot;
+            TintColor=&quot;#FFFF0000&quot;
+            TintOpacity=&quot;0.8&quot;
+            TintLuminosityOpacity=&quot;0.5&quot;
+            FallbackColor=&quot;#FFFF7F7F&quot;/&gt;
+    &lt;/ResourceDictionary&gt;
+&lt;/ResourceDictionary.ThemeDictionaries&gt;
+</code></pre>
+<p>The following sample shows how to declare an AcrylicBrush in code.</p>
+<pre><code class="lang-csharp">AcrylicBrush myBrush = new AcrylicBrush();
+myBrush.TintColor = Color.FromArgb(255, 202, 24, 37);
+myBrush.FallbackColor = Color.FromArgb(255, 202, 24, 37);
+myBrush.TintOpacity = 0.6;
+
+grid.Fill = myBrush;
+</code></pre>
+<h2 id="dos-and-donts">Do's and don'ts</h2>
+<ul>
+<li><strong>Do</strong> use acrylic on transient surfaces.</li>
+<li><strong>Do</strong> extend acrylic to at least one edge of your app to provide a seamless experience by subtly blending with the app's surroundings.</li>
+<li><strong>Don't</strong> put desktop acrylic on large background surfaces of your app.</li>
+<li><strong>Don't</strong> place multiple acrylic panes next to each other because this results in an undesirable visible seam.</li>
+<li><strong>Don't</strong> place accent-colored text over acrylic surfaces.</li>
+</ul>
+<h2 id="how-we-designed-acrylic">How we designed acrylic</h2>
+<p>We fine-tuned acrylic's key components to arrive at its unique appearance and properties. We started with translucency, blur, and noise to add visual depth and dimension to flat surfaces. We added an exclusion blend mode layer to ensure contrast and legibility of UI placed on an acrylic background. Finally, we added color tint for personalization opportunities. In concert these layers add up to a fresh, usable material.</p>
+<p><img src="images/acrylic-recipe-diagram.jpg" alt="Acrylic recipe">
+<br>The acrylic recipe: background, blur, exclusion blend, color/tint overlay, noise</p>
+<h2 id="examples">Examples</h2>
+<div class="nextstepaction">
+<p><a href="winui3gallery://item/SystemBackdrops">Open the WinUI 3 Gallery app and see background Acrylic in action</a></p>
+<p><a href="winui3gallery://item/Acrylic">Open the WinUI 3 Gallery app and see the in-app AcrylicBrush in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h2 id="related-articles">Related articles</h2>
+<p><a href="../index.html">Fluent Design overview</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/style/acrylic.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows App SDK app lifecycle </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows App SDK app lifecycle ">
+    
+    <meta name="description" content="This article provides an overview of managing the lifecycle of Windows App SDK apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-sdk-app-lifecycle">Windows App SDK app lifecycle</h1>
+
+<p>This article provides an overview of managing the lifecycle of <strong>Windows App SDK</strong> desktop apps.</p>
+<h2 id="app-lifecycle-overview">App lifecycle overview</h2>
+<p>The application lifecycle of a Windows App SDK app is not that same as a UWP app. The lifecycle of Windows App SDK apps is similar to other .NET and Win32 desktop apps. Windows App SDK apps, like UWP apps, are started and stopped. They are either running or not running. However, unlike UWP apps, they cannot be suspended and resumed. At the window level, your app can subscribe to events to react when windows are activated and deactivated.</p>
+<h2 id="microsoftuixamlapplication-lifecycle">Microsoft.UI.Xaml.Application lifecycle</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application">Application</a> object is the main entry point for a Windows App SDK app. It's similar to the UWP <a href="/uwp/api/windows.ui.xaml.application">Application</a> class, but with some important differences. The <code>Application</code> object is created by the Windows App SDK framework and is accessible from the <code>Microsoft.UI.Xaml.Application.Current</code> property.</p>
+<p>The <code>Application</code> class in Windows App SDK has only one lifecycle method, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched">OnLaunched</a>, which is called when the app is launched. The <code>OnLaunched</code> method is responsible for creating the app's main window and displaying it. The <code>OnLaunched</code> method is also responsible for initializing the Windows App SDK framework and starting the app. When you create a new Windows App SDK app, the <code>OnLaunched</code> method is automatically generated for you.</p>
+<p>In contrast, the UWP <code>Application</code> class has several activation-related lifecycle methods, including <a href="/uwp/api/windows.ui.xaml.application.onlaunched">OnLaunched</a>, <a href="/uwp/api/windows.ui.xaml.application.onactivated">OnActivated</a>, and <a href="/uwp/api/windows.ui.xaml.application.onbackgroundactivated">OnBackgroundActivated</a>. The <code>OnActivated</code> and <code>OnBackgroundActivated</code> methods are called when the app is activated. The <code>OnActivated</code> method is called when the app is activated by the user, and the <code>OnBackgroundActivated</code> method is called when the app is activated by the system.</p>
+<p>UWP's <code>Application</code> class also has several lifecycle events: <a href="/uwp/api/windows.ui.xaml.application.suspending">Suspending</a>, <a href="/uwp/api/windows.ui.xaml.application.resuming">Resuming</a>, <a href="/uwp/api/windows.ui.xaml.application.enteredbackground">EnteredBackground</a>, and <a href="/uwp/api/windows.ui.xaml.application.leavingbackground">LeavingBackground</a>. The <code>Suspending</code> event is raised when the app is suspended, and the <code>Resuming</code> event is raised when the app is resumed. The <code>EnteredBackground</code> event is raised when the app enters the background, and the <code>LeavingBackground</code> event is raised when the app leaves the background. For a full explanation of UWP lifecycle events, see <a href="/windows/uwp/launch-resume/app-lifecycle">Windows 10 UWP app lifecycle</a>.</p>
+<p>If you are migrating a UWP app to Windows App SDK, you can use the <a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle">Application lifecycle functionality migration</a> guide to understand the differences between the UWP and Windows App SDK app lifecycles.</p>
+<h2 id="microsoftuixamlwindow-lifecycle">Microsoft.UI.Xaml.Window lifecycle</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> object in Windows App SDK has some lifecycle events as well, <code>Window.Activated</code> and <code>Window.Closed</code>.</p>
+<h3 id="windowactivated">Window.Activated</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activated">Activated</a> event is raised when the window has been activated or deactivated by the system. Apps can determine what the status of the Window activation is by checking the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.windowactivatedeventargs.windowactivationstate">WindowActivationState</a> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.windowactivatedeventargs">WindowActivatedEventArgs</a> parameter. This event will fire any time the window is activated or deactivated, including when the window is minimized or maximized.</p>
+<h3 id="windowclosed">Window.Closed</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.closed">Closed</a> event is raised when the window closes. If this is the last window to be closed, usually the app's MainWindow, the application will be terminated. Because there is no <code>Suspending</code> event raised by the <code>Application</code> object in Windows App SDK, you should use your main window's <code>Closed</code> event to save application state and clean up any managed resources.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="/windows/apps/develop/app-lifecycle-and-system-services">App lifecycle and system services</a></p>
+<p><a href="/windows/uwp/launch-resume/app-lifecycle">UWP app lifecycle</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/applifecycle/applifecycle.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

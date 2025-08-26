@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Annotated Scrollbar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Annotated Scrollbar ">
+    
+    <meta name="description" content="Use an annotated scrollbar control to add labels that help a user navigate through a large collection.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="annotated-scrollbar-control">Annotated scrollbar control</h1>
+
+<p>An annotated scrollbar helps users easily navigate through a large collection of items. It replaces the default scrollbar and can be used in conjunction with any scrollable container. This vertical scrollbar allows users to scroll up and down through the items in a collection. Users can see category labels along the scrollbar area to provide a visual reference of where they are within their collection. A panning indicator (accent-colored line) indicates the user's current position in the collection. A tooltip is revealed when a user hovers on the scrollbar area. This tooltip contains a label to give more information to the user about their current position in the collection. Scroll arrows are located at the top and bottom of the scrollbar area. They can be used to move the current position by a small increment</p>
+<p><span class="mx-imgBorder">
+<img src="images/scrolling/annotated-scrollbar-photos-app.png" alt="A screenshot that shows an annotated scrollbar in the Photos app.">
+</span>
+</p>
+<p><em>The annotated scrollbar can be used in conjunction with an ItemsView control to recreate a photo gallery experience. The category labels can be set to different years to help users navigate to a specific location within their photo collection.</em></p>
+<h2 id="interactions">Interactions</h2>
+<p>On hover, a tooltip is revealed to show a preview of that location. Users can then click to navigate to that specific location. Users can also click and drag anywhere on the scrollbar area to navigate to a new position within their collection. As they drag, the panning indicator stays attached to the mouse cursor and the content scrolls to reflect the new position. Users can also scroll through their collection by using the mouse wheel. Scrolling up or down on the mouse wheel moves their position in the collection and the corresponding panning indicator up or down by a fixed amount.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Unlike in a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollbar">ScrollBar</a> control, you can't click-and-drag the thumb. The thumb is a non-interactive element that is only for visualizing the current viewport position. The thumb has a fixed height which is not representative of the viewport height.</p>
+</div>
+<h3 id="label-behavior">Label behavior</h3>
+<ul>
+<li>For experiences optimized for touch input, users can tap and hold on the scrollbar area to see the tooltip. The tooltip will be slightly more elevated to make it easier to read for touch users. Tapping and dragging anywhere on the scrollbar area will work similarly to a click and drag with mouse.</li>
+<li>The tooltip label is never truncated as its purpose is to display text that's explanatory. Instead, the text is wrapped if it goes over the tooltip's max width of 360px.</li>
+<li>Category labels are clipped if the text is longer than the width of the scrollbar's area.</li>
+<li>When there is a collision between two category labels (for example, when the window size decreases and two labels overlap each other), the top label is removed. As an exception to this rule, the first label of the collection is always kept as it helps to indicate the range of the collection to users. Category labels should always have a minimum of 4px (2px above, 2px below) in between, otherwise a label-collision is triggered.</li>
+</ul>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>We recommend using an annotated scrollbar, rather than a default scrollbar, when dealing with a large collection of items or when a large amount of scrolling is expected. The annotated scrollbar will provide an easy way for users to locate themselves in their collection and to traverse it.</p>
+<p>For collections that only have a few items or that only require a small amount of scrolling, we recommend using a default scrollbar.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Only add a category label if it provides helpful information to users</li>
+<li>Keep the strings used for the category labels and the tooltip as concise as possible</li>
+<li>The annotated scrollbar is best used when there is sufficient vertical space. Using the annotated scrollbar in a confined vertical space will reduce the number of visible labels</li>
+<li>Do not use the annotated scrollbar as the only way for users to locate themselves within a collection. We recommend using sticky headers or category labels throughout your collection to complement the annotated scrollbar.</li>
+</ul>
+<h2 id="create-an-annotated-scrollbar">Create an annotated scrollbar</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar">AnnotatedScrollBar class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollcontroller">IScrollController interface</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/AnnotatedScrollBar">Open the WinUI 3 Gallery app and see the AnnotatedScrollBar in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>To use an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar">AnnotatedScrollBar</a>, you need to complete several steps:</p>
+<ul>
+<li>Connect the AnnotatedScrollBar to a scrolling container.</li>
+<li>Add labels to the scrollbar.</li>
+<li>Add detail labels (tooltips).</li>
+</ul>
+<h3 id="connect-the-annotatedscrollbar-to-a-scrolling-container">Connect the AnnotatedScrollBar to a scrolling container</h3>
+<p>To use an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar">AnnotatedScrollBar</a>, you connect it to a scrollable container via the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollcontroller">IScrollController</a> interface. The AnnotatedScrollBar provides an IScrollController implementation through its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar.scrollcontroller">ScrollController</a> property, while the ScrollView consumes it through its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.scrollpresenter">ScrollPresenter</a> property (specifically, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollpresenter.verticalscrollcontroller">ScrollPresenter.VerticalScrollController</a>).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The ScrollView control has built in support for consuming the IScrollController interface. For other scrolling containers, like ScrollViewer, you must write an adapter for IScrollController. See an example later in this article.</p>
+</div>
+<p>Here, the VerticalScrollController property of an ItemsView is bound to the ScrollController of an AnnotatedScrollBar. (The ItemsView.VerticalScrollPresenter property is passed through to the ScrollPresenter.VerticalScrollController value of the ItemsView's inner ScrollView.)</p>
+<pre><code class="lang-xaml">&lt;Grid ColumnDefinitions=&quot;*,Auto&quot;&gt;
+    &lt;ItemsView VerticalScrollController=&quot;{x:Bind annotatedScrollBar.ScrollController}&quot;/&gt;
+    &lt;AnnotatedScrollBar x:Name=&quot;annotatedScrollBar&quot; Grid.Column=&quot;1&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>You can also connect them in code, as shown here. In this example, a ScrollView is used to wrap an ItemsRepeater and provide scrolling functionality for it. The AnnotatedScrollBar replaces the ScrollView's default scrollbar.</p>
+<pre><code class="lang-xaml">&lt;Grid ColumnDefinitions=&quot;*, Auto&quot;&gt;
+    &lt;ScrollView x:Name=&quot;scrollView&quot;
+                Background=&quot;LightGray&quot; 
+                MaxWidth=&quot;800&quot; MaxHeight=&quot;500&quot;
+                VerticalScrollBarVisibility=&quot;Hidden&quot;&gt;
+        &lt;ItemsRepeater x:Name=&quot;itemsRepeater&quot;
+                ItemsSource=&quot;{x:Bind ColorCollection}&quot;
+                Margin=&quot;2&quot;
+                SizeChanged=&quot;ItemsRepeater_SizeChanged&quot;&gt;
+            &lt;ItemsRepeater.Layout&gt;
+                &lt;UniformGridLayout/&gt;
+            &lt;/ItemsRepeater.Layout&gt;
+            &lt;ItemsRepeater.ItemTemplate&gt;
+                &lt;DataTemplate x:DataType=&quot;media:SolidColorBrush&quot;&gt;
+                    &lt;Grid Background=&quot;{x:Bind}&quot; Width=&quot;112&quot; Height=&quot;82&quot; 
+                          CornerRadius=&quot;4&quot; Margin=&quot;4&quot;/&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ItemsRepeater.ItemTemplate&gt;
+        &lt;/ItemsRepeater&gt;
+    &lt;/ScrollView&gt;
+                
+    &lt;AnnotatedScrollBar x:Name=&quot;annotatedScrollBar&quot; Grid.Column=&quot;1&quot;
+        Margin=&quot;4,0,48,0&quot; MaxHeight=&quot;500&quot; HorizontalAlignment=&quot;Right&quot;
+        DetailLabelRequested=&quot;AnnotatedScrollBar_DetailLabelRequested&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void AnnotatedScrollBarPage_Loaded(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
+{
+    scrollView.ScrollPresenter.VerticalScrollController = annotatedScrollBar.ScrollController;
+}
+</code></pre>
+<h3 id="labels">Labels</h3>
+<p>The AnnotatedScrollBar can display two kinds of labels, both of which are optional.</p>
+<h4 id="category-labels">Category labels</h4>
+<p>You add labels by populating the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar.labels">Labels</a> collection. Each Label is represented by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbarlabel">AnnotatedScrollBarLabel</a> class and requires two pieces of information:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbarlabel.content">Content</a>: The content that is displayed on the scrollbar.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbarlabel.scrolloffset">ScrollOffset</a>: The offset value at which the label content is displayed.</li>
+</ul>
+<p>Labels (if specified) are always visible on the scrollbar, unless they collide with other labels or extend past the bounds of the rail. (See <a href="#label-behavior">Label behavior</a> for more info.)</p>
+<p>The calculation of the label offset value depends on the details of your app and its data. For one example of how the offset can be calculated, see the <a href="https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/ControlPages/AnnotatedScrollBarPage.xaml.cs">WinUI Gallery example on GitHub</a>.</p>
+<h4 id="detail-labels">Detail labels</h4>
+<p>A detail label is a tooltip element that is shown when the cursor is over the scrollbar. To create a detail label, you handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar.detaillabelrequested">DetailLabelRequested</a> event. The event args provide the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbardetaillabelrequestedeventargs.scrolloffset">ScrollOffset</a> where the tooltip label will be shown. Use this value to determine the correct label to show for that position, and set the label as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbardetaillabelrequestedeventargs.content">Content</a> property of the event args.</p>
+<h3 id="scrolling">Scrolling</h3>
+<p>The user can scroll the AnnotatedScrollBar by clicking the arrow buttons at the top and bottom of the scrollbar. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar.smallchange">SmallChange</a> property to specify the amount by which the arrow buttons scroll the content.</p>
+<p>You can handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar.scrolling">Scrolling</a> event to determine how the scrolling is being performed, take an action when scrolling occurs, or to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbarscrollingeventargs.cancel">Cancel</a> the scroll action.</p>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI Gallery sample</a> - See all the XAML controls in an interactive format.</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ScrollView">ScrollView class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/annotated-scrollbar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

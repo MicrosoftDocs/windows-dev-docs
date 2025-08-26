@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Push notifications overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Push notifications overview ">
+    
+    <meta name="description" content="Overview of Windows App SDK Push Notifications">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="push-notifications-overview">Push notifications overview</h1>
+
+<p>Push notifications in the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> use <a href="https://aka.ms/wns">Windows Push Notifications Service (WNS)</a> to send rich notifications to Windows apps using Azure App Registration identities.</p>
+<h2 id="push-notification-types-and-usage-scenarios">Push notification types and usage scenarios</h2>
+<p>Push notifications can be used to enable several distinct features. The content and effect of a push notification will vary based on the way it is being used.</p>
+<h3 id="raw-notifications">Raw notifications</h3>
+<p><em>Raw</em> notifications are consumed by the app itself and are not communicated to the user. They can be used to control application behavior or notify applications of state changes remotely.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application Wake Up</td>
+<td>Raw notifications can be used by app developers to wake up their application instead of it constantly running, which frees up user resources.</td>
+<td><em>Without raw notifications</em>: The Contoso Chat app runs in the background while waiting for a VOIP call.<br><br><em>With raw notifications</em>: The Contoso app process can be in a terminated state until a raw notification signals it and brings the process up, indicating a VOIP call has been initiated.</td>
+</tr>
+<tr>
+<td>Real Time Sync</td>
+<td>Raw notifications can replace polling scenarios by allowing the app developer to send payloads from their App Service to the App Client on the local device. These payloads notify the App Client to sync with the App Service.</td>
+<td><em>Without raw notifications</em>: The Contoso Chat app polls the Contoso cloud service every 30 mins to check for content updates, and initiates a sync if updates are available.<br><br><em>With raw notifications</em>: The Contoso Chat app is notified immediately when new content is available, and syncs that content right away.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="app-notifications-from-the-cloud">App notifications from the cloud</h3>
+<p><em>App</em> notifications are used to communicate with the user. The notification content is displayed in a transient window in the bottom right corner of the screen and in the Notification Center (called Action Center in Windows 10). App notifications can be used to inform the user of application status or state changes, or to prompt the user to take an action. App notifications can be either push (sent from the cloud) or sent locally. Sending a cloud-sourced app notification is similar to sending a raw notification, except the <em>X-WNS-Type</em> header is <code>toast</code>, <em>Content-Type</em> is <code>text/xml</code>, and the content contains the app notification XML payload, which you can learn more about <a href="../../../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md">here</a>.</p>
+<h2 id="limitations">Limitations</h2>
+<p>The push notifications support in the Windows App SDK currently has these limitations:</p>
+<ul>
+<li>If your app is published as <a href="../../../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.html"><em>self-contained</em></a> or is running with the elevated (admin) privilege, this feature may not be supported. In your app, use the <code>winrt::PushNotificationManager::IsSupported()</code> check as demonstrated in <a href="../../../windows-app-sdk/notifications/push-notifications/push-quickstart.md">Quickstart: Push notifications in the Windows App SDK</a> and implement a custom socket if the feature is unsupported.</li>
+<li>Microsoft reserves the right to disable or revoke apps from using push notifications.</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>See <a href="../../../windows-app-sdk/notifications/push-notifications/push-quickstart.md">Quickstart: Push notifications in the Windows App SDK</a> to get started.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://aka.ms/wns">Windows Push Notification Service (WNS)</a></li>
+<li><a href="../../../windows-app-sdk/notifications/push-notifications/push-quickstart.md">Quickstart: Push notifications in the Windows App SDK</a></li>
+<li><a href="../../../windows-app-sdk/notifications/push-notifications/troubleshooting.md">Troubleshooting Windows App SDK</a></li>
+<li><a href="../app-notifications/toast-ux-guidance.html">Notifications UX Guidance</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/push-notifications/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

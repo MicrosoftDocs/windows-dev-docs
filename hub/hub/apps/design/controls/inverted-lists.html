@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Inverted lists </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Inverted lists ">
+    
+    <meta name="description" content="Learn how to create an inverted list and use it to add new items at the bottom of a ListView control in a Universal Windows Platform (UWP) app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="inverted-lists">Inverted lists</h1>
+
+<p>You can use a list view to present a conversation in a chat experience with items that are visually distinct to represent the sender/receiver.  Using different colors and horizontal alignment to separate messages from the sender/receiver helps the user quickly orient themselves in a conversation.</p>
+<blockquote>
+<p><strong>Important APIs</strong>:  <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel">ItemsStackPanel class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode">ItemsUpdatingScrollMode property</a></p>
+</blockquote>
+<p>You will typically need to present the list such that it appears to grow from the bottom up instead of from the top down.  When a new message arrives and is added to the end, the previous messages slide up to make room drawing the user’s attention to the latest arrival.  However, if a user has scrolled up to view previous replies then the arrival of a new message must not cause a visual shift that would disrupt their focus.</p>
+<p><img src="images/listview-inverted.png" alt="Chat app with inverted list"></p>
+<h2 id="create-an-inverted-list">Create an inverted list</h2>
+<p>To create an inverted list, use a list view with an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel">ItemsStackPanel</a> as its items panel. On the ItemsStackPanel, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode">ItemsUpdatingScrollMode</a> to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsupdatingscrollmode">KeepLastItemInView</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <strong>KeepLastItemInView</strong> enum value is available starting with Windows 10, version 1607. You can't use this value when your app runs on earlier versions of Windows 10.</p>
+</div>
+<p>This example shows how to align the list view’s items to the bottom and indicate that when there is a change to the items the last item should remain in view.</p>
+<p><strong>XAML</strong></p>
+<pre><code class="lang-xaml">&lt;ListView&gt;
+   &lt;ListView.ItemsPanel&gt;
+       &lt;ItemsPanelTemplate&gt;
+           &lt;ItemsStackPanel VerticalAlignment=&quot;Bottom&quot;
+                            ItemsUpdatingScrollMode=&quot;KeepLastItemInView&quot;/&gt;
+       &lt;/ItemsPanelTemplate&gt;
+   &lt;/ListView.ItemsPanel&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Align messages from the sender/receiver on opposite sides to make the flow of conversation clear to users.</li>
+<li>Animate the existing messages out of the way to display the latest message if the user is already at the end of the conversation awaiting the next message.</li>
+<li>Don’t disrupt the users focus by moving items if they’re not reading the end of the conversation.</li>
+</ul>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList">XAML Bottom-up list sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/inverted-lists.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

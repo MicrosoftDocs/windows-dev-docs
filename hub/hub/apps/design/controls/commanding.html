@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Commanding in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Commanding in Windows apps ">
+    
+    <meta name="description" content="How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="commanding-in-windows-apps-using-standarduicommand-xamluicommand-and-icommand">Commanding in Windows apps using StandardUICommand, XamlUICommand, and ICommand</h1>
+
+<p>In this topic, we describe commanding in Windows applications. Specifically, we discuss how you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.</p>
+<p><img src="images/commanding/generic-commanding.png" alt="A diagram representing a common usage for a shared command: multiple UI surfaces with a 'favorite' command"></p>
+<p><em>Share commands across various controls, regardless of device and input type</em></p>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand">Windows.UI.Xaml.Input.ICommand</a> and <a href="/dotnet/api/system.windows.input.icommand">System.Windows.Input.ICommand</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<!-- See https://blogs.msdn.microsoft.com/jebarson/2017/07/26/writing-an-asynchronous-relaycommand-implementing-icommand/ -->
+<!-- A command describes an action but not its implementation (in other words, the what, but not the how). For example, the "Paste" command indicates that the user wants to copy something from the clipboard to a target control, but does not specify how. -->
+<p>Commands can be invoked directly through UI interactions like clicking a button or selecting an item from a context menu. They can also be invoked indirectly through an input device such as a keyboard accelerator, gesture, speech recognition, or an automation/accessibility tool. Once invoked, the command can then be handled by a control (text navigation in an edit control), a window (back navigation), or the application (exit).</p>
+<p>Commands can operate on a specific context within your app, such as deleting text or undoing an action, or they can be context-free, such as muting audio or adjusting brightness.</p>
+<p>The following image shows two command interfaces (a <a href="command-bar.html">CommandBar</a> and a floating contextual <a href="command-bar-flyout.html">CommandBarFlyout</a>) that share some of the same commands.</p>
+<p><img src="images/command-bar-flyout-img-expanded.png" alt="Expanded Command bar"><br><em>Command bar</em></p>
+<p><img src="images/context-menu-example.png" alt="Context menu in the Microsoft Photos gallery"><br><em>Context menu in the Microsoft Photos gallery</em></p>
+<h2 id="command-interactions">Command interactions</h2>
+<p>Due to the variety of devices, input types, and UI surfaces that can affect how a command is invoked, we recommend exposing your commands through as many commanding surfaces as possible. These can include a combination of <a href="swipe.html">Swipe</a>, <a href="menus.html">MenuBar</a>, <a href="command-bar.html">CommandBar</a>, <a href="command-bar-flyout.html">CommandBarFlyout</a>, and traditional <a href="menus.html">context menu</a>.</p>
+<p><strong>For critical commands, use input-specific accelerators.</strong> Input accelerators let a user perform actions more quickly depending on the input device they're using.</p>
+<p>Here are some common input accelerators for various input types:</p>
+<ul>
+<li><strong>Pointer</strong> - Mouse &amp; Pen hover buttons</li>
+<li><strong>Keyboard</strong> - Shortcuts (access keys and accelerator keys)</li>
+<li><strong>Touch</strong> - Swipe</li>
+<li><strong>Touch</strong> - Pull to refresh data</li>
+</ul>
+<p>You must consider the input type and user experiences to make your application's functionality universally accessible. For example, collections (especially user editable ones) typically include a variety of specific commands that are performed quite differently depending on the input device.</p>
+<p>The following table shows some typical collection commands and ways to expose those commands.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Input-agnostic</th>
+<th>Mouse accelerator</th>
+<th>Keyboard accelerator</th>
+<th>Touch accelerator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Delete item</td>
+<td>Context menu</td>
+<td>Hover button</td>
+<td>DEL key</td>
+<td>Swipe to delete</td>
+</tr>
+<tr>
+<td>Flag item</td>
+<td>Context menu</td>
+<td>Hover button</td>
+<td>Ctrl+Shift+G</td>
+<td>Swipe to flag</td>
+</tr>
+<tr>
+<td>Refresh data</td>
+<td>Context menu</td>
+<td>N/A</td>
+<td>F5 key</td>
+<td>Pull to refresh</td>
+</tr>
+<tr>
+<td>Favorite an item</td>
+<td>Context menu</td>
+<td>Hover button</td>
+<td>F, Ctrl+S</td>
+<td>Swipe to favorite</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Always provide a context menu</strong> We recommend including all relevant contextual commands in a traditional context menu or CommandBarFlyout, as both are supported for all input types. For example, if a command is exposed only during a pointer hover event, it cannot be used on a touch-only device.</p>
+<h2 id="commands-in-windows-applications">Commands in Windows applications</h2>
+<p>There are a few ways you can share and manage commanding experiences in a Windows application. You can define event handlers for standard interactions, such as Click, in code-behind (this can be quite inefficient, depending on the complexity of your UI), you can bind event listener for standard interactions to a shared handler, or you can bind the control's Command property to an ICommand implementation that describes the command logic.</p>
+<p>To provide rich and comprehensive user experiences across command surfaces efficiently and with minimal code duplication, we recommend using the command binding features described in this topic(for standard event handling, see the individual event topics).</p>
+<p>To bind a control to a shared command resource, you can implement the ICommand interfaces yourself, or you can build your command from either the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> base class or one of the platform commands defined by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> derived class.</p>
+<ul>
+<li>The ICommand interface (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand">Windows.UI.Xaml.Input.ICommand</a> or <a href="/dotnet/api/system.windows.input.icommand">System.Windows.Input.ICommand</a>) lets you create fully customized, reusable commands across your app.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> also provides this capability but simplifies development by exposing a set of built-in command properties such as the command behavior, keyboard shortcuts (access key and accelerator key), icon, label, and description.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> simplifies things further by letting you choose from a set of standard platform commands with predefined properties.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>In UWP applications, commands are implementations of either the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand">Windows.UI.Xaml.Input.ICommand</a> (C++) or the <a href="/dotnet/api/system.windows.input.icommand">System.Windows.Input.ICommand</a> (C#) interface, depending on your chosen language framework.</p>
+</div>
+<h2 id="command-experiences-using-the-standarduicommand-class">Command experiences using the StandardUICommand class</h2>
+<p>Derived from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> (derived from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand">Windows.UI.Xaml.Input.ICommand</a> for C++ or  <a href="/dotnet/api/system.windows.input.icommand">System.Windows.Input.ICommand</a> for C#), the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.</p>
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> provides a quick and consistent way to define common commands such as <code>Save</code> or <code>Delete</code>. All you have to do is provide the execute and canExecute functions.</p>
+<h3 id="example">Example</h3>
+<p><img src="images/commanding/StandardUICommandSampleOptimized.gif" alt="StandardUICommand sample"></p>
+<p><em>StandardUICommandSample</em></p>
+<table>
+<thead>
+<tr>
+<th>Download the code for this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip">UWP commanding sample (StandardUICommand)</a></td>
+</tr>
+</tbody>
+</table>
+<p>In this example, we show how to enhance a basic <a href="listview-and-gridview.html">ListView</a> with a Delete item command implemented through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> class, while optimizing the user experience for a variety of input types using a <a href="menus.html">MenuBar</a>, <a href="swipe.html">Swipe</a> control, hover buttons, and <a href="menus.html">context menu</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>.</p>
+</div>
+<p><strong>Xaml:</strong></p>
+<p>The sample UI includes a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> of five items. The Delete <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> is bound to a <a href="/uwp/api/microsoft.ui.xaml.controls.menubaritem">MenuBarItem</a>, a <a href="/uwp/api/microsoft.ui.xaml.controls.swipeitem">SwipeItem</a>, an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout">ContextFlyout menu</a>.</p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;StandardUICommandSample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:StandardUICommandSample&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    xmlns:muxcontrols=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+    mc:Ignorable=&quot;d&quot;
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+
+    &lt;Page.Resources&gt;
+        &lt;Style x:Key=&quot;HorizontalSwipe&quot; 
+               TargetType=&quot;ListViewItem&quot; 
+               BasedOn=&quot;{StaticResource ListViewItemRevealStyle}&quot;&gt;
+            &lt;Setter Property=&quot;Height&quot; Value=&quot;60&quot;/&gt;
+            &lt;Setter Property=&quot;Padding&quot; Value=&quot;0&quot;/&gt;
+            &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Stretch&quot;/&gt;
+            &lt;Setter Property=&quot;VerticalContentAlignment&quot; Value=&quot;Stretch&quot;/&gt;
+            &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;0&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;Grid Loaded=&quot;ControlExample_Loaded&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;StackPanel Grid.Row=&quot;0&quot; 
+                    Padding=&quot;10&quot; 
+                    BorderThickness=&quot;0,0,0,1&quot; 
+                    BorderBrush=&quot;LightBlue&quot;
+                    Background=&quot;AliceBlue&quot;&gt;
+            &lt;TextBlock Style=&quot;{StaticResource HeaderTextBlockStyle}&quot;&gt;
+                StandardUICommand sample
+            &lt;/TextBlock&gt;
+            &lt;TextBlock Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; Margin=&quot;0,0,0,10&quot;&gt;
+                This sample shows how to use the StandardUICommand class to 
+                share a platform command and consistent user experiences 
+                across various controls.
+            &lt;/TextBlock&gt;
+            &lt;TextBlock Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; Margin=&quot;0,0,0,0&quot;&gt;
+                Specifically, we define a standard delete command and add it 
+                to a variety of command surfaces, all of which share a common 
+                icon, label, keyboard accelerator, and description.
+            &lt;/TextBlock&gt;
+        &lt;/StackPanel&gt;
+
+        &lt;muxcontrols:MenuBar Grid.Row=&quot;1&quot; Padding=&quot;10&quot;&gt;
+            &lt;muxcontrols:MenuBarItem Title=&quot;File&quot;&gt;
+            &lt;/muxcontrols:MenuBarItem&gt;
+            &lt;muxcontrols:MenuBarItem Title=&quot;Edit&quot;&gt;
+                &lt;MenuFlyoutItem x:Name=&quot;DeleteFlyoutItem&quot;/&gt;
+            &lt;/muxcontrols:MenuBarItem&gt;
+            &lt;muxcontrols:MenuBarItem Title=&quot;Help&quot;&gt;
+            &lt;/muxcontrols:MenuBarItem&gt;
+        &lt;/muxcontrols:MenuBar&gt;
+
+        &lt;ListView x:Name=&quot;ListViewRight&quot; Grid.Row=&quot;2&quot; 
+                  Loaded=&quot;ListView_Loaded&quot; 
+                  IsItemClickEnabled=&quot;True&quot; 
+                  SelectionMode=&quot;Single&quot; 
+                  SelectionChanged=&quot;ListView_SelectionChanged&quot; 
+                  ItemContainerStyle=&quot;{StaticResource HorizontalSwipe}&quot;&gt;
+            &lt;ListView.ItemTemplate&gt;
+                &lt;DataTemplate x:DataType=&quot;local:ListItemData&quot;&gt;
+                    &lt;UserControl PointerEntered=&quot;ListViewSwipeContainer_PointerEntered&quot; 
+                                 PointerExited=&quot;ListViewSwipeContainer_PointerExited&quot;&gt;
+                        &lt;UserControl.ContextFlyout&gt;
+                            &lt;MenuFlyout&gt;
+                                &lt;MenuFlyoutItem 
+                                    Command=&quot;{x:Bind Command}&quot; 
+                                    CommandParameter=&quot;{x:Bind Text}&quot; /&gt;
+                            &lt;/MenuFlyout&gt;
+                        &lt;/UserControl.ContextFlyout&gt;
+                        &lt;Grid AutomationProperties.Name=&quot;{x:Bind Text}&quot;&gt;
+                            &lt;VisualStateManager.VisualStateGroups&gt;
+                                &lt;VisualStateGroup x:Name=&quot;HoveringStates&quot;&gt;
+                                    &lt;VisualState x:Name=&quot;HoverButtonsHidden&quot; /&gt;
+                                    &lt;VisualState x:Name=&quot;HoverButtonsShown&quot;&gt;
+                                        &lt;VisualState.Setters&gt;
+                                            &lt;Setter Target=&quot;HoverButton.Visibility&quot; 
+                                                    Value=&quot;Visible&quot; /&gt;
+                                        &lt;/VisualState.Setters&gt;
+                                    &lt;/VisualState&gt;
+                                &lt;/VisualStateGroup&gt;
+                            &lt;/VisualStateManager.VisualStateGroups&gt;
+                            &lt;SwipeControl x:Name=&quot;ListViewSwipeContainer&quot; &gt;
+                                &lt;SwipeControl.RightItems&gt;
+                                    &lt;SwipeItems Mode=&quot;Execute&quot;&gt;
+                                        &lt;SwipeItem x:Name=&quot;DeleteSwipeItem&quot; 
+                                                   Background=&quot;Red&quot; 
+                                                   Command=&quot;{x:Bind Command}&quot; 
+                                                   CommandParameter=&quot;{x:Bind Text}&quot;/&gt;
+                                    &lt;/SwipeItems&gt;
+                                &lt;/SwipeControl.RightItems&gt;
+                                &lt;Grid VerticalAlignment=&quot;Center&quot;&gt;
+                                    &lt;TextBlock Text=&quot;{x:Bind Text}&quot; 
+                                               Margin=&quot;10&quot; 
+                                               FontSize=&quot;18&quot; 
+                                               HorizontalAlignment=&quot;Left&quot; 
+                                               VerticalAlignment=&quot;Center&quot;/&gt;
+                                    &lt;AppBarButton x:Name=&quot;HoverButton&quot; 
+                                                  IsTabStop=&quot;False&quot; 
+                                                  HorizontalAlignment=&quot;Right&quot; 
+                                                  Visibility=&quot;Collapsed&quot; 
+                                                  Command=&quot;{x:Bind Command}&quot; 
+                                                  CommandParameter=&quot;{x:Bind Text}&quot;/&gt;
+                                &lt;/Grid&gt;
+                            &lt;/SwipeControl&gt;
+                        &lt;/Grid&gt;
+                    &lt;/UserControl&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.ItemTemplate&gt;
+        &lt;/ListView&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<p><strong>Code-behind</strong></p>
+<ol>
+<li>First, we define a <code>ListItemData</code> class that contains a text string and ICommand for each ListViewItem in our ListView.</li>
+</ol>
+<pre><code class="lang-csharp">public class ListItemData
+{
+    public String Text { get; set; }
+    public ICommand Command { get; set; }
+}
+</code></pre>
+<ol start="2">
+<li>In the MainPage class, we define a collection of <code>ListItemData</code> objects for the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate</a>. We then populate it with an initial collection of five items (with text and associated <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> Delete).</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// ListView item collection.
+/// &lt;/summary&gt;
+ObservableCollection&lt;ListItemData&gt; collection = 
+    new ObservableCollection&lt;ListItemData&gt;();
+
+/// &lt;summary&gt;
+/// Handler for the layout Grid control load event.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the control loaded event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the loaded event&lt;/param&gt;
+private void ControlExample_Loaded(object sender, RoutedEventArgs e)
+{
+    // Create the standard Delete command.
+    var deleteCommand = new StandardUICommand(StandardUICommandKind.Delete);
+    deleteCommand.ExecuteRequested += DeleteCommand_ExecuteRequested;
+
+    DeleteFlyoutItem.Command = deleteCommand;
+
+    for (var i = 0; i &lt; 5; i++)
+    {
+        collection.Add(
+            new ListItemData {
+                Text = &quot;List item &quot; + i.ToString(),
+                Command = deleteCommand });
+    }
+}
+
+/// &lt;summary&gt;
+/// Handler for the ListView control load event.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the control loaded event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the loaded event&lt;/param&gt;
+private void ListView_Loaded(object sender, RoutedEventArgs e)
+{
+    var listView = (ListView)sender;
+    // Populate the ListView with the item collection.
+    listView.ItemsSource = collection;
+}
+</code></pre>
+<ol start="3">
+<li>Next, we define the ICommand ExecuteRequested handler where we implement the item delete command.</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Handler for the Delete command.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the command event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the command event&lt;/param&gt;
+private void DeleteCommand_ExecuteRequested(
+    XamlUICommand sender, ExecuteRequestedEventArgs args)
+{
+    // If possible, remove specified item from collection.
+    if (args.Parameter != null)
+    {
+        foreach (var i in collection)
+        {
+            if (i.Text == (args.Parameter as string))
+            {
+                collection.Remove(i);
+                return;
+            }
+        }
+    }
+    if (ListViewRight.SelectedIndex != -1)
+    {
+        collection.RemoveAt(ListViewRight.SelectedIndex);
+    }
+}
+</code></pre>
+<ol start="4">
+<li>Finally, we define handlers for various ListView events, including <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered">PointerEntered</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited">PointerExited</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged">SelectionChanged</a> events. The pointer event handlers are used to show or hide the Delete button for each item.</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Handler for the ListView selection changed event.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the selection changed event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the selection changed event&lt;/param&gt;
+private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    if (ListViewRight.SelectedIndex != -1)
+    {
+        var item = collection[ListViewRight.SelectedIndex];
+    }
+}
+
+/// &lt;summary&gt;
+/// Handler for the pointer entered event.
+/// Displays the delete item &quot;hover&quot; buttons.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer entered event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer entered event&lt;/param&gt;
+private void ListViewSwipeContainer_PointerEntered(
+    object sender, PointerRoutedEventArgs e)
+{
+    if (e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Mouse || 
+        e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Pen)
+    {
+        VisualStateManager.GoToState(
+            sender as Control, &quot;HoverButtonsShown&quot;, true);
+    }
+}
+
+/// &lt;summary&gt;
+/// Handler for the pointer exited event.
+/// Hides the delete item &quot;hover&quot; buttons.
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;Source of the pointer exited event&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;Event args for the pointer exited event&lt;/param&gt;
+
+private void ListViewSwipeContainer_PointerExited(
+    object sender, PointerRoutedEventArgs e)
+{
+    VisualStateManager.GoToState(
+        sender as Control, &quot;HoverButtonsHidden&quot;, true);
+}
+</code></pre>
+<h2 id="command-experiences-using-the-xamluicommand-class">Command experiences using the XamlUICommand class</h2>
+<p>If you need to create a command that isn't defined by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> class, or you'd like more control over the command appearance, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> class derives from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand">ICommand</a> interface, adding various UI properties (such as an icon, label, description, and keyboard shortcuts), methods, and events to quickly define the UI and behavior of a custom command.</p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> lets you specify UI through the control binding, such as an icon, label, description, and keyboard shortcuts (both an access key and a keyboard accelerator), without setting the individual properties.</p>
+<h3 id="example-1">Example</h3>
+<p><img src="images/commanding/XamlUICommandSampleOptimized.gif" alt="XamlUICommand sample"></p>
+<p><em>XamlUICommandSample</em></p>
+<table>
+<thead>
+<tr>
+<th>Download the code for this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip">UWP commanding sample (XamlUICommand)</a></td>
+</tr>
+</tbody>
+</table>
+<p>This example shares the Delete functionality of the previous <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> example, but shows how the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> class lets you define a custom delete command with your own font icon, label, keyboard accelerator, and description. Like the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> example, we enhance a basic <a href="listview-and-gridview.html">ListView</a> with a Delete item command implemented through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> class, while optimizing the user experience for a variety of input types using a <a href="menus.html">MenuBar</a>, <a href="swipe.html">Swipe</a> control, hover buttons, and <a href="menus.html">context menu</a>.</p>
+<p>Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>.</p>
+</div>
+<p><strong>Xaml:</strong></p>
+<p>The sample UI includes a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> of five items. The custom <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> CustomXamlUICommand is bound to a <a href="/uwp/api/microsoft.ui.xaml.controls.menubaritem">MenuBarItem</a>, a <a href="/uwp/api/microsoft.ui.xaml.controls.swipeitem">SwipeItem</a>, an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout">ContextFlyout menu</a>.</p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;XamlUICommand_Sample.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:XamlUICommand_Sample&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    xmlns:muxcontrols=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+    mc:Ignorable=&quot;d&quot;
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+
+    &lt;Page.Resources&gt;
+        &lt;XamlUICommand x:Name=&quot;CustomXamlUICommand&quot; 
+                       ExecuteRequested=&quot;DeleteCommand_ExecuteRequested&quot;
+                       Description=&quot;Custom XamlUICommand&quot; 
+                       Label=&quot;Custom XamlUICommand&quot;&gt;
+            &lt;XamlUICommand.IconSource&gt;
+                &lt;FontIconSource FontFamily=&quot;Wingdings&quot; Glyph=&quot;&amp;#x4D;&quot;/&gt;
+            &lt;/XamlUICommand.IconSource&gt;
+            &lt;XamlUICommand.KeyboardAccelerators&gt;
+                &lt;KeyboardAccelerator Key=&quot;D&quot; Modifiers=&quot;Control&quot;/&gt;
+            &lt;/XamlUICommand.KeyboardAccelerators&gt;
+        &lt;/XamlUICommand&gt;
+
+        &lt;Style x:Key=&quot;HorizontalSwipe&quot; 
+               TargetType=&quot;ListViewItem&quot; 
+               BasedOn=&quot;{StaticResource ListViewItemRevealStyle}&quot;&gt;
+            &lt;Setter Property=&quot;Height&quot; Value=&quot;70&quot;/&gt;
+            &lt;Setter Property=&quot;Padding&quot; Value=&quot;0&quot;/&gt;
+            &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Stretch&quot;/&gt;
+            &lt;Setter Property=&quot;VerticalContentAlignment&quot; Value=&quot;Stretch&quot;/&gt;
+            &lt;Setter Property=&quot;BorderThickness&quot; Value=&quot;0&quot;/&gt;
+        &lt;/Style&gt;
+        
+    &lt;/Page.Resources&gt;
+
+    &lt;Grid Loaded=&quot;ControlExample_Loaded&quot; Name=&quot;MainGrid&quot;&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+            &lt;RowDefinition Height=&quot;*&quot;/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        
+        &lt;StackPanel Grid.Row=&quot;0&quot; 
+                    Padding=&quot;10&quot; 
+                    BorderThickness=&quot;0,0,0,1&quot; 
+                    BorderBrush=&quot;LightBlue&quot;
+                    Background=&quot;AliceBlue&quot;&gt;
+            &lt;TextBlock Style=&quot;{StaticResource HeaderTextBlockStyle}&quot;&gt;
+                XamlUICommand sample
+            &lt;/TextBlock&gt;
+            &lt;TextBlock Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; Margin=&quot;0,0,0,10&quot;&gt;
+                This sample shows how to use the XamlUICommand class to 
+                share a custom command with consistent user experiences 
+                across various controls.
+            &lt;/TextBlock&gt;
+            &lt;TextBlock Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot; Margin=&quot;0,0,0,0&quot;&gt;
+                Specifically, we define a custom delete command and add it 
+                to a variety of command surfaces, all of which share a common 
+                icon, label, keyboard accelerator, and description.
+            &lt;/TextBlock&gt;
+        &lt;/StackPanel&gt;
+
+        &lt;muxcontrols:MenuBar Grid.Row=&quot;1&quot;&gt;
+            &lt;muxcontrols:MenuBarItem Title=&quot;File&quot;&gt;
+            &lt;/muxcontrols:MenuBarItem&gt;
+            &lt;muxcontrols:MenuBarItem Title=&quot;Edit&quot;&gt;
+                &lt;MenuFlyoutItem x:Name=&quot;DeleteFlyoutItem&quot; 
+                                Command=&quot;{StaticResource CustomXamlUICommand}&quot;/&gt;
+            &lt;/muxcontrols:MenuBarItem&gt;
+            &lt;muxcontrols:MenuBarItem Title=&quot;Help&quot;&gt;
+            &lt;/muxcontrols:MenuBarItem&gt;
+        &lt;/muxcontrols:MenuBar&gt;
+
+        &lt;ListView x:Name=&quot;ListViewRight&quot; Grid.Row=&quot;2&quot; 
+                  Loaded=&quot;ListView_Loaded&quot; 
+                  IsItemClickEnabled=&quot;True&quot;
+                  SelectionMode=&quot;Single&quot; 
+                  SelectionChanged=&quot;ListView_SelectionChanged&quot; 
+                  ItemContainerStyle=&quot;{StaticResource HorizontalSwipe}&quot;&gt;
+            &lt;ListView.ItemTemplate&gt;
+                &lt;DataTemplate x:DataType=&quot;local:ListItemData&quot;&gt;
+                    &lt;UserControl PointerEntered=&quot;ListViewSwipeContainer_PointerEntered&quot;
+                                 PointerExited=&quot;ListViewSwipeContainer_PointerExited&quot;&gt;
+                        &lt;UserControl.ContextFlyout&gt;
+                            &lt;MenuFlyout&gt;
+                                &lt;MenuFlyoutItem 
+                                    Command=&quot;{x:Bind Command}&quot; 
+                                    CommandParameter=&quot;{x:Bind Text}&quot; /&gt;
+                            &lt;/MenuFlyout&gt;
+                        &lt;/UserControl.ContextFlyout&gt;
+                        &lt;Grid AutomationProperties.Name=&quot;{x:Bind Text}&quot;&gt;
+                            &lt;VisualStateManager.VisualStateGroups&gt;
+                                &lt;VisualStateGroup x:Name=&quot;HoveringStates&quot;&gt;
+                                    &lt;VisualState x:Name=&quot;HoverButtonsHidden&quot; /&gt;
+                                    &lt;VisualState x:Name=&quot;HoverButtonsShown&quot;&gt;
+                                        &lt;VisualState.Setters&gt;
+                                            &lt;Setter Target=&quot;HoverButton.Visibility&quot; 
+                                                    Value=&quot;Visible&quot; /&gt;
+                                        &lt;/VisualState.Setters&gt;
+                                    &lt;/VisualState&gt;
+                                &lt;/VisualStateGroup&gt;
+                            &lt;/VisualStateManager.VisualStateGroups&gt;
+                            &lt;SwipeControl x:Name=&quot;ListViewSwipeContainer&quot;&gt;
+                                &lt;SwipeControl.RightItems&gt;
+                                    &lt;SwipeItems Mode=&quot;Execute&quot;&gt;
+                                        &lt;SwipeItem x:Name=&quot;DeleteSwipeItem&quot;
+                                                   Background=&quot;Red&quot; 
+                                                   Command=&quot;{x:Bind Command}&quot; 
+                                                   CommandParameter=&quot;{x:Bind Text}&quot;/&gt;
+                                    &lt;/SwipeItems&gt;
+                                &lt;/SwipeControl.RightItems&gt;
+                                &lt;Grid VerticalAlignment=&quot;Center&quot;&gt;
+                                    &lt;TextBlock Text=&quot;{x:Bind Text}&quot; 
+                                               Margin=&quot;10&quot; 
+                                               FontSize=&quot;18&quot; 
+                                               HorizontalAlignment=&quot;Left&quot;       
+                                               VerticalAlignment=&quot;Center&quot;/&gt;
+                                    &lt;AppBarButton x:Name=&quot;HoverButton&quot; 
+                                                  IsTabStop=&quot;False&quot; 
+                                                  HorizontalAlignment=&quot;Right&quot; 
+                                                  Visibility=&quot;Collapsed&quot; 
+                                                  Command=&quot;{x:Bind Command}&quot; 
+                                                  CommandParameter=&quot;{x:Bind Text}&quot;/&gt;
+                                &lt;/Grid&gt;
+                            &lt;/SwipeControl&gt;
+                        &lt;/Grid&gt;
+                    &lt;/UserControl&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.ItemTemplate&gt;
+        &lt;/ListView&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<p><strong>Code-behind</strong></p>
+<ol>
+<li>First, we define a <code>ListItemData</code> class that contains a text string and ICommand for each ListViewItem in our ListView.</li>
+</ol>
+<pre><code class="lang-csharp">public class ListItemData
+{
+    public String Text { get; set; }
+    public ICommand Command { get; set; }
+}
+</code></pre>
+<ol start="2">
+<li>In the MainPage class, we define a collection of <code>ListItemData</code> objects for the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate">DataTemplate</a> of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate</a>. We then populate it with an initial collection of five items (with text and associated <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a>).</li>
+</ol>
+<pre><code class="lang-csharp">ObservableCollection&lt;ListItemData&gt; collection = new ObservableCollection&lt;ListItemData&gt;();
+
+private void ControlExample_Loaded(object sender, RoutedEventArgs e)
+{
+    for (var i = 0; i &lt; 5; i++)
+    {
+        collection.Add(
+           new ListItemData { Text = &quot;List item &quot; + i.ToString(), Command = CustomXamlUICommand });
+    }
+}
+
+private void ListView_Loaded(object sender, RoutedEventArgs e)
+{
+    var listView = (ListView)sender;
+    listView.ItemsSource = collection;
+}
+</code></pre>
+<ol start="3">
+<li>Next, we define the ICommand ExecuteRequested handler where we implement the item delete command.</li>
+</ol>
+<pre><code class="lang-csharp">private void DeleteCommand_ExecuteRequested(
+   XamlUICommand sender, ExecuteRequestedEventArgs args)
+{
+    if (args.Parameter != null)
+    {
+        foreach (var i in collection)
+        {
+            if (i.Text == (args.Parameter as string))
+            {
+                collection.Remove(i);
+                return;
+            }
+        }
+    }
+    if (ListViewRight.SelectedIndex != -1)
+    {
+        collection.RemoveAt(ListViewRight.SelectedIndex);
+    }
+}
+</code></pre>
+<ol start="4">
+<li>Finally, we define handlers for various ListView events, including <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered">PointerEntered</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited">PointerExited</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged">SelectionChanged</a> events. The pointer event handlers are used to show or hide the Delete button for each item.</li>
+</ol>
+<pre><code class="lang-csharp">private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    if (ListViewRight.SelectedIndex != -1)
+    {
+        var item = collection[ListViewRight.SelectedIndex];
+    }
+}
+
+private void ListViewSwipeContainer_PointerEntered(object sender, PointerRoutedEventArgs e)
+{
+    if (e.Pointer.PointerDeviceType == 
+        Windows.Devices.Input.PointerDeviceType.Mouse || 
+        e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
+    {
+        VisualStateManager.GoToState(sender as Control, &quot;HoverButtonsShown&quot;, true);
+    }
+}
+
+private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEventArgs e)
+{
+    VisualStateManager.GoToState(sender as Control, &quot;HoverButtonsHidden&quot;, true);
+}
+</code></pre>
+<h2 id="command-experiences-using-the-icommand-interface">Command experiences using the ICommand interface</h2>
+<p>Standard UWP controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see <a href="index.html">Controls and patterns for Windows apps</a>.</p>
+<p>The most basic way to support a structured commanding experience is to define an implementation of the ICommand interface (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand">Windows.UI.Xaml.Input.ICommand</a> for C++ or  <a href="/dotnet/api/system.windows.input.icommand">System.Windows.Input.ICommand</a> for C#).  This ICommand instance can then be bound to controls such as buttons.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In some cases, it might be just as efficient to bind a method to the Click event and a property to the IsEnabled property.</p>
+</div>
+<h4 id="example-2">Example</h4>
+<p><img src="images/commanding/icommand.gif" alt="Command interface example"></p>
+<p><em>ICommand example</em></p>
+<table>
+<thead>
+<tr>
+<th>Download the code for this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip">UWP commanding sample (ICommand)</a></td>
+</tr>
+</tbody>
+</table>
+<p>In this basic example, we demonstrate how a single command can be invoked with a button click, a keyboard accelerator, and rotating a mouse wheel.</p>
+<p>We use two <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListViews</a>, one populated with five items and the other empty, and two buttons, one for moving items from the ListView on the left to the ListView on the right, and the other for moving items from the right to the left. Each button is bound to a corresponding command (ViewModel.MoveRightCommand and ViewModel.MoveLeftCommand, respectively), and are enabled and disabled automatically based on the number of items in their associated ListView.</p>
+<p><strong>The following XAML code defines the UI for our example.</strong></p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;UICommand1.View.MainPage&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:vm=&quot;using:UICommand1.ViewModel&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;
+    Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+
+    &lt;Page.Resources&gt;
+        &lt;vm:OpacityConverter x:Key=&quot;opaque&quot; /&gt;
+    &lt;/Page.Resources&gt;
+
+    &lt;Grid Name=&quot;ItemGrid&quot;
+          Background=&quot;AliceBlue&quot;
+          PointerWheelChanged=&quot;Page_PointerWheelChanged&quot;&gt;
+        &lt;Grid.ColumnDefinitions&gt;
+            &lt;ColumnDefinition Width=&quot;*&quot;/&gt;
+            &lt;ColumnDefinition Width=&quot;2*&quot;/&gt;
+            &lt;ColumnDefinition Width=&quot;*&quot;/&gt;
+        &lt;/Grid.ColumnDefinitions&gt;
+        &lt;ListView Grid.Column=&quot;0&quot; VerticalAlignment=&quot;Center&quot;
+                  x:Name=&quot;CommandListView&quot; 
+                  ItemsSource=&quot;{x:Bind Path=ViewModel.ListItemLeft}&quot; 
+                  SelectionMode=&quot;None&quot; IsItemClickEnabled=&quot;False&quot; 
+                  HorizontalAlignment=&quot;Right&quot;&gt;
+            &lt;ListView.ItemTemplate&gt;
+                &lt;DataTemplate x:DataType=&quot;vm:ListItemData&quot;&gt;
+                    &lt;Grid VerticalAlignment=&quot;Center&quot;&gt;
+                        &lt;AppBarButton Label=&quot;{x:Bind ListItemText}&quot;&gt;
+                            &lt;AppBarButton.Icon&gt;
+                                &lt;SymbolIcon Symbol=&quot;{x:Bind ListItemIcon}&quot;/&gt;
+                            &lt;/AppBarButton.Icon&gt;
+                        &lt;/AppBarButton&gt;
+                    &lt;/Grid&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.ItemTemplate&gt;
+        &lt;/ListView&gt;
+        &lt;Grid Grid.Column=&quot;1&quot; Margin=&quot;0,0,0,0&quot;
+              HorizontalAlignment=&quot;Center&quot; 
+              VerticalAlignment=&quot;Center&quot;&gt;
+            &lt;Grid.RowDefinitions&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+                &lt;RowDefinition Height=&quot;*&quot;/&gt;
+            &lt;/Grid.RowDefinitions&gt;
+            &lt;StackPanel Grid.Row=&quot;1&quot;&gt;
+                &lt;FontIcon FontFamily=&quot;{StaticResource SymbolThemeFontFamily}&quot; 
+                          FontSize=&quot;40&quot; Glyph=&quot;&amp;#xE893;&quot; 
+                          Opacity=&quot;{x:Bind Path=ViewModel.ListItemLeft.Count, 
+                                        Mode=OneWay, Converter={StaticResource opaque}}&quot;/&gt;
+                &lt;Button Name=&quot;MoveItemRightButton&quot;
+                        Margin=&quot;0,10,0,10&quot; Width=&quot;120&quot; HorizontalAlignment=&quot;Center&quot;
+                        Command=&quot;{x:Bind Path=ViewModel.MoveRightCommand}&quot;&gt;
+                    &lt;Button.KeyboardAccelerators&gt;
+                        &lt;KeyboardAccelerator 
+                            Modifiers=&quot;Control&quot; 
+                            Key=&quot;Add&quot; /&gt;
+                    &lt;/Button.KeyboardAccelerators&gt;
+                    &lt;StackPanel&gt;
+                        &lt;SymbolIcon Symbol=&quot;Next&quot;/&gt;
+                        &lt;TextBlock&gt;Move item right&lt;/TextBlock&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/Button&gt;
+                &lt;Button Name=&quot;MoveItemLeftButton&quot; 
+                            Margin=&quot;0,10,0,10&quot; Width=&quot;120&quot; HorizontalAlignment=&quot;Center&quot;
+                            Command=&quot;{x:Bind Path=ViewModel.MoveLeftCommand}&quot;&gt;
+                    &lt;Button.KeyboardAccelerators&gt;
+                        &lt;KeyboardAccelerator 
+                            Modifiers=&quot;Control&quot; 
+                            Key=&quot;Subtract&quot; /&gt;
+                    &lt;/Button.KeyboardAccelerators&gt;
+                    &lt;StackPanel&gt;
+                        &lt;SymbolIcon Symbol=&quot;Previous&quot;/&gt;
+                        &lt;TextBlock&gt;Move item left&lt;/TextBlock&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/Button&gt;
+                &lt;FontIcon FontFamily=&quot;{StaticResource SymbolThemeFontFamily}&quot; 
+                          FontSize=&quot;40&quot; Glyph=&quot;&amp;#xE892;&quot;
+                          Opacity=&quot;{x:Bind Path=ViewModel.ListItemRight.Count, 
+                                        Mode=OneWay, Converter={StaticResource opaque}}&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/Grid&gt;
+        &lt;ListView Grid.Column=&quot;2&quot; 
+                  x:Name=&quot;CommandListViewRight&quot; 
+                  VerticalAlignment=&quot;Center&quot; 
+                  IsItemClickEnabled=&quot;False&quot; 
+                  SelectionMode=&quot;None&quot;
+                  ItemsSource=&quot;{x:Bind Path=ViewModel.ListItemRight}&quot; 
+                  HorizontalAlignment=&quot;Left&quot;&gt;
+            &lt;ListView.ItemTemplate&gt;
+                &lt;DataTemplate x:DataType=&quot;vm:ListItemData&quot;&gt;
+                    &lt;Grid VerticalAlignment=&quot;Center&quot;&gt;
+                        &lt;AppBarButton Label=&quot;{x:Bind ListItemText}&quot;&gt;
+                            &lt;AppBarButton.Icon&gt;
+                                &lt;SymbolIcon Symbol=&quot;{x:Bind ListItemIcon}&quot;/&gt;
+                            &lt;/AppBarButton.Icon&gt;
+                        &lt;/AppBarButton&gt;
+                    &lt;/Grid&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.ItemTemplate&gt;
+        &lt;/ListView&gt;
+    &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<p><strong>Here's the code-behind for the preceding UI.</strong></p>
+<p>In code-behind, we connect to our view model that contains our command code. In addition, we define a handler for input from the mouse wheel, which also connects our command code.</p>
+<pre><code class="lang-csharp">using Windows.UI.Xaml;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Controls;
+using UICommand1.ViewModel;
+using Windows.System;
+using Windows.UI.Core;
+
+namespace UICommand1.View
+{
+    /// &lt;summary&gt;
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// &lt;/summary&gt;
+    public sealed partial class MainPage : Page
+    {
+        // Reference to our view model.
+        public UICommand1ViewModel ViewModel { get; set; }
+
+        // Initialize our view and view model.
+        public MainPage()
+        {
+            this.InitializeComponent();
+            ViewModel = new UICommand1ViewModel();
+        }
+
+        /// &lt;summary&gt;
+        /// Handle mouse wheel input and assign our
+        /// commands to appropriate direction of rotation.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+        /// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+        private void Page_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
+        {
+            var props = e.GetCurrentPoint(sender as UIElement).Properties;
+
+            // Require CTRL key and accept only vertical mouse wheel movement 
+            // to eliminate accidental wheel input.
+            if ((Window.Current.CoreWindow.GetKeyState(VirtualKey.Control) != 
+                CoreVirtualKeyStates.None) &amp;&amp; !props.IsHorizontalMouseWheel)
+            {
+                bool delta = props.MouseWheelDelta &lt; 0 ? true : false;
+
+                switch (delta)
+                {
+                    case true:
+                        ViewModel.MoveRight();
+                        break;
+                    case false:
+                        ViewModel.MoveLeft();
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
+}
+</code></pre>
+<p><strong>Here's the code from our view model</strong></p>
+<p>Our view model is where we define the execution details for the two commands in our app, populate one ListView, and provide an opacity value converter for hiding or displaying some additional UI based on the item count of each ListView.</p>
+<pre><code class="lang-csharp">using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Data;
+
+namespace UICommand1.ViewModel
+{
+    /// &lt;summary&gt;
+    /// UI properties for our list items.
+    /// &lt;/summary&gt;
+    public class ListItemData
+    {
+        /// &lt;summary&gt;
+        /// Gets and sets the list item content string.
+        /// &lt;/summary&gt;
+        public string ListItemText { get; set; }
+        /// &lt;summary&gt;
+        /// Gets and sets the list item icon.
+        /// &lt;/summary&gt;
+        public Symbol ListItemIcon { get; set; }
+    }
+
+    /// &lt;summary&gt;
+    /// View Model that sets up a command to handle invoking the move item buttons.
+    /// &lt;/summary&gt;
+    public class UICommand1ViewModel
+    {
+        /// &lt;summary&gt;
+        /// The command to invoke when the Move item left button is pressed.
+        /// &lt;/summary&gt;
+        public RelayCommand MoveLeftCommand { get; private set; }
+
+        /// &lt;summary&gt;
+        /// The command to invoke when the Move item right button is pressed.
+        /// &lt;/summary&gt;
+        public RelayCommand MoveRightCommand { get; private set; }
+
+        // Item collections
+        public ObservableCollection&lt;ListItemData&gt; ListItemLeft { get; } = 
+           new ObservableCollection&lt;ListItemData&gt;();
+        public ObservableCollection&lt;ListItemData&gt; ListItemRight { get; } = 
+           new ObservableCollection&lt;ListItemData&gt;();
+
+        public ListItemData listItem;
+
+        /// &lt;summary&gt;
+        /// Sets up a command to handle invoking the move item buttons.
+        /// &lt;/summary&gt;
+        public UICommand1ViewModel()
+        {
+            MoveLeftCommand = 
+               new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
+            MoveRightCommand = 
+               new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
+
+            LoadItems();
+        }
+
+        /// &lt;summary&gt;
+        ///  Populate our list of items.
+        /// &lt;/summary&gt;
+        public void LoadItems()
+        {
+            for (var x = 0; x &lt;= 4; x++)
+            {
+                listItem = new ListItemData();
+                listItem.ListItemText = &quot;Item &quot; + (ListItemLeft.Count + 1).ToString();
+                listItem.ListItemIcon = Symbol.Emoji;
+                ListItemLeft.Add(listItem);
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Move left command valid when items present in the list on right.
+        /// &lt;/summary&gt;
+        /// &lt;returns&gt;True, if count is greater than 0.&lt;/returns&gt;
+        private bool CanExecuteMoveLeftCommand()
+        {
+            return ListItemRight.Count &gt; 0;
+        }
+
+        /// &lt;summary&gt;
+        /// Move right command valid when items present in the list on left.
+        /// &lt;/summary&gt;
+        /// &lt;returns&gt;True, if count is greater than 0.&lt;/returns&gt;
+        private bool CanExecuteMoveRightCommand()
+        {
+            return ListItemLeft.Count &gt; 0;
+        }
+
+        /// &lt;summary&gt;
+        /// The command implementation to execute when the Move item right button is pressed.
+        /// &lt;/summary&gt;
+        public void MoveRight()
+        {
+            if (ListItemLeft.Count &gt; 0)
+            {
+                listItem = new ListItemData();
+                ListItemRight.Add(listItem);
+                listItem.ListItemText = &quot;Item &quot; + ListItemRight.Count.ToString();
+                listItem.ListItemIcon = Symbol.Emoji;
+                ListItemLeft.RemoveAt(ListItemLeft.Count - 1);
+                MoveRightCommand.RaiseCanExecuteChanged();
+                MoveLeftCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// The command implementation to execute when the Move item left button is pressed.
+        /// &lt;/summary&gt;
+        public void MoveLeft()
+        {
+            if (ListItemRight.Count &gt; 0)
+            {
+                listItem = new ListItemData();
+                ListItemLeft.Add(listItem);
+                listItem.ListItemText = &quot;Item &quot; + ListItemLeft.Count.ToString();
+                listItem.ListItemIcon = Symbol.Emoji;
+                ListItemRight.RemoveAt(ListItemRight.Count - 1);
+                MoveRightCommand.RaiseCanExecuteChanged();
+                MoveLeftCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        /// &lt;summary&gt;
+        /// Views subscribe to this event to get notified of property updates.
+        /// &lt;/summary&gt;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        /// &lt;summary&gt;
+        /// Notify subscribers of updates to the named property
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;propertyName&quot;&gt;The full, case-sensitive, name of a property.&lt;/param&gt;
+        protected void NotifyPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                PropertyChangedEventArgs args = new PropertyChangedEventArgs(propertyName);
+                handler(this, args);
+            }
+        }
+    }
+
+    /// &lt;summary&gt;
+    /// Convert a collection count to an opacity value of 0.0 or 1.0.
+    /// &lt;/summary&gt;
+    public class OpacityConverter : IValueConverter
+    {
+        /// &lt;summary&gt;
+        /// Converts a collection count to an opacity value of 0.0 or 1.0.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;value&quot;&gt;The count passed in&lt;/param&gt;
+        /// &lt;param name=&quot;targetType&quot;&gt;Ignored.&lt;/param&gt;
+        /// &lt;param name=&quot;parameter&quot;&gt;Ignored&lt;/param&gt;
+        /// &lt;param name=&quot;language&quot;&gt;Ignored&lt;/param&gt;
+        /// &lt;returns&gt;1.0 if count &gt; 0, otherwise returns 0.0&lt;/returns&gt;
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            return ((int)value &gt; 0 ? 1.0 : 0.0);
+        }
+
+        /// &lt;summary&gt;
+        /// Not used, converter is not intended for two-way binding. 
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;value&quot;&gt;Ignored&lt;/param&gt;
+        /// &lt;param name=&quot;targetType&quot;&gt;Ignored&lt;/param&gt;
+        /// &lt;param name=&quot;parameter&quot;&gt;Ignored&lt;/param&gt;
+        /// &lt;param name=&quot;language&quot;&gt;Ignored&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+</code></pre>
+<p><strong>Finally, here's our implementation of the ICommand interface</strong></p>
+<p>Here, we define a command that implements the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand">ICommand</a> interface and simply relays its functionality to other objects.</p>
+<pre><code class="lang-csharp">using System;
+using System.Windows.Input;
+
+namespace UICommand1
+{
+    /// &lt;summary&gt;
+    /// A command whose sole purpose is to relay its functionality 
+    /// to other objects by invoking delegates. 
+    /// The default return value for the CanExecute method is 'true'.
+    /// &lt;see cref=&quot;RaiseCanExecuteChanged&quot;/&gt; needs to be called whenever
+    /// &lt;see cref=&quot;CanExecute&quot;/&gt; is expected to return a different value.
+    /// &lt;/summary&gt;
+    public class RelayCommand : ICommand
+    {
+        private readonly Action _execute;
+        private readonly Func&lt;bool&gt; _canExecute;
+
+        /// &lt;summary&gt;
+        /// Raised when RaiseCanExecuteChanged is called.
+        /// &lt;/summary&gt;
+        public event EventHandler CanExecuteChanged;
+
+        /// &lt;summary&gt;
+        /// Creates a new command that can always execute.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;execute&quot;&gt;The execution logic.&lt;/param&gt;
+        public RelayCommand(Action execute)
+            : this(execute, null)
+        {
+        }
+
+        /// &lt;summary&gt;
+        /// Creates a new command.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;execute&quot;&gt;The execution logic.&lt;/param&gt;
+        /// &lt;param name=&quot;canExecute&quot;&gt;The execution status logic.&lt;/param&gt;
+        public RelayCommand(Action execute, Func&lt;bool&gt; canExecute)
+        {
+            if (execute == null)
+                throw new ArgumentNullException(&quot;execute&quot;);
+            _execute = execute;
+            _canExecute = canExecute;
+        }
+
+        /// &lt;summary&gt;
+        /// Determines whether this &lt;see cref=&quot;RelayCommand&quot;/&gt; can execute in its current state.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;parameter&quot;&gt;
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
+        /// &lt;/param&gt;
+        /// &lt;returns&gt;true if this command can be executed; otherwise, false.&lt;/returns&gt;
+        public bool CanExecute(object parameter)
+        {
+            return _canExecute == null ? true : _canExecute();
+        }
+
+        /// &lt;summary&gt;
+        /// Executes the &lt;see cref=&quot;RelayCommand&quot;/&gt; on the current command target.
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;parameter&quot;&gt;
+        /// Data used by the command. If the command does not require 
+        /// data to be passed, this object can be set to null.
+        /// &lt;/param&gt;
+        public void Execute(object parameter)
+        {
+            _execute();
+        }
+
+        /// &lt;summary&gt;
+        /// Method used to raise the &lt;see cref=&quot;CanExecuteChanged&quot;/&gt; event
+        /// to indicate that the return value of the &lt;see cref=&quot;CanExecute&quot;/&gt;
+        /// method has changed.
+        /// &lt;/summary&gt;
+        public void RaiseCanExecuteChanged()
+        {
+            var handler = CanExecuteChanged;
+            if (handler != null)
+            {
+                handler(this, EventArgs.Empty);
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="summary">Summary</h2>
+<p>The Universal Windows Platform provides a robust and flexible commanding system that lets you build apps that share and manage commands across control types, devices, and input types.</p>
+<p>Use the following approaches when building commands for your Windows apps:</p>
+<ul>
+<li>Listen for and handle events in XAML/code-behind</li>
+<li>Bind to an event handling method such as Click</li>
+<li>Define your own ICommand implementation</li>
+<li>Create XamlUICommand objects with your own values for a pre-defined set of properties</li>
+<li>Create StandardUICommand objects with a set of pre-defined platform properties and values</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>For a complete example that demonstrates a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand">XamlUICommand</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand">StandardUICommand</a> implementation, see the <a href="https://github.com/Microsoft/WinUI-Gallery">WinUI 2 Gallery</a> sample.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="index.html">Controls and patterns for Windows apps</a></p>
+<h3 id="samples">Samples</h3>
+<h4 id="topic-samples">Topic samples</h4>
+<ul>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip">UWP commanding sample (StandardUICommand)</a></li>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip">UWP commanding sample (XamlUICommand)</a></li>
+<li><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip">UWP commanding sample (ICommand)</a></li>
+</ul>
+<h4 id="other-samples">Other samples</h4>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController">Universal Windows Platform samples (C# and C++)</a></li>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI 2 Gallery</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/commanding.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

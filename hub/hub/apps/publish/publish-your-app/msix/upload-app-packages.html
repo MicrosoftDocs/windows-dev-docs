@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Upload MSIX app packages </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Upload MSIX app packages ">
+    
+    <meta name="description" content="The Packages page allows you to upload the installers and files for your MSIX app. Once uploaded, a table will display the packages, showing which will be offered to specific Windows 10 device families (and earlier OS versions if applicable), in ranked order.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="upload-msix-app-packages">Upload MSIX app packages</h1>
+
+<h2 id="upload-your-app">Upload your app</h2>
+<p>The <strong>Packages</strong> page of the <a href="create-app-submission.html">app submission process</a> is where you upload all of the package files (.msix, .msixupload, .msixbundle, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload all your packages for the same app on this page, and when a customer downloads your app, the Store will automatically provide each customer with the package that works best for their device. After you upload your packages, you’ll see a table indicating <a href="#device-family-availability">which packages will be offered to specific Windows 10 or Windows 11 device families</a> (and earlier OS versions, if applicable) in ranked order.</p>
+<p><span class="mx-imgBorder">
+<a href="images/msix-packages-overview.png#lightbox" data-linktype="relative-path">
+<img src="images/msix-packages-overview.png" alt="A screenshot showing the overview of packages page for MSIX/PWA app.">
+</a>
+</span>
+</p>
+<p>For details about what a package includes and how it must be structured, see <a href="app-package-requirements.html">App package requirements</a>. You'll also want to learn about <a href="app-package-requirements.html#package-version-numbering">how version numbers impact which packages are delivered to specific customers</a> and <a href="app-package-management.html">how to manage packages for various scenarios</a>.</p>
+<h3 id="uploading-packages-to-your-submission">Uploading packages to your submission</h3>
+<p>To upload packages, drag them into the upload field or click to browse your files. The <strong>Packages</strong> page will let you upload .msix, .msixupload, .msixbundle, .appx, .appxupload, and/or .appxbundle files.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>For Windows 10 and above, we recommend uploading the .msixupload or .appxupload file here rather than .msix, .appx, .msixbundle, or .appxbundle. For more info about packaging UWP apps for the Store, see <a href="/windows/msix/package/packaging-uwp-apps">Packaging a UWP app with Visual Studio</a>.</p>
+</div>
+<p>If you have created any <a href="../../package-flights.html">package flights</a> for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.</p>
+<p>If we detect errors with a package while validating it, we'll display a message to let you know what's wrong. You'll need to remove the package, fix the issue, and then try uploading it again. You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.</p>
+<p><span class="mx-imgBorder">
+<a href="images/uploaded-package-msix.png#lightbox" data-linktype="relative-path">
+<img src="images/uploaded-package-msix.png" alt="A screenshot showing the overview of packages already uploaded page for MSIX/PWA app.">
+</a>
+</span>
+</p>
+<h2 id="device-family-availability">Device family availability</h2>
+<p>After your packages have been <a href="upload-app-packages.html">successfully uploaded on the <strong>Packages</strong> page</a>, the <strong>Device family availability</strong> section will display a table that indicates which packages will be offered to specific Windows 10 or Windows 11 device families (and earlier OS versions, if applicable), in ranked order. This section also lets you choose whether or not to offer the submission to customers on specific Windows 10 or Windows 11 device families.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you haven't uploaded packages yet, the <strong>Device family availability</strong> section will show the Windows 10 or Windows 11 device families with checkboxes that let you indicate whether or not the submission will be offered to customers on those device families. The table will appear after you upload one or more packages.</p>
+</div>
+<p>This section also includes a checkbox where you can indicate whether you want to allow Microsoft to make the app available to any future Windows 10 or Windows 11 device families. We recommend keeping this box checked so that your app can be available to more potential customers as new device families are introduced.</p>
+<h3 id="choosing-which-device-families-to-support">Choosing which device families to support</h3>
+<p>If you upload packages targeting one individual device family, we'll check the box to make those packages available to new customers on that type of device. For example, if a package targets Windows.Desktop, the <strong>Windows 10/11 Desktop</strong> box will be checked for that package (and you won't be able to check the boxes for other device families).</p>
+<p>Packages targeting the Windows.Universal device family can run on any Windows 10 or Windows 11 device (including Xbox One). By default, we'll make those packages available to new customers on all device types <em>except</em> for Xbox.</p>
+<p>You can uncheck the box for any Windows 10 or Windows 11 device family if you don’t want to offer your submission to customers on that type of device. If a device family’s box is unchecked, new customers on that type of device won’t be able to acquire the app (though customers who already have the app can still use it, and will get any updates you submit).</p>
+<p>If your app supports them, we recommend keeping all of the boxes checked, unless you have a specific reason to limit the types of Windows 10 or Windows 11 devices which can acquire your app. For instance, if you know that your app doesn't offer a good experience on <a href="https://developer.microsoft.com/windows/surfacehub">Surface Hub</a> and/or <a href="https://developer.microsoft.com/mixed-reality">Microsoft HoloLens</a>, you can uncheck the <strong>Windows 10 Team</strong> and/or <strong>Windows 10 Holographic</strong> box. This prevents any new customers from acquiring the app on those devices. If you later decide you're ready to offer it to those customers, you can create a new submission with the boxes checked.</p>
+<h3 id="package-details">Package details</h3>
+<p>Your uploaded packages are listed here, grouped by target operating system. The name, version, and architecture of the package will be displayed. For more info such as the supported languages, app capabilities, and file size for each package, click <strong>Show details</strong>.</p>
+<p>If you need to remove a package from your submission, click the <strong>Remove</strong> link at the bottom of each package's <strong>Details</strong> section.</p>
+<h3 id="gradual-package-rollout">Gradual package rollout</h3>
+<p>If your submission is an update to a previously published app, you'll see a checkbox that says <strong>Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)</strong>. This allows you to choose a percentage of customers who will get the packages from the submission so that you can monitor feedback and analytic data to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission.</p>
+<p>For more info, see <a href="../../gradual-package-rollout.html">Gradual package rollout</a>.</p>
+<h3 id="mandatory-update">Mandatory update</h3>
+<p>If your submission is an update to a previously published app, you'll see a checkbox that says <strong>Make this update mandatory</strong>. This allows you to set the date and time for a mandatory update, assuming you have used the Windows.Services.Store APIs to allow your app to programmatically check for package updates and download and install the updated packages. Your app must target Windows 10, version 1607 or later in order to use this option.</p>
+<p>For more info, see <a href="/windows/uwp/packaging/self-install-package-updates">Download and install package updates for your app</a>.</p>
+<h3 id="removing-redundant-packages">Removing redundant packages</h3>
+<p>If we detect that one or more of your packages is redundant, we'll display a warning suggesting that you remove the redundant packages from this submission. Often this happens when you have previously uploaded packages, and now you are providing higher-versioned packages that support the same set of customers. In this case, no customers would ever get the redundant package, because you now have a better (higher-versioned) package to support these customers.</p>
+<p>When we detect that you have redundant packages, we'll provide an option to remove all of the redundant packages from this submission automatically. You can also remove packages from the submission individually if you prefer.</p>
+<h4 id="xbox-devices">Xbox devices</h4>
+<p>The only Windows 10 or Windows 11 device family that is not checked by default for Windows.Universal packages is <strong>Windows 10 Xbox</strong>. If your app is not a game (or if it is a game and you have enabled the <a href="/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators">Xbox Live Creators Program</a> or gone through the <a href="/windows/uwp/gaming/concept-approval">concept approval</a> process), and your submission includes neutral and/or x64 UWP packages compiled using Windows 10 SDK version 14393 or later, you can check the <strong>Windows 10 Xbox</strong> box to offer the app to customers on Xbox One.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>In order for your app to launch on Xbox devices, you must include a neutral or x64 package that is compiled with Windows SDK version 14393 or later. However, if you check <strong>Windows 10 Xbox</strong>, your highest-versioned package that’s applicable to Xbox (that is, a neutral or x64 package that targets the Xbox or Universal device family) will always be offered to customers on Xbox, even if it is compiled with an earlier SDK version. Because of this, it’s critical to ensure that the highest-versioned package applicable to Xbox is compiled with Windows SDK version 14393 or later. If it is not, you will see an error message indicating that Xbox customers will not be able to launch your app.</p>
+<p>To resolve this error, you can do one of the following:</p>
+<ul>
+<li>Replace the applicable packages with new ones that are compiled using Windows SDK version 14393 or later.</li>
+<li>If you already have a package that supports Xbox and is compiled with Windows SDK version 14393 or later, increase its version number so that it is the highest-versioned package in the submission.</li>
+<li>Uncheck the box for <strong>Windows 10 Xbox</strong>.</li>
+</ul>
+<p>If you are still unable to resolve the issue, contact support.</p>
+</div>
+<p>If you're submitting a UWP app for Windows 10 IoT Core, you should not make changes to the default selections after uploading your packages; there is no separate checkbox for Windows 10 IoT. For more about publishing IoT Core UWP apps, see <a href="/windows/iot-core/commercialize-your-device/installingandservicing">Microsoft Store support for IoT Core UWP apps</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>To completely prevent a specific Windows 10 or Windows 11 device family from getting your submission, update the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily"><strong>TargetDeviceFamily</strong></a> element in your manifest to target only the device family that you want to support (i.e. Windows.Desktop), rather than leaving it as the Windows.Universal value (for the universal device family) that Microsoft Visual Studio includes in the manifest by default.</p>
+</div>
+<p>It's important to be aware that selections you make in the <strong>Device family availability</strong> section apply only to new acquisitions. Anyone who already has your app can continue to use it, and will get any updates you submit, even if you remove their device family here. This applies even to customers who acquired your app before upgrading to Windows 10 or Windows 11.</p>
+<p>For more info about device families, see <a href="/uwp/extension-sdks/device-families-overview">Programming with extension SDKs</a>.</p>
+<h3 id="understanding-ranking">Understanding ranking</h3>
+<p>Aside from letting you indicate which Windows 10 or Windows 11 device families can download your submission, the <strong>Device family availability</strong> section shows the specific packages that will be made available to different device families. If you have more than one package that can run on a certain device family, the table will indicate the order in which packages will be offered, based on the version numbers of the packages. For more info about how the Store ranks packages based on version numbers, see <a href="app-package-requirements.html#package-version-numbering">Package version numbering</a>.</p>
+<p>For example, say that you have two packages: Package_A.appxupload and Package_B.appxupload. For a given device family, if Package_A.appxupload is ranked 1 and Package_B.appxupload is ranked 2, that means when a customer on that type of device acquires your app, the Store will first attempt to deliver Package_A.appxupload. If the customer’s device is unable to run Package_A.appxupload, the Store will offer Package_B.appxupload. If the customer’s device can’t run any of the packages for that device family (for example, if the <strong>MinVersion</strong> your app supports is higher than the version on the customer’s device) then the customer won’t be able to download the app on that device.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The version numbers in .xap packages (for previously published apps) are not considered when determining which package to provide a given customer. Because of this, if you have more than one .xap package of equal rank, you will see an asterisk rather than a number, and customers may receive either package. To update customers from one .xap package to a newer one, make sure to remove the older .xap in the new submission.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/publish-your-app/msix/upload-app-packages.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

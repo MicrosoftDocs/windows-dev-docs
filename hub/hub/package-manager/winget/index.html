@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use WinGet to install and manage applications </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use WinGet to install and manage applications ">
+    
+    <meta name="description" content="The WinGet command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-winget-to-install-and-manage-applications">Use WinGet to install and manage applications</h1>
+
+<p><strong>WinGet</strong> is a command line tool enabling users to discover, install, upgrade, remove and configure applications on Windows 10, Windows 11, and Windows Server 2025 computers. This tool is the client interface to the Windows Package Manager service.</p>
+<h2 id="install-winget">Install WinGet</h2>
+<p><strong>WinGet</strong> the Windows Package Manager is available on Windows 11, modern versions of Windows 10, and Windows Server 2025 as a part of the <strong>App Installer</strong>. The <strong>App Installer</strong> is a System Component delivered and updated by the Microsoft store on Windows Desktop versions, and via Updates on Windows Server 2025.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>WinGet</strong> command line tool is only supported on Windows 10 version 1809 (build 17763) or later. WinGet will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register the Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that WinGet is not yet available, you can open PowerShell and enter the following command to request this WinGet registration: <code>Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe</code>.</p>
+</div>
+<h3 id="install-winget-preview-version-developers-only">Install WinGet preview version [Developers Only]</h3>
+<p>WinGet is included in the App Installer. To try the latest Windows Package Manager features, you can install a preview build one of the following ways:</p>
+<ul>
+<li><p>Download the latest <a href="https://aka.ms/getwingetpreview">WinGet preview version</a>. Read the <a href="https://github.com/microsoft/winget-cli/releases">Release notes for WinGet preview</a> to learn about any new features. Installing this package will give you the preview version of the WinGet client, but it will not enable automatic updates of new preview versions from the Microsoft Store.</p>
+</li>
+<li><p>Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the <a href="https://www.microsoft.com/windowsinsider/about-windows-insider-program">Windows Insider Program</a> in the Canary or Dev <a href="https://learn.microsoft.com/windows-insider/flighting">Channels</a>. The Windows Insider Canary and Dev Channels include automatic updates of new preview versions of WinGet from the Microsoft Store.</p>
+</li>
+<li><p>Use a Microsoft Account (MSA) to sign up for the <a href="https://aka.ms/AppInstaller_InsiderProgram">Windows Package Manager Insiders Program</a>. Once your Microsoft Account (MSA) has been added (a few days after you receive e-mail notification) you will receive automatic updates of new preview versions from the Microsoft Store.</p>
+</li>
+</ul>
+<h3 id="install-winget-on-windows-sandbox">Install WinGet on Windows Sandbox</h3>
+<p><a href="/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview">Windows Sandbox</a> provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains &quot;sandboxed&quot; and runs separately from the host machine. Windows Sandbox does not include WinGet, nor the Microsoft Store app, so you will need to download the latest WinGet package from the WinGet releases page on GitHub, or use the Repair-WinGetPackageManager cmdlet.</p>
+<p>To install the stable release of WinGet on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:</p>
+<pre><code class="lang-powershell">$progressPreference = 'silentlyContinue'
+Write-Host &quot;Installing WinGet PowerShell module from PSGallery...&quot;
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Write-Host &quot;Using Repair-WinGetPackageManager cmdlet to bootstrap WinGet...&quot;
+Repair-WinGetPackageManager -AllUsers
+Write-Host &quot;Done.&quot;
+</code></pre>
+<p>To install the WinGet PowerShell module in machine scope, you can use the <code>-Scope AllUsers</code> parameter with the <code>Install-Module</code> cmdlet. If you would like a preview version of WinGet, you can add <code>-IncludePrerelease</code> parameter with the Repair-WinGetPackageManager cmdlet. To see the available parameters for the Repair-WinGetPackageManager cmdlet, you can run <code>Get-Help Repair-WinGetPackageManager -Full</code>.</p>
+<p>For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the <a href="/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview">Windows Sandbox docs</a>.</p>
+<h2 id="administrator-considerations">Administrator considerations</h2>
+<p>Installer behavior can be different depending on whether you are running <strong>WinGet</strong> with administrator privileges.</p>
+<ul>
+<li><p>When running <strong>WinGet</strong> without administrator privileges, some applications may <a href="/windows/security/identity-protection/user-account-control/how-user-account-control-works">require elevation</a> to install. When the installer runs, Windows will prompt you to <a href="/windows/security/identity-protection/user-account-control/how-user-account-control-works">elevate</a>. If you choose not to elevate, the application will fail to install.</p>
+</li>
+<li><p>When running <strong>WinGet</strong> in an Administrator Command Prompt, you will not see <a href="/windows/security/identity-protection/user-account-control/how-user-account-control-works">elevation prompts</a> if the application requires it. Always use caution when running your command prompt as an administrator, and only install applications you trust.</p>
+</li>
+</ul>
+<h2 id="use-winget">Use WinGet</h2>
+<p>After <strong>App Installer</strong> is installed, you can run <strong>WinGet</strong> by typing 'winget' from a Command Prompt.</p>
+<p>One of the most common usage scenarios is to search for and install a favorite tool.</p>
+<ol>
+<li><p>To <a href="search.html">search</a> for a tool, type <code>winget search &lt;appname&gt;</code>.</p>
+</li>
+<li><p>After you have confirmed that the tool you want is available, you can <a href="install.html">install</a> the tool by typing <code>winget install &lt;appname&gt;</code>. The <strong>WinGet</strong> tool will launch the installer and install the application on your PC.
+<img src="images/install.png" alt="winget commandline"></p>
+</li>
+<li><p>In addition to install and search, <strong>WinGet</strong> provides a number of other commands that enable you to <a href="show.html">show details</a> on applications, <a href="source.html">change sources</a>, and <a href="validate.html">validate packages</a>. To get a complete list of commands, type: <code>winget --help</code>.
+<img src="images/help.png" alt="winget help"></p>
+</li>
+</ol>
+<p>Some users have reported <a href="https://github.com/microsoft/winget-cli/issues/210">issues</a> with the client not being on their PATH.</p>
+<h3 id="commands">Commands</h3>
+<p>The current preview of the <strong>WinGet</strong> tool supports the following commands.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="install.html">install</a></td>
+<td>Installs the specified application.</td>
+</tr>
+<tr>
+<td><a href="show.html">show</a></td>
+<td>Displays details for the specified application.</td>
+</tr>
+<tr>
+<td><a href="source.html">source</a></td>
+<td>Adds, removes, and updates the Windows Package Manager repositories accessed by <strong>WinGet</strong>.</td>
+</tr>
+<tr>
+<td><a href="search.html">search</a></td>
+<td>Searches for an application.</td>
+</tr>
+<tr>
+<td><a href="list.html">list</a></td>
+<td>Display installed packages.</td>
+</tr>
+<tr>
+<td><a href="upgrade.html">upgrade</a></td>
+<td>Upgrades the given specified application.</td>
+</tr>
+<tr>
+<td><a href="uninstall.html">uninstall</a></td>
+<td>Uninstalls the specified application.</td>
+</tr>
+<tr>
+<td><a href="hash.html">hash</a></td>
+<td>Generates the SHA256 hash for the installer.</td>
+</tr>
+<tr>
+<td><a href="validate.html">validate</a></td>
+<td>Validates a manifest file for submission to the Windows Package Manager repository.</td>
+</tr>
+<tr>
+<td><a href="settings.html">settings</a></td>
+<td>Open settings.</td>
+</tr>
+<tr>
+<td><a href="features.html">features</a></td>
+<td>Shows the status of experimental features.</td>
+</tr>
+<tr>
+<td><a href="export.html">export</a></td>
+<td>Exports a list of the installed packages.</td>
+</tr>
+<tr>
+<td><a href="import.html">import</a></td>
+<td>Installs all the packages in a file.</td>
+</tr>
+<tr>
+<td><a href="pinning.html">pin</a></td>
+<td>Manage package pins.</td>
+</tr>
+<tr>
+<td><a href="configure.html">configure</a></td>
+<td>Configures the system into a desired state.</td>
+</tr>
+<tr>
+<td><a href="download.html">download</a></td>
+<td>Downloads the specified application's installer.</td>
+</tr>
+<tr>
+<td><a href="repair.html">repair</a></td>
+<td>Repairs the selected application.</td>
+</tr>
+<tr>
+<td><a href="dscv3.html">dscv3</a></td>
+<td>PowerShell Desired State Configuration (DSC) v3 resource commands.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="options">Options</h3>
+<p>The <strong>WinGet</strong> tool supports the following options.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-v, --version</strong></td>
+<td>Returns the current version of WinGet.</td>
+</tr>
+<tr>
+<td><strong>--info</strong></td>
+<td>Provides you with all detailed information on WinGet, including the links to the license, privacy statement, and configured group policies.</td>
+</tr>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Shows additional help for WinGet.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Opens the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose,--verbose-logs</strong></td>
+<td>Enables verbose logging for winget.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disables interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Sets a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disables the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-installer-formats">Supported installer formats</h2>
+<p><strong>WinGet</strong> supports the following types of installers:</p>
+<ul>
+<li>EXE (with <strong>Silent</strong> and <strong>SilentWithProgress</strong> flags)</li>
+<li>ZIP</li>
+<li>INNO</li>
+<li>NULLSOFT</li>
+<li>MSI</li>
+<li>WIX</li>
+<li>APPX</li>
+<li>MSIX</li>
+<li>BURN</li>
+<li>PORTABLE</li>
+</ul>
+<h2 id="scripting-winget">Scripting WinGet</h2>
+<p>The <a href="https://www.powershellgallery.com/packages/Microsoft.WinGet.Client/">Microsoft.WinGet.Client</a> PowerShell module is available on the PowerShell Gallery.</p>
+<h2 id="debugging-and-troubleshooting">Debugging and troubleshooting</h2>
+<p><strong>WinGet</strong> provides logging to help diagnose issues. For troubleshooting and details on logging, see <a href="troubleshooting.html">Debugging and troubleshooting</a>.</p>
+<h2 id="missing-tools">Missing tools</h2>
+<p>If the <a href="../package/repository.html">community repository</a> does not include your tool or application, submit a package to our <a href="https://github.com/microsoft/winget-pkgs">repository</a>. By adding your favorite tool, it will be available to you and everyone else.</p>
+<h2 id="customize-winget-settings">Customize WinGet settings</h2>
+<p>You can configure the <strong>WinGet</strong> command line experience by modifying the <strong>settings.json</strong> file. For more information, see the page for the <a href="settings.html">settings command</a>.</p>
+<h2 id="open-source-details">Open source details</h2>
+<p>The <strong>WinGet</strong> tool is open source software available on GitHub in the repo <a href="https://github.com/microsoft/winget-cli/">https://github.com/microsoft/winget-cli/</a>. The source for building the client is located in the <a href="https://github.com/microsoft/winget-cli/tree/master/src">src folder</a>.</p>
+<p>The source for <strong>WinGet</strong> is contained in a Visual Studio 2022 C++ solution. To build the solution correctly, clone the repository and run the appropriate WinGet Configuration file located in the &quot;.github&quot; directory.</p>
+<p>We encourage you to contribute to the <strong>WinGet</strong> source on GitHub. You must first agree to and sign the Microsoft CLA. Pull requests should come from a branch on your own fork.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>The winget-cli repo maintains a list of common issues and common errors, along with recommendations on how to resolve:</p>
+<ul>
+<li><a href="https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting#common-issues">common issues -- not recognized, failed to run, App Installer version or PATH variable need updating</a></li>
+<li><a href="https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting#common-errors">common errors -- Error 0x801901a0, 0x80d03002, 0x80070490</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

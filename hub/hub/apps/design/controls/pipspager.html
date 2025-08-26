@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PipsPager </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PipsPager ">
+    
+    <meta name="description" content="A PipsPager is a control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="pipspager">PipsPager</h1>
+
+<p>The PipsPager control helps users navigate within linearly paginated content using a configurable collection of glyphs, each of which represents a single &quot;page&quot; within a limitless range. The glyphs highlight the current page, and indicate the availability of both preceding and succeeding pages. The control relies on current context and does not support explicit page numbering or a non-linear organization.</p>
+<h2 id="what-is-a-pip">What is a pip?</h2>
+<p>Pips represent a unit of numerical value, typically rendered as dots. However they can be customized to use other glyphs such as dashes or squares.</p>
+<p>By default, each solid dot in the PipsPager control represents a page in the content layout. A user can select a dot to navigate to that page in the content.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a PipsPager for content organized in a linear structure, is not explicitly numbered, or where a glyph-based representation of numbered pages is desired.</p>
+<p>This UI is commonly used in apps such as photo viewers and app lists, where display space is limited and the number of potential pages is infinite.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Common UI patterns for a PipsPager include photo viewers, app lists, carousels, and layouts where display space is limited.</li>
+<li>For experiences optimized for gamepad input, we recommend against placing UI directly to the left or right of a horizontal PipsPager, and above or below a vertically oriented PipsPager.</li>
+<li>For experiences optimized for touch input, we recommend integrating the PipsPager with a view control, such as a <a href="flipview.html">FlipView</a>, to take advantage of on-content pagination with touch (the user can also use touch to select individual pips).</li>
+</ul>
+<h2 id="create-a-pipspager">Create a PipsPager</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/uwp/api/microsoft.ui.xaml.controls.pipspager">PipsPager class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/PipsPager">Open the WinUI 3 Gallery app and see the PipsPager in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>A default PipsPager is comprised of five visible pips that can be oriented horizontally (default) or vertically.</p>
+<p>A PipsPager also supports navigation buttons (previous, next) to move to an incrementally adjacent page. By default, the navigation buttons are collapsed and do not take up layout space.</p>
+<p>Wrapping between the first and last items is not supported.</p>
+<p><span class="mx-imgBorder">
+<img src="images/pipspager-default.png" alt="A default PipsPager with five horizontal dots, and the first selected.">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;PipsPager x:Name=&quot;DefaultPipsPager&quot; /&gt;
+</code></pre>
+<h3 id="horizontal-pipspager-with-navigation-buttons">Horizontal PipsPager with navigation buttons</h3>
+<p>The navigation buttons (previous, next) let the user move to an incrementally adjacent page.</p>
+<p>By default, the navigation buttons are collapsed. You can control this behavior through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.previousbuttonvisibility">PreviousButtonVisibility</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.nextbuttonvisibility">NextButtonVisibility</a> properties.</p>
+<p>Possible values for these properties are:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility">Collapsed</a>: The button is not visible to the user and <strong>does not</strong> take up layout space. (Default)</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility">Visible</a>: The button is visible and enabled. Each button is automatically hidden when the PipsPager is at the minimum or maximum extent of the content. For example, if the current page is the first page then the previous button is hidden; if the current page is the last page then the next button is hidden. When hidden, the button is not visible but <strong>does</strong> take up layout space.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility">VisibleOnPointerOver</a>: The behavior is the same as Visible <em>except</em> that the button is only displayed when the user hovers the pointer cursor over the PipsPager UI, or the user sets keyboard focus on the PipsPager.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="images/pipspager-visible-buttons.gif" alt="A PipsPager with five horizontal dots and navigation buttons visible based on current page.">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;PipsPager x:Name=&quot;VisibleButtonPipsPager&quot;
+    NumberOfPages=&quot;5&quot;
+    PreviousButtonVisibility=&quot;Visible&quot;
+    NextButtonVisibility=&quot;Visible&quot; /&gt;
+</code></pre>
+<h3 id="vertical-pipspager-with-navigation-buttons-visible-on-pointer-over">Vertical PipsPager with navigation buttons visible on pointer over</h3>
+<p>The PipsPager can be oriented vertically with no change to behavior or interaction experience.</p>
+<p>The top button corresponds to the first button and the bottom button corresponds to the last button in the horizontal view.</p>
+<p>The following example demonstrates the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility">VisibleOnPointerOver</a> setting for the navigation buttons.</p>
+<p><span class="mx-imgBorder">
+<img src="images/pipspager-visible-on-pointer-over.gif" alt="A PipsPager with five vertical dots and navigation buttons visibility based on pointer over and current page.">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;PipsPager x:Name=&quot;VerticalPipsPager&quot;
+    NumberOfPages=&quot;5&quot;
+    Orientation=&quot;Vertical&quot; 
+    PreviousButtonVisibility=&quot;VisibleOnPointerOver&quot; 
+    NextButtonVisibility=&quot;VisibleOnPointerOver&quot; /&gt;
+</code></pre>
+<h3 id="scrolling-pips">Scrolling pips</h3>
+<p>If the content consists of a large number of pages (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.numberofpages">NumberOfPages</a>), you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.maxvisiblepips">MaxVisiblePips</a> property to set the number of visible, interactive pips.</p>
+<p>If the value of NumberOfPages is greater than the value of MaxVisiblePips, the pips automatically scroll in order to center the selected page in the control. If the NumberOfPages is equal to or less than MaxVisiblePips, no scrolling occurs and the number of pips shown is the same as the value of NumberOfPages.</p>
+<p>If the value of MaxVisiblePips is greater than the available layout space, the displayed pips are clipped. The number of pips displayed is the lesser of MaxVisiblePips and NumberOfPages.</p>
+<p>By default, a maximum of five pips are visible.</p>
+<p><span class="mx-imgBorder">
+<img src="images/pipspager-max-visible-pips.gif" alt="A PipsPager with horizontally scrolling pips.">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;PipsPager x:Name=&quot;ScrollingPipsPager&quot;
+    NumberOfPages=&quot;20&quot;
+    MaxVisiblePips=&quot;10&quot; /&gt;
+</code></pre>
+<h3 id="integrate-pipspager-with-a-collection-control">Integrate PipsPager with a Collection control</h3>
+<p><span class="mx-imgBorder">
+<img src="images/pipspager-flipview-example.png" alt="A PipsPager with five horizontal dots underneath a FlipView photo album. The third dot is selected, which indicates the third page of content.">
+</span>
+</p>
+<p>A PipsPager is often used in conjunction with collection controls.</p>
+<p>The following example shows how to bind a PipsPager with a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview">FlipView</a> and provide another way to navigate through content and indicate the current page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use the PipsPager as a page indicator <strong>only</strong> and disable user interactions, set the control's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.isenabled">IsEnabled</a> property to false in the control.</p>
+</div>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+  &lt;FlipView x:Name=&quot;Gallery&quot; MaxWidth=&quot;400&quot; Height=&quot;270&quot; ItemsSource=&quot;{x:Bind Pictures}&quot;&gt;
+      &lt;FlipView.ItemTemplate&gt;
+          &lt;DataTemplate x:DataType=&quot;x:String&quot;&gt;
+              &lt;Image Source=&quot;{x:Bind Mode=OneWay}&quot;/&gt;
+          &lt;/DataTemplate&gt;
+      &lt;/FlipView.ItemTemplate&gt;
+  &lt;/FlipView&gt;
+
+  &lt;!-- The SelectedPageIndex is bound to the FlipView to keep the two in sync --&gt;
+  &lt;PipsPager x:Name=&quot;FlipViewPipsPager&quot;
+      HorizontalAlignment=&quot;Center&quot;
+      Margin=&quot;0, 10, 0, 0&quot;
+      NumberOfPages=&quot;{x:Bind Pictures.Count}&quot;
+      SelectedPageIndex=&quot;{x:Bind Path=Gallery.SelectedIndex, Mode=TwoWay}&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<h3 id="pip-and-navigation-button-customization">Pip and navigation button customization</h3>
+<p>The navigation buttons and pips can be customized through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.previousbuttonstyle">PreviousButtonStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.nextbuttonstyle">NextButtonStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.selectedpipstyle">SelectedPipStyle</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.normalpipstyle">NormalPipStyle</a> properties.</p>
+<p>If you set visibility through the PreviousButtonStyle or NextButtonStyle properties, these settings take precedence over the PreviousButtonVisibility or NextButtonVisibility properties, respectively (unless they are set to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerbuttonvisibility">PipsPagerButtonVisibility</a> value of Collapsed).</p>
+<p><span class="mx-imgBorder">
+<img src="images/pipspager-custom-buttons.png" alt="A PipsPager with five horizontal dots and custom navigation buttons.">
+</span>
+</p>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;Style x:Key=&quot;NavButtonBaseStyle&quot; TargetType=&quot;Button&quot; BasedOn=&quot;{StaticResource PipsPagerNavigationButtonBaseStyle}&quot;&gt;
+        &lt;Setter Property=&quot;Width&quot; Value=&quot;30&quot; /&gt;
+        &lt;Setter Property=&quot;Height&quot; Value=&quot;30&quot; /&gt;
+        &lt;Setter Property=&quot;FontSize&quot; Value=&quot;12&quot; /&gt;
+    &lt;/Style&gt;
+
+    &lt;Style x:Key=&quot;PreviousButtonStyle&quot; BasedOn=&quot;{StaticResource NavButtonBaseStyle}&quot; TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;Content&quot; Value=&quot;&amp;#xEDDB;&quot; /&gt;
+    &lt;/Style&gt;
+
+    &lt;Style x:Key=&quot;NextButtonStyle&quot; BasedOn=&quot;{StaticResource NavButtonBaseStyle}&quot; TargetType=&quot;Button&quot;&gt;
+        &lt;Setter Property=&quot;Content&quot; Value=&quot;&amp;#xEDDC;&quot; /&gt;
+    &lt;/Style&gt;
+&lt;/Page.Resources&gt;
+
+&lt;PipsPager x:Name=&quot;CustomNavButtonPipsPager&quot;
+    PreviousButtonStyle=&quot;{StaticResource PreviousButtonStyle}&quot;
+    NextButtonStyle=&quot;{StaticResource NextButtonStyle}&quot;
+    PreviousButtonVisibility=&quot;VisibleOnPointerOver&quot; 
+    NextButtonVisibility=&quot;VisibleOnPointerOver&quot; /&gt;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The PipsPager for UWP apps requires WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in the <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>WinUI 2 Apis:</strong> <a href="/uwp/api/microsoft.ui.xaml.controls.pipspager">PipsPager class</a></li>
+<li><a href="winui2gallery:/item/PipsPager">Open the WinUI 2 Gallery app and see the PipsPager in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:PipsPager /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="dialogs-and-flyouts/index.html">ScrollViewer</a></li>
+<li><a href="flipview.html">FlipView</a></li>
+<li><a href="items-repeater.html">ItemsRepeater</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/pipspager.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

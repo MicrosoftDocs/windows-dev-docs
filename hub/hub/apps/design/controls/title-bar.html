@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Title bar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Title bar ">
+    
+    <meta name="description" content="Learn how to use a title bar control to give your app a custom title bar.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="title-bar">Title bar</h1>
+
+<p>The TitleBar control provides a simplified way to create a custom title bar for your app. The title bar is a fundamental component of a Windows app's user interface that identifies the app via its icon and title, houses the system caption buttons that let a user close, maximize, minimize, and restore the window, and lets a user drag the window around the screen.</p>
+<p>You can use a custom title bar to better integrate the title bar area with your app UI. The title bar can be customized to match the app's visual style using Mica theming. It can include other relevant information, such as a document title or the current state (e.g., “Editing,” “Viewing,” etc.). It can also host other WinUI controls, like AutoSuggestBox and PersonPicture, providing a cohesive user experience for your app.</p>
+<p><img src="images/titlebar/title-bar-custom.png" alt="Screenshot of an app window with a custom title bar"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use the TitleBar control when you want to integrate the title bar area with your app UI using customizations such as subtitles, <a href="../style/mica.html">Mica</a> theming, and integrations with WinUI controls.</p>
+<h2 id="anatomy">Anatomy</h2>
+<p>By default, the title bar shows only the system caption buttons. Other parts of the title bar are shown or hidden depending on associated property settings.</p>
+<p>The title bar is divided into these areas:</p>
+<p><img src="images/titlebar/title-bar-parts.png" alt="Screenshot showing the parts of a title bar control."></p>
+<ul>
+<li><strong>Back button:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled">IsBackButtonEnabled</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible">IsBackButtonVisible</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested">BackRequested</a> - A built-in back button for navigation.</li>
+<li><strong>Pane toggle button:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled">IsPaneToggleButtonVisible</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.panetogglerequested">PaneToggleRequested</a> - This button is intended to be used in conjunction with the NavigationView control.</li>
+<li><strong>Left header:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.leftheader">LeftHeader</a></li>
+<li><strong>Icon:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.iconsource">IconSource</a></li>
+<li><strong>Title:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.title">Title</a></li>
+<li><strong>Subtitle:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.subtitle">Subtitle</a></li>
+<li><strong>Content:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.content">Content</a></li>
+<li><strong>Right header:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.rightheader">RightHeader</a></li>
+<li><strong>Min drag region:</strong> This area is reserved next to the system caption buttons so that the user always has a place to grab the window for dragging.</li>
+<li><strong>System caption buttons:</strong> These buttons are not part of the TitleBar control - it simply allocates space where the caption buttons appear, depending on RTL or LTR settings. Caption buttons and customizations are handled by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar</a>.</li>
+</ul>
+<p>The layout is reversed when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection">FlowDirection</a> is <strong>RightToLeft</strong>.</p>
+<h2 id="create-a-title-bar">Create a title bar</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar">TitleBar class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.title">Title property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/TitleBar">Open the WinUI 3 Gallery app and see the TitleBar in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example creates a simple title bar that replaces the system title bar. It has a title, icon, and Mica theming.</p>
+<pre><code class="lang-xaml">&lt;Window
+    ...  &gt;
+    &lt;Window.SystemBackdrop&gt;
+        &lt;MicaBackdrop Kind=&quot;Base&quot;/&gt;
+    &lt;/Window.SystemBackdrop&gt;
+
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+            &lt;RowDefinition Height=&quot;*&quot; /&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;TitleBar x:Name=&quot;SimpleTitleBar&quot;
+                  Title=&quot;My App&quot;&gt;
+            &lt;TitleBar.IconSource&gt;
+                &lt;FontIconSource Glyph=&quot;&amp;#xF4AA;&quot;/&gt;
+            &lt;/TitleBar.IconSource&gt;
+        &lt;/TitleBar&gt;
+
+        &lt;!-- App content --&gt;
+        &lt;Frame x:Name=&quot;RootFrame&quot; Grid.Row=&quot;1&quot;/&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+
+    // Hides the default system title bar.
+    ExtendsContentIntoTitleBar = true;
+    // Replace system title bar with the WinUI TitleBar control. 
+    SetTitleBar(SimpleTitleBar); 
+}
+
+</code></pre>
+<h2 id="integration-with-navigationview">Integration with NavigationView</h2>
+<p>The <a href="navigationview.html">Navigation view</a> has a built-in back button and pane toggle button. Fluent Design guidance recommends that these controls be placed in the title bar when a custom title bar is used.</p>
+<p>This example demonstrates how to integrate the TitleBar control with a NavigationView control by hiding the back button and pane toggle button in the navigation view and using the corresponding buttons on the title bar instead.</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+        &lt;RowDefinition Height=&quot;*&quot; /&gt;
+    &lt;/Grid.RowDefinitions&gt;
+
+    &lt;TitleBar Title=&quot;My App&quot;
+              IsBackButtonVisible=&quot;True&quot;
+              IsBackButtonEnabled=&quot;{x:Bind RootFrame.CanGoBack, Mode=OneWay}&quot;
+              BackRequested=&quot;TitleBar_BackRequested&quot;
+              IsPaneToggleButtonVisible=&quot;True&quot;
+              PaneToggleRequested=&quot;TitleBar_PaneToggleRequested&quot;&gt;
+    &lt;/TitleBar&gt;
+
+    &lt;NavigationView x:Name=&quot;RootNavigationView&quot; Grid.Row=&quot;1&quot;
+                    IsBackButtonVisible=&quot;Collapsed&quot;
+                    IsPaneToggleButtonVisible=&quot;False&quot;&gt;
+        &lt;Frame x:Name=&quot;RootFrame&quot; /&gt;
+    &lt;/NavigationView&gt;
+&lt;/Grid&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void TitleBar_BackRequested(TitleBar sender, object args)
+{
+    if (RootFrame.CanGoBack)
+    {
+        RootFrame.GoBack();
+    }
+}
+
+private void TitleBar_PaneToggleRequested(TitleBar sender, object args)
+{
+    RootNavigationView.IsPaneOpen = !RootNavigationView.IsPaneOpen;
+}
+
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<p>The TitleBar control is not available for UWP and WinUI 2. Instead, see <a href="/windows/uwp/ui-input/title-bar">Title bar customization (UWP apps)</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/titlebar-design.html">Title bar (design)</a></li>
+<li><a href="../../develop/title-bar.html">Title bar customization</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar">TitleBar class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/title-bar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

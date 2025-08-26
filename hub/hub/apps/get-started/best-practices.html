@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Application Development - Best Practices </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Application Development - Best Practices ">
+    
+    <meta name="description" content="A collection of best practices related to UI/UX, security, performance, and more.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-application-development---best-practices">Windows Application Development - Best Practices</h1>
+
+<p>The best practices in this document will help you build great Windows apps that reach and delight ~1.5 billion diverse PC users around the world. This document is divided into the following sections:</p>
+<ol>
+<li><strong><a href="#user-experience-ux">User experience</a></strong>: Guidance in this section will help you improve the look, feel, and usability of your apps.</li>
+<li><strong><a href="#performance--fundamentals">Performance and fundamentals</a></strong>: Guidance in this section will help you improve your app's performance and resource utilization.</li>
+<li><strong><a href="#operating-system--hardware-optimization">Operating system / hardware optimization</a></strong>: Guidance in this section will help you optimize your packaging and distribution for a variety of hardware configurations.</li>
+<li><strong><a href="#application-discovery-and-management">Application discovery and management</a></strong>: Guidance in this section will make it easier for users to discover, install, update, and uninstall your app.</li>
+<li><strong><a href="#accessibility">Accessibility</a></strong>: Guidance in this section will help you build accessible and inclusive experiences.</li>
+<li><strong><a href="#security-and-privacy">Security and privacy</a></strong>: Guidance in this section will help you mitigate security risks and meet your users' privacy needs.</li>
+</ol>
+<h2 id="user-experience-ux">User experience (UX)</h2>
+<p>Windows 11 marks a visual evolution of the Windows operating system that improves the look, feel, and usability of Windows. Our studies show that users have high expectations for Windows apps:</p>
+<ul>
+<li>They expect Windows apps to work with a complete range of inputs.</li>
+<li>They expect design and interaction patterns that look and feel native on current and future devices.</li>
+<li>They expect support for modern windowing workflows and shell integration points.</li>
+</ul>
+<p>When applications adhere to Windows styles and standard Windows behaviors, users don't have to re-learn interaction patterns. This makes it much easier for users to use your app. An app that looks great can create a great first impression, but an app that's also easy to use and helps the user accomplish their goals will create a great lasting impression.</p>
+<p>Windows 11 is built on the <a href="../design/signature-experiences/design-principles.md">Windows 11 design principles</a>. Following these guidelines as you build your apps will help you meet your customers' expectations of a great app experience. When thinking about incorporating the latest and recommended Windows application UI/UX patterns into your Windows applications, we recommend that you focus on these 5 areas:</p>
+<ul>
+<li>Layout</li>
+<li>UI interaction</li>
+<li>Visual style</li>
+<li>Window behavior</li>
+<li>Shell integration points</li>
+</ul>
+<p><a href="../winui/index.html">WinUI 3</a> provides built-in support for many of these experiences and styles through its <strong><a href="make-apps-great-for-windows.html#4-use-the-latest-common-controls">common controls</a></strong>. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our <a href="https://aka.ms/WinUI/3.0-figma-toolkit">design toolkits</a> and <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">WinUI Gallery</a>.</p>
+<h3 id="layout">Layout</h3>
+<p>Windows applications run on a variety of configurations that match users' needs. Test your application's panes and/or pages across a variety of dimensions, devices, window sizes, DPI settings, and scale settings. Your application should work as expected even when resized down to small dimensions.</p>
+<h4 id="dpi-awareness">DPI awareness</h4>
+<p>WinUI applications automatically scale for each display that they're running on. Other Windows programming technologies (Win32, WinForms, WPF, etc.) don't automatically handle per-monitor DPI scaling. Without additional work to support per-monitor DPI scaling for these technologies, applications may appear blurry or incorrectly-sized. See <a href="/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows">High DPI Desktop Application Development on Windows</a> for more information.</p>
+<h4 id="responsive-layout">Responsive layout</h4>
+<p>Use <a href="../design/layout/responsive-design.html">responsive design techniques</a> to optimize your app pages for different window sizes. Follow the <a href="../design/input/guidelines-for-panning.html">guidelines for panning or scrolling</a> to ensure that users can always access your content, no matter how small the app window gets.</p>
+<h3 id="ui-interaction">UI interaction</h3>
+<p>Windows users can choose from a wide variety of input devices to interact with your application, and Windows has specific system experiences that people are accustomed to using. When your application adheres to these experiences, your users can use your application reliably. When your app doesn't follow these conventions, users may find it confusing or frustrating.</p>
+<h4 id="on-object-commanding">On-object commanding</h4>
+<p>Use <a href="../design/controls/collection-commanding.html#creating-context-menus">on-object commanding</a> such as <a href="../design/controls/menus-and-context-menus.html">context menus</a>, <a href="../design/controls/swipe.html">swipe commands</a>, and <a href="../design/input/keyboard-accelerators.html">keyboard shortcuts</a>. Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest <a href="make-apps-great-for-windows.html#context-menus">context menu integration</a> guidance. WinUI text controls automatically expose cut/copy/paste commands, but other controls may need extra work to support these commands.</p>
+<h4 id="text-interaction">Text interaction</h4>
+<p>Whenever there is text in an application, users expect that they can select and copy it. If the text is editable, they expect that they can cut and paste, as well. By providing consistent shortcuts to users, you let them complete their tasks more efficiently. Ensure that these actions can be performed using keyboard, mouse or trackpad, touch, and pen.</p>
+<h4 id="panning--scrolling">Panning &amp; Scrolling</h4>
+<p>It is uncommon for an application's UI to fit entirely inside a single page that does not need to scroll. Even if there are only a few UI elements, users can freely resize the app Window and cause some UI elements to be hidden. Ensure that your application's UI properly supports scrolling and panning (using keyboard, mouse or trackpad, touch, and pen) to let users access any UI elements that might have moved out of the visible window area.</p>
+<h3 id="visual-style">Visual style</h3>
+<p>Windows 11 is built on the <a href="../design/signature-experiences/design-principles.md">Windows 11 design principles</a>: Effortless, Calm, Personal, Familiar, and Complete + Coherent. We believe experiences that follow these principles bring great user experiences on Windows.</p>
+<h4 id="materials-acrylic-and-mica">Materials: Acrylic and Mica</h4>
+<p><a href="../design/style/acrylic.html">Acrylic</a> and <a href="../design/style/mica.html">Mica</a> are visual <a href="../design/signature-experiences/materials.html">materials</a> that give interactive UI controls a distinct &quot;occluded&quot; visual style. Use <a href="../design/style/acrylic.html">Acrylic</a> to apply a semi-transparent style to transient surfaces like context menus, flyouts, and other elements that can be light-dismissed. Use <a href="../design/style/mica.html">Mica</a> to add a subtle adaptive tint to long-lived UI surfaces like the title bar.</p>
+<p>More information about Acrylic and Mica materials can be found in <a href="make-apps-great-for-windows.html#5-use-the-latest-design-materials-acrylic-and-mica">Things you can do to make your app great on Windows 11</a>.</p>
+<h4 id="dark-and-light-themes">Dark and Light themes</h4>
+<p><a href="make-apps-great-for-windows.html#7-support-dark-and-light-themes">Dark and Light themes</a> give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see <a href="../develop/platform/xaml/xaml-theme-resources.html">XAML theme resources</a>). For Win32 apps, see <a href="../desktop/modernize/ui/apply-windows-themes.html">Support Dark and Light themes in Win32 apps</a>. (The title bar in Win32 apps does not automatically adapt to the Dark theme. Be sure to follow the <a href="../desktop/modernize/ui/apply-windows-themes.html#enable-a-dark-mode-title-bar-for-win32-applications">title bar guidance</a> in the article).</p>
+<h4 id="refreshed-ui-elements">Refreshed UI elements</h4>
+<p><a href="../design/signature-experiences/geometry.html">Windows 11 geometry</a> has been crafted to support modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.</p>
+<p>The visual and behavioral changes are built in to <a href="../winui/index.html">WinUI 3</a>. Use WinUI 3 where you can to take advantage of the work that has already been done. If you aren't able to use WinUI 3, consider emulating the styles demonstrated in our <a href="https://www.aka.ms/WinUI/3.0-figma-toolkit">design toolkits</a> and <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">WinUI Gallery</a>.</p>
+<h4 id="context-menu">Context menu</h4>
+<p>A context menu is a shortcut menu that the user invokes with a right-click or tap &amp; hold action to reveal a menu of commands relevant to the context of the control the user is interacting with. Users expect the appearance and behavior of context menus to be coherent across Windows. Use platform-provided context menus whenever possible to keep them consistent with the rest of the system.</p>
+<h4 id="iconography-and-typography">Iconography and typography</h4>
+<p>Windows 11 has <a href="../design/signature-experiences/iconography.html">updated icons (&quot;Segoe Fluent Icons&quot;)</a>, improved support for <a href="../design/controls/animated-icon.html">animated icons</a>, and a <a href="../design/signature-experiences/typography.html">new UI font (&quot;Segoe UI Variable&quot;)</a>. We recommend that you use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.</p>
+<p>More information about iconography and typography on Windows can be found in <a href="make-apps-great-for-windows.html#9-use-beautiful-iconography--typography">Things you can do to make your app great on Windows 11</a>.</p>
+<h3 id="window-behavior-and-style">Window behavior and style</h3>
+<p>Applications run in a frame provided by Windows, and users expect the built-in Windows look and behaviors to be consistent across app windows. Consider supporting the features listed here to ensure that your app looks and functions as users expect on Windows 11.</p>
+<h4 id="snap-layout">Snap Layout</h4>
+<p>Window snapping is greatly enhanced in Windows 11, and the Snap Layout menu is a new feature to help users discover and use the power of window snapping. Use the Snap Layout menu to test your app in different Snap Layouts and ensure your app supports different snap sizes, like 1/2, 1/3, and 1/4 screen.</p>
+<p>If the Snap Layout menu doesn't appear for your app by default, see <a href="../desktop/modernize/ui/apply-snap-layout-menu.html">Support snap layouts for desktop apps on Windows 11</a> for some steps you can take to enable it.</p>
+<h4 id="title-bar-and-caption-buttons">Title bar and caption buttons</h4>
+<p>The title bar and caption buttons (minimize, maximize, close) are how users interact with Windows to resize, move, and close app windows. Having a consistent experience will help people use your application smoothly. See <a href="../design/basics/titlebar-design.html">Windows app title bar</a> to learn about title bar and caption button design for Windows.</p>
+<p>You can use the Windows App SDK APIs to <a href="../develop/title-bar.html">integrate app content with the title bar</a> in WinUI 3, .NET, WinForms, and WPF apps.</p>
+<h4 id="rounded-corners">Rounded corners</h4>
+<p>In most cases, your app's window will have rounded corners by default on Windows 11. If you've customized your app window and don't have rounded corners, see <a href="../desktop/modernize/ui/apply-rounded-corners.html">Apply rounded corners in desktop apps for Windows 11</a> for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.</p>
+<h3 id="shell-integration-points">Shell integration points</h3>
+<p>Windows shell integration lets users benefit from your app even when its not running in the foreground or even visible on-screen. When your app integrates well with Windows, it becomes part of the users workflow with other apps and helps create a seamless experience.</p>
+<h4 id="toast-notifications">Toast notifications</h4>
+<p><a href="../design/shell/tiles-and-notifications/toast-ux-guidance.md">Toast notifications</a> are the Windows notifications that appear at the bottom of the user's screen and in the Notification Center.</p>
+<ul>
+<li>Notifications should be personalized, actionable, and useful to your users. Try to give your users what they want, not what you want them to know.</li>
+<li>Notifications shouldn't be noisy. Too many interruptions from your app leads to users turning off this critical communication channel for your app.</li>
+<li>Respond to the user's intent. Selecting a notification should launch your app in the notification's context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.</li>
+<li>Provide a consistent Notification Center experience. Keep Notification Center tidy by clearing out old notifications.</li>
+</ul>
+<p>For more information about toast notifications, see <a href="../design/shell/tiles-and-notifications/toast-ux-guidance.md">Notifications design basics</a>.</p>
+<h2 id="performance--fundamentals">Performance &amp; fundamentals</h2>
+<p>Windows users expect Windows apps to exhibit great performance and fundamentals. As you design and build your app, it is important to keep in mind optimizing for memory usage, power consumption, responsiveness, reliability, and the impact on long-term sustainability. Allocating time to test and measure your application's fundamentals and performance will ensure that your users have a first-class experience.</p>
+<p>Following the best practices in this section will help you meet your customers' expectations across these criteria.</p>
+<ul>
+<li><p><a href="../performance/disk-memory.html">Minimize application memory usage</a>:</p>
+<ul>
+<li>Reduce foreground memory usage.</li>
+<li>Minimize background work.</li>
+<li>Release resources while in the background.</li>
+<li>Ensure your application does not leak memory.</li>
+</ul>
+</li>
+<li><p><a href="../performance/disk-memory.html#efficiently-use-disk-space">Make efficient use of the disk footprint</a>:</p>
+<ul>
+<li>Enable &quot;pay for play&quot; for optional functionality.</li>
+<li>Ensure any caches are sized efficiently.</li>
+<li>Implement new experiences in a disk-efficient manner.</li>
+<li>Optimize individual binary sizes where possible.</li>
+</ul>
+</li>
+<li><p><a href="../performance/power.html">Improve power consumption and battery life by minimizing background work</a>:</p>
+<ul>
+<li>Do not wake the CPU or use system resources while in the background.</li>
+</ul>
+</li>
+<li><p><a href="../performance/responsive.html">Improve the responsiveness of your app's launch and key interactions</a></p>
+<ul>
+<li>Define your key interaction scenarios and add ETW events to measure.</li>
+<li>Set goals based on the interaction class associated with user expectations.</li>
+</ul>
+</li>
+</ul>
+<p>To learn more, see the <a href="../performance/index.html">Performance and fundamentals overview</a>, which will cover questions such as &quot;What is application performance and why is it important?&quot; or &quot;What tools can I use to measure Windows application performance?&quot;, as well as linking to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability--reducing the impact your application will have on our planet.</p>
+<h2 id="operating-system--hardware-optimization">Operating system / hardware optimization</h2>
+<p>Windows apps can be built, packaged, and delivered in a variety of ways. The best practices in this section will help you optimize these aspects of your application across hardware configurations.</p>
+<h3 id="msix-app-attach-and-azure-virtual-desktop">MSIX app attach and Azure Virtual Desktop</h3>
+<p>If you want your app to run best in an enterprise environment, add support for MSIX app attach.</p>
+<p><a href="/azure/virtual-desktop/what-is-app-attach">MSIX app attach</a> lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for <a href="/azure/virtual-desktop/overview">Azure Virtual Desktop</a> (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for users, and it can reduce infrastructure costs for your enterprise.</p>
+<h3 id="windows-on-arm">Windows on Arm</h3>
+<p>Windows can run on Arm devices. Arm PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing <code>x86</code> and <code>x64</code> applications unmodified.</p>
+<p>For best performance, you should enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, refer to <a href="/windows/uwp/porting/apps-on-arm">Windows on Arm</a> and <a href="/windows/uwp/porting/arm64ec">Arm64EC for Windows 11 apps on Arm</a>.</p>
+<h3 id="push-notifications">Push notifications</h3>
+<p><a href="/azure/notification-hubs/notification-hubs-push-notification-overview">Push notifications</a> allow you send information from your cloud service to your app in a performance-optimized way. Push notifications include raw notifications, badge notifications, and toast notifications sent from your cloud service.</p>
+<ul>
+<li>Use push notifications to wake up the app/client rather than always keeping it running to optimize performance on the user's device. <!--todo: point to appsdk/winui3 guidance when available --></li>
+<li>Notification channels are not meant to be used to send advertisements.</li>
+<li>Respect <code>retry-after</code> headers – this protects our service and ensures notification delivery success.</li>
+<li>Remove expired/revoked channels from the system. <a href="../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md">Windows Notification Service</a> (WNS) does not process requests for expired/revoked channels.</li>
+<li>Avoid sudden, large bursts of requests to WNS. This can lead to throttled responses.</li>
+<li>Utilize the <code>MS-CV</code> header. This will help with end-to-end traceability and diagnostics.</li>
+<li>Have a back-up mechanism for when notifications don't work.</li>
+<li>Use <a href="/azure/notification-hubs/notification-hubs-push-notification-overview">Azure Notification Hubs</a> (ANH). ANH gives you access to engagement features like targeting audiences, scheduling notifications, and broadcasting notifications. If you're a Windows-only developer today, using ANH will make it easy for you to transition your notifications infrastructure to other platforms in the future.</li>
+</ul>
+<h2 id="application-discovery-and-management">Application discovery and management</h2>
+<p>Reliable installation, update, and uninstallation experiences are important pieces of a consistent, high-quality user experience. The following best practices will help ensure that your application leaves a good impression when discovered and managed by users:</p>
+<h3 id="application-discovery">Application discovery</h3>
+<ul>
+<li>Listing your app on <a href="https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/">Microsoft Store</a> can make your app more discoverable for users.</li>
+<li>If you're hosting your app across multiple channels (for example - on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.</li>
+<li><a href="../desktop/modernize/desktop-to-uwp-distribute.html">Distribute your app through the Microsoft Store</a> to make it more discoverable for users. Note that Store apps are made available to users through the Windows Package Manager <a href="../../package-manager/winget/index.html">WinGet</a>. If you don't publish to the Microsoft Store, you can still make your app easily discoverable in WinGet via the <a href="../../package-manager/package/index.html">WinGet repository</a>.</li>
+</ul>
+<!--todo: unpackaged app distribution best practices -->
+<h3 id="installation-and-uninstallation">Installation and uninstallation</h3>
+<ul>
+<li>Support a per-user install. This will enable users to install more easily and avoid UAC prompts.</li>
+<li>Ensure that your application's installation is error free, transparent, and thoughtful about its file management. Your application's installation shouldn't leave any temporary files behind.</li>
+<li>Avoid requiring elevated permissions to install and requiring operating system reboots when possible.</li>
+<li>Support silent installation. This is important for app manageability in enterprise environments.</li>
+<li>Ensure your app is listed in the Apps -&gt; Installed Apps list.</li>
+<li>Consider using MSIX to ensure that users experience a seamless installation, update, and uninstallation experience. MSIX automatically removes the app binaries and data. For information about how packaged apps handle files and registry entries, see <a href="/windows/msix/desktop/desktop-to-uwp-behind-the-scenes">Understanding how packaged desktop apps run on Windows</a>.</li>
+<li>For unpackaged apps, ensure that your application can be easily uninstalled through the Apps -&gt; Installed Apps list in Settings. When your application is uninstalled, ensure that Start menu entries, files, directories, registry entries, and temporary files are also removed. Consider giving your users the option to preserve their data when they uninstall your application.</li>
+<li>Ensure that during uninstallation your app removes all binaries and application data. User-created content should be stored in locations like <code>Documents</code>, which can then be retained by users even after the app is uninstalled.</li>
+<li>Avoid installing or updating system binaries that may require a reboot.</li>
+<li>Integrate with <a href="/windows/win32/rstmgr/about-restart-manager">RestartManager</a> to save and restore state between OS updates.</li>
+</ul>
+<h3 id="updates">Updates</h3>
+<ul>
+<li>Support an update mechanism that allows your app to restart when its convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior for WinUI 3 apps.</li>
+<li>Ensure that your update mechanism downloads only the essential changed components that need to be updated. This can minimize the network bandwidth required.</li>
+<li>Ensure that you provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see <a href="/windows/msix/app-installer/auto-update-and-repair--overview">Auto-update and repair apps</a>.</li>
+<li>Consider push notification-based updates or checking for available updates at app startup or at restart.</li>
+</ul>
+<h3 id="additional-resources">Additional resources</h3>
+<ul>
+<li><a href="/windows/msix/">MSIX documentation</a></li>
+<li><a href="/windows/win32/msi/windows-installer-best-practices">Windows Installer Best Practices</a></li>
+</ul>
+<h2 id="accessibility">Accessibility</h2>
+<p>Accessible Windows applications support rich and <a href="https://www.microsoft.com/design/inclusive/">inclusive experiences</a> for as many people as possible, including those with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on).</p>
+<p>In fact, the <a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health">World Health Organization</a> defines disability not as a personal characteristic, but rather as a mismatched interaction between a person and the physical and digital world around them.</p>
+<blockquote>
+<h3 id="accessibility-is-good-for-both-people-and-business">Accessibility is good for both people and business</h3>
+<p><strong>Accessibility is a responsibility</strong></p>
+<p>More than 1 billion people worldwide experience some form of disability. However, only 1 in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities—whether situational, temporary, or permanent—can affect any of us at any time.</p>
+<p><strong>Accessibility is an opportunity</strong></p>
+<p>According to the <a href="https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4">Microsoft Accessibility Approach Datasheet</a>: Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who will be 75% of the global workforce by 2020, typically choose employers who reflect their values. Diversity and inclusion top that list.</p>
+</blockquote>
+<h3 id="incorporating-accessibility">Incorporating accessibility</h3>
+<p>Incorporating accessibility into your Windows apps can maximize user engagement, increase product satisfaction, and encourage product loyalty. Proactively designing and implementing accessible experiences typically results in reduced development and maintenance costs over the long-term.</p>
+<p>For detailed guidance on building accessible Windows apps, see <a href="../develop/accessibility.html">Accessibility in Windows 11 and Windows 10</a>.</p>
+<h3 id="accessibility-testing">Accessibility testing</h3>
+<p><strong>Accessibility Insights</strong> is a powerful suite of tools for developers to test the accessibility of their apps and services. Here are some tools to leverage in testing accessibility:</p>
+<ol>
+<li><a href="https://accessibilityinsights.io/docs/windows/getstarted/inspect/">Inspect in Accessibility Insights for Windows</a>. Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, etc.</li>
+<li><a href="https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/">Event monitoring in Accessibility Insights for Windows · Accessibility Insights</a>. See <a href="/windows/win32/winauto/uiauto-supportinguiautocontroltypes">Supporting UI Automation Control Types</a> for more info on event monitoring.</li>
+<li>Run Accessibility Insights automated checks in your PRs or CI/CD.  For more info, see <a href="https://github.com/microsoft/axe-pipelines-samples">axe-pipelines-samples</a>.</li>
+<li>Fix all bugs you find, they all have direct impact on accessibility.</li>
+</ol>
+<h2 id="security-and-privacy">Security and privacy</h2>
+<p>An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your app doesn't have security bugs, attackers can use your app to initiate their attacks through phishing and other forms of social engineering that violate security and privacy boundaries. The best practices in this section will help you mitigate risks related to security and user privacy.</p>
+<h3 id="security-guidelines">Security guidelines</h3>
+<ul>
+<li>Follow the <a href="https://www.microsoft.com/securityengineering/sdl/">Security Development Lifecycle</a> for all development.
+<ul>
+<li>Threat modeling can help you avoid security flaws.</li>
+<li>Using secure libraries, languages, and tools minimizes implementation flaws.</li>
+<li>Secure defaults can prevent security issues caused by user error.</li>
+</ul>
+</li>
+<li>Don't require administrative privileges to <em>install</em> your app.
+<ul>
+<li>Ideally, your app should support both administrative installs and per-user installs.</li>
+<li>Using <a href="/windows/msix/packaging-tool/tool-overview">MSIX packaging</a> is one way to achieve this.</li>
+</ul>
+</li>
+<li><a href="/windows/win32/win7appqual/standard-user-analyzer--sua--tool-and-standard-user-analyzer-wizard--sua-wizard-">Don't require administrative privileges to <em>run</em> your app.</a>
+<ul>
+<li>If there are certain features that need administrative privileges, <a href="/windows/win32/secauthz/developing-applications-that-require-administrator-privilege">consider separating them</a> into their own processes to reduce attack surface.</li>
+</ul>
+</li>
+<li>Prefer to use languages with guaranteed memory safety (such as C#, JavaScript, or Rust), especially for risky code paths (like parsing untrusted data).</li>
+<li>Use all security mitigations provided by your compiler and toolset (see <a href="https://devblogs.microsoft.com/cppblog/security-features-in-microsoft-visual-c/">Security Features In Microsoft Visual C++</a> for Visual C++).</li>
+<li>Always use your chosen language or framework's standard libraries for cryptography and other security-sensitive code. <em>Do not try to build your own.</em></li>
+<li>Digitally sign all components of your application – not just the installer, but also the uninstaller (if you have one). Also sign all the EXE, DLL, and other executable files that make up your app.
+<ul>
+<li>Digital signatures enable the user to verify the authenticity of your app and allow Enterprise admins to secure their devices using <a href="/windows/security/threat-protection/windows-defender-application-control/wdac-and-applocker-overview">Windows Defender Application Control</a>.</li>
+<li>Using MSIX packaging is one way to achieve this.</li>
+</ul>
+</li>
+<li>Ensure all network communication is over a secure transport, such as SSL.</li>
+<li>Provide guardrails or other mitigations that can help protect users from accidentally performing harmful actions, even when coerced into doing so by attackers.
+<ul>
+<li>Simple &quot;Are you sure you want to do <em>X</em>? <em>Yes / No</em>&quot; dialogs are typically not effective, because users have been conditioned to click &quot;Yes.&quot;</li>
+</ul>
+</li>
+</ul>
+<p>Most modern apps collect and use a large amount of data – including personal data – for various reasons. Telemetry, product improvement, and monetization are three common reasons for using data, but users and regulators alike are becoming more sensitive to the privacy implications of these practices. They expect transparency and control over the data collected and used by apps. Use the following tips to help meet the privacy needs of your users.</p>
+<h3 id="privacy-guidelines">Privacy guidelines</h3>
+<ul>
+<li>Ensure that your app provides an accurate Privacy Policy. Ideally, provide both a summary document written for a casual audience (your users) in addition to a long-form legal policy (written for your lawyers).</li>
+<li>Familiarize yourself with privacy regulations in the markets where your app will be available, and ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, etc.</li>
+<li>Ensure you're collecting the least amount of personal data needed to complete your app's experiences.
+<ul>
+<li>Don't collect data &quot;just in case&quot; – there should be a valid reason for collecting all data, e.g. to improve the customer's experience or to facilitate monetization.</li>
+</ul>
+</li>
+<li>Always get the user's consent before collecting and storing personal data and provide the user with an easy way to revert their decision in the future. Avoid &quot;<a href="https://www.reuters.com/legal/legalindustry/dark-patterns-new-frontier-privacy-regulation-2021-07-29/#:%7E:text=Some%20examples%20of%20dark%20pattern%20usage%20include">dark patterns</a>&quot; such as making the &quot;Yes&quot; button larger or more prominent than the &quot;No&quot; button in a consent dialog.
+<ul>
+<li>Consult with applicable regulations to determine what specific disclosures and consent is required for specified kinds of data. For example, some regions may allow users to view, change, or delete the data you have stored about them.</li>
+</ul>
+</li>
+<li>If you must transmit data over the network, always use secured connections, e.g. over TLS.</li>
+<li>Avoid storing personal data in a centralized location (e.g. website). If you must store personal data, minimize the amount of data you store, store it only for as long as strictly necessary, and ensure it is securely encrypted.</li>
+<li>Verify that any 3rd-party libraries or SDKs you use also have good privacy practices. Note this is <em>not</em> limited to just advertising SDKs – any library that connects to the internet may impact the privacy of your app's users.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="windows-developer-faq.yml">Windows Developer FAQ</a></li>
+<li><a href="make-apps-great-for-windows.html">Things you can do to make your app great on Windows 11</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/get-started/best-practices.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

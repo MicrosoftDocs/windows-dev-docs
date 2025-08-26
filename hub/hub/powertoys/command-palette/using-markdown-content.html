@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Display markdown content </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Display markdown content ">
+    
+    <meta name="description" content="Learn how to display markdown in your Command Palette extension.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="display-markdown-content">Display markdown content</h1>
+
+<p><strong>Previous</strong>: <a href="command-results.html">Command Results</a></p>
+<p>So far, we've only shown how to display a list of commands in a <strong>ListPage</strong>. However, you can also display rich content in your extension, such as markdown. This can be useful for showing documentation, or a preview of a document.</p>
+<h2 id="working-with-markdown-content">Working with markdown content</h2>
+<p><a href="microsoft-commandpalette-extensions/icontentpage.html">IContentPage</a> (and its toolkit implementation, <a href="microsoft-commandpalette-extensions-toolkit/contentpage.html">ContentPage</a>) is the base for displaying all types of rich content in the Command Palette. To display markdown content, you can use the <a href="microsoft-commandpalette-extensions-toolkit/markdowncontent.html">MarkdownContent</a> class.</p>
+<ol>
+<li>In the <code>Pages</code> directory, add a new class</li>
+<li>Name the class <code>MarkdownPage.cs</code></li>
+<li>Update the file to:</li>
+</ol>
+<pre><code class="lang-csharp">using Microsoft.CommandPalette.Extensions;
+using Microsoft.CommandPalette.Extensions.Toolkit;
+using System.Text.Json.Nodes;
+
+internal sealed partial class MarkdownPage : ContentPage
+{
+    public MarkdownPage()
+    {
+        Icon = new(&quot;\uE8A5&quot;); // Document icon
+        Title = &quot;Markdown page&quot;;
+        Name = &quot;Preview file&quot;;
+    }
+
+    public override IContent[] GetContent()
+    {
+        return [
+            new MarkdownContent(&quot;# Hello, world!\n This is a **markdown** page.&quot;),
+        ];
+    }
+}
+</code></pre>
+<ol>
+<li>Open <code>&lt;ExtensionName&gt;CommandsProvider.cs</code></li>
+<li>Replace the <code>CommandItem</code>s for the <code>MarkdownPage</code>:</li>
+</ol>
+<pre><code class="lang-diff">public &lt;ExtensionName&gt;CommandsProvider()
+{
+    DisplayName = &quot;My sample extension&quot;;
+    Icon = IconHelpers.FromRelativePath(&quot;Assets\\StoreLogo.png&quot;);
+    _commands = [
++       new CommandItem(new MarkdownPage()) { Title = DisplayName },
+    ];
+}
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p>In this example, a new <code>ContentPage</code> that displays a simple markdown string is created. The 'MarkdownContent' class takes a string of markdown content and renders it in the Command Palette.</p>
+<p><img src="../../images/command-palette/markdown.png" alt="Screenshot of extension using ContentPage for markdown"></p>
+<p>You can also add multiple blocks of content to a page. For example, you can add two blocks of markdown content.</p>
+<ol>
+<li>Update <code>GetContent</code>:</li>
+</ol>
+<pre><code class="lang-diff">public override IContent[] GetContent()
+{
+    return [
+        new MarkdownContent(&quot;# Hello, world!\n This is a **markdown** page.&quot;),
++       new MarkdownContent(&quot;## Second block\n This is another block of content.&quot;),
+    ];
+}
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In command palette, <code>Reload</code></li>
+</ol>
+<p>This allows you to mix-and-match different types of content on a single page.</p>
+<h2 id="adding-commandcontextitem">Adding CommandContextItem</h2>
+<p>You can also add commands to a <code>ContentPage</code>. This allows you to add additional commands to be invoked by the user, while in the context of the content. For example, if you had a page that displayed a document, you could add a command to open the document in File Explorer:</p>
+<ol>
+<li>In your &lt;ExtensionName&gt;Page.cs, add <code>doc_path</code>, <code>Commands</code> and <code>MarkdownContent</code>:</li>
+</ol>
+<pre><code class="lang-diff">
+public class &lt;ExtensionName&gt;Page : ContentPage
+{
++   private string doc_path = &quot;C:\\Path\\to\\file.txt&quot;;
+    public &lt;ExtensionName&gt;Page()
+    {
+        Icon = new(&quot;\uE8A5&quot;); // Document icon
+        Title = &quot;Markdown page&quot;;
+        Name = &quot;Preview file&quot;;
+        path = 
+
++       Commands = [
++           new CommandContextItem(new OpenUrlCommand(doc_path)) { Title = &quot;Open in File Explorer&quot; },
++       ];
+    }
+    public override IContent[] GetContent()
+    {
+        return [
+            new MarkdownContent(&quot;# Hello, world!\n This is a **markdown** document.&quot;),
+            new MarkdownContent(&quot;## Second block\n This is another block of content.&quot;),
++           new MarkdownContent($&quot;## Press enter to open `{doc_path}`&quot;),
+        ];
+    }
+}
+</code></pre>
+<ol>
+<li>Update the path in the <code>doc_path</code> to a .txt file on your local machine</li>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+<li>Select &lt;ExtensionName&gt;</li>
+<li>Press <code>Enter</code> key, the docs should open</li>
+</ol>
+<p><img src="../../images/command-palette/command-context-item.png" alt="Screenshot of extension using CommandContextItem"></p>
+<h3 id="next-up-get-user-input-with-forms">Next up: <a href="using-form-pages.html">Get user input with forms</a></h3>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+<li><a href="extensibility-overview.html">Extensibility overview</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/using-markdown-content.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

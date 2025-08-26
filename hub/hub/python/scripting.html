@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using Python for scripting and automation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using Python for scripting and automation ">
+    
+    <meta name="description" content="How to get started using Python for scripting, automation, and systems administration on Windows.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="get-started-using-python-on-windows-for-scripting-and-automation">Get started using Python on Windows for scripting and automation</h1>
+
+<p>The following is a step-by-step guide for setting up your developer environment and getting you started using Python for scripting and automating file system operations on Windows.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article will cover setting up your environment to use some of the helpful libraries in Python that can automate tasks across platforms, like searching your file system, accessing the internet, parsing file types, etc., from a Windows-centered approach. For Windows-specific operations, check out <a href="https://docs.python.org/3/library/ctypes.html">ctypes</a>, a C-compatible foreign function library for Python, <a href="https://docs.python.org/3/library/winreg.html">winreg</a>, functions exposing the Windows registry API to Python, and <a href="https://pypi.org/project/winrt/">Python/WinRT</a>, enabling access Windows Runtime APIs from Python.</p>
+</div>
+<h2 id="set-up-your-development-environment">Set up your development environment</h2>
+<p>When using Python to write scripts that perform file system operations, we recommend you <a href="https://www.microsoft.com/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab">install Python from the Microsoft Store</a>. Installing via the Microsoft Store uses the basic Python3 interpreter, but handles set up of your PATH settings for the current user (avoiding the need for admin access), in addition to providing automatic updates.</p>
+<p>If you are using Python for <strong>web development</strong>  on Windows, we recommend a different setup using the Windows Subsystem for Linux. Find a walkthrough in our guide: <a href="web-frameworks.html">Get started using Python for web development on Windows</a>. If you're brand new to Python, try our guide: <a href="beginners.html">Get started using Python on Windows for beginners</a>. For some advanced scenarios (like needing to access/modify Python's installed files, make copies of binaries, or use Python DLLs directly), you may want to consider downloading a specific Python release directly from <a href="https://www.python.org/downloads/">python.org</a> or consider installing an <a href="https://www.python.org/download/alternatives">alternative</a>, such as Anaconda, Jython, PyPy, WinPython, IronPython, etc. We only recommend this if you are a more advanced Python programmer with a specific reason for choosing an alternative implementation.</p>
+<h2 id="install-python">Install Python</h2>
+<p>To install Python using the Microsoft Store:</p>
+<ol>
+<li><p>Go to your <strong>Start</strong> menu (lower left Windows icon), type &quot;Microsoft Store&quot;, select the link to open the store.</p>
+</li>
+<li><p>Once the store is open, select <strong>Search</strong> from the upper-right menu and enter &quot;Python&quot;. Select which version of Python you would like to use from the results under Apps. We recommend using the most recent unless you have a reason not to (such as aligning with the version used on a pre-existing project that you plan to work on). Once you've determined which version you would like to install, select <strong>Get</strong>.</p>
+</li>
+<li><p>Once Python has completed the downloading and installation process, open Windows PowerShell using the <strong>Start</strong> menu (lower left Windows icon). Once PowerShell is open, enter <code>Python --version</code> to confirm that Python3 has been installed on your machine.</p>
+</li>
+<li><p>The Microsoft Store installation of Python includes <strong>pip</strong>, the standard package manager. Pip allows you to install and manage additional packages that are not part of the Python standard library. To confirm that you also have pip available to install and manage packages, enter <code>pip --version</code>.</p>
+</li>
+</ol>
+<h2 id="install-visual-studio-code">Install Visual Studio Code</h2>
+<p>By using VS Code as your text editor / integrated development environment (IDE), you can take advantage of <a href="https://code.visualstudio.com/docs/editor/intellisense">IntelliSense</a> (a code completion aid), <a href="https://code.visualstudio.com/docs/python/linting">Linting</a> (helps avoid making errors in your code), <a href="https://code.visualstudio.com/docs/python/debugging">Debug support</a> (helps you find errors in your code after you run it), <a href="https://code.visualstudio.com/docs/editor/userdefinedsnippets">Code snippets</a> (templates for small reusable code blocks), and <a href="https://code.visualstudio.com/docs/python/unit-testing">Unit testing</a> (testing your code's interface with different types of input).</p>
+<p>Download VS Code for Windows and follow the installation instructions: <a href="https://code.visualstudio.com">https://code.visualstudio.com</a>.</p>
+<h2 id="install-the-microsoft-python-extension">Install the Microsoft Python extension</h2>
+<p>You will need to install the Microsoft Python extension in order to take advantage of the VS Code support features. <a href="https://code.visualstudio.com/docs/languages/python">Learn more</a>.</p>
+<ol>
+<li><p>Open the VS Code Extensions window by entering <strong>Ctrl+Shift+X</strong> (or use the menu to navigate to <strong>View</strong> &gt; <strong>Extensions</strong>).</p>
+</li>
+<li><p>In the top <strong>Search Extensions in Marketplace</strong> box, enter:  <strong>Python</strong>.</p>
+</li>
+<li><p>Find the <strong>Python (ms-python.python) by Microsoft</strong> extension and select the green <strong>Install</strong> button.</p>
+</li>
+</ol>
+<h2 id="open-the-integrated-powershell-terminal-in-vs-code">Open the integrated PowerShell terminal in VS Code</h2>
+<p>VS Code contains a <a href="https://code.visualstudio.com/docs/editor/integrated-terminal">built-in terminal</a> that enables you to open a Python command line with PowerShell, establishing a seamless workflow between your code editor and command line.</p>
+<ol>
+<li><p>Open the terminal in VS Code, select <strong>View</strong> &gt; <strong>Terminal</strong>, or alternatively use the shortcut <strong>Ctrl+`</strong> (using the backtick character).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The default terminal should be PowerShell, but if you need to change it, use <strong>Ctrl+Shift+P</strong> to enter the command palette. Enter <strong>Terminal: Select Default Shell</strong> and a list of terminal options will display containing PowerShell, Command Prompt, WSL, etc. Select the one you'd like to use and enter <strong>Ctrl+Shift+`</strong> (using the backtick) to create a new terminal.</p>
+</div>
+</li>
+<li><p>Inside your VS Code terminal, open Python by entering: <code>python</code></p>
+</li>
+<li><p>Try the Python interpreter out by entering: <code>print(&quot;Hello World&quot;)</code>. Python will return your statement &quot;Hello World&quot;.</p>
+<p><img src="../images/python-in-vscode.png" alt="Python command line in VS Code"></p>
+</li>
+<li><p>To exit Python, you can enter <code>exit()</code>, <code>quit()</code>, or select Ctrl-Z.</p>
+</li>
+</ol>
+<h2 id="install-git-optional">Install Git (optional)</h2>
+<p>If you plan to collaborate with others on your Python code, or host your project on an open-source site (like GitHub), VS Code supports <a href="https://code.visualstudio.com/docs/editor/versioncontrol#_git-support">version control with Git</a>. The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI. You first need to install Git to power the Source Control panel.</p>
+<ol>
+<li><p>Download and install Git for Windows from <a href="https://git-scm.com/download/win">the git-scm website</a>.</p>
+</li>
+<li><p>An Install Wizard is included that will ask you a series of questions about settings for your Git installation. We recommend using all of the default settings, unless you have a specific reason for changing something.</p>
+</li>
+<li><p>If you've never worked with Git before, <a href="https://guides.github.com/">GitHub Guides</a> can help you get started.</p>
+</li>
+</ol>
+<h2 id="example-script-to-display-the-structure-of-your-file-system-directory">Example script to display the structure of your file system directory</h2>
+<p>Common system administration tasks can take a huge amount of time, but with a Python script, you can automate these tasks so that they take no time at all. For example, Python can read the contents of your computer's file system and perform operations like printing an outline of your files and directories, moving folders from one directory to another, or renaming hundreds of files. Normally, tasks like these could take up a ton of time if you were to perform them manually. Use a Python script instead!</p>
+<p>Let's begin with a simple script that walks a directory tree and displays the directory structure.</p>
+<ol>
+<li><p>Open PowerShell using the <strong>Start</strong> menu (lower left Windows icon).</p>
+</li>
+<li><p>Create a directory for your project: <code>mkdir python-scripts</code>, then open that directory: <code>cd python-scripts</code>.</p>
+</li>
+<li><p>Create a few directories to use with our example script:</p>
+<pre><code class="lang-powershell">mkdir food, food\fruits, food\fruits\apples, food\fruits\oranges, food\vegetables
+</code></pre>
+</li>
+<li><p>Create a few files within those directories to use with our script:</p>
+<pre><code class="lang-powershell">new-item food\fruits\banana.txt, food\fruits\strawberry.txt, food\fruits\blueberry.txt, food\fruits\apples\honeycrisp.txt, food\fruits\oranges\mandarin.txt, food\vegetables\carrot.txt
+</code></pre>
+</li>
+<li><p>Create a new python file in your python-scripts directory:</p>
+<pre><code class="lang-powershell">mkdir src
+new-item src\list-directory-contents.py
+</code></pre>
+</li>
+<li><p>Open your project in VS Code by entering: <code>code .</code></p>
+</li>
+<li><p>Open the VS Code File Explorer window by entering <strong>Ctrl+Shift+E</strong> (or use the menu to navigate to <strong>View</strong> &gt; <strong>Explorer</strong>) and select the list-directory-contents.py file that you just created. The Microsoft Python extension will automatically load a Python interpreter. You can see which interpreter was loaded on the bottom of your VS Code window.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Python is an interpreted language, meaning that it acts as a virtual machine, emulating a physical computer. There are different types of Python interpreters that you can use: Python 2, Python 3, Anaconda, PyPy, etc. In order to run Python code and get Python IntelliSense, you must tell VS Code which interpreter to use. We recommend sticking with the interpreter that VS Code chooses by default (Python 3 in our case) unless you have a specific reason for choosing something different. To change the Python interpreter, select the interpreter currently displayed in blue bar on the bottom of your VS Code window or open the <strong>Command Palette</strong> (Ctrl+Shift+P) and enter the command <strong>Python: Select Interpreter</strong>. This will display a list of the Python interpreters that you currently have installed. <a href="https://code.visualstudio.com/docs/python/environments">Learn more about configuring Python environments</a>.</p>
+</div>
+<p><img src="../images/interpreterselection.gif" alt="Select Python interpreter in VS Code"></p>
+</li>
+<li><p>Paste the following code into your list-directory-contents.py file and then select <strong>save</strong>:</p>
+<pre><code class="lang-python">import os
+
+root = os.path.join('..', 'food')
+for directory, subdir_list, file_list in os.walk(root):
+    print('Directory:', directory)
+    for name in subdir_list:
+        print('Subdirectory:', name)
+    for name in file_list:
+        print('File:', name)
+    print()
+</code></pre>
+</li>
+<li><p>Open the VS Code integrated terminal (<strong>Ctrl+`</strong>, using the backtick character) and enter the src directory where you just saved your Python script:</p>
+<pre><code class="lang-powershell">cd src
+</code></pre>
+</li>
+<li><p>Run the script in PowerShell with:</p>
+<pre><code class="lang-powershell">python3 .\list-directory-contents.py
+</code></pre>
+<p>You should see output that looks like this:</p>
+<pre><code class="lang-powershell">Directory: ..\food
+Subdirectory: fruits
+Subdirectory: vegetables
+
+Directory: ..\food\fruits
+Subdirectory: apples
+Subdirectory: oranges
+File: banana.txt
+File: blueberry.txt
+File: strawberry.txt
+
+Directory: ..\food\fruits\apples
+File: honeycrisp.txt
+
+Directory: ..\food\fruits\oranges
+File: mandarin.txt
+
+Directory: ..\food\vegetables
+File: carrot.txt
+</code></pre>
+</li>
+<li><p>Use Python to print that file system directory output to it's own text file by entering this command directly in your PowerShell terminal: <code>python3 list-directory-contents.py &gt; food-directory.txt</code></p>
+</li>
+</ol>
+<p>Congratulations! You've just written an automated systems administration script that reads the directory and files you created and uses Python to display, and then print, the directory structure to it's own text file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you're unable to install Python 3 from the Microsoft Store, see this <a href="https://github.com/MicrosoftDocs/windows-uwp/issues/2901">issue</a> for an example of how to handle the pathing for this sample script.</p>
+</div>
+<h2 id="example-script-to-modify-all-files-in-a-directory">Example script to modify all files in a directory</h2>
+<p>This example uses the files and directories you just created, renaming each of the files by adding the file's last modified date to the beginning of the filename.</p>
+<ol>
+<li><p>Inside the <strong>src</strong> folder in your <strong>python-scripts</strong> directory, create a new Python file for your script:</p>
+<pre><code class="lang-powershell">new-item update-filenames.py
+</code></pre>
+</li>
+<li><p>Open the update-filenames.py file, paste the following code into the file, and save it:</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>os.getmtime returns a timestamp in ticks, which is not easily readable. It must be converted to a standard datetime string first.</p>
+</div>
+<pre><code class="lang-python">import datetime
+import os
+
+root = os.path.join('..', 'food')
+for directory, subdir_list, file_list in os.walk(root):
+    for name in file_list:
+        source_name = os.path.join(directory, name)
+        timestamp = os.path.getmtime(source_name)
+        modified_date = str(datetime.datetime.fromtimestamp(timestamp)).replace(':', '.')
+        target_name = os.path.join(directory, f'{modified_date}_{name}')
+
+        print(f'Renaming: {source_name} to: {target_name}')
+
+        os.rename(source_name, target_name)
+</code></pre>
+</li>
+<li><p>Test your update-filenames.py script by running it: <code>python3 update-filenames.py</code> and then running your list-directory-contents.py script again: <code>python3 list-directory-contents.py</code></p>
+</li>
+<li><p>You should see output that looks like this:</p>
+<pre><code class="lang-powershell">Renaming: ..\food\fruits\banana.txt to: ..\food\fruits\2019-07-18 12.24.46.385185_banana.txt
+Renaming: ..\food\fruits\blueberry.txt to: ..\food\fruits\2019-07-18 12.24.46.391170_blueberry.txt
+Renaming: ..\food\fruits\strawberry.txt to: ..\food\fruits\2019-07-18 12.24.46.389174_strawberry.txt
+Renaming: ..\food\fruits\apples\honeycrisp.txt to: ..\food\fruits\apples\2019-07-18 12.24.46.395160_honeycrisp.txt
+Renaming: ..\food\fruits\oranges\mandarin.txt to: ..\food\fruits\oranges\2019-07-18 12.24.46.398151_mandarin.txt
+Renaming: ..\food\vegetables\carrot.txt to: ..\food\vegetables\2019-07-18 12.24.46.402496_carrot.txt
+
+PS C:\src\python-scripting\src&gt; python3 .\list-directory-contents.py
+..\food\
+Directory: ..\food
+Subdirectory: fruits
+Subdirectory: vegetables
+
+Directory: ..\food\fruits
+Subdirectory: apples
+Subdirectory: oranges
+File: 2019-07-18 12.24.46.385185_banana.txt
+File: 2019-07-18 12.24.46.389174_strawberry.txt
+File: 2019-07-18 12.24.46.391170_blueberry.txt
+
+Directory: ..\food\fruits\apples
+File: 2019-07-18 12.24.46.395160_honeycrisp.txt
+
+Directory: ..\food\fruits\oranges
+File: 2019-07-18 12.24.46.398151_mandarin.txt
+
+Directory: ..\food\vegetables
+File: 2019-07-18 12.24.46.402496_carrot.txt
+
+</code></pre>
+</li>
+<li><p>Use Python to print the new file system directory names with the last-modified timestamp prepended to it's own text file by entering this command directly in your PowerShell terminal: <code>python3 list-directory-contents.py &gt; food-directory-last-modified.txt</code></p>
+</li>
+</ol>
+<p>Hope you learned a few fun things about using Python scripts for automating basic systems administration tasks. There is, of course, a ton more to know, but we hope this got you started on the right foot. We've shared a few additional resources to continue learning below.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://docs.python.org/3.7/library/filesys.html">Python Docs: File and Directory Access</a>: Python documentation about working with file systems and using modules for reading the properties of files, manipulating paths in a portable way, and creating temporary files.</li>
+<li><a href="https://www.learnpython.org/en/String_Formatting">Learn Python: String_Formatting tutorial</a>: More about using the &quot;%&quot; operator for string formatting.</li>
+<li><a href="https://towardsdatascience.com/10-python-file-system-methods-you-should-know-799f90ef13c2">10 Python File System Methods You Should Know</a>: Medium article about manipulating files and folders With <code>os</code> and <code>shutil</code>.</li>
+<li><a href="https://docs.python-guide.org/scenarios/admin/">The Hitchhikers Guide to Python: Systems Administration</a>: An &quot;opinionated guide&quot; that offers overviews and best practices on topics related to Python. This section covers System Admin tools and frameworks. This guide is hosted on GitHub so you can file issues and make contributions.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/python/scripting.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

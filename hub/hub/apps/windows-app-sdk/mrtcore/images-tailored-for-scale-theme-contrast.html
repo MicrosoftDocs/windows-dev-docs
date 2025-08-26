@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Load tailored images and assets in your apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Load tailored images and assets in your apps ">
+    
+    <meta name="description" content="Your app can load image resource files containing images tailored for display scale factor, theme, high contrast, and other runtime contexts.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="load-images-and-assets-tailored-for-scale-theme-high-contrast-and-others">Load images and assets tailored for scale, theme, high contrast, and others</h1>
+
+<p>Your app can load image resource files (or other asset files) tailored for <a href="/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design">display scale factor</a>, theme, high contrast, and other runtime contexts. These images can be referenced from imperative code or from XAML markup, for example as the <strong>Source</strong> property of an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image">Image</a>. They can also appear in your app package manifest source file (the <code>Package.appxmanifest</code> file)—for example, as the value for App Icon on the Visual Assets tab of the Visual Studio Manifest Designer—or on your tiles and toasts. By using qualifiers in your images' file names, and optionally dynamically loading them with the help of a <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext">ResourceContext</a>, you can cause the most appropriate image file to be loaded that best matches the user's runtime settings for display scale, theme, high contrast, language, and other contexts.</p>
+<p>An image resource is contained in an image resource file. You can also think of the image as an asset, and the file that contains it as an asset file; and you can find these kinds of resource files in your project's \Assets folder. For background on how to use qualifiers in the names of your image resource files, see <a href="tailor-resources-lang-scale-contrast.html">Tailor your resources for language, scale, and other qualifiers</a>.</p>
+<p>Some common qualifiers for images are:</p>
+<ul>
+<li><a href="tailor-resources-lang-scale-contrast.html#scale">scale</a></li>
+<li><a href="tailor-resources-lang-scale-contrast.html#theme">theme</a></li>
+<li><a href="tailor-resources-lang-scale-contrast.html#contrast">contrast</a></li>
+<li><a href="tailor-resources-lang-scale-contrast.html#targetsize">targetsize</a></li>
+</ul>
+<h2 id="qualify-an-image-resource-for-scale-theme-and-contrast">Qualify an image resource for scale, theme, and contrast</h2>
+<p>The default value for the <code>scale</code> qualifier is <code>scale-100</code>. So, these two variants are equivalent (they both provide an image at scale 100, or scale factor 1).</p>
+<pre><code class="lang-console">\Assets\Images\logo.png
+\Assets\Images\logo.scale-100.png
+</code></pre>
+<p>You can use qualifiers in folder names instead of file names. This is a better strategy when you have several asset files per qualifier. For purposes of illustration, these two variants are equivalent to the two above.</p>
+<pre><code class="lang-console">\Assets\Images\logo.png
+\Assets\Images\scale-100\logo.png
+</code></pre>
+<p>The next example shows how you can provide variants of an image resource—named <code>/Assets/Images/logo.png</code>—for different settings of display scale, theme, and high contrast. This example uses folder naming.</p>
+<pre><code class="lang-console">\Assets\Images\contrast-standard\theme-dark
+    \scale-100\logo.png
+    \scale-200\logo.png
+\Assets\Images\contrast-standard\theme-light
+    \scale-100\logo.png
+    \scale-200\logo.png
+\Assets\Images\contrast-high
+    \scale-100\logo.png
+    \scale-200\logo.png
+</code></pre>
+<h2 id="reference-an-image-or-other-asset-from-xaml-markup-and-code">Reference an image or other asset from XAML markup and code</h2>
+<p>The name—or identifier—of an image resource is its path and file name with any and all qualifiers removed. If you name folders and/or files as in any of the examples in the previous section, then you have a single image resource and its name (as an absolute path) is <code>/Assets/Images/logo.png</code>. Here's how you use that name in XAML markup.</p>
+<pre><code class="lang-xaml">&lt;Image x:Name=&quot;myXAMLImageElement&quot; Source=&quot;ms-appx:///Assets/Images/logo.png&quot;/&gt;
+</code></pre>
+<p>Notice that you use the <code>ms-appx</code> URI scheme because you're referring to a file that comes from your app's package. See <a href="/windows/uwp/app-resources/uri-schemes">URI schemes</a> in the UWP documentation. This is how you refer to the same image resource in imperative code.</p>
+<pre><code class="lang-csharp">this.myXAMLImageElement.Source = new BitmapImage(new Uri(&quot;ms-appx:///Assets/Images/logo.png&quot;));
+</code></pre>
+<p>You can use <code>ms-appx</code> to load any arbitrary file from your app package.</p>
+<pre><code class="lang-csharp">var uri = new System.Uri(&quot;ms-appx:///Assets/anyAsset.ext&quot;);
+var storagefile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+</code></pre>
+<p>The <code>ms-appx-web</code> scheme accesses the same files as <code>ms-appx</code>, but in the web compartment.</p>
+<pre><code class="lang-xaml">&lt;WebView x:Name=&quot;myXAMLWebViewElement&quot; Source=&quot;ms-appx-web:///Pages/default.html&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">this.myXAMLWebViewElement.Source = new Uri(&quot;ms-appx-web:///Pages/default.html&quot;);
+</code></pre>
+<p>For any of the scenarios shown in these examples, use the <a href="/dotnet/api/system.uri.-ctor">Uri constructor</a> overload that infers the <a href="/dotnet/api/system.urikind">UriKind</a>. Specify a valid absolute URI including the scheme and authority, or just let the authority default to the app's package as in the example above.</p>
+<p>Notice how in these example URIs the scheme (&quot;<code>ms-appx</code>&quot; or &quot;<code>ms-appx-web</code>&quot;) is followed by &quot;<code>://</code>&quot; which is followed by an absolute path. In an absolute path, the leading &quot;<code>/</code>&quot; causes the path to be interpreted from the root of the package.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>ms-resource</code> (for <a href="localize-strings.html">string resources</a>) and <code>ms-appx(-web)</code> (for images and other assets) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The <code>ms-appdata</code> URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext.qualifiervalues">ResourceContext.QualifierValues</a> and explicitly load the appropriate assets from app data using their full physical file name in the URI. For info about app data, see <a href="/windows/apps/design/app-settings/store-and-retrieve-app-data">Store and retrieve settings and other app data</a>. Web URI schemes (for example, <code>http</code>, <code>https</code>, and <code>ftp</code>) do not perform automatic matching, either. For info about what to do in that case, see <a href="/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast#hosting-and-loading-images-in-the-cloud">Hosting and loading images in the cloud</a>.</p>
+</div>
+<p>Absolute paths are a good choice if your image files remain where they are in the project structure. If you want to be able to move an image file, but you're careful that it remains in the same location relative to its referencing XAML markup file, then instead of an absolute path you might want to use a path that's relative to the containing markup file. If you do that, then you needn't use a URI scheme. You will still benefit from automatic qualifier matching in this case, but only because you are using the relative path in XAML markup.</p>
+<pre><code class="lang-xaml">&lt;Image Source=&quot;Assets/Images/logo.png&quot;/&gt;
+</code></pre>
+<p>Also see <a href="/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast">Tile and toast support for language, scale, and high contrast</a>.</p>
+<h2 id="reference-an-image-or-other-asset-from-a-class-library">Reference an image or other asset from a class library</h2>
+<p>You can load images and other resources from a referenced <strong>Class library (WinUI 3 in Desktop)</strong> project by referencing the resource in a URI that uses the <code>ms-appx</code> scheme. The URI should include the name of the class library project and the path to the resource within the class library project. For example, if you have a class library project named <code>MyClassLibrary</code> that contains an image named <code>logo.png</code> in a folder named <code>Assets</code>, you can reference the image in your app project like this:</p>
+<pre><code class="lang-xaml">&lt;Image Source=&quot;ms-appx:///MyClassLibrary/Assets/logo.png&quot;/&gt;
+</code></pre>
+<p>You'll use this same URI format to reference resources in a class library from XAML markup or from code. For example, you can use the following code to load the image from your class library and put it into a <a href="/uwp/api/windows.storage.storagefile">StorageFile</a> object:</p>
+<pre><code class="lang-csharp">private async Task&lt;DateTimeOffset&gt; GetLogoCreatedDateAsync()
+{
+    Uri uri = new($&quot;ms-appx:///MyClassLibrary/Assets/logo.png&quot;);
+    Windows.Storage.StorageFile file =
+        await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(uri);
+
+    return file.DateCreated;
+}
+</code></pre>
+<p>Note that you can reference images from the class library from both the app project and the class library project itself.</p>
+<h2 id="qualify-an-image-resource-for-targetsize">Qualify an image resource for targetsize</h2>
+<p>You can use the <code>scale</code> and <code>targetsize</code> qualifiers on different variants of the same image resource; but you can't use them both on a single variant of a resource. Also, you need to define at least one variant without a <code>targetsize</code> qualifier. That variant must either define a value for <code>scale</code>, or let it default to <code>scale-100</code>. So, these two variants of the <code>/Assets/Square44x44Logo.png</code> resource are valid.</p>
+<pre><code class="lang-console">\Assets\Square44x44Logo.scale-200.png
+\Assets\Square44x44Logo.targetsize-24.png
+</code></pre>
+<p>And these two variants are valid.</p>
+<pre><code class="lang-console">\Assets\Square44x44Logo.png // defaults to scale-100
+\Assets\Square44x44Logo.targetsize-24.png
+</code></pre>
+<p>But this variant is not valid.</p>
+<pre><code class="lang-console">\Assets\Square44x44Logo.scale-200_targetsize-24.png
+</code></pre>
+<h2 id="refer-to-an-image-file-from-your-app-package-manifest">Refer to an image file from your app package manifest</h2>
+<p>If you name folders and/or files as in either of the two valid examples in the previous section, then you have a single app icon image resource and its name (as a relative path) is <code>Assets\Square44x44Logo.png</code>. In your app package manifest, simply refer to the resource by name. There's no need to use any URI scheme.</p>
+<p><img src="images/app-icon.png" alt="add resource, english"></p>
+<p>That's all you need to do, and the OS will perform automatic qualifier matching to find the resource that's most appropriate for the current context. For a list of all items in the app package manifest that you can localize or otherwise qualify in this way, see <a href="/uwp/schemas/appxpackage/uapmanifestschema/localizable-manifest-items-win10">Localizable manifest items</a>.</p>
+<h2 id="qualify-an-image-resource-for-layoutdirection">Qualify an image resource for layoutdirection</h2>
+<p>See <a href="/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images">Mirroring images</a>.</p>
+<h2 id="load-an-image-for-a-specific-language-or-other-context">Load an image for a specific language or other context</h2>
+<p>For more info about the value proposition of localizing your app, see <a href="/windows/apps/design/globalizing/globalizing-portal">Globalization and localization</a>.</p>
+<p>The default <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext">ResourceContext</a> contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Image files are matched—based on the qualifiers in their names—against the qualifier values in that runtime context.</p>
+<p>But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching image to load. For example, you might want to control exactly when and which high contrast images are loaded.</p>
+<p>You can do that by constructing a new <strong>ResourceContext</strong> (instead of using the default one), overriding its values, and then using that context object in your <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap">ResourceMap</a> image lookups with <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getvalue">GetValue</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue">TryGetValue</a>.</p>
+<pre><code class="lang-csharp">var resourceManager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
+var resourceContext = resourceManager.CreateResourceContext();
+resourceContext.QualifierValues[&quot;Contrast&quot;] = &quot;high&quot;;
+var resourceMap = resourceManager.MainResourceMap;
+var namedResource = resourceMap.TryGetValue(@&quot;Files/Assets/Logo.png&quot;, resourceContext);
+var imageFileBytes = namedResource.ValueAsBytes;
+
+using (var ms = new InMemoryRandomAccessStream())
+{
+    using (var writer = new DataWriter(ms.GetOutputStreamAt(0)))
+    {
+        writer.WriteBytes(imageFileBytes);
+        writer.StoreAsync().GetResults();
+    }
+    var image = new BitmapImage();
+    image.SetSource(ms);
+    this.myXAMLImageElement.Source = image;
+}
+</code></pre>
+<p>By default, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager">ResourceManager</a> class uses the default <strong>ResourceContext</strong>.</p>
+<h2 id="important-apis">Important APIs</h2>
+<p>The following APIs are imporant to understand when working with image resources:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext">ResourceContext</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap">ResourceMap</a></li>
+</ul>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/windows/apps/design/app-settings/store-and-retrieve-app-data">Store and retrieve settings and other app data</a></li>
+<li><a href="/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast">Tile and toast support for language, scale, and high contrast</a></li>
+<li><a href="/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images">Mirroring images</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

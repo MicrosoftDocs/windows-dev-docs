@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Speech interactions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Speech interactions ">
+    
+    <meta name="description" content="Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="speech-interactions">Speech interactions</h1>
+
+<p>Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.</p>
+<p><strong>Speech recognition</strong>
+Speech recognition converts words spoken by the user into text for form input, for text dictation, to specify an action or command, and to accomplish tasks. Both pre-defined grammars for free-text dictation and web search, and custom grammars authored using Speech Recognition Grammar Specification (SRGS) Version 1.0 are supported.</p>
+<p><strong>TTS</strong>
+TTS uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.</p>
+<p><strong>Other speech-related components:</strong>
+<strong>Cortana</strong> in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (<strong>Cortana</strong> retains focus but provides results from the app). See <a href="cortana-interactions.html">Cortana interactions in Windows apps</a>.</p>
+<h2 id="speech-interaction-design">Speech interaction design</h2>
+<p>Designed and implemented thoughtfully, speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.</p>
+<p>These guidelines and recommendations describe how to best integrate both speech recognition and TTS into the interaction experience of your app.</p>
+<p>If you are considering supporting speech interactions in your app:</p>
+<ul>
+<li>What actions can be taken through speech? Can a user navigate between pages, invoke commands, or enter data as text fields, brief notes, or long messages?</li>
+<li>Is speech input a good option for completing a task?</li>
+<li>How does a user know when speech input is available?</li>
+<li>Is the app always listening, or does the user need to take an action for the app to enter listening mode?</li>
+<li>What phrases initiate an action or behavior? Do the phrases and actions need to be enumerated on screen?</li>
+<li>Are prompt, confirmation, and disambiguation screens or TTS required?</li>
+<li>What is the interaction dialog between app and user?</li>
+<li>Is a custom or constrained vocabulary required (such as medicine, science, or locale) for the context of your app?</li>
+<li>Is network connectivity required?</li>
+</ul>
+<h2 id="text-input">Text input</h2>
+<p>Speech for text input can range from short form (single word or phrase) to long form (continuous dictation). Short form input must be less than 10 seconds in length, while long form input session can be up to two minutes in length. (Long form input can be restarted without user intervention to give the impression of continuous dictation.)</p>
+<p>You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see <a href="../controls/command-bar.html">Command bars</a>) can be used to show both availability and state.</p>
+<p>Provide ongoing recognition feedback to minimize any apparent lack of response while recognition is being performed.</p>
+<p>Let users revise recognition text using keyboard input, disambiguation prompts, suggestions, or additional speech recognition.</p>
+<p>Stop recognition if input is detected from a device other than speech recognition, such as touch or keyboard. This probably indicates that the user has moved onto another task, such as correcting the recognition text or interacting with other form fields.</p>
+<p>Specify the length of time for which no speech input indicates that recognition is over. Do not automatically restart recognition after this period of time as it typically indicates the user has stopped engaging with your app.</p>
+<p>Disable all continuous recognition UI and terminate the recognition session if a network connection is not available. Continuous recognition requires a network connection.</p>
+<h2 id="commanding">Commanding</h2>
+<p>Speech input can initiate actions, invoke commands, and accomplish tasks.</p>
+<p>If space permits, consider displaying the supported responses for the current app context, with examples of valid input. This reduces the potential responses your app has to process and also eliminates confusion for the user.</p>
+<p>Try to frame your questions such that they elicit as specific a response as possible. For example, &quot;What do you want to do today?&quot; is very open ended and would require a very large grammar definition due to how varied the responses could be. Alternatively, &quot;Would you like to play a game or listen to music?&quot; constrains the response to one of two valid answers with a correspondingly small grammar definition. A small grammar is much easier to author and results in much more accurate recognition results.</p>
+<p>Request confirmation from the user when speech recognition confidence is low. If the user's intent is unclear, it's better to get clarification than to initiate an unintended action.</p>
+<p>You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see <a href="../controls/command-bar.html">Guidelines for command bars</a>) can be used to show both availability and state.</p>
+<p>If the speech recognition switch is typically out of view, consider displaying a state indicator in the content area of the app.</p>
+<p>If recognition is initiated by the user, consider using the built-in recognition experience for consistency. The built-in experience includes customizable screens with prompts, examples, disambiguations, confirmations, and errors.</p>
+<p>The screens vary depending on the specified constraints:</p>
+<ul>
+<li><p>Pre-defined grammar (dictation or web search)</p>
+<ul>
+<li>The <strong>Listening</strong> screen.</li>
+<li>The <strong>Thinking</strong> screen.</li>
+<li>The <strong>Heard you say</strong> screen or the error screen.</li>
+</ul>
+</li>
+<li><p>List of words or phrases, or a SRGS grammar file</p>
+<ul>
+<li>The <strong>Listening</strong> screen.</li>
+<li>The <strong>Did you say</strong> screen, if what the user said could be interpreted as more than one potential result.</li>
+<li>The <strong>Heard you say</strong> screen or the error screen.</li>
+</ul>
+</li>
+</ul>
+<p>On the <strong>Listening</strong> screen you can:</p>
+<ul>
+<li>Customize the heading text.</li>
+<li>Provide example text of what the user can say.</li>
+<li>Specify whether the <strong>Heard you say</strong> screen is shown.</li>
+<li>Read the recognized string back to the user on the <strong>Heard you say</strong> screen.</li>
+</ul>
+<p>Here is an example of the built-in recognition flow for a speech recognizer that uses a SRGS-defined constraint. In this example, speech recognition is successful.</p>
+<p><img src="images/speech/speech-listening-initial.png" alt="initial recognition screen for a constraint based on a sgrs grammar file"></p>
+<p><img src="images/speech/speech-listening-intermediate.png" alt="intermediate recognition screen for a constraint based on a sgrs grammar file"></p>
+<p><img src="images/speech/speech-listening-complete.png" alt="final recognition screen for a constraint based on a sgrs grammar file"></p>
+<h2 id="always-listening">Always listening</h2>
+<p>Your app can listen for and recognize speech input as soon as the app is launched, without user intervention.</p>
+<p>You should customize the grammar constraints based on the app context. This keeps the speech recognition experience very targeted and relevant to the current task, and minimizes errors.</p>
+<h2 id="what-can-i-say">&quot;What can I say?&quot;</h2>
+<p>When speech input is enabled, it's important to help users discover what exactly can be understood and what actions can be performed.</p>
+<p>If speech recognition is user enabled, consider using the command bar or a menu command to show all words and phrases supported in the current context.</p>
+<p>If speech recognition is always on, consider adding the phrase &quot;What can I say?&quot; to every page. When the user says this phrase, display all words and phrases supported in the current context. Using this phrase provides a consistent way for users to discover speech capabilities across the system.</p>
+<h2 id="recognition-failures">Recognition failures</h2>
+<p>Speech recognition will fail. Failures happen when audio quality is poor, when only part of a phrase is recognized, or when no input is detected at all.</p>
+<p>Handle failure gracefully, help a user understand why recognition failed, and recover.</p>
+<p>Your app should inform the user that they weren't understood and that they need to try again.</p>
+<p>Consider providing examples of one or more supported phrases. The user is likely to repeat a suggested phrase, which increases recognition success.</p>
+<p>You should display a list of potential matches for a user to select from. This can be far more efficient than going through the recognition process again.</p>
+<p>You should always support alternative input types, which is especially helpful for handling repeated recognition failures. For example, you could suggest that the user try to use a keyboard, or use touch or a mouse to select from a list of potential matches.</p>
+<p>Use the built-in speech recognition experience as it includes screens that inform the user that recognition was not successful and lets the user make another recognition attempt.</p>
+<p>Listen for and try to correct issues in the audio input. The speech recognizer can detect issues with the audio quality that might adversely affect speech recognition accuracy. You can use the information provided by the speech recognizer to inform the user of the issue and let them take corrective action, if possible. For example, if the volume setting on the microphone is too low, you can prompt the user to speak louder or turn the volume up.</p>
+<h2 id="constraints">Constraints</h2>
+<p>Constraints, or grammars, define the spoken words and phrases that can be matched by the speech recognizer. You can specify one of the pre-defined web service grammars or you can create a custom grammar that is installed with your app.</p>
+<h3 id="predefined-grammars">Predefined grammars</h3>
+<p>Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device</p>
+<ul>
+<li>The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.</li>
+<li>The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.</p>
+</div>
+<p>These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require connection to a network.</p>
+<h3 id="custom-grammars">Custom grammars</h3>
+<p>A custom grammar is designed and authored by you and is installed with your app. Speech recognition using a custom constraint is performed on the device.</p>
+<ul>
+<li><p>Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.</p>
+</li>
+<li><p>An SRGS grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the <a href="https://www.w3.org/TR/speech-grammar/">SRGS Version 1.0</a>. An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.</p>
+<p>Here are some tips for authoring SRGS grammars:</p>
+<ul>
+<li>Keep each grammar small. Grammars that contain fewer phrases tend to provide more accurate recognition than larger grammars that contain many phrases. It's better to have several smaller grammars for specific scenarios than to have a single grammar for your entire app.</li>
+<li>Let users know what to say for each app context and enable and disable grammars as needed.</li>
+<li>Design each grammar so users can speak a command in a variety of ways. For example, you can use the <strong>GARBAGE</strong> rule to match speech input that your grammar does not define. This lets users speak additional words that have no meaning to your app. For example, &quot;give me&quot;, &quot;and&quot;, &quot;uh&quot;, &quot;maybe&quot;, and so on.</li>
+<li>Use the <a href="/previous-versions/office/developer/speech-technologies/jj572474(v=office.14)">sapi:subset</a> element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.</li>
+<li>Try to avoid defining phrases in your grammar that contain only one syllable. Recognition tends to be more accurate for phrases containing two or more syllables.</li>
+<li>Avoid using phrases that sound similar. For example, phrases such as &quot;hello&quot;, &quot;bellow&quot;, and &quot;fellow&quot; can confuse the recognition engine and result in poor recognition accuracy.</li>
+</ul>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.</p>
+</div>
+<h3 id="custom-pronunciations">Custom pronunciations</h3>
+<p>If your app contains specialized vocabulary with unusual or fictional words, or words with uncommon pronunciations, you might be able to improve recognition performance for those words by defining custom pronunciations.</p>
+<p>For a small list of words and phrases, or a list of infrequently used words and phrases, you can create custom pronunciations in a SRGS grammar. See <a href="/previous-versions/office/developer/speech-technologies/hh361600(v=office.14)">token Element</a> for more info.</p>
+<p>For larger lists of words and phrases, or frequently used words and phrases, you can create separate pronunciation lexicon documents. See <a href="/previous-versions/office/developer/speech-technologies/hh361646(v=office.14)">About Lexicons and Phonetic Alphabets</a> for more info.</p>
+<h2 id="testing">Testing</h2>
+<p>Test speech recognition accuracy and any supporting UI with your app's target audience. This is the best way to determine the effectiveness of the speech interaction experience in your app. For example, are users getting poor recognition results because your app isn't listening for a common phrase?</p>
+<p>Either modify the grammar to support this phrase or provide users with a list of supported phrases. If you already provide the list of supported phrases, ensure it is easily discoverable.</p>
+<h2 id="text-to-speech-tts">Text-to-speech (TTS)</h2>
+<p>TTS generates speech output from plain text or SSML.</p>
+<p>Try to design prompts that are polite and encouraging.</p>
+<p>Consider whether you should read long strings of text. It's one thing to listen to a text message, but quite another to listen to a long list of search results that are difficult to remember.</p>
+<p>You should provide media controls to let users pause, or stop, TTS.</p>
+<p>You should listen to all TTS strings to ensure they are intelligible and sound natural.</p>
+<ul>
+<li>Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.</li>
+<li>Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.</li>
+</ul>
+<p>Both issues can be addressed by using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see <a href="/previous-versions/office/developer/speech-technologies/hh378454(v=office.14)">Use SSML to Control Synthesized Speech</a> and <a href="/previous-versions/office/developer/speech-technologies/hh378377(v=office.14)">Speech Synthesis Markup Language Reference</a>.</p>
+<h2 id="other-articles-in-this-section">Other articles in this section</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="speech-recognition.html">Speech recognition</a></td>
+<td>Use speech recognition to provide input, specify an action or command, and accomplish tasks.</td>
+</tr>
+<tr>
+<td><a href="specify-the-speech-recognizer-language.html">Specify the speech recognizer language</a></td>
+<td>Learn how to select an installed language to use for speech recognition.</td>
+</tr>
+<tr>
+<td><a href="define-custom-recognition-constraints.html">Define custom recognition constraints</a></td>
+<td>Learn how to define and use custom constraints for speech recognition.</td>
+</tr>
+<tr>
+<td><a href="enable-continuous-dictation.html">Enable continuous dictation</a></td>
+<td>Learn how to capture and recognize long-form, continuous dictation speech input.</td>
+</tr>
+<tr>
+<td><a href="manage-issues-with-audio-input.html">Manage issues with audio input</a></td>
+<td>Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.</td>
+</tr>
+<tr>
+<td><a href="set-speech-recognition-timeouts.html">Set speech recognition timeouts</a></td>
+<td>Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="">Speech interactions</a></li>
+<li><a href="cortana-interactions.html">Cortana interactions</a></li>
+</ul>
+<p><strong>Samples</strong></p>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis">Speech recognition and speech synthesis sample</a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/speech-interactions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

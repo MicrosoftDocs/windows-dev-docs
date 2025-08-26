@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Intro to controls and patterns </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Intro to controls and patterns ">
+    
+    <meta name="description" content="You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input. Here, we show you how to add controls to your app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="intro-to-controls-and-patterns">Intro to controls and patterns</h1>
+
+<p>In Windows app development, a <em>control</em> is a UI element that displays content or enables interaction. You create the UI for your app by using controls such as buttons, text boxes, and combo boxes to display data and get user input.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls">Windows.UI.Xaml.Controls namespace</a></p>
+</blockquote>
+<p>A <em>pattern</em> is a recipe for modifying a control or combining several controls to make something new. For example, the <a href="list-details.html">list/details</a> pattern is a way that you can use a <a href="split-view.html">SplitView</a> control for app navigation. Similarly, you can customize the template of a <a href="navigationview.html">NavigationView</a> control to implement the tab pattern.</p>
+<p>In many cases, you can use a control as-is. But XAML controls separate function from structure and appearance, so you can make various levels of modification to make them fit your needs. In the <a href="../style/index.md">Style</a> section, you can learn how to use <a href="../../develop/platform/xaml/xaml-styles.html">XAML styles</a> and <a href="../../develop/platform/xaml/xaml-control-templates.html">control templates</a> to modify a control.</p>
+<p>In this section, we provide guidance for each of the XAML controls you can use to build your app UI. To start, this article shows you how to add controls to your app. There are 3 key steps to using controls to your app:</p>
+<ul>
+<li>Add a control to your app UI.</li>
+<li>Set properties on the control, such as width, height, or foreground color.</li>
+<li>Add code to the control's event handlers so that it does something.</li>
+</ul>
+<h2 id="add-a-control">Add a control</h2>
+<p>You can add a control to an app in several ways:</p>
+<ul>
+<li>Use a design tool like Blend for Visual Studio or the Microsoft Visual Studio Extensible Application Markup Language (XAML) designer.</li>
+<li>Add the control to the XAML markup in the Visual Studio XAML editor.</li>
+<li>Add the control in code. Controls that you add in code are visible when the app runs, but are not visible in the Visual Studio XAML designer.</li>
+</ul>
+<p>In Visual Studio, when you add and manipulate controls in your app, you can use many of the program's features, including the Toolbox, XAML designer, XAML editor, and the Properties window.</p>
+<p>The Visual Studio Toolbox displays many of the controls that you can use in your app. To add a control to your app, double-click it in the Toolbox. For example, when you double-click the TextBox control, this XAML is added to the XAML view.</p>
+<pre><code class="lang-xaml">&lt;TextBox HorizontalAlignment=&quot;Left&quot; Text=&quot;TextBox&quot; VerticalAlignment=&quot;Top&quot;/&gt;
+</code></pre>
+<p>You can also drag the control from the Toolbox to the XAML designer.</p>
+<h2 id="set-the-name-of-a-control">Set the name of a control</h2>
+<p>To work with a control in code, you set its <a href="/windows/uwp/xaml-platform/x-name-attribute">x:Name</a> attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window.</p>
+<p>To name a control</p>
+<ol>
+<li>Select the element to name.</li>
+<li>In the Properties panel, type a name into the Name text box.</li>
+<li>Press Enter to commit the name.</li>
+</ol>
+<p><img src="images/add-controls-control-name-designer.png" alt="Name property in the Visual Studio designer"></p>
+<p>Here's how to set the name of a control in the XAML editor by adding the x:Name attribute.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;Button1&quot; Content=&quot;Button&quot;/&gt;
+</code></pre>
+<h2 id="set-the-control-properties">Set the control properties</h2>
+<p>You use properties to specify the appearance, content, and other attributes of controls. When you add a control using a design tool, some properties that control size, position, and content might be set for you by Visual Studio. You can change some properties, such as Width, Height or Margin, by selecting and manipulating the control in the Design view. This illustration shows some of the resizing tools available in Design view.</p>
+<p><img src="images/add-controls-resizing-designer.png" alt="Resizing tools in the Visual Studio designer"></p>
+<p>You might want to let the control be sized and positioned automatically. In this case, you can reset the size and position properties that Visual Studio set for you.</p>
+<p>To reset a property</p>
+<ol>
+<li>In the Properties panel, click the property marker next to the property value. The property menu opens.</li>
+<li>In the property menu, click Reset.</li>
+</ol>
+<p><img src="images/add-controls-property-reset.png" alt="Visual Studio property reset menu option"></p>
+<p>You can set control properties in the Properties window, in XAML, or in code. For example, to change the foreground color for a Button, you set the control's Foreground property. This illustration shows how to set the Foreground property by using the color picker in the Properties window.</p>
+<p><img src="images/add-controls-foreground-designer.png" alt="Color picker in the Visual Studio designer"></p>
+<p>Here's how to set the Foreground property in the XAML editor. Notice the Visual Studio IntelliSense window that opens to help you with the syntax.</p>
+<p><img src="images/add-controls-foreground-xaml.png" alt="Intellisense in XAML part 1"></p>
+<p><img src="images/add-controls-foreground-xaml-2.png" alt="Intellisense in XAML part 2"></p>
+<p>Here's the resulting XAML after you set the Foreground property.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;Button1&quot; Content=&quot;Button&quot; 
+        HorizontalAlignment=&quot;Left&quot; VerticalAlignment=&quot;Top&quot;
+        Foreground=&quot;Beige&quot;/&gt;
+</code></pre>
+<p>Here's how to set the Foreground property in code.</p>
+<pre><code class="lang-csharp">Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
+</code></pre>
+<pre><code class="lang-cppwinrt">Button1().Foreground(Media::SolidColorBrush(Windows::UI::Colors::Beige()));
+</code></pre>
+<h2 id="create-an-event-handler">Create an event handler</h2>
+<p>Each control has events that enable you to respond to actions from your user or other changes in your app. For example, a Button control has a Click event that is raised when a user clicks the Button. You create a method, called an event handler, to handle the event. You can associate a control's event with an event handler method in the Properties window, in XAML, or in code. For more info about events, see <a href="/windows/uwp/xaml-platform/events-and-routed-events-overview">Events and routed events overview</a>.</p>
+<p>To create an event handler, select the control and then click the Events tab at the top of the Properties window. The Properties window lists all of the events available for that control. Here are some of the events for a Button.</p>
+<p><img src="images/add-controls-add-event-designer.png" alt="Visual Studio event list"></p>
+<p>To create an event handler with the default name, double-click the text box next to the event name in the Properties window. To create an event handler with a custom name, type the name of your choice into the text box and press enter. The event handler is created and the code-behind file is opened in the code editor. The event handler method has 2 parameters. The first is <code>sender</code>, which is a reference to the object where the handler is attached. The <code>sender</code> parameter is an <strong>Object</strong> type. You typically cast <code>sender</code> to a more precise type if you expect to check or change the state on the <code>sender</code> object itself. Based on your own app design, you expect a type that is safe to cast the <code>sender</code> to, based on where the handler is attached. The second value is event data, which generally appears in signatures as the <code>e</code> or <code>args</code> parameter.</p>
+<p>Here's code that handles the Click event of a Button named <code>Button1</code>. When you click the button, the Foreground property of the Button you clicked is set to blue.</p>
+<pre><code class="lang-csharp">private void Button_Click(object sender, RoutedEventArgs e)
+{
+    Button b = (Button)sender;
+    b.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">#MainPage.h
+struct MainPage : MainPageT&lt;MainPage&gt;
+    {
+        MainPage();
+        ...
+        void Button1_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Windows::UI::Xaml::RoutedEventArgs const&amp; e);
+    };
+    
+#MainPage.cpp
+void MainPage::Button1_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Windows::UI::Xaml::RoutedEventArgs const&amp; e)
+    {
+        auto b{ sender.as&lt;winrt::Windows::UI::Xaml::Controls::Button&gt;() };
+        b.Foreground(Media::SolidColorBrush(Windows::UI::Colors::Blue()));
+    }
+</code></pre>
+<p>You can also associate an event handler in XAML. In the XAML editor, type in the event name that you want to handle. Visual Studio shows an IntelliSense window when you begin typing. After you specify the event, you can double-click <code>&lt;New Event Handler&gt;</code> in the IntelliSense window to create a new event handler with the default name, or select an existing event handler from the list.</p>
+<p>Here's the IntelliSense window that appears. It helps you create a new event handler or select an existing event handler.</p>
+<p><img src="images/add-controls-add-event-xaml.png" alt="Intellisense for the click event"></p>
+<p>This example shows how to associate a Click event with an event handler named Button_Click in XAML.</p>
+<pre><code class="lang-xaml">&lt;Button Name=&quot;Button1&quot; Content=&quot;Button&quot; Click=&quot;Button_Click&quot;/&gt;
+</code></pre>
+<p>You can also associate an event with its event handler in the code-behind. Here's how to associate an event handler in code.</p>
+<pre><code class="lang-csharp">Button1.Click += new RoutedEventHandler(Button_Click);
+</code></pre>
+<pre><code class="lang-cppwinrt">Button1().Click({ this, &amp;MainPage::Button1_Click });
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Index of controls by function</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls">Windows.UI.Xaml.Controls namespace</a></li>
+<li><a href="../layout/index.html">Layout</a></li>
+<li><a href="../style/index.md">Style</a></li>
+<li><a href="../usability/index.html">Usability</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/controls-and-events-intro.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

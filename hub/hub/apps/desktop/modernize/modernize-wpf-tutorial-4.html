@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Add Windows 10 user activities and notifications </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Add Windows 10 user activities and notifications ">
+    
+    <meta name="description" content="This tutorial demonstrates how to add Activity and Notification features to the app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="part-4-add-windows-user-activities-and-notifications">Part 4: Add Windows user activities and notifications</h1>
+
+<p>This is the fourth part of a tutorial that demonstrates how to modernize a sample WPF desktop app named Contoso Expenses. For an overview of the tutorial, prerequisites, and instructions for downloading the sample app, see <a href="modernize-wpf-tutorial.html">Tutorial: Modernize a WPF app</a>. This article assumes you have already completed <a href="modernize-wpf-tutorial-3.html">part 3</a>.</p>
+<p>In the previous parts of this tutorial you added UWP XAML controls to the app using XAML Islands. As a byproduct of this, you also enabled the app to call any WinRT API. This opens up the opportunity for the app to use many other features offered by Windows, not just UWP XAML controls.</p>
+<p>In the fictional scenario of this tutorial, the Contoso development team has decided to add two new features to the app: activities and notifications. This part of the tutorial shows how to implement these features.</p>
+<h2 id="add-a-user-activity">Add a user activity</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The timeline feature is discontinued since Windows 11</p>
+</div>
+<p>In Windows 10, apps can track activities performed by the user such as opening a file or displaying a specific page. These activities are then made available through Timeline, a feature introduced in Windows 10 version 1803, which allows the user to quickly go back to the past and resume an activity they started previously.</p>
+<p><img src="images/wpf-modernize-tutorial/WindowsTimeline.png" alt="Windows Timeline image"></p>
+<p>User activities are tracked using <a href="https://developer.microsoft.com/graph/">Microsoft Graph</a>. However, when you're building a Windows 10 app, you don't need to interact directly with the REST endpoints provided by Microsoft Graph. Instead, you can use a convenient set of WinRT APIs. We're going to use these WinRT APIs in the Contoso Expenses app to track every time the user opens an expense within the app, and use Adaptive Cards to enable users to create the activity.</p>
+<h3 id="introduction-to-adaptive-cards">Introduction to Adaptive Cards</h3>
+<p>This section provides a brief overview of <a href="/adaptive-cards/">Adaptive Cards</a>. If you don't need this information, you can skip this and go right to the <a href="#add-an-adaptive-card">add an Adaptive Card</a> instructions.</p>
+<p>Adaptive Cards enable developers to exchange card content in a common and consistent way. An Adaptive Card is described by a JSON payload that defines its content, which can include text, images, actions, and more.</p>
+<p>An Adaptive Card defines just the content and not the visual appearance of the content. The platform where the Adaptive Card is received can render the content using the most appropriate styling. The way Adaptive Cards are designed is through <a href="/adaptive-cards/rendering-cards/getting-started">a renderer</a>, which is able to take the JSON payload and to convert it into native UI. For example, the UI could be XAML for a WPF or UWP app, AXML for an Android app, or HTML for a website or a bot chat.</p>
+<p>Here is an example of a simple Adaptive Card payload.</p>
+<pre><code class="lang-json">{
+    &quot;type&quot;: &quot;AdaptiveCard&quot;,
+    &quot;body&quot;: [
+        {
+            &quot;type&quot;: &quot;Container&quot;,
+            &quot;items&quot;: [
+                {
+                    &quot;type&quot;: &quot;TextBlock&quot;,
+                    &quot;size&quot;: &quot;Medium&quot;,
+                    &quot;weight&quot;: &quot;Bolder&quot;,
+                    &quot;text&quot;: &quot;Publish Adaptive Card schema&quot;
+                },
+                {
+                    &quot;type&quot;: &quot;ColumnSet&quot;,
+                    &quot;columns&quot;: [
+                        {
+                            &quot;type&quot;: &quot;Column&quot;,
+                            &quot;items&quot;: [
+                                {
+                                    &quot;type&quot;: &quot;Image&quot;,
+                                    &quot;style&quot;: &quot;Person&quot;,
+                                    &quot;url&quot;: &quot;https://pbs.twimg.com/profile_images/3647943215/d7f12830b3c17a5a9e4afcc370e3a37e_400x400.jpeg&quot;,
+                                    &quot;size&quot;: &quot;Small&quot;
+                                }
+                            ],
+                            &quot;width&quot;: &quot;auto&quot;
+                        },
+                        {
+                            &quot;type&quot;: &quot;Column&quot;,
+                            &quot;items&quot;: [
+                                {
+                                    &quot;type&quot;: &quot;TextBlock&quot;,
+                                    &quot;weight&quot;: &quot;Bolder&quot;,
+                                    &quot;text&quot;: &quot;Matt Hidinger&quot;,
+                                    &quot;wrap&quot;: true
+                                },
+                                {
+                                    &quot;type&quot;: &quot;TextBlock&quot;,
+                                    &quot;spacing&quot;: &quot;None&quot;,
+                                    &quot;text&quot;: &quot;Created {{DATE(2017-02-14T06:08:39Z,SHORT)}}&quot;,
+                                    &quot;isSubtle&quot;: true,
+                                    &quot;wrap&quot;: true
+                                }
+                            ],
+                            &quot;width&quot;: &quot;stretch&quot;
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    &quot;actions&quot;: [
+        {
+            &quot;type&quot;: &quot;Action.ShowCard&quot;,
+            &quot;title&quot;: &quot;Set due date&quot;,
+            &quot;card&quot;: {
+                &quot;type&quot;: &quot;AdaptiveCard&quot;,
+                &quot;style&quot;: &quot;emphasis&quot;,
+                &quot;body&quot;: [
+                    {
+                        &quot;type&quot;: &quot;Input.Date&quot;,
+                        &quot;id&quot;: &quot;dueDate&quot;
+                    },
+                    {
+                        &quot;type&quot;: &quot;Input.Text&quot;,
+                        &quot;id&quot;: &quot;comment&quot;,
+                        &quot;placeholder&quot;: &quot;Add a comment&quot;,
+                        &quot;isMultiline&quot;: true
+                    }
+                ],
+                &quot;actions&quot;: [
+                    {
+                        &quot;type&quot;: &quot;Action.OpenUrl&quot;,
+                        &quot;title&quot;: &quot;OK&quot;,
+                        &quot;url&quot;: &quot;http://adaptivecards.io&quot;
+                    }
+                ],
+                &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;
+            }
+        },
+        {
+            &quot;type&quot;: &quot;Action.OpenUrl&quot;,
+            &quot;title&quot;: &quot;View&quot;,
+            &quot;url&quot;: &quot;http://adaptivecards.io&quot;
+        }
+    ],
+    &quot;$schema&quot;: &quot;http://adaptivecards.io/schemas/adaptive-card.json&quot;,
+    &quot;version&quot;: &quot;1.0&quot;
+}
+</code></pre>
+<p>The image below shows how this JSON is rendered in different ways by ta Teams channel, Cortana and a Windows notification.</p>
+<p><img src="images/wpf-modernize-tutorial/AdaptiveCards.png" alt="Adaptive Card rendering image"></p>
+<p>Adaptive cards play an important role in Timeline because it's the way Windows renders activities. Each thumbnail displayed inside Timeline is actually an Adaptive Card. As such, when you're going to create a user activity inside your app, you will be asked to provide an Adaptive Card to render it.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A great way to brainstorm the design of an Adaptive Card is using <a href="https://adaptivecards.io/designer/">the online designer</a>. You will have the chance to design the card with building blocks (images, texts, columns, etc) and get the corresponding JSON. After you have an idea of the final design, you can use a library called <a href="https://www.nuget.org/packages/AdaptiveCards/">Adaptive Cards</a> to make it easier to build your Adaptive Card using C# classes instead of plain JSON, which might be hard to debug and build.</p>
+</div>
+<h3 id="add-an-adaptive-card">Add an Adaptive Card</h3>
+<ol>
+<li><p>Right click on the <strong>ContosoExpenses.Core</strong> project in Solution Explorer and choose <strong>Manage NuGet packages</strong>.</p>
+</li>
+<li><p>In the <strong>NuGet Package Manager</strong> window, click <strong>Browse</strong>. Search for the <code>Newtonsoft.Json</code> package and install the latest available version. This is a popular JSON manipulation library that you will use to help manipulate the JSON strings required by Adaptive Cards.</p>
+<p><img src="images/wpf-modernize-tutorial/JsonNetNuGet.png" alt="NewtonSoft.Json NuGet package"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you don't install the <code>Newtonsoft.Json</code> package separately, The Adaptive Cards library will reference an older version of the <code>Newtonsoft.Json</code> package that doesn't support .NET Core 3.0.</p>
+</div>
+</li>
+<li><p>In the <strong>NuGet Package Manager</strong> window, click <strong>Browse</strong>. Search for the <code>AdaptiveCards</code> package and install the latest available version.</p>
+<p><img src="images/wpf-modernize-tutorial/AdaptiveCardsNuGet.png" alt="Adaptive Cards NuGet package"></p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>ContosoExpenses.Core</strong> project, choose <strong>Add -&gt; Class</strong>. Name the class <strong>TimelineService.cs</strong> and click <strong>OK</strong>.</p>
+</li>
+<li><p>In the <strong>TimelineService.cs</strong> file, add the following statements to the top of the file.</p>
+<pre><code class="lang-csharp">using AdaptiveCards;
+using ContosoExpenses.Data.Models;
+</code></pre>
+</li>
+<li><p>Change the namespace declared in the file from <code>ContosoExpenses.Core</code> to <code>ContosoExpenses</code>.</p>
+</li>
+<li><p>Add the following method to the <code>TimelineService</code> class.</p>
+<pre><code class="lang-csharp"> private string BuildAdaptiveCard(Expense expense)
+ {
+     AdaptiveCard card = new AdaptiveCard(&quot;1.0&quot;);
+
+     AdaptiveTextBlock title = new AdaptiveTextBlock
+     {
+         Text = expense.Description,
+         Size = AdaptiveTextSize.Medium,
+         Wrap = true
+     };
+
+     AdaptiveColumnSet columnSet = new AdaptiveColumnSet();
+     AdaptiveColumn photoColumn = new AdaptiveColumn
+     {
+         Width = &quot;auto&quot;
+     };
+
+     AdaptiveImage image = new AdaptiveImage
+     {
+         Url = new Uri(&quot;https://appmodernizationworkshop.blob.core.windows.net/contosoexpenses/Contoso192x192.png&quot;),
+         Size = AdaptiveImageSize.Small,
+         Style = AdaptiveImageStyle.Default
+     };
+     photoColumn.Items.Add(image);
+
+     AdaptiveTextBlock amount = new AdaptiveTextBlock
+     {
+         Text = expense.Cost.ToString(),
+         Weight = AdaptiveTextWeight.Bolder,
+         Wrap = true
+     };
+
+     AdaptiveTextBlock date = new AdaptiveTextBlock
+     {
+         Text = expense.Date.Date.ToShortDateString(),
+         IsSubtle = true,
+         Spacing = AdaptiveSpacing.None,
+         Wrap = true
+     };
+
+     AdaptiveColumn expenseColumn = new AdaptiveColumn
+     {
+         Width = &quot;stretch&quot;
+     };
+     expenseColumn.Items.Add(amount);
+     expenseColumn.Items.Add(date);
+
+     columnSet.Columns.Add(photoColumn);
+     columnSet.Columns.Add(expenseColumn);
+
+     card.Body.Add(title);
+     card.Body.Add(columnSet);
+
+     string json = card.ToJson();
+     return json;
+ }
+</code></pre>
+</li>
+</ol>
+<h4 id="about-the-code">About the code</h4>
+<p>This method receives an <strong>Expense</strong> object with all the information about the expense to render and it builds a new <strong>AdaptiveCard</strong> object. The method adds the following to the card:</p>
+<ul>
+<li>A title, which uses the description of the expense.</li>
+<li>An image, which is the Contoso logo.</li>
+<li>The amount of the expense.</li>
+<li>The date of the expense.</li>
+</ul>
+<p>The last 3 elements are split into two different columns, so that the Contoso logo and the details about the expense can be placed side by side. After the object is built, the method returns the corresponding JSON string with the help of the <strong>ToJson</strong> method.</p>
+<h3 id="define-the-user-activity">Define the user activity</h3>
+<p>Now that you have defined the Adaptive Card, you can create a user activity based on it.</p>
+<ol>
+<li><p>Add the following statements to the top of <strong>TimelineService.cs</strong> file:</p>
+<pre><code class="lang-csharp">using Windows.ApplicationModel.UserActivities;
+using System.Threading.Tasks;
+using Windows.UI.Shell;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These are UWP namespaces. These resolve because the <code>Microsoft.Toolkit.Wpf.UI.Controls</code> NuGet package that you installed in step 2 includes a reference to the <code>Microsoft.Windows.SDK.Contracts</code> package, which enables the <strong>ContosoExpenses.Core</strong> project to reference WinRT APIs even though it is a .NET Core 3 project.</p>
+</div>
+</li>
+<li><p>Add the following field declarations to the <code>TimelineService</code> class.</p>
+<pre><code class="lang-csharp">private UserActivityChannel _userActivityChannel;
+private UserActivity _userActivity;
+private UserActivitySession _userActivitySession;
+</code></pre>
+</li>
+<li><p>Add the following method to the <code>TimelineService</code> class.</p>
+<pre><code class="lang-csharp">public async Task AddToTimeline(Expense expense)
+{
+    _userActivityChannel = UserActivityChannel.GetDefault();
+    _userActivity = await _userActivityChannel.GetOrCreateUserActivityAsync($&quot;Expense-{expense.ExpenseId}&quot;);
+
+    _userActivity.ActivationUri = new Uri($&quot;contosoexpenses://expense/{expense.ExpenseId}&quot;);
+    _userActivity.VisualElements.DisplayText = &quot;Contoso Expenses&quot;;
+
+    string json = BuildAdaptiveCard(expense);
+
+    _userActivity.VisualElements.Content = AdaptiveCardBuilder.CreateAdaptiveCardFromJson(json);
+
+    await _userActivity.SaveAsync();
+    _userActivitySession?.Dispose();
+    _userActivitySession = _userActivity.CreateSession();
+}
+</code></pre>
+</li>
+<li><p>Save the changes to <strong>TimelineService.cs</strong>.</p>
+</li>
+</ol>
+<h4 id="about-the-code-1">About the code</h4>
+<p>The <code>AddToTimeline</code> method first gets a <strong>UserActivityChannel</strong> object that is required to store user activities. Then it creates a new user activity using the <strong>GetOrCreateUserActivityAsync</strong> method, which requires a unique identifier. This way, if an activity already exists, the app can update it; otherwise it will create a new one. The identifier to pass depends by the kind of application you're building:</p>
+<ul>
+<li>If you want to always update the same activity so that Timeline will only show the most recent one, you can use a fixed identifier (such as <strong>Expenses</strong>).</li>
+<li>If you want to track every activity as a different one, so that Timeline will display all of them, you can use a dynamic identifier.</li>
+</ul>
+<p>In this scenario, the app will track each opened expense as a different user activity, so the code creates each identifier by using the keyword <strong>Expense-</strong> followed by the unique expense ID.</p>
+<p>After the method creates a <strong>UserActivity</strong> object, it populates the object with the following info:</p>
+<ul>
+<li>An <strong>ActivationUri</strong> that is invoked when the user clicks on the activity in Timeline. The code uses a custom protocol called <strong>contosoexpenses</strong> that the app will handle later.</li>
+<li>The <strong>VisualElements</strong> object, which contains a set of properties that define the visual appearance of the activity. This code sets the <strong>DisplayText</strong> (which is the title displayed on top of the entry in Timeline) and the <strong>Content</strong>.</li>
+</ul>
+<p>This is where the Adaptive Card you defined earlier plays a role. The app passes the Adaptive Card you designed earlier as content to the method. However, Windows 10 uses a different object to represent a card compared to the one used by the <code>AdaptiveCards</code> NuGet package. Therefore, the method recreates the card by using the <strong>CreateAdaptiveCardFromJson</strong> method exposed by the <strong>AdaptiveCardBuilder</strong> class. After the method creates the user activity, it saves the activity and creates a new session.</p>
+<p>When a user clicks on an activity in Timeline, the <strong>contosoexpenses://</strong> protocol will be activated and the URL will include the information the app needs to retrieve the selected expense. As an optional task, you could implement the protocol activation so that the application reacts properly when the user uses Timeline.</p>
+<h3 id="integrate-the-application-with-timeline">Integrate the application with Timeline</h3>
+<p>Now that you have created a class that interacts with Timeline, we can start using it to enhance the application's experience. The best place to use the <strong>AddToTimeline</strong> method exposed by the <strong>TimelineService</strong> class is when the user opens the detail page of an expense.</p>
+<ol>
+<li><p>In the <strong>ContosoExpenses.Core</strong> project, expand the <strong>ViewModels</strong> folder and open the <strong>ExpenseDetailViewModel.cs</strong> file. This is the ViewModel that supports the expense detail's window.</p>
+</li>
+<li><p>Locate the public constructor of the <strong>ExpenseDetailViewModel</strong> class and add the following code at the end of the constructor. Whenever the expense window is opened, the method calls the <strong>AddToTimeline</strong> method and passes the current expense. The <strong>TimelineService</strong> class uses this info to create a user activity using the expense information.</p>
+<pre><code class="lang-csharp">TimelineService timeline = new TimelineService();
+timeline.AddToTimeline(expense);
+</code></pre>
+<p>When you are done, the constructor should look like this.</p>
+<pre><code class="lang-csharp">public ExpensesDetailViewModel(IDatabaseService databaseService, IStorageService storageService)
+{
+    var expense = databaseService.GetExpense(storageService.SelectedExpense);
+
+    ExpenseType = expense.Type;
+    Description = expense.Description;
+    Location = expense.Address;
+    Amount = expense.Cost;
+
+    TimelineService timeline = new TimelineService();
+    timeline.AddToTimeline(expense);
+}
+</code></pre>
+</li>
+<li><p>Press F5 to build and run the app in the debugger. Choose an employee from the list and then choose an expense. In the detail page, note the description of the expense, the date and the amount.</p>
+</li>
+<li><p>Press <strong>Start + TAB</strong> to open Timeline.</p>
+</li>
+<li><p>Scroll down the list of currently opened applications until you see the section titled <strong>Earlier today</strong>. This section shows some of your most recent user activities. Click the <strong>See all activities</strong> link next to the <strong>Earlier today</strong> heading.</p>
+</li>
+<li><p>Confirm that you see a new card with the information about the expense you have just selected in the application.</p>
+<p><img src="images/wpf-modernize-tutorial/ContosoExpensesTimeline.png" alt="Contoso Expenses Timeline"></p>
+</li>
+<li><p>If you now open other expenses, you will see new cards being added as user activities. Remember that the code uses a different identifier for each activity, so it creates a card for each expense you open in the app.</p>
+</li>
+<li><p>Close the app.</p>
+</li>
+</ol>
+<h2 id="add-a-notification">Add a notification</h2>
+<p>The second feature the Contoso development team wants to add is a notification that is shown to the user whenever a new expense is saved to the database. To do this, you can leverage the built-in notifications system in Windows 10, which is exposed to developers via WinRT APIs. This notification system has many advantages:</p>
+<ul>
+<li>Notifications are consistent with the rest of the OS.</li>
+<li>They are actionable.</li>
+<li>They get stored in Action Center so they can be reviewed later.</li>
+</ul>
+<p>To add a notification to the app:</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>ContosoExpenses.Core</strong> project, choose <strong>Add -&gt; Class</strong>. Name the class <strong>NotificationService.cs</strong> and click <strong>OK</strong>.</p>
+</li>
+<li><p>In the <strong>NotificationService.cs</strong> file, add the following statements to the top of the file.</p>
+<pre><code class="lang-csharp">using Windows.Data.Xml.Dom;
+using Windows.UI.Notifications;
+</code></pre>
+</li>
+<li><p>Change the namespace declared in the file from <code>ContosoExpenses.Core</code> to <code>ContosoExpenses</code>.</p>
+</li>
+<li><p>Add the following method to the <code>NotificationService</code> class.</p>
+<pre><code class="lang-csharp">public void ShowNotification(string description, double amount)
+{
+    string xml = $@&quot;&lt;toast&gt;
+                      &lt;visual&gt;
+                        &lt;binding template='ToastGeneric'&gt;
+                          &lt;text&gt;Expense added&lt;/text&gt;
+                          &lt;text&gt;Description: {description} - Amount: {amount} &lt;/text&gt;
+                        &lt;/binding&gt;
+                      &lt;/visual&gt;
+                    &lt;/toast&gt;&quot;;
+
+    XmlDocument doc = new XmlDocument();
+    doc.LoadXml(xml);
+
+    ToastNotification toast = new ToastNotification(doc);
+    ToastNotificationManager.CreateToastNotifier().Show(toast);
+}
+</code></pre>
+<p>Toast notifications are represented by an XML payload, which can include text, images, actions, and more. You can find all the supported elements <a href="/windows/uwp/design/shell/tiles-and-notifications/toast-schema">here</a>. This code uses a very simple schema with two lines of text: the title and the body. After the code defines the XML payload and loads it in an <strong>XmlDocument</strong> object, it wraps the XML in a <strong>ToastNotification</strong> object and shows it by using the <strong>ToastNotificationManager</strong> class.</p>
+</li>
+<li><p>In the <strong>ContosoExpenses.Core</strong> project, expand the <strong>ViewModels</strong> folder and open the <strong>AddNewExpenseViewModel.cs</strong> file.</p>
+</li>
+<li><p>Locate the <code>SaveExpenseCommand</code> method, which is triggered when the user presses on the button to save a new expense. Add the following code to this method, just after the call to the <code>SaveExpense</code> method.</p>
+<pre><code class="lang-csharp">NotificationService notificationService = new NotificationService();
+notificationService.ShowNotification(expense.Description, expense.Cost);
+</code></pre>
+<p>When you are done, the <code>SaveExpenseCommand</code> method should look like this.</p>
+<pre><code class="lang-csharp">private RelayCommand _saveExpenseCommand;
+public RelayCommand SaveExpenseCommand
+{
+    get
+    {
+        if (_saveExpenseCommand == null)
+        {
+            _saveExpenseCommand = new RelayCommand(() =&gt;
+            {
+                Expense expense = new Expense
+                {
+                    Address = Address,
+                    City = City,
+                    Cost = Cost,
+                    Date = Date,
+                    Description = Description,
+                    EmployeeId = storageService.SelectedEmployeeId,
+                    Type = ExpenseType
+                };
+
+                databaseService.SaveExpense(expense);
+
+                NotificationService notificationService = new NotificationService();
+                notificationService.ShowNotification(expense.Description, expense.Cost);
+
+                Messenger.Default.Send&lt;UpdateExpensesListMessage&gt;(new UpdateExpensesListMessage());
+                Messenger.Default.Send&lt;CloseWindowMessage&gt;(new CloseWindowMessage());
+            }, () =&gt; IsFormFilled
+            );
+        }
+
+        return _saveExpenseCommand;
+    }
+}
+</code></pre>
+</li>
+<li><p>Press F5 to build and run the app in the debugger. Choose an employee from the list and then click the <strong>Add new expense</strong> button. Complete all fields in the form and press <strong>Save</strong>.</p>
+</li>
+<li><p>You will receive the following exception.</p>
+<p><img src="images/wpf-modernize-tutorial/ToastNotificationError.png" alt="Toast notification error"></p>
+</li>
+</ol>
+<p>This exception is caused by the fact that the Contoso Expenses app doesn't yet have package identity. Some WinRT APIs, including the notifications API, require package identity before they can be used in an app. UWP apps receive package identity by default because they can only be distributed via MSIX packages. Other types of Windows apps, including WPF apps, can also be deployed via MSIX packages to obtain package identity. The next part of this tutorial will explore how to do this.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>At this point in the tutorial, you have successfully added a user activity to the app that integrates with Windows Timeline, and you have also added a notification to the app that is triggered when users create a new expense. However, the notification doesn't yet work because the app requires package identity to use the notifications API. To learn how to build an MSIX package for the app to obtain package identity and gain other deployment benefits, see <a href="modernize-wpf-tutorial-5.html">Part 5: Package and deploy with MSIX</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/modernize-wpf-tutorial-4.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

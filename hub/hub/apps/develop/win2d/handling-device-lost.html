@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Handling device lost </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Handling device lost ">
+    
+    <meta name="description" content="An explanation of how to correctly manage &quot;device lost&quot; scenarios with Win2D.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="handling-device-lost">Handling device lost</h1>
+
+<p>&quot;Device lost&quot; refers to a situation where the GPU graphics device becomes unusable for further rendering. This can occur due to GPU hardware malfunction, driver bugs, driver software updates, or switching the app from one GPU to another. A lost device can no longer be used, and any attempt to do so from Win2D will throw an exception. To recover from this situation, the app must create a new device and then recreate all its graphics resources.</p>
+<p>Not all apps bother trying to recover from device lost. This is a (hopefully!) rare situation, so some developers will just let their apps crash if it occurs. For those who prefer to handle device lost in a robust way, this article explains how.</p>
+<h2 id="device-lost-when-using-xaml-controls">Device lost when using XAML controls</h2>
+<p>The Win2D controls (<a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm"><code>CanvasControl</code></a>, <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm"><code>CanvasVirtualControl</code></a> and <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm"><code>CanvasAnimatedControl</code></a>) attempt to automatically handle device lost on behalf of the app.</p>
+<p>When device lost is detected, these controls will recreate their <code>CanvasDevice</code> and then raise the <code>CreateResources</code> event passing a <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm"><code>CanvasCreateResourcesReason</code></a> of <a href="https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm"><code>NewDevice</code></a>. Apps should respond to this event by recreating all their graphics resources using the new device, and updating any data structures that may contain references to the old, no-longer-valid resources.</p>
+<p>The controls can automatically catch and handle device lost exceptions that are thrown by their <code>CreateResources</code>, <code>Update</code>, <code>Draw</code>, or <code>RegionsInvalidated</code> event handlers. If you call Win2D drawing APIs from other places (for instance in a pointer or keyboard input event handler) then see the next section.</p>
+<h2 id="manually-handling-device-lost">Manually handling device lost</h2>
+<p>If you are <a href="https://microsoft.github.io/Win2D/WinUI2/html/WithoutControls.htm">using Win2D without the built-in controls</a> or from outside the <code>CreateResources</code>, <code>Update</code> or <code>Draw</code> event handlers, then it is your responsibility to catch and report lost device exceptions. This is done with the <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDevice_IsDeviceLost.htm"><code>IsDeviceLost(Int32)</code></a> and <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDevice_RaiseDeviceLost.htm"><code>RaiseDeviceLost()</code></a> methods:</p>
+<pre><code class="lang-csharp">try
+{
+    DrawStuff();
+}
+catch (Exception e) where canvasDevice.IsDeviceLost(e.ErrorCode)
+{
+    canvasDevice.RaiseDeviceLost();
+}
+</code></pre>
+<p>Calling <code>RaiseDeviceLost</code> tells any controls that are sharing this device to initiate their lost device recovery path. If you got your device from somewhere other than a control, use the <a href="https://microsoft.github.io/Win2D/WinUI2/html/E_Microsoft_Graphics_Canvas_CanvasDevice_DeviceLost.htm"><code>DeviceLost</code></a> event to be informed when it is lost.</p>
+<h2 id="how-to-test-device-lost-handling">How to test device lost handling</h2>
+<p>The easiest way to test that your app will do the right thing in response to device lost is to disable your hardware GPU while the app is running:</p>
+<ul>
+<li>Open Device Manager (Explorer window -&gt; right-click 'This PC' -&gt; 'Properties' -&gt; 'Device Manager')</li>
+<li>Expand the 'Display adapters' node</li>
+<li>Right-click the entry for your GPU and click 'Disable'
+This will bypass your hardware GPU, at which point Windows switches over to a WARP software rendering device, and all active apps experience a device lost.</li>
+</ul>
+<p>Don't forget to reenable your GPU after performing this test! If you want to test device lost more than once, it's best to restart your app each time (always launch it with the GPU enabled). Repeatedly toggling the GPU on and off while an app is running doesn't reliably cause lost devices as it may just continue using the WARP software device.</p>
+<p>While testing lost device handling, you probably also want to make sure your app deals correctly with dynamic <a href="dpi-and-dips.html">display DPI changes</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/handling-device-lost.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

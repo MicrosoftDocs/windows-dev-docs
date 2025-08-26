@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windowing functionality migration </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windowing functionality migration ">
+    
+    <meta name="description" content="This topic contains guidance related to window management, including migrating from UWP&#39;s [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) or [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow) to the Window App SDK [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow).">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windowing-functionality-migration">Windowing functionality migration</h1>
+
+<p>This topic contains guidance related to window management, including migrating from UWP's <a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>ApplicationView</strong></a>/<a href="/uwp/api/windows.ui.core.corewindow"><strong>CoreWindow</strong></a> or <a href="/uwp/api/windows.ui.windowmanagement.appwindow"><strong>AppWindow</strong></a> to the Window App SDK <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>Microsoft.UI.Windowing.AppWindow</strong></a>.</p>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>Microsoft.UI.Windowing.AppWindow</strong></a></li>
+<li><a href="/uwp/api/windows.ui.core.corewindow.dispatcher"><strong>Windows.UI.Core.CoreWindow.Dispatcher</strong></a> property</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue"><strong>Microsoft.UI.Window.DispatcherQueue</strong></a> property</li>
+</ul>
+<h2 id="summary-of-api-andor-feature-differences">Summary of API and/or feature differences</h2>
+<p>The Windows App SDK provides a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>Microsoft.UI.Windowing.AppWindow</strong></a> class that's based on the Win32 HWND model. That <strong>AppWindow</strong> class is the Windows App SDK's version of UWP's <a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>ApplicationView</strong></a>/<a href="/uwp/api/windows.ui.core.corewindow"><strong>CoreWindow</strong></a> and <a href="/uwp/api/windows.ui.windowmanagement.appwindow"><strong>AppWindow</strong></a>.</p>
+<p>To take advantage of the Windows App SDK windowing APIs means that you'll migrate your UWP code to use the Win32 model. For more info about the Windows App SDK <strong>AppWindow</strong>, see <a href="../../windowing/windowing-overview.md">Manage app windows</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <a href="../../windowing/windowing-overview.md">Manage app windows</a> topic contains a code example demonstrating how to retrieve an <strong>AppWindow</strong> from a WinUI 3 window. In your WinUI 3 app, use that code pattern so that you can call the <strong>AppWindow</strong> APIs mentioned in the rest of this topic.</p>
+</div>
+<h2 id="window-types-in-uwp-versus-the-windows-app-sdk">Window types in UWP versus the Windows App SDK</h2>
+<p>In a UWP app, you can host window content using <a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>ApplicationView</strong></a>/<a href="/uwp/api/windows.ui.core.corewindow"><strong>CoreWindow</strong></a>, or <a href="/uwp/api/windows.ui.windowmanagement.appwindow"><strong>AppWindow</strong></a>. The work involved in migrating that code to the Windows App SDK depends on which of those two windowing models your UWP app uses. If you're familiar with UWP's <a href="/uwp/api/windows.ui.windowmanagement.appwindow"><strong>Windows.UI.WindowManagement.AppWindow</strong></a>, then you might see similarities between that and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>Microsoft.UI.Windowing.AppWindow</strong></a>.</p>
+<h3 id="uwp-window-types">UWP window types</h3>
+<ul>
+<li><a href="/uwp/api/windows.ui.viewmanagement.applicationview"><strong>Windows.UI.ViewManagement.ApplicationView</strong></a>/<a href="/uwp/api/windows.ui.core.corewindow"><strong>Windows.UI.Core.CoreWindow</strong></a>.</li>
+<li><a href="/uwp/api/windows.ui.windowmanagement.appwindow"><strong>Windows.UI.WindowManagement.AppWindow</strong></a>. <strong>AppWindow</strong> consolidates the UI thread and the window that the app uses to display content. UWP apps that use <strong>AppWindow</strong> will have less work to do than <strong>ApplicationView</strong>/<strong>CoreWindow</strong> apps to migrate to the Windows App SDK <strong>AppWindow</strong>.</li>
+</ul>
+<h3 id="windows-app-sdk-window-type">Windows App SDK window type</h3>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>Microsoft.UI.Windowing.AppWindow</strong></a> is the high-level abstraction of a system-managed container of the content of an app.</li>
+</ul>
+<p>Keep in mind that the differences in windowing models between UWP and Win32 mean that there's not a direct 1:1 mapping between the UWP API surface and the Windows App SDK API surface. Even for class and member names that <em>do</em> carry over from UWP (reflected in this topic's mapping tables), behavior might also differ.</p>
+<h2 id="splash-screens">Splash screens</h2>
+<p>Unlike UWP apps, Win32 apps don't by default show a splash screen on launch. UWP apps relying on this feature for their launch experience might choose to implement a custom transition to their first app window.</p>
+<h2 id="create-show-close-and-destroy-a-window">Create, show, close, and destroy a window</h2>
+<p>The lifetime of a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>Microsoft.UI.Windowing.AppWindow</strong></a> is the same as for an HWND; meaning that the <strong>AppWindow</strong> object is available immediately after the window has been created, and is destroyed when the window is closed.</p>
+<h3 id="create-and-show">Create and show</h3>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create"><strong>AppWindow.Create</strong></a> creates an app window with the default configuration. Creating and showing a window is only necessary for scenarios where you're not working with a UI framework. If you're migrating your UWP app to a Win32-compatible UI framework, then you can still reach your <strong>AppWindow</strong> object from an already-created window by using the windowing interop methods.</p>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.core.coreapplication.createnewview"><strong>CoreApplication.CreateNewView</strong></a><br>or<br><a href="/uwp/api/windows.ui.core.corewindow.getforcurrentthread"><strong>CoreWindow.GetForCurrentThread</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync"><strong>AppWindow.TryCreateAsync</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create"><strong>AppWindow.Create</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.core.corewindow.activate"><strong>CoreWindow.Activate</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindow.tryshowasync"><strong>AppWindow.TryShowAsync</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.show"><strong>AppWindow.Show</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="close">Close</h3>
+<p>In UWP, <a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryconsolidateasync"><strong>ApplicationView.TryConsolidateAsync</strong></a> is the programmatic equivalent of the user initiating a close gesture. This concept of <em>consolidation</em> (in UWP's <strong>ApplicationView</strong>/<strong>CoreWindow</strong> windowing model) doesn't exist in Win32. Win32 doesn't require that windows exist in separate threads. Replicating the UWP's <strong>ApplicationView</strong>/<strong>CoreWindow</strong> windowing model would require the developer to create a new thread, and create a new window there. Under the Win32 model, the default system behavior is <strong>Close</strong> &gt; <strong>Hide</strong> &gt; <strong>Destroy</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryconsolidateasync"><strong>ApplicationView.TryConsolidateAsync</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindow.closeasync"><strong>AppWindow.CloseAsync</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroy"><strong>AppWindow.Destroy</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="basic-window-customization">Basic window customization</h2>
+<p>As you migrate from UWP to the Windows App SDK, you can expect the same experience from your default <strong>AppWindow</strong>. But if needed, you can change the default <strong>Microsoft.UI.Windowing.AppWindow</strong> for customized windowing experiences. See <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow"><strong>Microsoft.UI.Windowing.AppWindow</strong></a> for more info on how to customize your windows.</p>
+<h3 id="resizing-a-window">Resizing a window</h3>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryresizeview"><strong>ApplicationView.TryResizeView</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindow.requestsize"><strong>AppWindow.RequestSize</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize"><strong>AppWindow.Resize</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.core.corewindow.bounds"><strong>CoreWindow.Bounds</strong></a> (commonly appears in C# as <code>CoreWindow.GetForCurrentThread.Bounds</code>)</td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowplacement.size"><strong>AppWindowPlacement.Size</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size"><strong>AppWindow.Size</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="positioning-a-window">Positioning a window</h3>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not possible</td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindow.getplacement"><strong>AppWindow.GetPlacement</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.position"><strong>AppWindow.Position</strong></a></td>
+</tr>
+<tr>
+<td>Not possible</td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindow.requestmoveadjacenttocurrentview"><strong>Appwindow.RequestMoveXxx</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.move"><strong>AppWindow.Move</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="window-title">Window title</h3>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationview.title"><strong>ApplicationView.Title</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindow.title"><strong>AppWindow.Title</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title"><strong>AppWindow.Title</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="compact-overlay-and-full-screen">Compact overlay, and full-screen</h2>
+<p>Apps that enter into compact overlay, or full-screen, should take advantage of the Windows App SDK <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter"><strong>AppWindowPresenter</strong></a>. If you're familiar with the UWP <strong>AppWindow</strong>, then you might already be familiar with the concept of presenters.</p>
+<p>There isn't a 1:1 mapping of functionality and behavior from UWP app window presenters to Windows App SDK app window presenters. If you have a UWP <strong>ApplicationView</strong>/<strong>CoreWindow</strong> app, then you can still have compact overlay (picture-in-picture) or full-screen windowing experiences in your app, but the concept of presenters might be new to you. For more information on app window presenters, see <a href="../../windowing/windowing-overview.md">Presenters</a>. By default, an overlapped presenter is applied to an <strong>AppWindow</strong> at creation time. <strong>CompactOverlay</strong> and <strong>FullScreen</strong> are the only available presenters, aside from default.</p>
+<h3 id="compact-overlay">Compact overlay</h3>
+<p>If you used UWP's <strong>ApplicationViewMode</strong> or <strong>AppWindowPresentionKind</strong> to present a compact overlay window, then you should use the compact overlay <strong>AppWindowPresenterKind</strong>. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter"><strong>Microsoft.UI.Windowing.CompactOverlayPresenter</strong></a> supports only three fixed window sizes at a 16:9 aspect ratio, and can't be resized by the user. Instead of <strong>ApplicationViewMode.TryEnterViewModeAsync</strong> or <strong>AppWindowPresenterKind.RequestPresentation</strong>, you should use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenter_"><strong>AppWindow.SetPresenter</strong></a> to change the presentation of the <strong>AppWindow</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewmode"><strong>ApplicationViewMode.CompactOverlay</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind"><strong>AppWindowPresentationKind.CompactOverlay</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind"><strong>AppWindowPresenterKind.CompactOverlay</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryenterviewmodeasync"><strong>ApplicationView.TryEnterViewModeAsync</strong></a> with <strong>ApplicationViewMode.CompactOverlay</strong></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation#Windows_UI_WindowManagement_AppWindowPresenter_RequestPresentation_Windows_UI_WindowManagement_AppWindowPresentationKind_"><strong>AppWindowPresenter.RequestPresentation</strong></a> with <strong>AppWindowPresenterKind.CompactOverlay</strong></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_"><strong>AppWindow.SetPresenter</strong></a> with <strong>AppWindowPresenterKind.CompactOverla</strong>y</td>
+</tr>
+</tbody>
+</table>
+<h3 id="full-screen">Full-screen</h3>
+<p>If you used UWP's <strong>ApplicationViewWindowingMode</strong> or <strong>AppWindowPresentionKind</strong> classes to present a full-screen window, then you should use the full-screen <strong>AppWindowPresenterKind</strong>. The Windows App SDK supports only the most restrictive full-screen experience (that is, when <strong>FullScreen</strong> is <strong>IsExclusive</strong>). For <strong>ApplicationView</strong>/<strong>CoreWindow</strong>, you can use the <a href="/uwp/api/windows.ui.viewmanagement.applicationview.exitfullscreenmode"><strong>ApplicationView.ExitFullScreenMode</strong></a> to take the app out of full-screen. When using presenters, you can take an app out of full-screen by setting the presenter back to overlapped/default by using <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_"><strong>AppWindow.SetPresenter</strong></a>.</p>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewwindowingmode"><strong>ApplicationViewWindowingMode.FullScreen</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind"><strong>AppWindowPresentationKind.FullScreen</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind"><strong>AppWindowPresenterKind.FullScreen</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationview.tryenterfullscreenmode"><strong>ApplicationView.TryEnterFullScreenMode</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation#Windows_UI_WindowManagement_AppWindowPresenter_RequestPresentation_Windows_UI_WindowManagement_AppWindowPresentationKind_"><strong>AppWindowPresenter.RequestPresentation</strong></a> with <strong>AppWindowPresenterKind.FullScreen</strong></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_"><strong>AppWindow.SetPresenter</strong></a> with <strong>AppWindowPresenterKind.FullScreen</strong></td>
+</tr>
+</tbody>
+</table>
+<p>For more details on how to work with app window presenters, see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">Windowing gallery sample</a>. It demonstrates how to toggle different app window presenter states.</p>
+<h2 id="custom-title-bar">Custom title bar</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Title bar customization APIs currently work on Windows 11 only. We recommend that you check <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported"><strong>AppWindowTitleBar.IsCustomizationSupported</strong></a> in your code before you call these APIs.</p>
+</div>
+<p>If your app uses a default title bar, then there's no additional title bar work needed when you migrate to Win32. If on the other hand your UWP app has a custom title bar, then it's possible to recreate the following scenarios in your Windows App SDK app.</p>
+<ol>
+<li>Customize the system-drawn title bar</li>
+<li>App-drawn custom title bar</li>
+</ol>
+<p>Code that uses the UWP <a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar"><strong>ApplicationViewTitleBar</strong></a>, <a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar"><strong>CoreApplicationViewTitleBar</strong></a>, and <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a> classes migrates to using the Windows App SDK <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar"><strong>Microsoft.UI.Windowing.AppWindowTitleBar</strong></a> class.</p>
+<h3 id="customize-the-system-drawn-title-bar">Customize the system-drawn title bar</h3>
+<p>Here's a table of the color customization APIs.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar"><strong>AppWindowTitleBar.ExtendsContentIntoTitleBar</strong></a> is <code>true</code>, transparency is supported only for the following properties: <strong>AppWindowTitleBar.ButtonBackgroundColor</strong>, <strong>AppWindowTitleBar.ButtonInactiveBackgroundColor</strong>, <strong>AppWindowTitleBar.ButtonPressedBackgroundColor</strong>, <strong>AppWindowTitleBar.ButtonHoverBackgroundColor</strong> and <strong>AppWindowTitleBar.BackgroundColor</strong> (implicitly set).</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Properties of <a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar"><strong>ApplicationViewTitleBar</strong></a></td>
+<td>Properties of <a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a></td>
+<td>Properties of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar"><strong>AppWindowTitleBar</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.backgroundcolor"><strong>BackgroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.backgroundcolor"><strong>BackgroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.backgroundcolor"><strong>BackgroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonbackgroundcolor"><strong>ButtonBackgroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttonbackgroundcolor"><strong>ButtonBackgroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonbackgroundcolor"><strong>ButtonBackgroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonforegroundcolor"><strong>ButtonForegroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttonforegroundcolor"><strong>ButtonForegroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonforegroundcolor"><strong>ButtonForegroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonhoverbackgroundcolor"><strong>ButtonHoverBackgroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttonhoverbackgroundcolor"><strong>ButtonHoverBackgroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonhoverbackgroundcolor"><strong>ButtonHoverBackgroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonhoverforegroundcolor"><strong>ButtonHoverForegroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttonhoverforegroundcolor"><strong>ButtonHoverForegroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonhoverforegroundcolor"><strong>ButtonHoverForegroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttoninactivebackgroundcolor"><strong>ButtonInactiveBackgroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttoninactivebackgroundcolor"><strong>ButtonInactiveBackgroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttoninactivebackgroundcolor"><strong>ButtonInactiveBackgroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttoninactiveforegroundcolor"><strong>ButtonInactiveForegroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttoninactiveforegroundcolor"><strong>ButtonInactiveForegroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttoninactiveforegroundcolor"><strong>ButtonInactiveForegroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonpressedbackgroundcolor"><strong>ButtonPressedBackgroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttonpressedbackgroundcolor"><strong>ButtonPressedBackgroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonpressedbackgroundcolor"><strong>ButtonPressedBackgroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.buttonpressedforegroundcolor"><strong>ButtonPressedForegroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.buttonpressedforegroundcolor"><strong>ButtonPressedForegroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonpressedforegroundcolor"><strong>ButtonPressedForegroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.foregroundcolor"><strong>ForegroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.foregroundcolor"><strong>ForegroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.foregroundcolor"><strong>ForegroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.inactivebackgroundcolor"><strong>InactiveBackgroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.inactivebackgroundcolor"><strong>InactiveBackgroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.inactivebackgroundcolor"><strong>InactiveBackgroundColor</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.viewmanagement.applicationviewtitlebar.inactiveforegroundcolor"><strong>InactiveForegroundColor</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.inactiveforegroundcolor"><strong>InactiveForegroundColor</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.inactiveforegroundcolor"><strong>InactiveForegroundColor</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p>These Windows App SDK APIs are for further customization of the system-drawn title bar in addition to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title"><strong>AppWindow.Title</strong></a> API.</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon"><strong>AppWindow.SetIcon</strong></a>. Sets the title bar and taskbar icon picture using either an hIcon handle or a string path to a resource or to a file.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iconshowoptions"><strong>AppWindowTitleBar.IconShowOptions</strong></a>. Gets or sets a value that specifies how the window icon is displayed in the title bar. Supports two values currently—<strong>HideIconAndSystemMenu</strong> and <strong>ShowIconAndSystemMenu</strong>.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.resettodefault"><strong>AppWindowTitleBar.ResetToDefault</strong></a>. Resets the current title bar back to the default settings for the window.</li>
+</ul>
+<h3 id="app-drawn-custom-title-bar-full-customization">App-drawn custom title bar (full customization)</h3>
+<p>If you're migrating to using <strong>AppWindowTitleBar</strong>, then we recommend that you check <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported"><strong>AppWindowTitleBar.IsCustomizationSupported</strong></a> in your code before calling the following custom title bar APIs.</p>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>Windows App SDK AppWindow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar"><strong>CoreApplicationViewTitleBar.ExtendViewIntoTitleBar</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar"><strong>AppWindowTitleBar.ExtendsContentIntoTitleBar</strong></a><br>The platform continues to draw the <strong>Minimize</strong>/<strong>Maximize</strong>/<strong>Close</strong> buttons for you, and reports the occlusion information.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.systemoverlayleftinset"><strong>CoreApplicationViewTitleBar.SystemOverlayLeftInset</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.leftinset"><strong>AppWindowTitleBar.LeftInset</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.systemoverlayrightinset"><strong>CoreApplicationViewTitleBar.SystemOverlayRightInset</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.rightinset"><strong>AppWindowTitleBar.RightInset</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.height"><strong>CoreApplicationViewTitleBar.Height</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height"><strong>AppWindowTitleBar.Height</strong></a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebarocclusion"><strong>AppWindowTitleBarOcclusion</strong></a><br><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.gettitlebarocclusions"><strong>AppWindowTitleBar.GetTitleBarOcclusions</strong></a></td>
+<td>Represents the system-reserved regions of the app window that will occlude app content if <strong>ExtendsContentIntoTitleBar</strong> is true. The Windows App SDK <strong>AppWindow</strong> left and right inset information, coupled with title bar height, provide the same information.<br><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.leftinset"><strong>AppWindowTitleBar.LeftInset</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.rightinset"><strong>AppWindowTitleBar.RightInset</strong></a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height"><strong>AppWindowTitleBar.Height</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p>These Windows App SDK APIs are for full title bar customization.</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles"><strong>AppWindowTitleBar.SetDragRectangles</strong></a>. Sets the drag regions for the window.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.resettodefault"><strong>AppWindowTitleBar.ResetToDefault</strong></a>. Resets the current title bar back to the default settings for the window.</li>
+</ul>
+<p>These UWP <strong>AppWindow</strong> APIs have no direct 1:1 mapping to a Windows App SDK API.</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebarvisibility"><strong>AppWindowTitleBarVisibility</strong></a>. Defines constants that specify the preferred visibility of an <strong>AppWindowTitleBar</strong>.</li>
+<li><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.getpreferredvisibility"><strong>AppWindowTitleBar.GetPreferredVisibility</strong></a>. Retrieves the preferred visibility mode for the title bar.</li>
+<li><a href="/uwp/api/windows.ui.windowmanagement.appwindowtitlebar.setpreferredvisibility"><strong>AppWindowTitleBar.SetPreferredVisibility</strong></a>. Sets the preferred visibility mode for the title bar.</li>
+</ul>
+<p>For more details on how to work with <strong>AppWindowTitleBar</strong>, see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">Windowing gallery sample</a>. It demonstrates how to create a custom color title bar and how to draw a custom title bar.</p>
+<h2 id="event-handling">Event handling</h2>
+<p>If your UWP app uses the <a href="/uwp/api/windows.ui.windowmanagement.appwindow.changed"><strong>AppWindow.Changed</strong></a> event, then you can migrate that code to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed"><strong>Microsoft.UI.Windowing.AppWindow.Changed</strong></a> event.</p>
+<h3 id="size-changed-event">Size changed event</h3>
+<p>When migrating size changed event-handling code, you should switch to using the Windows App SDK <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange"><strong>AppWindowChangedEventArgs.DidSizeChange</strong></a> property. The value is <code>true</code> if the size of the app window changed, otherwise it's <code>false</code>.</p>
+<table>
+<thead>
+<tr>
+<th>UWP ApplicationView/CoreWindow</th>
+<th>UWP AppWindow</th>
+<th>Windows App SDK</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.core.corewindow.sizechanged"><strong>CoreWindow.SizeChanged</strong></a></td>
+<td><a href="/uwp/api/windows.ui.windowmanagement.appwindowchangedeventargs.didsizechange"><strong>AppWindowChangedEventArgs.DidSizeChange</strong></a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange"><strong>AppWindowChangedEventArgs.DidSizeChange</strong></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="mainpage-and-mainwindow">MainPage and MainWindow</h2>
+<p>When you create a new UWP project in Visual Studio, the project template provides you with a <strong>MainPage</strong> class. For your app, you might have renamed that class (and/or added more pages and user controls). The project template also provides you with navigation code in the methods of the <strong>App</strong> class.</p>
+<p>When you create a new Windows App SDK project in Visual Studio, the project template provides you with a <strong>MainWindow</strong> class (of type <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Microsoft.UI.Xaml.Window</strong></a>), but no <strong>Page</strong>. And the project template doesn't provide any navigation code.</p>
+<p>However, you have the option to add pages and user controls to your Windows App SDK project. For example, you could add a new page item to the project (<strong>WinUI</strong> &gt; <strong>Blank Page (WinUI 3)</strong>), and name it <code>MainPage.xaml</code>, or some other name. That would add to your project a new class of type <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page"><strong>Microsoft.UI.Xaml.Controls.Page</strong></a>. Then, for info about adding navigation code to the project, see <a href="winui3.html#do-i-need-to-implement-page-navigation">Do I need to implement page navigation?</a>.</p>
+<p>For Windows App SDK apps that are simple enough, you needn't create pages or user controls, and you can copy your XAML markup and code-behind into <strong>MainWindow</strong>. But for info about exceptions to that workflow, see <a href="winui3.html#visual-state-manager-and-pageresources">Visual State Manager, and Page.Resources</a>.</p>
+<h2 id="change-corewindowdispatcher-to-windowdispatcherqueue">Change CoreWindow.Dispatcher to Window.DispatcherQueue</h2>
+<p>Some use cases for UWP's <a href="/uwp/api/windows.ui.core.corewindow"><strong>Windows.UI.Core.CoreWindow</strong></a> class migrate to the Windows App SDK's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Microsoft.UI.Xaml.Window</strong></a>.</p>
+<p>For example, if you're using the <a href="/uwp/api/windows.ui.core.corewindow.dispatcher"><strong>Windows.UI.Core.CoreWindow.Dispatcher</strong></a> property in your UWP app, then the solution is <em>not</em> to migrate to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcher"><strong>Microsoft.UI.Xaml.Window.Dispatcher</strong></a> property (which always returns null). Instead, migrate to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue"><strong>Microsoft.UI.Xaml.Window.DispatcherQueue</strong></a> property, which returns a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue"><strong>Microsoft.UI.Dispatching.DispatcherQueue</strong></a>.</p>
+<p>For more info, and code examples, see <a href="threading.html#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue">Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../../support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="threading.html">Migrate your threading functionality</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

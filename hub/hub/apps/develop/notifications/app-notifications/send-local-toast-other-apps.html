@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Send a local toast notification from other types of unpackaged apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Send a local toast notification from other types of unpackaged apps ">
+    
+    <meta name="description" content="Learn how to send a local toast notification from other types of unpackaged apps, and handle the user clicking the toast.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="send-a-local-app-notification-from-other-types-of-unpackaged-apps">Send a local app notification from other types of unpackaged apps</h1>
+
+<p>This topic is for you if you're developing an unpackaged app that's not C# or C++.</p>
+<p>That is, if you're <em>not</em> developing a packaged app (see <a href="../../../winui/winui3/create-your-first-winui3-app.html#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app">Create a new project for a packaged WinUI 3 desktop app</a>),
+and you're not developing a packaged app with external location (see <a href="../../../desktop/modernize/grant-identity-to-nonpackaged-apps.html">Grant package identity by packaging with external location</a>), and your app isn't C# or C++.</p>
+<p>An app notification is a message that an app can construct and deliver to the user while the user is not currently using your app. This quickstart walks you through the steps to create, deliver, and display a Windows app notification. This quickstart uses local notifications, which are the simplest notification to implement.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're writing a C# app, then please see the <a href="send-local-toast.html">C# documentation</a>. If you're writing a C++ app, the please see the <a href="send-local-toast-cpp-uwp.html">C++ UWP</a> or <a href="send-local-toast-desktop-cpp-wrl.html">C++ WRL</a> documentation.</p>
+</div>
+<h2 id="step-1-register-your-app-in-the-registry">Step 1: Register your app in the registry</h2>
+<p>You first need to register your app's information in the registry, including a unique AUMID that identifies your app, your app's display name, your icon, and a COM activator's GUID.</p>
+<pre><code class="lang-xml">&lt;registryKey keyName=&quot;HKEY_LOCAL_MACHINE\Software\Classes\AppUserModelId\&lt;YOUR_AUMID&gt;&quot;&gt;
+    &lt;registryValue
+        name=&quot;DisplayName&quot;
+        value=&quot;My App&quot;
+        valueType=&quot;REG_EXPAND_SZ&quot; /&gt;
+    &lt;registryValue
+        name=&quot;IconUri&quot;
+        value=&quot;C:\icon.png&quot;
+        valueType=&quot;REG_EXPAND_SZ&quot; /&gt;
+    &lt;registryValue
+        name=&quot;IconBackgroundColor&quot;
+        value=&quot;AARRGGBB&quot;
+        valueType=&quot;REG_SZ&quot; /&gt;
+    &lt;registryValue
+        name=&quot;CustomActivator&quot;
+        value=&quot;{YOUR COM ACTIVATOR GUID HERE}&quot;
+        valueType=&quot;REG_SZ&quot; /&gt;
+&lt;/registryKey&gt;
+</code></pre>
+<h2 id="step-2-set-up-your-com-activator">Step 2: Set up your COM activator</h2>
+<p>Notifications can be clicked at any point in time, even when your app isn't running. Thus, notification activation is handled through a COM activator. Your COM class must implement the <code>INotificationActivationCallback</code> interface. The GUID for your COM class must match the GUID you specified in the registry CustomActivator value.</p>
+<pre><code class="lang-cpp">struct callback : winrt::implements&lt;callback, INotificationActivationCallback&gt;
+{
+    HRESULT __stdcall Activate(
+        LPCWSTR app,
+        LPCWSTR args,
+        [[maybe_unused]] NOTIFICATION_USER_INPUT_DATA const* data,
+        [[maybe_unused]] ULONG count) noexcept final
+    {
+        try
+        {
+            std::wcout &lt;&lt; this_app_name &lt;&lt; L&quot; has been called back from a notification.&quot; &lt;&lt; std::endl;
+            std::wcout &lt;&lt; L&quot;Value of the 'app' parameter is '&quot; &lt;&lt; app &lt;&lt; L&quot;'.&quot; &lt;&lt; std::endl;
+            std::wcout &lt;&lt; L&quot;Value of the 'args' parameter is '&quot; &lt;&lt; args &lt;&lt; L&quot;'.&quot; &lt;&lt; std::endl;
+            return S_OK;
+        }
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
+    }
+};
+</code></pre>
+<h2 id="step-3-send-an-app-notification">Step 3: Send an app notification</h2>
+<p>In Windows 10, your app notification content is described using an adaptive language that allows great flexibility with how your notification looks. See the <a href="adaptive-interactive-toasts.html">App notification content</a> documentation for more information.</p>
+<p>We'll start with a simple text-based notification. Construct the notification content (using the Notifications library), and show the notification!</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must use your AUMID from earlier when sending the notification so that the notification appears from your app.</p>
+</div>
+<img alt="Simple text notification" src="images/send-toast-01.png" width="364">
+<pre><code class="lang-cpp">// Construct the toast template
+XmlDocument doc;
+doc.LoadXml(L&quot;&lt;toast&gt;\
+    &lt;visual&gt;\
+        &lt;binding template=\&quot;ToastGeneric\&quot;&gt;\
+            &lt;text&gt;&lt;/text&gt;\
+            &lt;text&gt;&lt;/text&gt;\
+        &lt;/binding&gt;\
+    &lt;/visual&gt;\
+&lt;/toast&gt;&quot;);
+
+// Populate with text and values
+doc.SelectSingleNode(L&quot;//text[1]&quot;).InnerText(L&quot;Andrew sent you a picture&quot;);
+doc.SelectSingleNode(L&quot;//text[2]&quot;).InnerText(L&quot;Check this out, The Enchantments in Washington!&quot;);
+
+// Construct the notification
+ToastNotification notif{ doc };
+
+// And send it! Use the AUMID you specified earlier.
+ToastNotificationManager::CreateToastNotifier(L&quot;MyPublisher.MyApp&quot;).Show(notif);
+</code></pre>
+<h2 id="step-4-handling-activation">Step 4: Handling activation</h2>
+<p>Your COM activator will be activated when your notification is clicked.</p>
+<h2 id="more-details">More details</h2>
+<h3 id="aumid-restrictions">AUMID restrictions</h3>
+<p>The AUMID should be at most 129 characters long. If the AUMID is more than 129 characters long, scheduled toast notifications won't work - you'll get the following exception when adding a scheduled notification: <em>The data area passed to a system call is too small. (0x8007007A)</em>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/send-local-toast-other-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

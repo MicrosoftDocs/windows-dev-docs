@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configure Dev Drive policy for enterprise business devices </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configure Dev Drive policy for enterprise business devices ">
+    
+    <meta name="description" content="Group Policy managers will need to make policy updates in order to enable Dev Drive on Windows 11 devices. Find guidance for using Microsoft InTune, Configuration Manager, or Local Group Policy Editor to update policy, enable Dev Drive, and set security filter permissions.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-configure-dev-drive-security-policy-for-enterprise-business-devices">How to configure Dev Drive security policy for enterprise business devices</h1>
+
+<p>Enterprise-level administrators are often responsible for managing security across many different Windows devices within an organization. There are multiple ways to configure the policies that control whether new features are enabled as the become available in new Windows releases. This guide covers important information about Windows 11 <a href="index.html">Dev Drive</a> storage volume features and how to configure Group Policy for your organization to enable developers to use this performance-optimized storage format while maintaining security and control over attaching file system filters.</p>
+<p>Guidance on how to enable Group Policy can be found below using your preferred policy management tool:</p>
+<ul>
+<li><a href="#use-microsoft-intune-to-update-group-policy-for-dev-drive">Microsoft Intune</a>,</li>
+<li><a href="#use-microsoft-configuration-manager-to-update-group-policy-for-dev-drive">Microsoft Configuration Manager</a> (ConfigMgr, formerly MEMCM/SCCM), or</li>
+<li><a href="#use-windows-11-local-group-policy-editor-to-update-group-policy-for-dev-drive">Windows 11 Local Group Policy Editor</a>.</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Windows 11, Build #10.0.22621.2338 or later (<a href="ms-settings:windowsupdate">Check for Windows updates</a>)</li>
+<li>Recommend 16gb memory (minimum of 8gb)</li>
+<li>Minimum 50gb free disk space</li>
+<li>Dev Drives are available on all Windows SKU versions.</li>
+</ul>
+<h2 id="temporary-enterprise-feature-control-disables-dev-drive">Temporary enterprise feature control disables Dev Drive</h2>
+<p>New features and enhancements are introduced through the monthly cumulative update to provide continuous innovation for Windows 11. To give organizations time to plan and prepare, some of these new features are temporarily turned off by default using <a href="/windows/whats-new/temporary-enterprise-feature-control">Temporary enterprise feature control in Windows 11</a>.</p>
+<p><strong>Dev Drive will be automatically disabled for devices that have their Windows updates managed by policies.</strong> Disabling the ability to create a Dev Drive is only temporary to allow security administrators time to decide on and roll out new policy updates. Guidance for determining and configuring those policy updates is outlined below.</p>
+<h2 id="determine-group-policy-for-dev-drive-storage-enablement-and-antivirus-filter-security">Determine Group Policy for Dev Drive storage enablement and antivirus filter security</h2>
+<p>Group Policy is a Windows feature that lets enterprise administrators manage the settings of work devices and have some control over what setting changes user accounts (local administrators) are allowed to make in a business environment.</p>
+<p>Antivirus filters, including both Microsoft Defender and 3rd-party antivirus filters, are attached to a Dev Drive by default. The default settings for Dev Drive storage volumes also allow local device administrators to control what filters are attached. This means that a local device administrator could configure the system to remove default antivirus filters, so that no antivirus filters are attached to the Dev Drive. If this is a concern, Group Policy may be configured to ensure that antivirus filters remain attached when Dev Drive is enabled. Additionally, an allowed file system filter list may be defined.</p>
+<h2 id="update-group-policy-to-enable-dev-drive">Update Group Policy to enable Dev Drive</h2>
+<p>The <strong>Enable Dev Drive</strong> policy settings include:</p>
+<ul>
+<li><strong>Not Configured</strong>: By default, the Dev Drive storage volume option will be turned off under the Temporary enterprise feature control policy until enabled by an enterprise administrator in the Group Policy.</li>
+<li><strong>Enabled</strong>: Enabling turns on the option to create <a href="index.html">Dev Drive</a> storage volumes.</li>
+<li><strong>Options - Let antivirus filter protect Dev Drives</strong>: Dev Drives are optimized for performance in developer scenarios, allowing the <strong>local</strong> administrator (user account) to choose which file system filters are attached. This also allows local administrators to detach the default antivirus features, unless the option to &quot;Let antivirus filter protect Dev Drives&quot; is checked. Checking this option forces default antivirus filters to remain attached.</li>
+<li><strong>Disabled</strong>: Disabling this setting turns off the ability to create and use Dev Drive storage volumes.</li>
+</ul>
+<h2 id="update-dev-drive-filter-attach-policy">Update Dev Drive filter attach policy</h2>
+<p>Additionally, there is a <strong>Dev Drive filter attach policy</strong> setting, which offers enterprise administrators control over what filters can be attached to a Dev Drive. Settings include:</p>
+<ul>
+<li><strong>Not Configured</strong>: By default, Dev Drive is optimized for performance, with Microsoft Defender and 3rd-party antivirus filters attached, but with no other file system filters. This default setting allows local administrators to attach or detach filters, including the default antivirus filters. Checking the optional &quot;Let antivirus filter protect Dev Drives&quot; in the Enable Dev Drive policy above will force antivirus filters to remain attached even if no further filter policy is defined.</li>
+<li><strong>Enabled</strong>: Local administrators (user accounts) are allowed to attach or detach filters. Adding a Filter list enables enterprise administrators (at the Group Policy Domain level) to define what filters can be attached. Not including a filter list will enable any filter to be attached.</li>
+<li><strong>Disabled</strong>: Local administrators (user accounts) are not allowed to attach or detach filters.</li>
+</ul>
+<p>There are a few ways to enable the Dev Drive feature and update Group Policy:</p>
+<ul>
+<li><a href="#use-microsoft-intune-to-update-group-policy-for-dev-drive">Update Group Policy using Microsoft Intune</a></li>
+<li><a href="#use-microsoft-configuration-manager-to-update-group-policy-for-dev-drive">Update Group Policy using Microsoft Configuration Manager</a></li>
+<li><a href="#use-windows-11-local-group-policy-editor-to-update-group-policy-for-dev-drive">Update Group Policy using Windows 11 Local Group Policy Editor</a></li>
+</ul>
+<h2 id="use-microsoft-intune-to-update-group-policy-for-dev-drive">Use Microsoft Intune to update Group Policy for Dev Drive</h2>
+<p>To update Group Policy and enable <a href="index.html">Dev Drive</a> using <a href="/mem/intune/">Microsoft Intune)</a>:</p>
+<ol>
+<li><p>Open the Intune portal (<a href="https://endpoint.microsoft.com">https://endpoint.microsoft.com</a>) and log in with your credentials.</p>
+</li>
+<li><p>Create a profile:</p>
+<ol>
+<li>Devices &gt; Windows &gt; Configuration profiles &gt; Create profile</li>
+<li>Select Platform &gt; Windows 10 and later</li>
+<li>Select Profile type &gt; Settings catalog</li>
+</ol>
+<p><img src="..%5Cimages%5Cdev-drive-group-policy-intune1.png" alt="Screenshot of Microsoft Intune admin center Windows configuration profiles"></p>
+</li>
+<li><p>Set a custom profile name and description.</p>
+<p><img src="..%5Cimages%5Cdev-drive-group-policy-intune2.png" alt="Screenshot of Microsoft Intune creating a configuration profile"></p>
+</li>
+<li><p>Configure Dev Drive related settings:</p>
+<ol>
+<li>Search &quot;Dev Drive&quot; in settings picker or navigate to &quot;Administrative Templates\System\Filesystem&quot;</li>
+<li>Select Dev Drive related policies: <strong>Enable Dev Drive</strong> and <strong>Let antivirus filter protect Dev Drives</strong>, <strong>Dev Drive filter attach policy</strong> and <strong>Filter list</strong></li>
+</ol>
+<p><img src="..%5Cimages%5Cdev-drive-group-policy-intune3.png" alt="Screenshot of Microsoft Intune admin center Setting picker with Dev Drive results"></p>
+</li>
+<li><p>Configure the Dev Drive policy settings, complete the remaining configuration of Scope tags and Assignments, then select <strong>Create</strong></p>
+<p><img src="..%5Cimages%5Cdev-drive-group-policy-intune4.png" alt="Screenshot of Microsoft Intune admin center final profile configuration step to Review and Create"></p>
+</li>
+</ol>
+<h2 id="use-microsoft-configuration-manager-to-update-group-policy-for-dev-drive">Use Microsoft Configuration Manager to update Group Policy for Dev Drive</h2>
+<p>To update Group Policy and enable <a href="index.html">Dev Drive</a> using <a href="/mem/configmgr/">Microsoft Configuration Manager</a> (ConfigMgr, formerly MEMCM/SCCM), you can use the following PowerShell scripts. (<a href="/mem/configmgr/core/understand/introduction">What is Configuration Manager?</a>)</p>
+<p>The <a href="/mem/configmgr/core/understand/introduction#BKMK_Console">Configuration Manager console</a> has an integrated ability to run PowerShell scripts to update Group Policy settings across all computers in your network.</p>
+<ol>
+<li><p>Open the Microsoft Configuration Manager console. Select <strong>Software Library</strong> &gt; <strong>Scripts</strong> &gt; <strong>Create Script</strong>.</p>
+<p><img src="../images/dev-drive-group-policy-cfgmgr1.png" alt="Screenshot of Microsoft Configuration Manager Create Script window showing details including script name, description, language, timeout seconds and the actual script"></p>
+</li>
+<li><p>Enter the script name (for example, Dev Drive demo), description (Demo configuration to enable Dev Drive settings), language (PowerShell), timeout seconds (180), and then paste in the following &quot;Dev Drive demo&quot; script example to use as a template.</p>
+<pre><code class="lang-powershell">######
+#ConfigMgr Management of Dev Drive
+#Dev Drive is a new form of storage volume available to improve performance for key developer workloads.
+#Check Log File for enforcement status - C:\Windows\temp\ConfigDevDrive-&lt;TimeStamp&gt;.log
+######
+
+Function Set-RegistryKeyValue{
+param (
+$KeyPath,
+$ValueName,
+$Value,
+$PropertyType,
+$LogFile
+)
+Try {
+    If (!(Test-path $KeyPath)) {
+    $Path = ($KeyPath.Split(':'))[1].TrimStart(&quot;\&quot;)
+    ([Microsoft.Win32.RegistryKey]::OpenRemoteBaseKey([Microsoft.Win32.RegistryHive]::LocalMachine,$env:COMPUTERNAME)).CreateSubKey($Path)
+    New-ItemProperty -path $KeyPath -name $ValueName -value $Value -PropertyType $PropertyType -Force | Out-Null
+    }
+    Else {
+    New-ItemProperty -path $KeyPath -name $ValueName -value $Value -PropertyType $PropertyType -Force | Out-Null
+    }
+    $TestValue = (Get-ItemProperty -Path $KeyPath).&quot;$ValueName&quot;
+    If ($TestValue -eq $Value){ Add-Content -Path $LogFile -Value &quot;$KeyPath,$ValueName,$Value,$PropertyType,$TestValue,Success&quot; }
+    Else { Add-Content -Path $LogFile -Value &quot;$KeyPath,$ValueName,$Value,$PropertyType,$TestValue,Failure&quot; }
+    }
+    Catch {
+    $ExceptionMessage = $($PSItem.ToString()) -replace [Environment]::NewLine,&quot;&quot;;
+    Add-Content -Path $LogFile -Value &quot;$KeyPath,$ValueName,$Value,$PropertyType,$TestValue,Failure - $ExceptionMessage&quot;
+    }
+}
+$ExecutionTime = Get-Date
+$StartTime = Get-Date $ExecutionTime -Format yyyyMMdd-HHmmss
+$LogFile = &quot;C:\Windows\temp\ConfigDevDrive-$StartTime.log&quot;
+Add-Content -Path $LogFile -Value &quot;------------------------------------V 1.0 $ExecutionTime - Execution Starts -------------------------------------------&quot;
+Add-Content -Path $LogFile -Value &quot;RegistryKeyPath,ValueName,ExpectedValue,PropertyType,CurrentValue,ComparisonResult&quot;
+#Set up a Dev Drive
+Set-RegistryKeyValue -KeyPath &quot;HKLM:\System\CurrentControlSet\Policies\&quot; -ValueName &quot;FsEnableDevDrive&quot; -Value &quot;1&quot; -PropertyType &quot;Dword&quot; -LogFile $LogFile
+Set-RegistryKeyValue -KeyPath &quot;HKLM:\System\CurrentControlSet\Policies\&quot; -ValueName &quot;FltmgrDevDriveAllowAntivirusFilter&quot; -Value &quot;1&quot; -PropertyType &quot;Dword&quot; -LogFile $LogFile
+Set-RegistryKeyValue -KeyPath &quot;HKLM:\System\CurrentControlSet\Policies\&quot; -ValueName &quot;FltmgrDevDriveAttachPolicy&quot; -Value &quot;PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo&quot; -PropertyType &quot;MultiString&quot; -LogFile $LogFile
+$ExecutionTime = Get-Date
+Add-Content -Path $LogFile -Value &quot;------------------------------------ $ExecutionTime - Execution Ends -------------------------------------------&quot;
+--------------------
+</code></pre>
+</li>
+<li><p>When adding a new script, you must select and approve it. The approval state will change from &quot;Waiting for approval&quot; to &quot;Approved&quot;.</p>
+</li>
+<li><p>Once approved, right-click a single device or device collection and select <strong>Run script</strong>.</p>
+<p><img src="../images/dev-drive-group-policy-cfgmgr2.png" alt="Screenshot of Microsoft Configuration Manager Run Script window showing the Dev Drive demo script"></p>
+</li>
+<li><p>On the script page of the Run Script wizard, choose your script from the list (<em>Dev Drive demo</em> in our example). Only approved scripts are displayed. Select <strong>Next</strong> and complete the wizard.</p>
+</li>
+</ol>
+<p>See <a href="#query-policies-with-fsutil">Query policies with FsUtil</a> to check that Group Policy settings were accurately updated.</p>
+<p>To learn more, see <a href="/mem/configmgr/apps/deploy-use/create-deploy-scripts">Create and run PowerShell scripts from the Configuration Manager console</a>.</p>
+<h2 id="use-windows-11-local-group-policy-editor-to-update-group-policy-for-dev-drive">Use Windows 11 Local Group Policy Editor to update Group Policy for Dev Drive</h2>
+<p>To update Group Policy and enable <a href="index.html">Dev Drive</a> using Windows 11 Local Group Policy Editor:</p>
+<ol>
+<li><p>Open the <strong>Local Group Policy Editor</strong> in Windows Control Panel.</p>
+<p><img src="../images/dev-drive-group-policy1.png" alt="Screenshot of Local Group Policy Editor window with a list of directory items"></p>
+</li>
+<li><p>Under <strong>Computer Configuration</strong>, select <strong>Administrative Templates</strong> &gt; <strong>System</strong> &gt; <strong>Filesystem</strong> and in the Setting list, select <strong>Enable dev drive</strong>.</p>
+<p><img src="../images/dev-drive-group-policy2.png" alt="Screenshot of selecting Enable Dev Drive in Local Group Policy Editor"></p>
+</li>
+<li><p>Select <strong>Enabled</strong> to enable Dev Drive in your Group Policy.</p>
+<p><img src="../images/dev-drive-group-policy3.png" alt="Screenshot of Dev Drive Enabled checkbox in Local Group Policy Editor"></p>
+</li>
+</ol>
+<p>To update this filter attach policy, select <strong>Dev Drive filter attach policy</strong> from the <strong>Local Group Policy Editor</strong> in Windows Control Panel.</p>
+<p><img src="../images/dev-drive-group-policy4.png" alt="Screenshot of selecting Dev Drive filter attach policy and filter list in Local Group Policy Editor"></p>
+<h2 id="query-policies-with-fsutil">Query policies with FsUtil</h2>
+<p>FSUtil can be used to query the Group Policy configured for Dev Drive. Here is the output from an FsUtil query for a Dev Drive Group Policy configured to:</p>
+<ul>
+<li>Enable Dev Drive</li>
+<li>Let Microsoft Defender Antivirus filters protect Dev Drives (<code>WdFilter</code>)</li>
+<li><code>FileInfo</code> minifilter has been added to the <strong>Filter list</strong> as an allowed filter</li>
+</ul>
+<p>Enter the FSUtil command:</p>
+<pre><code class="lang-powershell">fsutil devdrv query
+</code></pre>
+<p>Result:</p>
+<pre><code class="lang-powershell">Developer volumes are enabled. 
+Developer volumes are protected by antivirus filter, by group policy. 
+Filters allowed on any developer volume, by group policy: 
+    MsSecFlt 
+Filters allowed on any developer volume: 
+    FileInfo 
+</code></pre>
+<p>This same query can be run on a specific Dev Drive to see the attached filters. To run the command on a specific Dev Drive, enter the command:</p>
+<pre><code class="lang-powershell">fsutil devdrv query d:
+</code></pre>
+<p>Result:</p>
+<pre><code class="lang-powershell">This is a trusted developer volume. 
+Developer volumes are protected by antivirus filter, by group policy. 
+Filters allowed on any developer volume, by group policy: 
+    MsSecFlt 
+Filters allowed on any developer volume: 
+    FileInfo 
+Filters currently attached to this developer volume: 
+    MsSecFlt, WdFilter, FileInfo 
+</code></pre>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><p><a href="https://support.microsoft.com/windows/delivering-continuous-innovation-in-windows-11-b0aa0a27-ea9a-4365-9224-cb155e517f12">Delivering continuous innovation in Windows 11 (Microsoft Support)</a></p>
+</li>
+<li><p><a href="/windows/whats-new/temporary-enterprise-feature-control">Temporary enterprise feature control in Windows 11</a></p>
+</li>
+<li><p><a href="/windows/deployment/update/waas-wu-settings">Manage additional Windows Update settings (Windows Deployment)</a></p>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-drive/group-policy.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

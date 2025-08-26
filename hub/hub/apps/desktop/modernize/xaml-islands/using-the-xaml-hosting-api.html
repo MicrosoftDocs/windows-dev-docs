@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using the WinRT XAML hosting API in a C++ desktop (Win32) app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using the WinRT XAML hosting API in a C++ desktop (Win32) app ">
+    
+    <meta name="description" content="This article describes how to host WinRT XAML UI in your desktop C++ desktop (Win32) app.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="using-the-winrt-xaml-hosting-api-in-a-c-desktop-win32-app">Using the WinRT XAML hosting API in a C++ desktop (Win32) app</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This topic uses or mentions types from the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32">CommunityToolkit/Microsoft.Toolkit.Win32</a> GitHub repo. For important info about XAML Islands support, please see the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice">XAML Islands Notice</a> in that repo.</p>
+</div>
+<p>Starting in Windows 10, version 1903, non-UWP desktop apps (including C++ desktop (Win32), WPF, and Windows Forms apps) can use the <em>WinRT XAML hosting API</em> to host WinRT XAML controls in any UI element that is associated with a window handle (HWND). This API enables non-UWP desktop apps to use the latest Windows UI features that are only available via WinRT XAML controls. For example, non-UWP desktop apps can use this API to host WinRT XAML controls that use the <a href="/windows/uwp/design/fluent-design-system/index">Fluent Design System</a> and support <a href="/windows/uwp/design/input/pen-and-stylus-interactions">Windows Ink</a>.</p>
+<p>The WinRT XAML hosting API provides the foundation for a broader set of controls that we are providing to enable developers to bring Fluent UI to non-UWP desktop apps. This feature is called <em>XAML Islands</em>. For an overview of this feature, see <a href="xaml-islands.html">Host WinRT XAML controls in desktop apps (XAML Islands)</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have feedback about XAML Islands, create a new issue in the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/issues">Microsoft.Toolkit.Win32 repo</a> and leave your comments there.</p>
+</div>
+<h2 id="is-the-winrt-xaml-hosting-api-the-right-choice-for-your-desktop-app">Is the WinRT XAML hosting API the right choice for your desktop app?</h2>
+<p>The WinRT XAML hosting API provides the low-level infrastructure for hosting WinRT XAML controls in desktop apps. Some types of desktop apps have the option of using alternative, more convenient APIs to accomplish this goal.</p>
+<ul>
+<li><p>If you have a C++ desktop app and you want to host WinRT XAML controls in your app, you must use the WinRT XAML hosting API. There are no alternatives for these types of apps.</p>
+</li>
+<li><p>For WPF and Windows Forms apps, we strongly recommend that you use the <a href="xaml-islands.html#wpf-and-windows-forms-applications">XAML Island .NET controls</a> in the Windows Community Toolkit instead of using the WinRT XAML hosting API directly. These controls use the WinRT XAML hosting API internally and implement all of the behavior you would otherwise need to handle yourself if you used the WinRT XAML hosting API directly, including keyboard navigation and layout changes.</p>
+</li>
+</ul>
+<p>Because we recommend that only C++ desktop apps use the WinRT XAML hosting API, this article primarily provides instructions and examples for C++ desktop apps. However, you can use the WinRT XAML hosting API in WPF and Windows Forms apps if you choose. This article points to relevant source code for the <a href="xaml-islands.html#host-controls">host controls</a> for WPF and Windows Forms in the Windows Community Toolkit so you can see how the WinRT XAML hosting API is used by those controls.</p>
+<h2 id="learn-how-to-use-the-xaml-hosting-api">Learn how to use the XAML Hosting API</h2>
+<p>To follow step-by-step instructions with code examples for using the XAML Hosting API in C++ desktop apps, see these articles:</p>
+<ul>
+<li><a href="host-standard-control-with-xaml-islands-cpp.html">Host a standard WinRT XAML control</a></li>
+<li><a href="host-custom-control-with-xaml-islands-cpp.html">Host a custom WinRT XAML control</a></li>
+<li><a href="advanced-scenarios-xaml-islands-cpp.html">Advanced scenarios</a></li>
+</ul>
+<h2 id="samples">Samples</h2>
+<p>The way you use the WinRT XAML hosting API in your code depends on your app type, the design of your app, and other factors. To help illustrate how to use this API in the context of a complete app, this article refers to code from the following samples.</p>
+<h3 id="c-desktop-win32">C++ desktop (Win32)</h3>
+<p>The following samples demonstrate how to use the WinRT XAML hosting API in a C++ desktop app:</p>
+<ul>
+<li><p><a href="https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App">Simple XAML Island sample</a>. This sample demonstrates a basic implementation of hosting a WinRT XAML control in an unpackaged C++ desktop app.</p>
+</li>
+<li><p><a href="https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32">XAML Island with custom control sample</a>. This sample demonstrates a complete implementation of hosting a custom WinRT XAML control in a packaged C++ desktop app, as well as handling other behavior such as keyboard input and focus navigation.</p>
+</li>
+</ul>
+<h3 id="wpf-and-windows-forms">WPF and Windows Forms</h3>
+<p>The <a href="/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost">WindowsXamlHost</a> control in the Windows Community Toolkit serves as a reference sample for using the WinRT XAML hosting API in WPF and Windows Forms apps. The source code is available at the following locations:</p>
+<ul>
+<li><p>For the WPF version of the control, <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Wpf.UI.XamlHost">go here</a>. The WPF version derives from <a href="/dotnet/api/system.windows.interop.hwndhost">System.Windows.Interop.HwndHost</a>.</p>
+</li>
+<li><p>For the Windows Forms version of the control, <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Forms.UI.XamlHost">go here</a>. The Windows Forms version derives from <a href="/dotnet/api/system.windows.forms.control">System.Windows.Forms.Control</a>.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We strongly recommend that you use the <a href="xaml-islands.html#wpf-and-windows-forms-applications">XAML Island .NET controls</a> in the Windows Community Toolkit instead of using the WinRT XAML hosting API directly in WPF and Windows Forms apps. The WPF and Windows Forms sample links in this article are for illustrative purposes only.</p>
+</div>
+<h2 id="architecture-of-the-api">Architecture of the API</h2>
+<p>The WinRT XAML hosting API includes these main Windows Runtime types and COM interfaces.</p>
+<table>
+<thead>
+<tr>
+<th>Type or interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a></td>
+<td>This class represents the UWP XAML framework. This class provides a single static <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread">InitializeForCurrentThread</a> method that initializes the UWP XAML framework on the current thread in the desktop app.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a></td>
+<td>This class represents an instance of UWP XAML content that you are hosting in your desktop app. The most important member of this class is the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content">Content</a> property. You assign this property to a <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a> that you want to host. This class also has other members for routing keyboard focus navigation into and out of the XAML Islands.</td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/windows.ui.xaml.hosting.desktopwindowxamlsource/nn-windows-ui-xaml-hosting-desktopwindowxamlsource-idesktopwindowxamlsourcenative">IDesktopWindowXamlSourceNative</a></td>
+<td>This COM interface provides the <a href="/windows/win32/api/windows.ui.xaml.hosting.desktopwindowxamlsource/nf-windows-ui-xaml-hosting-desktopwindowxamlsource-idesktopwindowxamlsourcenative-attachtowindow">AttachToWindow</a> method, which you use to attach a XAML Island in your app to a parent UI element. Every <strong>DesktopWindowXamlSource</strong> object implements this interface.</td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/windows.ui.xaml.hosting.desktopwindowxamlsource/nn-windows-ui-xaml-hosting-desktopwindowxamlsource-idesktopwindowxamlsourcenative2">IDesktopWindowXamlSourceNative2</a></td>
+<td>This COM interface provides the <a href="/windows/win32/api/windows.ui.xaml.hosting.desktopwindowxamlsource/nf-windows-ui-xaml-hosting-desktopwindowxamlsource-idesktopwindowxamlsourcenative2-pretranslatemessage">PreTranslateMessage</a> method, which enables the UWP XAML framework to process certain Windows messages correctly. Every <strong>DesktopWindowXamlSource</strong> object implements this interface.</td>
+</tr>
+</tbody>
+</table>
+<p>The following diagram illustrates the hierarchy of objects in a XAML Island that is hosted in a desktop app.</p>
+<ul>
+<li><p>At the base level is the UI element in your app where you want to host the XAML Island. This UI element must have a window handle (HWND). Examples of UI elements in which you can host a XAML Island include a <a href="/windows/desktop/winmsg/about-windows">window</a> for C++ desktop apps, a <a href="/dotnet/api/system.windows.interop.hwndhost">System.Windows.Interop.HwndHost</a> for WPF apps, and a <a href="/dotnet/api/system.windows.forms.control">System.Windows.Forms.Control</a> for Windows Forms apps.</p>
+</li>
+<li><p>At the next level is a <strong>DesktopWindowXamlSource</strong> object. This object provides the infrastructure for hosting the XAML Island. Your code is responsible for creating this object and attaching it to the parent UI element.</p>
+</li>
+<li><p>When you create a <strong>DesktopWindowXamlSource</strong>, this object automatically creates a native child window to host your WinRT XAML control. This native child window is mostly abstracted away from your code, but you can access its handle (HWND) if necessary.</p>
+</li>
+<li><p>Finally, at the top level is the WinRT XAML control you want to host in your desktop app. This can be any UWP object that derives from <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a>, including any WinRT XAML control provided by the Windows SDK as well as custom user controls.</p>
+</li>
+</ul>
+<p><img src="../images/xaml-islands/xaml-hosting-api-rev2.png" alt="DesktopWindowXamlSource architecture"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you host XAML Islands in a desktop app, you can have multiple trees of XAML content running on the same thread at the same time. To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, use the <a href="/uwp/api/windows.ui.xaml.xamlroot">XamlRoot</a> class. The <a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a>, <a href="/uwp/api/windows.ui.viewmanagement.applicationview">ApplicationView</a>, and <a href="/uwp/api/windows.ui.xaml.window">Window</a> APIs won't provide the correct information for XAML Islands. For more information, see <a href="xaml-islands.html#window-host-context-for-xaml-islands">this section</a>.</p>
+</div>
+<h2 id="best-practices">Best practices</h2>
+<p>When using the WinRT XAML hosting API, follow these best practices for each thread that hosts WinRT XAML controls:</p>
+<ul>
+<li>Create a dedicated <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a> for the thread.</li>
+<li>For each WinRT XAML control you want to host, create a <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a>.</li>
+<li>Destroy each <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> after it is no longer needed.</li>
+<li>Before exiting the thread, destroy the dedicated <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a> for the thread. Note that destruction of this <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a> is asynchronous, and requires draining the Windows message queue before exiting the thread. For examples of how to do this, see the <a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands samples</a>.</li>
+<li>After destroying the <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a> for a given thread, creating a new <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a> on the same thread is not supported and will result in unpredictable behavior.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="error-using-winrt-xaml-hosting-api-in-a-uwp-app">Error using WinRT XAML hosting API in a UWP app</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your app receives a <strong>COMException</strong> with the following message: &quot;Cannot activate DesktopWindowXamlSource. This type cannot be used in a UWP app.&quot; or &quot;Cannot activate WindowsXamlManager. This type cannot be used in a UWP app.&quot;</td>
+<td>This error indicates you are trying to use the WinRT XAML hosting API (specifically, you are trying to instantiate the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> or <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a> types) in a UWP app. The WinRT XAML hosting API is only intended to be used in non-UWP desktop apps, such as WPF, Windows Forms, and C++ desktop applications.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-trying-to-use-the-windowsxamlmanager-or-desktopwindowxamlsource-types">Error trying to use the WindowsXamlManager or DesktopWindowXamlSource types</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your app receives an exception with the following  message: &quot;WindowsXamlManager and DesktopWindowXamlSource are supported for apps targeting Windows version 10.0.18226.0 and later. Please check either the application manifest or package manifest and ensure the MaxTestedVersion property is updated.&quot;</td>
+<td>This error indicates that your application tried to use the <strong>WindowsXamlManager</strong> or <strong>DesktopWindowXamlSource</strong> types in the WinRT XAML hosting API, but the OS can't determine whether the app was built to target Windows 10, version 1903 or later. The WinRT XAML hosting API was first introduced as a preview in an earlier version of Windows 10, but it is only supported starting in Windows 10, version 1903.To resolve this issue, either create an MSIX package for the app and run it from the package, or install the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK">Microsoft.Toolkit.Win32.UI.SDK</a> NuGet package in your project.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-attaching-to-a-window-on-a-different-thread">Error attaching to a window on a different thread</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your app receives a <strong>COMException</strong> with the following message: &quot;AttachToWindow method failed because the specified HWND was created on a different thread.&quot;</td>
+<td>This error indicates that your application called the <strong>IDesktopWindowXamlSourceNative::AttachToWindow</strong> method and passed it the HWND of a window that was created on a different thread. You must pass this method the HWND of a window that was created on the same thread as the code from which you are calling the method.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="error-attaching-to-a-window-on-a-different-top-level-window">Error attaching to a window on a different top-level window</h3>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your app receives a <strong>COMException</strong> with the following  message: &quot;AttachToWindow method failed because the specified HWND descends from a different top-level window than the HWND that was previously passed to AttachToWindow on the same thread.&quot;</td>
+<td>This error indicates that your application called the <strong>IDesktopWindowXamlSourceNative::AttachToWindow</strong> method and passed it the HWND of a window that descends from a different top-level window than a window you specified in a previous call to this method on the same thread.After your application calls <strong>AttachToWindow</strong> on a particular thread, all other <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> objects on the same thread can only attach to windows that are descendants of the same top-level window that was passed in the first call to <strong>AttachToWindow</strong>. When all the <strong>DesktopWindowXamlSource</strong> objects are closed for a particular thread, the next <strong>DesktopWindowXamlSource</strong> is then free to attach to any window again.To resolve this issue, either close all <strong>DesktopWindowXamlSource</strong> objects that are bound to other top-level windows on this thread, or create a new thread for this <strong>DesktopWindowXamlSource</strong>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="xaml-islands.html">Host UWP XAML controls in desktop apps (XAML Islands)</a></li>
+<li><a href="host-standard-control-with-xaml-islands-cpp.html">Host a standard WinRT XAML control in a C++ desktop app</a></li>
+<li><a href="host-custom-control-with-xaml-islands-cpp.html">Host a custom WinRT XAML control in a C++ desktop app</a></li>
+<li><a href="advanced-scenarios-xaml-islands-cpp.html">Advanced scenarios for XAML Islands in C++ desktop apps</a></li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands code samples</a></li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp">C++ desktop XAML Islands sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/xaml-islands/using-the-xaml-hosting-api.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manual camera controls for video capture </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manual camera controls for video capture ">
+    
+    <meta name="description" content="Learn how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority in a WinUI 3 app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manual-camera-controls-for-video-capture">Manual camera controls for video capture</h1>
+
+<p>This article shows you how to use manual device controls to enable enhanced video capture scenarios, including HDR video and exposure priority.</p>
+<p>The video device controls discussed in this article are all added to your app by using the same pattern. First, check to see if the control is supported on the current device on which your app is running. If the control is supported, set the desired mode for the control. Typically, if a particular control is unsupported on the current device, you should disable or hide the UI element that allows the user to enable the feature.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article builds on concepts and code discussed in <a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a>, which describes the steps for implementing basic photo and video capture. We recommend that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of <strong>MediaCapture</strong> that has been properly initialized.</p>
+</div>
+<h2 id="hdr-video">HDR video</h2>
+<p>The high dynamic range (HDR) video feature applies HDR processing to the video stream of the capture device. Determine if HDR video is supported by selecting the <a href="/uwp/api/windows.media.devices.hdrvideocontrol.supported"><strong>HdrVideoControl.Supported</strong></a> property.</p>
+<p>The HDR video control supports three modes: on, off, and automatic, which means that the device dynamically determines if HDR video processing would improve the media capture and, if so, enables HDR video. To determine if a particular mode is supported on the current device, check to see if the <a href="/uwp/api/windows.media.devices.hdrvideocontrol.supportedmodes"><strong>HdrVideoControl.SupportedModes</strong></a> collection contains the desired mode.</p>
+<p>Enable or disable HDR video processing by setting the <a href="/uwp/api/windows.media.devices.hdrvideocontrol.mode"><strong>HdrVideoControl.Mode</strong></a> to the desired mode. This control requires that the stream is at a stopped state before the mode is set, see <a href="/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-videohdr">KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOHDR</a>.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="exposure-priority">Exposure priority</h2>
+<p>The <a href="/uwp/api/Windows.Media.Devices.ExposurePriorityVideoControl"><strong>ExposurePriorityVideoControl</strong></a>, when enabled, evaluates the video frames from the capture device to determine if the video is capturing a low-light scene. If so, the control lowers the frame rate of the captured video in order to increase the exposure time for each frame and improve the visual quality of the captured video.</p>
+<p>Determine if the exposure priority control is supported on the current device by checking the <a href="/uwp/api/windows.media.devices.exposurepriorityvideocontrol.supported"><strong>ExposurePriorityVideoControl.Supported</strong></a> property.</p>
+<p>Enable or disable the exposure priority control by setting the <a href="/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled"><strong>ExposurePriorityVideoControl.Enabled</strong></a> to the desired mode.</p>
+<div class="lang-csharp">
+</div>
+<h2 id="temporal-denoising">Temporal denoising</h2>
+<p>Starting with Windows 10, version 1803, you can enable temporal denoising for video on devices that support it. This feature fuses the image data from multiple adjacent frames in real time to produce video frames that have less visual noise.</p>
+<p>The <a href="/uwp/api/windows.media.devices.videotemporaldenoisingcontrol"><strong>VideoTemporalDenoisingControl</strong></a> allows your app to determine if temporal denoising is supported on the current device, and if so, which denoising modes are supported. The available denoising modes are <a href="/uwp/api/windows.media.devices.videotemporaldenoisingmode"><strong>Off</strong></a>, <a href="/uwp/api/windows.media.devices.videotemporaldenoisingmode"><strong>On</strong></a>, and <a href="/uwp/api/windows.media.devices.videotemporaldenoisingmode"><strong>Auto</strong></a>. A device may not support all modes, but every device must support either <strong>Auto</strong> or <strong>On</strong> and <strong>Off</strong>.</p>
+<p>The following example uses a simple UI to provide radio buttons allowing the user to switch between denoising modes.</p>
+<div class="lang-xml">
+</div>
+<p>In the following method, the <a href="/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported"><strong>VideoTemporalDenoisingControl.Supported</strong></a> property is checked to see if temporal denoising is supported at all on the current device. If so, then we check to make sure that <strong>Off</strong> and <strong>Auto</strong> or <strong>On</strong> is supported, in which case we make our radio buttons visible. Next, the <strong>Auto</strong> and <strong>On</strong> buttons are made visible if those methods are supported.</p>
+<div class="lang-csharp">
+</div>
+<p>In the <strong>Checked</strong> event handler for the radio buttons, the name of the button is checked and the corresponding mode is set by setting the <a href="/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode"><strong>VideoTemporalDenoisingControl.Mode</strong></a> property.</p>
+<div class="lang-csharp">
+</div>
+<h3 id="disabling-temporal-denoising-while-processing-frames">Disabling temporal denoising while processing frames</h3>
+<p>Video that has been processed using temporal denoising can be more pleasing to the human eye. However, because temporal denoising can impact image consistency and decrease the amount of details in the frame, apps that perform image processing on the frames, such as registration or optical character recognition, may want to programmatically disable denoising when image processing is enabled.</p>
+<p>The following example determines which denoising modes are supported and stores this information in some class variables.</p>
+<div class="lang-csharp">
+</div>
+<div class="lang-csharp">
+</div>
+<p>When the app enables frame processing, it sets the denoising mode to <strong>Off</strong> if that mode is supported so that the frame processing can use raw frames that have not been denoised.</p>
+<div class="lang-csharp">
+</div>
+<p>When the app disables frame processing, it sets the denoising mode to <strong>On</strong> or <strong>Auto</strong>, depending on which mode is supported.</p>
+<div class="lang-csharp">
+</div>
+<p>For more information on obtaining video frames for image processing, see <a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="camera.html">Camera</a></li>
+<li><a href="basic-photo-capture.html">Basic photo, video, and audio capture with MediaCapture</a></li>
+<li><a href="process-media-frames-with-mediaframereader.html">Process media frames with MediaFrameReader</a></li>
+<li><a href="/uwp/api/windows.media.devices.videotemporaldenoisingcontrol"><strong>VideoTemporalDenoisingControl</strong></a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/capture-device-controls-for-video-capture.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

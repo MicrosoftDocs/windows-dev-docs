@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Toast headers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Toast headers ">
+    
+    <meta name="description" content="Learn how to use headers to visually group your toast notifications in Action Center.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="toast-headers">Toast headers</h1>
+
+<p>You can visually group a set of related notifications inside Action Center by using a toast header on your notifications.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires Desktop Creators Update and 1.4.0 of Notifications library</strong>: You must be running Desktop build 15063 or later to see toast headers. You must use version 1.4.0 or later of the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">UWP Community Toolkit Notifications NuGet library</a> to construct the header in your toast's content. Headers are only supported on Desktop.</p>
+</div>
+<p>As seen below, this group conversation is unified under a single header, &quot;Camping!!&quot;. Each individual message in the conversation is a separate toast notification sharing the same toast header.</p>
+<img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396">
+<p>You can also choose to visually group your notifications by category too, like flight reminders, package tracking, and more.</p>
+<h2 id="add-a-header-to-a-toast">Add a header to a toast</h2>
+<p>Here's how you add a header to a toast notification.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Headers are only supported on Desktop. Devices that don't support headers will simply ignore the header.</p>
+</div>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_builder-syntax" role="tab" aria-controls="tabpanel_1_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_xml" role="tab" aria-controls="tabpanel_1_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_1_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+    .AddHeader(&quot;6289&quot;, &quot;Camping!!&quot;, &quot;action=openConversation&amp;id=6289&quot;)
+    .AddText(&quot;Anyone have a sleeping bag I can borrow?&quot;);
+</code></pre>
+</section>
+<section id="tabpanel_1_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+
+    &lt;header
+        id=&quot;6289&quot;
+        title=&quot;Camping!!&quot;
+        arguments=&quot;action=openConversation&amp;amp;id=6289&quot;/&gt;
+
+    &lt;visual&gt;
+        ...
+    &lt;/visual&gt;
+
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+
+<p>In summary...</p>
+<ol>
+<li>Add the <strong>Header</strong> to your <strong>ToastContent</strong></li>
+<li>Assign the required <strong>Id</strong>, <strong>Title</strong>, and <strong>Arguments</strong> properties</li>
+<li>Send your notification (<a href="send-local-toast.html">learn more</a>)</li>
+<li>On another notification, use the same header <strong>Id</strong> to unify them under the header. The <strong>Id</strong> is the only property used to determine whether the notifications should be grouped, meaning the <strong>Title</strong> and <strong>Arguments</strong> can be different. The <strong>Title</strong> and <strong>Arguments</strong> from the most recent notification within a group are used. If that notification gets removed, then the <strong>Title</strong> and <strong>Arguments</strong> falls back to the next most recent notification.</li>
+</ol>
+<h2 id="handle-activation-from-a-header">Handle activation from a header</h2>
+<p>Headers are clickable by users, so that the user can click the header to find out more from your app.</p>
+<p>Therefore, apps can provide <strong>Arguments</strong> on the header, similar to the launch arguments on the toast itself.</p>
+<p>Activation is handled identical to <a href="send-local-toast.html#step-3-handle-activation">normal toast activation</a>, meaning you can retrieve these arguments in the <strong>OnActivated</strong> method of <code>App.xaml.cs</code> just like you do when the user clicks the body of your toast or a button on your toast.</p>
+<pre><code class="lang-csharp">protected override void OnActivated(IActivatedEventArgs e)
+{
+    // Handle toast activation
+    if (e is ToastNotificationActivatedEventArgs)
+    {
+        // Arguments specified from the header
+        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
+    }
+}
+</code></pre>
+<h2 id="additional-info">Additional info</h2>
+<p>The header visually separates and groups notifications. It doesn't change any other logistics about the maximum number of notifications an app can have (20) and the first-in-first-out behavior of the notifications list.</p>
+<p>The order of notifications within headers are as follows... For a given app, the most recent notification from the app (and the entire header group if part of a header) will appear first.</p>
+<p>The <strong>Id</strong> can be any string you choose. There are no length or character restrictions on any of the properties in <strong>ToastHeader</strong>. The only constraint is that your entire XML toast content cannot be larger than 5 KB.</p>
+<p>Creating headers doesn't change the number of notifications shown inside Action Center before the &quot;See more&quot; button appears (this number is 3 by default and can be configured by the user for each app in system Settings for notifications).</p>
+<p>Clicking on the header, just like clicking on the app title, does not clear any notifications belonging to this header (your app should use the toast APIs to clear the relevant notifications).</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="send-local-toast.html">Send a local toast and handle activation</a></li>
+<li><a href="adaptive-interactive-toasts.html">Toast content documentation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/toast-headers.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

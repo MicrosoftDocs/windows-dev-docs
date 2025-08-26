@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Install React on Windows Subsystem for Linux </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Install React on Windows Subsystem for Linux ">
+    
+    <meta name="description" content="Install React on Windows Subsystem for Linux (WSL) and start developing web apps with React components and the Vite front-end build toolchain.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="install-react-on-windows-subsystem-for-linux">Install React on Windows Subsystem for Linux</h1>
+
+<p>This guide will walk through installing React on a Linux distribution (ie. Ubuntu) running on the Windows Subsystem for Linux (WSL) using the <a href="https://vitejs.dev/">vite</a> frontend tooling.</p>
+<p>We recommend following these instructions if you are creating a single-page app (SPA) that you would like to use Bash commands or tools with and/or plan to deploy to a Linux server or use Docker containers. If you are brand new to React and just interested in learning, you may want to consider <a href="react-on-windows.html">installing with vite directly on Windows</a>.</p>
+<p>For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Desktop (desktop apps), see the <a href="react-overview.html">React overview</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11</li>
+<li><a href="/windows/wsl/install-win10">Install Windows Subsystem for Linux (WSL)</a>, including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: <code>wsl -l -v</code></li>
+<li><a href="nodejs-on-wsl.html">Install Node.js on WSL 2</a>: These instructions use Node Version Manager (nvm) for installation, you will need a recent version of NodeJS to run vite, as well as a recent version of Node Package Manager (npm).</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Installing a Linux distribution with WSL will create a directory for storing files: <code>\\wsl\Ubuntu-20.04</code> (substitute Ubuntu-20.04 with whatever Linux distribution you're using). To open this directory in Windows File Explorer, open your WSL command line, select your home directory using <code>cd ~</code>, then enter the command <code>explorer.exe .</code> Be careful not to install NodeJS or store files that you will be working with on the mounted C drive (<code>/mnt/c/Users/yourname$</code>). Doing so will significantly slow down your install and build times.</p>
+</div>
+<h2 id="install-react">Install React</h2>
+<p>To install the full React toolchain on WSL, we recommend using vite.</p>
+<ol>
+<li><p>Open a WSL command line (ie. Ubuntu).</p>
+</li>
+<li><p>Create a new project folder: <code>mkdir ReactProjects</code> and enter that directory: <code>cd ReactProjects</code>.</p>
+</li>
+<li><p>Install React using vite :</p>
+<pre><code class="lang-bash">npm create vite@latest my-react-app -- --template react
+</code></pre>
+</li>
+<li><p>Once installed, change directories into your new app (&quot;my-react-app&quot; or whatever you've chosen to call it): <code>cd my-react-app</code>, install the dependencies: <code>npm install</code> and then start your local development server: <code>npm run dev</code></p>
+<p>This command will start up the Node.js server and launch a new browser window displaying your app. You can use <strong>Ctrl + c</strong> to stop running the React app in your command line.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Vite includes a frontend build pipeline using <a href="https://babeljs.io/">Babel</a>, <a href="https://esbuild.github.io/">esbuild</a> and <a href="https://rollupjs.org/">Rollup</a>, but doesn't handle backend logic or databases. If you are seeking to build a server-rendered website with React that uses a Node.js backend, we recommend <a href="nextjs-on-wsl.html">installing Next.js</a>, rather than this Vite installation, which is intended more for single-page apps(SPAs). You also may want to consider <a href="gatsby-on-wsl.html">installing Gatsby</a> if you want to build a static content-oriented website.</p>
+</div>
+<ol start="6">
+<li>When you're ready to deploy your web app to production, running <code>npm run build</code> to  create a build of your app in the &quot;dist&quot; folder. You can learn more in the <a href="https://vitejs.dev/guide/static-deploy.html">Deploying a Static Site</a>.</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://react.dev">React docs</a></li>
+<li><a href="https://vitejs.dev/">Vite</a></li>
+<li><a href="nextjs-on-wsl.html">Install Next.js</a></li>
+<li><a href="gatsby-on-wsl.html">Install Gatsby</a></li>
+<li><a href="https://microsoft.github.io/react-native-windows/docs/getting-started">Install React Native for Desktop</a></li>
+<li><a href="nodejs-on-windows.html">Install NodeJS on Windows</a></li>
+<li><a href="nodejs-on-wsl.html">Install NodeJS on WSL</a></li>
+<li>Try the tutorial: <a href="https://code.visualstudio.com/docs/nodejs/reactjs-tutorial">Using React in Visual Studio Code</a></li>
+<li>Try the <a href="/training/paths/react/">React learning path</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/react-on-wsl.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Create unit tests for Windows UI Library (WinUI) apps in Visual Studio </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Create unit tests for Windows UI Library (WinUI) apps in Visual Studio ">
+    
+    <meta name="description" content="This article describes how to create unit tests for WinUI apps in Visual Studio using the built-in WinUI unit test project templates.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="unit-tests-for-windows-ui-library-winui-apps-in-visual-studio">Unit tests for Windows UI Library (WinUI) apps in Visual Studio</h1>
+
+<p>This article describes how to create unit tests for WinUI apps in Visual Studio using the built-in unit test project templates.</p>
+<p>For a general overview of testing Windows App SDK apps, see <a href="index.html">Test apps built with the Windows App SDK and WinUI 3</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The unit test app described here is written in the context of a WinUI application. This is required for any tests that execute code requiring the Xaml runtime. This project will create a Xaml UI Thread and execute the tests.</p>
+</div>
+<p>In this tutorial, you learn how to:</p>
+<div class="checklist">
+<ul>
+<li>Create a <strong>Unit Test App (WinUI 3 in Desktop)</strong> for C# or <strong>Unit Test App (WinUI 3)</strong> for C++ project in Visual Studio.</li>
+<li>Use the Visual Studio <strong>Text Explorer</strong>.</li>
+<li>Add a <strong>Class Library (WinUI 3 in Desktop)</strong> project for testing.</li>
+<li>Run tests with the Visual Studio Test Explorer.</li>
+</ul>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You must have Visual Studio installed.</p>
+<p>If you haven't already installed Visual Studio, go to the <a href="https://visualstudio.microsoft.com/downloads/?cid=learn-onpage-download-cta">Visual Studio downloads page</a> to install it for free.</p>
+<h2 id="how-do-i-create-a-test-app-winui-3-in-desktop-project">How do I create a Test App (WinUI 3 in Desktop) project</h2>
+<p>To start, create a unit test project. The project type comes with all the template files you need.</p>
+<ol>
+<li><p>Open Visual Studio and select <strong>Create a new project</strong> in the Start window.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-start-window.png" alt="Screenshot of the Visual Studio start window.">
+</span>
+</p>
+</li>
+<li><p>In the <strong>Create a new project</strong> window, filter projects to <strong>C#</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>, select the <strong>Unit Test App in Desktop (WinUI 3)</strong> template (or <strong>Unit Test App (WinUI 3)</strong> for C++), and then select <strong>Next</strong></p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-new-project-window.png" alt="Screenshot of the Visual Studio 'Create a new project' window.">
+</span>
+</p>
+</li>
+<li><p>[Optional] On the <strong>Configure your new project</strong> window, change the <strong>Project name</strong>, <strong>Solution name</strong> (uncheck <strong>Place solution and project in the same directory</strong>) and the <strong>Location</strong> of your project.</p>
+</li>
+<li><p>Select <strong>Create</strong>.</p>
+</li>
+</ol>
+<h2 id="how-do-i-run-tests-with-test-explorer">How do I run tests with Test Explorer</h2>
+<p>When you create the test project, your tests appear in <strong>Test Explorer</strong>, which is used to run your unit tests. You can also group tests into categories, filter the test list, create, save, and run playlists of tests, debug unit tests and (in Visual Studio Enterprise) analyze code coverage.</p>
+<p>The UnitTests.cs file contains the source code for the unit tests used by <strong>Test Explorer</strong>. By default, the basic sample tests shown here are created automatically:</p>
+<pre><code class="lang-csharp">namespace WinUITest1
+{
+   [TestClass]
+   public class UnitTest1
+   {
+      [TestMethod]
+      public void TestMethod1()
+      {
+         Assert.AreEqual(0, 0);
+      }
+
+      // Use the UITestMethod attribute for tests that need to run on the UI thread.
+      [UITestMethod]
+      public void TestMethod2()
+      {
+         var grid = new Grid();
+         Assert.AreEqual(0, grid.MinWidth);
+      }
+   }
+}
+</code></pre>
+<ol>
+<li><p>If you haven't done so already, build your solution. This will allow Visual Studio to &quot;discover&quot; all available tests.</p>
+</li>
+<li><p>Open Test Explorer. If it's not visible, open the <strong>Test</strong> menu, and then choose <strong>Test Explorer</strong> (or press <strong>Ctrl + E, T</strong>).</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-test-menu.png" alt="Screenshot of the Test menu in Visual Studio.">
+</span>
+</p>
+</li>
+<li><p>View tests. In the <strong>Test Explorer</strong> window, expand all nodes (only the sample tests will be present at this point).</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-test-explorer-tests.png" alt="Screenshot of the Test Explorer window in Visual Studio showing the default sample tests.">
+</span>
+</p>
+</li>
+<li><p>Run tests.</p>
+<ul>
+<li>Right click on individual test nodes and select <strong>Run</strong>.</li>
+<li>Select a test and either press the <strong>Play</strong> button or press <strong>Ctrl + R, T</strong>.</li>
+<li>Press the <strong>Run All Tests In View</strong> button or press <strong>Ctrl + R, V</strong>.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-tests-run.png" alt="Screenshot of the Test Explorer window in Visual Studio showing the test context menu with Run command highlighted.">
+</span>
+</p>
+</li>
+<li><p>Review results. After tests are complete, results are shown in the <strong>Test Explorer</strong> window.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-test-explorer-test-results.png" alt="Screenshot of the Test Explorer window in Visual Studio showing the test run results.">
+</span>
+</p>
+</li>
+<li><p>Add a new project to the unit test solution. In the Solution Explorer, right click the solution and select <strong>Add -&gt; New Project...</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-add-new-project.png" alt="Screenshot of the Solution context menu with Add\/New Project highlighted in Visual Studio.">
+</span>
+</p>
+</li>
+<li><p>For this example, add a WinUI class library project. From the New Project window, filter on C#/Windows/WinUI and select <strong>Class Library (WinUI 3 in Desktop)</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-add-winui-class-library-project.png" alt="Screenshot of the New Project window with Class Library (WinUI 3 in Desktop) highlighted in Visual Studio.">
+</span>
+</p>
+</li>
+<li><p>Select Next and enter a name for the project (for this example we use &quot;WinUIClassLibrary1&quot;) and press <strong>Create</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-winui-class-library.png" alt="Screenshot of the new 'Class Library (WinUI 3 in Desktop)' project highlighted in the Solution Explorer and the Class1.cs file open in the code editor.">
+</span>
+</p>
+</li>
+<li><p>Add a new UserControl to the project. In the Solution Explorer, right click on the WinUI class library project you just added and select <strong>Add -&gt; New Item</strong> from the context menu.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-add-new-item.png" alt="Screenshot of the Solution context menu with Add\/New Item highlighted in Visual Studio.">
+</span>
+</p>
+</li>
+<li><p>In the <strong>Add New Item</strong> window, select the <strong>WinUI</strong> node in the <strong>Installed</strong> items list and then choose <strong>User Control (WinUI 3)</strong> from the results. Name the control &quot;UserControl1&quot;.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-add-winui-user-control.png" alt="Screenshot of the Add New Item window with WinUI\/User Control (WinUI 3) highlighted in Visual Studio.">
+</span>
+</p>
+</li>
+<li><p>Open the UserControl1.xaml.cs code-behind file. For this example, we add a new public method called &quot;GetSeven()&quot; that simply returns an integer.</p>
+<pre><code class="lang-csharp">namespace WinUICLassLibrary1
+{
+  public sealed partial class UserControll : UserControl
+  {
+     public UserControl1()
+     {
+         this.InitializeComponent();
+     }
+
+     public int GetSeven()
+     {
+         return 7;
+     }
+  }
+}
+</code></pre>
+</li>
+<li><p>Set the WinUI Class Library project as a dependency of the unit test project to enable the use of types from the WinUI class library project. In Solution Explorer, under the class library project, right click on <strong>Dependencies</strong> and select <strong>Add Project Reference</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-add-project-reference.png" alt="Screenshot of the Dependencies context menu with Add Project Reference highlighted in Visual Studio.">
+</span>
+</p>
+<p>Select the &quot;WinUIClassLibrary1&quot; item from the <strong>Projects</strong> list.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-add-project-reference-ref-manager.png" alt="Screenshot of the Reference Manager dialog with the 'WinUIClassLibrary1' project selected.">
+</span>
+</p>
+</li>
+<li><p>Create a new test method in UnitTests.cs. As this test case requires a XAML UI Thread to run, mark it with the [UITestMethod] attribute instead of the standard [TestMethod] attribute.</p>
+<pre><code class="lang-csharp">[UITestMethod]
+public void TestUserControl1()
+{
+   WinUIClassLibrary1.UserControl1 userControl1 = new WinUIClassLibrary1.UserControl1();
+   Assert.AreEqual(7, userControl1.GetSeven());
+}
+</code></pre>
+<p>This new test method now appears in <strong>Test Explorer</strong> as one of your unit tests.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-test-explorer-with-new-test-not-run.png" alt="Screenshot of the Test Explorer window in Visual Studio showing the default sample tests with the new unit test.">
+</span>
+</p>
+</li>
+<li><p>Run tests.</p>
+</li>
+</ol>
+<ul>
+<li>Right click the new test node and select <strong>Run</strong>.</li>
+<li>Select the new test and either press the <strong>Play</strong> button or press <strong>Ctrl + R, T</strong>.</li>
+<li>Press the <strong>Run All Tests In View</strong> button or press <strong>Ctrl + R, V</strong>.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-unittest-test-explorer-with-new-test.png" alt="Screenshot of the Test Explorer window in Visual Studio showing a completed test run of the default sample tests and the new unit test.">
+</span>
+</p>
+<h2 id="additional-resources">Additional resources</h2>
+<p><a href="/visualstudio/test/unit-test-basics">Unit test basics</a></p>
+<h2 id="next-steps">Next steps</h2>
+<p>In this tutorial, you learned how to:</p>
+<div class="checklist">
+<ul>
+<li>Create a <strong>Test App (WinUI 3 in Desktop)</strong> project in Visual Studio.</li>
+<li>Use the Visual Studio <strong>Text Explorer</strong>.</li>
+<li>Add a <strong>Class Library (WinUI 3 in Desktop)</strong> project for testing.</li>
+<li>Run tests with the Visual Studio Test Explorer.</li>
+</ul>
+</div>
+<p>More comprehensive coverage of the testing tools included with Visual Studio:</p>
+<div class="nextstepaction">
+<p><a href="/visualstudio/test/">Testing tools in Visual Studio</a></p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/testing/create-winui-unit-test-project.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Fingerprint biometrics </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Fingerprint biometrics ">
+    
+    <meta name="description" content="This article explains how to add fingerprint biometrics to your packaged Windows app using WinRT APIs from the Windows SDK.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="fingerprint-biometrics">Fingerprint biometrics</h1>
+
+<p>This article explains how to add fingerprint biometrics to your Windows app, including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app. For example, you could require fingerprint authentication before authorizing an in-app purchase, or access to restricted resources. Fingerprint authentication is managed using the <a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a> class in the <a href="/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI</a> namespace.</p>
+<p>The Windows Runtime (WinRT) APIs for fingerprint biometrics are part of the <a href="https://developer.microsoft.com/windows/downloads/windows-sdk/">Windows Software Development Kit (SDK)</a>. These APIs were created for use in Universal Windows Platform (UWP) apps, but they can also be used in WinUI apps or in packaged desktop apps, including WPF and Windows Forms. For more information about using WinRT APIs in your Windows desktop app, see <a href="/windows/apps/desktop/modernize/desktop-to-uwp-enhance">Call Windows Runtime APIs in desktop apps</a>.</p>
+<h2 id="check-the-device-for-a-fingerprint-reader">Check the device for a fingerprint reader</h2>
+<p>To find out whether the device has a fingerprint reader, call <a href="/uwp/api/windows.security.credentials.ui.userconsentverifier.checkavailabilityasync">UserConsentVerifier.CheckAvailabilityAsync</a>. Even if a device supports fingerprint authentication, your app should still provide users with an option in Settings to enable or disable it.</p>
+<pre><code class="lang-cs">public async System.Threading.Tasks.Task&lt;string&gt; CheckFingerprintAvailability()
+{
+    string returnMessage = &quot;&quot;;
+
+    try
+    {
+        // Check the availability of fingerprint authentication.
+        var ucvAvailability = await Windows.Security.Credentials.UI.UserConsentVerifier.CheckAvailabilityAsync();
+
+        switch (ucvAvailability)
+        {
+            case Windows.Security.Credentials.UI.UserConsentVerifierAvailability.Available:
+                returnMessage = &quot;Fingerprint verification is available.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerifierAvailability.DeviceBusy:
+                returnMessage = &quot;Biometric device is busy.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerifierAvailability.DeviceNotPresent:
+                returnMessage = &quot;No biometric device found.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerifierAvailability.DisabledByPolicy:
+                returnMessage = &quot;Biometric verification is disabled by policy.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerifierAvailability.NotConfiguredForUser:
+                returnMessage = &quot;The user has no fingerprints registered. Please add a fingerprint to the &quot; +
+                                &quot;fingerprint database and try again.&quot;;
+                break;
+            default:
+                returnMessage = &quot;Fingerprints verification is currently unavailable.&quot;;
+                break;
+        }
+    }
+    catch (Exception ex)
+    {
+        returnMessage = $&quot;Fingerprint authentication availability check failed: {ex.ToString()}&quot;;
+    }
+
+    return returnMessage;
+}
+</code></pre>
+<h2 id="request-consent-and-return-results">Request consent and return results</h2>
+<ol>
+<li>To request user consent from a fingerprint scan, call the <a href="/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync">UserConsentVerifier.RequestVerificationAsync</a> method. For fingerprint authentication to work, the user must have previously added a fingerprint &quot;signature&quot; to the fingerprint database.</li>
+<li>When you call the <a href="/uwp/api/windows.security.credentials.ui.userconsentverifier.requestverificationasync">UserConsentVerifier.RequestVerificationAsync</a>, the user is presented with a modal dialog requesting a fingerprint scan. You can supply a message to the <strong>UserConsentVerifier.RequestVerificationAsync</strong> method that will be displayed to the user as part of the modal dialog, as shown in the following image.</li>
+</ol>
+<pre><code class="lang-cs">private async System.Threading.Tasks.Task&lt;string&gt; RequestConsent(string userMessage)
+{
+    string returnMessage;
+
+    if (String.IsNullOrEmpty(userMessage))
+    {
+        userMessage = &quot;Please provide fingerprint verification.&quot;;
+    }
+
+    try
+    {
+        // Request the logged on user's consent via fingerprint swipe.
+        var consentResult = await Windows.Security.Credentials.UI.UserConsentVerifier.RequestVerificationAsync(userMessage);
+
+        switch (consentResult)
+        {
+            case Windows.Security.Credentials.UI.UserConsentVerificationResult.Verified:
+                returnMessage = &quot;Fingerprint verified.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerificationResult.DeviceBusy:
+                returnMessage = &quot;Biometric device is busy.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerificationResult.DeviceNotPresent:
+                returnMessage = &quot;No biometric device found.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerificationResult.DisabledByPolicy:
+                returnMessage = &quot;Biometric verification is disabled by policy.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerificationResult.NotConfiguredForUser:
+                returnMessage = &quot;The user has no fingerprints registered. Please add a fingerprint to the &quot; +
+                                &quot;fingerprint database and try again.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerificationResult.RetriesExhausted:
+                returnMessage = &quot;There have been too many failed attempts. Fingerprint authentication canceled.&quot;;
+                break;
+            case Windows.Security.Credentials.UI.UserConsentVerificationResult.Canceled:
+                returnMessage = &quot;Fingerprint authentication canceled.&quot;;
+                break;
+            default:
+                returnMessage = &quot;Fingerprint authentication is currently unavailable.&quot;;
+                break;
+        }
+    }
+    catch (Exception ex)
+    {
+        returnMessage = $&quot;Fingerprint authentication failed: {ex.ToString()}&quot;;
+    }
+
+    return returnMessage;
+}
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/uwp/api/Windows.Security.Credentials.UI.UserConsentVerifier">UserConsentVerifier</a></li>
+<li><a href="/uwp/api/Windows.Security.Credentials.UI">Windows.Security.Credentials.UI namespace</a></li>
+<li><a href="/windows/apps/desktop/modernize/desktop-to-uwp-enhance">Call Windows Runtime APIs in desktop apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/fingerprint-biometrics.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

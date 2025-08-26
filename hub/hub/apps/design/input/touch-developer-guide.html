@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Touch interactions developer guide </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Touch interactions developer guide ">
+    
+    <meta name="description" content="Develop Windows apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="touch-interactions-developer-guide">Touch interactions developer guide</h1>
+
+<p>Design your app with the expectation that touch will be the primary input method of your users. If you use UWP controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because UWP apps provide this for free.</p>
+<p>However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch, touchpad, pen/stylus, mouse, and keyboard input.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Xaml.Input"><strong>Windows.UI.Xaml.Input</strong></a>, <a href="/uwp/api/Windows.UI.Core"><strong>Windows.UI.Core</strong></a>, <a href="/uwp/api/Windows.Devices.Input"><strong>Windows.Devices.Input</strong></a></p>
+</blockquote>
+<p>Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.</p>
+<p>The Windows app includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence. Here, we cover the basics of using touch input in a Windows app.</p>
+<p>Touch interactions require three things:</p>
+<ul>
+<li>A touch-sensitive display.</li>
+<li>The direct contact (or proximity to, if the display has proximity sensors and supports hover detection) of one or more fingers on that display.</li>
+<li>Movement of the touch contacts (or lack thereof, based on a time threshold).</li>
+</ul>
+<p>The input data provided by the touch sensor can be:</p>
+<ul>
+<li>Interpreted as a physical gesture for direct manipulation of one or more UI elements, such as panning, rotating, resizing, or moving. (In contrast, interacting with an element through its properties window, dialog box, or other UI affordance is considered indirect manipulation.)</li>
+<li>Recognized as an alternative input method, such as mouse or pen.</li>
+<li>Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.</li>
+</ul>
+<p>Touch input typically involves the direct manipulation of an element on the screen. The element responds immediately to any touch contact within its hit test area, and reacts appropriately to any subsequent movement of the touch contacts, including removal.</p>
+<p>Custom touch gestures and interactions should be designed carefully. They should be intuitive, responsive, and discoverable, and they should let users explore your app with confidence.</p>
+<p>Ensure that app functionality is exposed consistently across every supported input device type. If necessary, use some form of indirect input mode, such as text input for keyboard interactions, or UI affordances for mouse and pen.</p>
+<p>Remember that traditional input devices (such as mouse and keyboard) are familiar and appealing to many users. They can offer speed, accuracy, and tactile feedback that touch cannot.</p>
+<p>Providing unique and distinctive interaction experiences for all input devices will support the widest range of capabilities and preferences, appeal to the broadest possible audience, and attract more customers to your app.</p>
+<h2 id="compare-touch-interaction-requirements">Compare touch interaction requirements</h2>
+<p>The following table shows some of the differences between input devices that you should consider when you design touch-optimized Windows apps.</p>
+<table>
+<tbody><tr><th>Factor</th><th>Touch interactions</th><th>Mouse, keyboard, pen/stylus interactions</th><th>Touchpad</th></tr>
+<tr><td rowspan="3">Precision</td><td>The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.</td><td>The mouse and pen/stylus supply a precise x-y coordinate.</td><td>Same as mouse.</td></tr>
+<tr><td>The shape  of the contact area changes throughout the movement.  </td><td>Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.</td><td>Same as mouse.</td></tr>
+<tr><td>There is no mouse cursor to assist with targeting.</td><td>The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.</td><td>Same as mouse.</td></tr>
+<tr><td rowspan="3">Human anatomy</td><td>Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.</td><td>It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.</td><td>Same as mouse.</td></tr>
+<tr><td>Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.</td><td>The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order. </td><td>Finger posture and grip can be an issue.</td></tr>
+<tr><td>Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.</td><td>Indirect input devices do not cause  occlusion.</td><td>Same as mouse.</td></tr>
+<tr><td>Object state</td><td>Touch uses a two-state model: the touch surface of a display device  is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.</td><td>
+<p>A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).</p>
+<p>Hover lets users explore and learn through tooltips  associated with UI elements. Hover and focus effects  can relay which objects are interactive and also help with targeting. 
+</p>
+</td><td>Same as mouse.</td></tr>
+<tr><td rowspan="2">Rich interaction</td><td>Supports multi-touch: multiple input points (fingertips) on a touch surface.</td><td>Supports a single input point.</td><td>Same as touch.</td></tr>
+<tr><td>Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.</td><td>No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.</td><td>Same as mouse.</td></tr>
+</tbody></table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.</p>
+</div>
+<h2 id="use-touch-feedback">Use touch feedback</h2>
+<p>Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and the Windows platform. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.</p>
+<p>Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.</p>
+<h2 id="targeting">Targeting</h2>
+<p>Targeting is optimized through:</p>
+<ul>
+<li><p>Touch target sizes</p>
+<p>Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.</p>
+</li>
+<li><p>Contact geometry</p>
+<p>The entire contact area of the finger determines the most likely target object.</p>
+</li>
+<li><p>Scrubbing</p>
+<p>Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.</p>
+</li>
+<li><p>Rocking</p>
+<p>Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a <a href="../controls/tooltips.html">tooltip</a> or the status bar and is activated when the touch is released.</p>
+</li>
+</ul>
+<h2 id="accuracy">Accuracy</h2>
+<p>Design for sloppy interactions by using:</p>
+<ul>
+<li>Snap-points that can make it easier to stop at desired locations when users interact with content.</li>
+<li>Directional &quot;rails&quot; that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see <a href="guidelines-for-panning.html">Guidelines for panning</a>.</li>
+</ul>
+<h2 id="occlusion">Occlusion</h2>
+<p>Finger and hand occlusion is avoided through:</p>
+<ul>
+<li><p>Size and positioning of UI</p>
+<p>Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.</p>
+<p>Position menus and pop-ups above the contact area whenever possible.</p>
+</li>
+<li><p>Tooltips</p>
+<p>Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.</p>
+<p>For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.</p>
+</li>
+<li><p>Handles for precision</p>
+<p>Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see <a href="guidelines-for-textselection.html">Guidelines for selecting text and images (Windows Runtime apps)</a>.</p>
+</li>
+</ul>
+<h2 id="timing">Timing</h2>
+<p>Avoid timed mode changes in favor of direct manipulation. Direct manipulation simulates the direct, real-time physical handling of an object. The object responds as the fingers are moved.</p>
+<p>A timed interaction, on the other hand, occurs after a touch interaction. Timed interactions typically depend on invisible thresholds like time, distance, or speed to determine what command to perform. Timed interactions have no visual feedback until the system performs the action.</p>
+<p>Direct manipulation provides a number of benefits over timed interactions:</p>
+<ul>
+<li>Instant visual feedback during interactions make users feel more engaged, confident, and in control.</li>
+<li>Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.</li>
+<li>Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.</li>
+<li>Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.</li>
+</ul>
+<p>In addition, the following are strongly recommended:</p>
+<ul>
+<li>Manipulations should not be distinguished by the number of fingers used.</li>
+<li>Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.</li>
+<li>Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
+<div class="NOTE">
+<h5>Note</h5>
+<p>An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).</p>
+</div>
+</li>
+<li>Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.</li>
+</ul>
+<h2 id="app-views">App views</h2>
+<p>Tweak the user interaction experience through the pan/scroll and zoom settings of your app views. An app view dictates how a user accesses and manipulates your app and its content. Views also provide behaviors such as inertia, content boundary bounce, and snap points.</p>
+<p>Pan and scroll settings of the <a href="/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer"><strong>ScrollViewer</strong></a> control dictate how users navigate within a single view, when the content of the view doesn't fit within the viewport. A single view, for example, can be a page of a magazine or book, the folder structure of a computer, a library of documents, or a photo album.</p>
+<p>Zoom settings apply to both optical zoom (supported by the <a href="/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer"><strong>ScrollViewer</strong></a> control) and the <a href="/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom"><strong>Semantic Zoom</strong></a> control. Semantic Zoom is a touch-optimized technique for presenting and navigating large sets of related data or content within a single view. It works by using two distinct modes of classification, or zoom levels. This is analogous to panning and scrolling within a single view. Panning and scrolling can be used in conjunction with Semantic Zoom.</p>
+<p>Use app views and events to modify the pan/scroll and zoom behaviors. This can provide a smoother interaction experience than is possible through the handling of pointer and gesture events.</p>
+<p>For more info about app views, see <a href="../basics/index.html">Controls, layouts, and text</a>.</p>
+<h2 id="custom-touch-interactions">Custom touch interactions</h2>
+<p>If you implement your own interaction support, keep in mind that users expect an intuitive experience involving direct interaction with the UI elements in your app. We recommend that you model your custom interactions on the platform control libraries to keep things consistent and discoverable. The controls in these libraries provide the full user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. Create custom interactions only if there is a clear, well-defined requirement and basic interactions don't support your scenario.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Windows 11 and newer</strong></p>
+<p><em>Some three- and four-finger touch interactions will no longer work in Windows apps by default.</em></p>
+<p>By default, three- and four-finger touch interactions are now consumed by the system for operations such as switching or minimizing windows and changing virtual desktops. As these interactions are now handled at the system level, your app's functionality could be affected by this change.</p>
+<p>To support three- or four-finger interactions within an application, a new user setting has been introduced that specifies whether or not the system handles these interactions:</p>
+<p><strong>Bluetooth &amp; devices &gt; Touch &gt; &quot;Three- and four-finger touch gestures&quot;</strong></p>
+<p>When set to &quot;On&quot; (default), the system will handle all three- and four-finger interactions (apps will not be able to support them).</p>
+<p>When set to &quot;Off&quot;, three- and four-finger interactions can be supported by apps (they will not be handled by the system).</p>
+<p>If your application must support these interactions, we recommend that you inform users of this setting and provide a link that launches the Settings app to the relevant page (ms-settings:devices-touch). For more details, see <a href="/windows/uwp/launch-resume/launch-settings-app">Launch the Windows Settings app</a>.</p>
+</div>
+<p>To provide customized touch support, you can handle various <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> events. These events are grouped into three levels of abstraction.</p>
+<ul>
+<li><p>Static gesture events are triggered after an interaction is complete. Gesture events include <a href="/uwp/api/windows.ui.xaml.uielement.tapped"><strong>Tapped</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.doubletapped"><strong>DoubleTapped</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.righttapped"><strong>RightTapped</strong></a>, and <a href="/uwp/api/windows.ui.xaml.uielement.holding"><strong>Holding</strong></a>.</p>
+<p>You can disable gesture events on specific elements by setting <a href="/uwp/api/windows.ui.xaml.uielement.istapenabled"><strong>IsTapEnabled</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled"><strong>IsDoubleTapEnabled</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.isrighttapenabled"><strong>IsRightTapEnabled</strong></a>, and <a href="/uwp/api/windows.ui.xaml.uielement.isholdingenabled"><strong>IsHoldingEnabled</strong></a> to <strong>false</strong>.</p>
+</li>
+<li><p>Pointer events such as <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a> provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.</p>
+<p>A pointer is a generic input type with a unified event mechanism. It exposes basic info, such as screen position, on the active input source, which can be touch, touchpad, mouse, or pen.</p>
+</li>
+<li><p>Manipulation gesture events, such as <a href="/uwp/api/windows.ui.xaml.uielement.manipulationstarted"><strong>ManipulationStarted</strong></a>, indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.</p>
+<p>Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.</p>
+</li>
+</ul>
+<p>Here is the basic set of touch gestures supported by UWP.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tap</td>
+<td>Static gesture</td>
+<td>One finger touches the screen and lifts up.</td>
+</tr>
+<tr>
+<td>Press and hold</td>
+<td>Static gesture</td>
+<td>One finger touches the screen and stays in place.</td>
+</tr>
+<tr>
+<td>Slide</td>
+<td>Manipulation gesture</td>
+<td>One or more fingers touch the screen and move in the same direction.</td>
+</tr>
+<tr>
+<td>Swipe</td>
+<td>Manipulation gesture</td>
+<td>One or more fingers touch the screen and move a short distance in the same direction.</td>
+</tr>
+<tr>
+<td>Turn</td>
+<td>Manipulation gesture</td>
+<td>Two or more fingers touch the screen and move in a clockwise or counter-clockwise arc.</td>
+</tr>
+<tr>
+<td>Pinch</td>
+<td>Manipulation gesture</td>
+<td>Two or more fingers touch the screen and move closer together.</td>
+</tr>
+<tr>
+<td>Stretch</td>
+<td>Manipulation gesture</td>
+<td>Two or more fingers touch the screen and move farther apart.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gesture-events">Gesture events</h2>
+<p>For details about individual controls, see <a href="../controls/index.html">Controls list</a>.</p>
+<h2 id="pointer-events">Pointer events</h2>
+<p>Pointer events are raised by a variety of active input sources, including touch, touchpad, pen, and mouse (they replace traditional mouse events.)</p>
+<p>Pointer events are based on a single input point (finger, pen tip, mouse cursor) and do not support velocity-based interactions.</p>
+<p>Here is a list of pointer events and their related event argument.</p>
+<table>
+<thead>
+<tr>
+<th>Event or class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a></td>
+<td>Occurs when a single finger touches the screen.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a></td>
+<td>Occurs when that same touch contact is lifted.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointermoved"><strong>PointerMoved</strong></a></td>
+<td>Occurs when the pointer is dragged across the screen.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a></td>
+<td>Occurs when a pointer enters the hit test area of an element.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a></td>
+<td>Occurs when a pointer exits the hit test area of an element.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointercanceled"><strong>PointerCanceled</strong></a></td>
+<td>Occurs when a touch contact is abnormally lost.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointercapturelost"><strong>PointerCaptureLost</strong></a></td>
+<td>Occurs when a pointer capture is taken by another element.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged"><strong>PointerWheelChanged</strong></a></td>
+<td>Occurs when the delta value of a mouse wheel changes and when the touchpad is pinched.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs"><strong>PointerRoutedEventArgs</strong></a></td>
+<td>Provides data for all pointer events.</td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows how to use the <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a>, and <a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a> events to handle a tap interaction on a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> object.</p>
+<p>First, a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> named <code>touchRectangle</code> is created in Extensible Application Markup Language (XAML).</p>
+<pre><code class="lang-XAML">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Rectangle Name=&quot;touchRectangle&quot;
+           Height=&quot;100&quot; Width=&quot;200&quot; Fill=&quot;Blue&quot; /&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>Next, listeners for the <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a>, and <a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a> events are specified.</p>
+<pre><code class="lang-cpp">MainPage::MainPage()
+{
+    InitializeComponent();
+
+    // Pointer event listeners.
+    touchRectangle-&gt;PointerPressed += ref new PointerEventHandler(this, &amp;MainPage::touchRectangle_PointerPressed);
+    touchRectangle-&gt;PointerReleased += ref new PointerEventHandler(this, &amp;MainPage::touchRectangle_PointerReleased);
+    touchRectangle-&gt;PointerExited += ref new PointerEventHandler(this, &amp;MainPage::touchRectangle_PointerExited);
+}
+</code></pre>
+<pre><code class="lang-cs">public MainPage()
+{
+    this.InitializeComponent();
+
+    // Pointer event listeners.
+    touchRectangle.PointerPressed += touchRectangle_PointerPressed;
+    touchRectangle.PointerReleased += touchRectangle_PointerReleased;
+    touchRectangle.PointerExited += touchRectangle_PointerExited;
+}
+</code></pre>
+<pre><code class="lang-vb">Public Sub New()
+
+    ' This call is required by the designer.
+    InitializeComponent()
+
+    ' Pointer event listeners.
+    AddHandler touchRectangle.PointerPressed, AddressOf touchRectangle_PointerPressed
+    AddHandler touchRectangle.PointerReleased, AddressOf Me.touchRectangle_PointerReleased
+    AddHandler touchRectangle.PointerExited, AddressOf touchRectangle_PointerExited
+
+End Sub
+</code></pre>
+<p>Finally, the <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a> event handler increases the <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a> of the <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a>, while the <a href="/uwp/api/windows.ui.xaml.uielement.pointerreleased"><strong>PointerReleased</strong></a> and <a href="/uwp/api/windows.ui.xaml.uielement.pointerexited"><strong>PointerExited</strong></a> event handlers set the <strong>Height</strong> and <strong>Width</strong> back to their starting values.</p>
+<pre><code class="lang-cpp">// Handler for pointer exited event.
+void MainPage::touchRectangle_PointerExited(Object^ sender, PointerRoutedEventArgs^ e)
+{
+    Rectangle^ rect = (Rectangle^)sender;
+
+    // Pointer moved outside Rectangle hit test area.
+    // Reset the dimensions of the Rectangle.
+    if (nullptr != rect)
+    {
+        rect-&gt;Width = 200;
+        rect-&gt;Height = 100;
+    }
+}
+
+// Handler for pointer released event.
+void MainPage::touchRectangle_PointerReleased(Object^ sender, PointerRoutedEventArgs^ e)
+{
+    Rectangle^ rect = (Rectangle^)sender;
+
+    // Reset the dimensions of the Rectangle.
+    if (nullptr != rect)
+    {
+        rect-&gt;Width = 200;
+        rect-&gt;Height = 100;
+    }
+}
+
+// Handler for pointer pressed event.
+void MainPage::touchRectangle_PointerPressed(Object^ sender, PointerRoutedEventArgs^ e)
+{
+    Rectangle^ rect = (Rectangle^)sender;
+
+    // Change the dimensions of the Rectangle.
+    if (nullptr != rect)
+    {
+        rect-&gt;Width = 250;
+        rect-&gt;Height = 150;
+    }
+}
+</code></pre>
+<pre><code class="lang-cs">// Handler for pointer exited event.
+private void touchRectangle_PointerExited(object sender, PointerRoutedEventArgs e)
+{
+    Rectangle rect = sender as Rectangle;
+
+    // Pointer moved outside Rectangle hit test area.
+    // Reset the dimensions of the Rectangle.
+    if (null != rect)
+    {
+        rect.Width = 200;
+        rect.Height = 100;
+    }
+}
+// Handler for pointer released event.
+private void touchRectangle_PointerReleased(object sender, PointerRoutedEventArgs e)
+{
+    Rectangle rect = sender as Rectangle;
+
+    // Reset the dimensions of the Rectangle.
+    if (null != rect)
+    {
+        rect.Width = 200;
+        rect.Height = 100;
+    }
+}
+
+// Handler for pointer pressed event.
+private void touchRectangle_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    Rectangle rect = sender as Rectangle;
+
+    // Change the dimensions of the Rectangle.
+    if (null != rect)
+    {
+        rect.Width = 250;
+        rect.Height = 150;
+    }
+}
+</code></pre>
+<pre><code class="lang-vb">' Handler for pointer exited event.
+Private Sub touchRectangle_PointerExited(sender As Object, e As PointerRoutedEventArgs)
+    Dim rect As Rectangle = CType(sender, Rectangle)
+
+    ' Pointer moved outside Rectangle hit test area.
+    ' Reset the dimensions of the Rectangle.
+    If (rect IsNot Nothing) Then
+        rect.Width = 200
+        rect.Height = 100
+    End If
+End Sub
+
+' Handler for pointer released event.
+Private Sub touchRectangle_PointerReleased(sender As Object, e As PointerRoutedEventArgs)
+    Dim rect As Rectangle = CType(sender, Rectangle)
+
+    ' Reset the dimensions of the Rectangle.
+    If (rect IsNot Nothing) Then
+        rect.Width = 200
+        rect.Height = 100
+    End If
+End Sub
+
+' Handler for pointer pressed event.
+Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEventArgs)
+    Dim rect As Rectangle = CType(sender, Rectangle)
+
+    ' Change the dimensions of the Rectangle.
+    If (rect IsNot Nothing) Then
+        rect.Width = 250
+        rect.Height = 150
+    End If
+End Sub
+</code></pre>
+<h2 id="manipulation-events">Manipulation events</h2>
+<p>Use manipulation events in your app if you need to support multiple finger interactions or interactions that require velocity data.</p>
+<p>You can use manipulation events to detect interactions such as drag, zoom, and hold.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The touchpad does not raise Manipulation events. Instead, pointer events will be raised for touchpad input.</p>
+</div>
+<p>Here is a list of manipulation events and related event arguments.</p>
+<table>
+<thead>
+<tr>
+<th>Event or class</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.manipulationstarting"><strong>ManipulationStarting event</strong></a></td>
+<td>Occurs when the manipulation processor is first created.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.manipulationstarted"><strong>ManipulationStarted event</strong></a></td>
+<td>Occurs when an input device begins a manipulation on the <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a>.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.manipulationdelta"><strong>ManipulationDelta event</strong></a></td>
+<td>Occurs when the input device changes position during a manipulation.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent"><strong>ManipulationInertiaStarting event</strong></a></td>
+<td>Occurs when the input device loses contact with the <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> object during a manipulation and inertia begins.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.uielement.manipulationcompleted"><strong>ManipulationCompleted event</strong></a></td>
+<td>Occurs when a manipulation and inertia on the <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> are complete.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs"><strong>ManipulationStartingRoutedEventArgs</strong></a></td>
+<td>Provides data for the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationstarting"><strong>ManipulationStarting</strong></a> event.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs"><strong>ManipulationStartedRoutedEventArgs</strong></a></td>
+<td>Provides data for the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationstarted"><strong>ManipulationStarted</strong></a> event.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs"><strong>ManipulationDeltaRoutedEventArgs</strong></a></td>
+<td>Provides data for the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationdelta"><strong>ManipulationDelta</strong></a> event.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs"><strong>ManipulationInertiaStartingRoutedEventArgs</strong></a></td>
+<td>Provides data for the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting"><strong>ManipulationInertiaStarting</strong></a> event.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Input.ManipulationVelocities"><strong>ManipulationVelocities</strong></a></td>
+<td>Describes the speed at which manipulations occur.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs"><strong>ManipulationCompletedRoutedEventArgs</strong></a></td>
+<td>Provides data for the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationcompleted"><strong>ManipulationCompleted</strong></a> event.</td>
+</tr>
+</tbody>
+</table>
+<p>A gesture consists of a series of manipulation events. Each gesture starts with a <a href="/uwp/api/windows.ui.xaml.uielement.manipulationstarted"><strong>ManipulationStarted</strong></a> event, such as when a user touches the screen.</p>
+<p>Next, one or more <a href="/uwp/api/windows.ui.xaml.uielement.manipulationdelta"><strong>ManipulationDelta</strong></a> events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a <a href="/uwp/api/windows.ui.xaml.uielement.manipulationcompleted"><strong>ManipulationCompleted</strong></a> event is raised when the interaction finishes.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.</p>
+</div>
+<p>The following example shows how to use the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationdelta"><strong>ManipulationDelta</strong></a> events to handle a slide interaction on a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> and move it across the screen.</p>
+<p>First, a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> named <code>touchRectangle</code> is created in XAML with a <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Height"><strong>Height</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.Width"><strong>Width</strong></a> of 200.</p>
+<pre><code class="lang-XAML">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;Rectangle Name=&quot;touchRectangle&quot;
+               Width=&quot;200&quot; Height=&quot;200&quot; Fill=&quot;Blue&quot; 
+               ManipulationMode=&quot;All&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>Next, a global <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a> named <code>dragTranslation</code> is created for translating the <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a>. A <a href="/uwp/api/windows.ui.xaml.uielement.manipulationdelta"><strong>ManipulationDelta</strong></a> event listener is specified on the <strong>Rectangle</strong>, and <code>dragTranslation</code> is added to the <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>RenderTransform</strong></a> of the <strong>Rectangle</strong>.</p>
+<pre><code class="lang-cpp">// Global translation transform used for changing the position of 
+// the Rectangle based on input data from the touch contact.
+Windows::UI::Xaml::Media::TranslateTransform^ dragTranslation;
+</code></pre>
+<pre><code class="lang-cs">// Global translation transform used for changing the position of 
+// the Rectangle based on input data from the touch contact.
+private TranslateTransform dragTranslation;
+</code></pre>
+<pre><code class="lang-vb">' Global translation transform used for changing the position of 
+' the Rectangle based on input data from the touch contact.
+Private dragTranslation As TranslateTransform
+</code></pre>
+<pre><code class="lang-cpp">MainPage::MainPage()
+{
+    InitializeComponent();
+
+    // Listener for the ManipulationDelta event.
+    touchRectangle-&gt;ManipulationDelta += 
+        ref new ManipulationDeltaEventHandler(
+            this, 
+            &amp;MainPage::touchRectangle_ManipulationDelta);
+    // New translation transform populated in 
+    // the ManipulationDelta handler.
+    dragTranslation = ref new TranslateTransform();
+    // Apply the translation to the Rectangle.
+    touchRectangle-&gt;RenderTransform = dragTranslation;
+}
+</code></pre>
+<pre><code class="lang-cs">public MainPage()
+{
+    this.InitializeComponent();
+
+    // Listener for the ManipulationDelta event.
+    touchRectangle.ManipulationDelta += touchRectangle_ManipulationDelta;
+    // New translation transform populated in 
+    // the ManipulationDelta handler.
+    dragTranslation = new TranslateTransform();
+    // Apply the translation to the Rectangle.
+    touchRectangle.RenderTransform = this.dragTranslation;
+}
+</code></pre>
+<pre><code class="lang-vb">Public Sub New()
+
+    ' This call is required by the designer.
+    InitializeComponent()
+
+    ' Listener for the ManipulationDelta event.
+    AddHandler touchRectangle.ManipulationDelta,
+        AddressOf testRectangle_ManipulationDelta
+    ' New translation transform populated in 
+    ' the ManipulationDelta handler.
+    dragTranslation = New TranslateTransform()
+    ' Apply the translation to the Rectangle.
+    touchRectangle.RenderTransform = dragTranslation
+
+End Sub
+</code></pre>
+<p>Finally, in the <a href="/uwp/api/windows.ui.xaml.uielement.manipulationdelta"><strong>ManipulationDelta</strong></a> event handler, the position of the <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> is updated by using the <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a> on the <a href="/uwp/api/windows.ui.xaml.input.manipulationdeltaroutedeventargs.delta"><strong>Delta</strong></a> property.</p>
+<pre><code class="lang-cpp">// Handler for the ManipulationDelta event.
+// ManipulationDelta data is loaded into the
+// translation transform and applied to the Rectangle.
+void MainPage::touchRectangle_ManipulationDelta(Object^ sender,
+    ManipulationDeltaRoutedEventArgs^ e)
+{
+    // Move the rectangle.
+    dragTranslation-&gt;X += e-&gt;Delta.Translation.X;
+    dragTranslation-&gt;Y += e-&gt;Delta.Translation.Y;
+    
+}
+</code></pre>
+<pre><code class="lang-cs">// Handler for the ManipulationDelta event.
+// ManipulationDelta data is loaded into the
+// translation transform and applied to the Rectangle.
+void touchRectangle_ManipulationDelta(object sender,
+    ManipulationDeltaRoutedEventArgs e)
+{
+    // Move the rectangle.
+    dragTranslation.X += e.Delta.Translation.X;
+    dragTranslation.Y += e.Delta.Translation.Y;
+}
+</code></pre>
+<pre><code class="lang-vb">' Handler for the ManipulationDelta event.
+' ManipulationDelta data Is loaded into the
+' translation transform And applied to the Rectangle.
+Private Sub testRectangle_ManipulationDelta(
+    sender As Object,
+    e As ManipulationDeltaRoutedEventArgs)
+
+    ' Move the rectangle.
+    dragTranslation.X = (dragTranslation.X + e.Delta.Translation.X)
+    dragTranslation.Y = (dragTranslation.Y + e.Delta.Translation.Y)
+
+End Sub
+</code></pre>
+<h2 id="routed-events">Routed events</h2>
+<p>All of the pointer events, gesture events and manipulation events mentioned here are implemented as <em>routed events</em>. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> or the root <a href="/uwp/api/Windows.UI.Xaml.Controls.Page"><strong>Page</strong></a> of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see <a href="/previous-versions/windows/apps/hh758286(v=win.10)">Events and routed events overview</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you need to handle pointer events for a <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling <a href="/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations">UIElement.CancelDirectmanipulation()</a>. To re-enable manipulation events in the view, call <a href="/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation">UIElement.TryStartDirectManipulation()</a>.</p>
+</div>
+<h2 id="dos-and-donts">Dos and don'ts</h2>
+<ul>
+<li>Design applications with touch interaction as the primary expected input method.</li>
+<li>Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)</li>
+<li>Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.</li>
+<li>Optimize accuracy through the use of snap points and directional &quot;rails&quot;.</li>
+<li>Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.</li>
+<li>Don't use timed interactions whenever possible (example of appropriate use: touch and hold).</li>
+<li>Don't use the number of fingers used to distinguish the manipulation whenever possible.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="handle-pointer-input.html">Handle pointer input</a></li>
+<li><a href="identify-input-devices.html">Identify input devices</a></li>
+</ul>
+<h3 id="samples">Samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode">User interaction mode sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+</ul>
+<h3 id="archive-samples">Archive Samples</h3>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample">Input: XAML user input events sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample">XAML scrolling, panning, and zooming sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer">Input: Gestures and manipulations with GestureRecognizer</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/touch-developer-guide.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

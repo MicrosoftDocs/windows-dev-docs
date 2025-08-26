@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>search Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="search Command ">
+    
+    <meta name="description" content="Queries the sources for available applications that can be installed">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="search-command-winget">search command (winget)</h1>
+
+<p>The <strong>search</strong> command of <a href="index.html">WinGet</a> can be used to show all applications available for installation. It can also be used to identify the string or ID needed to install a specific application.</p>
+<p>For example, the command <code>winget search vscode</code> will return all applications available that include &quot;vscode&quot; in the name, id, description, moniker or tags.</p>
+<p>The <strong>search</strong> command includes parameters for filtering down the applications returned to help you identify the specific application you are looking for, including: <code>--id</code>, <code>--name</code>, <code>--moniker</code>, <code>--tag</code>, <code>--command</code>, or <code>--source</code>. See descriptions <a href="#search-strings">below</a> or use <code>winget search --help</code> in your command line.</p>
+<h2 id="usage">Usage</h2>
+<p><code>winget search [[-q] &lt;query&gt;] [&lt;options&gt;]</code></p>
+<p><span class="mx-imgBorder">
+<a href="images/search.png#lightbox" data-linktype="relative-path">
+<img src="images/search.png" alt="Screenshot Windows PowerShell displaying the results of the winget search command.">
+</a>
+</span>
+</p>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>find</li>
+</ul>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-q,--query</strong></td>
+<td>The query flag is the default argument used to search for an app. It does not need to be specified. Entering the command <code>winget search foo</code> will default to using <code>--query</code> so including it is unnecessary.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are searching for.</p>
+</div>
+<h2 id="show-all">Show all</h2>
+<p>To show all of the winget packages available, use the command:</p>
+<p><code>winget search --query &quot;&quot;</code></p>
+<p>In Windows PowerShell, you will need to escape the quotes, so this command becomes:</p>
+<pre><code class="lang-powershell">winget search -q `&quot;`&quot;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This is a change from previous versions of winget which supported <code>winget search</code> with no filters or options displaying all available packages. You can also search for all applications in another source by passing in the <strong>source</strong> option.</p>
+</div>
+<h2 id="search-strings">Search strings</h2>
+<p>Search strings can be filtered with the following options.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>--id</strong></td>
+<td>Limits the search to the ID of the application. The ID includes the publisher and the application name.</td>
+</tr>
+<tr>
+<td><strong>--name</strong></td>
+<td>Limits the search to the name of the application.</td>
+</tr>
+<tr>
+<td><strong>--moniker</strong></td>
+<td>Limits the search to the moniker specified.</td>
+</tr>
+<tr>
+<td><strong>--tag</strong></td>
+<td>Limits the search to the tags listed for the application.</td>
+</tr>
+<tr>
+<td><strong>--cmd, --command</strong></td>
+<td>Limits the search to the commands listed for the application.</td>
+</tr>
+<tr>
+<td><strong>-s, --source</strong></td>
+<td>Find package using the specified <a href="source.html">source</a> name.</td>
+</tr>
+<tr>
+<td><strong>-n, --count</strong></td>
+<td>Show no more than specified number of results (between 1 and 1000).</td>
+</tr>
+<tr>
+<td><strong>-e, --exact</strong></td>
+<td>Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--authentication-mode</strong></td>
+<td>Specify authentication window preference (silent, silentPreferred or interactive).</td>
+</tr>
+<tr>
+<td><strong>--authentication-account</strong></td>
+<td>Specify the account to be used for authentication.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Accept all source agreements during source operations.</td>
+</tr>
+<tr>
+<td><strong>--versions</strong></td>
+<td>Show available versions of the package.</td>
+</tr>
+<tr>
+<td><strong>-?, --help</strong></td>
+<td>Gets additional help on this command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<p>The string will be treated as a substring. The search by default is also case insensitive. For example, <code>winget search micro</code> could return the following:</p>
+<ul>
+<li>Microsoft</li>
+<li>Microscope</li>
+<li>MyMicro</li>
+</ul>
+<h2 id="searching-across-multiple-sources">Searching across multiple sources</h2>
+<p>If you want to narrow results down to a specific source, just pass the <code>--source</code> or <code>-s</code> parameter and specify what you want. For example, you might want to see if Visual Studio Code is in the store by running <code>winget search “Visual Studio Code” -s msstore</code>. This search uses &quot;Visual Studio Code&quot; as the query.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/search.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

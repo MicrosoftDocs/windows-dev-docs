@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Scroll viewer controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Scroll viewer controls ">
+    
+    <meta name="description" content="Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="scroll-viewer-controls">Scroll viewer controls</h1>
+
+<p>When there is more UI content to show than you can fit in an area, use a scroll viewer control.</p>
+<p>Scroll viewers enable content to extend beyond the bounds of the viewport (visible area). Users reach this content by manipulating the scroll viewer surface through touch, mousewheel, keyboard, or a gamepad, or by using the mouse or pen cursor to interact with the scroll viewer's scrollbar.</p>
+<p>Depending on the situation, the scroll viewer's scrollbar uses two different visualizations, shown in the following illustration: the panning indicator (left) and the traditional scrollbar thumb (right).</p>
+<section class="row">
+<div class="column span">
+<p><span class="mx-imgBorder">
+<img src="images/scrollbar-panning-1.png" alt="A screenshot that illustrates a panning scrollbar, a 2 pixel wide vertical line at the right edge of the content.">
+</span>
+</p>
+</div>
+<div class="column span">
+<p><span class="mx-imgBorder">
+<img src="images/scrollBar-standard-1.png" alt="A screenshot that illustrates the standard scrollbar, a 6 pixel wide vertical line with an up arrow button at the top, and a down arrow at the bottom.">
+</span>
+</p>
+</div>
+</section>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>WinUI 3 has two different scroll viewer controls available: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView</a>. Whenever we speak generically about <em>scroll viewer</em> controls, the information applies to both controls.</p>
+</div>
+<h2 id="scrolling-panning-and-zooming">Scrolling, panning, and zooming</h2>
+<p>Use a scroll viewer control to allow <em>scrolling</em>, <em>panning</em>, and <em>zooming</em> of your content.</p>
+<ul>
+<li><em>Scrolling</em>: Moving the content vertically or horizontally by dragging the scrollbar thumb or using the scroll wheel on a mouse.</li>
+<li><em>Panning</em>: Moving content vertically or horizontally using touch or pen input.
+<ul>
+<li>For more info about scrolling and panning, see <a href="../input/guidelines-for-panning.html">Guidelines for panning</a>.</li>
+</ul>
+</li>
+<li><em>Zooming</em>: Optically increasing or decreasing the scale of the content.
+<ul>
+<li>For more info about zooming, see <a href="../input/guidelines-for-optical-zoom.html">Optical zoom and resizing</a>.</li>
+</ul>
+</li>
+</ul>
+<p>The scrollbar is conscious of the user's input method and uses it to determine which visualization to display.</p>
+<ul>
+<li>When the region is scrolled without manipulating the scrollbar directly, for example, by touch, the panning indicator appears, displaying the current scroll position.</li>
+<li>When the mouse or pen cursor moves over the panning indicator, it morphs into the traditional scrollbar.  Dragging the scrollbar thumb manipulates the scrolling region.</li>
+</ul>
+<p><span class="mx-imgBorder">
+<img src="images/conscious-scroll.gif" alt="An animation that shows the scroll bar transform from the narrow panning indicator to the traditional thumb when the cursor moves over it.">
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When the scrollbar is visible it is overlaid as 16px on top of the content inside your ScrollViewer. In order to ensure good UX design you will want to ensure that no interactive content is obscured by this overlay. Additionally if you would prefer not to have UX overlap, leave 16px of padding on the edge of the viewport to allow for the scrollbar.</p>
+</div>
+<h3 id="viewport-and-extent">Viewport and extent</h3>
+<p>A scroll viewer is composed of two main regions that are important to understanding its functionality. The area that includes all of the scrollable content, both hidden and visible, is the <em>extent</em>. The visible area of the control where the content is shown is the <em>viewport</em>.</p>
+<p><span class="mx-imgBorder">
+<img src="images/scrolling/extent-viewport.png" alt="A block of text that extends beyond the viewport, or visible area of the control.">
+</span>
+</p>
+<p>Various APIs are available that let you get the height and width of these regions, as well as the <em>scrollable</em> height and width, which is the difference between the extent size and the viewport size.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Whenever possible, design for vertical scrolling rather than horizontal.</li>
+<li>Use one-axis panning for content regions that extend beyond one viewport boundary (vertical or horizontal). Use two-axis panning for content regions that extend beyond both viewport boundaries (vertical and horizontal).</li>
+<li>Use the built-in scroll functionality in the items view, list view, grid view, combo box, list box, text input box, and hub controls. With those controls, if there are too many items to show all at once, the user is able to scroll either horizontally or vertically over the list of items.</li>
+<li>If you want the user to pan in both directions around a larger area, and possibly to zoom, too, for example, if you want to allow the user to pan and zoom over a full-sized image (rather than an image sized to fit the screen) then place the image inside a scroll viewer.</li>
+<li>If the user will scroll through a long passage of text, configure the scroll viewer to scroll vertically only.</li>
+<li>Use a scroll viewer to contain one object only. Note that the one object can be a layout panel, in turn containing any number of objects of its own.</li>
+<li>If you need to handle pointer events for a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement">UIElement</a> in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations">UIElement.CancelDirectManipulation</a>. To re-enable manipulation events in the view, call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation">UIElement.TryStartDirectManipulation</a>.</li>
+</ul>
+<h2 id="create-a-scroll-viewer">Create a scroll viewer</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollbar">ScrollBar class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/ScrollView">Open the WinUI 3 Gallery app and see the ScrollView in action</a></p>
+<p><a href="winui3gallery:/item/ScrollViewer">Open the WinUI 3 Gallery app and see the ScrollViewer in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>A scroll viewer control can be used to make content scrollable by explicitly wrapping the content in the scroll viewer, or by placing a scroll viewer in the control template of a content control.</p>
+<h3 id="scroll-viewer-in-a-control-template">Scroll viewer in a control template</h3>
+<p>It's typical for a scroll viewer control to exist as a composite part of other controls. A scroll viewer part will display a viewport along with scrollbars only when the host control's layout space is being constrained smaller than the expanded content size.</p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview">ItemsView</a> includes a <code>ScrollView</code> control in its template. You can access the <code>ScrollView</code> though the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.scrollview">ItemsView.ScrollView</a> property.</p>
+<p><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView">GridView</a> templates always include a <code>ScrollViewer</code>. <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox">TextBox</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox">RichEditBox</a> also include a <code>ScrollViewer</code> in their templates. To influence some of the behavior and properties of the built in <code>ScrollViewer</code> part, <code>ScrollViewer</code> defines a number of XAML attached properties that can be set in styles and used in template bindings. For more info about attached properties, see <a href="/windows/uwp/xaml-platform/attached-properties-overview">Attached properties overview</a>.</p>
+<h3 id="set-scrollable-content">Set scrollable content</h3>
+<p>Content inside of a scroll viewer becomes scrollable when it's larger than the scroll viewer's viewport</p>
+<p>This example sets a <code>Rectangle</code> as the content of the <code>ScrollView</code> control. The user only sees a 500x400 portion of that rectangle and can scroll to see the rest of it.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_scrollview" role="tab" aria-controls="tabpanel_1_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_scrollviewer" role="tab" aria-controls="tabpanel_1_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_1_scrollview" role="tabpanel" data-tab="scrollview">
+
+<pre><code class="lang-xaml">&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot;&gt;
+    &lt;Rectangle Width=&quot;1000&quot; Height=&quot;800&quot;&gt;
+        &lt;Rectangle.Fill&gt;
+            &lt;LinearGradientBrush StartPoint=&quot;0,0&quot; EndPoint=&quot;1,1&quot;&gt;
+                &lt;GradientStop Color=&quot;Yellow&quot; Offset=&quot;0.0&quot; /&gt;
+                &lt;GradientStop Color=&quot;Red&quot; Offset=&quot;0.25&quot; /&gt;
+                &lt;GradientStop Color=&quot;Blue&quot; Offset=&quot;0.75&quot; /&gt;
+                &lt;GradientStop Color=&quot;LimeGreen&quot; Offset=&quot;1.0&quot; /&gt;
+            &lt;/LinearGradientBrush&gt;
+        &lt;/Rectangle.Fill&gt;
+    &lt;/Rectangle&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+</section>
+<section id="tabpanel_1_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xaml">&lt;ScrollViewer Width=&quot;500&quot; Height=&quot;400&quot; HorizontalScrollBarVisibility=&quot;Auto&quot;&gt;
+    &lt;Rectangle Width=&quot;1000&quot; Height=&quot;800&quot;&gt;
+        &lt;Rectangle.Fill&gt;
+            &lt;LinearGradientBrush StartPoint=&quot;0,0&quot; EndPoint=&quot;1,1&quot;&gt;
+                &lt;GradientStop Color=&quot;Yellow&quot; Offset=&quot;0.0&quot; /&gt;
+                &lt;GradientStop Color=&quot;Red&quot; Offset=&quot;0.25&quot; /&gt;
+                &lt;GradientStop Color=&quot;Blue&quot; Offset=&quot;0.75&quot; /&gt;
+                &lt;GradientStop Color=&quot;LimeGreen&quot; Offset=&quot;1.0&quot; /&gt;
+            &lt;/LinearGradientBrush&gt;
+        &lt;/Rectangle.Fill&gt;
+    &lt;/Rectangle&gt;
+&lt;/ScrollViewer&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="layout">Layout</h2>
+<p>In the previous example, the size of the rectangle is explicitly set to be larger than the scroll viewer. In cases were the scroll viewer content is allowed to grow naturally, like in a list or text block, you can configure the scroll viewer to let its content (the <em>extent</em>) expand vertically, horizontally, both, or neither.</p>
+<p>For example, this text block will grow horizontally until its parent container constrains it, then wrap the text and grow vertically.</p>
+<pre><code class="lang-xaml">&lt;TextBlock Text=&quot;{x:Bind someText}&quot; TextWrapping=&quot;WrapWholeWords&quot;/&gt;
+</code></pre>
+<p>When the text block is wrapped in a scroll viewer, the scroll viewer constrains its horizontal and vertical growth.</p>
+<section class="row">
+<div class="column span">
+<p><em>Vertical</em> means that the content is constrained horizontally, but can grow vertically beyond the viewport bounds, and the user can scroll the content up and down.</p>
+</div>
+<div class="column span">
+<p><span class="mx-imgBorder">
+<img src="images/scrolling/scrollview-orientation-vertical.png" alt="A block of text that extends vertically beyond the viewport, or visible area of the control, with a vertical scroll bar shown.">
+</span>
+</p>
+</div>
+</section>
+<section class="row">
+<div class="column span">
+<p><em>Horizontal</em> means that the content is constrained vertically, but can grow horizontally beyond the viewport bounds, and the user can scroll the content left and right.</p>
+</div>
+<div class="column span">
+<p><span class="mx-imgBorder">
+<img src="images/scrolling/scrollview-orientation-horizontal.png" alt="A block of text that extends horizontally beyond the viewport, or visible area of the control, with a horizontal scroll bar shown.">
+</span>
+</p>
+</div>
+</section>
+<h3 id="scrollbar-visibility">Scrollbar visibility</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView</a> controls use slightly different means to configure the horizontal and vertical scrolling of content.</p>
+<ul>
+<li>In the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> control, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.verticalscrollbarvisibility">VerticalScrollBarVisibility</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility">HorizontalScrollBarVisibility</a> properties control both the visibility of the scrollbars and whether scrolling in a particular direction is allowed. When a property is set to <code>Disabled</code>, content can't be scrolled in that direction by user interaction.
+<ul>
+<li>The defaults are: <code>VerticalScrollBarVisibility=&quot;Auto&quot;</code>, <code>HorizontalScrollBarVisibility=&quot;Disabled&quot;</code></li>
+</ul>
+</li>
+<li>In the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView</a> control, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.verticalscrollbarvisibility">VerticalScrollBarVisibility</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.horizontalscrollbarvisibility">HorizontalScrollBarVisibility</a> properties control only the visibility of the scrollbars.
+<ul>
+<li>The defaults are: <code>VerticalScrollBarVisibility=&quot;Auto&quot;</code>, <code>HorizontalScrollBarVisibility=&quot;Auto&quot;</code></li>
+</ul>
+</li>
+</ul>
+<p>This table describes the visibility options for these properties.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auto</td>
+<td>A scrollbar appears only when the viewport cannot display all of the content.</td>
+</tr>
+<tr>
+<td>Disabled (ScrollViewer only)</td>
+<td>A scrollbar does not appear even when the viewport cannot display all of the content. Scrolling by user interaction is disabled. (Programmatic scrolling is still possible.)</td>
+</tr>
+<tr>
+<td>Hidden</td>
+<td>A scrollbar does not appear even when the viewport cannot display all of the content. Scrolling is still enabled, and can occur through touch, keyboard, or mouse wheel interaction.</td>
+</tr>
+<tr>
+<td>Visible</td>
+<td>A scrollbar always appears. (In current UX designs, the scrollbar appears only when the mouse cursor is over it unless the viewport cannot display all of the content. )</td>
+</tr>
+</tbody>
+</table>
+<p>(ScrollViewer uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollbarvisibility">ScrollBarVisibility</a> enum; ScrollView uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollingscrollbarvisibility">ScrollingScrollBarVisibility</a> enum.)</p>
+<h3 id="orientation">Orientation</h3>
+<p>The ScrollView control has a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.contentorientation">ContentOrientation</a> property that let's you control the layout of content. This property determines how content can grow when it's not explicitly constrained. If <code>Height</code> and <code>Width</code> are explicitly set on the content, <code>ContentOrientation</code> has no effect.</p>
+<p>This table shows the <code>ContentOrientation</code> options for <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView</a> and the equivalent settings for <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Orientation</th>
+<th>ScrollView</th>
+<th>ScrollViewer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vertical</td>
+<td><code>ContentOrientation=&quot;Vertical&quot;</code></td>
+<td><code>VerticalScrollBarVisibility=&quot;[Auto][Visible][Hidden]&quot;</code><br><code>HorizontalScrollBarVisibility=&quot;Disabled&quot;</code></td>
+</tr>
+<tr>
+<td>Horizontal</td>
+<td><code>ContentOrientation=&quot;Horizontal&quot;</code></td>
+<td><code>VerticalScrollBarVisibility=&quot;Disabled&quot;</code><br><code>HorizontalScrollBarVisibility=&quot;[Auto][Visible][Hidden]&quot;</code></td>
+</tr>
+<tr>
+<td>Both</td>
+<td><code>ContentOrientation=&quot;Both&quot;</code></td>
+<td><code>VerticalScrollBarVisibility=&quot;[Auto][Visible][Hidden]&quot;</code><br><code>HorizontalScrollBarVisibility=&quot;[Auto][Visible][Hidden]&quot;</code></td>
+</tr>
+<tr>
+<td>None</td>
+<td><code>ContentOrientation=&quot;None&quot;</code><br></td>
+<td><code>VerticalScrollBarVisibility=&quot;Disabled&quot;</code><br><code>HorizontalScrollBarVisibility=&quot;Disabled&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="vertical-layout">Vertical layout</h3>
+<p>By default, a scroll viewer's content layout (orientation) is vertical.</p>
+<p>In this example, an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater">ItemsRepeater</a> is used as the ScrollView's <code>Content</code>. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout">UniformGridLayout</a> for the ItemsRepeater positions the items horizontally in a row until it runs out of space (500px in this example), then positions the next item on the next row. The ItemsRepeater may be taller than the 400px that the user can see, but the user can then scroll the content vertically.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_scrollview" role="tab" aria-controls="tabpanel_2_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_scrollviewer" role="tab" aria-controls="tabpanel_2_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_2_scrollview" role="tabpanel" data-tab="scrollview">
+
+<p>The default <code>ContentOrientation</code> value is <code>Vertical</code>, so no changes are needed on the ScrollView.</p>
+<pre><code class="lang-xaml">&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot;&gt;
+    &lt;ItemsRepeater ItemsSource=&quot;{x:Bind Albums}&quot;
+                   ItemTemplate=&quot;{StaticResource MyTemplate}&quot;&gt;
+        &lt;ItemsRepeater.Layout&gt;
+            &lt;UniformGridLayout RowSpacing=&quot;8&quot; ColumnSpacing=&quot;8&quot;/&gt;
+        &lt;/ItemsRepeater.Layout&gt;
+    &lt;/ItemsRepeater&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+</section>
+<section id="tabpanel_2_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<p>The default scrolling configuration is vertical, so no changes are needed on the ScrollViewer.</p>
+<pre><code class="lang-xaml">&lt;ScrollViewer Width=&quot;500&quot; Height=&quot;400&quot;&gt;
+    &lt;ItemsRepeater ItemsSource=&quot;{x:Bind Albums}&quot;
+                   ItemTemplate=&quot;{StaticResource MyTemplate}&quot;&gt;
+        &lt;ItemsRepeater.Layout&gt;
+            &lt;UniformGridLayout RowSpacing=&quot;8&quot; ColumnSpacing=&quot;8&quot;/&gt;
+        &lt;/ItemsRepeater.Layout&gt;
+    &lt;/ItemsRepeater&gt;
+&lt;/ScrollViewer&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="horizontal-layout">Horizontal layout</h3>
+<p>In this example the content is a <code>StackPanel</code> that is laying out its items horizontally. The scroll viewer configuration is changed to support horizontal scrolling and disable vertical scrolling.</p>
+<div class="tabGroup" id="tabgroup_3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_3_scrollview" role="tab" aria-controls="tabpanel_3_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_3_scrollviewer" role="tab" aria-controls="tabpanel_3_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_3_scrollview" role="tabpanel" data-tab="scrollview">
+
+<p>The <code>ScrollView</code>'s <code>ContentOrientation</code> property is set to <code>Horizontal</code> to allow the content to grow horizontally as much as needed.</p>
+<pre><code class="lang-xaml">&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot; ContentOrientation=&quot;Horizontal&quot;&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 1&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 2&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 3&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 4&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 5&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+</section>
+<section id="tabpanel_3_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<p>The ScrollViewer's HorizontalScrollBarVisibility is changed to Auto to allow the content to grow horizontally as much as needed and show the scrollbar when the content extends past the viewport. The VerticalScrollBarVisibility is changed to Disabled to constrain the content vertically and turn off vertical scrolling.</p>
+<pre><code class="lang-xaml">&lt;ScrollViewer Width=&quot;500&quot; Height=&quot;400&quot;
+    HorizontalScrollBarVisibility=&quot;Auto&quot; VerticalScrollBarVisibility=&quot;Disabled&quot;&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 1&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 2&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 3&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 4&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 5&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/ScrollViewer&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="programmatic-scrolling">Programmatic scrolling</h3>
+<p>The scroll viewer's <em>offset</em> properties are read-only, but methods are provided to let you scroll programmatically.</p>
+<div class="tabGroup" id="tabgroup_4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_4_scrollview" role="tab" aria-controls="tabpanel_4_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_4_scrollviewer" role="tab" aria-controls="tabpanel_4_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_4_scrollview" role="tabpanel" data-tab="scrollview">
+
+<p>For the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView</a> control, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.scrollto">ScrollTo</a> method and pass the horizontal and vertical offsets to scroll to. In this case, the scrolling is only vertical, so the current <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.horizontaloffset">HorizontalOffset</a> value is used. To scroll to the top, a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.verticaloffset">VerticalOffset</a> of 0 is used. To scroll to the bottom, the <code>VerticalOffset</code> is the same as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.scrollableheight">ScrollableHeight</a>.</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;Scroll to top&quot; Click=&quot;ScrollTopButton_Click&quot;/&gt;
+&lt;Button Content=&quot;Scroll to bottom&quot; Click=&quot;ScrollBottomButton_Click&quot;/&gt;
+&lt;ScrollView x:Name=&quot;scrollView&quot; Width=&quot;500&quot; Height=&quot;400&quot;&gt;
+    &lt;StackPanel&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 1&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 2&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 3&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 4&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 5&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ScrollTopButton_Click(object sender, RoutedEventArgs e)
+{
+    scrollView.ScrollTo(
+        horizontalOffset: scrollView.HorizontalOffset,
+        verticalOffset: 0);
+}
+
+private void ScrollBottomButton_Click(object sender, RoutedEventArgs e)
+{
+    scrollView.ScrollTo(
+        horizontalOffset: scrollView.HorizontalOffset,
+        verticalOffset: scrollView.ScrollableHeight);
+}
+</code></pre>
+<p>ScrollView also provides a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.scrollby">ScrollBy</a> method that lets you scroll vertically or horizontally by a specified delta from the current offset.</p>
+</section>
+<section id="tabpanel_4_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<p>For the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> control, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.changeview">ChangeView</a> method and pass the horizontal and vertical offsets to scroll to. In this case, the scrolling is only vertical, so <code>null</code> is passed as the horizontal offset. To scroll to the top, a vertical offset of 0 is used. To scroll to the bottom, the vertical offset is the same as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.scrollableheight">ScrollableHeight</a>.</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;Scroll to top&quot; Click=&quot;ScrollTopButton_Click&quot;/&gt;
+&lt;Button Content=&quot;Scroll to bottom&quot; Click=&quot;ScrollBottomButton_Click&quot;/&gt;
+&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot;&gt;
+    &lt;StackPanel&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 1&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 2&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 3&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 4&quot;/&gt;
+        &lt;Button Width=&quot;200&quot; Content=&quot;Button 5&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ScrollTopButton_Click(object sender, RoutedEventArgs e)
+{
+    scrollViewer.ChangeView(
+        horizontalOffset: null,
+        verticalOffset: 0,
+        zoomFactor: null);
+}
+
+private void ScrollBottomButton_Click(object sender, RoutedEventArgs e)
+{
+    scrollViewer.ChangeView(
+        horizontalOffset: null,
+        verticalOffset: scrollViewer.ScrollableHeight,
+        zoomFactor: null);
+}
+</code></pre>
+</section>
+</div>
+<h2 id="zoom">Zoom</h2>
+<p>You can use a scroll viewer to let a user optically zoom in and out of content. Optical zoom interactions are performed through the pinch and stretch gestures (moving fingers farther apart zooms in and moving them closer together zooms out), or by pressing the Ctrl key while scrolling the mouse scroll wheel. For more info about zooming, see <a href="../input/guidelines-for-optical-zoom.html">Optical zoom and resizing</a>.</p>
+<p>To enable zoom by user interaction, set the <code>ZoomMode</code> property to <code>Enabled</code> (it's <code>Disabled</code> by default). Changes to the <code>ZoomMode</code> property take effect immediately and may affect an on-going user interaction.</p>
+<p>This example shows an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image">Image</a> wrapped in a scroll viewer that's configured to allow zooming.</p>
+<div class="tabGroup" id="tabgroup_5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_5_scrollview" role="tab" aria-controls="tabpanel_5_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_5_scrollviewer" role="tab" aria-controls="tabpanel_5_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_5_scrollview" role="tabpanel" data-tab="scrollview">
+
+<pre><code class="lang-xaml">&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot;
+            ContentOrientation=&quot;Both&quot;
+            ZoomMode=&quot;Enabled&quot;&gt;
+    &lt;Image Source=&quot;Assets/rainier.jpg&quot;/&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+</section>
+<section id="tabpanel_5_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xaml">&lt;ScrollViewer Width=&quot;500&quot; Height=&quot;400&quot; 
+              HorizontalScrollBarVisibility=&quot;Auto&quot;
+              ZoomMode=&quot;Enabled&quot;&gt;
+    &lt;Image Source=&quot;Assets/rainier.jpg&quot;/&gt;
+&lt;/ScrollViewer&gt;
+</code></pre>
+</section>
+</div>
+<section class="row">
+<div class="column span">
+<p>In this case, the Image is unconstrained by the scroll viewer, so it's initially shown at its native size. If the image source is larger than the viewport, the user will need to zoom out to see the entire image, which may not be the intended behavior.</p>
+</div>
+<div class="column span">
+<p><span class="mx-imgBorder">
+<img src="images/scrolling/zoomed-in.png" alt="A picture of a mountain zoomed in so far that only blue sky and clouds in the upper left of the picture are visible.">
+</span>
+</p>
+</div>
+</section>
+<section class="row">
+<div class="column span">
+<p>The next example shows how to configure the scroll viewer to constrain the image to the viewport so that it's initially loaded zoomed out, and the user can zoom in and scroll if they want to.</p>
+</div>
+<div class="column span">
+<p><span class="mx-imgBorder">
+<img src="images/scrolling/zoomed-out.png" alt="A picture of a mountain zoomed out so that the foreground, mountain, and sky are all visible.">
+</span>
+</p>
+</div>
+</section>
+<div class="tabGroup" id="tabgroup_6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_6_scrollview" role="tab" aria-controls="tabpanel_6_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_6_scrollviewer" role="tab" aria-controls="tabpanel_6_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_6_scrollview" role="tabpanel" data-tab="scrollview">
+
+<p>To constrain the image to the ScrollView's viewport, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.contentorientation">ContentOrientation</a> property to <code>None</code>. Because the scrollbar visibility is not tied to this constraint, scrollbars appear automatically when the user zooms in.</p>
+<pre><code class="lang-xaml">&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot;
+            ContentOrientation=&quot;None&quot;
+            ZoomMode=&quot;Enabled&quot;&gt;
+    &lt;Image Source=&quot;Assets/rainier.jpg&quot;/&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+</section>
+<section id="tabpanel_6_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<p>In the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a>, you have to set scrollbar visibility to <code>Disabled</code> in order to constrain the image to the viewport size. However, this means the user will not be able to scroll the image after they have zoomed in.</p>
+<p>To enable the desired behavior in ScrollViewer, you need to keep the scrollbars enabled, then insert a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.viewbox">Viewbox</a> and bind its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.maxheight">MaxHeight</a>/<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.maxwidth">MaxWidth</a> to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.viewportheight">ViewportHeight</a>/<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.viewportwidth">ViewportWidth</a> of the ScrollViewer. This constrains the layout of the Viewbox to the size of the viewport, but still lets the user scroll when zoomed in.</p>
+<pre><code class="lang-xaml"> &lt;ScrollViewer x:Name=&quot;scrollControl&quot; Width=&quot;500&quot; Height=&quot;400&quot;
+               HorizontalScrollBarVisibility=&quot;Auto&quot; 
+               VerticalScrollBarVisibility=&quot;Auto&quot; 
+               ZoomMode=&quot;Enabled&quot;&gt;
+     &lt;Viewbox MaxWidth=&quot;{x:Bind scrollControl.ViewportWidth, Mode=OneWay}&quot;  
+              MaxHeight=&quot;{x:Bind scrollControl.ViewportHeight, Mode=OneWay}&quot;&gt;
+         &lt;Image Source=&quot;Assets/rainier.jpg&quot;/&gt;
+     &lt;/Viewbox&gt;
+ &lt;/ScrollViewer&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="zoom-factor">Zoom factor</h3>
+<p>Use the <code>MinZoomFactor</code> and <code>MaxZoomFactor</code> properties to control the amount the user can zoom the content. These properties are effective for both user interactions and programmatic zooming.</p>
+<ul>
+<li>The defaults are: <code>MinZoomFactor=&quot;0.1&quot;</code>, <code>MaxZoomFactor=&quot;10.0&quot;</code></li>
+</ul>
+<div class="tabGroup" id="tabgroup_7">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_7_scrollview" role="tab" aria-controls="tabpanel_7_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_7_scrollviewer" role="tab" aria-controls="tabpanel_7_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_7_scrollview" role="tabpanel" data-tab="scrollview">
+
+<pre><code class="lang-xaml">&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot;
+            ContentOrientation=&quot;Both&quot;
+            ZoomMode=&quot;Enabled&quot; 
+            MinZoomFactor=&quot;1.0&quot; MaxZoomFactor=&quot;8.0&quot;&gt;
+    &lt;Image Source=&quot;Assets/rainier.png&quot;/&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+</section>
+<section id="tabpanel_7_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xaml">&lt;ScrollViewer Width=&quot;500&quot; Height=&quot;400&quot;
+              HorizontalScrollBarVisibility=&quot;Auto&quot;
+              ZoomMode=&quot;Enabled&quot;
+              MinZoomFactor=&quot;1.0&quot; MaxZoomFactor=&quot;8.0&quot;&gt;
+    &lt;Image Source=&quot;Assets/rainier.png&quot;/&gt;
+&lt;/ScrollViewer&gt;
+</code></pre>
+</section>
+</div>
+<h3 id="programmatic-zoom">Programmatic zoom</h3>
+<p>The <code>ZoomFactor</code> property is read-only, but methods are provided to let you zoom programmatically. A typical use for this is to connect the scroll viewer to a Slider that controls the zoom amount, or a button to reset the zoom level. (See ScrollViewer in the WinUI 3 Gallery app to see an example of a zoom slider.)</p>
+<div class="tabGroup" id="tabgroup_8">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_8_scrollview" role="tab" aria-controls="tabpanel_8_scrollview" data-tab="scrollview" tabindex="0" aria-selected="true">ScrollView</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_8_scrollviewer" role="tab" aria-controls="tabpanel_8_scrollviewer" data-tab="scrollviewer" tabindex="-1">ScrollViewer</a>
+</li>
+</ul>
+<section id="tabpanel_8_scrollview" role="tabpanel" data-tab="scrollview">
+
+<p>For the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView</a> control, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.zoomto">ZoomTo</a> method and pass the new zoom factor as the first parameter.</p>
+<pre><code class="lang-xaml">&lt;Slider Header=&quot;Zoom&quot; IsEnabled=&quot;True&quot;
+        Maximum=&quot;{x:Bind scrollControl.MaxZoomFactor, Mode=OneWay}&quot;
+        Minimum=&quot;{x:Bind scrollControl.MinZoomFactor, Mode=OneWay}&quot;
+        StepFrequency=&quot;0.1&quot;
+        ValueChanged=&quot;ZoomSlider_ValueChanged&quot; /&gt;
+&lt;ScrollView Width=&quot;500&quot; Height=&quot;400&quot;
+            ContentOrientation=&quot;None&quot;
+            ZoomMode=&quot;Enabled&quot;&gt;
+    &lt;Image Source=&quot;Assets/rainier.png&quot;/&gt;
+&lt;/ScrollView&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ZoomSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+{
+    if (scrollControl != null)
+    {
+        scrollControl.ZoomTo(
+            zoomFactor: (float)e.NewValue,
+            centerPoint: null)
+    }
+}
+</code></pre>
+<p>ScrollView also provides a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.zoomby">ZoomBy</a> method that lets you zoom in and out by a specified delta from the current zoom level.</p>
+</section>
+<section id="tabpanel_8_scrollviewer" role="tabpanel" data-tab="scrollviewer" aria-hidden="true" hidden="hidden">
+
+<p>For the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> control, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.changeview">ChangeView</a> method and pass the new zoom factor as the third parameter.</p>
+<pre><code class="lang-xaml">&lt;Slider Header=&quot;Zoom&quot; IsEnabled=&quot;True&quot;
+        Maximum=&quot;{x:Bind scrollControl.MaxZoomFactor, Mode=OneWay}&quot;
+        Minimum=&quot;{x:Bind scrollControl.MinZoomFactor, Mode=OneWay}&quot;
+        StepFrequency=&quot;0.1&quot;
+        ValueChanged=&quot;ZoomSlider_ValueChanged&quot; /&gt;
+
+&lt;ScrollViewer x:Name=&quot;scrollControl&quot; Width=&quot;500&quot; Height=&quot;400&quot;
+              HorizontalScrollBarVisibility=&quot;Auto&quot;
+              ZoomMode=&quot;Enabled&quot;&gt;
+    &lt;Image Source=&quot;Assets/rainier.png&quot;/&gt;
+&lt;/ScrollViewer&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void ZoomSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+{
+    if (scrollControl != null)
+    {
+        scrollViewer.ChangeView(
+            horizontalOffset: null,
+            verticalOffset: null,
+            zoomFactor: (float)e.NewValue));
+    }
+}
+</code></pre>
+</section>
+</div>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>ScrollView</code> control is available only in WinUI 3. For UWP and WinUI 2, use the <code>ScrollViewer</code> control.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">ScrollViewer class</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.scrollbar">ScrollBar class</a></li>
+<li><a href="winui2gallery:/item/ScrollViewer">Open the WinUI 2 Gallery app and see the ScrollViewer in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ScrollViewer">ScrollViewer class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/scroll-controls.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

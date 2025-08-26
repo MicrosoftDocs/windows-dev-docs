@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tailor your resources for language, scale, high contrast and other qualifiers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tailor your resources for language, scale, high contrast and other qualifiers ">
+    
+    <meta name="description" content="This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each qualifier name.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tailor-your-resources-for-language-scale-high-contrast-and-other-qualifiers">Tailor your resources for language, scale, high contrast, and other qualifiers</h1>
+
+<p>This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext.qualifiervalues"><strong>ResourceContext.QualifierValues</strong></a> for a reference table of all the possible qualifier values.</p>
+<p>Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, <a href="/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor">display scale factor</a>, and many others. The way you do this is to name your resources' folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.</p>
+<p>For more info about the value proposition of localizing your app, see <a href="/windows/apps/design/globalizing/globalizing-portal">Globalization and localization</a>.</p>
+<h2 id="qualifier-name-qualifier-value-and-qualifier">Qualifier name, qualifier value, and qualifier</h2>
+<p>A qualifier name is a key that maps to a set of qualifier values. Here are the qualifier name and qualifier values for contrast.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Context</th>
+<th style="text-align: left;">Qualifier name</th>
+<th style="text-align: left;">Qualifier values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">The high contrast setting</td>
+<td style="text-align: left;">contrast</td>
+<td style="text-align: left;">standard, high, black, white</td>
+</tr>
+</tbody>
+</table>
+<p>You combine a qualifier name with a qualifier value to form a qualifier. <code>&lt;qualifier name&gt;-&lt;qualifier value&gt;</code> is the format of a qualifier. <code>contrast-standard</code> is an example of a qualifier.</p>
+<p>So, for high contrast, the set of qualifiers is <code>contrast-standard</code>, <code>contrast-high</code>, <code>contrast-black</code>, and <code>contrast-white</code>. Qualifier names and qualifier values are not case sensitive. For example, <code>contrast-standard</code> and <code>Contrast-Standard</code> are the same qualifier.</p>
+<h2 id="use-qualifiers-in-folder-names">Use qualifiers in folder names</h2>
+<p>Here is an example of using qualifiers to name folders that contain asset files. Use qualifiers in folder names if you have several asset files per qualifier. That way, you set the qualifier once at the folder level, and the qualifier applies to everything inside the folder.</p>
+<pre><code class="lang-console">\Assets\Images\contrast-standard\&lt;logo.png, and other image files&gt;
+\Assets\Images\contrast-high\&lt;logo.png, and other image files&gt;
+\Assets\Images\contrast-black\&lt;logo.png, and other image files&gt;
+\Assets\Images\contrast-white\&lt;logo.png, and other image files&gt;
+</code></pre>
+<p>If you name your folders as in the example above, then your app uses the high contrast setting to load resource files from the folder named for the appropriate qualifier. So, if the setting is High Contrast Black, then the resource files in the <code>\Assets\Images\contrast-black</code> folder are loaded. If the setting is None (that is, the computer is not in high contrast mode), then the resource files in the <code>\Assets\Images\contrast-standard</code> folder are loaded.</p>
+<h2 id="use-qualifiers-in-file-names">Use qualifiers in file names</h2>
+<p>Instead of creating and naming folders, you can use a qualifier to name the resource files themselves. You might prefer to do this if you only have one resource file per qualifier. Here's an example.</p>
+<pre><code class="lang-console">\Assets\Images\logo.contrast-standard.png
+\Assets\Images\logo.contrast-high.png
+\Assets\Images\logo.contrast-black.png
+\Assets\Images\logo.contrast-white.png
+</code></pre>
+<p>The file whose name contains the qualifier most appropriate for the setting is the one that is loaded. This matching logic works the same way for file names as for folder names.</p>
+<h2 id="reference-a-string-or-image-resource-by-name">Reference a string or image resource by name</h2>
+<p>See the following topics for more info about how to reference a string or image resource by name:</p>
+<ul>
+<li><a href="localize-strings.html#refer-to-a-string-resource-identifier-from-xaml">Refer to a string resource identifier from XAML markup</a></li>
+<li><a href="localize-strings.html#refer-to-a-string-resource-identifier-from-code">Refer to a string resource identifier from code</a></li>
+<li><a href="images-tailored-for-scale-theme-contrast.html#reference-an-image-or-other-asset-from-xaml-markup-and-code">Reference an image or other asset from XAML markup and code</a></li>
+</ul>
+<h2 id="actual-and-neutral-qualifier-matches">Actual and neutral qualifier matches</h2>
+<p>You don't need to provide a resource file for <em>every</em> qualifier value. For example, if you find that you only need one visual asset for high contrast and one for standard contrast, then you can name those assets like this.</p>
+<pre><code class="lang-console">\Assets\Images\logo.contrast-high.png
+\Assets\Images\logo.png
+</code></pre>
+<p>The first file name contains the <code>contrast-high</code> qualifier. That qualifier is an <em>actual</em> match for any high contrast setting when high contrast is <em>on</em>. In other words, it's a close match so it's preferred. An <em>actual</em> match can only occur if the qualifier contains an <em>actual</em> value, as this one does. In this case, <code>high</code> is an <em>actual</em> value for <code>contrast</code>.</p>
+<p>The file named <code>logo.png</code> has no contrast qualifier on it at all. The absence of a qualifier is a <em>neutral</em> value. If no preferred match can be found, then the neutral value serves as a fallback match. In this example, if high contrast is <em>off</em>, then there is no actual match. The <em>neutral</em> match is the best match that can be found, and so the asset <code>logo.png</code> is loaded.</p>
+<p>If you were to change the name of <code>logo.png</code> to <code>logo.contrast-standard.png</code>, then the file name would contain an actual qualifier value. With high contrast off, there would be an actual match with <code>logo.contrast-standard.png</code>, and that's the asset file that would be loaded. So, the same files would be loaded, under the same conditions, but because of different matches.</p>
+<p>If you only need one set of assets for high contrast and one set for standard contrast, then you can use folder names instead of file names. In this case, omitting the folder name entirely gives you the neutral match.</p>
+<pre><code class="lang-console">\Assets\Images\contrast-high\&lt;logo.png, and other images to load when high contrast theme is not None&gt;
+\Assets\Images\&lt;logo.png, and other images to load when high contrast theme is None&gt;
+</code></pre>
+<p>For more details on how qualifier matching works, see <a href="mrtcore-overview.html">Manage resources with MRT Core</a>.</p>
+<h2 id="multiple-qualifiers">Multiple qualifiers</h2>
+<p>You can combine qualifiers in folder and file names. For example, you may want your app to load image assets when high contrast mode is on <em>and</em> the display scale factor is 400. One way to do this is with nested folders.</p>
+<pre><code class="lang-console">\Assets\Images\contrast-high\scale-400\&lt;logo.png, and other image files&gt;
+</code></pre>
+<p>For <code>logo.png</code> and the other files to be loaded, the settings must match <em>both</em> qualifiers.</p>
+<p>Another option is to combine multiple qualifiers in one folder name.</p>
+<pre><code class="lang-console">\Assets\Images\contrast-high_scale-400\&lt;logo.png, and other image files&gt;
+</code></pre>
+<p>In a folder name, you combine multiple qualifiers separated with an underscore. <code>&lt;qualifier1&gt;[_&lt;qualifier2&gt;...]</code> is the format.</p>
+<p>You can combine multiple qualifiers in a file name in the same format.</p>
+<pre><code class="lang-console">\Assets\Images\logo.contrast-high_scale-400.png
+</code></pre>
+<p>Depending on the tools and workflow you use for asset-creation, or on what you find easiest to read and/or manage, you can either choose a single naming strategy for all qualifiers, or you can combine them for different qualifiers.</p>
+<h2 id="alternateform">AlternateForm</h2>
+<p>The <code>alternateform</code> qualifier is used to provide an alternate form of a resource for some special purpose. This is typically used only by Japanese app developers to provide a furigana string for which the value <code>msft-phonetic</code> is reserved (see the section &quot;Support Furigana for Japanese strings that can be sorted&quot; in <a href="/previous-versions/windows/apps/hh967762(v=win.10)">How to prepare for localization</a>).</p>
+<p>Either your target system or your app must provide a value against which <code>alternateform</code> qualifiers are matched. Do not use the <code>msft-</code> prefix for your own custom <code>alternateform</code> qualifier values.</p>
+<h2 id="configuration">Configuration</h2>
+<p>It's unlikely that you'll need the <code>configuration</code> qualifier name. It can be used to specify resources that are applicable only to a given authoring-time environment, such as test-only resources.</p>
+<p>The <code>configuration</code> qualifier is used to load a resource that best matches the value of the <code>MS_CONFIGURATION_ATTRIBUTE_VALUE</code> environment variable. So, you can set the variable to the string value that has been assigned to the relevant resources, for example <code>designer</code>, or <code>test</code>.</p>
+<h2 id="contrast">Contrast</h2>
+<p>The <code>contrast</code> qualifier is used to provide resources that best match high contrast settings.</p>
+<h2 id="dxfeaturelevel">DXFeatureLevel</h2>
+<p>It's unlikely that you'll need the <code>dxfeaturelevel</code> qualifier name. It was designed to be used with Direct3D game assets, to cause downlevel resources to be loaded to match a particular downlevel hardware configuration of the time. But the prevalence of that hardware configuration is now so low that we recommend you don't use this qualifier.</p>
+<h2 id="homeregion">HomeRegion</h2>
+<p>The <code>homeregion</code> qualifier corresponds to the user's setting for country or region. It represents the home location of the user. Values include any valid <a href="https://tools.ietf.org/html/bcp47">BCP-47 region tag</a>. That is, any <strong>ISO 3166-1 alpha-2</strong> two-letter region code, plus the set of <strong>ISO 3166-1 numeric</strong> three-digit geographic codes for composed regions (see <a href="https://unstats.un.org/unsd/methods/m49/m49regin.htm">United Nations Statistic Division M49 composition of region codes</a>). Codes for &quot;Selected economic and other groupings&quot; are not valid.</p>
+<h2 id="language">Language</h2>
+<p>A <code>language</code> qualifier corresponds to the display language setting. Values include any valid <a href="https://tools.ietf.org/html/bcp47">BCP-47 language tag</a>. For a list of languages, see the <a href="https://www.iana.org/assignments/language-subtag-registry">IANA language subtag registry</a>.</p>
+<p>If you want your app to support different display languages, and you have string literals in your code or in your XAML markup, then move those strings out of the code/markup and into a Resources File (<code>.resw</code>). You can then make a translated copy of that Resources File for each language that your app supports.</p>
+<p>You typically use a <code>language</code> qualifier to name the folders that contain your Resources Files (<code>.resw</code>).</p>
+<pre><code class="lang-console">\Strings\language-en\Resources.resw
+\Strings\language-ja\Resources.resw
+</code></pre>
+<p>You can omit the <code>language-</code> part of a <code>language</code> qualifier (that is, the qualifier name). You can't do this with the other kinds of qualifiers; and you can only do it in a folder name.</p>
+<pre><code class="lang-console">\Strings\en\Resources.resw
+\Strings\ja\Resources.resw
+</code></pre>
+<p>Instead of naming folders, you can use <code>language</code> qualifiers to name the Resources Files themselves.</p>
+<pre><code class="lang-console">\Strings\Resources.language-en.resw
+\Strings\Resources.language-ja.resw
+</code></pre>
+<p>See <a href="localize-strings.html">Localize your UI strings</a> for more information on making your app localizable by using string resources, and how to reference a string resource in your app.</p>
+<h2 id="layoutdirection">LayoutDirection</h2>
+<p>A <code>layoutdirection</code> qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their <a href="/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection">FlowDirection</a> property (see <a href="/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl">Adjust layout and fonts, and support RTL</a>). However, the <code>layoutdirection</code> qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.</p>
+<h2 id="scale">Scale</h2>
+<p>Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See <a href="/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor">Effective pixels and scale factor</a>. You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a <code>scale</code> qualifier. The scale of a resource matches the value of <a href="/uwp/api/windows.graphics.display.displayinformation.ResolutionScale">DisplayInformation.ResolutionScale</a>, or the next-largest-scaled resource.</p>
+<p>Here's an example of setting the qualifier at the folder level.</p>
+<pre><code class="lang-console">\Assets\Images\scale-100\&lt;logo.png, and other image files&gt;
+\Assets\Images\scale-200\&lt;logo.png, and other image files&gt;
+\Assets\Images\scale-400\&lt;logo.png, and other image files&gt;
+</code></pre>
+<p>And this example sets it at the file level.</p>
+<pre><code class="lang-console">\Assets\Images\logo.scale-100.png
+\Assets\Images\logo.scale-200.png
+\Assets\Images\logo.scale-400.png
+</code></pre>
+<p>For info about qualifying a resource for both <code>scale</code> and <code>targetsize</code>, see <a href="images-tailored-for-scale-theme-contrast.html#qualify-an-image-resource-for-targetsize">Qualify an image resource for targetsize</a>.</p>
+<h2 id="targetsize">TargetSize</h2>
+<p>The <code>targetsize</code> qualifier is primarily used to specify <a href="/windows/desktop/shell/how-to-assign-a-custom-icon-to-a-file-type">file type association icons</a> or <a href="/windows/desktop/search/-search-3x-wds-ph-ui-extensions">protocol icons</a> to be shown in File Explorer. The qualifier value represents the side length of a square image in raw (physical) pixels. The resource whose value matches the View setting in File Explorer is loaded; or the resource with the next-largest value in the absence of an exact match.</p>
+<p>You can define assets that represent several sizes of <code>targetsize</code> qualifier value for the App Icon (<code>/Assets/Square44x44Logo.png</code>) in the Visual Assets tab of the app package manifest designer.</p>
+<p>For info about qualifying a resource for both <code>scale</code> and <code>targetsize</code>, see <a href="images-tailored-for-scale-theme-contrast.html#qualify-an-image-resource-for-targetsize">Qualify an image resource for targetsize</a>.</p>
+<h2 id="theme">Theme</h2>
+<p>The <code>theme</code> qualifier is used to provide resources that best match the default app mode setting, or your app's override using <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.requestedtheme">Application.RequestedTheme</a>.</p>
+<h2 id="shell-light-theme-and-unplated-resources">Shell light theme and unplated resources</h2>
+<p>The <em>Windows 10 May 2019 Update</em> introduced a new &quot;light&quot; theme for the Windows Shell. As a result, some application assets that were previously shown on a dark background will now be shown on a light background. For apps that apps that provided altform-unplated assets for the taskbar and window switchers (Alt+Tab, Task View, etc), you should verify that they have acceptable contrast on a light background.</p>
+<h3 id="providing-light-theme-specific-assets">Providing light theme specific assets</h3>
+<p>Apps that want to provide a tailored resource for shell light theme can use a new alternate form resource qualifier: <code>altform-lightunplated</code>. This qualifier mirrors the existing altform-unplated qualifier.</p>
+<h3 id="downlevel-considerations">Downlevel considerations</h3>
+<p>Apps should not use the <code>theme-light</code> qualifier with the <code>altform-unplated</code> qualifier. This will cause unpredictable behavior on RS5 and earlier versions of Windows due to the way resources are loaded for the Taskbar. On earlier versions of windows, the theme-light version may be used incorrectly. The <code>altform-lightunplated</code> qualifier avoids this issue.</p>
+<h3 id="compatibility-behavior">Compatibility behavior</h3>
+<p>For backwards compatibility, Windows includes logic to detect a monochromatic icons and check whether it contrasts with the intended background. If the icon fails to meet contrast requirements, Windows will look for a contrast-white version of the asset. If that's not available, Windows will fall back to using the plated version of the asset.</p>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext.qualifiervalues">ResourceContext.QualifierValues</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor">Effective pixels and scale factor</a></li>
+<li><a href="mrtcore-overview.html">Manage resources with MRT Core</a></li>
+<li><a href="/previous-versions/windows/apps/hh967762(v=win.10)">How to prepare for localization</a></li>
+<li><a href="localize-strings.html">Localize your UI strings</a></li>
+<li><a href="https://tools.ietf.org/html/bcp47">BCP-47</a></li>
+<li><a href="https://unstats.un.org/unsd/methods/m49/m49regin.htm">United Nations Statistic Division M49 composition of region codes</a></li>
+<li><a href="https://www.iana.org/assignments/language-subtag-registry">IANA language subtag registry</a></li>
+<li><a href="/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl">Adjust layout and fonts, and support RTL</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

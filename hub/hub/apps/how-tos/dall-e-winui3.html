@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to add DALL-E image generation to your WinUI app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to add DALL-E image generation to your WinUI app ">
+    
+    <meta name="description" content="Get started with WinUI 3 / Windows App SDK by integrating DALL-E image capabilities into your desktop app.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="add-dall-e-to-your-winui-3--windows-app-sdk-desktop-app">Add DALL-E to your WinUI 3 / Windows App SDK desktop app</h1>
+
+<p>In this how-to, we'll integrate DALL-E's image generation capabilities into your WinUI 3 / Windows App SDK desktop app.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Set up your development computer (see <a href="../get-started/start-here.html">Start developing Windows apps</a>).</li>
+<li>A functional chat interface into which this capability will be integrated. See <em><a href="chatgpt-openai-winui3.html">How to add OpenAI chat completions to your WinUI / Windows App SDK desktop app</a></em> - we'll demonstrate how to integrate DALL-E into the chat interface from this how-to.</li>
+<li>An OpenAI API key from your <a href="https://platform.openai.com/api-keys">OpenAI developer dashboard</a> assigned to the <code>OPENAI_API_KEY</code> environment variable.</li>
+<li>An OpenAI SDK installed in your project. Refer to the <a href="https://platform.openai.com/docs/libraries">OpenAI documentation</a> for a list of community libraries. In this how-to, we'll use the official <a href="https://github.com/openai/openai-dotnet">OpenAI .NET API library</a>.</li>
+</ul>
+<h2 id="install-and-initialize-the-openai-sdk">Install and initialize the OpenAI SDK</h2>
+<p>Ensure that the OpenAI .NET library is installed in your project by running <code>dotnet add package OpenAI</code> from Visual Studio's terminal window. Initialize the SDK with your OpenAI API key as follows:</p>
+<pre><code class="lang-csharp">//...
+using OpenAI;
+using OpenAI.Chat;
+
+namespace ChatGPT_WinUI3
+{
+    public sealed partial class MainWindow : Window
+    {
+        private OpenAIClient openAiService;
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+           
+            var openAiKey = Environment.GetEnvironmentVariable(&quot;OPENAI_API_KEY&quot;);
+
+            openAiService = new(openAiKey);
+        }
+    }
+}
+</code></pre>
+<h2 id="modify-your-apps-ui">Modify your app's UI</h2>
+<p>Modify your existing <code>DateTemplate</code> in <code>MainWindow.xaml</code> to include an <code>Image</code> control that displays images within the conversation:</p>
+<pre><code class="lang-xml">&lt;!-- ... existing XAML ... --&gt;
+&lt;ItemsControl.ItemTemplate&gt;
+    &lt;DataTemplate&gt;
+        &lt;StackPanel Orientation=&quot;Vertical&quot;&gt;
+            &lt;TextBlock Text=&quot;{Binding Text}&quot; TextWrapping=&quot;Wrap&quot; Margin=&quot;5&quot; Foreground=&quot;{Binding Color}&quot;/&gt;
+            &lt;Image Source=&quot;{Binding ImageUrl}&quot; Margin=&quot;5&quot; Stretch=&quot;UniformToFill&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/DataTemplate&gt;
+&lt;/ItemsControl.ItemTemplate&gt;
+&lt;!-- ... existing XAML ... --&gt;
+</code></pre>
+<p>Note that this how-to assumes you have a chat interface with a <code>TextBox</code> and <code>Button</code>; see <em><a href="chatgpt-openai-winui3.html">How to add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app</a></em>.</p>
+<h2 id="implement-dall-e-image-generation">Implement DALL-E image generation</h2>
+<p>In your <code>MainWindow.xaml.cs</code>, add the following methods to handle image generation and display:</p>
+<pre><code class="lang-csharp">// ... existing using statements ...
+
+private async void SendButton_Click(object sender, RoutedEventArgs e)
+{
+    ResponseProgressBar.Visibility = Visibility.Visible;
+    string userInput = InputTextBox.Text;
+    if (!string.IsNullOrEmpty(userInput))
+    {
+        InputTextBox.Text = string.Empty;
+        // Use the DALL-E 3 model for image generation.
+        ImageClient imageClient = openAiService.GetImageClient(&quot;dall-e-3&quot;);
+
+        ClientResult&lt;GeneratedImage&gt; imageResult = await imageClient.GenerateImageAsync(userInput,
+            new ImageGenerationOptions
+            {
+                Size = GeneratedImageSize.W1024xH1024,
+                ResponseFormat = GeneratedImageFormat.Uri,
+                EndUserId = &quot;TestUser&quot;
+            });
+
+        if (imageResult.Value != null)
+        {
+            AddImageMessageToConversation(imageResult.Value.ImageUri);
+        }
+        else
+        {
+            AddMessageToConversation(&quot;GPT: Sorry, something bad happened.&quot;);
+        }
+    }
+    ResponseProgressBar.Visibility = Visibility.Collapsed;
+}
+
+private void AddImageMessageToConversation(Uri imageUrl)
+{
+    var imageMessage = new MessageItem
+    {
+        ImageUrl = imageUrl.ToString()
+    };
+    ConversationList.Items.Add(imageMessage);
+
+    // handle scrolling
+    ConversationScrollViewer.UpdateLayout();
+    ConversationScrollViewer.ChangeView(null, ConversationScrollViewer.ScrollableHeight, null);
+}
+
+</code></pre>
+<p>The <code>imageClient.GenerateImageAsync()</code> method is responsible for calling OpenAI's DALL-E API. Refer to the <a href="https://github.com/openai/openai-dotnet/tree/main/examples/Images">OpenAI .NET examples on GitHub</a> for more usage examples.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Try asking Microsoft Copilot for some suggestions on different ways to use the DALL-E and chat APIs in your app.</p>
+</div>
+<p>Note the presence of <code>ImageUrl</code> in the <code>MessageItem</code> class. This is a new property:</p>
+<pre><code class="lang-csharp">public class MessageItem
+{
+    public string Text { get; set; }
+    public SolidColorBrush Color { get; set; }
+    public string ImageUrl { get; set; } // new
+}
+</code></pre>
+<h2 id="run-and-test">Run and test</h2>
+<p>Run your app, enter a prompt, and click the &quot;Send&quot; button. You should see something like this:</p>
+<p><span class="mx-imgBorder">
+<img src="images/dall-e-winui3/cat-laser-eyes.png" alt="A screenshot of the WinUI image generation demo app.">
+</span>
+</p>
+<h2 id="customize-the-ui-on-your-own">Customize the UI on your own</h2>
+<p>Try adding some radio buttons to the UI to select whether to include an image in the conversation. You can then modify the <code>SendButton_Click</code> method to conditionally call the image generation method based on the radio button selection.</p>
+<h2 id="recap">Recap</h2>
+<p>In this guide, you've learned how to:</p>
+<ol>
+<li>Accept image prompts from users within a <code>&lt;TextBox&gt;</code>.</li>
+<li>Generate images using the OpenAI DALL-E API.</li>
+<li>Display the image in an <code>&lt;Image&gt;</code>.</li>
+</ol>
+<h2 id="full-code-files">Full code files</h2>
+<p>The following are the full code files for the chat interface with DALL-E image generation. The code has been updated to use radio buttons to conditionally call chat or image generation as suggested in the <a href="#customize-the-ui-on-your-own">Customize the UI on your own</a> section above.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Window
+    x:Class=&quot;ChatGPT_WinUI3.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:local=&quot;using:ChatGPT_WinUI3&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+    &lt;Grid VerticalAlignment=&quot;Bottom&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+        &lt;StackPanel Orientation=&quot;Vertical&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+            &lt;ScrollViewer x:Name=&quot;ConversationScrollViewer&quot; VerticalScrollBarVisibility=&quot;Auto&quot; MaxHeight=&quot;500&quot;&gt;
+                &lt;ItemsControl x:Name=&quot;ConversationList&quot; Width=&quot;300&quot;&gt;
+                    &lt;ItemsControl.ItemTemplate&gt;
+                        &lt;DataTemplate&gt;
+                            &lt;StackPanel Orientation=&quot;Vertical&quot;&gt;
+                                &lt;TextBlock Text=&quot;{Binding Text}&quot; TextWrapping=&quot;Wrap&quot; Margin=&quot;5&quot; Foreground=&quot;{Binding Color}&quot;/&gt;
+                                &lt;Image Source=&quot;{Binding ImageUrl}&quot; Margin=&quot;5&quot; Stretch=&quot;UniformToFill&quot;/&gt;
+                            &lt;/StackPanel&gt;
+                        &lt;/DataTemplate&gt;
+                    &lt;/ItemsControl.ItemTemplate&gt;
+                &lt;/ItemsControl&gt;
+            &lt;/ScrollViewer&gt;
+            &lt;ProgressBar x:Name=&quot;ResponseProgressBar&quot; Height=&quot;5&quot; IsIndeterminate=&quot;True&quot; Visibility=&quot;Collapsed&quot;/&gt;
+            &lt;StackPanel Orientation=&quot;Vertical&quot; Width=&quot;300&quot;&gt;
+                &lt;RadioButtons Header=&quot;Query type:&quot;&gt;
+                    &lt;RadioButton x:Name=&quot;chatRadioButton&quot; Content=&quot;Chat&quot; IsChecked=&quot;True&quot;/&gt;
+                    &lt;RadioButton x:Name=&quot;imageRadioButton&quot; Content=&quot;Image&quot;/&gt;
+                &lt;/RadioButtons&gt;
+                &lt;TextBox x:Name=&quot;InputTextBox&quot; HorizontalAlignment=&quot;Stretch&quot; VerticalAlignment=&quot;Stretch&quot; KeyDown=&quot;InputTextBox_KeyDown&quot; TextWrapping=&quot;Wrap&quot; MinHeight=&quot;100&quot; MaxWidth=&quot;300&quot;/&gt;
+                &lt;Button x:Name=&quot;SendButton&quot; Content=&quot;Send&quot; Click=&quot;SendButton_Click&quot; HorizontalAlignment=&quot;Right&quot;/&gt;
+            &lt;/StackPanel&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+
+</code></pre>
+<pre><code class="lang-csharp">using Microsoft.UI;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+using OpenAI;
+using OpenAI.Chat;
+using OpenAI.Images;
+
+namespace ChatGPT_WinUI3
+{
+    public class MessageItem
+    {
+        public string Text { get; set; }
+        public SolidColorBrush Color { get; set; }
+        public string ImageUrl { get; set; }
+    }
+
+    public sealed partial class MainWindow : Window
+    {
+        private OpenAIService openAiService;
+
+        public MainWindow()
+        {
+            this.InitializeComponent();
+
+            var openAiKey = Environment.GetEnvironmentVariable(&quot;OPENAI_API_KEY&quot;);
+
+            openAiService = new(openAiKey);
+        }
+
+        private async void SendButton_Click(object sender, RoutedEventArgs e)
+        {
+            ResponseProgressBar.Visibility = Visibility.Visible;
+            string userInput = InputTextBox.Text;
+
+            try
+            {
+                if (imageRadioButton.IsChecked == true)
+                {
+                    await ProcessImageRequestAsync(userInput);
+                }
+                else
+                {
+                    await ProcessChatRequestAsync(userInput);
+                }
+            }
+            catch (Exception ex)
+            {
+                AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {ex.Message}&quot;);
+            }
+            finally
+            {
+                ResponseProgressBar.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private async Task ProcessImageRequestAsync(string userInput)
+        {
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                InputTextBox.Text = string.Empty;
+                // Use the DALL-E 3 model for image generation.
+                ImageClient imageClient = openAiService.GetImageClient(&quot;dall-e-3&quot;);
+
+                ClientResult&lt;GeneratedImage&gt; imageResult = await imageClient.GenerateImageAsync(userInput,
+                    new ImageGenerationOptions
+                    {
+                        Size = GeneratedImageSize.W1024xH1024,
+                        ResponseFormat = GeneratedImageFormat.Uri,
+                        EndUserId = &quot;TestUser&quot;
+                    });
+
+                if (imageResult.Value != null)
+                {
+                    AddImageMessageToConversation(imageResult.Value.ImageUri);
+                }
+                else
+                {
+                    AddMessageToConversation(&quot;GPT: Sorry, something bad happened.&quot;);
+                }
+            }
+        }
+
+        private async Task ProcessChatRequestAsync(string userInput)
+        {
+            if (!string.IsNullOrEmpty(userInput))
+            {
+                AddMessageToConversation($&quot;User: {userInput}&quot;);
+                InputTextBox.Text = string.Empty;
+                var chatClient = openAiService.GetChatClient(&quot;gpt-4o&quot;);
+                var chatOptions = new ChatCompletionOptions
+                {
+                    MaxOutputTokenCount = 300
+                };
+                var completionResult = await chatClient.CompleteChatAsync(
+                    [
+                        ChatMessage.CreateSystemMessage(&quot;You are a helpful assistant.&quot;),
+                        ChatMessage.CreateUserMessage(userInput)
+                    ],
+                    chatOptions);
+
+                if (completionResult != null &amp;&amp; completionResult.Value.Content.Count &gt; 0)
+                {
+                    AddMessageToConversation($&quot;GPT: {completionResult.Value.Content.First().Text}&quot;);
+                }
+                else
+                {
+                    AddMessageToConversation($&quot;GPT: Sorry, something bad happened: {completionResult?.Value.Refusal ?? &quot;Unknown error.&quot;}&quot;);
+                }
+            }
+        }
+
+        private void AddImageMessageToConversation(Uri imageUrl)
+        {
+            var imageMessage = new MessageItem
+            {
+                ImageUrl = imageUrl.ToString()
+            };
+            ConversationList.Items.Add(imageMessage);
+
+            // handle scrolling
+            ConversationScrollViewer.UpdateLayout();
+            ConversationScrollViewer.ChangeView(null, ConversationScrollViewer.ScrollableHeight, null);
+        }
+
+        private void AddMessageToConversation(string message)
+        {
+            var messageItem = new MessageItem
+            {
+                Text = message,
+                Color = message.StartsWith(&quot;User:&quot;) ? new SolidColorBrush(Colors.LightBlue)
+                                                    : new SolidColorBrush(Colors.LightGreen)
+            };
+            ConversationList.Items.Add(messageItem);
+
+            // handle scrolling
+            ConversationScrollViewer.UpdateLayout();
+            ConversationScrollViewer.ChangeView(null, ConversationScrollViewer.ScrollableHeight, null);
+        }
+
+        private void InputTextBox_KeyDown(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Enter &amp;&amp; !string.IsNullOrWhiteSpace(InputTextBox.Text))
+            {
+                SendButton_Click(this, new RoutedEventArgs());
+            }
+        }
+    }
+}
+
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="https://platform.openai.com/docs/overview">OpenAI API Documentation</a></li>
+<li><a href="../get-started/samples.html">Windows App SDK Samples</a></li>
+<li><a href="https://github.com/openai/openai-dotnet">OpenAI .NET library on GitHub</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/how-tos/dall-e-winui3.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

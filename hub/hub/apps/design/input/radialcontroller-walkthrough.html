@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Support the Surface Dial (and other wheel devices) in your Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Support the Surface Dial (and other wheel devices) in your Windows app ">
+    
+    <meta name="description" content="A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-support-the-surface-dial-and-other-wheel-devices-in-your-windows-app">Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app</h1>
+
+<p><img src="images/radialcontroller/dial-pen-studio-600px.png" alt="Image of Surface Dial with Surface Studio"><br>
+<em>Surface Dial with Surface Studio and Surface Pen</em> (available for purchase at the <a href="https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116">Microsoft Store</a>).</p>
+<p>This tutorial steps through how to customize the user interaction experiences supported by wheel devices such as the Surface Dial. We use snippets from a sample app, which you can download from GitHub (see <a href="#sample-code">Sample code</a>), to demonstrate the various features and associated <a href="/uwp/api/windows.ui.input.radialcontroller"><strong>RadialController</strong></a> APIs discussed in each step.</p>
+<p>We focus on the following:</p>
+<ul>
+<li>Specifying which built-in tools are displayed on the <a href="/uwp/api/windows.ui.input.radialcontroller"><strong>RadialController</strong></a> menu</li>
+<li>Adding a custom tool to the menu</li>
+<li>Controlling haptic feedback</li>
+<li>Customizing click interactions</li>
+<li>Customizing rotation interactions</li>
+</ul>
+<p>For more about implementing these and other features, see <a href="windows-wheel-interactions.html">Surface Dial interactions in Windows apps</a>.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The Surface Dial is a secondary input device that helps users to be more productive when used together with a primary input device such as pen, touch, or mouse. As a secondary input device, the Dial is typically used with the non-dominant hand to provide access both to system commands and to other, more contextual, tools and functionality.</p>
+<p>The Dial supports three basic gestures:</p>
+<ul>
+<li>Press and hold to display the built-in menu of commands.</li>
+<li>Rotate to highlight a menu item (if the menu is active) or to modify the current action in the app (if the menu is not active).</li>
+<li>Click to select the highlighted menu item (if the menu is active) or to invoke a command in the app (if the menu is not active).</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>A computer (or a virtual machine) running Windows 10 Creators Update or later</li>
+<li><a href="https://developer.microsoft.com/windows/downloads">Visual Studio 2019</a></li>
+<li><a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk">Windows 10 SDK (10.0.15063.0)</a></li>
+<li>A wheel device (only the <a href="https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116">Surface Dial</a> at this time)</li>
+<li>If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:
+<ul>
+<li><a href="../../windows-app-sdk/set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="/windows/uwp/get-started/create-a-hello-world-app-xaml-universal">Create a &quot;Hello, world&quot; app (XAML)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="set-up-your-devices">Set up your devices</h2>
+<ol>
+<li>Make sure your Windows device is on.</li>
+<li>Go to <strong>Start</strong>, select <strong>Settings</strong> &gt; <strong>Devices</strong> &gt; <strong>Bluetooth &amp; other devices</strong>, and then turn <strong>Bluetooth</strong> on.</li>
+<li>Remove the bottom of the Surface Dial to open the battery compartment, and make sure that there are two AAA batteries inside.</li>
+<li>If the battery tab is present on the underside of the Dial, remove it.</li>
+<li>Press and hold the small, inset button next to the batteries until the Bluetooth light flashes.</li>
+<li>Go back to your Windows device and select <strong>Add Bluetooth or other device</strong>.</li>
+<li>In the <strong>Add a device</strong> dialog, select <strong>Bluetooth</strong> &gt; <strong>Surface Dial</strong>. Your Surface Dial should now connect and be added to the list of devices under <strong>Mouse, keyboard, &amp; pen</strong> on the <strong>Bluetooth &amp; other devices</strong> settings page.</li>
+<li>Test the Dial by pressing and holding it down for a few seconds to display the built-in menu.</li>
+<li>If the menu isn't displayed on your screen (the Dial should also vibrate), go back to the Bluetooth settings, remove the device, and try connecting the device again.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Wheel devices can be configured through the <strong>Wheel</strong> settings:</p>
+<ol>
+<li>On the <strong>Start</strong> menu, select <strong>Settings</strong>.</li>
+<li>Select <strong>Devices</strong> &gt; <strong>Wheel</strong>.<br>
+<img src="images/radialcontroller/wheel-settings.png" alt="Wheel settings screen"></li>
+</ol>
+</div>
+<p>Now you’re ready to start this tutorial.</p>
+<h2 id="sample-code">Sample code</h2>
+<p>Throughout this tutorial, we use a sample app to demonstrate the concepts and functionality discussed.</p>
+<p>Download this Visual Studio sample and source code from <a href="https://github.com/">GitHub</a> at <a href="https://github.com/Microsoft/Windows-tutorials-inputs-and-devices/tree/master/GettingStarted-RadialController">windows-appsample-get-started-radialcontroller sample</a>:</p>
+<ol>
+<li>Select the green <strong>Clone or download</strong> button.<br>
+<img src="images/radialcontroller/wheel-clone.png" alt="Cloning the repo"></li>
+<li>If you have a GitHub account, you can clone the repo to your local machine by choosing <strong>Open in Visual Studio</strong>.</li>
+<li>If you don't have a GitHub account, or you just want a local copy of the project, choose <strong>Download ZIP</strong> (you'll have to check back regularly to download the latest updates).</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Most of the code in the sample is commented out. As we go through each step in this topic, you'll be asked to uncomment various sections of the code. In Visual Studio, just highlight the lines of code, and press CTRL-K and then CTRL-U.</p>
+</div>
+<h2 id="components-that-support-wheel-functionality">Components that support wheel functionality</h2>
+<p>These objects provide the bulk of the wheel device experience for Windows apps.</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/uwp/api/Windows.UI.Input.RadialController"><strong>RadialController</strong> class</a> and related</td>
+<td>Represents a wheel input device or accessory such as the Surface Dial.</td>
+</tr>
+<tr>
+<td><a href="/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop"><strong>IRadialControllerConfigurationInterop</strong></a> / <a href="/previous-versions/windows/desktop/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop"><strong>IRadialControllerInterop</strong></a><br>We do not cover this functionality here, for more information, see the <a href="https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController">Windows desktop sample</a>.</td>
+<td>Enables interoperability with a Windows app.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="step-1-run-the-sample">Step 1: Run the sample</h2>
+<p>After you've downloaded the RadialController sample app, verify that it runs:</p>
+<ol>
+<li>Open the sample project in Visual Studio .</li>
+<li>Set the <strong>Solution Platforms</strong> dropdown to a non-Arm selection.</li>
+<li>Press F5 to compile, deploy, and run.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Alternatively, you can select <strong>Debug</strong> &gt; <strong>Start debugging</strong> menu item, or select the <strong>Local Machine</strong> Run button shown here:
+<img src="images/radialcontroller/wheel-vsrun.png" alt="Visual Studio Build project button"></p>
+</div>
+<p>The app window opens, and after a splash screen appears for a few seconds, you’ll see this initial screen.</p>
+<p><img src="images/radialcontroller/wheel-app-step1-empty.png" alt="Empty app"></p>
+<p>Okay, we now have the basic Windows app that we’ll use throughout the rest of this tutorial. In the following steps, we add our <strong>RadialController</strong> functionality.</p>
+<h2 id="step-2-basic-radialcontroller-functionality">Step 2: Basic RadialController functionality</h2>
+<p>With the app running and in the foreground, press and hold the Surface Dial to display the <strong>RadialController</strong> menu.</p>
+<p>We haven't done any customization for our app yet, so the menu contains a default set of contextual tools.</p>
+<p>These images show two variations of the default menu. (There are many others, including just basic system tools when the Windows Desktop is active and no apps are in the foreground, additional inking tools when an InkToolbar is present, and mapping tools when you’re using the Maps app.</p>
+<table>
+<thead>
+<tr>
+<th>RadialController menu (default)</th>
+<th>RadialController menu (default with media playing)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/radialcontroller/wheel-app-step2-basic-default.png" alt="Default RadialController menu"></td>
+<td><img src="images/radialcontroller/wheel-app-step2-basic-withmusic.png" alt="Default RadialController menu with music"></td>
+</tr>
+</tbody>
+</table>
+<p>Now we'll start with some basic customization.</p>
+<h2 id="step-3-add-controls-for-wheel-input">Step 3: Add controls for wheel input</h2>
+<p>First, let's add the UI for our app:</p>
+<ol>
+<li><p>Open the MainPage_Basic.xaml file.</p>
+</li>
+<li><p>Find the code marked with the title of this step (&quot;&lt;!-- Step 3: Add controls for wheel input --&gt;&quot;).</p>
+</li>
+<li><p>Uncomment the following lines.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;InitializeSampleButton&quot; 
+        HorizontalAlignment=&quot;Center&quot; 
+        Margin=&quot;10&quot; 
+        Content=&quot;Initialize sample&quot; /&gt;
+&lt;ToggleButton x:Name=&quot;AddRemoveToggleButton&quot;
+                HorizontalAlignment=&quot;Center&quot; 
+                Margin=&quot;10&quot; 
+                Content=&quot;Remove Item&quot;
+                IsChecked=&quot;True&quot; 
+                IsEnabled=&quot;False&quot;/&gt;
+&lt;Button x:Name=&quot;ResetControllerButton&quot; 
+        HorizontalAlignment=&quot;Center&quot; 
+        Margin=&quot;10&quot; 
+        Content=&quot;Reset RadialController menu&quot; 
+        IsEnabled=&quot;False&quot;/&gt;
+&lt;Slider x:Name=&quot;RotationSlider&quot; Minimum=&quot;0&quot; Maximum=&quot;10&quot;
+        Width=&quot;300&quot;
+        HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;TextBlock Text=&quot;{Binding ElementName=RotationSlider, Mode=OneWay, Path=Value}&quot;
+            Margin=&quot;0,0,0,20&quot;
+            HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;ToggleSwitch x:Name=&quot;ClickToggle&quot;
+                MinWidth=&quot;0&quot; 
+                Margin=&quot;0,0,0,20&quot;
+                HorizontalAlignment=&quot;center&quot;/&gt;
+</code></pre>
+</li>
+</ol>
+<p>At this point, only the <strong>Initialize sample</strong> button, slider, and toggle switch are enabled. The other buttons are used in later steps to add and remove <strong>RadialController</strong> menu items that provide access to the slider and toggle switch.</p>
+<p><img src="images/radialcontroller/wheel-app-step3-basicui.png" alt="Basic sample app UI"></p>
+<h2 id="step-4-customize-the-basic-radialcontroller-menu">Step 4: Customize the basic RadialController menu</h2>
+<p>Now let's add the code required to enable <strong>RadialController</strong> access to our controls.</p>
+<ol>
+<li>Open the MainPage_Basic.xaml.cs file.</li>
+<li>Find the code marked with the title of this step (&quot;// Step 4: Basic RadialController menu customization&quot;).</li>
+<li>Uncomment the following lines:
+<ul>
+<li><p>The <a href="/uwp/api/windows.ui.input">Windows.UI.Input</a> and <a href="/uwp/api/windows.storage.streams">Windows.Storage.Streams</a> type references are used for functionality in subsequent steps:</p>
+<pre><code class="lang-csharp">// Using directives for RadialController functionality.
+using Windows.UI.Input;
+</code></pre>
+</li>
+<li><p>These global objects (<a href="/uwp/api/windows.ui.input.radialcontroller">RadialController</a>, <a href="/uwp/api/windows.ui.input.radialcontrollerconfiguration">RadialControllerConfiguration</a>, <a href="/uwp/api/windows.ui.input.radialcontrollermenuitem">RadialControllerMenuItem</a>) are used throughout our app.</p>
+<pre><code class="lang-csharp">private RadialController radialController;
+private RadialControllerConfiguration radialControllerConfig;
+private RadialControllerMenuItem radialControllerMenuItem;
+</code></pre>
+</li>
+<li><p>Here, we specify the <strong>Click</strong> handler for the button that enables our controls and initializes our custom <strong>RadialController</strong> menu item.</p>
+<pre><code class="lang-csharp">InitializeSampleButton.Click += (sender, args) =&gt;
+{ InitializeSample(sender, args); };
+</code></pre>
+</li>
+<li><p>Next, we initialize our <a href="/uwp/api/windows.ui.input.radialcontroller">RadialController</a> object and set up handlers for the <a href="/uwp/api/windows.ui.input.radialcontroller.RotationChanged">RotationChanged</a> and <a href="/uwp/api/windows.ui.input.radialcontroller.ButtonClicked">ButtonClicked</a> events.</p>
+<pre><code class="lang-csharp">// Set up the app UI and RadialController.
+private void InitializeSample(object sender, RoutedEventArgs e)
+{
+    ResetControllerButton.IsEnabled = true;
+    AddRemoveToggleButton.IsEnabled = true;
+
+    ResetControllerButton.Click += (resetsender, args) =&gt;
+    { ResetController(resetsender, args); };
+    AddRemoveToggleButton.Click += (togglesender, args) =&gt;
+    { AddRemoveItem(togglesender, args); };
+
+    InitializeController(sender, e);
+}
+</code></pre>
+</li>
+<li><p>Here, we initialize our custom RadialController menu item. We use <a href="/uwp/api/windows.ui.input.radialcontroller.CreateForCurrentView">CreateForCurrentView</a> to get a reference to our <a href="/uwp/api/windows.ui.input.radialcontroller">RadialController</a> object, we set the rotation sensitivity to &quot;1&quot; by using the <a href="/uwp/api/windows.ui.input.radialcontroller.RotationResolutionInDegrees">RotationResolutionInDegrees</a> property, we then create our <a href="/uwp/api/windows.ui.input.radialcontrollermenuitem">RadialControllerMenuItem</a> by using <a href="/uwp/api/windows.ui.input.radialcontrollermenuitem.CreateFromFontGlyph">CreateFromFontGlyph</a>, we add the menu item to the <strong>RadialController</strong> menu item collection, and finally, we use <a href="/uwp/api/windows.ui.input.radialcontrollerconfiguration.setdefaultmenuitems">SetDefaultMenuItems</a> to clear the default menu items and leave only our custom tool.</p>
+<pre><code class="lang-csharp">// Configure RadialController menu and custom tool.
+private void InitializeController(object sender, RoutedEventArgs args)
+{
+    // Create a reference to the RadialController.
+    radialController = RadialController.CreateForCurrentView();
+    // Set rotation resolution to 1 degree of sensitivity.
+    radialController.RotationResolutionInDegrees = 1;
+
+    // Create the custom menu items.
+    // Here, we use a font glyph for our custom tool.
+    radialControllerMenuItem =
+        RadialControllerMenuItem.CreateFromFontGlyph(&quot;SampleTool&quot;, &quot;\xE1E3&quot;, &quot;Segoe MDL2 Assets&quot;);
+
+    // Add the item to the RadialController menu.
+    radialController.Menu.Items.Add(radialControllerMenuItem);
+
+    // Remove built-in tools to declutter the menu.
+    // NOTE: The Surface Dial menu must have at least one menu item. 
+    // If all built-in tools are removed before you add a custom 
+    // tool, the default tools are restored and your tool is appended 
+    // to the default collection.
+    radialControllerConfig =
+        RadialControllerConfiguration.GetForCurrentView();
+    radialControllerConfig.SetDefaultMenuItems(
+        new RadialControllerSystemMenuItemKind[] { });
+
+    // Declare input handlers for the RadialController.
+    // NOTE: These events are only fired when a custom tool is active.
+    radialController.ButtonClicked += (clicksender, clickargs) =&gt;
+    { RadialController_ButtonClicked(clicksender, clickargs); };
+    radialController.RotationChanged += (rotationsender, rotationargs) =&gt;
+    { RadialController_RotationChanged(rotationsender, rotationargs); };
+}
+
+// Connect wheel device rotation to slider control.
+private void RadialController_RotationChanged(
+    object sender, RadialControllerRotationChangedEventArgs args)
+{
+    if (RotationSlider.Value + args.RotationDeltaInDegrees &gt;= RotationSlider.Maximum)
+    {
+        RotationSlider.Value = RotationSlider.Maximum;
+    }
+    else if (RotationSlider.Value + args.RotationDeltaInDegrees &lt; RotationSlider.Minimum)
+    {
+        RotationSlider.Value = RotationSlider.Minimum;
+    }
+    else
+    {
+        RotationSlider.Value += args.RotationDeltaInDegrees;
+    }
+}
+
+// Connect wheel device click to toggle switch control.
+private void RadialController_ButtonClicked(
+    object sender, RadialControllerButtonClickedEventArgs args)
+{
+    ClickToggle.IsOn = !ClickToggle.IsOn;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Now, run the app again.</li>
+<li>Select the <strong>Initialize radial controller</strong> button.</li>
+<li>With the app in the foreground, press and hold the Surface Dial to display the menu. Notice that all default tools have been removed (by using the <strong>RadialControllerConfiguration.SetDefaultMenuItems</strong> method), leaving only the custom tool. Here’s the menu with our custom tool.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>RadialController menu (custom)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/radialcontroller/wheel-app-step3-custom.png" alt="Custom RadialController menu"></td>
+</tr>
+</tbody>
+</table>
+<ol start="7">
+<li>Select the custom tool and try out the interactions now supported through the Surface Dial:
+<ul>
+<li>A rotate action moves the slider.</li>
+<li>A click sets the toggle to on or off.</li>
+</ul>
+</li>
+</ol>
+<p>Ok, let's hook up those buttons.</p>
+<h2 id="step-5-configure-menu-at-runtime">Step 5: Configure menu at runtime</h2>
+<p>In this step, we hook up the <strong>Add/Remove item</strong> and <strong>Reset RadialController menu</strong> buttons to show how you can dynamically customize the menu.</p>
+<ol>
+<li><p>Open the MainPage_Basic.xaml.cs file.</p>
+</li>
+<li><p>Find the code marked with the title of this step (&quot;// Step 5: Configure menu at runtime&quot;).</p>
+</li>
+<li><p>Uncomment the code in the following methods and run the app again, but don't select any buttons (save that for the next step).</p>
+<pre><code class="lang-csharp">// Add or remove the custom tool.
+private void AddRemoveItem(object sender, RoutedEventArgs args)
+{
+    if (AddRemoveToggleButton?.IsChecked == true)
+    {
+        AddRemoveToggleButton.Content = &quot;Remove item&quot;;
+        if (!radialController.Menu.Items.Contains(radialControllerMenuItem))
+        {
+            radialController.Menu.Items.Add(radialControllerMenuItem);
+        }
+    }
+    else if (AddRemoveToggleButton?.IsChecked == false)
+    {
+        AddRemoveToggleButton.Content = &quot;Add item&quot;;
+        if (radialController.Menu.Items.Contains(radialControllerMenuItem))
+        {
+            radialController.Menu.Items.Remove(radialControllerMenuItem);
+            // Attempts to select and activate the previously selected tool.
+            // NOTE: Does not differentiate between built-in and custom tools.
+            radialController.Menu.TrySelectPreviouslySelectedMenuItem();
+        }
+    }
+}
+
+// Reset the RadialController to initial state.
+private void ResetController(object sender, RoutedEventArgs arg)
+{
+    if (!radialController.Menu.Items.Contains(radialControllerMenuItem))
+    {
+        radialController.Menu.Items.Add(radialControllerMenuItem);
+    }
+    AddRemoveToggleButton.Content = &quot;Remove item&quot;;
+    AddRemoveToggleButton.IsChecked = true;
+    radialControllerConfig.SetDefaultMenuItems(
+        new RadialControllerSystemMenuItemKind[] { });
+}
+</code></pre>
+</li>
+<li><p>Select the <strong>Remove item</strong> button and then press and hold the Dial to display the menu again.</p>
+<p>Notice that the menu now contains the default collection of tools. Recall that, in Step 3, while setting up our custom menu, we removed all the default tools and added just our custom tool. We also noted that, when the menu is set to an empty collection, the default items for the current context are reinstated. (We added our custom tool before removing the default tools.)</p>
+</li>
+<li><p>Select the <strong>Add item</strong> button and then press and hold the Dial.</p>
+<p>Notice that the menu now contains both the default collection of tools and our custom tool.</p>
+</li>
+<li><p>Select the <strong>Reset RadialController menu</strong> button and then press and hold the Dial.</p>
+<p>Notice that the menu is back to its original state.</p>
+</li>
+</ol>
+<h2 id="step-6-customize-the-device-haptics">Step 6: Customize the device haptics</h2>
+<p>The Surface Dial, and other wheel devices, can provide users with haptic feedback corresponding to the current interaction (based on either click or rotation).</p>
+<p>In this step, we show how you can customize haptic feedback by associating our slider and toggle switch controls and using them to dynamically specify haptic feedback behavior. For this example, the toggle switch must be set to on for feedback to be enabled while the slider value specifies how often the click feedback is repeated.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Haptic feedback can be disabled by the user in the <strong>Settings</strong> &gt;  <strong>Devices</strong> &gt; <strong>Wheel</strong> page.</p>
+</div>
+<ol>
+<li><p>Open the App.xaml.cs file.</p>
+</li>
+<li><p>Find the code marked with the title of this step (&quot;Step 6: Customize the device haptics&quot;).</p>
+</li>
+<li><p>Comment the first and third lines (&quot;MainPage_Basic&quot; and &quot;MainPage&quot;) and uncomment the second (&quot;MainPage_Haptics&quot;).</p>
+<pre><code class="lang-csharp">rootFrame.Navigate(typeof(MainPage_Basic), e.Arguments);
+rootFrame.Navigate(typeof(MainPage_Haptics), e.Arguments);
+rootFrame.Navigate(typeof(MainPage), e.Arguments);
+</code></pre>
+</li>
+<li><p>Open the MainPage_Haptics.xaml file.</p>
+</li>
+<li><p>Find the code marked with the title of this step (&quot;&lt;!-- Step 6: Customize the device haptics --&gt;&quot;).</p>
+</li>
+<li><p>Uncomment the following lines. (This UI code simply indicates what haptics features are supported by the current device.)</p>
+<pre><code class="lang-xaml">&lt;StackPanel x:Name=&quot;HapticsStack&quot; 
+            Orientation=&quot;Vertical&quot; 
+            HorizontalAlignment=&quot;Center&quot; 
+            BorderBrush=&quot;Gray&quot; 
+            BorderThickness=&quot;1&quot;&gt;
+    &lt;TextBlock Padding=&quot;10&quot; 
+                Text=&quot;Supported haptics properties:&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBDefault&quot; 
+                Content=&quot;Default&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsChecked=&quot;True&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBIntensity&quot; 
+                Content=&quot;Intensity&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBPlayCount&quot; 
+                Content=&quot;Play count&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBPlayDuration&quot; 
+                Content=&quot;Play duration&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBReplayPauseInterval&quot; 
+                Content=&quot;Replay/pause interval&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBBuzzContinuous&quot; 
+                Content=&quot;Buzz continuous&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBClick&quot; 
+                Content=&quot;Click&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBPress&quot; 
+                Content=&quot;Press&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBRelease&quot; 
+                Content=&quot;Release&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;CBRumbleContinuous&quot; 
+                Content=&quot;Rumble continuous&quot; 
+                Padding=&quot;10&quot; 
+                IsEnabled=&quot;False&quot; 
+                IsThreeState=&quot;True&quot; 
+                IsChecked=&quot;{x:Null}&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+</li>
+<li><p>Open the MainPage_Haptics.xaml.cs file</p>
+</li>
+<li><p>Find the code marked with the title of this step (&quot;Step 6: Haptics customization&quot;)</p>
+</li>
+<li><p>Uncomment the following lines:</p>
+<ul>
+<li><p>The <a href="/uwp/api/windows.devices.haptics">Windows.Devices.Haptics</a> type reference is used for functionality in subsequent steps.</p>
+<pre><code class="lang-csharp">using Windows.Devices.Haptics;
+</code></pre>
+</li>
+<li><p>Here, we specify the handler for the <a href="/uwp/api/windows.ui.input.radialcontroller.ControlAcquired">ControlAcquired</a> event that is triggered when our custom <strong>RadialController</strong> menu item is selected.</p>
+<pre><code class="lang-csharp">radialController.ControlAcquired += (rc_sender, args) =&gt;
+{ RadialController_ControlAcquired(rc_sender, args); };
+</code></pre>
+</li>
+<li><p>Next, we define the <a href="/uwp/api/windows.ui.input.radialcontroller.ControlAcquired">ControlAcquired</a> handler, where we disable default haptic feedback and initialize our haptics UI.</p>
+<pre><code class="lang-csharp">private void RadialController_ControlAcquired(
+    RadialController rc_sender,
+    RadialControllerControlAcquiredEventArgs args)
+{
+    // Turn off default haptic feedback.
+    radialController.UseAutomaticHapticFeedback = false;
+
+    SimpleHapticsController hapticsController =
+        args.SimpleHapticsController;
+
+    // Enumerate haptic support.
+    IReadOnlyCollection&lt;SimpleHapticsControllerFeedback&gt; supportedFeedback =
+        hapticsController.SupportedFeedback;
+
+    foreach (SimpleHapticsControllerFeedback feedback in supportedFeedback)
+    {
+        if (feedback.Waveform == KnownSimpleHapticsControllerWaveforms.BuzzContinuous)
+        {
+            CBBuzzContinuous.IsEnabled = true;
+            CBBuzzContinuous.IsChecked = true;
+        }
+        else if (feedback.Waveform == KnownSimpleHapticsControllerWaveforms.Click)
+        {
+            CBClick.IsEnabled = true;
+            CBClick.IsChecked = true;
+        }
+        else if (feedback.Waveform == KnownSimpleHapticsControllerWaveforms.Press)
+        {
+            CBPress.IsEnabled = true;
+            CBPress.IsChecked = true;
+        }
+        else if (feedback.Waveform == KnownSimpleHapticsControllerWaveforms.Release)
+        {
+            CBRelease.IsEnabled = true;
+            CBRelease.IsChecked = true;
+        }
+        else if (feedback.Waveform == KnownSimpleHapticsControllerWaveforms.RumbleContinuous)
+        {
+            CBRumbleContinuous.IsEnabled = true;
+            CBRumbleContinuous.IsChecked = true;
+        }
+    }
+
+    if (hapticsController?.IsIntensitySupported == true)
+    {
+        CBIntensity.IsEnabled = true;
+        CBIntensity.IsChecked = true;
+    }
+    if (hapticsController?.IsPlayCountSupported == true)
+    {
+        CBPlayCount.IsEnabled = true;
+        CBPlayCount.IsChecked = true;
+    }
+    if (hapticsController?.IsPlayDurationSupported == true)
+    {
+        CBPlayDuration.IsEnabled = true;
+        CBPlayDuration.IsChecked = true;
+    }
+    if (hapticsController?.IsReplayPauseIntervalSupported == true)
+    {
+        CBReplayPauseInterval.IsEnabled = true;
+        CBReplayPauseInterval.IsChecked = true;
+    }
+}
+</code></pre>
+</li>
+<li><p>In our <a href="/uwp/api/windows.ui.input.radialcontroller.RotationChanged">RotationChanged</a> and <a href="/uwp/api/windows.ui.input.radialcontroller.ButtonClicked">ButtonClicked</a> event handlers, we connect the corresponding slider and toggle button controls to our custom haptics.</p>
+<pre><code class="lang-csharp">// Connect wheel device rotation to slider control.
+private void RadialController_RotationChanged(
+    object sender, RadialControllerRotationChangedEventArgs args)
+{
+    ...
+    if (ClickToggle.IsOn &amp;&amp; 
+        (RotationSlider.Value &gt; RotationSlider.Minimum) &amp;&amp; 
+        (RotationSlider.Value &lt; RotationSlider.Maximum))
+    {
+        SimpleHapticsControllerFeedback waveform = 
+            FindWaveform(args.SimpleHapticsController, 
+            KnownSimpleHapticsControllerWaveforms.BuzzContinuous);
+        if (waveform != null)
+        {
+            args.SimpleHapticsController.SendHapticFeedback(waveform);
+        }
+    }
+}
+
+private void RadialController_ButtonClicked(
+    object sender, RadialControllerButtonClickedEventArgs args)
+{
+    ...
+
+    if (RotationSlider?.Value &gt; 0)
+    {
+        SimpleHapticsControllerFeedback waveform = 
+            FindWaveform(args.SimpleHapticsController, 
+            KnownSimpleHapticsControllerWaveforms.Click);
+
+        if (waveform != null)
+        {
+            args.SimpleHapticsController.SendHapticFeedbackForPlayCount(
+                waveform, 1.0, 
+                (int)RotationSlider.Value, 
+                TimeSpan.Parse(&quot;1&quot;));
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Finally, we get the requested <strong><a href="/uwp/api/windows.devices.haptics.simplehapticscontrollerfeedback.Waveform">Waveform</a></strong> (if supported) for the haptic feedback.</p>
+<pre><code class="lang-csharp">// Get the requested waveform.
+private SimpleHapticsControllerFeedback FindWaveform(
+    SimpleHapticsController hapticsController,
+    ushort waveform)
+{
+    foreach (var hapticInfo in hapticsController.SupportedFeedback)
+    {
+        if (hapticInfo.Waveform == waveform)
+        {
+            return hapticInfo;
+        }
+    }
+    return null;
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<p>Now run the app again to try out the custom haptics by changing the slider value and toggle-switch state.</p>
+<h2 id="step-7-define-on-screen-interactions-for-surface-studio-and-similar-devices">Step 7: Define on-screen interactions for Surface Studio and similar devices</h2>
+<p>Paired with the Surface Studio, the Surface Dial can provide an even more distinctive user experience.</p>
+<p>In addition to the default press and hold menu experience described, the Surface Dial can also be placed directly on the screen of the Surface Studio. This enables a special &quot;on-screen&quot; menu.</p>
+<p>By detecting both the contact location and bounds of the Surface Dial, the system handles occlusion by the device and displays a larger version of the menu that wraps around the outside of the Dial. This same info can also be used by your app to adapt the UI for both the presence of the device and its anticipated usage, such as the placement of the user's hand and arm.</p>
+<p>The sample that accompanies this tutorial includes a slightly more complex example that demonstrates some of these capabilities.</p>
+<p>To see this in action (you'll need a Surface Studio):</p>
+<ol>
+<li><p>Download the sample on a Surface Studio device (with Visual Studio installed)</p>
+</li>
+<li><p>Open the sample in Visual Studio</p>
+</li>
+<li><p>Open the App.xaml.cs file</p>
+</li>
+<li><p>Find the code marked with the title of this step (&quot;Step 7: Define on-screen interactions for Surface Studio and similar devices&quot;)</p>
+</li>
+<li><p>Comment the first and second lines (&quot;MainPage_Basic&quot; and &quot;MainPage_Haptics&quot;) and uncomment the third (&quot;MainPage&quot;)</p>
+<pre><code class="lang-csharp">rootFrame.Navigate(typeof(MainPage_Basic), e.Arguments);
+rootFrame.Navigate(typeof(MainPage_Haptics), e.Arguments);
+rootFrame.Navigate(typeof(MainPage), e.Arguments);
+</code></pre>
+</li>
+<li><p>Run the app and place the Surface Dial in each of the two control regions, alternating between them.<br>
+<img src="images/radialcontroller/wheel-app-step5-onscreen2.png" alt="On-screen RadialController"></p>
+</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>Congratulations, you've completed the <em>Get Started Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app</em>! We showed you the basic code required for supporting a wheel device in your Windows apps, and how to provide some of the richer user experiences supported by the <strong>RadialController</strong> APIs.</p>
+<h2 id="related-articles">Related articles</h2>
+<p><a href="windows-wheel-interactions.html">Surface Dial interactions</a></p>
+<h3 id="api-reference">API reference</h3>
+<ul>
+<li><a href="/uwp/api/Windows.UI.Input.RadialController"><strong>RadialController</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerButtonClickedEventArgs"><strong>RadialControllerButtonClickedEventArgs</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerConfiguration"><strong>RadialControllerConfiguration</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerControlAcquiredEventArgs"><strong>RadialControllerControlAcquiredEventArgs</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerMenu"><strong>RadialControllerMenu</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerMenuItem"><strong>RadialControllerMenuItem</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerRotationChangedEventArgs"><strong>RadialControllerRotationChangedEventArgs</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerScreenContact"><strong>RadialControllerScreenContact</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerScreenContactContinuedEventArgs"><strong>RadialControllerScreenContactContinuedEventArgs</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerScreenContactStartedEventArgs"><strong>RadialControllerScreenContactStartedEventArgs</strong> class</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerMenuKnownIcon"><strong>RadialControllerMenuKnownIcon</strong> enum</a></li>
+<li><a href="/uwp/api/Windows.UI.Input.RadialControllerSystemMenuItemKind"><strong>RadialControllerSystemMenuItemKind</strong> enum</a></li>
+</ul>
+<h3 id="samples">Samples</h3>
+<h4 id="topic-samples">Topic samples</h4>
+<p><a href="https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-radialcontroller-customization.zip">RadialController customization</a></p>
+<h4 id="other-samples">Other samples</h4>
+<p><a href="https://github.com/Microsoft/Windows-appsample-coloringbook">Coloring Book sample</a></p>
+<p><a href="https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController">Universal Windows Platform samples (C# and C++)</a></p>
+<p><a href="https://github.com/Microsoft/Windows-classic-samples/tree/master/Samples/RadialController">Windows desktop sample</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/radialcontroller-walkthrough.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

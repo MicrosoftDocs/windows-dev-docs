@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Title bar customization </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Title bar customization ">
+    
+    <meta name="description" content="Customize the title bar of a desktop app that uses the Windows App SDK to match the personality of the app.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="title-bar-customization">Title bar customization</h1>
+
+<p>Windows provides a default title bar for every window and lets you customize it to match the personality of your app. The default title bar comes with some standard components and core functionality such as dragging and resizing the window.</p>
+<p><img src="images/titlebar-overview.png" alt="A Windows app showing the title bar">
+</p>
+<p>See the <a href="../design/basics/titlebar-design.html">Title bar</a> design article for guidance on customizing your app's title bar, acceptable title bar area content, and recommended UI patterns.</p>
+<div class="nextstepaction">
+<p><a href="../design/basics/titlebar-design.html">See the Windows 11 Fluent Design guidance for title bar</a></p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This article shows how to customize the title bar for apps that use the Windows App SDK, either with or without WinUI 3. For apps that use UWP and WinUI 2, see <a href="/windows/uwp/ui-input/title-bar">Title bar customization</a> for UWP.</p>
+</div>
+<div class="checklist">
+<ul>
+<li><strong>Applies to</strong>: Windows App SDK, WinUI 3 desktop apps</li>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.titlebar">AppWindow.TitleBar property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Microsoft.UI.Xaml.Window class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar">Window.ExtendsContentIntoTitleBar property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar">Window.SetTitleBar method</a></li>
+</ul>
+</div>
+<h2 id="title-bar-components">Title bar components</h2>
+<p>This list describes the components of the standard title bar.</p>
+<ul>
+<li>Title bar rectangle</li>
+<li>Title text</li>
+<li>System icon</li>
+<li>System menu - accessed by clicking the app icon or right-clicking the title bar</li>
+<li>Caption controls
+<ul>
+<li>Minimize button</li>
+<li>Maximize/Restore button</li>
+<li>Close button</li>
+</ul>
+</li>
+</ul>
+<h2 id="windowing">Windowing</h2>
+<p>Windowing functionality in the <a href="index.html">Windows App SDK</a> is through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">Microsoft.UI.Windowing.AppWindow</a> class, which is based on the Win32 HWND model. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows, including customization of the title bar. You can modify the default title bar that Windows provides so that it blends with the rest of your UI, or extend your app canvas into the title bar area and provide your own title bar content.</p>
+<p>Windowing functionality in <a href="index.html">WinUI 3</a> is through the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Microsoft.UI.Xaml.Window</a> class, which is also based on the Win32 HWND model. For XAML apps that use WinUI 3, XAML Window APIs provide a simpler way to customize the title bar, while still letting you access the AppWindow APIs when needed.</p>
+<h3 id="how-to-work-with-appwindow">How to work with AppWindow</h3>
+<p>You can use AppWindow APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI 3 - and you can adopt them incrementally, using only the APIs you need.</p>
+<p>If you use WinUI 3 XAML as your app's UI framework, both the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Window</a> and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> APIs are available to you. Starting in Windows App SDK 1.4, the XAML Window and AppWindow use the same <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar</a> object for title bar customization. Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow">Window.AppWindow</a> property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the title bar customization APIs.
+To access additional features of the title bar, you can use the AppWindow APIs from your XAML Window like this: <code>AppWindow.TitleBar.ForegroundColor = Colors.White;</code>.</p>
+<p>If you're not using WinUI 3 1.3 or later, use interop APIs to get the AppWindow and use the AppWindow APIs to customize the title bar. For more about the interop APIs, see <a href="/windows/apps/develop/ui-input/manage-app-windows#ui-framework-and-hwnd-interop">Manage app windows - UI framework and HWND interop</a> and the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing">Windowing gallery sample</a>.</p>
+<h2 id="how-much-to-customize-the-title-bar">How much to customize the title bar</h2>
+<p>There are two levels of customization that you can apply to the title bar: apply minor modifications to the default title bar, or extend your app canvas into the title bar area and provide completely custom content.</p>
+<h3 id="simple">Simple</h3>
+<p>For simple customization, such as changing the title bar color, you can set properties on the AppWindowTitleBar object to specify the colors you want to use for title bar elements. In this case, the system retains responsibility for all other aspects of the title bar, such as drawing the app title and defining drag areas.</p>
+<h3 id="full">Full</h3>
+<p>Your other option is to hide the default system title bar and replace it with your own custom content. For example, you can place text, a search box, or custom menus in the title bar area. You will also need to use this option to extend a <a href="../design/signature-experiences/materials.html">material</a> backdrop, like <a href="../design/style/mica.html">Mica</a>, into the title bar area.</p>
+<p>When you opt for full customization, you are responsible for putting content in the title bar area, and you can define your own drag regions. The caption controls (system Close, Minimize, and Maximize buttons) are still available and handled by the system, but elements like the app title are not. You will need to create those elements yourself as needed by your app.</p>
+<h2 id="simple-customization">Simple customization</h2>
+<p>If you want only to customize the title bar title, colors, or icon, you can set properties on the title bar object for your app window.</p>
+<h3 id="title">Title</h3>
+<p>By default, the title bar shows the app type as the window title (for example, &quot;WinUI Desktop&quot;). You should update the window title to show a meaningful display name for your app.</p>
+<p>A XAML app has a display name that's set in the <code>Package.appxmanifest</code> file. You can get this value and use it to set the <code>Title</code> property like this.</p>
+<pre><code class="lang-csharp">Title = AppInfo.Current.DisplayInfo.DisplayName;
+</code></pre>
+<p>To change the window title, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.title">Window.Title</a> property to a single-line text value, as shown here.</p>
+<pre><code class="lang-xaml">&lt;Window
+    ...
+    Title=&quot;App title&quot;&gt;
+    ...
+&lt;/Window&gt;
+</code></pre>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    InitializeComponent();
+    Title = &quot;App title&quot;;
+}
+</code></pre>
+<p>To change the window title using AppWindow APIs, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title">AppWindow.Title</a> property to a single-line text value, as shown here. This example shows how to use interop APIs to get the AppWindow, which is needed of your app does not use WinUI 3 1.3 or later.</p>
+<pre><code class="lang-csharp">using Microsoft.UI;           // Needed for WindowId.
+using Microsoft.UI.Windowing; // Needed for AppWindow.
+using WinRT.Interop;          // Needed for XAML/HWND interop.
+
+private AppWindow m_AppWindow;
+
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    m_AppWindow = GetAppWindowForCurrentWindow();
+    m_AppWindow.Title = &quot;App title&quot;;
+}
+
+private AppWindow GetAppWindowForCurrentWindow()
+{
+    IntPtr hWnd = WindowNative.GetWindowHandle(this);
+    WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+    return AppWindow.GetFromWindowId(wndId);
+}
+</code></pre>
+<hr>
+<h3 id="colors">Colors</h3>
+<p>To customize the default title bar colors or to change the default window icon, you will need to use the AppWindow APIs or opt to fully customize your title bar.</p>
+<p>This example shows how to get an instance of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar</a> and set its color properties.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Color customization is ignored when the app runs on Windows 10.</p>
+</div>
+<pre><code class="lang-csharp">// Assumes &quot;this&quot; is a XAML Window. In projects that don't use 
+// WinUI 3 1.3 or later, use interop APIs to get the AppWindow.
+AppWindow m_AppWindow = this.AppWindow;
+
+private bool SetTitleBarColors()
+{
+    // Check to see if customization is supported.
+    // The method returns true on Windows 10 since Windows App SDK 1.2,
+    // and on all versions of Windows App SDK on Windows 11.
+    if (AppWindowTitleBar.IsCustomizationSupported())
+    {
+        AppWindowTitleBar m_TitleBar = m_AppWindow.TitleBar;
+
+        // Set active window colors.
+        // Note: No effect when app is running on Windows 10
+        // because color customization is not supported.
+        m_TitleBar.ForegroundColor = Colors.White;
+        m_TitleBar.BackgroundColor = Colors.Green;
+        m_TitleBar.ButtonForegroundColor = Colors.White;
+        m_TitleBar.ButtonBackgroundColor = Colors.SeaGreen;
+        m_TitleBar.ButtonHoverForegroundColor = Colors.Gainsboro;
+        m_TitleBar.ButtonHoverBackgroundColor = Colors.DarkSeaGreen;
+        m_TitleBar.ButtonPressedForegroundColor = Colors.Gray;
+        m_TitleBar.ButtonPressedBackgroundColor = Colors.LightGreen;
+
+        // Set inactive window colors.
+        // Note: No effect when app is running on Windows 10
+        // because color customization is not supported.
+        m_TitleBar.InactiveForegroundColor = Colors.Gainsboro;
+        m_TitleBar.InactiveBackgroundColor = Colors.SeaGreen;
+        m_TitleBar.ButtonInactiveForegroundColor = Colors.Gainsboro;
+        m_TitleBar.ButtonInactiveBackgroundColor = Colors.SeaGreen;
+        return true;
+    }
+    return false;
+}
+</code></pre>
+<p>There are a few things to be aware of when setting title bar colors:</p>
+<ul>
+<li>The button background color is not applied to the close button <em>hover</em> and <em>pressed</em> states. The close button always uses the system-defined color for those states.</li>
+<li>Setting a color property to <code>null</code> resets it to the default system color.</li>
+<li>You can't set transparent colors. The color's alpha channel is ignored.</li>
+</ul>
+<p>Windows gives a user the option to apply their selected <a href="../design/style/color.md#accent-color">accent color</a> to the title bar. If you set any title bar color, we recommend that you explicitly set all the colors. This ensures that there are no unintended color combinations that occur because of user defined color settings.</p>
+<h3 id="icon-and-system-menu">Icon and system menu</h3>
+<p>You can hide the system icon, or replace it with a custom icon. The system icon shows the system menu when right clicked or tapped once. It closes the window when double clicked/tapped.</p>
+<p>To show or hide the system icon and associated behaviors, set the title bar <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iconshowoptions">IconShowOptions</a> property.</p>
+<pre><code class="lang-csharp">m_TitleBar.IconShowOptions = IconShowOptions.HideIconAndSystemMenu;
+</code></pre>
+<p>To use a custom window icon, call one of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon">AppWindow.SetIcon</a> methods to set the new icon.</p>
+<ul>
+<li><p><code>SetIcon(String)</code></p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon#Microsoft_UI_Windowing_AppWindow_SetIcon_System_String_">SetIcon(String)</a> method currently works only with .ico files. The string you pass to this method is the fully qualified path to the .ico file.</p>
+<pre><code class="lang-csharp">m_AppWindow.SetIcon(&quot;iconPath/iconName.ico&quot;);
+</code></pre>
+</li>
+<li><p><code>SetIcon(IconId)</code></p>
+<p>If you already have a handle to an icon (<code>HICON</code>) from one of the <a href="/windows/win32/menurc/icon-functions">Icon functions</a> like <a href="/windows/win32/api/winuser/nf-winuser-createicon">CreateIcon</a>, you can use the <a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon">GetIconIdFromIcon</a> interop API to get an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.iconid">IconId</a>. You can then pass the <code>IconId</code> to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon#Microsoft_UI_Windowing_AppWindow_SetIcon_Microsoft_UI_IconId_">SetIcon(IconId)</a> method to set your window icon.</p>
+<pre><code class="lang-csharp">m_AppWindow.SetIcon(iconId));
+</code></pre>
+</li>
+</ul>
+<h2 id="full-customization">Full customization</h2>
+<p>When you opt-in to full title bar customization, your app's client area is extended to cover the entire window, including the title bar area. You are responsible for drawing and input-handling for the entire window except the caption buttons, which are still provided by the window.</p>
+<p>To hide the system title bar and extend your content into the title bar area, set the property that extends app content into the title bar area to <code>true</code>. In a XAML app, this property can be set in your app's <code>OnLaunched</code> method (<em>App.xaml.cs</em>), or in your app's first page.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>See the <a href="title-bar.html#full-customization-example">Full customization example</a> section to see all the code at once.</p>
+</div>
+<p>This example shows how to set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar">Window.ExtendsContentIntoTitleBar</a> property to <code>true</code>.</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+
+    // Hide system title bar.
+    ExtendsContentIntoTitleBar = true;
+}
+</code></pre>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p><code>ExtendsContentIntoTitleBar</code> shows in the XAML IntelliSense for <code>Window</code>, but setting it in XAML causes an error. Set this property in code instead.</p>
+</div>
+<p>This example shows how to get the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar</a> and set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar">AppWindowTitleBar.ExtendsContentIntoTitleBar</a> property to <code>true</code>. This example shows how to use interop APIs to get the AppWindow, which is needed if your app does not use WinUI 3 1.3 or later.</p>
+<pre><code class="lang-csharp">using Microsoft.UI;           // Needed for WindowId.
+using Microsoft.UI.Windowing; // Needed for AppWindow.
+using WinRT.Interop;          // Needed for XAML/HWND interop.
+
+private AppWindow m_AppWindow;
+
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    m_AppWindow = GetAppWindowForCurrentWindow();
+    var titleBar = m_AppWindow.TitleBar;
+    // Hide system title bar.
+    titleBar.ExtendsContentIntoTitleBar = true;
+}
+
+private AppWindow GetAppWindowForCurrentWindow()
+{
+    IntPtr hWnd = WindowNative.GetWindowHandle(this);
+    WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+    return AppWindow.GetFromWindowId(wndId);
+}
+</code></pre>
+<hr>
+<h3 id="title-bar-content-and-the-default-drag-region">Title bar content and the default drag region</h3>
+<p>When your app is extended into the title bar area, you're responsible for defining and managing the UI for the title bar. This typically includes, at a minimum, specifying title text and the drag region. The drag region of the title bar defines where the user can click and drag to move the window around. It's also where the user can right-click to show the system menu.</p>
+<p>To learn more about acceptable title bar content and recommended UI patterns, see <a href="../design/basics/titlebar-design.html">Title bar design</a>.</p>
+<p>This example shows the XAML for a custom title bar UI without interactive content.</p>
+<pre><code class="lang-xaml">&lt;Grid x:Name=&quot;AppTitleBar&quot;  
+      Height=&quot;32&quot;&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition x:Name=&quot;LeftPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+        &lt;ColumnDefinition/&gt;
+        &lt;ColumnDefinition x:Name=&quot;RightPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+    &lt;Image x:Name=&quot;TitleBarIcon&quot; Source=&quot;ms-appx:///Assets/StoreLogo.png&quot;
+           Grid.Column=&quot;1&quot;
+           HorizontalAlignment=&quot;Left&quot;
+           Width=&quot;16&quot; Height=&quot;16&quot;
+           Margin=&quot;8,0,0,0&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;TitleBarTextBlock&quot; 
+               Text=&quot;App title&quot; 
+               Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;
+               Grid.Column=&quot;1&quot;
+               VerticalAlignment=&quot;Center&quot;
+               Margin=&quot;28,0,0,0&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <code>LeftPaddingColumn</code> and <code>RightPaddingColumn</code> are used to reserve space for the caption buttons. The <code>Width</code> values for these columns are set in code, which is shown later. See the <a href="#system-caption-buttons"><em>System caption buttons</em></a> section for the code and explanation.</p>
+</div>
+<p>A XAML app has a display name that's set in the Package.appxmanifest file. You can get this value and use it in your custom title bar like this.</p>
+<pre><code class="lang-csharp">TitleBarTextBlock.Text = AppInfo.Current.DisplayInfo.DisplayName;
+</code></pre>
+<p>When you extend your content into the title bar area, the system title bar is hidden and a default <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar</a> is created that provides caption buttons and a drag region across the width of the screen, identical to the system title bar. If you don't place interactive content in your title bar, you can leave this default drag region as-is. If you place interactive content in your title bar, you need to specify the regions that are interactive, which we cover in the next section.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>When you define custom drag regions, they don't have to be at the top of the window in the default title bar area; you can define any part of your UI as a drag region. However, placing drag regions in different places might make it difficult for your users to discover them.</p>
+</div>
+<h3 id="interactive-content">Interactive content</h3>
+<p>You can place interactive controls, like buttons, menus, or a search box, in the top part of the app so they appear to be in the title bar. However, you need to specify which regions are interactive to ensure that your interactive elements receive user input while still allowing users to move your window around.</p>
+<p><img src="images/titlebar-search.png" alt="A Windows app with a search box in the title bar">
+</p>
+<p>When you add interactive content in the title bar area, you need to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputnonclientpointersource">InputNonClientPointerSource</a> class to specify areas where input is passed through to the interactive control, rather than handled by the title bar. To set the interactive regions, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputnonclientpointersource.setregionrects">InputNonClientPointerSource.SetRegionRects</a> method. This method takes a value that specifies the kind of region being set (in this case, <code>Passthrough</code>), and an array of rectangles, each of which defines a <code>Passthrough</code> region. When the size of the title bar changes, you need to recalculate the interactive regions to match the new size, and call <code>SetRegionRects</code> with the new values.</p>
+<p>This example shows a custom title bar UI with a search box and a PersonPicture account control. It demonstrates how to calculate and set the interactive rectangles for these controls so that input is passed through to them.</p>
+<p>Here are a few important points to notice about this code:</p>
+<ul>
+<li>Set the <code>AppTitleBar</code> Grid height to 48 to follow the <a href="../design/basics/titlebar-design.html">Title bar</a> design guidance for interactive content.</li>
+<li>Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.preferredheightoption">PreferredHeightOption</a> to <code>Tall</code> so the caption buttons are the same height as the title bar.</li>
+<li>To make resizing controls and calculating regions easier, use a <code>Grid</code> with multiple named columns for the layout.</li>
+<li>Use <em>star</em> (*) sizing with <code>MinWidth</code> for the column that contains the <code>AutoSuggestBox</code> so that it will automatically resize with the window.</li>
+<li>Set <code>MinWidth</code> on the <code>RightDragColumn</code> to reserve a small area that is always draggable even when the window is resized.</li>
+<li>Set <code>ExtendsContentIntoTitleBar</code> to <code>true</code> in the MainWindow constructor. If you set it in code that gets called later, the default system title bar might be shown first, and then hidden.</li>
+<li>Make the initial call to calculate interactive regions after the <code>AppTitleBar</code> element has loaded. Otherwise, there's no guarantee that the elements used for the calculation will have their correct values.</li>
+<li>Update the interactive rectangle calculations only after the <code>AppTitleBar</code> element has changed size (<code>AppTitleBar_SizeChanged</code>). If you depend on the window <code>Changed</code> event, there will be situations (like window maximize/minimize) where the event occurs before <code>AppTitleBar</code> is resized and the calculations will use incorrect values.</li>
+<li>Set your custom drag/interactive areas only after you check <code>ExtendsContentIntoTitleBar</code> to confirm that a custom title bar is being used.</li>
+</ul>
+<pre><code class="lang-xaml">&lt;Grid x:Name=&quot;AppTitleBar&quot;
+      Height=&quot;48&quot;&gt;
+    &lt;Grid.ColumnDefinitions&gt;
+        &lt;ColumnDefinition x:Name=&quot;LeftPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+        &lt;ColumnDefinition x:Name=&quot;IconColumn&quot; Width=&quot;Auto&quot;/&gt;
+        &lt;ColumnDefinition x:Name=&quot;TitleColumn&quot; Width=&quot;Auto&quot;/&gt;
+        &lt;ColumnDefinition x:Name=&quot;LeftDragColumn&quot; Width=&quot;*&quot;/&gt;
+        &lt;ColumnDefinition x:Name=&quot;SearchColumn&quot; Width=&quot;4*&quot; MinWidth=&quot;220&quot;/&gt;
+        &lt;ColumnDefinition x:Name=&quot;RightDragColumn&quot; Width=&quot;*&quot; MinWidth=&quot;48&quot;/&gt;
+        &lt;ColumnDefinition x:Name=&quot;AccountColumn&quot; Width=&quot;Auto&quot;/&gt;
+        &lt;ColumnDefinition x:Name=&quot;RightPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+    &lt;/Grid.ColumnDefinitions&gt;
+    &lt;Image x:Name=&quot;TitleBarIcon&quot; 
+           Source=&quot;ms-appx:///Assets/StoreLogo.png&quot;
+           Grid.Column=&quot;1&quot;
+           Width=&quot;16&quot; Height=&quot;16&quot;
+           Margin=&quot;8,0,4,0&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;TitleBarTextBlock&quot;
+               Text=&quot;App title&quot; 
+               Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;
+               Grid.Column=&quot;2&quot;
+               VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;/TextBlock&gt;
+    &lt;AutoSuggestBox x:Name=&quot;TitleBarSearchBox&quot; 
+                    Grid.Column=&quot;4&quot; 
+                    QueryIcon=&quot;Find&quot;
+                    PlaceholderText=&quot;Search&quot;
+                    VerticalAlignment=&quot;Center&quot;
+                    MaxWidth=&quot;600&quot;/&gt;
+    &lt;PersonPicture x:Name=&quot;PersonPic&quot; 
+                   Grid.Column=&quot;6&quot; 
+                   Height=&quot;32&quot; Margin=&quot;0,0,16,0&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>This code shows how to calculate and set the interactive regions that correspond to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox">AutoSuggestBox</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.personpicture">PersonPicture</a> controls.</p>
+<pre><code class="lang-csharp">public sealed partial class MainWindow : Window
+{
+    public MainWindow()
+    {
+        this.InitializeComponent();
+
+        // Assumes &quot;this&quot; is a XAML Window. In projects that don't use 
+        // WinUI 3 1.3 or later, use interop APIs to get the AppWindow.
+        m_AppWindow = this.AppWindow;
+        AppTitleBar.Loaded += AppTitleBar_Loaded;
+        AppTitleBar.SizeChanged += AppTitleBar_SizeChanged;
+        ExtendsContentIntoTitleBar = true;
+        TitleBarTextBlock.Text = AppInfo.Current.DisplayInfo.DisplayName;
+    }
+
+    private void AppTitleBar_Loaded(object sender, RoutedEventArgs e)
+    {
+        if (ExtendsContentIntoTitleBar == true)
+        {
+            // Set the initial interactive regions.
+            SetRegionsForCustomTitleBar();
+        }
+    }
+
+    private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
+    {
+        if (ExtendsContentIntoTitleBar == true)
+        {
+            // Update interactive regions if the size of the window changes.
+            SetRegionsForCustomTitleBar();
+        }
+    }
+
+    private void SetRegionsForCustomTitleBar()
+    {
+        // Specify the interactive regions of the title bar.
+
+        double scaleAdjustment = AppTitleBar.XamlRoot.RasterizationScale;
+
+        RightPaddingColumn.Width = new GridLength(m_AppWindow.TitleBar.RightInset / scaleAdjustment);
+        LeftPaddingColumn.Width = new GridLength(m_AppWindow.TitleBar.LeftInset / scaleAdjustment);
+
+        GeneralTransform transform = TitleBarSearchBox.TransformToVisual(null);
+        Rect bounds = transform.TransformBounds(new Rect(0, 0, 
+                                                         TitleBarSearchBox.ActualWidth,
+                                                         TitleBarSearchBox.ActualHeight));
+        Windows.Graphics.RectInt32 SearchBoxRect = GetRect(bounds, scaleAdjustment);
+        
+        transform = PersonPic.TransformToVisual(null);
+        bounds = transform.TransformBounds(new Rect(0, 0,
+                                                    PersonPic.ActualWidth,
+                                                    PersonPic.ActualHeight));
+        Windows.Graphics.RectInt32 PersonPicRect = GetRect(bounds, scaleAdjustment);
+
+        var rectArray = new Windows.Graphics.RectInt32[] { SearchBoxRect, PersonPicRect };
+
+        InputNonClientPointerSource nonClientInputSrc =
+            InputNonClientPointerSource.GetForWindowId(this.AppWindow.Id);
+        nonClientInputSrc.SetRegionRects(NonClientRegionKind.Passthrough, rectArray);
+    }
+
+    private Windows.Graphics.RectInt32 GetRect(Rect bounds, double scale)
+    {
+        return new Windows.Graphics.RectInt32(
+            _X: (int)Math.Round(bounds.X * scale),
+            _Y: (int)Math.Round(bounds.Y * scale),
+            _Width: (int)Math.Round(bounds.Width * scale),
+            _Height: (int)Math.Round(bounds.Height * scale)
+        );
+    }
+}
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><code>AppWindow</code> uses physical pixels for compatibility with UI frameworks that don't use logical coordinates. If you use WPF or WinUI 3, <code>RightInset</code>, <code>LeftInset</code>, and the values used to calculate regions need to be adjusted if the display scale is not 100%. In this example, we get a <code>scaleAdjustment</code> value to account for the display scale setting.</p>
+<ul>
+<li>For WinUI 3, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale">XamlRoot.RasterizationScale</a> property to get the scale adjustment.</li>
+<li>For WPF, you can handle the <a href="/dotnet/api/system.windows.window.dpichanged">Window.DpiChanged</a> event to get the <a href="/dotnet/api/system.windows.dpichangedeventargs.newdpi">NewDpi</a> value and calculate the scale adjustment.</li>
+</ul>
+</div>
+<h3 id="system-caption-buttons">System caption buttons</h3>
+<p>The system reserves the upper-left or upper-right corner of the app window for the system caption buttons (minimize, maximize/restore, close). The system retains control of the caption button area to guarantee that minimum functionality is provided for dragging, minimizing, maximizing, and closing the window. The system draws the Close button in the upper-right for left-to-right languages and the upper-left for right-to-left languages.</p>
+<p>You can draw content underneath the caption control area, such as your app background, but you should not put any UI that you expect the user to be able to interact with. It does not receive any input because input for the caption controls is handled by the system.</p>
+<p>These lines from the previous example show the padding columns in the XAML that defines the title bar. Using padding columns instead of margins ensures that the background paints the area under the caption control buttons (for transparent buttons). Using both right and left padding columns ensures that your title bar behaves correctly in both right-to-left and left-to-right layouts.</p>
+<pre><code class="lang-xaml">&lt;Grid.ColumnDefinitions&gt;
+    &lt;ColumnDefinition x:Name=&quot;LeftPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+    &lt;ColumnDefinition/&gt;
+    &lt;ColumnDefinition x:Name=&quot;RightPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+&lt;/Grid.ColumnDefinitions&gt;
+</code></pre>
+<p>The dimensions and position of the caption control area is communicated by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar">AppWindowTitleBar</a> class so that you can account for it in the layout of your title bar UI. The width of the reserved region on each side is given by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.leftinset">LeftInset</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.rightinset">RightInset</a> properties, and its height is given by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.height">Height</a> property.</p>
+<p>Here's how the width of the padding columns is specified when the drag regions are calculated and set.</p>
+<pre><code class="lang-csharp">RightPaddingColumn.Width = 
+    new GridLength(m_AppWindow.TitleBar.RightInset / scaleAdjustment);
+LeftPaddingColumn.Width = 
+    new GridLength(m_AppWindow.TitleBar.LeftInset / scaleAdjustment);
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>See important information in the <a href="#interactive-content"><em>Interactive content</em></a> section about how display scaling affects these values.</p>
+</div>
+<h3 id="tall-title-bar-support-for-custom-title-bars">Tall title bar support for custom title bars</h3>
+<p>When you add interactive content like a search box or person picture in the title bar, we recommend that you increase the height of your title bar to provide more room for these elements. A taller title bar also makes touch manipulation easier. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.preferredheightoption">AppWindowTitleBar.PreferredHeightOption</a> property gives you the option of increasing your title bar height from the standard height, which is the default, to a taller height. When you select <code>Tall</code> title bar mode, the caption buttons that the system draws as an overlay in the client area are rendered taller with their min/max/close glyphs centered. If you haven't specified a drag region, the system will draw one that extends the width of your window and the height determined by the <code>PreferredHeightOption</code> value that you set.</p>
+<p>This example shows how you can set the <code>PreferredHeightOption</code> property.</p>
+<pre><code class="lang-csharp">// A taller title bar is only supported when drawing a fully custom title bar.
+if (ExtendsContentIntoTitleBar == true)
+{
+    m_AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
+}
+</code></pre>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar">AppWindowTitleBar.ExtendsContentIntoTitleBar</a> property must be <code>true</code> before you set the <code>PreferredHeightOption</code> property. If you attempt to set <code>PreferredHeightOption</code> while <code>ExtendsContentIntoTitleBar</code> is <code>false</code>, an exception is thrown.</p>
+</div>
+<h3 id="color-and-transparency-in-caption-buttons">Color and transparency in caption buttons</h3>
+<p>When you extend your app content into the title bar area, you can make the background of the caption buttons transparent to let your app background show through. You typically set the background to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.colors.transparent">Colors.Transparent</a> for full transparency. For partial transparency, set the alpha channel for the <a href="/uwp/api/windows.ui.color">Color</a> you set the property to.</p>
+<p>These title bar properties can be transparent:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonbackgroundcolor">ButtonBackgroundColor</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonhoverbackgroundcolor">ButtonHoverBackgroundColor</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttonpressedbackgroundcolor">ButtonPressedBackgroundColor</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.buttoninactivebackgroundcolor">ButtonInactiveBackgroundColor</a></li>
+</ul>
+<p>All other color properties will continue to ignore the alpha channel. If <code>ExtendsContentIntoTitleBar</code> is set to <code>false</code>, the alpha channel is always ignored for all <code>AppWindowTitleBar</code> color properties.</p>
+<p>The button background color is not applied to the Close button <em>hover</em> and <em>pressed</em> states. The close button always uses the system-defined color for those states.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><a href="../design/style/mica.html">Mica</a> is a delightful <a href="../design/signature-experiences/materials.html">material</a> that helps distinguish the window that's in focus. We recommend it as the background for long-lived windows in Windows 11. If you have applied Mica in the client area of your window, you can extend it into the title bar area and make your caption buttons transparent for the Mica to show through. See <a href="../design/style/mica.html">Mica material</a> for more info.</p>
+</div>
+<h3 id="dim-the-title-bar-when-the-window-is-inactive">Dim the title bar when the window is inactive</h3>
+<p>You should make it obvious when your window is active or inactive. At a minimum, you should change the color of the text, icons, and buttons in your title bar.</p>
+<p>For XAML apps, handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activated">Window.Activated</a> event to determine the activation state of the window, and update your title bar UI as needed.</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    ...
+    Activated += MainWindow_Activated;
+}
+
+private void MainWindow_Activated(object sender, WindowActivatedEventArgs args)
+{
+    if (args.WindowActivationState == WindowActivationState.Deactivated)
+    {
+        TitleBarTextBlock.Foreground =
+            (SolidColorBrush)App.Current.Resources[&quot;WindowCaptionForegroundDisabled&quot;];
+    }
+    else
+    {
+        TitleBarTextBlock.Foreground =
+            (SolidColorBrush)App.Current.Resources[&quot;WindowCaptionForeground&quot;];
+    }
+}
+</code></pre>
+<p>For other UI frameworks, handle an event to determine the activation state of the window, and update your title bar UI as needed. How you determine the state of the window depends on the UI framework you use for your app.</p>
+<ul>
+<li><strong>Win32</strong>: Listen and respond to the <a href="/windows/win32/inputdev/wm-activate">WM_ACTIVATE</a> message.</li>
+<li><strong>WPF</strong>: Handle <a href="/dotnet/api/system.windows.window.activated">Window.Activated</a>, <a href="/dotnet/api/system.windows.window.deactivated">Window.Deactivated</a>.</li>
+<li><strong>WinForms</strong>: Handle <a href="/dotnet/api/system.windows.forms.form.activated">Form.Activated</a>, <a href="/dotnet/api/system.windows.forms.form.deactivate">Form.Deactivate</a>.</li>
+</ul>
+<h3 id="reset-the-title-bar">Reset the title bar</h3>
+<p>To reset or switch to the system title bar while your app is running, you can call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.resettodefault">AppWindowTitleBar.ResetToDefault</a>.</p>
+<pre><code class="lang-csharp">m_AppWindow.TitleBar.ResetToDefault();
+</code></pre>
+<p>For XAML apps, you can also reset the title bar is these ways:</p>
+<ul>
+<li>Call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar">SetTitleBar</a> to switch to a new title bar element while your app is running.</li>
+<li>Call <code>SetTitleBar</code> with <code>null</code> as the parameter to reset to the default <code>AppWindowTitleBar</code> drag regions.</li>
+<li>Call <code>SetTitleBar</code> with <code>null</code> as the parameter and set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar">ExtendsContentIntoTitleBar</a> to <code>false</code> to revert to the default system title bar.</li>
+</ul>
+<h3 id="show-and-hide-the-title-bar">Show and hide the title bar</h3>
+<p>If you add support for <em>full screen</em> or <em>compact overlay</em> modes to your app, you might need to make changes to your title bar when your app switches between these modes. The XAML Window does not provide any APIs to support full screen mode; you can use AppWindow APIs for this.</p>
+<p>When your app runs in <em>full screen</em> mode, the system hides the title bar and caption control buttons. You can handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.changed">AppWindow.Changed</a> event and check the event args <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didpresenterchange">DidPresenterChange</a> property to determine if you should show, hide, or change the title bar in response to a new window presentation.</p>
+<p>This example shows how to handle the <code>Changed</code> event to show and hide the <code>AppTitleBar</code> element from previous examples. If the window is put in <em>compact overlay</em> mode, the title bar is reset to the default system title bar (or you could provide a custom title bar optimized for compact overlay).</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+
+    m_AppWindow = this.AppWindow;
+    m_AppWindow.Changed += AppWindow_Changed;
+}
+
+private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
+{
+    if (args.DidPresenterChange)
+    {
+        switch (sender.Presenter.Kind)
+        {
+            case AppWindowPresenterKind.CompactOverlay:
+                // Compact overlay - hide custom title bar
+                // and use the default system title bar instead.
+                AppTitleBar.Visibility = Visibility.Collapsed;
+                sender.TitleBar.ResetToDefault();
+                break;
+
+            case AppWindowPresenterKind.FullScreen:
+                // Full screen - hide the custom title bar
+                // and the default system title bar.
+                AppTitleBar.Visibility = Visibility.Collapsed;
+                sender.TitleBar.ExtendsContentIntoTitleBar = true;
+                break;
+
+            case AppWindowPresenterKind.Overlapped:
+                // Normal - hide the system title bar
+                // and use the custom title bar instead.
+                AppTitleBar.Visibility = Visibility.Visible;
+                sender.TitleBar.ExtendsContentIntoTitleBar = true;
+                break;
+
+            default:
+                // Use the default system title bar.
+                sender.TitleBar.ResetToDefault();
+                break;
+        }
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p><em>Full screen</em> and <em>compact overlay</em> modes can be entered only if supported by your app. See <a href="ui-input/manage-app-windows.html">Manage app windows</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.fullscreenpresenter">FullScreenPresenter</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter">CompactOverlayPresenter</a> for more info.</p>
+</div>
+<h2 id="dos-and-donts">Do's and don'ts</h2>
+<ul>
+<li>Do make it obvious when your window is active or inactive. At a minimum, change the color of the text, icons, and buttons in your title bar.</li>
+<li>Do define a drag region along the top edge of the app canvas. Matching the placement of system title bars makes it easier for users to find.</li>
+<li>Do define a drag region that matches the visual title bar (if any) on the app's canvas.</li>
+</ul>
+<h2 id="full-customization-example">Full customization example</h2>
+<p>This examples shows all the code described in the Full customization section.</p>
+<pre><code class="lang-xaml">&lt;Window
+    x:Class=&quot;WinUI3_CustomTitleBar.MainWindow&quot;
+    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot;/&gt;
+            &lt;RowDefinition/&gt;
+        &lt;/Grid.RowDefinitions&gt;
+
+        &lt;Grid x:Name=&quot;AppTitleBar&quot;
+      Height=&quot;48&quot;&gt;
+            &lt;Grid.ColumnDefinitions&gt;
+                &lt;ColumnDefinition x:Name=&quot;LeftPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+                &lt;ColumnDefinition x:Name=&quot;IconColumn&quot; Width=&quot;Auto&quot;/&gt;
+                &lt;ColumnDefinition x:Name=&quot;TitleColumn&quot; Width=&quot;Auto&quot;/&gt;
+                &lt;ColumnDefinition x:Name=&quot;LeftDragColumn&quot; Width=&quot;*&quot;/&gt;
+                &lt;ColumnDefinition x:Name=&quot;SearchColumn&quot; Width=&quot;4*&quot; MinWidth=&quot;220&quot;/&gt;
+                &lt;ColumnDefinition x:Name=&quot;RightDragColumn&quot; Width=&quot;*&quot; MinWidth=&quot;48&quot;/&gt;
+                &lt;ColumnDefinition x:Name=&quot;AccountColumn&quot; Width=&quot;Auto&quot;/&gt;
+                &lt;ColumnDefinition x:Name=&quot;RightPaddingColumn&quot; Width=&quot;0&quot;/&gt;
+            &lt;/Grid.ColumnDefinitions&gt;
+            &lt;Image x:Name=&quot;TitleBarIcon&quot; 
+           Source=&quot;ms-appx:///Assets/StoreLogo.png&quot;
+           Grid.Column=&quot;1&quot;
+           Width=&quot;16&quot; Height=&quot;16&quot;
+           Margin=&quot;8,0,4,0&quot;/&gt;
+            &lt;TextBlock x:Name=&quot;TitleBarTextBlock&quot;
+                       Text=&quot;App title&quot; 
+                       Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;
+                       Grid.Column=&quot;2&quot;
+                       VerticalAlignment=&quot;Center&quot;&gt;
+            &lt;/TextBlock&gt;
+            &lt;AutoSuggestBox x:Name=&quot;TitleBarSearchBox&quot; 
+                            Grid.Column=&quot;4&quot; 
+                            QueryIcon=&quot;Find&quot;
+                            PlaceholderText=&quot;Search&quot;
+                            VerticalAlignment=&quot;Center&quot;
+                            MaxWidth=&quot;600&quot;/&gt;
+            &lt;PersonPicture x:Name=&quot;PersonPic&quot; 
+                           Grid.Column=&quot;6&quot; 
+                           Height=&quot;32&quot; Margin=&quot;0,0,16,0&quot;/&gt;
+        &lt;/Grid&gt;
+
+        &lt;NavigationView Grid.Row=&quot;1&quot;
+                        IsBackButtonVisible=&quot;Collapsed&quot;
+                        IsSettingsVisible=&quot;False&quot;&gt;
+            &lt;StackPanel&gt;
+                &lt;TextBlock Text=&quot;Content&quot; 
+                           Style=&quot;{ThemeResource TitleTextBlockStyle}&quot;
+                           Margin=&quot;32,0,0,0&quot;/&gt;
+                &lt;StackPanel Grid.Row=&quot;1&quot; VerticalAlignment=&quot;Center&quot;&gt;
+                    &lt;Button Margin=&quot;4&quot; x:Name=&quot;CompactoverlaytBtn&quot;
+                            Content=&quot;Enter CompactOverlay&quot;
+                            Click=&quot;SwitchPresenter&quot;/&gt;
+                    &lt;Button Margin=&quot;4&quot; x:Name=&quot;FullscreenBtn&quot; 
+                            Content=&quot;Enter FullScreen&quot;
+                            Click=&quot;SwitchPresenter&quot;/&gt;
+                    &lt;Button Margin=&quot;4&quot; x:Name=&quot;OverlappedBtn&quot;
+                            Content=&quot;Revert to default (Overlapped)&quot;
+                            Click=&quot;SwitchPresenter&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+        &lt;/NavigationView&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+<pre><code class="lang-csharp">using Microsoft.UI.Input;
+using Microsoft.UI.Windowing;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
+using System;
+using Windows.ApplicationModel;
+using Rect = Windows.Foundation.Rect;
+
+public sealed partial class MainWindow : Window
+{
+    private AppWindow m_AppWindow;
+
+    public MainWindow()
+    {
+        this.InitializeComponent();
+
+        // Assumes &quot;this&quot; is a XAML Window. In projects that don't use 
+        // WinUI 3 1.3 or later, use interop APIs to get the AppWindow.
+        m_AppWindow = this.AppWindow;
+        m_AppWindow.Changed += AppWindow_Changed;
+        Activated += MainWindow_Activated;
+        AppTitleBar.SizeChanged += AppTitleBar_SizeChanged;
+        AppTitleBar.Loaded += AppTitleBar_Loaded;
+
+        ExtendsContentIntoTitleBar = true;
+        if (ExtendsContentIntoTitleBar == true)
+        {
+            m_AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
+        }
+        TitleBarTextBlock.Text = AppInfo.Current.DisplayInfo.DisplayName;
+    }
+
+    private void AppTitleBar_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (ExtendsContentIntoTitleBar == true)
+            {
+                // Set the initial interactive regions.
+                SetRegionsForCustomTitleBar();
+            }
+        }
+
+    private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (ExtendsContentIntoTitleBar == true)
+            {
+                // Update interactive regions if the size of the window changes.
+                SetRegionsForCustomTitleBar();
+            }
+        }
+
+    private void SetRegionsForCustomTitleBar()
+    {
+        // Specify the interactive regions of the title bar.
+
+        double scaleAdjustment = AppTitleBar.XamlRoot.RasterizationScale;
+
+        RightPaddingColumn.Width = new GridLength(m_AppWindow.TitleBar.RightInset / scaleAdjustment);
+        LeftPaddingColumn.Width = new GridLength(m_AppWindow.TitleBar.LeftInset / scaleAdjustment);
+
+        // Get the rectangle around the AutoSuggestBox control.
+        GeneralTransform transform = TitleBarSearchBox.TransformToVisual(null);
+        Rect bounds = transform.TransformBounds(new Rect(0, 0,
+                                                         TitleBarSearchBox.ActualWidth,
+                                                         TitleBarSearchBox.ActualHeight));
+        Windows.Graphics.RectInt32 SearchBoxRect = GetRect(bounds, scaleAdjustment);
+
+        // Get the rectangle around the PersonPicture control.
+        transform = PersonPic.TransformToVisual(null);
+        bounds = transform.TransformBounds(new Rect(0, 0,
+                                                    PersonPic.ActualWidth,
+                                                    PersonPic.ActualHeight));
+        Windows.Graphics.RectInt32 PersonPicRect = GetRect(bounds, scaleAdjustment);
+
+        var rectArray = new Windows.Graphics.RectInt32[] { SearchBoxRect, PersonPicRect };
+
+        InputNonClientPointerSource nonClientInputSrc =
+            InputNonClientPointerSource.GetForWindowId(this.AppWindow.Id);
+        nonClientInputSrc.SetRegionRects(NonClientRegionKind.Passthrough, rectArray);
+    }
+
+    private Windows.Graphics.RectInt32 GetRect(Rect bounds, double scale)
+    {
+        return new Windows.Graphics.RectInt32(
+            _X: (int)Math.Round(bounds.X * scale),
+            _Y: (int)Math.Round(bounds.Y * scale),
+            _Width: (int)Math.Round(bounds.Width * scale),
+            _Height: (int)Math.Round(bounds.Height * scale)
+        );
+    }
+
+    private void MainWindow_Activated(object sender, WindowActivatedEventArgs args)
+    {
+        if (args.WindowActivationState == WindowActivationState.Deactivated)
+        {
+            TitleBarTextBlock.Foreground =
+                (SolidColorBrush)App.Current.Resources[&quot;WindowCaptionForegroundDisabled&quot;];
+        }
+        else
+        {
+            TitleBarTextBlock.Foreground =
+                (SolidColorBrush)App.Current.Resources[&quot;WindowCaptionForeground&quot;];
+        }
+    }
+
+    private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
+    {
+        if (args.DidPresenterChange)
+        {
+            switch (sender.Presenter.Kind)
+            {
+                case AppWindowPresenterKind.CompactOverlay:
+                    // Compact overlay - hide custom title bar
+                    // and use the default system title bar instead.
+                    AppTitleBar.Visibility = Visibility.Collapsed;
+                    sender.TitleBar.ResetToDefault();
+                    break;
+
+                case AppWindowPresenterKind.FullScreen:
+                    // Full screen - hide the custom title bar
+                    // and the default system title bar.
+                    AppTitleBar.Visibility = Visibility.Collapsed;
+                    sender.TitleBar.ExtendsContentIntoTitleBar = true;
+                    break;
+
+                case AppWindowPresenterKind.Overlapped:
+                    // Normal - hide the system title bar
+                    // and use the custom title bar instead.
+                    AppTitleBar.Visibility = Visibility.Visible;
+                    sender.TitleBar.ExtendsContentIntoTitleBar = true;
+                    break;
+
+                default:
+                    // Use the default system title bar.
+                    sender.TitleBar.ResetToDefault();
+                    break;
+            }
+        }
+    }
+
+    private void SwitchPresenter(object sender, RoutedEventArgs e)
+    {
+        if (AppWindow != null)
+        {
+            AppWindowPresenterKind newPresenterKind;
+            switch ((sender as Button).Name)
+            {
+                case &quot;CompactoverlaytBtn&quot;:
+                    newPresenterKind = AppWindowPresenterKind.CompactOverlay;
+                    break;
+
+                case &quot;FullscreenBtn&quot;:
+                    newPresenterKind = AppWindowPresenterKind.FullScreen;
+                    break;
+
+                case &quot;OverlappedBtn&quot;:
+                    newPresenterKind = AppWindowPresenterKind.Overlapped;
+                    break;
+
+                default:
+                    newPresenterKind = AppWindowPresenterKind.Default;
+                    break;
+            }
+
+            // If the same presenter button was pressed as the
+            // mode we're in, toggle the window back to Default.
+            if (newPresenterKind == AppWindow.Presenter.Kind)
+            {
+                AppWindow.SetPresenter(AppWindowPresenterKind.Default);
+            }
+            else
+            {
+                // Else request a presenter of the selected kind
+                // to be created and applied to the window.
+                AppWindow.SetPresenter(newPresenterKind);
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/uwp/ui-input/title-bar">Title bar customization (UWP)</a></li>
+<li><a href="../design/style/acrylic.html">Acrylic</a></li>
+<li><a href="../design/style/mica.html">Mica</a></li>
+<li><a href="../design/style/color.md">Color</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/title-bar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

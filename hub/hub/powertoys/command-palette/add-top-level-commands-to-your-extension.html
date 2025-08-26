@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Add top-level commands to your extension </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Add top-level commands to your extension ">
+    
+    <meta name="description" content="Learn how to add new top-level commands to your Command Palette extension.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adding-top-level-commands-to-your-extension">Adding top-level commands to your extension</h1>
+
+<p><strong>Previous</strong>: <a href="update-a-list-of-commands.html">Update a list of commands</a>.</p>
+<p>So far, you've only added commands to a single page within your extension. You can also add more commands directly to the top-level list of commands too.</p>
+<h2 id="top-level-commands">Top-level commands</h2>
+<p>To add commands at the top level of the Command Palette, open the <code>&lt;ExtensionName&gt;CommandsProvider.cs</code> file. This is where you define the commands that will appear at the root level of the Command Palette.</p>
+<p>Currently, the file contains only one command:</p>
+<pre><code class="lang-csharp">public &lt;ExtensionName&gt;CommandsProvider()
+{
+    DisplayName = &quot;My sample extension&quot;;
+    Icon = IconHelpers.FromRelativePath(&quot;Assets\\StoreLogo.png&quot;);
+    _commands = [
+        new CommandItem(new &lt;ExtensionName&gt;Page()) { Title = DisplayName },
+    ];
+}
+
+public override ICommandItem[] TopLevelCommands()
+{
+    return _commands;
+}
+</code></pre>
+<p>When the extension is created, it builds a list of commands and stores them in the <code>_commands</code> field. Every time the extension is asked for its top-level commands, it simply returns this prebuilt list. This approach avoids recreating the command list on each request, which improves performance.</p>
+<h2 id="add-another-top-level-command">Add another top level command</h2>
+<ol>
+<li>In Visual Studio, open <code>&lt;ExtensionName&gt;CommandsProvider.cs</code></li>
+<li>Add another <code>CommandItem</code>:</li>
+</ol>
+<pre><code class="lang-diff">public &lt;ExtensionName&gt;CommandsProvider()
+{
+    DisplayName = &quot;My sample extension&quot;;
+    Icon = IconHelpers.FromRelativePath(&quot;Assets\\StoreLogo.png&quot;);
+    _commands = [
+        new CommandItem(new &lt;ExtensionName&gt;Page()) { Title = DisplayName },
++       new CommandItem(new ShowMessageCommand()) { Title = &quot;Send a message&quot; },
+    ];
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <code>ShowMessageCommand()</code> functionality was created prior at <a href="/windows/powertoys/command-palette/adding-commands#invokableCommand-command">InvokableCommand Command</a></p>
+</div>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p><img src="../../images/command-palette/top-level-command.png" alt="Screenshot of extension with send message command at top level"></p>
+<p>Now there is an additional top-level commands to your extension.</p>
+<h2 id="add-top-level-command-dynamically">Add top level command dynamically</h2>
+<p>If you'd like to update the list of top-level commands dynamically, you can do so in the same way as you would update a list page. This can be useful for cases like an extension that might first require the user to log in, before showing certain commands. In that case, you can show the &quot;log in&quot; command at the top level initially. Then, once the user logs in successfully, you can update the list of top-level commands to include the commands that required authentication.</p>
+<p>Once you've determined that you need to change the top level list, call <a href="microsoft-commandpalette-extensions-toolkit/commandprovider_raiseitemschanged.html">RaiseItemsChanged</a> on your <code>CommandProvider</code>. Command Palette will then request the top-level commands via <strong>TopLevelCommands</strong> again, and you can return the updated list.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Create the <code>CommandItem</code> objects for the top-level commands before calling <code>RaiseItemsChanged</code>. This will ensure that the new commands are available when Command Palette requests the top-level commands. This will ensure that the work being executed in each call to <strong>TopLevelCommands</strong> method to a minimum.</p>
+</div>
+<h3 id="next-up-command-results">Next up: <a href="command-results.html">Command Results</a></h3>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+<li><a href="extensibility-overview.html">Extensibility overview</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/add-top-level-commands-to-your-extension.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

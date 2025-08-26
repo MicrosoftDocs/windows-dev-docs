@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Modernize your desktop apps for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Modernize your desktop apps for Windows ">
+    
+    <meta name="description" content="Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="modernize-your-desktop-apps">Modernize your desktop apps</h1>
+
+<p>Windows 11 and Windows 10 offer many features you can use to deliver a modern experience in your desktop apps. Most of these features are available as modular components that you can adopt in your desktop apps at your own pace without having to rewrite your application for a different platform. You can enhance your existing desktop apps by choosing which Windows features to adopt.</p>
+<p>This topic describes the features that you can use in your desktop apps today. For a tutorial that demonstrates how to modernize an existing app to use many of the features described in this topic, see the <a href="modernize-wpf-tutorial.html">Modernize a WPF app</a> tutorial.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Do you need assistance migrating desktop apps to Windows 10 or later? The <a href="/fasttrack/products-and-capabilities#app-assure">App Assure</a> service provides direct, no-cost support to developers who are porting their apps to Windows 10 and later versions. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit <a href="/fasttrack/win-10-app-assure-assistance-offered">/fasttrack/win-10-app-assure-assistance-offered</a>. To get started now, <a href="https://fasttrack.microsoft.com/dl/daa">submit your request</a>.</p>
+</div>
+<h2 id="apply-windows-11-features">Apply Windows 11 features</h2>
+<p>Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, snap layouts, and the updated context menu in File Explorer.</p>
+<p>For more information, see <a href="../../get-started/make-apps-great-for-windows.html">Top 11 things you can do to make your app great on Windows 11</a>.</p>
+<h2 id="windows-app-sdk">Windows App SDK</h2>
+<p>The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and many versions of Windows 10. You can use project templates to create new desktop apps that use the Windows App SDK with a WinUI 3-based UI, or you can use the Windows App SDK in existing desktop apps.</p>
+<p>For more information, see <a href="../../windows-app-sdk/index.html">Windows App SDK</a>.</p>
+<h2 id="winui">WinUI</h2>
+<p>WinUI is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI 3, has grown in scope and is now the modern native UI platform for Windows desktop apps.</p>
+<p>You can use WinUI in the following ways in desktop apps:</p>
+<ul>
+<li>Use <a href="../../winui/index.html">WinUI 3</a> to create desktop apps (see <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>) with an entirely WinUI 3-based user interface. WinUI 3 is one of many features provided by the <a href="../../windows-app-sdk/index.html">Windows App SDK</a>.</li>
+<li>You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with <a href="xaml-islands/xaml-islands.html">XAML Islands</a> and host WinUI 2 controls.</li>
+</ul>
+<p>For more information, see <a href="../../winui/index.html">WinUI</a>.</p>
+<h2 id="windows-runtime-apis">Windows Runtime APIs</h2>
+<p>You can call many Windows Runtime APIs directly in your WPF, Windows Forms, or C++ desktop app to integrate modern experiences that light up for users. For example, you can call Windows Runtime APIs to add toast notifications to your desktop app.</p>
+<p>For more information, see <a href="desktop-to-uwp-enhance.html">Use Windows Runtime APIs in desktop apps</a>.</p>
+<h2 id="msix-deployment">MSIX deployment</h2>
+<p>MSIX is a modern Windows app package format that provides a universal packaging experience for all Windows apps, including UWP, WPF, Windows Forms and Win32 apps. MSIX brings together the best aspects of MSI, .appx, App-V and ClickOnce installation technologies to provide a modern and reliable packaging experience.</p>
+<p>Packaging your desktop Windows apps in MSIX packages gets you access to a robust installation and updating experience, a managed security model with a flexible capability system, support for the Microsoft Store, enterprise management, and many custom distribution models.</p>
+<p>For more information, see <a href="/windows/msix/desktop/source-code-overview">Building an MSIX package from your code</a>.</p>
+<h2 id="use-msix-framework-packages-dynamically-at-run-time">Use MSIX framework packages dynamically at run time</h2>
+<p>The <em>dynamic dependencies</em> feature in the Windows App SDK and in the Windows 11 OS enables your apps to reference MSIX framework packages at run time. This feature is intended to be used primarily by unpackaged desktop apps to call APIs that are provided by MSIX framework packages.</p>
+<p>For more information, see <a href="framework-packages/index.html">Use MSIX framework packages dynamically from your desktop app</a>.</p>
+<h2 id="net">.NET</h2>
+<p>.NET (previously known as .NET Core) supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>). .NET also supports <a href="/dotnet/desktop/wpf/">Windows Presentation Foundation (WPF)</a> and <a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a> apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.</p>
+<p>For more information, see <a href="/dotnet/core/whats-new/dotnet-6">What's new in .NET 6</a>.</p>
+<h2 id="host-winrt-xaml-controls-xaml-islands">Host WinRT XAML controls (XAML Islands)</h2>
+<p>Starting with the Windows 10, version 1903, you can add <a href="/windows/uwp/design/controls-and-patterns/controls-by-function">UWP XAML controls</a> directly to any UI element in a WPF, Windows Forms, or C++ desktop app that is associated with a window handle (HWND). This means that you can fully integrate the latest UWP features such as <a href="/windows/uwp/design/input/pen-and-stylus-interactions">Windows Ink</a> and controls that support the <a href="/windows/uwp/design/fluent-design-system/index">Fluent Design System</a> into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called <em>XAML islands</em>.</p>
+<p>For more information, see <a href="xaml-islands/xaml-islands.html">WinRT XAML controls in desktop apps</a></p>
+<h2 id="use-the-visual-layer-in-desktop-apps">Use the Visual layer in desktop apps</h2>
+<p>You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.</p>
+<p>For more information, see <a href="ui/visual-layer-in-desktop-apps.html">Modernize your desktop app using the Visual layer</a>.</p>
+<h2 id="additional-features-available-to-apps-with-package-identity">Additional features available to apps with package identity</h2>
+<p>Some modern Windows experiences are available only to desktop apps that have <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity">package identity</a> at runtime. These features include certain Windows Runtime APIs, package extensions, and UWP components. For more info, see <a href="modernize-packaged-apps.html">Features that require package identity</a>.</p>
+<p><a id="desktop-uwp-controls"></a></p>
+<h2 id="winrt-xaml-controls-optimized-for-desktop-apps">WinRT XAML controls optimized for desktop apps</h2>
+<p>Whether you're building a UWP app that exclusively targets the desktop device family or you want to use WinRT XAML controls in a WPF, Windows Forms, or C++ desktop app, the following new and updated WinRT XAML controls are designed to offer desktop-optimized experiences with the <a href="/windows/uwp/design/fluent-design-system/index">Fluent Design System</a>. These controls were introduced in Windows 10, version 1809 (the October 2018 Update, or version 10.0.17763).</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar">MenuBar</a></td>
+<td>Provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping than a <strong>CommandBar</strong> allows.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button">DropDownButton</a></td>
+<td>Shows a chevron as a visual indicator that it has an attached flyout that contains more options.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button">SplitButton</a></td>
+<td>Provides a button has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button">ToggleSplitButton</a></td>
+<td>Provides a button has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/design/controls-and-patterns/command-bar-flyout">CommandBarFlyout</a></td>
+<td>Lets you show common user tasks in the context of an item on your UI canvas.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable">ComboBox</a></td>
+<td>You can now make a combo box editable so the user can enter values that aren't listed in the control.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/design/controls-and-patterns/tree-view">TreeView</a></td>
+<td>You can now configure a tree view to enable data binding, item templates, and drag and drop.</td>
+</tr>
+<tr>
+<td><a href="/windows/communitytoolkit/controls/datagrid">DataGridView</a></td>
+<td>Provides a flexible way to display a collection of data in rows and columns. This control is available in the <a href="/windows/uwpcommunitytoolkit/">Windows Community Toolkit</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="other-technologies-for-modern-desktop-apps">Other technologies for modern desktop apps</h2>
+<h3 id="microsoft-graph">Microsoft Graph</h3>
+<p>Microsoft Graph is a collection of APIs you can use to build apps for organizations and consumers that interact with the data of millions of users. Microsoft Graph exposes REST APIs and client libraries to access data on the following:</p>
+<ul>
+<li>Azure Active Directory</li>
+<li>Microsoft 365 Office apps: SharePoint, OneDrive, Outlook/Exchange, Microsoft Teams, OneNote, Planner, and Excel</li>
+<li>Enterprise Mobility and Security services: Identity Manager, Intune, Advanced Threat Analytics, and Advanced Threat Protection.</li>
+<li>Windows services: activities and devices</li>
+</ul>
+<p>For more information, see the <a href="/graph/overview">Microsoft Graph docs</a>.</p>
+<h3 id="adaptive-cards">Adaptive Cards</h3>
+<p>Adaptive Cards is an open, cross-platform framework that you can use to exchange card-based UI content in a common and consistent way across devices and platforms.</p>
+<p>For more information, see the <a href="/adaptive-cards/">Adaptive Cards docs</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

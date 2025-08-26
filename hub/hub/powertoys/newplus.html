@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys New+ - Create Custom File Templates in Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys New+ - Create Custom File Templates in Windows ">
+    
+    <meta name="description" content="Create custom file and folder templates with PowerToys New+. Access personalized templates directly from File Explorer&#39;s context menu to boost productivity.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="new">New+</h1>
+
+<p><strong>PowerToys New+</strong> gives you the ability to create files and folders from a personalized set of templates, directly from the File Explorer context menu. This feature is designed to enhance your productivity by allowing you to quickly create new items without having to navigate through multiple steps or applications. It is a powerful tool for users who frequently create files and folders with similar structures or content.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>This section provides an overview of the New+ feature, including how to enable it, how to create new items using templates, and how to customize your template collection.</p>
+<h3 id="enable-new-in-powertoys-settings">Enable New+ in PowerToys settings</h3>
+<p>To start using New+, enable New+ in the PowerToys settings.</p>
+<h3 id="create-a-new-object-using-new">Create a new object using New+</h3>
+<p>To create a new item within a folder, right-click on the folder to bring up the context menu. From there, click on the &quot;New+&quot; option and then select the template you were looking for.</p>
+<h3 id="add-or-customize-templates-in-new">Add or customize templates in New+</h3>
+<p>To create a new template, start by right-clicking on the folder. This will open a context menu where you can select the 'New+' option. From there, choose 'Open templates' to access the &quot;Templates&quot; folder. In this folder, you have the freedom to add, edit, or rename objects as per your needs. It’s important to note that the objects you add here will be displayed on the ‘New+’ menu in a sorted order, with folders always appearing first. This provides the ability to find and select your templates.</p>
+<p>Template objects in the &quot;Templates&quot; folder can be files, folders, or shortcuts. The templates can be of any type, such as text files, Word documents or templates, Excel spreadsheets or templates, or even shortcuts to applications.</p>
+<h2 id="settings">Settings</h2>
+<h3 id="template_location">Templates</h3>
+<h4 id="templates-location">Templates location</h4>
+<p>The default template location is in the local app data folder (<code>%localappdata%\Microsoft\PowerToys\NewPlus\Templates</code>) for your user account. However, these templates don't roam across devices with your account. If you want a common set of templates across devices, you can change the template location to a folder that's synced with a cloud file management service, such as OneDrive. This allows you to access your templates from any device.</p>
+<h3 id="display-options">Display options</h3>
+<h4 id="hide-template-filename-extensions">Hide template filename extensions</h4>
+<p>The option allows you to toggle the display of filename extensions. When this option is toggled off, a file named &quot;filename.ext&quot; will be displayed with its extension, appearing as &quot;filename.ext&quot;. However, when this option is toggled on (the default), the template will be displayed without its extension, appearing simply as &quot;filename&quot;.</p>
+<h4 id="hide-template-filename-starting-digits-spaces-and-dots">Hide template filename starting digits, spaces and dots</h4>
+<p>The option gives you the ability to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named &quot;1. filename&quot; will be displayed as is. However, when this option is toggled on, the template will be displayed as &quot;filename&quot;. This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.</p>
+<h3 id="behavior">Behavior</h3>
+<h4 id="replace-variables-in-template-filename">Replace variables in template filename</h4>
+<p>This setting causes supported variables in filenames, including in files within subfolders, to be replaced when the template is copied. The default setting of this option is disabled.</p>
+<p><strong>Note:</strong> Any invalid filename characters are replaced with spaces.</p>
+<h5 id="examples">Examples</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Example template filename</th>
+<th style="text-align: left;">Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$YYYY-$MM-$DD, $hh $mm $ss  - $PARENT_FOLDER_NAME by %USERNAME%</code></td>
+<td style="text-align: left;"><code>2024-11-22, 12 08 54 - PowerShell project by cgaarden</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>File where variable value contains invalid characters %USERPROFILE%</code></td>
+<td style="text-align: left;"><code>File where variable value contains invalid characters C  Users cgaarden</code></td>
+</tr>
+</tbody>
+</table>
+<h5 id="date-and-time-related-variables">Date and time related variables</h5>
+<p>These date and time related variable patterns are the same as those used by PowerRename and are case-sensitive.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$YYYY</code></td>
+<td style="text-align: left;">Year, represented by a full four or five digits, depending on the calendar used.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$YY</code></td>
+<td style="text-align: left;">Year, represented only by the last two digits. A leading zero is added for single-digit years.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$Y</code></td>
+<td style="text-align: left;">Year, represented only by the last digit.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MMMM</code></td>
+<td style="text-align: left;">Name of the month.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MMM</code></td>
+<td style="text-align: left;">Abbreviated name of the month.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$MM</code></td>
+<td style="text-align: left;">Month, as digits with leading zeros for single-digit months.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$M</code></td>
+<td style="text-align: left;">Month, as digits without leading zeros for single-digit months.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DDDD</code></td>
+<td style="text-align: left;">Name of the day of the week.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DDD</code></td>
+<td style="text-align: left;">Abbreviated name of the day of the week.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$DD</code></td>
+<td style="text-align: left;">Day of the month, as digits with leading zeros for single-digit days.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$D</code></td>
+<td style="text-align: left;">Day of the month, as digits without leading zeros for single-digit days.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$hh</code></td>
+<td style="text-align: left;">Hours, with leading zeros for single-digit hours.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$h</code></td>
+<td style="text-align: left;">Hours, without leading zeros for single-digit hours.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$mm</code></td>
+<td style="text-align: left;">Minutes, with leading zeros for single-digit minutes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$m</code></td>
+<td style="text-align: left;">Minutes, without leading zeros for single-digit minutes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ss</code></td>
+<td style="text-align: left;">Seconds, with leading zeros for single-digit seconds.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$s</code></td>
+<td style="text-align: left;">Seconds, without leading zeros for single-digit seconds.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$fff</code></td>
+<td style="text-align: left;">Milliseconds, represented by full three digits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$ff</code></td>
+<td style="text-align: left;">Milliseconds, represented only by the first two digits.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>$f</code></td>
+<td style="text-align: left;">Milliseconds, represented only by the first digit.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="special-variables">Special variables</h5>
+<p>These special variables are case-sensitive, so they will only work when used in the filename exactly as shown here.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>$PARENT_FOLDER_NAME</code></td>
+<td style="text-align: left;">Expands to the name of the parent folder. This only works in template subfolders.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="environment-variables">Environment variables</h5>
+<p>These variables are case-insensitive, meaning you use them in the filename in a mix of uppercase or lowercase.</p>
+<p>Each <code>%environment_variable%</code> in the file and folder names will be replaced with the value of the corresponding environment variable.</p>
+<p>For instance, %USERNAME% will be replaced with the name of the current Windows user.</p>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/newplus.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

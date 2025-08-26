@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Check boxes </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Check boxes ">
+    
+    <meta name="description" content="Used to select or deselect action items. Can be used for a single list item or for multiple list items.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="check-boxes">Check boxes</h1>
+
+<p>A check box is used to select or deselect action items. It can be used for a single item or for a list of multiple items that a user can choose from. The control has three selection states: unselected, selected, and indeterminate. Use the indeterminate state when a collection of sub-choices have both unselected and selected states.</p>
+<p><img src="images/templates-checkbox-states-default.png" alt="Example of check box states"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a <strong>single check box</strong> for a binary yes/no choice, such as with a &quot;Remember me?&quot; login scenario or with a terms of service agreement.</p>
+<p><img src="images/checkbox1.png" alt="A single check box used for an individual choice"></p>
+<p>For a binary choice, the main difference between a <strong>check box</strong> and a <a href="toggles.html">toggle switch</a> is that the check box is for status and the toggle switch is for action. You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction. Also, only check boxes allow for multi-selection.</p>
+<p>Use <strong>multiple check boxes</strong> for multi-select scenarios in which a user chooses one or more items from a group of choices that are not mutually exclusive.</p>
+<p>Create a group of check boxes when users can select any combination of options.</p>
+<p><img src="images/checkbox2.png" alt="Selecting multiple options with check boxes"></p>
+<p>When options can be grouped, you can use an indeterminate check box to represent the whole group. Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.</p>
+<p><img src="images/checkbox3.png" alt="Check boxes used to show a mixed choice"></p>
+<p>Both <strong>check box</strong> and <strong>radio button</strong> controls let the user select from a list of options. Check boxes let the user select a combination of options. In contrast, radio buttons let the user make a single choice from mutually exclusive options. When there is more than one option but only one can be selected, use a radio button instead.</p>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li><p>Verify that the purpose and current state of the check box is clear.</p>
+</li>
+<li><p>Limit check box text content to no more than two lines.</p>
+</li>
+<li><p>Word the checkbox label as a statement that the check mark makes true and the absence of a check mark makes false.</p>
+</li>
+<li><p>Use the default font unless your brand guidelines tell you to use another.</p>
+</li>
+<li><p>If the text content is dynamic, consider how the control will resize and what will happen to visuals around it.</p>
+</li>
+<li><p>If there are two or more mutually exclusive options from which to choose, consider using <a href="radio-button.html">radio buttons</a>.</p>
+</li>
+<li><p>Don't put two check box groups next to each other. Use group labels to separate the groups.</p>
+</li>
+<li><p>Don't use a check box as an on/off control or to perform a command; instead, use a <a href="toggles.html">toggle switch</a>.</p>
+</li>
+<li><p>Don't use a check box to display other controls, such as a dialog box.</p>
+</li>
+<li><p>Use the indeterminate state to indicate that an option is set for some, but not all, sub-choices.</p>
+</li>
+<li><p>When using indeterminate state, use subordinate check boxes to show which options are selected and which are not. Design the UI so that the user can get see the sub-choices.</p>
+</li>
+<li><p>Don't use the indeterminate state to represent a third state. The indeterminate state is used to indicate that an option is set for some, but not all, sub-choices. So, don't allow users to set an indeterminate state directly. For an example of what not to do, this check box uses the indeterminate state to indicate medium spiciness:</p>
+<p><img src="images/spicyoptions2.png" alt="An indeterminate check box"></p>
+<p>Instead, use a radio button group that has three options.</p>
+<p><img src="images/spicyoptions.png" alt="Radio button group with three options: Not spicy, Spicy, and Extra spicy"></p>
+</li>
+</ul>
+<h2 id="create-a-checkbox">Create a checkbox</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox">CheckBox class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked">Checked event</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked">IsChecked property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content property</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/CheckBox">Open the WinUI 3 Gallery app and see the CheckBox in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+<h3 id="create-a-simple-check-box">Create a simple check box</h3>
+<p>To assign a label to the checkbox, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a> property. The label displays next to the checkbox.</p>
+<p>This XAML creates a single check box that is used to agree to terms of service before a form can be submitted.</p>
+<pre><code class="lang-xaml">&lt;CheckBox x:Name=&quot;termsOfServiceCheckBox&quot;
+          Content=&quot;I agree to the terms of service.&quot;/&gt;
+</code></pre>
+<p>Here's the same check box created in code.</p>
+<pre><code class="lang-csharp">CheckBox termsOfServiceCheckBox = new CheckBox();
+termsOfServiceCheckBox.Content = &quot;I agree to the terms of service.&quot;;
+</code></pre>
+<h3 id="bind-to-ischecked">Bind to IsChecked</h3>
+<p>Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked">IsChecked</a> property to determine whether the check box is checked or cleared. You can bind the value of the IsChecked property to another binary value.
+However, because IsChecked is a <a href="/dotnet/api/system.nullable-1">nullable</a> boolean value, you must either use a cast or a value converter to bind it to a boolean property. This depends on the actual binding type you are using and you will find examples below for each possible type.</p>
+<p>In this example, the <strong>IsChecked</strong> property of the check box to agree to terms of service is bound to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.isenabled">IsEnabled</a> property of a Submit button. The Submit button is enabled only if the terms of service are agreed to.</p>
+<h4 id="using-xbind">Using x:Bind</h4>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We only show the relevant code here. For more info about data binding see <a href="/windows/uwp/data-binding/data-binding-quickstart">Data binding overview</a>. Specific {x:Bind} info (such as casting) is detailed in <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a>.</p>
+</div>
+<pre><code class="lang-xaml">&lt;StackPanel Grid.Column=&quot;2&quot; Margin=&quot;40&quot;&gt;
+    &lt;CheckBox x:Name=&quot;termsOfServiceCheckBox&quot; Content=&quot;I agree to the terms of service.&quot;/&gt;
+    &lt;Button Content=&quot;Submit&quot;
+            IsEnabled=&quot;{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay}&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>If the check box can also be in the <strong>indeterminate</strong> state, we use the binding's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.fallbackvalue">FallbackValue</a> property to specify the boolean value representing this state. In this case, we don't want to have the Submit button enabled as well:</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;Submit&quot;
+        IsEnabled=&quot;{x:Bind (x:Boolean)termsOfServiceCheckBox.IsChecked, Mode=OneWay, FallbackValue=False}&quot;/&gt;
+</code></pre>
+<h4 id="using-xbind-or-binding">Using x:Bind or Binding</h4>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We only show the relevant code here using {x:Bind}. In the {Binding} example, we would replace {x:Bind} with {Binding}. For more info about data binding, value converters and differences between the {x:Bind} and {Binding} markup extensions, see <a href="/windows/uwp/data-binding/data-binding-quickstart">Data binding overview</a>.</p>
+</div>
+<pre><code class="lang-xaml">...
+&lt;Page.Resources&gt;
+    &lt;local:NullableBooleanToBooleanConverter x:Key=&quot;NullableBooleanToBooleanConverter&quot;/&gt;
+&lt;/Page.Resources&gt;
+
+...
+
+&lt;StackPanel Grid.Column=&quot;2&quot; Margin=&quot;40&quot;&gt;
+    &lt;CheckBox x:Name=&quot;termsOfServiceCheckBox&quot; Content=&quot;I agree to the terms of service.&quot;/&gt;
+    &lt;Button Content=&quot;Submit&quot;
+            IsEnabled=&quot;{x:Bind termsOfServiceCheckBox.IsChecked,
+                        Converter={StaticResource NullableBooleanToBooleanConverter}, Mode=OneWay}&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">public class NullableBooleanToBooleanConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, string language)
+    {
+        if (value is bool?)
+        {
+            return (bool)value;
+        }
+        return false;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, string language)
+    {
+        if (value is bool)
+            return (bool)value;
+        return false;
+    }
+}
+</code></pre>
+<h3 id="handle-click-and-checked-events">Handle Click and Checked events</h3>
+<p>To perform an action when the check box state changes, you can handle either the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click">Click</a> event, or the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked">Checked</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.unchecked">Unchecked</a> events.</p>
+<p>The <strong>Click</strong> event occurs whenever the checked state changes. If you handle the Click event, use the <strong>IsChecked</strong> property to determine the state of the check box.</p>
+<p>The <strong>Checked</strong> and <strong>Unchecked</strong> events occur independently. If you handle these events, you should handle both of them to respond to state changes in the check box.</p>
+<p>In the following examples, we show handling the Click event, and the Checked and Unchecked events.</p>
+<p>Multiple checkboxes can share the same event handler. This example creates four checkboxes for selecting pizza toppings. The four checkboxes share the same <strong>Click</strong> event handler to update the list of selected toppings.</p>
+<pre><code class="lang-XAML">&lt;StackPanel Margin=&quot;40&quot;&gt;
+    &lt;TextBlock Text=&quot;Pizza Toppings&quot;/&gt;
+    &lt;CheckBox Content=&quot;Pepperoni&quot; x:Name=&quot;pepperoniCheckbox&quot;
+              Click=&quot;toppingsCheckbox_Click&quot;/&gt;
+    &lt;CheckBox Content=&quot;Beef&quot; x:Name=&quot;beefCheckbox&quot;
+              Click=&quot;toppingsCheckbox_Click&quot;/&gt;
+    &lt;CheckBox Content=&quot;Mushrooms&quot; x:Name=&quot;mushroomsCheckbox&quot;
+              Click=&quot;toppingsCheckbox_Click&quot;/&gt;
+    &lt;CheckBox Content=&quot;Onions&quot; x:Name=&quot;onionsCheckbox&quot;
+              Click=&quot;toppingsCheckbox_Click&quot;/&gt;
+
+    &lt;!-- Display the selected toppings. --&gt;
+    &lt;TextBlock Text=&quot;Toppings selected:&quot;/&gt;
+    &lt;TextBlock x:Name=&quot;toppingsList&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>Here's the event handler for the Click event. Every time a checkbox is clicked, it examines the checkboxes to see which ones are checked and updates the list of selected toppings.</p>
+<pre><code class="lang-csharp">private void toppingsCheckbox_Click(object sender, RoutedEventArgs e)
+{
+    string selectedToppingsText = string.Empty;
+    CheckBox[] checkboxes = new CheckBox[] { pepperoniCheckbox, beefCheckbox,
+                                             mushroomsCheckbox, onionsCheckbox };
+    foreach (CheckBox c in checkboxes)
+    {
+        if (c.IsChecked == true)
+        {
+            if (selectedToppingsText.Length &gt; 1)
+            {
+                selectedToppingsText += &quot;, &quot;;
+            }
+            selectedToppingsText += c.Content;
+        }
+    }
+    toppingsList.Text = selectedToppingsText;
+}
+</code></pre>
+<h3 id="use-the-indeterminate-state">Use the indeterminate state</h3>
+<p>The CheckBox control inherits from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton">ToggleButton</a> and can have three states:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>checked</td>
+<td>IsChecked</td>
+<td><strong>true</strong></td>
+</tr>
+<tr>
+<td>unchecked</td>
+<td>IsChecked</td>
+<td><strong>false</strong></td>
+</tr>
+<tr>
+<td>indeterminate</td>
+<td>IsChecked</td>
+<td><strong>null</strong></td>
+</tr>
+</tbody>
+</table>
+<p>For the check box to report the indeterminate state, you must set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.isthreestate">IsThreeState</a> property to <strong>true</strong>.</p>
+<p>When options can be grouped, you can use an indeterminate check box to represent the whole group. Use the check box's indeterminate state when a user selects some, but not all, sub-items in the group.</p>
+<p>In the following example, the &quot;Select all&quot; checkbox has its IsThreeState property set to <strong>true</strong>. The &quot;Select all&quot; checkbox is checked if all child elements are checked, unchecked if all child elements are unchecked, and indeterminate otherwise.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;CheckBox x:Name=&quot;OptionsAllCheckBox&quot; Content=&quot;Select all&quot; IsThreeState=&quot;True&quot;
+              Checked=&quot;SelectAll_Checked&quot; Unchecked=&quot;SelectAll_Unchecked&quot;
+              Indeterminate=&quot;SelectAll_Indeterminate&quot;/&gt;
+    &lt;CheckBox x:Name=&quot;Option1CheckBox&quot; Content=&quot;Option 1&quot; Margin=&quot;24,0,0,0&quot;
+              Checked=&quot;Option_Checked&quot; Unchecked=&quot;Option_Unchecked&quot; /&gt;
+    &lt;CheckBox x:Name=&quot;Option2CheckBox&quot; Content=&quot;Option 2&quot; Margin=&quot;24,0,0,0&quot;
+              Checked=&quot;Option_Checked&quot; Unchecked=&quot;Option_Unchecked&quot; IsChecked=&quot;True&quot;/&gt;
+    &lt;CheckBox x:Name=&quot;Option3CheckBox&quot; Content=&quot;Option 3&quot; Margin=&quot;24,0,0,0&quot;
+              Checked=&quot;Option_Checked&quot; Unchecked=&quot;Option_Unchecked&quot; /&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Option_Checked(object sender, RoutedEventArgs e)
+{
+    SetCheckedState();
+}
+
+private void Option_Unchecked(object sender, RoutedEventArgs e)
+{
+    SetCheckedState();
+}
+
+private void SelectAll_Checked(object sender, RoutedEventArgs e)
+{
+    Option1CheckBox.IsChecked = Option2CheckBox.IsChecked = Option3CheckBox.IsChecked = true;
+}
+
+private void SelectAll_Unchecked(object sender, RoutedEventArgs e)
+{
+    Option1CheckBox.IsChecked = Option2CheckBox.IsChecked = Option3CheckBox.IsChecked = false;
+}
+
+private void SelectAll_Indeterminate(object sender, RoutedEventArgs e)
+{
+    // If the SelectAll box is checked (all options are selected),
+    // clicking the box will change it to its indeterminate state.
+    // Instead, we want to uncheck all the boxes,
+    // so we do this programmatically. The indeterminate state should
+    // only be set programmatically, not by the user.
+
+    if (Option1CheckBox.IsChecked == true &amp;&amp;
+        Option2CheckBox.IsChecked == true &amp;&amp;
+        Option3CheckBox.IsChecked == true)
+    {
+        // This will cause SelectAll_Unchecked to be executed, so
+        // we don't need to uncheck the other boxes here.
+        OptionsAllCheckBox.IsChecked = false;
+    }
+}
+
+private void SetCheckedState()
+{
+    // Controls are null the first time this is called, so we just
+    // need to perform a null check on any one of the controls.
+    if (Option1CheckBox != null)
+    {
+        if (Option1CheckBox.IsChecked == true &amp;&amp;
+            Option2CheckBox.IsChecked == true &amp;&amp;
+            Option3CheckBox.IsChecked == true)
+        {
+            OptionsAllCheckBox.IsChecked = true;
+        }
+        else if (Option1CheckBox.IsChecked == false &amp;&amp;
+            Option2CheckBox.IsChecked == false &amp;&amp;
+            Option3CheckBox.IsChecked == false)
+        {
+            OptionsAllCheckBox.IsChecked = false;
+        }
+        else
+        {
+            // Set third state (indeterminate) by setting IsChecked to null.
+            OptionsAllCheckBox.IsChecked = null;
+        }
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.ui.xaml.controls.checkbox">CheckBox class</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked">Checked event</a>, <a href="/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked">IsChecked property</a>, <a href="/uwp/api/windows.ui.xaml.controls.contentcontrol.content">Content property</a></li>
+<li><a href="winui2gallery:/item/CheckBox">Open the WinUI 2 Gallery app and see the CheckBox in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox">CheckBox class</a></li>
+<li><a href="radio-button.html">Radio buttons</a></li>
+<li><a href="toggles.html">Toggle switch</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/checkbox.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

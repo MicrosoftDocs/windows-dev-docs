@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Control Multiple Computers with PowerToys Mouse Without Borders </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Control Multiple Computers with PowerToys Mouse Without Borders ">
+    
+    <meta name="description" content="Control up to four computers with one keyboard and mouse using PowerToys Mouse Without Borders. Share clipboard and transfer files seamlessly between machines.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mouse-without-borders">Mouse Without Borders</h1>
+
+<p><strong>Mouse Without Borders</strong> enables you to control up to four computers from the same machine.</p>
+<p>Features:</p>
+<ul>
+<li>Control a set of machines using the same keyboard/mouse.</li>
+<li>Share clipboard between the machines.</li>
+<li>Transfer files between the machines.</li>
+</ul>
+<h2 id="how-to-use-mouse-without-borders">How to use Mouse Without Borders</h2>
+<p>With the latest version of PowerToys installed, you will see Mouse Without Borders listed in the PowerToys Settings, where you will need to do some initial configuration.</p>
+<h3 id="initial-configuration">Initial configuration</h3>
+<ol>
+<li><p>Open Mouse Without Borders in PowerToys Settings to configure your connections.</p>
+</li>
+<li><p>On the first computer, select <strong>New Key</strong> to generate a security key for connecting.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-mouse-without-borders-press-new-key.png" alt="Screenshot of Mouse Without Borders settings showing the security key generation interface after pressing New Key button.">
+</span>
+</p>
+</li>
+<li><p>On the second computer, enter the security key that was generated on the first computer and the name of the first computer. Then select <strong>Connect</strong>.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-mouse-without-borders-enter-security-key.png" alt="Screenshot of Mouse Without Borders settings with security key and computer name fields filled in before connecting.">
+</span>
+</p>
+</li>
+<li><p>Once the computers are connected, you will be able to move between them by moving your mouse cursor beyond the edge of the screen.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-mouse-without-borders-after-connect-2.png" alt="Screenshot of Mouse Without Borders settings on the second computer after connecting.">
+</span>
+</p>
+</li>
+</ol>
+<p>It's possible to switch the order of the devices by dragging the device icon to a new position in the layout.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-mouse-without-borders-drag-device-layout.gif" alt="Animation of Mouse Without Borders settings configuring device layout.">
+</span>
+</p>
+<h3 id="install-mouse-without-borders-as-a-service">Install Mouse Without Borders as a service</h3>
+<p>To allow Mouse Without Borders to control elevated applications or the lock screen from another computer, it's possible to run Mouse Without Borders as a service under the System account.</p>
+<p>To enable the service mode, run PowerToys in administrator mode and turn on the <strong>Use Service</strong> toggle.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Running Mouse Without Borders as a service account brings added control and ease of use to the controlled machines, but this also brings some additional security risks in case someone wants to use Mouse Without Borders as an attack vector. Be mindful of your risk tolerance.</p>
+</div>
+<h2 id="mouse-without-borders-settings">Mouse Without Borders settings</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">New key</td>
+<td style="text-align: left;">Generate a new key for the machine and resets current connections.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Security key</td>
+<td style="text-align: left;">Represents the security key used between the connected machines. Can only be changed by generating a new key.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Connect</td>
+<td style="text-align: left;">Connect to other machines knowing the other machine's name and security key.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Local machine's host name</td>
+<td style="text-align: left;">Show the current machine's host name.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Device layout</td>
+<td style="text-align: left;">Allows arranging the machine's position relative to each other by dragging the machines in the layout.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Refresh connections</td>
+<td style="text-align: left;">Select this button to refresh the connections this machine has to the other machines.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Devices in a single row</td>
+<td style="text-align: left;">Arrange the devices in a single row or in a 2x2 matrix.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Use Service</td>
+<td style="text-align: left;">Install Mouse Without Borders as a service to allow controlling the lock screen and elevated applications.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Uninstall Service</td>
+<td style="text-align: left;">Uninstall the service from the computer.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Wrap mouse</td>
+<td style="text-align: left;">Wraps the mouse around to the first machine, after passing the edge of the last machine and vice-versa.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Share clipboard</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Transfer file</td>
+<td style="text-align: left;">Files can be copied via the clipboard. Limit is 100 MB.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hide mouse at the screen's edge</td>
+<td style="text-align: left;">Position the mouse cursor of one machine at the top edge of the screen when switching to another machine.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Draw mouse cursor</td>
+<td style="text-align: left;">Attempt to draw the mouse cursor on machines that have no physical peripheral attached.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Validate remote machine IP</td>
+<td style="text-align: left;">Use reverse DNS lookup to validate remote machines IP addresses.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Same subnet only</td>
+<td style="text-align: left;">Only connect to machines in the same intranet.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Block screen saver on other machines</td>
+<td style="text-align: left;">Prevent the screen saver from starting on other machines.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Move mouse relatively</td>
+<td style="text-align: left;">May help in solving issues when the machine's resolutions are different or there are multiple screen scenarios.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Block mouse at screen corners</td>
+<td style="text-align: left;">Avoid accidentally switching machines when the mouse pointer is at screen corners.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show clipboard and network status messages</td>
+<td style="text-align: left;">Show clipboard activities and network status in system tray notifications.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Easy Mouse</td>
+<td style="text-align: left;">Use the mouse pointer to switch between machines at screen edges. Can also be configured to need to select <strong>Shift</strong> or <strong>Control</strong> to switch between machines.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shortcut to toggle Easy Mouse</td>
+<td style="text-align: left;">Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+&lt;letter&gt; shortcut to toggle Easy Mouse.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shortcut to lock all machines</td>
+<td style="text-align: left;">Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+&lt;letter&gt; shortcut to press twice to lock all machines. Only works in the machines that have the same setting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shortcut to try reconnecting</td>
+<td style="text-align: left;">Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+&lt;letter&gt; shortcut to try reconnecting.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shortcut to switch to multiple machine mode</td>
+<td style="text-align: left;">Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+&lt;letter&gt; shortcut to start sending the same input to all machines at the same time.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shortcut to switch between machines</td>
+<td style="text-align: left;">Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+&lt;number&gt; shortcut to switch to a specific machine. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>3</kbd> switches to the third machine and so on. <kbd>F1</kbd>,<kbd>F2</kbd>,<kbd>F3</kbd> and <kbd>F4</kbd> can also be used.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Add a firewall rule for Mouse Without Borders</td>
+<td style="text-align: left;">Install a firewall rule for Mouse Without Borders.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show the original Mouse Without Borders UI</td>
+<td style="text-align: left;">Show the original UI from Mouse Without Borders through the original tray icon. Mouse Without Borders needs to be restarted for it to take effect.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="status-colors">Status Colors</h2>
+<p>The following colors are used to indicate the connection status to the user when trying to connect to another computer:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Connection Status</th>
+<th style="text-align: left;">Color</th>
+<th style="text-align: left;">Hex Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">Dark Grey</td>
+<td style="text-align: left;"><code>#00717171</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Resolving</td>
+<td style="text-align: left;">Yellow</td>
+<td style="text-align: left;"><code>#FFFFFF00</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Connecting</td>
+<td style="text-align: left;">Orange</td>
+<td style="text-align: left;"><code>#FFFFA500</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Handshaking</td>
+<td style="text-align: left;">Blue</td>
+<td style="text-align: left;"><code>#FF0000FF</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Error</td>
+<td style="text-align: left;">Red</td>
+<td style="text-align: left;"><code>#FFFF0000</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">ForceClosed</td>
+<td style="text-align: left;">Purple</td>
+<td style="text-align: left;"><code>#FF800080</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">InvalidKey</td>
+<td style="text-align: left;">Brown</td>
+<td style="text-align: left;"><code>#FFA52A2A</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Timeout</td>
+<td style="text-align: left;">Pink</td>
+<td style="text-align: left;"><code>#FFFFC0CB</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">SendError</td>
+<td style="text-align: left;">Maroon</td>
+<td style="text-align: left;"><code>#FF800000</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Connected</td>
+<td style="text-align: left;">Green</td>
+<td style="text-align: left;"><code>#FF008000</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>If you can't setup the initial connection:</p>
+<ul>
+<li>Make sure all machines are connected on the same network.</li>
+<li>Check if the security key and computer host name are correctly inserted.</li>
+<li>Check if the Firewall is blocking connections. Select <strong>Add a firewall rule for Mouse Without Borders</strong> to make adjustments.</li>
+</ul>
+<p><img src="../images/powertoys-mouse-without-borders-settings-troubleshooting.png" alt="Screenshot of Mouse Without Borders troubleshooting section"></p>
+<p>If the connection is lost:</p>
+<ul>
+<li>Make sure the machines are still connected.</li>
+<li>Select <strong>Refresh connections</strong> in Settings (or use the Refresh shortcut).</li>
+</ul>
+<h2 id="known-issues">Known Issues</h2>
+<ul>
+<li>Copy/Paste between machines only works with a single file and the size limit is 100MB.</li>
+<li>Drag/Drop between machines works with single file only and it does not work with network files.</li>
+<li>Copy/Paste, Drag/Drop does not work with folder and multiple files, the workaround is to zip them first.</li>
+<li>If the host machine has a full-screen focused Remote Desktop/virtual machine window (or some kind of simulator window), the keyboard might not follow the mouse to another machine. The workaround is to enable the option <strong>Hide mouse at screen edge</strong> in the Settings or switch the focus to another window first.</li>
+<li>The mouse pointer might be invisible if there is no physical mouse attached to the machine. Plug in an unused mouse or turn on <strong>Mouse Keys</strong> in Control Panel.</li>
+<li>Some settings may not sync correctly and may need to be manually changed to be the same on all machines.</li>
+</ul>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/mouse-without-borders.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

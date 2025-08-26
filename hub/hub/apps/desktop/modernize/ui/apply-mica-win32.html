@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use Mica material in Win32 apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use Mica material in Win32 apps ">
+    
+    <meta name="description" content="Learn how to apply the Mica material in your Win32 applications.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="apply-mica-in-win32-desktop-apps-for-windows-11">Apply Mica in Win32 desktop apps for Windows 11</h1>
+
+<p>Mica is an opaque material that incorporates the user's theme and desktop wallpaper to create a highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.</p>
+<p>This article describes how to apply Mica as the base layer of your Win32 app, prioritizing application and visibility in the title bar area. For more information about app layering with Mica, see <a href="../../../design/style/mica.html">Mica material</a>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To apply Mica to a Win32 app for Windows 11, you need to use the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a>. You'll need the following:</p>
+<ul>
+<li>Install the  latest <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> Visual Studio Extension or Microsoft.WindowsAppSDK NuGet package. See <a href="../../../windows-app-sdk/downloads.html">Downloads for the Windows App SDK</a>.</li>
+<li>For unpackaged apps, reference the Windows App SDK, install WinRT, and have a matching <a href="../../../windows-app-sdk/downloads.html">Windows App Runtime Redistributable (Microsoft.WindowsAppRuntime.Redist)</a> installed. See <a href="../../../windows-app-sdk/deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a>.</li>
+</ul>
+<h2 id="how-to-use-mica-in-win32-apps">How to use Mica in Win32 Apps</h2>
+<p>To use mica in your app, you use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller">MicaController</a> class. This class manages both the rendering of the system backdrop material as well as the handling of system policy for the mica material.</p>
+<p>The MicaController reacts to the system Light and Dark themes by default. To override this behavior, you can pass the following properties to the MicaController:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.fallbackcolor">FallbackColor</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.luminosityopacity">LuminosityOpacity</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintcolor">TintColor</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity">TintOpacity</a></li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The code in this section is taken from the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32">Windows App SDK Win32 Mica sample on GitHub</a>. See the GitHub repo for the full code. These examples use <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a>.</p>
+</div>
+<p>To enable Mica, you need a reference to the Windows App SDK, a <a href="/uwp/api/windows.ui.composition.compositor">Compositor</a>, and a <a href="/uwp/api/windows.system.dispatcherqueue">DispatcherQueue</a>.</p>
+<p>This example shows how to do the following to set up an unpackaged app:</p>
+<ul>
+<li>Initialize WinRT.</li>
+<li>Reference the WindowsAppSDK from an unpackaged app.
+<ul>
+<li>See <a href="../../../windows-app-sdk/use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a> for more info.</li>
+<li>See <code>WindowsAppSDKBootstrapperContext</code> in <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/Utilities.h">Utilities.h</a> for example code.</li>
+</ul>
+</li>
+<li>Register the window class.</li>
+<li>Create the Mica dispatcher queue controller</li>
+<li>Initialize a WinRT compositor.</li>
+</ul>
+<blockquote>
+<p>From <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/WinMain.cpp">WinMain.cpp</a></p>
+</blockquote>
+<pre><code class="lang-cpp">int __stdcall WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE,  _In_ PSTR, _In_ int)
+{
+    // Initialize WinRt Instance
+    winrt::init_apartment();
+
+    // Enable referencing the WindowsAppSDK from an unpackaged app.
+    Utilities::WindowsAppSDKBootstrapperContext sdkContext;
+
+    // Register Window class before making the window.
+    MicaWindow::RegisterWindowClass();
+
+    // Mica requires a compositor, which also requires a dispatcher queue.
+    auto controller = Utilities::CreateDispatcherQueueControllerForCurrentThread();
+    auto compositor = winrt::Compositor();
+
+    // Create your window...
+    ...
+}
+</code></pre>
+<blockquote>
+<p>From <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/MicaWindow.cpp">MicaWindow.cpp</a></p>
+</blockquote>
+<pre><code class="lang-cpp">void MicaWindow::RegisterWindowClass()
+{
+    auto instance = winrt::check_pointer(GetModuleHandleW(nullptr));
+    WNDCLASSEX wcex = { sizeof(wcex) };
+    wcex.style = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc = WndProc;
+    wcex.hInstance = instance;
+    wcex.hIcon = LoadIconW(instance, IDI_APPLICATION);
+    wcex.hCursor = LoadCursorW(nullptr, IDC_ARROW);
+    wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+    wcex.lpszClassName = ClassName.c_str();
+    wcex.hIconSm = LoadIconW(wcex.hInstance, IDI_APPLICATION);
+    winrt::check_bool(RegisterClassExW(&amp;wcex)); // check if the window class was registered successfully
+}
+</code></pre>
+<p>The <code>winrt::init_apartment</code> method is multi-threaded by default. If your app requires a single-thread, like the <a href="#how-to-use-mica-in-win32-webview2-apps">WebView2 Sample</a>, you can easily set the type.</p>
+<pre><code class="lang-cpp">winrt::init_apartment(winrt::apartment_type::single_threaded);
+</code></pre>
+<p>Now you can use the <code>CreateWindowEx()</code> function to create a window. Then, you have to create a window target and set it as the root to specify which layer to apply Mica to. Finally, assert that Mica is supported by the window and target.</p>
+<p>The <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32">Win32 Mica sample</a> creates the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/DesktopWindow.h">DesktopWindow</a> and <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/MicaWindow.cpp">MicaWindow</a> classes to do this work. These classes define: <code>ClassName</code>, <code>windowTitle</code>, <code>m_target</code>, <code>m_micaController</code>, and <code>m_isMicaSupported</code>.</p>
+<blockquote>
+<p>From <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/WinMain.cpp">WinMain.cpp</a></p>
+</blockquote>
+<pre><code class="lang-cpp">// Mica window is inherited from the MicaWindow class, which is an extension of the DesktopWindow Class.
+// Here, we initialize the main window and set the title.
+   auto window = MicaWindow(compositor, L&quot;Hello, Mica!&quot;);
+</code></pre>
+<blockquote>
+<p>From <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-win32/WinAppSDKMicaSample/MicaWindow.cpp">MicaWindow.cpp</a></p>
+</blockquote>
+<pre><code class="lang-cpp">// Create the main window and enable Mica.
+MicaWindow::MicaWindow(const winrt::Compositor&amp; compositor, const std::wstring&amp; windowTitle)
+{
+    auto instance = winrt::check_pointer(GetModuleHandleW(nullptr));
+    WINRT_ASSERT(!m_window); // check that window is not initialized
+    WINRT_VERIFY(
+        // Window Properties
+        CreateWindowExW(
+            WS_EX_COMPOSITED,
+            ClassName.c_str(), // declared in MicaWindow.h and defined above
+            windowTitle.c_str(),
+            WS_OVERLAPPEDWINDOW,
+            CW_USEDEFAULT,
+            CW_USEDEFAULT, 
+            800, 600, 
+            nullptr, 
+            nullptr, 
+            instance, 
+            this
+        ));
+
+    // Check that the window was created successfully.
+    WINRT_ASSERT(m_window);
+
+    ShowWindow(m_window, SW_SHOWDEFAULT);
+    UpdateWindow(m_window);
+
+    // The Mica controller needs to set a target with a root to recognize the visual base layer.
+    m_target = CreateWindowTarget(compositor);
+
+    // Need to set a root before we can enable Mica.
+    m_target.Root(compositor.CreateContainerVisual());
+
+    m_micaController = winrt::MicaController();
+    m_isMicaSupported = m_micaController.SetTarget(winrt::Microsoft::UI::WindowId{ reinterpret_cast&lt;uint64_t&gt;(m_window) }, m_target);
+}
+</code></pre>
+<h2 id="how-to-use-mica-in-win32-webview2-apps">How to use Mica in Win32 WebView2 apps</h2>
+<p>The fundamental principles of applying Mica are consistent across most Win32 applications. The process for <a href="/microsoft-edge/webview2/">WebView2</a> follows the basic steps from the <a href="#how-to-use-mica-in-win32-apps">Win32 instructions shown previously</a>. However, in this case you will need to specify a single threaded process from WinRT's <code>init_apartment</code> feature.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The code in this section is taken from the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-WebView2">Windows App SDK WebView2 Mica sample on GitHub</a>. See the GitHub repo for the full code.</p>
+</div>
+<p>To get started, set up the required apartment, controller, compositor, target, and root. By default, the WinRT <code>init_apartment</code> function is multi-threated, but WebView2 is inherently single-threaded. To set <code>init_apartment</code> as a single thread, pass the <code>winrt::apartment_type::single_threaded</code> parameter. In the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-WebView2">Mica WebView2 Sample</a>, we simplify the syntax by creating a separate class for web view functions, referenced in the following code.</p>
+<blockquote>
+<p>From <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-WebView2/Mica-WebView2/Main.cpp">Main.cpp</a></p>
+</blockquote>
+<pre><code class="lang-cpp">int __stdcall WinMain(_In_ HINSTANCE, _In_opt_ HINSTANCE, _In_ PSTR, _In_ int)
+{
+    winrt::init_apartment(winrt::apartment_type::single_threaded);
+    // Enable referencing the WindowsAppSDK from an unpackaged app.
+    // Remember to have a matching Microsoft.WindowsAppRuntime.Redist installed.
+    // https://learn.microsoft.com/windows/apps/windows-app-sdk/deploy-unpackaged-apps
+    Utilities::WindowsAppSDKBootstrapperContext sdkContext;
+    CompositionWindow::RegisterWindowClass();
+    // A dispatcher queue is required to be able to create a compositor.
+    auto controller = Utilities::CreateDispatcherQueueControllerForCurrentThread();
+    auto compositor = winrt::Compositor();
+    auto window = WebView2Window(compositor, L&quot;Hello, WebView2!&quot;);
+
+    ...
+}
+</code></pre>
+<p>For a full demonstration of the <strong>WebView2Window class</strong> and its integration with Mica, see the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-WebView2">Windows App SDK WebView2 Mica sample on GitHub</a>. Note how the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-WebView2/Mica-WebView2/CompositionWindow.cpp">CompositionWindow</a> and <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Mica/cpp-WebView2/Mica-WebView2/WebView2Window.cpp">WebView2Window</a> classes handle messages, initialize the web view environment, and delete the window controller once the window is closed.</p>
+<h2 id="related-articles">Related articles</h2>
+<p><a href="../../../design/signature-experiences/materials.html">Materials</a>, <a href="../../../design/signature-experiences/layering.html">Layering and Elevation</a>, <a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica">Windows App SDK Mica samples</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/ui/apply-mica-win32.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

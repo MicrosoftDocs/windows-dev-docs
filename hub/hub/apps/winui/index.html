@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>WinUI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="WinUI ">
+    
+    <meta name="description" content="WinUI Libraries for Windows app development.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="winui">WinUI</h1>
+
+<section class="row">
+<div class="column">
+<p><img src="../images/logo-winui.png" alt="WinUI logo"></p>
+</div>
+<div class="column span2">
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>At this time, there are two generations of WinUI: <a href="/windows/uwp/get-started/winui2/">WinUI 2 for UWP</a> and <a href="winui3/index.html">WinUI in the Windows App SDK (WinUI 3)</a>. While both can be used in production-ready apps on Windows 10 and later, each have different development targets.</p>
+<p>See <a href="#comparison-of-winui-3-and-winui-2">Comparison of WinUI 3 and WinUI 2</a>.</p>
+</div>
+</div>
+</section>
+<p>WinUI is a native user experience (UX) framework for both Windows desktop and UWP applications.</p>
+<p>By incorporating the <a href="https://fluent2.microsoft.design/">Fluent Design System</a> into all experiences, controls, and styles, WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.</p>
+<p>With support for both desktop and UWP apps, you can build with WinUI from the ground up, or gradually migrate your existing MFC, WinForms, or WPF apps using familiar languages such as C++, C#, Visual Basic, and JavaScript (using <a href="https://microsoft.github.io/react-native-windows/">React Native for Desktop</a>).</p>
+<p>If you want a step-by-step guide to setting up your developer environment and building your first WinUI app with the latest tools, please see <a href="/training/modules/winui-101/">WinUI 101</a>.</p>
+<blockquote>
+<p>The WinUI libraries are hosted in the <a href="https://github.com/microsoft/microsoft-ui-xaml">WinUI GitHub repo</a> where you can file feature requests or bugs, and interact with the WinUI team.</p>
+</blockquote>
+<h2 id="comparison-of-winui-3-and-winui-2">Comparison of WinUI 3 and WinUI 2</h2>
+<p>The following table highlights some of most significant differences between WinUI 3 in the Windows App SDK and WinUI 2 for UWP.</p>
+<table>
+<thead>
+<tr>
+<th>WinUI 3 in the Windows App SDK</th>
+<th>WinUI 2 for UWP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="winui3/index.html">WinUI 3</a></strong> ships with the <a href="../windows-app-sdk/index.html">Windows App SDK</a>.</td>
+<td><strong><a href="/windows/uwp/get-started/winui2/">WinUI 2</a></strong>, the 2nd generation of WinUI, ships as a standalone <a href="https://www.nuget.org/packages/Microsoft.UI.Xaml/">NuGet package</a>, and is integrated with <a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk/">Windows SDKs</a>.</td>
+</tr>
+<tr>
+<td>UX stack and control library completely decoupled from the OS and <a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk/">Windows SDKs</a>, including the core framework, composition, and input layers of the UX stack.</td>
+<td>UX stack and control library tightly coupled to the OS and <a href="https://developer.microsoft.com/windows/downloads/windows-10-sdk/">Windows SDKs</a>.</td>
+</tr>
+<tr>
+<td>WinUI 3 can be used to build production-ready <strong>desktop/Win32</strong> Windows apps.</td>
+<td>WinUI 2 can be used in UWP applications and incorporated into desktop applications using <a href="../desktop/modernize/xaml-islands/xaml-islands.html">XAML Islands</a> (for installation instructions, see <a href="winui2/getting-started.md">Getting started with the WinUI 2 Library</a>).</td>
+</tr>
+<tr>
+<td>WinUI 3 ships as a component of <a href="../windows-app-sdk/index.html">the Windows App SDK</a> framework package, with Visual Studio project templates in the Windows App SDK Visual Studio Extension (VSIX).</td>
+<td>Part of WinUI 2 ships within the operating system itself (the Windows.UI.* family of UWP WinRT APIs) and part of it ships as a library (&quot;WinUI 2&quot;) with additional controls, elements and the latest styles on top of what's already included in the operating system itself. With WinUI 2, these features ship in a downloadable NuGet package. However, other significant parts of the UI stack are still built-in to the OS, such as the core XAML framework, input, and composition layers.</td>
+</tr>
+<tr>
+<td>WinUI 3 supports C# (.NET 6 and later) and C++ for desktop apps.</td>
+<td>WinUI 2 supports C# and Visual Basic (.NET Native), and C++ apps.</td>
+</tr>
+<tr>
+<td>WinUI 3 is supported only in desktop-based projects. To use WinUI 3, UWP projects can migrate their project type to desktop (see <a href="../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">how to migrate your UWP app to the Windows App SDK</a>).</td>
+<td>WinUI 2 can be incorporated into production UWP apps by installing a NuGet package into a new or existing UWP project. WinUI controls and styles can then be referenced directly in new apps, or by updating &quot;Windows.UI.&quot; namespace references to &quot;Microsoft.UI.&quot; in existing apps.</td>
+</tr>
+<tr>
+<td>WinUI 3 supports the Chromium-based <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2">WebView2</a> control</td>
+<td>WinUI 2 supports the <a href="/uwp/api/windows.ui.xaml.controls.webview">WebView</a> control on all devices, and starting with WinUI 2.8, the <a href="/windows/winui/api/microsoft.ui.xaml.controls.webview2">WebView2</a> control on Desktop.</td>
+</tr>
+<tr>
+<td>WinUI 3 works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763).</td>
+<td>WinUI 2.0 - 2.7 works downlevel to Windows 10 Creators Update (Version 1703, OS build 15063). WinUI 2.8 and later works downlevel to Windows 10 October 2018 Update (Version 1809, OS build 17763).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="see-also">See also</h3>
+<ul>
+<li><a href="../windows-app-sdk/index.html">Windows App SDK</a></li>
+<li><a href="../windows-app-sdk/stable-channel.html">Stable channel release notes for the Windows App SDK</a></li>
+<li><a href="../windows-app-sdk/support.html">Windows App SDK and supported Windows releases</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/">Windows App SDK API docs</a></li>
+<li><a href="/windows/winui/api/">WinUI 2 API docs</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

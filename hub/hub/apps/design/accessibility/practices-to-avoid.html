@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Accessibility practices to avoid </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Accessibility practices to avoid ">
+    
+    <meta name="description" content="Lists the practices to avoid if you want to create an accessible Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="accessibility-practices-to-avoid">Accessibility practices to avoid</h1>
+
+<p>If you want to create an accessible Windows app, see this list of practices to avoid:</p>
+<ul>
+<li><p><strong>Avoid building custom UI elements if you can use the default Windows controls</strong> or controls that have already implemented Microsoft UI Automation support. Standard Windows controls are accessible by default and usually require adding only a few accessibility attributes that are app-specific. In contrast, implementing the <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer"><strong>AutomationPeer</strong></a> support for a true custom control is somewhat more involved (see <a href="custom-automation-peers.html">Custom automation peers</a>).</p>
+</li>
+<li><p><strong>Don't put static text or other non-interactive elements into the tab order</strong> (for example, by setting the <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> property for an element that is not interactive). If non-interactive elements are in the tab order, that is against keyboard accessibility guidelines because it decreases efficiency of keyboard navigation for users. Many assistive technologies use tab order and the ability to focus an element as part of their logic for how to present an app's interface to the assistive technology user. Text-only elements in the tab order can confuse users who expect only interactive elements in the tab order (buttons, check boxes, text input fields, combo boxes, lists, and so on).</p>
+</li>
+<li><p><strong>Avoid using absolute positioning of UI elements</strong> (such as in a <a href="/uwp/api/Windows.UI.Xaml.Controls.Canvas"><strong>Canvas</strong></a> element) because the presentation order often differs from the child element declaration order (which is the de facto logical order). Whenever possible, arrange UI elements in document or logical order to ensure that screen readers can read those elements in the correct order. If the visible order of UI elements can diverge from the document or logical order, use explicit tab index values (set <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a>) to define the correct reading order.</p>
+</li>
+<li><p><strong>Don’t use color as the only way to convey information.</strong> Users who are color blind cannot receive information that is conveyed only through color, such as in a color status indicator. Include other visual cues, preferably text, to ensure that information is accessible.</p>
+</li>
+<li><p><strong>Don’t automatically refresh an entire app canvas</strong> unless it is really necessary for app functionality. If you need to automatically refresh page content, update only certain areas of the page. Assistive technologies generally must assume that a refreshed app canvas is a totally new structure, even if the effective changes were minimal. The cost of this to the assistive technology user is that any document view or description of the refreshed app now must be recreated and presented to the user again.</p>
+<p>A deliberate page navigation that is initiated by the user is a legitimate case for refreshing the app's structure. But make sure that the UI item that initiates the navigation is correctly identified or named to give some indication that invoking it will result in a context change and page reload.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you do refresh content within a region, consider setting the <a href="/uwp/api/windows.ui.xaml.automation.automationproperties.livesettingproperty"><strong>AccessibilityProperties.LiveSetting</strong></a> accessibility property on that element to one of the non-default settings <strong>Polite</strong> or <strong>Assertive</strong>. Some assistive technologies can map this setting to the Accessible Rich Internet Applications (ARIA) concept of live regions and can thus inform the user that a region of content has changed.</p>
+</div>
+</li>
+<li><p><strong>Don’t use UI elements that flash more than three times per second.</strong> Flashing elements can cause some people to have seizures. It is best to avoid using UI elements that flash.</p>
+</li>
+<li><p><strong>Don’t change user context or activate functionality automatically.</strong> Context or activation changes should occur only when the user takes a direct action on a UI element that has focus. Changes in user context include changing focus, displaying new content, and navigating to a different page. Making context changes without involving the user can be disorienting for users who have disabilities. The exceptions to this requirement include displaying submenus, validating forms, displaying help text in another control, and changing context in response to an asynchronous event.</p>
+</li>
+</ul>
+<p><span id="related_topics"></span></p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="accessibility.html">Accessibility</a></li>
+<li><a href="accessibility-in-the-store.html">Accessibility in the Store</a></li>
+<li><a href="accessibility-checklist.html">Accessibility checklist</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/practices-to-avoid.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

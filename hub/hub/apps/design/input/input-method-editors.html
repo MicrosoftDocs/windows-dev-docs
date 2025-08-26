@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Input Method Editors (IME) </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Input Method Editors (IME) ">
+    
+    <meta name="description" content="An Input Method Editor (IME) is a software component that enables a user to input text in a language that can&#39;t be represented easily on a standard QWERTY keyboard.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="input-method-editors-ime">Input Method Editors (IME)</h1>
+
+<p>An Input Method Editor (IME) is a software component that supports text input in edit controls for characters in languages that can't be represented easily on a standard QWERTY keyboard, such as those of various East Asian languages.</p>
+<p>Instead of each character appearing on a dedicated keyboard key, a combination of keystrokes are interpreted as a composite character by the IME. The IME generates the character that matches the set of key strokes (or provides a list of candidate characters to select from). The composite character is then inserted into the edit control.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>IMEs can support both hardware keyboards and on-screen keyboards (OSK) such as the touch keyboard.</p>
+</div>
+<p>Your app doesn't need to interact directly with the IME. The IME is built into the system, just as the touch keyboard is. If your app has text input, and you intend to support text input in languages that require an IME, you should test the end-to-end customer experience for text entry. This lets you fix any issues, such as adjusting your UI so it isn't occluded by the touch keyboard or IME candidate window.</p>
+<h2 id="creating-an-ime">Creating an IME</h2>
+<p>To enable a great input experience for all users, Microsoft produces IMEs that ship in-box for a variety of languages.</p>
+<p>In addition to the in-box IMEs, you can build your own custom IMEs that users can install and use just like an in-box IME.</p>
+<p>All IMEs run in the Windows system, which is hardened to stop malicious IMEs and to improve the security and user experience of all IMEs.</p>
+<p>Custom IMEs can link to the default touch keyboard and use its layout so that end users can use their IME with the touch keyboard. However, you cannot provide your own independent touch keyboard and certain functions of in-box IMEs for touch keyboards are not available to custom IMEs.</p>
+<h2 id="requirements-for-imes">Requirements for IMEs</h2>
+<p>A third-party IME must meet these requirements:</p>
+<ul>
+<li>Must be digitally signed</li>
+<li>Must be <a href="/windows/win32/tsf/text-services-framework">Text Services Framework (TSF)</a> aware, with appropriate IME flags set correctly</li>
+<li>Must follow the guidelines described in <a href="input-method-editor-requirements.html">Input Method Editor (IME) requirements</a> and <a href="../index.html">Design and code Windows apps</a></li>
+</ul>
+<p>A third-party IME that doesn't meet these requirements is blocked from running.</p>
+<p>Because Windows Defender removes malicious IMEs from the system, it's important to familiarize yourself with the IME coding requirements. For more info, see <a href="input-method-editor-requirements.html">Input Method Editor (IME) requirements</a>.</p>
+<h2 id="design-guidelines-for-imes">Design guidelines for IMEs</h2>
+<p>Read the <a href="input-method-editor-requirements.html">Input Method Editor (IME) requirements</a> for more details on best practices and design guidelines for IMEs. In general, all IME UIs need to:</p>
+<ul>
+<li>Follow the UX guidelines for Windows Runtime apps</li>
+<li>Avoid modal experiences and only show the IME window when needed</li>
+<li>include icons that are black and white only</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="input-method-editor-requirements.html">Input Method Editor (IME) requirements</a></li>
+<li><a href="/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout">ITfFnGetPreferredTouchKeyboardLayout</a></li>
+<li><a href="/windows/win32/api/msctf/nn-msctf-itfcompartmenteventsink">ITfCompartmentEventSink</a></li>
+<li><a href="/windows/win32/api/msctf/nf-msctf-itfthreadmgrex-getactiveflags">ITfThreadMgrEx::GetActiveFlags</a></li>
+<li><a href="/windows/win32/api/msctf/nf-msctf-itfcontextview-getwnd">ITfContextView::GetWnd</a></li>
+<li><a href="/windows/win32/api/msctf/ns-msctf-tf_inputprocessorprofile">TF_INPUTPROCESSORPROFILE</a></li>
+<li><a href="/windows/win32/api/winuser/nf-winuser-sendinput">SendInput</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/input-method-editors.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

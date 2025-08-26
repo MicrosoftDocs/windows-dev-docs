@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>What&#39;s supported when migrating from UWP to WinUI 3 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="What&#39;s supported when migrating from UWP to WinUI 3 ">
+    
+    <meta name="description" content="WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren&#39;t supported. This topic provides information on which features are supported before you attempt migration.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="whats-supported-when-migrating-from-uwp-to-winui-3">What's supported when migrating from UWP to WinUI 3</h1>
+
+<p>WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.</p>
+<table>
+<thead>
+<tr>
+<th>UWP feature</th>
+<th>WinUI 3 status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="guides/winui3.html#acrylicbrushbackgroundsource-property">Background acrylic</a></td>
+<td>✅ Available via <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller">DesktopAcrylicController</a>.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/launch-resume/create-and-register-a-winmain-background-task">Background tasks</a></td>
+<td>✅ Supported; see <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder">BackgroundTaskBuilder</a> (introduced in 1.7).</td>
+</tr>
+<tr>
+<td>Common UI controls</td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/WindowsAppSDK/pull/4721">CameraCaptureUI</a></td>
+<td>✅ Supported; see <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture">CameraCaptureUI</a> (introduced in 1.7). For alternative APIs, see <a href="/windows/win32/multimedia/using-video-capture">Using video capture</a>.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5025">Composition/DirectX interop</a></td>
+<td>✅ Most Composition and Drawing features are supported (global composition effects aren't supported in 1.7); see <a href="../composition.html">Enhance UI with the Visual layer</a>.</td>
+</tr>
+<tr>
+<td>Distributing via Store</td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td>Live Tiles (on Windows 10)</td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.maps.mapcontrol">MapControl</a></td>
+<td>✅ Supported; see <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol">MapControl</a> (introduced in 1.5).</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.mediaelement">MediaElement</a> and <a href="/uwp/api/windows.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a></td>
+<td>✅ Use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement">MediaPlayerElement</a>, which was introduced in 1.2.</td>
+</tr>
+<tr>
+<td>MSAL library</td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td>MSIX</td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="guides/applifecycle.html#single-instanced-apps">Single-instancing</a></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.shell.taskbarmanager">TaskbarManager</a> API</td>
+<td>✅ Supported; for details, see <a href="https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TaskbarManager">TaskbarManager desktop samples</a>.</td>
+</tr>
+<tr>
+<td><a href="guides/toast-notifications.html">Toast notifications</a></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="https://appcenter.ms/">Visual Studio App Center</a></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/security/web-authentication-broker">WebAuthenticationBroker</a></td>
+<td>✅ Supported; see <a href="/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth">Microsoft.Security.Authentication.OAuth</a> (introduced in 1.7).</td>
+</tr>
+<tr>
+<td>Best launch speed and performance</td>
+<td>⚠️ Slight disadvantage, see <a href="#performance-considerations">performance considerations</a>.</td>
+</tr>
+<tr>
+<td>CoreTextServicesManager</td>
+<td>⚠️ Supported only on Windows 11</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.graphics.printing.printmanager">PrintManager</a></td>
+<td>⚠️ Supported on Windows 11 (not yet available on Windows 10)</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.core.corewindow">CoreWindow</a> and related APIs</td>
+<td>❌ Not supported in 1.7. For alternative APIs with some of the same functionality, see <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a>, and <a href="/windows/apps/develop/ui-input/retrieve-hwnd">HWND</a>-based APIs.</td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.system.virtualkey">Virtual key support for gamepad input</a></td>
+<td>❌ Not supported in 1.7; see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6891">Gamepad support in WinUI 3</a></td>
+</tr>
+<tr>
+<td><a href="/uwp/api/windows.ui.xaml.controls.inkcanvas">InkCanvas</a></td>
+<td>❌ Not supported in 1.7</td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoft/WindowsAppSDK/issues/3642">Single-app kiosk</a></td>
+<td>❌ Not supported in 1.7</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/xbox-apps/">Xbox</a> and HoloLens</td>
+<td>❌ Not supported in 1.7</td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance-considerations">Performance considerations</h2>
+<p>Today in version 1.7 of the Windows App SDK, launch speeds, RAM usage, and installation size of WinUI 3 apps are larger/slower than seen in UWP. We're actively working to improve this.</p>
+<h2 id="visual-studio">Visual Studio</h2>
+<p>The <strong>Design</strong> tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI 3 projects (as of version 1.7 of the Windows App SDK). For more info, see <a href="/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio">Create a UI by using XAML Designer</a>.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="../support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

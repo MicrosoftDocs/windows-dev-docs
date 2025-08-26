@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Troubleshooting x86 desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Troubleshooting x86 desktop apps ">
+    
+    <meta name="description" content="Learn how to troubleshoot and fix common issues with an x86 desktop app running on Arm64 including information about drivers, shell extensions, and debugging.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="troubleshooting-x86-desktop-apps">Troubleshooting x86 desktop apps</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>With Visual Studio 2017 or later, it is possible recompile your app to Arm64 or Arm64EC so that your app runs at full native speed. For more info about compiling as Arm64, see the blog post: <a href="https://blogs.windows.com/buildingapps/2018/11/15/official-support-for-windows-10-on-arm-development">Official support for Windows 10 on Arm development</a>. For information about Arm64EC, see <a href="https://aka.ms/arm64ecannounceblog">Announcing Arm64EC: Building Native and Interoperable Apps for Windows 11 on Arm</a>.</p>
+</div>
+<p>If an x86 desktop app doesn't work the way it does on an x86 machine, here's some guidance to help you troubleshoot.</p>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Your app relies on a driver that isn't designed for Arm.</td>
+<td>Recompile your x86 driver to Arm64. See <a href="/windows-hardware/drivers/develop/building-arm64-drivers">Building Arm64 Drivers with the WDK</a>.</td>
+</tr>
+<tr>
+<td>Your app is available only for x64.</td>
+<td>If you develop for Microsoft Store, submit an Arm version of your app. For more info, see <a href="/windows/msix/package/device-architecture">App package architectures</a>. If you're a Win32 developer, we recommend you recompile your app to Arm64. For more info see <a href="https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/">Early preview of Visual Studio support for Windows 10 on Arm development</a>.</td>
+</tr>
+<tr>
+<td>Your app uses an OpenGL version later than 1.1 or requires hardware-accelerated OpenGL.</td>
+<td>Use the DirectX mode of the app, if it's available. x86 apps that use DirectX 9, DirectX 10, DirectX 11, and DirectX 12 will work on Arm. For more info, see <a href="/windows/desktop/directx">DirectX Graphics and Gaming</a>.</td>
+</tr>
+<tr>
+<td>Your x86 app does not work as expected.</td>
+<td>Try using the Compatibility Troubleshooter by following guidance from <a href="apps-on-arm-program-compat-troubleshooter.html">Program Compatibility Troubleshooter on Arm</a>. For some other troubleshooting steps, see the <a href="apps-on-arm-troubleshooting-x86.html">Troubleshooting x86 apps on Arm</a> article.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="best-practices-for-wow">Best practices for WOW</h2>
+<p>One common problem occurs when an app discovers that it's running under WOW and then assumes that it is on an x64 system. Having made this assumption, the app may do the following:</p>
+<ul>
+<li>Try to install the x64 version of itself, which isn't supported on Arm.</li>
+<li>Check for other software under the native registry view.</li>
+<li>Assume that a 64-bit .NET framework is available.</li>
+</ul>
+<p>Generally, an app should not make assumptions about the host system when it is determined to run under WOW. Avoid interacting with native components of the OS as much as possible.</p>
+<p>An app may place registry keys under the native registry view, or perform functions based on the presence of WOW. The original <strong>IsWow64Process</strong>  indicates only whether the app is running on an x64 machine. Apps should now use <a href="/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2">IsWow64Process2</a> to determine whether they're running on a system with WOW support.</p>
+<h2 id="drivers">Drivers</h2>
+<p>All kernel-mode drivers, <a href="/windows-hardware/drivers/wdf/overview-of-the-umdf">User-Mode Driver Framework (UMDF)</a> drivers, and print drivers must be compiled to match the architecture of the OS. If an x86 app has a driver, then that driver must be recompiled for Arm64. The x86 app may run fine under emulation however, its driver will need to be recompiled for Arm64 and any app experience that depends on the driver will not be available. For more info about compiling your driver for Arm64, see <a href="/windows-hardware/drivers/develop/building-arm64-drivers">Building Arm64 Drivers with the WDK</a>.</p>
+<h2 id="shell-extensions">Shell extensions</h2>
+<p>Apps that try to hook Windows components or load their DLLs into Windows processes will need to recompile those DLLs to match the architecture of the system; i.e. Arm64. Typically, these are used by input method editors (IMEs), assistive technologies, and shell extension apps (for example, to show cloud storage icons in Explorer or a right click Context menu). To learn how to recompile your apps or DLLs to Arm64, see the <a href="https://blogs.windows.com/buildingapps/2018/05/08/visual-studio-support-for-windows-10-on-arm-development/">Early preview of Visual Studio support for Windows 10 on Arm development</a> blog post.</p>
+<h2 id="debugging">Debugging</h2>
+<p>To investigate your app's behavior in more depth, see <a href="/windows-hardware/drivers/debugger/debugging-arm64">Debugging on Arm</a> to learn more about tools and strategies for debugging on Arm.</p>
+<h2 id="virtual-machines">Virtual Machines</h2>
+<p>The Windows Hypervisor platform is not supported on the Qualcomm Snapdragon 835 Mobile PC Platform. Hence, running virtual machines using Hyper-V will not work. We continue to make investments in these technologies on future Qualcomm chipsets.</p>
+<h2 id="dynamic-code-generation">Dynamic Code Generation</h2>
+<p>X86 desktop apps are emulated on Arm64 by the system generating Arm64 instructions at runtime. This means if an x86 desktop app prevents dynamic code generation or modification in its process, that app cannot be supported to run as x86 on Arm64.</p>
+<p>This is a security mitigation some apps enable on their process using <a href="/windows/desktop/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy">SetProcessMitigationPolicy</a> API with the <code>ProcessDynamicCodePolicy</code> flag. To run successfully on Arm64 as an x86 process, this mitigation policy will have to be disabled.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/apps-on-arm-troubleshooting-x86.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

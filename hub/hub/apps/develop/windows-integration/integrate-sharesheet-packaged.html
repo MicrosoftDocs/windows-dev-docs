@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Integrate packaged apps with Windows Share </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Integrate packaged apps with Windows Share ">
+    
+    <meta name="description" content="Discover how to integrate packaged apps with the Windows Share.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="integrate-packaged-apps-with-windows-share">Integrate packaged apps with Windows Share</h1>
+
+<p>This article explains how to integrate packaged apps with the <strong>Windows Share</strong> feature. Apps that are packaged with <a href="/windows/msix/overview">MSIX</a> have package identity and are ready to register as a <strong>Share Target</strong>. The Share feature allows users to share content from one app to another. A packaged app will register as a Share Target in order to receive and handle shared files within the app.</p>
+<h2 id="what-is-share-target">What is Share Target?</h2>
+<p>Share Target is a feature that was introduced in Windows 8, and it allows an app to receive data from another app. Share Target works like a Clipboard but with dynamic content.</p>
+<p>For the default share target registration to work with Win32 apps, the app needs to have a package identity and also handle the share arguments as <a href="/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs">ShareTargetActivatedEventArgs</a>, which is a live object from the source app. It isn't a static memory content that is sent to the target app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In a C++ app, use the <a href="/windows/win32/api/appmodel/nf-appmodel-getcurrentpackagefullname">GetCurrentPackageFullName</a> API to check if the running app has package identity. The API returns the <code>APPMODEL_ERROR_NO_PACKAGE</code> error code if it isn't running with package identity.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To support <code>ShareTargetActivatedEventArgs</code>, the app must target Windows 10, version 2004 (build 10.0.19041.0) or later. This is the minimum target version for the feature.</p>
+<h2 id="register-as-a-share-target">Register as a Share Target</h2>
+<p>There are two steps required to implement the Share contract in your app.</p>
+<h3 id="add-a-share-target-extension-to-appxmanifest">Add a share target extension to appxmanifest</h3>
+<p>In Visual Studio's Solution Explorer, open the <code>package.appxmanifest</code> file of the Packaging project in your solution and add the share target extension.</p>
+<pre><code class="lang-xml">&lt;Extensions&gt;
+      &lt;uap:Extension
+          Category=&quot;windows.shareTarget&quot;&gt;
+        &lt;uap:ShareTarget&gt;
+          &lt;uap:SupportedFileTypes&gt;
+            &lt;uap:SupportsAnyFileType /&gt;
+          &lt;/uap:SupportedFileTypes&gt;
+          &lt;uap:DataFormat&gt;Bitmap&lt;/uap:DataFormat&gt;
+        &lt;/uap:ShareTarget&gt;
+      &lt;/uap:Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+<p>Add the supported data format that is supported by your application to the <code>DataFormat</code> configuration. In this case, the app supports sharing images, so the <code>DataFormat</code> is set to <code>Bitmap</code>.</p>
+<h3 id="fetch-share-event-arguments">Fetch Share Event arguments</h3>
+<p>Starting in Windows 10, version 1809, packaged apps can call the <a href="/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs">AppInstance.GetActivatedEventArgs</a> method to retrieve certain kinds of app activation info during startup. For example, you can call this method to get information about app activation; whether it was triggered by opening a file, clicking an interactive toast, or using a registered protocol.</p>
+<p>However, <a href="/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs">ShareTargetActivatedEventArgs</a> activation info is supported only on Windows 10, version 2004, and later. So, the application should target to devices with this specific minimum version.</p>
+<p>To see a Windows App SDK implementation, see the <code>OnLaunched</code> method in the <a href="https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp/WinUI-CS-ShareTargetSampleApp/App.xaml.cs">Share Target sample app</a>.</p>
+<p>For other packaged apps, in the <code>Main</code> method of the application, check for <code>AppInstance.GetActivatedEventArgs</code>.</p>
+<pre><code class="lang-csharp">public static void Main(string[] cmdArgs)
+{
+    ...
+    if (isRunningWithIdentity())
+    {
+        var activationArgs = AppInstance.GetActivatedEventArgs();
+        if (activationArgs != null)
+        {
+            switch (activationArgs.Kind)
+            {
+                case ActivationKind.Launch:
+                    HandleLaunch(activationArgs as LaunchActivatedEventArgs);
+                    break;
+                case ActivationKind.ToastNotification:
+                    HandleToastNotification(activationArgs as ToastNotificationActivatedEventArgs);                                     
+                    break;
+                case ActivationKind.ShareTarget:
+                    HandleShareAsync(activationArgs as ShareTargetActivatedEventArgs);
+                    break;
+                default:
+                    HandleLaunch(null);
+                    break;
+            }
+        }
+    }
+}
+</code></pre>
+<p>See the <a href="https://github.com/microsoft/AppModelSamples/blob/master/Samples/PackageWithExternalLocation/cs/PhotoStoreDemo/StartUp.cs">Photo Store Demo</a> app for a complete implementation.</p>
+<h2 id="handle-shared-files">Handle shared files</h2>
+<p>The following code snippet shows how to handle shared files in a packaged app. The code snippet is part of the <code>HandleShareAsync</code> method that is called when the app is activated as a Share Target in the previous example.</p>
+<pre><code class="lang-csharp">static async void HandleShareAsync(ShareTargetActivatedEventArgs args)
+{
+    ShareOperation shareOperation = args.ShareOperation;
+    shareOperation.ReportStarted();
+
+    if (shareOperation.Data.Contains( 
+        Windows.ApplicationModel.DataTransfer.StandardDataFormats.StorageItems))
+    {
+        try
+        {
+            IReadOnlyList&lt;IStorageItem&gt; items = await shareOperation.Data.GetStorageItemsAsync();
+            var file = (IStorageFile)items[0]; 
+            string path = file.Path;
+            var image = new ImageFile(path);
+            image.AddToCache();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
+    shareOperation.ReportCompleted();
+
+    // app launch code
+}
+</code></pre>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/apps/package-and-deploy/deploy-overview">Windows App SDK deployment overview</a></li>
+<li><a href="/windows/apps/winui/winui3/create-your-first-winui3-app">Create your first WinUI 3 project</a></li>
+<li><a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw">Migrate from UWP to the Windows App SDK</a></li>
+<li><a href="/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app">Advantages and Disadvantages of packaging an application - Deployment overview</a></li>
+<li><a href="https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/">Identity, Registration and Activation of Non-packaged Win32 Apps</a></li>
+<li><a href="https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp">Share Contract Implementation for WinAppSDK App</a></li>
+<li><a href="https://github.com/microsoft/AppModelSamples/blob/master/Samples/PackageWithExternalLocation/cs/PhotoStoreDemo/StartUp.cs">Share Contract Implementation for Apps Packaged with External Location</a></li>
+<li><a href="/windows/apps/desktop/modernize/get-activation-info-for-packaged-apps">Get activation info for packaged apps</a></li>
+<li><a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget">ShareTarget schema reference</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/windows-integration/integrate-sharesheet-packaged.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

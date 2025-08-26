@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Grant package identity by packaging with external location manually </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Grant package identity by packaging with external location manually ">
+    
+    <meta name="description" content="Learn how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="grant-package-identity-by-packaging-with-external-location-manually">Grant package identity by packaging with external location manually</h1>
+
+<p>For the motivations behind adding package identity, as well as the differences between building
+identity packages in Visual Studio and building them manually, see
+<a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview">Overview</a>.</p>
+<p>This topic describes how to build and register an identity package manually.
+For info about building an identity package in Visual Studio, see
+<a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio">Grant package identity by packaging with external location in Visual Studio</a>.</p>
+<p>These are the steps (which this topic describes in detail) to build and register an identity package manually:</p>
+<ol>
+<li><a href="#create-a-package-manifest-for-the-identity-package">Create a package manifest for the identity package</a></li>
+<li><a href="#build-and-sign-the-identity-package">Build and sign the identity package</a></li>
+<li><a href="#add-identity-metadata-to-your-desktop-application-manifests">Add identity metadata to your desktop application manifests</a></li>
+<li><a href="#register-the-identity-package-in-your-installer">Register the identity package in your installer</a></li>
+<li><a href="#optional-steps">Optional steps</a></li>
+</ol>
+<h2 id="create-a-package-manifest-for-the-identity-package">Create a package manifest for the identity package</h2>
+<p>The first step to creating an identity package is to create a package manifest based on the below template.
+This is an MSIX manifest but is only used for identity and doesn't alter the app's runtime behavior.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Package IgnorableNamespaces=&quot;uap uap10&quot;
+  xmlns=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10&quot;
+  xmlns:uap=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10&quot;
+  xmlns:uap10=&quot;http://schemas.microsoft.com/appx/manifest/uap/windows10/10&quot;
+  xmlns:rescap=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities&quot;&gt;
+  &lt;Identity Name=&quot;ContosoPhotoStore&quot; Publisher=&quot;CN=Contoso&quot; Version=&quot;1.0.0.0&quot; ProcessorArchitecture=&quot;neutral&quot; /&gt;
+  &lt;Properties&gt;
+    &lt;DisplayName&gt;Contoso PhotoStore&lt;/DisplayName&gt;
+    &lt;PublisherDisplayName&gt;Contoso&lt;/PublisherDisplayName&gt;
+    &lt;Logo&gt;Assets\storelogo.png&lt;/Logo&gt;
+    &lt;uap10:AllowExternalContent&gt;true&lt;/uap10:AllowExternalContent&gt;
+  &lt;/Properties&gt;
+  &lt;Resources&gt;
+    &lt;Resource Language=&quot;en-us&quot; /&gt;
+  &lt;/Resources&gt;
+  &lt;Dependencies&gt;
+    &lt;TargetDeviceFamily Name=&quot;Windows.Desktop&quot; MinVersion=&quot;10.0.19041.0&quot; MaxVersionTested=&quot;10.0.26100.0&quot; /&gt;
+  &lt;/Dependencies&gt;
+  &lt;Capabilities&gt;
+    &lt;rescap:Capability Name=&quot;runFullTrust&quot; /&gt;
+    &lt;rescap:Capability Name=&quot;unvirtualizedResources&quot;/&gt;
+  &lt;/Capabilities&gt;
+  &lt;Applications&gt;
+    &lt;Application Id=&quot;ContosoPhotoStore&quot; Executable=&quot;ContosoPhotoStore.exe&quot; uap10:TrustLevel=&quot;mediumIL&quot; uap10:RuntimeBehavior=&quot;win32App&quot;&gt; 
+      &lt;uap:VisualElements AppListEntry=&quot;none&quot; DisplayName=&quot;Contoso PhotoStore&quot; Description=&quot;Contoso PhotoStore App&quot; BackgroundColor=&quot;transparent&quot; Square150x150Logo=&quot;Assets\Square150x150Logo.png&quot; Square44x44Logo=&quot;Assets\Square44x44Logo.png&quot; /&gt;
+    &lt;/Application&gt;
+  &lt;/Applications&gt;
+&lt;/Package&gt;
+</code></pre>
+<p>Note the below important details about this manifest:</p>
+<ul>
+<li>Fill in the <code>Identity</code> element attributes with the details of your application
+<ul>
+<li><code>Name</code> is the desired name of the identity package</li>
+<li><code>Publisher</code> must match the <code>Subject</code> of the certificate used to sign the application</li>
+<li><code>Version</code> is the desired version of the identity package. A common practice is to align the
+identity package version with the application version. You will not be able to register a version
+of an identity package on a system if that version of the package is already registered.
+You must first unregister the existing package to reinstall a package with the same version.</li>
+<li><code>ProcessorArchitecture</code> should be <code>neutral</code> as shown so the identity package works across all
+architectures (x86, x64, and ARM64)</li>
+</ul>
+</li>
+<li>Fill in the <code>DisplayName</code> and <code>PublisherDisplayName</code> elements with the details of your application
+<ul>
+<li>Unless you add additional features to the manifest beyond simple identity, these values
+are not displayed anywhere</li>
+</ul>
+</li>
+<li>Update the <code>Logo</code> element to a relative path within your application's installation directory
+that will resolve to a .png, .jpg, or .jpeg image</li>
+<li>Ensure the <code>AllowExternalContent</code> element is set to <code>true</code> as shown which enables reusing your
+existing installer</li>
+<li>Set <code>TargetDeviceFamily</code> <code>MinVersion</code> and <code>MaxVersionTested</code> per below:
+<ul>
+<li>Set <code>MinVersion</code> to <code>10.0.19041.0</code> as shown for maximum reach and uniformity across Windows 10
+and Windows 11 OS versions</li>
+<li>Set <code>MinVersion</code> to <code>10.0.26100.0</code> to restrict the identity package to Windows 11, version 24H2
+and above</li>
+<li>Set <code>MaxVersionTested</code> to <code>10.0.26100.0</code> as shown</li>
+<li>Note: The <code>AllowExternalContent</code> feature used here was introduced in Windows build 10.0.19041.0.
+If your application runs further downlevel than that, you should perform an OS version check in your
+installer and not register the identity package on OS versions earlier than 10.0.19041.0. See
+<a href="#register-the-identity-package-in-your-installer">Register the identity package in your installer</a>.</li>
+</ul>
+</li>
+<li>Ensure the <code>runFullTrust</code> and <code>unvirtualizedResources</code> capabilities are declared as shown for
+Win32 compatibility</li>
+<li>Add an <code>Application</code> element as shown for each executable associated with your application
+<ul>
+<li>Ensure <code>TrustLevel</code> is <code>mediumIL</code> and <code>RuntimeBehavior</code> is <code>win32App</code> as shown for Win32 compatibility</li>
+</ul>
+</li>
+<li>The <code>VisualElements</code> child element is required, but the <code>AppListEntry=&quot;none&quot;</code> attribute ensures
+the identity package isn't shown among installed apps
+<ul>
+<li>Update the <code>DisplayName</code> and <code>Description</code> attributes with relevant details and leave the other
+attributes as shown (the referenced image paths do not need to resolve)</li>
+<li>See <a href="#localization-and-visual-assets">Localization and Visual Assets</a> for scenarios where
+localization and images may be needed here.</li>
+</ul>
+</li>
+</ul>
+<p>The identity package created from this manifest will be connected to your application's
+installation directory when you register the package in a later step.</p>
+<h2 id="build-and-sign-the-identity-package">Build and sign the identity package</h2>
+<p>After you create your identity package manifest, build the identity package using the
+<a href="/windows/msix/package/create-app-package-with-makeappx-tool">MakeAppx.exe tool</a> in the Windows SDK.</p>
+<pre><code class="lang-Console">MakeAppx.exe pack /o /d &lt;path to directory that contains manifest&gt; /nv /p &lt;output path&gt;\MyPackage.msix
+</code></pre>
+<p>Note: The <code>/nv</code> flag is required to bypass validation of referenced file paths in the manifest.</p>
+<p>In order to be installed on end user computers, the identity package must be signed with a certificate
+that is trusted on the target computer. You can
+<a href="/windows/msix/package/create-certificate-package-signing">create a new self-signed certificate for development purposes</a>
+and sign your identity package using <a href="/windows/msix/package/sign-app-package-using-signtool">SignTool</a>,
+which is available in the Windows SDK, but a production certificate from an IT Department or a service
+like <a href="https://azure.microsoft.com/products/trusted-signing">Azure Trusted Signing</a> will be required
+to register the package on end user computers.</p>
+<pre><code class="lang-Console">SignTool.exe sign /fd SHA256 /a /f &lt;path to certificate&gt;\MyCertificate.pfx /p &lt;certificate password&gt; &lt;path to package with external location&gt;\MyPackage.msix
+</code></pre>
+<p>Note: For how to build and sign the identity package within a CI/CD pipeline with production certificates,
+see the <a href="/windows/msix/desktop/cicd-overview">MSIX and CI/CD Pipeline Overview</a> for examples.</p>
+<h2 id="add-identity-metadata-to-your-desktop-application-manifests">Add identity metadata to your desktop application manifests</h2>
+<p>You connect the identity package with your application executables by including
+<a href="/windows/win32/sbscs/application-manifests">application manifests</a> (a.k.a side-by-side or fusion manifests)
+with metadata that matches metadata from the identity package manifest.</p>
+<p>In Visual Studio, you can add an <a href="/windows/win32/sbscs/application-manifests">application manifest</a>
+to an executable project by opening the <strong>Project</strong> context menu, and selecting <strong>Add</strong> &gt; <strong>New Item</strong> &gt; <strong>Application Manifest File</strong>.</p>
+<p>Below is an example application manifest snippet demonstrating the <code>msix</code> element required
+to connect your binaries with metadata from your identity package.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;assembly manifestVersion=&quot;1.0&quot; xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot;&gt;
+  &lt;assemblyIdentity version=&quot;0.0.0.0&quot; name=&quot;ContosoPhotoStore&quot;/&gt;
+  &lt;msix xmlns=&quot;urn:schemas-microsoft-com:msix.v1&quot;
+          publisher=&quot;CN=Contoso&quot;
+          packageName=&quot;ContosoPhotoStore&quot;
+          applicationId=&quot;ContosoPhotoStore&quot;
+        /&gt;
+&lt;/assembly&gt;
+</code></pre>
+<p>The attributes of the <code>msix</code> element must match these values from the identity package manifest:</p>
+<ul>
+<li>The <code>packageName</code> and <code>publisher</code> attributes must match the <code>Name</code> and <code>Publisher</code> attributes in the
+<a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity"><code>Identity</code></a> element in your identity package manifest, respectively</li>
+<li>The <code>applicationId</code> attribute must match the <code>Id</code> attribute of the corresponding
+<a href="/uwp/schemas/appxpackage/uapmanifestschema/element-application"><code>Application</code></a> element in your identity package manifest</li>
+</ul>
+<h2 id="register-the-identity-package-in-your-installer">Register the identity package in your installer</h2>
+<p>The last step to associate identity with your application is to register the identity package
+in your installer and associate it with your application's installation directory.</p>
+<h3 id="powershell">PowerShell</h3>
+<p>Executing powershell.exe with the right parameters is the simplest way to register the package.
+The guidance differs for per-user installations vs. machine-wide installations.</p>
+<h4 id="per-user-powershell">Per-User (PowerShell)</h4>
+<p>To register the identity package during a per-user installation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;Add-AppxPackage -Path &lt;PackagePath&gt; -ExternalLocation &lt;ExternalLocation&gt;&quot;
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackagePath&gt;</code> to the absolute path of the signed identity package produced in the previous step
+(with the file name).</li>
+<li>Set <code>&lt;ExternalLocation&gt;</code> to the absolute path of your application's installation directory
+(without any executable names).</li>
+</ul>
+<p>To unregister the identity package during a per-user uninstallation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;Get-AppxPackage &lt;PackageName&gt; | Remove-AppxPackage&quot;
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackageName&gt;</code> to the package name you defined in your identity package manifest
+(the <strong>Name</strong> attribute of the <strong>Identity</strong> element)</li>
+</ul>
+<h4 id="per-machine-powershell">Per-Machine (PowerShell)</h4>
+<p>To register the identity package during a machine-wide installation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;Add-AppxPackage -Stage &lt;PackagePath&gt; -ExternalLocation &lt;ExternalLocation&gt;; Add-AppxProvisionedPackage -Online -PackagePath &lt;PackagePath&gt;&quot;
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackagePath&gt;</code> to the absolute path of the signed identity package produced in the previous step
+(with the file name).</li>
+<li>Set <code>&lt;ExternalLocation&gt;</code> to the absolute path of your application's installation directory
+(without any executable names).</li>
+</ul>
+<p>To unregister the identity package during a machine-wide uninstallation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;$packages = Get-AppxPackage &lt;PackageName&gt;; foreach ($package in $packages) { Remove-AppxProvisionedPackage -PackageName $package.PackageFullName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackageName&gt;</code> to the package name you defined in your identity package manifest
+(the <strong>Name</strong> attribute of the <strong>Identity</strong> element)</li>
+</ul>
+<h3 id="packagemanager-apis">PackageManager APIs</h3>
+<p>If you'd rather call OS APIs to register and unregister the identity package, the PackageManager API
+provides equivalent functionality to PowerShell. The guidance differs for per-user installations vs.
+machine-wide installations.</p>
+<p>Below are snippets that demonstrate the API. For production-ready code in C# and C++, see <a href="#sample-apps">Sample apps</a>.</p>
+<h4 id="per-user-packagemanager">Per-User (PackageManager)</h4>
+<p>The code listing below demonstrates registering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync"><strong>AddPackageByUriAsync</strong></a>
+method and unregistering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.removepackageasync"><strong>RemovePackageAsync</strong></a>
+method.</p>
+<pre><code class="lang-csharp">using Windows.Management.Deployment;
+
+...
+
+// Register the identity package during install
+
+var externalUri = new Uri(externalLocation);
+var packageUri = new Uri(packagePath);
+
+var packageManager = new PackageManager();
+
+var options = new AddPackageOptions();
+options.ExternalLocationUri = externalUri;
+
+await packageManager.AddPackageByUriAsync(packageUri, options);
+
+...
+
+// Unregister the identity package during uninstall
+
+var packageManager = new PackageManager();
+var packages = packageManager.FindPackagesForUserWithPackageTypes(&quot;&quot;, &quot;&lt;IdentityPackageFamilyName&gt;&quot;, PackageType.Main);
+foreach (var package in packages)
+{
+  await packageManager.RemovePackageAsync(package.Id.FamilyName);
+}
+</code></pre>
+<p>Note the below important details about this code:</p>
+<ul>
+<li>Set <code>externalLocation</code> to the absolute path of your application's installation directory
+(without any executable names)</li>
+<li>Set <code>packagePath</code> to the absolute path of the signed identity package produced in the previous step
+(with the file name)</li>
+<li>The <code>&lt;IdentityPackageFamilyName&gt;</code> can be found by running the <code>Get-AppxPackage &lt;IdentityPackageName&gt;</code>
+PowerShell command on a system where the identity package is registered. The <code>PackageFamilyName</code> property
+contains the value to use here.</li>
+</ul>
+<h4 id="per-machine-packagemanager">Per-Machine (PackageManager)</h4>
+<p>The code listing below demonstrates registering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.stagepackagebyuriasync"><strong>StagePackageByUriAsync</strong></a> and
+<a href="/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync"><strong>ProvisionPackageForAllUsersAsync</strong></a>
+methods and unregistering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.deprovisionpackageforallusersasync"><strong>DeprovisionPackageForAllUsersAsync</strong></a>
+and <a href="/uwp/api/windows.management.deployment.packagemanager.removepackageasync"><strong>RemovePackageAsync</strong></a> methods.</p>
+<pre><code class="lang-csharp">// Register the identity package during install
+
+var externalUri = new Uri(externalLocation);
+var packageUri = new Uri(packagePath);
+
+var packageManager = new PackageManager();
+
+var options = new StagePackageOptions();
+options.ExternalLocationUri = externalUri;
+
+await packageManager.StagePackageByUriAsync(packageUri, options);
+await packageManager.ProvisionPackageForAllUsersAsync(packageFamilyName);
+
+...
+
+// Unregister the identity package during uninstall
+
+var packageManager = new PackageManager();
+
+var packages = packageManager.FindPackagesForUserWithPackageTypes(&quot;&quot;, &quot;&lt;IdentityPackageFamilyName&gt;&quot;, PackageType.Main);
+foreach (var package in packages)
+{
+  await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FamilyName);
+  await packageManager.RemovePackageAsync(package.Id.FamilyName, RemovalOptions.RemoveForAllUsers);
+}
+</code></pre>
+<p>Note the below important details about this code:</p>
+<ul>
+<li>Set <code>externalLocation</code> to the absolute path of your application's installation directory
+(without any executable names)</li>
+<li>Set <code>packagePath</code> to the absolute path of the signed identity package produced in the previous step
+(with the file name)</li>
+<li>The <code>&lt;IdentityPackageFamilyName&gt;</code> can be found by running the <code>Get-AppxPackage &lt;IdentityPackageName&gt;</code>
+PowerShell command on a system where the identity package is registered. The <code>PackageFamilyName</code>
+property contains the value to use here.</li>
+</ul>
+<h2 id="sample-apps">Sample apps</h2>
+<p>See the <a href="https://aka.ms/sparsepkgsample">PackageWithExternalLocation</a> samples for fully functional
+C# and C++ apps that demonstrate how to register and unregister an identity package.</p>
+<h2 id="optional-steps">Optional steps</h2>
+<h3 id="localization-and-visual-assets">Localization and Visual Assets</h3>
+<p>Some features that understand package identity might result in strings and images from your
+identity package manifest being displayed in the Windows OS. For example:</p>
+<ul>
+<li>An application that uses camera, microphone, or location APIs will have a dedicated control toggle
+in Windows Privacy Settings along with a brokered consent prompt that users can use to grant or
+deny access to those sensitive resources.</li>
+<li>An application that registers a share target will show up in the share dialog.</li>
+</ul>
+<p>To localize the strings in the identity package manifest, see
+<a href="/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-manifest">Localize the manifest</a>.</p>
+<p>When providing paths to images in the <code>VisualElements</code> attributes in the identity package manifest,
+the provided paths should be relative paths within your application's installation directory that
+will resolve to a .png, .jpg, or .jpeg image. The attribute names indicate the expected dimensions
+of the images (150x150 and 40x40).</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/grant-identity-to-nonpackaged-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

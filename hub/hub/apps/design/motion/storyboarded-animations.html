@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Storyboarded animations </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Storyboarded animations ">
+    
+    <meta name="description" content="Learn how to use storyboarded animations to change the value of a dependency property as a function of time.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="storyboarded-animations">Storyboarded animations</h1>
+
+<p>Storyboarded animations are not just animations in the visual sense. A storyboarded animation is a way to change the value of a dependency property as a function of time. One of the main reasons you might need a storyboarded animation that's not from the animation library is to define the visual state for a control, as part of a control template or page definition.</p>
+<h2 id="differences-with-silverlight-and-wpf">Differences with Silverlight and WPF</h2>
+<p>If you are familiar with Microsoft Silverlight or Windows Presentation Foundation (WPF), read this section; otherwise, you can skip it.</p>
+<p>In general, creating storyboarded animations in a Windows Runtime app is like Silverlight or WPF. But there are a number of important differences:</p>
+<ul>
+<li>Storyboarded animations are not the only way to visually animate a UI, nor are they necessarily the easiest way for app developers to do so. Rather than using storyboarded animations it's often a better design practice to use theme animations and transition animations. These can quickly create recommended UI animations without getting into the intricacies of animation property targeting. For more info see <a href="xaml-animation.html">Animations overview</a>.</li>
+<li>In the Windows Runtime, many XAML controls include theme animations and transition animations as part of their built-in behavior. For the most part, WPF and Silverlight controls didn't have a default animation behavior.</li>
+<li>Not all custom animations you create can run by default in a Windows Runtime app, if the animation system determines that the animation might cause bad performance in your UI. Animations where the system determines there could be a performance impact are called <em>dependent animations</em>. It's dependent because the clocking of your animation is directly working against the UI thread, which is also where active user input and other updates are trying to apply the runtime changes to UI. A dependent animation that's consuming extensive system resources on the UI thread can make the app appear unresponsive in certain situations. If your animation causes a layout change or otherwise has the potential to impact performance on the UI thread, you often need to explicitly enable the animation to see it run. That's what the <strong>EnableDependentAnimation</strong> property on specific animation classes is for. See <a href="storyboarded-animations.html#dependent-and-independent-animations">Dependent and independent animations</a> for more info.</li>
+<li>Custom easing functions are not currently supported in the Windows Runtime.</li>
+</ul>
+<h2 id="defining-storyboarded-animations">Defining storyboarded animations</h2>
+<p>A storyboarded animation is a way to change the value of a dependency property as a function of time. The property you are animating is not always a property that directly affects the UI of your app. But since XAML is about defining UI for an app, usually it is a UI-related property you are animating. For example, you can animate the angle of a <a href="/uwp/api/Windows.UI.Xaml.Media.RotateTransform"><strong>RotateTransform</strong></a>, or the color value of a button's background.</p>
+<p>One of the main reasons you might be defining a storyboarded animation is if you are a control author or are re-templating a control, and you are defining visual states. For more info, see <a href="/previous-versions/windows/apps/jj819808(v=win.10)">Storyboarded animations for visual states</a>.</p>
+<p>Whether you are defining visual states or a custom animation for an app, the concepts and APIs for storyboarded animations that are described in this topic mostly apply to either.</p>
+<p>In order to be animated, the property you are targeting with a storyboarded animation must be a <em>dependency property</em>. A dependency property is a key feature of the Windows Runtime XAML implementation. The writeable properties of most common UI elements are typically implemented as dependency properties, so that you can animate them, apply data-bound values, or apply a <a href="/uwp/api/Windows.UI.Xaml.Style"><strong>Style</strong></a> and target the property with a <a href="/uwp/api/Windows.UI.Xaml.Setter"><strong>Setter</strong></a>. For more info about how dependency properties work, see <a href="/windows/uwp/xaml-platform/dependency-properties-overview">Dependency properties overview</a>.</p>
+<p>Most of the time, you define a storyboarded animation by writing XAML. If you use a tool such as Microsoft Visual Studio, it will produce the XAML for you. It's possible to define a storyboarded animation using code too, but that's less common.</p>
+<p>Let's look at a simple example. In this XAML example, the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> property is animated on a particular <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a> object.</p>
+<pre><code class="lang-xaml">&lt;Page ...&gt;
+  &lt;Page.Resources&gt;
+    &lt;!-- Storyboard resource: Animates a rectangle's opacity. --&gt;
+    &lt;Storyboard x:Name=&quot;myStoryboard&quot;&gt;
+      &lt;DoubleAnimation
+        Storyboard.TargetName=&quot;MyAnimatedRectangle&quot;
+        Storyboard.TargetProperty=&quot;Opacity&quot;
+        From=&quot;1.0&quot; To=&quot;0.0&quot; Duration=&quot;0:0:1&quot;/&gt;
+    &lt;/Storyboard&gt;
+  &lt;/Page.Resources&gt;
+
+  &lt;!--Page root element, UI definition--&gt;
+  &lt;Grid&gt;
+    &lt;Rectangle x:Name=&quot;MyAnimatedRectangle&quot;
+      Width=&quot;300&quot; Height=&quot;200&quot; Fill=&quot;Blue&quot;/&gt;
+  &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<h3 id="identifying-the-object-to-animate">Identifying the object to animate</h3>
+<p>In the previous example, the storyboard was animating the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> property of a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Rectangle"><strong>Rectangle</strong></a>. You don't declare the animations on the object itself. Instead, you do this within the animation definition of a storyboard. Storyboards are usually defined in XAML that's not in the immediate vicinity of the XAML UI definition of the object to animate. Instead, they're usually set up as a XAML resource.</p>
+<p>To connect an animation to a target, you reference the target by its identifying programming name. You should always apply the <a href="/windows/uwp/xaml-platform/x-name-attribute">x:Name attribute</a> in the XAML UI definition to name the object that you want to animate. You then target the object to animate by setting <a href="/dotnet/api/system.windows.media.animation.storyboard.targetname"><strong>Storyboard.TargetName</strong></a> within the animation definition. For the value of <strong>Storyboard.TargetName</strong>, you use the name string of the target object, which is what you set earlier and elsewhere with x:Name attribute.</p>
+<h3 id="targeting-the-dependency-property-to-animate">Targeting the dependency property to animate</h3>
+<p>You set a value for <a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)"><strong>Storyboard.TargetProperty</strong></a> in the animation. This determines which specific property of the targeted object is animated.</p>
+<p>Sometimes you need to target a property that's not an immediate property of the target object, but that is nested more deeply in an object-property relationship. You often need to do this in order to drill down into a set of contributing object and property values until you can reference a property type that can be animated (<a href="/dotnet/api/system.double"><strong>Double</strong></a>, <a href="/uwp/api/Windows.Foundation.Point"><strong>Point</strong></a>, <a href="/uwp/api/Windows.UI.Color"><strong>Color</strong></a>). This concept is called <em>indirect targeting</em>, and the syntax for targeting a property in this way is known as a <em>property path</em>.</p>
+<p>Here's an example. One common scenario for a storyboarded animation is to change the color of a part of an app UI or control in order to represent that the control is in a particular state. Say you want to animate the <a href="/uwp/api/windows.ui.xaml.controls.textblock.foreground"><strong>Foreground</strong></a> of a <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a>, so that it turns from red to green. You'd expect that a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation"><strong>ColorAnimation</strong></a> is involved, and that's correct. However, none of the properties on UI elements that affect the object's color are actually of type <a href="/uwp/api/Windows.UI.Color"><strong>Color</strong></a>. Instead, they're of type <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a>. So what you actually need to target for animation is the <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color"><strong>Color</strong></a> property of the <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a> class, which is a <strong>Brush</strong>-derived type that's typically used for these color-related UI properties. And here's what that looks like in terms of forming a property path for your animation's property targeting:</p>
+<pre><code class="lang-xaml">&lt;Storyboard x:Name=&quot;myStoryboard&quot;&gt;
+  &lt;ColorAnimation
+    Storyboard.TargetName=&quot;tb1&quot;
+    Storyboard.TargetProperty=&quot;(TextBlock.Foreground).(SolidColorBrush.Color)&quot;
+    From=&quot;Red&quot; To=&quot;Green&quot;/&gt;
+&lt;/Storyboard&gt;
+</code></pre>
+<p>Here's how to think of this syntax in terms of its parts:</p>
+<ul>
+<li>Each set of () parentheses encloses a property name.</li>
+<li>Within the property name, there's a dot, and that dot separates a type name and a property name, so that the property you're identifying is unambiguous.</li>
+<li>The dot in the middle, the one that's not inside parentheses, is a step. This is interpreted by the syntax to mean, take the value of the first property (which is an object), step into its object model, and target a specific sub-property of the first property's value.</li>
+</ul>
+<p>Here's a list of animation targeting scenarios where you'll probably be using indirect property targeting, and some property path strings that approximates the syntax you'll use:</p>
+<ul>
+<li>Animating the <a href="/uwp/api/windows.ui.xaml.media.translatetransform.x"><strong>X</strong></a> value of a <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a>, as applied to a <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>RenderTransform</strong></a>: <code>(UIElement.RenderTransform).(TranslateTransform.X)</code></li>
+<li>Animating a <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color"><strong>Color</strong></a> within a <a href="/uwp/api/Windows.UI.Xaml.Media.GradientStop"><strong>GradientStop</strong></a> of a <a href="/uwp/api/Windows.UI.Xaml.Media.LinearGradientBrush"><strong>LinearGradientBrush</strong></a>, as applied to a <a href="/uwp/api/Windows.UI.Xaml.Shapes.Shape.Fill"><strong>Fill</strong></a>: <code>(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)</code></li>
+<li>Animating the <a href="/uwp/api/windows.ui.xaml.media.translatetransform.x"><strong>X</strong></a> value of a <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a>, which is 1 of 4 transforms in a <a href="/uwp/api/Windows.UI.Xaml.Media.TransformGroup"><strong>TransformGroup</strong></a>, as applied to a <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>RenderTransform</strong></a>:<code>(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)</code></li>
+</ul>
+<p>You'll notice some of these examples use square brackets around numbers. This is an indexer. It indicates that the property name preceding it has a collection as value, and that you want an item (as identified by a zero-based index) from within that collection.</p>
+<p>You can also animate XAML attached properties. Always enclose the full attached property name in parentheses, for example <code>(Canvas.Left)</code>. For more info, see <a href="storyboarded-animations.html#animating-xaml-attached-properties">Animating XAML attached properties</a>.</p>
+<p>For more info on how to use a property path for indirect targeting of the property to animate, see <a href="/windows/uwp/xaml-platform/property-path-syntax">Property-path syntax</a> or <a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)"><strong>Storyboard.TargetProperty attached property</strong></a>.</p>
+<h3 id="animation-types">Animation types</h3>
+<p>The Windows Runtime animation system has three specific types that storyboarded animations can apply to:</p>
+<ul>
+<li><a href="/dotnet/api/system.double"><strong>Double</strong></a>, can be animated with any <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation"><strong>DoubleAnimation</strong></a></li>
+<li><a href="/uwp/api/Windows.Foundation.Point"><strong>Point</strong></a>, can be animated with any <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.PointAnimation"><strong>PointAnimation</strong></a></li>
+<li><a href="/uwp/api/Windows.UI.Color"><strong>Color</strong></a>, can be animated with any <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ColorAnimation"><strong>ColorAnimation</strong></a></li>
+</ul>
+<p>There's also a generalized <a href="/dotnet/api/system.object"><strong>Object</strong></a> animation type for object reference values, which we'll discuss later.</p>
+<h3 id="specifying-the-animated-values">Specifying the animated values</h3>
+<p>So far we've shown you how to target the object and the property to animate, but haven't yet described what the animation does to the property value when it runs.</p>
+<p>The animation types we've described are sometimes referred to as <strong>From</strong>/<strong>To</strong>/<strong>By</strong> animations. This means that the animation is changing the value of a property, over time, using one or more of these inputs that come from the animation definition:</p>
+<ul>
+<li>The value starts at the <strong>From</strong> value. If you don't specify a <strong>From</strong> value, the starting value is whatever value the animated property has at the time before the animation runs. This might be a default value, a value from a style or template, or a value specifically applied by a XAML UI definition or app code.</li>
+<li>At the end of the animation, the value is the <strong>To</strong> value.</li>
+<li>Or, to specify an ending value relative to the starting value, set the <strong>By</strong> property. You'd set this instead of the <strong>To</strong> property.</li>
+<li>If you don't specify a <strong>To</strong> value or a <strong>By</strong> value, the ending value is whatever value the animated property has at the time before the animation runs. In this case you'd better have a <strong>From</strong> value because otherwise the animation won't change the value at all; its starting and ending values are both the same.</li>
+<li>An animation typically has at least one of <strong>From</strong>, <strong>By</strong> or <strong>To</strong> but never all three.</li>
+</ul>
+<p>Let's revisit the earlier XAML example and look again at the <strong>From</strong> and <strong>To</strong> values, and the <strong>Duration</strong>. The example is animating the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> property, and the property type of <strong>Opacity</strong> is <a href="/dotnet/api/system.double"><strong>Double</strong></a>. So the animation to use here is <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation"><strong>DoubleAnimation</strong></a>.</p>
+<p><code>From=&quot;1.0&quot; To=&quot;0.0&quot;</code> specifies that when the animation runs, the <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> property starts at a value of 1 and animates to 0. In other words, in terms of what these <a href="/dotnet/api/system.double"><strong>Double</strong></a> values mean to the <strong>Opacity</strong> property, this animation will cause the object to start opaque and then fade to transparent.</p>
+<pre><code class="lang-xaml">...
+&lt;Storyboard x:Name=&quot;myStoryboard&quot;&gt;
+  &lt;DoubleAnimation
+    Storyboard.TargetName=&quot;MyAnimatedRectangle&quot;
+    Storyboard.TargetProperty=&quot;Opacity&quot;
+    From=&quot;1.0&quot; To=&quot;0.0&quot; Duration=&quot;0:0:1&quot;/&gt;
+&lt;/Storyboard&gt;
+...
+</code></pre>
+<p><code>Duration=&quot;0:0:1&quot;</code> specifies how long the animation lasts, that is, how fast the rectangle fades. A <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a> property is specified in the form of <em>hours</em>:<em>minutes</em>:<em>seconds</em>. The time duration in this example is one second.</p>
+<p>For more info about <a href="/uwp/api/Windows.UI.Xaml.Duration"><strong>Duration</strong></a> values and the XAML syntax, see <a href="/uwp/api/Windows.UI.Xaml.Duration"><strong>Duration</strong></a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For the example we showed, if you were sure that the starting state of the object being animated has <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>Opacity</strong></a> always equal to 1, either through the default or an explicit set, you could omit the <strong>From</strong> value, the animation would use the implicit starting value, and the result would be the same.</p>
+</div>
+<h3 id="fromtoby-are-nullable">From/To/By are nullable</h3>
+<p>We mentioned previously that you can omit <strong>From</strong>, <strong>To</strong> or <strong>By</strong> and thus use current non-animated values as substitutes for a missing value. <strong>From</strong>, <strong>To</strong>, or <strong>By</strong> properties of an animation aren't of the type you might guess. For example the type of the <a href="/uwp/api/windows.ui.xaml.media.animation.doubleanimation.easingfunction"><strong>DoubleAnimation.To</strong></a> property isn't <a href="/dotnet/api/system.double"><strong>Double</strong></a>. Instead, it's a <a href="/dotnet/api/system.nullable-1"><strong>Nullable</strong></a> for <strong>Double</strong>. And its default value is <strong>null</strong>, not 0. That <strong>null</strong> value is how the animation system distinguishes that you haven't specifically set a value for a <strong>From</strong>, <strong>To</strong>, or <strong>By</strong> property. Visual C++ component extensions (C++/CX) doesn't have a <strong>Nullable</strong> type, so it uses <a href="/uwp/api/Windows.Foundation.IReference_T_"><strong>IReference</strong></a> instead.</p>
+<h3 id="other-properties-of-an-animation">Other properties of an animation</h3>
+<p>The next properties described in this section are all optional in that they have defaults that are appropriate for most animations.</p>
+<h3 id="autoreverse"><strong>AutoReverse</strong></h3>
+<p>If you don't specify either <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.autoreverse"><strong>AutoReverse</strong></a> or <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior"><strong>RepeatBehavior</strong></a> on an animation, that animation will run once, and run for the time specified as the <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a>.</p>
+<p>The <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.autoreverse"><strong>AutoReverse</strong></a> property specifies whether a timeline plays in reverse after it reaches the end of its <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a>. If you set it to <strong>true</strong>, the animation reverses after it reaches the end of its declared <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a>, changing the value from its ending value (<strong>To</strong>) back to its starting value (<strong>From</strong>). This means that the animation effectively runs for double the time of its <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a>.</p>
+<h3 id="repeatbehavior"><strong>RepeatBehavior</strong></h3>
+<p>The <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior"><strong>RepeatBehavior</strong></a> property specifies either how many times a timeline plays, or a larger duration that the timeline should repeat within. By default, a timeline has an iteration count of &quot;1x&quot;, which means it plays one time for its <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a> and does not repeat.</p>
+<p>You can cause the animation to run multiple iterations. For example, a value of &quot;3x&quot; causes the animation to run three times. Or, you can specify a different <a href="/uwp/api/Windows.UI.Xaml.Duration"><strong>Duration</strong></a> for <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior"><strong>RepeatBehavior</strong></a>. That <strong>Duration</strong> should be longer than the <strong>Duration</strong> of the animation itself to be effective. For example, if you specify a <strong>RepeatBehavior</strong> of &quot;0:0:10&quot;, for an animation that has a <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a> of &quot;0:0:2&quot;, that animation repeats five times. If these don't divide evenly, the animation gets truncated at the time that the <strong>RepeatBehavior</strong> time is reached, which might be partway through. Finally, you can specify the special value &quot;Forever&quot;, which causes the animation to run infinitely until it's deliberately stopped.</p>
+<p>For more info about <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior"><strong>RepeatBehavior</strong></a> values and the XAML syntax, see <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.RepeatBehavior"><strong>RepeatBehavior</strong></a>.</p>
+<h3 id="fillbehaviorstop"><strong>FillBehavior=&quot;Stop&quot;</strong></h3>
+<p>By default, when an animation ends, the animation leaves the property value as the final <strong>To</strong> or <strong>By</strong>-modified value even after its duration is surpassed. However, if you set the value of the <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior"><strong>FillBehavior</strong></a> property to <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.FillBehavior"><strong>FillBehavior.Stop</strong></a>, the value of the animated value reverts to whatever the value was before the animation was applied, or more precisely to the current effective value as determined by the dependency property system (for more info on this distinction, see <a href="/windows/uwp/xaml-platform/dependency-properties-overview">Dependency properties overview</a>).</p>
+<h3 id="begintime"><strong>BeginTime</strong></h3>
+<p>By default, the <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.begintime"><strong>BeginTime</strong></a> of an animation is &quot;0:0:0&quot;, so it begins as soon as its containing <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> runs. You might change this if the <strong>Storyboard</strong> contains more than one animation and you want to stagger the start times of the others versus an initial animation, or to create a deliberate short delay.</p>
+<h3 id="speedratio"><strong>SpeedRatio</strong></h3>
+<p>If you have more than one animation in a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> you can change the time rate of one or more of the animations relative to the <strong>Storyboard</strong>. It's the parent <strong>Storyboard</strong> that ultimately controls how the <a href="/uwp/api/Windows.UI.Xaml.Duration"><strong>Duration</strong></a> time elapses while the animations run. This property isn't used very often. For more info see <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.speedratio"><strong>SpeedRatio</strong></a>.</p>
+<h2 id="defining-more-than-one-animation-in-a-storyboard">Defining more than one animation in a <strong>Storyboard</strong></h2>
+<p>The contents of a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> can be more than one animation definition. You might have more than one animation if you are applying related animations to two properties of the same target object. For example, you might change both the <a href="/uwp/api/windows.ui.xaml.media.compositetransform.translatex"><strong>TranslateX</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.compositetransform.translatey"><strong>TranslateY</strong></a> properties of a <a href="/uwp/api/Windows.UI.Xaml.Media.TranslateTransform"><strong>TranslateTransform</strong></a> used as the <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>RenderTransform</strong></a> of a UI element; this will cause the element to translate diagonally. You need two different animations to accomplish that, but you might want the animations to be part of the same <strong>Storyboard</strong> because you always want those two animations to be run together.</p>
+<p>The animations don't have to be the same type, or target the same object. They can have different durations, and don't have to share any property values.</p>
+<p>When the parent <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> runs, each of the animations within will run too.</p>
+<p>The <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> class actually has a lot of the same animation properties as the animation types do, because both share the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline"><strong>Timeline</strong></a> base class. Thus, a <strong>Storyboard</strong> can have a <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.repeatbehavior"><strong>RepeatBehavior</strong></a>, or a <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.begintime"><strong>BeginTime</strong></a>. You don't usually set these on a <strong>Storyboard</strong> though unless you want all the contained animations to have that behavior. As a general rule, any <strong>Timeline</strong> property as set on a <strong>Storyboard</strong> applies to all its child animations. If let unset, the <strong>Storyboard</strong> has an implicit duration that's calculated from the longest <a href="/uwp/api/Windows.UI.Xaml.Duration"><strong>Duration</strong></a> value of the contained animations. An explicitly set <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a> on a <strong>Storyboard</strong> that's shorter than one of its child animations will cause that animation to get cut off, which isn't usually desirable.</p>
+<p>A storyboard can't contain two animations that attempt to target and animate the same property on the same object. If you try this, you'll get a runtime error when the storyboard tries to run. This restriction applies even if the animations don't overlap in time because of deliberately different <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.begintime"><strong>BeginTime</strong></a> values and durations. If you really want to apply a more complex animation timeline to the same property in a single storyboard, the way to do this is to use a key-frame animation. See <a href="key-frame-and-easing-function-animations.html">Key-frame and easing function animations</a>.</p>
+<p>The animation system can apply more than one animation to the value of a property, if those inputs come from multiple storyboards. Using this behavior deliberately for simultaneously running storyboards isn't common. However it's possible that an app-defined animation that you apply to a control property will be modifying the <strong>HoldEnd</strong> value of an animation that was previously run as part of the control's visual state model.</p>
+<h2 id="defining-a-storyboard-as-a-resource">Defining a storyboard as a resource</h2>
+<p>A <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> is the container that you put animation objects in. You typically define the <strong>Storyboard</strong> as a resource that is available to the object that you want to animate, either in page-level <a href="/uwp/api/windows.ui.xaml.frameworkelement.resources"><strong>Resources</strong></a> or <a href="/uwp/api/windows.ui.xaml.application.resources"><strong>Application.Resources</strong></a>.</p>
+<p>This next example shows how the previous example <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> would be contained in a page-level <a href="/uwp/api/windows.ui.xaml.frameworkelement.resources"><strong>Resources</strong></a> definition, where the <strong>Storyboard</strong> is a keyed resource of the root <a href="/uwp/api/Windows.UI.Xaml.Controls.Page"><strong>Page</strong></a>. Note the <a href="/windows/uwp/xaml-platform/x-name-attribute">x:Name attribute</a>. This attribute is how you define a variable name for the <strong>Storyboard</strong>, so that other elements in XAML as well as code can refer to the <strong>Storyboard</strong> later.</p>
+<pre><code class="lang-xaml">&lt;Page ...&gt;
+  &lt;Page.Resources&gt;
+    &lt;!-- Storyboard resource: Animates a rectangle's opacity. --&gt;
+    &lt;Storyboard x:Name=&quot;myStoryboard&quot;&gt;
+      &lt;DoubleAnimation
+        Storyboard.TargetName=&quot;MyAnimatedRectangle&quot;
+        Storyboard.TargetProperty=&quot;Opacity&quot;
+        From=&quot;1.0&quot; To=&quot;0.0&quot; Duration=&quot;0:0:1&quot;/&gt;
+    &lt;/Storyboard&gt;
+  &lt;/Page.Resources&gt;
+  &lt;!--Page root element, UI definition--&gt;
+  &lt;Grid&gt;
+    &lt;Rectangle x:Name=&quot;MyAnimatedRectangle&quot;
+      Width=&quot;300&quot; Height=&quot;200&quot; Fill=&quot;Blue&quot;/&gt;
+  &lt;/Grid&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>Defining resources at the XAML root of a XAML file such as page.xaml or app.xaml is a common practice for how to organize keyed resources in your XAML. You also can factor resources into separate files and merge them into apps or pages. For more info, see <a href="../../develop/platform/xaml/xaml-resource-dictionary.html">ResourceDictionary and XAML resource references</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows Runtime XAML supports identifying resources either using the <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key attribute</a> or the <a href="/windows/uwp/xaml-platform/x-name-attribute">x:Name attribute</a>. Using x:Name attribute is more common for a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a>, because you'll want to reference it by variable name eventually, so that you can call its <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.begin"><strong>Begin</strong></a> method and run the animations. If you do use <a href="/windows/uwp/xaml-platform/x-key-attribute">x:Key attribute</a>, you'll need to use <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary"><strong>ResourceDictionary</strong></a> methods such as the <a href="/uwp/api/windows.ui.xaml.resourcedictionary"><strong>Item</strong></a> indexer to retrieve it as a keyed resource and then cast the retrieved object to <strong>Storyboard</strong> to use the <strong>Storyboard</strong> methods.</p>
+</div>
+<h3 id="storyboards-for-visual-states">Storyboards for visual states</h3>
+<p>You also put your animations within a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> unit when you are declaring the visual state animations for a control's visual appearance. In that case the <strong>Storyboard</strong> elements you define go into a <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a> container that's nested more deeply in a <a href="/uwp/api/Windows.UI.Xaml.Style"><strong>Style</strong></a> (it's the <strong>Style</strong> that is the keyed resource). You don't need a key or name for your <strong>Storyboard</strong> in this case because it's the <strong>VisualState</strong> that has a target name that the <a href="/uwp/api/windows.ui.xaml.visualstatemanager"><strong>VisualStateManager</strong></a> can invoke. The styles for controls are often factored into separate XAML <a href="/uwp/api/Windows.UI.Xaml.ResourceDictionary"><strong>ResourceDictionary</strong></a> files rather than placed in a page or app <strong>Resources</strong> collection. For more info, see <a href="/previous-versions/windows/apps/jj819808(v=win.10)">Storyboarded animations for visual states</a>.</p>
+<h2 id="dependent-and-independent-animations">Dependent and independent animations</h2>
+<p>At this point we need to introduce some important points about how the animation system works. In particular, animation interacts fundamentally with how a Windows Runtime app renders to the screen, and how that rendering uses processing threads. A Windows Runtime app always has a main UI thread, and this thread is responsible for updating the screen with current information. In addition, a Windows Runtime app has a composition thread, which is used for precalculating layouts immediately before they are shown. When you animate the UI, there's potential to cause a lot of work for the UI thread. The system must redraw large areas of the screen using fairly short time intervals between each refresh. This is necessary for capturing the latest property value of the animated property. If you're not careful, there's risk that an animation can make the UI less responsive, or will impact performance of other app features that are also on the same UI thread.</p>
+<p>The variety of animation that is determined to have some risk of slowing down the UI thread is called a <em>dependent animation</em>. An animation not subject to this risk is an <em>independent animation</em>. The distinction between dependent and independent animations isn't just determined by animation types (<a href="/uwp/api/Windows.UI.Xaml.Media.Animation.DoubleAnimation"><strong>DoubleAnimation</strong></a> and so on) as we described earlier. Instead, it's determined by which specific properties you are animating, and other factors like inheritance and composition of controls. There are circumstances where even if an animation does change UI, the animation can have minimal impact to the UI thread, and can instead be handled by the composition thread as an independent animation.</p>
+<p>An animation is independent if it has any of these characteristics:</p>
+<ul>
+<li>The <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.duration"><strong>Duration</strong></a> of the animation is 0 seconds (see Warning)</li>
+<li>The animation targets <a href="/uwp/api/Windows.UI.Xaml.UIElement.Opacity"><strong>UIElement.Opacity</strong></a></li>
+<li>The animation targets a sub-property value of these <a href="/uwp/api/Windows.UI.Xaml.UIElement"><strong>UIElement</strong></a> properties: <a href="/uwp/api/windows.ui.xaml.uielement.transform3d"><strong>Transform3D</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.rendertransform"><strong>RenderTransform</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.projection"><strong>Projection</strong></a>, <a href="/uwp/api/windows.ui.xaml.uielement.clip"><strong>Clip</strong></a></li>
+<li>The animation targets <a href="/dotnet/api/system.windows.controls.canvas.left"><strong>Canvas.Left</strong></a> or <a href="/dotnet/api/system.windows.controls.canvas.top"><strong>Canvas.Top</strong></a></li>
+<li>The animation targets a <a href="/uwp/api/Windows.UI.Xaml.Media.Brush"><strong>Brush</strong></a> value and uses a <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush"><strong>SolidColorBrush</strong></a>, animating its <a href="/uwp/api/Windows.UI.Xaml.Media.SolidColorBrush.Color"><strong>Color</strong></a></li>
+<li>The animation is an <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames"><strong>ObjectAnimationUsingKeyFrames</strong></a></li>
+</ul>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>In order for your animation to be treated as independent, you must explicitly set <code>Duration=&quot;0&quot;</code>. For example, if you remove <code>Duration=&quot;0&quot;</code> from this XAML, the animation is treated as dependent, even though the <a href="/uwp/api/windows.ui.xaml.media.animation.doublekeyframe.keytime"><strong>KeyTime</strong></a> of the frame is &quot;0:0:0&quot;.</p>
+</div>
+<pre><code class="lang-xaml">&lt;Storyboard&gt;
+  &lt;DoubleAnimationUsingKeyFrames
+    Duration=&quot;0&quot;
+    Storyboard.TargetName=&quot;Button2&quot;
+    Storyboard.TargetProperty=&quot;Width&quot;&gt;
+    &lt;DiscreteDoubleKeyFrame KeyTime=&quot;0:0:0&quot; Value=&quot;200&quot;/&gt;
+  &lt;/DoubleAnimationUsingKeyFrames&gt;
+&lt;/Storyboard&gt;
+</code></pre>
+<p>If your animation doesn't meet these criteria, it's probably a dependent animation. By default, the animation system won't run a dependent animation. So during the process of developing and testing, you might not even be seeing your animation running. You can still use this animation, but you must specifically enable each such dependent animation. To enable your animation, set the <strong>EnableDependentAnimation</strong> property of the animation object to <strong>true</strong>. (Each <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline"><strong>Timeline</strong></a> subclass that represents an animation has a different implementation of the property but they're all named <code>EnableDependentAnimation</code>.)</p>
+<p>The requirement of enabling dependent animations falling onto the app developer is a conscious design aspect of the animation system and the development experience. We want developers to be aware that animations do have a performance cost for the responsiveness of your UI. Poorly performing animations are difficult to isolate and debug in a full-scale app. So it's better to turn on only the dependent animations you really need for your app's UI experience. We didn't want to make it too easy to compromise your app's performance because of decorative animations that use a lot of cycles. For more info on performance tips for animation, see <a href="/windows/uwp/debug-test-perf/optimize-animations-and-media">Optimize animations and media</a>.</p>
+<p>As an app developer, you can also choose to apply an app-wide setting that always disables dependent animations, even those where <strong>EnableDependentAnimation</strong> is <strong>true</strong>. See <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.allowdependentanimations"><strong>Timeline.AllowDependentAnimations</strong></a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you're using the Animation Pane in Blend for Visual Studio 2019, whenever you attempt to apply a dependent animation to a visual state property, warnings will be displayed in the designer.
+Warnings will not show in the build output or Error List.
+If you're editing XAML by hand, the designer will not show a warning.
+At runtime when debugging, the Output pane's Debug output will show a warning that the animation is not independent and will be skipped.</p>
+</div>
+<h2 id="starting-and-controlling-an-animation">Starting and controlling an animation</h2>
+<p>Everything we've shown you so far doesn't actually cause an animation to run or be applied! Until the animation is started and is running, the value changes that an animation is declaring in XAML are latent and won't happen yet. You must explicitly start an animation in some way that's related to the app lifetime or the user experience. At the simplest level, you start an animation by calling the <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.begin"><strong>Begin</strong></a> method on the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> that's the parent for that animation. You can't call methods from XAML directly, so whatever you do to enable your animations, you'll be doing it from code. That will either be the code-behind for the pages or components of your app, or perhaps the logic of your control if you're defining a custom control class.</p>
+<p>Typically, you'll call <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.begin"><strong>Begin</strong></a> and just let the animation run to its duration completion. However, you can also use <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.pause"><strong>Pause</strong></a>, <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.resume"><strong>Resume</strong></a> and <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.stop"><strong>Stop</strong></a> methods to control the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> at run-time, as well as other APIs that are used for more advanced animation control scenarios.</p>
+<p>When you call <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.begin"><strong>Begin</strong></a> on a storyboard that contains an animation that repeats infinitely (<code>RepeatBehavior=&quot;Forever&quot;</code>), that animation runs until the page containing it is unloaded, or you specifically call <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.pause"><strong>Pause</strong></a> or <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.stop"><strong>Stop</strong></a>.</p>
+<h3 id="starting-an-animation-from-app-code">Starting an animation from app code</h3>
+<p>You can either start animations automatically, or in response to user actions. For the automatic case, you typically use an object lifetime event such as <a href="/uwp/api/windows.ui.xaml.frameworkelement.loaded"><strong>Loaded</strong></a> to act as the animation trigger. The <strong>Loaded</strong> event is a good event to use for this because at that point the UI is ready for interaction, and the animation won't be cut off at the beginning because another part of UI was still loading.</p>
+<p>In this example, the <a href="/uwp/api/windows.ui.xaml.uielement.pointerpressed"><strong>PointerPressed</strong></a> event is attached to the rectangle so that when the user clicks the rectangle, the animation begins.</p>
+<pre><code class="lang-xaml">&lt;Rectangle PointerPressed=&quot;Rectangle_Tapped&quot;
+  x:Name=&quot;MyAnimatedRectangle&quot;
+  Width=&quot;300&quot; Height=&quot;200&quot; Fill=&quot;Blue&quot;/&gt;
+</code></pre>
+<p>The event handler start the <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> (the animation) by using the <a href="/uwp/api/windows.ui.xaml.media.animation.storyboard.begin"><strong>Begin</strong></a> method of the <strong>Storyboard</strong>.</p>
+<pre><code class="lang-csharp">myStoryboard.Begin();
+</code></pre>
+<pre><code class="lang-cppwinrt">myStoryboard().Begin();
+</code></pre>
+<pre><code class="lang-cpp">myStoryboard-&gt;Begin();
+</code></pre>
+<pre><code class="lang-vb">myStoryBoard.Begin()
+</code></pre>
+<p>You can handle the <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.completed"><strong>Completed</strong></a> event if you want other logic to run after the animation has finished applying values. Also, for troubleshooting property system/animation interactions, the <a href="/uwp/api/windows.ui.xaml.dependencyobject.getanimationbasevalue"><strong>GetAnimationBaseValue</strong></a> method can be useful.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Whenever you are coding for an app scenario where you are starting an animation from app code, you might want to review again whether an animation or transition already exists in the animation library for your UI scenario. The library animations enable a more consistent UI experience across all Windows Runtime apps, and are easier to use.</p>
+</div>
+<p></p>
+<h3 id="animations-for-visual-states">Animations for visual states</h3>
+<p>The run behavior for a <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a> that's used to define a control's visual state is different from how an app might run a storyboard directly. As applied to a visual state definition in XAML, the <strong>Storyboard</strong> is an element of a containing <a href="/uwp/api/Windows.UI.Xaml.VisualState"><strong>VisualState</strong></a>, and the state as a whole is controlled by using the <a href="/uwp/api/windows.ui.xaml.visualstatemanager"><strong>VisualStateManager</strong></a> API. Any animations within will run according to their animation values and <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Timeline"><strong>Timeline</strong></a> properties when the containing <strong>VisualState</strong> is used by a control. For more info, see <a href="/previous-versions/windows/apps/jj819808(v=win.10)">Storyboards for visual states</a>. For visual states, the apparent <a href="/uwp/api/windows.ui.xaml.media.animation.timeline.fillbehavior"><strong>FillBehavior</strong></a> is different. If a visual state is changed to another state, all the property changes applied by the previous visual state and its animations are canceled, even if the new visual state doesn't specifically apply a new animation to a property.</p>
+<h3 id="storyboard-and-eventtrigger"><strong>Storyboard</strong> and <strong>EventTrigger</strong></h3>
+<p>There is one way to start an animation that can be declared entirely in XAML. However, this technique isn't widely used anymore. It's a legacy syntax from WPF and early versions of Silverlight prior to <a href="/uwp/api/windows.ui.xaml.visualstatemanager"><strong>VisualStateManager</strong></a> support. This <a href="/uwp/api/Windows.UI.Xaml.EventTrigger"><strong>EventTrigger</strong></a> syntax still works in Windows Runtime XAML for import/compatibility reasons, but only works for a trigger behavior based on the <a href="/uwp/api/windows.ui.xaml.frameworkelement.loaded"><strong>FrameworkElement.Loaded</strong></a> event; attempting to trigger off other events will throw exceptions or fail to compile. For more info, see <a href="/uwp/api/Windows.UI.Xaml.EventTrigger"><strong>EventTrigger</strong></a> or <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.BeginStoryboard"><strong>BeginStoryboard</strong></a>.</p>
+<h2 id="animating-xaml-attached-properties">Animating XAML attached properties</h2>
+<p>It's not a common scenario, but you can apply an animated value to a XAML attached property. For more info on what attached properties are and how they work, see <a href="/windows/uwp/xaml-platform/attached-properties-overview">Attached properties overview</a>. Targeting an attached property requires a <a href="/windows/uwp/xaml-platform/property-path-syntax">property-path syntax</a> that encloses the property name in parentheses. You can animate the built-in attached properties such as <a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)"><strong>Canvas.ZIndex</strong></a> by using an <a href="/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames"><strong>ObjectAnimationUsingKeyFrames</strong></a> that applies discrete integer values. However, an existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.</p>
+<h2 id="more-animation-types-and-next-steps-for-learning-about-animating-your-ui">More animation types, and next steps for learning about animating your UI</h2>
+<p>Up to now, we've shown the custom animations that are animating between two values, and then linearly interpolating the values as necessary while the animation runs. These are called <strong>From</strong>/<strong>To</strong>/<strong>By</strong> animations. But there's another animation type that enables you to declare intermediate values that fall between the start and end. These are called <em>key-frame animations</em>. There's also a way to alter the interpolation logic on either a <strong>From</strong>/<strong>To</strong>/<strong>By</strong> animation or a key-frame animation. This involves applying an easing function. For more info on these concepts, see <a href="key-frame-and-easing-function-animations.html">Key-frame and easing function animations</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/uwp/xaml-platform/property-path-syntax">Property-path syntax</a></li>
+<li><a href="/windows/uwp/xaml-platform/dependency-properties-overview">Dependency properties overview</a></li>
+<li><a href="key-frame-and-easing-function-animations.html">Key-frame and easing function animations</a></li>
+<li><a href="/previous-versions/windows/apps/jj819808(v=win.10)">Storyboarded animations for visual states</a></li>
+<li><a href="../../develop/platform/xaml/xaml-control-templates.html">Control templates</a></li>
+<li><a href="/uwp/api/Windows.UI.Xaml.Media.Animation.Storyboard"><strong>Storyboard</strong></a></li>
+<li><a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms616983(v=vs.95)"><strong>Storyboard.TargetProperty</strong></a></li>
+</ul>
+<p></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/motion/storyboarded-animations.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

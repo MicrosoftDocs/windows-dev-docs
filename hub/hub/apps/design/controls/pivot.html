@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Pivot </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Pivot ">
+    
+    <meta name="description" content="The Pivot control enables touch-swiping between a small set of content sections.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="pivot">Pivot</h1>
+
+<p>The Pivot control enables touch-swiping between a small set of content sections.</p>
+<p><img src="images/pivot_focus_selectedHeader.png" alt="Default focus underlines selected header"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The Pivot control is not recommended for <a href="../basics/app-silhouette.html">Windows 11 design patterns</a>. We strongly recommend using one of these alternatives instead:</p>
+<ul>
+<li><strong>WinUI 3</strong> - Use the <a href="selector-bar.html">SelectorBar</a> control.</li>
+<li><strong>WinUI 2/UWP</strong> - Use a <a href="navigationview.html">NavigationView</a> or <a href="tab-view.html">TabView</a> control instead of a Pivot control. See the <a href="#use-navigationview-instead-of-pivot">Use NavigationView instead of Pivot</a> section for an example.</li>
+</ul>
+</div>
+<p>To create a Pivot-like UI when using WinUI 3 and the Windows App SDK, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar">SelectorBar</a> control.</p>
+<p>To create a tabbed UI, use a <a href="tab-view.html">TabView</a> control.</p>
+<p>To achieve common top navigation patterns, we recommend using <a href="navigationview.html">NavigationView</a>, which automatically adapts to different screen sizes and allows for greater customization.</p>
+<p>Some key differences between the NavigationView and Pivot are listed here:</p>
+<ul>
+<li>Pivot supports touch-swiping to switch between items.</li>
+<li>Overflow items in a Pivot carousel, while NavigationView uses a menu dropdown overflow so that users can see all items.</li>
+<li>Pivot handles navigation between content sections, while NavigationView allows for more control over navigation behavior.</li>
+</ul>
+<h2 id="use-navigationview-instead-of-pivot">Use NavigationView instead of Pivot</h2>
+<p>If your app's UI uses the Pivot control, you can convert Pivot to <a href="/windows/winui/api/microsoft.ui.xaml.controls.navigationview">NavigationView</a> following this example.</p>
+<p>This XAML creates a NavigationView with 3 sections of content, like the example Pivot in <a href="#create-a-pivot-control">Create a pivot control</a>.</p>
+<pre><code class="lang-xaml">&lt;NavigationView x:Name=&quot;rootNavigationView&quot; Header=&quot;Category Title&quot;
+ ItemInvoked=&quot;NavView_ItemInvoked&quot;&gt;
+    &lt;NavigationView.MenuItems&gt;
+        &lt;NavigationViewItem Content=&quot;Section 1&quot; x:Name=&quot;Section1Content&quot; /&gt;
+        &lt;NavigationViewItem Content=&quot;Section 2&quot; x:Name=&quot;Section2Content&quot; /&gt;
+        &lt;NavigationViewItem Content=&quot;Section 3&quot; x:Name=&quot;Section3Content&quot; /&gt;
+    &lt;/NavigationView.MenuItems&gt;
+    
+    &lt;Frame x:Name=&quot;ContentFrame&quot; /&gt;
+&lt;/NavigationView&gt;
+
+&lt;Page x:Class=&quot;AppName.Section1Page&quot;&gt;
+    &lt;TextBlock Text=&quot;Content of section 1.&quot;/&gt;
+&lt;/Page&gt;
+
+&lt;Page x:Class=&quot;AppName.Section2Page&quot;&gt;
+    &lt;TextBlock Text=&quot;Content of section 2.&quot;/&gt;
+&lt;/Page&gt;
+
+&lt;Page x:Class=&quot;AppName.Section3Page&quot;&gt;
+    &lt;TextBlock Text=&quot;Content of section 3.&quot;/&gt;
+&lt;/Page&gt;
+</code></pre>
+<p>NavigationView provides more control over navigation customization and requires corresponding code-behind. To accompany the above XAML, use the following code-behind:</p>
+<pre><code class="lang-csharp">private void NavView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
+{
+   var navOptions = new FrameNavigationOptions
+   {
+      TransitionInfoOverride = args.RecommendedNavigationTransitionInfo,
+      IsNavigationStackEnabled = false,
+   };
+
+   switch (args.InvokedItemContainer.Name)
+   {
+      case nameof(Section1Content):
+         ContentFrame.NavigateToType(typeof(Section1Page), null, navOptions);
+         break;
+
+      case nameof(Section2Content):
+         ContentFrame.NavigateToType(typeof(Section2Page), null, navOptions);
+         break;
+
+      case nameof(Section3Content):
+         ContentFrame.NavigateToType(typeof(Section3Page), null, navOptions);
+         break;
+   }  
+}
+</code></pre>
+<p>This code mimics the Pivot control's built-in navigation experience, minus the touch-swiping experience between content sections. However, as you can see, you could also customize several points, including the animated transition, navigation parameters, and stack capabilities.</p>
+<h2 id="create-a-pivot-control">Create a pivot control</h2>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The Pivot control is not recommended for <a href="../basics/app-silhouette.html">Windows 11 design patterns</a>. We strongly recommend using one of these alternatives instead:</p>
+<ul>
+<li><strong>WinUI 3</strong> - Use the <a href="selector-bar.html">SelectorBar</a> control.</li>
+<li><strong>WinUI 2/UWP</strong> - Use a <a href="navigationview.html">NavigationView</a> or <a href="tab-view.html">TabView</a> control instead of a Pivot control. See the <a href="#use-navigationview-instead-of-pivot">Use NavigationView instead of Pivot</a> section for an example.</li>
+</ul>
+</div>
+<p>This XAML creates a basic Pivot control with 3 sections of content.</p>
+<pre><code class="lang-xaml">&lt;Pivot x:Name=&quot;rootPivot&quot; Title=&quot;Category Title&quot;&gt;
+    &lt;PivotItem Header=&quot;Section 1&quot;&gt;
+        &lt;!--Pivot content goes here--&gt;
+        &lt;TextBlock Text=&quot;Content of section 1.&quot;/&gt;
+    &lt;/PivotItem&gt;
+    &lt;PivotItem Header=&quot;Section 2&quot;&gt;
+        &lt;!--Pivot content goes here--&gt;
+        &lt;TextBlock Text=&quot;Content of section 2.&quot;/&gt;
+    &lt;/PivotItem&gt;
+    &lt;PivotItem Header=&quot;Section 3&quot;&gt;
+        &lt;!--Pivot content goes here--&gt;
+        &lt;TextBlock Text=&quot;Content of section 3.&quot;/&gt;
+    &lt;/PivotItem&gt;
+&lt;/Pivot&gt;
+</code></pre>
+<h3 id="pivot-items">Pivot items</h3>
+<p>Pivot is an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol">ItemsControl</a>, so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivotitem">PivotItem</a> is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items">Items</a> collection directly with XAML UI elements. Or, you can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.headertemplate">HeaderTemplate</a> to specify how the items are displayed.</p>
+<p>You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.selecteditem">SelectedItem</a> property to get or set the Pivot's active item. Use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.selectedindex">SelectedIndex</a> property to get or set the index of the active item.</p>
+<h3 id="pivot-headers">Pivot headers</h3>
+<p>You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.leftheader">LeftHeader</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.rightheader">RightHeader</a> properties to add other controls to the Pivot header.</p>
+<p>For example, you can add a <a href="command-bar.html">CommandBar</a> in the Pivot's RightHeader.</p>
+<pre><code class="lang-xaml">&lt;Pivot&gt;
+    &lt;Pivot.RightHeader&gt;
+        &lt;CommandBar&gt;
+                &lt;AppBarButton Icon=&quot;Add&quot;/&gt;
+                &lt;AppBarSeparator/&gt;
+                &lt;AppBarButton Icon=&quot;Edit&quot;/&gt;
+                &lt;AppBarButton Icon=&quot;Delete&quot;/&gt;
+                &lt;AppBarSeparator/&gt;
+                &lt;AppBarButton Icon=&quot;Save&quot;/&gt;
+        &lt;/CommandBar&gt;
+    &lt;/Pivot.RightHeader&gt;
+&lt;/Pivot&gt;
+</code></pre>
+<h3 id="pivot-interaction">Pivot interaction</h3>
+<p>The control features these touch gesture interactions:</p>
+<ul>
+<li>Tapping on a pivot item header navigates to that header's section content.</li>
+<li>Swiping left or right on a pivot item header navigates to the adjacent section.</li>
+<li>Swiping left or right on section content navigates to the adjacent section.</li>
+</ul>
+<p>The control comes in two modes:</p>
+<p><strong>Stationary</strong></p>
+<ul>
+<li>Pivots are stationary when all pivot headers fit within the allowed space.</li>
+<li>Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.</li>
+</ul>
+<p><strong>Carousel</strong></p>
+<ul>
+<li>Pivots carousel when all pivot headers don't fit within the allowed space.</li>
+<li>Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.</li>
+<li>Pivot items in a carousel loop from last to first pivot section.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<ul>
+<li>Avoid using more than 5 headers when using carousel mode, as looping more than 5 can become confusing.</li>
+<li>Pivot headers should not carousel in a <a href="../devices/designing-for-tv.html">10ft environment</a>. Set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.IsHeaderItemsCarouselEnabled">IsHeaderItemsCarouselEnabled</a> property to <code>false</code> if your app will run on Xbox.</li>
+</ul>
+</div>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/windows.ui.xaml.controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.pivot">Pivot class</a></li>
+<li><a href="winui2gallery:/item/Pivot">Open the WinUI 2 Gallery app and see the Pivot in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot">Pivot class</a></li>
+<li><a href="selector-bar.html">SelectorBar</a></li>
+<li><a href="navigationview.html">NavigationView</a></li>
+<li><a href="tab-view.html">TabView</a></li>
+<li><a href="../basics/navigation-basics.html">Navigation design basics</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/pivot.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

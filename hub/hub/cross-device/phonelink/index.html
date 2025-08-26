@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Phone Link Task Continuity </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Phone Link Task Continuity ">
+    
+    <meta name="description" content="Phone Link enables synchronization between your Windows PC and mobile device. Learn how to integrate your Windows app with Phone Link for task continuity.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="phone-link---seamless-task-continuity">Phone Link - Seamless task continuity</h1>
+
+<p>Android mobile devices that have installed the &quot;Link to Windows&quot; package can programmatically share recent tasks from your Android app to be continued on your Windows PC (such as website URLs, document links, music tracks, etc.).</p>
+<p>Cross Device Task Continuity is evolving to use the Continuity SDK to offer a deeper native integration with Windows Taskbar, better serving customers in a natural and intuitive way. While the original implementation of Phone Link task continuity app is still supported, for new implementations, we recommend using Cross Device Resume (XDR) in the Continuity SDK for Windows Taskbar integration. Learn more: <a href="/windows/apps/develop/windows-integration/cross-device-resume">Cross Device Resume (XDR) using Continuity SDK (Android and Windows Applications)</a>.</p>
+<p>The Continuity SDK enables more seamless cross-device experiences with Cross Device Resume (XDR) displaying task continuation icons to help you to resume your recent Android device tasks directly from the Windows Taskbar (without the need to rely on the Phone Link app interface).</p>
+<h2 id="how-to-integrate-your-android-app-with-phone-link-task-continuity">How to integrate your Android app with Phone Link task continuity</h2>
+<p>Learn how to programmatically share recent tasks from your Android app (such as website URLs, document links, music tracks, etc.) to a Windows PC that has <a href="https://www.microsoft.com/windows/sync-across-your-devices">set up Phone Link</a>. This feature is only available on <a href="https://support.microsoft.com/topic/supported-devices-for-phone-link-experiences-cb044172-87aa-9e41-d446-c4ac83ce8807#bkmk_task_continuity_api">supported devices for Phone Link experiences</a>.</p>
+<h3 id="scenario-requirements">Scenario requirements</h3>
+<p>The following conditions must be met for your Android app to access &quot;Link to Windows&quot; task continuity:</p>
+<ul>
+<li>DO sync valid web URLs to be accessible by the Windows PC</li>
+<li>DO sync cloud document links to be accessible by the Windows PC</li>
+<li>DO sync local document links to the Windows PC that must be accessible on the mobile device through your app</li>
+<li>DO NOT sync more than 60 times per minute</li>
+<li>DO NOT sync content if the user is not engaging with your app experience</li>
+</ul>
+<h3 id="phone-link-and-cross-device-resume-surface">Phone Link and Cross Device Resume surface</h3>
+<p>The Phone Link will surface your sync'ed content in the Apps node under &quot;Recently used&quot; and &quot;Recent websites&quot; and in a notification flyout.</p>
+<p><img src="../../images/phonelink-recents.png" alt="Phone Link screenshot of recently used apps and websites"></p>
+<p><a href="/windows/apps/develop/windows-integration/cross-device-resume">Cross Device Resume (XDR) using Continuity SDK (Android and Windows Applications)</a> will surface your sync'ed content on the Windows Taskbar.</p>
+<p><img src="../../images/continuity-sdk-taskbar.png" alt="Windows Taskbar screenshot"></p>
+<h3 id="limited-access-feature-laf-approval">Limited Access Feature (LAF) approval</h3>
+<p>Phone Link task continuity is a Limited Access Feature (LAF). To gain access, you will need to get approval from Microsoft to interoperate with the &quot;Link to Windows&quot; package preloaded on Android mobile devices.</p>
+<p>To request access, email <code>wincrossdeviceapi@microsoft.com</code> with the information listed below.</p>
+<ul>
+<li>Description of your user experience</li>
+<li>Screenshot of your application where a user natively accesses web or documents</li>
+<li>PackageId of your application</li>
+<li>Google Play store link for your application</li>
+</ul>
+<p>If the request is approved, you will receive instructions on how to unlock the feature. Approvals will be based on your communication, provided that your scenario meets the <a href="#scenario-requirements">Scenario Requirements</a> outlined above.</p>
+<h3 id="data-handling">Data Handling</h3>
+<p>By using the Phone Link task continuity, Microsoft will process and transfer your data in accordance with the <a href="https://www.microsoft.com/servicesagreement">Microsoft Services Agreement</a> and the <a href="https://privacy.microsoft.com/privacystatement">Microsoft Privacy Statement</a>. Data that is transferred to the user's linked devices may be processed through Microsoft's cloud services to ensure reliable data transfer between devices. The data handled by this API is not retained by Microsoft's cloud services subject to end user control.</p>
+<p>The Continuity SDK that you will integrate in your app package ensures that data provided to the API is only handled by trusted Microsoft packages.</p>
+<h2 id="phone-link-integration-code-samples">Phone Link integration code samples</h2>
+<p>Below are general guidelines and code samples for integration. For detailed integration guidance, refer to the Kotlin doc of the SDK.</p>
+<h3 id="android-app-manifest-declarations">Android app manifest declarations</h3>
+<p>The app manifest is an XML file that serves as a blueprint for your Android app. The declaration file provides information to the operating system about your app’s structure, components, permissions, etc. The follow declarations are required for task continuity with &quot;Link to Windows&quot;.</p>
+<h4 id="feature-metadata">Feature Metadata</h4>
+<p>Partner apps need to first register meta-data in your app manifest.</p>
+<p>To participate in the app context contract, meta-data must be declared for the supported type of app context. For example, to add app context provider metadata for the <strong>App Handoff</strong> feature:</p>
+<pre><code class="lang-xml">&lt;application...&gt;
+&lt;meta-data
+android:name=&quot;com.microsoft.crossdevice.applicationContextProvider&quot;
+android:value=&quot;true&quot; /&gt;
+&lt;/application&gt;
+</code></pre>
+<p>If your app supports more than one type of app context, each type of meta-data must be added. The types of meta-data currently supported, include:</p>
+<pre><code class="lang-xml">&lt;meta-data
+android:name=&quot;com.microsoft.crossdevice.browserContextProvider&quot;
+android:value=&quot;true&quot; /&gt;
+
+&lt;meta-data
+android:name=&quot;com.microsoft.crossdevice.applicationContextProvider&quot;
+android:value=&quot;true&quot; /&gt;
+
+&lt;meta-data
+android:name=&quot;com.microsoft.crossdevice.resumeActivityProvider
+android:value=&quot;true&quot; /&gt;
+</code></pre>
+<p>To add a new type, the meta-data name format should be &quot;com.microsoft.crossdevice.xxxProvider&quot;.</p>
+<p>Apps must also declare the trigger type meta-data in the manifest. These declarations help the system determine how and when the app should notify Load-Time Weaving (LTW) about certain features being active.</p>
+<p>For a self-notifying trigger, where the app itself is responsible for notifying the system and is enabled on all devices, regardless of Original Equipment Manufacturer (OEM), the trigger type should be declared as:</p>
+<pre><code class="lang-xml">&lt;application ...
+&lt;meta-data
+android:name=&quot;com.microsoft.crossdevice.trigger.PartnerApp&quot;
+android:value=&quot;the sum value of all features' binary codes&quot; /&gt;
+
+&lt;/application&gt;
+</code></pre>
+<p>For a system API trigger, in which the app relies on system APIs to trigger the &quot;Link to Windows&quot; feature, enabled only on specific OEM devices, the trigger type should be declared as:</p>
+<pre><code class="lang-xml">&lt;application ...
+&lt;meta-data
+android:name=&quot;com.microsoft.crossdevice.trigger.SystemApi&quot;
+android:value=&quot;the sum value of all features' binary codes&quot; /&gt;
+
+&lt;/application&gt;
+</code></pre>
+<p>The features' binary codes are now:</p>
+<pre><code class="lang-xml">APPLICATION_CONTEXT: 1
+BROWSER_HISTORY:     2
+RESUME_ACTIVITY:     4
+</code></pre>
+<p>The app manifest registration may look like this example:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt; 
+&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; 
+
+    &lt;application … 
+ 
+       &lt;!-- 
+           This is the meta-data represents this app supports XDR, LTW will check  
+           the package before we request app context. 
+       --&gt; 
+       &lt;meta-data 
+                android:name=&quot;com.microsoft.crossdevice.resumeActivityProvider&quot; 
+                android:value=&quot;true&quot; /&gt;
+
+             &lt;!-- 
+           This is the meta-data represents this app supports trigger from app, the
+           Value is the code of XDR feature, LTW will check if the app support partner
+           app trigger when receiving trigger broadcast.
+           --&gt; 
+       &lt;meta-data 
+                android:name=&quot;com.microsoft.crossdevice.trigger.PartnerApp&quot; 
+                android:value=&quot;4&quot; /&gt;
+
+    &lt;/application&gt;  
+&lt;/manifest&gt; 
+</code></pre>
+<h2 id="code-sample-for-sending-app-context">Code sample for sending app context</h2>
+<p>Once the app manifest declarations have been added, &quot;Link to Windows&quot; partner apps will need to:</p>
+<ol>
+<li><p>Determine the appropriate timing to call the <strong>Initialize and DeInitialize functions</strong> for the Continuity SDK. After calling the Initialize function, a callback that implements <code>IAppContextEventHandler</code> should be triggered.</p>
+</li>
+<li><p>After initializing the Continuity SDK, if <code>onContextRequestReceived()</code> is called, it indicates the connection is established. The app can then <strong>send <code>AppContext</code></strong> (including create and update) to LTW or <strong>delete <code>AppContext</code></strong> from LTW.</p>
+</li>
+</ol>
+<p>Be sure to avoid sending any sensitive data in <code>AppContext</code>, such as access tokens. Additionally, if the lifetime is set too short, the <code>AppContext</code> may expire before it is sent to the PC. It is recommended to set a minimum lifetime of at least 5 minutes.</p>
+<pre><code class="lang-kotlin">class MainActivity : AppCompatActivity() {
+
+    private val appContextResponse = object : IAppContextResponse {
+        override fun onContextResponseSuccess(response: AppContext) {
+            Log.d(&quot;MainActivity&quot;, &quot;onContextResponseSuccess&quot;)
+            runOnUiThread {
+                Toast.makeText(
+                    this@MainActivity,
+                    &quot;Context response success: ${response.contextId}&quot;,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        override fun onContextResponseError(response: AppContext, throwable: Throwable) {
+            Log.d(&quot;MainActivity&quot;, &quot;onContextResponseError: ${throwable.message}&quot;)
+            runOnUiThread {
+                Toast.makeText(
+                    this@MainActivity,
+                    &quot;Context response error: ${throwable.message}&quot;,
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private lateinit var appContextEventHandler: IAppContextEventHandler
+
+    private val _currentAppContext = MutableLiveData&lt;AppContext?&gt;()
+    private val currentAppContext: LiveData&lt;AppContext?&gt; get() = _currentAppContext
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets -&gt;
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+        LogUtils.setDebugMode(true)
+        var ready = false
+        val buttonSend: Button = findViewById(R.id.buttonSend)
+        val buttonDelete: Button = findViewById(R.id.buttonDelete)
+        val buttonUpdate: Button = findViewById(R.id.buttonUpdate)
+        setButtonDisabled(buttonSend)
+        setButtonDisabled(buttonDelete)
+        setButtonDisabled(buttonUpdate)
+        buttonSend.setOnClickListener {
+            if (ready) {
+                sendAppContext()
+            }
+        }
+        buttonDelete.setOnClickListener {
+            if (ready) {
+                deleteAppContext()
+            }
+        }
+        buttonUpdate.setOnClickListener {
+            if (ready) {
+                updateAppContext()
+            }
+        }
+        appContextEventHandler = object : IAppContextEventHandler {
+            override fun onContextRequestReceived(contextRequestInfo: ContextRequestInfo) {
+                LogUtils.d(&quot;MainActivity&quot;, &quot;onContextRequestReceived&quot;)
+                ready = true
+                setButtonEnabled(buttonSend)
+                setButtonEnabled(buttonDelete)
+                setButtonEnabled(buttonUpdate)
+            }
+
+            override fun onInvalidContextRequestReceived(throwable: Throwable) {
+                Log.d(&quot;MainActivity&quot;, &quot;onInvalidContextRequestReceived&quot;)
+            }
+
+            override fun onSyncServiceDisconnected() {
+                Log.d(&quot;MainActivity&quot;, &quot;onSyncServiceDisconnected&quot;)
+                ready = false
+                setButtonDisabled(buttonSend)
+                setButtonDisabled(buttonDelete)
+            }
+        }
+        // Initialize the AppContextManager
+        AppContextManager.initialize(this.applicationContext, appContextEventHandler)
+
+
+        // Update currentAppContext text view.
+        val textView = findViewById&lt;TextView&gt;(R.id.appContext)
+        currentAppContext.observe(this, Observer { appContext -&gt;
+            appContext?.let {
+                textView.text =
+                    &quot;Current app context: ${it.contextId}\n App ID: ${it.appId}\n Created: ${it.createTime}\n Updated: ${it.lastUpdatedTime}\n Type: ${it.type}&quot;
+                Log.d(&quot;MainActivity&quot;, &quot;Current app context: ${it.contextId}&quot;)
+            } ?: run {
+                textView.text = &quot;No current app context available&quot;
+                Log.d(&quot;MainActivity&quot;, &quot;No current app context available&quot;)
+            }
+        })
+
+    }
+
+    // Send app context to LTW
+    private fun sendAppContext() {
+        val appContext = AppContext().apply {
+            this.contextId = generateContextId()
+            this.appId = applicationContext.packageName
+            this.createTime = System.currentTimeMillis()
+            this.lastUpdatedTime = System.currentTimeMillis()
+            // Set the type of app context, for example, resume activity.
+            this.type = ProtocolConstants.TYPE_RESUME_ACTIVITY
+            // Set the rest fields in appContext
+            //……
+        }
+        _currentAppContext.value = appContext
+        AppContextManager.sendAppContext(this.applicationContext, appContext, appContextResponse)
+    }
+
+    // Delete app context from LTW
+    private fun deleteAppContext() {
+        currentAppContext.value?.let {
+            AppContextManager.deleteAppContext(
+                this.applicationContext,
+                it.contextId,
+                appContextResponse
+            )
+            _currentAppContext.value = null
+        } ?: run {
+            Toast.makeText(this, &quot;No resume activity to delete&quot;, Toast.LENGTH_SHORT).show()
+            Log.d(&quot;MainActivity&quot;, &quot;No resume activity to delete&quot;)
+        }
+    }
+
+    // Update app context from LTW
+    private fun updateAppContext() {
+        currentAppContext.value?.let {
+            it.lastUpdatedTime = System.currentTimeMillis()
+            AppContextManager.sendAppContext(this.applicationContext, it, appContextResponse)
+            _currentAppContext.postValue(it)
+        } ?: run {
+            Toast.makeText(this, &quot;No resume activity to update&quot;, Toast.LENGTH_SHORT).show()
+            Log.d(&quot;MainActivity&quot;, &quot;No resume activity to update&quot;)
+        }
+    }
+
+    private fun setButtonDisabled(button: Button) {
+        button.isEnabled = false
+        button.alpha = 0.5f
+    }
+
+    private fun setButtonEnabled(button: Button) {
+        button.isEnabled = true
+        button.alpha = 1.0f
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Deinitialize the AppContextManager
+        AppContextManager.deInitialize(this.applicationContext)
+    }
+
+    private fun generateContextId(): String {
+        return &quot;${packageName}.${UUID.randomUUID()}&quot;
+    }
+}
+</code></pre>
+<p>For all the <strong>required</strong> and <strong>optional</strong> fields, refer to <a href="#appcontext-description">AppContext Description</a>.</p>
+<h3 id="appcontext-description">AppContext description</h3>
+<p>The following values should be provided by partner apps when sending app context:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+<th>Extra information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contextId [required]</td>
+<td>Used to distinguish it from other app contexts.</td>
+<td>Unique for each app context.Format: &quot;<span class="math">\({packageName}.\)</span>{UUID.randomUUID()}&quot;</td>
+</tr>
+<tr>
+<td>type [required]</td>
+<td>A binary flag that indicates what app context type is sent to LTW.</td>
+<td>The value should be consistent with requestedContextType above</td>
+</tr>
+<tr>
+<td>createTime[required] [FR1]</td>
+<td>Timestamp representing the create time of the app context.</td>
+<td></td>
+</tr>
+<tr>
+<td>lastUpdatedTime[required]</td>
+<td>Timestamp representing the last updated time of the app context.</td>
+<td>Any time when any fields of app context is updated, the updated time needs to be recorded.</td>
+</tr>
+<tr>
+<td>teamId [optional]</td>
+<td>Used to identify the organization or group the app belongs to.</td>
+<td></td>
+</tr>
+<tr>
+<td>intentUri [optional]</td>
+<td>Used to indicate which app can continue the app context handed over from the originating device.</td>
+<td>The maximum length is 2083 characters.</td>
+</tr>
+<tr>
+<td>appId [optional]</td>
+<td>The package of the application the context is for.</td>
+<td></td>
+</tr>
+<tr>
+<td>title[optional]</td>
+<td>The title of this app context, such as a document name or web page title.</td>
+<td></td>
+</tr>
+<tr>
+<td>weblink[optional]</td>
+<td>The URL of the webpage to load in a browser to continue the app context.</td>
+<td>The maximum length is 2083 characters.</td>
+</tr>
+<tr>
+<td>preview[optional]</td>
+<td>Bytes of the preview image that can represent the app context</td>
+<td></td>
+</tr>
+<tr>
+<td>extras[optional]</td>
+<td>A key-value pair object containing app-specific state information needed to continue an app context on the continuing device.</td>
+<td>Need to provide when the app context has its unique data.</td>
+</tr>
+<tr>
+<td>LifeTime[optional]</td>
+<td>The lifetime of the app context in milliseconds.</td>
+<td>Only used for ongoing scenario, if not set, the default value is 30 days).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="browser-continuity-code-sample">Browser Continuity code sample</h2>
+<p>This sample highlights use of the <strong>Browser Continuity</strong> type, which differs from other <code>AppContext</code> types.</p>
+<pre><code class="lang-kotlin">class MainActivity : AppCompatActivity() {
+
+    private val appContextResponse = object : IAppContextResponse {
+        override fun onContextResponseSuccess(response: AppContext) {
+            Log.d(&quot;MainActivity&quot;, &quot;onContextResponseSuccess&quot;)
+        }
+
+        override fun onContextResponseError(response: AppContext, throwable: Throwable) {
+            Log.d(&quot;MainActivity&quot;, &quot;onContextResponseError: ${throwable.message}&quot;)
+        }
+    }
+
+    private lateinit var appContextEventHandler: IAppContextEventHandler
+
+    private val browserHistoryContext: BrowserHistoryContext = BrowserHistoryContext()
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //……
+        LogUtils.setDebugMode(true)
+        var ready = false
+        val buttonSend: Button = findViewById(R.id.buttonSend)
+        val buttonDelete: Button = findViewById(R.id.buttonDelete)
+        setButtonDisabled(buttonSend)
+        setButtonDisabled(buttonDelete)
+        buttonSend.setOnClickListener {
+            if (ready) {
+                sendBrowserHistory ()
+            }
+        }
+        buttonDelete.setOnClickListener {
+            if (ready) {
+                clearBrowserHistory ()
+            }
+        }
+        appContextEventHandler = object : IAppContextEventHandler {
+            override fun onContextRequestReceived(contextRequestInfo: ContextRequestInfo) {
+                LogUtils.d(&quot;MainActivity&quot;, &quot;onContextRequestReceived&quot;)
+                ready = true
+                setButtonEnabled(buttonSend)
+                setButtonEnabled(buttonDelete)
+            }
+
+            override fun onInvalidContextRequestReceived(throwable: Throwable) {
+                Log.d(&quot;MainActivity&quot;, &quot;onInvalidContextRequestReceived&quot;)
+            }
+
+            override fun onSyncServiceDisconnected() {
+                Log.d(&quot;MainActivity&quot;, &quot;onSyncServiceDisconnected&quot;)
+                ready = false
+                setButtonDisabled(buttonSend)
+                setButtonDisabled(buttonDelete)
+            }
+        }
+        // Initialize the AppContextManager
+        AppContextManager.initialize(this.applicationContext, appContextEventHandler)
+    }
+
+    // Send browser history to LTW
+    private fun sendBrowserHistory () {
+        browserHistoryContext.setAppId(this.packageName)
+        browserHistoryContext.addBrowserContext(System.currentTimeMillis(),
+             Uri.parse(&quot;https://www.bing.com/&quot;), &quot;Bing Search&quot;, null
+        )
+        AppContextManager.sendAppContext(this.applicationContext, browserHistoryContext, appContextResponse)
+
+    }
+
+    // Clear browser history from LTW
+         private fun clearBrowserHistory() {
+        browserHistoryContext.setAppId(this.packageName)
+        browserHistoryContext.setBrowserContextEmptyFlag(true)
+        AppContextManager.sendAppContext(this.applicationContext, browserHistoryContext, appContextResponse)
+    }
+
+    private fun setButtonDisabled(button: Button) {
+        button.isEnabled = false
+        button.alpha = 0.5f
+    }
+
+    private fun setButtonEnabled(button: Button) {
+        button.isEnabled = true
+        button.alpha = 1.0f
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Deinitialize the AppContextManager
+        AppContextManager.deInitialize(this.applicationContext)
+    }
+
+    //……
+}
+</code></pre>
+<p>For all the <strong>required</strong> and <strong>optional</strong> fields, see <a href="#browsercontext-description">BrowserContext Description</a>.</p>
+<h3 id="browsercontext-description">BrowserContext description</h3>
+<p>Partner apps can call the <code>addBrowserContext</code> method to add browser history. The following values should be provided when adding browser history:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>browserWebUri [required]</td>
+<td>A web URI that will open in browser on PC (http: or https:).</td>
+</tr>
+<tr>
+<td>title [required]</td>
+<td>The title of the web page.</td>
+</tr>
+<tr>
+<td>timestamp [required]</td>
+<td>The timestamp that the web page was first opened or last refreshed.</td>
+</tr>
+<tr>
+<td>favIcon [optional]</td>
+<td>The favicon of the web page in bytes, should be small in general.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="integration-validation-steps">Integration validation steps</h2>
+<ol>
+<li><p><strong>Prepare</strong> by ensuring that private LTW is installed. Confirm that LTW is connected to PC: <a href="https://support.microsoft.com/topic/phone-link-requirements-and-setup-cd2a1ee7-75a7-66a6-9d4e-bf22e735f9e3#bkmk_cdeh_learn_more">How to manage your mobile device on your PC</a>. Confirm that LTW is connected to Phone Link: <a href="https://support.microsoft.com/topic/phone-link-requirements-and-setup-cd2a1ee7-75a7-66a6-9d4e-bf22e735f9e3">Phone Link requirements and setup</a>. If after scanning the QR code, you cannot jump into LTW, open LTW first and scan the QR code within the app. Lastly, verify that the partner app has integrated the Continuity SDK.</p>
+</li>
+<li><p><strong>Validate</strong> by launching the app adn initializing the Continuity SDK. Confirm that <code>onContextRequestReceived()</code> is called. Once <code>onContextRequestReceived()</code> is called, the app can send the app context to LTW. If <code>onContextResponseSuccess()</code> is called after sending app context, the SDK integration is successful.</p>
+</li>
+</ol>
+<h2 id="windows-cross-device-repo-on-github">Windows Cross-Device repo on GitHub</h2>
+<p>Find information about integrating the Windows Cross-Device SDK into your project in the <a href="https://github.com/microsoft/Windows-Cross-Device/">Windows-Cross-Device repo on GitHub</a>.</p>
+<h2 id="phone-link-faqs">Phone Link FAQs</h2>
+<p>For a list of FAQs, see <a href="https://www.microsoft.com/windows/sync-across-your-devices">Phone Link Frequently Asked Questions</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/cross-device/phonelink/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

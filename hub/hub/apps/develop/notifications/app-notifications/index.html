@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>App notifications overview </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="App notifications overview ">
+    
+    <meta name="description" content="Overview of Windows App SDK App Notifications">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="app-notifications-overview">App notifications overview</h1>
+
+<p><img src="images/shell-1x.png" alt="A screen capture showing an app notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, &quot;Going&quot;. There are two buttons labeled &quot;RSVP&quot; and &quot;Dismiss&quot;"></p>
+<p>App notifications (also called <em>toast</em> notifications) are messages that your app can construct and deliver to your user while they are not currently inside your app. The notification content is displayed in a transient window in the bottom right corner of the screen and in the Notification Center (called Action Center in Windows 10). App notifications can be used to inform the user of application status or state changes, or to prompt the user to take an action. App notifications can either be sent locally or from a cloud service using <a href="../push-notifications/index.html">push notifications</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The term &quot;toast notification&quot; is being replaced with &quot;app notification&quot;. These terms both refer to the same feature of Windows, but over time we will phase out the use of &quot;toast notification&quot; in the documentation.</p>
+</div>
+<p>This section provides design and implementation guidance for app notifications in the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a> and WinRT.</p>
+<h2 id="app-notification-ux-and-implementation-guidance">App notification UX and implementation guidance</h2>
+<ul>
+<li><a href="toast-ux-guidance.html">App notification UX guidance</a></li>
+<li><a href="send-local-toast.html">Send a local app notification from C# apps</a></li>
+<li><a href="send-local-toast-cpp-uwp.html">Send a local app notification from C++ UWP apps</a></li>
+<li><a href="send-local-toast-desktop-cpp-wrl.html">Send a local app notification from Win32 C++ WRL apps</a></li>
+<li><a href="send-local-toast-other-apps.html">Send a local app notification from other types of unpackaged apps</a></li>
+<li><a href="adaptive-interactive-toasts.html">App notification content</a></li>
+<li><a href="toast-schema.html">App notification content schema</a></li>
+<li><a href="scheduled-toast.html">Schedule an app notification</a></li>
+</ul>
+<h2 id="additional-app-notifications-features">Additional app notifications features</h2>
+<ul>
+<li><a href="custom-audio-on-toasts.html">Custom audio on app notifications</a></li>
+<li><a href="toast-progress-bar.html">App notification progress bar and data binding</a></li>
+<li><a href="toast-pending-update.html">App notification with pending update activation</a></li>
+<li><a href="custom-timestamps-on-toasts.html">Custom timestamps on app notifications</a></li>
+<li><a href="toast-collections.html">Grouping app notifications with collections</a></li>
+<li><a href="toast-headers.html">App notification headers</a></li>
+<li><a href="notification-listener.html">Notification listener: Access all notifications</a></li>
+</ul>
+<h2 id="limitations">Limitations</h2>
+<p>The app notifications support in the Windows App SDK currently has these limitations:</p>
+<ul>
+<li>Notifications for an elevated (admin) app are currently not supported.</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<p>See <a href="app-notifications-quickstart.html">Quickstart: App notifications in the Windows App SDK</a> to get started.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

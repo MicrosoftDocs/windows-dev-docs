@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>.NET mappings of WinRT types in C#/WinRT </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content=".NET mappings of WinRT types in C#/WinRT ">
+    
+    <meta name="description" content="The following table lists the mappings that C#/WinRT makes between Windows Runtime types and .NET types.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="net-mappings-of-winrt-types-in-cwinrt">.NET mappings of WinRT types in C#/WinRT</h1>
+
+<p>This article lists the mappings that C#/WinRT makes between Windows Runtime (WinRT) types and .NET types in desktop apps that target .NET 6 (or later). In these apps, Visual Studio IntelliSense shows the .NET type instead of the Windows Runtime type. For example, if a Windows Runtime method takes a parameter of type <strong>IVector&lt;string&gt;</strong>, then IntelliSense shows a parameter of type <strong>IList&lt;string&gt;</strong>. Similarly, in a WinRT component authored using C#/WinRT, you use the .NET type in member signatures. When you use C#/WinRT to generate a Windows Runtime component, the .NET type is translated into the corresponding WinRT type.</p>
+<p>The C#/WinRT custom type mappings are categorized by types in the Windows SDK or in <a href="../../../winui/index.html">WinUI 3</a> (WinUI 3 is part of the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a>). The WinRT types for Windows SDK mappings live under the <strong>Windows.*</strong> namespaces, and the WinRT types for WinUI 3 mappings live under the <strong>Microsoft.UI.Xaml.*</strong> namespaces. There are two reasons for custom type mappings that C#/WinRT makes for WinRT types:</p>
+<ul>
+<li><p><strong>WinRT types that map to .NET types with a different name and/or namespace.</strong> These custom mappings are for mapping WinRT types to existing .NET equivalent types. There are also cases where the mapping is to a different type (e.g., a value type maps to a class type).</p>
+</li>
+<li><p><strong>WinRT types that map to .NET types with the same name and namespace.</strong> These custom mappings are generally for performance or enhancement reasons, and are implemented directly in C#. Most of the types that have the same namespace name and type name in WinRT and .NET are structures (or types associated with structures, such as enumerations). In WinRT, structures have no members other than fields, and require helper types, which .NET hides. The .NET versions of these structures have properties and methods that provide the functionality of the hidden helper types (for example, <strong>Windows.UI.Color</strong>).</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For a list of mappings between WinRT and .NET types in the context of UWP apps, see <a href="/windows/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types">.NET mappings of WinRT types in UWP</a>.</p>
+</div>
+<h2 id="mappings-for-winrt-types-in-the-windows-sdk">Mappings for WinRT types in the Windows SDK</h2>
+<h3 id="types-with-a-different-name-andor-namespace">Types with a different name and/or namespace</h3>
+<table>
+<thead>
+<tr>
+<th>WinRT type/namespace</th>
+<th>.NET type/namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DateTime (Windows.Foundation)</td>
+<td>DateTimeOffset (System)</td>
+</tr>
+<tr>
+<td>EventHandler&lt;T&gt; (Windows.Foundation)</td>
+<td>EventHandler&lt;T&gt; (System)</td>
+</tr>
+<tr>
+<td>EventRegistrationToken (Windows.Foundation)</td>
+<td>EventRegistrationToken (WinRT)</td>
+</tr>
+<tr>
+<td>HResult (Windows.Foundation)</td>
+<td>Exception (System)</td>
+</tr>
+<tr>
+<td>IClosable (Windows.Foundation)</td>
+<td>IDisposable (System)</td>
+</tr>
+<tr>
+<td>IReference&lt;T&gt; (Windows.Foundation)</td>
+<td>Nullable&lt;T&gt; (System)</td>
+</tr>
+<tr>
+<td>TimeSpan (Windows.Foundation)</td>
+<td>TimeSpan (System)</td>
+</tr>
+<tr>
+<td>Uri (Windows.Foundation)</td>
+<td>Uri (System)</td>
+</tr>
+<tr>
+<td>IIterable&lt;T&gt; (Windows.Foundation.Collections)</td>
+<td>IEnumerable&lt;T&gt; (System.Collections.Generic)</td>
+</tr>
+<tr>
+<td>IIterator&lt;T&gt; (Windows.Foundation.Collections)</td>
+<td>IEnumerator&lt;T&gt; (System.Collections.Generic)</td>
+</tr>
+<tr>
+<td>IMap&lt;K,V&gt; (Windows.Foundation.Collections)</td>
+<td>IDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)</td>
+</tr>
+<tr>
+<td>IMapView&lt;K,V&gt; (Windows.Foundation.Collections)</td>
+<td>IReadOnlyDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)</td>
+</tr>
+<tr>
+<td>IKeyValuePair&lt;K,V&gt; (Windows.Foundation.Collections)</td>
+<td>KeyValuePair&lt;TKey,TValue&gt; (System.Collections.Generic)</td>
+</tr>
+<tr>
+<td>IVector&lt;T&gt; (Windows.Foundation.Collections)</td>
+<td>IList&lt;T&gt; (System.Collections.Generic)</td>
+</tr>
+<tr>
+<td>IVectorView&lt;T&gt; (Windows.Foundation.Collections)</td>
+<td>IReadOnlyList&lt;T&gt; (System.Collections.Generic)</td>
+</tr>
+<tr>
+<td>AttributeTargets (Windows.Foundation.Metadata)</td>
+<td>AttributeTargets (System)</td>
+</tr>
+<tr>
+<td>AttributeUsageAttribute (Windows.Foundation.Metadata)</td>
+<td>AttributeUsageAttribute (System)</td>
+</tr>
+<tr>
+<td>Matrix3x2 (Windows.Foundation.Numerics)</td>
+<td>Matrix3x2 (System.Numerics)</td>
+</tr>
+<tr>
+<td>Matrix4x4 (Windows.Foundation.Numerics)</td>
+<td>Matrix4x4 (System.Numerics)</td>
+</tr>
+<tr>
+<td>Plane (Windows.Foundation.Numerics)</td>
+<td>Plane (System.Numerics)</td>
+</tr>
+<tr>
+<td>Quaternion (Windows.Foundation.Numerics)</td>
+<td>Quaternion (System.Numerics)</td>
+</tr>
+<tr>
+<td>Vector2 (Windows.Foundation.Numerics)</td>
+<td>Vector2 (System.Numerics)</td>
+</tr>
+<tr>
+<td>Vector3 (Windows.Foundation.Numerics)</td>
+<td>Vector3 (System.Numerics)</td>
+</tr>
+<tr>
+<td>Vector4 (Windows.Foundation.Numerics)</td>
+<td>Vector4 (System.Numerics)</td>
+</tr>
+<tr>
+<td>IBindableIterable (Windows.UI.Xaml.Interop)</td>
+<td>IEnumerable (System.Collections)</td>
+</tr>
+<tr>
+<td>IBindableVector (Windows.UI.Xaml.Interop)</td>
+<td>IList (System.Collections)</td>
+</tr>
+<tr>
+<td>TypeName (Windows.UI.Xaml.Interop)</td>
+<td>Type (System)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="types-with-the-same-name-and-namespace">Types with the same name and namespace</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IPropertyValue</td>
+<td>Windows.Foundation</td>
+</tr>
+<tr>
+<td>IReferenceArray&lt;T&gt;</td>
+<td>Windows.Foundation</td>
+</tr>
+<tr>
+<td>Point</td>
+<td>Windows.Foundation</td>
+</tr>
+<tr>
+<td>Rect</td>
+<td>Windows.Foundation</td>
+</tr>
+<tr>
+<td>Size</td>
+<td>Windows.Foundation</td>
+</tr>
+<tr>
+<td>Color</td>
+<td>Windows.UI</td>
+</tr>
+<tr>
+<td>TypeKind</td>
+<td>Windows.UI.Xaml.Interop</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mappings-for-winrt-types-in-winui">Mappings for WinRT types in WinUI</h2>
+<h3 id="types-with-a-different-name-andor-namespace-1">Types with a different name and/or namespace</h3>
+<table>
+<thead>
+<tr>
+<th>WinRT type/namespace</th>
+<th>.NET type/namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INotifyCollectionChanged (Microsoft.UI.Xaml.Data)</td>
+<td>INotifyCollectionChanged (System.Collections.Specialized)</td>
+</tr>
+<tr>
+<td>NotifyCollectionChangedEventHandler (Microsoft.UI.Xaml.Data)</td>
+<td>NotifyCollectionChangedEventHandler (System.Collections.Specialized)</td>
+</tr>
+<tr>
+<td>NotifyCollectionChangedEventArgs (Microsoft.UI.Xaml.Data)</td>
+<td>NotifyCollectionChangedEventArgs (System.Collections.Specialized)</td>
+</tr>
+<tr>
+<td>NotifyCollectionChangedAction (Microsoft.UI.Xaml.Data)</td>
+<td>NotifyCollectionChangedAction (System.Collections.Specialized)</td>
+</tr>
+<tr>
+<td>DataErrorsChangedEventArgs (Microsoft.UI.Xaml.Data)</td>
+<td>DataErrorsChangedEventArgs (System.ComponentModel)</td>
+</tr>
+<tr>
+<td>INotifyDataErrorInfo (Microsoft.UI.Xaml.Data)</td>
+<td>INotifyDataErrorInfo (System.ComponentModel)</td>
+</tr>
+<tr>
+<td>INotifyPropertyChanged (Microsoft.UI.Xaml.Data)</td>
+<td>INotifyPropertyChanged (System.ComponentModel)</td>
+</tr>
+<tr>
+<td>PropertyChangedEventHandler (Microsoft.UI.Xaml.Data)</td>
+<td>PropertyChangedEventHandler (System.ComponentModel)</td>
+</tr>
+<tr>
+<td>PropertyChangedEventArgs (Microsoft.UI.Xaml.Data)</td>
+<td>PropertyChangedEventArgs (System.ComponentModel)</td>
+</tr>
+<tr>
+<td>ICommand (Microsoft.UI.Xaml.Input)</td>
+<td>ICommand (System.Windows.Input)</td>
+</tr>
+<tr>
+<td>IXamlServiceProvider (Microsoft.UI.Xaml)</td>
+<td>IServiceProvider (System)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="types-with-the-same-name-and-namespace-1">Types with the same name and namespace</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Namespace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CornerRadius</td>
+<td>Microsoft.UI.Xaml</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Microsoft.UI.Xaml</td>
+</tr>
+<tr>
+<td>DurationType</td>
+<td>Microsoft.UI.Xaml</td>
+</tr>
+<tr>
+<td>GridLength</td>
+<td>Microsoft.UI.Xaml</td>
+</tr>
+<tr>
+<td>GridUnitType</td>
+<td>Microsoft.UI.Xaml</td>
+</tr>
+<tr>
+<td>Thickness</td>
+<td>Microsoft.UI.Xaml</td>
+</tr>
+<tr>
+<td>GeneratorPosition</td>
+<td>Microsoft.UI.Xaml.Controls.Primitives</td>
+</tr>
+<tr>
+<td>Matrix</td>
+<td>Microsoft.UI.Xaml.Media</td>
+</tr>
+<tr>
+<td>KeyTime</td>
+<td>Microsoft.UI.Xaml.Media.Animation</td>
+</tr>
+<tr>
+<td>RepeatBehavior</td>
+<td>Microsoft.UI.Xaml.Media.Animation</td>
+</tr>
+<tr>
+<td>RepeatBehaviorType</td>
+<td>Microsoft.UI.Xaml.Media.Animation</td>
+</tr>
+<tr>
+<td>Matrix3D</td>
+<td>(Microsoft.UI.Xaml.Media.Media3D</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

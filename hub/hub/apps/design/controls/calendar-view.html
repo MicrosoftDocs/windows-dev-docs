@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Calendar view </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Calendar view ">
+    
+    <meta name="description" content="A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="calendar-view">Calendar view</h1>
+
+<p>A calendar view lets a user view and interact with a calendar that they can navigate by month, year, or decade. A user can select a single date or a range of dates. It doesn't have a picker surface and the calendar is always visible.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a calendar view to let a user pick a single date or a range of dates from an always visible calendar.</p>
+<p>If you need to let a user select multiple dates at one time, you must use a calendar view. If you need to let a user pick only a single date and don't need a calendar to be always visible, consider using a <a href="calendar-date-picker.html">calendar date picker</a> or <a href="date-picker.html">date picker</a> control.</p>
+<p>For more info about choosing the right control, see the <a href="date-and-time.html">Date and time controls</a> article.</p>
+<h2 id="examples">Examples</h2>
+<p>The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open. You can specify a startup view by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.displaymode">DisplayMode</a> property.</p>
+<p><img src="images/calendar-view-3-views.png" alt="The 3 views of a calendar view"></p>
+<p>Users click the header in the month view to open the year view, and click the header in the year view to open the decade view. Users pick a year in the decade view to return to the year view, and pick a month in the year view to return to the month view. The two arrows to the side of the header navigate forward or backward by month, by year, or by decade.</p>
+<h2 id="create-a-calendar-view">Create a calendar view</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView">CalendarView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddateschanged">SelectedDatesChanged event</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/CalendarView">Open the WinUI 3 Gallery app and see the CalendarView in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example shows how to create a simple calendar view.</p>
+<pre><code class="lang-xaml">&lt;CalendarView/&gt;
+</code></pre>
+<p>The resulting calendar view looks like this:</p>
+<p><img src="images/controls-calendar-monthview.png" alt="Example of calendar view"></p>
+<h3 id="selecting-dates">Selecting dates</h3>
+<p>By default, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectionmode">SelectionMode</a> property is set to <strong>Single</strong>. This lets a user pick a single date in the calendar. Set SelectionMode to <strong>None</strong> to disable date selection.</p>
+<p>Set SelectionMode to <strong>Multiple</strong> to let a user select multiple dates. You can select multiple dates programmatically by adding <a href="/dotnet/api/system.datetime">DateTime</a>/<a href="/dotnet/api/system.datetimeoffset">DateTimeOffset</a> objects to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddates">SelectedDates</a> collection, as shown here:</p>
+<pre><code class="lang-csharp">calendarView1.SelectedDates.Add(DateTimeOffset.Now);
+calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
+</code></pre>
+<p>A user can deselect a selected date by clicking or tapping it in the calendar grid.</p>
+<p>You can handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddateschanged">SelectedDatesChanged</a> event to be notified when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddates">SelectedDates</a> collection has changed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For important info about date values, see <a href="date-and-time.html#datetime-and-calendar-values">DateTime and Calendar values</a> in the Date and time controls article.</p>
+</div>
+<h3 id="customizing-the-calendar-views-appearance">Customizing the calendar view's appearance</h3>
+<p>The calendar view is composed of both XAML elements defined in the ControlTemplate and visual elements rendered directly by the control.</p>
+<ul>
+<li>The XAML elements defined in the control template include the border that encloses the control, the header, previous and next buttons, and DayOfWeek elements. You can style and re-template these elements like any XAML control.</li>
+<li>The calendar grid is composed of <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarViewDayItem">CalendarViewDayItem</a> objects. You can't style or re-template these elements, but various properties are provided to let you to customize their appearance.</li>
+</ul>
+<p>This diagram shows the elements that make up the month view of the calendar. For more info, see the Remarks on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarViewDayItem">CalendarViewDayItem</a> class.</p>
+<p><img src="images/calendar-view-month-elements.png" alt="The elements of a calendar month view"></p>
+<p>This table lists the properties you can change to modify the appearance of calendar elements.</p>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Properties</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DayOfWeek</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayofweekformat">DayOfWeekFormat</a></td>
+</tr>
+<tr>
+<td>CalendarItem</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritembackground">CalendarItemBackground</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderbrush">CalendarItemBorderBrush</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemborderthickness">CalendarItemBorderThickness</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendaritemforeground">CalendarItemForeground</a></td>
+</tr>
+<tr>
+<td>DayItem</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontfamily">DayItemFontFamily</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontsize">DayItemFontSize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontstyle">DayItemFontStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.dayitemfontweight">DayItemFontWeight</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontaldayitemalignment">HorizontalDayItemAlignment</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticaldayitemalignment">VerticalDayItemAlignment</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemstyle">CalendarViewDayItemStyle</a></td>
+</tr>
+<tr>
+<td>MonthYearItem (in the year and decade views, equivalent to DayItem)</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontfamily">MonthYearItemFontFamily</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontsize">MonthYearItemFontSize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontstyle">MonthYearItemFontStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.monthyearitemfontweight">MonthYearItemFontWeight</a></td>
+</tr>
+<tr>
+<td>FirstOfMonthLabel</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily">FirstOfMonthLabelFontFamily</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontsize">FirstOfMonthLabelFontSize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle">FirstOfMonthLabelFontStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofmonthlabelfontweight">FirstOfMonthLabelFontWeight</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment">HorizontalFirstOfMonthLabelAlignment</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment">VerticalFirstOfMonthLabelAlignment</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isgrouplabelvisible">IsGroupLabelVisible</a></td>
+</tr>
+<tr>
+<td>FirstofYearDecadeLabel (in the year and decade views, equivalent to FirstOfMonthLabel)</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily">FirstOfYearDecadeLabelFontFamily</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize">FirstOfYearDecadeLabelFontSize</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle">FirstOfYearDecadeLabelFontStyle</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight">FirstOfYearDecadeLabelFontWeight</a></td>
+</tr>
+<tr>
+<td>Visual State Borders</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.focusborderbrush">FocusBorderBrush</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.hoverborderbrush">HoverBorderBrush</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.pressedborderbrush">PressedBorderBrush</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedborderbrush">SelectedBorderBrush</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedforeground">SelectedForeground</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedhoverborderbrush">SelectedHoverBorderBrush</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectedpressedborderbrush">SelectedPressedBorderBrush</a></td>
+</tr>
+<tr>
+<td>OutofScope</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.isoutofscopeenabled">IsOutOfScopeEnabled</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopebackground">OutOfScopeBackground</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.outofscopeforeground">OutOfScopeForeground</a></td>
+</tr>
+<tr>
+<td>Today</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.istodayhighlighted">IsTodayHighlighted</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayfontweight">TodayFontWeight</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.todayforeground">TodayForeground</a></td>
+</tr>
+</tbody>
+</table>
+<p>By default, the month view shows 6 weeks at a time. You can change the number of weeks shown by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.numberofweeksinview">NumberOfWeeksInView</a> property. The minimum number of weeks to show is 2; the maximum is 8.</p>
+<p>By default, the year and decade views show in a 4x4 grid. To change the number of rows or columns, call <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions">SetYearDecadeDisplayDimensions</a> with the your desired number of rows and columns. This will change the grid for both the year and decade views.</p>
+<p>Here, the year and decade views are set to show in a 3x4 grid.</p>
+<pre><code class="lang-csharp">calendarView1.SetYearDecadeDisplayDimensions(3, 4);
+</code></pre>
+<p>By default, the minimum date shown in the calendar view is 100 years prior to the current date, and the maximum date shown is 100 years past the current date. You can change the minimum and maximum dates that the calendar shows by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.mindate">MinDate</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.maxdate">MaxDate</a> properties.</p>
+<pre><code class="lang-csharp">calendarView1.MinDate = new DateTime(2000, 1, 1);
+calendarView1.MaxDate = new DateTime(2099, 12, 31);
+</code></pre>
+<h3 id="updating-calendar-day-items">Updating calendar day items</h3>
+<p>Each day in the calendar is represented by a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarViewDayItem">CalendarViewDayItem</a> object. To access an individual day item and use its properties and methods, handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.calendarviewdayitemchanging">CalendarViewDayItemChanging</a> event and use the Item property of the event args to access the CalendarViewDayItem.</p>
+<p>You can make a day not selectable in the calendar view by setting its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.isblackout">CalendarViewDayItem.IsBlackout</a> property to <strong>true</strong>.</p>
+<p>You can show contextual information about the density of events in a day by calling the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarviewdayitem.setdensitycolors">CalendarViewDayItem.SetDensityColors</a> method. You can show from 0 to 10 density bars for each day, and set the color of each bar.</p>
+<p>Here are some day items in a calendar. Days 1 and 2 are blacked out. Days 2, 3, and 4 have various density bars set.</p>
+<p><img src="images/calendar-view-density-bars.png" alt="Calendar days with density bars"></p>
+<h3 id="phased-rendering">Phased rendering</h3>
+<p>A calendar view can contain a large number of CalendarViewDayItem objects. To keep the UI responsive and enable smooth navigation through the calendar, calendar view supports phased rendering. This lets you break up processing of a day item into phases. If a day is moved out of view before all the phases are complete, no more time is used trying to process and render that item.</p>
+<p>This example shows phased rendering of a calendar view for scheduling appointments.</p>
+<ul>
+<li>In phase 0, the default day item is rendered.</li>
+<li>In phase 1, you blackout dates that can't be booked. This includes past dates, Sundays, and dates that are already fully booked.</li>
+<li>In phase 2, you check each appointment that's booked for the day. You show a green density bar for each confirmed appointment and a blue density bar for each tentative appointment.</li>
+</ul>
+<p>The <code>Bookings</code> class in this example is from a fictitious appointment booking app, and is not shown.</p>
+<pre><code class="lang-xaml">&lt;CalendarView CalendarViewDayItemChanging=&quot;CalendarView_CalendarViewDayItemChanging&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
+                                   CalendarViewDayItemChangingEventArgs args)
+{
+    // Render basic day items.
+    if (args.Phase == 0)
+    {
+        // Register callback for next phase.
+        args.RegisterUpdateCallback(CalendarView_CalendarViewDayItemChanging);
+    }
+    // Set blackout dates.
+    else if (args.Phase == 1)
+    {
+        // Blackout dates in the past, Sundays, and dates that are fully booked.
+        if (args.Item.Date &lt; DateTimeOffset.Now ||
+            args.Item.Date.DayOfWeek == DayOfWeek.Sunday ||
+            Bookings.HasOpenings(args.Item.Date) == false)
+        {
+            args.Item.IsBlackout = true;
+        }
+        // Register callback for next phase.
+        args.RegisterUpdateCallback(CalendarView_CalendarViewDayItemChanging);
+    }
+    // Set density bars.
+    else if (args.Phase == 2)
+    {
+        // Avoid unnecessary processing.
+        // You don't need to set bars on past dates or Sundays.
+        if (args.Item.Date &gt; DateTimeOffset.Now &amp;&amp;
+            args.Item.Date.DayOfWeek != DayOfWeek.Sunday)
+        {
+            // Get bookings for the date being rendered.
+            var currentBookings = Bookings.GetBookings(args.Item.Date);
+
+            List&lt;Color&gt; densityColors = new List&lt;Color&gt;();
+            // Set a density bar color for each of the days bookings.
+            // It's assumed that there can't be more than 10 bookings in a day. Otherwise,
+            // further processing is needed to fit within the max of 10 density bars.
+            foreach (booking in currentBookings)
+            {
+                if (booking.IsConfirmed == true)
+                {
+                    densityColors.Add(Colors.Green);
+                }
+                else
+                {
+                    densityColors.Add(Colors.Blue);
+                }
+            }
+            args.Item.SetDensityColors(densityColors);
+        }
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.CalendarView">CalendarView class</a>, <a href="/uwp/api/windows.ui.xaml.controls.calendarview.selecteddateschanged">SelectedDatesChanged event</a></li>
+<li><a href="winui2gallery:/item/CalendarView">Open the WinUI 2 Gallery app and see the CalendarView in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="date-and-time.html">Date and time controls</a></li>
+<li><a href="calendar-date-picker.html">Calendar date picker</a></li>
+<li><a href="date-picker.html">Date picker</a></li>
+<li><a href="time-picker.html">Time picker</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/calendar-view.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

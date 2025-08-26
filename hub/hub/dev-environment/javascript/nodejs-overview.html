@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>NodeJS on Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="NodeJS on Windows ">
+    
+    <meta name="description" content="A guide to help you set up a NodeJS development environment on Windows.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="what-is-nodejs">What is NodeJS?</h1>
+
+<p>Node.js is an open-source, cross-platform, server-side JavaScript runtime environment built on Chrome’s V8 JavaScript engine originally authored by Ryan Dahl and released in 2009.</p>
+<h2 id="does-nodejs-work-on-windows">Does Node.js work on Windows?</h2>
+<p>Yes. Windows supports two different environments for developing apps with Node.js:</p>
+<ul>
+<li><a href="nodejs-on-windows.html">Install a Node.js development environment on Windows</a></li>
+<li><a href="nodejs-on-wsl.html">Install a Node.js development environment on Windows Subsystem for Linux</a></li>
+</ul>
+<h2 id="what-can-you-do-with-nodejs">What can you do with NodeJS?</h2>
+<p>Node.js is primarily used for building fast and scalable web applications. It uses an event-driven, non-blocking I/O model, making it lightweight and efficient. It's a great framework for data-intensive real-time applications that run across distributed devices. Here are a few examples of what you might create with Node.js.</p>
+<ul>
+<li><strong>Single-page apps (SPAs)</strong>: These are web apps that work inside a browser and don't need to reload a page every time you use it to get new data. Some example SPAs include social networking apps, email or map apps, online text or drawing tools, etc.</li>
+<li><strong>Real-time apps (RTAs)</strong>: These are web apps that enable users to receive information as soon as it's published by an author, rather than requiring that the user (or software) check a source periodically for updates. Some example RTAs include instant messaging apps or chat rooms, online multiplayer games that can be played in the browser, online collaboration docs, community storage, video conference apps, etc.</li>
+<li><strong>Data streaming apps</strong>: These are apps (or services) that send data/content as it arrives (or is created) while keeping the connection open to continue downloading further data, content, or components as needed. Some examples include video- and audio-streaming apps.</li>
+<li><strong>REST APIs</strong>: These are interfaces that provide data for someone else's web app to interact with. For example, a Calendar API service could provide dates and times for a concert venue that could be used by someone else's local events website.</li>
+<li><strong>Server-side rendered apps (SSRs)</strong>: These web apps can run on both the client (in your browser / the front-end) and the server (the back-end) allowing pages that are dynamic to display (generate HTML for) whatever content is known and quickly grab content that is not known as it's available. These are often referred to as &quot;isomorphic&quot; or &quot;universal&quot; applications. SSRs utilize SPA methods in that they don't need to reload every time you use it. SSRs, however, offer a few benefits that may or may not be important to you, like making content on your site appear in Google search results and providing a preview image when links to your app are shared on social media like X or Facebook. The potential drawback being that they require a Node.js server constantly running. In terms of examples, a social networking app that supports events that users will want to appear in search results and social media may benefit from SSR, while an email app may be fine as an SPA. You can also run server-rendered no-SPA apps, which may be something like a WordPress blog. As you can see, things can get complicated, you just need to decide what's important.</li>
+<li><strong>Command line tools</strong>: These allow you to automate repetitive tasks and then distribute your tool across the vast Node.js ecosystem. An example of a command line tool is cURL, which stand for client URL and is used to download content from an internet URL. cURL is often used to install things like Node.js or, in our case, a Node.js version manager.</li>
+<li><strong>Hardware programming</strong>: While not quite as popular as web apps, Node.js is growing in popularity for IoT uses, such as collecting data from sensors, beacons, transmitters, motors, or anything that generates large amounts of data. Node.js can enable data collection, analyzing that data, communicating back and forth between a device and server, and taking action based on the analysis. NPM contains more than 80 packages for Arduino controllers, raspberry pi, Intel IoT Edison, various sensors, and Bluetooth devices.</li>
+</ul>
+<h2 id="next-steps">Next steps</h2>
+<ul>
+<li><a href="nodejs-on-windows.html">Install NodeJS on Windows</a></li>
+<li><a href="nodejs-on-wsl.html">Install NodeJS on WSL</a></li>
+<li><a href="/training/paths/build-javascript-applications-nodejs/">Build JavaScript applications with Node.js</a> learning path</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/dev-environment/javascript/nodejs-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

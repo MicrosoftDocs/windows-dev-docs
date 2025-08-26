@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Toast content schema </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Toast content schema ">
+    
+    <meta name="description" content="The following article describes all of the properties and elements within toast content.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="toast-content-schema">Toast content schema</h1>
+
+<p>The following describes all of the properties and elements within toast content.</p>
+<p>If you would rather use raw XML instead of the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">Notifications library</a>, please see <a href="/uwp/schemas/tiles/toastschema/schema-root">the XML schema</a>.</p>
+<p><a href="#toastcontent">ToastContent</a></p>
+<ul>
+<li><a href="#toastvisual">ToastVisual</a>
+<ul>
+<li><a href="#toastbindinggeneric">ToastBindingGeneric</a>
+<ul>
+<li><a href="#itoastbindinggenericchild">IToastBindingGenericChild</a></li>
+<li><a href="#toastgenericapplogo">ToastGenericAppLogo</a></li>
+<li><a href="#toastgenericheroimage">ToastGenericHeroImage</a></li>
+<li><a href="#toastgenericattributiontext">ToastGenericAttributionText</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#itoastactions">IToastActions</a></li>
+<li><a href="#toastaudio">ToastAudio</a></li>
+<li><a href="#toastheader">ToastHeader</a></li>
+</ul>
+<h2 id="toastcontent">ToastContent</h2>
+<p>ToastContent is the top level object that describes a notification's content, including visuals, actions, and audio.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Launch</strong></td>
+<td>string</td>
+<td>false</td>
+<td>A string that is passed to the application when it is activated by the Toast. The format and contents of this string are defined by the app for its own use. When the user taps or clicks the Toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the Toast content, rather than launching in its default way.</td>
+</tr>
+<tr>
+<td><strong>Visual</strong></td>
+<td><a href="#toastvisual">ToastVisual</a></td>
+<td>true</td>
+<td>Describes the visual portion of the toast notification.</td>
+</tr>
+<tr>
+<td><strong>Actions</strong></td>
+<td><a href="#itoastactions">IToastActions</a></td>
+<td>false</td>
+<td>Optionally create custom actions with buttons and inputs.</td>
+</tr>
+<tr>
+<td><strong>Audio</strong></td>
+<td><a href="#toastaudio">ToastAudio</a></td>
+<td>false</td>
+<td>Describes the audio portion of the toast notification.</td>
+</tr>
+<tr>
+<td><strong>ActivationType</strong></td>
+<td><a href="#toastactivationtype">ToastActivationType</a></td>
+<td>false</td>
+<td>Specifies what activation type will be used when the user clicks the body of this Toast.</td>
+</tr>
+<tr>
+<td><strong>ActivationOptions</strong></td>
+<td><a href="#toastactivationoptions">ToastActivationOptions</a></td>
+<td>false</td>
+<td>New in Creators Update: Additional options relating to activation of the toast notification.</td>
+</tr>
+<tr>
+<td><strong>Scenario</strong></td>
+<td><a href="#toastscenario">ToastScenario</a></td>
+<td>false</td>
+<td>Declares the scenario your toast is used for, like an alarm or reminder.</td>
+</tr>
+<tr>
+<td><strong>DisplayTimestamp</strong></td>
+<td>DateTimeOffset?</td>
+<td>false</td>
+<td>New in Creators Update: Override the default timestamp with a custom timestamp representing when your notification content was actually delivered, rather than the time the notification was received by the Windows platform.</td>
+</tr>
+<tr>
+<td><strong>Header</strong></td>
+<td><a href="#toastheader">ToastHeader</a></td>
+<td>false</td>
+<td>New in Creators Update: Add a custom header to your notification to group multiple notifications together within Action Center.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toastscenario">ToastScenario</h3>
+<p>Specifies what scenario the toast represents.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>The normal toast behavior.</td>
+</tr>
+<tr>
+<td><strong>Reminder</strong></td>
+<td>A reminder notification. This will be displayed pre-expanded and stay on the user's screen till dismissed.</td>
+</tr>
+<tr>
+<td><strong>Alarm</strong></td>
+<td>An alarm notification. This will be displayed pre-expanded and stay on the user's screen till dismissed. Audio will loop by default and will use alarm audio.</td>
+</tr>
+<tr>
+<td><strong>IncomingCall</strong></td>
+<td>An incoming call notification. This will be displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Audio will loop by default and will use ringtone audio.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastvisual">ToastVisual</h2>
+<p>The visual portion of toasts contains the bindings, which contains text, images, adaptive content, and more.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BindingGeneric</strong></td>
+<td><a href="#toastbindinggeneric">ToastBindingGeneric</a></td>
+<td>true</td>
+<td>The generic toast binding, which can be rendered on all devices. This binding is required and cannot be null.</td>
+</tr>
+<tr>
+<td><strong>BaseUri</strong></td>
+<td>Uri</td>
+<td>false</td>
+<td>A default base URL that is combined with relative URLs in image source attributes.</td>
+</tr>
+<tr>
+<td><strong>AddImageQuery</strong></td>
+<td>bool?</td>
+<td>false</td>
+<td>Set to &quot;true&quot; to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of &quot;www.website.com/images/hello.png&quot; given in the notification becomes &quot;www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us&quot;</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>string</td>
+<td>false</td>
+<td>The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as &quot;en-US&quot; or &quot;fr-FR&quot;. This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastbindinggeneric">ToastBindingGeneric</h2>
+<p>The generic binding is the default binding for toasts, and is where you specify the text, images, adaptive content, and more.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Children</strong></td>
+<td>IList&lt;<a href="#itoastbindinggenericchild">IToastBindingGenericChild</a>&gt;</td>
+<td>false</td>
+<td>The contents of the body of the Toast, which can include text, images, and groups (added in Anniversary Update). Text elements must come before any other elements, and only 3 text elements are supported. If a text element is placed after any other element, it will either be pulled to the top or dropped. And finally, certain text properties like HintStyle aren't supported on the root children text elements, and only work inside an AdaptiveSubgroup. If you use AdaptiveGroup on devices without the Anniversary Update, the group content will simply be dropped.</td>
+</tr>
+<tr>
+<td><strong>AppLogoOverride</strong></td>
+<td><a href="#toastgenericapplogo">ToastGenericAppLogo</a></td>
+<td>false</td>
+<td>An optional logo to override the app logo.</td>
+</tr>
+<tr>
+<td><strong>HeroImage</strong></td>
+<td><a href="#toastgenericheroimage">ToastGenericHeroImage</a></td>
+<td>false</td>
+<td>An optional featured &quot;hero&quot; image that is displayed on the toast and within Action Center.</td>
+</tr>
+<tr>
+<td><strong>Attribution</strong></td>
+<td><a href="#toastgenericattributiontext">ToastGenericAttributionText</a></td>
+<td>false</td>
+<td>Optional attribution text which will be displayed at the bottom of the toast notification.</td>
+</tr>
+<tr>
+<td><strong>BaseUri</strong></td>
+<td>Uri</td>
+<td>false</td>
+<td>A default base URL that is combined with relative URLs in image source attributes.</td>
+</tr>
+<tr>
+<td><strong>AddImageQuery</strong></td>
+<td>bool?</td>
+<td>false</td>
+<td>Set to &quot;true&quot; to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of &quot;www.website.com/images/hello.png&quot; given in the notification becomes &quot;www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us&quot;</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>string</td>
+<td>false</td>
+<td>The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as &quot;en-US&quot; or &quot;fr-FR&quot;. This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="itoastbindinggenericchild">IToastBindingGenericChild</h2>
+<p>Marker interface for toast child elements that include text, images, groups, and more.</p>
+<table>
+<thead>
+<tr>
+<th>Implementations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#adaptivetext">AdaptiveText</a></td>
+</tr>
+<tr>
+<td><a href="#adaptiveimage">AdaptiveImage</a></td>
+</tr>
+<tr>
+<td><a href="#adaptivegroup">AdaptiveGroup</a></td>
+</tr>
+<tr>
+<td><a href="#adaptiveprogressbar">AdaptiveProgressBar</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="adaptivetext">AdaptiveText</h2>
+<p>An adaptive text element. If placed in the top level ToastBindingGeneric.Children, only HintMaxLines will be applied. But if this is placed as a child of a group/subgroup, full text styling is supported.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text</strong></td>
+<td>string or <a href="#bindablestring">BindableString</a></td>
+<td>false</td>
+<td>The text to display. Data binding support added in Creators Update, but only works for top-level text elements.</td>
+</tr>
+<tr>
+<td><strong>HintStyle</strong></td>
+<td><a href="#adaptivetextstyle">AdaptiveTextStyle</a></td>
+<td>false</td>
+<td>The style controls the text's font size, weight, and opacity. Only works for text elements inside a group/subgroup.</td>
+</tr>
+<tr>
+<td><strong>HintWrap</strong></td>
+<td>bool?</td>
+<td>false</td>
+<td>Set this to true to enable text wrapping. Top-level text elements ignore this property and always wrap (you can use HintMaxLines = 1 to disable wrapping for top-level text elements). Text elements inside groups/subgroups default to false for wrapping.</td>
+</tr>
+<tr>
+<td><strong>HintMaxLines</strong></td>
+<td>int?</td>
+<td>false</td>
+<td>The maximum number of lines the text element is allowed to display.</td>
+</tr>
+<tr>
+<td><strong>HintMinLines</strong></td>
+<td>int?</td>
+<td>false</td>
+<td>The minimum number of lines the text element must display. Only works for text elements inside a group/subgroup.</td>
+</tr>
+<tr>
+<td><strong>HintAlign</strong></td>
+<td><a href="#adaptivetextalign">AdaptiveTextAlign</a></td>
+<td>false</td>
+<td>The horizontal alignment of the text. Only works for text elements inside a group/subgroup.</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>string</td>
+<td>false</td>
+<td>The target locale of the XML payload, specified as a BCP-47 language tags such as &quot;en-US&quot; or &quot;fr-FR&quot;. The locale specified here overrides any other specified locale, such as that in binding or visual. If this value is a literal string, this attribute defaults to the user's UI language. If this value is a string reference, this attribute defaults to the locale chosen by Windows Runtime in resolving the string.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bindablestring">BindableString</h3>
+<p>A binding value for strings.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BindingName</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Gets or sets the name that maps to your binding data value.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adaptivetextstyle">AdaptiveTextStyle</h3>
+<p>Text style controls font size, weight, and opacity. Subtle opacity is 60% opaque.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Default value. Style is determined by the renderer.</td>
+</tr>
+<tr>
+<td><strong>Caption</strong></td>
+<td>Smaller than paragraph font size.</td>
+</tr>
+<tr>
+<td><strong>CaptionSubtle</strong></td>
+<td>Same as Caption but with subtle opacity.</td>
+</tr>
+<tr>
+<td><strong>Body</strong></td>
+<td>Paragraph font size.</td>
+</tr>
+<tr>
+<td><strong>BodySubtle</strong></td>
+<td>Same as Body but with subtle opacity.</td>
+</tr>
+<tr>
+<td><strong>Base</strong></td>
+<td>Paragraph font size, bold weight. Essentially the bold version of Body.</td>
+</tr>
+<tr>
+<td><strong>BaseSubtle</strong></td>
+<td>Same as Base but with subtle opacity.</td>
+</tr>
+<tr>
+<td><strong>Subtitle</strong></td>
+<td>H4 font size.</td>
+</tr>
+<tr>
+<td><strong>SubtitleSubtle</strong></td>
+<td>Same as Subtitle but with subtle opacity.</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>H3 font size.</td>
+</tr>
+<tr>
+<td><strong>TitleSubtle</strong></td>
+<td>Same as Title but with subtle opacity.</td>
+</tr>
+<tr>
+<td><strong>TitleNumeral</strong></td>
+<td>Same as Title but with top/bottom padding removed.</td>
+</tr>
+<tr>
+<td><strong>Subheader</strong></td>
+<td>H2 font size.</td>
+</tr>
+<tr>
+<td><strong>SubheaderSubtle</strong></td>
+<td>Same as Subheader but with subtle opacity.</td>
+</tr>
+<tr>
+<td><strong>SubheaderNumeral</strong></td>
+<td>Same as Subheader but with top/bottom padding removed.</td>
+</tr>
+<tr>
+<td><strong>Header</strong></td>
+<td>H1 font size.</td>
+</tr>
+<tr>
+<td><strong>HeaderSubtle</strong></td>
+<td>Same as Header but with subtle opacity.</td>
+</tr>
+<tr>
+<td><strong>HeaderNumeral</strong></td>
+<td>Same as Header but with top/bottom padding removed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adaptivetextalign">AdaptiveTextAlign</h3>
+<p>Controls the horizontal alignment of text.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Default value. Alignment is automatically determined by the renderer.</td>
+</tr>
+<tr>
+<td><strong>Auto</strong></td>
+<td>Alignment determined by the current language and culture.</td>
+</tr>
+<tr>
+<td><strong>Left</strong></td>
+<td>Horizontally align the text to the left.</td>
+</tr>
+<tr>
+<td><strong>Center</strong></td>
+<td>Horizontally align the text in the center.</td>
+</tr>
+<tr>
+<td><strong>Right</strong></td>
+<td>Horizontally align the text to the right.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adaptiveimage">AdaptiveImage</h2>
+<p>An inline image.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source</strong></td>
+<td>string</td>
+<td>true</td>
+<td>The URL to the image. ms-appx, ms-appdata, and http are supported. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.</td>
+</tr>
+<tr>
+<td><strong>HintCrop</strong></td>
+<td><a href="#adaptiveimagecrop">AdaptiveImageCrop</a></td>
+<td>false</td>
+<td>New in Anniversary Update: Control the desired cropping of the image.</td>
+</tr>
+<tr>
+<td><strong>HintRemoveMargin</strong></td>
+<td>bool?</td>
+<td>false</td>
+<td>By default, images inside groups/subgroups have an 8px margin around them. You can remove this margin by setting this property to true.</td>
+</tr>
+<tr>
+<td><strong>HintAlign</strong></td>
+<td><a href="#adaptiveimagealign">AdaptiveImageAlign</a></td>
+<td>false</td>
+<td>The horizontal alignment of the image. Only works for images inside a group/subgroup.</td>
+</tr>
+<tr>
+<td><strong>AlternateText</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Alternate text describing the image, used for accessibility purposes.</td>
+</tr>
+<tr>
+<td><strong>AddImageQuery</strong></td>
+<td>bool?</td>
+<td>false</td>
+<td>Set to &quot;true&quot; to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of &quot;www.website.com/images/hello.png&quot; given in the notification becomes &quot;www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adaptiveimagecrop">AdaptiveImageCrop</h3>
+<p>Specifies the desired cropping of the image.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Default value. Cropping behavior determined by renderer.</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td>Image is not cropped.</td>
+</tr>
+<tr>
+<td><strong>Circle</strong></td>
+<td>Image is cropped to a circle shape.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adaptiveimagealign">AdaptiveImageAlign</h3>
+<p>Specifies the horizontal alignment for an image.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Default value. Alignment behavior determined by renderer.</td>
+</tr>
+<tr>
+<td><strong>Stretch</strong></td>
+<td>Image stretches to fill available width (and potentially available height too, depending on where the image is placed).</td>
+</tr>
+<tr>
+<td><strong>Left</strong></td>
+<td>Align the image to the left, displaying the image at its native resolution.</td>
+</tr>
+<tr>
+<td><strong>Center</strong></td>
+<td>Align the image in the center horizontally, displaying the image at its native resolution.</td>
+</tr>
+<tr>
+<td><strong>Right</strong></td>
+<td>Align the image to the right, displaying the image at its native resolution.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adaptivegroup">AdaptiveGroup</h2>
+<p>New in Anniversary Update: Groups semantically identify that the content in the group must either be displayed as a whole, or not displayed if it cannot fit. Groups also allow creating multiple columns.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Children</strong></td>
+<td>IList&lt;<a href="#adaptivesubgroup">AdaptiveSubgroup</a>&gt;</td>
+<td>false</td>
+<td>Subgroups are displayed as vertical columns. You must use subgroups to provide any content inside an AdaptiveGroup.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adaptivesubgroup">AdaptiveSubgroup</h2>
+<p>New in Anniversary Update: Subgroups are vertical columns that can contain text and images.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Children</strong></td>
+<td>IList&lt;<a href="#iadaptivesubgroupchild">IAdaptiveSubgroupChild</a>&gt;</td>
+<td>false</td>
+<td><a href="#adaptivetext">AdaptiveText</a> and <a href="#adaptiveimage">AdaptiveImage</a> are valid children of subgroups.</td>
+</tr>
+<tr>
+<td><strong>HintWeight</strong></td>
+<td>int?</td>
+<td>false</td>
+<td>Control the width of this subgroup column by specifying the weight, relative to the other subgroups.</td>
+</tr>
+<tr>
+<td><strong>HintTextStacking</strong></td>
+<td><a href="#adaptivesubgrouptextstacking">AdaptiveSubgroupTextStacking</a></td>
+<td>false</td>
+<td>Control the vertical alignment of this subgroup's content.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="iadaptivesubgroupchild">IAdaptiveSubgroupChild</h3>
+<p>Marker interface for subgroup children.</p>
+<table>
+<thead>
+<tr>
+<th>Implementations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#adaptivetext">AdaptiveText</a></td>
+</tr>
+<tr>
+<td><a href="#adaptiveimage">AdaptiveImage</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="adaptivesubgrouptextstacking">AdaptiveSubgroupTextStacking</h3>
+<p>TextStacking specifies the vertical alignment of content.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Default value. Renderer automatically selects the default vertical alignment.</td>
+</tr>
+<tr>
+<td><strong>Top</strong></td>
+<td>Vertical align to the top.</td>
+</tr>
+<tr>
+<td><strong>Center</strong></td>
+<td>Vertical align to the center.</td>
+</tr>
+<tr>
+<td><strong>Bottom</strong></td>
+<td>Vertical align to the bottom.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="adaptiveprogressbar">AdaptiveProgressBar</h2>
+<p>New in Creators Update: A progress bar. Only supported on toasts on Desktop, build 15063 or later.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Title</strong></td>
+<td>string or <a href="#bindablestring">BindableString</a></td>
+<td>false</td>
+<td>Gets or sets an optional title string. Supports data binding.</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td>double or <a href="#adaptiveprogressbarvalue">AdaptiveProgressBarValue</a> or <a href="#bindableprogressbarvalue">BindableProgressBarValue</a></td>
+<td>false</td>
+<td>Gets or sets the value of the progress bar. Supports data binding. Defaults to 0.</td>
+</tr>
+<tr>
+<td><strong>ValueStringOverride</strong></td>
+<td>string or <a href="#bindablestring">BindableString</a></td>
+<td>false</td>
+<td>Gets or sets an optional string to be displayed instead of the default percentage string. If this isn't provided, something like &quot;70%&quot; will be displayed.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>string or <a href="#bindablestring">BindableString</a></td>
+<td>true</td>
+<td>Gets or sets a status string (required), which is displayed underneath the progress bar on the left. This string should reflect the status of the operation, like &quot;Downloading...&quot; or &quot;Installing...&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adaptiveprogressbarvalue">AdaptiveProgressBarValue</h3>
+<p>A class that represents the progress bar's value.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Value</strong></td>
+<td>double</td>
+<td>false</td>
+<td>Gets or sets the value (0.0 - 1.0) representing the percent complete.</td>
+</tr>
+<tr>
+<td><strong>IsIndeterminate</strong></td>
+<td>bool</td>
+<td>false</td>
+<td>Gets or sets a value indicating whether the progress bar is indeterminate. If this is true, <strong>Value</strong> will be ignored.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bindableprogressbarvalue">BindableProgressBarValue</h3>
+<p>A bindable progress bar value.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BindingName</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Gets or sets the name that maps to your binding data value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastgenericapplogo">ToastGenericAppLogo</h2>
+<p>A logo to be displayed instead of the app logo.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source</strong></td>
+<td>string</td>
+<td>true</td>
+<td>The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size.</td>
+</tr>
+<tr>
+<td><strong>HintCrop</strong></td>
+<td><a href="#toastgenericapplogocrop">ToastGenericAppLogoCrop</a></td>
+<td>false</td>
+<td>Specify how you would like the image to be cropped.</td>
+</tr>
+<tr>
+<td><strong>AlternateText</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Alternate text describing the image, used for accessibility purposes.</td>
+</tr>
+<tr>
+<td><strong>AddImageQuery</strong></td>
+<td>bool?</td>
+<td>false</td>
+<td>Set to &quot;true&quot; to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of &quot;www.website.com/images/hello.png&quot; given in the notification becomes &quot;www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toastgenericapplogocrop">ToastGenericAppLogoCrop</h3>
+<p>Controls the cropping of the app logo image.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Cropping uses the default behavior of the renderer.</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td>Image is not cropped, displayed square.</td>
+</tr>
+<tr>
+<td><strong>Circle</strong></td>
+<td>Image is cropped to a circle.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastgenericheroimage">ToastGenericHeroImage</h2>
+<p>A featured &quot;hero&quot; image that is displayed on the toast and within Action Center.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source</strong></td>
+<td>string</td>
+<td>true</td>
+<td>The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size.</td>
+</tr>
+<tr>
+<td><strong>AlternateText</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Alternate text describing the image, used for accessibility purposes.</td>
+</tr>
+<tr>
+<td><strong>AddImageQuery</strong></td>
+<td>bool?</td>
+<td>false</td>
+<td>Set to &quot;true&quot; to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of &quot;www.website.com/images/hello.png&quot; given in the notification becomes &quot;www.website.com/images/hello.png?ms-scale=100&amp;ms-contrast=standard&amp;ms-lang=en-us&quot;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastgenericattributiontext">ToastGenericAttributionText</h2>
+<p>Attribution text displayed at the bottom of the toast notification.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text</strong></td>
+<td>string</td>
+<td>true</td>
+<td>The text to display.</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>string</td>
+<td>false</td>
+<td>The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as &quot;en-US&quot; or &quot;fr-FR&quot;. If not provided, the system locale will be used instead.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="itoastactions">IToastActions</h2>
+<p>Marker interface for toast actions/inputs.</p>
+<table>
+<thead>
+<tr>
+<th>Implementations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#toastactionscustom">ToastActionsCustom</a></td>
+</tr>
+<tr>
+<td><a href="#toastactionssnoozeanddismiss">ToastActionsSnoozeAndDismiss</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastactionscustom">ToastActionsCustom</h2>
+<p><em>Implements <a href="#itoastactions">IToastActions</a></em></p>
+<p>Create your own custom actions and inputs, using controls like buttons, text boxes, and selection inputs.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inputs</strong></td>
+<td>IList&lt;<a href="#itoastinput">IToastInput</a>&gt;</td>
+<td>false</td>
+<td>Inputs like text boxes and selection inputs. Only up to 5 inputs are allowed.</td>
+</tr>
+<tr>
+<td><strong>Buttons</strong></td>
+<td>IList&lt;<a href="#itoastbutton">IToastButton</a>&gt;</td>
+<td>false</td>
+<td>Buttons are displayed after all the inputs (or adjacent to an input if the button is used as a quick reply button). Only up to 5 buttons are allowed (or fewer if you also have context menu items).</td>
+</tr>
+<tr>
+<td><strong>ContextMenuItems</strong></td>
+<td>IList&lt;<a href="#toastcontextmenuitem">ToastContextMenuItem</a>&gt;</td>
+<td>false</td>
+<td>New in Anniversary Update: Custom context menu items, providing additional actions if the user right clicks the notification. You can only have up to 5 buttons and context menu items <em>combined</em>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="itoastinput">IToastInput</h2>
+<p>Marker interface for toast inputs.</p>
+<table>
+<thead>
+<tr>
+<th>Implementations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#toasttextbox">ToastTextBox</a></td>
+</tr>
+<tr>
+<td><a href="#toastselectionbox">ToastSelectionBox</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="toasttextbox">ToastTextBox</h2>
+<p><em>Implements <a href="#itoastinput">IToastInput</a></em></p>
+<p>A text box control that the user can type text into.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>string</td>
+<td>true</td>
+<td>The Id is required, and is used to map the user-inputted text into a key-value pair of id/value which your app later consumes.</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Title text to display above the text box.</td>
+</tr>
+<tr>
+<td><strong>PlaceholderContent</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Placeholder text to be displayed on the text box when the user hasn't typed any text yet.</td>
+</tr>
+<tr>
+<td><strong>DefaultInput</strong></td>
+<td>string</td>
+<td>false</td>
+<td>The initial text to place in the text box. Leave this null for a blank text box.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastselectionbox">ToastSelectionBox</h2>
+<p><em>Implements <a href="#itoastinput">IToastInput</a></em></p>
+<p>A selection box control, which lets users pick from a dropdown list of options.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>string</td>
+<td>true</td>
+<td>The Id is required. If the user selected this item, this Id will be passed back to your app's code, representing which selection they chose.</td>
+</tr>
+<tr>
+<td><strong>Content</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Content is required, and is a string that is displayed on the selection item.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toastselectionboxitem">ToastSelectionBoxItem</h3>
+<p>A selection box item (an item that the user can select from the drop down list).</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>string</td>
+<td>true</td>
+<td>The Id is required, and is used to map the user-inputted text into a key-value pair of id/value which your app later consumes.</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Title text to display above the selection box.</td>
+</tr>
+<tr>
+<td><strong>DefaultSelectionBoxItemId</strong></td>
+<td>string</td>
+<td>false</td>
+<td>This controls which item is selected by default, and refers to the Id property of the <a href="#toastselectionboxitem">ToastSelectionBoxItem</a>. If you do not provide this, the default selection will be empty (user sees nothing).</td>
+</tr>
+<tr>
+<td><strong>Items</strong></td>
+<td>IList&lt;<a href="#toastselectionboxitem">ToastSelectionBoxItem</a>&gt;</td>
+<td>false</td>
+<td>The selection items that the user can pick from in this SelectionBox. Only 5 items can be added.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="itoastbutton">IToastButton</h2>
+<p>Marker interface for toast buttons.</p>
+<table>
+<thead>
+<tr>
+<th>Implementations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#toastbutton">ToastButton</a></td>
+</tr>
+<tr>
+<td><a href="#toastbuttonsnooze">ToastButtonSnooze</a></td>
+</tr>
+<tr>
+<td><a href="#toastbuttondismiss">ToastButtonDismiss</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastbutton">ToastButton</h2>
+<p><em>Implements <a href="#itoastbutton">IToastButton</a></em></p>
+<p>A button that the user can click.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Required. The text to display on the button.</td>
+</tr>
+<tr>
+<td><strong>Arguments</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Required. App-defined string of arguments that the app will later receive if the user clicks this button.</td>
+</tr>
+<tr>
+<td><strong>ActivationType</strong></td>
+<td><a href="#toastactivationtype">ToastActivationType</a></td>
+<td>false</td>
+<td>Controls what type of activation this button will use when clicked. Defaults to Foreground.</td>
+</tr>
+<tr>
+<td><strong>ActivationOptions</strong></td>
+<td><a href="#toastactivationoptions">ToastActivationOptions</a></td>
+<td>false</td>
+<td>New in Creators Update: Gets or sets additional options relating to activation of the toast button.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toastactivationtype">ToastActivationType</h3>
+<p>Decides the type of activation that will be used when the user interacts with a specific action.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Foreground</strong></td>
+<td>Default value. Your foreground app is launched.</td>
+</tr>
+<tr>
+<td><strong>Background</strong></td>
+<td>Your corresponding background task (assuming you set everything up) is triggered, and you can execute code in the background (like sending the user's quick reply message) without interrupting the user.</td>
+</tr>
+<tr>
+<td><strong>Protocol</strong></td>
+<td>Launch a different app using protocol activation.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toastactivationoptions">ToastActivationOptions</h3>
+<p>New in Creators Update: Additional options relating to activation.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AfterActivationBehavior</strong></td>
+<td><a href="#toastafteractivationbehavior">ToastAfterActivationBehavior</a></td>
+<td>false</td>
+<td>New in Fall Creators Update: Gets or sets the behavior that the toast should use when the user invokes this action. This only works on Desktop, for <a href="#toastbutton">ToastButton</a> and <a href="#toastcontextmenuitem">ToastContextMenuItem</a>.</td>
+</tr>
+<tr>
+<td><strong>ProtocolActivationTargetApplicationPfn</strong></td>
+<td>string</td>
+<td>false</td>
+<td>If you are using <em>ToastActivationType.Protocol</em>, you can optionally specify the target PFN, so that regardless of whether multiple apps are registered to handle the same protocol uri, your desired app will always be launched.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toastafteractivationbehavior">ToastAfterActivationBehavior</h3>
+<p>Specifies the behavior that the toast should use when the user takes action on the toast.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Default behavior. The toast will be dismissed when the user takes action on the toast.</td>
+</tr>
+<tr>
+<td><strong>PendingUpdate</strong></td>
+<td>After the user clicks a button on your toast, the notification will remain present, in a &quot;pending update&quot; visual state. You should immediately update your toast from a background task so that the user does not see this &quot;pending update&quot; visual state for too long.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastbuttonsnooze">ToastButtonSnooze</h2>
+<p><em>Implements <a href="#itoastbutton">IToastButton</a></em></p>
+<p>A system-handled snooze button that automatically handles snoozing of the notification.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CustomContent</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Optional custom text displayed on the button that overrides the default localized &quot;Snooze&quot; text.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastbuttondismiss">ToastButtonDismiss</h2>
+<p><em>Implements <a href="#itoastbutton">IToastButton</a></em></p>
+<p>A system-handled dismiss button that dismisses the notification when clicked.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CustomContent</strong></td>
+<td>string</td>
+<td>false</td>
+<td>Optional custom text displayed on the button that overrides the default localized &quot;Dismiss&quot; text.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastactionssnoozeanddismiss">ToastActionsSnoozeAndDismiss</h2>
+<p>*Implements <a href="#itoastactions">IToastActions</a></p>
+<p>Automatically constructs a selection box for snooze intervals, and snooze/dismiss buttons, all automatically localized, and snoozing logic is automatically handled by the system.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ContextMenuItems</strong></td>
+<td>IList&lt;<a href="#toastcontextmenuitem">ToastContextMenuItem</a>&gt;</td>
+<td>false</td>
+<td>New in Anniversary Update: Custom context menu items, providing additional actions if the user right clicks the notification. You can only have up to 5 items.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastcontextmenuitem">ToastContextMenuItem</h2>
+<p>A context menu item entry.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Content</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Required. The text to display.</td>
+</tr>
+<tr>
+<td><strong>Arguments</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Required. App-defined string of arguments that the app can later retrieve once it is activated when the user clicks the menu item.</td>
+</tr>
+<tr>
+<td><strong>ActivationType</strong></td>
+<td><a href="#toastactivationtype">ToastActivationType</a></td>
+<td>false</td>
+<td>Controls what type of activation this menu item will use when clicked. Defaults to Foreground.</td>
+</tr>
+<tr>
+<td><strong>ActivationOptions</strong></td>
+<td><a href="#toastactivationoptions">ToastActivationOptions</a></td>
+<td>false</td>
+<td>New in Creators Update: Additional options relating to activation of the toast context menu item.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastaudio">ToastAudio</h2>
+<p>Specify audio to be played when the Toast notification is received.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Src</strong></td>
+<td>uri</td>
+<td>false</td>
+<td>The media file to play in place of the default sound. Only ms-appx and ms-resource are supported. All else (ms-appdata, http, C:, etc.) is not supported.</td>
+</tr>
+<tr>
+<td><strong>Loop</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>Set to true if the sound should repeat as long as the Toast is shown; false to play only once (default).</td>
+</tr>
+<tr>
+<td><strong>Silent</strong></td>
+<td>boolean</td>
+<td>false</td>
+<td>True to mute the sound; false to allow the toast notification sound to play (default).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="toastheader">ToastHeader</h2>
+<p>New in Creators Update: A custom header that groups multiple notifications together within Action Center.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Id</strong></td>
+<td>string</td>
+<td>true</td>
+<td>A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Action Center.</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>string</td>
+<td>true</td>
+<td>A title for the header.</td>
+</tr>
+<tr>
+<td><strong>Arguments</strong></td>
+<td>string</td>
+<td>true</td>
+<td>Gets or sets a developer-defined string of arguments that is returned to the app when the user clicks this header. Cannot be null.</td>
+</tr>
+<tr>
+<td><strong>ActivationType</strong></td>
+<td><a href="#toastactivationtype">ToastActivationType</a></td>
+<td>false</td>
+<td>Gets or sets the type of activation this header will use when clicked. Defaults to Foreground. Note that only Foreground and Protocol are supported.</td>
+</tr>
+<tr>
+<td><strong>ActivationOptions</strong></td>
+<td><a href="#toastactivationoptions">ToastActivationOptions</a></td>
+<td>false</td>
+<td>Gets or sets additional options relating to activation of the toast header.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/archive/blogs/tiles_and_toasts/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10">Quickstart: Send a local toast and handle activation</a></li>
+<li><a href="https://github.com/windows-toolkit/WindowsCommunityToolkit">Notifications library on GitHub</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/toast-schema.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build Windows apps with .NET MAUI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build Windows apps with .NET MAUI ">
+    
+    <meta name="description" content="Learn about .NET MAUI, benefits it provides to Windows developers, and how take your Windows apps cross-platform.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="build-windows-apps-with-net-maui">Build Windows apps with .NET MAUI</h1>
+
+<p>.NET Multi-platform App UI (.NET MAUI) is a cross-platform framework for creating native mobile and desktop apps with C# and <em>optionally</em> XAML. Using <a href="/dotnet/maui/">.NET MAUI</a>, you can develop apps that can run on Windows, Android, iOS, macOS, and Samsung Tizen from a single shared code-base. If you build a Windows app with .NET MAUI, it will use <a href="../winui/winui3/index.html">WinUI 3</a> as its native platform, and therefore run on Windows 10 version 1809 or later and Windows 11.</p>
+<h2 id="why-use-net-maui-on-windows">Why use .NET MAUI on Windows?</h2>
+<p>Building apps for Windows with .NET MAUI provides several benefits:</p>
+<ul>
+<li><strong>Native on Windows</strong>: .NET MAUI creates a <a href="../winui/winui3/index.html">WinUI</a> app when targeting Windows. This means that your .NET MAUI app will provide the same user experience on Windows as your Windows App SDK applications.</li>
+<li><strong>User interface in code</strong>: The <a href="/dotnet/communitytoolkit/maui/">.NET MAUI Community Toolkit</a> includes <a href="/dotnet/communitytoolkit/maui/markup/markup">C# Markup</a>, a set of fluent helper methods for building user interfaces in C# code. This enables a separation of concerns between the UI and the business logic of your app, just as with XAML. C# Markup is available on all platforms supported by .NET MAUI.</li>
+<li><strong>Cross-platform</strong>: Take your Windows apps to <a href="/dotnet/maui/supported-platforms">all supported platforms</a>, including Android, iOS, macOS, and Samsung Tizen devices.</li>
+<li><strong>Simplicity</strong>: Develop in a <a href="/dotnet/maui/fundamentals/single-project">single shared project</a> that can target every platform supported by .NET MAUI.</li>
+<li><strong>Hot Reload</strong>: Save time while debugging with <a href="/visualstudio/debugger/hot-reload">.NET Hot Reload</a> and <a href="/dotnet/maui/xaml/hot-reload">XAML Hot Reload</a> support in .NET MAUI. Make edits while the app is running and the changes are automatically applied.</li>
+<li><strong>Native APIs</strong>: .NET MAUI provides <a href="/dotnet/maui/platform-integration/">cross-platform APIs</a> for native features on each platform. For native APIs that are not available in .NET MAUI's cross-platform APIs, you can <a href="/dotnet/maui/platform-integration/invoke-platform-code">invoke platform-specific code</a>.</li>
+</ul>
+<p>If you are planning to build a new app for Windows and want to target additional platforms, you should consider using .NET MAUI. If you are only targeting Windows with your app, there are some good reasons to continue using the Windows App SDK:</p>
+<ul>
+<li><strong>Familiarity</strong>: .NET MAUI XAML and Windows App SDK XAML have some differences. If you are comfortable with XAML in UWP and Windows App SDK, you will have a bit of a learning curve with the .NET MAUI controls and XAML syntax.</li>
+<li><strong>Native Controls</strong>: .NET MAUI does not currently support using Windows App SDK controls. If you have existing controls from other Windows App SDK projects you intend to re-use or rely on 3rd Party or open source controls, you will need to find alternatives for .NET MAUI projects.</li>
+<li><strong>Closer to Windows</strong>: When writing .NET MAUI apps, it outputs a Windows App SDK app, but there is some translation to get from your code to the native Windows app. With Windows App SDK, you are eliminating that translation step and are less likely to encounter issues with styles, API compatibility, or layout.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Are you still deciding between .NET MAUI, WinUI, and other UI framework options? Check out the <a href="../get-started/windows-developer-faq.yml">Windows developer FAQ</a> to learn about the different options for building native Windows apps. Then go watch the <strong>Windows Dev Chat</strong> episode on <strong>Choosing your ideal dev platform</strong>. The segment about <a href="https://www.youtube.com/watch?v=4PJBJ8GICjM&amp;list=PLI_J2v67C23bxTffW4XewbUEAOfSVZkrk&amp;index=2&amp;t=2193s">.NET MAUI</a> hosted by Beth Massi walks through examples and reasons for choosing .NET MAUI for your next app.</p>
+</div>
+<h2 id="net-maui-resources-for-windows-developers">.NET MAUI resources for Windows developers</h2>
+<h3 id="net-maui-documentation">.NET MAUI documentation</h3>
+<p>The <a href="/dotnet/maui/">.NET MAUI docs</a> include resources for learning about .NET MAUI development for every platform, including Windows.</p>
+<h3 id="winui-documentation">WinUI documentation</h3>
+<p>Explore the <a href="../winui/winui3/index.html">WinUI docs</a> to learn about the features of WinUI.</p>
+<h3 id="net-conf-focus-on-maui">.NET Conf: Focus on MAUI</h3>
+<p>This <a href="https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWePZU3W162NJ9vcXqgpMVc">one-day live stream</a> from August 2022 featured speakers from Microsoft and the .NET MAUI developer community. Learn how to build apps and hear from the team building .NET MAUI.</p>
+<h3 id="net-maui-blog-posts">.NET MAUI blog posts</h3>
+<ul>
+<li><a href="https://devblogs.microsoft.com/dotnet/5-dotnet-maui-desktop-features/">5 .NET MAUI Features for Building Great Desktop Apps</a></li>
+<li><a href="https://devblogs.microsoft.com/dotnet/build-your-own-podcast-app-with-dotnet-blazor-and-dotnet-maui/">Build Your Own Podcast App with .NET, Blazor, and .NET MAUI</a></li>
+</ul>
+<h3 id="github">GitHub</h3>
+<p>.NET MAUI is open source and hosted on GitHub. Use the <a href="https://github.com/dotnet/maui">.NET MAUI repository</a> to file feature requests or bugs, interact with the development team, and explore the <a href="https://github.com/dotnet/maui/wiki">wiki</a>.</p>
+<h3 id="code-samples">Code samples</h3>
+<p>Explore the .NET MAUI code samples in the <a href="/samples/browse/?expanded=dotnet&amp;products=dotnet-maui">samples browser</a> or on GitHub at <a href="https://github.com/dotnet/maui-samples">dotnet/maui-samples</a>.</p>
+<h4 id="samples-that-demonstrate-specific-tasks">Samples that demonstrate specific tasks</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Name/Link</th>
+<th>Task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/dotnet/maui-samples/tree/main/9.0/Animations">Animations</a></td>
+<td><strong>Use animations</strong> to bring your app to life.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dotnet/maui-samples/tree/main/9.0/Fundamentals/BehaviorsDemos">Behaviors</a></td>
+<td><strong>Add functionality without subclassing</strong> using behaviors, instead attaching behavior classes to your controls.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dotnet/maui-samples/tree/main/9.0/Fundamentals/ControlTemplateDemos">Control Templates</a></td>
+<td><strong>Define the visual structure</strong> of <code>ContentView</code> derived custom controls, and <code>ContentPage</code> derived pages.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dotnet/maui-samples/tree/main/9.0/Fundamentals/DataBindingDemos">Data Binding</a></td>
+<td><strong>Bind objects</strong> to the actual UI elements, responsively updating one another when one changes.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dotnet/maui-samples/tree/main/9.0/Fundamentals/Shell">Shell App</a></td>
+<td><strong>Use a .NET Shell app</strong> to reduce complexity, reuse code, and integrate existing Windows functionality (such as URI navigation and integrated search bars) into your app.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/dotnet/maui-samples/tree/main/9.0/Fundamentals/TriggersDemos">Triggers</a></td>
+<td><strong>Use triggers</strong> to selectively update, hide, or display specific controls when an event or data changes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get-started-with-net-maui-on-windows">Get started with .NET MAUI on Windows</h2>
+<p>To get started with .NET MAUI on Windows, install Visual Studio 2022 version 17.3 or later.</p>
+<ul>
+<li><a href="https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Community&amp;channel=Release&amp;Version=VS2022&amp;source=VSLandingPage&amp;add=Microsoft.VisualStudio.Workload.CoreEditor&amp;add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&amp;cid=2302">Download 2022 Community</a></li>
+<li><a href="https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Professional&amp;channel=Release&amp;Version=VS2022&amp;source=VSLandingPage&amp;add=Microsoft.VisualStudio.Workload.CoreEditor&amp;add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&amp;cid=2302">Download 2022 Professional</a></li>
+<li><a href="https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Enterprise&amp;channel=Release&amp;Version=VS2022&amp;source=VSLandingPage&amp;add=Microsoft.VisualStudio.Workload.CoreEditor&amp;add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&amp;cid=2302">Download 2022 Enterprise</a></li>
+</ul>
+<p>When installing or modifying Visual Studio, select the <strong>.NET Multi-platform App UI development</strong> workload with the default optional installation options selected. For more information about managing workloads in Visual Studio, see <a href="/visualstudio/install/modify-visual-studio">Modify Visual Studio workloads, components, and language packs</a>. If you are using Visual Studio Code and the .NET CLI, you will use the <a href="/dotnet/core/tools/dotnet-workload">dotnet workload command</a> for workload management.</p>
+<p>If you haven't enabled development mode on your PC, see <a href="../get-started/enable-your-device-for-development.html">Enable your device for development</a>. If it isn't enabled, Visual Studio will prompt you to enable development mode when you try to run your first .NET MAUI project on Windows.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>Check out a walk-through of <a href="walkthrough-first-app.html">creating your first .NET MAUI app on Windows</a>.</p>
+<h2 id="related-content">Related content</h2>
+<p><a href="/dotnet/maui/what-is-maui">What is .NET MAUI</a></p>
+<p><a href="../get-started/windows-developer-faq.yml">Windows developer FAQ</a></p>
+<p><a href="/dotnet/communitytoolkit/maui/">.NET MAUI Community Toolkit documentation</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-dotnet-maui/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

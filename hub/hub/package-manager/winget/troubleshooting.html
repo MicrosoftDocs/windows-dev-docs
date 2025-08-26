@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Debugging and troubleshooting issues with WinGet </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Debugging and troubleshooting issues with WinGet ">
+    
+    <meta name="description" content="Provides information on logging and WinGet diagnostics.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="debugging-and-troubleshooting-issues-with-the-winget-tool">Debugging and troubleshooting issues with the WinGet tool</h1>
+
+<p>If WinGet does not appear to be installed correctly, follow these steps from a PowerShell command prompt:</p>
+<pre><code class="lang-PowerShell">Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Repair-WinGetPackageManager -Force -Latest
+</code></pre>
+<p>When WinGet commands are failing, sometimes it is necessary to look at the log files to better understand the behavior.</p>
+<h2 id="winget-logs">WinGet Logs</h2>
+<p>Windows Package Manager by default creates log files when executing commands. These logs contain information that can aid in debugging issues with WinGet. There is no maximum size for the log files. They are typically only a few KB in size. When the number of log files in the directory exceeds 100, the oldest log files will begin being deleted. There is no time-based removal of logs and these settings are not configurable. If you have reached the 100 file log capacity, just move any WinGet logs that you wish to preserve into a different directory.</p>
+<p>Use the command <a href="info.html"><code>winget --info</code></a> to find the directory path to your WinGet log files. The default path for WinGet log files is:</p>
+<pre><code class="lang-CMD">%LOCALAPPDATA%\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\DiagOutputDir
+</code></pre>
+<p>You can include the <strong>--logs</strong> or <strong>--open-logs</strong> option to any command to open the logs directory after the command completes. Here are some examples of using the <strong>--logs</strong> option:</p>
+<pre><code class="lang-CMD">&gt; winget list --logs
+&gt; winget source update --open-logs
+</code></pre>
+<h3 id="--verbose-logs">--verbose-logs</h3>
+<p>If you need more comprehensive log files, that provide the complete communication with the CDNs and sources, include <strong>--verbose</strong> or <strong>--verbose-logs</strong> on the command line as well.  Here are some examples of using the <strong>--verbose-logs</strong> option:</p>
+<pre><code class="lang-CMD">&gt; winget install vscode --verbose-logs
+&gt; winget search -n visual --verbose-logs
+&gt; winget source add -n mysource -t Microsoft.REST -a https://www.contoso.org --verbose
+</code></pre>
+<h3 id="settings">settings</h3>
+<p>You can specify the default logging level for WinGet to use in your WinGet Settings file. The <strong>settings</strong> command will open the settings.json file in your default JSON editor.</p>
+<p>Example with verbose logging:</p>
+<pre><code class="lang-JSON">{
+    &quot;$schema&quot;: &quot;https://aka.ms/winget-settings.schema.json&quot;,
+    &quot;logging&quot;: {
+        &quot;level&quot;: &quot;verbose&quot;
+    }
+}
+</code></pre>
+<h2 id="known-issues">Known issues</h2>
+<p>A list of known issues with sources and behaviors is kept up to date in the <a href="https://www.github.com/microsoft/winget-cli">Windows Package Manager Client repository</a>.  If you encounter issues when using the WinGet tool, go <a href="https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting">here</a> for troubleshooting.</p>
+<h2 id="exit-codes">Exit codes</h2>
+<p>The WinGet tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the <a href="https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md">&quot;Return codes&quot; file of the Windows Package Manager Client repository</a>.</p>
+<p>The WinGet <strong>error</strong> command accepts errors from &quot;Exit codes&quot; and displays a description for known error codes for WinGet, MSIX, and MSI installers. Many .exe-based installers have non-standard error codes and may not be displayed.</p>
+<pre><code class="lang-CMD">&gt; winget error 1603
+</code></pre>
+<h3 id="scope-for-specific-user-vs-machine-wide">Scope for specific user vs machine-wide</h3>
+<p>Not all installers support installing in “user” scope vs. “machine” scope consistently.</p>
+<ul>
+<li><a href="/windows/msix/overview">MSIX-based packages</a>: Reliable WinGet behavior.</li>
+<li><a href="/windows/win32/msi/installation-package">MSI-based packages</a> typically support reliable WinGet configurations, but in some cases, are nested inside an .exe-based installer so there may be more variability.</li>
+<li><a href="https://stackoverflow.com/questions/3886455/whats-the-difference-between-an-exe-and-a-msi-installer">EXE-based installers</a> behavior around scope is not necessarily deterministic. In some cases the arguments to specify scope are not available, and in other cases the installer may make the determination based on whether the user is a member of the local administrators group. Packages installed in user scope may still require UAC (User Account Control) authorization from an administrator.</li>
+</ul>
+<p>See more details on <a href="https://github.com/microsoft/winget-cli/issues?q=is%3Aissue+is%3Aopen+label%3Aarea-scope">scope-related issues</a> in the WinGet product repository on GitHub.</p>
+<h3 id="403-forbidden-error">403 Forbidden error</h3>
+<p>A 403 Forbidden error may occur when attempting to download a package using the WinGet tool. This issue can arise if an Independent Software Vendor (ISV) opts not have their product distributed by a package manager service like WinGet.</p>
+<p>The server responsible for initiating the download typically checks for a user agent string included with the download request to identify the device or client (e.g., browser, WinGet). If you can download the installer using your browser, but encounter issues with WinGet, it is possible that the ISV has blocked the WinGet user agent string.</p>
+<p>The user agent string for WinGet has the following format:</p>
+<p><code>winget-cli WindowsPackageManager/{Client Version} DesktopAppInstaller/Microsoft.DesktopAppInstaller {AppInstaller Version}</code></p>
+<p>Example:</p>
+<p><code>winget-cli WindowsPackageManager/1.9.25200 DesktopAppInstaller/Microsoft.DesktopAppInstaller v1.24.25200.0</code></p>
+<h3 id="system-context">System Context</h3>
+<p>WinGet is delivered via the App Installer as a packaged application. MSIX (packaged) applications depend on an App Execution Alias to be resolved on the PATH environment variable. The WinGet CLI is not supported in the system context. The Microsoft.WinGet.Client PowerShell module can be used in the system context with applications that are installed machine wide.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/troubleshooting.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

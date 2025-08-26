@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Arm64EC for Windows 11 apps on Arm </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Arm64EC for Windows 11 apps on Arm ">
+    
+    <meta name="description" content="Learn how Arm64EC empowers you to build and incrementally update apps that benefit from native performance on Arm devices, without interrupting your current x64 functionality.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="arm64ec---build-and-port-apps-for-native-performance-on-arm">Arm64EC - Build and port apps for native performance on Arm</h1>
+
+<p>Arm64EC (&quot;Emulation Compatible&quot;) enables you to build new native apps or incrementally transition existing x64 apps to take advantage of the native speed and performance possible with Arm-powered devices, including better power consumption, battery life, and accelerated AI &amp; ML workloads.</p>
+<p>Arm64EC is a new application binary interface (ABI) for apps running on Arm devices with Windows 11. It is a Windows 11 feature that requires the use of the Windows 11 SDK and is not available on Windows 10 on Arm.</p>
+<h2 id="interoperability">Interoperability</h2>
+<p>Code built as Arm64EC is interoperable with x64 code running under emulation within the same process.  The Arm64EC code in the process runs with native performance, while any x64 code runs using emulation that comes built-in with Windows 11. Even if your app relies on existing dependencies or plugins that don't yet support Arm, you can start to rebuild parts of your app as Arm64EC to gain the benefits of native performance.</p>
+<p>Arm64EC guarantees interoperability with x64 by following x64 software conventions including calling convention, stack usage, data structure layout, and preprocessor definitions. However, Arm64EC code is not compatible with code built as Arm64, which uses a different set of software conventions.</p>
+<p>The Windows 11 on Arm operating system itself relies heavily on Arm64EC's interoperability to enable running x64 applications.  Most operating system code loaded by an x64 app running on Windows 11 on Arm will have been compiled as Arm64EC, enabling native performance for that code without the application knowing.</p>
+<p>An x64 or Arm64EC process can load and call into both x64 and Arm64EC binaries, whereas an Arm64 process can only load Arm64 binaries.  Both architectures can load <a href="arm64x-pe.html">Arm64X binaries</a> as those contain code for both x64 and Arm64.</p>
+<table>
+<thead>
+<tr>
+<th>Process architecture</th>
+<th>x64 binary</th>
+<th>Arm64EC binary</th>
+<th>Arm64 binary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>x64/Arm64EC</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>Arm64</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Similarly, at build time, Arm64EC binaries can link in both x64 and Arm64EC libs, while Arm64 binaries can only link in Arm64 libs.</p>
+<table>
+<thead>
+<tr>
+<th>PE architecture</th>
+<th>x64 lib</th>
+<th>Arm64EC lib</th>
+<th>Arm64 lib</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Arm64EC</strong></td>
+<td><strong>Supported</strong></td>
+<td><strong>Supported</strong></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td><strong>Arm64</strong></td>
+<td>Not supported</td>
+<td>Not supported</td>
+<td><strong>Supported</strong></td>
+</tr>
+</tbody>
+</table>
+<p>For more detail about how the Arm64EC ABI enables interoperability, see <a href="arm64ec-abi.html">Understanding Arm64EC ABI and assembly code</a>.</p>
+<h2 id="use-arm64ec-to-make-an-existing-app-faster-on-windows-11-on-arm">Use Arm64EC to make an existing app faster on Windows 11 on Arm</h2>
+<p>Arm64EC enables to you to <strong>incrementally</strong> transition the code in your existing app from emulated to native. At each step along the way, your application continues to run well without the need to be recompiled all at once.</p>
+<p><img src="images/arm64ec-incremental-update.png" alt="Example graph showing incremental update effects on Arm performance using Arm64EC"></p>
+<p>The image above shows a simplified example of a fully-emulated x64 workload taking some amount of time that is then incrementally improved using Arm64EC:</p>
+<ol>
+<li>Starting as a fully emulated x64 workload</li>
+<li>After recompiling the most CPU-intensive parts as Arm64EC</li>
+<li>After continuing to recompile more x64 modules over time</li>
+<li>Ending result of a fully native Arm64EC app</li>
+</ol>
+<p>By recompiling the modules that take the most time or are the most CPU-intensive from x64 to Arm64EC, the resulting workload receives the most improvement for the least amount of effort each step of the way.</p>
+<h2 id="app-dependencies">App dependencies</h2>
+<p>When using Arm64EC to rebuild an application, you will want to use Arm64EC versions of dependencies but you can also rely on x64 versions of dependencies. Arm64 versions of dependencies won't be usable.</p>
+<p>Any x64 code, including code from dependencies, in an Arm64EC process will run under emulation in your app. Prioritizing the most CPU-intensive dependencies to transition from x64 to Arm64EC will have the greatest impact toward improving your app's performance.</p>
+<h2 id="identifying-arm64ec-binaries-and-apps">Identifying Arm64EC binaries and apps</h2>
+<p>Apps running on Windows 11 on Arm will interact with Arm64EC binaries as though they are x64 binaries. The app does not need to know to what extent the code in the binary has been recompiled as Arm64EC.</p>
+<p>For developers interested in identifying these binaries, you can see them in a developer command prompt using <code>link /dump /headers</code>.</p>
+<pre><code class="lang-powershell">File Type: EXECUTABLE IMAGE
+FILE HEADER VALUES
+    8664 machine (x64) (ARM64X)
+</code></pre>
+<p>The combination of (x64) and (ARM64X) indicates that some portion of the binary has been recompiled as Arm64EC, even though the binary still appears to be x64. A binary with a machine header that contains (ARM64) and (ARM64X) is an <a href="arm64x-pe.html">Arm64X PE file</a> that can be loaded into both x64 and Arm64 apps.</p>
+<p>Windows <strong>Task Manager</strong> can also be used to identify if an app has been compiled as Arm64EC. In the <strong>Details</strong> tab of Task manager, the <strong>Architecture</strong> column will show <strong>ARM64 (x64 compatible)</strong> for applications whose main executable has been partially or completely compiled as Arm64EC.</p>
+<p><img src="images/arm64ec-task-manager.png" alt="Screenshot of Task Manager showing ARM64 (x64 compatible) in Architecture details."></p>
+<h2 id="next-steps">Next steps</h2>
+<p>See <a href="arm64ec-build.html">Get started with Arm64EC</a> to learn how to build or update Win32 apps using Arm64EC.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/arm64ec.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Grant package identity by packaging with external location in Visual Studio </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Grant package identity by packaging with external location in Visual Studio ">
+    
+    <meta name="description" content="How to use Visual Studio to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="grant-package-identity-by-packaging-with-external-location-in-visual-studio">Grant package identity by packaging with external location in Visual Studio</h1>
+
+<p>For the motivations behind adding package identity, as well as the differences between building
+identity packages in Visual Studio and building them manually, see
+<a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview">Overview</a>.</p>
+<p>This topic describes how to build and register an identity package by using Visual Studio.
+For info about building an identity package manually, see
+<a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps">Grant package identity by packaging with external location manually</a>.</p>
+<p>These are the steps (which this topic describes in detail) to build and register an identity package by using Visual Studio:</p>
+<ol>
+<li><a href="#install-visual-studio-components">Install Visual Studio components</a></li>
+<li><a href="#add-a-packaging-project-to-your-solution">Add a Packaging Project to your solution</a></li>
+<li><a href="#configure-the-packaging-project-for-signing">Configure the Packaging Project for signing</a></li>
+<li><a href="#build-and-test-the-packaging-project-in-release-mode">Build and test the Packaging Project in Release Mode</a></li>
+<li><a href="#register-the-identity-package-in-your-installer">Register the identity package in your installer</a></li>
+<li><a href="#optional-steps">Optional steps</a></li>
+</ol>
+<h2 id="install-visual-studio-components">Install Visual Studio components</h2>
+<p>Creating an identity package in Visual Studio requires the <strong>Windows Application Packaging Project</strong>
+and the <strong>Package with External Location</strong> extension.</p>
+<p>Install the <strong>Windows Application Packaging Project</strong> components as described in
+<a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net#required-visual-studio-version-and-workload">Required Visual Studio version and workload</a>.</p>
+<p>In Visual Studio, via the <strong>Extensions</strong> &gt; <strong>Manage Extensions</strong> menu item,
+install the <strong>Package with External Location</strong> extension.</p>
+<h2 id="add-a-packaging-project-to-your-solution">Add a Packaging Project to your solution</h2>
+<p>To add a Packaging Project to your solution with a Project Reference to your application project,
+see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net#set-up-the-windows-application-packaging-project-in-your-solution">Set up the Windows Application Packaging Project in your solution</a>.</p>
+<p>Enable packaging with external location by right-clicking the Packaging Project in Solution Explorer,
+navigating to the <strong>External Location</strong> tab provided by the <strong>Package with External Location</strong> extension,
+enabling the <strong>Package with External Location</strong> option, and saving the changes.</p>
+<p>Set the <strong>Package name</strong> and <strong>Publisher display name</strong> fields of the identity package by
+double-clicking <code>Package.appxmanifest</code> in the Packaging Project to open the visual manifest editor,
+navigating to the Packaging tab, and setting the <strong>Package name</strong> and <strong>Publisher display name</strong> fields
+to the desired values. See <a href="#localization-and-visual-assets">Localization and Visual Assets</a> for
+scenarios where localization and images may be needed here.</p>
+<p>If you have a custom application manifest in your application project, then for info about
+synchronizing the values with the values from <code>Package.appxmanifest</code>, see
+<a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps#add-identity-metadata-to-your-desktop-application-manifests">Add identity metadata to your desktop application manifests</a>.
+The <strong>Package with External Location</strong> extension uses <strong>App</strong> for the <strong>applicationId</strong>.</p>
+<p>If you don't have a custom application manifest, then Visual Studio will produce the appropriate
+artifacts during the build process. .NET projects embed a manifest by default, which conflicts with
+the produced manifest artifacts. To resolve that, right-click the Project, open <strong>Properties</strong>,
+and in the <strong>Application</strong> tab under the <strong>Manifest</strong> section, change <strong>Embed manifest with default settings</strong>
+to <strong>Create application without a manifest</strong>.</p>
+<h2 id="configure-the-packaging-project-for-signing">Configure the Packaging Project for signing</h2>
+<p>Generate a certificate for signing by walking through the <strong>Publish</strong> &gt; <strong>Create App Packages</strong> wizard
+shown in <a href="/windows/msix/package/packaging-uwp-apps#create-an-app-package-using-the-packaging-wizard">Create an app package using the packaging wizard</a>.</p>
+<p>On the first screen, ensure that <strong>Sideloading</strong> is selected, and <strong>Enable automatic updates</strong> is unchecked.
+On the second screen, create a self-signed certificate if necessary, then click the <strong>Trust</strong> button
+to trust it in the Local Machine Trusted People certificate store. On the final screen,
+set <strong>Generate app bundle</strong> to <em>Never</em>, and click <strong>Create</strong> to complete the signing configuration.</p>
+<h2 id="build-and-test-the-packaging-project-in-release-mode">Build and test the Packaging Project in Release Mode</h2>
+<p>To avoid complications from Debug mode dependencies, set the Build configuration to Release mode,
+and build the Packaging Project.</p>
+<p>Building the Packaging Project produces a <strong>PackageWithExternalLocation</strong> folder in the build output.
+That folder contains the <code>MSIX</code> file representing the identity package, as well as <code>Install</code> and <code>Remove</code>
+PowerShell scripts to register and unregister the generated identity package locally for testing.</p>
+<p>The <code>Install</code> PowerShell script registers the generated identity package locally, and connects it
+with the <code>ExternalLocation</code> sibling folder for testing purposes. To test the application with identity,
+run the application executable from the <code>ExternalLocation</code> folder.</p>
+<p>To associate identity with your application in production, you'll need to ship the generated
+identity package with your application, and register it in your installer.</p>
+<h2 id="register-the-identity-package-in-your-installer">Register the identity package in your installer</h2>
+<p>The last step to associate identity with your application is to register the identity package
+in your installer and associate it with your application's installation directory.</p>
+<h3 id="powershell">PowerShell</h3>
+<p>Executing powershell.exe with the right parameters is the simplest way to register the package.
+The guidance differs for per-user installations vs. machine-wide installations.</p>
+<h4 id="per-user-powershell">Per-User (PowerShell)</h4>
+<p>To register the identity package during a per-user installation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;Add-AppxPackage -Path &lt;PackagePath&gt; -ExternalLocation &lt;ExternalLocation&gt;&quot;
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackagePath&gt;</code> to the absolute path of the signed identity package producedin the previous step
+(with the file name).</li>
+<li>Set <code>&lt;ExternalLocation&gt;</code> to the absolute path of your application's installation directory
+(without any executable names).</li>
+</ul>
+<p>To unregister the identity package during a per-user uninstallation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;Get-AppxPackage &lt;PackageName&gt; | Remove-AppxPackage&quot;
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackageName&gt;</code> to the package name you defined in your identity package manifest
+(the <strong>Name</strong> attribute of the <strong>Identity</strong> element)</li>
+</ul>
+<h4 id="per-machine-powershell">Per-Machine (PowerShell)</h4>
+<p>To register the identity package during a machine-wide installation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;Add-AppxPackage -Stage &lt;PackagePath&gt; -ExternalLocation &lt;ExternalLocation&gt;; Add-AppxProvisionedPackage -Online -PackagePath &lt;PackagePath&gt;&quot;
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackagePath&gt;</code> to the absolute path of the signed identity package produced in the previous step
+(with the file name).</li>
+<li>Set <code>&lt;ExternalLocation&gt;</code> to the absolute path of your application's installation directory
+(without any executable names).</li>
+</ul>
+<p>To unregister the identity package during a machine-wide uninstallation:</p>
+<pre><code class="lang-Console">powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command &quot;$packages = Get-AppxPackage &lt;PackageName&gt;; foreach ($package in $packages) { Remove-AppxProvisionedPackage -PackageName $package.PackageFullName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }
+</code></pre>
+<ul>
+<li>Set <code>&lt;PackageName&gt;</code> to the package name you defined in your identity package manifest
+(the <strong>Name</strong> attribute of the <strong>Identity</strong> element)</li>
+</ul>
+<h3 id="packagemanager-apis">PackageManager APIs</h3>
+<p>If you'd rather call OS APIs to register and unregister the identity package, the PackageManager API
+provides equivalent functionality to PowerShell. The guidance differs for per-user installations vs.
+machine-wide installations.</p>
+<p>Below are snippets that demonstrate the API. For production-ready code in C# and C++, see
+<a href="#sample-apps">Sample apps</a>.</p>
+<h4 id="per-user-packagemanager">Per-User (PackageManager)</h4>
+<p>The code listing below demonstrates registering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync"><strong>AddPackageByUriAsync</strong></a>
+method and unregistering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.removepackageasync"><strong>RemovePackageAsync</strong></a>
+method.</p>
+<pre><code class="lang-csharp">using Windows.Management.Deployment;
+
+...
+
+// Register the identity package during install
+
+var externalUri = new Uri(externalLocation);
+var packageUri = new Uri(packagePath);
+
+var packageManager = new PackageManager();
+
+var options = new AddPackageOptions();
+options.ExternalLocationUri = externalUri;
+
+await packageManager.AddPackageByUriAsync(packageUri, options);
+
+...
+
+// Unregister the identity package during uninstall
+
+var packageManager = new PackageManager();
+
+var packages = packageManager.FindPackagesForUserWithPackageTypes(&quot;&quot;, &quot;&lt;IdentityPackageFamilyName&gt;&quot;, PackageType.Main);
+foreach (var package in packages)
+{
+  await packageManager.RemovePackageAsync(package.Id.FamilyName);
+}
+</code></pre>
+<p>Note the below important details about this code:</p>
+<ul>
+<li>Set <code>externalLocation</code> to the absolute path of your application's installation directory
+(without any executable names)</li>
+<li>Set <code>packagePath</code> to the absolute path of the signed identity package produced in the previous step
+(with the file name)</li>
+<li>The <code>&lt;IdentityPackageFamilyName&gt;</code> can be found in the visual manifest editor in Visual Studio
+under <strong>Packaging</strong> &gt; <strong>Package family name</strong>.</li>
+</ul>
+<h4 id="per-machine-packagemanager">Per-Machine (PackageManager)</h4>
+<p>The code listing below demonstrates registering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.stagepackagebyuriasync"><strong>StagePackageByUriAsync</strong></a> and
+<a href="/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync"><strong>ProvisionPackageForAllUsersAsync</strong></a> methods and unregistering the identity package by using the
+<a href="/uwp/api/windows.management.deployment.packagemanager.removepackageasync"><strong>RemovePackageAsync</strong></a> method.</p>
+<pre><code class="lang-csharp">// Register the identity package during install
+
+var externalUri = new Uri(externalLocation);
+var packageUri = new Uri(packagePath);
+
+var packageManager = new PackageManager();
+
+var options = new StagePackageOptions();
+options.ExternalLocationUri = externalUri;
+
+await packageManager.StagePackageByUriAsync(packageUri, options);
+await packageManager.ProvisionPackageForAllUsersAsync(packageFamilyName);
+
+...
+
+// Unregister the identity package during uninstall
+
+var packageManager = new PackageManager();
+var packages = packageManager.FindPackagesForUserWithPackageTypes(&quot;&quot;, &quot;&lt;IdentityPackageFamilyName&gt;&quot;, PackageType.Main);
+foreach (var package in packages)
+{
+  await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FamilyName);
+  await packageManager.RemovePackageAsync(package.Id.FamilyName, RemovalOptions.RemoveForAllUsers);
+}
+</code></pre>
+<p>Note the below important details about this code:</p>
+<ul>
+<li>Set <code>externalLocation</code> to the absolute path of your application's installation directory
+(without any executable names)</li>
+<li>Set <code>packagePath</code> to the absolute path of the signed identity package produced in the previous step
+(with the file name)</li>
+<li>The <code>&lt;IdentityPackageFamilyName&gt;</code> can be found in the visual manifest editor in Visual Studio
+under <strong>Packaging</strong> &gt; <strong>Package family name</strong>.</li>
+</ul>
+<h2 id="sample-apps">Sample apps</h2>
+<p>For fully functional C# and C++ apps that demonstrate how to register an identity package, see the <a href="https://aka.ms/sparsepkgsample">PackageWithExternalLocation</a> samples.</p>
+<h2 id="optional-steps">Optional steps</h2>
+<h3 id="localization-and-visual-assets">Localization and Visual Assets</h3>
+<p>Some features that understand package identity might result in strings and images from your
+identity package manifest being displayed in the Windows OS. For example:</p>
+<ul>
+<li>An application that uses camera, microphone, or location APIs will have a dedicated control toggle
+in Windows Privacy Settings along with a brokered consent prompt that users can use to grant or deny
+access to those sensitive resources.</li>
+<li>An application that registers a share target will show up in the share dialog.</li>
+</ul>
+<p>To localize the strings in the identity package manifest, see
+<a href="/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-manifest">Localize the manifest</a>.</p>
+<p>When providing paths to images in the <code>VisualElements</code> attributes in the identity package manifest,
+the provided paths should be relative paths within your application's installation directory that will
+resolve to a .png, .jpg, or .jpeg image. The attribute names indicate the expected dimensions of the
+images (150x150 and 40x40).</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

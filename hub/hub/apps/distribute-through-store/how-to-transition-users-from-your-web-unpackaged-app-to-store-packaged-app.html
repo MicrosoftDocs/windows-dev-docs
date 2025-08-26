@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to transition users from your web unpackaged app to Store packaged app. </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to transition users from your web unpackaged app to Store packaged app. ">
+    
+    <meta name="description" content="This section will guide you on how to transition users from your web unpackaged app to Store packaged app.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app">How to transition users from your web unpackaged app to Store packaged app</h1>
+
+<p>If you distribute your application both as a web download (EXE /MSI) and in the Store as a packaged application (MSIX), you might want to prevent users from installing both versions or migrate users from the unpackaged web version to the Store version. This guide will provide instructions on how to seamlessly transition users from the unpackaged version to the packaged one.</p>
+<p>Two scenarios will be described below:</p>
+<ol>
+<li>The user has already installed the web-based unpackaged version, and you wish to replace it with the Store's packaged version.</li>
+<li>The user has already installed both versions, and you want to give priority to the Store packaged version and uninstall the web-based unpackaged version.
+<br></li>
+</ol>
+<h2 id="scenario-1-automatically-update-the-web-unpackaged-application-to-the-store-packaged-application">Scenario 1: Automatically update the web unpackaged application to the Store packaged application</h2>
+<p>If you aim to automatically migrate your users from the web unpackaged application to the packaged Store version, we recommend to follow the following steps:</p>
+<ol>
+<li>Enable your Store-packaged application to use existing taskbar and Start menu pins, ensuring users retain their shortcuts when the Store-packaged application replaces the web unpackaged application.
+<ul>
+<li>See section: <a href="#how-to-migrate-existing-pinned-taskbar-and-start-menu-shortcuts">Migrate existing pinned taskbar and Start Menu shortcuts</a></li>
+</ul>
+</li>
+<li>Download and install silently the Store version from your unpackaged web version.
+<ul>
+<li>See section: <a href="#how-to-install-the-store-packaged-application-from-your-web-unpackaged-application">How to install the Store packaged application from your web unpackaged application?</a></li>
+</ul>
+</li>
+<li>Indicate to users that the application will restart to apply an update</li>
+<li>Once downloaded and installed, launch the Store packaged version and close the web unpackaged version.
+<ul>
+<li>See section: <a href="#how-to-launch-the-store-application-from-your-web-unpackaged-app">How to launch the Store application from your web unpackaged app?</a></li>
+</ul>
+</li>
+<li>In the Store packaged application, migrate the data to the new app data folder.
+<ul>
+<li>See section: <a href="#how-to-migrate-data">Migrate data</a></li>
+</ul>
+</li>
+<li>Finally, programmatically uninstall the unpackaged web version.
+<ul>
+<li>See section: <a href="#how-to-uninstall-your-web-unpackaged-application-from-the-packaged-one">How to uninstall your web unpackaged application from the packaged one?</a>
+<br></li>
+</ul>
+</li>
+</ol>
+<h2 id="scenario-2-uninstall-the-web-based-unpackaged-application-if-the-user-has-installed-both-versions">Scenario 2: Uninstall the web-based unpackaged application if the user has installed both versions.</h2>
+<p>You can allow your users to use both versions of your application side-by-side, but you will have to manage conflicts between the application and will be responsible for syncing the data between the 2 versions.</p>
+<p>If you prefer your users to only use 1 version and prioritize the Store version, here are some recommendations:</p>
+<ol>
+<li>Enable your Store-packaged application to use existing taskbar and Start menu pins, ensuring users retain their shortcuts when the Store-packaged application replaces the web unpackaged application.
+<ul>
+<li>See section: <a href="#how-to-migrate-existing-pinned-taskbar-and-start-menu-shortcuts">Migrate existing pinned taskbar and Start Menu shortcuts</a></li>
+</ul>
+</li>
+<li>The Store application should detect if the unpackaged version is present and uninstall it at launch
+<ul>
+<li>See section: <a href="#how-to-detect-if-the-store-packaged-version-is-installed-and-launch-it">How to detect if the Store packaged version is installed and launch it?</a></li>
+</ul>
+</li>
+<li>When users are launching the unpackaged application, you should automatically launch the packaged version
+<ul>
+<li>See section: <a href="#how-to-launch-the-store-application-from-your-web-unpackaged-app">How to launch the Store application from your web unpackaged app?</a></li>
+</ul>
+</li>
+<li>Potentially migrate the data if you wish
+<ul>
+<li>See section: <a href="#how-to-migrate-data">Migrate data</a></li>
+</ul>
+</li>
+<li>Finally, programmatically uninstall the unpackaged web version.
+<ul>
+<li>See section: <a href="#how-to-uninstall-your-web-unpackaged-application-from-the-packaged-one">How to uninstall your web unpackaged application from the packaged one?</a>
+<br></li>
+</ul>
+</li>
+</ol>
+<h2 id="technical-recommendations">Technical Recommendations</h2>
+<h3 id="how-to-install-the-store-packaged-application-from-your-web-unpackaged-application">How to install the Store packaged application from your web unpackaged application</h3>
+<p>To initiate the download and installation, you must know your application's Store ID. This 12-character ID can be obtained from the Partner Center, specifically under the &quot;Product Identity&quot; section, even if your application has not been submitted yet.</p>
+<p>Subsequently, you can use the following code to silently download and install the Store application. This code will:</p>
+<ol>
+<li>Assign an entitlement to the current Store user if present; otherwise, the entitlement will be associated with the device.</li>
+<li>Initiate the download and installation of the product without generating any notification toasts.</li>
+<li>You can monitor the download and installation progress using the event APIs.</li>
+</ol>
+<pre><code class="lang-csharp">    private async Task&lt;bool&gt; DownloadStoreVersionAsync()
+    {
+        var productId = &quot;&lt;Product Id from Partner Center&gt;&quot;;
+        var applicationName = &quot;&lt;name of your application&gt;&quot;;
+
+        var appInstallManager = new AppInstallManager();
+        var entitlement = await appInstallManager.GetFreeUserEntitlementAsync(productId, string.Empty, string.Empty);
+        if (entitlement.Status is GetEntitlementStatus.NoStoreAccount)
+        {
+            entitlement = await appInstallManager.GetFreeDeviceEntitlementAsync(productId, string.Empty, string.Empty);
+        }
+        if (entitlement.Status is not GetEntitlementStatus.Succeeded)
+        {
+            return false;
+        }
+
+        var options = new AppInstallOptions()
+        {
+            LaunchAfterInstall = true,
+            CompletedInstallToastNotificationMode = AppInstallationToastNotificationMode.NoToast
+        };
+        var items = await appInstallManager.StartProductInstallAsync(productId, string.Empty, applicationName, string.Empty, options);
+        var firstItem = items.FirstOrDefault();
+        if(firstItem is null)
+        {
+            return false;
+        }
+        firstItem.StatusChanged += StoreInstallation_StatusChanged;
+        firstItem.Completed += StoreInstallation_Completed;
+        return true;
+    }
+
+    private void StoreInstallation_Completed(AppInstallItem sender, object args)
+    {
+        // Launch the new Store version when ready and close this application
+        // The Store version will then be responsible of migrating the data and uninstall the unpackaged version
+    }
+
+    private void StoreInstallation_StatusChanged(AppInstallItem sender, object args)
+    {
+        var status = sender.GetCurrentStatus();
+        switch(status.InstallState)
+        {
+            case AppInstallState.Installing:
+                {
+                    // Show installing status
+                }
+                break;
+            case AppInstallState.Downloading:
+                {
+                    // Show download progress using status.PercentComplete
+                }
+                break;
+            ...
+        }
+</code></pre>
+<h3 id="how-to-launch-the-store-application-from-your-web-unpackaged-app">How to launch the Store application from your web unpackaged app</h3>
+<p>To launch a Store application, it is necessary to know its AMUID, which consists of the Package Family Name (found in the &quot;Product Identity&quot; section of the Partner Center) and the Application Id (from your appxmanifest), separated by an exclamation mark (!).</p>
+<pre><code class="lang-csharp">        Process.Start(
+            &quot;explorer.exe&quot;,
+            &quot;shell:AppsFolder\\Microsoft.WindowsCalculator_8wekyb3d8bbwe!App&quot;
+        );
+</code></pre>
+<h3 id="how-to-detect-if-the-store-packaged-version-is-installed-and-launch-it">How to detect if the Store packaged version is installed and launch it</h3>
+<p>You can determine whether your packaged version of the application is installed by using the <a href="/windows/win32/api/appmodel/nf-appmodel-getpackagesbypackagefamily">GetPackagesByPackageFamily</a> win32 API and passing in the Package Family Name of your packaged app. If the count value is higher than zero, it indicates that the application is installed.</p>
+<h3 id="how-to-uninstall-your-web-unpackaged-application-from-the-packaged-one">How to uninstall your web unpackaged application from the packaged one</h3>
+<p>To retrieve the absolute path of your uninstaller, you can access the registry.</p>
+<p>Your uninstaller information is located in the registry at:</p>
+<pre><code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\&lt;your product code GUID\&gt;
+</code></pre>
+<p>Retrieve the full command in the <code>UninstallString</code> value and execute it.
+It is recommended to either perform the uninstallation silently or inform the user that you are migrating data and uninstalling the other application.</p>
+<h3 id="how-to-migrate-data">How to migrate data</h3>
+<p>Your unpackaged application likely stores its local data in:</p>
+<pre><code>%localAppData%/&lt;YourPublisherName\&gt;/&lt;YourAppName\&gt;
+</code></pre>
+<p>Packaged applications have their reserved space for data storage, which is automatically deleted when the application is uninstalled. It is highly recommended (though not mandatory) to migrate the data to this space upon the first launch. You can retrieve the absolute path of this folder by calling <a href="/uwp/api/windows.storage.applicationdata.localfolder?view=winrt-22621">Windows.Storage.ApplicationData.Current.LocalFolder.Path</a>.</p>
+<h3 id="how-to-migrate-acquisitions-and-in-app-purchases">How to migrate acquisitions and in-app purchases</h3>
+<h4 id="in-app-purchases">In-app purchases</h4>
+<p>To guarantee an optimal user experience, it is essential that users can seamlessly access content they have purchased in the unpackaged version of your application. With this objective, the Microsoft Store has increased its flexibility for publishers by permitting the use of their own or third-party commerce platforms in addition to Microsoft's since June 2021.</p>
+<p>We strongly encourage publishers to continue verifying in-app purchase entitlements as performed in the unpackaged version of their application in addition to integrate with the Microsoft Commerce platform to enable users to effortlessly purchase your content with just a few clicks on Windows.</p>
+<h4 id="allow-paid-users-of-the-unpackaged-application-to-migrate-to-the-packaged-version">Allow paid users of the unpackaged application to migrate to the packaged version</h4>
+<p>If users have purchased your product on your website, they should not have to pay again to download the packaged version from the Store.
+To ensure a seamless transition, we recommend the following approaches:</p>
+<ol>
+<li>Offer a free/demo version of your product, allowing users to unlock the full version through in-app purchases. For users who have already paid on your website, enable them to access the full version by signing in to verify their licenses or by entering their license key in the application's user interface.</li>
+<li>Set your application as a paid offering but distribute coupon code to your existing users through your own channels. These codes will allow them to download the Store version at no additional cost. More information can be found in <a href="/windows/apps/publish/generate-promotional-codes">Generate promotional codes</a>.</li>
+</ol>
+<h3 id="how-to-migrate-existing-pinned-taskbar-and-start-menu-shortcuts">How to migrate existing pinned taskbar and Start Menu shortcuts</h3>
+<p>Your users may have pinned your desktop application to the taskbar or the Start menu. You can direct these shortcuts to your new packaged app by including the &quot;windows.desktopAppMigration&quot; extension in your application manifest.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-csharp">xmlns:rescap3=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3&quot;
+...
+&lt;Extensions&gt;
+&lt;rescap3:Extension Category=&quot;windows.desktopAppMigration&quot;&gt;
+&lt;rescap3:DesktopAppMigration&gt;
+&lt;rescap3:DesktopApp AumId=&quot;[your_app_aumid]&quot; /&gt;
+&lt;rescap3:DesktopApp ShortcutPath=&quot;%USERPROFILE%\Desktop\[my_app].lnk&quot; /&gt;
+&lt;rescap3:DesktopApp ShortcutPath=&quot;%APPDATA%\Microsoft\Windows\Start Menu\Programs\[my_app].lnk&quot; /&gt;
+&lt;rescap3:DesktopApp ShortcutPath=&quot;%PROGRAMDATA%\Microsoft\Windows\Start Menu\Programs\[my_app_folder]\[my_app].lnk&quot;/&gt;
+&lt;/rescap3:DesktopAppMigration&gt;
+&lt;/rescap3:Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+<p>After installing your application, the pins in the taskbar or in the Start menu, as well as the tiles (for Windows 10) will launch automatically the Store application.</p>
+<h3 id="how-to-migrate-file-extension--protocol-associations">How to migrate file extension &amp; protocol associations</h3>
+<p>If your application supports file extension or protocol associations and users have selected your app as the default application for specific file extensions and protocols, you have the option to migrate these associations to your Store packaged application. This migration can be achieved by updating your app manifest with the following code snippet.</p>
+<pre><code class="lang-code">xmlns:rescap3=&quot;http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities/3&quot;
+...
+&lt;Extensions&gt;
+&lt;uap:Extension Category=&quot;windows.fileTypeAssociation&quot;&gt;
+&lt;uap3:FileTypeAssociation Name=&quot;.foo&quot;&gt;
+&lt;rescap3:MigrationProgIds&gt;
+&lt;rescap3:MigrationProgId&gt;Foo.Bar.1&lt;/rescap3:MigrationProgId&gt;
+&lt;/rescap3:MigrationProgIds&gt;
+…
+&lt;/uap3:FileTypeAssociation&gt;
+&lt;/uap:Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+<p>Simply list the <a href="/windows/win32/shell/fa-progids">programmatic identifiers</a> to which you want to migrate, and the system will automatically migrate them to your application after installation.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

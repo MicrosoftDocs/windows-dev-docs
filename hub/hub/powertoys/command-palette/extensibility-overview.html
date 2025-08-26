@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Command Palette Extensibility </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Command Palette Extensibility ">
+    
+    <meta name="description" content="The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Learn how to create an extension and publish it.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="extensibility-overview">Extensibility overview</h1>
+
+<p>The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette.</p>
+<p>The fastest way to get started writing extensions is from the Command Palette itself. Just run the &quot;Create a new extension&quot; command, fill out the fields to populate the template project, and you should be ready to start.</p>
+<p>For more detailed instructions, you can follow these pages:</p>
+<ul>
+<li><a href="creating-an-extension.html">Creating an extension</a></li>
+<li><a href="adding-commands.html">Adding commands</a></li>
+<li><a href="update-a-list-of-commands.html">Update a list of commands</a></li>
+<li><a href="add-top-level-commands-to-your-extension.html">Add top-level commands to your extension</a></li>
+<li><a href="command-results.html">Command results</a></li>
+<li><a href="using-markdown-content.html">Display markdown content</a></li>
+<li><a href="using-form-pages.html">Get user input with forms</a></li>
+</ul>
+<!-- * [Handle the search text](../command-palette/dynamic-lists.md) -->
+<!-- * [Advanced: Adding an extension to your package](../command-palette/adding-an-extension-to-your-package.md) -->
+<h2 id="extension-details">Extension details</h2>
+<p>Command Palette defines a WinRT API (<a href="microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.html">Microsoft.CommandPalette.Extensions</a>), which is how extensions can communicate with Command Palette.</p>
+<p>Command Palette will use the Package Catalog to find apps that list themselves as an <code>windows.appExtension</code> for <code>com.microsoft.commandpalette</code>.</p>
+<h3 id="registering-your-extension">Registering your extension</h3>
+<p>Extensions can register themselves with the Command Palette using their <code>.appxmanifest</code>. As an example:</p>
+<pre><code class="lang-xml">&lt;Extensions&gt;
+    &lt;com:Extension Category=&quot;windows.comServer&quot;&gt;
+        &lt;com:ComServer&gt;
+            &lt;com:ExeServer Executable=&quot;ExtensionName.exe&quot; Arguments=&quot;-RegisterProcessAsComServer&quot; DisplayName=&quot;Sample Extension&quot;&gt;
+                &lt;com:Class Id=&quot;&lt;Extension CLSID Here&gt;&quot; DisplayName=&quot;Sample Extension&quot; /&gt;
+            &lt;/com:ExeServer&gt;
+        &lt;/com:ComServer&gt;
+    &lt;/com:Extension&gt;
+    &lt;uap3:Extension Category=&quot;windows.appExtension&quot;&gt;
+        &lt;uap3:AppExtension Name=&quot;com.microsoft.commandpalette&quot;
+                           Id=&quot;YourApplicationUniqueId&quot;
+                           PublicFolder=&quot;Public&quot;
+                           DisplayName=&quot;Sample Extension&quot;
+                           Description=&quot;Sample Extension for Command Palette&quot;&gt;
+            &lt;uap3:Properties&gt;
+                &lt;CmdPalProvider&gt;
+                    &lt;Activation&gt;
+                        &lt;CreateInstance ClassId=&quot;&lt;Extension CLSID Here&gt;&quot; /&gt;
+                    &lt;/Activation&gt;
+                    &lt;SupportedInterfaces&gt;
+                        &lt;Commands /&gt;
+                    &lt;/SupportedInterfaces&gt;
+                &lt;/CmdPalProvider&gt;
+            &lt;/uap3:Properties&gt;
+        &lt;/uap3:AppExtension&gt;
+    &lt;/uap3:Extension&gt;
+&lt;/Extensions&gt;
+</code></pre>
+<p>In this manifest, we're using an out-of-process COM server to act as the communication layer between your app and Command Palette. <strong>Don't worry about this</strong>! The template project will take care of creating a COM server for you, starting it, and marshalling your objects to Command Palette.</p>
+<h3 id="important-notes">Important notes</h3>
+<p>Some notable elements about the manifest example:</p>
+<ul>
+<li>The application must specify a <code>Extensions.uap3Extension.AppExtension</code> with the Name set to <code>com.microsoft.commandpalette</code>. This is the unique identifier which Command Palette uses to find it's extensions.</li>
+<li>The application must specify a <code>Extensions.comExtension.ComServer</code> to host their COM class. This allows for the OS to register that GUID as a COM class we can instantiate.
+<ul>
+<li>Make sure that this CLSID is unique, and matches the one in your application. If you change one, you need to change all three.</li>
+</ul>
+</li>
+<li>In the <code>Properties</code> of your <code>AppExtension</code>, you must specify a <code>CmdPalProvider</code> element. This is where you specify the CLSID of the COM class that Command Palette will instantiate to interact with your extension.
+<ul>
+<li>Currently, only <code>Commands</code> is supported.</li>
+</ul>
+</li>
+</ul>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/extensibility-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

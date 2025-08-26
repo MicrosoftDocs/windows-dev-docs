@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Speech recognition </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Speech recognition ">
+    
+    <meta name="description" content="Use speech recognition to provide input, specify an action or command, and accomplish tasks.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="speech-recognition">Speech recognition</h1>
+
+<p>Use speech recognition to provide input, specify an action or command, and accomplish tasks.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.Media.SpeechRecognition"><strong>Windows.Media.SpeechRecognition</strong></a></p>
+</blockquote>
+<p>Speech recognition is made up of a speech runtime, recognition APIs for programming the runtime, ready-to-use grammars for dictation and web search, and a default system UI that helps users discover and use speech recognition features.</p>
+<h2 id="configure-speech-recognition">Configure speech recognition</h2>
+<p>To support speech recognition with your app, the user must connect and enable a microphone on their device, and accept the Microsoft Privacy Policy granting permission for your app to use it.</p>
+<p>To automatically prompt the user with a system dialog requesting permission to access and use the microphone's audio feed (example from the <a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis">Speech recognition and speech synthesis sample</a> shown below), just set the <strong>Microphone</strong> <a href="/uwp/schemas/appxpackage/appxmanifestschema/element-devicecapability">device capability</a> in the <a href="/uwp/schemas/appxpackage/appx-package-manifest">App package manifest</a>. For more detail, see <a href="/windows/uwp/packaging/app-capability-declarations">App capability declarations</a>.</p>
+<p><img src="images/speech/privacy.png" alt="Privacy policy for microphone access"></p>
+<p>If the user clicks Yes to grant access to the microphone, your app is added to the list of approved applications on the Settings -&gt; Privacy -&gt; Microphone page. However, as the user can choose to turn this setting off at any time, you should confirm that your app has access to the microphone before attempting to use it.</p>
+<p>If you also want to support dictation, Cortana, or other speech recognition services (such as a <a href="#predefined-grammars">predefined grammar</a> defined in a topic constraint), you must also confirm that <strong>Online speech recognition</strong> (Settings -&gt; Privacy -&gt; Speech) is enabled.</p>
+<p>This snippet shows how your app can check if a microphone is present and if it has permission to use it.</p>
+<pre><code class="lang-csharp">public class AudioCapturePermissions
+{
+    // If no microphone is present, an exception is thrown with the following HResult value.
+    private static int NoCaptureDevicesHResult = -1072845856;
+
+    /// &lt;summary&gt;
+    /// Note that this method only checks the Settings-&gt;Privacy-&gt;Microphone setting, it does not handle
+    /// the Cortana/Dictation privacy check.
+    ///
+    /// You should perform this check every time the app gets focus, in case the user has changed
+    /// the setting while the app was suspended or not in focus.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;True, if the microphone is available.&lt;/returns&gt;
+    public async static Task&lt;bool&gt; RequestMicrophonePermission()
+    {
+        try
+        {
+            // Request access to the audio capture device.
+            MediaCaptureInitializationSettings settings = new MediaCaptureInitializationSettings();
+            settings.StreamingCaptureMode = StreamingCaptureMode.Audio;
+            settings.MediaCategory = MediaCategory.Speech;
+            MediaCapture capture = new MediaCapture();
+
+            await capture.InitializeAsync(settings);
+        }
+        catch (TypeLoadException)
+        {
+            // Thrown when a media player is not available.
+            var messageDialog = new Windows.UI.Popups.MessageDialog(&quot;Media player components are unavailable.&quot;);
+            await messageDialog.ShowAsync();
+            return false;
+        }
+        catch (UnauthorizedAccessException)
+        {
+            // Thrown when permission to use the audio capture device is denied.
+            // If this occurs, show an error or disable recognition functionality.
+            return false;
+        }
+        catch (Exception exception)
+        {
+            // Thrown when an audio capture device is not present.
+            if (exception.HResult == NoCaptureDevicesHResult)
+            {
+                var messageDialog = new Windows.UI.Popups.MessageDialog(&quot;No Audio Capture devices are present on this system.&quot;);
+                await messageDialog.ShowAsync();
+                return false;
+            }
+            else
+            {
+                throw;
+            }
+        }
+        return true;
+    }
+}
+</code></pre>
+<pre><code class="lang-cpp">/// &lt;summary&gt;
+/// Note that this method only checks the Settings-&gt;Privacy-&gt;Microphone setting, it does not handle
+/// the Cortana/Dictation privacy check.
+///
+/// You should perform this check every time the app gets focus, in case the user has changed
+/// the setting while the app was suspended or not in focus.
+/// &lt;/summary&gt;
+/// &lt;returns&gt;True, if the microphone is available.&lt;/returns&gt;
+IAsyncOperation&lt;bool&gt;^  AudioCapturePermissions::RequestMicrophonePermissionAsync()
+{
+    return create_async([]() 
+    {
+        try
+        {
+            // Request access to the audio capture device.
+            MediaCaptureInitializationSettings^ settings = ref new MediaCaptureInitializationSettings();
+            settings-&gt;StreamingCaptureMode = StreamingCaptureMode::Audio;
+            settings-&gt;MediaCategory = MediaCategory::Speech;
+            MediaCapture^ capture = ref new MediaCapture();
+
+            return create_task(capture-&gt;InitializeAsync(settings))
+                .then([](task&lt;void&gt; previousTask) -&gt; bool
+            {
+                try
+                {
+                    previousTask.get();
+                }
+                catch (AccessDeniedException^)
+                {
+                    // Thrown when permission to use the audio capture device is denied.
+                    // If this occurs, show an error or disable recognition functionality.
+                    return false;
+                }
+                catch (Exception^ exception)
+                {
+                    // Thrown when an audio capture device is not present.
+                    if (exception-&gt;HResult == AudioCapturePermissions::NoCaptureDevicesHResult)
+                    {
+                        auto messageDialog = ref new Windows::UI::Popups::MessageDialog(&quot;No Audio Capture devices are present on this system.&quot;);
+                        create_task(messageDialog-&gt;ShowAsync());
+                        return false;
+                    }
+
+                    throw;
+                }
+                return true;
+            });
+        }
+        catch (Platform::ClassNotRegisteredException^ ex)
+        {
+            // Thrown when a media player is not available. 
+            auto messageDialog = ref new Windows::UI::Popups::MessageDialog(&quot;Media Player Components unavailable.&quot;);
+            create_task(messageDialog-&gt;ShowAsync());
+            return create_task([] {return false; });
+        }
+    });
+}
+</code></pre>
+<pre><code class="lang-js">var AudioCapturePermissions = WinJS.Class.define(
+    function () { }, {},
+    {
+        requestMicrophonePermission: function () {
+            /// &lt;summary&gt;
+            /// Note that this method only checks the Settings-&gt;Privacy-&gt;Microphone setting, it does not handle
+            /// the Cortana/Dictation privacy check.
+            ///
+            /// You should perform this check every time the app gets focus, in case the user has changed
+            /// the setting while the app was suspended or not in focus.
+            /// &lt;/summary&gt;
+            /// &lt;returns&gt;True, if the microphone is available.&lt;/returns&gt;
+            return new WinJS.Promise(function (completed, error) {
+
+                try {
+                    // Request access to the audio capture device.
+                    var captureSettings = new Windows.Media.Capture.MediaCaptureInitializationSettings();
+                    captureSettings.streamingCaptureMode = Windows.Media.Capture.StreamingCaptureMode.audio;
+                    captureSettings.mediaCategory = Windows.Media.Capture.MediaCategory.speech;
+
+                    var capture = new Windows.Media.Capture.MediaCapture();
+                    capture.initializeAsync(captureSettings).then(function () {
+                        completed(true);
+                    },
+                    function (error) {
+                        // Audio Capture can fail to initialize if there's no audio devices on the system, or if
+                        // the user has disabled permission to access the microphone in the Privacy settings.
+                        if (error.number == -2147024891) { // Access denied (microphone disabled in settings)
+                            completed(false);
+                        } else if (error.number == -1072845856) { // No recording device present.
+                            var messageDialog = new Windows.UI.Popups.MessageDialog(&quot;No Audio Capture devices are present on this system.&quot;);
+                            messageDialog.showAsync();
+                            completed(false);
+                        } else {
+                            error(error);
+                        }
+                    });
+                } catch (exception) {
+                    if (exception.number == -2147221164) { // REGDB_E_CLASSNOTREG
+                        var messageDialog = new Windows.UI.Popups.MessageDialog(&quot;Media Player components not available on this system.&quot;);
+                        messageDialog.showAsync();
+                        return false;
+                    }
+                }
+            });
+        }
+    })
+</code></pre>
+<h2 id="recognize-speech-input">Recognize speech input</h2>
+<p>A <em>constraint</em> defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app greater control over the accuracy of speech recognition.</p>
+<p>You can use the following types of constraints for recognizing speech input.</p>
+<h3 id="predefined-grammars">Predefined grammars</h3>
+<p>Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device.</p>
+<p>The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. The predefined dictation grammar is used if you don't specify any constraints for your <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer"><strong>SpeechRecognizer</strong></a> object. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.</p>
+<p>The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.</p>
+</div>
+<p>These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.</p>
+<p>To use web-service constraints, speech input and dictation support must be enabled in <strong>Settings</strong> by turning on the &quot;Get to know me&quot; option in  <strong>Settings -&gt; Privacy -&gt; Speech, inking, and typing</strong>.</p>
+<p>Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.</p>
+<p>First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See <a href="/previous-versions/windows/apps/dn532194(v=win.10)">Exception handling for in C# or Visual Basic</a>.</p>
+<pre><code class="lang-csharp">private static uint HResultPrivacyStatementDeclined = 0x80045509;
+</code></pre>
+<p>We then catch any standard exceptions during recognition and test if the <a href="/uwp/api/Windows.Foundation.HResult"><strong>HResult</strong></a> value is equal to the value of the HResultPrivacyStatementDeclined variable. If so, we display a warning and call <code>await Windows.System.Launcher.LaunchUriAsync(new Uri(&quot;ms-settings:privacy-accounts&quot;));</code> to open the Settings page.</p>
+<pre><code class="lang-csharp">catch (Exception exception)
+{
+  // Handle the speech privacy policy error.
+  if ((uint)exception.HResult == HResultPrivacyStatementDeclined)
+  {
+    resultTextBlock.Visibility = Visibility.Visible;
+    resultTextBlock.Text = &quot;The privacy statement was declined.&quot; + 
+      &quot;Go to Settings -&gt; Privacy -&gt; Speech, inking and typing, and ensure you&quot; +
+      &quot;have viewed the privacy policy, and 'Get To Know You' is enabled.&quot;;
+    // Open the privacy/speech, inking, and typing settings page.
+    await Windows.System.Launcher.LaunchUriAsync(new Uri(&quot;ms-settings:privacy-accounts&quot;)); 
+  }
+  else
+  {
+    var messageDialog = new Windows.UI.Popups.MessageDialog(exception.Message, &quot;Exception&quot;);
+    await messageDialog.ShowAsync();
+  }
+}
+</code></pre>
+<p>See <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint"><strong>SpeechRecognitionTopicConstraint</strong></a>.</p>
+<h3 id="programmatic-list-constraints">Programmatic list constraints</h3>
+<p>Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.</p>
+<p>A list constraint consists of an array of strings that represents speech input that your app will accept for a recognition operation. You can create a list constraint in your app by creating a speech-recognition list-constraint object and passing an array of strings. Then, add that object to the constraints collection of the recognizer. Recognition is successful when the speech recognizer recognizes any one of the strings in the array.</p>
+<p>See <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint"><strong>SpeechRecognitionListConstraint</strong></a>.</p>
+<h3 id="srgs-grammars">SRGS grammars</h3>
+<p>An Speech Recognition Grammar Specification (SRGS) grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the <a href="https://www.w3.org/TR/speech-grammar/">SRGS Version 1.0</a>. An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.</p>
+<p>See <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint"><strong>SpeechRecognitionGrammarFileConstraint</strong></a>.</p>
+<h3 id="voice-command-constraints">Voice command constraints</h3>
+<p>Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see <a href="cortana-launch-a-foreground-app-with-voice-commands.html">Activate a foreground app with voice commands through Cortana</a>.</p>
+<p>See <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint"><strong>SpeechRecognitionVoiceCommandDefinitionConstraint</strong></a>/</p>
+<p><strong>Note</strong>  The type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
+To get started with constraints, see <a href="define-custom-recognition-constraints.html">Define custom recognition constraints</a>.</p>
+<p>The predefined Universal Windows app dictation grammar recognizes most words and short phrases in a language. It is activated by default when a speech recognizer object is instantiated without custom constraints.</p>
+<p>In this example, we show how to:</p>
+<ul>
+<li>Create a speech recognizer.</li>
+<li>Compile the default Universal Windows app constraints (no grammars have been added to the speech recognizer's grammar set).</li>
+<li>Start listening for speech by using the basic recognition UI and TTS feedback provided by the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync"><strong>RecognizeWithUIAsync</strong></a> method. Use the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync"><strong>RecognizeAsync</strong></a> method if the default UI is not required.</li>
+</ul>
+<pre><code class="lang-CSharp">private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
+{
+    // Create an instance of SpeechRecognizer.
+    var speechRecognizer = new Windows.Media.SpeechRecognition.SpeechRecognizer();
+
+    // Compile the dictation grammar by default.
+    await speechRecognizer.CompileConstraintsAsync();
+
+    // Start recognition.
+    Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeWithUIAsync();
+
+    // Do something with the recognition result.
+    var messageDialog = new Windows.UI.Popups.MessageDialog(speechRecognitionResult.Text, &quot;Text spoken&quot;);
+    await messageDialog.ShowAsync();
+}
+</code></pre>
+<h2 id="customize-the-recognition-ui">Customize the recognition UI</h2>
+<p>When your app attempts speech recognition by calling <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync"><strong>SpeechRecognizer.RecognizeWithUIAsync</strong></a>, several screens are shown in the following order.</p>
+<p>If you're using a constraint based on a predefined grammar (dictation or web search):</p>
+<ul>
+<li>The <strong>Listening</strong> screen.</li>
+<li>The <strong>Thinking</strong> screen.</li>
+<li>The <strong>Heard you say</strong> screen or the error screen.</li>
+</ul>
+<p>If you're using a constraint based on a list of words or phrases, or a constraint based on a SRGS grammar file:</p>
+<ul>
+<li>The <strong>Listening</strong> screen.</li>
+<li>The <strong>Did you say</strong> screen, if what the user said could be interpreted as more than one potential result.</li>
+<li>The <strong>Heard you say</strong> screen or the error screen.</li>
+</ul>
+<p>The following image shows an example of the flow between screens for a speech recognizer that uses a constraint based on a SRGS grammar file. In this example, speech recognition was successful.</p>
+<p><img src="images/speech-listening-initial.png" alt="initial recognition screen for a constraint based on a sgrs grammar file"></p>
+<p><img src="images/speech-listening-intermediate.png" alt="intermediate recognition screen for a constraint based on a sgrs grammar file"></p>
+<p><img src="images/speech-listening-complete.png" alt="final recognition screen for a constraint based on a sgrs grammar file"></p>
+<p>The <strong>Listening</strong> screen can provide examples of words or phrases that the app can recognize. Here, we show how to use the properties of the <a href="/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions"><strong>SpeechRecognizerUIOptions</strong></a> class (obtained by calling the <a href="/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions"><strong>SpeechRecognizer.UIOptions</strong></a> property) to customize content on the <strong>Listening</strong> screen.</p>
+<pre><code class="lang-CSharp">private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
+{
+    // Create an instance of SpeechRecognizer.
+    var speechRecognizer = new Windows.Media.SpeechRecognition.SpeechRecognizer();
+
+    // Listen for audio input issues.
+    speechRecognizer.RecognitionQualityDegrading += speechRecognizer_RecognitionQualityDegrading;
+
+    // Add a web search grammar to the recognizer.
+    var webSearchGrammar = new Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint(Windows.Media.SpeechRecognition.SpeechRecognitionScenario.WebSearch, &quot;webSearch&quot;);
+
+
+    speechRecognizer.UIOptions.AudiblePrompt = &quot;Say what you want to search for...&quot;;
+    speechRecognizer.UIOptions.ExampleText = @&quot;Ex. 'weather for London'&quot;;
+    speechRecognizer.Constraints.Add(webSearchGrammar);
+
+    // Compile the constraint.
+    await speechRecognizer.CompileConstraintsAsync();
+
+    // Start recognition.
+    Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = await speechRecognizer.RecognizeWithUIAsync();
+    //await speechRecognizer.RecognizeWithUIAsync();
+
+    // Do something with the recognition result.
+    var messageDialog = new Windows.UI.Popups.MessageDialog(speechRecognitionResult.Text, &quot;Text spoken&quot;);
+    await messageDialog.ShowAsync();
+}
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="speech-interactions.html">Speech interactions</a></li>
+</ul>
+<p><strong>Samples</strong></p>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis">Speech recognition and speech synthesis sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/speech-recognition.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Designing for Mixed Reality </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Designing for Mixed Reality ">
+    
+    <meta name="description" content="Design your app so that it looks good and functions well in Mixed Reality.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="designing-for-mixed-reality">Designing for Mixed Reality</h1>
+
+<p>Design your app to look good in Mixed Reality, and take advantage of new input methods.</p>
+<h2 id="overview">Overview</h2>
+<p><a href="https://developer.microsoft.com/windows/mixed-reality/mixed_reality">Mixed Reality</a> is the result of blending the physical world with the digital world. The spectrum of mixed reality experiences includes at one extreme devices such as the HoloLens (a device that mixes computer generated content with the real world), and at the other a completely immersive view of Virtual Reality (as viewed with a Windows Mixed Reality headset). See <a href="https://developer.microsoft.com/windows/mixed-reality/types_of_mixed_reality_apps">Types of mixed reality apps</a> for examples of how experiences will vary.</p>
+<p>Almost all existing UWP apps will run in the Mixed Reality environment as 2D apps with no changes, although the experience for the user can be improved by following some of the guidance in this topic.</p>
+<p><img src="images/MR-01.png" alt="Mixed Reality view"></p>
+<p>Both the HoloLens and Windows Mixed Reality headsets support applications running on the UWP platform, and both support two distinct types of experience.</p>
+<h3 id="2d-vs-immersive-experience">2D vs. Immersive Experience</h3>
+<p>An immersive app takes over the entire display visible to the user, placing her at the center of a view created by the app. For example, an immersive game might place the user on the surface of an alien planet, or a tour guide app might place the user in a South American village. Creating an immersive app requires 3D graphics or captured stereographic video. Immersive apps are often developed using a 3rd party game engine such as Unity, or with DirectX.</p>
+<p>If you are creating immersive apps, you should visit the <a href="https://developer.microsoft.com/mixed-reality">Windows Mixed Reality Dev Center</a> for more information.</p>
+<p>A 2D app runs as a traditional flat window within the user's view. On the HoloLens, that means a view pinned to the wall or a point in space in the users own real-world living room or office. In a Windows Mixed Reality headset, the app is pinned to a wall in the <a href="/windows/mixed-reality/enthusiast-guide/your-mixed-reality-home">mixed reality home</a> (sometimes called the <em>Cliff House</em>).</p>
+<p><img src="images/MR-multiple.png" alt="Multiple apps running in Mixed Reality"></p>
+<p>These 2D apps do not take over the entire view: they are placed within it. Multiple 2D apps can exist in the environment at once.</p>
+<p>The remainder of this topic discusses design considerations for the 2D experience.</p>
+<h2 id="launching-2d-apps">Launching 2D apps</h2>
+<p><img src="images/MR-start-options.png" alt="Mixed Reality Start Menu"></p>
+<p>All apps are launched from the Start Menu, but it's also possible to create a 3D object to act as an app launcher. See the <a href="https://www.youtube.com/watch?v=TxIslHsEXno">Creating 3D App Launchers for Windows Mixed Reality</a> video for details.</p>
+<h2 id="the-2d-app-input-overview">The 2D App Input Overview</h2>
+<p>Keyboards and mice are supported on both HoloLens and Mixed Reality platforms. You can pair a keyboard and mouse directly with the HoloLens over Bluetooth. Mixed Reality apps support the mouse and keyboard connected to the host computer. Both may be useful in situations when a fine-level of control is necessary.</p>
+<p>Other, more natural, input methods are also supported, and these may be particularly useful when the user isn't sitting at a desk with a real keyboard in front of them, or when fine control is needed.</p>
+<p>Without any extra hardware or coding, apps will use gaze - the vector your user is looking along - as a mouse pointer when working with 2D apps. It is implemented as if a mouse pointer was hovering over something in the virtual scene.</p>
+<p>In a typical interaction, your user will look at a control in your app, causing it to highlight. The user will when trigger an action, using either a gesture (on the HoloLens), or a controller or by giving a voice command. If the user selects a text input field, the software keyboard will appear.</p>
+<p><img src="images/MR-keyboard.png" alt="The pop-up keyboard in Mixed Reality"></p>
+<p>It's important to note that all these interactions will happen automatically with no extra coding on your part, as a consequence of running on the UWP platform. Input from the HoloLens and Mixed Reality headset will appear as touch input to the 2D app. This means that many UWP apps will run and be usable in Mixed Reality, by default.</p>
+<p>That said, with some extra work, the experience can be improved greatly. For example, <a href="https://developer.microsoft.com/windows/mixed-reality/voice_design">voice control</a> can be especially effective. Both HoloLens and Mixed Reality environments support voice commands for launching and interacting with apps, and including voice support will appear as a natural extension of this approach. See <a href="../input/speech-interactions.html">Speech interactions</a> for more information on adding voice support to your UWP app.</p>
+<h3 id="selecting-the-right-controller">Selecting the right controller</h3>
+<p><img src="images/MR-controllers.png" alt="Mixed Reality Motion Controllers"></p>
+<p>Several novel input methods have been designed especially for use with Mixed Reality, specifically:</p>
+<ul>
+<li><a href="https://developer.microsoft.com/windows/mixed-reality/gestures">Hand gestures</a> (HoloLens only, but only used for launching 2D apps)</li>
+<li><a href="https://developer.microsoft.com/windows/mixed-reality/hardware_accessories">Gamepad support</a> (both environments)</li>
+<li><a href="https://developer.microsoft.com/windows/mixed-reality/hardware_accessories">Clicker device</a> (HoloLens only)</li>
+<li><a href="/windows/mixed-reality/motion-controllers">Motion Controllers</a> (Mixed Reality devices only, shown above.)</li>
+</ul>
+<p>These controllers make interacting with virtual objects seem natural and precise. Some of the interactions you get for free. For example, the HoloLens select gesture or clicking on the Motion Controller's Windows key or trigger will generate the input response you would expect, again, with no coding on your part.</p>
+<p>At other times, you will want to add code to take advantage of the extra information and inputs that are made available. For example, the Motion Controllers can be used to manipulate objects with a fine level of control, if you write code that takes their position and button presses into account.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In summary: the guiding principal should be to always provide the user with as natural and frictionless an input method as possible.</p>
+</div>
+<h2 id="2d-app-design-considerations-functionality">2D App Design considerations: Functionality</h2>
+<p>When creating a UWP app that will potentially be used on a Mixed Reality platform, there are several things to keep in mind.</p>
+<ul>
+<li><p>Drag and drop may not work well when used with Motion Controllers, gamepads or gestures. If your application depends heavily on drag and drop, you will need to provide an alternative method of supporting this action, such as presenting a dialog confirming if objects to be moved to a new location.</p>
+</li>
+<li><p>Be aware how sound changes. If your app generates sound effects, the source of the sound will appear to be your app's pinned location in the virtual world. As the user moves away from the app, sound will diminish. See <a href="/windows/mixed-reality/spatial-sound">Spatial sound</a> for more information.</p>
+</li>
+<li><p>Consider the field of view and provide affordances. Not every device will provide as large a field of view as a computer monitor. See <a href="https://developer.microsoft.com/windows/mixed-reality/holographic_frame">Holographic frame</a> for complete details. Furthermore, the user may be some distance away from a running app. That is, the app may appear pinned to the wall at a different location in the world (real or virtual). Your app may need to get the users attention, or take into account that the entire view is not visible at all times. Toast notifications are available, but another way to get the user's attention might be to generate a sound or <a href="https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/SpeechRecognitionAndSynthesis/cs/Scenario_SynthesizeText.xaml.cs">speech</a> alert.</p>
+</li>
+<li><p>A 2D app is automatically given an <a href="https://developer.microsoft.com/windows/mixed-reality/app_bar_and_bounding_box">app bar</a>  to allow the user to move and scale them in the virtual environment. The views can be resized vertically, or resized maintaining the same aspect ratio.</p>
+</li>
+</ul>
+<h2 id="2d-app-design-considerations-uiux">2D app design considerations: UI/UX</h2>
+<ul>
+<li><p>XAML controls which implement the <a href="/windows/uwp/design/fluent-design-system/">Fluent Design System</a> such as the <a href="../controls/navigationview.html">Navigation view</a>, and effects such as <a href="../style/acrylic.html">Acrylic</a> all work especially well in 2D Mixed Reality apps.</p>
+</li>
+<li><p>Test your app's text and windows size in a Mixed Reality device, or at the very least in the Mixed Reality Simulator. Your app will have a default windows size of 853x480 effective pixels. Use larger font sizes (a point size of approximately 32 is recommended), and read <a href="/windows/mixed-reality/develop/porting-apps/building-2d-apps">Updating 2D UWP apps for Windows Mixed Reality</a>. The article <a href="https://developer.microsoft.com/windows/mixed-reality/typography">Typography</a> covers this topic in detail. When working in Visual Studio, there is a XAML design editor setting for a 57&quot; HoloLens 2D App which provides a view with the correct scale and dimensions.</p>
+</li>
+</ul>
+<p><img src="images/MR-text.png" alt="Text displayed in Mixed Reality apps should be large."></p>
+<ul>
+<li><p><a href="/windows/mixed-reality/design/gaze-and-commit">Your gaze is your mouse</a>. When the user looks at something, it acts as a <strong>touch hover</strong> event, so simply looking at an object may trigger an inadvertent pop-up or other unwanted interaction. You may need to detect if the app is currently running in Mixed Reality and change this behavior. See <strong>Runtime support</strong>, below.</p>
+</li>
+<li><p>When a user gazes towards something or points with a motion controller, a <strong>touch hover</strong> event will occur. This consists of a <strong>PointerPoint</strong> where <strong>PointerType</strong> is <strong>Touch</strong>, but <strong>IsInContact</strong> is <strong>false</strong>. When some form of commit occurs (for example, gamepad A button is pressed, a clicker device is pressed, a motion controller trigger pressed, or voice recognition heads &quot;Select&quot;), a <strong>touch press</strong> occurs, with the <strong>PointerPoint</strong> having <strong>IsInContact</strong> become <strong>true</strong>. See <a href="../input/touch-interactions.html">Touch interactions</a> for more information on these input events.</p>
+</li>
+<li><p>Remember, gaze is not as accurate as mouse pointing. Smaller mouse targets or buttons may cause frustration for your users, so resize controls accordingly. If they are designed for touch, they will work in Mixed Reality, but you may decide to enlarge some buttons at runtime. See <a href="/windows/mixed-reality/develop/porting-apps/building-2d-apps">Updating 2D UWP apps for Windows Mixed Reality</a>.</p>
+</li>
+<li><p>Your application should not use black as this could cause confusion. The HoloLens defines the color black as the absence of light and is simply not rendered, allowing the &quot;real world&quot; to show through. In a Mixed Reality headset, black is rendered as black.</p>
+</li>
+<li><p>The HoloLens does not support color themes in apps, and defaults to blue to ensure the best experience for users. For more advice about selecting colors, you should consult <a href="https://developer.microsoft.com/windows/mixed-reality/color_light_and_materials">this topic</a> which discusses the use of color and material in Mixed Reality designs.</p>
+</li>
+</ul>
+<h2 id="other-points-to-consider">Other points to consider</h2>
+<ul>
+<li>Although the <a href="/windows/msix/desktop/source-code-overview">Desktop Bridge</a> can help bring existing (Win32) desktop apps to Windows and the Microsoft Store, it cannot create apps that run on HoloLens at this time. As of Windows 10 version 1903, Win32 Desktop apps can run on Mixed Reality headsets.</li>
+</ul>
+<h2 id="runtime-support">Runtime support</h2>
+<p>It is possible for your app to determine if it is running on a Mixed Reality device at runtime, and use this as an opportunity to resize controls or in other ways optimize the app for use on a headset.</p>
+<p>Here's a short piece of code that resizes the text inside a XAML TextBlock control only if the app is being used on a Mixed Reality device.</p>
+<pre><code class="lang-csharp">
+bool isViewingInMR = Windows.ApplicationModel.Preview.Holographic.HolographicApplicationPreview.IsCurrentViewPresentedOnHolographicDisplay();
+
+            if (isViewingInMR)
+            {
+                // Running on headset, resize the XAML text
+                textBlock.Text = &quot;I'm running in Mixed Reality!&quot;;
+                textBlock.FontSize = 32;
+            }
+            else
+            {
+                // Running on desktop
+                textBlock.Text = &quot;I'm running on the desktop.&quot;;
+                textBlock.FontSize = 14;
+            }
+
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="https://developer.microsoft.com/windows/mixed-reality/current_limitations_for_apps_using_apis_from_the_shell">Current limitations for apps using APIs from the shell</a></li>
+<li><a href="https://developer.microsoft.com/windows/mixed-reality/building_2d_apps">Building 2D apps</a></li>
+<li><a href="/windows/uwp/debug-test-perf/conditional-xaml">Conditional XAML</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/devices/designing-for-MR.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

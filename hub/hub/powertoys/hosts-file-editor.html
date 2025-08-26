@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Hosts File Editor Utility for Windows </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Hosts File Editor Utility for Windows ">
+    
+    <meta name="description" content="Learn how to use PowerToys Hosts File Editor to conveniently edit Windows hosts files, manage IP addresses, and configure DNS settings for website testing and development.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hosts-file-editor-utility">Hosts File Editor utility</h1>
+
+<p>The PowerToys Hosts File Editor utility provides a convenient way to edit Windows hosts files. Windows includes a local &quot;Hosts&quot; file that contains domain names and matching IP addresses. This file acts as a map to identify and locate hosts on IP networks. Every time you visit a website, your computer will check the hosts file first to see which IP address it connects to. If the information isn't there, your internet service provider (ISP) will look into the Domain Name Server (DNS) for the resources to load the site.</p>
+<p>This utility is useful for scenarios like migrating a website to a new hosting provider or domain name, which may take a 24-48 hour period of downtime. Creating a custom IP address to associate with your domain using the hosts file can allow you to see how it will look on the new server.</p>
+<h2 id="adding-a-new-entry">Adding a new entry</h2>
+<p>Ensure that the Hosts File Editor is set to <strong>On</strong> in the PowerToys Settings.</p>
+<p>To add a new entry using the Hosts File Editor:</p>
+<ul>
+<li>Select <strong>New entry</strong></li>
+<li>Enter the IP address</li>
+<li>Enter the Host name</li>
+<li>Enter any comments that may be helpful in identifying the purpose of the entry</li>
+<li>Turn on the <strong>Active</strong> toggle and select <strong>Add</strong></li>
+</ul>
+<p><img src="../images/pt-hosts-file-editor-add-new-entry.gif" alt="PowerToys Hosts File Editor: Add new entry"></p>
+<h2 id="filtering-host-file-entries">Filtering host file entries</h2>
+<p>To filter host file entries, select the filter icon and enter data in either the Address, Hosts, or Comment field to narrow the scope of results.</p>
+<p><img src="../images/pt-hosts-file-editor-filter.gif" alt="PowerToys Hosts File Editor: Filtering entries"></p>
+<h2 id="back-up-hosts-file">Back up Hosts file</h2>
+<p>Hosts File Editor creates a backup of the hosts file before editing session. The backup files are located near the hosts file in <code>%SystemRoot%\System32\drivers\etc</code> named <code>hosts_PowerToysBackup_YYYYMMDDHHMMSS</code> and are deleted after 15 days.</p>
+<h2 id="settings">Settings</h2>
+<p>From the Settings menu, the following options can be configured:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Open as administrator</td>
+<td style="text-align: left;">Open as administrator to be able edit the hosts file. If disabled, the editor is run in read-only mode. Hosts File Editor is started as administrator by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Show a warning at startup</td>
+<td style="text-align: left;">Warns that editing hosts can change DNS names resolution. Enabled by default.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Placement of additional content</td>
+<td style="text-align: left;">Determines where new host entries are added in the hosts file. Default value is <strong>Top</strong> (new entries are added near the top of the file after the default Windows header comments). If <strong>Bottom</strong> is selected, new entries are added at the end of the file. This affects the organization of your hosts file and can impact which entries take precedence if there are conflicts.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Consider loopback addresses as duplicates</td>
+<td style="text-align: left;">When enabled, multiple loopback addresses (127.0.0.1, ::1) pointing to the same hostname are treated as duplicates. This prevents adding redundant entries and helps avoid conflicts. When disabled, you can add multiple loopback entries for the same hostname, which may be useful for testing different network configurations but could lead to unexpected behavior.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Encoding</td>
+<td style="text-align: left;">Default value is <strong>UTF-8</strong>. If <strong>UTF-8 with BOM</strong> is selected, a Byte Order Mark (BOM) is included at the start of the file.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>A &quot;Failed to save hosts file&quot; message appears if a change is made without administrator permissions:</p>
+<p><img src="../images/pt-hosts-file-editor-failed-to-save-hosts-file-error.png" alt="PowerToys Hosts File Editor: Failed to save hosts file"></p>
+<p>Select <strong>Open as administrator</strong> in settings to fix the error.</p>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/hosts-file-editor.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

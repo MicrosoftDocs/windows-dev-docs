@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use the Windows App SDK in a WinForms app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use the Windows App SDK in a WinForms app ">
+    
+    <meta name="description" content="This topic enables you to use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in a Windows Forms (WinForms) app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-the-windows-app-sdk-in-a-windows-forms-winforms-app">Use the Windows App SDK in a Windows Forms (WinForms) app</h1>
+
+<p>The <a href="/windows/apps/windows-app-sdk/">Windows App SDK</a> is the next evolution in the Windows app development platform. But this topic shows how you can use Windows App SDK APIs (and Windows Runtime APIs) in a <a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a> app!</p>
+<ul>
+<li>In many cases, you'll want to recreate your WinForms app in the form of a <a href="/windows/apps/winui/winui3/">WinUI 3</a> app. Just one of the advantages of moving to WinUI 3 is to have access to the <a href="https://www.microsoft.com/design/fluent/">Fluent Design System</a> (also see <a href="/windows/apps/design/">Design and code Windows apps</a>). And WinUI 3 is part of the Windows App SDK—so, naturally, a WinUI 3 app can use the other Windows App SDK features and APIs, as well. This topic doesn't cover the process of migrating your WinForms app to WinUI 3.</li>
+<li>But if you find that you're using features of WinForms that aren't yet available in WinUI 3, then you can still use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in your WinForms app. This topic shows you how.</li>
+</ul>
+<p>And in case you don't already have an existing WinForms project—or you want to practice the process—this topic includes steps to create a WinForms project so that you can follow along and configure it to call Windows App SDK APIs.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li><a href="../set-up-your-development-environment.html#install-visual-studio">Install tools for the Windows App SDK</a>.</li>
+<li>This topic covers both unpackaged and packaged WinForms apps. If your WinForms app is unpackaged (which WinForms apps are by default), then ensure that all dependencies for unpackaged apps are installed (see <a href="../deploy-unpackaged-apps.html#prerequisites">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a>). A quick way to do that is to visit <a href="/windows/apps/windows-app-sdk/downloads">Latest downloads for the Windows App SDK</a>, then download and unzip and run one of the stable release <strong>Runtime downloads</strong>.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The version of the <strong>Runtime</strong> that you install needs to match the version of the <strong>Microsoft.WindowsAppSDK</strong> NuGet package that you'll install in a later step.</p>
+</div>
+<p>For more info about the terms <em>unpackaged</em> and <em>packaged</em>, see <a href="/windows/apps/package-and-deploy/">Advantages and disadvantages of packaging your app</a>.</p>
+<h2 id="create-a-winforms-project-if-you-dont-already-have-one">Create a WinForms project if you don't already have one</h2>
+<p>If you already have a WinForms project, then you can move on to the next section.</p>
+<ol>
+<li>In Visual Studio, create a new C# <strong>Windows Forms App</strong> project (which is a .NET project). Be careful that you choose the project template with the exact name <strong>Windows Forms App</strong>, and not the <strong>Windows Forms App (.NET Framework)</strong> one.</li>
+<li>Give the project a name, and accept any default options.</li>
+</ol>
+<p>You now have a project that builds an unpackaged WinForms app.</p>
+<h2 id="configure-your-winforms-project-for-windows-app-sdk-support">Configure your WinForms project for Windows App SDK support</h2>
+<p>First we'll edit the project file.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click your project, and choose <strong>Edit Project File</strong>.</p>
+</li>
+<li><p>This step enables you to call <a href="/uwp/api/">Windows Runtime (WinRT) APIs</a> (including <a href="/windows/windows-app-sdk/api/winrt/">Windows App SDK APIs</a>). Inside the <strong>PropertyGroup</strong> element is the <strong>TargetFramework</strong> element, which is set to a value such as <em>net6.0</em>. Append to that target framework value a moniker (specifically, a <a href="/windows/apps/desktop/modernize/desktop-to-uwp-enhance#net-6-and-later-use-the-target-framework-moniker-option">Target Framework Moniker</a>). For example, use the following if your app targets Windows 10, version 2004:</p>
+<pre><code class="lang-xml">&lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+</code></pre>
+</li>
+<li><p>Also inside the <strong>PropertyGroup</strong> element, add a <a href="/dotnet/core/project-sdk/msbuild-props#runtimeidentifiers">RuntimeIdentifiers</a> element, like this:</p>
+<pre><code class="lang-xml">&lt;RuntimeIdentifiers&gt;win-x86;win-x64;win-arm64&lt;/RuntimeIdentifiers&gt;
+</code></pre>
+</li>
+<li><p>By default, a WinForms app is unpackaged (meaning that it isn't installed by using MSIX). An unpackaged app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK. You can do that automatically when your app starts via <em>auto-initialization</em>. You just set (also inside the <strong>PropertyGroup</strong> element) the <code>WindowsPackageType</code> project property appropriately, like this:</p>
+<pre><code class="lang-xml">&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;
+</code></pre>
+<p>If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then instead of <em>auto-initialization</em> you can call the bootstrapper API explicitly—for more info, see <a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>.</p>
+</li>
+<li><p>Save and close the project file.</p>
+</li>
+</ol>
+<p>Next, we'll install the Windows App SDK NuGet package in the project.</p>
+<ol start="6">
+<li>In <strong>Solution Explorer</strong>, right-click the <strong>Dependencies</strong> node of your project, and choose <strong>Manage Nuget Packages...</strong>.</li>
+<li>In the <strong>NuGet Package Manager</strong> window, select the <strong>Browse</strong> tab, and install the <em>Latest stable</em> <strong>Microsoft.WindowsAppSDK</strong> package.</li>
+</ol>
+<h2 id="use-some-windows-app-sdk-features-in-your-winforms-app">Use some Windows App SDK features in your WinForms app</h2>
+<p>This section offers a very simple example of calling Windows App SDK APIs from a WinForms app. It uses the MRT Core feature (see <a href="/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview">Manage resources with MRT Core</a>). If this example works for your WinForms project (and if you created a new one for this walkthrough, then it will), then you can follow these steps.</p>
+<ol>
+<li><p>Open <code>Form1.cs</code> (using the <strong>View Designer</strong> command), and drag a <strong>Button</strong> and a <strong>Label</strong> out of the <strong>Toolbox</strong> and onto the designer.</p>
+</li>
+<li><p>Double-click <em>button1</em> to generate an event handler.</p>
+</li>
+<li><p>Now we'll add some code that uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager">ResourceManager</a> class in the Windows App SDK to load a string resource.</p>
+<ol>
+<li><p>Add a new <strong>Resources File (.resw)</strong> item to your project (leave it with the default name of <em>Resources.resw</em>).</p>
+</li>
+<li><p>With the resources file open in the editor, create a new string resource with the following properties.</p>
+<ul>
+<li>Name: <strong>Message</strong></li>
+<li>Value: <strong>Hello, resources!</strong></li>
+</ul>
+</li>
+<li><p>Save and close the resources file.</p>
+</li>
+<li><p>Open <code>Form1.cs</code> (using the <strong>View Code</strong> command), and edit the event handler to look like this:</p>
+</li>
+</ol>
+<pre><code class="lang-csharp">private void button1_Click(object sender, EventArgs e)
+{
+    // Construct a resource manager using the resource index generated during build.
+    var manager =
+        new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
+
+    // Look up a string in the resources file using the string's name.
+    label1.Text = manager.MainResourceMap.GetValue(&quot;Resources/Message&quot;).ValueAsString;
+}
+</code></pre>
+</li>
+<li><p>Build the project, and run the app. Click the button to see the string <code>Hello, resources!</code> displayed.</p>
+</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If at runtime you see a message box indicating that the application needs a particular version of the Windows App Runtime, and asks whether you want to install it now, then click <strong>Yes</strong>. That will take you to <a href="/windows/apps/windows-app-sdk/downloads">Latest downloads for the Windows App SDK</a>. For more info, see the <a href="#prerequisites">Prerequisites</a> section above.</p>
+</div>
+<p>Also see <a href="../deployment-architecture.html">Runtime architecture</a> to learn more about the <em>Framework</em> package dependency that your app takes when it uses the Windows App SDK, and the additional components required to work in an unpackaged app.</p>
+<h2 id="package-and-deploy-your-winforms-app-with-msix">Package and deploy your WinForms app with MSIX</h2>
+<p>Some Windows features and APIs (including the Windows App SDK <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager">notifications APIs</a>) require your app to have <em>package identity</em> at runtime (in other words, your app needs to be <em>packaged</em>). For more info, see <a href="/windows/apps/desktop/modernize/modernize-packaged-apps">Features that require package identity</a>.</p>
+<ol>
+<li>In <strong>Solution Explorer</strong> in Visual Studio, right-click the solution, and choose <strong>Add</strong> &gt; <strong>New Project...</strong>.</li>
+<li>In the <strong>Add a new project</strong> dialog box, search for <em>packaging</em>, choose the C# <strong>Windows Application Packaging Project</strong> project template, and click <strong>Next</strong>.</li>
+<li>Name the project, and click <strong>Create</strong>.</li>
+<li>We want to specify which applications in the solution are to be included in the package. So in the packaging project (<em>not</em> the WinForms project), right-click the <strong>Dependencies</strong> node, and choose <strong>Add Project Reference...</strong>.</li>
+<li>In the list of projects in the solution, choose your WinForms project, and click <strong>OK</strong>.</li>
+<li>Expand the packaging project's <strong>Dependencies</strong> &gt; <strong>Applications</strong> node, and confirm that your WinForms project is referenced and highlighted in bold. This means that it will be used as a starting point for the package.</li>
+<li>Right-click the packaging project, and choose <strong>Set As Startup Project</strong>.</li>
+<li>Right-click the WinForms project, and choose <strong>Edit Project File</strong>.</li>
+<li>Delete <code>&lt;WindowsPackageType&gt;None&lt;/WindowsPackageType&gt;</code>, save, and close.</li>
+<li>In the <strong>Solution Platforms</strong> drop-down, pick <em>x64</em> (instead of <em>Any Cpu</em>).</li>
+<li>Confirm that you can build and run.</li>
+</ol>
+<p>Now that you've packaged your WinForms app, you can call APIs that require package identity. So open <code>Form1.cs</code> (using the <strong>View Code</strong> command), and edit the event handler to look like this:</p>
+<pre><code class="lang-csharp">private void button1_Click(object sender, EventArgs e)
+{
+    var notification = new AppNotificationBuilder()
+        .AddArgument(&quot;action&quot;, &quot;viewConversation&quot;)
+        .AddArgument(&quot;conversationId&quot;, &quot;9813&quot;)
+        .AddText(&quot;Andrew sent you a picture&quot;)
+        .AddText(&quot;Check this out, The Enchantments in Washington!&quot;)
+        .BuildNotification();
+
+    AppNotificationManager.Default.Show(notification);
+}
+</code></pre>
+<p>Build and run again. Click the button, and confirm that a toast notification is displayed. When called from a process that lacks package identity at runtime, the notifications APIs throw an exception.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The steps in this section showed you how to create a <em>packaged app</em>. An alternative is to create a <em>packaged app with external location</em>. For a reminder of all these terms, see <a href="/windows/apps/package-and-deploy/">Advantages and disadvantages of packaging your app</a>.</p>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a></li>
+<li><a href="../set-up-your-development-environment.html#install-visual-studio">Install tools for the Windows App SDK</a></li>
+<li><a href="../deploy-unpackaged-apps.html#prerequisites">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="/windows/apps/windows-app-sdk/downloads">Latest downloads for the Windows App SDK</a></li>
+<li><a href="/windows/apps/package-and-deploy/">Advantages and disadvantages of packaging your app</a></li>
+<li><a href="/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a></li>
+<li><a href="../deployment-architecture.html">Runtime architecture</a></li>
+<li><a href="/windows/apps/desktop/modernize/modernize-packaged-apps">Features that require package identity</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

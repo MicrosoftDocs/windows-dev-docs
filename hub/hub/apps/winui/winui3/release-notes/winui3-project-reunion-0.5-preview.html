@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes ">
+    
+    <meta name="description" content="Release notes for WinUI 3 - Project Reunion 0.5 Preview (March 2021) release.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="winui-3---project-reunion-05-preview-march-2021-release-notes">WinUI 3 - Project Reunion 0.5 Preview (March 2021) release notes</h1>
+
+<p>WinUI 3 is a native user experience (UX) platform for building modern Windows apps. This preview of WinUI 3 works with both desktop/Win32 and UWP apps, and includes Visual Studio project templates to help get started building apps with a WinUI-based user interface as well as a NuGet package that contains the WinUI libraries.</p>
+<p><strong>WinUI 3 - Project Reunion 0.5 Preview</strong> is the first release of WinUI 3 where it is provided as a part of the Project Reunion package (now called the <strong>Windows App SDK</strong>). Alongside that change, this preview release contains critical bug fixes, increased stability, and a few other general improvements (see <strong><a href="#major-changes-introduced-in-this-release">Capabilities introduced in WinUI 3  - Project Reunion 0.5 Preview</a></strong>).</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This WinUI 3 preview is intended for early evaluation and to gather feedback from the developer community. It should <strong>NOT</strong> be used for production apps.</p>
+<p>Please use the <a href="https://github.com/microsoft/microsoft-ui-xaml">WinUI GitHub repo</a> to provide feedback and log suggestions and issues.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Project Reunion</strong> is the previous code name for the <a href="../../../windows-app-sdk/index.html">Windows App SDK</a>. This documentation still uses <strong>Project Reunion</strong> when referring to previous releases that used this code name.</p>
+</div>
+<h2 id="install-winui-3---project-reunion-05-preview">Install WinUI 3 - Project Reunion 0.5 Preview</h2>
+<p>This version of WinUI 3 is available as part of the Project Reunion 0.5 Preview.</p>
+<p>To install, follow the directions found in <a href="../../../windows-app-sdk/preview-experimental-install.md">Install tools for preview and experimental channels of the Windows App SDK</a>.</p>
+<p>In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes <a href="../winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a> that you'll use to build your WinUI 3 app. Once you've completed your installation, the experience of developing a WinUI 3 app should not change.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also clone and build the WinUI 3 Preview version of the <a href="#xaml-controls-gallery-winui-3-preview-branch">XAML Controls Gallery</a>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer, you must enable WinUI 3 tooling with Visual Studio Preview Features as described in the <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/4140">instructions here</a>.</p>
+</div>
+<p>Once you've set up your development environment, see <a href="../winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a> to familiarize yourself with the available Visual Studio Project and Item templates.</p>
+<p>For more information about getting started with the WinUI project templates, see the following articles:</p>
+<ul>
+<li><a href="../create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+</ul>
+<p>Aside from the <a href="#limitations-and-known-issues">limitations and known issues</a>, building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the <a href="/windows/uwp/design/">guidance documentation</a> for UWP apps and the <strong>Windows.UI</strong> WinRT namespaces in the Windows SDK is applicable.</p>
+<p>WinUI 3 API reference documentation is available here: <a href="/windows/winui/api">WinUI 3 API Reference</a></p>
+<p>If you created a project using WinUI 3 Preview 4, you can upgrade your project to use Project Reunion 0.5 Preview.</p>
+<h3 id="webview2">WebView2</h3>
+<p>To use WebView2 with this WinUI 3 preview, please download the Evergreen Bootstrapper or Evergreen Standalone Installer found on <a href="https://developer.microsoft.com/microsoft-edge/webview2/">this page</a> if you don't already have the WebView2 Runtime installed.</p>
+<h3 id="windows-community-toolkit">Windows Community Toolkit</h3>
+<p>If you're using the Windows Community Toolkit, <a href="https://aka.ms/wct-winui3">download the latest version</a>.</p>
+<h3 id="visual-studio-support">Visual Studio Support</h3>
+<p>In order to take advantage of the latest tooling features added into WinUI 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use the latest <strong>preview</strong> version of Visual Studio with the latest WinUI 3 preview and be sure to enable WinUI tooling in Visual Studio Preview Features, as described in the <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/4140">instructions here</a>. The table below shows the compatibility of future versions with WinUI 3 - Project Reunion 0.5 Preview:</p>
+<table>
+<thead>
+<tr>
+<th>VS Version</th>
+<th>WinUI 3 - Project Reunion 0.5 Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16.8 RTM</td>
+<td>No</td>
+</tr>
+<tr>
+<td>16.9 Previews</td>
+<td>Yes, with tooling</td>
+</tr>
+<tr>
+<td>16.9 RTM</td>
+<td>Yes, but no Hot Reload, Live Visual Tree, or Live Property Explorer</td>
+</tr>
+<tr>
+<td>16.10 Previews</td>
+<td>Yes, with tooling</td>
+</tr>
+</tbody>
+</table>
+<h2 id="major-changes-introduced-in-this-release">Major changes introduced in this release</h2>
+<ul>
+<li><p>WinUI 3 now ships as a part of the Project Reunion package, which will also be the mechanism for how our future supported releases will ship.</p>
+</li>
+<li><p>In-app acrylic is now supported.</p>
+</li>
+<li><p>The Pivot control is no longer supported, and has been deprecated in WinUI 3. We recommend using the <a href="/windows/uwp/design/controls-and-patterns/navigationview">NavigationView control</a> for your in-app navigation scenarios.</p>
+</li>
+<li><p>WinUI 3 and Project Reunion will only be supported down-level to Windows 10 version 1809 - it requires build 17763 or later.</p>
+</li>
+<li><p>Preview features are now marked as experimental.</p>
+<ul>
+<li>A preview feature is anything that will continue to be a part of WinUI 3 previews, but will not be a part of the next WinUI 3 supported release.</li>
+<li>Preview features also include any experimental APIs that are a part of the WinUI 2.6 preview.</li>
+<li>When building an app that uses a preview feature, your app will throw a warning.</li>
+</ul>
+</li>
+</ul>
+<h2 id="list-of-bugs-fixed-in-winui-3---project-reunion-05-preview">List of bugs fixed in WinUI 3 - Project Reunion 0.5 Preview</h2>
+<p>Below is a list of user-facing bugs that the team has fixed since Preview 3. There has also been a lot of work going on surrounding stabilization and improving our testing.</p>
+<ul>
+<li><p>WinUI 3 error message needs rewording: &quot;Cannot resolve 'Windows.metadata'.  Please install the Windows Software Development Kit. The Windows SDK is installed with Visual Studio.&quot;</p>
+</li>
+<li><p>App does not respond to theme changes in Windows when selecting Windows Default theme until restarted</p>
+</li>
+<li><p>Exception on XamlDirect.CreateInstance call</p>
+<ul>
+<li>Thanks to @BorzillaR for filing this <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/3509">issue on GitHub</a>!</li>
+</ul>
+</li>
+<li><p>ProgressBar doesn't show difference between Paused and Error option</p>
+</li>
+<li><p>StandardUICommand list view item flyout shows in wrong position.</p>
+</li>
+<li><p>Crash in desktop XamlControlsGallery when trying to reorder ListView items with touch</p>
+<ul>
+<li>Thanks to @j0shuams for filing this <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/3694">issue on GitHub</a>!</li>
+</ul>
+</li>
+<li><p>Press and hold on RichTextBlock puts flyout in wrong place</p>
+</li>
+<li><p>Left/Right arrows aren't moving focus through RadioButtons</p>
+<ul>
+<li>Thanks to @vmadurga for filing this <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/3385">issue on Github</a>!</li>
+</ul>
+</li>
+<li><p>Narrator remains silent when user hits the down/up arrow keys to select the next/previous month/year/date in DatePicker</p>
+</li>
+<li><p>NavigationView light-dismiss doesn't work in WinUI 3</p>
+</li>
+</ul>
+<h2 id="new-features-and-capabilities-introduced-in-past-winui-3-previews">New features and capabilities introduced in past WinUI 3 Previews</h2>
+<p>The following features and capabilities were introduced in WinUI 3 Previews 1-4 and continue to be supported in WinUI 3 - Project Reunion 0.5 Preview.</p>
+<ul>
+<li>Ability to create desktop apps with WinUI, including <a href="https://github.com/dotnet/core/blob/main/release-notes/6.0/README.md">.NET</a> for Win32 apps</li>
+<li><a href="/windows/uwp/design/style/brushes#radial-gradient-brushes">RadialGradientBrush</a></li>
+<li><a href="/windows/uwp/design/controls-and-patterns/tab-view">TabView updates</a></li>
+<li>Dark theme updates</li>
+<li>Improvements and updates to <a href="/microsoft-edge/hosting/webview2">WebView2</a>
+<ul>
+<li>Support for High DPI</li>
+<li>Support for window resizing and moving</li>
+<li>Updated to target more recent version of Edge</li>
+<li>No longer necessary to reference a WebView2-specific Nuget package</li>
+</ul>
+</li>
+<li>SwapChainPanel</li>
+<li>MRT Core Support
+<ul>
+<li>This makes apps faster and lighter on startup and provides quicker resource lookup.</li>
+</ul>
+</li>
+<li>Arm64 Support</li>
+<li>Drag and drop inside and outside of apps</li>
+<li>RenderTargetBitmap (currently only XAML content - no SwapChainPanel content)</li>
+<li>Custom cursor support</li>
+<li>Off-thread input</li>
+<li>Improvements to our tooling/developer experience:
+<ul>
+<li>Live Visual Tree, Hot Reload, Live Property Explorer and similar tools</li>
+<li>Intellisense for WinUI 3</li>
+</ul>
+</li>
+<li>Improvements required for open source migration</li>
+<li>Custom titlebar capabilities: new <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar">Window.ExtendsContentIntoTitleBar</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar">Window.SetTitleBar</a> APIs that allow developers to create custom title bars in desktop apps.</li>
+<li>VirtualSurfaceImageSource support</li>
+</ul>
+<h3 id="provide-feedback-and-suggestions">Provide feedback and suggestions</h3>
+<p>We welcome your feedback in the <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose">WinUI GitHub repo</a>.</p>
+<h2 id="limitations-and-known-issues">Limitations and known issues</h2>
+<p>The WinUI 3 - Project Reunion 0.5 Preview is just that, a preview. The scenarios around desktop apps are especially new. Please expect bugs, limitations, and other issues.</p>
+<p>The following items are some of the known issues with WinUI 3 - Project Reunion 0.5 Preview. If you find an issue that isn't listed below, please let us know by contributing to an existing issue or filing a new issue through the <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose">WinUI GitHub repo</a>.</p>
+<h3 id="platform-and-os-support">Platform and OS support</h3>
+<p>WinUI 3 - Project Reunion 0.5 Preview is compatible with PCs running the Windows 10 October 2018 Update (version 1809 - build 17763) and newer.</p>
+<h3 id="developer-tools">Developer tools</h3>
+<ul>
+<li>Only C# and C++/WinRT apps are supported</li>
+<li>Desktop apps support .NET 6 (and later) and C# 9, and must be packaged in an MSIX app</li>
+<li>UWP apps support .NET Native and C# 7.3</li>
+<li>Developer tools and Intellisense may not work properly in Visual Studio.</li>
+<li>No XAML Designer support</li>
+<li>New C++/CX apps are not supported, however, your existing apps will continue to function (please move to C++/WinRT as soon as possible)</li>
+<li>Support for multiple windows in desktop apps is in progress, but not yet complete and stable.
+<ul>
+<li>Please file a bug on our repo if you find new issues or regressions with multi-window behavior.</li>
+</ul>
+</li>
+<li>Unpackaged desktop deployment is not supported</li>
+<li>When running a desktop app using F5, make sure that you are running the packaging project. Hitting F5 on the app project will run an unpackaged app, which WinUI 3 does not yet support.</li>
+</ul>
+<h3 id="missing-platform-features">Missing Platform Features</h3>
+<ul>
+<li>Xbox support</li>
+<li>HoloLens support</li>
+<li>Windowed popups
+<ul>
+<li>More specifically, the <code>ShouldConstrainToRootBounds</code> property always acts as if it's set to <code>true</code>, regardless of the property value.</li>
+</ul>
+</li>
+<li>Inking support</li>
+<li>Acrylic</li>
+<li>MediaElement and MediaPlayerElement</li>
+<li>MapControl</li>
+<li>RenderTargetBitmap for SwapChainPanel and non-XAML content</li>
+<li>SwapChainPanel does not support transparency</li>
+<li>Global Reveal uses fallback behavior, a solid brush</li>
+<li>XAML Islands is not supported in this release</li>
+<li>3rd party ecosystem libraries will not fully function</li>
+<li>IMEs do not work</li>
+<li>CoreWindow, ApplicationView, CoreApplicationView, CoreDispatcher and their dependencies are not supported in desktop apps (see below)</li>
+</ul>
+<h3 id="corewindow-applicationview-coreapplicationview-and-coredispatcher-in-desktop-apps">CoreWindow, ApplicationView, CoreApplicationView, and CoreDispatcher in desktop apps</h3>
+<p>New in Preview 4 and standard going forward,
+<a href="/uwp/api/Windows.UI.Core.CoreWindow">CoreWindow</a>,
+<a href="/uwp/api/Windows.UI.ViewManagement.ApplicationView">ApplicationView</a>,
+<a href="/uwp/api/Windows.ApplicationModel.Core.CoreApplicationView">CoreApplicationView</a>
+<a href="/uwp/api/Windows.UI.Core.CoreDispatcher">CoreDispatcher</a>,
+and their dependencies are not available in desktop apps.
+For example the
+<a href="/uwp/api/Windows.UI.Xaml.Window.Dispatcher">Window.Dispatcher</a>
+property is always null, but the Window.DispatcherQueue property can be used as an alternative.</p>
+<p>These APIs only work in UWP apps. In past previews they've partially worked in desktop apps as well, but in Preview4 they've been fully disabled. These APIs are designed for the UWP case where there is only one window per thread,
+and one of the features of WinUI3 is to enable multiple.</p>
+<p>There are APIs that internally depend on existence of these APIs, which consequently aren't supported in a desktop app. These APIs generally have a static <code>GetForCurrentView</code> method. For example <a href="/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView">UIViewSettings.GetForCurrentView</a>.</p>
+<p>For more information on affected APIs as well as workarounds and replacements for these APIs, please see <a href="https://github.com/microsoft/microsoft-ui-xaml/blob/winui2/main/docs/winrt-apis-for-desktop.md">WinRT API changes for desktop apps</a></p>
+<h3 id="known-issues">Known issues</h3>
+<ul>
+<li><p>There’s an issue that’s causing UWP apps to fail to launch on Windows 10 version 1809. The team is actively working on fixing this bug for the next preview release.</p>
+</li>
+<li><p>Alt+F4 does not close desktop app windows.</p>
+</li>
+<li><p>The <a href="/uwp/api/windows.ui.viewmanagement.uisettings.colorvalueschanged">UISettings.ColorValuesChanged Event</a> and <a href="/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged">AccessibilitySettings.HighContrastChanged Event</a> are no longer supported in desktop apps. This may cause issues if you are using it to detect changes in Windows themes.</p>
+</li>
+<li><p>This release includes some experimental APIs, which will throw build warnings when used. These have not been thoroughly tested by the team and may have unknown issues. Please <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&amp;labels=&amp;template=bug_report.md&amp;title=">file a bug</a> on our repo if you encounter any issues.</p>
+</li>
+<li><p>Previously, to get a CompositionCapabilities instance you would call <a href="/uwp/api/windows.ui.composition.compositioncapabilities.getforcurrentview">CompositionCapabilites.GetForCurrentView()</a>. However, the capabilities returned from this call were <em>not</em> dependent on the view. To address and reflect this, we've deleted the GetForCurrentView() static in this release, so now you can create a <a href="/uwp/api/windows.ui.composition.compositioncapabilities">CompositionCapabilties</a> object directly.</p>
+</li>
+<li><p>For C# UWP apps:</p>
+<p>The WinUI 3 framework is a set of WinRT components which can be used from C++ (using C++/WinRT) or C#. When using C#, there are two versions of .NET, depending on the app model: when using WinUI 3 in a UWP app, you're using .NET Native; when using in a desktop app, you're using .NET 6 or later (and C#/WinRT).</p>
+<p>When using C# for a WinUI 3 app in UWP, there are a few API namespace differences compared to C# in a WinUI 3 desktop app or a C# WinUI 2 app: some types are in a <code>Microsoft</code> namespace rather than a <code>System</code> namespace. For example, rather than the <code>INotifyPropertyChanged</code> interface being in the <code>System.ComponentModel</code>  namespace, it’s in the <code>Microsoft.UI.Xaml.Data</code> namespace.</p>
+<p>This applies to:</p>
+<ul>
+<li><code>INotifyPropertyChanged</code> (and related types)</li>
+<li><code>INotifyCollectionChanged</code></li>
+<li><code>ICommand</code></li>
+</ul>
+<p>The <code>System</code> namespace versions still exist, but cannot be used with WinUI 3. This means that <code>ObservableCollection</code> doesn't work as-is in WinUI 3 C# UWP apps. For a workaround, see the <a href="https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs">CollectionsInterop sample</a> in the <a href="https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview">XAML Controls Gallery sample</a>.</p>
+</li>
+</ul>
+<h2 id="xaml-controls-gallery-winui-3-preview-branch">XAML Controls Gallery (WinUI 3 Preview branch)</h2>
+<p>See the <a href="https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview">WinUI 3 Preview branch of the XAML Controls Gallery</a> for a sample app that includes all controls and features that are a part of the WinUI 3 - Project Reunion 0.5 Preview.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/WinUI3XamlControlsGallery.png" alt="WinUI 3 Preview XAML Controls Gallery app">
+</span>
+<br>
+<em>Example of the WinUI 3 Preview XAML Controls Gallery app</em></p>
+<p>To download the sample, clone the <strong>winui3preview</strong> branch using the following command:</p>
+<pre><code>git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git
+</code></pre>
+<p>After cloning, ensure that you switch to the <strong>winui3preview</strong> branch in your local Git environment:</p>
+<pre><code>git checkout winui3preview
+</code></pre>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../../windows-app-sdk/index.html">Windows App SDK</a></li>
+<li><a href="../../../windows-app-sdk/stable-channel.html">Stable release channel for the Windows App SDK</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

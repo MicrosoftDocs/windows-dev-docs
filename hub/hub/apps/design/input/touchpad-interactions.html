@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Touchpad interactions </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Touchpad interactions ">
+    
+    <meta name="description" content="Create Windows apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="touchpad-design-guidelines">Touchpad design guidelines</h1>
+
+<p>Design your app so that users can interact with it through a touchpad. A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.</p>
+<p></p>
+<p><img src="images/input-patterns/input-touchpad.jpg" alt="touchpad"></p>
+<p>Touchpad interactions require three things:</p>
+<ul>
+<li><p>A standard touchpad or a Windows Precision Touchpad.</p>
+<p>Precision touchpads are optimized for Windows app devices. They enable the system to handle certain aspects of the touchpad experience natively, such as finger tracking and palm detection, for a more consistent experience across devices.</p>
+</li>
+<li><p>The direct contact of one or more fingers on the touchpad.</p>
+</li>
+<li><p>Movement of the touch contacts (or lack thereof, based on a time threshold).</p>
+</li>
+</ul>
+<p>The input data provided by the touchpad sensor can be:</p>
+<ul>
+<li>Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window or other dialog box is considered indirect manipulation.</li>
+<li>Recognized as an alternative input method, such as mouse or pen.</li>
+<li>Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.</li>
+</ul>
+<p>A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your Windows app design for touch input and get touchpad support by default.</p>
+<p>Because of the convergence of interaction experiences supported by touchpads, we recommend using the <a href="/uwp/api/windows.ui.xaml.uielement.pointerentered"><strong>PointerEntered</strong></a> event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.</p>
+<p>The gestures and guidelines discussed in this topic can help to ensure that your app supports touchpad input seamlessly and with minimal code.</p>
+<h2 id="the-touchpad-language">The touchpad language</h2>
+<p>A concise set of touchpad interactions are used consistently throughout the system. Optimize your app for touch and mouse input and this language makes your app feel instantly familiar for your users, increasing their confidence and making your app easier to learn and use.</p>
+<p>Users can set far more Precision Touchpad gestures and interaction behaviors than they can for a standard touchpad. These two images show the different touchpad settings pages from Settings &gt; Devices &gt; Mouse &amp; touchpad for a standard touchpad and a Precision Touchpad, respectively.</p>
+<p><img src="images/mouse-touchpad-settings-standard.png" alt="standard touchpad settings"></p>
+<p><sup>Standard\ touchpad\ settings</sup></p>
+<p><img src="images/mouse-touchpad-settings-ptp.png" alt="windows precision touchpad settings"></p>
+<p><sup>Windows\ Precision\ Touchpad\ settings</sup></p>
+<p>Here are some examples of touchpad-optimized gestures for performing common tasks.</p>
+<table>
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Term</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><p>Three-finger tap</p></td>
+<td align="left"><p>User preference to search with <strong>Cortana</strong> or show <strong>Action Center</strong>.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Three finger slide</p></td>
+<td align="left"><p>User preference to open the virtual desktop Task View, show Desktop, or switch between open apps.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Single finger tap for primary action</p></td>
+<td align="left"><p>Use a single finger to tap an element and invoke its primary action (such as launching an app or executing a command).</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Two finger tap to right-click</p></td>
+<td align="left"><p>Tap with two fingers simultaneously on an element to select it and display contextual commands.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Two finger slide to pan</p></td>
+<td align="left"><p>Slide is used primarily for panning interactions but can also be used for moving, drawing, or writing.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Pinch and stretch to zoom</p></td>
+<td align="left"><p>The pinch and stretch gestures are commonly used for resizing and Semantic Zoom.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Single finger press and slide to rearrange</p></td>
+<td align="left"><p>Drag an element.</p></td>
+</tr>
+<tr class="even">
+<td align="left"><p>Single finger press and slide to select text</p></td>
+<td align="left"><p>Press within selectable text and slide to select it. Double-tap to select a word.</p></td>
+</tr>
+<tr class="odd">
+<td align="left"><p>Left and right click zone</p></td>
+<td align="left"><p>Emulate the left and right button functionality of a mouse device.</p></td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<h2 id="hardware">Hardware</h2>
+<p>Query the mouse device capabilities (<a href="/uwp/api/Windows.Devices.Input.MouseCapabilities"><strong>MouseCapabilities</strong></a>) to identify what aspects of your app UI the touchpad hardware can access directly. We recommend providing UI for both touch and mouse input.</p>
+<p>For more info about querying device capabilities, see <a href="identify-input-devices.html">Identify input devices</a>.</p>
+<h2 id="visual-feedback">Visual feedback</h2>
+<ul>
+<li>When a touchpad cursor is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the touchpad cursor doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the touchpad UI gradually fade away. This keeps the UI clean and uncluttered.</li>
+<li>Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see the Cursors section below).</li>
+<li>Don't display visual feedback if an element doesn't support interaction (such as static text).</li>
+<li>Don't use focus rectangles with touchpad interactions. Reserve these for keyboard interactions.</li>
+<li>Display visual feedback concurrently for all elements that represent the same input target.</li>
+</ul>
+<p>For more general guidance about visual feedback, see <a href="guidelines-for-visualfeedback.html">Guidelines for visual feedback</a>.</p>
+<h2 id="cursors">Cursors</h2>
+<p>A set of standard cursors is available for a touchpad pointer. These are used to indicate the primary action of an element.</p>
+<p>Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. UWP apps specify a cursor image through the <a href="/uwp/api/windows.ui.core.corewindow.pointercursor"><strong>PointerCursor</strong></a> function.</p>
+<p>If you need to customize the mouse cursor:</p>
+<ul>
+<li>Always use the arrow cursor (<img src="images/cursor-arrow.png" alt="arrow cursor">) for clickable elements. don't use the pointing hand cursor (<img src="images/cursor-pointinghand.png" alt="pointing hand cursor">) for links or other interactive elements. Instead, use hover effects (described earlier).</li>
+<li>Use the text cursor (<img src="images/cursor-text.png" alt="text cursor">) for selectable text.</li>
+<li>Use the move cursor (<img src="images/cursor-move.png" alt="move cursor">) when moving is the primary action (such as dragging or cropping). Don't use the move cursor for elements where the primary action is navigation (such as Start tiles).</li>
+<li>Use the horizontal, vertical and diagonal resize cursors (<img src="images/cursor-vertical.png" alt="vertical resize cursor">, <img src="images/cursor-horizontal.png" alt="horizontal resize cursor">, <img src="images/cursor-diagonal2.png" alt="diagonal resize cursor (lower left, upper right)">, <img src="images/cursor-diagonal1.png" alt="diagonal resize cursor (upper left, lower right)">), when an object is resizable.</li>
+<li>Use the grasping hand cursors (<img src="images/cursor-pan1.png" alt="grasping hand cursor (open)">, <img src="images/cursor-pan2.png" alt="grasping hand cursor (closed)">) when panning content within a fixed canvas (such as a map).</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="handle-pointer-input.html">Handle pointer input</a></li>
+<li><a href="identify-input-devices.html">Identify input devices</a></li>
+</ul>
+<h3 id="samples">Samples</h3>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode">User interaction mode sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+</ul>
+<h3 id="archive-samples">Archive Samples</h3>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample">Input: XAML user input events sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample">XAML scrolling, panning, and zooming sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer">Input: Gestures and manipulations with GestureRecognizer</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/touchpad-interactions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

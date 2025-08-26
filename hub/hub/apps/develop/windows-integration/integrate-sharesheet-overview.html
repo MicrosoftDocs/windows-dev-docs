@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Integrate Share options in your Windows app - A comprehensive guide </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Integrate Share options in your Windows app - A comprehensive guide ">
+    
+    <meta name="description" content="Learn how to integrate apps with the Windows Share Sheet, a system-provided UI that enables users to share content from your app with other Windows apps.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="integrate-share-options-in-your-windows-app-a-comprehensive-guide">Integrate Share options in your Windows app: A comprehensive guide</h1>
+
+<p>The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other Windows apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.</p>
+<p>Integrating share options in your Windows app can significantly enhance user experience by allowing seamless content sharing across different applications. Whether you're developing a new app or updating an existing one, this guide will provide you with the necessary steps and code samples to implement the Windows Share feature effectively.</p>
+<p>In this comprehensive guide, you'll learn how to add the share feature to your packaged or unpackaged Windows app, implement file sharing methods, and show your app on the share sheet. You can leverage share options in a .NET, Windows C++, or PWA app, and this guide will help you get started. By following these steps, you can ensure that your app leverages the full potential of the Windows Share feature, making it more interactive and user-friendly.</p>
+<h2 id="in-this-section">In this section</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="integrate-sharesheet-packaged.html">Integrate packaged apps with Windows Share</a></td>
+<td>Discover how to integrate packaged apps with the Windows Share Sheet.</td>
+</tr>
+<tr>
+<td><a href="integrate-sharesheet-pwa.html">Integrate Progressive Web Apps (PWAs) with Windows Share</a></td>
+<td>Discover how to integrate a Progressive Web App (PWA) with the Windows Share Sheet.</td>
+</tr>
+<tr>
+<td><a href="integrate-sharesheet-unpackaged.html">Integrate unpackaged apps with Windows Share</a></td>
+<td>Discover how to integrate unpackaged apps with the Windows Share Sheet.</td>
+</tr>
+<tr>
+<td><a href="/windows/uwp/app-to-app/share-data">Share data - UWP apps</a></td>
+<td>Learn how to share data between UWP apps.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/apps/develop/communication">Communication - Windows apps</a></li>
+<li><a href="/windows/apps/package-and-deploy/deploy-overview">Windows App SDK deployment overview</a></li>
+<li><a href="/windows/apps/winui/winui3/create-your-first-winui3-app">Create your first WinUI 3 project</a></li>
+<li><a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw">Migrate from UWP to the Windows App SDK</a></li>
+<li><a href="/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app">Advantages and Disadvantages of packaging an application - Deployment overview</a></li>
+<li><a href="https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/">Identity, Registration and Activation of Non-packaged Win32 Apps</a></li>
+<li><a href="https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp">Share Contract Implementation for WinAppSDK App</a></li>
+<li><a href="https://github.com/microsoft/AppModelSamples/blob/master/Samples/PackageWithExternalLocation/cs/PhotoStoreDemo/StartUp.cs">Share Contract Implementation for Apps Packaged with External Location</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/windows-integration/integrate-sharesheet-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

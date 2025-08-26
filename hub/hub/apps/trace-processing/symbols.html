@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Load Symbols - .NET TraceProcessing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Load Symbols - .NET TraceProcessing ">
+    
+    <meta name="description" content="In this tutorial, learn how load symbols when processing traces.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-symbols-in-net-traceprocessing">Use symbols in .NET TraceProcessing</h1>
+
+<p><a href="/dotnet/api/microsoft.windows.eventtracing.traceprocessor">TraceProcessor</a> supports loading symbols and getting stacks from several data sources. The following console application looks at CPU samples and outputs the estimated duration that a specific function was running (based on the trace's statistical sampling of CPU usage).</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.EventTracing;
+using Microsoft.Windows.EventTracing.Cpu;
+using Microsoft.Windows.EventTracing.Symbols;
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        if (args.Length != 3)
+        {
+            Console.Error.WriteLine(&quot;Usage: GetCpuSampleDuration.exe &lt;trace.etl&gt; &lt;imageName&gt; &lt;functionName&gt;&quot;);
+            return;
+        }
+
+        string tracePath = args[0];
+        string imageName = args[1];
+        string functionName = args[2];
+        Dictionary&lt;string, Duration&gt; matchDurationByCommandLine = new Dictionary&lt;string, Duration&gt;();
+
+        using (ITraceProcessor trace = TraceProcessor.Create(tracePath))
+        {
+            IPendingResult&lt;ISymbolDataSource&gt; pendingSymbolData = trace.UseSymbols();
+            IPendingResult&lt;ICpuSampleDataSource&gt; pendingCpuSamplingData = trace.UseCpuSamplingData();
+
+            trace.Process();
+
+            ISymbolDataSource symbolData = pendingSymbolData.Result;
+            ICpuSampleDataSource cpuSamplingData = pendingCpuSamplingData.Result;
+
+            symbolData.LoadSymbolsForConsoleAsync(SymCachePath.Automatic, SymbolPath.Automatic).GetAwaiter().GetResult();
+
+            Console.WriteLine();
+            IThreadStackPattern pattern = AnalyzerThreadStackPattern.Parse($&quot;{imageName}!{functionName}&quot;);
+
+            foreach (ICpuSample sample in cpuSamplingData.Samples)
+            {
+                if (sample.Stack != null &amp;&amp; sample.Stack.Matches(pattern))
+                {
+                    string commandLine = sample.Process.CommandLine;
+
+                    if (!matchDurationByCommandLine.ContainsKey(commandLine))
+                    {
+                        matchDurationByCommandLine.Add(commandLine, Duration.Zero);
+                    }
+
+                    matchDurationByCommandLine[commandLine] += sample.Weight;
+                }
+            }
+
+            foreach (string commandLine in matchDurationByCommandLine.Keys)
+            {
+                Console.WriteLine($&quot;{commandLine}: {matchDurationByCommandLine[commandLine]}&quot;);
+            }
+        }
+    }
+}
+</code></pre>
+<p>Running this program produces output similar to the following:</p>
+<pre><code class="lang-shell">C:\GetCpuSampleDuration\bin\Debug\&gt; GetCpuSampleDuration.exe C:\boot.etl user32.dll LoadImageInternal
+0.0% (0 of 1165; 0 loaded)
+&lt;snip&gt;
+100.0% (1165 of 1165; 791 loaded)
+wininit.exe: 15.99 ms
+C:\Windows\Explorer.EXE: 5 ms
+winlogon.exe: 20.15 ms
+&quot;C:\Users\AdminUAC\AppData\Local\Microsoft\OneDrive\OneDrive.exe&quot; /background: 2.09 ms
+</code></pre>
+<p>(Output details will vary depending on the trace).</p>
+<h2 id="symbols-format">Symbols format</h2>
+<p>Internally, TraceProcessor uses the <a href="/windows-hardware/test/wpt/loading-symbols#symcache-path">SymCache</a> format, which is a cache of some of the data stored in a PDB. When loading symbols, TraceProcessor requires specifying a location to use for these SymCache files (a SymCache path) and supports optionally specifying a SymbolPath to access PDBs. When a SymbolPath is provided, TraceProcessor will create SymCache files out of PDB files as needed, and subsequent processing of the same data can use the SymCache files directly for better performance.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>In this tutorial, you learned how to load symbols when processing traces.</p>
+<p>The next step is to learn how to <a href="streaming.html">use streaming</a> to access trace data without buffering everything in memory.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/trace-processing/symbols.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

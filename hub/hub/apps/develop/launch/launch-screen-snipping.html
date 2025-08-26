@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Launch screen snipping from a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Launch screen snipping from a Windows app ">
+    
+    <meta name="description" content="This topic describes the ms-screenclip and ms-screensketch URI schemes. Your app can use these URI schemes to launch the Snip &amp; Sketch app or to open a new snip.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="launch-screen-snipping-legacy">Launch screen snipping (Legacy)</h1>
+
+<p>**This is a legacy method for activating the Snipping Tool. It will be deprecated on 05/01/2025. Please refer to the updated documentation: <a href="launch-snipping-tool.html">Launch Snipping Tool</a>.</p>
+<p>The <strong>ms-screenclip:</strong> and <strong>ms-screensketch:</strong> URI schemes allows you to initiate snipping or editing screenshots.</p>
+<h2 id="open-a-new-snip-from-your-app">Open a new snip from your app</h2>
+<p>The <strong>ms-screenclip:</strong> URI allows your app to automatically open up and start a new snip. The resulting snip is copied to the user's clipboard, but is not automatically passed back to the opening app.</p>
+<p><strong>ms-screenclip:</strong> takes the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>no</td>
+<td>A freeform string to indicate the source that launched the URI.</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>no</td>
+<td>A string value to indicate which special type of capture is requested. This parameter can be omitted when starting a new snip. Values supported include: snapshot, recording*</td>
+</tr>
+<tr>
+<td>clippingMode</td>
+<td>string</td>
+<td>no</td>
+<td>A string value to indicate the clipping type for the snip. Values supported include: Rectangle, Freeform, Window</td>
+</tr>
+<tr>
+<td>delayInSeconds</td>
+<td>int</td>
+<td>no</td>
+<td>An integer value, from 1 to 30. Specifies the delay, in full seconds, between the URI call and when snipping begins.</td>
+</tr>
+<tr>
+<td>callbackformat</td>
+<td>string</td>
+<td>no</td>
+<td>This parameter is unavailable.</td>
+</tr>
+</tbody>
+</table>
+<p>* <code>type=recording</code> is available only on Windows 11 PCs with Snipping Tool version 11.2307 or newer, and only when the default handler for ms-screenclip is set to &quot;Snipping Tool&quot; instead of &quot;Screen Clipping&quot;.</p>
+<h2 id="launching-the-snipping-tool-or-snip--sketch-app">Launching the Snipping Tool or Snip &amp; Sketch App</h2>
+<p>The <strong>ms-screensketch:</strong> URI allows you to programmatically launch the Snipping Tool app (on Windows 11) or Snip &amp; Sketch app (on Windows 10), and open a specific image in that app for annotation.</p>
+<p><strong>ms-screensketch:</strong> takes the following parameters:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sharedAccessToken</td>
+<td>string</td>
+<td>no</td>
+<td>A token identifying the file to open. Retrieved from <a href="/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile">SharedStorageAccessManager.AddFile</a>. If this parameter is omitted, the app will be launched without a file open.</td>
+</tr>
+<tr>
+<td>secondarySharedAccessToken</td>
+<td>string</td>
+<td>no</td>
+<td>A string identifying a JSON file with metadata about the snip. The metadata may include a <strong>clipPoints</strong> field with an array of x,y coordinates, and/or a <a href="/uwp/api/windows.applicationmodel.useractivities.useractivity">userActivity</a>.</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>no</td>
+<td>A freeform string to indicate the source that launched the URI.</td>
+</tr>
+<tr>
+<td>isTemporary</td>
+<td>bool</td>
+<td>no</td>
+<td>If set to True, Snipping Tool will try to delete the file after opening it.</td>
+</tr>
+</tbody>
+</table>
+<p>The following example calls the <a href="/uwp/api/windows.system.launcher.launchuriasync">LaunchUriAsync</a> method to send an image to Snipping Tool from the user's app.</p>
+<pre><code class="lang-csharp">bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri(&quot;ms-screensketch:edit?source=MyApp&amp;isTemporary=false&amp;sharedAccessToken=2C37ADDA-B054-40B5-8B38-11CED1E1A2D&quot;));
+</code></pre>
+<p>The following example illustrates what a file specified by the <strong>secondarySharedAccessToken</strong> parameter of <strong>ms-screensketch</strong> might contain:</p>
+<pre><code class="lang-json">{
+  &quot;clipPoints&quot;: [
+    {
+      &quot;x&quot;: 0,
+      &quot;y&quot;: 0
+    },
+    {
+      &quot;x&quot;: 2080,
+      &quot;y&quot;: 0
+    },
+    {
+      &quot;x&quot;: 2080,
+      &quot;y&quot;: 780
+    },
+    {
+      &quot;x&quot;: 0,
+      &quot;y&quot;: 780
+    }
+  ],
+  &quot;userActivity&quot;: &quot;{\&quot;$schema\&quot;:\&quot;http://activity.windows.com/user-activity.json\&quot;,\&quot;UserActivity\&quot;:\&quot;type\&quot;,\&quot;1.0\&quot;:\&quot;version\&quot;,\&quot;cross-platform-identifiers\&quot;:[{\&quot;platform\&quot;:\&quot;windows_universal\&quot;,\&quot;application\&quot;:\&quot;Microsoft.MicrosoftEdge_8wekyb3d8bbwe!MicrosoftEdge\&quot;},{\&quot;platform\&quot;:\&quot;host\&quot;,\&quot;application\&quot;:\&quot;edge.activity.windows.com\&quot;}],\&quot;activationUrl\&quot;:\&quot;microsoft-edge:https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\&quot;,\&quot;contentUrl\&quot;:\&quot;https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\&quot;,\&quot;visualElements\&quot;:{\&quot;attribution\&quot;:{\&quot;iconUrl\&quot;:\&quot;https://www.microsoft.com/favicon.ico?v2\&quot;,\&quot;alternateText\&quot;:\&quot;microsoft.com\&quot;},\&quot;description\&quot;:\&quot;https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\&quot;,\&quot;backgroundColor\&quot;:\&quot;#FF0078D7\&quot;,\&quot;displayText\&quot;:\&quot;Use snipping tool to capture screenshots - Windows Help\&quot;,\&quot;content\&quot;:{\&quot;$schema\&quot;:\&quot;http://adaptivecards.io/schemas/adaptive-card.json\&quot;,\&quot;type\&quot;:\&quot;AdaptiveCard\&quot;,\&quot;version\&quot;:\&quot;1.0\&quot;,\&quot;body\&quot;:[{\&quot;type\&quot;:\&quot;Container\&quot;,\&quot;items\&quot;:[{\&quot;type\&quot;:\&quot;TextBlock\&quot;,\&quot;text\&quot;:\&quot;Use snipping tool to capture screenshots - Windows Help\&quot;,\&quot;weight\&quot;:\&quot;bolder\&quot;,\&quot;size\&quot;:\&quot;large\&quot;,\&quot;wrap\&quot;:true,\&quot;maxLines\&quot;:3},{\&quot;type\&quot;:\&quot;TextBlock\&quot;,\&quot;text\&quot;:\&quot;https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\&quot;,\&quot;size\&quot;:\&quot;normal\&quot;,\&quot;wrap\&quot;:true,\&quot;maxLines\&quot;:3}]}]}},\&quot;isRoamable\&quot;:true,\&quot;appActivityId\&quot;:\&quot;https://support.microsoft.com/help/13776/windows-use-snipping-tool-to-capture-screenshots\&quot;}&quot;
+}
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<p><a href="index.html">Launch a Windows app with a URI</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/launch/launch-screen-snipping.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

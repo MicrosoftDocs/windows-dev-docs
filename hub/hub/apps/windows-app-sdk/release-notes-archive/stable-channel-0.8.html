@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Stable channel release notes for the Windows App SDK 0.8 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Stable channel release notes for the Windows App SDK 0.8 ">
+    
+    <meta name="description" content="Provides information about the stable release channel for the Windows App SDK 0.8.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="stable-channel-release-notes-for-the-windows-app-sdk-08">Stable channel release notes for the Windows App SDK 0.8</h1>
+
+<p>The stable channel provides releases of the Windows App SDK that are supported for use by apps in production environments. Apps that use the stable release of the Windows App SDK can also be published to the Microsoft Store.</p>
+<p><strong>Important links</strong>:</p>
+<ul>
+<li>If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see <a href="../update-existing-projects-to-the-latest-release.html">Update existing projects to the latest release of the Windows App SDK</a>.</li>
+</ul>
+<p><strong>Latest stable channel release:</strong></p>
+<ul>
+<li><a href="../stable-channel.html">Latest stable channel release notes for the Windows App SDK</a></li>
+</ul>
+<h2 id="downloads-for-the-windows-app-sdk">Downloads for the Windows App SDK</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.</p>
+</div>
+<h2 id="version-08">Version 0.8</h2>
+<p>The latest available release of the 0.8.x lineage of the stable channel of the Windows App SDK is version 0.8.12.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK was previously known by the code name <strong>Project Reunion</strong>. Some SDK assets in version 0.8 and earlier still use the code name. Some areas of the documentation still use <strong>Project Reunion</strong> when referring to an existing asset or a specified earlier release.</p>
+</div>
+<h3 id="version-0812">Version 0.8.12</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For C# developers, one of the following .NET SDK versions is required: 5.0.213, 5.0.407, 6.0.104, 6.0.202 (or later). To update your .NET SDK version, visit <a href="https://dotnet.microsoft.com/download">.NET Downloads</a> or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: <em>&quot;This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater.&quot;</em>.</p>
+</div>
+<h4 id="bug-fixes-0812">Bug fixes (0.8.12)</h4>
+<ul>
+<li>Fixed issue where apps with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel">SwapChainPanel</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2">WebView2</a> would unpredictably crash due to an access violation.</li>
+</ul>
+<h3 id="version-0811">Version 0.8.11</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For C# developers, one of the following .NET SDK versions is required: 5.0.213, 5.0.407, 6.0.104, 6.0.202 (or later). To update your .NET SDK version, visit <a href="https://dotnet.microsoft.com/download">.NET Downloads</a> or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: <em>&quot;This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater.&quot;</em>.</p>
+</div>
+<h4 id="bug-fixes-0811">Bug fixes (0.8.11)</h4>
+<ul>
+<li>Fixed regression causing the lost focus event to fire when selecting text using mouse.</li>
+</ul>
+<h3 id="version-0810">Version 0.8.10</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For C# developers, one of the following .NET SDK versions is required: 5.0.213, 5.0.407, 6.0.104, 6.0.202 (or later). To update your .NET SDK version, visit <a href="https://dotnet.microsoft.com/download">.NET Downloads</a> or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: <em>&quot;This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater.&quot;</em>.</p>
+</div>
+<h4 id="bug-fixes-0810">Bug fixes (0.8.10)</h4>
+<ul>
+<li>Fixed issues causing apps to sometimes crash during a drag and drop operation.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows App SDK 0.8.9 was not released. The version released directly after 0.8.8 is 0.8.10.</p>
+</div>
+<h3 id="version-088">Version 0.8.8</h3>
+<p>This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit <a href="https://dotnet.microsoft.com/download">.NET Downloads</a> or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: <em>&quot;This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater.&quot;</em>.</p>
+</div>
+<h4 id="bug-fixes-088">Bug fixes (0.8.8)</h4>
+<ul>
+<li>Fixed touch input issues in TextBox regarding soft keyboard and general interaction. These issues also affected keyboard shortcuts. For more information, see <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/6291">issue 6291</a> on GitHub.</li>
+<li>Fixed issue where an app window would sometimes show as inactive when active.</li>
+<li>Fixed performance issue caused by UIA (UI Automation) running in external processes.</li>
+<li>Fixed app stability issue with pen input.</li>
+<li>Fixed issue where the render of png icons in a Menu are dramatically delayed because of UIA.</li>
+</ul>
+<h3 id="version-087">Version 0.8.7</h3>
+<p>This is a servicing release of the Windows App SDK that includes several performance updates for C#/.NET applications. To update to this version, you'll need to reference the latest Windows SDK package version. To do that, add the property <code>&lt;WindowsSdkPackageVersion&gt;10.0.&lt;sdk_version&gt;.24&lt;/WindowsSdkPackageVersion&gt;</code> to your <code>.csproj</code> file with the SDK version your app is targeting from the <code>TargetFramework</code> property. For example:</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+   &lt;PropertyGroup&gt;
+       &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+       &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+       &lt;TargetPlatformMinVersion&gt;10.0.17763.0&lt;/TargetPlatformMinVersion&gt;
+       &lt;WindowsSdkPackageVersion&gt;10.0.19041.24&lt;/WindowsSdkPackageVersion&gt;
+   &lt;PropertyGroup&gt;
+   ...
+</code></pre>
+<p>This version of the Windows SDK projection will be available in an upcoming .NET 6 servicing release. After that .NET SDK update is available, you should remove the <code>&lt;WindowsSdkPackageVersion&gt;</code> property from your project file.</p>
+<p>If you don't set this property, then you'll see an error like: <code>&quot;Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.6 or greater.&quot;</code></p>
+<h3 id="version-086">Version 0.8.6</h3>
+<p>This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release.</p>
+<p>To update to this version of Windows App SDK, you will need to have the latest .NET SDK December update installed (see <a href="https://dotnet.microsoft.com/download">Download .NET</a> and <a href="https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/">.NET 5 will reach End of Support on May 10, 2022</a>). If you don't have the minimum required version of the .NET SDK installed, then you'll see an error like <code>&quot;Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.4 or greater.&quot;</code></p>
+<h4 id="bug-fixes-086">Bug Fixes (0.8.6)</h4>
+<p>For a detailed list of the performance improvements, see the <a href="https://github.com/microsoft/CsWinRT/releases/tag/1.4.1.211117.1">C#/WinRT 1.4.1 release notes</a>.</p>
+<h3 id="version-085">Version 0.8.5</h3>
+<p>This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release.</p>
+<h4 id="bug-fixes-085">Bug fixes (0.8.5)</h4>
+<ul>
+<li>Fixed issue that was causing WinUI apps using <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointer">pointer input</a> to crash.</li>
+<li>Fixed issue causing the title bar buttons (min, max, close) to not have rounded corners on Windows 11.</li>
+<li>Fixed issue causing the resizing layout options to not appear when hovering over maximize/restore button on Windows 11.</li>
+<li>Fixed issue causing a crashing exception where creating a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.pointcollection">PointCollection</a> object. For more information, see <a href="https://github.com/microsoft/CsWinRT/issues/971">issue 971</a> on Github.</li>
+</ul>
+<p>The limitations and known issues for version 0.8 also apply to version 0.8.5, unless marked otherwise in the <a href="#limitations">section below</a>.</p>
+<h3 id="version-084">Version 0.8.4</h3>
+<p>This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release.</p>
+<h4 id="bug-fixes-084">Bug fixes (0.8.4)</h4>
+<ul>
+<li>Fixes for custom title bars so that <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog">ContentDialog</a> doesn't cover it up, and the title bar buttons are rounded.</li>
+<li>Fix for a crash in image processing when the display scale is changed.</li>
+<li>Fixes clipping bugs where UI disappear or clipped incorrectly</li>
+</ul>
+<p>The limitations and known issues for version 0.8 also apply to version 0.8.4, unless marked otherwise in the <a href="#limitations">section below</a>.</p>
+<h3 id="version-083">Version 0.8.3</h3>
+<p>This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release.</p>
+<h4 id="bug-fixes-083">Bug fixes (0.8.3)</h4>
+<p>Keyboard focus was being lost when a window was minimized and then restored, requiring a mouse click to restore focus.</p>
+<p>The limitations and known issues for version 0.8 also apply to version 0.8.3, unless marked otherwise in the <a href="#limitations">section below</a>.</p>
+<h3 id="version-082">Version 0.8.2</h3>
+<p>This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release.</p>
+<h4 id="bug-fixes-082">Bug fixes (0.8.2)</h4>
+<ul>
+<li>Windows App SDK and WinUI 3 are now supported in Visual Studio 2022 Preview 2 and later.</li>
+<li>For .NET apps, you may receive the following error when passing in an array of enums: <code>Object contains non-primitive or non-blittable data.</code></li>
+<li>Writing using the HandWriting Panel inside a textbox causes a crash</li>
+<li>Icons/images always load at their 100% scale value rather than based on the monitor scale value</li>
+<li>Garbage collection of <strong>EventSource&lt;T&gt;</strong> causes subsequent failure to unsubscribe handlers (see <a href="https://github.com/microsoft/CsWinRT/issues/842">GitHub issue</a> for more details)</li>
+<li>Security fix – see <a href="https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2021-34533">CVE-2021-34533</a> for more details.</li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel.compositionscalechanged">SwapChainPanel.CompositionScaleChanged</a> sometimes returning incorrect CompositionScale values after changing display scale</li>
+</ul>
+<p>The limitations and known issues for version 0.8 also apply to version 0.8.2, unless marked otherwise in the <a href="#limitations">section below</a>.</p>
+<h3 id="version-081">Version 0.8.1</h3>
+<p>This is a servicing release of the Windows App SDK that includes a few critical bug fixes for the 0.8.0 release.</p>
+<h4 id="bug-fixes-081">Bug fixes (0.8.1)</h4>
+<ul>
+<li>Windows App SDK cannot run on the latest Windows Insider build</li>
+<li>Crash in EditableComboBox when entering a value that does not appear in dropdown</li>
+<li>WebView2 doesn't allow user to tab out once focused has been received</li>
+<li>Fully qualify Windows.Foundation.Metadata.DefaultOverload namespace in WinUI generated code to avoid namespace ambiguity
+<ul>
+<li>This fixes bug <a href="https://github.com/microsoft/microsoft-ui-xaml/issues/5108">#5108</a>.</li>
+</ul>
+</li>
+<li>Security fix – see <a href="https://msrc.microsoft.com/update-guide/en-US/vulnerability/CVE-2021-34489">CVE-2021-34489</a> for more details.</li>
+</ul>
+<p>The limitations and known issues for version 0.8 also apply to version 0.8.1, unless marked otherwise in the <a href="#limitations">section below</a>.</p>
+<h3 id="version-080-stable">Version 0.8.0 Stable</h3>
+<h4 id="new-features-and-updates">New features and updates</h4>
+<p>This release supports all <a href="../release-channels.html#features-available-by-release-channel">stable channel features</a>.</p>
+<p><strong>WinUI 3:</strong></p>
+<p>This release includes many bug fixes and improved stabilization across WinUI 3. These are all of the new changes in WinUI 3 since the release of WinUI 3 - Project Reunion 0.5:</p>
+<ul>
+<li><p>The Pivot control has been added back in and can now be used in any WinUI 3 app.</p>
+</li>
+<li><p>All bug fixes from Project Reunion v0.5.5, v0.5.6, and v0.5.7 are included with this release.</p>
+</li>
+<li><p>New bug fixes, including:</p>
+<ul>
+<li>Mouse right-click in TextBox crashes the application</li>
+<li>NavigationView causes crash in UWP, Reunion 0.5 Preview</li>
+<li>ProgressBar doesn't show difference between Paused and Error option</li>
+<li>Crash in RichEditBox when copying/pasting/changing text style</li>
+<li>Window caption buttons are misplaced when SetTitleBar is not set or null</li>
+</ul>
+<p><strong>For the full list of bugs addressed in this release, see <a href="https://aka.ms/winui3/0.8/bugs-fixed">our GitHub repo</a>.</strong></p>
+</li>
+<li><p>The <code>ColorHelper.ToDisplayName</code> API is no longer available.</p>
+</li>
+<li><p>The following types have been removed:</p>
+<ul>
+<li><code>Microsoft.Graphics.IGeometrySource2D</code></li>
+<li><code>Microsoft.Graphics.IGeometrySource2DInterop</code></li>
+</ul>
+<p>Use <code>Windows.Graphics.IGeometrySource2D</code> and <code>Windows.Graphics.IGeometrySource2DInterop</code> instead.</p>
+</li>
+<li><p>All types in the <code>Microsoft.System</code> namespace have been moved to the <code>Microsoft.UI.Dispatching</code> namespace, including the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue">DispatcherQueue class</a>.</p>
+</li>
+<li><p>The <code>AcrylicBrush.BackgroundSource</code> property has been removed, since <code>HostBackdrop</code> is not supported as a <code>BackgroundSource</code> in WinUI 3.</p>
+</li>
+</ul>
+<p>For more information on WinUI, see <a href="../../winui/index.html">WinUI</a>.</p>
+<p>To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app <a href="https://github.com/microsoft/WinUI-Gallery/tree/main">from GitHub</a>, or download the app <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">from the Microsoft Store</a>.</p>
+<p>To get started developing with WinUI, check out the following articles:</p>
+<ul>
+<li><a href="../../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../../winui/winui3/desktop-winui3-app-with-basic-interop.html">Build a C# .NET app with WinUI 3 and Win32 interop</a></li>
+<li><a href="/windows/winui/api">WinUI 3 API Reference</a></li>
+</ul>
+<p><strong>DWriteCore:</strong></p>
+<p>This release of DWriteCore includes the following new and updated features. DWriteCore is introduced and described in the <a href="/windows/win32/directwrite/dwritecore-overview">DWriteCore overview</a>.</p>
+<ul>
+<li>DWriteCore now has support for underline—see <a href="/windows/win32/api/dwrite/nf-dwrite-idwritetextlayout-getunderline"><strong>IDWriteTextLayout::GetUnderline</strong></a> and <a href="/windows/win32/api/dwrite/nf-dwrite-idwritetextlayout-setunderline"><strong>IDWriteTextLayout::SetUnderline</strong></a>.</li>
+<li>Support for strikethrough—see <a href="/windows/win32/api/dwrite/nf-dwrite-idwritetextlayout-getstrikethrough"><strong>IDWriteTextLayout::GetStrikethrough</strong></a> and <a href="/windows/win32/api/dwrite/nf-dwrite-idwritetextlayout-setstrikethrough"><strong>IDWriteTextLayout::SetStrikethrough</strong></a>.</li>
+<li>Support for vertical text via <a href="/windows/win32/api/dwrite/nn-dwrite-idwritetextlayout"><strong>IDWriteTextLayout</strong></a>—see <a href="/windows/win32/directwrite/vertical-text">Vertical text</a>.</li>
+<li>All of the methods of the <a href="/windows/win32/api/dwrite/nn-dwrite-idwritetextanalyzer"><strong>IDWriteTextAnalyzer</strong></a> and <a href="/windows/win32/api/dwrite_1/nn-dwrite_1-idwritetextanalyzer1"><strong>IDWriteTextAnalyzer1</strong></a> interfaces are implemented.</li>
+<li>The <a href="/windows/windows-app-sdk/api/win32/dwrite_core/nf-dwrite_core-dwritecorecreatefactory"><strong>DWriteCoreCreateFactory</strong></a> free function creates a factory object that is used for subsequent creation of individual DWriteCore objects.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="/windows/windows-app-sdk/api/win32/dwrite_core/nf-dwrite_core-dwritecorecreatefactory"><strong>DWriteCoreCreateFactory</strong></a> is functionally the same as the <a href="/windows/win32/api/dwrite/nf-dwrite-dwritecreatefactory"><strong>DWriteCreateFactory</strong></a> function exported by the system version of DirectWrite. The DWriteCore function has a different name to avoid ambiguity in the event that you link both <code>DWriteCore.lib</code> and <code>DWrite.lib</code>.</p>
+</div>
+<p>For DWriteCore and DirectWrite API reference, see <a href="/windows/windows-app-sdk/api/win32/_dwritecore/">DWriteCore API Reference</a> and <a href="/windows/win32/directwrite/reference">DirectWrite API Reference</a>.</p>
+<p><strong>MRTCore:</strong></p>
+<ul>
+<li>The <strong>Build Action</strong> for resources is automatically set when you add the resource to your project, reducing the need for manual project configuration.</li>
+</ul>
+<h4 id="limitations">Limitations</h4>
+<ul>
+<li><p>This release is not currently supported on the Dev Channel of the <a href="https://insider.windows.com">Windows Insider Program</a>. <strong>This is fixed in version 0.8.1</strong>.</p>
+</li>
+<li><p>Desktop apps (C# or C++ desktop): This release is supported for use only in desktop apps (C++ or C#) that are packaged using MSIX. To use the Windows App SDK in unpackaged desktop apps, you must use the <a href="../experimental-channel.html">experimental release channel</a>.</p>
+</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you're working on a UWP app, then refer to <a href="../migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.html">Migrate from UWP to the Windows App SDK</a>.</p>
+</div>
+<h4 id="known-issues">Known issues</h4>
+<ul>
+<li><p>WinUI 3 tooling such as Live Visual Tree, Live Property Explorer, and Hot Reload in version 0.8 and later requires Visual Studio 2019 16.11 Preview 3 and later.</p>
+</li>
+<li><p>Apps currently using WinUI 3 and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.</p>
+</li>
+<li><p>.NET apps must target build 18362 or later: Your TFM must be set to net6.0-windows10.0.18362 or later, and your packaging project's must be set to 18362 or later. For more info, see <a href="https://github.com/microsoft/WindowsAppSDK/issues/921">GitHub issue #921</a>.</p>
+</li>
+<li><p>You may encounter a crash when switching frequently between light and dark mode.</p>
+</li>
+<li><p>For .NET apps, you may receive the following error when passing in an array of enums: <code>Object contains non-primitive or non-blittable data.</code> <strong>This is fixed in version 0.8.2</strong>.</p>
+</li>
+<li><p>For .NET apps, there is currently no way  to opt out of an image getting indexed as an app resource using the Visual Studio UI. To work around this, add a Directory.Build.targets (see <a href="/visualstudio/msbuild/customize-your-build">Customize your build - Visual Studio</a> for instructions) to the project and remove the image(s) as follows:</p>
+<ul>
+<li><p>To remove specific images (note that the relative path is needed):</p>
+<pre><code class="lang-xml">&lt;Project&gt;
+&lt;ItemGroup&gt;
+    &lt;Content Remove=&quot;..\Bitmap1.bmp&quot; /&gt;
+&lt;/ItemGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+<ul>
+<li>To remove images based on metadata:</li>
+</ul>
+<pre><code class="lang-xml">&lt;Project&gt;
+&lt;ItemGroup&gt;
+    &lt;Content Remove=&quot;@(None-&gt;WithMetadataValue('Pack','true'))&quot; /&gt;
+&lt;/ItemGroup&gt;
+&lt;/Project&gt;
+</code></pre>
+<p>A fix for this issue is planned for an upcoming release - at that point, the above workarounds will no longer be needed.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../preview-channel.html">Latest preview channel release notes for the Windows App SDK</a></li>
+<li><a href="../experimental-channel.html">Latest experimental channel release notes for the Windows App SDK</a></li>
+<li><a href="../set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 (Windows App SDK) project</a></li>
+<li><a href="../use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+<li><a href="../../package-and-deploy/index.html#use-the-windows-app-sdk">Deployment overview</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/release-notes-archive/stable-channel-0.8.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

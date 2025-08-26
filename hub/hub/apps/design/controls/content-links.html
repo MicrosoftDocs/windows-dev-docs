@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Content links in text controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Content links in text controls ">
+    
+    <meta name="description" content="Learn how to use content links to embed rich data in the TextBlock, RichTextBlock, and RichEditBox controls.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="content-links-in-text-controls">Content links in text controls</h1>
+
+<p>Content links provide a way to embed rich data in your text controls, which lets a user find and use more information about a person or place without leaving the context of your app.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The Windows features that enable content links are not available in versions of Windows after Windows 10 version 1903. Content links for XAML text controls will not function in versions of Windows later than version 1903.</p>
+</div>
+<p>When the user prefixes an entry with the at (@) symbol in a RichEditBox, they’re shown a list of people and/or place suggestions that matches the entry. Then, for example, when the user picks a place, a ContentLink for that place is inserted into the text. When the user invokes the content link from the RichEditBox, a flyout is shown with a map and additional info about the place.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/windows.ui.xaml.documents.contentlink">ContentLink class</a>, <a href="/uwp/api/windows.ui.text.contentlinkinfo">ContentLinkInfo class</a>, <a href="/uwp/api/windows.ui.text.richedittextrange">RichEditTextRange class</a></p>
+</blockquote>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The APIs for content links are spread across the following namespaces: Windows.UI.Xaml.Controls, Windows.UI.Xaml.Documents, and Windows.UI.Text.</p>
+</div>
+<h2 id="content-links-in-rich-edit-vs-text-block-controls">Content links in rich edit vs. text block controls</h2>
+<p>There are two distinct ways to use content links:</p>
+<ol>
+<li>In a <a href="/uwp/api/windows.ui.xaml.controls.richeditbox">RichEditBox</a>, the user can open a picker to add a content link by prefixing text with an @ symbol. The content link is stored as part the rich text content.</li>
+<li>In a <a href="/uwp/api/windows.ui.xaml.controls.textblock">TextBlock</a> or <a href="/uwp/api/windows.ui.xaml.controls.richtextblock">RichTextBlock</a>, the content link is a text element with usage and behavior much like a <a href="/uwp/api/windows.ui.xaml.documents.hyperlink">Hyperlink</a>.</li>
+</ol>
+<p>Here's how content links look by default in a RichEditBox and in a TextBlock.</p>
+<p><img src="images/content-link-default-richedit.png" alt="content link in rich edit box">
+<img src="images/content-link-default-textblock.png" alt="content link in text block"></p>
+<p>Differences in usage, rendering, and behavior are covered in detail in the following sections. This table gives a quick comparison of the main differences between a content link in a RichEditBox and a text block.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>RichEditBox</th>
+<th>text block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Usage</td>
+<td>ContentLinkInfo instance</td>
+<td>ContentLink text element</td>
+</tr>
+<tr>
+<td>Cursor</td>
+<td>Determined by type of content link, can't be changed</td>
+<td>Determined by Cursor property, <strong>null</strong> by default</td>
+</tr>
+<tr>
+<td>ToolTip</td>
+<td>Not rendered</td>
+<td>Shows secondary text</td>
+</tr>
+</tbody>
+</table>
+<h2 id="enable-content-links-in-a-richeditbox">Enable content links in a RichEditBox</h2>
+<p>The most common use of a content link is to let a user quickly add information by prefixing a person or place name with an ampersand (@) symbol in their text. When enabled in a <a href="/uwp/api/windows.ui.xaml.controls.richeditbox">RichEditBox</a>, this opens a picker and lets the user insert a person from their contact list, or a nearby place, depending on what you’ve enabled.</p>
+<p>The content link can be saved with the rich text content, and you can extract it to use in other parts of your app. For example, in an email app, you might extract the person info and use it to populate the To box with an email address.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The content link picker is an app that’s part of Windows, so it runs in a separate process from your app.</p>
+</div>
+<h3 id="content-link-providers">Content link providers</h3>
+<p>You enable content links in a RichEditBox by adding one or more content link providers to the <a href="/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkProviders">RichEditBox.ContentLinkProviders</a> collection. There are 2 content link providers built into the XAML framework.</p>
+<ul>
+<li><a href="/uwp/api/windows.ui.xaml.documents.contactcontentlinkprovider">ContactContentLinkProvider</a> – looks up contacts using the <strong>People</strong> app.</li>
+<li><a href="/uwp/api/windows.ui.xaml.documents.placecontentlinkprovider">PlaceContentLinkProvider</a> – looks up places using the <strong>Maps</strong> app.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The default value for the RichEditBox.ContentLinkProviders property is <strong>null</strong>, not an empty collection. You need to explicitly create the <a href="/uwp/api/windows.ui.xaml.documents.contentlinkprovidercollection">ContentLinkProviderCollection</a> before you add content link providers.</p>
+</div>
+<p>Here’s how to add the content link providers in XAML.</p>
+<pre><code class="lang-xaml">&lt;RichEditBox&gt;
+    &lt;RichEditBox.ContentLinkProviders&gt;
+        &lt;ContentLinkProviderCollection&gt;
+            &lt;ContactContentLinkProvider/&gt;
+            &lt;PlaceContentLinkProvider/&gt;
+        &lt;/ContentLinkProviderCollection&gt;
+    &lt;/RichEditBox.ContentLinkProviders&gt;
+&lt;/RichEditBox&gt;
+</code></pre>
+<p>You can also add content link providers in a Style and apply it to multiple RichEditBoxes like this.</p>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;Style TargetType=&quot;RichEditBox&quot; x:Key=&quot;ContentLinkStyle&quot;&gt;
+        &lt;Setter Property=&quot;ContentLinkProviders&quot;&gt;
+            &lt;Setter.Value&gt;
+                &lt;ContentLinkProviderCollection&gt;
+                    &lt;PlaceContentLinkProvider/&gt;
+                    &lt;ContactContentLinkProvider/&gt;
+                &lt;/ContentLinkProviderCollection&gt;
+            &lt;/Setter.Value&gt;
+        &lt;/Setter&gt;
+    &lt;/Style&gt;
+&lt;/Page.Resources&gt;
+
+&lt;RichEditBox x:Name=&quot;RichEditBox01&quot; Style=&quot;{StaticResource ContentLinkStyle}&quot; /&gt;
+&lt;RichEditBox x:Name=&quot;RichEditBox02&quot; Style=&quot;{StaticResource ContentLinkStyle}&quot; /&gt;
+</code></pre>
+<p>Here's how to add content link providers in code.</p>
+<pre><code class="lang-csharp">RichEditBox editor = new RichEditBox();
+editor.ContentLinkProviders = new ContentLinkProviderCollection
+{
+    new ContactContentLinkProvider(),
+    new PlaceContentLinkProvider()
+};
+</code></pre>
+<h3 id="content-link-colors">Content link colors</h3>
+<p>The appearance of a content link is determined by its foreground, background, and icon. In a RichEditBox, you can set the <a href="/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkForegroundColor">ContentLinkForegroundColor</a> and <a href="/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkBackgroundColor">ContentLinkBackgroundColor</a> properties to change the default colors.</p>
+<p>You can't set the cursor. The cursor is rendered by the RichEditbox based on the type of content link - a <a href="/uwp/api/windows.ui.core.corecursortype">Person</a> cursor for a person link, or a <a href="/uwp/api/windows.ui.core.corecursortype">Pin</a> cursor for a place link.</p>
+<h3 id="the-contentlinkinfo-object">The ContentLinkInfo object</h3>
+<p>When the user makes a selection from the people or places picker, the system creates a <a href="/uwp/api/windows.ui.text.contentlinkinfo">ContentLinkInfo</a> object and adds it to the <strong>ContentLinkInfo</strong> property of the current <a href="/uwp/api/windows.ui.text.richedittextrange">RichEditTextRange</a>.</p>
+<p>The ContentLinkInfo object contains the information used to display, invoke, and manage the content link.</p>
+<ul>
+<li><strong>DisplayText</strong> – This is the string that is shown when the content link is rendered. In a RichEditBox, the user can edit the text of a content link after it’s created, which alters the value of this property.</li>
+<li><strong>SecondaryText</strong> – This string is shown in the <a href="tooltips.html">tooltip</a> of a rendered content link.
+<ul>
+<li>In a Place content link created by the picker, it contains the address of the location, if available.</li>
+</ul>
+</li>
+<li><strong>Uri</strong> – The link to more information about the subject of the content link. This Uri can open an installed app or a website.</li>
+<li><strong>Id</strong> - This is a read-only, per control, counter created by the RichEditBox control. It’s used to track this ContentLinkInfo during actions such as delete or edit. If the ContentLinkInfo is cut and paste back into the control, it will get a new Id. Id values are incremental.</li>
+<li><strong>LinkContentKind</strong> – A string that describes the type of the content link. The built-in content types are <em>Places</em> and <em>Contacts</em>. The value is case sensitive.</li>
+</ul>
+<h4 id="link-content-kind">Link content kind</h4>
+<p>There are several situations where the LinkContentKind is important.</p>
+<ul>
+<li>When a user copies a content link from a RichEditBox and pastes it into another RichEditBox, both controls must have a ContentLinkProvider for that content type. If not, the link is pasted as text.</li>
+<li>You can use LinkContentKind in a <a href="/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged">ContentLinkChanged</a> event handler to determine what to do with a content link when you use it in other parts of your app. See the Example section for more info.</li>
+<li>The LinkContentKind influences how the system opens the Uri when the link is invoked. We’ll see this in the discussion of Uri launching next.</li>
+</ul>
+<h4 id="uri-launching">Uri launching</h4>
+<p>The Uri property works much like the NavigateUri property of a Hyperlink. When a user clicks it, it launches the Uri in the default browser, or in the app that's registered for the particular protocol specified in the Uri value.</p>
+<p>The specific behavior for the 2 built in kinds of link content are described here.</p>
+<h5 id="places">Places</h5>
+<p>The Places picker creates a ContentLinkInfo with a Uri root of <a href="https://maps.windows.com/">https://maps.windows.com/</a>. This link can be opened in 3 ways:</p>
+<ul>
+<li>If LinkContentKind = &quot;Places&quot;, it opens an info card in a flyout. The flyout is similar to the content link picker flyout. It’s part of Windows, and runs in a separate process from your app.</li>
+<li>If LinkContentKind is not &quot;Places&quot;, it attempts to open the <strong>Maps</strong> app to the specified location. For example, this can happen if you’ve modified the LinkContentKind in the ContentLinkChanged event handler.</li>
+<li>If the Uri can’t be opened in the Maps app, the map is opened in the default browser. This typically happens when the user's <em>Apps for websites</em> settings don’t allow opening the Uri with the <strong>Maps</strong> app.</li>
+</ul>
+<h5 id="people">People</h5>
+<p>The People picker creates a ContentLinkInfo with a Uri that uses the <strong>ms-people</strong> protocol.</p>
+<ul>
+<li>If LinkContentKind = &quot;People&quot;, it opens an info card in a flyout. The flyout is similar to the content link picker flyout. It’s part of Windows, and runs in a separate process from your app.</li>
+<li>If LinkContentKind is not &quot;People&quot;, it opens the <strong>People</strong> app. For example, this can happen if you’ve modified the LinkContentKind in the ContentLinkChanged event handler.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For more info about opening other apps and websites from your app, see the topics under <a href="/windows/uwp/launch-resume/launch-app-with-uri">Launch an app with a Uri</a>.</p>
+</div>
+<h4 id="invoked">Invoked</h4>
+<p>When the user invokes a content link, the <a href="/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkInvoked">ContentLinkInvoked</a> event is raised before the default behavior of launching the Uri happens. You can handle this event to override or cancel the default behavior.</p>
+<p>This example shows how you can override the default launching behavior for a Place content link. Instead of opening the map in a Place info card, Maps app, or default web browser, you mark the event as Handled and open the map in an in-app <a href="/uwp/api/windows.ui.xaml.controls.webview">WebView</a> control.</p>
+<pre><code class="lang-xaml">&lt;RichEditBox x:Name=&quot;editor&quot;
+             ContentLinkInvoked=&quot;editor_ContentLinkInvoked&quot;&gt;
+    &lt;RichEditBox.ContentLinkProviders&gt;
+        &lt;ContentLinkProviderCollection&gt;
+            &lt;PlaceContentLinkProvider/&gt;
+        &lt;/ContentLinkProviderCollection&gt;
+    &lt;/RichEditBox.ContentLinkProviders&gt;
+&lt;/RichEditBox&gt;
+
+&lt;WebView x:Name=&quot;webView1&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void editor_ContentLinkInvoked(RichEditBox sender, ContentLinkInvokedEventArgs args)
+{
+    if (args.ContentLinkInfo.LinkContentKind == &quot;Places&quot;)
+    {
+        args.Handled = true;
+        webView1.Navigate(args.ContentLinkInfo.Uri);
+    }
+}
+</code></pre>
+<h4 id="contentlinkchanged">ContentLinkChanged</h4>
+<p>You can use the <a href="/uwp/api/windows.ui.xaml.controls.richeditbox.ContentLinkChanged">ContentLinkChanged</a> event to be notified when a content link is added, modified, or removed. This lets you extract the content link from the text and use it in other places in your app. This is shown later in the Examples section.</p>
+<p>The properties of the <a href="/uwp/api/windows.ui.xaml.controls.contentlinkchangedeventargs">ContentLinkChangedEventArgs</a> are:</p>
+<ul>
+<li><strong>ChangedKind</strong> - This ContentLinkChangeKind enum is the action within the ContentLink. For example, if the ContentLink is inserted, removed, or edited.</li>
+<li><strong>Info</strong> - The ContentLinkInfo that was the target of the action.</li>
+</ul>
+<p>This event is raised for each ContentLinkInfo action. For example, if the user copies and pastes several content links into the RichEditBox at once, this event is raised for each added item. Or if the user selects and deletes several content links at the same time, this event is raised for each deleted item.</p>
+<p>This event is raised on the RichEditBox after the <strong>TextChanging</strong> event and before the <strong>TextChanged</strong> event.</p>
+<h4 id="enumerate-content-links-in-a-richeditbox">Enumerate content links in a RichEditBox</h4>
+<p>You can use the RichEditTextRange.ContentLink property to get a content link from a rich edit document. The TextRangeUnit enumeration has the value ContentLink to specify the content link as a unit to use when navigating a text range.</p>
+<p>This example shows how you can enumerate all the content links in a RichEditBox, and extract the people into a list.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Width=&quot;300&quot;&gt;
+    &lt;RichEditBox x:Name=&quot;Editor&quot; Height=&quot;200&quot;&gt;
+        &lt;RichEditBox.ContentLinkProviders&gt;
+            &lt;ContentLinkProviderCollection&gt;
+                &lt;ContactContentLinkProvider/&gt;
+                &lt;PlaceContentLinkProvider/&gt;
+            &lt;/ContentLinkProviderCollection&gt;
+        &lt;/RichEditBox.ContentLinkProviders&gt;
+    &lt;/RichEditBox&gt;
+
+    &lt;Button Content=&quot;Get people&quot; Click=&quot;Button_Click&quot;/&gt;
+
+    &lt;ListView x:Name=&quot;PeopleList&quot; Header=&quot;People&quot;&gt;
+        &lt;ListView.ItemTemplate&gt;
+            &lt;DataTemplate x:DataType=&quot;ContentLinkInfo&quot;&gt;
+                &lt;TextBlock&gt;
+                    &lt;ContentLink Info=&quot;{x:Bind}&quot; Background=&quot;Transparent&quot;/&gt;
+                &lt;/TextBlock&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/ListView.ItemTemplate&gt;
+    &lt;/ListView&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Button_Click(object sender, RoutedEventArgs e)
+{
+    PeopleList.Items.Clear();
+    RichEditTextRange textRange = Editor.Document.GetRange(0, 0) as RichEditTextRange;
+
+    do
+    {
+        // The Expand method expands the Range EndPosition 
+        // until it finds a ContentLink range. 
+        textRange.Expand(TextRangeUnit.ContentLink);
+        if (textRange.ContentLinkInfo != null
+            &amp;&amp; textRange.ContentLinkInfo.LinkContentKind == &quot;People&quot;)
+        {
+            PeopleList.Items.Add(textRange.ContentLinkInfo);
+        }
+    } while (textRange.MoveStart(TextRangeUnit.ContentLink, 1) &gt; 0);
+}
+</code></pre>
+<h2 id="contentlink-text-element">ContentLink text element</h2>
+<p>To use a content link in a TextBlock or RichTextBlock control, you use the <a href="/uwp/api/windows.ui.xaml.documents.contentlink">ContentLink</a> text element (from the Windows.UI.Xaml.Documents namespace).</p>
+<p>Typical sources for a ContentLink in a text block are:</p>
+<ul>
+<li>A content link created by a picker that you extracted from a RichTextBlock control.</li>
+<li>A content link for a place that you create in your code.</li>
+</ul>
+<p>For other situations, a Hyperlink text element is usually appropriate.</p>
+<h3 id="contentlink-appearance">ContentLink appearance</h3>
+<p>The appearance of a content link is determined by its foreground, background, and cursor. In a text block, you can set the Foreground (from TextElement) and <a href="/uwp/api/windows.ui.xaml.documents.contentlink.background">Background</a> properties to change the default colors.</p>
+<p>By default, the <a href="/uwp/api/windows.ui.core.corecursortype">Hand</a> cursor is shown when the user hovers over the content link. Unlike RichEditBlock, text block controls don't change the cursor automatically based on the link type. You can set the <a href="/uwp/api/windows.ui.xaml.documents.contentlink.Cursor">Cursor</a> property to change the cursor based on link type or other factors.</p>
+<p>Here's an example of a ContentLink used in a TextBlock. The ContentLinkInfo is created in code and assigned to the Info property of the ContentLink text element that's created in XAML.</p>
+<pre><code class="lang-xaml">&lt;StackPanel&gt;
+    &lt;TextBlock&gt;
+        &lt;Span xml:space=&quot;preserve&quot;&gt;
+            &lt;Run&gt;This volcano erupted in 1980: &lt;/Run&gt;&lt;ContentLink x:Name=&quot;placeContentLink&quot; Cursor=&quot;Pin&quot;/&gt;
+            &lt;LineBreak/&gt;
+        &lt;/Span&gt;
+    &lt;/TextBlock&gt;
+
+    &lt;Button Content=&quot;Show&quot; Click=&quot;Button_Click&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Button_Click(object sender, RoutedEventArgs e)
+{
+    var info = new Windows.UI.Text.ContentLinkInfo();
+    info.DisplayText = &quot;Mount St. Helens&quot;;
+    info.SecondaryText = &quot;Washington State&quot;;
+    info.LinkContentKind = &quot;Places&quot;;
+    info.Uri = new Uri(&quot;https://maps.windows.com?cp=46.1912~-122.1944&quot;);
+    placeContentLink.Info = info;
+}
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When you use a ContentLink in a text control with other text elements in XAML, place the content in a <a href="/uwp/api/windows.ui.xaml.documents.span">Span</a> container and apply the <code>xml:space=&quot;preserve&quot;</code> attribute to the Span to keep the white space between the ContentLink and other elements.</p>
+</div>
+<h2 id="examples">Examples</h2>
+<p>In this example, a user can enter a person or place content link into a RickTextBlock. You handle the ContentLinkChanged event to extract the content links and keep them up-to-date in either a people list or places list.</p>
+<p>In the item templates for the lists, you use a TextBlock with a ContentLink text element to show the content link info. The ListView provides its own background for each item, so the ContentLink background is set to Transparent.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Orientation=&quot;Horizontal&quot; Grid.Row=&quot;1&quot;&gt;
+    &lt;RichEditBox x:Name=&quot;Editor&quot;
+                 ContentLinkChanged=&quot;Editor_ContentLinkChanged&quot;
+                 Margin=&quot;20&quot; Width=&quot;300&quot; Height=&quot;200&quot;
+                 VerticalAlignment=&quot;Top&quot;&gt;
+        &lt;RichEditBox.ContentLinkProviders&gt;
+            &lt;ContentLinkProviderCollection&gt;
+                &lt;ContactContentLinkProvider/&gt;
+                &lt;PlaceContentLinkProvider/&gt;
+            &lt;/ContentLinkProviderCollection&gt;
+        &lt;/RichEditBox.ContentLinkProviders&gt;
+    &lt;/RichEditBox&gt;
+
+    &lt;ListView x:Name=&quot;PeopleList&quot; Header=&quot;People&quot;&gt;
+        &lt;ListView.ItemTemplate&gt;
+            &lt;DataTemplate x:DataType=&quot;ContentLinkInfo&quot;&gt;
+                &lt;TextBlock&gt;
+                    &lt;ContentLink Info=&quot;{x:Bind}&quot;
+                                 Background=&quot;Transparent&quot;
+                                 Cursor=&quot;Person&quot;/&gt;
+                &lt;/TextBlock&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/ListView.ItemTemplate&gt;
+    &lt;/ListView&gt;
+
+    &lt;ListView x:Name=&quot;PlacesList&quot; Header=&quot;Places&quot;&gt;
+        &lt;ListView.ItemTemplate&gt;
+            &lt;DataTemplate x:DataType=&quot;ContentLinkInfo&quot;&gt;
+                &lt;TextBlock&gt;
+                    &lt;ContentLink Info=&quot;{x:Bind}&quot;
+                                 Background=&quot;Transparent&quot;
+                                 Cursor=&quot;Pin&quot;/&gt;
+                &lt;/TextBlock&gt;
+            &lt;/DataTemplate&gt;
+        &lt;/ListView.ItemTemplate&gt;
+    &lt;/ListView&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void Editor_ContentLinkChanged(RichEditBox sender, ContentLinkChangedEventArgs args)
+{
+    var info = args.ContentLinkInfo;
+    var change = args.ChangeKind;
+    ListViewBase list = null;
+
+    // Determine whether to update the people or places list.
+    if (info.LinkContentKind == &quot;People&quot;)
+    {
+        list = PeopleList;
+    }
+    else if (info.LinkContentKind == &quot;Places&quot;)
+    {
+        list = PlacesList;
+    }
+
+    // Determine whether to add, delete, or edit.
+    if (change == ContentLinkChangeKind.Inserted)
+    {
+        Add();
+    }
+    else if (args.ChangeKind == ContentLinkChangeKind.Removed)
+    {
+        Remove();
+    }
+    else if (change == ContentLinkChangeKind.Edited)
+    {
+        Remove();
+        Add();
+    }
+
+    // Add content link info to the list. It's bound to the
+    // Info property of a ContentLink in XAML.
+    void Add()
+    {
+        list.Items.Add(info);
+    }
+
+    // Use ContentLinkInfo.Id to find the item,
+    // then remove it from the list using its index.
+    void Remove()
+    {
+        var items = list.Items.Where(i =&gt; ((ContentLinkInfo)i).Id == info.Id);
+        var item = items.FirstOrDefault();
+        var idx = list.Items.IndexOf(item);
+
+        list.Items.RemoveAt(idx);
+    }
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/content-links.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

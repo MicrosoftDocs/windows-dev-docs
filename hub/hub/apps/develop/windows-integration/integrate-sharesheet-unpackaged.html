@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Integrate unpackaged apps with Windows Share </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Integrate unpackaged apps with Windows Share ">
+    
+    <meta name="description" content="Discover how to integrate unpackaged apps with the Windows Share feature.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="integrate-unpackaged-apps-with-windows-share">Integrate unpackaged apps with Windows Share</h1>
+
+<p>This article explains how to integrate unpackaged apps with the <strong>Windows Share</strong> feature. The Share feature allows users to share content from one Windows app to another. An unpackaged app must be provided with package identity so it can register as a <strong>Share Target</strong>. Once registered, the app can receive and process shared files.</p>
+<p>How to onboard an unpackaged app as a Share Target:</p>
+<ul>
+<li>Provide the app with package identity</li>
+<li>Implement the Share contract</li>
+</ul>
+<h2 id="provide-unpackaged-apps-with-package-identity">Provide unpackaged apps with package identity</h2>
+<p>An app can get package identity in two ways:</p>
+<ul>
+<li>Make a new MSIX installation package (preferred method) <strong>OR</strong></li>
+<li>Make apps packaged with external location compatible with the current installer. This is only recommended for apps that have an existing installer and which can't switch to MSIX installation.</li>
+</ul>
+<h3 id="make-a-new-msix-installation-package">Make a new MSIX installation package</h3>
+<p>It's recommended to package the app with MSIX using the <strong>Windows Application Packaging Project</strong> template in Visual Studio. This will include all the binaries in the MSIX package and provide a clean and trusted install experience.</p>
+<p>Things to note before packaging desktop apps: <a href="/windows/msix/desktop/desktop-to-uwp-prepare">Prepare to package a desktop application (MSIX)</a>.</p>
+<p>Follow the steps in <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a> to generate a package for your existing app's project.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When creating the packaging project, select <strong>Windows 10, version 2004 (10.0; Build 19041)</strong> or later as the <strong>Minimum version</strong>.</p>
+</div>
+<p>When that is completed, you will create the package by following <a href="/windows/msix/package/packaging-uwp-apps">Package a desktop or UWP app in Visual Studio</a>.</p>
+<h3 id="make-packaging-with-external-location-compatible-with-the-current-installer">Make packaging with external location compatible with the current installer</h3>
+<p>The second way to give your app package identity is to add a package with external location to your application and register it with your existing installer. The package with external location is an empty MSIX package that contains the .appxmanifest having identity, share target registration, and visual assets. The app's binaries are still managed by app's existing installer. When registering the package, you need to provide the app's install location in the API. It is important to keep the identity in the MSIX package manifest and the Win32 app manifest in sync with the certificate used for signing the app.</p>
+<h3 id="steps-to-grant-package-identity-to-an-unpackaged-app">Steps to grant package identity to an unpackaged app</h3>
+<p>Documentation on how to create a package with external location is available here, including information on templates to use: <a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps">Grant package identity by packaging with external location</a>.</p>
+<p>The full sample app is available on GitHub: <a href="https://github.com/microsoft/AppModelSamples/tree/master/Samples/PackageWithExternalLocation/cppwinrt/PackageWithExternalLocationCppApp">Packaged with External Location</a>.</p>
+<h2 id="register-as-a-share-target">Register as a Share Target</h2>
+<p>Once the app has package identity, the next step is to implement the Share contract. The Share contract allows your app to receive data from another app.</p>
+<p>You can follow the same steps in the <a href="integrate-sharesheet-packaged.html#register-as-a-share-target">Register as a Share Target</a> section of the documentation for packaged apps to integrate with Share Sheet.</p>
+<h2 id="walkthrough-of-the-sample-photostore-app">Walkthrough of the sample PhotoStore app</h2>
+<p>In this walkthrough on package identity, registration &amp; share activation for unpackaged Win32 Applications, you will learn how to grant package identity to an unpackaged Win32 application by creating a package with external location. Once the app has package identity, it can register and handle activation as a Share Target. You will take the following steps using the PhotoStoreDemo sample:</p>
+<ul>
+<li>Generate the <code>AppxManifest.xml</code> file</li>
+<li>Create a package</li>
+<li>Sign the package</li>
+<li>Register the package</li>
+<li>Handle app activation</li>
+</ul>
+<p>Start by creating the <code>AppxManifest.xml</code> file, which includes necessary properties like <code>&lt;AllowExternalContent&gt;</code>, identity, and capabilities &amp; share target extension. Make sure the <code>Publisher</code>, <code>PackageName</code> &amp; <code>ApplicationId</code> values in the <code>AppxManifest.xml</code> file match the values in the <code>PhotoStoreDemo.exe.manifest</code> file. The <code>Publisher</code> value should also match the value in the certificate used to sign the package. Add visual assets as required and referenced in <code>AppxManifest.xml</code>. In Visual Studio, you can use the <strong>Visual Assets</strong> node when editing <code>package.manifest</code> in the Application Packaging project to generate required the visual assets.</p>
+<p>This is a sample <code>AppxManifest.xml</code> snippet with external content allowed:</p>
+<pre><code class="lang-xml">&lt;Identity Name=&quot;PhotoStoreDemo&quot; ProcessorArchitecture=&quot;neutral&quot; Publisher=&quot;CN=YourPubNameHere&quot; Version=&quot;1.0.0.0&quot; /&gt;
+  &lt;Properties&gt;
+    &lt;DisplayName&gt;PhotoStoreDemo&lt;/DisplayName&gt;
+    &lt;PublisherDisplayName&gt;Sparse Package&lt;/PublisherDisplayName&gt;
+    &lt;Logo&gt;Assets\storelogo.png&lt;/Logo&gt;
+    &lt;uap10:AllowExternalContent&gt;true&lt;/uap10:AllowExternalContent&gt;
+  &lt;/Properties&gt;
+  &lt;Resources&gt;
+    &lt;Resource Language=&quot;en-us&quot; /&gt;
+  &lt;/Resources&gt;
+  &lt;Dependencies&gt;
+    &lt;TargetDeviceFamily Name=&quot;Windows.Desktop&quot; MinVersion=&quot;10.0.19041.0&quot; MaxVersionTested=&quot;10.0.19041.0&quot; /&gt;
+  &lt;/Dependencies&gt;
+  &lt;Capabilities&gt;
+    &lt;rescap:Capability Name=&quot;runFullTrust&quot; /&gt;
+    &lt;rescap:Capability Name=&quot;unvirtualizedResources&quot;/&gt;
+  &lt;/Capabilities&gt;
+  &lt;Applications&gt;
+    &lt;Application Id=&quot;PhotoStoreDemo&quot; Executable=&quot;PhotoStoreDemo.exe&quot; uap10:TrustLevel=&quot;mediumIL&quot; uap10:RuntimeBehavior=&quot;win32App&quot;&gt;
+      &lt;uap:VisualElements AppListEntry=&quot;none&quot; DisplayName=&quot;PhotoStoreDemo&quot; Description=&quot;PhotoStoreDemo&quot; BackgroundColor=&quot;transparent&quot; Square150x150Logo=&quot;Assets\Square150x150Logo.png&quot; Square44x44Logo=&quot;Assets\Square44x44Logo.png&quot;&gt;
+        &lt;uap:DefaultTile Wide310x150Logo=&quot;Assets\Wide310x150Logo.png&quot; Square310x310Logo=&quot;Assets\LargeTile.png&quot; Square71x71Logo=&quot;Assets\SmallTile.png&quot;&gt;&lt;/uap:DefaultTile&gt;
+        &lt;uap:SplashScreen Image=&quot;Assets\SplashScreen.png&quot; /&gt;
+      &lt;/uap:VisualElements&gt;
+      &lt;Extensions&gt;
+        &lt;uap:Extension Category=&quot;windows.shareTarget&quot;&gt;
+          &lt;uap:ShareTarget Description=&quot;Send to PhotoStoreDemo&quot;&gt;
+            &lt;uap:SupportedFileTypes&gt;
+              &lt;uap:FileType&gt;.jpg&lt;/uap:FileType&gt;
+              &lt;uap:FileType&gt;.png&lt;/uap:FileType&gt;
+              &lt;uap:FileType&gt;.gif&lt;/uap:FileType&gt;
+            &lt;/uap:SupportedFileTypes&gt;
+            &lt;uap:DataFormat&gt;StorageItems&lt;/uap:DataFormat&gt;
+            &lt;uap:DataFormat&gt;Bitmap&lt;/uap:DataFormat&gt;
+          &lt;/uap:ShareTarget&gt;
+        &lt;/uap:Extension&gt;
+        ...
+</code></pre>
+<p>This is a sample Application.exe.manifest file:</p>
+<pre><code class="lang-xml">﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;assembly manifestVersion=&quot;1.0&quot; xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot;&gt;
+  &lt;assemblyIdentity version=&quot;1.0.0.0&quot; name=&quot;PhotoStoreDemo.app&quot;/&gt;
+  &lt;msix xmlns=&quot;urn:schemas-microsoft-com:msix.v1&quot;
+          publisher=&quot;CN=YourPubNameHere&quot;
+          packageName=&quot;PhotoStoreDemo&quot;
+          applicationId=&quot;PhotoStoreDemo&quot;
+        /&gt;
+&lt;/assembly&gt;
+</code></pre>
+<p>Next, to create the package with external location, use the <code>MakeAppx.exe</code> tool with the <code>/nv</code> command to create a package containing the <code>AppxManifest.xml</code> file.​</p>
+<p>Example:</p>
+<pre><code class="lang-Console">MakeAppx.exe pack /d &lt;Path to directory with AppxManifest.xml&gt; /p &lt;Output Path&gt;\mypackage.msix /nv
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A package with external location contains a package manifest, but no other app binaries and content. The manifest of a package with external location can reference files outside the package in a predetermined external location.</p>
+</div>
+<p>Sign your package with a trusted certificate using <code>SignTool.exe</code>.​</p>
+<p>Example:</p>
+<pre><code class="lang-Console">SignTool.exe sign /fd SHA256 /a /f &lt;path to cert&gt;  /p &lt;cert key&gt; &lt;Path to Package&gt;​
+</code></pre>
+<p>The cert used for signing the package should be installed in a trusted location on the machine.</p>
+<p>On first run of the application, register the package with Windows. When an app has its own installer, it should also contain the signed MSIX as the payload and should place it to a specified location (for example, the app's install location). This location must be known to the app at runtime because the app will need the absolute path of MSIX to register it. Place the assets and <code>resources.pri</code> in the app's install location as well.</p>
+<p>The following code is an example of unpackaged execution of the app's Main method:</p>
+<pre><code class="lang-csharp">[STAThread]
+public static void Main(string[] cmdArgs)
+{
+    //if app isn't running with identity, register its package with external identity
+    if (!ExecutionMode.IsRunningWithIdentity())
+    {
+        //TODO - update the value of externalLocation to match the output location of your VS Build binaries and the value of 
+        //externalPkgPath to match the path to your signed package with external identity (.msix). 
+        //Note that these values cannot be relative paths and must be complete paths
+        string externalLocation = Environment.CurrentDirectory;
+        string externalPkgPath = externalLocation + @&quot;\PhotoStoreDemo.package.msix&quot;;
+
+        //Attempt registration
+        bool bPackageRegistered = false;
+        //bPackageRegistered = registerPackageWithExternalLocation(externalLocation, externalPkgPath);
+        if (bPackageRegistered)
+        {
+            //Registration succeeded, restart the app to run with identity
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location, arguments: cmdArgs?.ToString());
+        }
+        else //Registration failed, run without identity
+        {
+            Debug.WriteLine(&quot;Package Registration failed, running WITHOUT Identity&quot;);
+            SingleInstanceManager wrapper = new SingleInstanceManager();
+            wrapper.Run(cmdArgs);
+        }
+    }
+    ...
+</code></pre>
+<p>This example shows how to register the MSIX on first run of the app:</p>
+<pre><code class="lang-csharp">[STAThread]
+public static void Main(string[] cmdArgs)
+{
+    //If app isn't running with identity, register its package with external identity
+    if (!ExecutionMode.IsRunningWithIdentity())
+    {
+        //TODO - update the value of externalLocation to match the output location of your VS Build binaries and the value of 
+        //externalPkgPath to match the path to your signed package with external identity (.msix). 
+        //Note that these values cannot be relative paths and must be complete paths
+        string externalLocation = Environment.CurrentDirectory;
+        string externalPkgPath = externalLocation + @&quot;\PhotoStoreDemo.package.msix&quot;;
+
+        //Attempt registration
+        if (registerPackageWithExternalLocation(externalLocation, externalPkgPath))
+        {
+            //Registration succeeded, restart the app to run with identity
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location, arguments: cmdArgs?.ToString());
+        }
+        else //Registration failed, run without identity
+        {
+            Debug.WriteLine(&quot;Package Registration failed, running WITHOUT Identity&quot;);
+            SingleInstanceManager wrapper = new SingleInstanceManager();
+            wrapper.Run(cmdArgs);
+        }
+    }
+    ...
+</code></pre>
+<p>Finally, handle the app's activation:</p>
+<pre><code class="lang-csharp">[STAThread]
+public static void Main(string[] cmdArgs)
+{
+    //if app isn't running with identity, register its sparse package
+    if (!ExecutionMode.IsRunningWithIdentity())
+    {
+        ...
+    }
+    else //App is registered and running with identity, handle launch and activation
+    {
+        //Handle Sparse Package based activation e.g Share target activation or clicking on a Tile
+        // Launching the .exe directly will have activationArgs == null
+        var activationArgs = AppInstance.GetActivatedEventArgs();
+        if (activationArgs != null)
+        {
+            switch (activationArgs.Kind)
+            {
+                case ActivationKind.Launch:
+                    HandleLaunch(activationArgs as LaunchActivatedEventArgs);
+                    break;
+                case ActivationKind.ToastNotification:
+                    HandleToastNotification(activationArgs as ToastNotificationActivatedEventArgs);
+                    break;
+                case ActivationKind.ShareTarget: // Handle the activation as a share target
+                    HandleShareAsync(activationArgs as ShareTargetActivatedEventArgs);
+                    break;
+                default:
+                    HandleLaunch(null);
+                    break;
+            }
+
+        }
+        //This is a direct exe based launch e.g. double click app .exe or desktop shortcut pointing to .exe
+        else
+        {
+            SingleInstanceManager singleInstanceManager = new SingleInstanceManager();
+            singleInstanceManager.Run(cmdArgs);
+        }
+    }
+</code></pre>
+<h2 id="windows-share-with-package-identity-demo">Windows Share with package identity demo</h2>
+<p>The following video demonstrates how an unpackaged app can be a share target after being granted package identity and registering as a share target:</p>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?id=49784732-8213-43b2-b1fe-003aa218432e" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/apps/package-and-deploy/deploy-overview">Windows App SDK deployment overview</a></li>
+<li><a href="/windows/apps/winui/winui3/create-your-first-winui3-app">Create your first WinUI 3 project</a></li>
+<li><a href="/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw">Migrate from UWP to the Windows App SDK</a></li>
+<li><a href="/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app">Advantages and Disadvantages of packaging an application - Deployment overview</a></li>
+<li><a href="https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/">Identity, Registration and Activation of Non-packaged Win32 Apps</a></li>
+<li><a href="https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp">Share Contract Implementation for WinAppSDK App</a></li>
+<li><a href="https://github.com/microsoft/AppModelSamples/tree/master/Samples/PackageWithExternalLocation/cppwinrt/PackageWithExternalLocationCppApp">Share Contract Implementation for Apps Packaged with External Location</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/windows-integration/integrate-sharesheet-unpackaged.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

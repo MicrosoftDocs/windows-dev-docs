@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Swipe </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Swipe ">
+    
+    <meta name="description" content="Learn how to use Swipe commanding as a touch accelerator for context menus so that users can perform the same operation on multiple items in quick succession.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="swipe">Swipe</h1>
+
+<p>Swipe commanding is an accelerator for context menus that lets users easily access common menu actions by touch, without needing to change states within the app.</p>
+<p><img src="images/light-theme-swipe.png" alt="Execute and Reveal light theme"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Swipe commanding saves space. It's useful in situations where the user may perform the same operation on multiple items in quick succession. And it provides &quot;quick actions&quot; on items that don't need a full popup or state change within the page.</p>
+<p>You should use swipe commanding when you have a potentially large group of items, and each item has 1-3 actions that a user may want to perform regularly. These actions may include, but are not limited to:</p>
+<ul>
+<li>Deleting</li>
+<li>Marking or archiving</li>
+<li>Saving or downloading</li>
+<li>Replying</li>
+</ul>
+<h2 id="how-does-swipe-work">How does Swipe work?</h2>
+<p>UWP swipe commanding has two modes: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode">Reveal</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode">Execute</a>. It also supports four different swipe directions: up, down, left, and right.</p>
+<h3 id="reveal-mode">Reveal mode</h3>
+<p>In Reveal mode, the user swipes an item to open a menu of one or more commands and must explicitly tap a command to execute it. When the user swipes and releases an item, the menu remains open until either a command is selected, or the menu is closed again through swiping back, tapping off, or scrolling the opened swipe item off the screen.</p>
+<p><img src="images/swipe-command-reveal-v2.gif" alt="Swipe to Reveal"></p>
+<p>Reveal mode is a safer, more versatile swipe mode, and can be used for most types of menu actions, even potentially destructive actions, such as deletion.</p>
+<p>When the user selects one of the menu options shown in the reveal's open and resting state, the command for that item is invoked and the swipe control is closed.</p>
+<h3 id="execute-mode">Execute mode</h3>
+<p>In Execute mode, the user swipes an item open to reveal and execute a single command with that one swipe. If the user releases the item being swiped before they swipe past a threshold, the menu closes and the command is not executed. If the user swipes past the threshold and then releases the item, the command is executed immediately.</p>
+<p><img src="images/swipe-command-delete-v2.gif" alt="Swipe to Execute"></p>
+<p>If the user does not release their finger after the threshold is reached, and pulls the swipe item closed again, the command is not executed  and no action is performed on the item.</p>
+<p>Execute mode provides more visual feedback through color and label orientation while an item is being swiped.</p>
+<p>Execute is best used when the action the user is performing is most common.</p>
+<p>It may also be used for more destructive actions like deleting an item. However, keep in mind that Execute requires only one action of swiping in a direction, as opposed to Reveal, which requires the user to explicitly click on a button.</p>
+<h3 id="swipe-directions">Swipe directions</h3>
+<p>Swipe works in all cardinal directions: up, down, left, and right. Each swipe direction can hold its own swipe items or content, but only one instance of a direction can be set at a time on a single swipe-able element.</p>
+<p>For example, you cannot have two <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.LeftItems">LeftItems</a> definitions on the same SwipeControl.</p>
+<h2 id="dos-and-donts">Dos and don'ts</h2>
+<ul>
+<li>Don't use swipe in FlipViews or Hubs. The combination may be confusing for the user because of conflicting swipe directions.</li>
+<li>Don't combine horizontal swipe with horizontal navigation, or vertical swipe with vertical navigation.</li>
+<li>Do make sure what the user is swiping is the same action, and is consistent across all related items that can be swiped.</li>
+<li>Do use swipe for the main actions a user will want to perform.</li>
+<li>Do use swipe on items where the same action is repeated many times.</li>
+<li>Do use horizontal swiping on wider items, and vertical swiping on taller items.</li>
+<li>Do use short, concise text labels.</li>
+</ul>
+<h2 id="create-a-swipe-command">Create a swipe command</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/uwp/api/microsoft.ui.xaml.controls.swipecontrol">SwipeControl</a>, <a href="/uwp/api/microsoft.ui.xaml.controls.swipeitem">SwipeItem</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView">ListView class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/SwipeControl">Open the WinUI 3 Gallery app and see SwipeControl in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>Swipe commands have two components that you need to define:</p>
+<ul>
+<li>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol">SwipeControl</a>, which wraps around your content. In a collection, such as a ListView, this sits within your DataTemplate.</li>
+<li>The swipe menu items, which is one or more <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem">SwipeItem</a> objects placed in the swipe control's directional containers: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.LeftItems">LeftItems</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.RightItems">RightItems</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.TopItems">TopItems</a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol.BottomItems">BottomItems</a></li>
+</ul>
+<p>Swipe content can be placed inline, or defined in the Resources section of your page or app.</p>
+<p>Here's a simple example of a SwipeControl wrapped around some text. It shows the hierarchy of XAML elements required to create a swipe command.</p>
+<pre><code class="lang-xaml">&lt;SwipeControl HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;SwipeControl.LeftItems&gt;
+        &lt;SwipeItems&gt;
+            &lt;SwipeItem Text=&quot;Pin&quot;&gt;
+                &lt;SwipeItem.IconSource&gt;
+                    &lt;SymbolIconSource Symbol=&quot;Pin&quot;/&gt;
+                &lt;/SwipeItem.IconSource&gt;
+            &lt;/SwipeItem&gt;
+        &lt;/SwipeItems&gt;
+    &lt;/SwipeControl.LeftItems&gt;
+
+     &lt;!-- Swipeable content --&gt;
+    &lt;Border Width=&quot;180&quot; Height=&quot;44&quot; BorderBrush=&quot;Black&quot; BorderThickness=&quot;2&quot;&gt;
+        &lt;TextBlock Text=&quot;Swipe to Pin&quot; Margin=&quot;4,8,0,0&quot;/&gt;
+    &lt;/Border&gt;
+&lt;/SwipeControl&gt;
+</code></pre>
+<p>Now we'll take a look at a more complete example of how you would typically use swipe commands in a list. In this example, you'll set up a delete command that uses Execute mode, and a menu of other commands that uses Reveal mode. Both sets of commands are defined in the Resources section of the page. You'll apply the swipe commands to the items in a ListView.</p>
+<p>First, create the swipe items, which represent the commands, as page level resources. SwipeItem uses an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource">IconSource</a> as its icon. Create the icons as resources, too.</p>
+<pre><code class="lang-xaml">&lt;Page.Resources&gt;
+    &lt;SymbolIconSource x:Key=&quot;ReplyIcon&quot; Symbol=&quot;MailReply&quot;/&gt;
+    &lt;SymbolIconSource x:Key=&quot;DeleteIcon&quot; Symbol=&quot;Delete&quot;/&gt;
+    &lt;SymbolIconSource x:Key=&quot;PinIcon&quot; Symbol=&quot;Pin&quot;/&gt;
+
+    &lt;SwipeItems x:Key=&quot;RevealOptions&quot; Mode=&quot;Reveal&quot;&gt;
+        &lt;SwipeItem Text=&quot;Reply&quot; IconSource=&quot;{StaticResource ReplyIcon}&quot;/&gt;
+        &lt;SwipeItem Text=&quot;Pin&quot; IconSource=&quot;{StaticResource PinIcon}&quot;/&gt;
+    &lt;/SwipeItems&gt;
+
+    &lt;SwipeItems x:Key=&quot;ExecuteDelete&quot; Mode=&quot;Execute&quot;&gt;
+        &lt;SwipeItem Text=&quot;Delete&quot; IconSource=&quot;{StaticResource DeleteIcon}&quot;
+                   Background=&quot;Red&quot;/&gt;
+    &lt;/SwipeItems&gt;
+&lt;/Page.Resources&gt;
+</code></pre>
+<p>Remember to keep the menu items in your swipe content to short, concise text labels. These actions should be the primary ones that a user may want to perform multiple times over a short period.</p>
+<p>Setting up a swipe command to work in a collection or ListView is exactly the same as defining a single swipe command (shown previously), except you define your SwipeControl in a DataTemplate so it's applied to each item in the collection.</p>
+<p>Here's a ListView with the SwipeControl applied in its item DataTemplate. The LeftItems and RightItems properties reference the swipe items that you created as resources.</p>
+<pre><code class="lang-xaml">&lt;ListView x:Name=&quot;sampleList&quot; Width=&quot;300&quot;&gt;
+    &lt;ListView.ItemContainerStyle&gt;
+        &lt;Style TargetType=&quot;ListViewItem&quot;&gt;
+            &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Stretch&quot;/&gt;
+            &lt;Setter Property=&quot;VerticalContentAlignment&quot; Value=&quot;Stretch&quot;/&gt;
+        &lt;/Style&gt;
+    &lt;/ListView.ItemContainerStyle&gt;
+    &lt;ListView.ItemTemplate&gt;
+        &lt;DataTemplate x:DataType=&quot;x:String&quot;&gt;
+            &lt;SwipeControl x:Name=&quot;ListViewSwipeContainer&quot;
+                          LeftItems=&quot;{StaticResource RevealOptions}&quot;
+                          RightItems=&quot;{StaticResource ExecuteDelete}&quot;
+                          Height=&quot;60&quot;&gt;
+                &lt;StackPanel Orientation=&quot;Vertical&quot;&gt;
+                    &lt;TextBlock Text=&quot;{x:Bind}&quot; FontSize=&quot;18&quot;/&gt;
+                    &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+                        &lt;TextBlock Text=&quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit...&quot; FontSize=&quot;12&quot;/&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/StackPanel&gt;
+            &lt;/SwipeControl&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/ListView.ItemTemplate&gt;
+    &lt;x:String&gt;Item 1&lt;/x:String&gt;
+    &lt;x:String&gt;Item 2&lt;/x:String&gt;
+    &lt;x:String&gt;Item 3&lt;/x:String&gt;
+    &lt;x:String&gt;Item 4&lt;/x:String&gt;
+    &lt;x:String&gt;Item 5&lt;/x:String&gt;
+&lt;/ListView&gt;
+</code></pre>
+<h2 id="handle-an-invoked-swipe-command">Handle an invoked swipe command</h2>
+<p>To act on a swipe command, you handle its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem.Invoked">Invoked</a> event. (For more info about a how a user can invoke a command, review the <em>How does swipe work?</em> section earlier in this article.) Typically, a swipe command is in a ListView or list-like scenario. In that case, when a command is invoked, you want to perform an action on that swiped item.</p>
+<p>Here's how to handle the Invoked event on the <em>delete</em> swipe item you created previously.</p>
+<pre><code class="lang-xaml">&lt;SwipeItems x:Key=&quot;ExecuteDelete&quot; Mode=&quot;Execute&quot;&gt;
+    &lt;SwipeItem Text=&quot;Delete&quot; IconSource=&quot;{StaticResource DeleteIcon}&quot;
+               Background=&quot;Red&quot; Invoked=&quot;Delete_Invoked&quot;/&gt;
+&lt;/SwipeItems&gt;
+</code></pre>
+<p>The data item is the DataContext of the SwipeControl. In your code, you can access the item that was swiped by getting the SwipeControl.DataContext property from the event args, as shown here.</p>
+<pre><code class="lang-csharp"> private void Delete_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
+ {
+     sampleList.Items.Remove(args.SwipeControl.DataContext);
+ }
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Here, the items were added directly to the ListView.Items collection for simplicity, so the item is also deleted the same way. If you instead set the ListView.ItemsSource to a collection, which is more typical, you need to delete the item from the source collection.</p>
+</div>
+<p>In this particular instance, you removed the item from the list, so the final visual state of the swiped item isn't important. However, in situations where you simply want to perform an action and then have the swipe collapse again, you can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem.BehaviorOnInvoked">BehaviorOnInvoked</a> property one of the
+<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipebehavioroninvoked">SwipeBehaviorOnInvoked</a> enum values.</p>
+<ul>
+<li><strong>Auto</strong>
+<ul>
+<li>In Execute mode, the opened swipe item will remain open when invoked.</li>
+<li>In Reveal mode, the opened swipe item will collapse when invoked.</li>
+</ul>
+</li>
+<li><strong>Close</strong>
+<ul>
+<li>When the item is invoked, the swipe control will always collapse and return to normal, regardless of the mode.</li>
+</ul>
+</li>
+<li><strong>RemainOpen</strong>
+<ul>
+<li>When the item is invoked, the swipe control will always stay open, regardless of the mode.</li>
+</ul>
+</li>
+</ul>
+<p>Here, a <em>reply</em> swipe item is set to close after its invoked.</p>
+<pre><code class="lang-xaml">&lt;SwipeItem Text=&quot;Reply&quot; IconSource=&quot;{StaticResource ReplyIcon}&quot;
+           Invoked=&quot;Reply_Invoked&quot;
+           BehaviorOnInvoked = &quot;Close&quot;/&gt;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The SwipeControl for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in both the <a href="/uwp/api/windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> (UWP) and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> (WinUI) namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.swipecontrol">SwipeControl</a>, <a href="/uwp/api/windows.ui.xaml.controls.swipeitem">SwipeItem</a>, <a href="/uwp/api/windows.UI.Xaml.Controls.ListView">ListView class</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/uwp/api/microsoft.ui.xaml.controls.swipecontrol">SwipeControl</a>, <a href="/uwp/api/microsoft.ui.xaml.controls.swipeitem">SwipeItem</a></li>
+<li><a href="winui2gallery:/item/SwipeControl">Open the WinUI 2 Gallery app and see SwipeControl in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles, templates, and features for all controls.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:SwipeControl /&gt;
+&lt;muxc:SwipeItem /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="listview-and-gridview.html">List view and Grid view</a></li>
+<li><a href="item-containers-templates.html">Item containers and templates</a></li>
+<li><a href="pull-to-refresh.html">Pull to refresh</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/swipe.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

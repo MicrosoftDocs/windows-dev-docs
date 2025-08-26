@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use streaming - .NET TraceProcessing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use streaming - .NET TraceProcessing ">
+    
+    <meta name="description" content="In this tutorial, learn how to use streaming to access trace data right away and using less memory.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="TOC.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-streaming-with-traceprocessor">Use streaming with TraceProcessor</h1>
+
+<p>By default, TraceProcessor accesses data by loading it into memory as the trace is processed. This buffering approach is easy to use, but it can be expensive in terms of memory usage.</p>
+<p>TraceProcessor also provides trace.UseStreaming(), which supports accessing multiple types of trace data in a streaming manner (processing data as it is read from the trace file, rather than buffering that data in memory). For example, a syscalls trace can be quite large, and buffering the entire list of syscalls in a trace can be quite expensive.</p>
+<h2 id="accessing-buffered-data">Accessing buffered data</h2>
+<p>The following code shows accessing syscall data in the normal, buffered manner via trace.UseSyscalls():</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.EventTracing;
+using Microsoft.Windows.EventTracing.Processes;
+using Microsoft.Windows.EventTracing.Syscalls;
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        if (args.Length != 1)
+        {
+            Console.Error.WriteLine(&quot;Usage: &lt;trace.etl&gt;&quot;);
+            return;
+        }
+
+        using (ITraceProcessor trace = TraceProcessor.Create(args[0]))
+        {
+            IPendingResult&lt;ISyscallDataSource&gt; pendingSyscallData = trace.UseSyscalls();
+
+            trace.Process();
+
+            ISyscallDataSource syscallData = pendingSyscallData.Result;
+
+            Dictionary&lt;IProcess, int&gt; syscallsPerCommandLine = new Dictionary&lt;IProcess, int&gt;();
+
+            foreach (ISyscall syscall in syscallData.Syscalls)
+            {
+                IProcess process = syscall.Thread?.Process;
+
+                if (process == null)
+                {
+                    continue;
+                }
+
+                if (!syscallsPerCommandLine.ContainsKey(process))
+                {
+                    syscallsPerCommandLine.Add(process, 0);
+                }
+
+                ++syscallsPerCommandLine[process];
+            }
+
+            Console.WriteLine(&quot;Process Command Line: Syscalls Count&quot;);
+
+            foreach (IProcess process in syscallsPerCommandLine.Keys)
+            {
+                Console.WriteLine($&quot;{process.CommandLine}: {syscallsPerCommandLine[process]}&quot;);
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="accessing-streaming-data">Accessing streaming data</h2>
+<p>With a large syscalls trace, attempting to buffer the syscall data in memory can be quite expensive, or it may not even be possible. The following code shows how to access the same syscall data in a streaming manner, replacing trace.UseSyscalls() with trace.UseStreaming().UseSyscalls():</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.EventTracing;
+using Microsoft.Windows.EventTracing.Processes;
+using Microsoft.Windows.EventTracing.Syscalls;
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        if (args.Length != 1)
+        {
+            Console.Error.WriteLine(&quot;Usage: &lt;trace.etl&gt;&quot;);
+            return;
+        }
+
+        using (ITraceProcessor trace = TraceProcessor.Create(args[0]))
+        {
+            IPendingResult&lt;IThreadDataSource&gt; pendingThreadData = trace.UseThreads();
+
+            Dictionary&lt;IProcess, int&gt; syscallsPerCommandLine = new Dictionary&lt;IProcess, int&gt;();
+
+            trace.UseStreaming().UseSyscalls(ConsumerSchedule.SecondPass, context =&gt;
+            {
+                Syscall syscall = context.Data;
+                IProcess process = syscall.GetThread(pendingThreadData.Result)?.Process;
+
+                if (process == null)
+                {
+                    return;
+                }
+
+                if (!syscallsPerCommandLine.ContainsKey(process))
+                {
+                    syscallsPerCommandLine.Add(process, 0);
+                }
+
+                ++syscallsPerCommandLine[process];
+            });
+
+            trace.Process();
+
+            Console.WriteLine(&quot;Process Command Line: Syscalls Count&quot;);
+
+            foreach (IProcess process in syscallsPerCommandLine.Keys)
+            {
+                Console.WriteLine($&quot;{process.CommandLine}: {syscallsPerCommandLine[process]}&quot;);
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="how-streaming-works">How streaming works</h2>
+<p>By default, all streaming data is provided during the first pass through the trace, and buffered data from other sources is not available. The example above shows how to combine streaming with buffering – thread data is buffered before syscall data is streamed. As a result, the trace must be read twice – once to get buffered thread data, and a second time to access streaming syscall data with the buffered thread data now available. In order to combine streaming and buffering in this way, the example passes ConsumerSchedule.SecondPass to trace.UseStreaming().UseSyscalls(), which causes syscall processing to happen in a second pass through the trace. By running in a second pass, the syscall callback can access the pending result from trace.UseThreads() when it processes each syscall. Without this optional argument, syscall streaming would have run in the first pass through the trace (there would be only one pass), and the pending result from trace.UseThreads() would not be available yet. In that case, the callback would still have access to the ThreadId from the syscall, but it would not have access to the process for the thread (because thread to process linking data is provided via other events which may not have been processed yet).</p>
+<p>Some key differences in usage between buffering and streaming:</p>
+<ol>
+<li>Buffering returns an <a href="/dotnet/api/microsoft.windows.eventtracing.ipendingresult-1">IPendingResult&lt;T&gt;</a>, and the result it holds is available only before the trace has been processed. After the trace has been processed, the results can be enumerated using techniques such as foreach and LINQ.</li>
+<li>Streaming returns void and instead takes a callback argument. It calls the callback once as each item becomes available. Because the data is not buffered, there is never a list of results to enumerate with foreach or LINQ – the streaming callback needs to buffer whatever part of the data it wants to save for use after processing has completed.</li>
+<li>The code for processing buffered data appears after the call to trace.Process(), when the pending results are available.</li>
+<li>The code for processing streaming data appears before the call to trace.Process(), as a callback to the trace.UseStreaming.Use...() method.</li>
+<li>A streaming consumer can choose to process only part of the stream and cancel future callbacks by calling context.Cancel(). A buffering consumer always is provided a full, buffered list.</li>
+</ol>
+<h2 id="correlated-streaming-data">Correlated streaming data</h2>
+<p>Sometimes trace data comes in a sequence of events – for example, syscalls are logged via separate enter and exit events, but the combined data from both events can be more helpful. The method trace.UseStreaming().UseSyscalls() correlates the data from both of these events and provides it as the pair becomes available. A few types of correlated data are available via trace.UseStreaming():</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trace.UseStreaming().UseContextSwitchData()</td>
+<td>Streams correlated context switch data (from compact and non-compact events, with more accurate SwitchInThreadIds than raw non-compact events).</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseScheduledTasks()</td>
+<td>Streams correlated scheduled task data.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseSyscalls()</td>
+<td>Streams correlated system call data.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseWindowInFocus()</td>
+<td>Streams correlated window-in-focus data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="standalone-streaming-events">Standalone streaming events</h2>
+<p>Additionally, trace.UseStreaming() provides parsed events for a number of different standalone event types:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trace.UseStreaming().UseLastBranchRecordEvents()</td>
+<td>Streams parsed last branch record (LBR) events.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseReadyThreadEvents()</td>
+<td>Streams parsed ready thread events.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseThreadCreateEvents()</td>
+<td>Streams parsed thread create events.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseThreadExitEvents()</td>
+<td>Streams parsed thread exit events.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseThreadRundownStartEvents()</td>
+<td>Streams parsed thread rundown start events.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseThreadRundownStopEvents()</td>
+<td>Streams parsed thread rundown stop events.</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseThreadSetNameEvents()</td>
+<td>Streams parsed thread set name events.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="underlying-streaming-events-for-correlated-data">Underlying streaming events for correlated data</h2>
+<p>Finally, trace.UseStreaming() also provides the underlying events used to correlate data in the list above. These underlying events are:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+<th>Included in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trace.UseStreaming().UseCompactContextSwitchEvents()</td>
+<td>Streams parsed compact context switch events.</td>
+<td>trace.UseStreaming().UseContextSwitchData()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseContextSwitchEvents()</td>
+<td>Streams parsed context switch events. SwitchInThreadIds may not be accurate in some cases.</td>
+<td>trace.UseStreaming().UseContextSwitchData()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseFocusChangeEvents()</td>
+<td>Streams parsed window focus change events.</td>
+<td>trace.UseStreaming().UseWindowInFocus()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseScheduledTaskStartEvents()</td>
+<td>Streams parsed scheduled task start events.</td>
+<td>trace.UseStreaming().UseScheduledTasks()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseScheduledTaskStopEvents()</td>
+<td>Streams parsed scheduled task stop events.</td>
+<td>trace.UseStreaming().UseScheduledTasks()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseScheduledTaskTriggerEvents()</td>
+<td>Streams parsed scheduled task trigger events.</td>
+<td>trace.UseStreaming().UseScheduledTasks()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseSessionLayerSetActiveWindowEvents()</td>
+<td>Streams parsed session-layer set active window events.</td>
+<td>trace.UseStreaming().UseWindowInFocus()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseSyscallEnterEvents()</td>
+<td>Streams parsed syscall enter events.</td>
+<td>trace.UseStreaming().UseSyscalls()</td>
+</tr>
+<tr>
+<td>trace.UseStreaming().UseSyscallExitEvents()</td>
+<td>Streams parsed syscall exit events.</td>
+<td>trace.UseStreaming().UseSyscalls()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="next-steps">Next Steps</h2>
+<p>In this tutorial, you learned how to use streaming to access trace data right away and using less memory.</p>
+<p>The next step is to look access the data you want from your traces. Look at the <a href="https://github.com/microsoft/eventtracing-processing-samples">samples</a> for some ideas. Note that not all traces include all supported types of data.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/trace-processing/streaming.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Panning </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Panning ">
+    
+    <meta name="description" content="Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="guidelines-for-panning">Guidelines for panning</h1>
+
+<p>Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.</p>
+<blockquote>
+<p><strong>Important APIs</strong>: <a href="/uwp/api/Windows.UI.Input"><strong>Windows.UI.Input</strong></a>, <a href="/uwp/api/Windows.UI.Xaml.Input"><strong>Windows.UI.Xaml.Input</strong></a></p>
+</blockquote>
+<h2 id="dos-and-donts">Dos and don'ts</h2>
+<p><strong>Panning indicators and scroll bars</strong></p>
+<ul>
+<li><p>Ensure panning/scrolling is possible before loading content into your app.</p>
+</li>
+<li><p>Display panning indicators and scroll bars to provide location and size cues. Hide them if you provide a custom navigation feature.</p>
+<p><strong>Note</strong>  Unlike standard scroll bars, panning indicators are purely informative. They are not exposed to input devices and cannot be manipulated in any way.</p>
+<p></p>
+</li>
+</ul>
+<p><strong>Single-axis panning (one-dimensional overflow)</strong></p>
+<ul>
+<li><p>Use one-axis panning for content regions that extend beyond one viewport boundary (vertical or horizontal).</p>
+<ul>
+<li>Vertical panning for a one-dimensional list of items.</li>
+<li>Horizontal panning for a grid of items.</li>
+</ul>
+</li>
+<li><p>Don’t use mandatory snap-points with single-axis panning if a user must be able to pan and stop between snap-points. Mandatory snap-points guarantee that the user will stop on a snap-point. Use proximity snap-points instead.</p>
+</li>
+</ul>
+<p><strong>Freeform panning (two-dimensional overflow)</strong></p>
+<ul>
+<li><p>Use two-axis panning for content regions that extend beyond both viewport boundaries (vertical and horizontal).</p>
+<ul>
+<li>Override the default rails behavior and use freeform panning for unstructured content where the user is likely to move in multiple directions.</li>
+</ul>
+</li>
+<li><p>Freeform panning is typically suited to navigating within images or maps.</p>
+</li>
+</ul>
+<p><strong>Paged view</strong></p>
+<ul>
+<li><p>Use mandatory snap-points when the content is composed of discrete elements or you want to display an entire element. This can include pages of a book or magazine, a column of items, or individual images.</p>
+<ul>
+<li>A snap-point should be placed at each logical boundary.</li>
+<li>Each element should be sized or scaled to fit the view.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Logical and key points</strong></p>
+<ul>
+<li><p>Use proximity snap-points if there are key points or logical places in the content that a user will likely stop. For example, a section header.</p>
+</li>
+<li><p>If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.</p>
+</li>
+</ul>
+<p><strong>Chaining embedded or nested content</strong></p>
+<ul>
+<li><p>Use single-axis panning (typically horizontal) and column layouts for text and grid-based content. In these cases, content typically wraps and flows naturally from column to column and keeps the user experience consistent and discoverable across Windows apps.</p>
+</li>
+<li><p>Don't use embedded pannable regions to display text or item lists. Because the panning indicators and scroll bars are displayed only when the input contact is detected within the region, it is not an intuitive or discoverable user experience.</p>
+</li>
+<li><p>Don't chain or place one pannable region within another pannable region if they both pan in the same direction, as shown here. This can result in the parent area being panned unintentionally when a boundary for the child area is reached. Consider making the panning axis perpendicular.</p>
+<p><img src="images/scrolling-embedded3.png" alt="image demonstrating an embedded pannable area that scrolls in the same direction as its container."></p>
+</li>
+</ul>
+<h2 id="additional-usage-guidance">Additional usage guidance</h2>
+<p>Panning with touch, by using a swipe or slide gesture with one or more fingers, is like scrolling with the mouse. The panning interaction is most similar to rotating the mouse wheel or sliding the scroll box, rather than clicking the scroll bar. Unless a distinction is made in an API or required by some device-specific Windows UI, we simply refer to both interactions as panning.</p>
+<blockquote>
+<div id="main">
+<strong>Windows 10 Fall Creators Update - Behavior change</strong>
+By default, instead of text selection, an active pen now scrolls/pans in Windows apps (like touch, touchpad, and passive pen).  
+If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. For details, see the API reference topic for the <a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">Scroll​Viewer Class</a>.
+</div>
+</blockquote>
+<p>Depending on the input device, the user pans within a pannable region by using one of these:</p>
+<ul>
+<li>A mouse, touchpad, or active pen/stylus to click the scroll arrows, drag the scroll box, or click within the scroll bar.</li>
+<li>The wheel button of the mouse to emulate dragging the scroll box.</li>
+<li>The extended buttons (XBUTTON1 and XBUTTON2), if supported by the mouse.</li>
+<li>The keyboard arrow keys to emulate dragging the scroll box or the page keys to emulate clicking within the scroll bar.</li>
+<li>Touch, touchpad, or passive pen/stylus to slide or swipe the fingers in the desired direction.</li>
+</ul>
+<p>Sliding involves moving the fingers slowly in the panning direction. This results in a one-to-one relationship, where the content pans at the same speed and distance as the fingers. Swiping, which involves rapidly sliding and lifting the fingers, results in the following physics being applied to the panning animation:</p>
+<ul>
+<li>Deceleration (inertia): Lifting the fingers causes panning to start decelerating. This is similar to sliding to a stop on a slippery surface.</li>
+<li>Absorption: Panning momentum during deceleration causes a slight bounce-back effect if either a snap point or a content area boundary is reached.</li>
+</ul>
+<p><strong>Types of panning</strong></p>
+<p>Windows supports three types of panning:</p>
+<ul>
+<li>Single axis - panning is supported in one direction only (horizontal or vertical).</li>
+<li>Rails - panning is supported in all directions. However, once the user crosses a distance threshold in a specific direction, then panning is restricted to that axis.</li>
+<li>Freeform - panning is supported in all directions.</li>
+</ul>
+<p><strong>Panning UI</strong></p>
+<p>The interaction experience for panning is unique to the input device while still providing similar functionality.</p>
+<p>There are two panning display modes based on the input device detected:</p>
+<ul>
+<li>Panning indicators for touch.</li>
+<li>Scroll bars for other input devices, including mouse, touchpad, keyboard, and stylus.</li>
+</ul>
+<p><strong>Note</strong>  Panning indicators are only visible when the touch contact is within the pannable region. Similarly, the scroll bar is only visible when the mouse cursor, pen/stylus cursor, or keyboard focus is within the scrollable region.</p>
+<p></p>
+<p><strong>Panning indicators</strong>
+Panning indicators are similar to the scroll box in a scroll bar. They indicate the proportion of displayed content to total pannable area and the relative position of the displayed content in the pannable area.</p>
+<p>The following diagram shows two pannable areas of different lengths and their panning indicators.</p>
+<p><img src="images/scrolling-indicators.png" alt="image showing two pannable areas of different lengths and their panning indicators."></p>
+<p><strong>Panning behaviors</strong>
+<strong>Snap points</strong>
+Panning with the swipe gesture introduces inertia behavior into the interaction when the touch contact is lifted. With inertia, the content continues to pan until some distance threshold is reached without direct input from the user. Use snap points to modify this inertia behavior.</p>
+<p>Snap points specify logical stops in your app content. Cognitively, snap points act as a paging mechanism for the user and minimize fatigue from excessive sliding or swiping in large pannable regions. With them, you can handle imprecise user input and ensure a specific subset of content or key information is displayed in the viewport.</p>
+<p>There are two types of snap-points:</p>
+<ul>
+<li>Proximity - After the contact is lifted, a snap point is selected if inertia stops within a distance threshold of the snap point. Panning can still stop between proximity snap points.</li>
+<li>Mandatory - The snap point selected is the one that immediately precedes or succeeds the last snap point crossed before the contact was lifted (depending on the direction and velocity of the gesture). Panning must stop on a mandatory snap point.</li>
+</ul>
+<p>Panning snap-points are useful for applications such as web browsers and photo albums that emulate paginated content or have logical groupings of items that can be dynamically regrouped to fit within a viewport or display.</p>
+<p>The following diagrams show how panning to a certain point and releasing causes the content to automatically pan to a logical location.</p>
+<section class="row">
+<div class="column">
+<p><img src="images/ux-panning-snap1.png" alt="image showing a pannable area."></p>
+<p>Swipe to pan.</p>
+</div>
+<div class="column">
+<p><img src="images/ux-panning-snap2.png" alt="image showing a pannable area being panned to the left."></p>
+<p>Lift touch contact.</p>
+</div>
+<div class="column">
+<p><img src="images/ux-panning-snap3.png" alt="image showing a pannable area that has stopped panning at a logical snap-point."></p>
+<p>Pannable region stops at the snap point, not where the touch contact was lifted.</p>
+</div>
+</section>
+<p><strong>Rails</strong>
+Content can be wider and taller than the dimensions and resolution of a display device. For this reason, two-dimensional panning (horizontal and vertical) is often necessary. Rails improve the user experience in these cases by emphasizing panning along the axis of motion (vertical or horizontal).</p>
+<p>The following diagram demonstrates the concept of rails.</p>
+<p><img src="images/ux-panning-rails.png" alt="diagram of a screen with rails that constrain panning"></p>
+<p><strong>Chaining embedded or nested content</strong></p>
+<p>After a user hits a zoom or scroll limit on an element that has been nested within another zoomable or scrollable element, you can specify whether that parent element should continue the zooming or scrolling operation begun in its child element. This is called zoom or scroll chaining.</p>
+<p>Chaining is used for panning within a single-axis content area that contains one or more single-axis or freeform panning regions (when the touch contact is within one of these child regions). When the panning boundary of the child region is reached in a specific direction, panning is then activated on the parent region in the same direction.</p>
+<p>When a pannable region is nested inside another pannable region it's important to specify enough space between the container and the embedded content. In the following diagrams, one pannable region is placed inside another pannable region, each going in perpendicular directions. There is plenty of space for users to pan in each region.</p>
+<p><img src="images/scrolling-embedded.png" alt="image demonstrating an embedded pannable area."></p>
+<p>Without enough space, as shown in the following diagram, the embedded pannable region can interfere with panning in the container and result in unintentional panning in one or more of the pannable regions.</p>
+<p><img src="images/ux-panning-embedded-wrong.png" alt="image demonstrating insufficient padding for an embedded pannable area."></p>
+<p>This guidance is also useful for apps such as photo albums or mapping apps that support unconstrained panning within an individual image or map while also supporting single-axis panning within the album (to the previous or next images) or details area. In apps that provide a detail or options area corresponding to a freeform panning image or map, we recommend that the page layout start with the details and options area as the unconstrained panning area of the image or map might interfere with panning to the details area.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../layout/index.html">Custom user interactions</a></li>
+<li><a href="/windows/uwp/debug-test-perf/optimize-gridview-and-listview">Optimize ListView and GridView</a></li>
+<li><a href="../accessibility/keyboard-accessibility.html">Keyboard accessibility</a></li>
+</ul>
+<p><strong>Samples</strong></p>
+<ul>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput">Basic input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput">Low latency input sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode">User interaction mode sample</a></li>
+<li><a href="https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals">Focus visuals sample</a></li>
+</ul>
+<p><strong>Archive samples</strong></p>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample">Input: XAML user input events sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208)">Input: Device capabilities sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample">Input: Touch hit testing sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample">XAML scrolling, panning, and zooming sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample">Input: Simplified ink sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer">Input: Manipulations and gestures sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208)">DirectX touch input sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/input/guidelines-for-panning.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

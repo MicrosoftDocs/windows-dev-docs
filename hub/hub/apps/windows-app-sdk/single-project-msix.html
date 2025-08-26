@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Package your app using single-project MSIX </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Package your app using single-project MSIX ">
+    
+    <meta name="description" content="This article provides instructions for how to generate an MSIX desktop app via a single project in Visual Studio.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="package-your-app-using-single-project-msix">Package your app using single-project MSIX</h1>
+
+<p>Single-project MSIX is a feature that lets you build a packaged WinUI 3 desktop app without the need for a separate packaging project. A WinUI 3 app is one that uses the <a href="/windows/apps/winui/winui3/">WinUI 3</a> framework for its user interface (UI); and it uses the Windows App SDK. To package a desktop app that's <em>not</em> a WinUI 3 app, see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a>.</p>
+<p>The single-project MSIX feature is available as a Visual Studio extension that you can use for these scenarios:</p>
+<ul>
+<li>Create a <em>new</em> WinUI 3 desktop app using the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> Visual Studio project template that comes with the Windows App SDK. That project is configured to build your app into an MSIX package without needing a separate packaging project.</li>
+<li>Modify an <em>existing</em> WinUI 3 desktop app that uses a separate packaging project. The modification involves removing the separate packaging project, as shown in the illustration below.</li>
+</ul>
+<p><a href="images/single-project-overview.png#lightbox"><img src="images/single-project-overview.png" alt="Comparing packaging project to single project"> </a></p>
+<h2 id="overview">Overview</h2>
+<p>This section introduces some important details about the single-project MSIX feature.</p>
+<h3 id="benefits">Benefits</h3>
+<p>Before the introduction of the single-project MSIX feature, if you wanted to build a packaged WinUI 3 desktop app, then you needed two projects in your solution—your app project, plus an additional <strong>Windows Application Packaging Project</strong> (see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a>). The single-project MSIX feature enables you to develop and build your app using only a project for your app. That provides a cleaner project structure and a more straightforward development experience. For example, you no longer need to select the separate packaging project as your startup project.</p>
+<h3 id="supported-project-types">Supported project types</h3>
+<p>The single-project MSIX feature supports <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a> (C# and C++) for the Windows App SDK.</p>
+<h3 id="limitations">Limitations</h3>
+<p>Single-project MSIX supports only a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, then you'll need to continue using a Windows Application Packaging Project in your solution.</p>
+<h2 id="install-the-single-project-msix-packaging-tools">Install the single-project MSIX packaging tools</h2>
+<p>The single-project MSIX packaging tools include Visual Studio project templates that you can use to create new packaged WinUI 3 desktop apps. Those tools are included with the Windows App SDK extension for Visual Studio. For installation instructions for the Windows App SDK, see <a href="set-up-your-development-environment.html">Install tools for the Windows App SDK</a>.</p>
+<p><strong>Windows App SDK 0.8 and C# version of 1.0 Preview 3:</strong> The single-project MSIX packaging tools are <em>not</em> included with the Windows App SDK extension for Visual Studio for Windows App SDK version 0.8, or for C# projects with up to and including Preview 3 of the Windows App SDK 1.0. So if you're using those versions, then you <em>might</em> need to explicitly install the single-project MSIX packaging tools. See the info below:</p>
+<ul>
+<li><p><strong>Visual Studio 2022 version 17.1 and later:</strong> The Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension is built into Visual Studio 2022 version 17.1 and later.</p>
+</li>
+<li><p><strong>Visual Studio 2022 prior to version 17.1:</strong> Install the <a href="https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17">Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension</a>.</p>
+</li>
+</ul>
+<p>To confirm that you have the extension installed, click <strong>Extensions</strong> &gt; <strong>Manage Extensions</strong> &gt; <strong>Installed</strong> &gt; <strong>All</strong> and check that <em>Single-project MSIX Packaging Tools</em> is listed.</p>
+<h2 id="create-a-new-project">Create a new project</h2>
+<p>If you're using Windows App SDK 1.0 Preview 2 or later, then you can create a new WinUI 3-based app that includes single-project MSIX support simply by using the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> template. For more information, see <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>.</p>
+<h2 id="modify-an-existing-project">Modify an existing project</h2>
+<p>Follow the steps in this section to modify an existing WinUI 3-based app that uses a separate packaging project. The steps include moving the package manifest (and other support needed to build an MSIX package) into the application project, and then removing the separate packaging project.</p>
+<h3 id="step-1-create-or-open-an-existing-packaging-project">Step 1: Create or open an existing packaging project</h3>
+<p>If you already have a solution for a WinUI 3 desktop app (see <a href="../winui/winui3/winui-project-templates-in-visual-studio.html">WinUI 3 templates in Visual Studio</a>) that includes a <strong>Windows Application Packaging Project</strong> (see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a>), then open that solution in Visual Studio now.</p>
+<p>If not, then create a new WinUI 3 desktop app in Visual Studio by using the <strong>Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)</strong> template. Your solution will look similar to the screenshot below.</p>
+<p><img src="images/single-project-packaging-project.png" alt="A solution using the packaging project"></p>
+<h3 id="step-2-edit-the-application-project-settings">Step 2: Edit the application project settings</h3>
+<p>Next, edit some configuration settings to use the single-project MSIX feature. There are different instructions depending on your project type and Visual Studio version.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_csharp" role="tab" aria-controls="tabpanel_1_csharp" data-tab="csharp" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_1_csharp" role="tabpanel" data-tab="csharp">
+
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, double-click the project node for your application to open the <strong>.csproj</strong> file in the XML editor. Add the following XML to the main <strong>&lt;PropertyGroup&gt;</strong> element.</p>
+<pre><code class="lang-xml">&lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;
+&lt;PublishProfile&gt;Properties\PublishProfiles\win10-$(Platform).pubxml&lt;/PublishProfile&gt;
+</code></pre>
+<p>When you're done, the <strong>&lt;PropertyGroup&gt;</strong> element should look similar to this.</p>
+<pre><code class="lang-xml">&lt;Project Sdk=&quot;Microsoft.NET.Sdk&quot;&gt;
+  &lt;PropertyGroup&gt;
+    &lt;OutputType&gt;WinExe&lt;/OutputType&gt;
+    &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+    ...
+    &lt;UseWinUI&gt;true&lt;/UseWinUI&gt;
+    &lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;
+    &lt;PublishProfile&gt;Properties\PublishProfiles\win10-$(Platform).pubxml&lt;/PublishProfile&gt;
+  &lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+<li><p>Save your changes, and close the <strong>.csproj</strong> file.</p>
+</li>
+<li><p>Perform one of the following procedures, depending on your version of Visual Studio.</p>
+<p><strong>For Visual Studio 2022 or later</strong>:</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the <strong>Properties</strong> folder under the project node for your application, and select <strong>Add</strong> &gt; <strong>New Item...</strong>.</p>
+</li>
+<li><p>Select <strong>Text File</strong>, name the new file <strong>launchSettings.json</strong>, and click <strong>Add</strong>. Make sure the new file is in the <strong>Properties</strong> folder of your application project.</p>
+</li>
+<li><p>Copy the following settings into the new file. You're free to change the values as needed for your scenario. The <strong>MyApp</strong> value can be any string; it doesn't need to match the name of your application.</p>
+<pre><code class="lang-json">{
+    &quot;profiles&quot;: {
+        &quot;MyApp&quot;: {
+            &quot;commandName&quot;: &quot;MsixPackage&quot;,
+            &quot;commandLineArgs&quot;: &quot;&quot;, /* Command line arguments to pass to the app. */
+            &quot;alwaysReinstallApp&quot;: false, /* Uninstall and then reinstall the app. All information about the app state is deleted. */
+            &quot;remoteDebugEnabled&quot;: false, /* Indicates that the debugger should attach to a process on a remote machine. */
+            &quot;allowLocalNetworkLoopbackProperty&quot;: true, /* Allow the app to make network calls to the device it is installed on. */
+            &quot;authenticationMode&quot;: &quot;Windows&quot;, /* The authentication scheme to use when connecting to the remote machine. */
+            &quot;doNotLaunchApp&quot;: false, /* Do not launch the app, but debug my code when it starts. */
+            &quot;remoteDebugMachine&quot;: &quot;&quot;, /* The name of the remote machine. */
+            &quot;nativeDebugging&quot;: false /* Enable debugging for managed and native code together, also known as mixed-mode debugging. */
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Save and close the <strong>launchSettings.json</strong> file.</p>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click the project node for your application, and select <strong>Unload Project</strong>.</p>
+</li>
+<li><p>Right-click the project node again, and select <strong>Edit <em>project-name</em>.vcxproj</strong> to open the <strong>.vcxproj</strong> file in the XML editor.</p>
+</li>
+<li><p>Make the following changes to the XML in the <strong>.vcxproj</strong> file:</p>
+<ol>
+<li>Add <code>&lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;</code> to the main <code>&lt;PropertyGroup&gt;</code> element.</li>
+<li>Change the value of <code>&lt;AppxPackage&gt;</code> to <code>true</code>.</li>
+</ol>
+<p>When you're done, the contents of the <strong>.vcxproj</strong> file should look similar to this.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;Project ToolsVersion=&quot;15.0&quot; DefaultTargets=&quot;Build&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+  &lt;PropertyGroup Label=&quot;Globals&quot;&gt;
+    ...
+    &lt;MinimumVisualStudioVersion&gt;16.0&lt;/MinimumVisualStudioVersion&gt;
+    &lt;AppContainerApplication&gt;false&lt;/AppContainerApplication&gt;
+    &lt;AppxPackage&gt;true&lt;/AppxPackage&gt;
+    &lt;ApplicationType&gt;Windows Store&lt;/ApplicationType&gt;
+    &lt;ApplicationTypeRevision&gt;10.0&lt;/ApplicationTypeRevision&gt;
+    &lt;WindowsTargetPlatformVersion&gt;10.0&lt;/WindowsTargetPlatformVersion&gt;
+    &lt;WindowsTargetPlatformMinVersion&gt;10.0.17763.0&lt;/WindowsTargetPlatformMinVersion&gt;
+    &lt;UseWinUI&gt;true&lt;/UseWinUI&gt;
+    &lt;EnableMsixTooling&gt;true&lt;/EnableMsixTooling&gt;
+  &lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+<li><p>Save and close the <strong>.vcxproj</strong> file.</p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the project node and select <strong>Reload Project</strong>.</p>
+</li>
+</ol>
+</section>
+</div>
+<h3 id="step-3-move-files-to-the-application-project">Step 3: Move files to the application project</h3>
+<p>Next, move several important files to the application project. There are different instructions depending on your project type.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_csharp" role="tab" aria-controls="tabpanel_2_csharp" data-tab="csharp" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cpp" role="tab" aria-controls="tabpanel_2_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_2_csharp" role="tabpanel" data-tab="csharp">
+
+<ol>
+<li>In <strong>File Explorer</strong>, move the <strong>Package.appxmanifest</strong> file and the <strong>Images</strong> folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.</li>
+<li>In Visual Studio, in <strong>Solution Explorer</strong>, multi-select all of the images inside the <strong>Images</strong> folder. In the <strong>Properties</strong> window, set <strong>Build Action</strong> to <em>Content</em>.</li>
+<li>Remove the packaging project from your solution.</li>
+</ol>
+<p><a href="images/single-project-move-to-one.png#lightbox"><img src="images/single-project-move-to-one.png" alt="Illustration of moving files to main app"> </a></p>
+</section>
+<section id="tabpanel_2_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<ol>
+<li>In <strong>File Explorer</strong>, move the <strong>Package.appxmanifest</strong> file and the <strong>Images</strong> folder from your packaging project to your application project. Place this file and folder in the top level of the application project's folder hierarchy.</li>
+<li>In Visual Studio, select the application project in <strong>Solution Explorer</strong> and click <strong>Show all files</strong>.</li>
+<li>In <strong>Solution Explorer</strong>, select the <strong>Package.appxmanifest</strong> file and all files in the <strong>Images</strong> folder. Right-click the selected files and select <strong>Include in Project</strong>.</li>
+<li>Remove the packaging project from your solution.</li>
+</ol>
+</section>
+</div>
+<h3 id="step-4-enable-deploying-in-configuration-manager">Step 4: Enable deploying in Configuration Manager</h3>
+<ol>
+<li>Select <strong>Build</strong> &gt; <strong>Configuration Manager</strong>.</li>
+<li>In <strong>Configuration Manager</strong>, click the <strong>Deploy</strong> check box for every combination of configuration and platform (for example, <strong>Debug</strong> and <strong>x86</strong>, <strong>Debug</strong> and <strong>arm64</strong>, <strong>Release</strong> and <strong>x64</strong>, and more).
+<div class="NOTE">
+<h5>Note</h5>
+<p>Be sure to use the <strong>Active solution configuration</strong> and <strong>Active solution platform</strong> drop-downs at the top instead of the <strong>Configuration</strong> and <strong>Platform</strong> drop-downs in the same row as the <strong>Deploy</strong> check box.</p>
+</div>
+</li>
+</ol>
+<p><a href="images/single-project-configmanager.png#lightbox"><img src="images/single-project-configmanager.png" alt="Enabling Deploy in Configuration Manager"> </a></p>
+<h3 id="step-5-deploy-your-app">Step 5: Deploy your app</h3>
+<p>Build and deploy your application project. Visual Studio will build your application into an MSIX package, install the package, and then run your application.</p>
+<h3 id="step-6-package-your-app-for-publishing">Step 6: Package your app for publishing</h3>
+<p>Use the <a href="/windows/msix/package/packaging-uwp-apps">Package &amp; Publish command in Visual Studio</a> to package your application to publish it to the Microsoft Store.</p>
+<h2 id="automate-building-and-packaging-your-single-project-msix-app">Automate building and packaging your single-project MSIX app</h2>
+<p>You can use <code>msbuild</code> to build and package your single-project MSIX app, thereby allowing you to automate the workflow. The technique for a single-project solution, and the command-line, is only slightly different from what you might already be doing if you have a two-project solution—one that has a <strong>Windows Application Packaging Project</strong> (see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a>).</p>
+<p>The important build command option for a single-project solution is <code>/p:GenerateAppxPackageOnBuild=true</code>. Without that option, the project will build, but you won't get an MSIX package. Include that option, and that will cause the MSIX package to be generated.</p>
+<p>There's a full example in the form of <a href="https://github.com/andrewleader/WindowsAppSDKGallery/blob/main/.github/workflows/dotnet-desktop.yml#L102">a GitHub Action that builds a WinUI 3 single-project solution</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Single-project MSIX doesn't currently support producing MSIX bundles (see <a href="/windows/msix/package/bundling-overview">Bundling MSIX packages</a>). It produces only a single MSIX. But you can bundle <code>.msix</code> files into an MSIX bundle by using the <a href="https://github.com/marketplace/actions/msix-bundler">MSIX Bundler</a> GitHub Action.</p>
+</div>
+<h2 id="how-a-packaged-desktop-app-runs-on-windows">How a packaged desktop app runs on Windows</h2>
+<p>For a deeper dive on what happens to files and registry entries when you create a Windows app package for your desktop application, see <a href="/windows/msix/desktop/desktop-to-uwp-behind-the-scenes">Understanding how packaged desktop apps run on Windows</a>.</p>
+<h2 id="provide-feedback">Provide feedback</h2>
+<p>To send us your feedback, report problems, or ask questions about the single-project MSIX feature, post a discussion or issue on the <a href="https://github.com/microsoft/WindowsAppSDK">Windows App SDK GitHub repository</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/single-project-msix.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

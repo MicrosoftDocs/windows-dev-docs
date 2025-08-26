@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Peer-to-peer navigation between two pages </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Peer-to-peer navigation between two pages ">
+    
+    <meta name="description" content="Learn how to enable peer-to-peer navigation between two basic pages in an Windows app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="implement-navigation-between-two-pages">Implement navigation between two pages</h1>
+
+<p>Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app.</p>
+<p><img src="images/peertopeer.png" alt="peer to peer navigation"></p>
+<p>Almost every app requires navigation between pages. Even a simple app with a single content page will typically have a settings page that requires navigation. In this article, we walk through the basics of adding a XAML <code>Page</code> to your app, and using a <code>Frame</code> to navigate between pages.</p>
+<div class="checklist">
+<ul>
+<li><strong>Applies to</strong>: Windows App SDK/WinUI3</li>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame">Microsoft.UI.Xaml.Controls.Frame</a> class, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Microsoft.UI.Xaml.Controls.Page</a> class, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.navigation">Microsoft.UI.Xaml.Navigation</a> namespace</li>
+</ul>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For navigation in UWP apps, see <a href="/windows/uwp/ui-input/app-navigation">App navigation (UWP)</a></p>
+</div>
+<h2 id="1-create-a-blank-app">1. Create a blank app</h2>
+<p>To create a blank app in Visual Studio:</p>
+<ol>
+<li>To set up your development computer, see <a href="../../get-started/start-here.html">Start developing Windows apps</a>.</li>
+<li>From the Microsoft Visual Studio start window, select <strong>Create a new project</strong>, OR, on the Visual Studio menu, choose <strong>File</strong> &gt; <strong>New</strong> &gt; <strong>Project</strong>.</li>
+<li>In the <strong>Create a new project</strong> dialog's drop-down filters, select <strong>C#</strong> or <strong>C++</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>, respectively.</li>
+<li>Select the <strong>Blank App, Packaged (WinUI 3 in Desktop)</strong> project template, and click <strong>Next</strong>. That template creates a desktop app with a WinUI 3-based user interface.</li>
+<li>In the <strong>Project name</strong> box, enter <code>BasicNavigation</code>, and click <strong>Create</strong>.</li>
+<li>To run the program, choose <strong>Debug</strong> &gt; <strong>Start Debugging</strong> from the menu, or press F5. Build and run your solution on your development computer to confirm that the app runs without errors. A blank page is displayed.</li>
+<li>To stop debugging and return to Visual Studio, exit the app, or click <strong>Stop Debugging</strong> from the menu.</li>
+<li>Remove any example code that's included in the template from the <code>MainWindow.xaml</code> and <code>MainWindow</code> code-behind files.</li>
+</ol>
+<h2 id="2-use-a-frame-to-navigate-between-pages">2. Use a Frame to navigate between pages</h2>
+<p>When your app has multiple pages, you use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame">Frame</a> to navigate between them. The <code>Frame</code> class supports various navigation methods such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.navigate">Navigate</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.goback">GoBack</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.goforward">GoForward</a>, and properties such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.backstack">BackStack</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.forwardstack">ForwardStack</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.backstackdepth">BackStackDepth</a>.</p>
+<p>When you create a new Windows App SDK project in Visual Studio, the project template creates a <code>MainWindow</code> class (of type <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window">Microsoft.UI.Xaml.Window</a>). However, it doesn't create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame">Frame</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a> and doesn't provide any navigation code.</p>
+<p>To enable navigation between pages, add a <code>Frame</code> as the root element of <code>MainWindow</code>. You can do that in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched">Application.OnLaunched</a> method override in the <code>App.xaml</code> code-behind file. Open the <code>App</code> code-behind file, update the <code>OnLaunched</code> override, and handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.navigationfailed">NavigationFailed</a> event as shown here.</p>
+<pre><code class="lang-csharp">// App.xaml.cs
+
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    m_window = new MainWindow();
+
+    // Create a Frame to act as the navigation context and navigate to the first page
+    Frame rootFrame = new Frame();
+    rootFrame.NavigationFailed += OnNavigationFailed;
+    // Navigate to the first page, configuring the new page
+    // by passing required information as a navigation parameter
+    rootFrame.Navigate(typeof(MainPage), args.Arguments);
+
+    // Place the frame in the current Window
+    m_window.Content = rootFrame;
+    // Ensure the MainWindow is active
+    m_window.Activate();
+}
+
+void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+{
+    throw new Exception(&quot;Failed to load Page &quot; + e.SourcePageType.FullName);
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// App.xaml.h
+
+// Add after OnLaunched declaration.
+void OnNavigationFailed(IInspectable const&amp;, Microsoft::UI::Xaml::Navigation::NavigationFailedEventArgs const&amp;);
+
+///////////////
+// App.xaml.cpp
+
+void App::OnLaunched(LaunchActivatedEventArgs const&amp; e)
+{
+    window = make&lt;MainWindow&gt;();
+    Frame rootFrame = Frame();
+    rootFrame.NavigationFailed({ this, &amp;App::OnNavigationFailed });
+    rootFrame.Navigate(xaml_typename&lt;BasicNavigation::MainPage&gt;(), box_value(e.Arguments()));
+    window.Content(rootFrame);
+    window.Activate();
+}
+
+void App::OnNavigationFailed(IInspectable const&amp;, NavigationFailedEventArgs const&amp; e)
+{
+    throw hresult_error(E_FAIL, hstring(L&quot;Failed to load Page &quot;) + e.SourcePageType().Name);
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For apps with more complex navigation, you will typically use a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview">NavigationView</a> as the root of MainWindow, and place a <code>Frame</code> as the content of the navigation view. For more info, see <a href="../controls/navigationview.html">Navigation view</a>.</p>
+</div>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.navigate">Navigate</a> method is used to display content in this <code>Frame</code>. Here, <code>MainPage.xaml</code> is passed to the <code>Navigate</code> method, so the method loads <code>MainPage</code> in the <code>Frame</code>.</p>
+<p>If the navigation to the app's initial window fails, a <code>NavigationFailed</code> event occurs, and this code throws an exception in the event handler.</p>
+<h2 id="3-add-basic-pages">3. Add basic pages</h2>
+<p>The <strong>Blank App</strong> template doesn't create multiple app pages for you. Before you can navigate between pages, you need to add some pages to your app.</p>
+<p>To add a new item to your app:</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click the <code>BasicNavigation</code> project node to open the context menu.</li>
+<li>Choose <strong>Add</strong> &gt; <strong>New Item</strong> from the context menu.</li>
+<li>In the <strong>Add New Item</strong> dialog box, select the <strong>WinUI</strong> node in the left pane, then choose <strong>Blank Page (WinUI 3)</strong> in the middle pane.</li>
+<li>In the <strong>Name</strong> box, enter <code>MainPage</code> and press the <strong>Add</strong> button.</li>
+<li>Repeat steps 1-4 to add the second page, but in the <strong>Name</strong> box, enter <code>Page2</code>.</li>
+</ol>
+<p>Now, these files should be listed as part of your <code>BasicNavigation</code> project.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">C#</th>
+<th align="left">C++</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><ul>
+<li>MainPage.xaml</li>
+<li>MainPage.xaml.cs</li>
+<li>Page2.xaml</li>
+<li>Page2.xaml.cs</li>
+</ul></td>
+<td><ul>
+<li>MainPage.xaml</li>
+<li>MainPage.xaml.cpp</li>
+<li>MainPage.xaml.h</li>
+<li>Page2.xaml</li>
+<li>Page2.xaml.cpp</li>
+<li>Page2.xaml.h
+</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>For C++ projects</strong>, you must add a <code>#include</code> directive in the header file of each page that references another page. For the inter-page navigation example presented here, <strong>MainPage.xaml.h</strong> file contains <code>#include &quot;Page2.xaml.h&quot;</code>, in turn, <strong>Page2.xaml.h</strong> contains <code>#include &quot;MainPage.xaml.h&quot;</code>.</p>
+<p>C++ page templates also include an example <code>Button</code> and click handler code that you will need to remove from the XAML and code-behind files for the page.</p>
+</div>
+<h3 id="add-content-to-the-pages">Add content to the pages</h3>
+<p>In <code>MainPage.xaml</code>, replace the existing page content with the following content:</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;TextBlock x:Name=&quot;pageTitle&quot; Text=&quot;Main Page&quot;
+               Margin=&quot;16&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot;/&gt;
+    &lt;HyperlinkButton Content=&quot;Click to go to page 2&quot;
+                     Click=&quot;HyperlinkButton_Click&quot;
+                     HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>This XAML adds:</p>
+<ul>
+<li>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock">TextBlock</a> element named <code>pageTitle</code> with its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text">Text</a> property set to <code>Main Page</code> as a child element of the root <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.Grid">Grid</a>.</li>
+<li>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton">HyperlinkButton</a> element that is used to navigate to the next page as a child element of the root <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.grid">Grid</a>.</li>
+</ul>
+<p>In the <code>MainPage</code> code-behind file, add the following code to handle the <code>Click</code> event of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton">HyperlinkButton</a> you added to enable navigation to <code>Page2.xaml</code>.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs
+
+private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+{
+    Frame.Navigate(typeof(Page2));
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h
+// Add this include in pch.h to support winrt::xaml_typename
+
+#include &lt;winrt/Windows.UI.Xaml.Interop.h&gt;
+
+////////////////////
+// MainPage.xaml.h
+
+void HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&amp; e);
+
+////////////////////
+// MainPage.xaml.cpp
+
+void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&amp; e)
+{
+    Frame().Navigate(winrt::xaml_typename&lt;BasicNavigation::Page2&gt;());
+}
+</code></pre>
+<p><code>MainPage</code> is a subclass of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page">Page</a> class. The <code>Page</code> class has a read-only <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.frame">Frame</a> property that gets the <code>Frame</code> containing the <code>Page</code>. When the <code>Click</code> event handler of the <code>HyperlinkButton</code> in <code>MainPage</code> calls <code>Frame.Navigate(typeof(Page2))</code>, the <code>Frame</code> displays the content of <code>Page2.xaml</code>.</p>
+<p>Whenever a page is loaded into the frame, that page is added as a <a href="/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry">PageStackEntry</a> to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.backstack">BackStack</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.forwardstack">ForwardStack</a> of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.frame">Frame</a>, allowing for <a href="navigation-history-and-backwards-navigation.html">history and backwards navigation</a>.</p>
+<p>Now, do the same in <code>Page2.xaml</code>. Replace the existing page content with the following content:</p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;TextBlock x:Name=&quot;pageTitle&quot; Text=&quot;Page 2&quot;
+               Margin=&quot;16&quot; Style=&quot;{StaticResource TitleTextBlockStyle}&quot;/&gt;
+    &lt;HyperlinkButton Content=&quot;Click to go to main page&quot;
+                     Click=&quot;HyperlinkButton_Click&quot;
+                     HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>In the <code>Page2</code> code-behind file, add the following code to handle the <code>Click</code> event of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton">HyperlinkButton</a> to navigate to <code>MainPage.xaml</code>.</p>
+<pre><code class="lang-csharp">// Page2.xaml.cs
+
+private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+{
+    Frame.Navigate(typeof(MainPage));
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// Page2.xaml.h
+
+void HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&amp; e);
+
+/////////////////
+// Page2.xaml.cpp
+
+void winrt::BasicNavigation::implementation::Page2::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&amp; e)
+{
+    Frame().Navigate(winrt::xaml_typename&lt;BasicNavigation::MainPage&gt;());
+}
+</code></pre>
+<p>Build and run the app. Click the link that says &quot;Click to go to page 2&quot;. The second page that says &quot;Page 2&quot; at the top should be loaded and displayed in the frame. Now click the link on Page 2 to go back to Main Page.</p>
+<h2 id="4-pass-information-between-pages">4. Pass information between pages</h2>
+<p>Your app now navigates between two pages, but it really doesn't do anything interesting yet. Often, when an app has multiple pages, the pages need to share information. Now you'll pass some information from the first page to the second page.</p>
+<p>In <code>MainPage.xaml</code>, replace the <code>HyperlinkButton</code> you added earlier with the following <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.StackPanel">StackPanel</a>. This adds a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.TextBlock">TextBlock</a> label and a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.TextBox">TextBox</a> <code>name</code> for entering a text string.</p>
+<pre><code class="lang-xaml">&lt;StackPanel VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;TextBlock HorizontalAlignment=&quot;Center&quot; Text=&quot;Enter your name&quot;/&gt;
+    &lt;TextBox HorizontalAlignment=&quot;Center&quot; Width=&quot;200&quot; x:Name=&quot;name&quot;/&gt;
+    &lt;HyperlinkButton Content=&quot;Click to go to page 2&quot;
+                              Click=&quot;HyperlinkButton_Click&quot;
+                              HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>Now you'll use the second overload of the <code>Navigate</code> method and pass the text from the text box as the second parameter. Here's the signature of this <code>Navigate</code> overload:</p>
+<pre><code class="lang-csharp">public bool Navigate(System.Type sourcePageType, object parameter);
+</code></pre>
+<pre><code class="lang-cppwinrt">bool Navigate(TypeName const&amp; sourcePageType, IInspectable const&amp; parameter);
+</code></pre>
+<p>In the <code>HyperlinkButton_Click</code> event handler of the <code>MainPage</code> code-behind file, add a second parameter to the <code>Navigate</code> method that references the <code>Text</code> property of the <code>name</code> text box.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs
+
+private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+{
+    Frame.Navigate(typeof(Page2), name.Text);
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// MainPage.xaml.cpp
+
+void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&amp; e)
+{ 
+    Frame().Navigate(xaml_typename&lt;BasicNavigation::Page2&gt;(), winrt::box_value(name().Text()));
+}
+</code></pre>
+<p>In <code>Page2.xaml</code>, replace the <code>HyperlinkButton</code> you added earlier with the following <code>StackPanel</code>. This adds a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.TextBlock">TextBlock</a> for displaying the text string passed from <code>MainPage</code>.</p>
+<pre><code class="lang-xaml">&lt;StackPanel VerticalAlignment=&quot;Center&quot;&gt;
+    &lt;TextBlock HorizontalAlignment=&quot;Center&quot; x:Name=&quot;greeting&quot;/&gt;
+    &lt;HyperlinkButton Content=&quot;Click to go to page 1&quot;
+                     Click=&quot;HyperlinkButton_Click&quot;
+                     HorizontalAlignment=&quot;Center&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<p>In the <code>Page2</code> code-behind file, add the following code to override the <code>OnNavigatedTo</code> method:</p>
+<pre><code class="lang-csharp">// Page2.xaml.cs
+
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    if (e.Parameter is string &amp;&amp; !string.IsNullOrWhiteSpace((string)e.Parameter))
+    {
+        greeting.Text = $&quot;Hello, {e.Parameter.ToString()}&quot;;
+    }
+    else
+    {
+        greeting.Text = &quot;Hello!&quot;;
+    }
+    base.OnNavigatedTo(e);
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// Page2.xaml.h
+
+void Page2::OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&amp; e)
+{
+	auto propertyValue{ e.Parameter().as&lt;Windows::Foundation::IPropertyValue&gt;() };
+	if (propertyValue.Type() == Windows::Foundation::PropertyType::String)
+	{
+		auto name{ winrt::unbox_value&lt;winrt::hstring&gt;(e.Parameter()) };
+		if (!name.empty())
+		{
+			greeting().Text(L&quot;Hello, &quot; + name);
+			__super::OnNavigatedTo(e);
+			return;
+		}
+	}
+	greeting().Text(L&quot;Hello!&quot;);
+	__super::OnNavigatedTo(e);
+}
+</code></pre>
+<p>Run the app, type your name in the text box, and then click the link that says <code>Click to go to page 2</code>.</p>
+<p>When the <code>Click</code> event of the <code>HyperlinkButton</code> in <code>MainPage</code> calls <code>Frame.Navigate(typeof(Page2), name.Text)</code>, the <code>name.Text</code> property is passed to <code>Page2</code>, and the value from the event data is used for the message displayed on the page.</p>
+<h2 id="5-cache-a-page">5. Cache a page</h2>
+<p>Page content and state is not cached by default, so if you'd like to cache information, you must enable it in each page of your app.</p>
+<p>In our basic peer-to-peer example, when you click the <code>Click to go to page 1</code> link on <code>Page2</code>, the <code>TextBox</code> (and any other field) on <code>MainPage</code> is set to its default state. One way to work around this is to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.navigationcachemode">NavigationCacheMode</a> property to specify that a page be added to the frame's page cache.</p>
+<p>By default, a new page instance is created with its default values every time navigation occurs. In <code>MainPage.xaml</code>, set <code>NavigationCacheMode</code> to <code>Enabled</code> (in the opening <code>Page</code> tag) to cache the page and retain all content and state values for the page until the page cache for the frame is exceeded. Set <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.navigationcachemode">NavigationCacheMode</a> to <a href="/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode">Required</a> if you want to ignore <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.cachesize">CacheSize</a> limits, which specify the number of pages in the navigation history that can be cached for the frame. However, keep in mind that cache size limits might be crucial, depending on the memory limits of a device.</p>
+<pre><code class="lang-xaml">&lt;Page
+    x:Class=&quot;BasicNavigation.MainPage&quot;
+    ...
+    mc:Ignorable=&quot;d&quot;
+    NavigationCacheMode=&quot;Enabled&quot;&gt;
+</code></pre>
+<p>Now, when you click back to main page, the name you entered in the text box is still there.</p>
+<h2 id="6-customize-page-transition-animations">6. Customize page transition animations</h2>
+<p>By default, each page is animated into the frame when navigation occurs. The default animation is an &quot;entrance&quot; animation that causes the page to slide up from the bottom of the window. However, you can choose different animation options that better suit the navigation of your app. For example, you can use a &quot;drill in&quot; animation to give the feeling that the user is going deeper into your app, or a horizontal slide animation to give the feeling that two pages are peers. For more info, see <a href="../motion/page-transitions.html">Page transitions</a>.</p>
+<p>These animations are represented by sub-classes of <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationtransitioninfo">NavigationTransitionInfo</a>. To specify the animation to use for a page transition, you'll use the third overload of the <code>Navigate</code> method and pass a <code>NavigationTransitionInfo</code> sub-class as the third parameter (<code>infoOverride</code>). Here's the signature of this <code>Navigate</code> overload:</p>
+<pre><code class="lang-csharp">public bool Navigate(System.Type sourcePageType, 
+                     object parameter,
+                     NavigationTransitionInfo infoOverride);
+</code></pre>
+<pre><code class="lang-cppwinrt">bool Navigate(TypeName const&amp; sourcePageType, 
+              IInspectable const&amp; parameter, 
+              NavigationTransitionInfo const&amp; infoOverride);
+</code></pre>
+<p>In the <code>HyperlinkButton_Click</code> event handler of the <code>MainPage</code> code-behind file, add a third parameter to the <code>Navigate</code> method that sets the <code>infoOverride</code> parameter to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioninfo">SlideNavigationTransitionInfo</a> with its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioninfo.effect">Effect</a> property set to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioneffect">FromRight</a>.</p>
+<pre><code class="lang-csharp">// MainPage.xaml.cs
+
+private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+{
+    Frame.Navigate(typeof(Page2), 
+                   name.Text,
+                   new SlideNavigationTransitionInfo() 
+                       { Effect = SlideNavigationTransitionEffect.FromRight});
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// pch.h
+
+#include &lt;winrt/Microsoft.UI.Xaml.Media.Animation.h&gt;
+
+////////////////////
+// MainPage.xaml.cpp
+
+using namespace winrt::Microsoft::UI::Xaml::Media::Animation;
+
+// ...
+
+void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&amp; e)
+{   
+    // Create the slide transition and set the transition effect to FromRight.
+    SlideNavigationTransitionInfo slideEffect = SlideNavigationTransitionInfo();
+    slideEffect.Effect(SlideNavigationTransitionEffect(SlideNavigationTransitionEffect::FromRight));
+    Frame().Navigate(winrt::xaml_typename&lt;BasicNavigation::Page2&gt;(),
+        		     winrt::box_value(name().Text()),
+                     slideEffect);
+}
+</code></pre>
+<p>In the <code>HyperlinkButton_Click</code> event handler of the <code>Page2</code> code-behind file, set the <code>infoOverride</code> parameter to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioninfo">SlideNavigationTransitionInfo</a> with its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioninfo.effect">Effect</a> property set to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioneffect">FromLeft</a>.</p>
+<pre><code class="lang-csharp">// Page2.xaml.cs
+
+private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+{
+    Frame.Navigate(typeof(MainPage),
+                   null,
+                   new SlideNavigationTransitionInfo() 
+                       { Effect = SlideNavigationTransitionEffect.FromLeft});
+}
+</code></pre>
+<pre><code class="lang-cppwinrt">// Page2.xaml.cpp
+
+using namespace winrt::Microsoft::UI::Xaml::Media::Animation;
+
+// ...
+
+void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const&amp; sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const&amp; e)
+{   
+    // Create the slide transition and set the transition effect to FromLeft.
+    SlideNavigationTransitionInfo slideEffect = SlideNavigationTransitionInfo();
+    slideEffect.Effect(SlideNavigationTransitionEffect(SlideNavigationTransitionEffect::FromLeft));
+    Frame().Navigate(winrt::xaml_typename&lt;BasicNavigation::MainPage&gt;(),
+        		     nullptr,
+                     slideEffect);
+}
+</code></pre>
+<p>Now, when you navigate between pages, the pages slide left and right, which provides a more natural feeling for this transition and reinforces the connection between the pages.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="navigation-basics.html">Navigation design basics for Windows apps</a></li>
+<li><a href="../controls/navigationview.html">Navigation view</a></li>
+<li><a href="navigation-history-and-backwards-navigation.html">Navigation history and backwards navigation</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/basics/navigate-between-two-pages.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use a SQLite database in a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use a SQLite database in a Windows app ">
+    
+    <meta name="description" content="Learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user&#39;s device.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-a-sqlite-database-in-a-windows-app">Use a SQLite database in a Windows app</h1>
+
+<p>You can use SQLite to store and retrieve data in a lightweight database on the user's device. This guide shows you how to do it in your Windows App SDK apps.</p>
+<h2 id="some-benefits-of-using-sqlite-for-local-storage">Some benefits of using SQLite for local storage</h2>
+<p>✔️ SQLite is lightweight and self-contained. It's a code library without any other dependencies. There's nothing to configure.</p>
+<p>✔️ There's no database server. The client and the server run in the same process.</p>
+<p>✔️ SQLite is in the public domain so you can freely use and distribute it with your app.</p>
+<p>✔️ SQLite works across platforms and architectures.</p>
+<p>You can read more about SQLite <a href="https://sqlite.org/about.html">here</a>.</p>
+<h2 id="choose-an-abstraction-layer">Choose an abstraction layer</h2>
+<p>We recommend that you use either <a href="/ef/core/">Entity Framework Core</a> or the open-source <a href="https://github.com/aspnet/Microsoft.Data.Sqlite/">SQLite library</a> built by Microsoft.</p>
+<h3 id="entity-framework-core">Entity Framework Core</h3>
+<p>Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can use the same code in your Windows App SDK app and it will work with appropriate changes to the connection string.</p>
+<p>To try it out, see <a href="/ef/core/get-started/overview/first-app">Getting Started with EF Core</a>.</p>
+<h3 id="sqlite-library">SQLite library</h3>
+<p>The <a href="/dotnet/api/microsoft.data.sqlite">Microsoft.Data.Sqlite</a> library implements the interfaces in the <a href="/dotnet/api/system.data.common">System.Data.Common</a> namespace. Microsoft actively maintains these implementations, and they provide an intuitive wrapper around the low-level native SQLite API.</p>
+<p>The rest of this guide helps you to use this library.</p>
+<h2 id="set-up-your-solution-to-use-the-microsoftdatasqlite-library">Set up your solution to use the Microsoft.Data.SQlite library</h2>
+<p>We'll start with a basic Windows App SDK project, and then install the SQLite NuGet package.</p>
+<p>All supported versions of Windows support SQLite, so your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.</p>
+<p>✔️ Reduces the size of your application because you don't have to download the SQLite binary, and then package it as part of your application.</p>
+<p>✔️ Prevents you from having to push a new version of your app to users in the event that SQLite publishes critical fixes to bugs and security vulnerabilities in SQLite. The Windows version of SQLite is maintained by Microsoft in coordination with SQLite.org.</p>
+<p>✔️ App load time has the potential to be faster because most likely, the SDK version of SQLite will already be loaded into memory.</p>
+<p>Let's start by adding a class to your project named <strong>DataAccess</strong>. If you plan to share your data access logic with other client code, you can use a .NET class library project to contain your data access code, but we won't use one in our example.</p>
+<ol>
+<li><p>Right-click the solution, and then click <strong>Manage NuGet Packages for Solution</strong>.</p>
+<p><img src="images/manage-nuget-2.png" alt="A screenshot of Visual Studio's Solution Explorer with the project right-clicked and the Manage NuGet Packages option highlighted."></p>
+<p>At this point, you have a choice. You can use the version of SQLite that is included with Windows or if you have some reason to use a specific version of SQLite, you can include the SQLite library in your package. We are going to use the version of SQLite that's included with Windows.</p>
+</li>
+<li><p>Choose the <strong>Browse</strong> tab, search for the <strong>Microsoft.Data.SQLite</strong> package, and then install the latest stable version.</p>
+<p><img src="images/sqlite-nuget-package.png" alt="SQLite NuGet package"></p>
+</li>
+</ol>
+<h2 id="add-and-retrieve-data-in-a-sqlite-database">Add and retrieve data in a SQLite database</h2>
+<p>We'll do these things:</p>
+<p>1️⃣ Prepare the data access class.</p>
+<p>2️⃣ Initialize the SQLite database.</p>
+<p>3️⃣ Insert data into the SQLite database.</p>
+<p>4️⃣ Retrieve data from the SQLite database.</p>
+<p>5️⃣ Add a basic user interface.</p>
+<h3 id="prepare-the-data-access-class">Prepare the data access class</h3>
+<p>Open the <code>DataAccess</code> class in your project and make that class static.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While our example will place data access code in a static class, this is a design choice and is completely optional.</p>
+</div>
+<pre><code class="lang-csharp">public static class DataAccess
+{
+}
+</code></pre>
+<p>Add the following <code>using</code> statements to the top of this file.</p>
+<pre><code class="lang-csharp">using Microsoft.Data.Sqlite;
+using System.Collections.Generic;
+</code></pre>
+<h3 id="initialize-the-sqlite-database">Initialize the SQLite database</h3>
+<p>Add a method to the <code>DataAccess</code> class that initializes the SQLite database.</p>
+<pre><code class="lang-csharp">public async static void InitializeDatabase()
+{ 
+    await ApplicationData.Current.LocalFolder
+            .CreateFileAsync(&quot;sqliteSample.db&quot;, CreationCollisionOption.OpenIfExists);
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                 &quot;sqliteSample.db&quot;);
+    using (var db = new SqliteConnection($&quot;Filename={dbpath}&quot;))
+    {
+        db.Open();
+
+        string tableCommand = &quot;CREATE TABLE IF NOT &quot; +
+            &quot;EXISTS MyTable (Primary_Key INTEGER PRIMARY KEY, &quot; +
+            &quot;Text_Entry NVARCHAR(2048) NULL)&quot;;
+
+        var createTable = new SqliteCommand(tableCommand, db);
+
+        createTable.ExecuteReader();
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The code above that uses <code>ApplicationData</code> members will only work for packaged apps running in an app container. All other Windows apps should access <code>ApplicationData</code> members via the <a href="/uwp/api/Windows.Management.Core.ApplicationDataManager">ApplicationDataManager</a> class.</p>
+</div>
+<p>This code creates the SQLite database and stores it in the application's local data store.</p>
+<p>In this example, we name the database <code>sqlliteSample.db</code> but you can use whatever name you want as long as you use that name in all <a href="/dotnet/api/microsoft.data.sqlite.sqliteconnection">SqliteConnection</a> objects that you instantiate. In a production application, connection information such as the database filename should be stored in app configuration rather than hard-coded (see <a href="/visualstudio/azure/vs-azure-tools-connected-services-app-configuration"><strong>Adding Azure App Configuration by using Visual Studio Connected Services</strong></a>).</p>
+<p>In the constructor of the <strong>App.xaml.cs</strong> file of your project, call the <code>InitializeDatabase</code> method of the <code>DataAccess</code> class. This will ensure that the database is created or opened each time the app starts.</p>
+<pre><code class="lang-csharp">public App()
+{
+    this.InitializeComponent();
+
+    DataAccess.InitializeDatabase();
+}
+</code></pre>
+<h3 id="insert-data-into-the-sqlite-database">Insert data into the SQLite database</h3>
+<p>Add a method to the <code>DataAccess</code> class that inserts data into the SQLite database. This code uses parameters in the query to prevent SQL injection attacks.</p>
+<pre><code class="lang-csharp">public static void AddData(string inputText)
+{
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                 &quot;sqliteSample.db&quot;);
+    using (var db = new SqliteConnection($&quot;Filename={dbpath}&quot;))
+    {
+        db.Open();
+
+        var insertCommand = new SqliteCommand();
+        insertCommand.Connection = db;
+
+        // Use parameterized query to prevent SQL injection attacks
+        insertCommand.CommandText = &quot;INSERT INTO MyTable VALUES (NULL, @Entry);&quot;;
+        insertCommand.Parameters.AddWithValue(&quot;@Entry&quot;, inputText);
+
+        insertCommand.ExecuteReader();
+    }
+
+}
+</code></pre>
+<h3 id="retrieve-data-from-the-sqlite-database">Retrieve data from the SQLite database</h3>
+<p>Add a method that gets all rows of data from a table in our SQLite database.</p>
+<pre><code class="lang-csharp">public static List&lt;string&gt; GetData()
+{
+    var entries = new List&lt;string&gt;();
+    string dbpath = Path.Combine(ApplicationData.Current.LocalFolder.Path,
+                                 &quot;sqliteSample.db&quot;);
+    using (var db = new SqliteConnection($&quot;Filename={dbpath}&quot;))
+    {
+        db.Open();
+        var selectCommand = new SqliteCommand
+            (&quot;SELECT Text_Entry from MyTable&quot;, db);
+
+        SqliteDataReader query = selectCommand.ExecuteReader();
+
+        while (query.Read())
+        {
+            entries.Add(query.GetString(0));
+        }
+    }
+
+    return entries;
+}
+</code></pre>
+<p>The <a href="/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read#Microsoft_Data_Sqlite_SqliteDataReader_Read">Read</a> method advances through the rows of returned data. It returns <code>true</code> if there are rows left, otherwise it returns <code>false</code>.</p>
+<p>The <a href="/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_">GetString</a> method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as <a href="/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_">GetDataTime</a> and <a href="/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_">GetBoolean</a>. Choose a method based on what type of data the column contains.</p>
+<p>The ordinal parameter isn't as important in this example because we are selecting all of the entries in a single column. However, if multiple columns are part of your query, use the ordinal value to obtain the column you want to pull data from.</p>
+<h2 id="add-a-basic-user-interface">Add a basic user interface</h2>
+<p>In the <strong>MainWindow.xaml</strong> file of the project, add the following XAML.</p>
+<pre><code class="lang-xaml">&lt;Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;&gt;
+    &lt;StackPanel&gt;
+        &lt;TextBox x:Name=&quot;Input_Box&quot;/&gt;
+        &lt;Button Click=&quot;AddData&quot;&gt;Add&lt;/Button&gt;
+        &lt;ListView x:Name=&quot;Output&quot;&gt;
+            &lt;ListView.ItemTemplate&gt;
+                &lt;DataTemplate&gt;
+                    &lt;TextBlock Text=&quot;{Binding}&quot;/&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.ItemTemplate&gt;
+        &lt;/ListView&gt;
+    &lt;/StackPanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<p>This basic user interface gives the user a <code>TextBox</code> that they can use to type a string that we'll add to the SQLite database. We'll connect the <code>Button</code> in this UI to an event handler that will retrieve data from the SQLite database and then show that data in the <code>ListView</code>.</p>
+<p>In the <strong>MainWindow.xaml.cs</strong> file, add the following handler. This is the method that we associated with the <code>Click</code> event of the <code>Button</code> in the UI.</p>
+<pre><code class="lang-csharp">private void AddData(object sender, RoutedEventArgs e)
+{
+    DataAccess.AddData(Input_Box.Text);
+
+    Output.ItemsSource = DataAccess.GetData();
+}
+</code></pre>
+<p>We also want to be sure that any existing data is loaded when the application starts. Add a line of code to the <code>MainWindow</code> constructor to call <code>GetData()</code>.</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+
+    Output.ItemsSource = DataAccess.GetData();
+}
+</code></pre>
+<p>That's it. Explore the <a href="/dotnet/api/microsoft.data.sqlite">Microsoft.Data.Sqlite</a> to see what other things you can do with your SQLite database. Check out the links below to learn about other ways to use data in your Windows apps.</p>
+<h2 id="related-content">Related content</h2>
+<h3 id="connect-your-app-directly-to-a-sql-server-database">Connect your app directly to a SQL Server database</h3>
+<p>See <a href="sql-server-database.html">Use a SQL Server database in a Windows app</a>.</p>
+<h3 id="share-code-between-different-apps-across-different-platforms">Share code between different apps across different platforms</h3>
+<p>See <a href="/windows/uwp/porting/desktop-to-uwp-migrate">Share code between desktop and UWP</a>.</p>
+<h3 id="add-master-detail-pages-with-azure-sql-back-ends">Add master detail pages with Azure SQL back ends</h3>
+<p>See <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customer Orders Database sample</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-access/sqlite-data-access.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

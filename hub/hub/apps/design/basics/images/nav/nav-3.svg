@@ -1,0 +1,38 @@
+<svg width="614" height="344" viewBox="0 0 614 344" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="nav-3" clip-path="url(#clip0)">
+<rect width="614" height="344" fill="white"/>
+<g id="Group">
+<g id="Rectangle">
+<rect width="350" height="216" transform="translate(132 64)" fill="#50E6FF"/>
+</g>
+<g id="Rectangle 2">
+<rect width="312" height="156" transform="translate(151 104)" fill="#FCFFFF" style="mix-blend-mode:overlay"/>
+<rect width="312" height="156" transform="translate(151 104)" fill="url(#paint0_linear)" style="mix-blend-mode:overlay"/>
+</g>
+<g id="Rectangle 2.3">
+<rect width="44" height="11" transform="translate(151 82)" fill="#EAFCFF"/>
+</g>
+<g id="Rectangle 2.4">
+<rect width="44" height="11" transform="translate(205 82)" fill="#1EBBDD"/>
+</g>
+<g id="Rectangle 2.5">
+<rect width="44" height="11" transform="translate(259 82)" fill="#1EBBDD"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(0 211.467 -422.933 0 367.467 0)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0.57"/>
+</linearGradient>
+
+<clipPath id="clip0">
+<rect width="614" height="344" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

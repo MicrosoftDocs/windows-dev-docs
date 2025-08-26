@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Disk use, memory improvements and Windows Application Performance </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Disk use, memory improvements and Windows Application Performance ">
+    
+    <meta name="description" content="This guide will demonstrate ways to improve the memory consumption and the disk footprint of your Windows app(s).">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="improve-app-performance-by-reducing-the-use-of-memory-and-disk-space">Improve app performance by reducing the use of memory and disk space</h1>
+
+<p>This guide will demonstrate how to improve the performance of your Windows application in two primary ways:</p>
+<ul>
+<li><p><a href="#minimize-memory-usage">Minimize memory usage</a></p>
+</li>
+<li><p><a href="#efficiently-use-disk-space">Efficiently use Disk Space</a></p>
+</li>
+</ul>
+<h2 id="minimize-memory-usage">Minimize memory usage</h2>
+<p>There are a variety of ways to minimize the amount of memory that your Windows app uses, you can:</p>
+<ul>
+<li>Reduce foreground memory usage</li>
+<li>Minimize background work</li>
+<li>Release resources while in the background</li>
+<li>Ensure your application does not leak memory</li>
+</ul>
+<p>In order to appropriately minimize memory usage, it is first important to understand:</p>
+<ul>
+<li>how memory is used and allocated, using the <a href="#working-set-dynamic-memory-and-virtual-allocation">working set, dynamic memory, and virtual allocation</a>,</li>
+<li>how to <a href="#capture-a-system-trace-to-analyze-memory-usage">capture a system trace</a>, and</li>
+<li>how to <a href="#analyze-the-system-trace">analyze the system trace</a>.</li>
+</ul>
+<p>Once you have a system trace to analyze, we will recommend guidance for <a href="#applying-your-trace-analysis-to-reduce-memory-usage">Applying your trace analysis to reduce memory usage</a>.</p>
+<h3 id="working-set-dynamic-memory-and-virtual-allocation">Working set, dynamic memory, and virtual allocation</h3>
+<p>The <a href="/windows/win32/memory/working-set">working set</a> of an application – the set of pages in its virtual address space that currently resident in memory – is one measure of the app's memory usage.</p>
+<p>The amount of memory that an application uses impacts its runtime performance, as well as the responsiveness of the system as a whole. Minimizing the use of memory will help the app to perform better by reducing the CPU costs associated with accessing more memory. Lower memory usage also helps with the system responsiveness, and the app user's experience in general, as the application does not end up displacing other memory content.</p>
+<p>Memory displacement can happen as the system attempts to retain in-memory content accessed recently and, if necessary, will trim and page-out content used earlier. When the user switches back to the shell, or another application, and the necessary data is not resident in-memory, the data will need to be read from the disk. The user will likely notice a slowdown due to this process.</p>
+<p>There are two key pieces to the memory used by an application: 1) dynamic memory, and 2) file-backed memory. File-backed memory usage comes from binaries and data files, such as databases, used by an application. This is commonly not a significant chunk of an application's memory usage and often a constant. <em>(Exceptions would be data processing applications, code compilation etc.)</em> The more significant source of memory usage and where leaks manifest is dynamic memory.</p>
+<p>Dynamic memory corresponds to virtual memory allocated by an application using <a href="/cpp/c-runtime-library/memory-allocation">memory allocation routines</a>. Unlike file-backed memory, which persists across system reboots, dynamic memory only exists for the lifetime of the application. Dynamic memory is a commonly significant source of memory usage and where memory leaks manifest.</p>
+<p><a href="/windows/win32/memory/allocating-virtual-memory">Virtual Allocation routines</a> (<code>VirtualAlloc</code>) handle memory allocation requests from a Windows application independent of the application-layer routine used for memory allocation. While not all of the memory allocated by an application may be resident in memory all of the time, analyzing such allocations provides a consistent way to understand the memory usage of an application.</p>
+<p>To understand your application's memory usage and find places to make improvements, we recommend capturing a VirtualAllocation trace as described below.</p>
+<h2 id="capture-a-system-trace-to-analyze-memory-usage">Capture a system trace to analyze memory usage</h2>
+<p>Recording device activity over a period of time is known as <em>system tracing.</em> System tracing produces a trace file that can be used to generate a report and help you identify how to be improve your app's performance.</p>
+<p>Traces can vary in length:</p>
+<ul>
+<li>A short running trace can be used to capture the launch of an application. This can include your app's transition to the inactive state, where the application window is minimized or the application windows is closed while the application process persists.</li>
+<li>A long running trace, typically several minutes in duration, is useful in diagnosing memory leaks. If the memory usage continues to trend up over time, this is usually suggestive of a leak.</li>
+</ul>
+<p>There are multiple tools available for monitoring memory use, including:</p>
+<ul>
+<li><a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer</a></li>
+<li><a href="/visualstudio/profiling/memory-usage">Visual Studio Memory usage diagnostic tool</a></li>
+</ul>
+<p>For the purposes of this article, we will focus on using the Windows Performance Analyzer. To learn more about choosing a tool for profiling the performance of your application, see <a href="choose-between-tools.html">Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView</a>.</p>
+<p><strong>To capture a trace:</strong></p>
+<ol>
+<li><p>Open a <a href="/windows/terminal/">command line</a> (PowerShell or Command Prompt) in <a href="/windows/terminal/faq#how-do-i-run-a-shell-in-windows-terminal-in-administrator-mode">administrator mode</a>. (If not run in admin mode, you may receive error code: 0xc5585011, &quot;Failed to enable the policy to profile system performance.&quot;)</p>
+</li>
+<li><p>Enter the command: <code>wpr -start VirtualAllocation -filemode</code></p>
+</li>
+<li><p>Run the scenario that you are investigating. (Launching your application, for example.)</p>
+</li>
+<li><p>Enter the command: <code>wpr -stop Trace.etl</code></p>
+</li>
+</ol>
+<h2 id="analyze-the-system-trace">Analyze the system trace</h2>
+<p>In order to find which of your app's functions have allocated memory that you may be able to reduce, you now need to analyze the system trace that was captured. To analyze the trace:</p>
+<ol>
+<li><p>Open the trace using <a href="/windows-hardware/test/wpt/windows-performance-analyzer">Windows Performance Analyzer</a>, by entering the command: <code>wpa.exe Trace.etl</code></p>
+</li>
+<li><p>In the <a href="/windows-hardware/test/wpt/introduction-to-the-wpa-user-interface#graph-explorer-window">Graph Explorer window</a>, expand the <strong>Memory</strong> section, right-click on the <strong>Total Commit</strong> graph, and select <strong>Add graph to New Analysis View</strong>.</p>
+</li>
+<li><p>Open the <strong><a href="/windows-hardware/test/wpt/view-editor">View Editor</a></strong> by clicking on the <strong>Settings</strong> gear and selecting the following column arrangement: <strong>Process</strong>, <strong>Commit Type</strong>, <strong>Commit Stack</strong> and <strong>Size</strong>.</p>
+</li>
+<li><p>Click on the <strong>Size</strong> column header so that the results are sorted in descending order. The <strong>Commit Stack</strong> shows the code path leading to memory being allocated. These results may help to understand the reason for the allocation. Sorting by size enables you to focus on the larger allocations and investigate whether there is an opportunity to optimize.</p>
+</li>
+<li><p>Filter to the process(es) that you are interested in analyzing by right-clicking on the process and selecting <strong>Filter To Selection</strong>.</p>
+</li>
+<li><p>To zoom in to your region of interest in the viewport, select a range, right-click on the graph, and select <strong>Zoom</strong>.</p>
+</li>
+<li><p>Navigate through the Commit Stack to understand which functions have allocated memory. Commit stacks will need <a href="/windows-hardware/test/wpt/loading-symbols">symbols loaded</a>. To load symbols, select <strong>Trace</strong> &gt; <strong>Load symbols</strong> from the top navigation menu bar.</p>
+<p><img src="images/commit-stack-allocated-memory.png" alt="Windows Performance Analyzer memory trace screenshot"></p>
+</li>
+</ol>
+<h2 id="applying-your-trace-analysis-to-reduce-memory-usage">Applying your trace analysis to reduce memory usage</h2>
+<p>In analyzing the allocated memory, you will find clues to help you decide where memory usage can be minimized.</p>
+<p>A few areas to consider in regard to applying your trace analysis toward updating your code to reduce memory usage, include:</p>
+<ul>
+<li><p><strong>Reduce memory usage when in the foreground</strong>: Analyzing the memory trace may help you to identify any unnecessary memory use in the foreground and update your code to reduce or remove that usage.</p>
+</li>
+<li><p><strong>Minimizing work while in the background</strong>: The system has policies to age out pages from the process working sets. Using less memory in the background allows the system to be more efficient by keeping less of the application memory resident. Learn more about how to <a href="power.html">Improve power consumption and battery life by minimizing background work</a>, which will also translate into using less memory usage while in the background.</p>
+</li>
+<li><p><strong>Release resources in the background</strong>: At runtime, an application may create some memory caches, as well as creating graphics allocations to support its UI. These allocations may be able to be freed when the application is minimized or not visible. An application can register for low-memory notifications to take such action, but a better strategy may be to free memory after a period of not being used, when the application concludes it is inactive. This period of disuse can vary by application, so possible indicators of inactive use can range from a handful of minutes to a ½ hour or more. Care should be taken to balance this kind of memory savings with responsiveness. If a cache is expensive to rebuild, the application can choose to retain it for the lifetime of the application.</p>
+</li>
+<li><p><strong>Ensure your application does not leak memory</strong>: To check for memory leaks, first establish a steady-state benchmark, where the application memory usage plateaus or does not grow beyond a certain value. You can establish this steady-state by continuously using the application or leaving it idle in the background. Using the trace you've captured to identify a possible memory leak, you can find where that memory is being allocated in your code and how it can be freed of use after it has served its purpose. If the memory continues to grow as the application is running, this is a likely indication of a memory leak. Zoom in to the region corresponding to the growth within your trace and carefully analyze the commit stacks.</p>
+</li>
+</ul>
+<h2 id="efficiently-use-disk-space">Efficiently use Disk Space</h2>
+<p><strong>Disk footprint</strong> refers to the size of an application when it's stored in an inactive state (not executing code). If the application takes up a lot of disk footprint it can be an opportunity to optimize.</p>
+<p>There are several ways that reducing the disk footprint of your app can improve performance:</p>
+<ul>
+<li><p>As a disk gets full, the file system can no longer store new content in a contiguous fashion. A full disk becomes fragmented, storing new content on non-contiguous sectors. This translates to longer latency time when that content is accessed from the disk. IO systems will provide much better disk throughput when the content is contiguous and can be accessed sequentially or using larger IOs.</p>
+</li>
+<li><p>A full disk may translate to longer write latencies for SSD-based systems. When there are fewer empty cells to absorb writes, a write may incur a read-modify-write operation, slowing performance.</p>
+</li>
+<li><p>A full disk can hinder the ability to update your application. While the OS is resilient and able to keep the system up to date and secure, even with low available disk space, a healthy amount of available disk space for staging the content for your app update will translate to a faster, smoother update experience.</p>
+</li>
+<li><p>Requiring a significant amount of a large disk footprint to be accessed at run time will translate to memory use as well. This will impact the responsiveness of your application and the system in general. Additionally, if a small proportion of the disk footprint is required at run time, then the application may be using disk space inefficiently.</p>
+</li>
+</ul>
+<p>A few ways to reduce, or be more efficient with, your disk space include:</p>
+<ul>
+<li><p><strong>Apply &quot;pay-for-play&quot; principles to your disk footprint  (download only what you need)</strong>: An application may include a broad range of features with not all features applying to all users. This can be one reason for a large on disk footprint. By applying &quot;pay-for-play&quot; principles, you can ask users to select only to download the features that they need, translating to a smaller disk footprint when they download your app. Additional content is made optional for download only when the user has a need for richer capabilities. In addition to features, you may apply the same &quot;pay-for-play&quot; principles to language support. The application can include a subset of popular language choices by default, with additional languages optionally included or dependent on the location set on the user's system.</p>
+</li>
+<li><p><strong>Apply efficient cache sizing</strong>: In some cases, an application can use on-disk caches to make the user experience more responsive. Policies can be set for how your application manages the cache, with an upper limit set on the cache size based on disk capacity and resizing the cache when available space on the disk is low.</p>
+</li>
+<li><p><strong>Apply efficient use of assets</strong>: An application will often include image assets and may consist of a range of image size to support multiple resolutions. Optimizing image size, dimensions, format, and compression for a subset of resolutions, and leveraging scaling to support remaining resolutions, can significantly reduce disk footprint.</p>
+</li>
+<li><p><strong>Investigate binary optimization opportunities</strong>: Tools, such as <a href="https://devblogs.microsoft.com/performance-diagnostics/sizebench-a-new-tool-for-analyzing-windows-binary-size/">SizeBench</a>, enable application authors to investigate what contributes to the binary footprint and find opportunities to reduce the amount of disk space used.</p>
+</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><p><a href="/windows-hardware/test/wpt/wpa-step-by-step-guide">Windows Performance Analyzer step-by-step guide</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/windows-performance-analyzer-common-scenarios">Windows Performance Analyzer common scenarios</a></p>
+</li>
+<li><p><a href="/windows/win32/tracelogging/trace-logging-portal">Tracelogging</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/event-tracing-for-windows">Event Tracing for Windows</a></p>
+</li>
+<li><p><a href="/windows-hardware/test/wpt/memory-footprint-optimization">Memory Footprint Optimization</a></p>
+</li>
+<li><p><a href="/visualstudio/profiling/memory-usage">Measure memory usage in Visual Studio</a></p>
+</li>
+<li><p><a href="/windows/uwp/debug-test-perf/planning-and-measuring-performance">Planning for performance</a></p>
+</li>
+<li><p><a href="/answers/questions/679026/performance-monitor-to-log-cpu-amp-memory-usage.html">Q&amp;A forum</a></p>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/performance/disk-memory.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>DispatcherQueue </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="DispatcherQueue ">
+    
+    <meta name="description" content="Describes the purpose and function of the Windows App SDK DispatcherQueue class, and how to program with it.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dispatcherqueue">DispatcherQueue</h1>
+
+<h2 id="highlights">Highlights</h2>
+<ul>
+<li>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue">DispatcherQueue</a> class in the Windows App SDK manages a prioritized queue on which the tasks for a thread execute in a serial fashion.</li>
+<li>It provides a means for background threads to run code on a <strong>DispatcherQueue</strong>'s thread (for example, the UI thread where objects with thread-affinity live).</li>
+<li>The class precisely integrates with arbitrary message loops. For example, it supports the common Win32 idiom of nested message loops.</li>
+<li>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> class integrates with <strong>DispatcherQueue</strong>—when a <strong>DispatcherQueue</strong> for a given thread is being shut down, the <strong>AppWindow</strong> instances are automatically destroyed.</li>
+<li>It provides a means to register a delegate that's called when a timeout expires.</li>
+<li>It provides events that let components know when a message loop is exiting, and optionally defer that shutdown until outstanding work completes. That ensures components that use the <strong>DispatcherQueue</strong>, but don't own the message loop, may do cleanup on-thread as the loop exits.</li>
+<li>The <strong>DispatcherQueue</strong> is a thread singleton (there can be at most one of them running on any given thread). By default, a thread has no <strong>DispatcherQueue</strong>.</li>
+<li>A thread owner may create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller">DispatcherQueueController</a> to initialize the <strong>DispatcherQueue</strong> for the thread. At that point, any code can access the thread's <strong>DispatcherQueue</strong>; but only the <strong>DispatcherQueueController</strong>'s owner has access to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueue">DispatcherQueueController.ShutdownQueue</a> method, which drains the <strong>DispatcherQueue</strong>, and raises <strong>ShutdownStarted</strong> and <strong>ShutdownCompleted</strong> events.</li>
+<li>An outermost message loop owner must create a <strong>DispatcherQueue</strong> instance. Only the code in charge of running a thread's outermost message loop knows when dispatch is complete, which is the appropriate time to shut down the <strong>DispatcherQueue</strong>. That means that components that rely on <strong>DispatcherQueue</strong> mustn't create the <strong>DispatcherQueue</strong> unless they own the thread's message loop.</li>
+</ul>
+<h2 id="run-down">Run-down</h2>
+<p>After a thread exits its event loop, it must shut down its <strong>DispatcherQueue</strong>. Doing so raises the <strong>ShutdownStarting</strong> and <strong>ShutdownCompleted</strong> events, and drains any final pending enqueued items before disabling further enqueuing.</p>
+<ul>
+<li>To shut down a <strong>DispatcherQueue</strong> that's running on a dedicated thread with a <strong>DispatcherQueue</strong>-owned message loop, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueueasync">DispatcherQueueController.ShutdownQueueAsync</a> method.</li>
+<li>For scenarios where the app owns an arbitrary message loop (for example, XAML Islands), call the synchronous <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueue">DispatcherQueueController.ShutdownQueue</a> method. That method raises shutdown events, and drains the <strong>DispatcherQueue</strong> synchronously on the calling thread.</li>
+</ul>
+<p>When you call either <strong>DispatcherQueueController.ShutdownQueueAsync</strong> or <strong>DispatcherQueueController.ShutdownQueue</strong>, the order of events raised is the following:</p>
+<ul>
+<li><strong>ShutdownStarting</strong>. Intended for apps to handle.</li>
+<li><strong>FrameworkShutdownStarting</strong>. Intended for frameworks to handle.</li>
+<li><strong>FrameworkShutdownCompleted</strong>. Intended for frameworks to handle.</li>
+<li><strong>ShutdownCompleted</strong>. Intended for apps to handle.</li>
+</ul>
+<p>The events are separated into application/framework categories so that orderly shutdown can be achieved. That is, by explicitly raising application shutdown ahead of framework shutdown events, there's no danger that a framework component will be in an unusable state as the application winds down.</p>
+<pre><code class="lang-cppwinrt">namespace winrt 
+{
+    using namespace Microsoft::UI::Dispatching;
+}
+
+// App runs its own custom message loop.
+void RunCustomMessageLoop()
+{
+    // Create a DispatcherQueue.
+    auto dispatcherQueueController{winrt::DispatcherQueueController::CreateOnCurrentThread()};
+
+    // Run a custom message loop. Runs until the message loop owner decides to stop.
+    MSG msg;
+    while (GetMessage(&amp;msg, nullptr, 0, 0))
+    {
+        if (!ContentPreTranslateMessage(&amp;msg))
+        {
+            TranslateMesasge(&amp;msg);
+            DispatchMessage(&amp;msg);
+        }
+    }
+
+    // Run down the DispatcherQueue. This single call also runs down the system DispatcherQueue
+    // if one was created via EnsureSystemDispatcherQueue:
+    // 1. Raises DispatcherQueue.ShutdownStarting event.
+    // 2. Drains remaining items in the DispatcherQueue, waits for deferrals.
+    // 3. Raises DispatcherQueue.FrameworkShutdownStarting event.
+    // 4. Drains remaining items in the DispatcherQueue, waits for deferrals.
+    // 5. Disables further enqueuing.
+    // 6. Raises the DispatcherQueue.FrameworkShutdownCompleted event.
+    // 7. Raises the DispatcherQueue.ShutdownCompleted event.    
+
+    dispatcherQueueController.ShutdownQueue();
+}
+</code></pre>
+<h2 id="outermost-and-recursive-message-loops">Outermost and recursive message loops</h2>
+<p><strong>DispatcherQueue</strong> supports custom message loops. However, for simple apps that don't need customization, we provide a default implementations. That removes a burden from developers, and helps ensure consistently correct behavior.</p>
+<pre><code class="lang-cppwinrt">namespace winrt 
+{
+    using namespace Microsoft::UI::Dispatching;
+}
+
+// Simple app; doesn't need a custom message loop.
+void RunMessageLoop()
+{
+    // Create a DispatcherQueue.
+    auto dispatcherQueueController{winrt::DispatcherQueueController::CreateOnCurrentThread()};
+
+    // Runs a message loop until a call to DispatcherQueue.EnqueueEventLoopExit or PostQuitMessage.
+    dispatcherQueueController.DispatcherQueue().RunEventLoop();
+
+    // Run down the DispatcherQueue. 
+    dispatcherQueueController.ShutdownQueue();
+}
+
+// May be called while receiving a message.
+void RunNestedLoop(winrt::DispatcherQueue dispatcherQueue)
+{
+    // Runs a message loop until a call to DispatcherQueue.EnqueueEventLoopExit or PostQuitMessage.
+    dispatcherQueue.RunEventLoop();
+}
+
+// Called to break out of the message loop, returning from the RunEventLoop call lower down the
+// stack.
+void EndMessageLoop(winrt::DispatcherQueue dispatcherQueue)
+{
+    // Alternatively, calling Win32's PostQuitMessage has the same effect.
+    dispatcherQueue.EnqueueEventLoopExit();
+}
+</code></pre>
+<h2 id="system-dispatcher-management">System dispatcher management</h2>
+<p>Some Windows App SDK components (for example, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller">MicaController</a>) depend on system components that in turn require a system <strong>DispatcherQueue</strong> (<strong>Windows.System.DispatcherQueue</strong>) running on the thread.</p>
+<p>In those cases, the component that has a system <strong>DispatcherQueue</strong> dependency calls the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.ensuresystemdispatcherqueue">EnsureSystemDispatcherQueue</a> method, freeing your app from managing a system <strong>DispatcherQueue</strong>.</p>
+<p>With that method called, the Windows App SDK <strong>DispatcherQueue</strong> manages the lifetime of the system <strong>DispatcherQueue</strong> automatically, shutting down the system <strong>DispatcherQueue</strong>
+alongside the Windows App SDK <strong>DispatcherQueue</strong>. Components might rely on both Windows App SDK and system <strong>DispatcherQueue</strong> shutdown events in order to ensure that they do proper cleanup after the message loop exits.</p>
+<pre><code class="lang-cppwinrt">namespace winrt 
+{
+    using namespace Microsoft::UI::Composition::SystemBackdrops;
+    using namespace Microsoft::UI::Dispatching;
+}
+
+// The Windows App SDK component calls this during its startup.
+void MicaControllerInitialize(winrt::DispatcherQueue dispatcherQueue)
+{
+    dispatcherQueue.EnsureSystemDispatcherQueue();
+
+    // If the component needs the system DispatcherQueue explicitly, it can now grab it off the thread.
+    winrt::Windows::System::DispatcherQueue systemDispatcherQueue =
+        winrt::Windows::System::DispatcherQueue::GetForCurrentThread();
+}
+
+void AppInitialize()
+{
+    // App doesn't need to concern itself with the system DispatcherQueue dependency.
+    auto micaController = winrt::MicaController();
+}
+</code></pre>
+<h2 id="appwindow-integration">AppWindow integration</h2>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow">AppWindow</a> class has functionality that integrates it with the <strong>DispatcherQueue</strong>, so that <strong>AppWindow</strong> objects can automatically be destroyed when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueueasync">DispatcherQueueController.ShutdownQueueAsync</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueue">DispatcherQueueController.ShutdownQueue</a> method is called.</p>
+<p>There's also a property of <strong>AppWindow</strong> that allows callers to retrieve the <strong>DispatcherQueue</strong> associated with the <strong>AppWindow</strong>; aligning it with other objects in the <strong>Composition</strong> and <strong>Input</strong> namespaces.</p>
+<p><strong>AppWindow</strong> needs your explicit opt-in in order to be aware of the <strong>DispatcherQueue</strong>.</p>
+<pre><code class="lang-cppwinrt">namespace winrt 
+{
+    using namespace Microsoft::UI::Dispatching;
+    using namespace Microsoft::UI::Windowing;
+}
+
+void Main()
+{
+    // Create a Windows App SDK DispatcherQueue.
+    auto dispatcherQueueController{winrt::DispatcherQueueController::CreateOnCurrentThread()};
+
+    var appWindow = AppWindow.Create(nullptr, 0, dispatcherQueueController.DispatcherQueue());
+
+    // Since we associated the DispatcherQueue above with the AppWindow, we're able to retrieve it 
+    // as a property. If we were to not associate a dispatcher, this property would be null.
+    ASSERT(appWindow.DispatcherQueue() == dispatcherQueueController.DispatcherQueue());
+
+    // Runs a message loop until a call to DispatcherQueue.EnqueueEventLoopExit or PostQuitMessage.
+    dispatcherQueueController.DispatcherQueue().RunEventLoop();
+
+    // Rundown the Windows App SDK DispatcherQueue. While this call is in progress, the AppWindow.Destoyed
+    // event will be raised since the AppWindow instance is associated with the DispatcherQueue.
+    dispatcherQueueController.ShutdownQueue();
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/dispatcherqueue.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

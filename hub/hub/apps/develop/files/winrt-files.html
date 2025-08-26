@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Access files and folders with Windows App SDK and WinRT APIs </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Access files and folders with Windows App SDK and WinRT APIs ">
+    
+    <meta name="description" content="Packaged Windows App SDK apps can leverage WinRT APIs for reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="access-files-and-folders-with-windows-app-sdk-and-winrt-apis">Access files and folders with Windows App SDK and WinRT APIs</h1>
+
+<p>Packaged Windows App SDK apps can leverage <a href="/uwp/api/">WinRT APIs</a> for reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the <a href="/uwp/api/windows.storage">WinRT storage APIs</a> to query files and folders, retrieve file properties, and work with the <strong>Pictures</strong> library.</p>
+<h2 id="query-files-and-folders">Query files and folders</h2>
+<p>The following example shows how to use the <a href="/uwp/api/windows.storage.storagefolder">StorageFolder</a> and <a href="/uwp/api/windows.storage.storagefile">StorageFile</a> APIs to query the <strong>Documents</strong> library for files and folders. The example uses the <code>GetFilesInFolderAsync</code> method to recursively iterate through the folder structure and append the file names to a <code>StringBuilder</code> object.</p>
+<pre><code class="lang-csharp">using System.Text;
+using Windows.Storage;
+...
+private async Task&lt;string&gt; GetDocumentsContentsAsync()
+{
+    StorageFolder docsFolder = KnownFolders.DocumentsLibrary;
+    StringBuilder outputBuilder = new();
+    await GetFilesInFolderAsync(docsFolder, outputBuilder);
+
+    return outputBuilder.ToString();
+}
+
+private async Task GetFilesInFolderAsync(StorageFolder folder, StringBuilder outputBuilder)
+{
+    IReadOnlyList&lt;IStorageItem&gt; storageItem = await folder.GetItemsAsync();
+
+    foreach (var item in storageItem)
+    {
+        if (item is StorageFolder)
+        {
+            await GetFilesInFolderAsync(item as StorageFolder, outputBuilder);
+        }
+        else
+        {
+            outputBuilder.AppendLine($&quot;Found {item.Name} in folder {folder.Name}&quot;);
+        }
+    }
+}
+</code></pre>
+<h2 id="get-basic-file-properties">Get basic file properties</h2>
+<p>The following example takes the <code>GetFilesInFolderAsync</code> method from the previous example and adds the ability to retrieve the file size and date modified for each file. The example uses the <a href="/uwp/api/windows.storage.fileproperties.basicproperties">BasicProperties</a> API to retrieve the file size and date modified for each file, formats the file size, and appends the size and date modified to the <code>StringBuilder</code> object after each file and folder name.</p>
+<pre><code class="lang-csharp">using System.Text;
+using Windows.Storage;
+using Windows.Storage.FileProperties;
+...
+private async Task GetFilesInFolderAsync(StorageFolder folder, StringBuilder outputBuilder)
+{
+    IReadOnlyList&lt;IStorageItem&gt; storageItem = await folder.GetItemsAsync();
+
+    foreach (var item in storageItem)
+    {
+        if (item is StorageFolder)
+        {
+            await GetFilesInFolderAsync(item as StorageFolder, outputBuilder);
+        }
+        else
+        {
+            outputBuilder.AppendLine($&quot;Found {item.Name} in folder {folder.Name}&quot;);
+
+            // Append each file's size and date modified.
+            BasicProperties basicProperties = await item.GetBasicPropertiesAsync();
+            string fileSize = string.Format(&quot;{0:n0}&quot;, basicProperties.Size);
+            outputBuilder.AppendLine($&quot; - File size: {fileSize} bytes&quot;);
+            outputBuilder.AppendLine($&quot; - Date modified: {basicProperties.DateModified}&quot;);
+        }
+    }
+}
+</code></pre>
+<h2 id="working-with-the-pictures-library">Working with the Pictures library</h2>
+<p>In this example, the app is configured to receive notifications when the <strong>Pictures</strong> library is updated. The example uses the <a href="/uwp/api/windows.storage.storagelibrary">StorageLibrary</a> API to retrieve the <strong>Pictures</strong> library and the <a href="/uwp/api/windows.storage.storagelibrary.definitionchanged">DefinitionChanged</a> event to receive notifications when the library is updated. The <code>DefinitionChanged</code> event is invoked when the list of folders in the current library changes. The example uses the library's <code>Folders</code> property to iterate through the folders in the <strong>Pictures</strong> library and writes the folder name to the console.</p>
+<pre><code class="lang-csharp">using Windows.Storage;
+...
+private async Task Configure()
+{
+    StorageLibrary picturesFolder = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Pictures);
+    picturesFolder.DefinitionChanged += picturesFolder_DefinitionChanged;
+}
+private void picturesFolder_DefinitionChanged(StorageLibrary sender, object args)
+{
+    foreach (StorageFolder item in sender.Folders)
+    {
+        Console.WriteLine($&quot;Folder {item.Name} found.&quot;);
+    }
+}
+</code></pre>
+<h2 id="see-also">See also</h2>
+<p><a href="dotnet-files.html">Access files and folders with Windows App SDK and .NET APIs</a></p>
+<p><a href="index.html">Files, folders, and libraries with Windows App SDK</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/files/winrt-files.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

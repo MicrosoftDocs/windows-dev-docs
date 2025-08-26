@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Host a standard WinRT XAML control in a C++ desktop (Win32) app using XAML Islands </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Host a standard WinRT XAML control in a C++ desktop (Win32) app using XAML Islands ">
+    
+    <meta name="description" content="This article demonstrates how to host a standard WinRT XAML control in a C++ desktop (Win32) app by using the XAML Hosting API.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="host-a-standard-winrt-xaml-control-in-a-c-desktop-win32-app">Host a standard WinRT XAML control in a C++ desktop (Win32) app</h1>
+
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This topic uses or mentions types from the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32">CommunityToolkit/Microsoft.Toolkit.Win32</a> GitHub repo. For important info about XAML Islands support, please see the <a href="https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice">XAML Islands Notice</a> in that repo.</p>
+</div>
+<p>This article demonstrates how to use the <a href="using-the-xaml-hosting-api.html">WinRT XAML hosting API</a> to host a standard WinRT XAML control (that is, a control provided by the Windows SDK) in a new C++ desktop app. The code is based on the <a href="https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Standalone_Samples/CppWinRT_Basic_Win32App">simple XAML Island sample</a>, and this section discusses some of the most important parts of the code. If you have an existing C++ desktop app project, you can adapt these steps and code examples for your project.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The scenario demonstrated in this article doesn't support directly editing XAML markup for WinRT XAML controls hosted in your app. This scenario restricts you to modifying the appearance and behavior of hosted controls via code. For instructions that enable you to directly edit XAML markup when hosting WinRT XAML controls, see <a href="host-custom-control-with-xaml-islands-cpp.html">Host a custom WinRT XAML control in a C++ desktop app</a>.</p>
+</div>
+<h2 id="create-a-desktop-application-project">Create a desktop application project</h2>
+<ol>
+<li><p>In Visual Studio 2019 with the Windows 10, version 1903 SDK (build 10.0.18362) or a later release installed, create a new <strong>Windows Desktop Application</strong> project and name it <strong>MyDesktopWin32App</strong>. This project type is available under the <strong>C++</strong>, <strong>Windows</strong>, and <strong>Desktop</strong> project filters.</p>
+</li>
+<li><p>In <strong>Solution Explorer</strong>, right-click the solution node, click <strong>Retarget solution</strong>, select the <strong>10.0.18362.0</strong> or a later SDK release, and then click <strong>OK</strong>.</p>
+</li>
+<li><p>Install the <a href="https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/">Microsoft.Windows.CppWinRT</a> NuGet package to enable support for <a href="/windows/uwp/cpp-and-winrt-apis">C++/WinRT</a> in your project:</p>
+<ol>
+<li>Right-click your project in <strong>Solution Explorer</strong> and choose <strong>Manage NuGet Packages</strong>.</li>
+<li>Select the <strong>Browse</strong> tab, search for the <a href="https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/">Microsoft.Windows.CppWinRT</a> package, and install the latest version of this package.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For new projects, you can alternatively install the <a href="https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264">C++/WinRT Visual Studio Extension (VSIX)</a> and use one of the C++/WinRT project templates included in that extension. For more details, see <a href="/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package">Visual Studio support for C++/WinRT, and the VSIX</a>.</p>
+</div>
+</li>
+<li><p>On the <strong>Browse</strong> tab of the <strong>NuGet Package Manager</strong> window, search for the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Win32.UI.SDK">Microsoft.Toolkit.Win32.UI.SDK</a> NuGet package and install the latest stable version of this package. This package provides several build and run time assets that enable XAML Islands to work in your app.</p>
+</li>
+<li><p>Set the <code>maxversiontested</code> value in your <a href="/windows/desktop/SbsCs/application-manifests">application manifest</a> to specify that your application is compatible with Windows 10, version 1903.</p>
+<ol>
+<li><p>If you don't already have an application manifest in your project, add a new XML file to your project and name it <strong>app.manifest</strong>.</p>
+</li>
+<li><p>In your application manifest, include the <strong>compatibility</strong> element and the child elements shown in the following example. Replace the <strong>Id</strong> attribute of the <strong>maxversiontested</strong> element with the version number of Windows you are targeting (this must be 10.0.18362.0 or a later release). Note that setting a higher value means older versions of Windows won't run the app properly because every Windows release only knows of versions before it. If you want the app to run on Windows 10, version 1903 (build 10.0.18362), you should either leave the 10.0.18362.0 value as is, or add multiple <strong>maxversiontested</strong> elements for the different values the app supports.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;assembly xmlns=&quot;urn:schemas-microsoft-com:asm.v1&quot; manifestVersion=&quot;1.0&quot;&gt;
+    &lt;compatibility xmlns=&quot;urn:schemas-microsoft-com:compatibility.v1&quot;&gt;
+        &lt;application&gt;
+            &lt;!-- Windows 10 --&gt;
+            &lt;maxversiontested Id=&quot;10.0.18362.0&quot;/&gt;
+            &lt;supportedOS Id=&quot;{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}&quot; /&gt;
+        &lt;/application&gt;
+    &lt;/compatibility&gt;
+&lt;/assembly&gt;
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>Add a reference to the Windows Runtime metadata:</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click on your project <strong>References</strong> node and select <strong>Add Reference</strong>.</li>
+<li>Click the <strong>Browse</strong> button at the bottom of the page and navigate to the UnionMetadata folder in your SDK install path. By default the SDK will be installed to <code>C:\Program Files (x86)\Windows Kits\10\UnionMetadata</code>.</li>
+<li>Then, select the folder named after the Windows version you are targeting (e.g. 10.0.18362.0) and inside of that folder pick the <code>Windows.winmd</code> file.</li>
+<li>Click <strong>OK</strong> to close the <strong>Add Reference</strong> dialog.</li>
+</ol>
+</li>
+</ol>
+<h2 id="use-the-xaml-hosting-api-to-host-a-winrt-xaml-control">Use the XAML hosting API to host a WinRT XAML control</h2>
+<p>The basic process of using the XAML hosting API to host a WinRT XAML control follows these general steps:</p>
+<ol>
+<li><p>Initialize the WinRT XAML framework for the current thread before your app creates any of the <a href="/uwp/api/windows.ui.xaml.uielement">Windows.UI.Xaml.UIElement</a> objects that it will host. There are several ways to do this, depending on when you plan to create the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> object that will host the controls.</p>
+<ul>
+<li><p>If your application creates the <strong>DesktopWindowXamlSource</strong> object before it creates any of the <strong>Windows.UI.Xaml.UIElement</strong> objects that it will host, this framework will be initialized for you when you instantiate the <strong>DesktopWindowXamlSource</strong> object. In this scenario, you don't need to add any code of your own to initialize the framework.</p>
+</li>
+<li><p>However, if your application creates the <strong>Windows.UI.Xaml.UIElement</strong> objects before it creates the <strong>DesktopWindowXamlSource</strong> object that will host them, your application must call the static <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager.initializeforcurrentthread">WindowsXamlManager.InitializeForCurrentThread</a> method to explicitly initialize the WinRT XAML framework before the <strong>Windows.UI.Xaml.UIElement</strong> objects are instantiated. Your application should typically call this method when the parent UI element that hosts the <strong>DesktopWindowXamlSource</strong> is instantiated.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This method returns a <a href="/uwp/api/windows.ui.xaml.hosting.windowsxamlmanager">WindowsXamlManager</a> object that contains a reference to the WinRT XAML framework. You can create as many <strong>WindowsXamlManager</strong> objects as you want on a given thread. However, because each object holds a reference to the WinRT XAML framework, you should dispose the objects to ensure that XAML resources are eventually released.</p>
+</div>
+</li>
+<li><p>Create a <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> object and attach it to a parent UI element in your application that is associated with a window handle.</p>
+<p>To do this, you'll need to follow these steps:</p>
+<ol>
+<li><p>Create a <strong>DesktopWindowXamlSource</strong> object and cast it to the <a href="/windows/win32/api/windows.ui.xaml.hosting.desktopwindowxamlsource/nn-windows-ui-xaml-hosting-desktopwindowxamlsource-idesktopwindowxamlsourcenative">IDesktopWindowXamlSourceNative</a> or <a href="/windows/win32/api/windows.ui.xaml.hosting.desktopwindowxamlsource/nn-windows-ui-xaml-hosting-desktopwindowxamlsource-idesktopwindowxamlsourcenative2">IDesktopWindowXamlSourceNative2</a> COM interface.</p>
+</li>
+<li><p>Call the <a href="/windows/win32/api/windows.ui.xaml.hosting.desktopwindowxamlsource/nf-windows-ui-xaml-hosting-desktopwindowxamlsource-idesktopwindowxamlsourcenative-attachtowindow">AttachToWindow</a> method of the <strong>IDesktopWindowXamlSourceNative</strong> or <strong>IDesktopWindowXamlSourceNative2</strong> interface, and pass in the window handle of the parent UI element in your application.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Make sure that your code calls the <strong>AttachToWindow</strong> method only once per <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource">DesktopWindowXamlSource</a> object. Calling this method more than once for a <strong>DesktopWindowXamlSource</strong> object could result in a memory leak.</p>
+</div>
+</li>
+<li><p>Set the initial size of the internal child window contained in the <strong>DesktopWindowXamlSource</strong>. By default, this internal child window is set to a width and height of 0. If you don't set the size of the window, any WinRT XAML controls you add to the <strong>DesktopWindowXamlSource</strong> will not be visible. To access the internal child window in the <strong>DesktopWindowXamlSource</strong>, use the <strong>WindowHandle</strong> property of the <strong>IDesktopWindowXamlSourceNative</strong> or <strong>IDesktopWindowXamlSourceNative2</strong> interface.</p>
+</li>
+</ol>
+</li>
+<li><p>Finally, assign the <strong>Windows.UI.Xaml.UIElement</strong> you want to host to the <a href="/uwp/api/windows.ui.xaml.hosting.desktopwindowxamlsource.content">Content</a> property of your <strong>DesktopWindowXamlSource</strong> object.</p>
+</li>
+</ol>
+<p>The following steps and code examples demonstrate how to do implement the above process:</p>
+<ol>
+<li><p>In the <strong>Source Files</strong> folder of the project, open the default <strong>MyDesktopWin32App.cpp</strong> file. Delete the entire contents of the file and add the following <code>include</code> and <code>using</code> statements. In addition to standard C++ and UWP headers and namespaces, these statements include several items specific to XAML Islands.</p>
+<pre><code class="lang-cppwinrt">#include &lt;windows.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+#include &lt;winrt/Windows.Foundation.Collections.h&gt;
+#include &lt;winrt/Windows.system.h&gt;
+#include &lt;winrt/windows.ui.xaml.hosting.h&gt;
+#include &lt;windows.ui.xaml.hosting.desktopwindowxamlsource.h&gt;
+#include &lt;winrt/windows.ui.xaml.controls.h&gt;
+#include &lt;winrt/Windows.ui.xaml.media.h&gt;
+
+using namespace winrt;
+using namespace Windows::UI;
+using namespace Windows::UI::Composition;
+using namespace Windows::UI::Xaml::Hosting;
+using namespace Windows::Foundation::Numerics;
+</code></pre>
+</li>
+<li><p>Copy the following code after the previous section. This code defines the <strong>WinMain</strong> function for the app. This function initializes a basic window and uses the XAML hosting API to host a simple UWP <strong>TextBlock</strong> control in the window.</p>
+<pre><code class="lang-cppwinrt">LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
+
+HWND _hWnd;
+HWND _childhWnd;
+HINSTANCE _hInstance;
+
+int CALLBACK WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nCmdShow)
+{
+    _hInstance = hInstance;
+
+    // The main window class name.
+    const wchar_t szWindowClass[] = L&quot;Win32DesktopApp&quot;;
+    WNDCLASSEX windowClass = { };
+
+    windowClass.cbSize = sizeof(WNDCLASSEX);
+    windowClass.lpfnWndProc = WindowProc;
+    windowClass.hInstance = hInstance;
+    windowClass.lpszClassName = szWindowClass;
+    windowClass.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+
+    windowClass.hIconSm = LoadIcon(windowClass.hInstance, IDI_APPLICATION);
+
+    if (RegisterClassEx(&amp;windowClass) == NULL)
+    {
+        MessageBox(NULL, L&quot;Windows registration failed!&quot;, L&quot;Error&quot;, NULL);
+        return 0;
+    }
+
+    _hWnd = CreateWindow(
+        szWindowClass,
+        L&quot;Windows c++ Win32 Desktop App&quot;,
+        WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+        CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+        NULL,
+        NULL,
+        hInstance,
+        NULL
+    );
+    if (_hWnd == NULL)
+    {
+        MessageBox(NULL, L&quot;Call to CreateWindow failed!&quot;, L&quot;Error&quot;, NULL);
+        return 0;
+    }
+
+
+    // Begin XAML Island section.
+
+    // The call to winrt::init_apartment initializes COM; by default, in a multithreaded apartment.
+    winrt::init_apartment(apartment_type::single_threaded);
+
+    // Initialize the XAML framework's core window for the current thread.
+    WindowsXamlManager winxamlmanager = WindowsXamlManager::InitializeForCurrentThread();
+
+    // This DesktopWindowXamlSource is the object that enables a non-UWP desktop application 
+    // to host WinRT XAML controls in any UI element that is associated with a window handle (HWND).
+    DesktopWindowXamlSource desktopSource;
+
+    // Get handle to the core window.
+    auto interop = desktopSource.as&lt;IDesktopWindowXamlSourceNative&gt;();
+
+    // Parent the DesktopWindowXamlSource object to the current window.
+    check_hresult(interop-&gt;AttachToWindow(_hWnd));
+
+    // This HWND will be the window handler for the XAML Island: A child window that contains XAML.  
+    HWND hWndXamlIsland = nullptr;
+
+    // Get the new child window's HWND. 
+    interop-&gt;get_WindowHandle(&amp;hWndXamlIsland);
+
+    // Update the XAML Island window size because initially it is 0,0.
+    SetWindowPos(hWndXamlIsland, 0, 200, 100, 800, 200, SWP_SHOWWINDOW);
+
+    // Create the XAML content.
+    Windows::UI::Xaml::Controls::StackPanel xamlContainer;
+    xamlContainer.Background(Windows::UI::Xaml::Media::SolidColorBrush{ Windows::UI::Colors::LightGray() });
+
+    Windows::UI::Xaml::Controls::TextBlock tb;
+    tb.Text(L&quot;Hello World from Xaml Islands!&quot;);
+    tb.VerticalAlignment(Windows::UI::Xaml::VerticalAlignment::Center);
+    tb.HorizontalAlignment(Windows::UI::Xaml::HorizontalAlignment::Center);
+    tb.FontSize(48);
+
+    xamlContainer.Children().Append(tb);
+    xamlContainer.UpdateLayout();
+    desktopSource.Content(xamlContainer);
+
+    // End XAML Island section.
+
+    ShowWindow(_hWnd, nCmdShow);
+    UpdateWindow(_hWnd);
+
+    //Message loop:
+    MSG msg = { };
+    while (GetMessage(&amp;msg, NULL, 0, 0))
+    {
+        TranslateMessage(&amp;msg);
+        DispatchMessage(&amp;msg);
+    }
+
+    return 0;
+}
+</code></pre>
+</li>
+<li><p>Copy the following code after the previous section. This code defines the <a href="/windows/win32/learnwin32/writing-the-window-procedure">window procedure</a> for the window.</p>
+<pre><code class="lang-cppwinrt">LRESULT CALLBACK WindowProc(HWND hWnd, UINT messageCode, WPARAM wParam, LPARAM lParam)
+{
+    PAINTSTRUCT ps;
+    HDC hdc;
+    wchar_t greeting[] = L&quot;Hello World in Win32!&quot;;
+    RECT rcClient;
+
+    switch (messageCode)
+    {
+        case WM_PAINT:
+            if (hWnd == _hWnd)
+            {
+                hdc = BeginPaint(hWnd, &amp;ps);
+                TextOut(hdc, 300, 5, greeting, wcslen(greeting));
+                EndPaint(hWnd, &amp;ps);
+            }
+            break;
+        case WM_DESTROY:
+            PostQuitMessage(0);
+            break;
+
+        // Create main window
+        case WM_CREATE:
+            _childhWnd = CreateWindowEx(0, L&quot;ChildWClass&quot;, NULL, WS_CHILD | WS_BORDER, 0, 0, 0, 0, hWnd, NULL, _hInstance, NULL);
+            return 0;
+
+        // Main window changed size
+        case WM_SIZE:
+            // Get the dimensions of the main window's client
+            // area, and enumerate the child windows. Pass the
+            // dimensions to the child windows during enumeration.
+            GetClientRect(hWnd, &amp;rcClient);
+            MoveWindow(_childhWnd, 200, 200, 400, 500, TRUE);
+            ShowWindow(_childhWnd, SW_SHOW);
+
+            return 0;
+
+            // Process other messages.
+
+        default:
+            return DefWindowProc(hWnd, messageCode, wParam, lParam);
+            break;
+    }
+
+    return 0;
+}
+</code></pre>
+</li>
+<li><p>Save the code file, and build and run the app. Confirm that you see the UWP <strong>TextBlock</strong> control in the app window.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may see the several build warnings, including <code>warning C4002:  too many arguments for function-like macro invocation 'GetCurrentTime'</code> and <code>manifest authoring warning 81010002: Unrecognized Element &quot;maxversiontested&quot; in namespace &quot;urn:schemas-microsoft-com:compatibility.v1&quot;</code>. These warnings are known issues with the current tools and NuGet packages, and they can be ignored.</p>
+</div>
+</li>
+</ol>
+<p>For complete examples that demonstrate using the XAML hosting API to host a WinRT XAML control, see the following code files:</p>
+<ul>
+<li><strong>C++ desktop (Win32):</strong> See the <a href="https://github.com/microsoft/Xaml-Islands-Samples/blob/master/Standalone_Samples/Contoso/App/XamlBridge.cpp">XamlBridge.cpp</a> file in the <a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands code samples repo</a>.</li>
+<li><strong>WPF:</strong> See the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHostBase.cs">WindowsXamlHostBase.cs</a> and  <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Wpf.UI.XamlHost/WindowsXamlHost.cs">WindowsXamlHost.cs</a> files in the Windows Community Toolkit.</li>
+<li><strong>Windows Forms:</strong> See the <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHostBase.cs">WindowsXamlHostBase.cs</a> and  <a href="https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/blob/master/Microsoft.Toolkit.Forms.UI.XamlHost/WindowsXamlHost.cs">WindowsXamlHost.cs</a> files in the Windows Community Toolkit.</li>
+</ul>
+<h2 id="package-the-app">Package the app</h2>
+<p>You can optionally package the app in an <a href="/windows/msix">MSIX package</a> for deployment. MSIX is the modern app packaging technology for Windows, and it is based on a combination of MSI, .appx, App-V and ClickOnce installation technologies.</p>
+<p>The following instructions show you how to package the all the components in the solution in an MSIX package by using the <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> in Visual Studio 2019. These steps are necessary only if you want to package the app in an MSIX package.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose to not package your application in an <a href="/windows/msix">MSIX package</a> for deployment, then computers that run your app must have the <a href="https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads">Visual C++ Runtime</a> installed.</p>
+</div>
+<ol>
+<li><p>Add a new <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> to your solution. As you create the project, select <strong>Windows 10, version 1903 (10.0; Build 18362)</strong> for both the <strong>Target version</strong> and <strong>Minimum version</strong>.</p>
+</li>
+<li><p>In the packaging project, right-click the <strong>Applications</strong> node and choose <strong>Add reference</strong>. In the list of projects, select the C++ desktop application project in your solution and click <strong>OK</strong>.</p>
+</li>
+<li><p>Build and run the packaging project. Confirm that the app runs and displays the WinRT XAML controls as expected.</p>
+</li>
+<li><p>For info about distributing/deploying the package, see <a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a>.</p>
+</li>
+</ol>
+<h2 id="next-steps">Next steps</h2>
+<p>The code examples in this article get you started with the basic scenario of hosting a standard WinRT XAML control in a C++ desktop app. The following sections introduce additional scenarios that your application may need to support.</p>
+<h3 id="host-a-custom-winrt-xaml-control">Host a custom WinRT XAML control</h3>
+<p>For many scenarios, you may need to host a custom WinRT XAML control that contains several individual controls that work together. The process for hosting a custom control (either a control you define yourself or a control provided by a 3rd party) in a C++ desktop app is more complex than hosting a standard control, and requires additional code.</p>
+<p>For a complete walkthrough, see <a href="host-custom-control-with-xaml-islands-cpp.html">Host a custom WinRT XAML control in a C++ desktop app using the XAML Hosting API</a>.</p>
+<h3 id="advanced-scenarios">Advanced scenarios</h3>
+<p>Many desktop applications that host XAML Islands will need to handle additional scenarios in order to provide a smooth user experience. For example, desktop applications may need to handle keyboard input in XAML Islands, focus navigation between XAML Islands and other UI elements, and layout changes.</p>
+<p>For more information about handling these scenarios and pointers to related code samples, see <a href="advanced-scenarios-xaml-islands-cpp.html">Advanced scenarios for XAML Islands in C++ desktop apps</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="xaml-islands.html">Host WinRT XAML controls in desktop apps (XAML Islands)</a></li>
+<li><a href="using-the-xaml-hosting-api.html">Using the WinRT XAML hosting API in a C++ desktop app</a></li>
+<li><a href="host-custom-control-with-xaml-islands-cpp.html">Host a custom WinRT XAML control in a C++ desktop app</a></li>
+<li><a href="advanced-scenarios-xaml-islands-cpp.html">Advanced scenarios for XAML Islands in C++ desktop apps</a></li>
+<li><a href="https://github.com/microsoft/Xaml-Islands-Samples">XAML Islands code samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

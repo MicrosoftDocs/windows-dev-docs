@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>WinUI 3 templates in Visual Studio </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="WinUI 3 templates in Visual Studio ">
+    
+    <meta name="description" content="Once you&#39;ve set up your development computer, you&#39;re ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="winui-3-templates-in-visual-studio">WinUI 3 templates in Visual Studio</h1>
+
+<p>Once you've set up your development computer (see <a href="../../get-started/start-here.html">Start developing Windows apps</a>), you're ready to create a WinUI 3 app by starting from one of the WinUI 3 project templates in Visual Studio. This topic describes the available project and item templates.</p>
+<p>To access the WinUI 3 project templates, in the <strong>New Project</strong> dialog's drop-down filters, select <strong>C#</strong>/<strong>C++</strong>, <strong>Windows</strong>, and <strong>WinUI</strong>, respectively. Alternatively, you can search for <em>WinUI</em>, and select one of the available C# or C++ templates.</p>
+<p><img src="images/WinUI3-csharp-newproject-1.0-later.png" alt="WinUI project templates"></p>
+<h2 id="project-templates-for-winui-3">Project templates for WinUI 3</h2>
+<p>You can use these WinUI 3 project templates to start creating an app.</p>
+<h3 id="blank-app-packaged-winui-3-in-desktop">Blank App, Packaged (WinUI 3 in Desktop)</h3>
+<p>This project template creates a desktop .NET (C#) or native Win32 (C++) app with a WinUI 3-based user interface. The generated project includes a basic window that derives from the <strong>Microsoft.UI.Xaml.Window</strong> class in the WinUI 3 library that you can use to start building your UI. For more information about using this project template, see <a href="create-your-first-winui3-app.html">Create your first WinUI 3 project</a>.</p>
+<p>The features of this project template vary between <a href="../../windows-app-sdk/downloads.html">versions of the Windows App SDK extension</a>.</p>
+<ul>
+<li><p><strong>Version 1.0 Preview 2:</strong> Starting with this release, this project template generates an application project with the package manifest and other support needed to build the app into an <a href="/windows/msix/overview">MSIX package</a> without the use of a separate packaging project. To use this project template, you must also install the <a href="../../windows-app-sdk/single-project-msix.html">single-project MSIX packaging tools extension for Visual Studio</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In version 1.0 Preview 2 and later releases, this project template only supports a single executable in the generated MSIX package. If you need to combine multiple executables into a single MSIX package, then you'll need to use the <strong>Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)</strong> project template, or add a Windows Application Packaging Project to your solution.</p>
+</div>
+</li>
+<li><p><strong>Version 1.0 Preview 1 and earlier:</strong> In these releases, this project template generates a solution with a separate <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>. You can optionally install the <a href="../../windows-app-sdk/single-project-msix.html">single-project MSIX packaging tools extension for Visual Studio</a> and combine the packaging project settings into your application project so you no longer need to maintain a separate packaging project.</p>
+</li>
+</ul>
+<h3 id="blank-app-packaged-with-windows-application-packaging-project-winui-3-in-desktop">Blank App, Packaged with Windows Application Packaging Project (WinUI 3 in Desktop)</h3>
+<p>This project template is available in <a href="../../windows-app-sdk/downloads.html">version 1.0 Preview 1 and later releases</a>. It creates a desktop .NET (C#) or native Win32 (C++) app with a WinUI 3-based user interface. The generated project includes a basic window that derives from the <strong>Microsoft.UI.Xaml.Window</strong> class in the WinUI 3 library that you can use to start building your UI. For more info about using this project template, see <a href="create-your-first-winui3-app.html">Create your first WinUI 3 project</a>.</p>
+<p>The solution also includes a separate <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Windows Application Packaging Project</a> that is configured to build the app into an <a href="/windows/msix/overview">MSIX package</a>. You can optionally install the <a href="../../windows-app-sdk/single-project-msix.html">single-project MSIX packaging tools extension for Visual Studio</a> and combine the packaging project settings into your application project so you no longer need to maintain a separate packaging project.</p>
+<h3 id="experimental-blank-app-winui-3-in-uwp">[Experimental] Blank App (WinUI 3 in UWP)</h3>
+<p>This project template creates a C# or C++ UWP app that with a WinUI 3-based user interface. The generated project includes a basic page that derives from the <strong>Microsoft.UI.Xaml.Controls.Page</strong> class in the WinUI 3 library, which you can use to start building your UI. For more information about this project template, see <a href="create-your-first-winui3-app.html">Create your first WinUI 3 app</a>.</p>
+<h3 id="winui-project-templates-for-other-components">WinUI project templates for other components</h3>
+<p>You can use these WinUI 3 project templates to build components that can be loaded and used by a WinUI 3-based app.</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Language</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Class Library (WinUI 3 in Desktop)</td>
+<td>C# only</td>
+<td>Creates a .NET managed class library (DLL) in C# that can be used by other .NET desktop apps with a WinUI 3-based user interface.</td>
+</tr>
+<tr>
+<td>[Experimental] Class Library (WinUI 3 in UWP)</td>
+<td>C# only</td>
+<td>Creates a managed class library (DLL) in C# that can be used by other UWP apps with a WinUI 3-based user interface.</td>
+</tr>
+<tr>
+<td>Windows Runtime Component (WinUI 3)</td>
+<td>C++</td>
+<td>Creates a <a href="/windows/uwp/winrt-components/">Windows Runtime component</a> written in C++/WinRT that can be consumed by any UWP or desktop app with a WinUI 3-based user interface, regardless of the programming language in which the app is written.</td>
+</tr>
+<tr>
+<td>[Experimental] Windows Runtime Component (WinUI 3 in UWP)</td>
+<td>C#</td>
+<td>Creates a <a href="/windows/uwp/winrt-components/">Windows Runtime component</a> written in C# that can be consumed by any UWP app with a WinUI 3-based user interface, regardless of the programming language in which the app is written.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="item-templates-for-winui-3">Item templates for WinUI 3</h2>
+<p>The following item templates are available for use in a WinUI 3 project. To access these WinUI 3 item templates, right-click the project node in <strong>Solution Explorer</strong>, select <strong>Add</strong> -&gt; <strong>New item</strong>, and click <strong>WinUI</strong> in the <strong>Add New Item</strong> dialog.</p>
+<p><img src="images/winui3-addnewitem.png" alt="WinUI item templates"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have the <a href="../../windows-app-sdk/experimental-channel.html">experimental channel</a> or an older preview release of the Windows App SDK installed, you may see a second set of Item Templates that have the [Experimental] prefix. We recommend that you use those [Experimental] item templates if you're building a non-production/preview app, and use the stable, non-marked item templates if you're building a production desktop app.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Language</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blank Page (WinUI 3)</td>
+<td>C# and C++</td>
+<td>Adds a XAML file and code file that defines a new page derived from the <strong>Microsoft.UI.Xaml.Controls.Page</strong> class in the WinUI 3 library.</td>
+</tr>
+<tr>
+<td>Blank Window (WinUI 3 in Desktop)</td>
+<td>C# and C++</td>
+<td>Adds a XAML file and code file that defines a new window derived from the <strong>Microsoft.UI.Xaml.Window</strong> class in the WinUI 3 library.</td>
+</tr>
+<tr>
+<td>Custom Control (WinUI 3)</td>
+<td>C# and C++</td>
+<td>Adds a code file for creating a templated control with a default style. The templated control is derived from the <strong>Microsoft.UI.Xaml.Controls.Control</strong> class in the WinUI 3 library.<p></p>For a walkthrough that demonstrates how to use this item template, see <a href="xaml-templated-controls-cppwinrt-winui-3.html">Templated XAML controls for UWP and WinUI 3 apps with C++/WinRT</a> and <a href="xaml-templated-controls-csharp-winui-3.html">Templated XAML controls for UWP and WinUI 3 apps with C#</a>. For more information about templated controls, see <a href="/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls">Custom XAML Controls</a>.</td>
+</tr>
+<tr>
+<td>Resource Dictionary (WinUI 3)</td>
+<td>C# and C++</td>
+<td>Adds an empty, keyed collection of XAML resources. For more information, see <a href="../../develop/platform/xaml/xaml-resource-dictionary.html">ResourceDictionary and XAML resource references</a>.</td>
+</tr>
+<tr>
+<td>Resources File (WinUI 3)</td>
+<td>C# and C++</td>
+<td>Adds a file for storing string and conditional resources for your app. You can use this item to help localize your app. For more info, see <a href="/windows/uwp/app-resources/localize-strings-ui-manifest">Localize strings in your UI and app package manifest</a>.</td>
+</tr>
+<tr>
+<td>User Control (WinUI 3)</td>
+<td>C# and C++</td>
+<td>Adds a XAML file and code file for creating a user control that derives from the <strong>Microsoft.UI.Xaml.Controls.UserControl</strong> class in the WinUI 3 library. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see <a href="/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls">Custom XAML Controls</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../windows-app-sdk/index.html">Windows App SDK</a></li>
+<li><a href="../../get-started/start-here.html">Start developing Windows apps</a></li>
+<li><a href="../../windows-app-sdk/stable-channel.html">Stable release channel for the Windows App SDK</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples">Windows App SDK Samples</a></li>
+<li><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Templates">Windows App SDK Sample Templates</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/winui-project-templates-in-visual-studio.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

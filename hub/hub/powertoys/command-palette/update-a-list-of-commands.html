@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Update a list of commands </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Update a list of commands ">
+    
+    <meta name="description" content="Learn how to update the elements in your Command Palette extension.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="update-a-list-of-commands">Update a list of commands</h1>
+
+<p><strong>Previous</strong>: <a href="adding-commands.html">Adding commands</a>.</p>
+<p>So far we've shown how to return a list of static items in your extension. However, your items can also change, to show real-time data, or to reflect the state of the system. In this article, we'll show you how to update the list of commands in your extension.</p>
+<p>Almost all extension objects in the Command Palette implement the <strong>IPropChanged</strong> interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. By creating your extension via the Command Palette, you are using the <a href="/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit">toolkit</a> implementations, this interface has already been implemented for you for properties that support it.</p>
+<h2 id="updating-title-of-page">Updating Title of Page</h2>
+<p>To demonstrate the implement the <strong>IPropChanged</strong> interface, you can update the title of the page.</p>
+<ol>
+<li>In your <code>&lt;ExtensionName&gt;Page.cs</code>, replace the <code>GetItems()</code>.</li>
+</ol>
+<pre><code class="lang-csharp">public override IListItem[] GetItems()
+{
+    OpenUrlCommand command = new(&quot;https://learn.microsoft.com/windows/powertoys/command-palette/creating-an-extension&quot;);
+
+    AnonymousCommand updateCommand = new(action: () =&gt; { Title += &quot; Hello&quot;; }) { Result = CommandResult.KeepOpen() };
+
+    return [
+        new ListItem(command)
+        {
+            Title = &quot;Open the Command Palette documentation&quot;,
+        },
+        new ListItem(updateCommand),
+    ];
+}
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In command palette, <code>Reload</code></li>
+</ol>
+<p><img src="../../images/command-palette/update-page-title.png" alt="Screenshot of extension updating page title"></p>
+<p>Here, we're using <code>AnonymousCommand</code> to create a command that will update the title of the page. <code>AnonymousCommand</code> is a helper that's useful for creating simple, lightweight commands that don't need to be reused.</p>
+<h2 id="updating-subtitle-of-page">Updating Subtitle of Page</h2>
+<p>You can create custom <strong>ListItem</strong> objects too:</p>
+<ol>
+<li>In the <code>Pages</code> folder, create a new class called <code>IncrementingListItem</code></li>
+<li>Update the code to:</li>
+</ol>
+<pre><code class="lang-csharp">internal sealed partial class IncrementingListItem : ListItem
+{
+    public IncrementingListItem() :
+        base(new NoOpCommand())
+    {
+        Command = new AnonymousCommand(action: Increment) { Result = CommandResult.KeepOpen() };
+        Title = &quot;Increment&quot;;
+    }
+
+    private void Increment()
+    {
+        Subtitle = $&quot;Count = {++_count}&quot;;
+    }
+
+    private int _count;
+}
+</code></pre>
+<ol>
+<li>In <code>&lt;ExtensionName&gt;Page.cs</code>, add new command to ListItem:</li>
+</ol>
+<pre><code class="lang-diff">    public override IListItem[] GetItems()
+    {
+        OpenUrlCommand command = new(&quot;https://learn.microsoft.com/windows/powertoys/command-palette/creating-an-extension&quot;);
+        return [
+            new ListItem(command)
+            {
+                Title = &quot;Open the Command Palette documentation&quot;,
+            },
+            new ListItem(new ShowMessageCommand()),
+            new ListItem(updateCommand),
++           new IncrementingListItem(),
+        ];
+    }
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In command palette, <code>Reload</code></li>
+</ol>
+<p>You're on your way to creating your own idle clicker game, as a Command Palette extension.</p>
+<h2 id="updating-the-list-of-commands">Updating the list of commands</h2>
+<p>You can also change the list of items on the page. This can be useful for pages that load results asynchronously, or for pages that show different commands based on the state of the app.</p>
+<p>To do this, you can use the <code>RaiseItemsChanged</code> method on the <code>ListPage</code> object. This will notify the Command Palette that the list of items has changed, and it should re-fetch the list of items.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If working from prior section, do not create a new <code>IncrementingListItem.cs</code> class, use your existing one.</p>
+</div>
+<ol>
+<li>In the <code>Pages</code> folder, create a new class called <code>IncrementingListItem</code></li>
+<li>Update the code to:</li>
+</ol>
+<pre><code class="lang-csharp">using &lt;ExtensionName&gt;
+
+internal sealed partial class IncrementingListItem : ListItem
+{
+    public IncrementingListItem(&lt;ExtensionName&gt;Page page) :
+        base(new NoOpCommand())
+    {
+        _page = page;
+        Command = new AnonymousCommand(action: _page.Increment) { Result = CommandResult.KeepOpen() };
+        Title = &quot;Increment&quot;;
+    }
+
+    private &lt;ExtensionName&gt;Page _page;
+}
+</code></pre>
+<ol>
+<li>In <code>&lt;ExtensionName&gt;Page.cs</code>, replace code inside of the class:</li>
+</ol>
+<pre><code class="lang-cs">public &lt;ExtensionName&gt;Page()
+{
+    Icon = IconHelpers.FromRelativePath(&quot;Assets\\StoreLogo.png&quot;);
+    Title = &quot;My sample extension&quot;;
+    Name = &quot;Open&quot;;
+
+    _items = [new IncrementingListItem(this) { Subtitle = $&quot;Item 0&quot; }]; 
+}
+public override IListItem[] GetItems()
+{
+    return _items.ToArray();
+}
+internal void Increment()
+{
+    _items.Add(new IncrementingListItem(this) { Subtitle = $&quot;Item {_items.Count}&quot; });
+    RaiseItemsChanged();
+}
+private List&lt;ListItem&gt; _items;
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p>Now, every time you perform one of the <code>IncrementingListItem</code> commands, the list of items on the page will update to add another item. We're using a single <strong>List</strong> owned by the page to own all the items. Notably, we're creating the new items in the <code>Increment</code> method, before calling <code>RaiseItemsChanged</code>. The <strong>Invoke</strong> of a <strong>InvokableCommand</strong> can take as long as you'd like. All your code is running in a separate process from the Command Palette, so you won't block the UI. But constructing the items before calling <code>RaiseItemsChanged</code> will help keep your extension <em>feeling</em> more responsive.</p>
+<h2 id="showing-a-loading-spinner">Showing a loading spinner</h2>
+<p>Everything so far has been pretty instantaneous. Many extensions however may need to do some work that takes a lot longer. In that case, you can set <code>Page.IsLoading</code> to <code>true</code> to show a loading spinner. This will help indicate that the extension is doing something in the background.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The following section builds on top of <strong>Updating the list of command</strong> section above</p>
+</div>
+<ol>
+<li>In your <code>&lt;ExtensionName&gt;Page.cs</code>, replace the <code>Increment()</code>.</li>
+</ol>
+<pre><code class="lang-csharp">using System.Threading;
+
+...
+
+internal void Increment()
+{
+    this.IsLoading = true;
+    Task.Run(() =&gt;
+    {
+        Thread.Sleep(5000);
+        _items.Add(new IncrementingListItem(this) { Subtitle = $&quot;Item {_items.Count}&quot; });
+        RaiseItemsChanged();
+        this.IsLoading = false;
+    });
+}
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p>Best practice is to set <code>IsLoading</code> to <code>true</code> before starting the work. Then do all the work to build all the new <code>ListItems</code> you need to display to the user. Then, once the items are ready, call <code>RaiseItemsChanged</code> and set <code>IsLoading</code> back to <code>false</code>. This will ensure that the loading spinner is shown for the entire duration of the work, and that the UI is updated as soon as the work is done (without waiting for your extension to construct new <code>ListItem</code> objects).</p>
+<h3 id="next-up-add-top-level-commands-to-your-extension">Next up: <a href="add-top-level-commands-to-your-extension.html">Add top-level commands to your extension</a></h3>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+<li><a href="extensibility-overview.html">Extensibility overview</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/update-a-list-of-commands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

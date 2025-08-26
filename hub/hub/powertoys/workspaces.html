@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>PowerToys Workspaces Utility for Windows Desktop Management </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="PowerToys Workspaces Utility for Windows Desktop Management ">
+    
+    <meta name="description" content="Learn how to use PowerToys Workspaces utility to efficiently launch applications in custom positions and configurations. Create desktop layouts, add CLI arguments, and manage workspaces with this Windows desktop manager tool.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="workspaces-utility-for-windows-desktop-management">Workspaces utility for Windows desktop management</h1>
+
+<p>PowerToys Workspaces is a desktop manager utility that helps you launch applications to custom positions and configurations with a single click. This Windows desktop management tool gets you into your ideal desktop state for any project or activity faster. You can capture your desktop state as a new workspace using the editor, add arguments to apps to configure their state on launch, and pin the workspace as a desktop shortcut for quick-launching.</p>
+<h2 id="enabling">Enabling</h2>
+<p>To start using Workspaces, enable it in the PowerToys Settings.</p>
+<h2 id="creating-a-new-workspace">Creating a new workspace</h2>
+<p>Open the editor using by selecting &quot;Launch editor&quot; from PowerToys Workspaces settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-workspaces/workspaces_editor.png" alt="Screenshot of PowerToys Workspaces editor interface showing workspace creation options.">
+</span>
+</p>
+<p>Click &quot;+ Create workspace&quot; to invoke the Capture experience - in this view, the desktop is fully functional and you are able to open, close, and reposition apps to get your apps into the desired layout. Once you have arranged the apps how you would like, select &quot;Capture&quot;.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-workspaces/capture_ux.png" alt="Screenshot of PowerToys Workspaces capture experience showing app arrangement options.">
+</span>
+</p>
+<p>After capturing, you will enter the editor where you can name the workspace, adjust window sizes, add command line interface (CLI) arguments, remove apps, and create a desktop shortcut before finally saving the workspace.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/powertoys-workspaces/post_capture_edit.png" alt="Screenshot of PowerToys Workspaces editor interface after capturing showing workspace editing options.">
+</span>
+</p>
+<h2 id="launching-a-workspace">Launching a workspace</h2>
+<p>Launch a workspace by either selecting &quot;Launch&quot; from the list of workspaces in the editor, or by using a desktop shortcut if you chose to create one when saving the workspace originally. Shortcuts can also be pinned to the taskbar for convenient launching.</p>
+<p><img src="../images/powertoys-workspaces/launch_buttons.png" alt="Workspaces methods"></p>
+<p>While the workspace launches, PowerToys will display a dialog box presenting the status of each app. Each app will have one of the following statuses:</p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="../images/powertoys-workspaces/checkmark.png" alt="Green checkmark"></td>
+<td>The app has successfully launched and repositioned.</td>
+</tr>
+<tr>
+<td><img src="../images/powertoys-workspaces/spinner.png" alt="Loading circle"></td>
+<td>The app is in the process of launching and moving to the correct position.</td>
+</tr>
+<tr>
+<td><img src="../images/powertoys-workspaces/failed.png" alt="Red X"></td>
+<td>The app has failed to launch.</td>
+</tr>
+</tbody>
+</table>
+<p>The dialog box will dismiss itself once all apps have properly launched and been arranged in their desired positions. You can also dismiss the dialog yourself at any time, or use it to cancel the launch.</p>
+<h2 id="editing-a-workspace">Editing a workspace</h2>
+<p>Start by launching the editor and selecting the workspace you would like to edit. Once in the edit view for that layout, you can remove apps, modify the window positions manually via each app's dropdown menu, or select &quot;Launch &amp; Edit&quot; to launch the layout and re-enter the same Capture experience as when it was first created.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Capturing the adjusted workspace will perform a clean re-capture, and all previous CLI arguments and settings will be removed. The re-capture can be reverted to return to the original workspace if necessary.</p>
+</div>
+<h2 id="adding-cli-arguments-to-applications">Adding CLI arguments to applications</h2>
+<p>To launch apps in a desired state, CLI arguments can be added to each app in their respective dropdown menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, Visual Studio Code (VS Code) is launched to the file provided at the path and Terminal is launched to the &quot;Ubuntu&quot; profile.</p>
+<p><img src="../images/powertoys-workspaces/cli_args.png" alt="CLI arguments in editor"></p>
+<p>You can find more information on VS Code and Terminal CLI arguments can be found below:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/editor/command-line">VS Code CLI Docs</a></li>
+<li><a href="/windows/terminal/command-line-arguments?tabs=windows">Terminal CLI Docs</a></li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Each app will have its own set of command line arguments that can be used to modify the launch behavior, but many apps use similar patterns. For example, try passing a comma-separated list of URLs to Edge and other browsers to launch the browser with those tabs open, or pass a filepath to an Office application, text editor or IDE to launch directly to that file.</p>
+</div>
+<h2 id="launching-apps-as-admin">Launching apps as admin</h2>
+<p>To launch apps as admin, select the &quot;Launch as Admin&quot; box in the respective app's dropdown menu. On launch, a User Account Control (UAC) dialog will be shown for each app that has been set to launch as admin.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>There is a known issue where apps that launch as admin are unable to be repositioned to the desired layout. The team is actively working on a fix for an upcoming release.</p>
+</div>
+<h2 id="opening-new-windows-vs-repositioning-existing-windows">Opening new windows vs. repositioning existing windows</h2>
+<p>Different apps may behave differently on launch if there is already an existing instance of the application open on the desktop - some apps will reposition the existing instance, whereas others may launch a new instance by default. If the &quot;Move existing windows&quot; option is enabled for the workspace, any existing apps are moved to the desired position in the workspace and the remaining apps are launched as usual. For tailoring to user preference, the recommendation is to handle launch behavior via available CLI arguments.</p>
+<p>For example, VS Code will launch a new window by default, but should a user prefer to move the existing window, the <code>--reuse-window</code> CLI argument can be added to VS Code's CLI arguments.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Some apps are &quot;single-instance&quot; applications, meaning that there may only be one active instance of the app open at a time. One example of this is the Windows Settings app. These apps, if already active, will be repositioned by default, and new instances cannot be launched.</p>
+</div>
+<h2 id="frequently-asked-questions">Frequently Asked Questions</h2>
+<p>The following are some common questions and answers about PowerToys Workspaces:</p>
+<ul>
+<li><p><strong>Why do app windows launch and then jump to the positions I saved them in?</strong></p>
+<p>PowerToys cannot tell an app to launch to a specific position. What we can do is launch an app first, and then give an instruction to move and resize it to a certain position. However, this results in the user visibly seeing the process on-screen. To help with this limitation, we added the dialog box during launch, which displays the launch status of each app.</p>
+</li>
+<li><p><strong>My windows were snapped when I saved my workspace, but when I launch the workspace from a clean state they are not snapped. Why is this?</strong></p>
+<p>PowerToys uses publicly available APIs and the <a href="fancyzones.html">FancyZones</a> engine under the hood for positioning apps. Unfortunately, this does not include snapping capabilities.</p>
+</li>
+<li><p><strong>How can I pin a workspace to the taskbar?</strong></p>
+<p>You can create a desktop shortcut for your workspace first, and then pin it to the taskbar. Pinning a workspace to the taskbar directly is not currently supported.</p>
+</li>
+</ul>
+<h2 id="settings">Settings</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Setting</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Activation shortcut</td>
+<td style="text-align: left;">To change the default hotkey, click on the control and enter the desired key combination.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-powertoys">Install PowerToys</h2>
+<p>This utility is part of the <a href="/windows/powertoys/">Microsoft PowerToys</a> utilities for power users. It provides a set of useful utilities to tune and streamline your Windows experience for greater productivity. To install PowerToys, see <a href="/windows/powertoys/install">Installing PowerToys</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/workspaces.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

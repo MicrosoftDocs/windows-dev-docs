@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Globalize your date/time/number formats </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Globalize your date/time/number formats ">
+    
+    <meta name="description" content="Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You&#39;ll then be able later to adapt your app for additional cultures, regions, and languages in the global market.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="globalize-your-datetimenumber-formats">Globalize your date/time/number formats</h1>
+
+<p>Design your app to be global-ready by appropriately formatting dates, times, numbers, phone numbers, and currencies. You'll then be able later to adapt your app for additional cultures, regions, and languages in the global market.</p>
+<h2 id="introduction">Introduction</h2>
+<p>When creating your app, if you think more broadly than a single language and culture then you'll have fewer (if any) unexpected issues when your app grows into new markets. For example, dates, times, numbers, calendars, currency, telephone numbers, units of measurement, and paper sizes are all items that can be displayed differently in different cultures or languages.</p>
+<p>Different regions and cultures use different date and time formats. These include conventions for the order of day and month in the date, for the separation of hours and minutes in the time, and even for what punctuation is used as a separator. In addition, dates may be displayed in various long formats (&quot;Wednesday, March 28, 2012&quot;) or short formats (&quot;3/28/12&quot;), which vary across cultures. And, of course, the names and abbreviations for the days of the week and months of the year differ between languages.</p>
+<p>You can preview the formats used for different languages. Go to <strong>Settings</strong> &gt; <strong>Time &amp; Language</strong> &gt; <strong>Region &amp; language</strong>, and click <strong>Additional date, time, &amp; regional settings</strong> &gt; <strong>Change date, time, or number formats</strong>. On the <strong>Formats</strong> tab, select a language from the <strong>Format</strong> drop-down and preview the formats in <strong>Examples</strong>.</p>
+<p>This topic uses the terms &quot;user profile language list&quot;, &quot;app manifest language list&quot;, and &quot;app runtime language list&quot;. For details on exactly what those terms mean and how to access their values, see <a href="manage-language-and-region.html">Understand user profile languages and app manifest languages</a>.</p>
+<h2 id="format-dates-and-times-for-the-app-runtime-language-list">Format dates and times for the app runtime language list</h2>
+<p>If you need to allow users to choose a date, or to select a time, then use the standard <a href="../controls/date-and-time.html">calendar, date, and time controls</a>. These automatically use the best date and time format for the app runtime language list.</p>
+<p>If you need to display dates or times yourself then you can use the <a href="/uwp/api/windows.globalization.datetimeformatting?branch=live"><strong>DateTimeFormatter</strong></a> class. By default, <strong>DateTimeFormatter</strong> automatically uses the best date and time format for the app runtime language list. So, the code below formats a given <strong>DateTime</strong> in the best way for that list. As an example, assume that your app manifest language list includes English (United States), which is also your default, and German (Germany). If the current date is Nov 6 2017 and the user profile language list contains German (Germany) first, then the formatter gives &quot;06.11.2017&quot;. If the user profile language list contains English (United States) first (or if it contains neither English nor German), then the formatter gives &quot;11/6/2017&quot; (since &quot;en-US&quot; matches, or is used as the default).</p>
+<pre><code class="lang-csharp">    // Use the DateTimeFormatter class to display dates and times using basic formatters.
+
+    var shortDateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;shortdate&quot;);
+    var shortTimeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;shorttime&quot;);
+
+    var dateTimeToFormat = DateTime.Now;
+
+    var shortDate = shortDateFormatter.Format(dateTimeToFormat);
+    var shortTime = shortTimeFormatter.Format(dateTimeToFormat);
+
+    var results = &quot;Short Date: &quot; + shortDate + &quot;\n&quot; +
+                  &quot;Short Time: &quot; + shortTime;
+</code></pre>
+<p>You can test the code above on your own PC like this.</p>
+<ul>
+<li>Make sure that you have resource files in your project qualified for both &quot;en-US&quot; and &quot;de-DE&quot; (see <a href="/windows/uwp/app-resources/tailor-resources-lang-scale-contrast">Tailor your resources for language, scale, high contrast, and other qualifiers</a>).</li>
+<li>Change your user profile language list in <strong>Settings</strong> &gt; <strong>Time &amp; Language</strong> &gt; <strong>Region &amp; language</strong> &gt; <strong>Languages</strong>. Add German (Germany), make it the default, and run the code again.</li>
+</ul>
+<h2 id="format-dates-and-times-for-the-user-profile-language-list">Format dates and times for the user profile language list</h2>
+<p>Remember that, by default, <strong>DateTimeFormatter</strong> matches the app runtime language list. That way, if you display strings such as &quot;The date is &lt;date&gt;&quot;, then the language will match the date format.</p>
+<p>If for whatever reason you want to format dates and/or times only according to the user profile language list, then you can do that using code like the example below. But if you do so then understand that the user can choose a language for which your app doesn't have translated strings. For example, if your app is not localized into German (Germany), but the user chooses that as their preferred language, then that could result in the display of arguably odd-looking strings such as &quot;The date is 06.11.2017&quot;.</p>
+<pre><code class="lang-csharp">    // Use the DateTimeFormatter class to display dates and times using basic formatters.
+
+    var userLanguages = Windows.System.UserProfile.GlobalizationPreferences.Languages;
+
+    var shortDateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(&quot;shortdate&quot;, userLanguages);
+
+    var results = &quot;Short Date: &quot; + shortDateFormatter.Format(DateTime.Now);
+</code></pre>
+<h2 id="format-numbers-and-currencies-appropriately">Format numbers and currencies appropriately</h2>
+<p>Different cultures format numbers differently. Format differences may include how many decimal digits to display, what characters to use as decimal separators, and what currency symbol to use. Use classes in the <a href="/uwp/api/windows.globalization.numberformatting?branch=live"><strong>NumberFormatting</strong></a> namespace to display decimal, percent, or permille numbers, and currencies. Most of the time, you will want these formatter classes to use the best format for the user profile. But you may use the formatters to display a currency for any region or format.</p>
+<p>This example shows how to display currencies both per the user profile, and for a specific given currency system.</p>
+<pre><code class="lang-csharp">    // This scenario uses the CurrencyFormatter class to format a number as a currency.
+
+    var userCurrency = Windows.System.UserProfile.GlobalizationPreferences.Currencies[0];
+
+    var valueToBeFormatted = 12345.67;
+
+    var userCurrencyFormatter = new Windows.Globalization.NumberFormatting.CurrencyFormatter(userCurrency);
+    var userCurrencyValue = userCurrencyFormatter.Format(valueToBeFormatted);
+
+    // Create a formatter initialized to a specific currency,
+    // in this case US Dollar (specified as an ISO 4217 code) 
+    // but with the default number formatting for the current user.
+    var currencyFormatUSD = new Windows.Globalization.NumberFormatting.CurrencyFormatter(&quot;USD&quot;);
+    var currencyValueUSD = currencyFormatUSD.Format(valueToBeFormatted);
+
+    // Create a formatter initialized to a specific currency.
+    // In this case it's the Euro with the default number formatting for France.
+    var currencyFormatEuroFR = new Windows.Globalization.NumberFormatting.CurrencyFormatter(&quot;EUR&quot;, new[] { &quot;fr-FR&quot; }, &quot;FR&quot;);
+    var currencyValueEuroFR = currencyFormatEuroFR.Format(valueToBeFormatted);
+
+    // Results for display.
+    var results = &quot;Fixed number (&quot; + valueToBeFormatted + &quot;)\n&quot; +
+                    &quot;With user's default currency: &quot; + userCurrencyValue + &quot;\n&quot; +
+                    &quot;Formatted US Dollar: &quot; + currencyValueUSD + &quot;\n&quot; +
+                    &quot;Formatted Euro (fr-FR defaults): &quot; + currencyValueEuroFR;
+</code></pre>
+<p>You can test the code above on your own PC by changing the country or region in <strong>Settings</strong> &gt; <strong>Time &amp; Language</strong> &gt; <strong>Region &amp; language</strong> &gt; <strong>Country or region</strong>. Choose a country or region (perhaps Iceland), and run the code again.</p>
+<h2 id="use-a-culturally-appropriate-calendar">Use a culturally appropriate calendar</h2>
+<p>The calendar differs across regions and languages. The Gregorian calendar is not the default for every region. Users in some regions may choose alternate calendars, such as the Japanese era calendar, or Arabic lunar calendars. Dates and times on the calendar are also sensitive to different time zones and daylight-saving time.</p>
+<p>To ensure that the preferred calendar format is used, you can use the standard <a href="../controls/date-and-time.html">calendar, date, and time controls</a>. For more complex scenarios, where working directly with operations on calendar dates may be required, <strong>Windows.Globalization</strong> provides a <a href="/uwp/api/windows.globalization.calendar?branch=live"><strong>Calendar</strong></a> class that gives an appropriate calendar representation for the given culture, region, and calendar type.</p>
+<h2 id="format-phone-numbers-appropriately">Format phone numbers appropriately</h2>
+<p>Phone numbers are formatted differently across regions. The number of digits, how the digits are grouped, and the significance of certain parts of the phone number vary between countries/regions. Starting in Windows 10, version 1607, you can use classes in the <a href="/uwp/api/windows.globalization.phonenumberformatting?branch=live"><strong>PhoneNumberFormatting</strong></a> namespace to format phone numbers appropriately for the current region.</p>
+<p><a href="/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live"><strong>PhoneNumberInfo</strong></a> parses a string of digits and allows you to: determine whether the digits are a valid phone number in the current region; compare two numbers for equality; and to extract the different functional parts of the phone number, such as country code or geographical area code.</p>
+<p><a href="/uwp/api/windows.globalization.phonenumberformatting.phonenumberformatter?branch=live"><strong>PhoneNumberFormatter</strong></a> formats a string of digits or a <strong>PhoneNumberInfo</strong> for display, even when the string of digits represents a partial phone number. You can use this partial number formatting to format a number as a user is entering the number.</p>
+<p>The example below shows how to use <strong>PhoneNumberFormatter</strong> to format a phone number as it is being entered. Each time text changes in a <strong>TextBox</strong> named phoneNumberInputTextBox, the contents of the text box are formatted using the current default region and displayed in a <strong>TextBlock</strong> named phoneNumberOutputTextBlock. For demonstration purposes, the string is also formatted using the region for New Zealand, and displayed in a TextBlock named phoneNumberOutputTextBlockNZ.</p>
+<pre><code class="lang-csharp">    using Windows.Globalization.PhoneNumberFormatting;
+
+    PhoneNumberFormatter currentFormatter, NZFormatter;
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        // Use the default formatter for the current region
+        this.currentFormatter = new PhoneNumberFormatter();
+
+        // Create an explicit formatter for New Zealand. 
+        PhoneNumberFormatter.TryCreate(&quot;NZ&quot;, out this.NZFormatter);
+    }
+
+    private void phoneNumberInputTextBox_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        // Format for the default region.
+        this.phoneNumberOutputTextBlock.Text = currentFormatter.FormatPartialString(this.phoneNumberInputTextBox.Text);
+
+        // If the NZFormatter was created successfully, format the partial string for the NZ TextBlock.
+        if(this.NZFormatter != null)
+        {
+            this.phoneNumberOutputTextBlockNZ.Text = this.NZFormatter.FormatPartialString(this.phoneNumberInputTextBox.Text);
+        }
+    }
+</code></pre>
+<p>You can test the code above on your own PC by changing the country or region in <strong>Settings</strong> &gt; <strong>Time &amp; Language</strong> &gt; <strong>Region &amp; language</strong> &gt; <strong>Country or region</strong>. Choose a country or region (perhaps New Zealand to confirm that the formats match), and run the code again. For test data, you can do a web search for the phone number of a business in New Zealand.</p>
+<h2 id="the-users-language-and-cultural-preferences">The user's language and cultural preferences</h2>
+<p>For scenarios where you wish to provide different functionality based solely on the user's language, region, or cultural preferences, Windows gives you a way to access those preferences, through <a href="/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live"><strong>Windows.System.UserProfile.GlobalizationPreferences</strong></a>. When needed, use the <strong>GlobalizationPreferences</strong> class to get the value of the user's current geographic region, preferred languages, preferred currencies, and so on. But remember that if your app's strings/images aren't localized for the user's preferred language then dates and times and other data formatted for that preferred language won't match the strings that you display.</p>
+<h2 id="important-apis">Important APIs</h2>
+<ul>
+<li><a href="/uwp/api/windows.globalization.datetimeformatting?branch=live">DateTimeFormatter</a></li>
+<li><a href="/uwp/api/windows.globalization.numberformatting?branch=live">NumberFormatting</a></li>
+<li><a href="/uwp/api/windows.globalization.calendar?branch=live">Calendar</a></li>
+<li><a href="/uwp/api/windows.globalization.phonenumberformatting?branch=live">PhoneNumberFormatting</a></li>
+<li><a href="/uwp/api/windows.system.userprofile.globalizationpreferences?branch=live">GlobalizationPreferences</a></li>
+</ul>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../controls/date-and-time.html">Calendar, date, and time controls</a></li>
+<li><a href="manage-language-and-region.html">Understand user profile languages and app manifest languages</a></li>
+<li><a href="/windows/uwp/app-resources/tailor-resources-lang-scale-contrast">Tailor your resources for language, scale, high contrast, and other qualifiers</a></li>
+</ul>
+<h2 id="samples">Samples</h2>
+<ul>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Calendar%20details%20and%20math%20sample%20(Windows%208)">Calendar details and math sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Date%20and%20time%20formatting%20sample%20(Windows%208)">Date and time formatting sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Globalization%20preferences%20sample%20(Windows%208)">Globalization preferences sample</a></li>
+<li><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Number%20formatting%20and%20parsing%20sample%20(Windows%208)">Number formatting and parsing sample</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/globalizing/use-global-ready-formats.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

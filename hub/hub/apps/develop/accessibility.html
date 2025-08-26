@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Accessibility in Windows 11 and Windows 10 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Accessibility in Windows 11 and Windows 10 ">
+    
+    <meta name="description" content="This page provides the information for you to get started developing accessible Windows apps.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="accessibility-in-windows-11-and-windows-10">Accessibility in Windows 11 and Windows 10</h1>
+
+<p><img src="images/hero-accessibility-bar-smaller.png" alt="Accessibility hero image"></p>
+<h2 id="build-accessibility-into-your-applications-to-empower-people-of-all-abilities">Build accessibility into your applications to empower people of all abilities</h2>
+<p>Products and services—including electronic media—are accessible when they are designed to provide full and successful experiences for as many people as possible.</p>
+<p>Build accessible and inclusive Windows applications, with improved functionality and usability, for people with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on). Some common solutions include providing information in alternative formats (such as captions on a video) or enabling the use of assistive technologies (such as screen readers).</p>
+<p><strong>Everyone should have access to the same rooms in a building, whether they need to use the stairs or the elevator.</strong></p>
+<p>This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.</p>
+<h2 id="platform-specific-documentation">Platform-specific documentation</h2>
+<section class="row">
+<div class="column">
+<p><img src="images/platform-uwp.png" alt="Universal Windows Platform (UWP)"></p>
+<p><strong>Universal Windows Platform (UWP)</strong></p>
+<p>Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox, HoloLens, and more), and publish them to the Microsoft Store.</p>
+<p><a href="/windows/uwp/accessibility/designing-inclusive-software">Designing inclusive software</a></p>
+<p><a href="/windows/uwp/accessibility/developing-inclusive-windows-apps">Developing inclusive Windows apps</a></p>
+<p><a href="/windows/uwp/accessibility/accessibility-testing">Accessibility testing</a></p>
+<p><a href="/windows/uwp/accessibility/accessibility-in-the-store">Accessibility in the Store</a></p>
+</div>
+<div class="column">
+<p><img src="images/platform-win32.png" alt="Win32 platform apps"></p>
+<p><strong>Win32 platform</strong></p>
+<p>Develop accessible apps and tools on the original platform for C/C++ Windows applications.</p>
+<p><a href="/windows/desktop/accessibility-whatsnew">What's new in Windows accessibility and automation</a></p>
+<p><a href="/windows/desktop/accessibility-appdev">Developing accessible applications for Windows</a></p>
+<p><a href="/windows/desktop/accessibility-uiframeworkdev">Developing accessible UI frameworks for Windows</a></p>
+<p><a href="/windows/desktop/accessibility-atdev">Developing assistive technology for Windows</a></p>
+<p><a href="/windows/desktop/accessibility-testwithuia">Testing for accessibility</a></p>
+<p><a href="/windows/desktop/accessibility-legacy">Legacy accessibility and automation technology - MSAA to UI Automation</a></p>
+<p><a href="/windows/desktop/winauto/about-windows-accessibility-features">Windows Accessibility features</a></p>
+<p><a href="/windows/desktop/uxguide/inter-accessibility">Guidelines for designing accessible apps</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><img src="images/platform-wpf2-small.png" alt="WPF platform"></p>
+<p><strong>Windows Presentation Foundation (WPF)</strong></p>
+<p>Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.</p>
+<p><a href="/dotnet/framework/ui-automation/accessibility-best-practices">Accessibility Best Practices</a></p>
+<p><a href="/dotnet/framework/ui-automation/index">UI Automation Fundamentals</a></p>
+<p><a href="/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code">UI Automation Providers for Managed Code</a></p>
+<p><a href="/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code">UI Automation Clients for Managed Code</a></p>
+<p><a href="/dotnet/framework/ui-automation/ui-automation-control-patterns">UI Automation Control Patterns</a></p>
+<p><a href="/dotnet/framework/ui-automation/ui-automation-text-pattern">UI Automation Text Pattern</a></p>
+<p><a href="/dotnet/framework/ui-automation/ui-automation-control-types">UI Automation Control Types</a></p>
+<p><a href="/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise">UI Automation Specification and Community Promise</a></p>
+</div>
+<div class="column">
+<p><img src="images/platform-winforms.png" alt="Windows Forms platform apps"></p>
+<p><strong>Windows Forms (WinForms)</strong></p>
+<p>Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.</p>
+<p><a href="/dotnet/framework/winforms/advanced/windows-forms-accessibility">Windows Forms Accessibility</a></p>
+<p><a href="/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application">Creating an Accessible Windows Application</a></p>
+<p><a href="/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines">Properties on Windows Forms Controls That Support Accessibility Guidelines</a></p>
+<p><a href="/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form">Providing Accessibility Information for Controls on a Windows Form</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column span2">
+<p><strong>Web accessibility</strong></p>
+<p>Design, build, and test accessible web sites in Microsoft Edge.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="/microsoft-edge/accessibility">Introduction to web accessibility</a></p>
+<p><a href="/microsoft-edge/accessibility/design">Designing accessible websites</a></p>
+</div>
+<div class="column">
+<p><a href="/microsoft-edge/accessibility/build">Building accessible websites</a></p>
+<p><a href="/microsoft-edge/accessibility/test">Testing accessible websites</a></p>
+</div>
+</section>
+<h2 id="samples">Samples</h2>
+<p>Download and run full Windows samples that demonstrate various accessibility features and functionality.</p>
+<section class="row">
+<div class="column">
+<p><a href="/samples/browse/">Code sample browser</a></p>
+<p>The new samples browser replacing the MSDN Code Gallery.</p>
+</div>
+<div class="column">
+<p><a href="https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample">MSDN Code Gallery (GitHub archive)</a></p>
+<p>Download samples for Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&amp;unscoped_q=accessibility">Windows classic samples on GitHub</a></p>
+<p>These samples demonstrate the functionality and programming model for Windows and Windows Server.</p>
+</div>
+<div class="column">
+<p><a href="https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&amp;unscoped_q=accessibility">Universal Windows Platform (UWP) samples on GitHub</a></p>
+<p>These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10 and later.</p>
+</div>
+</section>
+<section class="row">
+<div class="column span2">
+<p><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI 2 Gallery</a></p>
+<p>This app demonstrates the various Xaml controls supported in the Fluent Design System.</p>
+</div>
+</section>
+<h2 id="videos">Videos</h2>
+<p>Various videos covering how to build accessible Windows applications to general accessibility concerns and how Microsoft addresses them.</p>
+<section class="row">
+<div class="column">
+<p><strong>Microsoft's Accessibility API</strong></p>
+</div>
+<div class="column">
+<p><strong>Introduction to disability and accessibility</strong></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/6b0K2883rXA?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+</div>
+<div class="column">
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/Kl4CT4DaypM?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+</div>
+</section>
+<section class="row">
+</section>
+<section class="row">
+<div class="column">
+<p><strong>One Dev Minute: Developing apps for accessibility</strong></p>
+</div>
+<div class="column">
+<p><strong>Windows 11 accessibility features empower everyone</strong></p>
+</div>
+<div class="column">
+<p><strong>Making the mouse pointers easier to see</strong></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<blockquote>
+<p>[!VIDEO 001a0bd5-c137-4a17-b45f-9f4368bf379d]</p>
+</blockquote>
+</div>
+<div class="column">
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/uDzVBNry31s?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+</div>
+<div class="column">
+<div class="embeddedvideo"><iframe src="https://www.youtube-nocookie.com/embed/BoME-Wr_jNw?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+</div>
+</section>
+<h2 id="other-resources">Other resources</h2>
+<section class="row">
+<div class="column span3">
+<p><strong>Blogs and news</strong></p>
+<p>The latest from the world of Microsoft accessibility.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="https://news.microsoft.com/presskits/accessibility/">In the news</a></p>
+</div>
+<div class="column">
+<p><a href="https://blogs.microsoft.com/accessibility/">Accessibility blogs</a></p>
+</div>
+<div class="column">
+<p><a href="/archive/blogs/winuiautomation/">Windows UI Automation blogs</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column span3">
+<p><strong>Community and support</strong></p>
+<p>A place where Windows developers and users meet and learn together.</p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="https://answers.microsoft.com/en-us/search/search?SearchTerm=windows%20accessibility">Windows community - Accessibility</a></p>
+</div>
+<div class="column">
+<p><a href="https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation">Windows Accessibility and Automation Development Forum</a></p>
+</div>
+</section>
+<section class="row">
+<div class="column">
+<p><a href="https://stackoverflow.com/questions/tagged/windows+accessibility">Stack Overflow</a></p>
+</div>
+<div class="column">
+<p><a href="https://www.microsoft.com/Accessibility/disability-answer-desk">Disability Answer Desk</a></p>
+</div>
+</section>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/accessibility.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows App SDK deployment guide for framework-dependent packaged apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows App SDK deployment guide for framework-dependent packaged apps ">
+    
+    <meta name="description" content="This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-sdk-deployment-guide-for-framework-dependent-packaged-apps">Windows App SDK deployment guide for framework-dependent packaged apps</h1>
+
+<p>This article provides guidance about deploying framework-dependent packaged apps (see <a href="/windows/msix/overview">What is MSIX?</a>) that use the Windows App SDK. The equivalent topic for other framework-dependent packaging options is <a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a>.</p>
+<h2 id="overview">Overview</h2>
+<p>By default, when you create a project using one of the <a href="..%5Cwinui%5Cwinui3%5Cwinui-project-templates-in-visual-studio.md">WinUI 3 templates in Visual Studio</a>, your project is configured to build the app into an MSIX package using either single-project MSIX (see <a href="single-project-msix.html">Package your app using single-project MSIX</a>) or a Windows Application Packaging project (see <a href="/windows/msix/desktop/desktop-to-uwp-packaging-dot-net">Set up your desktop application for MSIX packaging in Visual Studio</a>). You can then build an MSIX package for your app by using the instructions in <a href="/windows/msix/package/packaging-uwp-apps">Package a desktop or UWP app in Visual Studio</a>. After you build an MSIX package for your app, you have several options to <a href="/windows/msix/desktop/managing-your-msix-deployment-overview">Manage your MSIX deployment</a>.</p>
+<p>To learn more about the packages that your packaged app might need when it uses the Windows App SDK, see <a href="deployment-architecture.html">Deployment architecture for the Windows App SDK</a>. Those include the <em>Framework</em>, <em>Main</em>, and <em>Singleton</em> packages; which are all signed and published by Microsoft. There are two main requirements for deploying a packaged app:</p>
+<ol>
+<li><a href="#deploy-the-windows-app-sdk-framework-package">Deploy the Windows App SDK framework package</a>.</li>
+<li><a href="#call-the-deployment-api">Call the Deployment API</a>.</li>
+</ol>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>For packaged apps, the VCLibs framework package dependency is a requirement. For more info, see <a href="/troubleshoot/cpp/c-runtime-packages-desktop-bridge">C++ Runtime framework packages for Desktop Bridge</a>.</li>
+<li><strong>C#</strong>. .NET 6 or later is required. For more info, see <a href="https://dotnet.microsoft.com/download/dotnet/">.NET Downloads</a>.</li>
+</ul>
+<h2 id="deploy-the-windows-app-sdk-framework-package">Deploy the Windows App SDK framework package</h2>
+<p>The Windows App SDK framework package contains the Windows App SDK binaries used at run time, and it is installed with your application. The framework has different deployment requirements for different channels of the Windows App SDK.</p>
+<h3 id="stable-version">Stable version</h3>
+<p>When you install a stable release version (see <a href="stable-channel.html">Stable channel release notes</a>) of the Windows App SDK NuGet package on your development computer, and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency">PackageDependency</a> element that specifies a dependency on the framework package.</p>
+<p>However, if you build your app package manually using a separate Windows Application Packaging Project, then you must declare a <strong>PackageReference</strong> in your <code>Application (package).wapproj</code> file, like the following:</p>
+<pre><code class="lang-xml">&lt;ItemGroup&gt;
+   &lt;PackageReference Include=&quot;Microsoft.WindowsAppSDK&quot; Version=&quot;1.0.1&quot;&gt;
+       &lt;IncludeAssets&gt;build&lt;/IncludeAssets&gt;
+   &lt;/PackageReference&gt;
+&lt;/ItemGroup&gt;
+</code></pre>
+<p>That package dependency ensures that the Framework package is installed when your app is deployed to another computer.</p>
+<h3 id="preview-version">Preview version</h3>
+<p>When you install a preview release version (see <a href="preview-channel.html">Preview channel release notes</a>) of the Windows App SDK NuGet package on your development computer, a preview version of the Windows App SDK framework package is deployed during build time as a NuGet package dependency.</p>
+<h2 id="call-the-deployment-api">Call the Deployment API</h2>
+<p>Also see <a href="../package-and-deploy/deploy-overview.html#initialize-the-windows-app-sdk">Initialize the Windows App SDK</a>.</p>
+<p>The Deployment API is provided by the Windows App SDK framework package, and is available in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime">Microsoft.Windows.ApplicationModel.WindowsAppRuntime</a> namespace. The Windows application model doesn't support declaring a dependency on the Main and Singleton packages. The Deployment API is therefore required for these reasons:</p>
+<ol>
+<li>To deploy the Singleton package for features not in the Framework package (for example, push notifications).</li>
+<li>To deploy the Main package, which enables automatic updates to the Framework package from the Microsoft Store.</li>
+</ol>
+<p>For packaged apps that are <em>not</em> distributed through the Store, you as the developer are responsible for distributing the Framework package. We recommended that you call the Deployment API so that any critical servicing updates are delivered. Note that for using features outside the Framework package (for example, push notifications), the Singleton package must be deployed (this can be done with the Deployment API, or by redistributing the MSIX packages using your own install method).</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>In Windows App SDK version 1.0, only packaged apps that are full trust or that have the <a href="/windows/uwp/packaging/app-capability-declarations">packageManagement</a> restricted capability have the permission to use the Deployment API to install the Main and Singleton package dependencies. Support for partial trust packaged apps will be coming in later releases.</p>
+</div>
+<p>You should call the Deployment API after your app's process is initialized, but before your app uses Windows App SDK runtime features that use the Singleton package (for example, push notifications). The main methods of the Deployment API are the static <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.getstatus">GetStatus</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize">Initialize</a> methods of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager">DeploymentManager</a> class.</p>
+<ul>
+<li>The <strong>GetStatus</strong> method returns the current deployment status of the Windows App SDK runtime that's currently loaded. Use this method to identify whether there's work required to install Windows App SDK runtime packages before the current app can use Windows App SDK features.</li>
+<li>The <strong>Initialize</strong> method verifies whether all required packages are present to a minimum version needed by the Windows App SDK runtime that's currently loaded. If any package dependencies are missing, then the method attempts to register those missing packages. Beginning in Windows App SDK 1.1, the <strong>Initialize</strong> method also supports the option to force-deploy the Windows App SDK runtime packages. That shuts down any processes for the <em>Main</em> and <em>Singleton</em> runtime packages, and thus interrupts their services (for example, push notifications won't deliver notifications during this time). You should call <strong>Initialize</strong> only once. You don't need to call <strong>Initialize</strong> for apps deployed via the <strong>Start Without Debugging</strong> and <strong>Start Debugging</strong> commands in Visual Studio.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The default value of the Visual Studio property <code>&lt;WindowsAppSdkDeploymentManagerInitialize&gt;</code> is <code>true</code>. So if you wish to call <strong>DeploymentManager.Initialize</strong> explicitly, then set <code>&lt;WindowsAppSdkDeploymentManagerInitialize&gt;false&lt;/WindowsAppSdkDeploymentManagerInitialize&gt;</code> in your Visual Studio project file.</p>
+</div>
+<h3 id="deployment-api-sample-app">Deployment API sample app</h3>
+<p>For additional guidance on how to use the <strong>GetStatus</strong> and <strong>Initialize</strong> methods of the <strong>DeploymentManager</strong> class, explore the available sample app.</p>
+<div class="button">
+<p><a href="https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/DeploymentManager">Explore Deployment API sample app</a></p>
+</div>
+<h3 id="address-installation-errors">Address installation errors</h3>
+<p>If the Deployment API encounters an error during installation of the Windows App SDK runtime packages, it returns an error code that describes the problem.</p>
+<p>For example, if your app is not full trust, or doesn't have the <a href="/windows/uwp/packaging/app-capability-declarations">packageManagement</a> restricted capability, then you'll get an <strong>ACCESS_DENIED</strong> error code. To review other error codes that you may encounter and their possible causes, see <a href="/windows/win32/appxpkg/troubleshooting#common-error-codes">Troubleshooting packaging, deployment, and query of Windows apps</a>.</p>
+<p>If the error code doesn't provide enough information, then you can find more diagnostic information in the detailed event logs (see <a href="/windows/win32/appxpkg/troubleshooting#get-diagnostic-information">Get diagnostic information</a>).</p>
+<p>If you encounter errors that you can't diagnose, then file an issue in the <a href="https://github.com/microsoft/WindowsAppSDK/issues">WindowsAppSDK GitHub repo</a> with the error code and event logs so that we can investigate the issue.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="deployment-architecture.html">Deployment architecture for the Windows App SDK</a></li>
+<li><a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="release-channels.html">Release channels</a></li>
+<li><a href="single-project-msix.html">Package your app using single-project MSIX</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/deploy-packaged-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

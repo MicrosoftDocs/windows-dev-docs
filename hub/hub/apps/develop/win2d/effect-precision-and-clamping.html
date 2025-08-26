@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Effect precision and clamping </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Effect precision and clamping ">
+    
+    <meta name="description" content="An explanation of how to deal with precision and clamping when drawing Win2D effects.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="effect-precision-and-clamping">Effect precision and clamping</h1>
+
+<p>Care must be taken while rendering effects using Win2D to achieve the desired level of quality and predictability with respect to numerical precision.</p>
+<p>You need to understand these details if:</p>
+<ol>
+<li>Your effect graph relies on high numerical precision or colors outside of the [0, 1] range, and you want to make sure these will always be available.</li>
+<li>Or your effect graph relies on the rendering implementation to clamp intermediate colors to the [0, 1] range, so you must ensure this clamping always occurs.</li>
+</ol>
+<p>Win2D often divides an effect graph into sections, and renders each section in a separate step. The output of some steps may be stored in intermediate Direct3D textures which by default have limited numerical range and precision. Win2D makes no guarantees about if or where these intermediate textures are used. This behavior may vary according to GPU capabilities as well as between Windows versions.</p>
+<p>In Windows 10, Win2D uses fewer intermediate textures due to its use of <a href="https://msdn.microsoft.com/library/windows/desktop/dn879810">shader linking</a>. Win2D may therefore produce different results with default settings than in prior Windows releases. This primarily affects scenarios where shader linking is possible in an effect graph, and that graph also contains effects that produce extended-range output colors.</p>
+<h2 id="overview-of-effect-rendering-and-intermediates">Overview of effect rendering and intermediates</h2>
+<p>To render an effect graph, Win2D first finds the underlying graph of &quot;transforms&quot;, where a transform is a graph node used within an effect to apply a specific processing operation. Each image effect may internally be implemented using one or several transforms. There are different types of transforms, including those which provide Direct3D shaders for Direct2D to use.</p>
+<p>For example, Win2D may render an effect graph as follows:</p>
+<p><img src="images/win2d_effects_intermediates.svg" alt="a flow chart showing a D2D pipeline using intermediate textures at every step"></p>
+<p>Win2D looks for opportunities to avoid using intermediate textures. This logic is opaque to applications, and may reduce the number of intermediate textures used. For example, the following graph can be rendered by Win2D using one Direct3D draw call and no intermediate textures:</p>
+<p><img src="images/win2d_effects_linking.svg" alt="a flow chart illustrating a sequence of D2D effects being linked together"></p>
+<p>Prior to Windows 10, Win2D would always use intermediate textures if multiple pixel shaders were used within the same effect graph. Most built-in effects that simply adjust color values (for example, Brightness or Saturation) do so using pixel shaders.</p>
+<p>In Windows 10, Win2D may now avoid using intermediate textures in such cases. It does this by internally linking adjacent pixel shaders. For example:</p>
+<p><img src="images/win2d_effects_linking_2.svg" alt="a flow chart showing another example of two D2D effects, using pixel shaders in this case, being linked together"></p>
+<p>Note that not all adjacent pixel shaders in a graph may be linked together, and therefore only certain graphs will produce different output on Windows 10. For full details see <a href="https://msdn.microsoft.com/library/windows/desktop/dn879810">Effect Shader Linking</a>. The primary restrictions are:</p>
+<ul>
+<li>An effect will not be linked with effects consuming its output, if the first effect is connected as an input to multiple effects.</li>
+<li>An effect will not be linked with an effect set as its input, if the first effect samples its input at a different logical position than its output. For example, a <code>ColorMatrix</code> effect might be linked with its input, but a <code>Convolution</code> effect will not be.</li>
+</ul>
+<h2 id="built-in-effect-behavior">Built-in effect behavior</h2>
+<p>Many built-in effects may produce colors outside of the [0, 1] range in unpremultiplied space, even when their input colors are within that range. When this happens, such colors may be subject to numerical clamping. Note that it's important to consider the color range in unpremultiplied space, even though built-in effects typically produce colors in premultiplied space. This ensures that colors stay within range, even if other effects subsequently unpremultiply them.</p>
+<p>Some of the effects which emit these out-of-range colors offer a <code>ClampOutput</code> property. These include:</p>
+<ul>
+<li><code>ColorMatrix</code></li>
+<li><code>ArithmeticComposite</code></li>
+<li><code>Convolve</code></li>
+<li><code>Transfer</code> effects</li>
+</ul>
+<p>Setting the <code>ClampOutput</code> property to true on these effects ensures a consistent result will be achieved regardless of factors such as shader linking. Note that clamping occurs in unpremultiplied space.</p>
+<p>Other built-in effects may also produce output colors beyond the [0, 1] range in unpremultiplied space, even when their color pixels (and `Color properties if any) are within that range. These include:</p>
+<ul>
+<li><code>Transform</code> and <code>Scale</code> effects (when the <code>InterpolationMode</code> property is <code>Cubic</code> or <code>HighQualityCubic</code>)</li>
+<li>Lighting effects</li>
+<li><code>EdgeDetection</code> (when the <code>OverlayEdges</code> property is <code>true</code>)</li>
+<li><code>Exposure</code></li>
+<li><code>Composite</code> (when the <code>Mode</code> property is <code>Add</code>)</li>
+<li><code>Saturation</code></li>
+<li><code>Sepia</code></li>
+<li><code>TemperatureAndTint</code></li>
+</ul>
+<h2 id="forcing-numerical-clamping-within-an-effect-graph">Forcing numerical clamping within an effect graph</h2>
+<p>While using effects listed above which do not have a <code>ClampOutput</code> property, applications should consider forcing numerical clamping. This can be done by inserting an additional effect into the graph that clamps its pixels. A <code>ColorMatrix</code> effect may be used, with its <code>ClampOutput</code> property set to <code>true</code>.</p>
+<p>A second option to achieve consistent results is to request that Win2D use intermediate textures which have greater precision. This is described below.</p>
+<h2 id="controlling-precision-of-intermediate-textures">Controlling precision of intermediate textures</h2>
+<p>Win2D provides a few ways to control the precision of a graph.</p>
+<p>Before using high precision formats in Win2D, applications must ensure they are supported sufficiently by the GPU. To check this, use <a href="https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDevice_IsBufferPrecisionSupported.htm"><code>IsBufferPrecisionSupported(CanvasBufferPrecision)</code></a>.</p>
+<p>Applications may create a Direct3D device using WARP (software emulation) to ensure that all buffer precisions are supported. This is recommended in scenarios such as applying effects to a photo while saving to disk. Even if Win2D supports high precision buffer formats on the GPU, using WARP is recommended in this scenario on feature level 9.X GPUs, due to limited precision of shader arithmetic and sampling on some low-power mobile GPUs. To use software rendering, specify <code>ForceSoftwareRenderer = true</code> on your Win2D XAML controls or when creating your <code>CanvasDevice</code>.</p>
+<p>In each case below, the requested precision is actually the minimum precision Win2D will use. Higher precision may be used if intermediates are not required. Win2D may also share intermediate textures for different parts of the same graph or different graphs entirely. In this case Win2D uses the maximum precision requested for all involved operations.</p>
+<h3 id="precision-selection-from-the-drawing-session">Precision selection from the drawing session</h3>
+<p>The simplest way to control the precision of Win2D's intermediate textures is to use the <a href="https://microsoft.github.io/Win2D/WinUI2/html/P_Microsoft_Graphics_Canvas_CanvasDrawingSession_EffectBufferPrecision.htm"><code>EffectBufferPrecision</code></a> property. This controls the precision of all intermediate textures, as long as a precision is not also set manually on effects directly.</p>
+<pre><code class="lang-csharp">if (canvasDevice.IsBufferPrecisionSupported(CanvasBufferPrecision.Precision32Float))
+{
+    drawingSession.EffectBufferPrecision = CanvasBufferPrecision.Precision32Float;
+}
+</code></pre>
+<h3 id="precision-selection-from-inputs-and-render-targets">Precision selection from inputs and render targets</h3>
+<p>Applications may also rely on the precision of the inputs to an effect graph to control the precision of intermediate textures.</p>
+<p>The precisions of inputs to effects are propagated through the graph to select the precision of downstream intermediates. Where different branches in the effect graph meet, the greatest precision of any input is used.</p>
+<p>The precision selected based on a Win2D bitmap is determined from its pixel format.</p>
+<p>It is possible that Win2D cannot assign an effect a precision based on its inputs. This happens when an effect has no inputs, or when a command list is used, which has no specific precision. In this case, the precision of intermediate textures is determined from the current render target.</p>
+<h3 id="precision-selection-directly-on-effects">Precision selection directly on effects</h3>
+<p>The minimum precision for intermediate textures may also be set at explicit locations within an effect graph. This is only recommended for advanced applications.</p>
+<p>The minimum precision may be set using a property on an effect as follows:</p>
+<pre><code class="lang-csharp">if (canvasDevice.IsBufferPrecisionSupported(CanvasBufferPrecision.Precision32Float))
+{
+    blurEffect.BufferPrecision = CanvasBufferPrecision.Precision32Float;
+}
+</code></pre>
+<p>Note that the precision set on an effect will also apply to effects downstream in the same effect graph, unless a different precision is set on those downstream effects.</p>
+<p>Below is the full recursive logic used to determine the minimum precision for an intermediate buffer storing the output of a given transform node:</p>
+<p><img src="images/win2d_effects_precision.svg" alt="a flow chart illustrating how Win2D decides which precision to use for intermediate buffers in rendering graphs"></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/win2d/effect-precision-and-clamping.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

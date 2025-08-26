@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Use a SQL Server database in a Windows app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Use a SQL Server database in a Windows app ">
+    
+    <meta name="description" content="Learn how to connect a Windows App SDK app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="use-a-sql-server-database-in-a-windows-app">Use a SQL Server database in a Windows app</h1>
+
+<p>Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the <a href="/dotnet/api/system.data.sqlclient">System.Data.SqlClient</a> namespace.</p>
+<h2 id="getting-started">Getting started</h2>
+<p>In this guide, we'll show you one way to do that in your Windows App SDK apps. If you install the <a href="/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases">Northwind</a> sample database onto your SQL Server instance, and then use these snippets, you'll end up with a basic UI that shows products from the Northwind sample database.</p>
+<p><img src="images/products-northwind.png" alt="Northwind products"></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can also get scripts to create the <strong>Northwind</strong> and <strong>pubs</strong> sample databases from the <a href="https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/readme.md">SQL Server Samples GitHub repository</a>.</p>
+</div>
+<p>The snippets that appear in this guide are based on this <a href="https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo">UWP sample app</a>.</p>
+<h2 id="first-set-up-your-solution">First, set up your solution</h2>
+<p>To connect your app directly to a SQL Server database, your app can target any minimum version of Windows supported by Windows App SDK.  You can find that information in the properties page of your project.</p>
+<ol>
+<li>Open the <strong>Package.appxmanifest</strong> file of your Windows App SDK project in the manifest designer.</li>
+<li>In the <strong>Capabilities</strong> tab, select the <strong>Enterprise Authentication</strong> checkbox if you are using Windows Authentication for authenticating your SQL Server.</li>
+</ol>
+<p><img src="images/enterprise-authentication.png" alt="Enterprise Authentication Capability"></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You will also need to select <strong>Internet (Client &amp; Server)</strong>, <strong>Internet (Client)</strong>, and <strong>Private Networks (Client &amp; Server)</strong>, regardless of whether or not you're using Windows Authentication.</p>
+</div>
+<h2 id="add-and-retrieve-data-in-a-sql-server-database">Add and retrieve data in a SQL Server database</h2>
+<p>In this section, we'll do these things:</p>
+<p>1️⃣ Add a connection string.</p>
+<p>2️⃣ Create a class to hold product data.</p>
+<p>3️⃣ Retrieve products from the SQL Server database.</p>
+<p>4️⃣ Add a basic user interface.</p>
+<p>5️⃣ Populate the UI with Products.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  <a href="/dotnet/api/system.data.sqlclient">System.Data.SqlClient</a> to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.</p>
+</div>
+<h3 id="add-a-connection-string">Add a connection string</h3>
+<p>In the <strong>App.xaml.cs</strong> file, add a property to the <code>App</code> class, that gives other classes in your solution access to the connection string.</p>
+<p>Our connection string points to the Northwind database in a SQL Server Express instance. The connection string in this snippet assumes you kept the default instance name <code>SQLEXPRESS</code> when installing SQL Server Express. You can make changes to the connection string to match your SQL Server instance, database, and authentication method.</p>
+<pre><code class="lang-csharp">sealed partial class App : Application
+{
+    // Connection string for using Windows Authentication.
+    private string connectionString =
+        @&quot;Data Source=.\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI&quot;;
+
+    public string ConnectionString { get =&gt; connectionString; set =&gt; connectionString = value; }
+
+    ...
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>In production applications, connection information should be stored securely in app configuration (see <a href="/visualstudio/azure/vs-azure-tools-connected-services-app-configuration"><strong>Adding Azure App Configuration by using Visual Studio Connected Services</strong></a>). Connection strings and other secrets should never be hard-coded.</p>
+</div>
+<h3 id="create-a-class-to-hold-product-data">Create a class to hold product data</h3>
+<p>We'll create a class that implements the <a href="/dotnet/api/system.componentmodel.inotifypropertychanged">INotifyPropertyChanged</a> event so that we can bind attributes in our XAML UI to the properties in this class.</p>
+<pre><code class="lang-csharp">public class Product : INotifyPropertyChanged
+{
+    public int ProductID { get; set; }
+    public string ProductCode { get { return ProductID.ToString(); } }
+    public string ProductName { get; set; }
+    public string QuantityPerUnit { get; set; }
+    public decimal UnitPrice { get; set; }
+    public string UnitPriceString { get { return UnitPrice.ToString(&quot;######.00&quot;); } }
+    public int UnitsInStock { get; set; }
+    public string UnitsInStockString { get { return UnitsInStock.ToString(&quot;#####0&quot;); } }
+    public int CategoryId { get; set; }
+
+    public event PropertyChangedEventHandler PropertyChanged;
+    private void NotifyPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+</code></pre>
+<h3 id="retrieve-products-from-the-sql-server-database">Retrieve products from the SQL Server database</h3>
+<p>In the <strong>MainWindow.xaml.cs</strong> file of the Windows App SDK project, create a method that gets products from the Northwind sample database, and then returns them as an <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection</a> collection of <code>Product</code> instances.</p>
+<pre><code class="lang-csharp">public ObservableCollection&lt;Product&gt; GetProducts(string connectionString)
+{
+    const string GetProductsQuery = &quot;select ProductID, ProductName, QuantityPerUnit,&quot; +
+       &quot; UnitPrice, UnitsInStock, Products.CategoryID &quot; +
+       &quot; from Products inner join Categories on Products.CategoryID = Categories.CategoryID &quot; +
+       &quot; where Discontinued = 0&quot;;
+
+    var products = new ObservableCollection&lt;Product&gt;();
+    try
+    {
+        using (var conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            if (conn.State == System.Data.ConnectionState.Open)
+            {
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = GetProductsQuery;
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var product = new Product();
+                            product.ProductID = reader.GetInt32(0);
+                            product.ProductName = reader.GetString(1);
+                            product.QuantityPerUnit = reader.GetString(2);
+                            product.UnitPrice = reader.GetDecimal(3);
+                            product.UnitsInStock = reader.GetInt16(4);
+                            product.CategoryId = reader.GetInt32(5);
+                            products.Add(product);
+                        }
+                    }
+                }
+            }
+        }
+        return products;
+    }
+    catch (Exception eSql)
+    {
+        Debug.WriteLine($&quot;Exception: {eSql.Message}&quot;);
+    }
+    return null;
+}
+</code></pre>
+<h3 id="add-a-basic-user-interface">Add a basic user interface</h3>
+<p>Add the following XAML to the <strong>MainWindow.xaml</strong> file of the Windows App SDK project.</p>
+<p>This XAML creates a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> to show each product that you returned in the previous snippet, and binds the attributes of each row in the <code>ListView</code> to the properties that we defined in the <code>Product</code> class.</p>
+<pre><code class="lang-xml">&lt;Grid Background=&quot;{ThemeResource SystemControlAcrylicWindowBrush}&quot;&gt;
+    &lt;RelativePanel&gt;
+        &lt;ListView Name=&quot;InventoryList&quot;
+                  SelectionMode=&quot;Single&quot;
+                  ScrollViewer.VerticalScrollBarVisibility=&quot;Auto&quot;
+                  ScrollViewer.IsVerticalRailEnabled=&quot;True&quot;
+                  ScrollViewer.VerticalScrollMode=&quot;Enabled&quot;
+                  ScrollViewer.HorizontalScrollMode=&quot;Enabled&quot;
+                  ScrollViewer.HorizontalScrollBarVisibility=&quot;Auto&quot;
+                  ScrollViewer.IsHorizontalRailEnabled=&quot;True&quot;
+                  Margin=&quot;20&quot;&gt;
+            &lt;ListView.HeaderTemplate&gt;
+                &lt;DataTemplate&gt;
+                    &lt;StackPanel Orientation=&quot;Horizontal&quot;  &gt;
+                        &lt;TextBlock Text=&quot;ID&quot; Margin=&quot;8,0&quot; Width=&quot;50&quot; Foreground=&quot;DarkRed&quot; /&gt;
+                        &lt;TextBlock Text=&quot;Product description&quot; Width=&quot;300&quot; Foreground=&quot;DarkRed&quot; /&gt;
+                        &lt;TextBlock Text=&quot;Packaging&quot; Width=&quot;200&quot; Foreground=&quot;DarkRed&quot; /&gt;
+                        &lt;TextBlock Text=&quot;Price&quot; Width=&quot;80&quot; Foreground=&quot;DarkRed&quot; /&gt;
+                        &lt;TextBlock Text=&quot;In stock&quot; Width=&quot;80&quot; Foreground=&quot;DarkRed&quot; /&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.HeaderTemplate&gt;
+            &lt;ListView.ItemTemplate&gt;
+                &lt;DataTemplate x:DataType=&quot;local:Product&quot;&gt;
+                    &lt;StackPanel Orientation=&quot;Horizontal&quot; &gt;
+                        &lt;TextBlock Name=&quot;ItemId&quot;
+                                    Text=&quot;{x:Bind ProductCode}&quot;
+                                    Width=&quot;50&quot; /&gt;
+                        &lt;TextBlock Name=&quot;ItemName&quot;
+                                    Text=&quot;{x:Bind ProductName}&quot;
+                                    Width=&quot;300&quot; /&gt;
+                        &lt;TextBlock Text=&quot;{x:Bind QuantityPerUnit}&quot;
+                                   Width=&quot;200&quot; /&gt;
+                        &lt;TextBlock Text=&quot;{x:Bind UnitPriceString}&quot;
+                                   Width=&quot;80&quot; /&gt;
+                        &lt;TextBlock Text=&quot;{x:Bind UnitsInStockString}&quot;
+                                   Width=&quot;80&quot; /&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.ItemTemplate&gt;
+        &lt;/ListView&gt;
+    &lt;/RelativePanel&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h3 id="show-products-in-the-listview">Show products in the ListView</h3>
+<p>Open the <strong>MainWindow.xaml.cs</strong> file, and add code to the constructor of the <code>MainWindow</code> class that sets the <strong>ItemSource</strong> property of the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview">ListView</a> to the <a href="/dotnet/api/system.collections.objectmodel.observablecollection-1">ObservableCollection</a> of <code>Product</code> instances.</p>
+<pre><code class="lang-csharp">public MainWindow()
+{
+    this.InitializeComponent();
+    InventoryList.ItemsSource = GetProducts((App.Current as App).ConnectionString);
+}
+</code></pre>
+<p>Start the project and see products from the Northwind sample database appear in the UI.</p>
+<p><img src="images/products-northwind.png" alt="Northwind products"></p>
+<p>Explore the <a href="/dotnet/api/system.data.sqlclient">System.Data.SqlClient</a> namespace to see what other things you can do with data in your SQL Server database.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Try asking <a href="https://copilot.microsoft.com/">Microsoft Copilot</a> for help with your SQL queries. Copilot can help you write SQL queries, and suggest ways to improve your code.</p>
+</div>
+<h2 id="trouble-connecting-to-your-database">Trouble connecting to your database?</h2>
+<p>In most cases, some aspect of the SQL Server configuration needs to be changed. If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server. You can do that in the <strong>Computer Management</strong> console. (See <a href="/windows/client-management/administrative-tools-in-windows-10#tools">Windows Tools/Administrative Tools</a> for more information.)</p>
+<p><img src="images/computer-management.png" alt="Computer Management"></p>
+<p>Then, make sure that your SQL Server Browser service is running.</p>
+<p><img src="images/sql-browser-service.png" alt="SQL Server Browser Service"></p>
+<h2 id="next-step">Next step</h2>
+<div class="nextstepaction">
+<p><a href="sqlite-data-access.html">Use a SQLite database in a Windows app</a></p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-access/sql-server-database.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

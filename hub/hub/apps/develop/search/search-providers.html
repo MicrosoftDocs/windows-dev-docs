@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Search web search providers </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Search web search providers ">
+    
+    <meta name="description" content="Learn how to integrate into the Windows Search experience.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-search-web-search-providers">Windows Search web search providers</h1>
+
+<p>Windows Search currently uses the Web Search from Microsoft Bing app to return web content and search results. In the European Economic Area (EEA), you can install apps that implement a web search provider to return web content and search results in Windows Search.</p>
+<p><span class="mx-imgBorder">
+<img src="images/search-integration.png" alt="Screenshot of the Windows Search UI with 3rd party search provider integration.">
+</span>
+</p>
+<p>Search providers integrate with the Search experience by creating an <a href="/windows/msix/">MSIX package</a> with a package manifest file that provides the required information for the OS to register the search provider. After installation, the search provider is enabled by default in Windows Search experiences. In the Windows Settings app, users can enable and disable installed search providers and manage the order of providers in search results. Users can remove a search provider through the <strong>Settings &gt; Apps &gt; Installed apps</strong> page in Windows Settings app.</p>
+<p>For development and testing, when Developer Mode is enabled and the search provider app has been sideloaded on the device, it will appear in the list of available search providers. For more information, see <a href="/windows/apps/get-started/developer-mode-features-and-debugging">Developer Mode features and debugging</a>.</p>
+<p>Once the search provider is registered with the OS, user queries are passed to the HTTP endpoint specified by the provider in their package manifest using a standardized query string. The endpoint returns suggested results in a JSON document. With each suggested URL in the response document, the search provider includes the preview endpoint URL, which returns an HTML document that is displayed in the preview pane in the search results UI.</p>
+<p>This article provides guidance for creating a search provider app package and details about the protocols for implementing search provider HTTP endpoints.</p>
+<h2 id="create-a-search-extensibility-app-package">Create a search extensibility app package</h2>
+<p>Search providers register with the OS by providing an MSIX package that contains required information about the provider, such as the name of the search provider and the HTTP endpoints for suggestions and previews.</p>
+<h3 id="search-provider-app-extension">Search provider app extension</h3>
+<p>The app package manifest file supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">Package manifest schema reference</a>.  Search providers declare their registration information within the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual">uap3:AppExtension</a>. The <strong>Name</strong> attribute of the extension must be set to &quot;com.microsoft.windows.websearchprovider&quot;.</p>
+<p>Search providers should include the <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual">uap3:Properties</a> as the child of <strong>uap3:AppExtension</strong>. The package manifest schema does not enforce the structure of the <strong>uap3:Properties</strong> element other than requiring well-formed XML. The rest of this section describes the XML format that the OS expects in order to successfully register a search provider.</p>
+<pre><code class="lang-xml">&lt;uap3:Extension Category=&quot;windows.appExtension&quot;&gt;
+  &lt;uap3:AppExtension Name=&quot;com.microsoft.windows.websearchprovider&quot; DisplayName=&quot;SearchExampleApp&quot; Id=&quot;ContosoSearchApp&quot; PublicFolder=&quot;Public&quot;&gt;
+    &lt;uap3:Properties&gt;
+    &lt;!-- Search provider registration content goes here --&gt;
+    &lt;/uap3:Properties&gt;
+  &lt;/uap3:AppExtension&gt;
+&lt;/uap3:Extension&gt;
+</code></pre>
+<h3 id="element-hierarchy">Element hierarchy</h3>
+<p>uap3:Properties</p>
+<p>  EndPoint</p>
+<p>  Protocol</p>
+<h4 id="endpoint">Endpoint</h4>
+<p>The URL of the HTTPS endpoint to which the OS will send search query requests.</p>
+<h4 id="protocol">Protocol</h4>
+<p>The protocol schema that will be used when launching the provided web search results. If the specified protocol is not registered by an app on the OS, then the default browser will be launched for search results. For more information on registering protocol schemas, see <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol">uap:Protocol</a>.</p>
+<h4 id="dynamiccontentendpoint">DynamicContentEndpoint</h4>
+<p>This feature is no longer supported. For more information see <a href="#implement-a-gleam-icon-endpoint">Implement a gleam icon endpoint</a>. The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box.</p>
+<h3 id="example-package-manifest-file">Example package manifest file</h3>
+<p>The following is an example <code>appmanifest.xml</code> package manifest file for registering a Windows Search provider.</p>
+<pre><code class="lang-xml">&lt;!-- appxmanifest.xml --&gt;
+
+  &lt;uap3:Extension Category=&quot;windows.appExtension&quot;&gt;
+	  &lt;uap3:AppExtension Name=&quot;com.microsoft.windows.websearchprovider&quot; DisplayName=&quot;CustomSearch&quot; Id=&quot;CustomSearchApp&quot; PublicFolder=&quot;Public&quot;&gt;
+		  &lt;uap3:Properties&gt;
+			  &lt;Endpoint&gt;https://customsearchendpoint&lt;/Endpoint&gt;
+			  &lt;Protocol&gt;customsearch&lt;/Protocol&gt;
+        &lt;DynamicContentEndpoint&gt;https://sub.contoso.com/dynamic&lt;/DynamicContentEndpoint&gt;
+		  &lt;/uap3:Properties&gt;
+	  &lt;/uap3:AppExtension&gt;
+  &lt;/uap3:Extension&gt;
+  &lt;uap:Extension Category=&quot;windows.protocol&quot;&gt;
+	  &lt;uap:Protocol Name=&quot;customsearch&quot;/&gt;
+  &lt;/uap:Extension&gt;
+
+</code></pre>
+<h2 id="implement-a-windows-search-provider-suggestion-endpoint">Implement a Windows Search provider suggestion endpoint</h2>
+<p>Search providers must expose and register an HTTPS endpoint that is called by the OS when a user types into the Windows Search box. This endpoint should return a JSON-formatted string containing the search suggestions for the provided user query. Content must be delivered over HTTPS. Search integration does not support content delivered over HTTP.</p>
+<h3 id="suggestion-https-request-format">Suggestion HTTPS request format</h3>
+<p>The HTTPS request to the suggestion endpoint uses the following format.</p>
+<p><code>https://contoso.com?setlang=en-US&amp;cc=US&amp;qry=</code></p>
+<p>The query string parameters passed to the suggestion endpoint are the following.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setlang</td>
+<td>The locale associated with the query.</td>
+</tr>
+<tr>
+<td>cc</td>
+<td>The country code associated with query.</td>
+</tr>
+<tr>
+<td>qry</td>
+<td>The query provided by the user. If the parameter has no value, i.e. appears in the query string as <code>qry=</code>, then the user query is empty. Search providers can still provide suggestions and preview pages in response to an empty query. <strong>NOTE</strong> The OS does not perform any sanitization of query strings. Search providers can implement their own sanitization when the query is received.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="suggestion-https-response-headers">Suggestion HTTPS response headers</h3>
+<p>Search provider must include the following headers in the response from the suggestion HTTPS endpoint.</p>
+<ul>
+<li>Access-Control-Allow-Origin: <a href="https://www.bing.com">https://www.bing.com</a></li>
+<li>Access-Control-Allow-Credentials: true</li>
+<li>Access-Control-Allow-Methods: GET</li>
+<li>Content-Type: application/json; charset=utf-8</li>
+<li>Content-Length: [Must be the exact length of response]</li>
+</ul>
+<h3 id="suggestion-response-json-format">Suggestion response JSON format</h3>
+<p>The search provider HTTPS endpoint for suggestions must return a JSON document with the following format. The key names must match the format exactly.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suggestions</td>
+<td>Contains a list of JSON objects with key <code>Attributes</code> representing the suggestions associated with the user query.</td>
+</tr>
+<tr>
+<td>Attributes</td>
+<td>Contains the attributes of a suggestion.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>The URL for the search suggestion on the provider web site.</td>
+</tr>
+<tr>
+<td>query</td>
+<td>The user query associated with the search suggestion.</td>
+</tr>
+<tr>
+<td>previewPaneUrl</td>
+<td>The URL of the preview endpoint from which an HTML preview of the suggestion can be retrieved.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>The text description of the suggestion.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{&quot;Suggestions&quot;: 
+   [{&quot;Attributes&quot;: 
+     {&quot;url&quot;:&quot;https://www.contoso.com/search?q=projection+matrix&quot;,&quot;query&quot;:&quot;projection matrix&quot;,&quot;previewPaneUrl&quot;:&quot;http://www.contoso.com/preview&quot;} ,&quot;Text&quot;:&quot;projection matrix&quot;}, 
+    {&quot;Attributes&quot;: 
+     {&quot;url&quot;:&quot;https://www.contoso.com/search?q=rotation+matrix&quot;,&quot;query&quot;:&quot;rotation matrix&quot;,&quot;previewPaneUrl&quot;:&quot;http://www.contoso.com/preview&quot;} ,&quot;Text&quot;:&quot;rotation matrix&quot;}
+    ] 
+} 
+</code></pre>
+<h2 id="implement-a-windows-search-provider-preview-endpoint">Implement a Windows Search provider preview endpoint</h2>
+<p>Search providers return the URL of an HTTPS endpoint that provides an HTML preview of the page associated with each suggestion in the search results. The preview endpoint response must return the HTML code for a functioning page.</p>
+<h3 id="preview-https-request-format">Preview HTTPS request format</h3>
+<p>The HTTPS request to the preview endpoint uses the following format.</p>
+<p><code>https://contoso.com?Darkschemeovr=1</code></p>
+<p>The query string parameters passed to the suggestion endpoint are the following.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Darkschemeovr</td>
+<td>Specifies if the calling Windows system has dark theme enabled. The value is 1 if dark theme is enabled and 0 if the dark theme is disabled.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="preview-https-response-headers">Preview HTTPS response headers</h3>
+<ul>
+<li>Access-Control-Allow-Origin: <a href="https://www.bing.com">https://www.bing.com</a></li>
+<li>Access-Control-Allow-Credentials: true</li>
+<li>Access-Control-Allow-Methods: GET</li>
+<li>Content-Type: text/html; charset=utf-8</li>
+<li>Content-Length: [Must be the exact length of preview html]</li>
+</ul>
+<h3 id="options-request-and-cross-origin-resource-sharing-cors">OPTIONS request and Cross-Origin Resource Sharing (CORS)</h3>
+<p>Search providers must support the OPTIONS request method and respond to this request with HTTP OK. If the search provider endpoint is using CORS, the Windows search client will send out a HTTP OPTIONS request before each GET request.</p>
+<h2 id="implement-a-gleam-icon-endpoint">Implement a gleam icon endpoint</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This gleam feature is no longer enabled. Gleam icons are no longer displayed for all web providers in the EEA. The content in this section of the documentation is obsolete.</p>
+</div>
+<p>Search providers can optionally provide light and dark mode gleam icons that are displayed in the search bar when the search provider is currently enabled. When the <strong>DynamicContentEndpoint</strong> element is provided in the app manifest, a request will be sent to the specified URL and the search provider responds with a json file in the format defined below that includes the URLs of the icon image files and other metadata. The gleam icon request will be sent periodically while the search provider is the most recent provider active in Windows Search. The cadence for this request is every 6 hours. A request will also be sent upon each Search launch and on device unlock.</p>
+<h3 id="gleam-icon-https-request-format">Gleam icon HTTPS request format</h3>
+<p>The HTTPS request to the gleam icon endpoint uses the following format.</p>
+<p><code>https://www.contoso.com/Gleam?cc=FR&amp;setlang=en-us&amp;dateTime=3%2F29%2F2024%2C%208%3A33%3A56%20PM&amp;deviceOs=windows10&amp;schemaversion=1.0.0</code></p>
+<p>The query string parameters passed to the suggestion endpoint are the following.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setlang</td>
+<td>The locale associated with the query.</td>
+</tr>
+<tr>
+<td>cc</td>
+<td>The country code associated with query.</td>
+</tr>
+<tr>
+<td>dateTime</td>
+<td>The current date and time from client device, url-encoded.</td>
+</tr>
+<tr>
+<td>deviceOs</td>
+<td>The OS of the client device. The value of this parameter can be &quot;Windows10&quot; or &quot;Windows11&quot;. On Windows 10, the gleam icon size is 30x60. On Windows 11, the gleam icon size is 20x36</td>
+</tr>
+<tr>
+<td>schemaversion</td>
+<td>The gleam schema version.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gleam-icon-response-json-format">Gleam icon response JSON format</h3>
+<p>The search provider HTTPS endpoint for gleam icons must return a JSON document with the following format. The key names must match the format exactly. The current schema version is 1.0.0.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>schemaVersion</td>
+<td>The gleam schema version. This should match the <em>schemaVersion</em> query string parameter in the request.</td>
+</tr>
+<tr>
+<td>telemetryId</td>
+<td>A unique identifier for the gleam icon. If the value in the response is the same as the value for the current gleam icon, the OS will not update the icon.</td>
+</tr>
+<tr>
+<td>expirationTime</td>
+<td>The expiration time for the gleam icon. Must be a time in the future.</td>
+</tr>
+<tr>
+<td>content</td>
+<td>The content section of the response.</td>
+</tr>
+<tr>
+<td>taskbarSearchBox</td>
+<td>Contains settings for the search box.</td>
+</tr>
+<tr>
+<td>gleam</td>
+<td>Contains settings for the gleam icon.</td>
+</tr>
+<tr>
+<td>altText</td>
+<td>Alternate text for the gleam icon.</td>
+</tr>
+<tr>
+<td>dimensionEnum</td>
+<td>The value &quot;30x60&quot; if the request was sent from a Windows 10 device. The value &quot;20x36&quot; if the request was sent from a Windows 11 device.</td>
+</tr>
+<tr>
+<td>iconUrl</td>
+<td>Contains the URLs for the light and dark gleam icon image files.</td>
+</tr>
+<tr>
+<td>light</td>
+<td>The URL for the light gleam icon image file.</td>
+</tr>
+<tr>
+<td>dark</td>
+<td>The URL for the dark gleam icon image file.</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-json">{
+  &quot;schemaVersion&quot;:&quot;1.0.0&quot;,
+  &quot;telemetryId&quot;:&quot;&lt;unique gleam Id&gt;&quot;,
+  &quot;expirationTime&quot;:&quot;2025-12-09T20:37:13Z&quot;,
+  &quot;content&quot;: {
+    &quot;taskbarSearchBox&quot;: {
+      &quot;gleam&quot;:{
+        &quot;altText&quot;: &quot;&lt;alt text of the gleam&gt;&quot;,
+        &quot;dimensionEnum&quot;: &quot;(30x60 for Windows 10, 20x36 for Windows 11)&quot;,
+        &quot;iconUrl&quot;: {
+          &quot;light&quot;:&quot;&lt;3p's light gleam url&gt;&quot;,
+          &quot;dark&quot;: &quot;&lt;3p's dark gleam url&gt;&quot;
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h4 id="gleam-icon-response-validation">Gleam icon response validation</h4>
+<p>The response must specify both the light asset URL and the dark asset URL. The domains for the icon image URLs must use HTTPS and the subdomain must match the subdomain specified in the <strong>DynamicContentEndpoint</strong> element in the app manifest file.</p>
+<p>The image files must be in SVG format and the maximum file size is 300 kB. The gleam needs to be within a 240x120px frame inside the SVG.</p>
+<p>If an empty payload is received, that will clear the active gleam icon and no gleam will be displayed.</p>
+<h2 id="related-articles">Related articles</h2>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/search/search-providers.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

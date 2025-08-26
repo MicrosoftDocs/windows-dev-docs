@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Two-pane view </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Two-pane view ">
+    
+    <meta name="description" content="TwoPaneView is a layout control that helps you manage the display of apps that have 2 distinct areas of content.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="two-pane-view">Two-pane view</h1>
+
+<p>Two-pane view is a layout control that helps you manage the display of apps that have 2 distinct areas of content, like a list/detail view.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use the two-pane view when you have two distinct but related areas of content and:</p>
+<ul>
+<li>The content should automatically rearrange and resize to best fit the window.</li>
+<li>The secondary area of content should show/hide based on available space.</li>
+</ul>
+<p>If you need to display two areas of content but don't need the resizing and rearranging provided by the two-pane view, consider using a <a href="split-view.html">Split view</a> instead.</p>
+<p>For navigation options, use a <a href="navigationview.html">Navigation view</a>.</p>
+<h2 id="how-it-works">How it works</h2>
+<p>The two-pane view has two panes where you place your content. It adjusts the size and arrangement of the panes depending on the space available to the window. The possible pane layouts are defined by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneviewmode">TwoPaneViewMode</a> enumeration:</p>
+<table>
+<thead>
+<tr>
+<th>Enum value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SinglePane</code></td>
+<td>Only one pane is shown, as specified by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.panepriority">PanePriority</a> property.</td>
+</tr>
+<tr>
+<td><code>Wide</code></td>
+<td>Panes are shown side-by-side, or a single pane is shown, as specified by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration">WideModeConfiguration</a> property.</td>
+</tr>
+<tr>
+<td><code>Tall</code></td>
+<td>Panes are shown top-bottom, or a single pane is shown, as specified by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration">TallModeConfiguration</a> property.</td>
+</tr>
+</tbody>
+</table>
+<p><span class="mx-imgBorder">
+<img src="images/two-pane-view/tpv-dual-wide.png" alt="Two-pane view app in wide mode, with a photo of a mountain on the left and information about the photo on the right.">
+</span>
+</p>
+<blockquote>
+<p><em>App in wide mode.</em></p>
+</blockquote>
+<p><span class="mx-imgBorder">
+<img src="images/two-pane-view/tpv-dual-tall.png" alt="Two-pane view app in tall mode, with a photo of a mountain on the top and information about the photo on the bottom.">
+</span>
+</p>
+<blockquote>
+<p><em>App in tall mode.</em></p>
+</blockquote>
+<p>You configure the two-pane view by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.panepriority">PanePriority</a> to specify which pane is shown when there is space for only one pane. Then, you specify whether <code>Pane1</code> is shown on the top or bottom for tall windows, or on the left or right for wide windows.</p>
+<p>The two-pane view handles the size and arrangement of the panes, but you still need to make the content inside the pane adapt to the changes in size and orientation. See <a href="../layout/layouts-with-xaml.html">Responsive layouts with XAML</a> and <a href="../layout/layout-panels.html">Layout panels</a> for more info about creating an adaptive UI.</p>
+<h2 id="create-a-two-pane-view">Create a two-pane view</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview">TwoPaneView class</a></li>
+</ul>
+</div>
+<p>This XAML shows how to create a basic <code>TwoPaneView</code>.</p>
+<pre><code class="lang-xaml">&lt;TwoPaneView&gt;
+    &lt;TwoPaneView.Pane1&gt;
+        &lt;Grid Background=&quot;{ThemeResource LayerFillColorDefaultBrush}&quot;&gt;
+            &lt;TextBlock Text=&quot;Pane 1&quot; Margin=&quot;24&quot;
+                       Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot;/&gt;
+        &lt;/Grid&gt;
+    &lt;/TwoPaneView.Pane1&gt;
+
+    &lt;TwoPaneView.Pane2&gt;
+        &lt;Grid Background=&quot;{ThemeResource LayerFillColorAltBrush}&quot;&gt;
+            &lt;TextBlock Text=&quot;Pane 2&quot; Margin=&quot;24&quot;
+                       Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot;/&gt;
+        &lt;/Grid&gt;
+    &lt;/TwoPaneView.Pane2&gt;
+&lt;/TwoPaneView&gt;
+</code></pre>
+<p><img src="images/two-pane-view/tpv-size-default.png" alt="Two-pane view with panes set to default sizes"></p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview">TwoPaneView</a> doesn't have to be the root element of your page layout. In fact, you'll often use it inside a <a href="/uwp/api/microsoft.ui.xaml.controls.navigationview">NavigationView</a> control that provides the overall navigation for your app. The <code>TwoPaneView</code> adapts appropriately regardless of where it is in the XAML tree.</p>
+<h3 id="add-content-to-the-panes">Add content to the panes</h3>
+<p>Each pane of a two-pane view can hold a single XAML <code>UIElement</code>. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See <a href="../layout/layouts-with-xaml.html">Responsive layouts with XAML</a> and <a href="../layout/layout-panels.html">Layout panels</a> for more info about creating an adaptive UI.</p>
+<p>This example creates the simple picture/info app UI shown previously. The content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the <em>Responding to mode changes</em> section.)</p>
+<p><img src="images/two-pane-view/tpv-left-right.png" alt="Small image of example app spanned on dual-screens"></p>
+<pre><code class="lang-xaml">&lt;Grid&gt;
+    &lt;Grid.RowDefinitions&gt;
+        &lt;RowDefinition Height=&quot;Auto&quot; MinHeight=&quot;40&quot;/&gt;
+        &lt;RowDefinition Height=&quot;*&quot;/&gt;
+    &lt;/Grid.RowDefinitions&gt;
+
+    &lt;CommandBar DefaultLabelPosition=&quot;Right&quot;&gt;
+        &lt;AppBarButton x:Name=&quot;Share&quot; Icon=&quot;Share&quot; Label=&quot;Share&quot; Click=&quot;Share_Click&quot;/&gt;
+        &lt;AppBarButton x:Name=&quot;Print&quot; Icon=&quot;Print&quot; Label=&quot;Print&quot; Click=&quot;Print_Click&quot;/&gt;
+    &lt;/CommandBar&gt;
+
+    &lt;TwoPaneView
+        x:Name=&quot;MyTwoPaneView&quot;
+        Grid.Row=&quot;1&quot;
+        MinWideModeWidth=&quot;959&quot;
+        MinTallModeHeight=&quot;863&quot;
+        ModeChanged=&quot;TwoPaneView_ModeChanged&quot;&gt;
+
+        &lt;TwoPaneView.Pane1&gt;
+            &lt;Grid x:Name=&quot;Pane1Root&quot;&gt;
+                &lt;ScrollViewer&gt;
+                    &lt;StackPanel x:Name=&quot;Pane1StackPanel&quot;&gt;
+                        &lt;Image Source=&quot;Assets\LandscapeImage8.jpg&quot;
+                               VerticalAlignment=&quot;Top&quot; HorizontalAlignment=&quot;Center&quot;
+                               Margin=&quot;16,0&quot;/&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/ScrollViewer&gt;
+            &lt;/Grid&gt;
+        &lt;/TwoPaneView.Pane1&gt;
+
+        &lt;TwoPaneView.Pane2
+            &lt;Grid x:Name=&quot;Pane2Root&quot;&gt;
+                &lt;ScrollViewer x:Name=&quot;DetailsContent&quot;&gt;
+                    &lt;StackPanel Padding=&quot;16&quot;&gt;
+                        &lt;TextBlock Text=&quot;Mountain.jpg&quot; MaxLines=&quot;1&quot;
+                                       Style=&quot;{ThemeResource HeaderTextBlockStyle}&quot;/&gt;
+                        &lt;TextBlock Text=&quot;Date Taken:&quot;
+                                       Style=&quot;{ThemeResource SubheaderTextBlockStyle}&quot;
+                                       Margin=&quot;0,24,0,0&quot;/&gt;
+                        &lt;TextBlock Text=&quot;8/29/2019 9:55am&quot;
+                                       Style=&quot;{ThemeResource SubtitleTextBlockStyle}&quot;/&gt;
+                        &lt;TextBlock Text=&quot;Dimensions:&quot;
+                                       Style=&quot;{ThemeResource SubheaderTextBlockStyle}&quot;
+                                       Margin=&quot;0,24,0,0&quot;/&gt;
+                        &lt;TextBlock Text=&quot;800x536&quot;
+                                       Style=&quot;{ThemeResource SubtitleTextBlockStyle}&quot;/&gt;
+                        &lt;TextBlock Text=&quot;Resolution:&quot;
+                                       Style=&quot;{ThemeResource SubheaderTextBlockStyle}&quot;
+                                       Margin=&quot;0,24,0,0&quot;/&gt;
+                        &lt;TextBlock Text=&quot;96 dpi&quot;
+                                       Style=&quot;{ThemeResource SubtitleTextBlockStyle}&quot;/&gt;
+                        &lt;TextBlock Text=&quot;Description:&quot;
+                                       Style=&quot;{ThemeResource SubheaderTextBlockStyle}&quot;
+                                       Margin=&quot;0,24,0,0&quot;/&gt;
+                        &lt;TextBlock Text=&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.&quot;
+                                       Style=&quot;{ThemeResource SubtitleTextBlockStyle}&quot;
+                                       TextWrapping=&quot;Wrap&quot;/&gt;
+                    &lt;/StackPanel&gt;
+                &lt;/ScrollViewer&gt;
+            &lt;/Grid&gt;
+        &lt;/TwoPaneView.Pane2&gt;
+    &lt;/TwoPaneView&gt;
+
+    &lt;VisualStateManager.VisualStateGroups&gt;
+        &lt;VisualStateGroup x:Name=&quot;TwoPaneViewStates&quot;&gt;
+            &lt;VisualState x:Name=&quot;Normal&quot;/&gt;
+            &lt;VisualState x:Name=&quot;Wide&quot;&gt;
+                &lt;VisualState.Setters&gt;
+                    &lt;Setter Target=&quot;MyTwoPaneView.Pane1Length&quot;
+                            Value=&quot;2*&quot;/&gt;
+                &lt;/VisualState.Setters&gt;
+            &lt;/VisualState&gt;
+        &lt;/VisualStateGroup&gt;
+    &lt;/VisualStateManager.VisualStateGroups&gt;
+&lt;/Grid&gt;
+</code></pre>
+<h3 id="specify-which-pane-to-display">Specify which pane to display</h3>
+<p>When the two-pane view can only display a single pane, it uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.panepriority">PanePriority</a> property to determine which pane to display. By default, PanePriority is set to <strong>Pane1</strong>. Here's how you can set this property in XAML or in code.</p>
+<pre><code class="lang-xaml">&lt;TwoPaneView x:Name=&quot;MyTwoPaneView&quot; PanePriority=&quot;Pane2&quot;&gt;
+</code></pre>
+<pre><code class="lang-csharp">MyTwoPaneView.PanePriority = TwoPaneViewPriority.Pane2;
+</code></pre>
+<h3 id="pane-sizing">Pane sizing</h3>
+<p>The size of the panes is determined by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane1length">Pane1Length</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane2length">Pane2Length</a> properties. These use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.gridlength">GridLength</a> values that support <em>auto</em> and <em>star</em>(*) sizing. See the <em>Layout properties</em> section of <a href="../layout/layouts-with-xaml.html#layout-properties">Responsive layouts with XAML</a> for an explanation of auto and star sizing.</p>
+<p>By default, <code>Pane1Length</code> is set to <code>Auto</code> and it sizes itself to fit its content. <code>Pane2Length</code> is set to <code>*</code> and it uses all the remaining space.</p>
+<p><img src="images/two-pane-view/tpv-size-default.png" alt="Two-pane view with panes set to default sizes"></p>
+<blockquote>
+<p><em>Panes with default sizing</em></p>
+</blockquote>
+<p>The default values are useful for a typical list/detail layout, where you have a list of items in <code>Pane1</code>, and a lot of details in <code>Pane2</code>. However, depending on your content, you might prefer to divide the space differently. Here, <code>Pane1Length</code> is set to <code>2*</code> so it gets twice as much space as <code>Pane2</code>.</p>
+<pre><code class="lang-xaml">&lt;TwoPaneView x:Name=&quot;MyTwoPaneView&quot; Pane1Length=&quot;2*&quot;&gt;
+</code></pre>
+<p><img src="images/two-pane-view/tpv-size-2.png" alt="Two-pane view with pane 1 using two-thirds of screen, and pane 2 using one-third"></p>
+<blockquote>
+<p><em>Panes sized 2* and *</em></p>
+</blockquote>
+<p>If you set a pane to use auto sizing, you can control the size by setting the height and width of the <code>Panel</code> that holds the pane's content. In this case, you might need to handle the <code>ModeChanged</code> event and set the height and width constraints of the content as appropriate for the current mode.</p>
+<h3 id="display-in-wide-or-tall-mode">Display in wide or tall mode</h3>
+<p>On a single screen, the two-pane view's display <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.mode">Mode</a> is determined by the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.minwidemodewidth">MinWideModeWidth</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.mintallmodeheight">MinTallModeHeight</a> properties. Both properties have a default value of 641px, the same as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.compactmodethresholdwidth">NavigationView.CompactThresholdWidth</a>.</p>
+<p>This table shows how the <code>Height</code> and <code>Width</code> of the <code>TwoPaneView</code> determine which display mode is used.</p>
+<table>
+<thead>
+<tr>
+<th>TwoPaneView condition</th>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Width</code> &gt; <code>MinWideModeWidth</code></td>
+<td><code>Wide</code> mode is used</td>
+</tr>
+<tr>
+<td><code>Width</code> &lt;= <code>MinWideModeWidth</code>, and <code>Height</code> &gt; <code>MinTallModeHeight</code></td>
+<td><code>Tall</code> mode is used</td>
+</tr>
+<tr>
+<td><code>Width</code> &lt;= <code>MinWideModeWidth</code>, and <code>Height</code> &lt;= <code>MinTallModeHeight</code></td>
+<td><code>SinglePane</code> mode is used</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wide-configuration-options">Wide configuration options</h4>
+<p><code>MinWideModeWidth</code> controls when the two-pane view enters wide mode. The two-pane view enters <code>Wide</code> mode when the available space is wider than the <code>MinWideModeWidth</code> property. The default value is 641px, but you can change it to whatever you want. In general, you should set this property to whatever you want the minimum width of your pane to be.</p>
+<p>When the two-pane view is in wide mode, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.widemodeconfiguration">WideModeConfiguration</a> property determines what to show:</p>
+<table>
+<thead>
+<tr>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneviewwidemodeconfiguration">Enum value</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SinglePane</code></td>
+<td>A single pane (as determined by <code>PanePriority</code>). The pane takes up the full size of the <code>TwoPaneView</code> (ie, it's star sized in both directions).</td>
+</tr>
+<tr>
+<td><code>LeftRight</code></td>
+<td><code>Pane1</code> on the left/<code>Pane2</code> on the right. Both panes are star sized vertically, <code>Pane1</code>'s width is autosized, and <code>Pane2</code>'s width is star sized.</td>
+</tr>
+<tr>
+<td><code>RightLeft</code></td>
+<td><code>Pane1</code> on the right/<code>Pane2</code> on the left. Both panes are star sized vertically, <code>Pane2</code>'s width is autosized, and <code>Pane1</code>'s width is star sized.</td>
+</tr>
+</tbody>
+</table>
+<p>The default setting is <code>LeftRight</code>.</p>
+<table>
+<thead>
+<tr>
+<th>LeftRight</th>
+<th>RightLeft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/two-pane-view/tpv-left-right.png" alt="Two-pane view configured left-right"></td>
+<td><img src="images/two-pane-view/tpv-right-left.png" alt="Two-pane view configured right-left"></td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When the device uses a right-to-left (RTL) language, the two-pane view automatically swaps the order: <code>RightLeft</code> renders as <code>LeftRight</code>, and <code>LeftRight</code> renders as <code>RightLeft</code>.</p>
+</div>
+<h4 id="tall-configuration-options">Tall configuration options</h4>
+<p>The two-pane view enters <code>Tall</code> mode when the available space is narrower than <code>MinWideModeWidth</code>, and taller than <code>MinTallModeHeight</code>. The default value is 641px, but you can change it to whatever you want. In general, you should set this property to whatever you want the minimum height of your pane to be.</p>
+<p>When the two-pane view is in tall mode, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.tallmodeconfiguration">TallModeConfiguration</a> property determines what to show:</p>
+<table>
+<thead>
+<tr>
+<th><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneviewtallmodeconfiguration">Enum value</a></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SinglePane</code></td>
+<td>A single pane (as determined by <code>PanePriority</code>). The pane takes up the full size of the <code>TwoPaneView</code> (ie, it's star sized in both directions).</td>
+</tr>
+<tr>
+<td><code>TopBottom</code></td>
+<td><code>Pane1</code> on the top/<code>Pane2</code> on the bottom. Both panes are star sized horizontally, <code>Pane1</code>'s height is autosized, and <code>Pane2</code>'s height is star sized.</td>
+</tr>
+<tr>
+<td><code>BottomTop</code></td>
+<td><code>Pane1</code> on the bottom/<code>Pane2</code> on the top. Both panes are star sized horizontally, <code>Pane2</code>'s height is autosized, and <code>Pane1</code>'s height is star sized.</td>
+</tr>
+</tbody>
+</table>
+<p>The default is <code>TopBottom</code>.</p>
+<table>
+<thead>
+<tr>
+<th>TopBottom</th>
+<th>BottomTop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/two-pane-view/tpv-top-bottom.png" alt="Two-pane view configured top-bottom"></td>
+<td><img src="images/two-pane-view/tpv-bottom-top.png" alt="Two-pane view configured bottom-top"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="special-values-for-minwidemodewidth-and-mintallmodeheight">Special values for MinWideModeWidth and MinTallModeHeight</h4>
+<p>You can use the <code>MinWideModeWidth</code> property to prevent the two-pane view from entering <code>Wide</code> mode - just set <code>MinWideModeWidth</code> to <a href="/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&amp;preserve-view=true">Double.PositiveInfinity</a>.</p>
+<p>If you set <code>MinTallModeHeight</code> to <a href="/dotnet/api/system.double.positiveinfinity?view=dotnet-uwp-10.0&amp;preserve-view=true">Double.PositiveInfinity</a>, it prevents the two-pane view from entering <code>Tall</code> mode.</p>
+<p>If you set <code>MinTallModeHeight</code> to 0, it prevents the two-pane view from entering <code>SinglePane</code> mode.</p>
+<h4 id="responding-to-mode-changes">Responding to mode changes</h4>
+<p>You can use the read-only <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.mode">Mode</a> property to get the current display mode. Whenever the two-pane view changes which pane or panes it's displaying, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.modechanged">ModeChanged</a> event occurs before it renders the updated content. You can handle the event to respond to changes in the display mode.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <code>ModeChanged</code> event does not occur when the page is initially loaded, so your default XAML should represent the UI as it should appear when first loaded.</p>
+</div>
+<p>One way you can use this event is to update your app's UI so users can view all the content in <code>SinglePane</code> mode. For example, the example app has a primary pane (the image) and an info pane.</p>
+<p><img src="images/two-pane-view/tpv-top-bottom.png" alt="Small image of example app spanned in tall mode"></p>
+<blockquote>
+<p><em>Tall mode</em></p>
+</blockquote>
+<p>When there's only enough space to display one pane, you can move the content of <code>Pane2</code> into <code>Pane1</code> so the user can scroll to see all the content. It looks like this.</p>
+<p><img src="images/two-pane-view/tpv-single-pane.png" alt="Image of sample app on one screen with all content scrolling in a single pane"></p>
+<blockquote>
+<p><em>SinglePane mode</em></p>
+</blockquote>
+<p>Remember that the <code>MinWideModeWidth</code> and <code>MinTallModeHeight</code> properties determine when the display mode changes, so you can change when the content is moved between panes by adjusting the values of these properties.</p>
+<p>Here's the <code>ModeChanged</code> event handler code that moves the content between <code>Pane1</code> and <code>Pane2</code>. It also sets a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstate">VisualState</a> to constrain the width of the image in <code>Wide</code> mode.</p>
+<pre><code class="lang-csharp">private void TwoPaneView_ModeChanged(TwoPaneView sender, object args)
+{
+    // Remove details content from it's parent panel.
+    ((Panel)DetailsContent.Parent).Children.Remove(DetailsContent);
+    // Set Normal visual state.
+    VisualStateManager.GoToState(this, &quot;Normal&quot;, true);
+
+    // Single pane
+    if (sender.Mode == TwoPaneViewMode.SinglePane)
+    {
+        // Add the details content to Pane1.
+        Pane1StackPanel.Children.Add(DetailsContent);
+    }
+    // Dual pane.
+    else
+    {
+        // Put details content in Pane2.
+        Pane2Root.Children.Add(DetailsContent);
+
+        // If also in Wide mode, set Wide visual state
+        // to constrain the width of the image to 2*.
+        if (sender.Mode == TwoPaneViewMode.Wide)
+        {
+            VisualStateManager.GoToState(this, &quot;Wide&quot;, true);
+        }
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The <a href="/uwp/api/microsoft.ui.xaml.controls.twopaneview">TwoPaneView</a> for UWP apps requires WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in the <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>WinUI 2 Apis:</strong> <a href="/uwp/api/microsoft.ui.xaml.controls.twopaneview">TwoPaneView class</a></li>
+</ul>
+</div>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:TwoPaneView /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../layout/index.html">Layout overview</a></li>
+<li><a href="split-view.html">Split view</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/two-pane-view.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Modernize packaged desktop apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Modernize packaged desktop apps ">
+    
+    <meta name="description" content="Learn how to add modern experiences for Windows users in a desktop app that you have packaged in a Windows app package.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="features-that-require-package-identity">Features that require package identity</h1>
+
+<p>Some <a href="index.html">modern Windows experiences</a> require your app to have <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity">package identity</a> at runtime (in other words, your app needs to be <em>packaged</em>). Those experiences include certain Windows features, certain Windows Runtime APIs, package extensions, and UWP components.</p>
+<p>Universal Windows Platform (UWP) apps receive package identity by default because they can be distributed only via MSIX packages. Other types of Windows apps, including WPF apps, can also be deployed via MSIX packages to obtain package identity. But apps <em>packaged with external location</em> also has package identity. For more info about these terms, see <a href="/windows/apps/package-and-deploy/">Advantages and disadvantages of packaging your app</a>.</p>
+<p>Only packaged apps (including apps packaged with external location) have package identity at runtime. If your app has package identity, then you can use the following features in your app.</p>
+<h2 id="notifications">Notifications</h2>
+<p>The Windows App SDK <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager">notifications APIs</a> require your app to have package identity.</p>
+<h2 id="integrate-with-package-extensions">Integrate with package extensions</h2>
+<p>If your app needs to integrate with the system (for example, establish firewall rules), then describe those things in the package manifest of your app, and the system will do the rest. For most of these tasks, you won't have to write any code at all. With a bit of XML in the manifest, you can do things such as: start a process when the user logs on; integrate your app into File Explorer; and add your app a list of print targets that appear in other apps.</p>
+<p>For more info, see <a href="desktop-to-uwp-extensions.html">Integrate your desktop app with package extensions</a>.</p>
+<h2 id="get-activation-info-for-packaged-apps">Get activation info for packaged apps</h2>
+<p>Starting in Windows 10, version 1809, packaged apps can retrieve certain kinds of activation info during startup. For example, you can get info related to app activation from opening a file, from clicking an interactive toast, or from using a protocol.</p>
+<p>For more info, see <a href="get-activation-info-for-packaged-apps.html">Get activation info for packaged apps</a>.</p>
+<h2 id="extend-with-uwp-components">Extend with UWP components</h2>
+<p>Some Windows experiences (for example, a touch-enabled UI page) must run inside of an AppContainer. In general, you should first determine whether you can add your experience by <a href="desktop-to-uwp-enhance.html">enhancing</a> your existing desktop app with Windows Runtime APIs. If you have to use a UWP component to achieve the experience, then you can add a UWP project to your solution, and use app services to communicate between your desktop app and the UWP component.</p>
+<p>For more information, see <a href="desktop-to-uwp-extend.html">Extend your desktop app with UWP components</a>.</p>
+<h2 id="distribute">Distribute</h2>
+<p>If you package your app in an MSIX package, then it's very easy to distribute it by publishing it the Microsoft Store, or by sideloading it onto systems.</p>
+<p>For more info, see <a href="desktop-to-uwp-distribute.html">Distribute your packaged desktop app</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/modernize-packaged-apps.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

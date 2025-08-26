@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Handle the Windows camera privacy setting </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Handle the Windows camera privacy setting ">
+    
+    <meta name="description" content="Learn how apps should handle the Windows camera privacy setting.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="handle-the-windows-camera-privacy-setting">Handle the Windows camera privacy setting</h1>
+
+<p>Windows allows users to grant or deny access to the device's camera in the Windows Settings app, under <strong>Privacy &amp; Security -&gt; Camera</strong>. Camera access can be disabled for the entire device, for all unpackaged apps, or for individual packaged apps. This article describes the best practices for checking whether your app has access to the camera and handling the case where access is denied by the user.</p>
+<h2 id="check-for-access-before-initializing-the-camera">Check for access before initializing the camera</h2>
+<p>For packaged apps, you should check to see if your app has camera access before initializing the camera. Use the <a href="/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability">AppCapability</a> class to determine if your app has access.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cs" role="tab" aria-controls="tabpanel_1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">bool cameraCapabilityAccess = false;
+private void CheckCameraAccessStatus()
+{
+    var status = AppCapability.Create(&quot;Webcam&quot;).CheckAccess();
+    
+    if (status == AppCapabilityAccessStatus.Allowed)
+    {
+        cameraCapabilityAccess = true;
+        cameraButton.IsEnabled = true;
+    }
+    else
+    {
+        cameraCapabilityAccess = false;
+        cameraButton.IsEnabled = false;
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">bool cameraCapabilityAccess;
+void MainWindow::CheckCameraAccessStatus()
+{
+    auto status = AppCapability::Create(L&quot;Webcam&quot;).CheckAccess();
+
+    if (status == AppCapabilityAccessStatus::Allowed)
+    {
+        cameraCapabilityAccess = true;
+        cameraButton().IsEnabled(true);
+    }
+    else
+    {
+        cameraCapabilityAccess = false;
+        cameraButton().IsEnabled(false);
+    }
+}
+</code></pre>
+</section>
+</div>
+<h2 id="handle-the-access-denied-error">Handle the access denied error</h2>
+<p>The Windows camera capture APIs will return the error <strong>E_ACCESSDENIED</strong> when apps attempt to access the camera capture device if the user has disabled camera in the camera privacy Settings page. Apps should check for this error when initializing the capture device. If the initialization fails with this error, it is recommended that you direct the user to the camera privacy Settings page and potentially enable access for your app. The camera privacy Settings page can be launched using the URI <code>ms-settings:privacy-webcam</code>.</p>
+<p>The following example illustrates how to check for E_ACCESSDENIED when calling <a href="/uwp/api/windows.media.capture.mediacapture.initializeasync">MediaCapture.InitializeAsync</a>.</p>
+<div class="tabGroup" id="tabgroup_2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_2_cs" role="tab" aria-controls="tabpanel_2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_2_cpp" role="tab" aria-controls="tabpanel_2_cpp" data-tab="cpp" tabindex="-1">C++</a>
+</li>
+</ul>
+<section id="tabpanel_2_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">try
+{
+    await mediaCapture.InitializeAsync(mediaCaptureInitializationSettings);
+}
+catch (System.UnauthorizedAccessException ex)
+{
+    // E_ACCESSDENIED, 0x80070005 in hexadecimal, -2147024891 in decimal
+    if (ex.HResult == -2147024891)
+    {
+        StatusTextBlock.Text = &quot;Access to the camera has been denied.&quot; +
+            &quot;Click the Settings button to check the camera privacy settings&quot;;               
+    }
+
+    return;
+}
+...
+// Launch the camera privacy Settings page
+private async void LaunchSettingsButton_Click(object sender, RoutedEventArgs e)
+{
+    bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri(&quot;ms-settings:privacy-webcam&quot;));
+}
+</code></pre>
+</section>
+<section id="tabpanel_2_cpp" role="tabpanel" data-tab="cpp" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-cpp">try
+{
+    co_await mediaCapture.InitializeAsync(mediaCaptureInitializationSettings);
+}
+catch (winrt::hresult_error const&amp; ex)
+{
+    winrt::hresult hr = ex.code();
+    if (hr == 0x80070005)
+    {
+        StatusTextBlock().Text(L&quot;Access to the camera has been denied. Click the Settings button to check the camera privacy settings.&quot;);
+	}
+    
+    co_return;
+}
+</code></pre>
+</section>
+</div>
+
+<p>The following example illustrates handling the E_ACCESSDENIED error returned from <a href="/windows/win32/api/mfobjects/nf-mfobjects-imfactivate-activateobject">IMFActivate::ActivateObject</a> when initializing an <a href="/windows/win32/api/mfidl/nn-mfidl-imfmediasource">IMFMediaSource</a> for a capture device.</p>
+<pre><code class="lang-cpp">IMFMediaSource* pSource = NULL;
+IMFAttributes* pAttributes = NULL;
+IMFActivate** ppDevices = NULL;
+
+// Create an attribute store to specify the enumeration parameters.
+HRESULT hr = MFCreateAttributes(&amp;pAttributes, 1);
+if (FAILED(hr))
+{
+    goto done;
+}
+
+// Source type: video capture devices
+hr = pAttributes-&gt;SetGUID(
+    MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE,
+    MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_GUID
+);
+if (FAILED(hr))
+{
+    goto done;
+}
+
+// Enumerate devices.
+UINT32 count;
+hr = MFEnumDeviceSources(pAttributes, &amp;ppDevices, &amp;count);
+if (FAILED(hr))
+{
+    goto done;
+}
+
+if (count == 0)
+{
+    hr = E_FAIL;
+    goto done;
+}
+
+// Create the media source object.
+hr = ppDevices[0]-&gt;ActivateObject(IID_PPV_ARGS(&amp;pSource));
+if (FAILED(hr))
+{
+    if (hr == E_ACCESSDENIED)
+    {
+        int response = MessageBox(hWnd, L&quot;Access to the camera was denied. Open the camera privacy settings?&quot;, L&quot;Error&quot;, MB_YESNO);
+        if (response == IDYES)
+        {
+            ShellExecute(NULL, L&quot;open&quot;, L&quot;ms-settings:privacy-webcam&quot;, L&quot;&quot;, L&quot;.&quot;, SW_SHOWDEFAULT);
+        }
+    } 
+    goto done;
+}
+</code></pre>
+<h2 id="implement-fallback-behavior">Implement fallback behavior</h2>
+<p>Apps should implement the previous steps to alert the user detect and alert the user that camera access is restricted due to privacy settings and to direct the user to the camera privacy Settings page to allow them to update their settings. After these steps, the app should retry camera initialization to see if access has been granted. If the user declines to update their settings to allow your app to access to the camera, consider providing alternative functionality. For example, you could disable camera features, switch to a different mode, or display a placeholder image in place of the camera preview.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/camera/camera-privacy-setting.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

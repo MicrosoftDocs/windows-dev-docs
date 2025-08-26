@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Using smart cards in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Using smart cards in Windows apps ">
+    
+    <meta name="description" content="This topic explains how packaged Windows apps can use smart cards to connect users to secure network services.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="smart-cards">Smart cards</h1>
+
+<p>This topic explains how Windows apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.</p>
+<p>The Windows Runtime (WinRT) APIs for smart cards are part of the <a href="https://developer.microsoft.com/windows/downloads/windows-sdk/">Windows Software Development Kit (SDK)</a>. These APIs were created for use in Universal Windows Platform (UWP) apps, but they can also be used in WinUI apps or in packaged desktop apps, including WPF and Windows Forms. For more information about using WinRT APIs in your Windows desktop app, see <a href="/windows/apps/desktop/modernize/desktop-to-uwp-enhance">Call Windows Runtime APIs in desktop apps</a>.</p>
+<h2 id="configure-the-app-manifest">Configure the app manifest</h2>
+<p>Before your app can authenticate users using smart cards or virtual smart cards, you must set the <strong>Shared User Certificates</strong> capability in the project Package.appxmanifest file of your WinUI project or packaging project.</p>
+<h2 id="access-connected-card-readers-and-smart-cards">Access connected card readers and smart cards</h2>
+<p>You can query for readers and attached smart cards by passing the device ID (specified in <a href="/uwp/api/Windows.Devices.Enumeration.DeviceInformation">DeviceInformation</a>) to the <a href="/uwp/api/windows.devices.smartcards.smartcardreader.fromidasync">SmartCardReader.FromIdAsync</a> method. To access the smart cards currently attached to the returned reader device, call <a href="/uwp/api/windows.devices.smartcards.smartcardreader.findallcardsasync">SmartCardReader.FindAllCardsAsync</a>.</p>
+<pre><code class="lang-cs">string selector = SmartCardReader.GetDeviceSelector();
+DeviceInformationCollection devices =
+    await DeviceInformation.FindAllAsync(selector);
+
+foreach (DeviceInformation device in devices)
+{
+    SmartCardReader reader =
+        await SmartCardReader.FromIdAsync(device.Id);
+
+    // For each reader, we want to find all the cards associated
+    // with it. Then we will create a SmartCardListItem for
+    // each (reader, card) pair.
+    IReadOnlyList&lt;SmartCard&gt; cards =
+        await reader.FindAllCardsAsync();
+}
+</code></pre>
+<p>You should also enable your app to observe for <a href="/uwp/api/windows.devices.smartcards.smartcardreader.cardadded">CardAdded</a> events by implementing a method to handle app behavior on card insertion.</p>
+<pre><code class="lang-cs">private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
+{
+  // A card has been inserted into the sender SmartCardReader.
+}
+</code></pre>
+<p>You can then pass each returned <a href="/uwp/api/Windows.Devices.SmartCards.SmartCard">SmartCard</a> object to <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning">SmartCardProvisioning</a> to access the methods that allow your app to access and customize its configuration.</p>
+<h2 id="create-a-virtual-smart-card">Create a virtual smart card</h2>
+<p>To create a virtual smart card using <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning">SmartCardProvisioning</a>, your app will first need to provide a friendly name, an admin key, and a <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardPinPolicy">SmartCardPinPolicy</a>. The friendly name is generally something provided to the app, but your app will still need to provide an admin key and generate an instance of the current <strong>SmartCardPinPolicy</strong> before passing all three values to <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync">RequestVirtualSmartCardCreationAsync</a>.</p>
+<ol>
+<li>Create a new instance of a <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardPinPolicy">SmartCardPinPolicy</a></li>
+<li>Generate the admin key value by calling <a href="/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom">CryptographicBuffer.GenerateRandom</a> on the admin key value provided by the service or management tool.</li>
+<li>Pass these values along with the <em>FriendlyNameText</em> string to <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync">RequestVirtualSmartCardCreationAsync</a>.</li>
+</ol>
+<pre><code class="lang-cs">var pinPolicy = new SmartCardPinPolicy
+    {
+        MinLength = 6
+    };
+
+IBuffer adminkey = CryptographicBuffer.GenerateRandom(24);
+
+SmartCardProvisioning provisioning = await
+     SmartCardProvisioning.RequestVirtualSmartCardCreationAsync(
+          &quot;Card friendly name&quot;,
+          adminkey,
+          pinPolicy);
+</code></pre>
+<p>Once <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcardcreationasync">RequestVirtualSmartCardCreationAsync</a> has returned the associated <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning">SmartCardProvisioning</a> object, the virtual smart card is provisioned and ready for use.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In order to create a virtual smart card using a packaged Windows app, the user running the app must be a member of the administrators group. If the user is not a member of the administrators group, virtual smart card creation will fail.</p>
+</div>
+<h2 id="handle-authentication-challenges">Handle authentication challenges</h2>
+<p>To authenticate with smart cards or virtual smart cards, your app must provide the behavior to complete challenges between the admin key data stored on the card, and the admin key data maintained by the authentication server or management tool.</p>
+<h3 id="obtaining-the-admin-key">Obtaining the admin key</h3>
+<p>Before you can perform authentication, you need to obtain the admin key. The source of the admin key depends on your scenario:</p>
+<ul>
+<li><strong>For virtual smart cards you created</strong>: Use the same admin key that was generated during card creation (as shown in the &quot;Create a virtual smart card&quot; section above). You should store this key securely for later authentication use.</li>
+<li><strong>For existing physical or virtual smart cards</strong>: The admin key is typically provided by your organization's IT department, card management system, or the service that issued the card.</li>
+<li><strong>For development/testing</strong>: You can generate a test admin key using <a href="/uwp/api/windows.security.cryptography.cryptographicbuffer.generaterandom">CryptographicBuffer.GenerateRandom</a> as shown in the virtual card creation example below.</li>
+</ul>
+<pre><code class="lang-cs">// Example: Store the admin key from virtual card creation for later use
+IBuffer adminkey = CryptographicBuffer.GenerateRandom(24);
+
+// Store this key securely in your app (e.g., in app settings, secure storage, etc.)
+// You'll need this same key for authentication operations
+
+SmartCardProvisioning provisioning = await
+     SmartCardProvisioning.RequestVirtualSmartCardCreationAsync(
+          &quot;Card friendly name&quot;,
+          adminkey,
+          pinPolicy);
+
+// Save the adminkey for future authentication
+SaveAdminKeySecurely(adminkey);
+</code></pre>
+<h3 id="example-admin-key-management-methods">Example admin key management methods</h3>
+<p>Here are example methods you might implement to securely store and retrieve admin keys:</p>
+<pre><code class="lang-cs">// Example implementation for storing admin key securely
+private void SaveAdminKeySecurely(IBuffer adminKey)
+{
+    // Convert to string for storage (consider encryption for production)
+    string adminKeyString = CryptographicBuffer.EncodeToBase64String(adminKey);
+    
+    // Store in app settings (consider using Windows Credential Manager for production)
+    ApplicationData.Current.LocalSettings.Values[&quot;SmartCardAdminKey&quot;] = adminKeyString;
+}
+
+// Example implementation for retrieving stored admin key
+private IBuffer GetStoredAdminKey()
+{
+    // Retrieve from app settings
+    string adminKeyString = ApplicationData.Current.LocalSettings.Values[&quot;SmartCardAdminKey&quot;] as string;
+    
+    if (string.IsNullOrEmpty(adminKeyString))
+    {
+        throw new InvalidOperationException(&quot;Admin key not found. Ensure the smart card was created by this app or the admin key was provided by your IT department.&quot;);
+    }
+    
+    // Convert back to IBuffer
+    return CryptographicBuffer.DecodeFromBase64String(adminKeyString);
+}
+</code></pre>
+<h3 id="authentication-algorithm">Authentication algorithm</h3>
+<p>The following code shows how to support smart card authentication for services or modification of physical or virtual card details. If the data generated using the admin key on the card (&quot;challenge&quot;) is the same as the admin key data provided by the server or management tool (&quot;adminkey&quot;), authentication is successful.</p>
+<pre><code class="lang-cs">static class ChallengeResponseAlgorithm
+{
+    public static IBuffer CalculateResponse(IBuffer challenge, IBuffer adminkey)
+    {
+        if (challenge == null)
+            throw new ArgumentNullException(&quot;challenge&quot;);
+        if (adminkey == null)
+            throw new ArgumentNullException(&quot;adminkey&quot;);
+
+        SymmetricKeyAlgorithmProvider objAlg = SymmetricKeyAlgorithmProvider.OpenAlgorithm(SymmetricAlgorithmNames.TripleDesCbc);
+        var symmetricKey = objAlg.CreateSymmetricKey(adminkey);
+        var buffEncrypted = CryptographicEngine.Encrypt(symmetricKey, challenge, null);
+        return buffEncrypted;
+    }
+}
+</code></pre>
+<p>You will see this code referenced throughout the remainder of this topic was we review how to complete an authentication action, and how to apply changes to smart card and virtual smart card information.</p>
+<h2 id="verify-smart-card-or-virtual-smart-card-authentication-response">Verify smart card or virtual smart card authentication response</h2>
+<p>Now that we have the logic for authentication challenges defined, we can communicate with the reader to access the smart card, or alternatively, access a virtual smart card for authentication.</p>
+<ol>
+<li>To begin the challenge, call <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.getchallengecontextasync">GetChallengeContextAsync</a> from the <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning">SmartCardProvisioning</a> object associated with the smart card. This will generate an instance of <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardChallengeContext">SmartCardChallengeContext</a>, which contains the card's <a href="/uwp/api/windows.devices.smartcards.smartcardchallengecontext.challenge">Challenge</a> value.</li>
+<li>Next, pass the card's challenge value and the admin key provided by the service or management tool to the <strong>ChallengeResponseAlgorithm</strong> that we defined in the previous example.</li>
+<li><a href="/uwp/api/windows.devices.smartcards.smartcardchallengecontext.verifyresponseasync">VerifyResponseAsync</a> will return <strong>true</strong> if authentication is successful.</li>
+</ol>
+<pre><code class="lang-cs">bool verifyResult = false;
+SmartCard card = await rootPage.GetSmartCard();
+SmartCardProvisioning provisioning =
+    await SmartCardProvisioning.FromSmartCardAsync(card);
+
+SmartCardChallengeContext context =
+    await provisioning.GetChallengeContextAsync();
+
+// Use the admin key that was either:
+// 1. Generated during virtual card creation, or
+// 2. Provided by your IT department/card management system
+IBuffer adminKey = GetStoredAdminKey(); // Your method to retrieve the stored admin key
+
+IBuffer response = ChallengeResponseAlgorithm.CalculateResponse(
+    context.Challenge,
+    adminKey);
+
+verifyResult = await context.VerifyResponseAsync(response);
+</code></pre>
+<h2 id="change-or-reset-a-user-pin">Change or reset a user PIN</h2>
+<p>To change the PIN associated with a smart card:</p>
+<ol>
+<li>Access the card and generate the associated <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning">SmartCardProvisioning</a> object.</li>
+<li>Call <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinchangeasync">RequestPinChangeAsync</a> to display a UI to the user to complete this operation.</li>
+<li>If the PIN was successfully changed the call will return <strong>true</strong>.</li>
+</ol>
+<pre><code class="lang-cs">SmartCardProvisioning provisioning =
+    await SmartCardProvisioning.FromSmartCardAsync(card);
+
+bool result = await provisioning.RequestPinChangeAsync();
+</code></pre>
+<p>To request a PIN reset:</p>
+<ol>
+<li>Call <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinresetasync">RequestPinResetAsync</a> to initiate the operation. This call includes a <a href="/uwp/api/windows.devices.smartcards.smartcardpinresethandler">SmartCardPinResetHandler</a> method that represents the smart card and the pin reset request.</li>
+<li><a href="/uwp/api/windows.devices.smartcards.smartcardpinresethandler">SmartCardPinResetHandler</a> provides information that our <strong>ChallengeResponseAlgorithm</strong>, wrapped in a <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardPinResetDeferral">SmartCardPinResetDeferral</a> call, uses to compare the card's challenge value and the admin key provided by the service or management tool to authenticate the request.</li>
+<li>If the challenge is successful, the <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestpinresetasync">RequestPinResetAsync</a> call is completed; returning <strong>true</strong> if the PIN was successfully reset.</li>
+</ol>
+<pre><code class="lang-cs">SmartCardProvisioning provisioning =
+    await SmartCardProvisioning.FromSmartCardAsync(card);
+
+bool result = await provisioning.RequestPinResetAsync(
+    (pinResetSender, request) =&gt;
+    {
+        SmartCardPinResetDeferral deferral =
+            request.GetDeferral();
+
+        try
+        {
+            // Use the same admin key from card creation or your secure storage
+            IBuffer adminKey = GetStoredAdminKey(); // Your method to retrieve the stored admin key
+            
+            IBuffer response =
+                ChallengeResponseAlgorithm.CalculateResponse(
+                    request.Challenge,
+                    adminKey);
+            request.SetResponse(response);
+        }
+        finally
+        {
+            deferral.Complete();
+        }
+    });
+}
+</code></pre>
+<h2 id="remove-a-smart-card-or-virtual-smart-card">Remove a smart card or virtual smart card</h2>
+<p>When a physical smart card is removed a <a href="/uwp/api/windows.devices.smartcards.smartcardreader.cardremoved">CardRemoved</a> event will fire when the card is deleted.</p>
+<p>Associate the firing of this event with the card reader with the method that defines your app's behavior on card or reader removal as an event handler. This behavior can be something as simply as providing notification to the user that the card was removed.</p>
+<pre><code class="lang-cs">reader = card.Reader;
+reader.CardRemoved += HandleCardRemoved;
+</code></pre>
+<p>The removal of a virtual smart card is handled programmatically by first retrieving the card and then calling <a href="/uwp/api/windows.devices.smartcards.smartcardprovisioning.requestvirtualsmartcarddeletionasync">RequestVirtualSmartCardDeletionAsync</a> from the <a href="/uwp/api/Windows.Devices.SmartCards.SmartCardProvisioning">SmartCardProvisioning</a> returned object.</p>
+<pre><code class="lang-cs">bool result = await SmartCardProvisioning
+    .RequestVirtualSmartCardDeletionAsync(card);
+</code></pre>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="/windows/apps/desktop/modernize/desktop-to-uwp-enhance">Call Windows Runtime APIs in desktop apps</a></li>
+<li><a href="/uwp/api/Windows.Devices.SmartCards.SmartCard">SmartCard</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/security/smart-cards.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

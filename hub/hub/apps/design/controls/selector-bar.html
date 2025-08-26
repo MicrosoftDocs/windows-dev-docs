@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>SelectorBar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="SelectorBar ">
+    
+    <meta name="description" content="The SelectorBar control enables switching between a small set of content sections.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="selector-bar">Selector bar</h1>
+
+<p>A selector bar lets a user switch between a small number of different sets or views of data. One item at a time can be selected.</p>
+<p><span class="mx-imgBorder">
+<img src="images/selector-bar.png" alt="Selector bar with nodes Recent, Shared, Favorites. The Recent node is selected, as indicated by a blue line under the text.">
+</span>
+</p>
+<p>When a user selects an item in the selector bar, you typically change the view by either:</p>
+<ul>
+<li>navigating between different pages in your app.</li>
+<li>changing the data shown in a collection control.</li>
+</ul>
+<p>The selector bar is a light-weight control that supports an icon and text. It's intended to present a limited number of options so it does not rearrange items to adapt to different window sizes.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a SelectorBar when you want to let a user navigate between a limited number of views or pages and only one option can be selected at once.</p>
+<p>Some examples include:</p>
+<ul>
+<li>Switching between &quot;Recent,&quot; &quot;Shared,&quot; and &quot;Favorites&quot; pages, where each page displays a unique list of content.</li>
+<li>Switching between &quot;All,&quot; &quot;Unread,&quot; &quot;Flagged,&quot; and &quot;Urgent&quot; views, where each view displays a uniquely filtered list of email items.</li>
+</ul>
+<h3 id="when-should-a-different-control-be-used">When should a different control be used?</h3>
+<p>There are some scenarios where another control may be more appropriate to use.</p>
+<ul>
+<li>Use <a href="navigationview.html">NavigationView</a> when you require consistent, top-level app navigation that adapts to different window sizes.</li>
+<li>Use <a href="tab-view.html">TabView</a> when the user should be able to open, close, rearrange, or tear off new views of the content.</li>
+<li>Use <a href="pipspager.html">PipsPager</a> when you need regular pagination of a single data view.</li>
+<li>Use <a href="radio-button.html">RadioButtons</a> when an option is not selected by default, and context is unrelated to page navigation.</li>
+</ul>
+<h2 id="create-a-selectorbar-control">Create a SelectorBar control</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar">SelectorBar class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.items">Items property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged">SelectionChanged event</a>,  <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem">SelectorBarItem class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/SelectorBar">Open the WinUI 3 Gallery app and see the SelectorBar in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This XAML creates a basic SelectorBar control with 3 sections of content.</p>
+<pre><code class="lang-xaml">&lt;SelectorBar x:Name=&quot;SelectorBar&quot;&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemRecent&quot; 
+                     Text=&quot;Recent&quot; Icon=&quot;Clock&quot;/&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemShared&quot; 
+                     Text=&quot;Shared&quot; Icon=&quot;Share&quot;/&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemFavorites&quot; 
+                     Text=&quot;Favorites&quot; Icon=&quot;Favorite&quot;/&gt;
+&lt;/SelectorBar&gt;
+</code></pre>
+<p>This shows how to add a SelectorBarItem in code.</p>
+<pre><code class="lang-csharp">SelectorBarItem newItem = new SelectorBarItem()
+{
+    Text = &quot;New Item&quot;,
+    Icon = new SymbolIcon(Symbol.Add)
+};
+selectorBar.Items.Add(newItem);
+</code></pre>
+<h3 id="selectorbar-items">SelectorBar items</h3>
+<p>You populate the SelectorBar <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.items">Items</a> collection with <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem">SelectorBarItem</a> objects. You can do this directly in XAML or in code. Because it's intended to display a limited number of options, SelectorBar does not have an <code>ItemsSource</code> property for binding to an external collection of items.</p>
+<h3 id="item-content">Item content</h3>
+<p>The SelectorBarItem class provides <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem.text">Text</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem.icon">Icon</a> properties that you use to set the content of your selector bar. You can set one or both properties; however, we recommend that you set the <code>Text</code> property to make the item more meaningful.</p>
+<p>The <code>Icon</code> property takes an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement">IconElement</a>, so you can use any of these derived icon types:</p>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon">AnimatedIcon</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.bitmapicon">BitmapIcon</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon">FontIcon</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsourceelement">IconSourceElement</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.imageicon">ImageIcon</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pathicon">PathIcon</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon">SymbolIcon</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>SelectorBarItem inherits the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcontainer.child">Child</a> property from ItemContainer. You can use this property to set the content, but we don't recommend this. Content set this way will not get the styling and visual states provided by the SelectorBarItem control template.</p>
+</div>
+<h3 id="item-selection">Item selection</h3>
+<p>You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selecteditem">SelectedItem</a> property to get or set the SelectorBar's active item. This is synchronized with the SelectorBarItem's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcontainer.isselected">IsSelected</a> property. If you set either property, the other is updated automatically.</p>
+<p>Whenever the SelectorBar gets focus and <code>SelectedItem</code> is <code>null</code>, <code>SelectedItem</code> is automatically set to the first focusable instance in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.items">Items</a> collection, if any exists.</p>
+<p>Whenever the selected item is removed from the <code>Items</code> collection, the <code>SelectedItem</code> property is set to <code>null</code>. If <code>SelectedItem</code> is set to <code>null</code> while the SelectorBar has focus, SelectorBar will have no item selected but keeps focus.</p>
+<p>Setting <code>SelectedItem</code> to an element that is not currently in the <code>Items</code> collection throws an exception.</p>
+<p>There is no <code>SelectedIndex</code> property, but you can get the index of the <code>SelectedItem</code> like this:</p>
+<pre><code class="lang-csharp">int currentSelectedIndex = 
+    selectorBar.Items.IndexOf(selectorBar.SelectedItem);
+</code></pre>
+<h3 id="selection-changed">Selection changed</h3>
+<p>Handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged">SelectionChanged</a> event to respond to the users selection and change what is shown to the user. The <code>SelectionChanged</code> event is raised when an item is selected in any of these ways:</p>
+<ul>
+<li>UI Automation</li>
+<li>Tab focus (and a new item is selected)</li>
+<li>Left and right navigation within the SelectorBar</li>
+<li>Tapped event through mouse or touch</li>
+<li>Programmatic selection (through either the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selecteditem">SelectorBar.SelectedItem</a> property or SelectorBarItem's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcontainer.isselected">IsSelected</a> property).</li>
+</ul>
+<p>When a user selects an item, you typically change the view by either navigating between different pages in your app or changing the data shown in a collection control. Examples of both are shown here.</p>
+<h3 id="navigate-with-transition-animations">Navigate with transition animations</h3>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can find these examples in the <a href="winui3gallery:/item/SelectorBar">SelectorBar page of the WinUI Gallery app</a>. Use the WinUI Gallery app to run and view the full code.</p>
+</div>
+<p>This example demonstrates handling the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged">SelectionChanged</a> event to navigate between different pages. The navigation uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioneffect">SlideNavigationTransitionEffect</a> to slide the pages in from the left or right, as appropriate.</p>
+<pre><code class="lang-xaml">&lt;SelectorBar x:Name=&quot;SelectorBar2&quot; 
+             SelectionChanged=&quot;SelectorBar2_SelectionChanged&quot;&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPage1&quot; Text=&quot;Page1&quot; 
+                     IsSelected=&quot;True&quot; /&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPage2&quot; Text=&quot;Page2&quot; /&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPage3&quot; Text=&quot;Page3&quot; /&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPage4&quot; Text=&quot;Page4&quot; /&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPage5&quot; Text=&quot;Page5&quot; /&gt;
+&lt;/SelectorBar&gt;
+
+&lt;Frame x:Name=&quot;ContentFrame&quot; IsNavigationStackEnabled=&quot;False&quot; /&gt;
+</code></pre>
+<pre><code class="lang-csharp">int previousSelectedIndex = 0;
+
+private void SelectorBar2_SelectionChanged
+             (SelectorBar sender, SelectorBarSelectionChangedEventArgs args)
+{
+    SelectorBarItem selectedItem = sender.SelectedItem;
+    int currentSelectedIndex = sender.Items.IndexOf(selectedItem);
+    System.Type pageType;
+
+    switch (currentSelectedIndex)
+    {
+        case 0:
+            pageType = typeof(SamplePage1);
+            break;
+        case 1:
+            pageType = typeof(SamplePage2);
+            break;
+        case 2:
+            pageType = typeof(SamplePage3);
+            break;
+        case 3:
+            pageType = typeof(SamplePage4);
+            break;
+        default:
+            pageType = typeof(SamplePage5);
+            break;
+    }
+
+    var slideNavigationTransitionEffect = 
+            currentSelectedIndex - previousSelectedIndex &gt; 0 ? 
+                SlideNavigationTransitionEffect.FromRight : 
+                SlideNavigationTransitionEffect.FromLeft;
+
+    ContentFrame.Navigate(pageType, null, new SlideNavigationTransitionInfo() 
+                            { Effect = slideNavigationTransitionEffect });
+
+    previousSelectedIndex = currentSelectedIndex;
+}
+</code></pre>
+<h3 id="display-different-collections-in-an-itemsview">Display different collections in an ItemsView</h3>
+<p>This example shows how to change the data source of an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview">ItemsView</a> when the user selects an option in the SelectorBar.</p>
+<pre><code class="lang-xaml">&lt;SelectorBar x:Name=&quot;SelectorBar3&quot; 
+             SelectionChanged=&quot;SelectorBar3_SelectionChanged&quot;&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPink&quot; Text=&quot;Pink&quot;
+                     IsSelected=&quot;True&quot;/&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPlum&quot; Text=&quot;Plum&quot;/&gt;
+    &lt;SelectorBarItem x:Name=&quot;SelectorBarItemPowderBlue&quot; Text=&quot;PowderBlue&quot;/&gt;
+&lt;/SelectorBar&gt;
+
+&lt;ItemsView x:Name=&quot;ItemsView3&quot; 
+           ItemTemplate=&quot;{StaticResource ColorsTemplate}&quot;/&gt;
+    &lt;ItemsView.Layout&gt;
+        &lt;UniformGridLayout/&gt;
+    &lt;/ItemsView.Layout&gt;
+&lt;/ItemsView/&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void SelectorBar3_SelectionChanged
+             (SelectorBar sender, SelectorBarSelectionChangedEventArgs args)
+{
+    if (sender.SelectedItem == SelectorBarItemPink)
+    {
+        ItemsView3.ItemsSource = PinkColorCollection;
+    }
+    else if (sender.SelectedItem == SelectorBarItemPlum)
+    {
+        ItemsView3.ItemsSource = PlumColorCollection;
+    }
+    else
+    {
+        ItemsView3.ItemsSource = PowderBlueColorCollection;
+    }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The SelectorBar control is not available for UWP and WinUI 2. For alternatives, see <a href="navigationview.html">NavigationView</a> or <a href="tab-view.html">TabView</a>.</p>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar">SelectorBar class</a></li>
+<li><a href="../basics/navigation-basics.html">Navigation design basics</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/selector-bar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

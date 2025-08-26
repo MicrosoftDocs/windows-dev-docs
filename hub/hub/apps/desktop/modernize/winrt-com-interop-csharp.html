@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Call interop APIs from a .NET app </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Call interop APIs from a .NET app ">
+    
+    <meta name="description" content="Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="call-interop-apis-from-a-net-app">Call interop APIs from a .NET app</h1>
+
+<p>As a C# desktop application developer, in .NET you can make use of C# interop classes that represent several interoperability functions and Windows Runtime (WinRT) COM interoperability interfaces. These include C# classes representing <a href="/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative">IWindowNative</a>, <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow">IInitializeWithWindow</a>, the <a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow">GetWindowIdFromWindow</a> function, and many others.</p>
+<p>This topic lists the available C# interop classes, and shows how to use them. The <a href="#background">Background</a> section at the end of the topic describes how interop interfaces were used in previous versions of .NET, and why the change was made.</p>
+<h2 id="configure-a-net-desktop-project-to-use-the-c-interop-classes">Configure a .NET desktop project to use the C# interop classes</h2>
+<p>The C# interop classes listed in the next section (<a href="#available-c-interop-classes">Available C# interop classes</a>) are available in .NET either as part of the <a href="../../windows-app-sdk/index.html">Windows App SDK</a>, or else by using a particular <a href="desktop-to-uwp-enhance.html#net-6-and-later-use-the-target-framework-moniker-option">Target Framework Moniker</a>, as we'll see.</p>
+<h3 id="in-a-winui-3-c-desktop-project">In a WinUI 3 C# desktop project</h3>
+<p>When you create a new WinUI 3 project in Visual Studio (see <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>), your project is already configured, and you can start using all of the C# interop classes right away.</p>
+<h3 id="in-other-c-desktop-project-types-wpf-or-winforms">In other C# desktop project types (WPF or WinForms)</h3>
+<p>For other .NET desktop project types—such as <a href="/dotnet/desktop/wpf/">Windows Presentation Foundation (WPF)</a> or <a href="/dotnet/desktop/winforms/">Windows Forms (WinForms)</a>—you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the <a href="../../windows-app-sdk/index.html">Windows App SDK</a>. For the second set, you'll need to configure a <a href="desktop-to-uwp-enhance.html#net-6-and-later-use-the-target-framework-moniker-option">Target Framework Moniker</a> that targets Windows 10, version 1809 or later, like this:</p>
+<ol>
+<li><p>Open the project file for your C# .NET desktop project.</p>
+</li>
+<li><p>In the <code>.csproj</code> file, modify the <strong>TargetFramework</strong> element to target a specific .NET and Windows SDK version. For example, the following element is appropriate for a .NET 6 project that targets Windows 10, version 2004.</p>
+<pre><code class="lang-xml">&lt;PropertyGroup&gt;
+  &lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+&lt;/PropertyGroup&gt;
+</code></pre>
+</li>
+</ol>
+<p>For more information—including a list of other supported values—see <a href="desktop-to-uwp-enhance.html#net-6-and-later-use-the-target-framework-moniker-option">Use the Target Framework Moniker option</a>.</p>
+<h2 id="available-c-interop-classes">Available C# interop classes</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The classes below require the .NET 6 SDK or later.</p>
+</div>
+<p>Here are the available C# interop classes, mapped from their underlying interop function or WinRT COM interop interface. Each class listed implements the function/methods of its underlying interop API, and provides type-safe wrappers for parameters and return values. For example, <strong>Windows.ApplicationModel.DataTransfer.DragDrop.Core.DragDropManagerInterop.GetForWindow</strong> requires an <strong>IntPtr</strong> window handle (HWND) parameter, and returns a <a href="/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager"><strong>CoreDragDropManager</strong></a> object. All of the C# interop classes below and associated methods are static.</p>
+<h3 id="available-as-part-of-the-windows-app-sdk">Available as part of the Windows App SDK</h3>
+<p>The <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.html"><strong>Microsoft.UI.Win32Interop</strong></a> class implements the C# interop methods in the table below. For a code example, see <a href="../../develop/ui-input/manage-app-windows.html">Manage app windows</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Interop function</th>
+<th>C# interop method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getdisplayidfrommonitor"><strong>GetDisplayIdFromMonitor</strong></a></td>
+<td>(<strong>Microsoft.UI</strong>) DisplayId <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.html"><strong>Win32Interop.GetDisplayIdFromMonitor</strong></a>(IntPtr hmonitor)</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonfromiconid"><strong>GetIconFromIconId</strong></a></td>
+<td>(<strong>Microsoft.UI</strong>) IntPtr <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.html"><strong>Win32Interop.GetIconFromIconId</strong></a>(IconId iconId)</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon"><strong>GetIconIdFromIcon</strong></a></td>
+<td>(<strong>Microsoft.UI</strong>) IconId <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.html"><strong>Win32Interop.GetIconIdFromIcon</strong></a>(IntPtr hicon)</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getmonitorfromdisplayid"><strong>GetMonitorFromDisplayId</strong></a></td>
+<td>(<strong>Microsoft.UI</strong>) IntPtr <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.html"><strong>Win32Interop.GetMonitorFromDisplayId</strong></a>(DisplayId displayId)</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowfromwindowid"><strong>GetWindowFromWindowId</strong></a></td>
+<td>(<strong>Microsoft.UI</strong>) IntPtr <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.html"><strong>Win32Interop.GetWindowFromWindowId</strong></a>(WindowId windowId)</td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow"><strong>GetWindowIdFromWindow</strong></a></td>
+<td>(<strong>Microsoft.UI</strong>) WindowId <a href="../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.html"><strong>Win32Interop.GetWindowIdFromWindow</strong></a>(IntPtr hwnd)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="available-via-target-framework-moniker">Available via Target Framework Moniker</h3>
+<table>
+<thead>
+<tr>
+<th>WinRT COM interop interface</th>
+<th>C# interop class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/windows/win32/api/accountssettingspaneinterop/nn-accountssettingspaneinterop-iaccountssettingspaneinterop"><strong>IAccountsSettingsPaneInterop</strong></a></td>
+<td>(<strong>Windows.UI.ApplicationSettings</strong>) <strong>AccountsSettingsPaneInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/windows.graphics.display.interop/nn-windows-graphics-display-interop-idisplayinformationstaticsinterop"><strong>IDisplayInformationStaticsInterop</strong></a></td>
+<td>Introduced with TFM <code>net6.0-windows10.0.22621.0</code> and .NET 6.0.7.<br><br>(<strong>Windows.Graphics.Display</strong>) <strong>DisplayInformationInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/dragdropinterop/nn-dragdropinterop-idragdropmanagerinterop"><strong>IDragDropManagerInterop</strong></a></td>
+<td>(<strong>Windows.ApplicationModel.DataTransfer.DragDrop.Core</strong>) <strong>DragDropManagerInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow"><strong>IInitializeWithWindow</strong></a></td>
+<td>(<strong>WinRT.Interop</strong>) <strong>InitializeWithWindow</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/inputpaneinterop/nn-inputpaneinterop-iinputpaneinterop"><strong>IInputPaneInterop</strong></a></td>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <strong>InputPaneInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop"><strong>IPlayToManagerInterop</strong></a></td>
+<td>(<strong>Windows.Media.PlayTo</strong>) <strong>PlayToManagerInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop"><strong>IPrintManagerInterop</strong></a></td>
+<td>(<strong>Windows.Graphics.Printing</strong>) <strong>PrintManagerInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop"><strong>IRadialControllerConfigurationInterop</strong></a></td>
+<td>(<strong>Windows.UI.Input</strong>) <strong>RadialControllerConfigurationInterop</strong></td>
+</tr>
+<tr>
+<td><strong>IRadialControllerIndependentInputSourceInterop</strong></td>
+<td>(<strong>Windows.UI.Input.Core</strong>) <strong>RadialControllerIndependentInputSourceInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop"><strong>IRadialControllerInterop</strong></a></td>
+<td>(<strong>Windows.UI.Input</strong>) <strong>RadialControllerInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop"><strong>ISpatialInteractionManagerInterop</strong></a></td>
+<td>(<strong>Windows.UI.Input.Spatial</strong>) <strong>SpatialInteractionManagerInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop"><strong>ISystemMediaTransportControlsInterop</strong></a></td>
+<td>(<strong>Windows.Media</strong>) <strong>SystemMediaTransportControlsInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop"><strong>IUIViewSettingsInterop</strong></a></td>
+<td>(<strong>Windows.UI.ViewManagement</strong>) <strong>UIViewSettingsInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop"><strong>IUserConsentVerifierInterop</strong></a></td>
+<td>(<strong>Windows.Security.Credentials.UI</strong>) <strong>UserConsentVerifierInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop"><strong>IWebAuthenticationCoreManagerInterop</strong></a></td>
+<td>(<strong>Windows.Security.Authentication.Web.Core</strong>) <strong>WebAuthenticationCoreManagerInterop</strong></td>
+</tr>
+<tr>
+<td><a href="/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative"><strong>IWindowNative</strong></a></td>
+<td>WinUI 3 only<br><br>(<strong>WinRT.Interop</strong>) <strong>WindowNative</strong><br><br>For alternatives for WPF and WinForms, see <a href="../../develop/ui-input/retrieve-hwnd.html">Retrieve a window handle (HWND)</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code-example">Code example</h2>
+<p>This code example demonstrates how to use two of the C# interop classes in a WinUI 3 application (see <a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>). The example scenario is to display a <a href="/uwp/api/windows.storage.pickers.folderpicker"><strong>Windows.Storage.Pickers.FolderPicker</strong></a>. But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.</p>
+<ol>
+<li>You can obtain a window handle (HWND) by using the <a href="/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative"><strong>IWindowNative</strong></a> WinRT COM interop interface. And (looking in the table in the previous section) that interface is represented by the <strong>WinRT.Interop.WindowNative</strong> C# interop class. Here, the <code>this</code> object is a reference to a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window"><strong>Microsoft.UI.Xaml.Window</strong></a> object from the main window code-behind file.</li>
+<li>To initialize a piece of UI with an owner window, you use the <a href="/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow"><strong>IInitializeWithWindow</strong></a> WinRT COM interop interface. And that interface is represented by the <strong>WinRT.Interop.InitializeWithWindow</strong> C# interop class.</li>
+</ol>
+<pre><code class="lang-csharp">private async void myButton_Click(object sender, RoutedEventArgs e)
+{
+    // Create a folder picker.
+    var folderPicker = new Windows.Storage.Pickers.FolderPicker();
+
+    // 1. Retrieve the window handle (HWND) of the current WinUI 3 window.
+    var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+    // 2. Initialize the folder picker with the window handle (HWND).
+    WinRT.Interop.InitializeWithWindow.Initialize(folderPicker, hWnd);
+
+    // Use the folder picker as usual.
+    folderPicker.FileTypeFilter.Add(&quot;*&quot;);
+    var folder = await folderPicker.PickSingleFolderAsync();
+}
+</code></pre>
+<p>Also see <a href="../../develop/ui-input/retrieve-hwnd.html">Retrieve a window handle (HWND)</a> and <a href="../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a>.</p>
+<h2 id="background">Background</h2>
+<p>Previous versions of the .NET Framework and .NET Core had built-in knowledge of WinRT. With those previous versions, you could define an interop interface directly in C# with the <a href="/dotnet/api/system.runtime.interopservices.comimportattribute">ComImport</a> attribute, and then directly cast a projected class to that interop interface.</p>
+<p>Since WinRT is a Windows-specific technology, to support the portability and efficiency goals of .NET, we lifted the WinRT projection support out of the C# compiler and .NET runtime, and moved it into the <a href="/windows/uwp/csharp-winrt/">C#/WinRT</a> toolkit (see <a href="/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed">Built-in support for WinRT is removed from .NET</a>).</p>
+<p>While the <a href="/dotnet/api/system.runtime.interopservices.comimportattribute">ComImport</a> technique still works for <strong>IUnknown</strong>-based interop interfaces, it no longer works for the <a href="/windows/win32/api/inspectable/nn-inspectable-iinspectable">IInspectable</a>-based interfaces that are used for interoperating with WinRT.</p>
+<p>So as a replacement, in .NET, you can make use of the C# interop classes described in this topic.</p>
+<h2 id="troubleshooting-and-known-issues">Troubleshooting and known issues</h2>
+<p>There are currently no known issues for the C# interop classes. To provide feedback, or to report other issues, add your feedback to an existing issue, or file a new issue on the <a href="https://github.com/microsoft/WindowsAppSDK/issues/new/choose">WindowsAppSDK GitHub repo</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="../../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="../../develop/ui-input/manage-app-windows.html">Manage app windows</a></li>
+<li><a href="../../develop/ui-input/retrieve-hwnd.html">Retrieve a window handle (HWND)</a></li>
+<li><a href="../../develop/ui-input/display-ui-objects.html">Display WinRT UI objects that depend on CoreWindow</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/winrt-com-interop-csharp.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Build and deploy an unpackaged app that uses the Preview and Experimental versions of the Windows App SDK </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Build and deploy an unpackaged app that uses the Preview and Experimental versions of the Windows App SDK ">
+    
+    <meta name="description" content="This article provides a walkthrough for building and deploying an unpackaged app that uses the Preview and Experimental versions of Windows App SDK.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-build-and-deploy-an-unpackaged-app-using-preview-and-experimental-channels-of-the-windows-app-sdk">Tutorial: Build and deploy an unpackaged app using Preview and Experimental channels of the Windows App SDK</h1>
+
+<p><strong>Using the Windows App SDK Stable version</strong>: You can auto-initialize the Windows App SDK through the <code>WindowsPackageType</code> project property when you <a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a>. You can also follow a tutorial (<a href="tutorial-unpackaged-deployment.html">Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK</a>) in which you configure a packaged with external location or unpackaged app to load the Windows App SDK runtime, and call Windows App SDK APIs.</p>
+<p>This article provides a step-by-step tutorial for configuring a packaged with external location or unpackaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.</p>
+<p>Before completing this tutorial, we recommend that you review <a href="deployment-architecture.html">Runtime architecture</a> to learn more about the Framework package dependency your app takes when it uses Reunion, and the additional components required to work in an unpackaged app.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The dynamic dependencies and bootstrapper APIs fail when called by an elevated process. As a result, Visual Studio should not be launched elevated. See <a href="https://github.com/microsoft/WindowsAppSDK/issues/567">issue</a> for more details.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<ol>
+<li><a href="set-up-your-development-environment.html">Install tools for the Windows App SDK</a>.</li>
+<li>Ensure that all dependencies for the app are installed (see <a href="deploy-unpackaged-apps.html#prerequisites">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a>). The simplest solution is to run the Windows App SDK runtime installer.</li>
+</ol>
+<h2 id="instructions">Instructions</h2>
+<p>You can choose to follow this tutorial using a C++ project or a C# project.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_cpp" role="tab" aria-controls="tabpanel_1_cpp" data-tab="cpp" tabindex="0" aria-selected="true">C++</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_csharp-dotnet-preview3" role="tab" aria-controls="tabpanel_1_csharp-dotnet-preview3" data-tab="csharp-dotnet-preview3" tabindex="-1">C# with 1.0 Preview 3 and later</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_csharp-dotnet-experimental1" role="tab" aria-controls="tabpanel_1_csharp-dotnet-experimental1" data-tab="csharp-dotnet-experimental1" tabindex="-1">C# with 1.0 Experimental and earlier</a>
+</li>
+</ul>
+<section id="tabpanel_1_cpp" role="tabpanel" data-tab="cpp">
+
+<p>Follow these instructions to configure a C++ project. Starting in <a href="release-notes-archive/preview-channel-1.0.html#version-10-preview-3-100-preview3">1.0 Preview 3</a>, you can also configure a C++ project that includes WinUI 3 unpackaged support.</p>
+<ol>
+<li><p>In Visual Studio, create a new C++ <strong>Console App</strong> project. Name the project <strong>DynamicDependenciesTest</strong>.
+<img src="images/tutorial-deploy-create-project.png" alt="Screenshot of creating a new C++ app in Visual Studio"></p>
+<p><img src="images/tutorial-deploy-name-project.png" alt="Screenshot of naming a new C++ app in Visual Studio"></p>
+<p>After you create the project, you should have a 'Hello World' C++ console app.</p>
+</li>
+<li><p>Next, install the Windows App SDK NuGet package in your project.</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click the <strong>References</strong> node and choose <strong>Manage Nuget Packages</strong>.</li>
+<li>In the <strong>NuGet Package Manager</strong> window, select the <strong>Include prerelease</strong> check box near the top of the window, select the <strong>Browse</strong> tab, and install one of the following packages:
+<ul>
+<li>To install 1.0 Preview 3 or 1.0 Experimental, search for <strong>Microsoft.WindowsAppSDK</strong>.</li>
+<li>To install 0.8 Preview, search for <strong>Microsoft.ProjectReunion</strong>.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>For unpackaged apps, you will need to call the Bootstrapper API to <a href="use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>. This enables you to use Windows App SDK APIs at runtime.</p>
+<ol>
+<li><p>Add the following include files to the top of your <strong>DynamicDependenciesTest.cpp</strong> file. The <a href="/windows/windows-app-sdk/api/win32/mddbootstrap">mddbootstrap.h</a> header is available via the Windows App SDK NuGet package.</p>
+<pre><code class="lang-cpp"> #include &lt;windows.h&gt; 
+ #include &lt;MddBootstrap.h&gt;   
+</code></pre>
+</li>
+<li><p>Next, add this code at the beginning of your <code>main</code> method to call the <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize">MddBootstrapInitialize</a> function to initialize the Bootstrapper and handle any errors. This code defines what version of the Windows App SDK the app is dependent upon when initializing the Bootstrapper.</p>
+<pre><code class="lang-cpp">
+// The following code is for 1.0 Preview 3. If using 1.0 Experimental,  
+// replace with versionTag{ L&quot;experimental1&quot; }. If using version 0.8 Preview,
+// replace with majorMinorVersion{ 0x00000008 } and versionTag{ L&quot;preview&quot; }. 
+const UINT32 majorMinorVersion{ 0x00010000 }; 
+PCWSTR versionTag{ L&quot;preview3&quot; }; 
+const PACKAGE_VERSION minVersion{};
+
+const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
+
+// Check the return code for errors. If there is an error, display the result.
+if (FAILED(hr)) 
+{ 
+    wprintf(L&quot;Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n&quot;, 
+        hr, majorMinorVersion, versionTag, minVersion.Major, minVersion.Minor, minVersion.Build, minVersion.Revision); 
+    return hr; 
+} 
+</code></pre>
+</li>
+<li><p>Finally, add this code to display the string <code>Hello World!</code> and call the <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown">MddBootstrapShutdown</a> function to uninitialize the Bootstrapper.</p>
+<pre><code class="lang-cpp">std::cout &lt;&lt; &quot;Hello World!\n&quot;; 
+
+// Release the DDLM and clean up.
+MddBootstrapShutdown(); 
+</code></pre>
+</li>
+<li><p>Your final code should look like this.</p>
+<pre><code class="lang-cpp">#include &lt;iostream&gt; 
+#include &lt;windows.h&gt; 
+#include &lt;MddBootstrap.h&gt;
+
+int main() 
+{ 
+
+    // Take a dependency on Windows App SDK 1.0 Preview 3. If using 1.0 Experimental,
+    // replace with versionTag{ L&quot;experimental1&quot; }. If using version 0.8 Preview, 
+    // replace with majorMinorVersion{ 0x00000008 } and  versionTag{ L&quot;preview&quot; }.
+    const UINT32 majorMinorVersion{ 0x00010000 }; 
+    PCWSTR versionTag{ L&quot;preview3&quot; }; 
+    const PACKAGE_VERSION minVersion{};
+
+    const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
+
+    // Check the return code. If there is a failure, display the result.
+    if (FAILED(hr)) 
+    { 
+        wprintf(L&quot;Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n&quot;, 
+            hr, majorMinorVersion, versionTag, minVersion.Major, minVersion.Minor, minVersion.Build, minVersion.Revision); 
+        return hr; 
+    } 
+
+    std::cout &lt;&lt; &quot;Hello World!\n&quot;; 
+
+    // Release the DDLM and clean up.
+    MddBootstrapShutdown(); 
+} 
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>Press F5 to build and run your app.</p>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_csharp-dotnet-preview3" role="tabpanel" data-tab="csharp-dotnet-preview3" aria-hidden="true" hidden="hidden">
+
+<p>Follow these instructions to configure a C# project. Starting in <a href="release-notes-archive/preview-channel-1.0.html#version-10-preview-3-100-preview3">1.0 Preview 3</a>, you can also configure a C# project that includes WinUI 3 unpackaged support.</p>
+<ol>
+<li><p>In Visual Studio, create a new C# <strong>Console Application</strong> project. Name the project <strong>DynamicDependenciesTest</strong>.</p>
+</li>
+<li><p>Next, configure your project.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click your project and choose <strong>Edit Project File</strong>.</p>
+</li>
+<li><p>Replace the value of the <strong>TargetFramework</strong> element with a <a href="../desktop/modernize/desktop-to-uwp-enhance.html#net-6-and-later-use-the-target-framework-moniker-option">Target Framework Moniker</a>. For example, use the following if your app targets Windows 10, version 2004.</p>
+<pre><code class="lang-xml">&lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+</code></pre>
+</li>
+<li><p>Save and close the project file.</p>
+</li>
+</ol>
+</li>
+<li><p>Change the platform for your solution to <strong>x64</strong>. The default value in a .NET project is <strong>AnyCPU</strong>, but WinUI 3 doesn't support that platform.</p>
+<ol>
+<li>Select <strong>Build</strong> &gt; <strong>Configuration Manager</strong>.</li>
+<li>Select the drop-down under <strong>Active solution platform</strong> and click <strong>New</strong> to open the <strong>New Solution Platform</strong> dialog box.</li>
+<li>In the drop-down under <strong>Type or select the new platform</strong>, select <strong>x64</strong>.</li>
+<li>Click <strong>OK</strong> to close the <strong>New Solution Platform</strong> dialog box.</li>
+<li>In <strong>Configuration Manager</strong>, click <strong>Close</strong>.</li>
+</ol>
+</li>
+<li><p>Install the Windows App SDK NuGet package in your project.</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click the <strong>Dependencies</strong> node and choose <strong>Manage Nuget Packages</strong>.</li>
+<li>In the <strong>NuGet Package Manager</strong> window, select the <strong>Include prerelease</strong> check box near the top of the window, select the <strong>Browse</strong> tab, and install the <strong>Microsoft.WindowsAppSDK</strong> package.</li>
+</ol>
+</li>
+<li><p>For unpackaged apps, you will need to call the Bootstrapper API to <a href="use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>. This enables you to use Windows App SDK APIs at runtime.</p>
+<p>Open the <strong>Program.cs</strong> code file and replace the default code with the following code.</p>
+<pre><code class="lang-csharp">using System;
+using Microsoft.Windows.ApplicationModel.DynamicDependency;
+
+namespace DynamicDependenciesTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Bootstrap.Initialize(0x00010000, &quot;preview3&quot;);
+            Console.WriteLine(&quot;Hello World!&quot;);
+
+            // Release the DDLM and clean up.
+            Bootstrap.Shutdown();
+        }
+    }
+}
+</code></pre>
+<p>The bootstrapper API is a native C/C++ API that enables you to use the Windows App SDK APIs in your app. In .NET apps that use the Windows App SDK 1.0 Preview 3 or a later release, you can use the <a href="use-windows-app-sdk-run-time.html#net-wrapper-for-the-bootstrapper-api">.NET wrapper</a> for the bootstrapper API. This wrapper provides an easier way of calling the bootstrapper API in a .NET app than calling the native C/C++ functions directly. The previous code example calls the static <code>Initialize</code> and <code>Shutdown</code> methods of the <code>Bootstrap</code> class in the .NET wrapper for the bootstrapper API.</p>
+</li>
+<li><p>To demonstrate that the Windows App SDK runtime components were loaded properly, add some code that uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager">ResourceManager</a> class in the Windows App SDK to load a string resource.</p>
+<ol>
+<li><p>Add a new <strong>Resources File (.resw)</strong> to your project.</p>
+</li>
+<li><p>With the resources file open in the editor, create a new string resource with the following properties.</p>
+<ul>
+<li>Name: <strong>Message</strong></li>
+<li>Value: <strong>Hello World!</strong></li>
+</ul>
+</li>
+<li><p>Save the resources file.</p>
+</li>
+<li><p>Open the <strong>Program.cs</strong> code file and add the following statement to the top of the file:</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.ApplicationModel.Resources;
+</code></pre>
+</li>
+<li><p>Replace the <code>Console.WriteLine(&quot;Hello World!&quot;);</code> line with the following code.</p>
+<pre><code class="lang-csharp">// Create a resource manager using the resource index generated during build.
+var manager = new Microsoft.ApplicationModel.Resources.ResourceManager(&quot;DynamicDependenciesTest.pri&quot;);
+
+// Lookup a string in the RESW file using its name.
+Console.WriteLine(manager.MainResourceMap.GetValue(&quot;Resources/Message&quot;).ValueAsString);
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>Press F5 to build and run your app. You should see the string <code>Hello World!</code> successfully displayed.</p>
+</li>
+</ol>
+</section>
+<section id="tabpanel_1_csharp-dotnet-experimental1" role="tabpanel" data-tab="csharp-dotnet-experimental1" aria-hidden="true" hidden="hidden">
+
+<p>Follow these instructions to configure a C# project that uses the <a href="release-notes-archive/experimental-channel-1.0.html#version-10-experimental-100-experimental1">1.0 Experimental</a> or earlier release of the Windows App SDK.</p>
+<ol>
+<li><p>In Visual Studio, create a new C# <strong>Console Application</strong> project. Name the project <strong>DynamicDependenciesTest</strong>.</p>
+</li>
+<li><p>Next, configure your project.</p>
+<ol>
+<li><p>In <strong>Solution Explorer</strong>, right-click your project and choose <strong>Edit Project File</strong>.</p>
+</li>
+<li><p>Replace the value of the <strong>TargetFramework</strong> element with a <a href="../desktop/modernize/desktop-to-uwp-enhance.html#net-6-and-later-use-the-target-framework-moniker-option">Target Framework Moniker</a>. For example, use the following if your app targets Windows 10, version 2004.</p>
+<pre><code class="lang-xml">&lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;
+</code></pre>
+</li>
+<li><p>Save and close the project file.</p>
+</li>
+</ol>
+</li>
+<li><p>Change the platform for your solution to <strong>x64</strong>. The default value in a .NET project is <strong>AnyCPU</strong>, but WinUI 3 doesn't support that platform.</p>
+<ol>
+<li>Select <strong>Build</strong> &gt; <strong>Configuration Manager</strong>.</li>
+<li>Select the drop-down under <strong>Active solution platform</strong> and click <strong>New</strong> to open the <strong>New Solution Platform</strong> dialog box.</li>
+<li>In the drop-down under <strong>Type or select the new platform</strong>, select <strong>x64</strong>.</li>
+<li>Click <strong>OK</strong> to close the <strong>New Solution Platform</strong> dialog box.</li>
+<li>In <strong>Configuration Manager</strong>, click <strong>Close</strong>.</li>
+</ol>
+</li>
+<li><p>Install the Windows App SDK NuGet package in your project.</p>
+<ol>
+<li>In <strong>Solution Explorer</strong>, right-click the <strong>Dependencies</strong> node and choose <strong>Manage Nuget Packages</strong>.</li>
+<li>In the <strong>NuGet Package Manager</strong> window, select the <strong>Include prerelease</strong> check box near the top of the window, select the <strong>Browse</strong> tab, and install one of the following packages:
+<ul>
+<li>To install 1.0 Experimental, search for <strong>Microsoft.WindowsAppSDK</strong>.</li>
+<li>To install 0.8 Preview, search for <strong>Microsoft.ProjectReunion</strong>.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>You are now ready to use the bootstrapper API (see <a href="use-windows-app-sdk-run-time.html">Use the Windows App SDK runtime for apps packaged with external location or unpackaged</a>) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.</p>
+<ol>
+<li><p>Add a new code file named <strong>MddBootstrap.cs</strong> to your project and add the following code to it. The <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize">MddBootstrapInitialize</a> and <a href="/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown">MddBootstrapShutdown</a> functions shown in this code example are available via the Windows App SDK NuGet package.</p>
+<pre><code class="lang-csharp">using System.Runtime.InteropServices;
+
+namespace Microsoft.Windows.ApplicationModel
+{
+    public struct PackageVersion
+    {
+        ushort Major;
+        ushort Minor;
+        ushort Build;
+        ushort Revision;
+
+        public PackageVersion(ushort major) :
+            this(major, 0, 0, 0)
+        {
+        }
+        public PackageVersion(ushort major, ushort minor) :
+            this(major, minor, 0, 0)
+        {
+        }
+        public PackageVersion(ushort major, ushort minor, ushort build) :
+            this(major, minor, build, 0)
+        {
+        }
+        public PackageVersion(ushort major, ushort minor, ushort build, ushort revision)
+        {
+            Major = major;
+            Minor = minor;
+            Build = build;
+            Revision = revision;
+        }
+
+        public PackageVersion(ulong version) :
+            this((ushort)(version &gt;&gt; 48), (ushort)(version &gt;&gt; 32), (ushort)(version &gt;&gt; 16), (ushort)version)
+        {
+        }
+
+        public ulong ToVersion()
+        {
+            return (((ulong)Major) &lt;&lt; 48) | (((ulong)Minor) &lt;&lt; 32) | (((ulong)Build) &lt;&lt; 16) | ((ulong)Revision);
+        }
+    };
+
+    public class MddBootstrap
+    {
+        public static int Initialize(uint majorMinorVersion)
+        {
+            return Initialize(majorMinorVersion, null);
+        }
+
+        public static int Initialize(uint majorMinorVersion, string versionTag)
+        {
+            var minVersion = new PackageVersion();
+            return Initialize(majorMinorVersion, versionTag, minVersion);
+        }
+
+        public static int Initialize(uint majorMinorVersion, string versionTag, PackageVersion minVersion)
+        {
+            return MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion);
+        }
+
+        // Import the bootstrapper library for Windows App SDK 1.0 Experimental.
+        // If using version 0.8 Preview, replace with Microsoft.ProjectReunion.Bootstrap.dll.
+        [DllImport(&quot;Microsoft.WindowsAppSDK.Bootstrap.dll&quot;, CharSet = CharSet.Unicode)]
+        private static extern int MddBootstrapInitialize(uint majorMinorVersion, string versionTag, PackageVersion packageVersion);
+
+        public static void Shutdown()
+        {
+            MddBootstrapShutdown();
+        }
+
+        // Import the bootstrapper library for Windows App SDK 1.0 Experimental. 
+        // If using version 0.8 Preview, replace with Microsoft.ProjectReunion.Bootstrap.dll.
+        [DllImport(&quot;Microsoft.WindowsAppSDK.Bootstrap.dll&quot;)]
+        private static extern void MddBootstrapShutdown();
+    }
+}
+</code></pre>
+</li>
+<li><p>In the <strong>Program.cs</strong> code file, replace the default code with the following code.</p>
+<pre><code class="lang-csharp">using System;
+using Microsoft.Windows.ApplicationModel;
+
+namespace DynamicDependenciesTest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            // Take a dependency on Windows App SDK 1.0 Experimental.
+            // If using version 0.8 Preview, replace with MddBootstrap.Initialize(8, &quot;preview&quot;).
+            MddBootstrap.Initialize(0x00010000, &quot;experimental1&quot;);
+
+            Console.WriteLine(&quot;Hello World!&quot;);
+
+            // Release the DDLM and clean up.
+            MddBootstrap.Shutdown();
+        }
+    }
+}
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>To demonstrate that the Windows App SDK runtime components were loaded properly, add some code that uses the <a href="/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager">ResourceManager</a> class in the Windows App SDK to load a string resource.</p>
+<ol>
+<li><p>Add a new <strong>Resources File (.resw)</strong> to your project.</p>
+</li>
+<li><p>With the resources file open in the editor, create a new string resource with the following properties.</p>
+<ul>
+<li>Name: <strong>Message</strong></li>
+<li>Value: <strong>Hello World!</strong></li>
+</ul>
+</li>
+<li><p>Save the resources file.</p>
+</li>
+<li><p>Open the <strong>Program.cs</strong> code file and add the following statement to the top of the file:</p>
+<pre><code class="lang-csharp">using Microsoft.Windows.ApplicationModel.Resources;
+</code></pre>
+</li>
+<li><p>Replace the <code>Console.WriteLine(&quot;Hello World!&quot;);</code> line with the following code.</p>
+<pre><code class="lang-csharp">// Create a resource manager using the resource index generated during build.
+var manager = new ResourceManager(&quot;DynamicDependenciesTest.pri&quot;);
+
+// Lookup a string in the RESW file using its name.
+Console.WriteLine(manager.MainResourceMap.GetValue(&quot;Resources/Message&quot;).ValueAsString);
+</code></pre>
+</li>
+</ol>
+</li>
+<li><p>Press F5 to build and run your app. You should see the string <code>Hello World!</code> successfully displayed.</p>
+</li>
+</ol>
+</section>
+</div>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="deployment-architecture.html">Runtime architecture</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/preview-experimental-unpackaged-tutorial.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

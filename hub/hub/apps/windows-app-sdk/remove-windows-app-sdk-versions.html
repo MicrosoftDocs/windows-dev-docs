@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Remove outdated Windows App SDK runtime versions from your development computer </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Remove outdated Windows App SDK runtime versions from your development computer ">
+    
+    <meta name="description" content="This article provides instructions for removing older versions of the Windows App SDK VSIX and runtime packages">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="remove-outdated-windows-app-sdk-runtime-versions-from-your-development-computer">Remove outdated Windows App SDK runtime versions from your development computer</h1>
+
+<p>As you install updated versions of the Windows App SDK runtime over time, you may want to remove outdated versions from your development computer. In general, you only need the Windows App SDK runtime and extension that you have chosen to reference and require in your application. Unless your application has specific reasons for earlier extensions or runtimes, you may safely remove older versions.</p>
+<p>The Windows App SDK runtime includes the Framework, Main, Singleton, and Dynamic Dependency Lifetime Manager (DDLM) packages. All of these packages can be uninstalled by using <strong>PowerShell</strong> commands. The Main, Singleton, and DDLM packages can alternatively be uninstalled in <strong>Settings</strong>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We recommend that you do not remove Windows App SDK runtime packages from end-user's machines after deployment. Doing so will break other applications that are taking a dependency on those packages.</p>
+</div>
+<h2 id="remove-windows-app-sdk-runtime-components-using-powershell">Remove Windows App SDK runtime components using PowerShell</h2>
+<p>First, run the <code>get-appxpackage</code> command to list all versions of the Windows App SDK runtime packages that are installed on your computer (including the framework, main, singleton, and DDLM packages). The list includes details about each runtime package, including the <strong>PackageFullName</strong> value. For an example of the output of this command, see <a href="check-windows-app-sdk-versions.html">Check for installed versions of the Windows App SDK runtime</a>.</p>
+<pre><code class="lang-Powershell"># For 1.0 and 1.0 Preview releases 
+get-appxpackage *appruntime*
+
+# For 1.0 Experimental
+get-appxpackage *WindowsAppSDK* 
+
+# For version 0.8
+get-appxpackage *reunion*
+</code></pre>
+<p>Next, run the <code>remove-appxpackage</code> command to remove specific versions of the Windows App SDK runtime packages from your development computer. For each package, specify the <strong>PackageFullName</strong> value of the runtime packages you want to remove, as provided by the preceding step. The following example removes the framework, main, and DDLM package, respectively. Make sure you specify the correct <strong>PackageFullName</strong> values for the packages on your computer.</p>
+<pre><code class="lang-Powershell">remove-appxpackage -Package Microsoft.ProjectReunion.0.8-preview_8000.144.525.0_x86__8wekyb3d8bbwe
+remove-appxpackage -Package Microsoft.ProjectReunion.Main.0.8-preview_8000.144.525.0_x64__8wekyb3d8bbwe
+remove-appxpackage -Package Microsoft.ProjectReunion.DDLM.8000.144.525.0-x8-p_8000.144.525.0_x86__8wekyb3d8bbwe
+</code></pre>
+<h2 id="remove-main-and-ddlm-packages-in-settings">Remove main and DDLM packages in Settings</h2>
+<p>To remove the Main and Dynamic Dependency Lifetime Manager (DDLM) packages, you can alternatively use the <strong>Apps &amp; features</strong> page in <strong>Settings</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK framework package will not show up in <strong>Apps &amp; features</strong>, and will need to be uninstalled using the <strong>PowerShell</strong> commands described earlier in this article.</p>
+</div>
+<p>On the <strong>Apps &amp; features</strong> page, search for <strong>reunion</strong> to filter and show installed versions of Windows App SDK packages. Select any versions you want to remove from your computer and click <strong>Uninstall</strong>.</p>
+<p><a href="images/remove-reunion-packages-versions.png#lightbox"><img src="images/remove-reunion-packages-versions.png" alt="Screenshot of Apps &amp; Features page in Settings to remove Windows App SDK packages"> </a></p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged</a></li>
+<li><a href="deployment-architecture.html">Runtime architecture</a></li>
+<li><a href="check-windows-app-sdk-versions.html">Check for installed versions of the Windows App SDK runtime</a></li>
+<li><a href="set-up-your-development-environment.html">Install tools for the Windows App SDK</a></li>
+<li><a href="../winui/winui3/create-your-first-winui3-app.html">Create your first WinUI 3 project</a></li>
+<li><a href="use-windows-app-sdk-in-existing-project.html">Use the Windows App SDK in an existing project</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/remove-windows-app-sdk-versions.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

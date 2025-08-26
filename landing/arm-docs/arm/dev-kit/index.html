@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows Dev Kit 2023 </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows Dev Kit 2023 ">
+    
+    <meta name="description" content="Powered by Arm64 and running Windows 11, this desktop device enables you to develop Windows apps for Arm, on Arm. Find device specifications, set up instructions, Arm-native developer tools, Support, and FAQs.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-dev-kit-2023">Windows Dev Kit 2023</h1>
+
+<p>The Windows Dev Kit 2023 (code name “Project Volterra”) offered Windows developers one of the first opportunities to support development and testing on a device with a Neural Processing Unit (NPU) that provides best-in-class AI computing capacity, multiple ports, and a stackable design for desktops and rack deployment. This dev kit was purpose-built to develop, debug, and test native Windows apps for Arm.</p>
+<p>Windows Dev Kit 2023 is no longer available to purchase new, but now you can find <a href="https://www.microsoft.com/windows/copilot-plus-pcs">Copilot+ PCs</a> offering NPUs and the latest in AI features and computing capacity.</p>
+<h2 id="device-specifics">Device specifics</h2>
+<ul>
+<li>32GB LPDDR4x RAM and 512GB fast NVMe storage</li>
+<li>Snapdragon® 8cx Gen 3 compute platform</li>
+<li>Ports: 3x USB-A, 2x USB-C, Mini-Display (HBR2 support), Ethernet (RJ45)</li>
+<li>Made with 20% recycled ocean plastic</li>
+</ul>
+<p><img src="../images/windowsdevkit2023-side.png" alt="Windows Dev Kit 2023"></p>
+<h2 id="device-set-up">Device set up</h2>
+<p>When the device is turned on and connects to the Internet for the first time, follow the getting started prompts and configuration for Windows Update to ensure the latest software is running on the device.</p>
+<h3 id="identify-buttons-and-external-ports">Identify buttons and external ports</h3>
+<p>With the device flat on the table, the 3 buttons on the left side of the device, from left to right, are:</p>
+<ul>
+<li><strong>Boot to USB button</strong>: Hold the Power button + the Boot to USB button to boot to the USB-C thumb drive. This method can be used to re-image the device with the latest <a href="https://support.microsoft.com/en-us/surface-recovery-image">Recovery Image</a>.</li>
+<li><strong>UEFI button</strong>: Hold the Power button + the UEFI button to boot into the UEFI menu. <em>(USB-C monitor connections are not compatible when exploring UEFI.)</em></li>
+<li><strong>Power button</strong></li>
+</ul>
+<p>All external ports will be available after the device boots into Windows 11 including:</p>
+<ul>
+<li>RJ45 for ethernet</li>
+<li>3 x USB-A ports</li>
+<li>2 x USB-C ports</li>
+<li>Bluetooth &amp; WiFi</li>
+</ul>
+<p>The device supports up to three displays by using the mDP port and the two USB-C ports.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Unified Extensible Firmware Interface (UEFI) replaces the standard basic input/output system (BIOS) with new features including faster startup and improved security. You can use UEFI to manage the firmware features on your device.</p>
+</div>
+<h3 id="set-up-power">Set up power</h3>
+<p>The dev kit includes a 90W power supply. Attach the power supply to the back on the far left of the device.</p>
+<ul>
+<li>The device will default into &quot;Connected Standby Mode&quot; when not in use. You can choose to <a href="/windows-hardware/customize/power-settings/adaptive-hibernate">hibernate the device</a> using OS controls.</li>
+<li>Fan control is supported and controlled by firmware. The Fan will come on as needed to manage thermal load.</li>
+<li>There is no battery on the device, hence the system will only run on AC. There is no DC mode to test against.</li>
+</ul>
+<h3 id="set-up-display---how-to-connect-monitors">Set up display - How to connect monitors</h3>
+<p>For the best experience, we recommend you use the <strong>mDP port</strong> as your main display for setting up this device.  Until the device is booted into Windows, all display output defaults to the monitor connected to the mDP port.</p>
+<p>Scenarios that will require you to use the mDP port include:</p>
+<ul>
+<li>Seeing the startup logo when turning on the device.</li>
+<li>Booting into the UEFI to change firmware settings.</li>
+<li>Installing the recovery image for the device, downloaded from the <a href="https://support.microsoft.com/surface-recovery-image">Recovery Image page</a>.</li>
+<li>BitLocker processes (such as a recovery key prompt or a pre-boot PIN).</li>
+<li>Any Windows OS boot (startup) activity that requires seeing something on the screen before Windows loads, like a Windows startup error or a bug-check boot loop.</li>
+<li>Windows Automatic Recovery.</li>
+<li>Booting into Windows Recovery Environment (WinRE) or Windows PE (WinPE) using a USB boot disk.</li>
+<li>Taking ownership of firmware using SEMM.</li>
+</ul>
+<p>Requirements and notes for using Windows Developer Kit device display ports:</p>
+<ul>
+<li>If the only display connected to the device is USB-C, if you don’t use the mDP port (as noted above), you won't see a startup screen output when you turn on the device until Windows is booted. The Windows boot process should take ~25 seconds.</li>
+<li>If connecting an HDMI or a DVI monitor to the mDP port, an active <strong>mini-DP to HDMI</strong> or active <strong>mini-DP to DVI adapter</strong> is required. *If the connection is not working, you may be using a passive adapter or a cable with a passive adapter built in. Cables should be 2m/6ft or less.</li>
+<li>When connecting an external keyboard or mouse, use the USB-A ports, not USB-C. Using USB-C to connect a keyboard or mouse will only work intermittently.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Ports</th>
+<th>Transmission Mode</th>
+<th>Max Data Speed</th>
+<th>Supported Displays (max resolution)</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mDP</td>
+<td>HBR2</td>
+<td>4 lane x 5.4 Gbps/lane</td>
+<td>SST: 3840 x 2160 @ 60Hz, MST: (x2) 2560 x 1600 @ 60Hz</td>
+<td>Default monitor port to boot with UEFI menu</td>
+</tr>
+<tr>
+<td>USB-C (x2)</td>
+<td>HBR3</td>
+<td>4 lane x 8.1 Gbps/lane</td>
+<td>SST: 5120x2880 @ 60Hz, SST: 4096x2160 @ 60Hz, MST: (x2) 3840x2160 @ 60Hz (RB2), MST: (x2) 2560x1600 @ 60Hz (CVT, RB)</td>
+<td>Default monitor port to boot without UEFI menu</td>
+</tr>
+</tbody>
+</table>
+<h2 id="install-arm-native-developer-tools">Install Arm-native developer tools</h2>
+<p>A fully Arm-native suite of developer tools are available for installing on Windows 11, including:</p>
+<ul>
+<li><p><strong><a href="/visualstudio/install/visual-studio-on-arm-devices">Visual Studio 2022 17.4 for Arm64</a></strong></p>
+<p>This is the first native Arm64 version of Visual Studio available with workloads enabled for desktop development with C++ (for MSBuild-based projects), .NET desktop development, web development, game development, and Node.js development and also includes support for Windows SDK and Win App SDK components (Win UI).</p>
+</li>
+<li><p><strong><a href="https://dotnet.microsoft.com/download/dotnet/7.0">.NET 7 Arm64 SDK</a></strong></p>
+<p>Native support for Arm64 is <a href="/dotnet/core/install/windows?tabs=net60#arm-based-windows-pcs">available starting with .NET 6</a>, along with the <a href="https://devblogs.microsoft.com/dotnet/announcing-dotnet-framework-481/">.NET Framework 4.8.1 runtime</a> and SDK, and that support has been extended in .NET 7. Read more about <a href="https://devblogs.microsoft.com/dotnet/arm64-performance-improvements-in-dotnet-7/">Arm64 performance improvements in .NET 7</a>.</p>
+</li>
+<li><p><strong><a href="https://code.visualstudio.com/download">Visual Studio Code for Arm</a></strong></p>
+<p>VS Code has supported an Arm64 architecture since the September 2020 version 1.50 release, including <a href="https://code.visualstudio.com/docs/remote/remote-overview">extensions for Remote Development</a>.</p>
+</li>
+</ul>
+<p>Bringing together local compute on the CPU, GPU, and NPU and cloud compute with Azure, including:</p>
+<ul>
+<li><p><strong><a href="https://onnxruntime.ai/winarm">ONNX Runtime + Windows Dev Kit 2023 = NPU powered AI</a></strong></p>
+<p>Unlock the NPU power to accelerate AI/ML workloads using ONNX Runtime with frameworks like PyTorch or TensorFlow - get started with these instructions and tutorials.</p>
+</li>
+<li><p><strong><a href="https://www.qualcomm.com/developer/windows-on-snapdragon#overview">Qualcomm developer network: Windows on Snapdragon</a></strong></p>
+<p>Learn more about the Snapdragon compute platform that powers Windows on Snapdragon® devices with native AArch64 (64-bit Arm) app support. You will also find a link to download the <strong>Qualcomm Neural Processing SDK for Windows</strong>. The Qualcomm® Neural Processing SDK is engineered to help developers save time and effort in optimizing performance of trained neural networks on devices with Qualcomm® AI products.</p>
+</li>
+<li><p><strong><a href="https://onnxruntime.ai/docs/execution-providers/QNN-ExecutionProvider.html">QNN Execution Provider for ONNX Runtime</a></strong></p>
+<p>The QNN Execution Provider for ONNX Runtime enables hardware accelerated execution on Qualcomm chipsets. It uses the <a href="https://qpm.qualcomm.com/main/tools/details/qualcomm_ai_engine_direct">Qualcomm AI Engine Direct SDK (QNN SDK)</a> to construct a QNN graph from an ONNX model which can be executed by a supported accelerator backend library.</p>
+</li>
+<li><p><strong><a href="https://azure.microsoft.com/blog/now-in-preview-azure-virtual-machines-with-ampere-altra-armbased-processors/">Azure Virtual Machines with Ampere Altra Arm-based processors</a></strong></p>
+<p>Engineered to efficiently run scale-out workloads, web servers, application servers, open-source databases, cloud-native as well as rich .NET applications, Java applications, gaming servers, media servers, and more.</p>
+</li>
+</ul>
+<p>Support for building Arm-native apps and porting existing x64 apps is also available, including:</p>
+<ul>
+<li><p><strong><a href="../arm64ec.html">Arm64EC</a></strong></p>
+<p>Arm64EC (“Emulation Compatible”) is a new application binary interface (ABI) enabling you to build new native apps or incrementally transition existing x64 apps to take advantage of the native speed and performance possible with Arm-powered devices, including better power consumption, battery life, and accelerated AI &amp; ML workloads.</p>
+</li>
+<li><p><strong><a href="../arm64x-pe.html">Arm64X</a></strong></p>
+<p>Arm64X is a new type of binary that can contain both the classic Arm64 code and Arm64EC code together, making it a particularly good fit for middleware or plugins that may be used by both ABIs.</p>
+</li>
+</ul>
+<p>Additional developer tools supported by Windows 11 on Arm, include:</p>
+<ul>
+<li><p><strong><a href="/windows/wsl">Windows Subsystem for Linux</a></strong></p>
+<p>Enabling Linux distributions to be installed on Windows without the overhead of a traditional virtual machine or dual-boot setup.</p>
+</li>
+<li><p><strong><a href="/windows/terminal">Windows Terminal</a></strong></p>
+<p>A modern way to run multiple command lines side-by-side in tabs or panes, fully customizable with a GPU-accelerated text rendering engine and command palette.</p>
+</li>
+<li><p><strong><a href="/windows/package-manager">Windows Package Manager</a></strong></p>
+<p>Offering a comprehensive package manager solution that consists of a command line tool (winget) and set of services for installing applications that will choose the best available package based on your hardware architecture.</p>
+</li>
+<li><p><strong><a href="/windows/powertoys">Microsoft PowerToys</a></strong></p>
+<p>A set of utilities for power users to tune and streamline their Windows experience for greater productivity, including the FancyZones window manager, a keyboard manager, mouse utilities, PowerRename, and more.</p>
+</li>
+<li><p><strong><a href="/windows/android/wsa">Windows Subsystem for Android</a></strong></p>
+<p>Enabling Windows 11 to run Android applications that are available in the Amazon Appstore.</p>
+</li>
+</ul>
+<h2 id="support">Support</h2>
+<p>For hardware or warranty support with your Windows on Arm developer kit, open a support request on the <strong><a href="https://support.serviceshub.microsoft.com/supportforbusiness/create?sapid=616952e0-c5eb-fa95-eb62-ee5e66edb0b0">Support for business</a></strong> services hub page.</p>
+<h2 id="faqs">FAQs</h2>
+<ul>
+<li><p><strong>How do I set up a recovery drive?</strong></p>
+<p>To create a USB recovery drive in order to capture the default device state to return to as needed, you will need an empty 16gb USB drive. (This process will erase any data already stored on the drive.)</p>
+<ol>
+<li><p>In the search box on the task bar, search for <strong>Create a recovery drive</strong>. After selecting, you may be asked to enter an admin password or confirm your choice.</p>
+</li>
+<li><p>When the tool opens, ensure <strong>Back up system files to the recovery drive</strong> is selected. Select Next.</p>
+</li>
+<li><p>Connect a USB drive, select it, select Next, and then Create. Many files will be copied to the recovery drive, so this will take some time.</p>
+</li>
+</ol>
+<p>To boot your dev kit device from a recovery drive:</p>
+<ol>
+<li><p>Connect your USB drive and then hold the Power button + the UEFI button to boot into UEFI menu.</p>
+</li>
+<li><p>Once in UEFI, use the external USB-A keyboard or mouse to navigate to the Boot Configuration menu.</p>
+</li>
+<li><p>Double-click on <strong>USB Storage</strong> to boot to the USB key.</p>
+</li>
+</ol>
+</li>
+<li><p><strong>How do I update a driver to work on a Windows 11 Arm-based PC?</strong></p>
+<p>Drivers for hardware, games, and apps may only work if they're designed for a Windows 11 Arm-based PC. Check directly with the organization that developed the driver to find relevant Arm64 updates.</p>
+</li>
+<li><p><strong>Does this device support assistive technology?</strong></p>
+<p>Windows 11 provides <a href="https://www.microsoft.com/Accessibility/windows">built-in accessibility features</a> that help you do more on your device, in addition to assistive technology apps in the Microsoft Store, such as the <a href="https://apps.microsoft.com/store/detail/onestep-reader/9NBLGGH6HQKK?hl=en-us&amp;gl=us">OneStep Reader</a> or the <a href="https://microsoftedge.microsoft.com/addons/detail/readwrite-for-microsoft-/bjglhpoliipklkfjcahfefdlfpifcinb">Read &amp;Write</a> extension for Microsoft Edge. NVDA also offers a Windows 11 Arm-based screen reader (see the <a href="https://www.nvaccess.org/download/">NV Access download site</a>). Check the <a href="https://apps.microsoft.com/store/apps">Microsoft Store</a> or contact your assistive software vendor to see if your preferred apps are available for a Windows 11 Arm-based PC.</p>
+</li>
+<li><p><strong>Where can I download a recovery image to reset Windows Developer Kit 2023 to the factory condition?</strong></p>
+<p>The <a href="https://support.microsoft.com/surface-recovery-image">Recovery Image page</a> offers an image specifically for &quot;Windows Dev Kit 2023&quot;. You will need to enter the device Serial Number.</p>
+</li>
+<li><p><strong>Are custom OS images supported?</strong></p>
+<p>No, currently custom operating system images are not supported on Microsoft Arm devices. Only the Windows OS image provided on the device when purchased is supported. This image can be reinstalled if necessary using the downloadable recovery image on the <a href="https://support.microsoft.com/surface-recovery-image">Recovery Image page</a>.</p>
+</li>
+<li><p><strong>Where can I see Windows Dev Kit?</strong></p>
+<p>While no longer available to purchase through Microsoft Store, you can see the device demo video below.</p>
+</li>
+</ul>
+<div class="embeddedvideo"><iframe src="https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=windows-developer-kit-for-arm" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>To learn more, see <strong><a href="https://support.microsoft.com/en-us/windows/windows-arm-based-pcs-faq-477f51df-2e3b-f68f-31b0-06f5e4f8ebb5">FAQs for Windows Arm-based PCs</a></strong>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/dev-kit/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

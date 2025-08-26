@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Accessibility checklist </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Accessibility checklist ">
+    
+    <meta name="description" content="Provides a checklist to help you ensure that your Windows app is accessible.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="accessibility-checklist">Accessibility checklist</h1>
+
+<p>Provides a checklist to help you ensure that your Windows app is accessible .</p>
+<p>Here we provide a checklist you can use to ensure that your app is accessible.</p>
+<ol>
+<li><p>Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.</p>
+<p>An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBlock"><strong>TextBlock</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.TextBox"><strong>TextBox</strong></a> promote their text content as the default accessible name; see <a href="basic-accessibility-information.html#name_from_inner_text">Basic accessibility information</a>.</p>
+<p>You should set the accessible name explicitly for images or other controls that do not promote inner text content as an implicit accessible name. You should use labels for form elements so that the label text can be used as a <a href="/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms591292(v=vs.95)"><strong>LabeledBy</strong></a> target in the Microsoft UI Automation model for correlating labels and inputs. If you want to provide more UI guidance for users than is typically included in the accessible name, accessible descriptions and tooltips help users understand the UI.</p>
+<p>For more info, see <a href="basic-accessibility-information.html#accessible_name">Accessible name</a> and <a href="basic-accessibility-information.html">Accessible description</a>.</p>
+</li>
+<li><p>Implement keyboard accessibility:</p>
+<ul>
+<li>Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of <a href="/uwp/api/windows.ui.xaml.controls.control.tabindex"><strong>TabIndex</strong></a> on some of the UI elements.</li>
+<li>Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.</li>
+<li>Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation <a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider"><strong>Invoke</strong></a> pattern, keyboard activation is typically available; check the documentation for that control.</li>
+<li>Set access keys or implement accelerator keys for specific parts of the UI that support interaction.</li>
+<li>For any custom controls that you use in your UI, verify that you have implemented these controls with correct <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.AutomationPeer"><strong>AutomationPeer</strong></a> support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.</li>
+</ul>
+<p>For more info, see <a href="../input/keyboard-interactions.html">Keyboard interactions</a>.</p>
+</li>
+<li><p>Ensure text is a readable size</p>
+<ul>
+<li>Windows includes various accessibility tools and settings that users can take advantage of and adjust to their own needs and preferences for reading text. These include:
+<ul>
+<li>The Magnifier tool, which enlarges a selected area of the UI. You should ensure the layout of text in your app doesn't make it difficult to use Magnifier for reading.</li>
+<li>Global scale and resolution settings in <strong>Settings-&gt;System-&gt;Display-&gt;Scale and layout</strong>. Exactly which sizing options are available can vary as this depends on the capabilities of the display device.</li>
+<li>Text size settings in <strong>Settings-&gt;Ease of access-&gt;Display</strong>. Adjust the <strong>Make text bigger</strong> setting to specify only the size of text in supporting controls across all applications and screens (all UWP text controls support the text scaling experience without any customization or templating).</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Make everything bigger</strong> setting lets a user specify their preferred size for text and apps in general on their primary screen only.</p>
+</div>
+</li>
+</ul>
+</li>
+<li><p>Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.</p>
+<ul>
+<li>Use a color analyzer tool to verify that the visual text contrast ratio is at least 4.5:1.</li>
+<li>Switch to a high contrast theme and verify that the UI for your app is readable and usable.</li>
+<li>Ensure that your UI doesn’t use color as the only way to convey information.</li>
+</ul>
+<p>For more info, see <a href="high-contrast-themes.html">High-contrast themes</a> and <a href="accessible-text-requirements.html">Accessible text requirements</a>.</p>
+</li>
+<li><p>Run accessibility tools, address reported issues, and verify the screen reading experience.</p>
+<p>Use tools such as <a href="/windows/desktop/WinAuto/inspect-objects"><strong>Inspect</strong></a> to verify programmatic access, run diagnostic tools such as <a href="/windows/desktop/WinAuto/ui-accessibility-checker"><strong>AccChecker</strong></a> to discover common errors, and verify the screen reading experience with Narrator.</p>
+<p>For more info, see <a href="accessibility-testing.html">Accessibility testing</a>.</p>
+</li>
+<li><p>Make sure your app manifest settings follow accessibility guidelines.</p>
+</li>
+<li><p>Declare your app as accessible in the Microsoft Store.</p>
+<p>If you implemented the baseline accessibility support, declaring your app as accessible in the Microsoft Store can help reach more customers and get some additional good ratings.</p>
+<p>For more info, see <a href="accessibility-in-the-store.html">Accessibility in the Store</a>.</p>
+</li>
+</ol>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="accessible-text-requirements.html">Accessible text requirements</a></li>
+<li><a href="../input/text-scaling.html">Text scaling</a></li>
+<li><a href="accessibility.html">Accessibility</a></li>
+<li><a href="accessibility-overview.html">Design for accessibility</a></li>
+<li><a href="practices-to-avoid.html">Practices to avoid</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/accessibility-checklist.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

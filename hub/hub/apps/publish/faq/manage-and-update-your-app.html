@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Manage and Update Your App - FAQ </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Manage and Update Your App - FAQ ">
+    
+    <meta name="description" content="Learn how to manage, update, and improve your Microsoft Store app after publishing. Topics include app submissions, rollouts, flights, metadata changes, and managing in-app purchases.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="manage-and-update-your-app">Manage and Update Your App</h1>
+
+<p>This section provides guidance for developers looking to update or manage their published Microsoft Store apps, including controlled rollouts, flights, listing changes, and in-app product updates.</p>
+<hr>
+<details>
+<summary><strong>How do I release an update or new version of my app on the Microsoft Store?</strong></summary>
+<p>To release an update, create a new submission in Partner Center for your app:</p>
+<ol>
+<li>Go to your app's Overview page and select <strong>Update</strong> (or <strong>Create a new submission</strong>).</li>
+<li>Upload new app packages (e.g., MSIX, APPX), or modify listing info like pricing or descriptions.</li>
+<li>Submit the update for certification.</li>
+</ol>
+<p>Once approved, the new version replaces the previous one in the Store. Existing users will receive the update via the Store automatically.</p>
+</details>
+<hr>
+<details>
+<summary><strong>Can I gradually roll out an app update to a percentage of my users?</strong></summary>
+<p>Yes. Partner Center supports <strong>gradual rollout</strong> for updates only for MSIX apps:</p>
+<ul>
+<li>During the submission process, enable <strong>Roll out update gradually</strong> and set an initial percentage (e.g., 5%).</li>
+<li>After publishing, increase the rollout percentage or halt it from the Overview page.</li>
+<li>Halting stops further updates but doesn’t revert the app for users who already received it.</li>
+</ul>
+<p>This helps catch issues early and ensures a more stable update for all users.</p>
+</details>
+<hr>
+<details>
+<summary><strong>What are package flights and how can I test updates with a limited group of users?</strong></summary>
+<p><strong>Package flights</strong> allow you to distribute test versions of your app (MSIX apps only) to specific groups:</p>
+<ul>
+<li>Set up a flight group (e.g., internal testers).</li>
+<li>Upload a new package for that group, separate from the public version.</li>
+<li>Only designated users receive the update; others continue with the public release.</li>
+</ul>
+<p>Flights go through certification but allow testing new features or bug fixes before wide release.</p>
+</details>
+<hr>
+<details>
+<summary><strong>How can I change my app’s Store listing details or price after it’s published?</strong></summary>
+<p>To change listing details:</p>
+<ol>
+<li>Create a new submission via the <strong>Update</strong> button in Partner Center.</li>
+<li>Modify description, screenshots, category, pricing, etc.</li>
+<li>No need to upload a new package if you're only editing metadata.</li>
+</ol>
+<p>These changes still go through certification before being published to ensure Store policy compliance.</p>
+</details>
+<hr>
+<details>
+<summary><strong>My app has in-app products (add-ons). How do I manage or update those after publishing?</strong></summary>
+<p>To manage add-ons:</p>
+<ul>
+<li>Go to the <strong>Add-ons</strong> section in Partner Center.</li>
+<li>Select the add-on, click <strong>Update</strong>, and start a new submission to change its listing, price, or content.</li>
+</ul>
+<p>Add-on updates are certified like app updates. You can also track performance using the <strong>Add-on acquisitions</strong> report. Always keep your in-app product listings accurate and policy-compliant.</p>
+</details>
+<br>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For detailed information about <strong>How to manage and update your app</strong>, please see the <a href="../publish-your-app/msix/publish-update-to-your-app-on-store.html">Manage and update your app</a> section.</p>
+</div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/faq/manage-and-update-your-app.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

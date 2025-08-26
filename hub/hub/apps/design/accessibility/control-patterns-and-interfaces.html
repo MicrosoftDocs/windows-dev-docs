@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Control patterns and interfaces </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Control patterns and interfaces ">
+    
+    <meta name="description" content="Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="control-patterns-and-interfaces">Control patterns and interfaces</h1>
+
+<p>Lists the Microsoft UI Automation control patterns, the classes that clients use to access them, and the interfaces providers use to implement them.</p>
+<p>The table in this topic describes the Microsoft UI Automation control patterns. The table also lists the classes used by UI Automation clients to access the control patterns and the interfaces used by UI Automation providers to implement them. The <strong>Control pattern</strong> column shows the pattern name from the UI Automation client perspective, as a constant value listed in <a href="/windows/desktop/WinAuto/uiauto-control-pattern-availability-propids"><strong>Control Pattern Availability Property Identifiers</strong></a>. From the UI Automation provider perspective, each of these patterns is a <a href="/uwp/api/Windows.UI.Xaml.Automation.Peers.PatternInterface"><strong>PatternInterface</strong></a> constant name. The <strong>Class provider interface</strong> column shows the name of the interface that providers implement to provide this pattern for a custom XAML control.</p>
+<p>For more info about how to implement custom automation peers that expose control patterns and implement the interfaces, see <a href="custom-automation-peers.html">Custom automation peers</a>.</p>
+<p>When you implement a control pattern, you should also consult the UI Automation provider documentation that explains some of the expectations that clients will have of a control pattern regardless of which UI framework is used to implement it. Some of the info listed in the general UI Automation provider documentation will influence how you implement your peers and correctly support that pattern. See <a href="/windows/desktop/WinAuto/uiauto-implementinguiautocontrolpatterns">Implementing UI Automation Control Patterns</a>, and view the page that documents the pattern you intend to implement.</p>
+<table>
+<thead>
+<tr>
+<th>Control pattern</th>
+<th>Class provider interface</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Annotation</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IAnnotationProvider"><strong>IAnnotationProvider</strong></a></td>
+<td>Used to expose the properties of an annotation in a document.</td>
+</tr>
+<tr>
+<td><strong>Dock</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IDockProvider"><strong>IDockProvider</strong></a></td>
+<td>Used for controls that can be docked in a docking container. For example, toolbars or tool palettes.</td>
+</tr>
+<tr>
+<td><strong>Drag</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IDragProvider"><strong>IDragProvider</strong></a></td>
+<td>Used to support draggable controls, or controls with draggable items.</td>
+</tr>
+<tr>
+<td><strong>DropTarget</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IDropTargetProvider"><strong>IDropTargetProvider</strong></a></td>
+<td>Used to support controls that can be the target of a drag-and-drop operation.</td>
+</tr>
+<tr>
+<td><strong>ExpandCollapse</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IExpandCollapseProvider"><strong>IExpandCollapseProvider</strong></a></td>
+<td>Used to support controls that visually expand to display more content and collapse to hide content.</td>
+</tr>
+<tr>
+<td><strong>Grid</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IGridProvider"><strong>IGridProvider</strong></a></td>
+<td>Used for controls that support grid functionality such as sizing and moving to a specified cell. Note that Grid itself does not implement this pattern because it provides layout but is not a control.</td>
+</tr>
+<tr>
+<td><strong>GridItem</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IGridItemProvider"><strong>IGridItemProvider</strong></a></td>
+<td>Used for controls that have cells within grids.</td>
+</tr>
+<tr>
+<td><strong>Invoke</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IInvokeProvider"><strong>IInvokeProvider</strong></a></td>
+<td>Used for controls that can be invoked, such as a  <a href="/uwp/api/Windows.UI.Xaml.Controls.Button"><strong>Button</strong></a>.</td>
+</tr>
+<tr>
+<td><strong>ItemContainer</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IItemContainerProvider"><strong>IItemContainerProvider</strong></a></td>
+<td>Enables applications to find an element in a container, such as a virtualized list.</td>
+</tr>
+<tr>
+<td><strong>MultipleView</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IMultipleViewProvider"><strong>IMultipleViewProvider</strong></a></td>
+<td>Used for controls that can switch between multiple representations of the same set of information, data, or children.</td>
+</tr>
+<tr>
+<td><strong>ObjectModel</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IObjectModelProvider"><strong>IObjectModelProvider</strong></a></td>
+<td>Used to expose a pointer to the underlying object model of a document.</td>
+</tr>
+<tr>
+<td><strong>RangeValue</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IRangeValueProvider"><strong>IRangeValueProvider</strong></a></td>
+<td>Used for controls that have a range of values that can be applied to the control. For example, a spinner control containing years might have a range of 1900 to the current year, while another spinner control presenting months would have a range of 1 to 12.</td>
+</tr>
+<tr>
+<td><strong>Scroll</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IScrollProvider"><strong>IScrollProvider</strong></a></td>
+<td>Used for controls that can scroll. For example, a control that has scroll bars that are active when there is more information than can be displayed in the viewable area of the control.</td>
+</tr>
+<tr>
+<td><strong>ScrollItem</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IScrollItemProvider"><strong>IScrollItemProvider</strong></a></td>
+<td>Used for controls that have individual items in a list that scrolls. For example, a list control that has individual items in the scroll list, such as a combo box control.</td>
+</tr>
+<tr>
+<td><strong>Selection</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ISelectionProvider"><strong>ISelectionProvider</strong></a></td>
+<td>Used for selection container controls. For example, <a href="/uwp/api/Windows.UI.Xaml.Controls.ListBox"><strong>ListBox</strong></a> and <a href="/uwp/api/Windows.UI.Xaml.Controls.ComboBox"><strong>ComboBox</strong></a>.</td>
+</tr>
+<tr>
+<td><strong>SelectionItem</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ISelectionItemProvider"><strong>ISelectionItemProvider</strong></a></td>
+<td>Used for individual items in selection container controls, such as list boxes and combo boxes.</td>
+</tr>
+<tr>
+<td><strong>Spreadsheet</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ISpreadsheetProvider"><strong>ISpreadsheetProvider</strong></a></td>
+<td>Used to expose the contents of a spreadsheet or other grid-based document.</td>
+</tr>
+<tr>
+<td><strong>SpreadsheetItem</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ISpreadsheetItemProvider"><strong>ISpreadsheetItemProvider</strong></a></td>
+<td>Used to expose the properties of a cell in a spreadsheet or other grid-based document.</td>
+</tr>
+<tr>
+<td><strong>Styles</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IStylesProvider"><strong>IStylesProvider</strong></a></td>
+<td>Used to describe a UI element that has a specific style, fill color, fill pattern, or shape.</td>
+</tr>
+<tr>
+<td><strong>SynchronizedInput</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ISynchronizedInputProvider"><strong>ISynchronizedInputProvider</strong></a></td>
+<td>Enables UI Automation client apps to direct the mouse or keyboard input to a specific UI element.</td>
+</tr>
+<tr>
+<td><strong>Table</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ITableProvider"><strong>ITableProvider</strong></a></td>
+<td>Used for controls that have a grid as well as header information. For example, a tabular calendar control.</td>
+</tr>
+<tr>
+<td><strong>TableItem</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ITableItemProvider"><strong>ITableItemProvider</strong></a></td>
+<td>Used for items in a table.</td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ITextProvider"><strong>ITextProvider</strong></a></td>
+<td>Used for edit controls and documents that expose textual information. See also <a href="/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider"><strong>ITextRangeProvider</strong></a> and <a href="/uwp/api/windows.ui.xaml.automation.provider.itextprovider2"><strong>ITextProvider2</strong></a>.</td>
+</tr>
+<tr>
+<td><strong>TextChild</strong></td>
+<td><a href="/uwp/api/windows.ui.xaml.automation.provider.itextchildprovider"><strong>ITextChildProvider</strong></a></td>
+<td>Used to access an element’s nearest ancestor that supports the <strong>Text</strong> control pattern.</td>
+</tr>
+<tr>
+<td><strong>TextEdit</strong></td>
+<td>No managed class available</td>
+<td>Provides access to a control that modifies text, for example a control that performs auto-correction or enables input composition through an Input Method Editor (IME).</td>
+</tr>
+<tr>
+<td><strong>TextRange</strong></td>
+<td><a href="/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider"><strong>ITextRangeProvider</strong></a></td>
+<td>Provides access to a span of continuous text in a text container that implements <a href="/uwp/api/windows.ui.xaml.automation.provider.itextprovider"><strong>ITextProvider</strong></a>. See also <a href="/uwp/api/windows.ui.xaml.automation.provider.itextrangeprovider2"><strong>ITextRangeProvider2</strong></a>.</td>
+</tr>
+<tr>
+<td><strong>Toggle</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IToggleProvider"><strong>IToggleProvider</strong></a></td>
+<td>Used for controls where the state can be toggled. For example, <a href="/uwp/api/Windows.UI.Xaml.Controls.CheckBox"><strong>CheckBox</strong></a> and menu items that can be checked.</td>
+</tr>
+<tr>
+<td><strong>Transform</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.ITransformProvider"><strong>ITransformProvider</strong></a></td>
+<td>Used for controls that can be resized, moved, and rotated. Typical uses for the Transform control pattern are in designers, forms, graphical editors, and drawing applications.</td>
+</tr>
+<tr>
+<td><strong>Value</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IValueProvider"><strong>IValueProvider</strong></a></td>
+<td>Allows clients to get or set a value on controls that do not support a range of values.</td>
+</tr>
+<tr>
+<td><strong>VirtualizedItem</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IVirtualizedItemProvider"><strong>IVirtualizedItemProvider</strong></a></td>
+<td>Exposes items inside containers that are virtualized and need to be made fully accessible as UI Automation elements.</td>
+</tr>
+<tr>
+<td><strong>Window</strong></td>
+<td><a href="/uwp/api/Windows.UI.Xaml.Automation.Provider.IWindowProvider"><strong>IWindowProvider</strong></a></td>
+<td>Exposes information specific to windows, a fundamental concept to the Microsoft Windows operating system. Examples of controls that are windows are child windows and dialogs.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You won't necessarily find implementations of all these patterns in existing XAML controls. Some of the patterns have interfaces solely to support parity with the general UI Automation framework definition of patterns, and to support automation peer scenarios that will require a purely custom implementation to support that pattern.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Windows Phone Store apps do not support all the UI Automation control patterns listed here. <strong>Annotation</strong>, <strong>Dock</strong>, <strong>Drag</strong>, <strong>DropTarget</strong>, <strong>ObjectModel</strong> are some of the unsupported patterns.</p>
+</div>
+<p><span id="related_topics"></span></p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="custom-automation-peers.html">Custom automation peers</a></li>
+<li><a href="accessibility.html">Accessibility</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/accessibility/control-patterns-and-interfaces.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

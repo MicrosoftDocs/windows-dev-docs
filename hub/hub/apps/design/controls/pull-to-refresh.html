@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Pull-to-refresh </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Pull-to-refresh ">
+    
+    <meta name="description" content="Learn how to implement a pull-to-refresh control that lets a user pull down on a list of data using touch in order to retrieve more data.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="pull-to-refresh">Pull to refresh</h1>
+
+<p>Pull-to-refresh lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on devices with a touch screen. You can use the APIs shown here to implement pull-to-refresh in your app.</p>
+<p><img src="images/pull-to-refresh.gif" alt="pull-to-refresh gif"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use pull-to-refresh when you have a list or grid of data that the user might want to refresh regularly, and your app is likely to be running on touch-first devices.</p>
+<p>You can also use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer">RefreshVisualizer</a> to create a consistent refresh experience that is invoked in other ways, such as by a refresh button.</p>
+<h2 id="refresh-controls">Refresh controls</h2>
+<p>Pull-to-refresh is enabled by 2 controls.</p>
+<ul>
+<li><strong>RefreshContainer</strong> - a ContentControl that provides a wrapper for the pull-to-refresh experience. It handles the touch interactions and manages the state of its internal refresh visualizer.</li>
+<li><strong>RefreshVisualizer</strong> - encapsulates the refresh visualization explained in the next section.</li>
+</ul>
+<p>The main control is the <strong>RefreshContainer</strong>, which you place as a wrapper around the content that the user pulls to trigger a refresh. RefreshContainer works only with touch, so we recommend that you also have a refresh button available for users who don't have a touch interface. You can position the refresh button at a suitable location in the app, either on a command bar or at a location close to the surface being refreshed.</p>
+<h2 id="refresh-visualization">Refresh visualization</h2>
+<p>The default refresh visualization is a circular progress spinner that is used to communicate when a refresh will happen and the progress of the refresh after it is initiated. The refresh visualizer has 5 states.</p>
+<p>The distance the user needs to pull down on a list to initiate a refresh is called the <em>threshold</em>. The visualizer <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.State">State</a> is determined by the pull state as it relates to this threshold. The possible values are contained in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizerstate">RefreshVisualizerState</a> enumeration.</p>
+<h3 id="idle">Idle</h3>
+<p>The visualizer's default state is <strong>Idle</strong>. The user is not interacting with the RefreshContainer via touch, and there is not a refresh in progress.</p>
+<p>Visually, there is no evidence of the refresh visualizer.</p>
+<h3 id="interacting">Interacting</h3>
+<p>When the user pulls the list in the direction specified by the PullDirection property, and before the threshold is reached, the visualizer is in the <strong>Interacting</strong> state.</p>
+<ul>
+<li><p>If the user releases the control while in this state, the control returns to <strong>Idle</strong>.</p>
+<p><img src="images/ptr-prethreshold.png" alt="pull-to-refresh pre-threshold"></p>
+<p>Visually, the icon is displayed as disabled (60% opacity). In addition, the icon spins one full rotation with the scroll action.</p>
+</li>
+<li><p>If the user pulls the list past the threshold, the visualizer transitions from <strong>Interacting</strong> to <strong>Pending</strong>.</p>
+<p><img src="images/ptr-atthreshold.png" alt="pull-to-refresh at threshold"></p>
+<p>Visually, the icon switches to 100% opacity and pulses in size up to 150% and then back to 100% size during the transition.</p>
+</li>
+</ul>
+<h3 id="pending">Pending</h3>
+<p>When the user has pulled the list past the threshold, the visualizer is in the <strong>Pending</strong> state.</p>
+<ul>
+<li>If the user moves the list back above the threshold without releasing it, it returns to the <strong>Interacting</strong> state.</li>
+<li>If the user releases the list, a refresh request is initiated and it transitions to the <strong>Refreshing</strong> state.</li>
+</ul>
+<p><img src="images/ptr-postthreshold.png" alt="pull-to-refresh post-threshold"></p>
+<p>Visually, the icon is 100% in both size and opacity. In this state, the icon continues to move down with the scroll action but no longer spins.</p>
+<h3 id="refreshing">Refreshing</h3>
+<p>When the user releases the visualiser past the threshold, it's in the <strong>Refreshing</strong> state.</p>
+<p>When this state is entered, the <strong>RefreshRequested</strong> event is raised. This is the signal to start the app's content refresh. The event args (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshrequestedeventargs">RefreshRequestedEventArgs</a>) contain a <a href="/uwp/api/windows.foundation.deferral">Deferral</a> object, which you should take a handle to in the event handler. Then, you should mark the deferral as completed when your code to perform the refresh has completed.</p>
+<p>When the refresh is complete, the visualizer returns to the <strong>Idle</strong> state.</p>
+<p>Visually, the icon settles back to the threshold location and spins for the duration of the refresh. This spinning is used to show progress of the refresh and is replaced by the animation of the incoming content.</p>
+<h3 id="peeking">Peeking</h3>
+<p>When the user pulls in the refresh direction from a start position where a refresh is not allowed, the visualizer enters the <strong>Peeking</strong> state. This typically happens when the ScrollViewer is not at position 0 when the user starts to pull.</p>
+<ul>
+<li>If the user releases the control while in this state, the control returns to <strong>Idle</strong>.</li>
+</ul>
+<h2 id="pull-direction">Pull direction</h2>
+<p>By default, the user pulls a list from top to bottom to initiate a refresh. If you have a list or grid with a different orientation, you should change the pull direction of the refresh container to match.</p>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.PullDirection">PullDirection</a> property takes one of these <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshpulldirection">RefreshPullDirection</a> values: <strong>BottomToTop</strong>, <strong>TopToBottom</strong>, <strong>RightToLeft</strong>, or <strong>LeftToRight</strong>.</p>
+<p>When you change the pull direction, the starting position of the visualizer's progress spinner automatically rotates so the arrow starts in the appropriate position for the pull direction. If needed, you can change the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer.Orientation">RefreshVisualizer.Orientation</a> property to override the automatic behavior. In most cases, we recommend leaving the default value of <strong>Auto</strong>.</p>
+<h2 id="implement-pull-to-refresh">Implement pull-to-refresh</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs</strong>: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer">RefreshContainer</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshvisualizer">RefreshVisualizer</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/PullToRefresh">Open the WinUI 3 Gallery app and see PullToRefresh in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>To add pull-to-refresh functionality to a list requires just a few steps.</p>
+<ol>
+<li>Wrap your list in a <strong>RefreshContainer</strong> control.</li>
+<li>Handle the <strong>RefreshRequested</strong> event to refresh your content.</li>
+<li>Optionally, initiate a refresh by calling <strong>RequestRefresh</strong> (for example, from a button click).</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can instantiate a RefreshVisualizer on its own. However, we recommend that you wrap your content in a RefreshContainer and use the RefreshVisualizer provided by the RefreshContainer.Visualizer property, even for non-touch scenarios. In this article, we assume that the visualizer is always obtained from the refresh container.</p>
+<p>In addition, use the refresh container's RequestRefresh and RefreshRequested members for convenience. <code>refreshContainer.RequestRefresh()</code> is equivalent to <code>refreshContainer.Visualizer.RequestRefresh()</code>, and either will raise both the RefreshContainer.RefreshRequested event and the RefreshVisualizer.RefreshRequested events.</p>
+</div>
+<h3 id="request-a-refresh">Request a refresh</h3>
+<p>The refresh container handles touch interactions to let a user refresh content via touch. We recommend that you provide other affordances for non-touch interfaces, like a refresh button or voice control.</p>
+<p>To initiate a refresh, call the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshcontainer.RequestRefresh">RequestRefresh</a> method.</p>
+<pre><code class="lang-csharp">// See the Examples section for the full code.
+private void RefreshButtonClick(object sender, RoutedEventArgs e)
+{
+    RefreshContainer.RequestRefresh();
+}
+</code></pre>
+<p>When you call RequestRefresh, the visualizer state goes directly from <strong>Idle</strong> to <strong>Refreshing</strong>.</p>
+<h3 id="handle-a-refresh-request">Handle a refresh request</h3>
+<p>To get fresh content when needed, handle the RefreshRequested event. In the event handler, you'll need code specific to your app to get the fresh content.</p>
+<p>The event args (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.refreshrequestedeventargs">RefreshRequestedEventArgs</a>) contain a <a href="/uwp/api/windows.foundation.deferral">Deferral</a> object. Get a handle to the deferral in the event handler. Then, mark the deferral as completed when your code to perform the refresh has completed.</p>
+<pre><code class="lang-csharp">// See the Examples section for the full code.
+private async void RefreshContainer_RefreshRequested(RefreshContainer sender, RefreshRequestedEventArgs args)
+{
+    // Respond to a request by performing a refresh and using the deferral object.
+    using (var RefreshCompletionDeferral = args.GetDeferral())
+    {
+        // Do some async operation to refresh the content
+
+         await FetchAndInsertItemsAsync(3);
+
+        // The 'using' statement ensures the deferral is marked as complete.
+        // Otherwise, you'd call
+        // RefreshCompletionDeferral.Complete();
+        // RefreshCompletionDeferral.Dispose();
+    }
+}
+</code></pre>
+<h3 id="respond-to-state-changes">Respond to state changes</h3>
+<p>You can respond to changes in the visualizer's state, if needed. For example, to prevent multiple refresh requests, you can disable a refresh button while the visualizer is refreshing.</p>
+<pre><code class="lang-csharp">// See the Examples section for the full code.
+private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshStateChangedEventArgs args)
+{
+    // Respond to visualizer state changes.
+    // Disable the refresh button if the visualizer is refreshing.
+    if (args.NewState == RefreshVisualizerState.Refreshing)
+    {
+        RefreshButton.IsEnabled = false;
+    }
+    else
+    {
+        RefreshButton.IsEnabled = true;
+    }
+}
+</code></pre>
+<h3 id="using-a-scrollviewer-in-a-refreshcontainer">Using a ScrollViewer in a RefreshContainer</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Content of a RefreshContainer must be a scrollable control, such as ScrollViewer, GridView, ListView, etc. Setting the Content to a control like Grid will result in undefined behavior.</p>
+</div>
+<p>This example shows how to use pull-to-refresh with a scroll viewer.</p>
+<pre><code class="lang-xaml">&lt;RefreshContainer&gt;
+    &lt;ScrollViewer VerticalScrollMode=&quot;Enabled&quot;
+                  VerticalScrollBarVisibility=&quot;Auto&quot;
+                  HorizontalScrollBarVisibility=&quot;Auto&quot;&gt;
+ 
+        &lt;!-- Scrollviewer content --&gt;
+
+    &lt;/ScrollViewer&gt;
+&lt;/RefreshContainer&gt;
+</code></pre>
+<h3 id="adding-pull-to-refresh-to-a-listview">Adding pull-to-refresh to a ListView</h3>
+<p>This example shows how to use pull-to-refresh with a list view.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Margin=&quot;0,40&quot; Width=&quot;280&quot;&gt;
+    &lt;CommandBar OverflowButtonVisibility=&quot;Collapsed&quot;&gt;
+        &lt;AppBarButton x:Name=&quot;RefreshButton&quot; Click=&quot;RefreshButtonClick&quot;
+                      Icon=&quot;Refresh&quot; Label=&quot;Refresh&quot;/&gt;
+        &lt;CommandBar.Content&gt;
+            &lt;TextBlock Text=&quot;List of items&quot; 
+                       Style=&quot;{StaticResource TitleTextBlockStyle}&quot;
+                       Margin=&quot;12,8&quot;/&gt;
+        &lt;/CommandBar.Content&gt;
+    &lt;/CommandBar&gt;
+
+    &lt;RefreshContainer x:Name=&quot;RefreshContainer&quot;&gt;
+        &lt;ListView x:Name=&quot;ListView1&quot; Height=&quot;400&quot;&gt;
+            &lt;ListView.ItemTemplate&gt;
+                &lt;DataTemplate x:DataType=&quot;local:ListItemData&quot;&gt;
+                    &lt;Grid Height=&quot;80&quot;&gt;
+                        &lt;Grid.RowDefinitions&gt;
+                            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+                            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+                            &lt;RowDefinition Height=&quot;*&quot; /&gt;
+                        &lt;/Grid.RowDefinitions&gt;
+                        &lt;TextBlock Text=&quot;{x:Bind Path=Header}&quot;
+                                   Style=&quot;{StaticResource SubtitleTextBlockStyle}&quot;
+                                   Grid.Row=&quot;0&quot;/&gt;
+                        &lt;TextBlock Text=&quot;{x:Bind Path=Date}&quot;
+                                   Style=&quot;{StaticResource CaptionTextBlockStyle}&quot;
+                                   Grid.Row=&quot;1&quot;/&gt;
+                        &lt;TextBlock Text=&quot;{x:Bind Path=Body}&quot;
+                                   Style=&quot;{StaticResource BodyTextBlockStyle}&quot;
+                                   Grid.Row=&quot;2&quot;
+                                   Margin=&quot;0,4,0,0&quot; /&gt;
+                    &lt;/Grid&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/ListView.ItemTemplate&gt;
+        &lt;/ListView&gt;
+    &lt;/RefreshContainer&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">public sealed partial class MainPage : Page
+{
+    public ObservableCollection&lt;ListItemData&gt; Items { get; set; } 
+        = new ObservableCollection&lt;ListItemData&gt;();
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+
+        Loaded += MainPage_Loaded;
+        ListView1.ItemsSource = Items;
+    }
+
+    private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+    {
+        Loaded -= MainPage_Loaded;
+        RefreshContainer.RefreshRequested += RefreshContainer_RefreshRequested;
+        RefreshContainer.Visualizer.RefreshStateChanged += Visualizer_RefreshStateChanged;
+
+        // Add some initial content to the list.
+        await FetchAndInsertItemsAsync(2);
+    }
+
+    private void RefreshButtonClick(object sender, RoutedEventArgs e)
+    {
+        RefreshContainer.RequestRefresh();
+    }
+
+    private async void RefreshContainer_RefreshRequested(RefreshContainer sender, RefreshRequestedEventArgs args)
+    {
+        // Respond to a request by performing a refresh and using the deferral object.
+        using (var RefreshCompletionDeferral = args.GetDeferral())
+        {
+            // Do some async operation to refresh the content
+
+            await FetchAndInsertItemsAsync(3);
+
+            // The 'using' statement ensures the deferral is marked as complete.
+            // Otherwise, you'd call
+            // RefreshCompletionDeferral.Complete();
+            // RefreshCompletionDeferral.Dispose();
+        }
+    }
+
+    private void Visualizer_RefreshStateChanged(RefreshVisualizer sender, RefreshStateChangedEventArgs args)
+    {
+        // Respond to visualizer state changes.
+        // Disable the refresh button if the visualizer is refreshing.
+        if (args.NewState == RefreshVisualizerState.Refreshing)
+        {
+            RefreshButton.IsEnabled = false;
+        }
+        else
+        {
+            RefreshButton.IsEnabled = true;
+        }
+    }
+
+    // App specific code to get fresh data.
+    private async Task FetchAndInsertItemsAsync(int updateCount)
+    {
+        for (int i = 0; i &lt; updateCount; ++i)
+        {
+            // Simulate delay while we go fetch new items.
+            await Task.Delay(1000);
+            Items.Insert(0, GetNextItem());
+        }
+    }
+
+    private ListItemData GetNextItem()
+    {
+        return new ListItemData()
+        {
+            Header = &quot;Header &quot; + DateTime.Now.Second.ToString(),
+            Date = DateTime.Now.ToLongDateString(),
+            Body = DateTime.Now.ToLongTimeString()
+        };
+    }
+}
+
+public class ListItemData
+{
+    public string Header { get; set; }
+    public string Date { get; set; }
+    public string Body { get; set; }
+}
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>The refresh controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. APIs for this control exist in both the <a href="/uwp/api/windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> (UWP) and <a href="/windows/winui/api/microsoft.ui.xaml.controls">Microsoft.UI.Xaml.Controls</a> (WinUI) namespaces.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.refreshcontainer">RefreshContainer</a>, <a href="/uwp/api/windows.ui.xaml.controls.refreshvisualizer">RefreshVisualizer</a></li>
+<li><strong>WinUI 2 Apis:</strong> <a href="/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer">RefreshContainer</a>, <a href="/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer">RefreshVisualizer</a></li>
+<li><a href="winui2gallery:/item/PullToRefresh">Open the WinUI 2 Gallery app and see PullToRefresh in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles, templates, and features for all controls.</p>
+<p>To use the code in this article with WinUI 2, use an alias in XAML (we use <code>muxc</code>) to represent the Windows UI Library APIs that are included in your project. See <a href="/windows/uwp/get-started/winui2/getting-started">Get Started with WinUI 2</a> for more info.</p>
+
+<pre><code class="lang-xaml">xmlns:muxc=&quot;using:Microsoft.UI.Xaml.Controls&quot;
+
+&lt;muxc:RefreshContainer /&gt;
+</code></pre>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../input/touch-interactions.html">Touch interactions</a></li>
+<li><a href="listview-and-gridview.html">List view and grid view</a></li>
+<li><a href="item-containers-templates.html">Item containers and templates</a></li>
+<li><a href="/windows/uwp/composition/composition-animation">Expression animations</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/pull-to-refresh.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

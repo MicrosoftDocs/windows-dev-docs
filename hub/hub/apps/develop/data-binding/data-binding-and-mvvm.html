@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows data binding and MVVM </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows data binding and MVVM ">
+    
+    <meta name="description" content="Data binding is at the core of the Model-View-ViewModel (MVVM) UI architectural design pattern, and enables loose coupling between UI and non-UI code.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-data-binding-and-mvvm">Windows data binding and MVVM</h1>
+
+<p>Model-View-ViewModel (MVVM) is a UI architectural design pattern for decoupling UI and non-UI code. With MVVM, you define your UI declaratively in XAML and use data binding markup to link it to other layers containing data and commands. The data binding infrastructure provides a loose coupling that keeps the UI and the linked data synchronized and routes user input to the appropriate commands.</p>
+<p>Because it provides loose coupling, the use of data binding reduces hard dependencies between different kinds of code. This makes it easier to change individual code units (methods, classes, controls, etc.) without causing unintended side effects in other units. This decoupling is an example of the <em>separation of concerns</em>, which is an important concept in many design patterns.</p>
+<h2 id="benefits-of-mvvm">Benefits of MVVM</h2>
+<p>Decoupling your code has many benefits, including:</p>
+<ul>
+<li>Enabling an iterative, exploratory coding style. Change that is isolated is less risky and easier to experiment with.</li>
+<li>Simplifying unit testing. Code units that are isolated from one another can be tested individually and outside of production environments.</li>
+<li>Supporting team collaboration. Decoupled code that adheres to well-designed interfaces can be developed by separate individuals or teams, and integrated later.</li>
+<li>Improving maintainability. Fixing bugs in decoupled code is less likely to cause regressions in other code.</li>
+</ul>
+<p>In contrast with MVVM, an app with a more conventional &quot;code-behind&quot; structure typically uses data binding for display-only data, and responds to user input by directly handling events exposed by controls. The event handlers are implemented in code-behind files (such as MainWindow.xaml.cs), and are often tightly coupled to the controls, typically containing code that manipulates the UI directly. This makes it difficult or impossible to replace a control without having to update the event handling code. With this architecture, code-behind files often accumulate code that isn't directly related to the UI, such as database-access code, which ends up being duplicated and modified for use with other windows.</p>
+<h2 id="app-layers">App layers</h2>
+<p>When using the MVVM pattern, an app is divided into the following layers:</p>
+<ul>
+<li>The <strong>model</strong> layer defines the types that represent your business data. This includes everything required to model the core app domain, and often includes core app logic. This layer is completely independent of the view and view-model layers, and often resides partially in the cloud. Given a fully implemented model layer, you can create multiple different client apps if you so choose, such as Windows App SDK and web apps that work with the same underlying data.</li>
+<li>The <strong>view</strong> layer defines the UI using XAML markup. The markup includes data binding expressions (such as <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">x:Bind</a>) that define the connection between specific UI components and various view-model and model members. Code-behind files are sometimes used as part of the view layer to contain additional code needed to customize or manipulate the UI, or to extract data from event handler arguments before calling a view-model method that performs the work.</li>
+<li>The <strong>view-model</strong> layer provides data binding targets for the view. In many cases, the view-model exposes the model directly, or provides members that wrap specific model members. The view-model can also define members for keeping track of data that is relevant to the UI but not to the model, such as the display order of a list of items. The view-model also serves as an integration point with other services such as data access code. For simple projects, you might not need a separate model layer, but only a view-model that encapsulates all the data you need.</li>
+</ul>
+<h2 id="basic-and-advanced-mvvm">Basic and advanced MVVM</h2>
+<p>As with any design pattern, there is more than one way to implement MVVM, and many different techniques are considered part of MVVM. For this reason, there are several different third-party MVVM frameworks supporting the various XAML-based platforms, including Windows App SDK. However, these frameworks generally include multiple services for implementing decoupled architecture, making the exact definition of MVVM somewhat ambiguous.</p>
+<p>Although sophisticated MVVM frameworks can be very useful, especially for enterprise-scale projects, there is typically a cost associated with adopting any particular pattern or technique, and the benefits are not always clear, depending on the scale and size of your project. Fortunately, you can adopt only those techniques that provide a clear and tangible benefit, and ignore others until you need them.</p>
+<p>In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows App SDK, and without using any external frameworks. In particular, the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a> makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.</p>
+<p>For additional guidance on using basic, out-of-the-box MVVM, check out the <a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customers Orders Database UWP sample</a> on GitHub. Many of the other <a href="https://github.com/Microsoft?q=windows-appsample">UWP app samples</a> also use a basic MVVM architecture, and the <a href="https://github.com/Microsoft/Windows-appsample-trafficapp">Traffic App UWP sample</a> includes both code-behind and MVVM versions, with notes describing the <a href="https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md">MVVM conversion</a>.</p>
+<h2 id="see-also">See also</h2>
+<h3 id="topics">Topics</h3>
+<p><a href="data-binding-in-depth.html">Data binding in depth</a><br>
+<a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a></p>
+<h3 id="uwp-mvvm-samples">UWP MVVM Samples</h3>
+<p><a href="https://github.com/Microsoft/Windows-appsample-customers-orders-database">Customers Orders Database sample</a><br>
+<a href="https://github.com/Microsoft/InventorySample">VanArsdel Inventory sample</a><br>
+<a href="https://github.com/Microsoft/Windows-appsample-trafficapp">Traffic App sample</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-binding/data-binding-and-mvvm.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

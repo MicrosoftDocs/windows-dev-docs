@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Submit your manifest to the repository </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Submit your manifest to the repository ">
+    
+    <meta name="description" content="After you create a package manifest that describes your application, you&#39;re ready to submit your manifest to the Windows Package Manager repository.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="submit-your-manifest-to-the-repository">Submit your manifest to the repository</h1>
+
+<p>After you create a <a href="manifest.html">package manifest</a> that describes your application, you're ready to submit your manifest to the Windows Package Manager repository. This is a public-facing repository that contains a collection of manifests that the <strong>winget</strong> tool can access. To submit your manifest, you'll upload it to the open source <a href="https://github.com/microsoft/winget-pkgs">https://github.com/microsoft/winget-pkgs</a> repository on GitHub.</p>
+<p>After you submit a pull request to add a new manifest to the GitHub repository, an automated process will validate your manifest file and check to make sure the package complies with the <a href="windows-package-manager-policies.html">Windows Package Manager polices</a> and is not known to be malicious. If this validation is successful, your package will be added to the public-facing Windows Package Manager repository so it can be discovered by the <strong>winget</strong> client tool. Note the distinction between the manifests in the open source GitHub repository and the public-facing Windows Package Manager repository.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Microsoft reserves the right to refuse a submission for any reason.</p>
+</div>
+<h2 id="manifest-validation">Manifest validation</h2>
+<p>When you submit a manifest to the <a href="https://github.com/microsoft/winget-pkgs">https://github.com/microsoft/winget-pkgs</a> repository on GitHub, your manifest will be automatically validated and evaluated for the safety of the Windows ecosystem. Manifests may also be reviewed manually.</p>
+<p>For more information about the validation process, see the <a href="#validation-process">validation process</a> section below.</p>
+<h2 id="how-to-submit-your-manifest">How to submit your manifest</h2>
+<p>To submit a manifest to the repository, follow these steps.</p>
+<h3 id="step-1-validate-your-manifest">Step 1: Validate your manifest</h3>
+<p>The <strong>winget</strong> tool provides the <a href="../winget/validate.html">validate</a> command to confirm that you have created your manifest correctly. To validate your manifest, use this command.</p>
+<pre><code class="lang-CMD">winget validate \&lt;path-to-the-manifests&gt;
+</code></pre>
+<p>If your validation fails, use the errors to locate the line number and make a correction. After your manifest is validated, you can submit it to the repository.</p>
+<h3 id="step-2-test-your-manifest-with-windows-sandbox">Step 2: Test your manifest with Windows Sandbox</h3>
+<p>The Windows Package Manager repository includes a script that will install the Windows Package Manager in a Sandbox for testing manifest submissions.
+To run the powershell script, navigate to your winget-pkgs repo.
+From PowerShell, enter the following command:</p>
+<pre><code class="lang-powershell">powershell .\Tools\SandboxTest.ps1 manifests\m\Microsoft\VisualStudioCode\1.56.0
+</code></pre>
+<p>You may need to update this script with the correct path to your manifest file: <code>.\Tools\SandboxTest.ps1 &lt;path to manifest or manifest folder&gt;</code></p>
+<p>See the <a href="https://github.com/microsoft/winget-pkgs/blob/master/Tools/SandboxTest.ps1">full sandbox test script in the winget-pkgs repo</a>.</p>
+<h3 id="step-3-clone-the-repository">Step 3: Clone the repository</h3>
+<p>To create a fork of the Windows Package Manager Community repository and clone the repo to your local machine:</p>
+<ol>
+<li><p>Go to <a href="https://github.com/microsoft/winget-pkgs">https://github.com/microsoft/winget-pkgs</a> in your browser and select <strong>Fork</strong>.
+<img src="images/fork.png" alt="screenshot of fork button on GitHub"></p>
+</li>
+<li><p>From Windows Command Prompt or PowerShell, use the following command to clone your fork.</p>
+<pre><code class="lang-powershell">git clone &lt;your-fork-name&gt;
+</code></pre>
+</li>
+<li><p>If you are entering multiple submissions, create   a branch instead of a fork. We currently allow only one manifest file per submission.</p>
+<pre><code class="lang-powershell">git checkout -b &lt;branch-name&gt;
+</code></pre>
+</li>
+</ol>
+<h3 id="step-4-add-your-manifest-to-the-local-repository">Step 4: Add your manifest to the local repository</h3>
+<p>You must add your manifest files to the repository in the following folder structure:</p>
+<p><strong>manifests</strong> / <strong>letter</strong> / <strong>publisher</strong> / <strong>application</strong> / <strong>version</strong></p>
+<ul>
+<li>The <strong>manifests</strong> folder is the root folder for all manifests in the repository.</li>
+<li>The <strong>letter</strong> folder is the first letter of the publisher name in the lower case. For example, <strong>m</strong> of the publisher <strong>Microsoft</strong>.</li>
+<li>The <strong>publisher</strong> folder is the name of the company that publishes the software. For example, <strong>Microsoft</strong>.</li>
+<li>The <strong>application</strong> folder is the name of the application or tool. For example, <strong>VSCode</strong>.</li>
+<li>The <strong>version</strong> folder is the version of the application or tool. For example, <strong>1.0.0</strong>.</li>
+</ul>
+<p>The <code>PackageIdentifier</code> and the <code>PackageVersion</code> values in the manifest must match the publisher, application names and version in the manifest folder path. For more information, see <a href="manifest.html#tips-and-best-practices">Create your package manifest</a>.</p>
+<h3 id="step-5-submit-your-manifest-to-the-remote-repository">Step 5: Submit your manifest to the remote repository</h3>
+<p>You're now ready to push your new manifest to the remote repository.</p>
+<ol>
+<li><p>Use the <code>commit</code> command to add files and commit the change and provide information on the submission.</p>
+<pre><code class="lang-powershell">git commit -m &quot;Submitting ContosoApp version 1.0.0&quot; --all
+</code></pre>
+</li>
+<li><p>Use the <code>push</code> command to push the changes to the remote repository.</p>
+<pre><code class="lang-powershell">git push
+</code></pre>
+</li>
+</ol>
+<h3 id="step-6-create-a-pull-request">Step 6: Create a pull request</h3>
+<p>After you push your changes, return to <a href="https://github.com/microsoft/winget-pkgs">https://github.com/microsoft/winget-pkgs</a> and create a pull request to merge your fork or branch to the main branch.</p>
+<p><img src="images/pull-request.png" alt="screenshot of pull request tab"></p>
+<h2 id="submission-process">Submission process</h2>
+<p>When you create a pull request, this will start an automated process that validates the manifests and verifies your pull request. During this process we will run tests against the installer and installed binaries to validate the submission.</p>
+<p>We add labels to your <strong>pull request</strong> so you can track its progress.  For more information on labels and the process see the <a href="#pull-request-labels">pull request labels</a> section below.</p>
+<p>Once complete, your submission will be manually reviewed by a moderator, and after it is approved, your application will be added to the Windows Package Manager catalog.</p>
+<p>If there is ever an error during the process, you will be notified and our labels and bot will assist you in fixing your submission. For the list of common errors, see the validation process section below.</p>
+<h2 id="validation-process">Validation process</h2>
+<p>When you <a href="#step-6-create-a-pull-request">create a pull request</a> to submit your manifest to the Windows Package Manager repository, this will start an automation process that validates the manifest and processes your pull request. GitHub labels are used to share progress and allow you to communicate with us.</p>
+<h3 id="submission-expectations">Submission expectations</h3>
+<p>All application submissions to the Windows Package Manager repository should adhere to the <a href="windows-package-manager-policies.html">Windows Package Manager repository policies</a>.</p>
+<p>Expectations for submissions:</p>
+<ul>
+<li>The manifest complies with the <a href="manifest.html?tabs=minschema#manifest-contents">schema requirements</a>.</li>
+<li>All URLs in the manifest lead to safe websites.</li>
+<li>The installer and application are virus free. The package may be identified as malware by mistake. If you believe it is a false  positive you can <a href="https://www.microsoft.com/wdsi/filesubmission">submit the installer to the Microsoft Defender team for analysis</a>.</li>
+<li>The application installs and uninstalls correctly for both administrators and non-administrators.</li>
+<li>The installer supports non-interactive modes.</li>
+<li>All manifest entries are accurate and not misleading.</li>
+<li>The installer comes directly from the publisher's website.</li>
+</ul>
+<p>For a complete list of the policies, see <a href="windows-package-manager-policies.html">Windows Package Manager policies</a>.</p>
+<h3 id="pull-request-labels">Pull request labels</h3>
+<p>During validation, a series of <a href="https://github.com/microsoft/winget-pkgs/labels">labels are applied to pull requests</a> to communicate progress. Some labels will direct you to take action, while others will be directed to the Windows Package Manager engineering team.</p>
+<h4 id="status-labels">Status labels</h4>
+<p>The following table describes the <strong>status labels</strong> you might encounter.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Label</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Azure-Pipeline-Passed</strong></td>
+<td>The manifest has completed the test pass. It is waiting for approval. If no issues are encountered during the test pass it will automatically be approved. If a test fails, it may be flagged for manual review.</td>
+</tr>
+<tr>
+<td><strong>Blocking-Issue</strong></td>
+<td>This label indicates that the pull request cannot be approved because there is a blocking issue. You can often tell what the blocking issue is by the included error label.</td>
+</tr>
+<tr>
+<td><strong>Needs-Attention</strong></td>
+<td>This label indicates that the pull request needs to be investigated by the Windows Package Manager development team. This is either due to a test failure that needs manual review, or a comment added to the pull request by the community.</td>
+</tr>
+<tr>
+<td><strong>Needs-Author-Feedback</strong></td>
+<td>Indicates there is a failure with the submission. We will reassign the pull request back to you. If you do not address the issue within 10 days, the bot will close the pull request. <strong>Needs-Author-Feedback</strong> labels are typically added when there was a failure with the pull request that should be updated, or if the person reviewing the pull request has a question.</td>
+</tr>
+<tr>
+<td><strong>Validation-Completed</strong></td>
+<td>Indicates that the test pass has been completed successfully and your pull request will be merged.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="error-labels">Error labels</h4>
+<p>The following table describes the <strong>error labels</strong> you might encounter. Not all of the error cases will be assigned to you immediately. Some may trigger manual validation.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Label</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Binary-Validation-Error</strong></td>
+<td>The application included in this pull request failed to pass the <strong>Installers Scan</strong> test. This test is designed to ensure that the application installs on all environments without warnings. For more details on this error, see the <a href="#binary-validation-error">Binary validation error</a> section below.</td>
+</tr>
+<tr>
+<td><strong>Error-Analysis-Timeout</strong></td>
+<td>The <strong>Binary-Validation-Test</strong> test timed out. The pull request will get assigned to a Windows Package Manager engineer to investigate.</td>
+</tr>
+<tr>
+<td><strong>Error-Hash-Mismatch</strong></td>
+<td>The submitted manifest could not be processed because the <strong>InstallerSha256</strong> hash provided for the <strong>InstallerURL</strong> did not match. Update the <strong>InstallerSha256</strong> in the pull request and try again.</td>
+</tr>
+<tr>
+<td><strong>Error-Installer-Availability</strong></td>
+<td>The validation service was unable to download the installer. This may be related to Azure IP ranges being blocked, or the installer URL may be incorrect. Check that the <strong>InstallerURL</strong> is correct and try again. If you feel this has failed in error, add a comment and the pull request will get assigned to a Windows Package Manager engineer to investigate.</td>
+</tr>
+<tr>
+<td><strong>Manifest-Installer-Validation-Error</strong></td>
+<td>There are either inconsistencies or values not present in the manifest during the evaluation of an MSIX package.</td>
+</tr>
+<tr>
+<td><strong>Manifest-Path-Error</strong></td>
+<td>The manifest files must be put into a specific folder structure. This label indicates a problem with the path of your submission. For example, the folder structure does not have the <a href="manifest.html?tabs=minschema%2Ccompschema">required format</a>. Update your manifest and path resubmit your pull request.</td>
+</tr>
+<tr>
+<td><strong>Manifest-Validation-Error</strong></td>
+<td>The submitted manifest contains a syntax error. Address the syntax issue with the manifest and re-submit. For details on the manifest format and schema, see <a href="manifest.html?tabs=minschema%2Ccompschema">required format</a>.</td>
+</tr>
+<tr>
+<td><strong>PullRequest-Error</strong></td>
+<td>The pull request is invalid because not all files submitted are under manifest folder or there is more than one package or version in the pull request. Update your pull request to address the issue and try again.</td>
+</tr>
+<tr>
+<td><strong>URL-Validation-Error</strong></td>
+<td>The <strong>URLs Validation Test</strong> could not locate the URL and responded with a <a href="/troubleshoot/iis/http-status-code">HTTP error status code</a> (403 or 404), or the URL reputation test failed. You can identify which URL is in question by looking at the <a href="./winget-validation-troubleshooter.md">pull request check details</a>. To address this issue, update the URLs in question to resolve the HTTP error status code. If the issue is not due to an HTTP error status code, you can <a href="https://www.microsoft.com/wdsi/filesubmission/">submit the URL for review</a> to avoid the reputation failure.</td>
+</tr>
+<tr>
+<td><strong>Validation-Defender-Error</strong></td>
+<td>During dynamic testing, Microsoft Defender reported a problem. To reproduce this problem, install your application, then run a Microsoft Defender full scan. If you can reproduce the problem, fix the binary or <a href="/microsoft-365/security/defender-endpoint/defender-endpoint-false-positives-negatives?#part-4-submit-a-file-for-analysis">submit it for analysis</a> for false positive assistance. If you are unable to reproduce the problem, add a comment to get the Windows Package Manager engineers to investigate.</td>
+</tr>
+<tr>
+<td><strong>Validation-Domain</strong></td>
+<td>The test has determined the domain if the <strong>InstallerURL</strong> does not match the domain expected. The Windows Package Manager policies requires that the <a href="manifest.html?tabs=minschema%2Ccompschema">InstallerUrl</a> comes directly from the ISV's release location. If you believe this is a false detection, add a comment to the pull request to get the Windows Package Manager engineers to investigate.</td>
+</tr>
+<tr>
+<td><strong>Validation-Error</strong></td>
+<td>Validation of the Windows Package Manager failed during manual approval. Look at the accompanying comment for next steps.</td>
+</tr>
+<tr>
+<td><strong>Validation-Executable-Error</strong></td>
+<td>During installation testing, the test was unable to locate the primary application. Make sure the application installs correctly on all platforms. If your application does not install an application, but should still be included in the repository, add a comment to the pull request to get the Windows Package Manager engineers to investigate.</td>
+</tr>
+<tr>
+<td><strong>Validation-Hash-Verification-Failed</strong></td>
+<td>During installation testing, the application fails to install because the <strong>InstallerSha256</strong> no longer matches the <strong>InstallerURL</strong> hash. This can occur if the application is behind a vanity URL and the installer was updated without updating the <strong>InstallerSha256</strong>. To address this issue, update the <strong>InstallerSha256</strong> associated with the <strong>InstallerURL</strong> and submit again.</td>
+</tr>
+<tr>
+<td><strong>Validation-HTTP-Error</strong></td>
+<td>The URL used for the installer does not use the HTTPS protocol. Update the <strong>InstallerURL</strong> to use HTTPS and resubmit the <strong>Pull Request.</strong></td>
+</tr>
+<tr>
+<td><strong>Validation-Indirect-URL</strong></td>
+<td>The URL is not coming directly from the ISVs server. Testing has determined a redirector has been used. This is not allowed because the Windows Package Manager policies require that the <a href="manifest.html?tabs=minschema%2Ccompschema">InstallerUrl</a> comes directly from the ISV's release location. Remove the redirection and resubmit.</td>
+</tr>
+<tr>
+<td><strong>Validation-Installation-Error</strong></td>
+<td>During manual validation of this package, there was a general error. Look at the accompanying comment for next steps.</td>
+</tr>
+<tr>
+<td><strong>Validation-Merge-Conflict</strong></td>
+<td>This package could not be validated due to a merge conflict. Please address the merge conflict and resubmit your pull request.</td>
+</tr>
+<tr>
+<td><strong>Validation-MSIX-Dependency</strong></td>
+<td>The MSIX package has a dependency on package that could not be resolved. Update the package to include the missing components or add the dependency to the manifest file and resubmit the pull request.</td>
+</tr>
+<tr>
+<td><strong>Validation-Unapproved-URL</strong></td>
+<td>The test has determined the domain if the <strong>InstallerURL</strong> does not match the domain expected. The Windows Package Manager policies requires that the <a href="manifest.html?tabs=minschema%2Ccompschema">InstallerUrl</a> comes directly from the ISV's release location.</td>
+</tr>
+<tr>
+<td><strong>Validation-Unattended-Failed</strong></td>
+<td>During installation, the test timed out. This most likely is due to the application not installing silently. It could also be due to some other error being encountered and stopping the test. Verify that you can install your manifest without user input. If you need assistance, add a comment to the pull request and the Windows Package Manager engineers will investigate.</td>
+</tr>
+<tr>
+<td><strong>Validation-Uninstall-Error</strong></td>
+<td>During uninstall testing, the application did not clean up completely following uninstall. Look at the accompanying comment for more details.</td>
+</tr>
+<tr>
+<td><strong>Validation-VCRuntime-Dependency</strong></td>
+<td>The package has a dependency on the C++ runtime that could not be resolved. Update the package to include the missing components or add the dependency to the manifest file and resubmit the pull request.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="content-policy-labels">Content policy labels</h4>
+<p>The following table lists <strong>content policy labels</strong>. If one of these labels is added, something in the manifest metadata triggered additional manual content review to ensure that the metadata is following the <a href="windows-package-manager-policies.html">Windows Package Manager policies</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Label</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Policy-Test-2.1</strong></td>
+<td>See <a href="windows-package-manager-policies.html#21-general-content-requirements">General Content Requirements</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.2</strong></td>
+<td>See <a href="windows-package-manager-policies.html#22-content-including-names-logos-original-and-third-party">Content Including Names, Logos, Original and Third Party</a></td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.3</strong></td>
+<td>See <a href="windows-package-manager-policies.html#23-risk-of-harm">Risk of Harm</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.4</strong></td>
+<td>See <a href="windows-package-manager-policies.html#24-defamatory-libelous-slanderous-and-threatening">Defamatory, Libelous, Slanderous and Threatening</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.5</strong></td>
+<td>See <a href="windows-package-manager-policies.html#25-offensive-content">Offensive Content</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.6</strong></td>
+<td>See <a href="windows-package-manager-policies.html#26-alcohol-tobacco-weapons-and-drugs">Alcohol, Tobacco, Weapons and Drugs</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.7</strong></td>
+<td>See <a href="windows-package-manager-policies.html#27-adult-content">Adult Content</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.8</strong></td>
+<td>See <a href="windows-package-manager-policies.html#28-illegal-activity">Illegal Activity</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.9</strong></td>
+<td>See <a href="windows-package-manager-policies.html#29-excessive-profanity-and-inappropriate-content">Excessive Profanity and Inappropriate Content</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.10</strong></td>
+<td>See <a href="windows-package-manager-policies.html#210-countryregion-specific-requirements">Country/Region Specific Requirements</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.11</strong></td>
+<td>See <a href="windows-package-manager-policies.html#211-age-ratings">Age Ratings</a>.</td>
+</tr>
+<tr>
+<td><strong>Policy-Test-2.12</strong></td>
+<td>See <a href="windows-package-manager-policies.html#212-user-generated-content">User Generated Content</a>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="internal-labels">Internal labels</h4>
+<p>The following table lists internal error labels. When internal errors are encountered, your pull request will be assigned to the Windows Package Manager engineers to investigate.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Label</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal-Error-Domain</strong></td>
+<td>An error occurred during the domain validation of the URL.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-Dynamic-Scan</strong></td>
+<td>An error occurred during the validation of the installed binaries.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-Keyword-Policy</strong></td>
+<td>An error occurred during the validation of the manifest.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-Manifest</strong></td>
+<td>An error occurred during the validation of the manifest.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-NoArchitectures</strong></td>
+<td>An error occurred because the test could not determine the architecture of the application.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-NoSupportedArchitectures</strong></td>
+<td>An error occurred because the current architecture is not supported.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-PR</strong></td>
+<td>An error occurred during the processing of the pull request.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-Static-Scan</strong></td>
+<td>An error occurred during static analysis of the installers.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error-URL</strong></td>
+<td>An error occurred during reputation validation of the installers.</td>
+</tr>
+<tr>
+<td><strong>Internal-Error</strong></td>
+<td>A generic failure or unknown error was encountered during the test pass.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="binary-validation-error">Binary validation error</h3>
+<p>If validation of your Pull Request fails the <strong>Installers Scan</strong> test and receives a <strong>Binary-Validation-Error</strong> label, it means that your application failed to install on all environments.</p>
+<h4 id="installers-scan-test">Installers Scan test</h4>
+<p>To provide an excellent application installation user experience, the Windows Package Manager must ensure that all applications install on PCs without errors, regardless of environment. One key test is to ensure that all applications install without warnings on various popular antivirus configurations. Windows provides the built-in Microsoft Defender antivirus program, but many enterprise customers and users use other antivirus software.</p>
+<p>Each submission to the Windows Package Manager Repository is run through several antivirus programs. These programs all have different virus detection algorithms for identifying <a href="/windows/security/threat-protection/intelligence/criteria">potentially unwanted applications (PUA)</a> and malware.</p>
+<h4 id="address-binary-validation-errors">Address binary validation errors</h4>
+<p>If an application fails validation, Microsoft first attempts to verify with the antivirus vendor whether the flagged software is a false positive. In many cases, after notification and validation, the antivirus vendor updates their algorithm, and the application passes.</p>
+<p>In some cases, the antivirus vendor can't determine whether the detected code anomaly is a false positive. In this case, the application can't be added to the Windows Package Manager repository. The pull request is rejected with a <strong>Binary-Validation-Error</strong> label.</p>
+<p>If you get a <strong>Binary-Validation-Error</strong> label on your pull request, update your software to remove the code detected as PUA.</p>
+<p>Sometimes, genuine tools used for debugging and low-level activities appear as PUA to antivirus software. This is because the necessary debugging code has a similar signature to unwanted software. Even though this coding practice is legitimate, the Windows Package Manager repository unfortunately can't allow these applications.</p>
+<h2 id="submission-troubleshooting">Submission Troubleshooting</h2>
+<p>If your Windows Package Manager submission fails, you can use the labels described above to investigate the reason for the failure.</p>
+<p>To investigate pull request failures, take the following steps:</p>
+<ol>
+<li><p>A pull request failure appears at the bottom of the web page with the string <strong>Some checks were not successful</strong>. Select the <strong>Details</strong> link next to a failed validation to go to the Azure Pipelines page.</p>
+<p><span class="mx-imgBorder">
+<img src="images/some-checks-were-not-successful.png" alt="Screenshot of a pull request failure.">
+</span>
+</p>
+</li>
+<li><p>On the Azure Pipelines page, select the <strong>0 errors / 0 warnings</strong> link.</p>
+<p><span class="mx-imgBorder">
+<img src="images/details.png" alt="Screenshot of the Azure Pipelines page.">
+</span>
+</p>
+</li>
+<li><p>On the next page, select the failed job.</p>
+<p><span class="mx-imgBorder">
+<img src="images/fix-manifest-content-validation.png" alt="Screenshot of the error details.">
+</span>
+</p>
+</li>
+<li><p>The next page shows the output for the failed job. The output should help you identify the change you need to make to fix the manifest.</p>
+<p>In the following example, the failure was during the <strong>Installation Validation</strong> task.</p>
+<p><span class="mx-imgBorder">
+<img src="images/fix-installation-validation.png" alt="Screenshot of the failed job output.">
+</span>
+</p>
+</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/package/repository.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

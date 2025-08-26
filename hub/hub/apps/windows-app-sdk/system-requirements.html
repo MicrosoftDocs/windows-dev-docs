@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>System requirements for Windows app development </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="System requirements for Windows app development ">
+    
+    <meta name="description" content="The minimum system requirements for the tools required to develop Windows apps.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="system-requirements-for-windows-app-development">System requirements for Windows app development</h1>
+
+<p>To develop apps for Windows 10 and 11, you'll need <em>Visual Studio</em>, the <em>Windows SDK</em>, and the <em>Windows App SDK</em>. Before installing these tools, make sure your development computer meets the minimum system requirements.</p>
+<p><a href="set-up-your-development-environment.html">Install the tools for the Windows App SDK</a> to get started.</p>
+<h2 id="visual-studio">Visual Studio</h2>
+<p>Visual Studio is a comprehensive <em>Integrated Development Environment (IDE)</em> that's used to <em>edit</em>, <em>debug</em>, <em>build</em>, and <em>publish</em> apps.</p>
+<p>For the minimum system requirements, see:</p>
+<ul>
+<li><a href="/visualstudio/releases/2022/system-requirements#visual-studio-2022-system-requirements">Visual Studio 2022 system requirements</a></li>
+</ul>
+<h2 id="windows-sdk">Windows SDK</h2>
+<p>The Windows SDK provides access to all of the APIs and development features exposed by the Windows OS. The Windows SDK is required for building Windows apps as well as other types of components (such as services and drivers). The latest Windows SDK is installed with <em>Visual Studio 2022</em> by default.</p>
+<p>For the minimum system requirements, see <a href="https://developer.microsoft.com/windows/downloads/windows-sdk/">Windows SDK</a>.</p>
+<h2 id="windows-app-sdk">Windows App SDK</h2>
+<p>The <a href="index.html">Windows App SDK</a> is a set of developer tools that represent the next evolution in the Windows app development platform. It provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 (and it's backward-compatible for Windows 10, version 1809).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Windows App SDK was previously known by the code name <em>Project Reunion</em>. Some SDK assets (such as the VSIX extension and certain NuGet packages) still use this name, but these assets will be renamed in a future release. Some documentation still uses <em>Project Reunion</em> when referring to an existing asset or a specified earlier release.</p>
+</div>
+<p>The Windows App SDK has the following minimum system requirements:</p>
+<ul>
+<li>Windows 10, version 1809 (build 17763) or later.</li>
+<li>Visual Studio 2022, version 17.0 or later, with the <a href="/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components">required workloads and components</a>.</li>
+<li>Windows SDK, version 2004 (build 19041) or later (included with Visual Studio 2022 by default).</li>
+<li>If you plan to build .NET apps, you'll also need .NET 6 or later (see <a href="https://dotnet.microsoft.com/en-us/download">Download .NET</a>).</li>
+</ul>
+<h2 id="visual-studio-support-for-winui-3-tools">Visual Studio support for WinUI 3 tools</h2>
+<p>You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2022 <em>17.0 Preview 2 and later</em> to take advantage of the latest WinUI 3 tooling features such as <em>hot reload</em>, <em>live visual tree</em>, and <em>live property explorer</em>.</p>
+<h2 id="see-also">See Also</h2>
+<ul>
+<li><a href="support.html">Windows App SDK and supported Windows releases</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-app-sdk/system-requirements.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

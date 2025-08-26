@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tooltips </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tooltips ">
+    
+    <meta name="description" content="Use a tooltip to reveal more info about a control before asking the user to perform an action.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tooltips">Tooltips</h1>
+
+<p>A tooltip is a popup that contains additional information about another control or object. Tooltips display automatically when the user moves focus to, presses and holds, or hovers the pointer over the associated control. The tooltip disappears when the user moves focus from, stops pressing on, or stops hovering the pointer over the associated control (unless the pointer is moving towards the tooltip).</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Starting with Windows 11 version 21H2, a tooltip can also be dismissed by pressing the CTRL key.</p>
+</div>
+<p><img src="images/controls/tool-tip.png" alt="A tooltip"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use a tooltip to reveal more info about a control before asking the user to perform an action. Tooltips should be used sparingly, and only when they are adding distinct value for the user who is trying to complete a task. One rule of thumb is that if the information is available elsewhere in the same experience, you do not need a tooltip. A valuable tooltip will clarify an unclear action.</p>
+<p>When should you use a tooltip? To decide, consider these questions:</p>
+<ul>
+<li><p><strong>Should info become visible based on pointer hover?</strong>
+If not, use another control. Display tips only as the result of user interaction, never display them on their own.</p>
+</li>
+<li><p><strong>Does a control have a text label?</strong>
+If not, use a tooltip to provide the label. It is a good UX design practice to label most controls inline and for these you don't need tooltips. Toolbar controls and command buttons showing only icons need tooltips.</p>
+</li>
+<li><p><strong>Does an object benefit from a description or further info?</strong>
+If so, use a tooltip. But the text must be supplemental — that is, not essential to the primary tasks. If it is essential, put it directly in the UI so that users don't have to discover or hunt for it.</p>
+</li>
+<li><p><strong>Is the supplemental info an error, warning, or status?</strong>
+If so, use another UI element, such as a flyout.</p>
+</li>
+<li><p><strong>Do users need to interact with the tip?</strong>
+If so, use another control. Users can't interact with tips because moving the mouse makes them disappear.</p>
+</li>
+<li><p><strong>Do users need to print the supplemental info?</strong>
+If so, use another control.</p>
+</li>
+<li><p><strong>Will users find the tips annoying or distracting?</strong>
+If so, consider using another solution — including doing nothing at all. If you do use tips where they might be distracting, allow users to turn them off.</p>
+</li>
+</ul>
+<h2 id="recommendations">Recommendations</h2>
+<ul>
+<li>Use tooltips sparingly (or not at all). Tooltips are an interruption. A tooltip can be as distracting as a pop-up, so don't use them unless they add significant value.</li>
+<li>Keep the tooltip text concise. Tooltips are perfect for short sentences and sentence fragments. Large blocks of text can be overwhelming and the tooltip may time out before the user has finished reading.</li>
+<li>Create helpful, supplemental tooltip text. Tooltip text must be informative. Don't make it obvious or just repeat what is already on the screen. Because tooltip text isn't always visible, it should be supplemental info that users don't have to read. Communicate important info using self-explanatory control labels or in-place supplemental text.</li>
+<li>Use images when appropriate. Sometimes it's better to use an image in a tooltip. For example, when the user hovers over a hyperlink, you can use a tooltip to show a preview of the linked page.</li>
+<li><a href="../input/keyboard-accelerators.html#tooltips">Keyboard accelerators</a> are displayed in tooltips by default. If you add your own tooltip, make sure that it includes information about the keyboard accelerators which are available.</li>
+<li>Don't use a tooltip to display text already visible in the UI. For example, don't put a tooltip on a button that shows the same text of the button.</li>
+<li>Don't put interactive controls inside the tooltip.</li>
+<li>Don't put images that look like they are interactive inside the tooltip.</li>
+</ul>
+<h2 id="create-a-tooltip">Create a tooltip</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip">ToolTip class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice">ToolTipService class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/ToolTip">Open the WinUI 3 Gallery app and see the ToolTip in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>A <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip">ToolTip</a> must be assigned to another UI element that is its owner. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice">ToolTipService</a> class provides static methods to display a ToolTip.</p>
+<p>In XAML, use the <strong>ToolTipService.Tooltip</strong> attached property to assign the ToolTip to an owner.</p>
+<pre><code class="lang-xaml">&lt;Button Content=&quot;New&quot; ToolTipService.ToolTip=&quot;Create a new document&quot;/&gt;
+</code></pre>
+<p>In code, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltipservice.settooltip">ToolTipService.SetToolTip</a> method to assign the ToolTip to an owner.</p>
+<pre><code class="lang-xaml">&lt;Button x:Name=&quot;submitButton&quot; Content=&quot;New&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">ToolTip toolTip = new ToolTip();
+toolTip.Content = &quot;Create a new document&quot;;
+ToolTipService.SetToolTip(submitButton, toolTip);
+</code></pre>
+<h3 id="content">Content</h3>
+<p>You can use any object as the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a> of a ToolTip. Here's an example of using an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image">Image</a> in a ToolTip.</p>
+<pre><code class="lang-xaml">&lt;TextBlock Text=&quot;store logo&quot;&gt;
+    &lt;ToolTipService.ToolTip&gt;
+        &lt;Image Source=&quot;Assets/StoreLogo.png&quot;/&gt;
+    &lt;/ToolTipService.ToolTip&gt;
+&lt;/TextBlock&gt;
+</code></pre>
+<h3 id="placement">Placement</h3>
+<p>By default, a ToolTip is displayed centered above the pointer. The placement is not constrained by the app window, so the ToolTip might be displayed partially or completely outside of the app window bounds.</p>
+<p>For broad adjustments, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placement">Placement</a> property or <strong>ToolTipService.Placement</strong> attached property to specify whether the ToolTip should draw above, below, left, or right of the pointer. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.verticaloffset">VerticalOffset</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.horizontaloffset">HorizontalOffset</a> properties to change the distance between the pointer and the ToolTip. Only one of the two offset values will influence the final position - VerticalOffset when Placement is Top or Bottom, HorizontalOffset when Placement is Left or Right.</p>
+<pre><code class="lang-xaml">&lt;!-- An Image with an offset ToolTip. --&gt;
+&lt;Image Source=&quot;Assets/StoreLogo.png&quot;&gt;
+    &lt;ToolTipService.ToolTip&gt;
+        &lt;ToolTip Content=&quot;Offset ToolTip.&quot;
+                 Placement=&quot;Right&quot;
+                 HorizontalOffset=&quot;20&quot;/&gt;
+    &lt;/ToolTipService.ToolTip&gt;
+&lt;/Image&gt;
+</code></pre>
+<p>If a ToolTip obscures the content it is referring to, you can adjust its placement precisely using the <strong>PlacementRect</strong> property. PlacementRect anchors the ToolTip's position and also serves as an area that ToolTip will not occlude, provided there's sufficient screen space to draw ToolTip outside this area. You can specify the origin of the rectangle relative to the ToolTip's owner, and the height and width of the exclusion area. The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tooltip.placement">Placement</a> property will define if ToolTip should draw above, below, left, or right of the PlacementRect.</p>
+<pre><code class="lang-xaml">&lt;!-- An Image with a non-occluding ToolTip. --&gt;
+&lt;Image Source=&quot;Assets/StoreLogo.png&quot; Height=&quot;64&quot; Width=&quot;96&quot;&gt;
+    &lt;ToolTipService.ToolTip&gt;
+        &lt;ToolTip Content=&quot;Non-occluding ToolTip.&quot;
+                 PlacementRect=&quot;0,0,96,64&quot;/&gt;
+    &lt;/ToolTipService.ToolTip&gt;
+&lt;/Image&gt;
+</code></pre>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/Windows.UI.Xaml.Controls.ToolTip">ToolTip class</a>, <a href="/uwp/api/windows.ui.xaml.controls.tooltipservice">ToolTipService class</a></li>
+<li><a href="winui2gallery:/item/ToolTip">Open the WinUI 2 Gallery app and see the ToolTip in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip">ToolTip class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/tooltips.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

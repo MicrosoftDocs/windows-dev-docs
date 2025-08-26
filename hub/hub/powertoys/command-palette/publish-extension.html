@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Command Palette Extension Publishing </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Command Palette Extension Publishing ">
+    
+    <meta name="description" content="The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Find info about how to publish an extension.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="publishing-your-extension">Publishing your extension</h1>
+
+<p>The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. This document provides information about how to publish an extension.</p>
+<p>There is a &quot;Sample Project&quot; template included with the Command Palette. This can be used to quickly generate a project that creates a new extension. This will include the <code>.sln</code>, <code>.csproj</code>, and <code>.appxmanifest</code> files needed to create a new extension, as well as the plumbing to get it ready to be published. You will then open the project to the <code>{ExtensionName}CommandsProvider</code> class (where <code>{ExtensionName}</code> is replaced with the name of your extension project) and implement your commands.</p>
+<h2 id="pre-requisites">Pre-requisites</h2>
+<p>The following tools are required to build and publish your extension:</p>
+<ul>
+<li><a href="https://visualstudio.microsoft.com/vs/">Visual Studio 2022</a> (Community, Professional, or Enterprise edition)</li>
+</ul>
+<h2 id="winget">WinGet</h2>
+<p>Publishing packages to WinGet is the recommended way to share your extensions with users. Extension packages which are listed on WinGet can be discovered and installed directly from the Command Palette.</p>
+<p>For the most part, following the steps on <a href="../../package-manager/package/manifest.html">Submit packages to Windows Package Manager</a> will get your extension onto WinGet itself.</p>
+<p>Before submitting your manifest to WinGet, you'll need to check two things:</p>
+<h3 id="add-windows-commandpalette-extension-tag">Add <code>windows-commandpalette-extension</code> tag</h3>
+<p>Command Palette uses the special <code>windows-commandpalette-extension</code> tag to discover extensions. Make sure that your manifest includes this tag, so that Command Palette can discover your extension. Add the following to each <code>.locale.*.yaml</code> file in your manifest:</p>
+<pre><code class="lang-yaml">Tags:
+- windows-commandpalette-extension
+</code></pre>
+<h3 id="ensure-windowsappsdk-is-listed-as-a-dependency">Ensure WindowsAppSdk is listed as a dependency</h3>
+<p>If you're using Windows App SDK, then you'll need to make sure that it is listed as a dependency of your package. Add the following to your <code>.installer.yaml</code> manifest:</p>
+<pre><code class="lang-yaml">Dependencies:
+  PackageDependencies:
+  - PackageIdentifier: Microsoft.WindowsAppRuntime.1.6
+</code></pre>
+<p>If you're not using the template project, then this may not apply to you.</p>
+<!-- 
+
+Some day soon:
+
+As a part of the project template, there's a WinGet GitHub Actions workflow that allows you to publish your extension to the WinGet repository with the necessary tags to make it discoverable by the Command Palette. So, you don't need to understand the details of packaging. You add the extension to your GitHub repository and let the your GitHub Actions pipeline handle the publishing. 
+
+-->
+<h2 id="microsoft-store">Microsoft Store</h2>
+<p>Command Palette extensions can be published to the Microsoft Store. The process is similar to publishing other apps or extensions. You create a new submission in the Partner Center and upload your <code>.msix</code> package. The Command Palette automatically discovers your extension when it's installed from the Microsoft Store.</p>
+<p>Command Palette cannot, however, search for &amp; install extensions that are only listed in the store. You can find those by running the following command:</p>
+<pre><code class="lang-cmd">ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette
+</code></pre>
+<p>You can run this from the &quot;Run commands&quot; command in Command Palette, or from the command-line, or from the Run dialog.</p>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="extensibility-overview.html">Extensibility overview</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/publish-extension.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

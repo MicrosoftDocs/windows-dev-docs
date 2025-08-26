@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Windows app silhouettes </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Windows app silhouettes ">
+    
+    <meta name="description" content="A high-level look at app patterns commonly used across our in-box applications.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="windows-app-silhouettes">Windows app silhouettes</h1>
+
+<p>Silhouettes indicate a common pattern of relationships between elements such as app layering, menus, navigation, commanding and content areas. This article focuses on the common silhouettes as used in several Windows in-box apps.</p>
+<p>Also refer to <a href="content-basics.html">Content Basics</a> for common arrangements of content and controls.</p>
+<h2 id="top-navigation-silhouette">Top navigation silhouette</h2>
+<p><span class="mx-imgBorder">
+<img src="images/top-nav-silhouette.png" alt="An example of a top nav app">
+</span>
+</p>
+<p>A <a href="../controls/navigationview.html">NavigationView</a> can be used at the top of the app’s <a href="../signature-experiences/layering.html">content layer</a>, building a connection with the content below. Note the location of user <a href="../controls/person-picture.html">identity/person/picture control</a> when using top navigation.</p>
+<p>Placing navigation on the same row as commands can be useful when trying to maximize the amount of vertical space for the content below.</p>
+<p>Content margins can vary. This example uses 56epx margins, complementing large pieces of media. Use smaller margins for smaller/tighter content needs.</p>
+<p>In Windows 11, Photos is a good example of an app that uses a top navigation silhouette.</p>
+<h2 id="menu-bar-silhouette">Menu bar silhouette</h2>
+<p><span class="mx-imgBorder">
+<img src="images/menu-bar-silhouette.png" alt="An example of a menu bar app">
+</span>
+</p>
+<p>A <a href="../controls/menus.html">MenuBar</a> can be used as part of the of the <a href="../signature-experiences/layering.html">base layer</a> along with a <a href="../controls/command-bar.html">CommandBar</a>. This brings more focus to the content area’s primary task, in this case composition and editing.</p>
+<p>This example depicts a text editor using 12epx margins to compliment the utility of the app.</p>
+<p>In Windows 11, Notepad is a good example of an app that uses a menu bar silhouette.</p>
+<h2 id="left-navigation-silhouette">Left navigation silhouette</h2>
+<p><span class="mx-imgBorder">
+<img src="images/left-nav-silhouette.png" alt="An example of a left nav app">
+</span>
+</p>
+<p><a href="../controls/navigationview.html">NavigationView</a> controls automatically rests on the app's <a href="../signature-experiences/layering.html">base layer</a>. This brings more focus to the content area’s primary task. Note the location of user <a href="../controls/person-picture.html">identity/person/picture control</a> when using left navigation.</p>
+<p>Content margins can vary. This example uses 56epx margins to compliment the cohesion of the content within the expanders. Use smaller margins when content cohesion is less of a concern, because other design elements reinforce cohesion, content is not nested in expanders, or content should not logically be grouped together.</p>
+<p>In Windows 11, Settings is a good example of an app that uses a left navigation silhouette.</p>
+<h2 id="tab-view-silhouette">Tab View Silhouette</h2>
+<p><span class="mx-imgBorder">
+<img src="images/tab-view-silhouette.png" alt="An example of a tab view app">
+</span>
+</p>
+<p>A <a href="../controls/tab-view.html">TabView</a> can integrate with the app’s <a href="../signature-experiences/layering.html">base layer</a>, and <a href="../../develop/title-bar.html">title bar</a>control. This brings more focus to the content area’s primary task, in this case code composition and editing.</p>
+<p>This example depicts a text editor using 12epx margins to compliment the utility of the app.</p>
+<p>In Windows 11, Terminal is a good example of an app that uses a tab view silhouette.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/basics/app-silhouette.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

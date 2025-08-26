@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How emulation works on Arm </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How emulation works on Arm ">
+    
+    <meta name="description" content="Learn how emulation for x86 and x64 apps makes the rich ecosystem of existing Win32 apps available on Arm devices.">
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-emulation-works-on-arm">How emulation works on Arm</h1>
+
+<p>Emulation makes the rich ecosystem of Windows apps available on Arm, allowing users to run the apps they care about without any modifications to the app.  Emulation is transparent to the user and is part of Windows; it does not require any additional components to be installed.</p>
+<p>Windows 11 on Arm supports emulation of both x86 and x64 apps and performance has been enhanced with the introduction of the new emulator Prism in Windows 11 24H2.  Windows 10 on Arm also supports emulation, but only for x86 apps.</p>
+<h2 id="prism">Prism</h2>
+<p>Prism is the new emulator included with Windows 11 24H2.  Relative to previous emulation technology included in Windows, it includes significant optimizations that improve the performance and lower CPU usage of apps under emulation.</p>
+<p>Prism is optimized and tuned specifically for Qualcomm Snapdragon processors.  Some performance features within Prism require hardware features only available in the Snapdragon X series, but Prism is available for all supported Windows 11 on Arm devices with Windows 11 24H2.</p>
+<h2 id="how-emulation-works">How emulation works</h2>
+<p>Emulation works as a software simulator, just-in-time compiling blocks of x86 instructions into Arm64 instructions with optimizations to improve performance of the emitted Arm64 code.</p>
+<p>A service caches these translated blocks of code to reduce the overhead of instruction translation and allow for optimization when the code runs again. The caches are produced for each module so that other apps can make use of them on first launch.</p>
+<p>For x86 apps, the <a href="/windows/desktop/WinProg64/running-32-bit-applications">WOW64</a> layer of Windows allows x86 code to run on the Arm64 version of Windows, just as it allows x86 code to run on the x64 version of Windows.  This means that x86 apps on Arm are protected with filesystem and registry redirection.</p>
+<p>For x64 apps, there is no WOW64 layer and no separate registry or folder of Windows system binaries.  Instead, system binaries are compiled as <a href="arm64x-pe.html">Arm64X PE files</a> that can be loaded into both x64 and Arm64 processes from the same location without the need for filesystem redirection.  This means that x64 applications can access the entire OS, both filesystem and registry, without the need for special code.</p>
+<p>Note that emulation only supports user mode code and does not support drivers; any kernel mode components must be compiled as Arm64.</p>
+<h2 id="detecting-emulation">Detecting emulation</h2>
+<p>An x86 or x64 app will not know that it is running on a Windows on Arm PC, unless it calls specific APIs that are designed to convey knowledge of the Arm64 host, such as <a href="/windows/desktop/api/wow64apiset/nf-wow64apiset-iswow64process2">IsWoW64Process2</a>.  Apps under emulation that query for processor details including metadata or feature capabilities will receive details corresponding to the emulated virtual processor.  For compatibility reasons, the API <a href="/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getnativesysteminfo">GetNativeSystemInfo</a> will also return emulated processor details when run from an app under emulation.</p>
+<p>For apps looking to detect the emulation capabilities of the operating system, use the API <a href="/windows/win32/api/processthreadsapi/nf-processthreadsapi-getmachinetypeattributes">GetMachineTypeAttributes</a>.</p>
+<h2 id="updating-to-support-an-arm-version-of-your-app">Updating to support an Arm version of your app</h2>
+<p>While having your app run under emulation on Arm devices is a great place to start, your app will benefit from native performance gains and the unique qualities of Arm-powered devices if you rebuild to add Arm support to your app.</p>
+<p>See <a href="add-arm-support.html">Add Arm support to your Windows app</a> for guidance on how to create an Arm version of your apps and what sort of advantages, challenges, and tooling may be involved, as well as available support for creating an Arm version of your app (and any related dependencies).</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/landing/arm-docs/apps-on-arm-x86-emulation.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

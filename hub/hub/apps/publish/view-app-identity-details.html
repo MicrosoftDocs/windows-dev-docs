@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>View app identity details </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="View app identity details ">
+    
+    <meta name="description" content="View details related to the unique identity assigned to your app by the Microsoft Store, and get a link to your app&#39;s Store listing.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="view-product-identity-details">View product identity details</h1>
+
+<p>You can view details related to the unique identity assigned to your app by the Microsoft Store on its <strong>Product identity</strong> pages. You can also get a link to your app's Store listing on this page.</p>
+<p>To find this info, navigate to one of your apps, then expand <strong>Product management</strong> in the left navigation menu. Select <strong>Product identity</strong> to view these details.</p>
+<p><span class="mx-imgBorder">
+<a href="publish-your-app/msix/images/msix-product-identity.png#lightbox" data-linktype="relative-path">
+<img src="publish-your-app/msix/images/msix-product-identity.png" alt="A screenshot showing the product identity section for MSIX/PWA app.">
+</a>
+</span>
+</p>
+<h2 id="values-to-include-in-your-app-package-manifest">Values to include in your app package manifest</h2>
+<p>The following values must be included in your package manifest. If you <a href="/windows/msix/package/packaging-uwp-apps">use Microsoft Visual Studio to build your packages</a>, and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these items:</p>
+<ul>
+<li><strong>Package/Identity/Name</strong></li>
+<li><strong>Package/Identity/Publisher</strong></li>
+<li><strong>Package/Properties/PublisherDisplayName</strong></li>
+</ul>
+<p>For more info, see <a href="/uwp/schemas/appxpackage/uapmanifestschema/element-identity"><strong>Identity</strong></a> in the <a href="/uwp/schemas/appxpackage/uapmanifestschema/schema-root">package manifest schema reference</a>.</p>
+<p>Together, these elements declare the identity of your app, establishing the &quot;package family&quot; to which all of its packages belong. Individual packages will have additional details, such as architecture and version.</p>
+<h2 id="additional-values-for-package-family">Additional values for package family</h2>
+<p>The following values are additional values that refer to your app's package family, but are not included in your manifest.</p>
+<ul>
+<li><strong>Package Family Name (PFN)</strong>: This value is used with certain Windows APIs.</li>
+<li><strong>Package SID</strong>: You'll need this value to send WNS notifications to your app. For more info, see <a href="/windows/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview">Windows Push Notification Services (WNS) overview</a>.</li>
+</ul>
+<h2 id="link-to-your-apps-listing">Link to your app's listing</h2>
+<p>The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format <strong><code>https://apps.microsoft.com/detail/&lt;your app's Store ID&gt;</code></strong>. When a customer clicks this link, it opens the web-based listing page for your app. On Windows devices, the Store app will also launch and display your app's listing.</p>
+<p>Your app's <strong>Store ID</strong> is also shown in this section. This Store ID can be used to <a href="https://developer.microsoft.com/store/badges">generate Store badges</a> or otherwise identify your app.</p>
+<p>The <strong>Store protocol link</strong> can be used to link directly to your app in the Store without opening a browser, such as when you are linking from within an app. For more info, see <a href="leverage-developer-tools-faqs/link-to-your-app-and-microsoft-store-badge.md#link-to-your-app">Link to your app</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/publish/view-app-identity-details.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Adding WNS Traffic to the Firewall Allowlist </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Adding WNS Traffic to the Firewall Allowlist ">
+    
+    <meta name="description" content="Many enterprises use firewalls to block unwanted traffic. This doc describes how to allow WNS traffic to pass through firewalls.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="enterprise-firewall-configurations-to-support-wns-traffic">Enterprise Firewall Configurations to Support WNS Traffic</h1>
+
+<h2 id="background">Background</h2>
+<p>Many enterprises use firewalls to block unwanted network traffic and ports; unfortunately, this can also block important things like Windows Notification Service communications. This means all notifications sent through WNS will be dropped under certain network configurations. To avoid this, network admins can add the list of approved WNS FQDNs or VIPs to their exemption list to allow the WNS traffic to pass through the firewall.</p>
+<h2 id="proxy-support">Proxy Support</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>WNS Push Notifications <em>may not</em> support proxies. There are many different proxy setups and environments, and not all configurations are guaranteed work with WNS. For best results, the connection to WNS must be a direct connection, however, VPN interfaces can be used.</p>
+</div>
+<p>We welcome any feedback about proxy support. Please direct your feedback to <a href="https://aka.ms/windowsappsdk">https://aka.ms/windowsappsdk</a> and file an issue for tracking interest in proxy support for WNS. Feel free to add the &quot;area-Notifications&quot; label to your issue for quicker visibility with the notifications team.</p>
+<h2 id="what-information-should-be-added-to-the-allowlist">What information should be added to the allowlist</h2>
+<p>Below is a list that contains the FQDNs, VIPs, and IP address ranges used by the Windows Notification Service.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>We strongly suggest that you allow list by FQDN, because these will not change. If you allow list by FQDN, you do not need to also allow the IP address ranges.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The IP address ranges will change periodically; because of this, they are not included on this page. If you want to see the list of IP ranges, you can download the file from Download Center: <a href="https://www.microsoft.com/download/details.aspx?id=44238">Windows Notification Service (WNS) VIP and IP Ranges</a>. Please check back regularly to make sure you have the most up-to-date information.</p>
+</div>
+<h3 id="fqdns-vips-ips-and-ports">FQDNs, VIPs, IPs, and Ports</h3>
+<p>Regardless of the method you choose from below, you'll need to allow network traffic to the listed destinations through <strong>port 443</strong>. Each of the elements in the following XML document is explained in the table that follows it (in <a href="#terms-and-notations">Terms and Notations</a>). The IP ranges were intentionally left out of this document to encourage you to use only the FQDNs as the FQDNs will remain constant. However, you can download the XML file containing the complete list from Download Center: <a href="https://www.microsoft.com/download/details.aspx?id=44238">Windows Notification Service (WNS) VIP and IP Ranges</a>. New VIPs or IP ranges will be <strong>effective one week after they are uploaded</strong>.</p>
+<pre><code class="lang-XML">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;WNSPublicIpAddresses xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+    &lt;!-- This file contains the FQDNs, VIPs, and IP address ranges used by the Windows Notification Service. A new text file will be uploaded every time a new VIP or IP range is released in production.  Please copy the below information and perform the necessary changes on your site. Endpoints in CloudService nodes are used for cloud services to send notifications to WNS. Endpoints in Client nodes are used by devices to receive notifications from WNS. --&gt; 
+    &lt;CloudServiceDNS&gt;
+    &lt;DNS FQDN=&quot;*.notify.windows.com&quot;/&gt;
+    &lt;/CloudServiceDNS&gt;
+    &lt;ClientDNS&gt;
+        &lt;DNS FQDN=&quot;*.wns.windows.com&quot;/&gt;
+    &lt;/ClientDNS&gt;
+    &lt;CloudServiceIPs&gt;
+        &lt;IpRange Subnet=&quot;&quot;/&gt;
+        &lt;!-- See the file in Download Center for the complete list of IP ranges --&gt;
+    &lt;/CloudServiceIPs&gt;
+    &lt;ClientIPsIPv4&gt;
+        &lt;IpRange Subnet=&quot;&quot;/&gt;
+        &lt;!-- See the file in Download Center for the complete list of IP ranges --&gt;
+    &lt;/ClientIPsIPv4&gt;
+    &lt;IdentityServiceDNS&gt;
+        &lt;DNS FQDN=&quot;login.microsoftonline.com&quot;/&gt;
+        &lt;DNS FQDN=&quot;login.live.com&quot;/&gt;
+    &lt;/IdentityServiceDNS&gt;
+&lt;/WNSPublicIpAddresses&gt;
+
+</code></pre>
+<h3 id="terms-and-notations">Terms and notations</h3>
+<p>Below are explanations on the notations and elements used in the above XML snippet.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dot-decimal notation (i.e. 64.4.28.0/26)</strong></td>
+<td>Dot-decimal notation is a way to describe the range of IP addresses. For example, 64.4.28.0/26 means the first 26 bits of 64.4.28.0 are constant, while the last 6 bits are variable.  In this case, the IPv4 range is 64.4.28.0 - 64.4.28.63.</td>
+</tr>
+<tr>
+<td><strong>ClientDNS</strong></td>
+<td>These are the Fully-Qualified Domain Name (FQDN) filters for the client devices (Windows PCs, desktops) receiving notifications from WNS. These must be allowed through the firewall in order for WNS clients to use the WNS Functionality.  It is recommended to allow-list by the FQDNs instead of the IP/VIP ranges, since these will never change.</td>
+</tr>
+<tr>
+<td><strong>ClientIPsIPv4</strong></td>
+<td>These are the IPv4 addresses of the servers accessed by client devices (Windows PCs, desktops) receiving notifications from WNS.</td>
+</tr>
+<tr>
+<td><strong>CloudServiceDNS</strong></td>
+<td>These are the Fully-Qualified Domain Name (FQDN) filters for the WNS servers your cloud service will talk to send notifications to WNS. These must be allowed through the firewall in order for services to send WNS notifications.  It is recommended to allow-list by the FQDNs instead of the IP/VIP ranges, since these will never change.</td>
+</tr>
+<tr>
+<td><strong>CloudServiceIPs</strong></td>
+<td>CloudServiceIPs are the IPv4 addresses of the servers used for cloud services to send notifications to WNS</td>
+</tr>
+</tbody>
+</table>
+<h2 id="microsoft-push-notifications-service-mpns-public-ip-ranges">Microsoft Push Notifications Service (MPNS) public IP ranges</h2>
+<p>If you are using the legacy notification service, MPNS, the IP address ranges that you will need to add to the allow list are available from Download Center: <a href="https://www.microsoft.com/download/details.aspx?id=44535">Microsoft Push Notifications Service (MPNS) Public IP ranges</a>.</p>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="/previous-versions/windows/apps/hh868252(v=win.10)">Quickstart: Sending a push notification</a></li>
+<li><a href="/previous-versions/windows/apps/hh465412(v=win.10)">How to request, create, and save a notification channel</a></li>
+<li><a href="/previous-versions/windows/apps/jj709907(v=win.10)">How to intercept notifications for running applications</a></li>
+<li><a href="/previous-versions/windows/apps/hh465407(v=win.10)">How to authenticate with the Windows Push Notification Service (WNS)</a></li>
+<li><a href="/previous-versions/windows/apps/hh465435(v=win.10)">Push notification service request and response headers</a></li>
+<li><a href="wns-overview.html">Guidelines and checklist for push notifications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/push-notifications/firewall-allowlist-config.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

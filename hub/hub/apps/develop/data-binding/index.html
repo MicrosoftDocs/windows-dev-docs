@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Data binding in Windows apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Data binding in Windows apps ">
+    
+    <meta name="description" content="Data binding is a way for your app&#39;s UI to display data, and optionally to stay in sync with that data.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="data-binding-in-windows-apps">Data binding in Windows apps</h1>
+
+<p>Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to create a separation of concerns between your data and UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app. In XAML markup, you can choose to use either the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">{x:Bind} markup extension</a> or the <a href="/windows/uwp/xaml-platform/binding-markup-extension">{Binding} markup extension</a>. And you can even use a mixture of the two in the same app—even on the same UI element. <code>{x:Bind}</code> was new for UWP in Windows 10, is also available in Windows App SDK, and it has better performance.</p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="data-binding-overview.html">Data binding overview</a></td>
+<td>This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Windows App SDK app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see <a href="data-binding-in-depth.html">Data binding in depth</a>.</td>
+</tr>
+<tr>
+<td><a href="data-binding-in-depth.html">Data binding in depth</a></td>
+<td>This topic describes data binding features in detail.</td>
+</tr>
+<tr>
+<td><a href="bind-to-hierarchical-data-and-create-a-master-details-view.html">Bind hierarchical data and create a master/details view</a></td>
+<td>You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource"><strong>CollectionViewSource</strong></a> instances that are bound together in a chain.</td>
+</tr>
+<tr>
+<td><a href="data-binding-and-mvvm.html">Data binding and MVVM</a></td>
+<td>This topic describes the Model-View-ViewModel (MVVM) UI architectural design pattern. Data binding is at the core of MVVM, and enables loose coupling between UI and non-UI code.</td>
+</tr>
+<tr>
+<td><a href="function-bindings.html">Functions in x:Bind</a></td>
+<td>In Windows App SDK apps, <code>{x:Bind}</code> supports using a function as the leaf step of the binding path. In this topic, learn how properties are bound to functions to do conversions, date formatting, text formatting, text concatenations, etc.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="/windows/uwp/data-binding/">Data binding in UWP apps</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/data-binding/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

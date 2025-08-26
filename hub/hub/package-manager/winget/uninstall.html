@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>uninstall Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="uninstall Command ">
+    
+    <meta name="description" content="uninstalls the specified application.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="uninstall-command-winget">uninstall command (winget)</h1>
+
+<p>The <strong>uninstall</strong> command of <a href="index.html">WinGet</a> uninstalls the specified application.</p>
+<p>The <strong>uninstall</strong> command requires that you specify the exact application name to uninstall. If there is any ambiguity, you will be prompted to further filter the <strong>uninstall</strong> command to an exact application.</p>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>remove</li>
+<li>rm</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p><code>winget uninstall [[-q] &lt;query&gt;] [&lt;options&gt;]</code></p>
+<p><span class="mx-imgBorder">
+<a href="images/uninstall.png#lightbox" data-linktype="relative-path">
+<img src="images/uninstall.png" alt="Screenshot of entering the winget uninstall command in a command line of Windows Terminal.">
+</a>
+</span>
+</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When using WinGet to uninstall a package, you may encounter a Microsoft Store agreement. This happens because of how WinGet queries package sources. To avoid Microsoft Store agreement prompts when uninstalling, you can add the <code>--source winget</code> WinGet flag to the <code>winget uninstall</code> command. Alternatively, you can uninstall using <strong>Start  &gt; Settings  &gt; Apps &gt; Apps &amp; features</strong>, finding the app you want to remove, and selecting <strong>More  &gt; Uninstall</strong>.</p>
+</div>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-q,--query</strong></td>
+<td>The query used to search for an app.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are uninstalling.</p>
+</div>
+<h2 id="options">Options</h2>
+<p>The options allow you to customize the uninstall experience to meet your needs.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-m, --manifest</strong></td>
+<td>Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the uninstall experience from a <a href="install.html#local-install">local YAML file</a>.</td>
+</tr>
+<tr>
+<td><strong>--id</strong></td>
+<td>Limits the uninstall to the ID of the application.</td>
+</tr>
+<tr>
+<td><strong>--name</strong></td>
+<td>Limits the search to the name of the application.</td>
+</tr>
+<tr>
+<td><strong>--moniker</strong></td>
+<td>Limits the search to the moniker listed for the application.</td>
+</tr>
+<tr>
+<td><strong>--product-code</strong></td>
+<td>Filters using the product code.</td>
+</tr>
+<tr>
+<td><strong>-v, --version</strong></td>
+<td>Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application.</td>
+</tr>
+<tr>
+<td><strong>--all,--all-versions</strong></td>
+<td>Uninstall all versions.</td>
+</tr>
+<tr>
+<td><strong>-s, --source</strong></td>
+<td>Restricts the search to the source name provided. Must be followed by the source name.</td>
+</tr>
+<tr>
+<td><strong>-e, --exact</strong></td>
+<td>Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.</td>
+</tr>
+<tr>
+<td><strong>--scope</strong></td>
+<td>Select installed package scope filter (user or machine).</td>
+</tr>
+<tr>
+<td><strong>-i, --interactive</strong></td>
+<td>Runs the uninstaller in interactive mode. The default experience shows uninstaller progress.</td>
+</tr>
+<tr>
+<td><strong>-h, --silent</strong></td>
+<td>Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress.</td>
+</tr>
+<tr>
+<td><strong>--force</strong></td>
+<td>Direct run the command and continue with non security related issues.</td>
+</tr>
+<tr>
+<td><strong>--purge</strong></td>
+<td>Deletes all files and directories in the package directory (portable).</td>
+</tr>
+<tr>
+<td><strong>--preserve</strong></td>
+<td>Retains all files and directories created by the package (portable).</td>
+</tr>
+<tr>
+<td><strong>-o, --log</strong></td>
+<td>Directs the logging to a log file. You must provide a path to a file that you have the write rights to.</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--authentication-mode</strong></td>
+<td>Specify authentication window preference (silent, silentPreferred or interactive).</td>
+</tr>
+<tr>
+<td><strong>--authentication-account</strong></td>
+<td>Specify the account to be used for authentication.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>-?,--help</strong></td>
+<td>Shows help about the selected command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<p>After you have successfully identified the application intended to uninstall, winget will execute the uninstall command.</p>
+<h3 id="example-queries">Example queries</h3>
+<p>The following example uninstalls a specific version of an application.</p>
+<pre><code class="lang-CMD">winget uninstall --name powertoys --version 0.15.2
+</code></pre>
+<p>The following example uninstalls an application using its ID.</p>
+<pre><code class="lang-CMD">winget uninstall --id &quot;{24559D0F-481C-F3BE-8DD0-D908923A38F8}&quot;
+</code></pre>
+<p>The following example uninstalls multiple applications.</p>
+<pre><code class="lang-CMD">winget uninstall Microsoft.NuGet Microsoft.Edit
+</code></pre>
+<h2 id="multiple-selections">Multiple selections</h2>
+<p>If the query provided to <strong>winget</strong> does not result in a single application to uninstall, then <strong>winget</strong> will display multiple results. You can then use additional filters to refine the search for the application you want to uninstall.</p>
+<h2 id="uninstalling-apps-not-installed-with-windows-package-manager">Uninstalling apps not installed with Windows Package Manager</h2>
+<p>As mentioned in <a href=".%5Clist.md"><strong>list</strong></a>, the <strong>winget list</strong> command will display more than just apps installed with the <strong>winget</strong>. You may still use winget commands to remove these apps from your device.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/uninstall.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

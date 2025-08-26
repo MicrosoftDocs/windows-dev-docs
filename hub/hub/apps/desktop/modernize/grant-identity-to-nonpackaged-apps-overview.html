@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Grant package identity by packaging with external location </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Grant package identity by packaging with external location ">
+    
+    <meta name="description" content="Overview of how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="grant-package-identity-by-packaging-with-external-location">Grant package identity by packaging with external location</h1>
+
+<p>Many Windows features can be used by a desktop app only if that app has package identity at runtime.
+See <a href="/windows/apps/desktop/modernize/modernize-packaged-apps">Features that require package identity</a>.
+If you have an existing desktop app, with its own installer, then there's very little you need to
+change in order to benefit from package identity.</p>
+<p>Starting in Windows 10, version 2004, you can grant package identity to an app simply by building
+and registering a <em>package with external location</em> with your app. Packaging with external location
+allows you to register a simple identity package in your existing installer without changing how or
+where you install your application. You might be familiar with full MSIX packaging; this is a much
+lighter-weight option.</p>
+<p>You can <a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio">add an identity package to an existing Visual Studio project</a> with the Windows Application Packaging Project and
+<a href="https://marketplace.visualstudio.com/items?itemName=WapProj-PackageWithExternalLocation.wapprojPackageWithExternalLocation">Package with External Location</a> extension.
+This approach is recommended when there is a single application project that needs identity.
+The tooling provides a visual manifest editor, visual Resource Designer for localization, graphical
+wizard for creating and trusting self-signed certificates, automatic updating of application manifests,
+and PowerShell scripts to register and unregister the identity package for local testing.</p>
+<p>If you don't build with Visual Studio or want to bundle multiple application executables under a
+shared identity, you can
+<a href="/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps">build an identity package manually</a>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

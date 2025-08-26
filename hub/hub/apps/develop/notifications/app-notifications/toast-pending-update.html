@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Toast with pending update activation </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Toast with pending update activation ">
+    
+    <meta name="description" content="Learn how to use toast with pending update activation to create multi-step interactions in your toast notifications.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="toast-with-pending-update-activation">Toast with pending update activation</h1>
+
+<p>You can use <strong>PendingUpdate</strong> to create multi-step interactions in your toast notifications. For example, as seen below, you can create a series of toasts where the subsequent toasts depend on responses from the previous toasts.</p>
+<p><img src="images/toast-pendingupdate.gif" alt="Toast with pending update"></p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p><strong>Requires Desktop Fall Creators Update and 2.0.0 of Notifications library</strong>: You must be running Desktop build 16299 or later to see pending update work. You must use version 2.0.0 or later of the <a href="https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/">UWP Community Toolkit Notifications NuGet library</a> to assign <strong>PendingUpdate</strong> on your buttons. <strong>PendingUpdate</strong> is only supported on Desktop and will be ignored on other devices.</p>
+</div>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>This article assumes a working knowledge of...</p>
+<ul>
+<li><a href="adaptive-interactive-toasts.html">Constructing toast content</a></li>
+<li><a href="send-local-toast.html">Sending a toast and handling background activation</a></li>
+</ul>
+<h2 id="overview">Overview</h2>
+<p>To implement a toast that uses pending update as its after activation behavior...</p>
+<ol>
+<li><p>On your toast background activation buttons, specify an <strong>AfterActivationBehavior</strong> of <strong>PendingUpdate</strong></p>
+</li>
+<li><p>Assign a <strong>Tag</strong> (and optionally <strong>Group</strong>) when sending your toast</p>
+</li>
+<li><p>When the user clicks your button, your background task will be activated, and the toast will be kept on-screen in a pending update state</p>
+</li>
+<li><p>In your background task, send a new toast with your new content, using the same <strong>Tag</strong> and <strong>Group</strong></p>
+</li>
+</ol>
+<h2 id="assign-pendingupdate">Assign PendingUpdate</h2>
+<p>On your background activation buttons, set the <strong>AfterActivationBehavior</strong> to <strong>PendingUpdate</strong>. Note that this only works for buttons that have an <strong>ActivationType</strong> of <strong>Background</strong>.</p>
+<div class="tabGroup" id="tabgroup_1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_1_builder-syntax" role="tab" aria-controls="tabpanel_1_builder-syntax" data-tab="builder-syntax" tabindex="0" aria-selected="true">Builder syntax</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_1_xml" role="tab" aria-controls="tabpanel_1_xml" data-tab="xml" tabindex="-1">XML</a>
+</li>
+</ul>
+<section id="tabpanel_1_builder-syntax" role="tabpanel" data-tab="builder-syntax">
+
+<pre><code class="lang-csharp">new ToastContentBuilder()
+
+    .AddText(&quot;Would you like to order lunch today?&quot;)
+
+    .AddButton(new ToastButton(&quot;Yes&quot;, &quot;action=orderLunch&quot;)
+    {
+        ActivationType = ToastActivationType.Background,
+
+        ActivationOptions = new ToastActivationOptions()
+        {
+            AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
+        }
+    });
+</code></pre>
+</section>
+<section id="tabpanel_1_xml" role="tabpanel" data-tab="xml" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-xml">&lt;toast&gt;
+  
+  &lt;visual&gt;
+    &lt;binding template=&quot;ToastGeneric&quot;&gt;
+      &lt;text&gt;Would you like to order lunch today?&lt;/text&gt;
+    &lt;/binding&gt;
+  &lt;/visual&gt;
+
+  &lt;actions&gt;
+    &lt;action
+      content=&quot;Yes&quot;
+      arguments=&quot;action=orderLunch&quot;
+      activationType=&quot;background&quot;
+      afterActivationBehavior=&quot;pendingUpdate&quot;/&gt;
+  &lt;/actions&gt;
+  
+&lt;/toast&gt;
+</code></pre>
+</section>
+</div>
+<h2 id="use-a-tag-on-the-notification">Use a Tag on the notification</h2>
+<p>In order to later replace the notification, we have to assign the <strong>Tag</strong> (and optionally the <strong>Group</strong>) on the notification.</p>
+<pre><code class="lang-csharp">// Create the notification
+var notif = new ToastNotification(content.GetXml())
+{
+    Tag = &quot;lunch&quot;
+};
+
+// And show it
+ToastNotificationManager.CreateToastNotifier().Show(notif);
+</code></pre>
+<h2 id="replace-the-toast-with-new-content">Replace the toast with new content</h2>
+<p>In response to the user clicking your button, your background task gets triggered and you need to replace the toast with new content. You replace the toast by simply sending a new toast with the same <strong>Tag</strong> and <strong>Group</strong>.</p>
+<p>We strongly recommend <strong>setting the audio to silent</strong> on replacements in response to a button click, since the user is already interacting with your toast.</p>
+<pre><code class="lang-csharp">// Generate new content
+ToastContent content = new ToastContent()
+{
+    ...
+
+    // We disable audio on all subsequent toasts since they appear right after the user
+    // clicked something, so the user's attention is already captured
+    Audio = new ToastAudio() { Silent = true }
+};
+
+// Create the new notification
+var notif = new ToastNotification(content.GetXml())
+{
+    Tag = &quot;lunch&quot;
+};
+
+// And replace the old one with this one
+ToastNotificationManager.CreateToastNotifier().Show(notif);
+</code></pre>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="https://github.com/WindowsNotifications/quickstart-toast-pending-update">Full code sample on GitHub</a></li>
+<li><a href="send-local-toast.html">Send a local toast and handle activation</a></li>
+<li><a href="adaptive-interactive-toasts.html">Toast content documentation</a></li>
+<li><a href="toast-progress-bar.html">Toast progress bar</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/develop/notifications/app-notifications/toast-pending-update.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

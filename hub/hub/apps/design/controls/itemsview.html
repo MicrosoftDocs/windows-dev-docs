@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Guidelines for items view controls </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Guidelines for items view controls ">
+    
+    <meta name="description" content="Displays items in a collection, such as photos in an album or items in a product catalog.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="items-view">Items view</h1>
+
+<p>Use an items view to display a collection of data items, such as photos in an album or items in a product catalog.</p>
+<p>The items view is similar to the list view and grid view controls, and you can use it in most cases where you would use those controls. One advantage of the items view is its ability to switch the layout on the fly while preserving item selection.</p>
+<p>The items view control is built using the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater">ItemsRepeater</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview">ScrollView</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcontainer">ItemContainer</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcollectiontransitionprovider">ItemCollectionTransitionProvider</a> components, so it offers the unique ability to plug in custom <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layout">Layout</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcollectiontransitionprovider">ItemCollectionTransitionProvider</a> implementations. The item view's inner ScrollView control allows scrolling and zooming of the items. It also offers features unavailable in the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer">ScrollViewer</a> control used by the list view and grid view, like the ability to control the animation during programmatic scrolls.</p>
+<p>Like the list view and grid view controls, the items view can use UI and data virtualization; handle keyboard, mouse, pen, and touch input; and has built-in accessibility support.</p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>Use an items view to:</p>
+<ul>
+<li>Display a collection where all of the items should have the same visual and interaction behavior.</li>
+<li>Display a content collection with the ability to switch between list, grid, and custom layouts.</li>
+<li>Accommodate a variety of use cases, including the following common ones:
+<ul>
+<li>Storefront-type user interface (i.e. browsing apps, songs, products)</li>
+<li>Interactive photo libraries</li>
+<li>Contacts list</li>
+</ul>
+</li>
+</ul>
+<h2 id="create-an-items-view">Create an items view</h2>
+<div class="checklist">
+<ul>
+<li>Important APIs: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview">ItemsView class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource">ItemsSource property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemtemplate">ItemTemplate property</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout">LinedFlowLayout</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout">StackLayout</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout">UniformGridLayout</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/ItemsView">Open the WinUI 3 Gallery app and see the ItemsView in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>An <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview">ItemsView</a> can show a collection of items of any type. To populate the view, set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource">ItemsSource</a> property to a data source.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Unlike other collection controls (those that derive from <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol">ItemsControl</a>), ItemsView does not have an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items">Items</a> property that you can add data items to directly.</p>
+</div>
+<h2 id="set-the-items-source">Set the items source</h2>
+<p>You typically use an items view to display data from a source such as a database or the internet. To populate an items view from a data source, you set its <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource">ItemsSource</a> property to a collection of data items.</p>
+<h3 id="set-itemssource-in-code">Set ItemsSource in code</h3>
+<p>Here, the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource">ItemsSource</a> is set in code directly to an instance of a collection.</p>
+<pre><code class="lang-csharp"> // Data source.
+ List&lt;String&gt; itemsList = new List&lt;string&gt;();
+ itemsList.Add(&quot;Item 1&quot;);
+ itemsList.Add(&quot;Item 2&quot;);
+
+ // Create a new ItemsView and set the data source.
+ ItemsView itemsView1 = new ItemsView();
+ itemsView1.ItemsSource = itemsList;
+
+ // Add the ItemsView to a parent container in the visual tree.
+ rootGrid.Children.Add(itemsView1);
+</code></pre>
+<h3 id="bind-itemssource-in-xaml">Bind ItemsSource in XAML</h3>
+<p>You can also bind the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource">ItemsSource</a> property to a collection in XAML. For more info, see <a href="/windows/uwp/data-binding/data-binding-quickstart">Data binding with XAML</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When you use the <a href="/windows/uwp/xaml-platform/x-bind-markup-extension">x:Bind markup extension</a> in a DataTemplate, you have to specify the data type (<code>x:DataType</code>) on the data template.</p>
+</div>
+<p>Here, the ItemsSource is bound to a collection of custom data objects (of type <code>Photo</code>).</p>
+<pre><code class="lang-xaml">&lt;ItemsView ItemsSource=&quot;{x:Bind Photos}&quot;&gt;
+
+&lt;/ItemsView&gt;
+</code></pre>
+<pre><code class="lang-csharp">public sealed partial class MainPage : Page
+{
+    public MainPage()
+    {
+        this.InitializeComponent();
+        Photos = new ObservableCollection&lt;Photo&gt;();
+        PopulatePhotos();
+    }
+
+    public ObservableCollection&lt;Photo&gt; Photos
+    {
+        get; private set;
+    }
+
+
+    private void PopulatePhotos()
+    {
+        // Populate the Photos collection. 
+    }
+}
+
+public class Photo
+{
+    public BitmapImage PhotoBitmapImage { get; set; }
+    public string Title { get; set; }
+    public int Likes { get; set; }
+}
+</code></pre>
+<h2 id="specify-the-look-of-the-items">Specify the look of the items</h2>
+<p>By default, a data item is displayed in the items view as the string representation of the data object it's bound to. You typically want to show a more rich presentation of your data. To specify exactly how items in the items view are displayed, you create a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate">DataTemplate</a>. The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. The DataTemplate is assigned to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate">ItemTemplate</a> property of the ItemsView control.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The root element of the DataTemplate must be an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcontainer">ItemContainer</a>; otherwise, an exception is thrown. ItemContainer is an independent primitive control that is used by ItemsView to show the selection states and other visualizations of an individual item in the item collection.</p>
+</div>
+<p>In this example, the DataTemplate is defined in the <code>Page.Resources</code> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary">ResourceDictionary</a>. It includes an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image">Image</a> control to show the picture and an overlay that contains the image title and number of likes it's received.</p>
+<pre><code class="lang-xaml"> &lt;Page.Resources&gt;
+     &lt;DataTemplate x:Key=&quot;PhotoItemTemplate&quot; x:DataType=&quot;local:Photo&quot;&gt;
+         &lt;ItemContainer AutomationProperties.Name=&quot;{x:Bind Title}&quot;&gt;
+             &lt;Grid&gt;
+                 &lt;Image Source=&quot;{x:Bind PhotoBitmapImage, Mode=OneWay}&quot; 
+                        Stretch=&quot;UniformToFill&quot; MinWidth=&quot;70&quot;
+                        HorizontalAlignment=&quot;Center&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+                 &lt;StackPanel Orientation=&quot;Vertical&quot; Height=&quot;40&quot; Opacity=&quot;.75&quot;
+                             VerticalAlignment=&quot;Bottom&quot; Padding=&quot;5,1,5,1&quot; 
+                             Background=&quot;{ThemeResource SystemControlBackgroundBaseMediumBrush}&quot;&gt;
+                     &lt;TextBlock Text=&quot;{x:Bind Title}&quot; 
+                                Foreground=&quot;{ThemeResource SystemControlForegroundAltHighBrush}&quot;/&gt;
+                     &lt;StackPanel Orientation=&quot;Horizontal&quot;&gt;
+                         &lt;TextBlock Text=&quot;{x:Bind Likes}&quot;
+                                    Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot;
+                                    Foreground=&quot;{ThemeResource SystemControlForegroundAltHighBrush}&quot;/&gt;
+                         &lt;TextBlock Text=&quot; Likes&quot;
+                                    Style=&quot;{ThemeResource CaptionTextBlockStyle}&quot;
+                                    Foreground=&quot;{ThemeResource SystemControlForegroundAltHighBrush}&quot;/&gt;
+                     &lt;/StackPanel&gt;
+                 &lt;/StackPanel&gt;
+             &lt;/Grid&gt;
+         &lt;/ItemContainer&gt;
+     &lt;/DataTemplate&gt;
+ &lt;/Page.Resources&gt;
+
+ &lt;Grid x:Name=&quot;rootGrid&quot;&gt;
+     &lt;ItemsView ItemsSource=&quot;{x:Bind Photos}&quot; Width=&quot;480&quot; Height=&quot;400&quot; 
+                ItemTemplate=&quot;{StaticResource PhotoItemTemplate}&quot;&gt;
+     &lt;/ItemsView&gt;
+ &lt;/Grid&gt;
+</code></pre>
+<p>Here's what the item layout defined by the data template looks like.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-item-template.png" alt="A photo of bicycles with an overlay that contains the image title and number of likes it's received.">
+</span>
+</p>
+<h2 id="change-the-layout-of-items">Change the layout of items</h2>
+<p>When you add items to an ItemsView control, it automatically wraps each item in an <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemcontainer">ItemContainer</a> and then lays out all of the item containers. How these item containers are laid out depends on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.layout">Layout</a> property of the control.</p>
+<p>You can modify the layout of items by adjusting the properties on the current layout, or you can completely replace the current layout with a different layout. You can use one of the layouts described next, or you can derive a custom layout from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layout">Layout</a> class.</p>
+<h3 id="stacklayout">StackLayout</h3>
+<p>By default, ItemsView uses a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout">StackLayout</a>, which produces a vertical list, shown here with default property settings and a simple image template.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-stack-default.png" alt="A collection of photos shown in a vertical list.">
+</span>
+</p>
+<p>This XAML sets the spacing between items in the StackLayout to 5px.</p>
+<pre><code class="lang-xaml">&lt;ItemsView ItemsSource=&quot;{x:Bind Photos}&quot; Width=&quot;480&quot; Height=&quot;400&quot; 
+           ItemTemplate=&quot;{StaticResource PhotoItemTemplate}&quot;&gt;
+    &lt;ItemsView.Layout&gt;
+        &lt;StackLayout Spacing=&quot;5&quot;/&gt;
+    &lt;/ItemsView.Layout&gt;
+&lt;/ItemsView&gt;
+</code></pre>
+<p>StackLayout provides properties to control:</p>
+<ul>
+<li>whether the layout is vertical or horizontal (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout.orientation">Orientation</a>)</li>
+<li>the spacing of items (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout.spacing">Spacing</a>)</li>
+</ul>
+<p>You can use the layout in combination with the ItemTemplate to give your collection a variety of looks to suit your needs. For example, the <a href="https://github.com/Microsoft/WinUI-Gallery">WinUI Gallery sample</a> changes the ItemTemplate used with the StackLayout to look like this.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-stack.png" alt="A collection of small photos shown in a vertical list with several rows of text below each photo.">
+</span>
+</p>
+<h3 id="linedflowlayout">LinedFlowLayout</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout">LinedFlowLayout</a> positions elements sequentially from left to right, then top to bottom, in a wrapping layout. Use this layout to display an item collection where the items have a fixed height but a variable width. We recommend it for image based collections. This layout also has built-in animations that play when the collection has items added or removed, and when the view is resized.</p>
+<p>Here's an items view that shows a collection of photos in a lined flow layout.</p>
+<pre><code class="lang-xaml">&lt;ItemsView Width=&quot;500&quot; Height=&quot;400&quot; HorizontalAlignment=&quot;Left&quot;
+           ItemTemplate=&quot;{StaticResource LinedFlowLayoutItemTemplate}&quot;&gt;
+    &lt;ItemsView.Layout&gt;
+        &lt;LinedFlowLayout ItemsStretch=&quot;Fill&quot; 
+                         LineHeight=&quot;160&quot; 
+                         LineSpacing=&quot;5&quot;
+                         MinItemSpacing=&quot;5&quot;/&gt;
+    &lt;/ItemsView.Layout&gt;
+&lt;/ItemsView&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-lined-flow.png" alt="A collection of photos shown in a lined flow layout where each item is the same height, but the width varies based on the original size of the aspect ratio of the photo.">
+</span>
+</p>
+<p>LinedFlowLayout provides properties to control:</p>
+<ul>
+<li>the size and spacing of items (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout.lineheight">LineHeight</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout.linespacing">LineSpacing</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout.minitemspacing">MinItemSpacing</a>)</li>
+<li>the arrangement of items (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout.itemsjustification">ItemsJustification</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout.itemsstretch">ItemsStretch</a>)</li>
+</ul>
+<h3 id="uniformgridlayout">UniformGridLayout</h3>
+<p>The <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout">UniformGridLayout</a> positions elements sequentially from left to right or top to bottom (depending on the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.orientation">Orientation</a>) in a wrapping layout. Each item is the same size.</p>
+<p>Here's an items view that shows a collection of photos in a uniform grid layout.</p>
+<pre><code class="lang-xaml">&lt;ItemsView ItemsSource=&quot;{x:Bind Photos}&quot; Width=&quot;480&quot; Height=&quot;400&quot;
+           ItemTemplate=&quot;{StaticResource PhotoItemTemplate}&quot;&gt;
+    &lt;ItemsView.Layout&gt;
+        &lt;UniformGridLayout MaximumRowsOrColumns=&quot;3&quot; 
+                           MinRowSpacing=&quot;5&quot; 
+                           MinColumnSpacing=&quot;5&quot;/&gt;
+    &lt;/ItemsView.Layout&gt;
+&lt;/ItemsView&gt;
+</code></pre>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-uniform-grid.png" alt="A collection of photos shown in a uniform grid layout where each item is the same size.">
+</span>
+</p>
+<p>UniformGridLayout provides properties to control:</p>
+<ul>
+<li>whether the layout is row or column based (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.orientation">Orientation</a>)</li>
+<li>the number of rows or columns (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.maximumrowsorcolumns">MaximumRowsOrColumns</a>)</li>
+<li>the size and spacing of items (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.minitemheight">MinItemHeight</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.minitemwidth">MinItemWidth</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.mincolumnspacing">MinColumnSpacing</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.minrowspacing">MinRowSpacing</a>)</li>
+<li>the arrangement of items (<a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification">ItemsJustification</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch">ItemsStretch</a>)</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Use the interactive demo in the <a href="winui3gallery:/item/ItemsView">WinUI 3 Gallery app</a> to see the effect of these properties in real time.</p>
+</div>
+<h2 id="item-selection-and-interaction">Item selection and interaction</h2>
+<p>You can choose from a variety of ways to let users interact with an items view. By default, users can select a single item. You can change the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selectionmode">SelectionMode</a> property to enable multi-selection or to disable selection. You can set the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.isiteminvokedenabled">IsItemInvokedEnabled</a> property so that users click an item to invoke an action instead of selecting the item.</p>
+<p>This table shows the ways a user can interact with an items view, and how you can respond to the interaction.</p>
+<table>
+<thead>
+<tr>
+<th>To enable this interaction:</th>
+<th>Use these settings:</th>
+<th>Handle this event:</th>
+<th>Use this property to get the selected item:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No interaction</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selectionmode">SelectionMode</a>=&quot;None&quot;<br><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.isiteminvokedenabled">IsItemInvokedEnabled</a>=&quot;False&quot;</td>
+<td>N/A</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Single selection</td>
+<td>SelectionMode=&quot;Single&quot;<br>IsItemInvokedEnabled=&quot;False&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selectionchanged">SelectionChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selecteditem">SelectedItem</a></td>
+</tr>
+<tr>
+<td>Multiple selection</td>
+<td>SelectionMode=&quot;Multiple&quot;<br>IsItemInvokedEnabled=&quot;False&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selectionchanged">SelectionChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selecteditems">SelectedItems</a></td>
+</tr>
+<tr>
+<td>Extended selection</td>
+<td>SelectionMode=&quot;Extended&quot;<br>IsItemInvokedEnabled=&quot;False&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selectionchanged">SelectionChanged</a></td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selecteditems">SelectedItems</a></td>
+</tr>
+<tr>
+<td>Click</td>
+<td>SelectionMode=&quot;None&quot;<br>IsItemInvokedEnabled=&quot;True&quot;</td>
+<td><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.iteminvoked">ItemInvoked</a></td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can enable IsItemInvokedEnabled to raise an ItemInvoked event while SelectionMode is also set to <code>Single</code>, <code>Multiple</code>, or <code>Extended</code>. If you do this, the ItemInvoked event is raised first, and then the SelectionChanged event is raised. In some cases (for example, if you go to another page in the ItemInvoked event handler), the SelectionChanged event isn't raised and the item isn't selected.</p>
+</div>
+<p>You can set these properties in XAML or in code, as shown here:</p>
+<pre><code class="lang-xaml">&lt;ItemsView x:Name=&quot;myItemsView&quot; SelectionMode=&quot;None&quot; IsItemInvokedEnabled=&quot;True&quot;/&gt;
+</code></pre>
+<pre><code class="lang-csharp">myItemsView.SelectionMode = ItemsViewSelectionMode.None;
+myItemsView.IsItemInvokedEnabled = true;
+</code></pre>
+<h3 id="read-only">Read-only</h3>
+<p>You can set the SelectionMode property to <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsviewselectionmode">ItemsViewSelectionMode.None</a> to disable item selection. This puts the control in read-only mode, so that it's used for displaying data, but not for interacting with it. That is, the item selection is disabled, but the control itself is not.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Items can still be selected and deselected programmatically, but not through user interaction.</p>
+</div>
+<h3 id="single-selection">Single selection</h3>
+<p>This table describes keyboard, mouse, and touch interactions when SelectionMode is set to <code>Single</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier key</th>
+<th>Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td><li>Users can select a single item by using the space bar, mouse clicks, or taps.</li></td>
+</tr>
+<tr>
+<td>Ctrl</td>
+<td><li>Users can deselect a single item by using the space bar, mouse clicks, or taps.<li>By using the arrow keys, users can move the focus independent of the selection.</li></td>
+</tr>
+</tbody>
+</table>
+<p>When SelectionMode is set to <code>Single</code>, you can get the selected data item from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selecteditem">SelectedItem</a> property. If no item is selected, SelectedItem is <code>null</code>.</p>
+<p>If you try to set an item that's not in the items collection as SelectedItem, the operation is ignored and SelectedItem is <code>null</code>.</p>
+<p>The default selection indicator for <code>Single</code> selection looks like this.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-selection-single.png" alt="An image in an items view with a blue border around it to indicate selection next to an unselected image without a border.">
+</span>
+</p>
+<h3 id="multiple-selection">Multiple selection</h3>
+<p>This table describes the keyboard, mouse, and touch interactions when SelectionMode is set to <code>Multiple</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier key</th>
+<th>Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td><li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of their selection.</li></td>
+</tr>
+<tr>
+<td>Shift</td>
+<td><li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key.</li></td>
+</tr>
+</tbody>
+</table>
+<p>The default selection indicator for <code>Multiple</code> selection looks like this.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-selection-multiple.png" alt="An image in an items view with a blue border around it and a checked check box overlayed to indicate selection next to an unselected image with no border and an unchecked check box.">
+</span>
+</p>
+<h3 id="extended-selection">Extended selection</h3>
+<p>This table describes the keyboard, mouse, and touch interactions when SelectionMode is set to <code>Extended</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Modifier key</th>
+<th>Interaction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td><li>The behavior is the same as <code>Single</code> selection.</li></td>
+</tr>
+<tr>
+<td>Ctrl</td>
+<td><li>Users can select multiple items by using the space bar, mouse clicks, or taps to select the focused item.<li>By using the arrow keys, users can move the focus independent of the selection.</li></td>
+</tr>
+<tr>
+<td>Shift</td>
+<td><li>Users can select multiple contiguous items by clicking or tapping the first item in the selection and then clicking or tapping the last item in the selection.<li>By using the arrow keys, users can select contiguous items starting with the item that's selected when they select the Shift key.</li></td>
+</tr>
+</tbody>
+</table>
+<p>When SelectionMode is set to <code>Multiple</code> or <code>Extended</code>, you can get the selected data items from the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selecteditems">SelectedItems</a> property.</p>
+<p>The SelectedItem and SelectedItems properties are synchronized. For example, if you set SelectedItem to <code>null</code>, SelectedItems is empty. In multi-select mode, SelectedItem contains the item that was selected first.</p>
+<p>The default selection indicator for <code>Extended</code> selection is the same as for <code>Single</code> selection and looks like this.</p>
+<p><span class="mx-imgBorder">
+<img src="images/itemsview/itemsview-selection-extended.png" alt="Two images in an items view, each with a blue border around it to indicate selection.">
+</span>
+</p>
+<h3 id="manage-item-selection-programmatically">Manage item selection programmatically</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These selection methods ignore the SelectionMode property and have an effect even when SelectionMode is <code>Single</code> or <code>None</code>.</p>
+</div>
+<p>Sometimes, you might need to manipulate the ItemsView item selection programmatically. For example, you might display a Select all button to let users select all items in a list. In this case, it's usually not very efficient to add and remove items from the SelectedItems collection one by one. It's more efficient to use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.select">Select</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.selectall">SelectAll</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.deselect">Deselect</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.invertselection">InvertSelection</a> methods to modify the selection than to use the SelectedItems property.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can select all items in a collection by calling the SelectAll method. There is no corresponding method to deselect all items. However, you can deselect all items by calling SelectAll followed immediately by InvertSelection.</p>
+</div>
+<h2 id="get-the-sample-code">Get the sample code</h2>
+<ul>
+<li><a href="https://github.com/Microsoft/WinUI-Gallery">WinUI Gallery sample</a> - See all the XAML controls in an interactive format.</li>
+</ul>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="lists.html">Guidelines for lists</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview">ItemsView class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout">StackLayout</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout">UniformGridLayout</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout">LinedFlowLayout</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/itemsview.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

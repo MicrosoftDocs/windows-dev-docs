@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Support Dark and Light themes in Win32 apps </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Support Dark and Light themes in Win32 apps ">
+    
+    <meta name="description" content="Learn how to detect system theme changes for dark or light mode.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="support-dark-and-light-themes-in-win32-apps">Support Dark and Light themes in Win32 apps</h1>
+
+<p>Windows supports <em>Light</em> and <em>Dark</em> themes as a personalization option in Windows settings. Windows uses Light mode by default, but users can choose Dark mode, which changes much of the UI to a dark color. Users might prefer this setting because it's easier on the eyes in lower-light environments, or they might simply prefer a darker interface in general. Also, darker UI colors can reduce the battery usage on some types of computer displays, such as OLED screens.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/apply-design/themes.png" alt="A split image of an app in light theme on the left, and dark theme on the right.">
+</span>
+</p>
+<p>We are working hard to broaden support for Dark mode without breaking existing applications, and to that end we're providing technical guidance for updating a Win32 desktop Windows app to support both Light and Dark modes.</p>
+<h2 id="dark-mode-vs-light-mode">Dark mode vs. Light mode</h2>
+<p>The Color Mode in settings (which includes Light and Dark modes) is a setting that defines the overall <em>foreground</em> and <em>background</em> colors for the operating system and apps.</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Light</strong></td>
+<td>A light background with a contrasting dark foreground.<br><br>In Light Mode, you will generally see black or dark text on white or light backgrounds.</td>
+<td><span class="mx-imgBorder">
+<img src="../images/apply-design/clock-app-light.png" alt="A screenshot of the Alarms &amp; Clock app in light mode">
+</span>
+</td>
+</tr>
+<tr>
+<td><strong>Dark</strong></td>
+<td>A dark background with a contrasting light foreground.<br><br>In Dark mode, you will generally see white or light text on black or dark backgrounds.</td>
+<td><span class="mx-imgBorder">
+<img src="../images/apply-design/clock-app-dark.png" alt="A screenshot of the Alarms &amp; Clocks app in Dark mode">
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The reason we use &quot;<em>black or dark</em>&quot; and &quot;<em>white or light</em>&quot; is because there are additional colors such as the Accent color that can tint various foreground and background colors. So you might in fact see light blue text on a dark blue background in some parts of the UI, and that would still be considered acceptable Dark mode UI.</p>
+</div>
+<p>Due to the wide diversity of UI in different apps, the color mode, and foreground and background colors are meant as more of a directional guideline than a hard rule:</p>
+<ul>
+<li>Foreground elements, highlights, and text should be closer to the foreground color than the background color.</li>
+<li>Large, solid background areas and text backgrounds should generally be closer to the background color than the foreground color.</li>
+</ul>
+<p>In practice, this means that in Dark mode, most of the UI will be dark, and in Light mode most of the UI will be light. The concept of a background in Windows is the large area of colors in an app, or the page color. The concept of a foreground in Windows is the text color.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you find it confusing that the <em>foreground</em> color is light in Dark mode and dark in Light mode, it may help to think of the foreground color as &quot;the default text color&quot;.</p>
+</div>
+<h2 id="enable-support-for-switching-color-modes">Enable support for switching color modes</h2>
+<p>There are many approaches to implementing Dark mode support in an application. Some apps contain two sets of UIs (one with a light color and one with a dark color). Some Windows UI frameworks, such as <a href="../../../winui/winui3/index.html">WinUI 3</a>, automatically detect a system's theme and adjust the UI to follow the system theme. To fully support Dark mode, the entirety of an app's surface must follow the dark theme.</p>
+<p>There are two main things you can do in your Win32 app to support both Light and Dark themes.</p>
+<ul>
+<li><p><strong>Know when Dark mode is enabled</strong></p>
+<p>Knowing when Dark mode is enabled in the system settings can help you know when to switch your app UI to a Dark mode-themed UI.</p>
+</li>
+<li><p><strong>Enable a Dark mode title bar for Win32 applications</strong></p>
+<p>Not all Win32 applications support Dark mode, so Windows gives Win32 apps a light title bar by default. If you are prepared to support Dark mode, you can ask Windows to draw the dark title bar instead when Dark mode is enabled.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This article provides examples of ways to detect system theme changes, and request a light or dark title bar for your Win32 application's window. It does not cover specifics of how to repaint and render your app UI using a Dark mode color set.</p>
+</div>
+<h2 id="know-when-dark-mode-is-enabled">Know when Dark mode is enabled</h2>
+<p>The first step is to keep track of the color mode setting itself. This will let you adjust your application's painting and rendering code to use a Dark mode color set. Doing this requires the app to read the color setting at startup and to know when the color setting changes during an app session.</p>
+<p>To do this in a Win32 application, use <a href="/uwp/api/windows.ui.color">Windows::UI::Color</a> and detect if a color can be classified as <em>light</em> or <em>dark</em>. To use <code>Windows::UI::Color</code>, you need to import (in <code>pch.h</code>) the <code>Windows.UI.ViewManagement</code> header from winrt.</p>
+<pre><code class="lang-cpp">#include &lt;winrt/Windows.UI.ViewManagement.h&gt;
+</code></pre>
+<p>Also include that namespace in <code>main.cpp</code>.</p>
+<pre><code class="lang-cpp">using namespace Windows::UI::ViewManagement;
+</code></pre>
+<p>In <code>main.cpp</code>, use this function to detect if a color can be classified as <em>light</em>.</p>
+<pre><code class="lang-cpp">inline bool IsColorLight(Windows::UI::Color&amp; clr)
+{
+    return (((5 * clr.G) + (2 * clr.R) + clr.B) &gt; (8 * 128));
+}
+</code></pre>
+<p>This function performs a quick calculation of the <em>perceived brightness</em> of a color, and takes into consideration ways that different channels in an RGB color value contribute to how bright it looks to the human eye. It uses all-integer math for speed on typical CPUs.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This is not a model for real analysis of color brightness. It is good for quick calculations that require you to determine if a color can be classified as <em>light</em> or <em>dark</em>. Theme colors can often be light but not pure white, or dark but not pure black.</p>
+</div>
+<p>Now that you have a function to check whether a color is light, you can use that function to detect if Dark mode is enabled.</p>
+<p>Dark mode is defined as a dark background with a contrasting light foreground. Since <code>IsColorLight</code> checks if a color is considered light, you can use that function to see if the foreground is light. If the foreground is light, then Dark mode is enabled.</p>
+<p>To do this, you need to get the UI color type of the foreground from the system settings. Use this code in <code>main.cpp</code>.</p>
+<pre><code class="lang-cpp">auto settings = UISettings();
+    
+auto foreground = settings.GetColorValue(UIColorType::Foreground);
+</code></pre>
+<p><a href="/uwp/api/windows.ui.viewmanagement.uisettings">UISettings</a> gets all the settings of the UI including color. Call <a href="/uwp/api/windows.ui.viewmanagement.uisettings.getcolorvalue">UISettings.GetColorValue</a>(<a href="/uwp/api/windows.ui.viewmanagement.uicolortype">UIColorType::Foreground</a>) to get the foreground color value from the UI settings.</p>
+<p>Now you can run a check to see if the foreground is considered light (in <code>main.cpp</code>).</p>
+<pre><code class="lang-cpp">bool isDarkMode = static_cast&lt;bool&gt;(IsColorLight(foreground));
+
+wprintf(L&quot;\nisDarkMode: %u\n&quot;, isDarkMode);
+</code></pre>
+<ul>
+<li>If the foreground is light, then <code>isDarkMode</code> will evaluate to 1 (<code>true</code>) meaning Dark mode is enabled.</li>
+<li>If the foreground is dark, then <code>isDarkMode</code> will evaluate to 0 (<code>false</code>) meaning Dark mode is not enabled.</li>
+</ul>
+<p>To automatically track when the Dark mode setting changes during an app session, you can wrap your checks like this.</p>
+<pre><code class="lang-cpp">auto revoker = settings.ColorValuesChanged([settings](auto&amp;&amp;...)
+{
+    auto foregroundRevoker = settings.GetColorValue(UIColorType::Foreground);
+    bool isDarkModeRevoker = static_cast&lt;bool&gt;(IsColorLight(foregroundRevoker));
+    wprintf(L&quot;isDarkModeRevoker: %d\n&quot;, isDarkModeRevoker);
+});
+
+</code></pre>
+<p>Your full code should look like this.</p>
+<pre><code class="lang-cpp">inline bool IsColorLight(Windows::UI::Color&amp; clr)
+{
+    return (((5 * clr.G) + (2 * clr.R) + clr.B) &gt; (8 * 128));
+}
+
+int main()
+{
+    init_apartment();
+
+    auto settings = UISettings();
+    auto foreground = settings.GetColorValue(UIColorType::Foreground);
+
+    bool isDarkMode = static_cast&lt;bool&gt;(IsColorLight(foreground));
+    wprintf(L&quot;\nisDarkMode: %u\n&quot;, isDarkMode);
+
+    auto revoker = settings.ColorValuesChanged([settings](auto&amp;&amp;...)
+        {
+            auto foregroundRevoker = settings.GetColorValue(UIColorType::Foreground);
+            bool isDarkModeRevoker = static_cast&lt;bool&gt;(IsColorLight(foregroundRevoker));
+            wprintf(L&quot;isDarkModeRevoker: %d\n&quot;, isDarkModeRevoker);
+        });
+    
+    static bool s_go = true;
+    while (s_go)
+    {
+        Sleep(50);
+    }
+}
+</code></pre>
+<p>When this code is run:</p>
+<p>If Dark mode is enabled, <code>isDarkMode</code> will evaluate to 1.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/apply-design/sample-app-dark.png" alt="A screenshot of an app in dark mode.">
+</span>
+</p>
+<p>Changing the setting from Dark mode to Light mode will make <code>isDarkModeRevoker</code> evaluate to 0.</p>
+<p><span class="mx-imgBorder">
+<img src="../images/apply-design/sample-app-light.png" alt="A screenshot of an app in light mode.">
+</span>
+</p>
+<h2 id="enable-a-dark-mode-title-bar-for-win32-applications">Enable a Dark mode title bar for Win32 applications</h2>
+<p>Windows doesn't know if an application can support Dark mode, so it assumes that it can't for backwards compatibility reasons. Some Windows development frameworks, such as <a href="../../../windows-app-sdk/index.html">Windows App SDK</a>, support Dark mode natively and change certain UI elements without any additional code. Win32 apps often don't support Dark mode, so Windows gives Win32 apps a light title bar by default.</p>
+<p>However, for any app that uses the standard Windows title bar, you can enable the dark version of the title bar when the system is in Dark mode. To enable the dark title bar, call a <a href="/windows/win32/dwm/dwm-overview">Desktop Windows Manager</a> (DWM) function called <a href="/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute">DwmSetWindowAttribute</a> on your top-level window, using the window attribute <a href="/windows/win32/api/dwmapi/ne-dwmapi-dwmwindowattribute">DWMWA_USE_IMMERSIVE_DARK_MODE</a>. (DWM renders attributes for a window.)</p>
+<p>The following examples assume you have a window with with a standard title bar, like the one created by this code.</p>
+<pre><code class="lang-cpp">BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+{
+   hInst = hInstance; // Store instance handle in our global variable
+
+   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, 0, 
+     CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
+   if (!hWnd)
+   {
+      return FALSE;
+   }
+
+   ShowWindow(hWnd, nCmdShow);
+   UpdateWindow(hWnd);
+
+   return TRUE;
+}
+</code></pre>
+<p>First, you need to import the DWM API, like this.</p>
+<pre><code class="lang-cpp">#include &lt;dwmapi.h&gt;
+</code></pre>
+<p>Then, define the <code>DWMWA_USE_IMMERSIVE_DARK_MODE</code> macros above your <code>InitInstance</code> function.</p>
+<pre><code class="lang-cpp">#ifndef DWMWA_USE_IMMERSIVE_DARK_MODE
+#define DWMWA_USE_IMMERSIVE_DARK_MODE 20
+#endif
+
+BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+{
+…
+</code></pre>
+<p>Finally, you can use the DWM API to set the title bar to use a dark color. Here, you create a <code>BOOL</code> called <code>value</code> and set it to <code>TRUE</code>. This <code>BOOL</code> is used to trigger this Windows attribute setting. Then, you use <code>DwmSetWindowAttribute</code> to change the window attribute to use Dark mode colors.</p>
+<pre><code class="lang-cpp">BOOL value = TRUE;
+::DwmSetWindowAttribute(hWnd, DWMWA_USE_IMMERSIVE_DARK_MODE, &amp;value, sizeof(value));
+</code></pre>
+<p>Here's more explanation of what this call does.</p>
+<p>The syntax block for <a href="/windows/win32/api/dwmapi/nf-dwmapi-dwmsetwindowattribute">DwmSetWindowAttribute</a> looks like this.</p>
+<pre><code class="lang-cpp">HRESULT DwmSetWindowAttribute(
+       HWND    hwnd,
+       DWORD   dwAttribute,
+  [in] LPCVOID pvAttribute,
+       DWORD   cbAttribute
+);
+</code></pre>
+<p>After passing <code>hWnd</code> (the handle to the window you want to change) as your first parameter, you need to pass in <code>DWMWA_USE_IMMERSIVE_DARK_MODE</code> as the <code>dwAttribute</code> parameter. This is a constant in the DWM API that lets the Windows frame be drawn in Dark mode colors when the Dark mode system setting is enabled. If you switch to Light mode, you will have to change <code>DWMWA_USE_IMMERSIVE_DARK_MODE</code> from 20 to 0 for the title bar to be drawn in light mode colors.</p>
+<p>The <code>pvAttribute</code> parameter points to a value of type <code>BOOL</code> (which is why you made the <code>BOOL</code> value earlier). You need <code>pvAttribute</code> to be <code>TRUE</code> to honor Dark mode for the window. If <code>pvAttribute</code> is <code>FALSE</code>, the window will use Light Mode.</p>
+<p>Lastly, <code>cbAttribute</code> needs to have the size of the attribute being set in <code>pvAttribute</code>. To do easily do this, we pass in <code>sizeof(value)</code>.</p>
+<p>Your code to draw a dark windows title bar should look like this.</p>
+<pre><code class="lang-cpp">#ifndef DWMWA_USE_IMMERSIVE_DARK_MODE
+#define DWMWA_USE_IMMERSIVE_DARK_MODE 20
+#endif
+
+
+BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
+{
+   hInst = hInstance; // Store instance handle in our global variable
+
+   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
+   BOOL value = TRUE;
+   ::DwmSetWindowAttribute(hWnd, DWMWA_USE_IMMERSIVE_DARK_MODE, &amp;value, sizeof(value));
+
+   if (!hWnd)
+   {
+      return FALSE;
+   }
+
+   ShowWindow(hWnd, nCmdShow);
+   UpdateWindow(hWnd);
+
+   return TRUE;
+}
+</code></pre>
+<p>When this code is run, the app title bar should be dark:</p>
+<p><span class="mx-imgBorder">
+<img src="../images/apply-design/title-bar-dark.png" alt="A screenshot of an app with a dark title bar.">
+</span>
+</p>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../../../get-started/make-apps-great-for-windows.html">Make your app great on Windows 11</a></li>
+<li><a href="../../../design/accessibility/accessible-text-requirements.html">Accessible text requirements</a></li>
+<li><a href="/windows/win32/dwm/dwm-overview">Desktop Windows Manager (DWM)</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/desktop/modernize/ui/apply-windows-themes.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

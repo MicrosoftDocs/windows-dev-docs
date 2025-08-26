@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Configure PowerToys with Group Policy Settings </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Configure PowerToys with Group Policy Settings ">
+    
+    <meta name="description" content="Learn how to configure and manage PowerToys utilities using Group Policy settings, administrative templates, and registry configurations for enterprise environments.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="powertoys-group-policy-configuration">PowerToys Group Policy configuration</h1>
+
+<p>PowerToys Group Policy configuration allows administrators to manage PowerToys utilities across enterprise environments using administrative templates. Since version 0.64, PowerToys includes ADMX files that enable centralized configuration of all PowerToys features through Group Policy settings.</p>
+<h2 id="install-powertoys-administrative-templates">Install PowerToys administrative templates</h2>
+<h3 id="download">Download</h3>
+<p>You can find the latest administrative templates (ADMX files) in the assets section of our newest PowerToys release on <a href="https://github.com/microsoft/PowerToys/releases">GitHub</a>. The file is named <code>GroupPolicyObjectsFiles-&lt;Version&gt;.zip</code>.</p>
+<h3 id="add-the-administrative-template-to-an-individual-computer">Add the administrative template to an individual computer</h3>
+<ol>
+<li>Copy the <em>PowerToys.admx</em> file to your Policy Definition template folder. (Example: <em>C:\Windows\PolicyDefinitions</em>)</li>
+<li>Copy the <em>PowerToys.adml</em> file to the matching language folder in your Policy Definition folder. (Example: <em>C:\Windows\PolicyDefinitions\en-US</em>)</li>
+</ol>
+<h3 id="add-the-administrative-template-to-active-directory">Add the administrative template to Active Directory</h3>
+<ol>
+<li>On a domain controller or workstation with RSAT, go to the <strong>PolicyDefinition</strong> folder (also known as the <em>Central Store</em>) on any domain controller for your domain. For older versions of Windows Server, you might need to create the <strong>PolicyDefinition</strong> folder. For more information, see <a href="https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra">How to create and manage the Central Store for Group Policy Administrative Templates in Windows</a>.</li>
+<li>Copy the <em>PowerToys.admx</em> file to the PolicyDefinition folder. (Example: <em>%systemroot%\sysvol\domain\policies\PolicyDefinitions</em>)</li>
+<li>Copy the <em>PowerToys.adml</em> file to the matching language folder in the PolicyDefinition folder. Create the folder if it doesn't already exist. (Example: <em>%systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US</em>)</li>
+<li>If your domain has more than one domain controller, the new ADMX files will be replicated to them at the next domain replication interval.</li>
+</ol>
+<h3 id="import-the-administrative-template-in-intune">Import the administrative template in Intune</h3>
+<p>You can find all instructions on how to import the administrative templates in Intune on <a href="/mem/intune/configuration/administrative-templates-import-custom#add-the-admx-and-adml-files">this page</a>.</p>
+<h3 id="scope">Scope</h3>
+<p>You will find the policies under &quot;Administrative Templates/Microsoft PowerToys&quot; in both the Computer Configuration and User Configuration folders. If both settings are configured, the setting in Computer Configuration takes precedence over the setting in User Configuration.</p>
+<h2 id="policies">Policies</h2>
+<!--Note for every dev who updates this file:
+The syntax of OMA-URI is the following: ./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys[[~<category1>]~<categoryN>]/<ADMX-DisplayName-ID>
+-->
+<h3 id="configure-global-utility-enabled-state">Configure global utility enabled state</h3>
+<p>Supported on PowerToys 0.75.0 or later.</p>
+<p>This policy configures the enabled state for all PowerToys utilities.</p>
+<ul>
+<li>If you enable this setting, all utilities will be always enabled and the user won't be able to disable it.</li>
+<li>If you disable this setting, all utilities will be always disabled and the user won't be able to enable it.</li>
+<li>If you don't configure this setting, users are able to enable or disable the utilities.</li>
+</ul>
+<p>The individual enabled state policies for the utilities will override this policy.</p>
+<h4 id="group-policy-admx-information">Group Policy (ADMX) information</h4>
+<ul>
+<li>GP unique name: ConfigureAllUtilityGlobalEnabledState</li>
+<li>GP name: Configure global utility enabled state</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h4 id="registry-information">Registry information</h4>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: ConfigureGlobalUtilityEnabledState</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h4 id="intune-information">Intune information</h4>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/ConfigureAllUtilityGlobalEnabledState</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h3 id="configure-enabled-state-for-individual-utilities">Configure enabled state for individual utilities</h3>
+<p>Supported on PowerToys 0.64.0 or later, depending on the utility.</p>
+<p>For each utility shipped with PowerToys, there's a &quot;Configure enabled state&quot; policy, which forces an enabled state for the utility.</p>
+<ul>
+<li>If you enable this setting, the utility will be always enabled and the user won't be able to disable them.</li>
+<li>If you disable this setting, the utility will be always disabled and the user won't be able to enable them.</li>
+<li>If you don't configure this setting, users are able to enable or disable the utility.</li>
+</ul>
+<p>These policies have a higher priority than, and will override, the policy &quot;Configure global utility enabled state&quot;.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>PDF file preview: There have been reports of incompatibility between the PDF Preview Handler and Outlook.</p>
+</div>
+<h4 id="table-of-utility-policies">Table of utility Policies</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Utility</th>
+<th style="text-align: left;">ADMX GP name</th>
+<th style="text-align: left;">ADMX GP unique name /<br>Registry value name /<br>Intune PolicyID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Advanced Paste</td>
+<td style="text-align: left;">Advanced Paste: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityAdvancedPaste</td>
+</tr>
+<tr>
+<td style="text-align: left;">Always On Top</td>
+<td style="text-align: left;">Always On Top: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityAlwaysOnTop</td>
+</tr>
+<tr>
+<td style="text-align: left;">Awake</td>
+<td style="text-align: left;">Awake: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityAwake</td>
+</tr>
+<tr>
+<td style="text-align: left;">Color Picker</td>
+<td style="text-align: left;">Color Picker: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityColorPicker</td>
+</tr>
+<tr>
+<td style="text-align: left;">Command Not Found</td>
+<td style="text-align: left;">Command Not Found: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityCmdNotFound</td>
+</tr>
+<tr>
+<td style="text-align: left;">Crop And Lock</td>
+<td style="text-align: left;">Crop And Lock: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityCropAndLock</td>
+</tr>
+<tr>
+<td style="text-align: left;">Environment Variables</td>
+<td style="text-align: left;">Environment Variables: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityEnvironmentVariables</td>
+</tr>
+<tr>
+<td style="text-align: left;">FancyZones</td>
+<td style="text-align: left;">FancyZones: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFancyZones</td>
+</tr>
+<tr>
+<td style="text-align: left;">File Locksmith</td>
+<td style="text-align: left;">File Locksmith: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileLocksmith</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gcode file preview</td>
+<td style="text-align: left;">Gcode file preview: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerGcodePreview</td>
+</tr>
+<tr>
+<td style="text-align: left;">Markdown file preview</td>
+<td style="text-align: left;">Markdown file preview: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerMarkdownPreview</td>
+</tr>
+<tr>
+<td style="text-align: left;">PDF file preview</td>
+<td style="text-align: left;">PDF file preview: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerPDFPreview</td>
+</tr>
+<tr>
+<td style="text-align: left;">QOI file preview</td>
+<td style="text-align: left;">QOI file preview: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerQOIPreview</td>
+</tr>
+<tr>
+<td style="text-align: left;">Source code file preview</td>
+<td style="text-align: left;">Source code file preview: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerMonacoPreview</td>
+</tr>
+<tr>
+<td style="text-align: left;">SVG file preview</td>
+<td style="text-align: left;">SVG file preview: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerSVGPreview</td>
+</tr>
+<tr>
+<td style="text-align: left;">Gcode file thumbnail</td>
+<td style="text-align: left;">Gcode file thumbnail: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerGcodeThumbnails</td>
+</tr>
+<tr>
+<td style="text-align: left;">PDF file thumbnail</td>
+<td style="text-align: left;">PDF file thumbnail: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerPDFThumbnails</td>
+</tr>
+<tr>
+<td style="text-align: left;">QOI file thumbnail</td>
+<td style="text-align: left;">QOI file thumbnail: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerQOIThumbnails</td>
+</tr>
+<tr>
+<td style="text-align: left;">STL file thumbnail</td>
+<td style="text-align: left;">STL file thumbnail: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerSTLThumbnails</td>
+</tr>
+<tr>
+<td style="text-align: left;">SVG file thumbnail</td>
+<td style="text-align: left;">SVG file thumbnail: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFileExplorerSVGThumbnails</td>
+</tr>
+<tr>
+<td style="text-align: left;">Hosts file editor</td>
+<td style="text-align: left;">Hosts file editor: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityHostsFileEditor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Image Resizer</td>
+<td style="text-align: left;">Image Resizer: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityImageResizer</td>
+</tr>
+<tr>
+<td style="text-align: left;">Keyboard Manager</td>
+<td style="text-align: left;">Keyboard Manager: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityKeyboardManager</td>
+</tr>
+<tr>
+<td style="text-align: left;">Find My Mouse</td>
+<td style="text-align: left;">Find My Mouse: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityFindMyMouse</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mouse Highlighter</td>
+<td style="text-align: left;">Mouse Highlighter: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityMouseHighlighter</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mouse Jump</td>
+<td style="text-align: left;">Mouse Jump: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityMouseJump</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mouse Pointer Crosshairs</td>
+<td style="text-align: left;">Mouse Pointer Crosshairs: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityMousePointerCrosshairs</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mouse Without Borders</td>
+<td style="text-align: left;">Mouse Without Borders: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityMouseWithoutBorders</td>
+</tr>
+<tr>
+<td style="text-align: left;">New+</td>
+<td style="text-align: left;">New+: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityNewPlus</td>
+</tr>
+<tr>
+<td style="text-align: left;">Peek</td>
+<td style="text-align: left;">Peek: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityPeek</td>
+</tr>
+<tr>
+<td style="text-align: left;">Power Rename</td>
+<td style="text-align: left;">Power Rename: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityPowerRename</td>
+</tr>
+<tr>
+<td style="text-align: left;">PowerToys Run</td>
+<td style="text-align: left;">PowerToys Run: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityPowerLauncher</td>
+</tr>
+<tr>
+<td style="text-align: left;">Quick Accent</td>
+<td style="text-align: left;">Quick Accent: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityQuickAccent</td>
+</tr>
+<tr>
+<td style="text-align: left;">Registry Preview</td>
+<td style="text-align: left;">Registry Preview: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityRegistryPreview</td>
+</tr>
+<tr>
+<td style="text-align: left;">Screen Ruler</td>
+<td style="text-align: left;">Screen Ruler: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityScreenRuler</td>
+</tr>
+<tr>
+<td style="text-align: left;">Shortcut Guide</td>
+<td style="text-align: left;">Shortcut Guide: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityShortcutGuide</td>
+</tr>
+<tr>
+<td style="text-align: left;">Text Extractor</td>
+<td style="text-align: left;">Text Extractor: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityTextExtractor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Video Conference Mute</td>
+<td style="text-align: left;">Video Conference Mute: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityVideoConferenceMute</td>
+</tr>
+<tr>
+<td style="text-align: left;">Workspaces</td>
+<td style="text-align: left;">Workspaces: Configure enabled state</td>
+<td style="text-align: left;">ConfigureEnabledUtilityWorkspaces</td>
+</tr>
+</tbody>
+</table>
+<h4 id="group-policy-admx-information-1">Group Policy (ADMX) information</h4>
+<ul>
+<li>GP unique name: See the table above.</li>
+<li>GP name: See the table above.</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h4 id="registry-information-1">Registry information</h4>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: See the table above.</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h4 id="intune-information-1">Intune information</h4>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys/&lt;PolicyID&gt;</code></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Please see the table above for the <em>PolicyID</em> value.</p>
+</div>
+<ul>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h3 id="general-settings">General settings</h3>
+<h4 id="allow-experimentation">Allow experimentation</h4>
+<p>Supported on PowerToys 0.68.0 or later.</p>
+<p>This policy configures whether PowerToys experimentation is allowed. With experimentation allowed the user sees the new features being experimented if it gets selected as part of the test group. Experimentation will only happen on Windows Insider builds.</p>
+<ul>
+<li>If this setting is enabled or not configured, the user can control experimentation in the PowerToys settings menu.</li>
+<li>If this setting is disabled, experimentation is not allowed.</li>
+</ul>
+<h5 id="group-policy-admx-information-2">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: AllowExperimentation</li>
+<li>GP name: Allow experimentation</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/General settings</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-2">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: AllowExperimentation</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h5 id="intune-information-2">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~GeneralSettings/AllowExperimentation</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h3 id="installer-and-updates">Installer and Updates</h3>
+<h4 id="disable-per-user-installation">Disable per-user installation</h4>
+<p>Supported on PowerToys 0.68.0 or later.</p>
+<p>This policy configures whether PowerToys per-user installation is allowed or not.</p>
+<ul>
+<li>If enabled, per-user installation is not allowed.</li>
+<li>If disabled or not configured, per-user installation is allowed.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can set this policy only as Computer policy.</p>
+</div>
+<h5 id="group-policy-admx-information-3">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: DisablePerUserInstallation</li>
+<li>GP name: Disable per-user installation</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates</li>
+<li>GP scope: Computer only</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-3">Registry information</h5>
+<ul>
+<li>Path: HKLM\Software\Policies\PowerToys</li>
+<li>Name: DisablePerUserInstallation</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-3">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePerUserInstallation</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="disable-automatic-downloads">Disable automatic downloads</h4>
+<p>Supported on PowerToys 0.68.0 or later.</p>
+<p>This policy configures whether the automatic download and installation of available updates is disabled or not. Updates are never downloaded on metered connections.</p>
+<ul>
+<li>If enabled, automatic download and installation is disabled.</li>
+<li>If disabled or not configured, the user can control this in the settings.</li>
+</ul>
+<h5 id="group-policy-admx-information-4">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: DisableAutomaticUpdateDownload</li>
+<li>GP name: Disable automatic downloads</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-4">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: DisableAutomaticUpdateDownload</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-4">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableAutomaticUpdateDownload</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="suspend-action-center-notification-for-new-updates">Suspend Action Center notification for new updates</h4>
+<p>Supported on PowerToys 0.68.0 or later.</p>
+<p>This policy configures whether the action center notification for new updates is suspended for 2 minor releases. (Example: if the installed version is v0.60.0, then the next notification is shown for the v0.63.* release.)</p>
+<ul>
+<li>If enabled, the notification is suspended.</li>
+<li>If disabled or not configured, the notification is shown.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The notification about new major versions is always displayed.</p>
+</div>
+<h5 id="group-policy-admx-information-5">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: SuspendNewUpdateToast</li>
+<li>GP name: Suspend Action Center notification for new updates</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-5">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: SuspendNewUpdateToast</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-5">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/SuspendNewUpdateToast</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="disable-action-center-notification-for-new-updates">Disable Action Center notification for new updates</h4>
+<p>Supported on PowerToys 0.78.0 or later.</p>
+<p>This policy configures whether the action center notification for new updates is shown or not.</p>
+<ul>
+<li>If enabled, the notification is disabled.</li>
+<li>If disabled or not configured, the user can control if the notification is shown or not.</li>
+</ul>
+<h5 id="group-policy-admx-information-6">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: DisableNewUpdateToast</li>
+<li>GP name: Disable Action Center notification for new updates</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-6">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: DisableNewUpdateToast</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-6">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableNewUpdateToast</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="do-not-show-the-release-notes-after-updates">Do not show the release notes after updates</h4>
+<p>Supported on PowerToys 0.78.0 or later.</p>
+<p>This policy allows you to configure if the window with the release notes is shown after updates.</p>
+<ul>
+<li>If enabled, the window with the release notes is not shown automatically.</li>
+<li>If disabled or not configured, the user can control this in the settings of PowerToys.</li>
+</ul>
+<h5 id="group-policy-admx-information-7">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: DoNotShowWhatsNewAfterUpdates</li>
+<li>GP name: Disable Action Center notification for new updates</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-7">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: DoNotShowWhatsNewAfterUpdates</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-7">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DoNotShowWhatsNewAfterUpdates</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h3 id="advanced-paste">Advanced Paste</h3>
+<h4 id="allow-using-online-ai-models">Allow using online AI models</h4>
+<p>Supported on PowerToys 0.81.1 or later.</p>
+<p>This policy allows you to disable Advanced Paste online AI models.</p>
+<p>If you enable or don't configure this policy, the user takes control over the enabled state of the Enable paste with AI Advanced Paste setting.</p>
+<p>If you disable this policy, the user won't be able to enable Enable paste with AI Advanced Paste setting and use Advanced Paste AI prompt nor set up the Open AI key in PowerToys Settings.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changes require a restart of Advanced Paste.</p>
+</div>
+<h5 id="group-policy-admx-information-8">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: AllowPowerToysAdvancedPasteOnlineAIModels</li>
+<li>GP name: Allow using online AI models</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/Advanced Paste</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-8">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: AllowPowerToysAdvancedPasteOnlineAIModels</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h5 id="intune-information-8">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~AdvancedPaste/AllowPowerToysAdvancedPasteOnlineAIModels</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h3 id="mouse-without-borders">Mouse Without Borders</h3>
+<h4 id="clipboard-sharing-enabled">Clipboard sharing enabled</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy configures if the user can share the clipboard between machines.</p>
+<p>If you enable or don't configure this policy, the user takes control over the clipboard sharing setting.</p>
+<p>If you disable this policy, the user won't be able to enable the clipboard sharing setting.</p>
+<h5 id="group-policy-admx-information-9">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbClipboardSharingEnabled</li>
+<li>GP name: Clipboard sharing enabled</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-9">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: MwbClipboardSharingEnabled</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h5 id="intune-information-9">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbClipboardSharingEnabled</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h4 id="connect-only-in-same-subnet">Connect only in same subnet</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy configures if connections are only allowed in the same subnet.</p>
+<p>If you enable this policy, the setting is enabled and only connections in the same subnet are allowed.</p>
+<p>If you disable this policy, the setting is disabled and all connections are allowed.</p>
+<p>If you don't configure this policy, the user takes control over the setting and can enable or disable it.</p>
+<h5 id="group-policy-admx-information-10">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbSameSubnetOnly</li>
+<li>GP name: Connect only in same subnet</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-10">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: MwbSameSubnetOnly</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-10">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbSameSubnetOnly</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="disable-user-defined-ip-address-mapping-rules">Disable user defined IP Address mapping rules</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy configures if the user can define IP Address mapping rules.</p>
+<p>If you enable this policy, the setting is disabled and the user can't define rules or use existing ones.</p>
+<p>If you disable or don't configure this policy, the user takes control over the setting.</p>
+<p>Note: Enabling this policy does not prevent policy defined mapping rules from working.</p>
+<h5 id="group-policy-admx-information-11">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbDisableUserDefinedIpMappingRules</li>
+<li>GP name: Disable user defined IP Address mapping rules</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-11">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: MwbDisableUserDefinedIpMappingRules</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-11">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbDisableUserDefinedIpMappingRules</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="disallow-blocking-screensaver-on-other-machines">Disallow blocking screensaver on other machines</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy configures if the user is allowed to disable the screensaver on the remote machines.</p>
+<p>If you enable this policy, the user won't be able to enable the &quot;block screensaver&quot; screensaver setting and the screensaver is not blocked.</p>
+<p>If you disable or don't configure this policy, the user takes control over the setting and can block the screensaver.</p>
+<h5 id="group-policy-admx-information-12">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbDisallowBlockingScreensaver</li>
+<li>GP name: Disallow blocking screensaver on other machines</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-12">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: MwbDisallowBlockingScreensaver</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-12">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbDisallowBlockingScreensaver</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="file-transfer-enabled">File transfer enabled</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy configures if the user can transfer files between machines.</p>
+<p>If you enable or don't configure this policy, the user takes control over the file sharing setting.</p>
+<p>If you disable this policy, the user won't be able to enable the file sharing Settings.</p>
+<p>Note: The file sharing feature depends on the clipboard sharing feature. Disabling clipboard sharing automatically disables file sharing too.</p>
+<h5 id="group-policy-admx-information-13">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbFileTransferEnabled</li>
+<li>GP name: File transfer enabled</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-13">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: MwbFileTransferEnabled</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h5 id="intune-information-13">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbFileTransferEnabled</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h4 id="original-user-interface-is-available">Original user interface is available</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy configures if the user can use the old Mouse Without Borders user interface.</p>
+<p>If you enable or don't configure this policy, the user takes control over the setting and can enable or disable the old user interface.</p>
+<p>If you disable this policy, the user won't be able to enable the old user interface.</p>
+<h5 id="group-policy-admx-information-14">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbUseOriginalUserInterface</li>
+<li>GP name: Original user interface is available</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-14">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: MwbUseOriginalUserInterface</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h5 id="intune-information-14">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbUseOriginalUserInterface</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h4 id="validate-remote-machine-ip-address">Validate remote machine IP Address</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy configures if reverse DNS lookup is used to validate the remote machine IP Address.</p>
+<p>If you enable this policy, the setting is enabled and the IP Address is validated.</p>
+<p>If you disable this policy, the setting is disabled and the IP Address is not validated.</p>
+<p>If you don't configure this policy, the user takes control over the setting and can enable or disable it.</p>
+<h5 id="group-policy-admx-information-15">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbValidateRemoteIp</li>
+<li>GP name: Validate remote machine IP Address</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-15">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: MwbValidateRemoteIp</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000001</code></li>
+</ul>
+<h5 id="intune-information-15">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbValidateRemoteIp</code></li>
+<li>Example value: <code>&lt;enabled/&gt;</code></li>
+</ul>
+<h4 id="predefined-ip-address-mapping-rules">Predefined IP Address mapping rules</h4>
+<p>Supported on PowerToys 0.83.0 or later.</p>
+<p>This policy allows you to define IP Address mapping rules.</p>
+<p>If you enable this policy, you can define IP Address mapping rules that the user can't change or disable.
+Please enter one mapping per line in the format: &quot;hostname IP&quot;</p>
+<p>If you disable or don't configure this policy, no predefined rules are applied.</p>
+<h5 id="group-policy-admx-information-16">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: MwbPolicyDefinedIpMappingRules</li>
+<li>GP name: Predefined IP Address mapping rules</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/MouseWithoutBorders</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-16">Registry information</h5>
+<ul>
+<li><p>Path: Software\Policies\PowerToys</p>
+</li>
+<li><p>Name: MwbPolicyDefinedIpMappingRules</p>
+</li>
+<li><p>Type: MULTI_SZ</p>
+</li>
+<li><p>Example value:</p>
+<pre><code>Host1 192.0.2.1
+Host2 192.0.2.2
+Host3 192.0.2.3
+</code></pre>
+</li>
+</ul>
+<h5 id="intune-information-16">Intune information</h5>
+<ul>
+<li><p>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~MouseWithoutBorders/MwbPolicyDefinedIpMappingRules</code></p>
+</li>
+<li><p>Example value:</p>
+<pre><code>&lt;enabled/&gt;
+&lt;data id=&quot;MwbPolicyDefinedIpMappingsList&quot; value=&quot;Host1 192.0.2.1&amp;#xF000Host2 192.0.2.2&amp;#xF000Host3 192.0.2.3&quot;/&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Syntax for the value property from the data element:
+<code>&lt;Hostname&gt; &lt;IP Address&gt;&amp;#xF000;&lt;Hostname 2&gt; &lt;IP Address 2&gt;&amp;#xF000;&lt;Hostname 3&gt; &lt;IP Address 3&gt;</code></p>
+</div>
+</li>
+</ul>
+<h3 id="new">New+</h3>
+<h4 id="hide-template-filename-extension">Hide template filename extension</h4>
+<p>Supported on PowerToys 0.85.0 or later.</p>
+<p>This policy configures if the template filenames are shown with extension or not.</p>
+<p>If you enable this policy, the setting is enabled and the extension is hidden.</p>
+<p>If you disable this policy, the setting is disabled and the extension is shown.</p>
+<p>If you don't configure this policy, the user takes control over the setting and can enable or disable it.</p>
+<h5 id="group-policy-admx-information-17">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: NewPlusHideTemplateFilenameExtension</li>
+<li>GP name: Hide template filename extension</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/New+</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-17">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: NewPlusHideTemplateFilenameExtension</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h5 id="intune-information-17">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~NewPlus/NewPlusHideTemplateFilenameExtension</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h3 id="powertoys-run">PowerToys Run</h3>
+<h4 id="configure-enabled-state-for-all-plugins">Configure enabled state for all plugins</h4>
+<p>Supported on PowerToys 0.75.0 or later.</p>
+<p>This policy configures the enabled state for all PowerToys Run plugins. All plugins will have the same state.</p>
+<ul>
+<li>If you enable this setting, the plugins will be always enabled and the user won't be able to disable it.</li>
+<li>If you disable this setting, the plugins will be always disabled and the user won't be able to enable it.</li>
+<li>If you don't configure this setting, users are able to enable or disable the plugins.</li>
+</ul>
+<p>You can override this policy for individual plugins using the policy &quot;Configure enabled state for individual plugins&quot;.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changes require a restart of PowerToys Run.</p>
+</div>
+<h5 id="group-policy-admx-information-18">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: PowerToysRunAllPluginsEnabledState</li>
+<li>GP name: Configure enabled state for all plugins</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/PowerToys Run</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-18">Registry information</h5>
+<ul>
+<li>Path: Software\Policies\PowerToys</li>
+<li>Name: PowerToysRunAllPluginsEnabledState</li>
+<li>Type: DWORD</li>
+<li>Example value: <code>0x00000000</code></li>
+</ul>
+<h5 id="intune-information-18">Intune information</h5>
+<ul>
+<li>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunAllPluginsEnabledState</code></li>
+<li>Example value: <code>&lt;disabled/&gt;</code></li>
+</ul>
+<h4 id="configure-enabled-state-for-individual-plugins">Configure enabled state for individual plugins</h4>
+<p>Supported on PowerToys 0.75.0 or later.</p>
+<p>With this policy you can configure an individual enabled state for each PowerToys Run plugin that you add to the list.</p>
+<p>If you enable this setting, you can define the list of plugins and their enabled states:</p>
+<ul>
+<li>The value name (first column) is the plugin ID. You will find it in the <code>plugin.json</code> file which is located in the plugin folder.</li>
+<li>The value (second column) is a numeric value: 0 for disabled, 1 for enabled and 2 for user takes control.</li>
+<li>Example to disable the Program plugin: <code>791FC278BA414111B8D1886DFE447410 | 0</code></li>
+</ul>
+<p>If you disable or don't configure this policy, either the user or the policy &quot;Configure enabled state for all plugins&quot; takes control over the enabled state of the plugins.</p>
+<p>You can set the enabled state for all plugins not controlled by this policy using the policy &quot;Configure enabled state for all plugins&quot;.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changes require a restart of PowerToys Run.</p>
+</div>
+<h5 id="group-policy-admx-information-19">Group Policy (ADMX) information</h5>
+<ul>
+<li>GP unique name: PowerToysRunIndividualPluginEnabledState</li>
+<li>GP name: Configure enabled state for individual plugins</li>
+<li>GP path: Administrative Templates/Microsoft PowerToys/PowerToys Run</li>
+<li>GP scope: Computer and user</li>
+<li>ADMX file name: <em>PowerToys.admx</em></li>
+</ul>
+<h5 id="registry-information-19">Registry information</h5>
+<ul>
+<li><p>Path: Software\Policies\PowerToys\PowerLauncherIndividualPluginEnabledList</p>
+</li>
+<li><p>Name: The plugin ID from the <code>plugin.json</code> file.</p>
+</li>
+<li><p>Type: STRING</p>
+</li>
+<li><p>Example values:</p>
+<pre><code>Software\Policies\PowerToys\0778F0C264114FEC8A3DF59447CF0A74 = 2 (=&gt; User can enable/disable the OneNote plugin.)
+Software\Policies\PowerToys\791FC278BA414111B8D1886DFE447410 = 0 (=&gt; Program plugin force disabled.)
+Software\Policies\PowerToys\CEA0FDFC6D3B4085823D60DC76F28855 = 1 (=&gt; Calculator plugin force enabled.)
+</code></pre>
+</li>
+</ul>
+<h5 id="intune-information-19">Intune information</h5>
+<ul>
+<li><p>OMA-URI: <code>./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~PowerToysRun/PowerToysRunIndividualPluginEnabledState</code></p>
+</li>
+<li><p>Example value:</p>
+<pre><code>&lt;enabled/&gt;
+&lt;data id=&quot;PowerToysRunIndividualPluginEnabledList&quot; value=&quot;0778F0C264114FEC8A3DF59447CF0A74&amp;#xF000;2&amp;#xF000;791FC278BA414111B8D1886DFE447410&amp;#xF000;0&amp;#xF000;CEA0FDFC6D3B4085823D60DC76F28855&amp;#xF000;1&quot;/&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Syntax for the value property from the data element:
+<code>&lt;PluginID&gt;&amp;#xF000;&lt;Number&gt;&amp;#xF000;&lt;PluginID&gt;&amp;#xF000;&lt;Number&gt;</code></p>
+</div>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/grouppolicy.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

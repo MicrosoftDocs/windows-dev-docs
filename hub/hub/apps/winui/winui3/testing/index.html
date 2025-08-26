@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Test apps built with the Windows App SDK and WinUI </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Test apps built with the Windows App SDK and WinUI ">
+    
+    <meta name="description" content="In this topic we recommend some approaches for testing and validating functionality in apps created with the Windows App SDK and Windows UI Library (WinUI) user interface (UI) features.">
+      <link rel="shortcut icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../../index.html">
+                <img id="logo" class="svg" src="../../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="test-apps-built-with-the-windows-app-sdk-and-winui">Test apps built with the Windows App SDK and WinUI</h1>
+
+<p>In this topic we provide some recommendations for how to test and validate functionality in apps created with the <a href="/windows/apps/windows-app-sdk/">Windows App SDK</a> using <a href="/windows/apps/winui/winui3/">Windows UI Library (WinUI)</a> user interface (UI) features.</p>
+<h2 id="how-do-i-test-winui-functionality-in-my-app">How do I test WinUI functionality in my app?</h2>
+<p>Most object types under the Microsoft.UI.Xaml namespaces must be used from a UI thread in a Xaml application process. (For details on testing apps created with Windows App SDK that don't use WinUI, see the following section, <a href="#how-do-i-test-non-winui-functionality-in-my-app">How do I test non-WinUI functionality in my app?</a>.)</p>
+<p>The following steps describe how to use Visual Studio to test code that depends on Microsoft.UI.Xaml types and executes in the context of a Xaml application:</p>
+<ol>
+<li><p>Create a unit test project in the same solution as the app you want to test. (This uses <a href="/visualstudio/test/using-microsoft-visualstudio-testtools-unittesting-members-in-unit-tests">MSTest</a> to execute the test code and will initialize a Xaml Window and a Xaml UI Thread.)</p>
+<p>Right click your solution in Solution Explorer, select <strong>Add -&gt; New Project</strong> from the context menu, and choose <strong>Unit Test App (WinUI 3 in Desktop)</strong> for C# or <strong>Unit Test App (WinUI 3)</strong> for C++.</p>
+<p><span class="mx-imgBorder">
+<img src="media/visual-studio-new-project-window.png" alt="Screenshot of the Visual Studio 'Create a new project' window.">
+</span>
+</p>
+</li>
+<li><p>Mark your test methods with the <code>[UITestMethod]</code> attribute instead of the standard <code>[TestMethod]</code> attribute to ensure they execute on the UI thread.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend that you refactor any code to be tested by pulling it out of the main app project and placing it into a library project. Both your app project and your unit test project can then reference that library project.</p>
+</div>
+<p>See <a href="create-winui-unit-test-project.html">Unit tests for Windows UI Library (WinUI) apps in Visual Studio</a> for an example of using this test project.</p>
+<h2 id="how-do-i-test-non-winui-functionality-in-my-app">How do I test non-WinUI functionality in my app?</h2>
+<p>In many cases, an app includes functionality that does not depend on Microsoft.UI.Xaml types but still needs testing. Various tools are available for testing .NET code, including <a href="/dotnet/core/testing/unit-testing-with-mstest">MSTest</a>, <a href="/dotnet/core/testing/unit-testing-with-nunit">NUnit</a> and <a href="/dotnet/core/testing/unit-testing-with-dotnet-test">xUnit</a>. For more details on testing .NET apps, see <a href="/dotnet/core/testing/">Testing in .NET</a>.</p>
+<p>In Visual Studio, you can create a new project for any of these testing tools by right clicking your solution in Solution Explorer, selecting <strong>Add -&gt; New Project</strong> from the context menu, choosing <strong>C#</strong> from the <strong>All languages</strong> selector/<strong>Windows</strong> from the <strong>All languages</strong> selector/<strong>Test</strong> from the <strong>All project types</strong> selector, and then picking the appropriate testing tool from the list (<strong>MSTest Test Project</strong>, <strong>NUnit Test Project</strong> or <strong>xUnit Test Project</strong>).</p>
+<p>When creating a new MSTest, NUnit or xUnit project that references a WinUI project, you must:</p>
+<ol>
+<li><p>Update the <code>TargetFramework</code> in the .csproj file of your testing project. This value must match the <code>TargetFramework</code> in the WinUI project (). By default MSTest, NUnit and xUnit projects target the full range of platforms supported by .NET, but a WinUI project only supports Windows and has a more specific TargetFramework.</p>
+<p>For example, if targeting .NET 8, update the TargetFramework of the unit test project from
+<code>&lt;TargetFramework&gt;net8.0&lt;/TargetFramework&gt;</code> to <code>&lt;TargetFramework&gt;net8.0-windows10.0.19041.0&lt;/TargetFramework&gt;</code>.</p>
+</li>
+<li><p>Update the RuntimeIdentifiers in your test project.</p>
+<p><code>&lt;RuntimeIdentifiers Condition=&quot;$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &amp;gt;= 8&quot;&gt;win-x86;win-x64;win-arm64&lt;/RuntimeIdentifiers&gt;</code></p>
+<p><code>&lt;RuntimeIdentifiers Condition=&quot;$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &amp;lt; 8&quot;&gt;win10-x86;win10-x64;win10-arm64&lt;/RuntimeIdentifiers&gt;</code></p>
+</li>
+<li><p>Add the following property to the <code>PropertyGroup</code> in .csproj file of your test project to ensure that the test loads the WinAppSDK runtime:
+<code>&lt;WindowsAppSdkBootstrapInitialize&gt;true&lt;/WindowsAppSdkBootstrapInitialize&gt;</code></p>
+</li>
+<li><p>Ensure that the Windows App SDK runtime is installed on the machine running the test. For more information on Windows App SDK deployment, see <a href="../../../windows-app-sdk/deploy-unpackaged-apps.html">Windows App SDK deployment guide for framework-dependent apps packaged with external location (or unpackaged)</a>.</p>
+</li>
+</ol>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/winui/winui3/testing/index.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Introduction to Windows App Performance </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Introduction to Windows App Performance ">
+    
+    <meta name="description" content="Introduction to Windows app performance testing, measurement, and optimization improvements. Performance metrics include CPU, Memory, Power, Network, Storage, and Animation.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="introduction-to-windows-application-performance">Introduction to Windows Application Performance</h1>
+
+<section class="row">
+<div class="column">
+<p><img src="images/measurement.png" alt="Measurement logo"></p>
+</div>
+<div class="column span2">
+<p>Performance is an aspect of software development that focuses on measuring and improving code. After reading this article, you will have a better idea of: what performance entails, why it is important for you and your customers, and how to get started with measuring your application's performance.</p>
+</div>
+</section>
+<h2 id="what-is-application-performance">What is application performance?</h2>
+<p>Performance is the measure of how effectively your application uses the system's resources to do what you've designed it to do. It covers different aspects of how your program interacts with the underlying device. This can include things like:</p>
+<ul>
+<li>CPU usage</li>
+<li>Memory consumption</li>
+<li>Power consumption</li>
+<li>Network and storage utilization</li>
+<li>Animation performance</li>
+</ul>
+<p>...and more.</p>
+<p>All of these different properties have an element of cost associated with them: for example, how much CPU does my application use? How much of the user's bandwidth will it consume? How fast does this particular page of my application load? Measurement is therefore central to performance.</p>
+<h2 id="why-is-it-important">Why is it important?</h2>
+<p>Users expect performance as a fundamental property of the software they use. They want their applications to be responsive and make efficient use of their system's resources. Applications that exhibit poor performance cause frustration, which can lead to reduced user engagement. To provide your customers with the best possible experience, it is therefore crucial to make performance a regular part of your development workflow.</p>
+<h2 id="when-should-you-measure-application-performance">When should you measure application performance?</h2>
+<section class="row">
+<div class="column">
+<p><img src="images/graph.png" alt="Performance graphs"></p>
+</div>
+<div class="column span2">
+<p>Application performance can span many stages of the development process. It has implications on everything ranging from your choice of data structure to the technology that you choose for building your application.</p>
+<p>Keep performance in mind as you are developing your application, and plan to do regular performance testing as part of updating and maintaining your application.</p>
+</div>
+</section>
+<h2 id="how-is-application-performance-measured">How is application performance measured?</h2>
+<p>Here are some suggestions for how to approach testing your application for performance.</p>
+<ul>
+<li><strong>Leverage your knowledge of your application.</strong> Understanding the most common scenarios for your users will enable you to spend your time wisely on optimizing the right things. Unclear scenarios can make your measurements difficult to interpret, so don't skip this step! If you have data available on how users interact with your application, this would be a great time to look at it.
+<ul>
+<li>Where are your users spending most of their time?</li>
+<li>What are the most important things that a customer will do with your software?</li>
+<li>What are your application's hardware requirements?</li>
+</ul>
+</li>
+<li><strong>Set performance goals for your most important user scenarios.</strong></li>
+<li><strong>Be precise about what you are trying to optimize.</strong> Is it CPU? Battery? Network throughput?</li>
+<li><strong>Select the tools you will use to do your measurements.</strong></li>
+<li><strong>Apply a scientific mindset when testing.</strong> Create benchmarks in a controlled environment. Then, make your change, and re-measure to see how your changes have affected your application's behavior.</li>
+<li><strong>Add regression testing into your test environment.</strong> This will ensure that your performance metrics don't regress over time. Modern hardware is complex and measuring the impact of your performance improvements can be a challenge. Investigating, measuring, and testing your application performance in these ways will ensure you know the impact of your work.</li>
+</ul>
+<h3 id="intertwining-metrics">Intertwining metrics</h3>
+<p>While you will typically focus on one area of performance during your analysis, be aware that areas are often intertwined. An improvement in one can cascade into an improvement in the other areas.</p>
+<p>For example, fixing power consumption is frequently a synchronization problem. Reducing memory usage can result in reducing the time spent using the CPU.</p>
+<p>There can also be situations where additional resources spent in one area yield a more impactful improvement in another area.</p>
+<p>For example, increasing memory consumption can decrease network or storage utilization through caching.</p>
+<p>The decision to make a change depends on what is most important for your customers. It is also part of the challenge (and fun!) of performance work.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>With this background in place, here are some actions you can now take:</p>
+<ul>
+<li><strong>Identify your application's most common scenarios</strong>. These will be the basis of what you are trying to measure.</li>
+<li><strong>Figure out your test strategy.</strong> What will be your test environment and choice of measurement tools?</li>
+</ul>
+<p>Head to the <a href="index.html">Windows app performance overview</a> to learn more about the tools and guidance that are available for you to use on your performance journey.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/performance/introduction.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

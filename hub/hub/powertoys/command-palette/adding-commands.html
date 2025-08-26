@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Adding commands to your extension </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Adding commands to your extension ">
+    
+    <meta name="description" content="Learn how to add new commands to your Command Palette extension.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adding-commands-to-your-extension">Adding commands to your extension</h1>
+
+<p><strong>Previous</strong>: <a href="creating-an-extension.html">Creating an extension</a>. We'll be starting with the project created in that article.</p>
+<p>Now that you've created your extension, it's time to add commands to it.</p>
+<h2 id="add-commands">Add commands</h2>
+<p>We can start by navigating to the <code>/Pages/&lt;ExtensionName&gt;Page.cs</code> file. This file is the <a href="microsoft-commandpalette-extensions-toolkit/listpage.html">ListPage</a> that will be displayed when the user selects your extension. In there you should see:</p>
+<pre><code class="lang-csharp">public &lt;ExtensionName&gt;Page()
+{
+    Icon = IconHelpers.FromRelativePath(&quot;Assets\\StoreLogo.png&quot;);
+    Title = &quot;My sample extension&quot;;
+    Name = &quot;Open&quot;;
+}
+public override IListItem[] GetItems()
+{
+    return [
+        new ListItem(new NoOpCommand()) { Title = &quot;TODO: Implement your extension here&quot; }
+    ];
+}
+</code></pre>
+<p>Here you can see that we've set the icon for the page, the title, and the name that's shown at the top-level when you have the command selected. The <code>GetItems</code> method is where you'll return the list of commands that you want to show on this page. Right now, it's just returning a single command that does nothing. Let's instead try making that command open <em>this</em> page in the user's default web browser.</p>
+<ol>
+<li>Update <code>GetItems</code> to the following:</li>
+</ol>
+<pre><code class="lang-csharp">public override IListItem[] GetItems()
+{
+    var command = new OpenUrlCommand(&quot;https://learn.microsoft.com/windows/powertoys/command-palette/adding-commands&quot;);
+    return [
+        new ListItem(command)
+        {
+            Title = &quot;Open the Command Palette documentation&quot;,
+        }
+    ];
+}
+</code></pre>
+<p>To update the extension in the Command Palette you need to:</p>
+<ol>
+<li>Deploy your extension</li>
+<li>In the Command Palette, type the &quot;reload&quot; command to refresh the extensions in the palette</li>
+</ol>
+<p><img src="../../images/command-palette/reload.png" alt="Screenshot of reload"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There are several reload options, make sure to select the <strong>Reload Command Palette extensions</strong></p>
+</div>
+<ol>
+<li>Scroll down to your extension and press <code>Enter</code></li>
+<li>Press <code>enter</code> on <code>Open the Command Palette documentation</code></li>
+<li>You should see that the command opens the Command Palette documentation</li>
+</ol>
+<p>The <strong>OpenUrlCommand</strong> is a helper for opening a URL in the user's default web browser.</p>
+<h2 id="debugging-extension">Debugging Extension</h2>
+<p>As your building your extension, you'll most likely want to debug it.</p>
+<ol>
+<li>Add a debug message to the <code>GetItems</code> function.</li>
+</ol>
+<pre><code class="lang-diff">    public override IListItem[] GetItems()
+    {
+        var command = new OpenUrlCommand(&quot;https://learn.microsoft.com/windows/powertoys/command-palette/adding-commands&quot;);
+    
++       Debug.Write(&quot;Debug message from GetItems&quot;);
+    
+        return [
+            new ListItem(command)
+            {
+                Title = &quot;Open the Command Palette documentation&quot;,
+            }
+        ];
+    }
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>Confirm you're in Debug configuration</li>
+</ol>
+<details>
+  <summary>Instructions to confirm debug configuration</summary>
+<ol>
+<li>Look at the toolbar at the top of Visual Studio</li>
+<li>You’ll see a dropdown that says either <code>Debug</code> or <code>Release</code> (next to the green &quot;Start&quot; button ▶️)</li>
+<li>If it says <code>Release</code>, click the dropdown and select <code>Debug</code>.</li>
+</ol>
+<p><img src="../../images/command-palette/debug-configuration.png" alt="Screenshot of Visual Studio's toolbar that displays Debug"></p>
+</details>
+<ol>
+<li>Run the app in debug by pressing the green &quot;Start&quot; button ▶️ or press <code>F5</code></li>
+<li>Ensure the Output window is set to show <code>Debug</code> output (Ctrl + Alt + O)</li>
+</ol>
+<p><img src="../../images/command-palette/output.png" alt="Screenshot of Visual Studio's Output panel"></p>
+<ol>
+<li>In the Command Palette, run <code>reload</code></li>
+<li>Go to your extension and select <code>Open the Command Palette documentation</code>.</li>
+<li>In Visual Studio's Output window, you should see <code>Debug message from GetItems</code></li>
+</ol>
+<h2 id="invokablecommand-command">InvokableCommand Command</h2>
+<p>Let's continue building a new command, that shows a <strong>MessageBox</strong>. To do that, we need to create a new class that implements <code>InvokableCommand</code>.</p>
+<ol>
+<li>In Visual Studio, Add a New Class File to your <code>Pages</code> directory
+<ul>
+<li>Keyboard Shortcut: Press Ctrl + Shift + A</li>
+<li>Or in the Solution Explorer, go to Project &gt; Add New Item...</li>
+</ul>
+</li>
+<li>In the Add New Item dialog:
+<ol>
+<li>Select Class from the list.</li>
+<li>Name your class file: <code>ShowMessageCommand.cs</code></li>
+<li>Click Add.</li>
+</ol>
+</li>
+<li>Replace the default class code with:</li>
+</ol>
+<pre><code class="lang-csharp">using System.Runtime.InteropServices;
+
+namespace &lt;ExtensionName&gt;;
+
+internal sealed partial class ShowMessageCommand : InvokableCommand
+{
+    public override string Name =&gt; &quot;Show message&quot;;
+    public override IconInfo Icon =&gt; new(&quot;\uE8A7&quot;);
+
+    public override CommandResult Invoke()
+    {
+        // 0x00001000 is MB_SYSTEMMODAL, which will display the message box on top of other windows.
+        _ = MessageBox(0, &quot;I came from the Command Palette&quot;, &quot;What's up?&quot;, 0x00001000);
+        return CommandResult.KeepOpen();
+    }
+
+
+    [DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Unicode)]
+    public static extern int MessageBox(IntPtr hWnd, string text, string caption, uint type);
+}
+</code></pre>
+<p>Now we can add this command to the list of commands in the <code>&lt;ExtensionName&gt;Page.cs</code> file:</p>
+<ol>
+<li>In the <code>&lt;ExtensionName&gt;.cs</code>, update the <code>GetItems</code>:</li>
+</ol>
+<pre><code class="lang-csharp">public override IListItem[] GetItems()
+{
+    var command = new OpenUrlCommand(&quot;https://learn.microsoft.com/windows/powertoys/command-palette/creating-an-extension&quot;);
+    var showMessageCommand = new ShowMessageCommand();
+    return [
+        new ListItem(command)
+        {
+            Title = &quot;Open the Command Palette documentation&quot;,
+        },
+        new ListItem(showMessageCommand),
+    ];
+}
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p>And presto - a command to show a message box!</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>At about this point, you'll probably want to initialize a git repo / {other source control method of your choice} for your project. This will make it easier to track changes, and to share your extension with others.</p>
+<p>We recommend using GitHub, as it's easy to collaborate on your extension with others, get feedback, and share it with the world.</p>
+</div>
+<h2 id="types-of-pages">Types of Pages</h2>
+<p>So far, we've only worked with commands that &quot;do something&quot;. However, you can also add commands that show additional pages within the Command Palette. There are two types of &quot;Commands&quot; in the Palette:</p>
+<ul>
+<li><code>InvokableCommand</code> - These are commands that <strong>do something</strong></li>
+<li><code>IPage</code> - These are commands that <strong>show something</strong></li>
+</ul>
+<p>Because <code>IPage</code> implementations are <strong>ICommand</strong>'s, you can use them anywhere you can use commands. This means you can add them to the top-level list of commands, or to a list of commands on a page, the context menu on an item, etc.</p>
+<p>There are two different kinds of pages you can show:</p>
+<ul>
+<li><a href="microsoft-commandpalette-extensions-toolkit/listpage.html">ListPage</a> - This is a page that shows a list of commands. This is what we've been working with so far.</li>
+</ul>
+<p><img src="../../images/command-palette/list-page.png" alt="Screenshot of ListPage"></p>
+<ul>
+<li><a href="microsoft-commandpalette-extensions-toolkit/contentpage.html">ContentPage</a> - This is a page that shows rich content to the user. This allows you to specify abstract content, and let Command Palette worry about rendering the content in a native experience. There are two different types of content supported so far:
+<ul>
+<li><a href="using-markdown-content.html">Markdown content</a> - This is content that's written in Markdown, and is rendered in the Command Palette. See <a href="microsoft-commandpalette-extensions-toolkit/markdowncontent.html">MarkdownContent</a> for details.</li>
+</ul>
+</li>
+</ul>
+<p><img src="../../images/command-palette/markdown.png" alt="Screenshot of extension using ContentPage"></p>
+<ul>
+<li><a href="using-form-pages.html">Form content</a> - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by <a href="https://aka.ms/adaptive-cards">Adaptive Cards</a> This is useful for getting user input, or displaying more complex layouts of information. See <a href="microsoft-commandpalette-extensions-toolkit/formcontent.html">FormContent</a> for details.</li>
+</ul>
+<p><img src="../../images/command-palette/form-toggle-command-palette.png" alt="Screenshot of Form content"></p>
+<h2 id="add-more-commands">Add more commands</h2>
+<p>Start by adding a new page that shows a list of commands. Create a new class that implements <strong>ListPage</strong>.</p>
+<ol>
+<li>In the <code>Pages</code> folder, create a new class called <code>MySecondPage</code></li>
+<li>Update the code to:</li>
+</ol>
+<pre><code class="lang-csharp">using Microsoft.CommandPalette.Extensions.Toolkit;
+using System.Linq;
+
+namespace &lt;ExtensionName&gt;;
+
+internal sealed partial class MySecondPage : ListPage
+{
+    public MySecondPage()
+    {
+        Icon = new(&quot;\uF147&quot;); // Dial2
+        Title = &quot;My second page&quot;;
+        Name = &quot;Open&quot;;
+    }
+
+    public override IListItem[] GetItems()
+    {
+        // Return 100 CopyText commands
+        return Enumerable
+            .Range(0, 100)
+            .Select(i =&gt; new ListItem(new CopyTextCommand($&quot;{i}&quot;)) 
+            {
+                Title = $&quot;Copy text {i}&quot; 
+            }).ToArray();
+    }
+}
+</code></pre>
+<p>1.Update the <code>&lt;ExtensionName&gt;Page.cs</code> to include this new page:</p>
+<pre><code class="lang-diff">    public override IListItem[] GetItems()
+    {
+        OpenUrlCommand command = new(&quot;https://learn.microsoft.com/windows/powertoys/command-palette/creating-an-extension&quot;);
+        return [
+            new ListItem(command)
+            {
+                Title = &quot;Open the Command Palette documentation&quot;,
+            },
+            new ListItem(new ShowMessageCommand()),
++           new ListItem(new MySecondPage()) { Title = &quot;My second page&quot;, Subtitle = &quot;A second page of commands&quot; },
+        ];
+    }
+</code></pre>
+<ol>
+<li>Deploy your extension</li>
+<li>In Command Palette, <code>Reload</code></li>
+</ol>
+<p>You should now see a new page in your extension that shows 100 commands that copy a number to the clipboard.</p>
+<h3 id="next-up-update-a-list-of-commands">Next up: <a href="update-a-list-of-commands.html">Update a list of commands</a></h3>
+<h2 id="related-content">Related content</h2>
+<ul>
+<li><a href="overview.html">PowerToys Command Palette utility</a></li>
+<li><a href="extensibility-overview.html">Extensibility overview</a></li>
+<li><a href="samples.html">Extension samples</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/adding-commands.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

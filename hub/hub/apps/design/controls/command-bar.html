@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Command bar </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Command bar ">
+    
+    <meta name="description" content="Learn how to use command bar controls to give users easy access to your app&#39;s most common commands and tasks.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="command-bar">Command bar</h1>
+
+<p>Command bars provide users with easy access to your app's most common tasks. Command bars can provide access to app-level or page-specific commands and can be used with any navigation pattern.</p>
+<p><img src="images/controls-appbar-icons.png" alt="Example of a command bar with icons"></p>
+<h2 id="is-this-the-right-control">Is this the right control?</h2>
+<p>The CommandBar control is a general-purpose, flexible, light-weight control that can display both complex content, such as images or text blocks, as well as simple commands such as <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton">AppBarToggleButton</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator">AppBarSeparator</a> controls.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>XAML provides both the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar">AppBar</a> control and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar">CommandBar</a> control. You should use the AppBar only when you are upgrading a Universal Windows 8 app that uses the AppBar, and need to minimize changes. For new apps in Windows 10, we recommend using the CommandBar control instead. This document assumes you are using the CommandBar control.</p>
+</div>
+<h2 id="anatomy">Anatomy</h2>
+<p>By default, the command bar shows a row of icon buttons and an optional &quot;see more&quot; button, which is represented by an ellipsis [...]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.</p>
+<p><img src="images/command-bar-compact.png" alt="Screenshot showing a closed command bar."></p>
+<p>The command bar can also be shown in a closed minimal state that looks like this. See the <a href="#open-and-closed-states">Open and closed states</a> section for more info.</p>
+<p><img src="images/command-bar-minimal.gif" alt="Screenshot showing a command bar in a closed minimal state."></p>
+<p>Here's the same command bar in its open state. The labels identify the main parts of the control.</p>
+<p><img src="images/commandbar-anatomy-open.png" alt="Screenshot showing a command bar in its open state."></p>
+<p>The command bar is divided into 4 main areas:</p>
+<ul>
+<li>The content area is aligned to the left side of the bar. It is shown if the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a> property is populated.</li>
+<li>The primary command area is aligned to the right side of the bar. It is shown if the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.primarycommands">PrimaryCommands</a> property is populated.</li>
+<li>The &quot;see more&quot; [...] button is shown on the right of the bar. Pressing the &quot;see more&quot; [...] button reveals primary command labels and opens the overflow menu if there are secondary commands. The button will not be visible when no primary command labels or secondary labels are present. To change default behavior, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.overflowbuttonvisibility">OverflowButtonVisibility</a> property.</li>
+<li>The overflow menu is shown only when the command bar is open and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.secondarycommands">SecondaryCommands</a> property is populated. When space is limited, primary commands will move into the SecondaryCommands area. To change default behavior, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.isdynamicoverflowenabled">IsDynamicOverflowEnabled</a> property.</li>
+</ul>
+<p>The layout is reversed when the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection">FlowDirection</a> is <strong>RightToLeft</strong>.</p>
+<h2 id="placement">Placement</h2>
+<p>Command bars can be placed at the top of the app window, at the bottom of the app window, and inline, by embedding them in a layout control such as <code>Grid.row</code>.</p>
+<p><img src="images/appbar-guidelines-placement-1.png" alt="Example 1 of app bar placement"></p>
+<ul>
+<li>For small handheld devices, we recommend positioning command bars at the bottom of the screen for easy reachability.</li>
+<li>For devices with larger screens, placing command bars near the top of the window makes them more noticeable and discoverable.</li>
+</ul>
+<p>Use the <a href="/uwp/api/windows.graphics.display.displayinformation.diagonalsizeininches">DiagonalSizeInInches</a> API to determine physical screen size.</p>
+<p>Command bars can be placed in the following screen regions on single-view screens (left example) and on multi-view screens (right example). Inline command bars can be placed anywhere in the action space.</p>
+<p><img src="images/appbar-guidelines-placement-2.png" alt="Example 2 of app bar placement"></p>
+<blockquote>
+<p><strong>Touch devices</strong>: If the command bar must remain visible to a user when the touch keyboard, or Soft Input Panel (SIP), appears then you can assign the command bar to the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.bottomappbar">BottomAppBar</a> property of a Page and it will move to remain visible when the SIP is present. Otherwise, you should place the command bar inline and positioned relative to your app content.</p>
+</blockquote>
+<h2 id="create-a-command-bar">Create a command bar</h2>
+<div class="checklist">
+<ul>
+<li><strong>Important APIs:</strong> <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar">CommandBar class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton">AppBarToggleButton class</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator">AppBarSeparator class</a></li>
+</ul>
+</div>
+<div class="nextstepaction">
+<p><a href="winui3gallery:/item/CommandBar">Open the WinUI 3 Gallery app and see the CommandBar in action</a></p>
+</div>
+<blockquote>
+<p>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or get the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a></p>
+</blockquote>
+
+<p>This example creates the command bar shown previously.</p>
+<pre><code class="lang-xaml">&lt;CommandBar&gt;
+    &lt;AppBarToggleButton Icon=&quot;Shuffle&quot; Label=&quot;Shuffle&quot; Click=&quot;AppBarButton_Click&quot; /&gt;
+    &lt;AppBarToggleButton Icon=&quot;RepeatAll&quot; Label=&quot;Repeat&quot; Click=&quot;AppBarButton_Click&quot;/&gt;
+    &lt;AppBarSeparator/&gt;
+    &lt;AppBarButton Icon=&quot;Back&quot; Label=&quot;Back&quot; Click=&quot;AppBarButton_Click&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Stop&quot; Label=&quot;Stop&quot; Click=&quot;AppBarButton_Click&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Play&quot; Label=&quot;Play&quot; Click=&quot;AppBarButton_Click&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Forward&quot; Label=&quot;Forward&quot; Click=&quot;AppBarButton_Click&quot;/&gt;
+
+    &lt;CommandBar.SecondaryCommands&gt;
+        &lt;AppBarButton Label=&quot;Like&quot; Click=&quot;AppBarButton_Click&quot;/&gt;
+        &lt;AppBarButton Label=&quot;Dislike&quot; Click=&quot;AppBarButton_Click&quot;/&gt;
+    &lt;/CommandBar.SecondaryCommands&gt;
+
+    &lt;CommandBar.Content&gt;
+        &lt;TextBlock Text=&quot;Now playing...&quot; Margin=&quot;12,14&quot;/&gt;
+    &lt;/CommandBar.Content&gt;
+&lt;/CommandBar&gt;
+</code></pre>
+<h2 id="commands-and-content">Commands and content</h2>
+<p>The CommandBar control has 3 properties you can use to add commands and content: <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.primarycommands">PrimaryCommands</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.secondarycommands">SecondaryCommands</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content">Content</a>.</p>
+<h3 id="commands">Commands</h3>
+<p>By default, command bar items are added to the <strong>PrimaryCommands</strong> collection. You should add commands in order of their importance so that the most important commands are always visible. When the command bar width changes, such as when users resize their app window, primary commands dynamically move between the command bar and the overflow menu at breakpoints. To change this default behavior, use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.isdynamicoverflowenabled">IsDynamicOverflowEnabled</a> property.</p>
+<p>On the smallest screens (320 epx width), a maximum of 4 primary commands fit in the command bar.</p>
+<p>You can also add commands to the <strong>SecondaryCommands</strong> collection, which are shown in the overflow menu.</p>
+<p><img src="images/appbar_rs2_overflow_icons.png" alt="Example of a command bar with &quot;More&quot; area and icons"></p>
+<p>You can programmatically move commands between the PrimaryCommands and SecondaryCommands as needed.</p>
+<ul>
+<li><em>If there is a command that would appear consistently across pages, it's best to keep that command in a consistent location.</em></li>
+<li><em>We recommended placing Accept, Yes, and OK commands to the left of Reject, No, and Cancel. Consistency gives users the confidence to move around the system and helps them transfer their knowledge of app navigation from app to app.</em></li>
+</ul>
+<h3 id="app-bar-buttons">App bar buttons</h3>
+<p>Both the PrimaryCommands and SecondaryCommands can be populated only with types that implement the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement">ICommandBarElement</a> interface, which includes <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarButton">AppBarButton</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarToggleButton">AppBarToggleButton</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarSeparator">AppBarSeparator</a> command elements.</p>
+<p>If you'd like to include a different type of element in your PrimaryCommands or SecondaryCommands, you can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarelementcontainer">AppBarElementContainer</a> class. This will serve as a wrapper for your element and will enable the element to display in a CommandBar.</p>
+<p>The app bar button controls are characterized by an icon and text label. These controls are optimized for use in a command bar, and their appearance changes depending on whether the control is used in the command bar or the overflow menu.</p>
+<h4 id="icons">Icons</h4>
+<p>The size of the icons when shown in the primary command area is 20x20px; in the overflow menu, icons are displayed at 16x16px. If you use <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon">SymbolIcon</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon">FontIcon</a>, or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pathicon">PathIcon</a>, the icon will automatically scale to the correct size with no loss of fidelity when the command enters the secondary command area.</p>
+<p>For more information and examples of setting the icon, see the documentation for the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton">AppBarButton</a> class.</p>
+<h4 id="labels">Labels</h4>
+<p>The AppBarButton <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.IsCompact">IsCompact</a> property determines whether the label is shown. In a CommandBar control, the command bar overwrites the button's IsCompact property automatically as the command bar is opened and closed.</p>
+<p>To position app bar button labels, use CommandBar's <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.defaultlabelposition">DefaultLabelPosition</a> property.</p>
+<pre><code class="lang-xaml">&lt;CommandBar DefaultLabelPosition=&quot;Right&quot;&gt;
+    &lt;AppBarToggleButton Icon=&quot;Edit&quot; Label=&quot;Edit&quot;/&gt;
+    &lt;AppBarToggleButton Icon=&quot;Share&quot; Label=&quot;Share&quot;/&gt;
+&lt;/CommandBar&gt;
+</code></pre>
+<p><img src="images/app-bar-labels-on-right.png" alt="Command bar with labels on the right"></p>
+<p>On larger windows, consider moving labels to the right of app bar button icons to improve legibility. Labels on the bottom require users to open the command bar to reveal labels, while labels on the right are visible even when command bar is closed.</p>
+<p>In overflow menus, labels are positioned to the right of icons by default, and <strong>LabelPosition</strong> is ignored. You can adjust the styling by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CommandBar.CommandBarOverflowPresenterStyle">CommandBarOverflowPresenterStyle</a> property to a Style that targets the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbaroverflowpresenter">CommandBarOverflowPresenter</a>.</p>
+<p>Button labels should be short, preferably a single word. Longer labels below an icon will wrap to multiple lines, increasing the overall height of the opened command bar. You can include a soft-hyphen character (0x00AD) in the text for a label to hint at the character boundary where a word break should occur. In XAML, you express this using an escape sequence, like this:</p>
+<pre><code class="lang-xaml">&lt;AppBarButton Icon=&quot;Back&quot; Label=&quot;Areally&amp;#x00AD;longlabel&quot;/&gt;
+</code></pre>
+<p>When the label wraps at the hinted location, it looks like this.</p>
+<p><img src="images/app-bar-button-label-wrap.png" alt="App bar button with wrapping label"></p>
+<h4 id="splitbutton">SplitButton</h4>
+<p>You can display a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitbutton">SplitButton</a> in a CommandBar using the built-in <code>SplitButtonCommandBarStyle</code> and the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarelementcontainer">AppBarElementContainer</a> class. <code>SplitButtonCommandBarStyle</code> provides visuals for a SplitButton to look and feel like an AppBarButton, while <code>AppBarElementContainer</code> is a wrapper class that provides the functionality that SplitButton needs to act like an AppBarButton.</p>
+<p>When you wrap a SplitButton in an <code>AppBarElementContainer</code> and place it in a CommandBar, the <code>SplitButtonCommandBarStyle</code> resource is applied automatically.</p>
+<p>This sample code creates and displays a SplitButton inside of a CommandBar:</p>
+<pre><code class="lang-xaml">&lt;CommandBar&gt;
+    &lt;AppBarButton Icon=&quot;Copy&quot; ToolTipService.ToolTip=&quot;Copy&quot; Label=&quot;Copy&quot;/&gt;
+    &lt;AppBarElementContainer&gt;
+        &lt;muxc:SplitButton ToolTipService.ToolTip=&quot;Insert&quot; Content=&quot;Insert&quot;&gt;
+            &lt;muxc:SplitButton.Flyout&gt;
+                &lt;MenuFlyout Placement=&quot;RightEdgeAlignedTop&quot;&gt;
+                    &lt;MenuFlyoutItem Text=&quot;Insert above&quot;/&gt;
+                    &lt;MenuFlyoutItem Text=&quot;Insert between&quot;/&gt;
+                    &lt;MenuFlyoutItem  Text=&quot;Insert below&quot;/&gt;
+                &lt;/MenuFlyout&gt;
+            &lt;/muxc:SplitButton.Flyout&gt;
+        &lt;/muxc:SplitButton&gt;
+    &lt;/AppBarElementContainer&gt;
+    &lt;AppBarButton Label=&quot;Select all&quot;/&gt;
+    &lt;AppBarButton Label=&quot;Delete&quot; Icon=&quot;Delete&quot;/&gt;
+&lt;/CommandBar&gt;
+</code></pre>
+<h3 id="menus-and-flyouts">Menus and flyouts</h3>
+<p>Consider logical groupings for the commands, such as placing Reply, Reply All, and Forward in a Respond menu. While typically an app bar button activates a single command, an app bar button can be used to show a <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout</a> or <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flyout">Flyout</a> with custom content.</p>
+<p><img src="images/menuflyout-sorting.png" alt="Example of a MenuFlyout for sorting options">
+<img src="images/appbar-guidelines-flyouts.png" alt="Example of flyouts on a command bar"></p>
+<h3 id="other-content">Other content</h3>
+<p>You can add any XAML elements to the content area by setting the <strong>Content</strong> property. If you want to add more than one element, you need to place them in a panel container and make the panel the single child of the Content property.</p>
+<p>When dynamic overflow is enabled, content will not clip because primary commands can move into the overflow menu. Otherwise, primary commands take precedence and may cause the content to be clipped.</p>
+<p>When the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.closeddisplaymode">ClosedDisplayMode</a> is <strong>Compact</strong>, the content can be clipped if it is larger than the compact size of the command bar. You should handle the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.opening">Opening</a> and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.closed">Closed</a> events to show or hide parts of the UI in the content area so that they aren't clipped. See the <a href="#open-and-closed-states">Open and closed states</a> section for more info.</p>
+<h2 id="open-and-closed-states">Open and closed states</h2>
+<p>The command bar can be open or closed. When it's open, it shows primary command buttons with text labels and it opens the overflow menu  (if there are secondary commands).
+The command bar opens the overflow menu upwards (above the primary commands) or downwards (below the primary commands).
+The default direction is up, but if there's not enough space to open the overflow menu upwards, the command bar opens it downwards.</p>
+<p>A user can switch between these states by pressing the &quot;see more&quot; [...] button. You can switch between them programmatically by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.isopen">IsOpen</a> property.</p>
+<p>You can use the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.opening">Opening</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.opened">Opened</a>, <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.closing">Closing</a>, and <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.closed">Closed</a> events to respond to the command bar being opened or closed.</p>
+<ul>
+<li>The Opening and Closing events occur before the transition animation begins.</li>
+<li>The Opened and Closed events occur after the transition completes.</li>
+</ul>
+<p>In this example, the Opening and Closing events are used to change the opacity of the command bar. When the command bar is closed, it's semi-transparent so the app background shows through. When the command bar is opened, the command bar is made opaque so the user can focus on the commands.</p>
+<pre><code class="lang-xaml">&lt;CommandBar Opening=&quot;CommandBar_Opening&quot;
+            Closing=&quot;CommandBar_Closing&quot;&gt;
+    &lt;AppBarButton Icon=&quot;Accept&quot; Label=&quot;Accept&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Edit&quot; Label=&quot;Edit&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Save&quot; Label=&quot;Save&quot;/&gt;
+    &lt;AppBarButton Icon=&quot;Cancel&quot; Label=&quot;Cancel&quot;/&gt;
+&lt;/CommandBar&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void CommandBar_Opening(object sender, object e)
+{
+    CommandBar cb = sender as CommandBar;
+    if (cb != null) cb.Background.Opacity = 1.0;
+}
+
+private void CommandBar_Closing(object sender, object e)
+{
+    CommandBar cb = sender as CommandBar;
+    if (cb != null) cb.Background.Opacity = 0.5;
+}
+
+</code></pre>
+<h3 id="issticky">IsSticky</h3>
+<p>If a user interacts with other parts of an app when a command bar is open, then the command bar will automatically close. This is called <em>light dismiss</em>. You can control light dismiss behavior by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.issticky">IsSticky</a> property. When <code>IsSticky=&quot;true&quot;</code>, the bar remains open until the user presses the &quot;see more&quot; [...] button or selects an item from the overflow menu.</p>
+<p>We recommend avoiding sticky command bars because they don't conform to users' expectations for <a href="menus.html#light-dismiss">light dismiss and keyboard focus behavior</a>.</p>
+<h3 id="display-mode">Display Mode</h3>
+<p>You can control how the command bar is shown in its closed state by setting the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar.closeddisplaymode">ClosedDisplayMode</a> property. There are 3 closed display modes to choose from:</p>
+<ul>
+<li><strong>Compact</strong>: The default mode. Shows content, primary command icons without labels, and the &quot;see more&quot; [...] button.</li>
+<li><strong>Minimal</strong>: Shows only a thin bar that acts as the &quot;see more&quot; [...] button. The user can press anywhere on the bar to open it.</li>
+<li><strong>Hidden</strong>: The command bar is not shown when it's closed. This can be useful for showing contextual commands with an inline command bar. In this case, you must open the command bar programmatically by setting the <strong>IsOpen</strong> property or changing the ClosedDisplayMode to <strong>Minimal</strong> or <strong>Compact</strong>.</li>
+</ul>
+<p>Here, a command bar is used to hold simple formatting commands for a <a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox">RichEditBox</a>. When the edit box doesn't have focus, the formatting commands can be distracting, so they're hidden. When the edit box is being used, the command bar's ClosedDisplayMode is changed to Compact so the formatting commands are visible.</p>
+<pre><code class="lang-xaml">&lt;StackPanel Width=&quot;300&quot;
+            GotFocus=&quot;EditStackPanel_GotFocus&quot;
+            LostFocus=&quot;EditStackPanel_LostFocus&quot;&gt;
+    &lt;CommandBar x:Name=&quot;FormattingCommandBar&quot; ClosedDisplayMode=&quot;Hidden&quot;&gt;
+        &lt;AppBarButton Icon=&quot;Bold&quot; Label=&quot;Bold&quot; ToolTipService.ToolTip=&quot;Bold&quot;/&gt;
+        &lt;AppBarButton Icon=&quot;Italic&quot; Label=&quot;Italic&quot; ToolTipService.ToolTip=&quot;Italic&quot;/&gt;
+        &lt;AppBarButton Icon=&quot;Underline&quot; Label=&quot;Underline&quot; ToolTipService.ToolTip=&quot;Underline&quot;/&gt;
+    &lt;/CommandBar&gt;
+    &lt;RichEditBox Height=&quot;200&quot;/&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<pre><code class="lang-csharp">private void EditStackPanel_GotFocus(object sender, RoutedEventArgs e)
+{
+    FormattingCommandBar.ClosedDisplayMode = AppBarClosedDisplayMode.Compact;
+}
+
+private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
+{
+    FormattingCommandBar.ClosedDisplayMode = AppBarClosedDisplayMode.Hidden;
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The implementation of the editing commands is beyond the scope of this example. For more info, see the <a href="rich-edit-box.html">RichEditBox</a> article.</p>
+</div>
+<p>Although the Minimal and Hidden modes are useful in some situations, keep in mind that hiding all actions could confuse users.</p>
+<p>Changing the ClosedDisplayMode to provide more or less of a hint to the user affects the layout of surrounding elements. In contrast, when the CommandBar transitions between closed and open, it does not affect the layout of other elements.</p>
+<h2 id="uwp-and-winui-2">UWP and WinUI 2</h2>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The information and examples in this article are optimized for apps that use the <a href="../../windows-app-sdk/index.html">Windows App SDK</a> and <a href="../../winui/winui3/index.html">WinUI 3</a>, but are generally applicable to UWP apps that use <a href="/windows/uwp/get-started/winui2/">WinUI 2</a>. See the UWP API reference for platform specific information and examples.</p>
+<p>This section contains information you need to use the control in a UWP or WinUI 2 app.</p>
+</div>
+
+<p>APIs for this control exist in the <a href="/uwp/api/Windows.UI.Xaml.Controls">Windows.UI.Xaml.Controls</a> namespace.</p>
+<div class="checklist">
+<ul>
+<li><strong>UWP APIs:</strong> <a href="/uwp/api/windows.ui.xaml.controls.commandbar">CommandBar class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbarbutton">AppBarButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbartogglebutton">AppBarToggleButton class</a>, <a href="/uwp/api/windows.ui.xaml.controls.appbarseparator">AppBarSeparator class</a></li>
+<li><a href="winui2gallery:/item/CommandBar">Open the WinUI 2 Gallery app and see the CommandBar in action</a>. The <strong>WinUI 2 Gallery</strong> app includes interactive examples of most WinUI 2 controls, features, and functionality. Get the app from the <a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Microsoft Store</a> or get the source code on <a href="https://github.com/Microsoft/WinUI-Gallery/tree/winui2">GitHub</a>.</li>
+</ul>
+</div>
+<p>We recommend using the latest <a href="/windows/uwp/get-started/winui2/">WinUI 2</a> to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see <a href="../style/rounded-corner.html">Corner radius</a>.</p>
+<p><a href="#splitbutton">Automatic styling of a SplitButton</a> in a CommandBar requires that you use the SplitButton control from WinUI 2.6 or later.</p>
+<h2 id="related-articles">Related articles</h2>
+<ul>
+<li><a href="../basics/commanding-basics.html">Command design basics for Windows apps</a></li>
+<li><a href="command-bar-flyout.html">Command bar flyout</a></li>
+<li><a href="menus.html">Menu flyout and menu bar</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout">MenuFlyout class</a></li>
+<li><a href="/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CommandBar">CommandBar class</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/design/controls/command-bar.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

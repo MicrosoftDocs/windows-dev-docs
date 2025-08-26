@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>show Command </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="show Command ">
+    
+    <meta name="description" content="Displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="show-command-winget">show command (winget)</h1>
+
+<p>The <strong>show</strong> command of <a href="index.html">WinGet</a> displays details for the specified application, including its source and associated metadata.</p>
+<p>The <strong>show</strong> command only shows metadata that was submitted with the application. If the submitted application excludes some metadata, then the data will not be displayed. The installer information presented in the <strong>show</strong> command is based on the arguments provided and decisions made by WinGet for the current device.</p>
+<h2 id="aliases">Aliases</h2>
+<p>The following aliases are available for this command:</p>
+<ul>
+<li>view</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p><code>winget show [[-q] &lt;query&gt;] [&lt;options&gt;]</code></p>
+<p><span class="mx-imgBorder">
+<a href="images/show.png#lightbox" data-linktype="relative-path">
+<img src="images/show.png" alt="Screenshot listing winget show vscode command result with the Visual Studio Code icon.">
+</a>
+</span>
+</p>
+<h2 id="arguments">Arguments</h2>
+<p>The following arguments are available.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-q,--query</strong></td>
+<td>The query used to search for an application.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are searching for.</p>
+</div>
+<h2 id="options">Options</h2>
+<p>The following options are available.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>-m,--manifest</strong></td>
+<td>The path to the manifest of the application to show.</td>
+</tr>
+<tr>
+<td><strong>--id</strong></td>
+<td>Filter results by ID.</td>
+</tr>
+<tr>
+<td><strong>--name</strong></td>
+<td>Filter results by name.</td>
+</tr>
+<tr>
+<td><strong>--moniker</strong></td>
+<td>Filter results by application moniker.</td>
+</tr>
+<tr>
+<td><strong>-v,--version</strong></td>
+<td>Use the specified version. The default is the latest version.</td>
+</tr>
+<tr>
+<td><strong>-s,--source</strong></td>
+<td>Find the application using the specified <a href="source.html">source</a>.</td>
+</tr>
+<tr>
+<td><strong>-e,--exact</strong></td>
+<td>Find the application using exact match.</td>
+</tr>
+<tr>
+<td><strong>--scope</strong></td>
+<td>Select install scope (user or machine).</td>
+</tr>
+<tr>
+<td><strong>-a,--architecture</strong></td>
+<td>Select the architecture to show.</td>
+</tr>
+<tr>
+<td><strong>--installer-type</strong></td>
+<td>Select the installer type to show. See <a href="index.html#supported-installer-formats">supported installer types for WinGet client</a>.</td>
+</tr>
+<tr>
+<td><strong>--locale</strong></td>
+<td>Locale to use (BCP47 format).</td>
+</tr>
+<tr>
+<td><strong>--versions</strong></td>
+<td>Show available versions of the application.</td>
+</tr>
+<tr>
+<td><strong>--header</strong></td>
+<td>Optional Windows-Package-Manager REST source HTTP header.</td>
+</tr>
+<tr>
+<td><strong>--authentication-mode</strong></td>
+<td>Specify authentication window preference (silent, silentPreferred or interactive).</td>
+</tr>
+<tr>
+<td><strong>--authentication-account</strong></td>
+<td>Specify the account to be used for authentication.</td>
+</tr>
+<tr>
+<td><strong>--accept-source-agreements</strong></td>
+<td>Used to accept the source license agreement, and avoid the prompt.</td>
+</tr>
+<tr>
+<td><strong>-?,--help</strong></td>
+<td>Shows help about the selected command.</td>
+</tr>
+<tr>
+<td><strong>--wait</strong></td>
+<td>Prompts the user to press any key before exiting.</td>
+</tr>
+<tr>
+<td><strong>--logs,--open-logs</strong></td>
+<td>Open the default logs location.</td>
+</tr>
+<tr>
+<td><strong>--verbose, --verbose-logs</strong></td>
+<td>Used to override the logging setting and create a verbose log.</td>
+</tr>
+<tr>
+<td><strong>--nowarn,--ignore-warnings</strong></td>
+<td>Suppresses warning outputs.</td>
+</tr>
+<tr>
+<td><strong>--disable-interactivity</strong></td>
+<td>Disable interactive prompts.</td>
+</tr>
+<tr>
+<td><strong>--proxy</strong></td>
+<td>Set a proxy to use for this execution.</td>
+</tr>
+<tr>
+<td><strong>--no-proxy</strong></td>
+<td>Disable the use of proxy for this execution.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="multiple-selections">Multiple selections</h2>
+<p>If the query provided to <strong>winget</strong> does not result in a single application, then <strong>winget</strong> will display the results of the search. This will provide you with the additional data necessary to refine the search.</p>
+<h2 id="results-of-show">Results of show</h2>
+<p>If a single application is detected, the following data will be displayed.</p>
+<h3 id="metadata">Metadata</h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Name of the application.</td>
+</tr>
+<tr>
+<td><strong>Id</strong></td>
+<td>Package identifier.</td>
+</tr>
+<tr>
+<td><strong>Icon</strong></td>
+<td>Package icon (if sixels is enabled in your terminal)</td>
+</tr>
+<tr>
+<td><strong>Version</strong></td>
+<td>Version of the application.</td>
+</tr>
+<tr>
+<td><strong>Publisher</strong></td>
+<td>Publisher of the application.</td>
+</tr>
+<tr>
+<td><strong>Publisher Url</strong></td>
+<td>Publisher URL of the application.</td>
+</tr>
+<tr>
+<td><strong>Moniker</strong></td>
+<td>AppMoniker of the application.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Description of the application.</td>
+</tr>
+<tr>
+<td><strong>Homepage</strong></td>
+<td>Homepage of the application.</td>
+</tr>
+<tr>
+<td><strong>License</strong></td>
+<td>License of the application.</td>
+</tr>
+<tr>
+<td><strong>License Url</strong></td>
+<td>The URL to the license file of the application.</td>
+</tr>
+<tr>
+<td><strong>Privacy Url</strong></td>
+<td>The URL to the privacy information of the application.</td>
+</tr>
+<tr>
+<td><strong>Tags</strong></td>
+<td>The tags specified in the manifest.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="installer-details">Installer details</h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Installer Type</strong></td>
+<td>The installer type of the application.</td>
+</tr>
+<tr>
+<td><strong>Installer Url</strong></td>
+<td>The URL to the installer for the application.</td>
+</tr>
+<tr>
+<td><strong>Installer SHA256</strong></td>
+<td>The SHA 256 has of the installer.</td>
+</tr>
+<tr>
+<td><strong>Release Date</strong></td>
+<td>The release date for the version of the application.</td>
+</tr>
+<tr>
+<td><strong>Offline Distribution Supported</strong></td>
+<td>Shows if the application can be downloaded.</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>Shows dependencies for installing the application.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-topics">Related topics</h2>
+<ul>
+<li><a href="index.html">Use the winget tool to install and manage applications</a></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/package-manager/winget/show.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

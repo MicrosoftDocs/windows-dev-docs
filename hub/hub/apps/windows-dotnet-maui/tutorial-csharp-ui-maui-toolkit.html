@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Tutorial--Create a .NET MAUI App With C# Markup and the Community Toolkit </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Tutorial--Create a .NET MAUI App With C# Markup and the Community Toolkit ">
+    
+    <meta name="description" content="Build a .NET MAUI app with a user interface created without XAML by using C# Markup from the .NET MAUI Community Toolkit.">
+      <link rel="shortcut icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../styles/docfx.css">
+      <link rel="stylesheet" href="../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="tutorial-build-a-net-maui-app-with-c-markup-and-the-community-toolkit">Tutorial: Build a .NET MAUI app with C# Markup and the Community Toolkit</h1>
+
+<p>In this tutorial, you'll build a <strong>.NET MAUI</strong> app with a user interface created without XAML by using <strong>C# Markup</strong> from the <a href="/dotnet/communitytoolkit/maui/">.NET MAUI Community Toolkit</a>.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The <strong>.NET MAUI Community Toolkit</strong> is a set of extensions, behaviors, animations, and other helpers. One of the features, <a href="/dotnet/communitytoolkit/maui/markup/markup">C# Markup</a>, provides the ability to create a user interface entirely in C# code. In this tutorial, you'll learn how to create a .NET MAUI app for Windows that uses C# Markup to create the user interface.</p>
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
+<p>If you haven't already set up your environment for .NET MAUI development, please follow the steps to <a href="index.html#get-started-with-net-maui-on-windows">Get started with .NET MAUI on Windows</a>.</p>
+<h2 id="creating-the-net-maui-project">Creating the .NET MAUI project</h2>
+<p>In this section, you'll create a new .NET MAUI project. If you are already familiar with setting up a .NET MAUI project, you can skip to the next section.</p>
+<p>Launch Visual Studio, and in the start window click <strong>Create a new project</strong> to create a new project.</p>
+<p>In the <strong>Create a new project</strong> window, select <strong>MAUI</strong> in the All project types drop-down, select the <strong>.NET MAUI App</strong> template, and click the <strong>Next</strong> button:</p>
+<p><img src="images/maui-markup-create-project.png" alt="A screenshot of the Create a new project window in Visual Studio with the .NET MAUI App template selected"></p>
+<p>Next, on the <strong>Configure your new project</strong> screen, give your project a name, choose a location for it, and click the <strong>Next</strong> button.</p>
+<p>On the final screen, <strong>Additional information</strong>, click the <strong>Create</strong> button.</p>
+<p>Wait for the project to be created, and for its dependencies to be restored.</p>
+<p>In the Visual Studio toolbar, press the <strong>Windows Machine</strong> button to build and run the app. Click the <strong>Click me</strong> button and verify that the button content updates with the number of clicks.</p>
+<p>Now that you have verified that the .NET MAUI app on Windows is working as expected, we can integrate the MVVM Toolkit and C# Markup packages. In the next section, you'll add these packages to your new project.</p>
+<h2 id="add-c-markup-from-the-net-maui-community-toolkit">Add C# Markup from the .NET MAUI Community Toolkit</h2>
+<p>Now that you have your .NET MAUI app running on Windows, let's add a couple of NuGet packages to the project to integrate with the <a href="/dotnet/communitytoolkit/mvvm/">MVVM Toolkit</a> and <strong>C# Markup</strong> from the <strong>.NET MAUI Community Toolkit</strong>.</p>
+<p>Right-click the project in <strong>Solution Explorer</strong> and select <strong>Manage NuGet Packages...</strong> from the context menu.</p>
+<p>In the <strong>NuGet Package Manager</strong> window, select the <strong>Browse</strong> tab and search for <strong>CommunityToolkit.MVVM</strong>:</p>
+<p><img src="images/maui-markup-add-mvvm-pkg.png" alt="A screenshot of the CommunityToolkit.MVVM package from the NuGet Package Manager in Visual Studio"></p>
+<p>Add the latest stable version of the <strong>CommunityToolkit.MVVM</strong> package to the project by clicking <strong>Install</strong>.</p>
+<p>Next, search for CommunityToolkit.Maui:</p>
+<p><img src="images/maui-markup-install-nuget-pkg.png" alt="A screenshot of the CommunityToolkit.Maui package from the NuGet Package Manager in Visual Studio"></p>
+<p>Add the latest stable version of the <strong>CommunityToolkit.Maui.Markup</strong> package to the project by clicking <strong>Install</strong>.</p>
+<p>Close the <strong>NuGet Package Manager</strong> window after the new packages have finished installing.</p>
+<h2 id="add-a-viewmodel-to-the-project">Add a ViewModel to the project</h2>
+<p>We are going to add a simple <strong>Model-View-ViewModel (MVVM)</strong> implementation with the MVVM Toolkit. Let's start by creating a viewmodel to pair with our view (<strong>MainPage</strong>). Right-click the project again and select <strong>Add | Class</strong> from the context menu.</p>
+<p>In the <strong>Add New Item</strong> window that appears, name the class <strong>MainViewModel</strong> and click <strong>Add</strong>:</p>
+<p><img src="images/maui-markup-add-viewmodel-class.png" alt="A screenshot of the Add New Item dialog, adding a MainViewModel class to the project"></p>
+<p>We are going to leverage the power of the MVVM Toolkit in <code>MainViewModel</code>. Replace the contents of the class with the following code:</p>
+<pre><code class="lang-csharp">using CommunityToolkit.Mvvm.ComponentModel;
+using System.ComponentModel;
+using System.Diagnostics;
+
+namespace MauiMarkupSample
+{
+    [INotifyPropertyChanged]
+    public partial class MainViewModel
+    {
+        [ObservableProperty]
+        private string name;
+        partial void OnNameChanging(string value)
+        {
+            Debug.WriteLine($&quot;Name is about to change to {value}&quot;);
+        }
+        partial void OnNameChanged(string value)
+        {
+            Debug.WriteLine($&quot;Name has changed to {value}&quot;);
+        }
+    }
+}
+</code></pre>
+<p>If you have completed the <a href="walkthrough-first-app.html">Build your first .NET MAUI app for Windows</a> tutorial, you will understand what the code above does, and you can skip the explanation. If you haven't, here's a brief overview:</p>
+<p>The <code>MainViewModel</code> class is decorated with the <code>INotifyPropertyChanged</code> attribute, which allows the MVVM Toolkit to generate the <code>INotifyPropertyChanged</code> implementation for the class. Marking <code>MainViewModel</code> as a <code>partial class</code> is required for the .NET source generator to work. The <code>ObservableProperty</code> attribute on the <code>name</code> private field will add a <code>Name</code> property for the class with the proper <code>INotifyPropertyChanged</code> implementation in the generated partial class. Adding the <code>OnNameChanging</code> and <code>OnNameChanged</code> partial methods is optional, but allows you to add custom logic when the <code>Name</code> property is changing or has changed.</p>
+<h2 id="build-a-ui-with-c-markup">Build a UI with C# Markup</h2>
+<p>When building a UI with C# Markup, the first step is to update the <code>CreateMauiApp</code> method in <strong>MauiProgram.cs</strong>. Replace the contents of the method with the following code:</p>
+<pre><code class="lang-csharp">public static MauiApp CreateMauiApp()
+{
+    var builder = MauiApp.CreateBuilder();
+
+    builder
+        .UseMauiApp&lt;App&gt;()
+        .UseMauiCommunityToolkitMarkup();
+
+    return builder.Build();
+}
+</code></pre>
+<p>You also need to add a new <code>using</code> statement to the top of the file: <code>using CommunityToolkit.Maui.Markup;</code>. The call to <code>UseMauiCommunityToolkitMarkup()</code> will add the C# Markup support to the app, allowing you to construct your UI with C# code instead of XAML.</p>
+<p>The <strong>MainPage.xaml</strong> file will no longer be used when rendering the UI, so you can remove the contents of the <code>ContentPage</code>.</p>
+<pre><code class="lang-xaml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;ContentPage xmlns=&quot;http://schemas.microsoft.com/dotnet/2021/maui&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+             x:Class=&quot;MauiMarkupSample.MainPage&quot;&gt;
+&lt;/ContentPage&gt;
+</code></pre>
+<p>In <strong>MainPage.xaml.cs</strong>, remove the click event handler and add three private members to the class:</p>
+<pre><code class="lang-csharp">private readonly MainViewModel ViewModel = new();
+private enum Row { TextEntry }
+private enum Column { Description, Input }
+</code></pre>
+<p>The <code>ViewModel</code> property will create an instance of the <code>MainViewModel</code> class to be used when data binding the UI. The <code>Row</code> and <code>Column</code> enums will be used to define the layout of the UI with C# Markup. It's a simple UI with a single row and two columns which we'll be defining in the next step. You'll also need to add a namespace directive to the top of the file: <code>using static CommunityToolkit.Maui.Markup.GridRowsColumns;</code>.</p>
+<p>Because the UI elements are going to be defined in the C# code, the <code>InitializeComponent()</code> method will not be needed. Remove the call and replace it with the following code to create the UI:</p>
+<pre><code class="lang-csharp">public MainPage()
+{
+    BindingContext = ViewModel;
+    Content = new Grid
+    {
+        RowDefinitions = Rows.Define(
+            (Row.TextEntry, 36)),
+
+        ColumnDefinitions = Columns.Define(
+            (Column.Description, Star),
+            (Column.Input, Stars(2))),
+
+        Children =
+        {
+            new Label()
+                .Text(&quot;Customer name:&quot;)
+                .Row(Row.TextEntry).Column(Column.Description),
+
+            new Entry
+            {
+                Keyboard = Keyboard.Numeric,
+                BackgroundColor = Colors.AliceBlue,
+            }.Row(Row.TextEntry).Column(Column.Input)
+                .FontSize(15)
+                .Placeholder(&quot;Enter name&quot;)
+                .TextColor(Colors.Black)
+                .Height(44)
+                .Margin(6, 6)
+                .Bind(Entry.TextProperty, nameof(ViewModel.Name), BindingMode.TwoWay)
+        }
+    };
+}
+</code></pre>
+<p>The new code in the <code>MainPage</code> constructor is leveraging C# Markup to define the UI. A <code>Grid</code> is set as the <code>Content</code> of the page. Our new grid defines a row with a height of 36 pixels and two columns with their widths defined using <strong>Star</strong> values, rather than absolute pixel values. The <code>Input</code> column will always be twice the width of the <code>Description</code> column. The equivalent XAML for these definitions would be:</p>
+<pre><code class="lang-xaml">&lt;Grid.RowDefinitions&gt;
+    &lt;RowDefinition Height=&quot;36&quot; /&gt;
+&lt;/Grid.RowDefinitions&gt;
+&lt;Grid.ColumnDefinitions&gt;
+    &lt;ColumnDefinition Width=&quot;*&quot; /&gt;
+    &lt;ColumnDefinition Width=&quot;2*&quot; /&gt;
+&lt;/Grid.ColumnDefinitions&gt;
+</code></pre>
+<p>The rest of the code to create the grid adds two <code>Children</code>, a <code>Label</code> and an <code>Entry</code>. The <code>Text</code>, <code>Row</code>, and <code>Column</code> properties are set on the <code>Label</code> element, and the <code>Entry</code> is created with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Row</code></td>
+<td><code>Row.TextEntry</code></td>
+<td>Defines the row number.</td>
+</tr>
+<tr>
+<td><code>Column</code></td>
+<td><code>Column.Input</code></td>
+<td>Defines the column number.</td>
+</tr>
+<tr>
+<td><code>FontSize</code></td>
+<td><code>15</code></td>
+<td>Sets the font size.</td>
+</tr>
+<tr>
+<td><code>Placeholder</code></td>
+<td><code>&quot;Enter name&quot;</code></td>
+<td>Sets the placeholder text to display when the element is empty.</td>
+</tr>
+<tr>
+<td><code>TextColor</code></td>
+<td><code>Colors.Black</code></td>
+<td>Sets the text color.</td>
+</tr>
+<tr>
+<td><code>Height</code></td>
+<td><code>44</code></td>
+<td>Sets the height of the element.</td>
+</tr>
+<tr>
+<td><code>Margin</code></td>
+<td><code>6, 6</code></td>
+<td>Defines the margin around the element.</td>
+</tr>
+<tr>
+<td><code>Bind</code></td>
+<td><code>Entry.TextProperty, nameof(ViewModel.Name), BindingMode.TwoWay</code></td>
+<td>Binds the <code>Text</code> property of the element to the <code>Name</code> property of the view model using two-way data binding.</td>
+</tr>
+</tbody>
+</table>
+<p>The equivalent XAML to define these child elements would be:</p>
+<pre><code class="lang-xaml">&lt;Label Text=&quot;Customer name:&quot;
+       Grid.Row=&quot;0&quot; Grid.Column=&quot;0&quot; /&gt;
+&lt;Entry Grid.Row=&quot;1&quot; Grid.Column=&quot;0&quot;
+       FontSize=&quot;15&quot;
+       Placeholder=&quot;Enter name&quot;
+       HeightRequest=&quot;44&quot;
+       Margin=&quot;6, 6&quot;
+       Text=&quot;{Binding Path=ViewModel.Name, Mode=TwoWay}&quot; /&gt;
+</code></pre>
+<p>You may have noticed that the <code>TextColor</code> property is not set in the markup above. Setting the <code>TextColor</code> of a control requires setting a custom style. For more information about using styles in .NET MAUI, see <a href="/dotnet/maui/user-interface/styles/xaml">Style apps using XAML</a>. This is one example where setting properties in C# Markup can be more streamlined than the equivalent XAML. However, using styles in adds ease of reuse and inheritance.</p>
+<p>You're now ready to run the app. Press <strong>F5</strong> to build and run the project. The app should look similar to the following screenshot:</p>
+<p><img src="images/maui-markup-run-the-app.png" alt="A screenshot of the completed .NET MAUI C# Markup app running on Windows"></p>
+<h2 id="summary-and-next-steps">Summary and next steps</h2>
+<p>You've now created your first C# Markup app on Windows with .NET MAUI. To learn more about what you can do with C# Markup, see <a href="/dotnet/communitytoolkit/maui/markup/markup">C# Markup documentation</a>.</p>
+<h2 id="related-content">Related content</h2>
+<p><a href="/dotnet/maui/get-started/resources">Resources for learning .NET MAUI</a></p>
+<p><a href="/dotnet/communitytoolkit/maui/">.NET MAUI Community Toolkit documentation</a></p>
+<p><a href="/dotnet/communitytoolkit/maui/markup/markup">C# Markup documentation</a></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/apps/windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

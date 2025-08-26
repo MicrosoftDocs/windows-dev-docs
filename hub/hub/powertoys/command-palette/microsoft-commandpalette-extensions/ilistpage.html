@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>IListPage Interface </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="IListPage Interface ">
+    
+    <meta name="description" content="The IListPage interface represents a page in the Command Palette that displays a list of items.">
+      <link rel="shortcut icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../../../styles/docfx.css">
+      <link rel="stylesheet" href="../../../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="../../../dev-environment/toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="ilistpage-interface">IListPage Interface</h1>
+
+<h2 id="definition">Definition</h2>
+<p>Namespace: <a href="microsoft-commandpalette-extensions.html">Microsoft.CommandPalette.Extensions</a></p>
+<p>The <strong>IListPage</strong> interface represents a page in the Command Palette that displays a list of items. It is used to present a collection of items in a structured format, allowing users to interact with and select from the list.</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">EmptyContent</td>
+<td style="text-align: left;"><a href="icommanditem.html">ICommandItem</a></td>
+<td style="text-align: left;">The content to display when the list is empty. This property can be used to provide a message or action for the user when there are no items to display.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Filters</td>
+<td style="text-align: left;"><a href="ifilters.html">IFilters</a></td>
+<td style="text-align: left;">The filters applied to the list. This property allows users to refine the items displayed in the list based on specific criteria.</td>
+</tr>
+<tr>
+<td style="text-align: left;">GridProperties</td>
+<td style="text-align: left;"><a href="igridproperties.html">IGridProperties</a></td>
+<td style="text-align: left;">The properties of the grid layout used to display the list items. This property defines how the items are arranged and presented in the grid.</td>
+</tr>
+<tr>
+<td style="text-align: left;">HasMoreItems</td>
+<td style="text-align: left;"><strong>Boolean</strong></td>
+<td style="text-align: left;">Indicates whether there are more items to load in the list. This property is used to determine if additional items can be fetched or displayed.</td>
+</tr>
+<tr>
+<td style="text-align: left;">PlaceholderText</td>
+<td style="text-align: left;"><strong>String</strong></td>
+<td style="text-align: left;">The text to display when the list is empty or no items match the current filters. This property provides context to the user about the state of the list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">SearchText</td>
+<td style="text-align: left;"><strong>String</strong></td>
+<td style="text-align: left;">The text used to filter the list items. This property allows users to search for specific items within the list.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ShowDetails</td>
+<td style="text-align: left;"><strong>Boolean</strong></td>
+<td style="text-align: left;">Indicates whether to show detailed information about the items in the list. This property can be used to toggle between a summary view and a detailed view of the items.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Method</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="ilistpage_getitems.html">GetItems()</a></td>
+<td style="text-align: left;">Retrieves the items to be displayed in the list. This method is used to fetch the data that populates the list.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="ilistpage_loadmore.html">LoadMore()</a></td>
+<td style="text-align: left;">Loads more items into the list. This method is used to fetch additional data when the user requests more items, such as when scrolling or clicking a &quot;Load More&quot; button.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/MicrosoftDocs/windows-dev-docs/blob/copilot/fix-5606/hub/powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage.md/#L1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
